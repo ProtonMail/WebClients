@@ -44,7 +44,7 @@ export interface EventManager {
 /**
  * Create the event manager process.
  */
-const eventManager = ({
+const createEventManager = ({
     api,
     eventID: initialEventID,
     interval = INTERVAL_EVENT_TIMER,
@@ -60,7 +60,7 @@ const eventManager = ({
     let STATE: {
         retryIndex: number;
         lastEventID?: string;
-        timeoutHandle?: any;
+        timeoutHandle?: ReturnType<typeof setTimeout>;
         abortController?: AbortController;
     } = {
         retryIndex: 0,
@@ -196,4 +196,4 @@ const eventManager = ({
     };
 };
 
-export default eventManager;
+export default createEventManager;

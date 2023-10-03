@@ -25,6 +25,7 @@ import {
     useNotifications,
     useOrganization,
     usePopperAnchor,
+    useSessionRecoveryState,
     useSettingsLink,
     useSpotlightOnFeature,
     useSpotlightShow,
@@ -59,12 +60,13 @@ import {
 } from '@proton/shared/lib/helpers/subscription';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { getShopURL, getStaticURL } from '@proton/shared/lib/helpers/url';
-import { Subscription } from '@proton/shared/lib/interfaces';
+import { SessionRecoveryState, Subscription } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import clsx from '@proton/utils/clsx';
 
 import ProductLink, { apps } from '../../containers/app/ProductLink';
 import { generateUID } from '../../helpers';
+import SessionRecoverySignOutConfirmPrompt from '../account/sessionRecovery/SessionRecoverySignOutConfirmPrompt';
 import { AuthenticatedBugModal } from '../support';
 import UserDropdownButton, { Props as UserDropdownButtonProps } from './UserDropdownButton';
 
@@ -102,6 +104,17 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [bugReportModal, setBugReportModal, renderBugReportModal] = useModalState();
     const [confirmSignOutModal, setConfirmSignOutModal, renderConfirmSignOutModal] = useModalState();
+    const [
+        sessionRecoverySignOutConfirmPrompt,
+        setSessionRecoverySignOutConfirmPrompt,
+        renderSessionRecoverySignOutConfirmPrompt,
+    ] = useModalState();
+
+    const sessionRecoveryState = useSessionRecoveryState();
+    const sessionRecoveryInitiated =
+        sessionRecoveryState === SessionRecoveryState.GRACE_PERIOD ||
+        sessionRecoveryState === SessionRecoveryState.INSECURE;
+
     const { feature: referralProgramFeature } = useFeature(FeatureCode.ReferralProgram);
 
     const subscriptionStartedThirtyDaysAgo =
@@ -127,7 +140,9 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
 
     const handleSignOutClick = () => {
         close();
-        if (shouldShowConfirmSignOutModal({ user, authentication })) {
+        if (sessionRecoveryInitiated) {
+            setSessionRecoverySignOutConfirmPrompt(true);
+        } else if (shouldShowConfirmSignOutModal({ user, authentication })) {
             setConfirmSignOutModal(true);
         } else {
             logout();
@@ -191,6 +206,12 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
     return (
         <>
             {renderBugReportModal && <AuthenticatedBugModal {...bugReportModal} />}
+            {renderSessionRecoverySignOutConfirmPrompt && (
+                <SessionRecoverySignOutConfirmPrompt
+                    onSignOut={() => logout()}
+                    {...sessionRecoverySignOutConfirmPrompt}
+                />
+            )}
             {renderConfirmSignOutModal && (
                 <ConfirmSignOutModal
                     onSignOut={(clearDeviceRecoveryData: boolean) => logout({ clearDeviceRecoveryData })}
