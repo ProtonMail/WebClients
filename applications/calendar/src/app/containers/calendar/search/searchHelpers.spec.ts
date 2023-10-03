@@ -1,6 +1,7 @@
 import { getUnixTime } from 'date-fns';
 
 import { ESItem } from '@proton/encrypted-search/lib';
+import { MAXIMUM_DATE_UTC } from '@proton/shared/lib/calendar/constants';
 import { SECOND } from '@proton/shared/lib/constants';
 import { differenceInCalendarYears } from '@proton/shared/lib/date-fns-utc';
 
@@ -78,12 +79,35 @@ describe('expandSearchItem()', () => {
                 RecurrenceID: null,
                 Exdates: [] as number[],
             } as ESItem<ESCalendarMetadata, ESCalendarContent>;
-            const date = new Date(Date.UTC(2023, 8, 7, 10));
+            const date = new Date(Date.UTC(2013, 8, 7, 10));
             const occurrences = expandSearchItem({ item, date }) as ESItem<ESCalendarMetadata, ESCalendarContent>[];
 
             const lastOccurrenceUtcStart = new Date(occurrences[occurrences.length - 1].StartTime * SECOND);
 
             expect(differenceInCalendarYears(lastOccurrenceUtcStart, date)).toBe(YEARS_TO_EXPAND_AHEAD.YEARLY);
+        });
+    });
+
+    describe('caps the expansion at the maximum date', () => {
+        it('for yearly events', () => {
+            const item = {
+                FullDay: 0,
+                StartTime: getUnixTime(Date.UTC(1978, 4, 12, 23)),
+                StartTimezone: 'Asia/Shanghai',
+                EndTime: getUnixTime(Date.UTC(1978, 4, 13, 3, 30)),
+                EndTimezone: 'Asia/Shanghai',
+                RRule: 'FREQ=YEARLY',
+                RecurrenceID: null,
+                Exdates: [] as number[],
+            } as ESItem<ESCalendarMetadata, ESCalendarContent>;
+            const date = new Date(Date.UTC(2023, 8, 7, 10));
+            const occurrences = expandSearchItem({ item, date }) as ESItem<ESCalendarMetadata, ESCalendarContent>[];
+
+            const lastOccurrenceUtcStart = new Date(occurrences[occurrences.length - 1].StartTime * SECOND);
+
+            expect(differenceInCalendarYears(lastOccurrenceUtcStart, date)).toBe(
+                MAXIMUM_DATE_UTC.getUTCFullYear() - date.getUTCFullYear()
+            );
         });
     });
 
