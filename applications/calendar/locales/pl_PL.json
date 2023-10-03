@@ -33,6 +33,9 @@
       "Add address": [
         "Dodaj adres"
       ],
+      "Add birthday": [
+        "Dodaj urodziny"
+      ],
       "Add contact": [
         "Dodaj kontakt"
       ],
@@ -47,6 +50,9 @@
       ],
       "Add new group": [
         "Dodaj nową grupę"
+      ],
+      "Add note": [
+        "Dodaj notatkę"
       ],
       "Add notification": [
         "Dodaj powiadomienie"
@@ -1128,8 +1134,17 @@
       "Birthday": [
         "Urodziny"
       ],
+      "Display name": [
+        "Nazwa wyświetlana"
+      ],
       "Email": [
         "E-mail"
+      ],
+      "Enter a display name or nickname": [
+        "Wpisz nazwę wyświetlaną lub pseudonim"
+      ],
+      "First name": [
+        "Imię"
       ],
       "Gender": [
         "Płeć"
@@ -1139,6 +1154,9 @@
       ],
       "Language": [
         "Język"
+      ],
+      "Last name": [
+        "Nazwisko"
       ],
       "Logo": [
         "Logo"
@@ -2357,6 +2375,9 @@
       "Failed to get original occurrence in series": [
         "Nie udało się uzyskać oryginalnego powtórzenia w serii"
       ],
+      "First name is too long": [
+        "Imię jest zbyt długie"
+      ],
       "Folder name cannot be empty.": [
         "Nazwa folderu nie może być pusta."
       ],
@@ -2401,6 +2422,9 @@
       ],
       "Label name cannot be empty.": [
         "Nazwa etykiety nie może być pusta."
+      ],
+      "Last name is too long": [
+        "Nazwisko jest zbyt długie"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Scal co najmniej ${ calendarsToFixCount } kalendarz z obecnym kalendarzem ${ BRAND_NAME }",
@@ -2470,6 +2494,9 @@
         "Popraw zaznaczone konflikty, aby kontynuować.",
         "Popraw zaznaczone konflikty, aby kontynuować.",
         "Popraw zaznaczone konflikty, aby kontynuować."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Wpisz imię, nazwisko lub nazwę wyświetlaną"
       ],
       "Port is required": [
         "Port jest wymagany"
@@ -5584,6 +5611,9 @@
       "Filter groups": [
         "Filtruj grupy"
       ],
+      "First name": [
+        "Imię"
+      ],
       "Group name": [
         "Nazwa grupy"
       ],
@@ -5592,6 +5622,9 @@
       ],
       "Indexing...": [
         "Indeksowanie..."
+      ],
+      "Last name": [
+        "Nazwisko"
       ],
       "Name": [
         "Nazwa"
@@ -6024,7 +6057,7 @@
         "Zabezpiecz pliki dzięki szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Przestrzeń dyskowa jest współdzielona przez ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } oraz ${ DRIVE_APP_NAME }."
+        "Przestrzeń dyskowa jest dzielona pomiędzy usługami ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -6334,11 +6367,17 @@
       "CSV field": [
         "Pole CSV"
       ],
+      "Display name": [
+        "Nazwa wyświetlana"
+      ],
+      "First name": [
+        "Imię"
+      ],
       "Import": [
         "Importuj"
       ],
-      "Name": [
-        "Nazwa"
+      "Last name": [
+        "Nazwisko"
       ],
       "Values": [
         "Wartości"
@@ -6437,6 +6476,9 @@
       ],
       "Billing cycle": [
         "Cykl rozliczeniowy"
+      ],
+      "Birthday": [
+        "Urodziny"
       ],
       "Calendar": [
         "Kalendarz"
@@ -6602,6 +6644,9 @@
       ],
       "Night theme": [
         "Ciemny motyw"
+      ],
+      "Notes": [
+        "Notatki"
       ],
       "Open actions dropdown": [
         "Otwórz listę akcji"
