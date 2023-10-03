@@ -172,16 +172,16 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
                     size={DROPDOWN_SIZE}
                 >
                     <DropdownMenu>
-                        <div className="flex flex-align-items-center flex-justify-space-between py-2 px-4">
+                        <div className="flex flex-align-items-center flex-justify-space-between flex-nowrap gap-2 py-2 px-4">
                             <span
                                 className={clsx(
-                                    'flex flex-align-items-center',
+                                    'flex flex-align-items-center flex-nowrap',
                                     passPlan === UserPassPlan.PLUS && 'ui-orange'
                                 )}
                             >
                                 <Icon name="star" className="mr-3" color="var(--interaction-norm)" />
                                 <span className="text-left">
-                                    <div className="text-sm">{user?.Email}</div>
+                                    <div className="text-sm text-ellipsis">{user?.Email}</div>
                                     <div className="text-sm" style={{ color: 'var(--interaction-norm)' }}>
                                         {planDisplayName}
                                     </div>
