@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import {
@@ -106,7 +106,11 @@ const CalendarsSettingsSidebarList = ({ prefix, calendarsSection }: Props) => {
                             <SidebarListItemContent left={<SidebarListItemContentIcon name="plus" />}>
                                 {
                                     // translator: The variable remainingItems is the number of calendars that can be brought to view by clicking on the button, which expands the list of calendars in the sidebar. E.g. 'Show 8 more'
-                                    c('Calendar settings sidebar').t`Show ${remainingItems} more`
+                                    c('Calendar settings sidebar').ngettext(
+                                        msgid`Show ${remainingItems} more`,
+                                        `Show ${remainingItems} more`,
+                                        remainingItems
+                                    )
                                 }
                             </SidebarListItemContent>
                         </SidebarListItemButton>
