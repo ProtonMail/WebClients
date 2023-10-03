@@ -169,7 +169,6 @@ function renderComponent(props?: Partial<CalendarSidebarProps>) {
         addresses: [],
         calendars: [mockCalendar],
         miniCalendar: <span>mockedMiniCalendar</span>,
-        isSearchView: false,
         calendarUserSettings: {
             WeekLength: 7,
             DisplayWeekNumber: 1,
