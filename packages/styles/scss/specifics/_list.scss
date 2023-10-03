@@ -351,8 +351,7 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 
 	.item-container-row .item-unread-dot {
 		position: absolute;
-		block-size: 100%;
-		inset-block-start: 0;
+		inset-block-start: em(15);
 		inset-inline-start: em(5);
 		z-index: 1;
 	}
