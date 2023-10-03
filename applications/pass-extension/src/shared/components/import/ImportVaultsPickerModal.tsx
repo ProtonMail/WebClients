@@ -11,6 +11,7 @@ import type { ModalProps } from '@proton/components/components';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/components';
 import { type ImportPayload, type ImportVault } from '@proton/pass/import';
 import { selectAllVaults, selectPassPlan, selectPrimaryVault, selectVaultLimits } from '@proton/pass/store';
+import { ShareRole } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { omit } from '@proton/shared/lib/helpers/object';
 
@@ -28,7 +29,7 @@ export type ImportVaultsPickerHandle = { submit: () => void };
 const FORM_ID = 'vault-picker';
 
 export const ImportVaultsPickerModal: VFC<ImportVaultsPickerProps> = ({ payload, onClose, onReset, onSubmit }) => {
-    const vaults = useSelector(selectAllVaults);
+    const vaults = useSelector(selectAllVaults).filter((vault) => vault.shareRoleId !== ShareRole.READ);
     const primaryVault = useSelector(selectPrimaryVault);
     const { vaultLimit, vaultTotalCount } = useSelector(selectVaultLimits);
     const plan = useSelector(selectPassPlan);

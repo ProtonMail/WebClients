@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { selectAllVaults } from '@proton/pass/store';
-import type { ItemType, VaultShare } from '@proton/pass/types';
+import { type ItemType, ShareRole, type VaultShare } from '@proton/pass/types';
 
 import type { ItemTypeViewProps } from '../../../shared/items/types';
 import { itemTypeToSubThemeClassName } from '../../../shared/theme/sub-theme';
@@ -56,6 +56,8 @@ export const ItemViewPanel: FC<Props> = ({
                 <PanelHeader
                     title={name}
                     actions={(() => {
+                        if (vault.shareRoleId === ShareRole.READ) return [];
+
                         if (failed) {
                             return [
                                 <Button
