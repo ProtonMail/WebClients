@@ -21,11 +21,12 @@ type Props = { shareId: string };
 export const VaultInviteManager: FC<Props> = ({ shareId }) => {
     const { createInvite, close } = useInviteContext();
     const vault = useSelector(selectVaultWithItemsCount(shareId));
-    const busy = useShareAccessOptionsPolling(shareId) && vault.members === undefined;
+    const loading = useShareAccessOptionsPolling(shareId);
 
     return (
         <SidebarModal onClose={close} open>
             <Panel
+                loading={loading}
                 header={
                     <PanelHeader
                         actions={[
@@ -46,31 +47,37 @@ export const VaultInviteManager: FC<Props> = ({ shareId }) => {
                         ]}
                     />
                 }
-                loading={busy}
             >
                 <SharedVaultItem vault={vault} className="mt-3 mb-6" />
 
-                <div className="flex gap-y-3">
-                    {vault.invites?.map((pending) => (
-                        <SharePendingMember
-                            shareId={shareId}
-                            key={pending.inviteId}
-                            email={pending.invitedEmail}
-                            inviteId={pending.inviteId}
-                        />
-                    ))}
+                {vault.shared ? (
+                    <div className="flex flex-column gap-y-3">
+                        {vault.invites?.map((invite) => (
+                            <SharePendingMember
+                                shareId={shareId}
+                                key={invite.inviteId}
+                                email={invite.invitedEmail}
+                                inviteId={invite.inviteId}
+                            />
+                        ))}
 
-                    {vault.members?.map((member) => (
-                        <ShareMember
-                            key={member.email}
-                            email={member.email}
-                            shareId={shareId}
-                            userShareId={member.shareId}
-                            role={member.shareRoleId}
-                            owner={member.owner}
-                        />
-                    ))}
-                </div>
+                        {vault.members?.map((member) => (
+                            <ShareMember
+                                key={member.email}
+                                email={member.email}
+                                shareId={shareId}
+                                userShareId={member.shareId}
+                                role={member.shareRoleId}
+                                owner={member.owner}
+                            />
+                        ))}
+                    </div>
+                ) : (
+                    <div className="absolute-center flex flex-column gap-y-3 text-center color-weak text-sm">
+                        {c('Info')
+                            .t`This vault is not currently shared with anyone. Invite people to share it with others.`}
+                    </div>
+                )}
             </Panel>
         </SidebarModal>
     );
