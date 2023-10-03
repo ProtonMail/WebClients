@@ -25,6 +25,9 @@
       "Add address": [
         "Προσθήκη διεύθυνσης"
       ],
+      "Add birthday": [
+        "Προσθήκη γενεθλίων"
+      ],
       "Add contact": [
         "Προσθήκη επαφής"
       ],
@@ -39,6 +42,9 @@
       ],
       "Add new group": [
         "Προσθήκη νέας ομάδας"
+      ],
+      "Add note": [
+        "Προσθήκη σημείωσης"
       ],
       "Add phone number": [
         "Προσθήκη αριθμού τηλεφώνου"
@@ -957,8 +963,17 @@
       "Birthday": [
         "Γενέθλια"
       ],
+      "Display name": [
+        "Εμφανιζόμενο Όνομα"
+      ],
       "Email": [
         "Email"
+      ],
+      "Enter a display name or nickname": [
+        "Εισαγάγετε ένα εμφανιζόμενο όνομα ή ψευδώνυμο"
+      ],
+      "First name": [
+        "Όνομα"
       ],
       "Gender": [
         "Φύλο"
@@ -968,6 +983,9 @@
       ],
       "Language": [
         "Γλώσσα"
+      ],
+      "Last name": [
+        "Επώνυμο"
       ],
       "Logo": [
         "Λογότυπο"
@@ -1983,6 +2001,9 @@
       "Enter 6 digits": [
         "Εισάγετε 6 ψηφία"
       ],
+      "Error decrypting a computer": [
+        "Σφάλμα κατά την αποκρυπτογράφηση ενός υπολογιστή"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Αδυναμία ανεβάσματος αρχείου \"${ item.name }\", λόγω σφάλματος \"${ error }\""
       ],
@@ -1994,6 +2015,9 @@
       ],
       "File selection is already downloading": [
         "Τα επιλεγμένα αρχεία κατεβαίνουν ήδη"
+      ],
+      "First name is too long": [
+        "Το όνομα είναι πολύ μεγάλο"
       ],
       "Folder \"${ name }\" is already downloading": [
         "Ο φάκελος \"${ name }\" κατεβαίνει ήδη"
@@ -2030,6 +2054,9 @@
       ],
       "Label name cannot be empty.": [
         "Το όνομα ετικέτας δεν γίνεται να είναι κενό."
+      ],
+      "Last name is too long": [
+        "Το επώνυμο είναι πολύ μεγάλο"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Συγχωνεύστε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του ${ BRAND_NAME }",
@@ -2076,6 +2103,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "Παρακαλούμε επιλύστε την τονισμένη διένεξη προς συνέχιση.",
         "Παρακαλούμε επιλύστε τις τονισμένες διενέξεις προς συνέχιση."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Καταχωρίστε είτε όνομα, επώνυμο ή εμφανιζόμενο όνομα"
       ],
       "Port is required": [
         "Απαιτείται θύρα"
@@ -5219,11 +5249,17 @@
       "Filter groups": [
         "Φιλτράρισμα κατά ομάδες"
       ],
+      "First name": [
+        "Όνομα"
+      ],
       "Group name": [
         "Όνομα ομάδας"
       ],
       "Image URL": [
         "URL εικόνας"
+      ],
+      "Last name": [
+        "Επώνυμο"
       ],
       "Name": [
         "Όνομα"
@@ -5766,11 +5802,17 @@
       "CSV field": [
         "CSV πεδίο"
       ],
+      "Display name": [
+        "Εμφανιζόμενο Όνομα"
+      ],
+      "First name": [
+        "Όνομα"
+      ],
       "Import": [
         "Εισαγωγή"
       ],
-      "Name": [
-        "Όνομα"
+      "Last name": [
+        "Επώνυμο"
       ],
       "Values": [
         "Τιμές"
@@ -5857,6 +5899,9 @@
       ],
       "Billing cycle": [
         "Κύκλος χρέωσης"
+      ],
+      "Birthday": [
+        "Γενέθλια"
       ],
       "Browser might run out of memory": [
         "Ο περιηγητής ενδέχεται να ξεμείνει από μνήμη"
@@ -6080,6 +6125,9 @@
       ],
       "No results found": [
         "Κανένα αποτέλεσμα"
+      ],
+      "Notes": [
+        "Σημειώσεις"
       ],
       "Number of files": [
         "Αριθμός αρχείων"
