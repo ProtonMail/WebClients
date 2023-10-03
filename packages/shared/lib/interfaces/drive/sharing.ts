@@ -1,7 +1,7 @@
 import { SessionKey } from '@proton/crypto';
 
 import { AuthVersion } from '../../authentication/interface';
-import { DriveFileBlock } from './file';
+import { DriveFileBlock, Thumbnail } from './file';
 import { LinkType } from './link';
 
 type WithSRPPayload<T extends any> = T & {
@@ -89,9 +89,7 @@ export interface SharedURLRevision {
     SignatureAddress: string;
     Size: number;
     State: number;
-    Thumbnail: number;
-    ThumbnailHash: string;
-    ThumbnailSize: number | null;
+    Thumbnails: Thumbnail[];
     XAttr: string;
 }
 
