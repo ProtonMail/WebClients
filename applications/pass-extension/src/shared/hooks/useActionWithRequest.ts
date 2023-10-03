@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import type { AnyAction } from 'redux';
 
-import { selectRequestStatus } from '@proton/pass/store';
+import { selectRequest } from '@proton/pass/store';
 import type { WithRequest } from '@proton/pass/store/actions/with-request';
 import { uniqueId } from '@proton/pass/utils/string';
 
@@ -49,14 +49,14 @@ export const useActionWithRequest = <P extends any[], R extends WithRequest<AnyA
     );
 
     const dispatch = useDispatch();
-    const status = useSelector(selectRequestStatus(requestId));
+    const req = useSelector(selectRequest(requestId));
 
     useEffect(() => {
         optionsRef.current = options;
     }, [options]);
 
     useEffect(() => {
-        switch (status) {
+        switch (req?.status) {
             case 'start':
                 setLoading(true);
                 return optionsRef.current.onStart?.();
@@ -67,7 +67,9 @@ export const useActionWithRequest = <P extends any[], R extends WithRequest<AnyA
                 setLoading(false);
                 return optionsRef.current.onFailure?.();
         }
-    }, [status]);
+    }, [req?.status]);
+
+    const progress = req?.status === 'start' ? req.progress ?? 0 : 100;
 
     return useMemo(() => {
         const actionCreator = (...args: P) => {
@@ -87,8 +89,9 @@ export const useActionWithRequest = <P extends any[], R extends WithRequest<AnyA
                 action.meta.request.revalidate = true;
                 return dispatch(action);
             },
-            status,
+            status: req?.status,
+            progress,
             loading,
         };
-    }, [requestId, status, loading]);
+    }, [requestId, req?.status, progress, loading]);
 };
