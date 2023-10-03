@@ -1865,8 +1865,14 @@
       "Birthday": [
         "Data de nascimento"
       ],
+      "Display name": [
+        "Nome de exibição"
+      ],
       "Email": [
         "E-mail"
+      ],
+      "First name": [
+        "Primeiro nome"
       ],
       "Gender": [
         "Gênero"
@@ -1876,6 +1882,9 @@
       ],
       "Language": [
         "Idioma"
+      ],
+      "Last name": [
+        "Sobrenome"
       ],
       "Logo": [
         "Logotipo"
@@ -2906,7 +2915,7 @@
         "Obrigado por nos informar"
       ],
       "This is usually nothing to worry about. Just click below to confirm that this ${ BRAND_NAME } Account isn't yours, and we'll disable it.": [
-        "Isso geralmente não é motivo de preocupação. Basta clicar abaixo para confirmar que esta conta ${ BRAND_NAME } não é sua e iremos desativá-la."
+        "Isso geralmente não é motivo de preocupação. Basta clicar abaixo para confirmar que esta conta da ${ BRAND_NAME } não é sua e iremos desativá-la."
       ],
       "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
         "Notamos que essa conta não lhe pertence. Investigaremos e atuaremos de acordo."
@@ -3185,6 +3194,9 @@
       ],
       "Contact signature not verified": [
         "Assinatura do contato não foi verificada"
+      ],
+      "Could not save preference": [
+        "Não foi possível salvar as preferências"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Desmarque pelo menos ${ calendarsToFixCount } calendário",
@@ -4899,7 +4911,7 @@
         "${ CALENDAR_APP_NAME } atualmente não oferece suporte para algumas categorias de eventos, detalhes e formatos."
       ],
       "vCard versions < 3.0": [
-        "versões vCard < 3.0"
+        "Versões vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -6513,7 +6525,7 @@
         "Atualizando a página ou ${ link } irá resolver a maioria dos problemas."
       ],
       "Remember to share the user's sign in details with them.": [
-        "Lembre-se de compartilhar os detalhes de login do usuário com ele."
+        "Lembre-se de compartilhar os detalhes de início de sessão do usuário com ele."
       ],
       "Remove one of your calendars to join this one": [
         "Ative este endereço para juntar-se a este calendário"
@@ -6811,7 +6823,7 @@
         "Este assistente ativará a autenticação de dois fatores (A2F) em sua conta da ${ BRAND_NAME }. A autenticação de dois fatores tornará sua conta da ${ BRAND_NAME_TWO } mais segura, portanto, recomendamos ativá-la."
       ],
       "to ${ product } Business": [
-        "para ${ product } comercial"
+        "para ${ product } Business"
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Para evitar perda de dados, apenas delete se você sabe o que está fazendo ou se exportou uma cópia."
@@ -6967,7 +6979,7 @@
         "Use o melhor servidor de acordo com a carga atual e a posição: ${ formattedBestServerName }"
       ],
       "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Use as diferentes tipos de endereços de e-mail e aliases oferecidas por ${ BRAND_NAME }."
+        "Use os diferentes tipos de endereços de e-mail e aliases oferecidas por ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Use as credenciais a seguir ao se conectar aos servidores ${ VPN_APP_NAME } sem o aplicativo. Exemplo: Tunnelblick no macOS, OpenVPN no GNU/Linux."
@@ -8010,6 +8022,9 @@
       "Conversation grouping": [
         "Agrupamento de conversas"
       ],
+      "Conversations per page": [
+        "Conversas por página"
+      ],
       "Copy": [
         "Copiar"
       ],
@@ -8297,6 +8312,9 @@
       ],
       "Message": [
         "Mensagem"
+      ],
+      "Messages per page": [
+        "Mensagens por página"
       ],
       "Moderate NAT": [
         "NAT moderado"
@@ -9057,7 +9075,7 @@
     },
     "Metadata title": {
       "${ appName }: Sign-in": [
-        "${ appName }: Entrar"
+        "${ appName }: Iniciar sessão"
       ],
       "${ appName }: Sign-up": [
         "${ appName }: Inscrever-se"
@@ -9087,10 +9105,10 @@
         "Email privado e seguro, sem necessidade de cartão de crédito"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
-        "Redefina a senha da sua conta ${ BRAND_NAME }"
+        "Redefina a senha da sua conta da ${ BRAND_NAME }"
       ],
       "Sign in to access your ${ appName } account": [
-        "Faça login para acessar sua conta ${ appName }"
+        "Inicie sessão para acessar sua conta ${ appName }"
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Acesse a sua conta da ${ BRAND_NAME } para ter acesso a todos os serviços criptografados de ${ BRAND_NAME }, como ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e muito mais. Ainda não tem uma conta? Crie uma GRATUITAMENTE."
@@ -9758,6 +9776,17 @@
         "Gerenciamento de equipes"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Sua avaliação termina em ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } com final ${ last4 }"
@@ -9828,8 +9857,8 @@
       "Secure email with advanced features for your everyday communications.": [
         "E-mail seguro com recursos avançados para suas comunicações do dia a dia."
       ],
-      "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
-        "Defina respostas automáticas para informar aos contatos que você não está no escritório ou não pode responder."
+      "Set automatic replies to inform senders you are out of the office or unable to respond.": [
+        "Defina respostas automáticas para informar aos remetentes que você não está no escritório ou não pode responder."
       ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Soluções sob medida para organizações maiores com necessidades específicas de segurança"
@@ -9845,17 +9874,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Sua avaliação termina em ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10021,7 +10039,7 @@
         "Em dias úteis, a equipe de suporte ao cliente da ${ BRAND_NAME } o ajudará em até 24 horas após a sua solicitação."
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Uma conexão VPN permite que um dispositivo se conecte ao ${ BRAND_NAME } de cada vez. Por exemplo, para conectar um telefone e um portátil a ${ BRAND_NAME_TWO } em simultâneo, você precisa de duas conexões VPN."
+        "Uma conexão VPN permite que um dispositivo se conecte a ${ BRAND_NAME } de cada vez. Por exemplo, para conectar um telefone e um portátil a ${ BRAND_NAME_TWO } em simultâneo, você precisa de duas conexões VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opção para visualizar caixas de entrada de usuários não privados da mesma forma que o próprio usuário, incluindo a mensagem completa e os detalhes de contato"
@@ -11343,9 +11361,6 @@
       ]
     },
     "Signup label": {
-      "Confirm email address": [
-        "Confirmar endereço de e-mail"
-      ],
       "Confirm password": [
         "Confirmar senha"
       ],
