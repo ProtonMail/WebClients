@@ -170,3 +170,8 @@ export const isVisible = (element: HTMLElement | null) => {
 
     return true;
 };
+
+export const parseStringToDOM = (content: string, type: DOMParserSupportedType = 'text/html') => {
+    const parser = new DOMParser();
+    return parser.parseFromString(content, type);
+};

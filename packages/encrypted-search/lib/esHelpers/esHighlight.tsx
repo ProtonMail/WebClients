@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
 
+import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
+
 import { DIACRITICS_REGEXP, ES_MAX_INITIAL_CHARS } from '../constants';
 import { HighlightMetadata } from '../models';
 import { esSentryReport } from './esAPI';
@@ -305,8 +307,7 @@ const insertMarksKeywords = (html: Document, normalizedKeywords: string[]) => {
  * Insert the highlighting HTML tags inside an HTML document given as a string
  */
 export const insertMarks = (htmlContent: string, normalizedKeywords: string[], setAutoScroll: boolean) => {
-    const domParser = new DOMParser();
-    const html = domParser.parseFromString(htmlContent, 'text/html');
+    const html = parseStringToDOM(htmlContent);
 
     try {
         insertMarksKeywords(html, normalizedKeywords);
