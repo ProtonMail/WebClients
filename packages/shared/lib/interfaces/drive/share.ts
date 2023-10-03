@@ -2,8 +2,6 @@ export interface CreateDriveShare {
     AddressID: string;
     RootLinkID: string;
     Name: string;
-    Type?: number; // TODO: UNUSED - remove it when BE removes it
-    PermissionsMask: number;
     ShareKey: string;
     SharePassphrase: string;
     SharePassphraseSignature: string;
@@ -22,7 +20,6 @@ export interface ShareMetaShort {
     Locked: boolean;
     VolumeID: string;
     Creator: string;
-    PermissionsMask: 0;
     Flags: number;
     PossibleKeyPackets?: { KeyPacket: string }[];
     VolumeSoftDeleted: boolean;
