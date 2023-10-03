@@ -566,6 +566,9 @@
       "Disallow unsigned mail": [
         "Unsignierte E-Mails blockieren"
       ],
+      "Edit": [
+        "Bearbeiten"
+      ],
       "Edit address": [
         "E-Mail-Adresse bearbeiten"
       ],
@@ -2289,6 +2292,9 @@
       ],
       "Add a name to identify your security key with.": [
         "Füge deinem Sicherheitsschlüssel einen Namen hinzu, um ihn zu identifizieren."
+      ],
+      "Allow platform keys": [
+        "Plattform-Schlüssel zulassen"
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Bist du dir sicher, dass du den Sicherheitsschlüssel ${ name } löschen möchtest?"
@@ -4863,7 +4869,7 @@
         "Schütze die Privatsphäre deiner Familie durch die Kombination aller ${ BRAND_NAME }-Dienste."
       ],
       "Safely access internet from anywhere with essential network monitoring": [
-        "Sicherer Internetzugang von überall aus mit wichtiger Netzwerküberwachung"
+        "Sicherer Internetzugang von überall aus mit grundlegender Netzwerküberwachung"
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Sicherer Cloud-Speicher, mit dem du Dateien einfach und sicher speichern, synchronisieren und gemeinsam nutzen kannst."
@@ -5267,7 +5273,7 @@
         "Secure Core-Konfigurationen"
       ],
       "Select who can access...": [
-        "Auswählen, wer ... zugreifen kann"
+        "Wähle aus, wer darauf zugreifen kann..."
       ],
       "Standard server configs": [
         "Standard-Server-Konfigurationen"
@@ -5549,9 +5555,6 @@
       ]
     },
     "Signup label": {
-      "Confirm email address": [
-        "E-Mail-Adresse bestätigen"
-      ],
       "Confirm password": [
         "Passwort bestätigen"
       ],
