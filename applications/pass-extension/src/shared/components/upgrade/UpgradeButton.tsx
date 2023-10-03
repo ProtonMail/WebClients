@@ -27,7 +27,11 @@ export const UpgradeButton: VFC<UpgradeButtonProps> = ({ className, inline = fal
 
     return (
         <ButtonComponent
-            className={clsx('flex-align-items-center', inline ? 'inline-flex' : 'flex text-sm', className)}
+            className={clsx(
+                'flex-align-items-center flex-nowrap flex-item-noshrink',
+                inline ? 'inline-flex' : 'flex text-sm',
+                className
+            )}
             color="norm"
             onClick={navigateToUpgrade}
             {...(!inline && buttonProps)}
