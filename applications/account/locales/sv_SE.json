@@ -1865,8 +1865,14 @@
       "Birthday": [
         "Födelsedag"
       ],
+      "Display name": [
+        "Visningsnamn"
+      ],
       "Email": [
         "E-post"
+      ],
+      "First name": [
+        "Förnamn"
       ],
       "Gender": [
         "Kön"
@@ -1876,6 +1882,9 @@
       ],
       "Language": [
         "Språk"
+      ],
+      "Last name": [
+        "Efternamn"
       ],
       "Logo": [
         "Logga"
@@ -3185,6 +3194,9 @@
       ],
       "Contact signature not verified": [
         "Kontaktsignatur inte verifierad"
+      ],
+      "Could not save preference": [
+        "Kunde inte spara preferens"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Avmarkera minst ${ calendarsToFixCount } kalender",
@@ -7994,6 +8006,9 @@
       "Conversation grouping": [
         "Gruppering av konversationer"
       ],
+      "Conversations per page": [
+        "Konversationer per sida"
+      ],
       "Copy": [
         "Kopiera"
       ],
@@ -8281,6 +8296,9 @@
       ],
       "Message": [
         "Meddelande"
+      ],
+      "Messages per page": [
+        "Meddelanden per sida"
       ],
       "Moderate NAT": [
         "Måttlig NAT"
@@ -9742,6 +9760,17 @@
         "Teamhantering"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "För att fortsätta använda ${ MAIL_APP_NAME } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Din provperiod slutar den ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutar med ${ last4 }"
@@ -9812,8 +9841,8 @@
       "Secure email with advanced features for your everyday communications.": [
         "Säker e-post med avancerade funktioner för din dagliga kommunikation."
       ],
-      "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
-        "Ställ in automatiska svar för att informera kontakter om att du är borta från kontoret eller inte kan svara."
+      "Set automatic replies to inform senders you are out of the office or unable to respond.": [
+        "Ställ in automatiska svar för att informera avsändare om att du är borta från kontoret eller inte kan svara."
       ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Skräddarsydda lösningar för större organisationer med specifika säkerhetsbehov"
@@ -9829,17 +9858,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du har ett kampanjpris på ditt nuvarande paket. Om du nedgraderar ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du försöker prenumerera igen."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "För att fortsätta använda ${ MAIL_APP_NAME } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Din provperiod slutar den ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11318,9 +11336,6 @@
       ]
     },
     "Signup label": {
-      "Confirm email address": [
-        "Bekräfta e-postadress"
-      ],
       "Confirm password": [
         "Bekräfta lösenord"
       ],

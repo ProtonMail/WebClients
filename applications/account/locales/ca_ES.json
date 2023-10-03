@@ -1119,6 +1119,9 @@
       "Edit": [
         "Edita"
       ],
+      "Edit address": [
+        "Edita l'adreça"
+      ],
       "Enable": [
         "Habilitar"
       ],
@@ -1841,8 +1844,14 @@
       "Birthday": [
         "Aniversari"
       ],
+      "Display name": [
+        "Nom a mostrar"
+      ],
       "Email": [
         "Correu electrònic"
+      ],
+      "First name": [
+        "Nom"
       ],
       "Gender": [
         "Gènere"
@@ -1852,6 +1861,9 @@
       ],
       "Language": [
         "Idioma"
+      ],
+      "Last name": [
+        "Cognom"
       ],
       "Logo": [
         "Logo"
@@ -3079,6 +3091,11 @@
         "${ allCategoryTitlesExceptTheLastOne } i ${ lastCategoryTitle }"
       ]
     },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "S'ha enviat un correu electrònic de verificació a ${ address }."
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "A2F"
@@ -3138,6 +3155,9 @@
       ],
       "Contact signature not verified": [
         "Signatura del contacte no verificada"
+      ],
+      "Could not save preference": [
+        "No s'ha pogut desar la preferència."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Desseleccioneu almenys ${ calendarsToFixCount } calendari",
@@ -4287,6 +4307,9 @@
       "Add a name to identify your security key with.": [
         "Afegiu un nom per identificar la vostra clau de seguretat."
       ],
+      "Allow platform keys": [
+        "Permet les claus de plataforma"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Esteu segur que voleu suprimir la clau de seguretat ${ name }?"
       ],
@@ -4572,6 +4595,9 @@
       ],
       "Set up ${ strongText } from Gmail": [
         "Configura ${ strongText } des de Gmail"
+      ],
+      "This feature is currently unavailable": [
+        "Aquesta característica actualment no està disponible."
       ],
       "Update your logins": [
         "Actualitzeu els inicis de sessió"
@@ -5246,6 +5272,9 @@
         "(${ memberCount } membre)",
         "(${ memberCount } membres)"
       ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice }/mes)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtre si es compleixen totes les condicions següents)"
       ],
@@ -5693,6 +5722,9 @@
       ],
       "Each code can only be used once": [
         "Cada codi només es pot utilitzar una vegada."
+      ],
+      "Edit email address": [
+        "Edita l'adreça de correu"
       ],
       "Edit label": [
         "Edita l'etiqueta"
@@ -6365,6 +6397,9 @@
       "Report link expired": [
         "L'enllaç de notificació ha expirat"
       ],
+      "Resend verification email": [
+        "Reenvia el correu electrònic de verificació"
+      ],
       "Restore": [
         "Restaura"
       ],
@@ -6755,6 +6790,9 @@
       ],
       "Unverified": [
         "Sense verificar"
+      ],
+      "Unverified email address.": [
+        "No s'ha verificat l'adreça de correu electrònic."
       ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "Fins a ${ FAMILY_MAX_USERS } usuaris"
@@ -7791,6 +7829,9 @@
       "Conversation grouping": [
         "Agrupació de conversa"
       ],
+      "Conversations per page": [
+        "Conversacions per pàgina"
+      ],
       "Copy": [
         "Copia"
       ],
@@ -8075,6 +8116,9 @@
       ],
       "Message": [
         "Missatge"
+      ],
+      "Messages per page": [
+        "Missatges per pàgina"
       ],
       "Moderate NAT": [
         "NAT moderat"
@@ -8771,6 +8815,11 @@
         "Importa tots els missatges de ${ selectedItemsToImportCount } etiquetes de ${ itemsToImportCount } i etiqueta'ls com a"
       ]
     },
+    "Maintenance mode": {
+      "This feature is temporarily unavailable": [
+        "Aquesta característica no està disponible temporalment."
+      ]
+    },
     "Maximum calendar links reached warning": {
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
         "Podeu crear fins a ${ MAX_LINKS_PER_CALENDAR } enllaç per calendari. Per a crear un enllaç a aquest calendari, elimineu-ne un de la llista següent.",
@@ -9235,6 +9284,9 @@
       "1 user": [
         "1 usuari"
       ],
+      "24/7 support": [
+        "Suport 24/7"
+      ],
       "99.95% SLA": [
         "SLA del 99,5%"
       ],
@@ -9510,6 +9562,17 @@
         "Gestió d'equips"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el compte es desactivarà."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Per continuar utilitzant ${ MAIL_APP_NAME } amb característiques prèmium, trieu les opcions de subscripció i pagament."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "El període de prova acaba el ${ formattedPeriodEndDate }."
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } acabant en ${ last4 }."
@@ -9574,9 +9637,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "Correu electrònic segur amb funcions avançades per a les vostres comunicacions diàries."
       ],
-      "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
-        "Estableix respostes automàtiques per informar els contactes que sou fora de l'oficina o que no podeu respondre."
-      ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "La solució VPN dedicada que proporciona accés segur, il·limitat i d'alta velocitat a internet."
       ],
@@ -9588,17 +9648,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el compte es desactivarà."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Per continuar utilitzant ${ MAIL_APP_NAME } amb característiques prèmium, trieu les opcions de subscripció i pagament."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "El període de prova acaba el ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -9869,6 +9918,9 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "24/7 support": [
+        "Suport 24/7"
+      ],
       "Access advanced VPN features": [
         "Accedir a funcionalitats de VPN avançades"
       ],
@@ -9893,12 +9945,18 @@
       "Censorship circumvention": [
         "Contorn de la censura"
       ],
+      "Central control panel": [
+        "Panell de control central"
+      ],
       "Cover more ground with support for 10 custom email domains": [
         "Obteniu més opcions amb suport per a 10 dominis de correu personalitzats"
       ],
       "Create up to ${ n } calendar": [
         "Crea fins a ${ n } calendari",
         "Crea fins a ${ n } calendaris"
+      ],
+      "Multi-platform support": [
+        "Suport multiplataforma"
       ],
       "Private gateways": [
         "Passarel·les privades"
@@ -11036,9 +11094,6 @@
       ]
     },
     "Signup label": {
-      "Confirm email address": [
-        "Confirma l'adreça de correu electrònic"
-      ],
       "Confirm password": [
         "Confirmeu la contrasenya"
       ],
@@ -11585,6 +11640,9 @@
       ],
       "Email address copied to clipboard": [
         "Correu electronic copiat al porta-retalls"
+      ],
+      "Email address updated": [
+        "S'ha actualitzat l'adreça de correu electrònic."
       ],
       "Email updated": [
         "Adreça de correu electronic actualitzada"
@@ -12322,6 +12380,9 @@
       "Edit domain": [
         "Edita el domini"
       ],
+      "Edit email address": [
+        "Edita l'adreça de correu"
+      ],
       "Edit filter": [
         "Editar filtre"
       ],
@@ -12611,6 +12672,9 @@
       ],
       "Remove user?": [
         "Voleu suprimir l'usuari?"
+      ],
+      "Rename the gateway": [
+        "Canvia el nom de la passarel·la"
       ],
       "Report a problem": [
         "Notifica un problema"
@@ -13093,6 +13157,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Utilitzeu les barres de desplaçament predeterminades del navegador. Normalment són més grans i més fàcils d'utilitzar"
+      ],
+      "Verified email address": [
+        "Adreça de correu electrònic verificada"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Hem detectat un problema amb la vostra configuració DNS. Assegureu-vos que els vostres registres coincideixin amb les instruccions següents. Si el problema continua, haurem de desactivar la signatura de DKIM."

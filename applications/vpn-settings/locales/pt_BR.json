@@ -3186,7 +3186,7 @@
         "Atualizando a página ou ${ link } irá resolver a maioria dos problemas."
       ],
       "Remember to share the user's sign in details with them.": [
-        "Lembre-se de compartilhar os detalhes de login do usuário com ele."
+        "Lembre-se de compartilhar os detalhes de início de sessão do usuário com ele."
       ],
       "Resend verification email": [
         "Re-enviar e-mail para verificação"
@@ -3352,7 +3352,7 @@
         "Este assistente ativará a autenticação de dois fatores (A2F) em sua conta da ${ BRAND_NAME }. A autenticação de dois fatores tornará sua conta da ${ BRAND_NAME_TWO } mais segura, portanto, recomendamos ativá-la."
       ],
       "to ${ product } Business": [
-        "para ${ product } comercial"
+        "para ${ product } Business"
       ],
       "To cancel your subscription, please reach out to us.": [
         "Para cancelar sua assinatura, entre em contato conosco."
@@ -3442,7 +3442,7 @@
         "Use o melhor servidor de acordo com a carga atual e a posição: ${ formattedBestServerName }"
       ],
       "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Use as diferentes tipos de endereços de e-mail e aliases oferecidas por ${ BRAND_NAME }."
+        "Use os diferentes tipos de endereços de e-mail e aliases oferecidas por ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Use as credenciais a seguir ao se conectar aos servidores ${ VPN_APP_NAME } sem o aplicativo. Exemplo: Tunnelblick no macOS, OpenVPN no GNU/Linux."
@@ -4373,7 +4373,7 @@
     },
     "Metadata title": {
       "${ appName }: Sign-in": [
-        "${ appName }: Entrar"
+        "${ appName }: Iniciar sessão"
       ],
       "${ appName }: Sign-up": [
         "${ appName }: Inscrever-se"
@@ -4391,10 +4391,10 @@
         "Esqueceu o seu nome de usuário ${ BRAND_NAME }? Encontre-o usando seu e-mail ou número de telefone de recuperação e recupere seu acesso aos serviços ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, e muito mais."
       ],
       "Reset your ${ BRAND_NAME } Account password": [
-        "Redefina a senha da sua conta ${ BRAND_NAME }"
+        "Redefina a senha da sua conta da ${ BRAND_NAME }"
       ],
       "Sign in to access your ${ appName } account": [
-        "Faça login para acessar sua conta ${ appName }"
+        "Inicie sessão para acessar sua conta ${ appName }"
       ]
     },
     "Monetary unit": {
@@ -5049,7 +5049,7 @@
         "Em dias úteis, a equipe de suporte ao cliente da ${ BRAND_NAME } o ajudará em até 24 horas após a sua solicitação."
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Uma conexão VPN permite que um dispositivo se conecte ao ${ BRAND_NAME } de cada vez. Por exemplo, para conectar um telefone e um portátil a ${ BRAND_NAME_TWO } em simultâneo, você precisa de duas conexões VPN."
+        "Uma conexão VPN permite que um dispositivo se conecte a ${ BRAND_NAME } de cada vez. Por exemplo, para conectar um telefone e um portátil a ${ BRAND_NAME_TWO } em simultâneo, você precisa de duas conexões VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opção para visualizar caixas de entrada de usuários não privados da mesma forma que o próprio usuário, incluindo a mensagem completa e os detalhes de contato"
@@ -5570,9 +5570,6 @@
       ]
     },
     "Signup label": {
-      "Confirm email address": [
-        "Confirmar endereço de e-mail"
-      ],
       "Confirm password": [
         "Confirmar senha"
       ],

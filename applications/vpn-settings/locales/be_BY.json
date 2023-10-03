@@ -420,7 +420,7 @@
         "Увайсці"
       ],
       "Sign out": [
-        "Выхад з уліковага запісу"
+        "Выйсці з уліковага запісу"
       ],
       "Sign up for free": [
         "Зарэгіструйцеся бясплатна"
@@ -571,6 +571,9 @@
       ],
       "Disallow unsigned mail": [
         "Забар. непадпіс. пошту"
+      ],
+      "Edit": [
+        "Рэдагаваць"
       ],
       "Edit address": [
         "Рэдагаваць адрас"
@@ -2313,7 +2316,7 @@
         "Вы сапраўды хочаце выдаліць ключ бяспекі ${ name }?"
       ],
       "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
-        "Калі ўключана, то гэта дазваляе рэгістраваць убудаваныя ў прыладу дадатковыя знешнія апаратныя ключы бяспекі (такія, як Windows Hello, Touch ID, Face ID, або ўбудаваны TPM)"
+        "Калі ўключана, то гэта дазваляе рэгістраваць убудаваныя прылады доступу (такія, як Windows Hello, Touch ID, Face ID, або ўбудаваны TPM) у дадатак да знешніх апаратных ключоў бяспекі"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Устаўце ключ бяспекі, які звязаны з вашым уліковым запісам ${ BRAND_NAME }."
@@ -5684,9 +5687,6 @@
       ]
     },
     "Signup label": {
-      "Confirm email address": [
-        "Пацвердзіце адрас электроннай пошты"
-      ],
       "Confirm password": [
         "Пацвердзіце пароль"
       ],

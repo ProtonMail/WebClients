@@ -25,6 +25,9 @@
       "Add address": [
         "Aggiungi indirizzo"
       ],
+      "Add birthday": [
+        "Aggiungi compleanno"
+      ],
       "Add contact": [
         "Aggiungi contatto"
       ],
@@ -39,6 +42,9 @@
       ],
       "Add new group": [
         "Aggiungi un nuovo gruppo"
+      ],
+      "Add note": [
+        "Aggiungi nota"
       ],
       "Add phone number": [
         "Aggiungi numero di telefono"
@@ -957,8 +963,17 @@
       "Birthday": [
         "Compleanno"
       ],
+      "Display name": [
+        "Nome visualizzato"
+      ],
       "Email": [
         "Email"
+      ],
+      "Enter a display name or nickname": [
+        "Inserisci un nome visualizzato o un nickname"
+      ],
+      "First name": [
+        "Nome"
       ],
       "Gender": [
         "Sesso"
@@ -968,6 +983,9 @@
       ],
       "Language": [
         "Lingua"
+      ],
+      "Last name": [
+        "Cognome"
       ],
       "Logo": [
         "Logo"
@@ -1154,7 +1172,7 @@
         "Capo Verde"
       ],
       "Cayman Islands": [
-        "Isole Caiman"
+        "Isole Cayman"
       ],
       "Central African Republic": [
         "Repubblica Centrafricana"
@@ -1478,7 +1496,7 @@
         "Montenegro"
       ],
       "Montserrat": [
-        "Montserrato"
+        "Montserrat"
       ],
       "Morocco": [
         "Marocco"
@@ -1487,7 +1505,7 @@
         "Mozambico"
       ],
       "Myanmar": [
-        "Birmania"
+        "Myanmar (Birmania)"
       ],
       "Namibia": [
         "Namibia"
@@ -1790,7 +1808,7 @@
         "Zimbabwe"
       ],
       "Åland Islands": [
-        "Isole Aland"
+        "Isole Åland"
       ]
     },
     "Default display name vcard": {
@@ -1983,6 +2001,9 @@
       "Enter 6 digits": [
         "Inserisci 6 cifre"
       ],
+      "Error decrypting a computer": [
+        "Errore durante la decriptografia di un computer"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Impossibile caricare il file \"${ item.name }\" a causa dell'errore \"${ error }\""
       ],
@@ -1994,6 +2015,9 @@
       ],
       "File selection is already downloading": [
         "La selezione del file è già in fase di download"
+      ],
+      "First name is too long": [
+        "Il nome è troppo lungo"
       ],
       "Folder \"${ name }\" is already downloading": [
         "La cartella \"${ name }\" è già in fase di download"
@@ -2030,6 +2054,9 @@
       ],
       "Label name cannot be empty.": [
         "Il nome dell'etichetta non può essere vuoto."
+      ],
+      "Last name is too long": [
+        "Il cognome è troppo lungo"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Unisci almeno ${ calendarsToFixCount } calendario con un calendario ${ BRAND_NAME } esistente",
@@ -2076,6 +2103,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "Correggi il conflitto evidenziato per procedere.",
         "Correggi i conflitti evidenziati per procedere."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Fornisci un nome, un cognome o un nome visualizzato"
       ],
       "Port is required": [
         "La porta è obbligatoria"
@@ -2622,10 +2652,10 @@
     },
     "familyOffer_2023:Tooltip": {
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Include 2700 server in più di 65 Paesi, possibilità di connettere fino a 10 dispositivi, accesso a servizi di streaming in tutto il mondo, blocco di malware e adblocker, e altro ancora."
+        "Include 2700 server in più di 65 Paesi, possibilità di connettere fino a 10 dispositivi, accesso a servizi di streaming in tutto il mondo, blocco di malware e annunci, e molto altro."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Include il supporto per 3 domini email personalizzati, 90 indirizzi email, alias Hide-my-email illimitati, condivisione del calendario e altro ancora."
+        "Include il supporto per 3 domini email personalizzati, 90 indirizzi email, alias Hide-my-email illimitati, condivisione del calendario e molto altro."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteggi i tuoi file con l'archiviazione cloud crittografata. Include la sincronizzazione automatica, la condivisione crittografata dei file e molto altro."
@@ -3542,7 +3572,7 @@
         "Indicizzazione dei risultati di ricerca…"
       ],
       "Inherited from parent folder": [
-        "Ereditato dalla cartella superiore"
+        "Ereditato dalla cartella principale"
       ],
       "Initializing": [
         "Inizializzazione"
@@ -3629,7 +3659,7 @@
         "I miei link"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "Dai un nome alla tua cartella e selezione la cartella genitore nella quale deve essere contenuta. Se non selezioni la cartella genitore questa cartella verrà creata come una cartella di primo livello."
+        "Dai un nome alla tua cartella e seleziona la cartella principale nella quale deve verrà contenuta. Se non selezioni una cartella principale, questa nuova cartella verrà creata come una cartella di primo livello."
       ],
       "Need to share a file? Then get ${ DRIVE_APP_NAME },\nthe safest way to share, store, and sync your files.": [
         "Hai bisogno di condividere un file? Utilizza ${ DRIVE_APP_NAME },\nil modo più sicuro per condividere, archiviare e sincronizzare i tuoi file."
@@ -5129,7 +5159,7 @@
         "Scopri tutti i servizi ${ BRAND_NAME }"
       ],
       "More theming options are available in your account Settings > Appearance.": [
-        "Sono disponibili ulteriori opzioni di personalizzazione del tema nelle Impostazioni del tuo account, nella sezione Aspetto."
+        "Sono disponibili più opzioni di personalizzazione del tema nelle Impostazioni del tuo account, nella sezione Aspetto."
       ],
       "Select a theme": [
         "Seleziona un tema"
@@ -5160,7 +5190,7 @@
         "Ignora gruppo"
       ],
       "No parent folder": [
-        "Nessuna cartella superiore"
+        "Nessuna cartella principale"
       ]
     },
     "Option group label": {
@@ -5219,11 +5249,17 @@
       "Filter groups": [
         "Filtra gruppi"
       ],
+      "First name": [
+        "Nome"
+      ],
       "Group name": [
         "Nome gruppo"
       ],
       "Image URL": [
         "URL dell'immagine"
+      ],
+      "Last name": [
+        "Cognome"
       ],
       "Name": [
         "Nome"
@@ -5541,22 +5577,22 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Accedi a contenuti bloccati e naviga in modalità privata. Include 1700 server in più di 60 Paesi, le più elevate velocità di VPN, 10 connessioni alla VPN per utente, servizi di streaming in tutto il mondo, blocco di malware e adblocker, e altro ancora."
+        "Accedi a contenuti bloccati e naviga in modalità privata. Include 1700 server in più di 60 Paesi, le più elevate velocità VPN, 10 connessioni VPN per utente, servizi di streaming in tutto il mondo, blocco di malware e annunci, e molto altro."
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Accedi a contenuti bloccati e naviga in modalità privata. Include 1700 server in più di 60 Paesi, le più elevate velocità di VPN, 10 connessioni alla VPN, servizi di streaming in tutto il mondo, blocco di malware e adblocker, e altro ancora."
+        "Accedi a contenuti bloccati e naviga in modalità privata. Include 1700 server in più di 60 Paesi, le più elevate velocità VPN, 10 connessioni VPN, servizi di streaming in tutto il mondo, blocco di malware e annunci, e molto altro."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Accedi ai contenuti dei servizi di streaming, tra cui Netflix, Disney+ e Prime Video, da qualsiasi luogo."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Tutti i nostri servizi premium con il massimo dei limiti: 100 indirizzi email, supporto per 10 domini personalizzati, alias Hide-my-email illimitati, condivisione dei calendari, archiviazione sul cloud e condivisione dei file crittografati, e altro ancora."
+        "Tutti i nostri servizi premium con il massimo dei limiti: 100 indirizzi email, supporto per 10 domini personalizzati, alias Hide-my-email illimitati, condivisione dei calendari, archiviazione sul cloud e condivisione dei file crittografati, e molto altro."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Include il supporto per 1 dominio email personalizzato, 10 indirizzi email, 10 alias Hide-my-email, condivisione del calendario e altro ancora."
+        "Include il supporto per 1 dominio email personalizzato, 10 indirizzi email, 10 alias Hide-my-email, condivisione del calendario e molto altro."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Include il supporto per 3 domini email personalizzati, 15 indirizzi email, alias Hide-my-email illimitati, condivisione del calendario e altro ancora."
+        "Include il supporto per 3 domini email personalizzati, 15 indirizzi email, alias Hide-my-email illimitati, condivisione del calendario e molto altro."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Perfetto per famiglie o team di piccole dimensioni, ogni persona può avere la propria casella di posta e il proprio alias. È necessario un dominio personalizzato."
@@ -5766,11 +5802,17 @@
       "CSV field": [
         "Campo CSV"
       ],
+      "Display name": [
+        "Nome visualizzato"
+      ],
+      "First name": [
+        "Nome"
+      ],
       "Import": [
         "Importa"
       ],
-      "Name": [
-        "Nome"
+      "Last name": [
+        "Cognome"
       ],
       "Values": [
         "Valori"
@@ -5857,6 +5899,9 @@
       ],
       "Billing cycle": [
         "Ciclo di fatturazione"
+      ],
+      "Birthday": [
+        "Compleanno"
       ],
       "Browser might run out of memory": [
         "Il browser potrebbe esaurire la memoria"
@@ -6080,6 +6125,9 @@
       ],
       "No results found": [
         "Nessun risultato trovato"
+      ],
+      "Notes": [
+        "Note"
       ],
       "Number of files": [
         "Numero di file"

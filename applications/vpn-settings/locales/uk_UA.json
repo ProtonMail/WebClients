@@ -572,6 +572,9 @@
       "Disallow unsigned mail": [
         "Заборонити непідписані листи"
       ],
+      "Edit": [
+        "Змінити"
+      ],
       "Edit address": [
         "Редагувати адресу"
       ],
@@ -2306,8 +2309,14 @@
       "Add a name to identify your security key with.": [
         "Додайте назву своєму ключу безпеки."
       ],
+      "Allow platform keys": [
+        "Дозволити ключі платформи"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Ви дійсно хочете видалити ключ безпеки ${ name }?"
+      ],
+      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
+        "Коли включено, дозволяється зареєструвати вбудовані пристрої (такі як Windows Hello, TouchID, FaceID, або вбудовані TPM) в додаток до зовнішніх апаратних ключів безпеки"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Вставте ключ безпеки, прив'язаний до вашого облікового запису ${ BRAND_NAME }."
@@ -5678,9 +5687,6 @@
       ]
     },
     "Signup label": {
-      "Confirm email address": [
-        "Підтвердьте електрону адресу"
-      ],
       "Confirm password": [
         "Підтвердити пароль"
       ],
@@ -5945,7 +5951,7 @@
     },
     "State": {
       "Cancelling your subscription, please wait": [
-        "Скасування вашої підписки, будь ласка, зачекайте..."
+        "Зачекайте поки триває скасування вашої передплати..."
       ],
       "Downgrading your account, please wait": [
         "Триває перехід на тарифний план нижчого рівня. Будь ласка, зачекайте"

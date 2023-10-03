@@ -25,6 +25,9 @@
       "Add address": [
         "Ajouter une adresse"
       ],
+      "Add birthday": [
+        "Ajouter une date de naissance"
+      ],
       "Add contact": [
         "Ajouter un contact"
       ],
@@ -39,6 +42,9 @@
       ],
       "Add new group": [
         "Ajouter un nouveau groupe"
+      ],
+      "Add note": [
+        "Ajouter une note"
       ],
       "Add phone number": [
         "Ajouter un numéro de téléphone"
@@ -957,8 +963,17 @@
       "Birthday": [
         "Date de naissance"
       ],
+      "Display name": [
+        "Nom d'affichage"
+      ],
       "Email": [
         "Adresse e-mail"
+      ],
+      "Enter a display name or nickname": [
+        "Saisissez un nom d'affichage ou un surnom."
+      ],
+      "First name": [
+        "Prénom"
       ],
       "Gender": [
         "Genre"
@@ -968,6 +983,9 @@
       ],
       "Language": [
         "Langue"
+      ],
+      "Last name": [
+        "Nom"
       ],
       "Logo": [
         "Logo"
@@ -1983,6 +2001,9 @@
       "Enter 6 digits": [
         "Saisissez 6 chiffres."
       ],
+      "Error decrypting a computer": [
+        "Une erreur s'est produite lors du déchiffrement d'un ordinateur."
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Le fichier « ${ item.name } » ne peut pas être chargé en raison de l'erreur « ${ error } »."
       ],
@@ -1994,6 +2015,9 @@
       ],
       "File selection is already downloading": [
         "Les fichiers sélectionnés sont déjà en cours de téléchargement."
+      ],
+      "First name is too long": [
+        "Le prénom est trop long."
       ],
       "Folder \"${ name }\" is already downloading": [
         "Le dossier « ${ name } » est déjà en cours de téléchargement."
@@ -2030,6 +2054,9 @@
       ],
       "Label name cannot be empty.": [
         "Le nom du label ne peut pas être vide."
+      ],
+      "Last name is too long": [
+        "Le nom de famille est trop long."
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Fusionnez au moins ${ calendarsToFixCount } calendrier avec un calendrier ${ BRAND_NAME } existant.",
@@ -2076,6 +2103,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "Corrigez le conflit en surbrillance pour continuer.",
         "Corrigez les conflits en surbrillance pour continuer."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Indiquez un prénom, un nom de famille ou un nom d'affichage."
       ],
       "Port is required": [
         "Le port est nécessaire."
@@ -3211,7 +3241,7 @@
         "Voulez-vous vraiment abandonner vos modifications ?"
       ],
       "Are you sure you want to discard your import?": [
-        "Voulez-vous vraiment annuler votre importation ?"
+        "Voulez-vous vraiment abandonner votre importation ?"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Voulez-vous vraiment vider le dossier Corbeille et définitivement supprimer tous les éléments ?"
@@ -4850,7 +4880,7 @@
         "Rechercher dans le contenu des messages"
       ],
       "Unlimited folders, labels, and filters": [
-        "Dossiers, labels et filtres illimités"
+        "Nombre illimité de dossiers, de labels et de filtres"
       ],
       "Up to 15 email addresses": [
         "Jusqu'à 15 adresses e-mail"
@@ -5219,11 +5249,17 @@
       "Filter groups": [
         "Filtrer les groupes"
       ],
+      "First name": [
+        "Prénom"
+      ],
       "Group name": [
         "Nom du groupe"
       ],
       "Image URL": [
         "URL de l'image"
+      ],
+      "Last name": [
+        "Nom"
       ],
       "Name": [
         "Nom"
@@ -5766,10 +5802,16 @@
       "CSV field": [
         "Champ CSV"
       ],
+      "Display name": [
+        "Nom d'affichage"
+      ],
+      "First name": [
+        "Prénom"
+      ],
       "Import": [
         "Importer"
       ],
-      "Name": [
+      "Last name": [
         "Nom"
       ],
       "Values": [
@@ -5857,6 +5899,9 @@
       ],
       "Billing cycle": [
         "Cycle de facturation"
+      ],
+      "Birthday": [
+        "Date de naissance"
       ],
       "Browser might run out of memory": [
         "Le navigateur est peut-être à court de mémoire."
@@ -6080,6 +6125,9 @@
       ],
       "No results found": [
         "Aucun résultat n'a été trouvé."
+      ],
+      "Notes": [
+        "Notes"
       ],
       "Number of files": [
         "Nombre de fichiers"
@@ -6410,7 +6458,7 @@
         "Voulez-vous vraiment supprimer définitivement ${ count } contacts ?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
-        "Êtes-vous sûr de vouloir supprimer définitivement ce groupe de contacts ?"
+        "Voulez-vous vraiment supprimer définitivement ce groupe de contacts ?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Voulez-vous vraiment supprimer définitivement ce groupe de contacts ?"
