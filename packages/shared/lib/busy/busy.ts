@@ -70,7 +70,7 @@ export const domIsBusy = () => {
     /*
      * These verifications perform some dom querying operations so in
      * order to not unnecessarily waste performance we return early
-     * should any of the conditions fail before evaluationg all of them
+     * should any of the conditions fail before evaluating all of them
      */
     if (isDialogOpen()) {
         return true;

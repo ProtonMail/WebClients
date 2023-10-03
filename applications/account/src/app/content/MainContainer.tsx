@@ -28,6 +28,7 @@ import {
 } from '@proton/components';
 import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
+import { useIsSessionRecoveryAvailable } from '@proton/components/hooks/useSessionRecovery';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { getToApp } from '@proton/shared/lib/authentication/apps';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
@@ -128,7 +129,8 @@ const MainContainer = () => {
     const isOrgTwoFactorEnabled = getFeature(FeatureCode.OrgTwoFactor).feature?.Value === true;
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
-    const loadingFeatures = featuresFlags.some(({ loading }) => loading) || loadingDataRecovery;
+    const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
+    const loadingFeatures = featuresFlags.some(({ loading }) => loading);
     const recoveryNotification = useRecoveryNotification(false);
 
     const appFromPathname = getAppFromPathnameSafe(location.pathname);
@@ -144,6 +146,7 @@ const MainContainer = () => {
         isReferralProgramEnabled: referralProgramFeature?.feature?.Value && userSettings.Referral?.Eligible,
         isSmtpTokenEnabled,
         isDataRecoveryAvailable,
+        isSessionRecoveryAvailable,
         isGmailSyncEnabled,
         recoveryNotification: recoveryNotification?.color,
         isOrgSpamBlockListEnabled,
@@ -221,7 +224,13 @@ const MainContainer = () => {
     );
 
     const redirect = (() => {
-        if (loadingOrganization || loadingFeatures || loadingSubscription) {
+        if (
+            loadingOrganization ||
+            loadingFeatures ||
+            loadingSubscription ||
+            loadingDataRecovery ||
+            loadingIsSessionRecoveryAvailable
+        ) {
             return <PrivateMainAreaLoading />;
         }
 
