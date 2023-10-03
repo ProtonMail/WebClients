@@ -25,6 +25,9 @@
       "Add address": [
         "Додати адресу"
       ],
+      "Add birthday": [
+        "Додати день народження"
+      ],
       "Add contact": [
         "Додати контакт"
       ],
@@ -39,6 +42,9 @@
       ],
       "Add new group": [
         "Додати нову групу"
+      ],
+      "Add note": [
+        "Додати нотатку"
       ],
       "Add phone number": [
         "Додати номер телефону"
@@ -953,8 +959,17 @@
       "Birthday": [
         "День народження"
       ],
+      "Display name": [
+        "Ім'я для показу"
+      ],
       "Email": [
         "Е-пошта"
+      ],
+      "Enter a display name or nickname": [
+        "Введіть ім'я для показу або псевдонім"
+      ],
+      "First name": [
+        "Ім'я"
       ],
       "Gender": [
         "Стать"
@@ -964,6 +979,9 @@
       ],
       "Language": [
         "Мова"
+      ],
+      "Last name": [
+        "Прізвище"
       ],
       "Logo": [
         "Логотип"
@@ -1985,6 +2003,9 @@
       "Enter 6 digits": [
         "Введіть 6 цифр"
       ],
+      "Error decrypting a computer": [
+        "Помилка при розшифруванні пристрою"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Не вдалося вивантажити файл \"${ item.name }\" через помилку \"${ error }\""
       ],
@@ -1996,6 +2017,9 @@
       ],
       "File selection is already downloading": [
         "Вибрані файли вже завантажуються"
+      ],
+      "First name is too long": [
+        "Ім'я занадто довге"
       ],
       "Folder \"${ name }\" is already downloading": [
         "Тека \"${ name }\" вже завантажується"
@@ -2032,6 +2056,9 @@
       ],
       "Label name cannot be empty.": [
         "Мітка не може бути без назви."
+      ],
+      "Last name is too long": [
+        "Прізвище занадто довге"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Об'єднайте принаймні ${ calendarsToFixCount } календар з наявним календарем ${ BRAND_NAME }",
@@ -2086,6 +2113,9 @@
         "Виправте вказані проблеми, щоб продовжити.",
         "Виправте вказані проблеми, щоб продовжити.",
         "Виправте вказані проблеми, щоб продовжити."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Введіть ім'я, прізвище або ім'я для показу"
       ],
       "Port is required": [
         "Порт обов'язковий"
@@ -3814,6 +3844,9 @@
       "Please enter the password to decrypt and view content.": [
         "Введіть пароль, щоб розшифрувати та переглянути вміст."
       ],
+      "Please note that addresses assigned to these groups will NOT be deleted.": [
+        "Зауважте, що адреси, призначені цим групам, НЕ будуть видалені."
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Зауважте, що адреси, призначені цій групі, не будуть видалені."
       ],
@@ -5378,11 +5411,17 @@
       "Filter groups": [
         "Фільтр груп"
       ],
+      "First name": [
+        "Ім'я"
+      ],
       "Group name": [
         "Назва групи"
       ],
       "Image URL": [
         "URL-адреса зображення"
+      ],
+      "Last name": [
+        "Прізвище"
       ],
       "Name": [
         "Назва"
@@ -5949,11 +5988,17 @@
       "CSV field": [
         "Поле CSV"
       ],
+      "Display name": [
+        "Ім'я"
+      ],
+      "First name": [
+        "Ім'я"
+      ],
       "Import": [
         "Імпорт"
       ],
-      "Name": [
-        "Ім'я"
+      "Last name": [
+        "Прізвище"
       ],
       "Values": [
         "Значення"
@@ -6062,6 +6107,9 @@
       ],
       "Billing cycle": [
         "Платіжний цикл"
+      ],
+      "Birthday": [
+        "День народження"
       ],
       "Browser might run out of memory": [
         "Браузер може вичерпати пам'ять"
@@ -6293,6 +6341,9 @@
       ],
       "No results found": [
         "Результатів не знайдено"
+      ],
+      "Notes": [
+        "Нотатки"
       ],
       "Number of files": [
         "Кількість файлів"
@@ -6629,6 +6680,9 @@
         "Ви дійсно хочете остаточно видалити ${ count } контакти?",
         "Ви дійсно хочете остаточно видалити ${ count } контактів?",
         "Ви дійсно хочете остаточно видалити ${ count } контактів?"
+      ],
+      "Are you sure you want to permanently delete these contact groups?": [
+        "Ви дійсно бажаєте остаточно видалити ці групи контактів?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Ви дійсно бажаєте остаточно видалити цю групу контактів?"
