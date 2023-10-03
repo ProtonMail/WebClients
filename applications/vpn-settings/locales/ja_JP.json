@@ -563,6 +563,9 @@
       "Disallow unsigned mail": [
         "署名のないメールを拒否する"
       ],
+      "Edit": [
+        "編集"
+      ],
       "Edit address": [
         "アドレスを編集"
       ],
@@ -1671,6 +1674,11 @@
         "改善にご協力してください!"
       ]
     },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "確認メールが ${ address } に送信されました"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "2要素認証"
@@ -2277,8 +2285,14 @@
       "Add a name to identify your security key with.": [
         "セキュリティキーに名前を付けます。"
       ],
+      "Allow platform keys": [
+        "プラットフォームキーを許可する"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "セキュリティキー ${ name } を削除してよろしいですか？"
+      ],
+      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
+        "有効にすると、外部ハードウェアセキュリティキーに加えて、内蔵デバイス(Windows Hello、TouchID、FaceID、内蔵TPMなど)を登録できるようになります。"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "${ BRAND_NAME } アカウントに紐づけられたセキュリティキーを挿入してください。"
@@ -2547,6 +2561,9 @@
       ],
       "(${ serverPrice } /month)": [
         "(${ serverPrice } /月)"
+      ],
+      "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "**${ BRAND_NAME } アドレス**を取得すると、${ MAIL_SHORT_APP_NAME } や ${ CALENDAR_SHORT_APP_NAME } を含むすべての ${ BRAND_NAME_TWO } サービスを使用できます。"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ボーナスストレージ"
@@ -2905,6 +2922,9 @@
       "inactive": [
         "非アクティブ"
       ],
+      "Increase your account security by verifying your email address.": [
+        "Eメールアドレスを確認することで、アカウントのセキュリティを高めることができます。"
+      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "選択した国のランダムなサーバーに接続するため国の構築ファイルをインストールします。"
       ],
@@ -3139,6 +3159,9 @@
       "Remember to share the user's sign in details with them.": [
         "ユーザーのサインイン情報を共有することを忘れないでください。"
       ],
+      "Resend verification email": [
+        "認証メールを再送する"
+      ],
       "Restore": [
         "復元"
       ],
@@ -3156,6 +3179,9 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "アカウント設定のために、2 要素認証デバイスでこのコードをスキャンしてしてください。${ switchButton }"
+      ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "${ BRAND_NAME } アカウントを保護する"
       ],
       "Securing your account": [
         "アカウントを安全にしています"
@@ -3511,6 +3537,9 @@
       "You can customize and download your invoices for accounting purposes.": [
         "会計用に請求書をカスタマイズしてダウンロードする事ができます。"
       ],
+      "You can edit this once to ensure the correct email address for verification.": [
+        "確認のための正しいメールアドレスを確認するために、一度編集することができます。"
+      ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
         "プラン内の IP アドレスの番号に ${ specificCountryCount } を追加することで、上記の設定をすぐにロック解除できます。または、カスタマイズされたソリューションについては当社までご連絡ください。"
       ],
@@ -3812,6 +3841,9 @@
       ],
       "Config to connect to ${ serverName }": [
         "${ serverName } に接続する"
+      ],
+      "Confirm email": [
+        "メールの確認"
       ],
       "Confirm login password": [
         "ログインパスワードの確認"
@@ -5457,9 +5489,6 @@
       ]
     },
     "Signup label": {
-      "Confirm email address": [
-        "メールアドレスの確認"
-      ],
       "Confirm password": [
         "パスワードの確認"
       ],

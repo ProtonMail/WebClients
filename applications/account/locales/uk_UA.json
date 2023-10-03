@@ -1134,6 +1134,9 @@
       "Disallow unsigned mail": [
         "Заборонити непідписані листи"
       ],
+      "Edit": [
+        "Змінити"
+      ],
       "Edit address": [
         "Редагувати адресу"
       ],
@@ -1872,8 +1875,14 @@
       "Birthday": [
         "День народження"
       ],
+      "Display name": [
+        "Ім'я для показу"
+      ],
       "Email": [
         "Е-пошта"
+      ],
+      "First name": [
+        "Ім'я"
       ],
       "Gender": [
         "Стать"
@@ -1883,6 +1892,9 @@
       ],
       "Language": [
         "Мова"
+      ],
+      "Last name": [
+        "Прізвище"
       ],
       "Logo": [
         "Логотип"
@@ -3203,6 +3215,9 @@
       "Contact signature not verified": [
         "Підпис для контакту не перевірено"
       ],
+      "Could not save preference": [
+        "Не вдалося зберегти налаштування"
+      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Скасуйте вибір принаймні ${ calendarsToFixCount } календаря",
         "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів",
@@ -4387,8 +4402,14 @@
       "Add a name to identify your security key with.": [
         "Додайте назву своєму ключу безпеки."
       ],
+      "Allow platform keys": [
+        "Дозволити ключі платформи"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Ви дійсно хочете видалити ключ безпеки ${ name }?"
+      ],
+      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
+        "Коли включено, дозволяється зареєструвати вбудовані пристрої (такі як Windows Hello, TouchID, FaceID, або вбудовані TPM) в додаток до зовнішніх апаратних ключів безпеки"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Вставте ключ безпеки, прив'язаний до вашого облікового запису ${ BRAND_NAME }."
@@ -4682,6 +4703,9 @@
       ],
       "Set up ${ strongText } from Gmail": [
         "Налаштуйте ${ strongText } із Gmail"
+      ],
+      "This feature is currently unavailable": [
+        "Ця функція наразі недоступна"
       ],
       "Update your logins": [
         "Оновіть свої записи входу"
@@ -8155,6 +8179,9 @@
       "Conversation grouping": [
         "Групування розмов"
       ],
+      "Conversations per page": [
+        "Розмов на сторінку"
+      ],
       "Copy": [
         "Копіювати"
       ],
@@ -8442,6 +8469,9 @@
       ],
       "Message": [
         "Повідомлення"
+      ],
+      "Messages per page": [
+        "Повідомлень на сторінку"
       ],
       "Moderate NAT": [
         "Помірна NAT"
@@ -9961,6 +9991,17 @@
         "Керування командою"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Ваш пробний період завершується ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, що закінчується на ${ last4 }"
@@ -10031,8 +10072,8 @@
       "Secure email with advanced features for your everyday communications.": [
         "Захищена електронна пошта з розширеними можливостями для щоденного спілкування."
       ],
-      "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
-        "Налаштуйте автоматичні відповіді для інформування ваших контактів, що ви маєте обмежений доступ до електронної пошти й тому не можете відповісти."
+      "Set automatic replies to inform senders you are out of the office or unable to respond.": [
+        "Налаштуйте автоматичні відповіді для інформування відправників, що ви поза офісом або не можете відповісти."
       ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Індивідуальні рішення для великих організацій зі специфічними потребами у сфері безпеки"
@@ -10048,17 +10089,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ви користуєтеся спеціальною ціною чинного тарифного плану. Якщо ви понизите свій обліковий запис, то втратите спеціальну ціну передплати й більше не зможете скористатися нею, коли вирішите знову його передплатити."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Ваш пробний період завершується ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11563,9 +11593,6 @@
       ]
     },
     "Signup label": {
-      "Confirm email address": [
-        "Підтвердьте електрону адресу"
-      ],
       "Confirm password": [
         "Підтвердити пароль"
       ],
@@ -11855,7 +11882,7 @@
     },
     "State": {
       "Cancelling your subscription, please wait": [
-        "Скасування вашої підписки, будь ласка, зачекайте..."
+        "Зачекайте поки триває скасування вашої передплати..."
       ],
       "Downgrading your account, please wait": [
         "Триває перехід на тарифний план нижчого рівня. Будь ласка, зачекайте"
@@ -13797,6 +13824,11 @@
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
         "Це автоматично додає ваш відкритий ключ до кожного повідомлення, яке ви надсилаєте. Отримувачі можуть використовувати його для перевірки надійності ваших повідомлень і надсилання вам зашифрованих повідомлень."
+      ]
+    },
+    "Tooltip default pgp scheme": {
+      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
+        "Виберіть типові налаштування PGP, що використовуються для підписування чи шифрування повідомлень для отримувачів, які використовують PGP за межами ${ BRAND_NAME }. Зауважте, що вбудований PGP примусово перетворює вміст повідомлень у формат звичайного тексту."
       ]
     },
     "Tooltip prompt to trust keys": {

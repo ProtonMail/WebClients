@@ -1128,6 +1128,9 @@
       "Disallow unsigned mail": [
         "Unsignierte E-Mails blockieren"
       ],
+      "Edit": [
+        "Bearbeiten"
+      ],
       "Edit address": [
         "E-Mail-Adresse bearbeiten"
       ],
@@ -1862,8 +1865,14 @@
       "Birthday": [
         "Geburtstag"
       ],
+      "Display name": [
+        "Anzeigename"
+      ],
       "Email": [
         "E-Mail"
+      ],
+      "First name": [
+        "Vorname"
       ],
       "Gender": [
         "Geschlecht"
@@ -1873,6 +1882,9 @@
       ],
       "Language": [
         "Sprache"
+      ],
+      "Last name": [
+        "Nachname"
       ],
       "Logo": [
         "Logo"
@@ -4346,6 +4358,9 @@
       ],
       "Add a name to identify your security key with.": [
         "Füge deinem Sicherheitsschlüssel einen Namen hinzu, um ihn zu identifizieren."
+      ],
+      "Allow platform keys": [
+        "Plattform-Schlüssel zulassen"
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Bist du dir sicher, dass du den Sicherheitsschlüssel ${ name } löschen möchtest?"
@@ -7995,6 +8010,9 @@
       "Conversation grouping": [
         "Themen gruppieren"
       ],
+      "Conversations per page": [
+        "Unterhaltungen pro Seite"
+      ],
       "Copy": [
         "Kopieren"
       ],
@@ -8282,6 +8300,9 @@
       ],
       "Message": [
         "Nachricht"
+      ],
+      "Messages per page": [
+        "Nachrichten pro Seite"
       ],
       "Moderate NAT": [
         "Moderates NAT"
@@ -9743,6 +9764,17 @@
         "Teamverwaltung"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Um ${ MAIL_APP_NAME } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Deine Testversion endet am ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } mit den Endziffern ${ last4 }"
@@ -9802,7 +9834,7 @@
         "Schütze die Privatsphäre deiner Familie durch die Kombination aller ${ BRAND_NAME }-Dienste."
       ],
       "Safely access internet from anywhere with essential network monitoring": [
-        "Sicherer Internetzugang von überall aus mit wichtiger Netzwerküberwachung"
+        "Sicherer Internetzugang von überall aus mit grundlegender Netzwerküberwachung"
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Sicherer Cloud-Speicher, mit dem du Dateien einfach und sicher speichern, synchronisieren und gemeinsam nutzen kannst."
@@ -9813,8 +9845,8 @@
       "Secure email with advanced features for your everyday communications.": [
         "Sichere E-Mails mit erweiterten Funktionen für deine tägliche Kommunikation."
       ],
-      "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
-        "Lege automatische Antworten fest, um Kontakte darüber zu informieren, dass du nicht im Büro bist oder nicht antworten kannst."
+      "Set automatic replies to inform senders you are out of the office or unable to respond.": [
+        "Lege automatische Antworten fest, um Absender darüber zu informieren, dass du nicht im Büro bist oder nicht antworten kannst."
       ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Maßgeschneiderte Lösungen für größere Organisationen mit spezifischen Sicherheitsanforderungen"
@@ -9830,17 +9862,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto downgradest, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Um ${ MAIL_APP_NAME } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Deine Testversion endet am ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10492,7 +10513,7 @@
         "Secure Core-Konfigurationen"
       ],
       "Select who can access...": [
-        "Auswählen, wer ... zugreifen kann"
+        "Wähle aus, wer darauf zugreifen kann..."
       ],
       "Standard server configs": [
         "Standard-Server-Konfigurationen"
@@ -10769,7 +10790,7 @@
         "Quelloffen und unabhängig geprüft"
       ],
       "per month, billed annually": [
-        "pro Monat, Abrechnung jedes Jahr"
+        "pro Monat, jährliche Abrechnung"
       ],
       "per month, billed every 15 months": [
         "pro Monat, Abrechnung alle 15 Monate"
@@ -10778,7 +10799,7 @@
         "pro Monat, Abrechnung alle 30 Monate"
       ],
       "per month, billed every month": [
-        "pro Monat, Abrechnung jeden Monat"
+        "pro Monat, monatliche Abrechnung"
       ],
       "per month, billed every two years": [
         "pro Monat, Abrechnung alle zwei Jahre"
@@ -10790,7 +10811,7 @@
         "Geschützt durch Schweizer Datenschutzgesetze"
       ],
       "Save your recovery kit to continue": [
-        "Lade dein Wiederherstellungs-Kit herunter, um fortzufahren"
+        "Lade dein Wiederherstellungs-Kit herunter, um fortzufahren."
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Anmelden bei ${ PASS_APP_NAME }"
@@ -11319,9 +11340,6 @@
       ]
     },
     "Signup label": {
-      "Confirm email address": [
-        "E-Mail-Adresse bestätigen"
-      ],
       "Confirm password": [
         "Passwort bestätigen"
       ],

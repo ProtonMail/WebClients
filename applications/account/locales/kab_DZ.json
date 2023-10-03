@@ -2650,6 +2650,9 @@
       "Back to ${ signIn }.": [
         "Uɣal ɣer ${ signIn }."
       ],
+      "Didn't create an account?": [
+        "Ur d-tesnulfaḍ ara amiḍan?"
+      ],
       "I didn't create this account": [
         "Ur rniɣ ara amiḍan-a"
       ],
@@ -3481,11 +3484,20 @@
       "Contact ${ BRAND_NAME }": [
         "Anermis ${ BRAND_NAME }"
       ],
+      "Please ${ signIn } to resend a recovery email verification request.": [
+        "Ttxil-k ${ signIn } i wakken ad talseḍ tuzna n ussuter n usenqed n yimayl n tririt."
+      ],
       "sign in": [
         "qqen"
       ],
       "Sign in to verify": [
         "Qqen i uselkem"
+      ],
+      "There was a problem removing your email address.": [
+        "Teḍra-d tuccḍa mi akken i tekkseḍ tansa-k n yimayl."
+      ],
+      "There was a problem verifying your email address.": [
+        "Teḍra-d tuccḍa mi akken i tessenqadeḍ tansa-k n yimayl."
       ]
     },
     "Error message, unsubscribe": {
@@ -3714,6 +3726,11 @@
       ],
       "Family name": [
         "Isem n twacult"
+      ]
+    },
+    "familyOffer_2023:Settings section title": {
+      "Family": [
+        "Tawacult"
       ]
     },
     "familyOffer_2023:Success": {
@@ -7550,11 +7567,17 @@
       "Find ${ BRAND_NAME } Account username": [
         "Af-d isem n useqdac n umiḍan ${ BRAND_NAME }"
       ],
+      "Private and secure email, no credit card required": [
+        "Imayl uslug, aɣellsan. Ur tettwasra ara tkarḍa n usmad"
+      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Wennez awal-ik uffir n umiḍan ${ BRAND_NAME }"
       ],
       "Sign in to access your ${ appName } account": [
         "Qqen i wakken ad tkecmeḍ ɣer umiḍan-ik ${ appName }"
+      ],
+      "Try ${ planName } for free with this link": [
+        "Ɛreḍ ${ planName } baṭel s useɣwen-a"
       ]
     },
     "Modal title": {
@@ -8090,23 +8113,20 @@
         "Asefrek n terbaɛt"
       ]
     },
-    "new_plans: info": {
-      "Most popular": [
-        "Ittwassen aṭas"
-      ],
-      "Popular": [
-        "Mucaɛ"
-      ],
-      "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
-        "Sbadu tiririyin tiwurmanin i wakken ad telɣuḍ inermisen mačči deg lbiru i telliḍ neɣ ur tezmireḍ ara ad terreḍ."
-      ]
-    },
     "new_plans: Info": {
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "I ukemmel n useqdec n ${ MAIL_APP_NAME }s tmahilin premium, fren amultaɣ-ik d textiṛiyin n uxelleṣ."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Aneεruḍ-ik·im ad yekfu deg ${ formattedPeriodEndDate }"
+      ]
+    },
+    "new_plans: info": {
+      "Most popular": [
+        "Ittwassen aṭas"
+      ],
+      "Popular": [
+        "Mucaɛ"
       ]
     },
     "new_plans: Label": {
@@ -8604,6 +8624,9 @@
       ],
       "Upgrade my plan": [
         "Leqqem aɣawas-iw"
+      ],
+      "Use ${ free } instead": [
+        "Seqdec ${ free } deg ubdil"
       ]
     },
     "pass_signup_2023: Feature": {
@@ -8701,6 +8724,9 @@
       "Welcome to ${ plan }": [
         "Ansuf ɣer ${ plan }"
       ],
+      "Works on all devices": [
+        "Iteddu ɣef meṛṛa ibenkan"
+      ],
       "You currently have": [
         "Amultaɣ-ik tura"
       ]
@@ -8711,8 +8737,17 @@
       ]
     },
     "pass_signup_2023: Title": {
+      "${ upsellPlanTitle } plan": [
+        "Aɣawas ${ upsellPlanTitle }"
+      ],
+      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
+        "Akk Imeẓla Plus n ${ BRAND_NAME }.${ br } Yiwen kan n umultaɣ."
+      ],
       "Create your ${ BRAND_NAME } account": [
         "Rnu amiḍan ${ BRAND_NAME }"
+      ],
+      "Request your organization administrator to upgrade": [
+        "Ssuter deg unedbal n tkebbanit-ik ad tsaliḍ aɣawas"
       ],
       "Secure your account": [
         "Seɣles n umiḍan-ik·im"
@@ -9110,9 +9145,6 @@
       ]
     },
     "Signup label": {
-      "Confirm email address": [
-        "Sentem tansa n yimayl"
-      ],
       "Confirm password": [
         "Sentem awal uffir"
       ],
@@ -9230,6 +9262,11 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Anezdi-a ad yettwales s yimek awurman seg-a yal sin n yiseggasen yernu s yiwen n watig arma d asmi ara yettwasemmet."
+      ]
+    },
+    "specialoffer: Info": {
+      "No available offers found.": [
+        "Ulac ayen i d-yettwamudden."
       ]
     },
     "specialoffer: Label": {
@@ -11070,6 +11107,9 @@
       ]
     },
     "vpn_2step: billing": {
+      "${ billedText }, renews on ${ formattedEndTime }": [
+        "${ billedText }, amaynut deg ${ formattedEndTime }"
+      ],
       "Billed every 15 months": [
         "After n yal 15 wayyuren"
       ],
@@ -11110,6 +11150,12 @@
       "${ n } year": [
         "${ n } useggas",
         "${ n } yiseggasen"
+      ],
+      "Try ${ upsellPlanName } risk-free": [
+        "Ɛreḍ ${ upsellPlanName }, tqeɛdeḍ neɣ ad terreḍ idrimen-ik"
+      ],
+      "Your ${ selected } plan": [
+        "Aɣawas-ik ${ selected }"
       ]
     },
     "Warning": {

@@ -1865,8 +1865,14 @@
       "Birthday": [
         "Fecha de nacimiento"
       ],
+      "Display name": [
+        "Nombre a mostrar"
+      ],
       "Email": [
         "Correo electrónico"
+      ],
+      "First name": [
+        "Nombre"
       ],
       "Gender": [
         "Género"
@@ -1876,6 +1882,9 @@
       ],
       "Language": [
         "Idioma"
+      ],
+      "Last name": [
+        "Apellido"
       ],
       "Logo": [
         "Logo"
@@ -3185,6 +3194,9 @@
       ],
       "Contact signature not verified": [
         "Firma del contacto no verificada"
+      ],
+      "Could not save preference": [
+        "No se ha podido guardar la preferencia."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Anula la selección de al menos ${ calendarsToFixCount } calendario",
@@ -8001,6 +8013,9 @@
       "Conversation grouping": [
         "Agrupar conversaciones"
       ],
+      "Conversations per page": [
+        "Conversaciones por página"
+      ],
       "Copy": [
         "Copiar"
       ],
@@ -8288,6 +8303,9 @@
       ],
       "Message": [
         "Mensaje"
+      ],
+      "Messages per page": [
+        "Mensajes por página"
       ],
       "Moderate NAT": [
         "NAT moderada"
@@ -9749,6 +9767,17 @@
         "Gestión de equipos"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para seguir utilizando ${ MAIL_APP_NAME } con las funciones prémium, suscríbete y elige el método de pago."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Tu periodo de pruebas acaba el ${ formattedPeriodEndDate }."
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina con ${ last4 }"
@@ -9819,8 +9848,8 @@
       "Secure email with advanced features for your everyday communications.": [
         "Correo electrónico seguro con funciones avanzadas para tu día a día."
       ],
-      "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
-        "Crea respuestas automáticas para que tus contactos sepan que estás fuera de la oficina o que no puedes responder."
+      "Set automatic replies to inform senders you are out of the office or unable to respond.": [
+        "Crea respuestas automáticas para que los remitentes sepan que estás fuera de la oficina o que no puedes responder."
       ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Soluciones a medida para organizaciones más grandes con necesidades de seguridad específicas"
@@ -9836,17 +9865,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ahora mismo pagas un precio especial por tu plan. Si te pasas a un plan inferior, perderás esta ventaja y no la recuperarás suscribiéndote de nuevo."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para seguir utilizando ${ MAIL_APP_NAME } con las funciones prémium, suscríbete y elige el método de pago."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Tu periodo de pruebas acaba el ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -11325,9 +11343,6 @@
       ]
     },
     "Signup label": {
-      "Confirm email address": [
-        "Confirmar la dirección de correo electrónico"
-      ],
       "Confirm password": [
         "Confirmar contraseña"
       ],
