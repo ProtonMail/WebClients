@@ -7,7 +7,7 @@ import type { WorkerRootSagaOptions } from '../types';
 import { deleteShare } from './workers/shares';
 
 function* shareLeaveWorker(
-    { onShareEventDisabled }: WorkerRootSagaOptions,
+    { onShareEventDisabled, onItemsChange }: WorkerRootSagaOptions,
     { payload, meta: { request } }: ReturnType<typeof shareLeaveIntent>
 ) {
     try {
@@ -16,6 +16,7 @@ function* shareLeaveWorker(
 
         PassCrypto.removeShare(shareId);
         onShareEventDisabled?.(shareId);
+        onItemsChange?.();
 
         yield put(shareLeaveSuccess(request.id, payload.shareId));
     } catch (err) {

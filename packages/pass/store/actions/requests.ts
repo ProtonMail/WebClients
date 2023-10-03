@@ -23,5 +23,6 @@ export const shareLeaveRequest = (shareId: string) => `share::leave::${shareId}`
 export const shareAccessOptionsRequest = (shareId: string) => `share::access-options::${shareId}`;
 
 export const inviteResendRequest = (inviteId: string) => `invite::resend::${inviteId}`;
-export const inviteRespondRequest = (token: string) => `invite::respond::${token}`;
+export const inviteAcceptRequest = (token: string) => `invite::accept::${token}`;
+export const inviteRejectRequest = (token: string) => `invite::reject::${token}`;
 export const inviteRemoveRequest = (inviteId: string) => `invite::remove::${inviteId}`;
