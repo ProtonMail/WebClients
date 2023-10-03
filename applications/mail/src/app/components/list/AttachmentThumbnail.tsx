@@ -25,7 +25,7 @@ const AttachmentThumbnail = ({ attachmentMetadata, onClick, ...rest }: Props) =>
             {...rest}
         >
             <FileIcon mimeType={attachmentMetadata?.MIMEType || 'unknown'} className="flex-item-noshrink" />
-            <span className="lh100">
+            <span className="lh100 attachment-thumbnail-name">
                 <MiddleEllipsis charsToDisplayEnd={3} text={attachmentMetadata.Name} />
             </span>
         </Button>
