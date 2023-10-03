@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Option } from '@proton/components';
 import { selectAllVaults, selectPrimaryVault, selectVaultLimits } from '@proton/pass/store';
-import type { Maybe } from '@proton/pass/types';
+import { type Maybe, ShareRole } from '@proton/pass/types';
 import type { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
 import { notIn } from '@proton/pass/utils/fp';
 
@@ -27,7 +27,7 @@ export const VaultSelectField: VFC<VaultSelectFieldProps> = ({
     placeholder,
     ...props
 }) => {
-    const vaults = useSelector(selectAllVaults);
+    const vaults = useSelector(selectAllVaults).filter((vault) => vault.shareRoleId !== ShareRole.READ);
     const primaryVaultId = useSelector(selectPrimaryVault).shareId;
     const { didDowngrade } = useSelector(selectVaultLimits);
 
