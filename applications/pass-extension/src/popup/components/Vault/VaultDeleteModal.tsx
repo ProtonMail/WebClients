@@ -27,6 +27,7 @@ const FORM_ID = 'vault-confirm-delete';
 const initialValues: ConfirmDeleteValues = { name: '', destination: 'delete' };
 
 export const VaultDeleteModal: VFC<Props> = ({ vault, onClose, onSubmit }) => {
+    const open = vault !== null;
     const vaultName = vault?.content?.name ?? '';
 
     const validateVaultDelete = ({ name }: ConfirmDeleteValues) => {
@@ -57,7 +58,7 @@ export const VaultDeleteModal: VFC<Props> = ({ vault, onClose, onSubmit }) => {
 
     return (
         <ConfirmationModal
-            open={vault !== null}
+            open={open}
             size="medium"
             onClose={onClose}
             onSubmit={form.submitForm}
