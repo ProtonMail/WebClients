@@ -2,6 +2,7 @@ import React, { FC, useCallback } from 'react';
 
 import { c } from 'ttag';
 
+import { useAppTitle } from '@proton/components';
 import { Loader } from '@proton/components/components';
 
 import { useThumbnailsDownload } from '../../../store';
@@ -13,6 +14,8 @@ import { PhotosGrid } from './PhotosGrid';
 import { PhotosToolbar } from './toolbar';
 
 export const PhotosView: FC<void> = () => {
+    useAppTitle(c('Title').t`Photos`);
+
     const { shareId, linkId, photos, isLoading, isLoadingMore } = usePhotosView();
     const isEmpty = photos.length === 0;
     const thumbnails = useThumbnailsDownload();
