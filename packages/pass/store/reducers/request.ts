@@ -1,13 +1,15 @@
 import type { AnyAction, Reducer } from 'redux';
 
-import { objectDelete } from '@proton/pass/utils/object';
+import { objectDelete, partialMerge } from '@proton/pass/utils/object';
 import { getEpoch } from '@proton/pass/utils/time';
 
-import { invalidateRequest } from '../actions';
+import { invalidateRequest, setRequestProgress } from '../actions';
 import { type RequestType, isActionWithRequest } from '../actions/with-request';
 
 export type RequestEntry<T extends RequestType = RequestType> = Extract<
-    { status: 'start' } | { status: 'success'; expiresAt?: number } | { status: 'failure'; expiresAt?: number },
+    | { status: 'start'; progress?: number }
+    | { status: 'success'; expiresAt?: number }
+    | { status: 'failure'; expiresAt?: number },
     { status: T }
 >;
 
@@ -31,7 +33,7 @@ const requestReducer: Reducer<RequestState> = (state = {}, action: AnyAction) =>
         const entry: RequestEntry = (() => {
             switch (request.type) {
                 case 'start':
-                    return { status: request.type };
+                    return { status: request.type, progress: 0 };
                 case 'failure':
                 case 'success':
                     return {
@@ -45,9 +47,11 @@ const requestReducer: Reducer<RequestState> = (state = {}, action: AnyAction) =>
         return nextState;
     }
 
-    if (invalidateRequest.match(action)) {
-        return objectDelete(state, action.payload.requestId);
+    if (setRequestProgress.match(action) && state[action.payload.requestId]?.status === 'start') {
+        return partialMerge(state, { [action.payload.requestId]: { progress: action.payload.progress } });
     }
+
+    if (invalidateRequest.match(action)) return objectDelete(state, action.payload.requestId);
 
     return state;
 };
