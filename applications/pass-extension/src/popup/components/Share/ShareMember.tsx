@@ -1,18 +1,15 @@
 import type { VFC } from 'react';
 import { useMemo } from 'react';
-import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { Info } from '@proton/components/components';
 import {
-    selectShareOrThrow,
     shareEditMemberAccessIntent,
     shareRemoveMemberAccessIntent,
     vaultTransferOwnerIntent,
 } from '@proton/pass/store';
 import { shareRemoveMemberRequest, vaultTransferOwnerRequest } from '@proton/pass/store/actions/requests';
-import type { ShareType } from '@proton/pass/types';
 import { ShareRole } from '@proton/pass/types';
 
 import { ConfirmationModal } from '../../../shared/components/confirmation/ConfirmationModal';
@@ -24,19 +21,27 @@ import { ShareMemberAvatar } from './ShareMemberAvatar';
 import { getShareRoleDefinition } from './ShareRoleOptions';
 
 export type ShareMemberProps = {
+    canManage: boolean;
+    canTransfer: boolean;
     email: string;
+    me: boolean;
     owner: boolean;
     role: ShareRole;
     shareId: string;
     userShareId: string;
 };
 
-export const ShareMember: VFC<ShareMemberProps> = ({ email, owner, role, shareId, userShareId }: ShareMemberProps) => {
+export const ShareMember: VFC<ShareMemberProps> = ({
+    canManage,
+    canTransfer,
+    email,
+    me,
+    owner,
+    role,
+    shareId,
+    userShareId,
+}: ShareMemberProps) => {
     const initials = email.toUpperCase().slice(0, 2) ?? '';
-    const share = useSelector(selectShareOrThrow<ShareType.Vault>(shareId));
-
-    const canTransferOwnership = share.owner;
-
     const { title, description } = useMemo(() => {
         if (owner) {
             return {
@@ -46,7 +51,7 @@ export const ShareMember: VFC<ShareMemberProps> = ({ email, owner, role, shareId
         }
 
         return getShareRoleDefinition()[role];
-    }, [role, owner]);
+    }, [owner, role]);
 
     const removeAccess = useActionWithRequest({
         action: shareRemoveMemberAccessIntent,
@@ -73,49 +78,55 @@ export const ShareMember: VFC<ShareMemberProps> = ({ email, owner, role, shareId
         <div className="flex flex-nowrap flex-align-items-center border rounded-xl px-4 py-3 w100">
             <ShareMemberAvatar value={initials} loading={loading} />
             <div className="flex-item-fluid">
-                <div className="text-ellipsis">{email}</div>
+                <div className="flex flex-nowrap flex-item-fluid flex-align-items-center gap-2">
+                    <div className="text-ellipsis">{email}</div>
+                    {me && <span className="color-primary text-sm">({c('Info').t`me`})</span>}
+                </div>
                 <div className="flex flex-align-items-center gap-1">
                     <span className="color-weak">{title}</span>
                     <Info title={description} className="color-weak" questionMark />
                 </div>
             </div>
-            <QuickActionsDropdown color="weak" shape="ghost" disabled={owner}>
-                <DropdownMenuButton
-                    label={c('Action').t`Can view`}
-                    icon={role === ShareRole.READ ? 'checkmark' : undefined}
-                    onClick={() => handleEditRole(ShareRole.READ)}
-                    disabled={editAccess.loading}
-                    className={role !== ShareRole.READ ? 'pl-11' : ''}
-                />
-                <DropdownMenuButton
-                    label={c('Action').t`Can edit`}
-                    icon={role === ShareRole.WRITE ? 'checkmark' : undefined}
-                    onClick={() => handleEditRole(ShareRole.WRITE)}
-                    disabled={editAccess.loading}
-                    className={role !== ShareRole.WRITE ? 'pl-11' : ''}
-                />
-                <DropdownMenuButton
-                    label={c('Action').t`Can manage`}
-                    icon={role === ShareRole.ADMIN ? 'checkmark' : undefined}
-                    onClick={() => handleEditRole(ShareRole.ADMIN)}
-                    disabled={editAccess.loading}
-                    className={role !== ShareRole.ADMIN ? 'pl-11' : ''}
-                />
 
-                {canTransferOwnership && (
+            {!me && canManage && (
+                <QuickActionsDropdown color="weak" shape="ghost">
                     <DropdownMenuButton
-                        label={c('Action').t`Transfer ownership`}
-                        icon="shield-half-filled"
-                        onClick={() => handleTransferOwnership.prompt({ shareId, userShareId })}
+                        label={c('Action').t`Can view`}
+                        icon={role === ShareRole.READ ? 'checkmark' : undefined}
+                        onClick={() => handleEditRole(ShareRole.READ)}
+                        disabled={editAccess.loading}
+                        className={role !== ShareRole.READ ? 'pl-11' : ''}
                     />
-                )}
-                <DropdownMenuButton
-                    label={c('Action').t`Remove access`}
-                    icon="circle-slash"
-                    danger
-                    onClick={handleRemoveAccess}
-                />
-            </QuickActionsDropdown>
+                    <DropdownMenuButton
+                        label={c('Action').t`Can edit`}
+                        icon={role === ShareRole.WRITE ? 'checkmark' : undefined}
+                        onClick={() => handleEditRole(ShareRole.WRITE)}
+                        disabled={editAccess.loading}
+                        className={role !== ShareRole.WRITE ? 'pl-11' : ''}
+                    />
+                    <DropdownMenuButton
+                        label={c('Action').t`Can manage`}
+                        icon={role === ShareRole.ADMIN ? 'checkmark' : undefined}
+                        onClick={() => handleEditRole(ShareRole.ADMIN)}
+                        disabled={editAccess.loading}
+                        className={role !== ShareRole.ADMIN ? 'pl-11' : ''}
+                    />
+
+                    {canTransfer && (
+                        <DropdownMenuButton
+                            label={c('Action').t`Transfer ownership`}
+                            icon="shield-half-filled"
+                            onClick={() => handleTransferOwnership.prompt({ shareId, userShareId })}
+                        />
+                    )}
+                    <DropdownMenuButton
+                        label={c('Action').t`Remove access`}
+                        icon="circle-slash"
+                        danger
+                        onClick={handleRemoveAccess}
+                    />
+                </QuickActionsDropdown>
+            )}
 
             <ConfirmationModal
                 title={c('Title').t`Transfer ownership`}
