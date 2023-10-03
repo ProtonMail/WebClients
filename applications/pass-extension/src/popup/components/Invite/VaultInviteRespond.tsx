@@ -3,49 +3,45 @@ import { type VFC } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/components';
+import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Progress } from '@proton/components/components';
 import { inviteAcceptIntent, inviteRejectIntent } from '@proton/pass/store';
-import { inviteRespondRequest } from '@proton/pass/store/actions/requests';
+import { inviteAcceptRequest, inviteRejectRequest } from '@proton/pass/store/actions/requests';
 import type { Invite } from '@proton/pass/types/data/invites';
 
 import { useActionWithRequest } from '../../../shared/hooks/useActionWithRequest';
 import { useInviteContext } from '../../context/invite/InviteContextProvider';
 import { VaultIcon } from '../Vault/VaultIcon';
 
-export const VaultInviteAccept: VFC<Invite> = (invite) => {
-    const { inviterEmail, vault } = invite;
+export const VaultInviteRespond: VFC<Invite> = (invite) => {
+    const { inviterEmail, vault, token } = invite;
     const { itemCount, memberCount } = vault;
     const { onInviteResponse } = useInviteContext();
 
     const acceptInvite = useActionWithRequest({
         action: inviteAcceptIntent,
-        requestId: inviteRespondRequest(invite.token),
+        requestId: inviteAcceptRequest(invite.token),
         onSuccess: onInviteResponse,
     });
 
     const rejectInvite = useActionWithRequest({
         action: inviteRejectIntent,
-        requestId: inviteRespondRequest(invite.token),
+        requestId: inviteRejectRequest(invite.token),
         onSuccess: onInviteResponse,
     });
 
-    const handleAcceptInvite = () =>
-        acceptInvite.dispatch({
-            inviteToken: invite.token,
-            inviterEmail: invite.inviterEmail,
-        });
-
     const handleRejectInvite = () => rejectInvite.dispatch({ inviteToken: invite.token });
+    const handleAcceptInvite = () => acceptInvite.dispatch({ inviteToken: token, inviterEmail });
 
     const loading = acceptInvite.loading || rejectInvite.loading;
 
     return (
-        <ModalTwo size="small" open onClose={onInviteResponse}>
+        <ModalTwo size="small" open onClose={onInviteResponse} enableCloseWhenClickOutside>
             <ModalTwoHeader
                 title={c('Title').t`Shared vault invitation`}
                 subline={inviterEmail}
-                hasClose={false}
                 className="text-center"
+                hasClose={false}
             />
             <ModalTwoContent className="flex flex-column flex-align-items-center">
                 <VaultIcon
@@ -64,6 +60,7 @@ export const VaultInviteAccept: VFC<Invite> = (invite) => {
                     </span>
                 </div>
             </ModalTwoContent>
+
             <ModalTwoFooter className="flex flex-column flex-align-items-stretch">
                 <Button size="large" shape="solid" color="norm" disabled={loading} onClick={handleAcceptInvite}>{c(
                     'Action'
@@ -71,6 +68,24 @@ export const VaultInviteAccept: VFC<Invite> = (invite) => {
                 <Button size="large" shape="solid" color="weak" disabled={loading} onClick={handleRejectInvite}>{c(
                     'Action'
                 ).t`Reject invitation`}</Button>
+
+                {acceptInvite.loading && (
+                    <div className="ui-purple flex gap-x-2 flex-align-items-center">
+                        <Progress
+                            value={
+                                invite.vault.itemCount > 0
+                                    ? Math.round(100 * (acceptInvite.progress / invite.vault.itemCount))
+                                    : 0
+                            }
+                            className="flex-item-fluid progress-bar--norm"
+                        />
+
+                        <small className="block">
+                            {acceptInvite.progress} / {invite.vault.itemCount}
+                        </small>
+                        <CircleLoader size="small" />
+                    </div>
+                )}
             </ModalTwoFooter>
         </ModalTwo>
     );
