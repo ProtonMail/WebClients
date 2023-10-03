@@ -5,9 +5,9 @@ import type { MaybeNull } from '@proton/pass/types';
 import type { Invite } from '@proton/pass/types/data/invites';
 import noop from '@proton/utils/noop';
 
-import { VaultInviteAccept } from '../../components/Invite/VaultInviteAccept';
 import { VaultInviteCreate } from '../../components/Invite/VaultInviteCreate';
 import { VaultInviteManager } from '../../components/Invite/VaultInviteManager';
+import { VaultInviteRespond } from '../../components/Invite/VaultInviteRespond';
 
 export type InviteContextValue = {
     shareId: MaybeNull<string>;
@@ -76,7 +76,7 @@ export const InviteContextProvider: FC = ({ children }) => {
                     }
                 })()}
 
-            {invite && <VaultInviteAccept {...invite} />}
+            {invite && <VaultInviteRespond {...invite} />}
             {children}
         </InviteContext.Provider>
     );
