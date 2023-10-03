@@ -466,7 +466,10 @@ const CalendarContainer = ({
 
     const isLoading = loadingCreateEventCalendarBootstrap || loadingEvents;
     const isEventCreationDisabled =
-        disableCreate || !createEventCalendarBootstrap || !activeCalendars.some(unary(getIsCalendarWritable));
+        disableCreate ||
+        !createEventCalendarBootstrap ||
+        !activeCalendars.some(unary(getIsCalendarWritable)) ||
+        view === SEARCH;
 
     return (
         <CalendarContainerView
