@@ -28,6 +28,9 @@
       "Add Bcc recipients": [
         "Lägg till mottagare av hemlig kopia"
       ],
+      "Add birthday": [
+        "Lägg till födelsedag"
+      ],
       "Add Cc recipients": [
         "Lägg till mottagare"
       ],
@@ -48,6 +51,9 @@
       ],
       "Add new group": [
         "Lägg till ny grupp"
+      ],
+      "Add note": [
+        "Lägg till anteckning"
       ],
       "Add participant": [
         "Lägg till deltagare"
@@ -415,14 +421,8 @@
       "Get verification code": [
         "Skaffa verifieringskod"
       ],
-      "Go to first page": [
-        "Gå till första sidan"
-      ],
       "Go to label": [
         "Gå till etikett"
-      ],
-      "Go to last page": [
-        "Gå till sista sidan"
       ],
       "Go to next page": [
         "Gå till nästa sida"
@@ -1947,8 +1947,17 @@
       "Birthday": [
         "Födelsedag"
       ],
+      "Display name": [
+        "Visningsnamn"
+      ],
       "Email": [
         "E-post"
+      ],
+      "Enter a display name or nickname": [
+        "Ange ett visningsnamn eller smeknamn"
+      ],
+      "First name": [
+        "Förnamn"
       ],
       "Gender": [
         "Kön"
@@ -1958,6 +1967,9 @@
       ],
       "Language": [
         "Språk"
+      ],
+      "Last name": [
+        "Efternamn"
       ],
       "Logo": [
         "Logga"
@@ -3140,6 +3152,9 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Innehållssökning kan inte aktiveras i denna webbläsare. Avsluta läget för privat surfning eller använd en annan webbläsare."
       ],
+      "Could not save preference": [
+        "Kunde inte spara preferens"
+      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Dekrypteringsfel: dekryptering av detta meddelandets krypterade innehåll misslyckades."
       ],
@@ -3193,6 +3208,9 @@
       "Filter with this name already exists": [
         "Filter med detta namn finns redan"
       ],
+      "First name is too long": [
+        "Förnamn är för långt"
+      ],
       "Folder name cannot be empty.": [
         "Mappnamn kan inte vara tomt."
       ],
@@ -3225,6 +3243,9 @@
       ],
       "Label name cannot be empty.": [
         "Etikettnamn kan inte vara tomt."
+      ],
+      "Last name is too long": [
+        "Efternamn är för långt"
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Maximalt antal bilagor (${ attachmentsCountLimit }) har överskridits"
@@ -3289,6 +3310,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "Åtgärda den markerade konflikten för att fortsätta.",
         "Åtgärda de markerade konflikterna för att fortsätta."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Ange antingen ett förnamn, ett efternamn eller ett visningsnamn"
       ],
       "Port is required": [
         "Port är obligatoriskt"
@@ -6380,6 +6404,9 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Conversations per page": [
+        "Konversationer per sida"
+      ],
       "Copy": [
         "Kopiera"
       ],
@@ -6544,6 +6571,9 @@
       ],
       "Mark as": [
         "Markera som"
+      ],
+      "Messages per page": [
+        "Meddelanden per sida"
       ],
       "Move ${ sidebarElementName }": [
         "Flytta ${ sidebarElementName }"
@@ -7502,6 +7532,9 @@
       "Filter labels": [
         "Filtrera etiketter"
       ],
+      "First name": [
+        "Förnamn"
+      ],
       "Group name": [
         "Gruppnamn"
       ],
@@ -7510,6 +7543,9 @@
       ],
       "Image URL": [
         "Bild-URL"
+      ],
+      "Last name": [
+        "Efternamn"
       ],
       "Link": [
         "Länk"
@@ -8505,11 +8541,17 @@
       "CSV field": [
         "CSV-fält"
       ],
+      "Display name": [
+        "Visningsnamn"
+      ],
+      "First name": [
+        "Förnamn"
+      ],
       "Import": [
         "Importera"
       ],
-      "Name": [
-        "Namn"
+      "Last name": [
+        "Efternamn"
       ],
       "Values": [
         "Värden"
@@ -8605,6 +8647,9 @@
       ],
       "Billing cycle": [
         "Faktureringscykel"
+      ],
+      "Birthday": [
+        "Födelsedag"
       ],
       "Blind Carbon Copy": [
         "Hemlig kopia"
@@ -8914,6 +8959,9 @@
       ],
       "No trackers found": [
         "Inga spårare hittades"
+      ],
+      "Notes": [
+        "Anteckningar"
       ],
       "Open actions dropdown": [
         "Öppna rullgardinsmenyn för åtgärder"
