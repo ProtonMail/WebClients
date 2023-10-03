@@ -33,6 +33,9 @@
       "Add address": [
         "Дадаць адрас"
       ],
+      "Add birthday": [
+        "Дадаць дзень нараджэння"
+      ],
       "Add contact": [
         "Дадаць кантакт"
       ],
@@ -47,6 +50,9 @@
       ],
       "Add new group": [
         "Дадаць новую групу"
+      ],
+      "Add note": [
+        "Дадаць нататку"
       ],
       "Add notification": [
         "Дадаць апавяшчэнне"
@@ -65,7 +71,7 @@
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантакт",
-        "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантакта",
+        "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантакты",
         "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантактаў",
         "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантактаў"
       ],
@@ -529,7 +535,7 @@
         "Увайсці"
       ],
       "Sign out": [
-        "Выхад з уліковага запісу"
+        "Выйсці з уліковага запісу"
       ],
       "Signing out": [
         "Адбываецца выхад"
@@ -1128,8 +1134,17 @@
       "Birthday": [
         "Дзень нараджэння"
       ],
+      "Display name": [
+        "Бачнае імя"
+      ],
       "Email": [
         "Электронная пошта"
+      ],
+      "Enter a display name or nickname": [
+        "Увядзіце бачнае імя або псеўданім"
+      ],
+      "First name": [
+        "Імя"
       ],
       "Gender": [
         "Пол"
@@ -1139,6 +1154,9 @@
       ],
       "Language": [
         "Мова"
+      ],
+      "Last name": [
+        "Прозвішча"
       ],
       "Logo": [
         "Лагатып"
@@ -2357,6 +2375,9 @@
       "Failed to get original occurrence in series": [
         "Не ўдалося атрымаць арыгінальнае паўтарэнне ў серыі"
       ],
+      "First name is too long": [
+        "Занадта доўгае імя"
+      ],
       "Folder name cannot be empty.": [
         "Назва папкі не можа быць пустой."
       ],
@@ -2401,6 +2422,9 @@
       ],
       "Label name cannot be empty.": [
         "Назва меткі не можа быць пустой."
+      ],
+      "Last name is too long": [
+        "Занадта доўгае прозвішча"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Аб'яднайце прынамсі ${ calendarsToFixCount } каляндар з існуючым календаром ${ BRAND_NAME }",
@@ -2470,6 +2494,9 @@
         "Выпраўце вылучаныя канфлікты, каб працягнуць.",
         "Выпраўце вылучаныя канфлікты, каб працягнуць.",
         "Выпраўце вылучаныя канфлікты, каб працягнуць."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Увядзіце імя, прозвішча або бачнае імя"
       ],
       "Port is required": [
         "Патрабуецца ўвесці порт"
@@ -3992,6 +4019,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME аўтаматычна адпраўляе паведамленні з выкарыстаннем бягучага рэжыму рэдактара."
       ],
+      "Please note that addresses assigned to these groups will NOT be deleted.": [
+        "Звярніце ўвагу, што адрасы прызначаныя гэтай групе НЕ будуць выдалены."
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Звярніце ўвагу, што адрасы, якія прызначаны гэтай групе, НЕ будуць выдалены."
       ],
@@ -4361,7 +4391,7 @@
     "Information about why calendar event cannot be saved": {
       "At most ${ maxAttendees } participant is allowed per invitation": [
         "На адно запрашэнне дапускаецца не больш за ${ maxAttendees } удзельніка",
-        "На адно запрашэнне дапускаецца не больш за ${ maxAttendees } удзельніка",
+        "На адно запрашэнне дапускаецца не больш за ${ maxAttendees } удзельнікі",
         "На адно запрашэнне дапускаецца не больш за ${ maxAttendees } удзельнікаў",
         "На адно запрашэнне дапускаецца не больш за ${ maxAttendees } удзельнікаў"
       ],
@@ -5581,6 +5611,9 @@
       "Filter groups": [
         "Фільтр груп"
       ],
+      "First name": [
+        "Імя"
+      ],
       "Group name": [
         "Назва групы"
       ],
@@ -5589,6 +5622,9 @@
       ],
       "Indexing...": [
         "Індэксаванне..."
+      ],
+      "Last name": [
+        "Прозвішча"
       ],
       "Name": [
         "Назва"
@@ -6328,11 +6364,17 @@
       "CSV field": [
         "Поле CSV"
       ],
+      "Display name": [
+        "Бачнае імя"
+      ],
+      "First name": [
+        "Імя"
+      ],
       "Import": [
         "Імпартаванне"
       ],
-      "Name": [
-        "Імя"
+      "Last name": [
+        "Прозвішча"
       ],
       "Values": [
         "Значэнні"
@@ -6431,6 +6473,9 @@
       ],
       "Billing cycle": [
         "Перыяд аплаты"
+      ],
+      "Birthday": [
+        "Дзень нараджэння"
       ],
       "Calendar": [
         "Каляндар"
@@ -6596,6 +6641,9 @@
       ],
       "Night theme": [
         "Начная тэма"
+      ],
+      "Notes": [
+        "Нататкі"
       ],
       "Open actions dropdown": [
         "Адкрыць спіс даступных дзеянняў"
@@ -6903,6 +6951,9 @@
         "Вы сапраўды хочаце незваротна выдаліць ${ count } кантакты?",
         "Вы сапраўды хочаце незваротна выдаліць ${ count } кантактаў?",
         "Вы сапраўды хочаце незваротна выдаліць ${ count } кантакты?"
+      ],
+      "Are you sure you want to permanently delete these contact groups?": [
+        "Вы ўпэўнены, што хочаце незваротна выдаліць гэтыя групы кантактаў?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Вы сапраўды хочаце незваротна выдаліць гэту групу кантактаў?"

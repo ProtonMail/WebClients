@@ -33,6 +33,9 @@
       "Add address": [
         "Adicionar endereço"
       ],
+      "Add birthday": [
+        "Adicionar aniversário"
+      ],
       "Add contact": [
         "Adicionar contato"
       ],
@@ -47,6 +50,9 @@
       ],
       "Add new group": [
         "Adicionar novo grupo"
+      ],
+      "Add note": [
+        "Adicionar nota"
       ],
       "Add notification": [
         "Adicionar notificação"
@@ -1114,8 +1120,14 @@
       "Birthday": [
         "Data de nascimento"
       ],
+      "Display name": [
+        "Nome de exibição"
+      ],
       "Email": [
         "E-mail"
+      ],
+      "First name": [
+        "Primeiro nome"
       ],
       "Gender": [
         "Gênero"
@@ -1125,6 +1137,9 @@
       ],
       "Language": [
         "Idioma"
+      ],
+      "Last name": [
+        "Sobrenome"
       ],
       "Logo": [
         "Logotipo"
@@ -2319,6 +2334,9 @@
       "Failed to get original occurrence in series": [
         "Não foi possível obter a ocorrência original em série."
       ],
+      "First name is too long": [
+        "Primeiro nome é muito longo"
+      ],
       "Folder name cannot be empty.": [
         "O nome da pasta não pode ser vazio."
       ],
@@ -2363,6 +2381,9 @@
       ],
       "Label name cannot be empty.": [
         "O nome do marcador não pode ser vazio."
+      ],
+      "Last name is too long": [
+        "Sobrenome é muito longo"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Mescle pelo menos ${ calendarsToFixCount } calendário com um calendário existente da ${ BRAND_NAME }",
@@ -3201,7 +3222,7 @@
         "${ CALENDAR_APP_NAME } atualmente não oferece suporte para algumas categorias de eventos, detalhes e formatos."
       ],
       "vCard versions < 3.0": [
-        "versões vCard < 3.0"
+        "Versões vCard < 3.0"
       ]
     },
     "Import calendar; import invitation": {
@@ -5382,6 +5403,9 @@
       "Filter groups": [
         "Filtrar grupos"
       ],
+      "First name": [
+        "Primeiro nome"
+      ],
       "Group name": [
         "Nome do grupo"
       ],
@@ -5390,6 +5414,9 @@
       ],
       "Indexing...": [
         "Indexando..."
+      ],
+      "Last name": [
+        "Sobrenome"
       ],
       "Name": [
         "Nome"
@@ -6106,11 +6133,17 @@
       "CSV field": [
         "Campo CSV"
       ],
+      "Display name": [
+        "Nome de exibição"
+      ],
+      "First name": [
+        "Primeiro nome"
+      ],
       "Import": [
         "Importar"
       ],
-      "Name": [
-        "Nome"
+      "Last name": [
+        "Sobrenome"
       ],
       "Values": [
         "Valores"
@@ -6193,6 +6226,9 @@
       ],
       "Billing cycle": [
         "Ciclo de faturamento"
+      ],
+      "Birthday": [
+        "Data de nascimento"
       ],
       "Calendar": [
         "Calendário"
@@ -6352,6 +6388,9 @@
       ],
       "Night theme": [
         "Tema noturno"
+      ],
+      "Notes": [
+        "Notas"
       ],
       "Open actions dropdown": [
         "Abrir menu de ações"

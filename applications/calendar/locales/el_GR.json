@@ -33,6 +33,9 @@
       "Add address": [
         "Προσθήκη διεύθυνσης"
       ],
+      "Add birthday": [
+        "Προσθήκη γενεθλίων"
+      ],
       "Add contact": [
         "Προσθήκη επαφής"
       ],
@@ -47,6 +50,9 @@
       ],
       "Add new group": [
         "Προσθήκη νέας ομάδας"
+      ],
+      "Add note": [
+        "Προσθήκη σημείωσης"
       ],
       "Add notification": [
         "Προσθήκη ειδοποίησης"
@@ -1114,8 +1120,17 @@
       "Birthday": [
         "Γενέθλια"
       ],
+      "Display name": [
+        "Εμφανιζόμενο Όνομα"
+      ],
       "Email": [
         "Email"
+      ],
+      "Enter a display name or nickname": [
+        "Εισαγάγετε ένα εμφανιζόμενο όνομα ή ψευδώνυμο"
+      ],
+      "First name": [
+        "Όνομα"
       ],
       "Gender": [
         "Φύλο"
@@ -1125,6 +1140,9 @@
       ],
       "Language": [
         "Γλώσσα"
+      ],
+      "Last name": [
+        "Επώνυμο"
       ],
       "Logo": [
         "Λογότυπο"
@@ -2319,6 +2337,9 @@
       "Failed to get original occurrence in series": [
         "Αποτυχία λήψης αρχικού περιστατικού στη σειρά"
       ],
+      "First name is too long": [
+        "Το όνομα είναι πολύ μεγάλο"
+      ],
       "Folder name cannot be empty.": [
         "Το όνομα φακέλου δεν γίνεται να είναι κενό."
       ],
@@ -2363,6 +2384,9 @@
       ],
       "Label name cannot be empty.": [
         "Το όνομα ετικέτας δεν γίνεται να είναι κενό."
+      ],
+      "Last name is too long": [
+        "Το επώνυμο είναι πολύ μεγάλο"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Συγχωνεύστε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του ${ BRAND_NAME }",
@@ -2424,6 +2448,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "Παρακαλούμε επιλύστε την τονισμένη διένεξη προς συνέχιση.",
         "Παρακαλούμε επιλύστε τις τονισμένες διενέξεις προς συνέχιση."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Καταχωρίστε είτε όνομα, επώνυμο ή εμφανιζόμενο όνομα"
       ],
       "Port is required": [
         "Απαιτείται θύρα"
@@ -5382,6 +5409,9 @@
       "Filter groups": [
         "Φιλτράρισμα κατά ομάδες"
       ],
+      "First name": [
+        "Όνομα"
+      ],
       "Group name": [
         "Όνομα ομάδας"
       ],
@@ -5390,6 +5420,9 @@
       ],
       "Indexing...": [
         "Δημιουργία ευρετηρίου..."
+      ],
+      "Last name": [
+        "Επώνυμο"
       ],
       "Name": [
         "Όνομα"
@@ -6103,11 +6136,17 @@
       "CSV field": [
         "CSV πεδίο"
       ],
+      "Display name": [
+        "Εμφανιζόμενο Όνομα"
+      ],
+      "First name": [
+        "Όνομα"
+      ],
       "Import": [
         "Εισαγωγή"
       ],
-      "Name": [
-        "Όνομα"
+      "Last name": [
+        "Επώνυμο"
       ],
       "Values": [
         "Τιμές"
@@ -6190,6 +6229,9 @@
       ],
       "Billing cycle": [
         "Κύκλος χρέωσης"
+      ],
+      "Birthday": [
+        "Γενέθλια"
       ],
       "Calendar": [
         "Ημερολόγιο"
@@ -6349,6 +6391,9 @@
       ],
       "Night theme": [
         "Σκούρο θέμα"
+      ],
+      "Notes": [
+        "Σημειώσεις"
       ],
       "Open actions dropdown": [
         "Άνοιγμα αναπτυσσόμενων επιλογών"
