@@ -560,6 +560,9 @@
       "Edit": [
         "Edita"
       ],
+      "Edit address": [
+        "Edita l'adreça"
+      ],
       "Enable": [
         "Habilitar"
       ],
@@ -1667,6 +1670,11 @@
         "Ajudeu-nos a millorar!"
       ]
     },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "S'ha enviat un correu electrònic de verificació a ${ address }."
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "A2F"
@@ -2263,6 +2271,9 @@
       "Add a name to identify your security key with.": [
         "Afegiu un nom per identificar la vostra clau de seguretat."
       ],
+      "Allow platform keys": [
+        "Permet les claus de plataforma"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Esteu segur que voleu suprimir la clau de seguretat ${ name }?"
       ],
@@ -2533,6 +2544,9 @@
       "${ vpnPlus } required for Secure Core feature.": [
         "La característica Secure Core requereix ${ vpnPlus }."
       ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice }/mes)"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonificació d'emmagatzematge"
       ],
@@ -2732,6 +2746,9 @@
       ],
       "Each code can only be used once": [
         "Cada codi només es pot utilitzar una vegada."
+      ],
+      "Edit email address": [
+        "Edita l'adreça de correu"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "S'inclou gratuïtament l'allotjament de correu electrònic per a 10 noms de domini de correu electrònic personalitzats. Es poden afegir dominis addicionals per ${ price }."
@@ -3074,6 +3091,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
       ],
+      "Resend verification email": [
+        "Reenvia el correu electrònic de verificació"
+      ],
       "Restore": [
         "Restaura"
       ],
@@ -3296,6 +3316,9 @@
       ],
       "Unverified": [
         "Sense verificar"
+      ],
+      "Unverified email address.": [
+        "No s'ha verificat l'adreça de correu electrònic."
       ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "Fins a ${ FAMILY_MAX_USERS } usuaris"
@@ -4367,6 +4390,9 @@
       "1 user": [
         "1 usuari"
       ],
+      "24/7 support": [
+        "Suport 24/7"
+      ],
       "99.95% SLA": [
         "SLA del 99,5%"
       ],
@@ -4950,6 +4976,9 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "24/7 support": [
+        "Suport 24/7"
+      ],
       "Access advanced VPN features": [
         "Accedir a funcionalitats de VPN avançades"
       ],
@@ -4974,12 +5003,18 @@
       "Censorship circumvention": [
         "Contorn de la censura"
       ],
+      "Central control panel": [
+        "Panell de control central"
+      ],
       "Cover more ground with support for 10 custom email domains": [
         "Obteniu més opcions amb suport per a 10 dominis de correu personalitzats"
       ],
       "Create up to ${ n } calendar": [
         "Crea fins a ${ n } calendari",
         "Crea fins a ${ n } calendaris"
+      ],
+      "Multi-platform support": [
+        "Suport multiplataforma"
       ],
       "Private gateways": [
         "Passarel·les privades"
@@ -5319,9 +5354,6 @@
       ]
     },
     "Signup label": {
-      "Confirm email address": [
-        "Confirma l'adreça de correu electrònic"
-      ],
       "Confirm password": [
         "Confirmeu la contrasenya"
       ],
@@ -5770,6 +5802,9 @@
       "Email address copied to clipboard": [
         "Correu electronic copiat al porta-retalls"
       ],
+      "Email address updated": [
+        "S'ha actualitzat l'adreça de correu electrònic."
+      ],
       "Email updated": [
         "Adreça de correu electronic actualitzada"
       ],
@@ -6211,6 +6246,9 @@
       "Edit display name": [
         "Edita el nom a mostrar"
       ],
+      "Edit email address": [
+        "Edita l'adreça de correu"
+      ],
       "Edit servers": [
         "Edita els servidors"
       ],
@@ -6346,6 +6384,9 @@
       ],
       "Remove user?": [
         "Voleu suprimir l'usuari?"
+      ],
+      "Rename the gateway": [
+        "Canvia el nom de la passarel·la"
       ],
       "Report a problem": [
         "Notifica un problema"
@@ -6571,6 +6612,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "El tema seleccionat s'activarà quan el sistema estigui en «mode clar»"
+      ],
+      "Verified email address": [
+        "Adreça de correu electrònic verificada"
       ]
     },
     "tooltip": {
