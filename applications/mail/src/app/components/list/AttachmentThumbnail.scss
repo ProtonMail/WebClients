@@ -11,6 +11,7 @@
 	&:not(&--number) {
 		padding-inline: rem(5);
 		min-inline-size: rem(72);
+		max-inline-size: rem(180);
 	}
 
 	.item-is-selected & {
