@@ -2066,6 +2066,9 @@
         "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en ${ MAX_IMPORT_CONTACTS_STRING } contact hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden.",
         "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en tot ${ MAX_IMPORT_CONTACTS_STRING } contacten hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden."
       ],
+      "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
+        "Dit kan enkele minuten duren. In de tussentijd kunt u zoals gebruikelijk Calendar blijven gebruiken."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Versleep de contactpersonen die u wil samenvoegen om ze op prioriteit te ordenen. Haal het vinkje weg bij de contacten die u niet wilt samenvoegen."
       ],
@@ -2540,6 +2543,10 @@
       ],
       "You already added this holidays calendar": [
         "U hebt deze feestdagenkalender al toegevoegd"
+      ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "U kunt geen e-mail verzenden naar meer dan${ maxContacts } ontvanger",
+        "U kunt geen e-mail verzenden naar meer dan ${ maxContacts } ontvangers"
       ],
       "You have reached the contacts limit for your account": [
         "U heeft de limiet van contacten bereikt voor dit account"
@@ -6081,11 +6088,11 @@
       "CSV field": [
         "CSV-veld"
       ],
+      "Display name": [
+        "Weergavenaam"
+      ],
       "Import": [
         "Importeren"
-      ],
-      "Name": [
-        "Naam"
       ],
       "Values": [
         "Waarden"

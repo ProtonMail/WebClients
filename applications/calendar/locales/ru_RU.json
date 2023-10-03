@@ -2088,6 +2088,9 @@
         "Файла должен быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и содержать не более ${ MAX_IMPORT_CONTACTS_STRING } контактов. Если ваш файл больше, то, пожалуйста, разбейте его на меньшие файлы.",
         "Файла должен быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и содержать не более ${ MAX_IMPORT_CONTACTS_STRING } контактов. Если ваш файл больше, то, пожалуйста, разбейте его на меньшие файлы."
       ],
+      "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
+        "Это может занять несколько минут. Тем временем вы можете продолжать использовать календарь как обычно."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Перетаскивайте контакты, чтобы задавать им приоритет при объединении. Снимите галочку с контактов, которые вы не хотите объединять."
       ],
@@ -6298,11 +6301,11 @@
       "CSV field": [
         "Поле CSV-файла"
       ],
+      "Display name": [
+        "Отображаемое имя"
+      ],
       "Import": [
         "Импорт"
-      ],
-      "Name": [
-        "Имя"
       ],
       "Values": [
         "Значения"
