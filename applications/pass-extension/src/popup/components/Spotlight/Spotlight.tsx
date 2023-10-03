@@ -5,8 +5,10 @@ import { c } from 'ttag';
 
 import { selectMostRecentInvite } from '@proton/pass/store/selectors/invites';
 import type { MaybeNull } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import clsx from '@proton/utils/clsx';
 
+import { useFeatureFlag } from '../../../../src/shared/hooks/useFeatureFlag';
 import { useInviteContext } from '../../context/invite/InviteContextProvider';
 import { useOnboardingMessage } from '../../hooks/useOnboardingMessage';
 import { FreeTrialModal } from './FreeTrialModal';
@@ -24,12 +26,13 @@ export const Spotlight: VFC = () => {
 
     const { respondToInvite } = useInviteContext();
 
+    const showSharing = useFeatureFlag(PassFeature.PassSharingV1);
     const latestInvite = useSelector(selectMostRecentInvite);
     const onboarding = useOnboardingMessage();
 
     const inviteMessage = useMemo<MaybeNull<SpotlightMessageDefinition>>(
         () =>
-            latestInvite
+            latestInvite && showSharing
                 ? {
                       id: latestInvite.token,
                       weak: true,
