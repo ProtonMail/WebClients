@@ -1128,6 +1128,9 @@
       "Disallow unsigned mail": [
         "Kiellä allekirjoittamaton posti"
       ],
+      "Edit": [
+        "Muokkaa"
+      ],
       "Edit address": [
         "Muokkaa osoitetta"
       ],
@@ -1862,8 +1865,14 @@
       "Birthday": [
         "Syntymäpäivä"
       ],
+      "Display name": [
+        "Näyttönimi"
+      ],
       "Email": [
         "Sähköpostiosoite"
+      ],
+      "First name": [
+        "Etunimi"
       ],
       "Gender": [
         "Sukupuoli"
@@ -1873,6 +1882,9 @@
       ],
       "Language": [
         "Kieli"
+      ],
+      "Last name": [
+        "Sukunimi"
       ],
       "Logo": [
         "Logo"
@@ -3183,6 +3195,9 @@
       "Contact signature not verified": [
         "Yhteystiedon allekirjoitusta ei ole vahvistettu"
       ],
+      "Could not save preference": [
+        "Asetusta ei voitu tallentaa"
+      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Poista vähintään ${ calendarsToFixCount } kalenterin valinta",
         "Poista vähintään ${ calendarsToFixCount } kalenterin valinnat"
@@ -3513,7 +3528,7 @@
         "Tämä kenttä vaaditaan"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "Kenttä edellyttää vähintään ${ minimumLength }-merkkiä."
+        "Kenttä edellyttää vähintään ${ minimumLength } merkkiä."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Kansion nimi ei ole käytettävissä. Valitse eri nimi."
@@ -7998,6 +8013,9 @@
       "Conversation grouping": [
         "Keskustelujen ryhmittely"
       ],
+      "Conversations per page": [
+        "Keskustelua/sivu"
+      ],
       "Copy": [
         "Kopioi"
       ],
@@ -8285,6 +8303,9 @@
       ],
       "Message": [
         "Viesti"
+      ],
+      "Messages per page": [
+        "Viestiä/sivu"
       ],
       "Moderate NAT": [
         "Keskitason NAT"
@@ -9746,6 +9767,17 @@
         "Tiimin hallinta"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Muutoin pääsyä tililesi rajoitetaan ja aikanaan tilisi poistetaan käytöstä."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Jatkaaksesi ${ MAIL_APP_NAME }n käyttämistä premium-ominaisuuksilla, valitse tilaus ja maksutapa."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Kokeilujaksosi päättyy ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, päättyy ${ last4 }"
@@ -9816,8 +9848,8 @@
       "Secure email with advanced features for your everyday communications.": [
         "Turvallinen sähköposti edistyneillä ominaisuuksilla jokapäiväiseen viestintään."
       ],
-      "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
-        "Asettamalla automaattivastauksen, voit ilmoittaa yhteydenottajille, ettet ole töissä tai voi muusta syystä vastata."
+      "Set automatic replies to inform senders you are out of the office or unable to respond.": [
+        "Määrittämällä automaattivastauksia voit ilmoittaa yhteydenottajille, ettet ole töissä tai voi muusta syystä vastata."
       ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Räätälöityjä ratkaisuja suuremmille organisaatioille, joilla on erityisiä turvallisuustarpeita"
@@ -9833,17 +9865,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Nykyisellä tilauksellasi nautit alennetusta etuhinnasta. Jos alennat tilisi, menetät etuhinnan, eikä se ole enää käytettävissä, jos joskus palaat tilaajaksi."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Muutoin pääsyä tililesi rajoitetaan ja aikanaan tilisi poistetaan käytöstä."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Jatkaaksesi ${ MAIL_APP_NAME }n käyttämistä premium-ominaisuuksilla, valitse tilaus ja maksutapa."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Kokeilujaksosi päättyy ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11322,9 +11343,6 @@
       ]
     },
     "Signup label": {
-      "Confirm email address": [
-        "Vahvista sähköpostiosoite"
-      ],
       "Confirm password": [
         "Vahvista salasana"
       ],
@@ -13492,6 +13510,11 @@
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
         "Tämä lisää jokaiseen lähettämääsi viestiin julkisen avaimen automaattisesti. Vastaanottajat voivat käyttää tätä viestiesi aitouden varmistukseen ja salattujen viestien lähetykseen sinulle."
+      ]
+    },
+    "Tooltip default pgp scheme": {
+      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
+        "Valitse oletusarvoiset PGP-asetukset, joita käytetään ${ BRAND_NAME }nin ulkopuolisille PGP-käytäjille lähetettävien viestien allekirjoitukseen tai salaukseen. Huomioi, että upotettu PGP pakottaa viestit pelkkä teksti -muotoon."
       ]
     },
     "Tooltip prompt to trust keys": {

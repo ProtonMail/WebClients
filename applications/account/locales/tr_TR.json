@@ -1128,6 +1128,9 @@
       "Disallow unsigned mail": [
         "İmzasız e-posta kullanma"
       ],
+      "Edit": [
+        "Düzenle"
+      ],
       "Edit address": [
         "Adresi düzenle"
       ],
@@ -4347,8 +4350,14 @@
       "Add a name to identify your security key with.": [
         "Güvenlik anahtarınızı tanımlayacak bir ad yazın."
       ],
+      "Allow platform keys": [
+        "Platform anahtarları kullanılabilsin"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "${ name } güvenlik anahtarını silmek istediğinize emin misiniz?"
+      ],
+      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
+        "Bu seçenek açıldığında, dış donanım güvenlik anahtarlarına ek olarak yerleşik aygıtlar (Windows Hello, Touch ID, Face ID ya da Dahili TPM çipleri gibi) kaydedilebilir"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "${ BRAND_NAME } hesabınızla ilişkilendirilmiş güvenlik anahtarını takın."
@@ -4985,17 +4994,11 @@
       "Use your app password instead of your regular password if:": [
         "Aşağıdaki durumlarda normal parolanız yerine uygulama parolanızı kullanın:"
       ],
-      "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        "Uygulama parolanız doğru. Normal parolanızı KULLANMAYIN."
-      ],
       "Your email account requires an app password to export your data.": [
         "E-posta hesabınızdaki verilerinizi dışa aktarmak için bir uygulama parolası gerekli."
       ],
       "Your email account requires one to export your data.": [
         "E-posta hesabınızın verilerini dışa aktarmak için gerekli."
-      ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "E-posta adresiniz ve uygulama parolanız doğru. Normal parolanızı KULLANMAYIN."
       ],
       "Your email address and password are correct.": [
         "E-posta adresiniz ve parolanız doğru."
@@ -6631,7 +6634,7 @@
         "Ödemeyi aşağıdaki adrese yapın ya da QR kodunu tarayın. Ön ödemeniz onaylandıktan sonra hesabınıza yansıtılacak."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
-        "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini korumak için ${ byDate } tarihine kadar yenileyin. ${ reactivateLink }"
+        "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini tutmak için ${ byDate } tarihine kadar yenileyin. ${ reactivateLink }"
       ],
       "Summary": [
         "Özet"
@@ -9737,6 +9740,17 @@
         "Ekip yönetimi"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanımdan kaldırılacak."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Deneme süreniz ${ formattedPeriodEndDate } tarihinde sona eriyor"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, ${ last4 } içinde sona erecek"
@@ -9807,8 +9821,8 @@
       "Secure email with advanced features for your everyday communications.": [
         "Günlük iletişim gereksinimleriniz için gelişmiş özellikleri olan güvenli e-posta."
       ],
-      "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
-        "Otomatik yanıtlar ayarlayarak, kişilere ofis dışında olduğunuzu veya başka bir şekilde yanıt veremeyeceğinizi bildirin."
+      "Set automatic replies to inform senders you are out of the office or unable to respond.": [
+        "Otomatik yanıtlar ayarlayarak, göndericilere ofis dışında olduğunuzu veya başka bir şekilde yanıt veremeyeceğinizi bildirin."
       ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Özel güvenlik gereksinimleri olan daha büyük kuruluşlara özel çözümler"
@@ -9824,17 +9838,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat ücretinizi kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanımdan kaldırılacak."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Deneme süreniz ${ formattedPeriodEndDate } tarihinde sona eriyor"
       ]
     },
     "new_plans: Label": {
@@ -11313,9 +11316,6 @@
       ]
     },
     "Signup label": {
-      "Confirm email address": [
-        "E-posta adresi onayı"
-      ],
       "Confirm password": [
         "Parola onayı"
       ],
@@ -13483,6 +13483,11 @@
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
         "Bu seçenek, gönderdiğiniz her iletiye otomatik olarak herkese açık anahtarınızın eklenmesini sağlar. Alıcılar bu anahtarı kullanarak, iletilerinizi doğrulayabilir ve size şifrelenmiş iletiler gönderebilir."
+      ]
+    },
+    "Tooltip default pgp scheme": {
+      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
+        "${ BRAND_NAME } kullanmayan PGP kullanıcılarıyla yazışırken iletileri imzalamak veya şifrelemek için kullanılacak varsayılan PGP ayarlarını seçin. Inline PGP için iletilerin düz metin biçiminde olması gerektiğini unutmayın."
       ]
     },
     "Tooltip prompt to trust keys": {

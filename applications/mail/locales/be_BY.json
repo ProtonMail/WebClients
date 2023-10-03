@@ -28,6 +28,9 @@
       "Add Bcc recipients": [
         "Дадаць атрымальнікаў схаванай копіі"
       ],
+      "Add birthday": [
+        "Дадаць дзень нараджэння"
+      ],
       "Add Cc recipients": [
         "Дадаць атрымальнікаў копіі"
       ],
@@ -48,6 +51,9 @@
       ],
       "Add new group": [
         "Дадаць новую групу"
+      ],
+      "Add note": [
+        "Дадаць нататку"
       ],
       "Add participant": [
         "Дадаць удзельніка"
@@ -96,7 +102,7 @@
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантакт",
-        "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантакта",
+        "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантакты",
         "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантактаў",
         "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантактаў"
       ],
@@ -421,14 +427,8 @@
       "Get verification code": [
         "Атрымаць праверачны код"
       ],
-      "Go to first page": [
-        "Перайсці на першую старонку"
-      ],
       "Go to label": [
         "Перайсці да меткі"
-      ],
-      "Go to last page": [
-        "Перайсці на апошнюю старонку"
       ],
       "Go to next page": [
         "Перайсці на наступную старонку"
@@ -968,7 +968,7 @@
         "Увайсці"
       ],
       "Sign out": [
-        "Выхад з уліковага запісу"
+        "Выйсці з уліковага запісу"
       ],
       "Signing out": [
         "Адбываецца выхад"
@@ -1959,8 +1959,17 @@
       "Birthday": [
         "Дзень нараджэння"
       ],
+      "Display name": [
+        "Бачнае імя"
+      ],
       "Email": [
         "Электронная пошта"
+      ],
+      "Enter a display name or nickname": [
+        "Увядзіце бачнае імя або псеўданім"
+      ],
+      "First name": [
+        "Імя"
       ],
       "Gender": [
         "Пол"
@@ -1970,6 +1979,9 @@
       ],
       "Language": [
         "Мова"
+      ],
+      "Last name": [
+        "Прозвішча"
       ],
       "Logo": [
         "Лагатып"
@@ -3170,6 +3182,9 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Немагчыма ўключыць пошук змесціва ў гэтым браўзеры. Выйдзіце з рэжыму прыватнага прагляду або скарыстайцеся іншым браўзерам."
       ],
+      "Could not save preference": [
+        "Немагчыма захаваць параметры"
+      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Памылка расшыфроўкі: не ўдалося расшыфраваць змесціва гэтага паведамлення."
       ],
@@ -3227,6 +3242,9 @@
       "Filter with this name already exists": [
         "Фільтр з такой назвай ужо існуе"
       ],
+      "First name is too long": [
+        "Занадта доўгае імя"
+      ],
       "Folder name cannot be empty.": [
         "Назва папкі не можа быць пустой."
       ],
@@ -3259,6 +3277,9 @@
       ],
       "Label name cannot be empty.": [
         "Назва меткі не можа быць пустой."
+      ],
+      "Last name is too long": [
+        "Занадта доўгае прозвішча"
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Перавышана максімальная колькасць далучэнняў (${ attachmentsCountLimit })"
@@ -3331,6 +3352,9 @@
         "Выпраўце вылучаныя канфлікты, каб працягнуць.",
         "Выпраўце вылучаныя канфлікты, каб працягнуць.",
         "Выпраўце вылучаныя канфлікты, каб працягнуць."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Увядзіце імя, прозвішча або бачнае імя"
       ],
       "Port is required": [
         "Патрабуецца ўвесці порт"
@@ -3531,7 +3555,7 @@
     "Error adding participants to a calendar event": {
       "At most ${ maxAttendees } participant is allowed per invitation": [
         "На адно запрашэнне дапускаецца не больш за ${ maxAttendees } удзельніка",
-        "На адно запрашэнне дапускаецца не больш за ${ maxAttendees } удзельніка",
+        "На адно запрашэнне дапускаецца не больш за ${ maxAttendees } удзельнікі",
         "На адно запрашэнне дапускаецца не больш за ${ maxAttendees } удзельнікаў",
         "На адно запрашэнне дапускаецца не больш за ${ maxAttendees } удзельнікаў"
       ]
@@ -4299,7 +4323,7 @@
         "Сховішча разблакіравана"
       ],
       "This feature is currently unavailable": [
-        "Гэта функцыя зараз недаступная"
+        "Гэта функцыя зараз недаступна"
       ],
       "Update your logins": [
         "Абнавіце вашы запісы ўваходу"
@@ -4941,7 +4965,7 @@
         "Нумар тэлефона можа быць выкарыстаны для праверкі аднаго ўліковага запісу ${ BRAND_NAME }"
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
-        "Запыт на скасаванне падпіскі на гэты спіс рассылкі будзе адпраўлены адпраўніку рассылкі і апрацаваны аўтаматычна."
+        "Запыт на скасаванне падпіскі на гэты спіс рассылкі будзе адпраўлены адпраўніку інфармацыйнай рассылкі і апрацаваны аўтаматычна."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Доступ да ўліковага запісу абмежаваны па прычыне неаплачаных рахункаў. Звярніцеся да вашага адміністратара."
@@ -5581,6 +5605,9 @@
       ],
       "Please fill out this field.": [
         "Запоўніце гэта поле."
+      ],
+      "Please note that addresses assigned to these groups will NOT be deleted.": [
+        "Звярніце ўвагу, што адрасы прызначаныя гэтай групе НЕ будуць выдалены."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Звярніце ўвагу, што адрасы, якія прызначаны гэтай групе, НЕ будуць выдалены."
@@ -6597,6 +6624,9 @@
       "Contacts": [
         "Кантакты"
       ],
+      "Conversations per page": [
+        "Размоў на старонку"
+      ],
       "Copy": [
         "Капіяваць"
       ],
@@ -6761,6 +6791,9 @@
       ],
       "Mark as": [
         "Пазначыць як"
+      ],
+      "Messages per page": [
+        "Паведамленняў на старонку"
       ],
       "Move ${ sidebarElementName }": [
         "Перамясціць ${ sidebarElementName }"
@@ -7735,6 +7768,9 @@
       "Filter labels": [
         "Фільтр метак"
       ],
+      "First name": [
+        "Імя"
+      ],
       "Group name": [
         "Назва групы"
       ],
@@ -7743,6 +7779,9 @@
       ],
       "Image URL": [
         "URL-адрас відарыса"
+      ],
+      "Last name": [
+        "Прозвішча"
       ],
       "Link": [
         "Спасылка"
@@ -8818,11 +8857,17 @@
       "CSV field": [
         "Поле CSV"
       ],
+      "Display name": [
+        "Бачнае імя"
+      ],
+      "First name": [
+        "Імя"
+      ],
       "Import": [
         "Імпартаванне"
       ],
-      "Name": [
-        "Імя"
+      "Last name": [
+        "Прозвішча"
       ],
       "Values": [
         "Значэнні"
@@ -8936,6 +8981,9 @@
       ],
       "Billing cycle": [
         "Перыяд аплаты"
+      ],
+      "Birthday": [
+        "Дзень нараджэння"
       ],
       "Blind Carbon Copy": [
         "Схаваная копія"
@@ -9257,6 +9305,9 @@
       ],
       "No trackers found": [
         "Праграмы сачэння не знойдзены"
+      ],
+      "Notes": [
+        "Нататкі"
       ],
       "Open actions dropdown": [
         "Адкрыць спіс даступных дзеянняў"
@@ -9586,6 +9637,9 @@
         "Вы сапраўды хочаце незваротна выдаліць ${ count } кантакты?",
         "Вы сапраўды хочаце незваротна выдаліць ${ count } кантактаў?",
         "Вы сапраўды хочаце незваротна выдаліць ${ count } кантакты?"
+      ],
+      "Are you sure you want to permanently delete these contact groups?": [
+        "Вы ўпэўнены, што хочаце незваротна выдаліць гэтыя групы кантактаў?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Вы сапраўды хочаце незваротна выдаліць гэту групу кантактаў?"

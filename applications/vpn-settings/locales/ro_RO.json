@@ -569,6 +569,9 @@
       "Disallow unsigned mail": [
         "Refuzare mesaje nesemnate"
       ],
+      "Edit": [
+        "Editare"
+      ],
       "Edit address": [
         "Editare adresă"
       ],
@@ -2282,7 +2285,7 @@
     },
     "fido2: Error": {
       "Please disable 2FA via security key before disabling TOTP": [
-        "Dezactivați 2FA prin cheie de securitate înainte de a dezactiva TOTP."
+        "Dezactivați A2F prin cheie de securitate înainte de a dezactiva TOTP."
       ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Ceva a funcționat greșit la autentificarea cu cheia de securitate. Reîncercați."
@@ -2293,13 +2296,19 @@
     },
     "fido2: Info": {
       "2FA via security key disabled": [
-        "Cheia de securitate 2FA a fost eliminată."
+        "Cheia de autentificare cu doi factori (A2F) este gata de utilizare."
       ],
       "Add a name to identify your security key with.": [
         "Adăugați un nume pentru identificarea cheii de securitate."
       ],
+      "Allow platform keys": [
+        "Permitere chei platformă"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Sigur ștergeți cheia de securitate ${ name }?"
+      ],
+      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
+        "Dacă este activat, permite înregistrarea dispozitivelor încorporate (cum ar fi Windows Hello, Touch ID, Face ID sau TPM-uri interne) în plus față de cheile de securitate hardware externe."
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Inserați cheia de securitate legată la contul ${ BRAND_NAME }."
@@ -2320,13 +2329,13 @@
         "Se vor șterge toate cheile de securitate asociate contului."
       ],
       "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "Pentru a activa 2FA cu o cheie de securitate, trebuie să activați 2FA prin aplicația Authenticator."
+        "Pentru a activa A2F cu o cheie de securitate, trebuie să activați A2F prin aplicația Authenticator."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Vă verificați identitatea cu o cheie fizică U2F sau FIDO2."
       ],
       "Your two-factor authentication key is ready to use.": [
-        "Cheia de autentificare cu doi factori (2FA) este gata de utilizare."
+        "Cheia de autentificare cu doi factori este pregătită de utilizare."
       ]
     },
     "fido2: Label": {
@@ -2342,7 +2351,7 @@
         "Ștergeți cheia de securitate?"
       ],
       "Disable 2FA via security key?": [
-        "Dezactivați 2FA prin cheie de securitate?"
+        "Dezactivați A2F prin cheie de securitate?"
       ],
       "Name your security key": [
         "Denumiți cheia de securitate"
@@ -2629,7 +2638,7 @@
         "adăugat o metodă de recuperare"
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
-        "Adaugă o nouă protecție contului. Va trebui să folosiți verificarea cu doi factori de fiecare dată când vă conectați."
+        "Aceasta adaugă un nivel suplimentar de protecție a contului. Va trebui să folosiți autentificarea cu doi factori de fiecare dată când vă conectați."
       ],
       "Add server (${ availableAddedCount } available)": [
         "Adăugare server (${ availableAddedCount } disponibil)",
@@ -4714,7 +4723,7 @@
         "Semnături HTML"
       ],
       "Integrated 2FA authenticator": [
-        "Autentificator 2FA integrat"
+        "Autentificator A2F integrat"
       ],
       "Kill switch/always-on VPN": [
         "Întrerupător de urgență / VPN permanent"
@@ -5612,9 +5621,6 @@
       ]
     },
     "Signup label": {
-      "Confirm email address": [
-        "Confirmare adresă de e-mail"
-      ],
       "Confirm password": [
         "Confirmare parolă"
       ],

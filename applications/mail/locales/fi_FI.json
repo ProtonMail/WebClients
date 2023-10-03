@@ -28,6 +28,9 @@
       "Add Bcc recipients": [
         "Lisää piilokopioiden vastaanottajat"
       ],
+      "Add birthday": [
+        "Lisää syntymäpäivä"
+      ],
       "Add Cc recipients": [
         "Lisää kopioiden vastaanottajat"
       ],
@@ -48,6 +51,9 @@
       ],
       "Add new group": [
         "Lisää uusi ryhmä"
+      ],
+      "Add note": [
+        "Lisää merkintä"
       ],
       "Add participant": [
         "Lisää osallistuja"
@@ -415,14 +421,8 @@
       "Get verification code": [
         "Hanki vahvistuskoodi"
       ],
-      "Go to first page": [
-        "Siirry ensimmäiselle sivulle"
-      ],
       "Go to label": [
         "Siirry tunnisteeseen"
-      ],
-      "Go to last page": [
-        "Siirry viimeiselle sivulle"
       ],
       "Go to next page": [
         "Siirry seuraavalle sivulle"
@@ -1947,8 +1947,17 @@
       "Birthday": [
         "Syntymäpäivä"
       ],
+      "Display name": [
+        "Näyttönimi"
+      ],
       "Email": [
         "Sähköpostiosoite"
+      ],
+      "Enter a display name or nickname": [
+        "Syötä näyttönimi tai lempinimi"
+      ],
+      "First name": [
+        "Etunimi"
       ],
       "Gender": [
         "Sukupuoli"
@@ -1958,6 +1967,9 @@
       ],
       "Language": [
         "Kieli"
+      ],
+      "Last name": [
+        "Sukunimi"
       ],
       "Logo": [
         "Logo"
@@ -3140,6 +3152,9 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Sisältöhakua ei voida käyttää tässä selaimessa. Poistu yksityisestä selaustilasta tai käytä eri selainta."
       ],
+      "Could not save preference": [
+        "Asetusta ei voitu tallentaa"
+      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Salauksen purkuvirhe: viestin sisällön salauksen purku epäonnistui."
       ],
@@ -3193,6 +3208,9 @@
       "Filter with this name already exists": [
         "Tämän niminen suodatin on jo olemassa"
       ],
+      "First name is too long": [
+        "Etunimi on liian pitkä"
+      ],
       "Folder name cannot be empty.": [
         "Kansion nimi ei voi olla tyhjä."
       ],
@@ -3225,6 +3243,9 @@
       ],
       "Label name cannot be empty.": [
         "Tunnisteen nimi ei voi olla tyhjä."
+      ],
+      "Last name is too long": [
+        "Sukunimi on liian pitkä"
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Liitteiden enimmäismäärä (${ attachmentsCountLimit }) on ylitetty"
@@ -3289,6 +3310,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "Jatka korjaamalla korostettu ristiriita.",
         "Jatka korjaamalla korostetut ristiriidat."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Syötä ainakin etunimi, sukunimi tai näyttönimi"
       ],
       "Port is required": [
         "Portti vaaditaan"
@@ -3407,7 +3431,7 @@
         "Tämä kenttä vaaditaan"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "Kenttä edellyttää vähintään ${ minimumLength }-merkkiä."
+        "Kenttä edellyttää vähintään ${ minimumLength } merkkiä."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Kansion nimi ei ole käytettävissä. Valitse eri nimi."
@@ -4639,7 +4663,7 @@
       ],
       "${ contactsLength } contact": [
         "${ contactsLength } yhteystieto",
-        "${ contactsLength } yhteystiedot"
+        "${ contactsLength } yhteystietoa"
       ],
       "${ count } unread message": [
         "${ count } lukematon viesti",
@@ -4712,7 +4736,7 @@
       ],
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
         "${ selectedContactsLength }/${ contactsLength } yhteystieto valittu",
-        "${ selectedContactsLength }/${ contactsLength } yhteystiedot valittu"
+        "${ selectedContactsLength }/${ contactsLength } yhteystietoa valittu"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } kansio valittu",
@@ -5393,6 +5417,9 @@
       ],
       "Please fill out this field.": [
         "Täytä tämä kenttä."
+      ],
+      "Please note that addresses assigned to these groups will NOT be deleted.": [
+        "Huomioi, että ryhmiin lisättyjä osoitteita EI poisteta."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Huomioi, että ryhmään lisättyjä osoitteita EI poisteta."
@@ -6377,6 +6404,9 @@
       "Contacts": [
         "Yhteystiedot"
       ],
+      "Conversations per page": [
+        "Keskustelua/sivu"
+      ],
       "Copy": [
         "Kopioi"
       ],
@@ -6541,6 +6571,9 @@
       ],
       "Mark as": [
         "Merkitse"
+      ],
+      "Messages per page": [
+        "Viestiä/sivu"
       ],
       "Move ${ sidebarElementName }": [
         "Siirrä ${ sidebarElementName }"
@@ -7499,6 +7532,9 @@
       "Filter labels": [
         "Suodata tunnisteita"
       ],
+      "First name": [
+        "Etunimi"
+      ],
       "Group name": [
         "Ryhmän nimi"
       ],
@@ -7507,6 +7543,9 @@
       ],
       "Image URL": [
         "Kuvan URL"
+      ],
+      "Last name": [
+        "Sukunimi"
       ],
       "Link": [
         "Verkkosivun URL"
@@ -8502,11 +8541,17 @@
       "CSV field": [
         "CSV-kenttä"
       ],
+      "Display name": [
+        "Näyttönimi"
+      ],
+      "First name": [
+        "Etunimi"
+      ],
       "Import": [
         "Tuonti"
       ],
-      "Name": [
-        "Nimi"
+      "Last name": [
+        "Sukunimi"
       ],
       "Values": [
         "Arvot"
@@ -8602,6 +8647,9 @@
       ],
       "Billing cycle": [
         "Laskutusjakso"
+      ],
+      "Birthday": [
+        "Syntymäpäivä"
       ],
       "Blind Carbon Copy": [
         "Piilokopio"
@@ -8911,6 +8959,9 @@
       ],
       "No trackers found": [
         "Seurantoja ei löydetty"
+      ],
+      "Notes": [
+        "Muistiinpanot"
       ],
       "Open actions dropdown": [
         "Avaa toimintovalikko"
@@ -9230,6 +9281,9 @@
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Haluatko varmasti poistaa ${ count } yhteystiedon pysyvästi?",
         "Haluatko varmasti poistaa ${ count } yhteystietoa pysyvästi?"
+      ],
+      "Are you sure you want to permanently delete these contact groups?": [
+        "Haluatko varmasti poistaa nämä yhteystietoryhmät pysyvästi?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Haluatko varmasti poistaa yhteystietoryhmän pysyvästi?"
