@@ -9,6 +9,8 @@
 }
 
 .photos-card {
+	user-select: none;
+
 	&--loading {
 		content: '';
 		background-color: var(--background-weak);
