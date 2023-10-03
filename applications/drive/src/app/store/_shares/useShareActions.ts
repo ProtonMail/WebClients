@@ -54,8 +54,6 @@ export default function useShareActions() {
         const { Share } = await preventLeave(
             debouncedRequest<{ Share: { ID: string } }>(
                 queryCreateShare(volumeId, {
-                    Type: 1, // Not used, but required.
-                    PermissionsMask: 0,
                     AddressID: address.ID,
                     RootLinkID: linkId,
                     Name: 'New Share',
