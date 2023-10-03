@@ -1865,8 +1865,14 @@
       "Birthday": [
         "Date de naissance"
       ],
+      "Display name": [
+        "Nom d'affichage"
+      ],
       "Email": [
         "Adresse e-mail"
+      ],
+      "First name": [
+        "Prénom"
       ],
       "Gender": [
         "Genre"
@@ -1876,6 +1882,9 @@
       ],
       "Language": [
         "Langue"
+      ],
+      "Last name": [
+        "Nom"
       ],
       "Logo": [
         "Logo"
@@ -3185,6 +3194,9 @@
       ],
       "Contact signature not verified": [
         "La signature du contact n'a pas été vérifiée."
+      ],
+      "Could not save preference": [
+        "La préférence n'a pas pu être enregistrée."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Désélectionnez au moins ${ calendarsToFixCount } calendrier.",
@@ -5559,7 +5571,7 @@
         "Voulez-vous vraiment abandonner vos modifications ?"
       ],
       "Are you sure you want to discard your import?": [
-        "Voulez-vous vraiment annuler votre importation ?"
+        "Voulez-vous vraiment abandonner votre importation ?"
       ],
       "Are you sure you want to permanently delete all your logs?": [
         "Voulez-vous vraiment supprimer définitivement tous vos journaux ?"
@@ -6901,7 +6913,7 @@
         "Si vous ne vous déconnectez pas de votre compte ou ne changez pas votre mot de passe, votre session restera active. Les sessions expirent après 60 jours d'inactivité."
       ],
       "Unlimited folders, labels, and filters": [
-        "Dossiers, labels et filtres illimités"
+        "Nombre illimité de dossiers, de labels et de filtres"
       ],
       "Unlimited messages": [
         "Messages illimités"
@@ -8001,6 +8013,9 @@
       "Conversation grouping": [
         "Activer le mode conversation"
       ],
+      "Conversations per page": [
+        "Conversations par page"
+      ],
       "Copy": [
         "Copier"
       ],
@@ -8288,6 +8303,9 @@
       ],
       "Message": [
         "Message"
+      ],
+      "Messages per page": [
+        "Messages par page"
       ],
       "Moderate NAT": [
         "NAT modéré"
@@ -9676,19 +9694,19 @@
         "Nombre illimité d'appareils"
       ],
       "Unlimited filters": [
-        "Filtres illimités"
+        "Nombre illimité de filtres"
       ],
       "Unlimited folders": [
-        "Dossiers illimités"
+        "Nombre illimité de dossiers"
       ],
       "Unlimited folders, labels, and filters": [
-        "Dossiers, labels et filtres illimités"
+        "Nombre illimité de dossiers, de labels et de filtres"
       ],
       "Unlimited hide-my-email aliases": [
         "Nombre illimité d'alias « hide-my-email »"
       ],
       "Unlimited labels": [
-        "Labels illimités"
+        "Nombre illimité de labels"
       ],
       "Unlimited logins and notes": [
         "Nombre illimité de connexions et de notes"
@@ -9747,6 +9765,17 @@
       ],
       "Team management": [
         "Gestion de l'équipe"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Autrement, l'accès à votre compte sera limité, puis votre compte sera désactivé."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pour continuer à utiliser ${ MAIL_APP_NAME } avec les fonctionnalités premium, choisissez votre abonnement et votre moyen de paiement."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Votre essai se termine le ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: info": {
@@ -9819,8 +9848,8 @@
       "Secure email with advanced features for your everyday communications.": [
         "Une messagerie sécurisée avec des fonctionnalités avancées pour vos communications quotidiennes."
       ],
-      "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
-        "Configurez des réponses automatiques pour informer vos contacts que vous êtes absent ou que vous ne pouvez pas répondre."
+      "Set automatic replies to inform senders you are out of the office or unable to respond.": [
+        "Définissez des réponses automatiques pour informer les personnes qui vous écrivent que vous êtes absent ou que vous ne pouvez pas répondre."
       ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Disposez de solutions sur mesure pour les grandes entreprises qui ont des besoins spécifiques en matière de sécurité."
@@ -9836,17 +9865,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vous bénéficiez d'un tarif promotionnel sur votre abonnement actuel. En choisissant un compte avec moins de fonctionnalités, vous perdrez ce tarif et il ne sera plus disponible si vous voulez vous réabonner."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Autrement, l'accès à votre compte sera limité, puis votre compte sera désactivé."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pour continuer à utiliser ${ MAIL_APP_NAME } avec les fonctionnalités premium, choisissez votre abonnement et votre moyen de paiement."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Votre essai se termine le ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -11325,9 +11343,6 @@
       ]
     },
     "Signup label": {
-      "Confirm email address": [
-        "Confirmer l'adresse e-mail"
-      ],
       "Confirm password": [
         "Confirmer le mot de passe"
       ],
