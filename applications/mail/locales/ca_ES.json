@@ -28,6 +28,9 @@
       "Add Bcc recipients": [
         "Afegeix destinatari CCO"
       ],
+      "Add birthday": [
+        "Afegir una data de naixement"
+      ],
       "Add Cc recipients": [
         "Afegeix destinatari CC"
       ],
@@ -48,6 +51,9 @@
       ],
       "Add new group": [
         "Afegeix un grup"
+      ],
+      "Add note": [
+        "Afegeix una nota"
       ],
       "Add participant": [
         "Afegeix participants"
@@ -411,14 +417,8 @@
       "Get verification code": [
         "Obtenir codi de verificació"
       ],
-      "Go to first page": [
-        "Ves a la primera pàgina"
-      ],
       "Go to label": [
         "Ves a l'etiqueta"
-      ],
-      "Go to last page": [
-        "Vés a l'última pàgina"
       ],
       "Go to next page": [
         "Ves a la pàgina següent"
@@ -1939,8 +1939,14 @@
       "Birthday": [
         "Aniversari"
       ],
+      "Display name": [
+        "Nom a mostrar"
+      ],
       "Email": [
         "Correu electrònic"
+      ],
+      "First name": [
+        "Nom"
       ],
       "Gender": [
         "Gènere"
@@ -1950,6 +1956,9 @@
       ],
       "Language": [
         "Idioma"
+      ],
+      "Last name": [
+        "Cognom"
       ],
       "Logo": [
         "Logo"
@@ -3132,6 +3141,9 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "La cerca de continguts no es pot activar en aquest navegador. Tanqueu el mode de navegació privada o utilitzeu un altre navegador."
       ],
+      "Could not save preference": [
+        "No s'ha pogut desar la preferència."
+      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "S'ha produït un error de desxifratge: no s'ha pogut desxifrar el contingut xifrat d’aquest missatge."
       ],
@@ -3185,6 +3197,9 @@
       "Filter with this name already exists": [
         "Ja existeix un filtre amb aquest nom"
       ],
+      "First name is too long": [
+        "El nom és massa llarg."
+      ],
       "Folder name cannot be empty.": [
         "El nom de la carpeta no pot estar buit."
       ],
@@ -3217,6 +3232,9 @@
       ],
       "Label name cannot be empty.": [
         "El nom de l'etiqueta no pot estar buit."
+      ],
+      "Last name is too long": [
+        "El cognom és massa llarg."
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "S'ha excedit el nombre màxim d'adjunts (${ attachmentsCountLimit })"
@@ -4132,6 +4150,9 @@
       "Change ${ strongText } to your ${ BRAND_NAME } address": [
         "Canvieu els ${ strongText } a la vostra adreça de ${ BRAND_NAME }"
       ],
+      "Changed accounts": [
+        "Els comptes han estat canviats."
+      ],
       "Checklist complete": [
         "S'ha completat la llista de verificació"
       ],
@@ -4200,6 +4221,12 @@
       ],
       "Sign in to the mobile app to complete this step": [
         "Inicieu la sessió a l'aplicació mòbil per a completar aquest pas."
+      ],
+      "Storage unlocked": [
+        "S'ha desbloquejat l'emmagatzematge."
+      ],
+      "This feature is currently unavailable": [
+        "Aquesta característica actualment no està disponible."
       ],
       "Update your logins": [
         "Actualitzeu els inicis de sessió"
@@ -4997,6 +5024,9 @@
       "Each code can only be used once": [
         "Cada codi només es pot utilitzar una vegada."
       ],
+      "Edit email address": [
+        "Edita l'adreça de correu"
+      ],
       "Edit encryption": [
         "Edita el xifrat"
       ],
@@ -5348,6 +5378,9 @@
       ],
       "Please fill out this field.": [
         "Empleneu aquest camp."
+      ],
+      "Please note that addresses assigned to these groups will NOT be deleted.": [
+        "Tingueu en compte que les adreces assignades a aquests grups NO se suprimeixen."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Tingueu en compte que les adreces assignades a aquest grup NO se suprimiran."
@@ -6332,6 +6365,9 @@
       "Contacts": [
         "Contactes"
       ],
+      "Conversations per page": [
+        "Conversacions per pàgina"
+      ],
       "Copy": [
         "Copia"
       ],
@@ -6496,6 +6532,9 @@
       ],
       "Mark as": [
         "Marca com a"
+      ],
+      "Messages per page": [
+        "Missatges per pàgina"
       ],
       "Move ${ sidebarElementName }": [
         "Mou ${ sidebarElementName }"
@@ -7454,6 +7493,9 @@
       "Filter labels": [
         "Filtra etiquetes"
       ],
+      "First name": [
+        "Nom"
+      ],
       "Group name": [
         "Nom del grup"
       ],
@@ -7462,6 +7504,9 @@
       ],
       "Image URL": [
         "URL de la imatge"
+      ],
+      "Last name": [
+        "Cognom"
       ],
       "Link": [
         "Enllaç"
@@ -8454,11 +8499,17 @@
       "CSV field": [
         "Camp CSV"
       ],
+      "Display name": [
+        "Nom a mostrar"
+      ],
+      "First name": [
+        "Nom"
+      ],
       "Import": [
         "Importa"
       ],
-      "Name": [
-        "Nom"
+      "Last name": [
+        "Cognom"
       ],
       "Values": [
         "Valors"
@@ -8554,6 +8605,9 @@
       ],
       "Billing cycle": [
         "Cicle de facturació"
+      ],
+      "Birthday": [
+        "Data de naixement"
       ],
       "Blind Carbon Copy": [
         "Copia Carbó Amagada"
@@ -8863,6 +8917,9 @@
       ],
       "No trackers found": [
         "No s'han trobat rastrejadors"
+      ],
+      "Notes": [
+        "Notes"
       ],
       "Open actions dropdown": [
         "Obrir el desplegable d'accions"
@@ -9182,6 +9239,9 @@
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Estàs segur de que vols eliminar ${ count } contacte definitivament?",
         "Estàs segur de que vols eliminar ${ count } contactes definitivament?"
+      ],
+      "Are you sure you want to permanently delete these contact groups?": [
+        "Esteu segur que voleu eliminar aquests grups de contacte permanentment?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "N'esteu segur, de voler eliminar permanentment aquest grup de contactes?"

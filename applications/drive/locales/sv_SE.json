@@ -25,6 +25,9 @@
       "Add address": [
         "Lägg till adress"
       ],
+      "Add birthday": [
+        "Lägg till födelsedag"
+      ],
       "Add contact": [
         "Lägg till kontakt"
       ],
@@ -39,6 +42,9 @@
       ],
       "Add new group": [
         "Lägg till ny grupp"
+      ],
+      "Add note": [
+        "Lägg till anteckning"
       ],
       "Add phone number": [
         "Lägg till telefonnummer"
@@ -957,8 +963,17 @@
       "Birthday": [
         "Födelsedag"
       ],
+      "Display name": [
+        "Visningsnamn"
+      ],
       "Email": [
         "E-post"
+      ],
+      "Enter a display name or nickname": [
+        "Ange ett visningsnamn eller smeknamn"
+      ],
+      "First name": [
+        "Förnamn"
       ],
       "Gender": [
         "Kön"
@@ -968,6 +983,9 @@
       ],
       "Language": [
         "Språk"
+      ],
+      "Last name": [
+        "Efternamn"
       ],
       "Logo": [
         "Logga"
@@ -1983,6 +2001,9 @@
       "Enter 6 digits": [
         "Ange 6 siffror"
       ],
+      "Error decrypting a computer": [
+        "Fel vid dekryptering av dator"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Filen “${ item.name }“ kan inte laddas upp på grund felet “${ error }“"
       ],
@@ -1994,6 +2015,9 @@
       ],
       "File selection is already downloading": [
         "Filval laddas redan ner"
+      ],
+      "First name is too long": [
+        "Förnamn är för långt"
       ],
       "Folder \"${ name }\" is already downloading": [
         "Mappen “${ name }“ laddas redan ner"
@@ -2030,6 +2054,9 @@
       ],
       "Label name cannot be empty.": [
         "Etikettnamn kan inte vara tomt."
+      ],
+      "Last name is too long": [
+        "Efternamn är för långt"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Slå samman minst ${ calendarsToFixCount } kalender med en befintlig ${ BRAND_NAME }-kalender",
@@ -2076,6 +2103,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "Åtgärda den markerade konflikten för att fortsätta.",
         "Åtgärda de markerade konflikterna för att fortsätta."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Ange antingen ett förnamn, ett efternamn eller ett visningsnamn"
       ],
       "Port is required": [
         "Port är obligatoriskt"
@@ -5219,11 +5249,17 @@
       "Filter groups": [
         "Filtrera grupper"
       ],
+      "First name": [
+        "Förnamn"
+      ],
       "Group name": [
         "Gruppnamn"
       ],
       "Image URL": [
         "Bild-URL"
+      ],
+      "Last name": [
+        "Efternamn"
       ],
       "Name": [
         "Namn"
@@ -5766,11 +5802,17 @@
       "CSV field": [
         "CSV-fält"
       ],
+      "Display name": [
+        "Visningsnamn"
+      ],
+      "First name": [
+        "Förnamn"
+      ],
       "Import": [
         "Importera"
       ],
-      "Name": [
-        "Namn"
+      "Last name": [
+        "Efternamn"
       ],
       "Values": [
         "Värden"
@@ -5857,6 +5899,9 @@
       ],
       "Billing cycle": [
         "Faktureringscykel"
+      ],
+      "Birthday": [
+        "Födelsedag"
       ],
       "Browser might run out of memory": [
         "Webbläsaren kan få slut på minne"
@@ -6080,6 +6125,9 @@
       ],
       "No results found": [
         "Inga resultat hittades"
+      ],
+      "Notes": [
+        "Anteckningar"
       ],
       "Number of files": [
         "Antal filer"

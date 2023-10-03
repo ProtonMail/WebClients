@@ -28,6 +28,9 @@
       "Add Bcc recipients": [
         "Додати отримувачів до прихованої копії"
       ],
+      "Add birthday": [
+        "Додати день народження"
+      ],
       "Add Cc recipients": [
         "Додати отримувачів до копії"
       ],
@@ -48,6 +51,9 @@
       ],
       "Add new group": [
         "Додати нову групу"
+      ],
+      "Add note": [
+        "Додати нотатку"
       ],
       "Add participant": [
         "Додати учасника"
@@ -415,14 +421,8 @@
       "Get verification code": [
         "Отримати код підтвердження"
       ],
-      "Go to first page": [
-        "Перейти на першу сторінку"
-      ],
       "Go to label": [
         "Перейти до мітки"
-      ],
-      "Go to last page": [
-        "Перейти на останню сторінку"
       ],
       "Go to next page": [
         "Перейти на наступну сторінку"
@@ -1947,8 +1947,17 @@
       "Birthday": [
         "День народження"
       ],
+      "Display name": [
+        "Ім'я для показу"
+      ],
       "Email": [
         "Е-пошта"
+      ],
+      "Enter a display name or nickname": [
+        "Введіть ім'я для показу або псевдонім"
+      ],
+      "First name": [
+        "Ім'я"
       ],
       "Gender": [
         "Стать"
@@ -1958,6 +1967,9 @@
       ],
       "Language": [
         "Мова"
+      ],
+      "Last name": [
+        "Прізвище"
       ],
       "Logo": [
         "Логотип"
@@ -3158,6 +3170,9 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Пошук вмісту не можна увімкнути в цьому браузері. Вийдіть з режиму приватного перегляду або спробуйте інший браузер."
       ],
+      "Could not save preference": [
+        "Не вдалося зберегти налаштування"
+      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Помилка розшифрування: не вдалося розшифрувати вміст цього повідомлення."
       ],
@@ -3215,6 +3230,9 @@
       "Filter with this name already exists": [
         "Фільтр з цією назвою вже існує"
       ],
+      "First name is too long": [
+        "Ім'я занадто довге"
+      ],
       "Folder name cannot be empty.": [
         "Тека не може бути без назви."
       ],
@@ -3247,6 +3265,9 @@
       ],
       "Label name cannot be empty.": [
         "Мітка не може бути без назви."
+      ],
+      "Last name is too long": [
+        "Прізвище занадто довге"
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Перевищено максимальну кількість (${ attachmentsCountLimit }) вкладень"
@@ -3319,6 +3340,9 @@
         "Виправте вказані проблеми, щоб продовжити.",
         "Виправте вказані проблеми, щоб продовжити.",
         "Виправте вказані проблеми, щоб продовжити."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Введіть ім'я, прізвище або ім'я для показу"
       ],
       "Port is required": [
         "Порт обов'язковий"
@@ -4271,6 +4295,9 @@
       ],
       "Storage unlocked": [
         "Сховище розблоковано"
+      ],
+      "This feature is currently unavailable": [
+        "Ця функція наразі недоступна"
       ],
       "Update your logins": [
         "Оновіть свої записи входу"
@@ -5553,6 +5580,9 @@
       "Please fill out this field.": [
         "Будь ласка, заповніть це поле."
       ],
+      "Please note that addresses assigned to these groups will NOT be deleted.": [
+        "Зауважте, що адреси, призначені цим групам, НЕ будуть видалені."
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Зауважте, що адреси, призначені цій групі, не будуть видалені."
       ],
@@ -6568,6 +6598,9 @@
       "Contacts": [
         "Контакти"
       ],
+      "Conversations per page": [
+        "Розмов на сторінку"
+      ],
       "Copy": [
         "Копіювати"
       ],
@@ -6732,6 +6765,9 @@
       ],
       "Mark as": [
         "Позначити як"
+      ],
+      "Messages per page": [
+        "Повідомлень на сторінку"
       ],
       "Move ${ sidebarElementName }": [
         "Перемістити ${ sidebarElementName }"
@@ -7706,6 +7742,9 @@
       "Filter labels": [
         "Фільтр міток"
       ],
+      "First name": [
+        "Ім'я"
+      ],
       "Group name": [
         "Назва групи"
       ],
@@ -7714,6 +7753,9 @@
       ],
       "Image URL": [
         "URL-адреса зображення"
+      ],
+      "Last name": [
+        "Прізвище"
       ],
       "Link": [
         "Посилання"
@@ -8789,11 +8831,17 @@
       "CSV field": [
         "Поле CSV"
       ],
+      "Display name": [
+        "Ім'я"
+      ],
+      "First name": [
+        "Ім'я"
+      ],
       "Import": [
         "Імпорт"
       ],
-      "Name": [
-        "Ім'я"
+      "Last name": [
+        "Прізвище"
       ],
       "Values": [
         "Значення"
@@ -8907,6 +8955,9 @@
       ],
       "Billing cycle": [
         "Платіжний цикл"
+      ],
+      "Birthday": [
+        "День народження"
       ],
       "Blind Carbon Copy": [
         "Прихована копія"
@@ -9228,6 +9279,9 @@
       ],
       "No trackers found": [
         "Стеження не виявлено"
+      ],
+      "Notes": [
+        "Нотатки"
       ],
       "Open actions dropdown": [
         "Випадне меню дій"
@@ -9557,6 +9611,9 @@
         "Ви дійсно хочете остаточно видалити ${ count } контакти?",
         "Ви дійсно хочете остаточно видалити ${ count } контактів?",
         "Ви дійсно хочете остаточно видалити ${ count } контактів?"
+      ],
+      "Are you sure you want to permanently delete these contact groups?": [
+        "Ви дійсно бажаєте остаточно видалити ці групи контактів?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Ви дійсно бажаєте остаточно видалити цю групу контактів?"

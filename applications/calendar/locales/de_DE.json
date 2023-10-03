@@ -33,6 +33,9 @@
       "Add address": [
         "Adresse hinzufügen"
       ],
+      "Add birthday": [
+        "Geburtstag hinzufügen"
+      ],
       "Add contact": [
         "Kontakt hinzufügen"
       ],
@@ -47,6 +50,9 @@
       ],
       "Add new group": [
         "Neue Gruppe hinzufügen"
+      ],
+      "Add note": [
+        "Notiz hinzufügen"
       ],
       "Add notification": [
         "Benachrichtigung hinzufügen"
@@ -1114,8 +1120,17 @@
       "Birthday": [
         "Geburtstag"
       ],
+      "Display name": [
+        "Anzeigename"
+      ],
       "Email": [
         "E-Mail"
+      ],
+      "Enter a display name or nickname": [
+        "Gib einen Anzeigenamen oder Spitznamen ein"
+      ],
+      "First name": [
+        "Vorname"
       ],
       "Gender": [
         "Geschlecht"
@@ -1125,6 +1140,9 @@
       ],
       "Language": [
         "Sprache"
+      ],
+      "Last name": [
+        "Nachname"
       ],
       "Logo": [
         "Logo"
@@ -2319,6 +2337,9 @@
       "Failed to get original occurrence in series": [
         "Abrufen des ursprünglichen Serienelements fehlgeschlagen"
       ],
+      "First name is too long": [
+        "Der Vorname ist zu lang"
+      ],
       "Folder name cannot be empty.": [
         "Name des Ordners kann nicht leer sein."
       ],
@@ -2363,6 +2384,9 @@
       ],
       "Label name cannot be empty.": [
         "Name der Kategorie kann nicht leer sein."
+      ],
+      "Last name is too long": [
+        "Der Nachname ist zu lang"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Mindestens ${ calendarsToFixCount } Kalender mit einem bestehenden ${ BRAND_NAME }-Kalender zusammenführen",
@@ -2424,6 +2448,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "Bitte behebe den hervorgehobenen Konflikt, um fortfahren zu können.",
         "Bitte behebe die hervorgehobenen Konflikte, um fortfahren zu können."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Bitte gib entweder einen Vornamen, Nachnamen oder Anzeigenamen ein"
       ],
       "Port is required": [
         "Port ist erforderlich"
@@ -3861,6 +3888,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME sendet die Nachricht automatisch unter Verwendung des aktuellen Verfassen-Modus."
+      ],
+      "Please note that addresses assigned to these groups will NOT be deleted.": [
+        "Bitte beachte, dass die diesen Gruppen zugewiesenen E-Mail-Adressen NICHT gelöscht werden."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Bitte beachte, dass die dieser Gruppe zugewiesenen E-Mail-Adressen NICHT gelöscht werden."
@@ -5379,6 +5409,9 @@
       "Filter groups": [
         "Gruppen filtern"
       ],
+      "First name": [
+        "Vorname"
+      ],
       "Group name": [
         "Name der Gruppe"
       ],
@@ -5387,6 +5420,9 @@
       ],
       "Indexing...": [
         "Indiziere…"
+      ],
+      "Last name": [
+        "Nachname"
       ],
       "Name": [
         "Name"
@@ -6100,11 +6136,17 @@
       "CSV field": [
         "CSV-Feld"
       ],
+      "Display name": [
+        "Anzeigename"
+      ],
+      "First name": [
+        "Vorname"
+      ],
       "Import": [
         "Importieren"
       ],
-      "Name": [
-        "Name"
+      "Last name": [
+        "Nachname"
       ],
       "Values": [
         "Werte"
@@ -6187,6 +6229,9 @@
       ],
       "Billing cycle": [
         "Abrechnungszeitraum"
+      ],
+      "Birthday": [
+        "Geburtstag"
       ],
       "Calendar": [
         "Kalender"
@@ -6346,6 +6391,9 @@
       ],
       "Night theme": [
         "Dunkles Design"
+      ],
+      "Notes": [
+        "Notizen"
       ],
       "Open actions dropdown": [
         "Auswahlliste „Aktionen“ öffnen"
@@ -6647,6 +6695,9 @@
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Möchtest du wirklich ${ count } Kontakt dauerhaft löschen?",
         "Möchtest du wirklich ${ count } Kontakte dauerhaft löschen?"
+      ],
+      "Are you sure you want to permanently delete these contact groups?": [
+        "Möchtest du diese Kontaktgruppen wirklich dauerhaft löschen?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Möchtest du diese Kontaktgruppe wirklich dauerhaft löschen?"

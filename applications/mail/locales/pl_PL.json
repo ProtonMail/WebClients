@@ -28,6 +28,9 @@
       "Add Bcc recipients": [
         "Dodaj odbiorców UDW"
       ],
+      "Add birthday": [
+        "Dodaj urodziny"
+      ],
       "Add Cc recipients": [
         "Dodaj odbiorców DW"
       ],
@@ -48,6 +51,9 @@
       ],
       "Add new group": [
         "Dodaj nową grupę"
+      ],
+      "Add note": [
+        "Dodaj notatkę"
       ],
       "Add participant": [
         "Dodaj uczestnika"
@@ -421,14 +427,8 @@
       "Get verification code": [
         "Otrzymaj kod weryfikacyjny"
       ],
-      "Go to first page": [
-        "Przejdź do pierwszej strony"
-      ],
       "Go to label": [
         "Przejdź do etykiety"
-      ],
-      "Go to last page": [
-        "Przejdź do ostatniej strony"
       ],
       "Go to next page": [
         "Przejdź do następnej strony"
@@ -1959,8 +1959,17 @@
       "Birthday": [
         "Urodziny"
       ],
+      "Display name": [
+        "Nazwa wyświetlana"
+      ],
       "Email": [
         "E-mail"
+      ],
+      "Enter a display name or nickname": [
+        "Wpisz nazwę wyświetlaną lub pseudonim"
+      ],
+      "First name": [
+        "Imię"
       ],
       "Gender": [
         "Płeć"
@@ -1970,6 +1979,9 @@
       ],
       "Language": [
         "Język"
+      ],
+      "Last name": [
+        "Nazwisko"
       ],
       "Logo": [
         "Logo"
@@ -3170,6 +3182,9 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Nie można włączyć wyszukiwania zawartości w tej przeglądarce. Wyjdź z trybu prywatnego przeglądarki lub spróbuj użyć innej."
       ],
+      "Could not save preference": [
+        "Nie można zapisać ustawień"
+      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Błąd odszyfrowywania: odszyfrowanie tej wiadomości nie powiodło się."
       ],
@@ -3227,6 +3242,9 @@
       "Filter with this name already exists": [
         "Filtr o tej nazwie już istnieje"
       ],
+      "First name is too long": [
+        "Imię jest zbyt długie"
+      ],
       "Folder name cannot be empty.": [
         "Nazwa folderu nie może być pusta."
       ],
@@ -3259,6 +3277,9 @@
       ],
       "Label name cannot be empty.": [
         "Nazwa etykiety nie może być pusta."
+      ],
+      "Last name is too long": [
+        "Nazwisko jest zbyt długie"
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Maksymalna liczba ${ attachmentsCountLimit } załączników została przekroczona"
@@ -3331,6 +3352,9 @@
         "Popraw zaznaczone konflikty, aby kontynuować.",
         "Popraw zaznaczone konflikty, aby kontynuować.",
         "Popraw zaznaczone konflikty, aby kontynuować."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Wpisz imię, nazwisko lub nazwę wyświetlaną"
       ],
       "Port is required": [
         "Port jest wymagany"
@@ -7738,6 +7762,9 @@
       "Filter labels": [
         "Filtruj etykiety"
       ],
+      "First name": [
+        "Imię"
+      ],
       "Group name": [
         "Nazwa grupy"
       ],
@@ -7746,6 +7773,9 @@
       ],
       "Image URL": [
         "Adres URL zdjęcia"
+      ],
+      "Last name": [
+        "Nazwisko"
       ],
       "Link": [
         "Link"
@@ -8347,7 +8377,7 @@
         "Zabezpiecz pliki dzięki szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Przestrzeń dyskowa jest współdzielona przez ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } oraz ${ DRIVE_APP_NAME }."
+        "Przestrzeń dyskowa jest dzielona pomiędzy usługami ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -8824,11 +8854,17 @@
       "CSV field": [
         "Pole CSV"
       ],
+      "Display name": [
+        "Nazwa wyświetlana"
+      ],
+      "First name": [
+        "Imię"
+      ],
       "Import": [
         "Importuj"
       ],
-      "Name": [
-        "Nazwa"
+      "Last name": [
+        "Nazwisko"
       ],
       "Values": [
         "Wartości"
@@ -8942,6 +8978,9 @@
       ],
       "Billing cycle": [
         "Cykl rozliczeniowy"
+      ],
+      "Birthday": [
+        "Urodziny"
       ],
       "Blind Carbon Copy": [
         "UDW"
@@ -9263,6 +9302,9 @@
       ],
       "No trackers found": [
         "Nie znaleziono elementów śledzących"
+      ],
+      "Notes": [
+        "Notatki"
       ],
       "Open actions dropdown": [
         "Otwórz listę akcji"

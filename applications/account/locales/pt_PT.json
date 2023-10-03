@@ -1128,6 +1128,9 @@
       "Disallow unsigned mail": [
         "Não permitir e-mails sem assinatura"
       ],
+      "Edit address": [
+        "Editar endereço"
+      ],
       "Enable": [
         "Ativar"
       ],
@@ -1424,7 +1427,7 @@
     },
     "Calendar import section description": {
       "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        "Pode importar ficheiros ICS de outra calendário para o ${ CALENDAR_APP_NAME }. Isto permite importar rapidamente um só evento ou toda a agenda."
+        "Pode importar ficheiros ICS de outro calendário para o ${ CALENDAR_APP_NAME }. Isto permite importar rapidamente um só evento ou toda a agenda."
       ]
     },
     "Calendar invite status label": {
@@ -1468,7 +1471,7 @@
     },
     "Calendar settings link share description": {
       "Create a link to your calendar and share it with anyone outside ${ BRAND_NAME }. Only you can add or remove events.": [
-        "Crie uma ligação para o seu calendário e partilhe-o com qualquer pessoa fora da ${ BRAND_NAME }. Somente você pode adicionar ou remover eventos."
+        "Crie uma ligação para o seu calendário e partilhe-a com qualquer pessoa fora de ${ BRAND_NAME }. Apenas o utilizador pode adicionar ou remover eventos."
       ]
     },
     "Calendar settings private share description": {
@@ -3115,6 +3118,11 @@
         "${ allCategoryTitlesExceptTheLastOne } e ${ lastCategoryTitle }"
       ]
     },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "E-mail de verificação enviado para ${ address }"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "A2F"
@@ -3927,7 +3935,7 @@
         "A desencriptar eventos do seu calendário: ${ totalProcessed }/${ totalToProcess }"
       ],
       "Due to a password reset, none of your events could be decrypted and exported.": [
-        "Devido a uma reposição de palavra-passe, não foi possível desencriptar e exportar.nenhum dos seus seus eventos."
+        "Devido a uma reposição de palavra-passe, não foi possível desencriptar e exportar nenhum dos seus os seus eventos."
       ],
       "Due to a password reset, some of your events could not be decrypted and exported.": [
         "Devido a uma redefinição de palavra-passe, não foi possível desencriptar alguns dos seus eventos."
@@ -3945,10 +3953,10 @@
         "Não foi possível exportar nenhum dos eventos."
       ],
       "Password reset - event cannot be decrypted": [
-        "Reposição de palavra-passe. Não foi possível descenriptar um evento."
+        "Reposição de palavra-passe. Não foi possível desencriptar um evento."
       ],
       "Password reset - multiple events cannot be decrypted": [
-        "Reposição de palavra-passe. Não foi possível descencriptar vários eventos."
+        "Reposição de palavra-passe. Não foi possível desencriptar vários eventos."
       ],
       "Please don't close the tab before the exporting process is finished.": [
         "Não feche o separador antes que o processo de exportação esteja concluído."
@@ -5320,6 +5328,9 @@
       "* No credit card required.": [
         "* Não é necessário cartão de crédito."
       ],
+      "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "**Obtenha um endereço ${ BRAND_NAME } ** para usar todos os serviços ${ BRAND_NAME_TWO } incluindo ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } de armazenamento extra"
       ],
@@ -5788,6 +5799,9 @@
       "Each code can only be used once": [
         "Cada código só pode ser utilizado uma vez"
       ],
+      "Edit email address": [
+        "Editar endereço de e-mail"
+      ],
       "Edit label": [
         "Editar etiqueta"
       ],
@@ -6040,6 +6054,9 @@
       ],
       "inactive": [
         "inativa"
+      ],
+      "Increase your account security by verifying your email address.": [
+        "Aumente a segurança da sua conta verificando o seu endereço de e-mail."
       ],
       "Inherited from parent folder": [
         "Herdado da pasta principal"
@@ -6492,6 +6509,9 @@
       "Report link expired": [
         "A ligação do relatório expirou."
       ],
+      "Resend verification email": [
+        "Reenviar e-mail de verificação"
+      ],
       "Restore": [
         "Restaurar"
       ],
@@ -6515,6 +6535,9 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Leia este código com o seu dispositivo de autenticação em dois passos para configurar a sua conta. ${ switchButton }."
+      ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "Garanta a sua Conta ${ BRAND_NAME }"
       ],
       "Securing your account": [
         "A proteger a sua conta"
@@ -6889,6 +6912,12 @@
       "Unsupported file": [
         "Ficheiro não suportado"
       ],
+      "Unverified": [
+        "Não verificado"
+      ],
+      "Unverified email address.": [
+        "Endereço de e-mail não verificado."
+      ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "Até ${ FAMILY_MAX_USERS } utilizadores"
       ],
@@ -7109,6 +7138,9 @@
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Pode personalizar e transferir as suas faturas para efeitos contabilísticos."
+      ],
+      "You can edit this once to ensure the correct email address for verification.": [
+        "Pode editar isto uma vez para garantir o endereço de e-mail correto para verificação."
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Pode ativar o registo de autenticação para ver quando a sua conta e de qual IP ela é acessada. Registamos o endereço IP que acessa a conta e a hora, bem como as tentativas sem êxito."
@@ -7365,7 +7397,7 @@
     },
     "Info subscription": {
       "You can prevent expiry by reactivating the subscription": [
-        "Pode impedir a expiração reactivando a subscrição."
+        "Pode impedir a expiração reativando a subscrição."
       ]
     },
     "Info when deleting payment method": {
@@ -7939,6 +7971,9 @@
       "Config to connect to ${ serverName }": [
         "Configurar para conectar a ${ serverName }"
       ],
+      "Confirm email": [
+        "Confirmar e-mail"
+      ],
       "Confirm link URLs": [
         "Confirmar as URLs da ligação"
       ],
@@ -7989,6 +8024,9 @@
       ],
       "Current display name": [
         "Nome a mostrar atual"
+      ],
+      "Current email": [
+        "E-mail atual"
       ],
       "Customize invoices": [
         "Personalizar faturas"
@@ -8274,6 +8312,9 @@
       ],
       "New display name": [
         "Novo nome a mostrar"
+      ],
+      "New email": [
+        "E-mail novo"
       ],
       "New login password": [
         "Nova palavra-passe de início"
@@ -8871,7 +8912,7 @@
         "Actualizar a conta"
       ],
       "Upgrade your plan": [
-        "Melhorar o seu plano"
+        "Atualize o seu plano"
       ],
       "View guide": [
         "Ver guia"
@@ -8944,6 +8985,14 @@
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } etiqueta e etiquetá-la como",
         "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } etiquetas e etiquetá-las como"
+      ]
+    },
+    "Maintenance mode": {
+      "Please check back in a few minutes.": [
+        "Por favor, consulte novamente dentro de alguns minutos."
+      ],
+      "This feature is temporarily unavailable": [
+        "Esta funcionalidade está temporariamente indisponível"
       ]
     },
     "Maximum calendar links reached warning": {
@@ -9693,6 +9742,17 @@
         "Gestão de equipa"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Caso contrário, o acesso à sua conta será limitado e a sua conta acabará por ser desativada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar a utilizar ${ MAIL_APP_NAME } com funcionalidades premium, escolha a sua subscrição e as opções de pagamento."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "A sua avaliação termina em ${ formattedPeriodEndDate }."
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina com ${ last4 }"
@@ -9763,9 +9823,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "E-mail seguro com caraterísticas avançadas para as suas comunicações diárias."
       ],
-      "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
-        "Define respostas automáticas para informar os contactos que está fora do escritório ou que não pode responder."
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Soluções à medida para organizações maiores com necessidades de segurança específicas"
       ],
@@ -9780,17 +9837,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Está a beneficiar de um preço promocional no seu plano atual. Ao alterar a sua subscrição da sua conta, perderá o preço promocional e este não estará disponível se tentar subscrever novamente."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Caso contrário, o acesso à sua conta será limitado e a sua conta acabará por ser desativada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar a utilizar ${ MAIL_APP_NAME } com funcionalidades premium, escolha a sua subscrição e as opções de pagamento."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "A sua avaliação termina em ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -10200,7 +10246,7 @@
     },
     "Notification success": {
       "Event defaults updated": [
-        "Os parâmetros predefinidos de evento foram actualizados."
+        "Os parâmetros predefinidos de evento foram atualizados."
       ]
     },
     "Notification time input": {
@@ -11278,9 +11324,6 @@
       ]
     },
     "Signup label": {
-      "Confirm email address": [
-        "Confirmar o endereço de e-mail"
-      ],
       "Confirm password": [
         "Confirmar a palavra-passe"
       ],
@@ -11560,6 +11603,9 @@
       ]
     },
     "State": {
+      "Cancelling your subscription, please wait": [
+        "A cancelar a sua subscrição, por favor aguarde"
+      ],
       "Downgrading your account, please wait": [
         "Aguarde. Estamos a modificar a sua conta."
       ]
@@ -11826,6 +11872,9 @@
       ],
       "Email address copied to clipboard": [
         "Endereço copiado para a área de transferência"
+      ],
+      "Email address updated": [
+        "Endereço de e-mail atualizado"
       ],
       "Email updated": [
         "E-mail atualizado"
@@ -12579,6 +12628,9 @@
       "Edit domain": [
         "Editar domínio"
       ],
+      "Edit email address": [
+        "Editar endereço de e-mail"
+      ],
       "Edit filter": [
         "Editar filtro"
       ],
@@ -13108,6 +13160,9 @@
       "Warning: suspected fake website": [
         "Aviso: suspeita de sítio web falso"
       ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "Enviaremos um e-mail para o seu novo endereço com instruções para concluir a alteração."
+      ],
       "What would you like to import?": [
         "O que gostaria de importar?"
       ],
@@ -13392,6 +13447,9 @@
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Utilize as barras de deslocação predefinidas do seu navegador. Estas são normalmente maiores e mais fáceis de utilizar."
+      ],
+      "Verified email address": [
+        "Endereço de e-mail verificado"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Detetámos um problema com a sua configuração DNS. Certifique-se de que os seus registos correspondem com as instruções abaixo. Se o problema persistir, teremos de desligar a assinatura com DKIM."
