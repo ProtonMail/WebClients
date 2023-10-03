@@ -9,7 +9,6 @@ const { SPAM } = MAILBOX_LABEL_IDS;
 
 export const canShowAttachmentThumbnails = (
     isCompactView: boolean,
-    conversationMode: boolean,
     element: Element,
     canSeeThumbnailsFeature?: boolean
 ) => {
@@ -18,7 +17,7 @@ export const canShowAttachmentThumbnails = (
         const isSpam = hasLabel(element, SPAM);
 
         const hasAttachmentsMetadata = (element.AttachmentsMetadata?.length || 0) > 0;
-        return !isSpam && !isCompactView && conversationMode && hasAttachmentsMetadata;
+        return !isSpam && !isCompactView && hasAttachmentsMetadata;
     }
 
     return false;
