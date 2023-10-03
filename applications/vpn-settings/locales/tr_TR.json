@@ -566,6 +566,9 @@
       "Disallow unsigned mail": [
         "İmzasız e-posta kullanma"
       ],
+      "Edit": [
+        "Düzenle"
+      ],
       "Edit address": [
         "Adresi düzenle"
       ],
@@ -2290,8 +2293,14 @@
       "Add a name to identify your security key with.": [
         "Güvenlik anahtarınızı tanımlayacak bir ad yazın."
       ],
+      "Allow platform keys": [
+        "Platform anahtarları kullanılabilsin"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "${ name } güvenlik anahtarını silmek istediğinize emin misiniz?"
+      ],
+      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
+        "Bu seçenek açıldığında, dış donanım güvenlik anahtarlarına ek olarak yerleşik aygıtlar (Windows Hello, Touch ID, Face ID ya da Dahili TPM çipleri gibi) kaydedilebilir"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "${ BRAND_NAME } hesabınızla ilişkilendirilmiş güvenlik anahtarını takın."
@@ -3253,7 +3262,7 @@
         "Ödemeyi aşağıdaki adrese yapın ya da QR kodunu tarayın. Ön ödemeniz onaylandıktan sonra hesabınıza yansıtılacak."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
-        "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini korumak için ${ byDate } tarihine kadar yenileyin. ${ reactivateLink }"
+        "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini tutmak için ${ byDate } tarihine kadar yenileyin. ${ reactivateLink }"
       ],
       "Summary": [
         "Özet"
@@ -5546,9 +5555,6 @@
       ]
     },
     "Signup label": {
-      "Confirm email address": [
-        "E-posta adresi onayı"
-      ],
       "Confirm password": [
         "Parola onayı"
       ],
