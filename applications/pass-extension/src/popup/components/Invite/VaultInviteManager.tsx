@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { Icon } from '@proton/components/components';
 import { selectVaultWithItemsCount } from '@proton/pass/store';
+import { isShareManageable } from '@proton/pass/utils/pass/share';
 
 import { SidebarModal } from '../../../shared/components/sidebarmodal/SidebarModal';
 import { useInviteContext } from '../../context/invite/InviteContextProvider';
@@ -22,6 +23,7 @@ export const VaultInviteManager: FC<Props> = ({ shareId }) => {
     const { createInvite, close } = useInviteContext();
     const vault = useSelector(selectVaultWithItemsCount(shareId));
     const loading = useShareAccessOptionsPolling(shareId);
+    const canManage = isShareManageable(vault);
 
     return (
         <SidebarModal onClose={close} open>
@@ -58,6 +60,7 @@ export const VaultInviteManager: FC<Props> = ({ shareId }) => {
                                 key={invite.inviteId}
                                 email={invite.invitedEmail}
                                 inviteId={invite.inviteId}
+                                canManage={canManage}
                             />
                         ))}
 
@@ -67,8 +70,11 @@ export const VaultInviteManager: FC<Props> = ({ shareId }) => {
                                 email={member.email}
                                 shareId={shareId}
                                 userShareId={member.shareId}
-                                role={member.shareRoleId}
+                                me={vault.shareId === member.shareId}
                                 owner={member.owner}
+                                role={member.shareRoleId}
+                                canManage={canManage}
+                                canTransfer={vault.owner}
                             />
                         ))}
                     </div>
