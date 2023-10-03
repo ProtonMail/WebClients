@@ -12,12 +12,13 @@ import { QuickActionsDropdown } from '../Dropdown/QuickActionsDropdown';
 import { ShareMemberAvatar } from './ShareMemberAvatar';
 
 export type SharePendingMemberProps = {
+    canManage: boolean;
     email: string;
     inviteId: string;
     shareId: string;
 };
 
-export const SharePendingMember: VFC<SharePendingMemberProps> = ({ email, inviteId, shareId }) => {
+export const SharePendingMember: VFC<SharePendingMemberProps> = ({ canManage, email, inviteId, shareId }) => {
     const initials = email.toUpperCase().slice(0, 2) ?? '';
 
     const resendInvite = useActionWithRequest({ action: inviteResendIntent, requestId: inviteResendRequest(inviteId) });
@@ -42,22 +43,24 @@ export const SharePendingMember: VFC<SharePendingMemberProps> = ({ email, invite
                     />
                 </div>
             </div>
-            <QuickActionsDropdown color="weak" shape="ghost">
-                <DropdownMenuButton
-                    label={c('Action').t`Resend invitation`}
-                    icon={'paper-plane'}
-                    onClick={handleResendInvite}
-                    disabled={resendInvite.loading}
-                />
+            {canManage && (
+                <QuickActionsDropdown color="weak" shape="ghost">
+                    <DropdownMenuButton
+                        label={c('Action').t`Resend invitation`}
+                        icon={'paper-plane'}
+                        onClick={handleResendInvite}
+                        disabled={resendInvite.loading}
+                    />
 
-                <DropdownMenuButton
-                    label={c('Action').t`Remove access`}
-                    icon="circle-slash"
-                    danger
-                    onClick={handleRemoveInvite}
-                    disabled={removeInvite.loading}
-                />
-            </QuickActionsDropdown>
+                    <DropdownMenuButton
+                        label={c('Action').t`Remove access`}
+                        icon="circle-slash"
+                        danger
+                        onClick={handleRemoveInvite}
+                        disabled={removeInvite.loading}
+                    />
+                </QuickActionsDropdown>
+            )}
         </div>
     );
 };
