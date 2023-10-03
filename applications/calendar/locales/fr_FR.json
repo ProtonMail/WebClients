@@ -33,6 +33,9 @@
       "Add address": [
         "Ajouter une adresse"
       ],
+      "Add birthday": [
+        "Ajouter une date de naissance"
+      ],
       "Add contact": [
         "Ajouter un contact"
       ],
@@ -47,6 +50,9 @@
       ],
       "Add new group": [
         "Ajouter un nouveau groupe"
+      ],
+      "Add note": [
+        "Ajouter une note"
       ],
       "Add notification": [
         "Ajouter une notification"
@@ -1114,8 +1120,17 @@
       "Birthday": [
         "Date de naissance"
       ],
+      "Display name": [
+        "Nom d'affichage"
+      ],
       "Email": [
         "Adresse e-mail"
+      ],
+      "Enter a display name or nickname": [
+        "Saisissez un nom d'affichage ou un surnom."
+      ],
+      "First name": [
+        "Prénom"
       ],
       "Gender": [
         "Genre"
@@ -1125,6 +1140,9 @@
       ],
       "Language": [
         "Langue"
+      ],
+      "Last name": [
+        "Nom"
       ],
       "Logo": [
         "Logo"
@@ -2319,6 +2337,9 @@
       "Failed to get original occurrence in series": [
         "L'occurrence originale de la série n'a pas pu être obtenue."
       ],
+      "First name is too long": [
+        "Le prénom est trop long."
+      ],
       "Folder name cannot be empty.": [
         "Le nom de dossier ne peut pas être vide."
       ],
@@ -2363,6 +2384,9 @@
       ],
       "Label name cannot be empty.": [
         "Le nom du label ne peut pas être vide."
+      ],
+      "Last name is too long": [
+        "Le nom de famille est trop long."
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Fusionnez au moins ${ calendarsToFixCount } calendrier avec un calendrier ${ BRAND_NAME } existant.",
@@ -2424,6 +2448,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "Corrigez le conflit en surbrillance pour continuer.",
         "Corrigez les conflits en surbrillance pour continuer."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Indiquez un prénom, un nom de famille ou un nom d'affichage."
       ],
       "Port is required": [
         "Le port est nécessaire."
@@ -3569,7 +3596,7 @@
         "Toute personne ayant ce lien peut voir sur votre calendrier si vous êtes libre ou occupé. Les informations de l'événement (comme le titre, le lieu ou les participants) ne sont pas visibles."
       ],
       "Are you sure you want to discard your import?": [
-        "Voulez-vous vraiment annuler votre importation ?"
+        "Voulez-vous vraiment abandonner votre importation ?"
       ],
       "Attention required": [
         "Attention requise"
@@ -5013,7 +5040,7 @@
         "Rechercher dans le contenu des messages"
       ],
       "Unlimited folders, labels, and filters": [
-        "Dossiers, labels et filtres illimités"
+        "Nombre illimité de dossiers, de labels et de filtres"
       ],
       "Up to 15 email addresses": [
         "Jusqu'à 15 adresses e-mail"
@@ -5382,6 +5409,9 @@
       "Filter groups": [
         "Filtrer les groupes"
       ],
+      "First name": [
+        "Prénom"
+      ],
       "Group name": [
         "Nom du groupe"
       ],
@@ -5390,6 +5420,9 @@
       ],
       "Indexing...": [
         "Indexation en cours"
+      ],
+      "Last name": [
+        "Nom"
       ],
       "Name": [
         "Nom"
@@ -6103,10 +6136,16 @@
       "CSV field": [
         "Champ CSV"
       ],
+      "Display name": [
+        "Nom d'affichage"
+      ],
+      "First name": [
+        "Prénom"
+      ],
       "Import": [
         "Importer"
       ],
-      "Name": [
+      "Last name": [
         "Nom"
       ],
       "Values": [
@@ -6190,6 +6229,9 @@
       ],
       "Billing cycle": [
         "Cycle de facturation"
+      ],
+      "Birthday": [
+        "Date de naissance"
       ],
       "Calendar": [
         "Calendrier"
@@ -6349,6 +6391,9 @@
       ],
       "Night theme": [
         "Thème nuit"
+      ],
+      "Notes": [
+        "Notes"
       ],
       "Open actions dropdown": [
         "Ouvrir le menu déroulant des actions"
@@ -6652,7 +6697,7 @@
         "Voulez-vous vraiment supprimer définitivement ${ count } contacts ?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
-        "Êtes-vous sûr de vouloir supprimer définitivement ce groupe de contacts ?"
+        "Voulez-vous vraiment supprimer définitivement ce groupe de contacts ?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Voulez-vous vraiment supprimer définitivement ce groupe de contacts ?"

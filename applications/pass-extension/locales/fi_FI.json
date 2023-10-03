@@ -294,7 +294,7 @@
     },
     "Description": {
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
-        "Listaus verkkotunnuksista, joilla joitakin ${ PASS_SHORT_APP_NAME }in automaattisia toimintoja ei suoriteta (Automaattitäyttö, -ehdotus ja -tallennus)."
+        "Listaus verkkotunnuksista, joilla joitakin ${ PASS_SHORT_APP_NAME }in automaattisia toimintoja ei suoriteta (automaattitäyttö, -ehdotus ja -tallennus)."
       ]
     },
     "Error": {
@@ -372,7 +372,7 @@
         "Virheellinen URL-osoite"
       ],
       "Item content cannot exceed 40KB": [
-        "Kohteen sisältö ei voi olla 40 kilotavua suurempi"
+        "Kohteen sisältö ei saa ylittää 40 kt"
       ],
       "Item creation failed": [
         "Kohteen luonti epäonnistui"
@@ -648,7 +648,7 @@
         "Jos ei käytössä, ${ PASS_APP_NAME } ei ehdota vahvojen salasanojen luontia rekisteröitymislomakkeissa."
       ],
       "If enabled, the autofill dropdown will automatically open on field focus.": [
-        "Jos käytössä, automaattitäytön pudotusvalikko aukeaa automaattisesti kentän aktivoituessa."
+        "Jos käytössä, avautuu automaattitäytön ponnahdus lomakekentän aktivoituessa automaattisesti."
       ],
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Jos käytössä, mahdollistaa kirjautumistietojen nopean automaattitäytön ${ PASS_APP_NAME } -kuvaketta painamalla."
@@ -810,7 +810,7 @@
         "Teksti, jota yrität liittää, ylittää ${ maxLength }-merkin enimmäispituuden."
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
-        "Tämä vientiä ei salata, eli kuka tahansa, jolla on pääsy vietyyn tiedostoon, voi nähdä salasanasi. Tietojesi suojaamiseksi, poista tiedosto heti kun et enää tarvitse sitä."
+        "Tätä vientiä ei salata, eli kuka tahansa, jolla on pääsy vietyyn tiedostoon, voi nähdä salasanasi. Tietojesi suojaamiseksi, poista tiedosto heti kun et enää tarvitse sitä."
       ],
       "Unable to copy to clipboard": [
         "Leikepöydälle kopiointi epäonnistui"
@@ -1064,16 +1064,16 @@
         "Tunniste"
       ],
       "Last 2 weeks": [
-        "Kahden viikon sisällä"
+        "Viimeisen 14 päivän sisällä"
       ],
       "Last autofill": [
-        "Viimeksi automaattitäytetty"
+        "Automaattitäytetty"
       ],
       "Last month": [
-        "Kuukauden sisällä"
+        "Viimeisen 30 päivän sisällä"
       ],
       "Last week": [
-        "Viikon sisällä"
+        "Viimeisen 7 päivän sisällä"
       ],
       "Latest import": [
         "Edellinen tuonti"
@@ -1100,7 +1100,7 @@
         "Nimi"
       ],
       "Need help ?": [
-        "Tarvitsetko apua ?"
+        "Tarvitsetko apua?"
       ],
       "New vault": [
         "Uusi holvi"
@@ -1124,7 +1124,7 @@
         "Vanhimmasta uusimpaan"
       ],
       "Older than last month": [
-        "Yli kuukausi sitten"
+        "Yli 30 päivää sitten"
       ],
       "Oldest to newest": [
         "Vanhimmasta uusimpaan"
@@ -1196,7 +1196,7 @@
         "Asetukset"
       ],
       "Show website favicons": [
-        "Näytä verkkosivustojen kuvakkeet"
+        "Näytä sivustokuvakkeet"
       ],
       "Special characters (!&*)": [
         "Erikoismerkit (!&*)"
@@ -1427,7 +1427,7 @@
         "Tuo holviin/holveihin"
       ],
       "Low disk space": [
-        "Vapaa levytila vähissä"
+        "Tallennustila on vähissä"
       ],
       "Permanently remove all items ?": [
         "Poistetaanko kaikki kohteet pysyvästi?"
@@ -1530,7 +1530,7 @@
         "Virheellinen aliaksen etuliite"
       ],
       "Maximum length is ${ maxLength } characters": [
-        "Enimmäispituus on ${ maxLength }-merkkiä"
+        "Enimmäispituus on ${ maxLength } merkkiä"
       ],
       "Missing alias prefix": [
         "Aliaksen etuliite puuttuu"
@@ -1569,7 +1569,7 @@
         "Jokin meni pieleen ${ PASS_APP_NAME } -laajennusta käynnistettäessä. Yritä päivittää tai ladata se uudelleen"
       ],
       "The alias prefix cannot be longer than 40 characters": [
-        "Aliaksen etuliite voi sisältää enintään 40-merkkiä"
+        "Aliaksen etuliite voi sisältää enintään 40 merkkiä"
       ],
       "Title is required": [
         "Otsikko vaaditaan"

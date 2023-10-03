@@ -957,7 +957,7 @@
         "Capo Verde"
       ],
       "Cayman Islands": [
-        "Isole Caiman"
+        "Isole Cayman"
       ],
       "Central African Republic": [
         "Repubblica Centrafricana"
@@ -1281,7 +1281,7 @@
         "Montenegro"
       ],
       "Montserrat": [
-        "Montserrato"
+        "Montserrat"
       ],
       "Morocco": [
         "Marocco"
@@ -1290,7 +1290,7 @@
         "Mozambico"
       ],
       "Myanmar": [
-        "Birmania"
+        "Myanmar (Birmania)"
       ],
       "Namibia": [
         "Namibia"
@@ -1593,7 +1593,7 @@
         "Zimbabwe"
       ],
       "Åland Islands": [
-        "Isole Aland"
+        "Isole Åland"
       ]
     },
     "CountryInfo": {
@@ -1820,7 +1820,7 @@
         "Per favore imposta prima un'email di recupero"
       ],
       "Please set a recovery phone number first": [
-        "Si prega di impostare prima un numero di telefono di recupero"
+        "Imposta prima un numero di telefono di recupero"
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Esegui l'upgrade a un piano aziendale con più di 1 utente per ottenere il supporto multiutente"
@@ -1910,7 +1910,7 @@
         "È necessario attivare le chiavi dell'organizzazione. Senza attivazione non sarà possibile creare nuovi utenti, aggiungere indirizzi agli utenti esistenti o accedere ad account utente non privati."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
-        "Il tuo account o organizzazione ha una fattura scaduta. Si prega di pagare tutte le fatture non pagate."
+        "Il tuo account o la tua organizzazione ha una fattura scaduta. Paga tutte le fatture non pagate."
       ]
     },
     "Error importing users": {
@@ -2226,10 +2226,10 @@
     },
     "familyOffer_2023:Tooltip": {
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Include 2700 server in più di 65 Paesi, possibilità di connettere fino a 10 dispositivi, accesso a servizi di streaming in tutto il mondo, blocco di malware e adblocker, e altro ancora."
+        "Include 2700 server in più di 65 Paesi, possibilità di connettere fino a 10 dispositivi, accesso a servizi di streaming in tutto il mondo, blocco di malware e annunci, e molto altro."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Include il supporto per 3 domini email personalizzati, 90 indirizzi email, alias Hide-my-email illimitati, condivisione del calendario e altro ancora."
+        "Include il supporto per 3 domini email personalizzati, 90 indirizzi email, alias Hide-my-email illimitati, condivisione del calendario e molto altro."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteggi i tuoi file con l'archiviazione cloud crittografata. Include la sincronizzazione automatica, la condivisione crittografata dei file e molto altro."
@@ -2277,7 +2277,7 @@
     },
     "fido2: Error": {
       "Please disable 2FA via security key before disabling TOTP": [
-        "Sei pregato di disabilitare l'A2F tramite la chiave di sicurezza prima di disabilitare TOTP"
+        "Disabilita 2FA tramite la chiave di sicurezza prima di disabilitare TOTP"
       ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Qualcosa è andato storto durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
@@ -2321,7 +2321,7 @@
         "Questo cancellerà tutte le chiavi di sicurezza collegate al tuo account."
       ],
       "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "Per attivare l'A2F tramite la chiave di sicurezza, dovrai attivare l'A2F tramite l'app d'autenticazione"
+        "Per attivare 2FA tramite la chiave di sicurezza, dovrai attivare 2FA tramite l'app di autenticazione"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Verifica la tua identità con una U2F fisica o una chiave di sicurezza FIDO2"
@@ -2343,7 +2343,7 @@
         "Eliminare la chiave di sicurezza?"
       ],
       "Disable 2FA via security key?": [
-        "Disabilitare l'A2F tramite la chiave di sicurezza?"
+        "Disabilitare 2FA tramite chiave di sicurezza?"
       ],
       "Name your security key": [
         "Denomina la tua chiave di sicurezza"
@@ -2971,7 +2971,7 @@
         "Connessione Internet ripristinata."
       ],
       "Lean more about gateways": [
-        "Ulteriori informazioni sui gateway"
+        "Scopri di più sui gateway"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Scopri come accedere a ${ VPN_APP_NAME } con applicazioni VPN di terze parti."
@@ -3337,7 +3337,7 @@
         "Questo eliminerà definitivamente i dati e tutti gli indirizzi email associati a questo utente."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
-        "Questo eliminerà definitivamente il tuo account e tutti i suoi dati. Non sarai in grado di riattivare questo account."
+        "Questo eliminerà definitivamente il tuo account e tutti i suoi dati. Non potrai riattivare questo account."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Questo sostituirà la tua password temporanea. La userai per accedere al tuo account ${ BRAND_NAME } in futuro."
@@ -3680,7 +3680,7 @@
         "La tua informazione è al sicuro con noi. Ti contatteremo solo quando sarà necessario per fornire i nostri servizi."
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "La password dell'organizzazione può essere condivisa con altri utenti a cui si desidera fornire i privilegi di amministrazione. È anche un codice di ripristino di emergenza per ottenere l'accesso alla sua organizzazione nel caso in cui perda l'accesso al suo utente. Si prega di salvare la password e tenerla al sicuro."
+        "La password dell'organizzazione può essere condivisa con altri utenti a cui si desidera concedere i privilegi di amministrazione. È anche un codice di recupero di emergenza per ottenere l'accesso alla tua organizzazione nel caso in cui perdi l'accesso al tuo account. Salva questa password e tienila al sicuro."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "I tuoi dati di pagamento sono protetti dalla crittografia TLS e dalle leggi svizzere sulla privacy."
@@ -3922,7 +3922,7 @@
         "Crediti utilizzati"
       ],
       "Current display name": [
-        "Nome utilizzato attualmente"
+        "Nome visualizzato attuale"
       ],
       "Current email": [
         "Email attuale"
@@ -4018,7 +4018,7 @@
         "Navigazione"
       ],
       "New display name": [
-        "Aggiungi nuovo nome"
+        "Nuovo nome visualizzato"
       ],
       "New email": [
         "Nuova email"
@@ -4379,7 +4379,7 @@
         "Trova il nome utente del tuo account ${ BRAND_NAME }"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Hai dimenticato la password del tuo account ${ BRAND_NAME }? Reimpostala qui utilizzando un codice di recupero, un'email o un SMS e ottieni nuovamente l'accesso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e altro ancora."
+        "Hai dimenticato la password del tuo account ${ BRAND_NAME }? Reimpostala qui usando un codice, email o SMS di recupero, e ottieni nuovamente l'accesso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e molto altro."
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Hai dimenticato il tuo nome utente ${ BRAND_NAME }? Trovalo utilizzando l'email di recupero o il numero di telefono e recupera l'accesso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e molto altro."
@@ -4520,11 +4520,11 @@
         "${ n } connessioni VPN per utente"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
-        "${ PASS_APP_NAME } con ${ n } hide-my-email alias",
-        "${ PASS_APP_NAME } con ${ n } hide-my-email alias"
+        "${ PASS_APP_NAME } con ${ n } alias Hide-my-email",
+        "${ PASS_APP_NAME } con ${ n } alias Hide-my-email"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
-        "${ PASS_APP_NAME } con alias hide-my-email illimitati"
+        "${ PASS_APP_NAME } con alias Hide-my-email illimitati"
       ],
       "${ size } attachment size": [
         "Dimensioni allegato ${ size }"
@@ -4764,7 +4764,7 @@
         "Cartelle, etichette e filtri illimitati"
       ],
       "Unlimited hide-my-email aliases": [
-        "Numero illimitato di alias \"Hide My Email\""
+        "Alias Hide-my-email illimitati"
       ],
       "Unlimited labels": [
         "Etichette illimitate"
@@ -5064,7 +5064,7 @@
         "Gestione password e protezione dell'identità"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
-        "Personalizza la tua firma email con loghi, immagini, icone di social media, link ai tuoi dettagli di contatto e altro ancora"
+        "Personalizza la tua firma email con loghi, immagini, icone di social media, link ai tuoi dettagli di contatto e molto altro"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
         "L'assistenza telefonica è disponibile dal team del servizio clienti ${ BRAND_NAME } durante l'orario lavorativo europeo, per i clienti con 6 o più utenti"
@@ -5094,7 +5094,7 @@
         "Indirizza il tuo traffico Internet attraverso la rete Tor con un solo click"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Proteggi i tuoi file con l'archiviazione su cloud crittografata. Include la sincronizzazione automatica, la condivisione crittografata dei file e altro ancora."
+        "Proteggi i tuoi file con l'archiviazione su cloud crittografata. Include la sincronizzazione automatica, la condivisione crittografata dei file e molto altro."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
         "Archivia in modo sicuro i dettagli dei tuoi contatti, come numero di telefono, indirizzo, compleanno e note personali. La crittografia ad accesso zero assicura che nemmeno ${ BRAND_NAME } possa accedervi."
@@ -5360,7 +5360,7 @@
         "Scegli un nome"
       ],
       "Choose display name": [
-        "Scegli un nome da mostrare"
+        "Scegli il nome visualizzato"
       ],
       "Confirm": [
         "Conferma"
@@ -5558,9 +5558,6 @@
       ]
     },
     "Signup label": {
-      "Confirm email address": [
-        "Conferma l'indirizzo email"
-      ],
       "Confirm password": [
         "Conferma password"
       ],
@@ -5773,22 +5770,22 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Accedi a contenuti bloccati e naviga in modalità privata. Include 1700 server in più di 60 Paesi, le più elevate velocità di VPN, 10 connessioni alla VPN per utente, servizi di streaming in tutto il mondo, blocco di malware e adblocker, e altro ancora."
+        "Accedi a contenuti bloccati e naviga in modalità privata. Include 1700 server in più di 60 Paesi, le più elevate velocità VPN, 10 connessioni VPN per utente, servizi di streaming in tutto il mondo, blocco di malware e annunci, e molto altro."
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Accedi a contenuti bloccati e naviga in modalità privata. Include 1700 server in più di 60 Paesi, le più elevate velocità di VPN, 10 connessioni alla VPN, servizi di streaming in tutto il mondo, blocco di malware e adblocker, e altro ancora."
+        "Accedi a contenuti bloccati e naviga in modalità privata. Include 1700 server in più di 60 Paesi, le più elevate velocità VPN, 10 connessioni VPN, servizi di streaming in tutto il mondo, blocco di malware e annunci, e molto altro."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Accedi ai contenuti dei servizi di streaming, tra cui Netflix, Disney+ e Prime Video, da qualsiasi luogo."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Tutti i nostri servizi premium con il massimo dei limiti: 100 indirizzi email, supporto per 10 domini personalizzati, alias Hide-my-email illimitati, condivisione dei calendari, archiviazione sul cloud e condivisione dei file crittografati, e altro ancora."
+        "Tutti i nostri servizi premium con il massimo dei limiti: 100 indirizzi email, supporto per 10 domini personalizzati, alias Hide-my-email illimitati, condivisione dei calendari, archiviazione sul cloud e condivisione dei file crittografati, e molto altro."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Include il supporto per 1 dominio email personalizzato, 10 indirizzi email, 10 alias Hide-my-email, condivisione del calendario e altro ancora."
+        "Include il supporto per 1 dominio email personalizzato, 10 indirizzi email, 10 alias Hide-my-email, condivisione del calendario e molto altro."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Include il supporto per 3 domini email personalizzati, 15 indirizzi email, alias Hide-my-email illimitati, condivisione del calendario e altro ancora."
+        "Include il supporto per 3 domini email personalizzati, 15 indirizzi email, alias Hide-my-email illimitati, condivisione del calendario e molto altro."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Perfetto per famiglie o team di piccole dimensioni, ogni persona può avere la propria casella di posta e il proprio alias. È necessario un dominio personalizzato."
@@ -7009,7 +7006,7 @@
     },
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Accesso a server core sicuri, download veloci P2P/BitTorrent, Tor over VPN, Double hop e altro ancora."
+        "Accesso a server Secure Core, download P2P/BitTorrent veloci, Tor su VPN, e molto altro."
       ]
     },
     "Warning": {

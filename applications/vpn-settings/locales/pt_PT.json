@@ -566,6 +566,9 @@
       "Disallow unsigned mail": [
         "Não permitir e-mails sem assinatura"
       ],
+      "Edit address": [
+        "Editar endereço"
+      ],
       "Enable": [
         "Ativar"
       ],
@@ -1673,6 +1676,11 @@
         "Ajude-nos a melhorar"
       ]
     },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "E-mail de verificação enviado para ${ address }"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "A2F"
@@ -2562,6 +2570,9 @@
       "(${ serverPrice } /month)": [
         "(${ serverPrice } /mês)"
       ],
+      "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "**Obtenha um endereço ${ BRAND_NAME } ** para usar todos os serviços ${ BRAND_NAME_TWO } incluindo ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } de armazenamento extra"
       ],
@@ -2791,6 +2802,9 @@
       "Each code can only be used once": [
         "Cada código só pode ser utilizado uma vez"
       ],
+      "Edit email address": [
+        "Editar endereço de e-mail"
+      ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "O alojamento de e-mails para 10 nomes de domínio de e-mail personalizado está incluído gratuitamente. Pode adicionar domínios adicionais por ${ price }."
       ],
@@ -2922,6 +2936,9 @@
       ],
       "inactive": [
         "inativa"
+      ],
+      "Increase your account security by verifying your email address.": [
+        "Aumente a segurança da sua conta verificando o seu endereço de e-mail."
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Instale um ficheiro de configuração do país para ligar a um servidor aleatório no país à sua escolha."
@@ -3162,6 +3179,9 @@
       "Remember to share the user's sign in details with them.": [
         "Lembre-se de partilhar os detalhes de início de sessão do utilizador com o mesmo."
       ],
+      "Resend verification email": [
+        "Reenviar e-mail de verificação"
+      ],
       "Restore": [
         "Restaurar"
       ],
@@ -3179,6 +3199,9 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Leia este código com o seu dispositivo de autenticação em dois passos para configurar a sua conta. ${ switchButton }."
+      ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "Garanta a sua Conta ${ BRAND_NAME }"
       ],
       "Securing your account": [
         "A proteger a sua conta"
@@ -3391,6 +3414,12 @@
       "Unsupported file": [
         "Ficheiro não suportado"
       ],
+      "Unverified": [
+        "Não verificado"
+      ],
+      "Unverified email address.": [
+        "Endereço de e-mail não verificado."
+      ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "Até ${ FAMILY_MAX_USERS } utilizadores"
       ],
@@ -3537,6 +3566,9 @@
       "You can customize and download your invoices for accounting purposes.": [
         "Pode personalizar e transferir as suas faturas para efeitos contabilísticos."
       ],
+      "You can edit this once to ensure the correct email address for verification.": [
+        "Pode editar isto uma vez para garantir o endereço de e-mail correto para verificação."
+      ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
         "Pode desbloquear imediatamente a configuração acima ao adicionar ${ specificCountryCount } ao número de endereços IP no seu plano ou contactar-nos para soluções personalizadas."
       ],
@@ -3677,7 +3709,7 @@
     },
     "Info subscription": {
       "You can prevent expiry by reactivating the subscription": [
-        "Pode impedir a expiração reactivando a subscrição."
+        "Pode impedir a expiração reativando a subscrição."
       ]
     },
     "Info when deleting payment method": {
@@ -3847,6 +3879,9 @@
       "Config to connect to ${ serverName }": [
         "Configurar para conectar a ${ serverName }"
       ],
+      "Confirm email": [
+        "Confirmar e-mail"
+      ],
       "Confirm login password": [
         "Confirme a nova palavra-passe"
       ],
@@ -3885,6 +3920,9 @@
       ],
       "Current display name": [
         "Nome a mostrar atual"
+      ],
+      "Current email": [
+        "E-mail atual"
       ],
       "Customize invoices": [
         "Personalizar faturas"
@@ -3978,6 +4016,9 @@
       ],
       "New display name": [
         "Novo nome a mostrar"
+      ],
+      "New email": [
+        "E-mail novo"
       ],
       "New login password": [
         "Nova palavra-passe de início"
@@ -4256,7 +4297,7 @@
         "Actualizar a conta"
       ],
       "Upgrade your plan": [
-        "Melhorar o seu plano"
+        "Atualize o seu plano"
       ],
       "View guide": [
         "Ver guia"
@@ -5516,9 +5557,6 @@
       ]
     },
     "Signup label": {
-      "Confirm email address": [
-        "Confirmar o endereço de e-mail"
-      ],
       "Confirm password": [
         "Confirmar a palavra-passe"
       ],
@@ -5770,6 +5808,9 @@
       ]
     },
     "State": {
+      "Cancelling your subscription, please wait": [
+        "A cancelar a sua subscrição, por favor aguarde"
+      ],
       "Downgrading your account, please wait": [
         "Aguarde. Estamos a modificar a sua conta."
       ]
@@ -5962,6 +6003,9 @@
       ],
       "Email address copied to clipboard": [
         "Endereço copiado para a área de transferência"
+      ],
+      "Email address updated": [
+        "Endereço de e-mail atualizado"
       ],
       "Email updated": [
         "E-mail atualizado"
@@ -6420,6 +6464,9 @@
       "Edit display name": [
         "Editar o nome a mostrar"
       ],
+      "Edit email address": [
+        "Editar endereço de e-mail"
+      ],
       "Edit Gateway ${ currentName }": [
         "Editar Gateway ${ currentName }"
       ],
@@ -6702,6 +6749,9 @@
       "Verifying your payment...": [
         "Verificação do seu pagamento..."
       ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "Enviaremos um e-mail para o seu novo endereço com instruções para concluir a alteração."
+      ],
       "What's new": [
         "O que há de novo"
       ],
@@ -6810,6 +6860,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "O tema selecionado ficará ativo quando o sistema estiver definido para o \"modo claro\"."
+      ],
+      "Verified email address": [
+        "Endereço de e-mail verificado"
       ]
     },
     "tooltip": {

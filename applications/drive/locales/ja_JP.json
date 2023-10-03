@@ -1970,6 +1970,9 @@
       "Enter 6 digits": [
         "6 桁の数字を入力してください"
       ],
+      "Error decrypting a computer": [
+        "コンピュータの復号化エラー"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "エラー「${ error }」のためファイル「${ item.name }」はアップロードできませんでした。"
       ],
@@ -3269,7 +3272,7 @@
         "ファイルを復号中"
       ],
       "Delete locked drives": [
-        "ロックされているドライブを削除"
+        "ロックされたドライブの削除"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "デジタル署名が検証されました。このファイルは ${ emailAddress } によって安全にアップロードされました。"
@@ -5649,11 +5652,11 @@
       "CSV field": [
         "CSV フィールド"
       ],
+      "Display name": [
+        "表示名"
+      ],
       "Import": [
         "インポート"
-      ],
-      "Name": [
-        "名前"
       ],
       "Values": [
         "値"

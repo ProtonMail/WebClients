@@ -33,6 +33,9 @@
       "Add address": [
         "添加地址"
       ],
+      "Add birthday": [
+        "添加生日"
+      ],
       "Add contact": [
         "添加联系人"
       ],
@@ -47,6 +50,9 @@
       ],
       "Add new group": [
         "添加新群组"
+      ],
+      "Add note": [
+        "添加备注"
       ],
       "Add notification": [
         "添加通知"
@@ -1075,8 +1081,17 @@
       "Birthday": [
         "生日"
       ],
+      "Display name": [
+        "称呼"
+      ],
       "Email": [
         "邮箱"
+      ],
+      "Enter a display name or nickname": [
+        "输入一个称呼或昵称"
+      ],
+      "First name": [
+        "名"
       ],
       "Gender": [
         "性别"
@@ -1086,6 +1101,9 @@
       ],
       "Language": [
         "语言"
+      ],
+      "Last name": [
+        "姓"
       ],
       "Logo": [
         "图标"
@@ -2240,6 +2258,9 @@
       "Failed to get original occurrence in series": [
         "无法获取序列中的原始事件"
       ],
+      "First name is too long": [
+        "名字太长。"
+      ],
       "Folder name cannot be empty.": [
         "文件夹名称不能为空。"
       ],
@@ -2284,6 +2305,9 @@
       ],
       "Label name cannot be empty.": [
         "标签名称不能为空。"
+      ],
+      "Last name is too long": [
+        "姓氏太长。"
       ],
       "Merge at least ${ calendarsToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
         "将至少 ${ calendarsToFixCount } 个日历与现有的 ${ BRAND_NAME } 日历合并"
@@ -2335,6 +2359,9 @@
       ],
       "Please fix the highlighted conflicts to proceed.": [
         "请修复高亮的冲突以继续。"
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "请提供名字、姓氏或一个称呼"
       ],
       "Port is required": [
         "端口号必须填写"
@@ -5119,11 +5146,17 @@
       "Filter groups": [
         "查找群组"
       ],
+      "First name": [
+        "名"
+      ],
       "Group name": [
         "群组名称"
       ],
       "Image URL": [
         "图像 URL"
+      ],
+      "Last name": [
+        "姓"
       ],
       "Name": [
         "名称"
@@ -5781,11 +5814,17 @@
       "CSV field": [
         "CSV 字段"
       ],
+      "Display name": [
+        "称呼"
+      ],
+      "First name": [
+        "名"
+      ],
       "Import": [
         "导入"
       ],
-      "Name": [
-        "姓名"
+      "Last name": [
+        "姓"
       ],
       "Values": [
         "值"
@@ -5855,6 +5894,9 @@
       ],
       "Billing cycle": [
         "计费周期"
+      ],
+      "Birthday": [
+        "生日"
       ],
       "Calendar": [
         "日历"
@@ -6011,6 +6053,9 @@
       ],
       "Night theme": [
         "夜间模式"
+      ],
+      "Notes": [
+        "备注"
       ],
       "Open actions dropdown": [
         "展开操作菜单"

@@ -411,14 +411,8 @@
       "Get verification code": [
         "Krijg verificatie code"
       ],
-      "Go to first page": [
-        "Ga naar de eerste pagina"
-      ],
       "Go to label": [
         "Ga naar label"
-      ],
-      "Go to last page": [
-        "Ga naar de laatste pagina"
       ],
       "Go to next page": [
         "Ga naar de volgende pagina"
@@ -3437,6 +3431,10 @@
       "Wrong mailbox password": [
         "Verkeerd mailbox-wachtwoord"
       ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "U kunt geen e-mail verzenden naar meer dan${ maxContacts } ontvanger",
+        "U kunt geen e-mail verzenden naar meer dan ${ maxContacts } ontvangers"
+      ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "U kunt niet meer dan één opstelvenster tegelijk openen",
         "U kunt niet meer dan ${ maxActiveComposer } componistenvensters tegelijk openen"
@@ -3464,6 +3462,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Uw zoekopdracht leverde te veel resultaten op. Verfijn uw zoekopdracht en probeer het opnieuw."
+      ]
+    },
+    "Error adding participants to a calendar event": {
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "Maximaal ${ maxAttendees } deelnemer toegelaten per uitnodiging",
+        "Maximaal ${ maxAttendees } deelnemers toegelaten per uitnodiging"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -8481,11 +8485,11 @@
       "CSV field": [
         "CSV-veld"
       ],
+      "Display name": [
+        "Weergavenaam"
+      ],
       "Import": [
         "Importeren"
-      ],
-      "Name": [
-        "Naam"
       ],
       "Values": [
         "Waarden"
