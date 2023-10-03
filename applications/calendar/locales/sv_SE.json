@@ -33,6 +33,9 @@
       "Add address": [
         "Lägg till adress"
       ],
+      "Add birthday": [
+        "Lägg till födelsedag"
+      ],
       "Add contact": [
         "Lägg till kontakt"
       ],
@@ -47,6 +50,9 @@
       ],
       "Add new group": [
         "Lägg till ny grupp"
+      ],
+      "Add note": [
+        "Lägg till anteckning"
       ],
       "Add notification": [
         "Lägg till avisering"
@@ -1114,8 +1120,17 @@
       "Birthday": [
         "Födelsedag"
       ],
+      "Display name": [
+        "Visningsnamn"
+      ],
       "Email": [
         "E-post"
+      ],
+      "Enter a display name or nickname": [
+        "Ange ett visningsnamn eller smeknamn"
+      ],
+      "First name": [
+        "Förnamn"
       ],
       "Gender": [
         "Kön"
@@ -1125,6 +1140,9 @@
       ],
       "Language": [
         "Språk"
+      ],
+      "Last name": [
+        "Efternamn"
       ],
       "Logo": [
         "Logga"
@@ -2319,6 +2337,9 @@
       "Failed to get original occurrence in series": [
         "Misslyckades att hämta den ursprungliga förekomsten i serien"
       ],
+      "First name is too long": [
+        "Förnamn är för långt"
+      ],
       "Folder name cannot be empty.": [
         "Mappnamn kan inte vara tomt."
       ],
@@ -2363,6 +2384,9 @@
       ],
       "Label name cannot be empty.": [
         "Etikettnamn kan inte vara tomt."
+      ],
+      "Last name is too long": [
+        "Efternamn är för långt"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Slå samman minst ${ calendarsToFixCount } kalender med en befintlig ${ BRAND_NAME }-kalender",
@@ -2424,6 +2448,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "Åtgärda den markerade konflikten för att fortsätta.",
         "Åtgärda de markerade konflikterna för att fortsätta."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Ange antingen ett förnamn, ett efternamn eller ett visningsnamn"
       ],
       "Port is required": [
         "Port är obligatoriskt"
@@ -5382,6 +5409,9 @@
       "Filter groups": [
         "Filtrera grupper"
       ],
+      "First name": [
+        "Förnamn"
+      ],
       "Group name": [
         "Gruppnamn"
       ],
@@ -5390,6 +5420,9 @@
       ],
       "Indexing...": [
         "Indexerar..."
+      ],
+      "Last name": [
+        "Efternamn"
       ],
       "Name": [
         "Namn"
@@ -6103,11 +6136,17 @@
       "CSV field": [
         "CSV-fält"
       ],
+      "Display name": [
+        "Visningsnamn"
+      ],
+      "First name": [
+        "Förnamn"
+      ],
       "Import": [
         "Importera"
       ],
-      "Name": [
-        "Namn"
+      "Last name": [
+        "Efternamn"
       ],
       "Values": [
         "Värden"
@@ -6190,6 +6229,9 @@
       ],
       "Billing cycle": [
         "Faktureringscykel"
+      ],
+      "Birthday": [
+        "Födelsedag"
       ],
       "Calendar": [
         "Kalender"
@@ -6349,6 +6391,9 @@
       ],
       "Night theme": [
         "Natt-tema"
+      ],
+      "Notes": [
+        "Anteckningar"
       ],
       "Open actions dropdown": [
         "Öppna rullgardinsmenyn för åtgärder"
