@@ -237,29 +237,37 @@ export const updateItemLastUseTime = async (shareId: string, itemId: string) =>
         })
     ).Revision!;
 
-const requestAllItemsForShareId = async (shareId: string): Promise<ItemRevisionContentsResponse[]> => {
-    const pageIterator = async (Since?: string): Promise<ItemRevisionContentsResponse[]> => {
+const requestAllItemsForShareId = async (
+    shareId: string,
+    onItemsLoaded?: (total: number) => void
+): Promise<ItemRevisionContentsResponse[]> => {
+    const pageIterator = async (count: number, Since?: string): Promise<ItemRevisionContentsResponse[]> => {
         const { Items } = await api({
             url: `pass/v1/share/${shareId}/item`,
             method: 'get',
             params: Since ? { Since } : {},
         });
 
+        const nextCount = count + (Items?.RevisionsData.length ?? 0);
+        onItemsLoaded?.(nextCount);
+
         return Items?.LastToken
-            ? Items.RevisionsData.concat(await pageIterator(Items.LastToken))
+            ? Items.RevisionsData.concat(await pageIterator(nextCount, Items.LastToken))
             : Items!.RevisionsData;
     };
 
-    return pageIterator();
+    return pageIterator(0);
 };
 
 /* avoid throwing when decrypting items for a shareId - this avoids blocking
  * the user if one item is corrupted or is using a newer proto version */
-export async function requestItemsForShareId(shareId: string): Promise<ItemRevision[]> {
-    const items = await requestAllItemsForShareId(shareId);
-    return (
-        await Promise.all(items.map((encryptedItem) => parseItemRevision(shareId, encryptedItem).catch(() => null)))
-    ).filter(truthy);
+export async function requestItemsForShareId(
+    shareId: string,
+    onItemsLoaded?: (total: number) => void
+): Promise<ItemRevision[]> {
+    const encryptedItems = await requestAllItemsForShareId(shareId, onItemsLoaded);
+    const items = await Promise.all(encryptedItems.map((item) => parseItemRevision(shareId, item).catch(() => null)));
+    return items.filter(truthy);
 }
 
 export const importItemsBatch = async (options: {
