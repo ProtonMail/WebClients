@@ -69,6 +69,8 @@ export interface DriveFileBlock {
     Hash: string;
 }
 
+export type Thumbnail = { Size: number; Type: number; Hash: string };
+
 export interface DriveFileRevision {
     ID: string;
     CreateTime: number;
@@ -78,7 +80,7 @@ export interface DriveFileRevision {
     SignatureAddress: string;
     SignatureEmail: string;
     Blocks: DriveFileBlock[];
-    ThumbnailHash: string;
+    Thumbnails: Thumbnail[];
     XAttr?: string;
 }
 

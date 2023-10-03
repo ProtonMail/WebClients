@@ -31,7 +31,7 @@ export type DownloadBlocksCallbacks = Omit<
             PageSize: number;
         },
         revisionId?: string
-    ) => Promise<{ blocks: DriveFileBlock[]; thumbnailHash: string; manifestSignature: string }>;
+    ) => Promise<{ blocks: DriveFileBlock[]; thumbnailHashes: string[]; manifestSignature: string }>;
     transformBlockStream: (
         abortSignal: AbortSignal,
         stream: ReadableStream<Uint8Array>,
@@ -89,6 +89,7 @@ export default function initDownloadBlocks(
         let activeIndex = 1;
 
         const hashes: Uint8Array[] = [];
+        let thumbnailHashes: Uint8Array[] = [];
         let manifestSignature: string;
 
         const hasMorePages = (currentPageLength: number) => currentPageLength === BATCH_REQUEST_SIZE;
@@ -97,8 +98,8 @@ export default function initDownloadBlocks(
             try {
                 const result = await getBlocks(abortController.signal, pagination);
                 blocks = result.blocks;
-                if (result.thumbnailHash) {
-                    hashes[0] = base64StringToUint8Array(result.thumbnailHash);
+                if (result.thumbnailHashes) {
+                    thumbnailHashes = result.thumbnailHashes.map(base64StringToUint8Array);
                 }
                 manifestSignature = result.manifestSignature;
             } catch (err: any) {
@@ -224,7 +225,8 @@ export default function initDownloadBlocks(
 
                         const currentBuffer = buffers.get(Index);
 
-                        hashes[Index] = hash;
+                        // Block are indexed from 1 and we want to start from 0 for hashes
+                        hashes[Index - 1] = hash;
                         if (currentBuffer) {
                             currentBuffer.done = true;
                         }
@@ -350,8 +352,11 @@ export default function initDownloadBlocks(
                 return;
             }
 
-            const hash = mergeUint8Arrays(hashes);
-            await checkManifestSignature?.(abortController.signal, hash, manifestSignature);
+            await checkManifestSignature?.(
+                abortController.signal,
+                mergeUint8Arrays([...thumbnailHashes, ...hashes]),
+                manifestSignature
+            );
 
             // Wait for stream to be flushed
             await fsWriter.ready;
