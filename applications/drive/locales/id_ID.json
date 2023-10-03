@@ -6,10 +6,10 @@
   "contexts": {
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
-        "Penerusan email akan segera dimulai. Email baru akan muncul pada kotak masuk Anda."
+        "Penerusan surel akan segera dimulai. Surel baru akan muncul pada kotak masuk Anda."
       ],
       "Mail forward stopped": [
-        "Penerusan email diberhentikan"
+        "Penerusan surel diberhentikan"
       ]
     },
     "Action": {
@@ -29,7 +29,7 @@
         "Tambah kontak"
       ],
       "Add email": [
-        "Tambah email"
+        "Tambah surel"
       ],
       "Add group": [
         "Tambah grup"
@@ -158,7 +158,7 @@
         "Salin alamat"
       ],
       "Copy email to clipboard": [
-        "Salin email ke papan klip"
+        "Salin surel ke papan klip"
       ],
       "Copy link": [
         "Salin tautan"
@@ -245,7 +245,7 @@
         "Sunting"
       ],
       "Edit email address": [
-        "Ubah alamat email"
+        "Ubah alamat surel"
       ],
       "Edit label": [
         "Sunting label"
@@ -257,7 +257,7 @@
         "Sunting rincian masuk"
       ],
       "Email settings": [
-        "Pengaturan email"
+        "Pengaturan surel"
       ],
       "Empty trash": [
         "Kosongkan sampah"
@@ -350,7 +350,7 @@
         "Impor kontak"
       ],
       "Import emails": [
-        "Impor email"
+        "Impor surel"
       ],
       "Import from .csv or vCard": [
         "Impor dari .csv atau vCard"
@@ -954,7 +954,7 @@
         "Tanggal lahir"
       ],
       "Email": [
-        "Email"
+        "Surel"
       ],
       "Gender": [
         "Jenis kelamin"
@@ -1829,7 +1829,7 @@
         "Logo Proton Mail dan tanda plus"
       ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
-        "Hemat waktu Anda dengan fitur pengiriman email atau undangan massal, yang merupakan satu dari sekian banyak fitur premium yang tersedia. Tingkatkan paket Anda sekarang juga."
+        "Hemat waktu Anda dengan fitur pengiriman surel atau undangan massal, yang merupakan satu dari sekian banyak fitur premium yang tersedia. Tingkatkan paket Anda sekarang juga."
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "Berkas hanya dapat berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan mengandung hingga ${ MAX_IMPORT_CONTACTS_STRING } kontak. Apabila berkas Anda lebih besar, silakan bagi dan pisahkan ke dalam beberapa berkas yang lebih kecil."
@@ -1968,10 +1968,10 @@
         "Domain tidak tersedia, coba lagi nanti"
       ],
       "Email address is required": [
-        "Alamat email diperlukan"
+        "Alamat surel diperlukan"
       ],
       "Email is not valid": [
-        "Email tidak valid"
+        "Surel tidak valid"
       ],
       "Enter 6 digits": [
         "Masukkan 6 digit"
@@ -2010,7 +2010,7 @@
         "Sandi salah. Silakan coba lagi."
       ],
       "Invalid email address": [
-        "Alamat email tidak valid"
+        "Alamat surel tidak valid"
       ],
       "Invalid name": [
         "Nama tidak valid"
@@ -2040,7 +2040,7 @@
         "Tidak ada kontak yang dapat diimpor"
       ],
       "No emails found to import - the account does not have an inbox": [
-        "Tidak ada email yang dapat diimpor - akun ini tidak memiliki kotak masuk"
+        "Tidak ada surel yang dapat diimpor - akun ini tidak memiliki kotak masuk"
       ],
       "No valid address found": [
         "Tidak ada alamat valid yang ditemukan"
@@ -2088,7 +2088,7 @@
         "Sebagian kontak tidak dapat dihapus"
       ],
       "Some contacts have no email addresses: ${ noEmailsContactNamesList } ": [
-        "Kontak tidak memiliki alamat email: ${ noEmailsContactNamesList } "
+        "Kontak tidak memiliki alamat surel: ${ noEmailsContactNamesList } "
       ],
       "Some groups could not be deleted": [
         "Sebagian grup tidak dapat dihapus"
@@ -2187,7 +2187,7 @@
         "Nama pengguna harus diakhiri dengan huruf atau angka"
       ],
       "You can't send a mail to more than ${ maxContacts } recipients": [
-        "Anda tidak dapat mengirim email ke lebih dari ${ maxContacts } penerima"
+        "Anda tidak dapat mengirim surel ke lebih dari ${ maxContacts } penerima"
       ],
       "You have reached the contacts limit for your account": [
         "Anda telah mencapai batas jumlah kontak yang diperkenankan untuk akun Anda"
@@ -2731,7 +2731,7 @@
     },
     "Human verification method": {
       "Email": [
-        "Email"
+        "Surel"
       ],
       "Manual": [
         "Penuntun"
@@ -2779,7 +2779,7 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
-        "Undangan yang diimpor akan muncul pada ${ CALENDAR_APP_NAME } dalam bentuk simple event tanpa rincian seputar penyelenggara dan peserta. Untuk dapat memperoleh pembaruan terkini dan melihat daftar peserta, mintalah penyelenggara untuk mengundang Anda melalui alamat email ${ BRAND_NAME } Anda."
+        "Undangan yang diimpor akan muncul pada ${ CALENDAR_APP_NAME } dalam bentuk simple event tanpa rincian seputar penyelenggara dan peserta. Untuk dapat memperoleh pembaruan terkini dan melihat daftar peserta, mintalah penyelenggara untuk mengundang Anda melalui alamat surel ${ BRAND_NAME } Anda."
       ],
       "This file contains event invitations:": [
         "Berkas ini mengandung undangan acara:"
@@ -2854,7 +2854,7 @@
         "Verifikasi 2 langkah telah diaktifkan pada akun eksternal Anda."
       ],
       "2-step verification is enabled in your external email account.": [
-        "Verifikasi 2 langkah telah diaktifkan pada akun email eksternal Anda."
+        "Verifikasi 2 langkah telah diaktifkan pada akun surel eksternal Anda."
       ],
       "IMAP access is enabled in your external account.": [
         "Akses IMAP telah diaktifkan pada akun eksternal Anda."
@@ -2875,16 +2875,16 @@
         "Kata sandi aplikasi Anda benar. ${ boldNot } gunakan kata sandi biasa Anda."
       ],
       "Your email account requires an app password to export your data.": [
-        "Akun email Anda memerlukan kata sandi aplikasi untuk dapat mengekspor data Anda."
+        "Akun surel Anda memerlukan kata sandi aplikasi untuk dapat mengekspor data Anda."
       ],
       "Your email account requires one to export your data.": [
-        "Akun email Anda memerlukan kata sandi aplikasi untuk dapat mengekspor data Anda."
+        "Akun surel Anda memerlukan kata sandi aplikasi untuk dapat mengekspor data Anda."
       ],
       "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Alamat email dan kata sandi aplikasi Anda benar. ${ boldNot } gunakan kata sandi biasa Anda."
+        "Alamat surel dan kata sandi aplikasi Anda benar. ${ boldNot } gunakan kata sandi biasa Anda."
       ],
       "Your email address and password are correct.": [
-        "Alamat email dan kata sandi Anda benar."
+        "Alamat surel dan kata sandi Anda benar."
       ],
       "Your password is correct.": [
         "Kata sandi Anda benar."
@@ -2897,7 +2897,7 @@
     },
     "Import instructions": {
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
-        "Tergantung dari layanan email Anda sebelumnya, Anda mungkin akan perlu untuk membuat ${ knowledgeBaseLink } terlebih dahulu sebelum Anda dapat mengimpor ke ${ BRAND_NAME }."
+        "Tergantung dari layanan surel Anda sebelumnya, Anda mungkin akan perlu untuk membuat ${ knowledgeBaseLink } terlebih dahulu sebelum Anda dapat mengimpor ke ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Tampilkan lebih banyak pilihan pada menu dropdown dengan mengklik tombol 3 titik (...)."
@@ -2930,7 +2930,7 @@
         "Untuk mengimpor kontak ke ${ BRAND_NAME }, Anda akan memerlukan ${ knowledgeBaseLink }. Harap unduh berkas ini sebelum memulai proses impor."
       ],
       "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "Untuk mengimpor email ke ${ BRAND_NAME }, Anda akan memerlukan ${ appPasswordLink } dari Yahoo. Anda dapat memperolehnya dengan mengikuti langkah-langkah berikut:"
+        "Untuk mengimpor surel ke ${ BRAND_NAME }, Anda akan memerlukan ${ appPasswordLink } dari Yahoo. Anda dapat memperolehnya dengan mengikuti langkah-langkah berikut:"
       ]
     },
     "Import instructions emphasis": {
@@ -3014,7 +3014,7 @@
         "${ activeUploadsCount } sedang diunggah (${ uploadProgress }%)"
       ],
       "${ addressCount } email addresses": [
-        "${ addressCount } alamat email"
+        "${ addressCount } alamat surel"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
@@ -3029,13 +3029,13 @@
         "${ canceledCount } dibatalkan"
       ],
       "${ contactCount } contacts contain multiple email addresses.": [
-        "${ contactCount } kontak mengandung lebih dari satu alamat email."
+        "${ contactCount } kontak mengandung lebih dari satu alamat surel."
       ],
       "${ contactEmailsLength } Members": [
         "${ contactEmailsLength } Anggota"
       ],
       "${ contactName } contains multiple email addresses.": [
-        "${ contactName } mengandung lebih dari satu alamat email."
+        "${ contactName } mengandung lebih dari satu alamat surel."
       ],
       "${ contactsCount } contacts found": [
         "${ contactsCount } kontak ditemukan"
@@ -3176,7 +3176,7 @@
         "Karena ${ DRIVE_APP_NAME } terenkripsi secara end-to-end, kami tidak dapat mengakses\natau mendekripsi data Anda. Untuk kembali membuka kunci drive setelah pengaturan ulang kata sandi, Anda harus memiliki setidaknya salah satu hal berikut:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat email yang benar."
+        "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat surel yang benar."
       ],
       "Billing cycle: ${ text }": [
         "Siklus tagihan: ${ text }"
@@ -3329,7 +3329,7 @@
         "Sunting alamat surel"
       ],
       "Emails are automatically signed": [
-        "Email ditandatangani secara otomatis"
+        "Surel ditandatangani secara otomatis"
       ],
       "Enable drive search": [
         "Aktifkan pencarian drive"
@@ -3350,7 +3350,7 @@
         "Masukkan kode yang tertera pada aplikasi autentikator Anda"
       ],
       "Enter the credentials of the email account you want to import from.": [
-        "Masukkan kredensial akun email yang berkasnya ingin Anda impor."
+        "Masukkan kredensial akun surel yang berkasnya ingin Anda impor."
       ],
       "Enter the device name to confirm removal.": [
         "Masukkan nama perangkat untuk mengonfirmasi penghapusan."
@@ -3452,7 +3452,7 @@
         "Apabila Anda merasa ini adalah sebuah kesalahan, silakan hubungi kami ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Apabila Anda tidak menemukan email yang bersangkutan di dalam kotak masuk, mohon periksa folder spam Anda."
+        "Apabila Anda tidak menemukan surel yang bersangkutan di dalam kotak masuk, mohon periksa folder spam Anda."
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Apabila Anda memiliki salah satunya, tuju menu pengaturan Akun ${ BRAND_NAME } untuk\nmemulai proses pencabutan blokir."
@@ -3587,7 +3587,7 @@
         "Belum ada kontak yang ditambahkan"
       ],
       "No email address": [
-        "Tidak ada alamat email"
+        "Tidak ada alamat surel"
       ],
       "No files or folders in trash": [
         "Kotak sampah kosong"
@@ -3602,7 +3602,7 @@
         "Tidak ada folder yang disinkronkan"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
-        "Tidak ada kunci yang valid untuk enkripsi dari daftar kunci yang diunggah. Untuk dapat mengirim pesan ke alamat ini, silakan unggah kunci yang valid atau nonaktifkan pengaturan \"Enkripsi email\"."
+        "Tidak ada kunci yang valid untuk enkripsi dari daftar kunci yang diunggah. Untuk dapat mengirim pesan ke alamat ini, silakan unggah kunci yang valid atau nonaktifkan pengaturan \"Enkripsi surel\"."
       ],
       "Not a valid URL": [
         "URL tidak valid"
@@ -3656,16 +3656,16 @@
         "Mohon dicatat bahwa proses ini dapat memakan waktu sejenak tergantung pada ukuran buku alamat Anda."
       ],
       "Please provide a name and an email address for creating a group.": [
-        "Mohon sediakan nama dan alamat email untuk membuat grup."
+        "Mohon sediakan nama dan alamat surel untuk membuat grup."
       ],
       "Please select the folders you would like to import:": [
         "Harap pilih folder-folder yang hendak Anda impor:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } groups.": [
-        "Silakan pilih alamat email mana saja yang akan ditambahkan ke ${ groupCount } grup."
+        "Silakan pilih alamat surel mana saja yang akan ditambahkan ke ${ groupCount } grup."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
-        "Silakan pilih alamat email mana saja yang akan ditambahkan ke ${ groupName }."
+        "Silakan pilih alamat surel mana saja yang akan ditambahkan ke ${ groupName }."
       ],
       "Please wait till your changes are synced with the server.": [
         "Mohon tunggu hingga perubahan Anda disinkronkan dengan server."
@@ -3737,7 +3737,7 @@
         "Pilih berkas atau folder yang telah diunggah dan buat tautan untuk berkas atau folder tersebut."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Pilih format email yang akan digunakan setiap kali Anda mengirim email ke alamat ini."
+        "Pilih format surel yang akan digunakan setiap kali Anda mengirim surel ke alamat ini."
       ],
       "Select what you want to import.": [
         "Pilih hal apa saja yang hendak Anda impor."
@@ -3752,7 +3752,7 @@
         "Masa berlaku sesi telah berakhir"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "Memasang PGP memungkinkan Anda untuk saling bertukar email yang terenkripsi secara ujung ke ujung dengan para pengguna non-${ BRAND_NAME } yang juga mendukung PGP."
+        "Memasang PGP memungkinkan Anda untuk saling bertukar surel yang terenkripsi secara ujung ke ujung dengan para pengguna non-${ BRAND_NAME } yang juga mendukung PGP."
       ],
       "Share files with links": [
         "Berbagi berkas dengan tautan"
@@ -4019,7 +4019,7 @@
         "Anda hanya dapat mengimpor satu tipe data dalam satu waktu."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        "Anda dapat mengaktifkan notifikasi untuk menerima pemberitahuan setiap kali terdapat email baru yang masuk ke folder ini."
+        "Anda dapat mengaktifkan notifikasi untuk menerima pemberitahuan setiap kali terdapat surel baru yang masuk ke folder ini."
       ],
       "You cannot undo this action.": [
         "Anda tidak bisa membatalkannya."
@@ -4043,10 +4043,10 @@
         "Anda telah mencapai batas jumlah alamat yang dapat ditetapkan ke grup kontak"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Setelah 28 hari, email tidak akan lagi diantarkan ke kotak masuk Anda, tautan berbagi Drive Anda akan diblokir, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
+        "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Setelah 28 hari, surel tidak akan lagi diantarkan ke kotak masuk Anda, tautan berbagi Drive Anda akan diblokir, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Email tidak akan lagi diantarkan ke kotak masuk Anda. Tautan berbagi Drive Anda telah dinonaktifkan, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
+        "Akun ${ BRAND_NAME } Anda sedang ditangguhkan. Surel tidak akan lagi diantarkan ke kotak masuk Anda. Tautan berbagi Drive Anda telah dinonaktifkan, dan Anda tidak akan dapat mengunggah berkas baru. Untuk dapat kembali menggunakan layanan seperti biasa, silakan lunasi seluruh tagihan yang tertunggak."
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Akses ke akun Anda akan segera dibatasi. ${ payInvoiceLink }"
@@ -4055,7 +4055,7 @@
         "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah dibatasi dan seluruh layanan telah diblokir hingga Anda melunasi tagihan. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah dibatasi. Apabila Anda terus-menerus lalai membayar, email dan tautan berbagi Anda akan diblokir. ${ payInvoiceLink }"
+        "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah dibatasi. Apabila Anda terus-menerus lalai membayar, surel dan tautan berbagi Anda akan diblokir. ${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Browser Anda saat ini tidak dapat digunakan untuk mengunduh berkas yang berukuran besar karena tidak tersedianya dukungan service worker yang memadai. Mengunduh berkas yang berukuran besar dapat membekukan layar atau menonaktifkan browser Anda sepenuhnya. Mohon gunakan versi terbaru dari ${ recommendedBrowser } dan coba lagi."
@@ -4064,7 +4064,7 @@
         "Data Anda siap untuk diimpor dari ${ importedEmailAddressStrong } menuju akun ${ BRAND_NAME } Anda."
       ],
       "Your email will only be used for this one-time verification.": [
-        "Email Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
+        "Surel Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Berkas Anda tidak lagi dapat diakses karena kata sandi yang ada telah diatur ulang. Unggah kembali kunci enkripsi lama untuk dapat kembali mengakses berkas Anda. ${ KeyReactivationButton }"
@@ -4162,7 +4162,7 @@
         "(Sedang tidak tersedia. Mohon periksa lagi nanti.)"
       ],
       "Add email address": [
-        "Tambah alamat email"
+        "Tambah alamat surel"
       ],
       "Add image URL": [
         "Tambah URL gambar"
@@ -4288,34 +4288,34 @@
         "Duplikat ditemukan"
       ],
       "Email": [
-        "Email"
+        "Surel"
       ],
       "Email address": [
-        "Alamat email"
+        "Alamat surel"
       ],
       "Email format": [
-        "Format email"
+        "Format surel"
       ],
       "Email or username": [
-        "Email atau nama pengguna"
+        "Surel atau nama pengguna"
       ],
       "Emails": [
-        "Email"
+        "Surel"
       ],
       "Emails (all messages)": [
-        "Email (seluruh pesan)"
+        "Surel (seluruh pesan)"
       ],
       "Emails (last 12 months)": [
-        "Email (12 bulan terakhir)"
+        "Surel (12 bulan terakhir)"
       ],
       "Emails (last 3 months)": [
-        "Email (3 bulan terakhir)"
+        "Surel (3 bulan terakhir)"
       ],
       "Emails (last month)": [
-        "Email (sebulan terakhir)"
+        "Surel (sebulan terakhir)"
       ],
       "Encrypt emails": [
-        "Enkripsi email"
+        "Enkripsi surel"
       ],
       "Enter device name": [
         "Masukkan nama perangkat"
@@ -4378,7 +4378,7 @@
         "Interval impor"
       ],
       "Import to email address": [
-        "Impor ke alamat email"
+        "Impor ke alamat surel"
       ],
       "Import to:": [
         "Impor ke:"
@@ -4510,7 +4510,7 @@
         "Tampilkan keberlangsungan proses penyusunan indeks Encrypted Search"
       ],
       "Sign emails": [
-        "Tanda tangani email"
+        "Tanda tangani surel"
       ],
       "Size": [
         "Ukuran"
@@ -4676,7 +4676,7 @@
         "Jumlah kalender yang dibuat: ${ createdCalendarCount } dari ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
-        "Menghubungkan ke penyedia email Anda"
+        "Menghubungkan ke penyedia surel Anda"
       ],
       "Creating new calendars": [
         "Membuat kalender-kalender baru"
@@ -4685,7 +4685,7 @@
         "Mengumpulkan data Anda"
       ],
       "We're gathering your data from your provider": [
-        "Kami tengah mengumpulkan data dari penyedia layanan email Anda"
+        "Kami tengah mengumpulkan data dari penyedia layanan surel Anda"
       ],
       "Your import is starting": [
         "Proses impor Anda akan segera dimulai"
@@ -4725,22 +4725,22 @@
     },
     "Modal title": {
       "How to import calendars from another service": [
-        "Cara untuk mengimpor kalender-kalender dari layanan email lainnya"
+        "Cara untuk mengimpor kalender-kalender dari layanan surel lainnya"
       ],
       "How to import calendars from Yahoo": [
         "Cara untuk mengimpor kalender-kalender dari Yahoo"
       ],
       "How to import contacts from another service": [
-        "Cara untuk mengimpor kontak dari layanan email lainnya"
+        "Cara untuk mengimpor kontak dari layanan surel lainnya"
       ],
       "How to import contacts from Yahoo": [
         "Cara untuk mengimpor kontak dari Yahoo"
       ],
       "How to import emails from another service": [
-        "Cara untuk mengimpor email-email dari layanan email lainnya"
+        "Cara untuk mengimpor surel-surel dari layanan surel lainnya"
       ],
       "How to import emails from Yahoo": [
-        "Cara untuk mengimpor email-email dari Yahoo"
+        "Cara untuk mengimpor surel-surel dari Yahoo"
       ]
     },
     "New Label form": {
@@ -4764,7 +4764,7 @@
         "Hapus pesan spam dan sampah secara otomatis"
       ],
       "Custom email domains": [
-        "Domain email khusus"
+        "Domain surel khusus"
       ],
       "Hide-my-email aliases": [
         "Alias hide-my-email"
@@ -4779,7 +4779,7 @@
         "Tanpa batasan jumlah folder, label, dan filter"
       ],
       "Up to 15 email addresses": [
-        "Hingga 15 alamat email"
+        "Hingga 15 alamat surel"
       ],
       "Up to 3 TB of storage": [
         "Kuota penyimpanan hingga 3 TB"
@@ -4787,16 +4787,16 @@
     },
     "new_plans: feature info": {
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "Berikan masing-masing identitas online Anda alamat emailnya tersendiri, mis. JohnShopper@${ domain } untuk berbelanja dan JohnNews@${ domain2 } untuk berlangganan berita"
+        "Berikan masing-masing identitas online Anda alamat surelnya tersendiri, mis. JohnShopper@${ domain } untuk berbelanja dan JohnNews@${ domain2 } untuk berlangganan berita"
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Dapatkan alamat email samaran tanpa batasan jumlah dengan SimpleLogin oleh ${ BRAND_NAME }"
+        "Dapatkan alamat surel samaran tanpa batasan jumlah dengan SimpleLogin oleh ${ BRAND_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan"
       ],
       "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Gunakan domain email khusus milik Anda sendiri, mis. anda@namaanda.com"
+        "Gunakan domain surel khusus milik Anda sendiri, mis. anda@namaanda.com"
       ]
     },
     "new_plans: label": {
@@ -4997,7 +4997,7 @@
     },
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Tentukan apa-apa saja yang akan dapat diakses oleh ${ BRAND_NAME }: melihat isi pesan dan pengaturan email Anda, melihat dan mengunduh kontak Anda, serta melihat dan mengunduh seluruh agenda yang Anda akses dari Google Agenda."
+        "Tentukan apa-apa saja yang akan dapat diakses oleh ${ BRAND_NAME }: melihat isi pesan dan pengaturan surel Anda, melihat dan mengunduh kontak Anda, serta melihat dan mengunduh seluruh agenda yang Anda akses dari Google Agenda."
       ]
     },
     "Onboarding Action": {
@@ -5101,7 +5101,7 @@
     },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Alamat email tidak ditemukan di antara id pengguna yang terhubung dengan kunci pengiriman (${ keyUserIds })"
+        "Alamat surel tidak ditemukan di antara id pengguna yang terhubung dengan kunci pengiriman (${ keyUserIds })"
       ]
     },
     "Placeholder": {
@@ -5121,7 +5121,7 @@
         "Masukkan nama perangkat"
       ],
       "Enter your email address": [
-        "Masukkan alamat email Anda"
+        "Masukkan alamat surel Anda"
       ],
       "Filter groups": [
         "Filter grup"
@@ -5136,7 +5136,7 @@
         "Nama"
       ],
       "Name or email address": [
-        "Nama atau alamat email"
+        "Nama atau alamat surel"
       ],
       "New name": [
         "Nama baru"
@@ -5151,13 +5151,13 @@
         "Cari nama grup"
       ],
       "Search for name or email": [
-        "Cari nama atau email"
+        "Cari nama atau surel"
       ],
       "Select": [
         "Pilih"
       ],
       "Start typing an email address": [
-        "Mulai ketik alamat email"
+        "Mulai ketik alamat surel"
       ]
     },
     "Placeholder for contact group name": {
@@ -5195,7 +5195,7 @@
         "Alamat"
       ],
       "Email": [
-        "Email"
+        "Surel"
       ],
       "Fax": [
         "Faks"
@@ -5227,7 +5227,7 @@
         "Resmi"
       ],
       "Official email from ${ BRAND_NAME }": [
-        "Email resmi dari ${ BRAND_NAME }"
+        "Surel resmi dari ${ BRAND_NAME }"
       ]
     },
     "Select files": {
@@ -5520,7 +5520,7 @@
         "Kontak dihapus"
       ],
       "Email address copied to clipboard": [
-        "Alamat email disalin ke clipboard"
+        "Alamat surel disalin ke clipboard"
       ],
       "Fingerprint copied to clipboard": [
         "Sidik jari disalin ke papan klip"
@@ -5658,11 +5658,11 @@
       "CSV field": [
         "Kolom CSV"
       ],
+      "Display name": [
+        "Nama tampilan"
+      ],
       "Import": [
         "Impor"
-      ],
-      "Name": [
-        "Nama"
       ],
       "Values": [
         "Nilai"
@@ -5794,7 +5794,7 @@
         "Sesuaikan proses impor kalender"
       ],
       "Customize your mail import": [
-        "Sesuaikan proses impor email"
+        "Sesuaikan proses impor surel"
       ],
       "Date": [
         "Tanggal"
@@ -5845,16 +5845,16 @@
         "Sunting grup kontak"
       ],
       "Edit email settings": [
-        "Sunting pengaturan email"
+        "Sunting pengaturan surel"
       ],
       "Edit image": [
         "Sunting gambar"
       ],
       "Email addresses": [
-        "Alamat email"
+        "Alamat surel"
       ],
       "Email settings": [
-        "Pengaturan email"
+        "Pengaturan surel"
       ],
       "Empty trash": [
         "Kosongkan sampah"
@@ -6185,10 +6185,10 @@
         "Sesuaikan impor untuk mengurangi jumlah label"
       ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
-        "Menandatangani email secara digital akan membantu sistem kami dalam mengautentikasi pesan yang Anda kirim"
+        "Menandatangani surel secara digital akan membantu sistem kami dalam mengautentikasi pesan yang Anda kirim"
       ],
       "Each imported email will have this label": [
-        "Masing-masing email yang diimpor akan memiliki label ini"
+        "Masing-masing surel yang diimpor akan memiliki label ini"
       ],
       "Edit folder names": [
         "Edit nama folder"
@@ -6206,7 +6206,7 @@
         "Data terenkripsi dengan tanda tangan digital terverifikasi"
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
-        "Gmail secara otomatis mengelompokkan email tertentu ke dalam kategori seperti Sosial dan Promosi. Anda dapat menentukan ke kategori mana email berikut akan diimpor."
+        "Gmail secara otomatis mengelompokkan surel tertentu ke dalam kategori seperti Sosial dan Promosi. Anda dapat menentukan ke kategori mana surel berikut akan diimpor."
       ],
       "Hide side panel": [
         "Sembunyikan panel samping"
@@ -6328,7 +6328,7 @@
         "Sayangnya, saat ini kami sedang tidak online. Harap jelaskan masalah Anda pada formulir di bawah ini dan kami akan memeriksanya pada saat kami telah kembali online."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
-        "Kami tidak dapat memverifikasi server email yang dimaksud. Apabila Anda memercayainya, Anda dapat melewati proses verifikasi ini."
+        "Kami tidak dapat memverifikasi server surel yang dimaksud. Apabila Anda memercayainya, Anda dapat melewati proses verifikasi ini."
       ],
       "You will lose any customization you made so far.": [
         "Segala penyesuaian yang telah Anda buat sejauh ini tidak akan tersimpan."

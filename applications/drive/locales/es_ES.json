@@ -25,6 +25,9 @@
       "Add address": [
         "Añadir dirección"
       ],
+      "Add birthday": [
+        "Añadir una fecha de nacimiento"
+      ],
       "Add contact": [
         "Añadir contacto"
       ],
@@ -39,6 +42,9 @@
       ],
       "Add new group": [
         "Añadir grupo"
+      ],
+      "Add note": [
+        "Añadir una nota"
       ],
       "Add phone number": [
         "Añadir número telefónico"
@@ -957,8 +963,17 @@
       "Birthday": [
         "Fecha de nacimiento"
       ],
+      "Display name": [
+        "Nombre a mostrar"
+      ],
       "Email": [
         "Correo electrónico"
+      ],
+      "Enter a display name or nickname": [
+        "Introduce un nombre a mostrar o un apodo"
+      ],
+      "First name": [
+        "Nombre"
       ],
       "Gender": [
         "Género"
@@ -968,6 +983,9 @@
       ],
       "Language": [
         "Idioma"
+      ],
+      "Last name": [
+        "Apellido"
       ],
       "Logo": [
         "Logo"
@@ -1983,6 +2001,9 @@
       "Enter 6 digits": [
         "Introduce 6 dígitos."
       ],
+      "Error decrypting a computer": [
+        "Error al descifrar el ordenador"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "El archivo \"${ item.name }\" no se puede cargar debido al error \"${ error }\"."
       ],
@@ -1994,6 +2015,9 @@
       ],
       "File selection is already downloading": [
         "La selección de archivos ya se está descargando."
+      ],
+      "First name is too long": [
+        "El nombre es demasiado largo."
       ],
       "Folder \"${ name }\" is already downloading": [
         "La carpeta \"${ name }\" ya se está descargando."
@@ -2030,6 +2054,9 @@
       ],
       "Label name cannot be empty.": [
         "El nombre de la etiqueta no puede estar vacío."
+      ],
+      "Last name is too long": [
+        "El apellido es demasiado largo."
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Combina al menos ${ calendarsToFixCount } calendario con un calendario ${ BRAND_NAME } existente.",
@@ -2076,6 +2103,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "Arregla el conflicto resaltado para continuar.",
         "Arregla los conflictos resaltados para continuar."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Proporciona al menos un nombre, apellido o nombre a mostrar"
       ],
       "Port is required": [
         "Puerto requerido"
@@ -5219,11 +5249,17 @@
       "Filter groups": [
         "Filtrar grupos"
       ],
+      "First name": [
+        "Nombre"
+      ],
       "Group name": [
         "Nombre del grupo"
       ],
       "Image URL": [
         "URL de la imagen"
+      ],
+      "Last name": [
+        "Apellido"
       ],
       "Name": [
         "Nombre"
@@ -5766,11 +5802,17 @@
       "CSV field": [
         "Campo CSV"
       ],
+      "Display name": [
+        "Nombre para mostrar"
+      ],
+      "First name": [
+        "Nombre"
+      ],
       "Import": [
         "Importar"
       ],
-      "Name": [
-        "Nombre"
+      "Last name": [
+        "Apellido"
       ],
       "Values": [
         "Valores"
@@ -5857,6 +5899,9 @@
       ],
       "Billing cycle": [
         "Ciclo de facturación"
+      ],
+      "Birthday": [
+        "Fecha de nacimiento"
       ],
       "Browser might run out of memory": [
         "El navegador podría quedarse sin memoria."
@@ -6080,6 +6125,9 @@
       ],
       "No results found": [
         "No hay resultados"
+      ],
+      "Notes": [
+        "Notas"
       ],
       "Number of files": [
         "Número de archivos"

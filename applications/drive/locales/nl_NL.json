@@ -2189,6 +2189,10 @@
       "Username must end with a letter or digit": [
         "Gebruikersnaam moet met een letter of cijfer eindigen"
       ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "U kunt geen e-mail verzenden naar meer dan${ maxContacts } ontvanger",
+        "U kunt geen e-mail verzenden naar meer dan ${ maxContacts } ontvangers"
+      ],
       "You have reached the contacts limit for your account": [
         "U heeft de limiet van contacten bereikt voor dit account"
       ],
@@ -5751,11 +5755,11 @@
       "CSV field": [
         "CSV-veld"
       ],
+      "Display name": [
+        "Weergavenaam"
+      ],
       "Import": [
         "Importeren"
-      ],
-      "Name": [
-        "Naam"
       ],
       "Values": [
         "Waarden"
