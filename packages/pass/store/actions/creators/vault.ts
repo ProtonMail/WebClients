@@ -216,28 +216,28 @@ export const vaultSetPrimarySuccess = createOptimisticAction(
 export const vaultSetPrimarySync = createAction('vault set primary sync', (payload: { id: string }) => ({ payload }));
 
 export const vaultTransferOwnerIntent = createAction(
-    'share::member::edit-access::intent',
+    'share::ownership::transfer::intent',
     withRequestStart((payload: VaultTransferOwnerIntent) => withCacheBlock({ payload }))
 );
 
 export const vaultTransferOwnershipSuccess = createAction(
-    'share::member::edit-access::success',
+    'share::ownership::transfer::success',
     withRequestSuccess((shareId: string, userShareId: string) =>
         withNotification({
             type: 'info',
-            text: c('Info').t`User's access sucessfuly updated`,
+            text: c('Info').t`Ownership successfully transfered. You are no long the owner of this vault.`,
         })({ payload: { shareId, userShareId } })
     )
 );
 
 export const vaultTransferOwnershipFailure = createAction(
-    'share::member:edit-access::failure',
+    'share::ownership::transfer::failure',
     withRequestFailure((error: unknown) =>
         pipe(
             withCacheBlock,
             withNotification({
                 type: 'error',
-                text: c('Error').t`Failed to edit user's access.`,
+                text: c('Error').t`Failed to transfer this vault's ownership.`,
                 error,
             })
         )({ payload: {} })
