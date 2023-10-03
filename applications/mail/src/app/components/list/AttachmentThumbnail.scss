@@ -27,6 +27,12 @@
 	&-row {
 		padding-inline-end: rem(120);
 	}
+
+	&-name {
+		span span {
+			padding-block: var(--space-0-5);
+		}
+	}
 }
 
 .attachment-thumbnail-grid {
