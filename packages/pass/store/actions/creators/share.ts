@@ -140,5 +140,5 @@ export const getShareAccessOptionsFailure = createAction(
 
 export const shareAccessChange = createAction(
     'share::access::change',
-    (payload: Pick<Share, 'shareId' | 'owner' | 'shared' | 'shareRoleId'>) => ({ payload })
+    (payload: Pick<Share, 'shareId' | 'owner' | 'shared' | 'shareRoleId' | 'targetMembers'>) => ({ payload })
 );

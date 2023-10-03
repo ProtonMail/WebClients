@@ -90,6 +90,7 @@ function* onSharesEvent(
                         owner: share.Owner,
                         shared: share.Shared,
                         shareRoleId: share.ShareRoleID as ShareRole,
+                        targetMembers: share.TargetMembers,
                     })
                 );
 
