@@ -325,12 +325,12 @@ export default function useUploadFile() {
                     throw new Error(`Draft for "${file.name}" hasn't been created prior to verifying`);
                 }
 
-                const { VerificationCode, ContentKeyPacket } = await debouncedRequest<GetVerificationDataResult>(
-                    queryVerificationData(shareId, createdFileRevision.fileID, createdFileRevision.revisionID),
-                    abortSignal
-                );
-
                 try {
+                    const { VerificationCode, ContentKeyPacket } = await debouncedRequest<GetVerificationDataResult>(
+                        queryVerificationData(shareId, createdFileRevision.fileID, createdFileRevision.revisionID),
+                        abortSignal
+                    );
+
                     const verifierSessionKey = await CryptoProxy.decryptSessionKey({
                         binaryMessage: base64StringToUint8Array(ContentKeyPacket),
                         decryptionKeys: createdFileRevision.privateKey,
