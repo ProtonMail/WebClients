@@ -80,14 +80,20 @@ export const useMarkAs = () => {
 
         let rollback: (() => void) | undefined = () => {};
 
-        const handleUndo = async (tokens: PromiseSettledResult<string | undefined>[]) => {
+        const handleUndo = async (promiseTokens: Promise<PromiseSettledResult<string | undefined>[]>) => {
             try {
+                let tokens: PromiseSettledResult<string | undefined>[] = [];
+
                 // Stop the event manager to prevent race conditions
                 stop();
                 rollback?.();
-                const filteredTokens = getFilteredUndoTokens(tokens);
 
-                await Promise.all(filteredTokens.map((token) => api({ ...undoActions(token), silence: true })));
+                if (promiseTokens) {
+                    tokens = await promiseTokens;
+                    const filteredTokens = getFilteredUndoTokens(tokens);
+
+                    await Promise.all(filteredTokens.map((token) => api({ ...undoActions(token), silence: true })));
+                }
             } finally {
                 start();
                 await call();
@@ -139,7 +145,7 @@ export const useMarkAs = () => {
 
             createNotification({
                 text: (
-                    <UndoActionNotification onUndo={async () => handleUndo(await promise)}>
+                    <UndoActionNotification onUndo={() => handleUndo(promise)}>
                         {notificationText}
                     </UndoActionNotification>
                 ),

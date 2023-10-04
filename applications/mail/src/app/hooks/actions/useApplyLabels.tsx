@@ -118,18 +118,23 @@ export const useApplyLabels = () => {
 
             const { doCreateFilters, undoCreateFilters } = getFilterActions();
 
-            const handleUndo = async (tokens: PromiseSettledResult<string | undefined>[]) => {
+            const handleUndo = async (promiseTokens: Promise<PromiseSettledResult<string | undefined>[]>) => {
                 try {
+                    let tokens: PromiseSettledResult<string | undefined>[] = [];
                     undoing = true;
                     // Stop the event manager to prevent race conditions
                     stop();
                     Object.values(rollbacks).forEach((rollback) => rollback());
-                    const filteredTokens = getFilteredUndoTokens(tokens);
 
-                    await Promise.all([
-                        ...filteredTokens.map((token) => api({ ...undoActions(token), silence: true })),
-                        createFilters ? undoCreateFilters() : undefined,
-                    ]);
+                    if (promiseTokens) {
+                        tokens = await promiseTokens;
+                        const filteredTokens = getFilteredUndoTokens(tokens);
+
+                        await Promise.all([
+                            ...filteredTokens.map((token) => api({ ...undoActions(token), silence: true })),
+                            createFilters ? undoCreateFilters() : undefined,
+                        ]);
+                    }
                 } finally {
                     await call();
                 }
@@ -204,7 +209,7 @@ export const useApplyLabels = () => {
             if (!silent) {
                 createNotification({
                     text: (
-                        <UndoActionNotification onUndo={async () => handleUndo(await promise)}>
+                        <UndoActionNotification onUndo={() => handleUndo(promise)}>
                             {notificationText}
                         </UndoActionNotification>
                     ),
