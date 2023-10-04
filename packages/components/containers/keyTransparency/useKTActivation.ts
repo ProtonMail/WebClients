@@ -1,14 +1,17 @@
 import { useEffect, useState } from 'react';
 
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
-import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
+import { KEY_TRANSPARENCY_SETTING, KeyTransparencyActivation, MailSettings } from '@proton/shared/lib/interfaces';
 
-import useConfig from '../../hooks/useConfig';
-import useFeature from '../../hooks/useFeature';
+import { useAuthentication, useConfig, useFeature, useGetMailSettings } from '../../hooks';
 import { FeatureCode } from '../features';
 import { KT_FF, KtFeatureEnum, isKTActive } from './ktStatus';
 
-const getKTActivationPromise = async (featureFlag: KT_FF, appName: APP_NAMES): Promise<KeyTransparencyActivation> => {
+const getKTActivationPromise = async (
+    featureFlag: KT_FF,
+    appName: APP_NAMES,
+    mailSettings?: MailSettings
+): Promise<KeyTransparencyActivation> => {
     if (!featureFlag) {
         return KeyTransparencyActivation.DISABLED;
     }
@@ -19,6 +22,13 @@ const getKTActivationPromise = async (featureFlag: KT_FF, appName: APP_NAMES): P
         return KeyTransparencyActivation.LOG_ONLY;
     }
     if (featureFlag == KtFeatureEnum.ENABLE_UI) {
+        if (appName === APPS.PROTONMAIL) {
+            if (mailSettings?.KT === KEY_TRANSPARENCY_SETTING.ENABLED) {
+                return KeyTransparencyActivation.SHOW_UI;
+            } else {
+                return KeyTransparencyActivation.LOG_ONLY;
+            }
+        }
         return KeyTransparencyActivation.SHOW_UI;
     }
     return KeyTransparencyActivation.DISABLED;
@@ -39,13 +49,22 @@ const getKTFeatureCode = (appName: APP_NAMES): FeatureCode | undefined => {
 
 const useKTActivation = (): KeyTransparencyActivation => {
     const { APP_NAME: appName } = useConfig();
+    const { UID } = useAuthentication();
+    const isAuthenticated = !!UID;
     const featureCode = getKTFeatureCode(appName);
     const { feature } = useFeature<KT_FF>(featureCode ?? FeatureCode.KeyTransparencyAccount);
     const featureFlag = featureCode ? feature?.Value : undefined;
     const [ktActivation, setKTActivation] = useState(KeyTransparencyActivation.DISABLED);
+    const getMailSettings = useGetMailSettings();
+
     useEffect(() => {
-        getKTActivationPromise(featureFlag, appName).then((ktActivation) => setKTActivation(ktActivation));
-    }, [featureFlag, appName]);
+        const run = async () => {
+            const mailSettings = isAuthenticated ? await getMailSettings() : undefined;
+            const ktActivation = await getKTActivationPromise(featureFlag, appName, mailSettings);
+            setKTActivation(ktActivation);
+        };
+        void run();
+    }, [featureFlag, appName, isAuthenticated, getMailSettings]);
 
     return ktActivation;
 };

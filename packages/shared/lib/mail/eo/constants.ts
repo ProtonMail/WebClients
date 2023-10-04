@@ -1,5 +1,5 @@
 import { IMAGE_PROXY_FLAGS, MIME_TYPES, SHOW_IMAGES } from '../../constants';
-import { Address, MailPageSize, MailSettings, UserSettings } from '../../interfaces';
+import { Address, KEY_TRANSPARENCY_SETTING, MailPageSize, MailSettings, UserSettings } from '../../interfaces';
 
 export const eoDefaultUserSettings = {
     Referral: undefined,
@@ -65,6 +65,7 @@ export const eoDefaultMailSettings: MailSettings = {
     UnreadFavicon: 0,
     RecipientLimit: 100,
     AlmostAllMail: 0,
+    KT: KEY_TRANSPARENCY_SETTING.DISABLED,
 };
 
 export const eoDefaultAddress = {} as Address[];
