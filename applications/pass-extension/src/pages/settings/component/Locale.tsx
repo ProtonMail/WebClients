@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { selectLocale, settingEditIntent } from '@proton/pass/store';
+import { selectLocale, settingsEditIntent } from '@proton/pass/store';
 import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
 
 import { LocaleSelect } from '../../../shared/components/fields/LocaleSelect';
@@ -17,7 +17,7 @@ export const Locale: VFC = () => {
         <SettingsPanel title={c('Label').t`Language`}>
             <LocaleSelect
                 value={locale ?? DEFAULT_LOCALE}
-                onChange={(locale) => dispatch(settingEditIntent('locale', { locale }))}
+                onChange={(locale) => dispatch(settingsEditIntent('locale', { locale }))}
             />
         </SettingsPanel>
     );

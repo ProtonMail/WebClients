@@ -1,4 +1,4 @@
-import type { ItemState, Maybe, MaybeNull, ShareType } from '@proton/pass/types';
+import type { ItemState, Maybe, MaybeNull, ShareRole, ShareType } from '@proton/pass/types';
 
 export enum EncryptionTag {
     VaultContent = 'vaultcontent',
@@ -30,6 +30,10 @@ type OpenedShareBase = {
     permission: number;
     expireTime?: MaybeNull<number>;
     createTime: number;
+    owner: boolean;
+    shared: boolean;
+    targetMembers: number;
+    shareRoleId: ShareRole;
 };
 
 export type OpenedShare = OpenedShareBase &

@@ -2,4 +2,8 @@
 	min-block-size: 100%;
 	max-block-size: 100%;
 	overflow: hidden;
+
+	&--content {
+		transition: opacity 250ms ease-in-out;
+	}
 }

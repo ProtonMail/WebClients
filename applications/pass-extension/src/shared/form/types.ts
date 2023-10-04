@@ -1,4 +1,4 @@
-import type { AliasMailbox, UnsafeItemExtraField } from '@proton/pass/types';
+import type { AliasMailbox, ShareRole, UnsafeItemExtraField } from '@proton/pass/types';
 
 export type BaseItemValues = { name: string; note: string };
 
@@ -44,3 +44,6 @@ export type UrlItem = { url: string; id: string };
 export type UrlGroupValues = { url: string; urls: UrlItem[] };
 
 export type ExtraFieldGroupValues = { extraFields: UnsafeItemExtraField[] };
+
+export type InviteFormStep = 'email' | 'permissions';
+export type InviteFormValues = { email: string; role: ShareRole; step: InviteFormStep };

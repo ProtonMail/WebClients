@@ -9,6 +9,7 @@ import { type ColorRGB } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
 import { useFieldControl } from '../../hooks/useFieldControl';
+import type { RadioValue } from './RadioGroupField';
 
 import './RadioButtonGroupField.scss';
 
@@ -20,8 +21,6 @@ type BaseRadioProps<T> = {
     onChange?: (value: T) => void;
     value: T;
 };
-
-type RadioValue = string | number | readonly string[];
 
 type RadioButtonProps<T> = BaseRadioProps<T> & { color?: ColorRGB; icon?: IconName };
 
@@ -112,9 +111,9 @@ export const RadioButtonGroupField: FC<RadioButtonGroupFieldProps> = ({ field, f
             error={error}
             {...field}
             {...props}
-            onChange={(value: RadioValue) => {
+            onChange={async (value: RadioValue) => {
                 onChange?.(value);
-                form.setFieldValue(field.name, value);
+                await form.setFieldValue(field.name, value);
             }}
         />
     );

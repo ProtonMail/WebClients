@@ -12,6 +12,7 @@ import {
     emptyTrashFailure,
     emptyTrashIntent,
     emptyTrashSuccess,
+    inviteAcceptSuccess,
     itemAutofillIntent,
     itemCreationDismiss,
     itemCreationFailure,
@@ -42,6 +43,7 @@ import {
     restoreTrashIntent,
     restoreTrashSuccess,
     shareDeleteSync,
+    shareLeaveSuccess,
     sharesSync,
     syncSuccess,
     vaultDeleteIntent,
@@ -319,8 +321,12 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
                 : nextState;
         }
 
-        if (shareDeleteSync.match(action)) {
+        if (or(shareDeleteSync.match, shareLeaveSuccess.match)(action)) {
             return objectDelete(state, action.payload.shareId);
+        }
+
+        if (inviteAcceptSuccess.match(action)) {
+            return partialMerge(state, { [action.payload.share.shareId]: toMap(action.payload.items, 'itemId') });
         }
 
         return state;

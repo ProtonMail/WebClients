@@ -4,6 +4,7 @@ import type { MessageHandlerCallback } from '@proton/pass/extension/message';
 import { backgroundMessage } from '@proton/pass/extension/message';
 import browser from '@proton/pass/globals/browser';
 import {
+    selectItemByShareIdAndId,
     selectItemDraft,
     selectPopupFilters,
     selectPopupPasswordOptions,
@@ -219,16 +220,24 @@ export const createActivationService = () => {
         const items = ctx.service.autofill.getAutofillCandidates(parsedUrl);
         const hasAutofillCandidates = items.length > 0;
 
-        const tabState = selectPopupTabState(tabId)(store.getState());
-        const filters = selectPopupFilters(store.getState());
-        const passwordOptions = selectPopupPasswordOptions(store.getState());
+        const state = store.getState();
+        const tabState = selectPopupTabState(tabId)(state);
+        const filters = selectPopupFilters(state);
+        const passwordOptions = selectPopupPasswordOptions(state);
         const pushTabState = tabState !== undefined && [subdomain, domain].includes(tabState.domain);
         const searchForAutofill = hasAutofillCandidates && domain ? domain : '';
 
+        const validItem = tabState?.selectedItem
+            ? selectItemByShareIdAndId(tabState.selectedItem.shareId, tabState.selectedItem.itemId) !== undefined
+            : false;
+
+        const draft = selectItemDraft(state);
+        const validDraft = draft ? selectItemByShareIdAndId(draft.shareId, draft.itemId) !== undefined : false;
+
         return {
             search: pushTabState ? tabState!.search : searchForAutofill,
-            draft: selectItemDraft(store.getState()),
-            selectedItem: pushTabState ? tabState!.selectedItem : null,
+            draft: validDraft ? draft : null,
+            selectedItem: pushTabState && validItem ? tabState!.selectedItem : null,
             filters,
             passwordOptions,
         };

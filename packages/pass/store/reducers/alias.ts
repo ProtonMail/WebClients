@@ -5,9 +5,9 @@ import { merge } from '@proton/pass/utils/object';
 
 import type { MaybeNull } from '../../types';
 import {
-    aliasDetailsEditSuccess,
-    aliasDetailsRequestSuccess,
-    aliasOptionsRequestSuccess,
+    aliasDetailsSync,
+    getAliasDetailsSuccess,
+    getAliasOptionsSuccess,
     itemCreationIntent,
     itemEditIntent,
 } from '../actions';
@@ -23,7 +23,7 @@ export type AliasState = {
 };
 
 const reducer: Reducer<AliasState> = (state = { aliasOptions: null, aliasDetails: {} }, action) => {
-    if (aliasOptionsRequestSuccess.match(action)) {
+    if (getAliasOptionsSuccess.match(action)) {
         return merge(state, { aliasOptions: { ...action.payload.options } });
     }
 
@@ -41,14 +41,14 @@ const reducer: Reducer<AliasState> = (state = { aliasOptions: null, aliasDetails
         });
     }
 
-    if (aliasDetailsRequestSuccess.match(action)) {
+    if (getAliasDetailsSuccess.match(action)) {
         const {
             payload: { aliasEmail, mailboxes },
         } = action;
         return merge(state, { aliasDetails: { [aliasEmail]: mailboxes } });
     }
 
-    if (aliasDetailsEditSuccess.match(action)) {
+    if (aliasDetailsSync.match(action)) {
         const {
             payload: { aliasEmail, mailboxes },
         } = action;
