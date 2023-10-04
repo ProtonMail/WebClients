@@ -31,16 +31,47 @@ export default function usePublicShare() {
             silence: true,
         });
 
-        const computedPassword = await computeKeyPassword(sessionInfo.password, Token.SharePasswordSalt);
+        const computedPassword = await computeKeyPassword(sessionInfo.password, Token.SharePasswordSalt).catch((e) =>
+            Promise.reject(
+                new Error('Failed to compute key password for shared page', {
+                    cause: {
+                        e,
+                        linkId: Token.LinkID,
+                        public: true,
+                    },
+                })
+            )
+        );
         const sharePassphrase = await CryptoProxy.decryptMessage({
             armoredMessage: Token.SharePassphrase,
             passwords: [computedPassword],
-        });
+        }).catch((e) =>
+            Promise.reject(
+                new Error('Failed to decrypt share passphrase for shared page', {
+                    cause: {
+                        e,
+                        linkId: Token.LinkID,
+                        public: true,
+                    },
+                })
+            )
+        );
 
         const sharePrivateKey = await CryptoProxy.importPrivateKey({
             armoredKey: Token.ShareKey,
             passphrase: sharePassphrase.data,
-        });
+        }).catch((e) =>
+            Promise.reject(
+                new Error('Failed to import share private key for shared page', {
+                    cause: {
+                        e,
+                        linkId: Token.LinkID,
+                        public: true,
+                    },
+                })
+            )
+        );
+
         sharesKeys.set(sessionInfo.token, sharePrivateKey);
 
         setLinks(sessionInfo.token, [

@@ -27,7 +27,18 @@ export default function useShareActions() {
 
         const [parentPrivateKey, keyInfo] = await Promise.all([
             getLinkPrivateKey(abortSignal, shareId, link.parentLinkId),
-            generateNodeKeys(addressPrivateKey),
+            generateNodeKeys(addressPrivateKey).catch((e) =>
+                Promise.reject(
+                    new Error('Failed to generate share node keys during share creation', {
+                        cause: {
+                            e,
+                            shareId,
+                            volumeId,
+                            linkId,
+                        },
+                    })
+                )
+            ),
         ]);
 
         const {
@@ -40,15 +51,52 @@ export default function useShareActions() {
         const nameSessionKey = await getDecryptedSessionKey({
             data: link.encryptedName,
             privateKeys: parentPrivateKey,
-        });
+        }).catch((e) =>
+            Promise.reject(
+                new Error('Failed to decrypt link name session key during share creation', {
+                    cause: {
+                        e,
+                        shareId,
+                        volumeId,
+                        linkId,
+                    },
+                })
+            )
+        );
 
         if (!nameSessionKey) {
-            throw new Error('Could not get name session key');
+            throw new Error('Could not get name session key during share creation');
         }
 
         const [PassphraseKeyPacket, NameKeyPacket] = await Promise.all([
-            getEncryptedSessionKey(passphraseSessionKey, sharePrivateKey).then(uint8ArrayToBase64String),
-            getEncryptedSessionKey(nameSessionKey, sharePrivateKey).then(uint8ArrayToBase64String),
+            getEncryptedSessionKey(passphraseSessionKey, sharePrivateKey)
+                .then(uint8ArrayToBase64String)
+                .catch((e) =>
+                    Promise.reject(
+                        new Error('Failed to encrypt link passphrase during share creation', {
+                            cause: {
+                                e,
+                                shareId,
+                                volumeId,
+                                linkId,
+                            },
+                        })
+                    )
+                ),
+            getEncryptedSessionKey(nameSessionKey, sharePrivateKey)
+                .then(uint8ArrayToBase64String)
+                .catch((e) =>
+                    Promise.reject(
+                        new Error('Failed to encrypt link name during share creation', {
+                            cause: {
+                                e,
+                                shareId,
+                                volumeId,
+                                linkId,
+                            },
+                        })
+                    )
+                ),
         ]);
 
         const { Share } = await preventLeave(
