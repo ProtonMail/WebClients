@@ -8,6 +8,7 @@ export type Props = ReturnType<typeof usePaymentFacade> & {
     noMaxWidth?: boolean;
     onBitcoinTokenValidated?: PaymentProps['onBitcoinTokenValidated'];
     onAwaitingBitcoinPayment?: PaymentProps['onAwaitingBitcoinPayment'];
+    triggersDisabled?: boolean;
 };
 
 const PaymentWrapper = ({
@@ -23,6 +24,7 @@ const PaymentWrapper = ({
     onPaypalCreditClick,
     onBitcoinTokenValidated,
     onAwaitingBitcoinPayment,
+    triggersDisabled,
 }: Props) => {
     const { UID } = useAuthentication();
     const isAuthenticated = !!UID;
@@ -49,6 +51,7 @@ const PaymentWrapper = ({
             onPaypalCreditClick={onPaypalCreditClick}
             onBitcoinTokenValidated={onBitcoinTokenValidated}
             onAwaitingBitcoinPayment={onAwaitingBitcoinPayment}
+            triggersDisabled={triggersDisabled}
         />
     );
 };
