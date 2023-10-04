@@ -9,7 +9,11 @@ import {
     shareRemoveMemberAccessIntent,
     vaultTransferOwnerIntent,
 } from '@proton/pass/store';
-import { shareRemoveMemberRequest, vaultTransferOwnerRequest } from '@proton/pass/store/actions/requests';
+import {
+    shareEditMemberRoleRequest,
+    shareRemoveMemberRequest,
+    vaultTransferOwnerRequest,
+} from '@proton/pass/store/actions/requests';
 import { ShareRole } from '@proton/pass/types';
 
 import { ConfirmationModal } from '../../../shared/components/confirmation/ConfirmationModal';
@@ -60,7 +64,7 @@ export const ShareMember: VFC<ShareMemberProps> = ({
 
     const editAccess = useActionWithRequest({
         action: shareEditMemberAccessIntent,
-        requestId: shareRemoveMemberRequest(userShareId),
+        requestId: shareEditMemberRoleRequest(userShareId),
     });
 
     const transferOwnership = useActionWithRequest({
@@ -72,7 +76,7 @@ export const ShareMember: VFC<ShareMemberProps> = ({
     const handleEditRole = (shareRoleId: ShareRole) => editAccess.dispatch({ shareId, userShareId, shareRoleId });
     const handleTransferOwnership = useConfirm(transferOwnership.dispatch);
 
-    const loading = removeAccess.loading || editAccess.loading;
+    const loading = transferOwnership.loading || removeAccess.loading || editAccess.loading;
 
     return (
         <div className="flex flex-nowrap flex-align-items-center border rounded-xl px-4 py-3 w100">
