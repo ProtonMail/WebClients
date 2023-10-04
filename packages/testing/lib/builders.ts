@@ -206,6 +206,7 @@ export const calendarEventBuilder = build<CalendarEvent>('Event', {
         CalendarKeyPacket: null,
         AddressKeyPacket: null,
         AddressID: null,
+        Color: null,
         CalendarEvents: [
             {
                 Type: 2,

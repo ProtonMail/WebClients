@@ -640,12 +640,14 @@ export const getSupportedEventInvitation = async ({
     icsBinaryString,
     icsFileName,
     primaryTimezone,
+    canImportEventColor,
 }: {
     vcalComponent: VcalVcalendar;
     message: MessageWithOptionalBody;
     icsBinaryString: string;
     icsFileName: string;
     primaryTimezone: string;
+    canImportEventColor: boolean;
 }): Promise<EventInvitation | undefined> => {
     const { calscale, 'x-wr-timezone': xWrTimezone, method } = vcalComponent;
     const supportedMethod = getIcalMethod(method);
@@ -718,6 +720,7 @@ export const getSupportedEventInvitation = async ({
             guessTzid,
             isEventInvitation: true,
             generatedHashUid: isImport,
+            canImportEventColor,
         });
         return {
             method: supportedMethod,

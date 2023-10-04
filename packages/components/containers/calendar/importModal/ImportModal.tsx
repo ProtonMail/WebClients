@@ -3,6 +3,7 @@ import { ChangeEvent, useEffect, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import useFlag from '@proton/components/containers/unleash/useFlag';
 import { updateMember } from '@proton/shared/lib/api/calendars';
 import { getProbablyActiveCalendars, getWritableCalendars } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_METHOD, IMPORT_ERROR_TYPE, MAX_IMPORT_FILE_SIZE } from '@proton/shared/lib/calendar/constants';
@@ -27,7 +28,7 @@ import {
 import noop from '@proton/utils/noop';
 
 import { BasicModal } from '../../../components';
-import { useAddresses, useApi, useConfig, useEventManager, useGetCalendarUserSettings } from '../../../hooks';
+import { useAddresses, useApi, useConfig, useEventManager, useGetCalendarUserSettings, useUser } from '../../../hooks';
 import { useCalendarModelEventManager } from '../../eventManager/calendar';
 import AttachingModalContent from './AttachingModalContent';
 import ImportInvitationModalContent from './ImportInvitationModalContent';
@@ -62,6 +63,8 @@ const ImportModal = ({ calendars, initialCalendar, files, isOpen = false, onClos
     const { call: coreCall } = useEventManager();
     const getCalendarUserSettings = useGetCalendarUserSettings();
     const { call: calendarCall } = useCalendarModelEventManager();
+    const [{ hasPaidMail }] = useUser();
+    const isColorPerEventEnabled = useFlag('ColorPerEventWeb');
     const [model, setModel] = useState<ImportCalendarModel>(getInitialState(initialCalendar));
 
     const isCalendar = APP_NAME === APPS.PROTONCALENDAR;
@@ -127,6 +130,8 @@ const ImportModal = ({ calendars, initialCalendar, files, isOpen = false, onClos
                     throw new Error('No file');
                 }
                 try {
+                    const canImportEventColor = isColorPerEventEnabled && hasPaidMail;
+
                     setModel({ ...model, loading: true });
                     const [{ PrimaryTimezone: primaryTimezone }, { components, calscale, xWrTimezone, method }] =
                         await Promise.all([getCalendarUserSettings(), parseIcs(fileAttached)]);
@@ -137,6 +142,7 @@ const ImportModal = ({ calendars, initialCalendar, files, isOpen = false, onClos
                             calscale,
                             xWrTimezone,
                             primaryTimezone,
+                            canImportEventColor,
                         })
                     );
 

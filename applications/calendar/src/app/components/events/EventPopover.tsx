@@ -1,11 +1,10 @@
-import { useMemo, useRef } from 'react';
+import React, { useMemo, useRef } from 'react';
 
 import { getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
 import {
-    Alert,
     AppLink,
     Badge,
     CalendarInviteButtons,
@@ -14,6 +13,7 @@ import {
     ReloadSpinner,
     Tooltip,
     useReadCalendarBootstrap,
+    useUser,
 } from '@proton/components';
 import CalendarEventDateHeader from '@proton/components/components/calendarEventDateHeader/CalendarEventDateHeader';
 import { useLoading } from '@proton/hooks';
@@ -33,6 +33,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { CalendarEventSharedData, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import {
@@ -50,6 +51,8 @@ import PopoverHeader from './PopoverHeader';
 import { getEventErrorMessage } from './error';
 import getEventInformation from './getEventInformation';
 import useReadEvent from './useReadEvent';
+
+import './EventPopover.scss';
 
 const { ACCEPTED, TENTATIVE } = ICAL_ATTENDEE_STATUS;
 
@@ -97,6 +100,7 @@ const EventPopover = ({
 }: Props) => {
     const isDrawerApp = getIsCalendarAppInDrawer(view);
     const popoverEventContentRef = useRef<HTMLDivElement>(null);
+    const [{ hasPaidMail }] = useUser();
 
     const [loadingDelete, withLoadingDelete] = useLoading();
     const [loadingRefresh, withLoadingRefresh] = useLoading();
@@ -131,9 +135,11 @@ const EventPopover = ({
         eventTitleSafe,
         isInvitation,
         isCancelled,
+        isUnanswered,
         userPartstat,
         isSelfAddressActive,
-    } = getEventInformation(targetEvent, model);
+        color,
+    } = getEventInformation(targetEvent, model, hasPaidMail);
 
     const handleDelete = () => {
         const sendCancellationNotice =
@@ -336,9 +342,7 @@ const EventPopover = ({
                 <PopoverHeader {...commonHeaderProps} actions={actions}>
                     <h1 className="h3">{c('Error').t`Error`}</h1>
                 </PopoverHeader>
-                <Alert className="mb-4" type="error">
-                    {getEventErrorMessage(eventReadError)}
-                </Alert>
+                <span>{getEventErrorMessage(eventReadError)}</span>
             </PopoverContainer>
         );
     }
@@ -379,12 +383,26 @@ const EventPopover = ({
                         <span className="text-uppercase">{c('Event canceled status badge').t`canceled`}</span>
                     </Badge>
                 )}
-                <h1 className="eventpopover-title lh-rg text-hyphens scroll-if-needed mb-1" title={eventTitleSafe}>
-                    {eventTitleSafe}
-                </h1>
-                <div className="mb-4">
-                    {dateHeader}
-                    {!!frequencyString && <div className="color-weak">{frequencyString}</div>}
+                <div className="flex mb-4 flex-nowrap">
+                    <span
+                        className={clsx(
+                            'event-popover-calendar-border relative flex-item-noshrink my-1',
+                            isUnanswered && !isCancelled && 'isUnanswered'
+                        )}
+                        style={{ '--calendar-color': color }}
+                    />
+                    <div className="pt-2">
+                        <h1
+                            className="eventpopover-title lh-rg text-hyphens scroll-if-needed mb-0"
+                            title={eventTitleSafe}
+                        >
+                            {eventTitleSafe}
+                        </h1>
+                        <div className={clsx([!!frequencyString ? 'mb-2' : 'mb-3'])}>
+                            {dateHeader}
+                            {!!frequencyString && <div className="color-weak">{frequencyString}</div>}
+                        </div>
+                    </div>
                 </div>
             </PopoverHeader>
             <div className="scroll-if-needed mb-4" ref={popoverEventContentRef}>

@@ -23,6 +23,7 @@ const dummySharedData: CalendarEventSharedData = {
     IsOrganizer: 0,
     IsProtonProtonInvite: 0,
     Author: 'author',
+    Color: null,
 };
 const dummyBlobData: CalendarEventBlobData = {
     CalendarKeyPacket: null,
