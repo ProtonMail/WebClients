@@ -57,6 +57,7 @@ export interface Props {
     onAwaitingBitcoinPayment?: (awaiting: boolean) => void;
     isAuthenticated?: boolean;
     hideFirstLabel?: boolean;
+    triggersDisabled?: boolean;
 }
 
 export interface NoApiProps extends Props {
@@ -97,6 +98,7 @@ export const PaymentsNoApi = ({
     onPaypalCreditClick,
     onAwaitingBitcoinPayment,
     hideFirstLabel,
+    triggersDisabled,
 }: NoApiProps) => {
     const [handlingBitcoinPayment, withHandlingBitcoinPayment] = useLoading();
 
@@ -226,6 +228,7 @@ export const PaymentsNoApi = ({
                             disabled={disabled}
                             prefetchToken={paypalPrefetchToken}
                             onClick={onPaypalCreditClick}
+                            triggersDisabled={triggersDisabled}
                         />
                     )}
                     {method === PAYMENT_METHOD_TYPES.PAYPAL && isSignupPass && <PayPalInfoMessage />}
