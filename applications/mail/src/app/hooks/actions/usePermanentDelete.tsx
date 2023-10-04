@@ -22,6 +22,7 @@ import { runParallelChunkedActions } from 'proton-mail/helpers/chunk';
 import { isConversation } from '../../helpers/elements';
 import { backendActionFinished, backendActionStarted } from '../../logic/elements/elementsActions';
 import { useAppDispatch } from '../../logic/store';
+import { Element } from '../../models/element';
 import { useGetElementsFromIDs } from '../mailbox/useElements';
 import useOptimisticDelete from '../optimistic/useOptimisticDelete';
 
@@ -181,7 +182,11 @@ export const usePermanentDelete = (labelID: string) => {
                 api,
                 items: elements,
                 chunkSize: mailActionsChunkSize,
-                action: (chunk) => (conversationMode ? deleteConversations(chunk, labelID) : deleteMessages(chunk)),
+                action: (chunk: Element[]) => {
+                    // Delete action is done performed on a list of IDs
+                    const itemIDs = chunk.map((c: Element) => c.ID);
+                    return conversationMode ? deleteConversations(itemIDs, labelID) : deleteMessages(itemIDs);
+                },
                 canUndo: false,
                 // In permanent delete, we have no UndoToken. So if a chunk fails, we want to undo the part which failed only
                 optimisticAction: (items) => optimisticDelete(items, labelID),
