@@ -97,6 +97,7 @@ const PaymentSelector = ({ currency, amount, onChangeCurrency, onChangeAmount, m
                         id="otherAmount"
                         placeholder={c('Placeholder').t`Other`}
                         aria-describedby="id_desc_amount id_desc_currency"
+                        data-testid="other-amount"
                     />
                 </div>
                 <div className="flex-item-fluid mb-2 md:mb-0">
