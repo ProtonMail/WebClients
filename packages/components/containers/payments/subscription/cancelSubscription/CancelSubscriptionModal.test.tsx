@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import { subscriptionMock } from '@proton/testing';
+import { subscriptionMock } from '@proton/testing/data';
 
 import { CancelSubscriptionModal } from './CancelSubscriptionModal';
 
