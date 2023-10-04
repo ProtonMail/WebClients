@@ -20,9 +20,19 @@ interface Props {
     disabled?: boolean;
     prefetchToken?: boolean;
     onClick?: () => void;
+    triggersDisabled?: boolean;
 }
 
-const PayPalView = ({ type, amount, currency, paypalCredit, disabled, prefetchToken, onClick }: Props) => {
+const PayPalView = ({
+    type,
+    amount,
+    currency,
+    paypalCredit,
+    disabled,
+    prefetchToken,
+    onClick,
+    triggersDisabled,
+}: Props) => {
     if (amount < MIN_PAYPAL_AMOUNT) {
         return (
             <Alert className="mb-4" type="error">
@@ -50,7 +60,7 @@ const PayPalView = ({ type, amount, currency, paypalCredit, disabled, prefetchTo
             size="small"
             paypal={paypalCredit}
             amount={amount}
-            disabled={disabled || !paypalCredit.tokenFetched}
+            disabled={disabled || !paypalCredit.tokenFetched || triggersDisabled}
             prefetchToken={prefetchToken}
             currency={currency}
             onClick={onClick}
@@ -69,7 +79,7 @@ const PayPalView = ({ type, amount, currency, paypalCredit, disabled, prefetchTo
             size="small"
             paypal={paypalCredit}
             amount={amount}
-            disabled={disabled}
+            disabled={disabled || triggersDisabled}
             prefetchToken={prefetchToken}
             loading={paypalCredit.loadingVerification}
         >
