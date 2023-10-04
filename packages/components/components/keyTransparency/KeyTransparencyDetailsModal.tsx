@@ -21,7 +21,7 @@ import {
     SelfAuditResult,
 } from '@proton/key-transparency/lib';
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -257,9 +257,6 @@ const KeyTransparencyDetailsModal = (props: ModalProps) => {
 
     const { onClose } = props;
 
-    const { APP_NAME } = useConfig();
-    const appName = getAppName(APP_NAME);
-
     const auditTime = selfAuditResult
         ? formatDistanceToNow(new Date(selfAuditResult.auditTime), {
               locale: dateLocale,
@@ -268,11 +265,11 @@ const KeyTransparencyDetailsModal = (props: ModalProps) => {
         : undefined;
 
     const introductionText = c('loc_nightly: Key transparency details')
-        .t`${appName} periodically verifies that your and your contacts’ keys are consistent with the Key Transparency state.`;
+        .t`${BRAND_NAME} automatically verifies your and your contacts’ encryption keys to ensure their authenticity. This ensures that only the owner of the email address can read messages sent to it.`;
 
     return (
         <ModalTwo size="medium" data-testid="key-transparency-details:modal" {...props}>
-            <ModalTwoHeader title={c('loc_nightly: Key transparency details').t`Key verification`} />
+            <ModalTwoHeader title={c('loc_nightly: Key transparency details').t`Key verification (Beta)`} />
             <ModalTwoContent>
                 {auditTime && (
                     <div className="bg-weak p-3 rounded color-weak">{
