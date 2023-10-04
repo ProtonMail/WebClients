@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
     <path
-        fill="url(#paint0_radial_6351_19945)"
-        d="M2.875 11.338v3.64H5.43v-3.482a1.278 1.278 0 011.277-1.277h2.62a4.609 4.609 0 000-9.219H2.875v4.55H5.43V3.405h3.724a2.18 2.18 0 010 4.36H6.446a3.57 3.57 0 00-3.571 3.573z"
+        fill="url(#a)"
+        d="M2.875 11.338v3.64H5.43v-3.482a1.278 1.278 0 0 1 1.277-1.277h2.62a4.609 4.609 0 0 0 0-9.219H2.875v4.55H5.43V3.405h3.724a2.18 2.18 0 0 1 0 4.36H6.446a3.57 3.57 0 0 0-3.571 3.573Z"
     />
     <path
-        fill="url(#paint1_linear_6351_19945)"
-        d="M6.707 10.218a3.831 3.831 0 00-3.832 3.832v.928H5.43v-3.482a1.277 1.277 0 011.277-1.278z"
+        fill="url(#b)"
+        d="M6.707 10.218a3.831 3.831 0 0 0-3.832 3.832v.928H5.43v-3.482a1.277 1.277 0 0 1 1.277-1.278Z"
     />
     <defs>
         <radialGradient
-            id="paint0_radial_6351_19945"
+            id="a"
             cx="0"
             cy="0"
             r="1"
@@ -19,14 +19,7 @@
             <stop stop-color="#A995FF" />
             <stop offset="1" stop-color="#6652F5" />
         </radialGradient>
-        <linearGradient
-            id="paint1_linear_6351_19945"
-            x1="4.791"
-            x2="4.791"
-            y1="14.29"
-            y2="8.941"
-            gradientUnits="userSpaceOnUse"
-        >
+        <linearGradient id="b" x1="4.791" x2="4.791" y1="14.29" y2="8.941" gradientUnits="userSpaceOnUse">
             <stop stop-color="#6D4BFD" />
             <stop offset="1" stop-color="#1C0554" />
         </linearGradient>
