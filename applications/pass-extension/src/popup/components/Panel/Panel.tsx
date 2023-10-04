@@ -19,7 +19,12 @@ export const Panel: VFC<Props> = ({ header, children, className, loading }) => {
             {header && <div className="flex-item-noshrink px-4 py-3">{header}</div>}
             <div className="flex-item-fluid-auto h100 overflow-hidden relative">
                 {loading && <CircleLoader size="small" className="upper-layer absolute-center" />}
-                <Scroll className={clsx('absolute w-full h-full', loading && 'opacity-30 no-pointer-events')}>
+                <Scroll
+                    className={clsx(
+                        'pass-panel--content absolute w-full h-full',
+                        loading && 'opacity-30 no-pointer-events'
+                    )}
+                >
                     <div className="px-4 pt-1 pb-3">{children}</div>
                 </Scroll>
             </div>
