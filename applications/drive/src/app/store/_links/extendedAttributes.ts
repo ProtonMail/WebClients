@@ -103,14 +103,25 @@ async function encryptExtendedAttributes(
     nodePrivateKey: PrivateKeyReference,
     addressPrivateKey: PrivateKeyReference
 ) {
-    const xattrString = JSON.stringify(xattr);
-    const { message } = await CryptoProxy.encryptMessage({
-        textData: xattrString,
-        encryptionKeys: nodePrivateKey,
-        signingKeys: addressPrivateKey,
-        compress: true,
-    });
-    return message;
+    try {
+        const xattrString = JSON.stringify(xattr);
+
+        const { message } = await CryptoProxy.encryptMessage({
+            textData: xattrString,
+            encryptionKeys: nodePrivateKey,
+            signingKeys: addressPrivateKey,
+            compress: true,
+        });
+
+        return message;
+    } catch (e) {
+        throw new Error('Failed to encrypt extended attributes', {
+            cause: {
+                e,
+                addressKeyId: addressPrivateKey.getKeyID(),
+            },
+        });
+    }
 }
 
 export async function decryptExtendedAttributes(
@@ -118,15 +129,27 @@ export async function decryptExtendedAttributes(
     nodePrivateKey: PrivateKeyReference,
     addressPublicKey: PublicKeyReference | PublicKeyReference[]
 ): Promise<{ xattrs: ParsedExtendedAttributes; verified: VERIFICATION_STATUS }> {
-    const { data: xattrString, verified } = await decryptSigned({
-        armoredMessage: encryptedXAttr,
-        privateKey: nodePrivateKey,
-        publicKey: addressPublicKey,
-    });
-    return {
-        xattrs: parseExtendedAttributes(xattrString),
-        verified,
-    };
+    try {
+        const { data: xattrString, verified } = await decryptSigned({
+            armoredMessage: encryptedXAttr,
+            privateKey: nodePrivateKey,
+            publicKey: addressPublicKey,
+        });
+
+        return {
+            xattrs: parseExtendedAttributes(xattrString),
+            verified,
+        };
+    } catch (e) {
+        throw new Error('Failed to decrypt extended attributes', {
+            cause: {
+                e,
+                addressKeyIds: (Array.isArray(addressPublicKey) ? addressPublicKey : [addressPublicKey]).map((key) =>
+                    key.getKeyID()
+                ),
+            },
+        });
+    }
 }
 
 export function parseExtendedAttributes(xattrString: string): ParsedExtendedAttributes {

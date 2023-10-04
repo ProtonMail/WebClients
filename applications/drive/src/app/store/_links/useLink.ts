@@ -218,26 +218,38 @@ export function useLinkInner(
                 parentPrivateKeyPromise,
                 getVerificationKey(encryptedLink.signatureAddress),
             ]);
-            const {
-                decryptedPassphrase,
-                sessionKey: passphraseSessionKey,
-                verified,
-            } = await decryptPassphrase({
-                armoredPassphrase: encryptedLink.nodePassphrase,
-                armoredSignature: encryptedLink.nodePassphraseSignature,
-                privateKeys: [parentPrivateKey],
-                publicKeys: addressPublicKey,
-                validateSignature: false,
-            });
 
-            handleSignatureCheck(shareId, encryptedLink, 'passphrase', verified);
+            try {
+                const {
+                    decryptedPassphrase,
+                    sessionKey: passphraseSessionKey,
+                    verified,
+                } = await decryptPassphrase({
+                    armoredPassphrase: encryptedLink.nodePassphrase,
+                    armoredSignature: encryptedLink.nodePassphraseSignature,
+                    privateKeys: [parentPrivateKey],
+                    publicKeys: addressPublicKey,
+                    validateSignature: false,
+                });
 
-            linksKeys.setPassphrase(shareId, linkId, decryptedPassphrase);
-            linksKeys.setPassphraseSessionKey(shareId, linkId, passphraseSessionKey);
-            return {
-                passphrase: decryptedPassphrase,
-                passphraseSessionKey,
-            };
+                handleSignatureCheck(shareId, encryptedLink, 'passphrase', verified);
+
+                linksKeys.setPassphrase(shareId, linkId, decryptedPassphrase);
+                linksKeys.setPassphraseSessionKey(shareId, linkId, passphraseSessionKey);
+
+                return {
+                    passphrase: decryptedPassphrase,
+                    passphraseSessionKey,
+                };
+            } catch (e) {
+                throw new Error('Failed to decrypt link passphrase', {
+                    cause: {
+                        e,
+                        shareId,
+                        linkId,
+                    },
+                });
+            }
         }
     );
 
@@ -254,7 +266,18 @@ export function useLinkInner(
 
             const encryptedLink = await getEncryptedLink(abortSignal, shareId, linkId);
             const { passphrase } = await getLinkPassphraseAndSessionKey(abortSignal, shareId, linkId);
-            privateKey = await importPrivateKey({ armoredKey: encryptedLink.nodeKey, passphrase });
+
+            try {
+                privateKey = await importPrivateKey({ armoredKey: encryptedLink.nodeKey, passphrase });
+            } catch (e) {
+                throw new Error('Failed to import link private key', {
+                    cause: {
+                        e,
+                        shareId,
+                        linkId,
+                    },
+                });
+            }
 
             linksKeys.setPrivateKey(shareId, linkId, privateKey);
             return privateKey;
@@ -280,10 +303,21 @@ export function useLinkInner(
 
             const privateKey = await getLinkPrivateKey(abortSignal, shareId, linkId);
             const blockKeys = base64StringToUint8Array(encryptedLink.contentKeyPacket);
-            sessionKey = await getDecryptedSessionKey({
-                data: blockKeys,
-                privateKeys: privateKey,
-            });
+
+            try {
+                sessionKey = await getDecryptedSessionKey({
+                    data: blockKeys,
+                    privateKeys: privateKey,
+                });
+            } catch (e) {
+                throw new Error('Failed to decrypt link session key', {
+                    cause: {
+                        e,
+                        shareId,
+                        linkId,
+                    },
+                });
+            }
 
             if (encryptedLink.contentKeyPacketSignature) {
                 const publicKeys = [privateKey, ...(await getVerificationKey(encryptedLink.signatureAddress))];
@@ -345,24 +379,35 @@ export function useLinkInner(
             // key. In future we might re-sign bad links so we can get rid
             // of this.
             const publicKey = [privateKey, ...addressPrivateKey];
-            const { data: hashKey, verified } = await decryptSigned({
-                armoredMessage: encryptedLink.nodeHashKey,
-                privateKey,
-                publicKey,
-                format: 'binary',
-            });
 
-            if (
-                verified === VERIFICATION_STATUS.SIGNED_AND_INVALID ||
-                // The hash was not signed until Beta 17 (DRVWEB-1219).
-                (verified === VERIFICATION_STATUS.NOT_SIGNED &&
-                    isAfter(fromUnixTime(encryptedLink.createTime), new Date(2021, 7, 1)))
-            ) {
-                handleSignatureCheck(shareId, encryptedLink, 'hash', verified);
+            try {
+                const { data: hashKey, verified } = await decryptSigned({
+                    armoredMessage: encryptedLink.nodeHashKey,
+                    privateKey,
+                    publicKey,
+                    format: 'binary',
+                });
+
+                if (
+                    verified === VERIFICATION_STATUS.SIGNED_AND_INVALID ||
+                    // The hash was not signed until Beta 17 (DRVWEB-1219).
+                    (verified === VERIFICATION_STATUS.NOT_SIGNED &&
+                        isAfter(fromUnixTime(encryptedLink.createTime), new Date(2021, 7, 1)))
+                ) {
+                    handleSignatureCheck(shareId, encryptedLink, 'hash', verified);
+                }
+
+                linksKeys.setHashKey(shareId, linkId, hashKey);
+                return hashKey;
+            } catch (e) {
+                throw new Error('Failed to decrypt link hash key', {
+                    cause: {
+                        e,
+                        shareId,
+                        linkId,
+                    },
+                });
             }
-
-            linksKeys.setHashKey(shareId, linkId, hashKey);
-            return hashKey;
         }
     );
 
@@ -504,10 +549,22 @@ export function useLinkInner(
             const encrypted = cachedLink?.encrypted
                 ? cachedLink?.encrypted
                 : await fetchLink(abortSignal, shareId, linkId);
-            const decrypted = await decryptLink(abortSignal, shareId, encrypted);
 
-            linksState.setLinks(shareId, [{ encrypted, decrypted }]);
-            return decrypted;
+            try {
+                const decrypted = await decryptLink(abortSignal, shareId, encrypted);
+
+                linksState.setLinks(shareId, [{ encrypted, decrypted }]);
+
+                return decrypted;
+            } catch (e) {
+                throw new Error('Failed to decrypt link', {
+                    cause: {
+                        e,
+                        shareId,
+                        linkId,
+                    },
+                });
+            }
         }
     );
 
@@ -520,13 +577,25 @@ export function useLinkInner(
     const loadFreshLink = async (abortSignal: AbortSignal, shareId: string, linkId: string): Promise<DecryptedLink> => {
         const cachedLink = linksState.getLink(shareId, linkId);
         const encryptedLink = await fetchLink(abortSignal, shareId, linkId);
-        const decryptedLink =
-            cachedLink && isDecryptedLinkSame(cachedLink.encrypted, encryptedLink)
-                ? undefined
-                : await decryptLink(abortSignal, shareId, encryptedLink);
 
-        linksState.setLinks(shareId, [{ encrypted: encryptedLink, decrypted: decryptedLink }]);
-        return linksState.getLink(shareId, linkId)?.decrypted as DecryptedLink;
+        try {
+            const decryptedLink =
+                cachedLink && isDecryptedLinkSame(cachedLink.encrypted, encryptedLink)
+                    ? undefined
+                    : await decryptLink(abortSignal, shareId, encryptedLink);
+
+            linksState.setLinks(shareId, [{ encrypted: encryptedLink, decrypted: decryptedLink }]);
+
+            return linksState.getLink(shareId, linkId)?.decrypted as DecryptedLink;
+        } catch (e) {
+            throw new Error('Failed to decrypt link', {
+                cause: {
+                    e,
+                    shareId,
+                    linkId,
+                },
+            });
+        }
     };
 
     /**
