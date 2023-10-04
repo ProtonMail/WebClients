@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, ButtonLike } from '@proton/atoms';
 import {
     Collapsible,
     CollapsibleContent,
@@ -86,12 +86,18 @@ export const VaultItem: VFC<VaultItemProps> = ({
             label={<CountLabel label={label} count={count} />}
             extra={
                 shared && (
-                    <Icon
+                    <ButtonLike
+                        as="div"
+                        icon
+                        pill
+                        size="small"
+                        color="weak"
                         onClick={handleClickEvent(onManage)}
-                        name="users"
-                        alt={c('Action').t`See members`}
-                        color="var(--text-weak)"
-                    />
+                        shape="ghost"
+                        title={c('Action').t`See members`}
+                    >
+                        <Icon name="users" alt={c('Action').t`See members`} color="var(--text-weak)" />
+                    </ButtonLike>
                 )
             }
             icon={
@@ -240,7 +246,7 @@ export const VaultSubmenu: VFC<{
             <CollapsibleHeader
                 className="pl-4 pr-2"
                 suffix={
-                    <CollapsibleHeaderIconButton className="p-0" pill>
+                    <CollapsibleHeaderIconButton className="p-0" pill size="small">
                         <Icon name="chevron-down" />
                     </CollapsibleHeaderIconButton>
                 }
