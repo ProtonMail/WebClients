@@ -1,8 +1,7 @@
-import React, { FC, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import React, { FC, ReactNode, useCallback, useMemo, useRef, useState } from 'react';
 
 import { Loader, useElementRect } from '@proton/components';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
-import throttle from '@proton/utils/throttle';
 
 import type { PhotoGridItem } from '../../../store';
 import { usePortalPreview } from '../../PortalPreview';
@@ -19,150 +18,159 @@ type Props = {
 export const PhotosGrid: FC<Props> = ({ data, onItemRender, shareId, isLoadingMore }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const containerRect = useElementRect(containerRef);
-    const [itemsPerLine, setItemsPerLine] = useState(0);
-    const [itemScaling, setItemScaling] = useState(0);
-    const [containerHeight, setContainerHeight] = useState(0);
+
     const [scrollPosition, setScrollPosition] = useState(0);
-    const [posY, setPosY] = useState<number[]>([]);
-    const [styleCache, setStyleCache] = useState<React.CSSProperties[]>([]);
+    const handleScroll = useCallback(() => {
+        if (!containerRef || !containerRef.current) {
+            return;
+        }
+
+        setScrollPosition(containerRef.current.scrollTop);
+    }, [containerRef]);
 
     const [portalPreview, showPortalPreview] = usePortalPreview();
     const [detailsModal, showDetailsModal] = useDetailsModal();
 
     const emRatio = rootFontSize();
-    const itemDimensions = useMemo(() => {
-        return {
-            width: 10 * emRatio,
-            height: 13.75 * emRatio,
-            gap: 0.25 * emRatio,
-            groupHeight: 2.75 * emRatio,
-        };
-    }, [emRatio]);
-
-    useLayoutEffect(() => {
+    const dimensions = useMemo(() => {
         if (!containerRect) {
-            return;
+            return null;
         }
 
-        const { width, gap } = itemDimensions;
-        const containerWidth = containerRect.width;
+        // Inner scroll container dimensions
+        const containerWidth = containerRect.width - 2 * emRatio;
+        const containerHeight = containerRect.height;
 
-        const maxItems = (containerWidth + gap) / (width + gap);
-        const itemsPerLine = Math.max(1, Math.floor(maxItems));
+        // Item base dimensions (should be scaled)
+        const width = 10 * emRatio;
+        const height = 13.75 * emRatio;
+
+        // Gap between items (never scaled)
+        const gap = 0.25 * emRatio;
+
+        // Height of group (never scaled)
+        const groupHeight = 2.75 * emRatio;
+
+        // Amount of items per row (to calculate repsonsive scaling)
+        const itemsPerLine = Math.max(2, Math.floor((containerWidth + gap) / (width + gap)));
+
+        // Multiplicative scaling to apply to final values
         const scaling = (containerWidth - (itemsPerLine - 1) * gap) / (itemsPerLine * width);
 
-        setItemsPerLine(itemsPerLine);
-        setItemScaling(scaling);
-    }, [containerRect]);
+        // Item dimensions (scaled)
+        const itemHeight = height * scaling;
+        const itemWidth = width * scaling;
 
-    const itemHeight = itemDimensions.height * itemScaling;
-    const itemWidth = itemDimensions.width * itemScaling;
-    const safetyMargin = (itemHeight + itemDimensions.gap) * 2;
+        // Helper to know if an item is within the viewport
+        const scrollMargin = (itemHeight + gap) * 2;
+        const itemShouldRender = (y: number, scrollPosition: number) =>
+            y >= scrollPosition - itemHeight - scrollMargin && y <= scrollPosition + containerHeight + scrollMargin;
 
-    useEffect(() => {
-        if (!itemDimensions) {
-            return;
+        return {
+            itemHeight,
+            itemWidth,
+            gap,
+            groupHeight,
+            itemsPerLine,
+            itemShouldRender,
+        };
+    }, [containerRect, emRatio]);
+
+    const [gridItems, innerStyle] = useMemo(() => {
+        if (!dimensions) {
+            return [];
         }
 
-        const posY = [];
-        const styleCache = [];
+        const { gap, itemHeight, itemWidth, groupHeight, itemsPerLine, itemShouldRender } = dimensions;
+
+        const items: ReactNode[] = [];
 
         let currentX = 0;
         let currentY = 0;
-        for (let item of data) {
-            const i: number = styleCache.length;
 
+        let lastY = 0;
+
+        // Attempt to make the animation a bit more dynamic
+        // and not visually repetitive
+        const animationOffset = Math.max(itemsPerLine === 7 ? 5 : 7, Math.round(itemsPerLine * 0.6));
+
+        data.forEach((item, i) => {
             if (typeof item === 'string') {
                 if (currentX != 0) {
-                    currentY += itemHeight + itemDimensions.gap;
+                    currentY += itemHeight + gap;
                 }
                 currentX = 0;
 
                 const y = currentY;
+                lastY = y;
 
-                posY.push(y);
-                styleCache.push({
-                    position: 'absolute',
-                    height: `${itemDimensions.groupHeight}px`,
-                    width: '100%',
-                    top: `${y}px`,
-                });
+                if (itemShouldRender(y, scrollPosition)) {
+                    items.push(
+                        <PhotosGroup
+                            key={item}
+                            style={{
+                                position: 'absolute',
+                                height: `${groupHeight}px`,
+                                width: '100%',
+                                top: `${y}px`,
+                            }}
+                            text={item}
+                            // Do not show separator on first item
+                            showSeparatorLine={i > 0}
+                        />
+                    );
+                }
 
-                currentY += itemDimensions.groupHeight + itemDimensions.gap;
+                currentY += groupHeight + gap;
             } else {
-                const x = currentX * (itemWidth + itemDimensions.gap);
+                const x = currentX * (itemWidth + gap);
                 const y = currentY;
+                lastY = y;
 
-                posY.push(y);
-                styleCache.push({
-                    position: 'absolute',
-                    width: itemWidth,
-                    height: itemHeight,
-                    top: `${y}px`,
-                    left: `${x}px`,
-                    // This makes the loading animation more dynamic (7 is arbitrary)
-                    animationDelay: `${(i % 7) / 3.5}s`,
-                });
+                if (itemShouldRender(y, scrollPosition)) {
+                    items.push(
+                        <PhotosCard
+                            key={item.linkId}
+                            photo={item}
+                            onRender={onItemRender}
+                            showPortalPreview={showPortalPreview}
+                            showDetailsModal={showDetailsModal}
+                            style={{
+                                position: 'absolute',
+                                width: itemWidth,
+                                height: itemHeight,
+                                top: `${y}px`,
+                                left: `${x}px`,
+                                animationDelay: `${
+                                    Math.round(((i % animationOffset) / (animationOffset / 2)) * 10) / 10
+                                }s`,
+                            }}
+                            shareId={shareId}
+                        />
+                    );
+                }
 
                 currentX++;
                 if (currentX >= itemsPerLine) {
-                    currentY += itemHeight + itemDimensions.gap;
+                    currentY += itemHeight + gap;
                     currentX = 0;
                 }
             }
-        }
+        });
 
-        setPosY(posY);
-        setStyleCache(styleCache);
-    }, [data, itemDimensions, itemScaling, itemsPerLine]);
+        const innerStyle = {
+            height: `${lastY + itemHeight}px`,
+        };
 
-    const gridItems = [];
-
-    const startIndex = posY.findIndex((value) => value >= scrollPosition - itemHeight - safetyMargin);
-    const endIndex = posY.findLastIndex((value) => value <= scrollPosition + containerHeight + safetyMargin);
-
-    if (startIndex >= 0 && endIndex >= 0) {
-        for (let i = startIndex; i <= endIndex; i++) {
-            const item = data[i];
-            const style = styleCache[i];
-
-            if (typeof item === 'string') {
-                gridItems.push(<PhotosGroup key={item} style={style} text={item} showSeparatorLine={i !== 0} />);
-            } else {
-                gridItems.push(
-                    <PhotosCard
-                        key={item.linkId}
-                        photo={item}
-                        onRender={onItemRender}
-                        showPortalPreview={showPortalPreview}
-                        showDetailsModal={showDetailsModal}
-                        style={style}
-                        shareId={shareId}
-                    />
-                );
-            }
-        }
-    }
+        return [items, innerStyle];
+    }, [data, dimensions, scrollPosition]);
 
     return (
         <>
             {detailsModal}
             {portalPreview}
-            <div
-                className="p-4 overflow-auto"
-                onScroll={throttle((event) => {
-                    setScrollPosition(event.currentTarget.scrollTop);
-                    setContainerHeight(event.currentTarget.clientHeight);
-                }, 100)}
-                onLoad={(event) => {
-                    setContainerHeight(event.currentTarget.clientHeight);
-                }}
-            >
-                <div
-                    className="relative w-full"
-                    style={{ height: `${posY[posY.length - 1] + itemHeight}px` }}
-                    ref={containerRef}
-                >
+            <div className="p-4 overflow-auto" ref={containerRef} onScroll={handleScroll}>
+                <div className="relative w-full" style={innerStyle}>
                     {gridItems}
                 </div>
                 {isLoadingMore && <Loader />}
