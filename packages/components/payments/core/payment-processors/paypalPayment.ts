@@ -1,4 +1,5 @@
 import { createToken } from '@proton/shared/lib/api/payments';
+import { MAX_CREDIT_AMOUNT, MIN_CREDIT_AMOUNT } from '@proton/shared/lib/constants';
 import { Api } from '@proton/shared/lib/interfaces';
 
 import { PAYMENT_METHOD_TYPES } from '../constants';
@@ -16,7 +17,10 @@ import { PaymentProcessor } from './paymentProcessor';
 export type PaypalPaymentState = {
     fetchedPaymentToken: ChargeablePaymentToken | NonChargeablePaymentToken | null;
     verificationError: any;
+    disabled: boolean;
 };
+
+export class PaypalWrongAmountError extends Error {}
 
 export class PaypalPaymentProcessor extends PaymentProcessor<PaypalPaymentState> {
     get fetchedPaymentToken(): ChargeablePaymentToken | NonChargeablePaymentToken | null {
@@ -25,6 +29,10 @@ export class PaypalPaymentProcessor extends PaymentProcessor<PaypalPaymentState>
 
     get verificationError(): any {
         return this.state.verificationError;
+    }
+
+    get disabled(): boolean {
+        return this.state.disabled;
     }
 
     constructor(
@@ -38,6 +46,7 @@ export class PaypalPaymentProcessor extends PaymentProcessor<PaypalPaymentState>
             {
                 fetchedPaymentToken: null,
                 verificationError: null,
+                disabled: false,
             },
             amountAndCurrency
         );
@@ -48,6 +57,13 @@ export class PaypalPaymentProcessor extends PaymentProcessor<PaypalPaymentState>
         this.updateState({
             verificationError: null,
         });
+
+        const checkAmountResult = this.checkAmount();
+        if (!checkAmountResult.isInRange) {
+            throw new PaypalWrongAmountError(
+                `Amount should be between ${checkAmountResult.minAmount} and ${checkAmountResult.maxAmount}. The current amount is ${checkAmountResult.currentAmount}.`
+            );
+        }
 
         let paypalToken;
         try {
@@ -111,6 +127,13 @@ export class PaypalPaymentProcessor extends PaymentProcessor<PaypalPaymentState>
         });
     }
 
+    setAmountAndCurrency(amountAndCurrency: AmountAndCurrency) {
+        this.amountAndCurrency = amountAndCurrency;
+
+        const disabled = !this.checkAmount().isInRange;
+        this.updateState({ disabled });
+    }
+
     private tokenCreated(token?: TokenPaymentMethod): ChargeablePaymentParameters {
         const result: ChargeablePaymentParameters = {
             type: this.getType(),
@@ -134,5 +157,18 @@ export class PaypalPaymentProcessor extends PaymentProcessor<PaypalPaymentState>
 
     private getType(): PAYMENT_METHOD_TYPES.PAYPAL | PAYMENT_METHOD_TYPES.PAYPAL_CREDIT {
         return this.isCredit ? PAYMENT_METHOD_TYPES.PAYPAL_CREDIT : PAYMENT_METHOD_TYPES.PAYPAL;
+    }
+
+    private checkAmount() {
+        const isInRange =
+            (this.amountAndCurrency.Amount >= MIN_CREDIT_AMOUNT &&
+                this.amountAndCurrency.Amount <= MAX_CREDIT_AMOUNT) ||
+            this.amountAndCurrency.Amount === 0; // 0 is allowed because in this case we don't need to fetch token
+        return {
+            isInRange,
+            currentAmount: this.amountAndCurrency.Amount,
+            minAmount: MIN_CREDIT_AMOUNT,
+            maxAmount: MAX_CREDIT_AMOUNT,
+        };
     }
 }
