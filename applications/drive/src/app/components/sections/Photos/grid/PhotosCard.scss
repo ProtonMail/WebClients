@@ -1,10 +1,17 @@
 @keyframes photos-card-loading {
+	/**
+	 * Animating `opacity` is intended, as animating background-color
+     * will cause Chrome to trigger paint.
+	 *
+	 * See https://web.dev/animations-guide/#triggers
+	 */
+
 	from {
-		background-color: var(--background-weak);
+		opacity: 0.3;
 	}
 
 	to {
-		background-color: var(--background-strong);
+		opacity: 1;
 	}
 }
 
@@ -12,9 +19,9 @@
 	user-select: none;
 
 	&--loading {
-		content: '';
-		background-color: var(--background-weak);
-		animation: photos-card-loading alternate 1s ease-in-out infinite;
+		opacity: 0.3;
+		background-color: var(--background-strong);
+		animation: photos-card-loading alternate 1s ease-in-out infinite both;
 	}
 }
 
