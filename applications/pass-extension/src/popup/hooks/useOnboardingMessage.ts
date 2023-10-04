@@ -1,146 +1,148 @@
-import { type VFC, useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { detectBrowser, getWebStoreUrl } from '@proton/pass/extension/browser';
 import { popupMessage, sendMessage } from '@proton/pass/extension/message';
 import browser from '@proton/pass/globals/browser';
-import type { Maybe, WorkerMessageWithSender } from '@proton/pass/types';
-import { type Callback, OnboardingMessage, WorkerMessageType } from '@proton/pass/types';
+import type { Callback, MaybeNull, WorkerMessageWithSender } from '@proton/pass/types';
+import { OnboardingMessage, WorkerMessageType } from '@proton/pass/types';
 import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { promptForPermissions } from '../../../shared/extension/permissions';
-import { useExtensionContext } from '../../../shared/hooks';
-import { useOpenSettingsTab } from '../../hooks/useOpenSettingsTab';
-import { FreeTrialModal } from './FreeTrialModal';
-import { OnboardingContent, type OnboardingMessageDefinition } from './OnboardingContent';
-import { OnboardingFiveStarIcon, OnboardingShieldIcon } from './OnboardingIcon';
+import { promptForPermissions } from '../../shared/extension/permissions';
+import { useExtensionContext } from '../../shared/hooks';
+import type { SpotlightMessageDefinition } from '../components/Spotlight/SpotlightContent';
+import { FiveStarIcon, ShieldIcon } from '../components/Spotlight/SpotlightIcon';
+import { useOpenSettingsTab } from './useOpenSettingsTab';
 
-import './OnboardingPanel.scss';
-
-export const OnboardingPanel: VFC = () => {
+export const useOnboardingMessage = () => {
     const { context: extensionContext } = useExtensionContext();
     const webStoreURL = getWebStoreUrl(detectBrowser());
-
-    const [open, setOpen] = useState(false);
-    const [message, setMessage] = useState<Maybe<OnboardingMessage>>();
-
-    const [freeTrialModalOpen, setFreeTrialModalOpen] = useState<boolean>(false);
+    const [showTrial, setShowTrial] = useState<boolean>(false);
+    const [message, setMessage] = useState<MaybeNull<OnboardingMessage>>(null);
 
     useEffect(() => {
         void sendMessage.onSuccess(
             popupMessage({ type: WorkerMessageType.ONBOARDING_REQUEST }),
             async ({ message }) => {
                 await wait(200);
-                setMessage(message);
-                setOpen(message !== undefined);
+                setMessage(message ?? null);
             }
         );
     }, []);
 
     const openSettings = useOpenSettingsTab();
 
-    const withAcknowledge = useCallback(
-        (message: OnboardingMessage, cb: Callback = noop) =>
-            async () => {
-                void sendMessage.onSuccess(
-                    popupMessage({
-                        type: WorkerMessageType.ONBOARDING_ACK,
-                        payload: { message },
-                    }),
-                    () => {}
-                );
+    const withAcknowledgment = useCallback(
+        (cb: Callback = noop) =>
+            () => {
+                if (message) {
+                    void sendMessage(popupMessage({ type: WorkerMessageType.ONBOARDING_ACK, payload: { message } }));
+                }
 
                 cb();
-                setOpen(false);
+                setMessage(null);
             },
-        []
+        [message]
     );
 
-    const definitions = useMemo<{ [K in OnboardingMessage]: OnboardingMessageDefinition }>(
+    const definitions = useMemo<{ [K in OnboardingMessage]: SpotlightMessageDefinition }>(
         () => ({
             [OnboardingMessage.WELCOME]: {
+                id: 'welcome',
                 title: c('Title').t`Why ${PASS_APP_NAME}?`,
                 message: c('Info').t`Privacy is a big concern for us. Learn why ${PASS_APP_NAME} is different.`,
                 className: 'ui-teal',
-                icon: <OnboardingShieldIcon />,
+                icon: ShieldIcon,
+                onClose: withAcknowledgment(noop),
                 action: {
                     label: c('Label').t`Learn more`,
                     type: 'link',
-                    onClick: () => browser.tabs.create({ url: 'https://proton.me/pass' }).catch(noop),
+                    onClick: withAcknowledgment(() => browser.tabs.create({ url: 'https://proton.me/pass' })),
                 },
             },
             [OnboardingMessage.TRIAL]: {
+                id: 'trial',
                 title: c('Title').t`Enjoy your free trial`,
                 message: c('Info')
                     .t`Check out all the exclusive features that are available to you for a limited time.`,
                 className: 'ui-orange',
+                onClose: withAcknowledgment(() => setShowTrial(false)),
                 action: {
                     label: c('Label').t`Learn more`,
                     type: 'link',
-                    onClick: () => setFreeTrialModalOpen(true),
+                    onClick: () => setShowTrial(true),
                 },
             },
             [OnboardingMessage.SECURE_EXTENSION]: {
+                id: 'pin',
                 title: c('Title').t`Secure your data`,
                 message: c('Info').t`Set up a PIN code to easily lock your data`,
                 className: 'ui-violet',
-                icon: <OnboardingShieldIcon />,
+                icon: ShieldIcon,
+                onClose: withAcknowledgment(noop),
                 action: {
                     label: c('Label').t`Set PIN code`,
                     type: 'button',
-                    onClick: () => openSettings('security'),
+                    onClick: withAcknowledgment(() => openSettings('security')),
                 },
             },
             [OnboardingMessage.UPDATE_AVAILABLE]: {
+                id: 'update',
                 title: c('Title').t`Update available`,
                 message: c('Info')
                     .t`A new version of ${PASS_APP_NAME} is available. Update it to enjoy the latest features and bug fixes.`,
                 className: 'ui-orange',
+                onClose: withAcknowledgment(noop),
                 action: {
                     label: c('Label').t`Update`,
                     type: 'button',
-                    onClick: () => browser.runtime.reload(),
+                    onClick: withAcknowledgment(() => browser.runtime.reload()),
                 },
             },
             [OnboardingMessage.PERMISSIONS_REQUIRED]: {
+                id: 'permissions',
                 title: c('Title').t`Grant permissions`,
                 message: c('Info')
                     .t`In order to get the best experience out of ${PASS_APP_NAME}, please grant the necessary extension permissions`,
                 className: 'ui-orange',
+                onClose: withAcknowledgment(noop),
                 action: {
                     label: c('Label').t`Grant`,
                     type: 'button',
-                    onClick: () => promptForPermissions(),
+                    onClick: withAcknowledgment(() => promptForPermissions()),
                 },
             },
             [OnboardingMessage.USER_RATING]: {
+                id: 'rating',
                 title: c('Title').t`Enjoying ${PASS_APP_NAME}?`,
                 message: c('Info').t`Please consider leaving a review.`,
                 className: 'ui-lime',
-                icon: <OnboardingFiveStarIcon />,
+                icon: FiveStarIcon,
+                onClose: withAcknowledgment(noop),
                 action: {
                     label: c('Label').t`Rate us`,
                     type: 'button',
-                    onClick: () => window.open(webStoreURL, '_blank'),
+                    onClick: withAcknowledgment(() => window.open(webStoreURL, '_blank')),
                 },
             },
             [OnboardingMessage.STORAGE_ISSUE]: {
+                id: 'storage',
                 title: c('Title').t`Low disk space`,
                 message: c('Info')
                     .t`We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${PASS_SHORT_APP_NAME} to work smoothly.`,
                 className: 'ui-red',
+                onClose: withAcknowledgment(noop),
                 action: {
                     label: c('Label').t`Need help ?`,
                     type: 'button',
-                    onClick: () => openSettings('support'),
+                    onClick: withAcknowledgment(() => openSettings('support')),
                 },
             },
         }),
-        []
+        [message]
     );
 
     useEffect(() => {
@@ -149,10 +151,10 @@ export const OnboardingPanel: VFC = () => {
                 switch (message.type) {
                     case WorkerMessageType.UPDATE_AVAILABLE:
                         setMessage(OnboardingMessage.UPDATE_AVAILABLE);
-                        return setOpen(true);
+                        break;
                     case WorkerMessageType.PERMISSIONS_UPDATE:
                         setMessage(OnboardingMessage.PERMISSIONS_REQUIRED);
-                        return setOpen(true);
+                        break;
                 }
             }
         };
@@ -161,32 +163,11 @@ export const OnboardingPanel: VFC = () => {
         return () => extensionContext?.port.onMessage.removeListener(handleMessage);
     }, [extensionContext]);
 
-    const currentMessage = message !== undefined ? definitions[message] : null;
-
-    return (
-        <>
-            <div className={clsx('pass-onboarding-panel', !open && 'pass-onboarding-panel--hidden')}>
-                {currentMessage && (
-                    <OnboardingContent
-                        className={currentMessage.className}
-                        title={currentMessage.title}
-                        message={currentMessage.message}
-                        icon={currentMessage.icon}
-                        onClose={withAcknowledge(message!)}
-                        action={
-                            currentMessage.action
-                                ? {
-                                      label: currentMessage.action.label,
-                                      type: currentMessage.action.type,
-                                      onClick: withAcknowledge(message!, currentMessage.action.onClick),
-                                  }
-                                : undefined
-                        }
-                    />
-                )}
-            </div>
-
-            <FreeTrialModal open={freeTrialModalOpen} onClose={() => setFreeTrialModalOpen(false)} />
-        </>
+    return useMemo(
+        () => ({
+            message: message !== null ? definitions[message] : null,
+            trial: showTrial,
+        }),
+        [message, showTrial]
     );
 };

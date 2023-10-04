@@ -27,8 +27,8 @@ import { useCopyToClipboard } from '../../hooks/useCopyToClipboard';
 import { useItemsFilteringContext } from '../../hooks/useItemsFilteringContext';
 import { usePopupContext } from '../../hooks/usePopupContext';
 import { DropdownMenuButtonLabel } from '../Dropdown/DropdownMenuButton';
-import { OnboardingPanel } from '../Onboarding/OnboardingPanel';
 import { usePasswordContext } from '../PasswordGenerator/PasswordContext';
+import { Spotlight } from '../Spotlight/Spotlight';
 import { MenuDropdown } from './MenuDropdown';
 import { Searchbar } from './Searchbar';
 
@@ -107,7 +107,7 @@ export const Header: VFC<{}> = () => {
                     </Button>
 
                     <div className="flex-item-fluid-auto w100">
-                        <OnboardingPanel />
+                        <Spotlight />
                     </div>
                 </div>
 

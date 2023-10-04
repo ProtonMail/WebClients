@@ -1,3 +1,3 @@
-import browser from '@proton/pass/globals/browser';
+import { APP_VERSION } from '../../app/config';
 
-export const getExtensionVersion = () => browser.runtime.getManifest().version;
+export const getExtensionVersion = () => APP_VERSION;

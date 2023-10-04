@@ -65,7 +65,8 @@ export const VaultSelectModal: VFC<Props> = ({ onSubmit, shareId, ...props }) =>
                             disabled={didDowngrade && vault.shareId !== primaryVaultId}
                         >
                             <VaultIcon
-                                size="large"
+                                size={20}
+                                background
                                 color={vault.content.display.color}
                                 icon={vault.content.display.icon}
                             />
