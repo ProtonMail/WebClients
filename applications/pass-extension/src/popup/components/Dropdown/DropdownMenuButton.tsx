@@ -22,6 +22,7 @@ const QuickActionsDropdown: FC<{ children: ReactNode }> = ({ children }) => {
             <Button
                 icon
                 pill
+                size="small"
                 color="weak"
                 onClick={handleClick}
                 ref={anchorRef}
@@ -56,7 +57,10 @@ export const DropdownMenuButtonLabel: FC<DropdownMenuButtonLabelProps> = ({
     danger = false,
 }) => {
     return (
-        <div className="flex flex-justify-space-between flex-align-items-center flex-nowrap gap-1">
+        <div
+            className="flex flex-justify-space-between flex-align-items-center flex-nowrap gap-3 max-h-custom"
+            style={{ '--max-h-custom': '20px' }}
+        >
             <div className={'flex flex-nowrap gap-2'}>
                 {typeof icon === 'string' ? (
                     <Icon name={icon} className={clsx(danger ? 'color-danger' : 'color-weak', 'flex-item-noshrink')} />
@@ -94,7 +98,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
     ellipsis = true,
     ...rest
 }) => {
-    const extraPadding = quickActions !== undefined ? 'pr-6' : '';
+    const extraPadding = quickActions !== undefined ? 'pr-5' : '';
 
     return (
         <div className="relative">
@@ -109,15 +113,18 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
                     ellipsis={ellipsis}
                     danger={danger}
                     label={label}
-                    labelClassname={clsx(
-                        'flex flex-nowrap flex-item-fluid-auto gap-1',
-                        quickActions !== undefined && 'max-w80',
-                        labelClassname
-                    )}
+                    labelClassname={clsx('flex flex-nowrap flex-item-fluid-auto gap-1', labelClassname)}
                     extra={
-                        <div className={clsx('flex flex-item-noshrink flex-nowrap gap-2 color-weak', extraPadding)}>
+                        <div
+                            className={clsx(
+                                'flex flex-align-items-center flex-item-noshrink flex-nowrap color-weak',
+                                extraPadding
+                            )}
+                        >
                             {isSelected && (
-                                <Icon name="checkmark" color="var(--interaction-norm-major-1)" className="ml-auto" />
+                                <div className="ml-auto pr-2">
+                                    <Icon name="checkmark" color="var(--interaction-norm-major-1)" />
+                                </div>
                             )}
                             {extra}
                         </div>
