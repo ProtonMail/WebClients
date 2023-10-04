@@ -954,10 +954,13 @@ export const updatePartstatFromInvitation = async ({
                         })
             );
             const dropAlarmsRequests = updatePersonalPartActions.map(
-                ({ eventID, calendarID }) =>
+                ({ eventID, calendarID, color }) =>
                     () =>
                         api<UpdateEventPartApiResponse>({
-                            ...updatePersonalEventPart(calendarID, eventID, { Notifications: [] }),
+                            ...updatePersonalEventPart(calendarID, eventID, {
+                                Notifications: [],
+                                Color: color ? color : null,
+                            }),
                             silence: true,
                         })
             );
@@ -987,6 +990,7 @@ export const updatePartstatFromInvitation = async ({
     try {
         const payload: CreateSinglePersonalEventData = {
             Notifications: hasDefaultNotifications ? null : toApiNotifications(veventToSave.components),
+            Color: veventToSave.color?.value ? veventToSave.color.value : null,
         };
         const { Event } = await api<UpdateEventPartApiResponse>(updatePersonalEventPart(calendar.ID, eventID, payload));
         savedEvent = Event;

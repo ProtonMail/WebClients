@@ -3,7 +3,7 @@ import { HTMLAttributes, useRef } from 'react';
 import { c } from 'ttag';
 
 import { Input } from '@proton/atoms';
-import { MemoizedIconRow as IconRow, Notifications, TextAreaTwo } from '@proton/components';
+import { MemoizedIconRow as IconRow, Notifications, TextAreaTwo, useFlag } from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import NotificationsInDrawer from '@proton/components/containers/calendar/notifications/NotificationsInDrawer';
 import {
@@ -29,6 +29,7 @@ import createHandlers from './eventForm/createPropFactory';
 import { getOrganizerAndSelfAddressModel } from './eventForm/state';
 import CreateEventCalendarSelect from './inputs/CreateEventCalendarSelect';
 import CustomFrequencySelector from './inputs/CustomFrequencySelector';
+import EventColorSelect from './inputs/EventColorSelect';
 import FrequencyInput from './inputs/FrequencyInput';
 import ParticipantsInput from './inputs/ParticipantsInput';
 import DateTimeRow from './rows/DateTimeRow';
@@ -50,8 +51,8 @@ export interface EventFormProps {
     setParticipantError?: (value: boolean) => void;
     isOwnedCalendar?: boolean;
     isCalendarWritable?: boolean;
-    isDuplicating?: boolean;
     isDrawerApp?: boolean;
+    isNarrow: boolean;
 }
 
 const EventForm = ({
@@ -70,10 +71,12 @@ const EventForm = ({
     setParticipantError,
     isOwnedCalendar = true,
     isCalendarWritable = true,
-    isDuplicating = false,
     isDrawerApp,
+    isNarrow,
     ...props
 }: EventFormProps & HTMLAttributes<HTMLDivElement>) => {
+    const isColorPerEventEnabled = useFlag('ColorPerEventWeb');
+
     const isOrganizerOfInvitationRef = useRef(!isCreateEvent && !!model.isOrganizer);
     const isOrganizerOfInvitation = isOrganizerOfInvitationRef.current;
 
@@ -325,6 +328,9 @@ const EventForm = ({
     );
 
     const getCalendarIcon = () => {
+        if (isColorPerEventEnabled) {
+            return 'calendar-grid';
+        }
         if (calendars.length === 1) {
             return <CalendarSelectIcon className="mt-1" color={calendars[0].color} />;
         }
@@ -341,18 +347,21 @@ const EventForm = ({
             icon={getCalendarIcon()}
             title={c('Label').t`Calendar`}
             id={CALENDAR_INPUT_ID}
-            className="flex-item-fluid relative"
+            className="flex flex-nowrap flex-item-fluid flex-item-grow"
         >
             <CreateEventCalendarSelect
                 id={CALENDAR_INPUT_ID}
-                className="w-full"
+                className="w-full flex-item-fluid"
                 title={c('Title').t`Select which calendar to add this event to`}
                 frozen={!canChangeCalendar}
                 model={model}
                 setModel={setModel}
                 isCreateEvent={isCreateEvent}
-                isDuplicating={isDuplicating}
+                isColorPerEventEnabled={isColorPerEventEnabled}
             />
+            {isColorPerEventEnabled && (
+                <EventColorSelect model={model} setModel={setModel} isNarrow={isNarrow} isDrawerApp={isDrawerApp} />
+            )}
         </IconRow>
     );
 
@@ -361,10 +370,10 @@ const EventForm = ({
             {canEditSharedEventData && titleRow}
             {canEditSharedEventData && dateRow}
             {canEditSharedEventData && !isMinimal && frequencyRow}
+            {calendars.length > 0 && calendarRow}
             {canEditSharedEventData && !isImportedEvent && participantsRow}
             {canEditSharedEventData && locationRow}
             {!isMinimal && showNotifications && notificationsRow}
-            {calendars.length > 0 && calendarRow}
             {canEditSharedEventData && descriptionRow}
         </div>
     );

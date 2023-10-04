@@ -2,7 +2,7 @@ import React from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { ButtonLike } from '@proton/atoms/Button';
 import {
     Icon,
     Info,
@@ -10,22 +10,38 @@ import {
     ModalTwo,
     ModalTwoContent,
     ModalTwoHeader,
-    useSettingsLink,
+    SettingsLink,
 } from '@proton/components/components';
-import headerImage from '@proton/styles/assets/img/illustrations/upsell-header.svg';
+import calendarHeaderImage from '@proton/styles/assets/img/illustrations/upsell-calendar-header.svg';
+import mailHeaderImage from '@proton/styles/assets/img/illustrations/upsell-mail-header.svg';
 
 import { UpsellFeatureName, upsellFeatures } from './constants';
 
-type UpsellBoxProps = Required<
-    Pick<UpsellModalProps, 'description' | 'title' | 'features'> & { handleUpgrade: () => void }
->;
+export type UpsellHeaderType = 'mail' | 'calendar';
+const getHeader = (headerType: UpsellHeaderType) => {
+    switch (headerType) {
+        case 'mail':
+            return mailHeaderImage;
+        case 'calendar':
+            return calendarHeaderImage;
+    }
+};
 
-const UpsellBox = ({ description, handleUpgrade, title, features }: UpsellBoxProps) => (
+type UpsellBoxProps = Partial<Pick<UpsellModalProps, 'hideInfo'>> &
+    Required<
+        Pick<UpsellModalProps, 'description' | 'title' | 'features'> & {
+            handleUpgrade: () => void;
+            headerType: UpsellHeaderType;
+            path: string;
+        }
+    >;
+
+const UpsellBox = ({ description, handleUpgrade, title, features, hideInfo, headerType, path }: UpsellBoxProps) => (
     <div>
         <div className="text-center">
             <div className="mb-4 rounded">
                 <img
-                    src={headerImage}
+                    src={getHeader(headerType)}
                     className="w-full block"
                     alt={c('Description').t`ProtonMail logo and a plus sign`}
                 />
@@ -46,7 +62,7 @@ const UpsellBox = ({ description, handleUpgrade, title, features }: UpsellBoxPro
                                 </div>
                                 <div className="flex-item-fluid">
                                     {feature.getText()}
-                                    {feature.getTooltip ? (
+                                    {feature.getTooltip && !hideInfo ? (
                                         <Info buttonClass="ml-2" title={feature.getTooltip()} />
                                     ) : null}
                                 </div>
@@ -55,8 +71,17 @@ const UpsellBox = ({ description, handleUpgrade, title, features }: UpsellBoxPro
                     );
                 })}
             </ul>
-            <Button onClick={handleUpgrade} size="large" color="norm" shape="solid" fullWidth>{c('new_plans: Action')
-                .t`Upgrade now`}</Button>
+            <ButtonLike
+                as={SettingsLink}
+                path={path}
+                onClick={handleUpgrade}
+                size="large"
+                color="norm"
+                shape="solid"
+                fullWidth
+            >
+                {c('new_plans: Action').t`Upgrade now`}
+            </ButtonLike>
         </div>
     </div>
 );
@@ -69,20 +94,22 @@ export interface UpsellModalProps {
     title: string;
     upsellRef: string;
     onClose?: () => void;
+    headerType?: UpsellHeaderType;
+    hideInfo?: boolean;
 }
 
 const UpsellModal = ({
     description,
     features,
+    hideInfo,
     modalProps,
     title,
     upsellRef,
     'data-testid': dataTestid,
     onClose,
+    headerType = 'mail',
 }: UpsellModalProps) => {
-    const goToSettings = useSettingsLink();
     const handleUpgrade = () => {
-        goToSettings(`/upgrade?ref=${upsellRef}`, undefined, false);
         modalProps.onClose();
     };
 
@@ -94,8 +121,16 @@ const UpsellModal = ({
     return (
         <ModalTwo data-testid={dataTestid} {...modalProps} onClose={handleClose}>
             <ModalTwoHeader />
-            <ModalTwoContent>
-                <UpsellBox title={title} description={description} features={features} handleUpgrade={handleUpgrade} />
+            <ModalTwoContent className="my-8">
+                <UpsellBox
+                    title={title}
+                    description={description}
+                    features={features}
+                    handleUpgrade={handleUpgrade}
+                    headerType={headerType}
+                    path={`/upgrade?ref=${upsellRef}`}
+                    hideInfo={hideInfo}
+                />
             </ModalTwoContent>
         </ModalTwo>
     );
