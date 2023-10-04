@@ -90,7 +90,7 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
     const handleVaultCreate = withClose(() => setVaultModalProps({ open: true, payload: { type: 'new' } }));
     const handleVaultEdit = (vault: VaultShare) => setVaultModalProps({ open: true, payload: { type: 'edit', vault } });
     const handleVaultInvite = ({ shareId }: VaultShare) => inviteContext.createInvite(shareId);
-    const handleVaultManage = ({ shareId }: VaultShare) => inviteContext.manageAccess(shareId);
+    const handleVaultManage = withClose(({ shareId }: VaultShare) => inviteContext.manageAccess(shareId));
     const handleVaultLeave = useConfirm(leaveVault.dispatch);
     const handleTrashEmpty = useConfirm(() => dispatch(emptyTrashIntent()));
 
