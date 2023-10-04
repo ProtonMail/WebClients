@@ -93,16 +93,39 @@ export default function useShareUrl() {
         const decryptedPassword = await decryptUnsigned({
             armoredMessage: password,
             privateKey: privateKeys,
-        });
+        }).catch((e) =>
+            Promise.reject(
+                new Error('Failed to decrypt share URL password', {
+                    cause: {
+                        e,
+                        shareId: rest.shareId,
+                        keyId: privateKeys.map((key) => key.getKeyID()),
+                    },
+                })
+            )
+        );
 
         const sharedLinkPassword: string = await computeKeyPassword(decryptedPassword, sharePasswordSalt);
         const shareSessionKey = await decryptShareSessionKey(
             base64StringToUint8Array(sharePassphraseKeyPacket),
             sharedLinkPassword
+        ).catch((e) =>
+            Promise.reject(
+                new Error('Failed to decrypt share session key for shared URL', {
+                    cause: {
+                        e,
+                        shareId: rest.shareId,
+                    },
+                })
+            )
         );
 
         if (!shareSessionKey) {
-            throw new Error('Failed to decrypt share session key');
+            throw new Error('Failed to decrypt share session key for shared URL', {
+                cause: {
+                    shareId: rest.shareId,
+                },
+            });
         }
 
         return {
@@ -127,6 +150,7 @@ export default function useShareUrl() {
             passwords: [password],
             format: 'binary',
         });
+
         return uint8ArrayToBase64String(symmetric);
     };
 
@@ -162,6 +186,7 @@ export default function useShareUrl() {
         const getSharedLinkPassphraseSaltAndKeyPacket = async () => {
             const { salt, passphrase } = await generateKeySaltAndPassphrase(password);
             const keyPacket = await encryptSymmetricSessionKey(linkShareSessionKey, passphrase);
+
             return { salt, keyPacket };
         };
 
@@ -174,8 +199,28 @@ export default function useShareUrl() {
                 Auth: { Salt: UrlPasswordSalt, Verifier: SRPVerifier, ModulusID: SRPModulusID },
             },
         ] = await Promise.all([
-            getSharedLinkPassphraseSaltAndKeyPacket(),
-            encryptShareUrlPassword(password, share.creator),
+            getSharedLinkPassphraseSaltAndKeyPacket().catch((e) =>
+                Promise.reject(
+                    new Error('Failed to encrypt share URL session key', {
+                        cause: {
+                            e,
+                            shareId,
+                            linkShareId,
+                        },
+                    })
+                )
+            ),
+            encryptShareUrlPassword(password, share.creator).catch((e) =>
+                Promise.reject(
+                    new Error('Failed to encrypt share URL password', {
+                        cause: {
+                            e,
+                            shareId,
+                            linkShareId,
+                        },
+                    })
+                )
+            ),
             srpGetVerify({
                 api,
                 credentials,
@@ -329,10 +374,26 @@ export default function useShareUrl() {
                 Auth: { Salt: urlPasswordSalt, Verifier: srpVerifier, ModulusID: srpModulusID },
             },
         ] = await Promise.all([
-            computeKeyPassword(newPassword, sharePasswordSalt).then((sharedLinkPassword) =>
-                encryptSymmetricSessionKey(shareSessionKey, sharedLinkPassword)
+            computeKeyPassword(newPassword, sharePasswordSalt)
+                .then((sharedLinkPassword) => encryptSymmetricSessionKey(shareSessionKey, sharedLinkPassword))
+                .catch((e) =>
+                    Promise.reject(
+                        new Error('Failed to encrypt share URL session key', {
+                            cause: {
+                                e,
+                            },
+                        })
+                    )
+                ),
+            encryptShareUrlPassword(newPassword, creatorEmail).catch((e) =>
+                Promise.reject(
+                    new Error('Failed to encrypt share URL password', {
+                        cause: {
+                            e,
+                        },
+                    })
+                )
             ),
-            encryptShareUrlPassword(newPassword, creatorEmail),
             srpGetVerify({
                 api,
                 credentials: { password: newPassword },
@@ -374,7 +435,18 @@ export default function useShareUrl() {
                 creatorEmail,
                 flags,
                 keyInfo
+            ).catch((e) =>
+                Promise.reject(
+                    new Error('Failed to update share URL password', {
+                        cause: {
+                            e,
+                            shareId,
+                            shareUrlId,
+                        },
+                    })
+                )
             );
+
             fieldsToUpdate = {
                 ...fieldsToUpdate,
                 ...fieldsToUpdateForPassword,
