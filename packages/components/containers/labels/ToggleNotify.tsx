@@ -32,7 +32,7 @@ const ToggleNotify = ({ label }: Props) => {
     };
     return (
         <Tooltip title={c('Tooltip').t`Enable/disable desktop and mobile notifications`}>
-            <span>
+            <span className="inline-flex">
                 <Toggle
                     id={`item-${label.ID}`}
                     checked={label.Notify === 1}
