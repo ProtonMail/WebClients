@@ -1,42 +1,27 @@
-import { ChangeEvent } from 'react';
-
 import { c } from 'ttag';
 
-import { useLoading } from '@proton/hooks';
-import { updatePromptPin } from '@proton/shared/lib/api/mailSettings';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { Info, Toggle } from '../../components';
-import { useApi, useEventManager, useMailSettings, useNotifications } from '../../hooks';
-import { SettingsParagraph, SettingsSection } from '../account';
+import { BetaBadge, Info } from '../../components';
+import { useFeature } from '../../hooks';
+import { SettingsSection } from '../account';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import { FeatureCode } from '../features';
+import { KtFeatureEnum } from '../keyTransparency/ktStatus';
+import KTToggle from './KTToggle';
+import PromptPinToggle from './PromptPinToggle';
 
 const AddressVerificationSection = () => {
-    const { createNotification } = useNotifications();
-    const { call } = useEventManager();
-    const api = useApi();
-    const [loading, withLoading] = useLoading();
-    const [{ PromptPin = 0 } = {}] = useMailSettings();
-
-    const handleChange = async ({ target }: ChangeEvent<HTMLInputElement>) => {
-        await api(updatePromptPin(+target.checked));
-        await call();
-        createNotification({ text: c('Success').t`Preference saved` });
-    };
-
+    const { feature } = useFeature(FeatureCode.KeyTransparencyAccount);
+    const showKTSetting = feature?.Value === KtFeatureEnum.ENABLE_UI;
     return (
         <SettingsSection>
-            <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/address-verification')}>
-                {c('Info')
-                    .t`Address verification is an advanced security feature. Only turn this on if you know what it does.`}
-            </SettingsParagraph>
-
             <SettingsLayout>
                 <SettingsLayoutLeft>
-                    <label htmlFor="trustToggle" className="text-semibold">
+                    <label htmlFor="prompt-pin-toggle" className="text-semibold">
                         <span className="mr-2">{c('Label').t`Prompt to trust keys`}</span>
                         <Info
                             url={getKnowledgeBaseUrl('/address-verification')}
@@ -46,14 +31,23 @@ const AddressVerificationSection = () => {
                     </label>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight className="pt-2">
-                    <Toggle
-                        id="trustToggle"
-                        loading={loading}
-                        checked={!!PromptPin}
-                        onChange={(e) => withLoading(handleChange(e))}
-                    />
+                    <PromptPinToggle id="prompt-pin-toggle" />
                 </SettingsLayoutRight>
             </SettingsLayout>
+            {showKTSetting ? (
+                <SettingsLayout>
+                    <SettingsLayoutLeft>
+                        <label htmlFor="kt-toggle" className="text-semibold">
+                            <span className="mr-2">{c('Label').t`Verify keys with Key Transparency`}</span>
+                            <BetaBadge className="mr-2" />
+                            <Info url={getKnowledgeBaseUrl('/key-transparency')} />
+                        </label>
+                    </SettingsLayoutLeft>
+                    <SettingsLayoutRight className="pt-2">
+                        <KTToggle id="kt-toggle" />
+                    </SettingsLayoutRight>
+                </SettingsLayout>
+            ) : null}
         </SettingsSection>
     );
 };
