@@ -1,6 +1,6 @@
 const offsetIcon = {
     offset: 15,
-    background: '#fff',
+    background: false,
 };
 
 module.exports = {
@@ -12,9 +12,13 @@ module.exports = {
     display: 'standalone',
     start_url: '/',
     loadManifestWithCredentials: true,
+    manifestMaskable: true,
     icons: {
         android: offsetIcon,
-        appleIcon: offsetIcon,
+        appleIcon: {
+            offset: 15,
+            background: '#fff',
+        },
         appleStartup: false,
         // Only interested in the .ico file, not the custom 16x16, 32x32 pngs it generates
         // because we default to a .svg favicon (with our own custom implementation because
