@@ -1,22 +1,20 @@
 import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
-import type { ShareGetResponse, ShareKeyResponse, TypedOpenedShare } from '@proton/pass/types';
+import type { ShareGetResponse, ShareKeyResponse, TypedOpenedShare, VaultKey } from '@proton/pass/types';
 import { CONTENT_FORMAT_VERSION, ShareType } from '@proton/pass/types';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import { type Address, AddressConfirmationState, type DecryptedKey } from '@proton/shared/lib/interfaces';
 
 import { createVault } from '../processes/vault/create-vault';
+import { generateKey, getSymmetricKey } from './crypto-helpers';
 
-/**
- * Load Crypto API outside of web workers, for testing purposes.
- * Dynamic import to avoid loading the library unless required
- */
+/* Load Crypto API outside of web workers, for testing purposes.
+ * Dynamic import to avoid loading the library unless required */
 export async function setupCryptoProxyForTesting() {
     const { Api: CryptoApi } = await import(
         /* webpackChunkName: "crypto-worker-api" */ '@proton/crypto/lib/worker/api'
     );
     CryptoApi.init();
-
     CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
 }
 
@@ -91,6 +89,9 @@ export const createRandomShareResponses = async (
             ExpireTime: 0,
             CreateTime: 0,
             Primary: false,
+            Owner: true,
+            TargetMembers: 1,
+            Shared: false,
         },
         {
             Key: vault.EncryptedVaultKey,
@@ -135,4 +136,10 @@ export const createRandomShare = <T extends ShareType>(targetType: T): TypedOpen
             throw new Error('Unknown target share type');
         }
     }
+};
+
+export const createRandomVaultKey = async (rotation: number): Promise<VaultKey> => {
+    const raw = generateKey();
+    const key = await getSymmetricKey(raw);
+    return { key, raw, rotation, userKeyId: undefined };
 };

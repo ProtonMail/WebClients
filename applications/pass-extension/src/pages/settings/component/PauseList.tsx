@@ -17,7 +17,7 @@ import {
     TableRow,
 } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
-import { selectDisallowedDomains, settingEditIntent } from '@proton/pass/store';
+import { selectDisallowedDomains, settingsEditIntent } from '@proton/pass/store';
 import type { CriteriaMasks } from '@proton/pass/types/worker/settings';
 import { CRITERIA_MASKS } from '@proton/pass/types/worker/settings';
 import { merge } from '@proton/pass/utils/object';
@@ -46,7 +46,7 @@ export const PauseList: VFC = () => {
             return createNotification({ text: c('Error').t`The url is in the list`, type: 'error' });
         }
 
-        dispatch(settingEditIntent('pause-list', { disallowedDomains: merge(disallowedDomains, { [domain]: 15 }) }));
+        dispatch(settingsEditIntent('pause-list', { disallowedDomains: merge(disallowedDomains, { [domain]: 15 }) }));
         setUrl('');
     };
 
@@ -54,7 +54,7 @@ export const PauseList: VFC = () => {
         const setting = disallowedDomains[hostname];
 
         dispatch(
-            settingEditIntent('pause-list', {
+            settingsEditIntent('pause-list', {
                 disallowedDomains: merge(disallowedDomains, {
                     [hostname]: toggleCriteria(setting, criteria),
                 }),
@@ -66,7 +66,7 @@ export const PauseList: VFC = () => {
         const update = { ...disallowedDomains };
         delete update[hostname];
 
-        dispatch(settingEditIntent('pause-list', { disallowedDomains: update }));
+        dispatch(settingsEditIntent('pause-list', { disallowedDomains: update }));
     };
 
     return (

@@ -1,15 +1,25 @@
 import type { AnyAction } from 'redux';
 
 import type { Share } from '@proton/pass/types';
-import { ShareType } from '@proton/pass/types';
+import { ShareRole, ShareType } from '@proton/pass/types';
+import type { PendingInvite, ShareMember } from '@proton/pass/types/data/invites';
 import { or } from '@proton/pass/utils/fp';
 import { fullMerge, objectDelete, objectMap, partialMerge } from '@proton/pass/utils/object';
 
 import {
     bootSuccess,
+    getShareAccessOptionsSuccess,
+    inviteAcceptSuccess,
+    inviteCreationSuccess,
+    inviteRemoveSuccess,
+    inviteResendSuccess,
+    shareAccessChange,
     shareDeleteSync,
+    shareEditMemberAccessSuccess,
     shareEditSync,
     shareEvent,
+    shareLeaveSuccess,
+    shareRemoveMemberAccessSuccess,
     sharesSync,
     syncSuccess,
     vaultCreationFailure,
@@ -25,11 +35,17 @@ import {
     vaultSetPrimaryIntent,
     vaultSetPrimarySuccess,
     vaultSetPrimarySync,
+    vaultTransferOwnershipSuccess,
 } from '../actions';
 import { sanitizeWithCallbackAction } from '../actions/with-callback';
 import withOptimistic from '../optimistic/with-optimistic';
 
-export type SharesState = { [shareId: string]: Share };
+export type ShareItem<T extends ShareType = ShareType> = Share<T> & {
+    invites?: PendingInvite[];
+    members?: ShareMember[];
+};
+
+export type SharesState = { [shareId: string]: ShareItem };
 
 /**
  * Share actions are optimistic but do not allow retries
@@ -88,6 +104,10 @@ export const withOptimisticShares = withOptimistic<SharesState>(
                     targetType: ShareType.Vault,
                     primary: false,
                     eventId: '',
+                    targetMembers: 1,
+                    owner: true,
+                    shareRoleId: ShareRole.ADMIN,
+                    shared: false,
                 },
             });
         }
@@ -115,8 +135,79 @@ export const withOptimisticShares = withOptimistic<SharesState>(
             return objectDelete(state, action.payload.shareId);
         }
 
+        if (vaultTransferOwnershipSuccess.match(action)) {
+            const { shareId, userShareId } = action.payload;
+            const members = (state[shareId].members ?? []).map((member) => {
+                if (member.owner) return { ...member, owner: false };
+                if (member.shareId === userShareId) return { ...member, owner: true };
+                return member;
+            });
+
+            return partialMerge(state, { [shareId]: { owner: false, shareRoleId: ShareRole.ADMIN, members } });
+        }
+
         if (or(vaultSetPrimaryIntent.match, vaultSetPrimarySync.match)(action)) {
             return objectMap(state!)((shareId, share) => ({ ...share, primary: shareId === action.payload.id }));
+        }
+
+        if (inviteCreationSuccess.match(action)) {
+            return partialMerge(state, { [action.payload.shareId]: { shared: true } });
+        }
+
+        if (inviteResendSuccess.match(action)) {
+            const { shareId, inviteId } = action.payload;
+            return partialMerge(state, { [shareId]: { inviteId, shared: true } });
+        }
+
+        if (inviteRemoveSuccess.match(action)) {
+            const { shareId, inviteId } = action.payload;
+            const share = state[shareId];
+            const members = share.members ?? [];
+            const invites = (share.invites ?? []).filter((invite) => invite.inviteId !== inviteId);
+            const shared = members.length > 1 || invites.length > 0;
+
+            return partialMerge(state, { [shareId]: { invites, shared } });
+        }
+
+        if (shareAccessChange.match(action)) {
+            const { shareId, owner, shared, shareRoleId, targetMembers } = action.payload;
+            return partialMerge(state, { [shareId]: { owner, shared, shareRoleId, targetMembers } });
+        }
+
+        if (getShareAccessOptionsSuccess.match(action)) {
+            const { shareId, invites, members } = action.payload;
+            return partialMerge(state, { [shareId]: { invites, members } });
+        }
+
+        if (shareEditMemberAccessSuccess.match(action)) {
+            const { shareId, userShareId, shareRoleId } = action.payload;
+            const members = state[shareId].members ?? [];
+
+            return partialMerge(state, {
+                [shareId]: {
+                    members: members.map<ShareMember>((member) =>
+                        member.shareId === userShareId ? { ...member, shareRoleId } : member
+                    ),
+                },
+            });
+        }
+
+        if (shareRemoveMemberAccessSuccess.match(action)) {
+            const { shareId, userShareId } = action.payload;
+            return partialMerge(state, {
+                [shareId]: {
+                    // FIXME: state not properly updating
+                    members: (state[shareId]?.members ?? []).filter(({ shareId }) => shareId !== userShareId),
+                },
+            });
+        }
+
+        if (inviteAcceptSuccess.match(action)) {
+            return partialMerge(state, { [action.payload.share.shareId]: action.payload.share });
+        }
+
+        if (shareLeaveSuccess.match(action)) {
+            return objectDelete(state, action.payload.shareId);
         }
 
         return state;

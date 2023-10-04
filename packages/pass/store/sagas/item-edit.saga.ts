@@ -6,7 +6,7 @@ import type { ItemEditIntent, ItemRevision, ItemRevisionContentsResponse } from 
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { isEqual } from '@proton/pass/utils/set/is-equal';
 
-import { aliasDetailsEditSuccess, itemEditFailure, itemEditIntent, itemEditSuccess } from '../actions';
+import { aliasDetailsSync, itemEditFailure, itemEditIntent, itemEditSuccess } from '../actions';
 import type { AliasState } from '../reducers';
 import { selectAliasOptions, selectItemByShareIdAndId, selectMailboxesForAlias } from '../selectors';
 import type { WorkerRootSagaOptions } from '../types';
@@ -38,7 +38,7 @@ function* editMailboxesWorker(aliasEditIntent: ItemEditIntent<'alias'>) {
         });
 
         yield put(
-            aliasDetailsEditSuccess({
+            aliasDetailsSync({
                 aliasEmail: item.aliasEmail!,
                 mailboxes: aliasEditIntent.extraData.mailboxes,
             })
@@ -52,9 +52,7 @@ function* itemEditWorker(
     const { itemId, shareId, lastRevision } = editIntent;
 
     try {
-        if (editIntent.type === 'alias') {
-            yield call(editMailboxesWorker, editIntent);
-        }
+        if (editIntent.type === 'alias') yield call(editMailboxesWorker, editIntent);
 
         const encryptedItem: ItemRevisionContentsResponse = yield editItem(editIntent, lastRevision);
         const item: ItemRevision = yield parseItemRevision(shareId, encryptedItem);

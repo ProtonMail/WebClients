@@ -86,9 +86,8 @@ export type ItemUpdateRequest = {
 };
 
 export type UpdateItemLastUseTimeRequest = {
-    /* Time when the item was last used.
-     *                       If no value is passed then the current server time will be used. */
-    LastUseTime?: number;
+    /* Time when the item was last used. If no value is passed then the current server time will be used. */
+    LastUseTime?: number | null;
 };
 
 export type ItemMoveSingleToShareRequest = {
@@ -171,6 +170,11 @@ export type VaultUpdateRequest = {
     KeyRotation: number;
 };
 
+export type VaultTransferOwnershipRequest = {
+    /* ShareID to move the ownership to. It has to have admin privileges */
+    NewOwnerShareID: string;
+};
+
 export type ItemMoveMultipleResponse = {
     Items: ItemRevisionContentsResponse[];
 };
@@ -227,6 +231,39 @@ export type ItemRevisionListResponse = {
 export type InvitesGetResponse = {
     /* UserInvites */
     Invites: InviteDataForUser[];
+};
+
+export type ShareGetResponse = {
+    ShareID: string;
+    VaultID: string;
+    /* AddressID that will be displayed as the owner of the share */
+    AddressID: string;
+    /* Whether this vault is primary for this user */
+    Primary: boolean;
+    /* Whether the user is owner of this vault */
+    Owner: boolean;
+    /* Type of share. 1 for vault, 2 for item */
+    TargetType: number;
+    /* TargetID for this share */
+    TargetID: string;
+    /* Members for the target of this share */
+    TargetMembers: number;
+    /* Whether this share is shared or not */
+    Shared: boolean;
+    /* Permissions for this share */
+    Permission: number;
+    /* ShareRoleID for this share. The values are in the top level Pass docs. */
+    ShareRoleID?: string;
+    /* Base64 encoded content of the share. Only shown if it a vault share */
+    Content?: string | null;
+    /* Key rotation that should be used to open the content */
+    ContentKeyRotation?: number | null;
+    /* Content format version */
+    ContentFormatVersion?: number | null;
+    /* If the share will expire, when it will expire */
+    ExpireTime?: number | null;
+    /* Share creation time */
+    CreateTime: number;
 };
 
 export type AliasAndItemResponse = {
@@ -317,35 +354,6 @@ export type SharesGetResponse = {
     Shares: ShareGetResponse[];
 };
 
-export type ShareGetResponse = {
-    ShareID: string;
-    VaultID: string;
-    /* AddressID that will be displayed as the owner of the share */
-    AddressID: string;
-    /* Whether this vault is primary for this user */
-    Primary: boolean;
-    /* Wether the user is owner of this vault */
-    Owner?: boolean;
-    /* Type of share. 1 for vault, 2 for item */
-    TargetType: number;
-    /* TargetID for this share */
-    TargetID: string;
-    /* Permissions for this share */
-    Permission: number;
-    /* ShareRoleID for this share. The values are in the top level Pass docs. */
-    ShareRoleID?: string;
-    /* Base64 encoded content of the share. Only shown if it a vault share */
-    Content?: string | null;
-    /* Key rotation that should be used to open the content */
-    ContentKeyRotation?: number | null;
-    /* Content format version */
-    ContentFormatVersion?: number | null;
-    /* If the share will expire, when it will expire */
-    ExpireTime?: number | null;
-    /* Share creation time */
-    CreateTime: number;
-};
-
 export type InvitesForVaultGetResponse = {
     /* ShareInvites */
     Invites: VaultInviteData[];
@@ -365,21 +373,27 @@ export type ActiveShareGetResponse = {
     UserName: string;
     /* Email of the user */
     UserEmail: string;
+    /* Whether this is the owner of the share */
+    Owner: boolean;
     /* Type of share. 1 for vault, 2 for item */
     TargetType: number;
     /* ID of the top object that this share gives access to */
     TargetID: string;
-    /* Permissions this share has. Only admins can see it */
-    Permission?: number | null;
-    /* ShareRoleID this share has. Only admins can see it */
-    ShareRoleID?: string | null;
+    /* Permissions this share has */
+    Permission: number;
+    /* ShareRoleID this share has */
+    ShareRoleID: string;
     /* Expiration time if set */
     ExpireTime?: number | null;
     /* Creation time of this share */
     CreateTime: number;
 };
 
-export type UserAccessGetResponse = { Plan: PassPlanResponse };
+export type UserAccessGetResponse = {
+    Plan: PassPlanResponse;
+    /* Pending invites for this user */
+    PendingInvites: number;
+};
 
 export type UserAccessCheckGetResponse = {
     /* When this user started using Pass */
@@ -603,6 +617,10 @@ export type ApiResponse<Path extends string, Method extends ApiMethod> = Path ex
     ? Method extends `put`
         ? { Code?: ResponseCodeSuccess }
         : never
+    : Path extends `pass/v1/vault/${string}/owner`
+    ? Method extends `put`
+        ? { Code?: ResponseCodeSuccess }
+        : never
     : Path extends `pass/v1/vault/${string}`
     ? Method extends `put`
         ? { Code?: ResponseCodeSuccess; Share?: ShareGetResponse }
@@ -769,6 +787,8 @@ export type ApiResponse<Path extends string, Method extends ApiMethod> = Path ex
     : Path extends `pass/v1/share/${string}`
     ? Method extends `get`
         ? { Code?: ResponseCodeSuccess; Share?: ShareGetResponse }
+        : Method extends `delete`
+        ? { Code?: ResponseCodeSuccess }
         : never
     : Path extends `pass/v1/share`
     ? Method extends `get`
@@ -776,6 +796,8 @@ export type ApiResponse<Path extends string, Method extends ApiMethod> = Path ex
         : never
     : Path extends `pass/v1/invite/${string}`
     ? Method extends `post`
+        ? { Code?: ResponseCodeSuccess; Share?: ShareGetResponse }
+        : Method extends `delete`
         ? { Code?: ResponseCodeSuccess }
         : never
     : Path extends `pass/v1/invite`
@@ -787,6 +809,10 @@ export type ApiResponse<Path extends string, Method extends ApiMethod> = Path ex
 export type ApiRequest<Path extends string, Method extends ApiMethod> = Path extends `pass/v1/vault/${string}/primary`
     ? Method extends `put`
         ? never
+        : never
+    : Path extends `pass/v1/vault/${string}/owner`
+    ? Method extends `put`
+        ? VaultTransferOwnershipRequest
         : never
     : Path extends `pass/v1/vault/${string}`
     ? Method extends `put`
@@ -951,6 +977,8 @@ export type ApiRequest<Path extends string, Method extends ApiMethod> = Path ext
     : Path extends `pass/v1/share/${string}`
     ? Method extends `get`
         ? never
+        : Method extends `delete`
+        ? never
         : never
     : Path extends `pass/v1/share`
     ? Method extends `get`
@@ -959,6 +987,8 @@ export type ApiRequest<Path extends string, Method extends ApiMethod> = Path ext
     : Path extends `pass/v1/invite/${string}`
     ? Method extends `post`
         ? InviteAcceptRequest
+        : Method extends `delete`
+        ? never
         : never
     : Path extends `pass/v1/invite`
     ? Method extends `get`

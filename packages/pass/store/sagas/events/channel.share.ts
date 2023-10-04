@@ -3,9 +3,11 @@ import type { AnyAction } from 'redux';
 import { all, call, fork, put, select, take } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/crypto';
+import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/events/constants';
 import type {
     Api,
     ItemRevision,
+    Maybe,
     MaybeNull,
     PassEventListResponse,
     Share,
@@ -16,7 +18,6 @@ import { ShareType } from '@proton/pass/types';
 import { logId, logger } from '@proton/pass/utils/logger';
 import { decodeVaultContent } from '@proton/pass/utils/protobuf';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { INTERVAL_EVENT_TIMER } from '@proton/shared/lib/constants';
 
 import type { EventManagerEvent } from '../../../events/manager';
 import {
@@ -76,6 +77,10 @@ const onShareEvent = (shareId: string) =>
                             targetType: share.targetType,
                             content: decodeVaultContent(share.content),
                             primary: Boolean(UpdatedShare.Primary),
+                            shared: share.shared,
+                            owner: share.owner,
+                            targetMembers: share.targetMembers,
+                            shareRoleId: share.shareRoleId,
                             eventId: LatestEventID,
                         },
                     })
@@ -119,10 +124,12 @@ const onShareEventError = (shareId: string) =>
             logger.info(`[Saga::SharesChannel] share ${logId(shareId)} disabled`);
             channel.close();
 
-            const share: Share = yield select(selectShare(shareId));
-            onShareEventDisabled?.(shareId);
-            onItemsChange?.();
-            yield put(shareDeleteSync(share));
+            const share: Maybe<Share> = yield select(selectShare(shareId));
+            if (share) {
+                onShareEventDisabled?.(shareId);
+                onItemsChange?.();
+                yield put(shareDeleteSync(share));
+            }
         }
     };
 
@@ -139,7 +146,7 @@ const onShareDeleted = (shareId: string) =>
 export const createShareChannel = (api: Api, { shareId, eventId }: Share) =>
     eventChannelFactory<ShareEventResponse>({
         api,
-        interval: INTERVAL_EVENT_TIMER,
+        interval: ACTIVE_POLLING_TIMEOUT,
         initialEventID: eventId,
         query: (eventId) => ({ url: `pass/v1/share/${shareId}/event/${eventId}`, method: 'get' }),
         getCursor: ({ Events }) => ({ EventID: Events.LatestEventID, More: Events.EventsPending }),

@@ -4,12 +4,12 @@ import { c } from 'ttag';
 import { api } from '@proton/pass/api';
 import type { AliasOptionsResponse } from '@proton/pass/types';
 
-import { aliasOptionsRequestFailure, aliasOptionsRequestSuccess, aliasOptionsRequested } from '../actions';
+import { getAliasOptionsFailure, getAliasOptionsIntent, getAliasOptionsSuccess } from '../actions';
 import type { AliasOptions } from '../reducers';
 
 export const ALIAS_OPTIONS_VALIDITY_WINDOW = 10 * 60;
 
-function* requestAliasOptions(action: ReturnType<typeof aliasOptionsRequested>) {
+function* requestAliasOptions(action: ReturnType<typeof getAliasOptionsIntent>) {
     const {
         payload: { shareId },
         meta: { callback: onAliasOptionsIntentProcessed },
@@ -37,16 +37,16 @@ function* requestAliasOptions(action: ReturnType<typeof aliasOptionsRequested>) 
             })),
         };
 
-        const aliasOptionsSuccessAction = aliasOptionsRequestSuccess({ options });
+        const aliasOptionsSuccessAction = getAliasOptionsSuccess({ options });
         yield put(aliasOptionsSuccessAction);
         onAliasOptionsIntentProcessed?.(aliasOptionsSuccessAction);
     } catch (e) {
-        const aliasOptionsFailureAction = aliasOptionsRequestFailure(e);
+        const aliasOptionsFailureAction = getAliasOptionsFailure(e);
         yield put(aliasOptionsFailureAction);
         onAliasOptionsIntentProcessed?.(aliasOptionsFailureAction);
     }
 }
 
 export default function* watcher() {
-    yield takeEvery(aliasOptionsRequested.match, requestAliasOptions);
+    yield takeEvery(getAliasOptionsIntent.match, requestAliasOptions);
 }

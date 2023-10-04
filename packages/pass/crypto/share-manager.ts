@@ -53,6 +53,8 @@ export const createShareManager = <T extends ShareType = ShareType>(
             return shareContext.vaultKeys.get(rotation)!;
         },
 
+        getVaultKeys: () => Array.from(shareContext.vaultKeys.values()),
+
         addVaultKey(vaultKey) {
             if (shareManager.getShare().targetType !== ShareType.Vault) {
                 throw new PassCryptoVaultError(`Cannot add vault key to non-vault share`);

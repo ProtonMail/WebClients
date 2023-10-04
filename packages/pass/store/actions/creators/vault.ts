@@ -2,6 +2,7 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import type { ExtensionEndpoint, ItemRevision, MaybeNull, Share, ShareContent, ShareType } from '@proton/pass/types';
+import type { VaultTransferOwnerIntent } from '@proton/pass/types/data/vault.dto';
 import { pipe } from '@proton/pass/utils/fp';
 
 import { createOptimisticAction } from '../../optimistic/action/create-optimistic-action';
@@ -10,7 +11,7 @@ import withCacheBlock from '../with-cache-block';
 import type { ActionCallback } from '../with-callback';
 import withCallback from '../with-callback';
 import withNotification from '../with-notification';
-import withRequest from '../with-request';
+import withRequest, { withRequestFailure, withRequestStart, withRequestSuccess } from '../with-request';
 
 export const vaultCreationIntent = createOptimisticAction(
     'vault creation intent',
@@ -213,3 +214,32 @@ export const vaultSetPrimarySuccess = createOptimisticAction(
 );
 
 export const vaultSetPrimarySync = createAction('vault set primary sync', (payload: { id: string }) => ({ payload }));
+
+export const vaultTransferOwnerIntent = createAction(
+    'share::ownership::transfer::intent',
+    withRequestStart((payload: VaultTransferOwnerIntent) => withCacheBlock({ payload }))
+);
+
+export const vaultTransferOwnershipSuccess = createAction(
+    'share::ownership::transfer::success',
+    withRequestSuccess((shareId: string, userShareId: string) =>
+        withNotification({
+            type: 'info',
+            text: c('Info').t`Ownership successfully transfered. You are no long the owner of this vault.`,
+        })({ payload: { shareId, userShareId } })
+    )
+);
+
+export const vaultTransferOwnershipFailure = createAction(
+    'share::ownership::transfer::failure',
+    withRequestFailure((error: unknown) =>
+        pipe(
+            withCacheBlock,
+            withNotification({
+                type: 'error',
+                text: c('Error').t`Failed to transfer this vault's ownership.`,
+                error,
+            })
+        )({ payload: {} })
+    )
+);
