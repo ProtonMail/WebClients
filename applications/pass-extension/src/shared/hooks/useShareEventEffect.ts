@@ -6,12 +6,15 @@ import { ShareEventType, WorkerMessageType } from '@proton/pass/types';
 import { ExtensionContext } from '../extension';
 
 type UseShareServerEventHookOptions = {
+    listen?: boolean;
     onShareDisabled: (shareId: string) => void;
-    onItemsDeleted: (shareId: string, itemIds: string[]) => void;
+    onItemsDeleted?: (shareId: string, itemIds: string[]) => void;
 };
 
 export const useShareEventEffect = (options: UseShareServerEventHookOptions) => {
     useEffect(() => {
+        if (options?.listen === false) return;
+
         const { port } = ExtensionContext.get();
 
         const handleShareServerEvent = (message: WorkerMessageWithSender) => {
@@ -25,7 +28,7 @@ export const useShareEventEffect = (options: UseShareServerEventHookOptions) => 
 
                     case ShareEventType.ITEMS_DELETED: {
                         const { shareId, itemIds } = payload;
-                        return options.onItemsDeleted(shareId, itemIds);
+                        return options.onItemsDeleted?.(shareId, itemIds);
                     }
                 }
             }
