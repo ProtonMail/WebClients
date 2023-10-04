@@ -36,7 +36,7 @@ export const getExpirationTime = (date?: Date) => {
 
 export const isExpired = <T extends { ExpirationTime?: number }>(element: T, timestamp?: number) => {
     const { ExpirationTime } = element;
-    return Boolean(ExpirationTime && ExpirationTime < (timestamp ?? getUnixTime(+serverTime())));
+    return Boolean(ExpirationTime && ExpirationTime < getUnixTime(timestamp ?? (+serverTime())));
 };
 
 // Return the correct min interval to display in the time input for expiration (self-destruct)
