@@ -122,7 +122,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
                             )}
                         >
                             {isSelected && (
-                                <div className="ml-auto pr-2">
+                                <div className={clsx('ml-auto', quickActions !== undefined && 'pr-2')}>
                                     <Icon name="checkmark" color="var(--interaction-norm-major-1)" />
                                 </div>
                             )}
