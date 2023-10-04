@@ -52,15 +52,55 @@ export default function useLinkActions() {
 
         const [Hash, { NodeKey, NodePassphrase, privateKey, NodePassphraseSignature }, encryptedName] =
             await Promise.all([
-                generateLookupHash(name, parentHashKey),
-                generateNodeKeys(parentPrivateKey, addressKey),
-                encryptName(name, parentPrivateKey, addressKey),
+                generateLookupHash(name, parentHashKey).catch((e) =>
+                    Promise.reject(
+                        new Error('Failed to generate folder link lookup hash during folder creation', {
+                            cause: {
+                                e,
+                                shareId,
+                                parentLinkId,
+                            },
+                        })
+                    )
+                ),
+                generateNodeKeys(parentPrivateKey, addressKey).catch((e) =>
+                    Promise.reject(
+                        new Error('Failed to generate folder link node keys during folder creation', {
+                            cause: {
+                                e,
+                                shareId,
+                                parentLinkId,
+                            },
+                        })
+                    )
+                ),
+                encryptName(name, parentPrivateKey, addressKey).catch((e) =>
+                    Promise.reject(
+                        new Error('Failed to encrypt folder link name during folder creation', {
+                            cause: {
+                                e,
+                                shareId,
+                                parentLinkId,
+                            },
+                        })
+                    )
+                ),
             ]);
 
         // We use private key instead of address key to sign the hash key
         // because its internal property of the folder. We use address key for
         // name or content to have option to trust some users more or less.
-        const { NodeHashKey } = await generateNodeHashKey(privateKey, privateKey);
+        const { NodeHashKey } = await generateNodeHashKey(privateKey, privateKey).catch((e) =>
+            Promise.reject(
+                new Error('Failed to encrypt node hash key during folder creation', {
+                    cause: {
+                        e,
+                        shareId,
+                        parentLinkId,
+                    },
+                })
+            )
+        );
 
         const xattr = !modificationTime
             ? undefined
@@ -110,21 +150,52 @@ export default function useLinkActions() {
                 : getSharePrivateKey(abortSignal, shareId),
             meta.parentLinkId ? getLinkHashKey(abortSignal, shareId, meta.parentLinkId) : null,
         ]);
-        const [sessionKey] = await Promise.all([
-            getDecryptedSessionKey({
-                data: meta.encryptedName,
-                privateKeys: parentPrivateKey,
-            }),
-        ]);
+
+        const sessionKey = await getDecryptedSessionKey({
+            data: meta.encryptedName,
+            privateKeys: parentPrivateKey,
+        }).catch((e) =>
+            Promise.reject(
+                new Error('Failed to decrypt link name session key during rename', {
+                    cause: {
+                        e,
+                        shareId,
+                        linkId,
+                    },
+                })
+            )
+        );
 
         const [Hash, { message: encryptedName }] = await Promise.all([
-            parentHashKey ? generateLookupHash(newName, parentHashKey) : getRandomString(64),
+            parentHashKey
+                ? generateLookupHash(newName, parentHashKey).catch((e) =>
+                      Promise.reject(
+                          new Error('Failed to generate link lookup hash during rename', {
+                              cause: {
+                                  e,
+                                  shareId,
+                                  linkId,
+                              },
+                          })
+                      )
+                  )
+                : getRandomString(64),
             CryptoProxy.encryptMessage({
                 textData: newName,
                 stripTrailingSpaces: true,
                 sessionKey,
                 signingKeys: addressKey,
-            }),
+            }).catch((e) =>
+                Promise.reject(
+                    new Error('Failed to encrypt link name during rename', {
+                        cause: {
+                            e,
+                            shareId,
+                            linkId,
+                        },
+                    })
+                )
+            ),
         ]);
 
         await preventLeave(
