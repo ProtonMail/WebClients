@@ -153,6 +153,7 @@ module.exports = ({
 
         new FaviconsWebpackPlugin({
             logo: path.resolve(faviconConfig.logo),
+            logoMaskable: path.resolve(faviconConfig.logoMaskable),
             cache: path.resolve('./node_modules/.cache'),
             favicons: {
                 version: buildData.version,
