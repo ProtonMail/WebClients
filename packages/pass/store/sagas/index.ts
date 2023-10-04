@@ -8,6 +8,11 @@ import cache from './cache.saga';
 import events from './events.saga';
 import featureFlags from './feature-flags.saga';
 import itemsImport from './import.saga';
+import inviteAccept from './invite-accept.saga';
+import inviteCreate from './invite-create.saga';
+import inviteReject from './invite-reject.saga';
+import inviteRemove from './invite-remove.saga';
+import inviteResend from './invite-resend.saga';
 import itemCreation from './item-creation.saga';
 import itemDelete from './item-delete.saga';
 import itemEdit from './item-edit.saga';
@@ -18,11 +23,16 @@ import itemUsed from './item-used.saga';
 import itemsRequest from './items-request.saga';
 import notification from './notification.saga';
 import reportProblem from './report-problem.saga';
+import request from './request-saga';
 import sessionLockDisable from './session-lock-disable.saga';
 import sessionLockEnable from './session-lock-enable.saga';
 import sessionLockImmediate from './session-lock-immediate.saga';
 import sessionUnlock from './session-unlock.saga';
 import settings from './settings.saga';
+import shareAccessOptions from './share-access-options.saga';
+import shareEditRole from './share-edit-role.saga';
+import shareLeave from './share-leave.saga';
+import shareManagePermission from './share-remove-member.saga';
 import signout from './signout.saga';
 import sync from './sync.saga';
 import trashDelete from './trash-delete.saga';
@@ -32,6 +42,7 @@ import vaultCreation from './vault-creation.saga';
 import vaultDelete from './vault-delete.saga';
 import vaultEdit from './vault-edit.saga';
 import vaultSetPrimary from './vault-set-primary.saga';
+import vaultTransferOwner from './vault-transfer-owner.saga';
 import wakeup from './wakeup.saga';
 
 export function* workerRootSaga(options: WorkerRootSagaOptions) {
@@ -43,6 +54,11 @@ export function* workerRootSaga(options: WorkerRootSagaOptions) {
             cache,
             events,
             featureFlags,
+            inviteAccept,
+            inviteCreate,
+            inviteReject,
+            inviteResend,
+            inviteRemove,
             itemsRequest,
             itemCreation,
             itemEdit,
@@ -56,6 +72,11 @@ export function* workerRootSaga(options: WorkerRootSagaOptions) {
             itemUsed,
             notification,
             reportProblem,
+            request,
+            shareAccessOptions,
+            shareEditRole,
+            shareLeave,
+            shareManagePermission,
             sessionLockDisable,
             sessionLockEnable,
             sessionLockImmediate,
@@ -68,6 +89,7 @@ export function* workerRootSaga(options: WorkerRootSagaOptions) {
             vaultEdit,
             vaultDelete,
             vaultSetPrimary,
+            vaultTransferOwner,
             wakeup,
         ].map((saga) => saga(options))
     );

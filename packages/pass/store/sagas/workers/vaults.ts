@@ -2,7 +2,15 @@ import { c } from 'ttag';
 
 import { api } from '@proton/pass/api';
 import { PassCrypto } from '@proton/pass/crypto';
-import type { Share, ShareContent, ShareKeyResponse, ShareType, VaultCreateRequest } from '@proton/pass/types';
+import type { VaultTransferOwnerIntent } from '@proton/pass/types';
+import {
+    type Share,
+    type ShareContent,
+    type ShareKeyResponse,
+    ShareRole,
+    type ShareType,
+    type VaultCreateRequest,
+} from '@proton/pass/types';
 import { decodeVaultContent, encodeVaultContent } from '@proton/pass/utils/protobuf';
 
 import { getShareLatestEventId } from './shares';
@@ -54,6 +62,10 @@ export const createVault = async (data: {
         vaultId: share.vaultId,
         content,
         primary: Boolean(encryptedShare.Primary),
+        shared: false,
+        owner: true,
+        targetMembers: 1,
+        shareRoleId: ShareRole.ADMIN,
         eventId,
     };
 };
@@ -90,6 +102,17 @@ export const editVault = async (
         vaultId: share.vaultId,
         content: decodeVaultContent(share.content),
         primary: Boolean(encryptedShare.Primary),
+        shared: share.shared,
+        owner: share.owner,
+        targetMembers: share.targetMembers,
+        shareRoleId: share.shareRoleId,
         eventId,
     };
 };
+
+export const vaultTransferOwner = async ({ shareId, userShareId }: VaultTransferOwnerIntent) =>
+    api({
+        url: `pass/v1/vault/${shareId}/owner`,
+        method: 'put',
+        data: { NewOwnerShareID: userShareId },
+    });

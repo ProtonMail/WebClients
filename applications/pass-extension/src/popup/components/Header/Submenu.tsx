@@ -15,7 +15,7 @@ export type SubmenuLinkItem = {
     url?: string;
     icon: IconName;
     label: string;
-    actionTab?: () => void;
+    actionTab?: (...args: any[]) => any;
 };
 
 export const Submenu: VFC<{ submenuLabel: string; submenuIcon: IconName; linkItems: SubmenuLinkItem[] }> = ({
@@ -28,7 +28,7 @@ export const Submenu: VFC<{ submenuLabel: string; submenuIcon: IconName; linkIte
             <CollapsibleHeader
                 className="pl-4 pr-2"
                 suffix={
-                    <CollapsibleHeaderIconButton className="p-0" pill>
+                    <CollapsibleHeaderIconButton className="p-0" pill size="small">
                         <Icon name="chevron-down" />
                     </CollapsibleHeaderIconButton>
                 }

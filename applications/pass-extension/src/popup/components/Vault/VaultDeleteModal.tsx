@@ -20,13 +20,14 @@ import { VaultSelectField } from '../Field/VaultSelectField';
 type ConfirmDeleteValues = { name: string; destination: string };
 type Props = {
     vault: MaybeNull<VaultShare>;
-    onSubmit: (destinationShareId: MaybeNull<string>) => void;
-} & Pick<ConfirmationModalProps, 'open' | 'onClose'>;
+    onSubmit: (vault: VaultShare, destinationShareId: MaybeNull<string>) => void;
+} & Pick<ConfirmationModalProps, 'onClose'>;
 
 const FORM_ID = 'vault-confirm-delete';
 const initialValues: ConfirmDeleteValues = { name: '', destination: 'delete' };
 
-export const VaultDeleteModal: VFC<Props> = ({ vault, open, onClose, onSubmit }) => {
+export const VaultDeleteModal: VFC<Props> = ({ vault, onClose, onSubmit }) => {
+    const open = vault !== null;
     const vaultName = vault?.content?.name ?? '';
 
     const validateVaultDelete = ({ name }: ConfirmDeleteValues) => {
@@ -42,7 +43,8 @@ export const VaultDeleteModal: VFC<Props> = ({ vault, open, onClose, onSubmit })
         validateOnMount: true,
         validate: validateVaultDelete,
         onSubmit: ({ destination }) => {
-            onSubmit(destination === 'delete' ? null : destination);
+            if (vault === null) return;
+            onSubmit(vault, destination === 'delete' ? null : destination);
             onClose?.();
         },
     });

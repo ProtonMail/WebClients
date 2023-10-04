@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, ButtonLike } from '@proton/atoms';
 import {
     Collapsible,
     CollapsibleContent,
@@ -13,9 +13,12 @@ import {
     Icon,
 } from '@proton/components';
 import { selectAllTrashedItems, selectAllVaultWithItemsCount, selectShare } from '@proton/pass/store';
-import type { MaybeNull, ShareType, VaultShare } from '@proton/pass/types';
+import { type MaybeNull, ShareRole, type ShareType, type VaultShare } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import type { VaultColor as VaultColorEnum } from '@proton/pass/types/protobuf/vault-v1';
 
+import { useFeatureFlag } from '../../../shared/hooks/useFeatureFlag';
+import { CountLabel } from '../Dropdown/CountLabel';
 import { DropdownMenuButton } from '../Dropdown/DropdownMenuButton';
 import { VaultIcon, type VaultIconName } from '../Vault/VaultIcon';
 
@@ -48,27 +51,59 @@ type VaultItemProps = {
     onSelect: () => void;
     onEdit?: () => void;
     onDelete?: () => void;
+    onInvite?: () => void;
+    onManage?: () => void;
+    onLeave?: () => void;
+    shared?: boolean;
 };
 
-const handleClickEvent = (handler: () => void) => (evt: React.MouseEvent) => {
+const handleClickEvent = (handler?: () => void) => (evt: React.MouseEvent) => {
     evt.preventDefault();
     evt.stopPropagation();
-    handler();
+    handler?.();
 };
 
-export const VaultItem: VFC<VaultItemProps> = ({ share, label, count, selected, onSelect, onDelete, onEdit }) => {
-    const withActions = onEdit || onDelete;
+export const VaultItem: VFC<VaultItemProps> = ({
+    share,
+    label,
+    count,
+    selected,
+    onSelect,
+    onDelete,
+    onEdit,
+    onInvite,
+    onManage,
+    onLeave,
+    shared = false,
+}) => {
+    const withActions = onEdit || onDelete || onInvite || onManage || onLeave;
+    const showSharing = useFeatureFlag(PassFeature.PassSharingV1) && share !== undefined;
 
     return (
         <DropdownMenuButton
             onClick={() => onSelect()}
             isSelected={selected}
-            label={label}
-            extra={`(${count})`}
+            label={<CountLabel label={label} count={count} />}
+            extra={
+                shared && (
+                    <ButtonLike
+                        as="div"
+                        icon
+                        pill
+                        size="small"
+                        color="weak"
+                        onClick={handleClickEvent(onManage)}
+                        shape="ghost"
+                        title={c('Action').t`See members`}
+                    >
+                        <Icon name="users" alt={c('Action').t`See members`} color="var(--text-weak)" />
+                    </ButtonLike>
+                )
+            }
             icon={
                 <VaultIcon
-                    className="flex-item-noshrink mr-2"
-                    size="medium"
+                    className="flex-item-noshrink"
+                    size={16}
                     color={share?.content.display.color}
                     icon={share?.content.display.icon}
                 />
@@ -76,20 +111,55 @@ export const VaultItem: VFC<VaultItemProps> = ({ share, label, count, selected, 
             quickActions={
                 withActions && (
                     <>
-                        {onEdit && (
+                        {onEdit && share?.shareRoleId !== ShareRole.READ && (
                             <DropdownMenuButton
                                 label={c('Action').t`Edit vault`}
                                 icon="pen"
-                                onClick={onEdit ? (evt) => handleClickEvent(onEdit)(evt) : undefined}
+                                onClick={handleClickEvent(onEdit)}
                             />
                         )}
-                        <DropdownMenuButton
-                            disabled={!onDelete}
-                            onClick={onDelete ? handleClickEvent(onDelete) : undefined}
-                            label={c('Action').t`Delete vault`}
-                            icon="trash"
-                            danger
-                        />
+
+                        {showSharing && share.shared && (
+                            <DropdownMenuButton
+                                className="flex flex-align-items-center py-2 px-4"
+                                onClick={handleClickEvent(onManage)}
+                                icon="users"
+                                label={
+                                    share.shareRoleId === ShareRole.ADMIN
+                                        ? c('Action').t`Manage access`
+                                        : c('Action').t`See members`
+                                }
+                            />
+                        )}
+
+                        {showSharing && !share.shared && (
+                            <DropdownMenuButton
+                                className="flex flex-align-items-center py-2 px-4"
+                                onClick={handleClickEvent(onInvite)}
+                                icon="user-plus"
+                                label={c('Action').t`Share`}
+                            />
+                        )}
+
+                        {share?.owner && (
+                            <DropdownMenuButton
+                                disabled={!onDelete}
+                                onClick={handleClickEvent(onDelete)}
+                                label={c('Action').t`Delete vault`}
+                                icon="trash"
+                                danger
+                            />
+                        )}
+
+                        {showSharing && share.shared && !share.owner && (
+                            <DropdownMenuButton
+                                className="flex flex-align-items-center py-2 px-4"
+                                onClick={handleClickEvent(onLeave)}
+                                icon="cross-circle"
+                                label={c('Action').t`Leave vault`}
+                                danger
+                            />
+                        )}
                     </>
                 )
             }
@@ -98,31 +168,30 @@ export const VaultItem: VFC<VaultItemProps> = ({ share, label, count, selected, 
 };
 
 type TrashItemProps = {
-    handleRestoreTrash: () => void;
-    handleEmptyTrash: () => void;
+    handleTrashRestore: () => void;
+    handleTrashEmpty: () => void;
     onSelect: () => void;
     selected: boolean;
 };
-const TrashItem: VFC<TrashItemProps> = ({ onSelect, selected, handleRestoreTrash, handleEmptyTrash }) => {
+const TrashItem: VFC<TrashItemProps> = ({ onSelect, selected, handleTrashRestore, handleTrashEmpty }) => {
     const count = useSelector(selectAllTrashedItems).length;
 
     return (
         <DropdownMenuButton
-            label={getVaultOptionInfo('trash').label}
+            label={<CountLabel label={getVaultOptionInfo('trash').label} count={count} />}
             icon="trash"
-            extra={<span className="color-weak">({count})</span>}
             isSelected={selected}
             onClick={onSelect}
             quickActions={
                 <>
                     <DropdownMenuButton
-                        onClick={handleRestoreTrash}
+                        onClick={handleTrashRestore}
                         label={c('Label').t`Restore all items`}
                         icon="arrow-up-and-left"
                     />
 
                     <DropdownMenuButton
-                        onClick={handleEmptyTrash}
+                        onClick={handleTrashEmpty}
                         label={c('Label').t`Empty trash`}
                         icon="trash-cross"
                         danger
@@ -136,21 +205,27 @@ const TrashItem: VFC<TrashItemProps> = ({ onSelect, selected, handleRestoreTrash
 export const VaultSubmenu: VFC<{
     selectedShareId: MaybeNull<string>;
     inTrash: boolean;
-    handleVaultSelectClick: (shareId: MaybeNull<string>) => void;
-    handleVaultDeleteClick: (vault: VaultShare) => void;
-    handleVaultEditClick: (vault: VaultShare) => void;
-    handleVaultCreateClick: () => void;
-    handleRestoreTrash: () => void;
-    handleEmptyTrash: () => void;
+    handleVaultSelect: (shareId: MaybeNull<string>) => void;
+    handleVaultDelete: (vault: VaultShare) => void;
+    handleVaultEdit: (vault: VaultShare) => void;
+    handleVaultCreate: () => void;
+    handleVaultInvite: (vault: VaultShare) => void;
+    handleVaultManage: (vault: VaultShare) => void;
+    handleVaultLeave: (vault: VaultShare) => void;
+    handleTrashRestore: () => void;
+    handleTrashEmpty: () => void;
 }> = ({
     selectedShareId,
     inTrash,
-    handleVaultSelectClick,
-    handleVaultDeleteClick,
-    handleVaultEditClick,
-    handleVaultCreateClick,
-    handleRestoreTrash,
-    handleEmptyTrash,
+    handleVaultSelect,
+    handleVaultDelete,
+    handleVaultEdit,
+    handleVaultCreate,
+    handleVaultInvite,
+    handleVaultManage,
+    handleVaultLeave,
+    handleTrashRestore,
+    handleTrashEmpty,
 }) => {
     const history = useHistory();
     const vaults = useSelector(selectAllVaultWithItemsCount);
@@ -160,7 +235,7 @@ export const VaultSubmenu: VFC<{
 
     const handleSelect = (vault: VaultOption) => {
         const { id, path } = getVaultOptionInfo(vault);
-        handleVaultSelectClick(id);
+        handleVaultSelect(id);
         history.push(path);
     };
 
@@ -171,15 +246,15 @@ export const VaultSubmenu: VFC<{
             <CollapsibleHeader
                 className="pl-4 pr-2"
                 suffix={
-                    <CollapsibleHeaderIconButton className="p-0" pill>
+                    <CollapsibleHeaderIconButton className="p-0" pill size="small">
                         <Icon name="chevron-down" />
                     </CollapsibleHeaderIconButton>
                 }
             >
-                <span className="flex flex-align-items-center flex-nowrap gap-1">
+                <span className="flex flex-align-items-center flex-nowrap gap-2">
                     <VaultIcon
-                        className="mr-2"
-                        size="medium"
+                        className="flex-item-noshrink"
+                        size={16}
                         color={selectedVaultOption?.color}
                         icon={selectedVaultOption?.icon}
                     />
@@ -206,21 +281,25 @@ export const VaultSubmenu: VFC<{
                             label={vault.content.name}
                             selected={!inTrash && selectedShareId === vault.shareId}
                             onSelect={() => handleSelect(vault)}
-                            onDelete={!isPrimary ? () => handleVaultDeleteClick(vault) : undefined}
-                            onEdit={() => handleVaultEditClick(vault)}
+                            onDelete={!isPrimary ? () => handleVaultDelete(vault) : undefined}
+                            onEdit={() => handleVaultEdit(vault)}
+                            onInvite={() => handleVaultInvite(vault)}
+                            onManage={() => handleVaultManage(vault)}
+                            onLeave={() => handleVaultLeave(vault)}
+                            shared={vault.shared}
                         />
                     );
                 })}
 
                 <TrashItem
-                    handleRestoreTrash={handleRestoreTrash}
-                    handleEmptyTrash={handleEmptyTrash}
+                    handleTrashRestore={handleTrashRestore}
+                    handleTrashEmpty={handleTrashEmpty}
                     onSelect={() => handleSelect('trash')}
                     selected={inTrash}
                 />
 
                 <div className="px-2 mt-2 mb-4">
-                    <Button className="w100" color="weak" shape="solid" onClick={handleVaultCreateClick}>
+                    <Button className="w100" color="weak" shape="solid" onClick={handleVaultCreate}>
                         {c('Action').t`Create vault`}
                     </Button>
                 </div>

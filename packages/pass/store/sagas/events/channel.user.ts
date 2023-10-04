@@ -2,12 +2,12 @@
 import { all, fork, put, select } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/crypto';
+import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/events/constants';
 import type { UserEvent } from '@proton/pass/types';
 import { type Api } from '@proton/pass/types';
 import { notIn, prop } from '@proton/pass/utils/fp';
 import { logId, logger } from '@proton/pass/utils/logger';
 import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
-import { INTERVAL_EVENT_TIMER } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces';
 
 import type { EventCursor, EventManagerEvent } from '../../../events/manager';
@@ -67,7 +67,7 @@ function* onUserEvent(
 export const createUserChannel = (api: Api, eventID: string) =>
     eventChannelFactory<UserEvent>({
         api,
-        interval: INTERVAL_EVENT_TIMER,
+        interval: ACTIVE_POLLING_TIMEOUT,
         initialEventID: eventID,
         query: getEvents,
         getCursor: ({ EventID, More }) => ({ EventID, More: Boolean(More) }),
