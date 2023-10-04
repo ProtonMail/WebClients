@@ -9,12 +9,12 @@ import {
     componentWrapper as _componentWrapper,
     apiMock,
     hookWrapper,
-    subscriptionMock,
     withApi,
     withConfig,
     withEventManager,
     withNotifications,
 } from '@proton/testing';
+import { subscriptionMock } from '@proton/testing/data';
 
 import { useCancelSubscriptionFlow } from './useCancelSubscriptionFlow';
 

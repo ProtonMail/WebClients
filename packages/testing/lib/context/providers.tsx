@@ -13,10 +13,10 @@ import NotificationsProvider from '@proton/components/containers/notifications/P
 import { CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { ProtonConfig } from '@proton/shared/lib/interfaces';
 
-import { apiMock } from './api';
-import { mockCache } from './cache';
-import { mockEventManager } from './event-manager';
-import { mockModals } from './mockModals';
+import { apiMock } from '../api';
+import { mockCache } from '../cache';
+import { mockEventManager } from '../event-manager';
+import { mockModals } from '../mockModals';
 
 export const withNotifications =
     () =>

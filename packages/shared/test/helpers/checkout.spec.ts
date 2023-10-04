@@ -1,6 +1,6 @@
 import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { getCheckout, getUsersAndAddons } from '@proton/shared/lib/helpers/checkout';
-import { PLANS_MAP } from '@proton/testing/lib/payments';
+import { PLANS_MAP } from '@proton/testing/data';
 
 import { Plan } from '../../lib/interfaces';
 
