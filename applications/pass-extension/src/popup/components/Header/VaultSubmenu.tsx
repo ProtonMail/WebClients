@@ -84,7 +84,16 @@ export const VaultItem: VFC<VaultItemProps> = ({
             onClick={() => onSelect()}
             isSelected={selected}
             label={<CountLabel label={label} count={count} />}
-            extra={shared && <Icon name="users" color="var(--text-weak)" />}
+            extra={
+                shared && (
+                    <Icon
+                        onClick={handleClickEvent(onManage)}
+                        name="users"
+                        alt={c('Action').t`See members`}
+                        color="var(--text-weak)"
+                    />
+                )
+            }
             icon={
                 <VaultIcon
                     className="flex-item-noshrink"
