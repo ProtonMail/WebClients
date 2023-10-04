@@ -9,6 +9,8 @@ import { ACTIVE_POLLING_TIMEOUT } from './constants';
 export type EventManagerEvent<T extends {}> = T | { error: unknown };
 export type EventCursor = { EventID: string; More: boolean };
 
+export const NOOP_EVENT = '*';
+
 export type EventManagerConfig<T extends {}> = {
     api: Api /* Function to call the API */;
     interval?: number /* Maximum interval time to wait between each call */;

@@ -5,13 +5,16 @@ export enum ShareType {
     Item = 2,
 }
 
+export enum ShareRole {
+    ADMIN = '1',
+    WRITE = '2',
+    READ = '3',
+}
+
 export type VaultShareContent = {
     name: string;
     description: string;
-    display: {
-        icon?: VaultIcon;
-        color?: VaultColor;
-    };
+    display: { icon?: VaultIcon; color?: VaultColor };
 };
 
 export type ItemShareContent = {};
@@ -26,12 +29,15 @@ export type ShareBase<T extends ShareType = ShareType> = {
     shareId: string;
     vaultId: string;
     targetId: string;
-    targetType: number;
+    targetType: T;
     content: ShareContent<T>;
     primary: boolean;
+    shared: boolean;
+    owner: boolean;
+    targetMembers: number;
+    shareRoleId: ShareRole;
 };
 
 export type WithEventId<T> = T & { eventId: string };
-
 export type Share<T extends ShareType = ShareType> = WithEventId<ShareBase<T>>;
 export type VaultShare = Share<ShareType.Vault>;

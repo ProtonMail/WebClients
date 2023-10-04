@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Option } from '@proton/components';
 import { selectAllVaults, selectPrimaryVault, selectVaultLimits } from '@proton/pass/store';
-import type { Maybe } from '@proton/pass/types';
+import { type Maybe, ShareRole } from '@proton/pass/types';
 import type { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
 import { notIn } from '@proton/pass/utils/fp';
 
@@ -27,7 +27,7 @@ export const VaultSelectField: VFC<VaultSelectFieldProps> = ({
     placeholder,
     ...props
 }) => {
-    const vaults = useSelector(selectAllVaults);
+    const vaults = useSelector(selectAllVaults).filter((vault) => vault.shareRoleId !== ShareRole.READ);
     const primaryVaultId = useSelector(selectPrimaryVault).shareId;
     const { didDowngrade } = useSelector(selectVaultLimits);
 
@@ -47,7 +47,7 @@ export const VaultSelectField: VFC<VaultSelectFieldProps> = ({
     return (
         <SelectField
             {...props}
-            icon={<VaultIcon icon={selectedVault?.icon} color={selectedVault?.color} size="large" />}
+            icon={<VaultIcon icon={selectedVault?.icon} color={selectedVault?.color} size={20} background />}
             renderSelected={() =>
                 selectedVault?.title ?? (
                     <span className="color-weak">{placeholder ?? c('Placeholder').t`Pick a vault`}</span>
@@ -66,7 +66,7 @@ export const VaultSelectField: VFC<VaultSelectFieldProps> = ({
                         disabled={didDowngrade && shareId !== primaryVaultId}
                     >
                         <div className="flex gap-x-3 flex-align-items-center">
-                            <VaultIcon icon={content.display.icon} color={content.display.color} size="medium" />
+                            <VaultIcon icon={content.display.icon} color={content.display.color} size={16} />
                             <span className="flex-item-fluid text-ellipsis">{content.name}</span>
                         </div>
                     </Option>
@@ -75,7 +75,7 @@ export const VaultSelectField: VFC<VaultSelectFieldProps> = ({
                     ...extraOptions.map(({ value, title, icon, color }) => (
                         <Option key={value} value={value} title={title}>
                             <div className="flex gap-x-3 flex-align-items-center">
-                                <VaultIcon icon={icon} size="medium" color={color} />
+                                <VaultIcon icon={icon} size={16} color={color} />
                                 <span className="flex-item-fluid text-ellipsis">{title}</span>
                             </div>
                         </Option>

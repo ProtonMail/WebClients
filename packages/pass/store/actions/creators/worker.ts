@@ -13,6 +13,9 @@ import withNotification from '../with-notification';
 import { type EndpointOptions, withReceiver } from '../with-receiver';
 import withRequest from '../with-request';
 
+export const startEventPolling = createAction('events::polling::start');
+export const stopEventPolling = createAction('events::polling::stop');
+
 /**
  * do not cast payload::cache to type `State`
  * in order to avoid circular type refs

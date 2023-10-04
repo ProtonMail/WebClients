@@ -1,17 +1,25 @@
 /* eslint-disable @typescript-eslint/no-throw-literal, curly */
 import { all, fork, put, select, takeEvery } from 'redux-saga/effects';
 
-import type { Api, Maybe, Share, SharesGetResponse } from '@proton/pass/types';
+import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/events/constants';
+import type { Api, Maybe, Share, ShareRole, SharesGetResponse } from '@proton/pass/types';
 import { ShareType } from '@proton/pass/types';
 import { prop, truthy } from '@proton/pass/utils/fp';
 import { diadic } from '@proton/pass/utils/fp/variadics';
 import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object/merge';
-import { INTERVAL_EVENT_TIMER } from '@proton/shared/lib/constants';
+import { hasShareAccessChanged } from '@proton/pass/utils/pass/share';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
-import type { EventManagerEvent } from '../../../events/manager';
-import { sharesSync, vaultCreationSuccess, vaultSetPrimarySync } from '../../actions';
+import { type EventManagerEvent, NOOP_EVENT } from '../../../events/manager';
+import {
+    getShareAccessOptionsIntent,
+    shareAccessChange,
+    sharesSync,
+    vaultCreationSuccess,
+    vaultSetPrimarySync,
+} from '../../actions';
+import { shareAccessOptionsRequest } from '../../actions/requests';
 import type { ItemsByShareId } from '../../reducers';
 import { selectAllShares } from '../../selectors';
 import type { WorkerRootSagaOptions } from '../../types';
@@ -39,6 +47,7 @@ function* onSharesEvent(
 
     const remoteShares = event.Shares;
     const remotePrimaryShareId = remoteShares.find(prop('Primary'))?.ShareID;
+
     const newShares = remoteShares.filter((share) => !localShareIds.includes(share.ShareID));
     logger.info(`[Saga::SharesChannel]`, `${newShares.length} remote share(s) not in cache`);
 
@@ -68,9 +77,28 @@ function* onSharesEvent(
     if (remotePrimaryShareId && localPrimaryShareId !== remotePrimaryShareId) {
         yield put(vaultSetPrimarySync({ id: remotePrimaryShareId }));
     }
-}
 
-const NOOP_EVENT = '*';
+    yield fork(function* () {
+        for (const share of remoteShares) {
+            const shareId = share.ShareID;
+            const localShare = localShares.find((localShare) => localShare.shareId === shareId);
+
+            if (localShare && hasShareAccessChanged(localShare, share)) {
+                yield put(
+                    shareAccessChange({
+                        shareId,
+                        owner: share.Owner,
+                        shared: share.Shared,
+                        shareRoleId: share.ShareRoleID as ShareRole,
+                        targetMembers: share.TargetMembers,
+                    })
+                );
+
+                yield put(getShareAccessOptionsIntent(shareAccessOptionsRequest(share.ShareID), share.ShareID));
+            }
+        }
+    });
+}
 
 /* The event-manager can be used to implement
  * a polling mechanism if we conform to the data
@@ -80,7 +108,7 @@ const NOOP_EVENT = '*';
 export const createSharesChannel = (api: Api) =>
     eventChannelFactory<SharesGetResponse>({
         api,
-        interval: INTERVAL_EVENT_TIMER,
+        interval: ACTIVE_POLLING_TIMEOUT,
         initialEventID: NOOP_EVENT,
         getCursor: () => ({ EventID: NOOP_EVENT, More: false }),
         onClose: () => logger.info(`[Saga::SharesChannel] closing channel`),

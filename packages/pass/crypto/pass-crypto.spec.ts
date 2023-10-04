@@ -200,6 +200,9 @@ describe('PassCrypto', () => {
                 ExpireTime: 0,
                 CreateTime: 0,
                 Primary: false,
+                Owner: true,
+                TargetMembers: 0,
+                Shared: false,
             };
 
             /* register the share */
@@ -254,6 +257,9 @@ describe('PassCrypto', () => {
                 ExpireTime: 0,
                 CreateTime: 0,
                 Primary: false,
+                Owner: true,
+                TargetMembers: 0,
+                Shared: false,
             };
 
             const share = await PassCrypto.openShare({ encryptedShare, shareKeys: [shareKey] });
@@ -308,6 +314,9 @@ describe('PassCrypto', () => {
                 ExpireTime: 0,
                 CreateTime: 0,
                 Primary: false,
+                Owner: true,
+                TargetMembers: 0,
+                Shared: false,
             };
 
             await expect(PassCrypto.openShare({ encryptedShare, shareKeys: [] })).rejects.toThrow(
@@ -341,6 +350,9 @@ describe('PassCrypto', () => {
                 ExpireTime: 0,
                 CreateTime: 0,
                 Primary: false,
+                Owner: true,
+                TargetMembers: 0,
+                Shared: false,
             };
 
             await expect(PassCrypto.openShare({ encryptedShare, shareKeys: [shareKey] })).rejects.toThrow(
@@ -373,6 +385,9 @@ describe('PassCrypto', () => {
                 ExpireTime: 0,
                 CreateTime: 0,
                 Primary: false,
+                Owner: true,
+                TargetMembers: 0,
+                Shared: false,
             };
 
             expect(await PassCrypto.openShare({ encryptedShare, shareKeys: [shareKey] })).toEqual(null);

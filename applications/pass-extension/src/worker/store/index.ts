@@ -19,6 +19,7 @@ import { logger } from '@proton/pass/utils/logger';
 
 import { isPopupPort } from '../../shared/extension/port';
 import { getExtensionVersion } from '../../shared/extension/version';
+import { requestMiddleware } from '../../shared/store/request-middleware';
 import WorkerMessageBroker from '../channel';
 import { withContext } from '../context';
 import { workerMiddleware } from './worker.middleware';
@@ -27,7 +28,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
     reducer,
-    middleware: [workerMiddleware, sagaMiddleware],
+    middleware: [requestMiddleware, workerMiddleware, sagaMiddleware],
     enhancers:
         ENV === 'development'
             ? [

@@ -3,7 +3,7 @@ import { put, takeEvery } from 'redux-saga/effects';
 import type { ShareType } from '@proton/pass/types';
 import { type Share } from '@proton/pass/types';
 
-import { acknowledgeRequest, vaultCreationFailure, vaultCreationIntent, vaultCreationSuccess } from '../actions';
+import { vaultCreationFailure, vaultCreationIntent, vaultCreationSuccess } from '../actions';
 import { createVault } from './workers/vaults';
 
 function* createVaultWorker({ payload, meta }: ReturnType<typeof vaultCreationIntent>) {
@@ -20,8 +20,6 @@ function* createVaultWorker({ payload, meta }: ReturnType<typeof vaultCreationIn
         yield put(vaultCreationFailureAction);
 
         onCreateVaultProcessed?.(vaultCreationFailureAction);
-    } finally {
-        yield put(acknowledgeRequest(meta.request.id));
     }
 }
 
