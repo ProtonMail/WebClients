@@ -20,7 +20,7 @@ type Props = {
     photo: PhotoLink;
     onRender: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
     style: CSSProperties;
-    onClick: (photo: PhotoLink) => void;
+    onClick: () => void;
 };
 
 const getAltText = ({ mimeType, name }: PhotoLink) =>
@@ -56,7 +56,7 @@ export const PhotosCard: FC<Props> = ({ style, onRender, photo, onClick }) => {
             style={style}
             disabled={isThumbnailLoading}
             className={clsx('photos-card p-0 border-none rounded-none', isThumbnailLoading && 'photos-card--loading')}
-            onClick={() => onClick(photo)}
+            onClick={onClick}
         >
             {!isThumbnailLoading && !photo.hasThumbnail && isActive && (
                 <div className="flex flex-align-items-center flex-justify-center w100 h100 photos-card-thumbnail photos-card-thumbnail--empty">
