@@ -1,5 +1,6 @@
 import { fireEvent, render, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { wait } from '@testing-library/user-event/dist/utils';
 
 import { PAYMENT_TOKEN_STATUS } from '@proton/components/payments/core';
 import { buyCredit, createToken } from '@proton/shared/lib/api/payments';
@@ -232,6 +233,55 @@ it('should create payment token and then buy credits with it', async () => {
     });
 });
 
+it('should create payment token and then buy credits with it - custom amount', async () => {
+    const onClose = jest.fn();
+    const { findByTestId, queryByTestId } = render(<ContextCreditsModal open={true} onClose={onClose} />);
+    await waitFor(() => {});
+
+    const otherAmountInput = queryByTestId('other-amount') as HTMLInputElement;
+    userEvent.type(otherAmountInput, '123');
+
+    const ccname = queryByTestId('ccname') as HTMLInputElement;
+    const ccnumber = queryByTestId('ccnumber') as HTMLInputElement;
+    const exp = queryByTestId('exp') as HTMLInputElement;
+    const cvc = queryByTestId('cvc') as HTMLInputElement;
+    const postalCode = queryByTestId('postalCode') as HTMLInputElement;
+
+    userEvent.type(ccname, 'Arthur Morgan');
+    userEvent.type(ccnumber, '4242424242424242');
+    userEvent.type(exp, '1232');
+    userEvent.type(cvc, '123');
+    userEvent.type(postalCode, '11111');
+
+    await wait(500);
+    const topUpButton = await findByTestId('top-up-button');
+    fireEvent.click(topUpButton);
+
+    await waitFor(() => {
+        expect(buyCreditMock).toHaveBeenCalled();
+
+        expect(buyCreditMock).toHaveBeenCalledWith(
+            expect.objectContaining({
+                data: expect.objectContaining({
+                    Payment: expect.objectContaining({
+                        Type: 'token',
+                        Details: expect.objectContaining({
+                            Token: 'payment-token-123',
+                        }),
+                    }),
+                    Amount: 12300,
+                    Currency: 'EUR',
+                }),
+                method: 'post',
+                url: buyCreditUrl,
+            })
+        );
+
+        expect(mockEventManager.call).toHaveBeenCalled();
+        expect(onClose).toHaveBeenCalled();
+    });
+});
+
 it('should create payment token for paypal and then buy credits with it', async () => {
     const onClose = jest.fn();
     const { container, queryByTestId } = render(<ContextCreditsModal open={true} onClose={onClose} />);
@@ -267,6 +317,85 @@ it('should create payment token for paypal and then buy credits with it', async 
         expect(mockEventManager.call).toHaveBeenCalled();
         expect(onClose).toHaveBeenCalled();
     });
+});
+
+it('should create payment token for paypal and then buy credits with it - custom amount', async () => {
+    const onClose = jest.fn();
+    const { container, queryByTestId } = render(<ContextCreditsModal open={true} onClose={onClose} />);
+    await waitFor(() => {
+        selectMethod(container, 'PayPal');
+    });
+
+    const otherAmountInput = queryByTestId('other-amount') as HTMLInputElement;
+    userEvent.type(otherAmountInput, '123');
+
+    await wait(1000);
+    const paypalButton = queryByTestId('paypal-button') as HTMLButtonElement;
+    fireEvent.click(paypalButton);
+
+    await waitFor(() => {
+        expect(buyCreditMock).toHaveBeenCalled();
+
+        expect(buyCreditMock).toHaveBeenCalledWith(
+            expect.objectContaining({
+                data: expect.objectContaining({
+                    Payment: expect.objectContaining({
+                        Type: 'token',
+                        Details: expect.objectContaining({
+                            Token: 'paypal-payment-token-123',
+                        }),
+                    }),
+                    Amount: 12300,
+                    Currency: 'EUR',
+                    type: 'paypal',
+                }),
+                method: 'post',
+                url: buyCreditUrl,
+            })
+        );
+
+        expect(mockEventManager.call).toHaveBeenCalled();
+        expect(onClose).toHaveBeenCalled();
+    });
+});
+
+it('should disable paypal button while the amount is debouncing', async () => {
+    const onClose = jest.fn();
+    const { container, queryByTestId } = render(<ContextCreditsModal open={true} onClose={onClose} />);
+    await waitFor(() => {
+        selectMethod(container, 'PayPal');
+    });
+
+    const otherAmountInput = queryByTestId('other-amount') as HTMLInputElement;
+    userEvent.type(otherAmountInput, '123');
+    expect(queryByTestId('paypal-button')).toBeDisabled();
+    expect(queryByTestId('paypal-credit-button')).toBeDisabled();
+
+    await wait(1000);
+    expect(queryByTestId('paypal-button')).not.toBeDisabled();
+    expect(queryByTestId('paypal-credit-button')).not.toBeDisabled();
+});
+
+it('should disable paypal button if the amount is too high', async () => {
+    const onClose = jest.fn();
+    const { container, queryByTestId } = render(<ContextCreditsModal open={true} onClose={onClose} />);
+    await waitFor(() => {
+        selectMethod(container, 'PayPal');
+    });
+
+    const otherAmountInput = queryByTestId('other-amount') as HTMLInputElement;
+    userEvent.type(otherAmountInput, '40001');
+
+    await wait(1000);
+    expect(queryByTestId('paypal-button')).toBeDisabled();
+    expect(queryByTestId('paypal-credit-button')).toBeDisabled();
+
+    userEvent.clear(otherAmountInput);
+    userEvent.type(otherAmountInput, '40000');
+    await wait(1000);
+
+    expect(queryByTestId('paypal-button')).not.toBeDisabled();
+    expect(queryByTestId('paypal-credit-button')).not.toBeDisabled();
 });
 
 it('should create payment token for paypal-credit and then buy credits with it', async () => {
