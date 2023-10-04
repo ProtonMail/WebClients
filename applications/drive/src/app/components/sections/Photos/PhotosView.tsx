@@ -1,13 +1,13 @@
-import React, { FC, useCallback } from 'react';
+import React, { FC, useCallback, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useAppTitle } from '@proton/components';
+import { NavigationControl, useAppTitle } from '@proton/components';
 import { Loader } from '@proton/components/components';
 
 import { PhotoLink, useThumbnailsDownload } from '../../../store';
 import { usePhotosView } from '../../../store/_views/usePhotosView';
-import { usePortalPreview } from '../../PortalPreview';
+import PortalPreview from '../../PortalPreview';
 import { useDetailsModal } from '../../modals/DetailsModal';
 import UploadDragDrop from '../../uploads/UploadDragDrop/UploadDragDrop';
 import ToolbarRow from '../ToolbarRow/ToolbarRow';
@@ -20,8 +20,8 @@ export const PhotosView: FC<void> = () => {
 
     const { shareId, linkId, photos, isLoading, isLoadingMore } = usePhotosView();
 
-    const [portalPreview, showPortalPreview] = usePortalPreview();
     const [detailsModal, showDetailsModal] = useDetailsModal();
+    const [previewIndex, setPreviewIndex] = useState<number>(-1);
 
     const isEmpty = photos.length === 0;
     const thumbnails = useThumbnailsDownload();
@@ -34,25 +34,17 @@ export const PhotosView: FC<void> = () => {
         },
         [shareId]
     );
-
-    const handleItemClick = useCallback(
-        (photo: PhotoLink) =>
-            shareId &&
-            photo.activeRevision?.id &&
-            photo.activeRevision?.photo &&
-            showPortalPreview({
-                shareId,
-                linkId: photo.activeRevision.photo.linkId,
-                revisionId: photo.activeRevision.id,
-                date: photo.activeRevision.photo.captureTime,
-                onDetails: () =>
-                    showDetailsModal({
-                        shareId,
-                        linkId: photo.activeRevision.photo.linkId,
-                    }),
-            }),
-        [showPortalPreview, showDetailsModal]
+    const gridPhotoLinkIndices: number[] = useMemo(
+        () =>
+            photos.reduce<number[]>((previousValue, currentValue, currentIndex) => {
+                if (typeof currentValue !== 'string') {
+                    previousValue.push(currentIndex);
+                }
+                return previousValue;
+            }, []),
+        [photos]
     );
+    const rootRef = useRef<HTMLDivElement>(null);
 
     if (isLoading && !isLoadingMore) {
         return <Loader />;
@@ -62,10 +54,40 @@ export const PhotosView: FC<void> = () => {
         return <PhotosEmptyView />;
     }
 
+    const selectedItem = photos[gridPhotoLinkIndices[previewIndex]] as PhotoLink;
+
     return (
         <>
-            {portalPreview}
             {detailsModal}
+            {selectedItem && (
+                <PortalPreview
+                    ref={rootRef}
+                    shareId={shareId}
+                    linkId={selectedItem.linkId}
+                    revisionId={selectedItem.activeRevision.id}
+                    key="portal-preview-photos"
+                    open={previewIndex !== -1}
+                    date={selectedItem.activeRevision.photo?.captureTime}
+                    onDetails={() =>
+                        selectedItem.activeRevision?.photo?.linkId &&
+                        showDetailsModal({
+                            shareId,
+                            linkId: selectedItem.activeRevision?.photo?.linkId,
+                        })
+                    }
+                    navigationControls={
+                        <NavigationControl
+                            current={previewIndex + 1}
+                            total={gridPhotoLinkIndices.length}
+                            rootRef={rootRef}
+                            onPrev={() => setPreviewIndex(previewIndex - 1)}
+                            onNext={() => setPreviewIndex(previewIndex + 1)}
+                        />
+                    }
+                    onClose={() => setPreviewIndex(-1)}
+                    onExit={() => setPreviewIndex(-1)}
+                />
+            )}
 
             <UploadDragDrop
                 isForPhotos
@@ -85,7 +107,7 @@ export const PhotosView: FC<void> = () => {
                         data={photos}
                         onItemRender={handleItemRender}
                         isLoadingMore={isLoadingMore}
-                        onItemClick={handleItemClick}
+                        onItemClick={setPreviewIndex}
                     />
                 )}
             </UploadDragDrop>

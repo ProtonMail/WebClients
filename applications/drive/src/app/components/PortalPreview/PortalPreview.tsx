@@ -1,3 +1,5 @@
+import { ReactNode, Ref, forwardRef } from 'react';
+
 import { c } from 'ttag';
 
 import { ModalStateProps, useModalTwo } from '@proton/components/components';
@@ -9,22 +11,28 @@ import { useFileView } from '../../store';
 interface Props {
     shareId: string;
     linkId: string;
-    revisionId: string;
+    revisionId?: string;
     date?: Date | string | number;
     onDetails?: () => void;
     onRestore?: () => void;
     className?: string;
+    navigationControls?: ReactNode;
 }
-const PortalPreview = ({
-    shareId,
-    linkId,
-    revisionId,
-    onDetails,
-    onRestore,
-    date,
-    className,
-    ...modalProps
-}: Props & ModalStateProps) => {
+
+const PortalPreview = (
+    {
+        shareId,
+        linkId,
+        revisionId,
+        onDetails,
+        onRestore,
+        date,
+        className,
+        navigationControls,
+        ...modalProps
+    }: Props & ModalStateProps,
+    ref: Ref<HTMLDivElement>
+) => {
     const { contents, contentsMimeType, link, error, isLinkLoading, isContentLoading, downloadFile } = useFileView(
         shareId,
         linkId,
@@ -51,17 +59,19 @@ const PortalPreview = ({
                         modalProps.onClose();
                         modalProps.onExit();
                     }}
+                    ref={ref}
                     onDownload={downloadFile}
                     onDetails={onDetails}
                     onRestore={onRestore}
                     date={date}
+                    navigationControls={navigationControls}
                 />
             </div>
         </Portal>
     );
 };
 
-export default PortalPreview;
+export default forwardRef(PortalPreview);
 
 export const usePortalPreview = () => {
     return useModalTwo<Props, void>(PortalPreview, false);
