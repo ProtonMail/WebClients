@@ -528,6 +528,7 @@ export enum CALENDAR_UPSELL_PATHS {
     MULTI_CAL = 'multi-cal',
     SHARE_CAL = 'share-cal',
     MAX_CAL = 'max-cal',
+    COLOR_PER_EVENT = 'color-per-event',
 }
 
 export enum DRIVE_UPSELL_PATHS {
