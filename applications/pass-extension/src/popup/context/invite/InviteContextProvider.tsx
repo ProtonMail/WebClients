@@ -5,6 +5,7 @@ import type { MaybeNull } from '@proton/pass/types';
 import type { Invite } from '@proton/pass/types/data/invites';
 import noop from '@proton/utils/noop';
 
+import { useShareEventEffect } from '../../../shared/hooks';
 import { VaultInviteCreate } from '../../components/Invite/VaultInviteCreate';
 import { VaultInviteManager } from '../../components/Invite/VaultInviteManager';
 import { VaultInviteRespond } from '../../components/Invite/VaultInviteRespond';
@@ -33,6 +34,22 @@ export const InviteContextProvider: FC = ({ children }) => {
     const [shareId, setShareId] = useState<MaybeNull<string>>(null);
     const [view, setView] = useState<MaybeNull<InviteView>>(null);
     const [invite, setInvite] = useState<MaybeNull<Invite>>(null);
+
+    useShareEventEffect(
+        useMemo(
+            () => ({
+                listen: shareId !== null,
+                onShareDisabled: (disabledShareId) => {
+                    if (disabledShareId === shareId) {
+                        setShareId(null);
+                        setInvite(null);
+                        setView(null);
+                    }
+                },
+            }),
+            [shareId]
+        )
+    );
 
     const createInvite = useCallback(async (shareId: string) => {
         setShareId(shareId);
