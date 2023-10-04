@@ -277,6 +277,7 @@ export interface VcalVeventComponent {
     'x-pm-shared-event-id'?: VcalStringProperty;
     'x-yahoo-yid'?: VcalStringProperty;
     'x-yahoo-user-status'?: VcalStringProperty;
+    color?: VcalStringProperty;
 }
 
 export type VcalComponentKeys = keyof VcalVeventComponent;

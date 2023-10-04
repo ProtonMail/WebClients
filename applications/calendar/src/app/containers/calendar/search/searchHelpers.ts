@@ -240,6 +240,7 @@ export const getCalendarViewEventWithMetadata = (item: VisualSearchItem): Calend
                 'IsOrganizer',
                 'IsProtonProtonInvite',
                 'Author',
+                'Color',
             ]),
         },
     };

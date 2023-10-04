@@ -10,6 +10,7 @@ enum MailFeatureFlag {
 }
 
 enum CommonFeatureFlag {
+    ColorPerEventWeb = 'ColorPerEventWeb',
     DisableElectronMail = 'DisableElectronMail',
     SignedInAccountRecovery = 'SignedInAccountRecovery',
     KeyTransparencyShowUI = 'KeyTransparencyShowUI',

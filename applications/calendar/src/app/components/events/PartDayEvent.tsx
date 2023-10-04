@@ -1,6 +1,6 @@
 import { CSSProperties, ComponentPropsWithoutRef, ReactNode, Ref, forwardRef, useMemo } from 'react';
 
-import { Icon } from '@proton/components';
+import { Icon, useUser } from '@proton/components';
 import { MINUTE } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -86,15 +86,20 @@ const PartDayEvent = ({
     tzid,
     eventPartDuration,
 }: Props) => {
+    const [{ hasPaidMail }] = useUser();
     const { start, end, data: targetEventData } = event;
     const model = useReadEvent(targetEventData.eventReadResult?.result, tzid);
 
-    const { isEventReadLoading, calendarColor, eventReadError, eventTitleSafe } = getEventInformation(event, model);
+    const { isEventReadLoading, color, eventReadError, eventTitleSafe } = getEventInformation(
+        event,
+        model,
+        hasPaidMail
+    );
     const { isUnanswered, isCancelled } = getEventStatusTraits(model);
 
     const eventStyle = useMemo(() => {
-        return getEventStyle(calendarColor, style);
-    }, [calendarColor, style]);
+        return getEventStyle(color, style);
+    }, [color, style]);
 
     const titleString = (() => {
         if (eventReadError) {

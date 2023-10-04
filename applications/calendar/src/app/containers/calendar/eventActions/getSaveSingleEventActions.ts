@@ -40,7 +40,7 @@ interface SaveEventHelperArguments {
     newEditEventData: EventNewData;
     hasDefaultNotifications: boolean;
     selfAddress?: Address;
-    canEditOnlyNotifications: boolean;
+    canEditOnlyPersonalPart: boolean;
     isAttendee: boolean;
     inviteActions: InviteActions;
     onSaveConfirmation: OnSaveConfirmationCb;
@@ -69,7 +69,7 @@ const getSaveSingleEventActions = async ({
     },
     hasDefaultNotifications,
     selfAddress,
-    canEditOnlyNotifications,
+    canEditOnlyPersonalPart,
     isAttendee,
     inviteActions,
     getCalendarKeys,
@@ -184,7 +184,7 @@ const getSaveSingleEventActions = async ({
             });
         }
 
-        if (canEditOnlyNotifications) {
+        if (canEditOnlyPersonalPart) {
             // We change notifications through the updatePersonalPart route
             return getUpdatePersonalPartActions({
                 eventComponent: newVeventComponent,
@@ -213,7 +213,7 @@ const getSaveSingleEventActions = async ({
                 type: SAVE_CONFIRMATION_TYPES.SINGLE,
                 inviteActions,
                 isAttendee: false,
-                canEditOnlyNotifications: false,
+                canEditOnlyPersonalPart: false,
             });
             const {
                 veventComponent: cleanVeventComponent,
@@ -275,7 +275,7 @@ const getSaveSingleEventActions = async ({
             type: SAVE_CONFIRMATION_TYPES.SINGLE,
             inviteActions,
             isAttendee: false,
-            canEditOnlyNotifications: false,
+            canEditOnlyPersonalPart: false,
         });
         const { inviteActions: cleanInviteActions, vevent: cleanVevent } = await onSendPrefsErrors({
             inviteActions,

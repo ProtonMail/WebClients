@@ -24,6 +24,7 @@ interface FormatDataArguments {
     removedAttendeesEmails?: string[];
     attendeesEncryptedSessionKeysMap?: SimpleMap<Uint8Array>;
     notificationsPart?: CalendarNotificationSettings[];
+    colorPart?: string;
 }
 export const formatData = ({
     sharedSignedPart,
@@ -33,6 +34,7 @@ export const formatData = ({
     calendarEncryptedPart,
     calendarSessionKey,
     notificationsPart,
+    colorPart,
     attendeesEncryptedPart,
     attendeesClearPart,
     removedAttendeesEmails,
@@ -40,6 +42,7 @@ export const formatData = ({
 }: FormatDataArguments) => {
     const result: Omit<CreateOrUpdateCalendarEventData, 'Permissions'> = {
         Notifications: notificationsPart || null,
+        Color: colorPart || null,
     };
 
     if (sharedSessionKey) {

@@ -23,8 +23,7 @@ import {
     YEARLY_TYPE,
 } from '@proton/shared/lib/calendar/constants';
 import { stripAllTags } from '@proton/shared/lib/calendar/sanitize';
-
-import {getIsAllDay, getRecurrenceId} from '@proton/shared/lib/calendar/veventHelper';
+import { getIsAllDay, getRecurrenceId } from '@proton/shared/lib/calendar/veventHelper';
 import { fromLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 import { Address, RequireOnly, Address as tsAddress } from '@proton/shared/lib/interfaces';
 import {
@@ -276,6 +275,7 @@ interface GetExistingEventArguments {
     tzid: string;
     selfAddressData: SelfAddressData;
     calendarSettings: CalendarSettings;
+    color?: string;
 }
 
 export const getExistingEvent = ({
@@ -286,6 +286,7 @@ export const getExistingEvent = ({
     tzid,
     selfAddressData,
     calendarSettings,
+    color,
 }: GetExistingEventArguments): RequireOnly<EventModel, 'isAllDay' | 'description'> => {
     const isAllDay = getIsAllDay(veventComponent);
     const recurrenceId = getRecurrenceId(veventComponent);
@@ -297,6 +298,7 @@ export const getExistingEvent = ({
         isAllDay,
         isProtonProtonInvite,
         tzid,
+        color,
     });
     const strippedDescription = stripAllTags(newModel.description);
 
