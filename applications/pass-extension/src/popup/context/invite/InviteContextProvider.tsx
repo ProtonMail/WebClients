@@ -6,8 +6,8 @@ import type { Invite } from '@proton/pass/types/data/invites';
 import noop from '@proton/utils/noop';
 
 import { useShareEventEffect } from '../../../shared/hooks';
+import { VaultAccessManager } from '../../components/Invite/VaultAccessManager';
 import { VaultInviteCreate } from '../../components/Invite/VaultInviteCreate';
-import { VaultInviteManager } from '../../components/Invite/VaultInviteManager';
 import { VaultInviteRespond } from '../../components/Invite/VaultInviteRespond';
 
 export type InviteContextValue = {
@@ -89,7 +89,7 @@ export const InviteContextProvider: FC = ({ children }) => {
                         case 'invite':
                             return <VaultInviteCreate shareId={shareId} />;
                         case 'manage':
-                            return <VaultInviteManager shareId={shareId} />;
+                            return <VaultAccessManager shareId={shareId} />;
                     }
                 })()}
 
