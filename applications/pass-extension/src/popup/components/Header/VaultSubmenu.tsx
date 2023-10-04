@@ -153,12 +153,12 @@ export const VaultItem: VFC<VaultItemProps> = ({
 };
 
 type TrashItemProps = {
-    handleRestoreTrash: () => void;
-    handleEmptyTrash: () => void;
+    handleTrashRestore: () => void;
+    handleTrashEmpty: () => void;
     onSelect: () => void;
     selected: boolean;
 };
-const TrashItem: VFC<TrashItemProps> = ({ onSelect, selected, handleRestoreTrash, handleEmptyTrash }) => {
+const TrashItem: VFC<TrashItemProps> = ({ onSelect, selected, handleTrashRestore, handleTrashEmpty }) => {
     const count = useSelector(selectAllTrashedItems).length;
 
     return (
@@ -170,13 +170,13 @@ const TrashItem: VFC<TrashItemProps> = ({ onSelect, selected, handleRestoreTrash
             quickActions={
                 <>
                     <DropdownMenuButton
-                        onClick={handleRestoreTrash}
+                        onClick={handleTrashRestore}
                         label={c('Label').t`Restore all items`}
                         icon="arrow-up-and-left"
                     />
 
                     <DropdownMenuButton
-                        onClick={handleEmptyTrash}
+                        onClick={handleTrashEmpty}
                         label={c('Label').t`Empty trash`}
                         icon="trash-cross"
                         danger
@@ -190,27 +190,27 @@ const TrashItem: VFC<TrashItemProps> = ({ onSelect, selected, handleRestoreTrash
 export const VaultSubmenu: VFC<{
     selectedShareId: MaybeNull<string>;
     inTrash: boolean;
-    handleVaultSelectClick: (shareId: MaybeNull<string>) => void;
-    handleVaultDeleteClick: (vault: VaultShare) => void;
-    handleVaultEditClick: (vault: VaultShare) => void;
-    handleVaultCreateClick: () => void;
-    handleVaultInviteClick: (vault: VaultShare) => void;
-    handleVaultManageClick: (vault: VaultShare) => void;
-    handleVaultLeaveClick: (vault: VaultShare) => void;
-    handleRestoreTrash: () => void;
-    handleEmptyTrash: () => void;
+    handleVaultSelect: (shareId: MaybeNull<string>) => void;
+    handleVaultDelete: (vault: VaultShare) => void;
+    handleVaultEdit: (vault: VaultShare) => void;
+    handleVaultCreate: () => void;
+    handleVaultInvite: (vault: VaultShare) => void;
+    handleVaultManage: (vault: VaultShare) => void;
+    handleVaultLeave: (vault: VaultShare) => void;
+    handleTrashRestore: () => void;
+    handleTrashEmpty: () => void;
 }> = ({
     selectedShareId,
     inTrash,
-    handleVaultSelectClick,
-    handleVaultDeleteClick,
-    handleVaultEditClick,
-    handleVaultCreateClick,
-    handleVaultInviteClick,
-    handleVaultManageClick,
-    handleVaultLeaveClick,
-    handleRestoreTrash,
-    handleEmptyTrash,
+    handleVaultSelect,
+    handleVaultDelete,
+    handleVaultEdit,
+    handleVaultCreate,
+    handleVaultInvite,
+    handleVaultManage,
+    handleVaultLeave,
+    handleTrashRestore,
+    handleTrashEmpty,
 }) => {
     const history = useHistory();
     const vaults = useSelector(selectAllVaultWithItemsCount);
@@ -220,7 +220,7 @@ export const VaultSubmenu: VFC<{
 
     const handleSelect = (vault: VaultOption) => {
         const { id, path } = getVaultOptionInfo(vault);
-        handleVaultSelectClick(id);
+        handleVaultSelect(id);
         history.push(path);
     };
 
@@ -266,25 +266,25 @@ export const VaultSubmenu: VFC<{
                             label={vault.content.name}
                             selected={!inTrash && selectedShareId === vault.shareId}
                             onSelect={() => handleSelect(vault)}
-                            onDelete={!isPrimary ? () => handleVaultDeleteClick(vault) : undefined}
-                            onEdit={() => handleVaultEditClick(vault)}
-                            onInvite={() => handleVaultInviteClick(vault)}
-                            onManage={() => handleVaultManageClick(vault)}
-                            onLeave={() => handleVaultLeaveClick(vault)}
+                            onDelete={!isPrimary ? () => handleVaultDelete(vault) : undefined}
+                            onEdit={() => handleVaultEdit(vault)}
+                            onInvite={() => handleVaultInvite(vault)}
+                            onManage={() => handleVaultManage(vault)}
+                            onLeave={() => handleVaultLeave(vault)}
                             shared={vault.shared}
                         />
                     );
                 })}
 
                 <TrashItem
-                    handleRestoreTrash={handleRestoreTrash}
-                    handleEmptyTrash={handleEmptyTrash}
+                    handleTrashRestore={handleTrashRestore}
+                    handleTrashEmpty={handleTrashEmpty}
                     onSelect={() => handleSelect('trash')}
                     selected={inTrash}
                 />
 
                 <div className="px-2 mt-2 mb-4">
-                    <Button className="w100" color="weak" shape="solid" onClick={handleVaultCreateClick}>
+                    <Button className="w100" color="weak" shape="solid" onClick={handleVaultCreate}>
                         {c('Action').t`Create vault`}
                     </Button>
                 </div>
