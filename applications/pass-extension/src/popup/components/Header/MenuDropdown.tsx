@@ -68,12 +68,17 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
     const [vaultModalProps, setVaultModalProps] = useState<MaybeNull<VaultModalProps>>(null);
 
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const withClose = <P extends any[], R extends any>(cb: (...args: P) => R): ((...args: P) => R) =>
-        pipe(cb, tap(close));
+    const withClose = <P extends any[], R extends any>(cb: (...args: P) => R) => pipe(cb, tap(close));
 
     const leaveVault = useActionWithRequest({
         action: shareLeaveIntent,
         requestId: ({ shareId }) => shareLeaveRequest(shareId),
+    });
+
+    const handleVaultSelect = withClose((vaultShareId: MaybeNull<string>) => {
+        unselectItem();
+        setShareId(vaultShareId);
+        setSearch('');
     });
 
     const handleVaultDelete = (vault: VaultShare, destinationShareId: MaybeNull<string>) => {
@@ -81,9 +86,13 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
         dispatch(vaultDeleteIntent({ id: vault.shareId, content: vault.content, destinationShareId }));
     };
 
-    const handleLeaveVault = useConfirm(leaveVault.dispatch);
-    const handleEmptyTrash = useConfirm(() => dispatch(emptyTrashIntent()));
-    const handleRestoreTrash = () => dispatch(restoreTrashIntent());
+    const handleTrashRestore = () => dispatch(restoreTrashIntent());
+    const handleVaultCreate = withClose(() => setVaultModalProps({ open: true, payload: { type: 'new' } }));
+    const handleVaultEdit = (vault: VaultShare) => setVaultModalProps({ open: true, payload: { type: 'edit', vault } });
+    const handleVaultInvite = ({ shareId }: VaultShare) => inviteContext.createInvite(shareId);
+    const handleVaultManage = ({ shareId }: VaultShare) => inviteContext.manageAccess(shareId);
+    const handleVaultLeave = useConfirm(leaveVault.dispatch);
+    const handleTrashEmpty = useConfirm(() => dispatch(emptyTrashIntent()));
 
     const feedbackLinks: SubmenuLinkItem[] = [
         {
@@ -194,24 +203,15 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
                         <VaultSubmenu
                             inTrash={inTrash}
                             selectedShareId={shareId}
-                            handleVaultSelectClick={withClose((vaultShareId) => {
-                                unselectItem();
-                                setShareId(vaultShareId);
-                                setSearch('');
-                            })}
-                            handleVaultEditClick={(vault) =>
-                                setVaultModalProps({
-                                    open: true,
-                                    payload: { type: 'edit', vault },
-                                })
-                            }
-                            handleVaultDeleteClick={setDeleteVault}
-                            handleVaultCreateClick={() => setVaultModalProps({ open: true, payload: { type: 'new' } })}
-                            handleVaultInviteClick={({ shareId }) => inviteContext.createInvite(shareId)}
-                            handleVaultManageClick={({ shareId }) => inviteContext.manageAccess(shareId)}
-                            handleVaultLeaveClick={handleLeaveVault.prompt}
-                            handleEmptyTrash={handleEmptyTrash.prompt}
-                            handleRestoreTrash={handleRestoreTrash}
+                            handleVaultSelect={handleVaultSelect}
+                            handleVaultCreate={handleVaultCreate}
+                            handleVaultEdit={handleVaultEdit}
+                            handleVaultDelete={setDeleteVault}
+                            handleVaultInvite={handleVaultInvite}
+                            handleVaultManage={handleVaultManage}
+                            handleVaultLeave={handleVaultLeave.prompt}
+                            handleTrashEmpty={handleTrashEmpty.prompt}
+                            handleTrashRestore={handleTrashRestore}
                         />
 
                         <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
@@ -263,9 +263,9 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
 
             <ConfirmationModal
                 title={c('Title').t`Permanently remove all items ?`}
-                open={handleEmptyTrash.pending}
-                onClose={handleEmptyTrash.cancel}
-                onSubmit={handleEmptyTrash.confirm}
+                open={handleTrashEmpty.pending}
+                onClose={handleTrashEmpty.cancel}
+                onSubmit={handleTrashEmpty.confirm}
                 alertText={c('Warning')
                     .t`All your trashed items will be permanently deleted. You can not undo this action.`}
                 submitText={c('Action').t`Delete all`}
@@ -273,9 +273,9 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
 
             <ConfirmationModal
                 title={c('Title').t`Leave vault ?`}
-                open={handleLeaveVault.pending}
-                onClose={handleLeaveVault.cancel}
-                onSubmit={handleLeaveVault.confirm}
+                open={handleVaultLeave.pending}
+                onClose={handleVaultLeave.cancel}
+                onSubmit={handleVaultLeave.confirm}
                 alertText={c('Warning')
                     .t`You will no longer have access to this vault. To join it again, you will need a new invitation.`}
                 submitText={c('Action').t`Leave`}
