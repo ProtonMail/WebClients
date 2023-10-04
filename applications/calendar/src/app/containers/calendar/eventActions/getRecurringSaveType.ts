@@ -19,7 +19,7 @@ interface Arguments {
     hasModifiedRrule: boolean;
     hasModifiedCalendar: boolean;
     isAttendee: boolean;
-    canEditOnlyNotifications: boolean;
+    canEditOnlyPersonalPart: boolean;
     inviteActions: InviteActions;
     selfAttendeeToken?: string;
 }
@@ -35,7 +35,7 @@ const getRecurringSaveType = async ({
     hasModifiedRrule,
     hasModifiedCalendar,
     isAttendee,
-    canEditOnlyNotifications,
+    canEditOnlyPersonalPart,
     inviteActions,
     selfAttendeeToken,
 }: Arguments) => {
@@ -92,7 +92,7 @@ const getRecurringSaveType = async ({
         },
         inviteActions: updatedInviteActions,
         isAttendee,
-        canEditOnlyNotifications,
+        canEditOnlyPersonalPart,
     });
 };
 

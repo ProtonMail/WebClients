@@ -19,7 +19,6 @@ import {
     useNotifications,
 } from '@proton/components';
 import { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
-import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { getEvent } from '@proton/shared/lib/api/calendars';
@@ -346,7 +345,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
 
     const { summary, organizer, attendee, sequence } = vevent;
     const { FullDay } = calendarEvent;
-    const { Color, Name } = calendar;
+    const { Name } = calendar;
 
     const selfAddressData = getSelfAddressData({
         organizer,
@@ -395,11 +394,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                     </div>
                     <hr className="m-0" />
                     <div className="p-5">
-                        <IconRow
-                            title={c('Label').t`Calendar`}
-                            icon={<CalendarSelectIcon color={Color} />}
-                            labelClassName={labelClassName}
-                        >
+                        <IconRow title={c('Label').t`Calendar`} icon="calendar-grid" labelClassName={labelClassName}>
                             <span className="text-break">{Name}</span>
                         </IconRow>
                         {!!sanitizedAndUrlifiedLocation && (

@@ -56,7 +56,7 @@ const getSaveSingleEventActionsHelper = async ({
     onSendPrefsErrors,
     inviteActions,
     hasDefaultNotifications,
-    canEditOnlyNotifications,
+    canEditOnlyPersonalPart,
     isAttendee,
     onEquivalentAttendees,
     handleSyncActions,
@@ -80,7 +80,7 @@ const getSaveSingleEventActionsHelper = async ({
     onEquivalentAttendees: (veventComponent: VcalVeventComponent, inviteActions: InviteActions) => Promise<void>;
     inviteActions: InviteActions;
     hasDefaultNotifications: boolean;
-    canEditOnlyNotifications: boolean;
+    canEditOnlyPersonalPart: boolean;
     isAttendee: boolean;
     handleSyncActions: (actions: SyncEventActionOperations[]) => Promise<SyncMultipleApiResponse[]>;
 }) => {
@@ -119,7 +119,7 @@ const getSaveSingleEventActionsHelper = async ({
         onSaveConfirmation,
         inviteActions: updatedInviteActions,
         hasDefaultNotifications,
-        canEditOnlyNotifications,
+        canEditOnlyPersonalPart,
         isAttendee,
         sendIcs,
         reencryptSharedEvent,
@@ -206,7 +206,7 @@ const getSaveEventActions = async ({
     } = temporaryEvent;
     const { isAttendee, isOrganizer, organizer, selfAddress: existingSelfAddress } = tmpData;
     const isInvitation = !!organizer;
-    const canEditOnlyNotifications = !getCanEditSharedEventData({
+    const canEditOnlyPersonalPart = !getCanEditSharedEventData({
         isOwnedCalendar,
         isCalendarWritable,
         isOrganizer,
@@ -273,7 +273,7 @@ const getSaveEventActions = async ({
                 veventComponent: newVeventWithSequence,
             },
             hasDefaultNotifications,
-            canEditOnlyNotifications,
+            canEditOnlyPersonalPart,
             isAttendee,
             selfAddress,
             inviteActions: updatedInviteActions,
@@ -324,7 +324,7 @@ const getSaveEventActions = async ({
             oldEditEventData,
             inviteActions: inviteActionsWithSelfAddress,
             hasDefaultNotifications,
-            canEditOnlyNotifications,
+            canEditOnlyPersonalPart,
             isAttendee,
             getAddressKeys,
             getCalendarKeys,
@@ -347,7 +347,7 @@ const getSaveEventActions = async ({
             oldEditEventData,
             inviteActions: inviteActionsWithSelfAddress,
             hasDefaultNotifications,
-            canEditOnlyNotifications,
+            canEditOnlyPersonalPart,
             isAttendee,
             getAddressKeys,
             getCalendarKeys,
@@ -406,9 +406,9 @@ const getSaveEventActions = async ({
         canOnlySaveAll:
             actualEventRecurrence.isSingleOccurrence ||
             hasModifiedCalendar ||
-            (canEditOnlyNotifications && !isSingleEdit) ||
+            (canEditOnlyPersonalPart && !isSingleEdit) ||
             (!isAttendee && (isSendInviteType || hasAttendees)),
-        canOnlySaveThis: canEditOnlyNotifications && isSingleEdit,
+        canOnlySaveThis: canEditOnlyPersonalPart && isSingleEdit,
         hasModifiedRrule,
         hasModifiedCalendar,
         inviteActions: updatedSaveInviteActions,
@@ -416,7 +416,7 @@ const getSaveEventActions = async ({
         recurrence: actualEventRecurrence,
         recurrences,
         isAttendee,
-        canEditOnlyNotifications,
+        canEditOnlyPersonalPart,
         selfAttendeeToken,
     });
     const {
@@ -438,7 +438,7 @@ const getSaveEventActions = async ({
         getCalendarKeys,
         inviteActions: updatedInviteActions,
         hasDefaultNotifications,
-        canEditOnlyNotifications,
+        canEditOnlyPersonalPart,
         isAttendee,
         sendIcs,
         reencryptSharedEvent,

@@ -43,6 +43,10 @@ export const getUidValue = (component: VcalVeventComponent) => {
     return component.uid.value;
 };
 
+export const getVeventColorValue = (component: VcalVeventComponent) => {
+    return component.color?.value;
+};
+
 export const getIsRecurring = ({ rrule }: Pick<VcalVeventComponent, 'rrule'>) => {
     return !!rrule;
 };
@@ -290,7 +294,7 @@ export const toApiNotifications = (components?: VcalValarmComponent[], dtstart?:
  * Split the internal vevent component into the parts expected by the API.
  */
 export const getVeventParts = ({ components, ...properties }: VcalVeventComponent) => {
-    const restProperties = omit(properties, TAKEN_KEYS);
+    const restProperties = omit(properties, [...TAKEN_KEYS, 'color']);
 
     const sharedPart = getSharedPart(properties);
     const calendarPart = getCalendarPart(properties);

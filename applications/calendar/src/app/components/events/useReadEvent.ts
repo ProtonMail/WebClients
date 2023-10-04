@@ -31,7 +31,7 @@ const useReadEvent = (
     return useMemo(() => {
         const [
             { veventComponent = DEFAULT_VEVENT, hasDefaultNotifications, verificationStatus, selfAddressData },
-            { IsProtonProtonInvite },
+            { IsProtonProtonInvite, Color },
         ] = value || [
             {
                 veventComponent: DEFAULT_VEVENT,
@@ -50,6 +50,7 @@ const useReadEvent = (
             selfAddressData,
             isAllDay,
             isProtonProtonInvite: !!IsProtonProtonInvite,
+            color: Color ? Color : undefined,
             tzid,
         });
         const notifications =

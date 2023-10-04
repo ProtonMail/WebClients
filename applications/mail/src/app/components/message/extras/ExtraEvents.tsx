@@ -13,6 +13,7 @@ import {
     useUser,
     useUserSettings,
 } from '@proton/components';
+import useFlag from '@proton/components/containers/unleash/useFlag';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import { WorkerDecryptionResult } from '@proton/crypto';
 import { arrayToBinaryString, decodeUtf8 } from '@proton/crypto/lib/utils';
@@ -82,6 +83,8 @@ const ExtraEvents = ({ message }: Props) => {
     const contactsMap = useContactsMap();
     const getCalendarEventRaw = useGetCalendarEventRaw(contactsMap);
     const getCanonicalEmailsMap = useGetCanonicalEmailsMap();
+    const isColorPerEventEnabled = useFlag('ColorPerEventWeb');
+    const canImportEventColor = isColorPerEventEnabled && user.hasPaidMail;
 
     const [loadingWidget, withLoadingWidget] = useLoading();
     const [loadedWidget, setLoadedWidget] = useState('');
@@ -206,6 +209,7 @@ const ExtraEvents = ({ message }: Props) => {
                                         icsBinaryString,
                                         icsFileName: attachment.Name || '',
                                         primaryTimezone,
+                                        canImportEventColor,
                                     });
                                     return supportedEventInvitation;
                                 } catch (error: any) {

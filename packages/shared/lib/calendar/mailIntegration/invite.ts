@@ -240,7 +240,7 @@ export const createInviteVevent = ({ method, attendeesTo, vevent, keepDtstamp }:
 
     if (method === ICAL_METHOD.REQUEST) {
         // strip alarms
-        const propertiesToOmit: (keyof VcalVeventComponent)[] = ['components', 'x-pm-proton-reply'];
+        const propertiesToOmit: (keyof VcalVeventComponent)[] = ['components', 'x-pm-proton-reply', 'color'];
         // use current time as dtstamp unless indicated otherwise
         if (!keepDtstamp) {
             propertiesToOmit.push('dtstamp');
@@ -611,7 +611,7 @@ export const getResetPartstatActions = (
     partstat: ICAL_ATTENDEE_STATUS
 ) => {
     const updateTime = getCurrentUnixTimestamp();
-    const updatePartstatActions = singleEdits
+    const updateActions = singleEdits
         .map((event) => {
             if (getIsEventCancelled(event)) {
                 // no need to reset the partsat as it should have been done already
@@ -632,11 +632,13 @@ export const getResetPartstatActions = (
                 calendarID: event.CalendarID,
                 updateTime,
                 partstat: ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
+                color: event.Color ? event.Color : undefined,
             };
         })
         .filter(isTruthy);
-    const updatePersonalPartActions = updatePartstatActions
-        .map(({ eventID, calendarID }) => ({ eventID, calendarID }))
+    const updatePartstatActions = updateActions.map((action) => omit(action, ['color']));
+    const updatePersonalPartActions = updateActions
+        .map(({ eventID, calendarID, color }) => ({ eventID, calendarID, color }))
         .filter(isTruthy);
 
     return { updatePartstatActions, updatePersonalPartActions };
