@@ -148,19 +148,24 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
 
             let rollback = () => {};
 
-            const handleUndo = async (tokens: PromiseSettledResult<string | undefined>[]) => {
+            const handleUndo = async (promiseTokens: Promise<PromiseSettledResult<string | undefined>[]>) => {
                 try {
+                    let tokens: PromiseSettledResult<string | undefined>[] = [];
                     undoing = true;
 
                     // Stop the event manager to prevent race conditions
                     stop();
                     rollback();
-                    const filteredTokens = getFilteredUndoTokens(tokens);
 
-                    await Promise.all([
-                        ...filteredTokens.map((token) => api({ ...undoActions(token), silence: true })),
-                        createFilters ? undoCreateFilters() : undefined,
-                    ]);
+                    if (promiseTokens) {
+                        tokens = await promiseTokens;
+                        const filteredTokens = getFilteredUndoTokens(tokens);
+
+                        await Promise.all([
+                            ...filteredTokens.map((token) => api({ ...undoActions(token), silence: true })),
+                            createFilters ? undoCreateFilters() : undefined,
+                        ]);
+                    }
                 } finally {
                     start();
                     await call();
@@ -238,7 +243,7 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
 
                 createNotification({
                     text: (
-                        <UndoActionNotification onUndo={canUndo ? async () => handleUndo(await promise) : undefined}>
+                        <UndoActionNotification onUndo={canUndo ? () => handleUndo(promise) : undefined}>
                             <span className="text-left">
                                 {notificationText}
                                 {moveAllButton}
