@@ -319,6 +319,9 @@
       "Discard": [
         "Descartar"
       ],
+      "Don't know your password?": [
+        "¿No sabes tu contraseña?"
+      ],
       "Done": [
         "Hecho"
       ],
@@ -692,6 +695,9 @@
       "Not saved": [
         "No guardado"
       ],
+      "Ok": [
+        "OK"
+      ],
       "OK": [
         "Aceptar"
       ],
@@ -856,6 +862,9 @@
       ],
       "See business plans": [
         "Ver planes de negocio"
+      ],
+      "See how": [
+        "Ver cómo"
       ],
       "See plan features": [
         "Ver las funciones del plan"
@@ -3226,6 +3235,9 @@
       "Incorrect mailbox password. Please try again.": [
         "Contraseña de buzón incorrecta. Inténtalo de nuevo."
       ],
+      "Incorrect username": [
+        "Nombre de usuario incorrecto"
+      ],
       "Invalid email address": [
         "Dirección de correo electrónico no válida"
       ],
@@ -4633,6 +4645,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita tu permiso para ${ enableDesktopNotifications }."
+      ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "La tecnología de cifrado de ${ BRAND_NAME } conlleva que nadie tiene acceso a tu contraseña - ni siquiera nosotros."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } calendario nuevo",
@@ -6401,6 +6416,9 @@
       "Conditions": [
         "Condiciones"
       ],
+      "Confirm password": [
+        "Confirmar contraseña"
+      ],
       "Contacts": [
         "Contactos"
       ],
@@ -6592,6 +6610,9 @@
       ],
       "Navigation": [
         "Navegación"
+      ],
+      "New password": [
+        "Nueva contraseña"
       ],
       "No label found": [
         "No se ha encontrado ninguna etiqueta."
@@ -7841,6 +7862,113 @@
         "Almacenado con cifrado de acceso cero"
       ]
     },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "Cancelar el restablecimiento"
+      ],
+      "Reset password": [
+        "Restablecer la contraseña"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } día",
+        "${ timeRemaining.inDays } días"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } hora",
+        "${ timeRemaining.inHours } horas"
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Ver cómo"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "La contraseña ha sido guardada."
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Restablecer tu contraseña"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Cancelar el restablecimiento de contraseña"
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "El restablecimiento de contraseña ha sido cancelado."
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "¿Cancelar el restablecimiento de contraseña?"
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "cambia tu contraseña ahora."
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "Cancelar la solicitud"
+      ],
+      "Got it": [
+        "Entiendo"
+      ],
+      "Learn more": [
+        "Más información"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } hora más",
+        "${ gracePeriodHoursRemaining } horas más"
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "Ver la solicitud"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "El restablecimiento de contraseña ha sido solicitado."
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Cerrar sesión"
+      ],
+      "Stay signed in": [
+        "Seguir conectado"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } hora",
+        "${ gracePeriodHoursRemaining } horas"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } está ahora disponible."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Restablecimiento de contraseña"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "¿Quieres cerrar sesión sin restablecimiento de contraseña?"
+      ]
+    },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
         "Mensaje cifrado con PGP. Error al verificar el remitente: ${ verificationErrorsMessage }."
@@ -8668,6 +8796,9 @@
       ],
       "Change my answer": [
         "Cambiar mi respuesta"
+      ],
+      "Change password": [
+        "Cambiar contraseña"
       ],
       "Clear out the junk": [
         "Deshazte de los mensajes no deseados"
