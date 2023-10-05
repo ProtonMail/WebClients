@@ -319,6 +319,9 @@
       "Discard": [
         "Avfärda"
       ],
+      "Don't know your password?": [
+        "Vet du inte ditt lösenord?"
+      ],
       "Done": [
         "Klar"
       ],
@@ -692,6 +695,9 @@
       "Not saved": [
         "Inte sparad"
       ],
+      "Ok": [
+        "Ok"
+      ],
       "OK": [
         "OK"
       ],
@@ -856,6 +862,9 @@
       ],
       "See business plans": [
         "Se företagspaket"
+      ],
+      "See how": [
+        "Se hur"
       ],
       "See plan features": [
         "Se paketfunktioner"
@@ -3226,6 +3235,9 @@
       "Incorrect mailbox password. Please try again.": [
         "Felaktigt lösenord för brevlådan. Försök igen."
       ],
+      "Incorrect username": [
+        "Felaktigt användarnamn"
+      ],
       "Invalid email address": [
         "Ogiltig e-postadress"
       ],
@@ -4633,6 +4645,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } behöver din tillåtelse till ${ enableDesktopNotifications }."
+      ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "${ BRAND_NAME }s krypteringsteknologi innebär att ingen kan få åtkomst till dina lösenord - inte ens vi."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } ny kalender",
@@ -6401,6 +6416,9 @@
       "Conditions": [
         "Villkor"
       ],
+      "Confirm password": [
+        "Bekräfta lösenord"
+      ],
       "Contacts": [
         "Kontakter"
       ],
@@ -6592,6 +6610,9 @@
       ],
       "Navigation": [
         "Navigering"
+      ],
+      "New password": [
+        "Nytt lösenord"
       ],
       "No label found": [
         "Ingen etikett hittades"
@@ -7841,6 +7862,175 @@
         "Lagras med nollåtkomst-kryptering"
       ]
     },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "Avbryt återställning"
+      ],
+      "Reset password": [
+        "Återställ lösenord"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "Kontoåterställning är inte tillgänglig för äldre adressnycklar"
+      ],
+      "Please generate keys before you try to change your password": [
+        "Generera nycklar innan du försöker ändra ditt lösenord"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } dag",
+        "${ timeRemaining.inDays } dagar"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } timme",
+        "${ timeRemaining.inHours } timmar"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Begäran om lösenordsåterställning godkänd (${ user.Email }). Du har ${ timeRemaining.inDays } dag för att återställa ditt lösenord.",
+        "Begäran om lösenordsåterställning godkänd (${ user.Email }). Du har ${ timeRemaining.inDays } dagar för att återställa ditt lösenord."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Begäran om lösenordsåterställning godkänd (${ user.Email }). Du har ${ timeRemaining.inHours } timme för att återställa ditt lösenord.",
+        "Begäran om lösenordsåterställning godkänd (${ user.Email }). Du har ${ timeRemaining.inHours } timmar för att återställa ditt lösenord."
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Gå till den inloggade enheten (i den session där begäran initierades) för att ändra ditt lösenord."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Denna tillåtelse löper ut om ${ timeRemaining.inDays } dag",
+        "Denna tillåtelse löper ut om ${ timeRemaining.inDays } dagar"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Denna tillåtelse löper ut om ${ timeRemaining.inHours } timme",
+        "Denna tillåtelse löper ut om ${ timeRemaining.inHours } timmar"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Du kan nu ändra ditt lösenord för kontot ${ boldEmail } fritt i ${ boldDaysRemaining }."
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Se hur"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Lösenord sparat"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Återställ ditt lösenord"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Avbryt lösenordsåterställning"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Ange ditt nuvarande lösenord för att avbryta återställningsprocessen. Inga andra ändringar kommer att träda i kraft."
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "Lösenordsåterställning avbruten"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Avbryt lösenordsåterställning?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Begäran om lösenordsåterställning avbröts (${ user.Email }). Om du inte gjorde denna begäran, ${ changePasswordLink }."
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "ändra ditt lösenord nu"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "Avbryt begäran"
+      ],
+      "Got it": [
+        "Jag förstår"
+      ],
+      "Learn more": [
+        "Lär dig mer"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } timme till",
+        "${ gracePeriodHoursRemaining } timmar till"
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "Om du inte bett om att få återställa ditt lösenord, avbryt denna begäran nu."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Lösenordsåterställning begärd (${ user.Email }). Du kan ändra ditt lösenord inom ${ hoursRemaining } timme.",
+        "Lösenordsåterställning begärd (${ user.Email }). Du kan ändra ditt lösenord inom ${ hoursRemaining } timmar."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "För att säkerställa att det verkligen är du som försöker återställa ditt lösenord väntar vi 72 timmar innan vi godkänner begäran. Du kan ändra ditt lösenord i ${ boldTimeLeft }. ${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "Vi fick en begäran om lösenordsåterställning för ${ boldEmail }."
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "Visa begäran"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "Lösenordsåterställning begärd"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Logga ut"
+      ],
+      "Stay signed in": [
+        "Förbli inloggad"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } timme",
+        "${ gracePeriodHoursRemaining } timmar"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } är nu tillgängligt."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Om du loggar ut innan du återställer ditt lösenord kan du förlora åtkomst till ditt konto."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Om du loggar ut utan att återställa ditt lösenord kan du förlora åtkomst till ditt konto."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Du kommer att kunna återställa ditt lösenord i ${ boldTimeLeft }."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Lösenordsåterställning"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Logga ut utan lösenordsåterställning?"
+      ]
+    },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
         "PGP-krypterat meddelande. Avsändarverifiering misslyckades: ${ verificationErrorsMessage }"
@@ -8668,6 +8858,9 @@
       ],
       "Change my answer": [
         "Ändra mitt svar"
+      ],
+      "Change password": [
+        "Ändra lösenord"
       ],
       "Clear out the junk": [
         "Rensa bort skräpet"

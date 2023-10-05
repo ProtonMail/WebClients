@@ -100,6 +100,12 @@
       "As Scheduled": [
         "Як заплановано"
       ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Для однієї контактної групи дозволено ${ maxContacts } контакт",
+        "Для однієї контактної групи дозволено ${ maxContacts } контакти",
+        "Для однієї контактної групи дозволено ${ maxContacts } контактів",
+        "До групи контактів можна додати не більше ніж ${ maxContacts } контактів"
+      ],
       "Attach screenshot(s)": [
         "Додати знімки екрана"
       ],
@@ -3534,6 +3540,14 @@
         "За вашим пошуковим запитом знайдено надто багато результатів. Обмежте пошуковий запит і спробуйте знову."
       ]
     },
+    "Error adding participants to a calendar event": {
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "На запрошення допускається не більше, ніж ${ maxAttendees } учасник",
+        "За запрошення допускається не більше, ніж ${ maxAttendees } учасники",
+        "За запрошення допускається не більше, ніж ${ maxAttendees } учасників",
+        "На одне запрошення допускається не більше ${ maxAttendees } учасників"
+      ]
+    },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
         "Чернетки не можна перемістити до вхідних"
@@ -4691,6 +4705,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } потребує вашого дозволу, щоб ${ enableDesktopNotifications }."
+      ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "Технологія шифрування ${ BRAND_NAME } гарантує неможливість доступу до вашого пароля, навіть для нас."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } новий календар",
@@ -6595,6 +6612,9 @@
       "Conditions": [
         "Умови"
       ],
+      "Confirm password": [
+        "Підтвердити пароль"
+      ],
       "Contacts": [
         "Контакти"
       ],
@@ -6786,6 +6806,9 @@
       ],
       "Navigation": [
         "Навігація"
+      ],
+      "New password": [
+        "Новий пароль"
       ],
       "No label found": [
         "Мітку не знайдено"
@@ -8976,6 +8999,9 @@
       ],
       "Change my answer": [
         "Змінити мою відповідь"
+      ],
+      "Change password": [
+        "Змінити пароль"
       ],
       "Clear out the junk": [
         "Приберіть усе зайве"
