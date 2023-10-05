@@ -33,6 +33,9 @@
       "Add address": [
         "Adres toevoegen"
       ],
+      "Add birthday": [
+        "Verjaardag toevoegen"
+      ],
       "Add contact": [
         "Contactpersoon toevoegen"
       ],
@@ -48,6 +51,9 @@
       "Add new group": [
         "Voeg nieuwe groep toe"
       ],
+      "Add note": [
+        "Notitie toevoegen"
+      ],
       "Add notification": [
         "Melding toevoegen"
       ],
@@ -62,6 +68,10 @@
       ],
       "Apply": [
         "Toepassen"
+      ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Ten hoogste ${ maxContacts } contact is toegelaten per contactgroep",
+        "Ten hoogste ${ maxContacts } contacten zijn toegelaten per contactgroep"
       ],
       "Attach screenshot(s)": [
         "Schermafdruk(ken) toevoegen"
@@ -619,6 +629,10 @@
       ],
       "Yes, I'll attend": [
         "Ja, ik zal deelnemen"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "U kunt geen vCard-bestanden met meer dan ${ maxAttachments } contact verzenden",
+        "U kunt geen vCard-bestand met meer dan ${ maxAttachments } contacten verzenden"
       ]
     },
     "Action subline": {
@@ -1106,8 +1120,17 @@
       "Birthday": [
         "Verjaardag"
       ],
+      "Display name": [
+        "Weergavenaam"
+      ],
       "Email": [
         "E-mailadres"
+      ],
+      "Enter a display name or nickname": [
+        "Voer een weergavenaam of bijnaam in"
+      ],
+      "First name": [
+        "Voornaam"
       ],
       "Gender": [
         "Geslacht"
@@ -1117,6 +1140,9 @@
       ],
       "Language": [
         "Taal"
+      ],
+      "Last name": [
+        "Familienaam"
       ],
       "Logo": [
         "Logo"
@@ -2311,6 +2337,9 @@
       "Failed to get original occurrence in series": [
         "Oorspronkelijke herhalingen uit reeks ophalen mislukt"
       ],
+      "First name is too long": [
+        "Voornaam is te lang"
+      ],
       "Folder name cannot be empty.": [
         "Mapnaam mag niet leeg zijn."
       ],
@@ -2355,6 +2384,9 @@
       ],
       "Label name cannot be empty.": [
         "Labelnaam mag niet leeg zijn."
+      ],
+      "Last name is too long": [
+        "Achternaam is te lang"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Minstens ${ calendarsToFixCount } agenda samenvoegen met een bestaande ${ BRAND_NAME }-agenda",
@@ -2416,6 +2448,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "Los het gemarkeerde conflict op om verder te gaan.",
         "Los de gemarkeerde conflicten op om verder te gaan."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Bied ofwel een voornaam, een achternaam of een weergavenaam aan"
       ],
       "Port is required": [
         "Poort is vereist"
@@ -3435,6 +3470,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
       ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "${ BRAND_NAME }'s versleutelingstechnologie betekent dat niemand toegang heeft tot uw wachten - zelfs wij niet."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nieuwe agenda",
         "${ calendarsToBeCreatedCount } nieuwe agenda's"
@@ -3853,6 +3891,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME verzendt automatisch het bericht gebruikmakend van de huidige opstelmodus."
+      ],
+      "Please note that addresses assigned to these groups will NOT be deleted.": [
+        "Houd er rekening mee dat de adressen die aan deze groepen zijn toegewezen NIET zullen worden verwijderd."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Houd er rekening mee dat de adressen die aan deze groep zijn toegewezen NIET zullen worden verwijderd."
@@ -4331,6 +4372,9 @@
       "Colors": [
         "Kleuren"
       ],
+      "Confirm password": [
+        "Bevestig wachtwoord"
+      ],
       "Contacts": [
         "Contacten"
       ],
@@ -4486,6 +4530,9 @@
       ],
       "Navigation": [
         "Navigatie"
+      ],
+      "New password": [
+        "Nieuw wachtwoord"
       ],
       "Notification": [
         "Notificatie"
@@ -5367,6 +5414,9 @@
       "Filter groups": [
         "Filter groepen"
       ],
+      "First name": [
+        "Voornaam"
+      ],
       "Group name": [
         "Groepsnaam"
       ],
@@ -5375,6 +5425,9 @@
       ],
       "Indexing...": [
         "Indexeren..."
+      ],
+      "Last name": [
+        "Familienaam"
       ],
       "Name": [
         "Naam"
@@ -6091,8 +6144,14 @@
       "Display name": [
         "Weergavenaam"
       ],
+      "First name": [
+        "Voornaam"
+      ],
       "Import": [
         "Importeren"
+      ],
+      "Last name": [
+        "Familienaam"
       ],
       "Values": [
         "Waarden"
@@ -6176,6 +6235,9 @@
       "Billing cycle": [
         "Factuurperiode"
       ],
+      "Birthday": [
+        "Verjaardag"
+      ],
       "Calendar": [
         "Agenda"
       ],
@@ -6187,6 +6249,9 @@
       ],
       "Change my answer": [
         "Mijn antwoord wijzigen"
+      ],
+      "Change password": [
+        "Wachtwoord wijzigen"
       ],
       "Choose how many times this event will repeat": [
         "Kies hoeveel keer deze afspraak zich herhaalt"
@@ -6334,6 +6399,9 @@
       ],
       "Night theme": [
         "Nacht thema"
+      ],
+      "Notes": [
+        "Notities"
       ],
       "Open actions dropdown": [
         "Open dropdown-menu voor acties"
@@ -6635,6 +6703,9 @@
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Weet u zeker dat u ${ count } contact permanent wilt verwijderen?",
         "Weet u zeker dat u ${ count } contacten permanent wilt verwijderen?"
+      ],
+      "Are you sure you want to permanently delete these contact groups?": [
+        "Weet u zeker dat u deze contactgroepen permanent wilt verwijderen?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Weet u zeker dat u deze contactgroep permanent wilt verwijderen?"

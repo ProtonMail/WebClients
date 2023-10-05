@@ -33,6 +33,9 @@
       "Add address": [
         "მისამართის დამატება"
       ],
+      "Add birthday": [
+        "დაბადების დღის დამატება"
+      ],
       "Add contact": [
         "კონტაქტის დამატება"
       ],
@@ -47,6 +50,9 @@
       ],
       "Add new group": [
         "ახალი ჯგუფის დამატება"
+      ],
+      "Add note": [
+        "შენიშვნის დამატება"
       ],
       "Add notification": [
         "შეტყობინების დამატება"
@@ -377,6 +383,9 @@
       "No, thanks": [
         "არა, მადლობა"
       ],
+      "Ok": [
+        "დიახ"
+      ],
       "OK": [
         "დიახ"
       ],
@@ -463,6 +472,9 @@
       ],
       "Search countries": [
         "ქვეყნების ძებნა"
+      ],
+      "See how": [
+        "იხილეთ, როგორ"
       ],
       "See plan features": [
         "ტარიფის თვისებების ნახვა"
@@ -1106,8 +1118,17 @@
       "Birthday": [
         "დაბადების დღე"
       ],
+      "Display name": [
+        "საჩვენებელი სახელი"
+      ],
       "Email": [
         "ელ-ფოსტა"
+      ],
+      "Enter a display name or nickname": [
+        "შეიყვანეთ საჩვენებელი სახელი ან მეტსახელი"
+      ],
+      "First name": [
+        "სახელი"
       ],
       "Gender": [
         "სქესი"
@@ -1117,6 +1138,9 @@
       ],
       "Language": [
         "ენა"
+      ],
+      "Last name": [
+        "გვარი"
       ],
       "Logo": [
         "ლოგო"
@@ -2311,6 +2335,9 @@
       "Failed to get original occurrence in series": [
         "საწყისი მოხდენის სერიებად მიღების შეცდომა"
       ],
+      "First name is too long": [
+        "სახელი ძალიან გრძელია"
+      ],
       "Folder name cannot be empty.": [
         "საქაღალდის სახელი ცარიელი არ შეიძლება იყოს."
       ],
@@ -2325,6 +2352,9 @@
       ],
       "Incorrect mailbox password. Please try again.": [
         "საფოსტო ყუთის არასწორი პაროლი. თავიდან სცადეთ."
+      ],
+      "Incorrect username": [
+        "მომხმარებლის სახელი არასწორია"
       ],
       "Interval cannot be empty": [
         "სახელი ცარიელი ვერ იქნება"
@@ -2355,6 +2385,9 @@
       ],
       "Label name cannot be empty.": [
         "ჭდის სახელი ცარიელი არ შეიძლება იყოს."
+      ],
+      "Last name is too long": [
+        "გვარი ძალიან გრძელია."
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "${ calendarsToFixCount } კალენდართან შერწყმისთვის, სულ ცოტა, ${ BRAND_NAME }-ის კალენდარი უნდა გქონდეთ",
@@ -3425,6 +3458,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }-ს ესაჭიროება თქვენი წვდომა ${ enableDesktopNotifications }-ზე."
       ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "${ BRAND_NAME }-ის დაშიფვრის ტექნოლოგია ნიშნავს, რომ თქვენს პაროლთან წვდომა არავის აქვს, ჩვენც კი."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } ახალი კალენდარი",
         "${ calendarsToBeCreatedCount } ახალი კალენდარი"
@@ -4202,6 +4238,10 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "მოსაწვევში, მაქსიმუმ, ${ maxAttendees } მონაწილე შეიძლება იყოს",
+        "მოსაწვევში, მაქსიმუმ, ${ maxAttendees } მონაწილე შეიძლება იყოს"
+      ],
       "Creating invites in a shared calendar is not allowed": [
         "გაზიარებულ კალენდარში მოსაწვევების შექმნა აკრძალულია"
       ]
@@ -4313,6 +4353,9 @@
       ],
       "Colors": [
         "ფერები"
+      ],
+      "Confirm password": [
+        "პაროლის დადასტურება"
       ],
       "Contacts": [
         "კონტაქტები"
@@ -4469,6 +4512,9 @@
       ],
       "Navigation": [
         "ნავიგაცია"
+      ],
+      "New password": [
+        "ახალი პაროლი"
       ],
       "Notification": [
         "შეტყობინება"
@@ -5337,6 +5383,9 @@
       "Filter groups": [
         "ჯგუფების გაფილტრვა"
       ],
+      "First name": [
+        "სახელი"
+      ],
       "Group name": [
         "ჯგუფის სახელი"
       ],
@@ -5345,6 +5394,9 @@
       ],
       "Indexing...": [
         "დაინდექსება..."
+      ],
+      "Last name": [
+        "გვარი"
       ],
       "Name": [
         "სახელი"
@@ -5463,6 +5515,93 @@
       ],
       "No results found": [
         "შედეგების გარეშე"
+      ]
+    },
+    "session_recovery:available:action": {
+      "Reset password": [
+        "პაროლის აღდგენა"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Please generate keys before you try to change your password": [
+        "პაროლის შეცვლამდე საჭიროა გასაღებების გენერაცია"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } დღე",
+        "${ timeRemaining.inDays } დღე"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } საათი",
+        "${ timeRemaining.inHours } საათი"
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "იხილეთ, როგორ"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "პაროლი დამახსოვრებულია"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "პაროლის აღდგენა"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "პაროლის შეცვლის გაუქმება"
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "პაროლის შეცვლა გაუქმდა"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "გავაუქმო პაროლის შეცვლა?"
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "შეცვალეთ თქვენი პაროლი ახლა"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "მოთხოვნის გაუქმება"
+      ],
+      "Got it": [
+        "გავიგე"
+      ],
+      "Learn more": [
+        "გაიგეთ მეტი"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "პაროლის შეცვლა მოთხოვნილია"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "გასვლა"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } საათი",
+        "${ gracePeriodHoursRemaining } საათი"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "პაროლის შეცვლა"
       ]
     },
     "Settings update growler warning": {
@@ -6058,8 +6197,14 @@
       "Display name": [
         "საჩვენებელი სახელი"
       ],
+      "First name": [
+        "სახელი"
+      ],
       "Import": [
         "შემოტანა"
+      ],
+      "Last name": [
+        "გვარი"
       ],
       "Values": [
         "მნიშვნელობები"
@@ -6143,6 +6288,9 @@
       "Billing cycle": [
         "გადახდის პერიოდი"
       ],
+      "Birthday": [
+        "დაბადების დღე"
+      ],
       "Calendar": [
         "კალენდარი"
       ],
@@ -6154,6 +6302,9 @@
       ],
       "Change my answer": [
         "პასუხის შეცვლა"
+      ],
+      "Change password": [
+        "პაროლის შეცვლა"
       ],
       "Choose how many times this event will repeat": [
         "აირჩიეთ, ეს მოვლენა რამდენჯერ გამეორდება"
@@ -6301,6 +6452,9 @@
       ],
       "Night theme": [
         "ღამის თემა"
+      ],
+      "Notes": [
+        "შენიშვნები"
       ],
       "Open actions dropdown": [
         "ქმედებების ჩამოსაშლელი მენიუდან აღება"
