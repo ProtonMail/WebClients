@@ -14,6 +14,7 @@ export const getExifInfo = async (file: File, mimeType: string): Promise<Expande
     await file.arrayBuffer().then((buffer) => {
         // In case of error with return empty exif
         try {
+            // Notes: XMP read is disable because DOMParser is not available in Worker (package.json > exifreader)
             return ExifReader.load(buffer, { expanded: true });
         } catch (err) {
             return undefined;

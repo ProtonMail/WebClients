@@ -64,5 +64,10 @@
         "prettier": "^3.0.3",
         "pretty-format": "^29.7.0",
         "typescript": "^5.2.2"
+    },
+    "exifreader": {
+        "exclude": {
+            "xmp": true
+        }
     }
 }
