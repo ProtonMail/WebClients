@@ -29,6 +29,15 @@
       "Back": [
         "Indietro"
       ],
+      "Can edit": [
+        "Può modificare"
+      ],
+      "Can manage": [
+        "Può gestire"
+      ],
+      "Can view": [
+        "Può visualizzare"
+      ],
       "Can't find your password manager? Please let us know!": [
         "Non riesci a trovare il tuo gestore di password? Faccelo sapere!"
       ],
@@ -58,6 +67,9 @@
       ],
       "Confirm": [
         "Conferma"
+      ],
+      "Continue": [
+        "Continua"
       ],
       "Continue without pinning": [
         "Continua senza bloccare"
@@ -170,14 +182,32 @@
       "Importing": [
         "Importazione"
       ],
+      "Invite people": [
+        "Invita persone"
+      ],
+      "Join shared vault": [
+        "Unisciti alla cassaforte condivisa"
+      ],
       "Learn more": [
         "Scopri di più"
+      ],
+      "Leave": [
+        "Abbandona"
+      ],
+      "Leave vault": [
+        "Abbandona cassaforte"
       ],
       "Lock extension": [
         "Blocca l'estensione"
       ],
+      "Manage access": [
+        "Gestisci accesso"
+      ],
       "Manually sync your data": [
         "Sincronizza manualmente i tuoi dati"
+      ],
+      "More info: ${ safeTitle }": [
+        "Maggiori informazioni: ${ safeTitle }"
       ],
       "More options": [
         "Più opzioni"
@@ -212,11 +242,20 @@
       "Regenerate": [
         "Ripristina"
       ],
+      "Reject invitation": [
+        "Rifiuta l'invito"
+      ],
       "Reload extension": [
         "Ricarica estensione"
       ],
+      "Remove access": [
+        "Rimuovi accesso"
+      ],
       "Request a feature": [
         "Richiedi una funzionalità"
+      ],
+      "Resend invitation": [
+        "Invia nuovamente l'invito"
       ],
       "Restore item": [
         "Ripristina elemento"
@@ -230,8 +269,17 @@
       "Saving": [
         "Salvataggio"
       ],
+      "See members": [
+        "Visualizza membri"
+      ],
+      "Send invite": [
+        "Manda invito"
+      ],
       "Send us a message": [
         "Inviaci un messaggio"
+      ],
+      "Share": [
+        "Condividi"
       ],
       "Show": [
         "Mostra"
@@ -256,6 +304,9 @@
       ],
       "Submitting report...": [
         "Invio della segnalazione..."
+      ],
+      "Transfer ownership": [
+        "Trasferisci proprietà"
       ],
       "Try again": [
         "Riprova"
@@ -316,11 +367,20 @@
       "Cannot create alias (${ error }).": [
         "Impossibile creare alias (${ error })."
       ],
+      "Could not leave vault.": [
+        "Impossibile abbandonare la cassaforte."
+      ],
       "Could not open created vault": [
         "Impossibile aprire la cassaforte creata"
       ],
+      "Could not open invited vault": [
+        "Impossibile aprire la cassaforte dell'invito"
+      ],
       "Could not open updated vault": [
         "Impossibile aprire la cassaforte aggiornata"
+      ],
+      "Could not resolve share members": [
+        "Impossibile recuperare i membri della condivisione"
       ],
       "Could not resume your session : ${ description }": [
         "Impossibile riprendere la sessione : ${ description }"
@@ -356,6 +416,21 @@
       "Error reporting problem": [
         "Errore nella segnalazione del problema"
       ],
+      "Failed removing the invite.": [
+        "Rimozione dell'invito non riuscita."
+      ],
+      "Failed resending invite.": [
+        "Reinvio dell'invito non riuscito."
+      ],
+      "Failed to edit user's access.": [
+        "Modifica dell'accesso dell'utente non riuscita."
+      ],
+      "Failed to remove user's access.": [
+        "Rimozione dell'accesso dell'utente non riuscita."
+      ],
+      "Failed to transfer this vault's ownership.": [
+        "Trasferimento della proprietà dalla cassaforte non riuscita."
+      ],
       "File could not be parsed": [
         "Impossibile analizzare il file"
       ],
@@ -370,6 +445,18 @@
       ],
       "Invalid url": [
         "URL non valido"
+      ],
+      "Invitation could not be accepted": [
+        "Impossibile accettare l'invito"
+      ],
+      "Invitation could not be rejected": [
+        "Impossibile rifiutare l'invito"
+      ],
+      "Invite creation failed.": [
+        "Creazione dell'invito non riuscita"
+      ],
+      "Invite successfully sent": [
+        "Invito inviato con successo"
       ],
       "Item content cannot exceed 40KB": [
         "Il contenuto dell'elemento non può superare i 40 Kb"
@@ -413,6 +500,9 @@
       "Settings update failed": [
         "Aggiornamento impostazioni non riuscito"
       ],
+      "Signature verification failed": [
+        "Verifica della firma non riuscita"
+      ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
         "Alcune casseforti non sono più accessibili in seguito alla reimpostazione della password. Riattiva le chiavi del tuo account per ottenere nuovamente l'accesso. ${ reactivateLink }"
       ],
@@ -445,6 +535,9 @@
       ],
       "Unknown error": [
         "Errore sconosciuto"
+      ],
+      "Unknown invite": [
+        "Invito sconosciuto"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Formato del file ${ PASS_APP_NAME } non supportato"
@@ -526,6 +619,14 @@
         "${ count } elemento",
         "${ count } elementi"
       ],
+      "${ itemCount } item": [
+        "${ itemCount } elemento",
+        "${ itemCount } elementi"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } membro",
+        "${ memberCount } membri"
+      ],
       "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
         "${ PASS_APP_NAME } importerà solamente i login e le note. I passaporti, i file allegati, ecc. non sono al momento supportati."
       ],
@@ -544,6 +645,10 @@
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } giorno rimasto",
         "${ trialDaysLeft } giorni rimasti"
+      ],
+      "${ vault.count } item": [
+        "${ vault.count } elemento",
+        "${ vault.count } elementi"
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "È disponibile una nuova versione di ${ PASS_APP_NAME }. Aggiornala per scoprire le nuove funzionalità e correzioni."
@@ -574,6 +679,27 @@
       ],
       "Autosaved on ${ submissionURL }": [
         "Salvataggio automatico per ${ submissionURL }"
+      ],
+      "Can create, edit, delete and export items in this vault.": [
+        "Può creare, modificare, eliminare ed esportare gli elementi in questa cassaforte."
+      ],
+      "Can edit": [
+        "Può modificare"
+      ],
+      "Can grant and revoke access to this vault, and delete it.": [
+        "Può concedere e revocare l'accesso a questa cassaforte ed eliminarla."
+      ],
+      "Can grant and revoke access to this vault.": [
+        "Può concedere e revocare l'accesso a questa cassaforte."
+      ],
+      "Can manage": [
+        "Può gestire"
+      ],
+      "Can view": [
+        "Può visualizzare"
+      ],
+      "Can view items in this vault.": [
+        "Può visualizzare gli elementi in questa cassaforte."
       ],
       "Check out all the exclusive features that are available to you for a limited time.": [
         "Scopri tutte le funzionalità esclusive che sono disponibili per te per un periodo di tempo limitato."
@@ -675,6 +801,12 @@
       "Internet connection lost": [
         "Connessione ad Internet interrotta"
       ],
+      "Invite successfully removed": [
+        "Invito rimosso con successo"
+      ],
+      "Invite successfully resent": [
+        "Invito reinviato con successo"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Sembra che tu abbia già effettuato l'accesso a ${ PASS_APP_NAME }. Se stai provando ad accedere con un account differente, prima disconnetti l'estensione."
       ],
@@ -712,6 +844,9 @@
       "Loading...": [
         "Caricamento in corso..."
       ],
+      "me": [
+        "io"
+      ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Molto più che un gestore di password, ${ PASS_APP_NAME } protegge le tue password e i tuoi indirizzi email tramite gli alias. Grazie alla tecnologia che sta alla base di ${ MAIL_APP_NAME }, i tuoi dati sono crittografati end-to-end e rimangono accessibili solo a te."
       ],
@@ -730,11 +865,20 @@
       "Open the Extensions menu": [
         "Apri il menu Estensioni"
       ],
+      "Owner": [
+        "Proprietario"
+      ],
+      "Ownership successfully transfered. You are no long the owner of this vault.": [
+        "Proprietà trasferita con successo. Non sei più il proprietario di questa cassaforte."
+      ],
       "Password copied": [
         "Password copiata"
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Le password più vecchie di 1 giorno vengono eliminate automaticamente dalla cronologia."
+      ],
+      "Pending invitation": [
+        "Invito in attesa"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Fissa ${ PASS_APP_NAME } sulla barra degli strumenti"
@@ -769,6 +913,9 @@
       "Select the destination vault for each imported vault.": [
         "Seleziona la cassaforte di destinazione per ciascuna cassaforte importata."
       ],
+      "Select the level of access this user will gain when they join your vault.": [
+        "Seleziona il livello di accesso che questo utente otterrà quando si unirà alla tua cassaforte."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "I server sono irraggiungibili. Riprova tra qualche minuto"
       ],
@@ -793,6 +940,9 @@
       "Successfully exported all your items": [
         "Tutti i tuoi elementi sono stati esportati con successo"
       ],
+      "Successfully left the vault": [
+        "Cassaforte abbandonata con successo"
+      ],
       "Successfully synced all vaults": [
         "Casseforti sincronizzate"
       ],
@@ -809,8 +959,17 @@
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Il testo che stai provando a incollare è più lungo del numero massimo consentito di ${ maxLength } caratteri."
       ],
+      "The user did not accept the invitation yet.": [
+        "L'utente non ha ancora accettato l'invito."
+      ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Questa esportazione non sarà crittografata e chiunque abbia accesso al file esportato potrà vedere le tue password. Per la tua sicurezza, ricordati di cancellarlo una volta che hai terminato di utilizzarlo."
+      ],
+      "This user will receive an invitation to join your '${ vaultName }' vault.": [
+        "Questo utente riceverà un invito a unirsi alla tua cassaforte '${ vaultName }'."
+      ],
+      "This vault is not currently shared with anyone. Invite people to share it with others.": [
+        "Questa cassaforte non è attualmente condivisa con nessuno. Per condividerla con qualcuno, invita delle persone."
       ],
       "Unable to copy to clipboard": [
         "Impossibile copiare negli appunti"
@@ -823,6 +982,12 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Effettua l'upgrade a ${ PASS_APP_NAME }"
+      ],
+      "User's access removed": [
+        "Accesso dell'utente rimosso"
+      ],
+      "User's access sucessfuly updated": [
+        "Accesso dell'utente aggiornato con successo"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "La cassaforte \"${ payload.content.name }\" è stata eliminata con successo"
@@ -869,6 +1034,9 @@
       ],
       "You're about to create": [
         "Stai per creare"
+      ],
+      "You've been invited to a vault. Click here to see the invitation.": [
+        "Sei stato invitato in una cassaforte. Clicca qui per vedere l'invito."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "La tua sessione ${ PASS_APP_NAME } è bloccata"
@@ -1168,6 +1336,9 @@
       "Report a problem": [
         "Segnala un problema"
       ],
+      "Respond": [
+        "Rispondi"
+      ],
       "Restore all items": [
         "Ripristina tutti gli elementi"
       ],
@@ -1316,6 +1487,9 @@
       "Add text": [
         "Aggiungi testo"
       ],
+      "Email address": [
+        "Indirizzo email"
+      ],
       "Enter a note...": [
         "Inserisci una nota..."
       ],
@@ -1426,17 +1600,29 @@
       "Import to vault(s)": [
         "Importa in una o più casseforti"
       ],
+      "Leave vault ?": [
+        "Abbandonare la cassaforte?"
+      ],
       "Low disk space": [
         "Spazio su disco insufficiente"
       ],
       "Permanently remove all items ?": [
         "Rimuovere definitivamente tutti gli elementi?"
       ],
+      "Permissions": [
+        "Autorizzazioni"
+      ],
       "Pin the extension": [
         "Blocca l'estensione"
       ],
       "Secure your data": [
         "Proteggi i tuoi dati"
+      ],
+      "Share with": [
+        "Condividi con"
+      ],
+      "Shared vault invitation": [
+        "Invito alla cassaforte condivisa"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Passare a ${ PASS_APP_NAME }?"
@@ -1446,6 +1632,9 @@
       ],
       "The extension is now ready to use.": [
         "L'estensione è ora pronta per l'uso."
+      ],
+      "Transfer ownership": [
+        "Trasferisci proprietà"
       ],
       "Trash empty": [
         "Il cestino è vuoto."
@@ -1514,6 +1703,9 @@
       "An error occured while exporting your data": [
         "Si è verificato un errore durante l'esportazione dei dati"
       ],
+      "Are you sure you want to transfer vault ownership to ${ email }?": [
+        "Sei sicuro di voler trasferire la proprietà della cassaforte a ${ email }?"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Al momento non è possibile recuperare le caselle di posta per questo alias"
       ],
@@ -1559,6 +1751,9 @@
       "PGP encrypted export file requires passphrase": [
         "L'esportazione del file crittografato mediante PGP richiede una passphrase"
       ],
+      "Please enter a valid email address": [
+        "Inserisci un indirizzo email valido"
+      ],
       "Please log back in": [
         "Per favore accedi nuovamente"
       ],
@@ -1600,6 +1795,9 @@
       ],
       "You must select at least one mailbox": [
         "È necessario selezionare almeno un casella email"
+      ],
+      "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
+        "Non avrai più accesso a questa cassaforte. Per unirti nuovamente avrai bisogno di un nuovo invito."
       ],
       "Your plan does not allow you to create more aliases": [
         "Il tuo piano non ti consente di creare altri alias"
