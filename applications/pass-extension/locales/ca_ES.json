@@ -11,6 +11,9 @@
       "Add current url": [
         "Afegir la url actual"
       ],
+      "Add domain to pause list": [
+        "Afegeix el domini a la llista de pausa"
+      ],
       "Add more": [
         "Afegeix"
       ],
@@ -55,6 +58,9 @@
       ],
       "Confirm": [
         "Confirma"
+      ],
+      "Continue": [
+        "Continua"
       ],
       "Continue without pinning": [
         "Continua sense fixar"
@@ -170,11 +176,17 @@
       "Learn more": [
         "Més informació"
       ],
+      "Leave": [
+        "Surt"
+      ],
       "Lock extension": [
         "Bloqueja l'extensió"
       ],
       "Manually sync your data": [
         "Sincronitzeu les vostres dades manualment"
+      ],
+      "More info: ${ safeTitle }": [
+        "Més informació: ${ safeTitle }"
       ],
       "More options": [
         "Més opcions"
@@ -229,6 +241,9 @@
       ],
       "Send us a message": [
         "Envieu-nos un missatge"
+      ],
+      "Share": [
+        "Compartir"
       ],
       "Show": [
         "Mostra"
@@ -287,6 +302,11 @@
       ],
       "Expand": [
         "Amplia"
+      ]
+    },
+    "Description": {
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
+        "Llista de domini on no s'han d'executar certes funcions automàtiques a ${ PASS_SHORT_APP_NAME } (emplenament automàtic, suggeriment automàtic, desament automàtic)."
       ]
     },
     "Error": {
@@ -363,6 +383,9 @@
       "Invalid url": [
         "URL no vàlida"
       ],
+      "Item content cannot exceed 40KB": [
+        "El contingut de l'element no pot excedir 40 Kb."
+      ],
       "Item creation failed": [
         "No s'ha pogut crear l'element"
       ],
@@ -402,6 +425,9 @@
       "Settings update failed": [
         "No s'han pogut actualitzar les preferències."
       ],
+      "Signature verification failed": [
+        "Verificació de la signatura fallida"
+      ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
         "Algunes caixes fortes ja no són accessibles a causa d'un restabliment de contrasenya. Reactiveu les claus del vostre compte per recuperar-hi l'accés. ${ reactivateLink }"
       ],
@@ -413,6 +439,9 @@
       ],
       "The file you are trying to import is empty": [
         "El fitxer que esteu intentant importar està buit"
+      ],
+      "The url is in the list": [
+        "L'URL és a la llista."
       ],
       "Too many failed attempts. Please sign in again.": [
         "Massa intents erronis. Torneu a iniciar la sessió."
@@ -511,6 +540,9 @@
       "${ count } item": [
         "${ count } element",
         "${ count } elements"
+      ],
+      "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
+        "${ PASS_APP_NAME } només importarà inicis de sessió i notes. Els passaports, els fitxers adjunts, etc. no són compatibles en aquest moment."
       ],
       "${ revisionNumber } time": [
         "${ revisionNumber } vegada",
@@ -629,6 +661,9 @@
       ],
       "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
         "Si està desactivat, ${ PASS_APP_NAME } no suggerirà la creació de contrasenyes fortes als formularis d'inscripció."
+      ],
+      "If enabled, the autofill dropdown will automatically open on field focus.": [
+        "Si està habilitat, el menú desplegable d'emplenament automàtic s'obrirà automàticament en el camp enfocat."
       ],
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Si està habilitat, podeu emplenar automàticament les vostres credencials fent clic a la icona de ${ PASS_APP_NAME }."
@@ -819,6 +854,9 @@
       "Verification code": [
         "Codi de verificació"
       ],
+      "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
+        "Estem tenint problemes per sincronitzar les dades amb el vostre emmagatzematge local. Assegureu-vos que teniu prou espai al disc perquè ${ PASS_SHORT_APP_NAME } funcioni correctament."
+      ],
       "You are about to create:": [
         "Esteu a punt de crear:"
       ],
@@ -922,6 +960,9 @@
       ],
       "Autofill": [
         "Emplenament automàtic"
+      ],
+      "Autofill 2FA": [
+        "Emplenament automàtic A2F"
       ],
       "Automatically open autofill when focusing login fields": [
         "Obre automàticament l'emplenament automàtic en enfocar els camps d'inici de sessió"
@@ -1097,6 +1138,9 @@
       "Old-New": [
         "Del més antic al més nou"
       ],
+      "Older than last month": [
+        "Fa més d'un mes"
+      ],
       "Oldest to newest": [
         "De més antic a més recent"
       ],
@@ -1111,6 +1155,9 @@
       ],
       "Passwords": [
         "Contrasenyes"
+      ],
+      "Pause list": [
+        "Llista de pausa"
       ],
       "Permanently delete items": [
         "Elimina els elements de manera permanent"
@@ -1162,6 +1209,9 @@
       ],
       "Settings": [
         "Preferències"
+      ],
+      "Show website favicons": [
+        "Mostra els favicons del lloc web"
       ],
       "Special characters (!&*)": [
         "Caràcters especials (!&*)"
@@ -1281,6 +1331,9 @@
       "Add text": [
         "Afegiu text"
       ],
+      "Email address": [
+        "Adreça de correu electrònic"
+      ],
       "Enter a note...": [
         "Introduïu una nota..."
       ],
@@ -1310,6 +1363,12 @@
       ],
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Torneu a escriure \"${ vaultName }\" per confirmar la supressió"
+      ],
+      "Search ${ pluralItemType } in ${ vault.content.name }": [
+        "Cerca ${ pluralItemType } a ${ vault.content.name }"
+      ],
+      "Search ${ pluralItemType } in all vaults": [
+        "Cerca ${ pluralItemType } en totes les caixes fortes"
       ],
       "Search in ${ vault.content.name }": [
         "Cerca en ${ vault.content.name }"
@@ -1367,6 +1426,9 @@
       "Enter your Pin": [
         "Introduïu el PIN"
       ],
+      "Fill & copy password": [
+        "Emplena i copia la contrasenya"
+      ],
       "Get the mobile apps": [
         "Obteniu les aplicacions mòbils"
       ],
@@ -1381,6 +1443,9 @@
       ],
       "Import to vault(s)": [
         "Importa a les caixes fortes"
+      ],
+      "Low disk space": [
+        "Poc espai al disc"
       ],
       "Permanently remove all items ?": [
         "Voleu eliminar els elements de manera permanent?"
