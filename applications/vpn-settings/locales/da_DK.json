@@ -140,6 +140,9 @@
       "Discard": [
         "Kassér"
       ],
+      "Don't know your password?": [
+        "Kan du ikke din adgangskode?"
+      ],
       "Done": [
         "Udført"
       ],
@@ -278,6 +281,9 @@
       "OK": [
         "Ok"
       ],
+      "Ok": [
+        "Ok"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Åbn ${ CALENDAR_APP_NAME } indstillinger"
       ],
@@ -370,6 +376,9 @@
       ],
       "Search countries": [
         "Søg lande"
+      ],
+      "See how": [
+        "Se hvordan"
       ],
       "See plan features": [
         "Se abonnementfunktioner"
@@ -1680,6 +1689,9 @@
       ],
       "Incorrect password": [
         "Forkert adgangskode"
+      ],
+      "Incorrect username": [
+        "Forkert brugernavn"
       ],
       "Invalid ${ name } code": [
         "Ugyldig ${ name }-kode"
@@ -5097,6 +5109,30 @@
       ],
       "inactive": [
         "inaktiv"
+      ]
+    },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "Annuller nulstilling"
+      ],
+      "Reset password": [
+        "Nulstil adgangskode"
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Se hvordan"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "Annuller anmodning"
+      ],
+      "Got it": [
+        "Forstået"
+      ],
+      "Learn more": [
+        "Få mere at vide"
       ]
     },
     "Shared calendar; Info about calendar owner": {
