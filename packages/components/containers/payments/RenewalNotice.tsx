@@ -1,6 +1,7 @@
 import { addMonths } from 'date-fns';
 import { c } from 'ttag';
 
+import { Subscription } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Icon, Time } from '../../components';
@@ -10,13 +11,25 @@ export type Props = {
      * Number of months until renewal
      */
     renewCycle: number;
+    isCustomBilling: boolean;
+    isScheduledSubscription: boolean;
+    subscription?: Subscription;
     className?: string;
 };
 
-const RenewalNotice = ({ renewCycle, className }: Props) => {
-    const unixRenewalTime: number = +addMonths(new Date(), renewCycle) / 1000;
+const RenewalNotice = ({ renewCycle, isCustomBilling, isScheduledSubscription, subscription, className }: Props) => {
+    let unixRenewalTime: number = +addMonths(new Date(), renewCycle) / 1000;
+    if (isCustomBilling && subscription) {
+        unixRenewalTime = subscription.PeriodEnd;
+    }
+
+    if (isScheduledSubscription && subscription) {
+        const periodEndMilliseconds = subscription.PeriodEnd * 1000;
+        unixRenewalTime = +addMonths(periodEndMilliseconds, renewCycle) / 1000;
+    }
+
     const renewalTime = (
-        <Time format="dd/MM/yyyy" key="auto-renewal-time">
+        <Time format="P" key="auto-renewal-time">
             {unixRenewalTime}
         </Time>
     );
