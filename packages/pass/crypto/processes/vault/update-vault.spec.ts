@@ -1,5 +1,5 @@
 import type { VaultKey } from '@proton/pass/types';
-import { CONTENT_FORMAT_VERSION, EncryptionTag } from '@proton/pass/types';
+import { CONTENT_FORMAT_VERSION, PassEncryptionTag } from '@proton/pass/types';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { decryptData, generateKey, getSymmetricKey } from '../../utils/crypto-helpers';
@@ -25,7 +25,7 @@ describe('updateVault crypto process', () => {
         const decryptedContent = await decryptData(
             vaultKey.key,
             base64StringToUint8Array(vaultUpdate.Content),
-            EncryptionTag.VaultContent
+            PassEncryptionTag.VaultContent
         );
 
         expect(decryptedContent).toStrictEqual(content);

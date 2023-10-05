@@ -1,5 +1,5 @@
 import type { ItemCreateRequest, VaultKey } from '@proton/pass/types';
-import { CONTENT_FORMAT_VERSION, EncryptionTag } from '@proton/pass/types';
+import { CONTENT_FORMAT_VERSION, PassEncryptionTag } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
@@ -19,8 +19,8 @@ export const createItem = async ({ content, vaultKey }: CreateItemProcessParams)
 
     const key = generateKey();
     const itemKey = await getSymmetricKey(key);
-    const encryptedItemContent = await encryptData(itemKey, content, EncryptionTag.ItemContent);
-    const encryptedItemKey = await encryptData(vaultKey.key, key, EncryptionTag.ItemKey);
+    const encryptedItemContent = await encryptData(itemKey, content, PassEncryptionTag.ItemContent);
+    const encryptedItemKey = await encryptData(vaultKey.key, key, PassEncryptionTag.ItemKey);
 
     return {
         Content: pipe(uint8ArrayToBase64String, validateItemContentSize)(encryptedItemContent),

@@ -1,5 +1,5 @@
 import type { ItemKey, ItemUpdateRequest } from '@proton/pass/types';
-import { CONTENT_FORMAT_VERSION, EncryptionTag } from '@proton/pass/types';
+import { CONTENT_FORMAT_VERSION, PassEncryptionTag } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
@@ -22,7 +22,7 @@ export const updateItem = async ({
         throw new PassCryptoItemError('Item content cannot be empty');
     }
 
-    const encryptedItemContent = await encryptData(itemKey.key, content, EncryptionTag.ItemContent);
+    const encryptedItemContent = await encryptData(itemKey.key, content, PassEncryptionTag.ItemContent);
 
     return {
         KeyRotation: itemKey.rotation,

@@ -1,5 +1,5 @@
 import type { ItemKey } from '@proton/pass/types';
-import { CONTENT_FORMAT_VERSION, EncryptionTag } from '@proton/pass/types';
+import { CONTENT_FORMAT_VERSION, PassEncryptionTag } from '@proton/pass/types';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { decryptData, generateKey, getSymmetricKey } from '../../utils/crypto-helpers';
@@ -27,7 +27,7 @@ describe('updateItem crypto process', () => {
         const decryptedContent = await decryptData(
             itemKey.key,
             base64StringToUint8Array(update.Content!),
-            EncryptionTag.ItemContent
+            PassEncryptionTag.ItemContent
         );
 
         expect(decryptedContent).toStrictEqual(content);
