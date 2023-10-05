@@ -153,7 +153,7 @@ const AttachmentItem = ({
                 {showSecondaryAction && (
                     <button
                         type="button"
-                        className="inline-flex p-2 pl-1 no-pointer-events-children rounded relative interactive-pseudo interactive--no-background message-attachmentSecondaryAction"
+                        className="inline-flex pr-2 pl-1 no-pointer-events-children rounded relative interactive-pseudo interactive--no-background message-attachmentSecondaryAction"
                         onClick={handleAction(false)}
                         title={secondaryActionTitle}
                         disabled={loading}
@@ -161,7 +161,7 @@ const AttachmentItem = ({
                         data-testid={`attachment-item:${name}--secondary-action`}
                     >
                         <span
-                            className="message-attachmentSecondaryAction-size color-weak text-ellipsis text-sm mt-1"
+                            className="message-attachmentSecondaryAction-size color-weak text-ellipsis text-sm my-2"
                             aria-hidden="true"
                         >
                             {humanAttachmentSize}
