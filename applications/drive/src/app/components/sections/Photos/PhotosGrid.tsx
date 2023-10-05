@@ -3,19 +3,17 @@ import React, { FC, ReactNode, useCallback, useMemo, useRef, useState } from 're
 import { Loader, useElementRect } from '@proton/components';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
-import type { PhotoGridItem } from '../../../store';
-import { usePortalPreview } from '../../PortalPreview';
-import { useDetailsModal } from '../../modals/DetailsModal';
+import type { PhotoGridItem, PhotoLink } from '../../../store';
 import { PhotosCard, PhotosGroup } from './grid';
 
 type Props = {
     data: PhotoGridItem[];
     onItemRender: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
-    shareId: string;
     isLoadingMore: boolean;
+    onItemClick: (photo: PhotoLink) => void;
 };
 
-export const PhotosGrid: FC<Props> = ({ data, onItemRender, shareId, isLoadingMore }) => {
+export const PhotosGrid: FC<Props> = ({ data, onItemRender, isLoadingMore, onItemClick }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const containerRect = useElementRect(containerRef);
 
@@ -27,9 +25,6 @@ export const PhotosGrid: FC<Props> = ({ data, onItemRender, shareId, isLoadingMo
 
         setScrollPosition(containerRef.current.scrollTop);
     }, [containerRef]);
-
-    const [portalPreview, showPortalPreview] = usePortalPreview();
-    const [detailsModal, showDetailsModal] = useDetailsModal();
 
     const emRatio = rootFontSize();
     const dimensions = useMemo(() => {
@@ -133,8 +128,7 @@ export const PhotosGrid: FC<Props> = ({ data, onItemRender, shareId, isLoadingMo
                             key={item.linkId}
                             photo={item}
                             onRender={onItemRender}
-                            showPortalPreview={showPortalPreview}
-                            showDetailsModal={showDetailsModal}
+                            onClick={onItemClick}
                             style={{
                                 position: 'absolute',
                                 width: itemWidth,
@@ -145,7 +139,6 @@ export const PhotosGrid: FC<Props> = ({ data, onItemRender, shareId, isLoadingMo
                                     Math.round(((i % animationOffset) / (animationOffset / 2)) * 10) / 10
                                 }s`,
                             }}
-                            shareId={shareId}
                         />
                     );
                 }
@@ -166,15 +159,11 @@ export const PhotosGrid: FC<Props> = ({ data, onItemRender, shareId, isLoadingMo
     }, [data, dimensions, scrollPosition]);
 
     return (
-        <>
-            {detailsModal}
-            {portalPreview}
-            <div className="p-4 overflow-auto" ref={containerRef} onScroll={handleScroll}>
-                <div className="relative w-full" style={innerStyle}>
-                    {gridItems}
-                </div>
-                {isLoadingMore && <Loader />}
+        <div className="p-4 overflow-auto" ref={containerRef} onScroll={handleScroll}>
+            <div className="relative w-full" style={innerStyle}>
+                {gridItems}
             </div>
-        </>
+            {isLoadingMore && <Loader />}
+        </div>
     );
 };
