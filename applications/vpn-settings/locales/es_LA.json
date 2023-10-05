@@ -146,6 +146,9 @@
       "Discard": [
         "Descartar"
       ],
+      "Don't know your password?": [
+        "¿No sabe su contraseña?"
+      ],
       "Done": [
         "Hecho"
       ],
@@ -287,6 +290,9 @@
       "OK": [
         "OK"
       ],
+      "Ok": [
+        "OK"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir ajustes de ${ CALENDAR_APP_NAME }"
       ],
@@ -379,6 +385,9 @@
       ],
       "Search countries": [
         "Buscar países"
+      ],
+      "See how": [
+        "Ver cómo"
       ],
       "See plan features": [
         "Ver funcionalidades del plan"
@@ -1749,6 +1758,9 @@
       ],
       "Incorrect password": [
         "Contraseña incorrecta"
+      ],
+      "Incorrect username": [
+        "Nombre de usuario incorrecto"
       ],
       "Invalid ${ name } code": [
         "Código ${ name } inválido"
@@ -5547,6 +5559,263 @@
       ],
       "to be created": [
         "por crear"
+      ]
+    },
+    "session_recovery:available:action": {
+      "Cancel password reset": [
+        "Cancelar el restablecimiento de contraseña"
+      ],
+      "Cancel reset": [
+        "Cancelar el restablecimiento"
+      ],
+      "Reset password": [
+        "Restablecer la contraseña"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "La recuperación de la cuenta no está disponible para claves de direcciones heredadas"
+      ],
+      "Please generate keys before you try to change your password": [
+        "Genere claves antes de intentar cambiar su contraseña"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } día",
+        "${ timeRemaining.inDays } días"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } hora",
+        "${ timeRemaining.inHours } horas"
+      ],
+      "Didn’t make this request?": [
+        "¿No hizo esta solicitud?"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Si no solicitó restablecer la contraseña, cancele la solicitud ahora."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Restablecimiento de contraseña aprobado (${ user.Email }). Tiene ${ timeRemaining.inDays } día para restablecer su contraseña.",
+        "Restablecimiento de contraseña aprobado (${ user.Email }). Tiene ${ timeRemaining.inDays } días para restablecer su contraseña."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Restablecimiento de contraseña aprobado (${ user.Email }). Tiene ${ timeRemaining.inHours } hora para restablecer su contraseña.",
+        "Restablecimiento de contraseña aprobado (${ user.Email }). Tiene ${ timeRemaining.inHours } horas para restablecer su contraseña."
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Vaya al dispositivo en el que inició sesión y donde se realizó la solicitud para cambiar su contraseña."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Este permiso expira en ${ timeRemaining.inDays } día",
+        "Este permiso expira en ${ timeRemaining.inDays } días"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Este permiso expira en ${ timeRemaining.inHours } hora",
+        "Este permiso expira en ${ timeRemaining.inHours } horas"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Ahora puede cambiar la contraseña para la cuenta ${ boldEmail } durante ${ boldDaysRemaining }."
+      ],
+      "You can now reset your password": [
+        "Ahora puede restablecer su contraseña."
+      ],
+      "You can reset your password until ${ boldDate }.": [
+        "Puede restablecer su contraseña hasta el ${ boldDate }."
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Ver cómo"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Contraseña guardada"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Restablecer su contraseña"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Cancelar el restablecimiento de contraseña"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Ingrese su contraseña actual para cancelar el proceso de restablecimiento. Ningún cambio surtirá efecto."
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "El restablecimiento de contraseña fue cancelado."
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "¿Cancelar el restablecimiento de contraseña?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Solicitud de restablecimiento de contraseña cancelada (${ user.Email }). Si no realizó esta solicitud, ${ changePasswordLink }."
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "cambie su contraseña ahora."
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel password reset": [
+        "Cancelar el restablecimiento de contraseña"
+      ],
+      "Cancel request": [
+        "Cancelar la solicitud"
+      ],
+      "Got it": [
+        "Entendido"
+      ],
+      "Learn more": [
+        "Más información"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } hora más",
+        "${ gracePeriodHoursRemaining } horas más"
+      ],
+      "Didn’t make this request?": [
+        "¿No hizo esta solicitud?"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Si no solicitó restablecer la contraseña, cancele la solicitud ahora."
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "Si no solicitó restablecer la contraseña, cancélela ahora."
+      ],
+      "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
+        "Restablecimiento de contraseña disponible desde ${ boldDate }. Esto le da tiempo para cancelar cualquier solicitud fraudulenta."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Restablecimiento de contraseña solicitado (${ user.Email }). Puede cambiar su contraseña en ${ hoursRemaining } hora.",
+        "Restablecimiento de contraseña solicitado (${ user.Email }). Puede cambiar su contraseña en ${ hoursRemaining } horas."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "Para asegurarnos de que es usted quien intenta restablecer la contraseña, esperamos 72 horas antes de aprobar las solicitudes. Podrá cambiar su contraseña en ${ boldTimeLeft }. ${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "Hemos recibido una solicitud de restablecimiento de contraseña para ${ boldEmail }."
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "Puede cambiar su contraseña en ${ gracePeriodHoursRemaining } hora",
+        "Puede cambiar su contraseña en ${ gracePeriodHoursRemaining } horas"
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "Ver la solicitud"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "Restablecimiento de contraseña solicitado"
+      ]
+    },
+    "session_recovery:initiation:action": {
+      "Got it": [
+        "Entendido"
+      ],
+      "Request password reset": [
+        "Solicitar el restablecimiento de contraseña"
+      ],
+      "Use recovery method": [
+        "Usar un método de recuperación"
+      ]
+    },
+    "session_recovery:initiation:info": {
+      "For security reasons, you’ll have to wait **72 hours** before you can change your password.": [
+        "Por razones de seguridad, tendrá que esperar **72 horas** antes de que pueda cambiar la contraseña."
+      ],
+      "If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.": [
+        "Si tiene un **método de recuperación** configurado, intente la recuperación de la cuenta en su lugar. Esto le permitirá cambiar su contraseña de inmediato."
+      ],
+      "We will contact you again when the password reset is available.": [
+        "Le contactaremos de nuevo cuando el restablecimiento de contraseña esté disponible."
+      ],
+      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
+        "Puede comprobar el estado de su solicitud en cualquier momento en la ${ accountAndPasswordSectionLink } de los ajustes."
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "account and password section": [
+        "sección Cuenta y contraseña"
+      ]
+    },
+    "session_recovery:initiation:notification": {
+      "Password reset confirmed": [
+        "Restablecimiento de contraseña confirmado"
+      ]
+    },
+    "session_recovery:initiation:title": {
+      "Request password reset?": [
+        "¿Solicitar el restablecimiento de contraseña?"
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "Podrá restablecer su contraseña en ${ gracePeriodHoursRemaining } hora",
+        "Podrá restablecer su contraseña en ${ gracePeriodHoursRemaining } horas"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Cerrar sesión"
+      ],
+      "Stay signed in": [
+        "Seguir conectado"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } hora",
+        "${ gracePeriodHoursRemaining } horas"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } ahora está disponible."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Si cierra la sesión antes de restablecer su contraseña, podría perder el acceso a su cuenta."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Si cierra la sesión sin restablecer su contraseña, podría perder el acceso a su cuenta."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Podrá restablecer su contraseña en ${ boldTimeLeft }."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Restablecimiento de contraseña"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "¿Desea cerrar la sesión sin restablecer la contraseña?"
+      ]
+    },
+    "session_recovery:status:info": {
+      "Available": [
+        "Disponible"
+      ],
+      "Pending": [
+        "Pendiente"
+      ]
+    },
+    "session_recovery:status:title": {
+      "Password reset request": [
+        "Solicitud de restablecimiento de contraseña"
       ]
     },
     "Shared calendar; Info about calendar owner": {
