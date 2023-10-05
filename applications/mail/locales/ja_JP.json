@@ -4545,6 +4545,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
       ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "${ BRAND_NAME } の暗号化技術は私たちでさえもパスワードにアクセスできないことを意味しています。"
+      ],
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } 個の新しいカレンダー"
       ],
@@ -6241,6 +6244,9 @@
       "Conditions": [
         "条件"
       ],
+      "Confirm password": [
+        "パスワードの確認"
+      ],
       "Contacts": [
         "連絡先"
       ],
@@ -6426,6 +6432,9 @@
       ],
       "Navigation": [
         "ナビゲーション"
+      ],
+      "New password": [
+        "新しいパスワード"
       ],
       "No label found": [
         "ラベルが見つかりませんでした"
@@ -8427,6 +8436,9 @@
       ],
       "Change my answer": [
         "回答を変更"
+      ],
+      "Change password": [
+        "パスワードを変更"
       ],
       "Clear out the junk": [
         "ジャンクメールを自動で削除"

@@ -28,6 +28,9 @@
       "Add Bcc recipients": [
         "Bcc მიმღებების დამატება"
       ],
+      "Add birthday": [
+        "დაბადების დღის დამატება"
+      ],
       "Add Cc recipients": [
         "Cc მიმღებების დამატება"
       ],
@@ -48,6 +51,9 @@
       ],
       "Add new group": [
         "ახალი ჯგუფის დამატება"
+      ],
+      "Add note": [
+        "შენიშვნის დამატება"
       ],
       "Add participant": [
         "მონაწილის დამატება"
@@ -682,6 +688,9 @@
       "Not saved": [
         "არაა შენახული"
       ],
+      "Ok": [
+        "დიახ"
+      ],
       "OK": [
         "დიახ"
       ],
@@ -846,6 +855,9 @@
       ],
       "See business plans": [
         "იხილეთ ბიზნეს გეგმები"
+      ],
+      "See how": [
+        "იხილეთ, როგორ"
       ],
       "See plan features": [
         "ტარიფის თვისებების ნახვა"
@@ -1933,8 +1945,17 @@
       "Birthday": [
         "დაბადების დღე"
       ],
+      "Display name": [
+        "საჩვენებელი სახელი"
+      ],
       "Email": [
         "ელ-ფოსტა"
+      ],
+      "Enter a display name or nickname": [
+        "შეიყვანეთ საჩვენებელი სახელი ან მეტსახელი"
+      ],
+      "First name": [
+        "სახელი"
       ],
       "Gender": [
         "სქესი"
@@ -1944,6 +1965,9 @@
       ],
       "Language": [
         "ენა"
+      ],
+      "Last name": [
+        "გვარი"
       ],
       "Logo": [
         "ლოგო"
@@ -3126,6 +3150,9 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "ამ ბრაუზერში შემცველობაში ძებნის ჩართვა შეუძლებელია. გამოდით პირადულობის დაცვის რეჟიმიდან ან გამოიყენეთ სხვა ბრაუზერი."
       ],
+      "Could not save preference": [
+        "პარამეტრის შენახვა შეუძლებელია"
+      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "გაშიფვრის შეცდომა: შეტყობინების დაშიფრული ნაწილის გაშიფვრის შეცდომა."
       ],
@@ -3179,6 +3206,9 @@
       "Filter with this name already exists": [
         "ფილტრი ამ სახელით უკვე არსებობს"
       ],
+      "First name is too long": [
+        "სახელი ძალიან გრძელია"
+      ],
       "Folder name cannot be empty.": [
         "საქაღალდის სახელი ცარიელი არ შეიძლება იყოს."
       ],
@@ -3193,6 +3223,9 @@
       ],
       "Incorrect mailbox password. Please try again.": [
         "საფოსტო ყუთის არასწორი პაროლი. თავიდან სცადეთ."
+      ],
+      "Incorrect username": [
+        "მომხმარებლის სახელი არასწორია"
       ],
       "Invalid email address": [
         "არასწორი ელფოსტის მისამართი"
@@ -3211,6 +3244,9 @@
       ],
       "Label name cannot be empty.": [
         "ჭდის სახელი ცარიელი არ შეიძლება იყოს."
+      ],
+      "Last name is too long": [
+        "გვარი ძალიან გრძელია."
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "მიმაგრებული ფაილების მაქსიმალური რაოდენობაა (${ attachmentsCountLimit })"
@@ -3458,6 +3494,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "თქვენმა ძებნამ მეტისმეტად ბევრი შედეგი მოიტანა. დაადეთ უფრო მეტი ლიმიტი და თავიდან სცადეთ."
+      ]
+    },
+    "Error adding participants to a calendar event": {
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "მოსაწვევში, მაქსიმუმ, ${ maxAttendees } მონაწილე შეიძლება იყოს",
+        "მოსაწვევში, მაქსიმუმ, ${ maxAttendees } მონაწილე შეიძლება იყოს"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -4207,6 +4249,9 @@
       "Storage unlocked": [
         "საცავი განბლოკილია"
       ],
+      "This feature is currently unavailable": [
+        "ეს ფუნქცია ამჟამად მიუწვდომელია"
+      ],
       "Update your logins": [
         "განაახლეთ თქვენი შესვლის დეტალები"
       ],
@@ -4573,6 +4618,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }-ს ესაჭიროება თქვენი წვდომა ${ enableDesktopNotifications }-ზე."
+      ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "${ BRAND_NAME }-ის დაშიფვრის ტექნოლოგია ნიშნავს, რომ თქვენს პაროლთან წვდომა არავის აქვს, ჩვენც კი."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } ახალი კალენდარი",
@@ -6327,8 +6375,14 @@
       "Conditions": [
         "პირობები"
       ],
+      "Confirm password": [
+        "პაროლის დადასტურება"
+      ],
       "Contacts": [
         "კონტაქტები"
+      ],
+      "Conversations per page": [
+        "საუბარი გვერდზე"
       ],
       "Copy": [
         "კოპირება"
@@ -6495,6 +6549,9 @@
       "Mark as": [
         "დანიშვნა, როგორც"
       ],
+      "Messages per page": [
+        "შეტყობინება გვერდზე"
+      ],
       "Move ${ sidebarElementName }": [
         "${ sidebarElementName }-ის გადატანა"
       ],
@@ -6512,6 +6569,9 @@
       ],
       "Navigation": [
         "ნავიგაცია"
+      ],
+      "New password": [
+        "ახალი პაროლი"
       ],
       "No label found": [
         "ჭდეები ნაპოვნი არაა"
@@ -7439,6 +7499,9 @@
       "Filter labels": [
         "ჭდეების ფილტრი"
       ],
+      "First name": [
+        "სახელი"
+      ],
       "Group name": [
         "ჯგუფის სახელი"
       ],
@@ -7447,6 +7510,9 @@
       ],
       "Image URL": [
         "გამოსახულების ბმული"
+      ],
+      "Last name": [
+        "გვარი"
       ],
       "Link": [
         "ბმული"
@@ -7737,6 +7803,93 @@
       ],
       "Stored with zero-access encryption": [
         "ინახება წვდომის გარეშე შიფრაციით"
+      ]
+    },
+    "session_recovery:available:action": {
+      "Reset password": [
+        "პაროლის აღდგენა"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Please generate keys before you try to change your password": [
+        "პაროლის შეცვლამდე საჭიროა გასაღებების გენერაცია"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } დღე",
+        "${ timeRemaining.inDays } დღე"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } საათი",
+        "${ timeRemaining.inHours } საათი"
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "იხილეთ, როგორ"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "პაროლი დამახსოვრებულია"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "პაროლის აღდგენა"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "პაროლის შეცვლის გაუქმება"
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "პაროლის შეცვლა გაუქმდა"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "გავაუქმო პაროლის შეცვლა?"
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "შეცვალეთ თქვენი პაროლი ახლა"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "მოთხოვნის გაუქმება"
+      ],
+      "Got it": [
+        "გავიგე"
+      ],
+      "Learn more": [
+        "გაიგეთ მეტი"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "პაროლის შეცვლა მოთხოვნილია"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "გასვლა"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } საათი",
+        "${ gracePeriodHoursRemaining } საათი"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "პაროლის შეცვლა"
       ]
     },
     "Signature verification warning": {
@@ -8442,8 +8595,14 @@
       "Display name": [
         "საჩვენებელი სახელი"
       ],
+      "First name": [
+        "სახელი"
+      ],
       "Import": [
         "შემოტანა"
+      ],
+      "Last name": [
+        "გვარი"
       ],
       "Values": [
         "მნიშვნელობები"
@@ -8540,6 +8699,9 @@
       "Billing cycle": [
         "გადახდის პერიოდი"
       ],
+      "Birthday": [
+        "დაბადების დღე"
+      ],
       "Blind Carbon Copy": [
         "ბრმა ასლი"
       ],
@@ -8557,6 +8719,9 @@
       ],
       "Change my answer": [
         "პასუხის შეცვლა"
+      ],
+      "Change password": [
+        "პაროლის შეცვლა"
       ],
       "Clear out the junk": [
         "ნაგვის მოსუფთავება"
@@ -8848,6 +9013,9 @@
       ],
       "No trackers found": [
         "ტრეკერები ვერ ვიპოვე"
+      ],
+      "Notes": [
+        "შენიშვნები"
       ],
       "Open actions dropdown": [
         "ქმედებების ჩამოსაშლელი მენიუდან აღება"
