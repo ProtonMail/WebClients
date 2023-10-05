@@ -287,6 +287,9 @@
       "Discard": [
         "放弃"
       ],
+      "Don't know your password?": [
+        "忘记密码？"
+      ],
       "Don't show again": [
         "不再显示"
       ],
@@ -521,6 +524,9 @@
       "OK": [
         "确定"
       ],
+      "Ok": [
+        "确定"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "打开 ${ CALENDAR_APP_NAME } 设置"
       ],
@@ -685,6 +691,9 @@
       ],
       "Search settings": [
         "搜索设置"
+      ],
+      "See how": [
+        "怎么看"
       ],
       "See plan features": [
         "查看套餐内容"
@@ -945,6 +954,9 @@
       ],
       "Disable": [
         "禁用"
+      ],
+      "Edit": [
+        "编辑"
       ],
       "Enable": [
         "启用"
@@ -1287,11 +1299,6 @@
       ],
       "Share with anyone": [
         "分享至他人"
-      ]
-    },
-    "Calendar settings sidebar": {
-      "Show ${ remainingItems } more": [
-        "显示更多 ${ remainingItems }"
       ]
     },
     "Calendar share permission label": {
@@ -2884,6 +2891,9 @@
       "Contact signature not verified": [
         "未验证联系人签名"
       ],
+      "Could not save preference": [
+        "无法保存首选项"
+      ],
       "Deselect at least ${ calendarsToFixCount } calendars": [
         "至少取消选择 ${ calendarsToFixCount } 个日历"
       ],
@@ -2937,6 +2947,9 @@
       ],
       "Incorrect password": [
         "密码错误"
+      ],
+      "Incorrect username": [
+        "用户名不正确"
       ],
       "Invalid ${ name } code": [
         "${ name } 码不正确"
@@ -4750,9 +4763,6 @@
       ],
       "Additional options": [
         "其他选项"
-      ],
-      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
-        "地址验证是一项高级的安全功能，除非您对其有所了解，否则不要打开此功能。"
       ],
       "addresses": [
         "地址"
@@ -6848,6 +6858,9 @@
       "Conversation grouping": [
         "会话分组"
       ],
+      "Conversations per page": [
+        "每页对话数"
+      ],
       "Copy": [
         "复制"
       ],
@@ -7117,6 +7130,9 @@
       ],
       "Message": [
         "内容"
+      ],
+      "Messages per page": [
+        "每页消息数"
       ],
       "Moderate NAT": [
         "保守 NAT"
@@ -8312,14 +8328,6 @@
         "团队管理"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否则，您的账户功能将受到限制，直至最后被停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } 在${ last4 } 结束"
@@ -8378,6 +8386,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "包含多种高级功能的安全邮箱，充分满足您的日常通讯需求。"
       ],
+      "Set automatic replies to inform senders you are out of the office or unable to respond.": [
+        "设置自动回复以通知发件人您不在办公室或无法回复。"
+      ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "专用VPN解决方案，提供安全、无限制、高速的互联网访问。"
       ],
@@ -8389,6 +8400,14 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "您正在享受当前套餐的促销价格。 降级账号后，您将失去优惠价格，如果再次尝试订阅，优惠价格将不可用。"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否则，您的账户功能将受到限制，直至最后被停用。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
       ]
     },
     "new_plans: Label": {
@@ -9358,6 +9377,166 @@
         "未找到结果"
       ]
     },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "取消重置请求"
+      ],
+      "Reset password": [
+        "重置密码"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "传统地址密钥无法恢复帐户"
+      ],
+      "Please generate keys before you try to change your password": [
+        "更改密码前请先生成密钥"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } days": [
+        "${ timeRemaining.inDays } 天"
+      ],
+      "${ timeRemaining.inHours } hours": [
+        "${ timeRemaining.inHours } 小时"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } days to reset your password.": [
+        "密码重置请求已获批准(${ user.Email })。您有${ timeRemaining.inDays } 天的时间来重置您的密码"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hours to reset your password.": [
+        "密码重置请求已获批准(${ user.Email })。您有${ timeRemaining.inHours } 小时的时间来重置您的密码"
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "请转到已登录的设备（在发起请求的会话中）更改您的密码。"
+      ],
+      "This permission expires in ${ timeRemaining.inDays } days": [
+        "此权限将在 ${ timeRemaining.inDays } 天后过期"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hours": [
+        "此权限将在 ${ timeRemaining.inHours } 小时后过期"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "您现在可以在${ boldDaysRemaining }天内免费更改帐户${ boldEmail }的密码。"
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "怎么看"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "密码已保存"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "重置密码"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "取消密码重置"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "输入您当前的密码以取消密码重置进程。 其他更改将不会生效。"
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "密码重置已取消"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "取消密码重置？"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "密码重置请求已取消 (${ user.Email })。 如果您没有提出此请求，则${ changePasswordLink }。"
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "立即更改您的密码"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "取消请求"
+      ],
+      "Got it": [
+        "好的"
+      ],
+      "Learn more": [
+        "了解详情"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hours": [
+        "还有${ gracePeriodHoursRemaining } 小时"
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "如果您没有要求重置密码，请立刻取消此请求。"
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hours.": [
+        "重置密码的请求已收到 (${ user.Email })。 您可以在 ${ hoursRemaining } 小时内更改密码。"
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "为了确保确实是您在尝试重置密码，我们会在 72 小时后才批准请求。 您可以在${ boldTimeLeft }中更改密码。${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "我们收到了${ boldEmail }的密码重置请求。"
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "查看请求"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "请求密码重置"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "退出"
+      ],
+      "Stay signed in": [
+        "保持登录"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hours": [
+        "${ gracePeriodHoursRemaining } 小时"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset }现已可用。"
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "如果您在重置密码完成之前退出，您可能会失去对账户的访问权限。"
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "如果您未重置密码就退出，您可能会失去对账户的访问权限。"
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "您可以在${ boldTimeLeft }之内重置密码。"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "重置密码"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "退出而不重置密码？"
+      ]
+    },
     "Settings description": {
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "使用我们的安全导入与转发工具即可迈出捍卫隐私的第一步。"
@@ -10297,9 +10476,6 @@
       ],
       "Add to spam list": [
         "加入垃圾邮件名单"
-      ],
-      "Address verification": [
-        "地址验证"
       ],
       "Allocate storage": [
         "分配存储空间"

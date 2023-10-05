@@ -1125,6 +1125,9 @@
       "Disallow unsigned mail": [
         "禁止未經數位簽章的郵件"
       ],
+      "Edit": [
+        "編輯"
+      ],
       "Edit address": [
         "編輯位址"
       ],
@@ -1488,11 +1491,6 @@
       ],
       "Share with anyone": [
         "與任何人分享"
-      ]
-    },
-    "Calendar settings sidebar": {
-      "Show ${ remainingItems } more": [
-        "顯示另 ${ remainingItems } 個"
       ]
     },
     "Calendar share permission label": {
@@ -4327,8 +4325,14 @@
       "Add a name to identify your security key with.": [
         "加入一個名稱以識別您的安全金鑰。"
       ],
+      "Allow platform keys": [
+        "允許平台金鑰"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "您確定要永久刪除此安全性金鑰 ${ name } 嗎？"
+      ],
+      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
+        "若啟用，其允許註冊內建裝置（如 Windows Hello、TouchID、FaceID 或內部 TPM）加上外部硬體安全金鑰"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "插入連結到您 ${ BRAND_NAME } 帳號的安全金鑰。"
@@ -5377,9 +5381,6 @@
       ],
       "Additional options": [
         "額外設定"
-      ],
-      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
-        "電郵位址驗證是一項進階安全性功能。只建議熟諳箇中原理的人使用。"
       ],
       "addresses": [
         "個電郵位址"
@@ -9625,17 +9626,6 @@
         "團隊管理"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "要繼續使用有進階功能的 ${ MAIL_APP_NAME }，請選擇您的訂購授權與繳款選項。"
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "您的試用期結束於 ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } 後四碼 ${ last4 }"
@@ -9706,6 +9696,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "為您的日常通訊提供進階功能的安全電子郵件。"
       ],
+      "Set automatic replies to inform senders you are out of the office or unable to respond.": [
+        "設定自動回覆，可告知聯絡人您不在辦公室或暫時無法親自回應。"
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "為具有特定安全需求的大型組織量身訂作的解決方案"
       ],
@@ -9720,6 +9713,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "你正在當前的計畫中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "要繼續使用有進階功能的 ${ MAIL_APP_NAME }，請選擇您的訂購授權與繳款選項。"
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "您的試用期結束於 ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -12183,9 +12187,6 @@
       "Add users": [
         "新增使用者"
       ],
-      "Address verification": [
-        "電郵位址驗證"
-      ],
       "Allocate storage": [
         "分配儲存空間"
       ],
@@ -13317,6 +13318,11 @@
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
         "這會將您的公鑰自動附加到您傳送的每一封郵件。收件人可藉此驗證您的郵件真實性，並傳送加密郵件給您。"
+      ]
+    },
+    "Tooltip default pgp scheme": {
+      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
+        "選擇與非 ${ BRAND_NAME } PGP 使用者簽署或加密郵件所使用的預設 PGP 設定。請注意：內嵌式 PGP 強制採用純文字郵件。"
       ]
     },
     "Tooltip prompt to trust keys": {

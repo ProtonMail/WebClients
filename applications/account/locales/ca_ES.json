@@ -1475,11 +1475,6 @@
         "Comparteix amb tothom"
       ]
     },
-    "Calendar settings sidebar": {
-      "Show ${ remainingItems } more": [
-        "Mostra'n ${ remainingItems } més"
-      ]
-    },
     "Calendar share permission label": {
       "Edit event details": [
         "Edita els detalls de l'esdeveniment"
@@ -3542,6 +3537,9 @@
       "You have no invoices.": [
         "No teniu cap factura."
       ],
+      "You have reached the contacts limit for your account": [
+        "Heu arribat al límit de contactes per al vostre compte."
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Heu assolit el nombre màxim de calendaris. No se n'han pogut importar alguns."
       ],
@@ -5378,9 +5376,6 @@
       "address": [
         "adreça",
         "adreces"
-      ],
-      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
-        "La verificació de l'adreça és una funció de seguretat avançada. Només activeu això si sabeu el que fa."
       ],
       "Admin account allocation": [
         "Assignació del compte d'administrador"
@@ -9562,17 +9557,6 @@
         "Gestió d'equips"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el compte es desactivarà."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Per continuar utilitzant ${ MAIL_APP_NAME } amb característiques prèmium, trieu les opcions de subscripció i pagament."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "El període de prova acaba el ${ formattedPeriodEndDate }."
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } acabant en ${ last4 }."
@@ -9648,6 +9632,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el compte es desactivarà."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Per continuar utilitzant ${ MAIL_APP_NAME } amb característiques prèmium, trieu les opcions de subscripció i pagament."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "El període de prova acaba el ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -12117,9 +12112,6 @@
       ],
       "Add users": [
         "Afegeix usuaris"
-      ],
-      "Address verification": [
-        "Verificació d'adreça"
       ],
       "Allocate storage": [
         "Assignar espai"

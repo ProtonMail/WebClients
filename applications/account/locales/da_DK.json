@@ -323,6 +323,9 @@
       "Discard": [
         "Kassér"
       ],
+      "Don't know your password?": [
+        "Kan du ikke din adgangskode?"
+      ],
       "Don't show again": [
         "Vis ikke igen"
       ],
@@ -608,6 +611,9 @@
       "OK": [
         "Ok"
       ],
+      "Ok": [
+        "Ok"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Åbn ${ CALENDAR_APP_NAME } indstillinger"
       ],
@@ -778,6 +784,9 @@
       ],
       "Search settings": [
         "Søg indstillinger"
+      ],
+      "See how": [
+        "Se hvordan"
       ],
       "See plan features": [
         "Se abonnementfunktioner"
@@ -1430,11 +1439,6 @@
         "Del med enhver"
       ]
     },
-    "Calendar settings sidebar": {
-      "Show ${ remainingItems } more": [
-        "Vis ${ remainingItems } mere"
-      ]
-    },
     "Calendar share permission label": {
       "Edit event details": [
         "Rediger begivenhedsdetaljer"
@@ -1788,8 +1792,14 @@
       "Birthday": [
         "Fødselsdag"
       ],
+      "Display name": [
+        "Visningsnavn"
+      ],
       "Email": [
         "E-mail"
+      ],
+      "First name": [
+        "Fornavn"
       ],
       "Gender": [
         "Køn"
@@ -1799,6 +1809,9 @@
       ],
       "Language": [
         "Sprog"
+      ],
+      "Last name": [
+        "Efternavn"
       ],
       "Logo": [
         "Logo"
@@ -3056,6 +3069,9 @@
       "Contact signature not verified": [
         "Kontaktsignatur ikke bekræftet"
       ],
+      "Could not save preference": [
+        "Kunne ikke gemme præferencer"
+      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Fravælg mindst ${ calendarsToFixCount } kalender",
         "Fravælg mindst ${ calendarsToFixCount } kalendere"
@@ -3117,6 +3133,9 @@
       ],
       "Incorrect password": [
         "Forkert adgangskode"
+      ],
+      "Incorrect username": [
+        "Forkert brugernavn"
       ],
       "Invalid ${ name } code": [
         "Ugyldig ${ name }-kode"
@@ -5142,9 +5161,6 @@
       "address": [
         "adresse",
         "adresser"
-      ],
-      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
-        "Adressebekræftelse er en avanceret sikkerhedsfunktion. Aktivér den kun, hvis du ved, hvad den gør."
       ],
       "Admin account allocation": [
         "Admin-konto tildeling"
@@ -7634,6 +7650,9 @@
       "Conversation grouping": [
         "Samtalegruppering"
       ],
+      "Conversations per page": [
+        "Samtaler pr. side"
+      ],
       "Copy": [
         "Kopiér"
       ],
@@ -7918,6 +7937,9 @@
       ],
       "Message": [
         "Besked"
+      ],
+      "Messages per page": [
+        "Beskeder pr. side"
       ],
       "Moderate NAT": [
         "Moderat NAT"
@@ -9332,17 +9354,6 @@
         "Brugeradministration"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Hvis du vil fortsætte med at bruge ${ MAIL_APP_NAME } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Din prøveperiode slutter ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutter med ${ last4 }"
@@ -9424,6 +9435,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du drager fordel af en kampagnepris for dit nuværende abonnement. Hvis du nedgraderer din konto, mister du din kampagnepris og den vil ikke være tilgængelig hvis du forsøger at abonnere igen."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Hvis du vil fortsætte med at bruge ${ MAIL_APP_NAME } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Din prøveperiode slutter ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10626,6 +10648,30 @@
         "inaktiv"
       ]
     },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "Annuller nulstilling"
+      ],
+      "Reset password": [
+        "Nulstil adgangskode"
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Se hvordan"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "Annuller anmodning"
+      ],
+      "Got it": [
+        "Forstået"
+      ],
+      "Learn more": [
+        "Få mere at vide"
+      ]
+    },
     "Settings description": {
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Gennemfør omstillingen til privatliv med vores sikre værktøjer til import og videresendelse."
@@ -11694,9 +11740,6 @@
       ],
       "Add user accounts": [
         "Tilføj brugerkonti"
-      ],
-      "Address verification": [
-        "Adressebekræftelse"
       ],
       "Allocate storage": [
         "Tildel lagerplads"
