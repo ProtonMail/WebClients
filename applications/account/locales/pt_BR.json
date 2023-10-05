@@ -335,6 +335,9 @@
       "Discard": [
         "Descartar"
       ],
+      "Don't know your password?": [
+        "Não sabe sua senha?"
+      ],
       "Don't show again": [
         "Não mostrar novamente"
       ],
@@ -623,6 +626,9 @@
       "OK": [
         "OK"
       ],
+      "Ok": [
+        "Ok"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir configurações do ${ CALENDAR_APP_NAME }"
       ],
@@ -793,6 +799,9 @@
       ],
       "Search settings": [
         "Pesquisar configurações"
+      ],
+      "See how": [
+        "Veja como"
       ],
       "See plan features": [
         "Veja recursos do plano"
@@ -1498,6 +1507,7 @@
     },
     "Calendar settings sidebar": {
       "Show ${ remainingItems } more": [
+        "Mostrar ${ remainingItems } mais",
         "Mostrar ${ remainingItems } mais"
       ]
     },
@@ -3268,6 +3278,9 @@
       ],
       "Incorrect password": [
         "A senha não é válida."
+      ],
+      "Incorrect username": [
+        "Nome de usuário incorreto"
       ],
       "Invalid ${ name } code": [
         "O código ${ name } não é válido."
@@ -5461,9 +5474,6 @@
       "address": [
         "endereço",
         "endereços"
-      ],
-      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
-        "A verificação de endereço é um recurso de segurança avançado. Apenas habilite se você souber o que está fazendo."
       ],
       "Admin account allocation": [
         "Alocação da conta do administrador"
@@ -9776,17 +9786,6 @@
         "Gerenciamento de equipes"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Sua avaliação termina em ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } com final ${ last4 }"
@@ -9874,6 +9873,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Sua avaliação termina em ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11260,6 +11270,188 @@
         "a ser criado"
       ]
     },
+    "session_recovery:available:action": {
+      "Cancel password reset": [
+        "Cancelar redefinição de senha"
+      ],
+      "Cancel reset": [
+        "Cancelar redefinição"
+      ],
+      "Reset password": [
+        "Redefinir senha"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } dia",
+        "${ timeRemaining.inDays } dias"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } hora",
+        "${ timeRemaining.inHours } horas"
+      ],
+      "Didn’t make this request?": [
+        "Não fez essa solicitação?"
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Vá ao dispositivo onde a solicitação (na sessão iniciada) para mudar a sua senha."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Essa permissão expira em ${ timeRemaining.inDays } dia",
+        "Essa permissão expira em ${ timeRemaining.inDays } dias"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Essa permissão expira em ${ timeRemaining.inHours } hora",
+        "Essa permissão expira em ${ timeRemaining.inHours } horas"
+      ],
+      "You can now reset your password": [
+        "Você pode agora redefinir sua senha"
+      ],
+      "You can reset your password until ${ boldDate }.": [
+        "Você pode redefinir sua senha até ${ boldDate }."
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Veja como"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Senha salva"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Redefinir sua senha"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Cancelar redefinição de senha"
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "A redefinição de senha foi cancelada"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Cancelar redefinição de senha?"
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "altere sua senha agora"
+      ]
+    },
+    "session_recovery:disable:action": {
+      "Disable password reset": [
+        "Desativar redefinição de senha"
+      ]
+    },
+    "session_recovery:disable:title": {
+      "Disable password reset?": [
+        "Desativar redefinição de senha?"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel password reset": [
+        "Cancelar redefinição de senha"
+      ],
+      "Cancel request": [
+        "Cancelar solicitação"
+      ],
+      "Got it": [
+        "Entendi"
+      ],
+      "Learn more": [
+        "Saiba mais"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "Didn’t make this request?": [
+        "Não fez essa solicitação?"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "Recebemos a solicitação de redefinição de senha para ${ boldEmail }."
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "Ver solicitação"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "A redefinição de senha foi solicitada"
+      ]
+    },
+    "session_recovery:initiation:action": {
+      "Got it": [
+        "Entendi"
+      ],
+      "Request password reset": [
+        "Solicitar redefinição de senha"
+      ],
+      "Use recovery method": [
+        "Usar um método de recuperação"
+      ]
+    },
+    "session_recovery:initiation:notification": {
+      "Password reset confirmed": [
+        "Redefinição de senha confirmada"
+      ]
+    },
+    "session_recovery:initiation:title": {
+      "Request password reset?": [
+        "Solicitar redefinição de senha?"
+      ]
+    },
+    "session_recovery:settings:action": {
+      "Allow password reset from settings": [
+        "Permitir redefinição de senha através da configurações"
+      ],
+      "Request password reset": [
+        "Solicitar redefinição de senha"
+      ],
+      "To disallow password reset, you must have a recovery method set up.": [
+        "Para desativar a redefinição de senha, você deve configurar um método de recuperação."
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Encerrar sessão"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } hora",
+        "${ gracePeriodHoursRemaining } horas"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } está agora disponível"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Redefinição de senha"
+      ]
+    },
+    "session_recovery:status:info": {
+      "Available": [
+        "Disponível"
+      ],
+      "Pending": [
+        "Pendente"
+      ]
+    },
+    "session_recovery:status:title": {
+      "Password reset request": [
+        "Solicitar redefinição de senha"
+      ]
+    },
     "Settings description": {
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Conclua a transição para a privacidade com nossas ferramentas seguras de importação e encaminhamento."
@@ -12391,9 +12583,6 @@
       "Add users": [
         "Adicionar usuários"
       ],
-      "Address verification": [
-        "Verificação de endereço"
-      ],
       "Allocate storage": [
         "Alocar armazenamento"
       ],
@@ -12919,6 +13108,9 @@
       ],
       "Password and keys": [
         "Senha e chaves"
+      ],
+      "Password reset": [
+        "Redefinição de senha"
       ],
       "Pay invoice": [
         "Pagar fatura"
