@@ -25,6 +25,9 @@
       "Add address": [
         "Adres ekle"
       ],
+      "Add birthday": [
+        "Doğum günü ekle"
+      ],
       "Add contact": [
         "Kişi ekle"
       ],
@@ -40,6 +43,9 @@
       "Add new group": [
         "Yeni grup ekle"
       ],
+      "Add note": [
+        "Not ekle"
+      ],
       "Add phone number": [
         "Telefon numarası ekle"
       ],
@@ -48,6 +54,10 @@
       ],
       "Apply": [
         "Uygula"
+      ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Bir kişi grubunda en fazla ${ maxContacts } kişi bulunabilir",
+        "Bir kişi grubunda en fazla ${ maxContacts } kişi bulunabilir"
       ],
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
@@ -711,6 +721,10 @@
       "View invoice": [
         "Faturayı görüntüle"
       ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "En fazla ${ maxAttachments } kişinin vCard dosyasını gönderebilirsiniz",
+        "En fazla ${ maxAttachments } kişinin vCard dosyasını gönderebilirsiniz"
+      ],
       "Your 500 MB bonus": [
         "500 MB hediyeniz"
       ],
@@ -949,8 +963,17 @@
       "Birthday": [
         "Doğum günü"
       ],
+      "Display name": [
+        "Görüntülenecek ad"
+      ],
       "Email": [
         "E-posta"
+      ],
+      "Enter a display name or nickname": [
+        "Bir görüntülenecek ad ya da takma ad yazın"
+      ],
+      "First name": [
+        "Ad"
       ],
       "Gender": [
         "Cinsiyet"
@@ -960,6 +983,9 @@
       ],
       "Language": [
         "Dil"
+      ],
+      "Last name": [
+        "Soyad"
       ],
       "Logo": [
         "Logo"
@@ -1975,6 +2001,9 @@
       "Enter 6 digits": [
         "6 rakam yazın"
       ],
+      "Error decrypting a computer": [
+        "Bir bilgisayarın şifresi çözülürken sorun çıktı"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "\"${ item.name }\" dosyası \"${ error }\" hatası nedeniyle yüklenemedi"
       ],
@@ -1986,6 +2015,9 @@
       ],
       "File selection is already downloading": [
         "Seçilmiş dosyalar zaten indiriliyor"
+      ],
+      "First name is too long": [
+        "Ad çok uzun"
       ],
       "Folder \"${ name }\" is already downloading": [
         "\"${ name }\" klasörü zaten indiriliyor"
@@ -2022,6 +2054,9 @@
       ],
       "Label name cannot be empty.": [
         "Etiket adı boş olamaz."
+      ],
+      "Last name is too long": [
+        "Soyad çok uzun"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "En az ${ calendarsToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimi ile birleştirin",
@@ -2068,6 +2103,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "İlerlemek için lütfen vurgulanan çakışmayı düzeltin.",
         "İlerlemek için lütfen vurgulanan çakışmaları düzeltin."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Lütfen bir ad, bir soyad ya da bir görüntülenecek ad yazın."
       ],
       "Port is required": [
         "Bağlantı noktasının yazılması zorunludur"
@@ -2188,6 +2226,10 @@
       ],
       "Username must end with a letter or digit": [
         "Kullanıcı adı bir harf ya da rakam ile bitmeli"
+      ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Bir e-postayı ${ maxContacts } üzerinde alıcıya gönderemezsiniz",
+        "Bir e-postayı ${ maxContacts } üzerinde alıcıya gönderemezsiniz"
       ],
       "You have reached the contacts limit for your account": [
         "Hesabınızın kişi sayısı sınırına ulaştınız"
@@ -3031,6 +3073,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
       ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "${ BRAND_NAME } şifreleme teknolojisi kimsenin parolanıza erişememesini sağlar. Biz bile erişemeyiz."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } yeni takvim",
         "${ calendarsToBeCreatedCount } yeni takvim"
@@ -3692,6 +3737,9 @@
       "Please enter the password to decrypt and view content.": [
         "Lütfen şifreyi çözmek ve içeriği görüntülemek için parolayı yazın."
       ],
+      "Please note that addresses assigned to these groups will NOT be deleted.": [
+        "Lütfen bu gruplara atanan adreslerin SİLİNMEYECEĞİNİ unutmayın."
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Lütfen bu gruba atanan adreslerin SİLİNEMEYECEĞİNİ unutmayın."
       ],
@@ -4283,6 +4331,9 @@
       "Comment": [
         "Yorum"
       ],
+      "Confirm password": [
+        "Parolayı onayla"
+      ],
       "Contacts": [
         "Kişiler"
       ],
@@ -4487,6 +4538,9 @@
       ],
       "Never": [
         "Asla"
+      ],
+      "New password": [
+        "Yeni parola"
       ],
       "Notification": [
         "Bildirim"
@@ -5198,11 +5252,17 @@
       "Filter groups": [
         "Grupları süz"
       ],
+      "First name": [
+        "Ad"
+      ],
       "Group name": [
         "Grup adı"
       ],
       "Image URL": [
         "Görsel adresi"
+      ],
+      "Last name": [
+        "Soyad"
       ],
       "Name": [
         "Ad"
@@ -5748,8 +5808,14 @@
       "Display name": [
         "Görüntülenecek ad"
       ],
+      "First name": [
+        "Ad"
+      ],
       "Import": [
         "İçe aktar"
+      ],
+      "Last name": [
+        "Soyad"
       ],
       "Values": [
         "Değerler"
@@ -5837,6 +5903,9 @@
       "Billing cycle": [
         "Fatura dönemi"
       ],
+      "Birthday": [
+        "Doğum günü"
+      ],
       "Browser might run out of memory": [
         "Bellek tarayıcı için yetersiz olabilir"
       ],
@@ -5848,6 +5917,9 @@
       ],
       "Change layout": [
         "Görünümü değiştir"
+      ],
+      "Change password": [
+        "Parolayı değiştir"
       ],
       "Clearing data": [
         "Veriler temizleniyor"
@@ -6059,6 +6131,9 @@
       ],
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
+      ],
+      "Notes": [
+        "Notlar"
       ],
       "Number of files": [
         "Dosya sayısı"
@@ -6387,6 +6462,9 @@
       "Are you sure you want to permanently delete ${ count } contact?": [
         "${ count } kişiyi kalıcı olarak silmek istediğinize emin misiniz?",
         "${ count } kişiyi kalıcı olarak silmek istediğinize emin misiniz?"
+      ],
+      "Are you sure you want to permanently delete these contact groups?": [
+        "Bu kişi grubunu kalıcı olarak silmek istediğinize emin misiniz?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Bu kişi grubunu kalıcı olarak silmek istediğinize emin misiniz?"
