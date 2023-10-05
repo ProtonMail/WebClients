@@ -10,7 +10,7 @@ import {
 import { createToken, queryPaymentMethodStatus, queryPaymentMethods } from '@proton/shared/lib/api/payments';
 import lastItem from '@proton/utils/lastItem';
 
-import { addApiMock, addApiResolver } from './api';
+import { addApiMock, addApiResolver } from '../api';
 
 const tokensUrl = createToken({} as any).url;
 

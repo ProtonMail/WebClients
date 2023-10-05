@@ -51,6 +51,7 @@ const CreditsModal = (props: ModalProps) => {
     const [currency, setCurrency] = useState<Currency>(DEFAULT_CURRENCY);
     const [amount, setAmount] = useState(DEFAULT_CREDITS_AMOUNT);
     const debouncedAmount = useDebounceInput(amount);
+    const amountLoading = debouncedAmount !== amount;
     const i18n = getCurrenciesI18N();
     const i18nCurrency = i18n[currency];
     const api = useApi();
@@ -100,6 +101,7 @@ const CreditsModal = (props: ModalProps) => {
                     amount={debouncedAmount}
                     currency={paymentFacade.currency}
                     loading={loading}
+                    disabled={amountLoading}
                     data-testid="paypal-button"
                 />
             );
@@ -121,7 +123,7 @@ const CreditsModal = (props: ModalProps) => {
         return (
             <PrimaryButton
                 loading={loading}
-                disabled={paymentFacade.methods.loading || !paymentFacade.userCanTriggerSelected}
+                disabled={paymentFacade.methods.loading || !paymentFacade.userCanTriggerSelected || amountLoading}
                 type="submit"
                 data-testid="top-up-button"
             >
@@ -184,6 +186,7 @@ const CreditsModal = (props: ModalProps) => {
                         void wait(2000).then(() => exitSuccess());
                     }}
                     onAwaitingBitcoinPayment={setAwaitingBitcoinPayment}
+                    triggersDisabled={amountLoading}
                 />
             </ModalTwoContent>
 
