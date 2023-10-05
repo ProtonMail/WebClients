@@ -1,6 +1,6 @@
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
-import type { ItemKey, KeyRotationKeyPair, VaultKey } from '@proton/pass/types';
+import { type ItemKey, type KeyRotationKeyPair, PassSignatureContext, type VaultKey } from '@proton/pass/types';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 type CreateInviteKeysProcessParams = {
@@ -24,6 +24,10 @@ export const createInviteKeys = async ({
                             encryptionKeys: [inviteePublicKey],
                             signingKeys: [inviterPrivateKey],
                             format: 'binary',
+                            context: {
+                                value: PassSignatureContext.VaultInviteInternal,
+                                critical: true,
+                            },
                         })
                     ).message
                 ),
