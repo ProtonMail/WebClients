@@ -7,6 +7,11 @@ export enum PassEncryptionTag {
     Cache = 'cache' /* web-only usage */,
 }
 
+export enum PassSignatureContext {
+    VaultInviteInternal = 'pass.invite.vault.existing-user',
+    VaultInviteExternal = 'pass.invite.vault.new-user',
+}
+
 export const CONTENT_FORMAT_VERSION = 1;
 
 /* type aliases */
