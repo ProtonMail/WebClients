@@ -28,6 +28,7 @@
 	transition: 0.15s easing(ease-out-quint), background-position 0s;
 	background-color: transparent;
 	min-inline-size: rem(36);
+	align-content: flex-end;
 
 	&::after {
 		background-color: transparent !important;
@@ -41,6 +42,10 @@
 		visibility: hidden; // transition to work
 		border-start-end-radius: var(--border-radius-md);
 		border-end-end-radius: var(--border-radius-md);
+	}
+
+	&-size {
+		padding-block-end: rem(0.6);
 	}
 
 	&:hover,
