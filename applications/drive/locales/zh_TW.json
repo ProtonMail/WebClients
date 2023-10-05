@@ -1970,6 +1970,9 @@
       "Enter 6 digits": [
         "請輸入 6 位驗證碼"
       ],
+      "Error decrypting a computer": [
+        "解密電腦時發生錯誤"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "由於“${ error }”錯誤，檔案“${ item.name }”無法上載"
       ],
@@ -3009,6 +3012,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
+      ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "${ BRAND_NAME } 的加密技術代表無人可以存取您的密碼，包括我們。"
       ],
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } 個新行事曆"
@@ -4227,6 +4233,9 @@
       "Comment": [
         "評論"
       ],
+      "Confirm password": [
+        "確認密碼"
+      ],
       "Contacts": [
         "聯絡人"
       ],
@@ -4430,6 +4439,9 @@
       ],
       "Never": [
         "永不"
+      ],
+      "New password": [
+        "新密碼"
       ],
       "Notification": [
         "通知"
@@ -5741,6 +5753,9 @@
       ],
       "Change layout": [
         "變更版面配置"
+      ],
+      "Change password": [
+        "更改密碼"
       ],
       "Clearing data": [
         "清除資料中"
