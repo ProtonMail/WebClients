@@ -13,6 +13,7 @@ import {
     Loader,
     ReloadSpinner,
     Tooltip,
+    useCalendarModelEventManager,
     useReadCalendarBootstrap,
 } from '@proton/components';
 import CalendarEventDateHeader from '@proton/components/components/calendarEventDateHeader/CalendarEventDateHeader';
@@ -95,6 +96,7 @@ const EventPopover = ({
     isNarrow,
     displayNameEmailMap,
 }: Props) => {
+    const { call: calendarCall } = useCalendarModelEventManager();
     const isDrawerApp = getIsCalendarAppInDrawer(view);
     const popoverEventContentRef = useRef<HTMLDivElement>(null);
 
@@ -289,10 +291,16 @@ const EventPopover = ({
         </Tooltip>
     );
 
+    const handlePartstatWithCalendarCall = async (partstat: ICAL_ATTENDEE_STATUS) => {
+        await handleChangePartstat(partstat);
+        // call the calendar event manager to trigger an ES IndexedDB sync (needed in case you search immediately for this event)
+        void calendarCall([calendarData.ID]);
+    };
+
     const actions = {
-        accept: () => handleChangePartstat(ICAL_ATTENDEE_STATUS.ACCEPTED),
-        acceptTentatively: () => handleChangePartstat(ICAL_ATTENDEE_STATUS.TENTATIVE),
-        decline: () => handleChangePartstat(ICAL_ATTENDEE_STATUS.DECLINED),
+        accept: () => handlePartstatWithCalendarCall(ICAL_ATTENDEE_STATUS.ACCEPTED),
+        acceptTentatively: () => handlePartstatWithCalendarCall(ICAL_ATTENDEE_STATUS.TENTATIVE),
+        decline: () => handlePartstatWithCalendarCall(ICAL_ATTENDEE_STATUS.DECLINED),
         retryCreateEvent: () => wait(0),
         retryUpdateEvent: () => wait(0),
     };
