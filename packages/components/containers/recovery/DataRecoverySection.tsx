@@ -245,10 +245,14 @@ const DataRecoverySection = () => {
                             </SettingsLayoutRight>
                         </SettingsLayout>
                         {hasOutdatedRecoveryFile && (
-                            <p className="color-danger">
-                                <Icon className="mr-2 float-left mt-1" name="exclamation-circle-filled" size={14} />
-                                {c('Warning')
-                                    .t`Your recovery file is outdated. It can't recover new data if you reset your account again.`}
+                            <p className="color-danger flex flex-nowrap">
+                                <Icon
+                                    className="mr-2 flex-item-noshrink mt-0.5"
+                                    name="exclamation-circle-filled"
+                                    size={14}
+                                />
+                                <span className="flex-item-fluid">{c('Warning')
+                                    .t`Your recovery file is outdated. It can't recover new data if you reset your account again.`}</span>
                             </p>
                         )}
                     </>
