@@ -150,7 +150,6 @@ export const createImporterTask = async ({
                 ...createdCalendars.map((calendar) => {
                     return {
                         Source: calendar.id,
-                        Description: calendar.description,
                         Destination: calendar.destination,
                     };
                 }),
@@ -158,7 +157,6 @@ export const createImporterTask = async ({
                     if (calendar.mergedTo?.ID) {
                         return {
                             Source: calendar.id,
-                            Description: calendar.description,
                             Destination: calendar.mergedTo.ID,
                         };
                     }
