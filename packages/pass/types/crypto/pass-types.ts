@@ -1,6 +1,6 @@
 import type { ItemState, Maybe, MaybeNull, ShareRole, ShareType } from '@proton/pass/types';
 
-export enum EncryptionTag {
+export enum PassEncryptionTag {
     VaultContent = 'vaultcontent',
     ItemKey = 'itemkey',
     ItemContent = 'itemcontent',
