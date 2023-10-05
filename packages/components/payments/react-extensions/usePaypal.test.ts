@@ -1,5 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
+import { MAX_CREDIT_AMOUNT, MIN_CREDIT_AMOUNT } from '@proton/shared/lib/constants';
 import { addTokensResponse, apiMock } from '@proton/testing';
 
 import { PAYMENT_METHOD_TYPES } from '../core';
@@ -264,4 +265,60 @@ it('should process payment token', async () => {
     expect(result.current.verifyingToken).toBe(false);
     expect(result.current.verificationError).toBe(null);
     expect(result.current.processingToken).toBe(false);
+});
+
+it('should update desabled state when the amount changes', () => {
+    const { result, rerender } = renderHook(
+        ({ Amount }) =>
+            usePaypal(
+                {
+                    amountAndCurrency: {
+                        Amount,
+                        Currency: 'USD',
+                    },
+                    isCredit: false,
+                    onChargeable: onChargeableMock,
+                },
+                {
+                    api: apiMock,
+                    verifyPayment: verifyPaymentMock,
+                }
+            ),
+        {
+            initialProps: {
+                Amount: 0,
+            },
+        }
+    );
+    expect(result.current.disabled).toBe(false);
+
+    rerender({
+        Amount: MIN_CREDIT_AMOUNT - 1,
+    });
+    expect(result.current.disabled).toBe(true);
+
+    rerender({
+        Amount: MIN_CREDIT_AMOUNT,
+    });
+    expect(result.current.disabled).toBe(false);
+
+    rerender({
+        Amount: (MIN_CREDIT_AMOUNT + MAX_CREDIT_AMOUNT) / 2,
+    });
+    expect(result.current.disabled).toBe(false);
+
+    rerender({
+        Amount: MAX_CREDIT_AMOUNT,
+    });
+    expect(result.current.disabled).toBe(false);
+
+    rerender({
+        Amount: MAX_CREDIT_AMOUNT + 1,
+    });
+    expect(result.current.disabled).toBe(true);
+
+    rerender({
+        Amount: 0,
+    });
+    expect(result.current.disabled).toBe(false);
 });

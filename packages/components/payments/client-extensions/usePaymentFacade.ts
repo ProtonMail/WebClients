@@ -5,6 +5,7 @@ import {
     getDefaultVerifyPaypal,
 } from '@proton/components/containers/payments/usePaymentToken';
 import { Currency } from '@proton/shared/lib/interfaces';
+import noop from '@proton/utils/noop';
 
 import { useApi, useAuthentication, useModals } from '../../hooks';
 import { ChargeablePaymentParameters, PAYMENT_METHOD_TYPES, PaymentMethodFlows, PaymentMethodType } from '../core';
@@ -77,7 +78,10 @@ export const usePaymentFacade = ({
      */
     useEffect(() => {
         if (hook.methods.isNewPaypal) {
-            hook.paypal.fetchPaymentToken().then(() => hook.paypalCredit.fetchPaymentToken());
+            hook.paypal
+                .fetchPaymentToken()
+                .then(() => hook.paypalCredit.fetchPaymentToken())
+                .catch(noop);
         }
     }, [hook.methods.isNewPaypal, amount, currency]);
 
