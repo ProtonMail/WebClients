@@ -19,12 +19,14 @@ export const PhotosGrid: FC<Props> = ({ data, onItemRender, isLoadingMore, onIte
 
     const [scrollPosition, setScrollPosition] = useState(0);
     const handleScroll = useCallback(() => {
-        if (!containerRef || !containerRef.current) {
-            return;
-        }
+        requestAnimationFrame(() => {
+            if (!containerRef || !containerRef.current) {
+                return;
+            }
 
-        setScrollPosition(containerRef.current.scrollTop);
-    }, [containerRef]);
+            setScrollPosition(containerRef.current.scrollTop);
+        });
+    }, [containerRef, setScrollPosition]);
 
     const emRatio = rootFontSize();
     const dimensions = useMemo(() => {
