@@ -39,7 +39,7 @@ const PrivateMainAreaBase = (
                 hasToolbar ? 'main-area--with-toolbar' : 'main-area',
                 hasRowMode ? 'main-area--row-mode' : undefined,
                 !drawerSidebar ? 'main-area-border' : undefined,
-                'flex-item-fluid-auto relative',
+                'flex-item-fluid-auto relative h100',
                 className,
             ])}
             ref={ref}
