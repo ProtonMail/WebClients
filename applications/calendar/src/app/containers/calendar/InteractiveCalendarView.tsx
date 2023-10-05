@@ -1312,6 +1312,8 @@ const InteractiveCalendarView = ({
                 ...updatePersonalPartActions.map(({ data: { calendarID } }) => calendarID),
             ]);
             await handleUpdateVisibility(uniqueCalendarIDs);
+            // we call the calendar event managers to trigger an ES IndexedDB sync (needed in case you search immediately for the event changes you just saved)
+            void calendarCall(uniqueCalendarIDs);
             calendarsEventsCache.rerender?.();
             handleCreateNotification(texts);
             if (sendActions.length) {
@@ -1360,6 +1362,7 @@ const InteractiveCalendarView = ({
                 handleUpdatePartstatActions(updatePartstatActions),
                 handleUpdatePersonalPartActions(updatePersonalPartActions),
             ]);
+
             const syncResponses = await handleSyncActions(syncActions);
             const calendarsEventCache = calendarsEventsCacheRef.current;
             if (calendarsEventCache) {
@@ -1377,6 +1380,13 @@ const InteractiveCalendarView = ({
                 );
                 upsertSyncMultiActionsResponses(syncActions, syncResponses, calendarsEventCache, getOpenedMailEvents);
             }
+            const uniqueCalendarIDs = unique([
+                ...syncActions.map(({ calendarID }) => calendarID),
+                ...updatePartstatActions.map(({ data: { calendarID } }) => calendarID),
+                ...updatePersonalPartActions.map(({ data: { calendarID } }) => calendarID),
+            ]);
+            // we call the calendar event managers to trigger an ES IndexedDB sync (needed in case you search immediately for the events you just deleted)
+            void calendarCall(uniqueCalendarIDs);
             calendarsEventCache.rerender?.();
             handleCreateNotification(texts);
         } catch (e: any) {
