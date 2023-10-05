@@ -417,10 +417,10 @@ export const processCalendarEvents = async (
             // In case of update or create events, instead, we have the calendar ID in the event
             const { CalendarID } = CalendarEvent.Event;
             calendarID = CalendarID;
-            // CREATE or UPDATE is the same because we anyway overwrite the row in IDB
+            const esAction = EVENT_ACTIONS.UPDATE ? ES_SYNC_ACTIONS.UPDATE_METADATA : ES_SYNC_ACTIONS.CREATE;
             const esItem = await getESEvent(ID, CalendarID, api, getCalendarEventRaw);
             if (esItem) {
-                Items.push({ ID: generateID(CalendarID, ID), Action: ES_SYNC_ACTIONS.CREATE, ItemMetadata: esItem });
+                Items.push({ ID: generateID(CalendarID, ID), Action: esAction, ItemMetadata: esItem });
             }
         }
 
