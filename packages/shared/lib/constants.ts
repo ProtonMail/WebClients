@@ -321,8 +321,9 @@ export const DEFAULT_CURRENCY = 'EUR';
 export const CURRENCIES = ['EUR', 'USD', 'CHF'] as const;
 export const MIN_DONATION_AMOUNT = 100;
 export const MIN_CREDIT_AMOUNT = 500;
-export const MIN_BITCOIN_AMOUNT = 500;
-export const MAX_BITCOIN_AMOUNT = 4000000;
+export const MAX_CREDIT_AMOUNT = 4000000;
+export const MIN_BITCOIN_AMOUNT = MIN_CREDIT_AMOUNT;
+export const MAX_BITCOIN_AMOUNT = MAX_CREDIT_AMOUNT;
 export const DEFAULT_CREDITS_AMOUNT = 5000;
 
 export enum INVOICE_TYPE {

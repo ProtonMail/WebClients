@@ -1,8 +1,9 @@
+import { MAX_CREDIT_AMOUNT, MIN_CREDIT_AMOUNT } from '@proton/shared/lib/constants';
 import { MOCK_TOKEN_RESPONSE, addTokensResolver, addTokensResponse, apiMock } from '@proton/testing';
 
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '../constants';
 import { AmountAndCurrency, ChargeablePaymentParameters, TokenPaymentMethod } from '../interface';
-import { PaypalPaymentProcessor } from './paypalPayment';
+import { PaypalPaymentProcessor, PaypalWrongAmountError } from './paypalPayment';
 
 describe('PaypalPaymentProcessor', () => {
     let paymentProcessor: PaypalPaymentProcessor;
@@ -15,9 +16,7 @@ describe('PaypalPaymentProcessor', () => {
     const onTokenIsChargeable = jest.fn().mockResolvedValue(null);
     const isCredit = false;
 
-    beforeEach(() => {
-        addTokensResponse();
-
+    function resetPaymentProcessor() {
         paymentProcessor = new PaypalPaymentProcessor(
             mockVerifyPayment,
             apiMock,
@@ -25,6 +24,11 @@ describe('PaypalPaymentProcessor', () => {
             isCredit,
             onTokenIsChargeable
         );
+    }
+
+    beforeEach(() => {
+        addTokensResponse();
+        resetPaymentProcessor();
     });
 
     afterEach(() => {
@@ -182,5 +186,93 @@ describe('PaypalPaymentProcessor', () => {
         await paymentProcessor.fetchPaymentToken();
         await expect(paymentProcessor.verifyPaymentToken()).rejects.toThrowError('some error');
         expect(paymentProcessor.verificationError).toEqual(new Error('Paypal payment verification failed'));
+    });
+
+    it('should update disabled state depending on the amount', () => {
+        paymentProcessor.setAmountAndCurrency({
+            Amount: 0,
+            Currency: 'USD',
+        });
+        expect(paymentProcessor.disabled).toBe(false);
+
+        paymentProcessor.setAmountAndCurrency({
+            Amount: MIN_CREDIT_AMOUNT - 1,
+            Currency: 'USD',
+        });
+        expect(paymentProcessor.disabled).toBe(true);
+
+        paymentProcessor.setAmountAndCurrency({
+            Amount: MIN_CREDIT_AMOUNT,
+            Currency: 'USD',
+        });
+        expect(paymentProcessor.disabled).toBe(false);
+
+        paymentProcessor.setAmountAndCurrency({
+            Amount: (MAX_CREDIT_AMOUNT + MIN_CREDIT_AMOUNT) / 2,
+            Currency: 'EUR',
+        });
+        expect(paymentProcessor.disabled).toBe(false);
+
+        paymentProcessor.setAmountAndCurrency({
+            Amount: MAX_CREDIT_AMOUNT,
+            Currency: 'USD',
+        });
+        expect(paymentProcessor.disabled).toBe(false);
+
+        paymentProcessor.setAmountAndCurrency({
+            Amount: MAX_CREDIT_AMOUNT + 1,
+            Currency: 'USD',
+        });
+        expect(paymentProcessor.disabled).toBe(true);
+    });
+
+    it('should throw when amount is not in range', async () => {
+        paymentProcessor.setAmountAndCurrency({
+            Amount: MIN_CREDIT_AMOUNT - 1,
+            Currency: 'USD',
+        });
+
+        await expect(() => paymentProcessor.fetchPaymentToken()).rejects.toThrowError(PaypalWrongAmountError);
+
+        resetPaymentProcessor();
+        paymentProcessor.setAmountAndCurrency({
+            Amount: MAX_CREDIT_AMOUNT + 1,
+            Currency: 'USD',
+        });
+
+        await expect(() => paymentProcessor.fetchPaymentToken()).rejects.toThrowError(PaypalWrongAmountError);
+
+        resetPaymentProcessor();
+        paymentProcessor.setAmountAndCurrency({
+            Amount: MIN_CREDIT_AMOUNT,
+            Currency: 'USD',
+        });
+
+        const token = await paymentProcessor.fetchPaymentToken();
+        expect(token).toBeDefined();
+    });
+
+    it('should throw when amount is not in range (no resets)', async () => {
+        paymentProcessor.setAmountAndCurrency({
+            Amount: MIN_CREDIT_AMOUNT - 1,
+            Currency: 'USD',
+        });
+
+        await expect(() => paymentProcessor.fetchPaymentToken()).rejects.toThrowError(PaypalWrongAmountError);
+
+        paymentProcessor.setAmountAndCurrency({
+            Amount: MAX_CREDIT_AMOUNT + 1,
+            Currency: 'USD',
+        });
+
+        await expect(() => paymentProcessor.fetchPaymentToken()).rejects.toThrowError(PaypalWrongAmountError);
+
+        paymentProcessor.setAmountAndCurrency({
+            Amount: MIN_CREDIT_AMOUNT,
+            Currency: 'USD',
+        });
+
+        const token = await paymentProcessor.fetchPaymentToken();
+        expect(token).toBeDefined();
     });
 });

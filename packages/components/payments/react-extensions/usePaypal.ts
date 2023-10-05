@@ -23,6 +23,7 @@ export type PaypalProcessorHook = PaymentProcessorHook & {
     reset: () => void;
     tokenFetched: boolean;
     verificationError: any;
+    disabled: boolean;
     meta: {
         type: 'paypal' | 'paypal-credit';
     };
@@ -42,13 +43,14 @@ export const usePaypal = (
     const [fetchingToken, withFetchingToken] = useLoading();
     const [verifyingToken, withVerifyingToken] = useLoading();
     const [verificationError, setVerificationError] = useState<any>(null);
+    const [disabled, setDisabled] = useState(false);
 
     const processingToken = fetchingToken || verifyingToken;
 
     const [tokenFetched, setTokenFetched] = useState(false);
 
     useEffect(() => {
-        paymentProcessorRef.current.amountAndCurrency = amountAndCurrency;
+        paymentProcessorRef.current.setAmountAndCurrency(amountAndCurrency);
     }, [amountAndCurrency]);
 
     useEffect(() => {
@@ -59,6 +61,10 @@ export const usePaypal = (
 
             if (Object.hasOwn(state, 'verificationError')) {
                 setVerificationError(state.verificationError);
+            }
+
+            if (Object.hasOwn(state, 'disabled')) {
+                setDisabled(state.disabled!);
             }
         });
 
@@ -97,6 +103,7 @@ export const usePaypal = (
         processPaymentToken,
         processingToken,
         verificationError,
+        disabled,
         meta: {
             type: isCredit ? 'paypal-credit' : 'paypal',
         },
