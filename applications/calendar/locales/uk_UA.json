@@ -69,6 +69,12 @@
       "Apply": [
         "Застосувати"
       ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Для однієї контактної групи дозволено ${ maxContacts } контакт",
+        "Для однієї контактної групи дозволено ${ maxContacts } контакти",
+        "Для однієї контактної групи дозволено ${ maxContacts } контактів",
+        "До групи контактів можна додати не більше ніж ${ maxContacts } контактів"
+      ],
       "Attach screenshot(s)": [
         "Додати знімки екрана"
       ],
@@ -3536,6 +3542,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } потребує вашого дозволу, щоб ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "Технологія шифрування ${ BRAND_NAME } гарантує неможливість доступу до вашого пароля, навіть для нас."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } новий календар",
         "${ calendarsToBeCreatedCount } нові календарі",
@@ -4483,6 +4492,9 @@
       "Colors": [
         "Кольори"
       ],
+      "Confirm password": [
+        "Підтвердити пароль"
+      ],
       "Contacts": [
         "Контакти"
       ],
@@ -4638,6 +4650,9 @@
       ],
       "Navigation": [
         "Навігація"
+      ],
+      "New password": [
+        "Новий пароль"
       ],
       "Notification": [
         "Сповіщення"
@@ -6464,6 +6479,9 @@
       ],
       "Change my answer": [
         "Змінити мою відповідь"
+      ],
+      "Change password": [
+        "Змінити пароль"
       ],
       "Choose how many times this event will repeat": [
         "Виберіть, скільки разів повторюватиметься ця подія"

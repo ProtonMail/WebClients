@@ -210,6 +210,9 @@
       "Discard": [
         "Abandonner"
       ],
+      "Don't know your password?": [
+        "Vous ne connaissez pas votre mot de passe ?"
+      ],
       "Done": [
         "Terminé"
       ],
@@ -387,6 +390,9 @@
       "No, thanks": [
         "Non merci"
       ],
+      "Ok": [
+        "OK"
+      ],
       "OK": [
         "OK"
       ],
@@ -473,6 +479,9 @@
       ],
       "Search countries": [
         "Rechercher dans les pays"
+      ],
+      "See how": [
+        "Voir comment faire"
       ],
       "See plan features": [
         "Voir les fonctionnalités de l'abonnement"
@@ -2355,6 +2364,9 @@
       "Incorrect mailbox password. Please try again.": [
         "Le mot de passe de la messagerie n'est pas correct. Veuillez réessayer."
       ],
+      "Incorrect username": [
+        "Le nom d'utilisateur n'est pas correct."
+      ],
       "Interval cannot be empty": [
         "L’intervalle ne peut pas être vide."
       ],
@@ -3470,6 +3482,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } a besoin de votre autorisation pour ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "Avec la technologie de chiffrement de ${ BRAND_NAME }, personne ne peut accéder à votre mot de passe, pas même nous."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nouveau calendrier",
         "${ calendarsToBeCreatedCount } nouveaux calendriers"
@@ -3517,7 +3532,7 @@
         "${ selectedCalendarsTotal } calendriers sur ${ providerCalendars.length }"
       ],
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
-        "Contacts sélectionnés : ${ selectedContactsLength } sur ${ contactsLength }",
+        "Nombre de contacts sélectionnés : ${ selectedContactsLength } sur ${ contactsLength }",
         "Contacts sélectionnés : ${ selectedContactsLength } sur ${ contactsLength }"
       ],
       "${ selectedFoldersCount } folder selected": [
@@ -3617,7 +3632,7 @@
         "Panneau latéral du calendrier"
       ],
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
-        "Vous ne trouvez pas ce que vous cherchez ? Certains événements dans vos calendriers masqués correspondent à votre recherche. Pour y accéder, activez la visibilité de ${ hiddenWithItemsCalendarList }."
+        "Vous ne trouvez pas ce que vous cherchez ? Certains événements dans vos calendriers masqués correspondent à votre recherche. Pour voir ces résultats, activez la visibilité de ${ hiddenWithItemsCalendarList }."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Vous ne vous souvenez pas de votre mot de passe ? Nous pouvons vous aider à effacer les données chiffrées de tous les contacts chiffrés avec cette clé et, par la même occasion, à supprimer l'alerte."
@@ -3890,7 +3905,7 @@
         "PGP/MIME envoie automatiquement le message en utilisant le mode actuel de l'éditeur."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
-        "Veuillez noter que les adresses assignées à ce groupe ne seront PAS supprimées."
+        "Notez que les adresses assignées à ce groupe ne seront PAS supprimées."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Notez que les adresses assignées à ce groupe ne seront PAS supprimées."
@@ -4248,7 +4263,7 @@
     },
     "Info; reshare calendar modal; part 1": {
       "Calendar sharing was disabled following your recent password reset.": [
-        "Le partage de calendrier a été désactivé suite à votre récente réinitialisation de mot de passe."
+        "Le partage de calendrier a été désactivé suite à votre récente réinitialisation du mot de passe."
       ]
     },
     "Info; reshare calendar modal; part 2": {
@@ -4372,6 +4387,9 @@
       ],
       "Colors": [
         "Couleurs"
+      ],
+      "Confirm password": [
+        "Confirmer le mot de passe"
       ],
       "Contacts": [
         "Contacts"
@@ -4528,6 +4546,9 @@
       ],
       "Navigation": [
         "Navigation"
+      ],
+      "New password": [
+        "Nouveau mot de passe"
       ],
       "Notification": [
         "Notification"
@@ -5546,6 +5567,175 @@
         "Aucun résultat n'a été trouvé."
       ]
     },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "Annuler la réinitialisation"
+      ],
+      "Reset password": [
+        "Réinitialiser le mot de passe"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "La récupération des comptes n'est pas disponible pour les anciennes clés d'adresse."
+      ],
+      "Please generate keys before you try to change your password": [
+        "Générez des clés avant d'essayer de changer votre mot de passe."
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } jour",
+        "${ timeRemaining.inDays } jours"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } heure",
+        "${ timeRemaining.inHours } heures"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "La demande de réinitialisation du mot de passe a été validée (${ user.Email }). Vous disposez de ${ timeRemaining.inDays } jour pour réinitialiser votre mot de passe.",
+        "La demande de réinitialisation du mot de passe a été validée (${ user.Email }). Vous disposez de ${ timeRemaining.inDays } jours pour réinitialiser votre mot de passe."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "La demande de réinitialisation du mot de passe a été validée (${ user.Email }). Vous disposez de ${ timeRemaining.inHours } heure pour réinitialiser votre mot de passe.",
+        "La demande de réinitialisation du mot de passe a été validée (${ user.Email }). Vous disposez de ${ timeRemaining.inHours } heures pour réinitialiser votre mot de passe."
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Rendez-vous sur l'appareil avec lequel vous vous êtes connecté (dans la session où la demande a été faite) pour changer votre mot de passe."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Cette autorisation expire dans ${ timeRemaining.inDays } jour.",
+        "Cette autorisation expire dans ${ timeRemaining.inDays } jours."
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Cette autorisation expire dans ${ timeRemaining.inHours } heure.",
+        "Cette autorisation expire dans ${ timeRemaining.inHours } heures."
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Vous disposez de ${ boldDaysRemaining } pour modifier librement votre mot de passe pour le compte ${ boldEmail }."
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Voir comment faire"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Le mot de passe a été enregistré."
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Réinitialiser votre mot de passe"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Annuler la réinitialisation du mot de passe "
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Saisissez votre mot de passe actuel pour annuler la procédure de réinitialisation du mot de passe. Aucune autre modification ne sera prise en compte."
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "La réinitialisation du mot de passe a été annulée."
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Annuler la réinitialisation du mot de passe ?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "La demande de réinitialisation du mot de passe a été annulée (${ user.Email }). Si vous n'êtes pas à l'origine de cette demande, ${ changePasswordLink }."
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "modifiez votre mot de passe maintenant"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "Annuler la demande"
+      ],
+      "Got it": [
+        "J'ai compris"
+      ],
+      "Learn more": [
+        "En savoir plus"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } heure en plus",
+        "${ gracePeriodHoursRemaining } heures en plus"
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "Si vous n'êtes pas à l'origine de la demande de réinitialisation de votre mot de passe, annulez cette demande maintenant."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "La réinitialisation du mot de passe a été demandée (${ user.Email }). Vous pourrez modifier votre mot de passe dans ${ hoursRemaining } heure.",
+        "La réinitialisation du mot de passe a été demandée (${ user.Email }). Vous pourrez modifier votre mot de passe dans ${ hoursRemaining } heures."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "Pour nous assurer que vous êtes bien à l'origine de la réinitialisation de votre mot de passe, nous attendons 72 heures avant de valider les demandes. Vous pourrez modifier votre mot de passe dans ${ boldTimeLeft }. ${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "Nous avons reçu une demande de réinitialisation du mot de passe pour ${ boldEmail }."
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "Afficher la demande"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "La réinitialisation du mot de passe a été demandée."
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Se déconnecter"
+      ],
+      "Stay signed in": [
+        "Rester connecté"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } heure",
+        "${ gracePeriodHoursRemaining } heures"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } est maintenant disponible."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Si vous vous déconnectez avant d'avoir réinitialisé votre mot de passe, vous risquez de perdre l'accès à votre compte."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Si vous vous déconnectez sans réinitialiser votre mot de passe, vous risquez de perdre l'accès à votre compte."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Vous pourrez réinitialiser votre mot de passe dans ${ boldTimeLeft }."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Réinitialisation du mot de passe"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Se déconnecter sans faire une réinitialisation du mot de passe ?"
+      ]
+    },
     "Settings update growler warning": {
       "Failed to update settings": [
         "Les paramètres n'ont pas pu être mis à jour."
@@ -6054,7 +6244,7 @@
     },
     "summer2023: Describe Proton Pass": {
       "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Enregistrez vos mots de passe en toute sécurité et renseignez-les automatiquement sur les sites web. Profitez d'un nombre illimité de mots de passe, du remplissage automatique, d'un générateur de mots de passe et de bien d'autres fonctionnalités."
+        "Enregistrez vos mots de passe en toute sécurité et renseignez-les automatiquement sur les sites internet. Profitez d'un nombre illimité de mots de passe, de la fonctionnalité de remplissage automatique, d'un générateur de mots de passe et de bien d'autres fonctionnalités."
       ]
     },
     "summer2023: Short tool name to present Proton Pass": {
@@ -6244,6 +6434,9 @@
       ],
       "Change my answer": [
         "Changer ma réponse"
+      ],
+      "Change password": [
+        "Changer le mot de passe"
       ],
       "Choose how many times this event will repeat": [
         "Choisissez combien de fois cet événement se répétera."

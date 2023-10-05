@@ -33,6 +33,9 @@
       "Add address": [
         "Adăugare adresă"
       ],
+      "Add birthday": [
+        "Adăugare dată naștere"
+      ],
       "Add contact": [
         "Adăugare contact"
       ],
@@ -48,6 +51,9 @@
       "Add new group": [
         "Adăugare grup"
       ],
+      "Add note": [
+        "Adăugare notă"
+      ],
       "Add notification": [
         "Adăugare notificare"
       ],
@@ -62,6 +68,11 @@
       ],
       "Apply": [
         "Aplicare"
+      ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Este permis cel mult ${ maxContacts } contact per grup de contact.",
+        "Sunt permise cel mult ${ maxContacts } contacte per grup de contact.",
+        "Sunt permise cel mult ${ maxContacts } de contacte per grup de contact."
       ],
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
@@ -201,6 +212,9 @@
       ],
       "Discard": [
         "Renunțare"
+      ],
+      "Don't know your password?": [
+        "Nu vă cunoașteți parola?"
       ],
       "Done": [
         "Gata"
@@ -379,6 +393,9 @@
       "No, thanks": [
         "Nu, mulțumesc"
       ],
+      "Ok": [
+        "OK"
+      ],
       "OK": [
         "OK"
       ],
@@ -465,6 +482,9 @@
       ],
       "Search countries": [
         "Căutare țări"
+      ],
+      "See how": [
+        "Vedeți cum"
       ],
       "See plan features": [
         "Afișare caracteristici plan"
@@ -621,6 +641,11 @@
       ],
       "Yes, I'll attend": [
         "Da, voi participa"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Nu puteți trimite fișiere vCard la mai mult de ${ maxAttachments } contact.",
+        "Nu puteți trimite fișiere vCard la mai mult de ${ maxAttachments } contacte.",
+        "Nu puteți trimite fișiere vCard la mai mult de ${ maxAttachments } de contacte."
       ]
     },
     "Action subline": {
@@ -1111,8 +1136,17 @@
       "Birthday": [
         "Data naşterii"
       ],
+      "Display name": [
+        "Nume afișat"
+      ],
       "Email": [
         "E-mail"
+      ],
+      "Enter a display name or nickname": [
+        "Introduceți un nume de afișare sau poreclă"
+      ],
+      "First name": [
+        "Prenume"
       ],
       "Gender": [
         "Gen"
@@ -1122,6 +1156,9 @@
       ],
       "Language": [
         "Limba"
+      ],
+      "Last name": [
+        "Nume de familie"
       ],
       "Logo": [
         "Siglă"
@@ -2328,6 +2365,9 @@
       "Failed to get original occurrence in series": [
         "Nu s-a putut obține apariția inițială în serie."
       ],
+      "First name is too long": [
+        "Prenumele este prea lung."
+      ],
       "Folder name cannot be empty.": [
         "Numele folderului nu poate fi gol."
       ],
@@ -2342,6 +2382,9 @@
       ],
       "Incorrect mailbox password. Please try again.": [
         "Parolă mesaje incorectă. Reîncercați."
+      ],
+      "Incorrect username": [
+        "Nume de utilizator incorect."
       ],
       "Interval cannot be empty": [
         "Intervalul nu poate fi gol."
@@ -2372,6 +2415,9 @@
       ],
       "Label name cannot be empty.": [
         "Numele etichetei nu poate fi gol."
+      ],
+      "Last name is too long": [
+        "Numele este prea lung."
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Îmbinați cel puțin ${ calendarsToFixCount } calendar cu un calendar ${ BRAND_NAME } existent.",
@@ -2437,6 +2483,9 @@
         "Remediați conflictul evidențiat pentru a continua.",
         "Remediați conflictele evidențiate pentru a continua.",
         "Remediați conflictele evidențiate pentru a continua."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Furnizați fie prenumele, numele sau numele afișat."
       ],
       "Port is required": [
         "Portul este obligatoriu"
@@ -2565,6 +2614,11 @@
       ],
       "You already added this holidays calendar": [
         "Ați adăugat deja acest calendar de sărbători."
+      ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Nu puteți trimite mesaje la mai mult de ${ maxContacts } destinatar.",
+        "Nu puteți trimite mesaje la mai mult de ${ maxContacts } destinatari.",
+        "Nu puteți trimite mesaje la mai mult de ${ maxContacts } de destinatari."
       ],
       "You have reached the contacts limit for your account": [
         "Ați atins limita de contacte disponibilă în cont."
@@ -3470,6 +3524,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "Tehnologia de criptare ${ BRAND_NAME } semnifică faptul că nimeni nu vă poate accesa parola - nici măcar noi."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "Un calendar nou",
         "${ calendarsToBeCreatedCount } calendare noi",
@@ -3912,6 +3969,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP / MIME trimite automat mesajul folosind modul curent de compunere."
       ],
+      "Please note that addresses assigned to these groups will NOT be deleted.": [
+        "Rețineți că adresele atribuite acestor grupuri NU vor fi șterse."
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Rețineți că adresele atribuite acestui grup NU vor fi șterse."
       ],
@@ -4278,6 +4338,11 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "Este permis cel mult ${ maxAttendees } participant per invitație.",
+        "Sunt permiși cel mult ${ maxAttendees } participanți per invitație.",
+        "Sunt permiși cel mult ${ maxAttendees } de participanți per invitație."
+      ],
       "Creating invites in a shared calendar is not allowed": [
         "Crearea de invitații la un calendar partajat nu este permisă."
       ]
@@ -4389,6 +4454,9 @@
       ],
       "Colors": [
         "Culori"
+      ],
+      "Confirm password": [
+        "Confirmare parolă"
       ],
       "Contacts": [
         "Contacte"
@@ -4545,6 +4613,9 @@
       ],
       "Navigation": [
         "Navigare"
+      ],
+      "New password": [
+        "Parola nouă"
       ],
       "Notification": [
         "Notificare"
@@ -5460,6 +5531,9 @@
       "Filter groups": [
         "Filtrare grupuri"
       ],
+      "First name": [
+        "Prenume"
+      ],
       "Group name": [
         "Nume grup"
       ],
@@ -5468,6 +5542,9 @@
       ],
       "Indexing...": [
         "Se indexează..."
+      ],
+      "Last name": [
+        "Nume de familie"
       ],
       "Name": [
         "Nume"
@@ -5592,6 +5669,184 @@
       ],
       "No results found": [
         "Nu s-au găsit rezultate"
+      ]
+    },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "Anulare resetare"
+      ],
+      "Reset password": [
+        "Resetare parolă"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "Recuperarea contului nu este disponibilă pentru cheile vechi ale adreselor."
+      ],
+      "Please generate keys before you try to change your password": [
+        "Generați cheile înainte de a încerca să vă schimbați parola."
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } zi",
+        "${ timeRemaining.inDays } zile",
+        "${ timeRemaining.inDays } de zile"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } oră",
+        "${ timeRemaining.inHours } ore",
+        "${ timeRemaining.inHours } de ore"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Solicitate de resetare parolă acceptată (${ user.Email }). Aveți la dispoziție ${ timeRemaining.inDays } zi pentru a reseta parola.",
+        "Solicitate de resetare parolă acceptată (${ user.Email }). Aveți la dispoziție ${ timeRemaining.inDays } zile pentru a reseta parola.",
+        "Solicitate de resetare parolă acceptată (${ user.Email }). Aveți la dispoziție ${ timeRemaining.inDays } de zile pentru a reseta parola."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Solicitate de resetare parolă acceptată (${ user.Email }). Aveți la dispoziție ${ timeRemaining.inHours } oră pentru a reseta parola.",
+        "Solicitate de resetare parolă acceptată (${ user.Email }). Aveți la dispoziție ${ timeRemaining.inHours } ore pentru a reseta parola.",
+        "Solicitate de resetare parolă acceptată (${ user.Email }). Aveți la dispoziție ${ timeRemaining.inHours } de ore pentru a reseta parola."
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Accesați dispozitivul conectat (în sesiunea de unde a fost inițiată solicitarea) pentru a vă schimba parola."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Această permisiune expiră peste ${ timeRemaining.inDays } zi.",
+        "Această permisiune expiră peste ${ timeRemaining.inDays } zile.",
+        "Această permisiune expiră peste ${ timeRemaining.inDays } de zile."
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Această permisiune expiră peste ${ timeRemaining.inHours } oră.",
+        "Această permisiune expiră peste ${ timeRemaining.inHours } ore.",
+        "Această permisiune expiră peste ${ timeRemaining.inHours } de ore."
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Acum vă puteți schimba parola pentru contul ${ boldEmail } timp de ${ boldDaysRemaining }."
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Vedeți cum"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Parola a fost salvată."
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Resetați-vă parola"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Anulare resetare parolă"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Introduceți parola curentă pentru a anula procesul de resetare a parolei. Nu vor fi efectuate alte modificări."
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "Resetarea parolei a fost anulată."
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Anulați resetarea parolei?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Solicitare de resetare parolă anulată (${ user.Email }). Dacă nu ați solicitat această anulare, ${ changePasswordLink }."
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "schimbați-vă acum parola"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "Anulare solicitare"
+      ],
+      "Got it": [
+        "Am înțeles"
+      ],
+      "Learn more": [
+        "Detalii"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "A mai rămas ${ gracePeriodHoursRemaining } oră.",
+        "Au mai rămas ${ gracePeriodHoursRemaining } ore.",
+        "Au mai rămas ${ gracePeriodHoursRemaining } de ore."
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "Dacă nu ați solicitat resetarea parolei, anulați această solicitare acum."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Solicitare de resetare parolă (${ user.Email }). Puteți să vă schimbați parola timp de ${ hoursRemaining } oră.",
+        "Solicitare de resetare parolă (${ user.Email }). Puteți să vă schimbați parola timp de ${ hoursRemaining } ore.",
+        "Solicitare de resetare parolă (${ user.Email }). Puteți să vă schimbați parola timp de ${ hoursRemaining } de ore."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "Pentru a ne asigura că însuși deținătorul contului încearcă să reseteze parola, așteptăm 72 de ore înainte de a aproba astfel de solicitări. Vă puteți schimba parola peste ${ boldTimeLeft }. ${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "S-a primit o solicitare de resetare a parolei pentru ${ boldEmail }."
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "Vizualizare solicitare"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "Solicitare resetare parolă"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Deconectare"
+      ],
+      "Stay signed in": [
+        "Nu mă deconectez"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } oră",
+        "${ gracePeriodHoursRemaining } ore",
+        "${ gracePeriodHoursRemaining } de ore"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } este acum posibilă."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Dacă vă deconectați înainte de a vă reseta parola, ați putea să vă pierdeți accesul la cont."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Dacă vă deconectați fără a vă reseta parola, ați putea să vă pierdeți accesul la cont."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Veți putea să vă resetați parola peste ${ boldTimeLeft }."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Resetarea parolei"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Vă deconectați fără a vă reseta parola?"
       ]
     },
     "Settings update growler warning": {
@@ -6197,8 +6452,14 @@
       "Display name": [
         "Nume afișat"
       ],
+      "First name": [
+        "Prenume"
+      ],
       "Import": [
         "Importare"
+      ],
+      "Last name": [
+        "Nume de familie"
       ],
       "Values": [
         "Valori"
@@ -6290,6 +6551,9 @@
       "Billing cycle": [
         "Ciclu de facturare"
       ],
+      "Birthday": [
+        "Data nașterii"
+      ],
       "Calendar": [
         "Calendar"
       ],
@@ -6301,6 +6565,9 @@
       ],
       "Change my answer": [
         "Schimbare răspuns"
+      ],
+      "Change password": [
+        "Schimbare parolă"
       ],
       "Choose how many times this event will repeat": [
         "Alegeți de câte ori se va repeta acest eveniment"
@@ -6451,6 +6718,9 @@
       ],
       "Night theme": [
         "Temă noapte"
+      ],
+      "Notes": [
+        "Note"
       ],
       "Open actions dropdown": [
         "Deschidere meniu acțiuni"
@@ -6755,6 +7025,9 @@
         "Sigur doriți să ștergeți definitiv un contact?",
         "Sigur doriți să ștergeți definitiv ${ count } contacte?",
         "Sigur doriți să ștergeți definitiv ${ count } de contacte?"
+      ],
+      "Are you sure you want to permanently delete these contact groups?": [
+        "Sigur doriți să ștergeți definitiv acest grupuri de contacte?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Sigur doriți să ștergeți definitiv acest grup de contacte?"
