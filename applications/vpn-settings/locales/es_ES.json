@@ -146,6 +146,9 @@
       "Discard": [
         "Descartar"
       ],
+      "Don't know your password?": [
+        "¿No sabes tu contraseña?"
+      ],
       "Done": [
         "Hecho"
       ],
@@ -287,6 +290,9 @@
       "OK": [
         "Aceptar"
       ],
+      "Ok": [
+        "OK"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir la configuración de ${ CALENDAR_APP_NAME }"
       ],
@@ -379,6 +385,9 @@
       ],
       "Search countries": [
         "Buscar países"
+      ],
+      "See how": [
+        "Ver cómo"
       ],
       "See plan features": [
         "Ver las funciones del plan"
@@ -1749,6 +1758,9 @@
       ],
       "Incorrect password": [
         "Contraseña incorrecta"
+      ],
+      "Incorrect username": [
+        "Nombre de usuario incorrecto"
       ],
       "Invalid ${ name } code": [
         "Código de ${ name } no válido"
@@ -5547,6 +5559,165 @@
       ],
       "to be created": [
         "por crear"
+      ]
+    },
+    "session_recovery:available:action": {
+      "Cancel password reset": [
+        "Cancelar el restablecimiento de contraseña"
+      ],
+      "Cancel reset": [
+        "Cancelar el restablecimiento"
+      ],
+      "Reset password": [
+        "Restablecer la contraseña"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } día",
+        "${ timeRemaining.inDays } días"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } hora",
+        "${ timeRemaining.inHours } horas"
+      ],
+      "Didn’t make this request?": [
+        "¿No has hecho esta solicitud?"
+      ],
+      "You can now reset your password": [
+        "Ahora puedes restablecer tu contraseña."
+      ],
+      "You can reset your password until ${ boldDate }.": [
+        "Puedes restablecer tu contraseña hasta el ${ boldDate }."
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Ver cómo"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "La contraseña ha sido guardada."
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Restablecer tu contraseña"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Cancelar el restablecimiento de contraseña"
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "El restablecimiento de contraseña ha sido cancelado."
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "¿Cancelar el restablecimiento de contraseña?"
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "cambia tu contraseña ahora."
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel password reset": [
+        "Cancelar el restablecimiento de contraseña"
+      ],
+      "Cancel request": [
+        "Cancelar la solicitud"
+      ],
+      "Got it": [
+        "Entiendo"
+      ],
+      "Learn more": [
+        "Más información"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } hora más",
+        "${ gracePeriodHoursRemaining } horas más"
+      ],
+      "Didn’t make this request?": [
+        "¿No has hecho esta solicitud?"
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "Ver la solicitud"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "El restablecimiento de contraseña ha sido solicitado."
+      ]
+    },
+    "session_recovery:initiation:action": {
+      "Got it": [
+        "Entiendo"
+      ],
+      "Request password reset": [
+        "Solicitar el restablecimiento de contraseña"
+      ],
+      "Use recovery method": [
+        "Utilizar un método de recuperación"
+      ]
+    },
+    "session_recovery:initiation:notification": {
+      "Password reset confirmed": [
+        "El restablecimiento de contraseña ha sido confirmado."
+      ]
+    },
+    "session_recovery:initiation:title": {
+      "Request password reset?": [
+        "¿Solicitar el restablecimiento de contraseña?"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Cerrar sesión"
+      ],
+      "Stay signed in": [
+        "Seguir conectado"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } hora",
+        "${ gracePeriodHoursRemaining } horas"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } está ahora disponible."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Restablecimiento de contraseña"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "¿Quieres cerrar sesión sin restablecimiento de contraseña?"
+      ]
+    },
+    "session_recovery:status:info": {
+      "Available": [
+        "Disponible"
+      ],
+      "Pending": [
+        "Pendiente"
+      ]
+    },
+    "session_recovery:status:title": {
+      "Password reset request": [
+        "Solicitud de restablecimiento de contraseña"
       ]
     },
     "Shared calendar; Info about calendar owner": {
