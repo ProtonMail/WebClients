@@ -702,6 +702,8 @@ const SubscriptionModal = ({
                                                     currency={model.currency}
                                                     onChangeCycle={handleChangeCycle}
                                                     disabled={loadingCheck}
+                                                    subscription={subscription}
+                                                    {...checkoutModifiers}
                                                 />
                                             </div>
                                         </>
@@ -836,7 +838,9 @@ const SubscriptionModal = ({
                                                     currency={model.currency}
                                                     onChangeCycle={handleChangeCycle}
                                                     disabled={loadingCheck}
+                                                    subscription={subscription}
                                                     faded={blockCycleSelector}
+                                                    {...checkoutModifiers}
                                                 />
                                             </div>
                                         </>
