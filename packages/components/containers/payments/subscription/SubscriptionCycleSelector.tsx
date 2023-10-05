@@ -10,7 +10,13 @@ import {
     getPricingFromPlanIDs,
     getTotalFromPricing,
 } from '@proton/shared/lib/helpers/subscription';
-import { Currency, PlanIDs, PlansMap, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import {
+    Currency,
+    PlanIDs,
+    PlansMap,
+    SubscriptionCheckResponse,
+    SubscriptionModel,
+} from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Option, Price, Radio, SelectTwo } from '../../../components';
@@ -29,6 +35,9 @@ export interface Props {
     planIDs: PlanIDs;
     disabled?: boolean;
     faded?: boolean;
+    isCustomBilling?: boolean;
+    isScheduledSubscription?: boolean;
+    subscription?: SubscriptionModel;
 }
 
 type TotalPricings = {
@@ -184,6 +193,9 @@ const SubscriptionCycleSelector = ({
     planIDs,
     plansMap,
     faded,
+    isCustomBilling = false,
+    isScheduledSubscription = false,
+    subscription,
 }: Props) => {
     const filteredCycles = [CYCLE.YEARLY, CYCLE.MONTHLY].filter((cycle) => cycle >= minimumCycle);
 
@@ -208,7 +220,12 @@ const SubscriptionCycleSelector = ({
                 <div className={clsx(singleClassName, 'mb-2', fadedClasses)}>
                     <CycleItem monthlySuffix={monthlySuffix} totals={totals} cycle={cycle} currency={currency} />
                 </div>
-                <RenewalNotice renewCycle={cycleSelected} />
+                <RenewalNotice
+                    renewCycle={cycleSelected}
+                    isCustomBilling={isCustomBilling}
+                    isScheduledSubscription={isScheduledSubscription}
+                    subscription={subscription}
+                />
             </>
         );
     }
@@ -246,7 +263,13 @@ const SubscriptionCycleSelector = ({
                         );
                     })}
                 </InputField>
-                <RenewalNotice renewCycle={cycleSelected} className="mt-2" />
+                <RenewalNotice
+                    renewCycle={cycleSelected}
+                    isCustomBilling={isCustomBilling}
+                    isScheduledSubscription={isScheduledSubscription}
+                    subscription={subscription}
+                    className="mt-2"
+                />
             </div>
         );
     }
@@ -293,7 +316,12 @@ const SubscriptionCycleSelector = ({
                     );
                 })}
             </ul>
-            <RenewalNotice renewCycle={cycleSelected} />
+            <RenewalNotice
+                renewCycle={cycleSelected}
+                isCustomBilling={isCustomBilling}
+                isScheduledSubscription={isScheduledSubscription}
+                subscription={subscription}
+            />
         </>
     );
 };
