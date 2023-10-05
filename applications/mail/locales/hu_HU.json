@@ -4523,6 +4523,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "A ${ appName } alkalmazásnak szüksége van az engedélyére, hogy ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "${ BRAND_NAME } titkosítási technológiájának köszönhetően senki sem fér hozzá a jelszavához - még mi sem."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } új naptár",
         "${ calendarsToBeCreatedCount } új naptár"
@@ -6258,6 +6261,9 @@
       "Conditions": [
         "Feltételek"
       ],
+      "Confirm password": [
+        "Jelszó megerősítése"
+      ],
       "Contacts": [
         "Névjegyek"
       ],
@@ -6443,6 +6449,9 @@
       ],
       "Navigation": [
         "Navigáció"
+      ],
+      "New password": [
+        "Új jelszó"
       ],
       "No label found": [
         "Nem található címke"
@@ -8467,6 +8476,9 @@
       ],
       "Change my answer": [
         "Válasz megváltoztatása"
+      ],
+      "Change password": [
+        "Jelszó megváltoztatása"
       ],
       "Clear out the junk": [
         "Szabaduljon meg a szeméttől"
