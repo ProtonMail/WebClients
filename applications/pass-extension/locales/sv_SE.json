@@ -29,6 +29,15 @@
       "Back": [
         "Tillbaka"
       ],
+      "Can edit": [
+        "Kan redigera"
+      ],
+      "Can manage": [
+        "Kan hantera"
+      ],
+      "Can view": [
+        "Kan visa"
+      ],
       "Can't find your password manager? Please let us know!": [
         "Kan du inte hitta din lösenordshanterare? Berätta för oss!"
       ],
@@ -58,6 +67,9 @@
       ],
       "Confirm": [
         "Bekräfta"
+      ],
+      "Continue": [
+        "Fortsätt"
       ],
       "Continue without pinning": [
         "Fortsätt utan att nåla fast"
@@ -170,14 +182,32 @@
       "Importing": [
         "Importerar"
       ],
+      "Invite people": [
+        "Bjud in personer"
+      ],
+      "Join shared vault": [
+        "Gå med delat valv"
+      ],
       "Learn more": [
         "Lär dig mer"
+      ],
+      "Leave": [
+        "Lämna"
+      ],
+      "Leave vault": [
+        "Lämna valv"
       ],
       "Lock extension": [
         "Lås tillägg"
       ],
+      "Manage access": [
+        "Hantera åtkomst"
+      ],
       "Manually sync your data": [
         "Synkronisera dina data manuellt"
+      ],
+      "More info: ${ safeTitle }": [
+        "Mer information: ${ safeTitle }"
       ],
       "More options": [
         "Fler alternativ"
@@ -212,11 +242,20 @@
       "Regenerate": [
         "Generera igen"
       ],
+      "Reject invitation": [
+        "Avböj inbjudan"
+      ],
       "Reload extension": [
         "Ladda om tillägg"
       ],
+      "Remove access": [
+        "Ta bort åtkomst"
+      ],
       "Request a feature": [
         "Begär en funktion"
+      ],
+      "Resend invitation": [
+        "Skicka inbjudan igen"
       ],
       "Restore item": [
         "Återställ objekt"
@@ -230,8 +269,17 @@
       "Saving": [
         "Sparar"
       ],
+      "See members": [
+        "Se medlemmar"
+      ],
+      "Send invite": [
+        "Skicka inbjudan"
+      ],
       "Send us a message": [
         "Skicka oss ett meddelande"
+      ],
+      "Share": [
+        "Dela"
       ],
       "Show": [
         "Visa"
@@ -256,6 +304,9 @@
       ],
       "Submitting report...": [
         "Skickar rapport..."
+      ],
+      "Transfer ownership": [
+        "Överför ägarskap"
       ],
       "Try again": [
         "Försök igen"
@@ -316,8 +367,14 @@
       "Cannot create alias (${ error }).": [
         "Kan inte skapa alias (${ error })."
       ],
+      "Could not leave vault.": [
+        "Kunde inte lämna valv."
+      ],
       "Could not open created vault": [
         "Kunde inte öppna skapat valv"
+      ],
+      "Could not open invited vault": [
+        "Kunde inte öppna inbjudet valv"
       ],
       "Could not open updated vault": [
         "Kunde inte öppna uppdaterat valv"
@@ -356,6 +413,21 @@
       "Error reporting problem": [
         "Gick inte rapportera problem"
       ],
+      "Failed removing the invite.": [
+        "Misslyckades ta bort inbjudan."
+      ],
+      "Failed resending invite.": [
+        "Misslyckades skicka inbjudan igen."
+      ],
+      "Failed to edit user's access.": [
+        "Misslyckades att redigera användaråtkomst."
+      ],
+      "Failed to remove user's access.": [
+        "Misslyckades att ta bort användaråtkomst."
+      ],
+      "Failed to transfer this vault's ownership.": [
+        "Misslyckades att överföra detta valvs äganderätt."
+      ],
       "File could not be parsed": [
         "Fil kunde inte analyseras"
       ],
@@ -370,6 +442,18 @@
       ],
       "Invalid url": [
         "Ogiltig URL"
+      ],
+      "Invitation could not be accepted": [
+        "Inbjudan kan inte accepteras"
+      ],
+      "Invitation could not be rejected": [
+        "Inbjudan kunde inte avvisas"
+      ],
+      "Invite creation failed.": [
+        "Misslyckades skapa inbjudan."
+      ],
+      "Invite successfully sent": [
+        "Inbjudan skickad"
       ],
       "Item content cannot exceed 40KB": [
         "Objektinnehåll får inte överstiga 40 kB"
@@ -413,6 +497,9 @@
       "Settings update failed": [
         "Misslyckades att uppdatera inställningar"
       ],
+      "Signature verification failed": [
+        "Signaturverifiering misslyckades"
+      ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
         "Några valv är inte längre åtkomliga på grund av en lösenordsåterställning. Återaktivera dina kontonycklar för att få åtkomst igen. ${ reactivateLink }"
       ],
@@ -445,6 +532,9 @@
       ],
       "Unknown error": [
         "Okänt fel"
+      ],
+      "Unknown invite": [
+        "Okänd inbjudan"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Filformat ${ PASS_APP_NAME } stöds inte"
@@ -526,6 +616,14 @@
         "${ count } objekt",
         "${ count } objekt"
       ],
+      "${ itemCount } item": [
+        "${ itemCount } objekt",
+        "${ itemCount } objekt"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } medlem",
+        "${ memberCount } medlemmar"
+      ],
       "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
         "${ PASS_APP_NAME } kommer endast importera inloggningar och anteckningar. Pass, bifogade filer etc. stöds inte just nu."
       ],
@@ -544,6 +642,10 @@
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } dag kvar",
         "${ trialDaysLeft } dagar kvar"
+      ],
+      "${ vault.count } item": [
+        "${ vault.count } objekt",
+        "${ vault.count } objekt"
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "En ny version av ${ PASS_APP_NAME } är tillgänglig. Uppdatera den för att ta del av de senaste funktionerna och buggfixarna."
@@ -574,6 +676,27 @@
       ],
       "Autosaved on ${ submissionURL }": [
         "Autosparad på ${ submissionURL }"
+      ],
+      "Can create, edit, delete and export items in this vault.": [
+        "Kan skapa, redigera, ta bort och exportera objekt i detta valv."
+      ],
+      "Can edit": [
+        "Kan redigera"
+      ],
+      "Can grant and revoke access to this vault, and delete it.": [
+        "Kan bevilja och återkalla åtkomst till detta valv, och ta bort det."
+      ],
+      "Can grant and revoke access to this vault.": [
+        "Kan bevilja och återkalla åtkomst till detta valv."
+      ],
+      "Can manage": [
+        "Kan hantera"
+      ],
+      "Can view": [
+        "Kan visa"
+      ],
+      "Can view items in this vault.": [
+        "Kan visa objekt i detta valv."
       ],
       "Check out all the exclusive features that are available to you for a limited time.": [
         "Kolla in alla exklusiva funktioner som är tillgängliga för dig under en begränsad tid."
@@ -675,6 +798,12 @@
       "Internet connection lost": [
         "Internetanslutning förlorades"
       ],
+      "Invite successfully removed": [
+        "Inbjudan borttagen"
+      ],
+      "Invite successfully resent": [
+        "Inbjudan skickad"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Det verkar som att du redan är inloggad på ${ PASS_APP_NAME }. Om du försöker logga in med ett annat konto, logga ut från tillägget först."
       ],
@@ -712,6 +841,9 @@
       "Loading...": [
         "Laddar..."
       ],
+      "me": [
+        "jag"
+      ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Mer än en lösenordshanterare. ${ PASS_APP_NAME } skyddar ditt lösenord och din personliga e-postadress via e-postalias. Drivs av samma teknologi bakom ${ MAIL_APP_NAME }, din data är krypterad från början och är endast åtkomlig för dig."
       ],
@@ -730,11 +862,20 @@
       "Open the Extensions menu": [
         "Öppna tilläggsmenyn"
       ],
+      "Owner": [
+        "Ägare"
+      ],
+      "Ownership successfully transfered. You are no long the owner of this vault.": [
+        "Äganderätten har överförts. Du är inte längre ägare till detta valv."
+      ],
       "Password copied": [
         "Lösenord kopierat"
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Lösenord äldre än 1 dag tas automatiskt bort från historik."
+      ],
+      "Pending invitation": [
+        "Väntande inbjudning"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Nåla fast ${ PASS_APP_NAME } till ditt verktygsfält"
@@ -769,6 +910,9 @@
       "Select the destination vault for each imported vault.": [
         "Välj destinationsvalv för varje importerat valv."
       ],
+      "Select the level of access this user will gain when they join your vault.": [
+        "Välj vilken åtkomstnivå denna användare ska erhålla när de går med i ditt valv."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servrarna kan inte nås. Försök igen om några minuter"
       ],
@@ -793,6 +937,9 @@
       "Successfully exported all your items": [
         "Alla dina objekt har exporterats"
       ],
+      "Successfully left the vault": [
+        "Valv har lämnats"
+      ],
       "Successfully synced all vaults": [
         "Alla valv synkroniserade"
       ],
@@ -809,8 +956,17 @@
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Texten du försöker klistra in är längre än den högsta tillåtna längden på ${ maxLength } tecken."
       ],
+      "The user did not accept the invitation yet.": [
+        "Användaren har inte accepterat inbjudan ännu."
+      ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Denna export kommer vara okrypterad och alla som har åtkomst till din exporterade fil kommer att kunna se dina lösenord. Av säkerhetsskäl, ta bort den när du är klar med den."
+      ],
+      "This user will receive an invitation to join your '${ vaultName }' vault.": [
+        "Denna användare kommer få en inbjudan att gå med i ditt “${ vaultName }“-valv."
+      ],
+      "This vault is not currently shared with anyone. Invite people to share it with others.": [
+        "Detta valv delas för närvarande inte med någon. Bjud in människor att dela det med andra."
       ],
       "Unable to copy to clipboard": [
         "Kan inte kopiera till urklipp"
@@ -823,6 +979,12 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Uppgradera ${ PASS_APP_NAME }"
+      ],
+      "User's access removed": [
+        "Användaråtkomst borttagen"
+      ],
+      "User's access sucessfuly updated": [
+        "Användaråtkomst uppdaterad"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Valv “${ payload.content.name }“ borttaget"
@@ -869,6 +1031,9 @@
       ],
       "You're about to create": [
         "Du är på väg att skapa"
+      ],
+      "You've been invited to a vault. Click here to see the invitation.": [
+        "Du har blivit inbjuden till ett valv. Klicka här för att se inbjudan."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Din ${ PASS_APP_NAME }-session är låst"
@@ -1168,6 +1333,9 @@
       "Report a problem": [
         "Rapportera ett problem"
       ],
+      "Respond": [
+        "Svara"
+      ],
       "Restore all items": [
         "Återställ alla objekt"
       ],
@@ -1316,6 +1484,9 @@
       "Add text": [
         "Lägga till text"
       ],
+      "Email address": [
+        "E-postadress"
+      ],
       "Enter a note...": [
         "Ange en anteckning..."
       ],
@@ -1426,17 +1597,29 @@
       "Import to vault(s)": [
         "Importera till valv"
       ],
+      "Leave vault ?": [
+        "Lämna valv?"
+      ],
       "Low disk space": [
         "Lågt diskutrymme"
       ],
       "Permanently remove all items ?": [
         "Ta bort alla objekt permanent?"
       ],
+      "Permissions": [
+        "Behörigheter"
+      ],
       "Pin the extension": [
         "Fäst tillägget"
       ],
       "Secure your data": [
         "Säkra dina data"
+      ],
+      "Share with": [
+        "Dela med"
+      ],
+      "Shared vault invitation": [
+        "Delad valvinbjudan"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Byta till ${ PASS_APP_NAME }?"
@@ -1446,6 +1629,9 @@
       ],
       "The extension is now ready to use.": [
         "Tillägget är nu redo att användas."
+      ],
+      "Transfer ownership": [
+        "Överför ägarskap"
       ],
       "Trash empty": [
         "Papperskorg tom"
@@ -1514,6 +1700,9 @@
       "An error occured while exporting your data": [
         "Ett fel uppstod när din data skulle exporteras"
       ],
+      "Are you sure you want to transfer vault ownership to ${ email }?": [
+        "Är du säker på att du vill överföra valvets ägarskap till ${ email }?"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Kan inte hämta brevlådor för detta alias just nu"
       ],
@@ -1559,6 +1748,9 @@
       "PGP encrypted export file requires passphrase": [
         "PGP-krypterad exportfil kräver lösenfras"
       ],
+      "Please enter a valid email address": [
+        "Ange en giltig e-postadress"
+      ],
       "Please log back in": [
         "Logga in igen"
       ],
@@ -1600,6 +1792,9 @@
       ],
       "You must select at least one mailbox": [
         "Du måste välja minst en brevlåda"
+      ],
+      "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
+        "Du kommer inte längre att ha åtkomst till detta valv. För att gå med igen behöver du en ny inbjudan."
       ],
       "Your plan does not allow you to create more aliases": [
         "Ditt paket tillåter dig inte att skapa fler alias"

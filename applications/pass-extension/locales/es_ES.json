@@ -59,6 +59,9 @@
       "Confirm": [
         "Confirmar"
       ],
+      "Continue": [
+        "Continuar"
+      ],
       "Continue without pinning": [
         "Continuar sin fijar"
       ],
@@ -173,11 +176,17 @@
       "Learn more": [
         "Más información"
       ],
+      "Leave": [
+        "Salir"
+      ],
       "Lock extension": [
         "Bloquear la extensión"
       ],
       "Manually sync your data": [
         "Sincronizar tus datos manualmente"
+      ],
+      "More info: ${ safeTitle }": [
+        "Más información: ${ safeTitle }"
       ],
       "More options": [
         "Más opciones"
@@ -232,6 +241,9 @@
       ],
       "Send us a message": [
         "Envíanos un mensaje"
+      ],
+      "Share": [
+        "Compartir"
       ],
       "Show": [
         "Mostrar"
@@ -412,6 +424,9 @@
       ],
       "Settings update failed": [
         "Error al actualizar los ajustes"
+      ],
+      "Signature verification failed": [
+        "Error al verificar la firma"
       ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
         "Algunas bóvedas ya no son accesibles debido a un restablecimiento de contraseña. Reactiva las claves de tu cuenta para recuperar el acceso. ${ reactivateLink }"
@@ -1316,6 +1331,9 @@
       "Add text": [
         "Añadir texto"
       ],
+      "Email address": [
+        "Dirección de correo electrónico"
+      ],
       "Enter a note...": [
         "Introducir una nota..."
       ],
@@ -1427,7 +1445,7 @@
         "Importar a las bóvedas"
       ],
       "Low disk space": [
-        "Poco espacio en disco"
+        "Poco espacio en el disco"
       ],
       "Permanently remove all items ?": [
         "¿Eliminar todos los elementos permanentemente?"

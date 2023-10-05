@@ -29,6 +29,15 @@
       "Back": [
         "Πίσω"
       ],
+      "Can edit": [
+        "Δυνατότητα επεξεργασίας"
+      ],
+      "Can manage": [
+        "Δυνατότητα διαχείρισης"
+      ],
+      "Can view": [
+        "Δυνατότητα προβολής"
+      ],
       "Can't find your password manager? Please let us know!": [
         "Δεν μπορείτε να βρείτε τον διαχειριστή κωδικών πρόσβασης σας; Ενημερώστε μας!"
       ],
@@ -58,6 +67,9 @@
       ],
       "Confirm": [
         "Επιβεβαίωση"
+      ],
+      "Continue": [
+        "Συνέχεια"
       ],
       "Continue without pinning": [
         "Συνέχεια χωρίς καρφίτσωμα"
@@ -170,14 +182,32 @@
       "Importing": [
         "Εισαγωγή"
       ],
+      "Invite people": [
+        "Πρόσκληση ατόμων"
+      ],
+      "Join shared vault": [
+        "Συμμετοχή σε κοινόχρηστη κρύπτη"
+      ],
       "Learn more": [
         "Μάθετε περισσότερα"
+      ],
+      "Leave": [
+        "Αποχώρηση"
+      ],
+      "Leave vault": [
+        "Αποχώρηση από την κρύπτη"
       ],
       "Lock extension": [
         "Κλείδωμα προέκτασης"
       ],
+      "Manage access": [
+        "Διαχείριση πρόσβασης"
+      ],
       "Manually sync your data": [
         "Μη αυτόματος συγχρονισμός των δεδομένων σας"
+      ],
+      "More info: ${ safeTitle }": [
+        "Περισσότερες πληροφορίες: ${ safeTitle }"
       ],
       "More options": [
         "Περισσότερες επιλογές"
@@ -212,11 +242,20 @@
       "Regenerate": [
         "Αναπαραγωγή"
       ],
+      "Reject invitation": [
+        "Απόρριψη πρόσκλησης"
+      ],
       "Reload extension": [
         "Επαναφόρτωση επέκτασης"
       ],
+      "Remove access": [
+        "Αφαίρεση πρόσβασης"
+      ],
       "Request a feature": [
         "Ζητήστε μια δυνατότητα"
+      ],
+      "Resend invitation": [
+        "Επανάληψη αποστολής πρόσκλησης"
       ],
       "Restore item": [
         "Επαναφορά στοιχείου"
@@ -230,8 +269,17 @@
       "Saving": [
         "Αποθήκευση"
       ],
+      "See members": [
+        "Προβολή μελών"
+      ],
+      "Send invite": [
+        "Αποστολή πρόσκλησης"
+      ],
       "Send us a message": [
         "Στείλτε μας ένα μήνυμα"
+      ],
+      "Share": [
+        "Κοινοποίηση"
       ],
       "Show": [
         "Εμφάνιση"
@@ -256,6 +304,9 @@
       ],
       "Submitting report...": [
         "Υποβολή αναφοράς..."
+      ],
+      "Transfer ownership": [
+        "Μεταβίβαση κυριότητας"
       ],
       "Try again": [
         "Δοκιμάστε ξανά"
@@ -316,11 +367,20 @@
       "Cannot create alias (${ error }).": [
         "Δεν είναι δυνατή η δημιουργία ψευδωνύμου (${ error })."
       ],
+      "Could not leave vault.": [
+        "Δεν ήταν δυνατή η αποχώρηση από την κρύπτη."
+      ],
       "Could not open created vault": [
         "Δεν ήταν δυνατό το άνοιγμα της δημιουργημένης κρύπτης"
       ],
+      "Could not open invited vault": [
+        "Δεν ήταν δυνατό το άνοιγμα της προσκεκλημένης κρύπτης"
+      ],
       "Could not open updated vault": [
         "Δεν ήταν δυνατό το άνοιγμα της ενημερωμένης κρύπτης"
+      ],
+      "Could not resolve share members": [
+        "Δεν ήταν δυνατή η επίλυση μελών κοινής χρήσης"
       ],
       "Could not resume your session : ${ description }": [
         "Δεν ήταν δυνατή η συνέχιση της συνεδρίας σας : ${ description }"
@@ -356,6 +416,21 @@
       "Error reporting problem": [
         "Πρόβλημα αναφοράς σφαλμάτων"
       ],
+      "Failed removing the invite.": [
+        "Απέτυχε η κατάργηση της πρόσκλησης."
+      ],
+      "Failed resending invite.": [
+        "Απέτυχε η εκ νέου αποστολή πρόσκλησης."
+      ],
+      "Failed to edit user's access.": [
+        "Απέτυχε η επεξεργασία της πρόσβασης του χρήστη."
+      ],
+      "Failed to remove user's access.": [
+        "Αποτυχία κατάργησης πρόσβασης χρήστη."
+      ],
+      "Failed to transfer this vault's ownership.": [
+        "Αποτυχία μεταβίβασης της ιδιοκτησίας αυτής της κρύπτης."
+      ],
       "File could not be parsed": [
         "Δεν ήταν δυνατή η ανάλυση του αρχείου"
       ],
@@ -370,6 +445,18 @@
       ],
       "Invalid url": [
         "Μη έγκυρη διεύθυνση URL"
+      ],
+      "Invitation could not be accepted": [
+        "Δεν ήταν δυνατή η αποδοχή της πρόσκλησης"
+      ],
+      "Invitation could not be rejected": [
+        "Δεν ήταν δυνατή η απόρριψη της πρόσκλησης"
+      ],
+      "Invite creation failed.": [
+        "Η δημιουργία πρόσκλησης απέτυχε."
+      ],
+      "Invite successfully sent": [
+        "Επιτυχής αποστολή πρόσκλησης"
       ],
       "Item content cannot exceed 40KB": [
         "Το περιεχόμενο του στοιχείου δεν μπορεί να υπερβαίνει τα 40KB"
@@ -413,6 +500,9 @@
       "Settings update failed": [
         "Η ενημέρωση των ρυθμίσεων απέτυχε"
       ],
+      "Signature verification failed": [
+        "Η επαλήθευση υπογραφής απέτυχε"
+      ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
         "Ορισμένα θησαυροφυλάκια δεν είναι πλέον προσβάσιμα λόγω επαναφοράς κωδικού πρόσβασης. Ενεργοποιήστε ξανά τα κλειδιά του λογαριασμού σας για να αποκτήσετε ξανά πρόσβαση. ${ reactivateLink }"
       ],
@@ -445,6 +535,9 @@
       ],
       "Unknown error": [
         "Άγνωστο σφάλμα"
+      ],
+      "Unknown invite": [
+        "Άγνωστη πρόσκληση"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Μη υποστηριζόμενη μορφή αρχείου ${ PASS_APP_NAME }"
@@ -526,6 +619,14 @@
         "${ count } στοιχείο",
         "${ count } στοιχεία"
       ],
+      "${ itemCount } item": [
+        "${ itemCount } στοιχείο",
+        "${ itemCount } στοιχεία"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } μέλος",
+        "${ memberCount } μέλη"
+      ],
       "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
         "Το ${ PASS_APP_NAME } θα εισάγει μόνο συνδέσεις και σημειώσεις. Διαβατήρια, συνημμένα αρχεία κλπ. δεν υποστηρίζονται προς το παρόν."
       ],
@@ -544,6 +645,10 @@
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } ημέρα απομένει",
         "${ trialDaysLeft } ημέρες απομένουν"
+      ],
+      "${ vault.count } item": [
+        "${ vault.count } στοιχείο",
+        "${ vault.count } στοιχεία"
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Μια νέα έκδοση του ${ PASS_APP_NAME } είναι διαθέσιμη. Ενημερώστε το για να απολαύσετε τις πιο πρόσφατες δυνατότητες και διορθώσεις σφαλμάτων."
@@ -574,6 +679,27 @@
       ],
       "Autosaved on ${ submissionURL }": [
         "Αυτόματη αποθήκευση στο ${ submissionURL }"
+      ],
+      "Can create, edit, delete and export items in this vault.": [
+        "Μπορεί να δημιουργήσει, επεξεργαστεί, διαγράψει και εξάγει στοιχεία σε αυτήν την κρύπτη."
+      ],
+      "Can edit": [
+        "Δυνατότητα επεξεργασίας"
+      ],
+      "Can grant and revoke access to this vault, and delete it.": [
+        "Μπορεί να παραχωρήσει και να ανακαλέσει την πρόσβαση σε αυτή την κρύπτη και να το διαγράψει."
+      ],
+      "Can grant and revoke access to this vault.": [
+        "Μπορεί να παραχωρήσει και να ανακαλέσει την πρόσβαση σε αυτή την κρύπτη."
+      ],
+      "Can manage": [
+        "Δυνατότητα διαχείρισης"
+      ],
+      "Can view": [
+        "Δυνατότητα προβολής"
+      ],
+      "Can view items in this vault.": [
+        "Μπορεί να προβάλει στοιχεία σε αυτή την κρύπτη."
       ],
       "Check out all the exclusive features that are available to you for a limited time.": [
         "Δείτε όλες τις αποκλειστικές λειτουργίες που είναι διαθέσιμες σε εσάς για περιορισμένο χρονικό διάστημα."
@@ -675,6 +801,12 @@
       "Internet connection lost": [
         "Απώλεια σύνδεσης στο διαδίκτυο"
       ],
+      "Invite successfully removed": [
+        "Η πρόσκληση καταργήθηκε με επιτυχία"
+      ],
+      "Invite successfully resent": [
+        "Επιτυχής αποστολή πρόσκλησης εκ νέου"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Φαίνεται ότι είστε ήδη συνδεδεμένοι στο ${ PASS_APP_NAME }. Εάν προσπαθείτε να συνδεθείτε με διαφορετικό λογαριασμό, αποσυνδεθείτε πρώτα από την προέκταση."
       ],
@@ -712,6 +844,9 @@
       "Loading...": [
         "Φόρτωση..."
       ],
+      "me": [
+        "εγώ"
+      ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Περισσότερο από έναν διαχειριστή κωδικών πρόσβασης, το ${ PASS_APP_NAME } προστατεύει τον κωδικό πρόσβασής σας και την προσωπική σας διεύθυνση email μέσω ψευδωνύμων email. Με την ίδια τεχνολογία πίσω από το ${ MAIL_APP_NAME }, τα δεδομένα σας είναι κρυπτογραφημένα από άκρο σε άκρο και είναι προσβάσιμα μόνο από εσάς."
       ],
@@ -730,11 +865,20 @@
       "Open the Extensions menu": [
         "Άνοιγμα του μενού \"Επεκτάσεις\""
       ],
+      "Owner": [
+        "Ιδιοκτήτης"
+      ],
+      "Ownership successfully transfered. You are no long the owner of this vault.": [
+        "Η ιδιοκτησία μεταβιβάστηκε με επιτυχία. Δεν είστε πλέον ο κάτοχος αυτής της κρύπτης."
+      ],
       "Password copied": [
         "Ο κωδικός πρόσβασης αντιγράφηκε"
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Οι κωδικοί πρόσβασης που είναι παλαιότεροι από 1 ημέρα διαγράφονται αυτόματα από το ιστορικό."
+      ],
+      "Pending invitation": [
+        "Πρόσκληση σε αναμονή"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Καρφίτσωμα ${ PASS_APP_NAME } στη γραμμή εργαλείων σας"
@@ -769,6 +913,9 @@
       "Select the destination vault for each imported vault.": [
         "Επιλέξτε την κρύπτη προορισμού για κάθε κρύπτη που έχει εισαχθεί."
       ],
+      "Select the level of access this user will gain when they join your vault.": [
+        "Επιλέξτε το επίπεδο πρόσβασης που θα αποκτήσει αυτός ο χρήστης όταν συνδεθεί στην κρύπτη σας."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Οι διακομιστές είναι απρόσιτοι. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά"
       ],
@@ -793,6 +940,9 @@
       "Successfully exported all your items": [
         "Επιτυχής εξαγωγή όλων των στοιχείων σας"
       ],
+      "Successfully left the vault": [
+        "Αποχωρήσατε με επιτυχία από την κρύπτη"
+      ],
       "Successfully synced all vaults": [
         "Επιτυχής συγχρονισμός όλων των κρυπτών"
       ],
@@ -809,8 +959,17 @@
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Το κείμενο που προσπαθείτε να επικολλήσετε είναι μεγαλύτερο από το μέγιστο επιτρεπόμενο μήκος των ${ maxLength } χαρακτήρων."
       ],
+      "The user did not accept the invitation yet.": [
+        "Ο χρήστης δεν αποδέχτηκε ακόμα την πρόσκληση."
+      ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Αυτή η εξαγωγή θα είναι μην κρυπτογραφημένη και οποιοσδήποτε έχει πρόσβαση στο εξαγόμενο αρχείο σας θα μπορεί να δει τους κωδικούς πρόσβασής σας. Για λόγους ασφαλείας, διαγράψτε το αφού ολοκληρώσετε τη χρήση του."
+      ],
+      "This user will receive an invitation to join your '${ vaultName }' vault.": [
+        "Αυτός ο χρήστης θα λάβει μια πρόσκληση για συμμετοχή στη \"${ vaultName }\" κρύπτη σας."
+      ],
+      "This vault is not currently shared with anyone. Invite people to share it with others.": [
+        "Αυτή η κρύπτη δεν είναι προς το παρόν κοινόχρηστη με κανέναν. Προσκαλέστε άτομα να τη μοιράστε με άλλους."
       ],
       "Unable to copy to clipboard": [
         "Αδυναμία αντιγραφής στο πρόχειρο"
@@ -823,6 +982,12 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Αναβάθμιση ${ PASS_APP_NAME }"
+      ],
+      "User's access removed": [
+        "Η πρόσβαση του χρήστη καταργήθηκε"
+      ],
+      "User's access sucessfuly updated": [
+        "Η πρόσβαση του χρήστη ενημερώθηκε με επιτυχία"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Η κρύπτη \"${ payload.content.name }\" διαγράφηκε με επιτυχία"
@@ -869,6 +1034,9 @@
       ],
       "You're about to create": [
         "Είστε έτοιμοι να δημιουργήσετε"
+      ],
+      "You've been invited to a vault. Click here to see the invitation.": [
+        "Έχετε προσκληθεί σε μία κρύπτη. Κάντε κλικ εδώ για να δείτε την πρόσκληση."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Η συνεδρία σας στο ${ PASS_APP_NAME } είναι κλειδωμένη"
@@ -1168,6 +1336,9 @@
       "Report a problem": [
         "Αναφορά προβλήματος"
       ],
+      "Respond": [
+        "Απάντηση"
+      ],
       "Restore all items": [
         "Επαναφορά όλων των αντικειμένων"
       ],
@@ -1316,6 +1487,9 @@
       "Add text": [
         "Προσθήκη κειμένου"
       ],
+      "Email address": [
+        "Διεύθυνση email"
+      ],
       "Enter a note...": [
         "Γράψτε μια σημείωση..."
       ],
@@ -1426,17 +1600,29 @@
       "Import to vault(s)": [
         "Εισαγωγή στην(ις) κρύπτη(ες)"
       ],
+      "Leave vault ?": [
+        "Αποχώρηση από την κρύπτη;"
+      ],
       "Low disk space": [
         "Περιορισμένος χώρος στο δίσκο"
       ],
       "Permanently remove all items ?": [
         "Οριστική αφαίρεση όλων των στοιχείων;"
       ],
+      "Permissions": [
+        "Δικαιώματα"
+      ],
       "Pin the extension": [
         "Καρφίτσωμα της προέκτασης"
       ],
       "Secure your data": [
         "Ασφαλίστε τα δεδομένα σας"
+      ],
+      "Share with": [
+        "Κοινοποίηση με"
+      ],
+      "Shared vault invitation": [
+        "Πρόσκληση κοινόχρηστης κρύπτης"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Μετάβαση στο ${ PASS_APP_NAME };"
@@ -1446,6 +1632,9 @@
       ],
       "The extension is now ready to use.": [
         "Η προέκταση είναι τώρα έτοιμη για χρήση."
+      ],
+      "Transfer ownership": [
+        "Μεταβίβαση κυριότητας"
       ],
       "Trash empty": [
         "Ο κάδος απορριμμάτων είναι άδειος"
@@ -1514,6 +1703,9 @@
       "An error occured while exporting your data": [
         "Παρουσιάστηκε σφάλμα κατά την εξαγωγή των δεδομένων σας"
       ],
+      "Are you sure you want to transfer vault ownership to ${ email }?": [
+        "Είστε βέβαιοι ότι θέλετε να μεταφέρετε την ιδιοκτησία της κρύπτης στο ${ email };"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Δεν είναι δυνατή η ανάκτηση γραμματοκιβωτίων για αυτό το ψευδώνυμο αυτήν τη στιγμή"
       ],
@@ -1559,6 +1751,9 @@
       "PGP encrypted export file requires passphrase": [
         "Το κρυπτογραφημένο αρχείο εξαγωγής PGP απαιτεί φράση πρόσβασης"
       ],
+      "Please enter a valid email address": [
+        "Παρακαλώ εισάγετε μια έγκυρη διεύθυνση ηλεκτρονικού ταχυδρομείου"
+      ],
       "Please log back in": [
         "Παρακαλούμε συνδεθείτε ξανά"
       ],
@@ -1600,6 +1795,9 @@
       ],
       "You must select at least one mailbox": [
         "Πρέπει να επιλέξετε τουλάχιστον ένα γραμματοκιβώτιο"
+      ],
+      "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
+        "Δε θα έχετε πλέον πρόσβαση σε αυτή την κρύπτη. Για να συμμετάσχετε ξανά, θα χρειαστείτε μια νέα πρόσκληση."
       ],
       "Your plan does not allow you to create more aliases": [
         "Το σχέδιό σας δε σας επιτρέπει να δημιουργήσετε περισσότερα ψευδώνυμα"

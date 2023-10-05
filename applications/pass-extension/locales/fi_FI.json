@@ -59,6 +59,9 @@
       "Confirm": [
         "Vahvista"
       ],
+      "Continue": [
+        "Jatka"
+      ],
       "Continue without pinning": [
         "Jatka kiinnittämättä"
       ],
@@ -173,11 +176,17 @@
       "Learn more": [
         "Lue lisää"
       ],
+      "Leave": [
+        "Poistu"
+      ],
       "Lock extension": [
         "Lukitse laajennus"
       ],
       "Manually sync your data": [
         "Synkronoi tietosi manuaalisesti"
+      ],
+      "More info: ${ safeTitle }": [
+        "Lisätietoja: ${ safeTitle }"
       ],
       "More options": [
         "Lisää asetuksia"
@@ -232,6 +241,9 @@
       ],
       "Send us a message": [
         "Lähetä meille viesti"
+      ],
+      "Share": [
+        "Jaa"
       ],
       "Show": [
         "Näytä"
@@ -412,6 +424,9 @@
       ],
       "Settings update failed": [
         "Asetusten tallennus epäonnistui"
+      ],
+      "Signature verification failed": [
+        "Allekirjoituksen vahvistus epäonnistui"
       ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
         "Jotkin kolvit eivät ole enää käytettävissä salasanan nollauksen vuoksi. Palauta käyttöoikeus aktivoimalla tilisi avaimet uudelleen. ${ reactivateLink }"
@@ -770,7 +785,7 @@
         "Valitse kohdeholvi kullekin tuotavalle holville."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Palvelimia ei tavoiteta. Yritä muutaman minuutin kuluttua uudelleen"
+        "Palvelimia ei tavoiteta. Yritä muutaman minuutin kuluttua uudelleen."
       ],
       "Session timed out": [
         "Istunto aikakatkaistiin"
@@ -1315,6 +1330,9 @@
       ],
       "Add text": [
         "Lisää teksti"
+      ],
+      "Email address": [
+        "Sähköpostiosoite"
       ],
       "Enter a note...": [
         "Syötä muistiinpano..."
