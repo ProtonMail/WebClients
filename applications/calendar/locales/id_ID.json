@@ -33,6 +33,9 @@
       "Add address": [
         "Tambah alamat"
       ],
+      "Add birthday": [
+        "Tambahkan ulang tahun"
+      ],
       "Add contact": [
         "Tambah kontak"
       ],
@@ -47,6 +50,9 @@
       ],
       "Add new group": [
         "Tambah grup baru"
+      ],
+      "Add note": [
+        "Tambahkan catatan"
       ],
       "Add notification": [
         "Tambah notifikasi"
@@ -200,6 +206,9 @@
       ],
       "Discard": [
         "Buang"
+      ],
+      "Don't know your password?": [
+        "Tidak tahu kata sandi Anda?"
       ],
       "Done": [
         "Selesai"
@@ -378,6 +387,9 @@
       "No, thanks": [
         "Tidak, terima kasih"
       ],
+      "Ok": [
+        "Oke"
+      ],
       "OK": [
         "OK"
       ],
@@ -464,6 +476,9 @@
       ],
       "Search countries": [
         "Cari negara"
+      ],
+      "See how": [
+        "Lihat caranya"
       ],
       "See plan features": [
         "Lihat seluruh fitur paket"
@@ -1107,8 +1122,17 @@
       "Birthday": [
         "Tanggal lahir"
       ],
+      "Display name": [
+        "Nama tampilan"
+      ],
       "Email": [
         "Surel"
+      ],
+      "Enter a display name or nickname": [
+        "Masukkan nama tampilan atau nama panggilan"
+      ],
+      "First name": [
+        "Nama depan"
       ],
       "Gender": [
         "Jenis kelamin"
@@ -1118,6 +1142,9 @@
       ],
       "Language": [
         "Bahasa"
+      ],
+      "Last name": [
+        "Nama belakang"
       ],
       "Logo": [
         "Logo"
@@ -2288,6 +2315,9 @@
       "Failed to get original occurrence in series": [
         "Gagal mendapatkan rangkaian kejadian asli"
       ],
+      "First name is too long": [
+        "Nama depan terlalu panjang"
+      ],
       "Folder name cannot be empty.": [
         "Nama folder tidak boleh kosong."
       ],
@@ -2302,6 +2332,9 @@
       ],
       "Incorrect mailbox password. Please try again.": [
         "Kata sandi kotak surat salah. Silakan coba lagi."
+      ],
+      "Incorrect username": [
+        "Nama pengguna salah"
       ],
       "Interval cannot be empty": [
         "Interval tidak boleh kosong"
@@ -2332,6 +2365,9 @@
       ],
       "Label name cannot be empty.": [
         "Nama label tidak boleh kosong."
+      ],
+      "Last name is too long": [
+        "Nama terakhir terlalu panjang"
       ],
       "Merge at least ${ calendarsToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
         "Gabungkan setidaknya ${ calendarsToFixCount } kalender dengan kalender ${ BRAND_NAME } yang telah ada"
@@ -2383,6 +2419,9 @@
       ],
       "Please fix the highlighted conflicts to proceed.": [
         "Harap selesaikan permasalahan yang ada terlebih dahulu sebelum melanjutkan."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Silakan sediakan nama depan, nama belakang, atau nama tampilan"
       ],
       "Port is required": [
         "Nomor port diperlukan"
@@ -3401,6 +3440,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "Teknologi enkripsi ${ BRAND_NAME } memastikan bahwa tidak ada siapa pun yang dapat mengakses kata sandi Anda — termasuk kami sendiri."
+      ],
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } kalender baru"
       ],
@@ -3796,6 +3838,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "Enkripsi PGP/MIME akan secara otomatis mengirim pesan dengan mode komposer yang saat ini digunakan."
+      ],
+      "Please note that addresses assigned to these groups will NOT be deleted.": [
+        "Harap diperhatikan bahwa alamat yang terhubung ke grup ini TIDAK akan dihapus."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Harap diperhatikan, alamat yang ditugaskan di grup ini TIDAK akan dihapus."
@@ -4250,10 +4295,10 @@
         "Akses Beta"
       ],
       "Browser": [
-        "Peramban"
+        "Browser"
       ],
       "Browser version": [
-        "Versi peramban"
+        "Versi browser"
       ],
       "Calendar": [
         "Kalender"
@@ -4275,6 +4320,9 @@
       ],
       "Colors": [
         "Warna"
+      ],
+      "Confirm password": [
+        "Konfirmasi kata sandi"
       ],
       "Contacts": [
         "Kontak"
@@ -4431,6 +4479,9 @@
       ],
       "Navigation": [
         "Navigasi"
+      ],
+      "New password": [
+        "Kata sandi baru"
       ],
       "Notification": [
         "Pemberitahuan"
@@ -5278,6 +5329,9 @@
       "Filter groups": [
         "Filter grup"
       ],
+      "First name": [
+        "Nama depan"
+      ],
       "Group name": [
         "Nama grup"
       ],
@@ -5286,6 +5340,9 @@
       ],
       "Indexing...": [
         "Mengindeks..."
+      ],
+      "Last name": [
+        "Nama belakang"
       ],
       "Name": [
         "Nama"
@@ -5404,6 +5461,64 @@
       ],
       "No results found": [
         "Hasil tidak ditemukan"
+      ]
+    },
+    "session_recovery:available:action": {
+      "Reset password": [
+        "Atur ulang kata sandi"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } days": [
+        "${ timeRemaining.inDays } hari"
+      ],
+      "${ timeRemaining.inHours } hours": [
+        "${ timeRemaining.inHours } jam"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } days to reset your password.": [
+        "Permintaan pengaturan ulang kata sandi disetujui (${ user.Email }). Anda masih punya ${ timeRemaining.inDays } hari untuk mengatur ulang kata sandi Anda."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hours to reset your password.": [
+        "Permintaan pengaturan ulang kata sandi disetujui (${ user.Email }). Anda masih punya ${ timeRemaining.inHours } jam untuk mengatur ulang kata sandi Anda."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } days": [
+        "Perizinan akan kedaluwarsa dalam ${ timeRemaining.inDays } hari"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hours": [
+        "Perizinan akan kedaluwarsa dalam ${ timeRemaining.inHours } jam"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "Batalkan permintaan"
+      ],
+      "Got it": [
+        "Mengerti"
+      ],
+      "Learn more": [
+        "Pelajari lebih lanjut"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hours": [
+        "${ gracePeriodHoursRemaining } jam lagi"
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "Apabila Anda tidak meminta untuk mengatur ulang kata sandi, batalkan permintaan ini sekarang juga."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hours.": [
+        "Pengaturan ulang kata sandi diminta (${ user.Email }). Anda dapat mengubah kata sandi Anda dalam ${ hoursRemaining } jam."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "Untuk memastikan bahwa ini memang Anda yang sedang mencoba mengatur ulang kata sandi Anda, kami menunggu 72 jam sebelum menyetujui permintaan. Anda dapat mengubah kata sandi Anda dalam${ boldTimeLeft }. ${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "Kami telah menerima permintaan pengaturan ulang kata sandi untuk ${ boldEmail }."
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hours": [
+        "${ gracePeriodHoursRemaining } jam"
       ]
     },
     "Settings update growler warning": {
@@ -5986,8 +6101,14 @@
       "Display name": [
         "Nama tampilan"
       ],
+      "First name": [
+        "Nama depan"
+      ],
       "Import": [
         "Impor"
+      ],
+      "Last name": [
+        "Nama belakang"
       ],
       "Values": [
         "Nilai"
@@ -6063,6 +6184,9 @@
       "Billing cycle": [
         "Siklus tagihan"
       ],
+      "Birthday": [
+        "Ulang tahun"
+      ],
       "Calendar": [
         "Kalender"
       ],
@@ -6074,6 +6198,9 @@
       ],
       "Change my answer": [
         "Ubah jawaban saya"
+      ],
+      "Change password": [
+        "Ubah kata sandi"
       ],
       "Choose how many times this event will repeat": [
         "Pilih berapa kali acara ini berulang"
@@ -6218,6 +6345,9 @@
       ],
       "Night theme": [
         "Tema malam"
+      ],
+      "Notes": [
+        "Catatan"
       ],
       "Open actions dropdown": [
         "Buka menu tindakan"
@@ -6516,6 +6646,9 @@
       ],
       "Are you sure you want to permanently delete ${ count } contacts?": [
         "Yakin ingin mengapus ${ count } kontak secara permanen?"
+      ],
+      "Are you sure you want to permanently delete these contact groups?": [
+        "Apakah Anda yakin ingin menghapus grup kontak ini?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Apakah Anda yakin ingin menghapus grup kontak ini secara permanen?"
