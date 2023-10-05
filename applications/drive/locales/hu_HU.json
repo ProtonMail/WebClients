@@ -3031,6 +3031,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "A ${ appName } alkalmazásnak szüksége van az engedélyére, hogy ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "${ BRAND_NAME } titkosítási technológiájának köszönhetően senki sem fér hozzá a jelszavához - még mi sem."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } új naptár",
         "${ calendarsToBeCreatedCount } új naptár"
@@ -4257,6 +4260,9 @@
       "Comment": [
         "Hozzászólás"
       ],
+      "Confirm password": [
+        "Jelszó megerősítése"
+      ],
       "Contacts": [
         "Névjegyek"
       ],
@@ -4461,6 +4467,9 @@
       ],
       "Never": [
         "Soha"
+      ],
+      "New password": [
+        "Új jelszó"
       ],
       "Notification": [
         "Értesítés"
@@ -5802,6 +5811,9 @@
       ],
       "Change layout": [
         "Elrendezés módosítása"
+      ],
+      "Change password": [
+        "Jelszó megváltoztatása"
       ],
       "Clearing data": [
         "Adatok törlése"
