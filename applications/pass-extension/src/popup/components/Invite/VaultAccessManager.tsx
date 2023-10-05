@@ -62,7 +62,13 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
                                 <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
                             </Button>,
 
-                            <Button key="modal-invite-button" color="norm" pill onClick={() => createInvite(shareId)}>
+                            <Button
+                                key="modal-invite-button"
+                                color="norm"
+                                pill
+                                onClick={() => createInvite(shareId)}
+                                disabled={!canManage}
+                            >
                                 {c('Action').t`Invite people`}
                             </Button>,
                         ]}
