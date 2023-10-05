@@ -1,4 +1,5 @@
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
+import { PassSignatureContext } from '@proton/pass/types';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import {
@@ -36,6 +37,10 @@ describe('create invite keys crypto process', () => {
                     decryptionKeys: inviteeKey.privateKey,
                     verificationKeys: inviterKey.publicKey,
                     format: 'binary',
+                    context: {
+                        value: PassSignatureContext.VaultInviteInternal,
+                        required: true,
+                    },
                 });
             })
         );
