@@ -1,5 +1,5 @@
 import { stringToUtf8Array } from '@proton/crypto/lib/utils';
-import type { EncryptionTag } from '@proton/pass/types';
+import type { PassEncryptionTag } from '@proton/pass/types';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 export const KEY_LENGTH = 32;
@@ -11,7 +11,7 @@ export const getSymmetricKey = async (key: Uint8Array): Promise<CryptoKey> =>
 
 export const generateKey = (): Uint8Array => crypto.getRandomValues(new Uint8Array(KEY_LENGTH));
 
-export const encryptData = async (key: CryptoKey, data: Uint8Array, tag: EncryptionTag) => {
+export const encryptData = async (key: CryptoKey, data: Uint8Array, tag: PassEncryptionTag) => {
     const iv = crypto.getRandomValues(new Uint8Array(IV_LENGTH));
     const cipher = await crypto.subtle.encrypt(
         { name: ALGORITHM, iv, additionalData: stringToUtf8Array(tag) },
@@ -22,7 +22,7 @@ export const encryptData = async (key: CryptoKey, data: Uint8Array, tag: Encrypt
     return mergeUint8Arrays([iv, new Uint8Array(cipher)]);
 };
 
-export const decryptData = async (key: CryptoKey, data: Uint8Array, tag: EncryptionTag) => {
+export const decryptData = async (key: CryptoKey, data: Uint8Array, tag: PassEncryptionTag) => {
     const iv = data.slice(0, IV_LENGTH);
     const cipher = data.slice(IV_LENGTH, data.length);
     const result = await crypto.subtle.decrypt(
