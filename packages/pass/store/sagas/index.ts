@@ -32,7 +32,7 @@ import settings from './settings.saga';
 import shareAccessOptions from './share-access-options.saga';
 import shareEditRole from './share-edit-role.saga';
 import shareLeave from './share-leave.saga';
-import shareManagePermission from './share-remove-member.saga';
+import shareRemoveMember from './share-remove-member.saga';
 import signout from './signout.saga';
 import sync from './sync.saga';
 import trashDelete from './trash-delete.saga';
@@ -76,7 +76,7 @@ export function* workerRootSaga(options: WorkerRootSagaOptions) {
             shareAccessOptions,
             shareEditRole,
             shareLeave,
-            shareManagePermission,
+            shareRemoveMember,
             sessionLockDisable,
             sessionLockEnable,
             sessionLockImmediate,
