@@ -1,6 +1,6 @@
 import { ADDON_NAMES, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { Plan } from '@proton/shared/lib/interfaces';
-import { PLANS_MAP } from '@proton/testing/index';
+import { PLANS_MAP } from '@proton/testing/data';
 
 import { getPrice } from './PlanSelection';
 

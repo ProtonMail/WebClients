@@ -119,10 +119,12 @@ export const NewPayPalButton = ({
     children,
     paypal,
     loading,
-    disabled,
+    disabled: disabledProp,
     currency,
     ...rest
 }: NewPayPalButtonProps) => {
+    const disabled = disabledProp || paypal.disabled;
+
     if (paypal.verifyingToken) {
         return <Button loading {...rest}>{c('Action').t`Loading verification`}</Button>;
     }

@@ -4,7 +4,7 @@ import { pick } from '@proton/shared/lib/helpers/object';
 import { External, Plan, PlanIDs, PlansMap, Renew, Subscription } from '@proton/shared/lib/interfaces';
 // that has to be a very granular import, because in general @proton/testing depends on jest while @proton/shared
 // still uses Karma. The payments data specifically don't need jest, so it's safe to impoet it directly
-import { PLANS_MAP } from '@proton/testing/lib/payments';
+import { PLANS_MAP } from '@proton/testing/data';
 
 import { ADDON_NAMES, COUPON_CODES, CYCLE, PLANS } from '../../lib/constants';
 import {
