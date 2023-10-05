@@ -319,6 +319,9 @@
       "Discard": [
         "Descartar"
       ],
+      "Don't know your password?": [
+        "Não sabe sua senha?"
+      ],
       "Done": [
         "Concluído"
       ],
@@ -692,6 +695,9 @@
       "Not saved": [
         "Não salvo"
       ],
+      "Ok": [
+        "Ok"
+      ],
       "OK": [
         "OK"
       ],
@@ -856,6 +862,9 @@
       ],
       "See business plans": [
         "Ver os planos empresariais"
+      ],
+      "See how": [
+        "Veja como"
       ],
       "See plan features": [
         "Veja recursos do plano"
@@ -1952,6 +1961,9 @@
       ],
       "Email": [
         "E-mail"
+      ],
+      "Enter a display name or nickname": [
+        "Informe um nome de exibição ou apelido"
       ],
       "First name": [
         "Primeiro nome"
@@ -3223,6 +3235,9 @@
       "Incorrect mailbox password. Please try again.": [
         "Senha da caixa de correio incorreta. Tente novamente."
       ],
+      "Incorrect username": [
+        "Nome de usuário incorreto"
+      ],
       "Invalid email address": [
         "O endereço de e-mail não é válido."
       ],
@@ -3307,6 +3322,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "Corrija o conflito em destaque para prosseguir.",
         "Corrija os conflitos em destaque para prosseguir."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Informe o primeiro nome, o sobrenome ou nome de exibição"
       ],
       "Port is required": [
         "Porta é necessária"
@@ -4627,6 +4645,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
+      ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "A tecnologia de criptografia da ${ BRAND_NAME } significa que ninguém pode acessar sua senha - nem mesmo nós."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } novo calendário",
@@ -6395,6 +6416,9 @@
       "Conditions": [
         "Condições"
       ],
+      "Confirm password": [
+        "Confirmar senha"
+      ],
       "Contacts": [
         "Contatos"
       ],
@@ -6586,6 +6610,9 @@
       ],
       "Navigation": [
         "Navegação"
+      ],
+      "New password": [
+        "Nova senha"
       ],
       "No label found": [
         "Nenhum marcador encontrado"
@@ -7835,6 +7862,115 @@
         "Armazenado com criptografia de acesso zero"
       ]
     },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "Cancelar redefinição"
+      ],
+      "Reset password": [
+        "Redefinir senha"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } dia",
+        "${ timeRemaining.inDays } dias"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } hora",
+        "${ timeRemaining.inHours } horas"
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Vá ao dispositivo onde a solicitação (na sessão iniciada) para mudar a sua senha."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Essa permissão expira em ${ timeRemaining.inDays } dia",
+        "Essa permissão expira em ${ timeRemaining.inDays } dias"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Essa permissão expira em ${ timeRemaining.inHours } hora",
+        "Essa permissão expira em ${ timeRemaining.inHours } horas"
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Veja como"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Senha salva"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Redefinir sua senha"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Cancelar redefinição de senha"
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "A redefinição de senha foi cancelada"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Cancelar redefinição de senha?"
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "altere sua senha agora"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "Cancelar solicitação"
+      ],
+      "Got it": [
+        "Entendi"
+      ],
+      "Learn more": [
+        "Saiba mais"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "We received a password reset request for ${ boldEmail }.": [
+        "Recebemos a solicitação de redefinição de senha para ${ boldEmail }."
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "Ver solicitação"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "A redefinição de senha foi solicitada"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Encerrar sessão"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } hora",
+        "${ gracePeriodHoursRemaining } horas"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } está agora disponível"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Redefinição de senha"
+      ]
+    },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
         "Mensagem criptografada pelo PGP. Erro na verificação do remetente: ${ verificationErrorsMessage }"
@@ -8665,6 +8801,9 @@
       ],
       "Change my answer": [
         "Alterar minha resposta"
+      ],
+      "Change password": [
+        "Alterar senha"
       ],
       "Clear out the junk": [
         "Limpe o lixo"

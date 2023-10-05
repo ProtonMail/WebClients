@@ -319,6 +319,9 @@
       "Discard": [
         "Απόρριψη"
       ],
+      "Don't know your password?": [
+        "Δε γνωρίζετε τον κωδικό πρόσβασης σας;"
+      ],
       "Done": [
         "Ολοκληρώθηκε"
       ],
@@ -692,6 +695,9 @@
       "Not saved": [
         "Μη αποθηκευμένο"
       ],
+      "Ok": [
+        "OK"
+      ],
       "OK": [
         "ΟΚ"
       ],
@@ -856,6 +862,9 @@
       ],
       "See business plans": [
         "Δείτε τα προγράμματα για επιχειρήσεις"
+      ],
+      "See how": [
+        "Δείτε πως"
       ],
       "See plan features": [
         "Προβολή δυνατοτήτων προγράμματος"
@@ -3226,6 +3235,9 @@
       "Incorrect mailbox password. Please try again.": [
         "Λανθασμένος κωδικός πρόσβασης θυρίδας. Παρακαλούμε δοκιμάστε ξανά."
       ],
+      "Incorrect username": [
+        "Εσφαλμένο όνομα χρήστη"
+      ],
       "Invalid email address": [
         "Μη έγκυρη διεύθυνση email"
       ],
@@ -4633,6 +4645,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Το ${ appName } χρειάζεται την άδειά σας για την ${ enableDesktopNotifications }."
+      ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "Η τεχνολογία κρυπτογράφησης του ${ BRAND_NAME } σημαίνει ότι κανείς δεν μπορεί να έχει πρόσβαση στον κωδικό πρόσβασής σας - ούτε καν εμείς."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } νέο ημερολόγιο",
@@ -6401,6 +6416,9 @@
       "Conditions": [
         "Προϋποθέσεις"
       ],
+      "Confirm password": [
+        "Επιβεβαίωση κωδικού πρόσβασης"
+      ],
       "Contacts": [
         "Επαφές"
       ],
@@ -6592,6 +6610,9 @@
       ],
       "Navigation": [
         "Πλοήγηση"
+      ],
+      "New password": [
+        "Νέος κωδικός"
       ],
       "No label found": [
         "Δεν βρέθηκε ετικέτα"
@@ -7841,6 +7862,175 @@
         "Αποθηκεύτηκε με κρυπτογράφηση μηδενικής πρόσβασης"
       ]
     },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "Ακύρωση επαναφοράς"
+      ],
+      "Reset password": [
+        "Επαναφορά κωδικού πρόσβασης"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "Η ανάκτηση λογαριασμού δεν είναι διαθέσιμη για κλειδιά διευθύνσεων παλαιού τύπου"
+      ],
+      "Please generate keys before you try to change your password": [
+        "Πριν δοκιμάσετε την αλλαγή των κωδικών πρόσβασής σας, παρακαλούμε δημιουργήστε κλειδιά"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } ημέρα",
+        "${ timeRemaining.inDays } ημέρες"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } ώρα",
+        "${ timeRemaining.inHours } ώρες"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Το αίτημα επαναφοράς κωδικού πρόσβασης εγκρίθηκε (${ user.Email }). Έχετε ${ timeRemaining.inDays } ημέρα για να επαναφέρετε τον κωδικό πρόσβασής σας.",
+        "Το αίτημα επαναφοράς κωδικού πρόσβασης εγκρίθηκε (${ user.Email }). Έχετε ${ timeRemaining.inDays } ημέρες για να επαναφέρετε τον κωδικό πρόσβασής σας."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Το αίτημα επαναφοράς κωδικού πρόσβασης εγκρίθηκε (${ user.Email }). Έχετε ${ timeRemaining.inHours } ώρα για να επαναφέρετε τον κωδικό πρόσβασής σας.",
+        "Το αίτημα επαναφοράς κωδικού πρόσβασης εγκρίθηκε (${ user.Email }). Έχετε ${ timeRemaining.inHours } ώρες για να επαναφέρετε τον κωδικό πρόσβασής σας."
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Παρακαλούμε μεταβείτε στη συνδεδεμένη συσκευή (στη συνεδρία όπου ξεκίνησε το αίτημα) για να αλλάξετε τον κωδικό πρόσβασής σας."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inDays } ημέρα",
+        "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inDays } ημέρες"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inHours } ώρα",
+        "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inHours } ώρες"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Τώρα μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας για τον λογαριασμό ${ boldEmail } ελεύθερα για ${ boldDaysRemaining }."
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Δείτε πως"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Ο κωδικός πρόσβασης αποθηκεύτηκε"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Επαναφορά κωδικού πρόσβασης"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Ακύρωση επαναφοράς κωδικού πρόσβασης"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Εισαγάγετε τον τρέχοντα κωδικό πρόσβασής σας για να ακυρώσετε τη διαδικασία επαναφοράς κωδικού πρόσβασης. Καμία άλλη αλλαγή δε θα τεθεί σε ισχύ."
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "Η επαναφορά κωδικού πρόσβασης ακυρώθηκε"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Ακύρωση επαναφοράς κωδικού πρόσβασης;"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Το αίτημα επαναφοράς κωδικού πρόσβασης ακυρώθηκε (${ user.Email }). Εάν δεν υποβάλατε αυτό το αίτημα, ${ changePasswordLink }."
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "αλλάξτε τον κωδικό πρόσβασής σας τώρα"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "Ακύρωση αιτήματος"
+      ],
+      "Got it": [
+        "Το κατάλαβα"
+      ],
+      "Learn more": [
+        "Μάθετε περισσότερα"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } περισσότερη ώρα",
+        "${ gracePeriodHoursRemaining } περισσότερες ώρες"
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "Εάν δε ζητήσατε να επαναφέρετε τον κωδικό πρόσβασής σας, ακυρώστε αυτό το αίτημα τώρα."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Ζητήθηκε επαναφορά κωδικού πρόσβασης (${ user.Email }). Μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας σε ${ hoursRemaining } ώρα.",
+        "Ζητήθηκε επαναφορά κωδικού πρόσβασης (${ user.Email }). Μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας σε ${ hoursRemaining } ώρες."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "Για να βεβαιωθούμε ότι προσπαθείτε πραγματικά να επαναφέρετε τον κωδικό πρόσβασής σας, περιμένουμε 72 ώρες πριν εγκρίνουμε τα αιτήματα. Μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας σε ${ boldTimeLeft }. ${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "Λάβαμε ένα αίτημα επαναφοράς κωδικού πρόσβασης για το ${ boldEmail }."
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "Προβολή αίτησης"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "Ζητήθηκε επαναφορά κωδικού πρόσβασης"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Αποσύνδεση"
+      ],
+      "Stay signed in": [
+        "Παραμείνετε συνδεδεμένος"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } ώρα",
+        "${ gracePeriodHoursRemaining } ώρες"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } είναι τώρα διαθέσιμο."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Εάν αποσυνδεθείτε πριν επαναφέρετε τον κωδικό πρόσβασής σας, ενδέχεται να χάσετε την πρόσβαση στον λογαριασμό σας."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Εάν αποσυνδεθείτε χωρίς να επαναφέρετε τον κωδικό πρόσβασής σας, ενδέχεται να χάσετε την πρόσβαση στον λογαριασμό σας."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Θα μπορείτε να επαναφέρετε τον κωδικό πρόσβασής σας στο ${ boldTimeLeft }."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Επαναφορά κωδικού πρόσβασης"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Αποσύνδεση χωρίς επαναφορά κωδικού πρόσβασης;"
+      ]
+    },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
         "Μήνυμα με κρυπτογράφηση PGP. Η επαλήθευση αποστολέα απέτυχε:${ verificationErrorsMessage }"
@@ -8668,6 +8858,9 @@
       ],
       "Change my answer": [
         "Αλλάξτε την απάντησή μου"
+      ],
+      "Change password": [
+        "Αλλαγή κωδικού πρόσβασης"
       ],
       "Clear out the junk": [
         "Ξεφορτωθείτε τη σαβούρα"
