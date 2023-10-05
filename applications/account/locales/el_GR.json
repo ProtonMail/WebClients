@@ -335,6 +335,9 @@
       "Discard": [
         "Απόρριψη"
       ],
+      "Don't know your password?": [
+        "Δε γνωρίζετε τον κωδικό πρόσβασης σας;"
+      ],
       "Don't show again": [
         "Να μην εμφανιστεί ξανά"
       ],
@@ -623,6 +626,9 @@
       "OK": [
         "ΟΚ"
       ],
+      "Ok": [
+        "OK"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ανοίξτε τις ρυθμίσεις του ${ CALENDAR_APP_NAME }"
       ],
@@ -793,6 +799,9 @@
       ],
       "Search settings": [
         "Ρυθμίσεις αναζήτησης"
+      ],
+      "See how": [
+        "Δείτε πως"
       ],
       "See plan features": [
         "Προβολή δυνατοτήτων προγράμματος"
@@ -1498,7 +1507,8 @@
     },
     "Calendar settings sidebar": {
       "Show ${ remainingItems } more": [
-        "Εμφάνιση ${ remainingItems } παραπάνω"
+        "Προβολή ${ remainingItems } παραπάνω",
+        "Προβολή ${ remainingItems } παραπάνω"
       ]
     },
     "Calendar share permission label": {
@@ -3268,6 +3278,9 @@
       ],
       "Incorrect password": [
         "Λανθασμένος κωδικός πρόσβασης"
+      ],
+      "Incorrect username": [
+        "Εσφαλμένο όνομα χρήστη"
       ],
       "Invalid ${ name } code": [
         "Μη έγκυρο ${ name } κωδικός"
@@ -5458,9 +5471,6 @@
       "address": [
         "διεύθυνση",
         "διευθύνσεις"
-      ],
-      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
-        "Η επαλήθευση διεύθυνσης είναι μια προηγμένη λειτουργία ασφαλείας. Ενεργοποιήστε το μόνο εάν ξέρετε τι κάνει."
       ],
       "Admin account allocation": [
         "Κατανομή στον λογαριασμό του διαχειριστή"
@@ -8634,6 +8644,9 @@
       "Verification code": [
         "Κωδικός επαλήθευσης"
       ],
+      "Verify keys with Key Transparency": [
+        "Επαλήθευση κλειδιών με το Key Transparency"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Λυπούμαστε που φεύγετε. Παρακαλούμε εξηγήστε τον λόγο, για να μας βοηθήσετε να βελτιωθούμε."
       ],
@@ -8765,6 +8778,11 @@
       ],
       "Expired": [
         "Έχει λήξει"
+      ]
+    },
+    "Label to  inform a feature is only available on Beta": {
+      "Beta": [
+        "Beta (Δοκιμαστική)"
       ]
     },
     "Label to change composer mode": {
@@ -9767,17 +9785,6 @@
         "Διαχείριση ομάδας"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Ειδάλλως η πρόσβαση στον λογαριασμό σας θα περιοριστεί, και εν τέλη ο λογαριασμός σας θα απενεργοποιηθεί."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προηγμένα χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } που λήγει σε ${ last4 }"
@@ -9865,6 +9872,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Απολαμβάνετε μια τιμή προσφοράς στο τρέχον πλάνο σας. Εάν υποβαθμίσετε τον λογαριασμό σας, θα χάσετε την τιμή προσφοράς και δε θα είναι διαθέσιμη εάν προσπαθήσετε να εγγραφείτε ξανά."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Ειδάλλως η πρόσβαση στον λογαριασμό σας θα περιοριστεί, και εν τέλη ο λογαριασμός σας θα απενεργοποιηθεί."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προηγμένα χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11242,6 +11260,295 @@
         "προς δημιουργία"
       ]
     },
+    "session_recovery:available:action": {
+      "Cancel password reset": [
+        "Ακύρωση επαναφοράς κωδικού πρόσβασης"
+      ],
+      "Cancel reset": [
+        "Ακύρωση επαναφοράς"
+      ],
+      "Reset password": [
+        "Επαναφορά κωδικού πρόσβασης"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "Η ανάκτηση λογαριασμού δεν είναι διαθέσιμη για κλειδιά διευθύνσεων παλαιού τύπου"
+      ],
+      "Please generate keys before you try to change your password": [
+        "Πριν δοκιμάσετε την αλλαγή των κωδικών πρόσβασής σας, παρακαλούμε δημιουργήστε κλειδιά"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } ημέρα",
+        "${ timeRemaining.inDays } ημέρες"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } ώρα",
+        "${ timeRemaining.inHours } ώρες"
+      ],
+      "Didn’t make this request?": [
+        "Δεν υποβάλατε αυτό το αίτημα;"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Εάν δε ζητήσατε να επαναφέρετε τον κωδικό πρόσβασής σας, ακυρώστε το αίτημα τώρα."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Το αίτημα επαναφοράς κωδικού πρόσβασης εγκρίθηκε (${ user.Email }). Έχετε ${ timeRemaining.inDays } ημέρα για να επαναφέρετε τον κωδικό πρόσβασής σας.",
+        "Το αίτημα επαναφοράς κωδικού πρόσβασης εγκρίθηκε (${ user.Email }). Έχετε ${ timeRemaining.inDays } ημέρες για να επαναφέρετε τον κωδικό πρόσβασής σας."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Το αίτημα επαναφοράς κωδικού πρόσβασης εγκρίθηκε (${ user.Email }). Έχετε ${ timeRemaining.inHours } ώρα για να επαναφέρετε τον κωδικό πρόσβασής σας.",
+        "Το αίτημα επαναφοράς κωδικού πρόσβασης εγκρίθηκε (${ user.Email }). Έχετε ${ timeRemaining.inHours } ώρες για να επαναφέρετε τον κωδικό πρόσβασής σας."
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Παρακαλούμε μεταβείτε στη συνδεδεμένη συσκευή (στη συνεδρία όπου ξεκίνησε το αίτημα) για να αλλάξετε τον κωδικό πρόσβασής σας."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inDays } ημέρα",
+        "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inDays } ημέρες"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inHours } ώρα",
+        "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inHours } ώρες"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Τώρα μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας για τον λογαριασμό ${ boldEmail } ελεύθερα για ${ boldDaysRemaining }."
+      ],
+      "You can now reset your password": [
+        "Τώρα μπορείτε να αλλάξετε τον κωδικό σας"
+      ],
+      "You can reset your password until ${ boldDate }.": [
+        "Μπορείτε να επαναφέρετε τον κωδικό πρόσβασής σας μέχρι ${ boldDate }."
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Δείτε πως"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Ο κωδικός πρόσβασης αποθηκεύτηκε"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Επαναφορά κωδικού πρόσβασης"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Ακύρωση επαναφοράς κωδικού πρόσβασης"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Εισαγάγετε τον τρέχοντα κωδικό πρόσβασής σας για να ακυρώσετε τη διαδικασία επαναφοράς κωδικού πρόσβασης. Καμία άλλη αλλαγή δε θα τεθεί σε ισχύ."
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "Η επαναφορά κωδικού πρόσβασης ακυρώθηκε"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Ακύρωση επαναφοράς κωδικού πρόσβασης;"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Το αίτημα επαναφοράς κωδικού πρόσβασης ακυρώθηκε (${ user.Email }). Εάν δεν υποβάλατε αυτό το αίτημα, ${ changePasswordLink }."
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "αλλάξτε τον κωδικό πρόσβασής σας τώρα"
+      ]
+    },
+    "session_recovery:disable:action": {
+      "Disable password reset": [
+        "Απενεργοποίηση επαναφοράς κωδικού πρόσβασης"
+      ]
+    },
+    "session_recovery:disable:info": {
+      "Make sure you have access to a recovery method.": [
+        "Βεβαιωθείτε ότι έχετε πρόσβαση σε μια μέθοδο ανάκτησης."
+      ],
+      "You will no longer be able to request a password reset from your account settings.": [
+        "Δε θα μπορείτε πλέον να ζητήσετε επαναφορά κωδικού πρόσβασης από τις ρυθμίσεις του λογαριασμού σας."
+      ]
+    },
+    "session_recovery:disable:title": {
+      "Disable password reset?": [
+        "Απενεργοποίηση επαναφοράς κωδικού πρόσβασης;"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel password reset": [
+        "Ακύρωση επαναφοράς κωδικού πρόσβασης"
+      ],
+      "Cancel request": [
+        "Ακύρωση αιτήματος"
+      ],
+      "Got it": [
+        "Το κατάλαβα"
+      ],
+      "Learn more": [
+        "Μάθετε περισσότερα"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } περισσότερη ώρα",
+        "${ gracePeriodHoursRemaining } περισσότερες ώρες"
+      ],
+      "Didn’t make this request?": [
+        "Δεν υποβάλατε αυτό το αίτημα;"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Εάν δε ζητήσατε να επαναφέρετε τον κωδικό πρόσβασής σας, ακυρώστε το αίτημα τώρα."
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "Εάν δε ζητήσατε να επαναφέρετε τον κωδικό πρόσβασής σας, ακυρώστε αυτό το αίτημα τώρα."
+      ],
+      "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
+        "Η επαναφορά κωδικού πρόσβασης είναι διαθέσιμη από ${ boldDate }. Αυτό σας δίνει χρόνο να ακυρώσετε τυχόν δόλια αιτήματα."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Ζητήθηκε επαναφορά κωδικού πρόσβασης (${ user.Email }). Μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας σε ${ hoursRemaining } ώρα.",
+        "Ζητήθηκε επαναφορά κωδικού πρόσβασης (${ user.Email }). Μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας σε ${ hoursRemaining } ώρες."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "Για να βεβαιωθούμε ότι προσπαθείτε πραγματικά να επαναφέρετε τον κωδικό πρόσβασής σας, περιμένουμε 72 ώρες πριν εγκρίνουμε τα αιτήματα. Μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας σε ${ boldTimeLeft }. ${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "Λάβαμε ένα αίτημα επαναφοράς κωδικού πρόσβασης για το ${ boldEmail }."
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "Μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας σε ${ gracePeriodHoursRemaining } ώρα",
+        "Μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας σε ${ gracePeriodHoursRemaining } ώρες"
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "Προβολή αίτησης"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "Ζητήθηκε επαναφορά κωδικού πρόσβασης"
+      ]
+    },
+    "session_recovery:initiation:action": {
+      "Got it": [
+        "Το κατάλαβα"
+      ],
+      "Request password reset": [
+        "Αίτηση επαναφοράς κωδικού πρόσβασης"
+      ],
+      "Use recovery method": [
+        "Χρησιμοποιήστε τη μέθοδο ανάκτησης"
+      ]
+    },
+    "session_recovery:initiation:info": {
+      "For security reasons, you’ll have to wait **72 hours** before you can change your password.": [
+        "Για λόγους ασφαλείας, θα πρέπει να περιμένετε **72 ώρες** για να μπορέσετε να αλλάξετε τον κωδικό πρόσβασής σας."
+      ],
+      "If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.": [
+        "Αν έχετε ρυθμίσει μια **μέθοδο ανάκτησης**, δοκιμάστε την ανάκτηση λογαριασμού. Αυτό θα σας επιτρέψει να αλλάξετε τον κωδικό πρόσβασής σας αμέσως."
+      ],
+      "We will contact you again when the password reset is available.": [
+        "Θα επικοινωνήσουμε ξανά μαζί σας όταν είναι διαθέσιμη η επαναφορά κωδικού πρόσβασης."
+      ],
+      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
+        "Μπορείτε να ελέγξετε την κατάσταση του αιτήματός σας ανά πάσα στιγμή στο ${ accountAndPasswordSectionLink } των ρυθμίσεων."
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "account and password section": [
+        "ενότητα λογαριασμού και κωδικού πρόσβασης"
+      ]
+    },
+    "session_recovery:initiation:notification": {
+      "Password reset confirmed": [
+        "Επιβεβαιώθηκε η επαναφορά κωδικού πρόσβασης"
+      ]
+    },
+    "session_recovery:initiation:title": {
+      "Request password reset?": [
+        "Αίτηση επαναφοράς κωδικού πρόσβασης;"
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "Θα μπορείτε να επαναφέρετε τον κωδικό πρόσβασής σας σε ${ gracePeriodHoursRemaining } ώρα",
+        "Θα μπορείτε να επαναφέρετε τον κωδικό πρόσβασής σας σε ${ gracePeriodHoursRemaining } ώρες"
+      ]
+    },
+    "session_recovery:settings:action": {
+      "Allow password reset from settings": [
+        "Να επιτρέπεται η επαναφορά κωδικού πρόσβασης από τις ρυθμίσεις"
+      ],
+      "Request a password reset from your Account settings. No recovery method needed.": [
+        "Ζητήστε επαναφορά κωδικού πρόσβασης από τις ρυθμίσεις λογαριασμού. Δεν απαιτείται μέθοδος ανάκτησης."
+      ],
+      "Request password reset": [
+        "Αίτηση επαναφοράς κωδικού πρόσβασης"
+      ],
+      "To disallow password reset, you must have a recovery method set up.": [
+        "Για να μην επιτρέπεται η επαναφορά κωδικού πρόσβασης, πρέπει να έχετε ρυθμίσει μια μέθοδο ανάκτησης."
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Αποσύνδεση"
+      ],
+      "Stay signed in": [
+        "Παραμείνετε συνδεδεμένος"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } ώρα",
+        "${ gracePeriodHoursRemaining } ώρες"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } είναι τώρα διαθέσιμο."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Εάν αποσυνδεθείτε πριν επαναφέρετε τον κωδικό πρόσβασής σας, ενδέχεται να χάσετε την πρόσβαση στον λογαριασμό σας."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Εάν αποσυνδεθείτε χωρίς να επαναφέρετε τον κωδικό πρόσβασής σας, ενδέχεται να χάσετε την πρόσβαση στον λογαριασμό σας."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Θα μπορείτε να επαναφέρετε τον κωδικό πρόσβασής σας στο ${ boldTimeLeft }."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Επαναφορά κωδικού πρόσβασης"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Αποσύνδεση χωρίς επαναφορά κωδικού πρόσβασης;"
+      ]
+    },
+    "session_recovery:status:info": {
+      "Available": [
+        "Διαθέσιμα"
+      ],
+      "Pending": [
+        "Σε εκκρεμότητα"
+      ]
+    },
+    "session_recovery:status:title": {
+      "Password reset request": [
+        "Αίτηση Επαναφοράς Κωδικού Πρόσβασης"
+      ]
+    },
     "Settings description": {
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Ολοκληρώστε τη μετάβαση στο απόρρητο με τα ασφαλή εργαλεία εισαγωγής και προώθησης."
@@ -12367,8 +12674,8 @@
       "Add users": [
         "Προσθήκη χρηστών"
       ],
-      "Address verification": [
-        "Επαλήθευση διεύθυνσης"
+      "Address and key verification": [
+        "Επαλήθευση διεύθυνσης και κλειδιού"
       ],
       "Allocate storage": [
         "Κατανομή αποθηκευτικού χώρου"
@@ -12895,6 +13202,9 @@
       ],
       "Password and keys": [
         "Κωδικός πρόσβασης και κλειδιά"
+      ],
+      "Password reset": [
+        "Επαναφορά κωδικού πρόσβασης"
       ],
       "Pay invoice": [
         "Πληρωμή τιμολογίου"
@@ -13452,6 +13762,9 @@
       ],
       "This feature is only available for paid users": [
         "Αυτή η λειτουργία είναι διαθέσιμη μόνο για χρήστες επί πληρωμή"
+      ],
+      "This feature is only available on Beta": [
+        "Αυτή η λειτουργία είναι διαθέσιμη μόνο στην έκδοση Beta"
       ],
       "This key cannot be used for encryption": [
         "Αυτό το κλειδί δεν μπορεί να χρησιμοποιηθεί για κρυπτογράφηση"
