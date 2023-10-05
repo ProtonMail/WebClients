@@ -59,6 +59,9 @@
       "Confirm": [
         "確認"
       ],
+      "Continue": [
+        "繼續"
+      ],
       "Continue without pinning": [
         "不釘選繼續"
       ],
@@ -173,11 +176,17 @@
       "Learn more": [
         "瞭解詳情"
       ],
+      "Leave": [
+        "離開"
+      ],
       "Lock extension": [
         "鎖定擴充"
       ],
       "Manually sync your data": [
         "手動同步您的資料"
+      ],
+      "More info: ${ safeTitle }": [
+        "更多資訊：${ safeTitle }"
       ],
       "More options": [
         "更多選項"
@@ -232,6 +241,9 @@
       ],
       "Send us a message": [
         "傳送訊息給我們"
+      ],
+      "Share": [
+        "分享"
       ],
       "Show": [
         "顯示"
@@ -411,6 +423,9 @@
       ],
       "Settings update failed": [
         "設定更新失敗"
+      ],
+      "Signature verification failed": [
+        "簽名驗證失敗"
       ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
         "有些保管庫於密碼重設後無法使用。重新啟用帳號密鑰已重新取得權限。${ reactivateLink }"
@@ -1298,6 +1313,9 @@
       ],
       "Add text": [
         "新增文字"
+      ],
+      "Email address": [
+        "電郵位址"
       ],
       "Enter a note...": [
         "輸入備註..."
