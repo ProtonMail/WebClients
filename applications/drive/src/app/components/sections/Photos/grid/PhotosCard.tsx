@@ -11,8 +11,6 @@ import playCircleFilledIcon from '@proton/styles/assets/img/drive/play-circle-fi
 import clsx from '@proton/utils/clsx';
 
 import type { PhotoLink } from '../../../../store/';
-import { usePortalPreview } from '../../../PortalPreview';
-import { useDetailsModal } from '../../../modals/DetailsModal';
 import { getMimeTypeDescription } from '../../helpers';
 import { formatVideoDuration } from './formatVideoDuration';
 
@@ -22,17 +20,16 @@ type Props = {
     photo: PhotoLink;
     onRender: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
     style: CSSProperties;
-    shareId: string;
-    showDetailsModal: ReturnType<typeof useDetailsModal>[1];
-    showPortalPreview: ReturnType<typeof usePortalPreview>[1];
+    onClick: (photo: PhotoLink) => void;
 };
 
 const getAltText = ({ mimeType, name }: PhotoLink) =>
     `${c('Label').t`Photo`} - ${getMimeTypeDescription(mimeType || '')} - ${name}`;
 
-export const PhotosCard: FC<Props> = ({ shareId, style, onRender, photo, showPortalPreview, showDetailsModal }) => {
+export const PhotosCard: FC<Props> = ({ style, onRender, photo, onClick }) => {
     const [imageReady, setImageReady] = useState(false);
     const ref = useRef(null);
+
     useEffect(() => {
         onRender(photo.linkId, ref);
     }, [photo.linkId]);
@@ -59,22 +56,7 @@ export const PhotosCard: FC<Props> = ({ shareId, style, onRender, photo, showPor
             style={style}
             disabled={isThumbnailLoading}
             className={clsx('photos-card p-0 border-none rounded-none', isThumbnailLoading && 'photos-card--loading')}
-            onClick={() =>
-                photo.activeRevision?.id &&
-                photo.activeRevision?.photo?.linkId &&
-                showPortalPreview({
-                    shareId,
-                    linkId: photo.activeRevision?.photo?.linkId,
-                    revisionId: photo.activeRevision?.id,
-                    date: photo.activeRevision.photo?.captureTime,
-                    onDetails: () =>
-                        photo.activeRevision?.photo?.linkId &&
-                        showDetailsModal({
-                            shareId,
-                            linkId: photo.activeRevision?.photo?.linkId,
-                        }),
-                })
-            }
+            onClick={() => onClick(photo)}
         >
             {!isThumbnailLoading && !photo.hasThumbnail && isActive && (
                 <div className="flex flex-align-items-center flex-justify-center w100 h100 photos-card-thumbnail photos-card-thumbnail--empty">

@@ -5,8 +5,10 @@ import { c } from 'ttag';
 import { useAppTitle } from '@proton/components';
 import { Loader } from '@proton/components/components';
 
-import { useThumbnailsDownload } from '../../../store';
+import { PhotoLink, useThumbnailsDownload } from '../../../store';
 import { usePhotosView } from '../../../store/_views/usePhotosView';
+import { usePortalPreview } from '../../PortalPreview';
+import { useDetailsModal } from '../../modals/DetailsModal';
 import UploadDragDrop from '../../uploads/UploadDragDrop/UploadDragDrop';
 import ToolbarRow from '../ToolbarRow/ToolbarRow';
 import { PhotosEmptyView } from './PhotosEmptyView';
@@ -17,6 +19,10 @@ export const PhotosView: FC<void> = () => {
     useAppTitle(c('Title').t`Photos`);
 
     const { shareId, linkId, photos, isLoading, isLoadingMore } = usePhotosView();
+
+    const [portalPreview, showPortalPreview] = usePortalPreview();
+    const [detailsModal, showDetailsModal] = useDetailsModal();
+
     const isEmpty = photos.length === 0;
     const thumbnails = useThumbnailsDownload();
 
@@ -29,6 +35,25 @@ export const PhotosView: FC<void> = () => {
         [shareId]
     );
 
+    const handleItemClick = useCallback(
+        (photo: PhotoLink) =>
+            shareId &&
+            photo.activeRevision?.id &&
+            photo.activeRevision?.photo &&
+            showPortalPreview({
+                shareId,
+                linkId: photo.activeRevision.photo.linkId,
+                revisionId: photo.activeRevision.id,
+                date: photo.activeRevision.photo.captureTime,
+                onDetails: () =>
+                    showDetailsModal({
+                        shareId,
+                        linkId: photo.activeRevision.photo.linkId,
+                    }),
+            }),
+        [showPortalPreview, showDetailsModal]
+    );
+
     if (isLoading && !isLoadingMore) {
         return <Loader />;
     }
@@ -38,27 +63,32 @@ export const PhotosView: FC<void> = () => {
     }
 
     return (
-        <UploadDragDrop
-            isForPhotos
-            shareId={shareId}
-            linkId={linkId}
-            className="flex flex-column flex-nowrap flex-item-fluid"
-        >
-            <ToolbarRow
-                titleArea={<span className="text-strong pl-1">{c('Title').t`Photos`}</span>}
-                toolbar={<PhotosToolbar shareId={shareId} linkId={linkId} />}
-            />
+        <>
+            {portalPreview}
+            {detailsModal}
 
-            {isEmpty ? (
-                <PhotosEmptyView />
-            ) : (
-                <PhotosGrid
-                    data={photos}
-                    onItemRender={handleItemRender}
-                    shareId={shareId}
-                    isLoadingMore={isLoadingMore}
+            <UploadDragDrop
+                isForPhotos
+                shareId={shareId}
+                linkId={linkId}
+                className="flex flex-column flex-nowrap flex-item-fluid"
+            >
+                <ToolbarRow
+                    titleArea={<span className="text-strong pl-1">{c('Title').t`Photos`}</span>}
+                    toolbar={<PhotosToolbar shareId={shareId} linkId={linkId} />}
                 />
-            )}
-        </UploadDragDrop>
+
+                {isEmpty ? (
+                    <PhotosEmptyView />
+                ) : (
+                    <PhotosGrid
+                        data={photos}
+                        onItemRender={handleItemRender}
+                        isLoadingMore={isLoadingMore}
+                        onItemClick={handleItemClick}
+                    />
+                )}
+            </UploadDragDrop>
+        </>
     );
 };
