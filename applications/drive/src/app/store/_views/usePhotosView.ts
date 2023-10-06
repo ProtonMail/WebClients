@@ -49,7 +49,7 @@ export const usePhotosView = () => {
         loadPhotos(abortSignal, volumeId);
     }, [volumeId]);
 
-    const getPhotoLink = (abortSignal: AbortSignal, linkId: string) => {
+    const loadPhotoLink = (abortSignal: AbortSignal, linkId: string) => {
         if (!shareId) {
             return;
         }
@@ -60,7 +60,7 @@ export const usePhotosView = () => {
         shareId,
         linkId,
         photos: photosViewData,
-        getPhotoLink,
+        loadPhotoLink,
         isLoading,
         isLoadingMore: isLoading && !!photos.length,
     };

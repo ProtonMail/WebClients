@@ -151,6 +151,7 @@ describe('useLink', () => {
         expect(mockFetchLink).not.toBeCalled();
         expect(mockLinksState.getLink.mock.calls.map(([, linkId]) => linkId)).toMatchObject([
             'link', // Called by getLink.
+            'link', // Called by getEncryptedLink.
             'parent', // Called by getLinkPrivateKey.
             'parent', // Called by getLinkPassphraseAndSessionKey.
             'root', // Called by getLinkPrivateKey.
