@@ -1,19 +1,19 @@
-import { type VFC, useRef } from 'react';
-import { useSelector } from 'react-redux';
+import { type VFC, useRef, useState } from 'react';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { Option } from '@proton/components';
-import { selectMailboxesForAlias } from '@proton/pass/store';
-import type { MaybeNull } from '@proton/pass/types';
+import type { AliasMailbox } from '@proton/pass/types';
+import { type MaybeNull } from '@proton/pass/types';
 import { awaiter } from '@proton/pass/utils/fp/promises';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 import type { EditAliasFormValues } from '../../../../shared/form/types';
-import { validateEditAliasForm } from '../../../../shared/form/validator/validate-alias';
+import { createEditAliasFormValidator } from '../../../../shared/form/validator/validate-alias';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../../../../shared/form/validator/validate-item';
 import { useAliasOptions } from '../../../../shared/hooks';
+import { useAliasDetails } from '../../../../shared/hooks/useAliasDetails';
 import { useDeobfuscatedValue } from '../../../../shared/hooks/useDeobfuscatedValue';
 import { type ItemEditProps } from '../../../../shared/items';
 import { ValueControl } from '../../../components/Field/Control/ValueControl';
@@ -28,15 +28,23 @@ import { useDraftSync } from '../../../hooks/useItemDraft';
 const FORM_ID = 'edit-alias';
 
 export const AliasEdit: VFC<ItemEditProps<'alias'>> = ({ vault, revision, onCancel, onSubmit }) => {
-    const { data: item, itemId, aliasEmail, revision: lastRevision } = revision;
+    const { shareId } = vault;
+    const { data: item, itemId, revision: lastRevision } = revision;
+    const aliasEmail = revision.aliasEmail!;
     const { metadata, ...uneditable } = item;
     const { name, itemUuid } = metadata;
 
     const { current: draftHydrated } = useRef(awaiter<MaybeNull<EditAliasFormValues>>());
 
-    const mailboxesForAlias = useSelector(selectMailboxesForAlias(aliasEmail!));
+    /* If vault is not shared, we can safely assume the user is
+     * the owner of the alias and can edit the mailboxes */
+    const [aliasOwner, setAliasOwner] = useState(!vault.shared);
+
+    const mailboxesForAlias = useRef<AliasMailbox[]>([]);
+
     const note = useDeobfuscatedValue(metadata.note);
     const initialValues: EditAliasFormValues = { name, note, mailboxes: [] };
+    const validateEditAliasForm = createEditAliasFormValidator(aliasOwner);
 
     const form = useFormik<EditAliasFormValues>({
         initialValues,
@@ -53,6 +61,7 @@ export const AliasEdit: VFC<ItemEditProps<'alias'>> = ({ vault, revision, onCanc
                     itemUuid,
                 },
                 extraData: {
+                    aliasOwner,
                     mailboxes,
                     aliasEmail: aliasEmail!,
                 },
@@ -62,14 +71,18 @@ export const AliasEdit: VFC<ItemEditProps<'alias'>> = ({ vault, revision, onCanc
         validateOnChange: true,
     });
 
-    const { aliasOptions, aliasOptionsLoading } = useAliasOptions({
+    const aliasOptions = useAliasOptions({
         shareId: vault.shareId,
+        lazy: true,
         onAliasOptionsLoaded: async ({ mailboxes }) => {
             const draft = await draftHydrated;
             const formValues = draft ?? form.values;
-            const sanitizedMailboxes = mailboxes.filter((mailbox) =>
-                (draft?.mailboxes ?? mailboxesForAlias ?? []).some(({ email }) => email === mailbox.email)
-            );
+            const prevMailboxes = draft?.mailboxes ?? mailboxesForAlias.current;
+            const sanitizedMailboxes = mailboxes.filter((mailbox) => prevMailboxes.some(({ id }) => id === mailbox.id));
+
+            /* if the mailboxes do not match the user's alias options and the
+             * vault is shared, then the user cannot manage its mailboxes */
+            if (vault.shared) setAliasOwner(sanitizedMailboxes.length > 0);
 
             const values = { ...formValues, mailboxes: sanitizedMailboxes };
             const errors = validateEditAliasForm(values);
@@ -81,6 +94,19 @@ export const AliasEdit: VFC<ItemEditProps<'alias'>> = ({ vault, revision, onCanc
         },
     });
 
+    const aliasDetails = useAliasDetails({
+        aliasEmail,
+        itemId,
+        shareId,
+        onAliasDetailsLoaded: (mailboxes) => {
+            mailboxesForAlias.current = mailboxes ?? [];
+            aliasOptions.request();
+        },
+    });
+
+    const mailboxes = aliasOptions.value?.mailboxes ?? [];
+    const disabledMailboxes = aliasOptions.loading || !aliasOptions || (aliasOptions.value?.mailboxes.length ?? 0) <= 1;
+
     useDraftSync<EditAliasFormValues>(form, {
         type: 'alias',
         mode: 'edit',
@@ -89,11 +115,13 @@ export const AliasEdit: VFC<ItemEditProps<'alias'>> = ({ vault, revision, onCanc
         onHydrated: draftHydrated.resolve,
     });
 
+    const loading = aliasDetails.loading || aliasOptions.loading;
+
     return (
         <ItemEditPanel
             type="alias"
             formId={FORM_ID}
-            valid={!aliasOptionsLoading && form.isValid && form.dirty}
+            valid={!(aliasOwner && loading) && form.isValid && form.dirty}
             discardable={!form.dirty}
             handleCancelClick={onCancel}
         >
@@ -115,25 +143,37 @@ export const AliasEdit: VFC<ItemEditProps<'alias'>> = ({ vault, revision, onCanc
                             <ValueControl icon="alias" label={c('Label').t`Alias address`}>
                                 {aliasEmail}
                             </ValueControl>
-                        </FieldsetCluster>
 
-                        <FieldsetCluster>
-                            <Field
-                                name="mailboxes"
-                                label={c('Label').t`Forwards to`}
-                                placeholder={c('Label').t`Select an email address`}
-                                component={SelectField}
-                                icon="arrow-up-and-right-big"
-                                multiple
-                                disabled={aliasOptionsLoading || !aliasOptions || aliasOptions.mailboxes.length <= 1}
-                                loading={aliasOptionsLoading}
-                            >
-                                {(aliasOptions?.mailboxes ?? []).map((mailbox) => (
-                                    <Option value={mailbox} title={mailbox.email} key={mailbox.id}>
-                                        {mailbox.email}
-                                    </Option>
-                                ))}
-                            </Field>
+                            {aliasOwner ? (
+                                <Field
+                                    name="mailboxes"
+                                    label={c('Label').t`Forwards to`}
+                                    placeholder={c('Label').t`Select an email address`}
+                                    component={SelectField}
+                                    icon="arrow-up-and-right-big"
+                                    multiple
+                                    disabled={disabledMailboxes}
+                                    loading={loading}
+                                >
+                                    {mailboxes.map((mailbox) => (
+                                        <Option value={mailbox} title={mailbox.email} key={mailbox.id}>
+                                            {mailbox.email}
+                                        </Option>
+                                    ))}
+                                </Field>
+                            ) : (
+                                <ValueControl as="ul" icon="arrow-up-and-right-big" label={c('Label').t`Forwards to`}>
+                                    {loading ? (
+                                        <div className="pass-skeleton pass-skeleton--select" />
+                                    ) : (
+                                        aliasDetails.value.map(({ email }) => (
+                                            <li key={email} className="text-ellipsis">
+                                                {email}
+                                            </li>
+                                        ))
+                                    )}
+                                </ValueControl>
+                            )}
                         </FieldsetCluster>
 
                         <FieldsetCluster>
