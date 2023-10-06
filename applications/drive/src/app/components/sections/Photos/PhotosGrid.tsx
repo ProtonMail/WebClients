@@ -8,12 +8,13 @@ import { PhotosCard, PhotosGroup } from './grid';
 
 type Props = {
     data: PhotoGridItem[];
-    onItemRender: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
+    onItemRender: (linkId: string) => void;
+    onItemRenderLoadedLink: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
     isLoadingMore: boolean;
     onItemClick: (itemIndex: number) => void;
 };
 
-export const PhotosGrid: FC<Props> = ({ data, onItemRender, isLoadingMore, onItemClick }) => {
+export const PhotosGrid: FC<Props> = ({ data, onItemRender, onItemRenderLoadedLink, isLoadingMore, onItemClick }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const containerRect = useElementRect(containerRef);
 
@@ -130,6 +131,7 @@ export const PhotosGrid: FC<Props> = ({ data, onItemRender, isLoadingMore, onIte
                             key={item.linkId}
                             photo={item}
                             onRender={onItemRender}
+                            onRenderLoadedLink={onItemRenderLoadedLink}
                             onClick={() => onItemClick(i)}
                             style={{
                                 position: 'absolute',
