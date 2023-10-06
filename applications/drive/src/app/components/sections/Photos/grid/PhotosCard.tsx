@@ -11,6 +11,7 @@ import playCircleFilledIcon from '@proton/styles/assets/img/drive/play-circle-fi
 import clsx from '@proton/utils/clsx';
 
 import type { PhotoLink } from '../../../../store/';
+import SignatureIcon from '../../../SignatureIcon';
 import { getMimeTypeDescription } from '../../helpers';
 import { formatVideoDuration } from './formatVideoDuration';
 
@@ -66,6 +67,13 @@ export const PhotosCard: FC<Props> = ({ style, onRender, photo, onClick }) => {
             {!isThumbnailLoading && thumbUrl && isActive ? (
                 <div className="w100 h100 relative">
                     <img src={thumbUrl} alt={getAltText(photo)} className="w100 h100 photos-card-thumbnail" />
+                    {photo.signatureIssues && (
+                        <SignatureIcon
+                            isFile
+                            signatureIssues={photo.signatureIssues}
+                            className="absolute top right mr-2 mt-2 color-danger"
+                        />
+                    )}
                     {photo.mimeType && isVideo(photo.mimeType) && (
                         <div className="w100 absolute bottom flex flex-justify-end flex-align-items-center px-2 py-2 photos-card-video-info">
                             {photo.duration && (
