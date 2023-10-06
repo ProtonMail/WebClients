@@ -1,4 +1,4 @@
-import { ReactNode, Ref, forwardRef } from 'react';
+import { ReactNode, Ref, forwardRef, useMemo } from 'react';
 
 import { c } from 'ttag';
 
@@ -7,6 +7,8 @@ import { Portal } from '@proton/components/components/portal';
 import { FilePreview } from '@proton/components/containers';
 
 import { useFileView } from '../../store';
+import { SignatureAlertBody } from '../SignatureAlert';
+import SignatureIcon from '../SignatureIcon';
 
 interface Props {
     shareId: string;
@@ -40,9 +42,35 @@ const PortalPreview = (
         revisionId
     );
 
+    const signatureStatus = useMemo(() => {
+        if (!link) {
+            return;
+        }
+
+        return (
+            <SignatureIcon isFile={link.isFile} signatureIssues={link.signatureIssues} className="ml-2 color-danger" />
+        );
+    }, [link]);
+
+    const signatureConfirmation = useMemo(() => {
+        if (!link?.signatureIssues?.blocks) {
+            return;
+        }
+
+        return (
+            <SignatureAlertBody
+                signatureIssues={link.signatureIssues}
+                signatureAddress={link.signatureAddress}
+                isFile={link.isFile}
+                name={link.name}
+            />
+        );
+    }, [link]);
+
     if (!modalProps.open) {
         return null;
     }
+
     return (
         <Portal>
             <div className={className}>
@@ -65,6 +93,8 @@ const PortalPreview = (
                     onRestore={onRestore}
                     date={date}
                     navigationControls={navigationControls}
+                    signatureStatus={signatureStatus}
+                    signatureConfirmation={signatureConfirmation}
                 />
             </div>
         </Portal>
