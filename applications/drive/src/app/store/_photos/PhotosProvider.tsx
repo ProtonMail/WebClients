@@ -16,6 +16,7 @@ export const PhotosContext = createContext<{
     isLoading: boolean;
     photos: Photo[];
     loadPhotos: (abortSignal: AbortSignal, volumeId: string) => void;
+    removePhotosFromCache: (linkIds: string[]) => void;
 } | null>(null);
 
 export const PhotosProvider: FC = ({ children }) => {
@@ -46,6 +47,12 @@ export const PhotosProvider: FC = ({ children }) => {
         void withPhotosLoading(photoCall());
     };
 
+    const removePhotosFromCache = (linkIds: string[]) => {
+        setPhotos((prevPhotos) => {
+            return prevPhotos.filter((photo) => !linkIds.includes(photo.linkId));
+        });
+    };
+
     if (!defaultShareId) {
         return <PhotosContext.Provider value={null}>{children}</PhotosContext.Provider>;
     }
@@ -60,6 +67,7 @@ export const PhotosProvider: FC = ({ children }) => {
                 isLoading: (!defaultShareId && !share) || photosLoading,
                 photos,
                 loadPhotos,
+                removePhotosFromCache,
             }}
         >
             {children}
