@@ -197,6 +197,8 @@ module.exports = {
         'jsx-a11y/no-autofocus': 'off',
         'jsx-a11y/no-onchange': 'off',
         'custom-rules/deprecate-spacing-utility-classes': 'warn',
+        'custom-rules/deprecate-responsive-utility-classes': 'warn',
+        'custom-rules/deprecate-sizing-classes': 'warn',
         'custom-rules/deprecate-classes': 'warn',
     },
     settings: {
