@@ -11,9 +11,11 @@ import {
     selectVaultLimits,
     selectWritableVaultsWithItemsCount,
 } from '@proton/pass/store/selectors';
+import { PassFeature } from '@proton/pass/types/api/features';
 
 import { SidebarModal } from '../../../shared/components/sidebarmodal/SidebarModal';
 import { UpgradeButton } from '../../../shared/components/upgrade/UpgradeButton';
+import { useFeatureFlag } from '../../../shared/hooks/useFeatureFlag';
 import { RadioButtonGroup, RadioLabelledButton } from '../../components/Field/RadioButtonGroupField';
 import { ItemCard } from '../../components/Item/ItemCard';
 import { PanelHeader } from '../../components/Panel/Header';
@@ -32,6 +34,7 @@ export const VaultSelectModal: VFC<Props> = ({ onSubmit, shareId, ...props }) =>
     const vaultsWithItemCount = useSelector(selectWritableVaultsWithItemsCount);
     const primaryVaultId = useSelector(selectPrimaryVault).shareId;
     const { didDowngrade } = useSelector(selectVaultLimits);
+    const primaryVaultDisabled = useFeatureFlag(PassFeature.PassRemovePrimaryVault);
 
     return (
         <SidebarModal {...props}>
@@ -56,8 +59,11 @@ export const VaultSelectModal: VFC<Props> = ({ onSubmit, shareId, ...props }) =>
             >
                 {didDowngrade && (
                     <ItemCard>
-                        {c('Info')
-                            .t`You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.`}
+                        {primaryVaultDisabled
+                            ? c('Info')
+                                  .t`You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.`
+                            : c('Info')
+                                  .t`You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.`}
                     </ItemCard>
                 )}
 

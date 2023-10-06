@@ -9,9 +9,11 @@ import type { IconName } from '@proton/components/components';
 import { Icon } from '@proton/components/components';
 import { selectPrimaryVault, selectVaultLimits } from '@proton/pass/store';
 import type { ItemType } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import clsx from '@proton/utils/clsx';
 
 import { UpgradeButton } from '../../../shared/components/upgrade/UpgradeButton';
+import { useFeatureFlag } from '../../../shared/hooks/useFeatureFlag';
 import { itemTypeToIconName } from '../../../shared/items/icons';
 import { SubTheme } from '../../../shared/theme/sub-theme';
 import { ItemCard } from '../../components/Item/ItemCard';
@@ -39,6 +41,7 @@ export const ItemsListPlaceholder: VFC = () => {
     const primaryVaultId = useSelector(selectPrimaryVault).shareId;
     const inNonPrimaryVault = Boolean(filtering.shareId) && filtering.shareId !== primaryVaultId;
     const { didDowngrade } = useSelector(selectVaultLimits);
+    const primaryVaultDisabled = useFeatureFlag(PassFeature.PassRemovePrimaryVault);
 
     const quickActions = useMemo<QuickAction[]>(
         () => [
@@ -85,8 +88,11 @@ export const ItemsListPlaceholder: VFC = () => {
             <div className="flex flex-column gap-3 text-center">
                 <span className="text-semibold inline-block">{c('Title').t`Your vault is empty`}</span>
                 <ItemCard>
-                    {c('Info')
-                        .t`You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.`}
+                    {primaryVaultDisabled
+                        ? c('Info')
+                              .t`You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.`
+                        : c('Info')
+                              .t`You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.`}
                 </ItemCard>
                 <UpgradeButton />
             </div>
