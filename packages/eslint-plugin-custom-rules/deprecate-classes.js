@@ -34,6 +34,22 @@ const deprecatedClassNames = [
         deprecatedClassName: 'mlauto',
         suggestedClassName: 'ml-auto',
     },
+    {
+        deprecatedClassName: 'wauto',
+        suggestedClassName: 'w-auto',
+    },
+    {
+        deprecatedClassName: 'hauto',
+        suggestedClassName: 'h-auto',
+    },
+    {
+        deprecatedClassName: 'h0',
+        suggestedClassName: 'h-0',
+    },
+    {
+        deprecatedClassName: 'h100',
+        suggestedClassName: 'h-full',
+    },
 ];
 
 module.exports = {
