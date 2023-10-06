@@ -1,21 +1,8 @@
-@include responsive-classes(inline-flex) {
-	display: inline-flex;
-	flex-wrap: wrap;
-}
+@use 'sass:map';
 
 .inline-flex-vcenter {
 	display: inline-flex;
 	flex-wrap: wrap;
-}
-
-@include responsive-classes(flex) {
-	display: flex;
-	flex-wrap: wrap;
-
-	& > * {
-		min-block-size: 0;
-		min-inline-size: 0;
-	}
 }
 
 .flex-flex-children,
@@ -24,22 +11,62 @@
 	flex-wrap: wrap;
 }
 
-@each $direction in (row, row-reverse, column, column-reverse) {
-	@include responsive-classes(flex-#{$direction}) {
-		flex-direction: $direction;
-	}
+.flex-flex-children > * {
+	display: flex;
 }
 
+// ----------------------------------------------------------------------------
+
+// Create an empty map to make it reachable outside of loops
+$dummy-map: ();
+
+// Add `flex-direction` utilities to the map
+@each $direction in (row, row-reverse, column, column-reverse) {
+	$dummy-map: map.merge(
+		$dummy-map,
+		(
+			flex-#{$direction}:
+				(
+					flex-direction: $direction,
+				)
+		)
+	);
+}
+
+// Add `flex-justify` utilities to the map
 @each $justify in (start, center, end, space-between, space-around, space-evenly) {
 	// Remove prefix when 'start' and 'end' will be recognized by browsers
 	$prefix: if($justify == start or $justify == end, 'flex', '');
-
-	@include responsive-classes(flex-justify-#{$justify}) {
-		justify-content: #{dash-join($prefix, $justify)};
-	}
+	$dummy-map: map.merge(
+		$dummy-map,
+		(
+			flex-justify-#{$justify}:
+				(
+					justify-content: #{dash-join($prefix, $justify)},
+				)
+		)
+	);
 }
 
-@each $align in (baseline, start, center, end, baseline, stretch, inherit) {
+// Add `flex-wrap` utilities to the map
+@each $wrap in (wrap, wrap-reverse, nowrap) {
+	$dummy-map: map.merge(
+		$dummy-map,
+		(
+			flex-#{$wrap}:
+				(
+					flex-wrap: #{$wrap},
+				)
+		)
+	);
+}
+
+// Serialize the responsive utilities creation with the map to avoid any cascade ordering issues
+@include responsive-classes($dummy-map);
+
+// ----------------------------------------------------------------------------
+
+@each $align in (start, center, end, baseline, stretch, inherit) {
 	// Remove prefix when 'start' and 'end' will be recognized by browsers
 	$prefix: if($align == start or $align == end, 'flex', '');
 
@@ -50,16 +77,6 @@
 	.flex-align-self-#{$align} {
 		align-self: #{dash-join($prefix, $align)};
 	}
-}
-
-@each $wrap in (wrap, wrap-reverse, nowrap) {
-	@include responsive-classes(flex-#{$wrap}) {
-		flex-wrap: $wrap;
-	}
-}
-
-.flex-flex-children > * {
-	display: flex;
 }
 
 .flex-flex-align-items-center > * {
