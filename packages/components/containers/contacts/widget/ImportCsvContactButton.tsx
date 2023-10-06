@@ -10,15 +10,11 @@ import { useFlag } from '../../unleash';
 
 interface Props {
     onImport: () => void;
-    easySwitchSource?: EASY_SWITCH_SOURCE;
+    easySwitchSource: EASY_SWITCH_SOURCE;
     onClose?: () => void;
 }
 
-const ImportCsvContactButton = ({
-    easySwitchSource = EASY_SWITCH_SOURCE.IMPORT_CONTACTS_BUTTON,
-    onImport,
-    onClose,
-}: Props) => {
+const ImportCsvContactButton = ({ easySwitchSource, onImport, onClose }: Props) => {
     const [user, loadingUser] = useUser();
     const easySwitchFeature = useFeature<EasySwitchFeatureFlag>(FeatureCode.EasySwitch);
     const isImporterInMaintenance = useFlag('MaintenanceImporter');
