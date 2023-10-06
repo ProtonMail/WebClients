@@ -1,5 +1,5 @@
 import type { ItemKey, ItemKeyResponse, VaultKey } from '@proton/pass/types';
-import { EncryptionTag } from '@proton/pass/types';
+import { PassEncryptionTag } from '@proton/pass/types';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { decryptData, getSymmetricKey } from '../../utils/crypto-helpers';
@@ -14,7 +14,7 @@ export const openItemKey = async ({
     vaultKey,
 }: OpenVaultKeyProcessParams): Promise<ItemKey> => {
     const data = base64StringToUint8Array(Key);
-    const itemKey = await decryptData(vaultKey.key, data, EncryptionTag.ItemKey);
+    const itemKey = await decryptData(vaultKey.key, data, PassEncryptionTag.ItemKey);
 
     return {
         raw: itemKey,

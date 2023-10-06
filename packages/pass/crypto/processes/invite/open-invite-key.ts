@@ -2,7 +2,7 @@ import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
-import type { KeyRotationKeyPair } from '../../../types';
+import { type KeyRotationKeyPair, PassSignatureContext } from '../../../types';
 
 type OpenInviteKeyProcessParams = {
     inviteKey: KeyRotationKeyPair;
@@ -21,5 +21,9 @@ export const openInviteKey = async ({
             decryptionKeys: inviteePrivateKey,
             verificationKeys: inviterPublicKeys,
             format: 'binary',
+            context: {
+                value: PassSignatureContext.VaultInviteInternal,
+                required: true,
+            },
         })
     ).data;
