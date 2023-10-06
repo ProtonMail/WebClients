@@ -66,6 +66,7 @@ export enum External {
     Default = 0,
     iOS = 1,
     Android = 2,
+    Chargebee = 3,
 }
 
 export interface Subscription {
