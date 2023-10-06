@@ -6,8 +6,8 @@
 
 	// When the composer is in focus state, to be placed over any other composer frames
 	z-index: $layer-floating-frames + 1;
-	block-size: rem(640);
-	inline-size: rem(640);
+	block-size: var(--h-custom, #{rem(640)});
+	inline-size: var(--w-custom, #{rem(640)});
 	max-block-size: 100%;
 	max-inline-size: 100%;
 	overflow: hidden;
@@ -449,7 +449,7 @@
 	}
 
 	&-addresses-item-drag-placeholder {
-		inline-size: var(--width, 5em);
+		inline-size: var(--w-custom, 5em);
 		border-radius: var(--border-radius-md);
 		border: 1px dashed currentcolor;
 	}
