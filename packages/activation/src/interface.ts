@@ -272,11 +272,9 @@ export interface ImportReport {
 
 export enum EASY_SWITCH_SOURCE {
     EASY_SWITCH_SETTINGS = 'easy-switch-settings',
-    IMPORT_CONTACT_SETTINGS = 'import-contacts-settings',
     CONTACTS_WIDGET_SETTINGS = 'contacts-widget-settings',
     IMPORT_CALENDAR_SETTINGS = 'import-calendar-settings',
     RECONNECT_IMPORT = 'reconnect-import',
-    IMPORT_CONTACTS_BUTTON = 'import-contacts-button', // fallback for Import Contacts button
 }
 
 export interface EasySwitchFeatureFlag {
