@@ -97,10 +97,12 @@ const ConversationView = ({
 
     const messagesToShow = !loadingMessages && filter ? filteredMessages : messages;
 
-    const messagesWithoutQuickReplies = messagesToShow.filter((message) => {
-        const messageFromState = getMessage(message.ID);
-        return !messageFromState?.draftFlags?.isQuickReply;
-    });
+    const messagesWithoutQuickReplies = messagesToShow
+        .filter((message) => {
+            const messageFromState = getMessage(message.ID);
+            return !messageFromState?.draftFlags?.isQuickReply;
+        })
+        .sort((a, b) => a.Time - b.Time);
 
     const showTrashWarning = !loadingMessages && filteredMessages.length !== messages.length;
     const messageInUrl = conversationState?.Messages?.find((message) => message.ID === messageID);
