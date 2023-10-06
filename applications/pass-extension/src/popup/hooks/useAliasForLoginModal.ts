@@ -19,10 +19,7 @@ export const useAliasForLoginModal = <T extends LoginItemFormValues>(
     const { values } = form;
     const { withAlias, username, aliasPrefix } = values;
 
-    const { aliasOptions, aliasOptionsLoading, requestAliasOptions } = useAliasOptions({
-        shareId: form.values.shareId,
-        lazy: options.lazy,
-    });
+    const aliasOptions = useAliasOptions({ shareId: form.values.shareId, lazy: options.lazy });
 
     const relatedAlias = useSelector(selectAliasByAliasEmail(username));
     const canCreateAlias = !relatedAlias && !withAlias;
@@ -43,8 +40,8 @@ export const useAliasForLoginModal = <T extends LoginItemFormValues>(
     }, [relatedAlias]);
 
     useEffect(() => {
-        if (options.lazy && aliasModalOpen) requestAliasOptions();
-    }, [aliasModalOpen, requestAliasOptions]);
+        if (options.lazy && aliasModalOpen) aliasOptions.request();
+    }, [aliasModalOpen]);
 
     return {
         setOpen: setAliasModalOpen,
@@ -53,7 +50,7 @@ export const useAliasForLoginModal = <T extends LoginItemFormValues>(
         canCreate: canCreateAlias,
         willCreate: willCreateAlias,
         usernameIsAlias,
-        aliasOptions,
-        loading: aliasOptionsLoading,
+        aliasOptions: aliasOptions.value,
+        loading: aliasOptions.loading,
     };
 };
