@@ -6,7 +6,11 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import { selectAllVaultWithItemsCount, selectPrimaryVault, selectVaultLimits } from '@proton/pass/store/selectors';
+import {
+    selectAllWritableVaultsWithItemsCount,
+    selectPrimaryVault,
+    selectVaultLimits,
+} from '@proton/pass/store/selectors';
 
 import { SidebarModal } from '../../../shared/components/sidebarmodal/SidebarModal';
 import { UpgradeButton } from '../../../shared/components/upgrade/UpgradeButton';
@@ -25,7 +29,7 @@ export type Props = Omit<ModalProps, 'onSubmit'> & {
  * his primary vault as target. This rule applies when moving
  * an item to a vault or when selecting an item's vault */
 export const VaultSelectModal: VFC<Props> = ({ onSubmit, shareId, ...props }) => {
-    const vaultsWithItemCount = useSelector(selectAllVaultWithItemsCount);
+    const vaultsWithItemCount = useSelector(selectAllWritableVaultsWithItemsCount);
     const primaryVaultId = useSelector(selectPrimaryVault).shareId;
     const { didDowngrade } = useSelector(selectVaultLimits);
 
