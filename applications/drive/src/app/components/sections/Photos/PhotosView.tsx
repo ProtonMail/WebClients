@@ -18,7 +18,7 @@ import { PhotosToolbar } from './toolbar';
 export const PhotosView: FC<void> = () => {
     useAppTitle(c('Title').t`Photos`);
 
-    const { shareId, linkId, photos, isLoading, isLoadingMore } = usePhotosView();
+    const { shareId, linkId, photos, isLoading, isLoadingMore, loadPhotoLink } = usePhotosView();
 
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [previewIndex, setPreviewIndex] = useState<number>(-1);
@@ -26,14 +26,15 @@ export const PhotosView: FC<void> = () => {
     const isEmpty = photos.length === 0;
     const thumbnails = useThumbnailsDownload();
 
-    const handleItemRender = useCallback(
-        (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
-            if (shareId) {
-                thumbnails.addToDownloadQueue(shareId, itemLinkId, undefined, domRef);
-            }
-        },
-        [shareId]
-    );
+    const handleItemRender = (itemLinkId: string) => {
+        loadPhotoLink(new AbortController().signal, itemLinkId);
+    };
+
+    const handleItemRenderLoadedLink = (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
+        if (shareId) {
+            thumbnails.addToDownloadQueue(shareId, itemLinkId, undefined, domRef);
+        }
+    };
 
     const gridPhotoLinkIndices: number[] = useMemo(
         () =>
@@ -115,6 +116,7 @@ export const PhotosView: FC<void> = () => {
                     <PhotosGrid
                         data={photos}
                         onItemRender={handleItemRender}
+                        onItemRenderLoadedLink={handleItemRenderLoadedLink}
                         isLoadingMore={isLoadingMore}
                         onItemClick={handleItemClick}
                     />

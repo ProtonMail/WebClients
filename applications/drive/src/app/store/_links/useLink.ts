@@ -551,11 +551,7 @@ export function useLinkInner(
                 return cachedLink.decrypted;
             }
 
-            // Do not use getEncryptedLink - that adds it to cache right away.
-            // Lets optimise it by updating store with both versions in one go.
-            const encrypted = cachedLink?.encrypted
-                ? cachedLink?.encrypted
-                : await fetchLink(abortSignal, shareId, linkId);
+            const encrypted = await getEncryptedLink(abortSignal, shareId, linkId);
 
             try {
                 const decrypted = await decryptLink(abortSignal, shareId, encrypted);
