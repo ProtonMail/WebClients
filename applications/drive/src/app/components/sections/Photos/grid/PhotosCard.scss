@@ -7,7 +7,7 @@
 	 */
 
 	from {
-		opacity: 0.3;
+		opacity: 0;
 	}
 
 	to {
@@ -17,15 +17,57 @@
 
 .photos-card {
 	user-select: none;
+	background-color: var(--background-weak);
+
+	&:hover {
+		background-color: var(--background-weak);
+	}
 
 	&--loading {
-		opacity: 0.3;
-		background-color: var(--background-strong);
-		animation: photos-card-loading alternate 1s ease-in-out infinite both;
+		&::before {
+			inline-size: 100%;
+			block-size: 100%;
+			content: '';
+			display: block;
+			opacity: 0;
+			background-color: var(--background-strong);
+			animation: photos-card-loading alternate 1s ease-in-out infinite both;
+			animation-delay: inherit;
+		}
+	}
+
+	&--hide-checkbox {
+		& > .checkbox-container {
+			display: none;
+		}
+
+		&:hover > .checkbox-container,
+		&:focus > .checkbox-container {
+			display: block;
+		}
+	}
+
+	&--selected {
+		border: 1px var(--interaction-norm) solid;
+
+		&:hover {
+			border: 1px var(--interaction-norm) solid;
+		}
+
+		&::after {
+			inline-size: 100%;
+			block-size: 100%;
+			transform: translateY(-100%);
+			content: '';
+			display: block;
+			opacity: 0.3;
+			background-color: var(--interaction-norm);
+		}
 	}
 }
 
 .photos-card-thumbnail {
+	pointer-events: none;
 	object-fit: cover;
 
 	&--empty {

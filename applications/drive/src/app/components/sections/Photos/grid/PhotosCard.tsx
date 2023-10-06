@@ -4,7 +4,7 @@ import { formatDuration } from 'date-fns';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button';
-import { FileIcon } from '@proton/components/components';
+import { Checkbox, FileIcon } from '@proton/components/components';
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import playCircleFilledIcon from '@proton/styles/assets/img/drive/play-circle-filled.svg';
@@ -19,16 +19,19 @@ import './PhotosCard.scss';
 
 type Props = {
     photo: PhotoLink;
+    selected: boolean;
     onRender: (linkId: string) => void;
     onRenderLoadedLink: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
     style: CSSProperties;
     onClick: () => void;
+    onSelect: (isSelected: boolean) => void;
+    showCheckbox: boolean;
 };
 
 const getAltText = ({ mimeType, name }: PhotoLink) =>
     `${c('Label').t`Photo`} - ${getMimeTypeDescription(mimeType || '')} - ${name}`;
 
-export const PhotosCard: FC<Props> = ({ style, onRender, onRenderLoadedLink, photo, onClick }) => {
+export const PhotosCard: FC<Props> = ({ style, onRender, onRenderLoadedLink, photo, onClick, onSelect, selected, showCheckbox }) => {
     const [imageReady, setImageReady] = useState(false);
     const ref = useRef(null);
 
@@ -67,10 +70,22 @@ export const PhotosCard: FC<Props> = ({ style, onRender, onRenderLoadedLink, pho
             as="div"
             ref={ref}
             style={style}
-            disabled={isThumbnailLoading}
-            className={clsx('photos-card p-0 border-none rounded-none', isThumbnailLoading && 'photos-card--loading')}
+            className={clsx(
+                'relative photos-card p-0 border-none rounded-none',
+                isThumbnailLoading && 'photos-card--loading',
+                !showCheckbox && 'photos-card--hide-checkbox',
+                selected && 'photos-card--selected'
+            )}
             onClick={onClick}
         >
+            <Checkbox
+                className="absolute top-0 left-0 ml-2 mt-2"
+                checked={selected}
+                onClick={(e) => e.stopPropagation()}
+                onChange={() => {
+                    onSelect(!selected);
+                }}
+            />
             {!isThumbnailLoading && !photo.hasThumbnail && isActive && (
                 <div className="flex flex-align-items-center flex-justify-center w100 h100 photos-card-thumbnail photos-card-thumbnail--empty">
                     <FileIcon mimeType={photo.mimeType || ''} size={48} />

@@ -235,6 +235,8 @@ export default function useActions() {
         };
 
         createTrashedItemsNotifications(linksToTrash, result.successes, result.failures, undoAction);
+
+        return result;
     };
 
     const restoreLinks = async (abortSignal: AbortSignal, linksToRestore: LinkInfo[]) => {

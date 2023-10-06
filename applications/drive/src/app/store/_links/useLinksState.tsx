@@ -41,7 +41,7 @@ export function useLinksStateProvider() {
     const [state, setState] = useState<LinksState>({});
 
     useEffect(() => {
-        const callbackId = events.eventHandlers.register((volumeId, events) =>
+        const callbackId = events.eventHandlers.register((_volumeId, events) =>
             setState((state) => updateByEvents(state, events))
         );
         return () => {
