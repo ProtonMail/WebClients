@@ -1,42 +1,40 @@
-import { useCallback, useEffect, useMemo } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useMemo } from 'react';
+import { useSelector } from 'react-redux';
 
-import { getAliasOptionsIntent, selectAliasOptions, selectRequest } from '@proton/pass/store';
-import * as requests from '@proton/pass/store/actions/requests';
+import { c } from 'ttag';
+
+import useNotifications from '@proton/components/hooks/useNotifications';
+import { getAliasOptionsIntent, selectAliasOptions } from '@proton/pass/store';
+import { aliasOptionsRequest } from '@proton/pass/store/actions/requests';
+import type { MaybeNull } from '@proton/pass/types';
 import type { AliasMailbox } from '@proton/pass/types/data/alias';
+
+import { useActionWithRequest } from './useActionWithRequest';
 
 export type SanitizedAliasOptions = {
     suffixes: { value: string; signature: string }[];
     mailboxes: AliasMailbox[];
 };
 
-export type UseAliasOptionsConfig = {
-    shareId: string;
+export type UseAliasOptionsParams = {
     lazy?: boolean /* defer the alias options dispatch */;
+    shareId: string;
     onAliasOptionsLoaded?: (aliasOptions: SanitizedAliasOptions) => any;
 };
 
 export type UseAliasOptionsResult = {
-    aliasOptionsLoading: boolean;
-    aliasOptions: SanitizedAliasOptions | null;
-    requestAliasOptions: () => void;
+    loading: boolean;
+    request: () => void;
+    value: MaybeNull<SanitizedAliasOptions>;
 };
 
-export const useAliasOptions: (options: UseAliasOptionsConfig) => UseAliasOptionsResult = ({
-    lazy = false,
+export const useAliasOptions = ({
     shareId,
+    lazy = false,
     onAliasOptionsLoaded,
-}) => {
-    const dispatch = useDispatch();
+}: UseAliasOptionsParams): UseAliasOptionsResult => {
+    const { createNotification } = useNotifications();
     const aliasOptions = useSelector(selectAliasOptions);
-    const aliasOptionsRequest = useSelector(selectRequest(requests.aliasOptions()));
-    const aliasOptionsLoading = aliasOptionsRequest === undefined || aliasOptionsRequest?.status === 'start';
-
-    const requestAliasOptions = useCallback(() => dispatch(getAliasOptionsIntent({ shareId })), [shareId]);
-
-    useEffect(() => {
-        if (!lazy) requestAliasOptions();
-    }, [lazy]);
 
     const sanitizedAliasOptions = useMemo(
         () =>
@@ -52,9 +50,24 @@ export const useAliasOptions: (options: UseAliasOptionsConfig) => UseAliasOption
         [aliasOptions]
     );
 
-    useEffect(() => {
-        if (!aliasOptionsLoading && sanitizedAliasOptions !== null) onAliasOptionsLoaded?.(sanitizedAliasOptions);
-    }, [aliasOptionsLoading]);
+    const getAliasOptions = useActionWithRequest({
+        action: getAliasOptionsIntent,
+        requestId: aliasOptionsRequest(shareId),
+        onSuccess: () => sanitizedAliasOptions && onAliasOptionsLoaded?.(sanitizedAliasOptions),
+        onFailure: () =>
+            createNotification({
+                type: 'warning',
+                text: c('Warning').t`Cannot retrieve mailboxes for this alias right now`,
+            }),
+    });
 
-    return { aliasOptions: sanitizedAliasOptions, aliasOptionsLoading, requestAliasOptions };
+    useEffect(() => {
+        if (!lazy) getAliasOptions.dispatch({ shareId });
+    }, [lazy]);
+
+    return {
+        loading: getAliasOptions.loading,
+        request: () => getAliasOptions.dispatch({ shareId }),
+        value: sanitizedAliasOptions,
+    };
 };
