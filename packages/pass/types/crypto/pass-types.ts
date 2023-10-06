@@ -1,10 +1,15 @@
 import type { ItemState, Maybe, MaybeNull, ShareRole, ShareType } from '@proton/pass/types';
 
-export enum EncryptionTag {
+export enum PassEncryptionTag {
     VaultContent = 'vaultcontent',
     ItemKey = 'itemkey',
     ItemContent = 'itemcontent',
     Cache = 'cache' /* web-only usage */,
+}
+
+export enum PassSignatureContext {
+    VaultInviteInternal = 'pass.invite.vault.existing-user',
+    VaultInviteExternal = 'pass.invite.vault.new-user',
 }
 
 export const CONTENT_FORMAT_VERSION = 1;

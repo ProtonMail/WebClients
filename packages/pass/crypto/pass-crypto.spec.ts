@@ -4,7 +4,7 @@ import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type { Address, DecryptedKey, Key, User } from '@proton/shared/lib/interfaces';
 
 import type { ItemRevisionContentsResponse, ShareGetResponse, ShareKeyResponse } from '../types';
-import { CONTENT_FORMAT_VERSION, EncryptionTag, ItemState, ShareType } from '../types';
+import { CONTENT_FORMAT_VERSION, ItemState, PassEncryptionTag, ShareType } from '../types';
 import { PassCrypto } from './pass-crypto';
 import * as processes from './processes';
 import { decryptData } from './utils';
@@ -161,7 +161,7 @@ describe('PassCrypto', () => {
             const decryptedContent = await decryptData(
                 vaultKey.key,
                 base64StringToUint8Array(vault.Content),
-                EncryptionTag.VaultContent
+                PassEncryptionTag.VaultContent
             );
 
             expect(decryptedContent).toStrictEqual(content);
@@ -214,7 +214,7 @@ describe('PassCrypto', () => {
             const decryptedContent = await decryptData(
                 vaultKey.key,
                 base64StringToUint8Array(vaultUpdate.Content),
-                EncryptionTag.VaultContent
+                PassEncryptionTag.VaultContent
             );
 
             expect(decryptedContent).toStrictEqual(contentUpdate);

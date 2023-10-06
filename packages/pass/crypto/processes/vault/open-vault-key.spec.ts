@@ -1,4 +1,4 @@
-import { EncryptionTag } from '@proton/pass/types';
+import { PassEncryptionTag } from '@proton/pass/types';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import lastItem from '@proton/utils/lastItem';
 
@@ -35,7 +35,7 @@ describe('openVaultKey crypto process', () => {
         const decryptedContent = await decryptData(
             vaultKey.key,
             base64StringToUint8Array(vault.Content),
-            EncryptionTag.VaultContent
+            PassEncryptionTag.VaultContent
         );
 
         expect(vaultKey.rotation).toEqual(1);
