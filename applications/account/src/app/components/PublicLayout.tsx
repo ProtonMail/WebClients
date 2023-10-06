@@ -14,7 +14,7 @@ interface PublicLayoutProps {
 }
 
 const PublicLayout = ({ img, header, main, footer, below, className }: PublicLayoutProps) => {
-    const width = '480px';
+    const width = '30rem';
     return (
         <div className={clsx('flex flex-column flex-nowrap flex-align-items-center', className)}>
             <ProtonLogo className="mb-4 mt-7 flex-item-noshrink" />
