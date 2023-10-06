@@ -1,4 +1,4 @@
-@use 'sass:math';
+@use 'sass:map';
 
 // when updating margin sizes, please update them in Storybook accordingly
 // applications/storybook/src/stories/cssUtilities/Margin.stories.tsx
@@ -24,13 +24,6 @@ $spacings: (
 	'14': 56,
 	'auto': 'auto',
 );
-$queries: (
-	default: 'all',
-	sm: '>xsmall',
-	md: '>small',
-	lg: '>medium',
-	xl: '>large',
-);
 
 // generate css custom props
 :root {
@@ -40,6 +33,8 @@ $queries: (
 		--space-#{$spacingname}: #{pixel-to-rem($size)};
 	}
 }
+
+$dummy-map: ();
 
 // generate `margin` and `padding` classes
 $properties: (
@@ -56,74 +51,46 @@ $placements: (
 	r: 'inline-end',
 );
 
-@each $breakpointname, $query in $queries {
-	@include media($query) {
-		@each $propertyname, $property in $properties {
-			@each $placementname, $placement in $placements {
-				$cssproperty: if($placementname == 'default', $property, dash-join($property, $placement));
+@each $propertyname, $property in $properties {
+	@each $placementname, $placement in $placements {
+		$cssproperty: if($placementname == 'default', $property, dash-join($property, $placement));
 
-				@each $spacingname, $size in $spacings {
-					@if not($property == 'padding' and $spacingname == 'auto') {
-						$classname: #{if($breakpointname == 'default', '', $breakpointname + '\\\:')}#{$propertyname}#{if(
-								$placementname == 'default',
-								'',
-								$placementname
-							)}-#{$spacingname};
-
-						.#{$classname} {
-							#{$cssproperty}: #{pixel-to-rem($size)};
-						}
-					}
-				}
-
-				$classname: #{if($breakpointname == 'default', '', $breakpointname + '\\\:')}#{$propertyname}#{if(
-						$placementname == 'default',
-						'',
-						$placementname
-					)}-custom;
-				$value: #{if($breakpointname == 'default', '', $breakpointname + '-')}#{$propertyname}#{if(
-						$placementname == 'default',
-						'',
-						$placementname
-					)}-custom;
-
-				.#{$classname} {
-					#{$cssproperty}: var(--#{$value});
-				}
+		@each $spacingname, $size in $spacings {
+			@if not($property == 'padding' and $spacingname == 'auto') {
+				$classname: dash-join($propertyname + if($placementname == 'default', '', $placementname), $spacingname);
+				$value: pixel-to-rem($size);
+				$dummy-map: map.merge($dummy-map, ($classname: (#{$cssproperty}: #{$value})));
 			}
 		}
+
+		$classname: dash-join($propertyname + if($placementname == 'default', '', $placementname), 'custom');
+		$value: var(--#{'[BPN]' + $classname});
+		$dummy-map: map.merge($dummy-map, ($classname: (#{$cssproperty}: #{$value})));
 	}
 }
 
 // generate `gap` classes
-$properties: (
-	gap: 'gap',
-);
 $placements: (
 	default: '',
 	x: 'column',
 	y: 'row',
 );
 
-@each $breakpointname, $query in $queries {
-	@include media($query) {
-		@each $propertyname, $property in $properties {
-			@each $placementname, $placement in $placements {
-				@each $spacingname, $size in $spacings {
-					@if not($spacingname == 'auto') {
-						$classname: #{if($breakpointname == 'default', '', $breakpointname + '\\\:')}#{$propertyname}#{if(
-								$placementname == 'default',
-								'',
-								'-' + $placementname
-							)}-#{$spacingname};
-						$cssproperty: if($placementname == 'default', $property, dash-join($placement, $property));
+@each $placementname, $placement in $placements {
+	$cssproperty: if($placementname == 'default', 'gap', dash-join($placement, 'gap'));
 
-						.#{$classname} {
-							#{$cssproperty}: #{pixel-to-rem($size)};
-						}
-					}
-				}
-			}
+	@each $spacingname, $size in $spacings {
+		@if not($spacingname == 'auto') {
+			$classname: dash-join('gap', if($placementname == 'default', '', $placementname), $spacingname);
+			$value: pixel-to-rem($size);
+			$dummy-map: map.merge($dummy-map, ($classname: (#{$cssproperty}: #{$value})));
 		}
 	}
+
+	$classname: dash-join('gap', if($placementname == 'default', '', $placementname), 'custom');
+	$value: var(--#{'[BPN]' + $classname});
+	$dummy-map: map.merge($dummy-map, ($classname: (#{$cssproperty}: #{$value})));
 }
+
+// We serialize here to factorize media queries
+@include responsive-classes($dummy-map);

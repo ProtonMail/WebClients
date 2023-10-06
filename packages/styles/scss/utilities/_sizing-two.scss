@@ -1,4 +1,5 @@
 @use 'sass:math';
+@use 'sass:map';
 
 @function pixel-to-rem($value) {
 	@return if(type-of($value) == 'number' and unitless($value), rem($value), $value);
@@ -18,59 +19,39 @@ $directions: (
 	h: block,
 );
 $boudaries: (min, '', max);
-$queries: (
-	default: 'all',
-	sm: '>xsmall',
-	md: '>small',
-	lg: '>medium',
-	xl: '>large',
-);
+$dummy-map: ();
 
-@each $breakpointname, $query in $queries {
-	@include media($query) {
-		@each $direction, $property in $directions {
-			@each $boundary in $boudaries {
-				$propname: dash-join($boundary, $property, 'size');
-				@each $sizingname, $size in $sizings {
-					@if $sizingname != 'auto' or $sizingname == 'auto' and $boundary == '' {
-						$classname: #{if($breakpointname == 'default', '', $breakpointname + '\\\:')}#{dash-join(
-								$boundary,
-								$direction,
-								$sizingname
-							)};
+@each $direction, $property in $directions {
+	@each $boundary in $boudaries {
+		$propname: dash-join($boundary, $property, 'size');
 
-						.#{$classname} {
-							#{$propname}: #{pixel-to-rem($size)};
-						}
-					}
-				}
-
-				$classname: #{if($breakpointname == 'default', '', $breakpointname + '\\\:')}#{dash-join(
-						$boundary,
-						$direction,
-						'custom'
-					)};
-				$value: #{if($breakpointname == 'default', '', $breakpointname + '-')}#{dash-join(
-						$boundary,
-						$direction,
-						'custom'
-					)};
-
-				.#{$classname} {
-					&#{&} {
-						// Specificity fail 😒
-						#{$propname}: var(--#{$value});
-					}
-				}
+		@each $sizingname, $size in $sizings {
+			@if $sizingname != 'auto' or $sizingname == 'auto' and $boundary == '' {
+				$classname: dash-join($boundary, $direction, $sizingname);
+				$value: pixel-to-rem($size);
+				$dummy-map: map.merge($dummy-map, (#{$classname}: (#{$propname}: #{$value})));
 			}
 		}
+
+		$classname: dash-join($boundary, $direction, 'custom');
+		$value: var(--#{'[BPN]' + $classname});
+		$dummy-map: map.merge($dummy-map, (#{$classname}: (#{$propname}: #{$value})));
 	}
 }
 
 @for $i from 2 through 6 {
 	@for $j from 1 through $i - 1 {
-		@include responsive-classes(w-#{$j}\/#{$i}) {
-			inline-size: #{math.div($j, $i) * 100%};
-		}
+		$dummy-map: map.merge(
+			$dummy-map,
+			(
+				w-#{$j}\/#{$i}:
+					(
+						inline-size: #{math.div($j, $i) * 100%},
+					)
+			)
+		);
 	}
 }
+
+// We need to serialize the classes to avoid any cascade ordering issues
+@include responsive-classes($dummy-map);
