@@ -10,8 +10,4 @@
 	font-size: rem(14);
 	color: var(--text-norm);
 	background: var(--background-weak);
-
-	& > span {
-		max-inline-size: 26em;
-	}
 }
