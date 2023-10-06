@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import { type PendingInvite } from '@proton/pass/types/data/invites';
 import type {
     InviteAcceptIntent,
@@ -33,12 +35,18 @@ export const createInvite = async ({ shareId, email, role }: InviteCreateIntent)
     api({
         url: `pass/v1/share/${shareId}/invite`,
         method: 'post',
-        data: await PassCrypto.createVaultInvite({
-            shareId,
-            email,
-            role,
-            inviteePublicKey: await getPrimaryPublicKeyForEmail(email),
-        }),
+        data: await (async () => {
+            try {
+                return await PassCrypto.createVaultInvite({
+                    shareId,
+                    email,
+                    role,
+                    inviteePublicKey: await getPrimaryPublicKeyForEmail(email),
+                });
+            } catch {
+                throw new Error(c('Error').t`Cannot send invitation to this address at the moment`);
+            }
+        })(),
     });
 
 export const resendInvite = async ({ shareId, inviteId }: InviteResendIntent) =>
