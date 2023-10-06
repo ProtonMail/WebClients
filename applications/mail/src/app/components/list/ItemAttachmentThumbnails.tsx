@@ -103,14 +103,17 @@ const ItemAttachmentThumbnails = ({
 
     return (
         <>
-            <div className={clsx('flex flex-nowrap gap-2 attachment-thumbnail-grid', className)}>
+            <div
+                data-testid="attachment-thumbnails"
+                className={clsx('flex flex-nowrap gap-2 attachment-thumbnail-grid', className)}
+            >
                 {attachmentsMetadata?.slice(0, maxAttachment).map((attachmentMetadata) => {
                     return (
                         <AttachmentThumbnail
                             attachmentMetadata={attachmentMetadata}
                             onClick={handlePreview}
                             key={attachmentMetadata.ID}
-                            data-testid="attachment-thumbnails"
+                            data-testid="attachment-thumbnail"
                         />
                     );
                 })}
@@ -118,7 +121,7 @@ const ItemAttachmentThumbnails = ({
                 {otherAttachmentNumber > 0 && (
                     <span
                         className="rounded text-sm flex flex-item-noshrink flex-align-items-center flex-nowrap attachment-thumbnail attachment-thumbnail--number"
-                        data-testid="attachment-thumbnails:other-attachment-number"
+                        data-testid="attachment-thumbnail:other-attachment-number"
                     >
                         <Tooltip title={otherAttachmentsTitle} originalPlacement="bottom">
                             <span className="lh100">+{otherAttachmentNumber}</span>

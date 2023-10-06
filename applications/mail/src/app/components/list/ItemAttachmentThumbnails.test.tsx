@@ -102,7 +102,7 @@ describe('ItemAttachmentThumbnails', () => {
         expect(screen.queryByText(`Attachment-`)).toBeNull();
 
         // +X should not be displayed
-        expect(screen.queryByTestId('attachment-thumbnails:other-attachment-number')).toBeNull();
+        expect(screen.queryByTestId('attachment-thumbnail:other-attachment-number')).toBeNull();
 
         // Paper clip icon is not displayed
         expect(screen.queryByTestId('item-attachment-icon-paper-clip')).toBeNull();
@@ -118,7 +118,7 @@ describe('ItemAttachmentThumbnails', () => {
         // We received the metadata for 5 of them, and we can display 2 thumbnails
         await setup(attachmentsMetadata, elementTotalAttachments);
 
-        const items = screen.getAllByTestId('attachment-thumbnails');
+        const items = screen.getAllByTestId('attachment-thumbnail');
         // 2 first attachments are displayed
         for (let i = 0; i < MAX_COLUMN_ATTACHMENT_THUMBNAILS; i++) {
             expect(items[i].textContent).toEqual(`Attachment-${i}.png`);
@@ -147,7 +147,7 @@ describe('ItemAttachmentThumbnails', () => {
         // We received the metadata for 1 of them, which will display 1 thumbnail
         await setup(attachmentsMetadata, elementTotalAttachments);
 
-        const items = screen.getAllByTestId('attachment-thumbnails');
+        const items = screen.getAllByTestId('attachment-thumbnail');
         // 2 first attachments are displayed
         for (let i = 0; i < numberOfReceivedMetadata; i++) {
             // use title because text is split in multiple elements
@@ -160,7 +160,7 @@ describe('ItemAttachmentThumbnails', () => {
         }
 
         // +X should not be displayed
-        expect(screen.queryByTestId('attachment-thumbnails:other-attachment-number')).toBeNull();
+        expect(screen.queryByTestId('attachment-thumbnail:other-attachment-number')).toBeNull();
 
         // Paper clip icon is not displayed
         expect(screen.queryByTestId('item-attachment-icon-paper-clip')).toBeNull();
@@ -177,7 +177,7 @@ describe('ItemAttachmentThumbnails', () => {
         expect(screen.queryByText(`Attachment-`)).toBeNull();
 
         // +X should not be displayed
-        expect(screen.queryByTestId('attachment-thumbnails:other-attachment-number')).toBeNull();
+        expect(screen.queryByTestId('attachment-thumbnail:other-attachment-number')).toBeNull();
 
         // Paper clip icons are displayed
         expect(screen.getAllByTestId('item-attachment-icon-paper-clip').length).toBe(2);
@@ -207,7 +207,7 @@ describe('ItemAttachmentThumbnails', () => {
 
         await setup(attachmentsMetadata, numAttachments);
 
-        const items = screen.getAllByTestId('attachment-thumbnails');
+        const items = screen.getAllByTestId('attachment-thumbnail');
         for (let i = 0; i < 2; i++) {
             expect(items[i].textContent).toEqual(`Attachment-${i}.${extensions[i]}`);
 
@@ -311,7 +311,7 @@ describe('ItemAttachmentThumbnails - Preview', () => {
 
         await setup(attachmentsMetadata, numAttachments);
 
-        const item = screen.getByTestId('attachment-thumbnails');
+        const item = screen.getByTestId('attachment-thumbnail');
 
         fireEvent.click(item);
         await tick();
@@ -333,7 +333,7 @@ describe('ItemAttachmentThumbnails - Preview', () => {
 
         await setup(attachmentsMetadata, numAttachments);
 
-        const item = screen.getByTestId('attachment-thumbnails');
+        const item = screen.getByTestId('attachment-thumbnail');
 
         fireEvent.click(item);
         await tick();
@@ -389,7 +389,7 @@ describe('ItemAttachmentThumbnails - Preview', () => {
 
         await setup(attachmentsMetadata, numAttachments);
 
-        const item = screen.getAllByTestId('attachment-thumbnails');
+        const item = screen.getAllByTestId('attachment-thumbnail');
 
         // Preview first item
         fireEvent.click(item[0]);
@@ -416,7 +416,7 @@ describe('ItemAttachmentThumbnails - Preview', () => {
 
         await setup(attachmentsMetadata, numAttachments);
 
-        const item = screen.getByTestId('attachment-thumbnails');
+        const item = screen.getByTestId('attachment-thumbnail');
 
         fireEvent.click(item);
         await tick();
@@ -440,7 +440,7 @@ describe('ItemAttachmentThumbnails - Preview', () => {
 
         await setup(attachmentsMetadata, numAttachments);
 
-        const item = screen.getAllByTestId('attachment-thumbnails');
+        const item = screen.getAllByTestId('attachment-thumbnail');
 
         // Preview first item
         fireEvent.click(item[0]);
@@ -488,7 +488,7 @@ describe('ItemAttachmentThumbnails - Preview', () => {
 
         await setup(attachmentsMetadata, numAttachments);
 
-        const item = screen.getByTestId('attachment-thumbnails');
+        const item = screen.getByTestId('attachment-thumbnail');
 
         fireEvent.click(item);
         await tick();
@@ -513,7 +513,7 @@ describe('ItemAttachmentThumbnails - Preview', () => {
 
         await setup(attachmentsMetadata, numAttachments);
 
-        const item = screen.getByTestId('attachment-thumbnails');
+        const item = screen.getByTestId('attachment-thumbnail');
 
         fireEvent.click(item);
         await tick();
