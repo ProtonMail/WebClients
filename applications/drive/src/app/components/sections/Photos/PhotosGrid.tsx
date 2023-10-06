@@ -10,11 +10,23 @@ type Props = {
     data: PhotoGridItem[];
     onItemRender: (linkId: string) => void;
     onItemRenderLoadedLink: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
+    selection: boolean[];
+    hasSelection: boolean;
     isLoadingMore: boolean;
     onItemClick: (itemIndex: number) => void;
+    onSelectChange: (index: number, isSelected: boolean) => void;
 };
 
-export const PhotosGrid: FC<Props> = ({ data, onItemRender, onItemRenderLoadedLink, isLoadingMore, onItemClick }) => {
+export const PhotosGrid: FC<Props> = ({
+    data,
+    onItemRender,
+    onItemRenderLoadedLink,
+    isLoadingMore,
+    onItemClick,
+    onSelectChange,
+    selection,
+    hasSelection,
+}) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const containerRect = useElementRect(containerRef);
 
@@ -103,6 +115,31 @@ export const PhotosGrid: FC<Props> = ({ data, onItemRender, onItemRenderLoadedLi
                 lastY = y;
 
                 if (itemShouldRender(y, scrollPosition)) {
+                    let isGroupSelected: boolean | 'some' = false;
+
+                    if (hasSelection) {
+                        let total = 0;
+                        let count = 0;
+
+                        for (let index = i + 1; index < data.length; index++) {
+                            if (typeof data[index] === 'string') {
+                                break;
+                            }
+
+                            total++;
+                            if (selection[index]) {
+                                count++;
+                            } else if (count > 0) {
+                                isGroupSelected = 'some';
+                                break;
+                            }
+                        }
+
+                        if (count === total) {
+                            isGroupSelected = true;
+                        }
+                    }
+
                     items.push(
                         <PhotosGroup
                             key={item}
@@ -115,6 +152,10 @@ export const PhotosGrid: FC<Props> = ({ data, onItemRender, onItemRenderLoadedLi
                             text={item}
                             // Do not show separator on first item
                             showSeparatorLine={i > 0}
+                            onSelect={(isSelected) => {
+                                onSelectChange(i, isSelected);
+                            }}
+                            selected={isGroupSelected}
                         />
                     );
                 }
@@ -132,7 +173,17 @@ export const PhotosGrid: FC<Props> = ({ data, onItemRender, onItemRenderLoadedLi
                             photo={item}
                             onRender={onItemRender}
                             onRenderLoadedLink={onItemRenderLoadedLink}
-                            onClick={() => onItemClick(i)}
+                            onClick={() => {
+                                if (hasSelection) {
+                                    onSelectChange(i, !selection[i]);
+                                } else {
+                                    onItemClick(i);
+                                }
+                            }}
+                            onSelect={(isSelected) => {
+                                onSelectChange(i, isSelected);
+                            }}
+                            selected={!!selection[i]}
                             style={{
                                 position: 'absolute',
                                 width: itemWidth,
@@ -143,6 +194,7 @@ export const PhotosGrid: FC<Props> = ({ data, onItemRender, onItemRenderLoadedLi
                                     Math.round(((i % animationOffset) / (animationOffset / 2)) * 10) / 10
                                 }s`,
                             }}
+                            showCheckbox={hasSelection}
                         />
                     );
                 }
@@ -160,7 +212,7 @@ export const PhotosGrid: FC<Props> = ({ data, onItemRender, onItemRenderLoadedLi
         };
 
         return [items, innerStyle];
-    }, [data, dimensions, scrollPosition]);
+    }, [data, selection, dimensions, scrollPosition]);
 
     return (
         <div className="p-4 overflow-auto" ref={containerRef} onScroll={handleScroll}>
