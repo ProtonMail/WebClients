@@ -13,11 +13,12 @@ export const vaultTransferOwnerRequest = (userShareId: string) => `vault::transf
 export const items = () => 'items';
 export const importItems = () => `import-items`;
 
-export const aliasOptions = () => `alias-options`;
-export const aliasDetails = (aliasEmail: string) => `alias-details-${aliasEmail}`;
 export const unlockSession = `unlock-session`;
 export const settingsEdit = (group: string) => `settings::edit::${group}`;
 export const reportProblem = `report-problem-request`;
+
+export const aliasOptionsRequest = (shareId: string) => `alias::options::${shareId}`;
+export const aliasDetailsRequest = (aliasEmail: string) => `alias::details::${aliasEmail}`;
 
 export const shareRemoveMemberRequest = (userShareId: string) => `share::members::remove::${userShareId}`;
 export const shareEditMemberRoleRequest = (userShareId: string) => `share::members::edit-role::${userShareId}`;
