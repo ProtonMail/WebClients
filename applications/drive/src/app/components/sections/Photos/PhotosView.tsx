@@ -34,6 +34,7 @@ export const PhotosView: FC<void> = () => {
         },
         [shareId]
     );
+
     const gridPhotoLinkIndices: number[] = useMemo(
         () =>
             photos.reduce<number[]>((previousValue, currentValue, currentIndex) => {
@@ -44,6 +45,14 @@ export const PhotosView: FC<void> = () => {
             }, []),
         [photos]
     );
+
+    const handleItemClick = useCallback(
+        (index: number) => {
+            setPreviewIndex(gridPhotoLinkIndices.findIndex((item) => item === index));
+        },
+        [gridPhotoLinkIndices]
+    );
+
     const rootRef = useRef<HTMLDivElement>(null);
 
     if (isLoading && !isLoadingMore) {
@@ -107,7 +116,7 @@ export const PhotosView: FC<void> = () => {
                         data={photos}
                         onItemRender={handleItemRender}
                         isLoadingMore={isLoadingMore}
-                        onItemClick={setPreviewIndex}
+                        onItemClick={handleItemClick}
                     />
                 )}
             </UploadDragDrop>
