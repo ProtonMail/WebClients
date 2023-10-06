@@ -4,7 +4,7 @@ import { cancel, fork, select, take, takeLatest } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/crypto';
 import { CACHE_SALT_LENGTH, encryptData, getCacheEncryptionKey } from '@proton/pass/crypto/utils';
-import { EncryptionTag } from '@proton/pass/types';
+import { PassEncryptionTag } from '@proton/pass/types';
 import { or } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
 import { objectDelete } from '@proton/pass/utils/object';
@@ -36,7 +36,7 @@ function* cacheWorker(action: AnyAction, { getWorkerState, getAuth, setCache }: 
             const encryptedData: Uint8Array = yield encryptData(
                 key,
                 encoder.encode(stringifiedState),
-                EncryptionTag.Cache
+                PassEncryptionTag.Cache
             );
 
             const workerSnapshot = PassCrypto.serialize();
@@ -45,7 +45,7 @@ function* cacheWorker(action: AnyAction, { getWorkerState, getAuth, setCache }: 
             const encryptedWorkerSnapshot: Uint8Array = yield encryptData(
                 key,
                 stringToUint8Array(stringifiedSnapshot),
-                EncryptionTag.Cache
+                PassEncryptionTag.Cache
             );
 
             logger.info(`[Saga::Cache] Caching store and crypto state @ action["${action.type}"]`);

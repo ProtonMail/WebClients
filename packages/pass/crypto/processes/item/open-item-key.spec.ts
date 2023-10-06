@@ -1,5 +1,5 @@
 import type { ItemKeyResponse, VaultKey } from '@proton/pass/types';
-import { EncryptionTag } from '@proton/pass/types';
+import { PassEncryptionTag } from '@proton/pass/types';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 import { encryptData, generateKey, getSymmetricKey } from '../../utils/crypto-helpers';
@@ -19,7 +19,7 @@ describe('openItemKey crypto process', () => {
         };
 
         const encryptedItemKey: ItemKeyResponse = {
-            Key: uint8ArrayToBase64String(await encryptData(vaultKey.key, itemKey, EncryptionTag.ItemKey)),
+            Key: uint8ArrayToBase64String(await encryptData(vaultKey.key, itemKey, PassEncryptionTag.ItemKey)),
             KeyRotation: 42,
         };
 

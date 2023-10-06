@@ -1,5 +1,5 @@
-import { CONTENT_FORMAT_VERSION, EncryptionTag } from '@proton/pass/types';
 import type { VaultKey, VaultUpdateRequest } from '@proton/pass/types';
+import { CONTENT_FORMAT_VERSION, PassEncryptionTag } from '@proton/pass/types';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 import { encryptData } from '../../utils/crypto-helpers';
@@ -15,7 +15,7 @@ export const updateVault = async ({ vaultKey, content }: UpdateVaultProcessParam
         throw new PassCryptoVaultError('Vault content cannot be empty');
     }
 
-    const encryptedVaultContent = await encryptData(vaultKey.key, content, EncryptionTag.VaultContent);
+    const encryptedVaultContent = await encryptData(vaultKey.key, content, PassEncryptionTag.VaultContent);
 
     return {
         ContentFormatVersion: CONTENT_FORMAT_VERSION,
