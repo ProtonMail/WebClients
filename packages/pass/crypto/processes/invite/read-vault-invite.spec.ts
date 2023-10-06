@@ -1,6 +1,6 @@
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
-import { EncryptionTag } from '../../../types';
+import { PassEncryptionTag } from '../../../types';
 import { encryptData } from '../../utils';
 import {
     createRandomKey,
@@ -22,7 +22,7 @@ describe('read vault invite content', () => {
 
         const vaultKey = await createRandomVaultKey(0);
         const vaultContent = randomContents();
-        const encryptedVaultContent = await encryptData(vaultKey.key, vaultContent, EncryptionTag.VaultContent);
+        const encryptedVaultContent = await encryptData(vaultKey.key, vaultContent, PassEncryptionTag.VaultContent);
 
         const [inviteKey] = await createInviteKeys({
             targetKeys: [vaultKey],

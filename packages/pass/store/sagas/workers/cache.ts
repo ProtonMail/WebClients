@@ -1,6 +1,6 @@
 import { decryptData, getCacheEncryptionKey } from '@proton/pass/crypto/utils';
 import type { Maybe, PassCryptoSnapshot, SerializedCryptoContext } from '@proton/pass/types';
-import { EncryptionTag } from '@proton/pass/types';
+import { PassEncryptionTag } from '@proton/pass/types';
 import { deobfuscateItem, obfuscateItem } from '@proton/pass/utils/pass/items';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
@@ -19,7 +19,7 @@ const decrypt = async <T extends object>(options: {
 
     try {
         const encryptedData = stringToUint8Array(options.data);
-        const decryptedData = await decryptData(options.key, encryptedData, EncryptionTag.Cache);
+        const decryptedData = await decryptData(options.key, encryptedData, PassEncryptionTag.Cache);
 
         const decoder = new TextDecoder();
         return JSON.parse(

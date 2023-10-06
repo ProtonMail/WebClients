@@ -1,5 +1,5 @@
 import type { ItemRevisionContentsResponse, OpenedItem, VaultKey } from '@proton/pass/types';
-import { EncryptionTag } from '@proton/pass/types';
+import { PassEncryptionTag } from '@proton/pass/types';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 import { decryptData } from '../../utils/crypto-helpers';
@@ -34,7 +34,7 @@ export const openItem = async ({ encryptedItem, vaultKey }: OpenItemKeyProcessPa
     const decryptedContent = await decryptData(
         itemKey.key,
         base64StringToUint8Array(encryptedItem.Content),
-        EncryptionTag.ItemContent
+        PassEncryptionTag.ItemContent
     );
 
     return {
