@@ -71,55 +71,6 @@
 	block-size: 1px;
 }
 
-/* table-design in CSS */
-.row {
-	display: table;
-	table-layout: fixed;
-}
-
-.inline-row {
-	display: inline-table;
-	table-layout: fixed;
-}
-
-.line {
-	display: table-row;
-}
-
-.col {
-	display: table-cell;
-	vertical-align: top;
-}
-
-.col-no-align {
-	display: table-cell;
-}
-
-@include responsive-classes(block) {
-	display: block;
-}
-
-@include responsive-classes(inline) {
-	display: inline;
-}
-
-@include responsive-classes(inline-block) {
-	display: inline-block;
-}
-
-@include responsive-classes(hidden) {
-	display: none;
-}
-
-[hidden],
-.hidden-empty:empty {
-	display: none;
-}
-
-.inline-grid-container {
-	display: inline-grid;
-}
-
 .list-2columns {
 	column-count: 2;
 	column-gap: 0;
