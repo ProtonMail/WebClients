@@ -133,6 +133,7 @@ const SidebarItem = ({
     return (
         <SidebarListItem
             className={clsx([dragOver && 'navigation__dragover', 'hide-on-hover-container opacity-on-hover-container'])}
+            data-testid={`sidebar-label:${text}`}
         >
             <SidebarListItemLink
                 aria-current={ariaCurrent}
