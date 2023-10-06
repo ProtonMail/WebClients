@@ -13,12 +13,15 @@ import UploadDragDrop from '../../uploads/UploadDragDrop/UploadDragDrop';
 import ToolbarRow from '../ToolbarRow/ToolbarRow';
 import { PhotosEmptyView } from './PhotosEmptyView';
 import { PhotosGrid } from './PhotosGrid';
+import { usePhotosSelection } from './hooks';
 import { PhotosToolbar } from './toolbar';
+import { PhotosClearSelectionButton } from './toolbar/PhotosClearSelectionButton';
 
 export const PhotosView: FC<void> = () => {
     useAppTitle(c('Title').t`Photos`);
 
-    const { shareId, linkId, photos, isLoading, isLoadingMore, loadPhotoLink } = usePhotosView();
+    const { shareId, linkId, photos, isLoading, isLoadingMore, loadPhotoLink, removePhotosFromCache } = usePhotosView();
+    const { selection, setSelected, clearSelection } = usePhotosSelection();
 
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [previewIndex, setPreviewIndex] = useState<number>(-1);
@@ -26,8 +29,8 @@ export const PhotosView: FC<void> = () => {
     const isEmpty = photos.length === 0;
     const thumbnails = useThumbnailsDownload();
 
-    const handleItemRender = (itemLinkId: string) => {
-        loadPhotoLink(new AbortController().signal, itemLinkId);
+    const handleItemRender = async (itemLinkId: string) => {
+        await loadPhotoLink(new AbortController().signal, itemLinkId);
     };
 
     const handleItemRenderLoadedLink = (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
@@ -54,7 +57,64 @@ export const PhotosView: FC<void> = () => {
         [gridPhotoLinkIndices]
     );
 
-    const rootRef = useRef<HTMLDivElement>(null);
+    const handleSelection = useCallback(
+        (index: number, isSelected: boolean) => {
+            if (typeof photos[index] === 'string') {
+                const indices = [];
+
+                for (let i = index + 1; i < photos.length; i++) {
+                    if (typeof photos[i] === 'string') {
+                        break;
+                    }
+
+                    indices.push(i);
+                }
+
+                setSelected(indices, isSelected);
+            } else {
+                setSelected([index], isSelected);
+            }
+        },
+        [setSelected, photos]
+    );
+
+    const selectedItems = useMemo(
+        () =>
+            selection.reduce<PhotoLink[]>((acc, selected, index) => {
+                const item = photos[index];
+                if (selected && typeof item !== 'string') {
+                    acc.push(item);
+                }
+                return acc;
+            }, []),
+        [photos, selection]
+    );
+    const selectedCount = selectedItems.length;
+
+    const handleToolbarPreview = useCallback(() => {
+        const index = selection.findIndex((isSelected) => isSelected === true);
+
+        if (index) {
+            handleItemClick(index);
+        }
+    }, [selectedItems]);
+
+    const handleTrashed = useCallback(
+        (linkIds: string[]) => {
+            removePhotosFromCache(linkIds);
+            setSelected(
+                linkIds.map((linkId) =>
+                    photos.findIndex((item) => {
+                        return typeof item !== 'string' && item.linkId === linkId;
+                    })
+                ),
+                false
+            );
+        },
+        [removePhotosFromCache, setSelected, photos]
+    );
+
+    const previewRef = useRef<HTMLDivElement>(null);
 
     if (isLoading && !isLoadingMore) {
         return <Loader />;
@@ -64,32 +124,31 @@ export const PhotosView: FC<void> = () => {
         return <PhotosEmptyView />;
     }
 
-    const selectedItem = photos[gridPhotoLinkIndices[previewIndex]] as PhotoLink;
+    const previewItem = photos[gridPhotoLinkIndices[previewIndex]] as PhotoLink;
 
     return (
         <>
             {detailsModal}
-            {selectedItem && (
+            {previewItem && (
                 <PortalPreview
-                    ref={rootRef}
+                    ref={previewRef}
                     shareId={shareId}
-                    linkId={selectedItem.linkId}
-                    revisionId={selectedItem.activeRevision.id}
+                    linkId={previewItem.linkId}
+                    revisionId={previewItem.activeRevision.id}
                     key="portal-preview-photos"
                     open={previewIndex !== -1}
-                    date={selectedItem.activeRevision.photo?.captureTime}
+                    date={previewItem.activeRevision.photo.captureTime}
                     onDetails={() =>
-                        selectedItem.activeRevision?.photo?.linkId &&
                         showDetailsModal({
                             shareId,
-                            linkId: selectedItem.activeRevision?.photo?.linkId,
+                            linkId: previewItem.activeRevision.photo.linkId,
                         })
                     }
                     navigationControls={
                         <NavigationControl
                             current={previewIndex + 1}
                             total={gridPhotoLinkIndices.length}
-                            rootRef={rootRef}
+                            rootRef={previewRef}
                             onPrev={() => setPreviewIndex(previewIndex - 1)}
                             onNext={() => setPreviewIndex(previewIndex + 1)}
                         />
@@ -106,8 +165,27 @@ export const PhotosView: FC<void> = () => {
                 className="flex flex-column flex-nowrap flex-item-fluid"
             >
                 <ToolbarRow
-                    titleArea={<span className="text-strong pl-1">{c('Title').t`Photos`}</span>}
-                    toolbar={<PhotosToolbar shareId={shareId} linkId={linkId} />}
+                    titleArea={
+                        <span className="text-strong pl-1">
+                            {selectedCount > 0 ? (
+                                <div className="flex gap-2">
+                                    <PhotosClearSelectionButton onClick={clearSelection} />
+                                    {c('Info').jt`${selectedCount} selected`}
+                                </div>
+                            ) : (
+                                c('Title').t`Photos`
+                            )}
+                        </span>
+                    }
+                    toolbar={
+                        <PhotosToolbar
+                            shareId={shareId}
+                            linkId={linkId}
+                            selectedItems={selectedItems}
+                            onPreview={handleToolbarPreview}
+                            onTrash={handleTrashed}
+                        />
+                    }
                 />
 
                 {isEmpty ? (
@@ -119,6 +197,9 @@ export const PhotosView: FC<void> = () => {
                         onItemRenderLoadedLink={handleItemRenderLoadedLink}
                         isLoadingMore={isLoadingMore}
                         onItemClick={handleItemClick}
+                        selection={selection}
+                        hasSelection={selectedCount > 0}
+                        onSelectChange={handleSelection}
                     />
                 )}
             </UploadDragDrop>
