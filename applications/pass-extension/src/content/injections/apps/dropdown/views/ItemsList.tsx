@@ -6,12 +6,14 @@ import { c } from 'ttag';
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
 import { createTelemetryEvent } from '@proton/pass/telemetry/events';
 import { type SafeLoginItem, WorkerMessageType } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { truthy } from '@proton/pass/utils/fp';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { navigateToUpgrade } from '../../../../../shared/components/upgrade/UpgradeButton';
+import { useFeatureFlag } from '../../../../../shared/hooks/useFeatureFlag';
 import type { IFrameCloseOptions, IFrameMessage } from '../../../../types';
 import { IFrameMessageType } from '../../../../types';
 import { useIFrameContext } from '../../context/IFrameContextProvider';
@@ -28,6 +30,7 @@ type Props = {
 
 export const ItemsList: VFC<Props> = ({ items, needsUpgrade, visible, onMessage, onClose }) => {
     const { settings } = useIFrameContext();
+    const primaryVaultDisabled = useFeatureFlag(PassFeature.PassRemovePrimaryVault);
 
     useEffect(() => {
         if (visible) {
@@ -51,8 +54,11 @@ export const ItemsList: VFC<Props> = ({ items, needsUpgrade, visible, onMessage,
                         icon="arrow-out-square"
                         title={c('Info').t`Upgrade ${PASS_APP_NAME}`}
                         subTitle={
-                            <span className="text-sm block">{c('Warning')
-                                .t`Your plan only allows you to autofill from your primary vault`}</span>
+                            <span className="text-sm block">
+                                {primaryVaultDisabled
+                                    ? c('Warning').t`Your plan only allows you to autofill from your first two vaults`
+                                    : c('Warning').t`Your plan only allows you to autofill from your primary vault`}
+                            </span>
                         }
                         onClick={navigateToUpgrade}
                         autogrow
