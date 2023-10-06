@@ -10,42 +10,42 @@ import type { Maybe } from '@proton/pass/types';
 /* TODO: move this to shared components */
 import { Field } from '../../../popup/components/Field/Field';
 import { VaultSelectField } from '../../../popup/components/Field/VaultSelectField';
-import { SettingsPanel } from './SettingsPanel';
 
-import './PrimaryVault.scss';
+import './AutosaveVault.scss';
 
-type FormValues = { primaryVaultId: Maybe<string> };
+type FormValues = { autosaveVaultId: Maybe<string> };
 
-export const PrimaryVault: VFC = () => {
+export const AutosaveVault: VFC = () => {
     const dispatch = useDispatch();
     const allVaults = useSelector(selectAllVaults);
-    const primaryVaultId = useSelector(selectPrimaryVault).shareId;
+    const autosaveVaultId = useSelector(selectPrimaryVault).shareId;
 
     const form = useFormik<FormValues>({
-        initialValues: { primaryVaultId },
+        initialValues: { autosaveVaultId },
         enableReinitialize: true,
         onSubmit: async (values) => {
-            const match = allVaults.find(({ shareId }) => shareId === values.primaryVaultId);
+            const match = allVaults.find(({ shareId }) => shareId === values.autosaveVaultId);
 
-            if (match && match.shareId !== primaryVaultId) {
+            if (match && match.shareId !== autosaveVaultId) {
                 dispatch(vaultSetPrimaryIntent({ id: match.shareId, name: match.content.name }));
             }
         },
     });
 
     return (
-        <SettingsPanel title={c('Label').t`Vaults`}>
+        <div>
+            <hr className="my-4 border-weak" />
             <FormikProvider value={form}>
                 <Form>
                     <Field
-                        name="primaryVaultId"
-                        className="pass-primary-vault-select-field pass-input-group--no-focus"
+                        name="autosaveVaultId"
+                        className="pass-autosave-vault-select-field pass-input-group--no-focus"
                         component={VaultSelectField}
-                        label={c('Label').t`Primary vault`}
+                        label={c('Label').t`Autosave vault`}
                         onValue={() => form.handleSubmit()}
                     />
                 </Form>
             </FormikProvider>
-        </SettingsPanel>
+        </div>
     );
 };

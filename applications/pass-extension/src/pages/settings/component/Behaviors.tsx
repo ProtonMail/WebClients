@@ -1,3 +1,4 @@
+import type { ReactElement } from 'react';
 import { type VFC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -12,6 +13,7 @@ import type { RecursivePartial } from '@proton/pass/types';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
+import { AutosaveVault } from './AutosaveVault';
 import { PauseList } from './PauseList';
 import { SettingsPanel } from './SettingsPanel';
 
@@ -27,6 +29,7 @@ type SettingsSection = {
     label: string;
     description?: string;
     settings: SettingDefinition[];
+    extra?: ReactElement;
 };
 
 const getSettings = (
@@ -64,6 +67,7 @@ const getSettings = (
                 onChange: (checked) => onSettingsUpdate({ autosave: { prompt: checked } }),
             },
         ],
+        extra: <AutosaveVault />,
     },
     {
         label: c('Label').t`Autosuggest`,
@@ -122,6 +126,7 @@ export const Behaviors: VFC = () => {
                             </span>
                         </Checkbox>
                     ))}
+                    {section.extra}
                 </SettingsPanel>
             ))}
 
