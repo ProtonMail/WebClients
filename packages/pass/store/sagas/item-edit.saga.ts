@@ -8,7 +8,7 @@ import { isEqual } from '@proton/pass/utils/set/is-equal';
 
 import { aliasDetailsSync, itemEditFailure, itemEditIntent, itemEditSuccess } from '../actions';
 import type { AliasState } from '../reducers';
-import { selectAliasOptions, selectItemByShareIdAndId, selectMailboxesForAlias } from '../selectors';
+import { selectAliasDetails, selectAliasOptions, selectItemByShareIdAndId } from '../selectors';
 import type { WorkerRootSagaOptions } from '../types';
 import { editItem, parseItemRevision } from './workers/items';
 
@@ -16,7 +16,7 @@ function* editMailboxesWorker(aliasEditIntent: ItemEditIntent<'alias'>) {
     const { itemId, shareId } = aliasEditIntent;
 
     const item: ItemRevision<'alias'> = yield select(selectItemByShareIdAndId(shareId, itemId));
-    const mailboxesForAlias: string[] = yield select(selectMailboxesForAlias(item.aliasEmail!));
+    const mailboxesForAlias: string[] = yield select(selectAliasDetails(item.aliasEmail!));
     const aliasOptions: AliasState['aliasOptions'] = yield select(selectAliasOptions);
 
     const currentMailboxIds = new Set(
@@ -52,7 +52,7 @@ function* itemEditWorker(
     const { itemId, shareId, lastRevision } = editIntent;
 
     try {
-        if (editIntent.type === 'alias') yield call(editMailboxesWorker, editIntent);
+        if (editIntent.type === 'alias' && editIntent.extraData.aliasOwner) yield call(editMailboxesWorker, editIntent);
 
         const encryptedItem: ItemRevisionContentsResponse = yield editItem(editIntent, lastRevision);
         const item: ItemRevision = yield parseItemRevision(shareId, encryptedItem);
