@@ -12,7 +12,7 @@ export const ALIAS_OPTIONS_VALIDITY_WINDOW = 10 * 60;
 function* requestAliasOptions(action: ReturnType<typeof getAliasOptionsIntent>) {
     const {
         payload: { shareId },
-        meta: { callback: onAliasOptionsIntentProcessed },
+        meta: { callback: onAliasOptionsIntentProcessed, request },
     } = action;
 
     try {
@@ -37,11 +37,11 @@ function* requestAliasOptions(action: ReturnType<typeof getAliasOptionsIntent>) 
             })),
         };
 
-        const aliasOptionsSuccessAction = getAliasOptionsSuccess({ options });
+        const aliasOptionsSuccessAction = getAliasOptionsSuccess(request.id, { options });
         yield put(aliasOptionsSuccessAction);
         onAliasOptionsIntentProcessed?.(aliasOptionsSuccessAction);
     } catch (e) {
-        const aliasOptionsFailureAction = getAliasOptionsFailure(e);
+        const aliasOptionsFailureAction = getAliasOptionsFailure(request.id, e);
         yield put(aliasOptionsFailureAction);
         onAliasOptionsIntentProcessed?.(aliasOptionsFailureAction);
     }
