@@ -42,8 +42,8 @@ const PassOnboardingVideo = () => {
             className="w-custom h-custom"
             sandbox="allow-scripts allow-same-origin"
             style={{
-                '--w-custom': '536px',
-                '--h-custom': '301px',
+                '--w-custom': '33.5rem',
+                '--h-custom': '18.8125rem',
             }}
         />
     );

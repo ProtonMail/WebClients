@@ -25,7 +25,7 @@ const DownloadClientCard = ({ title, link, items, icon }: Props) => {
     return (
         <div
             className="border rounded-lg flex flex-column flex-align-items-center flex-justify-center min-w-custom p-8"
-            style={{ '--min-w-custom': '216px' }}
+            style={{ '--min-w-custom': '13.5rem' }}
         >
             <Icon className="mb-2" size={60} name={icon} />
             <div className="mb-6">{title}</div>
