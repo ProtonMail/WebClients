@@ -6,7 +6,7 @@ import type { ItemRevision, ItemRevisionContentsResponse } from '@proton/pass/ty
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 
 import { invalidateRequest, itemCreationFailure, itemCreationIntent, itemCreationSuccess } from '../actions';
-import { aliasOptions } from '../actions/requests';
+import { aliasOptionsRequest } from '../actions/requests';
 import type { WorkerRootSagaOptions } from '../types';
 import { createAlias, createItem, createItemWithAlias, parseItemRevision } from './workers/items';
 
@@ -25,7 +25,6 @@ function* singleItemCreationWorker({ onItemsChange, telemetry }: WorkerRootSagaO
         meta: { callback: onItemCreationIntentProcessed },
     } = action;
     const { shareId, optimisticId } = createIntent;
-
     const isAlias = createIntent.type === 'alias';
 
     try {
@@ -37,7 +36,7 @@ function* singleItemCreationWorker({ onItemsChange, telemetry }: WorkerRootSagaO
 
         const itemCreationSuccessAction = itemCreationSuccess({ optimisticId, shareId, item });
         yield put(itemCreationSuccessAction);
-        yield isAlias && put(invalidateRequest(aliasOptions())); /* reset alias options */
+        yield isAlias && put(invalidateRequest(aliasOptionsRequest(shareId))); /* reset alias options */
 
         telemetry?.(createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: item.data.type }));
         onItemCreationIntentProcessed?.(itemCreationSuccessAction);
@@ -64,7 +63,7 @@ function* withAliasCreationWorker(
         const aliasItem: ItemRevision = yield parseItemRevision(shareId, encryptedAliasItem);
 
         yield put(itemCreationSuccess({ optimisticId, shareId, item: loginItem, alias: aliasItem }));
-        yield put(invalidateRequest(aliasOptions())); /* reset alias options */
+        yield put(invalidateRequest(aliasOptionsRequest(shareId))); /* reset alias options */
 
         telemetry?.(createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: loginItem.data.type }));
         telemetry?.(createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: aliasItem.data.type }));
