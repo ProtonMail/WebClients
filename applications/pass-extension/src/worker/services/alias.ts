@@ -8,6 +8,7 @@ import {
     selectAliasLimits,
     selectPrimaryVault,
 } from '@proton/pass/store';
+import { aliasOptionsRequest } from '@proton/pass/store/actions/requests';
 import type { ItemCreateIntent } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
@@ -28,7 +29,7 @@ export const createAliasService = () => {
 
         return new Promise((resolve) =>
             store.dispatch(
-                getAliasOptionsIntent({ shareId }, (result) => {
+                getAliasOptionsIntent(aliasOptionsRequest(shareId), { shareId }, (result) => {
                     if (getAliasOptionsSuccess.match(result)) {
                         const { options } = result.payload;
                         return resolve({ ok: true, needsUpgrade, options });
