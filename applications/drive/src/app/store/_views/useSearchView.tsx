@@ -97,7 +97,8 @@ export default function useSearchView(shareId: string, query: string) {
     // possible order.
     useEffect(() => {
         const ac = new AbortController();
-        void withLoading(linksListing.loadLinksMeta(ac.signal, query, shareId, sortedSearchResultIds)).catch(
+        const cache = true;
+        void withLoading(linksListing.loadLinksMeta(ac.signal, query, shareId, sortedSearchResultIds, cache)).catch(
             sendErrorReport
         );
         return () => {
