@@ -10,7 +10,13 @@ export const requestMiddleware: Middleware<{}, State> =
     (next) => {
         return (action: AnyAction) => {
             /* if no request metadata or success|failure, process action */
-            if (!isActionWithRequest(action) || action.meta.request.type !== 'start') return next(action);
+            if (
+                !isActionWithRequest(action) ||
+                action.meta.request.type !== 'start' ||
+                action.meta.request.revalidate
+            ) {
+                return next(action);
+            }
 
             const pending = selectRequest(action.meta.request.id)(getState());
 
@@ -20,7 +26,7 @@ export const requestMiddleware: Middleware<{}, State> =
                     /* if there is a request result with a maxAge property,
                      * skip the action if not invalidated */
                     const now = getEpoch();
-                    if (!action.meta.request.revalidate && pending.expiresAt && pending.expiresAt > now) return;
+                    if (pending.expiresAt && pending.expiresAt > now) return;
                     else return next(action);
                 case 'start':
                     return; /* if there is an ongoing `start`, omit this action */
