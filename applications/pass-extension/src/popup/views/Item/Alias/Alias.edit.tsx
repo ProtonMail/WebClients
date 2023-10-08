@@ -3,7 +3,7 @@ import { type VFC, useRef, useState } from 'react';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { Option } from '@proton/components';
+import { Icon, Option } from '@proton/components';
 import type { AliasMailbox } from '@proton/pass/types';
 import { type MaybeNull } from '@proton/pass/types';
 import { awaiter } from '@proton/pass/utils/fp/promises';
@@ -105,7 +105,7 @@ export const AliasEdit: VFC<ItemEditProps<'alias'>> = ({ vault, revision, onCanc
     });
 
     const mailboxes = aliasOptions.value?.mailboxes ?? [];
-    const disabledMailboxes = aliasOptions.loading || !aliasOptions || (aliasOptions.value?.mailboxes.length ?? 0) <= 1;
+    const disabledMailboxes = aliasOptions.loading || !aliasOptions;
 
     useDraftSync<EditAliasFormValues>(form, {
         type: 'alias',
@@ -162,16 +162,25 @@ export const AliasEdit: VFC<ItemEditProps<'alias'>> = ({ vault, revision, onCanc
                                     ))}
                                 </Field>
                             ) : (
-                                <ValueControl as="ul" icon="arrow-up-and-right-big" label={c('Label').t`Forwards to`}>
-                                    {loading ? (
-                                        <div className="pass-skeleton pass-skeleton--select" />
-                                    ) : (
-                                        aliasDetails.value.map(({ email }) => (
-                                            <li key={email} className="text-ellipsis">
-                                                {email}
-                                            </li>
-                                        ))
-                                    )}
+                                <ValueControl
+                                    as="ul"
+                                    icon="arrow-up-and-right-big"
+                                    label={c('Label').t`Forwards to`}
+                                    loading={loading}
+                                    extra={
+                                        !loading ? (
+                                            <em className="mt-1 text-xs color-weak flex flex-align-items-center gap-1">
+                                                <Icon name="exclamation-circle" size={16} />
+                                                <span>{c('Info').t`You cannot manage this alias`}</span>
+                                            </em>
+                                        ) : undefined
+                                    }
+                                >
+                                    {aliasDetails.value.map(({ email }) => (
+                                        <li key={email} className="text-ellipsis">
+                                            {email}
+                                        </li>
+                                    ))}
                                 </ValueControl>
                             )}
                         </FieldsetCluster>
