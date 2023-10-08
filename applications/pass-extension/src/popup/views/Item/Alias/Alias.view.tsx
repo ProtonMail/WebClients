@@ -1,23 +1,18 @@
 import { type MouseEvent, type VFC, useCallback, useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import { c, msgid } from 'ttag';
 
 import { InlineLinkButton, useNotifications } from '@proton/components';
-import {
-    getAliasDetailsIntent,
-    selectLoginItemByUsername,
-    selectMailboxesForAlias,
-    selectRequestInFlight,
-    selectRequestStatus,
-} from '@proton/pass/store';
-import * as requests from '@proton/pass/store/actions/requests';
+import { getAliasDetailsIntent, selectAliasDetails, selectLoginItemByUsername } from '@proton/pass/store';
+import { aliasDetailsRequest } from '@proton/pass/store/actions/requests';
 import { pipe } from '@proton/pass/utils/fp';
 import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
 
 import { ConfirmationModal } from '../../../../shared/components/confirmation';
 import { TextAreaReadonly } from '../../../../shared/components/fields/TextAreaReadonly';
+import { useActionWithRequest } from '../../../../shared/hooks/useActionWithRequest';
 import { useDeobfuscatedValue } from '../../../../shared/hooks/useDeobfuscatedValue';
 import type { ItemTypeViewProps } from '../../../../shared/items/types';
 import { DropdownMenuButton } from '../../../components/Dropdown/DropdownMenuButton';
@@ -27,24 +22,34 @@ import { FieldsetCluster } from '../../../components/Field/Layout/FieldsetCluste
 import { ItemViewPanel } from '../../../components/Panel/ItemViewPanel';
 
 export const AliasView: VFC<ItemTypeViewProps<'alias'>> = ({ vault, revision, ...itemViewProps }) => {
-    const { data: item, itemId, aliasEmail, createTime, modifyTime, revision: revisionNumber } = revision;
+    const history = useHistory();
+    const { createNotification } = useNotifications();
+
+    const { data: item, itemId, createTime, modifyTime, revision: revisionNumber } = revision;
     const { name } = item.metadata;
+    const { shareId } = vault;
     const { optimistic, trashed } = itemViewProps;
+    const aliasEmail = revision.aliasEmail!;
+
     const relatedLogin = useSelector(selectLoginItemByUsername(aliasEmail));
     const relatedLoginName = relatedLogin?.data.metadata.name ?? '';
     const note = useDeobfuscatedValue(item.metadata.note);
 
-    const dispatch = useDispatch();
-    const history = useHistory();
+    const getAliasDetails = useActionWithRequest({
+        action: getAliasDetailsIntent,
+        requestId: aliasDetailsRequest(aliasEmail),
+        onFailure: () => {
+            createNotification({
+                type: 'warning',
+                text: c('Warning').t`Cannot retrieve mailboxes for this alias right now`,
+            });
+        },
+    });
 
-    const { createNotification } = useNotifications();
-    const mailboxesForAlias = useSelector(selectMailboxesForAlias(aliasEmail!));
-    const aliasDetailsLoading = useSelector(selectRequestInFlight(requests.aliasDetails(aliasEmail!)));
-    const aliasDetailsRequestStatus = useSelector(selectRequestStatus(requests.aliasDetails(aliasEmail!)));
+    const mailboxesForAlias = useSelector(selectAliasDetails(aliasEmail!));
 
     const [confirmTrash, setConfirmTrash] = useState(false);
-    const ready = !aliasDetailsLoading && mailboxesForAlias !== undefined;
-    const requestFailure = aliasDetailsRequestStatus === 'failure' && mailboxesForAlias === undefined;
+    const ready = !getAliasDetails.loading && mailboxesForAlias !== undefined;
 
     const createLoginFromAlias = (evt: MouseEvent) => {
         evt.stopPropagation();
@@ -53,19 +58,10 @@ export const AliasView: VFC<ItemTypeViewProps<'alias'>> = ({ vault, revision, ..
     };
 
     useEffect(() => {
-        if (!optimistic && mailboxesForAlias === undefined) {
-            dispatch(getAliasDetailsIntent({ shareId: vault.shareId, itemId, aliasEmail: aliasEmail! }));
+        if (!optimistic && (mailboxesForAlias?.length ?? 0) === 0) {
+            getAliasDetails.dispatch({ shareId, itemId, aliasEmail });
         }
-    }, [optimistic, vault, itemId, mailboxesForAlias]);
-
-    useEffect(() => {
-        if (requestFailure) {
-            createNotification({
-                type: 'warning',
-                text: c('Warning').t`Cannot retrieve mailboxes for this alias right now`,
-            });
-        }
-    }, [requestFailure]);
+    }, [optimistic, shareId, itemId, mailboxesForAlias]);
 
     const handleMoveToTrashClick = useCallback(() => {
         if (!relatedLogin) return itemViewProps.handleMoveToTrashClick();
@@ -109,14 +105,12 @@ export const AliasView: VFC<ItemTypeViewProps<'alias'>> = ({ vault, revision, ..
                         : {})}
                 />
 
-                <ValueControl as="ul" icon="arrow-up-and-right-big" label={c('Label').t`Forwards to`}>
-                    {(!ready || requestFailure) && <div className="pass-skeleton pass-skeleton--select" />}
-                    {ready &&
-                        mailboxesForAlias.map(({ email }) => (
-                            <li key={email} className="text-ellipsis">
-                                {email}
-                            </li>
-                        ))}
+                <ValueControl as="ul" loading={!ready} icon="arrow-up-and-right-big" label={c('Label').t`Forwards to`}>
+                    {mailboxesForAlias?.map(({ email }) => (
+                        <li key={email} className="text-ellipsis">
+                            {email}
+                        </li>
+                    ))}
                 </ValueControl>
             </FieldsetCluster>
 

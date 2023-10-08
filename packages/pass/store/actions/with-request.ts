@@ -51,4 +51,9 @@ export const withRequestStart = withRequestStatus('start');
 export const withRequestFailure = withRequestStatus('failure');
 export const withRequestSuccess = withRequestStatus('success');
 
+export const withRevalidate = <T extends WithRequest<AnyAction, 'start'>>(action: T) => {
+    action.meta.request.revalidate = true;
+    return action;
+};
+
 export default withRequest;
