@@ -27,7 +27,7 @@ export type ItemCreateIntentDTO = {
 };
 
 export type ItemEditIntentDTO = {
-    alias: { mailboxes: AliasMailbox[]; aliasEmail: string };
+    alias: { aliasOwner: boolean; mailboxes: AliasMailbox[]; aliasEmail: string };
     login: never;
     note: never;
 };

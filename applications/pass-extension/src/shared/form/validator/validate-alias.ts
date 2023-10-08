@@ -59,12 +59,14 @@ export const validateNewAliasForm = (values: NewAliasFormValues): FormikErrors<N
     return errors;
 };
 
-export const validateEditAliasForm = (values: EditAliasFormValues): FormikErrors<EditAliasFormValues> => {
-    const errors: FormikErrors<EditAliasFormValues> = validateItemErrors(values);
+export const createEditAliasFormValidator =
+    (aliasOwner: boolean) =>
+    (values: EditAliasFormValues): FormikErrors<EditAliasFormValues> => {
+        const errors: FormikErrors<EditAliasFormValues> = validateItemErrors(values);
 
-    if (values.mailboxes.length === 0) {
-        errors.mailboxes = c('Warning').t`You must select at least one mailbox`;
-    }
+        if (aliasOwner && values.mailboxes.length === 0) {
+            errors.mailboxes = c('Warning').t`You must select at least one mailbox`;
+        }
 
-    return errors;
-};
+        return errors;
+    };
