@@ -27,6 +27,7 @@ export const AliasView: VFC<ItemTypeViewProps<'alias'>> = ({ vault, revision, ..
 
     const { data: item, itemId, createTime, modifyTime, revision: revisionNumber } = revision;
     const { name } = item.metadata;
+    const { shareId } = vault;
     const { optimistic, trashed } = itemViewProps;
     const aliasEmail = revision.aliasEmail!;
 
@@ -45,7 +46,7 @@ export const AliasView: VFC<ItemTypeViewProps<'alias'>> = ({ vault, revision, ..
         },
     });
 
-    const mailboxesForAlias = useSelector(selectAliasDetails(aliasEmail!)) ?? [];
+    const mailboxesForAlias = useSelector(selectAliasDetails(aliasEmail!));
 
     const [confirmTrash, setConfirmTrash] = useState(false);
     const ready = !getAliasDetails.loading && mailboxesForAlias !== undefined;
@@ -57,10 +58,10 @@ export const AliasView: VFC<ItemTypeViewProps<'alias'>> = ({ vault, revision, ..
     };
 
     useEffect(() => {
-        if (!optimistic && mailboxesForAlias.length === 0) {
-            getAliasDetails.dispatch({ shareId: vault.shareId, itemId, aliasEmail });
+        if (!optimistic && (mailboxesForAlias?.length ?? 0) === 0) {
+            getAliasDetails.dispatch({ shareId, itemId, aliasEmail });
         }
-    }, [optimistic, vault, itemId, mailboxesForAlias]);
+    }, [optimistic, shareId, itemId, mailboxesForAlias]);
 
     const handleMoveToTrashClick = useCallback(() => {
         if (!relatedLogin) return itemViewProps.handleMoveToTrashClick();
@@ -105,7 +106,7 @@ export const AliasView: VFC<ItemTypeViewProps<'alias'>> = ({ vault, revision, ..
                 />
 
                 <ValueControl as="ul" loading={!ready} icon="arrow-up-and-right-big" label={c('Label').t`Forwards to`}>
-                    {mailboxesForAlias.map(({ email }) => (
+                    {mailboxesForAlias?.map(({ email }) => (
                         <li key={email} className="text-ellipsis">
                             {email}
                         </li>
