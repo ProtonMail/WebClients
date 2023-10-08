@@ -104,16 +104,12 @@ export const AliasView: VFC<ItemTypeViewProps<'alias'>> = ({ vault, revision, ..
                         : {})}
                 />
 
-                <ValueControl as="ul" icon="arrow-up-and-right-big" label={c('Label').t`Forwards to`}>
-                    {ready ? (
-                        mailboxesForAlias.map(({ email }) => (
-                            <li key={email} className="text-ellipsis">
-                                {email}
-                            </li>
-                        ))
-                    ) : (
-                        <div className="pass-skeleton pass-skeleton--select" />
-                    )}
+                <ValueControl as="ul" loading={!ready} icon="arrow-up-and-right-big" label={c('Label').t`Forwards to`}>
+                    {mailboxesForAlias.map(({ email }) => (
+                        <li key={email} className="text-ellipsis">
+                            {email}
+                        </li>
+                    ))}
                 </ValueControl>
             </FieldsetCluster>
 
