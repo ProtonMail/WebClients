@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import type { AnyAction } from 'redux';
 
 import { selectRequest } from '@proton/pass/store';
-import type { WithRequest } from '@proton/pass/store/actions/with-request';
+import { type WithRequest, withRevalidate } from '@proton/pass/store/actions/with-request';
 import { uniqueId } from '@proton/pass/utils/string';
 
 type UseActionWithRequestOptions<P extends any[], R extends WithRequest<AnyAction, 'start'>> = {
@@ -84,11 +84,7 @@ export const useActionWithRequest = <P extends any[], R extends WithRequest<AnyA
 
         return {
             dispatch: (...args: P) => dispatch(actionCreator(...args)),
-            revalidate: (...args: P) => {
-                const action = actionCreator(...args);
-                action.meta.request.revalidate = true;
-                return dispatch(action);
-            },
+            revalidate: (...args: P) => dispatch(withRevalidate(actionCreator(...args))),
             status: req?.status,
             progress,
             loading,
