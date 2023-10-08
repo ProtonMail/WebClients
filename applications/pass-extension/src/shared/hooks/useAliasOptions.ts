@@ -1,9 +1,6 @@
 import { useEffect, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
-import { c } from 'ttag';
-
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { getAliasOptionsIntent, selectAliasOptions } from '@proton/pass/store';
 import { aliasOptionsRequest } from '@proton/pass/store/actions/requests';
 import type { MaybeNull } from '@proton/pass/types';
@@ -33,7 +30,6 @@ export const useAliasOptions = ({
     lazy = false,
     onAliasOptionsLoaded,
 }: UseAliasOptionsParams): UseAliasOptionsResult => {
-    const { createNotification } = useNotifications();
     const aliasOptions = useSelector(selectAliasOptions);
 
     const sanitizedAliasOptions = useMemo(
@@ -54,20 +50,18 @@ export const useAliasOptions = ({
         action: getAliasOptionsIntent,
         requestId: aliasOptionsRequest(shareId),
         onSuccess: () => sanitizedAliasOptions && onAliasOptionsLoaded?.(sanitizedAliasOptions),
-        onFailure: () =>
-            createNotification({
-                type: 'warning',
-                text: c('Warning').t`Cannot retrieve mailboxes for this alias right now`,
-            }),
     });
 
     useEffect(() => {
         if (!lazy) getAliasOptions.dispatch({ shareId });
     }, [lazy]);
 
-    return {
-        loading: getAliasOptions.loading,
-        request: () => getAliasOptions.dispatch({ shareId }),
-        value: sanitizedAliasOptions,
-    };
+    return useMemo(
+        () => ({
+            loading: getAliasOptions.loading,
+            request: () => getAliasOptions.dispatch({ shareId }),
+            value: sanitizedAliasOptions,
+        }),
+        [sanitizedAliasOptions, getAliasOptions.loading, shareId]
+    );
 };
