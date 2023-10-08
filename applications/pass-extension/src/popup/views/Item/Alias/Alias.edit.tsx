@@ -40,6 +40,8 @@ export const AliasEdit: VFC<ItemEditProps<'alias'>> = ({ vault, revision, onCanc
      * the owner of the alias and can edit the mailboxes */
     const [aliasOwner, setAliasOwner] = useState(!vault.shared);
 
+    /* Keeping a ref to the alias details for composing the result
+     * of `onAliasDetailsLoaded` with `onAliasOptionsLoading` effect */
     const mailboxesForAlias = useRef<AliasMailbox[]>([]);
 
     const note = useDeobfuscatedValue(metadata.note);

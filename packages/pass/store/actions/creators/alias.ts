@@ -32,10 +32,10 @@ export const getAliasOptionsSuccess = createAction(
 export const getAliasOptionsFailure = createAction(
     'alias::options::get::failure',
     withRequestFailure((error: unknown) =>
-        withNotification({ type: 'error', text: c('Error').t`Requesting alias options failed`, error })({
-            payload: {},
-            error,
-        })
+        pipe(
+            withCacheBlock,
+            withNotification({ type: 'error', text: c('Error').t`Requesting alias options failed`, error })
+        )({ payload: {}, error })
     )
 );
 
@@ -51,13 +51,7 @@ export const getAliasDetailsSuccess = createAction(
 
 export const getAliasDetailsFailure = createAction(
     'alias::details::get::failure',
-    withRequestFailure((payload: { aliasEmail: string }, error: unknown) =>
-        withNotification({
-            type: 'error',
-            text: c('Error').t`Requesting alias details failed`,
-            error,
-        })({ payload, error })
-    )
+    withRequestFailure((payload: { aliasEmail: string }, error: unknown) => withCacheBlock({ payload, error }))
 );
 
 export const aliasDetailsSync = createAction(
