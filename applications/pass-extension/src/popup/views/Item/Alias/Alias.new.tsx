@@ -97,7 +97,7 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
         validateOnChange: true,
     });
 
-    const { aliasOptions, aliasOptionsLoading } = useAliasOptions({
+    const aliasOptions = useAliasOptions({
         shareId,
         onAliasOptionsLoaded: async (options) => {
             const draft = await draftHydrated;
@@ -183,7 +183,7 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
                                 <ValueControl
                                     icon="alias"
                                     label={c('Label').t`You are about to create`}
-                                    loading={aliasOptionsLoading}
+                                    loading={aliasOptions.loading}
                                     error={Boolean(
                                         Object.keys(form.touched).length > 0 &&
                                             (form.errors.aliasPrefix || form.errors.aliasSuffix)
@@ -193,7 +193,7 @@ export const AliasNew: VFC<ItemNewProps<'alias'>> = ({ shareId, onSubmit, onCanc
                                 </ValueControl>
                             </FieldsetCluster>
 
-                            <AliasForm aliasOptions={aliasOptions} loading={aliasOptionsLoading} form={form} />
+                            <AliasForm aliasOptions={aliasOptions.value} loading={aliasOptions.loading} form={form} />
 
                             <FieldsetCluster>
                                 <Field
