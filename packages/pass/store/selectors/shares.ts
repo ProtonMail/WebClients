@@ -1,6 +1,8 @@
+import type { Selector } from '@reduxjs/toolkit';
 import { createSelector } from '@reduxjs/toolkit';
 
-import type { Maybe, MaybeNull, ShareType } from '@proton/pass/types';
+import type { VaultShare } from '@proton/pass/types';
+import { type Maybe, type MaybeNull, ShareRole, type ShareType } from '@proton/pass/types';
 import { invert } from '@proton/pass/utils/fp';
 import { isVaultShare } from '@proton/pass/utils/pass/share';
 import { isTrashed } from '@proton/pass/utils/pass/trash';
@@ -22,12 +24,20 @@ export const selectAllVaults = createSelector([selectAllShares], (shares) =>
     shares.filter(isVaultShare).sort((a, b) => a.content.name.localeCompare(b.content.name))
 );
 
-export const selectAllVaultWithItemsCount = createSelector([selectAllVaults, selectItems], (shares, itemsByShareId) =>
-    shares.map((share) => ({
-        ...share,
-        count: Object.values(itemsByShareId?.[share.shareId] ?? {}).filter(invert(isTrashed)).length,
-    }))
+export const selectWritableVaults = createSelector([selectAllVaults], (vaults) =>
+    vaults.filter((share) => share.shareRoleId !== ShareRole.READ)
 );
+
+const createVaultsWithItemsCountSelector = (vaultSelector: Selector<State, VaultShare[]>) =>
+    createSelector([vaultSelector, selectItems], (shares, itemsByShareId) =>
+        shares.map((share) => ({
+            ...share,
+            count: Object.values(itemsByShareId?.[share.shareId] ?? {}).filter(invert(isTrashed)).length,
+        }))
+    );
+
+export const selectVaultsWithItemsCount = createVaultsWithItemsCountSelector(selectAllVaults);
+export const selectWritableVaultsWithItemsCount = createVaultsWithItemsCountSelector(selectWritableVaults);
 
 export const selectPrimaryVault = createSelector([selectAllVaults], (vaults) => {
     const primaryVault = vaults.find((vault) => vault.primary);
