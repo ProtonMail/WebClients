@@ -7,7 +7,7 @@ import { generateContentHash } from '@proton/shared/lib/keys/driveKeys';
 import ChunkFileReader from '../ChunkFileReader';
 import { MAX_BLOCK_VERIFICATION_RETRIES } from '../constants';
 import { EncryptedBlock, ThumbnailEncryptedBlock } from '../interface';
-import { ThumbnailData } from '../thumbnail';
+import { ThumbnailInfo } from '../media';
 import { Verifier } from './interface';
 
 /**
@@ -41,14 +41,14 @@ export async function* generateEncryptedBlocks(
  * Index is not taken in consideration for Thumbnails, so we can start it at 0
  */
 export async function* generateThumbnailEncryptedBlocks(
-    thumbnailData: ThumbnailData[] | undefined,
+    thumbnails: ThumbnailInfo[] | undefined,
     addressPrivateKey: PrivateKeyReference,
     sessionKey: SessionKey
 ): AsyncGenerator<ThumbnailEncryptedBlock> {
-    if (!!thumbnailData?.length) {
+    if (!!thumbnails?.length) {
         let index = 0;
-        for (let i = 0; i < thumbnailData?.length; i++) {
-            yield await encryptThumbnail(index++, addressPrivateKey, sessionKey, thumbnailData[i]);
+        for (let i = 0; i < thumbnails?.length; i++) {
+            yield await encryptThumbnail(index++, addressPrivateKey, sessionKey, thumbnails[i]);
         }
     }
 }
@@ -57,7 +57,7 @@ async function encryptThumbnail(
     index: number,
     addressPrivateKey: PrivateKeyReference,
     sessionKey: SessionKey,
-    thumbnail: ThumbnailData
+    thumbnail: ThumbnailInfo
 ): Promise<ThumbnailEncryptedBlock> {
     const { message: encryptedData } = await CryptoProxy.encryptMessage({
         binaryData: thumbnail.thumbnailData,

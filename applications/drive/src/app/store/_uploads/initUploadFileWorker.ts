@@ -10,8 +10,8 @@ import type {
     UploadFileControls,
     UploadFileProgressCallbacks,
 } from './interface';
+import { getMediaInfo } from './media';
 import { mimeTypeFromFile } from './mimeTypeParser/mimeTypeParser';
-import { getThumbnailsData } from './thumbnail';
 import { UploadWorkerController } from './workerController';
 
 export function initUploadFileWorker(
@@ -30,7 +30,7 @@ export function initUploadFileWorker(
     const start = async ({ onInit, onProgress, onNetworkError, onFinalize }: UploadFileProgressCallbacks = {}) => {
         // Worker has a slight overhead about 40 ms. Let's start generating
         // thumbnail a bit sooner.
-        const thumbnailsDataPromise = getThumbnailsData(mimeTypePromise, file, isForPhotos);
+        const mediaInfoPromise = getMediaInfo(mimeTypePromise, file, isForPhotos);
 
         return new Promise<void>((resolve, reject) => {
             const worker = new Worker(
@@ -49,12 +49,21 @@ export function initUploadFileWorker(
                                     onInit?.(mimeType, fileRevision.fileName);
 
                                     return Promise.all([
-                                        thumbnailsDataPromise,
+                                        mediaInfoPromise,
                                         getVerificationData(abortController.signal),
-                                    ]).then(async ([thumbnailData, verificationData]) => {
+                                    ]).then(async ([mediaInfo, verificationData]) => {
                                         await workerApi.postStart(
                                             file,
-                                            { mimeType, isForPhotos, thumbnailData },
+                                            {
+                                                mimeType,
+                                                isForPhotos,
+                                                media: {
+                                                    width: mediaInfo?.width,
+                                                    height: mediaInfo?.height,
+                                                    duration: mediaInfo?.duration,
+                                                },
+                                                thumbnails: mediaInfo?.thumbnails,
+                                            },
                                             fileRevision.address.privateKey,
                                             fileRevision.address.email,
                                             fileRevision.privateKey,
