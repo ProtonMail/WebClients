@@ -77,7 +77,10 @@ const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
             } catch (error) {
                 setFidoError(true);
                 setBehind(false);
-                captureMessage('Security key registration', { level: 'error', extra: { error } });
+                captureMessage('Security key registration', {
+                    level: 'error',
+                    extra: { error },
+                });
                 // Purposefully logging the error for somewhat easier debugging
                 console.error(error);
                 return;
@@ -177,7 +180,7 @@ const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
                                 <Info
                                     className="ml-1"
                                     title={c('fido2: Info')
-                                        .t`If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys`}
+                                        .t`Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)`}
                                 />
                             </>
                         }
