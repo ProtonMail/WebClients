@@ -9,11 +9,11 @@ jest.mock('fs');
 const mockFS = <jest.Mocked<typeof fs>>fs;
 
 describe('genThemes', () => {
-    it('generates the necessary shades for a button', () => {
+    it('generates the necessary shades for a button', async () => {
         mockFS.writeFileSync = jest.fn();
         // @ts-ignore
         mockFS.readFileSync = jest.requireActual<typeof fs>('fs').readFileSync;
-        main(config[0]);
+        await main(config[0]);
         expect(mockFS.writeFileSync).toHaveBeenCalledTimes(1);
         expect(mockFS.writeFileSync).toHaveBeenCalledWith(
             './themes/dist/snow.theme.css',
