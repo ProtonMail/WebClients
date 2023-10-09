@@ -77,11 +77,13 @@ export const PhotosView: FC<void> = () => {
             let linkIds = getGroupLinkIds(groupIndex);
             let selectedCount = 0;
 
-            linkIds.forEach((linkId) => {
+            for (let linkId of linkIds) {
                 if (selection[linkId]) {
                     selectedCount++;
+                } else if (selectedCount > 0) {
+                    break;
                 }
-            });
+            }
 
             if (selectedCount === 0) {
                 return false;
