@@ -10,7 +10,7 @@ export type ActivityProbe = ReturnType<typeof createActivityProbe>;
 const ACTIVITY_PROBE_TIMEOUT = 5_000;
 
 const createActivityProbe = (messageFactory: MessageWithSenderFactory) => {
-    const timer: { interval?: NodeJS.Timer } = {};
+    const timer: { interval?: ReturnType<typeof setInterval> } = {};
 
     const cancel = () => clearInterval(timer?.interval);
     const ping = () => sendMessage(messageFactory({ type: WorkerMessageType.ACTIVITY_PROBE })).catch(noop);
