@@ -95,7 +95,7 @@ export const Exporter: React.FC = () => {
                     color="norm"
                     loading={loading}
                     disabled={!form.isValid || loading}
-                    className="mt-3 w100"
+                    className="mt-3 w-full"
                 >
                     {c('Action').t`Export`}
                 </Button>

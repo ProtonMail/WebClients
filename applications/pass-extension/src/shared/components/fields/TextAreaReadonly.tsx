@@ -18,7 +18,7 @@ export const TextAreaReadonly: VFC<Props> = ({ children, className }) => {
             ref={ref}
             readOnly
             value={children}
-            className={clsx('w100 h100 text-pre-wrap overflow-hidden resize-none h-custom', className)}
+            className={clsx('w-full h-full text-pre-wrap overflow-hidden resize-none h-custom', className)}
             style={{ '--h-custom': `${height}px` }}
         />
     );

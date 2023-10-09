@@ -75,7 +75,7 @@ export const VaultSelectModal: VFC<Props> = ({ onSubmit, shareId, ...props }) =>
                                 icon={vault.content.display.icon}
                             />
                             <div className="flex flex-item-fluid flex-column">
-                                <span className="text-ellipsis inline-block max-w100 color-norm">
+                                <span className="text-ellipsis inline-block max-w-full color-norm">
                                     {vault.content.name}
                                 </span>
                                 <span className="block color-weak">{vault.count} items</span>
