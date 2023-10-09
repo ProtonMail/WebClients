@@ -12,7 +12,7 @@ import {
     CollapsibleHeaderIconButton,
     Icon,
 } from '@proton/components';
-import { selectAllTrashedItems, selectAllVaultWithItemsCount, selectShare } from '@proton/pass/store';
+import { selectAllTrashedItems, selectShare, selectVaultsWithItemsCount } from '@proton/pass/store';
 import { type MaybeNull, ShareRole, type ShareType, type VaultShare } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import type { VaultColor as VaultColorEnum } from '@proton/pass/types/protobuf/vault-v1';
@@ -228,7 +228,7 @@ export const VaultSubmenu: VFC<{
     handleTrashEmpty,
 }) => {
     const history = useHistory();
-    const vaults = useSelector(selectAllVaultWithItemsCount);
+    const vaults = useSelector(selectVaultsWithItemsCount);
     const selectedVault = useSelector(selectShare<ShareType.Vault>(selectedShareId ?? ''));
 
     const totalCount = useMemo(() => vaults.reduce<number>((subtotal, { count }) => subtotal + count, 0), [vaults]);
