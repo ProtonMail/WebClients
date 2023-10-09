@@ -52,7 +52,7 @@ export const appendAtomToIndex = async (atomsDir: string, atomName: string) => {
     lines.push(`export * from './${atomName}';`);
     lines.sort();
 
-    const output = prettify(lines.join('\n'));
+    const output = await prettify(lines.join('\n'));
 
     await fs.writeFile(indexFilePath, output, { encoding: 'utf-8' });
 };
