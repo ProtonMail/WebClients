@@ -26,13 +26,13 @@ export const Spotlight: VFC = () => {
 
     const { respondToInvite } = useInviteContext();
 
-    const showSharing = useFeatureFlag(PassFeature.PassSharingV1);
+    const sharingEnabled = useFeatureFlag(PassFeature.PassSharingV1);
     const latestInvite = useSelector(selectMostRecentInvite);
     const onboarding = useOnboardingMessage();
 
     const inviteMessage = useMemo<MaybeNull<SpotlightMessageDefinition>>(
         () =>
-            latestInvite && showSharing
+            latestInvite && sharingEnabled
                 ? {
                       id: latestInvite.token,
                       weak: true,
