@@ -300,7 +300,7 @@ export const VaultSubmenu: VFC<{
                 />
 
                 <div className="px-2 mt-2 mb-4">
-                    <Button className="w100" color="weak" shape="solid" onClick={handleVaultCreate}>
+                    <Button className="w-full" color="weak" shape="solid" onClick={handleVaultCreate}>
                         {c('Action').t`Create vault`}
                     </Button>
                 </div>

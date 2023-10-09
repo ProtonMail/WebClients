@@ -97,7 +97,7 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
         return (
             <>
                 <div className="mb-8">
-                    <div className="flex w100 flex-justify-space-between flex-align-items-start">
+                    <div className="flex w-full flex-justify-space-between flex-align-items-start">
                         <div className="flex flex-align-items-start">
                             <Avatar className="mr-2 mt-1">{user?.DisplayName?.toUpperCase()?.[0]}</Avatar>
                             <span>
@@ -129,7 +129,7 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
                 </div>
 
                 <Tabs
-                    className="w100"
+                    className="w-full"
                     contentClassName="p-0"
                     navContainerClassName="mb-6"
                     onChange={handleOnChange}
@@ -178,7 +178,7 @@ const SettingsApp: VFC = () => {
                 onWorkerMessage={handleWorkerMessage}
             >
                 <div
-                    className="pass-settings flex flex-column ui-standard w100 p-4 mx-auto bg-weak min-h-custom"
+                    className="pass-settings flex flex-column ui-standard w-full p-4 mx-auto bg-weak min-h-custom"
                     style={{ '--min-h-custom': '100vh' }}
                 >
                     <Switch>

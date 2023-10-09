@@ -132,7 +132,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
                 />
             </DropdownMenuButtonCore>
 
-            <div className="absolute flex flex-align-items-center h100 right top pr-2">
+            <div className="absolute flex flex-align-items-center h-full right top pr-2">
                 {quickActions && <QuickActionsDropdown>{quickActions}</QuickActionsDropdown>}
             </div>
         </div>

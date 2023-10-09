@@ -72,8 +72,8 @@ export const ResumeSession: VFC = () => {
 
     return (
         <div className="pass-lobby" style={{ height: '100vh' }}>
-            <main className="ui-standard w100 relative sign-layout shadow-lifted mw30r max-w100 flex mx-auto rounded-lg">
-                <div className="flex p-14 w100 flex-column flex-align-items-center">
+            <main className="ui-standard w-full relative sign-layout shadow-lifted mw30r max-w-full flex mx-auto rounded-lg">
+                <div className="flex p-14 w-full flex-column flex-align-items-center">
                     <h3 className="mb-4">Signing you back in</h3>
                     <CircleLoader size="large" className="color-primary mb-2" />
                     <em>Don't close this tab</em>
