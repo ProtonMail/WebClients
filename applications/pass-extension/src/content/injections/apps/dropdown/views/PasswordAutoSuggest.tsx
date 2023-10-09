@@ -4,6 +4,7 @@ import { type VFC, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { generatePassword } from '@proton/pass/password';
+import { type Maybe } from '@proton/pass/types';
 
 import { DEFAULT_RANDOM_PW_OPTIONS, getCharsGroupedByColor } from '../../../../../shared/hooks/usePasswordGenerator';
 import { SubTheme } from '../../../../../shared/theme/sub-theme';
@@ -18,7 +19,7 @@ type Props = {
 };
 
 export const PasswordAutoSuggest: VFC<Props> = ({ onMessage, onClose, visible }) => {
-    const timer = useRef<NodeJS.Timer>();
+    const timer = useRef<Maybe<ReturnType<typeof setTimeout>>>();
     const inputRef = useRef<HTMLInputElement>(null);
     const password = generatePassword(DEFAULT_RANDOM_PW_OPTIONS);
     const [copied, setCopied] = useState(false);
