@@ -52,7 +52,7 @@ export const FieldBox: FC<FieldBoxProps> = (props) => {
                 </span>
             )}
 
-            <div className="w100">{children}</div>
+            <div className="w-full">{children}</div>
 
             {actions && (
                 <span className={clsx('flex-item-noshrink ml-3', actionsContainerClassName)}>

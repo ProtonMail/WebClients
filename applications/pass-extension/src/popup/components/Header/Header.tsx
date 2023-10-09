@@ -88,8 +88,8 @@ export const Header: VFC<{}> = () => {
 
     return (
         <>
-            <HeaderComponent className="border-bottom hauto p-2">
-                <div className="flex flex-align-items-center gap-x-2 w100">
+            <HeaderComponent className="border-bottom h-auto p-2">
+                <div className="flex flex-align-items-center gap-x-2 w-full">
                     <MenuDropdown />
                     <Searchbar disabled={!ready} value={search} handleValue={setSearch} />
 
@@ -106,7 +106,7 @@ export const Header: VFC<{}> = () => {
                         <Icon name="plus" alt={c('Action').t`Add new item`} />
                     </Button>
 
-                    <div className="flex-item-fluid-auto w100">
+                    <div className="flex-item-fluid-auto w-full">
                         <Spotlight />
                     </div>
                 </div>

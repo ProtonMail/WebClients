@@ -73,7 +73,7 @@ export const InstallationSuccess: VFC = () => {
     return (
         <>
             <ExtensionHead title={c('Title').t`Thank you for installing ${PASS_APP_NAME}`} />
-            <div className="pass-onboarding ui-prominent w100 min-h-custom mw" style={{ '--min-h-custom': '100vh' }}>
+            <div className="pass-onboarding ui-prominent w-full min-h-custom mw" style={{ '--min-h-custom': '100vh' }}>
                 <div className="m-auto p-14 color-norm flex flex-justify-center">
                     <div className="pass-onboarding--gradient"></div>
                     <div className="flex flex-column">
@@ -98,7 +98,7 @@ export const InstallationSuccess: VFC = () => {
                             <hr className="pass-installation--white-separator my-2 flex flex-item-fluid-auto" />
                         </div>
 
-                        <div className="mx-auto flex flex-justify-center flex-nowrap on-tablet-flex-column gap-12">
+                        <div className="mx-auto flex flex-justify-center flex-nowrap flex-column lg:flex-row gap-12">
                             {!isPinned && (
                                 <>
                                     <div className="flex flex-nowrap flex-column">
@@ -119,7 +119,11 @@ export const InstallationSuccess: VFC = () => {
                                                         >
                                                             <span className="absolute absolute-center">{idx + 1}</span>
                                                         </div>
-                                                        <div className="w40p text-center mr-2" aria-hidden="true">
+                                                        <div
+                                                            className="w-custom text-center mr-2"
+                                                            style={{ '--w-custom': '2.5rem' }}
+                                                            aria-hidden="true"
+                                                        >
                                                             <img
                                                                 src={icon}
                                                                 className="h-custom"
