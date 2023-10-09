@@ -25,6 +25,9 @@
       "Add address": [
         "მისამართის დამატება"
       ],
+      "Add birthday": [
+        "დაბადების დღის დამატება"
+      ],
       "Add contact": [
         "კონტაქტის დამატება"
       ],
@@ -39,6 +42,9 @@
       ],
       "Add new group": [
         "ახალი ჯგუფის დამატება"
+      ],
+      "Add note": [
+        "შენიშვნის დამატება"
       ],
       "Add phone number": [
         "ტელეფონის ნომრის დამატება"
@@ -417,6 +423,9 @@
       "Next month": [
         "შემდეგი თვე"
       ],
+      "Ok": [
+        "დიახ"
+      ],
       "Open navigation": [
         "ნავიგაციის გახსნა"
       ],
@@ -539,6 +548,9 @@
       ],
       "Search drive": [
         "Drive-ზე ძებნა"
+      ],
+      "See how": [
+        "იხილეთ, როგორ"
       ],
       "See plan features": [
         "ტარიფის თვისებების ნახვა"
@@ -949,8 +961,17 @@
       "Birthday": [
         "დაბადების დღე"
       ],
+      "Display name": [
+        "საჩვენებელი სახელი"
+      ],
       "Email": [
         "ელ-ფოსტა"
+      ],
+      "Enter a display name or nickname": [
+        "შეიყვანეთ საჩვენებელი სახელი ან მეტსახელი"
+      ],
+      "First name": [
+        "სახელი"
       ],
       "Gender": [
         "სქესი"
@@ -960,6 +981,9 @@
       ],
       "Language": [
         "ენა"
+      ],
+      "Last name": [
+        "გვარი"
       ],
       "Logo": [
         "ლოგო"
@@ -1975,6 +1999,9 @@
       "Enter 6 digits": [
         "შეიყვანეთ 6 ციფრი"
       ],
+      "Error decrypting a computer": [
+        "კომპიუტერის გაშიფვრის შეცდომა"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "ფაილი \"${ item.name }\" ვერ აიტვირთა შეცდომის გამო: ${ error }"
       ],
@@ -1986,6 +2013,9 @@
       ],
       "File selection is already downloading": [
         "მონიშნული ფაილის გადმოწერა უკვე მიმდინარეობს"
+      ],
+      "First name is too long": [
+        "სახელი ძალიან გრძელია"
       ],
       "Folder \"${ name }\" is already downloading": [
         "საქაღალდის ${ name } გადმოწერა უკვე მიმდინარეობს"
@@ -2008,6 +2038,9 @@
       "Incorrect password. Please try again.": [
         "არასწორი პაროლი. თავიდან სცადეთ."
       ],
+      "Incorrect username": [
+        "მომხმარებლის სახელი არასწორია"
+      ],
       "Invalid email address": [
         "არასწორი ელფოსტის მისამართი"
       ],
@@ -2022,6 +2055,9 @@
       ],
       "Label name cannot be empty.": [
         "ჭდის სახელი ცარიელი არ შეიძლება იყოს."
+      ],
+      "Last name is too long": [
+        "გვარი ძალიან გრძელია."
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "${ calendarsToFixCount } კალენდართან შერწყმისთვის, სულ ცოტა, ${ BRAND_NAME }-ის კალენდარი უნდა გქონდეთ",
@@ -3030,6 +3066,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }-ს ესაჭიროება თქვენი წვდომა ${ enableDesktopNotifications }-ზე."
+      ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "${ BRAND_NAME }-ის დაშიფვრის ტექნოლოგია ნიშნავს, რომ თქვენს პაროლთან წვდომა არავის აქვს, ჩვენც კი."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } ახალი კალენდარი",
@@ -4273,6 +4312,9 @@
       "Comment": [
         "კომენტარი"
       ],
+      "Confirm password": [
+        "პაროლის დადასტურება"
+      ],
       "Contacts": [
         "კონტაქტები"
       ],
@@ -4477,6 +4519,9 @@
       ],
       "Never": [
         "არასოდეს"
+      ],
+      "New password": [
+        "ახალი პაროლი"
       ],
       "Notification": [
         "შეტყობინება"
@@ -5179,11 +5224,17 @@
       "Filter groups": [
         "ჯგუფების გაფილტრვა"
       ],
+      "First name": [
+        "სახელი"
+      ],
       "Group name": [
         "ჯგუფის სახელი"
       ],
       "Image URL": [
         "გამოსახულების ბმული"
+      ],
+      "Last name": [
+        "გვარი"
       ],
       "Name": [
         "სახელი"
@@ -5286,6 +5337,93 @@
     "Select files": {
       "Upload": [
         "ატვირთვა"
+      ]
+    },
+    "session_recovery:available:action": {
+      "Reset password": [
+        "პაროლის აღდგენა"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Please generate keys before you try to change your password": [
+        "პაროლის შეცვლამდე საჭიროა გასაღებების გენერაცია"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } დღე",
+        "${ timeRemaining.inDays } დღე"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } საათი",
+        "${ timeRemaining.inHours } საათი"
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "იხილეთ, როგორ"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "პაროლი დამახსოვრებულია"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "პაროლის აღდგენა"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "პაროლის შეცვლის გაუქმება"
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "პაროლის შეცვლა გაუქმდა"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "გავაუქმო პაროლის შეცვლა?"
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "შეცვალეთ თქვენი პაროლი ახლა"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "მოთხოვნის გაუქმება"
+      ],
+      "Got it": [
+        "გავიგე"
+      ],
+      "Learn more": [
+        "გაიგეთ მეტი"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "პაროლის შეცვლა მოთხოვნილია"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "გასვლა"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } საათი",
+        "${ gracePeriodHoursRemaining } საათი"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "პაროლის შეცვლა"
       ]
     },
     "Signing preference for emails": {
@@ -5726,8 +5864,14 @@
       "Display name": [
         "საჩვენებელი სახელი"
       ],
+      "First name": [
+        "სახელი"
+      ],
       "Import": [
         "შემოტანა"
+      ],
+      "Last name": [
+        "გვარი"
       ],
       "Values": [
         "მნიშვნელობები"
@@ -5815,6 +5959,9 @@
       "Billing cycle": [
         "გადახდის პერიოდი"
       ],
+      "Birthday": [
+        "დაბადების დღე"
+      ],
       "Browser might run out of memory": [
         "თქვენს ბრაუზერს მეხსიერება არ ჰყოფნის"
       ],
@@ -5826,6 +5973,9 @@
       ],
       "Change layout": [
         "განლაგების შეცვლა"
+      ],
+      "Change password": [
+        "პაროლის შეცვლა"
       ],
       "Clearing data": [
         "მონაცემების გასუფთავება"
@@ -6037,6 +6187,9 @@
       ],
       "No results found": [
         "შედეგების გარეშე"
+      ],
+      "Notes": [
+        "შენიშვნები"
       ],
       "Number of files": [
         "ფაილების რიცხვი"

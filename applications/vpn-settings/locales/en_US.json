@@ -51,6 +51,16 @@
         "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control"
       ]
     },
+    "session_recovery:initiation:info": {
+      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
+        "You can check the status of your request at any time ${ accountAndPasswordSectionLink } of the settings."
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "account and password section": [
+        "in the Account and password section"
+      ]
+    },
     "Subscription change warning": {
       "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
         "Just sign in to your Apple App Store account, then select ${ subscriptions }."

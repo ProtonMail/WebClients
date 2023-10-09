@@ -335,6 +335,9 @@
       "Discard": [
         "Buang"
       ],
+      "Don't know your password?": [
+        "Tidak tahu kata sandi Anda?"
+      ],
       "Don't show again": [
         "Jangan tampilkan lagi"
       ],
@@ -623,6 +626,9 @@
       "OK": [
         "OK"
       ],
+      "Ok": [
+        "Oke"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Buka pengaturan ${ CALENDAR_APP_NAME }"
       ],
@@ -793,6 +799,9 @@
       ],
       "Search settings": [
         "Cari di pengaturan"
+      ],
+      "See how": [
+        "Lihat caranya"
       ],
       "See plan features": [
         "Lihat seluruh fitur paket"
@@ -1495,7 +1504,7 @@
     },
     "Calendar settings sidebar": {
       "Show ${ remainingItems } more": [
-        "Tampilkan ${ remainingItems } item tambahan"
+        "Tampilkan ${ remainingItems } lainnya"
       ]
     },
     "Calendar share permission label": {
@@ -1860,8 +1869,14 @@
       "Birthday": [
         "Tanggal lahir"
       ],
+      "Display name": [
+        "Nama tampilan"
+      ],
       "Email": [
         "Surel"
+      ],
+      "First name": [
+        "Nama depan"
       ],
       "Gender": [
         "Jenis kelamin"
@@ -1871,6 +1886,9 @@
       ],
       "Language": [
         "Bahasa"
+      ],
+      "Last name": [
+        "Nama belakang"
       ],
       "Logo": [
         "Logo"
@@ -3176,6 +3194,9 @@
       "Contact signature not verified": [
         "Tanda tangan kontak tidak terverifikasi"
       ],
+      "Could not save preference": [
+        "Tidak dapat menyimpan preferensi"
+      ],
       "Deselect at least ${ calendarsToFixCount } calendars": [
         "Hapus setidaknya ${ calendarsToFixCount } kalender dari pilihan"
       ],
@@ -3244,6 +3265,9 @@
       ],
       "Incorrect password": [
         "Kata sandi salah"
+      ],
+      "Incorrect username": [
+        "Nama pengguna salah"
       ],
       "Invalid ${ name } code": [
         "Kode ${ name } tidak valid"
@@ -5389,9 +5413,6 @@
       ],
       "Additional options": [
         "Pengaturan tambahan"
-      ],
-      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
-        "Verifikasi alamat merupakan fitur keamanan tingkat lanjut. Kami menyarankan Anda untuk mengaktifkan fitur ini hanya apabila Anda benar-benar paham akan kegunaannya."
       ],
       "addresses": [
         "alamat"
@@ -7823,10 +7844,10 @@
         "Blokir malware, iklan dan pelacak"
       ],
       "Browser": [
-        "Peramban"
+        "Browser"
       ],
       "Browser version": [
-        "Versi peramban"
+        "Versi browser"
       ],
       "BTC address": [
         "Alamat BTC"
@@ -7917,6 +7938,9 @@
       ],
       "Conversation grouping": [
         "Pengelompokan percakapan"
+      ],
+      "Conversations per page": [
+        "Percakapan per halaman"
       ],
       "Copy": [
         "Salin"
@@ -8205,6 +8229,9 @@
       ],
       "Message": [
         "Pesan"
+      ],
+      "Messages per page": [
+        "Pesan per halaman"
       ],
       "Moderate NAT": [
         "NAT Moderat"
@@ -8533,6 +8560,9 @@
       "Verification code": [
         "Kode verifikasi"
       ],
+      "Verify keys with Key Transparency": [
+        "Verifikasi kunci dengan Key Transparency"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Kami sedih dengan kepergian Anda. Mohon jelaskan alasan kepergian Anda agar kami dapat menjadi lebih baik ke depannya."
       ],
@@ -8664,6 +8694,11 @@
       ],
       "Expired": [
         "Kedaluwarsa"
+      ]
+    },
+    "Label to  inform a feature is only available on Beta": {
+      "Beta": [
+        "Beta"
       ]
     },
     "Label to change composer mode": {
@@ -9637,17 +9672,6 @@
         "Manajemen tim"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Masa uji coba Anda akan berakhir pada ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } akan berakhir dalam ${ last4 }"
@@ -9735,6 +9759,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Masa uji coba Anda akan berakhir pada ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11100,6 +11135,170 @@
         "akan dibuat"
       ]
     },
+    "session_recovery:available:action": {
+      "Cancel password reset": [
+        "Batalkan pengaturan ulang kata sandi"
+      ],
+      "Reset password": [
+        "Atur ulang kata sandi"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } days": [
+        "${ timeRemaining.inDays } hari"
+      ],
+      "${ timeRemaining.inHours } hours": [
+        "${ timeRemaining.inHours } jam"
+      ],
+      "Didn’t make this request?": [
+        "Tidak membuat permintaan ini?"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Apabila Anda tidak meminta untuk mengatur ulang kata sandi, batalkan permintaan ini sekarang juga."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } days to reset your password.": [
+        "Permintaan pengaturan ulang kata sandi disetujui (${ user.Email }). Anda masih punya ${ timeRemaining.inDays } hari untuk mengatur ulang kata sandi Anda."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hours to reset your password.": [
+        "Permintaan pengaturan ulang kata sandi disetujui (${ user.Email }). Anda masih punya ${ timeRemaining.inHours } jam untuk mengatur ulang kata sandi Anda."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } days": [
+        "Perizinan akan kedaluwarsa dalam ${ timeRemaining.inDays } hari"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hours": [
+        "Perizinan akan kedaluwarsa dalam ${ timeRemaining.inHours } jam"
+      ],
+      "You can now reset your password": [
+        "Anda kini dapat mengatur ulang kata sandi Anda"
+      ],
+      "You can reset your password until ${ boldDate }.": [
+        "Anda dapat mengatur ulang kata sandi Anda hingga ${ boldDate }."
+      ]
+    },
+    "session_recovery:disable:action": {
+      "Disable password reset": [
+        "Nonaktifkan pengaturan ulang kata sandi"
+      ]
+    },
+    "session_recovery:disable:info": {
+      "Make sure you have access to a recovery method.": [
+        "Pastikan Anda memiliki akses ke metode pemulihan."
+      ],
+      "You will no longer be able to request a password reset from your account settings.": [
+        "Anda tidak akan lagi dapat meminta pengaturan ulang kata sandi dari menu pengaturan akun Anda."
+      ]
+    },
+    "session_recovery:disable:title": {
+      "Disable password reset?": [
+        "Nonaktifkan pengaturan ulang kata sandi?"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel password reset": [
+        "Batalkan pengaturan ulang kata sandi"
+      ],
+      "Cancel request": [
+        "Batalkan permintaan"
+      ],
+      "Got it": [
+        "Mengerti"
+      ],
+      "Learn more": [
+        "Pelajari lebih lanjut"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hours": [
+        "${ gracePeriodHoursRemaining } jam lagi"
+      ],
+      "Didn’t make this request?": [
+        "Tidak membuat permintaan ini?"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Apabila Anda tidak meminta untuk mengatur ulang kata sandi, batalkan permintaan ini sekarang juga."
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "Apabila Anda tidak meminta untuk mengatur ulang kata sandi, batalkan permintaan ini sekarang juga."
+      ],
+      "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
+        "Pengaturan ulang kata sandi tersedia mulai dari ${ boldDate }. Hal ini akan memberikan Anda waktu untuk membatalkan permintaan yang tidak berasal dari Anda."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hours.": [
+        "Pengaturan ulang kata sandi diminta (${ user.Email }). Anda dapat mengubah kata sandi Anda dalam ${ hoursRemaining } jam."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "Untuk memastikan bahwa ini memang Anda yang sedang mencoba mengatur ulang kata sandi Anda, kami menunggu 72 jam sebelum menyetujui permintaan. Anda dapat mengubah kata sandi Anda dalam${ boldTimeLeft }. ${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "Kami telah menerima permintaan pengaturan ulang kata sandi untuk ${ boldEmail }."
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hours": [
+        "Anda dapat mengubah kata sandi Anda dalam ${ gracePeriodHoursRemaining } jam"
+      ]
+    },
+    "session_recovery:initiation:action": {
+      "Got it": [
+        "Mengerti"
+      ],
+      "Request password reset": [
+        "Minta pengaturan ulang kata sandi"
+      ],
+      "Use recovery method": [
+        "Gunakan metode pemulihan"
+      ]
+    },
+    "session_recovery:initiation:info": {
+      "For security reasons, you’ll have to wait **72 hours** before you can change your password.": [
+        "Demi alasan keamanan, Anda harus menunggu **72 jam** sebelum Anda dapat mengubah kata sandi Anda."
+      ],
+      "We will contact you again when the password reset is available.": [
+        "Kami akan kembali menghubungi Anda ketika pengaturan ulang kata sandi telah tersedia."
+      ],
+      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
+        "Anda dapat memeriksa status permintaan Anda kapan saja pada ${ accountAndPasswordSectionLink } di menu pengaturan."
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "account and password section": [
+        "bagian Akun dan kata sandi"
+      ]
+    },
+    "session_recovery:initiation:notification": {
+      "Password reset confirmed": [
+        "Pengaturan ulang kata sandi terkonfirmasi"
+      ]
+    },
+    "session_recovery:initiation:title": {
+      "Request password reset?": [
+        "Minta pengaturan ulang kata sandi?"
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hours": [
+        "Anda akan dapat mengatur ulang kata sandi Anda dalam ${ gracePeriodHoursRemaining } jam"
+      ]
+    },
+    "session_recovery:settings:action": {
+      "Request password reset": [
+        "Minta pengaturan ulang kata sandi"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hours": [
+        "${ gracePeriodHoursRemaining } jam"
+      ]
+    },
+    "session_recovery:status:info": {
+      "Available": [
+        "Tersedia"
+      ],
+      "Pending": [
+        "Menunggu siap"
+      ]
+    },
+    "session_recovery:status:title": {
+      "Password reset request": [
+        "Permintaan pengaturan ulang kata sandi"
+      ]
+    },
     "Settings description": {
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Selesaikan transisi menuju privasi dengan perangkat impor dan penerusan pesan aman kami."
@@ -12201,8 +12400,8 @@
       "Add users": [
         "Tambah pengguna"
       ],
-      "Address verification": [
-        "Verifikasi alamat"
+      "Address and key verification": [
+        "Verifikasi alamat dan kunci"
       ],
       "Allocate storage": [
         "Alokasi penyimpanan"
@@ -12725,6 +12924,9 @@
       ],
       "Password and keys": [
         "Kata sandi dan kunci"
+      ],
+      "Password reset": [
+        "Pengaturan ulang kata sandi"
       ],
       "Pay invoice": [
         "Bayar tagihan"
@@ -13281,6 +13483,9 @@
       "This feature is only available for paid users": [
         "Fitur ini hanya tersedia untuk pengguna berbayar"
       ],
+      "This feature is only available on Beta": [
+        "Fitur ini hanya tersedia pada versi Beta"
+      ],
       "This key cannot be used for encryption": [
         "Kunci ini tidak dapat dipakai untuk mengenkripsi"
       ],
@@ -13381,7 +13586,7 @@
     },
     "Upgrade": {
       "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "Tingkatkan ke ${ passPlusPlanName } untuk mendapatkan alias Hide-my-email tidak terbatas"
+        "Tingkatkan ke ${ passPlusPlanName } untuk memperoleh alias Hide-my-email tanpa batasan jumlah"
       ],
       "Upgrade to ${ planName } to connect up to ${ n } devices to the VPN at once": [
         "Tingkatkan akun Anda ke ${ planName } untuk dapat menghubungkan ${ n } perangkat ke jaringan VPN secara bersamaan"

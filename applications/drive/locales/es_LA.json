@@ -226,6 +226,9 @@
       "Discard": [
         "Descartar"
       ],
+      "Don't know your password?": [
+        "¿No sabe su contraseña?"
+      ],
       "Done": [
         "Hecho"
       ],
@@ -427,6 +430,9 @@
       "Next month": [
         "Mes siguiente"
       ],
+      "Ok": [
+        "OK"
+      ],
       "Open navigation": [
         "Abrir navegación"
       ],
@@ -549,6 +555,9 @@
       ],
       "Search drive": [
         "Buscar en unidad"
+      ],
+      "See how": [
+        "Ver cómo"
       ],
       "See plan features": [
         "Ver funcionalidades del plan"
@@ -2040,6 +2049,9 @@
       "Incorrect password. Please try again.": [
         "Contraseña incorrecta. Intente de nuevo."
       ],
+      "Incorrect username": [
+        "Nombre de usuario incorrecto"
+      ],
       "Invalid email address": [
         "Dirección de correo inválida"
       ],
@@ -3078,6 +3090,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita permiso para ${ enableDesktopNotifications }."
+      ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "La tecnología de cifrado de ${ BRAND_NAME } significa que nadie tiene acceso a su contraseña, ni siquiera nosotros."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } calendario nuevo",
@@ -4334,6 +4349,9 @@
       "Comment": [
         "Comentario"
       ],
+      "Confirm password": [
+        "Confirmar contraseña"
+      ],
       "Contacts": [
         "Contactos"
       ],
@@ -4538,6 +4556,9 @@
       ],
       "Never": [
         "Nunca"
+      ],
+      "New password": [
+        "Contraseña nueva"
       ],
       "Notification": [
         "Notificación"
@@ -5367,6 +5388,175 @@
         "Subir"
       ]
     },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "Cancelar el restablecimiento"
+      ],
+      "Reset password": [
+        "Restablecer la contraseña"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "La recuperación de la cuenta no está disponible para claves de direcciones heredadas"
+      ],
+      "Please generate keys before you try to change your password": [
+        "Genere claves antes de intentar cambiar su contraseña"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } día",
+        "${ timeRemaining.inDays } días"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } hora",
+        "${ timeRemaining.inHours } horas"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Restablecimiento de contraseña aprobado (${ user.Email }). Tiene ${ timeRemaining.inDays } día para restablecer su contraseña.",
+        "Restablecimiento de contraseña aprobado (${ user.Email }). Tiene ${ timeRemaining.inDays } días para restablecer su contraseña."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Restablecimiento de contraseña aprobado (${ user.Email }). Tiene ${ timeRemaining.inHours } hora para restablecer su contraseña.",
+        "Restablecimiento de contraseña aprobado (${ user.Email }). Tiene ${ timeRemaining.inHours } horas para restablecer su contraseña."
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Vaya al dispositivo en el que inició sesión y donde se realizó la solicitud para cambiar su contraseña."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Este permiso expira en ${ timeRemaining.inDays } día",
+        "Este permiso expira en ${ timeRemaining.inDays } días"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Este permiso expira en ${ timeRemaining.inHours } hora",
+        "Este permiso expira en ${ timeRemaining.inHours } horas"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Ahora puede cambiar la contraseña para la cuenta ${ boldEmail } durante ${ boldDaysRemaining }."
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Ver cómo"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Contraseña guardada"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Restablecer su contraseña"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Cancelar el restablecimiento de contraseña"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Ingrese su contraseña actual para cancelar el proceso de restablecimiento. Ningún cambio surtirá efecto."
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "El restablecimiento de contraseña fue cancelado."
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "¿Cancelar el restablecimiento de contraseña?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Solicitud de restablecimiento de contraseña cancelada (${ user.Email }). Si no realizó esta solicitud, ${ changePasswordLink }."
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "cambie su contraseña ahora."
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "Cancelar la solicitud"
+      ],
+      "Got it": [
+        "Entendido"
+      ],
+      "Learn more": [
+        "Más información"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } hora más",
+        "${ gracePeriodHoursRemaining } horas más"
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "Si no solicitó restablecer la contraseña, cancélela ahora."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Restablecimiento de contraseña solicitado (${ user.Email }). Puede cambiar su contraseña en ${ hoursRemaining } hora.",
+        "Restablecimiento de contraseña solicitado (${ user.Email }). Puede cambiar su contraseña en ${ hoursRemaining } horas."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "Para asegurarnos de que es usted quien intenta restablecer la contraseña, esperamos 72 horas antes de aprobar las solicitudes. Podrá cambiar su contraseña en ${ boldTimeLeft }. ${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "Hemos recibido una solicitud de restablecimiento de contraseña para ${ boldEmail }."
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "Ver la solicitud"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "Restablecimiento de contraseña solicitado"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Cerrar sesión"
+      ],
+      "Stay signed in": [
+        "Seguir conectado"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } hora",
+        "${ gracePeriodHoursRemaining } horas"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } ahora está disponible."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Si cierra la sesión antes de restablecer su contraseña, podría perder el acceso a su cuenta."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Si cierra la sesión sin restablecer su contraseña, podría perder el acceso a su cuenta."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Podrá restablecer su contraseña en ${ boldTimeLeft }."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Restablecimiento de contraseña"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "¿Desea cerrar la sesión sin restablecer la contraseña?"
+      ]
+    },
     "Signing preference for emails": {
       "Don't sign": [
         "No firmar"
@@ -5917,6 +6107,9 @@
       ],
       "Change layout": [
         "Cambiar diseño"
+      ],
+      "Change password": [
+        "Cambiar contraseña"
       ],
       "Clearing data": [
         "Limpiando datos"
