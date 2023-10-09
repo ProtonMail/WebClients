@@ -319,6 +319,9 @@
       "Discard": [
         "Verwerfen"
       ],
+      "Don't know your password?": [
+        "Weißt du dein Passwort nicht?"
+      ],
       "Done": [
         "Fertig"
       ],
@@ -692,6 +695,9 @@
       "Not saved": [
         "Nicht gespeichert"
       ],
+      "Ok": [
+        "Ok"
+      ],
       "OK": [
         "OK"
       ],
@@ -856,6 +862,9 @@
       ],
       "See business plans": [
         "Siehe Business Abonnements"
+      ],
+      "See how": [
+        "Siehe wie"
       ],
       "See plan features": [
         "Funktionen des Abonnements anzeigen"
@@ -3223,6 +3232,9 @@
       "Incorrect mailbox password. Please try again.": [
         "Ungültiges Postfach-Passwort. Bitte versuche es erneut."
       ],
+      "Incorrect username": [
+        "Falscher Benutzername"
+      ],
       "Invalid email address": [
         "Ungültige E-Mail-Adresse"
       ],
@@ -4630,6 +4642,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } benötigt deine Erlaubnis, um ${ enableDesktopNotifications }."
+      ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "${ BRAND_NAME }'s Verschlüsselungstechnologie bedeutet, dass keiner Zugriff auf dein Passwort hat - nicht einmal wir."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } neuer Kalender",
@@ -6398,6 +6413,9 @@
       "Conditions": [
         "Bedingungen"
       ],
+      "Confirm password": [
+        "Passwort bestätigen"
+      ],
       "Contacts": [
         "Kontakte"
       ],
@@ -6589,6 +6607,9 @@
       ],
       "Navigation": [
         "Navigation"
+      ],
+      "New password": [
+        "Neues Passwort"
       ],
       "No label found": [
         "Keine Kategorie gefunden"
@@ -7838,6 +7859,172 @@
         "Gespeichert mit Zero-Access-Verschlüsselung"
       ]
     },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "Zurücksetzen abbrechen"
+      ],
+      "Reset password": [
+        "Passwort zurücksetzen"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Please generate keys before you try to change your password": [
+        "Bitte generiere Schlüssel, bevor du versuchst dein Passwort zu ändern."
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } Tag",
+        "${ timeRemaining.inDays } Tage"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } Stunde",
+        "${ timeRemaining.inHours } Stunden"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Anfrage zur Passwortzurücksetzung genehmigt (${ user.Email }). Du hast ${ timeRemaining.inDays } Tag, um dein Passwort zurückzusetzen.",
+        "Anfrage zur Passwortzurücksetzung genehmigt (${ user.Email }). Du hast ${ timeRemaining.inDays } Tage, um dein Passwort zurückzusetzen."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Anfrage zur Passwortzurücksetzung genehmigt (${ user.Email }). Du hast ${ timeRemaining.inHours } Stunde, um dein Passwort zurückzusetzen.",
+        "Anfrage zur Passwortzurücksetzung genehmigt (${ user.Email }). Du hast ${ timeRemaining.inHours } Stunden, um dein Passwort zurückzusetzen."
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Bitte gehe, um dein Passwort zu ändern zu dem angemeldeten Gerät, von dem aus die Anfrage zur Passwortänderung gestartet wurde."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Diese Berechtigung läuft in ${ timeRemaining.inDays } Tag ab.",
+        "Diese Berechtigung läuft in ${ timeRemaining.inDays } Tagen ab."
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Diese Berechtigung läuft in ${ timeRemaining.inHours } Stunde ab.",
+        "Diese Berechtigung läuft in ${ timeRemaining.inHours } Stunden ab."
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Du kannst jetzt dein Passwort für das Konto ${ boldEmail } für ${ boldDaysRemaining } frei ändern."
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Siehe wie"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Passwort gespeichert"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Passwort zurücksetzen"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Passwortzurücksetzung abbrechen"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Gib dein aktuelles Passwort ein, um den Prozess zur Passwortzurücksetzung abzubrechen. Andere Änderungen werden nicht wirksam."
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "Passwortzurücksetzung abgebrochen"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Passwortzurücksetzung abbrechen?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Passwortzurücksetzung abgebrochen (${ user.Email }). Wenn du diese Anfrage nicht gemacht hast, ${ changePasswordLink }."
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "Passwort jetzt ändern"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "Anfrage abbrechen"
+      ],
+      "Got it": [
+        "Verstanden"
+      ],
+      "Learn more": [
+        "Mehr erfahren"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } weitere Stunde",
+        "${ gracePeriodHoursRemaining } weitere Stunden"
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "Wenn du nicht darum gebeten hast, dein Passwort zurückzusetzen, breche diese Anfrage jetzt ab."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Passwortzurücksetzung angefordert (${ user.Email }). Du kannst dein Passwort in ${ hoursRemaining } Stunde ändern.",
+        "Passwortzurücksetzung angefordert (${ user.Email }). Du kannst dein Passwort in ${ hoursRemaining } Stunden ändern."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "Um sicherzugehen, dass wirklich du versucht hast dein Passwort zurückzusetzen, warten wir 72 Stunden, bevor wir Anfragen genehmigen. Du kannst dein Passwort in ${ boldTimeLeft } ändern. ${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "Wir haben eine Anfrage zum Zurücksetzen des Passworts für ${ boldEmail } erhalten."
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "Anfrage ansehen"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "Passwortzurücksetzung angefordert"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Abmelden"
+      ],
+      "Stay signed in": [
+        "Angemeldet bleiben"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } Stunde",
+        "${ gracePeriodHoursRemaining } Stunden"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } ist jetzt verfügbar."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Wenn du dich abmeldest, bevor du dein Passwort zurücksetzt, kannst du den Zugang zu deinem Konto verlieren."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Wenn du dich abmeldest, bevor du dein Passwort zurücksetzt, kannst du den Zugang zu deinem Konto verlieren."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Du kannst dein Passwort in ${ boldTimeLeft } zurücksetzen."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Passwort zurückgesetzt"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Abmelden ohne Passwortzurücksetzung?"
+      ]
+    },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
         "PGP-verschlüsselte Nachricht. Absenderverifizierung fehlgeschlagen: ${ verificationErrorsMessage }"
@@ -8665,6 +8852,9 @@
       ],
       "Change my answer": [
         "Meine Antwort ändern"
+      ],
+      "Change password": [
+        "Passwort ändern"
       ],
       "Clear out the junk": [
         "Unnötige Nachrichten bereinigen"

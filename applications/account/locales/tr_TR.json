@@ -1496,11 +1496,6 @@
         "Herkes ile paylaş"
       ]
     },
-    "Calendar settings sidebar": {
-      "Show ${ remainingItems } more": [
-        "Daha fazlasını ${ remainingItems } görüntüle"
-      ]
-    },
     "Calendar share permission label": {
       "Edit event details": [
         "Etkinlik bilgilerini düzenle"
@@ -1865,8 +1860,14 @@
       "Birthday": [
         "Doğum günü"
       ],
+      "Display name": [
+        "Görüntülenecek ad"
+      ],
       "Email": [
         "E-posta"
+      ],
+      "First name": [
+        "Ad"
       ],
       "Gender": [
         "Cinsiyet"
@@ -1876,6 +1877,9 @@
       ],
       "Language": [
         "Dil"
+      ],
+      "Last name": [
+        "Soyad"
       ],
       "Logo": [
         "Logo"
@@ -3185,6 +3189,9 @@
       ],
       "Contact signature not verified": [
         "Kişi imzası doğrulanamadı"
+      ],
+      "Could not save preference": [
+        "Ayar kaydedilemedi"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "En az ${ calendarsToFixCount } takvimi kaldırın",
@@ -4642,6 +4649,9 @@
       "Set up ${ strongText } from Gmail": [
         "Gmail için ${ strongText } özelliğini ayarlayın"
       ],
+      "This feature is currently unavailable": [
+        "Bu özellik şu anda kullanılamıyor"
+      ],
       "Update your logins": [
         "Oturum açma bilgilerinizi güncelleyin"
       ]
@@ -5437,9 +5447,6 @@
       "address": [
         "adres",
         "adres"
-      ],
-      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
-        "Adres doğrulaması, gelişmiş bir güvenlik özelliğidir. Bu özelliği yalnızca ne yaptığınızı biliyorsanız açın."
       ],
       "Admin account allocation": [
         "Yönetici hesabına ayrılan"
@@ -7992,6 +7999,9 @@
       "Conversation grouping": [
         "Yazışmalar gruplansın"
       ],
+      "Conversations per page": [
+        "Bir sayfadaki yazışma sayısı"
+      ],
       "Copy": [
         "Kopyala"
       ],
@@ -8279,6 +8289,9 @@
       ],
       "Message": [
         "İleti"
+      ],
+      "Messages per page": [
+        "Bir sayfadaki ileti sayısı"
       ],
       "Moderate NAT": [
         "Ilımlı NAT"
@@ -9740,17 +9753,6 @@
         "Ekip yönetimi"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanımdan kaldırılacak."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Deneme süreniz ${ formattedPeriodEndDate } tarihinde sona eriyor"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, ${ last4 } içinde sona erecek"
@@ -9838,6 +9840,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat ücretinizi kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanımdan kaldırılacak."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Deneme süreniz ${ formattedPeriodEndDate } tarihinde sona eriyor"
       ]
     },
     "new_plans: Label": {
@@ -12342,9 +12355,6 @@
       ],
       "Add users": [
         "Kullanıcılar ekle"
-      ],
-      "Address verification": [
-        "Adres doğrulaması"
       ],
       "Allocate storage": [
         "Depolama alanını dağıt"

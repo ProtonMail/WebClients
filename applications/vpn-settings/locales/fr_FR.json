@@ -146,6 +146,9 @@
       "Discard": [
         "Abandonner"
       ],
+      "Don't know your password?": [
+        "Vous ne connaissez pas votre mot de passe ?"
+      ],
       "Done": [
         "Terminé"
       ],
@@ -287,6 +290,9 @@
       "OK": [
         "OK"
       ],
+      "Ok": [
+        "OK"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ouvrir les paramètres de ${ CALENDAR_APP_NAME }"
       ],
@@ -379,6 +385,9 @@
       ],
       "Search countries": [
         "Rechercher dans les pays"
+      ],
+      "See how": [
+        "Voir comment faire"
       ],
       "See plan features": [
         "Voir les fonctionnalités de l'abonnement"
@@ -1749,6 +1758,9 @@
       ],
       "Incorrect password": [
         "Le mot de passe n'est pas correct."
+      ],
+      "Incorrect username": [
+        "Le nom d'utilisateur n'est pas correct."
       ],
       "Invalid ${ name } code": [
         "Le code ${ name } n'est pas valide."
@@ -5513,7 +5525,7 @@
         "Création de nouveaux utilisateurs"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
-        "En raison d'un changement de mot de passe, les droits administrateur de votre organisation ont été restreints. Les actions suivantes ne sont plus autorisées :"
+        "En raison d'un changement du mot de passe, les droits administrateur de votre organisation ont été restreints. Les actions suivantes ne sont plus autorisées :"
       ],
       "Reading emails of non-private users": [
         "Lecture des messages des utilisateurs non privés"
@@ -5547,6 +5559,263 @@
       ],
       "to be created": [
         "à créer"
+      ]
+    },
+    "session_recovery:available:action": {
+      "Cancel password reset": [
+        "Annuler la réinitialisation du mot de passe "
+      ],
+      "Cancel reset": [
+        "Annuler la réinitialisation"
+      ],
+      "Reset password": [
+        "Réinitialiser le mot de passe"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "La récupération des comptes n'est pas disponible pour les anciennes clés d'adresse."
+      ],
+      "Please generate keys before you try to change your password": [
+        "Générez des clés avant d'essayer de changer votre mot de passe."
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } jour",
+        "${ timeRemaining.inDays } jours"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } heure",
+        "${ timeRemaining.inHours } heures"
+      ],
+      "Didn’t make this request?": [
+        "Vous n'avez pas effectué cette demande·?"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Si vous n'êtes pas à l'origine de la demande de réinitialisation de votre mot de passe, annulez maintenant la demande."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "La demande de réinitialisation du mot de passe a été validée (${ user.Email }). Vous disposez de ${ timeRemaining.inDays } jour pour réinitialiser votre mot de passe.",
+        "La demande de réinitialisation du mot de passe a été validée (${ user.Email }). Vous disposez de ${ timeRemaining.inDays } jours pour réinitialiser votre mot de passe."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "La demande de réinitialisation du mot de passe a été validée (${ user.Email }). Vous disposez de ${ timeRemaining.inHours } heure pour réinitialiser votre mot de passe.",
+        "La demande de réinitialisation du mot de passe a été validée (${ user.Email }). Vous disposez de ${ timeRemaining.inHours } heures pour réinitialiser votre mot de passe."
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Rendez-vous sur l'appareil avec lequel vous vous êtes connecté (dans la session où la demande a été faite) pour changer votre mot de passe."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Cette autorisation expire dans ${ timeRemaining.inDays } jour.",
+        "Cette autorisation expire dans ${ timeRemaining.inDays } jours."
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Cette autorisation expire dans ${ timeRemaining.inHours } heure.",
+        "Cette autorisation expire dans ${ timeRemaining.inHours } heures."
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Vous disposez de ${ boldDaysRemaining } pour modifier librement votre mot de passe pour le compte ${ boldEmail }."
+      ],
+      "You can now reset your password": [
+        "Vous pouvez maintenant réinitialiser votre mot de passe."
+      ],
+      "You can reset your password until ${ boldDate }.": [
+        "Vous avez jusqu'au ${ boldDate } pour réinitialiser votre mot de passe."
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Voir comment faire"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Le mot de passe a été enregistré."
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Réinitialiser votre mot de passe"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Annuler la réinitialisation du mot de passe "
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Saisissez votre mot de passe actuel pour annuler la procédure de réinitialisation du mot de passe. Aucune autre modification ne sera prise en compte."
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "La réinitialisation du mot de passe a été annulée."
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Annuler la réinitialisation du mot de passe ?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "La demande de réinitialisation du mot de passe a été annulée (${ user.Email }). Si vous n'êtes pas à l'origine de cette demande, ${ changePasswordLink }."
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "modifiez votre mot de passe maintenant"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel password reset": [
+        "Annuler la réinitialisation du mot de passe "
+      ],
+      "Cancel request": [
+        "Annuler la demande"
+      ],
+      "Got it": [
+        "J'ai compris"
+      ],
+      "Learn more": [
+        "En savoir plus"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } heure en plus",
+        "${ gracePeriodHoursRemaining } heures en plus"
+      ],
+      "Didn’t make this request?": [
+        "Vous n'avez pas effectué cette demande·?"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Si vous n'êtes pas à l'origine de la demande de réinitialisation de votre mot de passe, annulez maintenant la demande."
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "Si vous n'êtes pas à l'origine de la demande de réinitialisation de votre mot de passe, annulez cette demande maintenant."
+      ],
+      "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
+        "La réinitialisation du mot de passe sera disponible à partir du ${ boldDate }. Cela vous donne le temps d'annuler toute demande frauduleuse."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "La réinitialisation du mot de passe a été demandée (${ user.Email }). Vous pourrez modifier votre mot de passe dans ${ hoursRemaining } heure.",
+        "La réinitialisation du mot de passe a été demandée (${ user.Email }). Vous pourrez modifier votre mot de passe dans ${ hoursRemaining } heures."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "Pour nous assurer que vous êtes bien à l'origine de la réinitialisation de votre mot de passe, nous attendons 72 heures avant de valider les demandes. Vous pourrez modifier votre mot de passe dans ${ boldTimeLeft }. ${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "Nous avons reçu une demande de réinitialisation du mot de passe pour ${ boldEmail }."
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "Vous pourrez modifier votre mot de passe dans ${ gracePeriodHoursRemaining } heure.",
+        "Vous pourrez modifier votre mot de passe dans ${ gracePeriodHoursRemaining } heures."
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "Afficher la demande"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "La réinitialisation du mot de passe a été demandée."
+      ]
+    },
+    "session_recovery:initiation:action": {
+      "Got it": [
+        "J'ai compris"
+      ],
+      "Request password reset": [
+        "Demander une réinitialisation du mot de passe"
+      ],
+      "Use recovery method": [
+        "Utiliser une méthode de récupération"
+      ]
+    },
+    "session_recovery:initiation:info": {
+      "For security reasons, you’ll have to wait **72 hours** before you can change your password.": [
+        "Pour des raisons de sécurité, vous devrez attendre **72 heures** avant de pouvoir modifier votre mot de passe."
+      ],
+      "If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.": [
+        "Si vous disposez d'une **méthode de récupération**, essayez plutôt la récupération de compte. Cela vous permettra de changer votre mot de passe immédiatement."
+      ],
+      "We will contact you again when the password reset is available.": [
+        "Nous vous recontacterons dès que la réinitialisation du mot de passe sera disponible."
+      ],
+      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
+        "Vous pouvez à tout moment vérifier l'état de votre demande dans la section ${ accountAndPasswordSectionLink } des paramètres."
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "account and password section": [
+        "Compte et mot de passe"
+      ]
+    },
+    "session_recovery:initiation:notification": {
+      "Password reset confirmed": [
+        "La réinitialisation du mot de passe est confirmée."
+      ]
+    },
+    "session_recovery:initiation:title": {
+      "Request password reset?": [
+        "Demander une réinitialisation du mot de passe·?"
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "Vous pourrez réinitialiser votre mot de passe dans ${ gracePeriodHoursRemaining } heure.",
+        "Vous pourrez réinitialiser votre mot de passe dans ${ gracePeriodHoursRemaining } heures."
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Se déconnecter"
+      ],
+      "Stay signed in": [
+        "Rester connecté"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } heure",
+        "${ gracePeriodHoursRemaining } heures"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } est maintenant disponible."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Si vous vous déconnectez avant d'avoir réinitialisé votre mot de passe, vous risquez de perdre l'accès à votre compte."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Si vous vous déconnectez sans réinitialiser votre mot de passe, vous risquez de perdre l'accès à votre compte."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Vous pourrez réinitialiser votre mot de passe dans ${ boldTimeLeft }."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Réinitialisation du mot de passe"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Se déconnecter sans faire une réinitialisation du mot de passe ?"
+      ]
+    },
+    "session_recovery:status:info": {
+      "Available": [
+        "Disponible"
+      ],
+      "Pending": [
+        "En attente"
+      ]
+    },
+    "session_recovery:status:title": {
+      "Password reset request": [
+        "Demande de réinitialisation du mot de passe"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -6141,7 +6410,7 @@
     },
     "summer2023: Describe Proton Pass": {
       "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Enregistrez vos mots de passe en toute sécurité et renseignez-les automatiquement sur les sites web. Profitez d'un nombre illimité de mots de passe, du remplissage automatique, d'un générateur de mots de passe et de bien d'autres fonctionnalités."
+        "Enregistrez vos mots de passe en toute sécurité et renseignez-les automatiquement sur les sites internet. Profitez d'un nombre illimité de mots de passe, du remplissage automatique, d'un générateur de mots de passe et de bien d'autres fonctionnalités."
       ]
     },
     "summer2023: Short tool name to present Proton Pass": {
