@@ -59,6 +59,9 @@
       "Confirm": [
         "დასტური"
       ],
+      "Continue": [
+        "გაგრძელება"
+      ],
       "Continue without pinning": [
         "მიმაგრების გარეშე გაგრძელება"
       ],
@@ -173,11 +176,17 @@
       "Learn more": [
         "გაიგეთ მეტი"
       ],
+      "Leave": [
+        "გასვლა"
+      ],
       "Lock extension": [
         "გაფართოების დაბლოკვა"
       ],
       "Manually sync your data": [
         "თქვენი მონაცემების ხელით სინქრონიზაცია"
+      ],
+      "More info: ${ safeTitle }": [
+        "გაიგეთ მეტი: ${ safeTitle }"
       ],
       "More options": [
         "მეტი პარამეტრი"
@@ -232,6 +241,9 @@
       ],
       "Send us a message": [
         "მოგვწერეთ"
+      ],
+      "Share": [
+        "გაზიარება"
       ],
       "Show": [
         "ჩვენება"
@@ -412,6 +424,9 @@
       ],
       "Settings update failed": [
         "პარამეტრების განახლების შეცდომა"
+      ],
+      "Signature verification failed": [
+        "ხელმოწერის შემოწმების შეცდომა"
       ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
         "პაროლის შესვლის გამო ზოგიერთი საცავი ხელმისაწვდომი აღარაა. წვდომის დასაბრუნებლად თავიდან გაააქტიურეთ ანგარიშის გასაღებები. ${ reactivateLink }"
@@ -1315,6 +1330,9 @@
       ],
       "Add text": [
         "ტექსტის დამატება"
+      ],
+      "Email address": [
+        "ელ-ფოსტის მისამართი"
       ],
       "Enter a note...": [
         "შეიყვანეთ შენიშვნა..."

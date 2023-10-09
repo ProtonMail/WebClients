@@ -3392,6 +3392,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
       ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "${ BRAND_NAME } の暗号化技術は私たちでさえもパスワードにアクセスできないことを意味しています。"
+      ],
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } 個の新しいカレンダー"
       ],
@@ -4267,6 +4270,9 @@
       "Colors": [
         "色"
       ],
+      "Confirm password": [
+        "パスワードの確認"
+      ],
       "Contacts": [
         "連絡先"
       ],
@@ -4422,6 +4428,9 @@
       ],
       "Navigation": [
         "ナビゲーション"
+      ],
+      "New password": [
+        "新しいパスワード"
       ],
       "Notification": [
         "通知"
@@ -6065,6 +6074,9 @@
       ],
       "Change my answer": [
         "回答を変更"
+      ],
+      "Change password": [
+        "パスワードを変更"
       ],
       "Choose how many times this event will repeat": [
         "予定の繰り返し回数を選択"

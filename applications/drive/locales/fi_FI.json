@@ -72,7 +72,7 @@
         "Takaisin"
       ],
       "Back to Homepage": [
-        "Takaisin aloitussivulle"
+        "Palaa aloitussivulle"
       ],
       "Cancel": [
         "Peruuta"
@@ -226,6 +226,9 @@
       "Discard": [
         "Hylkää"
       ],
+      "Don't know your password?": [
+        "Etkö tiedä salasanaasi?"
+      ],
       "Done": [
         "Valmis"
       ],
@@ -326,7 +329,7 @@
         "Selvä"
       ],
       "Grid layout": [
-        "Ruudukkonäkymä"
+        "Ruudukkoasettelu"
       ],
       "Help": [
         "Tuki"
@@ -427,17 +430,20 @@
       "Next month": [
         "Seuraava kuukausi"
       ],
+      "Ok": [
+        "OK"
+      ],
       "Open navigation": [
         "Avaa navigaatio"
       ],
       "Pause all": [
-        "Tauota kaikki"
+        "Keskeytä kaikki"
       ],
       "Pause download": [
-        "Tauota lataus"
+        "Keskeytä lataus"
       ],
       "Pause upload": [
-        "Tauota tallennus"
+        "Keskeytä tallennus"
       ],
       "Preview": [
         "Esikatsele"
@@ -545,10 +551,13 @@
         "Hae"
       ],
       "Search countries": [
-        "Etsi maista"
+        "Etsi maata"
       ],
       "Search drive": [
         "Etsi Drivesta"
+      ],
+      "See how": [
+        "Katso miten"
       ],
       "See plan features": [
         "Katso tilauksen ominaisuudet"
@@ -632,7 +641,7 @@
         "Lähetä"
       ],
       "Submit report": [
-        "Lähetä ilmoitus"
+        "Lähetä raportti"
       ],
       "Switch or add account": [
         "Vaihda tai lisää tili"
@@ -2008,19 +2017,19 @@
         "Tiedostoa \"${ item.name }\" ei voida tallentaa virheen \"${ error }\" vuoksi"
       ],
       "File \"${ name }\" is already downloading": [
-        "Tiedostoa \"${ name }\" ladataan jo"
+        "Tiedostoa \"${ name }\" ladataan jo."
       ],
       "File cannot be merged with folder": [
         "Tiedostoa ei voida yhdistää kansioon"
       ],
       "File selection is already downloading": [
-        "Tiedostovalintaa ladataan jo"
+        "Valittuja tiedostoja ladataan jo."
       ],
       "First name is too long": [
         "Etunimi on liian pitkä"
       ],
       "Folder \"${ name }\" is already downloading": [
-        "Kansiota \"${ name }\" ladataan jo"
+        "Kansiota \"${ name }\" ladataan jo."
       ],
       "Folder name cannot be empty.": [
         "Kansion nimi ei voi olla tyhjä."
@@ -2039,6 +2048,9 @@
       ],
       "Incorrect password. Please try again.": [
         "Virheellinen salasana. Yritä uudelleen."
+      ],
+      "Incorrect username": [
+        "Virheellinen käyttäjätunnus"
       ],
       "Invalid email address": [
         "Virheellinen sähköpostiosoite"
@@ -2361,10 +2373,10 @@
         "Päiväkirjamerkintä"
       ],
       "Malformed all-day event": [
-        "Virheellinen kokopäiväinen tapahtuma"
+        "Virheellinen koko päivän tapahtuma"
       ],
       "Malformed end time": [
-        "Virheellinen päätösaika"
+        "Virheellinen lopetusaika"
       ],
       "Malformed recurring event": [
         "Virheellinen toistuva tapahtuma"
@@ -3061,8 +3073,8 @@
     },
     "Info": {
       "${ activeDownloadsCount } downloading": [
-        "${ activeDownloadsCount } latautuu",
-        "${ activeDownloadsCount } latautuu"
+        "${ activeDownloadsCount } ladataan",
+        "${ activeDownloadsCount } ladataan"
       ],
       "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
         "${ activeDownloadsCount } lataus (${ downloadProgress } %)",
@@ -3079,6 +3091,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } tarvitsee käyttöoikeuden ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "${ BRAND_NAME }in salaustekniikan ansioista kukaan ei voi päästä käsiksi salasanaasi - emme edes me."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } uusi kalenteri",
         "${ calendarsToBeCreatedCount } uutta kalenteria"
@@ -3088,8 +3103,8 @@
         "${ calendarsToBeMergedCount } yhdistettyä kalenteria"
       ],
       "${ canceledCount } canceled": [
-        "${ canceledCount } peruttiin",
-        "${ canceledCount } peruttiin"
+        "${ canceledCount } peruttu",
+        "${ canceledCount } peruttua"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
         "${ contactCount } yhteystieto sisältää useita sähköpostiosoitteita.",
@@ -3112,11 +3127,11 @@
       ],
       "${ doneCount } finished": [
         "${ doneCount } valmistunut",
-        "${ doneCount } valmistunutta"
+        "${ doneCount } valmistunut"
       ],
       "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount } ladattiin",
-        "${ doneDownloadsCount } ladattiin"
+        "${ doneDownloadsCount } ladattu",
+        "${ doneDownloadsCount } ladattu"
       ],
       "${ doneUploadsCount } uploaded": [
         "${ doneUploadsCount } tallennettiin",
@@ -3137,8 +3152,8 @@
         "${ groupCounts } ryhmää löytyi"
       ],
       "${ pausedCount } paused": [
-        "${ pausedCount } pysäytettiin",
-        "${ pausedCount } pysäytettiin"
+        "${ pausedCount } keskeytetty",
+        "${ pausedCount } keskeytetty"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } kansio löytyi",
@@ -3223,7 +3238,7 @@
         "Etsi myös roskakorista."
       ],
       "An active recovery file": [
-        "Voimassa oleva palautustiedosto"
+        "Aktiivinen palautustiedosto"
       ],
       "and": [
         "ja"
@@ -3387,16 +3402,16 @@
         "Lataus epäonnistui, koska ${ error }"
       ],
       "Download finished": [
-        "Lataus valmistui"
+        "Lataus on valmis"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Tiedoston ${ downloadFileName } lataus perutaan"
       ],
       "Download paused due to connection issue; it will resume automatically": [
-        "Lataus tauotettiin yhteysongelman vuoksi, mutta jatkuu automaattisesti"
+        "Lataus keskeytyi yhteysongelman vuoksi, mutta jatkuu automaattisesti"
       ],
       "Downloaded": [
-        "Ladatut"
+        "Ladattu"
       ],
       "Downloading": [
         "Ladataan"
@@ -3460,7 +3475,7 @@
         "Aikaa jäljellä arviolta alle minuutti"
       ],
       "Estimating time remaining...": [
-        "Arvioidaan jäljellä olevaa aikaa..."
+        "Arvioidaan jäljellä olevaa aikaa…"
       ],
       "Failed": [
         "Epäonnistui"
@@ -3469,7 +3484,7 @@
         "Turvallisen linkin luonti epäonnistui, koska: ${ error }"
       ],
       "Failed to generate a secure link. Try again later": [
-        "Suojatun linkin luonti epäonnistui. Yritä myöhemmin uudelleen"
+        "Turvallisen linkin luonti epäonnistui. Yritä myöhemmin uudelleen."
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Turvallisen linkin avaus epäonnistui, koska: ${ error }"
@@ -3535,7 +3550,7 @@
         "Miten salattu haku toimii?"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Jos kohtaat tilin luonnissa ongelmia, pyydä kutsu, niin vastaamme yhden työpäivän kuluessa."
+        "Jos kohtaat tilin luonnissa ongelmia, pyydä kutsu niin vastaamme yhden työpäivän kuluessa."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Jos tämä ei mielestäsi pidä paikkaansa, ota yhteyttä osoitteessa ${ contactLink }."
@@ -3665,7 +3680,7 @@
         "Haluatko jakaa tiedoston? Hanki ${ DRIVE_APP_NAME }, joka on turvallisin tapa tiedostojen jakoon, säilytykseen ja synkronointiin."
       ],
       "Network issue": [
-        "Verkko-ongelma"
+        "Yhteysongelma"
       ],
       "New": [
         "Uusi"
@@ -3726,7 +3741,7 @@
         "Kansiota voivat käyttää vain ne, joilla on sen linkki ja salasana."
       ],
       "Paused": [
-        "Tauotettu"
+        "Keskeytetty"
       ],
       "Permanently delete all files in your locked drive": [
         "Poista lukitun asemasi kaikki tiedostot"
@@ -3799,7 +3814,7 @@
         "Jonossa"
       ],
       "recommended browser": [
-        "suositeltujen selaimien"
+        "suositeltujen selainten"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Palautustiedot säilyvät tällä laitteella, kunnes poistat ne."
@@ -3820,7 +3835,7 @@
         "Palautus on käynnissä. Tämä voi kestää muutamia sekunteja."
       ],
       "Restored files ${ formattedDate }": [
-        "Palautetut tiedostot ${ formattedDate }"
+        "${ formattedDate } palautetut tiedostot"
       ],
       "Search cannot be enabled in this browser": [
         "Hakua ei voida käyttää tässä selaimessa"
@@ -3841,7 +3856,7 @@
         "Valitse tuotavat kalenterit. Jokaista tuotua kalenteria kohden luodaan uusi kalenteri tilaukseesi sisältyvän kalentereimäärän puitteissa."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Palvelimia ei tavoiteta. Yritä muutaman minuutin kuluttua uudelleen"
+        "Palvelimia ei tavoiteta. Yritä muutaman minuutin kuluttua uudelleen."
       ],
       "Session timed out": [
         "Istunto aikakatkaistiin"
@@ -3910,10 +3925,10 @@
         "Salatut tiedot vaativat hieman enemmän tallennustilaa tietojesi suojauksen takaavan salauksen ja allekirjoitusten vuoksi."
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Seuraavaa on saatettu muuttaa tietämättäsi: ${ items }. Avaa se vain, jos luotat siihen."
+        "Seuraavia on saatettu muuttaa tietämättäsi: ${ items }. Avaa vain, jos luotat siihen."
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
-        "Siirrettäviä tiedostoja on vielä jäljellä. Siirtojen hallinnan sulkeminen lopettaa kaikki toiminnot."
+        "Siirrettäviä tiedostoja on vielä jäljellä. Siirtojen hallinnan sulkeminen peruu kaikki siirrot."
       ],
       "There are no files yet": [
         "Tiedostoja ei vielä ole"
@@ -3940,20 +3955,20 @@
         "Linkki saattaa olla homografiahyökkäys. Vahvista linkin olevan sivusto, jolla haluat vierailla, tai älä avaa sitä."
       ],
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Linkki luotiin vanhalla Drive-versiolla, eikä sitä ole mahdollista muokata. Muuttaaksesi asetuksia, poista tämä linkki ja luo uusi."
+        "Linkki on luotu vanhalla Drive-versiolla, eikä sen muokkaus ole mahdollista. Muuttaaksesi asetuksia, poista linkki ja luo uusi."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Linkki poistetaan käytöstä pysyvästi, jonka jälkeen kukaan ei voi enää käyttää tiedostoasi sen välityksellä. Jakaaksesi tiedoston uudelleen sinun on luotava uusi linkki."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Linkki poistetaan käytöstä pysyvästi, jonks jälkeen kukaan ei voi enää käyttää kansiota sen kautta. Jakaaksesi kansion uudelleen tarvitset uuden linkin."
+        "Linkki poistetaan käytöstä pysyvästi, jonka jälkeen kukaan ei voi enää käyttää kansiota sen kautta. Jakaaksesi kansion uudelleen tarvitset uuden linkin."
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Tämä poistaa linkin ja tiedoston/kansion käyttöoikeuden kaikilta, joilla on tämä linkki.",
         "Tämä poistaa linkin ja tiedoston/kansion käyttöoikeuden kaikilta, joilla on nämä linkit."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
-        "Tämä poistaa synkronoidun laitteen ${ deviceName } ${ DRIVE_APP_NAME }sta ja keskeyttää Omiin tietokoneisiin lisättyjen kansioiden synkronoinnin."
+        "Tämä poistaa synkronoidun laitteen ${ deviceName } ${ DRIVE_APP_NAME }sta ja pysäyttää Tietokoneisiin lisättyjen kansioiden synkronoinnin."
       ],
       "This will replace the existing file with the folder": [
         "Tämä korvaa olemassa olevan tiedoston kansiolla"
@@ -3971,7 +3986,7 @@
         "Aidosti yksityistä hakua varten, ${ DRIVE_APP_NAME }n on indeksoitava tiedostosi paikallisesti."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Aidosti yksityistä hakua varten tiedostosi on indeksoitava paikallisesti. Voit edelleen käyttää ${ DRIVE_APP_NAME }a normaalisti ja saat ilmoituksen ideksoinnin valmistumisesta."
+        "Aidosti yksityistä hakua varten tiedostosi on indeksoitava paikallisesti. Voit jatkaa ${ DRIVE_APP_NAME }n käyttämistä normaalisti – saat ilmoituksen ideksoinnin valmistumisesta."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Vahvista olevasi ihminen roskapostin ja väärinkäytösten torjumiseksi."
@@ -4013,7 +4028,7 @@
         "Yritä etsiä tiedoston nimellä, päiväyksellä tai tyypillä."
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
-        "Valitettavasti näyttää siltä, että tiedostoa tai osaa sen tiedoista ei voida purkaa."
+        "Valitettavasti näyttää siltä, että tiedoston tai joidenkin sen tietojen salausta ei voida purkaa."
       ],
       "Unknown error": [
         "Tuntematon virhe"
@@ -4043,7 +4058,7 @@
         "Satojen tiedostojen samanaikainen tallennus voi vaikuttaa suorituskykyyn."
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
-        "Tällä lomakkeella voit ilmoittaa meille sopimattomista, laittomista tai muuten haitallisista tiedostoista. Olet raportoimassa:"
+        "Tällä lomakkeella voit ilmoittaa meille sopimattomista, laittomista tai muuten haitallisista tiedostoista. Olet ilmoittamassa:"
       ],
       "Version is deleted": [
         "Versio poistettiin"
@@ -4082,7 +4097,7 @@
         "palautetaan ${ formattedRevisionDate } tallennettuun versioon. Kaikki muut versiot säilytetään."
       ],
       "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
-        "${ DRIVE_APP_NAME }ssa tietosi suojataan päästä päähän -salauksella ja vain sinä voit purkaa salauksen."
+        "${ DRIVE_APP_NAME }ssa tietosi suojataan päästä päähän -salauksella, jonka vain sinä voit purkaa."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Haluatko uuden vahvistuskoodin vai käyttää vaihtoehtoista todennustapaa?"
@@ -4203,7 +4218,7 @@
         "tiedoston tietoavain"
       ],
       "file data order": [
-        "tiedostojen tietojärjestys"
+        "tiedoston tietojärjestys"
       ],
       "hash key": [
         "hajautusarvon avain"
@@ -4240,7 +4255,7 @@
     },
     "Label": {
       "# of downloads": [
-        "Latausten määrä"
+        "Latausmäärä"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-käyttäjätunnus"
@@ -4334,6 +4349,9 @@
       "Comment": [
         "Viesti"
       ],
+      "Confirm password": [
+        "Vahvista salasana"
+      ],
       "Contacts": [
         "Yhteystiedot"
       ],
@@ -4381,7 +4399,7 @@
         "Lataa silti"
       ],
       "Downloading ${ percentageValue }%": [
-        "${ percentageValue } % ladattu"
+        "Ladattu ${ percentageValue } %"
       ],
       "Duplicate found": [
         "Löydettiin kaksoiskappale"
@@ -4538,6 +4556,9 @@
       ],
       "Never": [
         "Ei koskaan"
+      ],
+      "New password": [
+        "Uusi salasana"
       ],
       "Notification": [
         "Ilmoitus"
@@ -4993,12 +5014,12 @@
         "${ numberOfItems } kohdetta siirrettiin"
       ],
       "${ numberOfItems } link to your item failed to be deleted": [
-        "Linkin poisto ${ numberOfItems } kohteeseen epäonnistui",
-        "Linkin poisto ${ numberOfItems } kohteeseen epäonnistui"
+        "${ numberOfItems } kohteen linkin poisto epäonnistui",
+        "${ numberOfItems } kohteen linkkien poisto epäonnistui"
       ],
       "${ numberOfItems } link to your item was deleted": [
-        "${ numberOfItems } linkki kohteeseen poistettiin",
-        "${ numberOfItems } linkkiä kohteisiin poistettiin"
+        "${ numberOfItems } kohteen linkki poistettiin",
+        "${ numberOfItems } kohteen linkit poistettiin"
       ],
       "All items will soon be permanently deleted from trash": [
         "Kaikki roskakorin kohteet poistetaan pian pysyvästi"
@@ -5007,7 +5028,7 @@
         "Linkin lataus epäonnistui"
       ],
       "Cannot load next page": [
-        "Seuraavaa sivua ei voida ladata"
+        "Seuraavan sivun lataus epäonnistui"
       ],
       "Contact group created": [
         "Yhteystietoryhmä luotiin"
@@ -5089,7 +5110,7 @@
         "Kohteen \"${ name }\" linkki poistettiin"
       ],
       "The link to your item failed to be deleted": [
-        "Linkin poisto kohteeseen epäonnistui"
+        "Kohteen linkin poisto epäonnistui"
       ],
       "The link to your item was deleted": [
         "Kohteen linkki poistettiin"
@@ -5104,7 +5125,7 @@
         "Asetusten tallennus epäonnistui"
       ],
       "Your settings have been changed successfully": [
-        "Tekemäsi asetukset tallennettiin"
+        "Tekemäsi asetusmuutokset on tallennettu"
       ]
     },
     "Oauth instructions": {
@@ -5135,7 +5156,7 @@
         "Luo jakolinkki"
       ],
       "Get started using ${ DRIVE_APP_NAME } and we'll double your free storage to 1GB!": [
-        "Aloita ${ DRIVE_APP_NAME }n käyttäminen niin tuplaamme ilmaisen tallennustilasi 1 gigatavuun!"
+        "Aloita ${ DRIVE_APP_NAME }n käyttäminen niin tuplaamme ilmaisen tallennustilasi yhteen gigatavuun!"
       ],
       "Set a recovery method": [
         "Määritä palautustapa"
@@ -5367,6 +5388,172 @@
         "Lataa"
       ]
     },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "Peru nollaus"
+      ],
+      "Reset password": [
+        "Nollaa salasana"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Please generate keys before you try to change your password": [
+        "Luo avaimet ennen kuin yrität vaihtaa salasanaasi"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } päivä",
+        "${ timeRemaining.inDays } päivää"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } tunti",
+        "${ timeRemaining.inHours } tuntia"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Salasanan nollauspyyntö hyväksytty (${ user.Email }). Sinulla on ${ timeRemaining.inDays } päivä aikaa nollata salasanasi.",
+        "Salasanan nollauspyyntö hyväksytty (${ user.Email }). Sinulla on ${ timeRemaining.inDays } päivää aikaa nollata salasanasi."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Salasanan nollauspyyntö hyväksytty (${ user.Email }). Sinulla on ${ timeRemaining.inHours } tunti aikaa nollata salasanasi.",
+        "Salasanan nollauspyyntö hyväksytty (${ user.Email }). Sinulla on ${ timeRemaining.inHours } tuntia aikaa nollata salasanasi."
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Käytä kirjautunutta laitetta (siinä istunnossa, jossa pyyntö käynnistettiin) salasanan vaihtamiseksi."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Tämä käyttöoikeus päättyy ${ timeRemaining.inDays } päivän kuluttua.",
+        "Tämä käyttöoikeus päättyy ${ timeRemaining.inDays } päivän kuluttua."
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Tämä käyttöoikeus päättyy ${ timeRemaining.inHours } tunnin kuluttua.",
+        "Tämä käyttöoikeus päättyy ${ timeRemaining.inHours } tunnin kuluttua."
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Voit nyt vaihtaa salasanasi tilille ${ boldEmail } vapaasti ${ boldDaysRemaining } ajan."
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Katso miten"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Salasana tallennettu"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Nollaa salasanasi"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Peru salasanan nollaus"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Kirjoita nykyinen salasanasi peruuttaaksesi salasanan nollausprosessin. Muut muutokset eivät tule voimaan."
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "Salasanan nollaus peruttiin"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Peruutaanko salasanan nollaus?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Salasanan nollauspyyntö peruutettu (${ user.Email }). Jos et tehnyt tätä pyyntöä, ${ changePasswordLink }."
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "vaihda salasanasi nyt"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "Peru pyyntö"
+      ],
+      "Got it": [
+        "Selvä"
+      ],
+      "Learn more": [
+        "Lue lisää"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } tunti lisää",
+        "${ gracePeriodHoursRemaining } tuntia lisää"
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "Jos et pyytänyt salasanasi nollausta, peruuta tämä pyyntö nyt."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Salasanan nollausta pyydetty (${ user.Email }). Voit vaihtaa salasanasi ${ hoursRemaining } tunnin kuluttua.",
+        "Salasanan nollausta pyydetty (${ user.Email }). Voit vaihtaa salasanasi ${ hoursRemaining } tunnin kuluttua."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "Odotamme 72 tuntia ennen pyyntöjen hyväksymistä, jotta voimme varmistaa, että se olet todella sinä, joka yrittää palauttaa salasanasi. Aikaa jäljellä, kunnes voit vaihtaa salasanasi: ${ boldTimeLeft }. ${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "Vastaanotimme salasanan nollauspyynnön osoitteelle ${ boldEmail }."
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "Näytä pyyntö"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "Salasanan nollausta pyydetty"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Kirjaudu ulos"
+      ],
+      "Stay signed in": [
+        "Pysy kirjautuneena sisään"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } tunti",
+        "${ gracePeriodHoursRemaining } tuntia"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } on nyt käytössä."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Jos kirjaudut ulos ennen kuin olet nollannut salasanasi, voit menettää tilisi käyttöoikeuden."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Jos kirjaudut ulos nollaamatta salasanaasi, voit menettää tilisi käyttöoikeuden."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Aikaa jäljellä kunnes voit nollata salasanasi: ${ boldTimeLeft }."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Salasanan nollaus"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Kirjaudu ulos nollaamatta salasanaa?"
+      ]
+    },
     "Signing preference for emails": {
       "Don't sign": [
         "Älä allekirjoita"
@@ -5464,7 +5651,7 @@
         "Alennukset perustuvat normaaliin kuukausihintaan."
       ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Tämä tilaus uusitaan automaattisesti 2 vuoden välein samaan hintaan, kunnes se peruutetaan."
+        "Tilaus uudistuu automaattisesti kahden vuoden välein samalla hinnalla kunnes se perutaan."
       ]
     },
     "specialoffer: Label": {
@@ -5481,7 +5668,7 @@
         "Tarjous päättyy pian"
       ],
       "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
-        "Alennus pysyy voimassa tilauksen uudistuttua, kunnes tilaus irtisanotaan tai sitä muutetaan"
+        "Alennus pysyy voimassa tilauksen uudistuttua, kunnes tilaus perutaan tai sitä muutetaan."
       ]
     },
     "specialoffer: Link": {
@@ -5566,7 +5753,7 @@
         "Hanki premium-pakettimme ja säästä enemmän"
       ],
       "Our discontinued Visionary plan is back for a limited time only": [
-        "Poistettu Visionary-tilauksemme on palannut vain rajoitetuksi ajaksi"
+        "Poistettu Visionary-tilauksemme on palannut rajoitetuksi ajaksi"
       ],
       "Save more with 2 years of ${ planName }": [
         "Säästä enemmän 2-vuotisella ${ planName }-tilauksella"
@@ -5682,10 +5869,10 @@
         "Asetukset tallennettiin"
       ],
       "Recovery has started": [
-        "Palautus aloitettiin"
+        "Palautus on aloitettu"
       ],
       "The link to your file was successfully copied": [
-        "Tiedoston linkki kopioitiin"
+        "Tiedoston linkki on kopioitu"
       ],
       "Undo in progress": [
         "Kumotaan"
@@ -5752,7 +5939,7 @@
     },
     "summer2023:Info": {
       "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
-        "Vain rajoitetun ajan saat parasta, mitä ${ BRAND_NAME } tarjoaa, erinomaiseen hintaan."
+        "Vain rajoitetun ajan, hanki ${ BRAND_NAME }in paras tarjonta erinomaiseen hintaan."
       ],
       "We’re celebrating the nine-year anniversary of our crowdfunding!": [
         "Juhlimme joukkorahoituksemme yhdeksänvuotisjuhlaa!"
@@ -5851,7 +6038,7 @@
     },
     "Title": {
       "# of downloads": [
-        "Latausten määrä"
+        "Latausmäärä"
       ],
       "${ emailsCount } email address": [
         "${ emailsCount } sähköpostiosoite",
@@ -5913,7 +6100,10 @@
         "Linkin lataus epäonnistui"
       ],
       "Change layout": [
-        "Vaihda näkymää"
+        "Muuta asettelua"
+      ],
+      "Change password": [
+        "Vaihda salasana"
       ],
       "Clearing data": [
         "Tyhjennetään tietoja"
@@ -6199,7 +6389,7 @@
         "Hakutulokset"
       ],
       "Searching…": [
-        "Etsitään…"
+        "Haetaan…"
       ],
       "Select action to take on contact group": [
         "Valitse yhteystietoryhmään kohdistettava toiminto"
@@ -6265,10 +6455,10 @@
         "Linkki on vanhentunut"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
-        "Tiedostolta puuttuu allekirjoitus tai se on virheellinen. Katso tietoja valitsemalla Valikko (⋮) → Tietoja."
+        "Tiedoston allekirjoitus puuttuu tai se on virheellinen. Näytä tiedot valitsemalla Valikko (⋮) → Tietoja."
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
-        "Kansiolta puuttuu allekirjoitus tai se on virheellinen. Katso tietoja valitsemalla Valikko (⋮) → Tietoja."
+        "Kansion allekirjoitus puuttuu tai se on virheellinen. Näytä tiedot valitsemalla Valikko (⋮) → Tietoja."
       ],
       "This link is password protected": [
         "Linkki on suojattu salasanalla"
@@ -6503,7 +6693,7 @@
         "Tämä tuonti saattaa ylittää ${ BRAND_NAME }-tilisi tämänhetkisen vapaan tallennuskapasiteetin. Harkitse tuontisi mukautusta."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Valitettavasti emme ole juuri nyt tavoitettavissa. Kuvaile ongelmasi täyttämällä alla oleva lomake, niin tutustumme siihen ja otamme yhteyttä kun olemme taas paikalla."
+        "Valitettavasti emme ole juuri nyt tavoitettavissa. Kuvaile ongelmasi täyttämällä alla oleva lomake niin tutustumme siihen ja otamme yhteyttä kun olemme taas paikalla."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Sähköpostipalvelinta ei voitu vahvistaa. Jos luotat siihen, voit ohittaa tämän vahvistuksen."

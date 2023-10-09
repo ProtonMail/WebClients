@@ -210,6 +210,9 @@
       "Discard": [
         "Hylkää"
       ],
+      "Don't know your password?": [
+        "Etkö tiedä salasanaasi?"
+      ],
       "Done": [
         "Valmis"
       ],
@@ -387,6 +390,9 @@
       "No, thanks": [
         "Ei kiitos"
       ],
+      "Ok": [
+        "OK"
+      ],
       "OK": [
         "OK"
       ],
@@ -472,7 +478,10 @@
         "Hae"
       ],
       "Search countries": [
-        "Etsi maista"
+        "Etsi maata"
+      ],
+      "See how": [
+        "Katso miten"
       ],
       "See plan features": [
         "Katso tilauksen ominaisuudet"
@@ -2093,7 +2102,7 @@
         "Tiedosto voi olla enintään ${ MAX_IMPORT_FILE_SIZE_STRING } kokoinen ja sisältää enintään ${ MAX_IMPORT_CONTACTS_STRING } yhteystietoa. Jos tiedosto on suurempi, jaa se pienempiin tiedostoihin."
       ],
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
-        "Tämä voi kestää muutaman minuutin. Sillä aikaa voit käyttää Calendaria normaalisti."
+        "Tämä voi kestää muutamia minuutteja. Voit käyttää Calendaria odottaessasi normaalisti."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Määritä yhdistettävien yhteystietojen painotusjärjestys vetämällä ja pudottamalla. Poista niiden valinta, joita et halua yhdistää."
@@ -2354,6 +2363,9 @@
       ],
       "Incorrect mailbox password. Please try again.": [
         "Virheellinen postilaatikon salasana. Yritä uudelleen."
+      ],
+      "Incorrect username": [
+        "Virheellinen käyttäjätunnus"
       ],
       "Interval cannot be empty": [
         "Aikaväli ei voi olla tyhjä"
@@ -2715,10 +2727,10 @@
         "Päiväkirjamerkintä"
       ],
       "Malformed all-day event": [
-        "Virheellinen kokopäiväinen tapahtuma"
+        "Virheellinen koko päivän tapahtuma"
       ],
       "Malformed end time": [
-        "Virheellinen päätösaika"
+        "Virheellinen lopetusaika"
       ],
       "Malformed recurring event": [
         "Virheellinen toistuva tapahtuma"
@@ -3470,6 +3482,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } tarvitsee käyttöoikeuden ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "${ BRAND_NAME }in salaustekniikan ansioista kukaan ei voi päästä käsiksi salasanaasi - emme edes me."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } uusi kalenteri",
         "${ calendarsToBeCreatedCount } uutta kalenteria"
@@ -3617,7 +3632,7 @@
         "Calendar-sivupaneeli"
       ],
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
-        "Etkö löydä etsimiäsi tapahtumia? Jotkin tapahtumat piilotetuissa kalentereissa vastaavat hakuasi. Jos haluat nähdä nämä tulokset, ota näkyvyys käyttöön arvolle ${ hiddenWithItemsCalendarList }."
+        "Etkö löydä etsimiäsi tapahtumia? Jotkin piilotetujen kalenterien tapahtumat vastaavat hakuasi. Jos haluat nähdä nämä tulokset, vaihda seuraavien kalentereiden ${ hiddenWithItemsCalendarList } näkyvyysasetus."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Etkö muista salasanaasi? Voimme auttaa kaikkien tällä avaimella salattujen yhteystietojen salattujen tietojen tyhjennyksessä, jolloin myös hälytys kuittaantuu."
@@ -3733,7 +3748,7 @@
         "Aikaa jäljellä arviolta alle minuutti"
       ],
       "Estimating time remaining...": [
-        "Arvioidaan jäljellä olevaa aikaa..."
+        "Arvioidaan jäljellä olevaa aikaa…"
       ],
       "Existent and added participants will be notified.": [
         "Nykyisille ja lisätyille osallistujille ilmoitetaan."
@@ -3757,7 +3772,7 @@
         "tässä"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Jos kohtaat tilin luonnissa ongelmia, pyydä kutsu, niin vastaamme yhden työpäivän kuluessa."
+        "Jos kohtaat tilin luonnissa ongelmia, pyydä kutsu niin vastaamme yhden työpäivän kuluessa."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Jos tämä ei mielestäsi pidä paikkaansa, ota yhteyttä osoitteessa ${ contactLink }."
@@ -3945,7 +3960,7 @@
         "Valitse tuotavat kalenterit. Jokaista tuotua kalenteria kohden luodaan uusi kalenteri tilaukseesi sisältyvän kalentereimäärän puitteissa."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Palvelimia ei tavoiteta. Yritä muutaman minuutin kuluttua uudelleen"
+        "Palvelimia ei tavoiteta. Yritä muutaman minuutin kuluttua uudelleen."
       ],
       "Session timed out": [
         "Istunto aikakatkaistiin"
@@ -4205,7 +4220,7 @@
     },
     "Info calendar search": {
       "You can either update your search query or close search to go back to calendar views": [
-        "Voit joko päivittää hakutermejäsi tai sulkea haun palataksesi takaisin kalenterinäkymiin"
+        "Voit joko muokata hakuasi tai palata kalenterinäkymiin sulkemalla sen"
       ]
     },
     "Info message": {
@@ -4373,6 +4388,9 @@
       "Colors": [
         "Värit"
       ],
+      "Confirm password": [
+        "Vahvista salasana"
+      ],
       "Contacts": [
         "Yhteystiedot"
       ],
@@ -4528,6 +4546,9 @@
       ],
       "Navigation": [
         "Navigaatio"
+      ],
+      "New password": [
+        "Uusi salasana"
       ],
       "Notification": [
         "Ilmoitus"
@@ -5546,6 +5567,172 @@
         "Tuloksia ei löytynyt"
       ]
     },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "Peru nollaus"
+      ],
+      "Reset password": [
+        "Nollaa salasana"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Please generate keys before you try to change your password": [
+        "Luo avaimet ennen kuin yrität vaihtaa salasanaasi"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } päivä",
+        "${ timeRemaining.inDays } päivää"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } tunti",
+        "${ timeRemaining.inHours } tuntia"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Salasanan nollauspyyntö hyväksytty (${ user.Email }). Sinulla on ${ timeRemaining.inDays } päivä aikaa nollata salasanasi.",
+        "Salasanan nollauspyyntö hyväksytty (${ user.Email }). Sinulla on ${ timeRemaining.inDays } päivää aikaa nollata salasanasi."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Salasanan nollauspyyntö hyväksytty (${ user.Email }). Sinulla on ${ timeRemaining.inHours } tunti aikaa nollata salasanasi.",
+        "Salasanan nollauspyyntö hyväksytty (${ user.Email }). Sinulla on ${ timeRemaining.inHours } tuntia aikaa nollata salasanasi."
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Käytä kirjautunutta laitetta (siinä istunnossa, jossa pyyntö käynnistettiin) salasanan vaihtamiseksi."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Tämä käyttöoikeus päättyy ${ timeRemaining.inDays } päivän kuluttua.",
+        "Tämä käyttöoikeus päättyy ${ timeRemaining.inDays } päivän kuluttua."
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Tämä käyttöoikeus päättyy ${ timeRemaining.inHours } tunnin kuluttua.",
+        "Tämä käyttöoikeus päättyy ${ timeRemaining.inHours } tunnin kuluttua."
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Voit nyt vaihtaa salasanasi tilille ${ boldEmail } vapaasti ${ boldDaysRemaining } ajan."
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Katso miten"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Salasana tallennettu"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Nollaa salasanasi"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Peru salasanan nollaus"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Kirjoita nykyinen salasanasi peruuttaaksesi salasanan nollausprosessin. Muut muutokset eivät tule voimaan."
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "Salasanan nollaus peruttiin"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Peruutaanko salasanan nollaus?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Salasanan nollauspyyntö peruutettu (${ user.Email }). Jos et tehnyt tätä pyyntöä, ${ changePasswordLink }."
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "vaihda salasanasi nyt"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "Peru pyyntö"
+      ],
+      "Got it": [
+        "Selvä"
+      ],
+      "Learn more": [
+        "Lue lisää"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } tunti lisää",
+        "${ gracePeriodHoursRemaining } tuntia lisää"
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "Jos et pyytänyt salasanasi nollausta, peruuta tämä pyyntö nyt."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Salasanan nollausta pyydetty (${ user.Email }). Voit vaihtaa salasanasi ${ hoursRemaining } tunnin kuluttua.",
+        "Salasanan nollausta pyydetty (${ user.Email }). Voit vaihtaa salasanasi ${ hoursRemaining } tunnin kuluttua."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "Odotamme 72 tuntia ennen pyyntöjen hyväksymistä, jotta voimme varmistaa, että se olet todella sinä, joka yrittää palauttaa salasanasi. Aikaa jäljellä, kunnes voit vaihtaa salasanasi: ${ boldTimeLeft }. ${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "Vastaanotimme salasanan nollauspyynnön osoitteelle ${ boldEmail }."
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "Näytä pyyntö"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "Salasanan nollausta pyydetty"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Kirjaudu ulos"
+      ],
+      "Stay signed in": [
+        "Pysy kirjautuneena sisään"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } tunti",
+        "${ gracePeriodHoursRemaining } tuntia"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } on nyt käytössä."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Jos kirjaudut ulos ennen kuin olet nollannut salasanasi, voit menettää tilisi käyttöoikeuden."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Jos kirjaudut ulos nollaamatta salasanaasi, voit menettää tilisi käyttöoikeuden."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Aikaa jäljellä kunnes voit nollata salasanasi: ${ boldTimeLeft }."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Salasanan nollaus"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Kirjaudu ulos nollaamatta salasanaa?"
+      ]
+    },
     "Settings update growler warning": {
       "Failed to update settings": [
         "Asetusten tallennus epäonnistui"
@@ -5692,7 +5879,7 @@
         "Alennukset perustuvat normaaliin kuukausihintaan."
       ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "Tämä tilaus uusitaan automaattisesti 2 vuoden välein samaan hintaan, kunnes se peruutetaan."
+        "Tilaus uudistuu automaattisesti kahden vuoden välein samalla hinnalla kunnes se perutaan."
       ]
     },
     "specialoffer: Label": {
@@ -5709,7 +5896,7 @@
         "Tarjous päättyy pian"
       ],
       "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
-        "Alennus pysyy voimassa tilauksen uudistuttua, kunnes tilaus irtisanotaan tai sitä muutetaan"
+        "Alennus pysyy voimassa tilauksen uudistuttua, kunnes tilaus perutaan tai sitä muutetaan."
       ]
     },
     "specialoffer: Link": {
@@ -5794,7 +5981,7 @@
         "Hanki premium-pakettimme ja säästä enemmän"
       ],
       "Our discontinued Visionary plan is back for a limited time only": [
-        "Poistettu Visionary-tilauksemme on palannut vain rajoitetuksi ajaksi"
+        "Poistettu Visionary-tilauksemme on palannut rajoitetuksi ajaksi"
       ],
       "Save more with 2 years of ${ planName }": [
         "Säästä enemmän 2-vuotisella ${ planName }-tilauksella"
@@ -6086,7 +6273,7 @@
     },
     "summer2023:Info": {
       "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
-        "Vain rajoitetun ajan saat parasta, mitä ${ BRAND_NAME } tarjoaa, erinomaiseen hintaan."
+        "Vain rajoitetun ajan, hanki ${ BRAND_NAME }in paras tarjonta erinomaiseen hintaan."
       ],
       "We’re celebrating the nine-year anniversary of our crowdfunding!": [
         "Juhlimme joukkorahoituksemme yhdeksänvuotisjuhlaa!"
@@ -6244,6 +6431,9 @@
       ],
       "Change my answer": [
         "Vaihda vastaustani"
+      ],
+      "Change password": [
+        "Vaihda salasana"
       ],
       "Choose how many times this event will repeat": [
         "Valitse miten monta kertaa tapahtuma toistuu"
@@ -6742,7 +6932,7 @@
         "Tämä tuonti saattaa ylittää ${ BRAND_NAME }-tilisi tämänhetkisen vapaan tallennuskapasiteetin. Harkitse tuontisi mukautusta."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Valitettavasti emme ole juuri nyt tavoitettavissa. Kuvaile ongelmasi täyttämällä alla oleva lomake, niin tutustumme siihen ja otamme yhteyttä kun olemme taas paikalla."
+        "Valitettavasti emme ole juuri nyt tavoitettavissa. Kuvaile ongelmasi täyttämällä alla oleva lomake niin tutustumme siihen ja otamme yhteyttä kun olemme taas paikalla."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
         "Sähköpostipalvelinta ei voitu vahvistaa. Jos luotat siihen, voit ohittaa tämän vahvistuksen."

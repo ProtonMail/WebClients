@@ -226,6 +226,9 @@
       "Discard": [
         "Elimina"
       ],
+      "Don't know your password?": [
+        "Non sai la password?"
+      ],
       "Done": [
         "Fatto"
       ],
@@ -427,6 +430,9 @@
       "Next month": [
         "Mese successivo"
       ],
+      "Ok": [
+        "Ok"
+      ],
       "Open navigation": [
         "Apri navigazione"
       ],
@@ -549,6 +555,9 @@
       ],
       "Search drive": [
         "Cerca unità"
+      ],
+      "See how": [
+        "Scopri come"
       ],
       "See plan features": [
         "Visualizzare le funzionalità del piano"
@@ -828,7 +837,7 @@
         "Problema d'installazione"
       ],
       "Mail problem": [
-        "Problema con la Mail"
+        "Problema con la posta"
       ],
       "Manual setup problem": [
         "Problema di configurazione manuale"
@@ -1920,19 +1929,19 @@
     },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
-        "Cancellazione di un evento su ${ formattedStart }"
+        "Cancellazione di un evento il ${ formattedStart }"
       ],
       "Cancellation of an event starting on ${ formattedStart }": [
         "Cancellazione di un evento che inizia il ${ formattedStart }"
       ],
       "Invitation for an event on ${ formattedStart }": [
-        "Invito per un evento su ${ formattedStart }"
+        "Invito per un evento il ${ formattedStart }"
       ],
       "Invitation for an event starting on ${ formattedStart }": [
         "Invito per un evento che inizia il ${ formattedStart }"
       ],
       "Update for an event on ${ formattedStart }": [
-        "Aggiornamento per un evento su ${ formattedStart }"
+        "Aggiornamento per un evento il ${ formattedStart }"
       ],
       "Update for an event starting on ${ formattedStart }": [
         "Aggiornamento per un evento che inizia il ${ formattedStart }"
@@ -2039,6 +2048,9 @@
       ],
       "Incorrect password. Please try again.": [
         "Password errata. Per favore riprova."
+      ],
+      "Incorrect username": [
+        "Username non corretto"
       ],
       "Invalid email address": [
         "Indirizzo email non valido"
@@ -3079,6 +3091,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } ha bisogno della tua autorizzazione per ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "La tecnologia di crittografia di ${ BRAND_NAME } implica che nessuno può accedere alla tua password - nemmeno noi."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nuovo calendario",
         "${ calendarsToBeCreatedCount } nuovi calendari"
@@ -3557,7 +3572,7 @@
         "Importazione in corso"
       ],
       "Import mailbox": [
-        "Importa casella email"
+        "Importa casella di posta"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importazione dei tuoi dati da ${ fromEmail } a ${ toEmail }."
@@ -4334,6 +4349,9 @@
       "Comment": [
         "Commento"
       ],
+      "Confirm password": [
+        "Conferma password"
+      ],
       "Contacts": [
         "Contatti"
       ],
@@ -4510,7 +4528,7 @@
         "Server di posta (IMAP)"
       ],
       "Mailbox password": [
-        "Password della casella email"
+        "Password della casella di posta"
       ],
       "Main": [
         "Principale"
@@ -4538,6 +4556,9 @@
       ],
       "Never": [
         "Mai"
+      ],
+      "New password": [
+        "Nuova password"
       ],
       "Notification": [
         "Notifica"
@@ -5327,7 +5348,7 @@
         "Indirizzo"
       ],
       "Email": [
-        "Posta elettronica"
+        "Email"
       ],
       "Fax": [
         "Fax"
@@ -5365,6 +5386,175 @@
     "Select files": {
       "Upload": [
         "Carica"
+      ]
+    },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "Annulla la reimpostazione"
+      ],
+      "Reset password": [
+        "Reimposta la password"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "Il recupero dell'account non è disponibile per le chiavi di indirizzo tradizionali"
+      ],
+      "Please generate keys before you try to change your password": [
+        "Genera le chiavi prima di provare a modificare la password"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } giorno",
+        "${ timeRemaining.inDays } giorni"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } ora",
+        "${ timeRemaining.inHours } ore"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Richiesta di reimpostazione della password approvata (${ user.Email }). Hai ${ timeRemaining.inDays } giorno per reimpostare la password.",
+        "Richiesta di reimpostazione della password approvata (${ user.Email }). Hai ${ timeRemaining.inDays } giorni per reimpostare la password."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Richiesta di reimpostazione della password approvata (${ user.Email }). Hai ${ timeRemaining.inHours } ora per reimpostare la password.",
+        "Richiesta di reimpostazione della password approvata (${ user.Email }). Hai ${ timeRemaining.inHours } ore per reimpostare la password."
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Per modificare la password, utilizza il dispositivo in cui hai effettuato precedentemente l'accesso (nella sessione in cui è stata inviata la richiesta)."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Questa autorizzazione scade tra ${ timeRemaining.inDays } giorno",
+        "Questa autorizzazione scade tra ${ timeRemaining.inDays } giorni"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Questa autorizzazione scade tra ${ timeRemaining.inHours } ora",
+        "Questa autorizzazione scade tra ${ timeRemaining.inHours } ore"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Ora puoi modificare liberamente la tua password per l'account ${ boldEmail } per ${ boldDaysRemaining }."
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Scopri come"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Password salvata"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Reimposta la tua password"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Annulla la reimpostazione della password"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Inserisci la tua password attuale per annullare il processo di reimpostazione della password. Nessun'altra modifica avrà effetto."
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "Reimpostazione della password annullata"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Annullare la reimpostazione della password?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Richiesta di reimpostazione della password annullata (${ user.Email }). Se non hai effettuato tu questa richiesta, ${ changePasswordLink }."
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "cambia la tua password adesso"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "Annulla richiesta"
+      ],
+      "Got it": [
+        "Ho capito"
+      ],
+      "Learn more": [
+        "Scopri di più"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } ora ancora",
+        "${ gracePeriodHoursRemaining } ore ancora"
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "Se non hai chiesto tu di reimpostare la password, annulla questa richiesta adesso."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "È richiesta la reimpostazione della password (${ user.Email }). Puoi modificare la password tra ${ hoursRemaining } ora.",
+        "È richiesta la reimpostazione della password (${ user.Email }). Puoi modificare la password tra ${ hoursRemaining } ore."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "Per assicurarci che sia davvero tu a cercare di reimpostare la password, aspettiamo 72 ore prima di approvare le richieste. Puoi cambiare la password entro ${ boldTimeLeft }. ${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "Abbiamo ricevuto una richiesta di reimpostazione della password per ${ boldEmail }."
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "Visualizza la richiesta"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "È richiesta la reimpostazione della password"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Disconnetti"
+      ],
+      "Stay signed in": [
+        "Rimani connesso"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } ora",
+        "${ gracePeriodHoursRemaining } ore"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } è ora disponibile."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Se esci prima di reimpostare la password, potresti perdere l'accesso al tuo account."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Se esci senza reimpostare la password potresti perdere l'accesso al tuo account."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Potrai reimpostare la tua password tra ${ boldTimeLeft }."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Reimpostazione password"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Vuoi disconnetterti senza reimpostare la password?"
       ]
     },
     "Signing preference for emails": {
@@ -5915,6 +6105,9 @@
       "Change layout": [
         "Cambia layout"
       ],
+      "Change password": [
+        "Modifica la password"
+      ],
       "Clearing data": [
         "Cancellazione dati"
       ],
@@ -6020,7 +6213,7 @@
         "Indirizzi email"
       ],
       "Email settings": [
-        "Impostazioni dell'email"
+        "Impostazioni email"
       ],
       "Empty trash": [
         "Svuota il cestino"

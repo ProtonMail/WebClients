@@ -335,6 +335,9 @@
       "Discard": [
         "Адхіліць"
       ],
+      "Don't know your password?": [
+        "Не ведаеце свой пароль?"
+      ],
       "Don't show again": [
         "Больш не паказваць"
       ],
@@ -623,6 +626,9 @@
       "OK": [
         "Добра"
       ],
+      "Ok": [
+        "Добра"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Адкрыць налады ${ CALENDAR_APP_NAME }"
       ],
@@ -793,6 +799,9 @@
       ],
       "Search settings": [
         "Налады пошуку"
+      ],
+      "See how": [
+        "Паглядзець як"
       ],
       "See plan features": [
         "Паглядзець функцыі тарыфнага плана"
@@ -1500,11 +1509,6 @@
       ],
       "Share with anyone": [
         "Абагуліць з усімі"
-      ]
-    },
-    "Calendar settings sidebar": {
-      "Show ${ remainingItems } more": [
-        "Паказаць яшчэ ${ remainingItems }"
       ]
     },
     "Calendar share permission label": {
@@ -3292,6 +3296,9 @@
       ],
       "Incorrect password": [
         "Няправільны пароль"
+      ],
+      "Incorrect username": [
+        "Няправільнае імя карыстальніка"
       ],
       "Invalid ${ name } code": [
         "Памылковы код ${ name }"
@@ -5566,9 +5573,6 @@
         "адрасы",
         "адрасоў",
         "адрасоў"
-      ],
-      "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
-        "Праверка адраса - гэта дадатковая функцыя бяспекі. Уключайце яе толькі тады, калі ведаеце, што яна робіць."
       ],
       "Admin account allocation": [
         "Вылучэнне ўліковага запісу адміністратара"
@@ -9991,17 +9995,6 @@
         "Кіраванне камандамі"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Калі гэта не зрабіць, доступ да вашага ўліковага запісу будзе абмежаваны, а потым цалкам адключаны."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Для працягу выкарыстання ${ MAIL_APP_NAME } з прэміяльнымі функцыямі, выберыце вашу падпіску і спосаб аплаты."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Ваш выпрабавальны перыяд завершыцца ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, якая заканчваецца на ${ last4 }"
@@ -10089,6 +10082,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Калі гэта не зрабіць, доступ да вашага ўліковага запісу будзе абмежаваны, а потым цалкам адключаны."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Для працягу выкарыстання ${ MAIL_APP_NAME } з прэміяльнымі функцыямі, выберыце вашу падпіску і спосаб аплаты."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Ваш выпрабавальны перыяд завершыцца ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11490,6 +11494,296 @@
         "будзе створаны"
       ]
     },
+    "session_recovery:available:action": {
+      "Cancel password reset": [
+        "Скасаваць скіданне пароля"
+      ],
+      "Cancel reset": [
+        "Скасаваць скіданне"
+      ],
+      "Reset password": [
+        "Скінуць пароль"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "Аднаўленне ўліковага запісу немагчыма для ключоў састарэлага адрасу"
+      ],
+      "Please generate keys before you try to change your password": [
+        "Згенерыруйце ключы перад спробай змянення пароля"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } дзень",
+        "${ timeRemaining.inDays } дні",
+        "${ timeRemaining.inDays } дзён",
+        "${ timeRemaining.inDays } дзён"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } гадзіна",
+        "${ timeRemaining.inHours } гадзіны",
+        "${ timeRemaining.inHours } гадзін",
+        "${ timeRemaining.inHours } гадзін"
+      ],
+      "Didn’t make this request?": [
+        "Не рабілі гэты запыт?"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Скасуйце запыт, калі вы не запытвалі скіданне пароля."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inDays } дзень, каб скінуць свой пароль.",
+        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inDays } дні, каб скінуць свой пароль.",
+        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inDays } дзён, каб скінуць свой пароль.",
+        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inDays } дзён, каб скінуць свой пароль."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inHours } гадзіна, каб скінуць свой пароль.",
+        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inHours } гадзіны, каб скінуць свой пароль.",
+        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inHours } гадзін, каб скінуць свой пароль.",
+        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inHours } гадзін, каб скінуць свой пароль."
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Перайдзіце на прыладу, якая знаходзіцца ў сістэме (з якой быў ініцыяваны запыт), каб змяніць пароль."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Гэты дазвол міне праз ${ timeRemaining.inDays } дзень",
+        "Гэты дазвол міне праз ${ timeRemaining.inDays } дні",
+        "Гэты дазвол міне праз ${ timeRemaining.inDays } дзён",
+        "Гэты дазвол міне праз ${ timeRemaining.inDays } дзён"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Гэты дазвол міне праз ${ timeRemaining.inHours } гадзіну",
+        "Гэты дазвол міне праз ${ timeRemaining.inHours } гадзіны",
+        "Гэты дазвол міне праз ${ timeRemaining.inHours } гадзін",
+        "Гэты дазвол міне праз ${ timeRemaining.inHours } гадзін"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Вы можаце зараз змяніць ваш пароль для ўліковага запісу ${ boldEmail } яшчэ ${ boldDaysRemaining }."
+      ],
+      "You can now reset your password": [
+        "Цяпер вы можаце скінуць свой пароль"
+      ],
+      "You can reset your password until ${ boldDate }.": [
+        "Вы можаце скінуць свой пароль да ${ boldDate }"
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Паглядзець як"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Пароль захаваны"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Скінуць пароль"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Скасаваць скіданне пароля"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Увядзіце свой бягучы пароль, каб скасаваць працэс скідання пароля. Акрамя гэтай аперацыя іншыя змяненні зроблены не будуць."
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "Скіданне пароля скасавана."
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Скасаваць скіданне пароля?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Запыт скідання пароля скасаваны (${ user.Email }). Калі вы не рабілі дадзены запыт, ${ changePasswordLink }."
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "змяніць пароль"
+      ]
+    },
+    "session_recovery:disable:action": {
+      "Disable password reset": [
+        "Адключыць скіданне пароля"
+      ]
+    },
+    "session_recovery:disable:info": {
+      "Make sure you have access to a recovery method.": [
+        "Пераканайцеся, што ў вас ёсць доступ да метаду аднаўлення."
+      ],
+      "You will no longer be able to request a password reset from your account settings.": [
+        "У вас больш не будзе магчымасці запытваць скіданне пароля з наладаў вашага ўліковага запісу."
+      ]
+    },
+    "session_recovery:disable:title": {
+      "Disable password reset?": [
+        "Адключыць скіданне пароля?"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel password reset": [
+        "Скасаваць скіданне пароля"
+      ],
+      "Cancel request": [
+        "Скасаваць запыт"
+      ],
+      "Got it": [
+        "Зразумела"
+      ],
+      "Learn more": [
+        "Даведацца больш"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "праз ${ gracePeriodHoursRemaining } гадзіну",
+        "праз ${ gracePeriodHoursRemaining } гадзіны",
+        "праз ${ gracePeriodHoursRemaining } гадзін",
+        "праз ${ gracePeriodHoursRemaining } гадзін"
+      ],
+      "Didn’t make this request?": [
+        "Не рабілі гэты запыт?"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Скасуйце запыт, калі вы не запытвалі скіданне пароля."
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "Скасуйце запыт, калі вы не запытвалі скіданне пароля."
+      ],
+      "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
+        "Скіданне пароля даступна з ${ boldDate }. Гэта дае вам час на скасоўванне любых махлярскіх запытаў."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Запыт на скіданне пароля (${ user.Email }). Вы можаце змяніць свой пароль на працягу ${ hoursRemaining } гадзіны.",
+        "Запыт на скіданне пароля (${ user.Email }). Вы можаце змяніць свой пароль на працягу ${ hoursRemaining } гадзін.",
+        "Запыт на скіданне пароля (${ user.Email }). Вы можаце змяніць свой пароль на працягу ${ hoursRemaining } гадзін.",
+        "Запыт на скіданне пароля (${ user.Email }). Вы можаце змяніць свой пароль на працягу ${ hoursRemaining } гадзін."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "Для таго, каб пераканацца што гэта менавіта вы спрабуеце скінуць ваш пароль, мы пачакаем 72 гадзін перад тым, як ухваліць запыт. Вы можаце змяніць ваш пароль праз ${ boldTimeLeft }. ${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "Мы атрымалі запыт на скіданне пароля для ${ boldEmail }."
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "Вы можаце змяніць свой пароль на працягу ${ gracePeriodHoursRemaining } гадзіны",
+        "Вы можаце змяніць свой пароль на працягу ${ gracePeriodHoursRemaining } гадзін",
+        "Вы можаце змяніць свой пароль на працягу ${ gracePeriodHoursRemaining } гадзін",
+        "Вы можаце змяніць свой пароль на працягу ${ gracePeriodHoursRemaining } гадзін"
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "Паглядзець запыт"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "Запыт скідання пароля"
+      ]
+    },
+    "session_recovery:initiation:action": {
+      "Got it": [
+        "Зразумела"
+      ],
+      "Request password reset": [
+        "Запытаць скіданне пароля"
+      ],
+      "Use recovery method": [
+        "Скарыстайцеся метадам аднаўлення"
+      ]
+    },
+    "session_recovery:initiation:info": {
+      "For security reasons, you’ll have to wait **72 hours** before you can change your password.": [
+        "У мэтах бяспекі, вам давядзецца чакаць **72 гадзіны** перад тым, як змяніць свой пароль."
+      ],
+      "We will contact you again when the password reset is available.": [
+        "Мы паўторна звяжамся з вамі, калі скіданне пароля стане даступным."
+      ],
+      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
+        "Вы можаце праверыць статус вашага запыту ў любы час у ${ accountAndPasswordSectionLink } наладаў."
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "account and password section": [
+        "раздзеле ўліковага запісу і пароля"
+      ]
+    },
+    "session_recovery:initiation:title": {
+      "Request password reset?": [
+        "Запытаць скіданне пароля?"
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "У вас будзе магчымасць скінуць свой пароль на працягу ${ gracePeriodHoursRemaining } гадзіны",
+        "У вас будзе магчымасць скінуць свой пароль на працягу ${ gracePeriodHoursRemaining } гадзін",
+        "У вас будзе магчымасць скінуць свой пароль на працягу ${ gracePeriodHoursRemaining } гадзін",
+        "У вас будзе магчымасць скінуць свой пароль на працягу ${ gracePeriodHoursRemaining } гадзін"
+      ]
+    },
+    "session_recovery:settings:action": {
+      "Allow password reset from settings": [
+        "Дазволіць скіданне пароля з наладаў"
+      ],
+      "Request a password reset from your Account settings. No recovery method needed.": [
+        "Запытайце скіданне пароля з вашых наладаў уліковага запісу. У гэтым выпадку метад аднаўлення не патрабуецца."
+      ],
+      "Request password reset": [
+        "Запытаць скіданне пароля"
+      ],
+      "To disallow password reset, you must have a recovery method set up.": [
+        "У вас павінен быць наладжаны метад аднаўлення, каб забараніць скіданне пароля."
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Выйсці"
+      ],
+      "Stay signed in": [
+        "Заставацца ў сістэме"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } гадзіна",
+        "${ gracePeriodHoursRemaining } гадзіны",
+        "${ gracePeriodHoursRemaining } гадзін",
+        "${ gracePeriodHoursRemaining } гадзін"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } не даступны."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Калі вы выйдзеце з сістэмы перад скідваннем паролю, вы можаце страціць доступ да вашага ўліковага запісу."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Калі вы выйдзеце з сістэмы без скідвання паролю, вы можаце страціць доступ да вашага ўліковага запісу."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Вы зможаце скінуць ваш пароль праз ${ boldTimeLeft }."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Скінуць пароль"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Выйсці без скідання паролю?"
+      ]
+    },
     "Settings description": {
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Завяршыце пераход да прыватнасці з нашым бяспечнымі інструментамі імпартавання і перасылкі."
@@ -12672,9 +12966,6 @@
       "Add users": [
         "Дадаць карыстальнікаў"
       ],
-      "Address verification": [
-        "Праверка адраса"
-      ],
       "Allocate storage": [
         "Вылучэнне аб'ёму ў сховішчы"
       ],
@@ -13208,6 +13499,9 @@
       ],
       "Password and keys": [
         "Паролі і ключы"
+      ],
+      "Password reset": [
+        "Скінуць пароль"
       ],
       "Pay invoice": [
         "Аплаціць рахунак"

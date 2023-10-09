@@ -25,6 +25,9 @@
       "Add address": [
         "Tilføj adresse"
       ],
+      "Add birthday": [
+        "Tilføj fødselsdag"
+      ],
       "Add contact": [
         "Tilføj kontakt"
       ],
@@ -39,6 +42,9 @@
       ],
       "Add new group": [
         "Tilføj ny gruppe"
+      ],
+      "Add note": [
+        "Tilføj note"
       ],
       "Add phone number": [
         "Tilføj telefonnummer"
@@ -219,6 +225,9 @@
       ],
       "Discard": [
         "Kassér"
+      ],
+      "Don't know your password?": [
+        "Kan du ikke din adgangskode?"
       ],
       "Done": [
         "Udført"
@@ -421,6 +430,9 @@
       "Next month": [
         "Næste måned"
       ],
+      "Ok": [
+        "Ok"
+      ],
       "Open navigation": [
         "Åbn navigation"
       ],
@@ -543,6 +555,9 @@
       ],
       "Search drive": [
         "Søg på drev"
+      ],
+      "See how": [
+        "Se hvordan"
       ],
       "See plan features": [
         "Se abonnementfunktioner"
@@ -957,8 +972,17 @@
       "Birthday": [
         "Fødselsdag"
       ],
+      "Display name": [
+        "Visningsnavn"
+      ],
       "Email": [
         "E-mail"
+      ],
+      "Enter a display name or nickname": [
+        "Indtast et visningsnavn eller kaldenavn"
+      ],
+      "First name": [
+        "Fornavn"
       ],
       "Gender": [
         "Køn"
@@ -968,6 +992,9 @@
       ],
       "Language": [
         "Sprog"
+      ],
+      "Last name": [
+        "Efternavn"
       ],
       "Logo": [
         "Logo"
@@ -1998,6 +2025,9 @@
       "File selection is already downloading": [
         "Valgte filer er allerede ved at blive hentet"
       ],
+      "First name is too long": [
+        "Fornavn er for langt"
+      ],
       "Folder \"${ name }\" is already downloading": [
         "Mappen \"${ name }\" er allerede ved at blive hentet"
       ],
@@ -2019,6 +2049,9 @@
       "Incorrect password. Please try again.": [
         "Forkert adgangskode, prøv venligst igen."
       ],
+      "Incorrect username": [
+        "Forkert brugernavn"
+      ],
       "Invalid email address": [
         "Ugyldig e-mailadresse"
       ],
@@ -2033,6 +2066,9 @@
       ],
       "Label name cannot be empty.": [
         "Etikettenavn må ikke være tomt."
+      ],
+      "Last name is too long": [
+        "Efternavn er for langt"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Flet mindst ${ calendarsToFixCount } kalender med en eksisterende ${ BRAND_NAME }-kalender",
@@ -2079,6 +2115,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "Løs venligst den fremhævede konflikt for at fortsætte.",
         "Løs venligst de fremhævede konflikter for at fortsætte."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Angiv enten et fornavn, et efternavn eller et visningsnavn"
       ],
       "Port is required": [
         "Port er påkrævet."
@@ -3052,6 +3091,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "${ BRAND_NAME }'s krypteringsteknologi betyder, at ingen kan få adgang til din adgangskode - ikke engang os."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } ny kalender",
         "${ calendarsToBeCreatedCount } nye kalendere"
@@ -3713,6 +3755,9 @@
       "Please enter the password to decrypt and view content.": [
         "Indtast venligst kodeordet for, at dekryptere og se indholdet."
       ],
+      "Please note that addresses assigned to these groups will NOT be deleted.": [
+        "Bemærk at adresser tildelt til disse grupper IKKE vil blive slettet."
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Bemærk venligst at adresser tildelt til denne gruppe IKKE vil blive slettet."
       ],
@@ -4304,6 +4349,9 @@
       "Comment": [
         "Kommentar"
       ],
+      "Confirm password": [
+        "Bekræft adgangskode"
+      ],
       "Contacts": [
         "Kontakter"
       ],
@@ -4508,6 +4556,9 @@
       ],
       "Never": [
         "Aldrig"
+      ],
+      "New password": [
+        "Ny adgangskode"
       ],
       "Notification": [
         "Notifikation"
@@ -5219,11 +5270,17 @@
       "Filter groups": [
         "Filtrér grupper"
       ],
+      "First name": [
+        "Fornavn"
+      ],
       "Group name": [
         "Gruppenavn"
       ],
       "Image URL": [
         "Billed-URL"
+      ],
+      "Last name": [
+        "Efternavn"
       ],
       "Name": [
         "Navn"
@@ -5329,6 +5386,30 @@
     "Select files": {
       "Upload": [
         "Overfør"
+      ]
+    },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "Annuller nulstilling"
+      ],
+      "Reset password": [
+        "Nulstil adgangskode"
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Se hvordan"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "Annuller anmodning"
+      ],
+      "Got it": [
+        "Forstået"
+      ],
+      "Learn more": [
+        "Få mere at vide"
       ]
     },
     "Signing preference for emails": {
@@ -5769,8 +5850,14 @@
       "Display name": [
         "Visningsnavn"
       ],
+      "First name": [
+        "Fornavn"
+      ],
       "Import": [
         "Importér"
+      ],
+      "Last name": [
+        "Efternavn"
       ],
       "Values": [
         "Værdier"
@@ -5858,6 +5945,9 @@
       "Billing cycle": [
         "Faktureringscyklus"
       ],
+      "Birthday": [
+        "Fødselsdag"
+      ],
       "Browser might run out of memory": [
         "Browseren løber måske tør for hukommelse"
       ],
@@ -5869,6 +5959,9 @@
       ],
       "Change layout": [
         "Skift layout"
+      ],
+      "Change password": [
+        "Skift adgangskode"
       ],
       "Clearing data": [
         "Rydder data"
@@ -6080,6 +6173,9 @@
       ],
       "No results found": [
         "Ingen resultater fundet"
+      ],
+      "Notes": [
+        "Noter"
       ],
       "Number of files": [
         "Antal filer"
@@ -6408,6 +6504,9 @@
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Er du sikker på, at du vil slette ${ count } kontakt permanent?",
         "Er du sikker på, at du vil slette ${ count } kontakter permanent?"
+      ],
+      "Are you sure you want to permanently delete these contact groups?": [
+        "Er du sikker på, at du vil slette disse kontaktgrupper permanent?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Er du sikker på, at du vil slette denne kontaktgruppe permanent?"
