@@ -1,23 +1,29 @@
 import { useCallback, useState } from 'react';
 
 export const usePhotosSelection = () => {
-    const [selection, setSelection] = useState<boolean[]>([]);
+    const [selection, setSelection] = useState<Record<string, boolean>>({});
 
     const setSelected = useCallback(
-        (indices: number[], isSelected: boolean) => {
+        (linkIds: string[], isSelected: boolean) => {
             setSelection((state) => {
-                indices.forEach((index) => {
-                    state[index] = isSelected;
+                let newState = { ...state };
+
+                linkIds.forEach((linkId) => {
+                    if (isSelected) {
+                        newState[linkId] = true;
+                    } else {
+                        delete newState[linkId];
+                    }
                 });
 
-                return [...state];
+                return newState;
             });
         },
         [setSelection]
     );
 
     const clearSelection = useCallback(() => {
-        setSelection([]);
+        setSelection({});
     }, [setSelection]);
 
     return {
