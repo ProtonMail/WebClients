@@ -10,13 +10,14 @@ import {
     getLoginsAndNotes,
 } from '@proton/components/containers/payments/features/pass';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
-import { APPS, BRAND_NAME, CYCLE, PASS_APP_NAME, PASS_SHORT_APP_NAME, PLANS } from '@proton/shared/lib/constants';
+import { APPS, CYCLE, PASS_APP_NAME, PASS_SHORT_APP_NAME, PLANS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import Benefits, { BenefitItem } from '../Benefits';
 import BundlePlanSubSection from '../BundlePlanSubSection';
 import { PlanCard, planCardFeatureProps } from '../PlanCardSelector';
+import { getBenefits, getJoinString } from '../configuration/helper';
 import swissFlag from '../flag.svg';
 import { SignupMode } from '../interface';
 import CustomStep from './CustomStep';
@@ -127,10 +128,9 @@ export const getPassConfiguration = ({ isDesktop }: { isDesktop: boolean }) => {
     const benefitItems = getPassBenefits();
     const benefits = benefitItems && (
         <div>
-            <div className="text-lg text-semibold">{c('pass_signup_2023: Info').t`${PASS_APP_NAME} benefits`}</div>
+            <div className="text-lg text-semibold">{getBenefits(PASS_APP_NAME)}</div>
             <Benefits className="mt-5 mb-5" features={benefitItems} />
-            <div>{c('pass_signup_2023: Info')
-                .t`Join over 100 million people who have chosen ${BRAND_NAME} to stay safe online`}</div>
+            <div>{getJoinString()}</div>
         </div>
     );
 
