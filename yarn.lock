@@ -1987,14 +1987,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@csstools/postcss-progressive-custom-properties@npm:^2.3.0":
-  version: 2.3.0
-  resolution: "@csstools/postcss-progressive-custom-properties@npm:2.3.0"
+"@csstools/postcss-progressive-custom-properties@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "@csstools/postcss-progressive-custom-properties@npm:3.0.2"
   dependencies:
     postcss-value-parser: ^4.2.0
   peerDependencies:
     postcss: ^8.4
-  checksum: 9edcb4e69e3b1b6b2debb8e78a20b71cb1922d7df57a45427062c0ff87e404e4b837bbe3a86ed9cb1ed4fca60514c72cf4e96ec6d77ddc222aca09633bdb7b4c
+  checksum: e7685f1ce7224204619cece0f5c4fe55ece74127c0de54294f827f1bae3be0a4bf4dda49f192267f0069d03942334888f61161bbc62b3ecea3801ec303972361
   languageName: node
   linkType: hard
 
@@ -5483,7 +5483,7 @@ __metadata:
     po-gettext-loader: ^1.0.0
     portfinder: ^1.0.32
     postcss: ^8.4.31
-    postcss-color-functional-notation: ^5.1.0
+    postcss-color-functional-notation: ^6.0.2
     postcss-loader: ^7.3.3
     postcss-logical: ^7.0.0
     prettier: ^3.0.3
@@ -26842,15 +26842,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"postcss-color-functional-notation@npm:^5.1.0":
-  version: 5.1.0
-  resolution: "postcss-color-functional-notation@npm:5.1.0"
+"postcss-color-functional-notation@npm:^6.0.2":
+  version: 6.0.2
+  resolution: "postcss-color-functional-notation@npm:6.0.2"
   dependencies:
-    "@csstools/postcss-progressive-custom-properties": ^2.3.0
+    "@csstools/postcss-progressive-custom-properties": ^3.0.2
     postcss-value-parser: ^4.2.0
   peerDependencies:
     postcss: ^8.4
-  checksum: 336da1de9042764c9a436e030b80b16333fc7dd7dbaeb97d719fb11fe76da13ead50768e07a12a748988037a15562869d7e4be6b70a3556502c4f6bd592544db
+  checksum: 35f81de7107f6680fc11fcb70102f2ade204a6fc4dcf6a379b299b62a52b38f29d940f261c077a027792b33b81c23e71b992b8938ddd7c729a12035ca7fbc0e5
   languageName: node
   linkType: hard
 
