@@ -4,11 +4,12 @@ import usePrevious from '@proton/hooks/usePrevious';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/events/constants';
 import { getShareAccessOptionsIntent } from '@proton/pass/store';
 import { shareAccessOptionsRequest } from '@proton/pass/store/actions/requests';
+import { type Maybe } from '@proton/pass/types';
 
 import { useActionWithRequest } from '../../shared/hooks/useActionWithRequest';
 
 export const useShareAccessOptionsPolling = (shareId: string) => {
-    const timer = useRef<NodeJS.Timer>();
+    const timer = useRef<Maybe<ReturnType<typeof setTimeout>>>();
 
     const { loading, dispatch, revalidate } = useActionWithRequest({
         action: getShareAccessOptionsIntent,

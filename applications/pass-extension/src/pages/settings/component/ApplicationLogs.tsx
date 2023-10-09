@@ -13,7 +13,7 @@ import { SettingsPanel } from './SettingsPanel';
 export const ApplicationLogs: VFC = () => {
     const [showLogs, setShowLogs] = useState(false);
     const [logs, setLogs] = useState<MaybeNull<string[]>>(null);
-    const intervalRef = useRef<Maybe<NodeJS.Timer>>();
+    const intervalRef = useRef<Maybe<ReturnType<typeof setInterval>>>();
 
     useEffect(() => {
         const getLogs = () =>
