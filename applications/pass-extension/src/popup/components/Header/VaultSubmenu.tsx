@@ -77,7 +77,7 @@ export const VaultItem: VFC<VaultItemProps> = ({
     shared = false,
 }) => {
     const withActions = onEdit || onDelete || onInvite || onManage || onLeave;
-    const showSharing = useFeatureFlag(PassFeature.PassSharingV1) && share !== undefined;
+    const sharingEnabled = useFeatureFlag(PassFeature.PassSharingV1) && share !== undefined;
 
     return (
         <DropdownMenuButton
@@ -85,6 +85,7 @@ export const VaultItem: VFC<VaultItemProps> = ({
             isSelected={selected}
             label={<CountLabel label={label} count={count} />}
             extra={
+                sharingEnabled &&
                 shared && (
                     <ButtonLike
                         as="div"
@@ -119,7 +120,7 @@ export const VaultItem: VFC<VaultItemProps> = ({
                             />
                         )}
 
-                        {showSharing && share.shared && (
+                        {sharingEnabled && shared && (
                             <DropdownMenuButton
                                 className="flex flex-align-items-center py-2 px-4"
                                 onClick={handleClickEvent(onManage)}
@@ -132,7 +133,7 @@ export const VaultItem: VFC<VaultItemProps> = ({
                             />
                         )}
 
-                        {showSharing && !share.shared && (
+                        {sharingEnabled && !shared && (
                             <DropdownMenuButton
                                 className="flex flex-align-items-center py-2 px-4"
                                 onClick={handleClickEvent(onInvite)}
@@ -151,7 +152,7 @@ export const VaultItem: VFC<VaultItemProps> = ({
                             />
                         )}
 
-                        {showSharing && share.shared && !share.owner && (
+                        {sharingEnabled && shared && !share.owner && (
                             <DropdownMenuButton
                                 className="flex flex-align-items-center py-2 px-4"
                                 onClick={handleClickEvent(onLeave)}
