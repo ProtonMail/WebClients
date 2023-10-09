@@ -14,10 +14,9 @@ interface Props {
     linkId: string;
     selectedItems: PhotoLink[];
     onPreview: () => void;
-    onTrash: (linkIds: string[]) => void;
 }
 
-export const PhotosToolbar: FC<Props> = ({ shareId, linkId, selectedItems, onPreview, onTrash }) => {
+export const PhotosToolbar: FC<Props> = ({ shareId, linkId, selectedItems, onPreview }) => {
     const hasSelection = selectedItems.length > 0;
     const hasMultipleSelected = selectedItems.length > 1;
 
@@ -36,7 +35,7 @@ export const PhotosToolbar: FC<Props> = ({ shareId, linkId, selectedItems, onPre
                         <Vr />
                         <DetailsButton selectedLinks={links} />
                         <Vr />
-                        <MoveToTrashButton selectedLinks={links} onTrash={onTrash} />
+                        <MoveToTrashButton selectedLinks={links} />
                     </>
                 )}
             </div>
