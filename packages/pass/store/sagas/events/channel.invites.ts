@@ -5,6 +5,7 @@ import { PassCrypto } from '@proton/pass/crypto';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/events/constants';
 import type { InvitesGetResponse, MaybeNull } from '@proton/pass/types';
 import { type Api } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import type { Invite } from '@proton/pass/types/data/invites';
 import { truthy } from '@proton/pass/utils/fp';
 import { logId, logger } from '@proton/pass/utils/logger';
@@ -14,6 +15,7 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import { type EventManagerEvent, NOOP_EVENT } from '../../../events/manager';
 import { syncInvites } from '../../actions';
 import type { InviteState } from '../../reducers/invites';
+import { selectUserFeature } from '../../selectors';
 import { selectInvites } from '../../selectors/invites';
 import type { WorkerRootSagaOptions } from '../../types';
 import { getPublicKeysForEmail } from '../workers/address';
@@ -84,6 +86,9 @@ export const createInvitesChannel = (api: Api) =>
     });
 
 export function* invitesChannel(api: Api, options: WorkerRootSagaOptions) {
+    const allowSharing: boolean = yield select(selectUserFeature(PassFeature.PassSharingV1));
+    if (!allowSharing) return;
+
     logger.info(`[${NAMESPACE}] start polling for invites`);
 
     const eventsChannel = createInvitesChannel(api);
