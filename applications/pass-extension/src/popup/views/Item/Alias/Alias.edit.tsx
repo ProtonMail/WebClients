@@ -117,7 +117,7 @@ export const AliasEdit: VFC<ItemEditProps<'alias'>> = ({ vault, revision, onCanc
         onHydrated: draftHydrated.resolve,
     });
 
-    const loading = aliasDetails.loading || aliasOptions.loading;
+    const loading = (aliasDetails.loading && aliasDetails.value.length === 0) || aliasOptions.loading;
 
     return (
         <ItemEditPanel
