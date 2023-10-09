@@ -4,7 +4,7 @@ export const usePhotosSelection = () => {
     const [selection, setSelection] = useState<Record<string, boolean>>({});
 
     const setSelected = useCallback(
-        (linkIds: string[], isSelected: boolean) => {
+        (isSelected: boolean, ...linkIds: string[]) => {
             setSelection((state) => {
                 let newState = { ...state };
 

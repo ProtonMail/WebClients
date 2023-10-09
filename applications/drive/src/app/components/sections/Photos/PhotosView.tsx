@@ -20,7 +20,7 @@ import { PhotosClearSelectionButton } from './toolbar/PhotosClearSelectionButton
 export const PhotosView: FC<void> = () => {
     useAppTitle(c('Title').t`Photos`);
 
-    const { shareId, linkId, photos, isLoading, isLoadingMore, loadPhotoLink } = usePhotosView();
+    const { shareId, linkId, photos, isLoading, isLoadingMore, loadPhotoLink, getGroupLinkIds } = usePhotosView();
     const { selection, setSelected, clearSelection } = usePhotosSelection();
 
     const [detailsModal, showDetailsModal] = useDetailsModal();
@@ -66,30 +66,43 @@ export const PhotosView: FC<void> = () => {
         [selection, photos, gridLinkToIndexMap]
     );
     const selectedCount = selectedItems.length;
+    const hasSelection = selectedCount > 0;
+
+    const isGroupSelected = useCallback(
+        (groupIndex: number) => {
+            if (!hasSelection) {
+                return false;
+            }
+
+            let linkIds = getGroupLinkIds(groupIndex);
+            let selectedCount = 0;
+
+            linkIds.forEach((linkId) => {
+                if (selection[linkId]) {
+                    selectedCount++;
+                }
+            });
+
+            if (selectedCount === 0) {
+                return false;
+            }
+
+            return selectedCount === linkIds.length || 'some';
+        },
+        [hasSelection, getGroupLinkIds, selection]
+    );
 
     const handleSelection = useCallback(
         (index: number, isSelected: boolean) => {
             const item = photos[index];
 
             if (typeof item === 'string') {
-                const items = [];
-
-                for (let i = index + 1; i < photos.length; i++) {
-                    const current = photos[i];
-
-                    if (typeof current === 'string') {
-                        break;
-                    }
-
-                    items.push(current.linkId);
-                }
-
-                setSelected(items, isSelected);
+                setSelected(isSelected, ...getGroupLinkIds(index));
             } else {
-                setSelected([item.linkId], isSelected);
+                setSelected(isSelected, item.linkId);
             }
         },
-        [setSelected, photos]
+        [setSelected, photos, getGroupLinkIds]
     );
 
     const handleToolbarPreview = useCallback(() => {
@@ -195,8 +208,9 @@ export const PhotosView: FC<void> = () => {
                         isLoadingMore={isLoadingMore}
                         onItemClick={setPreviewLinkId}
                         selection={selection}
-                        hasSelection={selectedCount > 0}
+                        hasSelection={hasSelection}
                         onSelectChange={handleSelection}
+                        isGroupSelected={isGroupSelected}
                     />
                 )}
             </UploadDragDrop>
