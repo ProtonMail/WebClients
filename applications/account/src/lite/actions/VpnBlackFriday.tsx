@@ -52,12 +52,9 @@ const VpnBlackFriday = ({ redirect, fullscreen }: { redirect?: string; fullscree
         return <LiteLoaderPage />;
     }
 
+    // Error in usage (this action is not meant to be shown if it cannot be triggered, so untranslated.
     if (!canEdit) {
-        return (
-            <LiteBox>
-                {c('Info').t`Please contact the administrator of the organisation to manage the subscription.`}
-            </LiteBox>
-        );
+        return <LiteBox>Please contact the administrator of the organization to manage the subscription</LiteBox>;
     }
 
     if (type === SubscribeType.Subscribed || type === SubscribeType.Closed) {
