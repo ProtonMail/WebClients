@@ -586,7 +586,6 @@ const Step1 = ({
                                 api={normalApi}
                                 model={model}
                                 options={options}
-                                plansMap={model.plansMap}
                                 vpnServersCountData={vpnServersCountData}
                                 loadingSignup={loadingSignup}
                                 loadingPaymentDetails={loadingPaymentDetails || loadingSignout}
