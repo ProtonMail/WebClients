@@ -49,7 +49,7 @@ export const AliasView: VFC<ItemTypeViewProps<'alias'>> = ({ vault, revision, ..
     const mailboxesForAlias = useSelector(selectAliasDetails(aliasEmail!));
 
     const [confirmTrash, setConfirmTrash] = useState(false);
-    const ready = !getAliasDetails.loading && mailboxesForAlias !== undefined;
+    const ready = !(getAliasDetails.loading && mailboxesForAlias === undefined);
 
     const createLoginFromAlias = (evt: MouseEvent) => {
         evt.stopPropagation();
@@ -58,10 +58,8 @@ export const AliasView: VFC<ItemTypeViewProps<'alias'>> = ({ vault, revision, ..
     };
 
     useEffect(() => {
-        if (!optimistic && (mailboxesForAlias?.length ?? 0) === 0) {
-            getAliasDetails.dispatch({ shareId, itemId, aliasEmail });
-        }
-    }, [optimistic, shareId, itemId, mailboxesForAlias]);
+        if (!optimistic) getAliasDetails.dispatch({ shareId, itemId, aliasEmail });
+    }, [optimistic, shareId, itemId, aliasEmail]);
 
     const handleMoveToTrashClick = useCallback(() => {
         if (!relatedLogin) return itemViewProps.handleMoveToTrashClick();
