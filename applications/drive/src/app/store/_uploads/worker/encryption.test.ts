@@ -10,7 +10,7 @@ import {
 } from '../../../utils/test/crypto';
 import { asyncGeneratorToArray } from '../../../utils/test/generator';
 import { EncryptedBlock, ThumbnailEncryptedBlock } from '../interface';
-import { ThumbnailData, ThumbnailType } from '../thumbnail';
+import { ThumbnailInfo, ThumbnailType } from '../media';
 import { generateEncryptedBlocks, generateThumbnailEncryptedBlocks } from './encryption';
 import { Verifier } from './interface';
 import { createVerifier } from './verifier';
@@ -74,7 +74,7 @@ describe('block generator', () => {
     });
 
     it('should generate all thumbnails blocks', async () => {
-        const thumbnailData: ThumbnailData[] = [
+        const thumbnailData: ThumbnailInfo[] = [
             {
                 thumbnailData: new Uint8Array([1, 2, 3, 3, 2, 1]),
                 thumbnailType: ThumbnailType.PREVIEW,
