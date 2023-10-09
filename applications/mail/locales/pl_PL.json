@@ -4718,6 +4718,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikacja ${ appName } potrzebuje Twojej zgody, aby ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "Technologia szyfrowania ${ BRAND_NAME } oznacza, że nikt nie ma dostępu do Twojego hasła — nawet my."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nowy kalendarz",
         "${ calendarsToBeCreatedCount } nowe kalendarze",
@@ -6621,8 +6624,14 @@
       "Conditions": [
         "Warunki"
       ],
+      "Confirm password": [
+        "Potwierdź hasło"
+      ],
       "Contacts": [
         "Kontakty"
+      ],
+      "Conversations per page": [
+        "Wątków na stronie"
       ],
       "Copy": [
         "Kopiuj"
@@ -6789,6 +6798,9 @@
       "Mark as": [
         "Oznacz jako"
       ],
+      "Messages per page": [
+        "Wiadomości na stronie"
+      ],
       "Move ${ sidebarElementName }": [
         "Przenieś ${ sidebarElementName }"
       ],
@@ -6806,6 +6818,9 @@
       ],
       "Navigation": [
         "Nawigacja"
+      ],
+      "New password": [
+        "Nowe hasło"
       ],
       "No label found": [
         "Nie znaleziono etykiety"
@@ -8999,6 +9014,9 @@
       ],
       "Change my answer": [
         "Zmień odpowiedź"
+      ],
+      "Change password": [
+        "Zmień hasło"
       ],
       "Clear out the junk": [
         "Opróżnij Kosz"

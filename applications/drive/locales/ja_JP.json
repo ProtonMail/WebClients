@@ -3013,6 +3013,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
       ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "${ BRAND_NAME } の暗号化技術は私たちでさえもパスワードにアクセスできないことを意味しています。"
+      ],
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } 個の新しいカレンダー"
       ],
@@ -4230,6 +4233,9 @@
       "Comment": [
         "コメント"
       ],
+      "Confirm password": [
+        "パスワードの確認"
+      ],
       "Contacts": [
         "連絡先"
       ],
@@ -4433,6 +4439,9 @@
       ],
       "Never": [
         "なし"
+      ],
+      "New password": [
+        "新しいパスワード"
       ],
       "Notification": [
         "通知"
@@ -5744,6 +5753,9 @@
       ],
       "Change layout": [
         "レイアウトを変更"
+      ],
+      "Change password": [
+        "パスワードを変更"
       ],
       "Clearing data": [
         "データのクリア中"

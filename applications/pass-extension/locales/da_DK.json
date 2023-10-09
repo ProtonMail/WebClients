@@ -29,6 +29,15 @@
       "Back": [
         "Tilbage"
       ],
+      "Can edit": [
+        "Kan redigere"
+      ],
+      "Can manage": [
+        "Kan administrere"
+      ],
+      "Can view": [
+        "Kan se"
+      ],
       "Can't find your password manager? Please let us know!": [
         "Kan du ikke finde din adgangskodeadministrator? Giv os besked!"
       ],
@@ -58,6 +67,9 @@
       ],
       "Confirm": [
         "Bekræft"
+      ],
+      "Continue": [
+        "Fortsæt"
       ],
       "Continue without pinning": [
         "Fortsæt uden at fastgøre"
@@ -173,11 +185,23 @@
       "Learn more": [
         "Få mere at vide"
       ],
+      "Leave": [
+        "Forlad"
+      ],
+      "Leave vault": [
+        "Forlad boks"
+      ],
       "Lock extension": [
         "Lås udvidelse"
       ],
+      "Manage access": [
+        "Administrer adgang"
+      ],
       "Manually sync your data": [
         "Synkronisér dine data manuelt"
+      ],
+      "More info: ${ safeTitle }": [
+        "Yderligere information: ${ safeTitle }"
       ],
       "More options": [
         "Flere muligheder"
@@ -230,8 +254,17 @@
       "Saving": [
         "Gemmer"
       ],
+      "See members": [
+        "Vis medlemmer"
+      ],
+      "Send invite": [
+        "Send invitation"
+      ],
       "Send us a message": [
         "Send en besked til os"
+      ],
+      "Share": [
+        "Del"
       ],
       "Show": [
         "Vis"
@@ -256,6 +289,9 @@
       ],
       "Submitting report...": [
         "Indsender rapport..."
+      ],
+      "Transfer ownership": [
+        "Overfør ejerskab"
       ],
       "Try again": [
         "Prøv igen"
@@ -316,8 +352,14 @@
       "Cannot create alias (${ error }).": [
         "Kan ikke oprette alias (${ error })."
       ],
+      "Could not leave vault.": [
+        "Kunne ikke forlade boks."
+      ],
       "Could not open created vault": [
         "Kunne ikke åbne den oprettede boks"
+      ],
+      "Could not open invited vault": [
+        "Kunne ikke åbne den inviterede boks"
       ],
       "Could not open updated vault": [
         "Kunne ikke åbne den opdaterede boks"
@@ -356,6 +398,21 @@
       "Error reporting problem": [
         "Problem med fejlrapportering"
       ],
+      "Failed removing the invite.": [
+        "Kunne ikke fjerne invitationen."
+      ],
+      "Failed resending invite.": [
+        "Kunne ikke sende invitation igen."
+      ],
+      "Failed to edit user's access.": [
+        "Kunne ikke redigere brugerens adgang."
+      ],
+      "Failed to remove user's access.": [
+        "Kunne ikke fjerne brugerens adgang."
+      ],
+      "Failed to transfer this vault's ownership.": [
+        "Det lykkedes ikke at overføre ejerskabet af denne boks."
+      ],
       "File could not be parsed": [
         "Fil kunne ikke fortolkes"
       ],
@@ -370,6 +427,18 @@
       ],
       "Invalid url": [
         "Ugyldig URL"
+      ],
+      "Invitation could not be accepted": [
+        "Invitation kunne ikke accepteres"
+      ],
+      "Invitation could not be rejected": [
+        "Invitation kunne ikke afvises"
+      ],
+      "Invite creation failed.": [
+        "Oprettelse af invitation mislykkedes."
+      ],
+      "Invite successfully sent": [
+        "Invitation sendt"
       ],
       "Item content cannot exceed 40KB": [
         "Element-indhold må ikke overstige 40 kB"
@@ -413,6 +482,9 @@
       "Settings update failed": [
         "Ændring af indstillinger mislykkedes"
       ],
+      "Signature verification failed": [
+        "Bekræftelse af signatur mislykkedes"
+      ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
         "Nogle bokse er ikke længere tilgængelige grundet en nulstilling af adgangskoden. Genaktiver dine kontonøgler for at få adgang igen. ${ reactivateLink }"
       ],
@@ -445,6 +517,9 @@
       ],
       "Unknown error": [
         "Ukendt fejl"
+      ],
+      "Unknown invite": [
+        "Ukendt invitation"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Ikke-understøttet ${ PASS_APP_NAME } filformat"
@@ -526,6 +601,14 @@
         "${ count } element",
         "${ count } elementer"
       ],
+      "${ itemCount } item": [
+        "${ itemCount } element",
+        "${ itemCount } elementer"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } medlem",
+        "${ memberCount } medlemmer"
+      ],
       "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
         "${ PASS_APP_NAME } vil kun importere logins og noter. Kreditkort, pas, vedhæftede filer osv er ikke understøttet på nuværende tidspunkt."
       ],
@@ -544,6 +627,10 @@
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } dag tilbage",
         "${ trialDaysLeft } dage tilbage"
+      ],
+      "${ vault.count } item": [
+        "${ vault.count } element",
+        "${ vault.count } elementer"
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "En ny version af ${ PASS_APP_NAME } er tilgængelig. Opdater den for at nyde de seneste funktioner og fejlrettelser."
@@ -574,6 +661,27 @@
       ],
       "Autosaved on ${ submissionURL }": [
         "Autogemt på ${ submissionURL }"
+      ],
+      "Can create, edit, delete and export items in this vault.": [
+        "Kan oprette, redigere, slette og eksportere elementer i denne boks."
+      ],
+      "Can edit": [
+        "Kan redigere"
+      ],
+      "Can grant and revoke access to this vault, and delete it.": [
+        "Kan give og tilbagekalde adgang til denne boks, og slette den."
+      ],
+      "Can grant and revoke access to this vault.": [
+        "Kan give og tilbagekalde adgang til denne boks."
+      ],
+      "Can manage": [
+        "Kan administrere"
+      ],
+      "Can view": [
+        "Kan se"
+      ],
+      "Can view items in this vault.": [
+        "Kan se elementer i denne boks."
       ],
       "Check out all the exclusive features that are available to you for a limited time.": [
         "Se alle de eksklusive funktioner, der er tilgængelige for dig i en begrænset periode."
@@ -675,6 +783,12 @@
       "Internet connection lost": [
         "Internetforbindelse mistet"
       ],
+      "Invite successfully removed": [
+        "Invitation fjernet"
+      ],
+      "Invite successfully resent": [
+        "Invitation sendt igen"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Det ser ud til, at du allerede er logget ind på ${ PASS_APP_NAME }. Hvis du prøver at logge ind med en anden konto, bedes du logge ud af udvidelsen først."
       ],
@@ -712,6 +826,9 @@
       "Loading...": [
         "Indlæser..."
       ],
+      "me": [
+        "mig"
+      ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Mere end en adgangskodeadministrator, ${ PASS_APP_NAME } beskytter dine adgangskoder og din personlige e-mailadresse via e-mail-aliasser. Med den samme teknologi, som ligger bag ${ MAIL_APP_NAME }, er dine data end-to-end krypteret og kun tilgængelige for dig."
       ],
@@ -730,11 +847,20 @@
       "Open the Extensions menu": [
         "Åbn menuen Udvidelser"
       ],
+      "Owner": [
+        "Ejer"
+      ],
+      "Ownership successfully transfered. You are no long the owner of this vault.": [
+        "Ejerskab overført. Du er ikke længere ejer af denne boks."
+      ],
       "Password copied": [
         "Adgangskode kopieret"
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Adgangskoder, der er ældre end 1 dag, slettes automatisk fra historikken."
+      ],
+      "Pending invitation": [
+        "Afventende invitation"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Fastgør ${ PASS_APP_NAME } til din værktøjslinje"
@@ -769,6 +895,9 @@
       "Select the destination vault for each imported vault.": [
         "Vælg destinationsboks for hver importeret boks."
       ],
+      "Select the level of access this user will gain when they join your vault.": [
+        "Vælg det adgangsniveau, som denne bruger får, når de tilslutter sig din boks."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servere er utilgængelige. Prøv igen om nogle få minutter"
       ],
@@ -793,6 +922,9 @@
       "Successfully exported all your items": [
         "Eksporterede alle dine elementer"
       ],
+      "Successfully left the vault": [
+        "Det lykkedes at forlade boksen"
+      ],
       "Successfully synced all vaults": [
         "Synkroniserede alle bokse"
       ],
@@ -809,8 +941,17 @@
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Teksten du forsøger at indsætte er længere end den maksimalt tilladte længde på ${ maxLength } tegn."
       ],
+      "The user did not accept the invitation yet.": [
+        "Brugeren har ikke accepteret invitationen endnu."
+      ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Denne eksport vil ikke være krypteret og hvem som helst med adgang til den eksporterede fil vil kunne se dine adgangskoder. For en sikkerheds skyld bedes du slette den når du er færdig med at bruge den."
+      ],
+      "This user will receive an invitation to join your '${ vaultName }' vault.": [
+        "Denne bruger vil modtage en invitation til at deltage i din '${ vaultName }'-boks."
+      ],
+      "This vault is not currently shared with anyone. Invite people to share it with others.": [
+        "Denne boks deles i øjeblikket ikke med nogen. Inviter folk for at dele den med andre."
       ],
       "Unable to copy to clipboard": [
         "Kunne ikke kopiere til udklipsholder"
@@ -823,6 +964,12 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Opgrader ${ PASS_APP_NAME }"
+      ],
+      "User's access removed": [
+        "Brugers adgang fjernet"
+      ],
+      "User's access sucessfuly updated": [
+        "Brugers adgang opdateret"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Boksen \"${ payload.content.name }\" blev slettet"
@@ -869,6 +1016,9 @@
       ],
       "You're about to create": [
         "Du er ved at oprette"
+      ],
+      "You've been invited to a vault. Click here to see the invitation.": [
+        "Du er blevet inviteret til en boks. Klik her for at se invitationen."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Din ${ PASS_APP_NAME }-session er låst"
@@ -1168,6 +1318,9 @@
       "Report a problem": [
         "Anmeld et problem"
       ],
+      "Respond": [
+        "Svar"
+      ],
       "Restore all items": [
         "Gendan alle emner"
       ],
@@ -1316,6 +1469,9 @@
       "Add text": [
         "Tilføj tekst"
       ],
+      "Email address": [
+        "E-mail"
+      ],
       "Enter a note...": [
         "Indtast en note..."
       ],
@@ -1426,17 +1582,29 @@
       "Import to vault(s)": [
         "Importér til boks(e)"
       ],
+      "Leave vault ?": [
+        "Forlad boks?"
+      ],
       "Low disk space": [
         "Kun lidt diskplads"
       ],
       "Permanently remove all items ?": [
         "Fjern alle elementer permanent?"
       ],
+      "Permissions": [
+        "Tilladelser"
+      ],
       "Pin the extension": [
         "Fastgør udvidelsen"
       ],
       "Secure your data": [
         "Beskyt dine data"
+      ],
+      "Share with": [
+        "Del med"
+      ],
+      "Shared vault invitation": [
+        "Delte boks-invitation"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Skifter du til ${ PASS_APP_NAME }?"
@@ -1558,6 +1726,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP-krypteret eksportfil kræver adgangssætning"
+      ],
+      "Please enter a valid email address": [
+        "Angiv venligst en gyldig e-mailadresse"
       ],
       "Please log back in": [
         "Log venligst ind igen"

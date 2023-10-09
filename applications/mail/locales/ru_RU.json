@@ -4632,6 +4632,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } нужно ваше разрешение, чтобы ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "Технология шифрования ${ BRAND_NAME } означает, что никто не сможет получить доступ к вашему паролю, даже мы."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } новый календарь",
         "${ calendarsToBeCreatedCount } новых календаря",
@@ -4777,10 +4780,10 @@
         "${ selectedCalendarsTotal } из ${ providerCalendars.length } календарей"
       ],
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
-        "Выбран ${ selectedContactsLength } контакт из ${ contactsLength }",
-        "Выбрано ${ selectedContactsLength } контакта из ${ contactsLength }",
-        "Выбрано ${ selectedContactsLength } контактов из ${ contactsLength }",
-        "Выбрано ${ selectedContactsLength } контакта из ${ contactsLength }"
+        "Выбраны контакты: ${ selectedContactsLength } из ${ contactsLength }",
+        "Выбраны контакты: ${ selectedContactsLength } из ${ contactsLength }",
+        "Выбраны контакты: ${ selectedContactsLength } из ${ contactsLength }",
+        "Выбраны контакты: ${ selectedContactsLength } из ${ contactsLength }"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } папка выбрана",
@@ -6532,6 +6535,9 @@
       "Conditions": [
         "Условия"
       ],
+      "Confirm password": [
+        "Подтвердить пароль"
+      ],
       "Contacts": [
         "Контакты"
       ],
@@ -6717,6 +6723,9 @@
       ],
       "Navigation": [
         "Навигация"
+      ],
+      "New password": [
+        "Новый пароль"
       ],
       "No label found": [
         "Ярлыки не найдены"
@@ -8892,6 +8901,9 @@
       ],
       "Change my answer": [
         "Изменить мой ответ"
+      ],
+      "Change password": [
+        "Изменить пароль"
       ],
       "Clear out the junk": [
         "Очистить от спама"

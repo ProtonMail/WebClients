@@ -59,6 +59,9 @@
       "Confirm": [
         "Подтвердить"
       ],
+      "Continue": [
+        "Продолжить"
+      ],
       "Continue without pinning": [
         "Продолжить без закрепления"
       ],
@@ -173,11 +176,17 @@
       "Learn more": [
         "Подробнее"
       ],
+      "Leave": [
+        "Оставить"
+      ],
       "Lock extension": [
         "Заблокировать расширение"
       ],
       "Manually sync your data": [
         "Синхронизировать ваши данные вручную"
+      ],
+      "More info: ${ safeTitle }": [
+        "Больше информации: ${ safeTitle }"
       ],
       "More options": [
         "Дополнительные параметры"
@@ -232,6 +241,9 @@
       ],
       "Send us a message": [
         "Отправить нам сообщение"
+      ],
+      "Share": [
+        "Поделиться"
       ],
       "Show": [
         "Показать"
@@ -409,6 +421,9 @@
       ],
       "Settings update failed": [
         "Ошибка при обновлении настроек"
+      ],
+      "Signature verification failed": [
+        "Проверка подписи не удалась"
       ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
         "Некоторые хранилища больше недоступны из-за сброса пароля. Восстановите ключи вашего аккаунта, чтобы вновь получить доступ. ${ reactivateLink }"
@@ -1338,6 +1353,9 @@
       ],
       "Add text": [
         "Добавить текст"
+      ],
+      "Email address": [
+        "Адрес электронной почты"
       ],
       "Enter a note...": [
         "Введите заметку..."

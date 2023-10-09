@@ -28,6 +28,9 @@
       "Add Bcc recipients": [
         "Gizli kopya alıcıları ekle"
       ],
+      "Add birthday": [
+        "Doğum günü ekle"
+      ],
       "Add Cc recipients": [
         "Kopya alıcıları ekle"
       ],
@@ -48,6 +51,9 @@
       ],
       "Add new group": [
         "Yeni grup ekle"
+      ],
+      "Add note": [
+        "Not ekle"
       ],
       "Add participant": [
         "Katılımcı ekle"
@@ -93,6 +99,10 @@
       ],
       "As Scheduled": [
         "Zamanlandığı gibi"
+      ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Bir kişi grubunda en fazla ${ maxContacts } kişi bulunabilir",
+        "Bir kişi grubunda en fazla ${ maxContacts } kişi bulunabilir"
       ],
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
@@ -1133,6 +1143,10 @@
       "Yes, I'll attend": [
         "Evet, katılacağım"
       ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "En fazla ${ maxAttachments } kişinin vCard dosyasını gönderebilirsiniz",
+        "En fazla ${ maxAttachments } kişinin vCard dosyasını gönderebilirsiniz"
+      ],
       "Zoom in": [
         "Yakınlaştır"
       ],
@@ -1933,8 +1947,17 @@
       "Birthday": [
         "Doğum günü"
       ],
+      "Display name": [
+        "Görüntülenecek ad"
+      ],
       "Email": [
         "E-posta"
+      ],
+      "Enter a display name or nickname": [
+        "Bir görüntülenecek ad ya da takma ad yazın"
+      ],
+      "First name": [
+        "Ad"
       ],
       "Gender": [
         "Cinsiyet"
@@ -1944,6 +1967,9 @@
       ],
       "Language": [
         "Dil"
+      ],
+      "Last name": [
+        "Soyad"
       ],
       "Logo": [
         "Logo"
@@ -3126,6 +3152,9 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Bu tarayıcıda içerik arama özelliği açılamıyor. Lütfen gizli/özel tarayıcı kipinden çıkın ya da farklı bir tarayıcı deneyin."
       ],
+      "Could not save preference": [
+        "Ayar kaydedilemedi"
+      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Şifre çözme sorunu: Bu iletinin şifrelenmiş içeriğinin şifresi çözülemedi."
       ],
@@ -3179,6 +3208,9 @@
       "Filter with this name already exists": [
         "Aynı adlı bir süzgeç zaten var"
       ],
+      "First name is too long": [
+        "Ad çok uzun"
+      ],
       "Folder name cannot be empty.": [
         "Klasör adı boş olamaz."
       ],
@@ -3211,6 +3243,9 @@
       ],
       "Label name cannot be empty.": [
         "Etiket adı boş olamaz."
+      ],
+      "Last name is too long": [
+        "Soyad çok uzun"
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Eklenebilecek en fazla dosya sayısı (${ attachmentsCountLimit }) sınırı aşıldı"
@@ -3275,6 +3310,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "İlerlemek için lütfen vurgulanan çakışmayı düzeltin.",
         "İlerlemek için lütfen vurgulanan çakışmaları düzeltin."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Lütfen bir ad, bir soyad ya da bir görüntülenecek ad yazın."
       ],
       "Port is required": [
         "Bağlantı noktasının yazılması zorunludur"
@@ -3431,6 +3469,10 @@
       "Wrong mailbox password": [
         "Posta kutusu parolası yanlış"
       ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Bir e-postayı ${ maxContacts } üzerinde alıcıya gönderemezsiniz",
+        "Bir e-postayı ${ maxContacts } üzerinde alıcıya gönderemezsiniz"
+      ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Aynı anda en fazla ${ maxActiveComposer } oluşturucu penceresi açabilirsiniz",
         "Aynı anda en fazla ${ maxActiveComposer } oluşturucu penceresi açabilirsiniz"
@@ -3458,6 +3500,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Aramanız çok fazla sonuç döndürdü. Lütfen aramanızı sınırlandırıp yeniden deneyin."
+      ]
+    },
+    "Error adding participants to a calendar event": {
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "Bir davette en fazla ${ maxAttendees } katılımcı bulunabilir",
+        "Bir davette en fazla ${ maxAttendees } katılımcı bulunabilir"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -4210,6 +4258,9 @@
       "Storage unlocked": [
         "Depolama alanı kazandınız"
       ],
+      "This feature is currently unavailable": [
+        "Bu özellik şu anda kullanılamıyor"
+      ],
       "Update your logins": [
         "Oturum açma bilgilerinizi güncelleyin"
       ],
@@ -4576,6 +4627,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
+      ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "${ BRAND_NAME } şifreleme teknolojisi kimsenin parolanıza erişememesini sağlar. Biz bile erişemeyiz."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } yeni takvim",
@@ -5360,6 +5414,9 @@
       ],
       "Please fill out this field.": [
         "Lütfen bu alanı doldurun."
+      ],
+      "Please note that addresses assigned to these groups will NOT be deleted.": [
+        "Lütfen bu gruplara atanan adreslerin SİLİNMEYECEĞİNİ unutmayın."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Lütfen bu gruba atanan adreslerin SİLİNEMEYECEĞİNİ unutmayın."
@@ -6341,8 +6398,14 @@
       "Conditions": [
         "Koşullar"
       ],
+      "Confirm password": [
+        "Parolayı onayla"
+      ],
       "Contacts": [
         "Kişiler"
+      ],
+      "Conversations per page": [
+        "Bir sayfadaki yazışma sayısı"
       ],
       "Copy": [
         "Kopyala"
@@ -6509,6 +6572,9 @@
       "Mark as": [
         "Şöyle işaretlensin"
       ],
+      "Messages per page": [
+        "Bir sayfadaki ileti sayısı"
+      ],
       "Move ${ sidebarElementName }": [
         "${ sidebarElementName } ögesini taşı"
       ],
@@ -6526,6 +6592,9 @@
       ],
       "Navigation": [
         "Gezinme"
+      ],
+      "New password": [
+        "Yeni parola"
       ],
       "No label found": [
         "Herhangi bir etiket bulunamadı"
@@ -7466,6 +7535,9 @@
       "Filter labels": [
         "Etiketleri süz"
       ],
+      "First name": [
+        "Ad"
+      ],
       "Group name": [
         "Grup adı"
       ],
@@ -7474,6 +7546,9 @@
       ],
       "Image URL": [
         "Görsel adresi"
+      ],
+      "Last name": [
+        "Soyad"
       ],
       "Link": [
         "Bağlantı"
@@ -8472,8 +8547,14 @@
       "Display name": [
         "Görüntülenecek ad"
       ],
+      "First name": [
+        "Ad"
+      ],
       "Import": [
         "İçe aktar"
+      ],
+      "Last name": [
+        "Soyad"
       ],
       "Values": [
         "Değerler"
@@ -8570,6 +8651,9 @@
       "Billing cycle": [
         "Fatura dönemi"
       ],
+      "Birthday": [
+        "Doğum günü"
+      ],
       "Blind Carbon Copy": [
         "Gizli kopya"
       ],
@@ -8587,6 +8671,9 @@
       ],
       "Change my answer": [
         "Yanıtımı değiştir"
+      ],
+      "Change password": [
+        "Parolayı değiştir"
       ],
       "Clear out the junk": [
         "Çöpleri temizleyin"
@@ -8878,6 +8965,9 @@
       ],
       "No trackers found": [
         "Herhangi bir izleyici bulunamadı"
+      ],
+      "Notes": [
+        "Notlar"
       ],
       "Open actions dropdown": [
         "İşlemler menüsünü aç"
@@ -9197,6 +9287,9 @@
       "Are you sure you want to permanently delete ${ count } contact?": [
         "${ count } kişiyi kalıcı olarak silmek istediğinize emin misiniz?",
         "${ count } kişiyi kalıcı olarak silmek istediğinize emin misiniz?"
+      ],
+      "Are you sure you want to permanently delete these contact groups?": [
+        "Bu kişi grubunu kalıcı olarak silmek istediğinize emin misiniz?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Bu kişi grubunu kalıcı olarak silmek istediğinize emin misiniz?"

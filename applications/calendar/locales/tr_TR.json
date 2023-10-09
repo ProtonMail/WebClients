@@ -33,6 +33,9 @@
       "Add address": [
         "Adres ekle"
       ],
+      "Add birthday": [
+        "Doğum günü ekle"
+      ],
       "Add contact": [
         "Kişi ekle"
       ],
@@ -48,6 +51,9 @@
       "Add new group": [
         "Yeni grup ekle"
       ],
+      "Add note": [
+        "Not ekle"
+      ],
       "Add notification": [
         "Bildirim ekle"
       ],
@@ -62,6 +68,10 @@
       ],
       "Apply": [
         "Uygula"
+      ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Bir kişi grubunda en fazla ${ maxContacts } kişi bulunabilir",
+        "Bir kişi grubunda en fazla ${ maxContacts } kişi bulunabilir"
       ],
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
@@ -619,6 +629,10 @@
       ],
       "Yes, I'll attend": [
         "Evet, katılacağım"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "En fazla ${ maxAttachments } kişinin vCard dosyasını gönderebilirsiniz",
+        "En fazla ${ maxAttachments } kişinin vCard dosyasını gönderebilirsiniz"
       ]
     },
     "Action subline": {
@@ -1106,8 +1120,17 @@
       "Birthday": [
         "Doğum günü"
       ],
+      "Display name": [
+        "Görüntülenecek ad"
+      ],
       "Email": [
         "E-posta"
+      ],
+      "Enter a display name or nickname": [
+        "Bir görüntülenecek ad ya da takma ad yazın"
+      ],
+      "First name": [
+        "Ad"
       ],
       "Gender": [
         "Cinsiyet"
@@ -1117,6 +1140,9 @@
       ],
       "Language": [
         "Dil"
+      ],
+      "Last name": [
+        "Soyad"
       ],
       "Logo": [
         "Logo"
@@ -2311,6 +2337,9 @@
       "Failed to get original occurrence in series": [
         "Dizideki özgün yinelenme alınamadı"
       ],
+      "First name is too long": [
+        "Ad çok uzun"
+      ],
       "Folder name cannot be empty.": [
         "Klasör adı boş olamaz."
       ],
@@ -2355,6 +2384,9 @@
       ],
       "Label name cannot be empty.": [
         "Etiket adı boş olamaz."
+      ],
+      "Last name is too long": [
+        "Soyad çok uzun"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "En az ${ calendarsToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimi ile birleştirin",
@@ -2416,6 +2448,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "İlerlemek için lütfen vurgulanan çakışmayı düzeltin.",
         "İlerlemek için lütfen vurgulanan çakışmaları düzeltin."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Lütfen bir ad, bir soyad ya da bir görüntülenecek ad yazın."
       ],
       "Port is required": [
         "Bağlantı noktasının yazılması zorunludur"
@@ -2543,6 +2578,10 @@
       ],
       "You already added this holidays calendar": [
         "Bu tatil takvimini zaten eklemişsiniz"
+      ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Bir e-postayı ${ maxContacts } üzerinde alıcıya gönderemezsiniz",
+        "Bir e-postayı ${ maxContacts } üzerinde alıcıya gönderemezsiniz"
       ],
       "You have reached the contacts limit for your account": [
         "Hesabınızın kişi sayısı sınırına ulaştınız"
@@ -3425,6 +3464,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
       ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "${ BRAND_NAME } şifreleme teknolojisi kimsenin parolanıza erişememesini sağlar. Biz bile erişemeyiz."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } yeni takvim",
         "${ calendarsToBeCreatedCount } yeni takvim"
@@ -3844,6 +3886,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME geçerli oluşturucu kipinde iletiyi otomatik olarak gönderir."
       ],
+      "Please note that addresses assigned to these groups will NOT be deleted.": [
+        "Lütfen bu gruplara atanan adreslerin SİLİNMEYECEĞİNİ unutmayın."
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Lütfen bu gruba atanan adreslerin SİLİNEMEYECEĞİNİ unutmayın."
       ],
@@ -4209,6 +4254,10 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "Bir davette en fazla ${ maxAttendees } katılımcı bulunabilir",
+        "Bir davette en fazla ${ maxAttendees } katılımcı bulunabilir"
+      ],
       "Creating invites in a shared calendar is not allowed": [
         "Paylaşılmış bir takvim için davet oluşturulamaz"
       ]
@@ -4320,6 +4369,9 @@
       ],
       "Colors": [
         "Renkler"
+      ],
+      "Confirm password": [
+        "Parolayı onayla"
       ],
       "Contacts": [
         "Kişiler"
@@ -4476,6 +4528,9 @@
       ],
       "Navigation": [
         "Gezinme"
+      ],
+      "New password": [
+        "Yeni parola"
       ],
       "Notification": [
         "Bildirim"
@@ -5357,6 +5412,9 @@
       "Filter groups": [
         "Grupları süz"
       ],
+      "First name": [
+        "Ad"
+      ],
       "Group name": [
         "Grup adı"
       ],
@@ -5365,6 +5423,9 @@
       ],
       "Indexing...": [
         "Dizine ekleniyor..."
+      ],
+      "Last name": [
+        "Soyad"
       ],
       "Name": [
         "Ad"
@@ -6081,8 +6142,14 @@
       "Display name": [
         "Görüntülenecek ad"
       ],
+      "First name": [
+        "Ad"
+      ],
       "Import": [
         "İçe aktar"
+      ],
+      "Last name": [
+        "Soyad"
       ],
       "Values": [
         "Değerler"
@@ -6166,6 +6233,9 @@
       "Billing cycle": [
         "Fatura dönemi"
       ],
+      "Birthday": [
+        "Doğum günü"
+      ],
       "Calendar": [
         "Takvim"
       ],
@@ -6177,6 +6247,9 @@
       ],
       "Change my answer": [
         "Yanıtımı değiştir"
+      ],
+      "Change password": [
+        "Parolayı değiştir"
       ],
       "Choose how many times this event will repeat": [
         "Bu etkinliğin sona ermeden önce kaç kez yineleneceğini seçin"
@@ -6324,6 +6397,9 @@
       ],
       "Night theme": [
         "Gece teması"
+      ],
+      "Notes": [
+        "Notlar"
       ],
       "Open actions dropdown": [
         "İşlemler menüsünü aç"
@@ -6625,6 +6701,9 @@
       "Are you sure you want to permanently delete ${ count } contact?": [
         "${ count } kişiyi kalıcı olarak silmek istediğinize emin misiniz?",
         "${ count } kişiyi kalıcı olarak silmek istediğinize emin misiniz?"
+      ],
+      "Are you sure you want to permanently delete these contact groups?": [
+        "Bu kişi grubunu kalıcı olarak silmek istediğinize emin misiniz?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Bu kişi grubunu kalıcı olarak silmek istediğinize emin misiniz?"

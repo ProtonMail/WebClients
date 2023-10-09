@@ -69,6 +69,10 @@
       "Apply": [
         "Aplica"
       ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "El nombre màxim de contactes per grup de contactes és de ${ maxContacts }.",
+        "El nombre màxim de contactes per grup de contactes és de ${ maxContacts }."
+      ],
       "Attach screenshot(s)": [
         "Adjunta una o més captures de pantalla"
       ],
@@ -625,6 +629,10 @@
       ],
       "Yes, I'll attend": [
         "Sí, hi assistiré"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "No podeu enviar fitxers vCard de més de ${ maxAttachments } contactes.",
+        "No podeu enviar fitxers vCard de més de ${ maxAttachments } contactes."
       ]
     },
     "Action subline": {
@@ -1117,6 +1125,9 @@
       ],
       "Email": [
         "Correu electrònic"
+      ],
+      "Enter a display name or nickname": [
+        "Introduïu un nom a mostrar o un sobrenom"
       ],
       "First name": [
         "Nom"
@@ -2081,6 +2092,9 @@
         "El fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir ${ MAX_IMPORT_CONTACTS_STRING } contacte. Si el fitxer és més gran, dividiu-lo en fitxers més petits.",
         "El fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir ${ MAX_IMPORT_CONTACTS_STRING } contactes. Si el fitxer és més gran, dividiu-lo en fitxers més petits."
       ],
+      "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
+        "Això pot trigar uns minuts. Mentrestant, podeu continuar utilitzant el calendari com de costum."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arrossegueu i solteu per a classificar la prioritat de combinació entre els contactes. Desmarqueu els contactes que no vulgueu combinar."
       ],
@@ -2435,6 +2449,9 @@
         "Arregleu el conflicte ressaltat per continuar.",
         "Arregleu els conflictes ressaltats per continuar."
       ],
+      "Please provide either a first name, a last name or a display name": [
+        "Proporcioneu un nom , un cognom o un nom a mostrar."
+      ],
       "Port is required": [
         "Es requereix el port"
       ],
@@ -2561,6 +2578,13 @@
       ],
       "You already added this holidays calendar": [
         "Ja heu afegit aquest calendari de festius"
+      ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "No podeu enviar un correu a més de ${ maxContacts } destinatari.",
+        "No podeu enviar un correu a més de ${ maxContacts } destinataris."
+      ],
+      "You have reached the contacts limit for your account": [
+        "Heu arribat al límit de contactes per al vostre compte."
       ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Heu assolit el nombre màxim de calendaris. No se n'han pogut importar alguns."
@@ -2802,6 +2826,10 @@
     "Event info in search view; event duration": {
       "All day": [
         "Tot el dia"
+      ],
+      "All day, lasts ${ plusDaysToEnd } day": [
+        "Tot el dia, el darrer ${ plusDaysToEnd } dia",
+        "Tot el dia, els darrers ${ plusDaysToEnd } dies"
       ]
     },
     "Event info. Organizer name": {
@@ -3442,6 +3470,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "La tecnologia d'encriptació de ${ BRAND_NAME } significa que ningú pot accedir a la vostra contrasenya, ni tan sols nosaltres."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nou calendari",
         "${ calendarsToBeCreatedCount } nous calendaris"
@@ -3587,6 +3618,9 @@
       ],
       "Calendar side panel": [
         "Panell lateral del calendari"
+      ],
+      "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
+        "No es pot trobar els esdeveniments que esteu buscant? Alguns esdeveniments en els calendaris ocults coincideixen amb la vostra consulta. Per veure aquests resultats, activeu la visibilitat per ${ hiddenWithItemsCalendarList }."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "No podeu recordar la vostra contrasenya? Us podem ajudar a netejar les dades xifrades de tots els contactes xifrats amb aquesta clau i en el procés desactivar l'alerta."
@@ -3752,6 +3786,9 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Important les vostres dades des de ${ importedEmailAddress } a ${ toEmail }."
+      ],
+      "Indexing events: ${ current }/${ total }": [
+        "Indexació d'esdeveniments: ${ current }/${ total }"
       ],
       "Indexing paused": [
         "Indexació pausada"
@@ -4169,6 +4206,11 @@
         "Sembla que el fus horari del sistema ha canviat a ${ timezone }. Voleu actualitzar la vostra preferència de fus horari?"
       ]
     },
+    "Info calendar search": {
+      "You can either update your search query or close search to go back to calendar views": [
+        "Podeu actualitzar la vostra cerca o tancar la cerca per tornar a les vistes del calendari."
+      ]
+    },
     "Info message": {
       "No results found": [
         "No s'ha trobat cap resultat."
@@ -4334,6 +4376,9 @@
       "Colors": [
         "Colors"
       ],
+      "Confirm password": [
+        "Confirmeu la contrasenya"
+      ],
       "Contacts": [
         "Contactes"
       ],
@@ -4489,6 +4534,9 @@
       ],
       "Navigation": [
         "Navegació"
+      ],
+      "New password": [
+        "Contrasenya nova"
       ],
       "Notification": [
         "Notificació"
@@ -5800,6 +5848,9 @@
       "Add your country's public holidays to your calendar.": [
         "Afegiu els dies festius del vostre país al calendari."
       ],
+      "Easily find the event you're looking for with our new search feature.": [
+        "Trobeu fàcilment l'esdeveniment que busqueu amb la nostra nova funció de cerca."
+      ],
       "Get up to ${ credits } in credits.": [
         "Obteniu fins a ${ credits } en crèdits."
       ],
@@ -6202,6 +6253,9 @@
       ],
       "Change my answer": [
         "Canviar la meva resposta"
+      ],
+      "Change password": [
+        "Canvia la contrasenya"
       ],
       "Choose how many times this event will repeat": [
         "Trieu quantes vegades es repetirà aquest esdeveniment."
@@ -6636,6 +6690,9 @@
       ]
     },
     "View event button tooltip": {
+      "Navigate to event": [
+        "Navega fins a l'esdeveniment."
+      ],
       "Open in a new tab": [
         "Obre en una pestanya nova"
       ]
