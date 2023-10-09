@@ -84,7 +84,7 @@ export const ReportAProblem: VFC = () => {
                     />
 
                     <Button
-                        className="mt-4 w100"
+                        className="mt-4 w-full"
                         color="norm"
                         disabled={!form.isValid}
                         loading={requestInFlight}

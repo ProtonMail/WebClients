@@ -20,9 +20,9 @@ export const AliasPreview: VFC<{
     return (
         <div className={clsx(['flex flex-column flex-align-items-center mb-4', className])}>
             <div className="mb-2 color-weak">{c('Info').t`You are about to create:`}</div>
-            <div className="w100 text-center">
+            <div className="w-full text-center">
                 {loading ? (
-                    <div className="w100 pass-skeleton pass-skeleton--alias-preview" />
+                    <div className="w-full pass-skeleton pass-skeleton--alias-preview" />
                 ) : (
                     <MiddleEllipsis
                         className={`${SubTheme.VIOLET} pass-alias-preview--content text-lg`}

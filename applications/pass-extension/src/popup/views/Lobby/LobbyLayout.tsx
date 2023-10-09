@@ -23,7 +23,12 @@ export const LobbyLayout: FC<{ overlay: boolean }> = ({ overlay, children }) => 
                 />
             </FadeIn>
 
-            <div className="pass-lobby--content flex flex-column h100 w300p mx-auto text-center gap-2">{children}</div>
+            <div
+                className="pass-lobby--content flex flex-column h-full w-custom mx-auto text-center gap-2"
+                style={{ '--w-custom': '18.75rem' }}
+            >
+                {children}
+            </div>
         </FadeIn>
     );
 };

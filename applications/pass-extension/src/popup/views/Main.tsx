@@ -20,9 +20,9 @@ export const Main: VFC = () => {
     useEffect(() => () => clearNotifications(), []);
 
     return (
-        <FadeIn id="main" className="flex flex-column flex-nowrap w100 h100 overflow-hidden" key="main" delay={50}>
+        <FadeIn id="main" className="flex flex-column flex-nowrap w-full h-full overflow-hidden" key="main" delay={50}>
             <Header />
-            <main className="flex flex-align-items-center flex-justify-center flex-nowrap w100 h100">
+            <main className="flex flex-align-items-center flex-justify-center flex-nowrap w-full h-full">
                 <Sidebar>
                     <Switch>
                         <Route path="/trash">

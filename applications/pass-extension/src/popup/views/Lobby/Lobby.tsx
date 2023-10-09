@@ -63,7 +63,7 @@ const LobbyContent: VFC = () => {
                     .t`Something went wrong while starting ${PASS_APP_NAME}. Please try refreshing or reloading the extension`}
             />
         ) : (
-            <FadeIn delay={250} className="mt-12 w100" key="lobby-loading">
+            <FadeIn delay={250} className="mt-12 w-full" key="lobby-loading">
                 <div className="flex flex-column flex-align-items-center gap-3">
                     <CircleLoader size="medium" />
                     <span className="block text-sm text-weak">
@@ -99,7 +99,7 @@ const LobbyContent: VFC = () => {
 
             <div className="flex-item-fluid mt-8 flex flex-column gap-2">
                 {!locked && (
-                    <Button pill shape="solid" color="norm" className="w100" onClick={handleSignInClick}>
+                    <Button pill shape="solid" color="norm" className="w-full" onClick={handleSignInClick}>
                         {workerErrored(state.status)
                             ? c('Action').t`Sign back in`
                             : c('Action').t`Sign in with ${BRAND_NAME}`}
@@ -107,7 +107,7 @@ const LobbyContent: VFC = () => {
                 )}
 
                 {!(locked || canSignOut) && (
-                    <Button pill shape="solid" color="weak" className="w100" onClick={handleSignUpClick}>
+                    <Button pill shape="solid" color="weak" className="w-full" onClick={handleSignUpClick}>
                         {c('Action').t`Create a ${BRAND_NAME} account`}
                     </Button>
                 )}
@@ -119,7 +119,13 @@ const LobbyContent: VFC = () => {
                 )}
 
                 {canSignOut && (
-                    <Button pill shape="outline" color="danger" className="w100" onClick={() => logout({ soft: true })}>
+                    <Button
+                        pill
+                        shape="outline"
+                        color="danger"
+                        className="w-full"
+                        onClick={() => logout({ soft: true })}
+                    >
                         {c('Action').t`Sign out`}
                     </Button>
                 )}

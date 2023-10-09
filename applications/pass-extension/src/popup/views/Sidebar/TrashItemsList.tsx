@@ -5,7 +5,6 @@ import { c } from 'ttag';
 
 import { itemEq } from '@proton/pass/utils/pass/items';
 
-import { ListItemLink } from '../../../shared/components/router';
 import { ItemsListItem } from '../../components/Item/ItemsListItem';
 import { VirtualList } from '../../components/List/VirtualList';
 import { useTrashItems } from '../../hooks/useItems';
@@ -25,7 +24,7 @@ export const TrashItemsList: FC = () => {
     const listRef = useRef<List>(null);
 
     return searched.length === 0 ? (
-        <div className="absolute-center flex flex-justify-center flex-align-items-center w70">
+        <div className="absolute-center flex flex-justify-center flex-align-items-center w-4/6">
             <span className="block text-break color-weak text-sm p-2 text-center text-break">
                 {totalCount === 0 ? (
                     <span>
@@ -51,7 +50,6 @@ export const TrashItemsList: FC = () => {
                         <ItemsListItem
                             item={item}
                             id={`item-${item.shareId}-${item.itemId}`}
-                            component={ListItemLink}
                             onClick={onSelectItem(item, { inTrash: true })}
                             search={search}
                             active={selectedItem && itemEq(selectedItem)(item)}
