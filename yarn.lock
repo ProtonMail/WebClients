@@ -16947,14 +16947,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-testing-library@npm:^5.11.1":
-  version: 5.11.1
-  resolution: "eslint-plugin-testing-library@npm:5.11.1"
+"eslint-plugin-testing-library@npm:^6.0.2":
+  version: 6.0.2
+  resolution: "eslint-plugin-testing-library@npm:6.0.2"
   dependencies:
     "@typescript-eslint/utils": ^5.58.0
   peerDependencies:
     eslint: ^7.5.0 || ^8.0.0
-  checksum: 9f3fc68ef9f13016a4381b33ab5dbffcc189e5de3eaeba184bcf7d2771faa7f54e59c04b652162fb1c0f83fb52428dd909db5450a25508b94be59eba69fcc990
+  checksum: 6e91798d731dffb978e463042e8386570053c92ab6b7abe858f2700941e2565030b4534b85ef059c857366d09e75e5dea0a9e5b82de0873ff767c664c0aa0297
   languageName: node
   linkType: hard
 
@@ -27925,7 +27925,7 @@ fsevents@^1.2.7:
     date-fns: ^2.30.0
     dompurify: ^3.0.6
     eslint: ^8.51.0
-    eslint-plugin-testing-library: ^5.11.1
+    eslint-plugin-testing-library: ^6.0.2
     jest: ^29.7.0
     jest-environment-jsdom: ^29.7.0
     jest-junit: ^16.0.0
@@ -28047,7 +28047,7 @@ fsevents@^1.2.7:
     eslint: ^8.51.0
     eslint-config-airbnb-typescript: ^17.1.0
     eslint-config-prettier: ^9.0.0
-    eslint-plugin-testing-library: ^5.11.1
+    eslint-plugin-testing-library: ^6.0.2
     jest: ^29.7.0
     jest-environment-jsdom: ^29.7.0
     jest-junit: ^16.0.0
