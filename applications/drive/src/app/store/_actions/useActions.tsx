@@ -11,6 +11,7 @@ import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import useDevicesActions from '../_devices/useDevicesActions';
 import { useDownload } from '../_downloads';
 import { useLinkActions, useLinksActions } from '../_links';
+import { usePhotos } from '../_photos';
 import { useShareUrl } from '../_shares';
 import useUploadFile from '../_uploads/UploadProvider/useUploadFile';
 import { TransferConflictStrategy } from '../_uploads/interface';
@@ -41,6 +42,7 @@ export default function useActions() {
     const links = useLinksActions();
     const shareUrl = useShareUrl();
     const devicesActions = useDevicesActions();
+    const { removePhotosFromCache } = usePhotos();
 
     const createFolder = async (
         abortSignal: AbortSignal,
@@ -188,6 +190,10 @@ export default function useActions() {
         const linkIds = linksToMove.map(({ linkId }) => linkId);
         const result = await links.moveLinks(abortSignal, shareId, linkIds, newParentLinkId);
 
+        // This is a bit ugly, but the photo linkId cache is not connected
+        // very well to the rest of our state.
+        removePhotosFromCache(result.successes);
+
         const undoAction = async () => {
             const linkIdsPerParentId = Object.entries(result.originalParentIds).reduce(
                 (acc, [linkId, originalParentId]) => {
@@ -224,6 +230,10 @@ export default function useActions() {
             }))
         );
 
+        // This is a bit ugly, but the photo linkId cache is not connected
+        // very well to the rest of our state.
+        removePhotosFromCache(result.successes);
+
         const undoAction = async () => {
             const linksToUndo = result.successes
                 .map((linkId) => linksToTrash.find((link) => link.linkId === linkId))
@@ -235,8 +245,6 @@ export default function useActions() {
         };
 
         createTrashedItemsNotifications(linksToTrash, result.successes, result.failures, undoAction);
-
-        return result;
     };
 
     const restoreLinks = async (abortSignal: AbortSignal, linksToRestore: LinkInfo[]) => {
