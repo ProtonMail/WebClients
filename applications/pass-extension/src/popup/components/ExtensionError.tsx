@@ -13,10 +13,10 @@ import { LobbyLayout } from '../views/Lobby/LobbyLayout';
  * `ui-red` themes because we don't currently
  * support weak & danger|warning buttons */
 export const PromptForReload: VFC<{ message: string }> = ({ message }) => (
-    <FadeIn className="mt-12 w100 flex flex-column flex-align-items-center gap-2" key="prompt-for-reload">
+    <FadeIn className="mt-12 w-full flex flex-column flex-align-items-center gap-2" key="prompt-for-reload">
         <span className="block text-sm text-weak">{message}</span>
 
-        <Button pill shape="solid" color="weak" className="ui-red w100" onClick={() => browser.runtime.reload()}>
+        <Button pill shape="solid" color="weak" className="ui-red w-full" onClick={() => browser.runtime.reload()}>
             {c('Action').t`Reload extension`}
         </Button>
     </FadeIn>
