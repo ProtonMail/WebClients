@@ -44,7 +44,7 @@ const ItemsListItemRaw: VFC<Props> = ({ item, search = '', active = false, ...re
             as={Link}
             to="#"
             className={clsx([
-                'pass-item-list--item interactive-pseudo w100 relative',
+                'pass-item-list--item interactive-pseudo w-full relative',
                 optimistic && !failed && 'opacity-50',
                 active && 'is-active',
             ])}
@@ -52,7 +52,7 @@ const ItemsListItemRaw: VFC<Props> = ({ item, search = '', active = false, ...re
             shape="ghost"
             {...rest}
         >
-            <div className="flex-nowrap flex w100 px-3 py-2 flex-align-items-center">
+            <div className="flex-nowrap flex w-full px-3 py-2 flex-align-items-center">
                 <ItemIcon
                     item={item}
                     size={20}

@@ -139,7 +139,7 @@ export const Autosave: VFC<Props> = ({ visible, submission, settings, onClose })
 
     return (
         <FormikProvider value={form}>
-            <Form className="ui-violet flex flex-column flex-nowrap flex-justify-space-between h100">
+            <Form className="ui-violet flex flex-column flex-nowrap flex-justify-space-between h-full">
                 <NotificationHeader
                     title={(() => {
                         switch (submission.autosave.data.action) {

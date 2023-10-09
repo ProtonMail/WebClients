@@ -23,7 +23,7 @@ export const Welcome: VFC = () => {
     return (
         <>
             <ExtensionHead title={c('Title').t`Thank you for installing ${PASS_APP_NAME}`} />
-            <div className="pass-onboarding ui-standard w100 min-h-custom" style={{ '--min-h-custom': '100vh' }}>
+            <div className="pass-onboarding ui-standard w-full min-h-custom" style={{ '--min-h-custom': '100vh' }}>
                 <div className="m-auto p-14 color-norm flex flex-justify-center">
                     <div className="pass-onboarding--gradient"></div>
                     <div className="flex flex-column max-w-custom" style={{ '--max-w-custom': '1024px' }}>
@@ -77,7 +77,7 @@ export const Welcome: VFC = () => {
                                         <ButtonLike
                                             as="a"
                                             href="/settings.html#/import"
-                                            className={`w100 ${SubTheme.VIOLET} pass-welcome--import-btn`}
+                                            className={`w-full ${SubTheme.VIOLET} pass-welcome--import-btn`}
                                             pill
                                             size="large"
                                             shape="solid"

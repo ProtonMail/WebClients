@@ -79,7 +79,7 @@ export const ShareMember: VFC<ShareMemberProps> = ({
     const loading = transferOwnership.loading || removeAccess.loading || editAccess.loading;
 
     return (
-        <div className="flex flex-nowrap flex-align-items-center border rounded-xl px-4 py-3 w100">
+        <div className="flex flex-nowrap flex-align-items-center border rounded-xl px-4 py-3 w-full">
             <ShareMemberAvatar value={initials} loading={loading} />
             <div className="flex-item-fluid">
                 <div className="flex flex-nowrap flex-item-fluid flex-align-items-center gap-2">
