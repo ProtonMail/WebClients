@@ -13,8 +13,8 @@
         "pretty": "prettier --write  cli bin"
     },
     "dependencies": {
-        "@babel/cli": "^7.22.15",
-        "@babel/core": "^7.22.17",
+        "@babel/cli": "^7.23.0",
+        "@babel/core": "^7.23.0",
         "@babel/plugin-proposal-class-properties": "^7.18.6",
         "@babel/plugin-proposal-nullish-coalescing-operator": "^7.18.6",
         "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
@@ -23,20 +23,20 @@
         "@babel/plugin-syntax-dynamic-import": "^7.8.3",
         "@babel/plugin-transform-regenerator": "^7.22.10",
         "@babel/plugin-transform-runtime": "^7.22.15",
-        "@babel/preset-env": "^7.22.15",
+        "@babel/preset-env": "^7.22.20",
         "@babel/preset-react": "^7.22.15",
-        "@babel/preset-typescript": "^7.22.15",
-        "@babel/runtime": "^7.22.15",
+        "@babel/preset-typescript": "^7.23.0",
+        "@babel/runtime": "^7.23.1",
         "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
         "@sentry/webpack-plugin": "^1.20.1",
-        "@types/webpack": "^5.28.2",
-        "autoprefixer": "^10.4.15",
+        "@types/webpack": "^5.28.3",
+        "autoprefixer": "^10.4.16",
         "babel-loader": "^9.1.3",
         "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
         "chalk": "4.1.2",
         "commander": "^11.0.0",
         "copy-webpack-plugin": "^11.0.0",
-        "core-js": "^3.32.2",
+        "core-js": "^3.33.0",
         "cross-env": "^7.0.3",
         "css-loader": "^6.8.1",
         "css-minimizer-webpack-plugin": "^5.0.1",
@@ -50,17 +50,17 @@
         "mini-css-extract-plugin": "^2.7.6",
         "po-gettext-loader": "^1.0.0",
         "portfinder": "^1.0.32",
-        "postcss": "^8.4.29",
+        "postcss": "^8.4.31",
         "postcss-color-functional-notation": "^5.1.0",
         "postcss-loader": "^7.3.3",
         "postcss-logical": "^7.0.0",
         "react-refresh": "^0.14.0",
         "resolve-url-loader": "^5.0.0",
-        "sass": "^1.66.1",
+        "sass": "^1.69.0",
         "sass-loader": "^13.3.2",
         "terser-webpack-plugin": "^5.3.9",
         "ttag": "^1.7.25",
-        "ttag-cli": "^1.10.5",
+        "ttag-cli": "^1.10.6",
         "webpack": "^5.88.2",
         "webpack-cli": "^5.1.4",
         "webpack-dev-server": "^4.15.1",
@@ -68,10 +68,10 @@
         "webpack-subresource-integrity": "^5.1.0"
     },
     "devDependencies": {
-        "eslint": "^8.49.0",
+        "eslint": "^8.51.0",
         "prettier": "^2.8.8"
     },
     "engines": {
-        "node": ">= v18.17.1"
+        "node": ">= v18.18.0"
     }
 }

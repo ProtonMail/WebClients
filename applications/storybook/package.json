@@ -23,23 +23,23 @@
         "@proton/pack": "workspace:packages/pack",
         "@proton/shared": "workspace:packages/shared",
         "@proton/styles": "workspace:packages/styles",
-        "@types/react": "^17.0.65",
-        "@types/react-dom": "^17.0.20",
+        "@types/react": "^17.0.67",
+        "@types/react-dom": "^17.0.21",
         "@types/react-router-dom": "^5.3.3",
         "cross-env": "^7.0.3",
-        "eslint": "^8.49.0",
+        "eslint": "^8.51.0",
         "lodash.startcase": "^4.4.0",
         "prettier": "^2.8.8",
         "prop-types": "15.8.1",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "react-router-dom": "^5.3.4",
-        "ts-loader": "^9.4.4",
+        "ts-loader": "^9.5.0",
         "typescript": "^5.2.2",
         "webpack": "^5.88.2"
     },
     "devDependencies": {
-        "@babel/core": "^7.22.17",
+        "@babel/core": "^7.23.0",
         "@storybook/addon-actions": "^6.5.16",
         "@storybook/addon-essentials": "^6.5.16",
         "@storybook/addon-links": "^6.5.16",
@@ -49,7 +49,7 @@
         "@storybook/react": "^6.5.16",
         "@storybook/source-loader": "^6.5.16",
         "babel-loader": "^9.1.3",
-        "eslint-plugin-storybook": "^0.6.13",
+        "eslint-plugin-storybook": "^0.6.15",
         "netlify-cli": "^15.11.0"
     }
 }
