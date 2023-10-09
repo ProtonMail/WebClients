@@ -22,11 +22,11 @@ export const AutofillOTP: VFC<Props> = ({ item, onMessage, onClose }) => {
     const [otp, percent] = usePeriodicOtpCode({ ...item, type: 'item' });
 
     return (
-        <div className="flex flex-column flex-nowrap flex-justify-space-between h100">
+        <div className="flex flex-column flex-nowrap flex-justify-space-between h-full">
             <NotificationHeader title={c('Info').t`Verification code`} onClose={onClose} />
-            <div className="max-w100">
+            <div className="max-w-full">
                 <div className="flex flex-nowrap flex-align-items-center flex-justify-center mb-2 gap-4">
-                    <div className="text-4xl max-w80 text-ellipsis">
+                    <div className="text-4xl max-w-4/5 text-ellipsis">
                         <span className="text-4xl">
                             <OTPValue code={otp?.token} />
                         </span>

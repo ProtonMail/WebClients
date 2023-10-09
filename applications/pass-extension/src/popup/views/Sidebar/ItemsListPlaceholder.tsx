@@ -107,7 +107,7 @@ export const ItemsListPlaceholder: VFC = () => {
                             shape="solid"
                             color="weak"
                             key={`quick-action-${type}`}
-                            className={clsx('w100 relative', subTheme)}
+                            className={clsx('w-full relative', subTheme)}
                             onClick={onClick}
                         >
                             <Icon

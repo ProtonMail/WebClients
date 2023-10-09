@@ -24,7 +24,7 @@ export const PanelHeader: VFC<Props> = ({ className, actions, ...props }) => {
         >
             {title !== undefined && (
                 <div>
-                    <h2 className="text-2xl text-bold text-ellipsis lh100 mb-0-5">{title}</h2>
+                    <h2 className="text-2xl text-bold text-ellipsis lh-full mb-0-5">{title}</h2>
                     {subtitle}
                 </div>
             )}
@@ -32,7 +32,7 @@ export const PanelHeader: VFC<Props> = ({ className, actions, ...props }) => {
                 <div
                     className={clsx(
                         'flex flex-nowrap flex-justify-space-between flex-align-items-center flex-item-noshrink gap-1',
-                        onlyActions && 'w100'
+                        onlyActions && 'w-full'
                     )}
                 >
                     {actions}
