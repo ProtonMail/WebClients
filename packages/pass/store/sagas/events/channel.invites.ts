@@ -86,8 +86,8 @@ export const createInvitesChannel = (api: Api) =>
     });
 
 export function* invitesChannel(api: Api, options: WorkerRootSagaOptions) {
-    const allowSharing: boolean = yield select(selectUserFeature(PassFeature.PassSharingV1));
-    if (!allowSharing) return;
+    const sharingEnabled: boolean = yield select(selectUserFeature(PassFeature.PassSharingV1));
+    if (!sharingEnabled) return;
 
     logger.info(`[${NAMESPACE}] start polling for invites`);
 
