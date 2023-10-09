@@ -7,8 +7,6 @@ import type { AliasOptionsResponse } from '@proton/pass/types';
 import { getAliasOptionsFailure, getAliasOptionsIntent, getAliasOptionsSuccess } from '../actions';
 import type { AliasOptions } from '../reducers';
 
-export const ALIAS_OPTIONS_VALIDITY_WINDOW = 10 * 60;
-
 function* requestAliasOptions(action: ReturnType<typeof getAliasOptionsIntent>) {
     const {
         payload: { shareId },
