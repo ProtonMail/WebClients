@@ -114,7 +114,7 @@ export const useSessionRecoveryGracePeriodHoursRemaining = () => {
 
     const msRemaining = user.AccountRecovery.EndTime * 1000 - Date.now();
 
-    return Math.floor(msRemaining / HOUR);
+    return Math.ceil(msRemaining / HOUR);
 };
 
 export const useSessionRecoveryInsecureTimeRemaining = () => {
