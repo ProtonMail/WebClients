@@ -24,9 +24,8 @@ export const PhotosView: FC<void> = () => {
     const { selection, setSelected, clearSelection } = usePhotosSelection();
 
     const [detailsModal, showDetailsModal] = useDetailsModal();
-    const [previewIndex, setPreviewIndex] = useState<number>(-1);
+    const [previewLinkId, setPreviewLinkId] = useState<string | undefined>();
 
-    const isEmpty = photos.length === 0;
     const thumbnails = useThumbnailsDownload();
 
     const handleItemRender = async (itemLinkId: string) => {
@@ -39,82 +38,89 @@ export const PhotosView: FC<void> = () => {
         }
     };
 
-    const gridPhotoLinkIndices: number[] = useMemo(
-        () =>
-            photos.reduce<number[]>((previousValue, currentValue, currentIndex) => {
-                if (typeof currentValue !== 'string') {
-                    previousValue.push(currentIndex);
-                }
-                return previousValue;
-            }, []),
-        [photos]
-    );
+    const { gridLinkToIndexMap, photoLinkIds } = useMemo(() => {
+        let gridLinkToIndexMap: Record<string, number> = {};
+        let photoLinkIds: string[] = [];
 
-    const handleItemClick = useCallback(
-        (index: number) => {
-            setPreviewIndex(gridPhotoLinkIndices.findIndex((item) => item === index));
-        },
-        [gridPhotoLinkIndices]
+        photos.forEach((item, index) => {
+            if (typeof item !== 'string') {
+                gridLinkToIndexMap[item.linkId] = index;
+                photoLinkIds.push(item.linkId);
+            }
+        });
+
+        return { gridLinkToIndexMap, photoLinkIds };
+    }, [photos]);
+    const photoCount = photoLinkIds.length;
+
+    const selectedItems = useMemo<PhotoLink[]>(
+        () =>
+            Object.keys(selection).reduce<PhotoLink[]>((acc, linkId) => {
+                const item = photos[gridLinkToIndexMap[linkId]];
+                if (typeof item !== 'string') {
+                    acc.push(item);
+                }
+
+                return acc;
+            }, []),
+        [selection, photos, gridLinkToIndexMap]
     );
+    const selectedCount = selectedItems.length;
 
     const handleSelection = useCallback(
         (index: number, isSelected: boolean) => {
-            if (typeof photos[index] === 'string') {
-                const indices = [];
+            const item = photos[index];
+
+            if (typeof item === 'string') {
+                const items = [];
 
                 for (let i = index + 1; i < photos.length; i++) {
-                    if (typeof photos[i] === 'string') {
+                    const current = photos[i];
+
+                    if (typeof current === 'string') {
                         break;
                     }
 
-                    indices.push(i);
+                    items.push(current.linkId);
                 }
 
-                setSelected(indices, isSelected);
+                setSelected(items, isSelected);
             } else {
-                setSelected([index], isSelected);
+                setSelected([item.linkId], isSelected);
             }
         },
         [setSelected, photos]
     );
 
-    const selectedItems = useMemo(
-        () =>
-            selection.reduce<PhotoLink[]>((acc, selected, index) => {
-                const item = photos[index];
-                if (selected && typeof item !== 'string') {
-                    acc.push(item);
-                }
-                return acc;
-            }, []),
-        [photos, selection]
-    );
-    const selectedCount = selectedItems.length;
-
     const handleToolbarPreview = useCallback(() => {
-        const index = selection.findIndex((isSelected) => isSelected === true);
+        let selected = Object.keys(selection)[0];
 
-        if (index) {
-            handleItemClick(index);
+        if (selected) {
+            setPreviewLinkId(selected);
         }
-    }, [selectedItems]);
+    }, [selection, setPreviewLinkId]);
 
     const handleTrashed = useCallback(
         (linkIds: string[]) => {
             removePhotosFromCache(linkIds);
-            setSelected(
-                linkIds.map((linkId) =>
-                    photos.findIndex((item) => {
-                        return typeof item !== 'string' && item.linkId === linkId;
-                    })
-                ),
-                false
-            );
+            setSelected(linkIds, false);
         },
-        [removePhotosFromCache, setSelected, photos]
+        [removePhotosFromCache, setSelected]
     );
 
     const previewRef = useRef<HTMLDivElement>(null);
+    const previewIndex = useMemo(
+        () => photoLinkIds.findIndex((item) => item === previewLinkId),
+        [photoLinkIds, previewLinkId]
+    );
+    const previewItem = useMemo(
+        () => (previewLinkId !== undefined ? (photos[gridLinkToIndexMap[previewLinkId]] as PhotoLink) : undefined),
+        [photos, previewLinkId, gridLinkToIndexMap]
+    );
+    const setPreviewIndex = useCallback(
+        (index: number) => setPreviewLinkId(photoLinkIds[index]),
+        [setPreviewLinkId, photoLinkIds]
+    );
 
     if (isLoading && !isLoadingMore) {
         return <Loader />;
@@ -124,7 +130,7 @@ export const PhotosView: FC<void> = () => {
         return <PhotosEmptyView />;
     }
 
-    const previewItem = photos[gridPhotoLinkIndices[previewIndex]] as PhotoLink;
+    const isEmpty = photos.length === 0;
 
     return (
         <>
@@ -136,7 +142,7 @@ export const PhotosView: FC<void> = () => {
                     linkId={previewItem.linkId}
                     revisionId={previewItem.activeRevision.id}
                     key="portal-preview-photos"
-                    open={previewIndex !== -1}
+                    open={!!previewItem}
                     date={previewItem.activeRevision.photo.captureTime}
                     onDetails={() =>
                         showDetailsModal({
@@ -147,14 +153,14 @@ export const PhotosView: FC<void> = () => {
                     navigationControls={
                         <NavigationControl
                             current={previewIndex + 1}
-                            total={gridPhotoLinkIndices.length}
+                            total={photoCount}
                             rootRef={previewRef}
                             onPrev={() => setPreviewIndex(previewIndex - 1)}
                             onNext={() => setPreviewIndex(previewIndex + 1)}
                         />
                     }
-                    onClose={() => setPreviewIndex(-1)}
-                    onExit={() => setPreviewIndex(-1)}
+                    onClose={() => setPreviewLinkId(undefined)}
+                    onExit={() => setPreviewLinkId(undefined)}
                 />
             )}
 
@@ -196,7 +202,7 @@ export const PhotosView: FC<void> = () => {
                         onItemRender={handleItemRender}
                         onItemRenderLoadedLink={handleItemRenderLoadedLink}
                         isLoadingMore={isLoadingMore}
-                        onItemClick={handleItemClick}
+                        onItemClick={setPreviewLinkId}
                         selection={selection}
                         hasSelection={selectedCount > 0}
                         onSelectChange={handleSelection}
