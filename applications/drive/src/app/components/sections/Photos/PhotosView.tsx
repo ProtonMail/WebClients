@@ -20,7 +20,7 @@ import { PhotosClearSelectionButton } from './toolbar/PhotosClearSelectionButton
 export const PhotosView: FC<void> = () => {
     useAppTitle(c('Title').t`Photos`);
 
-    const { shareId, linkId, photos, isLoading, isLoadingMore, loadPhotoLink, removePhotosFromCache } = usePhotosView();
+    const { shareId, linkId, photos, isLoading, isLoadingMore, loadPhotoLink } = usePhotosView();
     const { selection, setSelected, clearSelection } = usePhotosSelection();
 
     const [detailsModal, showDetailsModal] = useDetailsModal();
@@ -57,7 +57,7 @@ export const PhotosView: FC<void> = () => {
         () =>
             Object.keys(selection).reduce<PhotoLink[]>((acc, linkId) => {
                 const item = photos[gridLinkToIndexMap[linkId]];
-                if (typeof item !== 'string') {
+                if (item && typeof item !== 'string') {
                     acc.push(item);
                 }
 
@@ -99,14 +99,6 @@ export const PhotosView: FC<void> = () => {
             setPreviewLinkId(selected);
         }
     }, [selection, setPreviewLinkId]);
-
-    const handleTrashed = useCallback(
-        (linkIds: string[]) => {
-            removePhotosFromCache(linkIds);
-            setSelected(linkIds, false);
-        },
-        [removePhotosFromCache, setSelected]
-    );
 
     const previewRef = useRef<HTMLDivElement>(null);
     const previewIndex = useMemo(
@@ -189,7 +181,6 @@ export const PhotosView: FC<void> = () => {
                             linkId={linkId}
                             selectedItems={selectedItems}
                             onPreview={handleToolbarPreview}
-                            onTrash={handleTrashed}
                         />
                     }
                 />
