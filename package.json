@@ -21,6 +21,7 @@
         "@pdf-lib/standard-fonts@^1.0.0": "patch:@pdf-lib/standard-fonts@npm%3A1.0.0#./.yarn/patches/@pdf-lib-standard-fonts-npm-1.0.0-963255903e.patch",
         "@storybook/react-docgen-typescript-plugin": "1.0.6--canary.9.f9c48c0.0",
         "@types/jest": "^29.5.5",
+        "@types/prettier": "^3.0.0",
         "@types/react": "^17.0.67",
         "@types/react-dom": "^17.0.21",
         "rfc2047@^2.0.1": "patch:rfc2047@npm%3A2.0.1#./.yarn/patches/rfc2047-npm-2.0.1-60a2a07c99.patch",
@@ -40,7 +41,7 @@
         "eslint-plugin-jsx-a11y": "^6.7.1",
         "husky": "^8.0.3",
         "lint-staged": "^14.0.1",
-        "prettier": "^2.8.8",
+        "prettier": "^3.0.3",
         "sort-package-json": "^2.6.0"
     },
     "packageManager": "yarn@3.6.4",
