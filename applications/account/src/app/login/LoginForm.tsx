@@ -230,16 +230,16 @@ const LoginForm = ({
                     >
                         <Link
                             to={paths.reset}
-                            className="dropdown-item-link w100 px-4 py-2 block text-no-decoration text-left"
+                            className="dropdown-item-link w100 px-4 py-2 flex flex-align-items-center text-no-decoration text-left"
                         >
-                            <Icon name="user-circle" className="mr-2" />
+                            <Icon name="key" className="mr-2" />
                             {c('Link').t`Reset password`}
                         </Link>
                         <Link
                             to={paths.forgotUsername}
-                            className="dropdown-item-link w100 px-4 py-2 block text-no-decoration text-left"
+                            className="dropdown-item-link w100 px-4 py-2 flex flex-align-items-center text-no-decoration text-left"
                         >
-                            <Icon name="key" className="mr-2" />
+                            <Icon name="user-circle" className="mr-2" />
                             {c('Link').t`Forgot username?`}
                         </Link>
                     </SupportDropdown>
