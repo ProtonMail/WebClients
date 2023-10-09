@@ -1,17 +1,41 @@
+import { HD_THUMBNAIL_MAX_SIDE, SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
+
 import { canvasToThumbnail } from './canvasUtil';
-import { ThumbnailData, ThumbnailType } from './interface';
+import { ThumbnailInfo, ThumbnailType } from './interface';
 import { calculateThumbnailSize } from './util';
 
 export const imageCannotBeLoadedError = new Error('Image cannot be loaded');
 
-export function scaleImageFile(
-    file: Blob,
-    thumbnailType: ThumbnailType = ThumbnailType.PREVIEW
-): Promise<ThumbnailData> {
+interface ReturnProps {
+    width?: number;
+    height?: number;
+    thumbnails?: ThumbnailInfo[];
+}
+
+const shouldGenerateHDPreview = ({ width, mimeType }: { width: number; mimeType: string }) =>
+    mimeType == SupportedMimeTypes.jpg && width && width <= HD_THUMBNAIL_MAX_SIDE;
+
+export function scaleImageFile({
+    file,
+    mimeType,
+    thumbnailTypes = [ThumbnailType.PREVIEW],
+}: {
+    file: Blob;
+    mimeType: string;
+    thumbnailTypes?: ThumbnailType[];
+}): Promise<ReturnProps> {
     return new Promise((resolve, reject) => {
         const img = new Image();
-        img.addEventListener('load', () => {
-            scaleImage(img, thumbnailType).then(resolve).catch(reject);
+        img.addEventListener('load', async () => {
+            const thumbnailTypesToGenerate = shouldGenerateHDPreview({ width: img.width, mimeType })
+                ? [ThumbnailType.PREVIEW]
+                : thumbnailTypes;
+
+            Promise.all(thumbnailTypesToGenerate.map((thumbnailType) => scaleImage(img, thumbnailType)))
+                .then((thumbnails) => {
+                    resolve({ width: img.width, height: img.height, thumbnails });
+                })
+                .catch(reject);
         });
         // If image fails to be loaded, it doesn't provide any error.
         // We need to provide custom to state clearly what is happening.
@@ -25,7 +49,7 @@ export function scaleImageFile(
 async function scaleImage(
     img: HTMLImageElement,
     thumbnailType: ThumbnailType = ThumbnailType.PREVIEW
-): Promise<ThumbnailData> {
+): Promise<ThumbnailInfo> {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
 
@@ -45,8 +69,6 @@ async function scaleImage(
     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
     return {
-        originalWidth: img.width,
-        originalHeight: img.height,
         thumbnailType,
         thumbnailData: new Uint8Array(await canvasToThumbnail(canvas, thumbnailType)),
     };

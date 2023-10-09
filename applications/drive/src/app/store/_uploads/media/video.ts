@@ -1,10 +1,9 @@
 import { VIDEO_THUMBNAIL_MAX_TIME_LOCATION } from '@proton/shared/lib/drive/constants';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
-import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 
 import { logError } from '../../../utils/errorHandling';
 import { canvasToThumbnail } from './canvasUtil';
-import { ThumbnailData, ThumbnailGenerator } from './interface';
+import { Media, ThumbnailInfo, ThumbnailType } from './interface';
 import { calculateThumbnailSize } from './util';
 
 type ListenerContainer = readonly {
@@ -12,14 +11,18 @@ type ListenerContainer = readonly {
     listener: (event?: Event) => void;
 }[];
 
+interface Props extends Media {
+    thumbnails?: ThumbnailInfo[];
+}
 // Unfortunately Safari doesn't support Canvas.drawImage using videos anymore.
-export const isVideoForThumbnail = (mimeType: string): boolean => !isSafari() && isVideo(mimeType);
+export const canGenerateThumbnail = (): boolean => !isSafari();
 
 // Creating video thumbnails can be resource heavy operation. Especially if we load multiple, high-res videos.
 // Another risk factor is memory leakage. Video elements should be cleared carefully after using them.
 // The video should not be added to the DOM - the last thing we want here is displaying them.
-export const createVideoThumbnail: ThumbnailGenerator = async (file: Blob) => {
-    const promiseInit = (resolve: (value: ThumbnailData | undefined) => void, reject: (reason?: string) => void) => {
+// thumbnailType is not actually use for video, we always use preview
+export const getVideoInfo = async (file: Blob) => {
+    const promiseInit = (resolve: (value: Props | undefined) => void, reject: (reason?: string) => void) => {
         const video: HTMLVideoElement = document.createElement('video') as HTMLVideoElement;
         const objectUrl = URL.createObjectURL(file);
         video.src = objectUrl;
@@ -30,7 +33,7 @@ export const createVideoThumbnail: ThumbnailGenerator = async (file: Blob) => {
         // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#preload
         video.preload = 'auto';
 
-        const destruct = (result: ThumbnailData | undefined, listeners: ListenerContainer): void => {
+        const destruct = (result: Props | undefined, listeners: ListenerContainer): void => {
             resolve(result);
             listeners.forEach((pair) =>
                 video.removeEventListener<keyof HTMLVideoElementEventMap>(pair.type, pair.listener)
@@ -52,6 +55,16 @@ export const createVideoThumbnail: ThumbnailGenerator = async (file: Blob) => {
             {
                 type: 'timeupdate',
                 listener: async () => {
+                    if (!canGenerateThumbnail()) {
+                        destruct(
+                            {
+                                width: video.videoWidth,
+                                height: video.videoHeight,
+                                duration: video.duration,
+                            },
+                            listeners
+                        );
+                    }
                     if (video.currentTime === 0) {
                         // To test if we were able to create a thumbnail, we have to check if the browser
                         // was able to play the video
@@ -80,14 +93,19 @@ export const createVideoThumbnail: ThumbnailGenerator = async (file: Blob) => {
                         return;
                     }
                     await context.drawImage(video, 0, 0, width, height);
-
                     try {
                         destruct(
                             {
-                                originalWidth: width,
-                                originalHeight: height,
-                                thumbnailData: new Uint8Array(await canvasToThumbnail(canvas)),
-                            } as ThumbnailData,
+                                width: video.videoWidth,
+                                height: video.videoHeight,
+                                duration: video.duration,
+                                thumbnails: [
+                                    {
+                                        thumbnailData: new Uint8Array(await canvasToThumbnail(canvas)),
+                                        thumbnailType: ThumbnailType.PREVIEW,
+                                    },
+                                ],
+                            },
                             listeners
                         );
                     } catch (e) {
@@ -105,5 +123,5 @@ export const createVideoThumbnail: ThumbnailGenerator = async (file: Blob) => {
         video.load();
     };
 
-    return new Promise<ThumbnailData | undefined>(promiseInit);
+    return new Promise<Props | undefined>(promiseInit);
 };

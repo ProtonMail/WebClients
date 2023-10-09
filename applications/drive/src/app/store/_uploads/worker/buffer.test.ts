@@ -2,7 +2,7 @@ import noop from '@proton/utils/noop';
 
 import { MAX_ENCRYPTED_BLOCKS, MAX_UPLOADING_BLOCKS, MAX_UPLOAD_JOBS } from '../constants';
 import { EncryptedBlock } from '../interface';
-import { ThumbnailType } from '../thumbnail';
+import { ThumbnailType } from '../media';
 import UploadWorkerBuffer from './buffer';
 import {
     createBlock,
