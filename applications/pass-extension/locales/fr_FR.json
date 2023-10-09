@@ -29,6 +29,15 @@
       "Back": [
         "Précédent"
       ],
+      "Can edit": [
+        "Modifier"
+      ],
+      "Can manage": [
+        "Gérer"
+      ],
+      "Can view": [
+        "Consulter"
+      ],
       "Can't find your password manager? Please let us know!": [
         "Vous ne trouvez pas votre gestionnaire de mots de passe ? Faites-le nous savoir."
       ],
@@ -58,6 +67,9 @@
       ],
       "Confirm": [
         "Confirmer"
+      ],
+      "Continue": [
+        "Continuer"
       ],
       "Continue without pinning": [
         "Continuer sans épingler"
@@ -170,14 +182,32 @@
       "Importing": [
         "Importer"
       ],
+      "Invite people": [
+        "Inviter des personnes"
+      ],
+      "Join shared vault": [
+        "Rejoindre le coffre-fort partagé"
+      ],
       "Learn more": [
         "En savoir plus"
+      ],
+      "Leave": [
+        "Quitter"
+      ],
+      "Leave vault": [
+        "Quitter le coffre-fort"
       ],
       "Lock extension": [
         "Verrouiller l'extension"
       ],
+      "Manage access": [
+        "Gérer l'accès"
+      ],
       "Manually sync your data": [
         "Synchroniser manuellement vos données"
+      ],
+      "More info: ${ safeTitle }": [
+        "Plus d'informations : ${ safeTitle }"
       ],
       "More options": [
         "Plus d'options"
@@ -212,11 +242,20 @@
       "Regenerate": [
         "Générer à nouveau"
       ],
+      "Reject invitation": [
+        "Refuser l'invitation"
+      ],
       "Reload extension": [
         "Recharger l'extension"
       ],
+      "Remove access": [
+        "Supprimer l'accès"
+      ],
       "Request a feature": [
         "Demander une fonctionnalité"
+      ],
+      "Resend invitation": [
+        "Envoyer à nouveau l'invitation"
       ],
       "Restore item": [
         "Restaurer l'élément"
@@ -230,8 +269,17 @@
       "Saving": [
         "Enregistrer"
       ],
+      "See members": [
+        "Afficher les membres"
+      ],
+      "Send invite": [
+        "Envoyer une invitation"
+      ],
       "Send us a message": [
         "Envoyez-nous un message"
+      ],
+      "Share": [
+        "Partager"
       ],
       "Show": [
         "Afficher"
@@ -256,6 +304,9 @@
       ],
       "Submitting report...": [
         "Envoyer le rapport"
+      ],
+      "Transfer ownership": [
+        "Transférer la propriété"
       ],
       "Try again": [
         "Réessayer"
@@ -316,11 +367,20 @@
       "Cannot create alias (${ error }).": [
         "Impossible de créer l'alias (${ error })"
       ],
+      "Could not leave vault.": [
+        "Impossible de quitter le coffre-fort."
+      ],
       "Could not open created vault": [
         "Impossible d'ouvrir le coffre-fort créé"
       ],
+      "Could not open invited vault": [
+        "Le coffre-fort pour lequel vous avez reçu une invitation n'a pas pu être ouvert."
+      ],
       "Could not open updated vault": [
         "Impossible d'ouvrir le coffre-fort mis à jour"
+      ],
+      "Could not resolve share members": [
+        "Impossible de définir les membres du partage"
       ],
       "Could not resume your session : ${ description }": [
         "Impossible de reprendre votre session : ${ description }"
@@ -356,6 +416,21 @@
       "Error reporting problem": [
         "Une erreur s'est produite pendant le signalement du bug."
       ],
+      "Failed removing the invite.": [
+        "L'invitation n'a pas pu être supprimée."
+      ],
+      "Failed resending invite.": [
+        "L'invitation n'a pas pu être renvoyée."
+      ],
+      "Failed to edit user's access.": [
+        "La modification de l'accès de l'utilisateur n'a pas abouti."
+      ],
+      "Failed to remove user's access.": [
+        "La suppression de l'accès de l'utilisateur n'a pas abouti."
+      ],
+      "Failed to transfer this vault's ownership.": [
+        "Le transfert de la propriété de ce coffre-fort n'a pas abouti."
+      ],
       "File could not be parsed": [
         "Le fichier n'a pas pu être analysé."
       ],
@@ -370,6 +445,18 @@
       ],
       "Invalid url": [
         "L'URL n'est pas valide."
+      ],
+      "Invitation could not be accepted": [
+        "L'invitation n'a pas pu être acceptée."
+      ],
+      "Invitation could not be rejected": [
+        "L'invitation n'a pas pu être refusée."
+      ],
+      "Invite creation failed.": [
+        "La création d'une invitation n'a pas abouti."
+      ],
+      "Invite successfully sent": [
+        "L'invitation a été envoyée."
       ],
       "Item content cannot exceed 40KB": [
         "Le contenu de l'élément ne peut pas dépasser 40 Ko."
@@ -413,8 +500,11 @@
       "Settings update failed": [
         "La mise à jour des paramètres n'a pas abouti."
       ],
+      "Signature verification failed": [
+        "La signature n'a pas pu être vérifiée."
+      ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
-        "Certains coffres-forts ne sont plus accessibles à cause d'une réinitialisation de mot de passe. Réactivez les clés de votre compte pour pouvoir y accéder à nouveau. ${ reactivateLink }"
+        "Certains coffres-forts ne sont plus accessibles à cause d'une réinitialisation du mot de passe. Réactivez les clés de votre compte pour pouvoir y accéder à nouveau. ${ reactivateLink }"
       ],
       "Something went wrong": [
         "Une erreur s'est produite."
@@ -445,6 +535,9 @@
       ],
       "Unknown error": [
         "Erreur inconnue"
+      ],
+      "Unknown invite": [
+        "Invitation inconnue"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Le format de fichier ${ PASS_APP_NAME } n'est pas pris en charge."
@@ -526,6 +619,14 @@
         "${ count } élément",
         "${ count } éléments"
       ],
+      "${ itemCount } item": [
+        "${ itemCount } élément",
+        "${ itemCount } éléments"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } membre",
+        "${ memberCount } membres"
+      ],
       "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
         "${ PASS_APP_NAME } importera uniquement les identifiants et les notes. Les passeports, les pièces jointes… ne sont pas encore pris en charge."
       ],
@@ -544,6 +645,10 @@
       "${ trialDaysLeft } day left": [
         "Il reste ${ trialDaysLeft } jour.",
         "Il reste ${ trialDaysLeft } jours."
+      ],
+      "${ vault.count } item": [
+        "${ vault.count } élément",
+        "${ vault.count } éléments"
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Une nouvelle version de ${ PASS_APP_NAME } est disponible. Faites la mise à jour pour profiter des dernières fonctionnalités et corrections de bugs."
@@ -574,6 +679,27 @@
       ],
       "Autosaved on ${ submissionURL }": [
         "Enregistré automatiquement sur ${ submissionURL }"
+      ],
+      "Can create, edit, delete and export items in this vault.": [
+        "Permet de créer, modifier, supprimer et exporter des éléments dans ce coffre-fort."
+      ],
+      "Can edit": [
+        "Modifier"
+      ],
+      "Can grant and revoke access to this vault, and delete it.": [
+        "Le propriétaire peut accorder et révoquer l'accès à ce coffre-fort, ainsi que le supprimer."
+      ],
+      "Can grant and revoke access to this vault.": [
+        "Permet d'accorder et de révoquer l'accès à ce coffre-fort."
+      ],
+      "Can manage": [
+        "Gérer"
+      ],
+      "Can view": [
+        "Consulter"
+      ],
+      "Can view items in this vault.": [
+        "Permet de consulter les éléments de ce coffre-fort."
       ],
       "Check out all the exclusive features that are available to you for a limited time.": [
         "Découvrez toutes les fonctionnalités exclusives qui vous sont proposées pour une durée limitée."
@@ -675,6 +801,12 @@
       "Internet connection lost": [
         "La connexion internet est perdue."
       ],
+      "Invite successfully removed": [
+        "L'invitation a été supprimée."
+      ],
+      "Invite successfully resent": [
+        "L'invitation a été renvoyée."
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Vous semblez déjà connecté à ${ PASS_APP_NAME }. Si vous essayez de vous connecter avec un autre compte, déconnectez-vous d'abord de l'extension."
       ],
@@ -712,6 +844,9 @@
       "Loading...": [
         "Chargement en cours"
       ],
+      "me": [
+        "Moi"
+      ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } est plus qu'un gestionnaire de mots de passe : il protège vos mots de passe ainsi que votre adresse e-mail personnelle grâce à des alias d'adresses e-mail. Bénéficiant de la même technologie que ${ MAIL_APP_NAME }, vos données sont chiffrées de bout en bout et personne d'autre que vous ne peut y accéder."
       ],
@@ -730,11 +865,20 @@
       "Open the Extensions menu": [
         "Ouvrez le menu des extensions"
       ],
+      "Owner": [
+        "Propriétaire"
+      ],
+      "Ownership successfully transfered. You are no long the owner of this vault.": [
+        "La propriété a été transférée. Vous n'êtes plus propriétaire de ce coffre-fort."
+      ],
       "Password copied": [
         "Le mot de passe a été copié."
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Les mots de passe datant de plus d'un jour sont automatiquement supprimés de l'historique."
+      ],
+      "Pending invitation": [
+        "Invitation en attente"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Épinglez ${ PASS_APP_NAME } à votre barre d'outils."
@@ -769,6 +913,9 @@
       "Select the destination vault for each imported vault.": [
         "Sélectionnez le coffre-fort de destination pour chaque coffre-fort importé."
       ],
+      "Select the level of access this user will gain when they join your vault.": [
+        "Sélectionnez le niveau d'accès dont bénéficiera cet utilisateur en rejoignant votre coffre-fort."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Les serveurs sont inaccessibles, nous vous invitons à réessayer dans quelques minutes."
       ],
@@ -793,6 +940,9 @@
       "Successfully exported all your items": [
         "Tous vos éléments ont été exportés."
       ],
+      "Successfully left the vault": [
+        "Vous avez quitté le coffre-fort."
+      ],
       "Successfully synced all vaults": [
         "Tous les coffres-forts ont été synchronisés."
       ],
@@ -809,8 +959,17 @@
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Le texte que vous essayez de coller dépasse le nombre maximum de ${ maxLength } caractères."
       ],
+      "The user did not accept the invitation yet.": [
+        "L'utilisateur n'a pas encore accepté l'invitation."
+      ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Cette exportation ne sera pas chiffrée et toute personne ayant accès au fichier exporté pourra voir vos mots de passe. Pour des raisons de sécurité, supprimez ce fichier après l'avoir utilisé."
+      ],
+      "This user will receive an invitation to join your '${ vaultName }' vault.": [
+        "Cet utilisateur recevra une invitation à rejoindre votre coffre-fort « ${ vaultName } »."
+      ],
+      "This vault is not currently shared with anyone. Invite people to share it with others.": [
+        "Ce coffre-fort n'est partagé avec personne pour le moment. Invitez des personnes à le partager avec d'autres personnes."
       ],
       "Unable to copy to clipboard": [
         "Impossible de copier dans le presse-papiers"
@@ -823,6 +982,12 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Mettre à jour ${ PASS_APP_NAME }"
+      ],
+      "User's access removed": [
+        "L'accès de l'utilisateur a été supprimé."
+      ],
+      "User's access sucessfuly updated": [
+        "L'accès de l'utilisateur a été mis à jour."
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Le coffre-fort « ${ payload.content.name } » a été supprimé."
@@ -869,6 +1034,9 @@
       ],
       "You're about to create": [
         "Vous êtes sur le point de créer"
+      ],
+      "You've been invited to a vault. Click here to see the invitation.": [
+        "Vous avez reçu une invitation à un coffre-fort. Cliquez ici pour voir l'invitation."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Votre session ${ PASS_APP_NAME } est verrouillée."
@@ -1168,6 +1336,9 @@
       "Report a problem": [
         "Signaler un bug"
       ],
+      "Respond": [
+        "Répondre"
+      ],
       "Restore all items": [
         "Restaurer tous les éléments"
       ],
@@ -1316,6 +1487,9 @@
       "Add text": [
         "Ajoutez du texte"
       ],
+      "Email address": [
+        "Adresse e-mail"
+      ],
       "Enter a note...": [
         "Ajouter une note…"
       ],
@@ -1426,17 +1600,29 @@
       "Import to vault(s)": [
         "Importer dans les coffres-forts"
       ],
+      "Leave vault ?": [
+        "Quitter le coffre-fort ?"
+      ],
       "Low disk space": [
-        "Espace de stockage insuffisant"
+        "Il y a peu d'espace disque."
       ],
       "Permanently remove all items ?": [
         "Voulez-vous définitivement supprimer tous les éléments ?"
+      ],
+      "Permissions": [
+        "Autorisations"
       ],
       "Pin the extension": [
         "Épinglez l'extension"
       ],
       "Secure your data": [
         "Sécurisez vos données"
+      ],
+      "Share with": [
+        "Partager avec"
+      ],
+      "Shared vault invitation": [
+        "Invitation au coffre-fort partagé"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Vous changez pour ${ PASS_APP_NAME } ?"
@@ -1446,6 +1632,9 @@
       ],
       "The extension is now ready to use.": [
         "L'extension est prête à être utilisée."
+      ],
+      "Transfer ownership": [
+        "Transférer la propriété"
       ],
       "Trash empty": [
         "La corbeille est vide."
@@ -1514,6 +1703,9 @@
       "An error occured while exporting your data": [
         "Une erreur s'est produite pendant l'exportation de vos données."
       ],
+      "Are you sure you want to transfer vault ownership to ${ email }?": [
+        "Voulez-vous vraiment transférer la propriété du coffre-fort à ${ email } ?"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Il n'est pas possible de récupérer les boites aux lettres de cet alias pour l'instant."
       ],
@@ -1559,6 +1751,9 @@
       "PGP encrypted export file requires passphrase": [
         "Les fichiers d'exportation chiffrés en PGP nécessitent une phrase secrète."
       ],
+      "Please enter a valid email address": [
+        "Saisissez une adresse e-mail valide."
+      ],
       "Please log back in": [
         "Veuillez vous reconnecter."
       ],
@@ -1600,6 +1795,9 @@
       ],
       "You must select at least one mailbox": [
         "Vous devez sélectionner au moins une messagerie."
+      ],
+      "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
+        "Vous n'aurez plus accès à ce coffre-fort. Pour le rejoindre à nouveau, il vous faudra une nouvelle invitation."
       ],
       "Your plan does not allow you to create more aliases": [
         "Votre abonnement ne vous permet pas de créer plus d'alias."

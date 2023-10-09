@@ -146,6 +146,9 @@
       "Discard": [
         "Descartar"
       ],
+      "Don't know your password?": [
+        "Não sabe sua senha?"
+      ],
       "Done": [
         "Concluído"
       ],
@@ -287,6 +290,9 @@
       "OK": [
         "OK"
       ],
+      "Ok": [
+        "Ok"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir configurações do ${ CALENDAR_APP_NAME }"
       ],
@@ -379,6 +385,9 @@
       ],
       "Search countries": [
         "Pesquisar países"
+      ],
+      "See how": [
+        "Veja como"
       ],
       "See plan features": [
         "Veja recursos do plano"
@@ -1749,6 +1758,9 @@
       ],
       "Incorrect password": [
         "A senha não é válida."
+      ],
+      "Incorrect username": [
+        "Nome de usuário incorreto"
       ],
       "Invalid ${ name } code": [
         "O código ${ name } não é válido."
@@ -5562,6 +5574,167 @@
       ],
       "to be created": [
         "a ser criado"
+      ]
+    },
+    "session_recovery:available:action": {
+      "Cancel password reset": [
+        "Cancelar redefinição de senha"
+      ],
+      "Cancel reset": [
+        "Cancelar redefinição"
+      ],
+      "Reset password": [
+        "Redefinir senha"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } dia",
+        "${ timeRemaining.inDays } dias"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } hora",
+        "${ timeRemaining.inHours } horas"
+      ],
+      "Didn’t make this request?": [
+        "Não fez essa solicitação?"
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Vá ao dispositivo onde a solicitação (na sessão iniciada) para mudar a sua senha."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Essa permissão expira em ${ timeRemaining.inDays } dia",
+        "Essa permissão expira em ${ timeRemaining.inDays } dias"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Essa permissão expira em ${ timeRemaining.inHours } hora",
+        "Essa permissão expira em ${ timeRemaining.inHours } horas"
+      ],
+      "You can now reset your password": [
+        "Você pode agora redefinir sua senha"
+      ],
+      "You can reset your password until ${ boldDate }.": [
+        "Você pode redefinir sua senha até ${ boldDate }."
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Veja como"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Senha salva"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Redefinir sua senha"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Cancelar redefinição de senha"
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "A redefinição de senha foi cancelada"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Cancelar redefinição de senha?"
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "altere sua senha agora"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel password reset": [
+        "Cancelar redefinição de senha"
+      ],
+      "Cancel request": [
+        "Cancelar solicitação"
+      ],
+      "Got it": [
+        "Entendi"
+      ],
+      "Learn more": [
+        "Saiba mais"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "Didn’t make this request?": [
+        "Não fez essa solicitação?"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "Recebemos a solicitação de redefinição de senha para ${ boldEmail }."
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "Ver solicitação"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "A redefinição de senha foi solicitada"
+      ]
+    },
+    "session_recovery:initiation:action": {
+      "Got it": [
+        "Entendi"
+      ],
+      "Request password reset": [
+        "Solicitar redefinição de senha"
+      ],
+      "Use recovery method": [
+        "Usar um método de recuperação"
+      ]
+    },
+    "session_recovery:initiation:notification": {
+      "Password reset confirmed": [
+        "Redefinição de senha confirmada"
+      ]
+    },
+    "session_recovery:initiation:title": {
+      "Request password reset?": [
+        "Solicitar redefinição de senha?"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Encerrar sessão"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } hora",
+        "${ gracePeriodHoursRemaining } horas"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } está agora disponível"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Redefinição de senha"
+      ]
+    },
+    "session_recovery:status:info": {
+      "Available": [
+        "Disponível"
+      ],
+      "Pending": [
+        "Pendente"
+      ]
+    },
+    "session_recovery:status:title": {
+      "Password reset request": [
+        "Solicitar redefinição de senha"
       ]
     },
     "Shared calendar; Info about calendar owner": {

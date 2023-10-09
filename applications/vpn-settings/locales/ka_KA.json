@@ -287,6 +287,9 @@
       "OK": [
         "დიახ"
       ],
+      "Ok": [
+        "დიახ"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-ის მორგება"
       ],
@@ -379,6 +382,9 @@
       ],
       "Search countries": [
         "ქვეყნების ძებნა"
+      ],
+      "See how": [
+        "იხილეთ, როგორ"
       ],
       "See plan features": [
         "ტარიფის თვისებების ნახვა"
@@ -1749,6 +1755,9 @@
       ],
       "Incorrect password": [
         "არასწორი პაროლი"
+      ],
+      "Incorrect username": [
+        "მომხმარებლის სახელი არასწორია"
       ],
       "Invalid ${ name } code": [
         "არასწორი კოდი ${ name }"
@@ -5544,6 +5553,93 @@
       ],
       "to be created": [
         "შეიქმნება"
+      ]
+    },
+    "session_recovery:available:action": {
+      "Reset password": [
+        "პაროლის აღდგენა"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Please generate keys before you try to change your password": [
+        "პაროლის შეცვლამდე საჭიროა გასაღებების გენერაცია"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } დღე",
+        "${ timeRemaining.inDays } დღე"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } საათი",
+        "${ timeRemaining.inHours } საათი"
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "იხილეთ, როგორ"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "პაროლი დამახსოვრებულია"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "პაროლის აღდგენა"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "პაროლის შეცვლის გაუქმება"
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "პაროლის შეცვლა გაუქმდა"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "გავაუქმო პაროლის შეცვლა?"
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "შეცვალეთ თქვენი პაროლი ახლა"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "მოთხოვნის გაუქმება"
+      ],
+      "Got it": [
+        "გავიგე"
+      ],
+      "Learn more": [
+        "გაიგეთ მეტი"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "პაროლის შეცვლა მოთხოვნილია"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "გასვლა"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } საათი",
+        "${ gracePeriodHoursRemaining } საათი"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "პაროლის შეცვლა"
       ]
     },
     "Shared calendar; Info about calendar owner": {

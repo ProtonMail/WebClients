@@ -28,6 +28,9 @@
       "Add Bcc recipients": [
         "Tilføj BCC-modtagere"
       ],
+      "Add birthday": [
+        "Tilføj fødselsdag"
+      ],
       "Add Cc recipients": [
         "Tilføj CC-modtagere"
       ],
@@ -48,6 +51,9 @@
       ],
       "Add new group": [
         "Tilføj ny gruppe"
+      ],
+      "Add note": [
+        "Tilføj note"
       ],
       "Add participant": [
         "Tilføj deltager"
@@ -312,6 +318,9 @@
       ],
       "Discard": [
         "Kassér"
+      ],
+      "Don't know your password?": [
+        "Kan du ikke din adgangskode?"
       ],
       "Done": [
         "Udført"
@@ -686,6 +695,9 @@
       "Not saved": [
         "Ikke gemt"
       ],
+      "Ok": [
+        "Ok"
+      ],
       "OK": [
         "Ok"
       ],
@@ -850,6 +862,9 @@
       ],
       "See business plans": [
         "Se erhvervsabonnementer"
+      ],
+      "See how": [
+        "Se hvordan"
       ],
       "See plan features": [
         "Se abonnementfunktioner"
@@ -1941,8 +1956,17 @@
       "Birthday": [
         "Fødselsdag"
       ],
+      "Display name": [
+        "Visningsnavn"
+      ],
       "Email": [
         "E-mail"
+      ],
+      "Enter a display name or nickname": [
+        "Indtast et visningsnavn eller kaldenavn"
+      ],
+      "First name": [
+        "Fornavn"
       ],
       "Gender": [
         "Køn"
@@ -1952,6 +1976,9 @@
       ],
       "Language": [
         "Sprog"
+      ],
+      "Last name": [
+        "Efternavn"
       ],
       "Logo": [
         "Logo"
@@ -3134,6 +3161,9 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Indholdssøgning kan ikke aktiveres i denne browser. Afslut privat browsing eller brug en anden browser."
       ],
+      "Could not save preference": [
+        "Kunne ikke gemme præferencer"
+      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Dekrypteringsfejl: Dekryptering af denne beskeds indhold mislykkedes."
       ],
@@ -3187,6 +3217,9 @@
       "Filter with this name already exists": [
         "Et filter med dette navn findes allerede"
       ],
+      "First name is too long": [
+        "Fornavn er for langt"
+      ],
       "Folder name cannot be empty.": [
         "Mappenavn må ikke være tomt."
       ],
@@ -3201,6 +3234,9 @@
       ],
       "Incorrect mailbox password. Please try again.": [
         "Forkert adgangskode til postkasse. Prøv venligst igen."
+      ],
+      "Incorrect username": [
+        "Forkert brugernavn"
       ],
       "Invalid email address": [
         "Ugyldig e-mailadresse"
@@ -3219,6 +3255,9 @@
       ],
       "Label name cannot be empty.": [
         "Etikettenavn må ikke være tomt."
+      ],
+      "Last name is too long": [
+        "Efternavn er for langt"
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Det maksimale antal vedhæftninger (${ attachmentsCountLimit }) overskredet"
@@ -3283,6 +3322,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "Løs venligst den fremhævede konflikt for at fortsætte.",
         "Løs venligst de fremhævede konflikter for at fortsætte."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Angiv enten et fornavn, et efternavn eller et visningsnavn"
       ],
       "Port is required": [
         "Port er påkrævet."
@@ -4592,6 +4634,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "${ BRAND_NAME }'s krypteringsteknologi betyder, at ingen kan få adgang til din adgangskode - ikke engang os."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } ny kalender",
         "${ calendarsToBeCreatedCount } nye kalendere"
@@ -5375,6 +5420,9 @@
       ],
       "Please fill out this field.": [
         "Udfyld venligst dette felt."
+      ],
+      "Please note that addresses assigned to these groups will NOT be deleted.": [
+        "Bemærk at adresser tildelt til disse grupper IKKE vil blive slettet."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Bemærk venligst at adresser tildelt til denne gruppe IKKE vil blive slettet."
@@ -6356,8 +6404,14 @@
       "Conditions": [
         "Betingelser"
       ],
+      "Confirm password": [
+        "Bekræft adgangskode"
+      ],
       "Contacts": [
         "Kontakter"
+      ],
+      "Conversations per page": [
+        "Samtaler pr. side"
       ],
       "Copy": [
         "Kopiér"
@@ -6524,6 +6578,9 @@
       "Mark as": [
         "Markér som"
       ],
+      "Messages per page": [
+        "Beskeder pr. side"
+      ],
       "Move ${ sidebarElementName }": [
         "Flyt ${ sidebarElementName }"
       ],
@@ -6541,6 +6598,9 @@
       ],
       "Navigation": [
         "Navigation"
+      ],
+      "New password": [
+        "Ny adgangskode"
       ],
       "No label found": [
         "Ingen etikette fundet"
@@ -7481,6 +7541,9 @@
       "Filter labels": [
         "Filtrér etiketter"
       ],
+      "First name": [
+        "Fornavn"
+      ],
       "Group name": [
         "Gruppenavn"
       ],
@@ -7489,6 +7552,9 @@
       ],
       "Image URL": [
         "Billed-URL"
+      ],
+      "Last name": [
+        "Efternavn"
       ],
       "Link": [
         "Link"
@@ -7782,6 +7848,30 @@
       ],
       "Stored with zero-access encryption": [
         "Lagret med nuladgangskryptering"
+      ]
+    },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "Annuller nulstilling"
+      ],
+      "Reset password": [
+        "Nulstil adgangskode"
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Se hvordan"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "Annuller anmodning"
+      ],
+      "Got it": [
+        "Forstået"
+      ],
+      "Learn more": [
+        "Få mere at vide"
       ]
     },
     "Signature verification warning": {
@@ -8487,8 +8577,14 @@
       "Display name": [
         "Visningsnavn"
       ],
+      "First name": [
+        "Fornavn"
+      ],
       "Import": [
         "Importér"
+      ],
+      "Last name": [
+        "Efternavn"
       ],
       "Values": [
         "Værdier"
@@ -8585,6 +8681,9 @@
       "Billing cycle": [
         "Faktureringscyklus"
       ],
+      "Birthday": [
+        "Fødselsdag"
+      ],
       "Blind Carbon Copy": [
         "Blind karbonkopi"
       ],
@@ -8602,6 +8701,9 @@
       ],
       "Change my answer": [
         "Skift mit svar"
+      ],
+      "Change password": [
+        "Skift adgangskode"
       ],
       "Clear out the junk": [
         "Ryd ud i affaldet"
@@ -8893,6 +8995,9 @@
       ],
       "No trackers found": [
         "Ingen trackere fundet"
+      ],
+      "Notes": [
+        "Noter"
       ],
       "Open actions dropdown": [
         "Åbn handlingsrullemenu"
@@ -9212,6 +9317,9 @@
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Er du sikker på, at du vil slette ${ count } kontakt permanent?",
         "Er du sikker på, at du vil slette ${ count } kontakter permanent?"
+      ],
+      "Are you sure you want to permanently delete these contact groups?": [
+        "Er du sikker på, at du vil slette disse kontaktgrupper permanent?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Er du sikker på, at du vil slette denne kontaktgruppe permanent?"

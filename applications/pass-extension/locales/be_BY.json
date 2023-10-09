@@ -29,6 +29,9 @@
       "Back": [
         "Назад"
       ],
+      "Can view": [
+        "Можа праглядаць"
+      ],
       "Can't find your password manager? Please let us know!": [
         "Не можаце знайсці свой менеджар пароляў? Паведаміце нам пра гэта!"
       ],
@@ -58,6 +61,9 @@
       ],
       "Confirm": [
         "Пацвердзіць"
+      ],
+      "Continue": [
+        "Працягнуць"
       ],
       "Continue without pinning": [
         "Працягнуць без замацавання"
@@ -173,11 +179,17 @@
       "Learn more": [
         "Даведацца больш"
       ],
+      "Leave": [
+        "Выйсці"
+      ],
       "Lock extension": [
         "Блакіраванне пашырэння"
       ],
       "Manually sync your data": [
         "Сінхранізацыя даных уручную"
+      ],
+      "More info: ${ safeTitle }": [
+        "Больш інфармацыі: ${ safeTitle }"
       ],
       "More options": [
         "Дадатковыя параметры"
@@ -232,6 +244,9 @@
       ],
       "Send us a message": [
         "Напішыце нам"
+      ],
+      "Share": [
+        "Абагуліць"
       ],
       "Show": [
         "Паказаць"
@@ -316,11 +331,20 @@
       "Cannot create alias (${ error }).": [
         "Немагчыма стварыць псеўданімы (${ error })."
       ],
+      "Could not leave vault.": [
+        "Не атрымалася выйсці са сховішча."
+      ],
       "Could not open created vault": [
         "Немагчыма адкрыць створанае сховішча"
       ],
+      "Could not open invited vault": [
+        "Немагчыма адкрыць сховішча ў якое вас запрасілі"
+      ],
       "Could not open updated vault": [
         "Немагчыма адкрыць абноўленае сховішча"
+      ],
+      "Could not resolve share members": [
+        "Немагчыма ўрэгуляваць абагуленне ўдзельнікаў"
       ],
       "Could not resume your session : ${ description }": [
         "Немагчыма ўзнавіць вашу сесію : ${ description }"
@@ -358,6 +382,21 @@
       "Error reporting problem": [
         "Памылка адпраўкі справаздачы аб праблеме"
       ],
+      "Failed removing the invite.": [
+        "Збой выдалення запрашэння."
+      ],
+      "Failed resending invite.": [
+        "Збой паўторнай адпраўкі запрашэння"
+      ],
+      "Failed to edit user's access.": [
+        "Збой рэдагавання доступу карыстальніка."
+      ],
+      "Failed to remove user's access.": [
+        "Збой выдалення доступу карыстальніка."
+      ],
+      "Failed to transfer this vault's ownership.": [
+        "Збой перадачы права ўласнасці гэтага сховішча"
+      ],
       "File could not be parsed": [
         "Немагчыма прааналізаваць файл"
       ],
@@ -372,6 +411,18 @@
       ],
       "Invalid url": [
         "Памылковы URL-адрас"
+      ],
+      "Invitation could not be accepted": [
+        "Не атрымалася прыняць запрашэнне"
+      ],
+      "Invitation could not be rejected": [
+        "Не атрымалася адхіліць запрашэнне"
+      ],
+      "Invite creation failed.": [
+        "Збой стварэння запрашэння."
+      ],
+      "Invite successfully sent": [
+        "Запрашэнне паспяхова адпраўлена"
       ],
       "Item content cannot exceed 40KB": [
         "Змесціва элемента не можа перавышаць 40 КБ"
@@ -415,6 +466,9 @@
       "Settings update failed": [
         "Збой абнаўлення налад"
       ],
+      "Signature verification failed": [
+        "Не ўдалося праверыць подпіс"
+      ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
         "Некаторыя сховішчы больш недаступны па прычыне таго, што было выканана скіданне пароля. Паўторна актывуйце ключы ўліковага запісу, каб аднавіць доступ. ${ reactivateLink }"
       ],
@@ -447,6 +501,9 @@
       ],
       "Unknown error": [
         "Невядомая памылка"
+      ],
+      "Unknown invite": [
+        "Невядомае запрашэнне"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Фармат файла ${ PASS_APP_NAME } не падтрымліваецца"
@@ -539,6 +596,12 @@
         "${ count } элементы",
         "${ count } элементаў",
         "${ count } элементаў"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } удзельнік",
+        "${ memberCount } удзельнікі",
+        "${ memberCount } удзельнікаў",
+        "${ memberCount } удзельнікаў"
       ],
       "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
         "${ PASS_APP_NAME } імпартуе толькі запісы ўваходу і нататкі. Пашпарты, файлы з далучэннямі і іншыя спецыфічныя функцыі імпартавання ў дадзены момант не падтрымліваюцца праграмай."
@@ -762,6 +825,9 @@
       "Passwords older than 1 day are automatically deleted from history.": [
         "Паролі старэйшыя за 1 дзень аўтаматычна выдаляюцца з гісторыі."
       ],
+      "Pending invitation": [
+        "Запрашэнне, якое чакае адказу"
+      ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Замацаваць ${ PASS_APP_NAME } на панэлі інструментаў"
       ],
@@ -794,6 +860,9 @@
       ],
       "Select the destination vault for each imported vault.": [
         "Выберыце канчатковае сховішча для кожнага імпартаванага сховішча."
+      ],
+      "Select the level of access this user will gain when they join your vault.": [
+        "Выберыце ўзровень доступу, які атрымае гэты карыстальнік пасля далучэння да вашага сховішча."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недаступны. Паспрабуйце яшчэ раз праз некалькі хвілін"
@@ -837,8 +906,17 @@
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Тэкст, які вы спрабуеце ўставіць перавышае максімальную даўжыню. Дазволена сімвалаў: ${ maxLength }."
       ],
+      "The user did not accept the invitation yet.": [
+        "Карыстальнік пакуль не прыняў запрашэнне."
+      ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Гэта экспартаванне будзе незашыфравана, і кожны ў каго ёсць доступ да файла экспартаванага файла зможа ўбачыць вашы паролі. Для вашай бяспекі, мы раім адразу выдаліць яго пасля таго, як вы скарысталіся ім."
+      ],
+      "This user will receive an invitation to join your '${ vaultName }' vault.": [
+        "Гэты карыстальнік атрымае запрашэнне на далучэнне да вашага сховішча '${ vaultName }'."
+      ],
+      "This vault is not currently shared with anyone. Invite people to share it with others.": [
+        "Сховішча пакуль не з'яўляецца агульнадаступным. Запрасіце людзей, каб абагуліць яго з іншымі."
       ],
       "Unable to copy to clipboard": [
         "Немагчыма скапіяваць у буфер абмену"
@@ -899,6 +977,9 @@
       ],
       "You're about to create": [
         "Вы збіраецеся стварыць"
+      ],
+      "You've been invited to a vault. Click here to see the invitation.": [
+        "Вас запрасілі далучыцца да сховішча. Націсніце тут, каб убачыць запрашэнне."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Ваш сеанс ${ PASS_APP_NAME } заблакіраваны"
@@ -1202,6 +1283,9 @@
       "Report a problem": [
         "Паведаміць аб праблеме"
       ],
+      "Respond": [
+        "Адказ"
+      ],
       "Restore all items": [
         "Аднавіць усе элементы"
       ],
@@ -1350,6 +1434,9 @@
       "Add text": [
         "Дадаць тэкст"
       ],
+      "Email address": [
+        "Адрас электроннай пошты"
+      ],
       "Enter a note...": [
         "Увядзіце нататку..."
       ],
@@ -1460,17 +1547,29 @@
       "Import to vault(s)": [
         "Імпартаванне ў сховішча(-ы)"
       ],
+      "Leave vault ?": [
+        "Выйсці са сховішча?"
+      ],
       "Low disk space": [
         "Недастаткова месца на дыску"
       ],
       "Permanently remove all items ?": [
         "Незваротна выдаліць элементы?"
       ],
+      "Permissions": [
+        "Дазволы"
+      ],
       "Pin the extension": [
         "Замацаваць пашырэнне"
       ],
       "Secure your data": [
         "Бяспека вашых даных"
+      ],
+      "Share with": [
+        "Абагуліць з"
+      ],
+      "Shared vault invitation": [
+        "Запрашэнне да абагуленага сховішча"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Пераключыцца на ${ PASS_APP_NAME }?"
@@ -1480,6 +1579,9 @@
       ],
       "The extension is now ready to use.": [
         "Усё гатова для выкарыстання пашырэння."
+      ],
+      "Transfer ownership": [
+        "Перадаць права ўласнасці"
       ],
       "Trash empty": [
         "Сметніца пустая"
@@ -1548,6 +1650,9 @@
       "An error occured while exporting your data": [
         "Падчас экспартавання вашых даных адбылася памылка"
       ],
+      "Are you sure you want to transfer vault ownership to ${ email }?": [
+        "Вы сапраўды хочаце перадаць сваё сховішча ${ email }?"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "У дадзены момант немагчыма атрымаць паштовыя скрыні для гэтага псеўданіма"
       ],
@@ -1593,6 +1698,9 @@
       "PGP encrypted export file requires passphrase": [
         "Экспартаваны файл зашыфраваны з дапамогай PGP і патрабуе парольную фразу"
       ],
+      "Please enter a valid email address": [
+        "Увядзіце сапраўдны адрас электроннай пошты"
+      ],
       "Please log back in": [
         "Увайдзіце паўторна"
       ],
@@ -1634,6 +1742,9 @@
       ],
       "You must select at least one mailbox": [
         "Вы павінны выбраць прынамсі адну паштовую скрыню"
+      ],
+      "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
+        "У вас больш не будзе доступу да гэтага сховішча. Каб паўторна далучыцца да яго, вам неабходна будзе атрымаць новае запрашэнне."
       ],
       "Your plan does not allow you to create more aliases": [
         "Вы дасягнулі максімальнай колькасці псеўданімаў для вашага тарыфнага плана."

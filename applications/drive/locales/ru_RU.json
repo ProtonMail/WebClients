@@ -3088,6 +3088,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } нужно ваше разрешение, чтобы ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "Технология шифрования ${ BRAND_NAME } означает, что никто не сможет получить доступ к вашему паролю, даже мы."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } новый календарь",
         "${ calendarsToBeCreatedCount } новых календаря",
@@ -3194,10 +3197,10 @@
         "${ selectedCalendarsTotal } из ${ providerCalendars.length } календарей"
       ],
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
-        "Выбран ${ selectedContactsLength } контакт из ${ contactsLength }",
-        "Выбрано ${ selectedContactsLength } контакта из ${ contactsLength }",
-        "Выбрано ${ selectedContactsLength } контактов из ${ contactsLength }",
-        "Выбрано ${ selectedContactsLength } контакта из ${ contactsLength }"
+        "Выбраны контакты: ${ selectedContactsLength } из ${ contactsLength }",
+        "Выбраны контакты: ${ selectedContactsLength } из ${ contactsLength }",
+        "Выбраны контакты: ${ selectedContactsLength } из ${ contactsLength }",
+        "Выбраны контакты: ${ selectedContactsLength } из ${ contactsLength }"
       ],
       "${ selectedCount } selected": [
         "Выбрано: ${ selectedCount }"
@@ -4404,6 +4407,9 @@
       "Comment": [
         "Комментарий"
       ],
+      "Confirm password": [
+        "Подтвердить пароль"
+      ],
       "Contacts": [
         "Контакты"
       ],
@@ -4610,6 +4616,9 @@
       ],
       "Never": [
         "Никогда"
+      ],
+      "New password": [
+        "Новый пароль"
       ],
       "Notification": [
         "Уведомление"
@@ -6065,6 +6074,9 @@
       ],
       "Change layout": [
         "Изменить вид"
+      ],
+      "Change password": [
+        "Изменить пароль"
       ],
       "Clearing data": [
         "Очистка данных"

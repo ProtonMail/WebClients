@@ -28,6 +28,9 @@
       "Add Bcc recipients": [
         "Voeg BCC-ontvangers toe"
       ],
+      "Add birthday": [
+        "Verjaardag toevoegen"
+      ],
       "Add Cc recipients": [
         "Voeg CC-ontvangers toe"
       ],
@@ -48,6 +51,9 @@
       ],
       "Add new group": [
         "Voeg nieuwe groep toe"
+      ],
+      "Add note": [
+        "Notitie toevoegen"
       ],
       "Add participant": [
         "Deelnemer toevoegen"
@@ -93,6 +99,10 @@
       ],
       "As Scheduled": [
         "Zoals gepland"
+      ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Ten hoogste ${ maxContacts } contact is toegelaten per contactgroep",
+        "Ten hoogste ${ maxContacts } contacten zijn toegelaten per contactgroep"
       ],
       "Attach screenshot(s)": [
         "Schermafdruk(ken) toevoegen"
@@ -1133,6 +1143,10 @@
       "Yes, I'll attend": [
         "Ja, ik zal deelnemen"
       ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "U kunt geen vCard-bestanden met meer dan ${ maxAttachments } contact verzenden",
+        "U kunt geen vCard-bestand met meer dan ${ maxAttachments } contacten verzenden"
+      ],
       "Zoom in": [
         "Inzoomen"
       ],
@@ -1933,8 +1947,17 @@
       "Birthday": [
         "Verjaardag"
       ],
+      "Display name": [
+        "Weergavenaam"
+      ],
       "Email": [
         "E-mailadres"
+      ],
+      "Enter a display name or nickname": [
+        "Voer een weergavenaam of bijnaam in"
+      ],
+      "First name": [
+        "Voornaam"
       ],
       "Gender": [
         "Geslacht"
@@ -1944,6 +1967,9 @@
       ],
       "Language": [
         "Taal"
+      ],
+      "Last name": [
+        "Familienaam"
       ],
       "Logo": [
         "Logo"
@@ -3126,6 +3152,9 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Zoeken op inhoud kan niet worden ingeschakeld in deze browser. Gelieve de private browsing modus te verlaten of een andere browser te gebruiken."
       ],
+      "Could not save preference": [
+        "Kon voorkeuren niet opslaan"
+      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Ontsleutelingsfout: decodering van de gecodeerde inhoud van dit bericht is mislukt."
       ],
@@ -3179,6 +3208,9 @@
       "Filter with this name already exists": [
         "Filter met deze naam bestaat reeds"
       ],
+      "First name is too long": [
+        "Voornaam is te lang"
+      ],
       "Folder name cannot be empty.": [
         "Mapnaam mag niet leeg zijn."
       ],
@@ -3211,6 +3243,9 @@
       ],
       "Label name cannot be empty.": [
         "Labelnaam mag niet leeg zijn."
+      ],
+      "Last name is too long": [
+        "Achternaam is te lang"
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Maximum aantal bijlagen (${ attachmentsCountLimit }) overschreden"
@@ -3275,6 +3310,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "Los het gemarkeerde conflict op om verder te gaan.",
         "Los de gemarkeerde conflicten op om verder te gaan."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Bied ofwel een voornaam, een achternaam of een weergavenaam aan"
       ],
       "Port is required": [
         "Poort is vereist"
@@ -4220,6 +4258,9 @@
       "Storage unlocked": [
         "Opslag ontgrendeld"
       ],
+      "This feature is currently unavailable": [
+        "Deze functie is momenteel niet beschikbaar."
+      ],
       "Update your logins": [
         "Werk uw aanmeldingen bij"
       ],
@@ -4592,6 +4633,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
+      ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "${ BRAND_NAME }'s versleutelingstechnologie betekent dat niemand toegang heeft tot uw wachten - zelfs wij niet."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nieuwe agenda",
@@ -5376,6 +5420,9 @@
       ],
       "Please fill out this field.": [
         "Gelieve dit veld in te vullen."
+      ],
+      "Please note that addresses assigned to these groups will NOT be deleted.": [
+        "Houd er rekening mee dat de adressen die aan deze groepen zijn toegewezen NIET zullen worden verwijderd."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Houd er rekening mee dat de adressen die aan deze groep zijn toegewezen NIET zullen worden verwijderd."
@@ -6357,8 +6404,14 @@
       "Conditions": [
         "Voorwaarden"
       ],
+      "Confirm password": [
+        "Bevestig wachtwoord"
+      ],
       "Contacts": [
         "Contacten"
+      ],
+      "Conversations per page": [
+        "Gesprekken per pagina"
       ],
       "Copy": [
         "Kopiëren"
@@ -6525,6 +6578,9 @@
       "Mark as": [
         "Markeren als"
       ],
+      "Messages per page": [
+        "Berichten per pagina"
+      ],
       "Move ${ sidebarElementName }": [
         "Verplaats ${ sidebarElementName }"
       ],
@@ -6542,6 +6598,9 @@
       ],
       "Navigation": [
         "Navigatie"
+      ],
+      "New password": [
+        "Nieuw wachtwoord"
       ],
       "No label found": [
         "Geen label gevonden"
@@ -7482,6 +7541,9 @@
       "Filter labels": [
         "Filter op labels"
       ],
+      "First name": [
+        "Voornaam"
+      ],
       "Group name": [
         "Groepsnaam"
       ],
@@ -7490,6 +7552,9 @@
       ],
       "Image URL": [
         "Afbeeldings-URL"
+      ],
+      "Last name": [
+        "Familienaam"
       ],
       "Link": [
         "Koppeling"
@@ -8488,8 +8553,14 @@
       "Display name": [
         "Weergavenaam"
       ],
+      "First name": [
+        "Voornaam"
+      ],
       "Import": [
         "Importeren"
+      ],
+      "Last name": [
+        "Familienaam"
       ],
       "Values": [
         "Waarden"
@@ -8586,6 +8657,9 @@
       "Billing cycle": [
         "Factuurperiode"
       ],
+      "Birthday": [
+        "Verjaardag"
+      ],
       "Blind Carbon Copy": [
         "BCC"
       ],
@@ -8603,6 +8677,9 @@
       ],
       "Change my answer": [
         "Mijn antwoord wijzigen"
+      ],
+      "Change password": [
+        "Wachtwoord wijzigen"
       ],
       "Clear out the junk": [
         "Spam opruimen"
@@ -8894,6 +8971,9 @@
       ],
       "No trackers found": [
         "Geen trackers gevonden"
+      ],
+      "Notes": [
+        "Notities"
       ],
       "Open actions dropdown": [
         "Open dropdown-menu voor acties"
@@ -9213,6 +9293,9 @@
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Weet u zeker dat u ${ count } contact permanent wilt verwijderen?",
         "Weet u zeker dat u ${ count } contacten permanent wilt verwijderen?"
+      ],
+      "Are you sure you want to permanently delete these contact groups?": [
+        "Weet u zeker dat u deze contactgroepen permanent wilt verwijderen?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Weet u zeker dat u deze contactgroep permanent wilt verwijderen?"

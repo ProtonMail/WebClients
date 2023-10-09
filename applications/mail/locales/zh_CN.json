@@ -313,6 +313,9 @@
       "Discard": [
         "放弃"
       ],
+      "Don't know your password?": [
+        "忘记密码？"
+      ],
       "Done": [
         "完成"
       ],
@@ -685,6 +688,9 @@
       "Not saved": [
         "未保存"
       ],
+      "Ok": [
+        "确定"
+      ],
       "OK": [
         "确定"
       ],
@@ -849,6 +855,9 @@
       ],
       "See business plans": [
         "查看商业账户服务"
+      ],
+      "See how": [
+        "怎么看"
       ],
       "See plan features": [
         "查看套餐内容"
@@ -3131,6 +3140,9 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "此浏览器无法开启全文搜索，请退出隐私浏览模式或使用其他浏览器。"
       ],
+      "Could not save preference": [
+        "无法保存首选项"
+      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "解密失败：此邮件内容解密失败"
       ],
@@ -3199,6 +3211,9 @@
       ],
       "Incorrect mailbox password. Please try again.": [
         "邮箱密码错误，请重试。"
+      ],
+      "Incorrect username": [
+        "用户名不正确"
       ],
       "Invalid email address": [
         "无效的邮件地址"
@@ -4536,6 +4551,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的权限来${ enableDesktopNotifications }。"
       ],
+      "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
+        "${ BRAND_NAME } 的前沿加密技术意味着没有人能够窃取您的密码，包括我们自己。"
+      ],
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } 个新日历"
       ],
@@ -5255,6 +5273,9 @@
       ],
       "Please fill out this field.": [
         "请填写此项。"
+      ],
+      "Please note that addresses assigned to these groups will NOT be deleted.": [
+        "请注意，分配给这些组的地址不会被删除。"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "请注意，分配给此组的地址将不会被删除。"
@@ -6217,8 +6238,14 @@
       "Conditions": [
         "条件"
       ],
+      "Confirm password": [
+        "确认密码"
+      ],
       "Contacts": [
         "通讯录"
+      ],
+      "Conversations per page": [
+        "每页对话数"
       ],
       "Copy": [
         "复制"
@@ -6385,6 +6412,9 @@
       "Mark as": [
         "标为"
       ],
+      "Messages per page": [
+        "每页消息数"
+      ],
       "Move ${ sidebarElementName }": [
         "移动 ${ sidebarElementName }"
       ],
@@ -6402,6 +6432,9 @@
       ],
       "Navigation": [
         "导航栏"
+      ],
+      "New password": [
+        "新密码"
       ],
       "No label found": [
         "未找到标签"
@@ -7627,6 +7660,166 @@
         "全封闭加密存储"
       ]
     },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "取消重置请求"
+      ],
+      "Reset password": [
+        "重置密码"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "传统地址密钥无法恢复帐户"
+      ],
+      "Please generate keys before you try to change your password": [
+        "更改密码前请先生成密钥"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } days": [
+        "${ timeRemaining.inDays } 天"
+      ],
+      "${ timeRemaining.inHours } hours": [
+        "${ timeRemaining.inHours } 小时"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } days to reset your password.": [
+        "密码重置请求已获批准(${ user.Email })。您有${ timeRemaining.inDays } 天的时间来重置您的密码"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hours to reset your password.": [
+        "密码重置请求已获批准(${ user.Email })。您有${ timeRemaining.inHours } 小时的时间来重置您的密码"
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "请转到已登录的设备（在发起请求的会话中）更改您的密码。"
+      ],
+      "This permission expires in ${ timeRemaining.inDays } days": [
+        "此权限将在 ${ timeRemaining.inDays } 天后过期"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hours": [
+        "此权限将在 ${ timeRemaining.inHours } 小时后过期"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "您现在可以在${ boldDaysRemaining }天内免费更改帐户${ boldEmail }的密码。"
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "怎么看"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "密码已保存"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "重置密码"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "取消密码重置"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "输入您当前的密码以取消密码重置进程。 其他更改将不会生效。"
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "密码重置已取消"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "取消密码重置？"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "密码重置请求已取消 (${ user.Email })。 如果您没有提出此请求，则${ changePasswordLink }。"
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "立即更改您的密码"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "取消请求"
+      ],
+      "Got it": [
+        "好的"
+      ],
+      "Learn more": [
+        "了解详情"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hours": [
+        "还有${ gracePeriodHoursRemaining } 小时"
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "如果您没有要求重置密码，请立刻取消此请求。"
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hours.": [
+        "重置密码的请求已收到 (${ user.Email })。 您可以在 ${ hoursRemaining } 小时内更改密码。"
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "为了确保确实是您在尝试重置密码，我们会在 72 小时后才批准请求。 您可以在${ boldTimeLeft }中更改密码。${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "我们收到了${ boldEmail }的密码重置请求。"
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "查看请求"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "请求密码重置"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "退出"
+      ],
+      "Stay signed in": [
+        "保持登录"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hours": [
+        "${ gracePeriodHoursRemaining } 小时"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset }现已可用。"
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "如果您在重置密码完成之前退出，您可能会失去对账户的访问权限。"
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "如果您未重置密码就退出，您可能会失去对账户的访问权限。"
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "您可以在${ boldTimeLeft }之内重置密码。"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "重置密码"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "退出而不重置密码？"
+      ]
+    },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
         "PGP 加密邮件，发件人验证失败：${ verificationErrorsMessage }"
@@ -8413,6 +8606,9 @@
       "Change my answer": [
         "更改我的回复"
       ],
+      "Change password": [
+        "更改密码"
+      ],
       "Clear out the junk": [
         "邮件也需辞旧迎新"
       ],
@@ -9014,6 +9210,9 @@
       ],
       "Are you sure you want to permanently delete ${ count } contacts?": [
         "您确定要永久删除 ${ count } 联系人吗？"
+      ],
+      "Are you sure you want to permanently delete these contact groups?": [
+        "您确定要永久删除这些联系人群组吗？"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "您确定要永久删除此联系人群组吗？"

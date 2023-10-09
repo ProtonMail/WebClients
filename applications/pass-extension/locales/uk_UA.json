@@ -59,6 +59,9 @@
       "Confirm": [
         "Підтвердити"
       ],
+      "Continue": [
+        "Продовжити"
+      ],
       "Continue without pinning": [
         "Продовжити без закріплення"
       ],
@@ -173,11 +176,17 @@
       "Learn more": [
         "Докладніше"
       ],
+      "Leave": [
+        "Залишити"
+      ],
       "Lock extension": [
         "Блокування розширення"
       ],
       "Manually sync your data": [
         "Синхронізація даних вручну"
+      ],
+      "More info: ${ safeTitle }": [
+        "Докладніше: ${ safeTitle }"
       ],
       "More options": [
         "Додаткові параметри"
@@ -232,6 +241,9 @@
       ],
       "Send us a message": [
         "Надішліть нам повідомлення"
+      ],
+      "Share": [
+        "Поділитися"
       ],
       "Show": [
         "Показати"
@@ -414,6 +426,9 @@
       ],
       "Settings update failed": [
         "Не вдалося оновити налаштування"
+      ],
+      "Signature verification failed": [
+        "Неможливо перевірити підпис"
       ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
         "Деякі сховища більше не доступні через скидання пароля. Повторно активуйте ключі облікового запису, щоб відновити доступ. ${ reactivateLink }"
@@ -1349,6 +1364,9 @@
       ],
       "Add text": [
         "Додайте текст"
+      ],
+      "Email address": [
+        "Адреса е-пошти"
       ],
       "Enter a note...": [
         "Введіть нотатку..."
