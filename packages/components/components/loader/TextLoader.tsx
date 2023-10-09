@@ -1,19 +1,19 @@
-import PropTypes from 'prop-types';
+import { ReactNode } from 'react';
 
 import EllipsisLoader from './EllipsisLoader';
 
-const TextLoader = ({ children, className }) => {
+interface Props {
+    children?: ReactNode;
+    className?: string;
+}
+
+const TextLoader = ({ children, className }: Props) => {
     return (
         <p className={className}>
             {children}
             <EllipsisLoader />
         </p>
     );
-};
-
-TextLoader.propTypes = {
-    children: PropTypes.node,
-    className: PropTypes.string,
 };
 
 export default TextLoader;
