@@ -18,7 +18,7 @@ import {
     getPhotoExtendedAttributes,
 } from '../../_photos/exifInfo';
 import { EncryptedBlock, Link, ThumbnailEncryptedBlock, VerificationData } from '../interface';
-import { ThumbnailData } from '../thumbnail';
+import { Media, ThumbnailInfo } from '../media';
 import { getErrorString } from '../utils';
 import { UploadWorker } from '../workerController';
 import UploadWorkerBuffer from './buffer';
@@ -81,8 +81,14 @@ async function start(
     {
         mimeType,
         isForPhotos,
-        thumbnailData,
-    }: { mimeType: string; isForPhotos: boolean; thumbnailData: ThumbnailData[] | undefined },
+        media,
+        thumbnails,
+    }: {
+        mimeType: string;
+        isForPhotos: boolean;
+        media?: Media;
+        thumbnails?: ThumbnailInfo[];
+    },
     addressPrivateKey: PrivateKeyReference,
     addressEmail: string,
     privateKey: PrivateKeyReference,
@@ -104,7 +110,7 @@ async function start(
                 hashInstance,
                 verifier
             ),
-            thumbnailData && generateThumbnailEncryptedBlocks(thumbnailData, addressPrivateKey, sessionKey)
+            thumbnails && generateThumbnailEncryptedBlocks(thumbnails, addressPrivateKey, sessionKey)
         )
         .catch((err) => uploadWorker.postError(getErrorString(err)));
 
@@ -123,9 +129,10 @@ async function start(
         ]);
         const photoDimensions = exifInfo ? getPhotoDimensions(exifInfo) : {};
 
-        const { width, height } = {
-            width: thumbnailData?.[0].originalWidth || photoDimensions.width,
-            height: thumbnailData?.[0].originalHeight || photoDimensions.height,
+        const { width, height, duration } = {
+            width: media?.width || photoDimensions.width,
+            height: media?.height || photoDimensions.height,
+            duration: media?.duration,
         };
 
         const sha1 = sha1Digest ? arrayToHexString(sha1Digest) : undefined;
@@ -139,6 +146,7 @@ async function start(
                             ? {
                                   width,
                                   height,
+                                  duration,
                               }
                             : undefined,
                     digests: sha1

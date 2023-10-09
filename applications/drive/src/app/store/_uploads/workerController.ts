@@ -11,7 +11,7 @@ import type {
     ThumbnailRequestBlock,
     VerificationData,
 } from './interface';
-import type { ThumbnailData } from './thumbnail';
+import type { Media, ThumbnailInfo } from './media';
 import { getErrorString } from './utils';
 
 type GenerateKeysMessage = {
@@ -26,7 +26,8 @@ type StartMessage = {
     file: File;
     mimeType: string;
     isForPhotos: boolean;
-    thumbnailData?: ThumbnailData[];
+    thumbnails?: ThumbnailInfo[];
+    media?: Media;
     addressPrivateKey: Uint8Array;
     addressEmail: string;
     privateKey: Uint8Array;
@@ -72,8 +73,14 @@ interface WorkerHandlers {
         {
             mimeType,
             isForPhotos,
-            thumbnailData,
-        }: { mimeType: string; isForPhotos: boolean; thumbnailData: ThumbnailData[] | undefined },
+            media,
+            thumbnails,
+        }: {
+            mimeType: string;
+            isForPhotos: boolean;
+            thumbnails?: ThumbnailInfo[];
+            media?: Media;
+        },
         addressPrivateKey: PrivateKeyReference,
         addressEmail: string,
         privateKey: PrivateKeyReference,
@@ -219,7 +226,8 @@ export class UploadWorker {
                             {
                                 mimeType: data.mimeType,
                                 isForPhotos: data.isForPhotos,
-                                thumbnailData: data.thumbnailData,
+                                thumbnails: data.thumbnails,
+                                media: data.media,
                             },
                             addressPrivateKey,
                             data.addressEmail,
@@ -439,11 +447,13 @@ export class UploadWorkerController {
         {
             mimeType,
             isForPhotos,
-            thumbnailData,
+            thumbnails,
+            media,
         }: {
             mimeType: string;
             isForPhotos: boolean;
-            thumbnailData: ThumbnailData[] | undefined;
+            thumbnails?: ThumbnailInfo[];
+            media?: Media;
         },
         addressPrivateKey: PrivateKeyReference,
         addressEmail: string,
@@ -457,7 +467,8 @@ export class UploadWorkerController {
             file,
             mimeType,
             isForPhotos: isForPhotos,
-            thumbnailData,
+            thumbnails,
+            media,
             addressPrivateKey: await CryptoProxy.exportPrivateKey({
                 privateKey: addressPrivateKey,
                 passphrase: null,

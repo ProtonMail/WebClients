@@ -12,7 +12,7 @@ import { streamToBuffer } from '../../utils/stream';
 import { useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
 import { DecryptedLink, SignatureIssues, useLink, useLinksListing } from '../_links';
-import { ThumbnailType } from '../_uploads/thumbnail';
+import { ThumbnailType } from '../_uploads/media';
 import initDownloadPure, { initDownloadStream } from './download/download';
 import initDownloadLinkFile from './download/downloadLinkFile';
 import downloadThumbnailPure from './download/downloadThumbnail';
