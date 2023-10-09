@@ -26,16 +26,17 @@ export type ShareContent<T extends ShareType = ShareType> = T extends ShareType.
     : never;
 
 export type ShareBase<T extends ShareType = ShareType> = {
-    shareId: string;
-    vaultId: string;
-    targetId: string;
-    targetType: T;
     content: ShareContent<T>;
+    createTime: number;
+    owner: boolean;
     primary: boolean;
     shared: boolean;
-    owner: boolean;
-    targetMembers: number;
+    shareId: string;
     shareRoleId: ShareRole;
+    targetId: string;
+    targetMembers: number;
+    targetType: T;
+    vaultId: string;
 };
 
 export type WithEventId<T> = T & { eventId: string };
