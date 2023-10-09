@@ -29,9 +29,9 @@ import { WithLoading } from '@proton/hooks/useLoading';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import { APPS } from '@proton/shared/lib/constants';
-import { getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/subscription';
+import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { getKnowledgeBaseUrl, getTermsURL } from '@proton/shared/lib/helpers/url';
-import { Api, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { Api, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -54,7 +54,6 @@ interface Props {
     api: Api;
     model: SignupModelV2;
     options: OptimisticOptions;
-    plansMap: PlansMap;
     vpnServersCountData: VPNServersCountData;
     selectedPlanCard?: PlanCard;
     loadingPaymentDetails: boolean;
@@ -79,7 +78,6 @@ const AccountStepPayment = ({
     onValidate,
     model,
     options,
-    plansMap,
     vpnServersCountData,
     selectedPlanCard,
     loadingPaymentDetails,
@@ -179,9 +177,11 @@ const AccountStepPayment = ({
 
     const summaryPlan = getSummaryPlan(options.plan, vpnServersCountData);
 
-    const pricing = getPricingFromPlanIDs(options.planIDs, plansMap);
-    const totals = getTotalFromPricing(pricing, options.cycle);
-    const pricePerMonth = totals.totalPerMonth;
+    const currentCheckout = getCheckout({
+        planIDs: options.planIDs,
+        plansMap: model.plansMap,
+        checkResult: options.checkResult,
+    });
 
     const isAuthenticated = !!model.session?.UID;
 
@@ -351,91 +351,119 @@ const AccountStepPayment = ({
                     })()}
                 </form>
             </div>
-            {summaryPlan && (
-                <RightSummary className="mx-auto md:mx-0">
-                    <RightPlanSummary
-                        title={summaryPlan.title}
-                        price={getSimplePriceString(options.currency, pricePerMonth, '')}
-                        regularPrice={getSimplePriceString(options.currency, totals.totalNoDiscountPerMonth, '')}
-                        logo={summaryPlan.logo}
-                        discount={totals.discountPercentage}
-                        features={summaryPlan.features}
-                    >
-                        <div className="flex flex-column gap-2">
-                            {(() => {
-                                const proration = subscriptionData.checkResult?.Proration ?? 0;
-                                const credits = subscriptionData.checkResult?.Credit ?? 0;
-                                return [
-                                    {
-                                        id: 'amount',
-                                        left: <span>{getTotalBillingText(options.cycle)}</span>,
-                                        right: options.checkResult.Amount,
-                                        bold: true,
-                                    },
-                                    proration !== 0 && {
-                                        id: 'proration',
-                                        left: (
-                                            <span className="inline-flex flex-align-items-center">
-                                                <span className="mr-2">{c('Label').t`Proration`}</span>
-                                                <Info
-                                                    title={
-                                                        proration < 0
-                                                            ? c('Info')
-                                                                  .t`Credit for the unused portion of your previous plan subscription`
-                                                            : c('Info').t`Balance from your previous subscription`
-                                                    }
-                                                    url={getKnowledgeBaseUrl('/credit-proration-coupons')}
-                                                />
-                                            </span>
-                                        ),
-                                        right: proration,
-                                        bold: false,
-                                    },
-                                    credits !== 0 && {
-                                        id: 'credits',
-                                        left: <span>{c('Title').t`Credits`}</span>,
-                                        right: credits,
-                                        bold: false,
-                                    },
-                                ]
-                                    .filter(isTruthy)
-                                    .map(({ id, bold, left, right }) => {
-                                        return (
-                                            <div
-                                                key={id}
-                                                className={clsx(
-                                                    bold && 'text-bold',
-                                                    'flex flex-justify-space-between text-rg'
-                                                )}
-                                            >
-                                                {left}
-                                                <span>
-                                                    {loadingPaymentDetails ? null : (
-                                                        <Price currency={subscriptionData.currency}>{right}</Price>
-                                                    )}
-                                                </span>
-                                            </div>
-                                        );
-                                    });
-                            })()}
+            {(() => {
+                if (!summaryPlan) {
+                    return null;
+                }
 
-                            <hr className="m-0" />
-                            <div className="flex flex-justify-space-between text-bold text-rg">
-                                <span className="">{c('Label').t`Amount due`}</span>
-                                <span>
-                                    {loadingPaymentDetails ? (
-                                        <CircleLoader />
-                                    ) : (
-                                        <Price currency={subscriptionData.currency}>
-                                            {options.checkResult.AmountDue}
-                                        </Price>
-                                    )}
-                                </span>
+                const proration = subscriptionData.checkResult?.Proration ?? 0;
+                const credits = subscriptionData.checkResult?.Credit ?? 0;
+
+                const showAmountDue = proration !== 0 || credits !== 0;
+
+                return (
+                    <RightSummary className="mx-auto md:mx-0">
+                        <RightPlanSummary
+                            title={summaryPlan.title}
+                            price={getSimplePriceString(options.currency, currentCheckout.withDiscountPerMonth, '')}
+                            regularPrice={getSimplePriceString(
+                                options.currency,
+                                currentCheckout.withoutDiscountPerMonth,
+                                ''
+                            )}
+                            logo={summaryPlan.logo}
+                            discount={currentCheckout.discountPercent}
+                            features={summaryPlan.features}
+                        >
+                            <div className="flex flex-column gap-2">
+                                {(() => {
+                                    return [
+                                        {
+                                            id: 'amount',
+                                            left: <span>{getTotalBillingText(options.cycle)}</span>,
+                                            right: currentCheckout.withDiscountPerCycle,
+                                            bold: true,
+                                        },
+                                        proration !== 0 && {
+                                            id: 'proration',
+                                            left: (
+                                                <span className="inline-flex flex-align-items-center">
+                                                    <span className="mr-2">{c('Label').t`Proration`}</span>
+                                                    <Info
+                                                        title={
+                                                            proration < 0
+                                                                ? c('Info')
+                                                                      .t`Credit for the unused portion of your previous plan subscription`
+                                                                : c('Info').t`Balance from your previous subscription`
+                                                        }
+                                                        url={getKnowledgeBaseUrl('/credit-proration-coupons')}
+                                                    />
+                                                </span>
+                                            ),
+                                            right: proration,
+                                            bold: false,
+                                        },
+                                        credits !== 0 && {
+                                            id: 'credits',
+                                            left: <span>{c('Title').t`Credits`}</span>,
+                                            right: credits,
+                                            bold: false,
+                                        },
+                                    ]
+                                        .filter(isTruthy)
+                                        .map(({ id, bold, left, right }) => {
+                                            return (
+                                                <div
+                                                    key={id}
+                                                    className={clsx(
+                                                        bold && 'text-bold',
+                                                        'flex flex-justify-space-between text-rg'
+                                                    )}
+                                                >
+                                                    {left}
+                                                    <span>
+                                                        {(() => {
+                                                            if (loadingPaymentDetails) {
+                                                                // When we don't show amount due, we put the circle loader instead of empty value.
+                                                                if (!showAmountDue) {
+                                                                    return <CircleLoader />;
+                                                                }
+                                                                return null;
+                                                            }
+                                                            return (
+                                                                <Price currency={subscriptionData.currency}>
+                                                                    {right}
+                                                                </Price>
+                                                            );
+                                                        })()}
+                                                    </span>
+                                                </div>
+                                            );
+                                        });
+                                })()}
+
+                                {showAmountDue && (
+                                    <>
+                                        <hr className="m-0" />
+                                        <div className="flex flex-justify-space-between text-bold text-rg">
+                                            <span className="">{c('Label').t`Amount due`}</span>
+                                            <span>
+                                                {loadingPaymentDetails ? (
+                                                    <CircleLoader />
+                                                ) : (
+                                                    <Price currency={subscriptionData.currency}>
+                                                        {options.checkResult.AmountDue}
+                                                    </Price>
+                                                )}
+                                            </span>
+                                        </div>
+                                    </>
+                                )}
                             </div>
-                        </div>
-                    </RightPlanSummary>
-                </RightSummary>
-            )}
+                        </RightPlanSummary>
+                    </RightSummary>
+                );
+            })()}
         </div>
     );
 };
