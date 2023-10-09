@@ -3,7 +3,6 @@ import type { List } from 'react-virtualized';
 
 import { interpolateRecentItems, itemEq } from '@proton/pass/utils/pass/items';
 
-import { ListItemLink } from '../../../shared/components/router';
 import { ItemsListItem } from '../../components/Item/ItemsListItem';
 import { VirtualList } from '../../components/List/VirtualList';
 import { useItems } from '../../hooks/useItems';
@@ -41,7 +40,7 @@ export const ItemsList: VFC = () => {
             )}
 
             {filtered.length === 0 ? (
-                <div className="flex flex-justify-center flex-align-items-center w100 m-auto overflow-x-auto py-3">
+                <div className="flex flex-justify-center flex-align-items-center w-full m-auto overflow-x-auto py-3">
                     <ItemsListPlaceholder />
                 </div>
             ) : (
@@ -59,7 +58,6 @@ export const ItemsList: VFC = () => {
                                     <div style={style} key={key}>
                                         <ItemsListItem
                                             item={item}
-                                            component={ListItemLink}
                                             onClick={onSelectItem(item)}
                                             id={`item-${item.shareId}-${item.itemId}`}
                                             search={search}

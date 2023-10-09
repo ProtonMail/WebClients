@@ -13,7 +13,7 @@ export const SidebarModal: FC<ModalProps> = ({ children, className, ...props }) 
             onBackdropClick={props.onClose}
             {...props}
         >
-            <div className="h100">{children}</div>
+            <div className="h-full">{children}</div>
         </ModalTwo>
     );
 };
