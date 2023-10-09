@@ -5,15 +5,16 @@ import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
 import type { PhotoGridItem } from '../../../store';
 import { PhotosCard, PhotosGroup } from './grid';
+import { usePhotosSelection } from './hooks';
 
 type Props = {
     data: PhotoGridItem[];
     onItemRender: (linkId: string) => void;
     onItemRenderLoadedLink: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
-    selection: boolean[];
+    selection: ReturnType<typeof usePhotosSelection>['selection'];
     hasSelection: boolean;
     isLoadingMore: boolean;
-    onItemClick: (itemIndex: number) => void;
+    onItemClick: (linkId: string) => void;
     onSelectChange: (index: number, isSelected: boolean) => void;
 };
 
@@ -122,12 +123,13 @@ export const PhotosGrid: FC<Props> = ({
                         let count = 0;
 
                         for (let index = i + 1; index < data.length; index++) {
-                            if (typeof data[index] === 'string') {
+                            let curItem = data[index];
+                            if (typeof curItem === 'string') {
                                 break;
                             }
 
                             total++;
-                            if (selection[index]) {
+                            if (selection[curItem.linkId]) {
                                 count++;
                             } else if (count > 0) {
                                 isGroupSelected = 'some';
@@ -166,6 +168,8 @@ export const PhotosGrid: FC<Props> = ({
                 const y = currentY;
                 lastY = y;
 
+                const isSelected = !!selection[item.linkId];
+
                 if (itemShouldRender(y, scrollPosition)) {
                     items.push(
                         <PhotosCard
@@ -175,15 +179,15 @@ export const PhotosGrid: FC<Props> = ({
                             onRenderLoadedLink={onItemRenderLoadedLink}
                             onClick={() => {
                                 if (hasSelection) {
-                                    onSelectChange(i, !selection[i]);
+                                    onSelectChange(i, !isSelected);
                                 } else {
-                                    onItemClick(i);
+                                    onItemClick(item.linkId);
                                 }
                             }}
                             onSelect={(isSelected) => {
                                 onSelectChange(i, isSelected);
                             }}
-                            selected={!!selection[i]}
+                            selected={isSelected}
                             style={{
                                 position: 'absolute',
                                 width: itemWidth,
