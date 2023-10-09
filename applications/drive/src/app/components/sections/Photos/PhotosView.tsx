@@ -13,9 +13,9 @@ import UploadDragDrop from '../../uploads/UploadDragDrop/UploadDragDrop';
 import ToolbarRow from '../ToolbarRow/ToolbarRow';
 import { PhotosEmptyView } from './PhotosEmptyView';
 import { PhotosGrid } from './PhotosGrid';
+import { PhotosClearSelectionButton } from './components/PhotosClearSelectionButton';
 import { usePhotosSelection } from './hooks';
 import { PhotosToolbar } from './toolbar';
-import { PhotosClearSelectionButton } from './toolbar/PhotosClearSelectionButton';
 
 export const PhotosView: FC<void> = () => {
     useAppTitle(c('Title').t`Photos`);
