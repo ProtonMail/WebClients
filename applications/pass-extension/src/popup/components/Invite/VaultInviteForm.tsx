@@ -4,7 +4,6 @@ import { Form, type FormikContextType } from 'formik';
 import { c } from 'ttag';
 
 import { Icon } from '@proton/components/components';
-import type { Share, ShareType } from '@proton/pass/types';
 
 import { IconBox } from '../../../shared/components/icon/IconBox';
 import type { InviteFormValues } from '../../../shared/form/types';
@@ -16,21 +15,16 @@ import { shareRoleOptions } from '../Share/ShareRoleOptions';
 
 export const FORM_ID = 'vault-invite';
 
-type Props = { vault: Share<ShareType.Vault>; form: FormikContextType<InviteFormValues> };
+type Props = { form: FormikContextType<InviteFormValues> };
 
-export const VaultInviteForm: FC<Props> = ({ vault, form }) => {
+export const VaultInviteForm: FC<Props> = ({ form }) => {
     const { email, step } = form.values;
-    const vaultName = vault.content.name;
 
     return (
         <Form id={FORM_ID}>
             {step === 'email' && (
                 <>
                     <h2 className="text-xl text-bold mb-3">{c('Title').t`Share with`}</h2>
-                    <div className="mb-3 color-weak">
-                        {c('Info').t`This user will receive an invitation to join your '${vaultName}' vault.`}
-                    </div>
-
                     <FieldsetCluster>
                         <Field
                             name="email"
@@ -44,10 +38,7 @@ export const VaultInviteForm: FC<Props> = ({ vault, form }) => {
 
             {step === 'permissions' && (
                 <>
-                    <h2 className="text-xl text-bold mb-3">{c('Title').t`Permissions`}</h2>
-                    <div className="mb-3 color-weak">
-                        {c('Info').t`Select the level of access this user will gain when they join your vault.`}
-                    </div>
+                    <h2 className="text-xl text-bold mb-3">{c('Title').t`Set access level`}</h2>
                     <button
                         className="flex flex-align-items-center flex-nowrap gap-3 mb-3"
                         onClick={() => form.setFieldValue('step', 'email')}

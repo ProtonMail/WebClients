@@ -69,7 +69,7 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
                                 onClick={() => createInvite(shareId)}
                                 disabled={!canManage}
                             >
-                                {c('Action').t`Invite people`}
+                                {c('Action').t`Invite others`}
                             </Button>,
                         ]}
                     />
