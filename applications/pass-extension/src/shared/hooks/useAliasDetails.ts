@@ -33,8 +33,7 @@ export const useAliasDetails = ({ aliasEmail, itemId, shareId, onAliasDetailsLoa
     });
 
     useEffect(() => {
-        if (aliasDetails === undefined) getAliasDetails.dispatch({ shareId, itemId, aliasEmail });
-        else onAliasDetailsLoaded?.(aliasDetails);
+        getAliasDetails.dispatch({ shareId, itemId, aliasEmail });
     }, [shareId, itemId, aliasEmail]);
 
     return useMemo(
