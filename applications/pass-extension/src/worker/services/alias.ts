@@ -8,6 +8,8 @@ import {
     selectAliasLimits,
     selectPrimaryVault,
 } from '@proton/pass/store';
+import { aliasOptionsRequest } from '@proton/pass/store/actions/requests';
+import { withRevalidate } from '@proton/pass/store/actions/with-request';
 import type { ItemCreateIntent } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
@@ -26,19 +28,21 @@ export const createAliasService = () => {
         const { needsUpgrade } = selectAliasLimits(store.getState());
         const { shareId } = selectPrimaryVault(store.getState());
 
-        return new Promise((resolve) =>
+        return new Promise((resolve) => {
             store.dispatch(
-                getAliasOptionsIntent({ shareId }, (result) => {
-                    if (getAliasOptionsSuccess.match(result)) {
-                        const { options } = result.payload;
-                        return resolve({ ok: true, needsUpgrade, options });
-                    }
+                withRevalidate(
+                    getAliasOptionsIntent(aliasOptionsRequest(shareId), { shareId }, (result) => {
+                        if (getAliasOptionsSuccess.match(result)) {
+                            const { options } = result.payload;
+                            return resolve({ ok: true, needsUpgrade, options });
+                        }
 
-                    const error = result.error instanceof Error ? getApiErrorMessage(result.error) ?? null : null;
-                    return resolve({ ok: false, error });
-                })
-            )
-        );
+                        const error = result.error instanceof Error ? getApiErrorMessage(result.error) ?? null : null;
+                        return resolve({ ok: false, error });
+                    })
+                )
+            );
+        });
     });
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.ALIAS_CREATE, async (message) => {

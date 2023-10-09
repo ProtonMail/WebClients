@@ -51,7 +51,7 @@ export const VaultInviteRespond: VFC<Invite> = (invite) => {
                     background
                     className="mb-2"
                 />
-                <div className="text-xl text-bold text-ellipsis">{vault.content.name}</div>
+                <div className="text-xl text-bold text-ellipsis max-w-full">{vault.content.name}</div>
                 <div className="color-weak">
                     <span>{c('Info').ngettext(msgid`${itemCount} item`, `${itemCount} items`, itemCount)}</span>
                     <span> • </span>
