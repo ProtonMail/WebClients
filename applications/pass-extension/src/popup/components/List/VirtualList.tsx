@@ -32,7 +32,7 @@ const VirtualListRender: ForwardRefRenderFunction<List, Props> = (
     }, [interpolationIndexes]);
 
     return (
-        <div className="h100 scroll-outer-vertical">
+        <div className="h-full scroll-outer-vertical">
             <div
                 className={clsx('scroll-start-shadow no-pointer-events', shadows.top && 'scroll-start-shadow-visible')}
                 aria-hidden="true"

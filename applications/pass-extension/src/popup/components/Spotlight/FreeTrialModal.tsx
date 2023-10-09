@@ -66,7 +66,7 @@ export const FreeTrialModal: VFC<Props> = ({ ...props }) => {
                     />
                 }
             >
-                <img src="/assets/onboarding.svg" className="mb-2 w66" alt="user onboarding graphic" />
+                <img src="/assets/onboarding.svg" className="mb-2 w-2/3" alt="user onboarding graphic" />
                 <h3 className="mb-4 text-bold">{c('Title').t`Enjoy your free trial`}</h3>
                 <Card
                     rounded
