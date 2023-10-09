@@ -5,6 +5,7 @@ import { ShareRole, ShareType } from '@proton/pass/types';
 import type { PendingInvite, ShareMember } from '@proton/pass/types/data/invites';
 import { or } from '@proton/pass/utils/fp';
 import { fullMerge, objectDelete, objectMap, partialMerge } from '@proton/pass/utils/object';
+import { getEpoch } from '@proton/pass/utils/time';
 
 import {
     bootSuccess,
@@ -97,6 +98,7 @@ export const withOptimisticShares = withOptimistic<SharesState>(
 
             return fullMerge(state, {
                 [id]: {
+                    createTime: getEpoch(),
                     shareId: id,
                     vaultId: id,
                     targetId: id,
