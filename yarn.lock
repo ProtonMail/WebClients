@@ -5471,7 +5471,7 @@ __metadata:
     cross-env: ^7.0.3
     css-loader: ^6.8.1
     css-minimizer-webpack-plugin: ^5.0.1
-    dedent: ^0.7.0
+    dedent: ^1.5.1
     eslint: ^8.51.0
     eslint-webpack-plugin: ^4.0.1
     execa: ^5.1.1
@@ -15073,7 +15073,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dedent@npm:^1.0.0":
+"dedent@npm:^1.0.0, dedent@npm:^1.5.1":
   version: 1.5.1
   resolution: "dedent@npm:1.5.1"
   peerDependencies:
