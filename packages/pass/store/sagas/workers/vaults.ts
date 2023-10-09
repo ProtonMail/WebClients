@@ -56,17 +56,18 @@ export const createVault = async (data: {
     const content = decodeVaultContent(share.content);
 
     return {
-        shareId: share.shareId,
-        targetId: share.targetId,
-        targetType: share.targetType,
-        vaultId: share.vaultId,
         content,
+        createTime: share.createTime,
+        eventId,
+        owner: true,
         primary: Boolean(encryptedShare.Primary),
         shared: false,
-        owner: true,
-        targetMembers: 1,
+        shareId: share.shareId,
         shareRoleId: ShareRole.ADMIN,
-        eventId,
+        targetId: share.targetId,
+        targetMembers: 1,
+        targetType: share.targetType,
+        vaultId: share.vaultId,
     };
 };
 
@@ -96,17 +97,18 @@ export const editVault = async (
     if (!share) throw new Error(c('Error').t`Could not open updated vault`);
 
     return {
-        shareId: share.shareId,
-        targetId: share.targetId,
-        targetType: share.targetType,
-        vaultId: share.vaultId,
+        createTime: share.createTime,
         content: decodeVaultContent(share.content),
+        eventId,
+        owner: share.owner,
         primary: Boolean(encryptedShare.Primary),
         shared: share.shared,
-        owner: share.owner,
-        targetMembers: share.targetMembers,
+        shareId: share.shareId,
         shareRoleId: share.shareRoleId,
-        eventId,
+        targetId: share.targetId,
+        targetMembers: share.targetMembers,
+        targetType: share.targetType,
+        vaultId: share.vaultId,
     };
 };
 

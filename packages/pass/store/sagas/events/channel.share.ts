@@ -71,17 +71,18 @@ const onShareEvent = (shareId: string) =>
                     shareEditSync({
                         id: share.shareId,
                         share: {
-                            shareId: share.shareId,
-                            vaultId: share.vaultId,
-                            targetId: share.targetId,
-                            targetType: share.targetType,
                             content: decodeVaultContent(share.content),
+                            createTime: share.createTime,
+                            eventId: LatestEventID,
+                            owner: share.owner,
                             primary: Boolean(UpdatedShare.Primary),
                             shared: share.shared,
-                            owner: share.owner,
-                            targetMembers: share.targetMembers,
+                            shareId: share.shareId,
                             shareRoleId: share.shareRoleId,
-                            eventId: LatestEventID,
+                            targetId: share.targetId,
+                            targetMembers: share.targetMembers,
+                            targetType: share.targetType,
+                            vaultId: share.vaultId,
                         },
                     })
                 );
