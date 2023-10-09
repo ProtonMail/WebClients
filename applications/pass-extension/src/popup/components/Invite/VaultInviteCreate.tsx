@@ -42,6 +42,8 @@ export const VaultInviteCreate: FC<Props> = ({ shareId }) => {
         },
     });
 
+    const submitText = vault.shared ? c('Action').t`Send invite` : c('Action').t`Share vault`;
+
     return (
         <SidebarModal onClose={close} open>
             <Panel
@@ -69,7 +71,7 @@ export const VaultInviteCreate: FC<Props> = ({ shareId }) => {
                                 loading={createInvite.loading}
                                 form={FORM_ID}
                             >
-                                {form.values.step === 'email' ? c('Action').t`Continue` : c('Action').t`Send invite`}
+                                {form.values.step === 'email' ? c('Action').t`Continue` : submitText}
                             </Button>,
                         ]}
                     />
@@ -77,7 +79,7 @@ export const VaultInviteCreate: FC<Props> = ({ shareId }) => {
             >
                 <SharedVaultItem vault={vault} className="mt-3 mb-6" />
                 <FormikProvider value={form}>
-                    <VaultInviteForm vault={vault} form={form} />
+                    <VaultInviteForm form={form} />
                 </FormikProvider>
             </Panel>
         </SidebarModal>
