@@ -16,6 +16,7 @@ type Props = {
     isLoadingMore: boolean;
     onItemClick: (linkId: string) => void;
     onSelectChange: (index: number, isSelected: boolean) => void;
+    isGroupSelected: (groupIndex: number) => boolean | 'some';
 };
 
 export const PhotosGrid: FC<Props> = ({
@@ -27,6 +28,7 @@ export const PhotosGrid: FC<Props> = ({
     onSelectChange,
     selection,
     hasSelection,
+    isGroupSelected,
 }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const containerRect = useElementRect(containerRef);
@@ -116,32 +118,6 @@ export const PhotosGrid: FC<Props> = ({
                 lastY = y;
 
                 if (itemShouldRender(y, scrollPosition)) {
-                    let isGroupSelected: boolean | 'some' = false;
-
-                    if (hasSelection) {
-                        let total = 0;
-                        let count = 0;
-
-                        for (let index = i + 1; index < data.length; index++) {
-                            let curItem = data[index];
-                            if (typeof curItem === 'string') {
-                                break;
-                            }
-
-                            total++;
-                            if (selection[curItem.linkId]) {
-                                count++;
-                            } else if (count > 0) {
-                                isGroupSelected = 'some';
-                                break;
-                            }
-                        }
-
-                        if (count === total) {
-                            isGroupSelected = true;
-                        }
-                    }
-
                     items.push(
                         <PhotosGroup
                             key={item}
@@ -157,7 +133,7 @@ export const PhotosGrid: FC<Props> = ({
                             onSelect={(isSelected) => {
                                 onSelectChange(i, isSelected);
                             }}
-                            selected={isGroupSelected}
+                            selected={isGroupSelected(i)}
                         />
                     );
                 }

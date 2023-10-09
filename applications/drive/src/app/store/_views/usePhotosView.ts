@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react';
+import { useCallback, useEffect, useMemo } from 'react';
 
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 
@@ -94,12 +94,36 @@ export const usePhotosView = () => {
         return getLink(abortSignal, shareId, linkId);
     };
 
+    const getGroupLinkIds = useCallback(
+        (groupIndex: number) => {
+            if (typeof photosViewData[groupIndex] !== 'string') {
+                return [];
+            }
+
+            const items = [];
+
+            for (let i = groupIndex + 1; i < photosViewData.length; i++) {
+                const current = photosViewData[i];
+
+                if (typeof current === 'string') {
+                    break;
+                }
+
+                items.push(current.linkId);
+            }
+
+            return items;
+        },
+        [photosViewData]
+    );
+
     return {
         shareId,
         linkId,
         photos: photosViewData,
         removePhotosFromCache,
         loadPhotoLink,
+        getGroupLinkIds,
         isLoading,
         isLoadingMore: isLoading && !!photos.length,
     };
