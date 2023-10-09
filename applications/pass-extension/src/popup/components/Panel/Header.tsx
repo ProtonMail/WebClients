@@ -18,7 +18,7 @@ export const PanelHeader: VFC<Props> = ({ className, actions, ...props }) => {
     return (
         <header
             className={clsx(
-                'pass-panel-header flex flex-nowrap flex-justify-space-between flex-align-items-center gap-1',
+                'pass-panel-header flex flex-nowrap flex-justify-space-between flex-align-items-center gap-2',
                 className
             )}
         >

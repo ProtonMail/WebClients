@@ -5,10 +5,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon, Option } from '@proton/components';
-import type { AliasMailbox } from '@proton/pass/types';
+import type { AliasMailbox, MaybeNull } from '@proton/pass/types';
 
 import type { AliasFormValues } from '../../../../shared/form/types';
-import type { UseAliasOptionsResult } from '../../../../shared/hooks/useAliasOptions';
+import type { SanitizedAliasOptions } from '../../../../shared/hooks';
 import { Field } from '../../../components/Field/Field';
 import { FieldsetCluster } from '../../../components/Field/Layout/FieldsetCluster';
 import { SelectField } from '../../../components/Field/SelectField';
@@ -16,7 +16,7 @@ import { TextField } from '../../../components/Field/TextField';
 
 type AliasFormProps<V extends AliasFormValues> = {
     form: FormikContextType<V>;
-    aliasOptions: UseAliasOptionsResult['aliasOptions'];
+    aliasOptions: MaybeNull<SanitizedAliasOptions>;
     loading: boolean;
 };
 

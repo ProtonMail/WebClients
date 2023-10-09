@@ -7,7 +7,7 @@ import { CACHE_SALT_LENGTH, encryptData, getCacheEncryptionKey } from '@proton/p
 import { PassEncryptionTag } from '@proton/pass/types';
 import { or } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
-import { objectDelete } from '@proton/pass/utils/object';
+import { objectFilter } from '@proton/pass/utils/object';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
@@ -28,8 +28,13 @@ function* cacheWorker(action: AnyAction, { getWorkerState, getAuth, setCache }: 
             const key: CryptoKey = yield getCacheEncryptionKey(cacheSalt, sessionLockToken);
 
             const state = (yield select()) as State;
-            const nonOptimisticState = asIfNotOptimistic(state, reducerMap);
-            const whiteListedState = objectDelete(nonOptimisticState, 'request');
+            const whiteListedState = asIfNotOptimistic(state, reducerMap);
+
+            /* keep non-expired request metadata */
+            whiteListedState.request = objectFilter(
+                whiteListedState.request,
+                (_, request) => request.status === 'success' && request.expiresAt !== undefined
+            );
 
             const encoder = new TextEncoder();
             const stringifiedState = JSON.stringify(whiteListedState);

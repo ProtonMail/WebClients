@@ -55,7 +55,7 @@ const reducer: Reducer<AliasState> = (state = { aliasOptions: null, aliasDetails
         return merge(state, { aliasDetails: { [aliasEmail]: mailboxes } });
     }
 
-    if (itemEditIntent.match(action) && action.payload.type === 'alias') {
+    if (itemEditIntent.match(action) && action.payload.type === 'alias' && action.payload.extraData.aliasOwner) {
         const {
             extraData: { mailboxes, aliasEmail },
         } = action.payload;
