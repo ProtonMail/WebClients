@@ -49,7 +49,7 @@ export const VaultInviteForm: FC<Props> = ({ vault, form }) => {
                         {c('Info').t`Select the level of access this user will gain when they join your vault.`}
                     </div>
                     <button
-                        className="flex flex-align-items-center flex-nowrap gap-3 mb-3 max-w100"
+                        className="flex flex-align-items-center flex-nowrap gap-3 mb-3"
                         onClick={() => form.setFieldValue('step', 'email')}
                     >
                         <IconBox size={18} mode="icon" className="flex-item-noshrink">
@@ -60,7 +60,7 @@ export const VaultInviteForm: FC<Props> = ({ vault, form }) => {
                                 size={16}
                             />
                         </IconBox>
-                        <div className="text-ellipsis">{email}</div>
+                        <div className="text-break-all text-left">{email}</div>
                     </button>
                     <div className="border border-norm rounded pl-4 py-3">
                         <Field
