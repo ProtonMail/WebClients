@@ -478,11 +478,11 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                         <UnAuthenticatedApiProvider loader={loader}>
                             <FeaturesProvider>
                                 <ExperimentsProvider>
-                                    <UnAuthenticated>
-                                        <ForceRefreshContext.Provider value={refresh}>
-                                            <Switch location={location}>
-                                                {confirmForkData && toAppName && (
-                                                    <Route path={SSO_PATHS.OAUTH_CONFIRM_FORK}>
+                                    <ForceRefreshContext.Provider value={refresh}>
+                                        <Switch location={location}>
+                                            {confirmForkData && toAppName && (
+                                                <Route path={SSO_PATHS.OAUTH_CONFIRM_FORK}>
+                                                    <UnAuthenticated>
                                                         <OAuthConfirmForkContainer
                                                             name={toAppName}
                                                             image={confirmForkData.payload.clientInfo.Logo}
@@ -497,9 +497,11 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                                 window.location.pathname = SSO_PATHS.SWITCH;
                                                             }}
                                                         />
-                                                    </Route>
-                                                )}
-                                                <Route path={SSO_PATHS.SWITCH}>
+                                                    </UnAuthenticated>
+                                                </Route>
+                                            )}
+                                            <Route path={SSO_PATHS.SWITCH}>
+                                                <UnAuthenticated>
                                                     <SwitchAccountContainer
                                                         metaTags={getLoginMeta(maybePreAppIntent)}
                                                         activeSessions={activeSessions}
@@ -509,18 +511,20 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                         onSignOut={handleSignOut}
                                                         onAddAccount={handleAddAccount}
                                                     />
-                                                </Route>
-                                                <Route
-                                                    path={[
-                                                        SSO_PATHS.SIGNUP,
-                                                        SSO_PATHS.REFER,
-                                                        SSO_PATHS.TRIAL,
-                                                        SSO_PATHS.BUSINESS_SIGNUP,
-                                                        SSO_PATHS.CALENDAR_SIGNUP,
-                                                        SSO_PATHS.MAIL_SIGNUP,
-                                                        SSO_PATHS.DRIVE_SIGNUP,
-                                                    ]}
-                                                >
+                                                </UnAuthenticated>
+                                            </Route>
+                                            <Route
+                                                path={[
+                                                    SSO_PATHS.SIGNUP,
+                                                    SSO_PATHS.REFER,
+                                                    SSO_PATHS.TRIAL,
+                                                    SSO_PATHS.BUSINESS_SIGNUP,
+                                                    SSO_PATHS.CALENDAR_SIGNUP,
+                                                    SSO_PATHS.MAIL_SIGNUP,
+                                                    SSO_PATHS.DRIVE_SIGNUP,
+                                                ]}
+                                            >
+                                                <UnAuthenticated>
                                                     <SignupContainer
                                                         metaTags={getSignupMeta(maybePreAppIntent)}
                                                         loginUrl={paths.login}
@@ -535,43 +539,41 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                                 : undefined
                                                         }
                                                     />
-                                                </Route>
-                                                <Route path={SSO_PATHS.PASS_SIGNUP}>
-                                                    <SingleSignupContainerV2
-                                                        paths={paths}
-                                                        metaTags={getSignupMeta(APPS.PROTONPASS)}
-                                                        activeSessions={activeSessions}
-                                                        loader={loader}
-                                                        productParam={APPS.PROTONPASS}
-                                                        clientType={CLIENT_TYPES.PASS}
-                                                        toApp={APPS.PROTONPASS}
-                                                        toAppName={getToAppName(APPS.PROTONPASS)}
-                                                        onLogin={handleLogin}
-                                                        fork={!!forkState}
-                                                        onBack={
-                                                            hasBackToSwitch
-                                                                ? () => history.push(paths.login)
-                                                                : undefined
-                                                        }
-                                                    />
-                                                </Route>
-                                                <Route path={[SSO_PATHS.VPN_SIGNUP, SSO_PATHS.VPN_PRICING]}>
-                                                    <SingleSignupContainer
-                                                        metaTags={getSignupMeta(APPS.PROTONVPN_SETTINGS)}
-                                                        loader={loader}
-                                                        productParam={APPS.PROTONVPN_SETTINGS}
-                                                        clientType={CLIENT_TYPES.VPN}
-                                                        toApp={APPS.PROTONVPN_SETTINGS}
-                                                        toAppName={getToAppName(APPS.PROTONVPN_SETTINGS)}
-                                                        onLogin={handleLogin}
-                                                        onBack={
-                                                            hasBackToSwitch
-                                                                ? () => history.push(paths.login)
-                                                                : undefined
-                                                        }
-                                                    />
-                                                </Route>
-                                                <Route path={`${SSO_PATHS.INVITE}/:selector/:token`}>
+                                                </UnAuthenticated>
+                                            </Route>
+                                            <Route path={SSO_PATHS.PASS_SIGNUP}>
+                                                <SingleSignupContainerV2
+                                                    paths={paths}
+                                                    metaTags={getSignupMeta(APPS.PROTONPASS)}
+                                                    activeSessions={activeSessions}
+                                                    loader={loader}
+                                                    productParam={APPS.PROTONPASS}
+                                                    clientType={CLIENT_TYPES.PASS}
+                                                    toApp={APPS.PROTONPASS}
+                                                    toAppName={getToAppName(APPS.PROTONPASS)}
+                                                    onLogin={handleLogin}
+                                                    fork={!!forkState}
+                                                    onBack={
+                                                        hasBackToSwitch ? () => history.push(paths.login) : undefined
+                                                    }
+                                                />
+                                            </Route>
+                                            <Route path={[SSO_PATHS.VPN_SIGNUP, SSO_PATHS.VPN_PRICING]}>
+                                                <SingleSignupContainer
+                                                    metaTags={getSignupMeta(APPS.PROTONVPN_SETTINGS)}
+                                                    loader={loader}
+                                                    productParam={APPS.PROTONVPN_SETTINGS}
+                                                    clientType={CLIENT_TYPES.VPN}
+                                                    toApp={APPS.PROTONVPN_SETTINGS}
+                                                    toAppName={getToAppName(APPS.PROTONVPN_SETTINGS)}
+                                                    onLogin={handleLogin}
+                                                    onBack={
+                                                        hasBackToSwitch ? () => history.push(paths.login) : undefined
+                                                    }
+                                                />
+                                            </Route>
+                                            <Route path={`${SSO_PATHS.INVITE}/:selector/:token`}>
+                                                <UnAuthenticated>
                                                     <SignupInviteContainer
                                                         loader={loader}
                                                         clientType={clientType}
@@ -583,8 +585,10 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                         }
                                                         onInvalid={() => history.push(paths.signup)}
                                                     />
-                                                </Route>
-                                                <Route path={SSO_PATHS.RESET_PASSWORD}>
+                                                </UnAuthenticated>
+                                            </Route>
+                                            <Route path={SSO_PATHS.RESET_PASSWORD}>
+                                                <UnAuthenticated>
                                                     <ResetPasswordContainer
                                                         metaTags={resetPasswordPage()}
                                                         toApp={maybePreAppIntent}
@@ -592,24 +596,28 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                         setupVPN={setupVPN}
                                                         loginUrl={paths.login}
                                                     />
-                                                </Route>
-                                                <Route path={SSO_PATHS.FORGOT_USERNAME}>
+                                                </UnAuthenticated>
+                                            </Route>
+                                            <Route path={SSO_PATHS.FORGOT_USERNAME}>
+                                                <UnAuthenticated>
                                                     <ForgotUsernameContainer
                                                         metaTags={forgotUsernamePage()}
                                                         loginUrl={paths.login}
                                                     />
-                                                </Route>
-                                                <Route
-                                                    path={[
-                                                        SSO_PATHS.LOGIN,
-                                                        SSO_PATHS.MAIL_SIGN_IN,
-                                                        SSO_PATHS.CALENDAR_SIGN_IN,
-                                                        SSO_PATHS.DRIVE_SIGN_IN,
-                                                        SSO_PATHS.VPN_SIGN_IN,
-                                                        SSO_PATHS.PASS_SIGN_IN,
-                                                    ]}
-                                                    exact
-                                                >
+                                                </UnAuthenticated>
+                                            </Route>
+                                            <Route
+                                                path={[
+                                                    SSO_PATHS.LOGIN,
+                                                    SSO_PATHS.MAIL_SIGN_IN,
+                                                    SSO_PATHS.CALENDAR_SIGN_IN,
+                                                    SSO_PATHS.DRIVE_SIGN_IN,
+                                                    SSO_PATHS.VPN_SIGN_IN,
+                                                    SSO_PATHS.PASS_SIGN_IN,
+                                                ]}
+                                                exact
+                                            >
+                                                <UnAuthenticated>
                                                     <LoginContainer
                                                         metaTags={getLoginMeta(maybePreAppIntent)}
                                                         toAppName={toAppName}
@@ -624,21 +632,19 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                         setupVPN={setupVPN}
                                                         paths={paths}
                                                     />
-                                                </Route>
-                                                <Redirect
-                                                    to={{
-                                                        pathname: paths.login,
-                                                        state: {
-                                                            ...(typeof location.state === 'object'
-                                                                ? location.state
-                                                                : {}),
-                                                            from: location,
-                                                        },
-                                                    }}
-                                                />
-                                            </Switch>
-                                        </ForceRefreshContext.Provider>
-                                    </UnAuthenticated>
+                                                </UnAuthenticated>
+                                            </Route>
+                                            <Redirect
+                                                to={{
+                                                    pathname: paths.login,
+                                                    state: {
+                                                        ...(typeof location.state === 'object' ? location.state : {}),
+                                                        from: location,
+                                                    },
+                                                }}
+                                            />
+                                        </Switch>
+                                    </ForceRefreshContext.Provider>
                                 </ExperimentsProvider>
                             </FeaturesProvider>
                         </UnAuthenticatedApiProvider>
