@@ -1,11 +1,11 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import { ALIAS_DETAILS_MAX_AGE, ALIAS_OPTIONS_MAX_AGE } from '@proton/pass/constants';
 import type { AliasMailbox } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp';
 
 import type { AliasOptions } from '../../reducers';
-import { ALIAS_OPTIONS_VALIDITY_WINDOW } from '../../sagas/alias-options-request.saga';
 import withCacheBlock from '../with-cache-block';
 import type { ActionCallback } from '../with-callback';
 import withCallback from '../with-callback';
@@ -26,7 +26,7 @@ export const getAliasOptionsIntent = createAction(
 
 export const getAliasOptionsSuccess = createAction(
     'alias::options::get::success',
-    withRequestSuccess((payload: { options: AliasOptions }) => ({ payload }), { maxAge: ALIAS_OPTIONS_VALIDITY_WINDOW })
+    withRequestSuccess((payload: { options: AliasOptions }) => ({ payload }), { maxAge: ALIAS_OPTIONS_MAX_AGE })
 );
 
 export const getAliasOptionsFailure = createAction(
@@ -46,7 +46,9 @@ export const getAliasDetailsIntent = createAction(
 
 export const getAliasDetailsSuccess = createAction(
     'alias::details::get::success',
-    withRequestSuccess((payload: { aliasEmail: string; mailboxes: AliasMailbox[] }) => ({ payload }))
+    withRequestSuccess((payload: { aliasEmail: string; mailboxes: AliasMailbox[] }) => ({ payload }), {
+        maxAge: ALIAS_DETAILS_MAX_AGE,
+    })
 );
 
 export const getAliasDetailsFailure = createAction(
