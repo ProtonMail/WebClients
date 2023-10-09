@@ -23,14 +23,14 @@
         "@protontech/mutex-browser": "^1.0.5",
         "@protontech/tidy-url": "^1.6.17",
         "@protontech/timezone-support": "^3.0.0",
-        "@sentry/browser": "^7.68.0",
-        "@types/dompurify": "^3.0.2",
-        "@types/node": "^18.17.15",
-        "@types/papaparse": "^5.3.8",
+        "@sentry/browser": "^7.73.0",
+        "@types/dompurify": "^3.0.3",
+        "@types/node": "^18.18.4",
+        "@types/papaparse": "^5.3.9",
         "@types/ua-parser-js": "^0.7.37",
-        "@types/webpack-env": "^1.18.1",
+        "@types/webpack-env": "^1.18.2",
         "date-fns": "^2.30.0",
-        "dompurify": "^3.0.5",
+        "dompurify": "^3.0.6",
         "file-saver": "^2.0.5",
         "hi-base32": "^0.5.1",
         "ical.js": "^1.5.0",
@@ -46,8 +46,8 @@
         "@babel/plugin-transform-runtime": "^7.22.15",
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/i18n": "workspace:packages/i18n",
-        "@types/jasmine": "^4.3.5",
-        "eslint": "^8.49.0",
+        "@types/jasmine": "^4.6.0",
+        "eslint": "^8.51.0",
         "jasmine": "^5.1.0",
         "jasmine-core": "^5.1.1",
         "karma": "^6.4.2",
@@ -57,13 +57,13 @@
         "karma-webpack": "^5.0.0",
         "playwright": "^1.38.1",
         "prettier": "^2.8.8",
-        "ts-loader": "^9.4.4",
+        "ts-loader": "^9.5.0",
         "ttag": "^1.7.25",
         "typescript": "^5.2.2",
         "webpack": "^5.88.2"
     },
     "peerDependencies": {
         "@proton/styles": "*",
-        "ttag": "^1.7.24"
+        "ttag": "^1.7.25"
     }
 }

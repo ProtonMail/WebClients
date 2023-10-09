@@ -1,8 +1,8 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 
 import { Loader, ModalTwoContent, TextLoader } from '@proton/components';
 
-const ModalContentLoader: React.FunctionComponent = ({ children }) => {
+const ModalContentLoader = ({ children }: { children: ReactNode }) => {
     return (
         <div className="modal-content py-7">
             <ModalTwoContent className="my-8">
