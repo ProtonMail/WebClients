@@ -17,12 +17,13 @@ import { SortParams } from './utils/useSorting';
  * useFileView provides data for file preview.
  */
 export default function useFileView(shareId: string, linkId: string, useNavigation = false, revisionId?: string) {
-    const { downloadStream } = useDownload();
+    const { downloadStream, getPreviewThumbnail } = useDownload();
     const { isLinkLoading, isContentLoading, error, link, contents, contentsMimeType, downloadFile } = useFileViewBase(
         shareId,
         linkId,
         downloadStream,
-        revisionId
+        revisionId,
+        getPreviewThumbnail
     );
     const navigation = useFileViewNavigation(useNavigation, shareId, link?.parentLinkId, linkId);
 
@@ -50,11 +51,11 @@ function useFileViewBase(
     shareId: string,
     linkId: string,
     downloadStream: ReturnType<typeof usePublicDownload>['downloadStream'],
-    revisionId?: string
+    revisionId?: string,
+    getPreviewThumbnail?: ReturnType<typeof useDownload>['getPreviewThumbnail']
 ) {
     const { getLink } = useLink();
     const { download } = useDownloadProvider();
-    const { getPreviewThumbnail } = useDownload();
     const [isContentLoading, withContentLoading] = useLoading(true);
 
     const [error, setError] = useState<any>();
@@ -85,8 +86,8 @@ function useFileViewBase(
             });
 
             setContents(await streamToBuffer(stream));
-            // Fallback is only available for photos
-        } else if (!!link.activeRevision?.photo) {
+            // Fallback is only available for photos in private context
+        } else if (!!link.activeRevision?.photo && getPreviewThumbnail) {
             // We force jpg type as thumbnails are always jpg for photos
             setContentsMimeType(SupportedMimeTypes.jpg);
             try {
