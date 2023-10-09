@@ -8,6 +8,7 @@ import { Button } from '@proton/atoms';
 import { Icon, type ModalProps } from '@proton/components/components';
 import { selectAliasLimits } from '@proton/pass/store';
 import type { MaybeNull } from '@proton/pass/types';
+import noop from '@proton/utils/noop';
 
 import { SidebarModal } from '../../../../shared/components/sidebarmodal/SidebarModal';
 import { UpgradeButton } from '../../../../shared/components/upgrade/UpgradeButton';
@@ -56,7 +57,7 @@ export const AliasModal = <T extends AliasFormValues>({
                     ...(firstMailBox && { mailboxes: [firstMailBox] }),
                 }),
                 true
-            );
+            ).catch(noop);
 
             setReady(true);
         }

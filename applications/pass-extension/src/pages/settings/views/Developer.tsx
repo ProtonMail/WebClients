@@ -16,7 +16,7 @@ export const Developer: VFC = () => {
                 <Button
                     icon
                     shape="ghost"
-                    className="w100 flex flex-align-items-center border-norm"
+                    className="w-full flex flex-align-items-center border-norm"
                     onClick={() =>
                         sendMessage(
                             pageMessage({
@@ -33,7 +33,7 @@ export const Developer: VFC = () => {
                 <Button
                     icon
                     shape="ghost"
-                    className="w100 flex flex-align-items-center border-norm"
+                    className="w-full flex flex-align-items-center border-norm"
                     onClick={() =>
                         sendMessage(
                             pageMessage({
