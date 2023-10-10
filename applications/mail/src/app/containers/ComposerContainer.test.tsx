@@ -3,7 +3,7 @@ import { act } from '@testing-library/react';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, MIME_TYPES } from '@proton/shared/lib/constants';
 import { Recipient } from '@proton/shared/lib/interfaces';
-import { FORWARDED_MESSAGE, ORIGINAL_MESSAGE } from '@proton/shared/lib/mail/messages';
+import { FORWARDED_MESSAGE } from '@proton/shared/lib/mail/messages';
 
 import { MESSAGE_ACTIONS } from '../constants';
 import { formatFullDate } from '../helpers/date';
@@ -85,7 +85,6 @@ ${Signature}
 
 Sent with ${protonmailAppName} secure email.
 
-${ORIGINAL_MESSAGE}
 On ${formatFullDate(new Date(0))}, ${Sender.Name} <${Sender.Address}> wrote:
 
 
