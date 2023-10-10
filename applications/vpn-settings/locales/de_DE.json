@@ -3677,7 +3677,7 @@
         "Dein Konto hat mindestens eine überfällige Rechnung. Dein Konto ist eingeschränkt. Bei anhaltender Nichtbezahlung werden deine E-Mails und Freigabelinks gesperrt. ${ payInvoiceLink }"
       ],
       "Your account will be updated once the payment is cleared.": [
-        "Ihr Konto wird aktualisiert, sobald die Zahlung abgeschlossen ist."
+        "Dein Konto wird aktualisiert, sobald die Zahlung abgeschlossen ist."
       ],
       "Your email will only be used for this one-time verification.": [
         "Deine E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
@@ -4183,7 +4183,7 @@
         "Ja, ich möchte dieses Konto und alle enthaltenen Daten endgültig und unwiderruflich löschen."
       ],
       "Your password (admin)": [
-        "Ihr Passwort (Admin)"
+        "Dein Passwort (Admin)"
       ]
     },
     "label": {
@@ -5699,6 +5699,16 @@
         "Wiederherstellungsmethode verwenden"
       ]
     },
+    "session_recovery:initiation:info": {
+      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
+        "Du kannst den Status deiner Anfrage jederzeit in der ${ accountAndPasswordSectionLink } in den Einstellungen überprüfen."
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "account and password section": [
+        "Konto- und Passwortübersicht"
+      ]
+    },
     "session_recovery:initiation:notification": {
       "Password reset confirmed": [
         "Passwortzurücksetzung bestätigt"
@@ -6006,10 +6016,10 @@
     },
     "State": {
       "Cancelling your subscription, please wait": [
-        "Abonnement wird abgebrochen, bitte warten"
+        "Die Kündigung deines Abonnements wird bearbeitet. Bitte warten."
       ],
       "Downgrading your account, please wait": [
-        "Ihr Konto wird zurückgestuft, bitte warten …"
+        "Dein Konto wird zurückgestuft, bitte warten …"
       ]
     },
     "Storage": {
