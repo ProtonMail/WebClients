@@ -210,6 +210,9 @@
       "Discard": [
         "Sil"
       ],
+      "Don't know your password?": [
+        "Parolanızı bilmiyor musunuz?"
+      ],
       "Done": [
         "Tamam"
       ],
@@ -387,6 +390,9 @@
       "No, thanks": [
         "Hayır, teşekkürler"
       ],
+      "Ok": [
+        "Tamam"
+      ],
       "OK": [
         "Tamam"
       ],
@@ -473,6 +479,9 @@
       ],
       "Search countries": [
         "Ülke ara"
+      ],
+      "See how": [
+        "Nasıl yapıldığını görün"
       ],
       "See plan features": [
         "Tarife özelliklerini görün"
@@ -2355,6 +2364,9 @@
       "Incorrect mailbox password. Please try again.": [
         "Posta kutusu parolası yanlış. Lütfen yeniden deneyin."
       ],
+      "Incorrect username": [
+        "Kullanıcı adı yanlış"
+      ],
       "Interval cannot be empty": [
         "Aralık boş olamaz"
       ],
@@ -3329,11 +3341,17 @@
       "Use your app password instead of your regular password if:": [
         "Aşağıdaki durumlarda normal parolanız yerine uygulama parolanızı kullanın:"
       ],
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        "Uygulama parolanız doğru. Normal parolanızı KULLANMAYIN."
+      ],
       "Your email account requires an app password to export your data.": [
         "E-posta hesabınızdaki verilerinizi dışa aktarmak için bir uygulama parolası gerekli."
       ],
       "Your email account requires one to export your data.": [
         "E-posta hesabınızın verilerini dışa aktarmak için gerekli."
+      ],
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "E-posta adresiniz ve uygulama parolanız doğru. Normal parolanızı KULLANMAYIN."
       ],
       "Your email address and password are correct.": [
         "E-posta adresiniz ve parolanız doğru."
@@ -5547,6 +5565,175 @@
       ],
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
+      ]
+    },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "Sıfırlamayı iptal et"
+      ],
+      "Reset password": [
+        "Parolayı sıfırla"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "Eski adres anahtarları ile hesap kurtarma işlemi yapılamaz"
+      ],
+      "Please generate keys before you try to change your password": [
+        "Lütfen parolanızı değiştirmeyi denemeden önce anahtarlar oluşturun"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } gün",
+        "${ timeRemaining.inDays } gün"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } saat",
+        "${ timeRemaining.inHours } saat"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Parola sıfırlama isteği onaylandı (${ user.Email }). Parolanızı sıfırlamak için ${ timeRemaining.inDays } gününüz var.",
+        "Parola sıfırlama isteği onaylandı (${ user.Email }). Parolanızı sıfırlamak için ${ timeRemaining.inDays } gününüz var."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Parola sıfırlama isteği onaylandı (${ user.Email }). Parolanızı sıfırlamak için ${ timeRemaining.inHours } saatiniz var.",
+        "Parola sıfırlama isteği onaylandı (${ user.Email }). Parolanızı sıfırlamak için ${ timeRemaining.inHours } saatiniz var."
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Parolanızı değiştirmek için oturumunuzun açık olduğu (isteğin yapıldığı oturum) aygıta geçin."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Bu iznin süresi ${ timeRemaining.inDays } gün sonra dolacak",
+        "Bu iznin süresi ${ timeRemaining.inDays } gün sonra dolacak"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Bu iznin süresi ${ timeRemaining.inHours } saat sonra dolacak",
+        "Bu iznin süresi ${ timeRemaining.inHours } saat sonra dolacak"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "${ boldEmail } hesabınızın parolasını ${ boldDaysRemaining } içinde değiştirebilirsiniz."
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Nasıl yapıldığını görün"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Parola kaydedildi"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Parolanızı sıfırlayın"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Parola sıfırlama işlemini iptal et"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Parola sıfırlama işlemini iptal etmek için geçerli parolanızı yazın. Başka bir değişiklik yapılmayacak."
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "Parola sıfırlama işlemi iptal edildi"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Parola sıfırlama işlemi iptal edilsin mi?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Parola sıfırlama isteği iptal edildi (${ user.Email }). Bu isteği siz yapmadıysanız, ${ changePasswordLink }."
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "hemen parolanızı değiştirin"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "İsteği iptal et"
+      ],
+      "Got it": [
+        "Anladım"
+      ],
+      "Learn more": [
+        "Ayrıntılı bilgi alın"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } saat kaldı",
+        "${ gracePeriodHoursRemaining } saat kaldı"
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "Parola sıfırlama isteğinde bulunmadıysanız, bu isteği şimdi iptal edebilirsiniz."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Parola sıfırlama isteğinde bulunuldu (${ user.Email }). Parolanızı ${ hoursRemaining } saat içinde değiştirebilirsiniz.",
+        "Parola sıfırlama isteğinde bulunuldu (${ user.Email }). Parolanızı ${ hoursRemaining } saat içinde değiştirebilirsiniz."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "Parolanızı sıfırlamaya çalışan kişinin gerçekten siz olduğunuzdan emin olmak için istekleri onaylamadan önce 72 saat bekleriz. Parolanızı ${ boldTimeLeft } içinde değiştirebilirsiniz. ${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "${ boldEmail } için bir parola sıfırlama isteğinde bulunuldu."
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "İsteği görüntüle"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "Parola sıfırlama isteğinde bulunuldu"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Oturumu kapat"
+      ],
+      "Stay signed in": [
+        "Oturum açık kalsın"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } saat",
+        "${ gracePeriodHoursRemaining } saat"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } işlemi yapılabilir."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Parolanızı sıfırlamadan önce oturumu kapattıysanız, hesabınıza erişimi kaybedebilirsiniz."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Parolanızı sıfırlamadan oturumu kapattıysanız, hesabınıza erişimi kaybedebilirsiniz."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Parolanızı ${ boldTimeLeft } içinde sıfırlayabilirsiniz."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Parola sıfırlama"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Parolayı sıfırlamadan oturum kapatılsın mı?"
       ]
     },
     "Settings update growler warning": {
