@@ -335,6 +335,9 @@
       "Discard": [
         "მოცილება"
       ],
+      "Don't know your password?": [
+        "არ იცით თქვენი პაროლი?"
+      ],
       "Don't show again": [
         "აღარ მაჩვენო"
       ],
@@ -1500,6 +1503,12 @@
       ],
       "Share with anyone": [
         "ყველასთვის გაზიარება"
+      ]
+    },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "კიდევ ${ remainingItems }-ის ჩვენება",
+        "კიდევ ${ remainingItems }-ის ჩვენება"
       ]
     },
     "Calendar share permission label": {
@@ -5010,11 +5019,17 @@
       "Use your app password instead of your regular password if:": [
         "შეგიძლიათ ჩვეულებრივი პაროლის მაგიერ აპის პაროლი გამოიყენოთ, თუ:"
       ],
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        "აპლიკაციის პაროლი სწორია. ${ boldNot } გამოიყენოთ თქვენი ჩვეულებრივი პაროლი."
+      ],
       "Your email account requires an app password to export your data.": [
         "შეიყვანეთ თქვენი ანგარიშიდან მონაცემების გამოტანის პაროლი."
       ],
       "Your email account requires one to export your data.": [
         "შეიყვანეთ თქვენი ანგარიშიდან მონაცემების გამოტანის პაროლი."
+      ],
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "ელფოსტის მისამართი და აპლიკაციის პაროლი სწორია. ${ boldNot } გამოიყენოთ თქვენი ჩვეულებრივი პაროლი."
       ],
       "Your email address and password are correct.": [
         "თქვენი ელფოსტის მისამართი და პაროლი სწორია."
@@ -6395,9 +6410,6 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "შეამოწმეთ თქვენი ფაილი, ან სცადეთ ჩვენი ${ csvTemplateButton } გამოიყენოთ."
-      ],
-      "Please contact the administrator of the organisation to manage the subscription.": [
-        "გამოწერის სამართავად დაუკავშირდით ორგანიზაციის ადმინისტრატორს."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "შეიყვანეთ 12-სიტყვიანი აღსადგენი ფრაზა."
@@ -8581,6 +8593,12 @@
       "Time zone": [
         "დროის სარტყელი"
       ],
+      "To: ${ to }": [
+        "მიმღები: ${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "მიმღები: ${ toEmail }"
+      ],
       "Token name": [
         "კოდის სახელი"
       ],
@@ -8619,6 +8637,9 @@
       ],
       "Verification code": [
         "შემოწმების კოდი"
+      ],
+      "Verify keys with Key Transparency": [
+        "გასაღებების გადამოწმება Key Transparency-ით"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "ვწუხვართ, რომ მიდიხართ. აგვიხსენით, რატომ გვტოვებთ, რომ უკეთესები გავხდეთ."
@@ -8996,7 +9017,7 @@
     },
     "Maintenance mode": {
       "Please check back in a few minutes.": [
-        "რამდენიმე წუთში, გთხოვთ, თავიდან სცადეთ."
+        "რამდენიმე წუთში გთხოვთ, თავიდან სცადეთ."
       ],
       "This feature is temporarily unavailable": [
         "ეს ფუნქცია დროებით მიუწვდომელია"
@@ -9140,6 +9161,10 @@
       ]
     },
     "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "ყოველ ${ interval } თვეში ${ onDayString }",
+        "ყოველ ${ interval } თვეში ${ onDayString }"
+      ],
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
         "ყოველ ${ interval } თვეში ერთხელ, ${ onDayString }, ${ timesString }-ზე",
         "ყოველ ${ interval } თვეში ერთხელ, ${ onDayString }, ${ timesString }-ზე"
@@ -10675,9 +10700,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "${ PASS_APP_NAME } benefits": [
-        "${ PASS_APP_NAME }-ის უპირატესობები"
-      ],
       "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
         "${ PASS_APP_NAME } ხელმისაწვდომია, როგორც ბრაუზერის გაფართოება FireFox Add-on-ებში."
       ],
@@ -11222,11 +11244,17 @@
       ]
     },
     "session_recovery:available:action": {
+      "Cancel reset": [
+        "საწყის მნიშვნელობებზე დაბრუნების გაუქმება"
+      ],
       "Reset password": [
         "პაროლის აღდგენა"
       ]
     },
     "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "ანგარიშის აღდგენა მოძველებული მისამართის გასაღებებისთვის ხელმისაწვდომი არაა"
+      ],
       "Please generate keys before you try to change your password": [
         "პაროლის შეცვლამდე საჭიროა გასაღებების გენერაცია"
       ]
@@ -11239,6 +11267,22 @@
       "${ timeRemaining.inHours } hour": [
         "${ timeRemaining.inHours } საათი",
         "${ timeRemaining.inHours } საათი"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "პაროლის შეცვლის მოთხოვნა დაშვებულია (${ user.Email }). გაქვთ ${ timeRemaining.inDays } დღე, პაროლი შეცვალოთ.",
+        "პაროლის შეცვლის მოთხოვნა დაშვებულია (${ user.Email }). გაქვთ ${ timeRemaining.inDays } დღე, პაროლი შეცვალოთ."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "პაროლის შეცვლის მოთხოვნა დაშვებულია (${ user.Email }). გაქვთ ${ timeRemaining.inHours } საათი, პაროლი შეცვალოთ.",
+        "პაროლის შეცვლის მოთხოვნა დაშვებულია (${ user.Email }). გაქვთ ${ timeRemaining.inHours } საათი, პაროლი შეცვალოთ."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "ამ წვდომის ვადა ${ timeRemaining.inDays } დღეში იწურება",
+        "ამ წვდომის ვადა ${ timeRemaining.inDays } დღეში იწურება"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "ამ წვდომის ვადა ${ timeRemaining.inHours } საათში იწურება",
+        "ამ წვდომის ვადა ${ timeRemaining.inHours } საათში იწურება"
       ]
     },
     "session_recovery:available:link": {
@@ -11287,25 +11331,61 @@
         "გაიგეთ მეტი"
       ]
     },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "კიდევ ${ gracePeriodHoursRemaining } საათი",
+        "კიდევ ${ gracePeriodHoursRemaining } საათი"
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "თუ პაროლის შეცვლა თქვენ არ მოგითხოვიათ, გააუქმეთ ეს მოთხოვნა."
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "მივიღეთ პაროლის შეცვლს მოთხოვნა ${ boldEmail }-სთვის."
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "მოთხოვნის ნახვა"
+      ]
+    },
     "session_recovery:in_progress:title": {
       "Password reset requested": [
         "პაროლის შეცვლა მოთხოვნილია"
       ]
     },
+    "session_recovery:initiation:link": {
+      "account and password section": [
+        "მომხმარებლისა და პაროლის სექცია"
+      ]
+    },
     "session_recovery:sign_out:action": {
       "Sign out": [
         "გასვლა"
+      ],
+      "Stay signed in": [
+        "სისტემაში დარჩენა"
       ]
     },
     "session_recovery:sign_out:info": {
       "${ gracePeriodHoursRemaining } hour": [
         "${ gracePeriodHoursRemaining } საათი",
         "${ gracePeriodHoursRemaining } საათი"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } ახლა ხელმისაწვდომია."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "პაროლის შეცვლის დაწყება ${ boldTimeLeft }-ში შეგეძლებათ."
       ]
     },
     "session_recovery:sign_out:link": {
       "Password reset": [
         "პაროლის შეცვლა"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "გახვალთ პაროლის შეცვლის გარეშე?"
       ]
     },
     "Settings description": {
@@ -13985,6 +14065,12 @@
       ],
       "Weekly on ${ multipleDaysString }": [
         "კვირაში ერთხელ ${ multipleDaysString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "ყოველკვირეულად, ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "ყოველკვირეულად, ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
         "ყოველ კვირას, ყოველდღე"

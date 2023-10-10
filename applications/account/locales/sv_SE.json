@@ -4381,6 +4381,9 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Är du säker på att du vill ta bort säkerhetsnyckel ${ name }?"
       ],
+      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
+        "Om den är aktiverad tillåter den att registrera inbyggda enheter (som Windows Hello, Touch ID, Face ID eller interna TPM) förutom externa hårdvarusäkerhetsnycklar"
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Infoga en säkerhetsnyckel länkat till ditt ${ BRAND_NAME }-konto."
       ],
@@ -4979,7 +4982,7 @@
         "${ CONTACTS_APP_NAME } stöder inte ${ forNow }:"
       ],
       "for now": [
-        "för närvarande"
+        "tills vidare"
       ]
     },
     "Import error": {
@@ -6411,9 +6414,6 @@
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Kontrollera din fil, eller prova använda vår ${ csvTemplateButton }."
       ],
-      "Please contact the administrator of the organisation to manage the subscription.": [
-        "Kontakta administratören för organisationen för att hantera prenumerationen."
-      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Ange återställningsfrasen på 12 ord som är associerat med ditt konto."
       ],
@@ -6776,7 +6776,7 @@
         "Denna länk kan vara en homograf-attack och kan inte öppnas av Edge-webbläsaren. Om du är säker på att länken är legitim, använd en annan webbläsare för att öppna den."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Denna länk kan vara en homograf-attack. Vänligen verifiera att detta är länken du vill besöka, annars öppna den ej."
+        "Denna länk kan vara en homografisk attack. Kontrollera att det är denna länk du vill besöka, eller öppna den inte."
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Denna token kommer inte vara tillgänglig efter att du stänger detta fönster och du bör inte dela den med någon."
@@ -7100,7 +7100,7 @@
         "När de prenumererar på ett paket erhåller du krediter för att använda i din prenumeration."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "När du aktiverar tvåfaktors-autentisering kommer vi att erbjuda återställningskoder som du kan använda för att logga in om du förlorar åtkomst till din autentiserings-app."
+        "När du ställer in tvåfaktorsautentisering tillhandahåller vi återställningskoder som du kan använda för att logga in om du förlorar åtkomsten till din autentiseringsapp."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "När din prenumeration förnyas kommer vi att använda alla tillgängliga krediter innan vi debiterar betalningsmetoden ovan."
@@ -7140,6 +7140,10 @@
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Du är för närvarande inloggad som ${ user.Name } (${ user.Email })."
+      ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "Du använder för närvarande ${ ipCount } av ${ ipAddresses } tillgänglig dedikerad server.",
+        "Du använder för närvarande ${ ipCount } av ${ ipAddresses } tillgängliga dedikerade servrar."
       ],
       "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
         "Du använder för närvarande ${ organization.UsedMembers } av din ${ organization.MaxMembers } tillgängliga användarlicens.",
@@ -8636,6 +8640,9 @@
       ],
       "Verification code": [
         "Verifieringskod"
+      ],
+      "Verify keys with Key Transparency": [
+        "Verifiera nycklar med Key Transparency"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Tråkigt att du lämnar oss. Vill du vara snäll och berätta varför du lämnar oss för att hjälpa oss bli bättre."
@@ -10704,8 +10711,8 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "${ PASS_APP_NAME } benefits": [
-        "Förmåner med ${ PASS_APP_NAME }"
+      "${ appName } benefits": [
+        "Förmåner med ${ appName }"
       ],
       "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
         "${ PASS_APP_NAME } är tillgängligt som ett webbläsartillägg på Firefox-tillägg."
