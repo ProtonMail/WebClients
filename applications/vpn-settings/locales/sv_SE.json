@@ -2311,6 +2311,9 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Är du säker på att du vill ta bort säkerhetsnyckel ${ name }?"
       ],
+      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
+        "Om den är aktiverad tillåter den att registrera inbyggda enheter (som Windows Hello, Touch ID, Face ID eller interna TPM) förutom externa hårdvarusäkerhetsnycklar"
+      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Infoga en säkerhetsnyckel länkat till ditt ${ BRAND_NAME }-konto."
       ],
@@ -3535,7 +3538,7 @@
         "Vi uppgraderar ditt nuvarande paket till ett förbättrat paket som erbjuder mer för samma pris. Medan våra system uppdateras kommer du inte att kunna ändra det. Vi skickar e-post till dig så fort det är klart."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "När du aktiverar tvåfaktors-autentisering kommer vi att erbjuda återställningskoder som du kan använda för att logga in om du förlorar åtkomst till din autentiserings-app."
+        "När du ställer in tvåfaktorsautentisering tillhandahåller vi återställningskoder som du kan använda för att logga in om du förlorar åtkomsten till din autentiseringsapp."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "När din prenumeration förnyas kommer vi att använda alla tillgängliga krediter innan vi debiterar betalningsmetoden ovan."
@@ -3563,6 +3566,10 @@
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Du är för närvarande inloggad som ${ user.Name } (${ user.Email })."
+      ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "Du använder för närvarande ${ ipCount } av ${ ipAddresses } tillgänglig dedikerad server.",
+        "Du använder för närvarande ${ ipCount } av ${ ipAddresses } tillgängliga dedikerade servrar."
       ],
       "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
         "Du använder för närvarande ${ organization.UsedMembers } av din ${ organization.MaxMembers } tillgängliga användarlicens.",

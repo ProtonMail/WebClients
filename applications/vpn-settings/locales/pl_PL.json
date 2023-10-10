@@ -146,6 +146,9 @@
       "Discard": [
         "Odrzuć"
       ],
+      "Don't know your password?": [
+        "Nie pamiętasz hasła?"
+      ],
       "Done": [
         "Gotowe"
       ],
@@ -287,6 +290,9 @@
       "OK": [
         "OK"
       ],
+      "Ok": [
+        "Ok"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otwórz ustawienia ${ CALENDAR_APP_NAME }"
       ],
@@ -379,6 +385,9 @@
       ],
       "Search countries": [
         "Szukaj krajów"
+      ],
+      "See how": [
+        "Zobacz jak"
       ],
       "See plan features": [
         "Zobacz funkcje planu"
@@ -1759,6 +1768,9 @@
       ],
       "Incorrect password": [
         "Hasło jest nieprawidłowe"
+      ],
+      "Incorrect username": [
+        "Nazwa użytkownika jest nieprawidłowa"
       ],
       "Invalid ${ name } code": [
         "Kod ${ name } jest nieprawidłowy"
@@ -5679,6 +5691,273 @@
       ],
       "to be created": [
         "do utworzenia"
+      ]
+    },
+    "session_recovery:available:action": {
+      "Cancel password reset": [
+        "Anuluj resetowanie hasła"
+      ],
+      "Cancel reset": [
+        "Anuluj resetowanie hasła"
+      ],
+      "Reset password": [
+        "Resetowanie hasła"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "Odzyskiwanie konta nie jest dostępne dla starszych kluczy adresu"
+      ],
+      "Please generate keys before you try to change your password": [
+        "Wygeneruj klucze, zanim zmienisz hasło"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } dzień",
+        "${ timeRemaining.inDays } dni",
+        "${ timeRemaining.inDays } dni",
+        "${ timeRemaining.inDays } dnia"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } godzinę",
+        "${ timeRemaining.inHours } godziny",
+        "${ timeRemaining.inHours } godzin",
+        "${ timeRemaining.inHours } godziny"
+      ],
+      "Didn’t make this request?": [
+        "To nie jest Twoje żądanie?"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Jeśli nie prosiłeś o zresetowanie hasła, anuluj prośbę teraz."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Pozostał ${ timeRemaining.inDays } dzień na zresetowanie hasła.",
+        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Pozostały ${ timeRemaining.inDays } dni na zresetowanie hasła.",
+        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Pozostało ${ timeRemaining.inDays } dni na zresetowanie hasła.",
+        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Pozostało ${ timeRemaining.inDays } dnia na zresetowanie hasła."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Pozostała ${ timeRemaining.inHours } godzina na zresetowanie hasła.",
+        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Pozostały ${ timeRemaining.inHours } godziny na zresetowanie hasła.",
+        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Pozostało ${ timeRemaining.inHours } godzin na zresetowanie hasła.",
+        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Pozostało ${ timeRemaining.inHours } godziny na zresetowanie hasła."
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Przejdź do zalogowanego urządzenia, na którym zainicjowano żądanie zmiany hasła."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Uprawnienie wygaśnie za ${ timeRemaining.inDays } dzień",
+        "Uprawnienie wygaśnie za ${ timeRemaining.inDays } dni",
+        "Uprawnienie wygaśnie za ${ timeRemaining.inDays } dni",
+        "Uprawnienie wygaśnie za ${ timeRemaining.inDays } dnia"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Uprawnienie wygaśnie za ${ timeRemaining.inHours } godzinę",
+        "Uprawnienie wygaśnie za ${ timeRemaining.inHours } godziny",
+        "Uprawnienie wygaśnie za ${ timeRemaining.inHours } godzin",
+        "Uprawnienie wygaśnie za ${ timeRemaining.inHours } godziny"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Możesz zmienić hasło do konta ${ boldEmail } przez ${ boldDaysRemaining }."
+      ],
+      "You can now reset your password": [
+        "Możesz zresetować hasło"
+      ],
+      "You can reset your password until ${ boldDate }.": [
+        "Możesz zresetować hasło do ${ boldDate }."
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Zobacz jak"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Hasło zostało zapisane"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Resetowanie hasła"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Anuluj resetowanie hasła"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Wpisz obecne hasło, aby anulować proces resetowania hasła."
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "Resetowanie hasła zostało anulowane"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Anulować resetowanie hasła?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Żądanie zresetowania hasła konta ${ user.Email } zostało anulowane. Jeśli żądanie nie zostało wysłane przez Ciebie, ${ changePasswordLink }."
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "zmień hasło"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel password reset": [
+        "Anuluj resetowanie hasła"
+      ],
+      "Cancel request": [
+        "Anuluj żądanie"
+      ],
+      "Got it": [
+        "Ok"
+      ],
+      "Learn more": [
+        "Dowiedz się więcej"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } godzinę",
+        "${ gracePeriodHoursRemaining } godziny",
+        "${ gracePeriodHoursRemaining } godzin",
+        "${ gracePeriodHoursRemaining } godziny"
+      ],
+      "Didn’t make this request?": [
+        "To nie jest Twoje żądanie?"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Jeśli nie prosiłeś o zresetowanie hasła, anuluj prośbę teraz."
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "Jeśli żądanie zmiany hasła nie zostało wysłane przez Ciebie, anuluj je."
+      ],
+      "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
+        "Reset hasła dostępny od ${ boldDate }. Daje to czas na anulowanie nieuczciwych żądań."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "Aby upewnić się, że to Ty próbujesz zresetować hasło, czekamy 72 godziny przed zatwierdzeniem żądań. Hasło możesz zmienić za ${ boldTimeLeft }. ${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "Otrzymaliśmy żądanie zresetowanie hasła konta ${ boldEmail }."
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "Możesz zmienić hasło za ${ gracePeriodHoursRemaining } godzinę",
+        "Możesz zmienić hasło za ${ gracePeriodHoursRemaining } godziny",
+        "Możesz zmienić hasło za ${ gracePeriodHoursRemaining } godzin",
+        "Możesz zmienić hasło za ${ gracePeriodHoursRemaining } godziny"
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "Pokaż żądanie"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "Żądanie zresetowania hasła zostało wysłane"
+      ]
+    },
+    "session_recovery:initiation:action": {
+      "Got it": [
+        "Ok"
+      ],
+      "Request password reset": [
+        "Prośba Resetowania hasła"
+      ],
+      "Use recovery method": [
+        "Użyj metody odzyskiwania"
+      ]
+    },
+    "session_recovery:initiation:info": {
+      "For security reasons, you’ll have to wait **72 hours** before you can change your password.": [
+        "Ze względów bezpieczeństwa będziesz musiał odczekać **72 godziny**, zanim będziesz mógł zmienić hasło."
+      ],
+      "If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.": [
+        "Jeśli masz skonfigurowaną **metodę odzyskiwania**, spróbuj, zamiast tego odzyskać konto. Umożliwi to natychmiastową zmianę hasła."
+      ],
+      "We will contact you again when the password reset is available.": [
+        "Skontaktujemy się z tobą ponownie, kiedy będzie dostępny reset hasła."
+      ],
+      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
+        "Status żądania można sprawdzić w dowolnym momencie w sekcji ${ accountAndPasswordSectionLink } ustawień."
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "account and password section": [
+        "sekcja dotycząca konta i hasła"
+      ]
+    },
+    "session_recovery:initiation:notification": {
+      "Password reset confirmed": [
+        "Resetowanie hasła zostało potwierdzone"
+      ]
+    },
+    "session_recovery:initiation:title": {
+      "Request password reset?": [
+        "Prośba Resetowania hasła?"
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "Możesz zresetować hasło za ${ gracePeriodHoursRemaining } godzinę",
+        "Możesz zresetować hasło za ${ gracePeriodHoursRemaining } godziny",
+        "Możesz zresetować hasło za ${ gracePeriodHoursRemaining } godzin",
+        "Możesz zresetować hasło za ${ gracePeriodHoursRemaining } godziny"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Wyloguj"
+      ],
+      "Stay signed in": [
+        "Pozostań zalogowany"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } jest dostępne."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Wylogowanie się przed zresetowaniem hasła może spowodować utratę dostępu do konta."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Wylogowanie się bez zresetowania hasła może spowodować utratę dostępu do konta."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Hasło będziesz mógł zresetować za ${ boldTimeLeft }."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Resetowanie hasła"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Wylogować się bez resetowania hasła?"
+      ]
+    },
+    "session_recovery:status:info": {
+      "Available": [
+        "Dostępne"
+      ],
+      "Pending": [
+        "Oczekujące"
+      ]
+    },
+    "session_recovery:status:title": {
+      "Password reset request": [
+        "Żądanie resetowania hasła"
       ]
     },
     "Shared calendar; Info about calendar owner": {
