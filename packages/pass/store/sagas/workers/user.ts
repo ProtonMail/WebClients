@@ -11,21 +11,21 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import type { User } from '@proton/shared/lib/interfaces/User';
 
 import type { FeatureFlagsResponse } from '../../../types/api/features';
-import type { AddressState, UserFeatureState, UserPlanState, UserState } from '../../reducers';
+import type { AddressState, FeatureFlagState, UserPlanState, UserState } from '../../reducers';
 import { selectUserState } from '../../selectors';
 import type { State } from '../../types';
 
-export const getUserFeatures = async (
+export const getFeatureFlags = async (
     { features }: UserState,
     options?: { force: boolean }
-): Promise<UserFeatureState> => {
+): Promise<FeatureFlagState> => {
     try {
         if (!options?.force && features && getEpoch() - (features?.requestedAt ?? 0) < UNIX_DAY) return features;
 
         logger.info(`[Saga::UserFeatures] syncing user feature flags`);
         const { toggles } = await api<FeatureFlagsResponse>({ url: `feature/v2/frontend`, method: 'get' });
 
-        return PassFeaturesValues.reduce<UserFeatureState>(
+        return PassFeaturesValues.reduce<FeatureFlagState>(
             (features, feat) => {
                 features[feat] = toggles.some((toggle) => toggle.name === feat);
                 return features;
@@ -70,8 +70,8 @@ export const getUserData = async (state: State): Promise<RequiredNonNull<UserSta
         await getUserPlan(cached),
 
         /* sync feature flags */
-        await getUserFeatures(cached),
-    ])) as [User, AddressState, string, UserPlanState, UserFeatureState];
+        await getFeatureFlags(cached),
+    ])) as [User, AddressState, string, UserPlanState, FeatureFlagState];
 
     return { user, plan, addresses, eventId, features };
 };
