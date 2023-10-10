@@ -5,11 +5,12 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { setUserFeatures, setUserPlan, syncFailure, syncIntent, syncSuccess } from '../actions';
 import { isStateResetAction } from '../actions/utils';
 import { asIfNotOptimistic } from '../optimistic/selectors/select-is-optimistic';
-import type { UserFeatureState } from '../reducers';
+import type { FeatureFlagState } from '../reducers';
 import { type UserPlanState, reducerMap } from '../reducers';
+import { selectFeatureFlags } from '../selectors';
 import type { State, WorkerRootSagaOptions } from '../types';
 import { SyncType, type SynchronizationResult, synchronize } from './workers/sync';
-import { getUserFeatures, getUserPlan } from './workers/user';
+import { getFeatureFlags, getUserPlan } from './workers/user';
 
 function* syncWorker(options: WorkerRootSagaOptions) {
     const state = (yield select()) as State;
@@ -20,14 +21,15 @@ function* syncWorker(options: WorkerRootSagaOptions) {
             const plan: UserPlanState = yield getUserPlan(state.user, { force: true });
             yield put(setUserPlan(plan));
 
-            const feature: UserFeatureState = yield getUserFeatures(state.user, { force: true });
-            yield put(setUserFeatures(feature));
+            const features: FeatureFlagState = yield getFeatureFlags(state.user, { force: true });
+            yield put(setUserFeatures(features));
         });
 
         const sync: SynchronizationResult = yield call(
             synchronize,
             asIfNotOptimistic(state, reducerMap),
             SyncType.FULL,
+            yield select(selectFeatureFlags),
             options
         );
 
