@@ -248,6 +248,9 @@
       "Create folder": [
         "Opret mappe"
       ],
+      "Create Gateway": [
+        "Opret gateway"
+      ],
       "Create label": [
         "Opret etiket"
       ],
@@ -286,6 +289,9 @@
       ],
       "Delete and confirm": [
         "Slet og bekræft"
+      ],
+      "Delete Gateway": [
+        "Slet gateway"
       ],
       "Delete link": [
         "Slet link"
@@ -370,6 +376,9 @@
       ],
       "Edit email address": [
         "Rediger e-mailadresse"
+      ],
+      "Edit Gateway": [
+        "Redigér gateway"
       ],
       "Edit label": [
         "Redigér etikette"
@@ -968,6 +977,9 @@
       "Upgrade now": [
         "Opgradér nu"
       ],
+      "Upgrade to Business": [
+        "Opgrader til Business"
+      ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Opgrader for at aktivere ${ PROTON_SENTINEL_NAME }"
       ],
@@ -1036,6 +1048,9 @@
       ],
       "Yes, undo": [
         "Ja, annuller"
+      ],
+      "Your server will be provisioned in the next days": [
+        "Din server vil blive etableret i løbet af de næste dage."
       ],
       "Zoom in": [
         "Zoom ind"
@@ -3125,6 +3140,15 @@
       "IMAP server is required": [
         "IMAP-server er påkrævet."
       ],
+      "Impossible to create the gateway": [
+        "Ikke muligt at skabe gatewayen"
+      ],
+      "Impossible to edit the gateway": [
+        "Ikke muligt at redigere gatewayen"
+      ],
+      "Impossible to rename the gateway": [
+        "Ikke muligt at omdøbe gatewayen"
+      ],
       "Incorrect login credentials. Please try again.": [
         "Forkerte loginoplysninger. Prøv venligst igen."
       ],
@@ -4092,6 +4116,10 @@
       "Add": [
         "Tilføj"
       ],
+      "Add (${ numberOfAddedServers })": [
+        "Tilføj (${ numberOfAddedServers })",
+        "Tilføj (${ numberOfAddedServers })"
+      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Forbindelse for op til ${ plusVpnConnections } enhed",
         "Forbindelse for op til ${ plusVpnConnections } enheder"
@@ -4379,14 +4407,23 @@
       "account logins": [
         "konto-logins"
       ],
+      "Auto-forward Gmail": [
+        "Videresend automatisk Gmail"
+      ],
       "auto-forwarding": [
         "automatisk videresendelse"
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "Skift ${ strongText } til din ${ BRAND_NAME }-adresse"
       ],
       "Discover how our ${ strongText } protect you": [
         "Se, hvordan vores ${ strongText } beskytter dig"
       ],
       "Get the ${ strongText } on Android or iOS": [
         "Få ${ strongText } til Android eller iOS"
+      ],
+      "Get the App": [
+        "Hent appen"
       ],
       "privacy features": [
         "privatlivsfunktioner"
@@ -4458,6 +4495,9 @@
       "Checkout": [
         "Betaling"
       ],
+      "Country": [
+        "Land"
+      ],
       "Create your account": [
         "Opret din konto"
       ],
@@ -4470,6 +4510,9 @@
       "Folders": [
         "Mapper"
       ],
+      "IP address": [
+        "IP-adresse"
+      ],
       "Key type": [
         "Nøgletype"
       ],
@@ -4478,6 +4521,9 @@
       ],
       "Location": [
         "Placering"
+      ],
+      "Members": [
+        "Medlemmer"
       ],
       "Name": [
         "Navn"
@@ -4496,6 +4542,15 @@
       ],
       "Select your pricing plan": [
         "Vælg din betalingsplan"
+      ],
+      "Server": [
+        "Server"
+      ],
+      "Server load": [
+        "Serverbelastning"
+      ],
+      "Servers": [
+        "Servere"
       ],
       "Status": [
         "Status"
@@ -5012,6 +5067,10 @@
         "${ providerFoldersNumLocalized } etiket fundet i Gmail",
         "${ providerFoldersNumLocalized } etiketter fundet i Gmail"
       ],
+      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
+        "${ provisioningCounter } server er stadig ved at blive sat op. Det tager normalt omkring ${ provisioningDuration }.",
+        "${ provisioningCounter } servere er stadig ved at blive sat op. Det tager normalt omkring ${ provisioningDuration }."
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } af ${ providerCalendars.length } kalender",
         "${ selectedCalendarsTotal } af ${ providerCalendars.length } kalendere"
@@ -5155,6 +5214,18 @@
       "Add multiple users to your organization at once.": [
         "Tilføj flere brugere til din organisation på én gang."
       ],
+      "Add server (${ availableAddedCount } available)": [
+        "Tilføj server (${ availableAddedCount } tilgængelig)",
+        "Tilføje server (${ availableAddedCount } tilgængelige)"
+      ],
+      "Adding ${ addedServerCount } gateway server": [
+        "Tilføjer ${ addedServerCount } gateway-server",
+        "Tilføjer ${ addedServerCount } gateway-servere"
+      ],
+      "Adding gateway server: ${ serverNumber } / ${ total }": [
+        "Tilføjer gateway-server: ${ serverNumber } / ${ total }",
+        "Tilføjer gateway-servere: ${ serverNumber } / ${ total }"
+      ],
       "Additional options": [
         "Yderligere indstillinger"
       ],
@@ -5278,6 +5349,9 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Er du sikker på, at du vil fjerne administrative privilegier fra denne bruger?"
+      ],
+      "Ask your organisation admin to setup Gateways.": [
+        "Bed din organisationsadministrator om at opsætte gateways."
       ],
       "Attention required": [
         "Opmærksomhed påkrævet"
@@ -5403,6 +5477,13 @@
       "Create in": [
         "Opret i"
       ],
+      "Create your first Gateway": [
+        "Opret din første gateway"
+      ],
+      "Creating gateway server: ${ serverNumber } / ${ total }": [
+        "Opretter gateway-server: ${ serverNumber } / ${ total }",
+        "Opretter gateway-servere: ${ serverNumber } / ${ total }"
+      ],
       "Creating your account": [
         "Opretter din konto"
       ],
@@ -5453,6 +5534,10 @@
       ],
       "Delete link?": [
         "Slet link?"
+      ],
+      "Deleting ${ deletedServerCount } gateway server": [
+        "Sletter ${ deletedServerCount } gateway-server",
+        "Sletter ${ deletedServerCount } gateway-servere"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
@@ -5545,6 +5630,9 @@
       "Encryption setting updated": [
         "Krypteringsindstilling opdateret"
       ],
+      "Enhance your network security": [
+        "Styrk din netværkssikkerhed"
+      ],
       "Enter key manually instead": [
         "Indtast nøgle manuelt i stedet"
       ],
@@ -5625,6 +5713,9 @@
       ],
       "free up space by deleting older messages or other data": [
         "frigør plads ved at slette ældre beskeder eller andre data"
+      ],
+      "Gateways": [
+        "Gateways"
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Oprettelse af en ny gendannelsessætning vil deaktivere din gamle."
@@ -5823,6 +5914,9 @@
       "Large imports can take several days.": [
         "Store importer kan tage adskillige dage."
       ],
+      "Lean more about gateways": [
+        "Lær mere om gateways"
+      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Lær, hvordan du logger på ${ VPN_APP_NAME } med tredjeparts VPN-applikationer."
       ],
@@ -5895,6 +5989,18 @@
       "Multi-user support not enabled.": [
         "Understøttelse af flere brugere ikke aktiveret."
       ],
+      "Must be between 3 and 20 characters long.": [
+        "Skal være mellem 3 og 20 tegn lang."
+      ],
+      "Must contain only letters, digits, and dashes (-).": [
+        "Må kun indeholde bogstaver, cifre og bindestreger (-)."
+      ],
+      "Must not contain spaces.": [
+        "Må ikke indeholde mellemrum."
+      ],
+      "Must start with a letter.": [
+        "Skal begynde med et bogstav"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Navngiv din nye mappe og vælg den overordnede mappe, du vil placere den i. Hvis du ikke vælger en overordnet mappe, vil denne nye mappe blive oprettet som en topniveaumappe."
       ],
@@ -5921,6 +6027,12 @@
       ],
       "No folder selected": [
         "Ingen mappe valgt"
+      ],
+      "No gateways": [
+        "Ingen gateways"
+      ],
+      "No Gateways yet": [
+        "Ingen gateways endnu"
       ],
       "No imports or forwarding history.": [
         "Ingen importer eller videresendelseshistorik."
@@ -5987,6 +6099,9 @@
       ],
       "Organization size": [
         "Organisationsstørrelse"
+      ],
+      "Organize your dedicated servers into Gateways and decide which members can access them.": [
+        "Organiser dine dedikerede servere i gateways, og bestem, hvilke medlemmer der kan få adgang til dem."
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Der findes andre administratorer i din organisation. Du er selv ansvarlig for at formidle den nye adgangskode til dem."
@@ -6059,9 +6174,6 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Tjek venligst din fil, eller prøv at bruge vores ${ csvTemplateButton }."
-      ],
-      "Please contact the administrator of the organisation to manage the subscription.": [
-        "Kontakt venligst din administrator for at håndtere abonnementet."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Indtast 12-ords gendannelsessætningen, der er knyttet til din konto."
@@ -6691,6 +6803,9 @@
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Vi anbefaler at have mindst 2 servere, for at sikre redundans."
       ],
+      "We recommend having multiple servers in different locations to provide redundancy.": [
+        "Vi anbefaler at have flere servere på forskellige steder for at sikre redundans."
+      ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Vi anbefaler, at man underretter organisationens medlemmer og beder dem om at konfigurere 2FA til deres konti, før man gennemtvinger brugen af 2FA."
       ],
@@ -6751,8 +6866,14 @@
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Når dit abonnement fornyes, vil alle tilgængelige kreditter blive brugt først, før vi laver en opkrævning på dine betalingsmetoder ovenfor."
       ],
+      "Whole organization": [
+        "Hele organisation"
+      ],
       "Why?": [
         "Hvorfor?"
+      ],
+      "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "Med et Business- eller Enterprise-abonnement kan du købe ${ boldDedicatedServers } til din organisation og opsætte ${ boldGateways } for at kontrollere, hvilke brugere der har adgang til dem."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
         "Med en krypteret ${ BRAND_NAME }-adresse kan du bruge alle ${ BRAND_NAME_TWO }-tjenester"
@@ -6781,6 +6902,10 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Du er i øjeblikket logget ind som ${ user.Name } (${ user.Email })."
       ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "Du bruger i øjeblikket ${ ipCount } af din ${ ipAddresses } tilgængelig dedikeret server.",
+        "Du bruger i øjeblikket ${ ipCount } af dine ${ ipAddresses } tilgængelige dedikerede servere."
+      ],
       "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
         "Du bruger i øjeblikket ${ organization.UsedMembers } af din ${ organization.MaxMembers } tilgængelige brugerlicens.",
         "Du bruger i øjeblikket ${ organization.UsedMembers } af dine ${ organization.MaxMembers } tilgængelige brugerlicenser."
@@ -6802,6 +6927,9 @@
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Du kan aktivere godkendelseslogin for at se, hvornår din konto tilgås, og fra hvilken IP-adresse. Vi registrerer den IP-adresse, der tilgår kontoen, og tidspunktet, samt mislykkede forsøg."
+      ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
+        "Du kan straks låse ovenstående opsætning op ved at tilføje ${ specificCountryCount } til antallet af IP-adresser i dit abonnement, eller kontakte os for skræddersyede løsninger."
       ],
       "You can import one data type at a time.": [
         "Du kan importere én datatype ad gangen."
@@ -7836,6 +7964,9 @@
       "From: ${ fromEmail }": [
         "Fra: ${ fromEmail }"
       ],
+      "Gateway name": [
+        "Gateway-navn"
+      ],
       "Gift code": [
         "Gavekode"
       ],
@@ -8637,6 +8768,11 @@
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "Importer alle beskeder fra ${ selectedItemsToImportCount } ud af ${ itemsToImportCount } etikette og giv dem etiketten",
         "Importer alle beskeder fra ${ selectedItemsToImportCount } ud af ${ itemsToImportCount } etiketter og giv dem etiketten"
+      ]
+    },
+    "Maintenance mode": {
+      "Please check back in a few minutes.": [
+        "Prøv igen om et par minutter."
       ]
     },
     "Maximum calendar links reached warning": {
@@ -9668,6 +9804,9 @@
       "Invalid code": [
         "Ugyldig kode"
       ],
+      "IP Address copied to clipboard": [
+        "IP-adresse kopieret ti udklipsholder"
+      ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "Nøgle med fingeraftryk ${ fp } slettet."
       ],
@@ -9964,8 +10103,14 @@
       "Secure Core configs": [
         "Secure Core opsætninger"
       ],
+      "Select who can access...": [
+        "Vælg, hvem der kan få adgang..."
+      ],
       "Standard server configs": [
         "Standard serverkonfigurer"
+      ],
+      "The whole organization": [
+        "Hele organisationen"
       ]
     },
     "Option delay send seconds": {
@@ -10127,9 +10272,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "${ PASS_APP_NAME } benefits": [
-        "${ PASS_APP_NAME }-fordele"
-      ],
       "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
         "${ PASS_APP_NAME } er tilgængelig som en browserudvidelse i Firefox Add-ons."
       ],
@@ -10616,6 +10758,17 @@
         "Læse e-mails af ikke-private brugere"
       ]
     },
+    "Role": {
+      "Admin": [
+        "Admin"
+      ],
+      "Primary admin": [
+        "Primær admin"
+      ],
+      "User": [
+        "Bruger"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "Upload en CSV-fil"
@@ -10646,6 +10799,12 @@
       ],
       "inactive": [
         "inaktiv"
+      ],
+      "pending": [
+        "afventer"
+      ],
+      "to be created": [
+        "skal oprettes"
       ]
     },
     "session_recovery:available:action": {
@@ -10656,9 +10815,89 @@
         "Nulstil adgangskode"
       ]
     },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "Kontogendannelse er ikke tilgængelig for ældre adressenøgler"
+      ],
+      "Please generate keys before you try to change your password": [
+        "Generér nøgler, før du forsøger at ændre din adgangskode."
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } dag",
+        "${ timeRemaining.inDays } dage"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } time",
+        "${ timeRemaining.inHours } timer"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Anmodning om nulstilling af adgangskode godkendt (${ user.Email }). Du har ${ timeRemaining.inDays } dag til at nulstille din adgangskode.",
+        "Anmodning om nulstilling af adgangskode godkendt (${ user.Email }). Du har ${ timeRemaining.inDays } dage til at nulstille din adgangskode."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Anmodning om nulstilling af adgangskode godkendt (${ user.Email }). Du har ${ timeRemaining.inHours } time til at nulstille din adgangskode.",
+        "Anmodning om nulstilling af adgangskode godkendt (${ user.Email }). Du har ${ timeRemaining.inHours } timer til at nulstille din adgangskode."
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Gå til den enhed, hvor du er logget ind (i den session, hvor anmodningen blev indledt) for at ændre din adgangskode."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Denne tilladelse udløber om ${ timeRemaining.inDays } dag",
+        "Denne tilladelse udløber om ${ timeRemaining.inDays } dage"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Denne tilladelse udløber om ${ timeRemaining.inHours } time",
+        "Denne tilladelse udløber om ${ timeRemaining.inHours } timer"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Du kan nu frit ændre din adgangskode til kontoen ${ boldEmail } i ${ boldDaysRemaining }."
+      ]
+    },
     "session_recovery:available:link": {
       "See how": [
         "Se hvordan"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Adgangskode gemt"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Nulstil din adgangskode"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Annullér nulstilling af adgangskode"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Indtast din nuværende adgangskode for at annullere nulstillingen af adgangskoden. Ingen andre ændringer vil træde i kraft."
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "Nulstilling af adgangskode annulleret"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Annullér nulstilling af adgangskode?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Anmodning om nulstilling af adgangskode annulleret (${ user.Email }). Hvis du ikke har lavet denne anmodning, ${ changePasswordLink }."
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "ændr din adgangskode nu"
       ]
     },
     "session_recovery:in_progress:action": {
@@ -10670,6 +10909,71 @@
       ],
       "Learn more": [
         "Få mere at vide"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } time mere",
+        "${ gracePeriodHoursRemaining } timer mere"
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "Hvis du ikke har bedt om at nulstille din adgangskode, skal du annullere denne anmodning nu."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Der er anmodet om nulstilling af adgangskode (${ user.Email }). Du kan ændre din adgangskode om ${ hoursRemaining } time.",
+        "Der er anmodet om nulstilling af adgangskode (${ user.Email }). Du kan ændre din adgangskode om ${ hoursRemaining } timer."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "For at sikre, at det virkelig er dig, der forsøger at nulstille din adgangskode, venter vi 72 timer, før vi godkender anmodninger. Du kan ændre din adgangskode om ${ boldTimeLeft }. ${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "Vi har modtaget en anmodning om nulstilling af adgangskode for ${ boldEmail }."
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "Vis anmodning"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "Der er anmodet om nulstilling af adgangskode"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Log ud"
+      ],
+      "Stay signed in": [
+        "Forbliv logget ind"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } time",
+        "${ gracePeriodHoursRemaining } timer"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } er nu tilgængelig."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Hvis du logger ud, før du har nulstillet din adgangskode, kan du miste adgangen til din konto."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Hvis du logger ud uden at nulstille din adgangskode, kan du miste adgangen til din konto."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Du vil kunne nulstille din adgangskode om ${ boldTimeLeft }."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Nulstilling af adgangskode"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Log ud uden at nulstille adgangskoden?"
       ]
     },
     "Settings description": {
@@ -11032,6 +11336,9 @@
       ]
     },
     "State": {
+      "Cancelling your subscription, please wait": [
+        "Annullerer dit abonnement, vent venligst"
+      ],
       "Downgrading your account, please wait": [
         "Nedgraderer din konto, vent venligst"
       ]
@@ -11172,6 +11479,12 @@
     "Subscription change warning": {
       "Got it": [
         "Forstået"
+      ],
+      "Manage your subscription on ${ subscriptionManager }": [
+        "Administrer dit abonnement på ${ subscriptionManager }"
+      ],
+      "Subscriptions": [
+        "Abonnementer"
       ]
     },
     "Subscription price": {
@@ -11560,6 +11873,9 @@
       "Edit": [
         "Redigér"
       ],
+      "Email": [
+        "E-mail"
+      ],
       "Email address": [
         "E-mailadresse"
       ],
@@ -11726,6 +12042,9 @@
       "Add PayPal payment method": [
         "Tilføj PayPal-betalingsmetode"
       ],
+      "Add servers": [
+        "Tilføj servere"
+      ],
       "Add Sieve filter": [
         "Tilføj Sieve-filter"
       ],
@@ -11740,6 +12059,9 @@
       ],
       "Add user accounts": [
         "Tilføj brugerkonti"
+      ],
+      "Add users": [
+        "Tilføj brugere"
       ],
       "Allocate storage": [
         "Tildel lagerplads"
@@ -11868,6 +12190,15 @@
         "Opret ${ selectedUserIds.length } bruger",
         "Opret ${ selectedUserIds.length } brugere"
       ],
+      "Create a new Gateway": [
+        "Opret en ny Gateway"
+      ],
+      "Create a new gateway": [
+        "Opret en ny gateway"
+      ],
+      "Create Gateway": [
+        "Opret gateway"
+      ],
       "Create multiple user accounts": [
         "Opret flere brugerkonti"
       ],
@@ -11898,11 +12229,17 @@
       "Custom filters": [
         "Brugerdefinerede filtre"
       ],
+      "Custom selection of users": [
+        "Tilpasset valg af brugere"
+      ],
       "Customize and confirm": [
         "Tilpas og bekræft"
       ],
       "Customize calendar import": [
         "Tilpas kalender-import"
+      ],
+      "Customize the number of IP addresses in your plan": [
+        "Tilpas antallet af IP-adresser i dit abonnement"
       ],
       "Customize your mail import": [
         "Tilpas din mail-import"
@@ -12007,11 +12344,26 @@
       "Edit filter": [
         "Rediger filter"
       ],
+      "Edit Gateway ${ currentName }": [
+        "Redigér gateway ${ currentName }"
+      ],
+      "Edit servers": [
+        "Redigér servere"
+      ],
       "Edit Sieve filter": [
         "Rediger Sieve-filter"
       ],
+      "Edit the list of servers of the gateway": [
+        "Rediger listen over gatewayens servere"
+      ],
       "Edit user": [
         "Redigér bruger"
+      ],
+      "Edit users": [
+        "Redigér brugere"
+      ],
+      "Edit who can access the gateway": [
+        "Rediger, hvem der har adgang til gatewayen"
       ],
       "Email": [
         "E-mail"
@@ -12039,6 +12391,9 @@
       ],
       "Error": [
         "Fejl"
+      ],
+      "Every member of the organization can access": [
+        "Alle medlemmer af organisationen kan få adgang"
       ],
       "Export": [
         "Exportér"
@@ -12070,6 +12425,9 @@
       ],
       "Folders and labels": [
         "Mapper og etiketter"
+      ],
+      "Gateways": [
+        "Gateways"
       ],
       "General": [
         "Generelt"
@@ -12288,6 +12646,9 @@
       "Remove user?": [
         "Fjern bruger?"
       ],
+      "Rename the gateway": [
+        "Omdøb gatewayen"
+      ],
       "Report a problem": [
         "Anmeld et problem"
       ],
@@ -12371,6 +12732,9 @@
       ],
       "Settings": [
         "Indstillinger"
+      ],
+      "Setup dedicated servers by upgrading to Business": [
+        "Opsæt dedikerede servere ved at opgradere til Business"
       ],
       "Short domain (@pm.me)": [
         "Kort domæne (@pm.me)"
@@ -12472,6 +12836,9 @@
       ],
       "Upload CSV file to create multiple accounts": [
         "Upload CSV-fil for at oprette flere konti"
+      ],
+      "Users": [
+        "Brugere"
       ],
       "Users and addresses": [
         "Brugere og adresser"
@@ -12911,8 +13278,17 @@
       ]
     },
     "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "Jeg fandt en anden tjeneste, som jeg synes bedre om"
+      ],
+      "It’s missing a key feature": [
+        "Den mangler en nøglefunktion"
+      ],
       "It’s too expensive": [
         "Det er for dyrt"
+      ],
+      "Other": [
+        "Andet"
       ]
     },
     "VPN info": {

@@ -6420,9 +6420,6 @@
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Verifique seu arquivo, ou tente usar nossa ${ csvTemplateButton }."
       ],
-      "Please contact the administrator of the organisation to manage the subscription.": [
-        "Entre em contato com o administrador da organização para gerenciar a assinatura."
-      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Digite a frase de recuperação de 12 palavras associada à sua conta."
       ],
@@ -8746,22 +8743,22 @@
     },
     "Label for news": {
       "${ BRAND_NAME } beta announcements": [
-        "Comunicados do ${ BRAND_NAME } beta"
+        "Comunicados da ${ BRAND_NAME } beta"
       ],
       "${ BRAND_NAME } for Business newsletter": [
-        "Boletim do ${ BRAND_NAME } for Business"
+        "Boletim da ${ BRAND_NAME } for Business"
       ],
       "${ BRAND_NAME } important announcements": [
         "Comunicados importantes da ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } newsletter": [
-        "Boletim do ${ BRAND_NAME }"
+        "Boletim da ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } offers and promotions": [
         "Ofertas e promoções do ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } product announcements": [
-        "Comunicados de produto do ${ BRAND_NAME }"
+        "Comunicados de produto da ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } welcome emails": [
         "E-mails de boas-vindas da ${ BRAND_NAME }"
@@ -8784,6 +8781,11 @@
       ],
       "Expired": [
         "Expirado"
+      ]
+    },
+    "Label to  inform a feature is only available on Beta": {
+      "Beta": [
+        "Beta"
       ]
     },
     "Label to change composer mode": {
@@ -10724,8 +10726,8 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "${ PASS_APP_NAME } benefits": [
-        "Benefícios do ${ PASS_APP_NAME }"
+      "${ appName } benefits": [
+        "Benefícios do ${ appName }"
       ],
       "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
         "${ PASS_APP_NAME } está disponível como uma extensão do navegador Firefox."
@@ -11399,6 +11401,11 @@
         "Usar um método de recuperação"
       ]
     },
+    "session_recovery:initiation:link": {
+      "account and password section": [
+        "sessão Conta e senha"
+      ]
+    },
     "session_recovery:initiation:notification": {
       "Password reset confirmed": [
         "Redefinição de senha confirmada"
@@ -11423,6 +11430,9 @@
     "session_recovery:sign_out:action": {
       "Sign out": [
         "Encerrar sessão"
+      ],
+      "Stay signed in": [
+        "Manter sessão iniciada"
       ]
     },
     "session_recovery:sign_out:info": {
@@ -11437,6 +11447,11 @@
     "session_recovery:sign_out:link": {
       "Password reset": [
         "Redefinição de senha"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Encerrar sessão sem redefinir senha?"
       ]
     },
     "session_recovery:status:info": {
@@ -12583,6 +12598,9 @@
       "Add users": [
         "Adicionar usuários"
       ],
+      "Address and key verification": [
+        "Verificação de endereço e chave"
+      ],
       "Allocate storage": [
         "Alocar armazenamento"
       ],
@@ -13668,6 +13686,9 @@
       ],
       "This feature is only available for paid users": [
         "Este recurso só está disponível para usuários com um plano pago"
+      ],
+      "This feature is only available on Beta": [
+        "Esse recurso só está disponível na versão para Beta."
       ],
       "This key cannot be used for encryption": [
         "Não é possível usar essa chave para criptografar."
