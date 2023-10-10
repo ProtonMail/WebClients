@@ -615,7 +615,7 @@
         "Hai bisogno di aiuto?"
       ],
       "Next": [
-        "Successiva"
+        "Successivo"
       ],
       "Next month": [
         "Mese successivo"
@@ -759,7 +759,7 @@
         "Riprova"
       ],
       "Return to sign in": [
-        "Ritorna al login"
+        "Torna alla pagina di accesso"
       ],
       "Review": [
         "Revisiona"
@@ -1011,7 +1011,7 @@
         "Utilizza un codice di recupero"
       ],
       "Use your current email instead": [
-        "Utilizza invece il tuo indirizzo email attuale"
+        "Usa invece il tuo indirizzo email attuale"
       ],
       "Use “${ label }” setting": [
         "Usa l’impostazione “${ label }”"
@@ -1534,7 +1534,7 @@
     },
     "Calendar sharing permission change notification": {
       "Permissions changed for ${ email }": [
-        "I permessi per ${ email } sono cambiati"
+        "Le autorizzazioni per ${ email } sono cambiate"
       ]
     },
     "Calendar status": {
@@ -2952,7 +2952,7 @@
         "eliminazione di ${ name } non riuscita"
       ],
       "${ name } failed to move to allow list": [
-        "Spostamento di ${ name } nella lista consentiti fallito"
+        "Spostamento di ${ name } nella lista consentiti non riuscito"
       ],
       "${ name } failed to move to block list": [
         "Spostamento di ${ name } nella lista bloccati non riuscito"
@@ -4635,13 +4635,13 @@
     },
     "Get started checklist instructions": {
       "${ MAIL_APP_NAME } app": [
-        "App ${ MAIL_APP_NAME }"
+        "app di ${ MAIL_APP_NAME }"
       ],
       "account logins": [
         "login degli account"
       ],
       "Auto-forward Gmail": [
-        "Inoltro automatico di Gmail"
+        "Inoltra automaticamente da Gmail"
       ],
       "auto-forwarding": [
         "inoltro automatico"
@@ -4656,7 +4656,7 @@
         "Scopri le funzionalità per la privacy"
       ],
       "Get the ${ strongText } on Android or iOS": [
-        "Ottieni ${ strongText } su Android o iOS"
+        "Ottieni l'${ strongText } su Android o iOS"
       ],
       "Get the App": [
         "Scarica l'app"
@@ -5403,7 +5403,7 @@
         "Una frase di recupero ti consente di accedere al tuo account e recuperare i tuoi messaggi crittografati se dimentichi la password"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
-        "Un utente è un account associato a un unico nome utente, cassetta postale e persona"
+        "Un utente è un account associato a un unico nome utente, una sola casella di posta e una sola persona"
       ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Accedi alle tue password e proteggi le tue identità online ininterrottamente attraverso i tuoi dispositivi. Scarica e installa le rilevanti app ed estensioni ${ PASS_APP_NAME }."
@@ -6313,7 +6313,7 @@
         "Una volta che reimposti la tua password:"
       ],
       "One account. All ${ BRAND_NAME } services.": [
-        "Un account per tutti i servizi ${ BRAND_NAME }."
+        "Un account per tutti i servizi di ${ BRAND_NAME }."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Cambia queste impostazioni solo se stai usando PGP con destinatari che non utilizzano ${ BRAND_NAME }."
@@ -6413,9 +6413,6 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Verifica il tuo file, o provare ad utilizzare il nostro ${ csvTemplateButton }."
-      ],
-      "Please contact the administrator of the organisation to manage the subscription.": [
-        "Si prega di contattare l'amministratore dell'organizzazione per gestire l'abbonamento."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Inserisci la frase di recupero di 12 parole associata al tuo account."
@@ -7118,7 +7115,7 @@
         "Con un piano Business o Enterprise, puoi acquistare ${ boldDedicatedServers } per la tua organizzazione e configurare ${ boldGateways } per controllare quali utenti possono accedervi."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
-        "Con un indirizzo ${ BRAND_NAME } crittografato, puoi utilizzare tutti i servizi ${ BRAND_NAME_TWO }."
+        "Con un indirizzo ${ BRAND_NAME } crittografato puoi utilizzare tutti i servizi di ${ BRAND_NAME_TWO }."
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Con il tuo piano attuale, puoi solo ricevere messaggi con il tuo indirizzo @pm.me. Effettua l'upgrade per inviare messaggi e creare indirizzi aggiuntivi utilizzando @pm.me."
@@ -8255,7 +8252,7 @@
         "Invita tramite email"
       ],
       "Keep me signed in": [
-        "Ricorda il mio accesso"
+        "Rimani connesso"
       ],
       "Keep messages in Sent/Drafts": [
         "Mantieni i messaggi in Invio/Bozze"
@@ -8921,7 +8918,7 @@
         "Pagamento della fattura"
       ],
       "Paypal without credit card": [
-        "Paypal senza carta di credito"
+        "PayPal senza carta di credito"
       ],
       "Privacy policy": [
         "Informativa sulla privacy"
@@ -8945,7 +8942,7 @@
         "Termini"
       ],
       "Trouble signing in?": [
-        "Problemi a registrarti?"
+        "Problemi ad accedere?"
       ],
       "Upgrade account": [
         "Effettua l'upgrade dell'account"
@@ -9453,8 +9450,8 @@
         "${ n } cartelle ed etichette"
       ],
       "${ n } hide-my-email alias": [
-        "${ n } alias hide-my-email",
-        "${ n } alias hide-my-email"
+        "${ n } alias Hide-my-email",
+        "${ n } alias Hide-my-email"
       ],
       "${ n } label": [
         "${ n } etichetta",
@@ -10717,8 +10714,8 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "${ PASS_APP_NAME } benefits": [
-        "Vantaggi di ${ PASS_APP_NAME }"
+      "${ appName } benefits": [
+        "Vantaggi di ${ appName }"
       ],
       "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
         "${ PASS_APP_NAME } è disponibile come estensione per il browser sui componenti aggiuntivi di Firefox."
@@ -13174,7 +13171,7 @@
         "Errore di rete"
       ],
       "Next": [
-        "Successiva"
+        "Successivo"
       ],
       "Night theme": [
         "Tema notte"

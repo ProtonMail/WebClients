@@ -1505,6 +1505,12 @@
         "Für andere freigeben"
       ]
     },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "${ remainingItems } weiteren anzeigen",
+        "${ remainingItems } weitere anzeigen"
+      ]
+    },
     "Calendar share permission label": {
       "Edit event details": [
         "Termindetails bearbeiten"
@@ -3198,6 +3204,9 @@
       ],
       "Contact signature not verified": [
         "Kontaktsignatur nicht bestätigt"
+      ],
+      "Could not save preference": [
+        "Einstellung konnte nicht gespeichert werden."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Mindestens ${ calendarsToFixCount } Kalender abwählen",
@@ -6405,9 +6414,6 @@
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Bitte überprüfe deine Datei auf Fehler oder versuche es mit unserer ${ csvTemplateButton }."
       ],
-      "Please contact the administrator of the organisation to manage the subscription.": [
-        "Bitte wende dich an den Administrator der Organisation, um das Abonnement zu verwalten."
-      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Bitte gib die aus 12 Wörtern bestehende Wiederherstellungsphrase ein, die mit deinem Konto verknüpft ist."
       ],
@@ -7309,7 +7315,7 @@
         "Deine Kontowiederherstellungsmethode wurde festgelegt"
       ],
       "Your account will be updated once the payment is cleared.": [
-        "Ihr Konto wird aktualisiert, sobald die Zahlung abgeschlossen ist."
+        "Dein Konto wird aktualisiert, sobald die Zahlung abgeschlossen ist."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Deine Daten sind bereit für den Import von ${ importedEmailAddressStrong } in dein ${ BRAND_NAME }-Konto."
@@ -8675,7 +8681,7 @@
         "Deine Kalender-URL"
       ],
       "Your password (admin)": [
-        "Ihr Passwort (Admin)"
+        "Dein Passwort (Admin)"
       ],
       "Your referral link": [
         "Dein Empfehlungslink"
@@ -8766,6 +8772,11 @@
       ],
       "Expired": [
         "Abgelaufen"
+      ]
+    },
+    "Label to  inform a feature is only available on Beta": {
+      "Beta": [
+        "Beta"
       ]
     },
     "Label to change composer mode": {
@@ -10697,9 +10708,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "${ PASS_APP_NAME } benefits": [
-        "${ PASS_APP_NAME }-Vorteile"
-      ],
       "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
         "${ PASS_APP_NAME } ist als Browser-Erweiterung unter Firefox Add-ons verfügbar."
       ],
@@ -11391,6 +11399,16 @@
         "Wiederherstellungsmethode verwenden"
       ]
     },
+    "session_recovery:initiation:info": {
+      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
+        "Du kannst den Status deiner Anfrage jederzeit in der ${ accountAndPasswordSectionLink } in den Einstellungen überprüfen."
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "account and password section": [
+        "Konto- und Passwortübersicht"
+      ]
+    },
     "session_recovery:initiation:notification": {
       "Password reset confirmed": [
         "Passwortzurücksetzung bestätigt"
@@ -11818,10 +11836,10 @@
     },
     "State": {
       "Cancelling your subscription, please wait": [
-        "Abonnement wird abgebrochen, bitte warten"
+        "Die Kündigung deines Abonnements wird bearbeitet. Bitte warten."
       ],
       "Downgrading your account, please wait": [
-        "Ihr Konto wird zurückgestuft, bitte warten …"
+        "Dein Konto wird zurückgestuft, bitte warten …"
       ]
     },
     "Step in filter modal": {

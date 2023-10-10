@@ -6378,9 +6378,6 @@
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Verifique o seu ficheiro ou tente utilizar o nosso ${ csvTemplateButton }."
       ],
-      "Please contact the administrator of the organisation to manage the subscription.": [
-        "Contacte o administrador da organização para gerir a subscrição."
-      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Introduza a frase de recuperação de 12 palavras associada à sua conta."
       ],
@@ -8605,6 +8602,9 @@
       "Verification code": [
         "Código de verificação"
       ],
+      "Verify keys with Key Transparency": [
+        "Verifique as chaves com transparência de chave"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Lamentamos a sua partida. Diga-nos porquê, para podermos melhorar o serviço."
       ],
@@ -8736,6 +8736,11 @@
       ],
       "Expired": [
         "Expirado"
+      ]
+    },
+    "Label to  inform a feature is only available on Beta": {
+      "Beta": [
+        "Beta"
       ]
     },
     "Label to change composer mode": {
@@ -9626,6 +9631,10 @@
       ],
       "Send & receive invitations": [
         "Enviar e receber convites"
+      ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "Servidores em ${ vpnServersCountData.paid.countries } país",
+        "Servidores em mais de ${ vpnServersCountData.paid.countries } países"
       ],
       "Share calendar via link": [
         "Partilha o calendário por ligação"
@@ -10669,9 +10678,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "${ PASS_APP_NAME } benefits": [
-        "Benefícios do ${ PASS_APP_NAME }"
-      ],
       "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
         "O ${ PASS_APP_NAME } está disponível como uma extensão para o navegador Firefox."
       ],
@@ -11215,6 +11221,19 @@
         "a criar"
       ]
     },
+    "session_recovery:disable:info": {
+      "Make sure you have access to a recovery method.": [
+        "Verifique se você possui acesso a um método de recuperação."
+      ],
+      "You will no longer be able to request a password reset from your account settings.": [
+        "Você não poderá mais solicitar uma restabelecer de senha nas configurações da sua conta."
+      ]
+    },
+    "session_recovery:disable:title": {
+      "Disable password reset?": [
+        "Desativar redefinição de senha?"
+      ]
+    },
     "Settings description": {
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Complete a transição para a privacidade com as nossas ferramentas seguras de importação e encaminhamento."
@@ -11666,6 +11685,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } servidor dedicado",
+        "${ ipAddresses } servidores dedicados"
+      ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } ligação VPN de alta velocidade",
         "${ maxVpn } ligações VPN de alta velocidade"
@@ -13424,6 +13447,9 @@
       ],
       "This feature is only available for paid users": [
         "Esta funcionalidade só está disponível para utilizadores pagantes"
+      ],
+      "This feature is only available on Beta": [
+        "Este recurso está disponível apenas na versão Beta"
       ],
       "This key cannot be used for encryption": [
         "Esta chave não pode ser utilizada para a encriptação."

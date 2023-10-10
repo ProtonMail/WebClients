@@ -1857,7 +1857,7 @@
     },
     "Confirmation message to delete payment method": {
       "Are you sure you want to delete this payment method?": [
-        "¿En verdad desea eliminar esta forma de pago?"
+        "¿Está seguro de que quiere eliminar esta forma de pago?"
       ]
     },
     "Confirmation title": {
@@ -4379,7 +4379,7 @@
         "Permitir las claves de plataforma"
       ],
       "Are you sure you want to delete security key ${ name }?": [
-        "¿En verdad desea eliminar la llave de seguridad ${ name }?"
+        "¿Está seguro de que quiere eliminar la llave de seguridad ${ name }?"
       ],
       "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
         "Si está habilitado, permite registrar funciones y componentes integrados (como Windows Hello, TouchID, FaceID o TPM internos) además de claves de seguridad de hardware externas."
@@ -5136,7 +5136,7 @@
     },
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
-        "¿En verdad desea importar una clave privada? Importar una clave privada generada de manera insegura o filtrada puede dañar la seguridad de sus correos.\n\nTenga en cuenta también que la clave pública correspondiente a esta clave privada estará disponible públicamente en nuestro servidor de claves. Si la clave contiene datos personales (como su nombre completo) que no desea publicar, edite la clave antes de importarla."
+        "¿Está seguro de que quiere importar una clave privada? Importar una clave privada generada de manera insegura o filtrada puede dañar la seguridad de sus correos.\n\nTenga en cuenta también que la clave pública correspondiente a esta clave privada estará disponible públicamente en nuestro servidor de claves. Si la clave contiene datos personales (como su nombre completo) que no desea publicar, edite la clave antes de importarla."
       ]
     },
     "Import provider": {
@@ -5554,25 +5554,25 @@
         "¿Seguro que desea eliminar este calendario?"
       ],
       "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
-        "¿En verdad desea eliminar este calendario? Todas las direcciones a las que compartió este calendario perderán acceso a él."
+        "¿Está seguro de que quiere eliminar este calendario? Todas las direcciones a las que compartió este calendario perderán acceso a él."
       ],
       "Are you sure you want to delete this calendar? All events in it will be deleted.": [
-        "¿En verdad desea eliminar este calendario? Todos los eventos en él serán eliminados."
+        "¿Está seguro de que quiere eliminar este calendario? Todos los eventos en él serán eliminados."
       ],
       "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
-        "¿En verdad desea eliminar este calendario? Puede añadir el calendario de días festivos después."
+        "¿Está seguro de que quiere eliminar este calendario? Puede añadir el calendario de días festivos después."
       ],
       "Are you sure you want to delete this domain?": [
-        "¿En verdad desea eliminar este dominio?"
+        "¿Está seguro de que quiere eliminar este dominio?"
       ],
       "Are you sure you want to delete this filter?": [
-        "¿En verdad desea eliminar este filtro?"
+        "¿Está seguro de que quiere eliminar este filtro?"
       ],
       "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "¿En verdad desea eliminar esta carpeta? También se eliminarán todas las subcarpetas."
+        "¿Está seguro de que quiere eliminar esta carpeta? También se eliminarán todas las subcarpetas."
       ],
       "Are you sure you want to delete this label?": [
-        "¿En verdad desea eliminar esta etiqueta?"
+        "¿Está seguro de que quiere eliminar esta etiqueta?"
       ],
       "Are you sure you want to disable two-factor authentication?": [
         "¿Está seguro que desea deshabilitar la autenticación de dos factores?"
@@ -5581,13 +5581,13 @@
         "¿Está seguro que desea descartar los cambios?"
       ],
       "Are you sure you want to discard your import?": [
-        "¿En verdad desea descartar su importación?"
+        "¿Está seguro de que quiere descartar su importación?"
       ],
       "Are you sure you want to permanently delete all your logs?": [
-        "¿En verdad desea eliminar permanentemente todos sus registros?"
+        "¿Está seguro de que quiere eliminar permanentemente todos sus registros?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
-        "¿En verdad desea eliminar los privilegios administrativos de este usuario?"
+        "¿Está seguro de que quiere eliminar los privilegios administrativos de este usuario?"
       ],
       "Ask your organisation admin to setup Gateways.": [
         "Pregunte al administrador de su organización para configurar puertas de enlace."
@@ -5659,7 +5659,7 @@
         "Al pasar a un plan gratuito, perderá permanentemente estos beneficios, incluso si mejore de nuevo su plan en el futuro."
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Al pasar a un plan con menos funciones perderá los siguientes beneficios. ¿En verdad desea continuar?"
+        "Al pasar a un plan con menos funciones perderá los siguientes beneficios. ¿Está seguro de que quiere continuar?"
       ],
       "By leaving now, changes may not be saved": [
         "Al salir ahora, los cambios podrían no ser guardados"
@@ -6413,9 +6413,6 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Verifique su archivo, o intente usando nuestra ${ csvTemplateButton }."
-      ],
-      "Please contact the administrator of the organisation to manage the subscription.": [
-        "Contacte con el administrador de la organización para administrar la suscripción."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Ingrese la frase de recuperación de 12 palabras asociada con su cuenta."
@@ -7499,10 +7496,10 @@
     },
     "Key generation": {
       "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
-        "Ya existe una clave con el mismo algoritmo de cifrado. Generar otra clave hará que la cuenta se cargue más lentamente. ¿En verdad desea continuar?"
+        "Ya existe una clave con el mismo algoritmo de cifrado. Generar otra clave hará que la cuenta se cargue más lentamente. ¿Está seguro de que quiere continuar?"
       ],
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "Una clave con el mismo algoritmo de cifrado ya está activa para esta dirección.\nGenerar otra clave causará una carga lenta de la cuenta y el borrado de la misma puede causar problemas. Si está generando una clave nueva porque su clave anterior fue comprometida, marque la clave como comprometida. ¿En verdad desea continuar?"
+        "Una clave con el mismo algoritmo de cifrado ya está activa para esta dirección.\nGenerar otra clave causará una carga lenta de la cuenta y el borrado de la misma puede causar problemas. Si está generando una clave nueva porque su clave anterior fue comprometida, marque la clave como comprometida. ¿Está seguro de que quiere continuar?"
       ],
       "Generate key": [
         "Generar clave"
@@ -8645,7 +8642,7 @@
         "Código de verificación"
       ],
       "Verify keys with Key Transparency": [
-        "Verifica las claves con el Key Transparency"
+        "Verifique las claves con el sistema Key Transparency"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Lamentamos que se vaya. Indíquenos por qué se va para ayudarnos a mejorar."
@@ -9679,10 +9676,10 @@
         "Servidores en más de ${ vpnServersCountData.paid.countries } países"
       ],
       "Share calendar via link": [
-        "Compartir calendarios mediante un enlace"
+        "Compartir calendario con un enlace"
       ],
       "Share files and folders via link": [
-        "Compartir archivos y carpetas mediante un enlace"
+        "Compartir archivos y carpetas con un enlace"
       ],
       "Sign in as user": [
         "Iniciar sesión como usuario"
@@ -9987,10 +9984,10 @@
         "Le permite responder automáticamente (autorrespuestas) a los mensajes que recibe"
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
-        "Actualmente no se admite el envío masivo de correos electrónicos promocionales o programáticos. Recomendamos usar un proveedor de servicios de correo electrónico dedicado para este caso."
+        "Por el momento, no se puede programar el envío de correos electrónicos ni promocionales de forma masiva. Le recomendamos que puede usar un proveedor de servicios de correo electrónico dedicado para este caso."
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
-        "Controle el acceso a sus archivos compartidos añadiendo protección con contraseña y fechas de expiración a los enlaces"
+        "Controle el acceso a sus archivos compartidos con enlaces con fechas de expiración y contraseña."
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Cree múltiples direcciones de correo para sus identidades en línea, p. ej., JuanCompras@${ domain } para cuentas de compras, JuanNoticias@${ domain } para suscripciones de noticias"
@@ -10012,7 +10009,7 @@
         "Defiende de ataques que amenazan la privacidad de la VPN dirigiendo el tráfico de Internet por varios servidores."
       ],
       "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "Comparta calendarios con compañeros, familiares y amigos fácilmente mediante un enlace"
+        "Comparta calendarios con compañeros, familiares y amigos fácilmente con un enlace"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Comparta calendarios con familiares, amistades y colegas fácilmente"
@@ -10024,7 +10021,7 @@
         "Fuerza el cierre de sesión de las sesiones de usuario cuando se cree que las credenciales de usuario están comprometidas"
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
-        "Solo se puede usar IMAP con aplicaciones de escritorio (Outlook, Mail de Apple o Thunderbird) mediante ${ MAIL_APP_NAME } Bridge. Por ahora no existe compatibilidad con integraciones IMAP en la nube."
+        "Solo se puede usar IMAP con aplicaciones de escritorio (Outlook, Mail de Apple o Thunderbird) con ${ MAIL_APP_NAME } Bridge. Por ahora no existe compatibilidad con integraciones IMAP en la nube."
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Mantenga privados sus planes y los de su familia con un calendario cifrado"
@@ -10714,8 +10711,8 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "${ PASS_APP_NAME } benefits": [
-        "Ventajas de ${ PASS_APP_NAME }"
+      "${ appName } benefits": [
+        "Ventajas de ${ appName }"
       ],
       "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
         "${ PASS_APP_NAME } está disponible como una extensión del navegador Firefox."
@@ -11345,7 +11342,7 @@
     },
     "session_recovery:cancellation:info": {
       "Enter your current password to cancel the password reset process. No other changes will take effect.": [
-        "Ingrese su contraseña actual para cancelar el proceso de restablecimiento. Ningún cambio surtirá efecto."
+        "Ingrese su contraseña actual para cancelar el proceso de restablecimiento. No se aplicará ningún otro cambio."
       ]
     },
     "session_recovery:cancellation:notification": {
@@ -11976,7 +11973,7 @@
     },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
-        "Añadir calendario compartido, público o externo mediante URL."
+        "Añada un calendario compartido, público o externo con una URL."
       ],
       "Add public, external, or shared calendars.": [
         "Añadir calendario compartido, público o externo."
@@ -12705,10 +12702,10 @@
         "Aplicar código de regalo"
       ],
       "Are you sure you want to close the preview?": [
-        "¿En verdad desea cerrar la vista previa?"
+        "¿Está seguro de que quiere cerrar la vista previa?"
       ],
       "Are you sure you want to close?": [
-        "¿En verdad desea cerrar?"
+        "¿Está seguro de que quiere cerrar?"
       ],
       "Authentication security": [
         "Autenticación de seguridad"
@@ -14036,10 +14033,10 @@
         "${ BRAND_NAME } transferirá tanta información posible, comenzando con sus mensajes más recientes."
       ],
       "Are you sure you want to delete the phone number?": [
-        "¿En verdad desea eliminar el número de teléfono?"
+        "¿Está seguro de que quiere eliminar el número de teléfono?"
       ],
       "Are you sure you want to delete this address?": [
-        "¿En verdad desea eliminar esta dirección?"
+        "¿Está seguro de que quiere eliminar esta dirección?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Si elimina esta dirección, ya no podrá recibir notificaciones diarias de correo electrónico."
@@ -14054,10 +14051,10 @@
         "Al eliminar este número de teléfono, ya no podrá recuperar su cuenta."
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "Al deshabilitar los registros, también borrará todo el historial. ¿En verdad desea deshabilitar los registros?"
+        "Al deshabilitar los registros, también borrará todo el historial. ¿Está seguro de que quiere deshabilitar los registros?"
       ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
-        "Al deshabilitar esta dirección, no podrá enviar o recibir correos usando esta dirección y todos los productos de ${ BRAND_NAME } enlazados también se deshabilitarán. ¿En verdad desea deshabilitar la dirección?"
+        "Al deshabilitar esta dirección, no podrá enviar o recibir correos usando esta dirección y todos los productos de ${ BRAND_NAME } enlazados también se deshabilitarán. ¿Está seguro de que quiere deshabilitar la dirección?"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Si cancela esta importación, no podrá reanudarla. ${ BRAND_NAME } guardó todo el progreso en su cuenta. ¿Cancelar de todos modos?"
