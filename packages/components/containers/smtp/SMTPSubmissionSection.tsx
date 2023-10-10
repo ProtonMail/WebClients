@@ -15,6 +15,7 @@ import {
     TableBody,
     TableHeader,
     TableRow,
+    UpgradeBanner,
     useActiveBreakpoint,
     useAddresses,
     useApi,
@@ -25,10 +26,21 @@ import {
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { deleteToken, getTokens, isTokenEligible } from '@proton/shared/lib/api/smtptokens';
-import { ADDRESS_TYPE, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import {
+    ADDRESS_TYPE,
+    APP_UPSELL_REF_PATH,
+    BRAND_NAME,
+    MAIL_APP_NAME,
+    MAIL_UPSELL_PATHS,
+    PLANS,
+    PLAN_NAMES,
+    UPSELL_COMPONENT,
+} from '@proton/shared/lib/constants';
 import { hasSMTPSubmission } from '@proton/shared/lib/helpers/organization';
+import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl, getSupportContactURL } from '@proton/shared/lib/helpers/url';
 import { dateLocale } from '@proton/shared/lib/i18n';
+import { Audience } from '@proton/shared/lib/interfaces';
 import { isOrganizationB2B } from '@proton/shared/lib/organization/helper';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
@@ -129,6 +141,15 @@ const SMTPSubmissionSection = () => {
         );
     }
 
+    const mailProPlanName = PLAN_NAMES[PLANS.MAIL_PRO];
+    const familyPlanName = PLAN_NAMES[PLANS.FAMILY];
+    const upsellRef = getUpsellRef({
+        app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
+        component: UPSELL_COMPONENT.BANNER,
+        feature: MAIL_UPSELL_PATHS.BRIDGE,
+        isSettings: true,
+    });
+
     if (!tokenEligible) {
         const params = {
             topic: 'email delivery and spam',
@@ -137,15 +158,29 @@ const SMTPSubmissionSection = () => {
         const createTicket = (
             <Href key="ticket" href={getSupportContactURL(params)}>{c('Link').t`create a ticket`}</Href>
         );
+        if (isB2BOrganization) {
+            return (
+                <SettingsSection>
+                    <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/smtp-submission')}>
+                        {
+                            // translator: full sentence will be: SMTP submission allows 3rd-party services or devices to send email through <Proton Mail> for your custom domain addresses. To request access, please <create a ticket> describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.
+                            c('Info')
+                                .jt`SMTP submission allows 3rd-party services or devices to send email through ${MAIL_APP_NAME} for your custom domain addresses. To request access, please ${createTicket} describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.`
+                        }
+                    </SettingsParagraph>
+                </SettingsSection>
+            );
+        }
         return (
             <SettingsSection>
                 <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/smtp-submission')}>
-                    {
-                        // translator: full sentence will be: SMTP submission allows 3rd-party services or devices to send email through <Proton Mail> for your custom domain addresses. To request access, please <create a ticket> describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.
-                        c('Info')
-                            .jt`SMTP submission allows 3rd-party services or devices to send email through ${MAIL_APP_NAME} for your custom domain addresses. To request access, please ${createTicket} describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.`
-                    }
+                    {c('Info')
+                        .jt`SMTP submission allows 3rd-party services or devices to send email through ${MAIL_APP_NAME} for your custom domain addresses. This feature is only available to ${BRAND_NAME} for business users with custom domains.`}
                 </SettingsParagraph>
+                <UpgradeBanner audience={Audience.B2B} upsellPath={upsellRef}>
+                    {c('new_plans: upgrade')
+                        .t`Included with ${BRAND_NAME} for Business, ${familyPlanName} and ${mailProPlanName}.`}
+                </UpgradeBanner>
             </SettingsSection>
         );
     }
