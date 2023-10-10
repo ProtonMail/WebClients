@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
+import { ORIGINAL_MESSAGE } from "@proton/shared/lib/mail/messages";
 
 /**
  * Mails extracted by us
@@ -13,7 +14,7 @@ const proton1 = `
     </div>
     <div><br></div>
     <div class="protonmail_quote">
-        <div>------- Original Message -------<br></div>
+        <div>${ORIGINAL_MESSAGE}<br></div>
         <div> On Monday 19 January 1970 à 08:21, Matthieu Lux  wrote:<br></div>
         <div> <br></div>
         <blockquote class="protonmail_quote" type="cite"><div dir="ltr">1<br></div></blockquote>
@@ -28,7 +29,7 @@ const gmail1 = `
             <div class="gmail_attr" dir="ltr">Le&nbsp;ven. 14 févr. 2020 à&nbsp;10:19, swiip.test &lt;swiip.test@protonmail.blue&gt; a écrit&nbsp;:<br></div>
             <blockquote style="margin:0px 0px 0px 0.8ex;border-inline-start:1px solid rgb(204,204,204);padding-inline-start:1ex" class="gmail_quote">
                 <div>
-                    <div>2<br></div><div><br></div><div><div><br></div><div>Sent with <a target="_blank" href="https://proton.me/?utm_campaign=ww-all-2a-mail-pmm_mail-protonmail_signature&utm_source=proton_users&utm_medium=cta&utm_content=sent_with_protonmail_secure_email" rel="noreferrer nofollow noopener">ProtonMail</a> Secure Email.<br></div></div><div><br></div><span>------- Original Message -------</span><br>
+                    <div>2<br></div><div><br></div><div><div><br></div><div>Sent with <a target="_blank" href="https://proton.me/?utm_campaign=ww-all-2a-mail-pmm_mail-protonmail_signature&utm_source=proton_users&utm_medium=cta&utm_content=sent_with_protonmail_secure_email" rel="noreferrer nofollow noopener">ProtonMail</a> Secure Email.<br></div></div><div><br></div><span>${ORIGINAL_MESSAGE}</span><br>
                     On Monday 19 January 1970 à 08:21, Matthieu Lux  wrote:<br>
                         <blockquote type="cite">
                             <div dir="ltr">1</div>
@@ -54,11 +55,11 @@ const android = `
 const aol1 = `
  <font color='black' size='2' face='arial'>Hello<br>
  <span>toto</span>
- <span>-----Original Message-----</span>
+ <span>${ORIGINAL_MESSAGE}</span>
  <br>
  <br>
 
- <div style="font-family:arial,helvetica;font-size:10pt;color:black">-----Original Message-----<br>
+ <div style="font-family:arial,helvetica;font-size:10pt;color:black">${ORIGINAL_MESSAGE}<br>
  From: bob &lt;bob@example.com&gt;<br>
  To: xxx &lt;xxx@gmail.com&gt;; xxx &lt;xxx@hotmail.com&gt;; xxx &lt;xxx@yahoo.com&gt;; xxx &lt;xxx@aol.com&gt;; xxx &lt;xxx@comcast.net&gt;; xxx &lt;xxx@nyc.rr.com&gt;<br>
  Sent: Mon, Apr 2, 2012 5:49 pm<br>
@@ -67,7 +68,7 @@ const aol1 = `
  <br>
 
 
- <span>-----Original Message-----</span>
+ <span>${ORIGINAL_MESSAGE}</span>
 
 
 
@@ -621,7 +622,7 @@ const aol2 = `
 </font></span><br>
         <br>
 
-        <div style="font-family:helvetica,arial;font-size:10pt;color:black">-----Original Message-----<br>
+        <div style="font-family:helvetica,arial;font-size:10pt;color:black">${ORIGINAL_MESSAGE}<br>
             From: felix &lt;felixfw1111@gmail.com&gt;<br>
             To: achankayi &lt;csdfsf@aol.com&gt;<br>
             Sent: Wed, Jul 3, 2019 6:10 pm<br>
@@ -819,7 +820,7 @@ const proton2 = `
         target="_blank">ProtonMail</a> Secure Email.<br></div>
 </div>
 <div><br></div>
-<div>------- Original Message -------<br></div>
+<div>${ORIGINAL_MESSAGE}<br></div>
 <div> 星期二, 七月 2, 2019 6:09 晚上，冯伟 &lt;felixfw1111@gmail.com&gt; 来信：<br></div>
 <div><br></div>
 <blockquote class="protonmail_quote" type="cite">
