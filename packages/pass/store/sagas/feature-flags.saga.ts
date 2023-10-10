@@ -2,9 +2,9 @@ import { put, select, takeLeading } from 'redux-saga/effects';
 
 import { SessionLockStatus } from '../../types';
 import { setUserFeatures, wakeupSuccess } from '../actions';
-import type { UserFeatureState } from '../reducers';
+import type { FeatureFlagState } from '../reducers';
 import type { State, WorkerRootSagaOptions } from '../types';
-import { getUserFeatures } from './workers/user';
+import { getFeatureFlags } from './workers/user';
 
 /* Try to sync the user feature flags on each wakeup success :
 /* `getUserFeatures` will only request pass feature flags from the api
@@ -16,7 +16,7 @@ function* syncFeatures({ getAuth }: WorkerRootSagaOptions) {
 
         if (loggedIn && !locked) {
             const { user }: State = yield select();
-            const features: UserFeatureState = yield getUserFeatures(user);
+            const features: FeatureFlagState = yield getFeatureFlags(user);
             yield features !== user.features && put(setUserFeatures(features));
         }
     } catch (err) {}
