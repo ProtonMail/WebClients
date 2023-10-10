@@ -10,10 +10,12 @@ import { Card } from '@proton/atoms/Card';
 import type { ModalProps } from '@proton/components/components';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/components';
 import { type ImportPayload, type ImportVault } from '@proton/pass/import';
-import { selectPassPlan, selectPrimaryVault, selectVaultLimits, selectWritableVaults } from '@proton/pass/store';
+import { selectDefaultVault, selectPassPlan, selectVaultLimits, selectWritableVaults } from '@proton/pass/store';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { omit } from '@proton/shared/lib/helpers/object';
 
+import { useFeatureFlag } from '../../hooks/useFeatureFlag';
 import { UpgradeButton } from '../upgrade/UpgradeButton';
 import { ImportVaultPickerOption } from './ImportVaultsPickerOption';
 
@@ -28,10 +30,11 @@ export type ImportVaultsPickerHandle = { submit: () => void };
 const FORM_ID = 'vault-picker';
 
 export const ImportVaultsPickerModal: VFC<ImportVaultsPickerProps> = ({ payload, onClose, onReset, onSubmit }) => {
-    const vaults = useSelector(selectWritableVaults);
-    const primaryVault = useSelector(selectPrimaryVault);
+    const writableVaults = useSelector(selectWritableVaults);
+    const defaultVault = useSelector(selectDefaultVault);
     const { vaultLimit, vaultTotalCount } = useSelector(selectVaultLimits);
     const plan = useSelector(selectPassPlan);
+    const primaryVaultDisabled = useFeatureFlag(PassFeature.PassRemovePrimaryVault);
 
     const handleSubmit = useCallback(
         (values: VaultsPickerFormValues) =>
@@ -51,8 +54,8 @@ export const ImportVaultsPickerModal: VFC<ImportVaultsPickerProps> = ({ payload,
             vaults: payload.vaults.map(
                 (vault): VaultPickerValue => ({
                     ...vault,
-                    shareId: primaryVault.shareId,
-                    name: primaryVault.content.name,
+                    shareId: defaultVault.shareId,
+                    name: defaultVault.content.name,
                     selected: true,
                 })
             ),
@@ -81,8 +84,11 @@ export const ImportVaultsPickerModal: VFC<ImportVaultsPickerProps> = ({ payload,
                                     <hr className="mt-2 mb-2" />
                                     {plan === UserPassPlan.FREE ? (
                                         <>
-                                            {c('Warning')
-                                                .t`Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.`}
+                                            {primaryVaultDisabled
+                                                ? c('Warning')
+                                                      .t`Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.`
+                                                : c('Warning')
+                                                      .t`Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.`}
                                             <UpgradeButton inline className="ml-1" />
                                         </>
                                     ) : (
@@ -106,7 +112,7 @@ export const ImportVaultsPickerModal: VFC<ImportVaultsPickerProps> = ({ payload,
                                 >
                                     <ImportVaultPickerOption
                                         data={importedVault}
-                                        vaults={vaults}
+                                        vaults={writableVaults}
                                         allowNewVault={canCreateVault}
                                         value={value.shareId}
                                         selected={value.selected}
