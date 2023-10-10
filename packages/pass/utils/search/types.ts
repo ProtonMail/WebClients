@@ -17,9 +17,9 @@ export type SelectItemsOptions = {
 export type SelectItemsByDomainOptions = {
     protocolFilter: string[];
     isPrivate: boolean;
-    shareId?: string;
+    shareIds?: string[];
     sortOn?: 'priority' | 'lastUseTime';
 };
 
-export type SelectAutofillCandidatesOptions = ParsedUrl & { shareId?: string };
+export type SelectAutofillCandidatesOptions = ParsedUrl & { shareIds?: string[] };
 export type SelectAutosaveCandidatesOptions = { domain: string; subdomain: MaybeNull<string>; username: string };
