@@ -51,8 +51,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                         checked={checked}
                         indeterminate={indeterminate}
                         id="idSelectAll"
-                        disabled={disabled}
-                        loading={loading}
+                        disabled={disabled || loading}
                         onChange={({ target }) => handleAll(target.checked)()}
                         data-testid="toolbar:select-all-checkbox"
                     >
@@ -63,8 +62,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                 </span>
             </Tooltip>
             <ToolbarDropdown
-                disabled={disabled}
-                loading={loading}
+                disabled={disabled || loading}
                 title={c('Title').t`More selections`}
                 data-testid="toolbar:select-all-dropdown"
                 className="toolbar-button--dropdown-more-selections"

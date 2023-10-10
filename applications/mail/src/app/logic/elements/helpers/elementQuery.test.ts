@@ -108,7 +108,7 @@ describe('elementQuery.ts', () => {
             });
 
             describe('when there are more than 50 items to fetch', () => {
-                it('should perform 2 calls, for first page + next one', async () => {
+                it('should perform only 2 call, first + next', async () => {
                     const mockedApi = jest.fn();
 
                     mockElementsApiCall(mockedApi);
@@ -133,46 +133,7 @@ describe('elementQuery.ts', () => {
                     expect(mockedApi).toHaveBeenCalledTimes(2);
                     expect(mockedApi.mock.calls[0][0]).toMatchObject(expectedQuery());
                     expect(mockedApi.mock.calls[1][0]).toMatchObject(
-                        expectedQuery({
-                            AnchorID: '49',
-                            Anchor: 'anchor-49',
-                        })
-                    );
-                });
-            });
-
-            describe('when there are more than 100 items to fetch', () => {
-                it('should perform only 2 calls, for first page + next one', async () => {
-                    const mockedApi = jest.fn();
-
-                    mockElementsApiCall(mockedApi);
-                    mockElementsApiCall(mockedApi, { start: 50 });
-                    mockElementsApiCall(mockedApi, { start: 100, count: 23 });
-
-                    const clientPage = 0;
-                    const settingsPageSize = 50;
-
-                    const result = await queryElementsInBatch(
-                        mockedApi,
-                        clientPage,
-                        settingsPageSize,
-                        baseElementsStateParams
-                    );
-
-                    expect(result).toHaveProperty('More', true);
-                    expect(result).toHaveProperty('Total', 100);
-                    expect(result).toHaveProperty('Elements', buildFiftyItems(0, 100));
-                    expect(result).toHaveProperty('Stale', false);
-                    expect(result).toHaveProperty('TasksRunning', false);
-
-                    expect(mockedApi).toHaveBeenCalledTimes(2);
-                    expect(mockedApi.mock.calls[0][0]).toMatchObject(expectedQuery());
-
-                    expect(mockedApi.mock.calls[1][0]).toMatchObject(
-                        expectedQuery({
-                            AnchorID: '49',
-                            Anchor: 'anchor-49',
-                        })
+                        expectedQuery({ Anchor: 'anchor-49', AnchorID: '49' })
                     );
                 });
             });
@@ -205,18 +166,46 @@ describe('elementQuery.ts', () => {
             });
         });
 
+        describe('when pageSize is 100', () => {
+            it('should perform 2 calls', async () => {
+                const mockedApi = jest.fn();
+
+                mockElementsApiCall(mockedApi);
+                mockElementsApiCall(mockedApi, { start: 50 });
+
+                const clientPage = 0;
+                const settingsPageSize = 100;
+
+                const result = await queryElementsInBatch(
+                    mockedApi,
+                    clientPage,
+                    settingsPageSize,
+                    baseElementsStateParams
+                );
+
+                expect(result).toHaveProperty('More', true);
+                expect(result).toHaveProperty('Total', 100);
+                expect(result).toHaveProperty('Elements', buildFiftyItems(0, 100));
+                expect(result).toHaveProperty('Stale', false);
+                expect(result).toHaveProperty('TasksRunning', false);
+
+                expect(mockedApi).toHaveBeenCalledTimes(2);
+
+                expect(mockedApi.mock.calls[0][0]).toMatchObject(expectedQuery());
+                expect(mockedApi.mock.calls[1][0]).toMatchObject(
+                    expectedQuery({ AnchorID: '49', Anchor: 'anchor-49' })
+                );
+            });
+        });
+
         describe('when pageSize is 200', () => {
-            it('should perform 8 calls, for first page + next one', async () => {
+            it('should perform 4 calls', async () => {
                 const mockedApi = jest.fn();
 
                 mockElementsApiCall(mockedApi);
                 mockElementsApiCall(mockedApi, { start: 50 });
                 mockElementsApiCall(mockedApi, { start: 100 });
                 mockElementsApiCall(mockedApi, { start: 150 });
-                mockElementsApiCall(mockedApi, { start: 200 });
-                mockElementsApiCall(mockedApi, { start: 250 });
-                mockElementsApiCall(mockedApi, { start: 300 });
-                mockElementsApiCall(mockedApi, { start: 350 });
 
                 const clientPage = 0;
                 const settingsPageSize = 200;
@@ -229,12 +218,12 @@ describe('elementQuery.ts', () => {
                 );
 
                 expect(result).toHaveProperty('More', true);
-                expect(result).toHaveProperty('Total', 400);
-                expect(result).toHaveProperty('Elements', buildFiftyItems(0, 400));
+                expect(result).toHaveProperty('Total', 200);
+                expect(result).toHaveProperty('Elements', buildFiftyItems(0, 200));
                 expect(result).toHaveProperty('Stale', false);
                 expect(result).toHaveProperty('TasksRunning', false);
 
-                expect(mockedApi).toHaveBeenCalledTimes(8);
+                expect(mockedApi).toHaveBeenCalledTimes(4);
 
                 expect(mockedApi.mock.calls[0][0]).toMatchObject(expectedQuery());
                 expect(mockedApi.mock.calls[1][0]).toMatchObject(
@@ -245,18 +234,6 @@ describe('elementQuery.ts', () => {
                 );
                 expect(mockedApi.mock.calls[3][0]).toMatchObject(
                     expectedQuery({ AnchorID: '149', Anchor: 'anchor-149' })
-                );
-                expect(mockedApi.mock.calls[4][0]).toMatchObject(
-                    expectedQuery({ AnchorID: '199', Anchor: 'anchor-199' })
-                );
-                expect(mockedApi.mock.calls[5][0]).toMatchObject(
-                    expectedQuery({ AnchorID: '249', Anchor: 'anchor-249' })
-                );
-                expect(mockedApi.mock.calls[6][0]).toMatchObject(
-                    expectedQuery({ AnchorID: '299', Anchor: 'anchor-299' })
-                );
-                expect(mockedApi.mock.calls[7][0]).toMatchObject(
-                    expectedQuery({ AnchorID: '349', Anchor: 'anchor-349' })
                 );
             });
         });
