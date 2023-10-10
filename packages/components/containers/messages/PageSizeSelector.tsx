@@ -10,6 +10,7 @@ import { useApi, useEventManager, useMailSettings, useNotifications } from '../.
 interface Props {
     id?: string;
     size?: DropdownProps['size'];
+    loading?: boolean;
 }
 
 const PAGE_SIZE_OPTIONS = [
@@ -18,7 +19,7 @@ const PAGE_SIZE_OPTIONS = [
     { label: '200', value: MailPageSize.TWO_HUNDRED },
 ];
 
-export const PageSizeSelector = ({ id, size }: Props) => {
+export const PageSizeSelector = ({ id, size, loading }: Props) => {
     const [mailSettings] = useMailSettings();
     const { call } = useEventManager();
     const api = useApi();
@@ -39,6 +40,7 @@ export const PageSizeSelector = ({ id, size }: Props) => {
         <div className="w-custom" style={{ '--w-custom': '5rem' }}>
             <SelectTwo
                 id={id}
+                disabled={loading}
                 data-testid="page-size-selector"
                 value={mailSettings?.PageSize ?? DEFAULT_MAIL_PAGE_SIZE}
                 onValue={handleChange}
