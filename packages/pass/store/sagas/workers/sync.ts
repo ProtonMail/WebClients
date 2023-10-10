@@ -1,8 +1,9 @@
 import { put } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/crypto';
-import type { Maybe } from '@proton/pass/types';
-import { type Share, type ShareGetResponse, ShareType } from '@proton/pass/types';
+import type { Maybe, ShareType } from '@proton/pass/types';
+import { type Share, type ShareGetResponse } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { partition } from '@proton/pass/utils/array';
 import { and, invert, notIn, pipe, prop } from '@proton/pass/utils/fp';
@@ -10,12 +11,13 @@ import { sortOn } from '@proton/pass/utils/fp/sort';
 import { diadic } from '@proton/pass/utils/fp/variadics';
 import { logger } from '@proton/pass/utils/logger';
 import { fullMerge, merge, objectFilter } from '@proton/pass/utils/object';
+import { isActiveVault, isOwnVault, isPrimaryVault, isWritableVault } from '@proton/pass/utils/pass/share';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
 import { notification } from '../../actions';
 import type { ItemsByShareId } from '../../reducers';
 import type { SharesState } from '../../reducers/shares';
-import { selectAllShares, selectItems } from '../../selectors';
+import { selectAllShares, selectItems, selectUserFeature } from '../../selectors';
 import type { State, WorkerRootSagaOptions } from '../../types';
 import { requestItemsForShareId } from './items';
 import { loadShare, requestShares } from './shares';
@@ -30,11 +32,6 @@ export enum SyncType {
     FULL = 'full' /* fetches all items */,
     PARTIAL = 'partial' /* fetches only diff */,
 }
-
-const isActiveVault = ({ targetType, shareId }: Share) =>
-    targetType === ShareType.Vault && PassCrypto.canOpenShare(shareId);
-
-const isPrimaryVault = ({ targetType, primary }: Share) => targetType === ShareType.Vault && primary;
 
 export function* synchronize(
     state: State,
@@ -93,15 +90,20 @@ export function* synchronize(
      * check the active remote shares and the local cached shares */
     const incomingShares = activeRemoteShares.map(prop('share')) as Share[];
     const incomingShareIds = incomingShares.map(prop('shareId'));
-    const hasActivePrimaryVault = incomingShares.concat(cachedShares).some(and(isActiveVault, isPrimaryVault));
 
-    /* On first login or if the user's primary vault has been disabled
-     * we need to (re-)create the primary vault share */
-    if (!hasActivePrimaryVault) {
+    const primaryVaultDisabled = selectUserFeature(PassFeature.PassRemovePrimaryVault)(state);
+
+    const hasDefaultVault = incomingShares
+        .concat(cachedShares)
+        .some(and(isActiveVault, ...(primaryVaultDisabled ? [isWritableVault, isOwnVault] : [isPrimaryVault])));
+
+    /* When syncing, if no owned writable vault exists, create it. This
+     * accounts for first login, default vault being disabledl. */
+    if (!hasDefaultVault) {
         logger.info(`[Saga::Sync] No primary vault found, creating primary vault..`);
         const primaryVault = (yield createVault({
             content: { name: 'Personal', description: 'Personal vault', display: {} },
-            primary: true,
+            ...(primaryVaultDisabled ? {} : { primary: true }),
         })) as Share<ShareType.Vault>;
 
         primaryShareId = primaryVault.shareId;

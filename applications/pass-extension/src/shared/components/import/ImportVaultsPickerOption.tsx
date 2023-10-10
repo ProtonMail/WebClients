@@ -1,12 +1,10 @@
 import type { FC } from 'react';
 import { useMemo } from 'react';
-import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
 import { Checkbox, Icon, Option, SelectTwo } from '@proton/components';
 import { type ImportVault } from '@proton/pass/import';
-import { selectPrimaryVault, selectVaultLimits } from '@proton/pass/store';
 import type { MaybeNull, VaultShare } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp';
 
@@ -32,13 +30,11 @@ export const ImportVaultPickerOption: FC<VaultsPickerOptionProps> = ({
     onChange,
 }) => {
     const count = useMemo(() => items.length, [items]);
-    const primaryVaultId = useSelector(selectPrimaryVault).shareId;
-    const { didDowngrade } = useSelector(selectVaultLimits);
 
     return (
         <div className="flex flex-justify-space-between flex-align-items-center">
             <Checkbox checked={selected} onChange={(e) => onToggle(e.target.checked)}>
-                <div className="w-custom ml-2" style={{ '--w-custom': '100px' }}>
+                <div className="w-custom" style={{ '--w-custom': '100px' }}>
                     <strong className="text-sm block text-ellipsis">{name}</strong>
                     <span className="text-sm text-weak">
                         {c('Info').ngettext(msgid`${count} item`, `${count} items`, count)}
@@ -70,8 +66,6 @@ export const ImportVaultPickerOption: FC<VaultsPickerOptionProps> = ({
                                 title={vault.content.name}
                                 value={vault.shareId}
                                 className="text-sm"
-                                /* only allow selecting primary vault if a downgrade was detected */
-                                disabled={didDowngrade && vault.shareId !== primaryVaultId}
                             >
                                 <span className="flex flex-align-items-center">
                                     <Icon
