@@ -620,6 +620,9 @@
       "OK": [
         "D'acord"
       ],
+      "Ok": [
+        "OK"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Obrir ajustos de ${ CALENDAR_APP_NAME }"
       ],
@@ -970,6 +973,12 @@
       ],
       "Upgrade now": [
         "Millora ara"
+      ],
+      "Upgrade to Business": [
+        "Millora a Business"
+      ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "Millora per habilitar ${ PROTON_SENTINEL_NAME }"
       ],
       "Upgrade your plan": [
         "Milloreu el vostre pla"
@@ -3155,12 +3164,12 @@
         "No s'ha pogut desar la preferència."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
-        "Desseleccioneu almenys ${ calendarsToFixCount } calendari",
-        "Desseleccioneu almenys ${ calendarsToFixCount } calendaris"
+        "Desmarqueu almenys ${ calendarsToFixCount } calendari.",
+        "Desmarqueu almenys ${ calendarsToFixCount } calendaris."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "Desseleccioneu almenys ${ calendarsToFixCount } calendari o",
-        "Desseleccioneu almenys ${ calendarsToFixCount } calendaris o"
+        "Desmarqueu almenys ${ calendarsToFixCount } calendari o",
+        "Desmarqueu almenys ${ calendarsToFixCount } calendaris o"
       ],
       "Domain not available, try again later": [
         "El domini no està disponible, torneu-ho a provar més tard"
@@ -3215,6 +3224,9 @@
       ],
       "Incorrect password": [
         "Contrasenya incorrecta"
+      ],
+      "Incorrect username": [
+        "Nom d'usuari incorrecte"
       ],
       "Invalid ${ name } code": [
         "Codi ${ name } no vàlid"
@@ -5618,6 +5630,9 @@
       "Create in": [
         "Crear a"
       ],
+      "Create your first Gateway": [
+        "Crea la vostra primera passarel·la"
+      ],
       "Creating your account": [
         "S'està creant el compte"
       ],
@@ -6271,9 +6286,6 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Comproveu el vostre fitxer o proveu d'utilitzar el nostre ${ csvTemplateButton }."
-      ],
-      "Please contact the administrator of the organisation to manage the subscription.": [
-        "Contacteu amb l'administrador de la vostra organització per a gestionar la vostra subscripció."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Introduïu la frase de recuperació de 12 paraules associada amb el vostre compte."
@@ -8569,6 +8581,11 @@
         "Caducat"
       ]
     },
+    "Label to  inform a feature is only available on Beta": {
+      "Beta": [
+        "Beta"
+      ]
+    },
     "Label to change composer mode": {
       "Maximized": [
         "Maximitzat"
@@ -8811,6 +8828,9 @@
       ]
     },
     "Maintenance mode": {
+      "Please check back in a few minutes.": [
+        "Torneu a comprovar d'aquí a uns minuts."
+      ],
       "This feature is temporarily unavailable": [
         "Aquesta característica no està disponible temporalment."
       ]
@@ -10450,9 +10470,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "${ PASS_APP_NAME } benefits": [
-        "Avantatges de ${ PASS_APP_NAME }"
-      ],
       "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
         "${ PASS_APP_NAME } està disponible com una extensió del navegador als complements de Firefox."
       ],
@@ -10986,6 +11003,125 @@
       ],
       "to be created": [
         "per crear"
+      ]
+    },
+    "session_recovery:available:action": {
+      "Cancel password reset": [
+        "Cancel·la el restabliment de contrasenya"
+      ],
+      "Cancel reset": [
+        "Cancel·la el restabliment"
+      ],
+      "Reset password": [
+        "Restableix la contrasenya"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "S'ha desat la contrasenya."
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Restableix la contrasenya"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Cancel·la el restabliment de contrasenya"
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "S'ha cancel·lat el restabliment de la contrasenya."
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Cancel·la el restabliment de contrasenya?"
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "canvieu la vostra contrasenya ara"
+      ]
+    },
+    "session_recovery:disable:action": {
+      "Disable password reset": [
+        "Desactiva el restabliment de contrasenya"
+      ]
+    },
+    "session_recovery:disable:title": {
+      "Disable password reset?": [
+        "Desactiva el restabliment de contrasenya?"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel password reset": [
+        "Cancel·la el restabliment de contrasenya"
+      ],
+      "Cancel request": [
+        "Cancel·la la petició"
+      ],
+      "Got it": [
+        "Entesos"
+      ],
+      "Learn more": [
+        "Saber-ne més"
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "Mostra la petició "
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "S'ha sol·licitat un restabliment de la contrasenya."
+      ]
+    },
+    "session_recovery:initiation:action": {
+      "Got it": [
+        "Entesos"
+      ],
+      "Request password reset": [
+        "Sol·licita el restabliment de contrasenya"
+      ],
+      "Use recovery method": [
+        "Utilitza un mètode de recuperació"
+      ]
+    },
+    "session_recovery:initiation:title": {
+      "Request password reset?": [
+        "Sol·licita el restabliment de contrasenya?"
+      ]
+    },
+    "session_recovery:settings:action": {
+      "Request password reset": [
+        "Sol·licita el restabliment de contrasenya"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Tanca la sessió"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Restabliment de contrasenya"
+      ]
+    },
+    "session_recovery:status:info": {
+      "Available": [
+        "Disponible"
+      ],
+      "Pending": [
+        "Pendent"
+      ]
+    },
+    "session_recovery:status:title": {
+      "Password reset request": [
+        "Petició de restabliment de la contrasenya"
       ]
     },
     "Settings description": {
@@ -12378,6 +12514,9 @@
       "Edit filter": [
         "Editar filtre"
       ],
+      "Edit Gateway ${ currentName }": [
+        "Edita la passarel·la ${ currentName }"
+      ],
       "Edit servers": [
         "Edita els servidors"
       ],
@@ -12607,6 +12746,9 @@
       ],
       "Password and keys": [
         "Contrasenya i claus"
+      ],
+      "Password reset": [
+        "Restabliment de contrasenya"
       ],
       "Pay invoice": [
         "Paga la factura"

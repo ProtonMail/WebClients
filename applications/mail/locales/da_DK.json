@@ -4171,6 +4171,9 @@
       "account logins": [
         "konto-logins"
       ],
+      "Auto-forward Gmail": [
+        "Videresend automatisk Gmail"
+      ],
       "auto-forwarding": [
         "automatisk videresendelse"
       ],
@@ -4182,6 +4185,9 @@
       ],
       "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
         "Bravo for at gøre din e-mail endnu mere sikker, praktisk og relevant! Vi har øget din gratis lagerplads til i alt 1 GB."
+      ],
+      "Change ${ strongText } to your ${ BRAND_NAME } address": [
+        "Skift ${ strongText } til din ${ BRAND_NAME }-adresse"
       ],
       "Changed accounts": [
         "Skiftede konti"
@@ -4218,6 +4224,9 @@
       ],
       "Get the ${ strongText } on Android or iOS": [
         "Få ${ strongText } til Android eller iOS"
+      ],
+      "Get the App": [
+        "Hent appen"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
         "Bliv ved med at bruge ${ MAIL_APP_NAME } for at opdage flere måder, hvorpå ${ BRAND_NAME } beskytter dit privatliv og forenkler e-mailing."
@@ -7858,9 +7867,89 @@
         "Nulstil adgangskode"
       ]
     },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "Kontogendannelse er ikke tilgængelig for ældre adressenøgler"
+      ],
+      "Please generate keys before you try to change your password": [
+        "Generér nøgler, før du forsøger at ændre din adgangskode."
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } dag",
+        "${ timeRemaining.inDays } dage"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } time",
+        "${ timeRemaining.inHours } timer"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Anmodning om nulstilling af adgangskode godkendt (${ user.Email }). Du har ${ timeRemaining.inDays } dag til at nulstille din adgangskode.",
+        "Anmodning om nulstilling af adgangskode godkendt (${ user.Email }). Du har ${ timeRemaining.inDays } dage til at nulstille din adgangskode."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Anmodning om nulstilling af adgangskode godkendt (${ user.Email }). Du har ${ timeRemaining.inHours } time til at nulstille din adgangskode.",
+        "Anmodning om nulstilling af adgangskode godkendt (${ user.Email }). Du har ${ timeRemaining.inHours } timer til at nulstille din adgangskode."
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Gå til den enhed, hvor du er logget ind (i den session, hvor anmodningen blev indledt) for at ændre din adgangskode."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Denne tilladelse udløber om ${ timeRemaining.inDays } dag",
+        "Denne tilladelse udløber om ${ timeRemaining.inDays } dage"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Denne tilladelse udløber om ${ timeRemaining.inHours } time",
+        "Denne tilladelse udløber om ${ timeRemaining.inHours } timer"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Du kan nu frit ændre din adgangskode til kontoen ${ boldEmail } i ${ boldDaysRemaining }."
+      ]
+    },
     "session_recovery:available:link": {
       "See how": [
         "Se hvordan"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Adgangskode gemt"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Nulstil din adgangskode"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Annullér nulstilling af adgangskode"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Indtast din nuværende adgangskode for at annullere nulstillingen af adgangskoden. Ingen andre ændringer vil træde i kraft."
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "Nulstilling af adgangskode annulleret"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Annullér nulstilling af adgangskode?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Anmodning om nulstilling af adgangskode annulleret (${ user.Email }). Hvis du ikke har lavet denne anmodning, ${ changePasswordLink }."
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "ændr din adgangskode nu"
       ]
     },
     "session_recovery:in_progress:action": {
@@ -7872,6 +7961,71 @@
       ],
       "Learn more": [
         "Få mere at vide"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } time mere",
+        "${ gracePeriodHoursRemaining } timer mere"
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "Hvis du ikke har bedt om at nulstille din adgangskode, skal du annullere denne anmodning nu."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Der er anmodet om nulstilling af adgangskode (${ user.Email }). Du kan ændre din adgangskode om ${ hoursRemaining } time.",
+        "Der er anmodet om nulstilling af adgangskode (${ user.Email }). Du kan ændre din adgangskode om ${ hoursRemaining } timer."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "For at sikre, at det virkelig er dig, der forsøger at nulstille din adgangskode, venter vi 72 timer, før vi godkender anmodninger. Du kan ændre din adgangskode om ${ boldTimeLeft }. ${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "Vi har modtaget en anmodning om nulstilling af adgangskode for ${ boldEmail }."
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "Vis anmodning"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "Der er anmodet om nulstilling af adgangskode"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Log ud"
+      ],
+      "Stay signed in": [
+        "Forbliv logget ind"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } time",
+        "${ gracePeriodHoursRemaining } timer"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } er nu tilgængelig."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Hvis du logger ud, før du har nulstillet din adgangskode, kan du miste adgangen til din konto."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Hvis du logger ud uden at nulstille din adgangskode, kan du miste adgangen til din konto."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Du vil kunne nulstille din adgangskode om ${ boldTimeLeft }."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Nulstilling af adgangskode"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Log ud uden at nulstille adgangskoden?"
       ]
     },
     "Signature verification warning": {

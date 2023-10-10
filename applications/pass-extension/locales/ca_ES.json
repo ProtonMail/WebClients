@@ -29,6 +29,15 @@
       "Back": [
         "Torna"
       ],
+      "Can edit": [
+        "Editar"
+      ],
+      "Can manage": [
+        "Gestionar"
+      ],
+      "Can view": [
+        "Veure"
+      ],
       "Can't find your password manager? Please let us know!": [
         "No trobeu el vostre gestor de contrasenyes? Si us plau, feu-nos-ho saber!"
       ],
@@ -173,14 +182,26 @@
       "Importing": [
         "S'està important"
       ],
+      "Invite people": [
+        "Convida persones"
+      ],
+      "Join shared vault": [
+        "Uniu-vos a la caixa forta compartida"
+      ],
       "Learn more": [
         "Més informació"
       ],
       "Leave": [
         "Surt"
       ],
+      "Leave vault": [
+        "Deixa la caixa forta"
+      ],
       "Lock extension": [
         "Bloqueja l'extensió"
+      ],
+      "Manage access": [
+        "Gestiona l'accés"
       ],
       "Manually sync your data": [
         "Sincronitzeu les vostres dades manualment"
@@ -221,11 +242,20 @@
       "Regenerate": [
         "Regenera"
       ],
+      "Reject invitation": [
+        "Rebutja la invitació"
+      ],
       "Reload extension": [
         "Tornar a carregar l'extensió"
       ],
+      "Remove access": [
+        "Suprimeix l'accés"
+      ],
       "Request a feature": [
         "Demana una nova característica"
+      ],
+      "Resend invitation": [
+        "Reenvia la invitació"
       ],
       "Restore item": [
         "Restaura l'element"
@@ -238,6 +268,12 @@
       ],
       "Saving": [
         "Desant"
+      ],
+      "See members": [
+        "Mostra els membres"
+      ],
+      "Send invite": [
+        "Envia l'invitació"
       ],
       "Send us a message": [
         "Envieu-nos un missatge"
@@ -268,6 +304,9 @@
       ],
       "Submitting report...": [
         "S'està enviant l'informe..."
+      ],
+      "Transfer ownership": [
+        "Transfereix la propietat"
       ],
       "Try again": [
         "Proveu de nou"
@@ -383,6 +422,9 @@
       "Invalid url": [
         "URL no vàlida"
       ],
+      "Invite creation failed.": [
+        "No s'ha pogut crear la invitació."
+      ],
       "Item content cannot exceed 40KB": [
         "El contingut de l'element no pot excedir 40 Kb."
       ],
@@ -409,9 +451,6 @@
       ],
       "Request timed out": [
         "S'ha esgotat el temps d'espera"
-      ],
-      "Requesting alias details failed": [
-        "No s'han pogut sol·licitar els detalls de l'àlies."
       ],
       "Requesting alias options failed": [
         "No s'han pogut sol·licitar les opcions d'àlies."
@@ -541,6 +580,14 @@
         "${ count } element",
         "${ count } elements"
       ],
+      "${ itemCount } item": [
+        "${ itemCount } element",
+        "${ itemCount } elements"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } membre",
+        "${ memberCount } membres"
+      ],
       "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
         "${ PASS_APP_NAME } només importarà inicis de sessió i notes. Els passaports, els fitxers adjunts, etc. no són compatibles en aquest moment."
       ],
@@ -559,6 +606,10 @@
       "${ trialDaysLeft } day left": [
         "Queda ${ trialDaysLeft } dia",
         "Queden ${ trialDaysLeft } dies"
+      ],
+      "${ vault.count } item": [
+        "${ vault.count } element",
+        "${ vault.count } elements"
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Hi ha disponible una nova versió de ${ PASS_APP_NAME }. Actualitzeu-lo per gaudir de les últimes característiques i correccions d'errors."
@@ -589,6 +640,15 @@
       ],
       "Autosaved on ${ submissionURL }": [
         "S'ha desat automàticament en ${ submissionURL }"
+      ],
+      "Can edit": [
+        "Editar"
+      ],
+      "Can manage": [
+        "Gestionar"
+      ],
+      "Can view": [
+        "Veure"
       ],
       "Check out all the exclusive features that are available to you for a limited time.": [
         "Consulteu totes les característiques exclusives disponibles per un temps limitat."
@@ -727,6 +787,9 @@
       "Loading...": [
         "S'està carregant..."
       ],
+      "me": [
+        "jo"
+      ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Més que un gestor de contrasenyes, ${ PASS_APP_NAME } protegeix la vostra contrasenya i la vostra adreça de correu electrònic personal mitjançant àlies de correu electrònic. Desenvolupat amb la mateixa tecnologia que hi ha darrere de ${ MAIL_APP_NAME }, les vostres dades estan xifrades d'extrem a extrem i només són accessibles per vós."
       ],
@@ -745,11 +808,17 @@
       "Open the Extensions menu": [
         "Obre el menú d'Extensions"
       ],
+      "Owner": [
+        "Propietari"
+      ],
       "Password copied": [
         "S'ha copiat la contrasenya."
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Les contrasenyes generades fa més d'un dia s'esborraran de l'historial."
+      ],
+      "Pending invitation": [
+        "Invitació pendent"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Fixa ${ PASS_APP_NAME } a la barra d'eines"
@@ -1183,6 +1252,9 @@
       "Report a problem": [
         "Notifica un problema"
       ],
+      "Respond": [
+        "Respon"
+      ],
       "Restore all items": [
         "Restaura tots els elements"
       ],
@@ -1444,17 +1516,29 @@
       "Import to vault(s)": [
         "Importa a les caixes fortes"
       ],
+      "Leave vault ?": [
+        "Deixa la caixa forta?"
+      ],
       "Low disk space": [
         "Poc espai al disc"
       ],
       "Permanently remove all items ?": [
         "Voleu eliminar els elements de manera permanent?"
       ],
+      "Permissions": [
+        "Permisos"
+      ],
       "Pin the extension": [
         "Fixa l'extensió"
       ],
       "Secure your data": [
         "Assegureu les vostres dades"
+      ],
+      "Share with": [
+        "Comparteix amb"
+      ],
+      "Shared vault invitation": [
+        "Invitació a una caixa forta compartida"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Voleu canviar a ${ PASS_APP_NAME }?"
@@ -1464,6 +1548,9 @@
       ],
       "The extension is now ready to use.": [
         "L'extensió ja està llesta per utilitzar-se."
+      ],
+      "Transfer ownership": [
+        "Transfereix la propietat"
       ],
       "Trash empty": [
         "La paperera està buida."

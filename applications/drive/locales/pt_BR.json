@@ -5481,6 +5481,9 @@
     "session_recovery:sign_out:action": {
       "Sign out": [
         "Encerrar sessão"
+      ],
+      "Stay signed in": [
+        "Manter sessão iniciada"
       ]
     },
     "session_recovery:sign_out:info": {
@@ -5495,6 +5498,11 @@
     "session_recovery:sign_out:link": {
       "Password reset": [
         "Redefinição de senha"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Encerrar sessão sem redefinir senha?"
       ]
     },
     "Signing preference for emails": {

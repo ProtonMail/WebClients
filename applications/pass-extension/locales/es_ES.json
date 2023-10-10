@@ -29,6 +29,15 @@
       "Back": [
         "Atrás"
       ],
+      "Can edit": [
+        "Editar"
+      ],
+      "Can manage": [
+        "Gestionar"
+      ],
+      "Can view": [
+        "Ver"
+      ],
       "Can't find your password manager? Please let us know!": [
         "¿No encuentras tu gestor de contraseñas? ¡Háznoslo saber!"
       ],
@@ -173,14 +182,26 @@
       "Importing": [
         "Importando"
       ],
+      "Invite people": [
+        "Invitar personas"
+      ],
+      "Join shared vault": [
+        "Unirte a la bóveda compartida"
+      ],
       "Learn more": [
         "Más información"
       ],
       "Leave": [
         "Salir"
       ],
+      "Leave vault": [
+        "Dejar la bóveda"
+      ],
       "Lock extension": [
         "Bloquear la extensión"
+      ],
+      "Manage access": [
+        "Gestionar el acceso"
       ],
       "Manually sync your data": [
         "Sincronizar tus datos manualmente"
@@ -221,11 +242,20 @@
       "Regenerate": [
         "Regenerar"
       ],
+      "Reject invitation": [
+        "Rechazar invitación"
+      ],
       "Reload extension": [
         "Recargar la extensión"
       ],
+      "Remove access": [
+        "Eliminar el acceso"
+      ],
       "Request a feature": [
         "Solicitar una función"
+      ],
+      "Resend invitation": [
+        "Reenviar la invitación"
       ],
       "Restore item": [
         "Restaurar elemento"
@@ -238,6 +268,12 @@
       ],
       "Saving": [
         "Guardando"
+      ],
+      "See members": [
+        "Ver los miembros"
+      ],
+      "Send invite": [
+        "Enviar invitación"
       ],
       "Send us a message": [
         "Envíanos un mensaje"
@@ -268,6 +304,9 @@
       ],
       "Submitting report...": [
         "Enviando informe..."
+      ],
+      "Transfer ownership": [
+        "Transferir la propiedad"
       ],
       "Try again": [
         "Inténtalo de nuevo"
@@ -328,11 +367,23 @@
       "Cannot create alias (${ error }).": [
         "No se puede crear el alias (${ error })."
       ],
+      "Cannot send invitation to this address at the moment": [
+        "No se puede enviar una invitación a esta dirección por el momento."
+      ],
+      "Could not leave vault.": [
+        "No se ha podido dejar la bóveda."
+      ],
       "Could not open created vault": [
         "No se ha podido abrir la bóveda creada."
       ],
+      "Could not open invited vault": [
+        "No se ha podido abrir la bóveda invitada."
+      ],
       "Could not open updated vault": [
         "No se ha podido abrir la bóveda actualizada."
+      ],
+      "Could not resolve share members": [
+        "No se ha podido determinar los destinatarios del recurso compartido."
       ],
       "Could not resume your session : ${ description }": [
         "No se ha podido reanudar tu sesión: ${ description }."
@@ -368,6 +419,21 @@
       "Error reporting problem": [
         "Error al notificar el problema"
       ],
+      "Failed removing the invite.": [
+        "Error al eliminar la invitación."
+      ],
+      "Failed resending invite.": [
+        "Error al reenviar la invitación."
+      ],
+      "Failed to edit user's access.": [
+        "Error al editar el acceso del usuario."
+      ],
+      "Failed to remove user's access.": [
+        "Error al eliminar el acceso del usuario."
+      ],
+      "Failed to transfer this vault's ownership.": [
+        "Error al transferir la propiedad de esta bóveda."
+      ],
       "File could not be parsed": [
         "No se ha podido analizar el archivo."
       ],
@@ -382,6 +448,18 @@
       ],
       "Invalid url": [
         "La URL no es válida."
+      ],
+      "Invitation could not be accepted": [
+        "No se pudo aceptar la invitación"
+      ],
+      "Invitation could not be rejected": [
+        "No se pudo rechazar la invitación"
+      ],
+      "Invite creation failed.": [
+        "Error al crear la invitación."
+      ],
+      "Invite successfully sent": [
+        "La Invitación ha sido enviada."
       ],
       "Item content cannot exceed 40KB": [
         "El contenido del elemento no puede exceder de 40 KB"
@@ -409,9 +487,6 @@
       ],
       "Request timed out": [
         "Tiempo de espera agotado"
-      ],
-      "Requesting alias details failed": [
-        "Error al solicitar detalles del alias"
       ],
       "Requesting alias options failed": [
         "Error al solicitar opciones del alias"
@@ -460,6 +535,9 @@
       ],
       "Unknown error": [
         "Error desconocido"
+      ],
+      "Unknown invite": [
+        "Invitación desconocida"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Formato de archivo de ${ PASS_APP_NAME } no soportado"
@@ -541,6 +619,14 @@
         "${ count } elemento",
         "${ count } elementos"
       ],
+      "${ itemCount } item": [
+        "${ itemCount } elemento",
+        "${ itemCount } elementos"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } miembro",
+        "${ memberCount } miembros"
+      ],
       "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
         "${ PASS_APP_NAME } importará solo los inicios de sesión y notas. Por el momento no se admiten pasaportes, archivos adjuntos, etc."
       ],
@@ -560,11 +646,15 @@
         "${ trialDaysLeft } día restante",
         "${ trialDaysLeft } días restantes"
       ],
+      "${ vault.count } item": [
+        "${ vault.count } elemento",
+        "${ vault.count } elementos"
+      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Hay una nueva versión disponible de ${ PASS_APP_NAME }. Actualízala para disfrutar de las últimas funciones y errores corregidos."
       ],
       "Access ${ PASS_APP_NAME } via this icon": [
-        "Accede a ${ PASS_APP_NAME } mediante este ícono"
+        "Accede a ${ PASS_APP_NAME } con este ícono"
       ],
       "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
         "El acceso a ${ PASS_APP_NAME } requerirá un código PIN para desbloquear tu sesión."
@@ -589,6 +679,27 @@
       ],
       "Autosaved on ${ submissionURL }": [
         "Guardado automáticamente el ${ submissionURL }"
+      ],
+      "Can create, edit, delete and export items in this vault.": [
+        "Permite crear, editar, eliminar y exportar los elementos en esta bóveda."
+      ],
+      "Can edit": [
+        "Editar"
+      ],
+      "Can grant and revoke access to this vault, and delete it.": [
+        "Permite conceder y revocar acceso a esta bóveda y eliminarla."
+      ],
+      "Can grant and revoke access to this vault.": [
+        "Permite conceder y revocar acceso a esta bóveda."
+      ],
+      "Can manage": [
+        "Gestionar"
+      ],
+      "Can view": [
+        "Ver"
+      ],
+      "Can view items in this vault.": [
+        "Permite ver los elementos en esta bóveda."
       ],
       "Check out all the exclusive features that are available to you for a limited time.": [
         "Echa un vistazo a todas las funciones exclusivas que están disponibles para ti por tiempo limitado."
@@ -633,7 +744,7 @@
         "Introduce tu código PIN"
       ],
       "Export is encrypted using PGP and requires a strong passphrase.": [
-        "La exportación está cifrada mediante PGP y requiere una frase de contraseña segura."
+        "La exportación está cifrada con PGP y requiere una frase de contraseña segura."
       ],
       "Follow these simple steps to get the best experience:": [
         "Sigue estos pasos para obtener la mejor experiencia:"
@@ -690,6 +801,12 @@
       "Internet connection lost": [
         "Se ha perdido la conexión a internet."
       ],
+      "Invite successfully removed": [
+        "La invitación ha sido eliminada."
+      ],
+      "Invite successfully resent": [
+        "La invitación ha sido enviada."
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Parece que ya habías iniciado sesión en ${ PASS_APP_NAME }. Si deseas iniciar sesión con una cuenta diferente, cierra previamente la sesión actual."
       ],
@@ -727,6 +844,9 @@
       "Loading...": [
         "Cargando..."
       ],
+      "me": [
+        "yo"
+      ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Más que un gestor de contraseñas, ${ PASS_APP_NAME } protege tu contraseña y tu dirección de correo personal a través de alias de correo electrónico. Se ha desarrollado con la misma tecnología detrás de ${ MAIL_APP_NAME }, tus datos están cifrados de extremo a extremo y sólo son accesibles por ti."
       ],
@@ -745,11 +865,20 @@
       "Open the Extensions menu": [
         "Abre el menú de extensiones"
       ],
+      "Owner": [
+        "Propietario"
+      ],
+      "Ownership successfully transfered. You are no long the owner of this vault.": [
+        "La propiedad ha sido transferida. Ya no tienes la propiedad de esta bóveda."
+      ],
       "Password copied": [
         "La contraseña ha sido copiada."
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Las contraseñas generadas hace más de 1 día se borrarán del historial."
+      ],
+      "Pending invitation": [
+        "Invitación pendiente"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Fija ${ PASS_APP_NAME } en tu barra de herramientas"
@@ -784,6 +913,9 @@
       "Select the destination vault for each imported vault.": [
         "Selecciona la bóveda de destino para cada bóveda importada."
       ],
+      "Select the level of access this user will gain when they join your vault.": [
+        "Selecciona el nivel de acceso que obtendrá este usuario cuando se una a tu bóveda."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "No se puede acceder a los servidores. Inténtalo de nuevo en unos minutos."
       ],
@@ -808,6 +940,9 @@
       "Successfully exported all your items": [
         "Se han exportado correctamente todos tus elementos."
       ],
+      "Successfully left the vault": [
+        "Has dejado la bóveda."
+      ],
       "Successfully synced all vaults": [
         "Se han sincronizado con éxito todas las bóvedas."
       ],
@@ -824,8 +959,17 @@
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "El texto que intentas pegar es más largo que el máximo permitido de ${ maxLength } caracteres."
       ],
+      "The user did not accept the invitation yet.": [
+        "El usuario aún no ha aceptado la invitación."
+      ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Esta exportación no estará cifrada y cualquier persona con acceso a tu archivo exportado podrá ver tus contraseñas. Por seguridad, elimínalo una vez que hayas terminado de utilizarlo."
+      ],
+      "This user will receive an invitation to join your '${ vaultName }' vault.": [
+        "Este usuario recibirá una invitación para unirse a tu bóveda '${ vaultName }'."
+      ],
+      "This vault is not currently shared with anyone. Invite people to share it with others.": [
+        "Esta bóveda ya no se comparte con nadie. Invita a personas para compartirla con otros."
       ],
       "Unable to copy to clipboard": [
         "No se pudo copiar al portapapeles."
@@ -838,6 +982,12 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Actualizar ${ PASS_APP_NAME }"
+      ],
+      "User's access removed": [
+        "El acceso del usuario ha sido eliminado."
+      ],
+      "User's access sucessfuly updated": [
+        "Se ha actualizado el acceso del usuario."
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Se ha eliminado la bóveda \"${ payload.content.name }\"."
@@ -859,6 +1009,9 @@
       ],
       "You are about to create:": [
         "Vas a crear:"
+      ],
+      "You cannot change the mailboxes for this alias.": [
+        "No puedes cambiar los buzones para este alias."
       ],
       "You have ${ daysRemaining } day left in your trial period.": [
         "Tienes ${ daysRemaining } día restante de tu periodo de prueba.",
@@ -884,6 +1037,9 @@
       ],
       "You're about to create": [
         "Vas a crear"
+      ],
+      "You've been invited to a vault. Click here to see the invitation.": [
+        "Se te ha invitado a una bóveda. Pulsa aquí para ver la invitación."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Tu sesión de ${ PASS_APP_NAME } está bloqueada."
@@ -959,10 +1115,10 @@
         "Bloqueo automático después de"
       ],
       "Autofill": [
-        "Autorellenado"
+        "Autorrelleno"
       ],
       "Autofill 2FA": [
-        "Autorellenado 2FA"
+        "Autorrellenar 2FA"
       ],
       "Automatically open autofill when focusing login fields": [
         "Abrir automáticamente AutoFill al enfocar los campos de inicio de sesión"
@@ -1182,6 +1338,9 @@
       ],
       "Report a problem": [
         "Notificar un problema"
+      ],
+      "Respond": [
+        "Responder"
       ],
       "Restore all items": [
         "Restaurar todos los elementos"
@@ -1444,17 +1603,29 @@
       "Import to vault(s)": [
         "Importar a las bóvedas"
       ],
+      "Leave vault ?": [
+        "¿Dejar la bóveda?"
+      ],
       "Low disk space": [
         "Poco espacio en el disco"
       ],
       "Permanently remove all items ?": [
         "¿Eliminar todos los elementos permanentemente?"
       ],
+      "Permissions": [
+        "Permisos"
+      ],
       "Pin the extension": [
         "Fija la extensión"
       ],
       "Secure your data": [
         "Asegura tus datos"
+      ],
+      "Share with": [
+        "Compartir con"
+      ],
+      "Shared vault invitation": [
+        "Invitación de bóveda compartida"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "¿Cambiar a ${ PASS_APP_NAME }?"
@@ -1464,6 +1635,9 @@
       ],
       "The extension is now ready to use.": [
         "Ya puedes utilizar la extensión."
+      ],
+      "Transfer ownership": [
+        "Transferir la propiedad"
       ],
       "Trash empty": [
         "Papelera vacía"
@@ -1532,6 +1706,9 @@
       "An error occured while exporting your data": [
         "Se ha producido un error al exportar tus datos."
       ],
+      "Are you sure you want to transfer vault ownership to ${ email }?": [
+        "¿Estás seguro de que quieres transferir la propiedad de la bóveda a ${ email }?"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "No se pueden recuperar buzones para este alias en este momento."
       ],
@@ -1577,6 +1754,9 @@
       "PGP encrypted export file requires passphrase": [
         "El archivo de exportación cifrado con PGP requiere una frase de contraseña."
       ],
+      "Please enter a valid email address": [
+        "Introduce una dirección de correo válida."
+      ],
       "Please log back in": [
         "Vuelve a iniciar sesión"
       ],
@@ -1618,6 +1798,9 @@
       ],
       "You must select at least one mailbox": [
         "Debes seleccionar al menos un buzón."
+      ],
+      "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
+        "Ya no tendrás acceso a esta bóveda. Para unirte de nuevo necesitarás una invitación."
       ],
       "Your plan does not allow you to create more aliases": [
         "Tu plan no te permite crear más alias."
