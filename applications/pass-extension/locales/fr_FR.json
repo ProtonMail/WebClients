@@ -255,7 +255,7 @@
         "Demander une fonctionnalité"
       ],
       "Resend invitation": [
-        "Envoyer à nouveau l'invitation"
+        "Renvoyer l'invitation"
       ],
       "Restore item": [
         "Restaurer l'élément"
@@ -273,7 +273,7 @@
         "Afficher les membres"
       ],
       "Send invite": [
-        "Envoyer une invitation"
+        "Envoyer l'invitation"
       ],
       "Send us a message": [
         "Envoyez-nous un message"
@@ -367,17 +367,20 @@
       "Cannot create alias (${ error }).": [
         "Impossible de créer l'alias (${ error })"
       ],
+      "Cannot send invitation to this address at the moment": [
+        "Vous ne pouvez pas envoyer d'invitation à cette adresse pour le moment."
+      ],
       "Could not leave vault.": [
         "Impossible de quitter le coffre-fort."
       ],
       "Could not open created vault": [
-        "Impossible d'ouvrir le coffre-fort créé"
+        "Le coffre-fort créé n'a pas pu être ouvert."
       ],
       "Could not open invited vault": [
         "Le coffre-fort pour lequel vous avez reçu une invitation n'a pas pu être ouvert."
       ],
       "Could not open updated vault": [
-        "Impossible d'ouvrir le coffre-fort mis à jour"
+        "Le coffre-fort mis à jour n'a pas pu être ouvert."
       ],
       "Could not resolve share members": [
         "Impossible de définir les membres du partage"
@@ -423,10 +426,10 @@
         "L'invitation n'a pas pu être renvoyée."
       ],
       "Failed to edit user's access.": [
-        "La modification de l'accès de l'utilisateur n'a pas abouti."
+        "L'accès de l'utilisateur n'a pas pu être modifié."
       ],
       "Failed to remove user's access.": [
-        "La suppression de l'accès de l'utilisateur n'a pas abouti."
+        "L'accès de l'utilisateur n'a pas pu être supprimé."
       ],
       "Failed to transfer this vault's ownership.": [
         "Le transfert de la propriété de ce coffre-fort n'a pas abouti."
@@ -453,7 +456,7 @@
         "L'invitation n'a pas pu être refusée."
       ],
       "Invite creation failed.": [
-        "La création d'une invitation n'a pas abouti."
+        "La création de l'invitation n'a pas abouti."
       ],
       "Invite successfully sent": [
         "L'invitation a été envoyée."
@@ -484,9 +487,6 @@
       ],
       "Request timed out": [
         "La requête a expiré."
-      ],
-      "Requesting alias details failed": [
-        "La demande d'informations sur l'alias n'a pas abouti."
       ],
       "Requesting alias options failed": [
         "La demande des options d'alias n'a pas abouti."
@@ -687,7 +687,7 @@
         "Modifier"
       ],
       "Can grant and revoke access to this vault, and delete it.": [
-        "Le propriétaire peut accorder et révoquer l'accès à ce coffre-fort, ainsi que le supprimer."
+        "Permet d'accorder et de révoquer l'accès à ce coffre-fort, ainsi que de le supprimer."
       ],
       "Can grant and revoke access to this vault.": [
         "Permet d'accorder et de révoquer l'accès à ce coffre-fort."
@@ -969,7 +969,7 @@
         "Cet utilisateur recevra une invitation à rejoindre votre coffre-fort « ${ vaultName } »."
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
-        "Ce coffre-fort n'est partagé avec personne pour le moment. Invitez des personnes à le partager avec d'autres personnes."
+        "Ce coffre-fort n'est partagé avec personne pour le moment. Pour le partager avec d'autres personnes, invitez-les."
       ],
       "Unable to copy to clipboard": [
         "Impossible de copier dans le presse-papiers"
@@ -1009,6 +1009,9 @@
       ],
       "You are about to create:": [
         "Vous êtes sur le point de créer :"
+      ],
+      "You cannot change the mailboxes for this alias.": [
+        "Vous ne pouvez pas modifier la véritable adresse e-mail associée à cet alias."
       ],
       "You have ${ daysRemaining } day left in your trial period.": [
         "Votre période d'essai se termine dans ${ daysRemaining } jour.",
