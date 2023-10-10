@@ -1,5 +1,5 @@
 export type AutoFillSettings = { inject: boolean; openOnFocus: boolean };
-export type AutoSaveSettings = { prompt: boolean };
+export type AutoSaveSettings = { prompt: boolean; shareId?: string };
 export type AutoSuggestSettings = { password: boolean; email: boolean };
 
 export type CriteriaMask = number;

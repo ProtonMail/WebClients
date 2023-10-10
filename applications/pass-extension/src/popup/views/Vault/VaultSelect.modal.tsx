@@ -7,10 +7,11 @@ import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import {
-    selectPrimaryVault,
     selectVaultLimits,
+    selectWritableVaults,
     selectWritableVaultsWithItemsCount,
 } from '@proton/pass/store/selectors';
+import { prop } from '@proton/pass/utils/fp';
 
 import { SidebarModal } from '../../../shared/components/sidebarmodal/SidebarModal';
 import { UpgradeButton } from '../../../shared/components/upgrade/UpgradeButton';
@@ -21,16 +22,17 @@ import { Panel } from '../../components/Panel/Panel';
 import { VaultIcon } from '../../components/Vault/VaultIcon';
 
 export type Props = Omit<ModalProps, 'onSubmit'> & {
-    shareId: string;
+    downgradeMessage: string;
     onSubmit: (shareId: string) => void;
+    shareId: string;
 };
 
 /* if the user has downgraded : only allow him to select
- * his primary vault as target. This rule applies when moving
+ * his writable vaults as target. This rule applies when moving
  * an item to a vault or when selecting an item's vault */
-export const VaultSelectModal: VFC<Props> = ({ onSubmit, shareId, ...props }) => {
+export const VaultSelectModal: VFC<Props> = ({ downgradeMessage, onSubmit, shareId, ...props }) => {
     const vaultsWithItemCount = useSelector(selectWritableVaultsWithItemsCount);
-    const primaryVaultId = useSelector(selectPrimaryVault).shareId;
+    const writableShareIds = useSelector(selectWritableVaults).map(prop('shareId'));
     const { didDowngrade } = useSelector(selectVaultLimits);
 
     return (
@@ -54,19 +56,14 @@ export const VaultSelectModal: VFC<Props> = ({ onSubmit, shareId, ...props }) =>
                     />
                 }
             >
-                {didDowngrade && (
-                    <ItemCard>
-                        {c('Info')
-                            .t`You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.`}
-                    </ItemCard>
-                )}
+                {didDowngrade && <ItemCard>{downgradeMessage}</ItemCard>}
 
                 <RadioButtonGroup name="vault-select" className="flex-columns" value={shareId} onChange={onSubmit}>
                     {vaultsWithItemCount.map((vault) => (
                         <RadioLabelledButton
                             value={vault.shareId}
                             key={vault.shareId}
-                            disabled={didDowngrade && vault.shareId !== primaryVaultId}
+                            disabled={!writableShareIds.includes(vault.shareId)}
                         >
                             <VaultIcon
                                 size={20}

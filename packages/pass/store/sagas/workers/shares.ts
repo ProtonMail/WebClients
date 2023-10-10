@@ -24,17 +24,18 @@ export const decryptShareResponse = async (
 
     if (share) {
         return {
-            shareId: share.shareId,
-            targetId: share.targetId,
-            targetType: share.targetType,
-            vaultId: share.vaultId,
-            eventId,
             content: decodeVaultContent(share.content),
+            createTime: share.createTime,
+            eventId,
+            owner: share.owner,
             primary: Boolean(encryptedShare.Primary),
             shared: share.shared,
-            owner: share.owner,
-            targetMembers: share.targetMembers,
+            shareId: share.shareId,
             shareRoleId: share.shareRoleId,
+            targetId: share.targetId,
+            targetMembers: share.targetMembers,
+            targetType: share.targetType,
+            vaultId: share.vaultId,
         };
     }
 };
