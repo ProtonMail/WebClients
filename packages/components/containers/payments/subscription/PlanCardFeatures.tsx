@@ -84,6 +84,7 @@ export const PlanCardFeatureList = ({
                                 <span className="mr-2 align-middle">{feature.text}</span>
                                 {tooltip && feature.tooltip ? (
                                     <Info
+                                        url={feature.iconUrl}
                                         className="align-middle"
                                         title={feature.tooltip}
                                         colorPrimary={feature.included}
