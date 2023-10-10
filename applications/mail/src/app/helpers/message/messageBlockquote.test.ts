@@ -29,7 +29,6 @@ describe('messageBlockquote', () => {
                 </div>
                 <div style="font-family: verdana; font-size: 20px;"><br></div>
                 <div class="protonmail_quote">
-                    ------- Original Message -------<br>
                     On Tuesday, January 4th, 2022 at 17:13, Swiip - Test account &lt;swiip.test@protonmail.com&gt; wrote:<br>
                     <blockquote class="protonmail_quote" type="cite">
                         <div style="font-family: verdana; font-size: 20px;">
@@ -45,8 +44,8 @@ describe('messageBlockquote', () => {
 
         const [before, after] = locateBlockquote(createDocument(content));
 
-        expect(before).not.toContain('Original Message');
-        expect(after).toContain('Original Message');
+        expect(before).not.toContain('On Tuesday');
+        expect(after).toContain('On Tuesday');
     });
 
     it(`should take the last element containing text in case of siblings blockquotes`, () => {

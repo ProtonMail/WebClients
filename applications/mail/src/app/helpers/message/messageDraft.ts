@@ -14,7 +14,6 @@ import {
     DRAFT_ID_PREFIX,
     FORWARDED_MESSAGE,
     FW_PREFIX,
-    ORIGINAL_MESSAGE,
     RE_PREFIX,
     formatSubject,
     getOriginalTo,
@@ -214,8 +213,7 @@ export const generatePreviousMessageInfos = (referenceMessage: PartialMessageSta
          */
         const previously = c('Message').t`On ${date}, ${senderString} wrote:`;
 
-        return `${ORIGINAL_MESSAGE}<br>
-        ${previously}<br><br>`;
+        return `${previously}<br><br>`;
     }
 };
 
