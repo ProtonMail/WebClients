@@ -1505,6 +1505,12 @@
         "Jaa kenelle tahansa"
       ]
     },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "Näytä ${ remainingItems } lisää",
+        "Näytä ${ remainingItems } lisää"
+      ]
+    },
     "Calendar share permission label": {
       "Edit event details": [
         "Muokkaa tapahtuman tietoja"
@@ -6408,9 +6414,6 @@
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Tarkista tiedostosi tai kokeile ${ csvTemplateButton }."
       ],
-      "Please contact the administrator of the organisation to manage the subscription.": [
-        "Ota yhteyttä organisaation ylläpitoon hallitaksesi tilausta."
-      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Syötä tilillesi kuuluva 12-sanainen palautuslauseke."
       ],
@@ -8638,6 +8641,9 @@
       "Verification code": [
         "Vahvistuskoodi"
       ],
+      "Verify keys with Key Transparency": [
+        "Vahvista avaiment Key Transparencyllä"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Olemme pahoillamme kun lähdet. Kertoisitko meille miksi, jotta voimme parantaa toimintaamme, kiitos."
       ],
@@ -8769,6 +8775,11 @@
       ],
       "Expired": [
         "Erääntynyt"
+      ]
+    },
+    "Label to  inform a feature is only available on Beta": {
+      "Beta": [
+        "Beta"
       ]
     },
     "Label to change composer mode": {
@@ -9057,7 +9068,7 @@
         "Kaikki suodatustoiminnot koskevat ${ MAIL_APP_NAME } -tilisi kaikkia viestejä. Automaattivastauksia ei lähetetä."
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
-        "Yhdistä oma verkkotunnuksesi ${ BRAND_NAME }iin määrittääksesi omia sähköpostiosoitteita (esim. nimesi@yrityksesi.fi). Ohjattu toiminto opastaa sinua määrityksessä."
+        "Määritä omia sähköpostiosoitteita (esim. nimesi@yrityksesi.fi) yhdistämällä oma verkkotunnuksesi ${ BRAND_NAME }iin. Ohjattu toiminto opastaa määrityksessä."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ilmainen kokeilusi on päättynyt. Tilisi käyttöoikeus päättyy pian. ${ action }"
@@ -10700,9 +10711,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "${ PASS_APP_NAME } benefits": [
-        "${ PASS_APP_NAME } -edut"
-      ],
       "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
         "${ PASS_APP_NAME } on saatavilla selainlaajennuksena Firefox Add-ons -sivustolta."
       ],
@@ -11247,6 +11255,9 @@
       ]
     },
     "session_recovery:available:action": {
+      "Cancel password reset": [
+        "Peru salasanan nollaus"
+      ],
       "Cancel reset": [
         "Peru nollaus"
       ],
@@ -11255,6 +11266,9 @@
       ]
     },
     "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "Tilin palautus ei ole käytetävissä vanhan tyyppisillä osoiteavaimilla"
+      ],
       "Please generate keys before you try to change your password": [
         "Luo avaimet ennen kuin yrität vaihtaa salasanaasi"
       ]
@@ -11267,6 +11281,12 @@
       "${ timeRemaining.inHours } hour": [
         "${ timeRemaining.inHours } tunti",
         "${ timeRemaining.inHours } tuntia"
+      ],
+      "Didn’t make this request?": [
+        "Etkö tehnyt pyyntöä itse?"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Jos et pyytänyt salasanasi nollausta, peruuta tämä pyyntö nyt."
       ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
         "Salasanan nollauspyyntö hyväksytty (${ user.Email }). Sinulla on ${ timeRemaining.inDays } päivä aikaa nollata salasanasi.",
@@ -11289,6 +11309,12 @@
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Voit nyt vaihtaa salasanasi tilille ${ boldEmail } vapaasti ${ boldDaysRemaining } ajan."
+      ],
+      "You can now reset your password": [
+        "Voit nyt nollata salasanasi"
+      ],
+      "You can reset your password until ${ boldDate }.": [
+        "Voit nollata salasanasi ${ boldDate } asti."
       ]
     },
     "session_recovery:available:link": {
@@ -11336,7 +11362,28 @@
         "vaihda salasanasi nyt"
       ]
     },
+    "session_recovery:disable:action": {
+      "Disable password reset": [
+        "Poista salasanan nollaus käytöstä"
+      ]
+    },
+    "session_recovery:disable:info": {
+      "Make sure you have access to a recovery method.": [
+        "Varmista, että jokin palautustapa on käytettävissäsi."
+      ],
+      "You will no longer be able to request a password reset from your account settings.": [
+        "Et voi enää pyytää salasanan nollausta tilisi asetuksista."
+      ]
+    },
+    "session_recovery:disable:title": {
+      "Disable password reset?": [
+        "Poistetaanko salasanan nollaus käytöstä?"
+      ]
+    },
     "session_recovery:in_progress:action": {
+      "Cancel password reset": [
+        "Peru salasanan nollaus"
+      ],
       "Cancel request": [
         "Peru pyyntö"
       ],
@@ -11352,8 +11399,17 @@
         "${ gracePeriodHoursRemaining } tunti lisää",
         "${ gracePeriodHoursRemaining } tuntia lisää"
       ],
+      "Didn’t make this request?": [
+        "Etkö tehnyt pyyntöä itse?"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Jos et pyytänyt salasanasi nollausta, peruuta tämä pyyntö nyt."
+      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Jos et pyytänyt salasanasi nollausta, peruuta tämä pyyntö nyt."
+      ],
+      "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
+        "Salasanan nollaus on käytettävissä ${ boldDate } alkaen. Tämä antaa sinulle aikaa perua kaikki valheelliset pyynnöt."
       ],
       "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
         "Salasanan nollausta pyydetty (${ user.Email }). Voit vaihtaa salasanasi ${ hoursRemaining } tunnin kuluttua.",
@@ -11364,6 +11420,10 @@
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "Vastaanotimme salasanan nollauspyynnön osoitteelle ${ boldEmail }."
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "Voit vaihtaa salasanasi ${ gracePeriodHoursRemaining } tunnin kuluttua",
+        "Voit vaihtaa salasanasi ${ gracePeriodHoursRemaining } tunnin kuluttua"
       ]
     },
     "session_recovery:in_progress:link": {
@@ -11374,6 +11434,64 @@
     "session_recovery:in_progress:title": {
       "Password reset requested": [
         "Salasanan nollausta pyydetty"
+      ]
+    },
+    "session_recovery:initiation:action": {
+      "Got it": [
+        "Selvä"
+      ],
+      "Request password reset": [
+        "Pyydä salasanan nollausta"
+      ],
+      "Use recovery method": [
+        "Käytä palautustapaa"
+      ]
+    },
+    "session_recovery:initiation:info": {
+      "For security reasons, you’ll have to wait **72 hours** before you can change your password.": [
+        "Turvallisuussyistä sinun on odotettava **72 tuntia** ennen kuin voit vaihtaa salasanasi."
+      ],
+      "If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.": [
+        "Jos olet määrittänyt **palautustavan**, voit tämä sijaan kokeilla tilin palautusta. Tämä mahdollistaa salasanan vaihtamisen heti."
+      ],
+      "We will contact you again when the password reset is available.": [
+        "Saat ilmoituksen kun salasanan nollaus on käytettävissä."
+      ],
+      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
+        "Voit tarkistaa pyyntösi tilan milloin tahansa asetusten ${ accountAndPasswordSectionLink }."
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "account and password section": [
+        "tili ja salasana -osiossa"
+      ]
+    },
+    "session_recovery:initiation:notification": {
+      "Password reset confirmed": [
+        "Salasanan nollaus vahvistettu"
+      ]
+    },
+    "session_recovery:initiation:title": {
+      "Request password reset?": [
+        "Pyydetäänkö salasanan nollausta?"
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "Voit nollata salasanasi ${ gracePeriodHoursRemaining } tunnin kuluttua",
+        "Voit nollata salasanasi ${ gracePeriodHoursRemaining } tunnin kuluttua"
+      ]
+    },
+    "session_recovery:settings:action": {
+      "Allow password reset from settings": [
+        "Salli salasanan nollaus asetuksista"
+      ],
+      "Request a password reset from your Account settings. No recovery method needed.": [
+        "Pyydä salasanan nollausta tilisi asetuksista. Palautustapaa ei tarvita."
+      ],
+      "Request password reset": [
+        "Pyydä salasanan nollausta"
+      ],
+      "To disallow password reset, you must have a recovery method set up.": [
+        "Salasanan nollauksen estäminen edellyttää palautustavan määritystä."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -11410,6 +11528,19 @@
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
         "Kirjaudu ulos nollaamatta salasanaa?"
+      ]
+    },
+    "session_recovery:status:info": {
+      "Available": [
+        "Käytettävissä"
+      ],
+      "Pending": [
+        "Odottaa"
+      ]
+    },
+    "session_recovery:status:title": {
+      "Password reset request": [
+        "Salasanan nollauspyyntö"
       ]
     },
     "Settings description": {
@@ -12540,6 +12671,9 @@
       "Add users": [
         "Lisää käyttäjiä"
       ],
+      "Address and key verification": [
+        "Osoitteen ja avaimen vahvistus"
+      ],
       "Allocate storage": [
         "Varaa tallennustilaa"
       ],
@@ -13065,6 +13199,9 @@
       ],
       "Password and keys": [
         "Salasana ja avaimet"
+      ],
+      "Password reset": [
+        "Salasanan nollaus"
       ],
       "Pay invoice": [
         "Maksa lasku"
@@ -13622,6 +13759,9 @@
       ],
       "This feature is only available for paid users": [
         "Ominaisuus on vain maksavien käyttäjien käytettävissä"
+      ],
+      "This feature is only available on Beta": [
+        "Ominaisuus on käytettävissä vain Beta-versiossa"
       ],
       "This key cannot be used for encryption": [
         "Avainta ei voi käyttää salaukseen"

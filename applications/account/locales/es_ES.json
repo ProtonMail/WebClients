@@ -6414,9 +6414,6 @@
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Verifica tu archivo o prueba a utilizar nuestro ${ csvTemplateButton }."
       ],
-      "Please contact the administrator of the organisation to manage the subscription.": [
-        "Contacta al administrador de la organización para administrar la suscripción."
-      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Introduce la frase de recuperación de 12 palabras asociada a tu cuenta."
       ],
@@ -8644,6 +8641,9 @@
       "Verification code": [
         "Código de verificación"
       ],
+      "Verify keys with Key Transparency": [
+        "Verifica las claves con el sistema Key Transparency"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Lamentamos que te vayas. Explica por qué te vas para ayudarnos a mejorar."
       ],
@@ -8775,6 +8775,11 @@
       ],
       "Expired": [
         "Expirado"
+      ]
+    },
+    "Label to  inform a feature is only available on Beta": {
+      "Beta": [
+        "Beta"
       ]
     },
     "Label to change composer mode": {
@@ -9671,10 +9676,10 @@
         "Servidores en más de ${ vpnServersCountData.paid.countries } países"
       ],
       "Share calendar via link": [
-        "Compartir calendario mediante un enlace"
+        "Compartir calendario con un enlace"
       ],
       "Share files and folders via link": [
-        "Compartir archivos y carpetas mediante un enlace"
+        "Compartir archivos y carpetas con un enlace"
       ],
       "Sign in as user": [
         "Iniciar sesión como usuario"
@@ -9979,10 +9984,10 @@
         "Te permite responder automáticamente a los mensajes que recibes."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
-        "Por el momento, no se puede enviar correos electrónicos mediante programación ni promocionales de forma masiva. Te recomendamos tener un proveedor de servicios de correo que te permita hacerlo si esa es tu intención."
+        "Por el momento, no se puede programar el envío de correos electrónicos ni promocionales de forma masiva. Te recomendamos que puedes utilizar un proveedor de servicios de correo electrónico dedicado para este caso."
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
-        "Controla el acceso a tus archivos compartidos mediante enlaces con fechas de expiración y contraseña."
+        "Controla el acceso a tus archivos compartidos con enlaces con fechas de expiración y contraseña."
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Crea varias direcciones de correo electrónico para tus identidades en línea, como \"JuanCompras@${ domain }\" para las cuentas destinadas a compras o \"JuanNoticias@${ domain }\", para las suscripciones a medios de comunicación."
@@ -10004,7 +10009,7 @@
         "Defiende de ataques que amenazan la privacidad de la VPN dirigiendo el tráfico de Internet por varios servidores."
       ],
       "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "Comparte calendarios con compañeros, familiares y amigos fácilmente mediante un enlace"
+        "Comparte calendarios con compañeros, familiares y amigos fácilmente con un enlace"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Comparte calendarios con familiares, amigos y compañeros fácilmente"
@@ -10016,7 +10021,7 @@
         "Impón el cierre de sesión cuando se sospeche de que las credenciales del usuario están en peligro."
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
-        "Solo se puede utilizar IMAP con aplicaciones de escritorio (Outlook, Apple Mail o Thunderbird) mediante ${ MAIL_APP_NAME } Bridge. De momento, no existe compatibilidad con integraciones IMAP en la nube."
+        "Solo se puede utilizar IMAP con aplicaciones de escritorio (Outlook, Apple Mail o Thunderbird) con ${ MAIL_APP_NAME } Bridge. De momento, no existe compatibilidad con integraciones IMAP en la nube."
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Mantén privados tus planes y los de tu familia con un calendario cifrado."
@@ -10031,7 +10036,7 @@
         "Como una carpeta, una bóveda es una manera práctica de organizar tus archivos. El poder compartir bóvedas con amistades y familiares es un trabajo que está en desarrollo."
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
-        "Bloquea los recursos de su empresa del internet público y hazlos accesibles solo mediante tus puertas de enlace privadas."
+        "Bloquea los recursos de su empresa del internet público y hazlos accesibles solo con tus puertas de enlace privadas."
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Administra tu suscripción y personaliza también tu plan. Puedes pagar con tarjeta de crédito, PayPal, criptomonedas y transferencia."
@@ -10706,8 +10711,8 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "${ PASS_APP_NAME } benefits": [
-        "Ventajas de ${ PASS_APP_NAME }"
+      "${ appName } benefits": [
+        "Ventajas de ${ appName }"
       ],
       "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
         "${ PASS_APP_NAME } está disponible como una extensión del navegador Firefox."
@@ -11263,6 +11268,14 @@
         "Restablecer la contraseña"
       ]
     },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "La recuperación de la cuenta no está disponible para claves de direcciones heredadas."
+      ],
+      "Please generate keys before you try to change your password": [
+        "Genera claves antes de intentar cambiar tu contraseña."
+      ]
+    },
     "session_recovery:available:info": {
       "${ timeRemaining.inDays } day": [
         "${ timeRemaining.inDays } día",
@@ -11274,6 +11287,31 @@
       ],
       "Didn’t make this request?": [
         "¿No has hecho esta solicitud?"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Si no has solicitado restablecer la contraseña, cancela la solicitud ahora."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "El restablecimiento de contraseña ha sido aprobado (${ user.Email }). Tienes ${ timeRemaining.inDays } día para restablecer tu contraseña.",
+        "El restablecimiento de contraseña ha sido aprobado (${ user.Email }). Tienes ${ timeRemaining.inDays } días para restablecer tu contraseña."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "El restablecimiento de contraseña ha sido aprobado (${ user.Email }). Tienes ${ timeRemaining.inHours } hora para restablecer tu contraseña.",
+        "El restablecimiento de contraseña ha sido aprobado (${ user.Email }). Tienes ${ timeRemaining.inHours } horas para restablecer tu contraseña."
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Ve al dispositivo en el que se ha iniciado sesión y donde se ha realizado la solicitud para cambiar tu contraseña."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Este permiso expira en ${ timeRemaining.inDays } día.",
+        "Este permiso expira en ${ timeRemaining.inDays } días."
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Este permiso expira en ${ timeRemaining.inHours } hora.",
+        "Este permiso expira en ${ timeRemaining.inHours } horas."
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Ahora puedes cambiar la contraseña para la cuenta ${ boldEmail } durante ${ boldDaysRemaining }."
       ],
       "You can now reset your password": [
         "Ahora puedes restablecer tu contraseña."
@@ -11302,6 +11340,11 @@
         "Cancelar el restablecimiento de contraseña"
       ]
     },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Introduce tu contraseña actual para cancelar el proceso de restablecimiento. No se aplicará ningún otro cambio."
+      ]
+    },
     "session_recovery:cancellation:notification": {
       "Password reset cancelled": [
         "El restablecimiento de contraseña ha sido cancelado."
@@ -11310,6 +11353,11 @@
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "¿Cancelar el restablecimiento de contraseña?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "La solicitud de restablecimiento de contraseña ha sido cancelada (${ user.Email }). Si no ha hecho esta solicitud, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -11325,6 +11373,9 @@
     "session_recovery:disable:info": {
       "Make sure you have access to a recovery method.": [
         "Asegúrate de tener acceso a un método de recuperación."
+      ],
+      "You will no longer be able to request a password reset from your account settings.": [
+        "Ya no podrás solicitar un restablecimiento de contraseña desde los ajustes de la cuenta."
       ]
     },
     "session_recovery:disable:title": {
@@ -11353,6 +11404,29 @@
       ],
       "Didn’t make this request?": [
         "¿No has hecho esta solicitud?"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Si no has solicitado restablecer la contraseña, cancela la solicitud ahora."
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "Si no has solicitado restablecer la contraseña, cancélala ahora."
+      ],
+      "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
+        "El restablecimiento de contraseña está disponible desde ${ boldDate }. Esto te da tiempo para cancelar cualquier solicitud fraudulenta."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "El restablecimiento de contraseña ha sido solicitado (${ user.Email }). Puedes cambiar tu contraseña en ${ hoursRemaining } hora.",
+        "El restablecimiento de contraseña ha sido solicitado (${ user.Email }). Puedes cambiar tu contraseña en ${ hoursRemaining } horas."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "Para asegurarte de que realmente eres tú quien intenta restablecer tu contraseña, esperamos 72 horas antes de aprobar las solicitudes. Podrás cambiar tu contraseña en ${ boldTimeLeft }. ${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "Hemos recibido una solicitud de restablecimiento de contraseña para ${ boldEmail }."
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "Puedes cambiar tu contraseña en ${ gracePeriodHoursRemaining } hora.",
+        "Puedes cambiar tu contraseña en ${ gracePeriodHoursRemaining } horas."
       ]
     },
     "session_recovery:in_progress:link": {
@@ -11376,6 +11450,25 @@
         "Utilizar un método de recuperación"
       ]
     },
+    "session_recovery:initiation:info": {
+      "For security reasons, you’ll have to wait **72 hours** before you can change your password.": [
+        "Por razones de seguridad, tendrás que esperar **72 horas** antes de que puedas cambiar la contraseña."
+      ],
+      "If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.": [
+        "Si tienes un **método de recuperación** configurado, intenta la recuperación de la cuenta en su lugar. Esto te permitirá cambiar tu contraseña de inmediato."
+      ],
+      "We will contact you again when the password reset is available.": [
+        "Te contactaremos de nuevo cuando el restablecimiento de contraseña esté disponible."
+      ],
+      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
+        "Puedes comprobar el estado detu solicitud en cualquier momento en la ${ accountAndPasswordSectionLink } de los ajustes."
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "account and password section": [
+        "sección Cuenta y contraseña"
+      ]
+    },
     "session_recovery:initiation:notification": {
       "Password reset confirmed": [
         "El restablecimiento de contraseña ha sido confirmado."
@@ -11384,14 +11477,24 @@
     "session_recovery:initiation:title": {
       "Request password reset?": [
         "¿Solicitar el restablecimiento de contraseña?"
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "Podrás restablecer tu contraseña en ${ gracePeriodHoursRemaining } hora.",
+        "Podrás restablecer tu contraseña en ${ gracePeriodHoursRemaining } horas."
       ]
     },
     "session_recovery:settings:action": {
       "Allow password reset from settings": [
         "Permitir el restablecimiento de contraseña desde los ajustes"
       ],
+      "Request a password reset from your Account settings. No recovery method needed.": [
+        "Solicita un restablecimiento de contraseña desde los ajustes de tu cuenta. No se necesita un método de recuperación."
+      ],
       "Request password reset": [
         "Solicitar el restablecimiento de contraseña"
+      ],
+      "To disallow password reset, you must have a recovery method set up.": [
+        "Para deshabilitar el restablecimiento de contraseña, debes tener configurado un método de recuperación."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -11409,6 +11512,15 @@
       ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } está ahora disponible."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Si cierras la sesión antes de restablecer su contraseña, podrías perder el acceso a tu cuenta."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Si cierras la sesión sin restablecer tu contraseña, podrías perder el acceso a tu cuenta."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Podrás restablecer tu contraseña en ${ boldTimeLeft }."
       ]
     },
     "session_recovery:sign_out:link": {
@@ -11858,7 +11970,7 @@
     },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
-        "Añadir un calendario compartido, público o externo mediante URL."
+        "Añade un calendario compartido, público o externo con una URL."
       ],
       "Add public, external, or shared calendars.": [
         "Añadir calendarios públicos, externos o compartidos."
@@ -12561,6 +12673,9 @@
       ],
       "Add users": [
         "Añadir usuarios"
+      ],
+      "Address and key verification": [
+        "Verificación de direcciones y claves"
       ],
       "Allocate storage": [
         "Asignar almacenamiento"
@@ -13647,6 +13762,9 @@
       ],
       "This feature is only available for paid users": [
         "Esta función solo está disponible para usuarios de pago."
+      ],
+      "This feature is only available on Beta": [
+        "Esta función solo está disponible en la versión beta"
       ],
       "This key cannot be used for encryption": [
         "Esta clave no puede utilizarse para cifrar."
