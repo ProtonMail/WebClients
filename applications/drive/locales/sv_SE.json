@@ -554,7 +554,7 @@
         "Sök länder"
       ],
       "Search drive": [
-        "Sök hårddisk"
+        "Sök Drive"
       ],
       "See how": [
         "Se hur"
@@ -2898,7 +2898,7 @@
         "${ CONTACTS_APP_NAME } stöder inte ${ forNow }:"
       ],
       "for now": [
-        "för närvarande"
+        "tills vidare"
       ]
     },
     "Import error": {
@@ -3916,7 +3916,7 @@
         "Kontot kanske har en ny nyckel eller så har något av följande mixtrats med: ${ items }. Öppna endast om du litar på den."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Applikationen måste avkryptera dina kontakter lokalt innan de kan exporteras. I slutet av processen kommer en VCF-fil att genereras som du sedan kan ladda ner."
+        "Applikationen måste dekryptera dina kontakter lokalt innan de kan exporteras. I slutet av processen kommer en VCF-fil att genereras och du kommer att kunna ladda ner den."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Antalet nedladdningar inkluderar både faktiska nedladdningar och tillfällen när filer förhandsgranskas."
@@ -3952,7 +3952,7 @@
         "Denna länk kan vara en homograf-attack och kan inte öppnas av Edge-webbläsaren. Om du är säker på att länken är legitim, använd en annan webbläsare för att öppna den."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Denna länk kan vara en homograf-attack. Vänligen verifiera att detta är länken du vill besöka, annars öppna den ej."
+        "Denna länk kan vara en homografisk attack. Kontrollera att det är denna länk du vill besöka, eller öppna den inte."
       ],
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         "Denna länk skapades med en gammal version av Drive och kan inte ändras. Ta bort denna länk och skapa en ny för att ändra inställningarna."
@@ -3995,7 +3995,7 @@
         "För att importera händelser, skapa först en kalender i ${ CALENDAR_APP_NAME }. Det är här händelserna kommer att visas efter importen."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "För att signera om dina kontakter måste vi kontrollera varje kontakt mot listan över krypteringsnycklar som finns på ditt konto. Om ingen matchning hittas, kommer din kontakt att signeras om med den primära krypteringsnyckeln."
+        "För att signera om dina kontakter måste vi kontrollera varje kontakt mot listan över tillgängliga krypteringsnycklar på ditt konto. Om ingen matchning hittas kommer din kontakt att signeras om med den primära krypteringsnyckeln."
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
         "För att återställa dina data måste du återaktivera kontonyckeln som användes vid den tidpunkt då data skapades. Detta kräver att du kommer ihåg lösenordet som användes när nyckeln skapades."
@@ -4091,7 +4091,7 @@
         "Vad vill du göra?"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "När du aktiverar tvåfaktors-autentisering kommer vi att erbjuda återställningskoder som du kan använda för att logga in om du förlorar åtkomst till din autentiserings-app."
+        "När du ställer in tvåfaktorsautentisering tillhandahåller vi återställningskoder som du kan använda för att logga in om du förlorar åtkomsten till din autentiseringsapp."
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "kommer att återställas till versionen från ${ formattedRevisionDate }. Alla andra versioner kommer fortfarande att sparas."
@@ -6537,7 +6537,7 @@
     },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "Automatisk indikerar att formatet i kompositören används för att skicka till den här användaren. Enkel text indikerar att meddelandet alltid kommer att konverteras till vanlig text vid sändning."
+        "Indikerar automatisk att formatet i skrivfönstret används för att skicka till denna användare. Oformaterad text indikerar att meddelandet alltid kommer att konverteras till oformaterad text vid sändning."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Växla automatiskt mellan dina föredragna teman för dag och natt i synk med ditt systems dag- och nattlägen"

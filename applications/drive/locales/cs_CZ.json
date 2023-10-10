@@ -25,6 +25,9 @@
       "Add address": [
         "Přidat adresu"
       ],
+      "Add birthday": [
+        "Přidat datum narození"
+      ],
       "Add contact": [
         "Přidat kontakt"
       ],
@@ -39,6 +42,9 @@
       ],
       "Add new group": [
         "Přidat novou skupinu"
+      ],
+      "Add note": [
+        "Přidat poznámku"
       ],
       "Add phone number": [
         "Přidat telefonní číslo"
@@ -219,6 +225,9 @@
       ],
       "Discard": [
         "Zahodit"
+      ],
+      "Don't know your password?": [
+        "Neznáte své heslo?"
       ],
       "Done": [
         "Hotovo"
@@ -421,6 +430,9 @@
       "Next month": [
         "Další měsíc"
       ],
+      "Ok": [
+        "Ok"
+      ],
       "Open navigation": [
         "Otevřít menu"
       ],
@@ -543,6 +555,9 @@
       ],
       "Search drive": [
         "Prohledat disk"
+      ],
+      "See how": [
+        "Podívejte se, jak"
       ],
       "See plan features": [
         "Zobrazit funkce tarifu"
@@ -953,8 +968,17 @@
       "Birthday": [
         "Narozeniny"
       ],
+      "Display name": [
+        "Zobrazované jméno"
+      ],
       "Email": [
         "E-mail"
+      ],
+      "Enter a display name or nickname": [
+        "Zadejte zobrazované jméno nebo přezdívku"
+      ],
+      "First name": [
+        "Křestní jméno"
       ],
       "Gender": [
         "Pohlaví"
@@ -964,6 +988,9 @@
       ],
       "Language": [
         "Jazyk"
+      ],
+      "Last name": [
+        "Příjmení"
       ],
       "Logo": [
         "Logo"
@@ -1985,6 +2012,9 @@
       "Enter 6 digits": [
         "Zadejte 6 číslic"
       ],
+      "Error decrypting a computer": [
+        "Chyba při dešifrování počítače"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Soubor „${ item.name }“ nelze nahrát kvůli chybě „${ error }“"
       ],
@@ -1996,6 +2026,9 @@
       ],
       "File selection is already downloading": [
         "Vybrané soubory se již stahují"
+      ],
+      "First name is too long": [
+        "Křestní jméno je příliš dlouhé"
       ],
       "Folder \"${ name }\" is already downloading": [
         "Složka \"${ name }\" se již stahuje"
@@ -2018,6 +2051,9 @@
       "Incorrect password. Please try again.": [
         "Nesprávné heslo. Zkuste to znovu."
       ],
+      "Incorrect username": [
+        "Nesprávné uživatelské jméno"
+      ],
       "Invalid email address": [
         "Neplatná e-mailová adresa"
       ],
@@ -2032,6 +2068,9 @@
       ],
       "Label name cannot be empty.": [
         "Název štítku nesmí být prázdný."
+      ],
+      "Last name is too long": [
+        "Příjmení je příliš dlouhé"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Sloučit alespoň ${ calendarsToFixCount } kalendář s ${ BRAND_NAME } existujícím kalendářem",
@@ -2086,6 +2125,9 @@
         "Chcete-li pokračovat, opravte zvýrazněné konflikty.",
         "Chcete-li pokračovat, opravte zvýrazněné konflikty.",
         "Chcete-li pokračovat, opravte zvýrazněné konflikty."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Uveďte prosím jméno, příjmení nebo zobrazované jméno."
       ],
       "Port is required": [
         "Port je povinná položka"
@@ -3817,6 +3859,9 @@
       "Please enter the password to decrypt and view content.": [
         "Prosím zadejte heslo pro dešifrování a zobrazení obsahu."
       ],
+      "Please note that addresses assigned to these groups will NOT be deleted.": [
+        "Upozorňujeme, že adresy přiřazené k těmto skupinám NEBUDOU odstraněny."
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Vezměte na vědomí, že adresy přiřazené k této skupině NEBUDOU smazány."
       ],
@@ -5387,11 +5432,17 @@
       "Filter groups": [
         "Filtrovat skupiny"
       ],
+      "First name": [
+        "Křestní jméno"
+      ],
       "Group name": [
         "Název skupiny"
       ],
       "Image URL": [
         "URL adresa obrázku"
+      ],
+      "Last name": [
+        "Příjmení"
       ],
       "Name": [
         "Jméno"
@@ -5503,6 +5554,193 @@
     "Select files": {
       "Upload": [
         "Nahrát"
+      ]
+    },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "Zrušit resetování"
+      ],
+      "Reset password": [
+        "Resetovat heslo"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "Obnovení účtu není k dispozici pro starší klíče adres"
+      ],
+      "Please generate keys before you try to change your password": [
+        "Než se pokusíte změnit si heslo, vygenerujte si prosím klíče"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } den",
+        "${ timeRemaining.inDays } dny",
+        "${ timeRemaining.inDays } dní",
+        "${ timeRemaining.inDays } dní"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } hodina",
+        "${ timeRemaining.inHours } hodiny",
+        "${ timeRemaining.inHours } hodin",
+        "${ timeRemaining.inHours } hodin"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inDays } den.",
+        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inDays } dny.",
+        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inDays } dní.",
+        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inDays } dní."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inHours } hodinu.",
+        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inHours } hodiny.",
+        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inHours } hodin.",
+        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inHours } hodin."
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Přejděte do přihlášeného zařízení (v relaci, ve které byl požadavek iniciován) a změňte heslo."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Toto oprávnění vyprší za ${ timeRemaining.inDays } den",
+        "Toto oprávnění vyprší za ${ timeRemaining.inDays } dny",
+        "Toto oprávnění vyprší za ${ timeRemaining.inDays } dní",
+        "Toto oprávnění vyprší za ${ timeRemaining.inDays } dní"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Toto oprávnění vyprší za ${ timeRemaining.inHours } hodinu",
+        "Toto oprávnění vyprší za ${ timeRemaining.inHours } hodiny",
+        "Toto oprávnění vyprší za ${ timeRemaining.inHours } hodin",
+        "Toto oprávnění vyprší za ${ timeRemaining.inHours } hodin"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Nyní si můžete libovolně změnit heslo k účtu ${ boldEmail } po dobu ${ boldDaysRemaining }."
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Podívejte se, jak"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Heslo uloženo"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Resetování hesla"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Zrušit resetování hesla"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Chcete-li proces resetování hesla zrušit, zadejte své aktuální heslo. Žádné další změny se neprojeví."
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "Resetování hesla zrušeno"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Zrušit resetování hesla?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Žádost o resetování hesla zrušena (${ user.Email }). Pokud nešlo o vaši žádost, ${ changePasswordLink }."
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "změňte si teď své heslo"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "Zrušit žádost"
+      ],
+      "Got it": [
+        "Rozumím"
+      ],
+      "Learn more": [
+        "Zjistit více"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "Zbývá ${ gracePeriodHoursRemaining } hodina",
+        "Zbývají ${ gracePeriodHoursRemaining } hodiny",
+        "Zbývá ${ gracePeriodHoursRemaining } hodin",
+        "Zbývá ${ gracePeriodHoursRemaining } hodin"
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "Pokud jste o obnovení hesla nepožádali, ihned zrušte tento požadavek."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Požadavek na obnovení hesla (${ user.Email }). Heslo můžete změnit za ${ hoursRemaining } hodinu.",
+        "Požadavek na obnovení hesla (${ user.Email }). Heslo můžete změnit za ${ hoursRemaining } hodiny.",
+        "Požadavek na obnovení hesla (${ user.Email }). Heslo můžete změnit za ${ hoursRemaining } hodin.",
+        "Požadavek na obnovení hesla (${ user.Email }). Heslo můžete změnit za ${ hoursRemaining } hodin."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "Abychom měli jistotu, že se o obnovení hesla pokoušíte skutečně vy, čekáme před schválením žádosti 72 hodin. Heslo si můžete změnit v ${ boldTimeLeft }. ${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "Obdrželi jsme žádost o resetování hesla pro ${ boldEmail }."
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "Zobrazit požadavek"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "Vyžádáno resetování hesla"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Odhlásit se"
+      ],
+      "Stay signed in": [
+        "Zůstat přihlášen(a)"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } hodina",
+        "${ gracePeriodHoursRemaining } hodiny",
+        "${ gracePeriodHoursRemaining } hodin",
+        "${ gracePeriodHoursRemaining } hodin"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } je nyní k dispozici."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Pokud se před resetováním hesla odhlásíte, můžete ztratit přístup ke svému účtu."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Pokud se bez resetování hesla odhlásíte, můžete ztratit přístup ke svému účtu."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Heslo budete moci resetovat za ${ boldTimeLeft }."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Reset hesla"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Odhlásit se bez resetování hesla?"
       ]
     },
     "Signing preference for emails": {
@@ -5961,8 +6199,14 @@
       "Display name": [
         "Zobrazované jméno"
       ],
+      "First name": [
+        "Křestní jméno"
+      ],
       "Import": [
         "Importovat"
+      ],
+      "Last name": [
+        "Příjmení"
       ],
       "Values": [
         "Hodnoty"
@@ -6071,6 +6315,9 @@
       ],
       "Billing cycle": [
         "Fakturační cyklus"
+      ],
+      "Birthday": [
+        "Narozeniny"
       ],
       "Browser might run out of memory": [
         "Prohlížeči možná dochází paměť"
@@ -6305,6 +6552,9 @@
       ],
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
+      ],
+      "Notes": [
+        "Poznámky"
       ],
       "Number of files": [
         "Počet souborů"
@@ -6641,6 +6891,9 @@
         "Jste si jistí, že chcete trvale smazat ${ count } kontakty?",
         "Jste si jistí, že chcete trvale smazat ${ count } kontaktů?",
         "Jste si jistí, že chcete trvale smazat ${ count } kontaktů?"
+      ],
+      "Are you sure you want to permanently delete these contact groups?": [
+        "Opravdu chcete tyto skupiny kontaktů trvale odstranit?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Opravdu chcete nevratně smazat tuto skupinu kontaktů?"

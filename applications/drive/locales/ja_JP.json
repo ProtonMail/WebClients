@@ -2183,6 +2183,9 @@
       "Username must end with a letter or digit": [
         "ユーザー名の最後は英字か数字でなければいけません"
       ],
+      "You can't send a mail to more than ${ maxContacts } recipients": [
+        "${ maxContacts }件以上の宛先へメールを送信することはできません"
+      ],
       "You have reached the contacts limit for your account": [
         "アカウントの連絡先が上限に達しています。"
       ],

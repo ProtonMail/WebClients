@@ -5584,7 +5584,7 @@
     },
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
-        "Аднаўленне ўліковага запісу немагчыма для ключоў састарэлага адрасу"
+        "Аднаўленне ўліковага запісу недаступна для састарэлых адрасных ключоў"
       ],
       "Please generate keys before you try to change your password": [
         "Згенерыруйце ключы перад спробай змянення пароля"
@@ -5631,7 +5631,7 @@
         "Гэты дазвол міне праз ${ timeRemaining.inHours } гадзін"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
-        "Вы можаце зараз змяніць ваш пароль для ўліковага запісу ${ boldEmail } яшчэ ${ boldDaysRemaining }."
+        "Цяпер вы можаце змяніць свой пароль для ўліковага запісу ${ boldEmail } у вас яшчэ ёсць на гэта ${ boldDaysRemaining }."
       ]
     },
     "session_recovery:available:link": {
@@ -5692,10 +5692,10 @@
     },
     "session_recovery:in_progress:info": {
       "${ gracePeriodHoursRemaining } more hour": [
-        "праз ${ gracePeriodHoursRemaining } гадзіну",
-        "праз ${ gracePeriodHoursRemaining } гадзіны",
-        "праз ${ gracePeriodHoursRemaining } гадзін",
-        "праз ${ gracePeriodHoursRemaining } гадзін"
+        "яшчэ ${ gracePeriodHoursRemaining } гадзіна",
+        "яшчэ ${ gracePeriodHoursRemaining } гадзіны",
+        "яшчэ ${ gracePeriodHoursRemaining } гадзін",
+        "яшчэ ${ gracePeriodHoursRemaining } гадзін"
       ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Скасуйце запыт, калі вы не запытвалі скіданне пароля."
@@ -5707,7 +5707,7 @@
         "Запыт на скіданне пароля (${ user.Email }). Вы можаце змяніць свой пароль на працягу ${ hoursRemaining } гадзін."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
-        "Для таго, каб пераканацца што гэта менавіта вы спрабуеце скінуць ваш пароль, мы пачакаем 72 гадзін перад тым, як ухваліць запыт. Вы можаце змяніць ваш пароль праз ${ boldTimeLeft }. ${ viewRequest }"
+        "Каб пераканацца што менавіта вы спрабуеце скінуць свой пароль, мы пачакаем 72 гадзіны перад тым, як ухваліць запыт. Вы зможаце змяніць яго праз ${ boldTimeLeft }. ${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "Мы атрымалі запыт на скіданне пароля для ${ boldEmail }."
@@ -5720,7 +5720,7 @@
     },
     "session_recovery:in_progress:title": {
       "Password reset requested": [
-        "Запыт скідання пароля"
+        "Запыт на скіданне пароля"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -5739,16 +5739,16 @@
         "${ gracePeriodHoursRemaining } гадзін"
       ],
       "${ passwordReset } is now available.": [
-        "${ passwordReset } не даступны."
+        "${ passwordReset } цяпер даступна."
       ],
       "If you sign out before you reset your password, you could lose access to your account.": [
-        "Калі вы выйдзеце з сістэмы перад скідваннем паролю, вы можаце страціць доступ да вашага ўліковага запісу."
+        "Калі вы выйдзеце з сістэмы да скідання пароля, вы можаце страціць доступ да вашага ўліковага запісу."
       ],
       "If you sign out without resetting your password, you could lose access to your account.": [
-        "Калі вы выйдзеце з сістэмы без скідвання паролю, вы можаце страціць доступ да вашага ўліковага запісу."
+        "Калі вы выйдзеце з сістэмы без скідання пароля, вы можаце страціць доступ да вашага ўліковага запісу."
       ],
       "You will be able to reset your password in ${ boldTimeLeft }.": [
-        "Вы зможаце скінуць ваш пароль праз ${ boldTimeLeft }."
+        "Вы зможаце скінуць свой пароль праз ${ boldTimeLeft }."
       ]
     },
     "session_recovery:sign_out:link": {
@@ -5758,7 +5758,7 @@
     },
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
-        "Выйсці без скідання паролю?"
+        "Выйсці без скідання пароля?"
       ]
     },
     "Signing preference for emails": {
