@@ -693,7 +693,7 @@
         "搜索设置"
       ],
       "See how": [
-        "怎么看"
+        "详细了解"
       ],
       "See plan features": [
         "查看套餐内容"
@@ -2892,7 +2892,7 @@
         "未验证联系人签名"
       ],
       "Could not save preference": [
-        "无法保存首选项"
+        "设置保存失败"
       ],
       "Deselect at least ${ calendarsToFixCount } calendars": [
         "至少取消选择 ${ calendarsToFixCount } 个日历"
@@ -5523,9 +5523,6 @@
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "请检查您的文件，或尝试${ csvTemplateButton }。"
       ],
-      "Please contact the administrator of the organisation to manage the subscription.": [
-        "请联系机构管理员管理账户等级。"
-      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "请输入与您的账户关联的 12 字恢复密语。"
       ],
@@ -6859,7 +6856,7 @@
         "会话分组"
       ],
       "Conversations per page": [
-        "每页对话数"
+        "每页会话数量"
       ],
       "Copy": [
         "复制"
@@ -7132,7 +7129,7 @@
         "内容"
       ],
       "Messages per page": [
-        "每页消息数"
+        "每页邮件数量"
       ],
       "Moderate NAT": [
         "保守 NAT"
@@ -9416,12 +9413,12 @@
         "此权限将在 ${ timeRemaining.inHours } 小时后过期"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
-        "您现在可以在${ boldDaysRemaining }天内免费更改帐户${ boldEmail }的密码。"
+        "从现在起 ${ boldDaysRemaining }内您可以自由更改 ${ boldEmail } 账户的密码。"
       ]
     },
     "session_recovery:available:link": {
       "See how": [
-        "怎么看"
+        "详细了解"
       ]
     },
     "session_recovery:available:notification": {
@@ -9486,7 +9483,7 @@
         "重置密码的请求已收到 (${ user.Email })。 您可以在 ${ hoursRemaining } 小时内更改密码。"
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
-        "为了确保确实是您在尝试重置密码，我们会在 72 小时后才批准请求。 您可以在${ boldTimeLeft }中更改密码。${ viewRequest }"
+        "为了确保是您本人重置密码，申请提交 72 小时后才能通过。${ boldTimeLeft }后您就可以更改密码了。${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "我们收到了${ boldEmail }的密码重置请求。"
@@ -9499,7 +9496,7 @@
     },
     "session_recovery:in_progress:title": {
       "Password reset requested": [
-        "请求密码重置"
+        "已申请重置密码"
       ]
     },
     "session_recovery:sign_out:action": {

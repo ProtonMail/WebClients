@@ -29,6 +29,15 @@
       "Back": [
         "Voltar"
       ],
+      "Can edit": [
+        "Pode editar"
+      ],
+      "Can manage": [
+        "Pode gerenciar"
+      ],
+      "Can view": [
+        "Pode ver"
+      ],
       "Can't find your password manager? Please let us know!": [
         "Não consegue encontrar seu gerenciador de senhas? Entre em contato conosco."
       ],
@@ -173,14 +182,26 @@
       "Importing": [
         "Importando"
       ],
+      "Invite people": [
+        "Convidar pessoas"
+      ],
+      "Join shared vault": [
+        "Juntar ao cofre compartilhado"
+      ],
       "Learn more": [
         "Saiba mais"
       ],
       "Leave": [
         "Sair"
       ],
+      "Leave vault": [
+        "Deixar cofre"
+      ],
       "Lock extension": [
         "Bloquear extensão"
+      ],
+      "Manage access": [
+        "Gerenciar acesso"
       ],
       "Manually sync your data": [
         "Sincronizar seus dados manualmente"
@@ -221,11 +242,20 @@
       "Regenerate": [
         "Gerar novamente"
       ],
+      "Reject invitation": [
+        "Recusar convite"
+      ],
       "Reload extension": [
         "Recarregar extensão"
       ],
+      "Remove access": [
+        "Remover o acesso"
+      ],
       "Request a feature": [
         "Solicitar um recurso"
+      ],
+      "Resend invitation": [
+        "Reenviar convite"
       ],
       "Restore item": [
         "Restaurar item"
@@ -238,6 +268,12 @@
       ],
       "Saving": [
         "Salvando"
+      ],
+      "See members": [
+        "Ver membros"
+      ],
+      "Send invite": [
+        "Enviar convite"
       ],
       "Send us a message": [
         "Envie-nos uma mensagem"
@@ -268,6 +304,9 @@
       ],
       "Submitting report...": [
         "Enviando relatório..."
+      ],
+      "Transfer ownership": [
+        "Transferir a propriedade"
       ],
       "Try again": [
         "Tentar novamente"
@@ -306,7 +345,7 @@
     },
     "Description": {
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
-        "Lista de domínios onde determinadas funções automáticas mo ${ PASS_SHORT_APP_NAME } (Preenchimento automático, sugestão automática e salvamento automático) não deveriam ser executadas."
+        "Lista de domínios onde determinadas funções automáticas no ${ PASS_SHORT_APP_NAME } (Preenchimento automático, sugestão automática e salvamento automático) não deveriam ser executadas."
       ]
     },
     "Error": {
@@ -328,8 +367,14 @@
       "Cannot create alias (${ error }).": [
         "Não é possível criar o alias (${ error })."
       ],
+      "Could not leave vault.": [
+        "Não foi possível deixar o cofre."
+      ],
       "Could not open created vault": [
         "Não foi possível abrir o cofre criado"
+      ],
+      "Could not open invited vault": [
+        "Não foi possível abrir o cofre convidado"
       ],
       "Could not open updated vault": [
         "Não foi possível abrir o cofre atualizado"
@@ -368,6 +413,18 @@
       "Error reporting problem": [
         "Erro ao relatar o problema"
       ],
+      "Failed removing the invite.": [
+        "Falha ao remover o convite."
+      ],
+      "Failed resending invite.": [
+        "Falha ao reenviar o convite."
+      ],
+      "Failed to edit user's access.": [
+        "Falha ao editar o acesso do usuário."
+      ],
+      "Failed to remove user's access.": [
+        "Falha ao remover o acesso do usuário."
+      ],
       "File could not be parsed": [
         "Não foi possível analisar o arquivo."
       ],
@@ -382,6 +439,18 @@
       ],
       "Invalid url": [
         "URL inválida"
+      ],
+      "Invitation could not be accepted": [
+        "Não é possível aceitar o convite."
+      ],
+      "Invitation could not be rejected": [
+        "Não é possível rejeitar o convite."
+      ],
+      "Invite creation failed.": [
+        "Erro na criação do convite."
+      ],
+      "Invite successfully sent": [
+        "Convite enviado"
       ],
       "Item content cannot exceed 40KB": [
         "O conteúdo do item não pode exceder 40KB"
@@ -409,9 +478,6 @@
       ],
       "Request timed out": [
         "A solicitação expirou"
-      ],
-      "Requesting alias details failed": [
-        "Erro ao solicitar detalhes do alias"
       ],
       "Requesting alias options failed": [
         "Erro ao solicitar opções de alias"
@@ -460,6 +526,9 @@
       ],
       "Unknown error": [
         "Erro desconhecido"
+      ],
+      "Unknown invite": [
+        "Convite desconhecido"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Formato de arquivo do ${ PASS_APP_NAME } não suportado"
@@ -541,6 +610,14 @@
         "${ count } item",
         "${ count } itens"
       ],
+      "${ itemCount } item": [
+        "${ itemCount } item",
+        "${ itemCount } itens"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } membro",
+        "${ memberCount } membros"
+      ],
       "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
         "${ PASS_APP_NAME } importará apenas inícios de sessão e notas. Passaporte, arquivos anexados, etc não são suportados no momento"
       ],
@@ -559,6 +636,10 @@
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } dia restante",
         "${ trialDaysLeft } dias restantes"
+      ],
+      "${ vault.count } item": [
+        "${ vault.count } item",
+        "${ vault.count } itens"
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Uma nova versão do ${ PASS_APP_NAME } está disponível. Atualize para desfrutar dos recursos e correções de bugs mais recentes."
@@ -589,6 +670,24 @@
       ],
       "Autosaved on ${ submissionURL }": [
         "Salvo automaticamente em ${ submissionURL }"
+      ],
+      "Can create, edit, delete and export items in this vault.": [
+        "Pode criar, editar, excluir e exportar itens para esse cofre."
+      ],
+      "Can edit": [
+        "Pode editar"
+      ],
+      "Can grant and revoke access to this vault.": [
+        "Pode conceder ou revogar acesso para esse cofre."
+      ],
+      "Can manage": [
+        "Pode gerenciar"
+      ],
+      "Can view": [
+        "Pode ver"
+      ],
+      "Can view items in this vault.": [
+        "Pode ver itens para esse cofre."
       ],
       "Check out all the exclusive features that are available to you for a limited time.": [
         "Confira todos os recursos exclusivos que estão disponíveis para você por um tempo limitado."
@@ -690,6 +789,12 @@
       "Internet connection lost": [
         "Perda de conexão com a internet"
       ],
+      "Invite successfully removed": [
+        "Convite removido com sucesso"
+      ],
+      "Invite successfully resent": [
+        "Convite enviado com sucesso"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Parece que já iniciou sessão em ${ PASS_APP_NAME }. Se estiver tentando iniciar sessão com uma conta diferente, termine primeiro a sessão na extensão."
       ],
@@ -727,6 +832,9 @@
       "Loading...": [
         "Carregando..."
       ],
+      "me": [
+        "eu"
+      ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Mais do que um gerenciador de senhas, o ${ PASS_APP_NAME } protege sua senha e seu endereço de e-mail pessoal através de aliases de email. Alimentado pela mesma tecnologia por trás do ${ MAIL_APP_NAME }, seus dados são criptografados de ponta a ponta e são acessíveis apenas por você."
       ],
@@ -745,11 +853,17 @@
       "Open the Extensions menu": [
         "Abrir o menu de extensões"
       ],
+      "Owner": [
+        "Proprietário"
+      ],
       "Password copied": [
         "Senha copiada"
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "As senhas com mais de 1 dia serão automaticamente excluídas do histórico."
+      ],
+      "Pending invitation": [
+        "Convite pendente"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Fixe o ${ PASS_APP_NAME } em sua barra de ferramentas"
@@ -783,6 +897,9 @@
       ],
       "Select the destination vault for each imported vault.": [
         "Selecione o cofre de destino para cada cofre importado."
+      ],
+      "Select the level of access this user will gain when they join your vault.": [
+        "Selecione o nível de acesso que este usuário terá ao entrar no seu cofre."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Os servidores estão inacessíveis. Tente novamente em alguns minutos"
@@ -824,8 +941,14 @@
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "O texto que você está tentando colar é maior que o comprimento máximo permitido de ${ maxLength } caracteres."
       ],
+      "The user did not accept the invitation yet.": [
+        "O usuário não aceitou o convite ainda."
+      ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Esta exportação não será criptografada e qualquer pessoa com acesso ao seu arquivo exportado poderá ver suas senhas. Por segurança, exclua-o após terminar de usá-lo."
+      ],
+      "This user will receive an invitation to join your '${ vaultName }' vault.": [
+        "Este usuário receberá um convite para juntar-se a seu cofre '${ vaultName }'."
       ],
       "Unable to copy to clipboard": [
         "Não é possível copiar para a área de transferência"
@@ -1183,6 +1306,9 @@
       "Report a problem": [
         "Relatar um problema"
       ],
+      "Respond": [
+        "Responder"
+      ],
       "Restore all items": [
         "Restaurar todos os itens"
       ],
@@ -1444,17 +1570,29 @@
       "Import to vault(s)": [
         "Importar para cofre(s)"
       ],
+      "Leave vault ?": [
+        "Deixar cofre ?"
+      ],
       "Low disk space": [
         "Pouco espaço no disco"
       ],
       "Permanently remove all items ?": [
         "Remover permanentemente todos os itens ?"
       ],
+      "Permissions": [
+        "Permissões"
+      ],
       "Pin the extension": [
         "Fixe a extensão"
       ],
       "Secure your data": [
         "Proteja seus dados"
+      ],
+      "Share with": [
+        "Compartilhar com"
+      ],
+      "Shared vault invitation": [
+        "Convite de cofre compartilhado"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Alterando para o ${ PASS_APP_NAME }?"
@@ -1464,6 +1602,9 @@
       ],
       "The extension is now ready to use.": [
         "A extensão está pronta para uso."
+      ],
+      "Transfer ownership": [
+        "Transferir a propriedade"
       ],
       "Trash empty": [
         "Lixeira vazia"
@@ -1576,6 +1717,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "O arquivo de exportação criptografado com PGP requer uma frase secreta"
+      ],
+      "Please enter a valid email address": [
+        "Insira um endereço de e-mail válido"
       ],
       "Please log back in": [
         "Inicie sessão novamente"

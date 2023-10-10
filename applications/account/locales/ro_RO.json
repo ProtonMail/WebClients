@@ -927,7 +927,7 @@
         "Tăiat cu o linie"
       ],
       "Submit": [
-        "Trimite"
+        "Trimitere"
       ],
       "Support": [
         "Asistenţă"
@@ -1506,6 +1506,13 @@
       ],
       "Share with anyone": [
         "Partajare cu oricine"
+      ]
+    },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "Afișare încă ${ remainingItems }",
+        "Afișare încă ${ remainingItems }",
+        "Afișare încă ${ remainingItems }"
       ]
     },
     "Calendar share permission label": {
@@ -6474,9 +6481,6 @@
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Verificați fișierul sau încercați să folosiți ${ csvTemplateButton }."
       ],
-      "Please contact the administrator of the organisation to manage the subscription.": [
-        "Contactați administratorul organizației pentru a vă gestiona abonamentul."
-      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Vă rugăm să introduceți fraza de recuperare de 12 cuvinte asociată acestui cont."
       ],
@@ -8721,6 +8725,9 @@
       "Verification code": [
         "Cod de verificare"
       ],
+      "Verify keys with Key Transparency": [
+        "Verificare chei cu Key Transparency"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Ne pare rău că ne părăsiți. Vă rugăm să ne explicaţi de ce plecaţi pentru a ne ajuta să îmbunătăţim serviciul."
       ],
@@ -10823,9 +10830,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "${ PASS_APP_NAME } benefits": [
-        "Beneficii ${ PASS_APP_NAME }"
-      ],
       "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
         "${ PASS_APP_NAME } este disponibil ca extensie de navigator pe pagina de suplimente Firefox."
       ],
@@ -11509,6 +11513,16 @@
     "session_recovery:in_progress:title": {
       "Password reset requested": [
         "Solicitare resetare parolă"
+      ]
+    },
+    "session_recovery:initiation:info": {
+      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
+        "Puteți verifica starea solicitării oricând ${ accountAndPasswordSectionLink } din setări."
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "account and password section": [
+        "în secțiunea „Cont și parolă”"
       ]
     },
     "session_recovery:sign_out:action": {

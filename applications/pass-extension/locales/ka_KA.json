@@ -29,6 +29,15 @@
       "Back": [
         "უკან"
       ],
+      "Can edit": [
+        "შეუძლია, ჩაასწოროს"
+      ],
+      "Can manage": [
+        "შეუძლია, მართოს"
+      ],
+      "Can view": [
+        "შეუძლია, ნახოს"
+      ],
       "Can't find your password manager? Please let us know!": [
         "ვერ იპოვეთ თქვენი პაროლების მმართველი? შეგვატყობინეთ!"
       ],
@@ -173,14 +182,26 @@
       "Importing": [
         "შემოტანა"
       ],
+      "Invite people": [
+        "მოიწვიეთ ხალხი"
+      ],
+      "Join shared vault": [
+        "გაზიარებულ საცავთან მიერთება"
+      ],
       "Learn more": [
         "გაიგეთ მეტი"
       ],
       "Leave": [
         "გასვლა"
       ],
+      "Leave vault": [
+        "საცავის დატოვება"
+      ],
       "Lock extension": [
         "გაფართოების დაბლოკვა"
+      ],
+      "Manage access": [
+        "წვდომის მართვა"
       ],
       "Manually sync your data": [
         "თქვენი მონაცემების ხელით სინქრონიზაცია"
@@ -221,11 +242,20 @@
       "Regenerate": [
         "თავიდან რეგენერაცია"
       ],
+      "Reject invitation": [
+        "მოსაწვევის უარყოფა"
+      ],
       "Reload extension": [
         "გაფართოების გადატვირთვა"
       ],
+      "Remove access": [
+        "წვდომის გაუქმება"
+      ],
       "Request a feature": [
         "თვისების მოთხოვნა"
+      ],
+      "Resend invitation": [
+        "მოსაწვევის თავიდან გაგზავნა"
       ],
       "Restore item": [
         "ელემენტის აღდგენა"
@@ -238,6 +268,12 @@
       ],
       "Saving": [
         "დაზოგვა"
+      ],
+      "See members": [
+        "წევრების ნახვა"
+      ],
+      "Send invite": [
+        "მოსაწვევის გაგზავნა"
       ],
       "Send us a message": [
         "მოგვწერეთ"
@@ -268,6 +304,9 @@
       ],
       "Submitting report...": [
         "ანგარიშის გადაგზავნა..."
+      ],
+      "Transfer ownership": [
+        "მფლობელობის გადაცემა"
       ],
       "Try again": [
         "კიდევ ცდა"
@@ -328,11 +367,20 @@
       "Cannot create alias (${ error }).": [
         "ფსევდონიმის შექმნის შეცდომა (${ error })."
       ],
+      "Could not leave vault.": [
+        "საცავის დატოვების შეცდომა."
+      ],
       "Could not open created vault": [
         "შექმნილი საცავის გახსნა შეუძლებელია"
       ],
+      "Could not open invited vault": [
+        "მოწვეული საცავის გახსნა შეუძლებელია"
+      ],
       "Could not open updated vault": [
         "განახლებული საცავის გახსნა შეუძლებელია"
+      ],
+      "Could not resolve share members": [
+        "გაზიარებულის წევრების ამოხსნა შეუძლებელია"
       ],
       "Could not resume your session : ${ description }": [
         "თქვენი სესიის გაგრძელება შეუძლებელია : ${ description }"
@@ -368,6 +416,21 @@
       "Error reporting problem": [
         "პრობლემის გადაგზავნის შეცდომა"
       ],
+      "Failed removing the invite.": [
+        "მოწვევის წაშლა ჩავარდა."
+      ],
+      "Failed resending invite.": [
+        "მოწვევის თავიდან გაგზავნის შეცდომა."
+      ],
+      "Failed to edit user's access.": [
+        "მომხმარებლის წვდომის ჩასწორება ჩავარდა."
+      ],
+      "Failed to remove user's access.": [
+        "მომხმარებლის წვდომის წაშლა ჩავარდა."
+      ],
+      "Failed to transfer this vault's ownership.": [
+        "ამ საცავის მფლობელობის გადატანა ჩავარდა."
+      ],
       "File could not be parsed": [
         "ფაილის დამუშავება შეუძლებელია"
       ],
@@ -382,6 +445,18 @@
       ],
       "Invalid url": [
         "არასწორი URL"
+      ],
+      "Invitation could not be accepted": [
+        "მოსაწვევზე დათანხმება შეუძლებელია"
+      ],
+      "Invitation could not be rejected": [
+        "მოსაწვევის უარყოფა შეუძლებელია"
+      ],
+      "Invite creation failed.": [
+        "ინვოისის შექმნა ჩავარდა."
+      ],
+      "Invite successfully sent": [
+        "მოსაწვევი წარმატებით გაიგზავნა"
       ],
       "Item content cannot exceed 40KB": [
         "ელემენტის შემცველობა 40კბ-ზე მეტი ვერ იქნება"
@@ -409,9 +484,6 @@
       ],
       "Request timed out": [
         "მოთხოვნის ვადა გავიდა"
-      ],
-      "Requesting alias details failed": [
-        "მეტსახელის დეტალების გამოთხოვის შეცდომა"
       ],
       "Requesting alias options failed": [
         "მეტსახელის პარამეტრების გამოთხოვის შეცდომა"
@@ -460,6 +532,9 @@
       ],
       "Unknown error": [
         "უცნობი შეცდომა"
+      ],
+      "Unknown invite": [
+        "უცნობი მოწვევა"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "მხარდაუჭერელი ${ PASS_APP_NAME } ფაილის ფორმატი"
@@ -541,6 +616,14 @@
         "${ count } ელემენტი",
         "${ count } ელემენტი"
       ],
+      "${ itemCount } item": [
+        "${ itemCount } ელემენტი",
+        "${ itemCount } ელემენტი"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } წევრი",
+        "${ memberCount } წევრი"
+      ],
       "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
         "${ PASS_APP_NAME }, მხოლოდ, შენიშვნებს და მომხმარებლის დეტალებს შემოიტანს. პასპორტები, მიმაგრებული ფაილები, და ა.შ. ამჟამად მხარდაჭერილი არაა."
       ],
@@ -559,6 +642,10 @@
       "${ trialDaysLeft } day left": [
         "დარჩენილია ${ trialDaysLeft } დღე",
         "დარჩენილია ${ trialDaysLeft } დღე"
+      ],
+      "${ vault.count } item": [
+        "${ vault.count } ელემენტი",
+        "${ vault.count } ელემენტი"
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "ხელმისაწვდომია ${ PASS_APP_NAME }-ის ახალი ვერსია. განაახლეთ ის და მიიღეთ უახლესი ფუნქციები და შეცდომის გამართვები."
@@ -589,6 +676,27 @@
       ],
       "Autosaved on ${ submissionURL }": [
         "ავტომატურად შენახულია ბმულზე ${ submissionURL }"
+      ],
+      "Can create, edit, delete and export items in this vault.": [
+        "შეუძლია ამ საცავის ელემენტების ჩასწორება/წაშლა და გატანა."
+      ],
+      "Can edit": [
+        "შეუძლია, ჩაასწოროს"
+      ],
+      "Can grant and revoke access to this vault, and delete it.": [
+        "შეუძლია ამ საცავზე წვდომების მინიჭება, ჩამორთმევა და წაშლა."
+      ],
+      "Can grant and revoke access to this vault.": [
+        "შეუძლია ამ საცავზე წვდომების მინიჭება და ჩამორთმევა."
+      ],
+      "Can manage": [
+        "შეუძლია, მართოს"
+      ],
+      "Can view": [
+        "შეუძლია, ნახოს"
+      ],
+      "Can view items in this vault.": [
+        "შეუძლია ამ საცავის ელემენტების დათვალიერება."
       ],
       "Check out all the exclusive features that are available to you for a limited time.": [
         "შეამოწმეთ ყველა ექსკლუზიური შემოთავაზება, რომელიც, მხოლოდ, შეზღუდული დროითაა თქვენთვის შემოთავაზებული."
@@ -690,6 +798,12 @@
       "Internet connection lost": [
         "ინტერნეტკავშირი დაკარგულია"
       ],
+      "Invite successfully removed": [
+        "მოსაწვევი წარმატებით წაიშალა"
+      ],
+      "Invite successfully resent": [
+        "მოსაწვევი წარმატებით გაიგზავნა თავიდან"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "როგორც ჩანს, ${ PASS_APP_NAME }-ში უკვე შესული ბრძანდებით. თუ ცდილობთ, სხვა მომხმარებლით შეხვიდეთ, ჯერ გამოდით."
       ],
@@ -727,6 +841,9 @@
       "Loading...": [
         "ჩატვირთვა..."
       ],
+      "me": [
+        "მე"
+      ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "წარმოადგენს რა მეტს, ვიდრე პაროლების მმართველი, ${ PASS_APP_NAME } თქვენს პაროლებს და პირადი ელფოსტის მისამართებს ფსევდონიებით იცავს. დაფუძნებული იგივე ტექნოლოგიაზე, რაზეც ${ MAIL_APP_NAME }, თქვენი მონაცემები გამჭოლადაა დაშიფრული და წვდომადი, მხოლოდ, თქვენთვსაა."
       ],
@@ -745,11 +862,17 @@
       "Open the Extensions menu": [
         "გაფართოებების მენიუს გახსნა"
       ],
+      "Owner": [
+        "მფლობელი"
+      ],
       "Password copied": [
         "პაროლი დაკოპირდა"
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "1 დღეზე ძველი პაროლები ისტორიიდან ავტომატურად იშლება."
+      ],
+      "Pending invitation": [
+        "მომლოდინე მოსაწვევი"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "${ PASS_APP_NAME }-ის მიმაგრება თქვენს ხელსაწყოების ზოლში"
@@ -784,6 +907,9 @@
       "Select the destination vault for each imported vault.": [
         "თითოეული შემოტანილი საცავისთვის სამიზნე საცავი აირჩიეთ."
       ],
+      "Select the level of access this user will gain when they join your vault.": [
+        "აირჩიეთ წვდომის დონე, რომელსაც მომხმარებელი შეიძენს, როცა ის თქვენს საცავს შემოუერთდება."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "სერვერი მიუწვდომელია. ცოტა ხანში სცადეთ"
       ],
@@ -808,6 +934,9 @@
       "Successfully exported all your items": [
         "ყველა თქვენი ელემენტის გატანა წარმატებულია"
       ],
+      "Successfully left the vault": [
+        "საცავიდან გასვლა წარმატებულია"
+      ],
       "Successfully synced all vaults": [
         "ყელა საცავის სინქრონიზაცია წარმატებულია"
       ],
@@ -824,8 +953,14 @@
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "ტექსტი, რომლის ჩასმასაც ცდილობთ, დაშვებულ ${ maxLength } სიმბოლოზე გრძელია."
       ],
+      "The user did not accept the invitation yet.": [
+        "მომხმარებელი მოსაწვევს ჯერ არ დათანხმებია."
+      ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "ეს გატანა დაუშიფრავი იქნება და ყველას, ვისაც გატანილ ფაილზე წვდომა ექნება, შეეძლება, პაროლები დაინახოს. უსაფრთხოებისთვის, სჯობს, წაშალოთ ის, როცა მის გამოყენებას მორჩებით."
+      ],
+      "This user will receive an invitation to join your '${ vaultName }' vault.": [
+        "ეს მომხმარებელი მიიღებს მოსაწვევს, შემოუერთდეს თქვენს საცავს '${ vaultName }'."
       ],
       "Unable to copy to clipboard": [
         "ბუფერში დაკოპირება შეუძლებელია"
@@ -838,6 +973,12 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ის აწევა"
+      ],
+      "User's access removed": [
+        "მომხმარებლის წვდომა წაიშალა"
+      ],
+      "User's access sucessfuly updated": [
+        "მომხმარებლის წვდომები წარმატებით განახლდა"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "საცავი \"${ payload.content.name }\" წარმატებით წაიშალა"
@@ -884,6 +1025,9 @@
       ],
       "You're about to create": [
         "აპირებთ, შექმნათ"
+      ],
+      "You've been invited to a vault. Click here to see the invitation.": [
+        "მოგიწვიეს საცავში. დააწკაპუნეთ მოსაწვევის სანახავად."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "თქვენი ${ PASS_APP_NAME }-ის სესია დაბლოკილია"
@@ -1183,6 +1327,9 @@
       "Report a problem": [
         "შეტყობინება პრობლემის შესახებ"
       ],
+      "Respond": [
+        "პასუხი"
+      ],
       "Restore all items": [
         "ყველა ელემენტის აღდგენა"
       ],
@@ -1444,17 +1591,29 @@
       "Import to vault(s)": [
         "საცავ(ებ)-ში შემოტანა"
       ],
+      "Leave vault ?": [
+        "გავიდე საცავიდან?"
+      ],
       "Low disk space": [
         "დისკზე ადგილი ცოტაღაა"
       ],
       "Permanently remove all items ?": [
         "წავშალო სამუდამოდ ყველა ელემენტი?"
       ],
+      "Permissions": [
+        "წვდომები"
+      ],
       "Pin the extension": [
         "გაფართოების მიმაგრება"
       ],
       "Secure your data": [
         "დაიცავით თქვენი მონაცემები"
+      ],
+      "Share with": [
+        "გაზიარება"
+      ],
+      "Shared vault invitation": [
+        "გაზიარებული საცავის მოსაწვევი"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "გადავერთო ${ PASS_APP_NAME }-ზე?"
@@ -1464,6 +1623,9 @@
       ],
       "The extension is now ready to use.": [
         "გაფართოება მზადაა გამოსაყენებლად."
+      ],
+      "Transfer ownership": [
+        "მფლობელობის გადაცემა"
       ],
       "Trash empty": [
         "სანაგვე ყუთი ცარიელია"
@@ -1532,6 +1694,9 @@
       "An error occured while exporting your data": [
         "შეცდომა თქვენი მონაცემების გატანისას"
       ],
+      "Are you sure you want to transfer vault ownership to ${ email }?": [
+        "დარწმუნებული ბრძანდებით, რომ საცავის მფლობელობის ${ email }-სთვის გადაცემა, გნებავთ?"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "ამ ფსევდონიმისთვის ამჟამად საფოსტო ყუთების მიღება შეუძლებელია"
       ],
@@ -1576,6 +1741,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP-ით დაშიფრული გატანის ფაილისთვის საკვანძო ფრაზა აუცილებელია"
+      ],
+      "Please enter a valid email address": [
+        "შეიყვანეთ ელფოსტის სწორი მისამართი"
       ],
       "Please log back in": [
         "თავიდან შედით"
