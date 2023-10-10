@@ -15,7 +15,7 @@ import type { State } from '../types';
 import { SelectorError } from './errors';
 import { selectItems } from './items';
 import { selectProxiedSettings } from './settings';
-import { selectUserFeature } from './user';
+import { selectFeatureFlag } from './user';
 
 export const selectShares = ({ shares }: State) => shares;
 
@@ -51,7 +51,7 @@ export const selectWritableVaultsWithItemsCount = createVaultsWithItemsCountSele
  * vault should be the oldest vault I own and can write to.
  */
 export const selectDefaultVault = createSelector(
-    [selectAllVaults, selectOwnWritableVaults, selectUserFeature(PassFeature.PassRemovePrimaryVault)],
+    [selectAllVaults, selectOwnWritableVaults, selectFeatureFlag(PassFeature.PassRemovePrimaryVault)],
     (vaults, ownWritableVaults, disablePrimaryVault) => {
         if (!disablePrimaryVault) {
             const primaryVault = vaults.find((vault) => vault.primary);

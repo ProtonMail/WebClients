@@ -38,7 +38,7 @@ function* bootWorker(options: WorkerRootSagaOptions) {
         yield put(syncLocalSettings(yield options.getLocalSettings()));
 
         /* trigger a partial synchronization */
-        const sync = (yield synchronize(state, SyncType.PARTIAL, options)) as SynchronizationResult;
+        const sync = (yield synchronize(state, SyncType.PARTIAL, features, options)) as SynchronizationResult;
         yield put(bootSuccess({ user, plan, addresses, eventId, sync, features }));
 
         options.onBoot?.({ ok: true });
