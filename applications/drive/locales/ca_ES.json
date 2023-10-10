@@ -427,6 +427,9 @@
       "Next month": [
         "Mes següent"
       ],
+      "Ok": [
+        "OK"
+      ],
       "Open navigation": [
         "Obre la navegació"
       ],
@@ -1979,12 +1982,12 @@
         "La cerca de continguts no es pot activar en aquest navegador. Tanqueu el mode de navegació privada o utilitzeu un altre navegador."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
-        "Desseleccioneu almenys ${ calendarsToFixCount } calendari",
-        "Desseleccioneu almenys ${ calendarsToFixCount } calendaris"
+        "Desmarqueu almenys ${ calendarsToFixCount } calendari.",
+        "Desmarqueu almenys ${ calendarsToFixCount } calendaris."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "Desseleccioneu almenys ${ calendarsToFixCount } calendari o",
-        "Desseleccioneu almenys ${ calendarsToFixCount } calendaris o"
+        "Desmarqueu almenys ${ calendarsToFixCount } calendari o",
+        "Desmarqueu almenys ${ calendarsToFixCount } calendaris o"
       ],
       "Device name does not match": [
         "El nom del dispositiu no coincideix"
@@ -2036,6 +2039,9 @@
       ],
       "Incorrect password. Please try again.": [
         "Contrasenya incorrecta, torneu-ho a intentar."
+      ],
+      "Incorrect username": [
+        "Nom d'usuari incorrecte"
       ],
       "Invalid email address": [
         "L'adreça de correu electrònic no és vàlida."
@@ -5365,6 +5371,75 @@
     "Select files": {
       "Upload": [
         "Carrega"
+      ]
+    },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "Cancel·la el restabliment"
+      ],
+      "Reset password": [
+        "Restableix la contrasenya"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "S'ha desat la contrasenya."
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Restableix la contrasenya"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Cancel·la el restabliment de contrasenya"
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "S'ha cancel·lat el restabliment de la contrasenya."
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Cancel·la el restabliment de contrasenya?"
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "canvieu la vostra contrasenya ara"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "Cancel·la la petició"
+      ],
+      "Got it": [
+        "Entesos"
+      ],
+      "Learn more": [
+        "Saber-ne més"
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "Mostra la petició "
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "S'ha sol·licitat un restabliment de la contrasenya."
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Tanca la sessió"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Restabliment de contrasenya"
       ]
     },
     "Signing preference for emails": {
