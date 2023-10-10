@@ -229,7 +229,7 @@ describe('item selectors', () => {
             const itemsShare1 = selectItemsByDomain('proton.me', {
                 protocolFilter: [],
                 isPrivate: false,
-                shareId: 'share1',
+                shareIds: ['share1'],
             })(stateMock);
 
             expect(itemsShare1.length).toEqual(2);
@@ -239,7 +239,7 @@ describe('item selectors', () => {
             const itemsShare2 = selectItemsByDomain('proton.me', {
                 protocolFilter: [],
                 isPrivate: false,
-                shareId: 'share2',
+                shareIds: ['share2'],
             })(stateMock);
 
             expect(itemsShare2.length).toEqual(1);
@@ -248,7 +248,7 @@ describe('item selectors', () => {
             const itemsShare3 = selectItemsByDomain('proton.me', {
                 protocolFilter: [],
                 isPrivate: false,
-                shareId: 'share3',
+                shareIds: ['share3'],
             })(stateMock);
 
             expect(itemsShare3.length).toEqual(1);
@@ -257,7 +257,7 @@ describe('item selectors', () => {
             const itemsShare4 = selectItemsByDomain('proton.me', {
                 protocolFilter: [],
                 isPrivate: false,
-                shareId: 'share4',
+                shareIds: ['share4'],
             })(stateMock);
 
             expect(itemsShare4.length).toEqual(0);

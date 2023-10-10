@@ -2,9 +2,11 @@ import type { Selector } from '@reduxjs/toolkit';
 import { createSelector } from '@reduxjs/toolkit';
 
 import type { VaultShare } from '@proton/pass/types';
-import { type Maybe, type MaybeNull, ShareRole, type ShareType } from '@proton/pass/types';
-import { invert } from '@proton/pass/utils/fp';
-import { isVaultShare } from '@proton/pass/utils/pass/share';
+import { type Maybe, type MaybeNull, type ShareType } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
+import { and, invert } from '@proton/pass/utils/fp';
+import { sortOn } from '@proton/pass/utils/fp/sort';
+import { isOwnVault, isVaultShare, isWritableVault } from '@proton/pass/utils/pass/share';
 import { isTrashed } from '@proton/pass/utils/pass/trash';
 
 import { unwrapOptimisticState } from '../optimistic/utils/transformers';
@@ -12,11 +14,12 @@ import { type ShareItem } from '../reducers';
 import type { State } from '../types';
 import { SelectorError } from './errors';
 import { selectItems } from './items';
+import { selectProxiedSettings } from './settings';
+import { selectUserFeature } from './user';
 
-export const selectAllShares = createSelector(
-    ({ shares }: State) => shares,
-    (shares) => Object.values(unwrapOptimisticState(shares))
-);
+export const selectShares = ({ shares }: State) => shares;
+
+export const selectAllShares = createSelector(selectShares, (shares) => Object.values(unwrapOptimisticState(shares)));
 
 /* vaults returned from this selector are always
  * sorted alphabetically by ascending vault name  */
@@ -24,8 +27,10 @@ export const selectAllVaults = createSelector([selectAllShares], (shares) =>
     shares.filter(isVaultShare).sort((a, b) => a.content.name.localeCompare(b.content.name))
 );
 
-export const selectWritableVaults = createSelector([selectAllVaults], (vaults) =>
-    vaults.filter((share) => share.shareRoleId !== ShareRole.READ)
+export const selectWritableVaults = createSelector([selectAllVaults], (vaults) => vaults.filter(isWritableVault));
+
+export const selectOwnWritableVaults = createSelector([selectAllVaults], (vaults) =>
+    vaults.filter(and(isWritableVault, isOwnVault))
 );
 
 const createVaultsWithItemsCountSelector = (vaultSelector: Selector<State, VaultShare[]>) =>
@@ -39,12 +44,39 @@ const createVaultsWithItemsCountSelector = (vaultSelector: Selector<State, Vault
 export const selectVaultsWithItemsCount = createVaultsWithItemsCountSelector(selectAllVaults);
 export const selectWritableVaultsWithItemsCount = createVaultsWithItemsCountSelector(selectWritableVaults);
 
-export const selectPrimaryVault = createSelector([selectAllVaults], (vaults) => {
-    const primaryVault = vaults.find((vault) => vault.primary);
-    if (!primaryVault) throw new SelectorError(`Primary vault not found`);
+/**
+ * While the `PassRemovePrimaryVault` is disabled, we should still
+ * resolve the primary vault when selecting the default vault. When
+ * all clients are ready, we can safely drop this condition. The default
+ * vault should be the oldest vault I own and can write to.
+ */
+export const selectDefaultVault = createSelector(
+    [selectAllVaults, selectOwnWritableVaults, selectUserFeature(PassFeature.PassRemovePrimaryVault)],
+    (vaults, ownWritableVaults, disablePrimaryVault) => {
+        if (!disablePrimaryVault) {
+            const primaryVault = vaults.find((vault) => vault.primary);
+            if (!primaryVault) throw new SelectorError(`Primary vault not found`);
+            return primaryVault;
+        }
 
-    return primaryVault;
-});
+        return ownWritableVaults.filter((share) => share.owner).sort(sortOn('createTime', 'ASC'))[0];
+    }
+);
+
+/* If autosave vault is not set, fallback to default vault */
+export const selectAutosaveVault = createSelector(
+    [selectShares, selectProxiedSettings, selectDefaultVault],
+    (shares, settings, defaultVault): ShareItem<ShareType.Vault> => {
+        const autosaveVaultId = settings.autosave.shareId;
+
+        if (autosaveVaultId) {
+            const share = shares[autosaveVaultId];
+            if (share && isVaultShare(share)) return share;
+        }
+
+        return defaultVault;
+    }
+);
 
 export const selectShare =
     <T extends ShareType = ShareType>(shareId?: MaybeNull<string>) =>
