@@ -29,6 +29,15 @@
       "Back": [
         "Înapoi"
       ],
+      "Can edit": [
+        "Poate edita"
+      ],
+      "Can manage": [
+        "Poate gestiona"
+      ],
+      "Can view": [
+        "Poate vedea"
+      ],
       "Can't find your password manager? Please let us know!": [
         "Nu vă găsiți managerul de parole? Anunțați-ne!"
       ],
@@ -173,14 +182,26 @@
       "Importing": [
         "Se importă"
       ],
+      "Invite people": [
+        "Invitați persoane"
+      ],
+      "Join shared vault": [
+        "Alăturare la seif partajat"
+      ],
       "Learn more": [
         "Detalii"
       ],
       "Leave": [
         "Lăsați"
       ],
+      "Leave vault": [
+        "Părăsire seif"
+      ],
       "Lock extension": [
         "Blocare extensie"
+      ],
+      "Manage access": [
+        "Gestionare acces"
       ],
       "Manually sync your data": [
         "Sincronizare manuală date"
@@ -221,11 +242,20 @@
       "Regenerate": [
         "Regenerare"
       ],
+      "Reject invitation": [
+        "Refuzare invitație"
+      ],
       "Reload extension": [
         "Reîncărcare extensie"
       ],
+      "Remove access": [
+        "Eliminare acces"
+      ],
       "Request a feature": [
         "Solicitare funcție"
+      ],
+      "Resend invitation": [
+        "Retrimitere invitație"
       ],
       "Restore item": [
         "Restabilire articol"
@@ -238,6 +268,12 @@
       ],
       "Saving": [
         "Se salvează"
+      ],
+      "See members": [
+        "Afișare membri"
+      ],
+      "Send invite": [
+        "Trimitere invitație"
       ],
       "Send us a message": [
         "Trimiteți-ne un mesaj"
@@ -264,10 +300,13 @@
         "Sortare articole seif"
       ],
       "Submit": [
-        "Trimite"
+        "Trimitere"
       ],
       "Submitting report...": [
         "Se trimite raportul…"
+      ],
+      "Transfer ownership": [
+        "Transfer proprietar"
       ],
       "Try again": [
         "Reîncercați"
@@ -328,11 +367,20 @@
       "Cannot create alias (${ error }).": [
         "Nu se poate crea aliasul (${ error })."
       ],
+      "Could not leave vault.": [
+        "Nu s-a putut părăsi seiful."
+      ],
       "Could not open created vault": [
         "Nu s-a putut deschide seiful creat."
       ],
+      "Could not open invited vault": [
+        "Nu s-a putut deschide seiful la care ați fost invitat."
+      ],
       "Could not open updated vault": [
         "Nu s-a putut deschide seiful actualizat."
+      ],
+      "Could not resolve share members": [
+        "Nu s-au putut determina membrii partajării."
       ],
       "Could not resume your session : ${ description }": [
         "Nu s-a putut relua sesiunea : ${ description }"
@@ -369,6 +417,21 @@
       "Error reporting problem": [
         "Problemă de raportare a erorii."
       ],
+      "Failed removing the invite.": [
+        "Eșuare eliminare invitație."
+      ],
+      "Failed resending invite.": [
+        "Eșuare retrimitere invitație."
+      ],
+      "Failed to edit user's access.": [
+        "Eșuare editare acces utilizator."
+      ],
+      "Failed to remove user's access.": [
+        "Eșuare eliminare acces utilizator."
+      ],
+      "Failed to transfer this vault's ownership.": [
+        "Eșuare transfer proprietar pentru acest seif."
+      ],
       "File could not be parsed": [
         "Fișierul nu a putut fi analizat."
       ],
@@ -383,6 +446,18 @@
       ],
       "Invalid url": [
         "URL nevalid."
+      ],
+      "Invitation could not be accepted": [
+        "Invitația nu a putut fi acceptată."
+      ],
+      "Invitation could not be rejected": [
+        "Invitația nu a putut fi refuzată."
+      ],
+      "Invite creation failed.": [
+        "Crearea invitației a eșuat."
+      ],
+      "Invite successfully sent": [
+        "Invitația a fost trimisă."
       ],
       "Item content cannot exceed 40KB": [
         "Conținutul articolului nu poate depăși 40 KiB."
@@ -410,9 +485,6 @@
       ],
       "Request timed out": [
         "Solicitarea a expirat"
-      ],
-      "Requesting alias details failed": [
-        "Solicitarea detaliilor pentru alias a eșuat."
       ],
       "Requesting alias options failed": [
         "Solicitarea opțiunilor pentru alias a eșuat."
@@ -461,6 +533,9 @@
       ],
       "Unknown error": [
         "Eroare necunoscută"
+      ],
+      "Unknown invite": [
+        "Invitație necunoscută."
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Formatul fișierului ${ PASS_APP_NAME } nu este suportat."
@@ -548,6 +623,16 @@
         "${ count } elemente",
         "${ count } de elemente"
       ],
+      "${ itemCount } item": [
+        "${ itemCount } articol",
+        "${ itemCount } articole",
+        "${ itemCount } de articole"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } membru",
+        "${ memberCount } membri",
+        "${ memberCount } de membri"
+      ],
       "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
         "${ PASS_APP_NAME } va importa numai autentificări și note. Pașapoartele, fișierele atașate etc. nu sunt acceptate în acest moment."
       ],
@@ -570,6 +655,11 @@
         "A mai rămas ${ trialDaysLeft } zi",
         "Au mai rămas ${ trialDaysLeft } zile",
         "Au mai rămas ${ trialDaysLeft } de zile"
+      ],
+      "${ vault.count } item": [
+        "${ vault.count } articol",
+        "${ vault.count } articole",
+        "${ vault.count } de articole"
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Este disponibilă o versiune nouă ${ PASS_APP_NAME }. Actualizați-o pentru a vă bucura de cele mai recente caracteristici și remedieri de erori."
@@ -600,6 +690,27 @@
       ],
       "Autosaved on ${ submissionURL }": [
         "Autosalvat la ${ submissionURL }"
+      ],
+      "Can create, edit, delete and export items in this vault.": [
+        "Poate crea, edita, șterge și exporta articole din acest seif."
+      ],
+      "Can edit": [
+        "Poate edita"
+      ],
+      "Can grant and revoke access to this vault, and delete it.": [
+        "Poate acorda și revoca accesul la acest seif și îl poate șterge."
+      ],
+      "Can grant and revoke access to this vault.": [
+        "Poate acorda și anul accesul la acest seif."
+      ],
+      "Can manage": [
+        "Poate gestiona"
+      ],
+      "Can view": [
+        "Poate vedea"
+      ],
+      "Can view items in this vault.": [
+        "Poate vizualiza articolele din acest seif."
       ],
       "Check out all the exclusive features that are available to you for a limited time.": [
         "Încercați toate funcțiile exclusive care vă sunt disponibile pentru o perioadă limitată de timp."
@@ -702,6 +813,12 @@
       "Internet connection lost": [
         "Conexiunea la internet s-a întrerupt"
       ],
+      "Invite successfully removed": [
+        "Invitația a fost eliminată."
+      ],
+      "Invite successfully resent": [
+        "Invitația a fost retrimisă."
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Se pare că deja v-ați conectat la ${ PASS_APP_NAME }. Dacă încercați să vă autentificați cu un alt cont, deconectați-vă mai întâi de la extensie."
       ],
@@ -740,6 +857,9 @@
       "Loading...": [
         "Se încarcă…"
       ],
+      "me": [
+        "Eu"
+      ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Mai mult decât un manager de parole, ${ PASS_APP_NAME } vă protejează parolele și adresele de e-mail personale prin aliasuri de e-mail. Creat cu aceeași tehnologie folosită la ${ MAIL_APP_NAME }, datele vă sunt criptate în ambele sensuri și doar dvs. le puteți accesa."
       ],
@@ -758,11 +878,20 @@
       "Open the Extensions menu": [
         "Deschideți meniul de extensii"
       ],
+      "Owner": [
+        "Proprietar"
+      ],
+      "Ownership successfully transfered. You are no long the owner of this vault.": [
+        "Dreptul de proprietatea a fost transferat cu succes. Nu mai sunteți proprietarul acestui seif."
+      ],
       "Password copied": [
         "Parola s-a copiat"
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Parolele mai vechi de o zi sunt șterse automat din istoric."
+      ],
+      "Pending invitation": [
+        "Invitație în așteptare"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Fixați ${ PASS_APP_NAME } pe bara de unelte"
@@ -797,6 +926,9 @@
       "Select the destination vault for each imported vault.": [
         "Selectați seiful de destinație pentru fiecare seif importat."
       ],
+      "Select the level of access this user will gain when they join your vault.": [
+        "Selectați nivelul de acces pe care îl are acest utilizator la seif."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serverele nu sunt accesibile. Mai reîncercați peste câteva minute."
       ],
@@ -821,6 +953,9 @@
       "Successfully exported all your items": [
         "Toate articole au fost exportate."
       ],
+      "Successfully left the vault": [
+        "Ați părăsit seiful."
+      ],
       "Successfully synced all vaults": [
         "Toate seifurile au fost actualizate."
       ],
@@ -838,8 +973,17 @@
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Textul pe care încercați să îl lipiți este mai lung decât lungimea maximă permisă de ${ maxLength } de caractere."
       ],
+      "The user did not accept the invitation yet.": [
+        "Utilizatorul încă nu a acceptat invitația."
+      ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Acest fișier exportat va fi necriptat și oricine are acces la el va putea vedea parolele. Pentru securitate, trebuie să-l ștergeți după ce l-ați terminat de utilizat."
+      ],
+      "This user will receive an invitation to join your '${ vaultName }' vault.": [
+        "Acest utilizator va primi o invitație pentru a se alătura la seiful „${ vaultName }”."
+      ],
+      "This vault is not currently shared with anyone. Invite people to share it with others.": [
+        "Acest seif nu este partajat momentan cu nimeni. Invitați oameni pentru a-l partaja cu ei."
       ],
       "Unable to copy to clipboard": [
         "Nu se poate copia în memorie."
@@ -852,6 +996,12 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Actualizare ${ PASS_APP_NAME }"
+      ],
+      "User's access removed": [
+        "Accesul utilizatorului a fot eliminat."
+      ],
+      "User's access sucessfuly updated": [
+        "Accesul utilizatorului a fost actualizat."
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Seiful „${ payload.content.name }” a fost șters."
@@ -899,6 +1049,9 @@
       ],
       "You're about to create": [
         "Sunteți pe cale să creați"
+      ],
+      "You've been invited to a vault. Click here to see the invitation.": [
+        "Aveți o invitație la un seif partajat. Faceți clic aici pentru a vedea invitația."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Sesiunea ${ PASS_APP_NAME } este blocată."
@@ -1200,6 +1353,9 @@
       "Report a problem": [
         "Raportare problemă"
       ],
+      "Respond": [
+        "Răspuns"
+      ],
       "Restore all items": [
         "Restaurare toate articolele"
       ],
@@ -1461,17 +1617,29 @@
       "Import to vault(s)": [
         "Importare în seif(uri)"
       ],
+      "Leave vault ?": [
+        "Părăsiți seiful ?"
+      ],
       "Low disk space": [
         "Spațiu pe disc redus"
       ],
       "Permanently remove all items ?": [
         "Ștergeți definitiv toate articolele?"
       ],
+      "Permissions": [
+        "Permisiuni"
+      ],
       "Pin the extension": [
         "Fixare extensie"
       ],
       "Secure your data": [
         "Securizați-vă datele"
+      ],
+      "Share with": [
+        "Partajare cu"
+      ],
+      "Shared vault invitation": [
+        "Invitație seif partajat"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Comutați la ${ PASS_APP_NAME }?"
@@ -1481,6 +1649,9 @@
       ],
       "The extension is now ready to use.": [
         "Extensia este acum gata de utilizare."
+      ],
+      "Transfer ownership": [
+        "Transfer proprietar"
       ],
       "Trash empty": [
         "Gunoiul este gol"
@@ -1549,6 +1720,9 @@
       "An error occured while exporting your data": [
         "A apărut o eroare în timpul exportului de date."
       ],
+      "Are you sure you want to transfer vault ownership to ${ email }?": [
+        "Sigur doriți să transferați drepturile pentru seif lui ${ email }?"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Nu se pot prelua mesajele pentru acest alias chiar acum."
       ],
@@ -1594,6 +1768,9 @@
       "PGP encrypted export file requires passphrase": [
         "Fișierul criptat PGP exportat necesită o frază de acces."
       ],
+      "Please enter a valid email address": [
+        "Introduceți o adresă de e-mail validă."
+      ],
       "Please log back in": [
         "Reconectați-vă din nou."
       ],
@@ -1635,6 +1812,9 @@
       ],
       "You must select at least one mailbox": [
         "Trebuie să selectați cel puțin o adresă de e-mail."
+      ],
+      "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
+        "Nu veți mai avea acces la acest seif. Pentru a vă realătura, veți avea nevoie de o nouă invitație."
       ],
       "Your plan does not allow you to create more aliases": [
         "Planul actual nu vă permite să creați mai multe aliasuri."

@@ -1,1812 +1,1838 @@
 {
   "headers": {
-    "plural-forms": "nplurals=2; plural=(n != 1);",
-    "language": "fi_FI"
+    "plural-forms": "nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;",
+    "language": "cs_CZ"
   },
   "contexts": {
     "Action": {
       "Add": [
-        "Lisää"
+        "Přidat"
       ],
       "Add current url": [
-        "Lisää nykyinen URL"
-      ],
-      "Add domain to pause list": [
-        "Lisää verkkotunnus keskeytyslistalle"
+        "Přidat aktuální URL"
       ],
       "Add more": [
-        "Lisää kenttiä"
+        "Přidat další"
       ],
       "Add new item": [
-        "Lisää uusi kohde"
+        "Přidat novou položku"
       ],
       "Advanced": [
-        "Lisätoiminnot"
+        "Pokročilé"
       ],
       "Advanced options": [
-        "Lisävalinnat"
+        "Pokročilé nastavení"
       ],
       "Back": [
-        "Takaisin"
+        "Zpět"
       ],
       "Can edit": [
-        "Voi muokata"
+        "Může upravovat"
       ],
       "Can manage": [
-        "Voi hallita"
+        "Může spravovat"
       ],
       "Can view": [
-        "Voi tarkastella"
+        "Může zobrazit"
       ],
       "Can't find your password manager? Please let us know!": [
-        "Etkö löydä käyttämääsi salasanahallintaa? Kerro siitä meille!"
+        "Nemůžete najít svého správce hesel? Dejte nám vědět!"
       ],
       "Cancel": [
-        "Peruuta"
+        "Zrušit"
       ],
       "Change": [
-        "Muuta"
+        "Změnit"
       ],
       "Choose a file or drag it here": [
-        "Valitse tiedosto tai pudota se tähän"
+        "Vyberte soubor nebo jej sem přetáhněte"
       ],
       "Clear": [
-        "Tyhjennä"
+        "Smazat"
       ],
       "Clear search": [
-        "Tyhjennä haku"
+        "Vyčistit vyhledávání"
       ],
       "Close": [
-        "Sulje"
+        "Zavřít"
       ],
       "Close advanced options": [
-        "Sulje lisävalinnat"
+        "Zavřít rozšířené možnosti"
       ],
       "Close navigation": [
-        "Sulje navigaatio"
+        "Zavřít menu"
       ],
       "Confirm": [
-        "Vahvista"
+        "Potvrdit"
       ],
       "Continue": [
-        "Jatka"
+        "Pokračovat"
       ],
       "Continue without pinning": [
-        "Jatka kiinnittämättä"
+        "Pokračovat bez připnutí"
       ],
       "Copy & fill in": [
-        "Kopioi ja täytä"
+        "Zkopírovat & vyplnit"
       ],
       "Copy and close": [
-        "Kopioi ja sulje"
+        "Kopírovat a zavřít"
       ],
       "Copy to clipboard": [
-        "Kopioi leikepöydälle"
+        "Zkopírovat do schránky"
       ],
       "Create": [
-        "Luo"
+        "Vytvořit"
       ],
       "Create a ${ BRAND_NAME } account": [
-        "Luo ${ BRAND_NAME }-tili"
+        "Vytvořit účet ${ BRAND_NAME }"
       ],
       "Create alias": [
-        "Luo alias"
+        "Vytvořit alias"
       ],
       "Create an account": [
-        "Luo tili"
+        "Vytvořit účet"
       ],
       "Create login": [
-        "Luo kirjautumistieto"
+        "Vytvořit přihlášení"
       ],
       "Create note": [
-        "Luo muistiinpano"
+        "Vytvořit poznámku"
       ],
       "Create vault": [
-        "Luo holvi"
+        "Vytvořit trezor"
       ],
       "Creating vault": [
-        "Luodaan holvia"
+        "Vytvářím trezor"
       ],
       "Delete": [
-        "Poista"
+        "Smazat"
       ],
       "Delete alias": [
-        "Poista alias"
+        "Smazat alias"
       ],
       "Delete all": [
-        "Poista kaikki"
+        "Smazat vše"
       ],
       "Delete password": [
-        "Poista salasana"
+        "Smazat heslo"
       ],
       "Delete permanently": [
-        "Poista pysyvästi"
+        "Trvale smazat"
       ],
       "Delete vault": [
-        "Poista holvi"
+        "Smazat trezor"
       ],
       "Discard": [
-        "Hylkää"
+        "Zahodit"
       ],
       "Dismiss": [
-        "Hylkää"
+        "Skrýt"
       ],
       "Done": [
-        "Valmis"
+        "Hotovo"
       ],
       "Edit": [
-        "Muokkaa"
+        "Upravit"
       ],
       "Edit vault": [
-        "Muokkaa holvia"
+        "Upravit trezor"
       ],
       "Export": [
-        "Vie"
+        "Exportovat"
       ],
       "Feedback": [
-        "Palaute"
+        "Zpětná vazba"
       ],
       "Fill password": [
-        "Täytä salasana"
+        "Vyplnit heslo"
       ],
       "Filter vault items": [
-        "Suodata holvin kohteita"
+        "Filtrovat položky v trezoru"
       ],
       "Generate alias": [
-        "Luo alias"
+        "Vygenerovat alias"
       ],
       "Generate password": [
-        "Luo salasana"
+        "Generovat heslo"
       ],
       "Generated password": [
-        "Luotu salasana"
+        "Vygenerované heslo"
       ],
       "Get mobile apps": [
-        "Hanki mobiilisovellukset"
+        "Získat mobilní aplikace"
       ],
       "Help us improve": [
-        "Auta meitä parantamaan"
+        "Pomozte nám se zlepšit"
       ],
       "Hide": [
-        "Piilota"
+        "Skrýt"
       ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
-        "Miten vien tietoni palvelusta ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
+        "Jak mohu exportovat svá data z ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
       "Import": [
-        "Tuo"
+        "Importovat"
       ],
       "Import your passwords": [
-        "Tuo salasanasi"
+        "Importovat vaše hesla"
       ],
       "Importing": [
-        "Tuodaan"
+        "Import"
       ],
       "Invite people": [
-        "Kutsu ihmisiä"
+        "Pozvat lidi"
       ],
       "Join shared vault": [
-        "Liity jaettuun holviin"
+        "Připojit ke sdílenému trezoru"
       ],
       "Learn more": [
-        "Lue lisää"
+        "Více informací"
       ],
       "Leave": [
-        "Poistu"
-      ],
-      "Leave vault": [
-        "Poistu holvista"
+        "Opustit"
       ],
       "Lock extension": [
-        "Lukitse laajennus"
+        "Zamknout rozšíření"
       ],
       "Manage access": [
-        "Hallitse käyttöoikeuksia"
+        "Spravovat přístup"
       ],
       "Manually sync your data": [
-        "Synkronoi tietosi manuaalisesti"
+        "Manuálně synchronizovat vaše data"
       ],
       "More info: ${ safeTitle }": [
-        "Lisätietoja: ${ safeTitle }"
+        "Více informací: ${ safeTitle }"
       ],
       "More options": [
-        "Lisää asetuksia"
+        "Více možností"
       ],
       "Move to another vault": [
-        "Siirrä toiseen holviin"
+        "Přesunout do jiného trezoru"
       ],
       "Move to Trash": [
-        "Siirrä roskakoriin"
+        "Přesunout do koše"
       ],
       "Move to trash": [
-        "Siirrä roskakoriin"
+        "Přesunout do koše"
       ],
       "Not now": [
-        "Ei nyt"
+        "Nyní ne"
       ],
       "Open navigation": [
-        "Avaa navigaatio"
+        "Otevřít menu"
       ],
       "Pass for Android": [
-        "Pass Androidille"
+        "Proton Pass pro Android"
       ],
       "Pass for iOS": [
-        "Pass iOS:lle"
+        "Proton Pass pro iOS"
       ],
       "Proceed": [
-        "Jatka"
+        "Provést"
       ],
       "Refresh the page": [
-        "Päivitä sivu"
+        "Obnovit stránku"
       ],
       "Regenerate": [
-        "Luo uusi"
+        "Znovu vygenerovat"
       ],
       "Reject invitation": [
-        "Hylkää kutsu"
+        "Odmítnout pozvánku"
       ],
       "Reload extension": [
-        "Lataa laajennus uudelleen"
+        "Znovu načíst rozšíření"
       ],
       "Remove access": [
-        "Mitätöi käyttöoikeus"
+        "Odebrat přístup"
       ],
       "Request a feature": [
-        "Pyydä ominaisuutta"
+        "Požádat o funkci"
       ],
       "Resend invitation": [
-        "Lähetä kutsu uudelleen"
+        "Znovu poslat pozvánku"
       ],
       "Restore item": [
-        "Palauta kohde"
+        "Obnovit položku"
       ],
       "Retry": [
-        "Yritä uudelleen"
+        "Opakovat"
       ],
       "Save": [
-        "Tallenna"
+        "Uložit"
       ],
       "Saving": [
-        "Tallennetaan"
+        "Ukládání"
       ],
       "See members": [
-        "Näytä jäsenet"
+        "Zobrazit členy"
       ],
       "Send invite": [
-        "Lähetä kutsu"
+        "Odeslat pozvánku"
       ],
       "Send us a message": [
-        "Lähetä meille viesti"
+        "Pošlete nám zprávu"
       ],
       "Share": [
-        "Jaa"
+        "Sdílet"
       ],
       "Show": [
-        "Näytä"
+        "Zobrazit"
       ],
       "Sign back in": [
-        "Kirjaudu takaisin sisään"
+        "Přihlásit se zpět"
       ],
       "Sign in": [
-        "Kirjaudu sisään"
+        "Přihlásit se"
       ],
       "Sign in with ${ BRAND_NAME }": [
-        "Kirjaudu ${ BRAND_NAME }illa"
+        "Přihlaste se pomocí ${ BRAND_NAME }"
       ],
       "Sign out": [
-        "Kirjaudu ulos"
+        "Odhlásit se"
       ],
       "Sort vault items": [
-        "Järjestä holvin kohteet"
+        "Seřadit položky trezoru"
       ],
       "Submit": [
-        "Lähetä"
+        "Odeslat"
       ],
       "Submitting report...": [
-        "Lähetetään raporttia..."
+        "Odesílání hlášení..."
       ],
       "Transfer ownership": [
-        "Siirrä omistajuus"
+        "Převod vlastnictví"
       ],
       "Try again": [
-        "Yritä uudelleen"
+        "Zkuste to znovu"
       ],
       "Update": [
-        "Päivitä"
+        "Aktualizovat"
       ],
       "Updating": [
-        "Päivitetään"
+        "Aktualizace"
       ],
       "Upgrade": [
-        "Päivitä"
+        "Přejít na placený tarif"
       ],
       "Upgrade to keep these features": [
-        "Säilytä ominaisuudet päivittämällä tilauksesi"
+        "Navyšte tarif pro zachování těchto funkcí"
       ],
       "Write us on Reddit": [
-        "Kirjoita meille Redditissä"
+        "Napište nám na Reddit"
       ],
       "Write us on Twitter": [
-        "Kirjoita meille Twitterissä"
+        "Napište nám na Twitter"
       ]
     },
     "Button": {
       "More info": [
-        "Lisätietoja"
+        "Další informace"
       ]
     },
     "Collapsible tooltip": {
       "Collapse": [
-        "Piennennä"
+        "Sbalit"
       ],
       "Expand": [
-        "Laajenna"
-      ]
-    },
-    "Description": {
-      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
-        "Listaus verkkotunnuksista, joilla joitakin ${ PASS_SHORT_APP_NAME }in automaattisia toimintoja ei suoriteta (automaattitäyttö, -ehdotus ja -tallennus)."
+        "Rozbalit"
       ]
     },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
-        "${ provider } -tiedostoa ei voitu jäsentää. ${ errorDetail }"
+        "${ provider } soubor se nepodařilo zpracovat. ${ errorDetail }"
       ],
       "Alias options could not be resolved": [
-        "Aliasvaihtoehtoja ei voitu selvittää"
+        "Možnosti aliasu nelze vyřešit"
       ],
       "Authentication error": [
-        "Todennusvirhe"
+        "Ověření selhalo"
       ],
       "Auto-lock could not be activated": [
-        "Automaattilukitusta ei voitu ottaa käyttöön"
+        "Automatické zamykání nelze aktivovat"
       ],
       "Auto-lock could not be disabled": [
-        "Automaattilukitusta ei voitu poistaa käytöstä"
+        "Automatické zamykání nelze deaktivovat"
       ],
       "Cannot create alias (${ error }).": [
-        "Aliasta ei voida luoda (${ error })."
+        "Nelze vytvořit alias (${ error })."
       ],
       "Could not leave vault.": [
-        "Holvista ei voitu poistua."
+        "Nepodařilo se opustit trezor."
       ],
       "Could not open created vault": [
-        "Luotua holvia ei voitu avata"
+        "Nelze otevřít vytvořený trezor"
       ],
       "Could not open invited vault": [
-        "Holvia, johon sinut on kutsuttu, ei voitu avata"
+        "Nelze otevřít pozvaný trezor"
       ],
       "Could not open updated vault": [
-        "Muuttunutta holvia ei voitu avata"
+        "Nelze aktualizovat vytvořený trezor"
       ],
       "Could not resolve share members": [
-        "Jaon jäseniä ei voitu määrittää"
+        "Nepodařilo se vyřešit sdílené členy"
       ],
       "Could not resume your session : ${ description }": [
-        "Istuntoasi ei voitu jatkaa: ${ description }"
+        "Nelze obnovit vaši relaci : ${ description }"
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
-        "CSV-tiedostosta puuttuu odotettuja otsikoita: ${ missingHeaders }"
+        "V souboru CSV chybí očekávané hlavičky: ${ missingHeaders }"
       ],
       "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
-        "${ PASS_APP_NAME }in vientitiedoston salauksen purku epäonnistui. ${ errorDetail }"
+        "Dešifrování vašeho exportního souboru ${ PASS_APP_NAME } selhalo. ${ errorDetail }"
       ],
       "Deleting item failed": [
-        "Kohteen poisto epäonnistui"
+        "Smazání položky se nezdařilo"
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
-        "Holvin \"${ payload.content.name }\" poisto epäonnistui"
+        "Smazání trezoru \"${ payload.content.name }\" selhalo"
       ],
       "Detected ${ errors.length } corrupted csv row": [
-        "Havaittiin ${ errors.length } virheellinen CSV-rivi",
-        "Havaittiin ${ errors.length } virheellinen CSV-rivi"
+        "Zjištěn ${ errors.length } poškozený řádek csv",
+        "Zjištěny ${ errors.length } poškozené řádky csv",
+        "Zjištěno ${ errors.length } poškozených řádků csv",
+        "Zjištěno ${ errors.length } poškozených řádků csv"
       ],
       "Editing item failed": [
-        "Kohteen muokkaus epäonnistui"
+        "Úprava položky se nezdařila"
       ],
       "Empty CSV file": [
-        "Tyhjä CSV-tiedosto"
+        "Prázdný soubor CSV"
       ],
       "Emptying trash failed": [
-        "Roskakorin tyhjennys epäonnistui"
+        "Vyprázdnění koše selhalo"
       ],
       "Encrypted JSON not supported": [
-        "Salattua JSON-tiedostoa ei tueta"
+        "Šifrovaný JSON není podporován"
       ],
       "Error reporting problem": [
-        "Virheraportoinnin ongelma"
+        "Chyba při hlášení problému"
       ],
       "Failed removing the invite.": [
-        "Kutsun poisto epäonnistui."
+        "Odstranění pozvánky selhalo."
       ],
       "Failed resending invite.": [
-        "Kutsun uudelleenlähetys epäonnistui."
+        "Opětovné zaslání pozvánky selhalo."
       ],
       "Failed to edit user's access.": [
-        "Käyttäjän käyttöoikeuden muutos epäonnistui."
+        "Úprava uživatelského přístupu selhala."
       ],
       "Failed to remove user's access.": [
-        "Käyttäjän käyttöoikeuden poisto epäonnistui."
+        "Odstranění uživatelského přístupu selhalo."
       ],
       "Failed to transfer this vault's ownership.": [
-        "Tämän holvin omistajuuden siirto epäonnistui."
+        "Nepodařilo se přenést vlastnictví tohoto trezoru."
       ],
       "File could not be parsed": [
-        "Tiedostoa ei voitu jäsentää"
+        "Soubor nelze analyzovat"
       ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
-        "Holvin \"${ vaultData.name }\" tuonti epäonnistui: ${ description }"
+        "Import pro trezor \"${ vaultData.name }\" selhal : ${ description }"
       ],
       "Importing items failed": [
-        "Kohteiden tuonti epäonnistui"
+        "Import položek se nezdařil"
       ],
       "Invalid password manager": [
-        "Virheellinen salasanahallinta"
+        "Neplatný správce hesel"
       ],
       "Invalid url": [
-        "Virheellinen URL-osoite"
+        "Neplatná adresa URL"
       ],
       "Invitation could not be accepted": [
-        "Kutsua ei voitu hyväksyä"
+        "Pozvánku nebylo možné přijmout"
       ],
       "Invitation could not be rejected": [
-        "Kutsua ei voitu hylätä"
+        "Pozvánku nebylo možné odmítnout"
       ],
       "Invite creation failed.": [
-        "Kutsun luonti epäonnistui."
+        "Nepodařilo se vytvořit pozvánku"
       ],
       "Invite successfully sent": [
-        "Kutsu lähetettiin"
+        "Pozvánka byla úspěšně odeslána"
       ],
       "Item content cannot exceed 40KB": [
-        "Kohteen sisältö ei saa ylittää 40 kt"
+        "Obsah položky nemůže přesáhnout 40KB"
       ],
       "Item creation failed": [
-        "Kohteen luonti epäonnistui"
+        "Vytvoření položky se nezdařilo"
       ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
-        "LastPass vie virheellisen CSV-tiedoston, jos yksikin kohteidesi kentistäsi sisältää odottamattomia pilkkuja, lainausmerkkejä tai useita rivejä"
+        "Aplikace LastPass vyexportuje poškozený soubor CSV, pokud některé z polí položek obsahuje neočekávané čárky, uvozovky nebo více řádků"
       ],
       "Moving item failed": [
-        "Kohteen siirto epäonnistui"
+        "Přesouvání položky selhalo"
       ],
       "Passphrase is incorrect": [
-        "Tunnuslauseke on virheellinen"
+        "Heslo je nesprávné"
       ],
       "PIN codes do not match": [
-        "PIN-koodit eivät täsmää"
+        "PIN kódy se neshodují"
       ],
       "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
-        "Jatka myöntämällä ${ PASS_APP_NAME }ille tarvittavat laajennusoikeudet."
+        "Udělte prosím rozšíření ${ PASS_APP_NAME } potřebná oprávnění, abyste mohli pokračovat."
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
-        "Kiinnitä laajennus tai valitse \"Jatka kiinnittämättä\"."
+        "Připněte rozšíření nebo vyberte možnost \"Pokračovat bez připnutí\"."
       ],
       "Request timed out": [
-        "Pyyntö aikakatkaistiin"
+        "Vypršel časový limit žádosti"
       ],
       "Requesting alias options failed": [
-        "Aliasvaihtoehtojen nouto epäonnistui"
+        "Vyžádání možností aliasu selhalo"
       ],
       "Restoring item failed": [
-        "Kohteen palautus epäonnistui"
+        "Obnovení položky se nezdařilo"
       ],
       "Setting \"${ payload.name }\" as primary vault failed": [
-        "Holvin \"${ payload.name }\" asetus ensisijaiseksi holviksi epäonnistui"
+        "Nastavení trezoru \"${ payload.name }\" jako primárního selhalo"
       ],
       "Settings update failed": [
-        "Asetusten tallennus epäonnistui"
+        "Aktualizace nastavení se nezdařila"
       ],
       "Signature verification failed": [
-        "Allekirjoituksen vahvistus epäonnistui"
+        "Ověření podpisu selhalo"
       ],
       "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
-        "Jotkin kolvit eivät ole enää käytettävissä salasanan nollauksen vuoksi. Palauta käyttöoikeus aktivoimalla tilisi avaimet uudelleen. ${ reactivateLink }"
+        "Některé trezory již nejsou přístupné z důvodu resetování hesla. Chcete-li získat přístup, znovu aktivujte klíče k účtu. ${ reactivateLink }"
       ],
       "Something went wrong": [
-        "Jotain meni pieleen"
+        "Něco se pokazilo"
       ],
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
-        "Jotain meni pieleen. Lataa ${ PASS_APP_NAME } -laajennus uudelleen. Ongelma on kirjattu lokiin"
+        "Něco se pokazilo. Znovu načtěte rozšíření ${ PASS_APP_NAME }. Tento problém byl zaznamenán"
       ],
       "The file you are trying to import is empty": [
-        "Tiedosto, jota yrität tuoda, on tyhjä"
+        "Soubor, který se snažíte importovat, je prázdný"
       ],
       "The url is in the list": [
-        "URL-osoite on jo listalla"
+        "URL je na seznamu"
       ],
       "Too many failed attempts. Please sign in again.": [
-        "Liian monta epäonnistunutta yritystä. Kirjaudu sisään uudelleen."
+        "Příliš mnoho neúspěšných pokusů. Přihlaste se znovu."
       ],
       "Trashing item failed": [
-        "Kohteen siirto roskakoriin epäonnistui"
+        "Přesun do koše selhal"
       ],
       "Unable to boot": [
-        "Käynnistys ei onnistu"
+        "Nelze spustit"
       ],
       "Unable to generate an OTP code for this item": [
-        "OTP-koodia ei voida luoda tälle kohteelle"
+        "Nelze vygenerovat OTP kód pro tuto položku"
       ],
       "Unable to sync": [
-        "Synkronointi ei onnistu"
+        "Nelze synchronizovat"
       ],
       "Unknown error": [
-        "Tuntematon virhe"
+        "Neznámá chyba"
       ],
       "Unknown invite": [
-        "Tuntematon kutsu"
+        "Neznámá pozvánka"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
-        "Ei tuettu ${ PASS_APP_NAME } -tiedostomuoto"
+        "Neodporovaný formát souboru ${ PASS_APP_NAME }"
       ],
       "Unsupported 1Password file format": [
-        "Ei tuettu 1Password-tiedostomuoto"
+        "Nepodporovaný formát souboru 1Password"
       ],
       "Updating vault \"${ payload.content.name }\" failed": [
-        "Holvin \"${ payload.content.name }\" päivitys epäonnistui"
+        "Aktualizace trezoru \"${ payload.content.name }\" selhala"
       ],
       "Vault \"${ payload.content.name }\" creation failed": [
-        "Holvin \"${ payload.content.name }\" luonti epäonnistui"
+        "Vytvoření trezoru \"${ payload.content.name }\" selhalo"
       ],
       "Vault \"${ vaultData.name }\" could not be created": [
-        "Holvia \"${ vaultData.name }\" ei voitu luoda"
+        "Trezor \"${ vaultData.name }\" nelze vytvořit"
       ],
       "Vault name does not match": [
-        "Holvin nimi ei täsmää"
+        "Název trezoru neodpovídá"
       ],
       "Wrong PIN code. Try again.": [
-        "Väärä PIN-koodi. Yritä uudelleen."
+        "Chybný PIN kód. Zkuste to znovu."
       ]
     },
     "Error message": {
       "Please refresh the page or try again later.": [
-        "Päivitä sivu tai yritä myöhemmin uudelleen."
+        "Aktualizujte prosím stránku nebo to zkuste znovu později."
       ],
       "Something went wrong": [
-        "Jotain meni pieleen"
+        "Něco se pokazilo"
       ]
     },
     "file size format": {
       "byte": [
-        "tavu",
-        "tavua"
+        "bajt",
+        "bajty",
+        "bajtů",
+        "bajtů"
       ],
       "GB": [
-        "Gt"
+        "GB"
       ],
       "KB": [
-        "Kt"
+        "KB"
       ],
       "MB": [
-        "Mt"
+        "MB"
       ]
     },
     "file size format, long": {
       "Byte": [
-        "Tavu",
-        "Tavua"
+        "Bajt",
+        "Bajty",
+        "Bajtů",
+        "Bajtů"
       ],
       "Gigabyte": [
-        "Gigatavu",
-        "Gigatavua"
+        "Gigabajt",
+        "Gigabajty",
+        "Gigabajtů",
+        "Gigabajtů"
       ],
       "Kilobyte": [
-        "Kilotavu",
-        "Kilotavua"
+        "Kilobajt",
+        "Kilobajty",
+        "Kilobajtů",
+        "Kilobajtů"
       ],
       "Megabyte": [
-        "Megatavu",
-        "Megatavua"
+        "Megabajt",
+        "Megabajty",
+        "Megabajtů",
+        "Megabajtů"
       ]
     },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
-        " Luo useita holveja päivittämällä maksulliseen tilaukseen."
+        " Chcete-li vytvořit více trezorů, přejděte na placený tarif."
       ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
-        "Kohde \"${ payload.item.data.metadata.name }\" hylättiin"
+        "Položka \"${ payload.item.data.metadata.name }\" byla odmítnuta"
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
-        "Kohteen \"${ payload.item.data.metadata.name }\" päivitys hylättiin"
+        "Aktualizace \"${ payload.item.data.metadata.name }\" byla odmítnuta"
       ],
       "\"${ payload.name }\" set as primary vault": [
-        "\"${ payload.name }\" asetettiin ensisijaiseksi holviksi"
+        "Trezor \"${ payload.name }\" nastaven jako primární"
       ],
       "${ count } item": [
-        "${ count } kohde",
-        "${ count } kohdetta"
+        "${ count } položka",
+        "${ count } položky",
+        "${ count } položek",
+        "${ count } položek"
       ],
       "${ itemCount } item": [
-        "${ itemCount } kohde",
-        "${ itemCount } kohdetta"
+        "${ itemCount } položka",
+        "${ itemCount } položky",
+        "${ itemCount } položek",
+        "${ itemCount } položek"
       ],
       "${ memberCount } member": [
-        "${ memberCount } jäsen",
-        "${ memberCount } jäsentä"
+        "${ memberCount } člen",
+        "${ memberCount } členové",
+        "${ memberCount } členů",
+        "${ memberCount } členů"
       ],
       "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
-        "${ PASS_APP_NAME } tuo vain kirjautumistiedot ja muistiinpanot. Passeja, liitetiedostoja ja muita tietoja ei tällä hetkellä tueta."
+        "${ PASS_APP_NAME } bude importovat pouze přihlašovací údaje a poznámky. Cestovní pasy, přiložené soubory atd. nejsou v současné době podporovány."
       ],
       "${ revisionNumber } time": [
-        "${ revisionNumber } kerran",
-        "${ revisionNumber } kertaa"
+        "${ revisionNumber } krát",
+        "${ revisionNumber } krát",
+        "${ revisionNumber } krát",
+        "${ revisionNumber } krát"
       ],
       "${ totalImportedItems } item": [
-        "${ totalImportedItems } kohde",
-        "${ totalImportedItems } kohdetta"
+        "${ totalImportedItems } položka",
+        "${ totalImportedItems } položky",
+        "${ totalImportedItems } položek",
+        "${ totalImportedItems } položek"
       ],
       "${ totalItems } item": [
-        "${ totalItems } kohde",
-        "${ totalItems } kohdetta"
+        "${ totalItems } položka",
+        "${ totalItems } položky",
+        "${ totalItems } položek",
+        "${ totalItems } položek"
       ],
       "${ trialDaysLeft } day left": [
-        "${ trialDaysLeft } päivä jäljellä",
-        "${ trialDaysLeft } päivää jäljellä"
+        "Zbývá ${ trialDaysLeft } den",
+        "Zbývají ${ trialDaysLeft } dny",
+        "Zbývá ${ trialDaysLeft } dnů",
+        "Zbývá ${ trialDaysLeft } dnů"
       ],
       "${ vault.count } item": [
-        "${ vault.count } kohde",
-        "${ vault.count } kohdetta"
+        "${ vault.count } položka",
+        "${ vault.count } položky",
+        "${ vault.count } položek",
+        "${ vault.count } položek"
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
-        "${ PASS_APP_NAME } -sovelluksesta on saatavilla uusi versio. Nauti uusista ominaisuuksista ja vikakorjauksista päivittämällä se."
+        "Je dostupná nová verze aplikace ${ PASS_APP_NAME }. Aktualizací získáte nejnovější funkce a opravy chyb."
       ],
       "Access ${ PASS_APP_NAME } via this icon": [
-        "Käytä ${ PASS_APP_NAME }ia tästä kuvakkeesta"
+        "Přistupte k ${ PASS_APP_NAME } pomocí této ikony"
       ],
       "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
-        "${ PASS_APP_NAME } -istunnon lukituksen avaus vaatii PIN-koodin"
+        "Přístup do ${ PASS_APP_NAME } bude vyžadovat PIN kód pro odemčení vaší relace."
       ],
       "Access your passwords on the go with our mobile apps.": [
-        "Mobiilisovelluksillamme tavoitat salasanasi myös liikkeellä ollessasi."
+        "Pomocí našich mobilních aplikací přistupujte ke svým heslům i na cestách."
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "Alias \"${ item.aliasEmail }\" siirrettiin roskakoriin, eikä se enää ohjaa viestejä postilaatikkoosi."
+        "Alias \"${ item.aliasEmail }\" přesunut do koše - přestane přeposílat e-maily do vaší schránky"
       ],
       "All items permanently removed": [
-        "Kaikki kohteet poistettiin pysyvästi"
+        "Všechny položky úspěšně odstraněny"
       ],
       "All items successfully restored": [
-        "Kaikki kohteet palautettiin"
+        "Všechny položky úspěšně obnoveny"
       ],
       "An item previously shared with you was disabled": [
-        "Sinulle aiemmin jaettu kohde on poistettu käytöstä"
+        "Položka dříve sdílená s vámi byla deaktivována"
       ],
       "Auto-lock successfully disabled": [
-        "Automaattilukitus poistettiin käytöstä"
+        "Automatické zamykání bylo úspěšně deaktivováno"
       ],
       "Autosaved on ${ submissionURL }": [
-        "Automaattitallennettiin osoitteesta ${ submissionURL }"
+        "Automaticky uloženo na ${ submissionURL }"
       ],
       "Can create, edit, delete and export items in this vault.": [
-        "Voi luoda, muokata, poistaa ja viedä holvin kohteita."
+        "Může vytvářet, upravovat, mazat a exportovat položky v tomto trezoru."
       ],
       "Can edit": [
-        "Voi muokata"
+        "Může upravovat"
       ],
       "Can grant and revoke access to this vault, and delete it.": [
-        "Voi myöntää ja mitätöidä holvin käyttöoikeuksia, ja poistaa sen."
+        "Může přidělovat a odebírat přístup k tomuto trezoru a mazat jej."
       ],
       "Can grant and revoke access to this vault.": [
-        "Voi myöntää ja mitätöidä holvin käyttöoikeuksia."
+        "Může udělovat a odebírat přístup k tomuto trezoru."
       ],
       "Can manage": [
-        "Voi hallita"
+        "Může spravovat"
       ],
       "Can view": [
-        "Voi tarkastella"
+        "Může prohlížet"
       ],
       "Can view items in this vault.": [
-        "Voi tarkastella holvin kohteita."
+        "Může zobrazovat položky v tomto trezoru."
       ],
       "Check out all the exclusive features that are available to you for a limited time.": [
-        "Tutustu kaikkiin ainutlaatuisiin ominaisuuksiin, jotka ovat käytettävissäsi rajoitetun ajan."
+        "Podívejte se na všechny exkluzivní funkce, které jsou vám po omezenou dobu k dispozici."
       ],
       "Copied to clipboard": [
-        "Kopioitiin leikepöydälle"
+        "Zkopírováno do schránky"
       ],
       "Creating alias...": [
-        "Luodaan aliasta.."
+        "Vytváření aliasu..."
       ],
       "Custom fields": [
-        "Omat kentät"
+        "Vlastní pole"
       ],
       "Decrypting your data": [
-        "Tietojesi salausta puretaan"
+        "Dešifrování vašich dat"
       ],
       "Deleted items will be moved here first": [
-        "Poistetut kohteet siirretään ensin tänne"
+        "Smazané položky budou nejprve přesunuty sem"
       ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "Katso ${ PASS_APP_NAME } -YouTube-video"
+        "Objevte ${ PASS_APP_NAME } Youtube video"
       ],
       "Drop file here to upload": [
-        "Pudota ladattava tiedosto tähän"
+        "Sem přetáhněte soubor pro nahrání"
       ],
       "Drop to import": [
-        "Tuo pudottamalla"
+        "Přetažením provedete import"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
-        "Tuo olemassa olevat salasanasi ${ PASS_APP_NAME }iin helposti."
+        "Snadno importujte svá stávající hesla do ${ PASS_APP_NAME }."
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
-        "Ota ${ PASS_APP_NAME } käyttöön yhdistämällä ${ BRAND_NAME }-tilisi"
+        "Povolte ${ PASS_APP_NAME } připojením svého ${ BRAND_NAME } účtu"
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Syötä vahvistuskoodi. Numero ${ digit }."
+        "Zadejte ověřovací kód. Číslice ${ digit }."
       ],
       "Enter your pin code": [
-        "Syötä PIN-koodisi"
+        "Zadejte PIN kód"
       ],
       "Enter your PIN code": [
-        "Syötä PIN-koodisi"
+        "Zadejte PIN kód"
       ],
       "Export is encrypted using PGP and requires a strong passphrase.": [
-        "Tuonti salataan PGP:llä ja se vaatii vahvan tunnuslausekkeen."
+        "Export je šifrován pomocí PGP a vyžaduje silné heslo."
       ],
       "Follow these simple steps to get the best experience:": [
-        "Noudata näitä yksinkertaisia ohjeita parasta kokemusta varten:"
+        "Postupujte podle následujících jednoduchých kroků, abyste měli co nejlepší zážitek:"
       ],
       "Free Trial": [
-        "Ilmainen kokeilu"
+        "Bezplatná zkušební verze"
       ],
       "Generated passwords will be stored for a period of one day.": [
-        "Luotuja salasanoja säilytetään yhden päivän ajan."
+        "Vygenerovaná hesla budou uložena po dobu jednoho dne."
       ],
       "Generating alias...": [
-        "Luodaan aliasta.."
+        "Generování aliasu..."
       ],
       "Here you will find all the necessary information to get you started.": [
-        "Tästä saat kaikki tarvittavat tiedot, jotta pääset alkuun."
+        "Zde najdete všechny potřebné informace, které vám pomohou začít."
       ],
       "If disabled, ${ PASS_APP_NAME } will not display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "Jos ei käytössä, ${ PASS_APP_NAME } ei lataa kohteiden sivustokuvakkeita ${ BRAND_NAME }in anonymisoidun kuvavälityspalvelimen kautta."
+        "Pokud je deaktivováno, ${ PASS_APP_NAME } nezobrazí favicon položky prostřednictvím anonymizovaného obrázkového proxy serveru ${ BRAND_NAME }."
       ],
       "If disabled, ${ PASS_APP_NAME } will not prompt you to save or update credentials.": [
-        "Jos ei käytössä, ${ PASS_APP_NAME } ei tarjoa kirjautumistietojen tallennusta tai päivitystä."
+        "Pokud je deaktivováno, ${ PASS_APP_NAME } vás nevyzve k uložení nebo aktualizaci přihlašovacích údajů."
       ],
       "If disabled, ${ PASS_APP_NAME } will not suggest creating an email alias on sign-up forms.": [
-        "Jos ei käytössä, ${ PASS_APP_NAME } ei ehdota sähköpostialiasten luontia rekisteröitymislomakkeissa."
+        "Pokud je deaktivováno, ${ PASS_APP_NAME } nebude navrhovat vytváření e-mailových aliasů v registračních formulářích."
       ],
       "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
-        "Jos ei käytössä, ${ PASS_APP_NAME } ei ehdota vahvojen salasanojen luontia rekisteröitymislomakkeissa."
+        "Pokud je deaktivováno, ${ PASS_APP_NAME } nebude navrhovat vytváření silných hesel v registračních formulářích."
       ],
       "If enabled, the autofill dropdown will automatically open on field focus.": [
-        "Jos käytössä, avautuu automaattitäytön ponnahdus lomakekentän aktivoituessa automaattisesti."
+        "Pokud je povoleno, rozbalovací okno automatického vyplňování se automaticky otevře při zaměření pole."
       ],
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Jos käytössä, mahdollistaa kirjautumistietojen nopean automaattitäytön ${ PASS_APP_NAME } -kuvaketta painamalla."
+        "Pokud je povoleno, můžete rychle automaticky vyplnit přihlašovací údaje kliknutím na ikonu ${ PASS_APP_NAME }."
       ],
       "Import in progress :": [
-        "Tuonti on käynnissä:"
+        "Import probíhá :"
       ],
       "Imported ${ payload.total } item": [
-        "${ payload.total } kohde tuotiin",
-        "${ payload.total } kohdetta tuotiin"
+        "Importována ${ payload.total } položka",
+        "Importovány ${ payload.total } položky",
+        "Importováno ${ payload.total } položek",
+        "Importováno ${ payload.total } položek"
       ],
       "Imported on ${ date }": [
-        "Tuotu ${ date }"
+        "Importováno ${ date }"
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
-        "Sadaksesi parhaan ${ PASS_APP_NAME }in käyttökokemuksen, myönnä laajennuksen tarvitsemat käyttöoikeudet."
+        "Abyste mohli plně využívat rozšíření ${ PASS_APP_NAME }, udělte mu prosím potřebná oprávnění."
       ],
       "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
-        "Siirrä tietosi tietosi muista salasanahallinnoista tallentamalla ne niiden tarjoamilla vientivalinnoilla ja tuo ne ${ PASS_APP_NAME }iin alla olevalla lomakkeella. Kun kaikki kohteet on tuotu, poista aiemmin tallentamasi vientitiedosto."
+        "Chcete-li do aplikace ${ PASS_APP_NAME } přenést data z jiného správce hesel, exportujte hesla a importujte je pomocí níže uvedeného formuláře. Po importu všech položek odstraňte dříve exportovaný soubor."
       ],
       "Integrated 2FA authenticator": [
-        "Sisäänrakennettu kaksivaiheinen todentaja"
+        "Integrovaný ověřovací modul 2FA"
       ],
       "Internet connection lost": [
-        "Internet-yhteys katkesi"
+        "Připojení k Internetu bylo ztraceno"
       ],
       "Invite successfully removed": [
-        "Kutsun poisto onnistui"
+        "Pozvánka byla úspěšně odstraněna"
       ],
       "Invite successfully resent": [
-        "Kutsun uudelleenlähetys onnistui"
+        "Pozvánka byla úspěšně odeslána"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
-        "Näyttää siltä, että olet jo kirjautunut ${ PASS_APP_NAME }iin. Jos yrität kirjautua eri tilillä, kirjaa laajennus ensin ulos."
+        "Zdá se, že jste již přihlášeni do ${ PASS_APP_NAME }. Pokud se snažíte přihlásit pomocí jiného účtu, nejprve se z rozšíření odhlaste."
       ],
       "item": [
-        "kohde",
-        "kohdetta"
+        "položka",
+        "položky",
+        "položek",
+        "položek"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
-        "Kohde \"${ payload.item.data.metadata.name }\" luotiin"
+        "Položka \"${ payload.item.data.metadata.name }\" byla vytvořena"
       ],
       "Item \"${ payload.item.data.metadata.name }\" updated": [
-        "Kohde \"${ payload.item.data.metadata.name }\" päivitettiin"
+        "Položka \"${ payload.item.data.metadata.name }\" byla aktualizována"
       ],
       "Item moved to trash": [
-        "Kohde siirrettiin roskakoriin"
+        "Položka přesunuta do koše"
       ],
       "Item permanently deleted": [
-        "Kohde poistettiin pysyvästi"
+        "Položka byla trvale smazána"
       ],
       "Item restored": [
-        "Kohde palautettiin"
+        "Položka obnovena"
       ],
       "Item successfully moved": [
-        "Kohde siirrettiin"
+        "Položka úspěšně přesunuta"
       ],
       "Let's get you started by creating your first item": [
-        "Aloita luomalla ensimmäinen kohteesi"
+        "Začněte tím, že vytvoříte první položku"
       ],
       "Loading": [
-        "Ladataan"
+        "Načítání"
       ],
       "Loading extension": [
-        "Ladataan laajennusta"
+        "Načítání rozšíření"
       ],
       "Loading...": [
-        "Ladataan..."
+        "Načítání..."
       ],
       "me": [
-        "minä"
+        "já"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "${ PASS_APP_NAME } on muutakin kuin pelkkä salasanahallinta, sillä se voi salasanojesi lisäksi suojata myös sähköpostiosoitteesi sähköpostialiaksilla. Tietosi ovat päästä päähän -salattuja ${ MAIL_APP_NAME }in käyttämällä tekniikalla ja vain sinä pääset niihin käsiksi."
+        "${ PASS_APP_NAME } není obyčejný správce hesel. Chrání vaše heslo a osobní e-mailovou adresu pomocí e-mailových aliasů. Funguje na stejné technologii jako ${ MAIL_APP_NAME }, vaše data jsou koncově šifrována a dostupná jen vám."
       ],
       "Multiple vaults": [
-        "Useita holveja"
+        "Několik trezorů"
       ],
       "N/A": [
-        "Ei käytettävissä"
+        "Nedostupné"
       ],
       "No login found": [
-        "Kirjautumistietoa ei löytynyt"
+        "Nebylo nalezeno žádné přihlášení"
       ],
       "None": [
-        "Ei mitään"
+        "Nic"
       ],
       "Open the Extensions menu": [
-        "Avaa laajennusvalikko"
+        "Otevřít menu rozšíření"
       ],
       "Owner": [
-        "Omistaja"
+        "Vlastník"
       ],
       "Ownership successfully transfered. You are no long the owner of this vault.": [
-        "Omistajuus siirretty onnistuneesti. Et ole enää tämän holvin omistaja."
+        "Vlastnictví bylo úspěšně převedeno. Již nejste vlastníkem tohoto trezoru."
       ],
       "Password copied": [
-        "Salasana kopioitiin"
+        "Heslo zkopírováno"
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
-        "Päivää vanhemmat salasanat poistetaan historiasta automaattisesti."
+        "Hesla starší než 1 den jsou automaticky smazána z historie."
       ],
       "Pending invitation": [
-        "Odottava kutsu"
+        "Čekající pozvánka"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "Kiinnitä ${ PASS_APP_NAME } työkalupalkkiisi"
+        "Připněte ${ PASS_APP_NAME } na panel nástrojů"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
-        "PIN-koodi on rekisteröity ja voit nyt avata ${ PASS_APP_NAME }in sillä."
+        "PIN kód byl úspěšně zaregistrován. Použijte jej k odemknutí ${ PASS_APP_NAME }"
       ],
       "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Poista nykyinen lukitustapa vahvistamalla PIN-koodisi. Sen jälkeen\n${ PASS_APP_NAME } ei enää koskaan lukitu."
+        "Prosím, potvrďte svůj PIN kód, pro zrušení registrace stávajícího zámku.\n${ PASS_APP_NAME } pak nebude zamykán."
       ],
       "Please confirm your PIN code to edit this setting.": [
-        "Muokkaa asetusta vahvistamalla PIN-koodisi."
+        "Pro úpravu tohoto nastavení potvrďte PIN kód."
       ],
       "Please confirm your PIN code to finish registering your auto-lock settings.": [
-        "Viimeistele automaattilukituksen asetus vahvistamalla PIN-koodisi."
+        "Pro dokončení registrace nastavení automatického zamykání potvrďte PIN kód."
       ],
       "Please consider leaving a review.": [
-        "Harkitse arvostelun kirjoittamista."
+        "Zvažte prosím zanechání hodnocení."
       ],
       "Please enter your current pin code to continue": [
-        "Jatka syöttämällä nykyinen PIN-koodisi"
+        "Pro pokračování zadejte svůj aktuální PIN kód"
       ],
       "Press Enter to copy": [
-        "Kopioi painamalla Enter-näppäintä"
+        "Pro kopírování stiskněte Enter"
       ],
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "Yksityisyys on meille suuri huolenaihe. Katso, mikä tekee ${ PASS_APP_NAME }ista erilaisen."
+        "Velmi nám záleží na ochraně soukromí. Přečtěte si, v čem se ${ PASS_APP_NAME } liší."
       ],
       "Save login": [
-        "Tallenna kirjautumistieto"
+        "Uložit přihlášení"
       ],
       "Select the destination vault for each imported vault.": [
-        "Valitse kohdeholvi kullekin tuotavalle holville."
+        "Vyberte cílový trezor pro každý importovaný trezor."
       ],
       "Select the level of access this user will gain when they join your vault.": [
-        "Valitse käyttöoikeustaso, joka käyttäjälle myönnetään kun he liittyvät holviisi."
+        "Vyberte úroveň přístupu, kterou tento uživatel získá, když se připojí k vašemu trezoru."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Palvelimia ei tavoiteta. Yritä muutaman minuutin kuluttua uudelleen."
+        "Servery jsou nedostupné. Zkuste to prosím znovu za několik minut"
       ],
       "Session timed out": [
-        "Istunto aikakatkaistiin"
+        "Relace vypršela"
       ],
       "Set up a PIN code to easily lock your data": [
-        "Suojaa tietosi helposti asettamalla PIN-koodi"
+        "Nastavte PIN kód pro snadné zamknutí dat"
       ],
       "Settings successfully updated": [
-        "Asetukset tallennettiin"
+        "Nastavení bylo úspěšně aktualizováno"
       ],
       "Sign in or create an account to continue.": [
-        "Jatka kirjautumalla tai luomalla tili."
+        "Pro pokračování se přihlaste nebo si vytvořte účet."
       ],
       "Sign in to your account": [
-        "Kirjaudu tilillesi"
+        "Přihlásit se ke svému účtu"
       ],
       "Signing you in": [
-        "Kirjaudutaan sisään"
+        "Přihlašujeme vás"
       ],
       "Successfully exported all your items": [
-        "Kaikki kohteesi vietiin"
+        "Všechny položky byly úspěšně exportovány"
       ],
       "Successfully left the vault": [
-        "Holvista poistuminen onnistui"
+        "Úspěšné opuštění trezoru"
       ],
       "Successfully synced all vaults": [
-        "Kaikki holvit synkronoitiin"
+        "Všechny trezory byly úspěšně synchronizovány"
       ],
       "Syncing your vaults…": [
-        "Holvejasi synkronoidaan…"
+        "Synchronizace trezorů…"
       ],
       "Thank you, the problem has been reported": [
-        "Kiitos, ongelmasta on ilmoitettu"
+        "Děkujeme, problém byl nahlášen"
       ],
       "The following item could not be imported :": [
-        "Seuraavaa kohdetta ei voitu tuoda:",
-        "Seuraavia ${ result.ignored.length } kohdetta ei voitu tuoda"
+        "Následující položka nemohla být importována:",
+        "Následující ${ result.ignored.length } položky nemohly být importovány",
+        "Následujících ${ result.ignored.length } položek nemohlo být importováno",
+        "Následujících ${ result.ignored.length } položek nemohlo být importováno"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
-        "Teksti, jota yrität liittää, ylittää ${ maxLength }-merkin enimmäispituuden."
+        "Text, který se snažíte vložit, je delší než maximální povolená délka ${ maxLength } znaků."
       ],
       "The user did not accept the invitation yet.": [
-        "Käyttäjä ei ole vielä hyväksynyt kutsua."
+        "Uživatel zatím pozvánku nepřijal."
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
-        "Tätä vientiä ei salata, eli kuka tahansa, jolla on pääsy vietyyn tiedostoon, voi nähdä salasanasi. Tietojesi suojaamiseksi, poista tiedosto heti kun et enää tarvitse sitä."
+        "Tento export bude nešifrovaný a kdokoli s přístupem k exportovanému souboru bude moci zobrazit vaše hesla. Z bezpečnostních důvodů jej po ukončení používání odstraňte."
       ],
       "This user will receive an invitation to join your '${ vaultName }' vault.": [
-        "Tämä käyttäjä kutsutaan liittymään holviisi \"${ vaultName }\"."
+        "Tento uživatel obdrží pozvánku ke vstupu do vašeho trezoru '${ vaultName }'."
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
-        "Tätä holvia ei tällä hetkellä jaeta kenenkään kanssa. Kutsu ihmisiä jakaaksesi se muiden kanssa."
+        "Tento trezor není v současné době s nikým sdílen. Pozvěte lidi, aby ho sdíleli s ostatními."
       ],
       "Unable to copy to clipboard": [
-        "Leikepöydälle kopiointi epäonnistui"
+        "Nelze kopírovat do schránky"
       ],
       "Unlock it with your PIN to access the settings": [
-        "Avaa lukitus PIN-koodillasi päästäksesi asetuksiin."
+        "Odemkněte ji pomocí PIN kódu pro přístup k nastavením"
       ],
       "Update login": [
-        "Päivitä kirjautumistieto"
+        "Aktualizovat přihlášení"
       ],
       "Upgrade ${ PASS_APP_NAME }": [
-        "Päivitä ${ PASS_APP_NAME }"
+        "Navýšit ${ PASS_APP_NAME }"
       ],
       "User's access removed": [
-        "Käyttäjän käyttöoikeus poistettiin"
+        "Přístup uživatele odebrán"
       ],
       "User's access sucessfuly updated": [
-        "Käyttäjän käyttöoikeudet päivitettiin"
+        "Přístup uživatele byl úspěšně aktualizován"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
-        "Holvi \"${ payload.content.name }\" poistettiin"
+        "Trezor \"${ payload.content.name }\" úspěšně smazán"
       ],
       "Vault \"${ payload.share.content.name }\" successfully created": [
-        "Holvi \"${ payload.share.content.name }\" luotiin"
+        "Trezor \"${ payload.share.content.name }\" úspěšně vytvořen"
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
-        "Holvi \"${ payload.share.content.name }\" päivitettiin"
+        "Trezor \"${ payload.share.content.name }\" úspěšně aktualizován"
       ],
       "Vault \"${ share.content.name }\" was disabled": [
-        "Holvi \"${ share.content.name }\" poistettiin käytöstä"
+        "Trezor \"${ share.content.name }\" byl deaktivován"
       ],
       "Verification code": [
-        "Vahvistuskoodi"
+        "Ověřovací kód"
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
-        "Tietojen synkronoinnissa laitteelle on ongelmia. Varmista, että vapaata tilaa on riittävästi, jotta ${ PASS_SHORT_APP_NAME } toimii sujuvasti."
+        "Máme potíže se synchronizací dat do místního úložiště. Ujistěte se prosím, že máte dostatek místa na disku, aby ${ PASS_SHORT_APP_NAME } mohl bez problémů fungovat."
       ],
       "You are about to create:": [
-        "Luot aliasta:"
+        "Chystáte se vytvořit:"
       ],
       "You have ${ daysRemaining } day left in your trial period.": [
-        "Kokeilujaksoasi on jäljellä ${ daysRemaining } päivä.",
-        "Kokeilujaksoasi on jäljellä ${ daysRemaining } päivää."
+        "Do konce zkušební doby zbývá ${ daysRemaining } den.",
+        "Do konce zkušební doby zbývají ${ daysRemaining } dny.",
+        "Do konce zkušební doby zbývá ${ daysRemaining } dnů.",
+        "Do konce zkušební doby zbývá ${ daysRemaining } dnů."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
-        "Olet ylittänyt tilaukseesi sisältyvän holvien enimmäismäärän. Kohteita voidaan siirtää vain ensisijaiseen holviin. Jos haluat siirtää kohteita kaikkien holvien välillä, päivitä tilauksesi."
+        "Překročili jste počet trezorů zahrnutých do vašeho předplatného. Položky lze přesunout pouze do primárního trezoru. Chcete-li přesouvat položky mezi všemi trezory, navyšte své předplatné"
       ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
-        "Olet ylittänyt tilaukseesi sisältyvän holvien enimmäismäärän. Uusia kohteita voidaan luoda vain ensisijaiseen holviin. Jos haluat luoda kohteita kaikkiin holveihin, päivitä tilauksesi."
+        "Překročili jste počet trezorů zahrnutých do vašeho předplatného. Nové položky lze vytvářet pouze v primárním trezoru. Chcete-li vytvořit nové položky ve všech trezorech, navyšte své předplatné."
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
-        "Luotujen aliasten enimmäismäärä on saavutettu. Luo aliaksia rajattomasti päivittämällä tilauksesi."
+        "Dosáhli jste limitu aliasů, které můžete vytvořit. Při navýšení předplatného si můžete vytvořit neomezený počet aliasů."
       ],
       "You have reached the limit of vaults you can create.": [
-        "Luotujen holvien enimmäismäärä on saavutettu."
+        "Dosáhli jste limitu trezorů, které můžete vytvořit."
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
-        "Olet saavuttanut ${ maxLength }-merkin enimmäispituuden."
+        "Dosáhli jste maximální povolené délky ${ maxLength } znaků."
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
-        "Tällä PIN-koodilla voit avata ${ PASS_APP_NAME }in sen lukkiuduttua toimettomuuden seuraksena automaattisesti."
+        "Tento PIN použijete k odemknutí ${ PASS_APP_NAME }, jakmile se po určité době nečinnosti automaticky zamkne."
       ],
       "You're about to create": [
-        "Luot aliasta"
+        "Chystáte se vytvořit"
       ],
       "You've been invited to a vault. Click here to see the invitation.": [
-        "Sinut on kutsuttu holviin. Näytä kutsu klikkaamalla tästä."
+        "Byli jste pozváni k trezoru. Klepnutím sem zobrazíte pozvánku."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
-        "${ PASS_APP_NAME } -istuntosi on lukittu."
+        "Vaše relace ${ PASS_APP_NAME } je uzamčena"
       ],
       "Your files will be encrypted and then saved": [
-        "Tiedostosi salataan ja tallennetaan"
+        "Vaše soubory budou zašifrovány a uloženy"
       ]
     },
     "Label": {
       "${ passwordOptions.options.length } character": [
-        "${ passwordOptions.options.length } merkki",
-        "${ passwordOptions.options.length } merkkiä"
+        "${ passwordOptions.options.length } znak",
+        "${ passwordOptions.options.length } znaky",
+        "${ passwordOptions.options.length } znaků",
+        "${ passwordOptions.options.length } znaků"
       ],
       "${ passwordOptions.options.wordCount } word": [
-        "${ passwordOptions.options.wordCount } sana",
-        "${ passwordOptions.options.wordCount } sanaa"
+        "${ passwordOptions.options.wordCount } slovo",
+        "${ passwordOptions.options.wordCount } slova",
+        "${ passwordOptions.options.wordCount } slov",
+        "${ passwordOptions.options.wordCount } slov"
       ],
       "1 hour": [
-        "Tunnin kuluttua"
+        "1 hodina"
       ],
       "1 minute": [
-        "Minuutin kuluttua"
+        "1 minuta"
       ],
       "10 minutes": [
-        "10 minuutin kuluttua"
+        "10 minut"
       ],
       "15 minutes": [
-        "15 minuutin kuluttua"
+        "15 minut"
       ],
       "2FA secret (TOTP)": [
-        "2FA-salaisuus (TOTP)"
+        "2FA secret (TOTP)"
       ],
       "2FA token (TOTP)": [
-        "2FA-tunniste (TOTP)"
+        "2FA token (TOTP)"
       ],
       "30 minutes": [
-        "30 minuutin kuluttua"
+        "30 minut"
       ],
       "30 seconds": [
-        "30 sekunnin kuluttua"
+        "30 sekund"
       ],
       "5 minutes": [
-        "5 minuutin kuluttua"
+        "5 minut"
       ],
       "A-Z": [
-        "A-Ö"
+        "A-Z"
       ],
       "Alias": [
         "Alias"
       ],
       "Alias address": [
-        "Aliaksen osoite"
+        "Alias adresa"
       ],
       "Aliases": [
-        "Aliakset"
+        "Aliasy"
       ],
       "All": [
-        "Kaikki"
+        "Vše"
       ],
       "All vaults": [
-        "Kaikki holvit"
+        "Všechny trezory"
       ],
       "Alphabetical": [
-        "Aakkosellisesti"
+        "Abecedně"
       ],
       "Application logs": [
-        "Sovelluksen lokitiedot"
+        "Logy aplikace"
       ],
       "Auto-lock ${ PASS_APP_NAME }": [
-        "Lukitse ${ PASS_APP_NAME } automaattisesti"
+        "Auto uzamčení ${ PASS_APP_NAME }"
       ],
       "Auto-lock after": [
-        "Lukitse automaattisesti"
+        "Automaticky zamknout po"
       ],
       "Autofill": [
-        "Automaattitäyttö"
+        "Automatické vyplňování"
       ],
       "Autofill 2FA": [
-        "Kaksivaiheisen todennuskoodin automaattitäyttö"
+        "Automaticky vyplnit 2FA"
       ],
       "Automatically open autofill when focusing login fields": [
-        "Näytä automaattitäyttö automaattisesti kun kirjautumiskenttä aktivoidaan"
+        "Otevření automatického vyplňování při zaměření přihlašovacích polí"
       ],
       "Autosave": [
-        "Automaattitallennus"
+        "Automatické uložení"
       ],
       "Autosuggest": [
-        "Automaattiehdotus"
+        "Automatické doporučení"
       ],
       "Capital letters (A-Z)": [
-        "Isot kirjaimet (A-Z)"
+        "Velká písmena (A-Z)"
       ],
       "Capitalise": [
-        "Isot alkukirjaimet"
+        "Velká písmena"
       ],
       "Card number": [
-        "Kortin numero"
+        "Číslo karty"
       ],
       "Cardholder name": [
-        "Kortinhaltijan nimi"
+        "Jméno držitele karty"
       ],
       "Cards": [
-        "Kortit"
+        "Karty"
       ],
       "Confirm vault name": [
-        "Vahvista holvin nimi"
+        "Potvrdit název trezoru"
       ],
       "Create a credit card": [
-        "Luo maksukortti"
+        "Vytvořit platební kartu"
       ],
       "Create a hide-my-email alias": [
-        "Luo Hide-my-email-alias"
+        "Vytvořit alias hide-my-email"
       ],
       "Create a login": [
-        "Luo kirjautumistieto"
+        "Vytvořit přihlášení"
       ],
       "Create an encrypted note": [
-        "Luo salattu muistiinpano"
+        "Vytvořit šifrovanou poznámku"
       ],
       "Create new vault": [
-        "Luo uusi holvi"
+        "Vytvořit nový trezor"
       ],
       "Created": [
-        "Luotu"
+        "Vytvořeno"
       ],
       "Credit Card": [
-        "Maksukortti"
+        "Platební karta"
       ],
       "Display": [
-        "Ulkoasu"
+        "Zobrazení"
       ],
       "Display ${ PASS_APP_NAME } icon on login fields": [
-        "Näytä ${ PASS_APP_NAME } -kuvake kirjautumiskentissä"
+        "Zobrazit ikonu ${ PASS_APP_NAME } v přihlašovacích polích"
       ],
       "Domain": [
-        "Verkkotunnus"
+        "Doména"
       ],
       "Domains": [
-        "Verkkotunnukset"
+        "Domény"
       ],
       "Download logs": [
-        "Lataa lokitiedot"
+        "Stáhnout logy"
       ],
       "Email aliases": [
-        "Sähköpostialiakset"
+        "E-mailové aliasy"
       ],
       "Empty trash": [
-        "Tyhjennä roskakori"
+        "Vyprázdnit koš"
       ],
       "Encrypt your ${ PASS_APP_NAME } data export file": [
-        "Salaa ${ PASS_APP_NAME } -tietojesi vientitiedosto"
+        "Zašifrujte svůj exportovaný datový soubor ${ PASS_APP_NAME }"
       ],
       "Expires on": [
-        "Voimassaolo päättyy"
+        "Vyprší dne"
       ],
       "Export": [
-        "Vienti"
+        "Export"
       ],
       "Forwards to": [
-        "Ohjaa osoitteeseen"
+        "Přeposílá na"
       ],
       "General": [
-        "Yleiset"
+        "Obecné"
       ],
       "Grant": [
-        "Myönnä"
+        "Udělit"
       ],
       "Hidden": [
-        "Piilotettu"
+        "Skrytý"
       ],
       "Hide password": [
-        "Piilota salasana"
+        "Skrýt heslo"
       ],
       "Import": [
-        "Tuonti"
+        "Import"
       ],
       "Import passwords": [
-        "Tuo salasanoja"
+        "Importovat hesla"
       ],
       "Imported from : ": [
-        "Tuontilähde: "
+        "Importováno z : "
       ],
       "Imported on : ": [
-        "Tuontiaika: "
+        "Importováno: "
       ],
       "Include numbers": [
-        "Sisällytä numerot"
+        "Zahrnout čísla"
       ],
       "Include numbers (0-9)": [
-        "Sisällytä numerot (0-9)"
+        "Včetně číslic (0-9)"
       ],
       "Label": [
-        "Tunniste"
+        "Štítek"
       ],
       "Last 2 weeks": [
-        "Viimeisen 14 päivän sisällä"
+        "Minulé 2 týdny"
       ],
       "Last autofill": [
-        "Automaattitäytetty"
+        "Poslední automatické vyplnění"
       ],
       "Last month": [
-        "Viimeisen 30 päivän sisällä"
+        "Minulý měsíc"
       ],
       "Last week": [
-        "Viimeisen 7 päivän sisällä"
+        "Minulý týden"
       ],
       "Latest import": [
-        "Edellinen tuonti"
+        "Poslední import"
       ],
       "Learn more": [
-        "Lue lisää"
+        "Více informací"
       ],
       "Login": [
-        "Kirjautumistieto"
+        "Přihlásit se"
       ],
       "Logins": [
-        "Kirjautumistiedot"
+        "Přihlášení"
       ],
       "Modified": [
-        "Muokattu"
+        "Upraveno"
       ],
       "Most recent": [
-        "Käytön mukaan"
+        "Nejnovější"
       ],
       "Move items to": [
-        "Siirrä kohteet holviin"
+        "Přesunout položky do"
       ],
       "Name": [
-        "Nimi"
+        "Jméno"
       ],
       "Need help ?": [
-        "Tarvitsetko apua?"
+        "Potřebujete poradit ?"
       ],
       "New vault": [
-        "Uusi holvi"
+        "Nový trezor"
       ],
       "New-Old": [
-        "Uusimmasta vanhimpaan"
+        "Nové-Staré"
       ],
       "Newest to oldest": [
-        "Uusimmasta vanhimpaan"
+        "Od nejnovějších k nejstarším"
       ],
       "No history": [
-        "Historiaa ei ole"
+        "Žádná historie"
       ],
       "Note": [
-        "Muistiinpano"
+        "Poznámka"
       ],
       "Notes": [
-        "Muistiinpanot"
+        "Poznámky"
       ],
       "Old-New": [
-        "Vanhimmasta uusimpaan"
+        "Staré-Nové"
       ],
       "Older than last month": [
-        "Yli 30 päivää sitten"
+        "Starší než poslední měsíc"
       ],
       "Oldest to newest": [
-        "Vanhimmasta uusimpaan"
+        "Od nejstarších k nejnovějším"
       ],
       "Passphrase": [
-        "Tunnuslauseke"
+        "Heslo"
       ],
       "Password": [
-        "Salasana"
+        "Heslo"
       ],
       "Password history": [
-        "Salasanahistoria"
+        "Historie hesel"
       ],
       "Passwords": [
-        "Salasanat"
-      ],
-      "Pause list": [
-        "Keskeytyslista"
+        "Hesla"
       ],
       "Permanently delete items": [
-        "Poista kohteet pysyvästi"
+        "Trvale smazat položky"
       ],
       "PIN": [
-        "PIN-koodi"
+        "PIN"
       ],
       "Prefix": [
-        "Etuliite"
+        "Předpona"
       ],
       "Primary vault": [
-        "Ensisijainen holvi"
+        "Primární trezor"
       ],
       "Prompt for auto-save": [
-        "Tarjoa automaattitallennusta"
+        "Výzva automatického ukládání"
       ],
       "Rate us": [
-        "Arvostele meidät"
+        "Ohodnoťte nás"
       ],
       "Recent": [
-        "Käytön mukaan"
+        "Nedávné"
       ],
       "Report a problem": [
-        "Ilmoita ongelmasta"
+        "Nahlásit problém"
       ],
       "Respond": [
-        "Vastaa"
+        "Odpovědět"
       ],
       "Restore all items": [
-        "Palauta kaikki kohteet"
+        "Obnovit všechny položky"
       ],
       "Reveal password": [
-        "Näytä salasana"
+        "Zobrazit heslo"
       ],
       "Security": [
-        "Suojaus"
+        "Zabezpečení"
       ],
       "Select an email address": [
-        "Valitse sähköpostiosoite"
+        "Zvolit e-mailovou adresu"
       ],
       "Select your password manager": [
-        "Valitse salasanahallintasi"
+        "Zvolte si svého správce hesel"
       ],
       "Selected": [
-        "Valittu"
+        "Vybráno"
       ],
       "Session locking": [
-        "Istunnon lukitus"
+        "Zamykání relace"
       ],
       "Set PIN code": [
-        "Aseta PIN-koodi"
+        "Nastavit PIN kód"
       ],
       "Settings": [
-        "Asetukset"
+        "Nastavení"
       ],
       "Show website favicons": [
-        "Näytä sivustokuvakkeet"
+        "Zobrazit oblíbené ikony webových stránek"
       ],
       "Special characters (!&*)": [
-        "Erikoismerkit (!&*)"
+        "Speciální znaky (!&*)"
       ],
       "Suffix": [
-        "Jälkiliite"
+        "Přípona"
       ],
       "Support": [
-        "Tuki"
+        "Podpora"
       ],
       "Text": [
-        "Teksti"
+        "Text"
       ],
       "Title": [
-        "Nimi"
+        "Název"
       ],
       "Today": [
-        "Tänään"
+        "Dnes"
       ],
       "Total imported items : ": [
-        "Kohteita tuotiin yhteensä: "
+        "Celkem importovaných položek: "
       ],
       "Total items : ": [
-        "Kohteita yhteensä: "
+        "Celkem položek: "
       ],
       "TOTP": [
         "TOTP"
       ],
       "Trash": [
-        "Roskakori"
+        "Koš"
       ],
       "Type": [
-        "Tyyppi"
+        "Typ"
       ],
       "Unnamed Credit Card": [
-        "Nimetön maksukortti"
+        "Nepojmenovaná platební karta"
       ],
       "Unnamed item": [
-        "Nimetön kohde"
+        "Nepojmenovaná položka"
       ],
       "Unnamed note": [
-        "Nimetön muistiinpano"
+        "Nepojmenovaná poznámka"
       ],
       "Untitled": [
-        "Nimetön"
+        "Bez názvu"
       ],
       "Update": [
-        "Päivitä"
+        "Aktualizovat"
       ],
       "Username": [
-        "Käyttäjätunnus"
+        "Uživatelské jméno"
       ],
       "Username (alias)": [
-        "Käyttäjätunnus (alias)"
+        "Uživatelské jméno (alias)"
       ],
       "Username (new alias)": [
-        "Käyttäjätunnus (uusi alias)"
+        "Uživatelské jméno (nový alias)"
       ],
       "Vault": [
-        "Holvi"
+        "Trezor"
       ],
       "Vaults": [
-        "Holvit"
+        "Trezory"
       ],
       "Verification number": [
-        "Turvakoodi"
+        "Číslo pro ověření"
       ],
       "View logs": [
-        "Näytä lokitiedot"
+        "Zobrazit logy"
       ],
       "Websites": [
-        "Verkkosivustot"
+        "Webové stránky"
       ],
       "You are about to create": [
-        "Luot aliasta"
+        "Chystáte se vytvořit"
       ]
     },
     "Option": {
       "Commas": [
-        "Pilkku"
+        "Čárky"
       ],
       "Hyphens": [
-        "Yhdysmerkki"
+        "Pomlčky"
       ],
       "Memorable Password": [
-        "Mieleenpainuva salasana"
+        "Zapamatovatelné heslo"
       ],
       "Numbers": [
-        "Numerot"
+        "Čísla"
       ],
       "Numbers and Symbols": [
-        "Numerot ja erikoismerkit"
+        "Čísla a symboly"
       ],
       "Periods": [
-        "Piste"
+        "Tečky"
       ],
       "Random Password": [
-        "Satunnainen salasana"
+        "Náhodné heslo"
       ],
       "Spaces": [
-        "Välilyönti"
+        "Mezery"
       ],
       "Underscores": [
-        "Alaviiva"
+        "Podtržítka"
       ]
     },
     "Placeholder": {
       "Add 2FA secret": [
-        "Lisää 2FA-salaisuus"
+        "Přidat 2FA secret"
       ],
       "Add hidden text": [
-        "Lisää piilotettu teksti"
+        "Přidat skrytý text"
       ],
       "Add note": [
-        "Lisää muistiinpano"
+        "Přidat poznámku"
       ],
       "Add text": [
-        "Lisää teksti"
+        "Přidat text"
       ],
       "Email address": [
-        "Sähköpostiosoite"
+        "E-mailová adresa"
       ],
       "Enter a note...": [
-        "Syötä muistiinpano..."
+        "Zadejte poznámku..."
       ],
       "Enter a prefix": [
-        "Syötä etuliite"
+        "Zadejte předponu"
       ],
       "Enter email or username": [
-        "Syötä sähköpostiosoite tai käyttäjätunnus"
+        "Zadejte e-mail nebo uživatelské jméno"
       ],
       "Enter password": [
-        "Syötä salasana"
+        "Zadejte heslo"
       ],
       "Full Name": [
-        "Koko nimi"
+        "Celé jméno"
       ],
       "MM/YYYY": [
-        "KK/VVVV"
+        "MM / RRRR"
       ],
       "Move items to another vault (optional)": [
-        "Siirrä kohteet toiseen holviin (valinnainen)"
+        "Přesunout položky do jiného trezoru (volitelné)"
       ],
       "Pick a vault": [
-        "Valitse holvi"
+        "Vyberte si trezor"
       ],
       "Please describe the problem and include any error messages": [
-        "Kuvaile ongelmaa ja sisällytä mahdolliset virheilmoitukset"
+        "Popište prosím problém a uveďte jakékoli chybové zprávy"
       ],
       "Retype \"${ vaultName }\" to confirm deletion": [
-        "Vahvista poisto kirjoittamalla \"${ vaultName }\""
+        "Znovu napište \"${ vaultName }\" pro potvrzení smazání"
       ],
       "Search ${ pluralItemType } in ${ vault.content.name }": [
-        "Etsi ${ pluralItemType } holvista ${ vault.content.name }"
+        "Hledat ${ pluralItemType } v ${ vault.content.name }"
       ],
       "Search ${ pluralItemType } in all vaults": [
-        "Etsi ${ pluralItemType } kaikista holveista"
+        "Hledat ${ pluralItemType } ve všech trezorech"
       ],
       "Search in ${ vault.content.name }": [
-        "Etsi holvista ${ vault.content.name }"
+        "Hledat v ${ vault.content.name }"
       ],
       "Search in all vaults": [
-        "Etsi kaikista holveista"
+        "Hledat ve všech trezorech"
       ],
       "Search in Trash": [
-        "Etsi roskakorista"
+        "Hledat v koši"
       ],
       "Select a suffix": [
-        "Valitse jälkiliite"
+        "Vyberte příponu"
       ],
       "Unknown origin": [
-        "Tuntematon alkuperä"
+        "Neznámý původ"
       ],
       "Untitled": [
-        "Nimetön"
+        "Bez názvu"
       ],
       "Used on ${ url }": [
-        "Käytetään osoitteessa ${ url }"
+        "Použito na ${ url }"
       ],
       "Write your note": [
-        "Kirjoita muistiinpanosi"
+        "Napište svoji poznámku"
       ]
     },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
-        "${ PASS_APP_NAME } -asetukset"
+        "Nastavení ${ PASS_APP_NAME }"
       ],
       "Auto-lock update": [
-        "Muuta automaattilukitusta"
+        "Aktualizace automatického uzamčení"
       ],
       "Confirm PIN code": [
-        "Vahvista PIN-koodi"
+        "Potvrdit PIN kód"
       ],
       "Connect your ${ BRAND_NAME } account": [
-        "Yhdistä ${ BRAND_NAME }-tilisi"
+        "Připojte váš účet ${ BRAND_NAME }"
       ],
       "Create PIN code": [
-        "Luo PIN-koodi"
+        "Vytvořit PIN kód"
       ],
       "Delete vault \"${ vaultName }\" ?": [
-        "Poistetaanko holvi \"${ vaultName }\"?"
+        "Smazat trezor \"${ vaultName }\"?"
       ],
       "Discard changes ?": [
-        "Hylätäänkö muutokset?"
+        "Zahodit změny?"
       ],
       "Enjoy your free trial": [
-        "Nauti ilmaisesta kokeilusta"
+        "Užijte si bezplatnou zkušební verzi"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
-        "Nautitko ${ PASS_APP_NAME }ista?"
+        "Užíváte si ${ PASS_APP_NAME }?"
       ],
       "Enter your Pin": [
-        "Syötä PIN-koodisi"
+        "Zadejte váš PIN"
       ],
       "Fill & copy password": [
-        "Täytä ja kopioi salasana"
+        "Vyplnit a kopírovat heslo"
       ],
       "Get the mobile apps": [
-        "Hanki mobiilisovellukset"
+        "Získat mobilní aplikace"
       ],
       "Grant permissions": [
-        "Myönnä käyttöoikeudet"
+        "Udělit oprávnění"
       ],
       "Hide my email": [
-        "Hide-my-email"
+        "Hide my email"
       ],
       "Import - ${ date }": [
-        "Tuontipäivä - ${ date }"
+        "Importováno - ${ date }"
       ],
       "Import to vault(s)": [
-        "Tuo holviin/holveihin"
+        "Importovat do trezoru(ů)"
       ],
       "Leave vault ?": [
-        "Poistu holvista ?"
+        "Opustit trezor ?"
       ],
       "Low disk space": [
-        "Tallennustila on vähissä"
+        "Málo místa na disku"
       ],
       "Permanently remove all items ?": [
-        "Poistetaanko kaikki kohteet pysyvästi?"
+        "Trvale smazat všechny položky?"
       ],
       "Permissions": [
-        "Käyttöoikeudet"
+        "Oprávnění"
       ],
       "Pin the extension": [
-        "Kiinnitä laajennus"
+        "Připněte rozšíření"
       ],
       "Secure your data": [
-        "Suojaa tietosi"
+        "Zabezpečte svá data"
       ],
       "Share with": [
-        "Jaa käyttäjille"
+        "Sdílet s"
       ],
       "Shared vault invitation": [
-        "Kutsu jaettuun holviin"
+        "Pozvánka ke sdílenému trezoru"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
-        "Oletko vaihtamassa ${ PASS_APP_NAME }iin?"
+        "Přecházíte na ${ PASS_APP_NAME }?"
       ],
       "Thank you for installing ${ PASS_APP_NAME }": [
-        "Kiitos ${ PASS_APP_NAME }in asennuksesta"
+        "Děkujeme, že jste si nainstalovali ${ PASS_APP_NAME }"
       ],
       "The extension is now ready to use.": [
-        "Laajennus on nyt käyttövalmis."
+        "Rozšíření je nyní připraveno k použití."
       ],
       "Transfer ownership": [
-        "Siirrä omistajuus"
+        "Převod vlastnictví"
       ],
       "Trash empty": [
-        "Roskakori on tyhjä"
+        "Koš je prázdný"
       ],
       "Unlock ${ brandNameJSX }": [
-        "Avaa ${ brandNameJSX }"
+        "Odemknout ${ brandNameJSX }"
       ],
       "Unlock ${ PASS_APP_NAME }": [
-        "Avaa ${ PASS_APP_NAME }"
+        "Odemknout ${ PASS_APP_NAME }"
       ],
       "Update available": [
-        "Päivitys saatavilla"
+        "Aktualizace k dispozici"
       ],
       "Use my email": [
-        "Käytä sähköpostiosoitettani"
+        "Použít můj e-mail"
       ],
       "Welcome to ${ brandNameJSX }": [
-        "Tervetuloa ${ brandNameJSX }iin"
+        "Vítejte v ${ brandNameJSX }"
       ],
       "Welcome to ${ PASS_APP_NAME }": [
-        "Tervetuloa ${ PASS_APP_NAME }iin"
+        "Vítejte v ${ PASS_APP_NAME }"
       ],
       "Welcome!": [
-        "Tervetuloa!"
+        "Vítejte!"
       ],
       "Why ${ PASS_APP_NAME }?": [
-        "Miksi ${ PASS_APP_NAME }?"
+        "Proč ${ PASS_APP_NAME }?"
       ],
       "Your vault is empty": [
-        "Holvisi on tyhjä"
+        "Váš trezor je prázdný"
       ]
     },
     "Validation": {
       "Duplicated url": [
-        "Olemassaoleva URL-osoite"
+        "Duplikovaná URL adresa"
       ],
       "Label is required": [
-        "Tunniste vaaditaan"
+        "Štítek je povinný"
       ],
       "OTP Secret or URI is invalid": [
-        "OTP-salaisuus tai URI on virheellinen"
+        "OTP Secret nebo URI jsou neplatné"
       ],
       "OTP Secret or URI required": [
-        "OTP-salaisuus tai URI vaaditaan"
+        "Vyžadováno OTP Secret nebo URI"
       ],
       "Url already exists": [
-        "URL-osoite on jo olemassa"
+        "URL již existuje"
       ],
       "Url cannot be empty": [
-        "URL-osoite ei voi olla tyhjä"
+        "URL nemůže být prázdná"
       ],
       "Url is invalid": [
-        "URL-osoite on virheellinen"
+        "Adresa URL je neplatná"
       ]
     },
     "Warning": {
       "A description of the problem is required": [
-        "Ongelman kuvaus vaaditaan"
+        "Je vyžadován popis problému"
       ],
       "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "Aliasta \"${ name }\" käytetään tällä hetkellä kirjautumistiedossa \"${ relatedLoginName }\". Lisäksi osoitteeseen \"${ aliasEmail }\" lähetettyjen viestien vastaanotto loppuu."
+        "Alias \"${ name }\" je aktuálně použit v přihlašovací položce \"${ relatedLoginName }\". Přestanete také dostávat e-maily zaslané na adresu \"${ aliasEmail }\""
       ],
       "All your trashed items will be permanently deleted. You can not undo this action.": [
-        "Kaikki roskakorin kohteet poistetaan pysyvästi. Et voi kumota toimintoa"
+        "Všechny položky v koši budou trvale smazány. Tuto akci nelze vrátit zpět."
       ],
       "An error occured while exporting your data": [
-        "Tietojasi vietäessä tapahtui virhe"
+        "Při exportu dat došlo k chybě"
       ],
       "Are you sure you want to transfer vault ownership to ${ email }?": [
-        "Haluatko varmasti siirtää holvin omistajuuden käyttäjälle ${ email }?"
+        "Opravdu chcete převést vlastnictví trezoru na ${ email }?"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
-        "Aliaksen postilaatikoiden nouto ei juuri nyt onnistu"
+        "Pro tento alias nelze nyní načíst e-mailové schránky"
       ],
       "Could not create vault \"${ vaultName }\"": [
-        "Holvia \"${ vaultName }\" ei voitu luoda"
+        "Nelze vytvořit trezor \"${ vaultName }\""
       ],
       "Empty note": [
-        "Tyhjä muistiinpano"
+        "Prázdná poznámka"
       ],
       "Expiration Date is incomplete": [
-        "Voimassaolon päättymisaika on puutteellinen"
+        "Datum vypršení platnosti je neúplné"
       ],
       "Invalid alias prefix": [
-        "Virheellinen aliaksen etuliite"
+        "Nesprávná předpona aliasu"
       ],
       "Maximum length is ${ maxLength } characters": [
-        "Enimmäispituus on ${ maxLength } merkkiä"
+        "Maximální délka znaků: ${ maxLength }"
       ],
       "Missing alias prefix": [
-        "Aliaksen etuliite puuttuu"
+        "Chybějící předpona aliasu"
       ],
       "Missing alias suffix": [
-        "Aliaksen jälkiliite puuttuu"
+        "Chybějící přípona aliasu"
       ],
       "No items": [
-        "Kohteita ei ole"
+        "Žádné položky"
       ],
       "No items in trash matching": [
-        "Roskakorista ei löydy kohteita haulla"
+        "Žádná položka v koši neodpovídá"
       ],
       "No items matching": [
-        "Vastaavia kohteita ei ole"
+        "Žadné položky se neshodují"
       ],
       "No password manager selected": [
-        "Salasanahallintaa ei ole valittu"
+        "Není vybrán žádný správce hesel"
       ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
-        "Vain aakkosnumeeriset merkit, pisteet, väli- ja alaviivat sallitaan."
+        "Povoleny jsou pouze alfanumerické znaky, tečky, pomlčky a podtržítka"
       ],
       "Passphrase is required": [
-        "Tunnuslauseke vaaditaan"
+        "Je vyžadováno heslo"
       ],
       "PGP encrypted export file requires passphrase": [
-        "PGP-salattu vientitiedosto vaatii tunnuslausekkeen"
+        "Exportní soubor zašifrovaný pomocí PGP vyžaduje heslo"
       ],
       "Please enter a valid email address": [
-        "Syötä kelvollinen sähköpostiosoite"
+        "Prosím zadejte platnou emailovou adresu"
       ],
       "Please log back in": [
-        "Kirjaudu takaisin sisään"
+        "Přihlaste se prosím znovu"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Raportit eivät ole päästä päähän -salattuja, joten älä sisällytä niihin arkaluonteisia tietoja."
+        "Hlášení nejsou zabezpečena koncovým šifrováním, neposílejte žádné citlivé informace."
       ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
-        "Jokin meni pieleen ${ PASS_APP_NAME } -laajennusta käynnistettäessä. Yritä päivittää tai ladata se uudelleen"
+        "Při spouštění ${ PASS_APP_NAME } se něco pokazilo. Zkuste prosím rozšíření znovu načíst nebo obnovit"
       ],
       "The alias prefix cannot be longer than 40 characters": [
-        "Aliaksen etuliite voi sisältää enintään 40 merkkiä"
+        "Předpona aliasu nesmí být delší než 40 znaků"
       ],
       "Title is required": [
-        "Otsikko vaaditaan"
+        "Název je povinný"
       ],
       "Trash alias ?": [
-        "Siirretäänkö alias roskakoriin?"
+        "Smazat alias?"
       ],
       "Unable to save": [
-        "Tallennus ei onnistu"
+        "Nelze uložit"
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
-        "${ PASS_APP_NAME }iin kirjautuminen ei onnistu. ${ additionalMessage }"
+        "Nelze se přihlásit do ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You can not undo this action": [
-        "\"${ vaultName }\" ja kaikki sen kohteet poistetaan pysyvästi. Tätä ei ole mahdollista kumota."
+        "Trezor \"${ vaultName }\" a všechny jeho položky budou trvale smazány. Tuto akci nelze vrátit zpět"
       ],
       "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
-        "\"${ vaultName }\" poistetaan pysyvästi ja kaikki sen kohteet siirretään holviin \"${ destinationVaultName }\"."
+        "Trezor \"${ vaultName }\" bude trvale smazán a všechny jeho položky budou přesunuty do \"${ destinationVaultName }\""
       ],
       "Vault name is required": [
-        "Holvin nimi vaaditaan"
+        "Název trezoru je povinný"
       ],
       "You cannot create more vaults than your subscription allows.": [
-        "Et voi luoda enempää holveja kuin tilauksesi sallii."
+        "Nemůžete vytvořit více trezorů, než umožňuje vaše předplatné."
       ],
       "You have unsaved changes, are you sure you want to discard them?": [
-        "Sinulla on tallentamattomia muutoksia. Haluatko varmasti hylätä ne?"
+        "Máte neuložené změny, určitě je chcete zahodit?"
       ],
       "You must select at least one mailbox": [
-        "Sinun on valittava valita ainakin yksi postilaatikko"
+        "Musíte vybrat nejméně jednu e-mailovou schránku"
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
-        "Sinulla ei ole enää pääsyä tähän holviin. Jos haluat liittyä siihen uudelleen, tarvitset uuden kutsun."
+        "K tomuto trezoru již nebudete mít přístup. Chcete-li do něj znovu vstoupit, budete potřebovat novou pozvánku."
       ],
       "Your plan does not allow you to create more aliases": [
-        "Tilauksesi ei salli sinun luoda enempää aliaksia"
+        "Váš tarif vám neumožňuje vytvářet další aliasy."
       ],
       "Your plan only allows you to autofill from your primary vault": [
-        "Tilauksesi sallii automaattitäytön vain ensisijaisesta holvistasi"
+        "Váš tarif umožňuje automatické vyplňování pouze z vašeho primárního trezoru."
       ],
       "Your session was locked due to inactivity": [
-        "Istuntosi lukittiin toimettomuuden seuraksena"
+        "Vaše relace byla uzamčena z důvodu neaktivity"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
-        "Tilauksesi ei salli useiden holvien luontia ja kaikki kohteet tuodaan oletusarvoisesti ensisijaiseen holviisi. Jos haluat tuoda useisiin holveihin, päivitä tilauksesi."
+        "Vaše předplatné neumožňuje vytvořit více trezorů. Všechny položky budou importovány do vašeho primárního trezoru. Chcete-li importovat do více trezorů, navyšte své předplatné."
       ]
     }
   }

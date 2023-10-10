@@ -182,6 +182,12 @@
       "Importing": [
         "Importerer"
       ],
+      "Invite people": [
+        "Invitér personer"
+      ],
+      "Join shared vault": [
+        "Deltag i delt boks"
+      ],
       "Learn more": [
         "Få mere at vide"
       ],
@@ -236,11 +242,20 @@
       "Regenerate": [
         "Regenerér"
       ],
+      "Reject invitation": [
+        "Afvis invitation"
+      ],
       "Reload extension": [
         "Genindlæs udvidelse"
       ],
+      "Remove access": [
+        "Fjern adgang"
+      ],
       "Request a feature": [
         "Anmod om en funktion"
+      ],
+      "Resend invitation": [
+        "Gensend invitation"
       ],
       "Restore item": [
         "Gendan element"
@@ -352,6 +367,9 @@
       "Cannot create alias (${ error }).": [
         "Kan ikke oprette alias (${ error })."
       ],
+      "Cannot send invitation to this address at the moment": [
+        "Kan ikke sende invitation til denne adresse i øjeblikket"
+      ],
       "Could not leave vault.": [
         "Kunne ikke forlade boks."
       ],
@@ -363,6 +381,9 @@
       ],
       "Could not open updated vault": [
         "Kunne ikke åbne den opdaterede boks"
+      ],
+      "Could not resolve share members": [
+        "Kunne ikke afgøre delingsmedlemmer"
       ],
       "Could not resume your session : ${ description }": [
         "Kunne ikke genoptage din session : ${ description }"
@@ -466,9 +487,6 @@
       ],
       "Request timed out": [
         "Forespørgsel fik timeout"
-      ],
-      "Requesting alias details failed": [
-        "Anmodning om alias-detaljer mislykkedes"
       ],
       "Requesting alias options failed": [
         "Anmodning om alias-indstillinger mislykkedes"
@@ -1615,6 +1633,9 @@
       "The extension is now ready to use.": [
         "Udvidelsen er nu klar til at blive brugt."
       ],
+      "Transfer ownership": [
+        "Overfør ejerskab"
+      ],
       "Trash empty": [
         "Papirkurv tom"
       ],
@@ -1681,6 +1702,9 @@
       ],
       "An error occured while exporting your data": [
         "Der opstod en fejl under eksport af dine data"
+      ],
+      "Are you sure you want to transfer vault ownership to ${ email }?": [
+        "Er du sikker på, at du vil overføre boksejerskab til ${ email }?"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Kan ikke hente postkasser for dette alias lige nu"
@@ -1771,6 +1795,9 @@
       ],
       "You must select at least one mailbox": [
         "Du skal vælge mindst en postkasse"
+      ],
+      "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
+        "Du vil ikke længere have adgang til denne boks. Hvis du vil være med igen, skal du have en ny invitation."
       ],
       "Your plan does not allow you to create more aliases": [
         "Dit abonnement giver dig ikke mulighed for at oprette flere aliasser"
