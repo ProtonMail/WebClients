@@ -1,6 +1,5 @@
 import { ComponentPropsWithoutRef } from 'react';
 
-import '@testing-library/jest-dom';
 import { fireEvent, render } from '@testing-library/react';
 import { useFlag } from '@unleash/proxy-client-react';
 

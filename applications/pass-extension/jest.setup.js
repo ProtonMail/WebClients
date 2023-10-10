@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import { TextDecoder, TextEncoder } from 'util';
 
 // Getting ReferenceError: TextDecoder is not defined without
