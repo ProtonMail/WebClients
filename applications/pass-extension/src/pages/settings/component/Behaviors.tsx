@@ -149,7 +149,7 @@ export const Behaviors: VFC = () => {
                             loading={loading}
                             onChange={() => setting.onChange(!setting.checked)}
                         >
-                            <span className="ml-3">
+                            <span>
                                 {setting.label}
                                 <span className="block color-weak text-sm">{setting.description}</span>
                             </span>
