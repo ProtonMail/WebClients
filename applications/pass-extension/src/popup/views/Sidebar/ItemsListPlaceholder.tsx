@@ -7,9 +7,11 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import type { IconName } from '@proton/components/components';
 import { Icon } from '@proton/components/components';
-import { selectPrimaryVault, selectVaultLimits } from '@proton/pass/store';
+import { selectOwnWritableVaults, selectShare, selectVaultLimits } from '@proton/pass/store';
 import type { ItemType } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
+import { prop } from '@proton/pass/utils/fp';
+import { isWritableVault } from '@proton/pass/utils/pass/share';
 import clsx from '@proton/utils/clsx';
 
 import { UpgradeButton } from '../../../shared/components/upgrade/UpgradeButton';
@@ -32,16 +34,17 @@ type QuickAction = {
 export const ItemsListPlaceholder: VFC = () => {
     const history = useHistory();
     const openSettings = useOpenSettingsTab();
+    const primaryVaultDisabled = useFeatureFlag(PassFeature.PassRemovePrimaryVault);
 
     const { isCreating } = useNavigationContext();
 
     const { filtering, totalCount } = useItems();
     const { search } = filtering;
 
-    const primaryVaultId = useSelector(selectPrimaryVault).shareId;
-    const inNonPrimaryVault = Boolean(filtering.shareId) && filtering.shareId !== primaryVaultId;
     const { didDowngrade } = useSelector(selectVaultLimits);
-    const primaryVaultDisabled = useFeatureFlag(PassFeature.PassRemovePrimaryVault);
+    const selectedShare = useSelector(selectShare(filtering.shareId));
+    const ownedWritableShareIds = useSelector(selectOwnWritableVaults).map(prop('shareId'));
+    const isOwnedNonWritable = filtering.shareId && ownedWritableShareIds.includes(filtering.shareId);
 
     const quickActions = useMemo<QuickAction[]>(
         () => [
@@ -83,7 +86,7 @@ export const ItemsListPlaceholder: VFC = () => {
         []
     );
 
-    if (inNonPrimaryVault && totalCount === 0 && didDowngrade) {
+    if (isOwnedNonWritable && totalCount === 0 && didDowngrade) {
         return (
             <div className="flex flex-column gap-3 text-center">
                 <span className="text-semibold inline-block">{c('Title').t`Your vault is empty`}</span>
@@ -115,6 +118,7 @@ export const ItemsListPlaceholder: VFC = () => {
                             key={`quick-action-${type}`}
                             className={clsx('w-full relative', subTheme)}
                             onClick={onClick}
+                            disabled={!(selectedShare && isWritableVault(selectedShare))}
                         >
                             <Icon
                                 name={icon}

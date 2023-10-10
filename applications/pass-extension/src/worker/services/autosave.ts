@@ -4,7 +4,7 @@ import {
     itemEditIntent,
     itemEditSuccess,
     selectAutosaveCandidate,
-    selectPrimaryVault,
+    selectAutosaveVault,
 } from '@proton/pass/store';
 import type { AutoSavePromptOptions, FormEntry, FormEntryStatus } from '@proton/pass/types';
 import { AutoSaveType, WorkerMessageType } from '@proton/pass/types';
@@ -47,7 +47,7 @@ export const createAutoSaveService = () => {
         const autosave = payload.submission.autosave.data;
 
         if (autosave.action === AutoSaveType.NEW) {
-            const selectedVault = selectPrimaryVault(store.getState());
+            const selectedVault = selectAutosaveVault(store.getState());
 
             return new Promise<boolean>((resolve) =>
                 store.dispatch(
