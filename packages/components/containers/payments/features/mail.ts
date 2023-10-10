@@ -2,6 +2,7 @@ import { c, msgid } from 'ttag';
 
 import { BRAND_NAME, MAIL_APP_NAME, PLANS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Audience, PlansMap } from '@proton/shared/lib/interfaces';
 
 import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
@@ -252,6 +253,18 @@ const getSMTP = (included: boolean): PlanCardFeatureDefinition => {
     };
 };
 
+const getSMTPToken = (included: boolean): PlanCardFeatureDefinition => {
+    return {
+        text: included
+            ? c('new_plans: feature').t`SMTP submission for select organizations`
+            : c('new_plans: feature').t`SMTP submission`,
+        tooltip: c('new_plans: tooltip')
+            .t`SMTP allows 3rd-party services or devices to send email through ${MAIL_APP_NAME}.`,
+        included,
+        iconUrl: getKnowledgeBaseUrl('/smtp-submission'),
+    };
+};
+
 const getAutoReply = (included: boolean, audience?: Audience): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Auto-reply`,
@@ -484,6 +497,22 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getSMTP(true),
                 [PLANS.MAIL_PRO]: getSMTP(true),
                 [PLANS.BUNDLE_PRO]: getSMTP(true),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
+            },
+        },
+        {
+            name: 'smtp-token',
+            plans: {
+                [PLANS.FREE]: getSMTPToken(false),
+                [PLANS.BUNDLE]: getSMTPToken(false),
+                [PLANS.MAIL]: getSMTPToken(false),
+                [PLANS.VPN]: getSMTPToken(false),
+                [PLANS.DRIVE]: getSMTPToken(false),
+                [PLANS.PASS_PLUS]: getSMTPToken(false),
+                [PLANS.FAMILY]: getSMTPToken(true),
+                [PLANS.MAIL_PRO]: getSMTPToken(true),
+                [PLANS.BUNDLE_PRO]: getSMTPToken(true),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
             },
