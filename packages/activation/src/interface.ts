@@ -168,6 +168,7 @@ export enum CustomFieldsBitmap {
 export interface CalendarImportMapping {
     Source: string;
     Destination: string;
+    NewCalendar?: number;
 }
 
 export enum IsCustomCalendarMapping {
