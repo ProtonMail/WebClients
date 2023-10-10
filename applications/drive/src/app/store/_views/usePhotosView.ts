@@ -1,10 +1,10 @@
-import { useCallback, useEffect, useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 
 import { DriveEvents, useDriveEventManager } from '../_events';
 import { useLink, useLinksListing } from '../_links';
-import { flattenWithCategories, usePhotos } from '../_photos';
+import { sortWithCategories, usePhotos } from '../_photos';
 import type { PhotoLink } from '../_photos';
 import { useAbortSignal, useMemoArrayNoMatterTheOrder } from './utils';
 
@@ -39,7 +39,7 @@ export const usePhotosView = () => {
     const cachedLinks = useMemoArrayNoMatterTheOrder(cache?.links || []);
 
     // This will be flattened to contain categories and links
-    const photosViewData = useMemo(() => {
+    const { photosViewData, photoLinkIdToIndexMap, photoLinkIds } = useMemo(() => {
         const result: Record<string, PhotoLink> = {};
 
         // We create "fake" links to avoid complicating the rest of the code
@@ -60,13 +60,30 @@ export const usePhotosView = () => {
             if (!link.activeRevision?.photo) {
                 return;
             }
+
             // We have issue with typing but we check activeRevision before
             result[link.linkId] = link as PhotoLink;
         });
 
-        const values = Object.values(result);
+        const photosViewData = sortWithCategories(Object.values(result));
 
-        return flattenWithCategories(values);
+        // To improve performance, let's provide extra information
+        let photoLinkIdToIndexMap: Record<string, number> = {};
+        let photoLinkIds: string[] = [];
+
+        // It's important to iterate over the sorted data
+        photosViewData.forEach((item, index) => {
+            if (typeof item !== 'string') {
+                photoLinkIdToIndexMap[item.linkId] = index;
+                photoLinkIds.push(item.linkId);
+            }
+        });
+
+        return {
+            photosViewData,
+            photoLinkIdToIndexMap,
+            photoLinkIds,
+        };
     }, [photos, cachedLinks]);
 
     useEffect(() => {
@@ -94,36 +111,14 @@ export const usePhotosView = () => {
         return getLink(abortSignal, shareId, linkId);
     };
 
-    const getGroupLinkIds = useCallback(
-        (groupIndex: number) => {
-            if (typeof photosViewData[groupIndex] !== 'string') {
-                return [];
-            }
-
-            const items = [];
-
-            for (let i = groupIndex + 1; i < photosViewData.length; i++) {
-                const current = photosViewData[i];
-
-                if (typeof current === 'string') {
-                    break;
-                }
-
-                items.push(current.linkId);
-            }
-
-            return items;
-        },
-        [photosViewData]
-    );
-
     return {
         shareId,
         linkId,
         photos: photosViewData,
+        photoLinkIdToIndexMap,
+        photoLinkIds,
         removePhotosFromCache,
         loadPhotoLink,
-        getGroupLinkIds,
         isLoading,
         isLoadingMore: isLoading && !!photos.length,
     };

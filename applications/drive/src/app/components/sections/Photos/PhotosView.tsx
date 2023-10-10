@@ -20,8 +20,12 @@ import { PhotosToolbar } from './toolbar';
 export const PhotosView: FC<void> = () => {
     useAppTitle(c('Title').t`Photos`);
 
-    const { shareId, linkId, photos, isLoading, isLoadingMore, loadPhotoLink, getGroupLinkIds } = usePhotosView();
-    const { selection, setSelected, clearSelection } = usePhotosSelection();
+    const { shareId, linkId, photos, isLoading, isLoadingMore, loadPhotoLink, photoLinkIdToIndexMap, photoLinkIds } =
+        usePhotosView();
+    const { selectedItems, clearSelection, isGroupSelected, isItemSelected, handleSelection } = usePhotosSelection(
+        photos,
+        photoLinkIdToIndexMap
+    );
 
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [previewLinkId, setPreviewLinkId] = useState<string | undefined>();
@@ -38,82 +42,16 @@ export const PhotosView: FC<void> = () => {
         }
     };
 
-    const { gridLinkToIndexMap, photoLinkIds } = useMemo(() => {
-        let gridLinkToIndexMap: Record<string, number> = {};
-        let photoLinkIds: string[] = [];
-
-        photos.forEach((item, index) => {
-            if (typeof item !== 'string') {
-                gridLinkToIndexMap[item.linkId] = index;
-                photoLinkIds.push(item.linkId);
-            }
-        });
-
-        return { gridLinkToIndexMap, photoLinkIds };
-    }, [photos]);
     const photoCount = photoLinkIds.length;
-
-    const selectedItems = useMemo<PhotoLink[]>(
-        () =>
-            Object.keys(selection).reduce<PhotoLink[]>((acc, linkId) => {
-                const item = photos[gridLinkToIndexMap[linkId]];
-                if (item && typeof item !== 'string') {
-                    acc.push(item);
-                }
-
-                return acc;
-            }, []),
-        [selection, photos, gridLinkToIndexMap]
-    );
     const selectedCount = selectedItems.length;
-    const hasSelection = selectedCount > 0;
-
-    const isGroupSelected = useCallback(
-        (groupIndex: number) => {
-            if (!hasSelection) {
-                return false;
-            }
-
-            let linkIds = getGroupLinkIds(groupIndex);
-            let selectedCount = 0;
-
-            for (let linkId of linkIds) {
-                if (selection[linkId]) {
-                    selectedCount++;
-                } else if (selectedCount > 0) {
-                    break;
-                }
-            }
-
-            if (selectedCount === 0) {
-                return false;
-            }
-
-            return selectedCount === linkIds.length || 'some';
-        },
-        [hasSelection, getGroupLinkIds, selection]
-    );
-
-    const handleSelection = useCallback(
-        (index: number, isSelected: boolean) => {
-            const item = photos[index];
-
-            if (typeof item === 'string') {
-                setSelected(isSelected, ...getGroupLinkIds(index));
-            } else {
-                setSelected(isSelected, item.linkId);
-            }
-        },
-        [setSelected, photos, getGroupLinkIds]
-    );
 
     const handleToolbarPreview = useCallback(() => {
-        let selected = Object.keys(selection)[0];
+        let selected = selectedItems[0];
 
         if (selected) {
-            setPreviewLinkId(selected);
+            setPreviewLinkId(selected.linkId);
         }
-    }, [selection, setPreviewLinkId]);
+    }, [selectedItems, setPreviewLinkId]);
 
     const previewRef = useRef<HTMLDivElement>(null);
     const previewIndex = useMemo(
@@ -121,8 +59,8 @@ export const PhotosView: FC<void> = () => {
         [photoLinkIds, previewLinkId]
     );
     const previewItem = useMemo(
-        () => (previewLinkId !== undefined ? (photos[gridLinkToIndexMap[previewLinkId]] as PhotoLink) : undefined),
-        [photos, previewLinkId, gridLinkToIndexMap]
+        () => (previewLinkId !== undefined ? (photos[photoLinkIdToIndexMap[previewLinkId]] as PhotoLink) : undefined),
+        [photos, previewLinkId, photoLinkIdToIndexMap]
     );
     const setPreviewIndex = useCallback(
         (index: number) => setPreviewLinkId(photoLinkIds[index]),
@@ -209,10 +147,10 @@ export const PhotosView: FC<void> = () => {
                         onItemRenderLoadedLink={handleItemRenderLoadedLink}
                         isLoadingMore={isLoadingMore}
                         onItemClick={setPreviewLinkId}
-                        selection={selection}
-                        hasSelection={hasSelection}
+                        hasSelection={selectedCount > 0}
                         onSelectChange={handleSelection}
                         isGroupSelected={isGroupSelected}
+                        isItemSelected={isItemSelected}
                     />
                 )}
             </UploadDragDrop>
