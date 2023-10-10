@@ -156,21 +156,21 @@ const itemsByDomainSelector = createSelector(
         (_state: State, domain: MaybeNull<string>) => domain,
         (_state: State, _: MaybeNull<string>, { protocolFilter }: SelectItemsByDomainOptions) => protocolFilter,
         (_state: State, _: MaybeNull<string>, { isPrivate }: SelectItemsByDomainOptions) => isPrivate,
-        (_state: State, _: MaybeNull<string>, { shareId }: SelectItemsByDomainOptions) => shareId,
+        (_state: State, _: MaybeNull<string>, { shareIds }: SelectItemsByDomainOptions) => shareIds,
         (_state: State, _: MaybeNull<string>, { sortOn }: SelectItemsByDomainOptions) => sortOn ?? 'lastUseTime',
     ],
-    (items, domain, protocolFilter, isPrivate, shareId, sortOn) =>
+    (items, domain, protocolFilter, isPrivate, shareIds, sortOn) =>
         (typeof domain === 'string' && !isEmptyString(domain)
             ? items
                   .reduce<{ item: ItemRevisionWithOptimistic; priority: ItemUrlMatch }[]>((matches, item) => {
-                      const validShareId = !shareId || shareId === item.shareId;
+                      const validShareIds = !shareIds || shareIds.includes(item.shareId);
                       const validItem = !item.optimistic;
                       const validUrls = isLoginItem(item.data) && matchAny(item.data.content.urls)(domain);
 
                       /* If the item does not pass this initial "fuzzy" test, then we
                        * should not even consider it as an autofill candidate.
                        * This avoids unnecessarily parsing items' URLs with 'tldts' */
-                      if (!(validShareId && validItem && validUrls)) return matches;
+                      if (!(validShareIds && validItem && validUrls)) return matches;
 
                       /* `getItemPriorityForUrl` will apply strict domain matching */
                       const { data } = item as ItemRevisionWithOptimistic<'login'>;
@@ -218,18 +218,18 @@ export const selectItemsByDomain = (domain: MaybeNull<string>, options: SelectIt
  * top-level domain matches first */
 const autofillCandidatesSelector = createSelector(
     [
-        (state: State, { domain, isSecure, isPrivate, shareId, protocol }: SelectAutofillCandidatesOptions) =>
+        (state: State, { domain, isSecure, isPrivate, shareIds, protocol }: SelectAutofillCandidatesOptions) =>
             selectItemsByDomain(domain, {
                 protocolFilter: !isSecure && protocol ? [protocol] : [],
                 isPrivate,
-                shareId,
+                shareIds,
                 sortOn: 'priority',
             })(state),
-        (state: State, { subdomain, isSecure, isPrivate, shareId, protocol }: SelectAutofillCandidatesOptions) =>
+        (state: State, { subdomain, isSecure, isPrivate, shareIds, protocol }: SelectAutofillCandidatesOptions) =>
             selectItemsByDomain(subdomain, {
                 protocolFilter: !isSecure && protocol ? [protocol] : [],
                 isPrivate,
-                shareId,
+                shareIds,
                 sortOn: 'lastUseTime',
             })(state),
     ],
