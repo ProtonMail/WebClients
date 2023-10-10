@@ -38,9 +38,12 @@ export const VaultInviteRespond: VFC<Invite> = (invite) => {
     return (
         <ModalTwo size="small" open onClose={onInviteResponse} enableCloseWhenClickOutside>
             <ModalTwoHeader
-                title={c('Title').t`Shared vault invitation`}
-                subline={inviterEmail}
-                className="text-center"
+                title={inviterEmail}
+                subline={
+                    // translator: full sentence is split into 3 components in our design. Example: {eric.norbert@proton.me} invites you to access items in {name of the vault}"
+                    c('Info').t`invites you to access items in`
+                }
+                className="text-center text-break-all"
                 hasClose={false}
             />
             <ModalTwoContent className="flex flex-column flex-align-items-center">

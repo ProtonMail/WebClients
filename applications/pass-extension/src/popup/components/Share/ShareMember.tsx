@@ -95,25 +95,25 @@ export const ShareMember: VFC<ShareMemberProps> = ({
             {!me && canManage && !owner && (
                 <QuickActionsDropdown color="weak" shape="ghost">
                     <DropdownMenuButton
-                        label={c('Action').t`Can view`}
+                        label={c('Action').t`Make viewer`}
                         icon={role === ShareRole.READ ? 'checkmark' : undefined}
                         onClick={() => handleEditRole(ShareRole.READ)}
                         disabled={editAccess.loading}
-                        className={role !== ShareRole.READ ? 'pl-11' : ''}
+                        className={role !== ShareRole.READ ? 'pl-10' : ''}
                     />
                     <DropdownMenuButton
-                        label={c('Action').t`Can edit`}
+                        label={c('Action').t`Make editor`}
                         icon={role === ShareRole.WRITE ? 'checkmark' : undefined}
                         onClick={() => handleEditRole(ShareRole.WRITE)}
                         disabled={editAccess.loading}
-                        className={role !== ShareRole.WRITE ? 'pl-11' : ''}
+                        className={role !== ShareRole.WRITE ? 'pl-10' : ''}
                     />
                     <DropdownMenuButton
-                        label={c('Action').t`Can manage`}
+                        label={c('Action').t`Make admin`}
                         icon={role === ShareRole.ADMIN ? 'checkmark' : undefined}
                         onClick={() => handleEditRole(ShareRole.ADMIN)}
                         disabled={editAccess.loading}
-                        className={role !== ShareRole.ADMIN ? 'pl-11' : ''}
+                        className={role !== ShareRole.ADMIN ? 'pl-10' : ''}
                     />
 
                     {canTransfer && role === ShareRole.ADMIN && (
@@ -137,7 +137,8 @@ export const ShareMember: VFC<ShareMemberProps> = ({
                 open={handleTransferOwnership.pending}
                 onClose={handleTransferOwnership.cancel}
                 onSubmit={handleTransferOwnership.confirm}
-                alertText={c('Warning').t`Are you sure you want to transfer vault ownership to ${email}?`}
+                submitText={c('Action').t`Confirm`}
+                alertText={c('Warning').t`Transfer ownership of this vault to ${email}?`}
             />
         </div>
     );
