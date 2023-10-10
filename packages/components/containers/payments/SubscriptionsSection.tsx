@@ -73,8 +73,7 @@ const SubscriptionsSection = () => {
         },
     ].filter(isTruthy);
 
-    const showUpcoming = !!upcoming && renewEnabled;
-    const latestSubscription = showUpcoming ? upcoming : current;
+    const latestSubscription = upcoming ?? current;
     const renewPrice = (
         <Price key="renewal-price" currency={latestSubscription.Currency}>
             {latestSubscription.RenewAmount}
