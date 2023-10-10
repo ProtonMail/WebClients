@@ -6,7 +6,7 @@ import {
     itemCreationIntent,
     itemCreationSuccess,
     selectAliasLimits,
-    selectPrimaryVault,
+    selectAutosaveVault,
 } from '@proton/pass/store';
 import { aliasOptionsRequest } from '@proton/pass/store/actions/requests';
 import { withRevalidate } from '@proton/pass/store/actions/with-request';
@@ -26,7 +26,7 @@ export const createAliasService = () => {
      * the upselling UI when alias limits have been reached */
     WorkerMessageBroker.registerMessage(WorkerMessageType.ALIAS_OPTIONS, async () => {
         const { needsUpgrade } = selectAliasLimits(store.getState());
-        const { shareId } = selectPrimaryVault(store.getState());
+        const { shareId } = selectAutosaveVault(store.getState());
 
         return new Promise((resolve) => {
             store.dispatch(
@@ -46,7 +46,7 @@ export const createAliasService = () => {
     });
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.ALIAS_CREATE, async (message) => {
-        const defaultVault = selectPrimaryVault(store.getState());
+        const { shareId } = selectAutosaveVault(store.getState());
         const { url, alias } = message.payload;
         const { mailboxes, prefix, signedSuffix, aliasEmail } = alias;
         const optimisticId = uniqueId();
@@ -54,7 +54,7 @@ export const createAliasService = () => {
         const aliasCreationIntent: ItemCreateIntent<'alias'> = {
             type: 'alias',
             optimisticId,
-            shareId: defaultVault.shareId,
+            shareId,
             createTime: getEpoch(),
             metadata: {
                 name: url,

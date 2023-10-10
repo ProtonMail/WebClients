@@ -2,6 +2,7 @@ import type { MaybeNull } from '../utils';
 
 export enum PassFeature {
     PassSharingV1 = 'PassSharingV1',
+    PassRemovePrimaryVault = 'PassRemovePrimaryVault',
 }
 
 export const PassFeaturesValues = Object.values(PassFeature);
