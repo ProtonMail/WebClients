@@ -163,7 +163,7 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onMessage }) => {
                     if (error) {
                         return (
                             <span className="color-danger text-sm block">
-                                {c('Error').t`Cannot create alias (${error}).`}
+                                {c('Error').t`Cannot create alias (${error}).`}{' '}
                                 <span className="text-semibold text-underline">{c('Action').t`Try again`}</span>
                             </span>
                         );
