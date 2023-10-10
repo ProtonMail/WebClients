@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import type { AnyAction } from 'redux';
+import { c } from 'ttag';
 
 import {
     itemCreationDismiss,
@@ -15,9 +16,11 @@ import {
     itemTrashIntent,
 } from '@proton/pass/store';
 import type { ItemRevisionWithOptimistic, ItemType, Maybe, VaultShare } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { isTrashed } from '@proton/pass/utils/pass/trash';
 import { uniqueId } from '@proton/pass/utils/string';
 
+import { useFeatureFlag } from '../../../../shared/hooks/useFeatureFlag';
 import type { ItemTypeViewProps } from '../../../../shared/items/types';
 import { useNavigationContext } from '../../../hooks/useNavigationContext';
 import { VaultSelectModal, useVaultSelectModalHandles } from '../../Vault/VaultSelect.modal';
@@ -43,6 +46,7 @@ const itemTypeViewMap: { [T in ItemType]: VFC<ItemTypeViewProps<T>> } = {
 
 export const ItemView: VFC<Props> = ({ item, failureAction, shareId, itemId, vault }) => {
     const dispatch = useDispatch();
+    const primaryVaultDisabled = useFeatureFlag(PassFeature.PassRemovePrimaryVault);
     const history = useHistory();
 
     const { selectItem } = useNavigationContext();
@@ -123,7 +127,18 @@ export const ItemView: VFC<Props> = ({ item, failureAction, shareId, itemId, vau
                 trashed={trashed}
             />
 
-            <VaultSelectModal onSubmit={handleVaultSelect} onClose={closeVaultSelect} {...modalState} />
+            <VaultSelectModal
+                downgradeMessage={
+                    primaryVaultDisabled
+                        ? c('Info')
+                              .t`You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.`
+                        : c('Info')
+                              .t`You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.`
+                }
+                onSubmit={handleVaultSelect}
+                onClose={closeVaultSelect}
+                {...modalState}
+            />
         </>
     );
 };
