@@ -12,6 +12,7 @@ import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import ItemColumnLayout from 'proton-mail/components/list/ItemColumnLayout';
 import { MAX_COLUMN_ATTACHMENT_THUMBNAILS } from 'proton-mail/constants';
+import { filterAttachmentToPreview } from 'proton-mail/helpers/attachment/attachmentThumbnails';
 import { arrayToBase64 } from 'proton-mail/helpers/base64';
 import { addApiMock } from 'proton-mail/helpers/test/api';
 import {
@@ -79,6 +80,7 @@ const setup = async (attachmentsMetadata: AttachmentsMetadata[], numAttachments:
             unread={false}
             onBack={jest.fn()}
             isSelected={false}
+            attachmentsMetadata={filterAttachmentToPreview(attachmentsMetadata)}
         />
     );
 };
@@ -110,13 +112,11 @@ describe('ItemAttachmentThumbnails', () => {
 
     it('should display attachment thumbnails', async () => {
         const numberOfReceivedMetadata = 5;
-        const elementTotalAttachments = 10;
 
         const attachmentsMetadata = generateAttachmentsMetadata(numberOfReceivedMetadata);
 
-        // The conversation has 10 attachments in total.
-        // We received the metadata for 5 of them, and we can display 2 thumbnails
-        await setup(attachmentsMetadata, elementTotalAttachments);
+        // We received the metadata for 5 attachments, and we can display 2 thumbnails
+        await setup(attachmentsMetadata, numberOfReceivedMetadata);
 
         const items = screen.getAllByTestId('attachment-thumbnail');
         // 2 first attachments are displayed
@@ -130,22 +130,21 @@ describe('ItemAttachmentThumbnails', () => {
             expect(screen.queryByTitle(`Attachment-${i}.png`)).toBeNull();
         }
 
-        // Since the conversation contains 10 message in total, and we display 2 of them. So we should see +8
-        screen.getByText(`+${elementTotalAttachments - MAX_COLUMN_ATTACHMENT_THUMBNAILS}`);
+        // Since we have 5 attachment metadata, and we display 2 of them. So we should see +3
+        screen.getByText(`+${numberOfReceivedMetadata - MAX_COLUMN_ATTACHMENT_THUMBNAILS}`);
 
-        // Paper clip icon is not displayed
-        expect(screen.queryByTestId('item-attachment-icon-paper-clip')).toBeNull();
+        // Paper clip icon is displayed (in row mode paper clip can be rendered twice because of responsive)
+        screen.getAllByTestId('item-attachment-icon-paper-clip');
     });
 
     it('should not display +X attachment', async () => {
         const numberOfReceivedMetadata = 1;
-        const elementTotalAttachments = 1;
 
         const attachmentsMetadata = generateAttachmentsMetadata(numberOfReceivedMetadata);
 
         // The conversation has 1 attachment in total.
         // We received the metadata for 1 of them, which will display 1 thumbnail
-        await setup(attachmentsMetadata, elementTotalAttachments);
+        await setup(attachmentsMetadata, numberOfReceivedMetadata);
 
         const items = screen.getAllByTestId('attachment-thumbnail');
         // 2 first attachments are displayed
@@ -162,8 +161,8 @@ describe('ItemAttachmentThumbnails', () => {
         // +X should not be displayed
         expect(screen.queryByTestId('attachment-thumbnail:other-attachment-number')).toBeNull();
 
-        // Paper clip icon is not displayed
-        expect(screen.queryByTestId('item-attachment-icon-paper-clip')).toBeNull();
+        // Paper clip icon is displayed (in row mode paper clip can be rendered twice because of responsive)
+        screen.getAllByTestId('item-attachment-icon-paper-clip');
     });
 
     it('should should display paper clip icon and no thumbnails when no attachment can be previewed', async () => {
@@ -278,7 +277,11 @@ describe('ItemAttachmentThumbnails - Preview', () => {
                 addApiMock(`mail/v4/attachments/${attachmentID}`, attachmentSpy);
                 addApiMock(`mail/v4/attachments/${attachmentID}/metadata`, attachmentMetadataSpy);
 
-                return { attachmentSpy, attachmentMetadataSpy, attachmentPackets };
+                return {
+                    attachmentSpy,
+                    attachmentMetadataSpy,
+                    attachmentPackets,
+                };
             })
         );
     };
@@ -302,7 +305,9 @@ describe('ItemAttachmentThumbnails - Preview', () => {
         store.dispatch(
             addAttachment({
                 ID: attachment.ID as string,
-                attachment: { data: attachment.data } as WorkerDecryptionResult<Uint8Array>,
+                attachment: {
+                    data: attachment.data,
+                } as WorkerDecryptionResult<Uint8Array>,
             })
         );
 
@@ -376,14 +381,18 @@ describe('ItemAttachmentThumbnails - Preview', () => {
         store.dispatch(
             addAttachment({
                 ID: attachment1.ID as string,
-                attachment: { data: attachment1.data } as WorkerDecryptionResult<Uint8Array>,
+                attachment: {
+                    data: attachment1.data,
+                } as WorkerDecryptionResult<Uint8Array>,
             })
         );
 
         store.dispatch(
             addAttachment({
                 ID: attachment2.ID as string,
-                attachment: { data: attachment2.data } as WorkerDecryptionResult<Uint8Array>,
+                attachment: {
+                    data: attachment2.data,
+                } as WorkerDecryptionResult<Uint8Array>,
             })
         );
 
@@ -482,7 +491,9 @@ describe('ItemAttachmentThumbnails - Preview', () => {
         store.dispatch(
             addAttachment({
                 ID: attachment.ID as string,
-                attachment: { data: attachment.data } as WorkerDecryptionResult<Uint8Array>,
+                attachment: {
+                    data: attachment.data,
+                } as WorkerDecryptionResult<Uint8Array>,
             })
         );
 
@@ -531,7 +542,9 @@ describe('ItemAttachmentThumbnails - Preview', () => {
         fireEvent.click(downloadButton);
         await tick();
 
-        const blob = new Blob([mocks[0].attachmentPackets.data], { type: 'application/pgp-encrypted' });
+        const blob = new Blob([mocks[0].attachmentPackets.data], {
+            type: 'application/pgp-encrypted',
+        });
         expect(downloadFile).toHaveBeenCalledWith(blob, 'Attachment-0.txt.pgp');
     });
 });
