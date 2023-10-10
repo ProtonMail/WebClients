@@ -4,11 +4,12 @@ import {
     itemUsed,
     selectAutofillCandidates,
     selectItemByShareIdAndId,
-    selectPrimaryVault,
     selectVaultLimits,
+    selectWritableVaults,
 } from '@proton/pass/store';
 import type { Maybe, SafeLoginItem } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
+import { prop } from '@proton/pass/utils/fp';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import type { SelectAutofillCandidatesOptions } from '@proton/pass/utils/search';
 import { parseSender, parseUrl } from '@proton/pass/utils/url';
@@ -61,14 +62,16 @@ export const createAutoFillService = () => {
                         if (tabId) {
                             const state = store.getState();
                             const items = getAutofillCandidates(parseUrl(url));
-                            const primaryVaultId = selectPrimaryVault(state).shareId;
+                            const writableShareIds = selectWritableVaults(state).map(prop('shareId'));
                             const { didDowngrade } = selectVaultLimits(state);
 
                             /* if the user has downgraded : we want to keep the tab badge count
                              * with the total items matched, but sync the autofillable candidates
-                             * in the content-scripts to be only the ones from the primary vault */
+                             * in the content-scripts to be only the ones from the writable vaults */
                             const count = items.length;
-                            const safeItems = items.filter((item) => !didDowngrade || primaryVaultId === item.shareId);
+                            const safeItems = items.filter(
+                                (item) => !didDowngrade || writableShareIds.includes(item.shareId)
+                            );
 
                             WorkerMessageBroker.ports.broadcast(
                                 {
@@ -102,15 +105,15 @@ export const createAutoFillService = () => {
             if (!getState().loggedIn) return { items: [], needsUpgrade: false };
 
             const { url, tabId } = parseSender(sender);
-            const primaryVaultId = selectPrimaryVault(store.getState()).shareId;
+            const writableShareIds = selectWritableVaults(store.getState()).map(prop('shareId'));
             const { didDowngrade } = selectVaultLimits(store.getState());
 
             /* if user has exceeded his vault count limit - this likely means
              * has downgraded to a free plan : only allow him to autofill from
-             * his primary vault */
+             * his writable vaults */
             const items = getAutofillCandidates({
                 ...url,
-                ...(didDowngrade ? { shareId: primaryVaultId } : {}),
+                ...(didDowngrade ? { shareIds: writableShareIds } : {}),
             });
 
             if (tabId) void setPopupIconBadge(tabId, items.length);
