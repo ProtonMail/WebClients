@@ -2,6 +2,7 @@ import { getUnixTime, isAfter, isBefore } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { ESItem } from '@proton/encrypted-search/lib';
+import { MAXIMUM_DATE_UTC } from '@proton/shared/lib/calendar/constants';
 import { OccurrenceIterationCache, getOccurrencesBetween } from '@proton/shared/lib/calendar/recurrence/recurring';
 import { propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
 import { DAY, SECOND } from '@proton/shared/lib/constants';
@@ -147,7 +148,9 @@ export const expandSearchItem = ({
             ? YEARS_TO_EXPAND_AHEAD.YEARLY
             : YEARS_TO_EXPAND_AHEAD.OTHER;
         const untilDate = addUTCYears(date, yearsToExpand);
-        const occurrences = getOccurrencesBetween(component, item.StartTime * SECOND, +untilDate, cache);
+        // don't expand beyond the maximum date supported in the calendar
+        const cappedUntilTime = Math.min(+untilDate, +MAXIMUM_DATE_UTC);
+        const occurrences = getOccurrencesBetween(component, item.StartTime * SECOND, +cappedUntilTime, cache);
         const isSingleOccurrence = occurrences.length === 1;
 
         return occurrences.map((recurrence) => {
