@@ -24,7 +24,6 @@ export const normalizeImporter = (apiImporter: ApiImporter) => {
                     startDate: value.CreateTime,
                     errorCode: value.ErrorCode,
                     mapping: value.Mapping,
-                    processed: value.Processed,
                     total: value.Total,
                 };
 
