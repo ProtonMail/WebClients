@@ -35,7 +35,7 @@ export const SharePendingMember: VFC<SharePendingMemberProps> = ({ canManage, em
             <div className="flex-item-fluid">
                 <div className="text-ellipsis">{email}</div>
                 <div className="flex flex-align-items-center gap-1">
-                    <span className="color-weak">{c('Info').t`Pending invitation`}</span>
+                    <span className="color-weak">{c('Info').t`Invitation sent`}</span>
                     <Info
                         title={c('Info').t`The user did not accept the invitation yet.`}
                         className="color-weak"
