@@ -441,7 +441,7 @@
         "Deconectare"
       ],
       "Submit": [
-        "Trimite"
+        "Trimitere"
       ],
       "Support": [
         "Asistenţă"
@@ -5766,6 +5766,16 @@
     "session_recovery:in_progress:title": {
       "Password reset requested": [
         "Solicitare resetare parolă"
+      ]
+    },
+    "session_recovery:initiation:info": {
+      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
+        "Puteți verifica starea solicitării oricând ${ accountAndPasswordSectionLink } din setări."
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "account and password section": [
+        "în secțiunea „Cont și parolă”"
       ]
     },
     "session_recovery:sign_out:action": {
