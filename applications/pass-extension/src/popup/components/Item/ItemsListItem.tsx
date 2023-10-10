@@ -6,9 +6,8 @@ import { ButtonLike, type ButtonLikeProps } from '@proton/atoms/Button';
 import { Marks } from '@proton/components/components';
 import { selectShare } from '@proton/pass/store';
 import type { ItemRevisionWithOptimistic, ShareType } from '@proton/pass/types';
+import { getItemNameSearchChunks } from '@proton/pass/utils/search';
 import { isEmptyString } from '@proton/pass/utils/string';
-import { escapeRegex, getMatches } from '@proton/shared/lib/helpers/regex';
-import { normalize } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
 import { ItemIcon } from '../../../shared/components/icon/ItemIcon';
@@ -17,15 +16,6 @@ import { itemTypeToSubThemeClassName } from '../../../shared/theme/sub-theme';
 import { VaultIcon } from '../Vault/VaultIcon';
 
 import './ItemsListItem.scss';
-
-const getItemNameSearchChunks = (itemName: string, search: string) => {
-    if (!search) {
-        return [];
-    }
-
-    const regex = new RegExp(escapeRegex(normalize(search)), 'gi');
-    return getMatches(regex, normalize(itemName));
-};
 
 type Props = Partial<LinkProps> &
     ButtonLikeProps<any> & {
