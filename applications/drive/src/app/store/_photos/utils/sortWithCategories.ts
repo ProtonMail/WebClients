@@ -16,7 +16,7 @@ const dateToCategory = (timestamp: number): string => {
     return getMonthYearFormatter().format(date);
 };
 
-export const flattenWithCategories = (data: PhotoLink[]): PhotoGridItem[] => {
+export const sortWithCategories = (data: PhotoLink[]): PhotoGridItem[] => {
     const result: PhotoGridItem[] = [];
     let lastGroup = '';
 
