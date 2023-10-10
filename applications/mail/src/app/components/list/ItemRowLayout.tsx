@@ -4,6 +4,7 @@ import { c, msgid } from 'ttag';
 
 import { useFlag } from '@proton/components/containers/unleash';
 import { Label } from '@proton/shared/lib/interfaces/Label';
+import { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { getHasOnlyIcsAttachments } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
@@ -37,6 +38,7 @@ interface Props {
     senders: ReactNode;
     unread: boolean;
     onBack: () => void;
+    attachmentsMetadata: AttachmentsMetadata[];
 }
 
 const ItemRowLayout = ({
@@ -50,6 +52,7 @@ const ItemRowLayout = ({
     senders,
     unread,
     onBack,
+    attachmentsMetadata,
 }: Props) => {
     const { shouldHighlight, highlightMetadata, esStatus } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
@@ -79,7 +82,12 @@ const ItemRowLayout = ({
 
     const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(element?.AttachmentInfo);
 
-    const showThumbnails = canShowAttachmentThumbnails(isCompactView, element, canSeeThumbnailsFeature);
+    const showThumbnails = canShowAttachmentThumbnails(
+        isCompactView,
+        element,
+        attachmentsMetadata,
+        canSeeThumbnailsFeature
+    );
 
     return (
         <div className="flex-nowrap flex-column w100">
@@ -150,13 +158,11 @@ const ItemRowLayout = ({
                     {hasExpiration && (
                         <ItemExpiration expirationTime={expirationTime} element={element} labelID={labelID} />
                     )}
-                    {!showThumbnails && (
-                        <ItemAttachmentIcon
-                            icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
-                            element={element}
-                            className="flex-item-noshrink ml-2"
-                        />
-                    )}
+                    <ItemAttachmentIcon
+                        icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
+                        element={element}
+                        className="flex-item-noshrink ml-2"
+                    />
                 </span>
 
                 <span className="ml-4 flex w13e flex-nowrap flex-align-items-center flex-justify-end">
@@ -184,9 +190,8 @@ const ItemRowLayout = ({
 
                 {showThumbnails && (
                     <ItemAttachmentThumbnails
-                        attachmentsMetadata={element.AttachmentsMetadata}
+                        attachmentsMetadata={attachmentsMetadata}
                         maxAttachment={MAX_ROW_ATTACHMENT_THUMBNAILS}
-                        numAttachments={element.NumAttachments}
                         className="flex-item-fluid attachment-thumbnail-row"
                     />
                 )}
