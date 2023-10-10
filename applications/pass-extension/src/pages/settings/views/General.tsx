@@ -18,7 +18,7 @@ export const General: VFC = () => {
 
     return (
         <>
-            {ENV === 'development' && <Locale />}
+            <Locale />
             {!primaryVaultDisabled && (
                 <VaultSetting
                     label={c('Label').t`Primary vault`}
