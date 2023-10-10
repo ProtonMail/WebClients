@@ -10,7 +10,7 @@ import { Card } from '@proton/atoms/Card';
 import type { ModalProps } from '@proton/components/components';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/components';
 import { type ImportPayload, type ImportVault } from '@proton/pass/import';
-import { selectPassPlan, selectPrimaryVault, selectVaultLimits, selectWritableVaults } from '@proton/pass/store';
+import { selectDefaultVault, selectPassPlan, selectVaultLimits, selectWritableVaults } from '@proton/pass/store';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { omit } from '@proton/shared/lib/helpers/object';
@@ -30,8 +30,8 @@ export type ImportVaultsPickerHandle = { submit: () => void };
 const FORM_ID = 'vault-picker';
 
 export const ImportVaultsPickerModal: VFC<ImportVaultsPickerProps> = ({ payload, onClose, onReset, onSubmit }) => {
-    const vaults = useSelector(selectWritableVaults);
-    const primaryVault = useSelector(selectPrimaryVault);
+    const writableVaults = useSelector(selectWritableVaults);
+    const defaultVault = useSelector(selectDefaultVault);
     const { vaultLimit, vaultTotalCount } = useSelector(selectVaultLimits);
     const plan = useSelector(selectPassPlan);
     const primaryVaultDisabled = useFeatureFlag(PassFeature.PassRemovePrimaryVault);
@@ -54,8 +54,8 @@ export const ImportVaultsPickerModal: VFC<ImportVaultsPickerProps> = ({ payload,
             vaults: payload.vaults.map(
                 (vault): VaultPickerValue => ({
                     ...vault,
-                    shareId: primaryVault.shareId,
-                    name: primaryVault.content.name,
+                    shareId: defaultVault.shareId,
+                    name: defaultVault.content.name,
                     selected: true,
                 })
             ),
@@ -112,7 +112,7 @@ export const ImportVaultsPickerModal: VFC<ImportVaultsPickerProps> = ({ payload,
                                 >
                                     <ImportVaultPickerOption
                                         data={importedVault}
-                                        vaults={vaults}
+                                        vaults={writableVaults}
                                         allowNewVault={canCreateVault}
                                         value={value.shareId}
                                         selected={value.selected}
