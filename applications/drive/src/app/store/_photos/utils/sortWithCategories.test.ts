@@ -1,7 +1,7 @@
 import { fromUnixTime, getUnixTime } from 'date-fns';
 
 import { PhotoLink } from '../interface';
-import { flattenWithCategories } from './flattenWithCategories';
+import { sortWithCategories } from './sortWithCategories';
 
 jest.mock('@proton/shared/lib/i18n', () => ({
     dateLocale: {
@@ -11,7 +11,7 @@ jest.mock('@proton/shared/lib/i18n', () => ({
         },
     },
 }));
-describe('flattenWithCategories()', () => {
+describe('sortWithCategories()', () => {
     beforeAll(() => {
         const unixDate = 1694096758; // Thu Sep 07 14:25:58 2023 UTC
         jest.useFakeTimers().setSystemTime(fromUnixTime(unixDate));
@@ -19,7 +19,7 @@ describe('flattenWithCategories()', () => {
     afterAll(() => {
         jest.useRealTimers();
     });
-    it('should return flatten list with categories of photos', () => {
+    it('should return sorted list with categories of photos', () => {
         const photos: PhotoLink[] = [
             {
                 linkId: '9d6c33a79feba8dd2fd768f58f450a7f2ff3ec2e',
@@ -62,7 +62,7 @@ describe('flattenWithCategories()', () => {
                 },
             },
         ];
-        const flattenPhotos = flattenWithCategories([...photos]); // Destructure to keep origin reference
+        const flattenPhotos = sortWithCategories([...photos]); // Destructure to keep origin reference
 
         expect(flattenPhotos).toEqual([
             'This month',
