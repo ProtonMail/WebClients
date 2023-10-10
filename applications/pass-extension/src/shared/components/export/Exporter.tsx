@@ -74,7 +74,7 @@ export const Exporter: React.FC = () => {
                     onChange={(e) => form.setFieldValue('encrypted', e.target.checked)}
                     className="mb-4"
                 >
-                    <span className="ml-3">
+                    <span>
                         {c('Label').t`Encrypt your ${PASS_APP_NAME} data export file`}
                         <span className="block color-weak text-sm">{c('Info')
                             .t`Export is encrypted using PGP and requires a strong passphrase.`}</span>

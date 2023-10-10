@@ -1,3 +1,5 @@
+@import '~@proton/styles/scss/lib';
+
 body {
 	overflow: auto !important;
 	block-size: 100%;
@@ -5,4 +7,13 @@ body {
 
 .pass-settings {
 	max-inline-size: 45rem;
+}
+
+/* override checkboxes */
+.checkbox-container {
+	gap: 1rem;
+
+	.checkbox-fakecheck {
+		margin-inline: 0.625rem !important;
+	}
 }
