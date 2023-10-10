@@ -20,7 +20,6 @@ interface Preview {
 interface Props {
     attachmentsMetadata?: AttachmentsMetadata[];
     maxAttachment?: number;
-    numAttachments?: number;
     className?: string;
 }
 
@@ -32,11 +31,10 @@ interface Props {
 const ItemAttachmentThumbnails = ({
     attachmentsMetadata = [],
     maxAttachment = MAX_COLUMN_ATTACHMENT_THUMBNAILS,
-    numAttachments = 0,
     className,
 }: Props) => {
     const [previewing, setPreviewing] = useState<Preview>();
-    const otherAttachmentNumber = numAttachments - maxAttachment;
+    const otherAttachmentNumber = attachmentsMetadata?.length - maxAttachment;
     const { handleThumbnailPreview, handleThumbnailDownload, confirmDownloadModal } = useAttachmentThumbnailDownload();
 
     const rootRef = useRef<HTMLDivElement>(null);
