@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
-import { Subscription } from '@proton/shared/lib/interfaces';
+import { SubscriptionModel } from '@proton/shared/lib/interfaces';
 
 import { ModalProps, Prompt, Time } from '../../../../components';
 import { ModalTwoPromiseHandlers } from '../../../../components/modalTwo/useModalTwo';
@@ -11,7 +11,7 @@ import { CancelSubscriptionResult } from './types';
 type PromiseHandlers = ModalTwoPromiseHandlers<CancelSubscriptionResult>;
 
 export type CancelSubscriptionModalProps = ModalProps & {
-    subscription: Subscription;
+    subscription: SubscriptionModel;
 };
 
 export const CancelSubscriptionModal = ({
@@ -31,9 +31,10 @@ export const CancelSubscriptionModal = ({
     const vpnPlanName = PLAN_NAMES[PLANS.VPN];
     const vpnPlanNameShort = 'Plus';
 
+    const latestSubscription = subscription.UpcomingSubscription ?? subscription;
     const expiryDate = (
         <Time format="PP" className="text-bold" key="expiry-time">
-            {subscription.PeriodEnd}
+            {latestSubscription.PeriodEnd}
         </Time>
     );
 
