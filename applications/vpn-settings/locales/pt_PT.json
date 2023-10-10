@@ -4714,6 +4714,10 @@
       "Send & receive invitations": [
         "Enviar e receber convites"
       ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "Servidores em ${ vpnServersCountData.paid.countries } país",
+        "Servidores em mais de ${ vpnServersCountData.paid.countries } países"
+      ],
       "Share calendar via link": [
         "Partilha o calendário por ligação"
       ],
@@ -5844,6 +5848,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } servidor dedicado",
+        "${ ipAddresses } servidores dedicados"
+      ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } ligação VPN de alta velocidade",
         "${ maxVpn } ligações VPN de alta velocidade"

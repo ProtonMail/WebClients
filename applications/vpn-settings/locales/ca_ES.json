@@ -284,6 +284,9 @@
       "OK": [
         "D'acord"
       ],
+      "Ok": [
+        "OK"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Obrir ajustos de ${ CALENDAR_APP_NAME }"
       ],
@@ -460,6 +463,9 @@
       ],
       "Upgrade now": [
         "Millora ara"
+      ],
+      "Upgrade to Business": [
+        "Millora a Business"
       ],
       "Upgrade your plan": [
         "Milloreu el vostre pla"
@@ -1732,6 +1738,9 @@
       "Incorrect password": [
         "Contrasenya incorrecta"
       ],
+      "Incorrect username": [
+        "Nom d'usuari incorrecte"
+      ],
       "Invalid ${ name } code": [
         "Codi ${ name } no vàlid"
       ],
@@ -2698,6 +2707,9 @@
       ],
       "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
         "Creeu adreces de correu electrònic per a altres persones, gestioneu ${ MAIL_APP_NAME } per una empresa, escola o grup. Comenceu introduint el nom de la vostra organització i domini personalitzat (p.ex. @lavostracompanyia.cat). "
+      ],
+      "Create your first Gateway": [
+        "Crea la vostra primera passarel·la"
       ],
       "Creating your account": [
         "S'està creant el compte"
@@ -5348,6 +5360,110 @@
         "per crear"
       ]
     },
+    "session_recovery:available:action": {
+      "Cancel password reset": [
+        "Cancel·la el restabliment de contrasenya"
+      ],
+      "Cancel reset": [
+        "Cancel·la el restabliment"
+      ],
+      "Reset password": [
+        "Restableix la contrasenya"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "S'ha desat la contrasenya."
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Restableix la contrasenya"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Cancel·la el restabliment de contrasenya"
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "S'ha cancel·lat el restabliment de la contrasenya."
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Cancel·la el restabliment de contrasenya?"
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "canvieu la vostra contrasenya ara"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel password reset": [
+        "Cancel·la el restabliment de contrasenya"
+      ],
+      "Cancel request": [
+        "Cancel·la la petició"
+      ],
+      "Got it": [
+        "Entesos"
+      ],
+      "Learn more": [
+        "Saber-ne més"
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "Mostra la petició "
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "S'ha sol·licitat un restabliment de la contrasenya."
+      ]
+    },
+    "session_recovery:initiation:action": {
+      "Got it": [
+        "Entesos"
+      ],
+      "Request password reset": [
+        "Sol·licita el restabliment de contrasenya"
+      ],
+      "Use recovery method": [
+        "Utilitza un mètode de recuperació"
+      ]
+    },
+    "session_recovery:initiation:title": {
+      "Request password reset?": [
+        "Sol·licita el restabliment de contrasenya?"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Tanca la sessió"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Restabliment de contrasenya"
+      ]
+    },
+    "session_recovery:status:info": {
+      "Available": [
+        "Disponible"
+      ],
+      "Pending": [
+        "Pendent"
+      ]
+    },
+    "session_recovery:status:title": {
+      "Password reset request": [
+        "Petició de restabliment de la contrasenya"
+      ]
+    },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Compartit per ${ ownerName }"
@@ -6248,6 +6364,9 @@
       ],
       "Edit email address": [
         "Edita l'adreça de correu"
+      ],
+      "Edit Gateway ${ currentName }": [
+        "Edita la passarel·la ${ currentName }"
       ],
       "Edit servers": [
         "Edita els servidors"
