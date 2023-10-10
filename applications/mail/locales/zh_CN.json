@@ -857,7 +857,7 @@
         "查看商业账户服务"
       ],
       "See how": [
-        "怎么看"
+        "详细了解"
       ],
       "See plan features": [
         "查看套餐内容"
@@ -3141,7 +3141,7 @@
         "此浏览器无法开启全文搜索，请退出隐私浏览模式或使用其他浏览器。"
       ],
       "Could not save preference": [
-        "无法保存首选项"
+        "设置保存失败"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "解密失败：此邮件内容解密失败"
@@ -6245,7 +6245,7 @@
         "通讯录"
       ],
       "Conversations per page": [
-        "每页对话数"
+        "每页会话数量"
       ],
       "Copy": [
         "复制"
@@ -6413,7 +6413,7 @@
         "标为"
       ],
       "Messages per page": [
-        "每页消息数"
+        "每页邮件数量"
       ],
       "Move ${ sidebarElementName }": [
         "移动 ${ sidebarElementName }"
@@ -7699,12 +7699,12 @@
         "此权限将在 ${ timeRemaining.inHours } 小时后过期"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
-        "您现在可以在${ boldDaysRemaining }天内免费更改帐户${ boldEmail }的密码。"
+        "从现在起 ${ boldDaysRemaining }内您可以自由更改 ${ boldEmail } 账户的密码。"
       ]
     },
     "session_recovery:available:link": {
       "See how": [
-        "怎么看"
+        "详细了解"
       ]
     },
     "session_recovery:available:notification": {
@@ -7769,7 +7769,7 @@
         "重置密码的请求已收到 (${ user.Email })。 您可以在 ${ hoursRemaining } 小时内更改密码。"
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
-        "为了确保确实是您在尝试重置密码，我们会在 72 小时后才批准请求。 您可以在${ boldTimeLeft }中更改密码。${ viewRequest }"
+        "为了确保是您本人重置密码，申请提交 72 小时后才能通过。${ boldTimeLeft }后您就可以更改密码了。${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "我们收到了${ boldEmail }的密码重置请求。"
@@ -7782,7 +7782,7 @@
     },
     "session_recovery:in_progress:title": {
       "Password reset requested": [
-        "请求密码重置"
+        "已申请重置密码"
       ]
     },
     "session_recovery:sign_out:action": {

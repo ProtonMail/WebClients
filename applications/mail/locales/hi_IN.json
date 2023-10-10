@@ -4333,6 +4333,10 @@
         "${ messagesNotAuthorizedToMove } संदेश को स्थानांतरित नहीं किया जा सका।",
         "${ messagesNotAuthorizedToMove } संदेशों को स्थानांतरित नहीं किया जा सका।"
       ],
+      "${ numberOfImageTrackers } tracker blocked": [
+        "${ numberOfImageTrackers } ट्रैकर ब्लॉक किया गया",
+        "${ numberOfImageTrackers } ट्रैकर ब्लॉक किए गए"
+      ],
       "${ NumMessages } message in conversation": [
         "${ NumMessages } संदेश बातचीत में",
         "${ NumMessages } संदेश बातचीत में"
@@ -5537,6 +5541,10 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } कमांड मिला.",
+        "${ filteredList.length } कमांड मिले."
+      ],
       "Optional": [
         "वैकल्पिक"
       ]
