@@ -359,6 +359,7 @@ const MailboxContainer = ({
                 filter={filter}
                 mailSettings={mailSettings}
                 toolbarInHeader={toolbarInHeader}
+                loading={loading}
             />
         );
     };
