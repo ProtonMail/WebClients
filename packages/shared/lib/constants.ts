@@ -480,6 +480,7 @@ export enum MIME_TYPES {
     DEFAULT = 'text/html',
     ICS = 'text/calendar',
     APPLICATION_ICS = 'application/ics', // Google's special one that doesn't have standard newlines
+    PGP_KEYS = 'application/pgp-keys',
 }
 
 export enum MIME_TYPES_MORE {
@@ -851,7 +852,10 @@ export enum ENCRYPTION_TYPES {
 export const DEFAULT_ENCRYPTION_CONFIG = ENCRYPTION_TYPES.CURVE25519;
 
 export const ENCRYPTION_CONFIGS: { [key: string]: EncryptionConfig } = {
-    [ENCRYPTION_TYPES.CURVE25519]: { type: 'ecc', curve: 'ed25519' as enums.curve }, // casting is just informational
+    [ENCRYPTION_TYPES.CURVE25519]: {
+        type: 'ecc',
+        curve: 'ed25519' as enums.curve,
+    }, // casting is just informational
     [ENCRYPTION_TYPES.RSA4096]: { type: 'rsa', rsaBits: 4096 },
 };
 
@@ -983,7 +987,9 @@ export enum MAILBOX_LABEL_IDS {
     ALMOST_ALL_MAIL = '15',
 }
 
-export const LINKED_LABEL_IDS: { [key in MAILBOX_LABEL_IDS]?: MAILBOX_LABEL_IDS } = {
+export const LINKED_LABEL_IDS: {
+    [key in MAILBOX_LABEL_IDS]?: MAILBOX_LABEL_IDS;
+} = {
     [MAILBOX_LABEL_IDS.ALL_DRAFTS]: MAILBOX_LABEL_IDS.DRAFTS,
     [MAILBOX_LABEL_IDS.ALL_SENT]: MAILBOX_LABEL_IDS.SENT,
     [MAILBOX_LABEL_IDS.ALL_MAIL]: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
@@ -1075,10 +1081,20 @@ const DUMMY_FILE = {
     filepath: '/',
 };
 
-declare const WEBPACK_OPENPGP: { main: OpenPGPFile; compat: OpenPGPFile; elliptic: OpenPGPFile; worker: OpenPGPFile };
+declare const WEBPACK_OPENPGP: {
+    main: OpenPGPFile;
+    compat: OpenPGPFile;
+    elliptic: OpenPGPFile;
+    worker: OpenPGPFile;
+};
 export const OPENPGP =
     typeof WEBPACK_OPENPGP === 'undefined'
-        ? { main: DUMMY_FILE, compat: DUMMY_FILE, elliptic: DUMMY_FILE, worker: DUMMY_FILE }
+        ? {
+              main: DUMMY_FILE,
+              compat: DUMMY_FILE,
+              elliptic: DUMMY_FILE,
+              worker: DUMMY_FILE,
+          }
         : WEBPACK_OPENPGP;
 
 export const FORKABLE_APPS = new Set(
@@ -1095,8 +1111,12 @@ export const FORKABLE_APPS = new Set(
 
 export const EXTENSIONS = {
     [APPS.PROTONEXTENSION]: { ID: 'ghmbeldphafepmbegfdlkpapadhbakde' },
-    [APPS.PROTONPASSBROWSEREXTENSION]: { ID: 'ghmbeldphafepmbegfdlkpapadhbakde' },
-    [APPS.PROTONVPNBROWSEREXTENSION]: { ID: 'jplgfhpmjnbigmhklmmbgecoobifkmpa' },
+    [APPS.PROTONPASSBROWSEREXTENSION]: {
+        ID: 'ghmbeldphafepmbegfdlkpapadhbakde',
+    },
+    [APPS.PROTONVPNBROWSEREXTENSION]: {
+        ID: 'jplgfhpmjnbigmhklmmbgecoobifkmpa',
+    },
 } as const;
 
 export const AES256 = 'aes256';
