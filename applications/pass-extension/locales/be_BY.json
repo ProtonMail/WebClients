@@ -29,6 +29,12 @@
       "Back": [
         "Назад"
       ],
+      "Can edit": [
+        "Можа рэдагаваць"
+      ],
+      "Can manage": [
+        "Можа кіраваць"
+      ],
       "Can view": [
         "Можа праглядаць"
       ],
@@ -176,14 +182,26 @@
       "Importing": [
         "Імпартаванне"
       ],
+      "Invite people": [
+        "Запрасіць людзей"
+      ],
+      "Join shared vault": [
+        "Далучыцца да абагуленага сховішча"
+      ],
       "Learn more": [
         "Даведацца больш"
       ],
       "Leave": [
         "Выйсці"
       ],
+      "Leave vault": [
+        "Выйсці са сховішча"
+      ],
       "Lock extension": [
         "Блакіраванне пашырэння"
+      ],
+      "Manage access": [
+        "Кіраваць доступам"
       ],
       "Manually sync your data": [
         "Сінхранізацыя даных уручную"
@@ -224,11 +242,20 @@
       "Regenerate": [
         "Згенерыраваць яшчэ раз"
       ],
+      "Reject invitation": [
+        "Адхіліць запрашэнне"
+      ],
       "Reload extension": [
         "Перазагрузіць пашырэнне"
       ],
+      "Remove access": [
+        "Выдаліць доступ"
+      ],
       "Request a feature": [
         "Запытаць функцыю"
+      ],
+      "Resend invitation": [
+        "Паўторна адправіць запрашэнне"
       ],
       "Restore item": [
         "Аднавіць элемент"
@@ -241,6 +268,12 @@
       ],
       "Saving": [
         "Захаванне"
+      ],
+      "See members": [
+        "Паглядзець удзельнікаў"
+      ],
+      "Send invite": [
+        "Адправіць запрашэнне"
       ],
       "Send us a message": [
         "Напішыце нам"
@@ -271,6 +304,9 @@
       ],
       "Submitting report...": [
         "Адпраўка справаздачы..."
+      ],
+      "Transfer ownership": [
+        "Перадаць права ўласнасці"
       ],
       "Try again": [
         "Паспрабуйце яшчэ раз"
@@ -344,7 +380,7 @@
         "Немагчыма адкрыць абноўленае сховішча"
       ],
       "Could not resolve share members": [
-        "Немагчыма ўрэгуляваць абагуленне ўдзельнікаў"
+        "Немагчыма вызначыць удзельнікаў абагульнення"
       ],
       "Could not resume your session : ${ description }": [
         "Немагчыма ўзнавіць вашу сесію : ${ description }"
@@ -450,9 +486,6 @@
       ],
       "Request timed out": [
         "Перавышаны тэрмін чакання запыту"
-      ],
-      "Requesting alias details failed": [
-        "Збой запыту падрабязнасцей псеўданіма"
       ],
       "Requesting alias options failed": [
         "Збой запыту параметраў псеўданіма"
@@ -597,6 +630,12 @@
         "${ count } элементаў",
         "${ count } элементаў"
       ],
+      "${ itemCount } item": [
+        "${ itemCount } элемент",
+        "${ itemCount } элементы",
+        "${ itemCount } элементаў",
+        "${ itemCount } элементаў"
+      ],
       "${ memberCount } member": [
         "${ memberCount } удзельнік",
         "${ memberCount } удзельнікі",
@@ -630,6 +669,12 @@
         "Засталося ${ trialDaysLeft } дзён",
         "Засталося ${ trialDaysLeft } дзён"
       ],
+      "${ vault.count } item": [
+        "${ vault.count } элемент",
+        "${ vault.count } элементы",
+        "${ vault.count } элементаў",
+        "${ vault.count } элементаў"
+      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Даступна новая версія ${ PASS_APP_NAME }. Абнавіце праграму да апошняй версіі, каб паспрабаваць новыя функцыі і выпраўленыя памылкі."
       ],
@@ -659,6 +704,27 @@
       ],
       "Autosaved on ${ submissionURL }": [
         "Аўтазахавана на ${ submissionURL }"
+      ],
+      "Can create, edit, delete and export items in this vault.": [
+        "Можа ствараць, рэдагаваць, выдаляць і экспартаваць элементы ў гэтым сховішчы."
+      ],
+      "Can edit": [
+        "Можа рэдагаваць"
+      ],
+      "Can grant and revoke access to this vault, and delete it.": [
+        "Можа даваць і адклікаць дазвол на доступ да гэтага сховішча, а таксама выдаляць яго."
+      ],
+      "Can grant and revoke access to this vault.": [
+        "Можа даваць і адклікаць дазвол на доступ да гэтага сховішча."
+      ],
+      "Can manage": [
+        "Можа кіраваць"
+      ],
+      "Can view": [
+        "Можа праглядаць"
+      ],
+      "Can view items in this vault.": [
+        "Можа праглядаць элементы ў гэтым сховішчы."
       ],
       "Check out all the exclusive features that are available to you for a limited time.": [
         "Даведайцеся пра ўсе эксклюзіўныя функцыі, якія будуць даступны вам на працягу абмежаванага часу."
@@ -762,6 +828,12 @@
       "Internet connection lost": [
         "Падключэнне да інтэрнэту страчана"
       ],
+      "Invite successfully removed": [
+        "Запрашэнне паспяхова выдалена"
+      ],
+      "Invite successfully resent": [
+        "Запрашэнне адпраўлена паўторна"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Здаецца, што вы ўжо ўвайшлі ў ${ PASS_APP_NAME }. Калі вы спрабуеце ўвайсці з іншым уліковым запісам, спачатку выйдзіце з уліковага запісу ў пашырэнні."
       ],
@@ -801,6 +873,9 @@
       "Loading...": [
         "Загрузка..."
       ],
+      "me": [
+        "я"
+      ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Больш, чым менеджар пароляў. ${ PASS_APP_NAME } абараняе ваш пароль і ваш асабісты адрас электроннай пошты з дапамогай псеўданімаў электроннай пошты. Распрацаваны па той самай тэхналогіі, якая ляжыць у аснове ${ MAIL_APP_NAME }. Вашы даныя зашыфраваны скразным метадам і даступны толькі вам."
       ],
@@ -818,6 +893,12 @@
       ],
       "Open the Extensions menu": [
         "Адкрыць меню з пашырэннямі"
+      ],
+      "Owner": [
+        "Уладальнік"
+      ],
+      "Ownership successfully transfered. You are no long the owner of this vault.": [
+        "Правы ўласнасці паспяхова перададзены. Цяпер вы больш не з'яўляецеся ўладальнікам гэтага сховішча."
       ],
       "Password copied": [
         "Пароль скапіяваны"
@@ -888,6 +969,9 @@
       "Successfully exported all your items": [
         "Усе вашы элементы паспяхова экспартаваны"
       ],
+      "Successfully left the vault": [
+        "Паспяхова пакінулі сховішча"
+      ],
       "Successfully synced all vaults": [
         "Паспяхова сінхранізаваны ўсе сховішчы"
       ],
@@ -929,6 +1013,12 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Палепшыць ${ PASS_APP_NAME }"
+      ],
+      "User's access removed": [
+        "Доступ карыстальніка выдалены"
+      ],
+      "User's access sucessfuly updated": [
+        "Доступ карыстальніка абноўлены"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Сховішча \"${ payload.content.name }\" паспяхова выдалена"
@@ -1651,7 +1741,7 @@
         "Падчас экспартавання вашых даных адбылася памылка"
       ],
       "Are you sure you want to transfer vault ownership to ${ email }?": [
-        "Вы сапраўды хочаце перадаць сваё сховішча ${ email }?"
+        "Вы сапраўды хочаце перадаць правы ўласнасці свайго сховішча ${ email }?"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "У дадзены момант немагчыма атрымаць паштовыя скрыні для гэтага псеўданіма"

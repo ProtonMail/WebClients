@@ -335,6 +335,9 @@
       "Discard": [
         "Zahodit"
       ],
+      "Don't know your password?": [
+        "Neznáte své heslo?"
+      ],
       "Don't show again": [
         "Příště nezobrazovat"
       ],
@@ -623,6 +626,9 @@
       "OK": [
         "OK"
       ],
+      "Ok": [
+        "Ok"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otevřít nastavení ${ CALENDAR_APP_NAME }"
       ],
@@ -793,6 +799,9 @@
       ],
       "Search settings": [
         "Nastavení vyhledávání"
+      ],
+      "See how": [
+        "Podívejte se, jak"
       ],
       "See plan features": [
         "Zobrazit funkce tarifu"
@@ -1126,13 +1135,16 @@
         "Odstranit"
       ],
       "Disable": [
-        "Vypnout"
+        "Deaktivovat"
       ],
       "Disable E2EE mail": [
         "Deaktivovat E2EE poštu"
       ],
       "Disallow unsigned mail": [
         "Zakázat nepodepsanou poštu"
+      ],
+      "Edit": [
+        "Upravit"
       ],
       "Edit address": [
         "Upravit adresu"
@@ -1164,7 +1176,7 @@
         "Výchozí"
       ],
       "Disabled": [
-        "Zakázáno"
+        "Neaktivní"
       ],
       "External": [
         "Externí"
@@ -1499,6 +1511,14 @@
         "Sdílet s kýmkoli"
       ]
     },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "Zobrazit ${ remainingItems } víc",
+        "Zobrazit ${ remainingItems } více",
+        "Zobrazit ${ remainingItems } víc",
+        "Zobrazit ${ remainingItems } víc"
+      ]
+    },
     "Calendar share permission label": {
       "Edit event details": [
         "Upravit detaily události"
@@ -1533,7 +1553,7 @@
         "Výchozí"
       ],
       "Disabled": [
-        "Vypnuto"
+        "Deaktivován"
       ],
       "Not synced": [
         "Nesynchronizováno"
@@ -1867,8 +1887,14 @@
       "Birthday": [
         "Narozeniny"
       ],
+      "Display name": [
+        "Zobrazované jméno"
+      ],
       "Email": [
         "E-mail"
+      ],
+      "First name": [
+        "Křestní jméno"
       ],
       "Gender": [
         "Pohlaví"
@@ -1878,6 +1904,9 @@
       ],
       "Language": [
         "Jazyk"
+      ],
+      "Last name": [
+        "Příjmení"
       ],
       "Logo": [
         "Logo"
@@ -3135,7 +3164,7 @@
     },
     "Email verification": {
       "Verification email sent to ${ address }": [
-        "Ověřovací email byl odeslán na ${ address }"
+        "Ověřovací e-mail byl odeslán na ${ address }"
       ]
     },
     "Enabled 2FA": {
@@ -3197,6 +3226,9 @@
       ],
       "Contact signature not verified": [
         "Podpis kontaktu nebyl ověřen"
+      ],
+      "Could not save preference": [
+        "Nelze uložit předvolbu"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Zrušte výběr nejméně ${ calendarsToFixCount } kalendáře",
@@ -3272,6 +3304,9 @@
       ],
       "Incorrect password": [
         "Nesprávné heslo"
+      ],
+      "Incorrect username": [
+        "Nesprávné uživatelské jméno"
       ],
       "Invalid ${ name } code": [
         "Neplatný kód ${ name }"
@@ -4382,8 +4417,14 @@
       "Add a name to identify your security key with.": [
         "Přidejte název, kterým identifikujete svůj bezpečnostní klíč."
       ],
+      "Allow platform keys": [
+        "Povolit klíče platformy"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Opravdu chcete odstranit bezpečnostní klíč ${ name }?"
+      ],
+      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
+        "Pokud je povolena, umožňuje kromě externích hardwarových bezpečnostních klíčů registrovat i vestavěná zařízení (například Windows Hello, TouchID, FaceID nebo interní TPM)."
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Vložte bezpečnostní klíč spojený s vaším účtem ${ BRAND_NAME }."
@@ -5422,7 +5463,7 @@
         "* Platební karta není vyžadována."
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
-        "**Získejte adresu ${ BRAND_NAME }** a používejte všechny služby ${ BRAND_NAME_TWO } včetně ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }."
+        "**Získejte adresu ${ BRAND_NAME }** pro používání všech služeb ${ BRAND_NAME_TWO } včetně ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusového místa na disku"
@@ -6172,7 +6213,7 @@
         "neaktivní"
       ],
       "Increase your account security by verifying your email address.": [
-        "Zvyšte zabezpečení svého účtu ověřením Vaší e-mailové adresy."
+        "Zvyšte zabezpečení svého účtu ověřením vaší e-mailové adresy."
       ],
       "Inherited from parent folder": [
         "Převzato z nadřazené složky"
@@ -6506,9 +6547,6 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Zkontrolujte prosím svůj soubor nebo zkuste použít náš ${ csvTemplateButton }."
-      ],
-      "Please contact the administrator of the organisation to manage the subscription.": [
-        "Prosím kontaktujte správce organizace pro správu předplatného."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Zadejte 12-slovnou frázi pro obnovení spojenou s vaším účtem."
@@ -6904,7 +6942,7 @@
         "Toto smaže všechny předchozí verze vašich souborů."
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
-        "Tím zakážete aktuální frázi pro obnovení. Nebudete ji moci použít pro přístup ke svému účtu ani pro dešifrování dat."
+        "Toto deaktivuje aktuální obnovovací frázi. Nebudete ji moci použít pro přístup ke svému účtu ani pro dešifrování dat."
       ],
       "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
         "Tímto se stáhne soubor obsahující soukromý klíč. Chraňte tento soubor zašifrováním pomocí hesla."
@@ -8150,6 +8188,9 @@
       "Conversation grouping": [
         "Seskupování konverzací"
       ],
+      "Conversations per page": [
+        "Konverzace na stránku"
+      ],
       "Copy": [
         "Kopírovat"
       ],
@@ -8437,6 +8478,9 @@
       ],
       "Message": [
         "Zpráva"
+      ],
+      "Messages per page": [
+        "Zprávy na stránku"
       ],
       "Moderate NAT": [
         "Moderate NAT"
@@ -8764,6 +8808,9 @@
       ],
       "Verification code": [
         "Ověřovací kód"
+      ],
+      "Verify keys with Key Transparency": [
+        "Ověření klíčů pomocí Key Transparency"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Je nám líto, že odcházíte. Sdělte nám svůj důvod, abychom pomohli zlepšit naše služby."
@@ -9153,7 +9200,7 @@
     },
     "Maintenance mode": {
       "Please check back in a few minutes.": [
-        "Zkontrolujte to prosím za několik minut."
+        "Vraťte se prosím zpět za několik minut."
       ],
       "This feature is temporarily unavailable": [
         "Tato funkce je dočasně nedostupná"
@@ -9904,7 +9951,7 @@
         "Neomezený počet zpráv za den"
       ],
       "Unlimited volume/bandwidth": [
-        "Neomezená šířka pásma"
+        "Neomezený objem/šířka pásma"
       ],
       "Up to ${ FAMILY_MAX_USERS } users": [
         "Až ${ FAMILY_MAX_USERS } uživatelů"
@@ -10025,6 +10072,9 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Zabezpečený e-mail s pokročilými funkcemi pro každodenní komunikaci."
+      ],
+      "Set automatic replies to inform senders you are out of the office or unable to respond.": [
+        "Nastavte automatické odpovědi, které informují odesílatele, že jste mimo kancelář nebo nemůžete odpovědět."
       ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Řešení na míru pro větší organizace se specifickými potřebami zabezpečení"
@@ -10904,9 +10954,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "${ PASS_APP_NAME } benefits": [
-        "Výhody ${ PASS_APP_NAME }"
-      ],
       "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
         "${ PASS_APP_NAME } je k dispozici jako rozšíření prohlížeče Firefox Add-ons."
       ],
@@ -11450,6 +11497,203 @@
       ],
       "to be created": [
         "které mají být vytvořeny"
+      ]
+    },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "Zrušit resetování"
+      ],
+      "Reset password": [
+        "Resetovat heslo"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "Obnovení účtu není k dispozici pro starší klíče adres"
+      ],
+      "Please generate keys before you try to change your password": [
+        "Než se pokusíte změnit si heslo, vygenerujte si prosím klíče"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } den",
+        "${ timeRemaining.inDays } dny",
+        "${ timeRemaining.inDays } dní",
+        "${ timeRemaining.inDays } dní"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } hodina",
+        "${ timeRemaining.inHours } hodiny",
+        "${ timeRemaining.inHours } hodin",
+        "${ timeRemaining.inHours } hodin"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inDays } den.",
+        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inDays } dny.",
+        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inDays } dní.",
+        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inDays } dní."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inHours } hodinu.",
+        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inHours } hodiny.",
+        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inHours } hodin.",
+        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inHours } hodin."
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Přejděte do přihlášeného zařízení (v relaci, ve které byl požadavek iniciován) a změňte heslo."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Toto oprávnění vyprší za ${ timeRemaining.inDays } den",
+        "Toto oprávnění vyprší za ${ timeRemaining.inDays } dny",
+        "Toto oprávnění vyprší za ${ timeRemaining.inDays } dní",
+        "Toto oprávnění vyprší za ${ timeRemaining.inDays } dní"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Toto oprávnění vyprší za ${ timeRemaining.inHours } hodinu",
+        "Toto oprávnění vyprší za ${ timeRemaining.inHours } hodiny",
+        "Toto oprávnění vyprší za ${ timeRemaining.inHours } hodin",
+        "Toto oprávnění vyprší za ${ timeRemaining.inHours } hodin"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Nyní si můžete libovolně změnit heslo k účtu ${ boldEmail } po dobu ${ boldDaysRemaining }."
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Podívejte se, jak"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Heslo uloženo"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Resetování hesla"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Zrušit resetování hesla"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Chcete-li proces resetování hesla zrušit, zadejte své aktuální heslo. Žádné další změny se neprojeví."
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "Resetování hesla zrušeno"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Zrušit resetování hesla?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Žádost o resetování hesla zrušena (${ user.Email }). Pokud nešlo o vaši žádost, ${ changePasswordLink }."
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "změňte si teď své heslo"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "Zrušit žádost"
+      ],
+      "Got it": [
+        "Rozumím"
+      ],
+      "Learn more": [
+        "Zjistit více"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "Zbývá ${ gracePeriodHoursRemaining } hodina",
+        "Zbývají ${ gracePeriodHoursRemaining } hodiny",
+        "Zbývá ${ gracePeriodHoursRemaining } hodin",
+        "Zbývá ${ gracePeriodHoursRemaining } hodin"
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "Pokud jste o obnovení hesla nepožádali, ihned zrušte tento požadavek."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Požadavek na obnovení hesla (${ user.Email }). Heslo můžete změnit za ${ hoursRemaining } hodinu.",
+        "Požadavek na obnovení hesla (${ user.Email }). Heslo můžete změnit za ${ hoursRemaining } hodiny.",
+        "Požadavek na obnovení hesla (${ user.Email }). Heslo můžete změnit za ${ hoursRemaining } hodin.",
+        "Požadavek na obnovení hesla (${ user.Email }). Heslo můžete změnit za ${ hoursRemaining } hodin."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "Abychom měli jistotu, že se o obnovení hesla pokoušíte skutečně vy, čekáme před schválením žádosti 72 hodin. Heslo si můžete změnit v ${ boldTimeLeft }. ${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "Obdrželi jsme žádost o resetování hesla pro ${ boldEmail }."
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "Zobrazit požadavek"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "Vyžádáno resetování hesla"
+      ]
+    },
+    "session_recovery:initiation:info": {
+      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
+        "Stav žádosti můžete kdykoli zkontrolovat v části ${ accountAndPasswordSectionLink } nastavení."
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "account and password section": [
+        "sekce účtu a hesla"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Odhlásit se"
+      ],
+      "Stay signed in": [
+        "Zůstat přihlášen(a)"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } hodina",
+        "${ gracePeriodHoursRemaining } hodiny",
+        "${ gracePeriodHoursRemaining } hodin",
+        "${ gracePeriodHoursRemaining } hodin"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } je nyní k dispozici."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Pokud se před resetováním hesla odhlásíte, můžete ztratit přístup ke svému účtu."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Pokud se bez resetování hesla odhlásíte, můžete ztratit přístup ke svému účtu."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Heslo budete moci resetovat za ${ boldTimeLeft }."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Reset hesla"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Odhlásit se bez resetování hesla?"
       ]
     },
     "Settings description": {
@@ -13454,7 +13698,7 @@
         "Varování: podezření na falešnou webovou stránku"
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
-        "Pošleme e-mail na Vaší novou e-mailovou adresu s instrukcemi k dokončení změny."
+        "Na vaši novou adresu vám zašleme e-mail s pokyny pro dokončení změny."
       ],
       "What would you like to import?": [
         "Co byste chtěli importovat?"
@@ -13721,7 +13965,7 @@
         "Vybraný motiv bude použit, když je systém nastaven na \"světlý režim\"."
       ],
       "This address has been disabled": [
-        "Tato adresa byla zakázána"
+        "Tato adresa byla deaktivována"
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Tato funkce zpožďuje odesílání e-mailů a dává vám možnost zrušit odeslání během zvoleného časového rámce."
@@ -13783,6 +14027,11 @@
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
         "Automaticky přidá veřejný klíč ke každé odeslané zprávě. Příjemci tak budou moci ověřit pravost vašich zpráv a odeslat zašifrovanou zprávu i Vám."
+      ]
+    },
+    "Tooltip default pgp scheme": {
+      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
+        "Vyberte výchozí nastavení PGP používané pro podepisování nebo šifrování zpráv s jinými než ${ BRAND_NAME } PGP uživateli. Všimněte si, že Inline PGP vynucuje zasílání zpráv v prostém textu."
       ]
     },
     "Tooltip prompt to trust keys": {

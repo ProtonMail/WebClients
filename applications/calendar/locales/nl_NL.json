@@ -210,6 +210,9 @@
       "Discard": [
         "Verwijderen"
       ],
+      "Don't know your password?": [
+        "Wachtwoord vergeten?"
+      ],
       "Done": [
         "Klaar"
       ],
@@ -387,6 +390,9 @@
       "No, thanks": [
         "Nee, bedankt"
       ],
+      "Ok": [
+        "Ok"
+      ],
       "OK": [
         "OK"
       ],
@@ -473,6 +479,9 @@
       ],
       "Search countries": [
         "Zoek landen"
+      ],
+      "See how": [
+        "Zie hoe"
       ],
       "See plan features": [
         "Bekijk de abonnementskenmerken"
@@ -2354,6 +2363,9 @@
       ],
       "Incorrect mailbox password. Please try again.": [
         "Onjuist mailbox-wachtwoord. Probeer het opnieuw."
+      ],
+      "Incorrect username": [
+        "Onjuiste gebruikersnaam"
       ],
       "Interval cannot be empty": [
         "Hehaling mag niet leeg zijn"
@@ -5549,6 +5561,78 @@
       ],
       "No results found": [
         "Geen resultaten gevonden"
+      ]
+    },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "Reset annuleren"
+      ],
+      "Reset password": [
+        "Wachtwoord resetten"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } dag",
+        "${ timeRemaining.inDays } dagen"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } uur",
+        "${ timeRemaining.inHours } uren"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Wachtwoord reset aanvraag goedgekeurd (${ user.Email }). U heeft ${ timeRemaining.inDays } dag om uw wachtwoord te resetten.",
+        "Wachtwoord reset aanvraag goedgekeurd (${ user.Email }). U heeft ${ timeRemaining.inDays } dagen om uw wachtwoord te resetten."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Wachtwoord reset aanvraag goedgekeurd (${ user.Email }). U heeft ${ timeRemaining.inHours } uur om uw wachtwoord te resetten.",
+        "Wachtwoord reset aanvraag goedgekeurd (${ user.Email }). U heeft ${ timeRemaining.inHours } ure om uw wachtwoord te resetten."
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "\"Ga naar het ingelogde apparaat (in de sessie waarin de aanvraag is gestart) om uw wachtwoord te wijzigen.\""
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Deze toestemming verloopt binnen ${ timeRemaining.inDays } dag",
+        "Deze toestemming verloopt binnen ${ timeRemaining.inDays } dagen"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Deze toestemming verloopt binnen ${ timeRemaining.inHours } uur",
+        "Deze toestemming verloopt binnen ${ timeRemaining.inHours } uren"
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Zie hoe"
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "wijzig uw wachtwoord nu"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "Aanvraag annuleren"
+      ],
+      "Got it": [
+        "Ik begrijp het"
+      ],
+      "Learn more": [
+        "Kom meer te weten"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "Indien u geen wachtwoord reset hebt aangevraagd, annuleer deze aanvraag dan nu."
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "We ontvingen een wachtwoord reset aanvraag voor ${ boldEmail }."
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } uur",
+        "${ gracePeriodHoursRemaining } uren"
       ]
     },
     "Settings update growler warning": {

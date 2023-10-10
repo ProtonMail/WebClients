@@ -29,6 +29,15 @@
       "Back": [
         "Wstecz"
       ],
+      "Can edit": [
+        "Edycja"
+      ],
+      "Can manage": [
+        "Zarządzanie"
+      ],
+      "Can view": [
+        "Odczyt"
+      ],
       "Can't find your password manager? Please let us know!": [
         "Nie możesz znaleźć swojego menedżera haseł? Daj nam znać!"
       ],
@@ -173,14 +182,26 @@
       "Importing": [
         "Importowanie"
       ],
+      "Invite people": [
+        "Zaproś użytkowników"
+      ],
+      "Join shared vault": [
+        "Dołącz do udostępnionego sejfu"
+      ],
       "Learn more": [
         "Dowiedz się więcej"
       ],
       "Leave": [
         "Opuść"
       ],
+      "Leave vault": [
+        "Opuść sejf"
+      ],
       "Lock extension": [
         "Zablokuj rozszerzenie"
+      ],
+      "Manage access": [
+        "Zarządzaj dostępem"
       ],
       "Manually sync your data": [
         "Synchronizuj dane"
@@ -221,11 +242,20 @@
       "Regenerate": [
         "Wygeneruj ponownie"
       ],
+      "Reject invitation": [
+        "Odrzuć zaproszenie"
+      ],
       "Reload extension": [
         "Odśwież rozszerzenie"
       ],
+      "Remove access": [
+        "Usuń dostęp"
+      ],
       "Request a feature": [
         "Poproś o dodatkową funkcję"
+      ],
+      "Resend invitation": [
+        "Wyślij ponownie zaproszenie"
       ],
       "Restore item": [
         "Przywróć element"
@@ -238,6 +268,12 @@
       ],
       "Saving": [
         "Zapisywanie"
+      ],
+      "See members": [
+        "Pokaż użytkowników"
+      ],
+      "Send invite": [
+        "Wyślij zaproszenie"
       ],
       "Send us a message": [
         "Wyślij nam wiadomość"
@@ -268,6 +304,9 @@
       ],
       "Submitting report...": [
         "Wysyłanie raportu..."
+      ],
+      "Transfer ownership": [
+        "Zmień właściciela"
       ],
       "Try again": [
         "Spróbuj ponownie"
@@ -328,11 +367,23 @@
       "Cannot create alias (${ error }).": [
         "Nie można utworzyć aliasu (${ error })."
       ],
+      "Cannot send invitation to this address at the moment": [
+        "W tej chwili nie można wysłać zaproszenia na ten adres"
+      ],
+      "Could not leave vault.": [
+        "Nie można opuścić sejfu."
+      ],
       "Could not open created vault": [
         "Nie można otworzyć utworzonego sejfu"
       ],
+      "Could not open invited vault": [
+        "Nie można otworzyć sejfu"
+      ],
       "Could not open updated vault": [
         "Nie można otworzyć zaktualizowanego sejfu"
+      ],
+      "Could not resolve share members": [
+        "Nie można załadować użytkowników sejfu"
       ],
       "Could not resume your session : ${ description }": [
         "Nie można wznowić sesji: ${ description }"
@@ -370,6 +421,21 @@
       "Error reporting problem": [
         "Wystąpił błąd podczas zgłaszania problemu"
       ],
+      "Failed removing the invite.": [
+        "Nie udało się usunąć zaproszenia."
+      ],
+      "Failed resending invite.": [
+        "Wystąpił błąd podczas wysyłania zaproszenia."
+      ],
+      "Failed to edit user's access.": [
+        "Nie udało się zmienić uprawień użytkownika."
+      ],
+      "Failed to remove user's access.": [
+        "Nie udało się usunąć uprawień użytkownika."
+      ],
+      "Failed to transfer this vault's ownership.": [
+        "Nie udało się zmienić właściciela sejfu."
+      ],
       "File could not be parsed": [
         "Plik nie mógł zostać przetworzony"
       ],
@@ -384,6 +450,18 @@
       ],
       "Invalid url": [
         "Adres URL jest nieprawidłowy"
+      ],
+      "Invitation could not be accepted": [
+        "Zaproszenie nie może zostać zaakceptowane"
+      ],
+      "Invitation could not be rejected": [
+        "Zaproszenie nie może zostać odrzucone"
+      ],
+      "Invite creation failed.": [
+        "Utworzenie zaproszenia nie powiodło się."
+      ],
+      "Invite successfully sent": [
+        "Zaproszenie zostało wysłane"
       ],
       "Item content cannot exceed 40KB": [
         "Rozmiar elementu nie może przekraczać 40kb"
@@ -411,9 +489,6 @@
       ],
       "Request timed out": [
         "Upłynął limit czasu żądania"
-      ],
-      "Requesting alias details failed": [
-        "Pobieranie szczegółów aliasu nie powiodło się"
       ],
       "Requesting alias options failed": [
         "Pobieranie opcji aliasu nie powiodło się"
@@ -462,6 +537,9 @@
       ],
       "Unknown error": [
         "Wystąpił nieznany błąd"
+      ],
+      "Unknown invite": [
+        "Nieznane zaproszenie"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Format pliku ${ PASS_APP_NAME } jest nieobsługiwany"
@@ -555,6 +633,18 @@
         "${ count } elementów",
         "${ count } elementów"
       ],
+      "${ itemCount } item": [
+        "${ itemCount } element",
+        "${ itemCount } elementy",
+        "${ itemCount } elementów",
+        "${ itemCount } elementów"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } użytkownik",
+        "${ memberCount } użytkowników",
+        "${ memberCount } użytkowników",
+        "${ memberCount } użytkowników"
+      ],
       "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
         "${ PASS_APP_NAME } obsługuje tylko importowanie danych logowania i notatek. Importowanie paszportów, załączników itp. nie jest obsługiwane."
       ],
@@ -581,6 +671,12 @@
         "Pozostały ${ trialDaysLeft } dni",
         "Pozostało ${ trialDaysLeft } dni",
         "Pozostało ${ trialDaysLeft } dnia"
+      ],
+      "${ vault.count } item": [
+        "${ vault.count } element",
+        "${ vault.count } elementy",
+        "${ vault.count } elementów",
+        "${ vault.count } elementów"
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Dostępna jest nowa wersja rozszerzenia ${ PASS_APP_NAME }. Zaktualizuj je, aby cieszyć się najnowszymi funkcjami i poprawkami błędów."
@@ -611,6 +707,27 @@
       ],
       "Autosaved on ${ submissionURL }": [
         "Zapisano na ${ submissionURL }"
+      ],
+      "Can create, edit, delete and export items in this vault.": [
+        "Może edytować i eksportować elementy w sejfie."
+      ],
+      "Can edit": [
+        "Edycja"
+      ],
+      "Can grant and revoke access to this vault, and delete it.": [
+        "Zarządza dostępem do sejfu."
+      ],
+      "Can grant and revoke access to this vault.": [
+        "Zarządza dostępem do sejfu."
+      ],
+      "Can manage": [
+        "Zarządzanie"
+      ],
+      "Can view": [
+        "Odczyt"
+      ],
+      "Can view items in this vault.": [
+        "Widzi elementy w sejfie."
       ],
       "Check out all the exclusive features that are available to you for a limited time.": [
         "Sprawdź wszystkie dodatkowe funkcje, które możesz przetestować przez ograniczony czas."
@@ -714,6 +831,12 @@
       "Internet connection lost": [
         "Połączenie z Internetem zostało utracone"
       ],
+      "Invite successfully removed": [
+        "Zaproszenie zostało usunięte"
+      ],
+      "Invite successfully resent": [
+        "Zaproszenie zostało wysłane"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Zalogowano już do ${ PASS_APP_NAME }. Jeśli próbujesz zalogować się do innego konta, najpierw wyloguj się z rozszerzenia."
       ],
@@ -753,6 +876,9 @@
       "Loading...": [
         "Ładowanie..."
       ],
+      "me": [
+        "ja"
+      ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "To więcej niż menedżer haseł. ${ PASS_APP_NAME } chroni Twoje hasło i osobisty adres e-mail za pomocą aliasów. Dzięki tej samej technologii, która stoi za pocztą ${ MAIL_APP_NAME }, Twoje dane są zaszyfrowane end-to-end i są dostępne tylko dla Ciebie."
       ],
@@ -771,11 +897,20 @@
       "Open the Extensions menu": [
         "Otwórz menu rozszerzenia"
       ],
+      "Owner": [
+        "Właściciel"
+      ],
+      "Ownership successfully transfered. You are no long the owner of this vault.": [
+        "Właściciel został zmieniony. Nie jesteś już właścicielem tego sejfu."
+      ],
       "Password copied": [
         "Hasło zostało skopiowane"
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Hasła starsze niż dzień zostaną automatycznie usunięte z historii."
+      ],
+      "Pending invitation": [
+        "Oczekujące zaproszenie"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Przypomnij ${ PASS_APP_NAME } do paska narzędzi"
@@ -810,6 +945,9 @@
       "Select the destination vault for each imported vault.": [
         "Wybierz docelowy sejf dla zaimportowanych sejfów."
       ],
+      "Select the level of access this user will gain when they join your vault.": [
+        "Wybierz uprawnienia użytkownika dla sejfu."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut"
       ],
@@ -834,6 +972,9 @@
       "Successfully exported all your items": [
         "Wyeksportowano wszystkie elementy"
       ],
+      "Successfully left the vault": [
+        "Opuszczono sejf"
+      ],
       "Successfully synced all vaults": [
         "Wszystkie sejfy zostały zsynchronizowane"
       ],
@@ -852,8 +993,17 @@
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Tekst, który próbujesz wkleić, jest dłuższy niż maksymalna dozwolona liczba ${ maxLength } znaków."
       ],
+      "The user did not accept the invitation yet.": [
+        "Użytkownik nie zaakceptował zaproszenia."
+      ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Ten eksport będzie niezaszyfrowany i każdy, kto uzyska dostęp do wyeksportowanego pliku, będzie mógł zobaczyć hasła. Ze względów bezpieczeństwa należy go usunąć po zakończeniu korzystania z niego."
+      ],
+      "This user will receive an invitation to join your '${ vaultName }' vault.": [
+        "Użytkownik otrzyma zaproszenie do sejfu '${ vaultName }'."
+      ],
+      "This vault is not currently shared with anyone. Invite people to share it with others.": [
+        "Sejf nie jest udostępniony. Zaproś do niego użytkowników."
       ],
       "Unable to copy to clipboard": [
         "Nie można skopiować do schowka"
@@ -866,6 +1016,12 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Ulepsz ${ PASS_APP_NAME }"
+      ],
+      "User's access removed": [
+        "Uprawienia użytkownika zostały usunięte"
+      ],
+      "User's access sucessfuly updated": [
+        "Uprawienia użytkownika zostały zaktualizowane"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Sejf \"${ payload.content.name }\" został usunięty"
@@ -887,6 +1043,9 @@
       ],
       "You are about to create:": [
         "Utworzysz:"
+      ],
+      "You cannot change the mailboxes for this alias.": [
+        "Nie można zmienić skrzynek pocztowych dla tego aliasu."
       ],
       "You have ${ daysRemaining } day left in your trial period.": [
         "Pozostał ${ daysRemaining } dzień wersji próbnej.",
@@ -914,6 +1073,9 @@
       ],
       "You're about to create": [
         "Utworzysz"
+      ],
+      "You've been invited to a vault. Click here to see the invitation.": [
+        "Otrzymano zaproszenie do sejfu. Kliknij, aby zobaczyć zaproszenie."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Sesja ${ PASS_APP_NAME } została zablokowana"
@@ -1217,6 +1379,9 @@
       "Report a problem": [
         "Zgłoś problem"
       ],
+      "Respond": [
+        "Odpowiedź"
+      ],
       "Restore all items": [
         "Przywróć wszystkie elementy"
       ],
@@ -1475,17 +1640,29 @@
       "Import to vault(s)": [
         "Importuj do sejfów"
       ],
+      "Leave vault ?": [
+        "Opuścić sejf?"
+      ],
       "Low disk space": [
         "Mało miejsca na dysku"
       ],
       "Permanently remove all items ?": [
         "Usunąć trwale wszystkie elementy?"
       ],
+      "Permissions": [
+        "Uprawnienia"
+      ],
       "Pin the extension": [
         "Przypnij rozszerzenie"
       ],
       "Secure your data": [
         "Zabezpiecz swoje dane"
+      ],
+      "Share with": [
+        "Udostępnij"
+      ],
+      "Shared vault invitation": [
+        "Zaproszenie do udostępnionego sejfu"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Przechodzisz na ${ PASS_APP_NAME }?"
@@ -1495,6 +1672,9 @@
       ],
       "The extension is now ready to use.": [
         "Rozszerzenie jest gotowe do użycia."
+      ],
+      "Transfer ownership": [
+        "Zmień właściciela"
       ],
       "Trash empty": [
         "Kosz jest pusty"
@@ -1563,6 +1743,9 @@
       "An error occured while exporting your data": [
         "Wystąpił błąd podczas eksportowania danych"
       ],
+      "Are you sure you want to transfer vault ownership to ${ email }?": [
+        "Czy na pewno chcesz zmienić właściciela na ${ email }?"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Nie można pobrać skrzynek pocztowych dla tego aliasu"
       ],
@@ -1608,6 +1791,9 @@
       "PGP encrypted export file requires passphrase": [
         "Plik eksportu danych zaszyfrowany PGP wymaga hasła"
       ],
+      "Please enter a valid email address": [
+        "Wpisz prawidłowy adres e-mail"
+      ],
       "Please log back in": [
         "Zaloguj się ponownie"
       ],
@@ -1649,6 +1835,9 @@
       ],
       "You must select at least one mailbox": [
         "Wybierz, co najmniej jedną skrzynkę pocztową"
+      ],
+      "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
+        "Nie masz dostępu do tego sejfu. Jeśli chcesz ponownie dołączyć do sejfu, potrzebujesz nowego zaproszenia."
       ],
       "Your plan does not allow you to create more aliases": [
         "Twój plan nie pozwala na utworzenie większej liczby aliasów"

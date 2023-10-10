@@ -335,6 +335,9 @@
       "Discard": [
         "Відхилити"
       ],
+      "Don't know your password?": [
+        "Не знаєте свій пароль?"
+      ],
       "Don't show again": [
         "Не показувати знову"
       ],
@@ -623,6 +626,9 @@
       "OK": [
         "Застосувати"
       ],
+      "Ok": [
+        "Добре"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Відкрити налаштування ${ CALENDAR_APP_NAME }"
       ],
@@ -793,6 +799,9 @@
       ],
       "Search settings": [
         "Шукати налаштування"
+      ],
+      "See how": [
+        "Подивитись як"
       ],
       "See plan features": [
         "Переглянути можливості тарифного плану"
@@ -3287,6 +3296,9 @@
       ],
       "Incorrect password": [
         "Неправильний пароль"
+      ],
+      "Incorrect username": [
+        "Неправильне ім'я користувача"
       ],
       "Invalid ${ name } code": [
         "Недійсний код ${ name }"
@@ -6527,9 +6539,6 @@
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Перевірте свій файл або спробуйте скористатися нашим ${ csvTemplateButton }."
-      ],
-      "Please contact the administrator of the organisation to manage the subscription.": [
-        "Зверніться до адміністратора організації, щоб керувати передплатою."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Введіть фразу відновлення з 12 слів, пов'язану з вашим обліковим записом."
@@ -10934,9 +10943,6 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "${ PASS_APP_NAME } benefits": [
-        "Переваги ${ PASS_APP_NAME }"
-      ],
       "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
         "${ PASS_APP_NAME } доступний у вигляді розширення для браузера в Додатках Firefox."
       ],
@@ -11480,6 +11486,17 @@
       ],
       "to be created": [
         "буде створено"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "Скасувати запит"
+      ],
+      "Got it": [
+        "Зрозуміло"
+      ],
+      "Learn more": [
+        "Докладніше"
       ]
     },
     "Settings description": {

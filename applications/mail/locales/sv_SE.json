@@ -2913,8 +2913,8 @@
         "Sammanfogar kontakter... Detta kan ta några minuter. När processen är slutförd kan du stänga detta fönster."
       ],
       "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
-        "Nya e-postmeddelanden från ${ senderEmailAddress } och ${ otherSendersCount } övrigt kommer inte att levereras och kommer att tas bort permanent.",
-        "Nya e-postmeddelanden från ${ senderEmailAddress } och ${ otherSendersCount } övriga kommer inte att levereras och kommer att tas bort permanent."
+        "Nya e-postmeddelanden från ${ senderEmailAddress } och ${ otherSendersCount } annan kommer inte att levereras och kommer att tas bort permanent.",
+        "Nya e-postmeddelanden från ${ senderEmailAddress } och ${ otherSendersCount } andra kommer inte att levereras och kommer att tas bort permanent."
       ],
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Nya e-postmeddelanden från ${ senderEmailAddress } kommer inte att levereras och kommer att tas bort permanent."
@@ -4457,7 +4457,7 @@
         "${ CONTACTS_APP_NAME } stöder inte ${ forNow }:"
       ],
       "for now": [
-        "för närvarande"
+        "tills vidare"
       ]
     },
     "Import error": {
@@ -4957,7 +4957,7 @@
         "Rensa data"
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
-        "Vid rensning av webbläsardata så deaktiveras också sökning av meddelandeinnehåll på den här enheten. Alla meddelanden kommer att behöva laddas ned igen för att kunna söka inom dem."
+        "Genom att rensa webbläsardata inaktiverades även sökning av meddelandeinnehåll på denna enhet. Alla meddelanden måste laddas ner igen för att kunna söka i dem."
       ],
       "Clears browser data related to message content search including downloaded messages": [
         "Rensar webbläsardata relaterad till sökning av meddelandeinnehåll inklusive nedladdade meddelanden"
@@ -5618,7 +5618,7 @@
         "Text att visa"
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Applikationen måste avkryptera dina kontakter lokalt innan de kan exporteras. I slutet av processen kommer en VCF-fil att genereras som du sedan kan ladda ner."
+        "Applikationen måste dekryptera dina kontakter lokalt innan de kan exporteras. I slutet av processen kommer en VCF-fil att genereras och du kommer att kunna ladda ner den."
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "De data du har angett i utkastet kanske inte sparas om du lämnar sidan."
@@ -5692,7 +5692,7 @@
         "Denna länk kan vara en homograf-attack och kan inte öppnas av Edge-webbläsaren. Om du är säker på att länken är legitim, använd en annan webbläsare för att öppna den."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Denna länk kan vara en homograf-attack. Vänligen verifiera att detta är länken du vill besöka, annars öppna den ej."
+        "Denna länk kan vara en homografisk attack. Kontrollera att det är denna länk du vill besöka, eller öppna den inte."
       ],
       "This message has been adjusted to comply with a dark background.": [
         "Detta meddelande har justerats för att överensstämma med en mörk bakgrund."
@@ -5707,7 +5707,7 @@
         "Detta meddelande är signerat med en nyckel som inte är betrodd ännu."
       ],
       "This message is signed by the key attached, that has not been trusted yet.": [
-        "Detta meddelande är signerat med den bifogade nyckeln, som ännu inte är betrodd."
+        "Detta meddelande är signerat med den bifogade nyckeln som inte har blivit betrodd ännu."
       ],
       "This message will be automatically deleted on ${ longDateMEssage }": [
         "Detta meddelande kommer tas bort automatiskt den ${ longDateMEssage }"
@@ -5762,7 +5762,7 @@
         "För att importera händelser, skapa först en kalender i ${ CALENDAR_APP_NAME }. Det är här händelserna kommer att visas efter importen."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "För att signera om dina kontakter måste vi kontrollera varje kontakt mot listan över krypteringsnycklar som finns på ditt konto. Om ingen matchning hittas, kommer din kontakt att signeras om med den primära krypteringsnyckeln."
+        "För att signera om dina kontakter måste vi kontrollera varje kontakt mot listan över tillgängliga krypteringsnycklar på ditt konto. Om ingen matchning hittas kommer din kontakt att signeras om med den primära krypteringsnyckeln."
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
         "För att återställa dina data måste du återaktivera kontonyckeln som användes vid den tidpunkt då data skapades. Detta kräver att du kommer ihåg lösenordet som användes när nyckeln skapades."
@@ -5903,7 +5903,7 @@
         "När du aktiverade betrodda nycklar för ${ senderName } lades de offentliga nycklarna till i kontaktuppgifterna."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "När du aktiverar tvåfaktors-autentisering kommer vi att erbjuda återställningskoder som du kan använda för att logga in om du förlorar åtkomst till din autentiserings-app."
+        "När du ställer in tvåfaktorsautentisering tillhandahåller vi återställningskoder som du kan använda för att logga in om du förlorar åtkomsten till din autentiseringsapp."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vill du få en ny verifieringskod eller använda en alternativ verifieringsmetod?"
@@ -5976,7 +5976,7 @@
         "Du har inte angett något ämne för din e-post. Vill du skicka meddelandet ändå?"
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
-        "Du har nått 100% av din lagringskapacitet. Överväg att frigöra lite utrymme eller uppgradera ditt konto med ytterligare lagringsutrymme för att komponera nya meddelanden."
+        "Du har nått 100 % av din lagringskapacitet. Överväg att frigöra lite utrymme eller uppgradera ditt konto med ytterligare lagringsutrymme för att skriva nya meddelanden."
       ],
       "You have reached the maximum number of 5 replies.": [
         "Du har nått gränsen på maximalt 5 svar."
@@ -7122,7 +7122,7 @@
     },
     "Message notification": {
       "Scheduled sending undone": [
-        "Schemalagd sändning avbruten"
+        "Schemalagd sändning ångrad"
       ],
       "Scheduling canceled. Message has been moved to Drafts.": [
         "Schemaläggning avbruten. Meddelandet har flyttats till Utkast."
@@ -7799,8 +7799,8 @@
         "Vill du skicka e-post ändå?"
       ],
       "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
-        "Om du väljer att skicka meddelandet ändå, kommer det inte att förfalla för följande mottagare:",
-        "Om du väljer att skicka meddelandet ändå, kommer det inte att förfalla för följande mottagare:"
+        "Om du bestämmer dig för att skicka meddelandet ändå kommer följande mottagare att få e-postmeddelandet utan att det löper ut:",
+        "Om du bestämmer dig för att skicka meddelandet ändå kommer följande mottagare att få e-postmeddelandet utan att det löper ut:"
       ],
       "The following address is not valid: ${ invalidAddresses }": [
         "Följande adress är inte giltig: ${ invalidAddresses }",
@@ -8396,7 +8396,7 @@
         "${ elementsCount } konversationer markerade som lästa."
       ],
       "${ elementsCount } conversation marked as Starred.": [
-        "${ elementsCount } konversation markerad som Stjärnmärkt.",
+        "${ elementsCount } konversation markerad som stjärnmärkt.",
         "${ elementsCount } konversationer markerade som stjärnmärkta."
       ],
       "${ elementsCount } conversation marked as unread.": [
@@ -8428,7 +8428,7 @@
         "${ elementsCount } meddelanden markerade som lästa."
       ],
       "${ elementsCount } message marked as Starred.": [
-        "${ elementsCount } meddelande markerat som Stjärnmärkt.",
+        "${ elementsCount } meddelande markerat som stjärnmärkt.",
         "${ elementsCount } meddelanden markerade som stjärnmärkta."
       ],
       "${ elementsCount } message marked as unread.": [
@@ -9355,7 +9355,7 @@
     },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "Automatisk indikerar att formatet i kompositören används för att skicka till den här användaren. Enkel text indikerar att meddelandet alltid kommer att konverteras till vanlig text vid sändning."
+        "Indikerar automatisk att formatet i skrivfönstret används för att skicka till denna användare. Oformaterad text indikerar att meddelandet alltid kommer att konverteras till oformaterad text vid sändning."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Växla automatiskt mellan dina föredragna teman för dag och natt i synk med ditt systems dag- och nattlägen"
