@@ -5590,10 +5590,10 @@
         "${ timeRemaining.inHours } heures"
       ],
       "Didn’t make this request?": [
-        "Vous n'avez pas effectué cette demande·?"
+        "Vous n'êtes pas à l'origine de cette demande ?"
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
-        "Si vous n'êtes pas à l'origine de la demande de réinitialisation de votre mot de passe, annulez maintenant la demande."
+        "Si vous n'êtes pas à l'origine de la demande de réinitialisation de votre mot de passe, annulez la demande maintenant."
       ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
         "La demande de réinitialisation du mot de passe a été validée (${ user.Email }). Vous disposez de ${ timeRemaining.inDays } jour pour réinitialiser votre mot de passe.",
@@ -5689,7 +5689,7 @@
         "${ gracePeriodHoursRemaining } heures en plus"
       ],
       "Didn’t make this request?": [
-        "Vous n'avez pas effectué cette demande·?"
+        "Vous n'êtes pas à l'origine de cette demande ?"
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Si vous n'êtes pas à l'origine de la demande de réinitialisation de votre mot de passe, annulez maintenant la demande."
@@ -5747,12 +5747,12 @@
         "Nous vous recontacterons dès que la réinitialisation du mot de passe sera disponible."
       ],
       "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
-        "Vous pouvez à tout moment vérifier l'état de votre demande dans la section ${ accountAndPasswordSectionLink } des paramètres."
+        "Vous pouvez à tout moment vérifier l'état de votre demande ${ accountAndPasswordSectionLink } des paramètres."
       ]
     },
     "session_recovery:initiation:link": {
       "account and password section": [
-        "Compte et mot de passe"
+        "dans la section Compte et mot de passe"
       ]
     },
     "session_recovery:initiation:notification": {
@@ -5762,7 +5762,7 @@
     },
     "session_recovery:initiation:title": {
       "Request password reset?": [
-        "Demander une réinitialisation du mot de passe·?"
+        "Demander la réinitialisation du mot de passe ?"
       ],
       "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
         "Vous pourrez réinitialiser votre mot de passe dans ${ gracePeriodHoursRemaining } heure.",
@@ -5802,7 +5802,7 @@
     },
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
-        "Se déconnecter sans faire une réinitialisation du mot de passe ?"
+        "Se déconnecter sans faire la réinitialisation du mot de passe ?"
       ]
     },
     "session_recovery:status:info": {
