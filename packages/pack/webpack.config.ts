@@ -85,6 +85,10 @@ const getConfig = (env: any): Configuration => {
                     const strippedChunkName = chunkName.replaceAll(/-index-js|-json/g, '');
                     return result.replace('[name]', strippedChunkName);
                 }
+                // Drive need static URL for transpiled SW
+                if (chunkName && chunkName.startsWith('downloadSW')) {
+                    return `[name].js?v=${version}`;
+                }
                 return result;
             },
             assetModuleFilename: (data) => {
