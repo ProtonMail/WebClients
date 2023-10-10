@@ -3,6 +3,7 @@ import { MailboxItemsQueryParams } from '@proton/shared/lib/api/mailbox';
 import { getMessage, queryMessageMetadata } from '@proton/shared/lib/api/messages';
 import { MAX_MESSAGES_FETCH_CHUNK_SIZE } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import { omit, pick } from '@proton/shared/lib/helpers/object';
 import { Api, MailPageSize } from '@proton/shared/lib/interfaces';
 import range from '@proton/utils/range';
 
@@ -72,7 +73,9 @@ export const queryElementsInBatch = async (
      * - Example: if `settingsPageSize = 200` & `page = 3`, we cannot send such request, we request only per pages of 50. So to get to page 3, we need to ask page 12 -> _(200 / 50) * 4 = 12_
      */
     const apiPage = chunksPerPage * clientPage;
-    const fetchCount = chunksPerPage * 2;
+
+    // If items to fetch is less than 100, then we fetch next page in advance
+    const fetchCount = settingsPageSize < MailPageSize.ONE_HUNDRED ? chunksPerPage * 2 : chunksPerPage;
 
     const queryParameters = getQueryElementsParameters({
         page: apiPage,
@@ -105,15 +108,19 @@ export const queryElementsInBatch = async (
 
                 const query = conversationMode ? queryConversations : queryMessageMetadata;
 
+                const internalQueryParameters = {
+                    ...omit(queryParameters, ['Page', 'PageSize']),
+                    Limit: MAX_MESSAGES_FETCH_CHUNK_SIZE,
+                    ...('Anchor' in previousResult
+                        ? {
+                              Anchor: previousResult.Anchor,
+                              AnchorID: previousResult.AnchorID,
+                          }
+                        : pick(queryParameters, ['Page', 'PageSize'])),
+                };
+
                 const result = await api({
-                    ...query({
-                        ...queryParameters,
-                        Limit: MAX_MESSAGES_FETCH_CHUNK_SIZE,
-                        ...('Anchor' in previousResult && {
-                            Anchor: previousResult.Anchor,
-                            AnchorID: previousResult.AnchorID,
-                        }),
-                    }),
+                    ...query(internalQueryParameters),
                     signal: newAbortController.signal,
                 });
 
@@ -124,7 +131,7 @@ export const queryElementsInBatch = async (
 
                 return {
                     abortController: newAbortController,
-                    More: result.Total >= MAX_MESSAGES_FETCH_CHUNK_SIZE,
+                    More: elements.length >= MAX_MESSAGES_FETCH_CHUNK_SIZE,
                     Total: newElements.length,
                     Elements: newElements,
                     Stale: result.Stale,
