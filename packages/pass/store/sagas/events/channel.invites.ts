@@ -15,7 +15,7 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import { type EventManagerEvent, NOOP_EVENT } from '../../../events/manager';
 import { syncInvites } from '../../actions';
 import type { InviteState } from '../../reducers/invites';
-import { selectUserFeature } from '../../selectors';
+import { selectFeatureFlag } from '../../selectors';
 import { selectInvites } from '../../selectors/invites';
 import type { WorkerRootSagaOptions } from '../../types';
 import { getPublicKeysForEmail } from '../workers/address';
@@ -86,7 +86,7 @@ export const createInvitesChannel = (api: Api) =>
     });
 
 export function* invitesChannel(api: Api, options: WorkerRootSagaOptions) {
-    const sharingEnabled: boolean = yield select(selectUserFeature(PassFeature.PassSharingV1));
+    const sharingEnabled: boolean = yield select(selectFeatureFlag(PassFeature.PassSharingV1));
     if (!sharingEnabled) return;
 
     logger.info(`[${NAMESPACE}] start polling for invites`);

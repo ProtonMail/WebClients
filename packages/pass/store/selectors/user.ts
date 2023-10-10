@@ -54,7 +54,9 @@ export const selectAddress =
 
 export const selectLatestEventId = ({ user: { eventId } }: State) => eventId;
 
-export const selectUserFeature =
+export const selectFeatureFlags = ({ user: { features } }: State) => features;
+
+export const selectFeatureFlag =
     (feature: PassFeature) =>
     ({ user: { features } }: State): boolean =>
         features?.[feature] ?? false;
