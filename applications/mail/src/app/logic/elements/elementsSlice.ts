@@ -59,6 +59,7 @@ import { ElementsState, ElementsStateParams, NewStateParams, TaskRunningInfo } f
 
 export const newState = ({
     page = 0,
+    pageSize = DEFAULT_MAIL_PAGE_SIZE,
     params = {},
     retry = { payload: null, count: 0, error: undefined },
     beforeFirstLoad = true,
@@ -72,6 +73,7 @@ export const newState = ({
         search: {},
         esEnabled: false,
     };
+
     return {
         beforeFirstLoad,
         invalidated: false,
@@ -79,10 +81,10 @@ export const newState = ({
         pendingActions: 0,
         params: { ...defaultParams, ...params },
         page,
+        pageSize,
         total: undefined,
         elements: {},
         pages: [],
-        pageSize: DEFAULT_MAIL_PAGE_SIZE,
         bypassFilter: [],
         retry,
         taskRunning,
