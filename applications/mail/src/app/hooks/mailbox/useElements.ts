@@ -138,7 +138,7 @@ export const useElements: UseElements = ({
     // Main effect watching all inputs and responsible to trigger actions on the cache
     useEffect(() => {
         if (shouldResetCache) {
-            dispatch(reset({ page, params: { labelID, conversationMode, sort, filter, esEnabled, search } }));
+            dispatch(reset({ page, pageSize, params: { labelID, conversationMode, sort, filter, esEnabled, search } }));
         }
 
         /**
@@ -167,7 +167,9 @@ export const useElements: UseElements = ({
         /**
          * Get back to first page on page size change
          */
-        onPage(0);
+        if (previousPageSize && previousPageSize !== pageSize) {
+            onPage(0);
+        }
     }, [pageSize]);
 
     // Move to the last page if the current one becomes empty
