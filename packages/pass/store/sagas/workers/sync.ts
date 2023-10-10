@@ -1,9 +1,8 @@
 import { put } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/crypto';
-import type { Maybe, ShareType } from '@proton/pass/types';
+import type { Maybe, MaybeNull, ShareType } from '@proton/pass/types';
 import { type Share, type ShareGetResponse } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { partition } from '@proton/pass/utils/array';
 import { and, invert, notIn, pipe, prop } from '@proton/pass/utils/fp';
@@ -15,9 +14,9 @@ import { isActiveVault, isOwnVault, isPrimaryVault, isWritableVault } from '@pro
 import { toMap } from '@proton/shared/lib/helpers/object';
 
 import { notification } from '../../actions';
-import type { ItemsByShareId } from '../../reducers';
+import type { FeatureFlagState, ItemsByShareId } from '../../reducers';
 import type { SharesState } from '../../reducers/shares';
-import { selectAllShares, selectItems, selectUserFeature } from '../../selectors';
+import { selectAllShares, selectItems } from '../../selectors';
 import type { State, WorkerRootSagaOptions } from '../../types';
 import { requestItemsForShareId } from './items';
 import { loadShare, requestShares } from './shares';
@@ -36,6 +35,7 @@ export enum SyncType {
 export function* synchronize(
     state: State,
     type: SyncType,
+    features: MaybeNull<FeatureFlagState>,
     { onShareEventDisabled }: WorkerRootSagaOptions
 ): Generator<unknown, SynchronizationResult> {
     const cachedShares = selectAllShares(state);
@@ -91,8 +91,7 @@ export function* synchronize(
     const incomingShares = activeRemoteShares.map(prop('share')) as Share[];
     const incomingShareIds = incomingShares.map(prop('shareId'));
 
-    const primaryVaultDisabled = selectUserFeature(PassFeature.PassRemovePrimaryVault)(state);
-
+    const primaryVaultDisabled = features?.PassRemovePrimaryVault ?? false;
     const hasDefaultVault = incomingShares
         .concat(cachedShares)
         .some(and(isActiveVault, ...(primaryVaultDisabled ? [isWritableVault, isOwnVault] : [isPrimaryVault])));
@@ -100,7 +99,7 @@ export function* synchronize(
     /* When syncing, if no owned writable vault exists, create it. This
      * accounts for first login, default vault being disabledl. */
     if (!hasDefaultVault) {
-        logger.info(`[Saga::Sync] No primary vault found, creating primary vault..`);
+        logger.info(`[Saga::Sync] No default vault found, creating primary vault..`);
         const primaryVault = (yield createVault({
             content: { name: 'Personal', description: 'Personal vault', display: {} },
             ...(primaryVaultDisabled ? {} : { primary: true }),
