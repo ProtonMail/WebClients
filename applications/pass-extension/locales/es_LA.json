@@ -30,13 +30,13 @@
         "Atrás"
       ],
       "Can edit": [
-        "Puede editar"
+        "Editar"
       ],
       "Can manage": [
-        "Puede gestionar"
+        "Gestionar"
       ],
       "Can view": [
-        "Puede ver"
+        "Ver"
       ],
       "Can't find your password manager? Please let us know!": [
         "¿No encuentra su gestor de contraseñas? ¡Háganoslo saber!"
@@ -367,6 +367,9 @@
       "Cannot create alias (${ error }).": [
         "No se puede crear el alias (${ error })."
       ],
+      "Cannot send invitation to this address at the moment": [
+        "No se puede enviar una invitación a esta dirección por el momento."
+      ],
       "Could not leave vault.": [
         "No se pudo dejar la bóveda."
       ],
@@ -378,6 +381,9 @@
       ],
       "Could not open updated vault": [
         "No se pudo abrir la bóveda actualizada"
+      ],
+      "Could not resolve share members": [
+        "No se pudo determinar los destinatarios del recurso compartido"
       ],
       "Could not resume your session : ${ description }": [
         "No se pudo reanudar su sesión: ${ description }"
@@ -481,9 +487,6 @@
       ],
       "Request timed out": [
         "Tiempo de espera agotado"
-      ],
-      "Requesting alias details failed": [
-        "Error al solicitar detalles de alias"
       ],
       "Requesting alias options failed": [
         "Error al solicitar opciones de alias"
@@ -681,7 +684,7 @@
         "Puede crear, editar, eliminar y exportar elementos en esta bóveda."
       ],
       "Can edit": [
-        "Puede editar"
+        "Editar"
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Puede conceder y revocar acceso a esta bóveda y eliminarla."
@@ -690,13 +693,13 @@
         "Puede conceder y revocar acceso a esta bóveda."
       ],
       "Can manage": [
-        "Puede gestionar"
+        "Gestionar"
       ],
       "Can view": [
-        "Puede ver"
+        "Ver"
       ],
       "Can view items in this vault.": [
-        "Puede ver elementos en esta bóveda."
+        "Permite ver los elementos en esta bóveda."
       ],
       "Check out all the exclusive features that are available to you for a limited time.": [
         "Eche un vistazo a todas las funciones exclusivas que están disponibles para usted por tiempo limitado."
@@ -802,7 +805,7 @@
         "Invitación eliminada con éxito"
       ],
       "Invite successfully resent": [
-        "Invitación enviada con éxito"
+        "La invitación fue enviada."
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Parece que ya había iniciado sesión en ${ PASS_APP_NAME }. Si desea iniciar sesión con una cuenta diferente, cierre previamente la sesión actual."
@@ -866,7 +869,7 @@
         "Propietario"
       ],
       "Ownership successfully transfered. You are no long the owner of this vault.": [
-        "Propiedad transferida con éxito. Ya no tiene la propiedad de esta bóveda."
+        "La propiedad fue transferida. Ya no tiene la propiedad de esta bóveda."
       ],
       "Password copied": [
         "Contraseña copiada"
@@ -938,7 +941,7 @@
         "Todos sus elementos exportados con éxito."
       ],
       "Successfully left the vault": [
-        "Ha dejado la bóveda con éxito"
+        "Ha dejado la bóveda."
       ],
       "Successfully synced all vaults": [
         "Todas las bóvedas sincronizadas con éxito"
@@ -957,7 +960,7 @@
         "El texto que intenta pegar es más largo que el máximo permitido de ${ maxLength } caracteres."
       ],
       "The user did not accept the invitation yet.": [
-        "El usuario aún no acepta la invitación."
+        "El usuario aún no aceptó la invitación."
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Esta exportación no estará cifrada y cualquier persona con acceso a su archivo exportado podrá ver sus contraseñas. Por seguridad, elimínelo una vez que haya terminado de usarlo."
@@ -984,7 +987,7 @@
         "Acceso del usuario eliminado"
       ],
       "User's access sucessfuly updated": [
-        "Acceso del usuario actualizado con éxito"
+        "Se actualizó el acceso del usuario."
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Bóveda \"${ payload.content.name }\" eliminada con éxito"
@@ -1006,6 +1009,9 @@
       ],
       "You are about to create:": [
         "Está por crear:"
+      ],
+      "You cannot change the mailboxes for this alias.": [
+        "No puede cambiar los buzones para este alias."
       ],
       "You have ${ daysRemaining } day left in your trial period.": [
         "Tiene ${ daysRemaining } día restante de su periodo de prueba.",
@@ -1701,7 +1707,7 @@
         "Se produjo un error al exportar sus datos"
       ],
       "Are you sure you want to transfer vault ownership to ${ email }?": [
-        "¿En verdad desea transferir la propiedad de la bóveda a ${ email }?"
+        "¿Está seguro de que quiere transferir la propiedad de la bóveda a ${ email }?"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "No se pueden recuperar buzones para este alias en este momento"
@@ -1788,7 +1794,7 @@
         "No puede crear más bóvedas de las que permite su suscripción."
       ],
       "You have unsaved changes, are you sure you want to discard them?": [
-        "Tiene cambios sin guardar. ¿En verdad desea descartarlos?"
+        "Tiene cambios sin guardar. ¿Está seguro de que quiere descartarlos?"
       ],
       "You must select at least one mailbox": [
         "Debe seleccionar al menos un buzón"

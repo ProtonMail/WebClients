@@ -367,6 +367,9 @@
       "Cannot create alias (${ error }).": [
         "Kan inte skapa alias (${ error })."
       ],
+      "Cannot send invitation to this address at the moment": [
+        "Kan inte skicka inbjudan till denna adress just nu"
+      ],
       "Could not leave vault.": [
         "Kunde inte lämna valv."
       ],
@@ -481,9 +484,6 @@
       ],
       "Request timed out": [
         "Förfrågan gjorde timeout"
-      ],
-      "Requesting alias details failed": [
-        "Misslyckades begära aliasdetaljer"
       ],
       "Requesting alias options failed": [
         "Misslyckades begära aliasalternativ"

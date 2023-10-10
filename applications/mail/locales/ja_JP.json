@@ -3410,6 +3410,9 @@
       "Wrong mailbox password": [
         "メールボックスのパスワードが間違っています"
       ],
+      "You can't send a mail to more than ${ maxContacts } recipients": [
+        "${ maxContacts }件以上の宛先へメールを送信することはできません"
+      ],
       "You cannot open more than ${ maxActiveComposer } composer windows at a time": [
         "同時に ${ maxActiveComposer } つ以上の作成画面を開くことはできません"
       ],

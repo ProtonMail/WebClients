@@ -323,11 +323,20 @@
       "Cannot create alias (${ error }).": [
         "Не могу создать псевдоним (${ error })."
       ],
+      "Could not leave vault.": [
+        "Не удалось покинуть хранилище."
+      ],
       "Could not open created vault": [
         "Не могу открыть созданное хранилище"
       ],
+      "Could not open invited vault": [
+        "Не могу открыть приглашенное хранилище"
+      ],
       "Could not open updated vault": [
         "Не могу открыть обновлённое хранилище"
+      ],
+      "Could not resolve share members": [
+        "Не удалось сопоставить членов общего доступа"
       ],
       "Could not resume your session : ${ description }": [
         "Не удалось возобновить вашу сессию: ${ description }"
@@ -365,6 +374,21 @@
       "Error reporting problem": [
         "Ошибка при сообщении о проблеме"
       ],
+      "Failed removing the invite.": [
+        "Не удалось удалить приглашение."
+      ],
+      "Failed resending invite.": [
+        "Не удалось повторно отправить приглашение."
+      ],
+      "Failed to edit user's access.": [
+        "Не удалось изменить доступ пользователя."
+      ],
+      "Failed to remove user's access.": [
+        "Не удалось удалить доступ пользователя."
+      ],
+      "Failed to transfer this vault's ownership.": [
+        "Сбой при передаче владения хранилищем."
+      ],
       "File could not be parsed": [
         "Файл не может быть обработан"
       ],
@@ -379,6 +403,18 @@
       ],
       "Invalid url": [
         "Недействительный url"
+      ],
+      "Invitation could not be accepted": [
+        "Приглашение не может быть принято"
+      ],
+      "Invitation could not be rejected": [
+        "Приглашение не может быть отклонено"
+      ],
+      "Invite creation failed.": [
+        "Сбой создания приглашения."
+      ],
+      "Invite successfully sent": [
+        "Приглашение успешно отправлено"
       ],
       "Item content cannot exceed 40KB": [
         "Содержимое элемента не может превышать 40 Кбайт"
@@ -406,9 +442,6 @@
       ],
       "Request timed out": [
         "Время запроса истекло"
-      ],
-      "Requesting alias details failed": [
-        "Сбой при запросе подробностей о псевдониме"
       ],
       "Requesting alias options failed": [
         "Сбой при запросе вариантов псевдонимов"
@@ -457,6 +490,9 @@
       ],
       "Unknown error": [
         "Неизвестная ошибка"
+      ],
+      "Unknown invite": [
+        "Неизвестное приглашение"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Неподдерживаемый формат файла ${ PASS_APP_NAME }"
@@ -550,6 +586,18 @@
         "${ count } элементов",
         "${ count } элементов"
       ],
+      "${ itemCount } item": [
+        "${ itemCount } элемент",
+        "${ itemCount } элемента",
+        "${ itemCount } элементов",
+        "${ itemCount } элемента"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } член",
+        "${ memberCount } члена",
+        "${ memberCount } членов",
+        "${ memberCount } член"
+      ],
       "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
         "${ PASS_APP_NAME } импортирует только имена и заметки. Паспорта, прикрепленные файлы и т. д. в данный момент не поддерживаются."
       ],
@@ -576,6 +624,12 @@
         "Осталось ${ trialDaysLeft } дня",
         "Осталось ${ trialDaysLeft } дней",
         "Осталось ${ trialDaysLeft } дня"
+      ],
+      "${ vault.count } item": [
+        "${ vault.count } элемент",
+        "${ vault.count } элемента",
+        "${ vault.count } элементов",
+        "${ vault.count } элемента"
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Доступна новая версия ${ PASS_APP_NAME }. Обновите ее, чтобы насладиться последними функциями и исправлениями ошибок."
@@ -606,6 +660,27 @@
       ],
       "Autosaved on ${ submissionURL }": [
         "Автосохранено ${ submissionURL }"
+      ],
+      "Can create, edit, delete and export items in this vault.": [
+        "Может создавать, редактировать, удалять и экспортировать элементы этого хранилища."
+      ],
+      "Can edit": [
+        "Может редактировать"
+      ],
+      "Can grant and revoke access to this vault, and delete it.": [
+        "Может представлять и отзывать доступ к этому хранилищу, и удалять его."
+      ],
+      "Can grant and revoke access to this vault.": [
+        "Может представлять и отзывать доступ к этому хранилищу."
+      ],
+      "Can manage": [
+        "Может управлять"
+      ],
+      "Can view": [
+        "Может просматривать"
+      ],
+      "Can view items in this vault.": [
+        "Может просматривать элементы в этом хранилище."
       ],
       "Check out all the exclusive features that are available to you for a limited time.": [
         "Познакомьтесь со всеми эксклюзивными функциями, которые доступны вам ограниченное время."
@@ -679,6 +754,9 @@
       "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
         "Если отключено, ${ PASS_APP_NAME } не будет предлагать создание надежных паролей в формах регистрации."
       ],
+      "If enabled, the autofill dropdown will automatically open on field focus.": [
+        "Если разрешено, раскрывающийся список автозаполнения автоматически откроется при выборе поля."
+      ],
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Если включено, вы можете быстро заполнять свои учетные данные, щелкнув по иконке ${ PASS_APP_NAME }."
       ],
@@ -705,6 +783,12 @@
       ],
       "Internet connection lost": [
         "Подключение к Интернету потеряно"
+      ],
+      "Invite successfully removed": [
+        "Приглашение успешно удалено"
+      ],
+      "Invite successfully resent": [
+        "Приглашение успешно переотправлено"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Похоже, вы уже вошли в ${ PASS_APP_NAME }. Если ты пытаешься войти с другой учётной записью, пожалуйста, сначала выйдите из расширения."
@@ -745,6 +829,9 @@
       "Loading...": [
         "Загрузка..."
       ],
+      "me": [
+        "я"
+      ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Более чем просто менеджер паролей, ${ PASS_APP_NAME } защищает ваш пароль и ваш личный адрес электронной почты с помощью псевдонимов электронной почты. Работая на технологии, лежащей в основе ${ MAIL_APP_NAME }, ваши данные защищены конечным шифрованием и доступны только вам."
       ],
@@ -763,11 +850,20 @@
       "Open the Extensions menu": [
         "Откройте меню Расширения"
       ],
+      "Owner": [
+        "Владелец"
+      ],
+      "Ownership successfully transfered. You are no long the owner of this vault.": [
+        "Владение успешно передано. Вы теперь не владелец этого хранилища."
+      ],
       "Password copied": [
         "Пароль скопирован"
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Пароли старше 1 дня автоматически удаляются из истории."
+      ],
+      "Pending invitation": [
+        "Ожидающее приглашение"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Закрепить ${ PASS_APP_NAME } на панели инструментов."
@@ -802,6 +898,9 @@
       "Select the destination vault for each imported vault.": [
         "Выберите хранилище для сохранения каждого импортированного хранилища."
       ],
+      "Select the level of access this user will gain when they join your vault.": [
+        "Выберите уровень доступа, который пользователь получит при присоединении к вашему хранилищу."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недоступны. Попробуйте снова через несколько минут"
       ],
@@ -826,6 +925,9 @@
       "Successfully exported all your items": [
         "Все ваши элементы успешно экспортированы"
       ],
+      "Successfully left the vault": [
+        "Хранилище успешно покинуто"
+      ],
       "Successfully synced all vaults": [
         "Все хранилища успешно синхронизированы"
       ],
@@ -844,8 +946,17 @@
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Текст, который вы пытаетесь вставить, длиннее разрешенного максимального количества символов ${ maxLength }."
       ],
+      "The user did not accept the invitation yet.": [
+        "Пользователь ещё не принял приглашение."
+      ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Экспорт не будет зашифрован, и кто угодно, кто получит доступ к вашему экспортированному файлу, сможет увидеть ваши пароли. Для безопасности, пожалуйста, удалите его после использования."
+      ],
+      "This user will receive an invitation to join your '${ vaultName }' vault.": [
+        "Пользователь получит приглашение, чтобы присоединиться к вашему хранилищу '${ vaultName }'."
+      ],
+      "This vault is not currently shared with anyone. Invite people to share it with others.": [
+        "Это хранилище в данный момент не является общим с кем-либо. Пригласите людей, чтобы поделиться им с другими."
       ],
       "Unable to copy to clipboard": [
         "Не могу скопировать в буфер обмена"
@@ -858,6 +969,12 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Улучшить ${ PASS_APP_NAME }"
+      ],
+      "User's access removed": [
+        "Доступ пользователя удален"
+      ],
+      "User's access sucessfuly updated": [
+        "Доступ пользователя обновлен"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Хранилище \"${ payload.content.name }\" успешно удалено"
@@ -873,6 +990,9 @@
       ],
       "Verification code": [
         "Код подтверждения"
+      ],
+      "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
+        "У нас возникли проблемы при синхронизации данных со средствами локального хранения. Пожалуйста, убедитесь, что у вас достаточно места на диске, чтобы ${ PASS_SHORT_APP_NAME } работал без сбоев."
       ],
       "You are about to create:": [
         "Вы собираетесь создать:"
@@ -903,6 +1023,9 @@
       ],
       "You're about to create": [
         "Вы собираетесь создать"
+      ],
+      "You've been invited to a vault. Click here to see the invitation.": [
+        "Вы были приглашены в хранилище. Кликните здесь, чтобы увидеть приглашение."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Ваш сеанс ${ PASS_APP_NAME } заблокирован"
@@ -1206,6 +1329,9 @@
       "Report a problem": [
         "Сообщить о проблеме"
       ],
+      "Respond": [
+        "Ответить"
+      ],
       "Restore all items": [
         "Восстановить все элементы"
       ],
@@ -1443,6 +1569,9 @@
       "Enter your Pin": [
         "Введите ваш Pin"
       ],
+      "Fill & copy password": [
+        "Заполнить и скопировать пароль"
+      ],
       "Get the mobile apps": [
         "Получить мобильные приложения"
       ],
@@ -1457,6 +1586,9 @@
       ],
       "Import to vault(s)": [
         "Импорт в хранилище"
+      ],
+      "Low disk space": [
+        "Мало места на диске"
       ],
       "Permanently remove all items ?": [
         "Безвозвратно удалить все элементы?"
@@ -1543,6 +1675,9 @@
       "An error occured while exporting your data": [
         "При экспорте ваших данных произошла ошибка"
       ],
+      "Are you sure you want to transfer vault ownership to ${ email }?": [
+        "Вы уверены, что хотите передать владение хранилищем ${ email }?"
+      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Не удалось получить почтовые ящики для этого псевдонима в данный момент"
       ],
@@ -1588,6 +1723,9 @@
       "PGP encrypted export file requires passphrase": [
         "Для файла экспорта с шифрованием в PGP требуется парольная фраза"
       ],
+      "Please enter a valid email address": [
+        "Пожалуйста, введите действительный адрес эл. почты"
+      ],
       "Please log back in": [
         "Пожалуйста, войдите обратно"
       ],
@@ -1629,6 +1767,9 @@
       ],
       "You must select at least one mailbox": [
         "Вы должны выбрать хотя бы один почтовый ящик"
+      ],
+      "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
+        "У вас больше не будет доступа к этому хранилищу. Чтобы присоединиться снова, вам понадобится новое приглашение."
       ],
       "Your plan does not allow you to create more aliases": [
         "Ваш тариф не позволяет вам создать больше псевдонимов"
