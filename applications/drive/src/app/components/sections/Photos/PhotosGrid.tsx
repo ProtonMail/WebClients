@@ -5,18 +5,17 @@ import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
 import type { PhotoGridItem } from '../../../store';
 import { PhotosCard, PhotosGroup } from './grid';
-import { usePhotosSelection } from './hooks';
 
 type Props = {
     data: PhotoGridItem[];
     onItemRender: (linkId: string) => void;
     onItemRenderLoadedLink: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
-    selection: ReturnType<typeof usePhotosSelection>['selection'];
     hasSelection: boolean;
     isLoadingMore: boolean;
     onItemClick: (linkId: string) => void;
     onSelectChange: (index: number, isSelected: boolean) => void;
     isGroupSelected: (groupIndex: number) => boolean | 'some';
+    isItemSelected: (linkId: string) => boolean;
 };
 
 export const PhotosGrid: FC<Props> = ({
@@ -26,9 +25,9 @@ export const PhotosGrid: FC<Props> = ({
     isLoadingMore,
     onItemClick,
     onSelectChange,
-    selection,
     hasSelection,
     isGroupSelected,
+    isItemSelected,
 }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const containerRect = useElementRect(containerRef);
@@ -144,7 +143,7 @@ export const PhotosGrid: FC<Props> = ({
                 const y = currentY;
                 lastY = y;
 
-                const isSelected = !!selection[item.linkId];
+                const isSelected = isItemSelected(item.linkId);
 
                 if (itemShouldRender(y, scrollPosition)) {
                     items.push(
@@ -192,7 +191,7 @@ export const PhotosGrid: FC<Props> = ({
         };
 
         return [items, innerStyle];
-    }, [data, selection, dimensions, scrollPosition]);
+    }, [data, isItemSelected, isGroupSelected, dimensions, scrollPosition]);
 
     return (
         <div className="p-4 overflow-auto" ref={containerRef} onScroll={handleScroll}>
