@@ -14,9 +14,6 @@ export const createI18nService = () => {
     const hasRegion = (locale: string) => /[_-]/.test(locale);
 
     const getDefaultLocale = (): string => {
-        /* remove this to activate auto localization */
-        if (ENV === 'production') return DEFAULT_LOCALE;
-
         const [fst, snd] = navigator.languages;
         if (!fst && !snd) return DEFAULT_LOCALE;
 
