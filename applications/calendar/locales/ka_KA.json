@@ -69,6 +69,10 @@
       "Apply": [
         "გადატარება"
       ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "თითოეულ კონტაქტების ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ",
+        "თითოეულ კონტაქტების ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ"
+      ],
       "Attach screenshot(s)": [
         "ეკრანის ანაბეჭდ(ებ)-ის მიბმა"
       ],
@@ -205,6 +209,9 @@
       ],
       "Discard": [
         "მოცილება"
+      ],
+      "Don't know your password?": [
+        "არ იცით თქვენი პაროლი?"
       ],
       "Done": [
         "მზადაა"
@@ -631,6 +638,10 @@
       ],
       "Yes, I'll attend": [
         "დიახ, დავესწრები"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "${ maxAttachments }-ზე მეტი კონტაქტის vCard-ის გაგზავნა შეუძლებელია",
+        "${ maxAttachments }-ზე მეტი კონტაქტის vCard-ის გაგზავნა შეუძლებელია"
       ]
     },
     "Action subline": {
@@ -2450,6 +2461,9 @@
         "გასაგრძელებლად, გთხოვთ, შეასწოროთ გამოკვეთილი კონფლიქტი.",
         "გასაგრძელებლად, გთხოვთ, შეასწოროთ გამოკვეთილი კონფლიქტები."
       ],
+      "Please provide either a first name, a last name or a display name": [
+        "შეიყვანეთ ან სახელი, ან გვარი, ან საჩვენებელი სახელი"
+      ],
       "Port is required": [
         "პორტი აუცილებელია"
       ],
@@ -2576,6 +2590,10 @@
       ],
       "You already added this holidays calendar": [
         "ეს დასვენების დღე კალენდარში უკვე გაქვთ"
+      ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "თქვენ არ შეგიძლიათ გაგზავნოთ ელფოსტა ${ maxContacts }-ზე მეტი მიმღებით",
+        "თქვენ არ შეგიძლიათ გაგზავნოთ ელფოსტა ${ maxContacts }-ზე მეტი მიმღებით"
       ],
       "You have reached the contacts limit for your account": [
         "თქვენ მიაღწიეთ კონტაქტების რაოდენობის ზღვარს თქვენი ანგარიშისთვის"
@@ -3323,11 +3341,17 @@
       "Use your app password instead of your regular password if:": [
         "შეგიძლიათ ჩვეულებრივი პაროლის მაგიერ აპის პაროლი გამოიყენოთ, თუ:"
       ],
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        "აპლიკაციის პაროლი სწორია. ${ boldNot } გამოიყენოთ თქვენი ჩვეულებრივი პაროლი."
+      ],
       "Your email account requires an app password to export your data.": [
         "შეიყვანეთ თქვენი ანგარიშიდან მონაცემების გამოტანის პაროლი."
       ],
       "Your email account requires one to export your data.": [
         "შეიყვანეთ თქვენი ანგარიშიდან მონაცემების გამოტანის პაროლი."
+      ],
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        "ელფოსტის მისამართი და აპლიკაციის პაროლი სწორია. ${ boldNot } გამოიყენოთ თქვენი ჩვეულებრივი პაროლი."
       ],
       "Your email address and password are correct.": [
         "თქვენი ელფოსტის მისამართი და პაროლი სწორია."
@@ -3469,9 +3493,16 @@
         "${ calendarsToBeMergedCount } შერწყმული კალენდარი",
         "${ calendarsToBeMergedCount } შერწყმული კალენდარი"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } კონტაქტი ელფოსტის მრავალ მისამართს შეიცავს.",
+        "${ contactCount } კონტაქტი ელფოსტის მრავალ მისამართს შეიცავს."
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } წევრი",
         "${ contactEmailsLength } წევრი"
+      ],
+      "${ contactName } contains multiple email addresses.": [
+        "${ contactName } ელფოსტის მრავალ მისამართს შეიცავს."
       ],
       "${ contactsCount } contact found": [
         "ნაპოვნია ${ contactsCount } კონტაქტი",
@@ -3872,6 +3903,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME ავტომატურად აგზავნის შეტყობინებას, რედაქტორის მიმდინარე რეჟიმის გამოყენებით."
+      ],
+      "Please note that addresses assigned to these groups will NOT be deleted.": [
+        "დაიმახსოვრეთ, რომ ამ ჯგუფებზე მინიჭებული მისამართები *არ* წაიშლება."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "დაიმახსოვრეთ, რომ ამ ჯგუფზე მინიჭებული მისამართები *არ* წაიშლება."
@@ -4607,6 +4641,12 @@
       "Time zone": [
         "დროის სარტყელი"
       ],
+      "To: ${ to }": [
+        "მიმღები: ${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "მიმღები: ${ toEmail }"
+      ],
       "Toolbar": [
         "ხელსაწყოების ზოლი"
       ],
@@ -4856,6 +4896,10 @@
       ]
     },
     "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "ყოველ ${ interval } თვეში ${ onDayString }",
+        "ყოველ ${ interval } თვეში ${ onDayString }"
+      ],
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
         "ყოველ ${ interval } თვეში ერთხელ, ${ onDayString }, ${ timesString }-ზე",
         "ყოველ ${ interval } თვეში ერთხელ, ${ onDayString }, ${ timesString }-ზე"
@@ -5246,6 +5290,9 @@
       ],
       "Set up your organization": [
         "ორგანიზაციის მორგება"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
+        "გამოიყენეთ აპის ამრჩევი ზედა მარცხენა კუთხეში ${ BRAND_NAME }-ის ყველა სერვისთან წვდომისთვის: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } და ${ DRIVE_SHORT_APP_NAME }."
       ]
     },
     "Option": {
@@ -5457,6 +5504,9 @@
       ],
       "No contacts merged.": [
         "კონტაქტები არ შერწყმულა."
+      ],
+      "Progress: ${ combinedProgress }%": [
+        "პროგრესი ${ combinedProgress }%"
       ]
     },
     "Property type": {
@@ -5518,11 +5568,17 @@
       ]
     },
     "session_recovery:available:action": {
+      "Cancel reset": [
+        "საწყის მნიშვნელობებზე დაბრუნების გაუქმება"
+      ],
       "Reset password": [
         "პაროლის აღდგენა"
       ]
     },
     "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "ანგარიშის აღდგენა მოძველებული მისამართის გასაღებებისთვის ხელმისაწვდომი არაა"
+      ],
       "Please generate keys before you try to change your password": [
         "პაროლის შეცვლამდე საჭიროა გასაღებების გენერაცია"
       ]
@@ -5535,6 +5591,22 @@
       "${ timeRemaining.inHours } hour": [
         "${ timeRemaining.inHours } საათი",
         "${ timeRemaining.inHours } საათი"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "პაროლის შეცვლის მოთხოვნა დაშვებულია (${ user.Email }). გაქვთ ${ timeRemaining.inDays } დღე, პაროლი შეცვალოთ.",
+        "პაროლის შეცვლის მოთხოვნა დაშვებულია (${ user.Email }). გაქვთ ${ timeRemaining.inDays } დღე, პაროლი შეცვალოთ."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "პაროლის შეცვლის მოთხოვნა დაშვებულია (${ user.Email }). გაქვთ ${ timeRemaining.inHours } საათი, პაროლი შეცვალოთ.",
+        "პაროლის შეცვლის მოთხოვნა დაშვებულია (${ user.Email }). გაქვთ ${ timeRemaining.inHours } საათი, პაროლი შეცვალოთ."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "ამ წვდომის ვადა ${ timeRemaining.inDays } დღეში იწურება",
+        "ამ წვდომის ვადა ${ timeRemaining.inDays } დღეში იწურება"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "ამ წვდომის ვადა ${ timeRemaining.inHours } საათში იწურება",
+        "ამ წვდომის ვადა ${ timeRemaining.inHours } საათში იწურება"
       ]
     },
     "session_recovery:available:link": {
@@ -5583,6 +5655,23 @@
         "გაიგეთ მეტი"
       ]
     },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "კიდევ ${ gracePeriodHoursRemaining } საათი",
+        "კიდევ ${ gracePeriodHoursRemaining } საათი"
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "თუ პაროლის შეცვლა თქვენ არ მოგითხოვიათ, გააუქმეთ ეს მოთხოვნა."
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "მივიღეთ პაროლის შეცვლს მოთხოვნა ${ boldEmail }-სთვის."
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "მოთხოვნის ნახვა"
+      ]
+    },
     "session_recovery:in_progress:title": {
       "Password reset requested": [
         "პაროლის შეცვლა მოთხოვნილია"
@@ -5591,17 +5680,31 @@
     "session_recovery:sign_out:action": {
       "Sign out": [
         "გასვლა"
+      ],
+      "Stay signed in": [
+        "სისტემაში დარჩენა"
       ]
     },
     "session_recovery:sign_out:info": {
       "${ gracePeriodHoursRemaining } hour": [
         "${ gracePeriodHoursRemaining } საათი",
         "${ gracePeriodHoursRemaining } საათი"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } ახლა ხელმისაწვდომია."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "პაროლის შეცვლის დაწყება ${ boldTimeLeft }-ში შეგეძლებათ."
       ]
     },
     "session_recovery:sign_out:link": {
       "Password reset": [
         "პაროლის შეცვლა"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "გახვალთ პაროლის შეცვლის გარეშე?"
       ]
     },
     "Settings update growler warning": {
@@ -6757,6 +6860,9 @@
         "დარწმუნებული ბრძანდებთ, რომ გნებავთ, სამუდამოდ წაშალოთ ${ count } კონტაქტი?",
         "დარწმუნებული ბრძანდებთ, რომ გნებავთ, სამუდამოდ წაშალოთ ${ count } კონტაქტი?"
       ],
+      "Are you sure you want to permanently delete these contact groups?": [
+        "დარწმუნებული ბრძანდებით, რომ გნებავთ. სამუდამოდ წაშალოთ ეს კონტაქტის ჯგუფები?"
+      ],
       "Are you sure you want to permanently delete this contact group?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ. სამუდამოდ წაშალოთ ეს კონტაქტების ჯგუფი?"
       ],
@@ -6931,6 +7037,12 @@
       ],
       "Weekly on ${ multipleDaysString }": [
         "კვირაში ერთხელ ${ multipleDaysString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "ყოველკვირეულად, ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "ყოველკვირეულად, ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
         "ყოველ კვირას, ყოველდღე"
