@@ -23,7 +23,8 @@ const getItemNameSearchChunks = (itemName: string, search: string) => {
         return [];
     }
 
-    const regex = new RegExp(escapeRegex(normalize(search)), 'gi');
+    const searchWords = escapeRegex(normalize(search)).split(' ');
+    const regex = new RegExp(`\\b${searchWords.join('\\b|\\b')}\\b`, 'gi');
     return getMatches(regex, normalize(itemName));
 };
 
