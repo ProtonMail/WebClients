@@ -12,10 +12,11 @@ import {
     CollapsibleHeaderIconButton,
     Icon,
 } from '@proton/components';
-import { selectAllTrashedItems, selectShare, selectVaultsWithItemsCount } from '@proton/pass/store';
+import { selectAllTrashedItems, selectShare, selectUserFeature, selectVaultsWithItemsCount } from '@proton/pass/store';
 import { type MaybeNull, ShareRole, type ShareType, type VaultShare } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import type { VaultColor as VaultColorEnum } from '@proton/pass/types/protobuf/vault-v1';
+import { isWritableVault } from '@proton/pass/utils/pass/share';
 
 import { useFeatureFlag } from '../../../shared/hooks/useFeatureFlag';
 import { CountLabel } from '../Dropdown/CountLabel';
@@ -112,7 +113,7 @@ export const VaultItem: VFC<VaultItemProps> = ({
             quickActions={
                 withActions && (
                     <>
-                        {onEdit && share?.shareRoleId !== ShareRole.READ && (
+                        {onEdit && share && isWritableVault(share) && (
                             <DropdownMenuButton
                                 label={c('Action').t`Edit vault`}
                                 icon="pen"
@@ -230,6 +231,7 @@ export const VaultSubmenu: VFC<{
 }) => {
     const history = useHistory();
     const vaults = useSelector(selectVaultsWithItemsCount);
+    const primaryVaultDisabled = useSelector(selectUserFeature(PassFeature.PassRemovePrimaryVault));
     const selectedVault = useSelector(selectShare<ShareType.Vault>(selectedShareId ?? ''));
 
     const totalCount = useMemo(() => vaults.reduce<number>((subtotal, { count }) => subtotal + count, 0), [vaults]);
@@ -273,7 +275,8 @@ export const VaultSubmenu: VFC<{
                 />
 
                 {vaults.map((vault) => {
-                    const isPrimary = Boolean(vault.primary);
+                    const canDelete = vault.owner && (primaryVaultDisabled || !vault.primary);
+
                     return (
                         <VaultItem
                             key={vault.shareId}
@@ -282,7 +285,7 @@ export const VaultSubmenu: VFC<{
                             label={vault.content.name}
                             selected={!inTrash && selectedShareId === vault.shareId}
                             onSelect={() => handleSelect(vault)}
-                            onDelete={!isPrimary ? () => handleVaultDelete(vault) : undefined}
+                            onDelete={canDelete ? () => handleVaultDelete(vault) : undefined}
                             onEdit={() => handleVaultEdit(vault)}
                             onInvite={() => handleVaultInvite(vault)}
                             onManage={() => handleVaultManage(vault)}
