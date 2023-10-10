@@ -3,10 +3,8 @@ import { c } from 'ttag';
 import Href from '@proton/atoms/Href/Href';
 import { SidebarConfig } from '@proton/components';
 import { ADDRESS_TYPE, MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import { hasSMTPSubmission } from '@proton/shared/lib/helpers/organization';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Address, Organization, UserModel, UserType } from '@proton/shared/lib/interfaces';
-import { isOrganizationB2B } from '@proton/shared/lib/organization/helper';
 
 export const getHasPmMeAddress = (addresses: Address[]) => {
     return addresses.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM);
@@ -32,8 +30,6 @@ export const getMailAppRoutes = ({
     isSmtpTokenEnabled: boolean;
 }): SidebarConfig => {
     const hasOrganization = !!organization?.HasKeys;
-    const isB2BOrganization = !!organization && isOrganizationB2B(organization);
-    const hasSmtpOrganization = hasSMTPSubmission(organization);
     const learnMoreLink = <Href href={getKnowledgeBaseUrl('/using-folders-labels')}>{c('Link').t`Learn more`}</Href>;
     return {
         header: MAIL_APP_NAME,
@@ -180,7 +176,7 @@ export const getMailAppRoutes = ({
                     {
                         text: c('Title').t`SMTP submission`,
                         id: 'smtp-tokens',
-                        available: isSmtpTokenEnabled && (isB2BOrganization || hasSmtpOrganization),
+                        available: isSmtpTokenEnabled,
                     },
                 ],
             },

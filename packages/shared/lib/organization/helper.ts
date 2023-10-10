@@ -13,7 +13,9 @@ export const isOrganizationFamily = (organization: Organization) => organization
 export const isOrganizationVisionary = (organization: Organization) => organization.PlanName === PLANS.NEW_VISIONARY;
 
 export const isOrganizationB2B = (organization: Organization) => {
-    return [PLANS.MAIL_PRO, PLANS.DRIVE_PRO, PLANS.BUNDLE_PRO, PLANS.ENTERPRISE].includes(organization.PlanName);
+    return [PLANS.MAIL_PRO, PLANS.DRIVE_PRO, PLANS.BUNDLE_PRO, PLANS.ENTERPRISE, PLANS.FAMILY].includes(
+        organization.PlanName
+    );
 };
 
 export const getOrganizationKeyInfo = (

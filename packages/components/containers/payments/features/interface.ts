@@ -11,6 +11,7 @@ export interface PlanCardFeatureDefinition {
     tooltip?: string;
     highlight?: boolean;
     icon?: IconName;
+    iconUrl?: string;
 }
 
 export interface PlanCardFeature {
