@@ -692,6 +692,9 @@
       "Not saved": [
         "No s'ha desat"
       ],
+      "Ok": [
+        "OK"
+      ],
       "OK": [
         "D'acord"
       ],
@@ -2904,8 +2907,8 @@
         "Combinant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
       ],
       "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
-        "Els nous correus de ${ senderEmailAddress } i ${ otherSendersCount } remitent més no s'entregaran i seran eliminats permanentment.",
-        "Els nous correus de ${ senderEmailAddress } i ${ otherSendersCount } remitents més no s'entregaran i seran eliminats permanentment."
+        "Els nous correus de ${ senderEmailAddress } i ${ otherSendersCount } altre no s'entregaran i seran eliminats permanentment.",
+        "Els nous correus de ${ senderEmailAddress } i ${ otherSendersCount } altres no s'entregaran i seran eliminats permanentment."
       ],
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Els correus nous de ${ senderEmailAddress } no s'entregaran i seran eliminats permanentment."
@@ -3159,12 +3162,12 @@
         "S'ha produït un error de desxifratge: no s'ha pogut desxifrar el contingut xifrat d’aquest missatge."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
-        "Desseleccioneu almenys ${ calendarsToFixCount } calendari",
-        "Desseleccioneu almenys ${ calendarsToFixCount } calendaris"
+        "Desmarqueu almenys ${ calendarsToFixCount } calendari.",
+        "Desmarqueu almenys ${ calendarsToFixCount } calendaris."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "Desseleccioneu almenys ${ calendarsToFixCount } calendari o",
-        "Desseleccioneu almenys ${ calendarsToFixCount } calendaris o"
+        "Desmarqueu almenys ${ calendarsToFixCount } calendari o",
+        "Desmarqueu almenys ${ calendarsToFixCount } calendaris o"
       ],
       "Domain not available, try again later": [
         "El domini no està disponible, torneu-ho a provar més tard"
@@ -3225,6 +3228,9 @@
       ],
       "Incorrect mailbox password. Please try again.": [
         "Contrasenya de bústia incorrecta. Torneu a provar-ho."
+      ],
+      "Incorrect username": [
+        "Nom d'usuari incorrecte"
       ],
       "Invalid email address": [
         "L'adreça de correu electrònic no és vàlida."
@@ -7848,6 +7854,75 @@
       ],
       "Stored with zero-access encryption": [
         "Emmagatzemat amb xifratge d'accés zero"
+      ]
+    },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "Cancel·la el restabliment"
+      ],
+      "Reset password": [
+        "Restableix la contrasenya"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "S'ha desat la contrasenya."
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Restableix la contrasenya"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Cancel·la el restabliment de contrasenya"
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "S'ha cancel·lat el restabliment de la contrasenya."
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Cancel·la el restabliment de contrasenya?"
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "canvieu la vostra contrasenya ara"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "Cancel·la la petició"
+      ],
+      "Got it": [
+        "Entesos"
+      ],
+      "Learn more": [
+        "Saber-ne més"
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "Mostra la petició "
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "S'ha sol·licitat un restabliment de la contrasenya."
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Tanca la sessió"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Restabliment de contrasenya"
       ]
     },
     "Signature verification warning": {
