@@ -6,6 +6,8 @@ import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getRecipients as getMessageRecipients, getSender, isDraft, isSent } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
+import { filterAttachmentToPreview } from 'proton-mail/helpers/attachment/attachmentThumbnails';
+
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { getRecipients as getConversationRecipients, getSenders } from '../../helpers/conversation';
 import { isMessage, isUnread } from '../../helpers/elements';
@@ -101,6 +103,8 @@ const Item = ({
     // See MAILWEB-4079
     const firstRecipient = firstRecipients[0];
 
+    const filteredThumbnails = filterAttachmentToPreview(element.AttachmentsMetadata || []);
+
     const handleClick = (event: MouseEvent<HTMLDivElement>) => {
         const target = event.target as HTMLElement;
         if (target.closest('.stop-propagation')) {
@@ -187,6 +191,7 @@ const Item = ({
                     breakpoints={breakpoints}
                     onBack={onBack}
                     isSelected={isSelected}
+                    attachmentsMetadata={filteredThumbnails}
                 />
             </div>
         </div>
