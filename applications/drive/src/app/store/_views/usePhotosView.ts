@@ -20,7 +20,7 @@ export function updateByEvents(
     const linksToRemove = events
         .filter(
             (event) =>
-                event.eventType === EVENT_TYPES.CREATE ||
+                event.eventType === EVENT_TYPES.DELETE ||
                 (event.originShareId === shareId && event.encryptedLink.rootShareId !== event.originShareId)
         )
         .map((event) => event.encryptedLink.linkId);
