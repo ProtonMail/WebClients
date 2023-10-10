@@ -5296,8 +5296,19 @@
       ]
     },
     "session_recovery:available:action": {
+      "Cancel reset": [
+        "Batalkan pengaturan ulang"
+      ],
       "Reset password": [
         "Atur ulang kata sandi"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "Pemulihan akun tidak tersedia untuk kunci alamat lawas"
+      ],
+      "Please generate keys before you try to change your password": [
+        "Harap buat kunci terlebih dahulu sebelum Anda mengubah kata sandi Anda"
       ]
     },
     "session_recovery:available:info": {
@@ -5313,11 +5324,62 @@
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hours to reset your password.": [
         "Permintaan pengaturan ulang kata sandi disetujui (${ user.Email }). Anda masih punya ${ timeRemaining.inHours } jam untuk mengatur ulang kata sandi Anda."
       ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Silakan menuju ke perangkat yang sudah masuk (dalam sesi di mana permintaannya dibuat) untuk mengubah kata sandi Anda."
+      ],
       "This permission expires in ${ timeRemaining.inDays } days": [
         "Perizinan akan kedaluwarsa dalam ${ timeRemaining.inDays } hari"
       ],
       "This permission expires in ${ timeRemaining.inHours } hours": [
         "Perizinan akan kedaluwarsa dalam ${ timeRemaining.inHours } jam"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Anda kini dapat mengubah kata sandi untuk akun ${ boldEmail } secara bebas selama ${ boldDaysRemaining }."
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Lihat caranya"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Kata sandi disimpan"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Atur ulang kata sandi Anda"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Batalkan pengaturan ulang kata sandi"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Masukkan kata sandi Anda saat ini untuk membatalkan proses pengaturan ulang kata sandi. Tidak ada perubahan lain yang akan diterapkan."
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "Pengaturan ulang kata sandi dibatalkan"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Batalkan pengaturan ulang kata sandi?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Permintaan pengaturan ulang kata sandi dibatalkan (${ user.Email }). Jika Anda tidak membuat permintaan ini, ${ changePasswordLink }."
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "ubah kata sandi Anda sekarang"
       ]
     },
     "session_recovery:in_progress:action": {
@@ -5348,9 +5410,49 @@
         "Kami telah menerima permintaan pengaturan ulang kata sandi untuk ${ boldEmail }."
       ]
     },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "Lihat permintaan"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "Pengaturan ulang kata sandi diminta"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Keluar dari akun"
+      ],
+      "Stay signed in": [
+        "Tetap masuk"
+      ]
+    },
     "session_recovery:sign_out:info": {
       "${ gracePeriodHoursRemaining } hours": [
         "${ gracePeriodHoursRemaining } jam"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } sekarang tersedia."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Jika Anda keluar sebelum mengatur ulang kata sandi, Anda dapat kehilangan akses ke akun Anda."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Jika Anda keluar tanpa mengatur ulang kata sandi, Anda dapat kehilangan akses ke akun Anda."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Anda akan dapat mengatur ulang kata sandi Anda dalam ${ boldTimeLeft }."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Pengaturan ulang kata sandi"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Keluar tanpa pengaturan ulang kata sandi?"
       ]
     },
     "Signing preference for emails": {

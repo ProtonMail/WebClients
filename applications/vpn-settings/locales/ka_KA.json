@@ -146,6 +146,9 @@
       "Discard": [
         "მოცილება"
       ],
+      "Don't know your password?": [
+        "არ იცით თქვენი პაროლი?"
+      ],
       "Done": [
         "მზადაა"
       ],
@@ -5556,11 +5559,17 @@
       ]
     },
     "session_recovery:available:action": {
+      "Cancel reset": [
+        "საწყის მნიშვნელობებზე დაბრუნების გაუქმება"
+      ],
       "Reset password": [
         "პაროლის აღდგენა"
       ]
     },
     "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "ანგარიშის აღდგენა მოძველებული მისამართის გასაღებებისთვის ხელმისაწვდომი არაა"
+      ],
       "Please generate keys before you try to change your password": [
         "პაროლის შეცვლამდე საჭიროა გასაღებების გენერაცია"
       ]
@@ -5573,6 +5582,22 @@
       "${ timeRemaining.inHours } hour": [
         "${ timeRemaining.inHours } საათი",
         "${ timeRemaining.inHours } საათი"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "პაროლის შეცვლის მოთხოვნა დაშვებულია (${ user.Email }). გაქვთ ${ timeRemaining.inDays } დღე, პაროლი შეცვალოთ.",
+        "პაროლის შეცვლის მოთხოვნა დაშვებულია (${ user.Email }). გაქვთ ${ timeRemaining.inDays } დღე, პაროლი შეცვალოთ."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "პაროლის შეცვლის მოთხოვნა დაშვებულია (${ user.Email }). გაქვთ ${ timeRemaining.inHours } საათი, პაროლი შეცვალოთ.",
+        "პაროლის შეცვლის მოთხოვნა დაშვებულია (${ user.Email }). გაქვთ ${ timeRemaining.inHours } საათი, პაროლი შეცვალოთ."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "ამ წვდომის ვადა ${ timeRemaining.inDays } დღეში იწურება",
+        "ამ წვდომის ვადა ${ timeRemaining.inDays } დღეში იწურება"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "ამ წვდომის ვადა ${ timeRemaining.inHours } საათში იწურება",
+        "ამ წვდომის ვადა ${ timeRemaining.inHours } საათში იწურება"
       ]
     },
     "session_recovery:available:link": {
@@ -5621,25 +5646,61 @@
         "გაიგეთ მეტი"
       ]
     },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "კიდევ ${ gracePeriodHoursRemaining } საათი",
+        "კიდევ ${ gracePeriodHoursRemaining } საათი"
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "თუ პაროლის შეცვლა თქვენ არ მოგითხოვიათ, გააუქმეთ ეს მოთხოვნა."
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "მივიღეთ პაროლის შეცვლს მოთხოვნა ${ boldEmail }-სთვის."
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "მოთხოვნის ნახვა"
+      ]
+    },
     "session_recovery:in_progress:title": {
       "Password reset requested": [
         "პაროლის შეცვლა მოთხოვნილია"
       ]
     },
+    "session_recovery:initiation:link": {
+      "account and password section": [
+        "მომხმარებლისა და პაროლის სექცია"
+      ]
+    },
     "session_recovery:sign_out:action": {
       "Sign out": [
         "გასვლა"
+      ],
+      "Stay signed in": [
+        "სისტემაში დარჩენა"
       ]
     },
     "session_recovery:sign_out:info": {
       "${ gracePeriodHoursRemaining } hour": [
         "${ gracePeriodHoursRemaining } საათი",
         "${ gracePeriodHoursRemaining } საათი"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } ახლა ხელმისაწვდომია."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "პაროლის შეცვლის დაწყება ${ boldTimeLeft }-ში შეგეძლებათ."
       ]
     },
     "session_recovery:sign_out:link": {
       "Password reset": [
         "პაროლის შეცვლა"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "გახვალთ პაროლის შეცვლის გარეშე?"
       ]
     },
     "Shared calendar; Info about calendar owner": {

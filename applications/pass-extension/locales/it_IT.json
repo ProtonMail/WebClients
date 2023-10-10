@@ -367,6 +367,9 @@
       "Cannot create alias (${ error }).": [
         "Impossibile creare alias (${ error })."
       ],
+      "Cannot send invitation to this address at the moment": [
+        "Al momento non è possibile inviare un invito a questo indirizzo"
+      ],
       "Could not leave vault.": [
         "Impossibile abbandonare la cassaforte."
       ],
@@ -484,9 +487,6 @@
       ],
       "Request timed out": [
         "Timeout della richiesta"
-      ],
-      "Requesting alias details failed": [
-        "Impossibile recuperare i dettagli degli alias"
       ],
       "Requesting alias options failed": [
         "Impossibile recuperare le opzioni degli alias"
@@ -1009,6 +1009,9 @@
       ],
       "You are about to create:": [
         "Stai per creare:"
+      ],
+      "You cannot change the mailboxes for this alias.": [
+        "Non puoi cambiare le caselle di posta associate a questo alias."
       ],
       "You have ${ daysRemaining } day left in your trial period.": [
         "${ daysRemaining } giorno rimanente del periodo di prova gratuita.",

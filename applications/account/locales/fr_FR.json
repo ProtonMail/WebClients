@@ -6414,9 +6414,6 @@
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Vérifier votre fichier ou essayez d'utiliser notre ${ csvTemplateButton }."
       ],
-      "Please contact the administrator of the organisation to manage the subscription.": [
-        "Nous vous invitons à contacter l'administrateur de votre organisation pour gérer votre abonnement."
-      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Saisissez la phrase de récupération de 12 mots associée à votre compte."
       ],
@@ -8644,6 +8641,9 @@
       "Verification code": [
         "Code de vérification"
       ],
+      "Verify keys with Key Transparency": [
+        "Vérifier les clés en utilisant le système Key Transparency"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Nous sommes désolés de vous voir partir. Pouvez-vous nous expliquer les raisons de votre départ pour que nous puissions nous améliorer ?"
       ],
@@ -8775,6 +8775,11 @@
       ],
       "Expired": [
         "Expiré"
+      ]
+    },
+    "Label to  inform a feature is only available on Beta": {
+      "Beta": [
+        "Version bêta"
       ]
     },
     "Label to change composer mode": {
@@ -10706,8 +10711,8 @@
       ]
     },
     "pass_signup_2023: Info": {
-      "${ PASS_APP_NAME } benefits": [
-        "Les avantages de ${ PASS_APP_NAME }"
+      "${ appName } benefits": [
+        "Les avantages de ${ appName }"
       ],
       "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
         "${ PASS_APP_NAME } est disponible comme extension de navigateur dans les extensions Firefox."
@@ -11281,10 +11286,10 @@
         "${ timeRemaining.inHours } heures"
       ],
       "Didn’t make this request?": [
-        "Vous n'avez pas effectué cette demande·?"
+        "Vous n'êtes pas à l'origine de cette demande ?"
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
-        "Si vous n'êtes pas à l'origine de la demande de réinitialisation de votre mot de passe, annulez maintenant la demande."
+        "Si vous n'êtes pas à l'origine de la demande de réinitialisation de votre mot de passe, annulez la demande maintenant."
       ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
         "La demande de réinitialisation du mot de passe a été validée (${ user.Email }). Vous disposez de ${ timeRemaining.inDays } jour pour réinitialiser votre mot de passe.",
@@ -11398,7 +11403,7 @@
         "${ gracePeriodHoursRemaining } heures en plus"
       ],
       "Didn’t make this request?": [
-        "Vous n'avez pas effectué cette demande·?"
+        "Vous n'êtes pas à l'origine de cette demande ?"
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Si vous n'êtes pas à l'origine de la demande de réinitialisation de votre mot de passe, annulez maintenant la demande."
@@ -11456,12 +11461,12 @@
         "Nous vous recontacterons dès que la réinitialisation du mot de passe sera disponible."
       ],
       "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
-        "Vous pouvez à tout moment vérifier l'état de votre demande dans la section ${ accountAndPasswordSectionLink } des paramètres."
+        "Vous pouvez à tout moment vérifier l'état de votre demande ${ accountAndPasswordSectionLink } des paramètres."
       ]
     },
     "session_recovery:initiation:link": {
       "account and password section": [
-        "Compte et mot de passe"
+        "dans la section Compte et mot de passe"
       ]
     },
     "session_recovery:initiation:notification": {
@@ -11471,7 +11476,7 @@
     },
     "session_recovery:initiation:title": {
       "Request password reset?": [
-        "Demander une réinitialisation du mot de passe·?"
+        "Demander la réinitialisation du mot de passe ?"
       ],
       "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
         "Vous pourrez réinitialiser votre mot de passe dans ${ gracePeriodHoursRemaining } heure.",
@@ -11525,7 +11530,7 @@
     },
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
-        "Se déconnecter sans faire une réinitialisation du mot de passe ?"
+        "Se déconnecter sans faire la réinitialisation du mot de passe ?"
       ]
     },
     "session_recovery:status:info": {
@@ -11965,7 +11970,7 @@
     },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
-        "Ajouter des calendriers publics, externes ou partagés en utilisant une URL."
+        "Ajoutez des calendriers publics, externes ou partagés en utilisant une URL."
       ],
       "Add public, external, or shared calendars.": [
         "Ajoutez des calendriers publics, externes ou partagés."
@@ -12668,6 +12673,9 @@
       ],
       "Add users": [
         "Ajouter des utilisateurs"
+      ],
+      "Address and key verification": [
+        "Vérification de l'adresse et de la clé"
       ],
       "Allocate storage": [
         "Allouer le stockage"
@@ -13754,6 +13762,9 @@
       ],
       "This feature is only available for paid users": [
         "Cette fonctionnalité est exclusivement disponible pour les utilisateurs ayant un abonnement payant."
+      ],
+      "This feature is only available on Beta": [
+        "Cette fonctionnalité n'est disponible que sur la version bêta."
       ],
       "This key cannot be used for encryption": [
         "Cette clé ne peut pas être utilisée pour le chiffrement."

@@ -4210,22 +4210,22 @@
     },
     "Label for news": {
       "${ BRAND_NAME } beta announcements": [
-        "Comunicados do ${ BRAND_NAME } beta"
+        "Comunicados da ${ BRAND_NAME } beta"
       ],
       "${ BRAND_NAME } for Business newsletter": [
-        "Boletim do ${ BRAND_NAME } for Business"
+        "Boletim da ${ BRAND_NAME } for Business"
       ],
       "${ BRAND_NAME } important announcements": [
         "Comunicados importantes da ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } newsletter": [
-        "Boletim do ${ BRAND_NAME }"
+        "Boletim da ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } offers and promotions": [
         "Ofertas e promoções do ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } product announcements": [
-        "Comunicados de produto do ${ BRAND_NAME }"
+        "Comunicados de produto da ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } welcome emails": [
         "E-mails de boas-vindas da ${ BRAND_NAME }"
@@ -5695,6 +5695,11 @@
         "Usar um método de recuperação"
       ]
     },
+    "session_recovery:initiation:link": {
+      "account and password section": [
+        "sessão Conta e senha"
+      ]
+    },
     "session_recovery:initiation:notification": {
       "Password reset confirmed": [
         "Redefinição de senha confirmada"
@@ -5708,6 +5713,9 @@
     "session_recovery:sign_out:action": {
       "Sign out": [
         "Encerrar sessão"
+      ],
+      "Stay signed in": [
+        "Manter sessão iniciada"
       ]
     },
     "session_recovery:sign_out:info": {
@@ -5722,6 +5730,11 @@
     "session_recovery:sign_out:link": {
       "Password reset": [
         "Redefinição de senha"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Encerrar sessão sem redefinir senha?"
       ]
     },
     "session_recovery:status:info": {

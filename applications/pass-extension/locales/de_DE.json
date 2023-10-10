@@ -173,14 +173,26 @@
       "Importing": [
         "Wird importiert"
       ],
+      "Invite people": [
+        "Personen einladen"
+      ],
+      "Join shared vault": [
+        "Freigegebenem Tresor beitreten"
+      ],
       "Learn more": [
         "Mehr erfahren"
       ],
       "Leave": [
         "Verlassen"
       ],
+      "Leave vault": [
+        "Tresor verlassen"
+      ],
       "Lock extension": [
         "Erweiterung sperren"
+      ],
+      "Manage access": [
+        "Zugriff verwalten"
       ],
       "Manually sync your data": [
         "Daten manuell synchronisieren"
@@ -221,11 +233,20 @@
       "Regenerate": [
         "Neu generieren"
       ],
+      "Reject invitation": [
+        "Einladung ablehnen"
+      ],
       "Reload extension": [
         "Erweiterung neu laden"
       ],
+      "Remove access": [
+        "Zugriff entfernen"
+      ],
       "Request a feature": [
         "Funktion vorschlagen"
+      ],
+      "Resend invitation": [
+        "Einladung erneut senden"
       ],
       "Restore item": [
         "Eintrag wiederherstellen"
@@ -238,6 +259,12 @@
       ],
       "Saving": [
         "Wird gespeichert"
+      ],
+      "See members": [
+        "Mitglieder anzeigen"
+      ],
+      "Send invite": [
+        "Einladung senden"
       ],
       "Send us a message": [
         "Sende uns eine Nachricht"
@@ -383,6 +410,9 @@
       "Invalid url": [
         "Ungültige URL"
       ],
+      "Invite successfully sent": [
+        "Einladung erfolgreich versendet"
+      ],
       "Item content cannot exceed 40KB": [
         "Der Inhalt des Eintrags darf 40 KB nicht überschreiten."
       ],
@@ -409,9 +439,6 @@
       ],
       "Request timed out": [
         "Zeitüberschreitung bei der Anfrage"
-      ],
-      "Requesting alias details failed": [
-        "Abfrage von Alias-Details fehlgeschlagen"
       ],
       "Requesting alias options failed": [
         "Abfrage von Alias-Optionen fehlgeschlagen"
@@ -460,6 +487,9 @@
       ],
       "Unknown error": [
         "Unbekannter Fehler"
+      ],
+      "Unknown invite": [
+        "Unbekannte Einladung"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Nicht unterstütztes ${ PASS_APP_NAME }-Dateiformat."
@@ -745,11 +775,17 @@
       "Open the Extensions menu": [
         "Öffne das Erweiterungen-Menü"
       ],
+      "Owner": [
+        "Besitzer"
+      ],
       "Password copied": [
         "Passwort kopiert"
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Passwörter, die älter als 1 Tag sind, werden automatisch aus dem Verlauf gelöscht."
+      ],
+      "Pending invitation": [
+        "Ausstehende Einladung"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Hefte ${ PASS_APP_NAME } an deine Symbolleiste an"
@@ -808,6 +844,9 @@
       "Successfully exported all your items": [
         "Alle Einträge erfolgreich exportiert."
       ],
+      "Successfully left the vault": [
+        "Tresor erfolgreich verlassen"
+      ],
       "Successfully synced all vaults": [
         "Alle Tresore erfolgreich synchronisiert."
       ],
@@ -838,6 +877,12 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } upgraden"
+      ],
+      "User's access removed": [
+        "Benutzerzugriff entfernt"
+      ],
+      "User's access sucessfuly updated": [
+        "Benutzerzugriff erfolgreich aktualisiert"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Tresor \"${ payload.content.name }\" erfolgreich gelöscht."
@@ -1183,6 +1228,9 @@
       "Report a problem": [
         "Ein Problem melden"
       ],
+      "Respond": [
+        "Antworten"
+      ],
       "Restore all items": [
         "Alle Einträge wiederherstellen"
       ],
@@ -1444,17 +1492,26 @@
       "Import to vault(s)": [
         "In Tresor(e) importieren"
       ],
+      "Leave vault ?": [
+        "Tresor verlassen?"
+      ],
       "Low disk space": [
         "Wenig Speicherplatz auf der Festplatte"
       ],
       "Permanently remove all items ?": [
         "Alle Einträge dauerhaft löschen?"
       ],
+      "Permissions": [
+        "Berechtigungen"
+      ],
       "Pin the extension": [
         "Erweiterung anheften"
       ],
       "Secure your data": [
         "Schütze deine Daten"
+      ],
+      "Share with": [
+        "Teilen mit"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Du wechselst zu ${ PASS_APP_NAME }?"
@@ -1576,6 +1633,9 @@
       ],
       "PGP encrypted export file requires passphrase": [
         "PGP-verschlüsselte Exportdatei erfordert Passphrase"
+      ],
+      "Please enter a valid email address": [
+        "Bitte gib eine gültige E-Mail-Adresse ein."
       ],
       "Please log back in": [
         "Bitte melde dich erneut an."

@@ -367,6 +367,9 @@
       "Cannot create alias (${ error }).": [
         "Δεν είναι δυνατή η δημιουργία ψευδωνύμου (${ error })."
       ],
+      "Cannot send invitation to this address at the moment": [
+        "Δεν είναι δυνατή η αποστολή πρόσκλησης σε αυτήν τη διεύθυνση αυτήν τη στιγμή"
+      ],
       "Could not leave vault.": [
         "Δεν ήταν δυνατή η αποχώρηση από την κρύπτη."
       ],
@@ -484,9 +487,6 @@
       ],
       "Request timed out": [
         "Λήξη χρονικού ορίου αιτήματος"
-      ],
-      "Requesting alias details failed": [
-        "Η αίτηση για λεπτομέρειες ψευδωνύμου απέτυχε"
       ],
       "Requesting alias options failed": [
         "Η αίτηση για επιλογές ψευδωνύμου απέτυχε"
@@ -1009,6 +1009,9 @@
       ],
       "You are about to create:": [
         "Είστε έτοιμοι να δημιουργήσετε:"
+      ],
+      "You cannot change the mailboxes for this alias.": [
+        "Δεν μπορείτε να αλλάξετε τα γραμματοκιβώτια για αυτό το ψευδώνυμο."
       ],
       "You have ${ daysRemaining } day left in your trial period.": [
         "Απομένει ${ daysRemaining } ημέρα στη δοκιμαστική περίοδο σας.",
