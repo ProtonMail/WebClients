@@ -11,7 +11,6 @@ import { getVpnConnections, getVpnServers } from '@proton/shared/lib/vpn/feature
 import {
     ADDON_NAMES,
     BRAND_NAME,
-    COUPON_CODES,
     CYCLE,
     DEFAULT_CYCLE,
     FAMILY_MAX_USERS,
@@ -406,12 +405,4 @@ export const getCheckResultFromSubscription = (
 
 export const getIsCustomCycle = (cycle: CYCLE) => {
     return customCycles.includes(cycle);
-};
-
-export const getIsOfferBasedOnCoupon = (code: string) => {
-    return [
-        COUPON_CODES.MAIL_BLACK_FRIDAY_2022,
-        COUPON_CODES.VPN_BLACK_FRIDAY_2022,
-        COUPON_CODES.ANNIVERSARY23,
-    ].includes(code as COUPON_CODES);
 };
