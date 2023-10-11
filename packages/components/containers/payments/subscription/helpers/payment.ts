@@ -1,10 +1,28 @@
 import { getUnixTime } from 'date-fns';
 
 import { LatestSubscription } from '@proton/components/payments/core';
-import { APPS, APP_NAMES, CYCLE, DEFAULT_CURRENCY, PLANS, PLAN_SERVICES } from '@proton/shared/lib/constants';
+import {
+    APPS,
+    APP_NAMES,
+    CYCLE,
+    DEFAULT_CURRENCY,
+    FreeSubscription,
+    PLANS,
+    PLAN_SERVICES,
+    isFreeSubscription,
+} from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { hasVpnBasic, hasVpnPlus } from '@proton/shared/lib/helpers/subscription';
-import { Audience, Cycle, Plan, PlanIDs, Renew, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import {
+    Audience,
+    Cycle,
+    Plan,
+    PlanIDs,
+    Renew,
+    Subscription,
+    SubscriptionModel,
+    UserModel,
+} from '@proton/shared/lib/interfaces';
 
 const OCTOBER_01 = getUnixTime(new Date(Date.UTC(2021, 9, 1)));
 
@@ -98,37 +116,62 @@ interface FreeSubscriptionResult {
     subscriptionExpiresSoon: false;
     renewDisabled: false;
     renewEnabled: true;
+    expirationDate: null;
 }
 
 type SubscriptionResult = {
-    subscriptionExpiresSoon: boolean;
-    planName: string;
     renewDisabled: boolean;
     renewEnabled: boolean;
-};
+    planName: string;
+} & (
+    | {
+          subscriptionExpiresSoon: true;
+          expirationDate: number;
+      }
+    | {
+          subscriptionExpiresSoon: false;
+          expirationDate: null;
+      }
+);
 
 export function subscriptionExpires(): FreeSubscriptionResult;
 export function subscriptionExpires(subscription: undefined | null): FreeSubscriptionResult;
-export function subscriptionExpires(subscription: Subscription): SubscriptionResult;
-export function subscriptionExpires(subscription?: Subscription | null): FreeSubscriptionResult | SubscriptionResult {
-    if (!subscription) {
+export function subscriptionExpires(subscription: FreeSubscription): FreeSubscriptionResult;
+export function subscriptionExpires(subscription: SubscriptionModel): SubscriptionResult;
+export function subscriptionExpires(
+    subscription?: SubscriptionModel | FreeSubscription | null
+): FreeSubscriptionResult | SubscriptionResult {
+    if (!subscription || isFreeSubscription(subscription)) {
         return {
             subscriptionExpiresSoon: false,
             renewDisabled: false,
             renewEnabled: true,
+            expirationDate: null,
         };
     }
 
-    const renewDisabled = subscription.Renew === Renew.Disabled;
-    const renewEnabled = subscription.Renew === Renew.Enabled;
+    const latestSubscription = subscription.UpcomingSubscription ?? subscription;
+    const renewDisabled = latestSubscription.Renew === Renew.Disabled;
+    const renewEnabled = latestSubscription.Renew === Renew.Enabled;
     const subscriptionExpiresSoon = renewDisabled;
 
-    const planName = subscription.Plans?.[0]?.Title;
+    const planName = latestSubscription.Plans?.[0]?.Title;
 
-    return {
-        subscriptionExpiresSoon,
-        renewDisabled,
-        renewEnabled,
-        planName,
-    };
+    if (subscriptionExpiresSoon) {
+        return {
+            subscriptionExpiresSoon,
+            renewDisabled,
+            renewEnabled,
+            planName,
+            expirationDate: latestSubscription.PeriodEnd,
+        };
+    } else {
+        return {
+            subscriptionExpiresSoon,
+            renewDisabled,
+            renewEnabled,
+            planName,
+            expirationDate: null,
+        };
+    }
 }

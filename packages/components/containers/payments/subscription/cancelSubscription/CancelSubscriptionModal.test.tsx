@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import { subscriptionMock } from '@proton/testing/data';
+import { subscriptionMock, upcomingSubscriptionMock } from '@proton/testing/data';
 
 import { CancelSubscriptionModal } from './CancelSubscriptionModal';
 
@@ -30,4 +30,25 @@ it('should return status cancelled when clicking on cancel subscription', () => 
     );
     getByTestId('cancelSubscription').click();
     expect(onResolve).toHaveBeenCalledWith({ status: 'cancelled' });
+});
+
+it('should display end date of the current subscription', () => {
+    const { container } = render(
+        <CancelSubscriptionModal subscription={subscriptionMock} onResolve={onResolve} onReject={onReject} open />
+    );
+
+    expect(container).toHaveTextContent('expires on Jun 5, 2024');
+});
+
+it('should display the end date of the upcoming subscription if it exists', () => {
+    const { container } = render(
+        <CancelSubscriptionModal
+            subscription={{ ...subscriptionMock, UpcomingSubscription: upcomingSubscriptionMock }}
+            onResolve={onResolve}
+            onReject={onReject}
+            open
+        />
+    );
+
+    expect(container).toHaveTextContent('expires on Jun 5, 2026');
 });
