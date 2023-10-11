@@ -10,7 +10,7 @@ import TopBanner from './TopBanner';
 const SubscriptionEndsBanner = () => {
     const { APP_NAME } = useConfig();
     const [subscription] = useSubscription();
-    const { subscriptionExpiresSoon, planName } = subscriptionExpires(subscription);
+    const { subscriptionExpiresSoon, planName, expirationDate } = subscriptionExpires(subscription);
 
     if (!([APPS.PROTONACCOUNT, APPS.PROTONVPN_SETTINGS] as APP_NAMES[]).includes(APP_NAME)) {
         return null;
@@ -22,7 +22,7 @@ const SubscriptionEndsBanner = () => {
 
     const byDate = (
         <Time format="PP" key="subscription-end">
-            {subscription.PeriodEnd}
+            {expirationDate}
         </Time>
     );
 
