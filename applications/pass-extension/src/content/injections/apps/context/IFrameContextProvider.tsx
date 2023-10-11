@@ -4,8 +4,9 @@ import type { Runtime } from 'webextension-polyfill';
 
 import { contentScriptMessage, portForwardingMessage, sendMessage } from '@proton/pass/extension/message';
 import browser from '@proton/pass/globals/browser';
+import type { FeatureFlagState } from '@proton/pass/store';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import type { Maybe, MaybeNull, WorkerMessage, WorkerState } from '@proton/pass/types';
+import type { Maybe, MaybeNull, RecursivePartial, WorkerMessage, WorkerState } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { safeCall } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
@@ -29,33 +30,35 @@ import type {
 import { IFrameMessageType } from '../../../types';
 
 type IFrameContextValue = {
-    port: MaybeNull<Runtime.Port>;
     endpoint: string;
-    workerState: Maybe<Omit<WorkerState, 'UID'>>;
+    features: RecursivePartial<FeatureFlagState>;
+    locale: string;
+    port: MaybeNull<Runtime.Port>;
     settings: ProxiedSettings;
     userEmail: MaybeNull<string>;
     visible: boolean;
-    locale: string;
+    workerState: Maybe<Omit<WorkerState, 'UID'>>;
     closeIFrame: (options?: IFrameCloseOptions) => void;
-    resizeIFrame: (height: number) => void;
     postMessage: (message: IFrameMessage) => void;
     registerHandler: <M extends IFrameMessage['type']>(type: M, handler: IFramePortMessageHandler<M>) => void;
+    resizeIFrame: (height: number) => void;
 };
 
 type PortContext = { port: MaybeNull<Runtime.Port>; forwardTo: MaybeNull<string> };
 
 const IFrameContext = createContext<IFrameContextValue>({
-    port: null,
     endpoint: '',
-    workerState: undefined,
+    features: {},
+    locale: DEFAULT_LOCALE,
+    port: null,
     settings: INITIAL_SETTINGS,
     userEmail: null,
     visible: false,
-    locale: DEFAULT_LOCALE,
+    workerState: undefined,
     closeIFrame: noop,
-    resizeIFrame: noop,
     postMessage: noop,
     registerHandler: noop,
+    resizeIFrame: noop,
 });
 
 /* The IFrameContextProvider is responsible for opening a new
@@ -66,6 +69,7 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
     const [{ port, forwardTo }, setPortContext] = useState<PortContext>({ port: null, forwardTo: null });
     const [workerState, setWorkerState] = useState<IFrameContextValue['workerState']>();
     const [settings, setSettings] = useState<ProxiedSettings>(INITIAL_SETTINGS);
+    const [features, setFeatures] = useState<RecursivePartial<FeatureFlagState>>({});
     const [userEmail, setUserEmail] = useState<MaybeNull<string>>(null);
     const [visible, setVisible] = useState<boolean>(false);
     const [locale, setLocale] = useState(DEFAULT_LOCALE);
@@ -139,11 +143,16 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
                     case IFrameMessageType.IFRAME_INIT:
                         setWorkerState(message.payload.workerState);
                         setSettings(message.payload.settings);
+                        setFeatures(message.payload.features);
                         return;
-                    case IFrameMessageType.IFRAME_OPEN:
-                        return setVisible(true);
                     case IFrameMessageType.IFRAME_HIDDEN:
                         return setVisible(false);
+                    case IFrameMessageType.IFRAME_OPEN:
+                        return setVisible(true);
+                    case WorkerMessageType.FEATURE_FLAGS_UPDATE:
+                        return setFeatures(message.payload);
+                    case WorkerMessageType.SETTINGS_UPDATE:
+                        return setSettings(message.payload);
                     /* If for any reason we get a `PORT_UNAUTHORIZED`
                      * message : it likely means the iframe was injected
                      * without being controlled by a content-script either
@@ -151,6 +160,8 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
                      * the frame's innerHTML */
                     case WorkerMessageType.PORT_UNAUTHORIZED:
                         return destroyFrame();
+                    case WorkerMessageType.WORKER_STATUS:
+                        return setWorkerState(message.payload.state);
                 }
             });
 
@@ -229,25 +240,27 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
 
     const context = useMemo<IFrameContextValue>(
         () => ({
-            port,
             endpoint,
-            workerState,
+            features,
+            locale,
+            port,
             settings,
             userEmail,
             visible,
-            locale,
+            workerState,
             closeIFrame,
             resizeIFrame,
             postMessage,
             registerHandler,
         }),
         [
+            features,
+            locale,
             port,
-            workerState,
             settings,
             userEmail,
             visible,
-            locale,
+            workerState,
             closeIFrame,
             resizeIFrame,
             postMessage,
