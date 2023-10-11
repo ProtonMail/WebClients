@@ -1,6 +1,6 @@
 import { ChangeEvent } from 'react';
 
-import { PACKAGE_TYPE } from '@proton/shared/lib/constants';
+import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 
 import { Select } from '../../components';
 

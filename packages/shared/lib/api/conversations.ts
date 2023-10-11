@@ -1,4 +1,4 @@
-import { SpamAction } from '../interfaces';
+import { SPAM_ACTION } from '../mail/mailSettings';
 import { MailboxItemsQueryParams } from './mailbox';
 
 export const queryConversations = ({
@@ -88,7 +88,7 @@ export const deleteConversations = (IDs: string[], LabelID: string) => ({
 interface LabelConversationsProps {
     LabelID: string;
     IDs: string[];
-    SpamAction?: SpamAction;
+    SpamAction?: SPAM_ACTION;
 }
 
 export const labelConversations = ({ LabelID, IDs, SpamAction }: LabelConversationsProps) => ({

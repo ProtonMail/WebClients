@@ -1,5 +1,7 @@
 import { rest } from 'msw';
 
+import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
+
 import { addressBuilder, calendarBuilder, calendarEventBuilder, userBuilder } from './builders';
 
 export const handlers = [
@@ -137,60 +139,7 @@ export const handlers = [
     rest.get(`/mail/v4/settings`, (req, res, ctx) => {
         return res(
             ctx.json({
-                MailSettings: {
-                    LastLoginTime: 0,
-                    AutoSaveContacts: 1,
-                    AutoWildcardSearch: 1,
-                    ComposerMode: 0,
-                    FontSize: null,
-                    FontFace: null,
-                    MessageButtons: 0,
-                    ShowImages: 2,
-                    ShowMoved: 0,
-                    ViewMode: 0,
-                    ViewLayout: 0,
-                    SwipeLeft: 3,
-                    SwipeRight: 0,
-                    AlsoArchive: 0,
-                    Hotkeys: 0,
-                    Shortcuts: 1,
-                    PMSignature: 0,
-                    ImageProxy: 0,
-                    TLS: 0,
-                    RightToLeft: 0,
-                    AttachPublicKey: 0,
-                    Sign: 0,
-                    PGPScheme: 16,
-                    PromptPin: 0,
-                    KT: 0,
-                    Autocrypt: 0,
-                    StickyLabels: 0,
-                    ExpandFolders: 0,
-                    ConfirmLink: 1,
-                    DelaySendSeconds: 10,
-                    ThemeType: 0,
-                    ThemeVersion: null,
-                    Theme: '',
-                    DisplayName: '',
-                    Signature: '',
-                    AutoResponder: {
-                        StartTime: 0,
-                        EndTime: 0,
-                        DaysSelected: [],
-                        Repeat: 0,
-                        Subject: 'Auto',
-                        Message: '',
-                        IsEnabled: false,
-                        Zone: 'Europe/Zurich',
-                    },
-                    EnableFolderColor: 0,
-                    InheritParentFolderColor: 1,
-                    NumMessagePerPage: 50,
-                    RecipientLimit: 100,
-                    DraftMIMEType: 'text/html',
-                    ReceiveMIMEType: 'text/html',
-                    ShowMIMEType: 'text/html',
-                },
+                MailSettings: DEFAULT_MAILSETTINGS,
             })
         );
     }),

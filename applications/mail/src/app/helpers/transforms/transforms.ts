@@ -1,5 +1,6 @@
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import { transformLinkify } from '@proton/shared/lib/mail/transformLinkify';
 import { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
@@ -33,7 +34,7 @@ export interface Preparation {
 export const prepareHtml = async (
     message: MessageState,
     base64Cache: Base64Cache,
-    mailSettings: MailSettings | undefined,
+    mailSettings: MailSettings,
     onLoadEmbeddedImages: (attachments: Attachment[]) => Promise<LoadEmbeddedResults>,
     onLoadRemoteImagesProxy: (imagesToLoad: MessageRemoteImage[]) => void,
     onLoadFakeImagesProxy: (imagesToLoad: MessageRemoteImage[], firstLoad?: boolean) => void,
@@ -43,7 +44,7 @@ export const prepareHtml = async (
 ): Promise<Preparation> => {
     const document = transformEscape(message.decryption?.decryptedBody, base64Cache);
 
-    const canCleanUTMTrackers = canCleanUTMTrackersFeature && (!!mailSettings?.ImageProxy || false);
+    const canCleanUTMTrackers = canCleanUTMTrackersFeature && (!!mailSettings.ImageProxy || false);
 
     transformBase(document);
 
@@ -85,11 +86,11 @@ export const prepareHtml = async (
 export const preparePlainText = async (
     body: string,
     isDraft: boolean,
-    mailSettings?: MailSettings,
+    mailSettings: MailSettings = DEFAULT_MAILSETTINGS,
     canCleanUTMTrackersFeature?: boolean,
     onCleanUTMTrackers?: (utmTrackers: MessageUTMTracker[]) => void
 ): Promise<Preparation> => {
-    const canCleanUTMTrackers = canCleanUTMTrackersFeature && (!!mailSettings?.ImageProxy || false);
+    const canCleanUTMTrackers = canCleanUTMTrackersFeature && (!!mailSettings.ImageProxy || false);
 
     const plainText = isDraft ? body : transformLinkify({ content: body, canCleanUTMTrackers, onCleanUTMTrackers });
 

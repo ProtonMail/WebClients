@@ -2,9 +2,10 @@ import { Dispatch, MutableRefObject, RefObject, SetStateAction, useEffect, useMe
 
 import { c } from 'ttag';
 
-import { EditorActions, EditorMetadata, EditorTextDirection } from '@proton/components/components';
-import { useAddresses, useHandler, useMailSettings, useNotifications, useUserSettings } from '@proton/components/hooks';
+import { EditorActions, EditorMetadata } from '@proton/components/components';
+import { useAddresses, useHandler, useNotifications, useUserSettings } from '@proton/components/hooks';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { DIRECTION, SHORTCUTS } from '@proton/shared/lib/mail/mailSettings';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { getRecipients, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
@@ -12,6 +13,7 @@ import noop from '@proton/utils/noop';
 import { selectComposer } from 'proton-mail/logic/composers/composerSelectors';
 import { composerActions } from 'proton-mail/logic/composers/composersSlice';
 import { messageByID } from 'proton-mail/logic/messages/messagesSelectors';
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { MessageChange } from '../../components/composer/Composer';
 import { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
@@ -83,7 +85,7 @@ export type EditorArgs = (EditorComposer | EditorQuickReply) & {
 
 export const useComposerContent = (args: EditorArgs) => {
     const [addresses] = useAddresses();
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
     const [userSettings] = useUserSettings();
     const { createNotification } = useNotifications();
     const getMessage = useGetMessage();
@@ -162,9 +164,7 @@ export const useComposerContent = (args: EditorArgs) => {
     const [blockquoteExpanded, setBlockquoteExpanded] = useState(true);
 
     const isPlainText = testIsPlainText(modelMessage.data);
-    const rightToLeft = modelMessage.data?.RightToLeft
-        ? EditorTextDirection.RightToLeft
-        : EditorTextDirection.LeftToRight;
+    const rightToLeft = modelMessage.data?.RightToLeft ? DIRECTION.RIGHT_TO_LEFT : DIRECTION.LEFT_TO_RIGHT;
     const metadata: EditorMetadata = useMemo(
         () => ({
             supportPlainText: true,
@@ -626,7 +626,7 @@ export const useComposerContent = (args: EditorArgs) => {
 
     const lock = opening || !hasRecipients;
 
-    const hasHotkeysEnabled = mailSettings?.Shortcuts === 1;
+    const hasHotkeysEnabled = mailSettings.Shortcuts === SHORTCUTS.ENABLED;
 
     const composerHotkeysArgs: EditorHotkeysHandlers = isComposer
         ? {

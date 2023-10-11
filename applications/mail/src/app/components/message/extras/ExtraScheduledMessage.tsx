@@ -5,20 +5,15 @@ import { isToday, isTomorrow } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import {
-    Icon,
-    Prompt,
-    useApi,
-    useEventManager,
-    useMailSettings,
-    useModalState,
-    useNotifications,
-} from '@proton/components';
+import { Icon, Prompt, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
 import { cancelSend } from '@proton/shared/lib/api/messages';
-import { MAILBOX_LABEL_IDS, SHOW_MOVED } from '@proton/shared/lib/constants';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 import { isScheduled } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { LABEL_IDS_TO_HUMAN, PREVENT_CANCEL_SEND_INTERVAL } from '../../../constants';
 import { useOnCompose } from '../../../containers/ComposeProvider';
@@ -39,7 +34,7 @@ const ExtraScheduledMessage = ({ message }: Props) => {
     const { createNotification } = useNotifications();
     const location = useLocation();
     const history = useHistory();
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
     const [loading, setLoading] = useState(false);
 
     const [nowDate, setNowDate] = useState(() => Date.now());
@@ -77,7 +72,7 @@ const ExtraScheduledMessage = ({ message }: Props) => {
         onCompose({ type: ComposeTypes.existingDraft, existingDraft: message, fromUndo: false });
 
         if (location.pathname.includes(LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SCHEDULED])) {
-            const redirectToLoation = hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.DRAFTS)
+            const redirectToLoation = hasBit(mailSettings.ShowMoved, SHOW_MOVED.DRAFTS)
                 ? MAILBOX_LABEL_IDS.ALL_DRAFTS
                 : MAILBOX_LABEL_IDS.DRAFTS;
             history.push(LABEL_IDS_TO_HUMAN[redirectToLoation]);

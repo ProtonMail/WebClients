@@ -3,11 +3,12 @@ import { MutableRefObject, ReactElement, ReactNode } from 'react';
 import { act } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
-import { LABEL_TYPE, VIEW_MODE } from '@proton/shared/lib/constants';
+import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Label } from '@proton/shared/lib/interfaces/Label';
+import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import range from '@proton/utils/range';
 
 import { filterToString, keywordToString, sortToString } from '../../../helpers/mailboxUrl';

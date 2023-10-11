@@ -8,7 +8,8 @@ import {
     updateFontSize,
     updateRightToLeft,
 } from '@proton/shared/lib/api/mailSettings';
-import { MIME_TYPES, RIGHT_TO_LEFT } from '@proton/shared/lib/constants';
+import { MIME_TYPES } from '@proton/shared/lib/constants';
+import { DEFAULT_MAILSETTINGS, DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 
 import { Info, Label } from '../../components';
 import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '../../components/editor/constants';
@@ -24,15 +25,8 @@ import TextDirectionSelect from './TextDirectionSelect';
 
 const MessagesOtherSection = () => {
     const api = useApi();
-    const [
-        {
-            DraftMIMEType = MIME_TYPES.DEFAULT,
-            RightToLeft = 0,
-            FontFace = DEFAULT_FONT_FACE,
-            FontSize = DEFAULT_FONT_SIZE,
-            DelaySendSeconds = 10,
-        } = {},
-    ] = useMailSettings();
+    const [{ DraftMIMEType, RightToLeft, FontFace, FontSize, DelaySendSeconds } = DEFAULT_MAILSETTINGS] =
+        useMailSettings();
     const fontFaceValue = getFontFaceValueFromId(FontFace) || DEFAULT_FONT_FACE;
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
@@ -50,7 +44,7 @@ const MessagesOtherSection = () => {
         notifyPreferenceSaved();
     };
 
-    const handleChangeRightToLeft = async (value: RIGHT_TO_LEFT) => {
+    const handleChangeRightToLeft = async (value: DIRECTION) => {
         await api(updateRightToLeft(value));
         await call();
         notifyPreferenceSaved();

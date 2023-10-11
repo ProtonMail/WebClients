@@ -1,11 +1,13 @@
 import { ChangeEvent, DragEvent, MouseEvent, memo, useMemo, useRef } from 'react';
 
-import { ItemCheckbox, useLabels, useMailSettings } from '@proton/components';
-import { MAILBOX_LABEL_IDS, VIEW_MODE } from '@proton/shared/lib/constants';
+import { ItemCheckbox, useLabels } from '@proton/components';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { getRecipients as getMessageRecipients, getSender, isDraft, isSent } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
+import useMailModel from 'proton-mail/hooks/useMailModel';
 import { filterAttachmentToPreview } from 'proton-mail/helpers/attachment/attachmentThumbnails';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
@@ -65,7 +67,7 @@ const Item = ({
     breakpoints,
     onFocus,
 }: Props) => {
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
     const [labels] = useLabels();
     const { shouldHighlight, esStatus } = useEncryptedSearchContext();
     const { dbExists, esEnabled, contentIndexingDone } = esStatus;
@@ -80,7 +82,7 @@ const Item = ({
         isSent(element) ||
         isDraft(element);
     const { getRecipientLabel, getRecipientsOrGroups, getRecipientsOrGroupsLabels } = useRecipientLabel();
-    const isConversationContentView = mailSettings?.ViewMode === VIEW_MODE.GROUP;
+    const isConversationContentView = mailSettings.ViewMode === VIEW_MODE.GROUP;
     const isSelected =
         isConversationContentView && isMessage(element)
             ? elementID === (element as Message).ConversationID

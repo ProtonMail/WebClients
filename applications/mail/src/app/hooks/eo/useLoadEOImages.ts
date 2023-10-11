@@ -3,6 +3,7 @@ import { useCallback } from 'react';
 import { useApi } from '@proton/components';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import { EO_DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/eo/constants';
 
 import { updateImages } from '../../helpers/message/messageImages';
 import { transformEmbedded } from '../../helpers/transforms/transformEmbedded';
@@ -67,7 +68,7 @@ export const useLoadEOEmbeddedImages = (id: string) => {
                 ...message,
                 messageImages: updateImages(message.messageImages, { showEmbeddedImages: true }, undefined, undefined),
             },
-            undefined,
+            EO_DEFAULT_MAILSETTINGS,
             handleLoadEOEmbeddedImages
         );
     }, []);

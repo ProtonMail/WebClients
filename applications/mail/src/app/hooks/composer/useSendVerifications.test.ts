@@ -1,7 +1,8 @@
 import loudRejection from 'loud-rejection';
 
-import { MIME_TYPES, MIME_TYPES_MORE, PACKAGE_TYPE, PGP_SCHEMES } from '@proton/shared/lib/constants';
+import { MIME_TYPES, MIME_TYPES_MORE, PGP_SCHEMES } from '@proton/shared/lib/constants';
 import { EncryptionPreferences } from '@proton/shared/lib/mail/encryptionPreferences';
+import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 
 import { clearAll, renderHook } from '../../helpers/test/helper';

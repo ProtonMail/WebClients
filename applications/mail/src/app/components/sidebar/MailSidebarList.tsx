@@ -12,18 +12,20 @@ import {
     useHotkeys,
     useLabels,
     useLocalState,
-    useMailSettings,
     useMessageCounts,
     useSystemFolders,
     useUser,
 } from '@proton/components';
-import { MAILBOX_LABEL_IDS, SHOW_MOVED } from '@proton/shared/lib/constants';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { buildTreeview } from '@proton/shared/lib/helpers/folder';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
+import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { LABEL_IDS_TO_HUMAN } from '../../constants';
 import { getCounterMap } from '../../helpers/elements';
@@ -47,7 +49,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
     const [user] = useUser();
     const [conversationCounts] = useConversationCounts();
     const [messageCounts] = useMessageCounts();
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
     const [systemFolders] = useSystemFolders();
     const [labels] = useLabels();
     const [folders, loadingFolders] = useFolders();
@@ -155,16 +157,16 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
             return false;
         }
         if (systemFolder.ID === MAILBOX_LABEL_IDS.ALL_SENT) {
-            return hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.SENT);
+            return hasBit(mailSettings.ShowMoved, SHOW_MOVED.SENT);
         }
         if (systemFolder.ID === MAILBOX_LABEL_IDS.SENT) {
-            return !hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.SENT);
+            return !hasBit(mailSettings.ShowMoved, SHOW_MOVED.SENT);
         }
         if (systemFolder.ID === MAILBOX_LABEL_IDS.ALL_DRAFTS) {
-            return hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.DRAFTS);
+            return hasBit(mailSettings.ShowMoved, SHOW_MOVED.DRAFTS);
         }
         if (systemFolder.ID === MAILBOX_LABEL_IDS.DRAFTS) {
-            return !hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.DRAFTS);
+            return !hasBit(mailSettings.ShowMoved, SHOW_MOVED.DRAFTS);
         }
         if (systemFolder.ID === MAILBOX_LABEL_IDS.SCHEDULED) {
             return showScheduled;

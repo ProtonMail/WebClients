@@ -1,7 +1,9 @@
+import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
+
 /**
  * Currently this is basically a copy of sendSubPackages from the mail repo. TO BE IMPROVED
  */
-import { MIME_TYPES, PACKAGE_TYPE } from '../../constants';
+import { MIME_TYPES } from '../../constants';
 import { Attachment } from '../../interfaces/mail/Message';
 import { PackageDirect, SendPreferences } from '../../interfaces/mail/crypto';
 import { SimpleMap } from '../../interfaces/utils';
