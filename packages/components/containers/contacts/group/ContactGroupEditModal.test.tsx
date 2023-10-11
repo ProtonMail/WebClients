@@ -126,8 +126,14 @@ describe('ContactGroupEditModal', () => {
 
         await waitFor(() => {
             expect(updateSpy).toHaveBeenCalled();
+        });
+        await waitFor(() => {
             expect(createContactSpy).toHaveBeenCalled();
+        });
+        await waitFor(() => {
             expect(labelSpy).toHaveBeenCalled();
+        });
+        await waitFor(() => {
             expect(unlabelSpy).toHaveBeenCalled();
         });
 

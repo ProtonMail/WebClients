@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 import userEvent from '@testing-library/user-event';
-import { wait } from '@testing-library/user-event/dist/utils';
 
 import { changeRenewState } from '@proton/shared/lib/api/payments';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { Renew, SubscriptionModel, UserModel } from '@proton/shared/lib/interfaces';
 import {
     componentWrapper as _componentWrapper,
@@ -116,8 +116,8 @@ it('should send the API request for subscription cancellation and return the res
     await wait(0);
     rerender(result.current.cancelSubscriptionModals);
 
-    userEvent.click(container.querySelector('#reason') as HTMLButtonElement);
-    userEvent.click(getByText('I use a different Proton account'));
+    await userEvent.click(container.querySelector('#reason') as HTMLButtonElement);
+    await userEvent.click(getByText('I use a different Proton account'));
     getByTestId('submitFeedback').click();
 
     await wait(0);

@@ -70,24 +70,23 @@ describe('SubscribedCalendarModal', () => {
     });
 
     describe('when validation API returns a validation error', () => {
-        beforeEach(() => {
+        it('should display an error message and not call mockUseGetCalendarActions', async () => {
             renderComponent();
             mockApi.mockResolvedValue({ ValidationResult: { Result: CALENDAR_SUBSCRIPTION_STATUS.INVALID_URL } });
-        });
 
-        it('should display an error message and not call mockUseGetCalendarActions', async () => {
             const submitButton = screen.getByText('Add calendar', { selector: 'button' });
             const input = screen.getByLabelText('Calendar URL');
             const invalidGoogleCalendarLink = `https://calendar.google.com/public/a.ics`;
 
             expect(submitButton).toBeDisabled();
 
-            userEvent.paste(input, invalidGoogleCalendarLink);
+            input.focus();
+            await userEvent.paste(invalidGoogleCalendarLink);
             expect(submitButton).toBeEnabled();
 
-            userEvent.click(submitButton);
+            await userEvent.click(submitButton);
 
-            await waitFor(() => screen.getByText('Invalid URL'));
+            await screen.findByText('Invalid URL');
 
             expect(mockApi).toHaveBeenCalledTimes(1);
             expect(mockApi).toHaveBeenCalledWith({
@@ -102,23 +101,22 @@ describe('SubscribedCalendarModal', () => {
     });
 
     describe('when validation returns OK', () => {
-        beforeEach(() => {
+        it('should call `handleCreateCalendar`', async () => {
             renderComponent();
             mockApi.mockResolvedValue({ ValidationResult: { Result: CALENDAR_SUBSCRIPTION_STATUS.OK } });
             mockHandleCreateCalendar.mockImplementation(() => Promise.resolve());
-        });
 
-        it('should call `handleCreateCalendar`', async () => {
             const submitButton = screen.getByText('Add calendar', { selector: 'button' });
             const input = screen.getByLabelText('Calendar URL');
             const invalidGoogleCalendarLink = `https://calendar.google.com/public/a.ics`;
 
             expect(submitButton).toBeDisabled();
 
-            userEvent.paste(input, invalidGoogleCalendarLink);
+            input.focus();
+            await userEvent.paste(invalidGoogleCalendarLink);
             expect(submitButton).toBeEnabled();
 
-            userEvent.click(submitButton);
+            await userEvent.click(submitButton);
 
             // wait for the last api call to be made
             await waitFor(() => expect(mockHandleCreateCalendar).toHaveBeenCalledTimes(1));

@@ -175,7 +175,7 @@ describe('UpsellBox', () => {
             expect(screen.queryByText('Unlimited folders, labels, and filters')).toBeNull();
 
             const showBtn = screen.getByText('See plan features');
-            await fireEvent.click(showBtn);
+            fireEvent.click(showBtn);
 
             // features should be displayed
             expect(screen.getByText('10GB total storage'));
@@ -183,7 +183,7 @@ describe('UpsellBox', () => {
             expect(screen.getByText('Unlimited folders, labels, and filters'));
 
             const hideBtn = screen.getByText('Hide plan features');
-            await fireEvent.click(hideBtn);
+            fireEvent.click(hideBtn);
 
             // features should be hidden again
             expect(screen.queryByText('10GB total storage')).toBeNull();
