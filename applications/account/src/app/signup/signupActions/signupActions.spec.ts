@@ -68,7 +68,7 @@ describe('signupActions', () => {
             expect(result).toEqual('handleCreateUser-result');
         });
 
-        it('should use payment token for human verification if it exists: VPN', () => {
+        it('should use payment token for human verification if it exists: VPN', async () => {
             handleCreateUserMock.mockReturnValue('handleCreateUser-result');
 
             const payment: TokenPayment = {
@@ -119,7 +119,7 @@ describe('signupActions', () => {
 
             const api = () => Promise.resolve(null as any);
 
-            handlePayment({
+            await handlePayment({
                 api,
                 cache,
                 subscriptionData,
@@ -134,7 +134,7 @@ describe('signupActions', () => {
             });
         });
 
-        it('should use payment token for human verification if it exists: Username', () => {
+        it('should use payment token for human verification if it exists: Username', async () => {
             handleCreateUserMock.mockReturnValue('handleCreateUser-result');
 
             const payment: TokenPayment = {
@@ -185,7 +185,7 @@ describe('signupActions', () => {
 
             const api = () => Promise.resolve(null as any);
 
-            handlePayment({
+            await handlePayment({
                 api,
                 cache,
                 subscriptionData,
@@ -200,7 +200,7 @@ describe('signupActions', () => {
             });
         });
 
-        it('should not use payment token for human verification if it does not exist: Username', () => {
+        it('should not use payment token for human verification if it does not exist: Username', async () => {
             handleCreateUserMock.mockReturnValue('handleCreateUser-result');
 
             const payment = {} as any;
@@ -252,7 +252,7 @@ describe('signupActions', () => {
 
             const api = () => Promise.resolve(null as any);
 
-            handlePayment({
+            await handlePayment({
                 api,
                 cache,
                 subscriptionData,
