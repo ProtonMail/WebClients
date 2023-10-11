@@ -73,7 +73,7 @@ const HighlightPlanDowngradeModal = ({ onConfirm, onClose, shortPlan, periodEnd,
             </ModalContent>
             <ModalFooter>
                 <Button
-                    className="on-mobile-w100 mb-4 md:mb-0"
+                    className="w-full md:w-auto mb-4 md:mb-0"
                     onClick={() => {
                         onConfirm();
                         onClose?.();
@@ -82,7 +82,7 @@ const HighlightPlanDowngradeModal = ({ onConfirm, onClose, shortPlan, periodEnd,
                 >
                     {downgradeButtonString}
                 </Button>
-                <Button className="on-mobile-w100" color="norm" onClick={onClose}>
+                <Button className="w-full md:w-auto" color="norm" onClick={onClose}>
                     {keepButtonString}
                 </Button>
             </ModalFooter>

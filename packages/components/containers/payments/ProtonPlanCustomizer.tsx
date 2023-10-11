@@ -232,7 +232,8 @@ const AccountSizeCustomiser = ({
             <div className="flex-no-min-children flex-nowrap flex-align-items-center mb-4 on-mobile-flex-wrap">
                 <label
                     htmlFor={addon.Name}
-                    className="min-w14e flex-item-fluid plan-customiser-addon-label text-bold pr-2 on-mobile-w100"
+                    className="w-full md:w-auto min-w-custom md:min-w-custom flex-item-fluid plan-customiser-addon-label text-bold pr-2"
+                    style={{ '--min-w-custom': '8em', '--md-min-w-custom': '14em' }}
                 >
                     {c('Info').t`Users`}
                     {showTooltip && (
@@ -273,7 +274,8 @@ const AdditionalOptionsCustomiser = ({
             <div className="flex-no-min-children flex-nowrap flex-align-items-center mb-4 on-mobile-flex-wrap">
                 <label
                     htmlFor={addon.Name}
-                    className="min-w14e flex-item-fluid plan-customiser-addon-label text-bold pr-2 on-mobile-w100"
+                    className="w-full md:w-auto min-w-custom md:min-w-custom flex-item-fluid plan-customiser-addon-label text-bold pr-2"
+                    style={{ '--min-w-custom': '8em', '--md-min-w-custom': '14em' }}
                 >
                     {c('Info').t`Custom email domains`}
                     <Info
@@ -316,7 +318,8 @@ const IPsNumberCustomiser = ({
             <div className="flex-no-min-children flex-nowrap flex-align-items-center mb-4 on-mobile-flex-wrap">
                 <label
                     htmlFor={addon.Name}
-                    className="min-w14e flex-item-fluid plan-customiser-addon-label text-bold pr-2 on-mobile-w100"
+                    className="w-full md:w-auto min-w-custom md:min-w-custom flex-item-fluid plan-customiser-addon-label text-bold pr-2"
+                    style={{ '--min-w-custom': '8em', '--md-min-w-custom': '14em' }}
                 >
                     {title}
                     <Info buttonClass="ml-2" title={c('Info').t`Number of dedicated servers in the organization`} />
