@@ -25,11 +25,13 @@ import {
     defaultESStatus,
 } from './constants';
 import {
+    IndexingMetrics,
     buildContentDB,
     buildMetadataDB,
     cacheIDB,
     esSentryReport,
     findItemIndex,
+    gatherIndexingMetrics,
     getIndexKey,
     highlightJSX,
     hybridSearch,
@@ -40,7 +42,7 @@ import {
     requestPersistence,
     retryAPICalls,
     retryContentIndexing,
-    sendIndexingMetrics,
+    sendIndexingMetricsForMail,
     sendSearchingMetrics,
     syncItemEvents,
     uncachedSearch,
@@ -86,8 +88,9 @@ import { useEncryptedSearchStatus } from './useEncryptedSearchStatus';
 interface Props<ESItemMetadata, ESSearchParameters, ESItemContent = void> {
     refreshMask: number;
     esCallbacks: ESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>;
-    successMessage: string;
-    notifyMetadataIndexed?: boolean;
+    contentIndexingSuccessMessage?: string;
+    onMetadataIndexed?: (metrics: IndexingMetrics) => void;
+    sendMetricsOnSearch?: boolean;
 }
 
 /**
@@ -96,14 +99,16 @@ interface Props<ESItemMetadata, ESSearchParameters, ESItemContent = void> {
  * client
  * @param esCallbacks All the callbacks that are product-specific and therefore need to be passed
  * to the ES core functions to work
- * @param successMessage The text that is showing in a green notification upon completing indexing
- * @returns An empy instance of the ES IndexedDB
+ * @param contentIndexingSuccessMessage The text that is showing in a green notification upon completing indexing
+ * @param sendMetricsOnSearch Determines whether to send metrics on each single search. Only meant for Mail
+ * @returns An empty instance of the ES IndexedDB
  */
 const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, ESItemContent = void>({
     refreshMask,
     esCallbacks: inputESCallbacks,
-    successMessage,
-    notifyMetadataIndexed = false,
+    contentIndexingSuccessMessage,
+    onMetadataIndexed,
+    sendMetricsOnSearch,
 }: Props<ESItemMetadata, ESSearchParameters, ESItemContent>) => {
     const getUserKeys = useGetUserKeys();
     const api = useApi();
@@ -653,10 +658,9 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             esEnabled: true,
         }));
 
-        if (notifyMetadataIndexed) {
-            createNotification({
-                text: successMessage,
-            });
+        const metrics = await gatherIndexingMetrics(userID, 'metadata');
+        if (metrics) {
+            onMetadataIndexed?.(metrics);
         }
 
         // In case this process did not create an IDB, e.g. because it's a memory only
@@ -842,11 +846,11 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         await catchUpPromise;
 
         await contentIndexingProgress.addTimestamp(userID, TIMESTAMP_TYPE.STOP);
-        void sendIndexingMetrics(api, userID);
+        void sendIndexingMetricsForMail(api, userID);
 
-        if (notify) {
+        if (notify && contentIndexingSuccessMessage) {
             createNotification({
-                text: successMessage,
+                text: contentIndexingSuccessMessage,
             });
         }
     };
@@ -857,7 +861,8 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
     const newEncryptedSearch: EncryptedSearchExecution<ESItemMetadata, ESItemContent, ESSearchParameters> = async (
         setResultsList,
         esSearchParams,
-        minimumItems
+        minimumItems,
+        sendMetricsOnSearch
     ) => {
         const t1 = performance.now();
         const {
@@ -934,15 +939,17 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             }));
             setResultsList(searchResults);
 
-            const t2 = performance.now();
-            void sendSearchingMetrics(
-                api,
-                userID,
-                esCacheRef.current.cacheSize,
-                Math.ceil(t2 - t1),
-                isFirstSearch,
-                esCacheRef.current.isCacheLimited
-            );
+            if (sendMetricsOnSearch) {
+                const t2 = performance.now();
+                void sendSearchingMetrics(
+                    api,
+                    userID,
+                    esCacheRef.current.cacheSize,
+                    Math.ceil(t2 - t1),
+                    isFirstSearch,
+                    esCacheRef.current.isCacheLimited
+                );
+            }
         }
 
         return true;
@@ -1047,7 +1054,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         abortSearchingRef.current.abort();
         setESStatus((esStatus) => resetSearchStatus(esStatus));
 
-        return newEncryptedSearch(setResultsList, esSearchParams, minimumItems);
+        return newEncryptedSearch(setResultsList, esSearchParams, minimumItems, sendMetricsOnSearch);
     };
 
     /**
