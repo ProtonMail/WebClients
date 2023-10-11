@@ -1,10 +1,15 @@
 import { EXPENSIVE_REQUEST_TIMEOUT } from '../../drive/constants';
 import { MoveLink } from '../../interfaces/drive/link';
-import { CreateDriveShare } from '../../interfaces/drive/share';
+import { CreateDrivePhotosShare, CreateDriveShare } from '../../interfaces/drive/share';
 
 export const queryCreateShare = (volumeID: string, data: CreateDriveShare) => ({
     method: 'post',
     url: `drive/volumes/${volumeID}/shares`,
+    data,
+});
+export const queryCreatePhotosShare = (volumeID: string, data: CreateDrivePhotosShare) => ({
+    method: 'post',
+    url: `drive/volumes/${volumeID}/photos/share`,
     data,
 });
 
