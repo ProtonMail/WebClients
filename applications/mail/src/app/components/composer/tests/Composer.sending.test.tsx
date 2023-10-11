@@ -3,8 +3,9 @@ import loudRejection from 'loud-rejection';
 
 import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
 import { WorkerDecryptionResult } from '@proton/crypto/lib';
-import { MIME_TYPES, PGP_SIGN } from '@proton/shared/lib/constants';
+import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
+import { SIGN } from '@proton/shared/lib/mail/mailSettings';
 
 import { arrayToBase64 } from '../../../helpers/base64';
 import { addApiContact } from '../../../helpers/test/contact';
@@ -226,7 +227,7 @@ describe('Composer sending', () => {
             });
 
             minimalCache();
-            addToCache('MailSettings', { DraftMIMEType: MIME_TYPES.DEFAULT, Sign: PGP_SIGN } as MailSettings);
+            addToCache('MailSettings', { DraftMIMEType: MIME_TYPES.DEFAULT, Sign: SIGN.ENABLED } as MailSettings);
             addApiContact({ contactID: 'ContactID', email: toAddress, mimeType: MIME_TYPES.PLAINTEXT }, fromKeys);
 
             const sendRequest = await send(composerID, false);

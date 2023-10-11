@@ -1,12 +1,13 @@
 import { c } from 'ttag';
 
 import { IconName } from '@proton/components';
-import { MAILBOX_LABEL_IDS, SHOW_MOVED } from '@proton/shared/lib/constants';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Label } from '@proton/shared/lib/interfaces/Label';
+import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 
 import { LABELS_AUTO_READ, LABELS_UNMODIFIABLE_BY_USER, LABEL_IDS_TO_HUMAN, getLabelIDsToI18N } from '../constants';
 import { MessageWithOptionalBody } from '../logic/messages/messagesTypes';
@@ -130,9 +131,9 @@ export const getCurrentFolders = (
     element: Element | undefined,
     labelID: string,
     customFoldersList: Folder[],
-    mailSettings: MailSettings | undefined
+    mailSettings: MailSettings
 ): FolderInfo[] => {
-    const { ShowMoved = SHOW_MOVED.NONE } = mailSettings || {};
+    const { ShowMoved } = mailSettings;
     const labelIDs = Object.keys(getLabelIDs(element, labelID));
     const standardFolders = getStandardFolders();
     const customFolders = toMap(customFoldersList, 'ID');

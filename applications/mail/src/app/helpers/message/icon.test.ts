@@ -1,5 +1,5 @@
 import { PublicKeyReference } from '@proton/crypto';
-import { MIME_TYPES, PACKAGE_TYPE } from '@proton/shared/lib/constants';
+import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { SIGNATURE_START, VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
@@ -7,6 +7,7 @@ import {
     ENCRYPTION_PREFERENCES_ERROR_TYPES,
     EncryptionPreferencesError,
 } from '@proton/shared/lib/mail/encryptionPreferences';
+import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 
 import { MessageState, MessageVerification } from '../../logic/messages/messagesTypes';
 import { STATUS_ICONS_FILLS, StatusIcon, X_PM_HEADERS } from '../../models/crypto';

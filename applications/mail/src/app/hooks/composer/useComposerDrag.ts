@@ -1,9 +1,10 @@
 import { MouseEventHandler, Reducer, useCallback, useEffect, useReducer, useRef } from 'react';
 
-import { useMailSettings } from '@proton/components';
-import { COMPOSER_MODE } from '@proton/shared/lib/constants';
+import { COMPOSER_MODE } from '@proton/shared/lib/mail/mailSettings';
 import debounce from '@proton/utils/debounce';
 import throttle from '@proton/utils/throttle';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { ComposerDimension, computeLeftPosition } from '../../helpers/composerPositioning';
 
@@ -54,7 +55,7 @@ const useComposerDrag = ({
     composerIndex,
 }: Props) => {
     const windowWidth = window.innerWidth - drawerOffset;
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
     const prevMinimized = useRef(minimized);
     const prevMaximized = useRef(maximized);
     const composerLeftStyle = computeLeftPosition(composerDimension, composerIndex, totalComposers, windowWidth);
@@ -125,10 +126,10 @@ const useComposerDrag = ({
     }, [composerLeftStyle, totalComposers]);
 
     useEffect(() => {
-        if (mailSettings?.ComposerMode === COMPOSER_MODE.MAXIMIZED) {
+        if (mailSettings.ComposerMode === COMPOSER_MODE.MAXIMIZED) {
             dispatch({ type: 'reset-offset' });
         }
-    }, [mailSettings?.ComposerMode]);
+    }, [mailSettings.ComposerMode]);
 
     useEffect(() => {
         if (

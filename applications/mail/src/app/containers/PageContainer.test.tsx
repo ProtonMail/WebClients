@@ -2,6 +2,7 @@ import { fireEvent } from '@testing-library/react';
 
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
+import { SHORTCUTS } from '@proton/shared/lib/mail/mailSettings';
 
 import {
     addApiMock,
@@ -45,7 +46,7 @@ describe('PageContainer', () => {
         }));
 
         minimalCache();
-        addToCache('MailSettings', { Shortcuts: 1 });
+        addToCache('MailSettings', { Shortcuts: SHORTCUTS.ENABLED });
 
         const renderResult = await render(<Component {...props} />, false);
         const { container } = renderResult;

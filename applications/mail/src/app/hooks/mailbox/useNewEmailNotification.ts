@@ -2,11 +2,13 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { useFolders, useMailSettings, useSubscribeEventManager } from '@proton/components';
+import { useFolders, useSubscribeEventManager } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { create } from '@proton/shared/lib/helpers/desktopNotification';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isImported } from '@proton/shared/lib/mail/messages';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import notificationIcon from '../../assets/notification.png';
 import { isConversationMode } from '../../helpers/mailSettings';
@@ -15,7 +17,7 @@ import { Event } from '../../models/event';
 
 const useNewEmailNotification = (onOpenElement: () => void) => {
     const history = useHistory();
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
     const [folders = []] = useFolders();
     const notifier = [
         MAILBOX_LABEL_IDS.INBOX,

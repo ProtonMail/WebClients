@@ -1,12 +1,12 @@
 import { useCallback } from 'react';
 
-import { MailPageSize } from '@proton/shared/lib/interfaces';
+import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 
 import { pageCount } from '../helpers/paging';
 
 export const usePaging = (
     inputPage: number,
-    inputPageSize: MailPageSize,
+    inputPageSize: MAIL_PAGE_SIZE,
     inputTotal: number | undefined,
     onPage: (page: number) => void
 ) => {

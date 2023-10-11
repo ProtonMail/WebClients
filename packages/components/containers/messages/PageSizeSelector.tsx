@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { updatePageSize } from '@proton/shared/lib/api/mailSettings';
 import { DEFAULT_MAIL_PAGE_SIZE } from '@proton/shared/lib/constants';
-import { MailPageSize } from '@proton/shared/lib/interfaces';
+import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 
 import { DropdownProps, Option, SelectTwo } from '../../components';
 import { useApi, useEventManager, useMailSettings, useNotifications } from '../../hooks';
@@ -14,9 +14,9 @@ interface Props {
 }
 
 const PAGE_SIZE_OPTIONS = [
-    { label: '50', value: MailPageSize.FIFTY },
-    { label: '100', value: MailPageSize.ONE_HUNDRED },
-    { label: '200', value: MailPageSize.TWO_HUNDRED },
+    { label: '50', value: MAIL_PAGE_SIZE.FIFTY },
+    { label: '100', value: MAIL_PAGE_SIZE.ONE_HUNDRED },
+    { label: '200', value: MAIL_PAGE_SIZE.TWO_HUNDRED },
 ];
 
 export const PageSizeSelector = ({ id, size, loading }: Props) => {
@@ -26,7 +26,7 @@ export const PageSizeSelector = ({ id, size, loading }: Props) => {
 
     const { createNotification } = useNotifications();
 
-    const handleChange = async (value: MailPageSize) => {
+    const handleChange = async (value: MAIL_PAGE_SIZE) => {
         try {
             await api(updatePageSize(value));
             await call();

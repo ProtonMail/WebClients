@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
-import { CONTACT_PGP_SCHEMES, PACKAGE_TYPE, PGP_SCHEMES, PGP_SCHEMES_MORE } from '@proton/shared/lib/constants';
+import { CONTACT_PGP_SCHEMES, PGP_SCHEMES, PGP_SCHEMES_MORE } from '@proton/shared/lib/constants';
 import { PGP_SCHEME_TEXT } from '@proton/shared/lib/contacts/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
+import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 
 import { Option, SelectTwo } from '../../../components';
 import { SelectChangeEvent } from '../../../components/selectTwo/select';

@@ -1,7 +1,7 @@
 import { fireEvent, render } from '@testing-library/react';
 
 import { updateKT } from '@proton/shared/lib/api/mailSettings';
-import { KEY_TRANSPARENCY_SETTING } from '@proton/shared/lib/interfaces';
+import { KEY_TRANSPARENCY_SETTING } from '@proton/shared/lib/mail/mailSettings';
 import {
     applyHOCs,
     mockUseApi,

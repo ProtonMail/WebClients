@@ -1,13 +1,19 @@
-import { AutoDeleteSpamAndTrashDaysSetting, MailPageSize, SpamAction } from '../interfaces';
 import { AutoResponder as tsAutoResponder } from '../interfaces/AutoResponder';
 import { BLOCK_SENDER_CONFIRMATION } from '../mail/constants';
+import {
+    AUTO_DELETE_SPAM_AND_TRASH_DAYS,
+    DIRECTION,
+    MAIL_PAGE_SIZE,
+    PM_SIGNATURE_REFERRAL,
+    SPAM_ACTION,
+} from '../mail/mailSettings';
 
 export const getMailSettings = () => ({
     url: 'mail/v4/settings',
     method: 'get',
 });
 
-export const updatePageSize = (PageSize: MailPageSize) => ({
+export const updatePageSize = (PageSize: MAIL_PAGE_SIZE) => ({
     url: 'mail/v4/settings/pagesize',
     method: 'put',
     data: { PageSize },
@@ -67,7 +73,7 @@ export const updatePMSignature = (PMSignature: number) => ({
     data: { PMSignature },
 });
 
-export const updatePMSignatureReferralLink = (PMSignatureReferralLink: 0 | 1) => ({
+export const updatePMSignatureReferralLink = (PMSignatureReferralLink: PM_SIGNATURE_REFERRAL) => ({
     url: 'mail/v4/settings/pmsignature-referral',
     method: 'put',
     data: { PMSignatureReferralLink },
@@ -103,7 +109,7 @@ export const updateDraftType = (MIMEType: string) => ({
     data: { MIMEType },
 });
 
-export const updateRightToLeft = (RightToLeft: number) => ({
+export const updateRightToLeft = (RightToLeft: DIRECTION) => ({
     url: 'mail/v4/settings/righttoleft',
     method: 'put',
     data: { RightToLeft },
@@ -127,12 +133,6 @@ export const updateKT = (KT: number) => ({
     data: { KT },
 });
 
-export const updateAutocrypt = (Autocrypt: any) => ({
-    url: 'mail/v4/settings/autocrypt',
-    method: 'put',
-    data: { Autocrypt },
-});
-
 export const updatePGPScheme = (PGPScheme: number) => ({
     url: 'mail/v4/settings/pgpscheme',
     method: 'put',
@@ -151,12 +151,6 @@ export const updateAttachPublicKey = (AttachPublicKey: number) => ({
     data: { AttachPublicKey },
 });
 
-export const updateHotkeys = (Hotkeys: number) => ({
-    url: 'mail/v4/settings/hotkeys',
-    method: 'put',
-    data: { Hotkeys },
-});
-
 export const updateShortcuts = (Shortcuts: number) => ({
     url: 'mail/v4/settings/shortcuts',
     method: 'put',
@@ -173,12 +167,6 @@ export const updateConfirmLink = (ConfirmLink: number) => ({
     url: 'mail/v4/settings/confirmlink',
     method: 'put',
     data: { ConfirmLink },
-});
-
-export const updateAutoWildcardSearch = (AutoWildcardSearch: number) => ({
-    url: 'mail/v4/settings/autowildcard',
-    method: 'put',
-    data: { AutoWildcardSearch },
 });
 
 export const updateDelaySend = (DelaySendSeconds: number) => ({
@@ -217,7 +205,7 @@ export const updateImageProxy = (ImageProxy: number, Action: 'add' | 'remove') =
     data: { ImageProxy, Action: Action === 'add' ? 1 : 0 },
 });
 
-export const updateSpamAction = (SpamAction: SpamAction | null) => ({
+export const updateSpamAction = (SpamAction: SPAM_ACTION | null) => ({
     url: 'mail/v4/settings/spam-action',
     method: 'put',
     data: { SpamAction },
@@ -241,7 +229,7 @@ export const updateDisplayUnreadFavicon = (UnreadFavicon: number) => ({
     data: { UnreadFavicon },
 });
 
-export const updateAutoDelete = (AutoDeleteSpamAndTrashDays: AutoDeleteSpamAndTrashDaysSetting) => ({
+export const updateAutoDelete = (AutoDeleteSpamAndTrashDays: AUTO_DELETE_SPAM_AND_TRASH_DAYS) => ({
     url: 'mail/v4/settings/auto-delete-spam-and-trash-days',
     method: 'put',
     data: { Days: AutoDeleteSpamAndTrashDays },

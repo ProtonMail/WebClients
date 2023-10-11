@@ -1,8 +1,8 @@
 import { findByTestId, fireEvent } from '@testing-library/react';
 
 import { mockWindowLocation, resetWindowLocation } from '@proton/components/helpers/url.test.helpers';
-import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
 
 import { addApiMock, addToCache, assertIcon, clearAll, minimalCache } from '../../../helpers/test/helper';
 import { createDocument } from '../../../helpers/test/message';

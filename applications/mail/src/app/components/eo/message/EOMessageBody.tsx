@@ -1,6 +1,6 @@
 import { useMemo, useRef } from 'react';
 
-import { eoDefaultMailSettings } from '@proton/shared/lib/mail/eo/constants';
+import { EO_DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/eo/constants';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
@@ -80,7 +80,7 @@ const EOMessageBody = ({
                         message={message}
                         labelID=""
                         isOutside
-                        mailSettings={eoDefaultMailSettings}
+                        mailSettings={EO_DEFAULT_MAILSETTINGS}
                     />
                 </MailboxContainerContextProvider>
             )}

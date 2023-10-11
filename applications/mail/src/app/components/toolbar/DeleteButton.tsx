@@ -1,9 +1,11 @@
 import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms';
-import { Icon, ToolbarButton, useMailSettings } from '@proton/components';
+import { Icon, ToolbarButton } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { metaKey } from '@proton/shared/lib/helpers/browser';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 interface Props {
     selectedIDs: string[];
@@ -12,7 +14,7 @@ interface Props {
 
 const DeleteButton = ({ onDelete, selectedIDs = [] }: Props) => {
     const [loading, withLoading] = useLoading();
-    const [{ Shortcuts = 0 } = {}] = useMailSettings();
+    const { Shortcuts } = useMailModel('MailSettings');
 
     const titleDelete = Shortcuts ? (
         <>

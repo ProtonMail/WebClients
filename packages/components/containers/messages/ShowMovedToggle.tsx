@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { useLoading } from '@proton/hooks';
 import { updateShowMoved } from '@proton/shared/lib/api/mailSettings';
-import { SHOW_MOVED } from '@proton/shared/lib/constants';
+import { DEFAULT_MAILSETTINGS, SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 
 import { Toggle } from '../../components';
 import { useApi, useEventManager, useMailSettings, useNotifications, useToggle } from '../../hooks';
@@ -17,7 +17,7 @@ const ShowMovedToggle = ({ id }: Props) => {
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const api = useApi();
-    const [{ ShowMoved = 0 } = {}] = useMailSettings();
+    const [{ ShowMoved } = DEFAULT_MAILSETTINGS] = useMailSettings();
     const { call } = useEventManager();
     const { state, toggle } = useToggle(!!ShowMoved);
 
