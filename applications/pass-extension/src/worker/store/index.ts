@@ -43,12 +43,16 @@ const store = configureStore({
 
 const options: RequiredNonNull<WorkerRootSagaOptions> = {
     getAuth: withContext((ctx) => ctx.service.auth.store),
-
     getCache: withContext(async (ctx) => {
         /* cache is considered valid if versions match */
         const cache = await ctx.service.storage.local.get(['state', 'snapshot', 'salt', 'version']);
         return cache.version === getExtensionVersion() ? cache : {};
     }),
+
+    /* adapt event polling interval based on popup activity :
+     * 30 seconds if popup is opened / 30 minutes if closed */
+    getEventInterval: () =>
+        WorkerMessageBroker.ports.query(isPopupPort()).length > 0 ? ACTIVE_POLLING_TIMEOUT : INACTIVE_POLLING_TIMEOUT,
 
     setCache: withContext((ctx, encryptedCache) =>
         ctx.service.storage.local.set({
@@ -58,13 +62,8 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
     ),
 
     getLocalSettings: withContext((ctx) => ctx.service.settings.resolve()),
-
-    /* adapt event polling interval based on popup activity :
-     * 30 seconds if popup is opened / 30 minutes if closed */
-    getEventInterval: () =>
-        WorkerMessageBroker.ports.query(isPopupPort()).length > 0 ? ACTIVE_POLLING_TIMEOUT : INACTIVE_POLLING_TIMEOUT,
-
     getWorkerState: withContext((ctx) => ctx.getState()),
+
     /* Sets the worker status according to the
      * boot sequence's result. On boot failure,
      * clear */
@@ -78,25 +77,15 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
         }
     }),
 
-    onSignout: withContext(({ service: { auth } }) => auth.logout()),
+    onFeatureFlagsUpdate: (features) =>
+        WorkerMessageBroker.ports.broadcast(
+            backgroundMessage({
+                type: WorkerMessageType.FEATURE_FLAGS_UPDATE,
+                payload: features,
+            })
+        ),
 
-    onSessionLocked: withContext(async (ctx) => ctx.service.auth.lock()),
-
-    onSessionUnlocked: withContext(async ({ init, service: { auth } }, sessionLockToken) => {
-        await auth.unlock(sessionLockToken);
-        await init({ force: true });
-    }),
-
-    onSessionLockChange: withContext(async ({ service: { auth } }, sessionLockToken, sessionLockTTL) => {
-        auth.store.setLockToken(sessionLockToken);
-        auth.store.setLockTTL(sessionLockTTL);
-        auth.store.setLockStatus(sessionLockToken ? SessionLockStatus.REGISTERED : SessionLockStatus.NONE);
-        await auth.persistSession();
-    }),
-
-    /* Update the extension's badge count on every item state change */
-    onItemsChange: withContext((ctx) => ctx.service.autofill.updateTabsBadgeCount()),
-
+    // FIXME: use request progress metadata instead
     onImportProgress: (progress, endpoint) => {
         WorkerMessageBroker.ports.broadcast(
             backgroundMessage({
@@ -106,6 +95,46 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
             (name) => (endpoint ? name.startsWith(endpoint) : false)
         );
     },
+
+    /* Update the extension's badge count on every item state change */
+    onItemsChange: withContext((ctx) => ctx.service.autofill.updateTabsBadgeCount()),
+
+    /* Either broadcast notification or buffer it
+     * if no target ports are opened. Assume that if no
+     * target is specified then notification is for popup */
+    onNotification: (notification) => {
+        const { receiver } = notification;
+        const reg = new RegExp(`^${receiver ?? 'popup'}`);
+        const ports = WorkerMessageBroker.ports.query((key) => reg.test(key));
+        const canConsume = ports.length > 0;
+
+        const message = backgroundMessage({
+            type: WorkerMessageType.NOTIFICATION,
+            payload: { notification },
+        });
+
+        logger.info(`[Notification::${notification.type}] ${notification.text} - broadcasting`);
+
+        return canConsume || notification.type === 'success'
+            ? WorkerMessageBroker.ports.broadcast(message)
+            : WorkerMessageBroker.buffer.push(message);
+    },
+
+    onSessionLockChange: withContext(async ({ service: { auth } }, sessionLockToken, sessionLockTTL) => {
+        auth.store.setLockToken(sessionLockToken);
+        auth.store.setLockTTL(sessionLockTTL);
+        auth.store.setLockStatus(sessionLockToken ? SessionLockStatus.REGISTERED : SessionLockStatus.NONE);
+        await auth.persistSession();
+    }),
+
+    onSessionLocked: withContext(async (ctx) => ctx.service.auth.lock()),
+
+    onSessionUnlocked: withContext(async ({ init, service: { auth } }, sessionLockToken) => {
+        await auth.unlock(sessionLockToken);
+        await init({ force: true });
+    }),
+
+    onSettingUpdate: withContext((ctx, update) => ctx.service.settings.sync(update)),
 
     onShareEventDisabled: (shareId) => {
         WorkerMessageBroker.ports.broadcast(
@@ -134,28 +163,7 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
         );
     },
 
-    /* Either broadcast notification or buffer it
-     * if no target ports are opened. Assume that if no
-     * target is specified then notification is for popup */
-    onNotification: (notification) => {
-        const { receiver } = notification;
-        const reg = new RegExp(`^${receiver ?? 'popup'}`);
-        const ports = WorkerMessageBroker.ports.query((key) => reg.test(key));
-        const canConsume = ports.length > 0;
-
-        const message = backgroundMessage({
-            type: WorkerMessageType.NOTIFICATION,
-            payload: { notification },
-        });
-
-        logger.info(`[Notification::${notification.type}] ${notification.text} - broadcasting`);
-
-        return canConsume || notification.type === 'success'
-            ? WorkerMessageBroker.ports.broadcast(message)
-            : WorkerMessageBroker.buffer.push(message);
-    },
-
-    onSettingUpdate: withContext((ctx, update) => ctx.service.settings.sync(update)),
+    onSignout: withContext(({ service: { auth } }) => auth.logout()),
 
     telemetry: withContext<(event: TelemetryEvent) => void>((ctx, event) => {
         void ctx.service.telemetry?.pushEvent(event);
