@@ -43,7 +43,6 @@ export const VaultSetting: VFC<Props> = ({ label, onSubmit, optionsSelector, val
                         name="shareId"
                         className="pass-vault--select-field pass-input-group--no-focus"
                         component={VaultSelectField}
-                        size={12}
                         label={label}
                         onValue={() => form.handleSubmit()}
                     />
