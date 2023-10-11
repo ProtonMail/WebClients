@@ -1,10 +1,10 @@
 import type { AnyAction, Reducer } from 'redux';
 
+import { invalidateRequest, setRequestProgress } from '@proton/pass/store/actions';
+import type { RequestType } from '@proton/pass/store/actions/with-request';
+import { isActionWithRequest } from '@proton/pass/store/actions/with-request';
 import { objectDelete, partialMerge } from '@proton/pass/utils/object';
 import { getEpoch } from '@proton/pass/utils/time';
-
-import { invalidateRequest, setRequestProgress } from '../actions';
-import { type RequestType, isActionWithRequest } from '../actions/with-request';
 
 export type RequestEntry<T extends RequestType = RequestType> = Extract<
     | { status: 'start'; progress?: number }

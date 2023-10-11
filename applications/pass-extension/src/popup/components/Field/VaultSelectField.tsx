@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Icon, Option } from '@proton/components';
-import { selectVaultLimits, selectWritableVaults } from '@proton/pass/store';
+import { selectVaultLimits, selectWritableVaults } from '@proton/pass/store/selectors';
 import { type Maybe } from '@proton/pass/types';
 import { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
 import { notIn, prop } from '@proton/pass/utils/fp';

@@ -1,8 +1,8 @@
-import type { FeatureFlagState } from '@proton/pass/store';
+import { hasCriteria } from '@proton/pass/lib/settings/criteria';
+import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { WorkerStatus } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
-import { hasCriteria } from '@proton/pass/utils/settings/criteria';
 
 import { INITIAL_SETTINGS } from '../../shared/constants';
 import { ExtensionContext } from '../../shared/extension';

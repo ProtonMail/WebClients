@@ -1,10 +1,11 @@
 import { createContext, useCallback, useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import type { MessageWithSenderFactory } from '@proton/pass/extension/message';
-import { sendMessage } from '@proton/pass/extension/message';
-import { selectDidWakeup } from '@proton/pass/store';
+import type { MessageWithSenderFactory } from '@proton/pass/lib/extension/message';
+import { sendMessage } from '@proton/pass/lib/extension/message';
+import { workerReady } from '@proton/pass/lib/worker';
 import { sessionLock, signout, syncIntent } from '@proton/pass/store/actions';
+import { selectDidWakeup } from '@proton/pass/store/selectors';
 import type {
     ExtensionEndpoint,
     MaybeNull,
@@ -15,7 +16,6 @@ import type {
 } from '@proton/pass/types';
 import { WorkerMessageType, WorkerStatus } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
-import { workerReady } from '@proton/pass/utils/worker';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
 

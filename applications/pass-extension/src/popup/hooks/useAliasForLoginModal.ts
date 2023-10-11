@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import type { FormikContextType } from 'formik';
 
-import { selectAliasByAliasEmail } from '@proton/pass/store';
+import { selectAliasByAliasEmail } from '@proton/pass/store/selectors';
 import { merge } from '@proton/pass/utils/object';
 import { isEmptyString } from '@proton/pass/utils/string';
 

@@ -5,7 +5,7 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Progress } from '@proton/components/components';
-import { inviteAcceptIntent, inviteRejectIntent } from '@proton/pass/store';
+import { inviteAcceptIntent, inviteRejectIntent } from '@proton/pass/store/actions';
 import { inviteAcceptRequest, inviteRejectRequest } from '@proton/pass/store/actions/requests';
 import type { Invite } from '@proton/pass/types/data/invites';
 

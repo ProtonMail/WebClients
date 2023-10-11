@@ -1,10 +1,10 @@
 import type { AnyAction } from 'redux';
 import type { Tabs } from 'webextension-polyfill';
 
-import type { ExtensionSession } from '@proton/pass/auth';
-import type { ExportRequestPayload } from '@proton/pass/export/types';
-import type { AliasOptions, FeatureFlagState } from '@proton/pass/store';
+import type { ExtensionSession } from '@proton/pass/lib/auth/session';
+import type { ExportRequestPayload } from '@proton/pass/lib/export/types';
 import type { Notification } from '@proton/pass/store/actions/with-notification';
+import type { AliasOptions, FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { ExtensionForkResultPayload } from '@proton/shared/lib/authentication/sessionForking';
 import type { User } from '@proton/shared/lib/interfaces';

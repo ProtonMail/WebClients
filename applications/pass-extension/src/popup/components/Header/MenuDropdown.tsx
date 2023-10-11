@@ -6,18 +6,15 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import type { DropdownProps } from '@proton/components';
 import { Dropdown, DropdownMenu, DropdownSizeUnit, Icon, usePopperAnchor } from '@proton/components';
+import { emptyTrashIntent, restoreTrashIntent, shareLeaveIntent, vaultDeleteIntent } from '@proton/pass/store/actions';
+import { shareLeaveRequest } from '@proton/pass/store/actions/requests';
 import {
-    emptyTrashIntent,
-    restoreTrashIntent,
     selectHasRegisteredLock,
     selectPassPlan,
     selectPlanDisplayName,
     selectShare,
     selectUser,
-    shareLeaveIntent,
-    vaultDeleteIntent,
-} from '@proton/pass/store';
-import { shareLeaveRequest } from '@proton/pass/store/actions/requests';
+} from '@proton/pass/store/selectors';
 import { type MaybeNull, type ShareType, type VaultShare } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { pipe, tap } from '@proton/pass/utils/fp';

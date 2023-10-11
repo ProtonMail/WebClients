@@ -6,15 +6,15 @@ import type { Dispatch } from 'redux';
 import { c } from 'ttag';
 
 import { Checkbox } from '@proton/components/components';
+import { settingsEditIntent } from '@proton/pass/store/actions';
+import { settingsEdit } from '@proton/pass/store/actions/requests';
+import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import {
     selectAutosaveVault,
     selectProxiedSettings,
     selectRequestInFlight,
     selectWritableVaults,
-} from '@proton/pass/store';
-import { settingsEditIntent } from '@proton/pass/store/actions';
-import { settingsEdit } from '@proton/pass/store/actions/requests';
-import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
+} from '@proton/pass/store/selectors';
 import type { RecursivePartial } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';

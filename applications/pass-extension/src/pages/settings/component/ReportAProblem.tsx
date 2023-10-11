@@ -8,8 +8,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { TextAreaTwo } from '@proton/components/components';
 import { getClientName, getReportInfo } from '@proton/components/helpers/report';
-import { reportProblemIntent, selectRequestInFlight, selectUser } from '@proton/pass/store';
+import { reportProblemIntent } from '@proton/pass/store/actions';
 import { reportProblem } from '@proton/pass/store/actions/requests';
+import { selectRequestInFlight, selectUser } from '@proton/pass/store/selectors';
 import { isEmptyString } from '@proton/pass/utils/string';
 import { type BugPayload } from '@proton/shared/lib/api/reports';
 

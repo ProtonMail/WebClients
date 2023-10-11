@@ -1,6 +1,6 @@
 import type { Permissions } from 'webextension-polyfill';
 
-import browser from '@proton/pass/globals/browser';
+import browser from '@proton/pass/lib/globals/browser';
 
 const manifest = browser.runtime.getManifest();
 

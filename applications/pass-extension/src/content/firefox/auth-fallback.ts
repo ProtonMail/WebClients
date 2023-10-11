@@ -1,4 +1,4 @@
-import { contentScriptMessage, sendMessage, successMessage } from '@proton/pass/extension/message';
+import { contentScriptMessage, sendMessage, successMessage } from '@proton/pass/lib/extension/message';
 import { WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { APPS, EXTENSIONS } from '@proton/shared/lib/constants';

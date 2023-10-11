@@ -3,9 +3,9 @@ import { type VFC, useCallback, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
-import { popupMessage, sendMessage } from '@proton/pass/extension/message';
+import { popupMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { workerBusy, workerErrored, workerStale } from '@proton/pass/lib/worker';
 import { type Maybe, WorkerMessageType, WorkerStatus } from '@proton/pass/types';
-import { workerBusy, workerErrored, workerStale } from '@proton/pass/utils/worker';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 

@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import type { AnyAction } from 'redux';
 import { c } from 'ttag';
 
+import { isTrashed } from '@proton/pass/lib/items/item.predicates';
 import {
     itemCreationDismiss,
     itemCreationIntent,
@@ -14,10 +15,9 @@ import {
     itemMoveIntent,
     itemRestoreIntent,
     itemTrashIntent,
-} from '@proton/pass/store';
+} from '@proton/pass/store/actions';
 import type { ItemRevisionWithOptimistic, ItemType, Maybe, VaultShare } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
-import { isTrashed } from '@proton/pass/utils/pass/trash';
 import { uniqueId } from '@proton/pass/utils/string';
 
 import { useFeatureFlag } from '../../../../shared/hooks/useFeatureFlag';

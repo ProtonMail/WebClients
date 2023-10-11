@@ -2,11 +2,11 @@ import { devToolsEnhancer } from '@redux-devtools/remote';
 import { configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
 
-import { ACTIVE_POLLING_TIMEOUT, INACTIVE_POLLING_TIMEOUT } from '@proton/pass/events/constants';
-import { backgroundMessage } from '@proton/pass/extension/message';
-import type { WorkerRootSagaOptions } from '@proton/pass/store';
+import { ACTIVE_POLLING_TIMEOUT, INACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
+import { backgroundMessage } from '@proton/pass/lib/extension/message';
 import reducer from '@proton/pass/store/reducers';
 import { workerRootSaga } from '@proton/pass/store/sagas';
+import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
 import {
     type RequiredNonNull,
     SessionLockStatus,

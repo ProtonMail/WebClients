@@ -1,8 +1,8 @@
 import type { ExtensionEndpoint, TabId } from '@proton/pass/types';
 
-export const boot = () => 'boot';
-export const syncing = () => 'syncing';
-export const wakeup = (endpoint: ExtensionEndpoint, tabId: TabId) => `wakeup-${endpoint}-${tabId}`;
+export const bootRequest = () => 'worker::boot';
+export const syncRequest = () => 'worker::sync';
+export const wakeupRequest = (endpoint: ExtensionEndpoint, tabId: TabId) => `worker::wakeup-${endpoint}-${tabId}`;
 
 export const vaultCreate = (shareId: string) => `vault::create::request::${shareId}`;
 export const vaultEdit = (shareId: string) => `vault::edit::request::${shareId}`;
@@ -10,7 +10,6 @@ export const vaultDelete = (shareId: string) => `vault::delete::request::${share
 export const vaultSetPrimary = (shareId: string) => `vault::et::primary::request-${shareId}`;
 export const vaultTransferOwnerRequest = (userShareId: string) => `vault::transfer:owner::${userShareId}`;
 
-export const items = () => 'items';
 export const importItems = () => `import-items`;
 
 export const unlockSession = `unlock-session`;

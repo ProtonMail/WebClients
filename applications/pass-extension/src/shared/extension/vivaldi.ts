@@ -1,4 +1,4 @@
-import browser from '@proton/pass/globals/browser';
+import browser from '@proton/pass/lib/globals/browser';
 
 export const isVivaldiBrowser = async (): Promise<boolean> => {
     try {

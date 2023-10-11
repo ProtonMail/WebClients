@@ -1,19 +1,18 @@
-import browser from '@proton/pass/globals/browser';
+import browser from '@proton/pass/lib/globals/browser';
+import type { SelectAutofillCandidatesOptions } from '@proton/pass/lib/search/types';
+import { workerReady } from '@proton/pass/lib/worker';
+import { itemAutofillIntent, itemUsed } from '@proton/pass/store/actions';
 import {
-    itemAutofillIntent,
-    itemUsed,
     selectAutofillCandidates,
     selectItemByShareIdAndId,
     selectVaultLimits,
     selectWritableVaults,
-} from '@proton/pass/store';
+} from '@proton/pass/store/selectors';
 import type { Maybe, SafeLoginItem } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
-import type { SelectAutofillCandidatesOptions } from '@proton/pass/utils/search';
 import { parseSender, parseUrl } from '@proton/pass/utils/url';
-import { workerReady } from '@proton/pass/utils/worker';
 import noop from '@proton/utils/noop';
 
 import { setPopupIconBadge } from '../../shared/extension';

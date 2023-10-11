@@ -1,8 +1,8 @@
+import { workerErrored, workerLocked, workerLoggedOut, workerStale } from '@proton/pass/lib/worker';
 import type { WorkerStatus } from '@proton/pass/types';
 import { animatePositionChange } from '@proton/pass/utils/dom';
 import { or, safeCall } from '@proton/pass/utils/fp';
 import { createListenerStore } from '@proton/pass/utils/listener';
-import { workerErrored, workerLocked, workerLoggedOut, workerStale } from '@proton/pass/utils/worker';
 import debounce from '@proton/utils/debounce';
 
 import { ACTIVE_ICON_SRC, COUNTER_ICON_SRC, DISABLED_ICON_SRC, LOCKED_ICON_SRC } from '../../constants';

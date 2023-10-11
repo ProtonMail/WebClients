@@ -5,9 +5,9 @@ import { c } from 'ttag';
 
 import { Button, Input } from '@proton/atoms';
 import { Icon } from '@proton/components/components';
-import { popupMessage, sendMessage } from '@proton/pass/extension/message';
-import { selectShare } from '@proton/pass/store';
-import { createTelemetryEvent } from '@proton/pass/telemetry/events';
+import { popupMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
+import { selectShare } from '@proton/pass/store/selectors';
 import type { ShareType } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';

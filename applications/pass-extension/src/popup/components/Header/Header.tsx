@@ -13,8 +13,8 @@ import {
     Icon,
     usePopperAnchor,
 } from '@proton/components';
-import { selectAliasLimits, selectPassPlan } from '@proton/pass/store';
 import { passwordSave } from '@proton/pass/store/actions/creators/pw-history';
+import { selectAliasLimits, selectPassPlan } from '@proton/pass/store/selectors';
 import type { ItemType } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { pipe } from '@proton/pass/utils/fp';

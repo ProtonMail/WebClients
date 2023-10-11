@@ -1,6 +1,6 @@
 import type { Runtime } from 'webextension-polyfill';
 
-import { contentScriptMessage, portForwardingMessage, sendMessage } from '@proton/pass/extension/message';
+import { contentScriptMessage, portForwardingMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import type { Dimensions, Rect } from '@proton/pass/types/utils/dom';

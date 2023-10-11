@@ -3,7 +3,7 @@ import type { List } from 'react-virtualized';
 
 import { c } from 'ttag';
 
-import { itemEq } from '@proton/pass/utils/pass/items';
+import { itemEq } from '@proton/pass/lib/items/item.predicates';
 
 import { ItemsListItem } from '../../components/Item/ItemsListItem';
 import { VirtualList } from '../../components/List/VirtualList';

@@ -8,7 +8,7 @@ import {
     shareEditMemberAccessIntent,
     shareRemoveMemberAccessIntent,
     vaultTransferOwnerIntent,
-} from '@proton/pass/store';
+} from '@proton/pass/store/actions';
 import {
     shareEditMemberRoleRequest,
     shareRemoveMemberRequest,

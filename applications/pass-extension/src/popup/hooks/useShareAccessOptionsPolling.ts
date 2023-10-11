@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 
 import usePrevious from '@proton/hooks/usePrevious';
-import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/events/constants';
-import { getShareAccessOptionsIntent } from '@proton/pass/store';
+import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
+import { getShareAccessOptionsIntent } from '@proton/pass/store/actions';
 import { shareAccessOptionsRequest } from '@proton/pass/store/actions/requests';
 import { type Maybe } from '@proton/pass/types';
 

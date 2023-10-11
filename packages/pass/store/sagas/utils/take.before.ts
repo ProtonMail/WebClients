@@ -2,16 +2,16 @@ import type { Action, AnyAction } from 'redux';
 import type { ActionPattern } from 'redux-saga/effects';
 import { call, fork, select, take } from 'redux-saga/effects';
 
-import type { State } from '../../types';
+import type { State } from '@proton/pass/store/types';
 
-type BeforeOptimisticsWorker<A extends Action, R extends any[]> = (action: A, state: State, ...args: R) => any;
+type Worker<A extends Action, R extends any[]> = (action: A, state: State, ...args: R) => any;
 
 /* When using Redux Sagas, the sagas are typically executed after the action
  * has been processed by the reducers. In certain scenarios, such as optimistic
  * actions that modify the state optimistically before the sagas run, there is
  * a possibility of losing the previous state when running selectors in the sagas.
  * To overcome this limitation, we have the following utility: */
-export function* takeBefore<A extends Action, R extends any[], F extends BeforeOptimisticsWorker<A, R>>(
+export function* takeBefore<A extends Action, R extends any[], F extends Worker<A, R>>(
     pattern: ActionPattern<A>,
     fn: F,
     ...args: R
@@ -26,7 +26,7 @@ export function* takeBefore<A extends Action, R extends any[], F extends BeforeO
 }
 
 /* same but non-blocking */
-export function* takeEveryBefore<A extends Action, R extends any[], F extends BeforeOptimisticsWorker<A, R>>(
+export function* takeEveryBefore<A extends Action, R extends any[], F extends Worker<A, R>>(
     pattern: ActionPattern<A>,
     fn: F,
     ...args: R

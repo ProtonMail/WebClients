@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import type { IconName, IconSize } from '@proton/components';
 import { Icon } from '@proton/components';
-import { selectCanLoadDomainImages } from '@proton/pass/store';
+import { selectCanLoadDomainImages } from '@proton/pass/store/selectors';
 import type { ItemRevisionWithOptimistic, MaybeNull } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 

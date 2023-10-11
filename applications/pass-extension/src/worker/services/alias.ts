@@ -5,11 +5,10 @@ import {
     getAliasOptionsSuccess,
     itemCreationIntent,
     itemCreationSuccess,
-    selectAliasLimits,
-    selectAutosaveVault,
-} from '@proton/pass/store';
+} from '@proton/pass/store/actions';
 import { aliasOptionsRequest } from '@proton/pass/store/actions/requests';
 import { withRevalidate } from '@proton/pass/store/actions/with-request';
+import { selectAliasLimits, selectAutosaveVault } from '@proton/pass/store/selectors';
 import type { ItemCreateIntent } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';

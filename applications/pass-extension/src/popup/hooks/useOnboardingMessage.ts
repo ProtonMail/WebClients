@@ -2,9 +2,9 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { detectBrowser, getWebStoreUrl } from '@proton/pass/extension/browser';
-import { popupMessage, sendMessage } from '@proton/pass/extension/message';
-import browser from '@proton/pass/globals/browser';
+import { popupMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { detectBrowser, getWebStoreUrl } from '@proton/pass/lib/extension/utils/browser';
+import browser from '@proton/pass/lib/globals/browser';
 import type { Callback, MaybeNull, WorkerMessageWithSender } from '@proton/pass/types';
 import { OnboardingMessage, WorkerMessageType } from '@proton/pass/types';
 import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
