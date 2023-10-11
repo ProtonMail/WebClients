@@ -113,7 +113,7 @@ describe('YourPlanSection', () => {
             expect(upsellPanel).toBeTruthy();
             within(upsellPanel as HTMLElement).getByText('Proton Family');
             const upsellButton = within(upsellPanel as HTMLElement).getByTestId('upsell-cta');
-            await fireEvent.click(upsellButton);
+            fireEvent.click(upsellButton);
 
             await waitFor(() => expect(mockOpenSubscriptionModal).toHaveBeenCalledTimes(1));
             expect(mockOpenSubscriptionModal).toHaveBeenCalledWith({

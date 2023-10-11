@@ -4,26 +4,26 @@ import Mark from './Mark';
 
 describe('Mark component', () => {
     const input = `Eh, toi, l'ours mal léché`;
-    let container: HTMLElement;
-    let nodes: NodeListOf<HTMLElement>;
-
-    beforeEach(() => {
-        const result = render(<Mark value="e">{input}</Mark>);
-        container = result.container;
-        nodes = container.querySelectorAll('mark');
-    });
 
     it('should highlight several matches', () => {
+        const result = render(<Mark value="e">{input}</Mark>);
+        const container = result.container;
+        const nodes = container.querySelectorAll('mark');
         expect(nodes.length).toBe(3);
     });
 
     it('should highlight accent and capitalized matches', () => {
+        const result = render(<Mark value="e">{input}</Mark>);
+        const container = result.container;
+        const nodes = container.querySelectorAll('mark');
         expect(nodes[0].textContent).toBe('E');
         expect(nodes[1].textContent).toBe('é');
         expect(nodes[2].textContent).toBe('é');
     });
 
     it('should highlight print result properly', () => {
+        const result = render(<Mark value="e">{input}</Mark>);
+        const container = result.container;
         expect(container.innerHTML).toBe(
             `<mark class="is-light">E</mark><span>h, toi, l'ours mal l</span><mark class="is-light">é</mark><span>ch</span><mark class="is-light">é</mark>`
         );

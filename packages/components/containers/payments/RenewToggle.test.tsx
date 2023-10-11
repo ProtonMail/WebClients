@@ -60,9 +60,8 @@ it('should not toggle off if user clicked Keep auto-pay/Cancel', async () => {
     rerender(<ContextRenewToggle {...result.current} />);
     expect(container).toHaveTextContent('Are you sure?');
 
-    await waitFor(() => {
-        fireEvent.click(getByTestId('action-keep-autopay'));
-    });
+    fireEvent.click(getByTestId('action-keep-autopay'));
+    await waitFor(() => {});
     rerenderHook();
     rerender(<ContextRenewToggle {...result.current} />);
 
