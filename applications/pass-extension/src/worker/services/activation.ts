@@ -4,6 +4,7 @@ import type { MessageHandlerCallback } from '@proton/pass/extension/message';
 import { backgroundMessage } from '@proton/pass/extension/message';
 import browser from '@proton/pass/globals/browser';
 import {
+    selectFeatureFlags,
     selectItemByShareIdAndId,
     selectItemDraft,
     selectPopupFilters,
@@ -199,7 +200,11 @@ export const createActivationService = () => {
                 });
             }
 
-            return { ...ctx.getState(), settings: await ctx.service.settings.resolve() };
+            return {
+                ...ctx.getState(),
+                features: selectFeatureFlags(store.getState()) ?? {},
+                settings: await ctx.service.settings.resolve(),
+            };
         }
     );
 
