@@ -47,7 +47,7 @@ console.log(config);
 const production = ENV === 'production';
 
 const nonAccessibleWebResource = (entry) => [entry, './src/shared/extension/web-accessible-resource.ts'];
-const noBrowserTrap = (entry) => [entry, './src/shared/extension/disable-browser-trap.ts'];
+const disableBrowserTrap = (entry) => [entry, './src/shared/extension/disable-browser-trap.ts'];
 
 module.exports = {
     ...(production
@@ -71,14 +71,14 @@ module.exports = {
         elements: './src/content/elements.ts',
         notification: nonAccessibleWebResource('./src/content/injections/apps/notification/index.tsx'),
         onboarding: './src/pages/onboarding/index.tsx',
-        orchestrator: noBrowserTrap('./src/content/orchestrator.ts'),
-        popup: nonAccessibleWebResource('./src/popup/index.tsx'),
+        orchestrator: disableBrowserTrap('./src/content/orchestrator.ts'),
+        popup: './src/popup/index.tsx',
         settings: './src/pages/settings/index.tsx',
         /* custom element styles */
         'styles.root': './src/content/injections/custom-elements/ProtonPassRoot.scss',
         'styles.control': './src/content/injections/custom-elements/ProtonPassControl.scss',
         /* FF auth fallback */
-        ...(BUILD_TARGET === 'firefox' ? { authFallback: noBrowserTrap('./src/content/firefox/index.ts') } : {}),
+        ...(BUILD_TARGET === 'firefox' ? { authFallback: disableBrowserTrap('./src/content/firefox/index.ts') } : {}),
     },
     module: {
         strictExportPresence: true,
