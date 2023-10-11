@@ -35,7 +35,7 @@ export const getRenewalNoticeText = ({
         </Time>
     );
 
-    return c('Info').jt`Your subscription will renew automatically on ${renewalTime}.`;
+    return c('Info').jt`Your subscription will automatically renew on ${renewalTime}.`;
 };
 
 export interface Props extends RenewalNoticeProps {
