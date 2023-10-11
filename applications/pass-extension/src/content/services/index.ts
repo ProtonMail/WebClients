@@ -11,6 +11,7 @@
  * - Error during setup: client encounters an error during setup -> destroy.
  */
 import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
+import type { FeatureFlagState } from '@proton/pass/store';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { WorkerMessageType, type WorkerMessageWithSender, type WorkerState } from '@proton/pass/types';
 import { createListenerStore } from '@proton/pass/utils/listener';
@@ -48,40 +49,38 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
     });
 
     const reconciliate = async () => {
-        context.service.iframe.reset();
-        context.service.formManager.sync();
-
         const { status, loggedIn } = context.getState();
+        context.service.formManager.sync();
 
         if (!loggedIn) context.service.autofill.reset();
         else if (workerReady(status)) await context.service.autofill.reconciliate();
     };
 
-    const onWorkerStateChange = (workerState: WorkerState) => {
-        if (context.getState().active) {
-            context.setState(workerState);
-            void reconciliate();
-        }
-    };
+    const onFeatureFlagsChange = (features: FeatureFlagState) => context.setFeatureFlags(features);
 
     const onSettingsChange = (settings: ProxiedSettings) => {
-        if (context.getState().active) {
-            context.setSettings(settings);
-            void reconciliate();
-        }
+        context.setSettings(settings);
+        if (context.getState().active) void reconciliate();
+    };
+
+    const onWorkerStateChange = (workerState: WorkerState) => {
+        context.setState(workerState);
+        if (context.getState().active) void reconciliate();
     };
 
     const onPortMessage = async (message: WorkerMessageWithSender): Promise<void> => {
         if (message.sender === 'background') {
             switch (message.type) {
-                case WorkerMessageType.UNLOAD_CONTENT_SCRIPT:
-                    return context.destroy({ reason: 'unload script' });
-                case WorkerMessageType.WORKER_STATUS:
-                    return onWorkerStateChange(message.payload.state);
-                case WorkerMessageType.SETTINGS_UPDATE:
-                    return onSettingsChange(message.payload);
                 case WorkerMessageType.AUTOFILL_SYNC:
                     return context.service.autofill.sync(message.payload);
+                case WorkerMessageType.FEATURE_FLAGS_UPDATE:
+                    return onFeatureFlagsChange(message.payload);
+                case WorkerMessageType.SETTINGS_UPDATE:
+                    return onSettingsChange(message.payload);
+                case WorkerMessageType.WORKER_STATUS:
+                    return onWorkerStateChange(message.payload.state);
+                case WorkerMessageType.UNLOAD_CONTENT_SCRIPT:
+                    return context.destroy({ reason: 'unload script' });
             }
         }
     };
@@ -98,6 +97,8 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
             logger.debug(`[ContentScript::${scriptId}] Worker status resolved "${res.status}"`);
             context.setState({ loggedIn: res.loggedIn, status: res.status, UID: res.UID });
             context.setSettings(res.settings);
+            context.setFeatureFlags(res.features);
+            context.service.iframe.reset();
             await reconciliate();
 
             /* if the user has disabled every injection setting or added the current
