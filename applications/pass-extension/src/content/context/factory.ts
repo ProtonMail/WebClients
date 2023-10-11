@@ -1,5 +1,7 @@
+import type { FeatureFlagState } from '@proton/pass/store';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { WorkerStatus } from '@proton/pass/types';
+import type { PassFeature } from '@proton/pass/types/api/features';
 import { hasCriteria } from '@proton/pass/utils/settings/criteria';
 
 import { INITIAL_SETTINGS } from '../../shared/constants';
@@ -19,11 +21,14 @@ export const createContentScriptContext = (options: {
 }): ContentScriptContext => {
     const state: CSContextState = { active: true, loggedIn: false, status: WorkerStatus.IDLE, UID: undefined };
     const settings: ProxiedSettings = INITIAL_SETTINGS;
+    const featureFlags: FeatureFlagState = {};
 
     const context: ContentScriptContext = CSContext.set({
         mainFrame: options.mainFrame,
-        scriptId: options.scriptId,
         service: {
+            autofill: createAutofillService(),
+            autosave: createAutosaveService(),
+            detector: createDetectorService(),
             formManager: createFormManager({
                 /* attach or detach dropdown based on the
                  * detection results. If forms have been detected
@@ -33,11 +38,13 @@ export const createContentScriptContext = (options: {
                     context.service.iframe[didDetect ? 'attachDropdown' : 'detachDropdown']();
                 },
             }),
-            autofill: createAutofillService(),
-            autosave: createAutosaveService(),
             iframe: createIFrameService(),
-            detector: createDetectorService(),
         },
+        scriptId: options.scriptId,
+
+        destroy: options.destroy,
+        getExtensionContext: () => ExtensionContext.get(),
+        getFeatureFlags: () => featureFlags,
         getFeatures: () => {
             const domain = context.getExtensionContext().url.domain ?? '';
             const mask = settings.disallowedDomains?.[domain];
@@ -51,13 +58,14 @@ export const createContentScriptContext = (options: {
                 Autosave: autosave.prompt && (!mask || !hasCriteria(mask, 'Autosave')),
             };
         },
-        getExtensionContext: () => ExtensionContext.get(),
-        getState: () => state,
-        setState: (update) => Object.assign(state, update),
         getSettings: () => settings,
+        getState: () => state,
+        setFeatureFlags: (update) => {
+            (Object.keys(featureFlags) as PassFeature[]).forEach((key) => delete featureFlags[key]);
+            return Object.assign(featureFlags, update);
+        },
         setSettings: (update) => Object.assign(settings, update),
-
-        destroy: options.destroy,
+        setState: (update) => Object.assign(state, update),
     });
 
     return context;

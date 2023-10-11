@@ -21,10 +21,15 @@ export const createIFrameService = () => {
     /* only re-init the iframe sub-apps if the extension
      * context port has changed */
     const onAttached: <T extends IFrameAppService<any>>(app: T) => void = withContext(
-        ({ getExtensionContext, getState, getSettings }, app) => {
+        ({ getExtensionContext, getFeatureFlags, getState, getSettings }, app) => {
             const port = getExtensionContext().port;
-            if (app.getState().port !== port) app.init(port);
-            app.reset(getState(), getSettings());
+            if (app.getState().port !== port) app.setPort(port);
+
+            app.init({
+                features: getFeatureFlags(),
+                settings: getSettings(),
+                workerState: getState(),
+            });
         }
     );
 
