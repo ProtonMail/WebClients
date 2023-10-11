@@ -5,8 +5,8 @@ import { useLocation } from 'react-router-dom';
 import type { FormikTouched } from 'formik';
 import { type FormikContextType } from 'formik';
 
-import type { ItemDraft } from '@proton/pass/store';
-import { itemDraftDiscard, itemDraftSave } from '@proton/pass/store';
+import { itemDraftDiscard, itemDraftSave } from '@proton/pass/store/actions';
+import type { ItemDraft } from '@proton/pass/store/reducers';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { omit } from '@proton/shared/lib/helpers/object';
 import debounce from '@proton/utils/debounce';

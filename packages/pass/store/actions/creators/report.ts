@@ -1,13 +1,12 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import { reportProblem } from '@proton/pass/store/actions/requests';
+import withNotification from '@proton/pass/store/actions/with-notification';
+import withRequest from '@proton/pass/store/actions/with-request';
 import { type ExtensionEndpoint } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp';
 import { type BugPayload } from '@proton/shared/lib/api/reports';
-
-import { reportProblem } from '../requests';
-import withNotification from '../with-notification';
-import withRequest from '../with-request';
 
 export const reportProblemIntent = createAction('report problem intent', (payload: BugPayload) =>
     withRequest({

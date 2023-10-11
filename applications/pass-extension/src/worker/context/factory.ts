@@ -1,9 +1,5 @@
-import { PassCrypto } from '@proton/pass/crypto';
-import { backgroundMessage } from '@proton/pass/extension/message';
-import type { WorkerStatus } from '@proton/pass/types';
-import { type Api, WorkerMessageType } from '@proton/pass/types';
-import { or, waitUntil } from '@proton/pass/utils/fp';
-import { logger } from '@proton/pass/utils/logger';
+import { PassCrypto } from '@proton/pass/lib/crypto';
+import { backgroundMessage } from '@proton/pass/lib/extension/message';
 import {
     workerErrored,
     workerLocked,
@@ -11,7 +7,11 @@ import {
     workerReady,
     workerStale,
     workerStatusResolved,
-} from '@proton/pass/utils/worker';
+} from '@proton/pass/lib/worker';
+import type { WorkerStatus } from '@proton/pass/types';
+import { type Api, WorkerMessageType } from '@proton/pass/types';
+import { or, waitUntil } from '@proton/pass/utils/fp';
+import { logger } from '@proton/pass/utils/logger';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
 

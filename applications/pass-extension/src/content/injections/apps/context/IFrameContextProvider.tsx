@@ -2,15 +2,15 @@ import { type FC, createContext, useCallback, useContext, useEffect, useMemo, us
 
 import type { Runtime } from 'webextension-polyfill';
 
-import { contentScriptMessage, portForwardingMessage, sendMessage } from '@proton/pass/extension/message';
-import browser from '@proton/pass/globals/browser';
-import type { FeatureFlagState } from '@proton/pass/store';
+import { contentScriptMessage, portForwardingMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import browser from '@proton/pass/lib/globals/browser';
+import { workerReady } from '@proton/pass/lib/worker';
+import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { Maybe, MaybeNull, RecursivePartial, WorkerMessage, WorkerState } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { safeCall } from '@proton/pass/utils/fp';
 import { logger } from '@proton/pass/utils/logger';
-import { workerReady } from '@proton/pass/utils/worker';
 import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
 import { loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
@@ -184,7 +184,7 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
 
     /* Every message sent will be forwarded to the content-script
      * through the worker's MessageBroker.
-     * see `@proton/pass/extension/message/message-broker` */
+     * see `@proton/pass/lib/extension/message/message-broker` */
     const postMessage = useCallback(
         (rawMessage: IFrameMessage) => {
             try {

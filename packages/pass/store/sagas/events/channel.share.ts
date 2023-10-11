@@ -2,8 +2,23 @@
 import type { AnyAction } from 'redux';
 import { all, call, fork, put, select, take } from 'redux-saga/effects';
 
-import { PassCrypto } from '@proton/pass/crypto';
-import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/events/constants';
+import { PassCrypto } from '@proton/pass/lib/crypto';
+import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
+import type { EventManagerEvent } from '@proton/pass/lib/events/manager';
+import { parseItemRevision } from '@proton/pass/lib/items/item.utils';
+import { getAllShareKeys, getShareLatestEventId } from '@proton/pass/lib/shares/share.requests';
+import { decodeVaultContent } from '@proton/pass/lib/vaults/vault-proto.transformer';
+import {
+    itemDeleteSync,
+    itemEditSync,
+    itemLastUseTimeUpdated,
+    shareDeleteSync,
+    shareEditSync,
+    shareEvent,
+    vaultDeleteSuccess,
+} from '@proton/pass/store/actions';
+import { selectAllShares, selectShare } from '@proton/pass/store/selectors';
+import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
 import type {
     Api,
     ItemRevision,
@@ -16,24 +31,8 @@ import type {
 } from '@proton/pass/types';
 import { ShareType } from '@proton/pass/types';
 import { logId, logger } from '@proton/pass/utils/logger';
-import { decodeVaultContent } from '@proton/pass/utils/protobuf';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
-import type { EventManagerEvent } from '../../../events/manager';
-import {
-    itemDeleteSync,
-    itemEditSync,
-    itemLastUseTimeUpdated,
-    shareDeleteSync,
-    shareEditSync,
-    shareEvent,
-    vaultDeleteSuccess,
-} from '../../actions';
-import { selectAllShares, selectShare } from '../../selectors';
-import type { WorkerRootSagaOptions } from '../../types';
-import { parseItemRevision } from '../workers/items';
-import { getShareLatestEventId } from '../workers/shares';
-import { getAllShareKeys } from '../workers/vaults';
 import { eventChannelFactory } from './channel.factory';
 import { channelEventsWorker, channelWakeupWorker } from './channel.worker';
 import type { EventChannel } from './types';

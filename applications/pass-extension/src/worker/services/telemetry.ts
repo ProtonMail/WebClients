@@ -1,6 +1,6 @@
-import { api } from '@proton/pass/api';
-import browser from '@proton/pass/globals/browser';
-import { selectUserTier } from '@proton/pass/store';
+import { api } from '@proton/pass/lib/api/api';
+import browser from '@proton/pass/lib/globals/browser';
+import { selectUserTier } from '@proton/pass/store/selectors';
 import { type Maybe, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { type TelemetryEvent } from '@proton/pass/types/data/telemetry';
 import { withPayloadLens } from '@proton/pass/utils/fp';

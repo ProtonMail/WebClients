@@ -3,12 +3,12 @@ import { type ForwardRefRenderFunction, forwardRef } from 'react';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { workerBusy } from '@proton/pass/lib/worker';
 import type { MaybeNull } from '@proton/pass/types';
 import { WorkerStatus } from '@proton/pass/types';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
 import { pixelEncoder } from '@proton/pass/utils/dom';
 import { pipe, tap } from '@proton/pass/utils/fp';
-import { workerBusy } from '@proton/pass/utils/worker';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';

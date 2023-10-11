@@ -1,5 +1,21 @@
 import { createSelector } from '@reduxjs/toolkit';
 
+import { isLoginItem, isTrashed } from '@proton/pass/lib/items/item.predicates';
+import {
+    filterItemsByShareId,
+    filterItemsByType,
+    flattenItemsByShareId,
+    sortItems,
+} from '@proton/pass/lib/items/item.utils';
+import { matchAny } from '@proton/pass/lib/search/match-any';
+import { searchItems } from '@proton/pass/lib/search/match-items';
+import { ItemUrlMatch, getItemPriorityForUrl } from '@proton/pass/lib/search/match-url';
+import type {
+    SelectAutofillCandidatesOptions,
+    SelectAutosaveCandidatesOptions,
+    SelectItemsByDomainOptions,
+    SelectItemsOptions,
+} from '@proton/pass/lib/search/types';
 import type {
     ItemRevision,
     ItemRevisionWithOptimistic,
@@ -10,23 +26,6 @@ import type {
 } from '@proton/pass/types';
 import { invert, pipe, prop } from '@proton/pass/utils/fp';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { flattenItemsByShareId, isLoginItem } from '@proton/pass/utils/pass/items';
-import { isTrashed } from '@proton/pass/utils/pass/trash';
-import type {
-    SelectAutofillCandidatesOptions,
-    SelectAutosaveCandidatesOptions,
-    SelectItemsByDomainOptions,
-    SelectItemsOptions,
-} from '@proton/pass/utils/search';
-import {
-    ItemUrlMatch,
-    filterItemsByShareId,
-    filterItemsByType,
-    getItemPriorityForUrl,
-    matchAny,
-    searchItems,
-    sortItems,
-} from '@proton/pass/utils/search';
 import { isEmptyString } from '@proton/pass/utils/string';
 
 import { unwrapOptimisticState } from '../optimistic/utils/transformers';

@@ -1,8 +1,8 @@
 import { eventChannel } from 'redux-saga';
 
+import { type EventManagerEvent, eventManager } from '@proton/pass/lib/events/manager';
 import { merge } from '@proton/pass/utils/object/merge';
 
-import { type EventManagerEvent, eventManager } from '../../../events/manager';
 import type { EventChannel, EventChannelOnError, EventChannelOptions } from './types';
 
 const channelErrorHandler = <T extends {}>(onError?: EventChannelOnError<T>) => {

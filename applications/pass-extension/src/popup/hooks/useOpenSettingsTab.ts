@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import browser from '@proton/pass/globals/browser';
+import browser from '@proton/pass/lib/globals/browser';
 
 export const useOpenSettingsTab = () => {
     return useCallback(async (page?: string) => {

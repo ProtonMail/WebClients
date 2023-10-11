@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Icon, type ModalProps } from '@proton/components/components';
-import { selectVaultLimits } from '@proton/pass/store';
+import { selectVaultLimits } from '@proton/pass/store/selectors';
 import type { VaultShare } from '@proton/pass/types';
 import { pipe, tap } from '@proton/pass/utils/fp';
 import noop from '@proton/utils/noop';

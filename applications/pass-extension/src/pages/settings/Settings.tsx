@@ -7,8 +7,13 @@ import { c, msgid } from 'ttag';
 
 import { Avatar } from '@proton/atoms/Avatar';
 import { Icon, Tabs, useNotifications } from '@proton/components';
-import { pageMessage } from '@proton/pass/extension/message';
-import { selectPassPlan, selectPlanDisplayName, selectTrialDaysRemaining, selectUser } from '@proton/pass/store';
+import { pageMessage } from '@proton/pass/lib/extension/message';
+import {
+    selectPassPlan,
+    selectPlanDisplayName,
+    selectTrialDaysRemaining,
+    selectUser,
+} from '@proton/pass/store/selectors';
 import { type Unpack, WorkerMessageType, type WorkerMessageWithSender, WorkerStatus } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';

@@ -1,5 +1,5 @@
-import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
 import { FormType, flagAsIgnored, removeClassifierFlags } from '@proton/pass/fathom';
+import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { WorkerMessageType } from '@proton/pass/types';
 import { pipe, waitUntil } from '@proton/pass/utils/fp';
 import noop from '@proton/utils/noop';

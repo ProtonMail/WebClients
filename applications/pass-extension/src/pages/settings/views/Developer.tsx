@@ -2,7 +2,7 @@ import { type VFC } from 'react';
 
 import { Button } from '@proton/atoms/Button';
 import Icon from '@proton/components/components/icon/Icon';
-import { pageMessage, sendMessage } from '@proton/pass/extension/message';
+import { pageMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { WorkerMessageType } from '@proton/pass/types';
 
 import { SettingsPanel } from '../component/SettingsPanel';

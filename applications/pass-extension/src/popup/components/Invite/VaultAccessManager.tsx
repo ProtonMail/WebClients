@@ -5,11 +5,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Icon } from '@proton/components/components';
-import { selectVaultWithItemsCount } from '@proton/pass/store';
+import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
+import { selectVaultWithItemsCount } from '@proton/pass/store/selectors';
 import type { PendingInvite } from '@proton/pass/types';
 import { type ShareMember as ShareMemberType } from '@proton/pass/types';
 import { sortOn } from '@proton/pass/utils/fp/sort';
-import { isShareManageable } from '@proton/pass/utils/pass/share';
 
 import { SidebarModal } from '../../../shared/components/sidebarmodal/SidebarModal';
 import { useInviteContext } from '../../context/invite/InviteContextProvider';

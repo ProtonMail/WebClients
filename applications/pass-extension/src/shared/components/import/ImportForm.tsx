@@ -5,7 +5,8 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
 import { AttachedFile, Bordered, Dropzone, FileInput, Icon, InlineLinkButton } from '@proton/components/components';
-import { ImportProvider, ImportProviderValues, PROVIDER_INFO_MAP, extractFileExtension } from '@proton/pass/import';
+import { extractFileExtension } from '@proton/pass/lib/import/reader';
+import { ImportProvider, ImportProviderValues, PROVIDER_INFO_MAP } from '@proton/pass/lib/import/types';
 import type { MaybeNull } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';

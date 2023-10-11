@@ -7,13 +7,13 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
-import { selectTOTPLimits, selectVaultLimits } from '@proton/pass/store';
+import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
+import { parseOTPValue } from '@proton/pass/lib/otp/otp';
 import { passwordSave } from '@proton/pass/store/actions/creators/pw-history';
+import { selectTOTPLimits, selectVaultLimits } from '@proton/pass/store/selectors';
 import { type LoginWithAliasCreationDTO } from '@proton/pass/types';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { merge } from '@proton/pass/utils/object';
-import { parseOTPValue } from '@proton/pass/utils/otp/otp';
-import { obfuscateExtraFields } from '@proton/pass/utils/pass/items';
 import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import { isValidURL, parseUrl } from '@proton/pass/utils/url';

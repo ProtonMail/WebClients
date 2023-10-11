@@ -1,4 +1,4 @@
-import browser from '@proton/pass/globals/browser';
+import browser from '@proton/pass/lib/globals/browser';
 import noop from '@proton/utils/noop';
 
 export const setPopupIcon = (options: { disabled: boolean; locked: boolean }): Promise<void> => {

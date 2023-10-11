@@ -3,9 +3,9 @@ import { type VFC, useCallback, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
-import type { AliasOptions, AliasState } from '@proton/pass/store';
-import { createTelemetryEvent } from '@proton/pass/telemetry/events';
+import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
+import type { AliasOptions, AliasState } from '@proton/pass/store/reducers';
 import { type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';

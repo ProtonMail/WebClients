@@ -2,22 +2,18 @@
 import { captureException as sentryCaptureException } from '@sentry/browser';
 import { c } from 'ttag';
 
-import type { AuthStore, ExtensionPersistedSession, ExtensionSession, SessionLockCheckResult } from '@proton/pass/auth';
-import {
-    SESSION_KEYS,
-    checkSessionLock,
-    consumeFork,
-    createAuthStore,
-    encryptPersistedSession,
-    exposeAuthStore,
-    isValidSession,
-    resumeSession,
-} from '@proton/pass/auth';
-import type { MessageHandlerCallback } from '@proton/pass/extension/message';
-import browser from '@proton/pass/globals/browser';
+import type { AuthStore } from '@proton/pass/lib/auth/authentication';
+import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/authentication';
+import { consumeFork } from '@proton/pass/lib/auth/fork';
+import type { ExtensionPersistedSession, ExtensionSession } from '@proton/pass/lib/auth/session';
+import { SESSION_KEYS, encryptPersistedSession, isValidSession, resumeSession } from '@proton/pass/lib/auth/session';
+import type { SessionLockCheckResult } from '@proton/pass/lib/auth/session-lock';
+import { checkSessionLock } from '@proton/pass/lib/auth/session-lock';
+import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message';
+import browser from '@proton/pass/lib/globals/browser';
+import { workerLocked, workerReady } from '@proton/pass/lib/worker';
 import {
     notification,
-    selectUser,
     sessionUnlockFailure,
     sessionUnlockIntent,
     sessionUnlockSuccess,
@@ -25,7 +21,8 @@ import {
     stateDestroy,
     stateLock,
     syncLock,
-} from '@proton/pass/store';
+} from '@proton/pass/store/actions';
+import { selectUser } from '@proton/pass/store/selectors';
 import type { Api, Maybe, WorkerMessageResponse } from '@proton/pass/types';
 import { SessionLockStatus, WorkerMessageType, WorkerStatus } from '@proton/pass/types';
 import type { ForkPayload } from '@proton/pass/types/api/fork';
@@ -33,7 +30,6 @@ import { withPayload } from '@proton/pass/utils/fp';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time';
-import { workerLocked, workerReady } from '@proton/pass/utils/worker';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { MAIL_APP_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import createStore from '@proton/shared/lib/helpers/store';

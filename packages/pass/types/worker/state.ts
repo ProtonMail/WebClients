@@ -1,7 +1,7 @@
-import type { GeneratePasswordOptions } from '@proton/pass/password';
-import type { ItemDraft } from '@proton/pass/store';
+import type { ExtensionSession } from '@proton/pass/lib/auth/session';
+import type { GeneratePasswordOptions } from '@proton/pass/lib/password/generator';
+import type { ItemDraft } from '@proton/pass/store/reducers';
 
-import type { ExtensionSession } from '../../auth';
 import type { ItemFilters, SelectedItem } from '../data';
 import type { Maybe, MaybeNull } from '../utils';
 

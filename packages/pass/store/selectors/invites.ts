@@ -1,11 +1,10 @@
 import { createSelector } from '@reduxjs/toolkit';
 
+import type { InviteState } from '@proton/pass/store/reducers';
+import type { State } from '@proton/pass/store/types';
 import type { Invite, Maybe } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array';
 import { sortOn } from '@proton/pass/utils/fp/sort';
-
-import type { InviteState } from '../reducers';
-import type { State } from '../types';
 
 export const selectInvites = (state: State): InviteState => state.invites;
 

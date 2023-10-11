@@ -1,8 +1,8 @@
 import type { Runtime } from 'webextension-polyfill';
 
-import { resolveMessageFactory, sendMessage } from '@proton/pass/extension/message';
-import { getCurrentTab } from '@proton/pass/extension/tabs';
-import browser from '@proton/pass/globals/browser';
+import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message';
+import { getCurrentTab } from '@proton/pass/lib/extension/utils/tabs';
+import browser from '@proton/pass/lib/globals/browser';
 import { type ExtensionEndpoint, type TabId, WorkerMessageType } from '@proton/pass/types';
 import { createSharedContext } from '@proton/pass/utils/context';
 import { safeCall } from '@proton/pass/utils/fp';

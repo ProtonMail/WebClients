@@ -17,11 +17,12 @@ import {
     TableRow,
 } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
-import { selectDisallowedDomains, settingsEditIntent } from '@proton/pass/store';
+import { hasCriteria, toggleCriteria } from '@proton/pass/lib/settings/criteria';
+import { settingsEditIntent } from '@proton/pass/store/actions';
+import { selectDisallowedDomains } from '@proton/pass/store/selectors';
 import type { CriteriaMasks } from '@proton/pass/types/worker/settings';
 import { CRITERIA_MASKS } from '@proton/pass/types/worker/settings';
 import { merge } from '@proton/pass/utils/object';
-import { hasCriteria, toggleCriteria } from '@proton/pass/utils/settings/criteria';
 import { parseUrl } from '@proton/pass/utils/url';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 

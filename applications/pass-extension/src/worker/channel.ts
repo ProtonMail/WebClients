@@ -1,5 +1,5 @@
-import { createMessageBroker } from '@proton/pass/extension/message';
-import { stateCache } from '@proton/pass/store';
+import { createMessageBroker } from '@proton/pass/lib/extension/message';
+import { stateCache } from '@proton/pass/store/actions';
 import { SessionLockStatus, WorkerMessageType } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 

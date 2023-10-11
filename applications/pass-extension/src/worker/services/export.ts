@@ -1,9 +1,9 @@
-import { createExportZip, decryptZip, encryptZip } from '@proton/pass/export';
-import type { ExportPayload } from '@proton/pass/export/types';
-import { selectShareOrThrow, selectUser } from '@proton/pass/store';
+import { createExportZip, decryptZip, encryptZip } from '@proton/pass/lib/export/export';
+import type { ExportPayload } from '@proton/pass/lib/export/types';
+import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import { unwrapOptimisticState } from '@proton/pass/store/optimistic/utils/transformers';
+import { selectShareOrThrow, selectUser } from '@proton/pass/store/selectors';
 import { type VaultShareContent, WorkerMessageType } from '@proton/pass/types';
-import { deobfuscateItem } from '@proton/pass/utils/pass/items';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 import * as config from '../../app/config';

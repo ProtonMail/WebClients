@@ -1,6 +1,6 @@
 import type { AnyAction, Reducer } from 'redux';
 
-import type { GeneratePasswordOptions } from '@proton/pass/password';
+import type { GeneratePasswordOptions } from '@proton/pass/lib/password/generator';
 import type { ItemFilters, ItemType, MaybeNull, SelectedItem, TabId, UniqueItem } from '@proton/pass/types';
 import { merge, objectDelete } from '@proton/pass/utils/object';
 

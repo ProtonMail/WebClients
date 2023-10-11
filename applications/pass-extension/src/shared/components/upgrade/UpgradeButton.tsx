@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import type { ButtonLikeShape } from '@proton/atoms';
 import { Button } from '@proton/atoms';
 import { Icon, InlineLinkButton } from '@proton/components/components';
-import browser from '@proton/pass/globals/browser';
+import browser from '@proton/pass/lib/globals/browser';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
