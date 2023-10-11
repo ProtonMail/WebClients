@@ -56,7 +56,7 @@ const Challenge = ({
             key={errorRetry}
             src={challengeSrc}
             errorTimeout={errorTimeout}
-            className={iframeClassName ? iframeClassName : 'w100'}
+            className={iframeClassName ? iframeClassName : 'w-full'}
             bodyClassName={bodyClassName}
             style={style}
             onSuccess={() => {

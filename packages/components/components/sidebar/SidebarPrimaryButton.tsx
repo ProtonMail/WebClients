@@ -5,7 +5,7 @@ import clsx from '@proton/utils/clsx';
 
 const SidebarPrimaryButton = ({ children, className = '', ...rest }: ButtonProps, ref: Ref<HTMLButtonElement>) => {
     return (
-        <Button color="norm" size="large" className={clsx(['w100', className])} ref={ref} {...rest}>
+        <Button color="norm" size="large" className={clsx(['w-full', className])} ref={ref} {...rest}>
             {children}
         </Button>
     );

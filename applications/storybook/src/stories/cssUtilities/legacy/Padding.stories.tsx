@@ -20,7 +20,7 @@ const demoItemClasses = 'flex flex-align-items-center flex-justify-center bg-pri
 
 export const Padding = () => {
     return (
-        <div className="border rounded w100 relative flex gap-2 flex-nowrap scroll-if-needed flex-align-items-center flex-justify-space-between">
+        <div className="border rounded w-full relative flex gap-2 flex-nowrap scroll-if-needed flex-align-items-center flex-justify-space-between">
             {paddingSize.map((size) => (
                 <div key={size} className="bg-primary flex-item-noshrink rounded-sm overflow-hidden">
                     <div className={`p${size}`} style={{ backgroundColor: 'rgba(0,0,0,.2)' }}>
@@ -36,7 +36,7 @@ export const Padding = () => {
 
 export const PaddingTop = () => {
     return (
-        <div className="border rounded w100 relative flex gap-2 flex-nowrap scroll-if-needed flex-align-items-start flex-justify-space-between text-2xs">
+        <div className="border rounded w-full relative flex gap-2 flex-nowrap scroll-if-needed flex-align-items-start flex-justify-space-between text-2xs">
             {paddingSize.map((size) => (
                 <div key={size} className="bg-primary flex-item-noshrink rounded-sm overflow-hidden">
                     <div className={`pt${size}`} style={{ width: '3rem', backgroundColor: 'rgba(0,0,0,.2)' }}>
@@ -52,7 +52,7 @@ export const PaddingTop = () => {
 
 export const PaddingBottom = () => {
     return (
-        <div className="border rounded w100 relative flex gap-2 flex-nowrap scroll-if-needed flex-align-items-end flex-justify-space-between text-2xs">
+        <div className="border rounded w-full relative flex gap-2 flex-nowrap scroll-if-needed flex-align-items-end flex-justify-space-between text-2xs">
             {paddingSize.map((size) => (
                 <div key={size} className="bg-primary flex-item-noshrink rounded-sm overflow-hidden">
                     <div className={`pb${size}`} style={{ width: '3rem', backgroundColor: 'rgba(0,0,0,.2)' }}>
@@ -68,7 +68,7 @@ export const PaddingBottom = () => {
 
 export const PaddingY = () => {
     return (
-        <div className="border rounded w100 relative flex gap-2 flex-nowrap scroll-if-needed flex-align-items-center flex-justify-space-between text-2xs">
+        <div className="border rounded w-full relative flex gap-2 flex-nowrap scroll-if-needed flex-align-items-center flex-justify-space-between text-2xs">
             {paddingSize.map((size) => (
                 <div key={size} className="bg-primary flex-item-noshrink rounded-sm overflow-hidden">
                     <div className={`py${size}`} style={{ width: '3rem', backgroundColor: 'rgba(0,0,0,.2)' }}>
@@ -84,7 +84,7 @@ export const PaddingY = () => {
 
 export const PaddingLeft = () => {
     return (
-        <div className="border rounded w100 relative flex flex-column flex-nowrap flex-align-items-start gap-2 text-2xs">
+        <div className="border rounded w-full relative flex flex-column flex-nowrap flex-align-items-start gap-2 text-2xs">
             {paddingSize.map((size) => (
                 <div key={size} className="bg-primary flex-item-nogrow rounded-sm overflow-hidden">
                     <div className={`pl${size}`} style={{ height: '2rem', backgroundColor: 'rgba(0,0,0,.2)' }}>
@@ -100,7 +100,7 @@ export const PaddingLeft = () => {
 
 export const PaddingRight = () => {
     return (
-        <div className="border rounded w100 relative flex flex-column flex-nowrap flex-align-items-end gap-2 text-2xs">
+        <div className="border rounded w-full relative flex flex-column flex-nowrap flex-align-items-end gap-2 text-2xs">
             {paddingSize.map((size) => (
                 <div key={size} className="bg-primary flex-item-nogrow rounded-sm overflow-hidden">
                     <div className={`pr${size}`} style={{ height: '2rem', backgroundColor: 'rgba(0,0,0,.2)' }}>
@@ -116,7 +116,7 @@ export const PaddingRight = () => {
 
 export const PaddingX = () => {
     return (
-        <div className="border rounded w100 relative flex flex-column flex-nowrap flex-align-items-center gap-2 text-2xs">
+        <div className="border rounded w-full relative flex flex-column flex-nowrap flex-align-items-center gap-2 text-2xs">
             {paddingSize.map((size) => (
                 <div key={size} className="bg-primary flex-item-nogrow rounded-sm overflow-hidden">
                     <div className={`px${size}`} style={{ height: '2rem', backgroundColor: 'rgba(0,0,0,.2)' }}>

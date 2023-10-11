@@ -16,14 +16,14 @@ const ContactViewProperty = ({ field, type, isSignatureVerified, children }: Pro
     return (
         <div className="contact-view-row flex flex-nowrap flex-align-items-start mb-4">
             <div
-                className={clsx(['contact-view-row-left flex flex-nowrap flex-item-fluid on-mobile-flex-column w100'])}
+                className={clsx(['contact-view-row-left flex flex-nowrap flex-item-fluid on-mobile-flex-column w-full'])}
             >
                 <div
                     className={clsx([
                         'contact-view-row-label flex-no-min-children w-full md:w-1/5 flex-item-noshrink flex-align-items-start label',
                     ])}
                 >
-                    <div className="flex flex-item-noshrink flex-item-fluid flex-align-items-center max-w100">
+                    <div className="flex flex-item-noshrink flex-item-fluid flex-align-items-center max-w-full">
                         <div role="heading" aria-level={3} className="mr-2">
                             <ContactLabelProperty field={field} type={type} />
                         </div>

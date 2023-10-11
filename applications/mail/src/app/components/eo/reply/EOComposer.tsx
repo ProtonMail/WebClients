@@ -136,7 +136,7 @@ const EOComposer = ({ referenceMessage, id, publicKey, outsideKey, numberOfRepli
                 />
             )}
             <EOReplyHeader message={referenceMessage} />
-            <div className="composer-body-container eo-composer flex flex-column flex-nowrap flex-item-fluid-auto max-w100">
+            <div className="composer-body-container eo-composer flex flex-column flex-nowrap flex-item-fluid-auto max-w-full">
                 <ComposerContent
                     message={modelMessage}
                     disabled={lock}

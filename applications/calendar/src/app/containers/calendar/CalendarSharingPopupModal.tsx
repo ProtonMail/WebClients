@@ -30,7 +30,7 @@ const CalendarSharingPopupModal = ({ onDisplayed, ...rest }: Props) => {
         <Modal {...rest} size="small">
             <ModalHeader title={c('Title; calendar sharing pop-up').t`Planning just got easier!`} />
             <ModalContent>
-                <img className="w100" src={img} alt="" />
+                <img className="w-full" src={img} alt="" />
                 <div className="my-4">{c('Info; calendar sharing pop-up')
                     .t`Invite others with a ${BRAND_NAME} account to view or edit events in your calendar.`}</div>
                 <Href href={getKnowledgeBaseUrl('/share-calendar-with-proton-users')}>{c('Link').t`Learn more`}</Href>

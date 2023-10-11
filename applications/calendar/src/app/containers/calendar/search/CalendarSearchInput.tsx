@@ -88,7 +88,7 @@ const CalendarSearchInput = (
                     style={{ '--max-w-custom': '22.5rem' }}
                     ref={ref}
                 >
-                    <div className="w100 m-auto">
+                    <div className="w-full m-auto">
                         <Input
                             ref={inputRef}
                             inputClassName="cursor-text"

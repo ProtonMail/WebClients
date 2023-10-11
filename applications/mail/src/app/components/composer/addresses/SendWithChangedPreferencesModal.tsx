@@ -29,7 +29,7 @@ const SendWithChangedPreferencesModal = ({ emails, onSubmit, onClose, ...rest }:
                             key={index} // eslint-disable-line react/no-array-index-key
                             className={clsx([index !== emails.length && 'mb-2'])}
                         >
-                            <span className="block max-w100">{email}</span>
+                            <span className="block max-w-full">{email}</span>
                         </li>
                     ))}
                 </ul>

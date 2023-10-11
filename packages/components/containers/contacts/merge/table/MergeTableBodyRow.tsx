@@ -75,8 +75,8 @@ const MergeTableBodyRow = (
             greyedOut={deleted}
             onToggle={onClickCheckbox}
         />,
-        <span className="max-w100 inline-block text-ellipsis">{givenName}</span>,
-        <span className="max-w100 inline-block text-ellipsis">{familyName}</span>,
+        <span className="max-w-full inline-block text-ellipsis">{givenName}</span>,
+        <span className="max-w-full inline-block text-ellipsis">{familyName}</span>,
         <EmailsTableCell
             key="email"
             contactID={ID}

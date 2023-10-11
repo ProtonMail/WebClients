@@ -62,7 +62,7 @@ const Captcha = ({ token, theme, onSubmit }: Props) => {
                 onLoad={() => setLoading(false)}
                 title="Captcha"
                 ref={iframeRef}
-                className="w100 h-custom"
+                className="w-full h-custom"
                 src={src}
                 style={style}
                 sandbox="allow-scripts allow-same-origin allow-popups"

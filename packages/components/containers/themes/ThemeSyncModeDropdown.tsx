@@ -55,7 +55,7 @@ const ThemeSyncModeDropdown = ({ mode, className, themeIdentifier, list, onChang
                 contentProps={{
                     size: { width: DropdownSizeUnit.Anchor, height: DropdownSizeUnit.Dynamic, maxHeight: '10rem' },
                 }}
-                className={clsx('w100 flex flex-nowrap flex-justify-space-between p-2 gap-3 text-left', className)}
+                className={clsx('w-full flex flex-nowrap flex-justify-space-between p-2 gap-3 text-left', className)}
             >
                 <DropdownMenu>
                     {list.map(({ identifier, label, thumbColors }) => {

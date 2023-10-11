@@ -271,7 +271,7 @@ const ContactGroupDropdown = ({
                                     return (
                                         <li
                                             key={ID}
-                                            className="dropdown-item w100 flex flex-nowrap flex-align-items-center py-2 px-4"
+                                            className="dropdown-item w-full flex flex-nowrap flex-align-items-center py-2 px-4"
                                         >
                                             <Checkbox
                                                 className="flex-item-noshrink"
@@ -301,7 +301,7 @@ const ContactGroupDropdown = ({
                             </ul>
                         ) : null}
                         {!filteredContactGroups.length && keyword ? (
-                            <div className="w100 flex flex-nowrap flex-align-items-center py-2 px-4">
+                            <div className="w-full flex flex-nowrap flex-align-items-center py-2 px-4">
                                 <Icon name="exclamation-circle" className="mr-2" />
                                 {c('Info').t`No group found`}
                             </div>

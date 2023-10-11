@@ -197,7 +197,7 @@ const CreateEventPopover = ({
                     <PrimaryButton
                         data-testid="create-event-popover:save"
                         type="submit"
-                        className={isDrawerApp ? 'w100' : undefined}
+                        className={isDrawerApp ? 'w-full' : undefined}
                         loading={loadingAction && lastAction === ACTION.SUBMIT}
                         disabled={loadingAction || cannotSave}
                     >

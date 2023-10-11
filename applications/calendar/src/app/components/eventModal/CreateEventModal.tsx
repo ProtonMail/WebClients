@@ -157,7 +157,7 @@ const CreateEventModal = ({
             onClose={onClose}
             {...rest}
             isOpen={isOpen}
-            className="w100"
+            className="w-full"
             as={Form}
             onSubmit={() => {
                 if (!loadingAction) {

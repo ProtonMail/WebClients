@@ -24,20 +24,20 @@ const ContactSelectorRow = ({ style, onCheck, contact, checked, isNarrow }: Prop
             >
                 <Checkbox
                     labelProps={{ 'data-testid': `contact-checkbox-${contact.Email}` }}
-                    className="flex-nowrap w100 h100"
+                    className="flex-nowrap w-full h100"
                     checked={checked}
                     onChange={(e) => onCheck(e, contact.ID)}
                     aria-describedby={contact.ID}
                     id={contact.ID}
                 >
                     <div
-                        className={clsx(['flex-item-fluid flex-align-items-center max-w100 h100', !isNarrow && 'flex'])}
+                        className={clsx(['flex-item-fluid flex-align-items-center max-w-full h100', !isNarrow && 'flex'])}
                     >
                         <div className={clsx(['pl-4 flex', !isNarrow && 'w45'])}>
-                            <span className="inline-block text-ellipsis max-w100 pr-4">{contact.Name}</span>
+                            <span className="inline-block text-ellipsis max-w-full pr-4">{contact.Name}</span>
                         </div>
                         <div className="flex-item-fluid flex pl-4 md:pl-0">
-                            <span className="inline-block text-ellipsis max-w100 pr-4">{contact.Email}</span>
+                            <span className="inline-block text-ellipsis max-w-full pr-4">{contact.Email}</span>
                         </div>
                     </div>
                 </Checkbox>

@@ -160,7 +160,7 @@ const KeyUploadContent = ({
                                             key={1}
                                             className="flex flex-row flex-nowrap flex-align-items-center flex-justify-space-between"
                                         >
-                                            <code className="max-w100 inline-block text-ellipsis" title={fingerprint}>
+                                            <code className="max-w-full inline-block text-ellipsis" title={fingerprint}>
                                                 {fingerprint}
                                             </code>
                                             <Button

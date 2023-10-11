@@ -59,7 +59,7 @@ const TextArea = ({
             <textarea
                 ref={textAreaRef}
                 rows={rows}
-                className={clsx(['field w100', className, statusClasses])}
+                className={clsx(['field w-full', className, statusClasses])}
                 aria-invalid={hasError}
                 aria-describedby={uid}
                 {...rest}

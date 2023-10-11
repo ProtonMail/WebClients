@@ -47,14 +47,14 @@ const PrivateMainAreaBase = (
         >
             <div
                 className={clsx(
-                    'flex flex-nowrap w100',
+                    'flex flex-nowrap w-full',
                     drawerSidebar ? 'h100 relative overflow-hidden' : undefined,
                     isProminent ? 'ui-prominent' : undefined
                 )}
             >
                 <div
                     className={clsx(
-                        'flex flex-nowrap w100 h100',
+                        'flex flex-nowrap w-full h100',
                         hasDrawerSidebar ? 'main-area-border overflow-hidden' : 'overflow-auto',
                         hasDrawerSidebar && mainBordered ? 'main-area-rounded--right' : undefined,
                         isProminent ? 'ui-standard main-area-rounded--left' : undefined

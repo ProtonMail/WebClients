@@ -49,7 +49,7 @@ const getProtectInboxState = (): ProtectInboxStepProps[] => {
 const ProtectInboxStep = ({ img, title, description, knowledgeBaseLink }: ProtectInboxStepProps) => {
     return (
         <div>
-            <img src={img} alt="" className="w100 h-custom" style={{ '--h-custom': '15rem' }} />
+            <img src={img} alt="" className="w-full h-custom" style={{ '--h-custom': '15rem' }} />
             {/* Avoid text jumping when changing step, fixed height ensure proper display of the text */}
             <div className="mb-0 mt-2 h-custom min-h5e">
                 <h1 className="text-bold text-2xl mt-4">{title}</h1>
