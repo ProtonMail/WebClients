@@ -18,7 +18,7 @@ import { getEmbeddedImages, insertImageAnchor } from '../message/messageImages';
 
 export const transformEmbedded = async (
     message: MessageState,
-    mailSettings: MailSettings | undefined,
+    mailSettings: MailSettings,
     onLoadEmbeddedImages: (attachments: Attachment[]) => Promise<LoadEmbeddedResults>
 ) => {
     const draft = isDraft(message.data);

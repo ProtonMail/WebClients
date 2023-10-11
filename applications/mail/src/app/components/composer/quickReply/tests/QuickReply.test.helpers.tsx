@@ -1,10 +1,10 @@
-import { findByTestId, waitFor } from '@testing-library/react';
-import { act, fireEvent } from '@testing-library/react';
+import { act, findByTestId, fireEvent, waitFor } from '@testing-library/react';
 
 import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { MailSettings } from '@proton/shared/lib/interfaces';
+import { PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 
 import { MESSAGE_ACTIONS } from '../../../../constants';
 import { addApiMock } from '../../../../helpers/test/api';
@@ -41,7 +41,10 @@ export const setupQuickReplyTests = async ({
     isSender,
 }: QuickReplyTestConfig) => {
     minimalCache();
-    addToCache('MailSettings', { PMSignature: 1, DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings); // Need to have the Proton signature by default in the QR
+    addToCache('MailSettings', {
+        PMSignature: PM_SIGNATURE.ENABLED,
+        DraftMIMEType: MIME_TYPES.DEFAULT,
+    } as MailSettings); // Need to have the Proton signature by default in the QR
     addToCache('Addresses', [
         {
             ID: addressID,

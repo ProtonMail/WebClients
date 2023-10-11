@@ -12,7 +12,6 @@ import {
     useEventManager,
     useHotkeys,
     useItemsDroppable,
-    useMailSettings,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -20,6 +19,8 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { LABEL_IDS_TO_HUMAN } from '../../constants';
 import { shouldDisplayTotal } from '../../helpers/labels';
@@ -75,7 +76,7 @@ const SidebarItem = ({
 }: Props) => {
     const { call } = useEventManager();
     const history = useHistory();
-    const [{ Shortcuts = 0 } = {}] = useMailSettings();
+    const { Shortcuts } = useMailModel('MailSettings');
     const getElementsFromIDs = useGetElementsFromIDs();
 
     const [refreshing, withRefreshing] = useLoading(false);

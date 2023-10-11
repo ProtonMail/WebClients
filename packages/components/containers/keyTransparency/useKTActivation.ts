@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
-import { KEY_TRANSPARENCY_SETTING, KeyTransparencyActivation, MailSettings } from '@proton/shared/lib/interfaces';
+import { KeyTransparencyActivation, MailSettings } from '@proton/shared/lib/interfaces';
+import { KEY_TRANSPARENCY_SETTING } from '@proton/shared/lib/mail/mailSettings';
 
 import { useAuthentication, useConfig, useFeature, useGetMailSettings } from '../../hooks';
 import { FeatureCode } from '../features';

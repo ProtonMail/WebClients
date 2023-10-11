@@ -6,16 +6,7 @@ import { History } from 'history';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import {
-    DateInput,
-    Label,
-    Option,
-    PrimaryButton,
-    SelectTwo,
-    useAddresses,
-    useMailSettings,
-    useUser,
-} from '@proton/components';
+import { DateInput, Label, Option, PrimaryButton, SelectTwo, useAddresses, useUser } from '@proton/components';
 import { ESIndexingState, contentIndexingProgress } from '@proton/encrypted-search';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
@@ -24,6 +15,8 @@ import { omit } from '@proton/shared/lib/helpers/object';
 import { changeSearchParams, getSearchParams } from '@proton/shared/lib/helpers/url';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import clsx from '@proton/utils/clsx';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
 import { getHumanLabelID } from '../../../helpers/labels';
@@ -123,8 +116,7 @@ const AdvancedSearch = ({
     const history = useHistory();
     const [addresses] = useAddresses();
 
-    const [mailSettings] = useMailSettings();
-    const { AlmostAllMail } = mailSettings ?? { AlmostAllMail: 0 };
+    const { AlmostAllMail } = useMailModel('MailSettings');
 
     const DEFAULT_MODEL: SearchModel = {
         ...DEFAULT_MODEL_WITHOUT_LABEL_ID,

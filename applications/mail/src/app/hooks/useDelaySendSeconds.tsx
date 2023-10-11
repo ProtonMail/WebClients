@@ -1,8 +1,9 @@
-import { useMailSettings } from '@proton/components';
+import { DELAY_IN_SECONDS } from '@proton/shared/lib/mail/mailSettings';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 const useDelaySendSeconds = () => {
-    const [mailSettings] = useMailSettings();
-    const { DelaySendSeconds = 0 } = mailSettings || {};
+    const { DelaySendSeconds = DELAY_IN_SECONDS.NONE } = useMailModel('MailSettings');
     return DelaySendSeconds;
 };
 

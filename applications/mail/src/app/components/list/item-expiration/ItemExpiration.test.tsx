@@ -3,6 +3,7 @@ import { addDays, addHours, addMinutes, getUnixTime } from 'date-fns';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
+import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 import { addToCache } from '@proton/testing/index';
 
 import { minimalCache } from '../../../helpers/test/cache';
@@ -71,7 +72,7 @@ describe('ItemExpiration', () => {
         it('Should display Trash icon when label ID is valid and setting is not null', async () => {
             const expirationTime = getUnixTime(addDays(new Date(), 30));
             minimalCache();
-            addToCache('MailSettings', { AutoDeleteSpamAndTrashDays: 30 });
+            addToCache('MailSettings', { AutoDeleteSpamAndTrashDays: AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE });
 
             await render(
                 <ItemExpiration
@@ -90,7 +91,7 @@ describe('ItemExpiration', () => {
         it('Should display Hourglass if label ID is not valid', async () => {
             const expirationTime = getUnixTime(addDays(new Date(), 30));
             minimalCache();
-            addToCache('MailSettings', { AutoDeleteSpamAndTrashDays: 30 });
+            addToCache('MailSettings', { AutoDeleteSpamAndTrashDays: AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE });
 
             await render(
                 <ItemExpiration
@@ -130,7 +131,7 @@ describe('ItemExpiration', () => {
         it('Should display Trash icon if expire flag is not frozen', async () => {
             const expirationTime = getUnixTime(addDays(new Date(), 30));
             minimalCache();
-            addToCache('MailSettings', { AutoDeleteSpamAndTrashDays: 30 });
+            addToCache('MailSettings', { AutoDeleteSpamAndTrashDays: AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE });
 
             await render(
                 <ItemExpiration

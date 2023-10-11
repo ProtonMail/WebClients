@@ -1,3 +1,4 @@
+import { ALMOST_ALL_MAIL } from '@proton/shared/lib/mail/mailSettings';
 import { mockUseFolders, mockUseLabels, mockUseMailSettings } from '@proton/testing/index';
 
 import { mockUseScheduleSendFeature } from 'proton-mail/helpers/test/mockUseScheduleSendFeature';
@@ -59,7 +60,7 @@ describe('useLocationFieldOptions', () => {
 
     describe('when Almost All Mail is true', () => {
         beforeEach(() => {
-            mockUseMailSettings([{ AlmostAllMail: 1 }]);
+            mockUseMailSettings([{ AlmostAllMail: ALMOST_ALL_MAIL.ENABLED }]);
         });
 
         it('should return specific helper', () => {

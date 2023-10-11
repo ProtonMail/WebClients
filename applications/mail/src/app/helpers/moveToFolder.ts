@@ -2,8 +2,9 @@ import { c, msgid } from 'ttag';
 
 import { updateSpamAction } from '@proton/shared/lib/api/mailSettings';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { Api, MailSettings, SpamAction } from '@proton/shared/lib/interfaces';
+import { Api, MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 import { isUnsubscribable } from '@proton/shared/lib/mail/messages';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -178,10 +179,10 @@ export const askToUnsubscribe = async (
         isMessage: boolean;
         elements: Element[];
     }) => Promise<{ unsubscribe: boolean; remember: boolean }>,
-    mailSettings?: MailSettings
+    mailSettings: MailSettings
 ) => {
     if (folderID === SPAM) {
-        if (mailSettings?.SpamAction === null) {
+        if (mailSettings.SpamAction === null) {
             const canBeUnsubscribed = elements.some((message) => isUnsubscribable(message));
 
             if (!canBeUnsubscribed) {
@@ -189,7 +190,7 @@ export const askToUnsubscribe = async (
             }
 
             const { unsubscribe, remember } = await handleShowSpamModal({ isMessage, elements });
-            const spamAction = unsubscribe ? SpamAction.SpamAndUnsub : SpamAction.JustSpam;
+            const spamAction = unsubscribe ? SPAM_ACTION.SpamAndUnsub : SPAM_ACTION.JustSpam;
 
             if (remember) {
                 // Don't waste time
@@ -200,6 +201,6 @@ export const askToUnsubscribe = async (
             return spamAction;
         }
 
-        return mailSettings?.SpamAction;
+        return mailSettings.SpamAction;
     }
 };

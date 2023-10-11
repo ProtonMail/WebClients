@@ -1,10 +1,12 @@
 import { c } from 'ttag';
 
 import { Kbd, Vr } from '@proton/atoms';
-import { Icon, ToolbarButton, useLabels, useMailSettings } from '@proton/components';
+import { Icon, ToolbarButton, useLabels } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { isCustomLabel, labelIncludes } from '../../helpers/labels';
 import { useEmptyLabel } from '../../hooks/actions/useEmptyLabel';
@@ -23,7 +25,7 @@ const EmptyButton = ({ labelID = '', breakpoints, elementIDs }: Props) => {
     const [loading, withLoading] = useLoading();
     const [labels = []] = useLabels();
     const { emptyLabel, modal: deleteAllModal } = useEmptyLabel();
-    const [{ Shortcuts = 0 } = {}] = useMailSettings();
+    const { Shortcuts } = useMailModel('MailSettings');
 
     const displayEmpty =
         !breakpoints.isNarrow &&

@@ -4,6 +4,7 @@ import { DefaultFormat, Direction, EditorPlugin, IEditor } from 'roosterjs-edito
 
 import { isMac } from '@proton/shared/lib/helpers/browser';
 import { MailSettings } from '@proton/shared/lib/interfaces';
+import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 
 import {
     DEFAULT_BACKGROUND,
@@ -34,6 +35,9 @@ interface InitRoosterReturns {
     editor: IEditor;
     actions: EditorActions;
 }
+
+export const getRoosterDirection = (direction: DIRECTION) =>
+    direction === DIRECTION.RIGHT_TO_LEFT ? Direction.RightToLeft : Direction.LeftToRight;
 
 export const initRoosterEditor = async (element: HTMLDivElement, options: Options): Promise<InitRoosterReturns> => {
     const {
@@ -109,8 +113,8 @@ export const initRoosterEditor = async (element: HTMLDivElement, options: Option
         () => {
             undoSnapshotService.clearSnapshots();
         },
-        (direction: Direction) => {
-            setDirection(editor, direction);
+        (direction: DIRECTION) => {
+            setDirection(editor, getRoosterDirection(direction));
         },
         () => {
             options.showModalLink?.({ editor, createLink });

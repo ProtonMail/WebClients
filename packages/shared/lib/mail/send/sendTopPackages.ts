@@ -1,9 +1,10 @@
 /**
  * Currently this is basically a copy of sendSubPackages from the mail repo. TO BE IMPROVED
  */
+import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { MIME_TYPES, PACKAGE_TYPE } from '../../constants';
+import { MIME_TYPES } from '../../constants';
 import { Message } from '../../interfaces/mail/Message';
 import { AttachmentDirect, PackageDirect, PackageStatus, SendPreferences } from '../../interfaces/mail/crypto';
 import { RequireOnly, SimpleMap } from '../../interfaces/utils';

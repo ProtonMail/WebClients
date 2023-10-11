@@ -1,5 +1,5 @@
 import { CryptoProxy } from '@proton/crypto';
-import { SHOW_IMAGES } from '@proton/shared/lib/constants';
+import { SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
 
 import { addToCache, api, clearAll, minimalCache, mockedCryptoApi, prepareContact, render } from '../tests/render';
 import ContactDetailsModal, { ContactDetailsProps } from './ContactDetailsModal';

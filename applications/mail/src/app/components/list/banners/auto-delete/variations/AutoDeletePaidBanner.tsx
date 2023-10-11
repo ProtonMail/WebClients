@@ -5,7 +5,7 @@ import { PromotionBanner } from '@proton/components/containers';
 import { useApi, useEventManager } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
-import { AutoDeleteSpamAndTrashDaysSetting } from '@proton/shared/lib/interfaces';
+import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 
 const AutoDeletePaidBanner = () => {
     const api = useApi();
@@ -14,7 +14,7 @@ const AutoDeletePaidBanner = () => {
     const [loadingEnable, withLoadingEnable] = useLoading();
     const [loadingDisable, withLoadingDisable] = useLoading();
 
-    const handleChangeAutoDelete = async (autoDelete: AutoDeleteSpamAndTrashDaysSetting) => {
+    const handleChangeAutoDelete = async (autoDelete: AUTO_DELETE_SPAM_AND_TRASH_DAYS) => {
         await api(updateAutoDelete(autoDelete));
         await call();
     };
@@ -28,7 +28,7 @@ const AutoDeletePaidBanner = () => {
             hasDismissAction
             onClose={() => {
                 if (!loadingDisable) {
-                    void withLoadingDisable(handleChangeAutoDelete(AutoDeleteSpamAndTrashDaysSetting.DISABLED));
+                    void withLoadingDisable(handleChangeAutoDelete(AUTO_DELETE_SPAM_AND_TRASH_DAYS.DISABLED));
                 }
             }}
             cta={
@@ -40,7 +40,7 @@ const AutoDeletePaidBanner = () => {
                     className="text-bold"
                     shape="underline"
                     onClick={() => {
-                        void withLoadingEnable(handleChangeAutoDelete(AutoDeleteSpamAndTrashDaysSetting.ACTIVE));
+                        void withLoadingEnable(handleChangeAutoDelete(AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE));
                     }}
                 >
                     {c('Action').t`Enable`}

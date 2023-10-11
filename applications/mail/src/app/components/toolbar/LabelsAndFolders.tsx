@@ -3,7 +3,9 @@ import { Ref } from 'react';
 import { c } from 'ttag';
 
 import { Kbd, Vr } from '@proton/atoms';
-import { DropdownSizeUnit, Icon, useMailSettings } from '@proton/components';
+import { DropdownSizeUnit, Icon } from '@proton/components';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { Breakpoints } from '../../models/utils';
 import LabelDropdown, { labelDropdownContentProps } from '../dropdown/LabelDropdown';
@@ -25,7 +27,7 @@ const LabelsAndFolders = ({
     labelDropdownToggleRef,
     moveDropdownToggleRef,
 }: Props) => {
-    const [{ Shortcuts = 0 } = {}] = useMailSettings();
+    const { Shortcuts } = useMailModel('MailSettings');
 
     if (!selectedIDs.length) {
         return null;

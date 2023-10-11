@@ -5,8 +5,8 @@ import { useCache, useConversationCounts, useMessageCounts } from '@proton/compo
 import usePrevious from '@proton/hooks/usePrevious';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { MailPageSize } from '@proton/shared/lib/interfaces';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
+import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -51,7 +51,7 @@ interface Options {
     conversationMode: boolean;
     labelID: string;
     page: number;
-    pageSize: MailPageSize;
+    pageSize: MAIL_PAGE_SIZE;
     sort: Sort;
     filter: Filter;
     search: SearchParameters;

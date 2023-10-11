@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useLoading } from '@proton/hooks';
 import { updateImageProxy } from '@proton/shared/lib/api/mailSettings';
-import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/constants';
+import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/mail/mailSettings';
 
 import { Select } from '../../components/select';
 import { useApi, useEventManager, useNotifications } from '../../hooks';

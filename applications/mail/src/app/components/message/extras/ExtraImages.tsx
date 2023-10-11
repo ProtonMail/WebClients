@@ -14,11 +14,11 @@ interface Props {
     messageImages?: MessageImages;
     type: string;
     onLoadImages: () => void;
-    mailSettings?: MailSettings;
+    mailSettings: MailSettings;
 }
 
 const ExtraImages = ({ messageImages, type, onLoadImages, mailSettings }: Props) => {
-    const { Shortcuts = 0 } = mailSettings || {};
+    const { Shortcuts } = mailSettings;
 
     const { showRemoteImages = true, showEmbeddedImages = true } = messageImages || {};
 
