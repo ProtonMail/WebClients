@@ -54,6 +54,8 @@ it('should update Autopay and close modal if user edits the existing payment met
 
     await waitFor(() => {
         expect(apiMock).toHaveBeenCalledWith(updatePaymentMethod(paymentMethodId, { Autopay: Autopay.ENABLE }));
+    });
+    await waitFor(() => {
         expect(onClose).toHaveBeenCalled();
     });
 });
@@ -77,6 +79,8 @@ it('should update Autopay and close modal if user edits the existing payment met
 
     await waitFor(() => {
         expect(apiMock).toHaveBeenCalledWith(updatePaymentMethod(paymentMethodId, { Autopay: Autopay.DISABLE }));
+    });
+    await waitFor(() => {
         expect(onClose).toHaveBeenCalled();
     });
 });
@@ -114,7 +118,11 @@ it('should toggle back if API returned error', async () => {
 
     await waitFor(() => {
         expect(apiMock).toHaveBeenCalledWith(updatePaymentMethod(paymentMethodId, { Autopay: Autopay.ENABLE }));
+    });
+    await waitFor(() => {
         expect(onClose).not.toHaveBeenCalled();
+    });
+    await waitFor(() => {
         expect(getByTestId('toggle-subscription-renew')).not.toHaveTextContent('CHECKED');
     });
 });

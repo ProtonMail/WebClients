@@ -179,6 +179,8 @@ it('should render Try again button in case of error', async () => {
 
     await waitFor(() => {
         expect(container).toHaveTextContent('address-123');
+    });
+    await waitFor(() => {
         expect(container).toHaveTextContent('0.00135');
     });
 });

@@ -67,9 +67,9 @@ function addRecipients(emails: string[]) {
     screen.debug(emailInput, 10000000);
 
     act(() => {
-        emails.forEach((email) => {
+        emails.forEach(async (email) => {
             // FIXME: same issue as in MainContainer.spec.tsx, it doesn't enter recipients
-            userEvent.type(emailInput, `${email}{enter}`);
+            await userEvent.type(emailInput, `${email}{enter}`);
         });
     });
 }
