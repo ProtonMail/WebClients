@@ -37,7 +37,7 @@ const formatOption = ({ Path, Name }: FolderWithSubFolders, level = 0) =>
         type: 'option',
         value: Path || '',
         text: formatFolderName(level, Name, ' • '),
-    } as SelectOption);
+    }) as SelectOption;
 
 const reducer = (acc: SelectOption[] = [], folder: FolderWithSubFolders, level = 0): SelectOption[] => {
     acc.push(formatOption(folder, level));
@@ -102,7 +102,7 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
 
     const renderClosed = () => {
         if (!moveTo?.folder) {
-            return <em className={clsx(['pt-1', 'color-weak'])}>{c('Info').t`No folder selected`}</em>;
+            return <em className="color-weak">{c('Info').t`No folder selected`}</em>;
         }
 
         let selectedFolder;
@@ -128,7 +128,7 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
                     )}
                     <span
                         className={clsx([
-                            'max-w100 flex-nowrap inline-flex flex-align-items-center',
+                            'max-w-full flex-nowrap inline-flex flex-align-items-center',
                             i !== 0 && 'ml-2',
                         ])}
                     >
@@ -141,21 +141,25 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
             ));
         }
 
-        return <div className="pt-2 flex flex-align-items-center max-w100">{selectedFolder}</div>;
+        return <div className="flex flex-align-items-center max-w-full">{selectedFolder}</div>;
     };
 
     return (
         <div
-            className="border-bottom flex flex-nowrap on-mobile-flex-column align-items-center py-4"
+            className="border-bottom flex-no-min-children flex-column md:flex-row align-items-center py-4"
             data-testid="filter-modal:folder-row"
         >
-            <button type="button" className={clsx(['w20 text-left', isNarrow && 'mb-4'])} onClick={toggleSection}>
+            <button
+                type="button"
+                className={clsx(['w-full md:w-1/5 text-left', isNarrow && 'mb-4'])}
+                onClick={toggleSection}
+            >
                 <Icon name="chevron-down" className={clsx([isOpen && 'rotateX-180'])} />
                 <span className={clsx(['ml-2', actions.error && 'color-danger'])}>{c('Label').t`Move to`}</span>
             </button>
             <div className={clsx(['flex flex-column flex-item-fluid', !isNarrow && 'ml-4'])}>
                 {isOpen ? (
-                    <div className="w100">
+                    <div className="w-full">
                         <InputFieldTwo
                             as={SelectTwo}
                             id="memberSelect"
@@ -165,7 +169,7 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
                             {folderOptions}
                         </InputFieldTwo>
                         {canCreateLabel && (
-                            <Button shape="outline" className="mt-4" onClick={() => setEditLabelModalOpen(true)}>
+                            <Button shape="outline" onClick={() => setEditLabelModalOpen(true)}>
                                 {c('Action').t`Create folder`}
                             </Button>
                         )}

@@ -217,7 +217,7 @@ const FilterConditionsFormRow = ({
         }
 
         return (
-            <span className="max-w100 pt-2 text-ellipsis" title={title}>
+            <span className="max-w-full text-ellipsis" title={title}>
                 {label}
             </span>
         );
@@ -228,17 +228,17 @@ const FilterConditionsFormRow = ({
     return (
         <div className="border-bottom">
             <div
-                className="flex flex-nowrap on-mobile-flex-column align-items-center py-4"
+                className="flex-no-min-children flex-column md:flex-row align-items-center py-4"
                 data-testid={`filter-modal:condition-${conditionIndex}`}
             >
-                <button type="button" className={clsx(['w20 text-left', isNarrow && 'mb-4'])} onClick={toggleSection}>
+                <button type="button" className={clsx(['w-1/5 text-left', isNarrow && 'mb-4'])} onClick={toggleSection}>
                     <Icon name="chevron-down" className={clsx([isOpen && 'rotateX-180'])} />
                     <span className={clsx(['ml-2', condition.error && 'color-danger'])}>{label}</span>
                 </button>
                 <div className={clsx(['flex flex-column flex-item-fluid', !isNarrow && 'ml-4'])}>
                     {isOpen ? (
                         <div className="flex">
-                            <span className="w50 pr-4">
+                            <span className="w-1/2 pr-4">
                                 <SelectTwo
                                     value={type}
                                     onChange={({ value }) => {
@@ -257,7 +257,7 @@ const FilterConditionsFormRow = ({
                                 [ConditionType.SUBJECT, ConditionType.SENDER, ConditionType.RECIPIENT].includes(
                                     type
                                 ) && (
-                                    <span className="w50">
+                                    <span className="w-1/2">
                                         <SelectTwo
                                             value={comparator}
                                             onChange={({ value }) => {
