@@ -3,6 +3,7 @@ import { SimpleMap } from '@proton/shared/lib/interfaces';
 export enum TelemetryMeasurementGroups {
     mailSimpleLogin = 'mail.web.simplelogin_popups',
     calendarTimeZoneSelector = 'calendar.web.timezone_selector',
+    calendarEncryptedSearch = 'calendar.web.encrypted_search',
     accountSignupBasic = 'account.any.signup_basic',
     accountSignup = 'account.any.signup',
     keyTransparency = 'any.web.key_transparency',
@@ -18,6 +19,7 @@ export enum TelemetrySimpleLoginEvents {
 
 export enum TelemetryCalendarEvents {
     change_temporary_time_zone = 'change_temporary_time_zone',
+    enable_encrypted_search = 'enable_encrypted_search',
 }
 
 export enum TelemetryAccountSignupBasicEvents {
