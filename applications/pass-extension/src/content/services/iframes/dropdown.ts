@@ -163,11 +163,11 @@ export const createDropdown = (): InjectedDropdown => {
     const dropdown: InjectedDropdown = {
         close: pipe(iframe.close, () => dropdown),
         destroy,
-        getState: () => iframe.state,
         getCurrentField: () => fieldRef.current,
+        getState: () => iframe.state,
         init: pipe(iframe.init, () => dropdown),
         open: pipe(open, () => dropdown),
-        reset: pipe(iframe.reset, () => dropdown),
+        setPort: pipe(iframe.setPort, () => dropdown),
         sync,
     };
 

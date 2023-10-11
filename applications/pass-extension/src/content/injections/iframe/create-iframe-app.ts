@@ -1,8 +1,7 @@
 import type { Runtime } from 'webextension-polyfill';
 
 import { contentScriptMessage, portForwardingMessage, sendMessage } from '@proton/pass/extension/message';
-import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import type { Maybe, MaybeNull, WorkerState } from '@proton/pass/types';
+import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import type { Dimensions, Rect } from '@proton/pass/types/utils/dom';
 import { createElement, pixelEncoder } from '@proton/pass/utils/dom';
@@ -14,6 +13,7 @@ import type {
     IFrameApp,
     IFrameCloseOptions,
     IFrameEndpoint,
+    IFrameInitPayload,
     IFrameMessageWithSender,
     IFramePortMessageHandler,
     IFramePosition,
@@ -97,8 +97,8 @@ export const createIFrameApp = <A>({
      * to directly open a port with the current tab */
     const sendPortMessage = (rawMessage: IFrameMessage) => {
         const message: IFrameMessageWithSender = { ...rawMessage, sender: 'contentscript' };
-        void waitUntil(() => state.ready, 100).then(() =>
-            state.port?.postMessage(portForwardingMessage(state.framePort!, message))
+        void waitUntil(() => state.ready, 100).then(
+            () => state.port?.postMessage(portForwardingMessage(state.framePort!, message))
         );
     };
 
@@ -175,7 +175,7 @@ export const createIFrameApp = <A>({
     const onMessageHandler = (message: Maybe<IFrameMessageWithSender>) =>
         message && message?.type !== undefined && portMessageHandlers.get(message.type)?.(message);
 
-    const init = (port: Runtime.Port) => {
+    const setPort = (port: Runtime.Port) => {
         state.port = port;
         state.port.onMessage.addListener(onMessageHandler);
         state.port.onDisconnect.addListener(() => (state.ready = false));
@@ -186,11 +186,7 @@ export const createIFrameApp = <A>({
         });
     };
 
-    const reset = (workerState: WorkerState, settings: ProxiedSettings) =>
-        sendPortMessage({
-            type: IFrameMessageType.IFRAME_INIT,
-            payload: { workerState, settings },
-        });
+    const init = (payload: IFrameInitPayload) => sendPortMessage({ type: IFrameMessageType.IFRAME_INIT, payload });
 
     const destroy = () => {
         close({ discard: false, refocus: false });
@@ -215,14 +211,14 @@ export const createIFrameApp = <A>({
     return {
         element: iframe,
         state,
-        sendPortMessage,
-        registerMessageHandler,
-        getPosition,
-        updatePosition,
-        reset,
-        open,
         close,
         destroy,
+        getPosition,
         init,
+        open,
+        registerMessageHandler,
+        sendPortMessage,
+        setPort,
+        updatePosition,
     };
 };
