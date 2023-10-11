@@ -48,7 +48,7 @@ describe('Participant', () => {
     it('should render dropdown on user click', async () => {
         render(<Participant {...props} />);
 
-        userEvent.click(screen.getByTitle('More options'));
+        await userEvent.click(screen.getByTitle('More options'));
 
         await waitFor(() => {
             expect(screen.getByText('Copy email address')).toBeInTheDocument();
@@ -60,13 +60,13 @@ describe('Participant', () => {
         it('should call contact details modal callback', async () => {
             render(<Participant {...props} isContact />);
 
-            userEvent.click(screen.getByTitle('More options'));
+            await userEvent.click(screen.getByTitle('More options'));
 
             await waitFor(() => {
                 expect(screen.getByText('View contact details')).toBeInTheDocument();
             });
 
-            userEvent.click(screen.getByText('View contact details'));
+            await userEvent.click(screen.getByText('View contact details'));
 
             expect(onCreateOrEditContactCallback).toHaveBeenCalledTimes(1);
         });
@@ -74,13 +74,13 @@ describe('Participant', () => {
         it('should call add contact modal callback', async () => {
             render(<Participant {...props} isContact={false} />);
 
-            userEvent.click(screen.getByTitle('More options'));
+            await userEvent.click(screen.getByTitle('More options'));
 
             await waitFor(() => {
                 expect(screen.getByText('Create new contact')).toBeInTheDocument();
             });
 
-            userEvent.click(screen.getByText('Create new contact'));
+            await userEvent.click(screen.getByText('Create new contact'));
 
             expect(onCreateOrEditContactCallback).toHaveBeenCalledTimes(1);
         });

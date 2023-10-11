@@ -82,11 +82,13 @@ describe('SubscriptionModal', () => {
         const { container } = render(<ContextSubscriptionModal {...props} />);
         await waitFor(() => {
             expect(container).toHaveTextContent('Review subscription and pay');
+        });
 
-            // that's text from one of the branches of <Payment> component
-            // depending on the specific test setup, you might need to change this text in the test.
-            // The key idea is to ensure that the Payment component was rendered, and no matter what's exactly inside.
-            // I could mock the Payment component, but I wanted to test the whole flow.
+        // that's text from one of the branches of <Payment> component
+        // depending on the specific test setup, you might need to change this text in the test.
+        // The key idea is to ensure that the Payment component was rendered, and no matter what's exactly inside.
+        // I could mock the Payment component, but I wanted to test the whole flow.
+        await waitFor(() => {
             expect(container).toHaveTextContent('The minimum payment we accept is');
         });
     });
@@ -114,9 +116,8 @@ describe('SubscriptionModal', () => {
         apiMock.mockClear();
         apiMock.mockRejectedValueOnce(new Error());
 
-        await waitFor(() => {
-            fireEvent.click(continueButton);
-        });
+        fireEvent.click(continueButton);
+        await waitFor(() => {});
 
         expect(apiMock).toHaveBeenCalledTimes(1);
 
@@ -146,7 +147,9 @@ describe('SubscriptionModal', () => {
 
         await waitFor(() => {
             expect(apiMock).not.toHaveBeenCalledWith(expect.objectContaining({ url: createTokenUrl }));
+        });
 
+        await waitFor(() => {
             expect(apiMock).toHaveBeenCalledWith(
                 expect.objectContaining({
                     url: subscribeUrl,

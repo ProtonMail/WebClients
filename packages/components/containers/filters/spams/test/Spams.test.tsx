@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { fireEvent, screen, waitFor } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { clearAll, render } from '@proton/components/containers/contacts/tests/render';
@@ -26,9 +26,9 @@ describe('Spams - Incoming defaults', () => {
         fireEvent.click(screen.getByRole('button', { name: 'Add address or domain' }));
         fireEvent.click(screen.getByRole('button', { name: 'Block' }));
 
-        await waitFor(() => screen.getByTestId('spam-modal'));
+        const modal = await screen.findByTestId('spam-modal');
 
-        expect(screen.getByTestId('spam-modal')).toHaveTextContent('Add to block list');
+        expect(modal).toHaveTextContent('Add to block list');
     });
 
     it('Should display blocked email modal with organization', async () => {
@@ -37,12 +37,12 @@ describe('Spams - Incoming defaults', () => {
         fireEvent.click(screen.getByRole('button', { name: 'Add address or domain' }));
         fireEvent.click(screen.getByRole('button', { name: 'Block' }));
 
-        await waitFor(() => screen.getByTestId('spam-modal'));
+        const modal = await screen.findByTestId('spam-modal');
 
-        expect(screen.getByTestId('spam-modal')).toHaveTextContent('Add to block list');
+        expect(modal).toHaveTextContent('Add to block list');
     });
 
-    it('Modal submission should return correct values', () => {
+    it('Modal submission should return correct values', async () => {
         const mockedSubmit = jest.fn();
         const EMAIL = 'homer@simpsons.fr';
 
@@ -60,14 +60,14 @@ describe('Spams - Incoming defaults', () => {
         const emailRadio = emailInputs[0];
         const emailInput = emailInputs[1];
 
-        userEvent.click(emailRadio);
+        await userEvent.click(emailRadio);
         expect(emailRadio).toBeChecked();
 
-        userEvent.type(emailInput, EMAIL);
+        await userEvent.type(emailInput, EMAIL);
 
         // Dom actually got 2 button called "add address" at this moment. The submit one is the second
         const submitButton = screen.getByRole('button', { name: 'Add address' });
-        userEvent.click(submitButton);
+        await userEvent.click(submitButton);
 
         const submitCalls = mockedSubmit.mock.calls.length;
         const submitCallsMode = mockedSubmit.mock.calls[0][0];
