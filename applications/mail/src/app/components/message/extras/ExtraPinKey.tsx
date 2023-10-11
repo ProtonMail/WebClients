@@ -162,8 +162,8 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
 
     // Prevent to propose an already pinned key even if for a strange reason,
     // the suggested key is already pinned yet the verification still fails
-    const signingPublicKeyAlreadyPinned = messageVerification?.senderPinnedKeys?.some((pinKey) =>
-        bePinnedPublicKey?.equals(pinKey)
+    const signingPublicKeyAlreadyPinned = messageVerification?.senderPinnedKeys?.some(
+        (pinKey) => bePinnedPublicKey?.equals(pinKey)
     );
 
     const contact = useMemo<ContactWithBePinnedPublicKey>(() => {
@@ -217,7 +217,7 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
                     </span>
                 </div>
             </div>
-            <span className="flex-align-items-start flex-item-noshrink on-mobile-w100 pt-0.5">
+            <span className="flex-align-items-start flex-item-noshrink w-full md:w-auto pt-0.5">
                 <Button
                     size="small"
                     color="weak"

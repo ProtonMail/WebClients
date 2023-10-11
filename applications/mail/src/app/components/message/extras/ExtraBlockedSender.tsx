@@ -51,7 +51,7 @@ const ExtraBlockedSender = ({ message }: Props) => {
                     {c('Info').t`Sender has been blocked.`}
                 </span>
             </div>
-            <span className="flex-item-noshrink flex-align-items-start flex on-mobile-w100 pt-0.5">
+            <span className="flex-item-noshrink flex-align-items-start flex w-full md:w-auto pt-0.5">
                 <Button
                     className="rounded-sm"
                     color="weak"

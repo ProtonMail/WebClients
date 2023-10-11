@@ -309,7 +309,7 @@ const TimeGrid = ({
     );
 
     return (
-        <div className="flex flex-column flex-nowrap w100">
+        <div className="flex flex-column flex-nowrap w-full">
             <div
                 ref={titleRef}
                 className={clsx(['calendar-row-heading flex-item-noshrink shadow-norm bg-norm', displayViewClass])}
@@ -322,7 +322,7 @@ const TimeGrid = ({
                     {!isDrawerApp && <div className="calendar-aside" />}
 
                     {isDrawerApp ? (
-                        <div className="ml-4 mr-2 my-2 flex flex-align-items-end flex-justify-space-between w100">
+                        <div className="ml-4 mr-2 my-2 flex flex-align-items-end flex-justify-space-between w-full">
                             <ButtonGroup size="small" color="weak" shape="outline">
                                 <Tooltip title={previousDay}>
                                     <Button icon onClick={handleClickPrevDay}>
