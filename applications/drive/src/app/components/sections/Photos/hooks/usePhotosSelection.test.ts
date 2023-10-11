@@ -1,5 +1,7 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
+import { isPhotoGroup } from '../../../../store/_photos';
+import type { PhotoGroup } from '../../../../store/_photos/interface';
 import { usePhotosSelection } from './usePhotosSelection';
 
 describe('usePhotosSelection', () => {
@@ -7,7 +9,7 @@ describe('usePhotosSelection', () => {
         current: ReturnType<typeof usePhotosSelection>;
     };
 
-    const groups: Record<string, string[]> = {
+    const groups: Record<PhotoGroup, string[]> = {
         group1: ['id1', 'id2', 'id3'],
         group2: ['id4', 'id5'],
         empty: [],
@@ -24,7 +26,7 @@ describe('usePhotosSelection', () => {
     }, []);
 
     const indexMap = data.reduce<Record<string, number>>((acc, item, index) => {
-        if (typeof item !== 'string') {
+        if (!isPhotoGroup(item)) {
             acc[item.linkId] = index;
         }
 
