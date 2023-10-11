@@ -4,6 +4,7 @@ import { PublicKeyReference } from '@proton/crypto';
 import { Address, MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { PROMPT_PIN } from '@proton/shared/lib/mail/mailSettings';
 
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import {
@@ -34,7 +35,7 @@ const setup = async (
     }
 
     if (isAutoPrompt) {
-        addToCache('MailSettings', { PromptPin: 1 } as MailSettings);
+        addToCache('MailSettings', { PromptPin: PROMPT_PIN.ENABLED } as MailSettings);
     }
 
     const component = await render(<ExtraPinKey message={message} messageVerification={messageVerification} />, false);

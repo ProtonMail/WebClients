@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { updateViewLayout } from '@proton/shared/lib/api/mailSettings';
-import { VIEW_LAYOUT } from '@proton/shared/lib/constants';
+import { DEFAULT_MAILSETTINGS, VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
 
 import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
 import { useApi, useEventManager, useMailSettings, useNotifications } from '../../hooks';
@@ -14,7 +14,7 @@ import './ModalSettingsLayoutCards.scss';
 const MailViewLayoutModal = (props: ModalProps) => {
     const api = useApi();
     const { call } = useEventManager();
-    const [{ ViewLayout = 0 } = {}] = useMailSettings();
+    const [{ ViewLayout } = DEFAULT_MAILSETTINGS] = useMailSettings();
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const title = c('Title').t`Mailbox layout`;

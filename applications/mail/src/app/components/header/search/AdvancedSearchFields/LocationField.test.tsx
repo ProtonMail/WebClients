@@ -2,6 +2,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { ALMOST_ALL_MAIL } from '@proton/shared/lib/mail/mailSettings';
 import { mockUseFolders, mockUseMailSettings } from '@proton/testing/index';
 
 import LocationField from './LocationField';
@@ -89,7 +90,7 @@ describe('LocationField', () => {
 
         describe('when Almost All Mail is set', () => {
             it('should correctly change location', async () => {
-                mockUseMailSettings([{ AlmostAllMail: 1 }]);
+                mockUseMailSettings([{ AlmostAllMail: ALMOST_ALL_MAIL.ENABLED }]);
                 const onChange = jest.fn();
                 render(<LocationField value={'36'} onChange={onChange} />);
 

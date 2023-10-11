@@ -1,8 +1,8 @@
-import { SHOW_IMAGES } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
+import { SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
 
-export const hasShowEmbedded = ({ HideEmbeddedImages = SHOW_IMAGES.SHOW }: Partial<MailSettings> = {}) =>
+export const hasShowEmbedded = ({ HideEmbeddedImages }: Partial<MailSettings> = {}) =>
     HideEmbeddedImages === SHOW_IMAGES.SHOW;
 
-export const hasShowRemote = ({ HideRemoteImages = SHOW_IMAGES.HIDE }: Partial<MailSettings> = {}) =>
+export const hasShowRemote = ({ HideRemoteImages }: Partial<MailSettings> = {}) =>
     HideRemoteImages === SHOW_IMAGES.SHOW;

@@ -1,8 +1,8 @@
-import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import generateUID from '@proton/shared/lib/helpers/generateUID';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { hasShowRemote } from '@proton/shared/lib/mail/images';
+import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/mail/mailSettings';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 
 import { MessageRemoteImage, MessageState } from '../../logic/messages/messagesTypes';
@@ -53,7 +53,7 @@ export const getRemoteImageMatches = (message: MessageState) => {
 
 export const transformRemote = (
     message: MessageState,
-    mailSettings: Partial<MailSettings> | undefined,
+    mailSettings: Partial<MailSettings>,
     onLoadRemoteImagesDirect: (imagesToLoad: MessageRemoteImage[]) => void,
     onLoadRemoteImagesProxy?: (imagesToLoad: MessageRemoteImage[]) => void,
     onLoadFakeImagesProxy?: (imagesToLoad: MessageRemoteImage[], firstLoad?: boolean) => void
@@ -63,7 +63,7 @@ export const transformRemote = (
 
     const draft = isDraft(message.data);
 
-    const useProxy = hasBit(mailSettings?.ImageProxy, IMAGE_PROXY_FLAGS.PROXY);
+    const useProxy = hasBit(mailSettings.ImageProxy, IMAGE_PROXY_FLAGS.PROXY);
 
     const { matchedElements, hasRemoteImages } = getRemoteImageMatches(message);
     const remoteImages = getRemoteImages(message);

@@ -1,8 +1,10 @@
 import { useRef } from 'react';
 
-import { HotkeyTuple, useHotkeys, useMailSettings } from '@proton/components';
+import { HotkeyTuple, useHotkeys } from '@proton/components';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import { isBusy } from '@proton/shared/lib/shortcuts/helpers';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
@@ -13,7 +15,7 @@ export interface PageHotkeysHandlers {
 }
 
 export const usePageHotkeys = ({ onOpenShortcutsModal }: PageHotkeysHandlers) => {
-    const [{ Shortcuts = 0 } = {}] = useMailSettings();
+    const { Shortcuts } = useMailModel('MailSettings');
     const onCompose = useOnCompose();
 
     const documentRef = useRef(window.document);

@@ -1,17 +1,18 @@
 import { Dispatch, SetStateAction, useCallback, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { useApi, useEventManager, useLabels, useMailSettings, useNotifications } from '@proton/components';
+import { useApi, useEventManager, useLabels, useNotifications } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { labelConversations } from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import { labelMessages } from '@proton/shared/lib/api/messages';
-import { DEFAULT_MAIL_PAGE_SIZE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { SpamAction } from '@proton/shared/lib/interfaces';
+import { MAILBOX_LABEL_IDS, DEFAULT_MAIL_PAGE_SIZE } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 
 import { extractSearchParameters } from 'proton-mail/helpers/mailboxUrl';
 import { useDeepMemo } from 'proton-mail/hooks/useDeepMemo';
+import useMailModel from 'proton-mail/hooks/useMailModel';
 import { SearchParameters } from 'proton-mail/models/tools';
 
 import MoveScheduledModal from '../../components/message/modals/MoveScheduledModal';
@@ -44,7 +45,7 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
     const { createNotification } = useNotifications();
     const [labels = []] = useLabels();
     const optimisticApplyLabels = useOptimisticApplyLabels();
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
     const dispatch = useAppDispatch();
     const { getFilterActions } = useCreateFilters();
 
@@ -84,7 +85,7 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
             // Open a modal when moving a scheduled message/conversation to trash to inform the user that it will be cancelled
             await searchForScheduled(folderID, isMessage, elements, setCanUndo, handleShowModal, setContainFocus);
 
-            let spamAction: SpamAction | undefined = undefined;
+            let spamAction: SPAM_ACTION | undefined = undefined;
 
             if (askUnsub) {
                 // Open a modal when moving items to spam to propose to unsubscribe them

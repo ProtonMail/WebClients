@@ -2,14 +2,7 @@ import { MutableRefObject, memo, useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    DropdownMenuButton,
-    EditorMetadata,
-    Icon,
-    useAddresses,
-    useMailSettings,
-    useUserSettings,
-} from '@proton/components';
+import { DropdownMenuButton, EditorMetadata, Icon, useAddresses, useUserSettings } from '@proton/components';
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
@@ -18,6 +11,8 @@ import {
     isRequestReadReceipt as testIsRequestReadReceipt,
 } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { exportPlainText, plainTextToHTML, setDocumentContent } from '../../../helpers/message/messageContent';
 import { MessageState } from '../../../logic/messages/messagesTypes';
@@ -37,7 +32,7 @@ interface Props {
 }
 
 const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorMetadata, onChange }: Props) => {
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
     const [addresses] = useAddresses();
     const [userSettings] = useUserSettings();
 

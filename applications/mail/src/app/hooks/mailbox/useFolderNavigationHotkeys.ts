@@ -1,10 +1,13 @@
 import { useHistory } from 'react-router-dom';
 
-import { HotkeyTuple, useMailSettings } from '@proton/components';
-import { MAILBOX_LABEL_IDS, SHOW_MOVED } from '@proton/shared/lib/constants';
+import { HotkeyTuple } from '@proton/components';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
+import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 import { isBusy } from '@proton/shared/lib/shortcuts/helpers';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { LABEL_IDS_TO_HUMAN } from '../../constants';
 
@@ -13,7 +16,7 @@ const { DRAFTS, ALL_DRAFTS, SENT, ALL_SENT, TRASH, SPAM, ARCHIVE, INBOX, STARRED
 
 export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
     const history = useHistory<any>();
-    const [{ Shortcuts = 0, ShowMoved = 0, AlmostAllMail = 0 } = {}] = useMailSettings();
+    const { Shortcuts, ShowMoved, AlmostAllMail } = useMailModel('MailSettings');
 
     const navigateTo = (labelID: MAILBOX_LABEL_IDS) => {
         history.push(`/${LABEL_IDS_TO_HUMAN[labelID]}`);

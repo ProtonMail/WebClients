@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { COMPOSER_MODE } from '@proton/shared/lib/constants';
+import { COMPOSER_MODE } from '@proton/shared/lib/mail/mailSettings';
 import composerMaximizedSvg from '@proton/styles/assets/img/layout/layout-thumb-composer-maximized.svg';
 import composerPopUpSvg from '@proton/styles/assets/img/layout/layout-thumb-composer-normal.svg';
 

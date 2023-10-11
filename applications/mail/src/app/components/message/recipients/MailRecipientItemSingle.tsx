@@ -5,13 +5,15 @@ import { c } from 'ttag';
 
 import { DropdownMenuButton, Icon, useModalState, usePopperAnchor } from '@proton/components/components';
 import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
-import { useMailSettings } from '@proton/components/hooks';
 import { PublicKeyReference } from '@proton/crypto';
-import { MAILBOX_LABEL_IDS, VIEW_LAYOUT } from '@proton/shared/lib/constants';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties';
 import { changeSearchParams } from '@proton/shared/lib/helpers/url';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
+import { VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { MESSAGE_ACTIONS } from '../../../constants';
 import { useOnCompose } from '../../../containers/ComposeProvider';
@@ -67,7 +69,7 @@ const MailRecipientItemSingle = ({
 
     const contactsMap = useContactsMap();
     const { getRecipientLabel } = useRecipientLabel();
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
     const onCompose = useOnCompose();
 
     const [trustPublicKeyModalProps, setTrustPublicKeyModalOpen, renderTrustPublicKeyModal] = useModalState();
@@ -143,7 +145,7 @@ const MailRecipientItemSingle = ({
             const humanLabelID = getHumanLabelID(MAILBOX_LABEL_IDS.ALL_MAIL);
             let newPathname = `/${humanLabelID}`;
 
-            if (mailSettings?.ViewLayout === VIEW_LAYOUT.COLUMN) {
+            if (mailSettings.ViewLayout === VIEW_LAYOUT.COLUMN) {
                 const pathname = history.location.pathname.split('/');
                 pathname[1] = humanLabelID;
                 newPathname = pathname.join('/');

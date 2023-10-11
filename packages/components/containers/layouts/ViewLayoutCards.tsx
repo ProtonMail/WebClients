@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { VIEW_LAYOUT } from '@proton/shared/lib/constants';
+import { VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
 import inboxColumnSvg from '@proton/styles/assets/img/layout/layout-thumb-inbox-column.svg';
 import inboxRowSvg from '@proton/styles/assets/img/layout/layout-thumb-inbox-row.svg';
 

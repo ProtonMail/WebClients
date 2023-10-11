@@ -1,5 +1,6 @@
-import { Direction } from 'roosterjs-editor-types';
 import { c } from 'ttag';
+
+import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 
 import { EditorMetadata } from './interface';
 
@@ -161,7 +162,7 @@ export const EDITOR_DEFAULT_METADATA: EditorMetadata = {
     supportDefaultFontSelector: false,
     isPlainText: false,
     supportRightToLeft: false,
-    rightToLeft: Direction.LeftToRight,
+    rightToLeft: DIRECTION.LEFT_TO_RIGHT,
     blockquoteExpanded: true,
     setBlockquoteExpanded: undefined,
 };

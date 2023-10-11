@@ -1,4 +1,5 @@
-import { MAILBOX_LABEL_IDS, VIEW_MODE } from '@proton/shared/lib/constants';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import { isConversationMode } from './mailSettings';
 

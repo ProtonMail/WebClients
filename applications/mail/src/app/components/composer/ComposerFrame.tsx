@@ -1,8 +1,10 @@
 import { DragEvent, useEffect, useRef, useState } from 'react';
 
-import { ErrorBoundary, useHandler, useMailSettings, useToggle, useWindowSize } from '@proton/components';
-import { COMPOSER_MODE } from '@proton/shared/lib/constants';
+import { ErrorBoundary, useHandler, useToggle, useWindowSize } from '@proton/components';
+import { COMPOSER_MODE } from '@proton/shared/lib/mail/mailSettings';
 import clsx from '@proton/utils/clsx';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT, DRAG_ADDRESS_KEY } from '../../constants';
 import { computeComposerStyle, getComposerDimension, shouldBeMaximized } from '../../helpers/composerPositioning';
@@ -33,7 +35,7 @@ const ComposerFrame = ({
     composerID,
     drawerOffset,
 }: Props) => {
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
     const composerFrameRef = useRef<HTMLDivElement>(null);
     const composerRef = useRef<ComposerAction>(null);
     // Ref to focus minimize button, otherwise focus is still on Composer, and it's still possible to edit fields
@@ -46,7 +48,7 @@ const ComposerFrame = ({
 
     // Maximized status of the composer
     const { state: maximized, toggle: toggleMaximized } = useToggle(
-        mailSettings?.ComposerMode === COMPOSER_MODE.MAXIMIZED
+        mailSettings.ComposerMode === COMPOSER_MODE.MAXIMIZED
     );
 
     const composerDimension = getComposerDimension();

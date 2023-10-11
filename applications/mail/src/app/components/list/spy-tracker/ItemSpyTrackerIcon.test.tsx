@@ -1,6 +1,6 @@
 import { fireEvent, getByText, screen } from '@testing-library/react';
 
-import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/constants';
+import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/mail/mailSettings';
 import { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
 import { addToCache, minimalCache } from '../../../helpers/test/cache';
