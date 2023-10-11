@@ -67,11 +67,15 @@ export const usePhotosView = () => {
 
         const photosViewData = sortWithCategories(Object.values(result));
 
-        // To improve performance, let's provide extra information
+        // To improve performance, let's build some maps ahead of time
+        // For previews and selection, we need these maps to know where
+        // each link is located in the data array.
         let photoLinkIdToIndexMap: Record<string, number> = {};
+
+        // We also provide a list of linkIds for the preview navigation,
+        // so it's important that this array follows the sorted view order.
         let photoLinkIds: string[] = [];
 
-        // It's important to iterate over the sorted data
         photosViewData.forEach((item, index) => {
             if (typeof item !== 'string') {
                 photoLinkIdToIndexMap[item.linkId] = index;
