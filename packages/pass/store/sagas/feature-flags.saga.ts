@@ -1,4 +1,6 @@
-import { put, select, takeLeading } from 'redux-saga/effects';
+import { fork, put, select, takeEvery, takeLeading } from 'redux-saga/effects';
+
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 
 import { SessionLockStatus } from '../../types';
 import { setUserFeatures, wakeupSuccess } from '../actions';
@@ -17,11 +19,21 @@ function* syncFeatures({ getAuth }: WorkerRootSagaOptions) {
         if (loggedIn && !locked) {
             const { user }: State = yield select();
             const features: FeatureFlagState = yield getFeatureFlags(user);
-            yield features !== user.features && put(setUserFeatures(features));
+
+            if (!isDeepEqual(features, user.features)) yield put(setUserFeatures(features));
         }
-    } catch (err) {}
+    } catch {}
+}
+
+/* dedicated watcher for user features updates as the `setUserFeatures`
+ * action may be dispatched outside of this saga */
+function* listenForChanges({ onFeatureFlagsUpdate }: WorkerRootSagaOptions) {
+    yield takeEvery(setUserFeatures.match, function* ({ payload }) {
+        yield onFeatureFlagsUpdate?.(payload);
+    });
 }
 
 export default function* watcher(options: WorkerRootSagaOptions) {
+    yield fork(listenForChanges, options);
     yield takeLeading(wakeupSuccess.match, syncFeatures, options);
 }
