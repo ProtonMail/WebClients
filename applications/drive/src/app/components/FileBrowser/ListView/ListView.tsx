@@ -58,7 +58,7 @@ const ListItemRow = <T extends FileBrowserBaseItem>({ index, style, data }: List
     if (loading && index === itemCount - 1) {
         return (
             <tr style={style} className="flex">
-                <TableCellBusy className="flex w100 text-lg flex-justify-center flex-align-items-center m-0" />
+                <TableCellBusy className="flex w-full text-lg flex-justify-center flex-align-items-center m-0" />
             </tr>
         );
     }
@@ -176,7 +176,7 @@ export const ListView = <T extends FileBrowserBaseItem, T1>({
                 />
             </Table>
 
-            <div className="flex-no-min-children flex-column flex-item-fluid w100 no-scroll" ref={contextMenuAnchorRef}>
+            <div className="flex-no-min-children flex-column flex-item-fluid w-full no-scroll" ref={contextMenuAnchorRef}>
                 {rect && (
                     <FixedSizeList
                         direction={isRTL ? 'rtl' : 'ltr'}

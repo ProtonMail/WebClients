@@ -179,7 +179,7 @@ const AddressesInput = ({
 
     const dragPlaceholder = (
         <div
-            className="composer-addresses-item-drag-placeholder my-1 mr-2 max-w100 no-pointer-events h-custom w-custom"
+            className="composer-addresses-item-drag-placeholder my-1 mr-2 max-w-full no-pointer-events h-custom w-custom"
             style={{
                 '--w-custom': `${placeholderSize?.width}px`,
                 '--h-custom': `${placeholderSize?.height}px`,
@@ -210,7 +210,7 @@ const AddressesInput = ({
     }, [recipientsOrGroups.length]);
 
     return (
-        <div className={clsx(['composer-addresses-autocomplete w100 flex flex-item-fluid relative', classname])}>
+        <div className={clsx(['composer-addresses-autocomplete w-full flex flex-item-fluid relative', classname])}>
             <div
                 className={clsx([
                     'composer-addresses-container flex flex-nowrap flex-item-fluid',
@@ -221,7 +221,7 @@ const AddressesInput = ({
                 aria-hidden="true"
                 {...containerDragHandlers}
             >
-                <div className="flex-item-fluid flex flex-wrap max-w100 max-h100 relative" ref={containerRef}>
+                <div className="flex-item-fluid flex flex-wrap max-w-full max-h100 relative" ref={containerRef}>
                     {recipientsOrGroups.map((recipientOrGroup, index) => (
                         <Fragment key={getRecipientOrGroupKey(recipientOrGroup)}>
                             {index === placeholderPosition && dragPlaceholder}

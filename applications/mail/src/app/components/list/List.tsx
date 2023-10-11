@@ -185,7 +185,7 @@ const List = (
                     )}
                 >
                     <div className="flex-item-noshrink">{toolbar}</div>
-                    <div className="h100 scroll-if-needed flex flex-column flex-nowrap w100">
+                    <div className="h100 scroll-if-needed flex flex-column flex-nowrap w-full">
                         <div className="flex-item-noshrink">
                             <ListBanners
                                 labelID={labelID}
@@ -208,7 +208,7 @@ const List = (
                                 <div
                                     className={clsx(
                                         !columnLayout && 'border-right border-weak',
-                                        'w100 flex-item-noshrink'
+                                        'w-full flex-item-noshrink'
                                     )}
                                 >
                                     {elements.map((element, index) => (

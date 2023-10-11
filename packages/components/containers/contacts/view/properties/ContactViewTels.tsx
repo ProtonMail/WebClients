@@ -33,7 +33,7 @@ const ContactViewTels = ({ vCardContact, isSignatureVerified = false }: Props) =
                     type={tel.params?.type}
                     isSignatureVerified={isSignatureVerified}
                 >
-                    <span className="w100 flex">
+                    <span className="w-full flex">
                         <a className="mr-2 flex-item-fluid text-ellipsis" href={`tel:${tel.value}`}>
                             {tel.value}
                         </a>

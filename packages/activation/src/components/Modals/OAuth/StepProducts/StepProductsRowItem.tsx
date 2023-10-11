@@ -25,7 +25,7 @@ const StepProductsRowItem = ({ id, label, disabled, value, setValue, error, chil
     return (
         <Label
             htmlFor={id}
-            className={clsx(['py-5 border-bottom flex label w100', disabled && 'cursor-default color-weak'])}
+            className={clsx(['py-5 border-bottom flex label w-full', disabled && 'cursor-default color-weak'])}
             data-testid="StepProductsRowItem:label"
         >
             <Checkbox

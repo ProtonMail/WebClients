@@ -46,7 +46,7 @@ const ViewEOMessage = ({ setSessionStorage }: Props) => {
             setSessionStorage={setSessionStorage}
         >
             {id && messageState && (
-                <main className="ui-standard sm:shadow-lifted shadow-color-primary relative no-scroll w100 max-w100 mx-auto eo-layout mw52r">
+                <main className="ui-standard sm:shadow-lifted shadow-color-primary relative no-scroll w-full max-w-full mx-auto eo-layout mw52r">
                     <div ref={elementRef}>
                         <EOMessageHeader
                             message={messageState}

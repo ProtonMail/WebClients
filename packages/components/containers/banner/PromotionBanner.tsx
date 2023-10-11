@@ -60,10 +60,10 @@ const PromotionBanner = ({
                             return 'm-0.5 px-2';
                         }
                         if (mode === 'banner') {
-                            return 'm-3 pl-4 w100';
+                            return 'm-3 pl-4 w-full';
                         }
                         if (mode === 'row') {
-                            return 'm-2 pl-4 w100';
+                            return 'm-2 pl-4 w-full';
                         }
                     })(),
                     loading && 'w33'
@@ -71,7 +71,7 @@ const PromotionBanner = ({
             >
                 {loading ? (
                     <span
-                        className={clsx('bg-promotion-loading', contentCentered ? 'w100' : 'w33')}
+                        className={clsx('bg-promotion-loading', contentCentered ? 'w-full' : 'w33')}
                         data-testid="promotion-banner:loading"
                     />
                 ) : (

@@ -75,7 +75,7 @@ const SendEmailReminderTwoFAModal = ({ onClose, members, ...rest }: Props) => {
                                         <div className="text-ellipsis max-100" title={member.Name}>
                                             {member.Name}
                                         </div>
-                                        <div className="max-w100 flex flex-">
+                                        <div className="max-w-full flex flex-">
                                             <span className="flex-item-fluid mr-2 text-ellipsis">
                                                 {memberAddresses[0].Email}
                                             </span>

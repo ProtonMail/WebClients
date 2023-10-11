@@ -51,7 +51,7 @@ const SendWithErrorsModal = ({ mapErrors, cannotSend, onSubmit, onClose, ...rest
                                 key={index} // eslint-disable-line react/no-array-index-key
                                 className={clsx([index !== emails.length && 'mb-2'])}
                             >
-                                <span className="block max-w100">{getErrorMessage(mapErrors[email], email)}</span>
+                                <span className="block max-w-full">{getErrorMessage(mapErrors[email], email)}</span>
                             </li>
                         ))}
                     </ul>
@@ -83,7 +83,7 @@ const SendWithErrorsModal = ({ mapErrors, cannotSend, onSubmit, onClose, ...rest
                             key={index} // eslint-disable-line react/no-array-index-key
                             className={clsx([index !== emails.length && 'mb-2'])}
                         >
-                            <span className="block max-w100">{getErrorMessage(mapErrors[email], email)}</span>
+                            <span className="block max-w-full">{getErrorMessage(mapErrors[email], email)}</span>
                         </li>
                     ))}
                 </ul>

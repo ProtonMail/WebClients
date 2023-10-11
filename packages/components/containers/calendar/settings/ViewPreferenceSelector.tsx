@@ -15,7 +15,7 @@ interface Props {
 }
 
 const ViewPreferenceSelector = ({
-    className = 'field w100',
+    className = 'field w-full',
     loading = false,
     disabled = false,
     view,

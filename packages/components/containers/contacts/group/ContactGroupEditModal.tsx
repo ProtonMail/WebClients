@@ -180,7 +180,7 @@ const ContactGroupEditModal = ({ contactGroupID, selectedContactEmails = [], onD
                 </Row>
                 <Row>
                     <Label htmlFor="contactGroupColor">{c('Label for contact group color').t`Color`}</Label>
-                    <Field className="w100">
+                    <Field className="w-full">
                         <ColorPicker id="contactGroupColor" color={model.color} onChange={handleChangeColor} />
                     </Field>
                 </Row>

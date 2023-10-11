@@ -17,9 +17,9 @@ const OrganizerRow = ({ organizer }: Props) => {
                 {displayFull ? (
                     <div className="text-ellipsis">{`${name} <${email}>`}</div>
                 ) : (
-                    <div className="max-w100 text-ellipsis">{email}</div>
+                    <div className="max-w-full text-ellipsis">{email}</div>
                 )}
-                <span className="color-weak w100">{c('Label').t`Organizer`}</span>
+                <span className="color-weak w-full">{c('Label').t`Organizer`}</span>
             </div>
         </div>
     );

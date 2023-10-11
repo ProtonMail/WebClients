@@ -82,7 +82,7 @@ const ExpandableRow = ({
                     </div>
                     <div
                         key="Name"
-                        className="folder-tree-list-item-name flex flex-align-items-center flex-nowrap w100"
+                        className="folder-tree-list-item-name flex flex-align-items-center flex-nowrap w-full"
                     >
                         <FileIcon mimeType={link.isFile ? link.mimeType : 'Folder'} className="mr-2" />
                         <Tooltip title={link.name} originalPlacement="bottom">

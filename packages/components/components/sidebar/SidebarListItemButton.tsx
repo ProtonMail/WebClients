@@ -8,7 +8,7 @@ export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const SidebarListItemButton = ({ children, className, ...rest }: Props) => {
     return (
-        <button className={clsx(['navigation-link w100 text-left', className])} type="button" {...rest}>
+        <button className={clsx(['navigation-link w-full text-left', className])} type="button" {...rest}>
             {children}
         </button>
     );
