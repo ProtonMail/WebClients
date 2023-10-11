@@ -3,7 +3,7 @@ import type { VFC } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import browser from '@proton/pass/globals/browser';
+import browser from '@proton/pass/lib/globals/browser';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { FadeIn } from '../../shared/components/animation/FadeIn';

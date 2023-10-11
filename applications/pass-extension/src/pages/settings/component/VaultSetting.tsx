@@ -5,7 +5,8 @@ import { useSelector } from 'react-redux';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 
-import type { ShareItem, State } from '@proton/pass/store';
+import type { ShareItem } from '@proton/pass/store/reducers';
+import type { State } from '@proton/pass/store/types';
 import type { Maybe, ShareType } from '@proton/pass/types';
 
 import { Field } from '../../../popup/components/Field/Field';

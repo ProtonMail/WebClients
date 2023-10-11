@@ -4,8 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Checkbox } from '@proton/components';
-import { selectRequestInFlight, selectSessionLockSettings, sessionLockDisableIntent } from '@proton/pass/store';
+import { sessionLockDisableIntent } from '@proton/pass/store/actions';
 import { settingsEdit } from '@proton/pass/store/actions/requests';
+import { selectRequestInFlight, selectSessionLockSettings } from '@proton/pass/store/selectors';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useSessionLockConfirmContext } from '../../../shared/components/session-lock/SessionLockConfirmContextProvider';

@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components/index';
-import { sessionLockEnableIntent } from '@proton/pass/store';
+import { sessionLockEnableIntent } from '@proton/pass/store/actions';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useSessionLockConfirmContext } from './SessionLockConfirmContextProvider';

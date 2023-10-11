@@ -6,9 +6,9 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { Slider } from '@proton/atoms/Slider';
 import { Icon, Option, SelectTwo, Toggle } from '@proton/components/components';
-import type { GeneratePasswordOptions } from '@proton/pass/password';
-import type { MemorablePasswordOptions } from '@proton/pass/password/memorable';
-import { SeperatorOptions, getSeperatorTranslation } from '@proton/pass/password/memorable';
+import type { GeneratePasswordOptions } from '@proton/pass/lib/password/generator';
+import type { MemorablePasswordOptions } from '@proton/pass/lib/password/memorable';
+import { SeperatorOptions, getSeperatorTranslation } from '@proton/pass/lib/password/memorable';
 
 import { type UsePasswordGeneratorResult, getCharsGroupedByColor } from '../../../shared/hooks/usePasswordGenerator';
 

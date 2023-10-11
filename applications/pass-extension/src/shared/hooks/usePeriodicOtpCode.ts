@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
-import { popupMessage, sendMessage } from '@proton/pass/extension/message';
+import { popupMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import type { MaybeNull, OtpCode, OtpRequest } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 

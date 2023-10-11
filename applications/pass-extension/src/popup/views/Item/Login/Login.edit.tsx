@@ -6,13 +6,14 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
-import { itemCreationIntent, selectTOTPLimits } from '@proton/pass/store';
+import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
+import { getSecretOrUri, parseOTPValue } from '@proton/pass/lib/otp/otp';
+import { itemCreationIntent } from '@proton/pass/store/actions';
 import { passwordSave } from '@proton/pass/store/actions/creators/pw-history';
+import { selectTOTPLimits } from '@proton/pass/store/selectors';
 import { prop } from '@proton/pass/utils/fp';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { merge } from '@proton/pass/utils/object';
-import { getSecretOrUri, parseOTPValue } from '@proton/pass/utils/otp/otp';
-import { obfuscateExtraFields } from '@proton/pass/utils/pass/items';
 import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
 import { getEpoch } from '@proton/pass/utils/time';
 import { parseUrl } from '@proton/pass/utils/url';

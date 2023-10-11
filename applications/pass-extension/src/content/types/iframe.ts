@@ -1,6 +1,6 @@
 import type { Runtime } from 'webextension-polyfill';
 
-import type { FeatureFlagState } from '@proton/pass/store';
+import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { MaybeNull, WorkerState } from '@proton/pass/types';
 import type { Rect } from '@proton/pass/types/utils/dom';

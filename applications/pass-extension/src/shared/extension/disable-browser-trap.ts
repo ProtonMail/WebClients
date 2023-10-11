@@ -1,4 +1,4 @@
-import { disableBrowserProxyTrap } from '@proton/pass/globals/browser';
+import { disableBrowserProxyTrap } from '@proton/pass/lib/globals/browser';
 
 /* Since content-scripts cannot be inspected, it is safe to disable the
  * browser API trap in this context. Additionally, content-scripts have

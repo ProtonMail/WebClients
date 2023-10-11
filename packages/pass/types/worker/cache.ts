@@ -1,4 +1,5 @@
-import type { State } from '../../store';
+import type { State } from '@proton/pass/store/types';
+
 import type { PassCryptoSnapshot, SerializedCryptoContext } from '../crypto';
 
 export type ExtensionCache = { state: State; snapshot: SerializedCryptoContext<PassCryptoSnapshot> };

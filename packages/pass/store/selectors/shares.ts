@@ -1,13 +1,14 @@
 import type { Selector } from '@reduxjs/toolkit';
 import { createSelector } from '@reduxjs/toolkit';
 
+import { isTrashed } from '@proton/pass/lib/items/item.predicates';
+import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
+import { isOwnVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import type { VaultShare } from '@proton/pass/types';
 import { type Maybe, type MaybeNull, type ShareType } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { and, invert } from '@proton/pass/utils/fp';
 import { sortOn } from '@proton/pass/utils/fp/sort';
-import { isOwnVault, isVaultShare, isWritableVault } from '@proton/pass/utils/pass/share';
-import { isTrashed } from '@proton/pass/utils/pass/trash';
 
 import { unwrapOptimisticState } from '../optimistic/utils/transformers';
 import { type ShareItem } from '../reducers';

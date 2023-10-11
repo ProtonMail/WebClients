@@ -6,9 +6,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { useNotifications } from '@proton/components/hooks';
-import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
+import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import { createTelemetryEvent } from '@proton/pass/telemetry/events';
 import type { Item } from '@proton/pass/types';
 import { AutoSaveType, type FormEntryPrompt, WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';

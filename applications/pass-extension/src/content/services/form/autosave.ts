@@ -1,4 +1,4 @@
-import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
+import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import type { FormEntryPrompt } from '@proton/pass/types';
 import { FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
 

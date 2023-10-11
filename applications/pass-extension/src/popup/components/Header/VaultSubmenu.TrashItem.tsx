@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { selectAllTrashedItems } from '@proton/pass/store';
+import { selectAllTrashedItems } from '@proton/pass/store/selectors';
 
 import { CountLabel } from '../Dropdown/CountLabel';
 import { DropdownMenuButton } from '../Dropdown/DropdownMenuButton';

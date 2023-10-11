@@ -1,16 +1,16 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import { type SessionLockCheckResult } from '@proton/pass/lib/auth/session-lock';
+import { settingsEdit, unlockSession } from '@proton/pass/store/actions/requests';
+import withCacheBlock from '@proton/pass/store/actions/with-cache-block';
+import type { ActionCallback } from '@proton/pass/store/actions/with-callback';
+import withCallback from '@proton/pass/store/actions/with-callback';
+import withNotification from '@proton/pass/store/actions/with-notification';
+import withRequest from '@proton/pass/store/actions/with-request';
 import type { ExtensionEndpoint } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
-
-import type { SessionLockCheckResult } from '../../../auth';
-import { settingsEdit, unlockSession } from '../requests';
-import withCacheBlock from '../with-cache-block';
-import withCallback, { type ActionCallback } from '../with-callback';
-import withNotification from '../with-notification';
-import withRequest from '../with-request';
 
 export const signout = createAction('signout', (payload: { soft: boolean }) => withCacheBlock({ payload }));
 export const signoutSuccess = createAction('signout success', (payload: { soft: boolean }) =>

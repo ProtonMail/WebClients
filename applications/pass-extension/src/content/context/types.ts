@@ -1,4 +1,4 @@
-import type { FeatureFlagState } from '@proton/pass/store';
+import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { WorkerState } from '@proton/pass/types';
 

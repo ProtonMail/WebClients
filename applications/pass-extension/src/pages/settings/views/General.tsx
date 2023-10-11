@@ -3,7 +3,8 @@ import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { selectDefaultVault, selectOwnWritableVaults, vaultSetPrimaryIntent } from '@proton/pass/store';
+import { vaultSetPrimaryIntent } from '@proton/pass/store/actions';
+import { selectDefaultVault, selectOwnWritableVaults } from '@proton/pass/store/selectors';
 import { PassFeature } from '@proton/pass/types/api/features';
 
 import { useFeatureFlag } from '../../../shared/hooks/useFeatureFlag';

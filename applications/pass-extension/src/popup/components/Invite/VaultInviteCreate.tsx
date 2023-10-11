@@ -6,7 +6,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Icon } from '@proton/components/components';
-import { inviteCreationIntent, selectVaultWithItemsCount } from '@proton/pass/store';
+import { inviteCreationIntent } from '@proton/pass/store/actions';
+import { selectVaultWithItemsCount } from '@proton/pass/store/selectors';
 import { ShareRole } from '@proton/pass/types';
 
 import { SidebarModal } from '../../../shared/components/sidebarmodal/SidebarModal';

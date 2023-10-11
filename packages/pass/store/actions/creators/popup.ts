@@ -1,10 +1,9 @@
 import { createAction } from '@reduxjs/toolkit';
 
-import type { GeneratePasswordOptions } from '@proton/pass/password';
+import type { GeneratePasswordOptions } from '@proton/pass/lib/password/generator';
+import withCacheBlock from '@proton/pass/store/actions/with-cache-block';
+import type { PopupTabState } from '@proton/pass/store/reducers';
 import type { ItemFilters, MaybeNull, TabId } from '@proton/pass/types';
-
-import type { PopupTabState } from '../../reducers/popup';
-import withCacheBlock from '../with-cache-block';
 
 export const popupTabStateSave = createAction(
     'popup tab state save',

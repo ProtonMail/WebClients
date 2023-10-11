@@ -1,6 +1,6 @@
-import { backgroundMessage } from '@proton/pass/extension/message';
-import { selectProxiedSettings } from '@proton/pass/store';
+import { backgroundMessage } from '@proton/pass/lib/extension/message';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
+import { selectProxiedSettings } from '@proton/pass/store/selectors';
 import { WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';

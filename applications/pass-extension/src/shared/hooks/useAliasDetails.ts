@@ -4,8 +4,9 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { getAliasDetailsIntent, selectAliasDetails } from '@proton/pass/store';
+import { getAliasDetailsIntent } from '@proton/pass/store/actions';
 import { aliasDetailsRequest } from '@proton/pass/store/actions/requests';
+import { selectAliasDetails } from '@proton/pass/store/selectors';
 import type { AliasMailbox, Maybe } from '@proton/pass/types';
 
 import { useActionWithRequest } from './useActionWithRequest';

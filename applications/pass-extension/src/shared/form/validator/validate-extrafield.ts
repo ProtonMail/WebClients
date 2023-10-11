@@ -2,8 +2,8 @@ import type { FormikErrors } from 'formik';
 import isEmpty from 'lodash/isEmpty';
 import { c } from 'ttag';
 
+import { parseOTPValue } from '@proton/pass/lib/otp/otp';
 import type { UnsafeItemExtraField } from '@proton/pass/types';
-import { parseOTPValue } from '@proton/pass/utils/otp/otp';
 import { isEmptyString } from '@proton/pass/utils/string';
 
 import type { ExtraFieldGroupValues } from '../types';

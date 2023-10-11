@@ -1,8 +1,10 @@
 import { type Runtime } from 'webextension-polyfill';
 
-import type { MessageHandlerCallback } from '@proton/pass/extension/message';
-import { backgroundMessage } from '@proton/pass/extension/message';
-import browser from '@proton/pass/globals/browser';
+import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message';
+import { backgroundMessage } from '@proton/pass/lib/extension/message';
+import browser from '@proton/pass/lib/globals/browser';
+import { workerCanBoot } from '@proton/pass/lib/worker';
+import { boot, wakeup } from '@proton/pass/store/actions';
 import {
     selectFeatureFlags,
     selectItemByShareIdAndId,
@@ -10,15 +12,13 @@ import {
     selectPopupFilters,
     selectPopupPasswordOptions,
     selectPopupTabState,
-} from '@proton/pass/store';
-import { boot, wakeup } from '@proton/pass/store/actions';
+} from '@proton/pass/store/selectors';
 import type { MaybeNull, WorkerInitMessage, WorkerMessageWithSender, WorkerWakeUpMessage } from '@proton/pass/types';
 import { WorkerMessageType, WorkerStatus } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors';
 import { logger } from '@proton/pass/utils/logger';
 import { UNIX_HOUR, getEpoch } from '@proton/pass/utils/time';
 import { parseUrl } from '@proton/pass/utils/url';
-import { workerCanBoot } from '@proton/pass/utils/worker';
 
 import { checkExtensionPermissions } from '../../shared/extension/permissions';
 import { isPopupPort } from '../../shared/extension/port';

@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { useSelector } from 'react-redux';
 
-import { selectItemsSearchResult, selectTrashedItemsSearchResults } from '@proton/pass/store';
+import { selectItemsSearchResult, selectTrashedItemsSearchResults } from '@proton/pass/store/selectors';
 
 import { ItemsFilteringContext } from '../context/items/ItemsFilteringContext';
 

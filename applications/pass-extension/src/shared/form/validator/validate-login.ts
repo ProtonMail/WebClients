@@ -1,7 +1,7 @@
 import type { FormikErrors } from 'formik';
 import { c } from 'ttag';
 
-import { parseOTPValue } from '@proton/pass/utils/otp/otp';
+import { parseOTPValue } from '@proton/pass/lib/otp/otp';
 import { isEmptyString } from '@proton/pass/utils/string';
 
 import { validateUrl, validateUrls } from '../../../popup/components/Field/UrlGroupField';

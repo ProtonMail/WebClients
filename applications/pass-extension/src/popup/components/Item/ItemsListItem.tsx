@@ -4,9 +4,9 @@ import { Link, type LinkProps } from 'react-router-dom';
 
 import { ButtonLike, type ButtonLikeProps } from '@proton/atoms/Button';
 import { Marks } from '@proton/components/components';
-import { selectShare } from '@proton/pass/store';
+import { matchChunks } from '@proton/pass/lib/search/match-chunks';
+import { selectShare } from '@proton/pass/store/selectors';
 import type { ItemRevisionWithOptimistic, ShareType } from '@proton/pass/types';
-import { getItemNameSearchChunks } from '@proton/pass/utils/search';
 import { isEmptyString } from '@proton/pass/utils/string';
 import clsx from '@proton/utils/clsx';
 
@@ -54,7 +54,7 @@ const ItemsListItemRaw: VFC<Props> = ({ item, search = '', active = false, ...re
                             <VaultIcon size={12} icon={vault?.content.display.icon} className="color-weak mr-1" />
                         )}
                         <span className="flex-item-fluid text-ellipsis">
-                            <Marks chunks={getItemNameSearchChunks(heading, search)}>{heading}</Marks>
+                            <Marks chunks={matchChunks(heading, search)}>{heading}</Marks>
                         </span>
                     </span>
                     <div
@@ -63,7 +63,7 @@ const ItemsListItemRaw: VFC<Props> = ({ item, search = '', active = false, ...re
                             item.data.type === 'note' && isEmptyString(item.data.metadata.note.v) && 'text-italic',
                         ])}
                     >
-                        <Marks chunks={getItemNameSearchChunks(subheading, search)}>{subheading}</Marks>
+                        <Marks chunks={matchChunks(subheading, search)}>{subheading}</Marks>
                     </div>
                 </div>
             </div>

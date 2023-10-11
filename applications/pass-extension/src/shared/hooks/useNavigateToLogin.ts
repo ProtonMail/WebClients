@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components/hooks';
-import { requestFork } from '@proton/pass/auth';
-import browser from '@proton/pass/globals/browser';
+import { requestFork } from '@proton/pass/lib/auth/fork';
+import browser from '@proton/pass/lib/globals/browser';
 import type { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';

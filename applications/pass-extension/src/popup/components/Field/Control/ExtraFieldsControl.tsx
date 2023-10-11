@@ -1,7 +1,7 @@
 import { type VFC, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
-import { selectExtraFieldLimits } from '@proton/pass/store';
+import { selectExtraFieldLimits } from '@proton/pass/store/selectors';
 import type { UnsafeItemExtraField } from '@proton/pass/types';
 import { isEmptyString } from '@proton/pass/utils/string';
 

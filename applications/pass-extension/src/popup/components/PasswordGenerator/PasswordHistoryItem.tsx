@@ -5,8 +5,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Icon } from '@proton/components/components';
-import type { PasswordHistoryEntry } from '@proton/pass/store';
 import { passwordDelete } from '@proton/pass/store/actions/creators/pw-history';
+import type { PasswordHistoryEntry } from '@proton/pass/store/reducers';
 import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
 
 import { getCharsGroupedByColor } from '../../../shared/hooks';

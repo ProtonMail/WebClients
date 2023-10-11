@@ -1,19 +1,16 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import { getItemActionId } from '@proton/pass/lib/items/item.utils';
+import withCacheBlock from '@proton/pass/store/actions/with-cache-block';
+import type { ActionCallback } from '@proton/pass/store/actions/with-callback';
+import withCallback from '@proton/pass/store/actions/with-callback';
+import withNotification from '@proton/pass/store/actions/with-notification';
+import withSynchronousClientAction from '@proton/pass/store/actions/with-synchronous-client-action';
+import { createOptimisticAction } from '@proton/pass/store/optimistic/action/create-optimistic-action';
+import type { ItemDraft } from '@proton/pass/store/reducers';
 import type { ItemCreateIntent, ItemEditIntent, ItemRevision, SelectedItem } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp';
-import { getItemActionId } from '@proton/pass/utils/pass/items';
-
-import { createOptimisticAction } from '../../optimistic/action/create-optimistic-action';
-import type { ItemDraft } from '../../reducers/popup';
-import * as requests from '../requests';
-import withCacheBlock from '../with-cache-block';
-import type { ActionCallback } from '../with-callback';
-import withCallback from '../with-callback';
-import withNotification from '../with-notification';
-import withRequest from '../with-request';
-import withSynchronousClientAction from '../with-synchronous-client-action';
 
 export const itemDraftSave = createAction('item draft save', (payload: ItemDraft) => withCacheBlock({ payload }));
 export const itemDraftDiscard = createAction('item draft discard', () => withCacheBlock({ payload: {} }));
@@ -253,33 +250,4 @@ export const itemUsed = createAction('item used', (payload: SelectedItem) => ({ 
 export const itemLastUseTimeUpdated = createAction(
     'item lastUseTime updated',
     (payload: { shareId: string; itemId: string; lastUseTime: number }) => ({ payload })
-);
-
-export const itemsRequested = createAction('items requested', (shareId: string) =>
-    pipe(
-        withCacheBlock,
-        withRequest({
-            id: requests.items(),
-            type: 'start',
-        })
-    )({ payload: { shareId } })
-);
-
-export const itemsRequestSuccess = createAction(
-    'items request success',
-    (payload: { shareId: string; items: ItemRevision[] }) =>
-        withRequest({
-            id: requests.items(),
-            type: 'success',
-        })({ payload })
-);
-
-export const itemsRequestFailure = createAction('items request failure', (error: unknown) =>
-    pipe(
-        withCacheBlock,
-        withRequest({
-            id: requests.items(),
-            type: 'failure',
-        })
-    )({ payload: {}, error })
 );

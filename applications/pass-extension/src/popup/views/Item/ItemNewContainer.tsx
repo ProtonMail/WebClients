@@ -2,7 +2,8 @@ import { type VFC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 
-import { itemCreationIntent, selectDefaultVault, selectVaultLimits } from '@proton/pass/store';
+import { itemCreationIntent } from '@proton/pass/store/actions';
+import { selectDefaultVault, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { ItemCreateIntent, ItemType } from '@proton/pass/types';
 
 import type { ItemNewProps } from '../../../shared/items/types';

@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { selectAliasLimits, selectVaultLimits } from '@proton/pass/store';
+import { selectAliasLimits, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import { awaiter } from '@proton/pass/utils/fp/promises';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
