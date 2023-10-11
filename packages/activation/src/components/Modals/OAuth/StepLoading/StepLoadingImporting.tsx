@@ -40,7 +40,7 @@ const StepLoadingImporting = () => {
     return (
         <ModalTwo open size="large">
             <ModalTwoContent>
-                <div className="p-14 text-center w100" data-testid="StepLoadingImporting:modal">
+                <div className="p-14 text-center w-full" data-testid="StepLoadingImporting:modal">
                     <Loader size="large" className="mb-4" />
                     {renderContent()}
                 </div>

@@ -337,7 +337,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                                 target="_self"
                                 shape="outline"
                                 color="weak"
-                                className="w100"
+                                className="w-full"
                                 onClick={(event: MouseEvent<HTMLAnchorElement>) => {
                                     if (
                                         APP_NAME !== APPS.PROTONACCOUNT &&
@@ -360,7 +360,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                             <Button
                                 shape="outline"
                                 color="weak"
-                                className="w100"
+                                className="w-full"
                                 onClick={() => goToSettings(path, APP_NAME, false)}
                                 data-testid="userdropdown:button:settings"
                             >{c('Action').t`Settings`}</Button>
@@ -371,7 +371,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                         <Button
                             shape="solid"
                             color="norm"
-                            className="w100"
+                            className="w-full"
                             onClick={handleSignOutClick}
                             data-testid="userdropdown:button:logout"
                         >
@@ -415,7 +415,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                             userSettings?.Referral?.Eligible && (
                                 <div className="block">
                                     <SettingsLink
-                                        className="mx-auto w100 px-2 link link-focus color-weak text-no-decoration on-hover-color-norm"
+                                        className="mx-auto w-full px-2 link link-focus color-weak text-no-decoration on-hover-color-norm"
                                         path="/referral"
                                         onClick={close}
                                         data-testid="userdropdown:button:referral"
@@ -428,7 +428,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
 
                         <div className="block">
                             <a
-                                className="mx-auto w100 px-2 link link-focus color-weak text-no-decoration on-hover-color-norm"
+                                className="mx-auto w-full px-2 link link-focus color-weak text-no-decoration on-hover-color-norm"
                                 href={getShopURL()}
                                 target="_blank"
                                 data-testid="userdropdown:help:link:request-feature"
@@ -439,7 +439,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
 
                         <div className="block">
                             <a
-                                className="mx-auto w100 px-2 link link-focus color-weak text-no-decoration on-hover-color-norm"
+                                className="mx-auto w-full px-2 link link-focus color-weak text-no-decoration on-hover-color-norm"
                                 href={userVoiceLinks[APP_NAME] || userVoiceLinks[APPS.PROTONMAIL]}
                                 target="_blank"
                                 data-testid="userdropdown:help:link:request-feature"
@@ -452,7 +452,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                             <div className="block">
                                 <button
                                     type="button"
-                                    className="mx-auto w100 px-2 link link-focus color-weak text-no-decoration on-hover-color-norm"
+                                    className="mx-auto w-full px-2 link link-focus color-weak text-no-decoration on-hover-color-norm"
                                     onClick={() => {
                                         close();
                                         onOpenChat();

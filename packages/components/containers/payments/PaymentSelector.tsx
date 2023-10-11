@@ -32,7 +32,7 @@ const PaymentSelector = ({ currency, amount, onChangeCurrency, onChangeAmount, m
                 <div className="flex-item-fluid mb-2 md:mb-0">
                     <AmountButton
                         aria-describedby="id_desc_amount id_desc_currency"
-                        className="w100"
+                        className="w-full"
                         onSelect={handleButton}
                         value={500}
                         amount={amount}
@@ -41,7 +41,7 @@ const PaymentSelector = ({ currency, amount, onChangeCurrency, onChangeAmount, m
                 <div className="flex-item-fluid mb-2 md:mb-0">
                     <AmountButton
                         aria-describedby="id_desc_amount id_desc_currency"
-                        className="w100"
+                        className="w-full"
                         onSelect={handleButton}
                         value={1000}
                         amount={amount}
@@ -50,7 +50,7 @@ const PaymentSelector = ({ currency, amount, onChangeCurrency, onChangeAmount, m
                 <div className="flex-item-fluid mb-2 md:mb-0">
                     <AmountButton
                         aria-describedby="id_desc_amount id_desc_currency"
-                        className="w100"
+                        className="w-full"
                         onSelect={handleButton}
                         value={5000}
                         amount={amount}
@@ -59,7 +59,7 @@ const PaymentSelector = ({ currency, amount, onChangeCurrency, onChangeAmount, m
                 <div className="flex-item-fluid mb-2 md:mb-0">
                     <AmountButton
                         aria-describedby="id_desc_amount id_desc_currency"
-                        className="w100"
+                        className="w-full"
                         onSelect={handleButton}
                         value={10000}
                         amount={amount}
@@ -70,7 +70,7 @@ const PaymentSelector = ({ currency, amount, onChangeCurrency, onChangeAmount, m
                 <div className="flex-item-fluid mb-2 md:mb-0">
                     <Label htmlFor="otherAmount" className="sr-only">{c('Label').t`Other amount`}</Label>
                     <Input
-                        className="w100"
+                        className="w-full"
                         onChange={({ target }) => {
                             if (target.value === '') {
                                 setInputValue('');
@@ -103,7 +103,7 @@ const PaymentSelector = ({ currency, amount, onChangeCurrency, onChangeAmount, m
                 <div className="flex-item-fluid mb-2 md:mb-0">
                     <CurrencySelector
                         mode="select-two"
-                        className="w100"
+                        className="w-full"
                         id="id_desc_currency"
                         currency={currency}
                         onSelect={onChangeCurrency}

@@ -55,7 +55,7 @@ const ToolbarHeaderMessageNarrow = ({
     const viewportBreakpoint = useActiveBreakpoint();
 
     return (
-        <div className="flex w100">
+        <div className="flex w-full">
             <nav
                 className={clsx(classname, 'toolbar--in-container')}
                 data-shortcut-target="mailbox-toolbar"

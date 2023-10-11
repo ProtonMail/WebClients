@@ -9,7 +9,7 @@ $field-container: rem(260) !default;
 
 .field-container {
 	inline-size: $field-container;
-	@extend .max-w100;
+	@extend .max-w-full;
 	@extend .inline-block;
 	@extend .relative;
 
@@ -103,7 +103,7 @@ $field-container: rem(260) !default;
 		border-color: var(--signal-success);
 	}
 
-	&.w100 {
+	&.w-full {
 		inline-size: 100%;
 	}
 

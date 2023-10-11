@@ -144,7 +144,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
                                 {c('Label for default event notifications').t`Notifications`}
                             </label>
                         </SettingsLayoutLeft>
-                        <SettingsLayoutRight className="w100">
+                        <SettingsLayoutRight className="w-full">
                             <Notifications
                                 id="default-part-day-notifications"
                                 data-testid="create-calendar/event-settings:default-notification"
@@ -185,7 +185,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
                             : c('Label for default event notifications').t`All-day event notifications`}
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="w100">
+                <SettingsLayoutRight className="w-full">
                     <Notifications
                         id="default-full-day-notifications"
                         data-testid="create-calendar/event-settings:default-full-day-notification"

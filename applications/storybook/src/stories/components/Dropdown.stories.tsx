@@ -50,7 +50,7 @@ export const Basic = () => {
                     })}
                 </DropdownMenu>
                 <div className="p-4">
-                    <Button className="w100" color="norm">
+                    <Button className="w-full" color="norm">
                         Action
                     </Button>
                 </div>

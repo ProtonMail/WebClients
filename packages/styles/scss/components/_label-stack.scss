@@ -8,7 +8,7 @@
 	font-size: em(12);
 	font-weight: var(--font-weight-semibold); // Overrides when unread email context
 
-	&.max-w100 {
+	&.max-w-full {
 		--item-wide: 100%;
 	}
 

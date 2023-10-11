@@ -61,7 +61,7 @@ const SimpleSidebarListItemHeader = ({
                 spaceAbove && 'mt-4',
             ])}
         >
-            <div className="flex flex-nowrap w100" ref={headerRef}>
+            <div className="flex flex-nowrap w-full" ref={headerRef}>
                 <h3 className="sr-only">{text}</h3>
                 <button
                     ref={buttonRef}

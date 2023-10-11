@@ -18,7 +18,7 @@ export const FileCard = ({ linkInfo, className }: Props) => {
                 <FileIcon size={28} mimeType={linkInfo.mimeType} alt={linkInfo.name} />
             </div>
             <div className="flex flex-column flex-nowrap">
-                <div className="text-bold mw100 flex w100">
+                <div className="text-bold mw-full flex w-full">
                     <FileNameDisplay text={linkInfo.name} />
                 </div>
                 {linkInfo.mimeType !== 'Folder' && <Cells.SizeCell size={linkInfo.size} />}

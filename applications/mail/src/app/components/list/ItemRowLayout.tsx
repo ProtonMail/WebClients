@@ -90,7 +90,7 @@ const ItemRowLayout = ({
     );
 
     return (
-        <div className="flex-nowrap flex-column w100">
+        <div className="flex-nowrap flex-column w-full">
             <div className="flex-item-fluid flex flex-align-items-center flex-nowrap flex-row item-titlesender">
                 <div className="my-auto flex w2e" data-testid={unread}>
                     <ItemStar element={element} />
@@ -99,7 +99,7 @@ const ItemRowLayout = ({
                     <ItemUnread element={element} labelID={labelID} className="mr-0.5 item-unread-dot" />
                     <ItemAction element={element} className="mr-2 flex-item-noshrink my-auto" />
                     <span
-                        className="max-w100 text-ellipsis flex flex-align-items-center"
+                        className="max-w-full text-ellipsis flex flex-align-items-center"
                         data-testid="message-row:sender-address"
                     >
                         {senders}
@@ -107,11 +107,11 @@ const ItemRowLayout = ({
                 </div>
 
                 <div className="item-subject flex-item-fluid flex flex-align-items-center flex-nowrap m-auto">
-                    <div className="flex flex-column inline-block w100">
+                    <div className="flex flex-column inline-block w-full">
                         <span
                             role="heading"
                             aria-level={2}
-                            className={clsx(['max-w100 text-ellipsis mr-4', unread && 'text-bold'])}
+                            className={clsx(['max-w-full text-ellipsis mr-4', unread && 'text-bold'])}
                             title={Subject}
                             data-testid="message-row:subject"
                         >
@@ -132,7 +132,7 @@ const ItemRowLayout = ({
                         {!!resultJSX && highlightData && (
                             <>
                                 <span
-                                    className={clsx(['max-w100 text-ellipsis mr-4', unread && 'text-bold'])}
+                                    className={clsx(['max-w-full text-ellipsis mr-4', unread && 'text-bold'])}
                                     title={bodyTitle}
                                     aria-hidden="true"
                                 >

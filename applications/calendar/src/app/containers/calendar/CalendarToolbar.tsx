@@ -38,7 +38,7 @@ const CalendarToolbar = ({
     const responsiveTimeZoneSelector = !(breakpoint === 'extratiny' || breakpoint === 'tiny');
 
     return (
-        <div className="w100" ref={toolbarRef}>
+        <div className="w-full" ref={toolbarRef}>
             <Toolbar className="toolbar--in-container">
                 {dateCursorButtons}
                 {searchField}

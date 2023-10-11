@@ -298,7 +298,7 @@ const Step1 = ({
         !model.session?.state.access;
 
     const renewalNotice = !hasSelectedFree && (
-        <div className="w100 text-sm color-norm opacity-70">
+        <div className="w-full text-sm color-norm opacity-70">
             *
             {options.checkResult.Coupon?.Code === COUPON_CODES.BLACK_FRIDAY_2023
                 ? getBlackFridayRenewalNoticeText({

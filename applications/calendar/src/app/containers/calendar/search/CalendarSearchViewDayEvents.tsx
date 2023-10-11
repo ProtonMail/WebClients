@@ -35,7 +35,7 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
 
     return (
         <div
-            className="flex flex-nowrap border-bottom border-weak search-result-line w100 px-4 py-2 on-tablet-flex-column"
+            className="flex flex-nowrap border-bottom border-weak search-result-line w-full px-4 py-2 on-tablet-flex-column"
             style={{ scrollPaddingTop: '5em' }}
         >
             <div
@@ -90,7 +90,7 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
                                 type="button"
                                 key={`${CalendarID}-${ID}-${fakeUTCStartDate}`}
                                 className={clsx(
-                                    'flex flex-nowrap search-event-cell flex-align-items-center text-left relative interactive-pseudo w100 color-norm rounded-sm pl-1',
+                                    'flex flex-nowrap search-event-cell flex-align-items-center text-left relative interactive-pseudo w-full color-norm rounded-sm pl-1',
                                     isCancelled && 'text-strike',
                                     isOpen && 'bg-weak'
                                 )}

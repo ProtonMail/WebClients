@@ -246,8 +246,8 @@ const CalendarSearchView = ({
     const hasResults = Boolean(visualItems.length);
 
     return (
-        <div className="relative flex-no-min-children flex-column flex-nowrap flex-justify-start flex-align-items-start w100 h100">
-            <div className="toolbar toolbar--heavy flex flex-nowrap flex-item-noshrink flex-align-items-center gap-2 no-print flex-justify-space-between py-1 pr-2 pl-4 w100">
+        <div className="relative flex-no-min-children flex-column flex-nowrap flex-justify-start flex-align-items-start w-full h100">
+            <div className="toolbar toolbar--heavy flex flex-nowrap flex-item-noshrink flex-align-items-center gap-2 no-print flex-justify-space-between py-1 pr-2 pl-4 w-full">
                 <h2 className="h6 text-semibold">
                     {hasResults ? c('esCalendar').t`Results` : c('esCalendar').t`No result`}
                 </h2>
@@ -278,7 +278,7 @@ const CalendarSearchView = ({
             </div>
 
             {hasResults ? (
-                <div className="w100 flex-item-fluid overflow-auto">
+                <div className="w-full flex-item-fluid overflow-auto">
                     {maybeWithEmptyToday.reduce((acc: React.JSX.Element[], dailyEvents, index) => {
                         const isEmptyDay = !dailyEvents.length;
                         const utcStartDate = isEmptyDay ? startOfDay(new Date()) : dailyEvents[0]?.fakeUTCStartDate;
@@ -305,7 +305,7 @@ const CalendarSearchView = ({
                     }, [])}
                 </div>
             ) : (
-                <div className="flex flex-column w100 h100">
+                <div className="flex flex-column w-full h100">
                     {shouldDisplayCalendarDisplayWarning && (
                         <div className="bg-weak rounded m-2 px-4 py-2 flex">
                             <div className="flex-item-noshrink">
@@ -321,7 +321,7 @@ const CalendarSearchView = ({
                         </div>
                     )}
 
-                    <div className="flex flex-column flex-justify-center flex-align-items-center flex-item-grow w100">
+                    <div className="flex flex-column flex-justify-center flex-align-items-center flex-item-grow w-full">
                         <IllustrationPlaceholder title={c('Info message').t`No results found`} url={noResultsImg} />
                         <div className="text-center">
                             {c('Info calendar search')

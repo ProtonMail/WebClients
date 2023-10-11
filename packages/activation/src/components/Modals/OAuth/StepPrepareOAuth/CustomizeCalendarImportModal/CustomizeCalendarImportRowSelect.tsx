@@ -62,7 +62,7 @@ const CustomizeCalendarImportRowSelect = ({
                             {[
                                 <li className="dropdown-item" key="label-create">
                                     <span
-                                        className="w100 px-4 py-2 block text-ellipsis text-left outline-none text-semibold"
+                                        className="w-full px-4 py-2 block text-ellipsis text-left outline-none text-semibold"
                                         title={createNewCalendarLabel}
                                     >
                                         {createNewCalendarLabel}
@@ -80,7 +80,7 @@ const CustomizeCalendarImportRowSelect = ({
 
                                 <li className="dropdown-item" key="label-merge">
                                     <span
-                                        className="w100 px-4 py-2 block text-ellipsis text-left outline-none text-semibold"
+                                        className="w-full px-4 py-2 block text-ellipsis text-left outline-none text-semibold"
                                         title={mergeCalendarLabel}
                                     >
                                         {mergeCalendarLabel}

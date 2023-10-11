@@ -94,7 +94,7 @@ const AddressesGroupItem = ({
         <>
             <div
                 className={clsx([
-                    'composer-addresses-item my-4 mr-2 flex flex-nowrap flex-row max-w100 overflow-hidden stop-propagation cursor-grab rounded',
+                    'composer-addresses-item my-4 mr-2 flex flex-nowrap flex-row max-w-full overflow-hidden stop-propagation cursor-grab rounded',
                     dragged && 'composer-addresses-item-dragged',
                 ])}
                 draggable

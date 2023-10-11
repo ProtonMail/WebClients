@@ -283,7 +283,7 @@ const PopoverEventContent = ({
             ) : null}
             {!!numberOfParticipants && organizer && (
                 <IconRow labelClassName={labelClassName} icon="user" title={c('Label').t`Participants`}>
-                    <div className="w100">
+                    <div className="w-full">
                         <Collapsible>
                             <CollapsibleHeader
                                 suffix={

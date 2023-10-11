@@ -156,7 +156,7 @@ const Verify = () => {
 
     const wrapInMain = (child: ReactNode) => (
         <main className="hv h100" ref={registerRootRef}>
-            <div className="hv-container sm:shadow-lifted shadow-color-primary ui-standard relative no-scroll w100 max-w100 mx-auto mw30r">
+            <div className="hv-container sm:shadow-lifted shadow-color-primary ui-standard relative no-scroll w-full max-w-full mx-auto mw30r">
                 {child}
             </div>
         </main>

@@ -32,7 +32,7 @@ const VideoInstructions = ({ children, ...rest }: React.ComponentPropsWithoutRef
                 preload="auto"
                 playsInline
                 ref={videoRef}
-                className="max-w100 rounded"
+                className="max-w-full rounded"
                 autoPlay
                 muted
                 onEnded={onEnd}
@@ -44,7 +44,7 @@ const VideoInstructions = ({ children, ...rest }: React.ComponentPropsWithoutRef
                 title={c('Video control').t`Click to replay the video`}
                 type="button"
                 className={clsx([
-                    'absolute-cover rounded w100 flex flex-align-items-center flex-justify-center',
+                    'absolute-cover rounded w-full flex flex-align-items-center flex-justify-center',
                     'video-player-replay-button',
                     videoEnded && 'video-ended',
                 ])}

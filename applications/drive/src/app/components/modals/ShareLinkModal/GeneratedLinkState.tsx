@@ -269,7 +269,7 @@ function GeneratedLinkState({
                 </div>
             </ModalTwoContent>
             <ModalTwoFooter>
-                <div className="flex flex-justify-space-between w100">
+                <div className="flex flex-justify-space-between w-full">
                     <Button
                         loading={deleting}
                         disabled={saving}
