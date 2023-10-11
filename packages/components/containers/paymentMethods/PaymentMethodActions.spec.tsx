@@ -215,7 +215,11 @@ describe('PaymentMethodActions', () => {
 
             await waitFor(async () => {
                 expect(api).toHaveBeenCalledWith(orderPaymentMethods(['id-123', 'id-000'])); // a request to change the order of the payment methods
+            });
+            await waitFor(async () => {
                 expect(call).toHaveBeenCalled();
+            });
+            await waitFor(async () => {
                 expect(createNotification).toHaveBeenCalled();
             });
         });
@@ -258,7 +262,11 @@ describe('PaymentMethodActions', () => {
             await onDelete();
             await waitFor(async () => {
                 expect(api).toHaveBeenCalledWith(deletePaymentMethod('id-123'));
+            });
+            await waitFor(async () => {
                 expect(call).toHaveBeenCalled();
+            });
+            await waitFor(async () => {
                 expect(createNotification).toHaveBeenCalled();
             });
         });

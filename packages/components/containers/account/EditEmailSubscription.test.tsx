@@ -68,7 +68,7 @@ describe('EditEmailSubscription', () => {
         render(<EditEmailSubscription />);
 
         const toggleContent = screen.getByText('Proton offers and promotions');
-        await fireEvent.click(toggleContent);
+        fireEvent.click(toggleContent);
 
         await waitFor(() => expect(mockedApi).toHaveBeenCalledTimes(1));
         expect(mockedApi).toHaveBeenCalledWith({
@@ -82,7 +82,7 @@ describe('EditEmailSubscription', () => {
         render(<EditEmailSubscription />);
 
         const toggleContent = screen.getByText('Proton Drive product updates');
-        await fireEvent.click(toggleContent);
+        fireEvent.click(toggleContent);
 
         await waitFor(() => expect(mockedApi).toHaveBeenCalledTimes(1));
         expect(mockedApi).toHaveBeenCalledWith({
