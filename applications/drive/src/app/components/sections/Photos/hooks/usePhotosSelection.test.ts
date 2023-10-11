@@ -2,36 +2,36 @@ import { act, renderHook } from '@testing-library/react-hooks';
 
 import { isPhotoGroup } from '../../../../store/_photos';
 import type { PhotoGroup } from '../../../../store/_photos/interface';
-import { usePhotosSelection } from './usePhotosSelection';
+import { getGroupLinkIds, usePhotosSelection } from './usePhotosSelection';
+
+const groups: Record<PhotoGroup, string[]> = {
+    group1: ['id1', 'id2', 'id3'],
+    group2: ['id4', 'id5'],
+    empty: [],
+    group3: ['id6'],
+};
+
+const makeItem = (linkId: string) => ({ linkId });
+
+const data = Object.keys(groups).reduce<(string | ReturnType<typeof makeItem>)[]>((acc, item) => {
+    acc.push(item);
+    acc.push(...groups[item].map(makeItem));
+
+    return acc;
+}, []);
+
+const indexMap = data.reduce<Record<string, number>>((acc, item, index) => {
+    if (!isPhotoGroup(item)) {
+        acc[item.linkId] = index;
+    }
+
+    return acc;
+}, {});
 
 describe('usePhotosSelection', () => {
     let hook: {
         current: ReturnType<typeof usePhotosSelection>;
     };
-
-    const groups: Record<PhotoGroup, string[]> = {
-        group1: ['id1', 'id2', 'id3'],
-        group2: ['id4', 'id5'],
-        empty: [],
-        group3: ['id6'],
-    };
-
-    const makeItem = (linkId: string) => ({ linkId });
-
-    const data = Object.keys(groups).reduce<(string | ReturnType<typeof makeItem>)[]>((acc, item) => {
-        acc.push(item);
-        acc.push(...groups[item].map(makeItem));
-
-        return acc;
-    }, []);
-
-    const indexMap = data.reduce<Record<string, number>>((acc, item, index) => {
-        if (!isPhotoGroup(item)) {
-            acc[item.linkId] = index;
-        }
-
-        return acc;
-    }, {});
 
     beforeEach(() => {
         jest.resetAllMocks();
@@ -100,51 +100,6 @@ describe('usePhotosSelection', () => {
         });
 
         expect(hook.current.selectedItems).toStrictEqual(expected);
-    });
-
-    describe('getGroupLinkIds', () => {
-        it('gets all group items', () => {
-            const id = 'group1';
-
-            act(() => {
-                const groupItems = hook.current.getGroupLinkIds(data.findIndex((item) => item === id));
-                expect(groupItems).toStrictEqual(groups[id]);
-            });
-        });
-
-        it('handles empty groups', () => {
-            const id = 'empty';
-
-            act(() => {
-                const groupItems = hook.current.getGroupLinkIds(data.findIndex((item) => item === id));
-                expect(groupItems).toStrictEqual([]);
-            });
-        });
-
-        it('handles the last group properly', () => {
-            const id = 'group3';
-
-            act(() => {
-                const groupItems = hook.current.getGroupLinkIds(data.findIndex((item) => item === id));
-                expect(groupItems).toStrictEqual(groups[id]);
-            });
-        });
-
-        it('does not error on out-of-bounds groups', () => {
-            act(() => {
-                const groupItems = hook.current.getGroupLinkIds(9000);
-                expect(groupItems).toStrictEqual([]);
-            });
-        });
-
-        it('does not error on non-groups', () => {
-            const id = 'id1';
-
-            act(() => {
-                const groupItems = hook.current.getGroupLinkIds(indexMap[id]);
-                expect(groupItems).toStrictEqual([]);
-            });
-        });
     });
 
     describe('handleSelection', () => {
@@ -279,6 +234,60 @@ describe('usePhotosSelection', () => {
             });
 
             expect(hook.current.isItemSelected(otherId)).toBe(false);
+        });
+    });
+});
+
+describe('getGroupLinkIds', () => {
+    it('gets all group items', () => {
+        const id = 'group1';
+
+        act(() => {
+            const groupItems = getGroupLinkIds(
+                data,
+                data.findIndex((item) => item === id)
+            );
+            expect(groupItems).toStrictEqual(groups[id]);
+        });
+    });
+
+    it('handles empty groups', () => {
+        const id = 'empty';
+
+        act(() => {
+            const groupItems = getGroupLinkIds(
+                data,
+                data.findIndex((item) => item === id)
+            );
+            expect(groupItems).toStrictEqual([]);
+        });
+    });
+
+    it('handles the last group properly', () => {
+        const id = 'group3';
+
+        act(() => {
+            const groupItems = getGroupLinkIds(
+                data,
+                data.findIndex((item) => item === id)
+            );
+            expect(groupItems).toStrictEqual(groups[id]);
+        });
+    });
+
+    it('does not error on out-of-bounds groups', () => {
+        act(() => {
+            const groupItems = getGroupLinkIds(data, 9000);
+            expect(groupItems).toStrictEqual([]);
+        });
+    });
+
+    it('does not error on non-groups', () => {
+        const id = 'id1';
+
+        act(() => {
+            const groupItems = getGroupLinkIds(data, indexMap[id]);
+            expect(groupItems).toStrictEqual([]);
         });
     });
 });

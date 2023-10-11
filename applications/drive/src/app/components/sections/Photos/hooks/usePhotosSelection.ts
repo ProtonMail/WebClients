@@ -4,9 +4,30 @@ import { isPhotoGroup } from '../../../../store/_photos';
 import type { PhotoGroup } from '../../../../store/_photos/interface';
 
 type SelectionItem = { linkId: string };
+type SelectionGroup = PhotoGroup;
+
+export const getGroupLinkIds = <T extends SelectionItem>(data: (T | SelectionGroup)[], groupIndex: number) => {
+    if (!isPhotoGroup(data[groupIndex])) {
+        return [];
+    }
+
+    const items: string[] = [];
+
+    for (let i = groupIndex + 1; i < data.length; i++) {
+        const current = data[i];
+
+        if (isPhotoGroup(current)) {
+            break;
+        }
+
+        items.push(current.linkId);
+    }
+
+    return items;
+};
 
 export const usePhotosSelection = <T extends SelectionItem>(
-    data: (T | PhotoGroup)[],
+    data: (T | SelectionGroup)[],
     photoLinkIdToIndexMap: Record<string, number>
 ) => {
     const [selection, setSelection] = useState<Record<string, boolean>>({});
@@ -34,40 +55,17 @@ export const usePhotosSelection = <T extends SelectionItem>(
         setSelection({});
     }, [setSelection]);
 
-    const getGroupLinkIds = useCallback(
-        (groupIndex: number) => {
-            if (!isPhotoGroup(data[groupIndex])) {
-                return [];
-            }
-
-            const items: string[] = [];
-
-            for (let i = groupIndex + 1; i < data.length; i++) {
-                const current = data[i];
-
-                if (isPhotoGroup(current)) {
-                    break;
-                }
-
-                items.push(current.linkId);
-            }
-
-            return items;
-        },
-        [data]
-    );
-
     const handleSelection = useCallback(
         (index: number, isSelected: boolean) => {
             const item = data[index];
 
             if (isPhotoGroup(item)) {
-                setSelected(isSelected, ...getGroupLinkIds(index));
+                setSelected(isSelected, ...getGroupLinkIds(data, index));
             } else {
                 setSelected(isSelected, item.linkId);
             }
         },
-        [setSelected, data, getGroupLinkIds]
+        [setSelected, data]
     );
 
     const selectedItems = useMemo(
@@ -86,7 +84,7 @@ export const usePhotosSelection = <T extends SelectionItem>(
 
     const isGroupSelected = useCallback(
         (groupIndex: number) => {
-            let linkIds = getGroupLinkIds(groupIndex);
+            let linkIds = getGroupLinkIds(data, groupIndex);
             let selectedCount = 0;
 
             for (let linkId of linkIds) {
@@ -103,7 +101,7 @@ export const usePhotosSelection = <T extends SelectionItem>(
 
             return selectedCount === linkIds.length || 'some';
         },
-        [hasSelection, getGroupLinkIds, selection]
+        [data, hasSelection, selection]
     );
 
     const isItemSelected = useCallback((linkId: string) => !!selection[linkId], [selection]);
@@ -115,8 +113,6 @@ export const usePhotosSelection = <T extends SelectionItem>(
         handleSelection,
         isGroupSelected,
         isItemSelected,
-        // Exported for tests
-        getGroupLinkIds,
     };
 };
 
