@@ -194,30 +194,6 @@ export const verifyProofOfObsolescence = async (
 };
 
 /**
- * Verify proof of obscolescence and, additionally, check that the next
- * revision is a valid absence proof.
- */
-export const verifyProofOfObsolescenceLatest = async (
-    obsolescenceProof: Proof,
-    absenceProof: Proof,
-    email: string,
-    TreeHash: string,
-    signedKeyList: Partial<FetchedSignedKeyList>
-) => {
-    await verifyProofOfObsolescence(obsolescenceProof, email, TreeHash, signedKeyList);
-    const { Revision } = signedKeyList;
-    if (!Revision) {
-        return throwKTError("Obsolescence proof with incomplete information", {
-            email,
-            signedKeyList,
-        });
-    }
-    // Check that the next revision proof is a valid absence proof.
-    // I.e., the obsolete revision should be the latest recorded revision.
-    await verifyProofOfAbsenceForRevision(absenceProof, email, TreeHash,Revision + 1);
-};
-
-/**
  * Verify the KT proof given by the server for a specific email address
  */
 export const verifyProofOfExistence = async (
