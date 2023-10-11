@@ -6,10 +6,11 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Prompt, useModalState } from '@proton/components';
 import { useConversationCounts, useMessageCounts } from '@proton/components/hooks';
-import { useMailSettings } from '@proton/components/hooks/useMailSettings';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { LabelCount } from '@proton/shared/lib/interfaces';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import useScheduleSendFeature from '../../components/composer/actions/scheduleSend/useScheduleSendFeature';
 import { SCHEDULED_MESSAGES_LIMIT } from '../../constants';
@@ -47,7 +48,7 @@ export const useScheduleSend = ({
 
     const [waitBeforeScheduleModalProps, setWaitBeforeScheduleModalOpen] = useModalState();
 
-    const [mailSettings, loadingMailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
     const [conversationCounts, loadingConversationCounts] = useConversationCounts();
     const [messageCounts, loadingMessageCounts] = useMessageCounts();
     const { preliminaryVerifications } = useSendVerifications(
@@ -63,7 +64,7 @@ export const useScheduleSend = ({
 
     const scheduleCount = referenceCount[MAILBOX_LABEL_IDS.SCHEDULED];
 
-    const loadingScheduleCount = loadingMailSettings || loadingConversationCounts || loadingMessageCounts;
+    const loadingScheduleCount = loadingConversationCounts || loadingMessageCounts;
 
     const modal = (
         <Prompt

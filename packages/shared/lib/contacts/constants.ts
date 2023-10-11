@@ -81,6 +81,5 @@ export const MAX_FILENAME_CHARS_DISPLAY = 100;
 export const CONTACT_NAME_MAX_LENGTH = 190;
 // We remove one to avoid issue with space when computing the full name
 export const CONTACT_FIRST_LAST_NAME_MAX_LENGTH = CONTACT_NAME_MAX_LENGTH / 2 - 1;
-export const CONTACT_GROUP_MAX_MEMBERS = 100;
 
 export const UID_PREFIX = 'contact-property';

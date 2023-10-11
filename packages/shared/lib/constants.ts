@@ -316,7 +316,6 @@ export enum INVOICE_OWNER {
     ORGANIZATION = 1,
 }
 
-export const PGP_SIGN = 1;
 export const DEFAULT_CURRENCY = 'EUR';
 export const CURRENCIES = ['EUR', 'USD', 'CHF'] as const;
 export const MIN_DONATION_AMOUNT = 100;
@@ -448,15 +447,6 @@ export enum MEMBER_SUBSCRIBER {
     PAYER = 1,
 }
 
-export enum PACKAGE_TYPE {
-    SEND_PM = 1,
-    SEND_EO = 2,
-    SEND_CLEAR = 4,
-    SEND_PGP_INLINE = 8,
-    SEND_PGP_MIME = 16,
-    SEND_CLEAR_MIME = 32,
-}
-
 export enum PACKAGE_SIGNATURES_MODE {
     SIGNATURES_NONE = 0,
     SIGNATURES_ATTACHMENTS = 1,
@@ -487,8 +477,6 @@ export enum MIME_TYPES_MORE {
     AUTOMATIC = '',
 }
 
-export type DRAFT_MIME_TYPES = MIME_TYPES.PLAINTEXT | MIME_TYPES.DEFAULT;
-
 export type CONTACT_MIME_TYPES = MIME_TYPES.PLAINTEXT | MIME_TYPES.DEFAULT | MIME_TYPES_MORE.AUTOMATIC;
 
 export enum RECIPIENT_TYPES {
@@ -496,53 +484,9 @@ export enum RECIPIENT_TYPES {
     TYPE_EXTERNAL = 2,
 }
 
-export enum SHOW_IMAGES {
-    SHOW = 0,
-    HIDE = 1,
-}
-
-export enum IMAGE_PROXY_FLAGS {
-    NONE = 0,
-    INCORPORATOR = 1,
-    PROXY = 2,
-    ALL = 3,
-}
-
-export enum COMPOSER_MODE {
-    POPUP = 0,
-    MAXIMIZED = 1,
-}
-
-export enum VIEW_LAYOUT {
-    COLUMN = 0,
-    ROW = 1,
-}
-
-export enum STICKY_LABELS {
-    OFF = 0,
-    ON = 1,
-}
-
-export enum VIEW_MODE {
-    GROUP = 0,
-    SINGLE = 1,
-}
-
-export enum SHOW_MOVED {
-    NONE = 0,
-    DRAFTS = 1,
-    SENT = 2,
-    DRAFTS_AND_SENT = 3,
-}
-
 export enum DRAFT_TYPE {
     NORMAL = 'text/html',
     PLAIN_TEXT = 'text/plain',
-}
-
-export enum RIGHT_TO_LEFT {
-    OFF = 0,
-    ON = 1,
 }
 
 export enum ORGANIZATION_FLAGS {
@@ -836,11 +780,6 @@ export enum COUPON_CODES {
 }
 
 export const GIFT_CODE_LENGTH = 16;
-
-export enum MESSAGE_BUTTONS {
-    READ_UNREAD = 0,
-    UNREAD_READ = 1,
-}
 
 export const KEY_FILE_EXTENSION = '.asc';
 

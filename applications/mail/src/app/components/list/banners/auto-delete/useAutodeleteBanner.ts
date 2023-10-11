@@ -1,5 +1,8 @@
 import { FeatureCode } from '@proton/components/containers';
-import { useFeature, useMailSettings, useUser } from '@proton/components/hooks';
+import { useFeature, useUser } from '@proton/components/hooks';
+import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { isAllowedAutoDeleteLabelID } from '../../../../helpers/autoDelete';
 
@@ -8,11 +11,11 @@ export type AutoDeleteBannerType = 'disabled' | 'enabled' | 'paid-banner' | 'fre
 const useAutoDeleteBanner = (labelID: string) => {
     const { feature } = useFeature(FeatureCode.AutoDelete);
     const [user, userLoading] = useUser();
-    const [mailSetting, mailSettingsLoading] = useMailSettings();
+    const mailSetting = useMailModel('MailSettings');
 
     const type: AutoDeleteBannerType = (() => {
         const isFeatureActive = feature?.Value === true;
-        if (!isAllowedAutoDeleteLabelID(labelID) || !isFeatureActive || userLoading || mailSettingsLoading) {
+        if (!isAllowedAutoDeleteLabelID(labelID) || !isFeatureActive || userLoading) {
             return 'hide';
         }
 
@@ -21,19 +24,19 @@ const useAutoDeleteBanner = (labelID: string) => {
         }
 
         // User explicitly disabled
-        if (mailSetting?.AutoDeleteSpamAndTrashDays === 0) {
+        if (mailSetting.AutoDeleteSpamAndTrashDays === AUTO_DELETE_SPAM_AND_TRASH_DAYS.DISABLED) {
             return 'disabled';
         }
 
         // User has not enabled yet
-        if (user.hasPaidMail && mailSetting?.AutoDeleteSpamAndTrashDays === null) {
+        if (user.hasPaidMail && mailSetting.AutoDeleteSpamAndTrashDays === null) {
             return 'paid-banner';
         }
 
         if (
             user.hasPaidMail &&
-            mailSetting?.AutoDeleteSpamAndTrashDays &&
-            mailSetting?.AutoDeleteSpamAndTrashDays > 0
+            mailSetting.AutoDeleteSpamAndTrashDays &&
+            mailSetting.AutoDeleteSpamAndTrashDays > AUTO_DELETE_SPAM_AND_TRASH_DAYS.DISABLED
         ) {
             return 'enabled';
         }

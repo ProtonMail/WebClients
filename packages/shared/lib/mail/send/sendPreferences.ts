@@ -1,4 +1,6 @@
-import { MIME_TYPES, PACKAGE_TYPE, PGP_SCHEMES } from '../../constants';
+import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
+
+import { MIME_TYPES, PGP_SCHEMES } from '../../constants';
 import { Message } from '../../interfaces/mail/Message';
 import { EncryptionPreferences } from '../encryptionPreferences';
 import { isEO } from '../messages';

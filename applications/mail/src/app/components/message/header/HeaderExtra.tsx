@@ -1,5 +1,6 @@
-import { useMailSettings } from '@proton/components';
 import { isReceived, isScheduled } from '@proton/shared/lib/mail/messages';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { getMessageHasData } from '../../../helpers/message/messages';
 import { MessageState } from '../../../logic/messages/messagesTypes';
@@ -37,7 +38,7 @@ const HeaderExtra = ({
     onLoadRemoteImages,
     onLoadEmbeddedImages,
 }: Props) => {
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
     const received = isReceived(message.data);
 
     const { canScheduleSend } = useScheduleSendFeature();

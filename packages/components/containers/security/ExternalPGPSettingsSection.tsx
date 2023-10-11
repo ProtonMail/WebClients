@@ -3,8 +3,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { updateAttachPublicKey, updatePGPScheme, updateSign } from '@proton/shared/lib/api/mailSettings';
-import { BRAND_NAME, PACKAGE_TYPE } from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { ATTACH_PUBLIC_KEY, DEFAULT_MAILSETTINGS, SIGN } from '@proton/shared/lib/mail/mailSettings';
 
 import { Info, Prompt, PromptProps, Toggle, useModalState } from '../../components';
 import { useApi, useEventManager, useMailSettings, useNotifications } from '../../hooks';
@@ -47,7 +48,7 @@ const AutomaticallySignModal = ({ onConfirm, ...rest }: AutomaticallySignModalPr
 };
 
 const ExternalPGPSettingsSection = () => {
-    const [{ Sign = 0, AttachPublicKey = 0, PGPScheme = PACKAGE_TYPE.SEND_PGP_MIME } = {}] = useMailSettings();
+    const [{ Sign, AttachPublicKey, PGPScheme } = DEFAULT_MAILSETTINGS] = useMailSettings();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const api = useApi();
@@ -76,7 +77,10 @@ const ExternalPGPSettingsSection = () => {
     };
 
     const handleAutomaticallySign = async (shouldSign: boolean) => {
-        await Promise.all([shouldSign ? api(updateSign(1)) : undefined, api(updateAttachPublicKey(1))]);
+        await Promise.all([
+            shouldSign ? api(updateSign(SIGN.ENABLED)) : undefined,
+            api(updateAttachPublicKey(ATTACH_PUBLIC_KEY.ENABLED)),
+        ]);
         await call();
         createNotification({ text: c('Info').t`Encryption setting updated` });
     };

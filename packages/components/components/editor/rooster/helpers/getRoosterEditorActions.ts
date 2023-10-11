@@ -1,6 +1,8 @@
 import { RefObject } from 'react';
 
-import { Direction, IEditor } from 'roosterjs-editor-types';
+import { IEditor } from 'roosterjs-editor-types';
+
+import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 
 import { EditorActions } from '../../interface';
 
@@ -12,7 +14,7 @@ const getRoosterEditorActions = (
     editorInstance: IEditor,
     iframeRef: RefObject<HTMLIFrameElement>,
     clearUndoHistory: () => void,
-    setTextDirection: (direction: Direction) => void,
+    setTextDirection: (direction: DIRECTION) => void,
     showModalLink: () => void,
     openEmojiPicker: () => void
 ): EditorActions => {

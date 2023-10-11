@@ -2,10 +2,11 @@
  * Currently this is basically a copy of sendEncrypt from the mail repo. TO BE IMPROVED
  */
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
+import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
-import { AES256, MIME_TYPES, PACKAGE_TYPE } from '../../constants';
+import { AES256, MIME_TYPES } from '../../constants';
 import { hasBit } from '../../helpers/bitset';
 import { uint8ArrayToBase64String } from '../../helpers/encoding';
 import { Attachment, Message } from '../../interfaces/mail/Message';

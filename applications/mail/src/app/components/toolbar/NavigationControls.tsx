@@ -3,7 +3,9 @@ import { useLocation } from 'react-router';
 import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms';
-import { Icon, ToolbarButton, useMailSettings } from '@proton/components';
+import { Icon, ToolbarButton } from '@proton/components';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { isConversationMode } from '../../helpers/mailSettings';
 
@@ -27,8 +29,8 @@ const NavigationControls = ({
     labelID,
 }: Props) => {
     const location = useLocation();
-    const [mailSettings] = useMailSettings();
-    const { Shortcuts = 1 } = mailSettings || {};
+    const mailSettings = useMailModel('MailSettings');
+    const { Shortcuts } = mailSettings;
 
     const ID = !isConversationMode(labelID, mailSettings, location) && messageID ? messageID : elementID;
     const index = elementIDs.findIndex((id) => id === ID);

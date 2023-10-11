@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import UpsellIcon from '@proton/components/components/upsell/UpsellIcon';
 import { useLoading } from '@proton/hooks';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
-import { AutoDeleteSpamAndTrashDaysSetting } from '@proton/shared/lib/interfaces';
+import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
 
 import { AutoDeleteUpsellModal, Info, Toggle, useModalState } from '../../components';
 import { useApi, useEventManager, useFeature, useUser } from '../../hooks';
@@ -14,10 +14,10 @@ import { FeatureCode } from '../features';
 
 interface Props {
     onSaved: () => void;
-    settingValue: AutoDeleteSpamAndTrashDaysSetting | null;
+    settingValue: AUTO_DELETE_SPAM_AND_TRASH_DAYS | null;
 }
 
-const AutoDeleteSetting = ({ settingValue, onSaved }: Props) => {
+const AutoDeleteSetting = ({ settingValue = AUTO_DELETE_SPAM_AND_TRASH_DAYS.DISABLED, onSaved }: Props) => {
     const api = useApi();
     const { feature: autoDeleteFeature } = useFeature(FeatureCode.AutoDelete);
     const [{ hasPaidMail }, userLoading] = useUser();
@@ -26,7 +26,7 @@ const AutoDeleteSetting = ({ settingValue, onSaved }: Props) => {
     const [loadingAutoDelete, withLoadingAutoDelete] = useLoading();
     const [upsellModalProps, toggleUpsellModal, renderUpsellModal] = useModalState();
 
-    const handleChangeAutoDelete = async (autoDelete: AutoDeleteSpamAndTrashDaysSetting) => {
+    const handleChangeAutoDelete = async (autoDelete: AUTO_DELETE_SPAM_AND_TRASH_DAYS) => {
         await api(updateAutoDelete(autoDelete));
         await call();
         onSaved();
@@ -67,8 +67,8 @@ const AutoDeleteSetting = ({ settingValue, onSaved }: Props) => {
                             void withLoadingAutoDelete(
                                 handleChangeAutoDelete(
                                     target.checked
-                                        ? AutoDeleteSpamAndTrashDaysSetting.ACTIVE
-                                        : AutoDeleteSpamAndTrashDaysSetting.DISABLED
+                                        ? AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE
+                                        : AUTO_DELETE_SPAM_AND_TRASH_DAYS.DISABLED
                                 )
                             );
                         }}

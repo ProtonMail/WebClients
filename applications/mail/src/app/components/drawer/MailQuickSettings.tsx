@@ -15,19 +15,21 @@ import DrawerAllSettingsView from '@proton/components/components/drawer/views/qu
 import { KeyTransparencyDetailsModal } from '@proton/components/components/keyTransparency';
 import { MailShortcutsModal, useKeyTransparencyContext } from '@proton/components/containers';
 import ShortcutsToggle from '@proton/components/containers/general/ShortcutsToggle';
-import { useApi, useEventManager, useMailSettings, useNotifications, useUserSettings } from '@proton/components/hooks';
+import { useApi, useEventManager, useNotifications, useUserSettings } from '@proton/components/hooks';
 import useKeyTransparencyNotification from '@proton/components/hooks/useKeyTransparencyNotification';
 import { useLoading } from '@proton/hooks';
 import { updateComposerMode, updateViewLayout } from '@proton/shared/lib/api/mailSettings';
 import { updateDensity } from '@proton/shared/lib/api/settings';
-import { COMPOSER_MODE, DENSITY, MAIL_APP_NAME, VIEW_LAYOUT } from '@proton/shared/lib/constants';
+import { DENSITY, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { KEY_TRANSPARENCY_REMINDER_UPDATE, QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
+import { COMPOSER_MODE, VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
 
 import OnboardingChecklistModal from 'proton-mail/components/header/OnboardingChecklistModal';
 import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import ClearBrowserDataModal from '../header/ClearBrowserDataModal';
@@ -45,7 +47,7 @@ const MailQuickSettings = () => {
     const { createNotification } = useNotifications();
 
     const [{ Density, Checklists }] = useUserSettings();
-    const [{ ComposerMode, ViewLayout } = { ComposerMode: 0, ViewLayout: 0 }] = useMailSettings();
+    const { ComposerMode, ViewLayout } = useMailModel('MailSettings');
     const { esStatus } = useEncryptedSearchContext();
     const { dbExists, esEnabled } = esStatus;
 

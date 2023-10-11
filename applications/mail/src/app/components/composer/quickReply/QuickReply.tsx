@@ -4,21 +4,17 @@ import { useDispatch } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import {
-    Editor,
-    EditorActions,
-    EditorTextDirection,
-    Icon,
-    Tooltip,
-    useModalState,
-} from '@proton/components/components';
+import { Editor, EditorActions, Icon, Tooltip, useModalState } from '@proton/components/components';
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { ErrorBoundary, useTheme } from '@proton/components/containers';
-import { useAddresses, useHandler, useMailSettings, useUserSettings } from '@proton/components/hooks';
+import { useAddresses, useHandler, useUserSettings } from '@proton/components/hooks';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
+import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 import clsx from '@proton/utils/clsx';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { MESSAGE_ACTIONS } from '../../../constants';
 import { getFromAddress } from '../../../helpers/addresses';
@@ -57,7 +53,7 @@ const QuickReply = ({
     setHasFocus,
 }: Props) => {
     const [addresses] = useAddresses();
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
     const [userSettings] = useUserSettings();
     const dispatch = useDispatch();
     const quickReplyFrameRef = useRef<HTMLDivElement>(null);
@@ -157,8 +153,8 @@ const QuickReply = ({
                 }
             }
 
-            if (rightToLeft === EditorTextDirection.RightToLeft) {
-                editorRef.current?.setTextDirection?.(EditorTextDirection.RightToLeft);
+            if (rightToLeft === DIRECTION.RIGHT_TO_LEFT) {
+                editorRef.current?.setTextDirection?.(DIRECTION.RIGHT_TO_LEFT);
             }
 
             setHasFocus(true);

@@ -1,8 +1,8 @@
 import { fireEvent, screen } from '@testing-library/react';
 
-import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
 import { addApiMock } from '@proton/testing/lib/api';
 import noop from '@proton/utils/noop';
 
