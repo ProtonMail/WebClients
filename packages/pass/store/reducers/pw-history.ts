@@ -1,13 +1,13 @@
 import type { Reducer } from 'redux';
 
-import type { MaybeNull } from '../../types';
-import { UNIX_DAY, getEpoch } from '../../utils/time';
 import {
     passwordDelete,
     passwordHistoryClear,
     passwordHistoryGarbageCollect,
     passwordSave,
-} from '../actions/creators/pw-history';
+} from '@proton/pass/store/actions/creators/pw-history';
+import type { MaybeNull } from '@proton/pass/types';
+import { UNIX_DAY, getEpoch } from '@proton/pass/utils/time';
 
 export type PasswordHistoryEntry = {
     id: string;

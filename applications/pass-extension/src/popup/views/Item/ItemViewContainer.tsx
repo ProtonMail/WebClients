@@ -2,11 +2,11 @@ import { type VFC, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-import { selectByShareId, selectItemWithOptimistic, selectShareOrThrow } from '@proton/pass/store';
+import { getItemActionId } from '@proton/pass/lib/items/item.utils';
 import selectFailedAction from '@proton/pass/store/optimistic/selectors/select-failed-action';
+import { selectByShareId, selectItemWithOptimistic, selectShareOrThrow } from '@proton/pass/store/selectors';
 import type { SelectedItem, ShareType } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp';
-import { getItemActionId } from '@proton/pass/utils/pass/items';
 
 import { Panel } from '../../components/Panel/Panel';
 import { ItemView } from './Item/Item.view';

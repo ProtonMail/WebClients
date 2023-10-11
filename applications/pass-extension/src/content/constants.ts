@@ -1,5 +1,5 @@
 import { FieldType, FormType } from '@proton/pass/fathom';
-import browser from '@proton/pass/globals/browser';
+import browser from '@proton/pass/lib/globals/browser';
 
 import type { FormTrackerFieldConfig } from './types';
 import { DropdownAction, FieldInjectionRule } from './types';

@@ -3,7 +3,7 @@ import type { VFC } from 'react';
 import { c } from 'ttag';
 
 import { Info } from '@proton/components/components';
-import { inviteRemoveIntent, inviteResendIntent } from '@proton/pass/store';
+import { inviteRemoveIntent, inviteResendIntent } from '@proton/pass/store/actions';
 import { inviteRemoveRequest, inviteResendRequest } from '@proton/pass/store/actions/requests';
 
 import { useActionWithRequest } from '../../../shared/hooks/useActionWithRequest';

@@ -3,7 +3,7 @@ import { type VFC, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { generatePassword } from '@proton/pass/password';
+import { generatePassword } from '@proton/pass/lib/password/generator';
 import { type Maybe } from '@proton/pass/types';
 
 import { DEFAULT_RANDOM_PW_OPTIONS, getCharsGroupedByColor } from '../../../../../shared/hooks/usePasswordGenerator';

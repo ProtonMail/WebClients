@@ -1,5 +1,5 @@
-import browser from '@proton/pass/globals/browser';
-import { selectHasRegisteredLock, selectPassPlan } from '@proton/pass/store';
+import browser from '@proton/pass/lib/globals/browser';
+import { selectHasRegisteredLock, selectPassPlan } from '@proton/pass/store/selectors';
 import type { MaybeNull, TabId } from '@proton/pass/types';
 import {
     type Maybe,
@@ -134,11 +134,12 @@ export const createOnboardingService = () => {
      * we will resolve the first message that matches the rule's
      * `when` condition */
     const getOnboardingMessage = () => ({
-        message: ONBOARDING_RULES.find(({ message, when }) =>
-            when?.(
-                ctx.state.acknowledged.find((ack) => message === ack.message),
-                ctx.state
-            )
+        message: ONBOARDING_RULES.find(
+            ({ message, when }) =>
+                when?.(
+                    ctx.state.acknowledged.find((ack) => message === ack.message),
+                    ctx.state
+                )
         )?.message,
     });
 

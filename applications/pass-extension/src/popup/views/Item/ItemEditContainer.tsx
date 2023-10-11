@@ -2,9 +2,9 @@ import { type VFC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, useParams } from 'react-router-dom';
 
-import { itemEditIntent, selectItemByShareIdAndId, selectShareOrThrow } from '@proton/pass/store';
-import type { ItemEditIntent, ItemType, SelectedItem } from '@proton/pass/types';
-import type { ShareType } from '@proton/pass/types';
+import { itemEditIntent } from '@proton/pass/store/actions';
+import { selectItemByShareIdAndId, selectShareOrThrow } from '@proton/pass/store/selectors';
+import type { ItemEditIntent, ItemType, SelectedItem, ShareType } from '@proton/pass/types';
 
 import type { ItemEditProps } from '../../../shared/items';
 import { useNavigationContext } from '../../hooks/useNavigationContext';

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
+import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import type { MaybeNull } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';

@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { c } from 'ttag';
 
 import { InputFieldTwo, Option, SelectTwo } from '@proton/components/index';
-import { sessionLockEnableIntent } from '@proton/pass/store';
+import { sessionLockEnableIntent } from '@proton/pass/store/actions';
 
 import { useSessionLockConfirmContext } from './SessionLockConfirmContextProvider';
 

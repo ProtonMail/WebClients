@@ -12,10 +12,10 @@ import {
     CollapsibleHeaderIconButton,
     Icon,
 } from '@proton/components';
-import { selectDefaultVault, selectShare, selectVaultsWithItemsCount } from '@proton/pass/store';
+import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
+import { selectDefaultVault, selectShare, selectVaultsWithItemsCount } from '@proton/pass/store/selectors';
 import { type MaybeNull, type ShareType, type VaultShare } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
-import { isWritableVault } from '@proton/pass/utils/pass/share';
 
 import { useFeatureFlag } from '../../../shared/hooks/useFeatureFlag';
 import { VaultIcon } from '../Vault/VaultIcon';

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import type { Tabs } from 'webextension-polyfill';
 
-import browser from '@proton/pass/globals/browser';
+import browser from '@proton/pass/lib/globals/browser';
 import noop from '@proton/utils/noop';
 
 export const useTabsQuery = (query: Tabs.QueryQueryInfoType, onTabsResult: (url: Tabs.Tab[]) => void) => {

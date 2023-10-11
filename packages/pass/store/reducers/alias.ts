@@ -1,16 +1,15 @@
 import type { Reducer } from 'redux';
 
-import type { AliasMailbox, AliasSuffix } from '@proton/pass/types/data/alias';
-import { merge } from '@proton/pass/utils/object';
-
-import type { MaybeNull } from '../../types';
 import {
     aliasDetailsSync,
     getAliasDetailsSuccess,
     getAliasOptionsSuccess,
     itemCreationIntent,
     itemEditIntent,
-} from '../actions';
+} from '@proton/pass/store/actions';
+import type { MaybeNull } from '@proton/pass/types';
+import type { AliasMailbox, AliasSuffix } from '@proton/pass/types/data/alias';
+import { merge } from '@proton/pass/utils/object';
 
 export type AliasOptions = {
     mailboxes: AliasMailbox[];

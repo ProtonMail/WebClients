@@ -7,11 +7,11 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import type { IconName } from '@proton/components/components';
 import { Icon } from '@proton/components/components';
-import { selectOwnWritableVaults, selectShare, selectVaultLimits } from '@proton/pass/store';
+import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
+import { selectOwnWritableVaults, selectShare, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { ItemType } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { prop } from '@proton/pass/utils/fp';
-import { isWritableVault } from '@proton/pass/utils/pass/share';
 import clsx from '@proton/utils/clsx';
 
 import { UpgradeButton } from '../../../shared/components/upgrade/UpgradeButton';

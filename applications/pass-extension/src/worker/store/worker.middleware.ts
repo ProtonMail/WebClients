@@ -1,6 +1,6 @@
 import type { AnyAction, Middleware } from 'redux';
 
-import { backgroundMessage } from '@proton/pass/extension/message';
+import { backgroundMessage } from '@proton/pass/lib/extension/message';
 import { sanitizeWithCallbackAction } from '@proton/pass/store/actions/with-callback';
 import { WorkerMessageType } from '@proton/pass/types';
 

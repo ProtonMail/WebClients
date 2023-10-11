@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import browser from '@proton/pass/globals/browser';
+import browser from '@proton/pass/lib/globals/browser';
 import { pixelParser } from '@proton/pass/utils/dom';
 import noop from '@proton/utils/noop';
 

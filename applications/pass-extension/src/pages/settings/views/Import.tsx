@@ -5,8 +5,8 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { useNotifications } from '@proton/components';
-import type { ImportPayload } from '@proton/pass/import';
-import { PROVIDER_INFO_MAP } from '@proton/pass/import';
+import type { ImportPayload } from '@proton/pass/lib/import/types';
+import { PROVIDER_INFO_MAP } from '@proton/pass/lib/import/types';
 import * as requests from '@proton/pass/store/actions/requests';
 import type { MaybeNull } from '@proton/pass/types';
 import { pipe, tap } from '@proton/pass/utils/fp';

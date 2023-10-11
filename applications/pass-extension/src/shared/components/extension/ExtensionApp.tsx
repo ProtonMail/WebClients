@@ -9,7 +9,7 @@ import {
     NotificationsProvider,
 } from '@proton/components';
 import { Portal } from '@proton/components/components/portal';
-import { resolveMessageFactory, sendMessage } from '@proton/pass/extension/message';
+import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message';
 import type { WorkerMessage } from '@proton/pass/types';
 import { type ExtensionEndpoint, WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';

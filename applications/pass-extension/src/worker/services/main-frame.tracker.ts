@@ -1,6 +1,6 @@
 import type { WebRequest } from 'webextension-polyfill';
 
-import browser from '@proton/pass/globals/browser';
+import browser from '@proton/pass/lib/globals/browser';
 import type { MaybeNull, TabId } from '@proton/pass/types';
 import { isFailedRequest } from '@proton/pass/utils/requests';
 import { parseUrl } from '@proton/pass/utils/url';

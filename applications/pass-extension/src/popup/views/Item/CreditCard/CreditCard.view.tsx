@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { selectPassPlan } from '@proton/pass/store';
+import { selectPassPlan } from '@proton/pass/store/selectors';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 
 import { TextAreaReadonly } from '../../../../shared/components/fields/TextAreaReadonly';

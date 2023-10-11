@@ -10,13 +10,13 @@
  * - Failed recovery: extension context change with failed recovery -> destroy.
  * - Error during setup: client encounters an error during setup -> destroy.
  */
-import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
-import type { FeatureFlagState } from '@proton/pass/store';
+import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { workerReady } from '@proton/pass/lib/worker';
+import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { WorkerMessageType, type WorkerMessageWithSender, type WorkerState } from '@proton/pass/types';
 import { createListenerStore } from '@proton/pass/utils/listener';
 import { logger } from '@proton/pass/utils/logger';
-import { workerReady } from '@proton/pass/utils/worker';
 import noop from '@proton/utils/noop';
 
 import { ExtensionContext, type ExtensionContextType, setupExtensionContext } from '../../shared/extension';

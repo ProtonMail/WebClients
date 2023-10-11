@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon, type ModalProps } from '@proton/components/components';
-import { selectAliasLimits } from '@proton/pass/store';
+import { selectAliasLimits } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 

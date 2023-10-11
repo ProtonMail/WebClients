@@ -1,7 +1,8 @@
 import { type VFC, useEffect, useMemo, useRef } from 'react';
 import type { List } from 'react-virtualized';
 
-import { interpolateRecentItems, itemEq } from '@proton/pass/utils/pass/items';
+import { itemEq } from '@proton/pass/lib/items/item.predicates';
+import { interpolateRecentItems } from '@proton/pass/lib/items/item.utils';
 
 import { ItemsListItem } from '../../components/Item/ItemsListItem';
 import { VirtualList } from '../../components/List/VirtualList';

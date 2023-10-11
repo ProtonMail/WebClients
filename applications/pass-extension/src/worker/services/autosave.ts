@@ -1,11 +1,5 @@
-import {
-    itemCreationIntent,
-    itemCreationSuccess,
-    itemEditIntent,
-    itemEditSuccess,
-    selectAutosaveCandidate,
-    selectAutosaveVault,
-} from '@proton/pass/store';
+import { itemCreationIntent, itemCreationSuccess, itemEditIntent, itemEditSuccess } from '@proton/pass/store/actions';
+import { selectAutosaveCandidate, selectAutosaveVault } from '@proton/pass/store/selectors';
 import type { AutoSavePromptOptions, FormEntry, FormEntryStatus } from '@proton/pass/types';
 import { AutoSaveType, WorkerMessageType } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array';

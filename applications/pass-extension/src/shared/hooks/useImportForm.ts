@@ -8,11 +8,13 @@ import { c } from 'ttag';
 
 import type { Dropzone, FileInput } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
-import type { ImportPayload, ImportReaderPayload } from '@proton/pass/import';
-import { ImportProvider, extractFileExtension, fileReader } from '@proton/pass/import';
-import type { ImportState } from '@proton/pass/store';
-import { importItemsIntent, selectLatestImport, selectUser } from '@proton/pass/store';
+import { extractFileExtension, fileReader } from '@proton/pass/lib/import/reader';
+import type { ImportPayload, ImportReaderPayload } from '@proton/pass/lib/import/types';
+import { ImportProvider } from '@proton/pass/lib/import/types';
+import { importItemsIntent } from '@proton/pass/store/actions';
 import { importItems } from '@proton/pass/store/actions/requests';
+import type { ImportState } from '@proton/pass/store/reducers';
+import { selectLatestImport, selectUser } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array';
 import { orThrow, pipe } from '@proton/pass/utils/fp/pipe';

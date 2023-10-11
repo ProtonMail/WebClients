@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import type { FormikErrors, FormikProps } from 'formik';
 import { FieldArray } from 'formik';
 
-import { selectExtraFieldLimits } from '@proton/pass/store';
+import { selectExtraFieldLimits } from '@proton/pass/store/selectors';
 import type { ExtraFieldType, UnsafeItemExtraField } from '@proton/pass/types';
 
 import type { ExtraFieldGroupValues } from '../../../../shared/form/types';

@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 
-import type { MessageWithSenderFactory } from '@proton/pass/extension/message';
-import { sendMessage } from '@proton/pass/extension/message';
+import type { MessageWithSenderFactory } from '@proton/pass/lib/extension/message';
+import { sendMessage } from '@proton/pass/lib/extension/message';
 import { WorkerMessageType } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 

@@ -1,7 +1,7 @@
 import { noop } from 'lodash';
 
-import { browserLocalStorage, browserSessionStorage } from '@proton/pass/extension/storage';
-import type { StorageInterface, StorageQuery } from '@proton/pass/extension/storage/types';
+import { browserLocalStorage, browserSessionStorage } from '@proton/pass/lib/extension/storage';
+import type { StorageInterface, StorageQuery } from '@proton/pass/lib/extension/storage/types';
 import {
     type LocalStoreData,
     type LocalStoreKeys,

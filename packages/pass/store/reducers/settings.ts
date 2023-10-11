@@ -1,14 +1,5 @@
 import type { Reducer } from 'redux';
 
-import type {
-    AutoFillSettings,
-    AutoSaveSettings,
-    AutoSuggestSettings,
-    DomainCriterias,
-} from '@proton/pass/types/worker/settings';
-import { partialMerge } from '@proton/pass/utils/object';
-
-import { SessionLockStatus } from '../../types';
 import {
     itemCreationSuccess,
     sessionLockDisableSuccess,
@@ -16,7 +7,15 @@ import {
     settingsEditSuccess,
     syncLocalSettings,
     syncLock,
-} from '../actions';
+} from '@proton/pass/store/actions';
+import { SessionLockStatus } from '@proton/pass/types';
+import type {
+    AutoFillSettings,
+    AutoSaveSettings,
+    AutoSuggestSettings,
+    DomainCriterias,
+} from '@proton/pass/types/worker/settings';
+import { partialMerge } from '@proton/pass/utils/object';
 
 export type SettingsState = {
     locale?: string;

@@ -1,7 +1,7 @@
-import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
 import { FieldType, FormType } from '@proton/pass/fathom';
+import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { passwordSave } from '@proton/pass/store/actions/creators/pw-history';
-import { createTelemetryEvent } from '@proton/pass/telemetry/events';
 import type { MaybeNull, WorkerMessageResponse } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';

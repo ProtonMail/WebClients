@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { c, msgid } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import { selectAliasByAliasEmail, selectTOTPLimits } from '@proton/pass/store';
+import { selectAliasByAliasEmail, selectTOTPLimits } from '@proton/pass/store/selectors';
 import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
 
 import { TextAreaReadonly } from '../../../../shared/components/fields/TextAreaReadonly';
