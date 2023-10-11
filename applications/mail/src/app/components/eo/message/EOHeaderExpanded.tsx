@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Icon, useToggle } from '@proton/components';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
-import { eoDefaultMailSettings } from '@proton/shared/lib/mail/eo/constants';
+import { EO_DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/eo/constants';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
@@ -142,13 +142,13 @@ const EOHeaderExpanded = ({
                         messageImages={message.messageImages}
                         type="remote"
                         onLoadImages={onLoadRemoteImages}
-                        mailSettings={eoDefaultMailSettings}
+                        mailSettings={EO_DEFAULT_MAILSETTINGS}
                     />
                     <ExtraImages
                         messageImages={message.messageImages}
                         type="embedded"
                         onLoadImages={onLoadEmbeddedImages}
-                        mailSettings={eoDefaultMailSettings}
+                        mailSettings={EO_DEFAULT_MAILSETTINGS}
                     />
                 </div>
             </section>

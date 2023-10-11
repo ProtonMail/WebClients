@@ -1,4 +1,5 @@
 import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import { PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 import { message } from '@proton/shared/lib/sanitize';
@@ -21,7 +22,7 @@ export const CLASSNAME_SIGNATURE_EMPTY = 'protonmail_signature_block-empty';
  * Preformat the protonMail signature
  */
 const getProtonSignature = (mailSettings: Partial<MailSettings> = {}, userSettings: Partial<UserSettings> = {}) =>
-    mailSettings.PMSignature === 0
+    mailSettings.PMSignature === PM_SIGNATURE.DISABLED
         ? ''
         : getProtonMailSignature({
               isReferralProgramLinkEnabled: !!mailSettings.PMSignatureReferralLink,

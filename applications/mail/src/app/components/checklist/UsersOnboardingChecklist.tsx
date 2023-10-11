@@ -13,13 +13,14 @@ import {
     useModalState,
 } from '@proton/components/components';
 import { GmailSyncModal, useFlag } from '@proton/components/containers';
-import { useActiveBreakpoint, useLocalState, useMailSettings, useUser } from '@proton/components/hooks';
+import { useActiveBreakpoint, useLocalState, useUser } from '@proton/components/hooks';
 import { CHECKLIST_DISPLAY_TYPE, ChecklistKey } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { deleteCheckedItemsForUser } from 'proton-mail/helpers/checklist/checkedItemsStorage';
 import { isColumnMode } from 'proton-mail/helpers/mailSettings';
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import UsersOnboardingChecklistHeader from './UsersOnboardingChecklistHeader';
 import AccountsLoginModal from './modals/AccountsLoginModal';
@@ -40,7 +41,7 @@ const UsersOnboardingChecklist = ({
     displayOnMobile = false,
     hideDismissButton = false,
 }: Props) => {
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
     const { isNarrow } = useActiveBreakpoint();
     const [user] = useUser();
 

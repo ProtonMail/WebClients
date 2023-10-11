@@ -1,11 +1,12 @@
 import { c, msgid } from 'ttag';
 
 import { KEY_VERIFICATION_ERROR_MESSAGE } from '@proton/shared/lib/api/helpers/getPublicKeysEmailHelper';
-import { MAIL_APP_NAME, PACKAGE_TYPE } from '@proton/shared/lib/constants';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { KT_VERIFICATION_STATUS, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { SIGNATURE_START, VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 import { getParsedHeadersFirstValue, hasProtonSender, inSigningPeriod } from '@proton/shared/lib/mail/messages';
 
 import { MessageState, MessageVerification, MessageWithOptionalBody } from '../../logic/messages/messagesTypes';

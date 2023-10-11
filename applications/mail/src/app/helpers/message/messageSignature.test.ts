@@ -1,4 +1,5 @@
 import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import { PM_SIGNATURE as PM_SIGNATURE_ENUM } from '@proton/shared/lib/mail/mailSettings';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 import { message } from '@proton/shared/lib/sanitize';
 
@@ -13,7 +14,7 @@ import {
 const content = '<p>test</p>';
 const signature = `
 <strong>>signature</strong>`;
-const mailSettings = { PMSignature: 0 } as MailSettings;
+const mailSettings = { PMSignature: PM_SIGNATURE_ENUM.DISABLED } as MailSettings;
 const userSettings = {} as UserSettings;
 
 const PM_SIGNATURE = getProtonMailSignature();
@@ -89,7 +90,7 @@ describe('signature', () => {
                     content,
                     '',
                     MESSAGE_ACTIONS.REPLY,
-                    { ...mailSettings, PMSignature: 1 },
+                    { ...mailSettings, PMSignature: PM_SIGNATURE_ENUM.ENABLED },
                     userSettings,
                     undefined,
                     false
@@ -109,7 +110,7 @@ describe('signature', () => {
                     content,
                     signature,
                     MESSAGE_ACTIONS.REPLY,
-                    { ...mailSettings, PMSignature: 1 },
+                    { ...mailSettings, PMSignature: PM_SIGNATURE_ENUM.ENABLED },
                     userSettings,
                     undefined,
                     false
@@ -124,7 +125,7 @@ describe('signature', () => {
                     content,
                     '',
                     MESSAGE_ACTIONS.NEW,
-                    { ...mailSettings, PMSignature: 1 },
+                    { ...mailSettings, PMSignature: PM_SIGNATURE_ENUM.ENABLED },
                     userSettings,
                     undefined,
                     false
@@ -138,7 +139,7 @@ describe('signature', () => {
                     content,
                     '',
                     MESSAGE_ACTIONS.NEW,
-                    { ...mailSettings, PMSignature: 1 },
+                    { ...mailSettings, PMSignature: PM_SIGNATURE_ENUM.ENABLED },
                     userSettings,
                     undefined,
                     true
@@ -208,7 +209,11 @@ describe('signature', () => {
                                     content,
                                     userSignature ? signature : '',
                                     action,
-                                    { PMSignature: protonSignature ? 1 : 0 } as MailSettings,
+                                    {
+                                        PMSignature: protonSignature
+                                            ? PM_SIGNATURE_ENUM.ENABLED
+                                            : PM_SIGNATURE_ENUM.DISABLED,
+                                    } as MailSettings,
                                     userSettings,
                                     undefined,
                                     isAfter

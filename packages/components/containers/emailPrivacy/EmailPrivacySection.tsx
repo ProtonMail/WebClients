@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { DEFAULT_MAILSETTINGS, IMAGE_PROXY_FLAGS } from '@proton/shared/lib/mail/mailSettings';
 
 import { Info } from '../../components/link';
 import { useFeatures, useMailSettings } from '../../hooks';
@@ -16,7 +16,7 @@ import ProtectionModeSelect from './ProtectionModeSelect';
 import RemoteToggle from './RemoteToggle';
 
 const EmailPrivacySection = () => {
-    const [{ HideRemoteImages = SHOW_IMAGES.HIDE, ImageProxy = IMAGE_PROXY_FLAGS.PROXY } = {}] = useMailSettings();
+    const [{ HideRemoteImages, ImageProxy } = DEFAULT_MAILSETTINGS] = useMailSettings();
     const [hideRemoteImages, setHideRemoteImages] = useState(HideRemoteImages);
     const [, setImageProxy] = useState(ImageProxy);
     const { getFeature } = useFeatures([FeatureCode.SpyTrackerProtectionIncorporator]);

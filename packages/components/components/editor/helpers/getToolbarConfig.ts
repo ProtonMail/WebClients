@@ -1,6 +1,8 @@
-import { Alignment, Direction, FormatState, IEditor } from 'roosterjs-editor-types';
+import { Alignment, FormatState, IEditor } from 'roosterjs-editor-types';
 
+import { getRoosterDirection } from '@proton/components/components/editor/rooster/helpers/initRoosterEditor';
 import { Optional } from '@proton/shared/lib/interfaces';
+import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 
 import { DEFAULT_BACKGROUND, DEFAULT_FONT_COLOR } from '../constants';
 import { ModalDefaultFontProps, ModalImageProps, ModalLinkProps } from '../hooks/interface';
@@ -41,7 +43,7 @@ export interface ToolbarConfig {
     formatting: {
         clear: () => void;
     };
-    textDirection: Pick<ItemValue<Direction>, 'setValue'>;
+    textDirection: Pick<ItemValue<DIRECTION>, 'setValue'>;
     emoji: {
         insert: (emoji: Emoji) => void;
     };
@@ -206,7 +208,7 @@ export const getToolbarConfig = async (editorInstance: IEditor | undefined, opti
         },
         textDirection: {
             setValue: (nextDirection) => {
-                setDirection(editorInstance, nextDirection);
+                setDirection(editorInstance, getRoosterDirection(nextDirection));
                 options.onChangeMetadata?.({ rightToLeft: nextDirection });
             },
         },

@@ -17,7 +17,6 @@ import {
     useEventManager,
     useFeature,
     useFolders,
-    useMailSettings,
     useModalState,
     useNotifications,
     useUser,
@@ -29,6 +28,8 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { formatFileNameDate } from '../../../helpers/date';
 import { isStarred as IsMessageStarred, getDate } from '../../../helpers/elements';
@@ -113,7 +114,7 @@ const HeaderMoreDropdown = ({
     const [folders = []] = useFolders();
     const markAs = useMarkAs();
     const getMessageKeys = useGetMessageKeys();
-    const [{ Shortcuts = 0 } = {}] = useMailSettings();
+    const { Shortcuts } = useMailModel('MailSettings');
     const [CustomExpirationModalProps, openCustomExpirationModal, renderCustomExpirationModal] = useModalState();
 
     const [messageDetailsModalProps, setMessageDetailsModalOpen] = useModalState();

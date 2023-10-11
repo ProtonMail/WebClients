@@ -58,8 +58,8 @@ const BlockSenderModal = ({ senders, onConfirm, mailSettings, onResolve, onRejec
     const manageInSettingsText = c('Description').jt`${manageBlockedAddressesSettingsLink} in settings.`;
 
     useEffect(() => {
-        setBlockSenderConfirmation(mailSettings?.BlockSenderConfirmation === BLOCK_SENDER_CONFIRMATION.DO_NOT_ASK);
-    }, [mailSettings?.BlockSenderConfirmation]);
+        setBlockSenderConfirmation(mailSettings.BlockSenderConfirmation === BLOCK_SENDER_CONFIRMATION.DO_NOT_ASK);
+    }, [mailSettings.BlockSenderConfirmation]);
 
     return (
         <div onClick={(e) => e.stopPropagation()}>

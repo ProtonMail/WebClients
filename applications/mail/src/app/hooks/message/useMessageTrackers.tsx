@@ -1,7 +1,9 @@
 import { useMemo } from 'react';
 
-import { FeatureCode, useMailSettings, useProgressiveRollout } from '@proton/components';
-import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/constants';
+import { FeatureCode, useProgressiveRollout } from '@proton/components';
+import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/mail/mailSettings';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import {
     getImageTrackerText,
@@ -17,10 +19,11 @@ export interface Tracker {
 }
 
 export const useMessageTrackers = (message: MessageState) => {
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
     const isCleanUTMTrackersAvailable = useProgressiveRollout(FeatureCode.CleanUTMTrackers);
 
-    const hasProtection = (mailSettings?.ImageProxy ? mailSettings.ImageProxy : 0) > IMAGE_PROXY_FLAGS.NONE;
+    const hasProtection =
+        (mailSettings.ImageProxy ? mailSettings.ImageProxy : IMAGE_PROXY_FLAGS.NONE) > IMAGE_PROXY_FLAGS.NONE;
 
     const { trackers: imageTrackers, numberOfTrackers: numberOfImageTrackers } = useMemo(
         () => getImageTrackersFromMessage(message),

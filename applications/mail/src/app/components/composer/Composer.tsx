@@ -12,13 +12,15 @@ import {
 
 import { c } from 'ttag';
 
-import { useHandler, useMailSettings, useSubscribeEventManager } from '@proton/components';
+import { useHandler, useSubscribeEventManager } from '@proton/components';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { DRAG_ADDRESS_KEY } from '../../constants';
 import { EditorTypes, useComposerContent } from '../../hooks/composer/useComposerContent';
@@ -73,7 +75,7 @@ const Composer = (
     }: Props,
     ref: Ref<ComposerAction>
 ) => {
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
 
     const bodyRef = useRef<HTMLDivElement>(null);
     const [hasVerticalScroll] = useHasScroll(bodyRef);

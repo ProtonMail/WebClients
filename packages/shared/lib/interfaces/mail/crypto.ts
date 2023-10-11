@@ -1,6 +1,7 @@
 import { PublicKeyReference } from '@proton/crypto';
+import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 
-import { MIME_TYPES, PACKAGE_TYPE } from '../../constants';
+import { MIME_TYPES } from '../../constants';
 import { EncryptionPreferencesError } from '../../mail/encryptionPreferences';
 import { KeyTransparencyVerificationResult } from '../KeyTransparency';
 import { SimpleMap } from '../utils';

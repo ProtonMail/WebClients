@@ -2,8 +2,8 @@ import { PayloadAction } from '@reduxjs/toolkit';
 import { Draft } from 'immer';
 
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { MailPageSize } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 import diff from '@proton/utils/diff';
 import isTruthy from '@proton/utils/isTruthy';
 import range from '@proton/utils/range';
@@ -45,7 +45,7 @@ export const updatePage = (state: Draft<ElementsState>, action: PayloadAction<nu
     state.page = action.payload;
 };
 
-export const updatePageSize = (state: Draft<ElementsState>, action: PayloadAction<MailPageSize>) => {
+export const updatePageSize = (state: Draft<ElementsState>, action: PayloadAction<MAIL_PAGE_SIZE>) => {
     state.pageSize = action.payload;
 };
 

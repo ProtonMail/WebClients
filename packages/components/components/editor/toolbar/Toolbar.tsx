@@ -28,7 +28,7 @@ const ToolbarEmojiDropdown = lazy(
 interface ToolbarProps {
     config: ToolbarConfig | undefined;
     metadata: EditorMetadata;
-    mailSettings: MailSettings | undefined;
+    mailSettings?: MailSettings;
     className?: string;
     openEmojiPickerRef: Ref<() => void>;
     simple?: boolean;

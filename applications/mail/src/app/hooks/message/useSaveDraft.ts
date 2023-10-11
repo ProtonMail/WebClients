@@ -2,10 +2,12 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { useApi, useEventManager, useMailSettings, useNotifications } from '@proton/components';
+import { useApi, useEventManager, useNotifications } from '@proton/components';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { SAVE_DRAFT_ERROR_CODES } from '../../constants';
 import { isDecryptionError, isNetworkError, pickMessageInfosForSentry } from '../../helpers/errors';
@@ -111,7 +113,7 @@ export const useSaveDraft = ({ onMessageAlreadySent }: UseUpdateDraftParameters 
 
 export const useDeleteDraft = () => {
     const api = useApi();
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
     const dispatch = useAppDispatch();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();

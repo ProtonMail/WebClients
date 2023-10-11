@@ -3,9 +3,11 @@ import { MouseEvent } from 'react';
 import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms';
-import { Icon, IconSize, Tooltip, useMailSettings } from '@proton/components';
+import { Icon, IconSize, Tooltip } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import clsx from '@proton/utils/clsx';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { isMessage, isStarred as testIsStarred } from '../../helpers/elements';
 import { useStar } from '../../hooks/actions/useStar';
@@ -19,7 +21,7 @@ interface Props {
 const ItemStar = ({ element, size }: Props) => {
     const [loading, withLoading] = useLoading();
     const star = useStar();
-    const [{ Shortcuts = 0 } = {}] = useMailSettings();
+    const { Shortcuts } = useMailModel('MailSettings');
 
     const isStarred = testIsStarred(element || ({} as Element));
 

@@ -1,7 +1,7 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { VIEW_MODE } from '@proton/shared/lib/constants';
+import { ALMOST_ALL_MAIL, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import {
     mockUseApi,
     mockUseEventManager,
@@ -70,28 +70,28 @@ describe('MessagesSection', () => {
                 const setting = screen.getByText('Exclude Spam/Trash from All mail');
                 await userEvent.click(setting);
 
-                await waitFor(() => {
-                    expect(mockedApi).toHaveBeenCalledTimes(1);
-                });
-                expect(mockedApi).toHaveBeenCalledWith({
-                    data: { AlmostAllMail: 1 },
-                    method: 'put',
-                    url: 'mail/v4/settings/almost-all-mail',
-                });
+            await waitFor(() => {
+                expect(mockedApi).toHaveBeenCalledTimes(1);
+            });
+            expect(mockedApi).toHaveBeenCalledWith({
+                data: { AlmostAllMail: ALMOST_ALL_MAIL.ENABLED },
+                method: 'put',
+                url: 'mail/v4/settings/almost-all-mail',
+            });
 
                 await userEvent.click(setting);
 
-                await waitFor(() => {
-                    expect(mockedApi).toHaveBeenCalledTimes(2);
-                });
-                expect(mockedApi).toHaveBeenLastCalledWith({
-                    data: { AlmostAllMail: 0 },
-                    method: 'put',
-                    url: 'mail/v4/settings/almost-all-mail',
-                });
+            await waitFor(() => {
+                expect(mockedApi).toHaveBeenCalledTimes(2);
+            });
+            expect(mockedApi).toHaveBeenLastCalledWith({
+                data: { AlmostAllMail: ALMOST_ALL_MAIL.DISABLED },
+                method: 'put',
+                url: 'mail/v4/settings/almost-all-mail',
             });
         });
     });
+});
 
     describe('PageSize', () => {
         beforeEach(() => {
