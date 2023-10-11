@@ -34,7 +34,7 @@ const UsersOnboardingChecklistHeader = ({ smallVariant }: Props) => {
     };
 
     return smallVariant ? (
-        <div className="flex flex-justify-space-between flex-align-items-center text-sm px-2 mb-2">
+        <div className="flex flex-justify-space-between flex-align-items-center flex-nowrap text-sm px-2 mb-2">
             <p className="m-0">
                 {isChecklistFinished
                     ? c('Get started checklist instructions').t`Congratulation, you finished!`
@@ -44,6 +44,7 @@ const UsersOnboardingChecklistHeader = ({ smallVariant }: Props) => {
                 icon
                 shape="ghost"
                 size="small"
+                className="flex-item-noshrink"
                 onClick={() => changeChecklistDisplay(CHECKLIST_DISPLAY_TYPE.HIDDEN)}
             >
                 <Icon data-testid="onboarding-checklist-header-hide-button" name="cross" />
