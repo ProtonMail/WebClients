@@ -1,6 +1,6 @@
-import { render, waitFor } from '@testing-library/react';
-import { wait } from '@testing-library/user-event/dist/utils';
+import { render, screen, waitFor } from '@testing-library/react';
 
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { applyHOCs, withNotifications } from '@proton/testing/index';
 
 import PaymentVerificationModal, { PromiseWithController, Props } from './PaymentVerificationModal';
@@ -42,47 +42,43 @@ it('should render', () => {
 });
 
 it('should render redirect step by default', () => {
-    const { queryByTestId, queryByText } = render(<ContextPaymentVerificationModal {...props} />);
+    render(<ContextPaymentVerificationModal {...props} />);
 
-    expect(queryByTestId('redirect-message')).toBeInTheDocument();
-    expect(queryByText('Verify')).toBeInTheDocument();
+    expect(screen.getByTestId('redirect-message')).toBeInTheDocument();
+    expect(screen.getByText('Verify')).toBeInTheDocument();
 });
 
 it('should set redirecting step once user clicks on verify', () => {
-    const { queryByTestId, getByText } = render(<ContextPaymentVerificationModal {...props} />);
-
-    getByText('Verify').click();
-
-    expect(queryByTestId('redirecting-message')).toBeInTheDocument();
+    render(<ContextPaymentVerificationModal {...props} />);
+    screen.getByText('Verify').click();
+    expect(screen.getByTestId('redirecting-message')).toBeInTheDocument();
 });
 
 it('should set redirected after processingDelay passes', async () => {
     const processingDelay = 100;
-    const { queryByTestId, getByText } = render(
-        <ContextPaymentVerificationModal {...props} processingDelay={processingDelay} />
-    );
+    render(<ContextPaymentVerificationModal {...props} processingDelay={processingDelay} />);
 
-    getByText('Verify').click();
+    screen.getByText('Verify').click();
 
     await wait(processingDelay);
 
-    expect(queryByTestId('redirected-message')).toBeInTheDocument();
+    expect(screen.getByTestId('redirected-message')).toBeInTheDocument();
 });
 
 it('should set fail step if promise rejects', async () => {
-    const { queryByTestId, getByText } = render(<ContextPaymentVerificationModal {...props} />);
+    render(<ContextPaymentVerificationModal {...props} />);
 
-    getByText('Verify').click();
+    screen.getByText('Verify').click();
 
     promiseReject(new Error());
 
-    await waitFor(() => expect(queryByTestId('fail-message')).toBeInTheDocument());
+    await screen.findByTestId('fail-message');
 });
 
 it('should call onSubmit and the onClose callback if promise resolves', async () => {
-    const { getByText } = render(<ContextPaymentVerificationModal {...props} />);
+    render(<ContextPaymentVerificationModal {...props} />);
 
-    getByText('Verify').click();
+    screen.getByText('Verify').click();
 
     promiseResolve();
 
@@ -92,13 +88,13 @@ it('should call onSubmit and the onClose callback if promise resolves', async ()
 
 it('should abort the promise and call onClose if user cancels', async () => {
     const processingDelay = 100;
-    const { getByText } = render(<ContextPaymentVerificationModal {...props} processingDelay={processingDelay} />);
+    render(<ContextPaymentVerificationModal {...props} processingDelay={processingDelay} />);
 
-    getByText('Verify').click();
+    screen.getByText('Verify').click();
 
     await wait(processingDelay);
 
-    getByText('Cancel').click();
+    screen.getByText('Cancel').click();
 
     await waitFor(() => expect(props.onClose).toHaveBeenCalledTimes(1));
     expect(promiseWithController.abort.abort).toHaveBeenCalledTimes(1);

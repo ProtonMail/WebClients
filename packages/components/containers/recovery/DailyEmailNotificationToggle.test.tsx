@@ -42,7 +42,7 @@ describe('DailyEmailNotificationToggle', () => {
             );
 
             const input = container.querySelector('#test-toggle');
-            await fireEvent.click(input as HTMLElement);
+            fireEvent.click(input as HTMLElement);
 
             await waitFor(() => expect(mockOnChange).toHaveBeenCalledTimes(1));
         });
