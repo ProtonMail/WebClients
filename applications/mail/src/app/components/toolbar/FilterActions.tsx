@@ -91,7 +91,7 @@ const FilterActions = ({ filter = {}, mailSettings, onFilter, dropdown }: Props)
                 }
             >
                 <DropdownMenu>
-                    <div className="text-bold w100 px-4 py-2">{c('Filter').t`Show`}</div>
+                    <div className="text-bold w-full px-4 py-2">{c('Filter').t`Show`}</div>
                     {buttons.map(({ ID, text, isActive, onClick }) => {
                         return (
                             <DropdownMenuButton

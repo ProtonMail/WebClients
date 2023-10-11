@@ -419,7 +419,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
                             title={label}
                         >
                             {breadcrumbIcons[index]}
-                            <span className="text-ellipsis max-w100">{label}</span>
+                            <span className="text-ellipsis max-w-full">{label}</span>
                         </Button>
                     ))}
                 </ButtonGroup>

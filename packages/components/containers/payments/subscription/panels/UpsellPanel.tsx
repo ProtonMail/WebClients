@@ -50,7 +50,7 @@ const UpsellPanel = ({ title, features, children, ctas = [], isRecommended }: Up
             {children}
 
             {isNarrow && (
-                <div className="w100 text-center my-6 flex">
+                <div className="w-full text-center my-6 flex">
                     <InlineLinkButton className="mx-auto" onClick={() => toggleExpand()}>
                         {isExpanded ? (
                             <>

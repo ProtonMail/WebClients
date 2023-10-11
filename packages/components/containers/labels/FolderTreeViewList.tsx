@@ -25,7 +25,7 @@ interface HeaderProps {
 
 const Header = ({ isNarrow }: HeaderProps) => {
     return (
-        <div className="flex flex-nowrap w100 border-bottom pb-2">
+        <div className="flex flex-nowrap w-full border-bottom pb-2">
             <span className="text-bold flex-item-fluid">
                 {isNarrow ? null : <Icon name="arrows-cross" className="mr-4" />}
                 {c('Header').t`Folders`}
@@ -141,7 +141,7 @@ const FolderTreeViewList = ({ items = [] }: Props) => {
                             content={
                                 <div
                                     className={clsx([
-                                        'flex flex-nowrap flex-align-items-center flex-justify-space-between w100 py-2 treeview-item relative',
+                                        'flex flex-nowrap flex-align-items-center flex-justify-space-between w-full py-2 treeview-item relative',
                                         isOverred && position === BEFORE && 'treeview-item--move-top',
                                         isOverred && position === AFTER && 'treeview-item--move-bottom',
                                         isOverred && position === INSIDE && 'treeview-item--move-inside',

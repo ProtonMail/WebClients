@@ -106,7 +106,7 @@ const DriveDummyContainer = () => {
                     drawerSidebar={<DrawerSidebar buttons={drawerSidebarButtons} />}
                     drawerVisibilityButton={canShowDrawer ? <DrawerVisibilityButton /> : undefined}
                 >
-                    <div className="flex flex-column flex-nowrap w100">
+                    <div className="flex flex-column flex-nowrap w-full">
                         <ToolbarRow
                             titleArea={
                                 <CollapsingBreadcrumbs

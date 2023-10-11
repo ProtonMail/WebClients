@@ -303,7 +303,7 @@ const SubscriptionCycleSelector = ({
                     <li key={`${cycle}`} className="flex flex-align-items-stretch mb-4" data-testid={`cycle-${cycle}`}>
                         <button
                             className={clsx([
-                                'w100 p-4 plan-cycle-button flex flex-nowrap border rounded text-left',
+                                'w-full p-4 plan-cycle-button flex flex-nowrap border rounded text-left',
                                 isSelected && 'border-primary',
                                 isSelected && 'border-2',
                             ])}

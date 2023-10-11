@@ -36,7 +36,7 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
     const total = labelCount?.Total || 0;
 
     const userName = (
-        <span key="display-name" className="inline-block max-w100 text-ellipsis align-bottom">
+        <span key="display-name" className="inline-block max-w-full text-ellipsis align-bottom">
             {capitalize(user.DisplayName)}
         </span>
     );

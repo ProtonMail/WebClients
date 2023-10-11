@@ -101,15 +101,15 @@ const CalendarSidebarListItem = ({
                 <SidebarListItemContent
                     data-testid="calendar-sidebar:user-calendars"
                     left={leftNode}
-                    className={clsx(['flex w100 gap-2', (isCalendarDisabled || isNotSyncedInfo) && 'color-weak'])}
+                    className={clsx(['flex w-full gap-2', (isCalendarDisabled || isNotSyncedInfo) && 'color-weak'])}
                 >
-                    <div className="flex flex-nowrap flex-justify-space-between flex-align-items-center w100 relative">
+                    <div className="flex flex-nowrap flex-justify-space-between flex-align-items-center w-full relative">
                         <div className="flex flex-nowrap">
                             <div className="text-ellipsis" title={Name}>
                                 {Name}
                             </div>
                             {!isCalendarDisabled && isNotSyncedInfo && (
-                                <div className="flex-item-noshrink max-w100 text-ellipsis">
+                                <div className="flex-item-noshrink max-w-full text-ellipsis">
                                     &nbsp;
                                     <Tooltip title={isNotSyncedInfo.text}>
                                         <span>({isNotSyncedInfo.label})</span>

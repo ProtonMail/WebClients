@@ -42,7 +42,7 @@ const MailDensityModal = (props: ModalProps) => {
                         describedByID="densityMode_desc"
                         onChange={(value) => withLoading(handleChangeDensity(value))}
                         loading={loading}
-                        liClassName="w100"
+                        liClassName="w-full"
                         className="layoutCards-two-per-row"
                     />
                 </div>

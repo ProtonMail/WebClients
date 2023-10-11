@@ -191,7 +191,7 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
     }
 
     return (
-        <div className="m-auto text-center p-7 max-w100" data-testid="section-pane--wrapper">
+        <div className="m-auto text-center p-7 max-w-full" data-testid="section-pane--wrapper">
             {showSimpleLoginPlaceholder ? (
                 <SimpleLoginPlaceholder />
             ) : (

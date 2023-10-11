@@ -11,7 +11,7 @@ const Progress = ({ value = 50, max = 100, id, className, ...rest }: Props) => {
     return (
         <progress
             aria-describedby={id}
-            className={clsx(['progress-bar w100', className])}
+            className={clsx(['progress-bar w-full', className])}
             value={value}
             max={max}
             {...rest}

@@ -18,7 +18,7 @@ const SignatureIssue = ({
 
     return (
         <div className="file-preview-container">
-            <div className="absolute-center w100">
+            <div className="absolute-center w-full">
                 <div className={clsx(['mx-auto', isNarrow ? 'w300p' : 'w500p'])}>
                     <div className="text-center">
                         <Icon name="lock-exclamation-filled" size={60} className="color-danger" />

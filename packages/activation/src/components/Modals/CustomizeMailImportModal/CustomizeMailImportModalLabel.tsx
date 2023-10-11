@@ -31,7 +31,7 @@ const CustomizeMailImportModalLabel = ({ label, onEditLabel }: Props) => {
                                     title: label.Name,
                                 },
                             ]}
-                            className="max-w100"
+                            className="max-w-full"
                         />
                     )}
                     <Button

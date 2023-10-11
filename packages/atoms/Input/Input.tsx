@@ -76,7 +76,7 @@ const InputBase = (props: InputProps, ref: Ref<HTMLInputElement>) => {
                         onValue?.(e.target.value);
                         rest.onChange?.(e);
                     }}
-                    className={clsx('input-element w100', inputClassName)}
+                    className={clsx('input-element w-full', inputClassName)}
                 />
             </div>
 

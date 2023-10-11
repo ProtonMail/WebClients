@@ -121,7 +121,7 @@ const RecipientItemLayout = ({
     return (
         <span
             className={clsx([
-                'inline-flex flex-align-items-center flex-nowrap message-recipient-item max-w100 cursor-pointer',
+                'inline-flex flex-align-items-center flex-nowrap message-recipient-item max-w-full cursor-pointer',
                 isLoading && 'flex-item-fluid',
             ])}
             role="button"
@@ -134,7 +134,7 @@ const RecipientItemLayout = ({
             data-testid={customDataTestId ? customDataTestId : `recipient:details-dropdown-${title}`}
         >
             <span
-                className={clsx(['flex flex-align-items-center flex-nowrap max-w100', isLoading && 'flex-item-fluid'])}
+                className={clsx(['flex flex-align-items-center flex-nowrap max-w-full', isLoading && 'flex-item-fluid'])}
             >
                 <span
                     className={clsx([
@@ -142,7 +142,7 @@ const RecipientItemLayout = ({
                         !isOutside && showDropdown && 'message-recipient-item-label-address',
                     ])}
                 >
-                    <span className="inline-block text-ellipsis max-w100">
+                    <span className="inline-block text-ellipsis max-w-full">
                         {labelHasIcon && (
                             <span className="inline-block align-sub" data-testid="recipient:action-icon">
                                 {itemActionIcon}

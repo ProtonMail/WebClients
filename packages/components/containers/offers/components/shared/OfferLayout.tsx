@@ -48,7 +48,7 @@ const OfferLayout = ({ children, offer }: Props) => {
                         <picture>
                             <source media="(min-width: 61.875em)" srcSet={`${bannerImage2x}`} />
                             <img
-                                className="offer-top-banner w100"
+                                className="offer-top-banner w-full"
                                 src={bannerImage}
                                 srcSet={`${bannerImage}, ${bannerImage2x} 2x`}
                                 alt=""

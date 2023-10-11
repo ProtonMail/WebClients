@@ -61,7 +61,7 @@ const Option = <V,>({
                 title={title}
                 className={clsx([
                     className,
-                    'block w100 text-left',
+                    'block w-full text-left',
                     active && 'active',
                     truncate ? 'text-ellipsis' : 'text-break',
                 ])}

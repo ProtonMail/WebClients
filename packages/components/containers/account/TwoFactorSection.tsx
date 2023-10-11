@@ -175,7 +175,7 @@ const TwoFactorSection = () => {
                                     {c('fido2: Action').t`Add security key`}
                                 </Button>
                             </div>
-                            <div className="mt-4 w100">
+                            <div className="mt-4 w-full">
                                 <div className="text-bold pb-2 border-bottom">
                                     {c('fido2: Title').t`Registered security keys`}
                                 </div>
