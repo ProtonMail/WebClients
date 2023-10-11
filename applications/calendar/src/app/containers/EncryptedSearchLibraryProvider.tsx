@@ -1,8 +1,6 @@
 import { ReactNode, createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { c } from 'ttag';
-
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { useCalendarModelEventManager } from '@proton/components/containers/eventManager';
 import { useApi, useEventManager, useGetCalendarEventRaw, useUser } from '@proton/components/hooks';
@@ -67,12 +65,9 @@ const EncryptedSearchLibraryProvider = ({ calendarIDs, hasReactivatedCalendarsRe
         [api, calendarIDs, history, userID, getCalendarEventRaw]
     );
 
-    const successMessage = c('Success').t`Calendar search activated`;
-
     const esLibraryFunctions = useEncryptedSearch<ESCalendarMetadata, ESCalendarSearchParams, ESCalendarContent>({
         refreshMask: 1,
         esCallbacks,
-        successMessage,
     });
     const { isConfigFromESDBLoaded, cachedIndexKey, esEnabled } = esLibraryFunctions.esStatus;
 

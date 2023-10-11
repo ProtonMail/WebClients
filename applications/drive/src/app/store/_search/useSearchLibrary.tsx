@@ -2,7 +2,7 @@ import { ReactNode, createContext, useContext, useEffect, useState } from 'react
 
 import { c } from 'ttag';
 
-import { useApi, useGetUserKeys, useUser } from '@proton/components';
+import { useApi, useGetUserKeys, useNotifications, useUser } from '@proton/components';
 import {
     INDEXING_STATUS,
     checkVersionedESDB,
@@ -31,6 +31,7 @@ interface Props {
 export const SearchLibraryProvider = ({ children }: Props) => {
     const fetchShareMap = useFetchShareMap();
     const api = useApi();
+    const { createNotification } = useNotifications();
     const [user] = useUser();
     const getUserKeys = useGetUserKeys();
     const { getLinkPrivateKey } = useLink();
@@ -52,11 +53,18 @@ export const SearchLibraryProvider = ({ children }: Props) => {
         getLinkPrivateKey,
     });
 
+    const handleMetadataIndexed = () => {
+        createNotification({
+            type: 'success',
+            text: c('Notification').t`Encrypted search activated`,
+        });
+    };
+
     const esFunctions = useEncryptedSearch<ESLink, ESDriveSearchParams>({
         refreshMask: 1,
         esCallbacks,
-        successMessage: c('Notification').t`Encrypted search activated`,
-        notifyMetadataIndexed: true,
+        onMetadataIndexed: handleMetadataIndexed,
+        sendMetricsOnSearch: true,
     });
 
     const initializeESDrive = async () => {

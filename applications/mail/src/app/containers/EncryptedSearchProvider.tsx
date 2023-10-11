@@ -73,12 +73,13 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         numAddresses: addresses.length,
     });
 
-    const successMessage = c('Success').t`Message content search enabled`;
+    const contentIndexingSuccessMessage = c('Success').t`Message content search enabled`;
 
     const esLibraryFunctions = useEncryptedSearch<ESBaseMessage, NormalizedSearchParams, ESMessageContent>({
         refreshMask: EVENT_ERRORS.MAIL,
         esCallbacks,
-        successMessage,
+        contentIndexingSuccessMessage,
+        sendMetricsOnSearch: true,
     });
 
     /**
