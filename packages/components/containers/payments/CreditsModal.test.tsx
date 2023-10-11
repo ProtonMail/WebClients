@@ -1,9 +1,9 @@
 import { fireEvent, render, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { wait } from '@testing-library/user-event/dist/utils';
 
 import { PAYMENT_TOKEN_STATUS } from '@proton/components/payments/core';
 import { buyCredit, createToken } from '@proton/shared/lib/api/payments';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import {
     addApiMock,
     applyHOCs,
@@ -142,10 +142,10 @@ it('should remember credit card details when switching back and forth', async ()
     const exp = queryByTestId('exp') as HTMLInputElement;
     const cvc = queryByTestId('cvc') as HTMLInputElement;
 
-    userEvent.type(ccname, 'Arthur Morgan');
-    userEvent.type(ccnumber, '4242424242424242');
-    userEvent.type(exp, '1232');
-    userEvent.type(cvc, '123');
+    await userEvent.type(ccname, 'Arthur Morgan');
+    await userEvent.type(ccnumber, '4242424242424242');
+    await userEvent.type(exp, '1232');
+    await userEvent.type(cvc, '123');
 
     // switching to paypal
     selectMethod(container, 'PayPal');
@@ -162,15 +162,16 @@ it('should remember credit card details when switching back and forth', async ()
 
 it('should display validation errors after user submits credit card', async () => {
     const { container, findByTestId, queryByTestId } = render(<ContextCreditsModal open={true} />);
+    await waitFor(() => {});
     const ccname = queryByTestId('ccname') as HTMLInputElement;
     const ccnumber = queryByTestId('ccnumber') as HTMLInputElement;
     const exp = queryByTestId('exp') as HTMLInputElement;
     const cvc = queryByTestId('cvc') as HTMLInputElement;
 
-    userEvent.type(ccname, 'Arthur Morgan');
-    userEvent.type(ccnumber, '1234567812345678');
-    userEvent.type(exp, '1212');
-    userEvent.type(cvc, '123');
+    await userEvent.type(ccname, 'Arthur Morgan');
+    await userEvent.type(ccnumber, '1234567812345678');
+    await userEvent.type(exp, '1212');
+    await userEvent.type(cvc, '123');
 
     const cardError = 'Invalid card number';
     const expError = 'Invalid expiration date';
@@ -199,18 +200,20 @@ it('should create payment token and then buy credits with it', async () => {
     const cvc = queryByTestId('cvc') as HTMLInputElement;
     const postalCode = queryByTestId('postalCode') as HTMLInputElement;
 
-    userEvent.type(ccname, 'Arthur Morgan');
-    userEvent.type(ccnumber, '4242424242424242');
-    userEvent.type(exp, '1232');
-    userEvent.type(cvc, '123');
-    userEvent.type(postalCode, '11111');
+    await userEvent.type(ccname, 'Arthur Morgan');
+    await userEvent.type(ccnumber, '4242424242424242');
+    await userEvent.type(exp, '1232');
+    await userEvent.type(cvc, '123');
+    await userEvent.type(postalCode, '11111');
 
     const topUpButton = await findByTestId('top-up-button');
     fireEvent.click(topUpButton);
 
     await waitFor(() => {
         expect(buyCreditMock).toHaveBeenCalled();
+    });
 
+    await waitFor(() => {
         expect(buyCreditMock).toHaveBeenCalledWith(
             expect.objectContaining({
                 data: expect.objectContaining({
@@ -227,8 +230,12 @@ it('should create payment token and then buy credits with it', async () => {
                 url: buyCreditUrl,
             })
         );
+    });
 
+    await waitFor(() => {
         expect(mockEventManager.call).toHaveBeenCalled();
+    });
+    await waitFor(() => {
         expect(onClose).toHaveBeenCalled();
     });
 });
@@ -239,7 +246,7 @@ it('should create payment token and then buy credits with it - custom amount', a
     await waitFor(() => {});
 
     const otherAmountInput = queryByTestId('other-amount') as HTMLInputElement;
-    userEvent.type(otherAmountInput, '123');
+    await userEvent.type(otherAmountInput, '123');
 
     const ccname = queryByTestId('ccname') as HTMLInputElement;
     const ccnumber = queryByTestId('ccnumber') as HTMLInputElement;
@@ -247,11 +254,11 @@ it('should create payment token and then buy credits with it - custom amount', a
     const cvc = queryByTestId('cvc') as HTMLInputElement;
     const postalCode = queryByTestId('postalCode') as HTMLInputElement;
 
-    userEvent.type(ccname, 'Arthur Morgan');
-    userEvent.type(ccnumber, '4242424242424242');
-    userEvent.type(exp, '1232');
-    userEvent.type(cvc, '123');
-    userEvent.type(postalCode, '11111');
+    await userEvent.type(ccname, 'Arthur Morgan');
+    await userEvent.type(ccnumber, '4242424242424242');
+    await userEvent.type(exp, '1232');
+    await userEvent.type(cvc, '123');
+    await userEvent.type(postalCode, '11111');
 
     await wait(500);
     const topUpButton = await findByTestId('top-up-button');
@@ -259,7 +266,9 @@ it('should create payment token and then buy credits with it - custom amount', a
 
     await waitFor(() => {
         expect(buyCreditMock).toHaveBeenCalled();
+    });
 
+    await waitFor(() => {
         expect(buyCreditMock).toHaveBeenCalledWith(
             expect.objectContaining({
                 data: expect.objectContaining({
@@ -276,8 +285,12 @@ it('should create payment token and then buy credits with it - custom amount', a
                 url: buyCreditUrl,
             })
         );
+    });
 
+    await waitFor(() => {
         expect(mockEventManager.call).toHaveBeenCalled();
+    });
+    await waitFor(() => {
         expect(onClose).toHaveBeenCalled();
     });
 });
@@ -295,7 +308,9 @@ it('should create payment token for paypal and then buy credits with it', async 
 
     await waitFor(() => {
         expect(buyCreditMock).toHaveBeenCalled();
+    });
 
+    await waitFor(() => {
         expect(buyCreditMock).toHaveBeenCalledWith(
             expect.objectContaining({
                 data: expect.objectContaining({
@@ -313,8 +328,12 @@ it('should create payment token for paypal and then buy credits with it', async 
                 url: buyCreditUrl,
             })
         );
+    });
 
+    await waitFor(() => {
         expect(mockEventManager.call).toHaveBeenCalled();
+    });
+    await waitFor(() => {
         expect(onClose).toHaveBeenCalled();
     });
 });
@@ -327,7 +346,7 @@ it('should create payment token for paypal and then buy credits with it - custom
     });
 
     const otherAmountInput = queryByTestId('other-amount') as HTMLInputElement;
-    userEvent.type(otherAmountInput, '123');
+    await userEvent.type(otherAmountInput, '123');
 
     await wait(1000);
     const paypalButton = queryByTestId('paypal-button') as HTMLButtonElement;
@@ -335,7 +354,9 @@ it('should create payment token for paypal and then buy credits with it - custom
 
     await waitFor(() => {
         expect(buyCreditMock).toHaveBeenCalled();
+    });
 
+    await waitFor(() => {
         expect(buyCreditMock).toHaveBeenCalledWith(
             expect.objectContaining({
                 data: expect.objectContaining({
@@ -353,8 +374,12 @@ it('should create payment token for paypal and then buy credits with it - custom
                 url: buyCreditUrl,
             })
         );
+    });
 
+    await waitFor(() => {
         expect(mockEventManager.call).toHaveBeenCalled();
+    });
+    await waitFor(() => {
         expect(onClose).toHaveBeenCalled();
     });
 });
@@ -367,7 +392,7 @@ it('should disable paypal button while the amount is debouncing', async () => {
     });
 
     const otherAmountInput = queryByTestId('other-amount') as HTMLInputElement;
-    userEvent.type(otherAmountInput, '123');
+    await userEvent.type(otherAmountInput, '123');
     expect(queryByTestId('paypal-button')).toBeDisabled();
     expect(queryByTestId('paypal-credit-button')).toBeDisabled();
 
@@ -384,14 +409,14 @@ it('should disable paypal button if the amount is too high', async () => {
     });
 
     const otherAmountInput = queryByTestId('other-amount') as HTMLInputElement;
-    userEvent.type(otherAmountInput, '40001');
+    await userEvent.type(otherAmountInput, '40001');
 
     await wait(1000);
     expect(queryByTestId('paypal-button')).toBeDisabled();
     expect(queryByTestId('paypal-credit-button')).toBeDisabled();
 
-    userEvent.clear(otherAmountInput);
-    userEvent.type(otherAmountInput, '40000');
+    await userEvent.clear(otherAmountInput);
+    await userEvent.type(otherAmountInput, '40000');
     await wait(1000);
 
     expect(queryByTestId('paypal-button')).not.toBeDisabled();
@@ -411,7 +436,9 @@ it('should create payment token for paypal-credit and then buy credits with it',
 
     await waitFor(() => {
         expect(buyCreditMock).toHaveBeenCalled();
+    });
 
+    await waitFor(() => {
         expect(buyCreditMock).toHaveBeenCalledWith(
             expect.objectContaining({
                 data: expect.objectContaining({
@@ -429,8 +456,12 @@ it('should create payment token for paypal-credit and then buy credits with it',
                 url: buyCreditUrl,
             })
         );
+    });
 
+    await waitFor(() => {
         expect(mockEventManager.call).toHaveBeenCalled();
+    });
+    await waitFor(() => {
         expect(onClose).toHaveBeenCalled();
     });
 });
@@ -453,6 +484,8 @@ it('should display the saved credit cards', async () => {
 
     await waitFor(() => {
         expect(container.querySelector('#select-method')).toBeTruthy();
+    });
+    await waitFor(() => {
         expect(queryByTestId('existing-credit-card')).toBeTruthy();
     });
 
@@ -501,6 +534,8 @@ it('should create payment token for saved card and then buy credits with it', as
 
     await waitFor(() => {
         expect(buyCreditMock).toHaveBeenCalled();
+    });
+    await waitFor(() => {
         expect(buyCreditMock).toHaveBeenCalledWith(
             expect.objectContaining({
                 data: expect.objectContaining({
@@ -517,8 +552,12 @@ it('should create payment token for saved card and then buy credits with it', as
                 url: buyCreditUrl,
             })
         );
+    });
 
+    await waitFor(() => {
         expect(mockEventManager.call).toHaveBeenCalled();
+    });
+    await waitFor(() => {
         expect(onClose).toHaveBeenCalled();
     });
 });
@@ -542,6 +581,8 @@ it('should create payment token for saved paypal and then buy credits with it', 
 
     await waitFor(() => {
         expect(buyCreditMock).toHaveBeenCalled();
+    });
+    await waitFor(() => {
         expect(buyCreditMock).toHaveBeenCalledWith(
             expect.objectContaining({
                 data: expect.objectContaining({
@@ -561,8 +602,12 @@ it('should create payment token for saved paypal and then buy credits with it', 
                 url: buyCreditUrl,
             })
         );
+    });
 
+    await waitFor(() => {
         expect(mockEventManager.call).toHaveBeenCalled();
+    });
+    await waitFor(() => {
         expect(onClose).toHaveBeenCalled();
     });
 });

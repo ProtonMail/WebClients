@@ -5206,7 +5206,7 @@ __metadata:
     "@testing-library/jest-dom": ^6.1.3
     "@testing-library/react": ^12.1.5
     "@testing-library/react-hooks": ^8.0.1
-    "@testing-library/user-event": ^13.5.0
+    "@testing-library/user-event": ^14.5.1
     "@types/codemirror": 5.60.10
     "@types/credit-card-type": ^7.0.0
     "@types/jest": ^29.5.5
@@ -7953,14 +7953,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/user-event@npm:^13.5.0":
-  version: 13.5.0
-  resolution: "@testing-library/user-event@npm:13.5.0"
-  dependencies:
-    "@babel/runtime": ^7.12.5
+"@testing-library/user-event@npm:^14.5.1":
+  version: 14.5.1
+  resolution: "@testing-library/user-event@npm:14.5.1"
   peerDependencies:
     "@testing-library/dom": ">=7.21.4"
-  checksum: 16319de685fbb7008f1ba667928f458b2d08196918002daca56996de80ef35e6d9de26e9e1ece7d00a004692b95a597cf9142fff0dc53f2f51606a776584f549
+  checksum: 3e6bc9fd53dfe2f3648190193ed2fd4bca2a1bfb47f68810df3b33f05412526e5fd5c4ef9dc5375635e0f4cdf1859916867b597eed22bda1321e04242ea6c519
   languageName: node
   linkType: hard
 
@@ -27834,6 +27832,7 @@ fsevents@^1.2.7:
     "@proton/testing": "workspace:packages/testing"
     "@testing-library/jest-dom": ^6.1.3
     "@testing-library/react": ^12.1.5
+    "@testing-library/user-event": ^14.5.1
     "@types/jest": ^29.5.5
     "@types/react": ^17.0.67
     "@types/react-dom": ^17.0.21
@@ -27914,7 +27913,7 @@ fsevents@^1.2.7:
     "@testing-library/jest-dom": ^6.1.3
     "@testing-library/react": ^12.1.5
     "@testing-library/react-hooks": ^8.0.1
-    "@testing-library/user-event": ^13.5.0
+    "@testing-library/user-event": ^14.5.1
     "@types/jest": ^29.5.5
     "@types/react": ^17.0.67
     "@types/react-dom": ^17.0.21
