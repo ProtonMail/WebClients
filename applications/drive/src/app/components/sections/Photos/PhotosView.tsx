@@ -32,9 +32,7 @@ export const PhotosView: FC<void> = () => {
 
     const thumbnails = useThumbnailsDownload();
 
-    const handleItemRender = async (itemLinkId: string) => {
-        await loadPhotoLink(new AbortController().signal, itemLinkId);
-    };
+    const handleItemRender = (itemLinkId: string) => loadPhotoLink(new AbortController().signal, itemLinkId);
 
     const handleItemRenderLoadedLink = (itemLinkId: string, domRef: React.MutableRefObject<unknown>) => {
         if (shareId) {
