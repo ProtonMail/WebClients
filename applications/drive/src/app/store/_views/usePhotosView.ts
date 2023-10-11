@@ -6,7 +6,7 @@ import { DriveEvents, useDriveEventManager } from '../_events';
 import { useLink, useLinksListing } from '../_links';
 import { sortWithCategories, usePhotos } from '../_photos';
 import type { PhotoLink } from '../_photos';
-import { useAbortSignal, useMemoArrayNoMatterTheOrder } from './utils';
+import { isGroup, useAbortSignal, useMemoArrayNoMatterTheOrder } from './utils';
 
 /**
  * For Photos, we listen for delete and move events
@@ -77,7 +77,7 @@ export const usePhotosView = () => {
         let photoLinkIds: string[] = [];
 
         photosViewData.forEach((item, index) => {
-            if (typeof item !== 'string') {
+            if (!isGroup(item)) {
                 photoLinkIdToIndexMap[item.linkId] = index;
                 photoLinkIds.push(item.linkId);
             }
