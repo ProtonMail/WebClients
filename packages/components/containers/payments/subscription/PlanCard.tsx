@@ -77,7 +77,7 @@ const PlanCard = ({
                 <PrimaryButton
                     onClick={() => onSelect(planName)}
                     disabled={disabled}
-                    className="w100"
+                    className="w-full"
                     aria-describedby={`desc_${planName}`}
                     data-testid={`select-${planName}`}
                 >

@@ -25,7 +25,7 @@ const NameTableCell = ({ name, contactID, highlightedID, checked, deleted, greye
             />
             <span
                 className={clsx([
-                    'max-w100',
+                    'max-w-full',
                     'inline-block',
                     'text-ellipsis',
                     greyedOut && 'color-weak',

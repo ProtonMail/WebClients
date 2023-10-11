@@ -50,7 +50,7 @@ const AddressesSummary = ({
             </Label>
             <div
                 className={clsx([
-                    'field flex composer-addresses-fakefield composer-meta-fakefield-summary composer-light-field flex-row flex-align-items-center flex-nowrap flex-item-fluid w100',
+                    'field flex composer-addresses-fakefield composer-meta-fakefield-summary composer-light-field flex-row flex-align-items-center flex-nowrap flex-item-fluid w-full',
                     disabled && 'disabled',
                 ])}
                 data-testid="composer:address"
@@ -102,7 +102,7 @@ const AddressesSummary = ({
                                                 <span className="composer-addresses-addressIcon relative mr-1">
                                                     {icon && <EncryptionStatusIcon {...icon} disabled={disabled} />}
                                                 </span>
-                                                <span className="max-w100 text-ellipsis">
+                                                <span className="max-w-full text-ellipsis">
                                                     {getRecipientOrGroupLabel(recipientOrGroup)}
                                                 </span>
                                             </span>

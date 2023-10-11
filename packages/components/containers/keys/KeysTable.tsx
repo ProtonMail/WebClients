@@ -59,7 +59,7 @@ const KeysTable = ({
                                         className="flex-item-noshrink mr-2 md:mr-4"
                                     />
                                     <code
-                                        className="max-w100 inline-block text-ellipsis"
+                                        className="max-w-full inline-block text-ellipsis"
                                         data-testid="fingerprint"
                                         title={fingerprint}
                                     >

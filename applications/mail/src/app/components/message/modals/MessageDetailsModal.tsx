@@ -122,13 +122,13 @@ const MessageDetailsModal = ({
                             </span>
                             <div className="pl-1 flex-item-fluid">
                                 <div className="flex flex-column">
-                                    <span className="text-ellipsis w100" title={icon.text}>
+                                    <span className="text-ellipsis w-full" title={icon.text}>
                                         {icon.messageEncryptionDetails ?? icon.text}
                                     </span>
                                     {icon.senderVerificationDetails && (
                                         <div>
                                             <span
-                                                className="w100"
+                                                className="w-full"
                                                 title={c('Sender verification details').t`Sender verification`}
                                             >
                                                 {icon.senderVerificationDetails.description}

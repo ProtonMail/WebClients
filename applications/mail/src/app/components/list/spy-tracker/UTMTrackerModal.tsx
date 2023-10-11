@@ -52,8 +52,8 @@ const UTMTrackerModal = ({ message, ...rest }: Props) => {
                         <div key={`${tracker.originalURL}`} className="mb-4">
                             <div className="flex flex-column mb-1">
                                 <span className="color-weak text-sm">{c('Label').t`Original link`}</span>
-                                <div className="flex flex-nowrap opacity-on-hover-container max-w100 flex-align-items-center">
-                                    <div className="text-ellipsis w100 flex-item-fluid" title={tracker.originalURL}>
+                                <div className="flex flex-nowrap opacity-on-hover-container max-w-full flex-align-items-center">
+                                    <div className="text-ellipsis w-full flex-item-fluid" title={tracker.originalURL}>
                                         {tracker.originalURL}
                                     </div>
                                     <div className="opacity-on-hover opacity-on-hover-no-width flex-item-noshrink">
@@ -73,8 +73,8 @@ const UTMTrackerModal = ({ message, ...rest }: Props) => {
                             </div>
                             <div className="flex flex-column">
                                 <span className="color-primary text-sm">{c('Label').t`Cleaned`}</span>
-                                <div className="flex flex-nowrap opacity-on-hover-container max-w100 flex-align-items-center">
-                                    <div className="text-ellipsis w100 flex-item-fluid" title={tracker.cleanedURL}>
+                                <div className="flex flex-nowrap opacity-on-hover-container max-w-full flex-align-items-center">
+                                    <div className="text-ellipsis w-full flex-item-fluid" title={tracker.cleanedURL}>
                                         {tracker.cleanedURL}
                                     </div>
                                     <div className="opacity-on-hover opacity-on-hover-no-width flex-item-noshrink">

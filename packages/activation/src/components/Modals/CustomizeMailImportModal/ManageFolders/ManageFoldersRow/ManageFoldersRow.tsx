@@ -161,7 +161,7 @@ const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorS
                                                     title: folderProtonName,
                                                 },
                                             ]}
-                                            className="max-w100 flex-item-fluid"
+                                            className="max-w-full flex-item-fluid"
                                         />
 
                                         <ManageFoldersRowLabelErrors checked={checked} errors={errors} />

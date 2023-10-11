@@ -20,7 +20,7 @@ const ZoomControl = ({ className, scale, onZoomIn, onZoomOut, onReset }: Props) 
     const displayedZoomValueInPercent = `${Math.round(scale * 100)}%`;
 
     return (
-        <div className={clsx(['w100 p-7 flex', className])}>
+        <div className={clsx(['w-full p-7 flex', className])}>
             <div className="mx-auto flex flex-align-items-center">
                 <Button
                     icon

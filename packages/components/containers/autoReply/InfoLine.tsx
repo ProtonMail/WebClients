@@ -9,9 +9,9 @@ interface Props {
 }
 
 const InfoLine = ({ label, children, plain = false }: Props) => (
-    <tr className="mb-4 w100 align-top">
+    <tr className="mb-4 w-full align-top">
         <td className="pr-4">{label}</td>
-        <td className={clsx(['w100', !plain && 'text-bold'])}>{children}</td>
+        <td className={clsx(['w-full', !plain && 'text-bold'])}>{children}</td>
     </tr>
 );
 

@@ -210,10 +210,10 @@ const SMTPSubmissionSection = () => {
                             <TableRow
                                 key={token.SmtpTokenID}
                                 cells={[
-                                    <span title={token.Name} className="text-ellipsis max-w100 inline-block">
+                                    <span title={token.Name} className="text-ellipsis max-w-full inline-block">
                                         {token.Name}
                                     </span>,
-                                    <span title={email} className="text-ellipsis max-w100 inline-block">
+                                    <span title={email} className="text-ellipsis max-w-full inline-block">
                                         {email}
                                     </span>,
                                     showDetails &&

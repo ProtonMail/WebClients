@@ -163,7 +163,7 @@ const AutoReplySection = () => {
                     </label>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight>
-                    <div ref={composerRef} tabIndex={-1} className="w100">
+                    <div ref={composerRef} tabIndex={-1} className="w-full">
                         <Editor
                             metadata={{ supportImages: false }}
                             onReady={handleEditorReady}

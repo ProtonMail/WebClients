@@ -298,7 +298,7 @@ const ImportModal = ({ calendars, initialCalendar, files, isOpen = false, onClos
             }
             isOpen={isOpen}
             size="large"
-            className="w100"
+            className="w-full"
             fullscreenOnMobile
             onClose={onClose}
             onExit={onExit}

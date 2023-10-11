@@ -145,11 +145,11 @@ const ContactResignModal = ({
 
         return (
             <li key={email}>
-                <span className="flex max-w100 flex-nowrap on-mobile-flex-column">
+                <span className="flex max-w-full flex-nowrap on-mobile-flex-column">
                     <strong className="mr-1">{`${email}:`}</strong>
                     <span className="flex-item-fluid">
                         {fingerprints.map((f: string, i: number) => (
-                            <span className="text-ellipsis inline-block max-w100" title={f} key={f}>
+                            <span className="text-ellipsis inline-block max-w-full" title={f} key={f}>
                                 {`${f}${i + 1 !== fingerprints.length ? ', ' : ''}`}
                             </span>
                         ))}

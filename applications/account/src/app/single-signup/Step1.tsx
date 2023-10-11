@@ -972,8 +972,8 @@ const Step1 = ({
     const isBlackFriday = options.checkResult.Coupon?.Code === COUPON_CODES.BLACK_FRIDAY_2023;
 
     const renewalNotice = !hasSelectedFree && (
-        <div className="w100 text-sm color-norm opacity-70 text-center">
-            <div className="mx-auto w70 on-mobile-w100">
+        <div className="w-full text-sm color-norm opacity-70 text-center">
+            <div className="mx-auto w-full md:w-7/10">
                 *
                 {isBlackFriday
                     ? getBlackFridayRenewalNoticeText({

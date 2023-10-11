@@ -59,7 +59,7 @@ const RevisionsModalContent = () => {
             ) : (
                 <RevisionsUpgradeBanner />
             )}
-            {isLoading && <CircleLoader className="w100 m-auto mt-5" size="large" />}
+            {isLoading && <CircleLoader className="w-full m-auto mt-5" size="large" />}
             {!isLoading && currentRevision ? (
                 <RevisionList currentRevision={currentRevision} categorizedRevisions={categorizedRevisions} />
             ) : null}

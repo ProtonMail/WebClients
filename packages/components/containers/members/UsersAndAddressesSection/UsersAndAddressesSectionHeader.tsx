@@ -41,7 +41,7 @@ const UsersAndAddressesSectionHeader = ({ mode }: { mode: UserManagementMode }) 
             key: 'addresses',
             node: (
                 <>
-                    <span className="text-ellipsis inline-block align-bottom max-w100" title={addressTitle}>
+                    <span className="text-ellipsis inline-block align-bottom max-w-full" title={addressTitle}>
                         {addressTitle}
                     </span>
                 </>
@@ -54,7 +54,7 @@ const UsersAndAddressesSectionHeader = ({ mode }: { mode: UserManagementMode }) 
             node: (
                 <>
                     <span
-                        className="text-ellipsis inline-block align-bottom max-w100"
+                        className="text-ellipsis inline-block align-bottom max-w-full"
                         title={c('Title header for members table').t`Features`}
                     >{c('Title header for members table').t`Features`}</span>
                 </>

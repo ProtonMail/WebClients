@@ -12,7 +12,7 @@ export default function SharedPageError() {
     return (
         <SharedPageLayout>
             <div className="flex flex-item-fluid flex-align-items-center py-7 mb-14">
-                <div className="password-page--form-container ui-standard w100 relative shadow-lifted mw30r max-w100 mx-auto px-8 py-11 rounded">
+                <div className="password-page--form-container ui-standard w-full relative shadow-lifted mw30r max-w-full mx-auto px-8 py-11 rounded">
                     <figure className="flex flex-justify-center pb-7">
                         <img className="hauto" src={notFoundSvg} alt={c('Info').t`Shared link not found`} />
                     </figure>

@@ -125,7 +125,7 @@ const DemoItems = () => {
 
 export const Gap = () => {
     return (
-        <div className="w100 relative flex gap-4">
+        <div className="w-full relative flex gap-4">
             {sizes.map((size) => (
                 <div key={size.class} className="border rounded w30 flex flex-column flex-align-items-center gap-2 p-2">
                     <span className="text-2xs">gap-{size.class}</span>
@@ -147,7 +147,7 @@ export const Gap = () => {
 
 export const GapY = () => {
     return (
-        <div className="w100 relative flex gap-4">
+        <div className="w-full relative flex gap-4">
             {sizes.map((size) => (
                 <div key={size.class} className="border rounded w30 flex flex-column flex-align-items-center gap-2 p-2">
                     <span className="text-2xs">gap-y-{size.class}</span>
@@ -169,7 +169,7 @@ export const GapY = () => {
 
 export const GapX = () => {
     return (
-        <div className="w100 relative flex gap-4">
+        <div className="w-full relative flex gap-4">
             {sizes.map((size) => (
                 <div key={size.class} className="border rounded w30 flex flex-column flex-align-items-center gap-2 p-2">
                     <span className="text-2xs">gap-x-{size.class}</span>
@@ -191,7 +191,7 @@ export const GapX = () => {
 
 export const Responsive = () => {
     return (
-        <div className="w100 relative flex gap-4">
+        <div className="w-full relative flex gap-4">
             <div
                 className={`gap-2 sm:gap-4 md:gap-8 lg:gap-10 xl:gap-14`}
                 style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gridTemplateRows: 'repeat(3, 1fr)' }}

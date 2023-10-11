@@ -99,7 +99,7 @@ const Editor = ({
                 className={clsx([
                     className,
                     simple && 'simple-editor',
-                    'editor w100 h100 rounded flex flex-column-reverse flex-item-fluid',
+                    'editor w-full h100 rounded flex flex-column-reverse flex-item-fluid',
                 ])}
             >
                 <div

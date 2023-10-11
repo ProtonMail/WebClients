@@ -86,10 +86,10 @@ const Select = forwardRef<HTMLSelectElement, Props>(
 
         return (
             <>
-                <span className={clsx(['w100 flex flex-column', classNameContainer])}>
-                    <span className="flex relative w100">
+                <span className={clsx(['w-full flex flex-column', classNameContainer])}>
+                    <span className="flex relative w-full">
                         <select
-                            className={clsx(['field w100', className, statusClasses])}
+                            className={clsx(['field w-full', className, statusClasses])}
                             size={size}
                             multiple={multiple}
                             disabled={loading || rest.disabled}
