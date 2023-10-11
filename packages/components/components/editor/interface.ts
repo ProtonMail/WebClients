@@ -1,8 +1,8 @@
 import { Dispatch, SetStateAction } from 'react';
 
-import { Direction, IEditor, PluginEvent } from 'roosterjs-editor-types';
+import { IEditor, PluginEvent } from 'roosterjs-editor-types';
 
-export { Direction as EditorTextDirection } from 'roosterjs-editor-types';
+import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 
 export interface EditorMetadata {
     supportImages: boolean;
@@ -10,7 +10,7 @@ export interface EditorMetadata {
     supportDefaultFontSelector: boolean;
     isPlainText: boolean;
     supportRightToLeft: boolean;
-    rightToLeft: Direction;
+    rightToLeft: DIRECTION;
     blockquoteExpanded: boolean;
     setBlockquoteExpanded: Dispatch<SetStateAction<boolean>> | undefined;
 }
@@ -25,7 +25,7 @@ export interface EditorActions {
     insertImage?: (url: string, attrs?: { [key: string]: string }) => void;
     clearUndoHistory?: () => void;
     /** Meant to be used at startup */
-    setTextDirection?: (direction: Direction) => void;
+    setTextDirection?: (direction: DIRECTION) => void;
     /** Tells if Editor is unmounted */
     isDisposed: () => boolean;
     showModalLink?: () => void;

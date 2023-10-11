@@ -1,14 +1,7 @@
 import { PublicKeyReference } from '@proton/crypto';
+import { PACKAGE_TYPE, SIGN } from '@proton/shared/lib/mail/mailSettings';
 
-import {
-    CONTACT_MIME_TYPES,
-    MIME_TYPES,
-    MIME_TYPES_MORE,
-    PACKAGE_TYPE,
-    PGP_SCHEMES,
-    PGP_SCHEMES_MORE,
-    PGP_SIGN,
-} from '../../lib/constants';
+import { CONTACT_MIME_TYPES, MIME_TYPES, MIME_TYPES_MORE, PGP_SCHEMES, PGP_SCHEMES_MORE } from '../../lib/constants';
 import { KT_VERIFICATION_STATUS, MailSettings, SelfSend } from '../../lib/interfaces';
 import extractEncryptionPreferences, { ENCRYPTION_PREFERENCES_ERROR_TYPES } from '../../lib/mail/encryptionPreferences';
 
@@ -69,7 +62,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
         ktVerificationResult,
     };
     const mailSettings = {
-        Sign: PGP_SIGN,
+        Sign: SIGN.ENABLED,
         PGPScheme: PACKAGE_TYPE.SEND_PGP_MIME,
         DraftMIMEType: MIME_TYPES.DEFAULT,
     } as MailSettings;
@@ -348,7 +341,7 @@ const testExtractEncryptionPreferencesWithWKD = (encrypt: boolean) =>
             ktVerificationResult,
         };
         const mailSettings = {
-            Sign: 0,
+            Sign: SIGN.DISABLED,
             PGPScheme: PACKAGE_TYPE.SEND_PGP_MIME,
             DraftMIMEType: MIME_TYPES.DEFAULT,
         } as MailSettings;
@@ -583,7 +576,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
         ktVerificationResult,
     };
     const mailSettings = {
-        Sign: PGP_SIGN,
+        Sign: SIGN.ENABLED,
         PGPScheme: PACKAGE_TYPE.SEND_PGP_MIME,
         DraftMIMEType: MIME_TYPES.PLAINTEXT,
     } as MailSettings;
@@ -771,7 +764,7 @@ describe('extractEncryptionPreferences for an own address', () => {
         ktVerificationResult,
     };
     const mailSettings = {
-        Sign: PGP_SIGN,
+        Sign: SIGN.ENABLED,
         PGPScheme: PACKAGE_TYPE.SEND_PGP_MIME,
         DraftMIMEType: MIME_TYPES.PLAINTEXT,
     } as MailSettings;

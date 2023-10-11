@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Scroll } from '@proton/atoms';
 import { DropdownMenu, DropdownMenuButton, EllipsisLoader, Icon, ToolbarButton } from '@proton/components';
-import { MailPageSize } from '@proton/shared/lib/interfaces';
+import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
@@ -16,7 +16,7 @@ import ToolbarDropdown from './ToolbarDropdown';
 interface Props {
     loading: boolean;
     page: number;
-    pageSize: MailPageSize;
+    pageSize: MAIL_PAGE_SIZE;
     total: number | undefined;
     onPage: (page: number) => void;
 }

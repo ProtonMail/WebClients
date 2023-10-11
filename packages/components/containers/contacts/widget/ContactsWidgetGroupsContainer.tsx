@@ -3,11 +3,11 @@ import { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
-import { CONTACT_GROUP_MAX_MEMBERS } from '@proton/shared/lib/contacts/constants';
 import { orderContactGroups } from '@proton/shared/lib/helpers/contactGroups';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 import { SearchInput } from '../../../components';
 import { useContactEmails, useContactGroups, useMailSettings, useNotifications, useUser } from '../../../hooks';
@@ -99,7 +99,7 @@ const ContactsWidgetGroupsContainer = ({
     };
 
     const handleCompose = () => {
-        const maxContacts = mailSettings?.RecipientLimit || CONTACT_GROUP_MAX_MEMBERS;
+        const maxContacts = mailSettings?.RecipientLimit || DEFAULT_MAILSETTINGS.RecipientLimit;
 
         if (recipients.length > maxContacts) {
             createNotification({

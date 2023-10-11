@@ -2,20 +2,15 @@ import { useCallback } from 'react';
 
 import { PayloadAction } from '@reduxjs/toolkit';
 
-import {
-    FeatureCode,
-    useApi,
-    useAuthentication,
-    useFeature,
-    useMailSettings,
-    useProgressiveRollout,
-} from '@proton/components';
+import { FeatureCode, useApi, useAuthentication, useFeature, useProgressiveRollout } from '@proton/components';
 import { WorkerDecryptionResult } from '@proton/crypto';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft, isPlainText } from '@proton/shared/lib/mail/messages';
 import { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 import uniqueBy from '@proton/utils/uniqueBy';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
 import { getPureAttachments } from '../../helpers/attachment/attachment';
@@ -63,7 +58,7 @@ export const useInitializeMessage = () => {
     const getMessageKeys = useGetMessageKeys();
     const getAttachment = useGetAttachment();
     const base64Cache = useBase64Cache();
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
     const { verifyKeys } = useKeyVerification();
     const authentication = useAuthentication();
 

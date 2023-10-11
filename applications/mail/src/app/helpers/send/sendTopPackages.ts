@@ -1,8 +1,9 @@
 import { WorkerDecryptionResult } from '@proton/crypto';
-import { MIME_TYPES, PACKAGE_TYPE } from '@proton/shared/lib/constants';
+import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { Api } from '@proton/shared/lib/interfaces';
 import { Package, PackageStatus, Packages, SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 import { addReceived } from '@proton/shared/lib/mail/messages';
 import isTruthy from '@proton/utils/isTruthy';
 

@@ -1,6 +1,7 @@
 import { fireEvent } from '@testing-library/react';
 
 import { MIME_TYPES } from '@proton/shared/lib/constants';
+import { SHORTCUTS } from '@proton/shared/lib/mail/mailSettings';
 
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import {
@@ -51,9 +52,9 @@ describe('Composer hotkeys', () => {
     const setup = async (hasShortcutsEnabled = true) => {
         minimalCache();
         if (hasShortcutsEnabled) {
-            addToCache('MailSettings', { Shortcuts: 1 });
+            addToCache('MailSettings', { Shortcuts: SHORTCUTS.ENABLED });
         } else {
-            addToCache('MailSettings', { Shortcuts: 0 });
+            addToCache('MailSettings', { Shortcuts: SHORTCUTS.DISABLED });
         }
 
         addKeysToAddressKeysCache(AddressID, fromKeys);

@@ -1,4 +1,4 @@
-import { MailPageSize } from '@proton/shared/lib/interfaces';
+import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 
 import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
 import { Element } from '../../models/element';
@@ -60,7 +60,7 @@ export interface ElementsState {
     /**
      * Current page size
      */
-    pageSize: MailPageSize;
+    pageSize: MAIL_PAGE_SIZE;
 
     /**
      * List of page number currently in the cache
@@ -100,7 +100,7 @@ export interface ElementsState {
 export interface QueryParams {
     abortController: AbortController | undefined;
     page: number;
-    pageSize: MailPageSize;
+    pageSize: MAIL_PAGE_SIZE;
     params: ElementsStateParams;
     count?: number;
 }

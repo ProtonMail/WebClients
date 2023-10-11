@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { useMailSettings } from '@proton/components/hooks';
 import { getInitials } from '@proton/shared/lib/helpers/string';
+import { HIDE_SENDER_IMAGES } from '@proton/shared/lib/mail/mailSettings';
 import clsx from '@proton/utils/clsx';
 
 import useSenderImage from './hooks/useSenderImage';
@@ -16,7 +17,7 @@ interface Props {
 
 const ContactImage = ({ email, name, className, bimiSelector, displaySenderImage }: Props) => {
     const [mailSettings] = useMailSettings();
-    const canLoad = !!displaySenderImage && !!email && mailSettings?.HideSenderImages === 0;
+    const canLoad = !!displaySenderImage && !!email && mailSettings?.HideSenderImages === HIDE_SENDER_IMAGES.SHOW;
     const url = useSenderImage(canLoad ? email : '', bimiSelector);
     const [tryToLoad, setTryToLoad] = useState(false);
 

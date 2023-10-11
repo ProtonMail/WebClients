@@ -29,6 +29,7 @@ import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { AUTO_SAVE_CONTACTS } from '@proton/shared/lib/mail/mailSettings';
 import { getOriginalTo, hasProtonSender, hasSimpleLoginSender, isUnsubscribed } from '@proton/shared/lib/mail/messages';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -181,7 +182,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
 
         const inputMessage: PartialMessageState = {
             localID: generateUID('unsubscribe'),
-            draftFlags: { autoSaveContacts: 0 }, // Unsubscribe request should not save "to" address in contact list
+            draftFlags: { autoSaveContacts: AUTO_SAVE_CONTACTS.DISABLED }, // Unsubscribe request should not save "to" address in contact list
             messageDocument: { plainText: Body },
             data: {
                 AddressID: from.ID,

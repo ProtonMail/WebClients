@@ -1,6 +1,8 @@
-import { Icon, IconName, Tooltip, useMailSettings } from '@proton/components';
+import { Icon, IconName, Tooltip } from '@proton/components';
 import { isFrozenExpiration } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { isAllowedAutoDeleteLabelID } from '../../../helpers/autoDelete';
 import { isConversation, isMessage } from '../../../helpers/elements';
@@ -18,7 +20,7 @@ interface Props {
 
 const ItemExpiration = ({ className, expirationTime, element, labelID }: Props) => {
     const { tooltipMessage, shortMessage, expiresInLessThan24Hours } = useItemExpiration(element, expirationTime);
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
 
     if (!expirationTime) {
         return null;
@@ -28,7 +30,7 @@ const ItemExpiration = ({ className, expirationTime, element, labelID }: Props) 
         if (
             isAllowedAutoDeleteLabelID(labelID) &&
             ((isMessage(element) && !isFrozenExpiration(element)) ||
-                (isConversation(element) && mailSettings?.AutoDeleteSpamAndTrashDays !== null))
+                (isConversation(element) && mailSettings.AutoDeleteSpamAndTrashDays !== null))
         ) {
             return 'trash-clock';
         }

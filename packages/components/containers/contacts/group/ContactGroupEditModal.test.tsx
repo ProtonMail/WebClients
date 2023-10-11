@@ -4,6 +4,7 @@ import { CryptoProxy } from '@proton/crypto';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import { MAX_RECIPIENTS } from '@proton/shared/lib/mail/mailSettings';
 import { STATUS } from '@proton/shared/lib/models/cache';
 
 import { api, cache, clearAll, getCard, minimalCache, mockedCryptoApi, render } from '../tests/render';
@@ -69,6 +70,7 @@ describe('ContactGroupEditModal', () => {
 
         cache.set('Labels', { status: STATUS.RESOLVED, value: [group] });
         cache.set('ContactEmails', { status: STATUS.RESOLVED, value: [contactEmail1, contactEmail2, contactEmail3] });
+        cache.set('MailSettings', { RecipientLimit: MAX_RECIPIENTS });
 
         const updateSpy = jest.fn();
         const createContactSpy = jest.fn();

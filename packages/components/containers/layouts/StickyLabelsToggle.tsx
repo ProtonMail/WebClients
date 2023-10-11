@@ -1,11 +1,11 @@
 import { ChangeEvent } from 'react';
 
-import { STICKY_LABELS } from '@proton/shared/lib/constants';
+import { STICKY_LABELS } from '@proton/shared/lib/mail/mailSettings';
 
 import { Toggle } from '../../components';
 import { useToggle } from '../../hooks';
 
-const { ON, OFF } = STICKY_LABELS;
+const { ENABLED, DISABLED } = STICKY_LABELS;
 
 interface Props {
     id: string;
@@ -16,10 +16,10 @@ interface Props {
 }
 
 const StickyLabelsToggle = ({ id, stickyLabels, onToggle, loading, ...rest }: Props) => {
-    const { state, toggle } = useToggle(stickyLabels === ON);
+    const { state, toggle } = useToggle(stickyLabels === ENABLED);
 
     const handleToggle = ({ target }: ChangeEvent<HTMLInputElement>) => {
-        onToggle(target.checked ? ON : OFF);
+        onToggle(target.checked ? ENABLED : DISABLED);
         toggle();
     };
 

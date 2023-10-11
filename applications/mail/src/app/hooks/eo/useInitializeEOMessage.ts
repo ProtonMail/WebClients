@@ -6,7 +6,7 @@ import { useApi } from '@proton/components';
 import { PrivateKeyReference } from '@proton/crypto';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { eoDefaultMailSettings } from '@proton/shared/lib/mail/eo/constants';
+import { EO_DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/eo/constants';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
 
@@ -104,7 +104,7 @@ export const useInitializeEOMessage = () => {
             };
 
             preparation = isPlainText({ MIMEType })
-                ? await preparePlainText(decryption.decryptedBody, false)
+                ? await preparePlainText(decryption.decryptedBody, false, EO_DEFAULT_MAILSETTINGS)
                 : await prepareHtml(
                       {
                           ...messageFromState,
@@ -112,7 +112,7 @@ export const useInitializeEOMessage = () => {
                           data: { ...messageFromState.data, Attachments: allAttachments } as Message,
                       },
                       base64Cache,
-                      eoDefaultMailSettings,
+                      EO_DEFAULT_MAILSETTINGS,
                       handleEOLoadEmbeddedImages,
                       noop,
                       noop,

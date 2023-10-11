@@ -1,10 +1,12 @@
 import { useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { HotkeyTuple, useEventManager, useFolders, useHotkeys, useMailSettings } from '@proton/components';
+import { HotkeyTuple, useEventManager, useFolders, useHotkeys } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { KeyboardKey, MailSettings } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
@@ -70,7 +72,7 @@ export const useMessageHotkeys = (
     }: MessageHotkeysHandlers
 ) => {
     const location = useLocation();
-    const [{ Shortcuts = 0 } = {}] = useMailSettings();
+    const { Shortcuts } = useMailModel('MailSettings');
     const [folders] = useFolders();
     const { call } = useEventManager();
     const labelDropdownToggleRef = useRef<() => void>(noop);

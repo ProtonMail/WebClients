@@ -3,11 +3,14 @@ import { useHistory } from 'react-router-dom';
 
 import { Location } from 'history';
 
-import { HotkeyTuple, useFolders, useHotkeys, useMailSettings } from '@proton/components';
-import { MAILBOX_LABEL_IDS, VIEW_LAYOUT } from '@proton/shared/lib/constants';
+import { HotkeyTuple, useFolders, useHotkeys } from '@proton/components';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
+import { VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { isStarred } from '../../helpers/elements';
 import { getFolderName, labelIncludes } from '../../helpers/labels';
@@ -78,8 +81,8 @@ export const useMailboxHotkeys = (
         showCommander,
     }: MailboxHotkeysHandlers
 ) => {
-    const [mailSettings] = useMailSettings();
-    const { Shortcuts = 0 } = mailSettings || {};
+    const mailSettings = useMailModel('MailSettings');
+    const { Shortcuts, ViewLayout } = mailSettings;
     const getElementsFromIDs = useGetElementsFromIDs();
     const history = useHistory<any>();
     const [folders] = useFolders();
@@ -95,7 +98,7 @@ export const useMailboxHotkeys = (
 
     // Disable selection shortcut in row mode when consulting an message
     // If no element is selected, it means that the user is on the message list, where we want the shortcut to be enabled
-    const canSelectItem = mailSettings?.ViewLayout === VIEW_LAYOUT.COLUMN || !elementID;
+    const canSelectItem = ViewLayout === VIEW_LAYOUT.COLUMN || !elementID;
 
     const getElementsForShortcuts = () => {
         let elements: Element[] = [];

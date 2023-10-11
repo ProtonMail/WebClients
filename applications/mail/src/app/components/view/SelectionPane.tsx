@@ -30,7 +30,7 @@ import SimpleLoginPlaceholder from './SimpleLoginPlaceholder';
 
 interface Props {
     labelID: string;
-    mailSettings: MailSettings | undefined;
+    mailSettings: MailSettings;
     location: Location;
     labelCount: LabelCount | undefined;
     checkedIDs?: string[];

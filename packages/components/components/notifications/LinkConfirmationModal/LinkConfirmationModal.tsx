@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms';
 import { updateConfirmLink } from '@proton/shared/lib/api/mailSettings';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
+import { CONFIRM_LINK } from '@proton/shared/lib/mail/mailSettings';
 
 import { useApi, useEventManager } from '../../../hooks';
 import { Form } from '../../form';
@@ -38,7 +39,7 @@ const LinkConfirmationModal = ({ link = '', isOutside = false, isPhishingAttempt
         openNewTab(link);
 
         if (dontAskAgain && !isOutside) {
-            await api(updateConfirmLink(0));
+            await api(updateConfirmLink(CONFIRM_LINK.DISABLED));
             await call();
         }
     };
