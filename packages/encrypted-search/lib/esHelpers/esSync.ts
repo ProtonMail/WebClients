@@ -150,7 +150,7 @@ export const syncItemEvents = async <ESItemContent, ESItemMetadata extends Objec
                 const content = prefetchedContent.get(ID);
                 if (useContent && permanentStorage && !content) {
                     /**
-                     * If an error occured while fetching, we ignore store the item's ID for later fetching of the content
+                     * If an error occurred while fetching, we ignore store the item's ID for later fetching of the content
                      */
                     await addRetry(userID, ID);
                 }
@@ -192,7 +192,7 @@ export const syncItemEvents = async <ESItemContent, ESItemMetadata extends Objec
                     newContent = prefetchedContent.get(ID);
                     if (useContent && permanentStorage && !newContent) {
                         /**
-                         * If an error occured while fetching, we store the item's ID for later fetching of the content
+                         * If an error occurred while fetching, we store the item's ID for later fetching of the content
                          */
                         await addRetry(userID, ID);
                     }
