@@ -17,6 +17,7 @@ interface Props {
     date?: Date | string | number;
     onDetails?: () => void;
     onRestore?: () => void;
+    onShare?: () => void;
     className?: string;
     navigationControls?: ReactNode;
 }
@@ -28,6 +29,7 @@ const PortalPreview = (
         revisionId,
         onDetails,
         onRestore,
+        onShare,
         date,
         className,
         navigationControls,
@@ -91,6 +93,7 @@ const PortalPreview = (
                     onDownload={downloadFile}
                     onDetails={onDetails}
                     onRestore={onRestore}
+                    onShare={onShare}
                     date={date}
                     navigationControls={navigationControls}
                     signatureStatus={signatureStatus}
