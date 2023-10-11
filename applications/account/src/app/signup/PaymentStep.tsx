@@ -119,7 +119,7 @@ const PaymentStep = ({
 
     // Disable cycles during signup for custom cycles or if there is a coupon. (Since the cycle selector will show values which don't include the coupon discount).
     const disableCycleSelector =
-        getIsCustomCycle(subscriptionData.cycle) || !!subscriptionData.checkResult.Coupon?.Code || '';
+        getIsCustomCycle(subscriptionData.cycle) || !!subscriptionData.checkResult.Coupon?.Code;
 
     return (
         <div className="sign-layout-mobile-columns w100 flex flex-align-items-start flex-justify-center gap-7">
