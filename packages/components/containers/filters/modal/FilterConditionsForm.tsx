@@ -22,9 +22,9 @@ const FilterConditionsForm = ({ isEdit, isNarrow, model, onChange }: Props) => {
 
     return (
         <>
-            <div className="flex flex-nowrap mb-0 on-mobile-flex-column border-bottom">
-                <div className={clsx(['w20', isNarrow && 'mb-4'])}>{c('Label').t`Statement`}</div>
-                <div className={clsx([!isNarrow && 'ml-4'])}>
+            <div className="flex-no-min-children flex-nowrap flex-column md:flex-row mb-0 border-bottom">
+                <div className={clsx(['w-full md:w-1/5', isNarrow && 'mb-4'])}>{c('Label').t`Statement`}</div>
+                <div className={clsx(['inline-flex flex-item-fluid', !isNarrow && 'ml-4'])}>
                     <Radio
                         id="statement-all"
                         name="filterConditionStatement"
