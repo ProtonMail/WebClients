@@ -31,6 +31,20 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     hasAppLinks?: boolean;
     appsDropdown: ReactNode;
     contactsButton?: ReactNode;
+    /**
+     * Extra content that will be rendered below the storage meter and version.
+     */
+    extraFooter?: ReactNode;
+    /**
+     * If `true`, the sidebar children container will grow to the maximum
+     * available size.
+     *
+     * This is the default behavior, set this to `false` if you want the footer
+     * to stick to the content.
+     *
+     * @default true
+     */
+    growContent?: boolean;
 }
 
 const Sidebar = ({
@@ -45,6 +59,8 @@ const Sidebar = ({
     version,
     storageGift,
     contactsButton,
+    extraFooter,
+    growContent = true,
     ...rest
 }: Props) => {
     const rootRef = useRef<HTMLDivElement>(null);
@@ -108,25 +124,30 @@ const Sidebar = ({
                 </div>
 
                 <h1 className="sr-only">{getAppName(APP_NAME)}</h1>
-                <div className="logo-container flex flex-justify-space-between flex-align-items-center flex-nowrap no-mobile">
+                <div className="logo-container flex flex-item-noshrink flex-justify-space-between flex-align-items-center flex-nowrap no-mobile">
                     {logo}
                     <div className="no-mobile">{appsDropdown}</div>
                 </div>
 
                 {isNarrow && (
-                    <div className="px-3 no-desktop no-tablet">
+                    <div className="px-3 flex-item-noshrink no-desktop no-tablet">
                         <UserDropdown app={APP_NAME} hasAppLinks={hasAppLinks} />
                     </div>
                 )}
 
                 {primary ? <div className="px-3 pb-2 flex-item-noshrink no-mobile">{primary}</div> : null}
                 <div className="mt-1 md:mt-0" aria-hidden="true" />
-                <div className={clsx('flex-item-fluid flex-nowrap flex flex-column overflow-overlay pb-4 md:mt-2')}>
+                <div
+                    className={clsx(
+                        growContent ? 'flex-item-fluid' : 'flex-item-nogrow',
+                        'flex-nowrap flex flex-column overflow-overlay pb-4 md:mt-2'
+                    )}
+                >
                     {contactsButton}
                     {children}
                 </div>
                 {APP_NAME !== APPS.PROTONVPN_SETTINGS ? (
-                    <div className="app-infos px-3">
+                    <div className="flex-item-noshrink app-infos px-3 mt-2">
                         <SidebarStorageMeter
                             label={`${c('Storage').t`Your current storage:`} ${humanSize(UsedSpace)} / ${humanSize(
                                 MaxSpace
@@ -152,6 +173,7 @@ const Sidebar = ({
 
                             <span className="app-infos-compact">{version}</span>
                         </div>
+                        {extraFooter}
                     </div>
                 ) : (
                     <div className="border-top">
