@@ -24,6 +24,7 @@ import useActiveShare from '../../../../hooks/drive/useActiveShare';
 import { useDebug } from '../../../../hooks/drive/useDebug';
 import { ShareWithKey, useDefaultShare } from '../../../../store';
 import { useCreateDevice } from '../../../../store/_shares/useCreateDevice';
+import { useCreatePhotos } from '../../../../store/_shares/useCreatePhotos';
 import DriveSidebarFooter from './DriveSidebarFooter';
 import DriveSidebarList from './DriveSidebarList';
 
@@ -42,6 +43,7 @@ const DriveSidebar = ({ logo, primary, isHeaderExpanded, toggleHeaderExpanded }:
 
     const [defaultShare, setDefaultShare] = useState<ShareWithKey>();
     const { createDevice } = useCreateDevice();
+    const { createPhotosShare } = useCreatePhotos();
 
     useEffect(() => {
         void getDefaultShare().then(setDefaultShare);
@@ -114,6 +116,7 @@ const DriveSidebar = ({ logo, primary, isHeaderExpanded, toggleHeaderExpanded }:
                 </div>
             </SidebarNav>
             {debug ? <button onClick={createDevice}>Create device</button> : null}
+            {debug ? <button onClick={createPhotosShare}>Create photos</button> : null}
         </Sidebar>
     );
 };
