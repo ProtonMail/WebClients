@@ -132,7 +132,7 @@ export const GatewayCountrySelection = ({
                                         .t`Some of your available servers can only be used in specific countries due to recent removals`}</div>
                                     <div className="mt-3">
                                         {c('Info')
-                                            .t`You can immediately unlock the setup above by adding ${specificCountryCount} to the number if IP addresses in your plan or reach us for tailor-made solutions.`}
+                                            .t`You can immediately unlock the setup above by adding ${specificCountryCount} to the number of IP addresses in your plan or reach us for tailor-made solutions.`}
                                         <a href={vpnEnterpriseContactUrl} className="ml-1">{c('Link').t`Contact us`}</a>
                                     </div>
                                 </>
