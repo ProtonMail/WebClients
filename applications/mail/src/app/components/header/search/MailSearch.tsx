@@ -9,7 +9,6 @@ import {
     useAddresses,
     useFolders,
     useLabels,
-    useMailSettings,
     usePopperAnchor,
     useProgressiveRollout,
     useToggle,
@@ -43,7 +42,6 @@ const MailSearch = ({ breakpoints, labelID, location, columnMode }: Props) => {
     const searchParams = extractSearchParameters(location);
     const [searchInputValue, setSearchInputValue] = useState(searchParams.keyword || '');
     const [user] = useUser();
-    const [, loadingMailSettings] = useMailSettings();
     const [, loadingLabels] = useLabels();
     const [, loadingFolders] = useFolders();
     const [, loadingAddresses] = useAddresses();
@@ -54,7 +52,7 @@ const MailSearch = ({ breakpoints, labelID, location, columnMode }: Props) => {
     // Show more from inside AdvancedSearch to persist the state when the overlay is closed
     const { state: showMore, toggle: toggleShowMore } = useToggle(false);
 
-    const loading = loadingLabels || loadingFolders || loadingMailSettings || loadingAddresses;
+    const loading = loadingLabels || loadingFolders || loadingAddresses;
 
     useEffect(() => {
         if (!isOpen) {

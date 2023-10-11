@@ -2,7 +2,7 @@ import { useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { IconRow, useMailSettings } from '@proton/components';
+import { IconRow } from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
@@ -12,6 +12,8 @@ import urlify from '@proton/shared/lib/calendar/urlify';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { InvitationModel, getParticipantsList } from '../../../../helpers/calendar/invite';
 import ExtraEventParticipants from './ExtraEventParticipants';
@@ -23,7 +25,7 @@ interface Props {
     weekStartsOn: WeekStartsOn;
 }
 const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
     const eventDetailsRef = useRef<HTMLDivElement>(null);
 
     const {

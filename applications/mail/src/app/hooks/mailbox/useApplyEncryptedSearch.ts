@@ -4,12 +4,12 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { useMailSettings, useNotifications } from '@proton/components';
-import { MailPageSize } from '@proton/shared/lib/interfaces';
+import { useNotifications } from '@proton/components';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { isSearch } from '../../helpers/elements';
 import { parseSearchParams } from '../../helpers/encryptedSearch';
+import useMailModel from '../../hooks/useMailModel';
 import {
     addESResults,
     load as loadAction,
@@ -46,7 +46,7 @@ export const useApplyEncryptedSearch = ({
     onPage,
 }: EncryptedSearchParams) => {
     const history = useHistory();
-    const [{ PageSize: pageSize = MailPageSize.FIFTY } = { PageSize: MailPageSize.FIFTY }] = useMailSettings();
+    const { PageSize: pageSize } = useMailModel('MailSettings');
     const { createNotification } = useNotifications();
     const dispatch = useAppDispatch();
 

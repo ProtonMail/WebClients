@@ -12,6 +12,7 @@ import { SEND_MESSAGE_DIRECT_ACTION } from '@proton/shared/lib/interfaces/messag
 import { RequireSome, SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
+import { AUTO_SAVE_CONTACTS } from '@proton/shared/lib/mail/mailSettings';
 import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
 import generatePackages from '@proton/shared/lib/mail/send/generatePackages';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
@@ -127,7 +128,7 @@ const useSendIcs = () => {
                 Message: directMessage,
                 AttachmentKeys: uint8ArrayToBase64String(packets.keys),
                 // do not save organizer address as contact on REPLY (it could be a calendar group address)
-                AutoSaveContacts: method === ICAL_METHOD.REPLY ? 0 : AutoSaveContacts,
+                AutoSaveContacts: method === ICAL_METHOD.REPLY ? AUTO_SAVE_CONTACTS.DISABLED : AutoSaveContacts,
                 Packages: Object.values(packages),
             };
             if (parentID) {

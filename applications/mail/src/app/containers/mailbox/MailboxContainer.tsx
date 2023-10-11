@@ -19,11 +19,12 @@ import {
 } from '@proton/components';
 import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
 import { useCalendarsInfoCoreListener } from '@proton/components/containers/eventManager/calendar/useCalendarsInfoListener';
-import { MAILBOX_LABEL_IDS, SHOW_MOVED, VIEW_MODE } from '@proton/shared/lib/constants';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
-import { MailPageSize, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { MAIL_PAGE_SIZE, SHOW_MOVED, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
@@ -166,7 +167,7 @@ const MailboxContainer = ({
         conversationMode: isConversationMode(inputLabelID, mailSettings, location),
         labelID: inputLabelID,
         page: pageFromUrl(location),
-        pageSize: mailSettings?.PageSize ?? MailPageSize.FIFTY,
+        pageSize: mailSettings?.PageSize ?? MAIL_PAGE_SIZE.FIFTY,
         sort,
         filter,
         search: searchParameters,

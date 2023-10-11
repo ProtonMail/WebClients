@@ -1,9 +1,11 @@
 import { RefObject, useEffect, useMemo, useRef, useState } from 'react';
 
-import { useMailSettings, useTheme } from '@proton/components';
+import { useTheme } from '@proton/components';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { useOnMailTo } from '../../containers/ComposeProvider';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
@@ -54,7 +56,7 @@ const MessageBody = ({
     const theme = useTheme();
     const { highlightString, shouldHighlight } = useEncryptedSearchContext();
     const onMailTo = useOnMailTo();
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
     const highlightBody = shouldHighlight();
     const plain = isPlainText(message.data);
     const { support: hasDarkStyles, loading: hasDarkStylesLoading } = useMessageDarkStyles(

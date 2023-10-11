@@ -3,6 +3,7 @@ import { ChangeEvent } from 'react';
 import { c } from 'ttag';
 
 import { updateShortcuts } from '@proton/shared/lib/api/mailSettings';
+import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 import { Toggle } from '../../components';
 import { useApiWithoutResult, useEventManager, useMailSettings, useNotifications, useToggle } from '../../hooks';
@@ -14,7 +15,7 @@ interface Props {
 
 const ShortcutsToggle = ({ id, className, ...rest }: Props) => {
     const { call } = useEventManager();
-    const [{ Shortcuts } = { Shortcuts: 0 }] = useMailSettings();
+    const [{ Shortcuts } = DEFAULT_MAILSETTINGS] = useMailSettings();
     const { createNotification } = useNotifications();
     const { request, loading } = useApiWithoutResult(updateShortcuts);
     const { state, toggle } = useToggle(!!Shortcuts);

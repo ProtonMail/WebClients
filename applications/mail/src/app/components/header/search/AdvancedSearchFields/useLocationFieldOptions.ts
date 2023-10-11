@@ -1,10 +1,13 @@
 import { c } from 'ttag';
 
-import { IconName, useFolders, useLabels, useMailSettings } from '@proton/components';
-import { MAILBOX_LABEL_IDS, SHOW_MOVED } from '@proton/shared/lib/constants';
+import { IconName, useFolders, useLabels } from '@proton/components';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { buildTreeview, formatFolderName } from '@proton/shared/lib/helpers/folder';
 import { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
+import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { getLabelIDsToI18N } from '../../../../constants';
 import { getStandardFolders } from '../../../../helpers/labels';
@@ -95,15 +98,15 @@ function folderReducer(acc: ItemCustomFolder[], folder: FolderWithSubFolders, le
 }
 
 export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
     const [labels = []] = useLabels();
     const [folders] = useFolders();
     const treeview = buildTreeview(folders);
     const { canScheduleSend } = useScheduleSendFeature();
 
-    const DRAFT_TYPE = hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.DRAFTS) ? ALL_DRAFTS : DRAFTS;
-    const SENT_TYPE = hasBit(mailSettings?.ShowMoved || 0, SHOW_MOVED.SENT) ? ALL_SENT : SENT;
-    const { AlmostAllMail } = mailSettings || {};
+    const DRAFT_TYPE = hasBit(mailSettings.ShowMoved, SHOW_MOVED.DRAFTS) ? ALL_DRAFTS : DRAFTS;
+    const SENT_TYPE = hasBit(mailSettings.ShowMoved, SHOW_MOVED.SENT) ? ALL_SENT : SENT;
+    const { AlmostAllMail } = mailSettings;
     const defaultFolders: ItemDefaultFolder[] = [
         AlmostAllMail
             ? {

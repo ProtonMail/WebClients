@@ -1,8 +1,10 @@
 import { useCallback } from 'react';
 
-import { useApi, useAuthentication, useMailSettings } from '@proton/components';
+import { useApi, useAuthentication } from '@proton/components';
 import { WorkerDecryptionResult } from '@proton/crypto';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import {
     handleDispatchLoadFakeImagesProxy,
@@ -29,7 +31,7 @@ export const useLoadRemoteImages = (localID: string) => {
     const dispatch = useAppDispatch();
     const api = useApi();
     const getMessage = useGetMessage();
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
     const authentication = useAuthentication();
 
     return useCallback(async () => {
@@ -66,7 +68,7 @@ export const useLoadEmbeddedImages = (localID: string) => {
     const getAttachment = useGetAttachment();
     const getMessage = useGetMessage();
     const getMessageKeys = useGetMessageKeys();
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
 
     const onUpdateAttachment = (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => {
         dispatch(updateAttachment({ ID, attachment }));

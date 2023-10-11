@@ -55,9 +55,9 @@ type UseSidebarElementsResponse = [
 ];
 
 const useMoveSystemFolders = ({
-    showMoved = 0,
+    showMoved,
     showScheduled,
-    showAlmostAllMail = 0,
+    showAlmostAllMail,
 }: UseMoveSystemFoldersProps): UseSidebarElementsResponse => {
     const api = useApi();
     const abortUpdateOrderCallRef = useRef<AbortController>(new AbortController());

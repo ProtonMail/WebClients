@@ -1,9 +1,11 @@
 import { c } from 'ttag';
 
 import { Kbd, Vr } from '@proton/atoms';
-import { Icon, ToolbarButton, useMailSettings } from '@proton/components';
+import { Icon, ToolbarButton } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { useLabelActions } from '../../hooks/useLabelActions';
 import DeleteButton from './DeleteButton';
@@ -21,7 +23,7 @@ interface Props {
 }
 
 const MoveButtons = ({ labelID = '', isExtraTiny, viewportIsNarrow, selectedIDs = [], onMove, onDelete }: Props) => {
-    const [{ Shortcuts = 0 } = {}] = useMailSettings();
+    const { Shortcuts } = useMailModel('MailSettings');
     const [loading, withLoading] = useLoading();
 
     let [actions] = useLabelActions(labelID);

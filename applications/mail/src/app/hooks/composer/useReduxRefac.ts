@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
 
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
-import { useAddresses, useMailSettings, useUserSettings } from '@proton/components/hooks';
+import { useAddresses, useUserSettings } from '@proton/components/hooks';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { MessageChange } from '../../components/composer/Composer';
 import { getAddressFromEmail } from '../../helpers/addresses';
@@ -20,7 +22,7 @@ interface Props {
 }
 
 const useReduxRefac = ({ composerID, modelMessage, handleChange, handleChangeContent }: Props) => {
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
     const [userSettings] = useUserSettings();
     const [addresses = []] = useAddresses();
     const composer = useAppSelector((state) => selectComposer(state, composerID || ''));

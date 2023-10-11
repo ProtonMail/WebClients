@@ -16,7 +16,6 @@ import {
     useGetAddressKeys,
     useGetCalendarEventRaw,
     useGetCalendars,
-    useMailSettings,
     useNotifications,
 } from '@proton/components';
 import { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
@@ -45,6 +44,7 @@ import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getParsedHeadersFirstValue } from '@proton/shared/lib/mail/messages';
 
 import { useContactsMap } from 'proton-mail/hooks/contact/useContacts';
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { getEventLocalStartEndDates } from '../../../../helpers/calendar/emailReminder';
 import { getParticipantsList } from '../../../../helpers/calendar/invite';
@@ -66,7 +66,7 @@ interface EmailReminderWidgetProps {
 }
 
 const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
     const eventReminderRef = useRef<HTMLDivElement>(null);
 
     const calendarIdHeader = getParsedHeadersFirstValue(message, 'X-Pm-Calendar-Calendarid');

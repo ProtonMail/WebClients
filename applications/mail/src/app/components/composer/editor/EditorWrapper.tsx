@@ -1,10 +1,11 @@
 import { memo, useCallback, useEffect, useRef, useState } from 'react';
 
-import { Editor, EditorActions, EditorMetadata, EditorTextDirection, useHandler } from '@proton/components';
+import { Editor, EditorActions, EditorMetadata, useHandler } from '@proton/components';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 import diff from '@proton/utils/diff';
 
@@ -75,7 +76,7 @@ const EditorWrapper = ({
 
     const canRenderEditor = !!message.data?.MIMEType;
     const isPlainText = testIsPlainText(message.data);
-    const rightToLeft = message.data?.RightToLeft ? EditorTextDirection.RightToLeft : EditorTextDirection.LeftToRight;
+    const rightToLeft = message.data?.RightToLeft ? DIRECTION.RIGHT_TO_LEFT : DIRECTION.LEFT_TO_RIGHT;
 
     // Detect document ready
     useEffect(() => {
@@ -194,8 +195,8 @@ const EditorWrapper = ({
         if (documentReady && (isPlainText || editorReady)) {
             handleSetContent(message);
 
-            if (rightToLeft === EditorTextDirection.RightToLeft) {
-                editorActionsRef.current?.setTextDirection?.(EditorTextDirection.RightToLeft);
+            if (rightToLeft === DIRECTION.RIGHT_TO_LEFT) {
+                editorActionsRef.current?.setTextDirection?.(DIRECTION.RIGHT_TO_LEFT);
             }
 
             const isInitialContentSetInEditor = editorReady && !isPlainText;

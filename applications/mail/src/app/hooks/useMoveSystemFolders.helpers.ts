@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
-import { LINKED_LABEL_IDS, MAILBOX_LABEL_IDS, SHOW_MOVED } from '@proton/shared/lib/constants';
+import { LINKED_LABEL_IDS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 import move from '@proton/utils/move';
 import orderBy from '@proton/utils/orderBy';
 

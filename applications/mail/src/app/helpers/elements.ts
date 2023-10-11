@@ -30,7 +30,7 @@ const { INBOX, TRASH, SPAM, ARCHIVE, SCHEDULED } = MAILBOX_LABEL_IDS;
 
 export interface TypeParams {
     labelID?: string;
-    mailSettings?: any;
+    mailSettings: any;
     location: Location;
 }
 
