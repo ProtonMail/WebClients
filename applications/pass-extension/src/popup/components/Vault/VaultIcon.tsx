@@ -13,16 +13,24 @@ import './VaultIcon.scss';
 export type VaultIconName = VaultIconEnum | 'pass-all-vaults' | 'pass-trash';
 
 type Props = {
-    color?: VaultColorEnum;
-    icon?: VaultIconName;
-    size?: IconSize;
     background?: boolean;
     className?: string;
+    color?: VaultColorEnum;
+    highlighted?: boolean;
+    icon?: VaultIconName;
+    size?: IconSize;
 };
 
 const rem = (px: number) => `${px / parseFloat(getComputedStyle(document.documentElement).fontSize)}rem`;
 
-export const VaultIcon: VFC<Props> = ({ icon = 'pass-all-vaults', color, size = 20, background, className }) => (
+export const VaultIcon: VFC<Props> = ({
+    className,
+    background,
+    highlighted,
+    size = 20,
+    color,
+    icon = 'pass-all-vaults',
+}) => (
     <span
         className={clsx([
             `pass-vault-icon rounded-xl relative w-custom h-custom`,
@@ -31,7 +39,9 @@ export const VaultIcon: VFC<Props> = ({ icon = 'pass-all-vaults', color, size = 
             className,
         ])}
         style={{
-            '--vault-icon-color': VAULT_COLOR_MAP[color ?? VaultColorEnum.COLOR1],
+            '--vault-icon-color': highlighted
+                ? 'var(--interaction-norm-contrast)'
+                : VAULT_COLOR_MAP[color ?? VaultColorEnum.COLOR1],
             '--w-custom': rem(background ? size * 2 : size),
             '--h-custom': rem(background ? size * 2 : size),
         }}
