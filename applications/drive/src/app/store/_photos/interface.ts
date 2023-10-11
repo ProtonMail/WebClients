@@ -1,6 +1,6 @@
 import { DeepPartial } from '@proton/shared/lib/interfaces';
 
-import { DecryptedLink } from '../_links';
+import type { DecryptedLink } from '../_links/interface';
 
 export interface Photo {
     linkId: string;
@@ -18,4 +18,5 @@ export type PhotoLink = DeepPartial<DecryptedLink> & {
         photo: Photo;
     };
 };
-export type PhotoGridItem = PhotoLink | string;
+export type PhotoGroup = string;
+export type PhotoGridItem = PhotoLink | PhotoGroup;

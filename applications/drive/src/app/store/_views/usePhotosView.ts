@@ -127,3 +127,5 @@ export const usePhotosView = () => {
         isLoadingMore: isLoading && !!photos.length,
     };
 };
+
+export default usePhotosView;
