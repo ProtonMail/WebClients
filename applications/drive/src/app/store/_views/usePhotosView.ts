@@ -4,9 +4,9 @@ import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 
 import { DriveEvents, useDriveEventManager } from '../_events';
 import { useLink, useLinksListing } from '../_links';
-import { sortWithCategories, usePhotos } from '../_photos';
+import { isPhotoGroup, sortWithCategories, usePhotos } from '../_photos';
 import type { PhotoLink } from '../_photos';
-import { isGroup, useAbortSignal, useMemoArrayNoMatterTheOrder } from './utils';
+import { useAbortSignal, useMemoArrayNoMatterTheOrder } from './utils';
 
 /**
  * For Photos, we listen for delete and move events
@@ -77,7 +77,7 @@ export const usePhotosView = () => {
         let photoLinkIds: string[] = [];
 
         photosViewData.forEach((item, index) => {
-            if (!isGroup(item)) {
+            if (!isPhotoGroup(item)) {
                 photoLinkIdToIndexMap[item.linkId] = index;
                 photoLinkIds.push(item.linkId);
             }
