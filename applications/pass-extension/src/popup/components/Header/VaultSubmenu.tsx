@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button, ButtonLike } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import {
     Collapsible,
     CollapsibleContent,
@@ -12,199 +12,19 @@ import {
     CollapsibleHeaderIconButton,
     Icon,
 } from '@proton/components';
-import { selectAllTrashedItems, selectDefaultVault, selectShare, selectVaultsWithItemsCount } from '@proton/pass/store';
-import { type MaybeNull, ShareRole, type ShareType, type VaultShare } from '@proton/pass/types';
+import { selectDefaultVault, selectShare, selectVaultsWithItemsCount } from '@proton/pass/store';
+import { type MaybeNull, type ShareType, type VaultShare } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
-import type { VaultColor as VaultColorEnum } from '@proton/pass/types/protobuf/vault-v1';
 import { isWritableVault } from '@proton/pass/utils/pass/share';
 
 import { useFeatureFlag } from '../../../shared/hooks/useFeatureFlag';
-import { CountLabel } from '../Dropdown/CountLabel';
-import { DropdownMenuButton } from '../Dropdown/DropdownMenuButton';
-import { VaultIcon, type VaultIconName } from '../Vault/VaultIcon';
+import { VaultIcon } from '../Vault/VaultIcon';
+import { TrashItem } from './VaultSubmenu.TrashItem';
+import { VaultItem } from './VaultSubmenu.VaultItem';
+import type { VaultOption } from './VaultSubmenu.utils';
+import { getVaultOptionInfo } from './VaultSubmenu.utils';
 
-type VaultOption = 'all' | 'trash' | VaultShare;
-
-const getVaultOptionInfo = (
-    vault: VaultOption
-): { id: null | string; label: string; path: string; color?: VaultColorEnum; icon?: VaultIconName } => {
-    switch (vault) {
-        case 'all':
-            return { id: null, label: c('Label').t`All vaults`, path: '/' };
-        case 'trash':
-            return { id: null, label: c('Label').t`Trash`, path: '/trash', icon: 'pass-trash' };
-        default:
-            return {
-                id: vault.shareId,
-                label: vault.content.name,
-                path: `/share/${vault.shareId}`,
-                color: vault.content.display.color,
-                icon: vault.content.display.icon,
-            };
-    }
-};
-
-type VaultItemProps = {
-    share?: VaultShare;
-    label: string;
-    count: number;
-    selected: boolean;
-    onSelect: () => void;
-    onEdit?: () => void;
-    onDelete?: () => void;
-    onInvite?: () => void;
-    onManage?: () => void;
-    onLeave?: () => void;
-    shared?: boolean;
-};
-
-const handleClickEvent = (handler?: () => void) => (evt: React.MouseEvent) => {
-    evt.preventDefault();
-    evt.stopPropagation();
-    handler?.();
-};
-
-export const VaultItem: VFC<VaultItemProps> = ({
-    share,
-    label,
-    count,
-    selected,
-    onSelect,
-    onDelete,
-    onEdit,
-    onInvite,
-    onManage,
-    onLeave,
-    shared = false,
-}) => {
-    const withActions = onEdit || onDelete || onInvite || onManage || onLeave;
-    const sharingEnabled = useFeatureFlag(PassFeature.PassSharingV1) && share !== undefined;
-
-    return (
-        <DropdownMenuButton
-            onClick={() => onSelect()}
-            isSelected={selected}
-            label={<CountLabel label={label} count={count} />}
-            extra={
-                sharingEnabled &&
-                shared && (
-                    <ButtonLike
-                        as="div"
-                        icon
-                        pill
-                        size="small"
-                        color="weak"
-                        onClick={handleClickEvent(onManage)}
-                        shape="ghost"
-                        title={c('Action').t`See members`}
-                    >
-                        <Icon name="users" alt={c('Action').t`See members`} color="var(--text-weak)" />
-                    </ButtonLike>
-                )
-            }
-            icon={
-                <VaultIcon
-                    className="flex-item-noshrink"
-                    size={16}
-                    color={share?.content.display.color}
-                    icon={share?.content.display.icon}
-                />
-            }
-            quickActions={
-                withActions && (
-                    <>
-                        {onEdit && share && isWritableVault(share) && (
-                            <DropdownMenuButton
-                                label={c('Action').t`Edit vault`}
-                                icon="pen"
-                                onClick={handleClickEvent(onEdit)}
-                            />
-                        )}
-
-                        {sharingEnabled && shared && (
-                            <DropdownMenuButton
-                                className="flex flex-align-items-center py-2 px-4"
-                                onClick={handleClickEvent(onManage)}
-                                icon="users"
-                                label={
-                                    share.shareRoleId === ShareRole.ADMIN
-                                        ? c('Action').t`Manage access`
-                                        : c('Action').t`See members`
-                                }
-                            />
-                        )}
-
-                        {sharingEnabled && !shared && (
-                            <DropdownMenuButton
-                                className="flex flex-align-items-center py-2 px-4"
-                                onClick={handleClickEvent(onInvite)}
-                                icon="user-plus"
-                                label={c('Action').t`Share`}
-                            />
-                        )}
-
-                        {share?.owner && (
-                            <DropdownMenuButton
-                                disabled={!onDelete}
-                                onClick={handleClickEvent(onDelete)}
-                                label={c('Action').t`Delete vault`}
-                                icon="trash"
-                                danger
-                            />
-                        )}
-
-                        {sharingEnabled && shared && !share.owner && (
-                            <DropdownMenuButton
-                                className="flex flex-align-items-center py-2 px-4"
-                                onClick={handleClickEvent(onLeave)}
-                                icon="cross-circle"
-                                label={c('Action').t`Leave vault`}
-                                danger
-                            />
-                        )}
-                    </>
-                )
-            }
-        />
-    );
-};
-
-type TrashItemProps = {
-    handleTrashRestore: () => void;
-    handleTrashEmpty: () => void;
-    onSelect: () => void;
-    selected: boolean;
-};
-const TrashItem: VFC<TrashItemProps> = ({ onSelect, selected, handleTrashRestore, handleTrashEmpty }) => {
-    const count = useSelector(selectAllTrashedItems).length;
-
-    return (
-        <DropdownMenuButton
-            label={<CountLabel label={getVaultOptionInfo('trash').label} count={count} />}
-            icon="trash"
-            isSelected={selected}
-            onClick={onSelect}
-            quickActions={
-                <>
-                    <DropdownMenuButton
-                        onClick={handleTrashRestore}
-                        label={c('Label').t`Restore all items`}
-                        icon="arrow-up-and-left"
-                    />
-
-                    <DropdownMenuButton
-                        onClick={handleTrashEmpty}
-                        label={c('Label').t`Empty trash`}
-                        icon="trash-cross"
-                        danger
-                    />
-                </>
-            }
-        />
-    );
-};
-
-export const VaultSubmenu: VFC<{
+type Props = {
     selectedShareId: MaybeNull<string>;
     inTrash: boolean;
     handleVaultSelect: (shareId: MaybeNull<string>) => void;
@@ -216,7 +36,9 @@ export const VaultSubmenu: VFC<{
     handleVaultLeave: (vault: VaultShare) => void;
     handleTrashRestore: () => void;
     handleTrashEmpty: () => void;
-}> = ({
+};
+
+export const VaultSubmenu: VFC<Props> = ({
     selectedShareId,
     inTrash,
     handleVaultSelect,
@@ -230,11 +52,14 @@ export const VaultSubmenu: VFC<{
     handleTrashEmpty,
 }) => {
     const history = useHistory();
+
+    const sharingEnabled = useFeatureFlag(PassFeature.PassSharingV1);
+    const primaryVaultDisabled = useFeatureFlag(PassFeature.PassRemovePrimaryVault);
+
     const vaults = useSelector(selectVaultsWithItemsCount);
     const defaultVault = useSelector(selectDefaultVault);
-    const primaryVaultDisabled = useFeatureFlag(PassFeature.PassRemovePrimaryVault);
     const selectedVault = useSelector(selectShare<ShareType.Vault>(selectedShareId ?? ''));
-
+    const selectedVaultOption = getVaultOptionInfo(selectedVault || (inTrash ? 'trash' : 'all'));
     const totalCount = useMemo(() => vaults.reduce<number>((subtotal, { count }) => subtotal + count, 0), [vaults]);
 
     const handleSelect = (vault: VaultOption) => {
@@ -242,8 +67,6 @@ export const VaultSubmenu: VFC<{
         handleVaultSelect(id);
         history.push(path);
     };
-
-    const selectedVaultOption = getVaultOptionInfo(selectedVault || (inTrash ? 'trash' : 'all'));
 
     return (
         <Collapsible>
@@ -276,11 +99,9 @@ export const VaultSubmenu: VFC<{
                 />
 
                 {vaults.map((vault) => {
-                    const isDefaultOrPrimaryVault = primaryVaultDisabled
-                        ? defaultVault.shareId === vault.shareId
-                        : vault.primary;
-
+                    const isDefaultOrPrimaryVault = defaultVault.shareId === vault.shareId;
                     const canDelete = vault.owner && !isDefaultOrPrimaryVault;
+                    const sharable = sharingEnabled && (primaryVaultDisabled || !isDefaultOrPrimaryVault);
 
                     return (
                         <VaultItem
@@ -289,13 +110,13 @@ export const VaultSubmenu: VFC<{
                             count={vault.count}
                             label={vault.content.name}
                             selected={!inTrash && selectedShareId === vault.shareId}
+                            sharable={sharable}
                             onSelect={() => handleSelect(vault)}
                             onDelete={canDelete ? () => handleVaultDelete(vault) : undefined}
-                            onEdit={() => handleVaultEdit(vault)}
+                            onEdit={isWritableVault(vault) ? () => handleVaultEdit(vault) : undefined}
                             onInvite={() => handleVaultInvite(vault)}
                             onManage={() => handleVaultManage(vault)}
                             onLeave={() => handleVaultLeave(vault)}
-                            shared={vault.shared}
                         />
                     );
                 })}
