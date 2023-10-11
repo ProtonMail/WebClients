@@ -13,7 +13,6 @@ import { truthy } from '@proton/pass/utils/fp';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { navigateToUpgrade } from '../../../../../shared/components/upgrade/UpgradeButton';
-import { useFeatureFlag } from '../../../../../shared/hooks/useFeatureFlag';
 import type { IFrameCloseOptions, IFrameMessage } from '../../../../types';
 import { IFrameMessageType } from '../../../../types';
 import { useIFrameContext } from '../../context/IFrameContextProvider';
@@ -29,8 +28,8 @@ type Props = {
 };
 
 export const ItemsList: VFC<Props> = ({ items, needsUpgrade, visible, onMessage, onClose }) => {
-    const { settings } = useIFrameContext();
-    const primaryVaultDisabled = useFeatureFlag(PassFeature.PassRemovePrimaryVault);
+    const { settings, features } = useIFrameContext();
+    const primaryVaultDisabled = features[PassFeature.PassRemovePrimaryVault] ?? false;
 
     useEffect(() => {
         if (visible) {
