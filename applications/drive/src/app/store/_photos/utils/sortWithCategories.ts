@@ -1,10 +1,10 @@
 import { fromUnixTime, isThisMonth, isThisYear } from 'date-fns';
 import { c } from 'ttag';
 
-import type { PhotoGridItem, PhotoLink } from '../interface';
+import type { PhotoGridItem, PhotoGroup, PhotoLink } from '../interface';
 import { getMonthFormatter, getMonthYearFormatter } from './dateFormatter';
 
-const dateToCategory = (timestamp: number): string => {
+const dateToCategory = (timestamp: number): PhotoGroup => {
     const date = fromUnixTime(timestamp);
 
     if (isThisMonth(date)) {
