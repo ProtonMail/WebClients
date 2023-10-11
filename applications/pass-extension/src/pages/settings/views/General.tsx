@@ -10,6 +10,7 @@ import { useFeatureFlag } from '../../../shared/hooks/useFeatureFlag';
 import { ApplicationLogs } from '../component/ApplicationLogs';
 import { Behaviors } from '../component/Behaviors';
 import { Locale } from '../component/Locale';
+import { SettingsPanel } from '../component/SettingsPanel';
 import { VaultSetting } from '../component/VaultSetting';
 
 export const General: VFC = () => {
@@ -20,14 +21,16 @@ export const General: VFC = () => {
         <>
             <Locale />
             {!primaryVaultDisabled && (
-                <VaultSetting
-                    label={c('Label').t`Primary vault`}
-                    optionsSelector={selectOwnWritableVaults}
-                    valueSelector={selectDefaultVault}
-                    onSubmit={({ shareId, content }) =>
-                        dispatch(vaultSetPrimaryIntent({ id: shareId, name: content.name }))
-                    }
-                />
+                <SettingsPanel title={c('Label').t`Vaults`}>
+                    <VaultSetting
+                        label={c('Label').t`Primary vault`}
+                        optionsSelector={selectOwnWritableVaults}
+                        valueSelector={selectDefaultVault}
+                        onSubmit={({ shareId, content }) =>
+                            dispatch(vaultSetPrimaryIntent({ id: shareId, name: content.name }))
+                        }
+                    />
+                </SettingsPanel>
             )}
             <Behaviors />
             <ApplicationLogs />
