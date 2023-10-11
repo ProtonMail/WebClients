@@ -405,7 +405,7 @@ describe.skip('MainContainer', () => {
             expect(screen.getByTitle(/Choose how many times this event will repeat/)).toBeInTheDocument();
         });
 
-        it('disables saving when there are over 100 participants and shows warnings', () => {
+        it('disables saving when there are over 100 participants and shows warnings', async () => {
             const contactEmails = Array(101)
                 .fill(1)
                 .map((item, index) => ({
@@ -446,10 +446,10 @@ describe.skip('MainContainer', () => {
             // userEvent.type(participantsInput, `u1@dd.co{enter}`);
             // fireEvent.blur(participantsInput);
 
-            contactEmails.forEach(({ Email, Name }) => {
-                userEvent.type(participantsInput, Email);
+            for (const { Email, Name } of contactEmails) {
+                await userEvent.type(participantsInput, Email);
                 fireEvent.click(screen.getByTitle(`${Name} <${Email}>`));
-            });
+            }
 
             expect(screen.getByText(/At most 100 participants are allowed per invitation/)).toBeInTheDocument();
             expect(screen.getByText(/101 participants/)).toBeInTheDocument();
@@ -512,9 +512,12 @@ describe.skip('MainContainer', () => {
             const locationInput = screen.queryByTitle(/Add event location/) as HTMLInputElement;
 
             // Using paste since it is much faster
-            userEvent.paste(titleInput, '1'.repeat(MAX_CHARS_API.TITLE + 2));
-            userEvent.paste(descriptionTextarea, '1'.repeat(MAX_CHARS_API.EVENT_DESCRIPTION + 2));
-            userEvent.paste(locationInput, '1'.repeat(MAX_CHARS_API.LOCATION + 2));
+            titleInput.focus();
+            await userEvent.paste('1'.repeat(MAX_CHARS_API.TITLE + 2));
+            descriptionTextarea.focus();
+            await userEvent.paste('1'.repeat(MAX_CHARS_API.EVENT_DESCRIPTION + 2));
+            locationInput.focus();
+            await userEvent.paste('1'.repeat(MAX_CHARS_API.LOCATION + 2));
 
             expect(descriptionTextarea.value.length).toBe(MAX_CHARS_API.EVENT_DESCRIPTION);
             expect(titleInput.value.length).toBe(MAX_CHARS_API.TITLE);
@@ -533,10 +536,10 @@ describe.skip('MainContainer', () => {
             // expect(screen.queryAllByLabelText(yesterdayRegex, { selector: 'button' })[1]).toBeDisabled();
 
             const participantsInput = screen.getByTestId('participants-input') as HTMLInputElement;
-            contactEmails.forEach(({ Email, Name }) => {
-                userEvent.type(participantsInput, Email);
+            for (const { Email, Name } of contactEmails) {
+                await userEvent.type(participantsInput, Email);
                 fireEvent.click(screen.getByTitle(`${Name} <${Email}>`));
-            });
+            }
 
             expect(screen.getByText(/1 participant/)).toBeInTheDocument();
 

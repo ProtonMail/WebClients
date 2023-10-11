@@ -1,5 +1,5 @@
 import { waitFor } from '@testing-library/react';
-import { screen, waitForElementToBeRemoved } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { useCalendarUserSettings } from '@proton/components/hooks/useCalendarUserSettings';
@@ -360,7 +360,7 @@ END:VCALENDAR`;
         await render(<ExtraEvents message={message} />, false);
 
         // test event title
-        await waitFor(() => expect(screen.queryByText('Walk on the moon')).toBeInTheDocument());
+        await screen.findByText('Walk on the moon');
 
         // test event date
         /**
@@ -394,7 +394,7 @@ END:VCALENDAR`;
         // test collapsed attendees
         const showAttendeesButton = screen.getByText('Show');
         expect(screen.queryByText(new RegExp(dummyUserEmailAddress))).not.toBeInTheDocument();
-        userEvent.click(showAttendeesButton);
+        await userEvent.click(showAttendeesButton);
         expect(screen.getByText('Show less')).toBeInTheDocument();
         expect(screen.getByText(new RegExp(anotherEmailAddress))).toBeInTheDocument();
         const selfAttendeeElement = screen.getByTitle(`You <${dummyUserEmailAddress}>`);
@@ -461,7 +461,7 @@ END:VCALENDAR`;
         await render(<ExtraEvents message={message} />, false);
 
         // test event title
-        await waitFor(() => expect(screen.queryByText('Walk on Mars')).toBeInTheDocument());
+        await screen.findByText('Walk on Mars');
 
         // test event warning
         expect(screen.getByText('Event already ended')).toBeInTheDocument();
@@ -508,7 +508,7 @@ END:VCALENDAR`;
         await render(<ExtraEvents message={message} />, false);
 
         expect(screen.queryByTestId('ics-widget-summary')).not.toBeInTheDocument();
-        await waitFor(() => expect(screen.getByText('Unsupported event')).toBeInTheDocument());
+        await screen.findByText('Unsupported event');
     });
 
     it('should not duplicate error banners', async () => {
@@ -651,11 +651,7 @@ END:VCALENDAR`;
             await render(<ExtraEvents message={message} />, false);
 
             expect(
-                await waitFor(() =>
-                    screen.getByText(
-                        `${dummySenderEmailAddress} accepted your invitation and proposed a new time for this event.`
-                    )
-                )
+                await screen.findByText(`${dummySenderEmailAddress} accepted your invitation and proposed a new time for this event.`)
             ).toBeInTheDocument();
         });
 
@@ -692,9 +688,7 @@ END:VCALENDAR`;
             await render(<ExtraEvents message={message} />, false);
 
             expect(
-                await waitFor(() =>
-                    screen.getByText(/This response is out of date. The event does not exist in your calendar anymore./)
-                )
+                await screen.findByText(/This response is out of date. The event does not exist in your calendar anymore./)
             ).toBeInTheDocument();
         });
 
@@ -760,11 +754,7 @@ END:VCALENDAR`;
             await render(<ExtraEvents message={message} />, false);
 
             expect(
-                await waitFor(() =>
-                    screen.getByText(
-                        `${dummySenderEmailAddress} asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.`
-                    )
-                )
+                await screen.findByText(`${dummySenderEmailAddress} asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.`)
             ).toBeInTheDocument();
         });
 
@@ -830,9 +820,7 @@ END:VCALENDAR`;
             await render(<ExtraEvents message={message} />, false);
 
             expect(
-                await waitFor(() =>
-                    screen.getByText(`${dummySenderEmailAddress} had previously accepted your invitation.`)
-                )
+                await screen.findByText(`${dummySenderEmailAddress} had previously accepted your invitation.`)
             ).toBeInTheDocument();
         });
     });
@@ -921,7 +909,7 @@ END:VCALENDAR`;
             await render(<ExtraEvents message={message} />, false);
 
             expect(
-                await waitFor(() => screen.getByText(/This invitation is out of date. The event has been updated./))
+                await screen.findByText(/This invitation is out of date. The event has been updated./)
             ).toBeInTheDocument();
         });
 
@@ -1048,11 +1036,9 @@ END:VCALENDAR`;
 
             await render(<ExtraEvents message={message} />, false);
 
-            userEvent.click(await waitFor(() => screen.getByTitle(`Yes, I'll attend`)));
+            await userEvent.click(await screen.findByTitle(`Yes, I'll attend`));
 
-            await waitForElementToBeRemoved(() => screen.queryByText(/Loading/));
-
-            expect(screen.queryByTestId('ics-widget-summary')).not.toBeInTheDocument();
+            await waitFor(() => expect(screen.queryByTestId('ics-widget-summary')).not.toBeInTheDocument());
         });
 
         it('should show the correct UI for a supported ics with import PUBLISH', async () => {
