@@ -1,18 +1,17 @@
 import {
     KeyTransparencyError,
     fetchLatestEpoch,
-    fetchProof,
     ktSentryReport,
     ktSentryReportError,
-    verifyProofOfAbsenceForAllRevision,
-    verifyProofOfObsolescenceLatest,
-} from "@proton/key-transparency/lib";
+    verifyAddressIsAbsent,
+    verifyAddressIsObsolete,
+} from '@proton/key-transparency/lib';
 import {
     Api,
+    FetchedSignedKeyList,
     KeyMigrationKTVerifier,
     KeyTransparencyActivation,
-    FetchedSignedKeyList,
-} from "@proton/shared/lib/interfaces";
+} from '@proton/shared/lib/interfaces';
 
 const createKeyMigrationKTVerifier = (ktActivation: KeyTransparencyActivation, api: Api): KeyMigrationKTVerifier => {
     return async (email: string, signedKeyList: Partial<FetchedSignedKeyList> | null | undefined) => {
@@ -22,19 +21,9 @@ const createKeyMigrationKTVerifier = (ktActivation: KeyTransparencyActivation, a
         try {
             const epoch = await fetchLatestEpoch(api);
             if (signedKeyList?.ObsolescenceToken) {
-                const revisionToCheck = signedKeyList?.Revision ?? 1;
-                const obsolescenceProof = await fetchProof(epoch.EpochID, email, revisionToCheck, api);
-                const absenceProof = await fetchProof(epoch.EpochID, email, revisionToCheck + 1, api);
-                await verifyProofOfObsolescenceLatest(
-                    obsolescenceProof,
-                    absenceProof,
-                    email,
-                    epoch.TreeHash,
-                    signedKeyList
-                );
+                await verifyAddressIsObsolete(epoch, email, signedKeyList, api);
             } else {
-                const absenceProof = await fetchProof(epoch.EpochID, email, 1, api);
-                await verifyProofOfAbsenceForAllRevision(absenceProof, email, epoch.TreeHash);
+                await verifyAddressIsAbsent(epoch, email, api);
             }
         } catch (error: any) {
             if (error instanceof KeyTransparencyError) {
