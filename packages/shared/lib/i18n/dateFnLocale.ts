@@ -16,6 +16,12 @@ export const getDateFnLocaleWithLongFormat = (a: Locale, b: Locale): Locale => {
     if (!b.formatLong?.time || !a.formatLong) {
         return a;
     }
+    const [languageA] = a.code?.split('-') || ['a'];
+    const [languageB] = b.code?.split('-') || ['b'];
+    // When the languages are the same, we can just straight up use the other locale.
+    if (languageB === languageA) {
+        return b;
+    }
     return {
         ...a,
         formatLong: {
