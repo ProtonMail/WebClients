@@ -35,7 +35,7 @@ export const verifyAddressIsObsolete = async (
         const absenceProof = await fetchProof(epoch.EpochID, email, Revision + 1, api);
         await verifyProofOfAbsenceForRevision(absenceProof, email, epoch.TreeHash, Revision + 1);
     };
-    await Promise.all([checkObsolescence, checkAbsence]);
+    await Promise.all([checkObsolescence(), checkAbsence()]);
 };
 
 /**
