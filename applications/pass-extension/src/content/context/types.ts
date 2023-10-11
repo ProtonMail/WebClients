@@ -1,3 +1,4 @@
+import type { FeatureFlagState } from '@proton/pass/store';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { WorkerState } from '@proton/pass/types';
 
@@ -12,20 +13,22 @@ export type WorkerStateChangeHandler = (state: WorkerState) => void;
 export type CSContextState = WorkerState & { active: boolean };
 export type CSFeatures = 'Autofill' | 'Autofill2FA' | 'AutosuggestAlias' | 'AutosuggestPassword' | 'Autosave';
 export interface ContentScriptContext {
-    scriptId: string;
     mainFrame: boolean;
     service: {
-        formManager: FormManager;
         autofill: AutofillService;
         autosave: AutosaveService;
-        iframe: IFrameService;
         detector: DetectorService;
+        formManager: FormManager;
+        iframe: IFrameService;
     };
-    getFeatures: () => Record<CSFeatures, boolean>;
-    getState: () => CSContextState;
-    setState: (update: Partial<CSContextState>) => void;
-    getSettings: () => ProxiedSettings;
-    setSettings: (update: Partial<ProxiedSettings>) => void;
-    getExtensionContext: () => ExtensionContextType;
+    scriptId: string;
     destroy: (options: { reason: string; recycle?: boolean }) => void;
+    getExtensionContext: () => ExtensionContextType;
+    getFeatureFlags: () => FeatureFlagState;
+    getFeatures: () => Record<CSFeatures, boolean>;
+    getSettings: () => ProxiedSettings;
+    getState: () => CSContextState;
+    setFeatureFlags: (update: FeatureFlagState) => void;
+    setSettings: (update: Partial<ProxiedSettings>) => void;
+    setState: (update: Partial<CSContextState>) => void;
 }

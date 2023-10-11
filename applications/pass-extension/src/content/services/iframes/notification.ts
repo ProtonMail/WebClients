@@ -80,12 +80,12 @@ export const createNotification = (): InjectedNotification => {
     );
 
     const notification: InjectedNotification = {
-        getState: () => iframe.state,
-        reset: pipe(iframe.reset, () => notification),
-        init: pipe(iframe.init, () => notification),
-        open: pipe(open, () => notification),
         close: pipe(iframe.close, () => notification),
         destroy: iframe.destroy,
+        getState: () => iframe.state,
+        init: pipe(iframe.init, () => notification),
+        open: pipe(open, () => notification),
+        setPort: pipe(iframe.setPort, () => notification),
     };
 
     return notification;
