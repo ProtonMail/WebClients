@@ -13,6 +13,7 @@ import {
     StyledPayPalButton,
     usePayment,
 } from '@proton/components/containers';
+import { getRenewalNoticeText } from '@proton/components/containers/payments/RenewalNotice';
 import { getTotalBillingText } from '@proton/components/containers/payments/helper';
 import { getDefaultVerifyPayment } from '@proton/components/containers/payments/usePaymentToken';
 import { useConfig } from '@proton/components/hooks';
@@ -459,6 +460,9 @@ const AccountStepPayment = ({
                                         </div>
                                     </>
                                 )}
+                                <div className="text-sm color-weak">
+                                    <span>{getRenewalNoticeText({ renewCycle: options.cycle })}</span>
+                                </div>
                             </div>
                         </RightPlanSummary>
                     </RightSummary>

@@ -6,18 +6,19 @@ import clsx from '@proton/utils/clsx';
 
 import { Icon, Time } from '../../components';
 
-export type Props = {
-    /**
-     * Number of months until renewal
-     */
+export type RenewalNoticeProps = {
     renewCycle: number;
-    isCustomBilling: boolean;
-    isScheduledSubscription: boolean;
+    isCustomBilling?: boolean;
+    isScheduledSubscription?: boolean;
     subscription?: Subscription;
-    className?: string;
 };
 
-const RenewalNotice = ({ renewCycle, isCustomBilling, isScheduledSubscription, subscription, className }: Props) => {
+export const getRenewalNoticeText = ({
+    renewCycle,
+    isCustomBilling,
+    isScheduledSubscription,
+    subscription,
+}: RenewalNoticeProps) => {
     let unixRenewalTime: number = +addMonths(new Date(), renewCycle) / 1000;
     if (isCustomBilling && subscription) {
         unixRenewalTime = subscription.PeriodEnd;
@@ -34,13 +35,27 @@ const RenewalNotice = ({ renewCycle, isCustomBilling, isScheduledSubscription, s
         </Time>
     );
 
+    return c('Info').jt`Your subscription will automatically renew on ${renewalTime}.`;
+};
+
+export interface Props extends RenewalNoticeProps {
+    className?: string;
+}
+
+const RenewalNotice = ({ renewCycle, isCustomBilling, isScheduledSubscription, subscription, className }: Props) => {
     return (
         <div className={clsx('flex flex-nowrap color-weak', className)}>
             <span className="flex-item-noshrink">
                 <Icon name="info-circle" size={16} />
             </span>
-            <span className="flex-item-fluid ml-2 mt-0.5 text-sm">{c('Info')
-                .jt`Your subscription will renew automatically on ${renewalTime}.`}</span>
+            <span className="flex-item-fluid ml-2 mt-0.5 text-sm">
+                {getRenewalNoticeText({
+                    renewCycle,
+                    isCustomBilling,
+                    isScheduledSubscription,
+                    subscription,
+                })}
+            </span>
         </div>
     );
 };
