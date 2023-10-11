@@ -9,6 +9,13 @@ import { createAsyncQueue } from '../../utils/parallelRunners';
 import { useLink } from '../_links';
 
 interface DownloadProviderState {
+    /**
+     * Adds a thumbnail to the download queue.
+     *
+     * @param domRef If provided, will cancel the query if `ref.current` is null
+     *               when the queue processes the thumbnail. This is useful to
+     *               avoid processing items which are no longer visible.
+     */
     addToDownloadQueue: (
         shareId: string,
         linkId: string,
@@ -95,6 +102,7 @@ export const ThumbnailsDownloadProvider = ({
             });
     };
 
+    // See JSDoc comment in the interface on top of this file.
     const addToDownloadQueue = (
         shareId: string,
         linkId: string,
