@@ -94,7 +94,7 @@ interface Props<ESItemMetadata, ESSearchParameters, ESItemContent = void> {
 }
 
 /**
- * Provide the core funcionalities of ES.
+ * Provide the core functionalities of ES.
  * @param refreshMask A number representing the bit the BE sets to REFRESH_ALL on the specific
  * client
  * @param esCallbacks All the callbacks that are product-specific and therefore need to be passed
@@ -422,7 +422,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             isRefreshing: true,
         }));
 
-        // Resetting is necessery to show appropriate UI when syncing immediately after refreshing
+        // Resetting is necessary to show appropriate UI when syncing immediately after refreshing
         void resetProgress('content');
 
         try {
@@ -572,7 +572,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         }
 
         // esSupported is false when we can't initialise IndexedDB and therefore ES
-        // will be cache only.
+        // will be cache-only.
         setESStatus((esStatus) => ({
             ...esStatus,
             esSupported,
@@ -638,8 +638,8 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         const wasESDBCreated = await checkVersionedESDB(userID);
 
         // Paginated indexing has the problem that if the user deletes completely some items
-        // in pages that have already been queried, all subsequent items are shifted. Therefore
-        // later pages will contain different items than if the deletion had never occured. The
+        // in pages that have already been queried, all subsequent items are shifted. Therefore,
+        // later pages will contain different items than if the deletion had never occurred. The
         // end result is that some items are not indexed. Since it's tricky and slow to figure
         // out which ones, we instead just delete everything and notify users
         if (wasESDBCreated) {
@@ -664,7 +664,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         }
 
         // In case this process did not create an IDB, e.g. because it's a memory only
-        // metadata index, it cannot be considered succesfull as otherwise content
+        // metadata index, it cannot be considered successful as otherwise content
         // indexing would be tried
         return wasESDBCreated;
     };
@@ -1078,7 +1078,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
      * which then needs to be displayed in the UI. Note that the keywords to highlight are extracted
      * directly with the parseSearchParams callback
      * @param content the string where to insert the markdown
-     * @param setAutoScroll whether to insert the data-auto-scroll attribute to the first istance of
+     * @param setAutoScroll whether to insert the data-auto-scroll attribute to the first instance of
      * the inserted mark tags. The UI should automatically scroll, if possible, to said first tag
      * @returns the string containing the markdown
      */
@@ -1162,7 +1162,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
      */
     const handleEvent = async (event: ESEvent<ESItemMetadata> | undefined) => {
         // An event can be undefined in case of network instability, but since the app doesn't receive
-        // the update inside the event it's ok to ignor it
+        // the update inside the event it's ok to ignore it
         if (!event) {
             return;
         }

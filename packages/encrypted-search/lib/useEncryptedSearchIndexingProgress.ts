@@ -19,11 +19,11 @@ const useEncryptedSearchIndexingProgress = () => {
         useState<ESIndexingState>(defaultESIndexingProgressState);
 
     /**
-     * Last record progress to compare with new new one
+     * Last record progress to compare with new one
      */
     const progressRecorderRef = useRef<[number, number]>([0, 0]);
     /**
-     * Last record timestamp to compare with new new one
+     * Last record timestamp to compare with new one
      */
     const recordTimestampRef = useRef<number | null>(null);
 
