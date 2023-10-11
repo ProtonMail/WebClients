@@ -22,23 +22,26 @@ import { INITIAL_POPUP_STATE, INITIAL_WORKER_STATE } from '../../../shared/const
 import { useExtensionContext } from '../../../shared/hooks';
 import { useRequestStatusEffect } from '../../../shared/hooks/useRequestStatusEffect';
 import { enhanceNotification } from '../../../shared/notification';
+import { useExpanded } from '../../hooks/useExpanded';
 
 export interface PopupContextValue extends ExtensionAppContextValue {
     initialized: boolean /* retrieved popup initial state */;
+    expanded: boolean /* is popup expanded into a separate window */;
     ready: boolean /* enable UI user actions */;
-    url: ParsedUrl /* current tab parsed URL */;
     state: WorkerState & { initial: PopupInitialState };
+    url: ParsedUrl /* current tab parsed URL */;
     sync: () => void;
 }
 
 export const PopupContext = createContext<PopupContextValue>({
     context: null,
     initialized: false,
+    expanded: false,
     ready: false,
-    url: parseUrl(),
     state: { ...INITIAL_WORKER_STATE, initial: INITIAL_POPUP_STATE },
-    logout: noop,
+    url: parseUrl(),
     lock: noop,
+    logout: noop,
     sync: noop,
 });
 
@@ -56,6 +59,8 @@ const PopupContextContainer: FC = ({ children }) => {
 
     const [initial, setInitial] = useState<MaybeNull<PopupInitialState>>(null);
     const syncing = useSelector(selectWorkerSyncing) || extensionContext.state.status === WorkerStatus.BOOTING;
+
+    const expanded = useExpanded();
 
     useRequestStatusEffect(requests.syncing(), {
         onStart: () =>
@@ -84,9 +89,10 @@ const PopupContextContainer: FC = ({ children }) => {
 
         return {
             ...extensionContext,
-            state: { ...state, initial: initial ?? INITIAL_POPUP_STATE },
-            ready: ready && !syncing /* worker ready and no ongoing syncs */,
             initialized: initial !== null /* `POPUP_INIT` response resolved */,
+            expanded,
+            ready: ready && !syncing /* worker ready and no ongoing syncs */,
+            state: { ...state, initial: initial ?? INITIAL_POPUP_STATE },
             url,
         };
     }, [extensionContext, syncing, initial]);
