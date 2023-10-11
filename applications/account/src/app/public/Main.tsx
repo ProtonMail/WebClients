@@ -10,10 +10,10 @@ const Main = ({ children, className, center = true, maxWidth = 'mw30r', disableS
     return (
         <div
             className={clsx(
-                'ui-standard w100 relative sign-layout shadow-color-primary px-6 pt-1 pb-6 sm:p-11 hardware-accelerated',
-                center && 'max-w100 mx-auto',
+                'ui-standard w-full relative sign-layout px-6 pt-1 pb-6 sm:p-11 hardware-accelerated',
+                center && 'max-w-full mx-auto',
                 disableShadow ? '' : 'sm:shadow-lifted',
-                maxWidth,
+                maxWidth ? maxWidth : 'max-w-full',
                 className
             )}
             {...rest}

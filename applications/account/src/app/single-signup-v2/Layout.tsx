@@ -60,14 +60,14 @@ const Layout = ({
                 {children}
                 {hasDecoration && (
                     <div className="flex flex-align-items-center flex-column">
-                        <Box className="w100">
+                        <Box className="w-full">
                             <footer
-                                className="w100 min-h-custom pb-8 flex flex-column flex-justify-space-between gap-4"
+                                className="w-full min-h-custom pb-8 flex flex-column flex-justify-space-between gap-4"
                                 style={{ '--min-h-custom': '12rem' }}
                             >
                                 <div className="mb-6"></div>
                                 {footer}
-                                <div className="w100 flex flex-justify-space-between on-mobile-flex-column">
+                                <div className="w-full flex flex-justify-space-between on-mobile-flex-column">
                                     <div className="flex gap-1 flex-column">
                                         <LayoutLogosV2 size={20} className="on-mobile-flex-justify-center" />
                                         <span className="text-sm color-weak text-center mb-4 lg:mb-0">

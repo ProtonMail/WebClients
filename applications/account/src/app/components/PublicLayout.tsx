@@ -27,7 +27,7 @@ const PublicLayout = ({ img, header, main, footer, below, className }: PublicLay
 
                 {main}
 
-                {footer && <div className="mt-8 w100 flex-item-noshrink">{footer}</div>}
+                {footer && <div className="mt-8 w-full flex-item-noshrink">{footer}</div>}
             </div>
             <div className="flex-item-fluid" />
             <div className="max-w80 w-custom flex-item-noshrink" style={{ '--w-custom': width }}>

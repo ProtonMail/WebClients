@@ -181,14 +181,6 @@
 	}
 }
 
-.plan-customiser {
-	& &-addon-label {
-		@include media('<=medium') {
-			min-inline-size: 8em;
-		}
-	}
-}
-
 .lg-text-nowrap {
 	@include media('>=small') {
 		white-space: nowrap;

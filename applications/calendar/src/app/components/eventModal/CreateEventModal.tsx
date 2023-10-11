@@ -106,7 +106,7 @@ const CreateEventModal = ({
             loading={loadingAction && lastAction === ACTION.SUBMIT}
             disabled={loadingAction || cannotSave}
             type="submit"
-            className={isCreateEvent ? 'on-tiny-mobile-w100' : ''}
+            className={isCreateEvent ? 'w-full sm:w-auto' : ''}
         >
             {c('Action').t`Save`}
         </Button>
@@ -140,7 +140,7 @@ const CreateEventModal = ({
     const endAlignedButtons = isCreateEvent ? (
         submitButton
     ) : (
-        <div className="flex on-tiny-mobile-w100 on-tiny-mobile-flex-column on-tiny-mobile-flex-column-reverse">
+        <div className="flex w-full sm:w-auto on-tiny-mobile-flex-column on-tiny-mobile-flex-column-reverse">
             {getCanDeleteEvent({
                 isOwnedCalendar,
                 isCalendarWritable,

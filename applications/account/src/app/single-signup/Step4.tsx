@@ -46,7 +46,7 @@ const Step4 = ({
                         <h1 className="h2 text-bold">{c('Info').t`Welcome`}</h1>
                         <span className="color-weak">{c('Info').t`to ${product} Business`}</span>
                     </div>
-                    <div className="pb-4 text-center m-auto w100">
+                    <div className="pb-4 text-center m-auto w-full">
                         <img src={illustration} alt={c('Onboarding').t`Welcome to ${product}`} />
                     </div>
                     <div className="text-center pt-7 md:pt-0" role="alert">
