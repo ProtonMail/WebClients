@@ -703,7 +703,10 @@ export enum PLAN_SERVICES {
 export const FREE_SUBSCRIPTION = {
     isFreeSubscription: true,
 };
-export function isFreeSubscription(obj: any): obj is typeof FREE_SUBSCRIPTION {
+
+export type FreeSubscription = typeof FREE_SUBSCRIPTION;
+
+export function isFreeSubscription(obj: any): obj is FreeSubscription {
     return !!obj && obj.isFreeSubscription && Object.keys(obj).length === 1;
 }
 
