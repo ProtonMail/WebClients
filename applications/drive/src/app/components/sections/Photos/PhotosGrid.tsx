@@ -4,6 +4,7 @@ import { Loader, useElementRect } from '@proton/components';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
 import type { PhotoGridItem } from '../../../store';
+import { isPhotoGroup } from '../../../store/_photos';
 import { PhotosCard, PhotosGroup } from './grid';
 
 type Props = {
@@ -107,7 +108,7 @@ export const PhotosGrid: FC<Props> = ({
         const animationOffset = Math.max(itemsPerLine === 7 ? 5 : 7, Math.round(itemsPerLine * 0.6));
 
         data.forEach((item, i) => {
-            if (typeof item === 'string') {
+            if (isPhotoGroup(item)) {
                 if (currentX != 0) {
                     currentY += itemHeight + gap;
                 }

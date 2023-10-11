@@ -1,9 +1,12 @@
 import { useCallback, useMemo, useState } from 'react';
 
+import { isPhotoGroup } from '../../../../store/_photos';
+import type { PhotoGroup } from '../../../../store/_photos/interface';
+
 type SelectionItem = { linkId: string };
 
 export const usePhotosSelection = <T extends SelectionItem>(
-    data: (T | string)[],
+    data: (T | PhotoGroup)[],
     photoLinkIdToIndexMap: Record<string, number>
 ) => {
     const [selection, setSelection] = useState<Record<string, boolean>>({});
@@ -33,7 +36,7 @@ export const usePhotosSelection = <T extends SelectionItem>(
 
     const getGroupLinkIds = useCallback(
         (groupIndex: number) => {
-            if (typeof data[groupIndex] !== 'string') {
+            if (!isPhotoGroup(data[groupIndex])) {
                 return [];
             }
 
@@ -42,7 +45,7 @@ export const usePhotosSelection = <T extends SelectionItem>(
             for (let i = groupIndex + 1; i < data.length; i++) {
                 const current = data[i];
 
-                if (typeof current === 'string') {
+                if (isPhotoGroup(current)) {
                     break;
                 }
 
@@ -58,7 +61,7 @@ export const usePhotosSelection = <T extends SelectionItem>(
         (index: number, isSelected: boolean) => {
             const item = data[index];
 
-            if (typeof item === 'string') {
+            if (isPhotoGroup(item)) {
                 setSelected(isSelected, ...getGroupLinkIds(index));
             } else {
                 setSelected(isSelected, item.linkId);
@@ -71,7 +74,7 @@ export const usePhotosSelection = <T extends SelectionItem>(
         () =>
             Object.keys(selection).reduce<T[]>((acc, linkId) => {
                 const item = data[photoLinkIdToIndexMap[linkId]];
-                if (item && typeof item !== 'string') {
+                if (item && !isPhotoGroup(item)) {
                     acc.push(item);
                 }
 
