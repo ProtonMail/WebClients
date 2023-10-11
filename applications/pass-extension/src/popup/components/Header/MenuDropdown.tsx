@@ -29,6 +29,7 @@ import { useActionWithRequest } from '../../../shared/hooks/useActionWithRequest
 import { useInviteContext } from '../../context/invite/InviteContextProvider';
 import { handleVaultDeletionEffects } from '../../context/items/ItemEffects';
 import { useConfirm } from '../../hooks/useConfirm';
+import { useExpandPopup } from '../../hooks/useExpandPopup';
 import { useItemsFilteringContext } from '../../hooks/useItemsFilteringContext';
 import { useNavigationContext } from '../../hooks/useNavigationContext';
 import { useOpenSettingsTab } from '../../hooks/useOpenSettingsTab';
@@ -150,6 +151,9 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
         },
     ];
 
+    const { expanded } = usePopupContext();
+    const expandPopup = useExpandPopup();
+
     return (
         <>
             <nav className={className}>
@@ -230,6 +234,14 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
                                 disabled={!ready}
                                 label={c('Action').t`Lock extension`}
                                 icon="lock"
+                            />
+                        )}
+
+                        {!expanded && (
+                            <DropdownMenuButton
+                                onClick={expandPopup}
+                                label={c('Action').t`Open in a window`}
+                                icon="arrow-out-square"
                             />
                         )}
 
