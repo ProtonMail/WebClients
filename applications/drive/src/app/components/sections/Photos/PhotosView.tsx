@@ -48,7 +48,7 @@ export const PhotosView: FC<void> = () => {
     const handleToolbarPreview = useCallback(() => {
         let selected = selectedItems[0];
 
-        if (selected) {
+        if (selectedItems.length === 1 && selected) {
             setPreviewLinkId(selected.linkId);
         }
     }, [selectedItems, setPreviewLinkId]);
