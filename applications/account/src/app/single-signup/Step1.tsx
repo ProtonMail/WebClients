@@ -1,7 +1,6 @@
 import { Dispatch, Fragment, ReactElement, ReactNode, SetStateAction, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { addMonths } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
@@ -18,6 +17,7 @@ import {
     usePayment,
 } from '@proton/components/containers';
 import Alert3ds from '@proton/components/containers/payments/Alert3ds';
+import { getRenewalNoticeText } from '@proton/components/containers/payments/RenewalNotice';
 import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
 import { getDriveAppFeature } from '@proton/components/containers/payments/features/drive';
 import { getMailAppFeature } from '@proton/components/containers/payments/features/mail';
@@ -63,11 +63,9 @@ import {
     VPN_CONNECTIONS,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
-import { formatIntlDate } from '@proton/shared/lib/date/formatIntlDate';
 import { SubscriptionCheckoutData, getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/subscription';
 import { getTermsURL, stringifySearchParams } from '@proton/shared/lib/helpers/url';
-import { browserLocaleCode } from '@proton/shared/lib/i18n';
 import { Currency, Cycle, CycleMapping, Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { generatePassword } from '@proton/shared/lib/password';
 import { getFreeServers, getPlusServers, getVpnServers } from '@proton/shared/lib/vpn/features';
@@ -102,8 +100,6 @@ import { Measure } from './interface';
 import { TelemetryPayType } from './measure';
 import PlanCustomizer from './planCustomizer/PlanCustomizer';
 import getAddonsPricing from './planCustomizer/getAddonsPricing';
-
-const today = new Date();
 
 const getPlanInformation = (
     selectedPlan: Plan,
@@ -218,38 +214,6 @@ const getPlanInformation = (
             ],
         };
     }
-};
-
-const getPeriodEnd = (date: Date, cycle: CYCLE) => {
-    return addMonths(date, 1 * cycle);
-};
-const getBilledFullText = (cycle: CYCLE) => {
-    if (cycle === CYCLE.MONTHLY) {
-        return c('vpn_2step: billing').t`Billed monthly`;
-    }
-    if (cycle === CYCLE.YEARLY) {
-        return c('vpn_2step: billing').t`Billed yearly`;
-    }
-    if (cycle === CYCLE.TWO_YEARS) {
-        return c('vpn_2step: billing').t`Billed every 2 years`;
-    }
-    if (cycle === CYCLE.FIFTEEN) {
-        return c('vpn_2step: billing').t`Billed every 15 months`;
-    }
-    if (cycle === CYCLE.THIRTY) {
-        return c('vpn_2step: billing').t`Billed every 30 months`;
-    }
-    return '';
-};
-
-const getRenewText = (cycle: CYCLE) => {
-    const periodEnd = getPeriodEnd(today, cycle);
-    const formattedEndTime = (
-        <time key="formatted-time">{formatIntlDate(periodEnd, { dateStyle: 'short' }, browserLocaleCode)}</time>
-    );
-    const billedText = getBilledFullText(cycle);
-    // translator: full string is "Billed every 2 years, renews on 17/07/2023"
-    return c('vpn_2step: billing').jt`${billedText}, renews on ${formattedEndTime}`;
 };
 
 const getYears = (n: number) => c('vpn_2step: info').ngettext(msgid`${n} year`, `${n} years`, n);
@@ -1490,7 +1454,7 @@ const Step1 = ({
                                                     </span>
                                                 </div>
                                                 <div className="text-sm color-weak">
-                                                    <span>{getRenewText(options.cycle)}</span>
+                                                    <span>{getRenewalNoticeText({ renewCycle: options.cycle })}</span>
                                                 </div>
                                             </div>
                                         </div>
