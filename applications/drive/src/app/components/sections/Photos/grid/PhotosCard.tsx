@@ -4,7 +4,7 @@ import { formatDuration } from 'date-fns';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button';
-import { Checkbox, FileIcon } from '@proton/components/components';
+import { Checkbox, FileIcon, Icon } from '@proton/components/components';
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import playCircleFilledIcon from '@proton/styles/assets/img/drive/play-circle-filled.svg';
@@ -31,7 +31,16 @@ type Props = {
 const getAltText = ({ mimeType, name }: PhotoLink) =>
     `${c('Label').t`Photo`} - ${getMimeTypeDescription(mimeType || '')} - ${name}`;
 
-export const PhotosCard: FC<Props> = ({ style, onRender, onRenderLoadedLink, photo, onClick, onSelect, selected, showCheckbox }) => {
+export const PhotosCard: FC<Props> = ({
+    style,
+    onRender,
+    onRenderLoadedLink,
+    photo,
+    onClick,
+    onSelect,
+    selected,
+    showCheckbox,
+}) => {
     const [imageReady, setImageReady] = useState(false);
     const ref = useRef(null);
 
@@ -65,6 +74,7 @@ export const PhotosCard: FC<Props> = ({ style, onRender, onRenderLoadedLink, pho
     }, [thumbUrl]);
 
     /*// TODO: Keyboard navigation*/
+
     return (
         <ButtonLike
             as="div"
@@ -86,23 +96,34 @@ export const PhotosCard: FC<Props> = ({ style, onRender, onRenderLoadedLink, pho
                     onSelect(!selected);
                 }}
             />
-            {!isThumbnailLoading && !photo.hasThumbnail && isActive && (
-                <div className="flex flex-align-items-center flex-justify-center w100 h100 photos-card-thumbnail photos-card-thumbnail--empty">
-                    <FileIcon mimeType={photo.mimeType || ''} size={48} />
-                </div>
-            )}
-            {!isThumbnailLoading && thumbUrl && isActive ? (
-                <div className="w100 h100 relative">
-                    <img src={thumbUrl} alt={getAltText(photo)} className="w100 h100 photos-card-thumbnail" />
-                    {photo.signatureIssues && (
-                        <SignatureIcon
-                            isFile
-                            signatureIssues={photo.signatureIssues}
-                            className="absolute top right mr-2 mt-2 color-danger"
-                        />
+
+            {!isThumbnailLoading && isActive ? (
+                <div className="w-full h-full relative">
+                    {!photo.hasThumbnail ? (
+                        <div className="flex flex-align-items-center flex-justify-center w-full h-full photos-card-thumbnail photos-card-thumbnail--empty">
+                            <FileIcon mimeType={photo.mimeType || ''} size={48} />
+                        </div>
+                    ) : (
+                        <img src={thumbUrl} alt={getAltText(photo)} className="w-full h-full photos-card-thumbnail" />
+                    )}
+                    {(photo.signatureIssues || photo.isShared) && (
+                        <div className="absolute top right mr-2 mt-2 flex flex-align-items-center gap-1">
+                            {photo.signatureIssues && (
+                                <SignatureIcon
+                                    isFile
+                                    signatureIssues={photo.signatureIssues}
+                                    className="color-danger"
+                                />
+                            )}
+                            {photo.isShared && (
+                                <div className="photos-card-share-icon rounded-50 flex flex-align-items-center flex-justify-center">
+                                    <Icon name="link" color="white" size={12} />
+                                </div>
+                            )}
+                        </div>
                     )}
                     {photo.mimeType && isVideo(photo.mimeType) && (
-                        <div className="w100 absolute bottom flex flex-justify-end flex-align-items-center px-2 py-2 photos-card-video-info">
+                        <div className="w-full absolute bottom flex flex-justify-end flex-align-items-center px-2 py-2 photos-card-video-info">
                             {photo.duration && (
                                 <time
                                     className="color-invert text-semibold mr-0.5"
