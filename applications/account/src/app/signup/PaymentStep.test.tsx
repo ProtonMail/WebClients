@@ -1,12 +1,9 @@
-import { act } from 'react-dom/test-utils';
-
-import { fireEvent, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { PAYMENT_TOKEN_STATUS } from '@proton/components/payments/core';
 import { CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { addApiMock, applyHOCs, withApi, withAuthentication, withConfig, withDeprecatedModals } from '@proton/testing';
-import lastItem from '@proton/utils/lastItem';
 import noop from '@proton/utils/noop';
 
 import PaymentStep, { Props } from './PaymentStep';
@@ -43,17 +40,7 @@ const PaymentStepContext = applyHOCs(
 
 let props: Props;
 
-beforeAll(() => {
-    jest.useFakeTimers();
-});
-
-afterAll(() => {
-    jest.useRealTimers();
-});
-
 beforeEach(() => {
-    jest.clearAllMocks();
-
     const plans: Props['plans'] = [
         {
             ID: '1',
@@ -137,10 +124,9 @@ it('should call onPay with the new token', async () => {
         Status: PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE,
     }));
 
-    const { container, findByTestId } = render(<PaymentStepContext {...props} />);
+    const { findByTestId, findByText } = render(<PaymentStepContext {...props} />);
 
-    const buttons = container.querySelectorAll('button');
-    const payButton = lastItem(buttons) as HTMLButtonElement;
+    const payButton = await findByText(/Pay /);
 
     expect(payButton).toBeDefined();
     expect(payButton).toHaveTextContent('Pay');
@@ -151,15 +137,13 @@ it('should call onPay with the new token', async () => {
     const exp = await findByTestId('exp');
     const postalCode = await findByTestId('postalCode');
 
-    userEvent.type(ccName, 'Arthur Morgan');
-    userEvent.type(ccNumber, '4242424242424242');
-    userEvent.type(cvc, '123');
-    userEvent.type(exp, '1230'); // stands for 12/30, i.e. December 2030
-    userEvent.type(postalCode, '12345');
+    await userEvent.type(ccName, 'Arthur Morgan');
+    await userEvent.type(ccNumber, '4242424242424242');
+    await userEvent.type(cvc, '123');
+    await userEvent.type(exp, '1230'); // stands for 12/30, i.e. December 2030
+    await userEvent.type(postalCode, '12345');
 
-    await act(async () => {
-        fireEvent.click(payButton);
-    });
+    await userEvent.click(payButton);
 
     expect(props.onPay).toHaveBeenCalledWith(
         {
