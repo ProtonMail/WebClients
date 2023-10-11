@@ -5,10 +5,10 @@ import { c } from 'ttag';
 import { NavigationControl, useAppTitle } from '@proton/components';
 import { Loader } from '@proton/components/components';
 
-import { PhotoLink, useThumbnailsDownload } from '../../../store';
-import { usePhotosView } from '../../../store/_views/usePhotosView';
+import { PhotoLink, usePhotosView, useThumbnailsDownload } from '../../../store';
 import PortalPreview from '../../PortalPreview';
 import { useDetailsModal } from '../../modals/DetailsModal';
+import { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
 import UploadDragDrop from '../../uploads/UploadDragDrop/UploadDragDrop';
 import ToolbarRow from '../ToolbarRow/ToolbarRow';
 import { PhotosEmptyView } from './PhotosEmptyView';
@@ -28,6 +28,7 @@ export const PhotosView: FC<void> = () => {
     );
 
     const [detailsModal, showDetailsModal] = useDetailsModal();
+    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
     const [previewLinkId, setPreviewLinkId] = useState<string | undefined>();
 
     const thumbnails = useThumbnailsDownload();
@@ -78,6 +79,7 @@ export const PhotosView: FC<void> = () => {
     return (
         <>
             {detailsModal}
+            {linkSharingModal}
             {previewItem && (
                 <PortalPreview
                     ref={previewRef}
@@ -87,6 +89,11 @@ export const PhotosView: FC<void> = () => {
                     key="portal-preview-photos"
                     open={!!previewItem}
                     date={previewItem.activeRevision.photo.captureTime}
+                    onShare={
+                        !!previewItem?.trashed
+                            ? undefined
+                            : () => showLinkSharingModal({ shareId, linkId: previewItem.linkId })
+                    }
                     onDetails={() =>
                         showDetailsModal({
                             shareId,
