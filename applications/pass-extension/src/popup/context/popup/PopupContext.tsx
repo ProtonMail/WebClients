@@ -6,14 +6,14 @@ import { c } from 'ttag';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { NotificationsContext } from '@proton/components';
 import { useNotifications } from '@proton/components/hooks';
-import { popupMessage, sendMessage } from '@proton/pass/extension/message';
-import { selectWorkerSyncing } from '@proton/pass/store';
+import { popupMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { workerReady } from '@proton/pass/lib/worker';
 import * as requests from '@proton/pass/store/actions/requests';
+import { selectWorkerSyncing } from '@proton/pass/store/selectors';
 import type { MaybeNull, PopupInitialState, WorkerState } from '@proton/pass/types';
 import { WorkerMessageType, type WorkerMessageWithSender, WorkerStatus } from '@proton/pass/types';
 import type { ParsedUrl } from '@proton/pass/utils/url';
 import { parseUrl } from '@proton/pass/utils/url';
-import { workerReady } from '@proton/pass/utils/worker';
 import noop from '@proton/utils/noop';
 
 import type { ExtensionAppContextValue } from '../../../shared/components/extension';
@@ -62,10 +62,10 @@ const PopupContextContainer: FC = ({ children }) => {
 
     const expanded = useExpanded();
 
-    useRequestStatusEffect(requests.syncing(), {
+    useRequestStatusEffect(requests.syncRequest(), {
         onStart: () =>
             createNotification({
-                key: requests.syncing(),
+                key: requests.syncRequest(),
                 showCloseButton: false,
                 text: (
                     <>

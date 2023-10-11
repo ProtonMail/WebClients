@@ -1,13 +1,13 @@
 import { type VFC, useEffect } from 'react';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import createApi from '@proton/pass/api/create-api';
-import type { ExtensionPersistedSession } from '@proton/pass/auth';
-import { resumeSession } from '@proton/pass/auth';
-import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
-import { browserLocalStorage } from '@proton/pass/extension/storage';
-import type { StorageInterface } from '@proton/pass/extension/storage/types';
-import browser from '@proton/pass/globals/browser';
+import { createApi } from '@proton/pass/lib/api/create-api';
+import type { ExtensionPersistedSession } from '@proton/pass/lib/auth/session';
+import { resumeSession } from '@proton/pass/lib/auth/session';
+import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { browserLocalStorage } from '@proton/pass/lib/extension/storage';
+import type { StorageInterface } from '@proton/pass/lib/extension/storage/types';
+import browser from '@proton/pass/lib/globals/browser';
 import type { LocalStoreData } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';

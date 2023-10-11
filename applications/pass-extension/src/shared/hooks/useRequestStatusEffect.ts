@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 
-import { selectRequestStatus } from '@proton/pass/store';
 import type { RequestType } from '@proton/pass/store/actions/with-request';
+import { selectRequestStatus } from '@proton/pass/store/selectors';
 import type { Maybe } from '@proton/pass/types';
 
 type Options = {

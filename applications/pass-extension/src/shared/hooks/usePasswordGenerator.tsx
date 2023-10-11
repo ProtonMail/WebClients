@@ -1,9 +1,10 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import type { GeneratePasswordOptions } from '@proton/pass/password';
-import { DEFAULT_PASSWORD_LENGTH, alphabeticChars, digitChars, generatePassword } from '@proton/pass/password';
-import { SeperatorOptions } from '@proton/pass/password/memorable';
+import { DEFAULT_PASSWORD_LENGTH, alphabeticChars, digitChars } from '@proton/pass/lib/password/constants';
+import type { GeneratePasswordOptions } from '@proton/pass/lib/password/generator';
+import { generatePassword } from '@proton/pass/lib/password/generator';
+import { SeperatorOptions } from '@proton/pass/lib/password/memorable';
 import { popupPasswordOptionsSave } from '@proton/pass/store/actions/creators/popup';
 import { merge } from '@proton/pass/utils/object';
 import debounce from '@proton/utils/debounce';

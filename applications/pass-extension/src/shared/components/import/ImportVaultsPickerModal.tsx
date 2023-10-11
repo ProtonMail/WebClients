@@ -9,8 +9,13 @@ import { Button } from '@proton/atoms/Button';
 import { Card } from '@proton/atoms/Card';
 import type { ModalProps } from '@proton/components/components';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/components';
-import { type ImportPayload, type ImportVault } from '@proton/pass/import';
-import { selectDefaultVault, selectPassPlan, selectVaultLimits, selectWritableVaults } from '@proton/pass/store';
+import { type ImportPayload, type ImportVault } from '@proton/pass/lib/import/types';
+import {
+    selectDefaultVault,
+    selectPassPlan,
+    selectVaultLimits,
+    selectWritableVaults,
+} from '@proton/pass/store/selectors';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { omit } from '@proton/shared/lib/helpers/object';

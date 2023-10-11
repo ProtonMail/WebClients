@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Icon } from '@proton/components/components';
-import { pageMessage, sendMessage } from '@proton/pass/extension/message';
+import { pageMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { type Maybe, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 

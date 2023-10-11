@@ -1,8 +1,9 @@
 import { type VFC, useCallback, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { selectRequestStatus, sessionUnlockIntent } from '@proton/pass/store';
+import { sessionUnlockIntent } from '@proton/pass/store/actions';
 import { unlockSession } from '@proton/pass/store/actions/requests';
+import { selectRequestStatus } from '@proton/pass/store/selectors';
 
 import { PinCodeInput } from '../../../shared/components//session-lock/PinCodeInput';
 import { useSessionLockPinSubmitEffect } from '../../../shared/hooks/useSessionLockPinSubmitEffect';

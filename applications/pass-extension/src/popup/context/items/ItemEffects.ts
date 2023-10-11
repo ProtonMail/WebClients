@@ -17,10 +17,10 @@
 import { useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { selectItemIdByOptimisticId } from '@proton/pass/store';
+import { belongsToShare, itemEq } from '@proton/pass/lib/items/item.predicates';
 import { popupTabStateSave } from '@proton/pass/store/actions/creators/popup';
+import { selectItemIdByOptimisticId } from '@proton/pass/store/selectors';
 import { invert } from '@proton/pass/utils/fp';
-import { belongsToShare, itemEq } from '@proton/pass/utils/pass/items';
 
 import { useShareEventEffect } from '../../../shared/hooks';
 import { useItems, useTrashItems } from '../../hooks/useItems';

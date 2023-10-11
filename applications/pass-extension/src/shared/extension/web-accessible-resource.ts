@@ -1,4 +1,4 @@
-import browser from '@proton/pass/globals/browser';
+import browser from '@proton/pass/lib/globals/browser';
 import noop from '@proton/utils/noop';
 
 /* `web_accessible_resources` will always have a valid tabId when

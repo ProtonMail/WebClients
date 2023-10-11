@@ -1,5 +1,5 @@
-import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
 import { FieldType, FormType } from '@proton/pass/fathom';
+import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array';
 import { parseFormAction } from '@proton/pass/utils/dom';
@@ -153,7 +153,8 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         /* trigger auto-focus on current active field if value is empty:
          * This handles autofocused simple forms, and dynamic forms where
          * fields may be added incrementally  */
-        form.getFields()
+        form
+            .getFields()
             .find((field) => field.element === document.activeElement && !field.value)
             ?.focus();
     });

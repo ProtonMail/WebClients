@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
-import { selectAllVaults } from '@proton/pass/store';
+import { selectAllVaults } from '@proton/pass/store/selectors';
 import { type ItemType, ShareRole, type VaultShare } from '@proton/pass/types';
 
 import type { ItemTypeViewProps } from '../../../shared/items/types';

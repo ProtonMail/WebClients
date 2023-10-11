@@ -3,8 +3,8 @@ import { useEffect, useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
-import { createTelemetryEvent } from '@proton/pass/telemetry/events';
+import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { type SafeLoginItem, WorkerMessageType } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';

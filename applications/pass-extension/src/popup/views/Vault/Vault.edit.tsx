@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import { FormikProvider, useFormik } from 'formik';
 
-import { vaultEditIntent } from '@proton/pass/store';
+import { vaultEditIntent } from '@proton/pass/store/actions';
 import { vaultEdit } from '@proton/pass/store/actions/requests';
 import type { VaultShare } from '@proton/pass/types';
 import { VaultColor, VaultIcon } from '@proton/pass/types/protobuf/vault-v1';

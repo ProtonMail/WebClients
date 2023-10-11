@@ -6,8 +6,8 @@
  * content-script when the frame becomes hidden, we can free up resources
  * on inactive tabs, further improving performance and minimizing the
  * impact on the user's experience */
-import { contentScriptMessage, sendMessage } from '@proton/pass/extension/message';
-import browser from '@proton/pass/globals/browser';
+import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import browser from '@proton/pass/lib/globals/browser';
 import { WorkerMessageType } from '@proton/pass/types';
 import { isMainFrame } from '@proton/pass/utils/dom';
 import { createListenerStore } from '@proton/pass/utils/listener';

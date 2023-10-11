@@ -6,8 +6,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import type { ModalProps } from '@proton/components/components';
 import { Icon } from '@proton/components/components';
-import { selectPasswordHistory } from '@proton/pass/store';
 import { passwordHistoryClear } from '@proton/pass/store/actions/creators/pw-history';
+import { selectPasswordHistory } from '@proton/pass/store/selectors';
 import clsx from '@proton/utils/clsx';
 
 import { SidebarModal } from '../../../shared/components/sidebarmodal/SidebarModal';

@@ -5,8 +5,9 @@ import { useHistory } from 'react-router-dom';
 import { c, msgid } from 'ttag';
 
 import { InlineLinkButton, useNotifications } from '@proton/components';
-import { getAliasDetailsIntent, selectAliasDetails, selectLoginItemByUsername } from '@proton/pass/store';
+import { getAliasDetailsIntent } from '@proton/pass/store/actions';
 import { aliasDetailsRequest } from '@proton/pass/store/actions/requests';
+import { selectAliasDetails, selectLoginItemByUsername } from '@proton/pass/store/selectors';
 import { pipe } from '@proton/pass/utils/fp';
 import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
 

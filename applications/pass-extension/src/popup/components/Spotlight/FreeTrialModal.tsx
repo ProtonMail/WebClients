@@ -7,7 +7,7 @@ import { Button, Card } from '@proton/atoms';
 import type { IconName } from '@proton/components';
 import { Icon, InlineLinkButton } from '@proton/components';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import { selectTrialDaysRemaining } from '@proton/pass/store';
+import { selectTrialDaysRemaining } from '@proton/pass/store/selectors';
 import clsx from '@proton/utils/clsx';
 
 import { SidebarModal } from '../../../shared/components/sidebarmodal/SidebarModal';

@@ -1,17 +1,17 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import { bootRequest, syncRequest, wakeupRequest } from '@proton/pass/store/actions/requests';
+import withCacheBlock from '@proton/pass/store/actions/with-cache-block';
+import withNotification from '@proton/pass/store/actions/with-notification';
+import type { EndpointOptions } from '@proton/pass/store/actions/with-receiver';
+import { withReceiver } from '@proton/pass/store/actions/with-receiver';
+import withRequest from '@proton/pass/store/actions/with-request';
+import type { UserState } from '@proton/pass/store/reducers';
+import type { SynchronizationResult } from '@proton/pass/store/sagas/workers/sync';
 import type { ExtensionEndpoint, Maybe, RequiredNonNull, TabId, WorkerStatus } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp';
 import identity from '@proton/utils/identity';
-
-import type { UserState } from '../../reducers';
-import type { SynchronizationResult } from '../../sagas/workers/sync';
-import * as requests from '../requests';
-import withCacheBlock from '../with-cache-block';
-import withNotification from '../with-notification';
-import { type EndpointOptions, withReceiver } from '../with-receiver';
-import withRequest from '../with-request';
 
 export const startEventPolling = createAction('events::polling::start');
 export const stopEventPolling = createAction('events::polling::stop');
@@ -39,7 +39,7 @@ export const wakeup = createAction(
         pipe(
             withCacheBlock,
             withReceiver({ endpoint, tabId }),
-            withRequest({ id: requests.wakeup(endpoint, tabId), type: 'start' })
+            withRequest({ id: wakeupRequest(endpoint, tabId), type: 'start' })
         )({ payload })
 );
 
@@ -47,16 +47,16 @@ export const wakeupSuccess = createAction('wakeup success', (endpoint: Extension
     pipe(
         withCacheBlock,
         withReceiver({ endpoint, tabId }),
-        withRequest({ id: requests.wakeup(endpoint, tabId), type: 'success' })
+        withRequest({ id: wakeupRequest(endpoint, tabId), type: 'success' })
     )({ payload: {} })
 );
 
-export const boot = createAction('boot', pipe(withCacheBlock, withRequest({ id: requests.boot(), type: 'start' })));
+export const boot = createAction('boot', pipe(withCacheBlock, withRequest({ id: bootRequest(), type: 'start' })));
 
 export const bootFailure = createAction('boot failure', (error: unknown) =>
     pipe(
         withCacheBlock,
-        withRequest({ id: requests.boot(), type: 'failure' }),
+        withRequest({ id: bootRequest(), type: 'failure' }),
         withNotification({
             type: 'error',
             text: c('Error').t`Unable to boot`,
@@ -71,7 +71,7 @@ export const bootSuccess = createAction(
         pipe(
             withCacheBlock,
             withRequest({
-                id: requests.boot(),
+                id: bootRequest(),
                 type: 'success',
             })
         )({ payload })
@@ -82,7 +82,7 @@ export const syncIntent = createAction(
     pipe(
         withCacheBlock,
         withRequest({
-            id: requests.syncing(),
+            id: syncRequest(),
             type: 'start',
         })
     )
@@ -90,7 +90,7 @@ export const syncIntent = createAction(
 
 export const syncSuccess = createAction('sync success', (payload: SynchronizationResult) =>
     pipe(
-        withRequest({ id: requests.syncing(), type: 'success' }),
+        withRequest({ id: syncRequest(), type: 'success' }),
         withNotification({ type: 'info', text: c('Info').t`Successfully synced all vaults` })
     )({ payload })
 );
@@ -98,7 +98,7 @@ export const syncSuccess = createAction('sync success', (payload: Synchronizatio
 export const syncFailure = createAction('sync failure', (error: unknown) =>
     pipe(
         withCacheBlock,
-        withRequest({ id: requests.syncing(), type: 'failure' }),
+        withRequest({ id: syncRequest(), type: 'failure' }),
         withNotification({
             type: 'error',
             text: c('Error').t`Unable to sync`,

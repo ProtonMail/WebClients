@@ -5,7 +5,7 @@ import type { FormikErrors } from 'formik';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { selectShare } from '@proton/pass/store';
+import { selectShare } from '@proton/pass/store/selectors';
 import type { MaybeNull, ShareType, VaultShare } from '@proton/pass/types';
 import { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
 import { truthy } from '@proton/pass/utils/fp';

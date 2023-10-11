@@ -1,7 +1,8 @@
-import type { AuthStore } from '../auth';
-import type { ExtensionEndpoint, WorkerState } from '../types';
-import type { TelemetryEvent } from '../types/data/telemetry';
-import type { EncryptedExtensionCache } from '../types/worker/cache';
+import type { AuthStore } from '@proton/pass/lib/auth/authentication';
+import type { ExtensionEndpoint, WorkerState } from '@proton/pass/types';
+import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
+import type { EncryptedExtensionCache } from '@proton/pass/types/worker/cache';
+
 import type * as actions from './actions';
 import type { Notification } from './actions/with-notification';
 import type { FeatureFlagState, rootReducer } from './reducers';

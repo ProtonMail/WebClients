@@ -1,8 +1,9 @@
 import { useEffect, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
-import { getAliasOptionsIntent, selectAliasOptions } from '@proton/pass/store';
+import { getAliasOptionsIntent } from '@proton/pass/store/actions';
 import { aliasOptionsRequest } from '@proton/pass/store/actions/requests';
+import { selectAliasOptions } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import type { AliasMailbox } from '@proton/pass/types/data/alias';
 

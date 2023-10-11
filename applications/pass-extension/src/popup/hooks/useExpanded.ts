@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import browser from '@proton/pass/globals/browser';
+import browser from '@proton/pass/lib/globals/browser';
 import noop from '@proton/utils/noop';
 
 export const useExpanded = () => {

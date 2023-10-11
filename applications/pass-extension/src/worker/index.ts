@@ -1,7 +1,8 @@
-import createApi, { exposeApi } from '@proton/pass/api';
-import { generateKey } from '@proton/pass/crypto/utils';
-import { backgroundMessage } from '@proton/pass/extension/message';
-import browser from '@proton/pass/globals/browser';
+import { exposeApi } from '@proton/pass/lib/api/api';
+import { createApi } from '@proton/pass/lib/api/create-api';
+import { generateKey } from '@proton/pass/lib/crypto/utils';
+import { backgroundMessage } from '@proton/pass/lib/extension/message';
+import browser from '@proton/pass/lib/globals/browser';
 import { WorkerMessageType, WorkerStatus } from '@proton/pass/types';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import sentry from '@proton/shared/lib/helpers/sentry';

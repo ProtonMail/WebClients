@@ -4,8 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { selectPassPlan, selectVaultLimits, vaultCreationIntent } from '@proton/pass/store';
+import { vaultCreationIntent } from '@proton/pass/store/actions';
 import { vaultCreate } from '@proton/pass/store/actions/requests';
+import { selectPassPlan, selectVaultLimits } from '@proton/pass/store/selectors';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { VaultColor, VaultIcon } from '@proton/pass/types/protobuf/vault-v1';
 import { uniqueId } from '@proton/pass/utils/string';
