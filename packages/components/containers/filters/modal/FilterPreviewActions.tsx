@@ -173,7 +173,7 @@ const FilterPreviewActions = ({ isOpen, isNarrow, toggleOpen, labels, folders, m
                 ))}
             </div>
         ) : (
-            <div className="pt-2 max-w100 text-ellipsis" title={title}>
+            <div className="max-w100 text-ellipsis" title={title}>
                 {actionsRows.map((action, i) => (
                     <span key={`preview-action-${i}`}>
                         {i === 0 ? c('Label').t`Then` : ` ${c('Label').t`and`}`}
@@ -187,8 +187,12 @@ const FilterPreviewActions = ({ isOpen, isNarrow, toggleOpen, labels, folders, m
 
     return (
         <div className="border-bottom mb-8">
-            <div className="flex flex-nowrap on-mobile-flex-column align-items-center py-4">
-                <button type="button" className={clsx(['w20 text-left', isNarrow && 'mb-4'])} onClick={toggleOpen}>
+            <div className="flex-no-min-children flex-nowrap flex-column md:flex-row align-items-center py-4">
+                <button
+                    type="button"
+                    className={clsx(['w-full md:w-1/5 text-left', isNarrow && 'mb-4'])}
+                    onClick={toggleOpen}
+                >
                     <Icon name="chevron-down" className={clsx([isOpen && 'rotateX-180'])} />
                     <span className="ml-2">{c('Label').t`Actions`}</span>
                 </button>
