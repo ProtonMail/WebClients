@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { useLoading } from '@proton/hooks';
 import { updateHideRemoteImages } from '@proton/shared/lib/api/mailSettings';
-import { SHOW_IMAGES } from '@proton/shared/lib/constants';
+import { SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
 
 import { Toggle } from '../../components';
 import { useApi, useEventManager, useNotifications, useToggle } from '../../hooks';

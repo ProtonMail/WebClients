@@ -8,18 +8,19 @@ import {
     useFeature,
     useFolders,
     useLabels,
-    useMailSettings,
     useMessageCounts,
     useUser,
 } from '@proton/components';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { getCountersByLabelId } from '../../helpers/counter';
 import { getLabelName } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
 
 export const useMailboxPageTitle = (labelID: string, location: Location) => {
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
     const [labels] = useLabels();
     const [folders] = useFolders();
     const [user] = useUser();
@@ -27,7 +28,7 @@ export const useMailboxPageTitle = (labelID: string, location: Location) => {
     const [messageCounts] = useMessageCounts();
 
     const shouldDisplayUnreadsInPageTitle = !(
-        useFeature(FeatureCode.UnreadFavicon).feature?.Value && mailSettings?.UnreadFavicon
+        useFeature(FeatureCode.UnreadFavicon).feature?.Value && mailSettings.UnreadFavicon
     );
 
     useEffect(() => {

@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { updateComposerMode } from '@proton/shared/lib/api/mailSettings';
-import { COMPOSER_MODE } from '@proton/shared/lib/constants';
+import { COMPOSER_MODE, DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
 import { useApi, useEventManager, useMailSettings, useNotifications } from '../../hooks';
@@ -14,7 +14,7 @@ import './ModalSettingsLayoutCards.scss';
 const MailComposerModeModal = (props: ModalProps) => {
     const api = useApi();
     const { call } = useEventManager();
-    const [{ ComposerMode = 0 } = {}] = useMailSettings();
+    const [{ ComposerMode } = DEFAULT_MAILSETTINGS] = useMailSettings();
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
     const title = c('Title').t`Composer mode`;

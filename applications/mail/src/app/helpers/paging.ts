@@ -1,10 +1,10 @@
-import { MailPageSize } from '@proton/shared/lib/interfaces';
+import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 
-export const pageCount = (total: number, pageSize: MailPageSize) => Math.ceil(total / pageSize) || 0;
+export const pageCount = (total: number, pageSize: MAIL_PAGE_SIZE) => Math.ceil(total / pageSize) || 0;
 
 export const expectedPageLength = (
     page: number,
-    pageSize: MailPageSize,
+    pageSize: MAIL_PAGE_SIZE,
     inputTotal: number,
     filterBypassCount: number
 ) => {

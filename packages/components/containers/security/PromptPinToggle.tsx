@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import useLoading from '@proton/hooks/useLoading';
 import { updatePromptPin } from '@proton/shared/lib/api/mailSettings';
+import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 import { Toggle } from '../../components';
 import { useApi, useEventManager, useMailSettings, useNotifications } from '../../hooks';
@@ -17,7 +18,7 @@ const PromptPinToggle = ({ id }: Props) => {
     const { call } = useEventManager();
     const api = useApi();
     const [loading, withLoading] = useLoading();
-    const [{ PromptPin = 0 } = {}] = useMailSettings();
+    const [{ PromptPin } = DEFAULT_MAILSETTINGS] = useMailSettings();
 
     const handleChange = async ({ target }: ChangeEvent<HTMLInputElement>) => {
         await api(updatePromptPin(+target.checked));

@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 
 import { useActiveBreakpoint } from '@proton/components';
-import { eoDefaultMailSettings } from '@proton/shared/lib/mail/eo/constants';
+import { EO_DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/eo/constants';
 
 import { EOUrlParams } from '../../../helpers/eo/eoUrl';
 import { useLoadEOEmbeddedImages, useLoadEORemoteImages } from '../../../hooks/eo/useLoadEOImages';
@@ -28,7 +28,7 @@ const ViewEOMessage = ({ setSessionStorage }: Props) => {
     const match = useRouteMatch<EOUrlParams>();
     const { id } = match.params;
 
-    const loadRemoteImages = useLoadEORemoteImages(eoDefaultMailSettings);
+    const loadRemoteImages = useLoadEORemoteImages(EO_DEFAULT_MAILSETTINGS);
     const loadEmbeddedImages = useLoadEOEmbeddedImages(id || '');
 
     const { isStoreInitialized, messageState, message, outsideKey } = useLoadEOMessage({ id, setSessionStorage });

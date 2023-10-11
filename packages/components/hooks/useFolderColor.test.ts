@@ -1,10 +1,16 @@
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
+import { FOLDER_COLOR, INHERIT_PARENT_FOLDER_COLOR } from '@proton/shared/lib/mail/mailSettings';
 
 import useFolderColor from './useFolderColor';
 import { useMailSettings } from './useMailSettings';
 
+const mockFolderSetting = FOLDER_COLOR.ENABLED;
+const mockinheritSetting = INHERIT_PARENT_FOLDER_COLOR.ENABLED;
 jest.mock('./useMailSettings', () => ({
-    useMailSettings: jest.fn(() => [{ EnableFolderColor: 1, InheritParentFolderColor: 1 }, false]),
+    useMailSettings: jest.fn(() => [
+        { EnableFolderColor: mockFolderSetting, InheritParentFolderColor: mockinheritSetting },
+        false,
+    ]),
 }));
 
 jest.mock('./useCategories', () => ({
@@ -21,7 +27,7 @@ jest.mock('./useCategories', () => ({
 describe('useFolderColor hook', () => {
     it('should not return color if EnableFolderColor is disabled', () => {
         (useMailSettings as jest.Mock).mockReturnValueOnce([
-            { EnableFolderColor: 0, InheritParentFolderColor: 1 },
+            { EnableFolderColor: FOLDER_COLOR.DISABLED, InheritParentFolderColor: INHERIT_PARENT_FOLDER_COLOR.ENABLED },
             false,
         ]);
         const folder = { ID: 'C', Color: 'green' } as Folder;
@@ -31,7 +37,7 @@ describe('useFolderColor hook', () => {
 
     it('should return current color if InheritParentFolderColor is disabled', () => {
         (useMailSettings as jest.Mock).mockReturnValueOnce([
-            { EnableFolderColor: 1, InheritParentFolderColor: 0 },
+            { EnableFolderColor: FOLDER_COLOR.ENABLED, InheritParentFolderColor: INHERIT_PARENT_FOLDER_COLOR.DISABLED },
             false,
         ]);
         const folder = { ID: 'C', Color: 'green', ParentID: 'B' } as Folder;

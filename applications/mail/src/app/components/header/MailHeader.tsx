@@ -11,10 +11,11 @@ import {
     useFolders,
     useHasRebrandingFeedback,
     useLabels,
-    useMailSettings,
     useModalState,
 } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
@@ -40,7 +41,7 @@ const MailHeader = ({ labelID, elementID, selectedIDs = [], breakpoints, toolbar
     const location = useLocation();
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
     const hasRebrandingFeedback = useHasRebrandingFeedback();
     const dispatch = useAppDispatch();
     const expanded = useAppSelector(selectLayoutIsExpanded);

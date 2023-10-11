@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import { getShortcuts } from '@proton/shared/lib/shortcuts/mail';
 import clsx from '@proton/utils/clsx';
 
@@ -24,7 +25,7 @@ import './MailShortcutsModal.scss';
 
 const MailShortCutsModal = (props: ModalProps) => {
     const title = c('Title').t`${MAIL_APP_NAME} Keyboard Shortcuts`;
-    const [{ Shortcuts } = { Shortcuts: 0 }] = useMailSettings();
+    const [{ Shortcuts } = DEFAULT_MAILSETTINGS] = useMailSettings();
     const mailShortcuts = getShortcuts();
     const alwaysOnSections = mailShortcuts.filter((section) => section.alwaysActive);
     const shortcutEnabledSections = mailShortcuts.filter((section) => !section.alwaysActive);

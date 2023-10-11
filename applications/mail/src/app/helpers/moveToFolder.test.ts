@@ -1,5 +1,6 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { Label, MailSettings, SpamAction } from '@proton/shared/lib/interfaces';
+import { Label, MailSettings } from '@proton/shared/lib/interfaces';
+import { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 import { addApiMock, apiMock } from '@proton/testing/lib/api';
 
 import {
@@ -139,7 +140,7 @@ describe('moveToFolder', () => {
             const elements = [{} as Element];
             const api = apiMock;
             const handleShowSpamModal = jest.fn();
-            const mailSettings = { SpamAction: 1 } as MailSettings;
+            const mailSettings = { SpamAction: SPAM_ACTION.SpamAndUnsub } as MailSettings;
 
             await askToUnsubscribe(folderID, isMessage, elements, api, handleShowSpamModal, mailSettings);
 
@@ -184,7 +185,7 @@ describe('moveToFolder', () => {
                 mailSettings
             );
 
-            expect(result).toEqual(SpamAction.SpamAndUnsub);
+            expect(result).toEqual(SPAM_ACTION.SpamAndUnsub);
             expect(handleShowSpamModal).toHaveBeenCalled();
         });
 
@@ -213,7 +214,7 @@ describe('moveToFolder', () => {
                 mailSettings
             );
 
-            expect(result).toEqual(SpamAction.JustSpam);
+            expect(result).toEqual(SPAM_ACTION.JustSpam);
             expect(handleShowSpamModal).toHaveBeenCalled();
         });
 
@@ -245,7 +246,7 @@ describe('moveToFolder', () => {
                 mailSettings
             );
 
-            expect(result).toEqual(SpamAction.SpamAndUnsub);
+            expect(result).toEqual(SPAM_ACTION.SpamAndUnsub);
             expect(handleShowSpamModal).toHaveBeenCalled();
             expect(updateSettingSpy).toHaveBeenCalled();
         });

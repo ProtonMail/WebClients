@@ -25,7 +25,7 @@ interface Props {
     counterMap: UnreadCounts;
     currentLabelID: string;
     location: Location;
-    mailSettings: MailSettings | undefined;
+    mailSettings: MailSettings;
     setFocusedItem: (id: string) => void;
     totalMessagesMap: UnreadCounts;
     displayMoreItems: boolean;
@@ -54,7 +54,7 @@ const MailSidebarSystemFolders = ({
     displayMoreItems,
     onToggleMoreItems,
 }: Props) => {
-    const { ShowMoved, AlmostAllMail } = mailSettings || { ShowMoved: 0, AlmostAllMail: 0 };
+    const { ShowMoved, AlmostAllMail } = mailSettings;
     const [sidebarElements, moveSidebarElement] = useMoveSystemFolders({
         showMoved: ShowMoved,
         showScheduled,

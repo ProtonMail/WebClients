@@ -16,6 +16,7 @@ import {
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
+import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
 
 import { Editor, EditorActions, Toggle } from '../../components';
@@ -45,7 +46,7 @@ const AutoReplySection = () => {
     const errorHandler = useErrorHandler();
     const [{ hasPaidMail }] = useUser();
     const [mailSettings] = useMailSettings();
-    const { Shortcuts = 0 } = mailSettings || {};
+    const { Shortcuts } = mailSettings || DEFAULT_MAILSETTINGS;
     const AutoResponder = mailSettings?.AutoResponder || getDefaultAutoResponder();
     const api = useApi();
     const { call } = useEventManager();

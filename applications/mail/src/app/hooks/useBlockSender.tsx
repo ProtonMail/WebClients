@@ -3,9 +3,11 @@ import { MouseEvent, useMemo } from 'react';
 import { c } from 'ttag';
 
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
-import { useAddresses, useApi, useMailSettings, useNotifications } from '@proton/components/hooks';
+import { useAddresses, useApi, useNotifications } from '@proton/components/hooks';
 import { updateBlockSenderConfirmation } from '@proton/shared/lib/api/mailSettings';
 import { BLOCK_SENDER_CONFIRMATION } from '@proton/shared/lib/mail/constants';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import BlockSenderModal from '../components/message/modals/BlockSenderModal';
 import { getSendersToBlock } from '../helpers/message/messageRecipients';
@@ -23,7 +25,7 @@ const useBlockSender = ({ elements, onCloseDropdown }: Props) => {
     const api = useApi();
     const dispatch = useAppDispatch();
     const [addresses] = useAddresses();
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
     const { createNotification } = useNotifications();
 
     const incomingDefaultsAddresses = useIncomingDefaultsAddresses();
@@ -64,7 +66,7 @@ const useBlockSender = ({ elements, onCloseDropdown }: Props) => {
 
     // Confirm blocking address from the modal
     const handleSubmitBlockSender = async (checked: boolean) => {
-        const isSettingChecked = mailSettings?.BlockSenderConfirmation === 1;
+        const isSettingChecked = mailSettings.BlockSenderConfirmation === BLOCK_SENDER_CONFIRMATION.DO_NOT_ASK;
         const confirmHasChanged = checked !== isSettingChecked;
 
         if (confirmHasChanged) {
@@ -81,7 +83,7 @@ const useBlockSender = ({ elements, onCloseDropdown }: Props) => {
         // Close dropdown in order to avoid having modal and dropdown opened at same time
         onCloseDropdown?.();
 
-        if (mailSettings?.BlockSenderConfirmation !== BLOCK_SENDER_CONFIRMATION.DO_NOT_ASK) {
+        if (mailSettings.BlockSenderConfirmation !== BLOCK_SENDER_CONFIRMATION.DO_NOT_ASK) {
             await handleShowBlockSenderModal({ onConfirm: handleSubmitBlockSender, senders, mailSettings });
         } else {
             void handleBlockSender();

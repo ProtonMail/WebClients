@@ -7,6 +7,7 @@ import { useToolbar } from '@proton/components/components/editor/hooks/useToolba
 import { useLoading } from '@proton/hooks';
 import { updateAddress } from '@proton/shared/lib/api/addresses';
 import { Address } from '@proton/shared/lib/interfaces';
+import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 import { Editor, EditorActions } from '../../components';
 import { useApi, useEventManager, useHotkeys, useMailSettings, useNotifications } from '../../hooks';
@@ -23,7 +24,7 @@ interface Props {
 }
 
 const EditAddressesSection = ({ address }: Props) => {
-    const [{ Shortcuts = 0 } = {}] = useMailSettings();
+    const [{ Shortcuts } = DEFAULT_MAILSETTINGS] = useMailSettings();
     const api = useApi();
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();

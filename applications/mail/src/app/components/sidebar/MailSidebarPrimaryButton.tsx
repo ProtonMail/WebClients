@@ -1,14 +1,16 @@
 import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms';
-import { SidebarPrimaryButton, Tooltip, useMailSettings } from '@proton/components';
+import { SidebarPrimaryButton, Tooltip } from '@proton/components';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 interface Props {
     handleCompose: () => void;
 }
 
 const MailSidebarPrimaryButton = ({ handleCompose }: Props) => {
-    const [{ Shortcuts = 0 } = {}] = useMailSettings();
+    const { Shortcuts } = useMailModel('MailSettings');
 
     const titlePrimaryButton = Shortcuts ? (
         <>

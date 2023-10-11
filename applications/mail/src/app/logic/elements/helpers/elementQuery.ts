@@ -4,7 +4,8 @@ import { getMessage, queryMessageMetadata } from '@proton/shared/lib/api/message
 import { MAX_MESSAGES_FETCH_CHUNK_SIZE } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { omit, pick } from '@proton/shared/lib/helpers/object';
-import { Api, MailPageSize } from '@proton/shared/lib/interfaces';
+import { Api } from '@proton/shared/lib/interfaces';
+import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 import range from '@proton/utils/range';
 
 import { Element } from '../../../models/element';
@@ -14,10 +15,10 @@ import { ElementsStateParams, QueryParams, QueryResults, RetryData } from '../el
 
 export const TASK_RUNNING_POLLING_INTERVAL = 2000;
 
-const limitByPageSize: Record<MailPageSize, number> = {
-    [MailPageSize.FIFTY]: 100,
-    [MailPageSize.ONE_HUNDRED]: 150, // TODO should be set to 200 when API enables this
-    [MailPageSize.TWO_HUNDRED]: 150, // TODO should be set to 200 when API enables this
+const limitByPageSize: Record<MAIL_PAGE_SIZE, number> = {
+    [MAIL_PAGE_SIZE.FIFTY]: 100,
+    [MAIL_PAGE_SIZE.ONE_HUNDRED]: 150, // TODO should be set to 200 when API enables this
+    [MAIL_PAGE_SIZE.TWO_HUNDRED]: 150, // TODO should be set to 200 when API enables this
 };
 
 export const getQueryElementsParameters = ({
@@ -75,7 +76,7 @@ export const queryElementsInBatch = async (
     const apiPage = chunksPerPage * clientPage;
 
     // If items to fetch is less than 100, then we fetch next page in advance
-    const fetchCount = settingsPageSize < MailPageSize.ONE_HUNDRED ? chunksPerPage * 2 : chunksPerPage;
+    const fetchCount = settingsPageSize < MAIL_PAGE_SIZE.ONE_HUNDRED ? chunksPerPage * 2 : chunksPerPage;
 
     const queryParameters = getQueryElementsParameters({
         page: apiPage,

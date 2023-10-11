@@ -4,9 +4,8 @@ import { c } from 'ttag';
 
 import { useLoading } from '@proton/hooks';
 import { updateSpamAction, updateStickyLabels, updateViewMode } from '@proton/shared/lib/api/mailSettings';
-import { SHOW_IMAGES, STICKY_LABELS, VIEW_MODE } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { SpamAction } from '@proton/shared/lib/interfaces';
+import { DEFAULT_MAILSETTINGS, SPAM_ACTION, STICKY_LABELS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import { Info } from '../../components';
 import { useApi, useEventManager, useFeature, useMailSettings, useNotifications } from '../../hooks';
@@ -28,14 +27,14 @@ import SpamActionSelect from './SpamActionSelect';
 const MessagesSection = () => {
     const [
         {
-            ViewMode = 0,
-            StickyLabels = 0,
-            HideEmbeddedImages = SHOW_IMAGES.SHOW,
-            ConfirmLink = 1,
-            SpamAction = null,
-            AutoDeleteSpamAndTrashDays = 0,
-            AlmostAllMail = 0,
-        } = {},
+            ViewMode,
+            StickyLabels,
+            HideEmbeddedImages,
+            ConfirmLink,
+            SpamAction,
+            AutoDeleteSpamAndTrashDays,
+            AlmostAllMail,
+        } = DEFAULT_MAILSETTINGS,
     ] = useMailSettings();
     const [hideEmbeddedImages, setHideEmbeddedImages] = useState(HideEmbeddedImages);
     const { createNotification } = useNotifications();
@@ -62,14 +61,14 @@ const MessagesSection = () => {
 
     const handleChangeViewMode = async (mode: VIEW_MODE) => {
         if (mode === VIEW_MODE.SINGLE) {
-            await api(updateStickyLabels(STICKY_LABELS.OFF));
+            await api(updateStickyLabels(STICKY_LABELS.DISABLED));
         }
         await api(updateViewMode(mode));
         await call();
         notifyPreferenceSaved();
     };
 
-    const handleChangeSpamAction = async (spamAction: SpamAction | null) => {
+    const handleChangeSpamAction = async (spamAction: SPAM_ACTION | null) => {
         await api(updateSpamAction(spamAction));
         await call();
         notifyPreferenceSaved();

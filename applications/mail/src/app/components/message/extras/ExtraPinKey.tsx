@@ -9,7 +9,6 @@ import {
     useAddresses,
     useApi,
     useEventManager,
-    useMailSettings,
     useModalState,
     useNotifications,
 } from '@proton/components';
@@ -21,7 +20,10 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Address, MailSettings } from '@proton/shared/lib/interfaces';
 import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { PROMPT_PIN } from '@proton/shared/lib/mail/mailSettings';
 import { isInternal } from '@proton/shared/lib/mail/messages';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { getContactEmail } from '../../../helpers/message/messageRecipients';
 import { useContactsMap } from '../../../hooks/contact/useContacts';
@@ -39,14 +41,14 @@ enum PROMPT_KEY_PINNING_TYPE {
 
 interface Params {
     messageVerification: MessageVerification;
-    mailSettings?: Partial<MailSettings>;
+    mailSettings: MailSettings;
     addresses: Address[];
     senderAddress: string;
 }
 
 const getPromptKeyPinningType = ({
     messageVerification,
-    mailSettings = {},
+    mailSettings,
     addresses,
     senderAddress,
 }: Params): PROMPT_KEY_PINNING_TYPE | undefined => {
@@ -122,7 +124,7 @@ interface Props {
 
 const ExtraPinKey = ({ message, messageVerification }: Props) => {
     const api = useApi();
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
     const [addresses] = useAddresses();
     const [loadingDisablePromptPin, withLoadingDisablePromptPin] = useLoading();
     const { createNotification } = useNotifications();
@@ -179,7 +181,7 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
     }
 
     const handleDisablePromptPin = async () => {
-        await api(updatePromptPin(0));
+        await api(updatePromptPin(PROMPT_PIN.DISABLED));
         await call();
         createNotification({ text: c('Success').t`Address verification disabled` });
     };

@@ -80,6 +80,10 @@ jest.mock('@proton/components/hooks/useUser', () => ({
     ),
 }));
 
+jest.mock('@proton/components/hooks/useMailSettings', () => ({
+    useMailSettings: jest.fn(() => [{}, false]),
+}));
+
 const mockedUseApi = mocked(useApi);
 const mockedUseNotifications = mocked(useNotifications);
 const mockedUseGetCalendarEventRaw = mocked(useGetCalendarEventRaw);

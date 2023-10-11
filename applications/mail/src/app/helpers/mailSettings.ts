@@ -1,7 +1,7 @@
 import { Location } from 'history';
 
-import { VIEW_LAYOUT, VIEW_MODE } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
+import { VIEW_LAYOUT, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import { isSearch } from './elements';
 import { isAlwaysMessageLabels } from './labels';
