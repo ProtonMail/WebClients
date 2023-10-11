@@ -12,7 +12,7 @@ import {
     CollapsibleHeaderIconButton,
     Icon,
 } from '@proton/components';
-import { selectAllTrashedItems, selectShare, selectVaultsWithItemsCount } from '@proton/pass/store';
+import { selectAllTrashedItems, selectDefaultVault, selectShare, selectVaultsWithItemsCount } from '@proton/pass/store';
 import { type MaybeNull, ShareRole, type ShareType, type VaultShare } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import type { VaultColor as VaultColorEnum } from '@proton/pass/types/protobuf/vault-v1';
@@ -231,6 +231,7 @@ export const VaultSubmenu: VFC<{
 }) => {
     const history = useHistory();
     const vaults = useSelector(selectVaultsWithItemsCount);
+    const defaultVault = useSelector(selectDefaultVault);
     const primaryVaultDisabled = useFeatureFlag(PassFeature.PassRemovePrimaryVault);
     const selectedVault = useSelector(selectShare<ShareType.Vault>(selectedShareId ?? ''));
 
@@ -275,7 +276,11 @@ export const VaultSubmenu: VFC<{
                 />
 
                 {vaults.map((vault) => {
-                    const canDelete = vault.owner && (primaryVaultDisabled || !vault.primary);
+                    const isDefaultOrPrimaryVault = primaryVaultDisabled
+                        ? defaultVault.shareId === vault.shareId
+                        : vault.primary;
+
+                    const canDelete = vault.owner && !isDefaultOrPrimaryVault;
 
                     return (
                         <VaultItem
