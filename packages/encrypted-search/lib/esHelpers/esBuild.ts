@@ -213,7 +213,7 @@ export const buildMetadataDB = async <ESItemMetadata extends Object>(
         isBackgroundIndexing
     );
 
-    // If it's undefined, it means an error occured
+    // If it's undefined, it means an error occurred
     if (!resultMetadata) {
         return false;
     }
