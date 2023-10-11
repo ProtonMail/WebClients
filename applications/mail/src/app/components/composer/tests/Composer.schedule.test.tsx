@@ -9,6 +9,7 @@ import loudRejection from 'loud-rejection';
 import { MAILBOX_LABEL_IDS, MIME_TYPES } from '@proton/shared/lib/constants';
 import { addDays, addMinutes } from '@proton/shared/lib/date-fns-utc';
 import { Recipient } from '@proton/shared/lib/interfaces';
+import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import { addApiMock, setFeatureFlags } from '../../../helpers/test/api';
 import { addToCache, minimalCache } from '../../../helpers/test/cache';
@@ -41,7 +42,7 @@ const setupTest = ({
         UsedSpace: 10,
         MaxSpace: 100,
     });
-    addToCache('MailSettings', { ViewMode: 1 });
+    addToCache('MailSettings', { ViewMode: VIEW_MODE.SINGLE });
     addToCache('MessageCounts', [{ LabelID: MAILBOX_LABEL_IDS.SCHEDULED, Unread: 1, Total: scheduledTotalCount }]);
 
     setFeatureFlags('ScheduledSendFreemium', featureFlagActive);

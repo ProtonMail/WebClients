@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { PGP_SIGN } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
+import { SIGN } from '@proton/shared/lib/mail/mailSettings';
 
 import { Option, SelectTwo } from '../../../components';
 import { SelectChangeEvent } from '../../../components/selectTwo/select';
@@ -21,7 +21,7 @@ const SignEmailsSelect = ({ id, value, mailSettings, disabled, onChange }: Props
 
     const SIGN_LABEL = c('Signing preference for emails').t`Sign`;
     const DO_NOT_SIGN_LABEL = c('Signing preference for emails').t`Don't sign`;
-    const globalDefaultText = mailSettings?.Sign === PGP_SIGN ? SIGN_LABEL : DO_NOT_SIGN_LABEL;
+    const globalDefaultText = mailSettings?.Sign === SIGN.ENABLED ? SIGN_LABEL : DO_NOT_SIGN_LABEL;
 
     return (
         <SelectTwo id={id} value={value === undefined ? null : value} onChange={handleChange} disabled={disabled}>

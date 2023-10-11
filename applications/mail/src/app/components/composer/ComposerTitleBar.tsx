@@ -3,9 +3,11 @@ import { ReactNode, Ref, RefObject, forwardRef } from 'react';
 import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms';
-import { Icon, Tooltip, useMailSettings } from '@proton/components';
+import { Icon, Tooltip } from '@proton/components';
 import { isSafari as checkIsSafari, metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 interface ButtonProps {
     onClick: () => void;
@@ -64,7 +66,7 @@ const ComposerTitleBar = ({
 }: Props) => {
     const isSafari = checkIsSafari();
 
-    const [{ Shortcuts = 0 } = {}] = useMailSettings();
+    const { Shortcuts } = useMailModel('MailSettings');
 
     const handleDoubleClick = () => {
         if (minimized) {

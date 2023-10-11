@@ -2,10 +2,13 @@ import { ChangeEvent, Fragment, ReactNode, Ref, RefObject, forwardRef, memo, use
 
 import { c, msgid } from 'ttag';
 
-import { useConversationCounts, useItemsDraggable, useMailSettings, useMessageCounts } from '@proton/components';
+import { useConversationCounts, useItemsDraggable, useMessageCounts } from '@proton/components';
 import { DENSITY } from '@proton/shared/lib/constants';
-import { CHECKLIST_DISPLAY_TYPE, MailPageSize, UserSettings } from '@proton/shared/lib/interfaces';
+import { CHECKLIST_DISPLAY_TYPE, UserSettings } from '@proton/shared/lib/interfaces';
+import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 import clsx from '@proton/utils/clsx';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { useGetStartedChecklist } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
@@ -99,7 +102,7 @@ const List = (
     }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
     const { shouldHighlight, esStatus } = useEncryptedSearchContext();
 
     // Override compactness of the list view to accomodate body preview when showing encrypted search results
@@ -114,7 +117,7 @@ const List = (
 
     const elements = usePlaceholders(inputElements, displayPlaceholders, placeholderCount);
 
-    const pageSize = mailSettings?.PageSize ?? MailPageSize.FIFTY;
+    const pageSize = mailSettings?.PageSize ?? MAIL_PAGE_SIZE.FIFTY;
     const pagingHandlers = usePaging(inputPage, pageSize, inputTotal, onPage);
     const { total, page } = pagingHandlers;
 

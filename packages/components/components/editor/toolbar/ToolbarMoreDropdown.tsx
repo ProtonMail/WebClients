@@ -1,7 +1,8 @@
-import { Alignment, Direction } from 'roosterjs-editor-types';
+import { Alignment } from 'roosterjs-editor-types';
 import { c } from 'ttag';
 
 import { COMPOSER_TOOLBAR_ICON_SIZE } from '@proton/shared/lib/constants';
+import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 
 import DropdownMenu from '../../dropdown/DropdownMenu';
 import DropdownMenuButton from '../../dropdown/DropdownMenuButton';
@@ -134,24 +135,24 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                     <DropdownMenuButton
                         key={1}
                         className="text-left flex flex-nowrap flex-align-items-center"
-                        onClick={() => config.textDirection.setValue(Direction.LeftToRight)}
+                        onClick={() => config.textDirection.setValue(DIRECTION.LEFT_TO_RIGHT)}
                         data-testid="editor-left-to-right"
                     >
                         <Icon
                             name="checkmark"
-                            className={getClassname(metadata.rightToLeft === Direction.LeftToRight)}
+                            className={getClassname(metadata.rightToLeft === DIRECTION.LEFT_TO_RIGHT)}
                         />
                         <span className="ml-2 my-auto flex-item-fluid">{c('Info').t`Left to Right`}</span>
                     </DropdownMenuButton>,
                     <DropdownMenuButton
                         key={2}
                         className="text-left flex flex-nowrap flex-align-items-center"
-                        onClick={() => config.textDirection.setValue(Direction.RightToLeft)}
+                        onClick={() => config.textDirection.setValue(DIRECTION.RIGHT_TO_LEFT)}
                         data-testid="editor-right-to-left"
                     >
                         <Icon
                             name="checkmark"
-                            className={getClassname(metadata.rightToLeft === Direction.RightToLeft)}
+                            className={getClassname(metadata.rightToLeft === DIRECTION.RIGHT_TO_LEFT)}
                         />
                         <span className="ml-2 my-auto flex-item-fluid">{c('Info').t`Right to Left`}</span>
                     </DropdownMenuButton>,

@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import { EditorMetadata, EditorTextDirection, useHandler } from '@proton/components';
+import { EditorMetadata, useHandler } from '@proton/components';
 import { PublicKeyReference } from '@proton/crypto';
-import { eoDefaultMailSettings, eoDefaultUserSettings } from '@proton/shared/lib/mail/eo/constants';
+import { EO_DEFAULT_MAILSETTINGS, eoDefaultUserSettings } from '@proton/shared/lib/mail/eo/constants';
+import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
 
@@ -40,7 +41,7 @@ const EOComposer = ({ referenceMessage, id, publicKey, outsideKey, numberOfRepli
         createNewDraft(
             MESSAGE_ACTIONS.REPLY,
             referenceMessage,
-            eoDefaultMailSettings,
+            EO_DEFAULT_MAILSETTINGS,
             eoDefaultUserSettings,
             [],
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -62,9 +63,7 @@ const EOComposer = ({ referenceMessage, id, publicKey, outsideKey, numberOfRepli
     const [blockquoteExpanded, setBlockquoteExpanded] = useState(true);
 
     const isPlainText = testIsPlainText(modelMessage.data);
-    const rightToLeft = modelMessage.data?.RightToLeft
-        ? EditorTextDirection.RightToLeft
-        : EditorTextDirection.LeftToRight;
+    const rightToLeft = modelMessage.data?.RightToLeft ? DIRECTION.RIGHT_TO_LEFT : DIRECTION.LEFT_TO_RIGHT;
     const metadata: EditorMetadata = useMemo(
         () => ({
             supportPlainText: false,
@@ -147,7 +146,7 @@ const EOComposer = ({ referenceMessage, id, publicKey, outsideKey, numberOfRepli
                     onAddAttachments={handleAddAttachments}
                     onRemoveAttachment={handleRemoveAttachment}
                     outsideKey={outsideKey}
-                    mailSettings={eoDefaultMailSettings}
+                    mailSettings={EO_DEFAULT_MAILSETTINGS}
                     editorMetadata={metadata}
                 />
             </div>

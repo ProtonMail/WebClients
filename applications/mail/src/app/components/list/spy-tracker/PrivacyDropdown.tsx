@@ -6,11 +6,13 @@ import { Href } from '@proton/atoms/Href';
 import { Dropdown, Icon, useModalState, usePopperAnchor } from '@proton/components/components';
 import { FeatureCode } from '@proton/components/containers';
 import PreventTrackingToggle from '@proton/components/containers/emailPrivacy/PreventTrackingToggle';
-import { useApi, useMailSettings, useSpotlightOnFeature } from '@proton/components/hooks';
+import { useApi, useSpotlightOnFeature } from '@proton/components/hooks';
 import { TelemetryMailEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import noTrackersImage from '@proton/styles/assets/img/illustrations/no-trackers-found.svg';
 import trackersImage from '@proton/styles/assets/img/illustrations/trackers-found.svg';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { emailTrackerProtectionURL } from '../../../constants';
 import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
@@ -56,7 +58,7 @@ interface Props {
 const PrivacyDropdown = ({ message }: Props) => {
     const api = useApi();
     const dispatch = useAppDispatch();
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
     const [spyTrackerModalProps, setSpyTrackerModalOpen, renderSpyTrackerModal] = useModalState();
     const [utmTrackerModalProps, setUTMTrackerModalOpen, renderUTMTrackerModal] = useModalState();
 
@@ -176,7 +178,7 @@ const PrivacyDropdown = ({ message }: Props) => {
                                 <div className="inline-flex flex-nowrap flex-align-items-center flex-justify-center">
                                     <PreventTrackingToggle
                                         id="preventTrackingToggle"
-                                        preventTracking={mailSettings?.ImageProxy || 0}
+                                        preventTracking={mailSettings.ImageProxy}
                                         data-testid="privacy:prevent-tracking-toggle"
                                         onEnable={handleEnableProxy}
                                     />

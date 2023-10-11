@@ -1,6 +1,7 @@
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 
 import { data, fromFields, recipients } from '../../components/composer/quickReply/tests/QuickReply.test.data';
 import { addressID, messageID, subject } from '../../components/message/tests/Message.test.helpers';
@@ -41,7 +42,7 @@ const getFakeNow = new Date(2021, 0, 1, 0, 0, 0);
 
 describe('messageContent', () => {
     const mailSettings = {
-        PMSignature: 1,
+        PMSignature: PM_SIGNATURE.ENABLED,
     } as MailSettings;
 
     const userSettings = {} as UserSettings;

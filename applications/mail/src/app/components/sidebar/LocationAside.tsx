@@ -1,8 +1,10 @@
 import { c, msgid } from 'ttag';
 
-import { ReloadSpinner, useMailSettings } from '@proton/components';
-import { VIEW_MODE } from '@proton/shared/lib/constants';
+import { ReloadSpinner } from '@proton/components';
+import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import clsx from '@proton/utils/clsx';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 interface Props {
     unreadCount?: number;
@@ -30,7 +32,7 @@ const LocationAside = ({
     itemOptions,
     isOptionDropdownOpened,
 }: Props) => {
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
 
     const getUnreadTitle = () => {
         if (shouldDisplayTotal) {
@@ -40,7 +42,7 @@ const LocationAside = ({
                 unreadCount
             );
         }
-        if (mailSettings?.ViewMode === GROUP) {
+        if (mailSettings.ViewMode === GROUP) {
             return c('Info').ngettext(
                 msgid`${unreadCount} unread conversation`,
                 `${unreadCount} unread conversations`,

@@ -1,4 +1,5 @@
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
+import { ALMOST_ALL_MAIL, SHORTCUTS, SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 import { mockUseHistory, mockUseMailSettings } from '@proton/testing/index';
 
 import { useFolderNavigationHotkeys } from './useFolderNavigationHotkeys';
@@ -84,7 +85,7 @@ describe('useFolderNavigationHotkeys', () => {
 
     describe('when shortcut is set to false', () => {
         it('should return no shortcut', () => {
-            mockUseMailSettings([{ Shortcuts: 0 }]);
+            mockUseMailSettings([{ Shortcuts: SHORTCUTS.DISABLED }]);
             const shortcuts = useFolderNavigationHotkeys();
             expect(shortcuts).toHaveLength(0);
         });
@@ -92,7 +93,7 @@ describe('useFolderNavigationHotkeys', () => {
 
     describe('when ShowMoved is true', () => {
         it('should navigate to correct url', () => {
-            mockUseMailSettings([{ Shortcuts: 1, ShowMoved: 1 }]);
+            mockUseMailSettings([{ Shortcuts: SHORTCUTS.ENABLED, ShowMoved: SHOW_MOVED.DRAFTS }]);
             const shortcuts = useFolderNavigationHotkeys();
             expect(shortcuts).toHaveLength(8);
 
@@ -107,7 +108,7 @@ describe('useFolderNavigationHotkeys', () => {
 
     describe('when AlmostAllMail is true', () => {
         it('should navigate to correct url', () => {
-            mockUseMailSettings([{ Shortcuts: 1, AlmostAllMail: 1 }]);
+            mockUseMailSettings([{ Shortcuts: SHORTCUTS.ENABLED, AlmostAllMail: ALMOST_ALL_MAIL.ENABLED }]);
             const shortcuts = useFolderNavigationHotkeys();
             expect(shortcuts).toHaveLength(8);
 

@@ -1,12 +1,13 @@
-import { CONTACT_MIME_TYPES, MIME_TYPES, PACKAGE_TYPE, PGP_SCHEMES, PGP_SIGN } from '../../constants';
+import { CONTACT_MIME_TYPES, MIME_TYPES, PGP_SCHEMES } from '../../constants';
 import { ContactPublicKeyModel, MailSettings } from '../../interfaces';
+import { PACKAGE_TYPE, SIGN } from '../../mail/mailSettings';
 
 /**
  * Extract sign flag from the contact public key model and mail settings
  */
 export const extractSign = (model: ContactPublicKeyModel, mailSettings: MailSettings): boolean => {
     const { sign } = model;
-    return sign !== undefined ? sign : mailSettings.Sign === PGP_SIGN;
+    return sign !== undefined ? sign : mailSettings.Sign === SIGN.ENABLED;
 };
 
 /**

@@ -37,7 +37,7 @@ interface Props {
     onReady?: (iframeRef: RefObject<HTMLIFrameElement>) => void;
     onMailTo?: (src: string) => void;
     isOutside?: boolean;
-    mailSettings?: MailSettings;
+    mailSettings: MailSettings;
     onFocus?: () => void;
 }
 
@@ -131,7 +131,7 @@ const MessageBodyIframe = ({
                     isPrint={isPrint}
                     messageImages={message.messageImages}
                     localID={message.localID}
-                    useProxy={!!mailSettings?.ImageProxy}
+                    useProxy={!!mailSettings.ImageProxy}
                 />
             )}
             {showToggle &&

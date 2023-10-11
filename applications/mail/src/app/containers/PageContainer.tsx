@@ -7,13 +7,14 @@ import {
     useFeatures,
     useFolders,
     useLabels,
-    useMailSettings,
     useModalState,
     useOpenDrawerOnLoad,
     useUserSettings,
 } from '@proton/components';
-import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import { UserSettings } from '@proton/shared/lib/interfaces';
 import { Label } from '@proton/shared/lib/interfaces/Label';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import PrivateLayout from '../components/layout/PrivateLayout';
 import MailOnboardingWrapper from '../components/onboarding/MailOnboardingWrapper';
@@ -38,7 +39,7 @@ interface Props {
 
 const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints }: Props, ref: Ref<HTMLDivElement>) => {
     const [userSettings] = useUserSettings();
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
     const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
 
     useOpenDrawerOnLoad();
@@ -72,7 +73,7 @@ const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints 
             <LabelActionsContextProvider>
                 <MailboxContainer
                     labelID={labelID}
-                    mailSettings={mailSettings as MailSettings}
+                    mailSettings={mailSettings}
                     userSettings={userSettings as UserSettings}
                     breakpoints={breakpoints}
                     elementID={elementID}

@@ -22,7 +22,7 @@ const Container = ({ children }: ContainerProps) => (
     </div>
 );
 interface Props {
-    mailSettings: MailSettings | undefined;
+    mailSettings: MailSettings;
     location: Location;
     labelCount: LabelCount | undefined;
 }

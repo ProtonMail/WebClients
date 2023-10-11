@@ -1,11 +1,13 @@
 import { useHistory } from 'react-router-dom';
 
-import { useCache, useHandler, useMailSettings } from '@proton/components';
+import { useCache, useHandler } from '@proton/components';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
 import { STATUS } from '@proton/shared/lib/models/cache';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { updateCountersForMarkAs } from '../../helpers/counter';
 import { isUnread, isMessage as testIsMessage } from '../../helpers/elements';
@@ -100,7 +102,7 @@ export const useOptimisticMarkAs = () => {
     const dispatch = useAppDispatch();
     const getElementByID = useGetElementByID();
     const globalCache = useCache();
-    const [mailSettings] = useMailSettings();
+    const mailSettings = useMailModel('MailSettings');
     const history = useHistory();
     const getConversation = useGetConversation();
 

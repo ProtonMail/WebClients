@@ -3,15 +3,7 @@ import { MouseEvent } from 'react';
 import { c } from 'ttag';
 
 import { Button, Kbd } from '@proton/atoms';
-import {
-    ButtonGroup,
-    Icon,
-    Tooltip,
-    useAddresses,
-    useContactModals,
-    useMailSettings,
-    useToggle,
-} from '@proton/components';
+import { ButtonGroup, Icon, Tooltip, useAddresses, useContactModals, useToggle } from '@proton/components';
 import { shiftKey } from '@proton/shared/lib/helpers/browser';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { MailSettings } from '@proton/shared/lib/interfaces';
@@ -19,6 +11,8 @@ import { Label } from '@proton/shared/lib/interfaces/Label';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getHasOnlyIcsAttachments, getRecipients, isInternal, isScheduled } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
+
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { MESSAGE_ACTIONS } from '../../../constants';
 import { useOnCompose, useOnMailTo } from '../../../containers/ComposeProvider';
@@ -95,7 +89,7 @@ const HeaderExpanded = ({
 
     const isScheduledMessage = isScheduled(message.data);
 
-    const [{ Shortcuts } = { Shortcuts: 0 }] = useMailSettings();
+    const { Shortcuts } = useMailModel('MailSettings');
 
     const onCompose = useOnCompose();
 

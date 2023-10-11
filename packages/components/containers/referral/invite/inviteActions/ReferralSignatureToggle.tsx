@@ -6,6 +6,7 @@ import { Info, Toggle, useApi, useMailSettings, useUserSettings } from '@proton/
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { updatePMSignatureReferralLink } from '@proton/shared/lib/api/mailSettings';
+import { PM_SIGNATURE_REFERRAL } from '@proton/shared/lib/mail/mailSettings';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 
 const ReferralSignatureToggle = () => {
@@ -17,7 +18,13 @@ const ReferralSignatureToggle = () => {
     const isMounted = useIsMounted();
 
     const toggleReferralSignature = useCallback((nextValue: 0 | 1) => {
-        void loadingCallback(api(updatePMSignatureReferralLink(nextValue ? 1 : 0))).then(() => {
+        void loadingCallback(
+            api(
+                updatePMSignatureReferralLink(
+                    nextValue ? PM_SIGNATURE_REFERRAL.ENABLED : PM_SIGNATURE_REFERRAL.DISABLED
+                )
+            )
+        ).then(() => {
             if (isMounted()) {
                 setShowShareLinkFooter(nextValue);
             }
@@ -26,7 +33,7 @@ const ReferralSignatureToggle = () => {
 
     useEffect(() => {
         if (loadingMailSettings === false && mailSettings?.PMSignatureReferralLink !== undefined) {
-            setShowShareLinkFooter(mailSettings.PMSignatureReferralLink);
+            setShowShareLinkFooter(mailSettings?.PMSignatureReferralLink);
         }
     }, [loadingMailSettings]);
 
