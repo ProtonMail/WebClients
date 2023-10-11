@@ -27,7 +27,7 @@ import {
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { PLANS } from '@proton/shared/lib/constants';
-import { getIsCustomCycle, getIsOfferBasedOnCoupon } from '@proton/shared/lib/helpers/checkout';
+import { getIsCustomCycle } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { Api, Currency, Cycle, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
@@ -117,10 +117,9 @@ const PaymentStep = ({
         </Price>
     );
 
-    // Disable cycles during signup for custom cycles or if there is a black friday coupon. (Assume coming from offer page in that case).
+    // Disable cycles during signup for custom cycles or if there is a coupon. (Since the cycle selector will show values which don't include the coupon discount).
     const disableCycleSelector =
-        getIsCustomCycle(subscriptionData.cycle) ||
-        getIsOfferBasedOnCoupon(subscriptionData.checkResult.Coupon?.Code || '');
+        getIsCustomCycle(subscriptionData.cycle) || !!subscriptionData.checkResult.Coupon?.Code || '';
 
     return (
         <div className="sign-layout-mobile-columns w100 flex flex-align-items-start flex-justify-center gap-7">
