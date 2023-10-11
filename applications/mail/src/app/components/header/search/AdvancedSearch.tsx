@@ -234,7 +234,7 @@ const AdvancedSearch = ({
                     <>
                         <div className="mt-4">
                             <Button
-                                className="mb-2 on-mobile-w100"
+                                className="mb-2 w-full md:w-auto"
                                 onClick={toggleShowMore}
                                 data-testid="advanced-search:show-less"
                                 title={c('Action').t`Show fewer search options`}
@@ -322,18 +322,18 @@ const AdvancedSearch = ({
                 {showMore ? null : (
                     <Button
                         data-testid="advanced-search:show-more"
-                        className="mb-2 on-mobile-w100"
+                        className="mb-2 w-full md:w-auto"
                         onClick={toggleShowMore}
                         title={c('Action').t`Show more search options`}
                     >
                         {c('Action').t`More search options`}
                     </Button>
                 )}
-                <div className="ml-auto on-mobile-w100">
+                <div className="ml-auto w-full md:w-auto">
                     {canReset ? (
                         <Button
                             data-testid="advanced-search:reset"
-                            className="mb-2 on-mobile-w100 mr-4"
+                            className="mb-2 w-full md:w-auto mr-4"
                             type="reset"
                             title={c('Action').t`Reset search form`}
                         >{c('Action').t`Reset`}</Button>
@@ -341,7 +341,7 @@ const AdvancedSearch = ({
                     <PrimaryButton
                         data-testid="advanced-search:submit"
                         type="submit"
-                        className="mb-2 on-mobile-w100"
+                        className="mb-2 w-full md:w-auto"
                     >{c('Action').t`Search`}</PrimaryButton>
                 </div>
             </div>

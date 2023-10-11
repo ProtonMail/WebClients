@@ -35,7 +35,7 @@ const Step2 = ({
             <Main>
                 <Content>
                     <Header center title={c('Info').t`Thank you`} subTitle={c('Info').t`for choosing ${product}`} />
-                    <div className="pb-4 text-center m-auto w100 mt-6">{img}</div>
+                    <div className="pb-4 text-center m-auto w-full mt-6">{img}</div>
                     <div className="text-center pt-7 md:pt-0" role="alert">
                         <div className="inline-block w70">
                             <LoadingTextStepper steps={steps} />

@@ -123,7 +123,7 @@ const PaymentStep = ({
         getIsCustomCycle(subscriptionData.cycle) || !!subscriptionData.checkResult.Coupon?.Code;
 
     return (
-        <div className="sign-layout-mobile-columns w100 flex flex-align-items-start flex-justify-center gap-7">
+        <div className="sign-layout-mobile-columns w-full flex flex-align-items-start flex-justify-center gap-7">
             <Main center={false}>
                 <Header
                     onBack={onBack}

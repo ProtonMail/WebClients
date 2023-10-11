@@ -28,7 +28,7 @@ const FamilyPlanSection = () => {
         <>
             <SettingsParagraph>{c('familyOffer_2023:Family plan')
                 .t`You are part of ${organization.Name}.`}</SettingsParagraph>
-            <div className="w50 on-tablet-w100">
+            <div className="w-full md:w-1/2">
                 <UsagePanel addresses={addresses} calendars={calendars} organization={organization} user={user}>
                     <Button
                         shape="ghost"
