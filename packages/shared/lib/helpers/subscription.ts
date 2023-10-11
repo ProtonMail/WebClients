@@ -6,11 +6,13 @@ import {
     APP_NAMES,
     COUPON_CODES,
     CYCLE,
+    FreeSubscription,
     IPS_INCLUDED_IN_PLAN,
     MEMBER_ADDON_PREFIX,
     PLANS,
     PLAN_SERVICES,
     PLAN_TYPES,
+    isFreeSubscription,
 } from '../constants';
 import { External, Plan, PlanIDs, PlansMap, Pricing, Subscription } from '../interfaces';
 import { hasBit } from './bitset';
@@ -57,7 +59,11 @@ export const getPlanName = (subscription: Subscription | undefined, service: PLA
     return plan?.Name;
 };
 
-export const hasSomePlan = (subscription: Subscription | undefined, planName: PLANS) => {
+export const hasSomePlan = (subscription: Subscription | FreeSubscription | undefined, planName: PLANS) => {
+    if (isFreeSubscription(subscription)) {
+        return false;
+    }
+
     return (subscription?.Plans || []).some(({ Name }) => Name === planName);
 };
 
@@ -70,9 +76,9 @@ export const hasMigrationDiscount = (subscription: Subscription) => {
 };
 
 export const isManagedExternally = (
-    subscription: Subscription | Pick<Subscription, 'External'> | undefined | null
+    subscription: Subscription | FreeSubscription | Pick<Subscription, 'External'> | undefined | null
 ): boolean => {
-    if (!subscription) {
+    if (!subscription || isFreeSubscription(subscription)) {
         return false;
     }
 
@@ -95,8 +101,10 @@ export const hasMailProfessional = (subscription: Subscription | undefined) => h
 export const hasVpnBasic = (subscription: Subscription | undefined) => hasSomePlan(subscription, VPNBASIC);
 export const hasVpnPlus = (subscription: Subscription | undefined) => hasSomePlan(subscription, VPNPLUS);
 export const hasFamily = (subscription: Subscription | undefined) => hasSomePlan(subscription, FAMILY);
-export const hasVpnPro = (subscription: Subscription | undefined) => hasSomePlan(subscription, VPN_PRO);
-export const hasVpnBusiness = (subscription: Subscription | undefined) => hasSomePlan(subscription, VPN_BUSINESS);
+export const hasVpnPro = (subscription: Subscription | FreeSubscription | undefined) =>
+    hasSomePlan(subscription, VPN_PRO);
+export const hasVpnBusiness = (subscription: Subscription | FreeSubscription | undefined) =>
+    hasSomePlan(subscription, VPN_BUSINESS);
 export const hasFree = (subscription: Subscription | undefined) => (subscription?.Plans || []).length === 0;
 
 export const getUpgradedPlan = (subscription: Subscription | undefined, app: APP_NAMES) => {
@@ -133,7 +141,7 @@ export const getHasB2BPlan = (subscription: Subscription | undefined) => {
     return !!subscription?.Plans?.some(({ Name }) => getIsB2BPlan(Name));
 };
 
-export const getHasVpnB2BPlan = (subscription: Subscription | undefined) => {
+export const getHasVpnB2BPlan = (subscription: Subscription | FreeSubscription | undefined) => {
     return hasVpnPro(subscription) || hasVpnBusiness(subscription);
 };
 

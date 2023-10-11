@@ -1,10 +1,10 @@
-import { PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
-import { External, Renew, Subscription } from '@proton/shared/lib/interfaces';
+import { CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
+import { External, Renew, Subscription, SubscriptionModel } from '@proton/shared/lib/interfaces';
 
-export const subscriptionMock: Subscription = {
+export const subscriptionMock: SubscriptionModel = {
     ID: 'subscriptionId123',
     InvoiceID: 'invoiceId123',
-    Cycle: 12,
+    Cycle: CYCLE.YEARLY,
     PeriodStart: 1685966060,
     PeriodEnd: 1717588460,
     CreateTime: 1685966060,
@@ -13,6 +13,51 @@ export const subscriptionMock: Subscription = {
     Amount: 11988,
     Discount: 0,
     RenewAmount: 11988,
+    Renew: Renew.Enabled,
+    External: External.Default,
+    Plans: [
+        {
+            ID: 'planId123',
+            Name: PLANS.BUNDLE,
+            Type: PLAN_TYPES.PLAN,
+            Title: 'Proton Unlimited',
+            MaxDomains: 3,
+            MaxAddresses: 15,
+            MaxCalendars: 25,
+            MaxSpace: 536870912000,
+            MaxMembers: 1,
+            MaxVPN: 10,
+            MaxTier: 2,
+            Services: 15,
+            Features: 1,
+            State: 1,
+            Cycle: 12,
+            Currency: 'EUR',
+            Amount: 11988,
+            Quantity: 1,
+            Pricing: {
+                '1': 1299,
+                '12': 11988,
+                '24': 19176,
+            },
+            Offers: [],
+        },
+    ],
+    isManagedByMozilla: false,
+};
+
+export const upcomingSubscriptionMock: Subscription = {
+    ID: 'subscriptionId124',
+    InvoiceID: 'invoiceId124',
+    Cycle: CYCLE.TWO_YEARS,
+    PeriodStart: 1717588460,
+    PeriodEnd: 1780660460,
+    CreateTime: 1685966060,
+    CouponCode: null,
+    Currency: 'EUR',
+    Amount: 19176,
+    Discount: 0,
+    RenewAmount: 19176,
     Renew: Renew.Enabled,
     External: External.Default,
     Plans: [
