@@ -590,18 +590,20 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         }
 
         let success = false;
+        let isInitialIndexing = true;
         while (!success) {
-            success = await buildMetadataDB<ESItemMetadata>(
+            success = await buildMetadataDB<ESItemMetadata>({
                 userID,
                 esSupported,
                 indexKey,
                 esCacheRef,
-                esCallbacks.queryItemsMetadata,
-                esCallbacks.getItemInfo,
+                queryItemsMetadata: esCallbacks.queryItemsMetadata,
+                getItemInfo: esCallbacks.getItemInfo,
                 abortIndexingRef,
-                recordMetadataProgress,
-                isBackgroundIndexing
-            );
+                recordProgress: recordMetadataProgress,
+                isInitialIndexing,
+                isBackgroundIndexing,
+            });
 
             // Kill switch in case user logs out or deletes data
             if (abortIndexingRef.current.signal.aborted) {
@@ -610,6 +612,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
 
             // In case the procedure failed, wait some time before re-starting
             if (!success) {
+                isInitialIndexing = false;
                 await wait(2 * SECOND);
             }
         }
@@ -642,12 +645,14 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         // later pages will contain different items than if the deletion had never occurred. The
         // end result is that some items are not indexed. Since it's tricky and slow to figure
         // out which ones, we instead just delete everything and notify users
+        let metrics;
         if (wasESDBCreated) {
             const totalIndexed = await readNumMetadata(userID);
             if (typeof totalIndexed === 'undefined' || totalIndexed < expectedTotalIndexed) {
                 return handleError();
             }
-
+            await metadataIndexingProgress.addTimestamp(userID, TIMESTAMP_TYPE.STOP);
+            metrics = await gatherIndexingMetrics(userID, 'metadata');
             await metadataIndexingProgress.setActiveStatus(userID);
             await toggleEnabled(userID);
         }
@@ -658,7 +663,6 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             esEnabled: true,
         }));
 
-        const metrics = await gatherIndexingMetrics(userID, 'metadata');
         if (metrics) {
             onMetadataIndexed?.(metrics);
         }
