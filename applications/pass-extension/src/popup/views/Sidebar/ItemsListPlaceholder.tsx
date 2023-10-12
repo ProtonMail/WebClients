@@ -88,7 +88,10 @@ export const ItemsListPlaceholder: VFC = () => {
 
     if (isOwnedNonWritable && totalCount === 0 && didDowngrade) {
         return (
-            <div className="flex flex-column gap-3 text-center">
+            <div
+                className="flex flex-column flex-align-items-center gap-3 text-center p-2 w-2/3 max-w-custom"
+                style={{ '--max-w-custom': '20rem' }}
+            >
                 <span className="text-semibold inline-block">{c('Title').t`Your vault is empty`}</span>
                 <ItemCard>
                     {primaryVaultDisabled
