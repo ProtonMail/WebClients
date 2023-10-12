@@ -10,7 +10,7 @@ import { sortOn } from '@proton/pass/utils/fp/sort';
 import { diadic } from '@proton/pass/utils/fp/variadics';
 import { logger } from '@proton/pass/utils/logger';
 import { fullMerge, merge, objectFilter } from '@proton/pass/utils/object';
-import { isActiveVault, isOwnVault, isPrimaryVault, isWritableVault } from '@proton/pass/utils/pass/share';
+import { isActiveVault, isOwnVault, isWritableVault } from '@proton/pass/utils/pass/share';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
 import { notification } from '../../actions';
@@ -92,9 +92,7 @@ export function* synchronize(
     const incomingShareIds = incomingShares.map(prop('shareId'));
 
     const primaryVaultDisabled = features?.PassRemovePrimaryVault ?? false;
-    const hasDefaultVault = incomingShares
-        .concat(cachedShares)
-        .some(and(isActiveVault, ...(primaryVaultDisabled ? [isWritableVault, isOwnVault] : [isPrimaryVault])));
+    const hasDefaultVault = incomingShares.concat(cachedShares).some(and(isActiveVault, isWritableVault, isOwnVault));
 
     /* When syncing, if no owned writable vault exists, create it. This
      * accounts for first login, default vault being disabledl. */
