@@ -55,8 +55,7 @@ export const selectDefaultVault = createSelector(
     (vaults, ownWritableVaults, disablePrimaryVault) => {
         if (!disablePrimaryVault) {
             const primaryVault = vaults.find((vault) => vault.primary);
-            if (!primaryVault) throw new SelectorError(`Primary vault not found`);
-            return primaryVault;
+            if (primaryVault) return primaryVault;
         }
 
         return ownWritableVaults.filter((share) => share.owner).sort(sortOn('createTime', 'ASC'))[0];
