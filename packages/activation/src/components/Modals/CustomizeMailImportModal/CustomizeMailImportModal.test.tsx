@@ -28,6 +28,7 @@ const address: Address = {
     Type: ADDRESS_TYPE.TYPE_ORIGINAL,
     ProtonMX: false,
     ConfirmationState: 1,
+    CatchAll: false,
 };
 
 const isLabelMapping = false;
@@ -355,7 +356,7 @@ describe('Customize modal tests', () => {
                 ({
                     Source: source,
                     Separator: '/',
-                } as ApiMailImporterFolder)
+                }) as ApiMailImporterFolder
         );
 
         const nestedFields: MailImportFields = {
