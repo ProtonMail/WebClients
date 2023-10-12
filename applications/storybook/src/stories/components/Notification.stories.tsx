@@ -1,7 +1,5 @@
 import { ChangeEvent, SetStateAction, useState } from 'react';
 
-
-
 import { Button, CircleLoader } from '@proton/atoms';
 import {
     Checkbox,
@@ -139,7 +137,8 @@ export const Basic = () => {
                             name="byoButtonText"
                             id="byoButtonText"
                             label="Button Text"
-                            className="w10e"
+                            className="w-custom"
+                            style={{ '--w-custom': '10em' }}
                             value={byoButtonText}
                             onChange={(e: { target: { value: SetStateAction<string> } }) =>
                                 setByoButtonText(e.target.value)
@@ -150,7 +149,8 @@ export const Basic = () => {
                             name="expiration"
                             id="expiration"
                             label="Expiration"
-                            className="w10e"
+                            className="w-custom"
+                            style={{ '--w-custom': '10em' }}
                             value={byoExpiration}
                             type="number"
                             onChange={(event: ChangeEvent<HTMLInputElement>) =>

@@ -38,7 +38,7 @@ const LoadContentSpotlight = ({ children, anchorRef, show, onDisplayed }: Props)
                 <>
                     <div className="flex flex-nowrap my-2">
                         <div className="flex-item-noshrink mr-4">
-                            <img src={loadContentImg} className="w4e" alt="" />
+                            <img src={loadContentImg} className="w-custom" style={{ '--w-custom': '4em' }} alt="" />
                         </div>
                         <div>
                             <p className="mt-0 mb-2 text-bold">{c('Spotlight').t`Email tracking protection`}</p>

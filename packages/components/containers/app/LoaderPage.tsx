@@ -57,7 +57,8 @@ const LoaderPage = ({ documentTitle = '', text, loaderClassName = '' }: Props) =
                 {!isIframe && (
                     <div>
                         <img
-                            className={clsx(['w10e', loaderClassName])}
+                            className={clsx(['w-custom', loaderClassName])}
+                            style={{ '--w-custom': '10em' }}
                             src={protonSpinner}
                             aria-hidden="true"
                             alt=""

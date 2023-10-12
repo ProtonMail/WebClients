@@ -1,10 +1,7 @@
 import clsx from '@proton/utils/clsx';
 
-
-
 import { getTitle } from '../../helpers/title';
 import mdx from './Colors.mdx';
-
 
 export default {
     title: getTitle(__filename, false),
@@ -26,10 +23,10 @@ type ColorPaletteProps = {
 const ColorItem = ({ className }: ColorItemProps) => (
     <div
         className={clsx(
-            'w8e text-sm flex flex-align-items-center flex-justify-center p-4 rounded shadow-norm border user-select',
+            'w-custom text-sm flex flex-align-items-center flex-justify-center p-4 rounded shadow-norm border user-select',
             className
         )}
-        style={{ 'aspect-ratio': '1' }}
+        style={{ 'aspect-ratio': '1', '--w-custom': '8em' }}
     >
         .{className}
     </div>

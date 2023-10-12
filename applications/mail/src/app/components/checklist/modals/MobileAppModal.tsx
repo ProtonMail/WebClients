@@ -15,7 +15,11 @@ const MobileAppModal = ({ ...rest }: ModalStateProps) => (
             <h1 className="text-bold text-2xl">{c('Get started checklist instructions')
                 .t`Get the ${MAIL_APP_NAME} mobile app`}</h1>
             <div className="mobile-modal-gradient flex flex-column gap-4 p-8 rounded-lg flex-align-items-center">
-                <QRCode className="bg-norm flex p-2 rounded-sm center w10e" value="https://pm.me/app?type=qr" />
+                <QRCode
+                    className="bg-norm flex p-2 rounded-sm center w-custom"
+                    style={{ '--w-custom': '10em' }}
+                    value="https://pm.me/app?type=qr"
+                />
                 <span style={{ color: 'var(--optional-promotion-text-color)' }}>
                     {c('Get started checklist instructions')
                         .t`Using your mobile device, scan this QR code or visit the iOS or Android store.`}

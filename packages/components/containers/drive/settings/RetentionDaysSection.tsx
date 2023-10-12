@@ -34,7 +34,7 @@ const RetentionDaysSection = () => {
     ];
 
     return (
-        <div className="max-w37e">
+        <div className="max-w-custom" style={{ '--max-w-custom': '37em' }}>
             {!hasPaidDrive ? <RevisionsUpgradeBanner /> : null}
             <form className="flex flex-column flex-align-items-start gap-2 mt-6" onSubmit={handleSubmit}>
                 <span className="sr-only" id="id_desc_history">

@@ -25,8 +25,8 @@ const KeysTable = ({
     const headerCells = [
         { node: c('Title header for keys table').t`Fingerprint`, className: 'text-ellipsis' },
         { node: c('Title header for keys table').t`Key type`, className: 'w15' },
-        { node: c('Title header for keys table').t`Status`, className: 'w8e' },
-        { node: c('Title header for keys table').t`Actions`, className: 'w13e' },
+        { node: c('Title header for keys table').t`Status`, className: 'w-custom', style: { '--w-custom': '8em' } },
+        { node: c('Title header for keys table').t`Actions`, className: 'w-custom', style: { '--w-custom': '13em' } },
     ].map(({ node, className = '' }) => {
         return (
             <TableCell key={node} className={className} type="header">
