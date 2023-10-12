@@ -49,7 +49,7 @@ const LobbyContent: VFC = () => {
         <img
             src={passBrandText}
             className="pass-lobby--brand-text ml-2 h-custom"
-            style={{ '--h-custom': '24px' }}
+            style={{ '--h-custom': '1.5rem' }}
             key="brand"
             alt=""
         />
