@@ -28,7 +28,7 @@ const ReferralSpotlight = ({ children, show, onDisplayed, anchorRef, user }: Pro
                 <>
                     <div className="flex flex-nowrap my-2">
                         <div className="flex-item-noshrink mr-4">
-                            <img src={starImg} alt="star" className="w4e" />
+                            <img src={starImg} alt="star" className="w-custom" style={{ '--w-custom': '4em' }} />
                         </div>
                         <div>
                             <p className="mt-0 mb-2 text-bold">{c('Spotlight').t`Invite friends to ${BRAND_NAME}`}</p>

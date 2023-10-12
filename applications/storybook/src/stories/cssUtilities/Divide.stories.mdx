@@ -48,7 +48,10 @@ Utilities for adding a border between children of an element.
             </TableCell>
             <TableCell>Add borders between vertical children</TableCell>
             <TableCell className="text-right">
-                <span className="inline-flex w50p text-center flex-column divide-y">
+                <span
+                    className="inline-flex w-custom text-center flex-column divide-y"
+                    style={{ '--w-custom': '3.125rem' }}
+                >
                     <span className="px-2 py-1">1</span>
                     <span className="px-2 py-1">2</span>
                     <span className="px-2 py-1">3</span>

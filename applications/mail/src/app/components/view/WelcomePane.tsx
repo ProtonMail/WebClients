@@ -18,7 +18,9 @@ interface ContainerProps {
 
 const Container = ({ children }: ContainerProps) => (
     <div className="flex h100 scroll-if-needed py-4 px-7">
-        <div className="m-auto text-center max-w30e">{children}</div>
+        <div className="m-auto text-center max-w-custom" style={{ '--max-w-custom': '30em' }}>
+            {children}
+        </div>
     </div>
 );
 interface Props {

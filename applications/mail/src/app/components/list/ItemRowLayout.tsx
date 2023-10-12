@@ -92,7 +92,7 @@ const ItemRowLayout = ({
     return (
         <div className="flex-nowrap flex-column w-full">
             <div className="flex-item-fluid flex flex-align-items-center flex-nowrap flex-row item-titlesender">
-                <div className="my-auto flex w2e" data-testid={unread}>
+                <div className="my-auto flex w-custom" style={{ '--w-custom': '2em' }} data-testid={unread}>
                     <ItemStar element={element} />
                 </div>
                 <div className={clsx(['item-senders flex flex-nowrap m-auto pr-4', unread && 'text-bold'])}>
@@ -154,7 +154,10 @@ const ItemRowLayout = ({
                     isCollapsed={false}
                 />
 
-                <span className="flex flex-nowrap w5e ml-2 text-center flex-justify-end">
+                <span
+                    className="flex flex-nowrap w-custom ml-2 text-center flex-justify-end"
+                    style={{ '--w-custom': '5em' }}
+                >
                     {hasExpiration && (
                         <ItemExpiration expirationTime={expirationTime} element={element} labelID={labelID} />
                     )}
@@ -165,7 +168,10 @@ const ItemRowLayout = ({
                     />
                 </span>
 
-                <span className="ml-4 flex w13e flex-nowrap flex-align-items-center flex-justify-end">
+                <span
+                    className="ml-4 flex w-custom flex-nowrap flex-align-items-center flex-justify-end"
+                    style={{ '--w-custom': '13em' }}
+                >
                     <ItemHoverButtons
                         element={element}
                         labelID={labelID}
@@ -185,7 +191,7 @@ const ItemRowLayout = ({
                 </span>
             </div>
             <div className="flex-item-fluid flex flex-align-items-center flex-nowrap flex-row">
-                <div className="my-auto flex w2e"></div>
+                <div className="my-auto flex w-custom" style={{ '--w-custom': '2em' }}></div>
                 <div className={clsx(['item-senders flex pr-4'])}></div>
 
                 {showThumbnails && (

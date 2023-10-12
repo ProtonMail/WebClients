@@ -228,7 +228,10 @@ const AddressesAutocompleteTwo = forwardRef<HTMLInputElement, Props>(
                         }
                     }}
                     className={clsx([rest.className, compact && 'border-none'])}
-                    style={compact ? { height: 'auto', minHeight: 'auto' } : {}}
+                    style={{
+                        ...(compact ? { height: 'auto', minHeight: 'auto' } : {}),
+                        ...(rest.style ? rest.style : {}),
+                    }}
                     error={emailError}
                 />
                 <AutocompleteList anchorRef={anchorRef || rootRef} {...suggestionProps}>

@@ -64,7 +64,8 @@ const TVCodeInputs = ({ value, setValue }: Props) => {
                         onChange={handleOnChangeFirst}
                         onKeyUp={handleKeyUpFirst}
                         placeholder="1234"
-                        className="text-bold max-w15e flex-align-self-end m-auto"
+                        className="text-bold max-w-custom flex-align-self-end m-auto"
+                        style={{ '--max-w-custom': '15em' }}
                         required
                         autoFocus
                     />
@@ -79,7 +80,8 @@ const TVCodeInputs = ({ value, setValue }: Props) => {
                         onChange={handleOnChangeSecond}
                         onKeyUp={handleKeyUpSecond}
                         placeholder="ABCD"
-                        className="text-bold max-w15e m-auto"
+                        className="text-bold max-w-custom m-auto"
+                        style={{ '--max-w-custom': '15em' }}
                         required
                     />
                 </div>

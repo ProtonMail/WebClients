@@ -333,7 +333,8 @@ const CreateUserAccountsModal = ({ verifiedDomains, usersToImport, app, onClose,
                 additionalContent: (
                     <div className="flex flex-align-items-center flex-justify-end mt-4 px-3">
                         <Input
-                            className="max-w270p"
+                            className="max-w-custom"
+                            style={{ '--max-w-custom': '16.875rem' }}
                             placeholder={c('Placeholder').t`Search`}
                             prefix={<Icon name="magnifier" alt={c('Action').t`Search`} />}
                             value={searchValue}

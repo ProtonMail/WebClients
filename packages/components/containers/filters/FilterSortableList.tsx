@@ -1,15 +1,10 @@
 import { ContainerGetter, SortEndHandler } from 'react-sortable-hoc';
 
-
-
 import { c } from 'ttag';
-
-
 
 import { OrderableTable, OrderableTableBody, OrderableTableHeader } from '../../components';
 import FilterItemRow from './FilterItemRow';
 import { Filter } from './interfaces';
-
 
 interface Props {
     items: Filter[];
@@ -27,10 +22,10 @@ const FilterSortableList = ({ items, onApplyFilter, ...rest }: Props) => (
                     <span className="sr-only">{c('Settings/filters - table').t`Order`}</span>
                 </th>
                 <th scope="col">{c('Settings/filters - table').t`Name`}</th>
-                <th scope="col" className="w8e no-mobile">
+                <th scope="col" className="w-custom no-mobile" style={{ '--w-custom': '8em' }}>
                     {c('Settings/filters - table').t`Status`}
                 </th>
-                <th scope="col" className="w10e">
+                <th scope="col" className="w-custom" style={{ '--w-custom': '10em' }}>
                     {c('Settings/filters - table').t`Action`}
                 </th>
             </tr>

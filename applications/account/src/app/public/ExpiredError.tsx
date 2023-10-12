@@ -61,7 +61,7 @@ const getTexts = (type: Props['type']) => {
 const ExpiredError = ({ type }: Props) => {
     const { title, description, cta } = getTexts(type);
     return (
-        <div className="m-auto text-center max-w20e">
+        <div className="m-auto text-center max-w-custom" style={{ '--max-w-custom': '20em' }}>
             <div className="mb-8">
                 <img src={expired} alt={c('Error').t`Expired`} />
             </div>
