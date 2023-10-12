@@ -2,7 +2,6 @@ import type { FC } from 'react';
 
 import { Scroll } from '@proton/atoms';
 import { DropdownMenu } from '@proton/components/components';
-import { pixelEncoder } from '@proton/pass/utils/dom';
 
 import { DROPDOWN_ITEM_HEIGHT } from './DropdownItem';
 
@@ -11,13 +10,10 @@ const DROPDOWN_LIST_MAX_HEIGHT = DROPDOWN_MAX_VISIBLE_ITEMS * DROPDOWN_ITEM_HEIG
 
 export const DropdownItemsList: FC = ({ children }) => (
     <DropdownMenu>
-        <div
-            className="max-h-custom overflow-hidden"
-            style={{ '--max-h-custom': pixelEncoder(DROPDOWN_LIST_MAX_HEIGHT) }}
-        >
+        <div className="max-h-custom overflow-hidden" style={{ '--max-h-custom': `${DROPDOWN_LIST_MAX_HEIGHT}rem` }}>
             <Scroll
                 {...(Array.isArray(children) && children.length >= DROPDOWN_MAX_VISIBLE_ITEMS
-                    ? { style: { height: DROPDOWN_LIST_MAX_HEIGHT } }
+                    ? { style: { height: `${DROPDOWN_LIST_MAX_HEIGHT}rem` } }
                     : {})}
             >
                 {children}
