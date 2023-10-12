@@ -13,7 +13,7 @@ import {
     Icon,
 } from '@proton/components';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
-import { selectOwnWritableVaults, selectShare, selectVaultsWithItemsCount } from '@proton/pass/store/selectors';
+import { selectOwnVaults, selectShare, selectVaultsWithItemsCount } from '@proton/pass/store/selectors';
 import { type MaybeNull, type ShareType, type VaultShare } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 
@@ -57,7 +57,7 @@ export const VaultSubmenu: VFC<Props> = ({
 
     const vaults = useSelector(selectVaultsWithItemsCount);
     const selectedVault = useSelector(selectShare<ShareType.Vault>(selectedShareId ?? ''));
-    const hasMultipleOwnedVaults = useSelector(selectOwnWritableVaults).length > 1;
+    const hasMultipleOwnVaults = useSelector(selectOwnVaults).length > 1;
     const selectedVaultOption = getVaultOptionInfo(selectedVault || (inTrash ? 'trash' : 'all'));
     const totalCount = useMemo(() => vaults.reduce<number>((subtotal, { count }) => subtotal + count, 0), [vaults]);
 
@@ -98,7 +98,7 @@ export const VaultSubmenu: VFC<Props> = ({
                 />
 
                 {vaults.map((vault) => {
-                    const canDelete = vault.owner && hasMultipleOwnedVaults;
+                    const canDelete = vault.owner && hasMultipleOwnVaults;
 
                     return (
                         <VaultItem

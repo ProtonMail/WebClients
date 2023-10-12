@@ -5,20 +5,28 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Progress } from '@proton/components/components';
+import {
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+    Progress,
+} from '@proton/components/components';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { useActionWithRequest } from '@proton/pass/hooks/useActionWithRequest';
 import { inviteAcceptIntent, inviteRejectIntent } from '@proton/pass/store/actions';
 import { inviteAcceptRequest, inviteRejectRequest } from '@proton/pass/store/actions/requests';
-import { selectUserVerified } from '@proton/pass/store/selectors';
+import { selectUserVerified, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { Invite } from '@proton/pass/types/data/invites';
 
 import { useInviteContext } from './InviteContextProvider';
 import { UserVerificationMessage } from './UserVerificationMessage';
+import { ItemCard } from '@proton/pass/components/Item/ItemCard';
 
 export const VaultInviteRespond: VFC<Invite> = (invite) => {
     const { inviterEmail, invitedAddressId, token, vault } = invite;
     const { itemCount, memberCount } = vault;
+    const { vaultLimitReached } = useSelector(selectVaultLimits);
     const { onInviteResponse } = useInviteContext();
 
     const acceptInvite = useActionWithRequest({
@@ -70,11 +78,16 @@ export const VaultInviteRespond: VFC<Invite> = (invite) => {
 
             <ModalTwoFooter className="flex flex-column flex-align-items-stretch text-center">
                 {!userVerified && <UserVerificationMessage />}
+                {userVerified && vaultLimitReached && (
+                    <ItemCard className="mb-2">
+                        {c('Warning').t`You have reached the limit of vaults you can have in your plan.`}
+                    </ItemCard>
+                )}
                 <Button
                     size="large"
                     shape="solid"
                     color="norm"
-                    disabled={loading || !userVerified}
+                    disabled={loading || !userVerified || vaultLimitReached}
                     loading={acceptInvite.loading}
                     onClick={handleAcceptInvite}
                 >{c('Action').t`Join shared vault`}</Button>
