@@ -39,6 +39,7 @@ export const generateMockAddress = (n: number, keyActive: boolean, type?: ADDRES
         Type: type ?? 1,
         ProtonMX: true,
         ConfirmationState: 1,
+        CatchAll: false,
     };
 };
 
