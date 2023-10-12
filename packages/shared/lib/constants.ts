@@ -431,6 +431,10 @@ export enum ADDRESS_FLAGS {
     FLAG_DISABLE_EXPECTED_SIGNED = 32,
 }
 
+export enum MEMBER_PERMISSIONS {
+    MANAGE_FORWARDING = 1,
+}
+
 export enum MEMBER_PRIVATE {
     READABLE = 0,
     UNREADABLE = 1,
