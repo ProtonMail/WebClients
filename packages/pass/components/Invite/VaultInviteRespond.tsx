@@ -1,4 +1,5 @@
 import { type VFC } from 'react';
+import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
@@ -9,9 +10,11 @@ import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { useActionWithRequest } from '@proton/pass/hooks/useActionWithRequest';
 import { inviteAcceptIntent, inviteRejectIntent } from '@proton/pass/store/actions';
 import { inviteAcceptRequest, inviteRejectRequest } from '@proton/pass/store/actions/requests';
+import { selectUserVerified } from '@proton/pass/store/selectors';
 import type { Invite } from '@proton/pass/types/data/invites';
 
 import { useInviteContext } from './InviteContextProvider';
+import { UserVerificationMessage } from './UserVerificationMessage';
 
 export const VaultInviteRespond: VFC<Invite> = (invite) => {
     const { inviterEmail, vault, token } = invite;
@@ -34,6 +37,7 @@ export const VaultInviteRespond: VFC<Invite> = (invite) => {
     const handleAcceptInvite = () => acceptInvite.dispatch({ inviteToken: token, inviterEmail });
 
     const loading = acceptInvite.loading || rejectInvite.loading;
+    const userVerified = useSelector(selectUserVerified);
 
     return (
         <ModalTwo size="small" open onClose={onInviteResponse} enableCloseWhenClickOutside>
@@ -64,13 +68,22 @@ export const VaultInviteRespond: VFC<Invite> = (invite) => {
                 </div>
             </ModalTwoContent>
 
-            <ModalTwoFooter className="flex flex-column flex-align-items-stretch">
-                <Button size="large" shape="solid" color="norm" disabled={loading} onClick={handleAcceptInvite}>{c(
-                    'Action'
-                ).t`Join shared vault`}</Button>
-                <Button size="large" shape="solid" color="weak" disabled={loading} onClick={handleRejectInvite}>{c(
-                    'Action'
-                ).t`Reject invitation`}</Button>
+            <ModalTwoFooter className="flex flex-column flex-align-items-stretch text-center">
+                {!userVerified && <UserVerificationMessage />}
+                <Button
+                    size="large"
+                    shape="solid"
+                    color="norm"
+                    disabled={loading || !userVerified}
+                    onClick={handleAcceptInvite}
+                >{c('Action').t`Join shared vault`}</Button>
+                <Button
+                    size="large"
+                    shape="solid"
+                    color="weak"
+                    disabled={loading || !userVerified}
+                    onClick={handleRejectInvite}
+                >{c('Action').t`Reject invitation`}</Button>
 
                 {acceptInvite.loading && (
                     <div className="ui-purple flex gap-x-2 flex-align-items-center">
