@@ -42,6 +42,8 @@ interface UseCalendarSearch {
     isActive: boolean;
     disabled: boolean;
     loading: boolean;
+    searchInput: string;
+    setSearchInput: (search: string) => void;
 }
 
 const CalendarSearchContext = createContext<UseCalendarSearch>({
@@ -60,6 +62,8 @@ const CalendarSearchContext = createContext<UseCalendarSearch>({
     isActive: false,
     disabled: true,
     loading: false,
+    searchInput: '',
+    setSearchInput: noop,
 });
 export const useCalendarSearch = () => useContext(CalendarSearchContext);
 
@@ -70,6 +74,9 @@ const CalendarSearchProvider = ({ children }: Props) => {
     const history = useHistory();
     const { isLibraryInitialized, encryptedSearch, esStatus } = useEncryptedSearchLibrary();
 
+    const searchParams = extractSearchParameters(history.location);
+    const keyword = searchParams?.keyword || '';
+
     const lastNonSearchViewRef = useRef<VIEWS>();
     const [hasSearchedCounter, setHasSearchedCounter] = useState(0);
     const [renderCounter, setRenderCounter] = useState(0);
@@ -77,6 +84,7 @@ const CalendarSearchProvider = ({ children }: Props) => {
     const [isSearching, setIsSearching] = useState(isInitialSearching);
     const [loading, withLoading, setLoading] = useLoading(true);
     const [openedSearchItem, setOpenedSearchItem] = useState<VisualSearchItem>();
+    const [searchInput, setSearchInput] = useState(keyword);
 
     const { dbExists, isEnablingEncryptedSearch, esEnabled, isRefreshing, isMetadataIndexingPaused } = esStatus;
 
@@ -86,9 +94,6 @@ const CalendarSearchProvider = ({ children }: Props) => {
     const triggerSearch = useCallback(() => {
         return setRenderCounter((c) => c + 1);
     }, []);
-
-    const searchParams = extractSearchParameters(history.location);
-    const keyword = searchParams?.keyword || '';
 
     const search = ({ keyword, begin, end }: ESCalendarSearchParams) => {
         history.push(
@@ -140,6 +145,8 @@ const CalendarSearchProvider = ({ children }: Props) => {
         isActive,
         disabled: !isLibraryInitialized || !isActive,
         loading,
+        searchInput,
+        setSearchInput,
     };
 
     return <CalendarSearchContext.Provider value={value}>{children}</CalendarSearchContext.Provider>;
