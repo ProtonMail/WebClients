@@ -46,10 +46,11 @@ function* editMailboxesWorker(aliasEditIntent: ItemEditIntent<'alias'>) {
     }
 }
 function* itemEditWorker(
-    { onItemsChange, telemetry }: WorkerRootSagaOptions,
+    { onItemsChange, getTelemetry }: WorkerRootSagaOptions,
     { payload: editIntent, meta: { callback: onItemEditIntentProcessed } }: ReturnType<typeof itemEditIntent>
 ) {
     const { itemId, shareId, lastRevision } = editIntent;
+    const telemetry = getTelemetry();
 
     try {
         if (editIntent.type === 'alias' && editIntent.extraData.aliasOwner) yield call(editMailboxesWorker, editIntent);
@@ -60,7 +61,7 @@ function* itemEditWorker(
         const itemEditSuccessAction = itemEditSuccess({ item, itemId, shareId });
         yield put(itemEditSuccessAction);
 
-        telemetry?.(createTelemetryEvent(TelemetryEventName.ItemUpdate, {}, { type: item.data.type }));
+        void telemetry?.pushEvent(createTelemetryEvent(TelemetryEventName.ItemUpdate, {}, { type: item.data.type }));
         onItemEditIntentProcessed?.(itemEditSuccessAction);
         onItemsChange?.();
     } catch (e) {

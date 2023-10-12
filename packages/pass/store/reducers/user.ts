@@ -1,53 +1,76 @@
 import type { Reducer } from 'redux';
 
-import { bootSuccess, setUserFeatures, setUserPlan, userEvent } from '@proton/pass/store/actions';
+import { bootSuccess, setUserFeatures, setUserPlan, setUserSettings, userEvent } from '@proton/pass/store/actions';
 import type { MaybeNull, PassPlanResponse } from '@proton/pass/types';
 import { EventActions } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
 import { objectDelete } from '@proton/pass/utils/object/delete';
 import { fullMerge, merge, partialMerge } from '@proton/pass/utils/object/merge';
-import type { Address, User } from '@proton/shared/lib/interfaces';
+import type { Address, SETTINGS_STATUS, User } from '@proton/shared/lib/interfaces';
 
 export type AddressState = { [addressId: string]: Address };
 export type FeatureFlagState = Partial<Record<PassFeature, boolean>> & { requestedAt?: number };
 export type UserPlanState = PassPlanResponse & { requestedAt?: number };
+export type UserSettingsState = { Email?: { Status: SETTINGS_STATUS }; Telemetry?: 1 | 0 };
 
 export type UserState = {
-    eventId: MaybeNull<string>;
-    user: MaybeNull<User>;
     addresses: AddressState;
-    plan: MaybeNull<UserPlanState>;
+    eventId: MaybeNull<string>;
     features: MaybeNull<FeatureFlagState>;
+    plan: MaybeNull<UserPlanState>;
+    user: MaybeNull<User>;
+    userSettings: MaybeNull<UserSettingsState>;
 };
 
-const initialState: UserState = { user: null, addresses: {}, eventId: null, plan: null, features: null };
+const initialState: UserState = {
+    addresses: {},
+    eventId: null,
+    features: null,
+    plan: null,
+    user: null,
+    userSettings: null,
+};
 
 const reducer: Reducer<UserState> = (state = initialState, action) => {
     if (bootSuccess.match(action)) {
         return fullMerge(state, {
-            user: action.payload.user,
             addresses: action.payload.addresses,
             eventId: action.payload.eventId,
-            plan: action.payload.plan,
             features: action.payload.features,
+            plan: action.payload.plan,
+            user: action.payload.user,
+            userSettings: action.payload.userSettings,
         });
     }
 
     if (userEvent.match(action)) {
-        const { Addresses = [], User, EventID } = action.payload;
+        const { Addresses = [], User, EventID, UserSettings } = action.payload;
+
+        const user = User ?? state.user;
+
+        const eventId = EventID ?? null;
+
+        const userSettings = UserSettings
+            ? { Email: { Status: UserSettings.Email.Status }, Telemetry: UserSettings.Telemetry }
+            : state.userSettings;
+
+        const addresses = Addresses.reduce(
+            (acc, { Action, ID, Address }) =>
+                Action === EventActions.DELETE ? objectDelete(acc, ID) : merge(acc, { [ID]: Address }),
+            state.addresses
+        );
 
         return {
-            ...(User ? partialMerge(state, { user: User }) : state),
-            eventId: EventID ?? null,
-            addresses: Addresses.reduce(
-                (acc, { Action, ID, Address }) =>
-                    Action === EventActions.DELETE ? objectDelete(acc, ID) : merge(acc, { [ID]: Address }),
-                state.addresses
-            ),
+            ...state,
+            user,
+            eventId,
+            addresses,
+            userSettings,
         };
     }
 
     if (setUserPlan.match(action)) return partialMerge(state, { plan: action.payload });
+    if (setUserSettings.match(action)) return partialMerge(state, { userSettings: action.payload });
 
     if (setUserFeatures.match(action)) {
         state.features = null; /* wipe all features before merge */
