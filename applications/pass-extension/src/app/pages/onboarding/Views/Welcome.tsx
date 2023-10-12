@@ -15,7 +15,7 @@ import playStoreSvg from '@proton/styles/assets/img/illustrations/play-store.svg
 import './Welcome.scss';
 
 const brandNameJSX = (
-    <img src={passBrandText} className="ml-2 h-custom" style={{ '--h-custom': '28px' }} key="brand" alt="" />
+    <img src={passBrandText} className="ml-2 h-custom" style={{ '--h-custom': '1.75rem' }} key="brand" alt="" />
 );
 
 export const Welcome: VFC = () => {
@@ -25,13 +25,13 @@ export const Welcome: VFC = () => {
             <div className="pass-onboarding ui-standard w-full min-h-custom" style={{ '--min-h-custom': '100vh' }}>
                 <div className="m-auto p-14 color-norm flex flex-justify-center">
                     <div className="pass-onboarding--gradient"></div>
-                    <div className="flex flex-column max-w-custom" style={{ '--max-w-custom': '1024px' }}>
+                    <div className="flex flex-column max-w-custom" style={{ '--max-w-custom': '64rem' }}>
                         <div className="flex flex-align-items-center gap-2 mb-5">
                             {
                                 <img
                                     src="/assets/protonpass-icon.svg"
                                     className="h-custom"
-                                    style={{ '--h-custom': '36px' }}
+                                    style={{ '--h-custom': '2.25rem' }}
                                     alt={PASS_APP_NAME}
                                 />
                             }
@@ -97,7 +97,7 @@ export const Welcome: VFC = () => {
                                             <Href href={ONBOARDING_LINK.ANDROID}>
                                                 <img
                                                     className="h-custom"
-                                                    style={{ '--h-custom': '40px' }}
+                                                    style={{ '--h-custom': '2.5rem' }}
                                                     src={playStoreSvg}
                                                     alt="Play Store"
                                                 />
@@ -105,7 +105,7 @@ export const Welcome: VFC = () => {
                                             <Href href={ONBOARDING_LINK.IOS}>
                                                 <img
                                                     className="h-custom"
-                                                    style={{ '--h-custom': '40px ' }}
+                                                    style={{ '--h-custom': '2.5rem ' }}
                                                     src={appStoreSvg}
                                                     alt="App Store"
                                                 />

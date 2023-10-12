@@ -32,7 +32,7 @@ export const AutofillOTP: VFC<Props> = ({ item, onMessage, onClose }) => {
                         </span>
                     </div>
 
-                    <div className="h-custom w-custom" style={{ '--w-custom': '32px', '--h-custom': '32px' }}>
+                    <div className="h-custom w-custom" style={{ '--w-custom': '2rem', '--h-custom': '2rem' }}>
                         <OTPDonut enabled={otp !== null} percent={percent} period={otp?.period} />
                     </div>
                 </div>
