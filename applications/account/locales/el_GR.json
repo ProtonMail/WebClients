@@ -1084,9 +1084,6 @@
       ]
     },
     "Action subscription": {
-      "Manage": [
-        "Διαχείριση"
-      ],
       "Reactivate": [
         "Επανενεργοποίηση"
       ]
@@ -1294,8 +1291,12 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "Αυτόματη ανανέωση στις ${ formattedEndTime }"
+      "${ n } month": [
+        "${ n } μήνα",
+        "${ n } μήνες"
+      ],
+      "Renews automatically for ${ renewPrice }, for ${ renewalLength }": [
+        "Ανανεώνεται αυτόματα για ${ renewPrice }, για ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -4378,11 +4379,11 @@
       "Allow platform keys": [
         "Να επιτρέπονται τα κλειδιά πλατφόρμας"
       ],
+      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
+        "Σας επιτρέπει να καταχωρείτε ενσωματωμένα κλειδιά ασφαλείας (όπως Windows Hello, Face ID, Touch ID ή εσωτερικές TPM)"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε το κλειδί ασφαλείας ${ name };"
-      ],
-      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
-        "Εάν είναι ενεργοποιημένο, επιτρέπει την καταχώρηση ενσωματωμένων συσκευών (όπως Windows Hello, TouchID, FaceID ή εσωτερικών TPM) επιπρόσθετα στα εξωτερικά κλειδιά ασφαλείας υλικού"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Εισαγάγετε ένα κλειδί ασφαλείας συνδεδεμένο με τον ${ BRAND_NAME } λογαριασμό σας ."
@@ -6621,6 +6622,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Επειδή είστε πιστός χρήστης, ο λογαριασμός σας έχει ενεργοποιημένες πρόσθετες λειτουργίες."
       ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "Η υποβολή SMTP επιτρέπει σε υπηρεσίες τρίτων ή συσκευές για να στείλουν μηνύματα ηλεκτρονικού ταχυδρομείου ${ MAIL_APP_NAME } για τις προσαρμοσμένες διευθύνσεις τομέα σας. Αυτή η δυνατότητα είναι διαθέσιμη μόνο σε ${ BRAND_NAME } for Business με προσαρμοσμένους τομείς."
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Οι υποβολές SMTP επιτρέπουν σε υπηρεσίες τρίτων μερών ή σε συσκευές να στείλουν ηλεκτρονικό μήνυμα μέσω του ${ MAIL_APP_NAME } για τις διευθύνσεις του δικού σας προσαρμοσμένου τομέα. Για να ζητήσετε πρόσβαση, παρακαλώ ${ createTicket } περιγράφοντας τις περιπτώσεις που χρησιμοποιείτε, ποιούς προσαρμοσμένους τομείς θέλετε να χρησιμοποιήσετε, και τον αναμενόμενο ωριαίο και ημερήσιο όγκο ηλεκτρονικών μηνυμάτων."
       ],
@@ -7167,7 +7171,7 @@
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Μπορείτε να ενεργοποιήσετε τη σύνδεση ελέγχου ταυτότητας για να δείτε πότε γίνεται πρόσβαση στον λογαριασμό σας και από ποια IP. Θα καταγράψουμε τη διεύθυνση IP που έχει πρόσβαση στον λογαριασμό και την ώρα, καθώς και τις αποτυχημένες προσπάθειες."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
         "Μπορείτε να ξεκλειδώσετε αμέσως την παραπάνω ρύθμιση προσθέτοντας ${ specificCountryCount } στον αριθμό διευθύνσεων IP στο πλάνο σας ή να επικοινωνήσετε μαζί μας για εξατομικευμένες λύσεις."
       ],
       "You can import one data type at a time.": [
@@ -7369,7 +7373,7 @@
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Η συνδρομή σας διαχειρίζεται απο το Mozilla. Επικοινωνήστε με την υποστήριξη του Mozilla."
       ],
-      "Your subscription will renew automatically on ${ renewalTime }.": [
+      "Your subscription will automatically renew on ${ renewalTime }.": [
         "Η συνδρομή σας θα ανανεωθεί αυτόματα στις ${ renewalTime }."
       ]
     },
@@ -9684,6 +9688,12 @@
       "Sign in as user": [
         "Είσοδος ως χρήστης"
       ],
+      "SMTP submission": [
+        "Υποβολή SMTP"
+      ],
+      "SMTP submission for select organizations": [
+        "Υποβολή SMTP για επιλεγμένους οργανισμούς"
+      ],
       "Split tunneling (Android and Windows)": [
         "Διαίρεση σήραγγας (Android και Windows)"
       ],
@@ -10107,6 +10117,9 @@
       "Share your files or folders with anyone by using secure, shareable links": [
         "Μοιραστείτε τα αρχεία ή τους φακέλους σας με οποιονδήποτε, χρησιμοποιώντας ασφαλούς συνδέσμους με δυνατότητα κοινής χρήσης"
       ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "Το SMTP επιτρέπει υπηρεσίες τρίτων ή συσκευές να στείλουν μηνύματα ηλεκτρονικού ταχυδρομείου μέσω του ${ MAIL_APP_NAME }."
+      ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Το ειδικά σχεδιασμένο NetShield προστατεύει τη συσκευή σας και επιταχύνει την περιήγησή σας εμποδίζοντας διαφημίσεις, ιχνηλάτες και κακόβουλο λογισμικό."
       ],
@@ -10148,6 +10161,9 @@
       ]
     },
     "new_plans: upgrade": {
+      "Included with ${ BRAND_NAME } for Business, ${ familyPlanName } and ${ mailProPlanName }.": [
+        "Περιλαμβάνεται με ${ BRAND_NAME } for Business, ${ familyPlanName } και ${ mailProPlanName }."
+      ],
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Περιλαμβάνεται στα ${ plus }, ${ bundle } και ${ BRAND_NAME } για Επιχειρήσεις."
       ],
@@ -12128,9 +12144,6 @@
       ],
       "Expiring": [
         "Λήγει"
-      ],
-      "Upcoming": [
-        "Προσεχή"
       ]
     },
     "Success": {
@@ -13602,35 +13615,14 @@
       ]
     },
     "Title subscription": {
-      "Actions": [
-        "Ενέργειες"
-      ],
-      "Duration": [
-        "Διάρκεια"
-      ],
       "End date": [
         "Ημερομηνία Λήξης"
       ],
       "Plan": [
         "Πρόγραμμα"
       ],
-      "Servers": [
-        "Διακομιστές"
-      ],
-      "Start date": [
-        "Ημερομηνία Έναρξης"
-      ],
       "Status": [
         "Κατάσταση"
-      ],
-      "Total": [
-        "Σύνολο"
-      ],
-      "Total paid": [
-        "Σύνολο καταβληθέντων"
-      ],
-      "Users": [
-        "Χρήστες"
       ]
     },
     "Title; create calendar modal": {
@@ -13957,23 +13949,8 @@
       ]
     },
     "vpn_2step: billing": {
-      "${ billedText }, renews on ${ formattedEndTime }": [
-        "${ billedText }, ανανεώνεται στις ${ formattedEndTime }"
-      ],
-      "Billed every 15 months": [
-        "Χρέωση κάθε 15 μήνες"
-      ],
-      "Billed every 2 years": [
-        "Χρέωση κάθε 2 χρόνια"
-      ],
-      "Billed every 30 months": [
-        "Χρέωση κάθε 30 μήνες"
-      ],
       "Billed monthly": [
         "Μηνιαία χρέωση"
-      ],
-      "Billed yearly": [
-        "Ετήσια χρέωση"
       ]
     },
     "vpn_2step: discount": {

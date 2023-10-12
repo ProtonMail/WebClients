@@ -1030,9 +1030,6 @@
       ]
     },
     "Action subscription": {
-      "Manage": [
-        "Управлять"
-      ],
       "Reactivate": [
         "Возобновить"
       ]
@@ -1199,11 +1196,6 @@
     "Baseline in trial plan": {
       "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "${ mailPlus }: почта и календарь с приоритетом конфиденциальности для вашей повседневной коммуникации."
-      ]
-    },
-    "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "Пролонгируется автоматически ${ formattedEndTime }"
       ]
     },
     "Billing cycle option": {
@@ -7111,9 +7103,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша подписка находится под управлением Mozilla. Пожалуйста, свяжитесь со службой поддержки Mozilla."
-      ],
-      "Your subscription will renew automatically on ${ renewalTime }.": [
-        "Ваша подписка будет автоматически продлена ${ renewalTime }."
       ]
     },
     "info": {
@@ -11616,9 +11605,6 @@
       ],
       "Expiring": [
         "Истекающий"
-      ],
-      "Upcoming": [
-        "Предстоящий"
       ]
     },
     "Success": {
@@ -13030,35 +13016,14 @@
       ]
     },
     "Title subscription": {
-      "Actions": [
-        "Действия"
-      ],
-      "Duration": [
-        "Длительность"
-      ],
       "End date": [
         "Дата окончания"
       ],
       "Plan": [
         "Тариф"
       ],
-      "Servers": [
-        "Серверы"
-      ],
-      "Start date": [
-        "Дата начала"
-      ],
       "Status": [
         "Статус"
-      ],
-      "Total": [
-        "Итого"
-      ],
-      "Total paid": [
-        "Всего оплачено"
-      ],
-      "Users": [
-        "Пользователи"
       ]
     },
     "Title; create calendar modal": {
@@ -13368,23 +13333,8 @@
       ]
     },
     "vpn_2step: billing": {
-      "${ billedText }, renews on ${ formattedEndTime }": [
-        "${ billedText }, следующая — ${ formattedEndTime }"
-      ],
-      "Billed every 15 months": [
-        "Оплата раз в 15 месяцев"
-      ],
-      "Billed every 2 years": [
-        "Оплата каждые 2 года"
-      ],
-      "Billed every 30 months": [
-        "Оплата раз в 30 месяцев"
-      ],
       "Billed monthly": [
         "Ежемесячная оплата"
-      ],
-      "Billed yearly": [
-        "Ежегодная оплата"
       ]
     },
     "vpn_2step: discount": {
