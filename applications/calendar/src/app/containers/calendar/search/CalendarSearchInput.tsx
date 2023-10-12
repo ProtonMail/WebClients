@@ -1,4 +1,4 @@
-import { FormEvent, KeyboardEvent, MouseEvent, Ref, forwardRef, useEffect, useRef, useState } from 'react';
+import { FormEvent, KeyboardEvent, MouseEvent, Ref, RefObject, forwardRef, useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -10,33 +10,33 @@ import { useCalendarSearch } from './CalendarSearchProvider';
 
 interface Props {
     value: string;
+    setValue: (value: string) => void;
     loading: boolean;
     onSearch: () => void;
     onBack: () => void;
     isSearchActive: boolean;
+    searchRef?: RefObject<HTMLDivElement>;
 }
 
 const CalendarSearchInput = (
-    { value: inputValue, loading, onSearch, onBack, isSearchActive }: Props,
+    { value: inputValue, setValue, loading, onSearch, onBack, isSearchActive, searchRef }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
     const { search, searchParams } = useCalendarSearch();
 
     const inputRef = useRef<HTMLInputElement>(null);
 
-    const [keyword, setKeyWord] = useState(inputValue);
-
     const placeholder = isSearchActive ? c('Placeholder').t`Search events` : c('Placeholder').t`Indexing...`;
-    const trimmedKeyword = keyword.trim();
+    const trimmedKeyword = inputValue.trim();
     const previousKeyword = searchParams.keyword;
     const cannotSearch = !trimmedKeyword || trimmedKeyword === previousKeyword || !isSearchActive || loading;
 
     const handleChange = (event: FormEvent<HTMLInputElement>) => {
-        setKeyWord(event.currentTarget.value);
+        setValue(event.currentTarget.value);
     };
 
     const handleClear = () => {
-        setKeyWord('');
+        setValue('');
         inputRef.current?.focus();
     };
 
@@ -46,7 +46,7 @@ const CalendarSearchInput = (
         }
 
         search({
-            keyword: keyword.trim(),
+            keyword: inputValue.trim(),
         });
         onSearch();
     };
@@ -81,7 +81,7 @@ const CalendarSearchInput = (
                 className="mr-2"
                 onClick={handleBack}
             />
-            <div className="flex flex-nowrap gap-2">
+            <div className="flex flex-nowrap gap-2" ref={searchRef}>
                 <div
                     className="searchbox flex max-w-custom"
                     role="search"
@@ -92,7 +92,7 @@ const CalendarSearchInput = (
                         <Input
                             ref={inputRef}
                             inputClassName="cursor-text"
-                            value={keyword}
+                            value={inputValue}
                             placeholder={placeholder}
                             onChange={handleChange}
                             onKeyDown={handleOnKeyDown}
@@ -108,7 +108,7 @@ const CalendarSearchInput = (
                                 )
                             }
                             suffix={
-                                keyword.length ? (
+                                inputValue.length ? (
                                     <Button
                                         type="button"
                                         shape="ghost"
