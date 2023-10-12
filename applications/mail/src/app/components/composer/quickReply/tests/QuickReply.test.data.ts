@@ -21,7 +21,10 @@ export const fromFields = {
 };
 
 export const recipients: Record<string, Recipient> = {
-    fromRecipient: { Name: fromFields.fromName, Address: fromFields.fromAddress },
+    fromRecipient: {
+        Name: fromFields.fromName,
+        Address: fromFields.fromAddress,
+    },
     meRecipient: { Name: fromFields.meName, Address: fromFields.meAddress },
     toRecipient: { Name: fromFields.toName, Address: fromFields.toAddress },
     ccRecipient: { Name: fromFields.ccName, Address: fromFields.ccAddress },
@@ -67,7 +70,6 @@ export const getMessage = (isSender: boolean, isPlainText: boolean, referenceMes
 export const getExpectedDefaultPlainTextContent = (referenceMessageBody: string) => {
     const date = formatFullDate(new Date());
     return `Sent with Proton Mail secure email.
-------- Original Message -------
 On ${date}, ${fromFields.fromName} <${fromFields.fromAddress}> wrote:
 
 

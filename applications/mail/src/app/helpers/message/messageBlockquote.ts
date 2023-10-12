@@ -1,4 +1,5 @@
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
+import { ORIGINAL_MESSAGE } from '@proton/shared/lib/mail/messages';
 
 export const BLOCKQUOTE_SELECTORS = [
     '.protonmail_quote', // Proton Mail
@@ -27,7 +28,7 @@ export const BLOCKQUOTE_SELECTORS = [
     '[name="quote"]', // gmx
 ];
 
-const BLOCKQUOTE_TEXT_SELECTORS = ['-----Original Message-----'];
+const BLOCKQUOTE_TEXT_SELECTORS = [ORIGINAL_MESSAGE];
 
 const BLOCKQUOTE_SELECTOR = BLOCKQUOTE_SELECTORS.map((selector) => `${selector}:not(:empty)`).join(',');
 

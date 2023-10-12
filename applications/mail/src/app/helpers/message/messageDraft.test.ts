@@ -1,13 +1,7 @@
 import { addPlusAlias } from '@proton/shared/lib/helpers/email';
 import { Address, MailSettings, Recipient, UserSettings } from '@proton/shared/lib/interfaces';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
-import {
-    FORWARDED_MESSAGE,
-    FW_PREFIX,
-    ORIGINAL_MESSAGE,
-    RE_PREFIX,
-    formatSubject,
-} from '@proton/shared/lib/mail/messages';
+import { FORWARDED_MESSAGE, FW_PREFIX, RE_PREFIX, formatSubject } from '@proton/shared/lib/mail/messages';
 
 import { MESSAGE_ACTIONS } from '../../constants';
 import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
@@ -402,10 +396,8 @@ describe('messageDraft', () => {
 
             const messageBlockquotesInfos = generatePreviousMessageInfos(referenceMessage, MESSAGE_ACTIONS.REPLY);
 
-            const expectedString = `${ORIGINAL_MESSAGE}<br>
-        On ${formatFullDate(new Date(0))}, ${referenceMessage.data?.Sender.Name} &lt;${
-                referenceMessage.data?.Sender.Address
-            }&gt; wrote:<br><br>`;
+            const expectedString = `On ${formatFullDate(new Date(0))}, ${referenceMessage.data?.Sender
+                .Name} &lt;${referenceMessage.data?.Sender.Address}&gt; wrote:<br><br>`;
 
             expect(messageBlockquotesInfos).toEqual(expectedString);
         });
