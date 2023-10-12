@@ -52,11 +52,11 @@ const UTMTrackerModal = ({ message, ...rest }: Props) => {
                         <div key={`${tracker.originalURL}`} className="mb-4">
                             <div className="flex flex-column mb-1">
                                 <span className="color-weak text-sm">{c('Label').t`Original link`}</span>
-                                <div className="flex flex-nowrap opacity-on-hover-container max-w-full flex-align-items-center">
+                                <div className="flex flex-nowrap group-hover-opacity-container max-w-full flex-align-items-center">
                                     <div className="text-ellipsis w-full flex-item-fluid" title={tracker.originalURL}>
                                         {tracker.originalURL}
                                     </div>
-                                    <div className="opacity-on-hover opacity-on-hover-no-width flex-item-noshrink">
+                                    <div className="group-hover:opacity-100 group-hover:opacity-100-no-width flex-item-noshrink">
                                         <Tooltip title={c('Label').t`Open in a new tab`}>
                                             <Button
                                                 icon
@@ -73,11 +73,11 @@ const UTMTrackerModal = ({ message, ...rest }: Props) => {
                             </div>
                             <div className="flex flex-column">
                                 <span className="color-primary text-sm">{c('Label').t`Cleaned`}</span>
-                                <div className="flex flex-nowrap opacity-on-hover-container max-w-full flex-align-items-center">
+                                <div className="flex flex-nowrap group-hover-opacity-container max-w-full flex-align-items-center">
                                     <div className="text-ellipsis w-full flex-item-fluid" title={tracker.cleanedURL}>
                                         {tracker.cleanedURL}
                                     </div>
-                                    <div className="opacity-on-hover opacity-on-hover-no-width flex-item-noshrink">
+                                    <div className="group-hover:opacity-100 group-hover:opacity-100-no-width flex-item-noshrink">
                                         <Tooltip title={c('Label').t`Open in a new tab`}>
                                             <Button
                                                 icon

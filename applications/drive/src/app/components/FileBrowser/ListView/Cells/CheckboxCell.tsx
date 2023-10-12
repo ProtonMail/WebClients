@@ -60,7 +60,7 @@ export const CheckboxCell = memo(({ item }: { item: FileBrowserBaseItem }) => {
     return (
         <CheckboxCellBase
             className={
-                selectionControls?.selectionState !== SelectionState.NONE ? undefined : 'opacity-on-hover-only-desktop'
+                selectionControls?.selectionState !== SelectionState.NONE ? undefined : 'mouse:group-hover:opacity-100'
             }
             isDisabled={Boolean(item.isLocked)}
             isSelected={isSelected}

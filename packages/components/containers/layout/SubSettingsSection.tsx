@@ -58,11 +58,11 @@ const SubSettingsSection = ({ id, observer, title, children, className, ...rest 
                 className={clsx([className, 'sub-settings-section'])}
             >
                 {title && (
-                    <SettingsSectionTitle className="opacity-on-hover-container relative">
+                    <SettingsSectionTitle className="group-hover-opacity-container relative">
                         <Link
                             to={`#${id}`}
                             onClick={handleLinkClick}
-                            className="sub-settings-section-anchor absolute opacity-on-hover"
+                            className="sub-settings-section-anchor absolute group-hover:opacity-100"
                             aria-hidden="true"
                             tabIndex={-1}
                         >

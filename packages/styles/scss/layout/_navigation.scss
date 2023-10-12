@@ -238,11 +238,11 @@ label.navigation-link {
 /* Sub folders */
 .navigation-item {
 	&-dropdown-opened {
-		& .hide-on-hover {
+		& .group-hover\:hidden {
 			display: none;
 		}
 
-		& .opacity-on-hover {
+		& .group-hover\:opacity-100 {
 			opacity: 1;
 
 			&-no-width {
@@ -265,7 +265,11 @@ label.navigation-link {
 	margin-inline-start: $padding-inline-start-link;
 	overflow: hidden;
 	opacity: 1;
-	transition: visibility 0s ease, transform 0.5s ease, opacity 0.5s ease, max-block-size 0.5s ease;
+	transition:
+		visibility 0s ease,
+		transform 0.5s ease,
+		opacity 0.5s ease,
+		max-block-size 0.5s ease;
 	transform-origin: top center;
 	transform: scale(1, 1);
 	max-block-size: 44em;

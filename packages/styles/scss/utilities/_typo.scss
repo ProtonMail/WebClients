@@ -204,7 +204,7 @@
 	text-decoration: underline;
 }
 
-.text-underline-on-hover {
+.hover\:text-underline {
 	&:hover,
 	&:focus {
 		text-decoration: underline;
