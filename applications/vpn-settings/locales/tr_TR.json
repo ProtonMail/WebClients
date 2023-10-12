@@ -532,9 +532,6 @@
       ]
     },
     "Action subscription": {
-      "Manage": [
-        "Yönet"
-      ],
       "Reactivate": [
         "Yenile"
       ]
@@ -634,8 +631,9 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "${ formattedEndTime } tarihinde otomatik olarak yenilenir"
+      "${ n } month": [
+        "${ n } ay",
+        "${ n } ay"
       ]
     },
     "Billing cycle option": {
@@ -2308,11 +2306,11 @@
       "Allow platform keys": [
         "Platform anahtarları kullanılabilsin"
       ],
+      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
+        "İç güvenlik anahtarlarını (Windows Hello, Face ID, Touch ID veya iç TPM gibi) kaydetmenizi sağlar"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "${ name } güvenlik anahtarını silmek istediğinize emin misiniz?"
-      ],
-      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
-        "Bu seçenek açıldığında, dış donanım güvenlik anahtarlarına ek olarak yerleşik aygıtlar (Windows Hello, Touch ID, Face ID ya da Dahili TPM çipleri gibi) kaydedilebilir"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "${ BRAND_NAME } hesabınızla ilişkilendirilmiş güvenlik anahtarını takın."
@@ -3584,9 +3582,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Bunu doğrulamada kullanılacak doğru e-posta adresini yazmak için bir kez düzenleyebilirsiniz."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Tarifenizdeki IP adreslerini sayıya ${ specificCountryCount } ekleyerek veya size özel çözümler için bize ulaşarak yukarıdaki kurulumun kilidini hemen açabilirsiniz."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "${ MAX_CALENDARS_FREE } tane takvim tutabilirsiniz. ${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın.",
         "${ MAX_CALENDARS_FREE } tane takvim tutabilirsiniz. ${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın."
@@ -3703,8 +3698,8 @@
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Aboneliğiniz Mozilla tarafından yönetiliyor. Lütfen Mozilla destek ekibi ile görüşün."
       ],
-      "Your subscription will renew automatically on ${ renewalTime }.": [
-        "Aboneliğiniz ${ renewalTime } zamanında otomatik olarak yenilenecek."
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Aboneliğiniz ${ renewalTime } tarihinde otomatik olarak yenilenecektir."
       ]
     },
     "Info for cash payment method": {
@@ -4742,6 +4737,12 @@
       "Sign in as user": [
         "Kullanıcı olarak oturum açma"
       ],
+      "SMTP submission": [
+        "SMTP gönderim"
+      ],
+      "SMTP submission for select organizations": [
+        "Seçilmiş kuruluşlar için SMTP gönderim"
+      ],
       "Split tunneling (Android and Windows)": [
         "Ayrılmış tünelleme (Android ve Windows)"
       ],
@@ -5116,6 +5117,9 @@
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
         "Güvenli ve paylaşılabilir bağlantılar ile dosya ve klasörlerinizi paylaşın"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTP, 3. taraf hizmetlerin veya aygıtların ${ MAIL_APP_NAME } üzerinden e-posta göndermesini sağlar."
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Özel olarak tasarlanmış NetShield aygıtınızı korur ve reklamları, etkinlik izleyicileri, kötü amaçlı yazılımları engelleyerek İnternet üzerinde gezinme hızınızı artırır"
@@ -5562,6 +5566,9 @@
       ]
     },
     "session_recovery:available:action": {
+      "Cancel password reset": [
+        "Parola sıfırlama işlemini iptal et"
+      ],
       "Cancel reset": [
         "Sıfırlamayı iptal et"
       ],
@@ -5586,6 +5593,12 @@
         "${ timeRemaining.inHours } saat",
         "${ timeRemaining.inHours } saat"
       ],
+      "Didn’t make this request?": [
+        "Bu isteği siz yapmadınız mı?"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Parola sıfırlama isteğinde bulunmadıysanız, bu isteği şimdi iptal edin."
+      ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
         "Parola sıfırlama isteği onaylandı (${ user.Email }). Parolanızı sıfırlamak için ${ timeRemaining.inDays } gününüz var.",
         "Parola sıfırlama isteği onaylandı (${ user.Email }). Parolanızı sıfırlamak için ${ timeRemaining.inDays } gününüz var."
@@ -5607,6 +5620,12 @@
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "${ boldEmail } hesabınızın parolasını ${ boldDaysRemaining } içinde değiştirebilirsiniz."
+      ],
+      "You can now reset your password": [
+        "Şimdi parolanızı sıfırlayabilirsiniz"
+      ],
+      "You can reset your password until ${ boldDate }.": [
+        "Parolanızı ${ boldDate } tarihinden başlayarak sıfırlayabilirsiniz."
       ]
     },
     "session_recovery:available:link": {
@@ -5655,6 +5674,9 @@
       ]
     },
     "session_recovery:in_progress:action": {
+      "Cancel password reset": [
+        "Parola sıfırlama işlemini iptal et"
+      ],
       "Cancel request": [
         "İsteği iptal et"
       ],
@@ -5670,8 +5692,17 @@
         "${ gracePeriodHoursRemaining } saat kaldı",
         "${ gracePeriodHoursRemaining } saat kaldı"
       ],
+      "Didn’t make this request?": [
+        "Bu isteği siz yapmadınız mı?"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Parola sıfırlama isteğinde bulunmadıysanız, bu isteği şimdi iptal edin."
+      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Parola sıfırlama isteğinde bulunmadıysanız, bu isteği şimdi iptal edebilirsiniz."
+      ],
+      "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
+        "Parola ${ boldDate } tarihinden başlayarak sıfırlanabilir. Bu özellik sahte istekleri iptal etmeniz için zaman tanır."
       ],
       "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
         "Parola sıfırlama isteğinde bulunuldu (${ user.Email }). Parolanızı ${ hoursRemaining } saat içinde değiştirebilirsiniz.",
@@ -5682,6 +5713,10 @@
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "${ boldEmail } için bir parola sıfırlama isteğinde bulunuldu."
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "Parolanizi ${ gracePeriodHoursRemaining } saat içinde değiştirebilirsiniz",
+        "Parolanizi ${ gracePeriodHoursRemaining } saat içinde değiştirebilirsiniz"
       ]
     },
     "session_recovery:in_progress:link": {
@@ -5694,7 +5729,27 @@
         "Parola sıfırlama isteğinde bulunuldu"
       ]
     },
+    "session_recovery:initiation:action": {
+      "Got it": [
+        "Anladım"
+      ],
+      "Request password reset": [
+        "Parola sıfırlama isteğinde bulun"
+      ],
+      "Use recovery method": [
+        "Kurtarma yöntemini kullan"
+      ]
+    },
     "session_recovery:initiation:info": {
+      "For security reasons, you’ll have to wait **72 hours** before you can change your password.": [
+        "Güvenlik nedeniyle parolanızı değiştirebilmeniz için **72 saat** beklemeniz gerekecek."
+      ],
+      "If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.": [
+        "Bir **kurtarma yöntemi** ayarladıysanız hesap kurtarmayı deneyin. Bu yöntem, parolanızı hemen değiştirebilmenizi sağlar."
+      ],
+      "We will contact you again when the password reset is available.": [
+        "Parolanızı sıfırlayabileceğiniz zaman sizinle yeniden iletişim kuracağız."
+      ],
       "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
         "İsteğinizin durumunu istediğiniz zaman ayarlar ${ accountAndPasswordSectionLink } içinden kontrol edebilirsiniz."
       ]
@@ -5702,6 +5757,20 @@
     "session_recovery:initiation:link": {
       "account and password section": [
         "hesap ve parola bölümü"
+      ]
+    },
+    "session_recovery:initiation:notification": {
+      "Password reset confirmed": [
+        "Parola sıfırlama işlemi onaylandı"
+      ]
+    },
+    "session_recovery:initiation:title": {
+      "Request password reset?": [
+        "Parola sıfırlama isteğinde bulunulsun mu?"
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "Parolanızı ${ gracePeriodHoursRemaining } saat içinde sıfırlayabilirsiniz.",
+        "Parolanızı ${ gracePeriodHoursRemaining } saat içinde sıfırlayabilirsiniz."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -5738,6 +5807,19 @@
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
         "Parolayı sıfırlamadan oturum kapatılsın mı?"
+      ]
+    },
+    "session_recovery:status:info": {
+      "Available": [
+        "Kullanılabilir"
+      ],
+      "Pending": [
+        "Bekliyor"
+      ]
+    },
+    "session_recovery:status:title": {
+      "Password reset request": [
+        "Parola sıfırlama isteği"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -6167,9 +6249,6 @@
       ],
       "Expiring": [
         "Sona eriyor"
-      ],
-      "Upcoming": [
-        "Yaklaşan"
       ]
     },
     "Success": {
@@ -7001,35 +7080,14 @@
       ]
     },
     "Title subscription": {
-      "Actions": [
-        "İşlemler"
-      ],
-      "Duration": [
-        "Süre"
-      ],
       "End date": [
         "Bitiş tarihi"
       ],
       "Plan": [
         "Tarife"
       ],
-      "Servers": [
-        "Sunucular"
-      ],
-      "Start date": [
-        "Başlangıç tarihi"
-      ],
       "Status": [
         "Durum"
-      ],
-      "Total": [
-        "Toplam"
-      ],
-      "Total paid": [
-        "Toplam ödenen"
-      ],
-      "Users": [
-        "Kullanıcı sayısı"
       ]
     },
     "Tooltip": {
@@ -7135,23 +7193,8 @@
       ]
     },
     "vpn_2step: billing": {
-      "${ billedText }, renews on ${ formattedEndTime }": [
-        "${ billedText }, ${ formattedEndTime } zamanında yenilenir"
-      ],
-      "Billed every 15 months": [
-        "15 ayda bir faturalanır"
-      ],
-      "Billed every 2 years": [
-        "2 yılda bir faturalanır"
-      ],
-      "Billed every 30 months": [
-        "30 ayda bir faturalanır"
-      ],
       "Billed monthly": [
         "Ayda bir faturalanır"
-      ],
-      "Billed yearly": [
-        "Yılda bir faturalanır"
       ]
     },
     "vpn_2step: discount": {

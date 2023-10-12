@@ -532,9 +532,6 @@
       ]
     },
     "Action subscription": {
-      "Manage": [
-        "Verwalten"
-      ],
       "Reactivate": [
         "Reaktivieren"
       ]
@@ -634,8 +631,9 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "Verlängert sich automatisch am ${ formattedEndTime }"
+      "${ n } month": [
+        "${ n } Monat",
+        "${ n } Monate"
       ]
     },
     "Billing cycle option": {
@@ -2311,9 +2309,6 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Bist du dir sicher, dass du den Sicherheitsschlüssel ${ name } löschen möchtest?"
       ],
-      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
-        "Aktivierung ermöglicht eingebaute Geräte zu registrieren (z.B. Windows Hello, TouchID, FaceID oder interne TPMs), zusätzlich zu externen Hardaware-Sicherheitsschlüsseln."
-      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Stecke einen Sicherheitsschlüssel ein, der mit deinem ${ BRAND_NAME }-Konto verknüpft ist."
       ],
@@ -3584,7 +3579,7 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Du kannst dies einmal bearbeiten, um sicherzustellen, dass die richtige E-Mail-Adresse für die Verifizierung verwendet wird."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
         "Du kannst die oben genannte Konfiguration sofort freischalten, indem du ${ specificCountryCount } zur Anzahl der IP-Adressen in deinem Plan hinzufügst oder uns für maßgeschneiderte Lösungen kontaktierst."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
@@ -3703,8 +3698,8 @@
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Dein Abonnement wird von Mozilla verwaltet. Bitte kontaktiere den Mozilla-Support."
       ],
-      "Your subscription will renew automatically on ${ renewalTime }.": [
-        "Dein Abonnement wird automatisch am ${ renewalTime } verlängert."
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Dein Abonnement wird am ${ renewalTime } automatisch verlängert."
       ]
     },
     "Info for cash payment method": {
@@ -4742,6 +4737,12 @@
       "Sign in as user": [
         "Als Benutzer anmelden"
       ],
+      "SMTP submission": [
+        "SMTP-Übermittlung"
+      ],
+      "SMTP submission for select organizations": [
+        "SMTP-Übermittlung für ausgewählte Organisationen"
+      ],
       "Split tunneling (Android and Windows)": [
         "Split-Tunneling (für Android und Windows)"
       ],
@@ -5116,6 +5117,9 @@
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
         "Teile deine Dateien oder Ordner über sichere, teilbare Links mit anderen."
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "Die SMTP-Übermittlung erlaubt es Drittanbietern oder Geräten E-Mails über ${ MAIL_APP_NAME } zu versenden."
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Das speziell entwickelte NetShield schützt dein Gerät und beschleunigt das Surfen durch das Blockieren von Werbung, Trackern und Malware."
@@ -5562,6 +5566,9 @@
       ]
     },
     "session_recovery:available:action": {
+      "Cancel password reset": [
+        "Passwortzurücksetzung abbrechen"
+      ],
       "Cancel reset": [
         "Zurücksetzen abbrechen"
       ],
@@ -5604,6 +5611,9 @@
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Du kannst jetzt dein Passwort für das Konto ${ boldEmail } für ${ boldDaysRemaining } frei ändern."
+      ],
+      "You can now reset your password": [
+        "Du kannst dein Passwort jetzt zurücksetzen."
       ]
     },
     "session_recovery:available:link": {
@@ -5652,6 +5662,9 @@
       ]
     },
     "session_recovery:in_progress:action": {
+      "Cancel password reset": [
+        "Passwortzurücksetzung abbrechen"
+      ],
       "Cancel request": [
         "Anfrage abbrechen"
       ],
@@ -5667,6 +5680,9 @@
         "${ gracePeriodHoursRemaining } weitere Stunde",
         "${ gracePeriodHoursRemaining } weitere Stunden"
       ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Wenn du nicht darum gebeten hast, dein Passwort zurückzusetzen, breche die Anfrage jetzt ab."
+      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Wenn du nicht darum gebeten hast, dein Passwort zurückzusetzen, breche diese Anfrage jetzt ab."
       ],
@@ -5679,6 +5695,10 @@
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "Wir haben eine Anfrage zum Zurücksetzen des Passworts für ${ boldEmail } erhalten."
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "In ${ gracePeriodHoursRemaining } Stunde kannst du dein Passwort ändern.",
+        "In ${ gracePeriodHoursRemaining } Stunden kannst du dein Passwort ändern."
       ]
     },
     "session_recovery:in_progress:link": {
@@ -5712,6 +5732,12 @@
     "session_recovery:initiation:notification": {
       "Password reset confirmed": [
         "Passwortzurücksetzung bestätigt"
+      ]
+    },
+    "session_recovery:initiation:title": {
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "In ${ gracePeriodHoursRemaining } Stunde kannst du dein Passwort zurücksetzen.",
+        "In ${ gracePeriodHoursRemaining } Stunden kannst du dein Passwort zurücksetzen."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -6185,9 +6211,6 @@
       ],
       "Expiring": [
         "Verfallend"
-      ],
-      "Upcoming": [
-        "Demnächst"
       ]
     },
     "Success": {
@@ -7019,35 +7042,14 @@
       ]
     },
     "Title subscription": {
-      "Actions": [
-        "Aktionen"
-      ],
-      "Duration": [
-        "Dauer"
-      ],
       "End date": [
         "Enddatum"
       ],
       "Plan": [
         "Abonnement"
       ],
-      "Servers": [
-        "Server"
-      ],
-      "Start date": [
-        "Startdatum"
-      ],
       "Status": [
         "Status"
-      ],
-      "Total": [
-        "Gesamt"
-      ],
-      "Total paid": [
-        "Insgesamt bezahlt"
-      ],
-      "Users": [
-        "Benutzer"
       ]
     },
     "Tooltip": {
@@ -7153,23 +7155,8 @@
       ]
     },
     "vpn_2step: billing": {
-      "${ billedText }, renews on ${ formattedEndTime }": [
-        "${ billedText }, wird erneuert am ${ formattedEndTime }"
-      ],
-      "Billed every 15 months": [
-        "Wird alle 15 Monate abgerechnet"
-      ],
-      "Billed every 2 years": [
-        "Wird alle 2 Jahre abgerechnet"
-      ],
-      "Billed every 30 months": [
-        "Wird alle 30 Monate abgerechnet"
-      ],
       "Billed monthly": [
         "Wird monatlich abgerechnet"
-      ],
-      "Billed yearly": [
-        "Wird jährlich abgerechnet"
       ]
     },
     "vpn_2step: discount": {

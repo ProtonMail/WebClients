@@ -532,9 +532,6 @@
       ]
     },
     "Action subscription": {
-      "Manage": [
-        "Hantera"
-      ],
       "Reactivate": [
         "Återaktivera"
       ]
@@ -634,8 +631,12 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "Förnyas automatiskt den ${ formattedEndTime }"
+      "${ n } month": [
+        "${ n } månad",
+        "${ n } månader"
+      ],
+      "Renews automatically for ${ renewPrice }, for ${ renewalLength }": [
+        "Förnyas automatiskt för ${ renewPrice }, i ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -2308,11 +2309,11 @@
       "Allow platform keys": [
         "Tillåt plattformsnycklar"
       ],
+      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
+        "Låter dig registrera inbyggda säkerhetsnycklar (som Windows Hello, Face ID, Touch ID eller interna TPM)"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Är du säker på att du vill ta bort säkerhetsnyckel ${ name }?"
-      ],
-      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
-        "Om den är aktiverad tillåter den att registrera inbyggda enheter (som Windows Hello, Touch ID, Face ID eller interna TPM) förutom externa hårdvarusäkerhetsnycklar"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Infoga en säkerhetsnyckel länkat till ditt ${ BRAND_NAME }-konto."
@@ -3584,8 +3585,8 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Du kan redigera detta en gång för att säkerställa korrekt e-postadress för verifiering."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Du kan omedelbart låsa upp inställningen ovan genom att lägga till ${ specificCountryCount } till antalet IP-adresser för din prenumeration eller kontakta oss för skräddarsydda lösningar."
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
+        "Du kan omedelbart låsa upp installationen ovan genom att lägga till ${ specificCountryCount } till antalet IP-adresser i ditt paket eller kontakta oss för skräddarsydda lösningar."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Du kan behålla upp till ${ MAX_CALENDARS_FREE } kalender. Ta bort delade kalenderlänkar och alla ${ BRAND_NAME }-användare som du delade dina kalendrar med innan du avslutar din ${ MAIL_SHORT_APP_NAME }-prenumeration.",
@@ -3703,8 +3704,8 @@
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Din prenumeration hanteras av Mozilla. Kontakta Mozillas support."
       ],
-      "Your subscription will renew automatically on ${ renewalTime }.": [
-        "Din prenumeration kommer förnyas den ${ renewalTime }."
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Din prenumeration kommer förnyas automatiskt den ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -4742,6 +4743,12 @@
       "Sign in as user": [
         "Logga in som användare"
       ],
+      "SMTP submission": [
+        "SMTP-inlämning"
+      ],
+      "SMTP submission for select organizations": [
+        "SMTP-inlämning för valda organisationer"
+      ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android och Windows)"
       ],
@@ -5116,6 +5123,9 @@
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
         "Dela dina filer eller mappar med vem som helst genom att använda säkra, delningsbara länkar"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTP tillåter tjänster från tredje part eller enheter att skicka e-post via ${ MAIL_APP_NAME }."
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Specialdesignade NetShield skyddar din enhet och snabbar upp din surfning genom att blockera annonser, spårare och skadlig kod"
@@ -6245,9 +6255,6 @@
       ],
       "Expiring": [
         "Löper ut"
-      ],
-      "Upcoming": [
-        "Kommande"
       ]
     },
     "Success": {
@@ -7079,35 +7086,14 @@
       ]
     },
     "Title subscription": {
-      "Actions": [
-        "Åtgärder"
-      ],
-      "Duration": [
-        "Varaktighet"
-      ],
       "End date": [
         "Slutdatum"
       ],
       "Plan": [
         "Paket"
       ],
-      "Servers": [
-        "Servrar"
-      ],
-      "Start date": [
-        "Startdatum"
-      ],
       "Status": [
         "Status"
-      ],
-      "Total": [
-        "Totalt"
-      ],
-      "Total paid": [
-        "Totalt betalt"
-      ],
-      "Users": [
-        "Användare"
       ]
     },
     "Tooltip": {
@@ -7213,23 +7199,8 @@
       ]
     },
     "vpn_2step: billing": {
-      "${ billedText }, renews on ${ formattedEndTime }": [
-        "${ billedText }, förnyas den ${ formattedEndTime }"
-      ],
-      "Billed every 15 months": [
-        "Faktureras var 15:e månad"
-      ],
-      "Billed every 2 years": [
-        "Faktureras vartannat år"
-      ],
-      "Billed every 30 months": [
-        "Faktureras var 30:e månad"
-      ],
       "Billed monthly": [
         "Faktureras månadsvis"
-      ],
-      "Billed yearly": [
-        "Faktureras årligen"
       ]
     },
     "vpn_2step: discount": {

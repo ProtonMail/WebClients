@@ -532,9 +532,6 @@
       ]
     },
     "Action subscription": {
-      "Manage": [
-        "Kelola"
-      ],
       "Reactivate": [
         "Aktifkan kembali"
       ]
@@ -628,11 +625,6 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Tindakan ini akan memutuskan seluruh sambungan router dan klien yang menggunakan sertifikat ini."
-      ]
-    },
-    "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "Diperbarui secara otomatis pada ${ formattedEndTime }"
       ]
     },
     "Billing cycle option": {
@@ -2303,9 +2295,6 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Apakah Anda yakin untuk menghapus kunci keamanan ${ name }?"
       ],
-      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
-        "Apabila diaktifkan, opsi ini akan memungkinkan perangkat lunak yang tersedia secara built-in (seperti Windows Hello, TouchID, FaceID, atau TPM internal lainnya) untuk didaftarkan di samping kunci keamanan perangkat keras eksternal"
-      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Masukkan kunci keamanan yang terhubung dengan Akun ${ BRAND_NAME } Anda."
       ],
@@ -3552,9 +3541,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Anda dapat menyunting alamat ini satu kali untuk memastikan bahwa alamat surel yang akan digunakan untuk verifikasi ini telah sesuai."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Anda dapat mengakses pengaturan di atas dengan menambahkan ${ specificCountryCount } alamat IP ke dalam paket Anda atau dengan menghubungi kami untuk memperoleh solusi yang khusus untuk Anda."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Anda dapat menyimpan hingga ${ MAX_CALENDARS_FREE } kalender. Mohon hapus tautan kalender bersama yang ada dan seluruh pengguna ${ BRAND_NAME } yang berbagi kalender dengan Anda sebelum membatalkan langganan ${ MAIL_SHORT_APP_NAME } Anda."
       ],
@@ -3665,9 +3651,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Langganan Anda dikelola oleh Mozilla. Harap hubungi layanan dukungan Mozilla."
-      ],
-      "Your subscription will renew automatically on ${ renewalTime }.": [
-        "Langganan Anda akan diperbarui secara otomatis pada ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -6148,9 +6131,6 @@
       ],
       "Expiring": [
         "Segera berakhir"
-      ],
-      "Upcoming": [
-        "Akan datang"
       ]
     },
     "Success": {
@@ -6977,35 +6957,14 @@
       ]
     },
     "Title subscription": {
-      "Actions": [
-        "Tindakan"
-      ],
-      "Duration": [
-        "Durasi"
-      ],
       "End date": [
         "Tanggal berakhir"
       ],
       "Plan": [
         "Paket"
       ],
-      "Servers": [
-        "Server"
-      ],
-      "Start date": [
-        "Tanggal mulai"
-      ],
       "Status": [
         "Status"
-      ],
-      "Total": [
-        "Total"
-      ],
-      "Total paid": [
-        "Total yang dibayarkan"
-      ],
-      "Users": [
-        "Pengguna"
       ]
     },
     "Tooltip": {
@@ -7105,23 +7064,8 @@
       ]
     },
     "vpn_2step: billing": {
-      "${ billedText }, renews on ${ formattedEndTime }": [
-        "${ billedText }, akan diperbarui pada ${ formattedEndTime }"
-      ],
-      "Billed every 15 months": [
-        "Ditagihkan setiap 15 bulan"
-      ],
-      "Billed every 2 years": [
-        "Ditagihkan setiap 2 tahun"
-      ],
-      "Billed every 30 months": [
-        "Ditagihkan setiap 30 bulan"
-      ],
       "Billed monthly": [
         "Ditagihkan secara bulanan"
-      ],
-      "Billed yearly": [
-        "Ditagihkan secara tahunan"
       ]
     },
     "vpn_2step: discount": {

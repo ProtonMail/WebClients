@@ -532,9 +532,6 @@
       ]
     },
     "Action subscription": {
-      "Manage": [
-        "Gérer"
-      ],
       "Reactivate": [
         "Réactiver"
       ]
@@ -631,11 +628,6 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Cela déconnectera tous les routeurs et les clients utilisant ce certificat."
-      ]
-    },
-    "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "Se renouvelle automatiquement le ${ formattedEndTime }"
       ]
     },
     "Billing cycle option": {
@@ -2308,11 +2300,11 @@
       "Allow platform keys": [
         "Autoriser les clés de plateforme"
       ],
+      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
+        "Vous permet d'enregistrer des clés de sécurité intégrées (comme Windows Hello, Face ID, Touch ID ou des TPM internes)."
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Voulez-vous vraiment supprimer la clé de sécurité ${ name } ?"
-      ],
-      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
-        "Si cette option est activée, elle permet d'enregistrer des fonctionnalités et des composants intégrés (comme Windows Hello, Touch ID, Face ID ou les TPM internes) en plus des clés de sécurité matérielles externes."
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Insérez une clé de sécurité liée à votre compte ${ BRAND_NAME }."
@@ -3584,7 +3576,7 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Vous pouvez modifier ceci une fois pour vous assurer que l'adresse e-mail utilisée pour la vérification est correcte."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
         "Vous pouvez débloquer immédiatement la configuration ci-dessus en ajoutant ${ specificCountryCount } au nombre d'adresses IP de votre abonnement ou nous contacter pour une solution personnalisée."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
@@ -3702,9 +3694,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Votre abonnement est géré par Mozilla. Nous vous invitons à contacter le support Mozilla."
-      ],
-      "Your subscription will renew automatically on ${ renewalTime }.": [
-        "Votre abonnement sera automatiquement renouvelé le ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -4742,6 +4731,12 @@
       "Sign in as user": [
         "Se connecter en tant qu'utilisateur"
       ],
+      "SMTP submission": [
+        "Soumission SMTP"
+      ],
+      "SMTP submission for select organizations": [
+        "Soumission SMTP pour les organisations sélectionnées"
+      ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android et Windows)"
       ],
@@ -5116,6 +5111,9 @@
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
         "Partagez vos fichiers ou dossiers avec qui vous voulez grâce à des liens sécurisés et partageables."
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "Le protocole SMTP permet à des services ou des appareils tiers d'envoyer des messages en utilisant ${ MAIL_APP_NAME }."
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "NetShield est une fonctionnalité spécialement conçue pour protéger votre appareil et accélérer votre navigation en bloquant les publicités, traqueurs et logiciels malveillants."
@@ -6245,9 +6243,6 @@
       ],
       "Expiring": [
         "Expiré"
-      ],
-      "Upcoming": [
-        "À venir"
       ]
     },
     "Success": {
@@ -7079,35 +7074,14 @@
       ]
     },
     "Title subscription": {
-      "Actions": [
-        "Actions"
-      ],
-      "Duration": [
-        "Durée"
-      ],
       "End date": [
         "Date de fin"
       ],
       "Plan": [
         "Abonnement"
       ],
-      "Servers": [
-        "Serveurs"
-      ],
-      "Start date": [
-        "Date de début"
-      ],
       "Status": [
         "Statut"
-      ],
-      "Total": [
-        "Total"
-      ],
-      "Total paid": [
-        "Total payé"
-      ],
-      "Users": [
-        "Utilisateurs"
       ]
     },
     "Tooltip": {
@@ -7213,23 +7187,8 @@
       ]
     },
     "vpn_2step: billing": {
-      "${ billedText }, renews on ${ formattedEndTime }": [
-        "${ billedText }, se renouvellera le ${ formattedEndTime }"
-      ],
-      "Billed every 15 months": [
-        "Facturé tous les 15 mois"
-      ],
-      "Billed every 2 years": [
-        "Facturé tous les 2 ans"
-      ],
-      "Billed every 30 months": [
-        "Facturé tous les 30 mois"
-      ],
       "Billed monthly": [
         "Facturé mensuellement"
-      ],
-      "Billed yearly": [
-        "Facturé annuellement"
       ]
     },
     "vpn_2step: discount": {
