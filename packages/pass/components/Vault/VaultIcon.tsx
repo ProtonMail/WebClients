@@ -4,6 +4,7 @@ import type { IconSize } from '@proton/components/components';
 import { Icon } from '@proton/components/components';
 import type { VaultIcon as VaultIconEnum } from '@proton/pass/types/protobuf/vault-v1';
 import { VaultColor as VaultColorEnum } from '@proton/pass/types/protobuf/vault-v1';
+import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import clsx from '@proton/utils/clsx';
 
 import { VAULT_COLOR_MAP, VAULT_ICON_MAP } from '../../components/Vault/constants';
@@ -21,7 +22,7 @@ type Props = {
     size?: IconSize;
 };
 
-const rem = (px: number) => `${px / parseFloat(getComputedStyle(document.documentElement).fontSize)}rem`;
+const rem = (px: number) => `${px / rootFontSize()}rem`;
 
 export const VaultIcon: VFC<Props> = ({
     className,
