@@ -33,7 +33,7 @@ export const ImportVaultPickerOption: FC<VaultsPickerOptionProps> = ({
     return (
         <div className="flex flex-justify-space-between flex-align-items-center">
             <Checkbox checked={selected} onChange={(e) => onToggle(e.target.checked)}>
-                <div className="w-custom" style={{ '--w-custom': '100px' }}>
+                <div className="w-custom" style={{ '--w-custom': '6.25rem' }}>
                     <strong className="text-sm block text-ellipsis">{name}</strong>
                     <span className="text-sm text-weak">
                         {c('Info').ngettext(msgid`${count} item`, `${count} items`, count)}
@@ -41,7 +41,7 @@ export const ImportVaultPickerOption: FC<VaultsPickerOptionProps> = ({
                 </div>
             </Checkbox>
             <Icon name="arrow-right" />
-            <div className="w-custom" style={{ '--w-custom': '150px' }}>
+            <div className="w-custom" style={{ '--w-custom': '9.375rem' }}>
                 <SelectTwo value={value} className="text-sm" onValue={(value) => onChange(value)} disabled={!selected}>
                     {[
                         /* if user needs to upgrade, this means he cannot

@@ -35,7 +35,7 @@ const getSteps = () => [
 ];
 
 const brandNameJSX = (
-    <img src={passBrandText} className="ml-2 h-custom" style={{ '--h-custom': '28px' }} key="brand" alt="" />
+    <img src={passBrandText} className="ml-2 h-custom" style={{ '--h-custom': '1.75rem' }} key="brand" alt="" />
 );
 
 export const InstallationSuccess: VFC = () => {
@@ -82,7 +82,7 @@ export const InstallationSuccess: VFC = () => {
                                     <img
                                         src="/assets/protonpass-icon.svg"
                                         className="h-custom"
-                                        style={{ '--h-custom': '36px' }}
+                                        style={{ '--h-custom': '2.25rem' }}
                                         alt={PASS_APP_NAME}
                                     />
                                 }
@@ -126,7 +126,7 @@ export const InstallationSuccess: VFC = () => {
                                                             <img
                                                                 src={icon}
                                                                 className="h-custom"
-                                                                style={{ '--h-custom': '24px' }}
+                                                                style={{ '--h-custom': '1.5rem' }}
                                                                 alt={BRAND_NAME}
                                                             />
                                                         </div>
