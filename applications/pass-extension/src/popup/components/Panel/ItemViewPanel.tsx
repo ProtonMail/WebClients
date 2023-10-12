@@ -47,7 +47,10 @@ export const ItemViewPanel: FC<Props> = ({
 }) => {
     const vaults = useSelector(selectAllVaults);
     const hasMultipleVaults = vaults.length > 1;
-    const showVaultTag = hasMultipleVaults || vault.shared;
+    const { shareRoleId, shared } = vault;
+    const showVaultTag = hasMultipleVaults || shared;
+    const readOnly = shareRoleId === ShareRole.READ;
+    const sharedReadOnly = shared && readOnly;
 
     return (
         <Panel
@@ -56,8 +59,6 @@ export const ItemViewPanel: FC<Props> = ({
                 <PanelHeader
                     title={name}
                     actions={(() => {
-                        if (vault.shareRoleId === ShareRole.READ) return [];
-
                         if (failed) {
                             return [
                                 <Button
@@ -88,11 +89,13 @@ export const ItemViewPanel: FC<Props> = ({
                                         onClick={handleRestoreClick}
                                         label={c('Action').t`Restore item`}
                                         icon="arrows-rotate"
+                                        disabled={sharedReadOnly}
                                     />
                                     <DropdownMenuButton
                                         onClick={handleDeleteClick}
                                         label={c('Action').t`Delete permanently`}
                                         icon="trash-cross"
+                                        disabled={sharedReadOnly}
                                     />
                                 </QuickActionsDropdown>,
                             ];
@@ -106,7 +109,7 @@ export const ItemViewPanel: FC<Props> = ({
                                 shape="solid"
                                 color="norm"
                                 onClick={handleEditClick}
-                                disabled={optimistic}
+                                disabled={readOnly}
                             >
                                 <Icon name="pencil" className="mr-1" />
                                 <span>{c('Action').t`Edit`}</span>
@@ -125,6 +128,7 @@ export const ItemViewPanel: FC<Props> = ({
                                         onClick={handleMoveToVaultClick}
                                         label={c('Action').t`Move to another vault`}
                                         icon="folder-arrow-in"
+                                        disabled={sharedReadOnly}
                                     />
                                 )}
 
@@ -134,6 +138,7 @@ export const ItemViewPanel: FC<Props> = ({
                                     onClick={handleMoveToTrashClick}
                                     label={c('Action').t`Move to Trash`}
                                     icon="trash"
+                                    disabled={sharedReadOnly}
                                 />
                             </QuickActionsDropdown>,
                         ];
