@@ -29,15 +29,6 @@
       "Back": [
         "Înapoi"
       ],
-      "Can edit": [
-        "Poate edita"
-      ],
-      "Can manage": [
-        "Poate gestiona"
-      ],
-      "Can view": [
-        "Poate vedea"
-      ],
       "Can't find your password manager? Please let us know!": [
         "Nu vă găsiți managerul de parole? Anunțați-ne!"
       ],
@@ -181,9 +172,6 @@
       ],
       "Importing": [
         "Se importă"
-      ],
-      "Invite people": [
-        "Invitați persoane"
       ],
       "Join shared vault": [
         "Alăturare la seif partajat"
@@ -366,6 +354,9 @@
       ],
       "Cannot create alias (${ error }).": [
         "Nu se poate crea aliasul (${ error })."
+      ],
+      "Cannot send invitation to this address at the moment": [
+        "Momentan nu se poate trimite invitația la această adresă."
       ],
       "Could not leave vault.": [
         "Nu s-a putut părăsi seiful."
@@ -691,23 +682,11 @@
       "Autosaved on ${ submissionURL }": [
         "Autosalvat la ${ submissionURL }"
       ],
-      "Can create, edit, delete and export items in this vault.": [
-        "Poate crea, edita, șterge și exporta articole din acest seif."
-      ],
-      "Can edit": [
-        "Poate edita"
-      ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Poate acorda și revoca accesul la acest seif și îl poate șterge."
       ],
       "Can grant and revoke access to this vault.": [
         "Poate acorda și anul accesul la acest seif."
-      ],
-      "Can manage": [
-        "Poate gestiona"
-      ],
-      "Can view": [
-        "Poate vedea"
       ],
       "Can view items in this vault.": [
         "Poate vizualiza articolele din acest seif."
@@ -890,9 +869,6 @@
       "Passwords older than 1 day are automatically deleted from history.": [
         "Parolele mai vechi de o zi sunt șterse automat din istoric."
       ],
-      "Pending invitation": [
-        "Invitație în așteptare"
-      ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Fixați ${ PASS_APP_NAME } pe bara de unelte"
       ],
@@ -925,9 +901,6 @@
       ],
       "Select the destination vault for each imported vault.": [
         "Selectați seiful de destinație pentru fiecare seif importat."
-      ],
-      "Select the level of access this user will gain when they join your vault.": [
-        "Selectați nivelul de acces pe care îl are acest utilizator la seif."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serverele nu sunt accesibile. Mai reîncercați peste câteva minute."
@@ -979,9 +952,6 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Acest fișier exportat va fi necriptat și oricine are acces la el va putea vedea parolele. Pentru securitate, trebuie să-l ștergeți după ce l-ați terminat de utilizat."
       ],
-      "This user will receive an invitation to join your '${ vaultName }' vault.": [
-        "Acest utilizator va primi o invitație pentru a se alătura la seiful „${ vaultName }”."
-      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Acest seif nu este partajat momentan cu nimeni. Invitați oameni pentru a-l partaja cu ei."
       ],
@@ -1024,6 +994,9 @@
       "You are about to create:": [
         "Sunteți pe cale să creați:"
       ],
+      "You cannot change the mailboxes for this alias.": [
+        "Nu se poate modifica adresa reală pentru acest alias."
+      ],
       "You have ${ daysRemaining } day left in your trial period.": [
         "Perioada de încercare mai durează ${ daysRemaining } zi.",
         "Perioada de încercare mai durează ${ daysRemaining } zile.",
@@ -1049,9 +1022,6 @@
       ],
       "You're about to create": [
         "Sunteți pe cale să creați"
-      ],
-      "You've been invited to a vault. Click here to see the invitation.": [
-        "Aveți o invitație la un seif partajat. Faceți clic aici pentru a vedea invitația."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Sesiunea ${ PASS_APP_NAME } este blocată."
@@ -1248,6 +1218,9 @@
       "Label": [
         "Eticheta"
       ],
+      "Language": [
+        "Limba"
+      ],
       "Last 2 weeks": [
         "Ultimele două săptămâni"
       ],
@@ -1353,9 +1326,6 @@
       "Report a problem": [
         "Raportare problemă"
       ],
-      "Respond": [
-        "Răspuns"
-      ],
       "Restore all items": [
         "Restaurare toate articolele"
       ],
@@ -1445,9 +1415,6 @@
       ],
       "Vault": [
         "Seif"
-      ],
-      "Vaults": [
-        "Seifuri"
       ],
       "Verification number": [
         "Număr de verificare"
@@ -1626,9 +1593,6 @@
       "Permanently remove all items ?": [
         "Ștergeți definitiv toate articolele?"
       ],
-      "Permissions": [
-        "Permisiuni"
-      ],
       "Pin the extension": [
         "Fixare extensie"
       ],
@@ -1637,9 +1601,6 @@
       ],
       "Share with": [
         "Partajare cu"
-      ],
-      "Shared vault invitation": [
-        "Invitație seif partajat"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Comutați la ${ PASS_APP_NAME }?"
@@ -1719,9 +1680,6 @@
       ],
       "An error occured while exporting your data": [
         "A apărut o eroare în timpul exportului de date."
-      ],
-      "Are you sure you want to transfer vault ownership to ${ email }?": [
-        "Sigur doriți să transferați drepturile pentru seif lui ${ email }?"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Nu se pot prelua mesajele pentru acest alias chiar acum."

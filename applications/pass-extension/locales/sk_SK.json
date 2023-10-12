@@ -29,15 +29,6 @@
       "Back": [
         "Späť"
       ],
-      "Can edit": [
-        "Môže upravovať"
-      ],
-      "Can manage": [
-        "Môže spravovať"
-      ],
-      "Can view": [
-        "Môže prezerať"
-      ],
       "Can't find your password manager? Please let us know!": [
         "Nemôžete nájsť svojho správcu hesiel? Dajte nám prosím vedieť!"
       ],
@@ -181,9 +172,6 @@
       ],
       "Importing": [
         "Importovanie"
-      ],
-      "Invite people": [
-        "Pozvať ľudí"
       ],
       "Join shared vault": [
         "Pripojiť sa k zdieľanému trezoru"
@@ -366,6 +354,9 @@
       ],
       "Cannot create alias (${ error }).": [
         "Nie je možné vytvoriť alias (${ error })."
+      ],
+      "Cannot send invitation to this address at the moment": [
+        "Na túto adresu sa teraz nedá poslať pozvanie."
       ],
       "Could not leave vault.": [
         "Trezor sa nepodarilo opustiť."
@@ -705,23 +696,11 @@
       "Autosaved on ${ submissionURL }": [
         "Automaticky uložené ${ submissionURL }"
       ],
-      "Can create, edit, delete and export items in this vault.": [
-        "Môžete vytvárať, upravovať, mazať a exportovať položky v tomto trezore."
-      ],
-      "Can edit": [
-        "Môže upravovať"
-      ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Môže udeliť alebo zrušiť prístup k tomuto trezoru a vymazať ho."
       ],
       "Can grant and revoke access to this vault.": [
         "Môže udeliť alebo zrušiť prístup k tomuto trezoru."
-      ],
-      "Can manage": [
-        "Môže spravovať"
-      ],
-      "Can view": [
-        "Môže prezerať"
       ],
       "Can view items in this vault.": [
         "Môže zobraziť položky v tomto trezore"
@@ -906,9 +885,6 @@
       "Passwords older than 1 day are automatically deleted from history.": [
         "Heslá staršie ako 1 deň sa automaticky vymažú z histórie."
       ],
-      "Pending invitation": [
-        "Čakajúca pozvánka"
-      ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Pripnite ${ PASS_APP_NAME } do panela nástrojov"
       ],
@@ -941,9 +917,6 @@
       ],
       "Select the destination vault for each imported vault.": [
         "Vyberte cieľový trezor pre každý importovaný trezor."
-      ],
-      "Select the level of access this user will gain when they join your vault.": [
-        "Vyberte úroveň prístupu, ktorú tento používateľ získa, keď sa pripojí k vášmu trezoru '."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servery sú nedostupné. Skúste to prosím o pár minút"
@@ -996,9 +969,6 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Tento export bude nezašifrovaný a ktokoľvek s prístupom k vášmu exportovanému súboru uvidí vaše heslá. Z bezpečnostných dôvodov ho po skončení používania vymažte."
       ],
-      "This user will receive an invitation to join your '${ vaultName }' vault.": [
-        "Tento používateľ dostane pozvánku na vstup do vášho trezora ‘${ vaultName }’."
-      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Tento trezor zatiaľ nie je zdieľaný s nikým. Pozvite ľudí, aby ste ho mohli zdieľať z druhými."
       ],
@@ -1041,6 +1011,9 @@
       "You are about to create:": [
         "Chystáte sa vytvoriť:"
       ],
+      "You cannot change the mailboxes for this alias.": [
+        "Nemôžete zmeniť schránku pre tento alias."
+      ],
       "You have ${ daysRemaining } day left in your trial period.": [
         "Do konca skúšobného obdobia zostáva ${ daysRemaining } deň.",
         "Do konca skúšobného obdobia zostávajú ${ daysRemaining } dni.",
@@ -1067,9 +1040,6 @@
       ],
       "You're about to create": [
         "Chystáte sa vytvoriť"
-      ],
-      "You've been invited to a vault. Click here to see the invitation.": [
-        "Boli ste pozvaný do trezora. Klepnutím sem zobrazíte pozvánku."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Vaša relácia ${ PASS_APP_NAME } je uzamknutá"
@@ -1268,6 +1238,9 @@
       "Label": [
         "Štítok"
       ],
+      "Language": [
+        "Jazyk"
+      ],
       "Last 2 weeks": [
         "Posledné 2 týždne"
       ],
@@ -1373,9 +1346,6 @@
       "Report a problem": [
         "Nahlásiť problém"
       ],
-      "Respond": [
-        "Odpoveď"
-      ],
       "Restore all items": [
         "Obnoviť všetky položky"
       ],
@@ -1465,9 +1435,6 @@
       ],
       "Vault": [
         "Trezor"
-      ],
-      "Vaults": [
-        "Trezory"
       ],
       "Verification number": [
         "Overovacie číslo"
@@ -1646,9 +1613,6 @@
       "Permanently remove all items ?": [
         "Trvalo odstrániť všetky položky ?"
       ],
-      "Permissions": [
-        "Oprávnenia"
-      ],
       "Pin the extension": [
         "Pripnite rozšírenie"
       ],
@@ -1657,9 +1621,6 @@
       ],
       "Share with": [
         "Zdieľať s"
-      ],
-      "Shared vault invitation": [
-        "Pozvánka do zdieľaného trezora"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Prechádzate na ${ PASS_APP_NAME }?"
@@ -1739,9 +1700,6 @@
       ],
       "An error occured while exporting your data": [
         "Pri exporte údajov sa vyskytla chyba"
-      ],
-      "Are you sure you want to transfer vault ownership to ${ email }?": [
-        "Skutočne chcete previesť vlastníctvo trezora na ${ email }?"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Momentálne nie je možné načítať poštové schránky pre tento alias"

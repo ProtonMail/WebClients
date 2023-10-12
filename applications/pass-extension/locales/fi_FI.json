@@ -29,15 +29,6 @@
       "Back": [
         "Takaisin"
       ],
-      "Can edit": [
-        "Voi muokata"
-      ],
-      "Can manage": [
-        "Voi hallita"
-      ],
-      "Can view": [
-        "Voi tarkastella"
-      ],
       "Can't find your password manager? Please let us know!": [
         "Etkö löydä käyttämääsi salasanahallintaa? Kerro siitä meille!"
       ],
@@ -182,8 +173,8 @@
       "Importing": [
         "Tuodaan"
       ],
-      "Invite people": [
-        "Kutsu ihmisiä"
+      "Invite others": [
+        "Kutsu muita"
       ],
       "Join shared vault": [
         "Liity jaettuun holviin"
@@ -199,6 +190,15 @@
       ],
       "Lock extension": [
         "Lukitse laajennus"
+      ],
+      "Make admin": [
+        "Myönnä ylläpito"
+      ],
+      "Make editor": [
+        "Myönnä muokkaus"
+      ],
+      "Make viewer": [
+        "Myönnä tarkastelu"
       ],
       "Manage access": [
         "Hallitse käyttöoikeuksia"
@@ -280,6 +280,9 @@
       ],
       "Share": [
         "Jaa"
+      ],
+      "Share vault": [
+        "Jaa holvi"
       ],
       "Show": [
         "Näytä"
@@ -366,6 +369,9 @@
       ],
       "Cannot create alias (${ error }).": [
         "Aliasta ei voida luoda (${ error })."
+      ],
+      "Cannot send invitation to this address at the moment": [
+        "Kutsua ei tällä hetkellä ole mahdollista lähettää tähän osoitteeseen"
       ],
       "Could not leave vault.": [
         "Holvista ei voitu poistua."
@@ -659,6 +665,9 @@
       "Access your passwords on the go with our mobile apps.": [
         "Mobiilisovelluksillamme tavoitat salasanasi myös liikkeellä ollessasi."
       ],
+      "Admin": [
+        "Ylläpito"
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" siirrettiin roskakoriin, eikä se enää ohjaa viestejä postilaatikkoosi."
       ],
@@ -677,23 +686,14 @@
       "Autosaved on ${ submissionURL }": [
         "Automaattitallennettiin osoitteesta ${ submissionURL }"
       ],
-      "Can create, edit, delete and export items in this vault.": [
+      "Can create, edit, delete, and export items in this vault.": [
         "Voi luoda, muokata, poistaa ja viedä holvin kohteita."
-      ],
-      "Can edit": [
-        "Voi muokata"
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Voi myöntää ja mitätöidä holvin käyttöoikeuksia, ja poistaa sen."
       ],
       "Can grant and revoke access to this vault.": [
         "Voi myöntää ja mitätöidä holvin käyttöoikeuksia."
-      ],
-      "Can manage": [
-        "Voi hallita"
-      ],
-      "Can view": [
-        "Voi tarkastella"
       ],
       "Can view items in this vault.": [
         "Voi tarkastella holvin kohteita."
@@ -727,6 +727,9 @@
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Tuo olemassa olevat salasanasi ${ PASS_APP_NAME }iin helposti."
+      ],
+      "Editor": [
+        "Muokkaus"
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Ota ${ PASS_APP_NAME } käyttöön yhdistämällä ${ BRAND_NAME }-tilisi"
@@ -798,11 +801,17 @@
       "Internet connection lost": [
         "Internet-yhteys katkesi"
       ],
+      "Invitation sent": [
+        "Kutsu lähetettiin"
+      ],
       "Invite successfully removed": [
         "Kutsun poisto onnistui"
       ],
       "Invite successfully resent": [
         "Kutsun uudelleenlähetys onnistui"
+      ],
+      "invites you to access items in": [
+        "kutsui sinut käyttämään kohteita holvista"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Näyttää siltä, että olet jo kirjautunut ${ PASS_APP_NAME }iin. Jos yrität kirjautua eri tilillä, kirjaa laajennus ensin ulos."
@@ -874,9 +883,6 @@
       "Passwords older than 1 day are automatically deleted from history.": [
         "Päivää vanhemmat salasanat poistetaan historiasta automaattisesti."
       ],
-      "Pending invitation": [
-        "Odottava kutsu"
-      ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Kiinnitä ${ PASS_APP_NAME } työkalupalkkiisi"
       ],
@@ -909,9 +915,6 @@
       ],
       "Select the destination vault for each imported vault.": [
         "Valitse kohdeholvi kullekin tuotavalle holville."
-      ],
-      "Select the level of access this user will gain when they join your vault.": [
-        "Valitse käyttöoikeustaso, joka käyttäjälle myönnetään kun he liittyvät holviisi."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Palvelimia ei tavoiteta. Yritä muutaman minuutin kuluttua uudelleen."
@@ -962,9 +965,6 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Tätä vientiä ei salata, eli kuka tahansa, jolla on pääsy vietyyn tiedostoon, voi nähdä salasanasi. Tietojesi suojaamiseksi, poista tiedosto heti kun et enää tarvitse sitä."
       ],
-      "This user will receive an invitation to join your '${ vaultName }' vault.": [
-        "Tämä käyttäjä kutsutaan liittymään holviisi \"${ vaultName }\"."
-      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Tätä holvia ei tällä hetkellä jaeta kenenkään kanssa. Kutsu ihmisiä jakaaksesi se muiden kanssa."
       ],
@@ -1001,18 +1001,30 @@
       "Verification code": [
         "Vahvistuskoodi"
       ],
+      "Viewer": [
+        "Tarkastelu"
+      ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Tietojen synkronoinnissa laitteelle on ongelmia. Varmista, että vapaata tilaa on riittävästi, jotta ${ PASS_SHORT_APP_NAME } toimii sujuvasti."
       ],
       "You are about to create:": [
         "Luot aliasta:"
       ],
+      "You cannot change the mailboxes for this alias.": [
+        "Et voi muuttaa aliakseen liitettyjä postilaatikoita."
+      ],
       "You have ${ daysRemaining } day left in your trial period.": [
         "Kokeilujaksoasi on jäljellä ${ daysRemaining } päivä.",
         "Kokeilujaksoasi on jäljellä ${ daysRemaining } päivää."
       ],
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
+        "Olet ylittänyt tilaukseesi sisältyvän holvien enimmäismäärän. Kohteita voidaan siirtää vain kahteen ensimmäiseen holviisi. Jos haluat siirtää kohteita kaikkiin holveihisi, päivitä tilauksesi."
+      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
         "Olet ylittänyt tilaukseesi sisältyvän holvien enimmäismäärän. Kohteita voidaan siirtää vain ensisijaiseen holviin. Jos haluat siirtää kohteita kaikkien holvien välillä, päivitä tilauksesi."
+      ],
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
+        "Olet ylittänyt tilaukseesi sisältyvän holvien enimmäismäärän. Uusia kohteita voidaan luoda vain kahteen ensimmäiseen holviisi. Jos haluat luoda kohteita kaikkiin holveihisi, päivitä tilauksesi."
       ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
         "Olet ylittänyt tilaukseesi sisältyvän holvien enimmäismäärän. Uusia kohteita voidaan luoda vain ensisijaiseen holviin. Jos haluat luoda kohteita kaikkiin holveihin, päivitä tilauksesi."
@@ -1032,8 +1044,8 @@
       "You're about to create": [
         "Luot aliasta"
       ],
-      "You've been invited to a vault. Click here to see the invitation.": [
-        "Sinut on kutsuttu holviin. Näytä kutsu klikkaamalla tästä."
+      "You're invited to a vault.": [
+        "Sinut on kutsuttu holviin."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "${ PASS_APP_NAME } -istuntosi on lukittu."
@@ -1119,6 +1131,9 @@
       ],
       "Autosave": [
         "Automaattitallennus"
+      ],
+      "Autosave vault": [
+        "Tallenna holvi automaattisesti"
       ],
       "Autosuggest": [
         "Automaattiehdotus"
@@ -1228,6 +1243,9 @@
       "Label": [
         "Tunniste"
       ],
+      "Language": [
+        "Kieli"
+      ],
       "Last 2 weeks": [
         "Viimeisen 14 päivän sisällä"
       ],
@@ -1333,9 +1351,6 @@
       "Report a problem": [
         "Ilmoita ongelmasta"
       ],
-      "Respond": [
-        "Vastaa"
-      ],
       "Restore all items": [
         "Palauta kaikki kohteet"
       ],
@@ -1347,6 +1362,9 @@
       ],
       "Select an email address": [
         "Valitse sähköpostiosoite"
+      ],
+      "Select preferred language": [
+        "Valitse ensisijainen kieli"
       ],
       "Select your password manager": [
         "Valitse salasanahallintasi"
@@ -1426,11 +1444,11 @@
       "Vault": [
         "Holvi"
       ],
-      "Vaults": [
-        "Holvit"
-      ],
       "Verification number": [
         "Turvakoodi"
+      ],
+      "View details": [
+        "Näytä tiedot"
       ],
       "View logs": [
         "Näytä lokitiedot"
@@ -1606,20 +1624,17 @@
       "Permanently remove all items ?": [
         "Poistetaanko kaikki kohteet pysyvästi?"
       ],
-      "Permissions": [
-        "Käyttöoikeudet"
-      ],
       "Pin the extension": [
         "Kiinnitä laajennus"
       ],
       "Secure your data": [
         "Suojaa tietosi"
       ],
+      "Set access level": [
+        "Aseta käyttöoikeustaso"
+      ],
       "Share with": [
         "Jaa käyttäjille"
-      ],
-      "Shared vault invitation": [
-        "Kutsu jaettuun holviin"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Oletko vaihtamassa ${ PASS_APP_NAME }iin?"
@@ -1647,6 +1662,9 @@
       ],
       "Use my email": [
         "Käytä sähköpostiosoitettani"
+      ],
+      "Vault shared with you": [
+        "Sinulle on jaettu holvi"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Tervetuloa ${ brandNameJSX }iin"
@@ -1699,9 +1717,6 @@
       ],
       "An error occured while exporting your data": [
         "Tietojasi vietäessä tapahtui virhe"
-      ],
-      "Are you sure you want to transfer vault ownership to ${ email }?": [
-        "Haluatko varmasti siirtää holvin omistajuuden käyttäjälle ${ email }?"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Aliaksen postilaatikoiden nouto ei juuri nyt onnistu"
@@ -1766,6 +1781,9 @@
       "Title is required": [
         "Otsikko vaaditaan"
       ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "Siirretäänkö holvin omistus käyttäjälle ${ email }?"
+      ],
       "Trash alias ?": [
         "Siirretäänkö alias roskakoriin?"
       ],
@@ -1799,11 +1817,17 @@
       "Your plan does not allow you to create more aliases": [
         "Tilauksesi ei salli sinun luoda enempää aliaksia"
       ],
+      "Your plan only allows you to autofill from your first two vaults": [
+        "Tilauksesi sallii automaattitäytön vain kahdesta ensimmäisestä holvistasi"
+      ],
       "Your plan only allows you to autofill from your primary vault": [
         "Tilauksesi sallii automaattitäytön vain ensisijaisesta holvistasi"
       ],
       "Your session was locked due to inactivity": [
         "Istuntosi lukittiin toimettomuuden seuraksena"
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "Tilauksesi ei salli useiden holvien luontia ja kaikki kohteet tuodaan ensisijaiseen holviisi. Jos haluat tuoda useisiin holveihin, päivitä tilauksesi."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
         "Tilauksesi ei salli useiden holvien luontia ja kaikki kohteet tuodaan oletusarvoisesti ensisijaiseen holviisi. Jos haluat tuoda useisiin holveihin, päivitä tilauksesi."

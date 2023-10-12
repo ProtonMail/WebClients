@@ -11,6 +11,9 @@
       "Add current url": [
         "Přidat aktuální URL"
       ],
+      "Add domain to pause list": [
+        "Přidat doménu na vyčkávací seznam"
+      ],
       "Add more": [
         "Přidat další"
       ],
@@ -25,15 +28,6 @@
       ],
       "Back": [
         "Zpět"
-      ],
-      "Can edit": [
-        "Může upravovat"
-      ],
-      "Can manage": [
-        "Může spravovat"
-      ],
-      "Can view": [
-        "Může zobrazit"
       ],
       "Can't find your password manager? Please let us know!": [
         "Nemůžete najít svého správce hesel? Dejte nám vědět!"
@@ -179,9 +173,6 @@
       "Importing": [
         "Import"
       ],
-      "Invite people": [
-        "Pozvat lidi"
-      ],
       "Join shared vault": [
         "Připojit ke sdílenému trezoru"
       ],
@@ -190,6 +181,9 @@
       ],
       "Leave": [
         "Opustit"
+      ],
+      "Leave vault": [
+        "Opustit trezor"
       ],
       "Lock extension": [
         "Zamknout rozšíření"
@@ -337,6 +331,11 @@
         "Rozbalit"
       ]
     },
+    "Description": {
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
+        "Seznam domén, ve kterých jsou určité automatické funkce v ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) by se neměly spouštět."
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } soubor se nepodařilo zpracovat. ${ errorDetail }"
@@ -356,6 +355,9 @@
       "Cannot create alias (${ error }).": [
         "Nelze vytvořit alias (${ error })."
       ],
+      "Cannot send invitation to this address at the moment": [
+        "Na tuto adresu momentálně nelze zaslat pozvánku"
+      ],
       "Could not leave vault.": [
         "Nepodařilo se opustit trezor."
       ],
@@ -363,13 +365,13 @@
         "Nelze otevřít vytvořený trezor"
       ],
       "Could not open invited vault": [
-        "Nelze otevřít pozvaný trezor"
+        "Nepodařilo se otevřít trezor, ke kterému je pozvánka"
       ],
       "Could not open updated vault": [
         "Nelze aktualizovat vytvořený trezor"
       ],
       "Could not resolve share members": [
-        "Nepodařilo se vyřešit sdílené členy"
+        "Nepodařilo se vyřešit členy sdílení"
       ],
       "Could not resume your session : ${ description }": [
         "Nelze obnovit vaši relaci : ${ description }"
@@ -694,23 +696,11 @@
       "Autosaved on ${ submissionURL }": [
         "Automaticky uloženo na ${ submissionURL }"
       ],
-      "Can create, edit, delete and export items in this vault.": [
-        "Může vytvářet, upravovat, mazat a exportovat položky v tomto trezoru."
-      ],
-      "Can edit": [
-        "Může upravovat"
-      ],
       "Can grant and revoke access to this vault, and delete it.": [
-        "Může přidělovat a odebírat přístup k tomuto trezoru a mazat jej."
+        "Může udělovat a rušit přístup k tomuto trezoru a smazat ho."
       ],
       "Can grant and revoke access to this vault.": [
-        "Může udělovat a odebírat přístup k tomuto trezoru."
-      ],
-      "Can manage": [
-        "Může spravovat"
-      ],
-      "Can view": [
-        "Může prohlížet"
+        "Může udělovat a rušit přístup k tomuto trezoru."
       ],
       "Can view items in this vault.": [
         "Může zobrazovat položky v tomto trezoru."
@@ -818,7 +808,7 @@
         "Připojení k Internetu bylo ztraceno"
       ],
       "Invite successfully removed": [
-        "Pozvánka byla úspěšně odstraněna"
+        "Pozvánka byla úspěšně odebrána"
       ],
       "Invite successfully resent": [
         "Pozvánka byla úspěšně odeslána"
@@ -895,9 +885,6 @@
       "Passwords older than 1 day are automatically deleted from history.": [
         "Hesla starší než 1 den jsou automaticky smazána z historie."
       ],
-      "Pending invitation": [
-        "Čekající pozvánka"
-      ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Připněte ${ PASS_APP_NAME } na panel nástrojů"
       ],
@@ -931,9 +918,6 @@
       "Select the destination vault for each imported vault.": [
         "Vyberte cílový trezor pro každý importovaný trezor."
       ],
-      "Select the level of access this user will gain when they join your vault.": [
-        "Vyberte úroveň přístupu, kterou tento uživatel získá, když se připojí k vašemu trezoru."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servery jsou nedostupné. Zkuste to prosím znovu za několik minut"
       ],
@@ -959,7 +943,7 @@
         "Všechny položky byly úspěšně exportovány"
       ],
       "Successfully left the vault": [
-        "Úspěšné opuštění trezoru"
+        "Trezor úspěšně opuštěn"
       ],
       "Successfully synced all vaults": [
         "Všechny trezory byly úspěšně synchronizovány"
@@ -985,11 +969,8 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Tento export bude nešifrovaný a kdokoli s přístupem k exportovanému souboru bude moci zobrazit vaše hesla. Z bezpečnostních důvodů jej po ukončení používání odstraňte."
       ],
-      "This user will receive an invitation to join your '${ vaultName }' vault.": [
-        "Tento uživatel obdrží pozvánku ke vstupu do vašeho trezoru '${ vaultName }'."
-      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
-        "Tento trezor není v současné době s nikým sdílen. Pozvěte lidi, aby ho sdíleli s ostatními."
+        "Tento trezor není v současné době s nikým sdílen. Pozvěte ostatní, se kterými chcete trezor sdílet."
       ],
       "Unable to copy to clipboard": [
         "Nelze kopírovat do schránky"
@@ -1030,6 +1011,9 @@
       "You are about to create:": [
         "Chystáte se vytvořit:"
       ],
+      "You cannot change the mailboxes for this alias.": [
+        "Poštovní schránky pro tento alias nelze měnit."
+      ],
       "You have ${ daysRemaining } day left in your trial period.": [
         "Do konce zkušební doby zbývá ${ daysRemaining } den.",
         "Do konce zkušební doby zbývají ${ daysRemaining } dny.",
@@ -1056,9 +1040,6 @@
       ],
       "You're about to create": [
         "Chystáte se vytvořit"
-      ],
-      "You've been invited to a vault. Click here to see the invitation.": [
-        "Byli jste pozváni k trezoru. Klepnutím sem zobrazíte pozvánku."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Vaše relace ${ PASS_APP_NAME } je uzamčena"
@@ -1257,6 +1238,9 @@
       "Label": [
         "Štítek"
       ],
+      "Language": [
+        "Jazyk"
+      ],
       "Last 2 weeks": [
         "Minulé 2 týdny"
       ],
@@ -1335,6 +1319,9 @@
       "Passwords": [
         "Hesla"
       ],
+      "Pause list": [
+        "Vyčkávací seznam"
+      ],
       "Permanently delete items": [
         "Trvale smazat položky"
       ],
@@ -1358,9 +1345,6 @@
       ],
       "Report a problem": [
         "Nahlásit problém"
-      ],
-      "Respond": [
-        "Odpovědět"
       ],
       "Restore all items": [
         "Obnovit všechny položky"
@@ -1390,7 +1374,7 @@
         "Nastavení"
       ],
       "Show website favicons": [
-        "Zobrazit oblíbené ikony webových stránek"
+        "Zobrazit ikony webových stránek"
       ],
       "Special characters (!&*)": [
         "Speciální znaky (!&*)"
@@ -1451,9 +1435,6 @@
       ],
       "Vault": [
         "Trezor"
-      ],
-      "Vaults": [
-        "Trezory"
       ],
       "Verification number": [
         "Číslo pro ověření"
@@ -1632,9 +1613,6 @@
       "Permanently remove all items ?": [
         "Trvale smazat všechny položky?"
       ],
-      "Permissions": [
-        "Oprávnění"
-      ],
       "Pin the extension": [
         "Připněte rozšíření"
       ],
@@ -1643,9 +1621,6 @@
       ],
       "Share with": [
         "Sdílet s"
-      ],
-      "Shared vault invitation": [
-        "Pozvánka ke sdílenému trezoru"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Přecházíte na ${ PASS_APP_NAME }?"
@@ -1726,9 +1701,6 @@
       "An error occured while exporting your data": [
         "Při exportu dat došlo k chybě"
       ],
-      "Are you sure you want to transfer vault ownership to ${ email }?": [
-        "Opravdu chcete převést vlastnictví trezoru na ${ email }?"
-      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Pro tento alias nelze nyní načíst e-mailové schránky"
       ],
@@ -1775,7 +1747,7 @@
         "Exportní soubor zašifrovaný pomocí PGP vyžaduje heslo"
       ],
       "Please enter a valid email address": [
-        "Prosím zadejte platnou emailovou adresu"
+        "Prosím zadejte platnou e-mailovou adresu"
       ],
       "Please log back in": [
         "Přihlaste se prosím znovu"
