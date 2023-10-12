@@ -10,7 +10,7 @@ const QuickSettingsButton = ({ onClick, children, ...rest }: Props, ref: Ref<HTM
         <button
             onClick={onClick}
             type="button"
-            className="color-weak text-no-decoration text-underline-on-hover flex flex-nowrap flex-justify-center text-sm mx-auto"
+            className="color-weak text-no-decoration hover:text-underline flex flex-nowrap flex-justify-center text-sm mx-auto"
             ref={ref}
             {...rest}
         >
