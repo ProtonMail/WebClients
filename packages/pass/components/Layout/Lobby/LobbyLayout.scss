@@ -12,5 +12,5 @@
 .pass-lobby--content::before {
 	content: '';
 	display: block;
-	block-size: 100px;
+	block-size: rem(100);
 }

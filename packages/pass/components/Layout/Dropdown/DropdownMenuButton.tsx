@@ -59,7 +59,7 @@ export const DropdownMenuButtonLabel: FC<DropdownMenuButtonLabelProps> = ({
     return (
         <div
             className="flex flex-justify-space-between flex-align-items-center flex-nowrap gap-3 max-h-custom"
-            style={{ '--max-h-custom': '20px' }}
+            style={{ '--max-h-custom': '1.25rem' }}
         >
             <div className={'flex flex-align-items-center flex-nowrap gap-2'}>
                 {typeof icon === 'string' ? (

@@ -26,14 +26,14 @@ export const PasswordGenerator: VFC<UsePasswordGeneratorResult> = ({
             <div className="my-4 px-4 py-2 flex flex-align-items-center">
                 <span
                     className="text-2xl text-center text-break-all text-monospace m-auto min-h-custom"
-                    style={{ '--min-h-custom': '72px' }}
+                    style={{ '--min-h-custom': '4.5rem' }}
                 >
                     {getCharsGroupedByColor(password)}
                 </span>
             </div>
 
             <div className="flex flex-align-items-center gap-x-2">
-                <label htmlFor="password-type" className="w-custom" style={{ '--w-custom': '90px' }}>
+                <label htmlFor="password-type" className="w-custom" style={{ '--w-custom': '5.625rem' }}>
                     {c('Label').t`Type`}
                 </label>
                 <SelectTwo<GeneratePasswordOptions['type']>
@@ -52,7 +52,7 @@ export const PasswordGenerator: VFC<UsePasswordGeneratorResult> = ({
             {passwordOptions.type === 'random' && (
                 <>
                     <div className="flex flex-align-items-center flex-justify-space-between">
-                        <label htmlFor="password-length" className="w-custom" style={{ '--w-custom': '110px' }}>
+                        <label htmlFor="password-length" className="w-custom" style={{ '--w-custom': '6.875rem' }}>
                             {c('Label').ngettext(
                                 msgid`${passwordOptions.options.length} character`,
                                 `${passwordOptions.options.length} characters`,
@@ -74,7 +74,7 @@ export const PasswordGenerator: VFC<UsePasswordGeneratorResult> = ({
                     </div>
                     <hr className="m-0" />
                     <div className="flex flex-align-items-center flex-justify-space-between">
-                        <label htmlFor="password-special-chars" className="w-custom" style={{ '--w-custom': '160px' }}>
+                        <label htmlFor="password-special-chars" className="w-custom" style={{ '--w-custom': '10rem' }}>
                             {c('Label').t`Special characters (!&*)`}
                         </label>
 
@@ -91,7 +91,7 @@ export const PasswordGenerator: VFC<UsePasswordGeneratorResult> = ({
                                 <label
                                     htmlFor="password-capitalise"
                                     className="w-custom"
-                                    style={{ '--w-custom': '160px' }}
+                                    style={{ '--w-custom': '10rem' }}
                                 >
                                     {c('Label').t`Capital letters (A-Z)`}
                                 </label>
@@ -104,7 +104,7 @@ export const PasswordGenerator: VFC<UsePasswordGeneratorResult> = ({
                             </div>
                             <hr className="m-0" />
                             <div className="flex flex-align-items-center flex-justify-space-between">
-                                <label htmlFor="password-digits" className="w-custom" style={{ '--w-custom': '160px' }}>
+                                <label htmlFor="password-digits" className="w-custom" style={{ '--w-custom': '10rem' }}>
                                     {c('Label').t`Include numbers (0-9)`}
                                 </label>
 
@@ -122,7 +122,7 @@ export const PasswordGenerator: VFC<UsePasswordGeneratorResult> = ({
             {passwordOptions.type === 'memorable' && (
                 <>
                     <div className="flex flex-align-items-center flex-justify-space-between">
-                        <label htmlFor="password-word-count" className="w-custom" style={{ '--w-custom': '110px' }}>
+                        <label htmlFor="password-word-count" className="w-custom" style={{ '--w-custom': '6.875rem' }}>
                             {c('Label').ngettext(
                                 msgid`${passwordOptions.options.wordCount} word`,
                                 `${passwordOptions.options.wordCount} words`,
@@ -144,7 +144,7 @@ export const PasswordGenerator: VFC<UsePasswordGeneratorResult> = ({
                     </div>
                     <hr className="m-0" />
                     <div className="flex flex-align-items-center flex-justify-space-between">
-                        <label htmlFor="password-capitalise" className="w-custom" style={{ '--w-custom': '160px' }}>
+                        <label htmlFor="password-capitalise" className="w-custom" style={{ '--w-custom': '10rem' }}>
                             {c('Label').t`Capitalise`}
                         </label>
                         <Toggle
@@ -161,7 +161,7 @@ export const PasswordGenerator: VFC<UsePasswordGeneratorResult> = ({
                                 <label
                                     htmlFor="password-seperator"
                                     className="w-custom"
-                                    style={{ '--w-custom': '90px' }}
+                                    style={{ '--w-custom': '5.625rem' }}
                                 >
                                     {c('Label').t`Type`}
                                 </label>
@@ -185,7 +185,7 @@ export const PasswordGenerator: VFC<UsePasswordGeneratorResult> = ({
                                 <label
                                     htmlFor="password-extra-numbers"
                                     className="w-custom"
-                                    style={{ '--w-custom': '160px' }}
+                                    style={{ '--w-custom': '10rem' }}
                                 >
                                     {c('Label').t`Include numbers`}
                                 </label>
