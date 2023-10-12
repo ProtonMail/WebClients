@@ -16,6 +16,7 @@ export enum AddressConfirmationState {
 }
 
 export interface Address {
+    CatchAll: boolean;
     DisplayName: string;
     DomainID: string;
     Email: string;
@@ -35,9 +36,7 @@ export interface Address {
     ConfirmationState: AddressConfirmationState;
 }
 
-export interface DomainAddress extends Omit<Address, 'SignedKeyList' | 'Keys'> {
-    CatchAll: 1 | 0;
-}
+export type DomainAddress = Omit<Address, 'SignedKeyList' | 'Keys'>;
 
 export interface AddressKeyPayload {
     AddressID: string;
