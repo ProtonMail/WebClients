@@ -69,6 +69,12 @@
       "Apply": [
         "Použít"
       ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Na jednu skupinu kontaktů je povolen maximálně ${ maxContacts } kontakt",
+        "Na jednu skupinu kontaktů jsou povoleny maximálně ${ maxContacts } kontakty",
+        "Na jednu skupinu kontaktů je povoleno maximálně ${ maxContacts } kontaktů",
+        "Na jednu skupinu kontaktů je povoleno maximálně ${ maxContacts } kontaktů"
+      ],
       "Attach screenshot(s)": [
         "Přiložit sním(ek/ky) obrazovky"
       ],
@@ -638,6 +644,12 @@
       ],
       "Yes, I'll attend": [
         "Ano, zúčastním se"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktu",
+        "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktů",
+        "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktů",
+        "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktů"
       ]
     },
     "Action subline": {
@@ -2626,6 +2638,12 @@
       ],
       "You already added this holidays calendar": [
         "Tento kalendář svátků jste již přidali"
+      ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Nemůžete odeslat e-mail více než ${ maxContacts } příjemci najednou",
+        "Nemůžete odeslat e-mail více než ${ maxContacts } příjemcům najednou",
+        "Nemůžete odeslat e-mail více než ${ maxContacts } příjemcům najednou",
+        "Nemůžete odeslat e-mail více než ${ maxContacts } příjemcům najednou"
       ],
       "You have reached the contacts limit for your account": [
         "Dosáhli jste limitu kontaktů vašeho účtu"
