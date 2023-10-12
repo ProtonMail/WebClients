@@ -1,10 +1,17 @@
 import { call, fork, put, race, select, take } from 'redux-saga/effects';
 
-import { getFeatureFlags, getUserPlan } from '@proton/pass/lib/user/user.requests';
-import { setUserFeatures, setUserPlan, syncFailure, syncIntent, syncSuccess } from '@proton/pass/store/actions';
+import { getFeatureFlags, getUserPlan, getUserSettings } from '@proton/pass/lib/user/user.requests';
+import {
+    setUserFeatures,
+    setUserPlan,
+    setUserSettings,
+    syncFailure,
+    syncIntent,
+    syncSuccess,
+} from '@proton/pass/store/actions';
 import { isStateResetAction } from '@proton/pass/store/actions/utils';
 import { asIfNotOptimistic } from '@proton/pass/store/optimistic/selectors/select-is-optimistic';
-import type { FeatureFlagState, UserPlanState } from '@proton/pass/store/reducers';
+import type { FeatureFlagState, UserPlanState, UserSettingsState } from '@proton/pass/store/reducers';
 import { reducerMap } from '@proton/pass/store/reducers';
 import type { SynchronizationResult } from '@proton/pass/store/sagas/workers/sync';
 import { SyncType, synchronize } from '@proton/pass/store/sagas/workers/sync';
@@ -23,6 +30,9 @@ function* syncWorker(options: WorkerRootSagaOptions) {
 
             const features: FeatureFlagState = yield getFeatureFlags(state.user, { force: true });
             yield put(setUserFeatures(features));
+
+            const userSettings: UserSettingsState = yield getUserSettings();
+            yield put(setUserSettings(userSettings));
         });
 
         const sync: SynchronizationResult = yield call(
