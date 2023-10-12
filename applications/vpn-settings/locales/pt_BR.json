@@ -532,9 +532,6 @@
       ]
     },
     "Action subscription": {
-      "Manage": [
-        "Gerenciar"
-      ],
       "Reactivate": [
         "Reativar"
       ]
@@ -631,11 +628,6 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Isso irá desconectar todos os roteadores e clientes usando esse certificado."
-      ]
-    },
-    "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "Renova automaticamente em ${ formattedEndTime }"
       ]
     },
     "Billing cycle option": {
@@ -2311,9 +2303,6 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Você tem certeza que deseja excluir a chave de segurança ${ name }?"
       ],
-      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
-        "Se ativado, permite registrar dispositivos integrados (como Windows Hello, TouchID, FaceID, ou TPMs Internos) além de chaves de segurança de hardware externo"
-      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Insira uma chave de segurança vinculada à sua conta da ${ BRAND_NAME }."
       ],
@@ -3590,9 +3579,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Você pode editar isso uma só vez para garantir o endereço de e-mail coreto para verificar."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Você pode desbloquear imediatamente a configuração acima adicionando ${ specificCountryCount } ao número de endereços IP no seu plano ou nos contactar para soluções personalizadas."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova links de calendários compartilhados e qualquer usuário da ${ BRAND_NAME } com quem você compartilhou seus calendários antes de cancelar sua assinatura do ${ MAIL_SHORT_APP_NAME }.",
         "Você pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova links de calendários compartilhados e qualquer usuário da ${ BRAND_NAME } com quem você compartilhou seus calendários antes de cancelar sua assinatura do ${ MAIL_SHORT_APP_NAME }."
@@ -3708,9 +3694,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Sua assinatura é gerenciada pela Mozilla. Entre em contato com o suporte da Mozilla."
-      ],
-      "Your subscription will renew automatically on ${ renewalTime }.": [
-        "Sua assinatura será renovada automaticamente em ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -4747,6 +4730,9 @@
       ],
       "Sign in as user": [
         "Início de sessão como usuário"
+      ],
+      "SMTP submission": [
+        "Submissão SMTP"
       ],
       "Split tunneling (Android and Windows)": [
         "Tunelamento dividido (Android e Windows)"
@@ -6180,9 +6166,6 @@
       ],
       "Expiring": [
         "Expirando"
-      ],
-      "Upcoming": [
-        "Próximo"
       ]
     },
     "Success": {
@@ -7014,35 +6997,14 @@
       ]
     },
     "Title subscription": {
-      "Actions": [
-        "Ações"
-      ],
-      "Duration": [
-        "Duração"
-      ],
       "End date": [
         "Data de término"
       ],
       "Plan": [
         "Plano"
       ],
-      "Servers": [
-        "Servidores"
-      ],
-      "Start date": [
-        "Data de início"
-      ],
       "Status": [
         "Status"
-      ],
-      "Total": [
-        "Total"
-      ],
-      "Total paid": [
-        "Total pago"
-      ],
-      "Users": [
-        "Usuários"
       ]
     },
     "Tooltip": {
@@ -7148,23 +7110,8 @@
       ]
     },
     "vpn_2step: billing": {
-      "${ billedText }, renews on ${ formattedEndTime }": [
-        "${ billedText }, renova em ${ formattedEndTime }"
-      ],
-      "Billed every 15 months": [
-        "Cobrado a cada 15 meses"
-      ],
-      "Billed every 2 years": [
-        "Cobrado a cada 2 anos"
-      ],
-      "Billed every 30 months": [
-        "Cobrado a cada 30 meses"
-      ],
       "Billed monthly": [
         "Cobrado mensalmente"
-      ],
-      "Billed yearly": [
-        "Cobrado anualmente"
       ]
     },
     "vpn_2step: discount": {

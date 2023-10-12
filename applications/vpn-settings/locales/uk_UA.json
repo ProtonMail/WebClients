@@ -532,9 +532,6 @@
       ]
     },
     "Action subscription": {
-      "Manage": [
-        "Керувати"
-      ],
       "Reactivate": [
         "Повторна активація"
       ]
@@ -640,8 +637,11 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "Поновлюється автоматично ${ formattedEndTime }"
+      "${ n } month": [
+        "${ n } місяць",
+        "${ n } місяців",
+        "${ n } місяців",
+        "${ n } місяців"
       ]
     },
     "Billing cycle option": {
@@ -1710,7 +1710,7 @@
     },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
-        "${ errorMessage }. Ви також можете перевірити наші ${ statusPageLink }"
+        "${ errorMessage }. Ви також можете перевірити нашу ${ statusPageLink }"
       ],
       "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
         "${ Local } – ваше ім'я користувача. Щоб створити ${ Local }@${ Domain }, відкрийте Налаштування > Повідомлення й написання > Короткий домен (pm.me)"
@@ -1863,7 +1863,7 @@
         "Щось пішло не так. Будь ласка, ${ refresh } для продовження. Якщо це повідомлення не зникає, зв'яжіться з нашою ${ supportTeam }."
       ],
       "status page": [
-        "сторінка стану"
+        "сторінку стану"
       ],
       "Tab closed": [
         "Вкладку закрито"
@@ -2326,9 +2326,6 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Ви дійсно хочете видалити ключ безпеки ${ name }?"
-      ],
-      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
-        "Коли включено, дозволяється зареєструвати вбудовані пристрої (такі як Windows Hello, TouchID, FaceID, або вбудовані TPM) в додаток до зовнішніх апаратних ключів безпеки"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Вставте ключ безпеки, прив'язаний до вашого облікового запису ${ BRAND_NAME }."
@@ -3648,9 +3645,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Ви можете змінити це один раз щоб переконатися у правильності адреси електронної пошти для підтвердження."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Ви можете відразу розблокувати наведені вище налаштування, додавши ${ specificCountryCount } до номера IP-адреси у вашому тарифному плані, або звернутися до нас за індивідуальними рішеннями."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календар. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
         "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарі. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
@@ -3776,9 +3770,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша передплата керується Mozilla. Зв'яжіться зі службою підтримки Mozilla."
-      ],
-      "Your subscription will renew automatically on ${ renewalTime }.": [
-        "Ваша підписка поновиться автоматично ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -6171,9 +6162,6 @@
       ],
       "Expiring": [
         "Термін дії"
-      ],
-      "Upcoming": [
-        "Невдовзі"
       ]
     },
     "Success": {
@@ -7015,35 +7003,14 @@
       ]
     },
     "Title subscription": {
-      "Actions": [
-        "Дії"
-      ],
-      "Duration": [
-        "Тривалість"
-      ],
       "End date": [
         "Дата завершення"
       ],
       "Plan": [
         "Тарифний план"
       ],
-      "Servers": [
-        "Сервери"
-      ],
-      "Start date": [
-        "Дата початку"
-      ],
       "Status": [
         "Стан"
-      ],
-      "Total": [
-        "Усього"
-      ],
-      "Total paid": [
-        "Усього сплачено"
-      ],
-      "Users": [
-        "Користувачі"
       ]
     },
     "Tooltip": {
@@ -7161,23 +7128,8 @@
       ]
     },
     "vpn_2step: billing": {
-      "${ billedText }, renews on ${ formattedEndTime }": [
-        "${ billedText } продовжується на ${ formattedEndTime }"
-      ],
-      "Billed every 15 months": [
-        "Сплачується кожні 15 місяців"
-      ],
-      "Billed every 2 years": [
-        "Сплачується кожні 2 роки"
-      ],
-      "Billed every 30 months": [
-        "Сплачується кожні 30 місяців"
-      ],
       "Billed monthly": [
         "Сплачується щомісяця"
-      ],
-      "Billed yearly": [
-        "Сплачується щороку"
       ]
     },
     "vpn_2step: discount": {
