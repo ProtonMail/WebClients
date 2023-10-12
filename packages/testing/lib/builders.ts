@@ -146,6 +146,7 @@ export const addressKeyBuilder = build<AddressKey>('AddressKey', {
 
 export const addressBuilder = build<Address>('Address', {
     fields: {
+        CatchAll: false,
         ID: testAdddressId,
         DomainID: 'l8vWAXHBQmv0u7OVtPbcqMa4iwQaBqowINSQjPrxAr-Da8fVPKUkUcqAq30_BCxj1X0nW70HQRmAa-rIvzmKUA==',
         DisplayName: testEmail,
@@ -431,7 +432,7 @@ export const generateSimpleCalendar = (
         flags = CALENDAR_FLAGS.ACTIVE,
         display = CALENDAR_DISPLAY.VISIBLE,
         color = '#F00',
-    }: GenerateSimpleCalendarCustomParams
+    }: GenerateSimpleCalendarCustomParams,
 ): VisualCalendar => ({
     ID: id,
     Name: name,
@@ -479,6 +480,7 @@ export const generateTestAddress = (compelled?: Partial<Address>): Address => {
         },
         Keys: [],
         HasKeys: 0,
+        CatchAll: false,
         Order: 1,
         Priority: 1,
         Signature: '-----BEGIN PGP SIGNATURE-----...',
@@ -510,7 +512,7 @@ interface GenerateSubscribedCalendarCustomParams extends GenerateSimpleCalendarC
 
 export const generateSubscribedCalendar = (
     i: number,
-    { status = CALENDAR_SUBSCRIPTION_STATUS.OK, url = '#', ...rest }: GenerateSubscribedCalendarCustomParams
+    { status = CALENDAR_SUBSCRIPTION_STATUS.OK, url = '#', ...rest }: GenerateSubscribedCalendarCustomParams,
 ) => {
     const simpleCalendar = generateSimpleCalendar(i, rest);
     const SubscriptionParameters = {
