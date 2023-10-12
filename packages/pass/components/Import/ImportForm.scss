@@ -1,10 +1,12 @@
+@import '~@proton/styles/scss/lib';
+
 .pass-import-providers--grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(#{rem(85)}, 1fr));
 }
 
 .pass-import-upload {
-	--min-h-custom: 250px;
+	--min-h-custom: #{rem(250)};
 
 	transition: min-block-size 0.25s ease-in-out 0.05s;
 
