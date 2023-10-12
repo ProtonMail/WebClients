@@ -101,10 +101,10 @@
         "Як заплановано"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
-        "Для однієї контактної групи дозволено ${ maxContacts } контакт",
-        "Для однієї контактної групи дозволено ${ maxContacts } контакти",
-        "Для однієї контактної групи дозволено ${ maxContacts } контактів",
-        "До групи контактів можна додати не більше ніж ${ maxContacts } контактів"
+        "До групи можна додати не більше ${ maxContacts } контакту",
+        "До групи можна додати не більше ${ maxContacts } контактів",
+        "До групи можна додати не більше ${ maxContacts } контактів",
+        "До групи можна додати не більше ${ maxContacts } контактів"
       ],
       "Attach screenshot(s)": [
         "Додати знімки екрана"
@@ -703,11 +703,11 @@
       "Not saved": [
         "Не збережено"
       ],
-      "Ok": [
-        "Добре"
-      ],
       "OK": [
         "Застосувати"
+      ],
+      "Ok": [
+        "Добре"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Відкрити ${ CALENDAR_APP_NAME }"
@@ -1161,6 +1161,12 @@
       ],
       "Yes, I'll attend": [
         "Підтверджую присутність"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Ви не можете надіслати файли vCard більш ніж ${ maxAttachments } контакту",
+        "Ви не можете надіслати файли vCard більш ніж ${ maxAttachments } контактам",
+        "Ви не можете надіслати файли vCard більш ніж ${ maxAttachments } контактам",
+        "Ви не можете надіслати файли vCard більш ніж ${ maxAttachments } контактам"
       ],
       "Zoom in": [
         "Збільшити"
@@ -1963,13 +1969,13 @@
         "День народження"
       ],
       "Display name": [
-        "Ім'я для показу"
+        "Ім'я"
       ],
       "Email": [
         "Е-пошта"
       ],
       "Enter a display name or nickname": [
-        "Введіть ім'я для показу або псевдонім"
+        "Введіть ім'я або псевдонім"
       ],
       "First name": [
         "Ім'я"
@@ -3123,7 +3129,7 @@
         "${ error.message } для <${ email }>. Щоб розв'язати проблему, можете додати інший ключ або вимкнути шифрування для цього контакту."
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
-        "${ errorMessage }. Ви також можете перевірити наші ${ statusPageLink }"
+        "${ errorMessage }. Ви також можете перевірити нашу ${ statusPageLink }"
       ],
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
@@ -3360,7 +3366,7 @@
         "Виправте вказані проблеми, щоб продовжити."
       ],
       "Please provide either a first name, a last name or a display name": [
-        "Введіть ім'я, прізвище або ім'я для показу"
+        "Введіть ім'я, прізвище або псевдонім"
       ],
       "Port is required": [
         "Порт обов'язковий"
@@ -3435,7 +3441,7 @@
         "Перепрошуємо, але ${ BRAND_NAME } не може розшифрувати ваше повідомлення. Переконайтеся, що всі ваші ключі активні."
       ],
       "status page": [
-        "сторінка стану"
+        "сторінку стану"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Не вдалося розшифрувати вкладення.\nЯкщо у вас є відповідний приватний ключ, ви зможете розшифрувати\nфайл за допомогою програми, наприклад, GnuPG.",
@@ -3521,6 +3527,12 @@
       "Wrong mailbox password": [
         "Неправильний пароль поштової скриньки"
       ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Ви не можете надіслати лист більше ніж ${ maxContacts } отримувачу",
+        "Ви не можете надіслати лист більше ніж ${ maxContacts } отримувачам",
+        "Ви не можете надіслати лист більше ніж ${ maxContacts } отримувачам",
+        "Ви не можете надіслати лист більше ніж ${ maxContacts } отримувачам"
+      ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Не можна відкрити понад ${ maxActiveComposer } вікно редактора одночасно",
         "Не можна відкрити понад ${ maxActiveComposer } вікна редактора одночасно",
@@ -3531,7 +3543,7 @@
         "Ви не надали файл."
       ],
       "You have reached the contacts limit for your account": [
-        "Ви досягли максимальної кількості контактів для Вашого облікового запису"
+        "Ви досягли максимальної кількості контактів для облікового запису"
       ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Ви досягли максимальної кількості календарів. Деякі календарі не можна імпортувати."
@@ -3554,10 +3566,10 @@
     },
     "Error adding participants to a calendar event": {
       "At most ${ maxAttendees } participant is allowed per invitation": [
-        "На запрошення допускається не більше, ніж ${ maxAttendees } учасник",
-        "За запрошення допускається не більше, ніж ${ maxAttendees } учасники",
-        "За запрошення допускається не більше, ніж ${ maxAttendees } учасників",
-        "На одне запрошення допускається не більше ${ maxAttendees } учасників"
+        "До запрошення можна додати не більше ${ maxAttendees } учасника",
+        "До запрошення можна додати не більше ${ maxAttendees } учасників",
+        "До запрошення можна додати не більше ${ maxAttendees } учасників",
+        "До запрошення можна додати не більше ${ maxAttendees } учасників"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -4866,10 +4878,10 @@
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календарі"
       ],
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
-        "${ selectedContactsLength }/${ contactsLength } контакту вибрано",
-        "${ selectedContactsLength }/${ contactsLength } контактів вибрано",
-        "${ selectedContactsLength }/${ contactsLength } контактів вибрано",
-        "${ selectedContactsLength }/${ contactsLength } контактів вибрано"
+        "Вибрано ${ selectedContactsLength } контакт із ${ contactsLength }",
+        "Вибрано ${ selectedContactsLength } контакти з ${ contactsLength }",
+        "Вибрано ${ selectedContactsLength } контактів з ${ contactsLength }",
+        "Вибрано ${ selectedContactsLength } контактів з ${ contactsLength }"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } вибрана тека",
@@ -5040,10 +5052,10 @@
         "Ви справді хочете відхилити зміни?"
       ],
       "Are you sure you want to discard your import?": [
-        "Ви впевнені, що хочете відмовитися від імпорту?"
+        "Ви дійсно хочете відхилити імпортування?"
       ],
       "Are you sure you want to move all messages in this location to Archive?": [
-        "Ви впевнені, що хочете перемістити всі повідомлення в цьому місці в Архів?"
+        "Ви справді хочете перемістити всі повідомлення з цього розташування до архіву?"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Ви справді хочете перемістити всі повідомлення з цього розташування до смітника?"
@@ -5406,7 +5418,7 @@
         "Імпортування ваших даних із ${ importedEmailAddress } до ${ toEmail }."
       ],
       "Include Spam/Trash in your search results.": [
-        "Включити Спам/Смітник до результатів пошуку."
+        "Показувати в результатах пошуку повідомлення зі спаму та смітника."
       ],
       "Inherited from parent folder": [
         "Успадковано від теки вищого рівня"
@@ -5583,7 +5595,7 @@
         "Власник одного або кількох ваших довірених ключів позначив їх \"скомпрометованими\". Ми радимо вам \"скасувати довіру\" для цих ключів."
       ],
       "Open shortcut cheat sheet": [
-        "Відкрити командну панель комбінацією клавіш"
+        "Відкрити довідку з комбінацій клавіш"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Наша система позначила це повідомлення спробою шахрайства. Переконайтеся, що воно надійне."
@@ -5619,7 +5631,7 @@
         "Зверніть увагу, що цей процес може тривати деякий час, залежно від розміру вашої адресної книги."
       ],
       "Please provide a name and an email address for creating a group.": [
-        "Будь ласка, вкажіть ім'я та адресу пошти для створення групи."
+        "Щоб створити групу, вкажіть ім'я та адресу електронної пошти."
       ],
       "Please select the folders you would like to import:": [
         "Оберіть теки, які ви бажаєте імпортувати:"
@@ -5970,7 +5982,7 @@
         "Спробуйте нові функції, оновлення та продукти ${ BRAND_NAME } до того, як вони будуть випущені для широкого загалу. Це призведе до перезапуску програми"
       ],
       "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
-        "Вимкніть, щоб шукати лише за датою, іменем, адресою електронної пошти або темою повідомлення. Щоб вимкнути пошук вмісту повідомлень і видалення завантажених повідомлень, перейдіть до налаштувань."
+        "Вимкніть, щоб шукати лише за датою, іменем, адресою електронної пошти або темою повідомлення. Щоб вимкнути пошук вмісту повідомлень і видалити завантажені повідомлення, перейдіть до налаштувань."
       ],
       "Turn on to search the content of your messages": [
         "Увімкніть, щоб шукати вміст своїх повідомлень"
