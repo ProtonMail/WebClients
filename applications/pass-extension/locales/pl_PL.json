@@ -29,15 +29,6 @@
       "Back": [
         "Wstecz"
       ],
-      "Can edit": [
-        "Edycja"
-      ],
-      "Can manage": [
-        "Zarządzanie"
-      ],
-      "Can view": [
-        "Odczyt"
-      ],
       "Can't find your password manager? Please let us know!": [
         "Nie możesz znaleźć swojego menedżera haseł? Daj nam znać!"
       ],
@@ -182,7 +173,7 @@
       "Importing": [
         "Importowanie"
       ],
-      "Invite people": [
+      "Invite others": [
         "Zaproś użytkowników"
       ],
       "Join shared vault": [
@@ -199,6 +190,15 @@
       ],
       "Lock extension": [
         "Zablokuj rozszerzenie"
+      ],
+      "Make admin": [
+        "Administrator"
+      ],
+      "Make editor": [
+        "Edycja"
+      ],
+      "Make viewer": [
+        "Odczyt"
       ],
       "Manage access": [
         "Zarządzaj dostępem"
@@ -223,6 +223,9 @@
       ],
       "Not now": [
         "Nie teraz"
+      ],
+      "Open in a window": [
+        "Otwórz w oknie"
       ],
       "Open navigation": [
         "Otwórz nawigację"
@@ -280,6 +283,9 @@
       ],
       "Share": [
         "Udostępnij"
+      ],
+      "Share vault": [
+        "Udostępnij sejf"
       ],
       "Show": [
         "Pokaż"
@@ -368,7 +374,7 @@
         "Nie można utworzyć aliasu (${ error })."
       ],
       "Cannot send invitation to this address at the moment": [
-        "W tej chwili nie można wysłać zaproszenia na ten adres"
+        "Nie można obecnie wysłać zaproszenia na ten adres"
       ],
       "Could not leave vault.": [
         "Nie można opuścić sejfu."
@@ -690,6 +696,9 @@
       "Access your passwords on the go with our mobile apps.": [
         "Dostęp do haseł z aplikacji mobilnej."
       ],
+      "Admin": [
+        "Administrator"
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" został przeniesiony do Kosza. Spowoduje to zatrzymanie przekierowywania wiadomości"
       ],
@@ -708,23 +717,14 @@
       "Autosaved on ${ submissionURL }": [
         "Zapisano na ${ submissionURL }"
       ],
-      "Can create, edit, delete and export items in this vault.": [
+      "Can create, edit, delete, and export items in this vault.": [
         "Może edytować i eksportować elementy w sejfie."
-      ],
-      "Can edit": [
-        "Edycja"
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Zarządza dostępem do sejfu."
       ],
       "Can grant and revoke access to this vault.": [
         "Zarządza dostępem do sejfu."
-      ],
-      "Can manage": [
-        "Zarządzanie"
-      ],
-      "Can view": [
-        "Odczyt"
       ],
       "Can view items in this vault.": [
         "Widzi elementy w sejfie."
@@ -758,6 +758,9 @@
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Łatwe importowanie haseł do ${ PASS_APP_NAME }."
+      ],
+      "Editor": [
+        "Edycja"
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Włącz ${ PASS_APP_NAME }, łącząc swoje konto ${ BRAND_NAME }"
@@ -831,11 +834,17 @@
       "Internet connection lost": [
         "Połączenie z Internetem zostało utracone"
       ],
+      "Invitation sent": [
+        "Zaproszenie zostało wysłane"
+      ],
       "Invite successfully removed": [
         "Zaproszenie zostało usunięte"
       ],
       "Invite successfully resent": [
         "Zaproszenie zostało wysłane"
+      ],
+      "invites you to access items in": [
+        "udostępnia Ci sejf"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Zalogowano już do ${ PASS_APP_NAME }. Jeśli próbujesz zalogować się do innego konta, najpierw wyloguj się z rozszerzenia."
@@ -909,9 +918,6 @@
       "Passwords older than 1 day are automatically deleted from history.": [
         "Hasła starsze niż dzień zostaną automatycznie usunięte z historii."
       ],
-      "Pending invitation": [
-        "Oczekujące zaproszenie"
-      ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Przypomnij ${ PASS_APP_NAME } do paska narzędzi"
       ],
@@ -944,9 +950,6 @@
       ],
       "Select the destination vault for each imported vault.": [
         "Wybierz docelowy sejf dla zaimportowanych sejfów."
-      ],
-      "Select the level of access this user will gain when they join your vault.": [
-        "Wybierz uprawnienia użytkownika dla sejfu."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serwery są nieosiągalne. Spróbuj ponownie za kilka minut"
@@ -999,9 +1002,6 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Ten eksport będzie niezaszyfrowany i każdy, kto uzyska dostęp do wyeksportowanego pliku, będzie mógł zobaczyć hasła. Ze względów bezpieczeństwa należy go usunąć po zakończeniu korzystania z niego."
       ],
-      "This user will receive an invitation to join your '${ vaultName }' vault.": [
-        "Użytkownik otrzyma zaproszenie do sejfu '${ vaultName }'."
-      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Sejf nie jest udostępniony. Zaproś do niego użytkowników."
       ],
@@ -1038,6 +1038,9 @@
       "Verification code": [
         "Kod weryfikacyjny"
       ],
+      "Viewer": [
+        "Odczyt"
+      ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Mamy problem z synchronizacją danych z magazynem lokalnym. Upewnij się, że masz wystarczającą pamięć wewnętrzną do działania aplikacji ${ PASS_SHORT_APP_NAME }."
       ],
@@ -1045,7 +1048,7 @@
         "Utworzysz:"
       ],
       "You cannot change the mailboxes for this alias.": [
-        "Nie można zmienić skrzynek pocztowych dla tego aliasu."
+        "Nie możesz zmienić skrzynek pocztowych dla tego aliasu."
       ],
       "You have ${ daysRemaining } day left in your trial period.": [
         "Pozostał ${ daysRemaining } dzień wersji próbnej.",
@@ -1053,8 +1056,14 @@
         "Pozostało ${ daysRemaining } dni wersji próbnej.",
         "Pozostało ${ daysRemaining } dnia wersji próbnej."
       ],
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
+        "Przekroczono liczbę sejfów objętych subskrypcją. Przedmioty można przenosić tylko do dwóch pierwszych sejfów. Aby przenosić przedmioty między wszystkimi sejfami, uaktualnij subskrypcję."
+      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
         "Przekroczono maksymalną liczbę sejfów w obecnej subskrypcji. Elementy mogą być przenoszone tylko do głównego sejfu. Ulepsz plan, aby przenosić elementy do innych sejfów."
+      ],
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
+        "Przekroczono liczbę sejfów objętych subskrypcją. Nowe elementy można tworzyć tylko w dwóch pierwszych sejfach. Aby utworzyć nowe elementy we wszystkich sejfach, uaktualnij subskrypcję."
       ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
         "Przekroczono maksymalną liczbę sejfów w obecnej subskrypcji. Nowe elementy mogą być tworzone tylko w sejfie głównym. Ulepsz plan, aby tworzyć nowe elementy we wszystkich sejfach."
@@ -1074,8 +1083,8 @@
       "You're about to create": [
         "Utworzysz"
       ],
-      "You've been invited to a vault. Click here to see the invitation.": [
-        "Otrzymano zaproszenie do sejfu. Kliknij, aby zobaczyć zaproszenie."
+      "You're invited to a vault.": [
+        "Otrzymano zaproszenie do sejfu."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Sesja ${ PASS_APP_NAME } została zablokowana"
@@ -1165,6 +1174,9 @@
       ],
       "Autosave": [
         "Automatyczne zapisywanie"
+      ],
+      "Autosave vault": [
+        "Automatyczne zapisywanie sejfu"
       ],
       "Autosuggest": [
         "Automatyczne sugestie"
@@ -1274,6 +1286,9 @@
       "Label": [
         "Etykieta"
       ],
+      "Language": [
+        "Język"
+      ],
       "Last 2 weeks": [
         "Ostatnie 2 tygodnie"
       ],
@@ -1379,9 +1394,6 @@
       "Report a problem": [
         "Zgłoś problem"
       ],
-      "Respond": [
-        "Odpowiedź"
-      ],
       "Restore all items": [
         "Przywróć wszystkie elementy"
       ],
@@ -1393,6 +1405,9 @@
       ],
       "Select an email address": [
         "Wybierz adres e-mail"
+      ],
+      "Select preferred language": [
+        "Wybierz język"
       ],
       "Select your password manager": [
         "Wybierz menadżer haseł"
@@ -1474,6 +1489,9 @@
       ],
       "Verification number": [
         "Kod CCV"
+      ],
+      "View details": [
+        "Pokaż szczegóły"
       ],
       "View logs": [
         "Pokaż logi"
@@ -1649,20 +1667,17 @@
       "Permanently remove all items ?": [
         "Usunąć trwale wszystkie elementy?"
       ],
-      "Permissions": [
-        "Uprawnienia"
-      ],
       "Pin the extension": [
         "Przypnij rozszerzenie"
       ],
       "Secure your data": [
         "Zabezpiecz swoje dane"
       ],
+      "Set access level": [
+        "Ustaw uprawnienia"
+      ],
       "Share with": [
         "Udostępnij"
-      ],
-      "Shared vault invitation": [
-        "Zaproszenie do udostępnionego sejfu"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Przechodzisz na ${ PASS_APP_NAME }?"
@@ -1690,6 +1705,9 @@
       ],
       "Use my email": [
         "Użyj mojego adresu"
+      ],
+      "Vault shared with you": [
+        "Udostępniony sejf"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Witaj w ${ brandNameJSX }"
@@ -1742,9 +1760,6 @@
       ],
       "An error occured while exporting your data": [
         "Wystąpił błąd podczas eksportowania danych"
-      ],
-      "Are you sure you want to transfer vault ownership to ${ email }?": [
-        "Czy na pewno chcesz zmienić właściciela na ${ email }?"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Nie można pobrać skrzynek pocztowych dla tego aliasu"
@@ -1809,6 +1824,9 @@
       "Title is required": [
         "Tytuł jest wymagany"
       ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "Zmienić właściciela sejfu na ${ email }?"
+      ],
       "Trash alias ?": [
         "Usunąć alias?"
       ],
@@ -1842,11 +1860,17 @@
       "Your plan does not allow you to create more aliases": [
         "Twój plan nie pozwala na utworzenie większej liczby aliasów"
       ],
+      "Your plan only allows you to autofill from your first two vaults": [
+        "Twój plan pozwala na autouzupełnianie tylko z sejfu głównego"
+      ],
       "Your plan only allows you to autofill from your primary vault": [
         "Twój plan pozwala na autouzupełnianie tylko z sejfu głównego"
       ],
       "Your session was locked due to inactivity": [
         "Sesja została zablokowana z powodu nieaktywności"
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "Subskrypcja nie pozwala na tworzenie wielu sejfów. Wszystkie elementy zostaną zaimportowane do pierwszego sejfu. Aby importować do wielu sejfów, należy zaktualizować subskrypcję."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
         "Twoja subskrypcja nie pozwala na tworzenie wielu sejfów. Wszystkie elementy zostaną zaimportowane do głównego sejfu. Ulepsz plan, aby importować do wielu sejfów."

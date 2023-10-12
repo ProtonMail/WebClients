@@ -29,15 +29,6 @@
       "Back": [
         "Tilbage"
       ],
-      "Can edit": [
-        "Kan redigere"
-      ],
-      "Can manage": [
-        "Kan administrere"
-      ],
-      "Can view": [
-        "Kan se"
-      ],
       "Can't find your password manager? Please let us know!": [
         "Kan du ikke finde din adgangskodeadministrator? Giv os besked!"
       ],
@@ -182,8 +173,8 @@
       "Importing": [
         "Importerer"
       ],
-      "Invite people": [
-        "Invitér personer"
+      "Invite others": [
+        "Invitér andre"
       ],
       "Join shared vault": [
         "Deltag i delt boks"
@@ -199,6 +190,15 @@
       ],
       "Lock extension": [
         "Lås udvidelse"
+      ],
+      "Make admin": [
+        "Gør til admin"
+      ],
+      "Make editor": [
+        "Gør til redaktør"
+      ],
+      "Make viewer": [
+        "Gør til seer"
       ],
       "Manage access": [
         "Administrer adgang"
@@ -280,6 +280,9 @@
       ],
       "Share": [
         "Del"
+      ],
+      "Share vault": [
+        "Del boks"
       ],
       "Show": [
         "Vis"
@@ -662,6 +665,9 @@
       "Access your passwords on the go with our mobile apps.": [
         "Tilgå dine adgangskoder på farten med vores mobil-apps."
       ],
+      "Admin": [
+        "Admin"
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Aliasset \"${ item.aliasEmail }\" blev flyttet til papirkurven - det vil stoppe med at videresende e-mails til din indbakke"
       ],
@@ -680,23 +686,14 @@
       "Autosaved on ${ submissionURL }": [
         "Autogemt på ${ submissionURL }"
       ],
-      "Can create, edit, delete and export items in this vault.": [
+      "Can create, edit, delete, and export items in this vault.": [
         "Kan oprette, redigere, slette og eksportere elementer i denne boks."
-      ],
-      "Can edit": [
-        "Kan redigere"
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Kan give og tilbagekalde adgang til denne boks, og slette den."
       ],
       "Can grant and revoke access to this vault.": [
         "Kan give og tilbagekalde adgang til denne boks."
-      ],
-      "Can manage": [
-        "Kan administrere"
-      ],
-      "Can view": [
-        "Kan se"
       ],
       "Can view items in this vault.": [
         "Kan se elementer i denne boks."
@@ -730,6 +727,9 @@
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importer nemt dine eksisterende adgangskoder til ${ PASS_APP_NAME }."
+      ],
+      "Editor": [
+        "Redaktør"
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Aktiver ${ PASS_APP_NAME } ved at forbinde din ${ BRAND_NAME }-konto"
@@ -801,11 +801,17 @@
       "Internet connection lost": [
         "Internetforbindelse mistet"
       ],
+      "Invitation sent": [
+        "Invitation sendt"
+      ],
       "Invite successfully removed": [
         "Invitation fjernet"
       ],
       "Invite successfully resent": [
         "Invitation sendt igen"
+      ],
+      "invites you to access items in": [
+        "inviterer dig til at tilgå elementer i"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Det ser ud til, at du allerede er logget ind på ${ PASS_APP_NAME }. Hvis du prøver at logge ind med en anden konto, bedes du logge ud af udvidelsen først."
@@ -877,9 +883,6 @@
       "Passwords older than 1 day are automatically deleted from history.": [
         "Adgangskoder, der er ældre end 1 dag, slettes automatisk fra historikken."
       ],
-      "Pending invitation": [
-        "Afventende invitation"
-      ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Fastgør ${ PASS_APP_NAME } til din værktøjslinje"
       ],
@@ -912,9 +915,6 @@
       ],
       "Select the destination vault for each imported vault.": [
         "Vælg destinationsboks for hver importeret boks."
-      ],
-      "Select the level of access this user will gain when they join your vault.": [
-        "Vælg det adgangsniveau, som denne bruger får, når de tilslutter sig din boks."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servere er utilgængelige. Prøv igen om nogle få minutter"
@@ -965,9 +965,6 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Denne eksport vil ikke være krypteret og hvem som helst med adgang til den eksporterede fil vil kunne se dine adgangskoder. For en sikkerheds skyld bedes du slette den når du er færdig med at bruge den."
       ],
-      "This user will receive an invitation to join your '${ vaultName }' vault.": [
-        "Denne bruger vil modtage en invitation til at deltage i din '${ vaultName }'-boks."
-      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Denne boks deles i øjeblikket ikke med nogen. Inviter folk for at dele den med andre."
       ],
@@ -1004,18 +1001,30 @@
       "Verification code": [
         "Bekræftelseskode"
       ],
+      "Viewer": [
+        "Seer"
+      ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Vi har problemer med at synkronisere data til dit lokale lager. Sørg for, at du har tilstrækkelig diskplads til, at ${ PASS_SHORT_APP_NAME } kan fungere optimalt."
       ],
       "You are about to create:": [
         "Du er ved at oprette:"
       ],
+      "You cannot change the mailboxes for this alias.": [
+        "Du kan ikke ændre postkasserne for dette alias"
+      ],
       "You have ${ daysRemaining } day left in your trial period.": [
         "Du har ${ daysRemaining } dag tilbage af din prøveperiode",
         "Du har ${ daysRemaining } dage tilbage af din prøveperiode"
       ],
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
+        "Du har overskredet antallet af bokse, der er inkluderet i dit abonnement. Elementer kan kun flyttes til dine to første bokse. For at flytte elementer mellem alle bokse, skal du opgradere dit abonnement."
+      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
         "Du har overskredet antallet af bokse, der er inkluderet i dit abonnement. Elementer kan kun flyttes til din primære boks. For at flytte elementer mellem alle bokse, skal du opgradere dit abonnement."
+      ],
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
+        "Du har overskredet antallet af bokse, der er inkluderet i dit abonnement. Nye elementer kan kun oprettes i dine to første bokse. Hvis du vil oprette nye elementer i alle bokse, skal du opgradere dit abonnement."
       ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
         "Du har overskredet antallet af bokse, der er inkluderet i dit abonnement. Nye elementer kan kun oprettes i din primære boks. For at oprette nye elementer i alle bokse, skal du opgradere dit abonnement."
@@ -1035,8 +1044,8 @@
       "You're about to create": [
         "Du er ved at oprette"
       ],
-      "You've been invited to a vault. Click here to see the invitation.": [
-        "Du er blevet inviteret til en boks. Klik her for at se invitationen."
+      "You're invited to a vault.": [
+        "Du er inviteret til en boks."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Din ${ PASS_APP_NAME }-session er låst"
@@ -1122,6 +1131,9 @@
       ],
       "Autosave": [
         "Gem automatisk"
+      ],
+      "Autosave vault": [
+        "Autogem boks"
       ],
       "Autosuggest": [
         "Auto-forslag"
@@ -1231,6 +1243,9 @@
       "Label": [
         "Etikette"
       ],
+      "Language": [
+        "Sprog"
+      ],
       "Last 2 weeks": [
         "Sidste 2 uger"
       ],
@@ -1336,9 +1351,6 @@
       "Report a problem": [
         "Anmeld et problem"
       ],
-      "Respond": [
-        "Svar"
-      ],
       "Restore all items": [
         "Gendan alle emner"
       ],
@@ -1350,6 +1362,9 @@
       ],
       "Select an email address": [
         "Vælg en e-mailadresse"
+      ],
+      "Select preferred language": [
+        "Vælg dit foretrukne sprog"
       ],
       "Select your password manager": [
         "Vælg din adgangskodeadministrator"
@@ -1429,11 +1444,11 @@
       "Vault": [
         "Boks"
       ],
-      "Vaults": [
-        "Bokse"
-      ],
       "Verification number": [
         "Verifikationsnummer"
+      ],
+      "View details": [
+        "Vis detaljer"
       ],
       "View logs": [
         "Vis logfiler"
@@ -1609,20 +1624,17 @@
       "Permanently remove all items ?": [
         "Fjern alle elementer permanent?"
       ],
-      "Permissions": [
-        "Tilladelser"
-      ],
       "Pin the extension": [
         "Fastgør udvidelsen"
       ],
       "Secure your data": [
         "Beskyt dine data"
       ],
+      "Set access level": [
+        "Angiv adgangsniveau"
+      ],
       "Share with": [
         "Del med"
-      ],
-      "Shared vault invitation": [
-        "Delte boks-invitation"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Skifter du til ${ PASS_APP_NAME }?"
@@ -1650,6 +1662,9 @@
       ],
       "Use my email": [
         "Brug min e-mail"
+      ],
+      "Vault shared with you": [
+        "Boks delt med dig"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Velkommen til ${ brandNameJSX }"
@@ -1702,9 +1717,6 @@
       ],
       "An error occured while exporting your data": [
         "Der opstod en fejl under eksport af dine data"
-      ],
-      "Are you sure you want to transfer vault ownership to ${ email }?": [
-        "Er du sikker på, at du vil overføre boksejerskab til ${ email }?"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Kan ikke hente postkasser for dette alias lige nu"
@@ -1769,6 +1781,9 @@
       "Title is required": [
         "Titel er påkrævet"
       ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "Overdrag ejerskabet af denne boks til ${ email }?"
+      ],
       "Trash alias ?": [
         "Kassér alias?"
       ],
@@ -1802,11 +1817,17 @@
       "Your plan does not allow you to create more aliases": [
         "Dit abonnement giver dig ikke mulighed for at oprette flere aliasser"
       ],
+      "Your plan only allows you to autofill from your first two vaults": [
+        "Dit abonnement tillader kun autofyld fra dine to første bokse."
+      ],
       "Your plan only allows you to autofill from your primary vault": [
         "Dit abonnement tillader kun autofyld fra din primære boks."
       ],
       "Your session was locked due to inactivity": [
         "Din session blev låst grundet inaktivitet"
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "Dit abonnement giver dig ikke mulighed for at oprette flere bokse. Alle elementer vil blive importeret til din første boks. For at importere til flere bokse skal du opgradere dit abonnement."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
         "Dit abonnement giver dig ikke mulighed for at oprette flere bokse. Alle elementer vil blive importeret til din primære boks. For at importere til flere bokse skal du opgradere dit abonnement."
