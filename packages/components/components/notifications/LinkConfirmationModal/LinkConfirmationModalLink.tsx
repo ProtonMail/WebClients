@@ -3,9 +3,11 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
+import { useNotifications } from '@proton/components/hooks';
 import { isEdge, isIE11 } from '@proton/shared/lib/helpers/browser';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
+import { Copy } from '../../button';
 import { Checkbox } from '../../input';
 import { Label } from '../../label';
 
@@ -18,12 +20,26 @@ interface Props {
 }
 
 const LinkConfirmationModalLink = ({ link, isPunnyCoded, value, onToggle, isOutside = false }: Props) => {
+    const { createNotification } = useNotifications();
     const isMSBrowser = isEdge() || isIE11();
+    const handleCopy = () => {
+        createNotification({
+            text: c('Notification').t`Link copied to clipboard`,
+        });
+    };
 
     return (
         <>
             {`${c('Info').t`You are about to open another browser tab and visit:`} `}
             <span className="text-bold text-break">{link}</span>
+            <Copy
+                className="ml-3"
+                shape="ghost"
+                size="small"
+                tooltipText={c('Info').t`Copy the link to clipboard`}
+                value={link}
+                onCopy={handleCopy}
+            />
 
             {isPunnyCoded && (
                 <>
