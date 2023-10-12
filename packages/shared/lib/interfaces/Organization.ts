@@ -38,4 +38,5 @@ export interface Organization {
     BonusSpace: number;
     BonusMembers: number;
     BonusVPN: number;
+    Permissions: number;
 }
