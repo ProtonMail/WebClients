@@ -1084,9 +1084,6 @@
       ]
     },
     "Action subscription": {
-      "Manage": [
-        "მართვა"
-      ],
       "Reactivate": [
         "რეაქტივაცია"
       ]
@@ -1291,11 +1288,6 @@
     "Baseline in trial plan": {
       "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "${ mailPlus }: დაცული ელფოსტისა და კალენდრის გადაწყვეტილება თქვენი ყოველდღიური საჭიროებებისათვის."
-      ]
-    },
-    "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "ავტომატური განახლების დრო ${ formattedEndTime }"
       ]
     },
     "Billing cycle option": {
@@ -7164,9 +7156,6 @@
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "თქვენ შეგიძლიათ, ჩართოთ ავტორიზაციის ჟურნალი, რომ ნახოთ, როდის შედიან თქვენს ანგარიშში და რომელი IP-დან. ჩვენ ჩავიწერთ IP მისამართს, რომლიდანაც წვდომა განხორციელდა და დროს, ისევე, როგორც წარუმატებელ მცდელობებს."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
-        "ზედა პარამეტრები შეგიძლიათ, თქვენს ტარიფში ${ specificCountryCount } IP მისამარტის დამატებით განბლოკოთ, ან, მორგებული გადაწყვეტილებებისთვის, დაგვიკავშირდით"
-      ],
       "You can import one data type at a time.": [
         "ერთ ცდაზე მონაცემების, მხოლოდ, ერთი ტიპის შემოტანა შეგიძლიათ."
       ],
@@ -7365,9 +7354,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "თქვენი გამოწერა Mozilla-ს მიერ იმართება. დაუკავშირდით მათ მხარდაჭერის გუნდს."
-      ],
-      "Your subscription will renew automatically on ${ renewalTime }.": [
-        "გამოწერის ავტომატური განახლების დროა ${ renewalTime }."
       ]
     },
     "info": {
@@ -8774,6 +8760,11 @@
         "ვადაგასულია"
       ]
     },
+    "Label to  inform a feature is only available on Beta": {
+      "Beta": [
+        "ბეტა"
+      ]
+    },
     "Label to change composer mode": {
       "Maximized": [
         "მთელ ეკრანზე გაშლილი"
@@ -9675,6 +9666,9 @@
       ],
       "Sign in as user": [
         "მომხმარებლით შესვლა"
+      ],
+      "SMTP submission": [
+        "SMTP-ის მორგება"
       ],
       "Split tunneling (Android and Windows)": [
         "დაყოფილი ტუნელირება (Android-ზე და Windows-ზე)"
@@ -10700,6 +10694,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ appName } benefits": [
+        "${ appName }-ის უპირატესობები"
+      ],
       "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
         "${ PASS_APP_NAME } ხელმისაწვდომია, როგორც ბრაუზერის გაფართოება FireFox Add-on-ებში."
       ],
@@ -11244,6 +11241,9 @@
       ]
     },
     "session_recovery:available:action": {
+      "Cancel password reset": [
+        "პაროლის შეცვლის გაუქმება"
+      ],
       "Cancel reset": [
         "საწყის მნიშვნელობებზე დაბრუნების გაუქმება"
       ],
@@ -11320,7 +11320,20 @@
         "შეცვალეთ თქვენი პაროლი ახლა"
       ]
     },
+    "session_recovery:disable:action": {
+      "Disable password reset": [
+        "პაროლის შეცვლის გათიშვა"
+      ]
+    },
+    "session_recovery:disable:title": {
+      "Disable password reset?": [
+        "გავაუქმო პაროლის შეცვლა?"
+      ]
+    },
     "session_recovery:in_progress:action": {
+      "Cancel password reset": [
+        "პაროლის შეცვლის გაუქმება"
+      ],
       "Cancel request": [
         "მოთხოვნის გაუქმება"
       ],
@@ -11353,9 +11366,35 @@
         "პაროლის შეცვლა მოთხოვნილია"
       ]
     },
+    "session_recovery:initiation:action": {
+      "Got it": [
+        "გავიგე"
+      ],
+      "Request password reset": [
+        "პაროლის შეცვლის მოთხოვნა"
+      ],
+      "Use recovery method": [
+        "აღდგენის მეთოდის გამოყენება"
+      ]
+    },
     "session_recovery:initiation:link": {
       "account and password section": [
         "მომხმარებლისა და პაროლის სექცია"
+      ]
+    },
+    "session_recovery:initiation:notification": {
+      "Password reset confirmed": [
+        "პაროლის შეცვლა დადასტურებულია"
+      ]
+    },
+    "session_recovery:initiation:title": {
+      "Request password reset?": [
+        "მოვითხოვო პაროლის შეცვლა?"
+      ]
+    },
+    "session_recovery:settings:action": {
+      "Request password reset": [
+        "პაროლის შეცვლის მოთხოვნა"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -11386,6 +11425,19 @@
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
         "გახვალთ პაროლის შეცვლის გარეშე?"
+      ]
+    },
+    "session_recovery:status:info": {
+      "Available": [
+        "ხელმისაწვდომია"
+      ],
+      "Pending": [
+        "რიგში"
+      ]
+    },
+    "session_recovery:status:title": {
+      "Password reset request": [
+        "პაროლის შეცვლის მოთხოვნა"
       ]
     },
     "Settings description": {
@@ -11970,9 +12022,6 @@
       ],
       "Expiring": [
         "ვადა გასდის"
-      ],
-      "Upcoming": [
-        "მომავალი"
       ]
     },
     "Success": {
@@ -13042,6 +13091,9 @@
       "Password and keys": [
         "პაროლები და გასაღებები"
       ],
+      "Password reset": [
+        "პაროლის შეცვლა"
+      ],
       "Pay invoice": [
         "ინვოისის გადახდა"
       ],
@@ -13441,35 +13493,14 @@
       ]
     },
     "Title subscription": {
-      "Actions": [
-        "ქმედებები"
-      ],
-      "Duration": [
-        "ხანგრძლივობა"
-      ],
       "End date": [
         "დასასრულის დრო"
       ],
       "Plan": [
         "ტარიფი"
       ],
-      "Servers": [
-        "სერვერი"
-      ],
-      "Start date": [
-        "საწყისი თარიღი"
-      ],
       "Status": [
         "სტატუსი"
-      ],
-      "Total": [
-        "ჯამი"
-      ],
-      "Total paid": [
-        "სულ გადახდილი"
-      ],
-      "Users": [
-        "მომხმარებლები"
       ]
     },
     "Title; create calendar modal": {
@@ -13793,23 +13824,8 @@
       ]
     },
     "vpn_2step: billing": {
-      "${ billedText }, renews on ${ formattedEndTime }": [
-        "${ billedText }, გადახდის დროა ${ formattedEndTime }"
-      ],
-      "Billed every 15 months": [
-        "გადახდა 15 თვეში ერთხელ"
-      ],
-      "Billed every 2 years": [
-        "გადახდა 2 წელიწადში ერთხელ"
-      ],
-      "Billed every 30 months": [
-        "გადახდა 30 თვეში ერთხელ"
-      ],
       "Billed monthly": [
         "გადაიხდით თვეში ერთხელ"
-      ],
-      "Billed yearly": [
-        "გადახდა წელიწადში ერთხელ"
       ]
     },
     "vpn_2step: discount": {

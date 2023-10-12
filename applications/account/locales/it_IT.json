@@ -1084,9 +1084,6 @@
       ]
     },
     "Action subscription": {
-      "Manage": [
-        "Gestisci"
-      ],
       "Reactivate": [
         "Riattiva"
       ]
@@ -1291,11 +1288,6 @@
     "Baseline in trial plan": {
       "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "${ mailPlus }: la soluzione di posta e calendario incentrata sulla privacy per le tue esigenze di comunicazione quotidiane."
-      ]
-    },
-    "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "Si rinnova automaticamente il ${ formattedEndTime }"
       ]
     },
     "Billing cycle option": {
@@ -4378,11 +4370,11 @@
       "Allow platform keys": [
         "Consenti chiavi della piattaforma"
       ],
+      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
+        "Ti consente di registrare chiavi di sicurezza integrate (come Windows Hello, Face ID, Touch ID o TPM interni)"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Sei sicuro di voler eliminare la chiave di sicurezza ${ name }?"
-      ],
-      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
-        "Se abilitato, consente di registrare dispositivi integrati (come Windows Hello, TouchID, FaceID o TPM interni) oltre alle chiavi di sicurezza hardware esterne"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Inserisci una chiave di sicurezza collegata al tuo Account ${ BRAND_NAME }."
@@ -6621,6 +6613,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dato che sei un utente fedele, il tuo account ha funzionalità aggiuntive abilitate."
       ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "L'inoltro tramite SMTP consente a servizi o dispositivi di terze parti di inviare email dai tuoi indirizzi di dominio personalizzati tramite ${ MAIL_APP_NAME }. Questa funzionalità è disponibile solamente agli utenti ${ BRAND_NAME } for Business con domini personalizzati."
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "L'invio SMTP consente a servizi o dispositivi di terze parti di inviare email attraverso ${ MAIL_APP_NAME } per gli indirizzi di dominio personalizzati. Per richiedere l'accesso, ${ createTicket } descrivendo i casi d'uso, i domini personalizzati che desideri utilizzare e i volumi di email previsti ogni ora e ogni giorno."
       ],
@@ -7167,8 +7162,8 @@
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Puoi abilitare i log di autenticazione per vedere quando viene effettuato l'accesso al tuo account e da quale IP. Registreremo l'indirizzo IP che accede all'account e l'ora, così come i tentativi falliti."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Puoi sbloccare immediatamente la configurazione di cui sopra aggiungendo ${ specificCountryCount } al numero se gli indirizzi IP nel tuo piano o contattarci per soluzioni su misura."
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
+        "Puoi sbloccare immediatamente la configurazione qui sopra aggiungendo ${ specificCountryCount } al numero di indirizzi IP nel tuo piano o puoi contattarci per soluzioni su misura."
       ],
       "You can import one data type at a time.": [
         "Puoi importare un tipo di dati alla volta."
@@ -7368,9 +7363,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "La tua sottoscrizione è gestita da Mozilla. Per favore, contatta il supporto di Mozilla."
-      ],
-      "Your subscription will renew automatically on ${ renewalTime }.": [
-        "Il tuo abbonamento si rinnoverà automaticamente il ${ renewalTime }."
       ]
     },
     "info": {
@@ -9684,6 +9676,12 @@
       "Sign in as user": [
         "Accedi come utente"
       ],
+      "SMTP submission": [
+        "Inoltro tramite SMTP"
+      ],
+      "SMTP submission for select organizations": [
+        "Inoltro tramite SMTP per organizzazioni selezionate"
+      ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android e Windows)"
       ],
@@ -10110,6 +10108,9 @@
       "Share your files or folders with anyone by using secure, shareable links": [
         "Condividi i tuoi file o cartelle con chiunque usando link sicuri e condivisibili"
       ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTP consente a servizi o dispositivi di terze parti di inviare email tramite ${ MAIL_APP_NAME }."
+      ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "NetShield, appositamente progettato, protegge il dispositivo e velocizza la navigazione bloccando annunci, tracker e malware"
       ],
@@ -10151,6 +10152,9 @@
       ]
     },
     "new_plans: upgrade": {
+      "Included with ${ BRAND_NAME } for Business, ${ familyPlanName } and ${ mailProPlanName }.": [
+        "Incluso con ${ BRAND_NAME } for Business, ${ familyPlanName } e ${ mailProPlanName }."
+      ],
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Incluso con ${ plus }, ${ bundle }, e ${ BRAND_NAME } for Business."
       ],
@@ -11488,7 +11492,7 @@
     },
     "session_recovery:settings:action": {
       "Allow password reset from settings": [
-        "Permetti la reimpostazione della password dalle impostazioni"
+        "Consenti la reimpostazione della password dalle impostazioni"
       ],
       "Request a password reset from your Account settings. No recovery method needed.": [
         "Richiedi la reimpostazione della password dalle impostazioni dell'account. Non è necessario alcun metodo di recupero."
@@ -12131,9 +12135,6 @@
       ],
       "Expiring": [
         "Scadenza"
-      ],
-      "Upcoming": [
-        "In arrivo"
       ]
     },
     "Success": {
@@ -13608,35 +13609,14 @@
       ]
     },
     "Title subscription": {
-      "Actions": [
-        "Azioni"
-      ],
-      "Duration": [
-        "Durata"
-      ],
       "End date": [
         "Data di fine"
       ],
       "Plan": [
         "Piano"
       ],
-      "Servers": [
-        "Server"
-      ],
-      "Start date": [
-        "Data d'inizio"
-      ],
       "Status": [
         "Stato"
-      ],
-      "Total": [
-        "Totale"
-      ],
-      "Total paid": [
-        "Totale pagato"
-      ],
-      "Users": [
-        "Utenti"
       ]
     },
     "Title; create calendar modal": {
@@ -13963,23 +13943,8 @@
       ]
     },
     "vpn_2step: billing": {
-      "${ billedText }, renews on ${ formattedEndTime }": [
-        "${ billedText }, rinnovo in data ${ formattedEndTime }"
-      ],
-      "Billed every 15 months": [
-        "Fatturato ogni 15 mesi"
-      ],
-      "Billed every 2 years": [
-        "Fatturato ogni 2 anni"
-      ],
-      "Billed every 30 months": [
-        "Fatturato ogni 30 mesi"
-      ],
       "Billed monthly": [
         "Fatturazione mensile"
-      ],
-      "Billed yearly": [
-        "Fatturazione annuale"
       ]
     },
     "vpn_2step: discount": {
