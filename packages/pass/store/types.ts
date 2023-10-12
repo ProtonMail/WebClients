@@ -1,5 +1,5 @@
 import type { AuthStore } from '@proton/pass/lib/auth/authentication';
-import type { ExtensionEndpoint, WorkerState } from '@proton/pass/types';
+import type { ExtensionEndpoint, MaybeNull, WorkerState } from '@proton/pass/types';
 import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
 import type { EncryptedExtensionCache } from '@proton/pass/types/worker/cache';
 
@@ -10,12 +10,14 @@ import type { ProxiedSettings } from './reducers/settings';
 
 export type State = ReturnType<typeof rootReducer>;
 export type Action = ReturnType<(typeof actions)[keyof typeof actions]>;
+export type Telemetry = { start: () => void; stop: () => void; pushEvent: (event: TelemetryEvent) => Promise<boolean> };
 
 export interface WorkerRootSagaOptions {
     getAuth: () => AuthStore;
     getCache: () => Promise<Partial<EncryptedExtensionCache>>;
     getEventInterval: () => number;
     getLocalSettings: () => Promise<ProxiedSettings>;
+    getTelemetry: () => MaybeNull<Telemetry>;
     getWorkerState: () => WorkerState;
     onBoot?: (result: { ok: true } | { ok: false; clearCache: boolean }) => void;
     onFeatureFlagsUpdate?: (features: FeatureFlagState) => void;
@@ -30,5 +32,4 @@ export interface WorkerRootSagaOptions {
     onShareEventItemsDeleted?: (shareId: string, itemIds: string[]) => void;
     onSignout?: () => void;
     setCache: (encrypted: EncryptedExtensionCache) => Promise<void>;
-    telemetry?: (message: TelemetryEvent) => void;
 }

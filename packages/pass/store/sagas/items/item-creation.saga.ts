@@ -24,13 +24,14 @@ const singleItemCreation = (action: AnyAction): action is ItemCreationAction =>
 const withAliasItemCreation = (action: AnyAction): action is ItemWithAliasCreationAction =>
     itemCreationIntent.match(action) && action.payload.type === 'login' && action.payload.extraData.withAlias;
 
-function* singleItemCreationWorker({ onItemsChange, telemetry }: WorkerRootSagaOptions, action: ItemCreationAction) {
+function* singleItemCreationWorker({ onItemsChange, getTelemetry }: WorkerRootSagaOptions, action: ItemCreationAction) {
     const {
         payload: createIntent,
         meta: { callback: onItemCreationIntentProcessed },
     } = action;
     const { shareId, optimisticId } = createIntent;
     const isAlias = createIntent.type === 'alias';
+    const telemetry = getTelemetry();
 
     try {
         const encryptedItem: ItemRevisionContentsResponse = yield isAlias
@@ -43,7 +44,7 @@ function* singleItemCreationWorker({ onItemsChange, telemetry }: WorkerRootSagaO
         yield put(itemCreationSuccessAction);
         yield isAlias && put(invalidateRequest(aliasOptionsRequest(shareId))); /* reset alias options */
 
-        telemetry?.(createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: item.data.type }));
+        void telemetry?.pushEvent(createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: item.data.type }));
         onItemCreationIntentProcessed?.(itemCreationSuccessAction);
         onItemsChange?.();
     } catch (e) {
@@ -55,10 +56,11 @@ function* singleItemCreationWorker({ onItemsChange, telemetry }: WorkerRootSagaO
 }
 
 function* withAliasCreationWorker(
-    { onItemsChange, telemetry }: WorkerRootSagaOptions,
+    { onItemsChange, getTelemetry }: WorkerRootSagaOptions,
     { payload: createIntent }: ItemWithAliasCreationAction
 ) {
     const { shareId, optimisticId } = createIntent;
+    const telemetry = getTelemetry();
     try {
         const [encryptedLoginItem, encryptedAliasItem]: ItemRevisionContentsResponse[] =
             yield createItemWithAlias(createIntent);
@@ -69,8 +71,12 @@ function* withAliasCreationWorker(
         yield put(itemCreationSuccess({ optimisticId, shareId, item: loginItem, alias: aliasItem }));
         yield put(invalidateRequest(aliasOptionsRequest(shareId))); /* reset alias options */
 
-        telemetry?.(createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: loginItem.data.type }));
-        telemetry?.(createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: aliasItem.data.type }));
+        void telemetry?.pushEvent(
+            createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: loginItem.data.type })
+        );
+        void telemetry?.pushEvent(
+            createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: aliasItem.data.type })
+        );
 
         onItemsChange?.();
     } catch (e) {

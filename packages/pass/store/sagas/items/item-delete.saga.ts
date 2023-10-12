@@ -7,9 +7,10 @@ import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 
 function* deleteItem(
-    { onItemsChange, telemetry }: WorkerRootSagaOptions,
+    { onItemsChange, getTelemetry }: WorkerRootSagaOptions,
     { payload }: ReturnType<typeof itemDeleteIntent>
 ) {
+    const telemetry = getTelemetry();
     const { item, shareId } = payload;
 
     try {
@@ -26,7 +27,7 @@ function* deleteItem(
             },
         });
 
-        telemetry?.(createTelemetryEvent(TelemetryEventName.ItemDeletion, {}, { type: item.data.type }));
+        void telemetry?.pushEvent(createTelemetryEvent(TelemetryEventName.ItemDeletion, {}, { type: item.data.type }));
         yield put(itemDeleteSuccess({ itemId: item.itemId, shareId }));
         onItemsChange?.();
     } catch (e) {
