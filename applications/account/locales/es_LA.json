@@ -1084,9 +1084,6 @@
       ]
     },
     "Action subscription": {
-      "Manage": [
-        "Gestionar"
-      ],
       "Reactivate": [
         "Reactivar"
       ]
@@ -1294,8 +1291,12 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "Se renueva automáticamente el ${ formattedEndTime }"
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } meses"
+      ],
+      "Renews automatically for ${ renewPrice }, for ${ renewalLength }": [
+        "Se renueva automáticamente por ${ renewPrice }, durante ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -4378,11 +4379,11 @@
       "Allow platform keys": [
         "Permitir las claves de plataforma"
       ],
+      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
+        "Le permite registrar claves de seguridad integradas (como Windows Hello, Face ID, Touch ID o TPM internos)"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "¿Está seguro de que quiere eliminar la llave de seguridad ${ name }?"
-      ],
-      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
-        "Si está habilitado, permite registrar funciones y componentes integrados (como Windows Hello, TouchID, FaceID o TPM internos) además de claves de seguridad de hardware externas."
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Inserte una clave de seguridad asociada con su cuenta de ${ BRAND_NAME }."
@@ -6621,6 +6622,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como es un usuario leal, su cuenta tiene habilitadas funciones adicionales."
       ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "El envío SMTP permite que servicios de terceros o dispositivos envíen correo electrónico a través de ${ MAIL_APP_NAME } para sus direcciones de dominio personalizadas. Esta función solo está disponible para ${ BRAND_NAME } for Business con dominios personalizados."
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "El envío por SMTP permite que servicios o dispositivos de terceros envíen correos electrónicos a través de ${ MAIL_APP_NAME } para sus direcciones de dominio personalizadas. Para solicitar acceso, ${ createTicket } describiendo sus casos de uso, cuáles dominios personalizados le gustaría usar y los volúmenes de correo electrónico esperados por hora y por día."
       ],
@@ -7167,7 +7171,7 @@
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Puede habilitar el registro de autenticación para ver cuándo se accede a su cuenta y desde qué IP. Registraremos la dirección IP que accede a la cuenta y la hora, así como los intentos que no funcionaron."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
         "Puede desbloquear inmediatamente la configuración anterior añadiendo ${ specificCountryCount } al número de direcciones IP en su plan o comuníquese con nosotros para obtener soluciones personalizadas."
       ],
       "You can import one data type at a time.": [
@@ -7369,8 +7373,8 @@
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Su suscripción es gestionada por Mozilla. Contacte con el soporte de Mozilla."
       ],
-      "Your subscription will renew automatically on ${ renewalTime }.": [
-        "Su suscripción se renovará automáticamente el ${ renewalTime }."
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Su suscripción se renovará automáticamente en ${ renewalTime }."
       ]
     },
     "info": {
@@ -9684,6 +9688,12 @@
       "Sign in as user": [
         "Iniciar sesión como usuario"
       ],
+      "SMTP submission": [
+        "Envío SMTP"
+      ],
+      "SMTP submission for select organizations": [
+        "Envío SMTP para organizaciones seleccionadas"
+      ],
       "Split tunneling (Android and Windows)": [
         "Tunelización dividida (Android y Windows)"
       ],
@@ -10107,6 +10117,9 @@
       "Share your files or folders with anyone by using secure, shareable links": [
         "Comparta archivos y carpetas con todo el mundo mediante enlaces seguros"
       ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "El envío SMTP permite que servicios de terceros o dispositivos envíen correo electrónico a través de ${ MAIL_APP_NAME }."
+      ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "NetShield protege su dispositivo y le permite navegar mucho más rápido bloqueando anuncios, rastreadores y malware"
       ],
@@ -10148,6 +10161,9 @@
       ]
     },
     "new_plans: upgrade": {
+      "Included with ${ BRAND_NAME } for Business, ${ familyPlanName } and ${ mailProPlanName }.": [
+        "Incluido en ${ BRAND_NAME } for Business, ${ familyPlanName } y ${ mailProPlanName }."
+      ],
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Se incluye en ${ plus }, ${ bundle } y ${ BRAND_NAME } para empresas."
       ],
@@ -12131,9 +12147,6 @@
       ],
       "Expiring": [
         "Expira"
-      ],
-      "Upcoming": [
-        "Próxima"
       ]
     },
     "Success": {
@@ -13608,35 +13621,14 @@
       ]
     },
     "Title subscription": {
-      "Actions": [
-        "Acciones"
-      ],
-      "Duration": [
-        "Duración"
-      ],
       "End date": [
         "Fecha final"
       ],
       "Plan": [
         "Plan"
       ],
-      "Servers": [
-        "Servidores"
-      ],
-      "Start date": [
-        "Fecha inicial"
-      ],
       "Status": [
         "Estado"
-      ],
-      "Total": [
-        "Total"
-      ],
-      "Total paid": [
-        "Total pagado"
-      ],
-      "Users": [
-        "Usuarios"
       ]
     },
     "Title; create calendar modal": {
@@ -13963,23 +13955,8 @@
       ]
     },
     "vpn_2step: billing": {
-      "${ billedText }, renews on ${ formattedEndTime }": [
-        "${ billedText }, se renueva el ${ formattedEndTime }"
-      ],
-      "Billed every 15 months": [
-        "Facturado cada 15 meses"
-      ],
-      "Billed every 2 years": [
-        "Facturado cada 2 años"
-      ],
-      "Billed every 30 months": [
-        "Facturado cada 30 meses"
-      ],
       "Billed monthly": [
         "Facturado mensualmente"
-      ],
-      "Billed yearly": [
-        "Facturado anualmente"
       ]
     },
     "vpn_2step: discount": {

@@ -1075,9 +1075,6 @@
       ]
     },
     "Action subscription": {
-      "Manage": [
-        "Gerir"
-      ],
       "Reactivate": [
         "Reativar"
       ]
@@ -1279,11 +1276,6 @@
     "Baseline in trial plan": {
       "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "${ mailPlus }: a solução de e-mail e calendário com foco em privacidade para as suas necessidades diárias de comunicação."
-      ]
-    },
-    "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "Renova automaticamente em ${ formattedEndTime }"
       ]
     },
     "Billing cycle option": {
@@ -2966,7 +2958,7 @@
         "A subscrição é demasiado cara."
       ],
       "Switching to a different provider": [
-        "Mudar para outro fornecedor"
+        "Mudança para um fornecedor diferente"
       ],
       "Temporary need, may come back in the future": [
         "Trata-se de um requisito pontual de que poderei vir a necessitar no futuro."
@@ -4063,7 +4055,7 @@
         "Convidado por: ${ inviteEmail }"
       ],
       "Leave family plan": [
-        "Deixar o plano familiar"
+        "Deixar o plano Family"
       ],
       "Leave visionary plan": [
         "Deixar o plano Visionary"
@@ -7134,9 +7126,6 @@
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Pode ativar o registo de autenticação para ver quando a sua conta e de qual IP ela é acessada. Registamos o endereço IP que acessa a conta e a hora, bem como as tentativas sem êxito."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Pode desbloquear imediatamente a configuração acima ao adicionar ${ specificCountryCount } ao número de endereços IP no seu plano ou contactar-nos para soluções personalizadas."
-      ],
       "You can import one data type at a time.": [
         "Pode importar um tipo de dado por vez."
       ],
@@ -7335,9 +7324,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "A sua subscrição é gerida pela Mozilla. Contacte o suporte da Mozilla."
-      ],
-      "Your subscription will renew automatically on ${ renewalTime }.": [
-        "A sua subscrição irá renovar automaticamente em ${ renewalTime }."
       ]
     },
     "info": {
@@ -11234,6 +11220,18 @@
         "Desativar redefinição de senha?"
       ]
     },
+    "session_recovery:in_progress:info": {
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "Pode alterar a sua palavra-passe em ${ gracePeriodHoursRemaining } hora.",
+        "Pode alterar a sua palavra-passe em ${ gracePeriodHoursRemaining } horas."
+      ]
+    },
+    "session_recovery:initiation:title": {
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "Pode redefinir a sua palavra-passe em ${ gracePeriodHoursRemaining } hora.",
+        "Pode redefinir a sua palavra-passe em ${ gracePeriodHoursRemaining } horas."
+      ]
+    },
     "Settings description": {
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Complete a transição para a privacidade com as nossas ferramentas seguras de importação e encaminhamento."
@@ -11765,16 +11763,16 @@
         "Basta iniciar sessão na sua conta da Play Store e, em seguida, premir ${ subscriptions }."
       ],
       "Manage your subscription on ${ subscriptionManager }": [
-        "Gira a sua subscrição em ${ subscriptionManager }."
+        "Gere a sua subscrição em ${ subscriptionManager }."
       ],
       "Subscriptions": [
         "Subscrições"
       ],
       "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
-        "O seu plano foi adquirido através de uma aplicação Android. Por isso, para fazer alterações ao seu plano ou actualizar os seus dados de pagamento, terá de ir à Google Play Store."
+        "O seu plano foi adquirido através de uma aplicação Android. Por isso, para fazer alterações ao seu plano ou atualizar os seus dados de pagamento, terá de ir à Google Play Store."
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
-        "O seu plano foi adquirido através de uma aplicação iOS. Por isso, para fazer alterações ao seu plano ou actualizar os seus dados de pagamento, terá de ir à Apple App Store."
+        "O seu plano foi adquirido através de uma aplicação iOS. Por isso, para fazer alterações ao seu plano ou atualizar os seus dados de pagamento, terá de ir à Apple App Store."
       ]
     },
     "Subscription price": {
@@ -11819,9 +11817,6 @@
       ],
       "Expiring": [
         "Expiração"
-      ],
-      "Upcoming": [
-        "Próximo"
       ]
     },
     "Success": {
@@ -13290,35 +13285,14 @@
       ]
     },
     "Title subscription": {
-      "Actions": [
-        "Ações"
-      ],
-      "Duration": [
-        "Duração"
-      ],
       "End date": [
         "Data final"
       ],
       "Plan": [
         "Plano"
       ],
-      "Servers": [
-        "Servidores"
-      ],
-      "Start date": [
-        "Data inicial"
-      ],
       "Status": [
         "Estado"
-      ],
-      "Total": [
-        "Total"
-      ],
-      "Total paid": [
-        "Total pago"
-      ],
-      "Users": [
-        "Utilizadores"
       ]
     },
     "Title; create calendar modal": {
@@ -13640,23 +13614,8 @@
       ]
     },
     "vpn_2step: billing": {
-      "${ billedText }, renews on ${ formattedEndTime }": [
-        "${ billedText }, renova em ${ formattedEndTime }"
-      ],
-      "Billed every 15 months": [
-        "Faturação a cada 15 meses"
-      ],
-      "Billed every 2 years": [
-        "Faturação a cada 2 anos"
-      ],
-      "Billed every 30 months": [
-        "Faturação a cada 30 meses"
-      ],
       "Billed monthly": [
         "Faturação mensal"
-      ],
-      "Billed yearly": [
-        "Faturação anual"
       ]
     },
     "vpn_2step: discount": {
