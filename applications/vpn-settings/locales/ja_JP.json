@@ -523,9 +523,6 @@
       ]
     },
     "Action subscription": {
-      "Manage": [
-        "管理"
-      ],
       "Reactivate": [
         "再アクティブ化"
       ]
@@ -619,11 +616,6 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "この認証情報を使用しているすべてのルーターやクライアントが切断されます。"
-      ]
-    },
-    "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "${ formattedEndTime } に自動更新されます"
       ]
     },
     "Billing cycle option": {
@@ -2291,9 +2283,6 @@
       "Are you sure you want to delete security key ${ name }?": [
         "セキュリティキー ${ name } を削除してよろしいですか？"
       ],
-      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
-        "有効にすると、外部ハードウェアセキュリティキーに加えて、内蔵デバイス(Windows Hello、TouchID、FaceID、内蔵TPMなど)を登録できるようになります。"
-      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "${ BRAND_NAME } アカウントに紐づけられたセキュリティキーを挿入してください。"
       ],
@@ -3540,9 +3529,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "確認のための正しいメールアドレスを確認するために、一度編集することができます。"
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
-        "プラン内の IP アドレスの番号に ${ specificCountryCount } を追加することで、上記の設定をすぐにロック解除できます。または、カスタマイズされたソリューションについては当社までご連絡ください。"
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "カレンダーを最大 ${ MAX_CALENDARS_FREE } 個まで保持することができます。あなたの ${ MAIL_SHORT_APP_NAME } サブスクリプションをキャンセルする前に、共有カレンダーリンクと共有したカレンダーの ${ BRAND_NAME } ユーザーを削除してください。"
       ],
@@ -3653,9 +3639,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "あなたのサブスクリプションはMozillaによって管理されています。Mozillaのサポートへお問い合わせください。"
-      ],
-      "Your subscription will renew automatically on ${ renewalTime }.": [
-        "サブスクリプションは ${ renewalTime } に自動的に更新されます。"
       ]
     },
     "Info for cash payment method": {
@@ -5890,9 +5873,6 @@
       ],
       "Expiring": [
         "期限切れ"
-      ],
-      "Upcoming": [
-        "今後の予定"
       ]
     },
     "Success": {
@@ -6719,35 +6699,14 @@
       ]
     },
     "Title subscription": {
-      "Actions": [
-        "操作"
-      ],
-      "Duration": [
-        "期間"
-      ],
       "End date": [
         "終了日"
       ],
       "Plan": [
         "プラン"
       ],
-      "Servers": [
-        "サーバー"
-      ],
-      "Start date": [
-        "開始日"
-      ],
       "Status": [
         "ステータス"
-      ],
-      "Total": [
-        "合計"
-      ],
-      "Total paid": [
-        "支払総額"
-      ],
-      "Users": [
-        "ユーザー"
       ]
     },
     "Tooltip": {
@@ -6847,23 +6806,8 @@
       ]
     },
     "vpn_2step: billing": {
-      "${ billedText }, renews on ${ formattedEndTime }": [
-        "${ billedText }、${ formattedEndTime } に更新されます"
-      ],
-      "Billed every 15 months": [
-        "15 か月ごとに請求されます"
-      ],
-      "Billed every 2 years": [
-        "2年ごとに請求される"
-      ],
-      "Billed every 30 months": [
-        "30 か月ごとに請求されます"
-      ],
       "Billed monthly": [
         "毎月請求される"
-      ],
-      "Billed yearly": [
-        "毎年請求される"
       ]
     },
     "vpn_2step: discount": {
