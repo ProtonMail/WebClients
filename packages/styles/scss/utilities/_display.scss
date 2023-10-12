@@ -67,3 +67,11 @@
 .hidden-empty:empty {
 	display: none;
 }
+
+// deprecated: hide-on-hover
+.group-hover\:hidden {
+	.group-hover-hide-container:focus-within &,
+	.group-hover-hide-container:hover & {
+		display: none;
+	}
+}

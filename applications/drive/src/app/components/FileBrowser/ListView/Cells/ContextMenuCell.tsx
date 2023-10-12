@@ -30,7 +30,7 @@ export const ContextMenuCell = ({ item }: { item: FileBrowserBaseItem }) => {
                     selectionControls?.selectItem(item.id);
                     contextMenuControls.handleContextMenuTouch?.(e);
                 }}
-                className={isContextMenuButtonActive ? 'file-browser--options-focus' : 'opacity-on-hover-only-desktop'}
+                className={isContextMenuButtonActive ? 'file-browser--options-focus' : 'mouse:group-hover:opacity-100'}
             >
                 <Icon name="three-dots-vertical" alt={c('Action').t`More options`} />
             </Button>

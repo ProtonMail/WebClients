@@ -10,4 +10,10 @@ This shows an element with `className="opacity-on-hover"` when hovering its pare
     <Story id="css-utilities-opacityonhover--opacity-on-hover" />
 </Canvas>
 
+Using the additional `group-hover:opacity-100-no-width` class changes the behaviour of the hidden element. It does no longer take up space when hidden.
+
+<Canvas withSource="open">
+    <Story id="css-utilities-opacityonhover--opacity-on-hover-no-width" />
+</Canvas>
+
 Careful when using this, is appropriated for non-critical actions, and for actions related to the container (not to hide everything). If you want to use it on an element that needs to be present on mobile/touch or for a critical action, you might use `opacity-on-hover-only-desktop` helper (this one will make it always visible when user does not have a precise pointing capability).
