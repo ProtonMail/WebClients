@@ -532,9 +532,6 @@
       ]
     },
     "Action subscription": {
-      "Manage": [
-        "მართვა"
-      ],
       "Reactivate": [
         "რეაქტივაცია"
       ]
@@ -631,11 +628,6 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "გაითიშება ყველა რაუტერი და კლიენტი, რომელიც ამ სერტიფიკატს იყენებს."
-      ]
-    },
-    "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "ავტომატური განახლების დრო ${ formattedEndTime }"
       ]
     },
     "Billing cycle option": {
@@ -3581,9 +3573,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "იმისათვის, რომ დარწმუნდეთ, რომ ეს გადასამოწმებლად სწორი ელფოსტის მისამართია, ის, შეგიძლიათ, ერთხელ ჩაასწოროთ."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
-        "ზედა პარამეტრები შეგიძლიათ, თქვენს ტარიფში ${ specificCountryCount } IP მისამარტის დამატებით განბლოკოთ, ან, მორგებული გადაწყვეტილებებისთვის, დაგვიკავშირდით"
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "შეგიძლიათ გქონდეთ ${ MAX_CALENDARS_FREE }-მდე კალენდარი. წაშალეთ გაზიარებული კალენდრის ბმულები და ყველა ${ BRAND_NAME }-ის მომხმარებელი, ვისაც კალენდარი გაუზიარეთ, სანამ თქვენს ${ MAIL_SHORT_APP_NAME }-ის გამოწერას გააუქმებდით.",
         "შეგიძლიათ გქონდეთ ${ MAX_CALENDARS_FREE }-მდე კალენდარი. წაშალეთ გაზიარებული კალენდრის ბმულები და ყველა ${ BRAND_NAME }-ის მომხმარებელი, ვისაც კალენდარი გაუზიარეთ, სანამ თქვენს ${ MAIL_SHORT_APP_NAME }-ის გამოწერას გააუქმებდით."
@@ -3699,9 +3688,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "თქვენი გამოწერა Mozilla-ს მიერ იმართება. დაუკავშირდით მათ მხარდაჭერის გუნდს."
-      ],
-      "Your subscription will renew automatically on ${ renewalTime }.": [
-        "გამოწერის ავტომატური განახლების დროა ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -4739,6 +4725,9 @@
       "Sign in as user": [
         "მომხმარებლით შესვლა"
       ],
+      "SMTP submission": [
+        "SMTP-ის მორგება"
+      ],
       "Split tunneling (Android and Windows)": [
         "დაყოფილი ტუნელირება (Android-ზე და Windows-ზე)"
       ],
@@ -5559,6 +5548,9 @@
       ]
     },
     "session_recovery:available:action": {
+      "Cancel password reset": [
+        "პაროლის შეცვლის გაუქმება"
+      ],
       "Cancel reset": [
         "საწყის მნიშვნელობებზე დაბრუნების გაუქმება"
       ],
@@ -5636,6 +5628,9 @@
       ]
     },
     "session_recovery:in_progress:action": {
+      "Cancel password reset": [
+        "პაროლის შეცვლის გაუქმება"
+      ],
       "Cancel request": [
         "მოთხოვნის გაუქმება"
       ],
@@ -5668,9 +5663,30 @@
         "პაროლის შეცვლა მოთხოვნილია"
       ]
     },
+    "session_recovery:initiation:action": {
+      "Got it": [
+        "გავიგე"
+      ],
+      "Request password reset": [
+        "პაროლის შეცვლის მოთხოვნა"
+      ],
+      "Use recovery method": [
+        "აღდგენის მეთოდის გამოყენება"
+      ]
+    },
     "session_recovery:initiation:link": {
       "account and password section": [
         "მომხმარებლისა და პაროლის სექცია"
+      ]
+    },
+    "session_recovery:initiation:notification": {
+      "Password reset confirmed": [
+        "პაროლის შეცვლა დადასტურებულია"
+      ]
+    },
+    "session_recovery:initiation:title": {
+      "Request password reset?": [
+        "მოვითხოვო პაროლის შეცვლა?"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -5701,6 +5717,19 @@
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
         "გახვალთ პაროლის შეცვლის გარეშე?"
+      ]
+    },
+    "session_recovery:status:info": {
+      "Available": [
+        "ხელმისაწვდომია"
+      ],
+      "Pending": [
+        "რიგში"
+      ]
+    },
+    "session_recovery:status:title": {
+      "Password reset request": [
+        "პაროლის შეცვლის მოთხოვნა"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -6130,9 +6159,6 @@
       ],
       "Expiring": [
         "ვადა გასდის"
-      ],
-      "Upcoming": [
-        "მომავალი"
       ]
     },
     "Success": {
@@ -6964,35 +6990,14 @@
       ]
     },
     "Title subscription": {
-      "Actions": [
-        "ქმედებები"
-      ],
-      "Duration": [
-        "ხანგრძლივობა"
-      ],
       "End date": [
         "დასასრულის დრო"
       ],
       "Plan": [
         "ტარიფი"
       ],
-      "Servers": [
-        "სერვერი"
-      ],
-      "Start date": [
-        "საწყისი თარიღი"
-      ],
       "Status": [
         "სტატუსი"
-      ],
-      "Total": [
-        "ჯამი"
-      ],
-      "Total paid": [
-        "სულ გადახდილი"
-      ],
-      "Users": [
-        "მომხმარებლები"
       ]
     },
     "Tooltip": {
@@ -7098,23 +7103,8 @@
       ]
     },
     "vpn_2step: billing": {
-      "${ billedText }, renews on ${ formattedEndTime }": [
-        "${ billedText }, გადახდის დროა ${ formattedEndTime }"
-      ],
-      "Billed every 15 months": [
-        "გადახდა 15 თვეში ერთხელ"
-      ],
-      "Billed every 2 years": [
-        "გადახდა 2 წელიწადში ერთხელ"
-      ],
-      "Billed every 30 months": [
-        "გადახდა 30 თვეში ერთხელ"
-      ],
       "Billed monthly": [
         "გადაიხდით თვეში ერთხელ"
-      ],
-      "Billed yearly": [
-        "გადახდა წელიწადში ერთხელ"
       ]
     },
     "vpn_2step: discount": {

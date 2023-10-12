@@ -1084,9 +1084,6 @@
       ]
     },
     "Action subscription": {
-      "Manage": [
-        "Gérer"
-      ],
       "Reactivate": [
         "Réactiver"
       ]
@@ -1291,11 +1288,6 @@
     "Baseline in trial plan": {
       "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "${ mailPlus } : la solution de messagerie et de calendrier respectueuse de la vie privée pour vos besoins de communication quotidiens."
-      ]
-    },
-    "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "Se renouvelle automatiquement le ${ formattedEndTime }"
       ]
     },
     "Billing cycle option": {
@@ -3625,7 +3617,7 @@
         "Vous devez définir un nom."
       ],
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
-        "Vous devez posséder une adresse de domaine personnalisé pour créer un jeton de requête SMTP."
+        "Vous devez disposer d'une adresse de domaine personnalisée pour générer un jeton de soumission SMTP."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Votre compte ou organisation a une facture en retard. Nous vous invitons à régler les factures impayées."
@@ -4378,11 +4370,11 @@
       "Allow platform keys": [
         "Autoriser les clés de plateforme"
       ],
+      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
+        "Vous permet d'enregistrer des clés de sécurité intégrées (comme Windows Hello, Face ID, Touch ID ou des TPM internes)."
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Voulez-vous vraiment supprimer la clé de sécurité ${ name } ?"
-      ],
-      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
-        "Si cette option est activée, elle permet d'enregistrer des fonctionnalités et des composants intégrés (comme Windows Hello, Touch ID, Face ID ou les TPM internes) en plus des clés de sécurité matérielles externes."
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Insérez une clé de sécurité liée à votre compte ${ BRAND_NAME }."
@@ -6621,11 +6613,14 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Votre compte bénéficie de fonctionnalités supplémentaires parce que vous êtes un utilisateur fidèle."
       ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "La soumission SMTP permet à des services ou des appareils tiers d'envoyer des messages par le biais de ${ MAIL_APP_NAME } pour vos adresses de domaine personnalisées. Cette fonctionnalité n'est disponible que pour les utilisateurs de ${ BRAND_NAME } for Business avec des domaines personnalisés."
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
-        "Une requête SMTP permet à des services ou des appareils tiers d'envoyer des messages par l'intermédiaire de ${ MAIL_APP_NAME } depuis les adresses de votre domaine personnalisé. Pour demander l'accès, nous vous invitons à ${ createTicket } en décrivant vos cas d'utilisation, les domaines personnalisés que vous voudriez utiliser et le nombre de messages attendus par heure et par jour."
+        "La soumission SMTP permet à des services ou des appareils tiers d'envoyer des messages par le biais de ${ MAIL_APP_NAME } pour vos adresses de domaine personnalisées. Pour demander l'accès, nous vous invitons à ${ createTicket } en décrivant vos cas d'utilisation, les domaines personnalisés que vous voudriez utiliser et le nombre de messages attendus par heure et par jour."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
-        "Une requête SMTP permet à des services ou des appareils tiers d'envoyer des messages par l'intermédiaire de ${ MAIL_APP_NAME } depuis les adresses de votre domaine personnalisé. Pour utiliser cette fonctionnalité, commencez par générer un nouveau jeton."
+        "La soumission SMTP permet à des services ou des appareils tiers d'envoyer des messages par le biais de ${ MAIL_APP_NAME } pour vos adresses de domaine personnalisées. Pour utiliser cette fonctionnalité, commencez par générer un nouveau jeton."
       ],
       "Some keys successfully reactivated": [
         "Certaines clés ont été réactivées."
@@ -7167,7 +7162,7 @@
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Vous pouvez activer la journalisation des connexions pour savoir quand votre compte est utilisé et à partir de quelle adresse IP. Nous enregistrerons l'adresse IP qui accède au compte et l'heure, ainsi que les tentatives qui ont échoué."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
         "Vous pouvez débloquer immédiatement la configuration ci-dessus en ajoutant ${ specificCountryCount } au nombre d'adresses IP de votre abonnement ou nous contacter pour une solution personnalisée."
       ],
       "You can import one data type at a time.": [
@@ -7368,9 +7363,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Votre abonnement est géré par Mozilla. Nous vous invitons à contacter le support Mozilla."
-      ],
-      "Your subscription will renew automatically on ${ renewalTime }.": [
-        "Votre abonnement sera automatiquement renouvelé le ${ renewalTime }."
       ]
     },
     "info": {
@@ -9684,6 +9676,12 @@
       "Sign in as user": [
         "Se connecter en tant qu'utilisateur"
       ],
+      "SMTP submission": [
+        "Soumission SMTP"
+      ],
+      "SMTP submission for select organizations": [
+        "Soumission SMTP pour les organisations sélectionnées"
+      ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android et Windows)"
       ],
@@ -10107,6 +10105,9 @@
       "Share your files or folders with anyone by using secure, shareable links": [
         "Partagez vos fichiers ou dossiers avec qui vous voulez grâce à des liens sécurisés et partageables."
       ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "Le protocole SMTP permet à des services ou des appareils tiers d'envoyer des messages en utilisant ${ MAIL_APP_NAME }."
+      ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "NetShield est une fonctionnalité spécialement conçue pour protéger votre appareil et accélérer votre navigation en bloquant les publicités, traqueurs et logiciels malveillants."
       ],
@@ -10148,6 +10149,9 @@
       ]
     },
     "new_plans: upgrade": {
+      "Included with ${ BRAND_NAME } for Business, ${ familyPlanName } and ${ mailProPlanName }.": [
+        "Inclus dans ${ BRAND_NAME } for Business, ${ familyPlanName } et ${ mailProPlanName }."
+      ],
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Inclus avec ${ plus }, ${ bundle } et ${ BRAND_NAME } for Business."
       ],
@@ -12128,9 +12132,6 @@
       ],
       "Expiring": [
         "Expiré"
-      ],
-      "Upcoming": [
-        "À venir"
       ]
     },
     "Success": {
@@ -13378,7 +13379,7 @@
         "Connecté au compte membre"
       ],
       "SMTP submission": [
-        "Requête SMTP"
+        "Soumission SMTP"
       ],
       "Sort folders alphabetically": [
         "Trier les dossiers par ordre alphabétique"
@@ -13605,35 +13606,14 @@
       ]
     },
     "Title subscription": {
-      "Actions": [
-        "Actions"
-      ],
-      "Duration": [
-        "Durée"
-      ],
       "End date": [
         "Date de fin"
       ],
       "Plan": [
         "Abonnement"
       ],
-      "Servers": [
-        "Serveurs"
-      ],
-      "Start date": [
-        "Date de début"
-      ],
       "Status": [
         "Statut"
-      ],
-      "Total": [
-        "Total"
-      ],
-      "Total paid": [
-        "Total payé"
-      ],
-      "Users": [
-        "Utilisateurs"
       ]
     },
     "Title; create calendar modal": {
@@ -13960,23 +13940,8 @@
       ]
     },
     "vpn_2step: billing": {
-      "${ billedText }, renews on ${ formattedEndTime }": [
-        "${ billedText }, se renouvellera le ${ formattedEndTime }"
-      ],
-      "Billed every 15 months": [
-        "Facturé tous les 15 mois"
-      ],
-      "Billed every 2 years": [
-        "Facturé tous les 2 ans"
-      ],
-      "Billed every 30 months": [
-        "Facturé tous les 30 mois"
-      ],
       "Billed monthly": [
         "Facturé mensuellement"
-      ],
-      "Billed yearly": [
-        "Facturé annuellement"
       ]
     },
     "vpn_2step: discount": {

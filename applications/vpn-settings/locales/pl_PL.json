@@ -532,9 +532,6 @@
       ]
     },
     "Action subscription": {
-      "Manage": [
-        "Zarządzaj"
-      ],
       "Reactivate": [
         "Reaktywuj"
       ]
@@ -637,11 +634,6 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Spowoduje to rozłączenie wszystkich routerów i klientów używających tego certyfikatu."
-      ]
-    },
-    "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "Automatyczne odnowienie ${ formattedEndTime }"
       ]
     },
     "Billing cycle option": {
@@ -2324,11 +2316,11 @@
       "Allow platform keys": [
         "Zezwalaj na klucze platformy"
       ],
+      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
+        "Zezwala na rejestrację wbudowanych kluczy bezpieczeństwa (takich jak Windows Hello, Touch ID, Face ID lub wewnętrzne moduły TPM)"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Czy na pewno chcesz usunąć klucz bezpieczeństwa ${ name }?"
-      ],
-      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
-        "Zezwala na rejestrację wbudowanych urządzeń (takich jak Windows Hello, Touch ID, Face ID lub wewnętrzne moduły TPM) oprócz zewnętrznych kluczy bezpieczeństwa"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Użyj klucza bezpieczeństwa powiązanego z kontem ${ BRAND_NAME }."
@@ -3648,9 +3640,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Edytuj adres, aby zweryfikować prawidłowy adres pomocniczy."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Możesz natychmiast odblokować powyższą konfigurację, dodając dodatkowe adresy IP (${ specificCountryCount }) do swojego planu. Opcjonalnie skontaktuj się z nami w sprawie indywidualnej oferty."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Możesz posiadać do ${ MAX_CALENDARS_FREE } kalendarza. Zanim anulujesz subskrypcję ${ MAIL_SHORT_APP_NAME }, usuń linki kalendarza oraz wszystkich użytkowników ${ BRAND_NAME }, którym udostępniasz kalendarze.",
         "Możesz posiadać do ${ MAX_CALENDARS_FREE } kalendarzy. Zanim anulujesz subskrypcję ${ MAIL_SHORT_APP_NAME }, usuń linki kalendarza oraz wszystkich użytkowników ${ BRAND_NAME }, którym udostępniasz kalendarze.",
@@ -3777,8 +3766,8 @@
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Twoja subskrypcja jest zarządzana przez Mozillę. Skontaktuj się z pomocą techniczną Mozilli."
       ],
-      "Your subscription will renew automatically on ${ renewalTime }.": [
-        "Twoja subskrypcja zostanie automatycznie odnowiona ${ renewalTime }."
+      "Your subscription will automatically renew on ${ renewalTime }.": [
+        "Twoja subskrypcja odnowi się automatycznie ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -4860,6 +4849,12 @@
       "Sign in as user": [
         "Zaloguj się jako użytkownik"
       ],
+      "SMTP submission": [
+        "Poświadczenia SMTP"
+      ],
+      "SMTP submission for select organizations": [
+        "Poświadczenia SMTP dla organizacji"
+      ],
       "Split tunneling (Android and Windows)": [
         "Split Tunneling (Android i Windows)"
       ],
@@ -5238,6 +5233,9 @@
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
         "Udostępniaj pliki lub foldery innym osobom, używając bezpiecznych linków z możliwością udostępniania"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "Protokół SMTP pozwala innym usługom lub urządzeniom na wysyłanie wiadomości przez pocztę ${ MAIL_APP_NAME }."
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Specjalnie zaprojektowana funkcja NetShield chroni Twoje urządzenie oraz przyśpiesza przeglądanie Internetu poprzez blokowanie reklam, elementów śledzących i złośliwego oprogramowania"
@@ -5729,7 +5727,7 @@
         "To nie jest Twoje żądanie?"
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
-        "Jeśli nie prosiłeś o zresetowanie hasła, anuluj prośbę teraz."
+        "Jeśli żądanie zmiany hasła nie zostało wysłane przez Ciebie, anuluj je."
       ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
         "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Pozostał ${ timeRemaining.inDays } dzień na zresetowanie hasła.",
@@ -5838,13 +5836,19 @@
         "To nie jest Twoje żądanie?"
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
-        "Jeśli nie prosiłeś o zresetowanie hasła, anuluj prośbę teraz."
+        "Jeśli żądanie zmiany hasła nie zostało wysłane przez Ciebie, anuluj je."
       ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Jeśli żądanie zmiany hasła nie zostało wysłane przez Ciebie, anuluj je."
       ],
       "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
-        "Reset hasła dostępny od ${ boldDate }. Daje to czas na anulowanie nieuczciwych żądań."
+        "Możliwość zresetowanie hasła będzie dostępna od ${ boldDate }. W tym czasie możesz anulować nieuczciwe żądania."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Żądanie zresetowania hasła konta ${ user.Email } zostało wysłane. Hasło możesz zmienić za ${ hoursRemaining } godzinę.",
+        "Żądanie zresetowania hasła konta ${ user.Email } zostało wysłane. Hasło możesz zmienić za ${ hoursRemaining } godziny.",
+        "Żądanie zresetowania hasła konta ${ user.Email } zostało wysłane. Hasło możesz zmienić za ${ hoursRemaining } godzin.",
+        "Żądanie zresetowania hasła konta ${ user.Email } zostało wysłane. Hasło możesz zmienić za ${ hoursRemaining } godziny."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Aby upewnić się, że to Ty próbujesz zresetować hasło, czekamy 72 godziny przed zatwierdzeniem żądań. Hasło możesz zmienić za ${ boldTimeLeft }. ${ viewRequest }"
@@ -5874,7 +5878,7 @@
         "Ok"
       ],
       "Request password reset": [
-        "Prośba Resetowania hasła"
+        "Żądanie zresetowania hasła"
       ],
       "Use recovery method": [
         "Użyj metody odzyskiwania"
@@ -5882,21 +5886,21 @@
     },
     "session_recovery:initiation:info": {
       "For security reasons, you’ll have to wait **72 hours** before you can change your password.": [
-        "Ze względów bezpieczeństwa będziesz musiał odczekać **72 godziny**, zanim będziesz mógł zmienić hasło."
+        "Aby zmienić hasło, ze względów bezpieczeństwa, musisz poczekać **72 godziny**."
       ],
       "If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.": [
-        "Jeśli masz skonfigurowaną **metodę odzyskiwania**, spróbuj, zamiast tego odzyskać konto. Umożliwi to natychmiastową zmianę hasła."
+        "Odzyskaj konto, jeśli masz ustawioną **metodę odzyskiwania**. Umożliwi to natychmiastową zmianę hasła."
       ],
       "We will contact you again when the password reset is available.": [
-        "Skontaktujemy się z tobą ponownie, kiedy będzie dostępny reset hasła."
+        "Skontaktujemy się z Tobą, kiedy zresetowanie hasła będzie dostępne."
       ],
       "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
-        "Status żądania można sprawdzić w dowolnym momencie w sekcji ${ accountAndPasswordSectionLink } ustawień."
+        "Status żądania możesz sprawdzić w ${ accountAndPasswordSectionLink }."
       ]
     },
     "session_recovery:initiation:link": {
       "account and password section": [
-        "sekcja dotycząca konta i hasła"
+        "sekcji konto i hasło"
       ]
     },
     "session_recovery:initiation:notification": {
@@ -5906,7 +5910,7 @@
     },
     "session_recovery:initiation:title": {
       "Request password reset?": [
-        "Prośba Resetowania hasła?"
+        "Zresetować hasło?"
       ],
       "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
         "Możesz zresetować hasło za ${ gracePeriodHoursRemaining } godzinę",
@@ -5957,7 +5961,7 @@
     },
     "session_recovery:status:title": {
       "Password reset request": [
-        "Żądanie resetowania hasła"
+        "Żądanie zresetowania hasła"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -6430,9 +6434,6 @@
       ],
       "Expiring": [
         "Wygasająca"
-      ],
-      "Upcoming": [
-        "Nadchodząca"
       ]
     },
     "Success": {
@@ -7274,35 +7275,14 @@
       ]
     },
     "Title subscription": {
-      "Actions": [
-        "Akcje"
-      ],
-      "Duration": [
-        "Czas trwania"
-      ],
       "End date": [
         "Data zakończenia"
       ],
       "Plan": [
         "Plan"
       ],
-      "Servers": [
-        "Serwery"
-      ],
-      "Start date": [
-        "Data rozpoczęcia"
-      ],
       "Status": [
         "Status"
-      ],
-      "Total": [
-        "Łącznie"
-      ],
-      "Total paid": [
-        "Zapłacono"
-      ],
-      "Users": [
-        "Użytkownicy"
       ]
     },
     "Tooltip": {
@@ -7420,23 +7400,8 @@
       ]
     },
     "vpn_2step: billing": {
-      "${ billedText }, renews on ${ formattedEndTime }": [
-        "${ billedText }, odnowienie ${ formattedEndTime }"
-      ],
-      "Billed every 15 months": [
-        "Płatne co 15 miesięcy"
-      ],
-      "Billed every 2 years": [
-        "Płatne co 2 lata"
-      ],
-      "Billed every 30 months": [
-        "Płatne co 30 miesięcy"
-      ],
       "Billed monthly": [
         "Płatne miesięcznie"
-      ],
-      "Billed yearly": [
-        "Płatne rocznie"
       ]
     },
     "vpn_2step: discount": {
@@ -7518,7 +7483,7 @@
         "Ustawienia daty i czasu na Twoim urządzeniu nie są zsynchronizowane. ${ learnMore }"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Jesteśmy teraz niedostępni. Wypełnij formularz, na który odpowiemy kiedy będziemy ponownie dostępni."
+        "Jesteśmy teraz niedostępni. Wypełnij formularz, na który odpowiemy, kiedy będziemy ponownie dostępni."
       ],
       "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
         "Musisz ${ activateLink } klucze organizacji przed dodaniem adresu e-mail do służbowego użytkownika."

@@ -532,9 +532,6 @@
       ]
     },
     "Action subscription": {
-      "Manage": [
-        "Кіраваць"
-      ],
       "Reactivate": [
         "Актываваць паўторна"
       ]
@@ -637,11 +634,6 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Гэта адключыць усе маршрутызатары і кліенты, якія выкарыстоўваюць гэты сертыфікат."
-      ]
-    },
-    "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "Падоўжыцца аўтаматычна ${ formattedEndTime }"
       ]
     },
     "Billing cycle option": {
@@ -2324,11 +2316,11 @@
       "Allow platform keys": [
         "Дазволіць ключы платформы"
       ],
+      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
+        "Дазваляе вам рэгістраваць убудаваныя ключы бяспекі (такія, як Windows Hello, Touch ID, Face ID, або ўбудаваны TPM)"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Вы сапраўды хочаце выдаліць ключ бяспекі ${ name }?"
-      ],
-      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
-        "Калі ўключана, то гэта дазваляе рэгістраваць убудаваныя прылады доступу (такія, як Windows Hello, Touch ID, Face ID, або ўбудаваны TPM) у дадатак да знешніх апаратных ключоў бяспекі"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Устаўце ключ бяспекі, які звязаны з вашым уліковым запісам ${ BRAND_NAME }."
@@ -2824,7 +2816,7 @@
         "Карыстальніцкія дамены электроннай пошты"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Наладзьце знешні выгляд праграм ${ BRAND_NAME }"
+        "Наладзьце вонкавы выгляд праграм ${ BRAND_NAME }"
       ],
       "Dedicated servers": [
         "Вылучаныя серверы"
@@ -3648,9 +3640,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Вы можаце адрэдагаваць адрас адзін раз, каб пераканацца ў правільнасці адраса электроннай пошты для праверкі."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Вы зможаце адразу разблакіраваць налады вышэй дадаўшы ${ specificCountryCount } да нумара IP-адрасоў у вашым тарыфным плане, або звязацца з намі для атрымання індывідуальнага рашэння."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календара. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
         "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
@@ -3776,9 +3765,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша падпіска кіруецца Mozilla. Звяжыцеся са службай падтрымкі Mozilla."
-      ],
-      "Your subscription will renew automatically on ${ renewalTime }.": [
-        "Ваша падпіска будзе падоўжана аўтаматычна ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -4860,6 +4846,12 @@
       "Sign in as user": [
         "Увайсці як карыстальнік"
       ],
+      "SMTP submission": [
+        "Адпраўка па SMTP"
+      ],
+      "SMTP submission for select organizations": [
+        "Адпраўка па SMTP для выбранай арганізацыі"
+      ],
       "Split tunneling (Android and Windows)": [
         "Split Tunneling (Android і Windows)"
       ],
@@ -5238,6 +5230,9 @@
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
         "Абагульвайце свае файлы або папкі з любымі карыстальнікамі ў інтэрнэце з дапамогай бяспечных спасылак"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTP дазваляе староннім сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME }."
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Адмыслова распрацаваная функцыя NetShield абароніць вашу прыладу і паскорыць прагляд старонак, дзякуючы блакіраванню рэкламы, праграм сачэння і шкодных праграм"
@@ -6439,9 +6434,6 @@
       ],
       "Expiring": [
         "Тэрмін дзеяння"
-      ],
-      "Upcoming": [
-        "Надыходзячы"
       ]
     },
     "Success": {
@@ -7283,35 +7275,14 @@
       ]
     },
     "Title subscription": {
-      "Actions": [
-        "Дзеянні"
-      ],
-      "Duration": [
-        "Працягласць"
-      ],
       "End date": [
         "Дата завяршэння"
       ],
       "Plan": [
         "Тарыфны план"
       ],
-      "Servers": [
-        "Серверы"
-      ],
-      "Start date": [
-        "Дата пачатку"
-      ],
       "Status": [
         "Статус"
-      ],
-      "Total": [
-        "Агулам"
-      ],
-      "Total paid": [
-        "Агульны кошт"
-      ],
-      "Users": [
-        "Карыстальнікі"
       ]
     },
     "Tooltip": {
@@ -7429,23 +7400,8 @@
       ]
     },
     "vpn_2step: billing": {
-      "${ billedText }, renews on ${ formattedEndTime }": [
-        "${ billedText }, падоўжыцца ${ formattedEndTime }"
-      ],
-      "Billed every 15 months": [
-        "Аплачваецца кожныя 15 месяцаў"
-      ],
-      "Billed every 2 years": [
-        "Аплачваецца кожныя 2 гады"
-      ],
-      "Billed every 30 months": [
-        "Аплачваецца кожныя 30 месяцаў"
-      ],
       "Billed monthly": [
         "Аплачваецца штомесяц"
-      ],
-      "Billed yearly": [
-        "Аплачваецца штогод"
       ]
     },
     "vpn_2step: discount": {

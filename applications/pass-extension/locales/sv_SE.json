@@ -29,15 +29,6 @@
       "Back": [
         "Tillbaka"
       ],
-      "Can edit": [
-        "Kan redigera"
-      ],
-      "Can manage": [
-        "Kan hantera"
-      ],
-      "Can view": [
-        "Kan visa"
-      ],
       "Can't find your password manager? Please let us know!": [
         "Kan du inte hitta din lösenordshanterare? Berätta för oss!"
       ],
@@ -182,8 +173,8 @@
       "Importing": [
         "Importerar"
       ],
-      "Invite people": [
-        "Bjud in personer"
+      "Invite others": [
+        "Bjud in andra"
       ],
       "Join shared vault": [
         "Gå med delat valv"
@@ -199,6 +190,15 @@
       ],
       "Lock extension": [
         "Lås tillägg"
+      ],
+      "Make admin": [
+        "Gör till admin"
+      ],
+      "Make editor": [
+        "Gör till redaktör"
+      ],
+      "Make viewer": [
+        "Gör till läsare"
       ],
       "Manage access": [
         "Hantera åtkomst"
@@ -223,6 +223,9 @@
       ],
       "Not now": [
         "Inte nu"
+      ],
+      "Open in a window": [
+        "Öppna i ett fönster"
       ],
       "Open navigation": [
         "Öppna navigering"
@@ -280,6 +283,9 @@
       ],
       "Share": [
         "Dela"
+      ],
+      "Share vault": [
+        "Dela valv"
       ],
       "Show": [
         "Visa"
@@ -659,6 +665,9 @@
       "Access your passwords on the go with our mobile apps.": [
         "Kom åt dina lösenord när du är på språng med våra mobilappar."
       ],
+      "Admin": [
+        "Admin"
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias “${ item.aliasEmail }“ har flyttats till papperskorg – den kommer stoppa vidarebefordra e-post till din brevlåda"
       ],
@@ -677,23 +686,14 @@
       "Autosaved on ${ submissionURL }": [
         "Autosparad på ${ submissionURL }"
       ],
-      "Can create, edit, delete and export items in this vault.": [
+      "Can create, edit, delete, and export items in this vault.": [
         "Kan skapa, redigera, ta bort och exportera objekt i detta valv."
-      ],
-      "Can edit": [
-        "Kan redigera"
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Kan bevilja och återkalla åtkomst till detta valv, och ta bort det."
       ],
       "Can grant and revoke access to this vault.": [
         "Kan bevilja och återkalla åtkomst till detta valv."
-      ],
-      "Can manage": [
-        "Kan hantera"
-      ],
-      "Can view": [
-        "Kan visa"
       ],
       "Can view items in this vault.": [
         "Kan visa objekt i detta valv."
@@ -727,6 +727,9 @@
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importera enkelt dina befintliga lösenord in till ${ PASS_APP_NAME }."
+      ],
+      "Editor": [
+        "Redaktör"
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Aktivera ${ PASS_APP_NAME } genom att ansluta ditt ${ BRAND_NAME }-konto"
@@ -798,11 +801,17 @@
       "Internet connection lost": [
         "Internetanslutning förlorades"
       ],
+      "Invitation sent": [
+        "Inbjudan skickad"
+      ],
       "Invite successfully removed": [
         "Inbjudan borttagen"
       ],
       "Invite successfully resent": [
         "Inbjudan skickad"
+      ],
+      "invites you to access items in": [
+        "bjöd in dig för att komma åt objekt i detta valv"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Det verkar som att du redan är inloggad på ${ PASS_APP_NAME }. Om du försöker logga in med ett annat konto, logga ut från tillägget först."
@@ -874,9 +883,6 @@
       "Passwords older than 1 day are automatically deleted from history.": [
         "Lösenord äldre än 1 dag tas automatiskt bort från historik."
       ],
-      "Pending invitation": [
-        "Väntande inbjudning"
-      ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Nåla fast ${ PASS_APP_NAME } till ditt verktygsfält"
       ],
@@ -909,9 +915,6 @@
       ],
       "Select the destination vault for each imported vault.": [
         "Välj destinationsvalv för varje importerat valv."
-      ],
-      "Select the level of access this user will gain when they join your vault.": [
-        "Välj vilken åtkomstnivå denna användare ska erhålla när de går med i ditt valv."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servrarna kan inte nås. Försök igen om några minuter"
@@ -962,9 +965,6 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Denna export kommer vara okrypterad och alla som har åtkomst till din exporterade fil kommer att kunna se dina lösenord. Av säkerhetsskäl, ta bort den när du är klar med den."
       ],
-      "This user will receive an invitation to join your '${ vaultName }' vault.": [
-        "Denna användare kommer få en inbjudan att gå med i ditt “${ vaultName }“-valv."
-      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Detta valv delas för närvarande inte med någon. Bjud in människor att dela det med andra."
       ],
@@ -1001,18 +1001,30 @@
       "Verification code": [
         "Verifieringskod"
       ],
+      "Viewer": [
+        "Läsare"
+      ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Vi har problem att synkronisera data till ditt lokala lagringsutrymme. Se till att du har tillräckligt med diskutrymme för att ${ PASS_SHORT_APP_NAME } ska fungera smidigt."
       ],
       "You are about to create:": [
         "Du är på väg att skapa:"
       ],
+      "You cannot change the mailboxes for this alias.": [
+        "Du kan inte ändra brevlådorna för detta alias."
+      ],
       "You have ${ daysRemaining } day left in your trial period.": [
         "Du har ${ daysRemaining } dag kvar av din provperiod.",
         "Du har ${ daysRemaining } dagar kvar av din provperiod."
       ],
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
+        "Du har överskridit antalet valv inkluderat i din prenumeration. Objekt kan endast flyttas till dina två första valv. För att flytta objekt mellan alla valv, uppgradera din prenumeration."
+      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
         "Du har överskridit antalet valv inkluderat i din prenumeration. Objekt kan endast flyttas till ditt primära valv. För att flytta objekt mellan alla valv, uppgradera din prenumeration."
+      ],
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
+        "Du har överskridit antalet valv inkluderat i din prenumeration. Nya objekt kan endast skapas i dina två första valv. För att skapa nya objekt i alla valv, uppgradera din prenumeration."
       ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
         "Du har överskridit antalet valv inkluderat i din prenumeration. Nya objekt kan endast skapas i ditt primära valv. För att skapa nya objekt i alla valv, uppgradera din prenumeration."
@@ -1032,8 +1044,8 @@
       "You're about to create": [
         "Du är på väg att skapa"
       ],
-      "You've been invited to a vault. Click here to see the invitation.": [
-        "Du har blivit inbjuden till ett valv. Klicka här för att se inbjudan."
+      "You're invited to a vault.": [
+        "Du är inbjuden till ett valv."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Din ${ PASS_APP_NAME }-session är låst"
@@ -1119,6 +1131,9 @@
       ],
       "Autosave": [
         "Spara automatiskt"
+      ],
+      "Autosave vault": [
+        "Spara valv automatiskt"
       ],
       "Autosuggest": [
         "Föreslå automatiskt"
@@ -1228,6 +1243,9 @@
       "Label": [
         "Etikett"
       ],
+      "Language": [
+        "Språk"
+      ],
       "Last 2 weeks": [
         "Senaste 2 veckorna"
       ],
@@ -1333,9 +1351,6 @@
       "Report a problem": [
         "Rapportera ett problem"
       ],
-      "Respond": [
-        "Svara"
-      ],
       "Restore all items": [
         "Återställ alla objekt"
       ],
@@ -1347,6 +1362,9 @@
       ],
       "Select an email address": [
         "Välj en e-postadress"
+      ],
+      "Select preferred language": [
+        "Välj föredraget språk"
       ],
       "Select your password manager": [
         "Välj din lösenordshanterare"
@@ -1426,11 +1444,11 @@
       "Vault": [
         "Valv"
       ],
-      "Vaults": [
-        "Valv"
-      ],
       "Verification number": [
         "Verifieringsnummer"
+      ],
+      "View details": [
+        "Visa detaljer"
       ],
       "View logs": [
         "Visa loggar"
@@ -1606,20 +1624,17 @@
       "Permanently remove all items ?": [
         "Ta bort alla objekt permanent?"
       ],
-      "Permissions": [
-        "Behörigheter"
-      ],
       "Pin the extension": [
         "Fäst tillägget"
       ],
       "Secure your data": [
         "Säkra dina data"
       ],
+      "Set access level": [
+        "Ställ in åtkomstnivå"
+      ],
       "Share with": [
         "Dela med"
-      ],
-      "Shared vault invitation": [
-        "Delad valvinbjudan"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Byta till ${ PASS_APP_NAME }?"
@@ -1647,6 +1662,9 @@
       ],
       "Use my email": [
         "Använd min e-post"
+      ],
+      "Vault shared with you": [
+        "Valv delade med dig"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Välkommen till ${ brandNameJSX }"
@@ -1699,9 +1717,6 @@
       ],
       "An error occured while exporting your data": [
         "Ett fel uppstod när din data skulle exporteras"
-      ],
-      "Are you sure you want to transfer vault ownership to ${ email }?": [
-        "Är du säker på att du vill överföra valvets ägarskap till ${ email }?"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Kan inte hämta brevlådor för detta alias just nu"
@@ -1766,6 +1781,9 @@
       "Title is required": [
         "Rubrik är obligatoriskt"
       ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "Vill du överföra äganderätten till detta valv till ${ email }?"
+      ],
       "Trash alias ?": [
         "Kasta alias?"
       ],
@@ -1799,11 +1817,17 @@
       "Your plan does not allow you to create more aliases": [
         "Ditt paket tillåter dig inte att skapa fler alias"
       ],
+      "Your plan only allows you to autofill from your first two vaults": [
+        "Ditt paket tillåter dig endast att fylla i automatiskt från dina två första valv"
+      ],
       "Your plan only allows you to autofill from your primary vault": [
         "Ditt paket tillåter endast att fylla i automatiskt från ditt primära valv"
       ],
       "Your session was locked due to inactivity": [
         "Din session låstes på grund av inaktivitet"
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "Din prenumeration tillåter inte att du skapar flera valv. Alla objekt kommer att importeras till ditt första valv. För att importera till flera valv, uppgradera din prenumeration."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
         "Din prenumeration tillåter inte att du skapar flera valv. Alla objekt kommer att importeras till ditt primära valv som standard. För att importera till flera valv, uppgradera din prenumeration."
