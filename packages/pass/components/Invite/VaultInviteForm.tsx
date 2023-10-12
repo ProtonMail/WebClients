@@ -1,4 +1,5 @@
 import { type FC } from 'react';
+import { useSelector } from 'react-redux';
 
 import { Form, type FormikContextType } from 'formik';
 import { c } from 'ttag';
@@ -10,7 +11,10 @@ import { RadioGroupField } from '@proton/pass/components/Form/Field/RadioGroupFi
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { IconBox } from '@proton/pass/components/Layout/Icon/IconBox';
 import { shareRoleOptions } from '@proton/pass/components/Share/ShareRoleOptions';
+import { selectUserVerified } from '@proton/pass/store/selectors';
 import type { InviteFormValues } from '@proton/pass/types';
+
+import { UserVerificationMessage } from './UserVerificationMessage';
 
 export const FORM_ID = 'vault-invite';
 
@@ -18,9 +22,11 @@ type Props = { form: FormikContextType<InviteFormValues> };
 
 export const VaultInviteForm: FC<Props> = ({ form }) => {
     const { email, step } = form.values;
+    const userVerified = useSelector(selectUserVerified);
 
     return (
         <Form id={FORM_ID}>
+            {!userVerified && <UserVerificationMessage />}
             {step === 'email' && (
                 <>
                     <h2 className="text-xl text-bold mb-3">{c('Title').t`Share with`}</h2>
@@ -30,6 +36,7 @@ export const VaultInviteForm: FC<Props> = ({ form }) => {
                             component={TextField}
                             placeholder={c('Placeholder').t`Email address`}
                             type="email"
+                            disabled={!userVerified}
                         />
                     </FieldsetCluster>
                 </>
