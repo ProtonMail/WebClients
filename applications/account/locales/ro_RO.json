@@ -1084,9 +1084,6 @@
       ]
     },
     "Action subscription": {
-      "Manage": [
-        "Gestionare"
-      ],
       "Reactivate": [
         "Reactivare"
       ]
@@ -1294,11 +1291,6 @@
     "Baseline in trial plan": {
       "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "${ mailPlus }: soluția de e-mail și calendar private pentru nevoile personale de comunicații zilnice."
-      ]
-    },
-    "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "Reînnoire automată la ${ formattedEndTime }"
       ]
     },
     "Billing cycle option": {
@@ -4402,9 +4394,6 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Sigur ștergeți cheia de securitate ${ name }?"
       ],
-      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
-        "Dacă este activat, permite înregistrarea dispozitivelor încorporate (cum ar fi Windows Hello, Touch ID, Face ID sau TPM-uri interne) în plus față de cheile de securitate hardware externe."
-      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Inserați cheia de securitate legată la contul ${ BRAND_NAME }."
       ],
@@ -7240,9 +7229,6 @@
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Puteți activa înregistrarea conectărilor pentru a vedea când a fost accesat contul și de la care IP. Vom înregistra adresa IP care accesează contul, ora și încercările eșuate de accesare."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Puteți debloca imediat configurația de mai sus adăugând ${ specificCountryCount } la numărul de adrese IP din planul actual sau ne puteți contacta pentru soluții personalizate."
-      ],
       "You can import one data type at a time.": [
         "Puteți importa un singur tip de date la un moment dat."
       ],
@@ -7448,9 +7434,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Abonamentul vă este gestionat de Mozilla. Contactați Mozilla pentru suport."
-      ],
-      "Your subscription will renew automatically on ${ renewalTime }.": [
-        "Abonamentul se va reînnoi automat la ${ renewalTime }."
       ]
     },
     "info": {
@@ -12165,9 +12148,6 @@
       ],
       "Expiring": [
         "Expiră"
-      ],
-      "Upcoming": [
-        "Urmează"
       ]
     },
     "Success": {
@@ -13648,35 +13628,14 @@
       ]
     },
     "Title subscription": {
-      "Actions": [
-        "Acțiuni"
-      ],
-      "Duration": [
-        "Durata"
-      ],
       "End date": [
         "Data sfârșit"
       ],
       "Plan": [
         "Plan"
       ],
-      "Servers": [
-        "Servere"
-      ],
-      "Start date": [
-        "Dată început"
-      ],
       "Status": [
         "Stare"
-      ],
-      "Total": [
-        "Total"
-      ],
-      "Total paid": [
-        "Total plătit"
-      ],
-      "Users": [
-        "Utilizatori"
       ]
     },
     "Title; create calendar modal": {
@@ -14007,23 +13966,8 @@
       ]
     },
     "vpn_2step: billing": {
-      "${ billedText }, renews on ${ formattedEndTime }": [
-        "${ billedText }, reînnoit la ${ formattedEndTime }"
-      ],
-      "Billed every 15 months": [
-        "Facturat la 15 luni"
-      ],
-      "Billed every 2 years": [
-        "Facturat la doi ani"
-      ],
-      "Billed every 30 months": [
-        "Facturat la 30 de luni"
-      ],
       "Billed monthly": [
         "Facturat lunar"
-      ],
-      "Billed yearly": [
-        "Facturat anual"
       ]
     },
     "vpn_2step: discount": {

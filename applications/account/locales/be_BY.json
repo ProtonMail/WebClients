@@ -1084,9 +1084,6 @@
       ]
     },
     "Action subscription": {
-      "Manage": [
-        "Кіраваць"
-      ],
       "Reactivate": [
         "Актываваць паўторна"
       ]
@@ -1297,11 +1294,6 @@
     "Baseline in trial plan": {
       "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "${ mailPlus }: пошта і каляндар з акцэнтам на прыватнасць, як рашэнне для штодзённых задач камунікацыі."
-      ]
-    },
-    "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "Падоўжыцца аўтаматычна ${ formattedEndTime }"
       ]
     },
     "Billing cycle option": {
@@ -4420,11 +4412,11 @@
       "Allow platform keys": [
         "Дазволіць ключы платформы"
       ],
+      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
+        "Дазваляе вам рэгістраваць убудаваныя ключы бяспекі (такія, як Windows Hello, Touch ID, Face ID, або ўбудаваны TPM)"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Вы сапраўды хочаце выдаліць ключ бяспекі ${ name }?"
-      ],
-      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
-        "Калі ўключана, то гэта дазваляе рэгістраваць убудаваныя прылады доступу (такія, як Windows Hello, Touch ID, Face ID, або ўбудаваны TPM) у дадатак да знешніх апаратных ключоў бяспекі"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Устаўце ключ бяспекі, які звязаны з вашым уліковым запісам ${ BRAND_NAME }."
@@ -5871,7 +5863,7 @@
         "Штогод (карыстальніцкае)"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Наладзьце знешні выгляд праграм ${ BRAND_NAME }"
+        "Наладзьце вонкавы выгляд праграм ${ BRAND_NAME }"
       ],
       "Daily": [
         "Штодзень"
@@ -7313,9 +7305,6 @@
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Вы можаце ўключыць журнал аўтэнтыфікацыі, каб бачыць у які час і з якога IP-адраса ажыццяўляўся доступ да ўліковага запісу. Мы будзем запісваць IP-адрасы, якія мелі доступ да ўліковага запісу, а таксама час наведвання і няўдалыя спробы ўваходу."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Вы зможаце адразу разблакіраваць налады вышэй дадаўшы ${ specificCountryCount } да нумара IP-адрасоў у вашым тарыфным плане, або звязацца з намі для атрымання індывідуальнага рашэння."
-      ],
       "You can import one data type at a time.": [
         "Вы можаце імпартаваць адзін тып даных за раз."
       ],
@@ -7528,9 +7517,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша падпіска кіруецца Mozilla. Звяжыцеся са службай падтрымкі Mozilla."
-      ],
-      "Your subscription will renew automatically on ${ renewalTime }.": [
-        "Ваша падпіска будзе падоўжана аўтаматычна ${ renewalTime }."
       ]
     },
     "info": {
@@ -9910,6 +9896,12 @@
       "Sign in as user": [
         "Увайсці як карыстальнік"
       ],
+      "SMTP submission": [
+        "Адпраўка па SMTP"
+      ],
+      "SMTP submission for select organizations": [
+        "Адпраўка па SMTP для выбранай арганізацыі"
+      ],
       "Split tunneling (Android and Windows)": [
         "Split Tunneling (Android і Windows)"
       ],
@@ -10337,6 +10329,9 @@
       "Share your files or folders with anyone by using secure, shareable links": [
         "Абагульвайце свае файлы або папкі з любымі карыстальнікамі ў інтэрнэце з дапамогай бяспечных спасылак"
       ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTP дазваляе староннім сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME }."
+      ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Адмыслова распрацаваная функцыя NetShield абароніць вашу прыладу і паскорыць прагляд старонак, дзякуючы блакіраванню рэкламы, праграм сачэння і шкодных праграм"
       ],
@@ -10378,6 +10373,9 @@
       ]
     },
     "new_plans: upgrade": {
+      "Included with ${ BRAND_NAME } for Business, ${ familyPlanName } and ${ mailProPlanName }.": [
+        "Функцыя даступна на тарыфным плане ${ BRAND_NAME } for Business, а таксама ${ familyPlanName } і ${ mailProPlanName }."
+      ],
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Пастаўляецца з ${ plus }, ${ bundle } i ${ BRAND_NAME } для бізнесу."
       ],
@@ -10959,6 +10957,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ appName } benefits": [
+        "Перавагі ${ appName }"
+      ],
       "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
         "${ PASS_APP_NAME } даступна ў выглядзе пашырэння ў дадатках Firefox."
       ],
@@ -12439,9 +12440,6 @@
       ],
       "Expiring": [
         "Тэрмін дзеяння"
-      ],
-      "Upcoming": [
-        "Надыходзячы"
       ]
     },
     "Success": {
@@ -13013,7 +13011,7 @@
         "Праграма"
       ],
       "Appearance": [
-        "Знешні выгляд"
+        "Вонкавы выгляд"
       ],
       "Apply filter to existing messages": [
         "Ужыць фільтр да існуючых паведамленняў"
@@ -13940,35 +13938,14 @@
       ]
     },
     "Title subscription": {
-      "Actions": [
-        "Дзеянні"
-      ],
-      "Duration": [
-        "Працягласць"
-      ],
       "End date": [
         "Дата завяршэння"
       ],
       "Plan": [
         "Тарыфны план"
       ],
-      "Servers": [
-        "Серверы"
-      ],
-      "Start date": [
-        "Дата пачатку"
-      ],
       "Status": [
         "Статус"
-      ],
-      "Total": [
-        "Агулам"
-      ],
-      "Total paid": [
-        "Агульны кошт"
-      ],
-      "Users": [
-        "Карыстальнікі"
       ]
     },
     "Title; create calendar modal": {
@@ -14309,23 +14286,8 @@
       ]
     },
     "vpn_2step: billing": {
-      "${ billedText }, renews on ${ formattedEndTime }": [
-        "${ billedText }, падоўжыцца ${ formattedEndTime }"
-      ],
-      "Billed every 15 months": [
-        "Аплачваецца кожныя 15 месяцаў"
-      ],
-      "Billed every 2 years": [
-        "Аплачваецца кожныя 2 гады"
-      ],
-      "Billed every 30 months": [
-        "Аплачваецца кожныя 30 месяцаў"
-      ],
       "Billed monthly": [
         "Аплачваецца штомесяц"
-      ],
-      "Billed yearly": [
-        "Аплачваецца штогод"
       ]
     },
     "vpn_2step: discount": {

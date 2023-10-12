@@ -1084,9 +1084,6 @@
       ]
     },
     "Action subscription": {
-      "Manage": [
-        "Spravovat"
-      ],
       "Reactivate": [
         "Opětovně aktivovat"
       ]
@@ -1297,11 +1294,6 @@
     "Baseline in trial plan": {
       "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "${ mailPlus }: řešení e-mailu a kalendáře pro každodenní komunikaci s ohledem na soukromí."
-      ]
-    },
-    "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "Obnoví se automaticky v ${ formattedEndTime }"
       ]
     },
     "Billing cycle option": {
@@ -4420,11 +4412,11 @@
       "Allow platform keys": [
         "Povolit klíče platformy"
       ],
+      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
+        "Umožňuje registrovat integrované bezpečnostní klíče (např. Windows Hello, Face ID, Touch ID nebo interní TPM)."
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Opravdu chcete odstranit bezpečnostní klíč ${ name }?"
-      ],
-      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
-        "Pokud je povolena, umožňuje kromě externích hardwarových bezpečnostních klíčů registrovat i vestavěná zařízení (například Windows Hello, TouchID, FaceID nebo interní TPM)."
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Vložte bezpečnostní klíč spojený s vaším účtem ${ BRAND_NAME }."
@@ -7313,9 +7305,6 @@
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Můžete zapnout zaznamenávání přihlášení, abyste měli přehled kdy a ze které IP adresy bylo přistoupeno k vašemu účtu. Budeme zaznamenávat IP adresu a čas přístupu k vašemu účtu, stejně jako nepovedená přihlášení."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Výše uvedené nastavení můžete okamžitě odemknout přidáním ${ specificCountryCount } k počtu IP adres ve vašem plánu nebo nás kontaktujte pro řešení na míru."
-      ],
       "You can import one data type at a time.": [
         "Importovat můžete vždy jeden typ dat."
       ],
@@ -7528,9 +7517,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Váš předplatné je spravováno Mozillou. Kontaktujte prosím Mozilla podporu."
-      ],
-      "Your subscription will renew automatically on ${ renewalTime }.": [
-        "Vaše předplatné bude automaticky obnoveno ${ renewalTime }."
       ]
     },
     "info": {
@@ -8945,6 +8931,11 @@
         "Expirováno"
       ]
     },
+    "Label to  inform a feature is only available on Beta": {
+      "Beta": [
+        "Beta"
+      ]
+    },
     "Label to change composer mode": {
       "Maximized": [
         "Maximalizované"
@@ -9905,6 +9896,12 @@
       "Sign in as user": [
         "Přihlasit se jako uživatel"
       ],
+      "SMTP submission": [
+        "Odesílání SMTP"
+      ],
+      "SMTP submission for select organizations": [
+        "Odesílání SMTP pro vybrané organizace"
+      ],
       "Split tunneling (Android and Windows)": [
         "Split Tunneling (Android a Windows)"
       ],
@@ -10332,6 +10329,9 @@
       "Share your files or folders with anyone by using secure, shareable links": [
         "Sdílejte své soubory nebo složky s kýmkoliv pomocí bezpečných odkazů ke sdílení"
       ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTP umožňuje službám nebo zařízením třetích stran odesílat e-maily prostřednictvím ${ MAIL_APP_NAME }."
+      ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "NetShield chrání Vaše zařízení a zrychluje prohlížení tím, že blokuje reklamy, sledovače a malware"
       ],
@@ -10373,6 +10373,9 @@
       ]
     },
     "new_plans: upgrade": {
+      "Included with ${ BRAND_NAME } for Business, ${ familyPlanName } and ${ mailProPlanName }.": [
+        "Včetně ${ BRAND_NAME } for Business, ${ familyPlanName } a ${ mailProPlanName }."
+      ],
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Dostupné v rámci ${ plus }, ${ bundle }, a ${ BRAND_NAME } pro Firmy."
       ],
@@ -10954,6 +10957,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ appName } benefits": [
+        "Výhody ${ appName }"
+      ],
       "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
         "${ PASS_APP_NAME } je k dispozici jako rozšíření prohlížeče Firefox Add-ons."
       ],
@@ -11500,6 +11506,9 @@
       ]
     },
     "session_recovery:available:action": {
+      "Cancel password reset": [
+        "Zrušit resetování hesla"
+      ],
       "Cancel reset": [
         "Zrušit resetování"
       ],
@@ -11527,6 +11536,12 @@
         "${ timeRemaining.inHours } hodiny",
         "${ timeRemaining.inHours } hodin",
         "${ timeRemaining.inHours } hodin"
+      ],
+      "Didn’t make this request?": [
+        "Nepodal jste tuto žádost?"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Pokud jste o obnovení hesla nepožádali, žádost nyní zrušte."
       ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
         "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inDays } den.",
@@ -11557,6 +11572,12 @@
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Nyní si můžete libovolně změnit heslo k účtu ${ boldEmail } po dobu ${ boldDaysRemaining }."
+      ],
+      "You can now reset your password": [
+        "Nyní můžete resetovat své heslo"
+      ],
+      "You can reset your password until ${ boldDate }.": [
+        "Své heslo můžete resetovat až do ${ boldDate }."
       ]
     },
     "session_recovery:available:link": {
@@ -11604,7 +11625,28 @@
         "změňte si teď své heslo"
       ]
     },
+    "session_recovery:disable:action": {
+      "Disable password reset": [
+        "Zakázat resetování hesla"
+      ]
+    },
+    "session_recovery:disable:info": {
+      "Make sure you have access to a recovery method.": [
+        "Ujistěte se, že máte přístup k metodě obnovení."
+      ],
+      "You will no longer be able to request a password reset from your account settings.": [
+        "V nastavení účtu již nebude možné požádat o obnovení hesla."
+      ]
+    },
+    "session_recovery:disable:title": {
+      "Disable password reset?": [
+        "Zakázat resetování hesla?"
+      ]
+    },
     "session_recovery:in_progress:action": {
+      "Cancel password reset": [
+        "Zrušit resetování hesla"
+      ],
       "Cancel request": [
         "Zrušit žádost"
       ],
@@ -11622,8 +11664,17 @@
         "Zbývá ${ gracePeriodHoursRemaining } hodin",
         "Zbývá ${ gracePeriodHoursRemaining } hodin"
       ],
+      "Didn’t make this request?": [
+        "Nepodal jste tuto žádost?"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Pokud jste o obnovení hesla nepožádali, žádost nyní zrušte."
+      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Pokud jste o obnovení hesla nepožádali, ihned zrušte tento požadavek."
+      ],
+      "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
+        "Obnovení hesla je k dispozici od ${ boldDate }. To vám dává čas na zrušení případných podvodných žádostí."
       ],
       "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
         "Požadavek na obnovení hesla (${ user.Email }). Heslo můžete změnit za ${ hoursRemaining } hodinu.",
@@ -11636,6 +11687,12 @@
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "Obdrželi jsme žádost o resetování hesla pro ${ boldEmail }."
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "Heslo si můžete změnit za ${ gracePeriodHoursRemaining } hodinu",
+        "Heslo si můžete změnit za ${ gracePeriodHoursRemaining } hodiny",
+        "Heslo si můžete změnit za ${ gracePeriodHoursRemaining } hodin",
+        "Heslo si můžete změnit za ${ gracePeriodHoursRemaining } hodin"
       ]
     },
     "session_recovery:in_progress:link": {
@@ -11648,7 +11705,27 @@
         "Vyžádáno resetování hesla"
       ]
     },
+    "session_recovery:initiation:action": {
+      "Got it": [
+        "Rozumím"
+      ],
+      "Request password reset": [
+        "Požádat o resetování hesla"
+      ],
+      "Use recovery method": [
+        "Použít metodu obnovení"
+      ]
+    },
     "session_recovery:initiation:info": {
+      "For security reasons, you’ll have to wait **72 hours** before you can change your password.": [
+        "Z bezpečnostních důvodů budete muset počkat **72 hodin**, než si budete moci heslo změnit."
+      ],
+      "If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.": [
+        "Pokud máte nastavenou **metodu obnovení**, zkuste místo toho obnovit účet. To vám umožní heslo ihned změnit."
+      ],
+      "We will contact you again when the password reset is available.": [
+        "Až bude resetování hesla k dispozici, budeme vás znovu kontaktovat."
+      ],
       "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
         "Stav žádosti můžete kdykoli zkontrolovat v části ${ accountAndPasswordSectionLink } nastavení."
       ]
@@ -11656,6 +11733,36 @@
     "session_recovery:initiation:link": {
       "account and password section": [
         "sekce účtu a hesla"
+      ]
+    },
+    "session_recovery:initiation:notification": {
+      "Password reset confirmed": [
+        "Resetování hesla potvrzeno"
+      ]
+    },
+    "session_recovery:initiation:title": {
+      "Request password reset?": [
+        "Požádat o resetování hesla?"
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "Heslo budete moci resetovat za ${ gracePeriodHoursRemaining } hodinu",
+        "Heslo budete moci resetovat za ${ gracePeriodHoursRemaining } hodiny",
+        "Heslo budete moci resetovat za ${ gracePeriodHoursRemaining } hodin",
+        "Heslo budete moci resetovat za ${ gracePeriodHoursRemaining } hodin"
+      ]
+    },
+    "session_recovery:settings:action": {
+      "Allow password reset from settings": [
+        "Povolit obnovení hesla z nastavení"
+      ],
+      "Request a password reset from your Account settings. No recovery method needed.": [
+        "V nastavení účtu si vyžádejte obnovení hesla. Obnovení hesla není nutné."
+      ],
+      "Request password reset": [
+        "Požádat o resetování hesla"
+      ],
+      "To disallow password reset, you must have a recovery method set up.": [
+        "Chcete-li zakázat obnovení hesla, musíte mít nastavenou metodu obnovení."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -11694,6 +11801,19 @@
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
         "Odhlásit se bez resetování hesla?"
+      ]
+    },
+    "session_recovery:status:info": {
+      "Available": [
+        "K dispozici"
+      ],
+      "Pending": [
+        "Čekající"
+      ]
+    },
+    "session_recovery:status:title": {
+      "Password reset request": [
+        "Žádost o resetování hesla"
       ]
     },
     "Settings description": {
@@ -12320,9 +12440,6 @@
       ],
       "Expiring": [
         "Vypršení platnosti"
-      ],
-      "Upcoming": [
-        "Nadcházející"
       ]
     },
     "Success": {
@@ -12878,6 +12995,9 @@
       "Add users": [
         "Přidat uživatele"
       ],
+      "Address and key verification": [
+        "Ověření adresy a klíče"
+      ],
       "Allocate storage": [
         "Přiřadit úložiště"
       ],
@@ -13412,6 +13532,9 @@
       "Password and keys": [
         "Heslo a klíče"
       ],
+      "Password reset": [
+        "Reset hesla"
+      ],
       "Pay invoice": [
         "Zaplatit fakturu"
       ],
@@ -13815,35 +13938,14 @@
       ]
     },
     "Title subscription": {
-      "Actions": [
-        "Akce"
-      ],
-      "Duration": [
-        "Doba trvání"
-      ],
       "End date": [
         "Datum ukončení"
       ],
       "Plan": [
         "Tarif"
       ],
-      "Servers": [
-        "Servery"
-      ],
-      "Start date": [
-        "Datum zahájení"
-      ],
       "Status": [
         "Stav"
-      ],
-      "Total": [
-        "Celkem"
-      ],
-      "Total paid": [
-        "Celkem zaplaceno"
-      ],
-      "Users": [
-        "Uživatelé"
       ]
     },
     "Title; create calendar modal": {
@@ -13972,6 +14074,9 @@
       ],
       "This feature is only available for paid users": [
         "Tato funkce je k dispozici pouze uživatelům s prémiovým účtem"
+      ],
+      "This feature is only available on Beta": [
+        "Tato funkce je k dispozici pouze ve verzi Beta"
       ],
       "This key cannot be used for encryption": [
         "Tento klíč nelze použít pro šifrování"
@@ -14181,23 +14286,8 @@
       ]
     },
     "vpn_2step: billing": {
-      "${ billedText }, renews on ${ formattedEndTime }": [
-        "${ billedText }, obnoví se ${ formattedEndTime }"
-      ],
-      "Billed every 15 months": [
-        "Účtováno každých 15 měsíců"
-      ],
-      "Billed every 2 years": [
-        "Účtováno každé 2 roky"
-      ],
-      "Billed every 30 months": [
-        "Účtováno každých 30 měsíců"
-      ],
       "Billed monthly": [
         "Účtováno měsíčně"
-      ],
-      "Billed yearly": [
-        "Účtováno ročně"
       ]
     },
     "vpn_2step: discount": {

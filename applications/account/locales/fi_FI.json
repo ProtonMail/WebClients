@@ -1084,9 +1084,6 @@
       ]
     },
     "Action subscription": {
-      "Manage": [
-        "Hallitse"
-      ],
       "Reactivate": [
         "Uudelleenaktivoi"
       ]
@@ -1294,8 +1291,12 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "Uudistuu automaattisesti ${ formattedEndTime }"
+      "${ n } month": [
+        "${ n } kuukaudeksi",
+        "${ n } kuukaudeksi"
+      ],
+      "Renews automatically for ${ renewPrice }, for ${ renewalLength }": [
+        "Uudistuu automaattisesti ${ renewalLength } hintaan ${ renewPrice } ."
       ]
     },
     "Billing cycle option": {
@@ -4378,11 +4379,11 @@
       "Allow platform keys": [
         "Salli alustojen avaimet"
       ],
+      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
+        "Mahdollistaa sisäänrakennettujen suojausavaimien käyttämisen (esim. Windows Hello, Face ID, Touch ID tai sisäiset TPM-piirit)"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Haluatko varmasti poistaa todennuslaitteen ${ name }?"
-      ],
-      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
-        "Sallii laitteiden sisäänrakennetut todennusratkaisut (kuten Windows Hello, Touch ID, Face ID tai sisäinen TPM) ulkoisten todennuslaitteiden lisäksi."
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Liitä ${ BRAND_NAME }-tiliisi liitetty todennuslaite."
@@ -5178,7 +5179,7 @@
         "Käynnissä"
       ],
       "Paused": [
-        "Tauotettu"
+        "Keskeytetty"
       ],
       "Started": [
         "Aloitettu"
@@ -6621,6 +6622,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Koska olet uskollinen käyttäjä, tililläsi on lisäominaisuuksia."
       ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "SMTP:n avulla ulkoiset palvelut ja laitteet voivat lähettää sähköpostiviestejä ${ MAIL_APP_NAME }in välityksellä käyttäen omia verkkotunnuksiasi. Ominaisuus on vain omia verkkotunnuksiaan käyttävien ${ BRAND_NAME } for Business -asiakkaiden käytettävissä."
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP-lähetys mahdollistaa sähköpostin lähettämisen ulkoisten palvelujen tai laitteiden ${ MAIL_APP_NAME }n avulla omasta verkkotunnuksestasi. Saadaksesi toiminnon käyttöön, ${ createTicket } jossa kuvailet käyttötarpeen, mitä verkkotunnuksia haluat käyttää, sekä arviosi lähetettävistä sähköpostimääristä tunneittain ja päivittäin."
       ],
@@ -7167,9 +7171,6 @@
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Voit ottaa todennuslokin käyttöön nähdäksesi, milloin ja mistä IP-osoitteista tiliäsi on käytetty. Tallennamme tilin käytön IP-osoitteen, ajan sekä epäonnistuneet yritykset."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Voi vapauttaa yllä olevan määrityksen välittömästi korottamalla tilaukseesi sisältyvää IP-osoitemäärää ${ specificCountryCount } osoitteella tai ottaa yhteyttä asiakaspalveluumme räätälöityjä ratkaisuja varten."
-      ],
       "You can import one data type at a time.": [
         "Voit tuoda vain yhden tietotyypin kerrallaan."
       ],
@@ -7369,7 +7370,7 @@
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Tilaustasi hallinnoi Mozilla. Ota yhteyttä Mozillan tukeen."
       ],
-      "Your subscription will renew automatically on ${ renewalTime }.": [
+      "Your subscription will automatically renew on ${ renewalTime }.": [
         "Tilauksesi uudistuu automaattisesti ${ renewalTime }."
       ]
     },
@@ -9684,6 +9685,12 @@
       "Sign in as user": [
         "Kirjaudu käyttäjänä"
       ],
+      "SMTP submission": [
+        "SMTP-lähetys"
+      ],
+      "SMTP submission for select organizations": [
+        "SMTP-llähetys valituille organisaatioille"
+      ],
       "Split tunneling (Android and Windows)": [
         "Jaettu tunnelointi (Android ja Windows)"
       ],
@@ -10107,6 +10114,9 @@
       "Share your files or folders with anyone by using secure, shareable links": [
         "Jaa tiedostoja ja kansiota kenelle tahansa turvallisten, jaettavien linkkien välityksellä"
       ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTP:n avulla ulkoiset palvelut ja laitteet voivat lähettää sähköpostiviestejä ${ MAIL_APP_NAME }in välityksellä."
+      ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "NetShield suojaa laitettasi ja nopeuttaa selaustasi estämällä mainoksia, seurantoja ja haittaohjelmia"
       ],
@@ -10148,6 +10158,9 @@
       ]
     },
     "new_plans: upgrade": {
+      "Included with ${ BRAND_NAME } for Business, ${ familyPlanName } and ${ mailProPlanName }.": [
+        "Sisältyy ${ BRAND_NAME } for Business, ${ familyPlanName } ja ${ mailProPlanName } -tilauksiin."
+      ],
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Sisältyy ${ plus }-, ${ bundle }- ja ${ BRAND_NAME } for Business -tilauksiin."
       ],
@@ -10711,6 +10724,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ appName } benefits": [
+        "${ appName } -edut"
+      ],
       "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
         "${ PASS_APP_NAME } on saatavilla selainlaajennuksena Firefox Add-ons -sivustolta."
       ],
@@ -12125,9 +12141,6 @@
       ],
       "Expiring": [
         "Päättyy"
-      ],
-      "Upcoming": [
-        "Tulossa"
       ]
     },
     "Success": {
@@ -13602,35 +13615,14 @@
       ]
     },
     "Title subscription": {
-      "Actions": [
-        "Toiminnot"
-      ],
-      "Duration": [
-        "Kesto"
-      ],
       "End date": [
         "Päättymispäivä"
       ],
       "Plan": [
         "Tilaus"
       ],
-      "Servers": [
-        "Palvelimet"
-      ],
-      "Start date": [
-        "Aloituspäivä"
-      ],
       "Status": [
         "Tila"
-      ],
-      "Total": [
-        "Yhteensä"
-      ],
-      "Total paid": [
-        "Maksettu yhteensä"
-      ],
-      "Users": [
-        "Käyttäjät"
       ]
     },
     "Title; create calendar modal": {
@@ -13957,23 +13949,8 @@
       ]
     },
     "vpn_2step: billing": {
-      "${ billedText }, renews on ${ formattedEndTime }": [
-        "${ billedText }, uusiutumispäivämäärä: ${ formattedEndTime }"
-      ],
-      "Billed every 15 months": [
-        "Laskutetaan 15 kuukauden välein"
-      ],
-      "Billed every 2 years": [
-        "Laskutetaan 2 vuoden välein"
-      ],
-      "Billed every 30 months": [
-        "Laskutetaan 30 kuukauden välein"
-      ],
       "Billed monthly": [
         "Laskutetaan kuukausittain"
-      ],
-      "Billed yearly": [
-        "Laskutetaan vuosittain"
       ]
     },
     "vpn_2step: discount": {
