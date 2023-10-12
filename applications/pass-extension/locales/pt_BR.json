@@ -29,15 +29,6 @@
       "Back": [
         "Voltar"
       ],
-      "Can edit": [
-        "Pode editar"
-      ],
-      "Can manage": [
-        "Pode gerenciar"
-      ],
-      "Can view": [
-        "Pode ver"
-      ],
       "Can't find your password manager? Please let us know!": [
         "Não consegue encontrar seu gerenciador de senhas? Entre em contato conosco."
       ],
@@ -181,9 +172,6 @@
       ],
       "Importing": [
         "Importando"
-      ],
-      "Invite people": [
-        "Convidar pessoas"
       ],
       "Join shared vault": [
         "Juntar ao cofre compartilhado"
@@ -653,6 +641,9 @@
       "Access your passwords on the go with our mobile apps.": [
         "Acesse suas senhas em qualquer lugar com nossos aplicativos móveis."
       ],
+      "Admin": [
+        "Administrador"
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "O alias \"${ item.aliasEmail }\" foi movido para a lixeira - ele deixará de encaminhar e-mails para a sua caixa de correio."
       ],
@@ -671,20 +662,14 @@
       "Autosaved on ${ submissionURL }": [
         "Salvo automaticamente em ${ submissionURL }"
       ],
-      "Can create, edit, delete and export items in this vault.": [
-        "Pode criar, editar, excluir e exportar itens para esse cofre."
+      "Can create, edit, delete, and export items in this vault.": [
+        "Pode criar, editar, excluir, e exportar itens para esse cofre."
       ],
-      "Can edit": [
-        "Pode editar"
+      "Can grant and revoke access to this vault, and delete it.": [
+        "Pode conceder ou revogar acesso para esse cofre e excluí-lo."
       ],
       "Can grant and revoke access to this vault.": [
         "Pode conceder ou revogar acesso para esse cofre."
-      ],
-      "Can manage": [
-        "Pode gerenciar"
-      ],
-      "Can view": [
-        "Pode ver"
       ],
       "Can view items in this vault.": [
         "Pode ver itens para esse cofre."
@@ -718,6 +703,9 @@
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Transfira suas senhas existentes para o ${ PASS_APP_NAME } de forma simples e rápida."
+      ],
+      "Editor": [
+        "Editor"
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Ative ${ PASS_APP_NAME } ao conectar a sua conta da ${ BRAND_NAME }"
@@ -788,6 +776,9 @@
       ],
       "Internet connection lost": [
         "Perda de conexão com a internet"
+      ],
+      "Invitation sent": [
+        "Convite enviado"
       ],
       "Invite successfully removed": [
         "Convite removido com sucesso"
@@ -862,9 +853,6 @@
       "Passwords older than 1 day are automatically deleted from history.": [
         "As senhas com mais de 1 dia serão automaticamente excluídas do histórico."
       ],
-      "Pending invitation": [
-        "Convite pendente"
-      ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Fixe o ${ PASS_APP_NAME } em sua barra de ferramentas"
       ],
@@ -897,9 +885,6 @@
       ],
       "Select the destination vault for each imported vault.": [
         "Selecione o cofre de destino para cada cofre importado."
-      ],
-      "Select the level of access this user will gain when they join your vault.": [
-        "Selecione o nível de acesso que este usuário terá ao entrar no seu cofre."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Os servidores estão inacessíveis. Tente novamente em alguns minutos"
@@ -946,9 +931,6 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Esta exportação não será criptografada e qualquer pessoa com acesso ao seu arquivo exportado poderá ver suas senhas. Por segurança, exclua-o após terminar de usá-lo."
-      ],
-      "This user will receive an invitation to join your '${ vaultName }' vault.": [
-        "Este usuário receberá um convite para juntar-se a seu cofre '${ vaultName }'."
       ],
       "Unable to copy to clipboard": [
         "Não é possível copiar para a área de transferência"
@@ -1093,6 +1075,9 @@
       "Autosave": [
         "Salvar automaticamente"
       ],
+      "Autosave vault": [
+        "Salvar automaticamente o cofre"
+      ],
       "Autosuggest": [
         "Sugestão automática"
       ],
@@ -1201,6 +1186,9 @@
       "Label": [
         "Marcador"
       ],
+      "Language": [
+        "Idioma"
+      ],
       "Last 2 weeks": [
         "Últimas 2 semanas"
       ],
@@ -1306,9 +1294,6 @@
       "Report a problem": [
         "Relatar um problema"
       ],
-      "Respond": [
-        "Responder"
-      ],
       "Restore all items": [
         "Restaurar todos os itens"
       ],
@@ -1320,6 +1305,9 @@
       ],
       "Select an email address": [
         "Selecione um endereço de e-mail"
+      ],
+      "Select preferred language": [
+        "Selecionar idioma preferido"
       ],
       "Select your password manager": [
         "Selecione o seu gerenciador de senhas"
@@ -1399,11 +1387,11 @@
       "Vault": [
         "Cofre"
       ],
-      "Vaults": [
-        "Cofres"
-      ],
       "Verification number": [
         "Número de verificação"
+      ],
+      "View details": [
+        "Ver detalhes"
       ],
       "View logs": [
         "Visualizar registros"
@@ -1579,20 +1567,17 @@
       "Permanently remove all items ?": [
         "Remover permanentemente todos os itens ?"
       ],
-      "Permissions": [
-        "Permissões"
-      ],
       "Pin the extension": [
         "Fixe a extensão"
       ],
       "Secure your data": [
         "Proteja seus dados"
       ],
+      "Set access level": [
+        "Definir nível de acesso"
+      ],
       "Share with": [
         "Compartilhar com"
-      ],
-      "Shared vault invitation": [
-        "Convite de cofre compartilhado"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Alterando para o ${ PASS_APP_NAME }?"
@@ -1620,6 +1605,9 @@
       ],
       "Use my email": [
         "Usar meu e-mail"
+      ],
+      "Vault shared with you": [
+        "Cofre compartilhado com você"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Boas-vindas ao ${ brandNameJSX }"

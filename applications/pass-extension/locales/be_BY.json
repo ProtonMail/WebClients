@@ -29,15 +29,6 @@
       "Back": [
         "Назад"
       ],
-      "Can edit": [
-        "Можа рэдагаваць"
-      ],
-      "Can manage": [
-        "Можа кіраваць"
-      ],
-      "Can view": [
-        "Можа праглядаць"
-      ],
       "Can't find your password manager? Please let us know!": [
         "Не можаце знайсці свой менеджар пароляў? Паведаміце нам пра гэта!"
       ],
@@ -181,9 +172,6 @@
       ],
       "Importing": [
         "Імпартаванне"
-      ],
-      "Invite people": [
-        "Запрасіць людзей"
       ],
       "Join shared vault": [
         "Далучыцца да абагуленага сховішча"
@@ -366,6 +354,9 @@
       ],
       "Cannot create alias (${ error }).": [
         "Немагчыма стварыць псеўданімы (${ error })."
+      ],
+      "Cannot send invitation to this address at the moment": [
+        "У дадзены момант немагчыма адправіць запрашэнне на гэты адрас"
       ],
       "Could not leave vault.": [
         "Не атрымалася выйсці са сховішча."
@@ -705,23 +696,11 @@
       "Autosaved on ${ submissionURL }": [
         "Аўтазахавана на ${ submissionURL }"
       ],
-      "Can create, edit, delete and export items in this vault.": [
-        "Можа ствараць, рэдагаваць, выдаляць і экспартаваць элементы ў гэтым сховішчы."
-      ],
-      "Can edit": [
-        "Можа рэдагаваць"
-      ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Можа даваць і адклікаць дазвол на доступ да гэтага сховішча, а таксама выдаляць яго."
       ],
       "Can grant and revoke access to this vault.": [
         "Можа даваць і адклікаць дазвол на доступ да гэтага сховішча."
-      ],
-      "Can manage": [
-        "Можа кіраваць"
-      ],
-      "Can view": [
-        "Можа праглядаць"
       ],
       "Can view items in this vault.": [
         "Можа праглядаць элементы ў гэтым сховішчы."
@@ -906,9 +885,6 @@
       "Passwords older than 1 day are automatically deleted from history.": [
         "Паролі старэйшыя за 1 дзень аўтаматычна выдаляюцца з гісторыі."
       ],
-      "Pending invitation": [
-        "Запрашэнне, якое чакае адказу"
-      ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Замацаваць ${ PASS_APP_NAME } на панэлі інструментаў"
       ],
@@ -941,9 +917,6 @@
       ],
       "Select the destination vault for each imported vault.": [
         "Выберыце канчатковае сховішча для кожнага імпартаванага сховішча."
-      ],
-      "Select the level of access this user will gain when they join your vault.": [
-        "Выберыце ўзровень доступу, які атрымае гэты карыстальнік пасля далучэння да вашага сховішча."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недаступны. Паспрабуйце яшчэ раз праз некалькі хвілін"
@@ -996,9 +969,6 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Гэта экспартаванне будзе незашыфравана, і кожны ў каго ёсць доступ да файла экспартаванага файла зможа ўбачыць вашы паролі. Для вашай бяспекі, мы раім адразу выдаліць яго пасля таго, як вы скарысталіся ім."
       ],
-      "This user will receive an invitation to join your '${ vaultName }' vault.": [
-        "Гэты карыстальнік атрымае запрашэнне на далучэнне да вашага сховішча '${ vaultName }'."
-      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Сховішча пакуль не з'яўляецца агульнадаступным. Запрасіце людзей, каб абагуліць яго з іншымі."
       ],
@@ -1041,6 +1011,9 @@
       "You are about to create:": [
         "Вы збіраецеся стварыць:"
       ],
+      "You cannot change the mailboxes for this alias.": [
+        "У вас няма магчымасці змяніць паштовыя скрыні для гэтага псеўданіма."
+      ],
       "You have ${ daysRemaining } day left in your trial period.": [
         "У вас застаўся ${ daysRemaining } дзень да канца выпрабавальнага перыяду",
         "У вас засталося ${ daysRemaining } дні да канца выпрабавальнага перыяду",
@@ -1067,9 +1040,6 @@
       ],
       "You're about to create": [
         "Вы збіраецеся стварыць"
-      ],
-      "You've been invited to a vault. Click here to see the invitation.": [
-        "Вас запрасілі далучыцца да сховішча. Націсніце тут, каб убачыць запрашэнне."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Ваш сеанс ${ PASS_APP_NAME } заблакіраваны"
@@ -1268,6 +1238,9 @@
       "Label": [
         "Метка"
       ],
+      "Language": [
+        "Мова"
+      ],
       "Last 2 weeks": [
         "Апошнія 2 тыдні"
       ],
@@ -1373,9 +1346,6 @@
       "Report a problem": [
         "Паведаміць аб праблеме"
       ],
-      "Respond": [
-        "Адказ"
-      ],
       "Restore all items": [
         "Аднавіць усе элементы"
       ],
@@ -1465,9 +1435,6 @@
       ],
       "Vault": [
         "Сховішча"
-      ],
-      "Vaults": [
-        "Сховішчы"
       ],
       "Verification number": [
         "Праверачны нумар"
@@ -1646,9 +1613,6 @@
       "Permanently remove all items ?": [
         "Незваротна выдаліць элементы?"
       ],
-      "Permissions": [
-        "Дазволы"
-      ],
       "Pin the extension": [
         "Замацаваць пашырэнне"
       ],
@@ -1657,9 +1621,6 @@
       ],
       "Share with": [
         "Абагуліць з"
-      ],
-      "Shared vault invitation": [
-        "Запрашэнне да абагуленага сховішча"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Пераключыцца на ${ PASS_APP_NAME }?"
@@ -1739,9 +1700,6 @@
       ],
       "An error occured while exporting your data": [
         "Падчас экспартавання вашых даных адбылася памылка"
-      ],
-      "Are you sure you want to transfer vault ownership to ${ email }?": [
-        "Вы сапраўды хочаце перадаць правы ўласнасці свайго сховішча ${ email }?"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "У дадзены момант немагчыма атрымаць паштовыя скрыні для гэтага псеўданіма"
