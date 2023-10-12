@@ -51,7 +51,6 @@ describe('messageContent', () => {
     const plaintextReferenceMessageBody = 'Hello this is the reference message';
     const plaintextReplyContent = 'Hello this is the reply';
     const plainTextContent = `${plaintextReplyContent} ${data.protonSignature}
-------- Original Message -------
 On Friday, January 1st, 2021 at 12:00 AM, ${fromFields.fromName} <${fromFields.fromAddress}> wrote:
 
 
@@ -61,7 +60,6 @@ On Friday, January 1st, 2021 at 12:00 AM, ${fromFields.fromName} <${fromFields.f
     const htmlReplyContent = '<div>Hello this is the reply<div>';
     const htmlTextContent = `${htmlReplyContent} ${data.protonSignature}
 <div class=\"protonmail_quote\">
-        ------- Original Message -------<br>
         On Friday, January 1st, 2021 at 12:00 AM, ${fromFields.fromName} &lt;${fromFields.fromAddress}&gt; wrote:<br><br>
         <blockquote class=\"protonmail_quote\" type=\"cite\">
             <div>Hello this is the reference message</div>
