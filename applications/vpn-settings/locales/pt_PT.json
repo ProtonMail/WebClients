@@ -523,9 +523,6 @@
       ]
     },
     "Action subscription": {
-      "Manage": [
-        "Gerir"
-      ],
       "Reactivate": [
         "Reativar"
       ]
@@ -619,11 +616,6 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Isto desligará todos os routers e clientes que utilizam este certificado."
-      ]
-    },
-    "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "Renova automaticamente em ${ formattedEndTime }"
       ]
     },
     "Billing cycle option": {
@@ -1665,7 +1657,7 @@
         "A subscrição é demasiado cara."
       ],
       "Switching to a different provider": [
-        "Mudar para outro fornecedor"
+        "Mudança para um fornecedor diferente"
       ],
       "Temporary need, may come back in the future": [
         "Trata-se de um requisito pontual de que poderei vir a necessitar no futuro."
@@ -3569,9 +3561,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Pode editar isto uma vez para garantir o endereço de e-mail correto para verificação."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Pode desbloquear imediatamente a configuração acima ao adicionar ${ specificCountryCount } ao número de endereços IP no seu plano ou contactar-nos para soluções personalizadas."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova ligações de calendários partilhados e qualquer utilizador do ${ BRAND_NAME } com quem partilhou os seus calendários antes de cancelar a sua assinatura do${ MAIL_SHORT_APP_NAME }.",
         "Pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova ligações de calendários partilhados e qualquer utilizador do ${ BRAND_NAME } com quem partilhou os seus calendários antes de cancelar a sua assinatura do${ MAIL_SHORT_APP_NAME }."
@@ -3687,9 +3676,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "A sua subscrição é gerida pela Mozilla. Contacte o suporte da Mozilla."
-      ],
-      "Your subscription will renew automatically on ${ renewalTime }.": [
-        "A sua subscrição irá renovar automaticamente em ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -5555,6 +5541,18 @@
         "a criar"
       ]
     },
+    "session_recovery:in_progress:info": {
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "Pode alterar a sua palavra-passe em ${ gracePeriodHoursRemaining } hora.",
+        "Pode alterar a sua palavra-passe em ${ gracePeriodHoursRemaining } horas."
+      ]
+    },
+    "session_recovery:initiation:title": {
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "Pode redefinir a sua palavra-passe em ${ gracePeriodHoursRemaining } hora.",
+        "Pode redefinir a sua palavra-passe em ${ gracePeriodHoursRemaining } horas."
+      ]
+    },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Partilhado por ${ ownerName }"
@@ -5928,16 +5926,16 @@
         "Basta iniciar sessão na sua conta da Play Store e, em seguida, premir ${ subscriptions }."
       ],
       "Manage your subscription on ${ subscriptionManager }": [
-        "Gira a sua subscrição em ${ subscriptionManager }."
+        "Gere a sua subscrição em ${ subscriptionManager }."
       ],
       "Subscriptions": [
         "Subscrições"
       ],
       "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
-        "O seu plano foi adquirido através de uma aplicação Android. Por isso, para fazer alterações ao seu plano ou actualizar os seus dados de pagamento, terá de ir à Google Play Store."
+        "O seu plano foi adquirido através de uma aplicação Android. Por isso, para fazer alterações ao seu plano ou atualizar os seus dados de pagamento, terá de ir à Google Play Store."
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
-        "O seu plano foi adquirido através de uma aplicação iOS. Por isso, para fazer alterações ao seu plano ou actualizar os seus dados de pagamento, terá de ir à Apple App Store."
+        "O seu plano foi adquirido através de uma aplicação iOS. Por isso, para fazer alterações ao seu plano ou atualizar os seus dados de pagamento, terá de ir à Apple App Store."
       ]
     },
     "Subscription price": {
@@ -5982,9 +5980,6 @@
       ],
       "Expiring": [
         "Expiração"
-      ],
-      "Upcoming": [
-        "Próximo"
       ]
     },
     "Success": {
@@ -6816,35 +6811,14 @@
       ]
     },
     "Title subscription": {
-      "Actions": [
-        "Ações"
-      ],
-      "Duration": [
-        "Duração"
-      ],
       "End date": [
         "Data final"
       ],
       "Plan": [
         "Plano"
       ],
-      "Servers": [
-        "Servidores"
-      ],
-      "Start date": [
-        "Data inicial"
-      ],
       "Status": [
         "Estado"
-      ],
-      "Total": [
-        "Total"
-      ],
-      "Total paid": [
-        "Total pago"
-      ],
-      "Users": [
-        "Utilizadores"
       ]
     },
     "Tooltip": {
@@ -6950,23 +6924,8 @@
       ]
     },
     "vpn_2step: billing": {
-      "${ billedText }, renews on ${ formattedEndTime }": [
-        "${ billedText }, renova em ${ formattedEndTime }"
-      ],
-      "Billed every 15 months": [
-        "Faturação a cada 15 meses"
-      ],
-      "Billed every 2 years": [
-        "Faturação a cada 2 anos"
-      ],
-      "Billed every 30 months": [
-        "Faturação a cada 30 meses"
-      ],
       "Billed monthly": [
         "Faturação mensal"
-      ],
-      "Billed yearly": [
-        "Faturação anual"
       ]
     },
     "vpn_2step: discount": {

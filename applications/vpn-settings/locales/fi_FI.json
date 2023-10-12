@@ -532,9 +532,6 @@
       ]
     },
     "Action subscription": {
-      "Manage": [
-        "Hallitse"
-      ],
       "Reactivate": [
         "Uudelleenaktivoi"
       ]
@@ -634,8 +631,12 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "Uudistuu automaattisesti ${ formattedEndTime }"
+      "${ n } month": [
+        "${ n } kuukaudeksi",
+        "${ n } kuukaudeksi"
+      ],
+      "Renews automatically for ${ renewPrice }, for ${ renewalLength }": [
+        "Uudistuu automaattisesti ${ renewalLength } hintaan ${ renewPrice } ."
       ]
     },
     "Billing cycle option": {
@@ -2308,11 +2309,11 @@
       "Allow platform keys": [
         "Salli alustojen avaimet"
       ],
+      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
+        "Mahdollistaa sisäänrakennettujen suojausavaimien käyttämisen (esim. Windows Hello, Face ID, Touch ID tai sisäiset TPM-piirit)"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Haluatko varmasti poistaa todennuslaitteen ${ name }?"
-      ],
-      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
-        "Sallii laitteiden sisäänrakennetut todennusratkaisut (kuten Windows Hello, Touch ID, Face ID tai sisäinen TPM) ulkoisten todennuslaitteiden lisäksi."
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Liitä ${ BRAND_NAME }-tiliisi liitetty todennuslaite."
@@ -3584,9 +3585,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Voit muokata tätä kerran varmistaaksesi, että sähköpostiosoite on oikea vahvistusta varten."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Voi vapauttaa yllä olevan määrityksen välittömästi korottamalla tilaukseesi sisältyvää IP-osoitemäärää ${ specificCountryCount } osoitteella tai ottaa yhteyttä asiakaspalveluumme räätälöityjä ratkaisuja varten."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenterin. Poista ennen ${ MAIL_SHORT_APP_NAME }-tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjä, jolle olet jakanut kalentereitasi.",
         "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenteria. Poista ennen ${ MAIL_SHORT_APP_NAME }-tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjät, joille olet jakanut kalentereitasi."
@@ -3703,7 +3701,7 @@
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Tilaustasi hallinnoi Mozilla. Ota yhteyttä Mozillan tukeen."
       ],
-      "Your subscription will renew automatically on ${ renewalTime }.": [
+      "Your subscription will automatically renew on ${ renewalTime }.": [
         "Tilauksesi uudistuu automaattisesti ${ renewalTime }."
       ]
     },
@@ -4742,6 +4740,12 @@
       "Sign in as user": [
         "Kirjaudu käyttäjänä"
       ],
+      "SMTP submission": [
+        "SMTP-lähetys"
+      ],
+      "SMTP submission for select organizations": [
+        "SMTP-llähetys valituille organisaatioille"
+      ],
       "Split tunneling (Android and Windows)": [
         "Jaettu tunnelointi (Android ja Windows)"
       ],
@@ -5116,6 +5120,9 @@
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
         "Jaa tiedostoja ja kansiota kenelle tahansa turvallisten, jaettavien linkkien välityksellä"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTP:n avulla ulkoiset palvelut ja laitteet voivat lähettää sähköpostiviestejä ${ MAIL_APP_NAME }in välityksellä."
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "NetShield suojaa laitettasi ja nopeuttaa selaustasi estämällä mainoksia, seurantoja ja haittaohjelmia"
@@ -6245,9 +6252,6 @@
       ],
       "Expiring": [
         "Päättyy"
-      ],
-      "Upcoming": [
-        "Tulossa"
       ]
     },
     "Success": {
@@ -7079,35 +7083,14 @@
       ]
     },
     "Title subscription": {
-      "Actions": [
-        "Toiminnot"
-      ],
-      "Duration": [
-        "Kesto"
-      ],
       "End date": [
         "Päättymispäivä"
       ],
       "Plan": [
         "Tilaus"
       ],
-      "Servers": [
-        "Palvelimet"
-      ],
-      "Start date": [
-        "Aloituspäivä"
-      ],
       "Status": [
         "Tila"
-      ],
-      "Total": [
-        "Yhteensä"
-      ],
-      "Total paid": [
-        "Maksettu yhteensä"
-      ],
-      "Users": [
-        "Käyttäjät"
       ]
     },
     "Tooltip": {
@@ -7213,23 +7196,8 @@
       ]
     },
     "vpn_2step: billing": {
-      "${ billedText }, renews on ${ formattedEndTime }": [
-        "${ billedText }, uusiutumispäivämäärä: ${ formattedEndTime }"
-      ],
-      "Billed every 15 months": [
-        "Laskutetaan 15 kuukauden välein"
-      ],
-      "Billed every 2 years": [
-        "Laskutetaan 2 vuoden välein"
-      ],
-      "Billed every 30 months": [
-        "Laskutetaan 30 kuukauden välein"
-      ],
       "Billed monthly": [
         "Laskutetaan kuukausittain"
-      ],
-      "Billed yearly": [
-        "Laskutetaan vuosittain"
       ]
     },
     "vpn_2step: discount": {

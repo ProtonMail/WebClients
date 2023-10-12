@@ -1075,9 +1075,6 @@
       ]
     },
     "Action subscription": {
-      "Manage": [
-        "管理"
-      ],
       "Reactivate": [
         "重新啟用"
       ]
@@ -1279,11 +1276,6 @@
     "Baseline in trial plan": {
       "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "${ mailPlus }：隱私為首的郵件與行事曆解決方案，滿足您日常通訊所需。"
-      ]
-    },
-    "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "自動續期在${ formattedEndTime }"
       ]
     },
     "Billing cycle option": {
@@ -4331,9 +4323,6 @@
       "Are you sure you want to delete security key ${ name }?": [
         "您確定要永久刪除此安全性金鑰 ${ name } 嗎？"
       ],
-      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
-        "若啟用，其允許註冊內建裝置（如 Windows Hello、TouchID、FaceID 或內部 TPM）加上外部硬體安全金鑰"
-      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "插入連結到您 ${ BRAND_NAME } 帳號的安全金鑰。"
       ],
@@ -7062,9 +7051,6 @@
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "您可啟用認證登入以查看您的帳號何時被存取以及來自哪個 IP。我們將記錄存取帳號所使用的 IP 位址和時間，以及失敗的登入嘗試。"
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
-        "您可以立刻解鎖上方的設定，只要在您的方案中新增 ${ specificCountryCount } 個 IP 地址，或聯絡我們以取得量身打造的解決方案。"
-      ],
       "You can import one data type at a time.": [
         "您可以一次匯入一種資料類型。"
       ],
@@ -7256,9 +7242,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "您的訂閱是由 Mozilla 管理。請聯絡 Mozilla 支援。"
-      ],
-      "Your subscription will renew automatically on ${ renewalTime }.": [
-        "您的訂閱將於${ renewalTime }自動更新"
       ]
     },
     "info": {
@@ -11641,9 +11624,6 @@
       ],
       "Expiring": [
         "到期"
-      ],
-      "Upcoming": [
-        "即將到來"
       ]
     },
     "Success": {
@@ -13100,35 +13080,14 @@
       ]
     },
     "Title subscription": {
-      "Actions": [
-        "操作"
-      ],
-      "Duration": [
-        "為期"
-      ],
       "End date": [
         "結束日期"
       ],
       "Plan": [
         "方案"
       ],
-      "Servers": [
-        "伺服器"
-      ],
-      "Start date": [
-        "開始日期"
-      ],
       "Status": [
         "狀態"
-      ],
-      "Total": [
-        "總共"
-      ],
-      "Total paid": [
-        "付款總額"
-      ],
-      "Users": [
-        "使用者"
       ]
     },
     "Title; create calendar modal": {
@@ -13445,23 +13404,8 @@
       ]
     },
     "vpn_2step: billing": {
-      "${ billedText }, renews on ${ formattedEndTime }": [
-        "${ billedText }，續約日為 ${ formattedEndTime }"
-      ],
-      "Billed every 15 months": [
-        "15 個月繳制"
-      ],
-      "Billed every 2 years": [
-        "雙年繳制"
-      ],
-      "Billed every 30 months": [
-        "30 個月繳制"
-      ],
       "Billed monthly": [
         "月繳制"
-      ],
-      "Billed yearly": [
-        "年繳制"
       ]
     },
     "vpn_2step: discount": {

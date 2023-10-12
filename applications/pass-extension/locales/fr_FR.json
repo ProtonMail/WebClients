@@ -29,15 +29,6 @@
       "Back": [
         "Précédent"
       ],
-      "Can edit": [
-        "Modifier"
-      ],
-      "Can manage": [
-        "Gérer"
-      ],
-      "Can view": [
-        "Consulter"
-      ],
       "Can't find your password manager? Please let us know!": [
         "Vous ne trouvez pas votre gestionnaire de mots de passe ? Faites-le nous savoir."
       ],
@@ -182,8 +173,8 @@
       "Importing": [
         "Importer"
       ],
-      "Invite people": [
-        "Inviter des personnes"
+      "Invite others": [
+        "Inviter d'autres personnes"
       ],
       "Join shared vault": [
         "Rejoindre le coffre-fort partagé"
@@ -199,6 +190,15 @@
       ],
       "Lock extension": [
         "Verrouiller l'extension"
+      ],
+      "Make admin": [
+        "Définir comme administrateur"
+      ],
+      "Make editor": [
+        "Définir comme éditeur"
+      ],
+      "Make viewer": [
+        "Définir comme lecteur"
       ],
       "Manage access": [
         "Gérer l'accès"
@@ -280,6 +280,9 @@
       ],
       "Share": [
         "Partager"
+      ],
+      "Share vault": [
+        "Partager le coffre-fort"
       ],
       "Show": [
         "Afficher"
@@ -662,6 +665,9 @@
       "Access your passwords on the go with our mobile apps.": [
         "Accédez à vos mots de passe en déplacement grâce à nos applications mobiles."
       ],
+      "Admin": [
+        "Administrateur"
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "L'alias « ${ item.aliasEmail } » a été déplacé dans la corbeille, il ne transfèrera plus de messages vers votre messagerie."
       ],
@@ -680,23 +686,14 @@
       "Autosaved on ${ submissionURL }": [
         "Enregistré automatiquement sur ${ submissionURL }"
       ],
-      "Can create, edit, delete and export items in this vault.": [
+      "Can create, edit, delete, and export items in this vault.": [
         "Permet de créer, modifier, supprimer et exporter des éléments dans ce coffre-fort."
-      ],
-      "Can edit": [
-        "Modifier"
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Permet d'accorder et de révoquer l'accès à ce coffre-fort, ainsi que de le supprimer."
       ],
       "Can grant and revoke access to this vault.": [
         "Permet d'accorder et de révoquer l'accès à ce coffre-fort."
-      ],
-      "Can manage": [
-        "Gérer"
-      ],
-      "Can view": [
-        "Consulter"
       ],
       "Can view items in this vault.": [
         "Permet de consulter les éléments de ce coffre-fort."
@@ -730,6 +727,9 @@
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importez facilement vos mots de passe actuels dans ${ PASS_APP_NAME }."
+      ],
+      "Editor": [
+        "Éditeur"
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Activez ${ PASS_APP_NAME } en vous connectant à votre compte ${ BRAND_NAME }."
@@ -801,11 +801,17 @@
       "Internet connection lost": [
         "La connexion internet est perdue."
       ],
+      "Invitation sent": [
+        "L'invitation a été envoyée."
+      ],
       "Invite successfully removed": [
         "L'invitation a été supprimée."
       ],
       "Invite successfully resent": [
         "L'invitation a été renvoyée."
+      ],
+      "invites you to access items in": [
+        "vous invite à accéder à des éléments dans"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Vous semblez déjà connecté à ${ PASS_APP_NAME }. Si vous essayez de vous connecter avec un autre compte, déconnectez-vous d'abord de l'extension."
@@ -877,9 +883,6 @@
       "Passwords older than 1 day are automatically deleted from history.": [
         "Les mots de passe datant de plus d'un jour sont automatiquement supprimés de l'historique."
       ],
-      "Pending invitation": [
-        "Invitation en attente"
-      ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Épinglez ${ PASS_APP_NAME } à votre barre d'outils."
       ],
@@ -912,9 +915,6 @@
       ],
       "Select the destination vault for each imported vault.": [
         "Sélectionnez le coffre-fort de destination pour chaque coffre-fort importé."
-      ],
-      "Select the level of access this user will gain when they join your vault.": [
-        "Sélectionnez le niveau d'accès dont bénéficiera cet utilisateur en rejoignant votre coffre-fort."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Les serveurs sont inaccessibles, nous vous invitons à réessayer dans quelques minutes."
@@ -965,9 +965,6 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Cette exportation ne sera pas chiffrée et toute personne ayant accès au fichier exporté pourra voir vos mots de passe. Pour des raisons de sécurité, supprimez ce fichier après l'avoir utilisé."
       ],
-      "This user will receive an invitation to join your '${ vaultName }' vault.": [
-        "Cet utilisateur recevra une invitation à rejoindre votre coffre-fort « ${ vaultName } »."
-      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Ce coffre-fort n'est partagé avec personne pour le moment. Pour le partager avec d'autres personnes, invitez-les."
       ],
@@ -1004,6 +1001,9 @@
       "Verification code": [
         "Code de vérification"
       ],
+      "Viewer": [
+        "Lecteur"
+      ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Nous avons des difficultés à synchroniser les données sur votre espace de stockage local. Assurez-vous que vous disposez de suffisamment d'espace disque pour que ${ PASS_SHORT_APP_NAME } fonctionne correctement."
       ],
@@ -1017,8 +1017,14 @@
         "Votre période d'essai se termine dans ${ daysRemaining } jour.",
         "Votre période d'essai se termine dans ${ daysRemaining } jours."
       ],
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
+        "Vous avez dépassé le nombre de coffres-forts prévus dans votre abonnement. Les éléments peuvent uniquement être déplacés dans vos deux premiers coffres-forts. Changez d'abonnement pour pouvoir déplacer les éléments entre tous les coffres-forts."
+      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
         "Vous avez dépassé le nombre de coffres-forts prévus dans votre abonnement. Les éléments peuvent uniquement être déplacés vers votre coffre-fort principal. Changez d'abonnement pour pouvoir déplacer des éléments entre tous les coffres-forts."
+      ],
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
+        "Vous avez dépassé le nombre de coffres-forts prévus dans votre abonnement. Les nouveaux éléments peuvent uniquement être créés dans vos deux premiers coffres-forts. Changez d'abonnement pour pouvoir créer de nouveaux éléments dans tous les coffres-forts."
       ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
         "Vous avez dépassé le nombre de coffres-forts prévus dans votre abonnement. Les nouveaux éléments peuvent uniquement être créés dans votre coffre-fort principal. Changez d'abonnement pour pouvoir créer de nouveaux éléments dans tous les coffres-forts."
@@ -1038,8 +1044,8 @@
       "You're about to create": [
         "Vous êtes sur le point de créer"
       ],
-      "You've been invited to a vault. Click here to see the invitation.": [
-        "Vous avez reçu une invitation à un coffre-fort. Cliquez ici pour voir l'invitation."
+      "You're invited to a vault.": [
+        "Vous avez une invitation pour accéder à un coffre-fort."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Votre session ${ PASS_APP_NAME } est verrouillée."
@@ -1125,6 +1131,9 @@
       ],
       "Autosave": [
         "Enregistrement automatique"
+      ],
+      "Autosave vault": [
+        "Coffre-fort avec sauvegarde automatique"
       ],
       "Autosuggest": [
         "Suggestion automatique"
@@ -1234,6 +1243,9 @@
       "Label": [
         "Label"
       ],
+      "Language": [
+        "Langue"
+      ],
       "Last 2 weeks": [
         "Les 2 dernières semaines"
       ],
@@ -1339,9 +1351,6 @@
       "Report a problem": [
         "Signaler un bug"
       ],
-      "Respond": [
-        "Répondre"
-      ],
       "Restore all items": [
         "Restaurer tous les éléments"
       ],
@@ -1353,6 +1362,9 @@
       ],
       "Select an email address": [
         "Sélectionnez une adresse e-mail"
+      ],
+      "Select preferred language": [
+        "Sélectionnez la langue préférée"
       ],
       "Select your password manager": [
         "Sélectionnez votre gestionnaire de mots de passe"
@@ -1432,11 +1444,11 @@
       "Vault": [
         "Coffre-fort"
       ],
-      "Vaults": [
-        "Coffres-forts"
-      ],
       "Verification number": [
         "Numéro de vérification"
+      ],
+      "View details": [
+        "Afficher les informations"
       ],
       "View logs": [
         "Afficher les journaux"
@@ -1612,20 +1624,17 @@
       "Permanently remove all items ?": [
         "Voulez-vous définitivement supprimer tous les éléments ?"
       ],
-      "Permissions": [
-        "Autorisations"
-      ],
       "Pin the extension": [
         "Épinglez l'extension"
       ],
       "Secure your data": [
         "Sécurisez vos données"
       ],
+      "Set access level": [
+        "Définir le niveau d'accès"
+      ],
       "Share with": [
         "Partager avec"
-      ],
-      "Shared vault invitation": [
-        "Invitation au coffre-fort partagé"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Vous changez pour ${ PASS_APP_NAME } ?"
@@ -1653,6 +1662,9 @@
       ],
       "Use my email": [
         "Utiliser mon e-mail"
+      ],
+      "Vault shared with you": [
+        "Coffre-fort partagé avec vous"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Bienvenue dans ${ brandNameJSX }"
@@ -1705,9 +1717,6 @@
       ],
       "An error occured while exporting your data": [
         "Une erreur s'est produite pendant l'exportation de vos données."
-      ],
-      "Are you sure you want to transfer vault ownership to ${ email }?": [
-        "Voulez-vous vraiment transférer la propriété du coffre-fort à ${ email } ?"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Il n'est pas possible de récupérer les boites aux lettres de cet alias pour l'instant."
@@ -1772,6 +1781,9 @@
       "Title is required": [
         "Le titre est nécessaire."
       ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "Transférer la propriété de ce coffre-fort à ${ email } ?"
+      ],
       "Trash alias ?": [
         "Déplacer l'alias dans la corbeille ?"
       ],
@@ -1805,11 +1817,17 @@
       "Your plan does not allow you to create more aliases": [
         "Votre abonnement ne vous permet pas de créer plus d'alias."
       ],
+      "Your plan only allows you to autofill from your first two vaults": [
+        "Votre abonnement vous permet d'utiliser la fonctionnalité de remplissage automatique uniquement depuis vos deux premiers coffres-forts."
+      ],
       "Your plan only allows you to autofill from your primary vault": [
         "Votre abonnement actuel permet le remplissage automatique uniquement à partir de votre coffre-fort principal."
       ],
       "Your session was locked due to inactivity": [
         "Votre session a été verrouillée suite à une période d'inactivité."
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "Votre abonnement ne vous permet pas de créer plusieurs coffres-forts. Tous les éléments seront importés dans votre premier coffre-fort. Changez d'abonnement pour pouvoir importer dans plusieurs coffres-forts."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
         "Votre abonnement ne vous permet pas de créer plusieurs coffres-forts. Tous les éléments seront importés dans votre coffre-fort principal. Changez d'abonnement pour pouvoir importer dans plusieurs coffres-forts."

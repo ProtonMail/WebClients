@@ -29,15 +29,6 @@
       "Back": [
         "Geri"
       ],
-      "Can edit": [
-        "Düzenleyebilir"
-      ],
-      "Can manage": [
-        "Yönetebilir"
-      ],
-      "Can view": [
-        "Görüntüleyebilir"
-      ],
       "Can't find your password manager? Please let us know!": [
         "Parola yöneticinizi bulamadınız mı? Lütfen bize bildirin!"
       ],
@@ -182,8 +173,8 @@
       "Importing": [
         "İçe aktarılıyor"
       ],
-      "Invite people": [
-        "Kişileri davet et"
+      "Invite others": [
+        "Başkalarını davet edin"
       ],
       "Join shared vault": [
         "Paylaşılan kasaya eriş"
@@ -281,6 +272,9 @@
       "Share": [
         "Paylaş"
       ],
+      "Share vault": [
+        "Kasayı paylaş"
+      ],
       "Show": [
         "Göster"
       ],
@@ -366,6 +360,9 @@
       ],
       "Cannot create alias (${ error }).": [
         "Takma ad oluşturulamadı (${ error })."
+      ],
+      "Cannot send invitation to this address at the moment": [
+        "Şu anda bu adrese davetiye gönderilemiyor"
       ],
       "Could not leave vault.": [
         "Kasa bırakılamadı."
@@ -659,6 +656,9 @@
       "Access your passwords on the go with our mobile apps.": [
         "Mobil uygulamamız ile hareket halindeyken parolalarınıza erişin."
       ],
+      "Admin": [
+        "Yönetici"
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "\"${ item.aliasEmail }\" takma adı çöpe atıldı. Artık e-postaları gelen kutunuza iletmeyecek"
       ],
@@ -677,23 +677,14 @@
       "Autosaved on ${ submissionURL }": [
         "${ submissionURL } üzerinden otomatik olarak kaydedildi"
       ],
-      "Can create, edit, delete and export items in this vault.": [
+      "Can create, edit, delete, and export items in this vault.": [
         "Bu kasadaki ögeleri oluşturabilir, düzenleyebilir, silebilir ve dışa aktarabilir."
-      ],
-      "Can edit": [
-        "Düzenleyebilir"
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Bu kasaya erişme iznini verebilir, kaldırabilir ya da silebilir."
       ],
       "Can grant and revoke access to this vault.": [
         "Bu kasaya erişme iznini verebilir ya da kaldırabilir."
-      ],
-      "Can manage": [
-        "Yönetebilir"
-      ],
-      "Can view": [
-        "Görüntüleyebilir"
       ],
       "Can view items in this vault.": [
         "Bu kasadaki ögeleri görüntüleyebilir."
@@ -798,11 +789,17 @@
       "Internet connection lost": [
         "İnternet bağlantısı kesildi"
       ],
+      "Invitation sent": [
+        "Davet gönderildi"
+      ],
       "Invite successfully removed": [
         "Davet silindi"
       ],
       "Invite successfully resent": [
         "Davet yeniden gönderildi"
+      ],
+      "invites you to access items in": [
+        "sizi şu kasadaki ögelere erişmeye davet ediyor:"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Görünüşe göre ${ PASS_APP_NAME } uygulamasında zaten oturum açmışsınız. Farklı bir hesapla oturum açmaya çalışıyorsanız, lütfen önce eklentideki oturumunuzu kapatın."
@@ -874,9 +871,6 @@
       "Passwords older than 1 day are automatically deleted from history.": [
         "1 günden eski parolalar geçmişten otomatik olarak silinir."
       ],
-      "Pending invitation": [
-        "Bekleyen davet"
-      ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "${ PASS_APP_NAME } uygulamasını araç çubuğuna sabitleyin"
       ],
@@ -909,9 +903,6 @@
       ],
       "Select the destination vault for each imported vault.": [
         "İçe aktarılacak her kasanın hedef kasasını seçin."
-      ],
-      "Select the level of access this user will gain when they join your vault.": [
-        "Daveti kabul ettiğinde bu kullanıcının kasanıza erişme düzeyini seçin."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"
@@ -962,9 +953,6 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Bu dışa aktarma şifrelenmemiş olacak ve dışarıya aktarılmış dosyanıza erişebilen herhangi biri parolalarınızı görebilecek. Güvenlik için lütfen işiniz bittikten sonra dosyayı silin."
       ],
-      "This user will receive an invitation to join your '${ vaultName }' vault.": [
-        "Bu kullanıcıya, '${ vaultName }' kasanıza katılma daveti gönderilecek."
-      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Kasa şu anda hiç kimseyle paylaşılmıyor. Kişişleri çağırarak başkalarıyla paylaşın."
       ],
@@ -1007,9 +995,15 @@
       "You are about to create:": [
         "Şunu oluşturmak üzeresiniz:"
       ],
+      "You cannot change the mailboxes for this alias.": [
+        "Bu takma adın e-posta kutularını değiştiremezsiniz."
+      ],
       "You have ${ daysRemaining } day left in your trial period.": [
         "Deneme sürenizin bitmesine ${ daysRemaining } gün kaldı.",
         "Deneme sürenizin bitmesine ${ daysRemaining } gün kaldı."
+      ],
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
+        "Abonelik tarifenizin izin verdiği kasa sayısını aştınız. Yeni ögeler yalnızca ilk iki kasanıza taşınabilir. Ögeleri tüm kasalarınız arasında taşıyabilmek için aboneliğinizi yükseltin."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
         "Abonelik tarifenizin izin verdiği kasa sayısına ulaştınız. Ögeler yalnızca birincil kasanıza taşınabilir. Ögeleri tüm kasalarınız arasında taşıyabilmek için abonelik tarifenizi yükseltin."
@@ -1032,8 +1026,8 @@
       "You're about to create": [
         "Şunu oluşturmak üzeresiniz"
       ],
-      "You've been invited to a vault. Click here to see the invitation.": [
-        "Bir kasaya davet edildiniz. Daveti görmek için buraya tıklayın."
+      "You're invited to a vault.": [
+        "Bir kasaya erişmeye davet edildiniz."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "${ PASS_APP_NAME } oturumunuz kilitlendi"
@@ -1228,6 +1222,9 @@
       "Label": [
         "Etiket"
       ],
+      "Language": [
+        "Dil"
+      ],
       "Last 2 weeks": [
         "Son 2 hafta"
       ],
@@ -1333,9 +1330,6 @@
       "Report a problem": [
         "Bir sorun bildireceğim"
       ],
-      "Respond": [
-        "Yanıtla"
-      ],
       "Restore all items": [
         "Tüm ögeleri geri yükle"
       ],
@@ -1347,6 +1341,9 @@
       ],
       "Select an email address": [
         "Bir e-posta adresi seçin"
+      ],
+      "Select preferred language": [
+        "Tercih edilen dili seçin"
       ],
       "Select your password manager": [
         "Parola yöneticinizi seçin"
@@ -1426,11 +1423,11 @@
       "Vault": [
         "Kasa"
       ],
-      "Vaults": [
-        "Kasalar"
-      ],
       "Verification number": [
         "Güvenlik kodu"
+      ],
+      "View details": [
+        "Ayrıntıları görüntüle"
       ],
       "View logs": [
         "Günlükleri görüntüle"
@@ -1606,20 +1603,17 @@
       "Permanently remove all items ?": [
         "Tüm ögeler kalıcı olarak silinsin mi?"
       ],
-      "Permissions": [
-        "İzinler"
-      ],
       "Pin the extension": [
         "Eklentiyi sabitle"
       ],
       "Secure your data": [
         "Verilerinizi koruyun"
       ],
+      "Set access level": [
+        "Erişim seviyesini belirle"
+      ],
       "Share with": [
         "Şununla paylaş"
-      ],
-      "Shared vault invitation": [
-        "Kasa paylaşma daveti"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME } uygulamasına geçilsin mi?"
@@ -1700,9 +1694,6 @@
       "An error occured while exporting your data": [
         "Verileriniz dışa aktarılırken bir sorun çıktı"
       ],
-      "Are you sure you want to transfer vault ownership to ${ email }?": [
-        "Kasanızın sahipliğini ${ email } üzerine aktarmak istediğinize emin misiniz?"
-      ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Bu takma adın e-posta kutuları şu anda alınamadı"
       ],
@@ -1766,6 +1757,9 @@
       "Title is required": [
         "Başlığın yazılması zorunludur"
       ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "Bu kasayı ${ email } adresine devretmek istediğinizden emin misiniz?"
+      ],
       "Trash alias ?": [
         "Takma ad çöpe atılsın mı?"
       ],
@@ -1799,11 +1793,17 @@
       "Your plan does not allow you to create more aliases": [
         "Tarifenizin sınırları daha fazla takma ad oluşturmanıza izin vermiyor"
       ],
+      "Your plan only allows you to autofill from your first two vaults": [
+        "Tarifeniz yalnızca ilk iki kasanızdan otomatik doldurmaya izin veriyor"
+      ],
       "Your plan only allows you to autofill from your primary vault": [
         "Tarifeniz yalnızca birincil kasadan otomatik doldurmaya izin veriyor"
       ],
       "Your session was locked due to inactivity": [
         "Bir süredir işlem yapmadığınızdan oturumunuz kilitlendi"
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "Abonelik tarifeniz birden fazla kasa oluşturmanıza izin vermiyor. Tüm ögeler ilk kasanıza aktarılacak. İçe aktarımda birden fazla kasa kullanabilmek için abonelik tarifenizi yükseltin."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
         "Abonelik tarifeniz birden fazla kasa oluşturmanıza izin vermiyor. Tüm ögeler birincil kasanız içine aktarılacak. İçe aktarımda birden fazla kasa kullanabilmek için abonelik tarifenizi yükseltin."

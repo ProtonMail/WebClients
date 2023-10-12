@@ -532,9 +532,6 @@
       ]
     },
     "Action subscription": {
-      "Manage": [
-        "Administrer"
-      ],
       "Reactivate": [
         "Genaktiver"
       ]
@@ -605,11 +602,6 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Dette vil afbryde forbindelsen til alle routere og klienter, der bruger dette certifikat."
-      ]
-    },
-    "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "Fornyes automatisk ${ formattedEndTime }"
       ]
     },
     "Billing cycle option": {
@@ -3451,9 +3443,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Du kan redigere dette én gang for at sikre den korrekte e-mailadresse til bekræftelse."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Du kan straks låse ovenstående opsætning op ved at tilføje ${ specificCountryCount } til antallet af IP-adresser i dit abonnement, eller kontakte os for skræddersyede løsninger."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalender. Fjern venligst delte kalenderlinks og enhver ${ BRAND_NAME } bruger, som du har delt dine kalendere med, før du annullerer dit ${ MAIL_SHORT_APP_NAME }-abonnement.",
         "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalendere. Fjern venligst delte kalenderlinks og enhver ${ BRAND_NAME } bruger, som du har delt dine kalendere med, før du annullerer dit ${ MAIL_SHORT_APP_NAME }-abonnement."
@@ -3569,9 +3558,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Dit abonnement håndteres af Mozilla. Kontakt venligst Mozilla-support."
-      ],
-      "Your subscription will renew automatically on ${ renewalTime }.": [
-        "Dit abonnement vil automatisk blive fornyet ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -5383,6 +5369,10 @@
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "Vi har modtaget en anmodning om nulstilling af adgangskode for ${ boldEmail }."
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "Du kan ændre din adgangskode om ${ gracePeriodHoursRemaining } time",
+        "Du kan ændre din adgangskode om ${ gracePeriodHoursRemaining } timer"
       ]
     },
     "session_recovery:in_progress:link": {
@@ -5393,6 +5383,12 @@
     "session_recovery:in_progress:title": {
       "Password reset requested": [
         "Der er anmodet om nulstilling af adgangskode"
+      ]
+    },
+    "session_recovery:initiation:title": {
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "Du kan nulstille din adgangskode om ${ gracePeriodHoursRemaining } time",
+        "Du kan nulstille din adgangskode om ${ gracePeriodHoursRemaining } timer"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -5823,9 +5819,6 @@
       ],
       "Expiring": [
         "Udløber"
-      ],
-      "Upcoming": [
-        "Kommende"
       ]
     },
     "Success": {
@@ -6654,29 +6647,14 @@
       ]
     },
     "Title subscription": {
-      "Actions": [
-        "Handlinger"
-      ],
-      "Duration": [
-        "Varighed"
-      ],
       "End date": [
         "Slutdato"
       ],
       "Plan": [
         "Abonnement"
       ],
-      "Servers": [
-        "Servere"
-      ],
-      "Start date": [
-        "Startdato"
-      ],
       "Status": [
         "Status"
-      ],
-      "Users": [
-        "Brugere"
       ]
     },
     "Tooltip": {
