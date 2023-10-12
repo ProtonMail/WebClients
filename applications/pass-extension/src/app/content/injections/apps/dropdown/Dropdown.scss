@@ -1,0 +1,11 @@
+@import '~@proton/pass/styles/common';
+
+body {
+	background: transparent;
+}
+
+.item-icon {
+	background-color: var(--field-norm);
+	padding: em(4);
+	border-radius: var(--border-radius-md);
+}
