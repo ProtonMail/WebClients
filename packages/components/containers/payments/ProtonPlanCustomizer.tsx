@@ -119,7 +119,8 @@ const ButtonNumberInput = ({
                     max={max}
                     value={tmpValue}
                     id={id}
-                    className="w6e border-left border-right text-center"
+                    className="w-custom border-left border-right text-center"
+                    style={{ '--w-custom': '6em' }}
                     onBlur={() => {
                         if (!isValidTmpValue) {
                             // Revert to the latest valid value upon blur

@@ -25,7 +25,9 @@ function LabelSortableList({ items, ...rest }: Props) {
                             <Icon name="arrows-cross" />
                         </th>
                         <th scope="col">{c('Settings/labels - table').t`Labels`}</th>
-                        <th scope="col" className="w10e">{c('Settings/labels - table').t`Actions`}</th>
+                        <th scope="col" className="w-custom" style={{ '--w-custom': '10em' }}>{c(
+                            'Settings/labels - table'
+                        ).t`Actions`}</th>
                     </tr>
                 </OrderableTableHeader>
                 <OrderableTableBody colSpan={0}>

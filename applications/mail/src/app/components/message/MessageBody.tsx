@@ -129,12 +129,30 @@ const MessageBody = ({
             {sourceMode && <pre className="m-0 p-4">{message.decryption?.decryptedBody}</pre>}
             {placeholderMode && !encryptedMode && (
                 <div className="bg-norm color-norm p-4">
-                    <div className="message-content-loading-placeholder mx-4 mb-4 max-w8e" />
-                    <div className="message-content-loading-placeholder mx-4 mb-4 max-w50e" />
-                    <div className="message-content-loading-placeholder mx-4 mb-4 max-w40e" />
-                    <div className="message-content-loading-placeholder mx-4 mb-4 max-w50e" />
-                    <div className="message-content-loading-placeholder mx-4 mb-4 max-w15e" />
-                    <div className="message-content-loading-placeholder mx-4 mb-4 max-w8e" />
+                    <div
+                        className="message-content-loading-placeholder mx-4 mb-4 max-w-custom"
+                        style={{ '--max-w-custom': '8em' }}
+                    />
+                    <div
+                        className="message-content-loading-placeholder mx-4 mb-4 max-w-custom"
+                        style={{ '--max-w-custom': '50em' }}
+                    />
+                    <div
+                        className="message-content-loading-placeholder mx-4 mb-4 max-w-custom"
+                        style={{ '--max-w-custom': '40em' }}
+                    />
+                    <div
+                        className="message-content-loading-placeholder mx-4 mb-4 max-w-custom"
+                        style={{ '--max-w-custom': '50em' }}
+                    />
+                    <div
+                        className="message-content-loading-placeholder mx-4 mb-4 max-w-custom"
+                        style={{ '--max-w-custom': '15em' }}
+                    />
+                    <div
+                        className="message-content-loading-placeholder mx-4 mb-4 max-w-custom"
+                        style={{ '--max-w-custom': '8em' }}
+                    />
                 </div>
             )}
             {contentMode && (

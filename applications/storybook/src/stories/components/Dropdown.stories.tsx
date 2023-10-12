@@ -121,7 +121,9 @@ export const Size = () => {
                 ].map((row) => {
                     return (
                         <div className="flex flex-align-items-center">
-                            <pre className="w20e">{row.sizeKey}:</pre>
+                            <pre className="w-custom" style={{ '--w-custom': '20em' }}>
+                                {row.sizeKey}:
+                            </pre>
                             <div className="flex-item-fluid-auto">
                                 <Editor sizeKey={row.sizeKey} options={row.options.map(getOption)} />
                             </div>

@@ -33,7 +33,7 @@ const StepProducts = ({ triggerOAuth }: Props) => {
             <ModalTwoContent>
                 <div>{c('Info').t`Select what you want to import.`}</div>
 
-                <div className="max-w30e" data-testid="StepProducts:modal">
+                <div className="max-w-custom" style={{ '--max-w-custom': '30em' }} data-testid="StepProducts:modal">
                     <StepProductsRowItem
                         id="mail"
                         label={c('Label').t`Emails`}

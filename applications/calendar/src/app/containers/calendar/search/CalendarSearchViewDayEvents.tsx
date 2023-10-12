@@ -52,7 +52,9 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
                 >
                     <span className="search-day-number rounded-sm p-1 inline-block">{day}</span>
                 </div>
-                <div className="color-weak min-w9e">{formattedDate}</div>
+                <div className="color-weak min-w-custom" style={{ '--min-w-custom': '9em' }}>
+                    {formattedDate}
+                </div>
             </div>
             {Boolean(dailyEvents.length) && (
                 <div className="flex-item-grow search-day flex flex-nowrap flex-column pl-7 lg:pl-0 mt-2 lg:mt-0">
@@ -107,7 +109,12 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
                                     className="flex-no-min-children flex-nowrap flex-item-fluid search-event-time-details on-tablet-flex-column"
                                     ref={isClosestToDate ? closestToDateRef : null}
                                 >
-                                    <span className="min-w14e pl-2 lg:pl-0 pr-2 search-event-time">{timeString}</span>
+                                    <span
+                                        className="min-w-custom pl-2 lg:pl-0 pr-2 search-event-time"
+                                        style={{ '--min-w-custom': '14em' }}
+                                    >
+                                        {timeString}
+                                    </span>
                                     <span
                                         className={clsx(
                                             'text-ellipsis flex-item-fluid pl-2 lg:pl-0 search-event-summary text-bold'

@@ -118,8 +118,9 @@ const PlanCardView = ({
             className={clsx(
                 'flex-item-fluid pricing-box-content-cycle mx-auto lg:mx-0',
                 highlightPrice && 'pricing-box-content-cycle--highlighted',
-                hasMaxWidth && 'max-w24e'
+                hasMaxWidth && 'max-w-custom'
             )}
+            style={ hasMaxWidth ? { '--max-w-custom': '24em' } : undefined }
         >
             {above}
             <button
