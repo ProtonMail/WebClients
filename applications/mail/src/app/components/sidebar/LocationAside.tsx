@@ -68,7 +68,7 @@ const LocationAside = ({
                 <span
                     className={clsx([
                         'navigation-counter-item px-1 flex-item-noshrink',
-                        hideCountOnHover && 'hide-on-hover',
+                        hideCountOnHover && 'group-hover:hidden',
                         weak && 'navigation-counter-item--weak pl-0',
                         isOptionDropdownOpened && 'hidden',
                     ])}
@@ -83,7 +83,7 @@ const LocationAside = ({
             {itemOptions && (
                 <span
                     className={clsx(
-                        'opacity-on-hover opacity-on-hover-no-width flex-item-noshrink no-mobile mr-custom right-custom',
+                        'group-hover:opacity-100 group-hover:opacity-100-no-width flex-item-noshrink no-mobile mr-custom right-custom',
                         isOptionDropdownOpened && 'is-active'
                     )}
                     style={{ '--mr-custom': 'calc(var(--space-1) * -1)', '--right-custom': 'var(--space-2)' }}

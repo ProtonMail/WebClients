@@ -120,7 +120,7 @@ function DownloadCell({ item }: { item: PublicLink }) {
     const className = clsx([
         'flex-item-centered-vert ',
         'file-browser-list--download-button',
-        'opacity-on-hover-only-desktop',
+        'mouse:group-hover:opacity-100',
     ]);
 
     return (

@@ -96,7 +96,7 @@ const CalendarSidebarListItem = ({
         <SidebarListItem key={ID}>
             <SidebarListItemLabel
                 htmlFor={`calendar-${ID}`}
-                className="calendar-sidebar-list-item opacity-on-hover-container"
+                className="calendar-sidebar-list-item group-hover-opacity-container"
             >
                 <SidebarListItemContent
                     data-testid="calendar-sidebar:user-calendars"
@@ -130,7 +130,7 @@ const CalendarSidebarListItem = ({
                                 hasCaret={false}
                                 shape="ghost"
                                 size="small"
-                                className="calendar-sidebar-list-item-action opacity-on-hover opacity-on-hover-no-width ml-2 mr-custom right-0 rounded-sm flex-item-noshrink no-mobile"
+                                className="calendar-sidebar-list-item-action group-hover:opacity-100 group-hover:opacity-100-no-width ml-2 mr-custom right-0 rounded-sm flex-item-noshrink no-mobile"
                                 style={{ '--mr-custom': 'calc(var(--space-1) * -1)' }}
                                 loading={isSubscribedCalendar && loadingSubscriptionParameters}
                                 content={<Icon name="three-dots-horizontal" />}
