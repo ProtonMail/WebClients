@@ -19,7 +19,13 @@ const AccountLoaderPage = ({ text, loaderClassName = '' }: Props) => {
         <div className="h100">
             <div className={clsx(['absolute-center text-center'])}>
                 <div>
-                    <img className={clsx(['w10e', loaderClassName])} src={protonSpinner} aria-hidden="true" alt="" />
+                    <img
+                        className={clsx(['w-custom', loaderClassName])}
+                        style={{ '--w-custom': '10em' }}
+                        src={protonSpinner}
+                        aria-hidden="true"
+                        alt=""
+                    />
                 </div>
                 <TextLoader className="color-weak">{textToDisplay}</TextLoader>
             </div>

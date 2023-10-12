@@ -25,7 +25,7 @@ const EOReply = ({ setSessionStorage }: Props) => {
             setSessionStorage={setSessionStorage}
         >
             {id && messageState && (
-                <main className="ui-standard sm:shadow-lifted shadow-color-primary relative no-scroll w-full max-w-full mx-auto eo-layout mw52r">
+                <main className="ui-standard sm:shadow-lifted shadow-color-primary relative no-scroll w-full max-w-custom mx-auto eo-layout" style={{ '--max-w-custom': '52rem' }}>
                     <EOComposer
                         referenceMessage={messageState}
                         id={id}

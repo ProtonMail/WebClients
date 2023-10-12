@@ -58,12 +58,30 @@ const EOMessageBody = ({
             {sourceMode && <pre>{message.decryption?.decryptedBody}</pre>}
             {(loadingMode || decryptingMode) && (
                 <>
-                    <div className="message-content-loading-placeholder mb-1 max-w8e" />
-                    <div className="message-content-loading-placeholder mb-1 max-w50e" />
-                    <div className="message-content-loading-placeholder mb-1 max-w40e" />
-                    <div className="message-content-loading-placeholder mb-1 max-w50e" />
-                    <div className="message-content-loading-placeholder mb-1 max-w15e" />
-                    <div className="message-content-loading-placeholder max-w8e" />
+                    <div
+                        className="message-content-loading-placeholder mb-1 max-w-custom"
+                        style={{ '--max-w-custom': '8em' }}
+                    />
+                    <div
+                        className="message-content-loading-placeholder mb-1 max-w-custom"
+                        style={{ '--max-w-custom': '50em' }}
+                    />
+                    <div
+                        className="message-content-loading-placeholder mb-1 max-w-custom"
+                        style={{ '--max-w-custom': '40em' }}
+                    />
+                    <div
+                        className="message-content-loading-placeholder mb-1 max-w-custom"
+                        style={{ '--max-w-custom': '50em' }}
+                    />
+                    <div
+                        className="message-content-loading-placeholder mb-1 max-w-custom"
+                        style={{ '--max-w-custom': '15em' }}
+                    />
+                    <div
+                        className="message-content-loading-placeholder max-w-custom"
+                        style={{ '--max-w-custom': '8em' }}
+                    />
                 </>
             )}
             {contentMode && (

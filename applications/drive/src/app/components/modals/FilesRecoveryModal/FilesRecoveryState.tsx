@@ -27,9 +27,19 @@ const FilesRecoveryState = ({ onRecovery, onClose, recovering }: Props) => {
             </ModalTwoContent>
             <ModalTwoFooter>
                 <div className="flex flex-justify-space-between w-full flex-nowrap">
-                    <Button disabled={recovering} autoFocus className="min-w7e" onClick={onClose}>{c('Action')
-                        .t`Cancel`}</Button>
-                    <PrimaryButton loading={recovering} className="min-w7e" onClick={onRecovery}>
+                    <Button
+                        disabled={recovering}
+                        autoFocus
+                        className="min-w-custom"
+                        style={{ '--min-w-custom': '7em' }}
+                        onClick={onClose}
+                    >{c('Action').t`Cancel`}</Button>
+                    <PrimaryButton
+                        loading={recovering}
+                        className="min-w-custom"
+                        style={{ '--min-w-custom': '7em' }}
+                        onClick={onRecovery}
+                    >
                         {c('Action').t`Start recovering`}
                     </PrimaryButton>
                 </div>

@@ -164,9 +164,12 @@ function GeneratedLinkState({
                             />
                         </div>
                         <div className="flex-no-min-children flex-justify-end ml-0 md:ml-2">
-                            <PrimaryButton id="copy-url-button" onClick={handleCopyURLClick} className="min-w7e">{c(
-                                'Action'
-                            ).t`Copy link`}</PrimaryButton>
+                            <PrimaryButton
+                                id="copy-url-button"
+                                onClick={handleCopyURLClick}
+                                className="min-w-custom"
+                                style={{ '--min-w-custom': '7em' }}
+                            >{c('Action').t`Copy link`}</PrimaryButton>
                         </div>
                     </Row>
                     <Alert data-testid="secure-link-text" className="mb-4">

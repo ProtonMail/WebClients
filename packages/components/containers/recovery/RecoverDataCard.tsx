@@ -15,7 +15,12 @@ interface Props {
 
 const RecoverDataCard = ({ onDismiss, onReactivate, className }: Props) => {
     return (
-        <Card rounded background={false} className={clsx('max-w46e', className)}>
+        <Card
+            rounded
+            background={false}
+            className={clsx('max-w-custom', className)}
+            style={{ '--max-w-custom': '46em' }}
+        >
             <SettingsSectionTitle className="h3 flex flex-align-items-center flex-nowrap">
                 <Icon className="flex-item-noshrink color-danger" name="exclamation-circle-filled" size={18} />
                 <span className="ml-2">{c('Title').t`Data locked`}</span>

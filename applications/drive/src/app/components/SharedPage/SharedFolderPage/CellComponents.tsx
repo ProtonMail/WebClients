@@ -1,7 +1,5 @@
 import { c } from 'ttag';
 
-
-
 import { Button } from '@proton/atoms/Button';
 import { FileIcon, Icon, TableCell, useActiveBreakpoint } from '@proton/components';
 import clsx from '@proton/utils/clsx';
@@ -26,14 +24,16 @@ export const headerCellsDesktop = [
         type: 'size',
         getText: () => c('Label').t`Size`,
         props: {
-            className: 'w11e text-right',
+            className: 'w-custom text-right',
+            style: { '--w-custom': '11em' },
         },
         sorting: true,
     },
     {
         type: HeaderCellsPresets.Placeholder,
         props: {
-            className: 'w11e',
+            className: 'w-custom',
+            style: { '--w-custom': '11em' },
         },
     },
 ];
@@ -75,7 +75,11 @@ function SizeCell({ item }: { item: PublicLink }) {
 
     if (item.progress) {
         return (
-            <TableCell className="m-0 w11e flex flex-nowrap flex-justify-end" data-testid="column-size">
+            <TableCell
+                className="m-0 w-custom flex flex-nowrap flex-justify-end"
+                style={{ '--w-custom': '11em' }}
+                data-testid="column-size"
+            >
                 {!isNarrow && item.progress.progress > 0 && (
                     <>
                         <Cells.SizeCell size={item.progress.progress} />/
@@ -86,10 +90,14 @@ function SizeCell({ item }: { item: PublicLink }) {
         );
     }
 
-    const className = isNarrow ? 'w6e' : 'w11e';
+    const styleValue = isNarrow ? '6em' : '11em';
 
     return (
-        <TableCell className={`m-0 flex flex-nowrap flex-justify-end ${className}`} data-testid="column-size">
+        <TableCell
+            className="m-0 flex flex-nowrap flex-justify-end w-custom"
+            style={{ '--w-custom': styleValue }}
+            data-testid="column-size"
+        >
             {item.isFile ? <Cells.SizeCell size={item.size} /> : '-'}
         </TableCell>
     );
@@ -117,7 +125,8 @@ function DownloadCell({ item }: { item: PublicLink }) {
 
     return (
         <TableCell
-            className="m-0 flex flex-nowrap flex-justify-end file-browser-list--icon-column w11e"
+            className="m-0 flex flex-nowrap flex-justify-end file-browser-list--icon-column w-custom"
+            style={{ '--w-custom': '11em' }}
             data-testid="column-size"
         >
             <Button

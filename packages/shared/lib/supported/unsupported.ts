@@ -2,8 +2,6 @@
 import errorImg from '@proton/styles/assets/img/errors/error-generic.svg';
 import unsupportedBrowser from '@proton/styles/assets/img/errors/unsupported-browser.svg';
 
-
-
 import { SupportedBrowserValue } from './interface';
 
 const showUnsupported = () => {
@@ -16,7 +14,7 @@ const showUnsupported = () => {
 
     document.body.innerHTML = `
         <div class='h100 flex flex-align-items-center pb-14 scroll-if-needed'>
-            <div class='m-auto text-center max-w30e'>
+            <div class='m-auto text-center max-w-custom' style='--max-w-custom: 30em'>
                 <h1 class='text-bold text-4xl'>Unsupported browser</h1>
                 <p>
                     You are using an unsupported browser. Please update it to the latest version or use a different browser.
@@ -35,7 +33,7 @@ const showUnsupported = () => {
 const showError = () => {
     document.body.innerHTML = `
         <div class='h100 flex flex-align-items-center pb-14 scroll-if-needed'>
-            <div class='m-auto text-center max-w30e'>
+            <div class='m-auto text-center max-w-custom' style='--max-w-custom: 30em'>
                 <div class='mb-8'>
                     <img src='${errorImg}' alt='Error'/>
                 </div>
