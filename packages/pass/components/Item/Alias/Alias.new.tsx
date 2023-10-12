@@ -19,7 +19,7 @@ import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constan
 import { useAliasOptions } from '@proton/pass/hooks/useAliasOptions';
 import { useDraftSync } from '@proton/pass/hooks/useItemDraft';
 import { deriveAliasPrefix, reconciliateAliasFromDraft, validateNewAliasForm } from '@proton/pass/lib/validation/alias';
-import { selectAliasLimits, selectVaultLimits } from '@proton/pass/store/selectors';
+import { selectAliasLimits, selectUserVerified, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { MaybeNull, NewAliasFormValues } from '@proton/pass/types';
 import { awaiter } from '@proton/pass/utils/fp/promises';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
@@ -34,6 +34,7 @@ export const AliasNew: VFC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmi
     const { domain, subdomain, displayName } = url ?? {};
     const { needsUpgrade } = useSelector(selectAliasLimits);
     const { vaultTotalCount } = useSelector(selectVaultLimits);
+    const userVerified = useSelector(selectUserVerified);
     const { current: draftHydrated } = useRef(awaiter<MaybeNull<NewAliasFormValues>>());
 
     const { aliasPrefix: defaultAliasPrefix, ...defaults } = useMemo(() => {
@@ -65,6 +66,7 @@ export const AliasNew: VFC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmi
         initialErrors: validateNewAliasForm(initialValues),
         onSubmit: ({ name, note, shareId, aliasPrefix, aliasSuffix, mailboxes }) => {
             if (needsUpgrade) return;
+            if (!userVerified) return;
 
             if (aliasPrefix !== undefined && aliasSuffix !== undefined) {
                 const optimisticId = uniqueId();
@@ -145,7 +147,7 @@ export const AliasNew: VFC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmi
             type="alias"
             formId={FORM_ID}
             handleCancelClick={onCancel}
-            valid={form.isValid}
+            valid={form.isValid && userVerified}
             discardable={!form.dirty}
             /* if user has reached his alias limit: disable submit and prompt for upgrade */
             renderSubmitButton={needsUpgrade ? <UpgradeButton key="upgrade-button" /> : undefined}
@@ -158,6 +160,13 @@ export const AliasNew: VFC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmi
                                 .t`You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.`}
                         </ItemCard>
                     )}
+
+                    {!userVerified && (
+                        <ItemCard className="mb-2">
+                            {c('Warning').t`Please verify your email address in order to use email aliases`}
+                        </ItemCard>
+                    )}
+
                     <FormikProvider value={form}>
                         <Form id={FORM_ID}>
                             <FieldsetCluster>
