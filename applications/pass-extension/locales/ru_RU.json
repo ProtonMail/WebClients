@@ -661,23 +661,11 @@
       "Autosaved on ${ submissionURL }": [
         "Автосохранено ${ submissionURL }"
       ],
-      "Can create, edit, delete and export items in this vault.": [
-        "Может создавать, редактировать, удалять и экспортировать элементы этого хранилища."
-      ],
-      "Can edit": [
-        "Может редактировать"
-      ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Может представлять и отзывать доступ к этому хранилищу, и удалять его."
       ],
       "Can grant and revoke access to this vault.": [
         "Может представлять и отзывать доступ к этому хранилищу."
-      ],
-      "Can manage": [
-        "Может управлять"
-      ],
-      "Can view": [
-        "Может просматривать"
       ],
       "Can view items in this vault.": [
         "Может просматривать элементы в этом хранилище."
@@ -862,9 +850,6 @@
       "Passwords older than 1 day are automatically deleted from history.": [
         "Пароли старше 1 дня автоматически удаляются из истории."
       ],
-      "Pending invitation": [
-        "Ожидающее приглашение"
-      ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Закрепить ${ PASS_APP_NAME } на панели инструментов."
       ],
@@ -897,9 +882,6 @@
       ],
       "Select the destination vault for each imported vault.": [
         "Выберите хранилище для сохранения каждого импортированного хранилища."
-      ],
-      "Select the level of access this user will gain when they join your vault.": [
-        "Выберите уровень доступа, который пользователь получит при присоединении к вашему хранилищу."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недоступны. Попробуйте снова через несколько минут"
@@ -951,9 +933,6 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Экспорт не будет зашифрован, и кто угодно, кто получит доступ к вашему экспортированному файлу, сможет увидеть ваши пароли. Для безопасности, пожалуйста, удалите его после использования."
-      ],
-      "This user will receive an invitation to join your '${ vaultName }' vault.": [
-        "Пользователь получит приглашение, чтобы присоединиться к вашему хранилищу '${ vaultName }'."
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Это хранилище в данный момент не является общим с кем-либо. Пригласите людей, чтобы поделиться им с другими."
@@ -1023,9 +1002,6 @@
       ],
       "You're about to create": [
         "Вы собираетесь создать"
-      ],
-      "You've been invited to a vault. Click here to see the invitation.": [
-        "Вы были приглашены в хранилище. Кликните здесь, чтобы увидеть приглашение."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Ваш сеанс ${ PASS_APP_NAME } заблокирован"
@@ -1224,6 +1200,9 @@
       "Label": [
         "Ярлык"
       ],
+      "Language": [
+        "Язык"
+      ],
       "Last 2 weeks": [
         "Последние 2 недели"
       ],
@@ -1329,9 +1308,6 @@
       "Report a problem": [
         "Сообщить о проблеме"
       ],
-      "Respond": [
-        "Ответить"
-      ],
       "Restore all items": [
         "Восстановить все элементы"
       ],
@@ -1421,9 +1397,6 @@
       ],
       "Vault": [
         "Хранилище"
-      ],
-      "Vaults": [
-        "Хранилища"
       ],
       "Verification number": [
         "Проверочный номер"
@@ -1674,9 +1647,6 @@
       ],
       "An error occured while exporting your data": [
         "При экспорте ваших данных произошла ошибка"
-      ],
-      "Are you sure you want to transfer vault ownership to ${ email }?": [
-        "Вы уверены, что хотите передать владение хранилищем ${ email }?"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Не удалось получить почтовые ящики для этого псевдонима в данный момент"

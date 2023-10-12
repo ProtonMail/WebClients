@@ -532,9 +532,6 @@
       ]
     },
     "Action subscription": {
-      "Manage": [
-        "Gestionare"
-      ],
       "Reactivate": [
         "Reactivare"
       ]
@@ -634,11 +631,6 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Aceasta va deconecta toate ruterele și clienții care folosesc acest certificat."
-      ]
-    },
-    "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "Reînnoire automată la ${ formattedEndTime }"
       ]
     },
     "Billing cycle option": {
@@ -2319,9 +2311,6 @@
       "Are you sure you want to delete security key ${ name }?": [
         "Sigur ștergeți cheia de securitate ${ name }?"
       ],
-      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
-        "Dacă este activat, permite înregistrarea dispozitivelor încorporate (cum ar fi Windows Hello, Touch ID, Face ID sau TPM-uri interne) în plus față de cheile de securitate hardware externe."
-      ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Inserați cheia de securitate legată la contul ${ BRAND_NAME }."
       ],
@@ -3616,9 +3605,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Puteți edita aceasta o dată pentru a vă asigura că este adresa de e-mail corectă pentru verificare."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Puteți debloca imediat configurația de mai sus adăugând ${ specificCountryCount } la numărul de adrese IP din planul actual sau ne puteți contacta pentru soluții personalizate."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
         "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
@@ -3739,9 +3725,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Abonamentul vă este gestionat de Mozilla. Contactați Mozilla pentru suport."
-      ],
-      "Your subscription will renew automatically on ${ renewalTime }.": [
-        "Abonamentul se va reînnoi automat la ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -6262,9 +6245,6 @@
       ],
       "Expiring": [
         "Expiră"
-      ],
-      "Upcoming": [
-        "Urmează"
       ]
     },
     "Success": {
@@ -7101,35 +7081,14 @@
       ]
     },
     "Title subscription": {
-      "Actions": [
-        "Acțiuni"
-      ],
-      "Duration": [
-        "Durata"
-      ],
       "End date": [
         "Data sfârșit"
       ],
       "Plan": [
         "Plan"
       ],
-      "Servers": [
-        "Servere"
-      ],
-      "Start date": [
-        "Dată început"
-      ],
       "Status": [
         "Stare"
-      ],
-      "Total": [
-        "Total"
-      ],
-      "Total paid": [
-        "Total plătit"
-      ],
-      "Users": [
-        "Utilizatori"
       ]
     },
     "Tooltip": {
@@ -7241,23 +7200,8 @@
       ]
     },
     "vpn_2step: billing": {
-      "${ billedText }, renews on ${ formattedEndTime }": [
-        "${ billedText }, reînnoit la ${ formattedEndTime }"
-      ],
-      "Billed every 15 months": [
-        "Facturat la 15 luni"
-      ],
-      "Billed every 2 years": [
-        "Facturat la doi ani"
-      ],
-      "Billed every 30 months": [
-        "Facturat la 30 de luni"
-      ],
       "Billed monthly": [
         "Facturat lunar"
-      ],
-      "Billed yearly": [
-        "Facturat anual"
       ]
     },
     "vpn_2step: discount": {

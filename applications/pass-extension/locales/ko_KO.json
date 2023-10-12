@@ -29,15 +29,6 @@
       "Back": [
         "이전"
       ],
-      "Can edit": [
-        "편집 가능"
-      ],
-      "Can manage": [
-        "관리 가능"
-      ],
-      "Can view": [
-        "보기 가능"
-      ],
       "Can't find your password manager? Please let us know!": [
         "사용 중인 비밀번호 관리자를 찾을 수 없으신가요? 그러면 알려주세요!"
       ],
@@ -181,9 +172,6 @@
       ],
       "Importing": [
         "가져오는 중"
-      ],
-      "Invite people": [
-        "초대하기"
       ],
       "Join shared vault": [
         "공유 금고 참가"
@@ -366,6 +354,9 @@
       ],
       "Cannot create alias (${ error }).": [
         "별명을 생성할 수 없습니다 (${ error })."
+      ],
+      "Cannot send invitation to this address at the moment": [
+        "현재 이 주소로 초대 전송을 할 수 없습니다."
       ],
       "Could not leave vault.": [
         "금고를 떠날 수 없습니다."
@@ -663,23 +654,11 @@
       "Autosaved on ${ submissionURL }": [
         "${ submissionURL }에 저장됨"
       ],
-      "Can create, edit, delete and export items in this vault.": [
-        "이 금고에서 항목을 생성, 편집, 삭제 및 불러올 수 있습니다."
-      ],
-      "Can edit": [
-        "편집 가능"
-      ],
       "Can grant and revoke access to this vault, and delete it.": [
         "이 금고의 접근을 허용 및 삭제할 수 있습니다."
       ],
       "Can grant and revoke access to this vault.": [
         "이 금고의 접근을 허용 및 취소할 수 있습니다."
-      ],
-      "Can manage": [
-        "관리 가능"
-      ],
-      "Can view": [
-        "보기 가능"
       ],
       "Can view items in this vault.": [
         "이 금고에서 항목을 확인 가능합니다."
@@ -858,9 +837,6 @@
       "Passwords older than 1 day are automatically deleted from history.": [
         "하루 이상된 비밀번호는 기록에서 자동적으로 삭제됩니다."
       ],
-      "Pending invitation": [
-        "초대 보류 중"
-      ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "${ PASS_APP_NAME }를 툴바에 고정하세요."
       ],
@@ -893,9 +869,6 @@
       ],
       "Select the destination vault for each imported vault.": [
         "각각의 불러온 금고의 대상 위치를 선택하세요."
-      ],
-      "Select the level of access this user will gain when they join your vault.": [
-        "이 사용자가 금고에 참여할 때의 권한 수준을 선택하십시오."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "서버에 연결할 수 없음. 몇 분 뒤에 다시 시도하세요"
@@ -945,9 +918,6 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "이 내보내기는 암호화되지 않으며 내보낸 파일에 액세스할 수 있는 사람은 누구나 비밀번호를 볼 수 있습니다. 보안을 위해, 사용을 마친 뒤에 삭제해 주세요."
       ],
-      "This user will receive an invitation to join your '${ vaultName }' vault.": [
-        "이 사용자가 곧 '${ vaultName }' 금고에 참여할 초대장을 받게 됩니다."
-      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "이 금고는 모두에게 공유되지 않습니다. 다른 사람과 공유하려면 사람을 초대하세요."
       ],
@@ -990,6 +960,9 @@
       "You are about to create:": [
         "생성하려고 하는 주소:"
       ],
+      "You cannot change the mailboxes for this alias.": [
+        "이 별명의 메일함을 변경할 수 없습니다."
+      ],
       "You have ${ daysRemaining } days left in your trial period.": [
         "무료 체험이 ${ daysRemaining }일 남았습니다."
       ],
@@ -1013,9 +986,6 @@
       ],
       "You're about to create": [
         "생성하려고 하는 주소:"
-      ],
-      "You've been invited to a vault. Click here to see the invitation.": [
-        "금고에 초대되었습니다. 초대를 보려면 여기를 탭하십시오."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "${ PASS_APP_NAME } 세션이 잠겼습니다."
@@ -1208,6 +1178,9 @@
       "Label": [
         "라벨"
       ],
+      "Language": [
+        "언어"
+      ],
       "Last 2 weeks": [
         "지난 2주"
       ],
@@ -1313,9 +1286,6 @@
       "Report a problem": [
         "문제 신고"
       ],
-      "Respond": [
-        "응답"
-      ],
       "Restore all items": [
         "모든 항목 복원하기"
       ],
@@ -1404,9 +1374,6 @@
         "사용자 이름 (새 별명)"
       ],
       "Vault": [
-        "금고"
-      ],
-      "Vaults": [
         "금고"
       ],
       "Verification number": [
@@ -1586,9 +1553,6 @@
       "Permanently remove all items ?": [
         "모든 항목을 완전히 삭제합니까?"
       ],
-      "Permissions": [
-        "권한"
-      ],
       "Pin the extension": [
         "확장 프로그램 고정"
       ],
@@ -1597,9 +1561,6 @@
       ],
       "Share with": [
         "공유 대상:"
-      ],
-      "Shared vault invitation": [
-        "공유된 금고 초대"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME }으로 전환하나요?"
@@ -1679,9 +1640,6 @@
       ],
       "An error occured while exporting your data": [
         "데이터를 내보내는데 오류가 발생했습니다."
-      ],
-      "Are you sure you want to transfer vault ownership to ${ email }?": [
-        "${ email } 님에게 금고에 대한 소유권을 이전하시겠습니까?"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "현재 별명에서 메일함으로 가져올 수 없습니다."

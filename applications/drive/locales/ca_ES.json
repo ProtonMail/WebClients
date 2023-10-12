@@ -226,6 +226,9 @@
       "Discard": [
         "Descarta"
       ],
+      "Don't know your password?": [
+        "No sabeu la vostra contrasenya?"
+      ],
       "Done": [
         "Fet"
       ],
@@ -552,6 +555,9 @@
       ],
       "Search drive": [
         "Cerca a drive"
+      ],
+      "See how": [
+        "Mira com"
       ],
       "See plan features": [
         "Mostra les característiques del pla"
@@ -2003,6 +2009,9 @@
       ],
       "Enter 6 digits": [
         "Introduïu 6 dígits"
+      ],
+      "Error decrypting a computer": [
+        "Error desxifrant un ordinador"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "El fitxer «${ item.name }» no s'ha pogut pujar a causa de l'error «${ error }»"
@@ -3909,6 +3918,9 @@
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "L'aplicació ha de desxifrar localment els vostres contactes abans de poder-los exportar. Al final del procés, es generarà un fitxer VCF i el podreu descarregar."
       ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "El recompte de descàrregues inclou tant les descàrregues reals com les instàncies en què els fitxers es previsualitzen."
+      ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Les dades xifrades són lleugerament més grans a causa de la sobrecàrrega del xifratge i les signatures, els quals garanteixen la seguretat de les vostres dades."
       ],
@@ -4014,6 +4026,9 @@
       ],
       "Try searching by file name, date, or type.": [
         "Intenteu cercar pel nom, data o tipus del fitxer."
+      ],
+      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
+        "Malauradament, sembla que el fitxer o algunes de les vostres dades no es poden desxifrar."
       ],
       "Unknown error": [
         "Error desconegut"
@@ -5381,6 +5396,51 @@
         "Restableix la contrasenya"
       ]
     },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "La recuperació de compte no està disponible per a les claus d'adreces antigues."
+      ],
+      "Please generate keys before you try to change your password": [
+        "Genereu les claus abans d’intentar canviar la vostra contrasenya."
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } dia",
+        "${ timeRemaining.inDays } dies"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } hora",
+        "${ timeRemaining.inHours } hores"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teneu ${ timeRemaining.inDays } dia per restablir la vostra contrasenya.",
+        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teneu ${ timeRemaining.inDays } dies per restablir la vostra contrasenya."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teneu ${ timeRemaining.inHours } hora per restablir la vostra contrasenya.",
+        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teneu ${ timeRemaining.inHours } hores per restablir la vostra contrasenya."
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Aneu a l'aparell connectat (a la sessió on es va iniciar la sol·licitud) per canviar la vostra contrasenya."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Aquest permís caduca en ${ timeRemaining.inDays } dia.",
+        "Aquest permís caduca en ${ timeRemaining.inDays } dies."
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Aquest permís caduca en ${ timeRemaining.inHours } hora.",
+        "Aquest permís caduca en ${ timeRemaining.inHours } hores."
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Ara podeu canviar la vostra contrasenya per al compte ${ boldEmail } lliurement durant ${ boldDaysRemaining }."
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Mira com"
+      ]
+    },
     "session_recovery:available:notification": {
       "Password saved": [
         "S'ha desat la contrasenya."
@@ -5396,6 +5456,11 @@
         "Cancel·la el restabliment de contrasenya"
       ]
     },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Introduïu la vostra contrasenya actual per cancel·lar el procés de restabliment de contrasenya. No es tindran en compte cap altre canvi."
+      ]
+    },
     "session_recovery:cancellation:notification": {
       "Password reset cancelled": [
         "S'ha cancel·lat el restabliment de la contrasenya."
@@ -5404,6 +5469,11 @@
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Cancel·la el restabliment de contrasenya?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "S'ha cancel·lat la sol·licitud de restabliment de contrasenya (${ user.Email }). Si no heu sol·licitat aquesta sol·licitud, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -5422,6 +5492,25 @@
         "Saber-ne més"
       ]
     },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } hora més",
+        "${ gracePeriodHoursRemaining } hores més"
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "Si no heu demanat restablir la teva contrasenya, cancel·leu aquesta sol·licitud ara mateix."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "S'ha sol·licitat el restabliment de la contrasenya (${ user.Email }). Podeu canviar la vostra contrasenya en ${ hoursRemaining } hora.",
+        "S'ha sol·licitat el restabliment de la contrasenya (${ user.Email }). Podeu canviar la vostra contrasenya en ${ hoursRemaining } hores."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "Per assegurar-nos que sou vosaltres qui intenteu restablir la vostra contrasenya, esperem 72 hores abans d'aprovar les sol·licituds. Podeu canviar la vostra contrasenya en ${ boldTimeLeft }. ${ viewRequest }."
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "Hem rebut una sol·licitud de restabliment de contrasenya per a ${ boldEmail }."
+      ]
+    },
     "session_recovery:in_progress:link": {
       "View request": [
         "Mostra la petició "
@@ -5435,11 +5524,37 @@
     "session_recovery:sign_out:action": {
       "Sign out": [
         "Tanca la sessió"
+      ],
+      "Stay signed in": [
+        "Mantén la sessió iniciada"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } hora",
+        "${ gracePeriodHoursRemaining } hores"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } ara està disponible."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Si tanqueu la sessió abans de restablir la contrasenya, podríeu perdre l'accés al vostre compte."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Si tanqueu la sessió sense restablir la contrasenya, podríeu perdre l'accés al vostre compte."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Podreu restablir la vostra contrasenya en ${ boldTimeLeft }."
       ]
     },
     "session_recovery:sign_out:link": {
       "Password reset": [
         "Restabliment de contrasenya"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Tancar la sessió sense restabliment de contrasenya?"
       ]
     },
     "Signing preference for emails": {

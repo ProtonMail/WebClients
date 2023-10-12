@@ -56,10 +56,10 @@
         "Застосувати"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
-        "Для однієї контактної групи дозволено ${ maxContacts } контакт",
-        "Для однієї контактної групи дозволено ${ maxContacts } контакти",
-        "Для однієї контактної групи дозволено ${ maxContacts } контактів",
-        "До групи контактів можна додати не більше ніж ${ maxContacts } контактів"
+        "До групи можна додати не більше ${ maxContacts } контакту",
+        "До групи можна додати не більше ${ maxContacts } контактів",
+        "До групи можна додати не більше ${ maxContacts } контактів",
+        "До групи можна додати не більше ${ maxContacts } контактів"
       ],
       "Attach screenshot(s)": [
         "Додати знімки екрана"
@@ -736,6 +736,12 @@
       "View invoice": [
         "Переглянути рахунок"
       ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Ви не можете надіслати файли vCard більш ніж ${ maxAttachments } контакту",
+        "Ви не можете надіслати файли vCard більш ніж ${ maxAttachments } контактам",
+        "Ви не можете надіслати файли vCard більш ніж ${ maxAttachments } контактам",
+        "Ви не можете надіслати файли vCard більш ніж ${ maxAttachments } контактам"
+      ],
       "Your 500 MB bonus": [
         "Ваша винагорода 500 МБ"
       ],
@@ -975,13 +981,13 @@
         "День народження"
       ],
       "Display name": [
-        "Ім'я для показу"
+        "Ім'я"
       ],
       "Email": [
         "Е-пошта"
       ],
       "Enter a display name or nickname": [
-        "Введіть ім'я для показу або псевдонім"
+        "Введіть ім'я або псевдонім"
       ],
       "First name": [
         "Ім'я"
@@ -1956,7 +1962,7 @@
         "\"${ name }\" вже існує"
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
-        "${ errorMessage }. Ви також можете перевірити наші ${ statusPageLink }"
+        "${ errorMessage }. Ви також можете перевірити нашу ${ statusPageLink }"
       ],
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
@@ -2133,7 +2139,7 @@
         "Виправте вказані проблеми, щоб продовжити."
       ],
       "Please provide either a first name, a last name or a display name": [
-        "Введіть ім'я, прізвище або ім'я для показу"
+        "Введіть ім'я, прізвище або псевдонім"
       ],
       "Port is required": [
         "Порт обов'язковий"
@@ -2184,7 +2190,7 @@
         "Щось пішло не так. Будь ласка, ${ refresh } для продовження. Якщо це повідомлення не зникає, зв'яжіться з нашою ${ supportTeam }."
       ],
       "status page": [
-        "сторінка стану"
+        "сторінку стану"
       ],
       "The email addresses do not match": [
         "Електронні адреси відрізняються"
@@ -2255,8 +2261,14 @@
       "Username must end with a letter or digit": [
         "Ім'я користувача повинно закінчуватися літерою або цифрою"
       ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Ви не можете надіслати лист більше ніж ${ maxContacts } отримувачу",
+        "Ви не можете надіслати лист більше ніж ${ maxContacts } отримувачам",
+        "Ви не можете надіслати лист більше ніж ${ maxContacts } отримувачам",
+        "Ви не можете надіслати лист більше ніж ${ maxContacts } отримувачам"
+      ],
       "You have reached the contacts limit for your account": [
-        "Ви досягли максимальної кількості контактів для Вашого облікового запису"
+        "Ви досягли максимальної кількості контактів для облікового запису"
       ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Ви досягли максимальної кількості календарів. Деякі календарі не можна імпортувати."
@@ -3248,10 +3260,10 @@
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календарі"
       ],
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
-        "${ selectedContactsLength }/${ contactsLength } контакту вибрано",
-        "${ selectedContactsLength }/${ contactsLength } контактів вибрано",
-        "${ selectedContactsLength }/${ contactsLength } контактів вибрано",
-        "${ selectedContactsLength }/${ contactsLength } контактів вибрано"
+        "Вибрано ${ selectedContactsLength } контакт із ${ contactsLength }",
+        "Вибрано ${ selectedContactsLength } контакти з ${ contactsLength }",
+        "Вибрано ${ selectedContactsLength } контактів з ${ contactsLength }",
+        "Вибрано ${ selectedContactsLength } контактів з ${ contactsLength }"
       ],
       "${ selectedCount } selected": [
         "${ selectedCount } вибрано"
@@ -3356,7 +3368,7 @@
         "Ви справді хочете відхилити зміни?"
       ],
       "Are you sure you want to discard your import?": [
-        "Ви впевнені, що хочете відмовитися від імпорту?"
+        "Ви дійсно хочете відхилити імпортування?"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Ви впевнені, що хочете спорожнити смітник та остаточно видалити всі елементи?"
@@ -3875,7 +3887,7 @@
         "Зверніть увагу, що цей процес може тривати деякий час, залежно від розміру вашої адресної книги."
       ],
       "Please provide a name and an email address for creating a group.": [
-        "Будь ласка, вкажіть ім'я та адресу пошти для створення групи."
+        "Щоб створити групу, вкажіть ім'я та адресу електронної пошти."
       ],
       "Please select the folders you would like to import:": [
         "Оберіть теки, які ви бажаєте імпортувати:"

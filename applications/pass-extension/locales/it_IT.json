@@ -29,15 +29,6 @@
       "Back": [
         "Indietro"
       ],
-      "Can edit": [
-        "Può modificare"
-      ],
-      "Can manage": [
-        "Può gestire"
-      ],
-      "Can view": [
-        "Può visualizzare"
-      ],
       "Can't find your password manager? Please let us know!": [
         "Non riesci a trovare il tuo gestore di password? Faccelo sapere!"
       ],
@@ -182,8 +173,8 @@
       "Importing": [
         "Importazione"
       ],
-      "Invite people": [
-        "Invita persone"
+      "Invite others": [
+        "Invita altri"
       ],
       "Join shared vault": [
         "Unisciti alla cassaforte condivisa"
@@ -199,6 +190,15 @@
       ],
       "Lock extension": [
         "Blocca l'estensione"
+      ],
+      "Make admin": [
+        "Rendi amministratore"
+      ],
+      "Make editor": [
+        "Rendi editor"
+      ],
+      "Make viewer": [
+        "Rendi visualizzatore"
       ],
       "Manage access": [
         "Gestisci accesso"
@@ -280,6 +280,9 @@
       ],
       "Share": [
         "Condividi"
+      ],
+      "Share vault": [
+        "Condividi cassaforte"
       ],
       "Show": [
         "Mostra"
@@ -662,6 +665,9 @@
       "Access your passwords on the go with our mobile apps.": [
         "Accedi alle tue password in mobilità grazie alle nostre applicazioni."
       ],
+      "Admin": [
+        "Amministratore"
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "L'alias \"${ item.aliasEmail }\" è stato spostato nel cestino - non inoltrerà più alla tua casella di posta"
       ],
@@ -680,23 +686,14 @@
       "Autosaved on ${ submissionURL }": [
         "Salvataggio automatico per ${ submissionURL }"
       ],
-      "Can create, edit, delete and export items in this vault.": [
+      "Can create, edit, delete, and export items in this vault.": [
         "Può creare, modificare, eliminare ed esportare gli elementi in questa cassaforte."
-      ],
-      "Can edit": [
-        "Può modificare"
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Può concedere e revocare l'accesso a questa cassaforte ed eliminarla."
       ],
       "Can grant and revoke access to this vault.": [
         "Può concedere e revocare l'accesso a questa cassaforte."
-      ],
-      "Can manage": [
-        "Può gestire"
-      ],
-      "Can view": [
-        "Può visualizzare"
       ],
       "Can view items in this vault.": [
         "Può visualizzare gli elementi in questa cassaforte."
@@ -730,6 +727,9 @@
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importa facilmente le tue password esistenti in ${ PASS_APP_NAME }."
+      ],
+      "Editor": [
+        "Editor"
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Abilita ${ PASS_APP_NAME } collegando il tuo account ${ BRAND_NAME }"
@@ -801,11 +801,17 @@
       "Internet connection lost": [
         "Connessione ad Internet interrotta"
       ],
+      "Invitation sent": [
+        "Invito spedito"
+      ],
       "Invite successfully removed": [
         "Invito rimosso con successo"
       ],
       "Invite successfully resent": [
         "Invito reinviato con successo"
+      ],
+      "invites you to access items in": [
+        "ti invita ad accedere agli elementi in"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Sembra che tu abbia già effettuato l'accesso a ${ PASS_APP_NAME }. Se stai provando ad accedere con un account differente, prima disconnetti l'estensione."
@@ -877,9 +883,6 @@
       "Passwords older than 1 day are automatically deleted from history.": [
         "Le password più vecchie di 1 giorno vengono eliminate automaticamente dalla cronologia."
       ],
-      "Pending invitation": [
-        "Invito in attesa"
-      ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Fissa ${ PASS_APP_NAME } sulla barra degli strumenti"
       ],
@@ -912,9 +915,6 @@
       ],
       "Select the destination vault for each imported vault.": [
         "Seleziona la cassaforte di destinazione per ciascuna cassaforte importata."
-      ],
-      "Select the level of access this user will gain when they join your vault.": [
-        "Seleziona il livello di accesso che questo utente otterrà quando si unirà alla tua cassaforte."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "I server sono irraggiungibili. Riprova tra qualche minuto"
@@ -965,9 +965,6 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Questa esportazione non sarà crittografata e chiunque abbia accesso al file esportato potrà vedere le tue password. Per la tua sicurezza, ricordati di cancellarlo una volta che hai terminato di utilizzarlo."
       ],
-      "This user will receive an invitation to join your '${ vaultName }' vault.": [
-        "Questo utente riceverà un invito a unirsi alla tua cassaforte '${ vaultName }'."
-      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Questa cassaforte non è attualmente condivisa con nessuno. Per condividerla con qualcuno, invita delle persone."
       ],
@@ -1004,6 +1001,9 @@
       "Verification code": [
         "Codice di verifica"
       ],
+      "Viewer": [
+        "Visualizzatore"
+      ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Stiamo avendo problemi nel sincronizzare i dati con la tua archiviazione locale. Assicurati di avere abbastanza spazio sul disco per eseguire ${ PASS_SHORT_APP_NAME } correttamente."
       ],
@@ -1017,8 +1017,14 @@
         "${ daysRemaining } giorno rimanente del periodo di prova gratuita.",
         "${ daysRemaining } giorni rimanenti del periodo di prova gratuita."
       ],
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
+        "Hai superato il numero di casseforti incluse nel tuo abbonamento. Gli elementi possono essere spostati solamente nelle prime due casseforti. Per spostare elementi tra tutte le casseforti, effettua l'upgrade del tuo abbonamento."
+      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
         "Hai raggiunto il numero massimo di casseforti incluse nel tuo abbonamento. Gli elementi possono essere spostati solo nella cassaforte principale. Per spostare gli elementi tra tutte le casseforti effettua l'upgrade del tuo abbonamento."
+      ],
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
+        "Hai superato il numero di casseforti incluse nel tuo abbonamento. I nuovi elementi possono essere creati solamente nelle prime due casseforti. Per creare nuovi elementi in tutte le casseforti, effettua l'upgrade del tuo abbonamento."
       ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
         "Hai raggiunto il numero massimo di casseforti incluse nel tuo abbonamento. I nuovi elementi potranno essere creati solo nella tua cassaforte principale. Crea un numero illimitato di casseforti effettuando l'aggiornamento del tuo piano di abbonamento."
@@ -1038,8 +1044,8 @@
       "You're about to create": [
         "Stai per creare"
       ],
-      "You've been invited to a vault. Click here to see the invitation.": [
-        "Sei stato invitato in una cassaforte. Clicca qui per vedere l'invito."
+      "You're invited to a vault.": [
+        "Sei invitato in una cassaforte."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "La tua sessione ${ PASS_APP_NAME } è bloccata"
@@ -1125,6 +1131,9 @@
       ],
       "Autosave": [
         "Salvataggio automatico"
+      ],
+      "Autosave vault": [
+        "Salva automaticamente la cassaforte"
       ],
       "Autosuggest": [
         "Suggerimenti automatici"
@@ -1234,6 +1243,9 @@
       "Label": [
         "Etichetta"
       ],
+      "Language": [
+        "Lingua"
+      ],
       "Last 2 weeks": [
         "Ultime 2 settimane"
       ],
@@ -1339,9 +1351,6 @@
       "Report a problem": [
         "Segnala un problema"
       ],
-      "Respond": [
-        "Rispondi"
-      ],
       "Restore all items": [
         "Ripristina tutti gli elementi"
       ],
@@ -1353,6 +1362,9 @@
       ],
       "Select an email address": [
         "Selezionare un indirizzo email"
+      ],
+      "Select preferred language": [
+        "Seleziona la lingua preferita"
       ],
       "Select your password manager": [
         "Seleziona il gestore della tua password"
@@ -1432,11 +1444,11 @@
       "Vault": [
         "Cassaforte"
       ],
-      "Vaults": [
-        "Casseforti"
-      ],
       "Verification number": [
         "Numero di verifica"
+      ],
+      "View details": [
+        "Visualizza dettagli"
       ],
       "View logs": [
         "Visualizza i log"
@@ -1612,20 +1624,17 @@
       "Permanently remove all items ?": [
         "Rimuovere definitivamente tutti gli elementi?"
       ],
-      "Permissions": [
-        "Autorizzazioni"
-      ],
       "Pin the extension": [
         "Blocca l'estensione"
       ],
       "Secure your data": [
         "Proteggi i tuoi dati"
       ],
+      "Set access level": [
+        "Imposta livello di accesso"
+      ],
       "Share with": [
         "Condividi con"
-      ],
-      "Shared vault invitation": [
-        "Invito alla cassaforte condivisa"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Passare a ${ PASS_APP_NAME }?"
@@ -1653,6 +1662,9 @@
       ],
       "Use my email": [
         "Usa la mia email"
+      ],
+      "Vault shared with you": [
+        "Cassaforte condivisa con te"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Ti diamo il benvenuto in ${ brandNameJSX }"
@@ -1705,9 +1717,6 @@
       ],
       "An error occured while exporting your data": [
         "Si è verificato un errore durante l'esportazione dei dati"
-      ],
-      "Are you sure you want to transfer vault ownership to ${ email }?": [
-        "Sei sicuro di voler trasferire la proprietà della cassaforte a ${ email }?"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Al momento non è possibile recuperare le caselle di posta per questo alias"
@@ -1772,6 +1781,9 @@
       "Title is required": [
         "Il titolo è obbligatorio"
       ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "Trasferire la proprietà di questa cassaforte a ${ email }?"
+      ],
       "Trash alias ?": [
         "Spostare l'alias nel cestino?"
       ],
@@ -1805,11 +1817,17 @@
       "Your plan does not allow you to create more aliases": [
         "Il tuo piano non ti consente di creare altri alias"
       ],
+      "Your plan only allows you to autofill from your first two vaults": [
+        "Il tuo piano ti consente la compilazione automatica solamente dalle prime due casseforti."
+      ],
       "Your plan only allows you to autofill from your primary vault": [
         "Il tuo piano permette la compilazione automatica solo dalla tua cassaforte principale."
       ],
       "Your session was locked due to inactivity": [
         "La tua sessione è stata bloccata per inattività"
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "Il tuo abbonamento non ti consente di creare più casseforti. Tutti gli elementi verranno importati nella tua prima cassaforte. Per importare in più casseforti, effettua l'upgrade del tuo abbonamento."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
         "Il tuo abbonamento non consente di creare casseforti multiple. Tutti gli elementi saranno importati nella cassaforte principale. Puoi importare in casseforti multiple effettuando l'aggiornamento del tuo abbonamento."

@@ -1084,9 +1084,6 @@
       ]
     },
     "Action subscription": {
-      "Manage": [
-        "Керувати"
-      ],
       "Reactivate": [
         "Повторна активація"
       ]
@@ -1300,8 +1297,11 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "Поновлюється автоматично ${ formattedEndTime }"
+      "${ n } month": [
+        "${ n } місяць",
+        "${ n } місяців",
+        "${ n } місяців",
+        "${ n } місяців"
       ]
     },
     "Billing cycle option": {
@@ -1509,6 +1509,14 @@
       ],
       "Share with anyone": [
         "Поділіться з будь-ким"
+      ]
+    },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "Показати ще ${ remainingItems }",
+        "Показати ще ${ remainingItems }",
+        "Показати ще ${ remainingItems }",
+        "Показати ще ${ remainingItems }"
       ]
     },
     "Calendar share permission label": {
@@ -1880,7 +1888,7 @@
         "День народження"
       ],
       "Display name": [
-        "Ім'я для показу"
+        "Ім'я"
       ],
       "Email": [
         "Е-пошта"
@@ -3166,7 +3174,7 @@
     },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
-        "${ errorMessage }. Ви також можете перевірити наші ${ statusPageLink }"
+        "${ errorMessage }. Ви також можете перевірити нашу ${ statusPageLink }"
       ],
       "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
         "${ Local } – ваше ім'я користувача. Щоб створити ${ Local }@${ Domain }, відкрийте Налаштування > Повідомлення й написання > Короткий домен (pm.me)"
@@ -3502,7 +3510,7 @@
         "Щось пішло не так. Будь ласка, ${ refresh } для продовження. Якщо це повідомлення не зникає, зв'яжіться з нашою ${ supportTeam }."
       ],
       "status page": [
-        "сторінка стану"
+        "сторінку стану"
       ],
       "Tab closed": [
         "Вкладку закрито"
@@ -3628,7 +3636,7 @@
         "У вас немає рахунків."
       ],
       "You have reached the contacts limit for your account": [
-        "Ви досягли максимальної кількості контактів для Вашого облікового запису"
+        "Ви досягли максимальної кількості контактів для облікового запису"
       ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Ви досягли максимальної кількості календарів. Деякі календарі не можна імпортувати."
@@ -4414,9 +4422,6 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Ви дійсно хочете видалити ключ безпеки ${ name }?"
-      ],
-      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
-        "Коли включено, дозволяється зареєструвати вбудовані пристрої (такі як Windows Hello, TouchID, FaceID, або вбудовані TPM) в додаток до зовнішніх апаратних ключів безпеки"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Вставте ключ безпеки, прив'язаний до вашого облікового запису ${ BRAND_NAME }."
@@ -5689,7 +5694,7 @@
         "Ви справді хочете відхилити зміни?"
       ],
       "Are you sure you want to discard your import?": [
-        "Ви впевнені, що хочете відмовитися від імпорту?"
+        "Ви дійсно хочете відхилити імпортування?"
       ],
       "Are you sure you want to permanently delete all your logs?": [
         "Ви дійсно хочете остаточно видалити усі ваші журнали?"
@@ -7305,9 +7310,6 @@
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Ви можете увімкнути журнал авторизації, щоб бачити хто і з якої IP-адреси мав доступ до вашого облікового запису. Ми записуватимемо IP-адреси та час отримання доступу, а також невдалі спроби."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Ви можете відразу розблокувати наведені вище налаштування, додавши ${ specificCountryCount } до номера IP-адреси у вашому тарифному плані, або звернутися до нас за індивідуальними рішеннями."
-      ],
       "You can import one data type at a time.": [
         "Ви можете імпортувати один тип даних за один раз."
       ],
@@ -7520,9 +7522,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша передплата керується Mozilla. Зв'яжіться зі службою підтримки Mozilla."
-      ],
-      "Your subscription will renew automatically on ${ renewalTime }.": [
-        "Ваша підписка поновиться автоматично ${ renewalTime }."
       ]
     },
     "info": {
@@ -12123,9 +12122,6 @@
       ],
       "Expiring": [
         "Термін дії"
-      ],
-      "Upcoming": [
-        "Невдовзі"
       ]
     },
     "Success": {
@@ -13618,35 +13614,14 @@
       ]
     },
     "Title subscription": {
-      "Actions": [
-        "Дії"
-      ],
-      "Duration": [
-        "Тривалість"
-      ],
       "End date": [
         "Дата завершення"
       ],
       "Plan": [
         "Тарифний план"
       ],
-      "Servers": [
-        "Сервери"
-      ],
-      "Start date": [
-        "Дата початку"
-      ],
       "Status": [
         "Стан"
-      ],
-      "Total": [
-        "Усього"
-      ],
-      "Total paid": [
-        "Усього сплачено"
-      ],
-      "Users": [
-        "Користувачі"
       ]
     },
     "Title; create calendar modal": {
@@ -13984,23 +13959,8 @@
       ]
     },
     "vpn_2step: billing": {
-      "${ billedText }, renews on ${ formattedEndTime }": [
-        "${ billedText } продовжується на ${ formattedEndTime }"
-      ],
-      "Billed every 15 months": [
-        "Сплачується кожні 15 місяців"
-      ],
-      "Billed every 2 years": [
-        "Сплачується кожні 2 роки"
-      ],
-      "Billed every 30 months": [
-        "Сплачується кожні 30 місяців"
-      ],
       "Billed monthly": [
         "Сплачується щомісяця"
-      ],
-      "Billed yearly": [
-        "Сплачується щороку"
       ]
     },
     "vpn_2step: discount": {

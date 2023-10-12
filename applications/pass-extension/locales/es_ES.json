@@ -29,15 +29,6 @@
       "Back": [
         "Atrás"
       ],
-      "Can edit": [
-        "Editar"
-      ],
-      "Can manage": [
-        "Gestionar"
-      ],
-      "Can view": [
-        "Ver"
-      ],
       "Can't find your password manager? Please let us know!": [
         "¿No encuentras tu gestor de contraseñas? ¡Háznoslo saber!"
       ],
@@ -182,8 +173,8 @@
       "Importing": [
         "Importando"
       ],
-      "Invite people": [
-        "Invitar personas"
+      "Invite others": [
+        "Invitar a otros"
       ],
       "Join shared vault": [
         "Unirte a la bóveda compartida"
@@ -199,6 +190,15 @@
       ],
       "Lock extension": [
         "Bloquear la extensión"
+      ],
+      "Make admin": [
+        "Dar permisos para administrar"
+      ],
+      "Make editor": [
+        "Dar permisos para editar"
+      ],
+      "Make viewer": [
+        "Dar permisos para ver"
       ],
       "Manage access": [
         "Gestionar el acceso"
@@ -280,6 +280,9 @@
       ],
       "Share": [
         "Compartir"
+      ],
+      "Share vault": [
+        "Compartir la bóveda"
       ],
       "Show": [
         "Mostrar"
@@ -662,6 +665,9 @@
       "Access your passwords on the go with our mobile apps.": [
         "Accede a tus contraseñas sobre la marcha con nuestras aplicaciones móviles."
       ],
+      "Admin": [
+        "Administrador"
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" movido a la papelera. Dejará de reenviar correos a tu buzón."
       ],
@@ -680,23 +686,14 @@
       "Autosaved on ${ submissionURL }": [
         "Guardado automáticamente el ${ submissionURL }"
       ],
-      "Can create, edit, delete and export items in this vault.": [
+      "Can create, edit, delete, and export items in this vault.": [
         "Permite crear, editar, eliminar y exportar los elementos en esta bóveda."
-      ],
-      "Can edit": [
-        "Editar"
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Permite conceder y revocar acceso a esta bóveda y eliminarla."
       ],
       "Can grant and revoke access to this vault.": [
         "Permite conceder y revocar acceso a esta bóveda."
-      ],
-      "Can manage": [
-        "Gestionar"
-      ],
-      "Can view": [
-        "Ver"
       ],
       "Can view items in this vault.": [
         "Permite ver los elementos en esta bóveda."
@@ -730,6 +727,9 @@
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importa fácilmente tus contraseñas existentes a ${ PASS_APP_NAME }."
+      ],
+      "Editor": [
+        "Editor"
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Habilita ${ PASS_APP_NAME } al conectar tu cuenta de ${ BRAND_NAME }"
@@ -801,11 +801,17 @@
       "Internet connection lost": [
         "Se ha perdido la conexión a internet."
       ],
+      "Invitation sent": [
+        "La invitación ha sido enviada."
+      ],
       "Invite successfully removed": [
         "La invitación ha sido eliminada."
       ],
       "Invite successfully resent": [
         "La invitación ha sido enviada."
+      ],
+      "invites you to access items in": [
+        "te invita a acceder a elementos de"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Parece que ya habías iniciado sesión en ${ PASS_APP_NAME }. Si deseas iniciar sesión con una cuenta diferente, cierra previamente la sesión actual."
@@ -877,9 +883,6 @@
       "Passwords older than 1 day are automatically deleted from history.": [
         "Las contraseñas generadas hace más de 1 día se borrarán del historial."
       ],
-      "Pending invitation": [
-        "Invitación pendiente"
-      ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Fija ${ PASS_APP_NAME } en tu barra de herramientas"
       ],
@@ -912,9 +915,6 @@
       ],
       "Select the destination vault for each imported vault.": [
         "Selecciona la bóveda de destino para cada bóveda importada."
-      ],
-      "Select the level of access this user will gain when they join your vault.": [
-        "Selecciona el nivel de acceso que obtendrá este usuario cuando se una a tu bóveda."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "No se puede acceder a los servidores. Inténtalo de nuevo en unos minutos."
@@ -965,9 +965,6 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Esta exportación no estará cifrada y cualquier persona con acceso a tu archivo exportado podrá ver tus contraseñas. Por seguridad, elimínalo una vez que hayas terminado de utilizarlo."
       ],
-      "This user will receive an invitation to join your '${ vaultName }' vault.": [
-        "Este usuario recibirá una invitación para unirse a tu bóveda '${ vaultName }'."
-      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Esta bóveda ya no se comparte con nadie. Invita a personas para compartirla con otros."
       ],
@@ -1004,6 +1001,9 @@
       "Verification code": [
         "Código de verificación"
       ],
+      "Viewer": [
+        "Visualizador"
+      ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Estamos teniendo problemas en sincronizar los datos a tu almacenamiento local. Asegúrate de tener suficiente espacio en el disco para que ${ PASS_SHORT_APP_NAME } funcione corectamente."
       ],
@@ -1017,8 +1017,14 @@
         "Tienes ${ daysRemaining } día restante de tu periodo de prueba.",
         "Tienes ${ daysRemaining } días restantes de tu periodo de prueba."
       ],
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
+        "Has superado el número de bóvedas incluidas en tu suscripción. Los elementos solo se pueden mover a tus primeras dos bóvedas. Para mover elementos entre todas las bóvedas, mejora tu suscripción."
+      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
         "Has superado el número de bóvedas incluidas en tu suscripción. Los elementos solo pueden ser movidos a tu bóveda principal. Para mover elementos entre todas las bóvedas, actualiza tu suscripción."
+      ],
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
+        "Has superado el número de bóvedas incluidas en tu suscripción. Los elementos nuevos solo se pueden crear en tus primeras dos bóvedas. Para crear elementos nuevos en todas las bóvedas, mejora tu suscripción."
       ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
         "Has superado el número de bóvedas incluidas en tu suscripción. Los nuevos elementos solo pueden ser creados en tu bóveda principal. Para crear elementos nuevos en todas las bóvedas, actualiza tu suscripción."
@@ -1038,8 +1044,8 @@
       "You're about to create": [
         "Vas a crear"
       ],
-      "You've been invited to a vault. Click here to see the invitation.": [
-        "Se te ha invitado a una bóveda. Pulsa aquí para ver la invitación."
+      "You're invited to a vault.": [
+        "Se te ha invitado a una bóveda."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Tu sesión de ${ PASS_APP_NAME } está bloqueada."
@@ -1125,6 +1131,9 @@
       ],
       "Autosave": [
         "Guardar automáticamente"
+      ],
+      "Autosave vault": [
+        "Guardar automáticamente la bóveda"
       ],
       "Autosuggest": [
         "Sugerencias automáticas"
@@ -1234,6 +1243,9 @@
       "Label": [
         "Etiqueta"
       ],
+      "Language": [
+        "Idioma"
+      ],
       "Last 2 weeks": [
         "Últimas 2 semanas"
       ],
@@ -1339,9 +1351,6 @@
       "Report a problem": [
         "Notificar un problema"
       ],
-      "Respond": [
-        "Responder"
-      ],
       "Restore all items": [
         "Restaurar todos los elementos"
       ],
@@ -1353,6 +1362,9 @@
       ],
       "Select an email address": [
         "Seleccionar una dirección de correo"
+      ],
+      "Select preferred language": [
+        "Seleccionar el idioma preferido"
       ],
       "Select your password manager": [
         "Selecciona tu gestor de contraseñas"
@@ -1432,11 +1444,11 @@
       "Vault": [
         "Bóveda"
       ],
-      "Vaults": [
-        "Bóvedas"
-      ],
       "Verification number": [
         "Número de verificación"
+      ],
+      "View details": [
+        "Mostrar los detalles"
       ],
       "View logs": [
         "Ver los registros"
@@ -1612,20 +1624,17 @@
       "Permanently remove all items ?": [
         "¿Eliminar todos los elementos permanentemente?"
       ],
-      "Permissions": [
-        "Permisos"
-      ],
       "Pin the extension": [
         "Fija la extensión"
       ],
       "Secure your data": [
         "Asegura tus datos"
       ],
+      "Set access level": [
+        "Configurar el nivel de acceso"
+      ],
       "Share with": [
         "Compartir con"
-      ],
-      "Shared vault invitation": [
-        "Invitación de bóveda compartida"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "¿Cambiar a ${ PASS_APP_NAME }?"
@@ -1653,6 +1662,9 @@
       ],
       "Use my email": [
         "Utilizar mi correo electrónico"
+      ],
+      "Vault shared with you": [
+        "Bóveda compartida contigo"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Te damos la bienvenida a ${ brandNameJSX }"
@@ -1705,9 +1717,6 @@
       ],
       "An error occured while exporting your data": [
         "Se ha producido un error al exportar tus datos."
-      ],
-      "Are you sure you want to transfer vault ownership to ${ email }?": [
-        "¿Estás seguro de que quieres transferir la propiedad de la bóveda a ${ email }?"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "No se pueden recuperar buzones para este alias en este momento."
@@ -1772,6 +1781,9 @@
       "Title is required": [
         "Título no puede estar vacío"
       ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "¿Transferir la propiedad de esta bóveda a ${ email }?"
+      ],
       "Trash alias ?": [
         "¿Eliminar el alias?"
       ],
@@ -1805,11 +1817,17 @@
       "Your plan does not allow you to create more aliases": [
         "Tu plan no te permite crear más alias."
       ],
+      "Your plan only allows you to autofill from your first two vaults": [
+        "Tu plan solo le permite rellenar automáticamente desde tus primeras dos bóvedas."
+      ],
       "Your plan only allows you to autofill from your primary vault": [
         "Tu plan solo permite el autorellenado desde tu bóveda principal."
       ],
       "Your session was locked due to inactivity": [
         "Se ha bloqueado tu sesión por inactividad."
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "Tu suscripción no te permite crear varias bóvedas. Todos los elementos serán importados atsu primera bóveda. Para importar a varias bóvedas mejora tu suscripción."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
         "Tu suscripción no te permite crear varias bóvedas. Todos los elementos serán importados a tu bóveda principal. Para importar a varias bóvedas actualiza tu suscripción."

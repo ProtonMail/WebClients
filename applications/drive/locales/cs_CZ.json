@@ -55,6 +55,12 @@
       "Apply": [
         "Použít"
       ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Na jednu skupinu kontaktů je povolen maximálně ${ maxContacts } kontakt",
+        "Na jednu skupinu kontaktů jsou povoleny maximálně ${ maxContacts } kontakty",
+        "Na jednu skupinu kontaktů je povoleno maximálně ${ maxContacts } kontaktů",
+        "Na jednu skupinu kontaktů je povoleno maximálně ${ maxContacts } kontaktů"
+      ],
       "Attach screenshot(s)": [
         "Přiložit sním(ek/ky) obrazovky"
       ],
@@ -729,6 +735,12 @@
       ],
       "View invoice": [
         "Zobrazit fakturu"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktu",
+        "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktů",
+        "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktů",
+        "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktů"
       ],
       "Your 500 MB bonus": [
         "Bonus 500 MB"
@@ -2248,6 +2260,12 @@
       ],
       "Username must end with a letter or digit": [
         "Uživatelské jméno musí končit písmenem nebo číslicí"
+      ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Nemůžete odeslat e-mail více než ${ maxContacts } příjemci najednou",
+        "Nemůžete odeslat e-mail více než ${ maxContacts } příjemcům najednou",
+        "Nemůžete odeslat e-mail více než ${ maxContacts } příjemcům najednou",
+        "Nemůžete odeslat e-mail více než ${ maxContacts } příjemcům najednou"
       ],
       "You have reached the contacts limit for your account": [
         "Dosáhli jste limitu kontaktů vašeho účtu"
