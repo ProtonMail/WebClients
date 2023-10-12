@@ -45,14 +45,13 @@ const AddressesTable = ({ domain, domainAddresses }: Props) => {
                                     address={address}
                                     domain={domain}
                                     onChange={(id, value) => {
-                                        const newValue = value ? 1 : 0;
                                         setAddresses(
                                             addresses.map((address) => {
                                                 return {
                                                     ...address,
-                                                    CatchAll: address.ID === id ? newValue : 0,
+                                                    CatchAll: address.ID === id ? value : false,
                                                 } as const;
-                                            })
+                                            }),
                                         );
                                         void call();
                                     }}

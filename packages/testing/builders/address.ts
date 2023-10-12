@@ -2,6 +2,7 @@ import { Address, AddressKey } from '@proton/shared/lib/interfaces';
 
 export const buildAddress = (value?: Partial<Address>): Address => {
     return {
+        CatchAll: false,
         ID: 'YC-yr6jeFLCSwO5DuGBxGYMSHesNSgl3FcIZ-ITJtvTu2w6gBAmGnufX8Hnl0TK4P5p2VOPJ3kVcjHBSj9hQKw==',
         DomainID: 'l8vWAXHBQmv0u7OVtPbcqMa4iwQaBqowINSQjPrxAr-Da8fVPKUkUcqAq30_BCxj1X0nW70HQRmAa-rIvzmKUA==',
         Email: 'jovan@proton.me',
