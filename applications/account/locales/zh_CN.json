@@ -1089,11 +1089,6 @@
         "当前登录"
       ]
     },
-    "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "将于 ${ formattedEndTime } 自动续订"
-      ]
-    },
     "Billing cycle option": {
       "1 month": [
         "1 个月"
@@ -9984,9 +9979,6 @@
     "Subscription status": {
       "Active": [
         "已激活"
-      ],
-      "Upcoming": [
-        "即将到来"
       ]
     },
     "Success": {
@@ -11519,23 +11511,8 @@
       ]
     },
     "vpn_2step: billing": {
-      "${ billedText }, renews on ${ formattedEndTime }": [
-        "${ billedText }，下次续费为 ${ formattedEndTime }"
-      ],
-      "Billed every 15 months": [
-        "每 15 个月付费"
-      ],
-      "Billed every 2 years": [
-        "每两年付费"
-      ],
-      "Billed every 30 months": [
-        "每 30 个月付费"
-      ],
       "Billed monthly": [
         "每月付费"
-      ],
-      "Billed yearly": [
-        "每年付费"
       ]
     },
     "vpn_2step: info": {

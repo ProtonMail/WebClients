@@ -532,9 +532,6 @@
       ]
     },
     "Action subscription": {
-      "Manage": [
-        "Beheren"
-      ],
       "Reactivate": [
         "Opnieuw activeren"
       ]
@@ -631,11 +628,6 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Dit zal alle routers en clients die dit certificaat gebruiken loskoppelen."
-      ]
-    },
-    "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "Vernieuwd automatisch op ${ formattedEndTime }"
       ]
     },
     "Billing cycle option": {
@@ -3578,9 +3570,6 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "U kunt dit eenmaal bewerken om ervoor te zorgen dat het juiste e-mailadres voor verificatie is ingevoerd."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
-        "U kunt meteen de installatie ontgrendelen door ${ specificCountryCount } toe te voegen aan de hoeveelheid IP-adressen in uw abonnement of neem contact op met ons voor oplossingen op maat."
-      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert.",
         "U kan tot ${ MAX_CALENDARS_FREE } agenda's behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert."
@@ -3696,9 +3685,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Uw abonnement wordt beheerd door Mozilla. Neem contact op met Mozilla support."
-      ],
-      "Your subscription will renew automatically on ${ renewalTime }.": [
-        "Uw abonnement wordt automatisch verlengd op ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -6054,9 +6040,6 @@
       ],
       "Expiring": [
         "Verlopen"
-      ],
-      "Upcoming": [
-        "Binnenkort"
       ]
     },
     "Success": {
@@ -6888,35 +6871,14 @@
       ]
     },
     "Title subscription": {
-      "Actions": [
-        "Acties"
-      ],
-      "Duration": [
-        "Duur"
-      ],
       "End date": [
         "Einddatum"
       ],
       "Plan": [
         "Abonnement"
       ],
-      "Servers": [
-        "Servers"
-      ],
-      "Start date": [
-        "Begindatum"
-      ],
       "Status": [
         "Status"
-      ],
-      "Total": [
-        "Totaal"
-      ],
-      "Total paid": [
-        "Totaal betaald"
-      ],
-      "Users": [
-        "Gebruikers"
       ]
     },
     "Tooltip": {
@@ -7022,23 +6984,8 @@
       ]
     },
     "vpn_2step: billing": {
-      "${ billedText }, renews on ${ formattedEndTime }": [
-        "${ billedText }, verlengt op ${ formattedEndTime }"
-      ],
-      "Billed every 15 months": [
-        "Wordt om de 15 maanden gefactureerd"
-      ],
-      "Billed every 2 years": [
-        "Wordt om de 2 jaar gefactureerd"
-      ],
-      "Billed every 30 months": [
-        "Wordt om de 30 maanden gefactureerd"
-      ],
       "Billed monthly": [
         "Maandelijks gefactureerd"
-      ],
-      "Billed yearly": [
-        "Jaarlijks gefactureerd"
       ]
     },
     "vpn_2step: discount": {

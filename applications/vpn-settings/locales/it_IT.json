@@ -532,9 +532,6 @@
       ]
     },
     "Action subscription": {
-      "Manage": [
-        "Gestisci"
-      ],
       "Reactivate": [
         "Riattiva"
       ]
@@ -631,11 +628,6 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Questo disconnetterà tutti i router e client che utilizzano questo certificato."
-      ]
-    },
-    "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "Si rinnova automaticamente il ${ formattedEndTime }"
       ]
     },
     "Billing cycle option": {
@@ -2308,11 +2300,11 @@
       "Allow platform keys": [
         "Consenti chiavi della piattaforma"
       ],
+      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
+        "Ti consente di registrare chiavi di sicurezza integrate (come Windows Hello, Face ID, Touch ID o TPM interni)"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Sei sicuro di voler eliminare la chiave di sicurezza ${ name }?"
-      ],
-      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
-        "Se abilitato, consente di registrare dispositivi integrati (come Windows Hello, TouchID, FaceID o TPM interni) oltre alle chiavi di sicurezza hardware esterne"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Inserisci una chiave di sicurezza collegata al tuo Account ${ BRAND_NAME }."
@@ -3584,8 +3576,8 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Puoi modificarlo una volta per garantire l'indirizzo email corretto per la verifica."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Puoi sbloccare immediatamente la configurazione di cui sopra aggiungendo ${ specificCountryCount } al numero se gli indirizzi IP nel tuo piano o contattarci per soluzioni su misura."
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
+        "Puoi sbloccare immediatamente la configurazione qui sopra aggiungendo ${ specificCountryCount } al numero di indirizzi IP nel tuo piano o puoi contattarci per soluzioni su misura."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Puoi avere fino a ${ MAX_CALENDARS_FREE } calendario. Rimuovi i link ai calendari condivisi e qualsiasi utente di ${ BRAND_NAME } con cui hai condiviso i tuoi calendari prima di annullare l'abbonamento a ${ MAIL_SHORT_APP_NAME }.",
@@ -3702,9 +3694,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "La tua sottoscrizione è gestita da Mozilla. Per favore, contatta il supporto di Mozilla."
-      ],
-      "Your subscription will renew automatically on ${ renewalTime }.": [
-        "Il tuo abbonamento si rinnoverà automaticamente il ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -4742,6 +4731,12 @@
       "Sign in as user": [
         "Accedi come utente"
       ],
+      "SMTP submission": [
+        "Inoltro tramite SMTP"
+      ],
+      "SMTP submission for select organizations": [
+        "Inoltro tramite SMTP per organizzazioni selezionate"
+      ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android e Windows)"
       ],
@@ -5119,6 +5114,9 @@
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
         "Condividi i tuoi file o cartelle con chiunque usando link sicuri e condivisibili"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTP consente a servizi o dispositivi di terze parti di inviare email tramite ${ MAIL_APP_NAME }."
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "NetShield, appositamente progettato, protegge il dispositivo e velocizza la navigazione bloccando annunci, tracker e malware"
@@ -6248,9 +6246,6 @@
       ],
       "Expiring": [
         "Scadenza"
-      ],
-      "Upcoming": [
-        "In arrivo"
       ]
     },
     "Success": {
@@ -7082,35 +7077,14 @@
       ]
     },
     "Title subscription": {
-      "Actions": [
-        "Azioni"
-      ],
-      "Duration": [
-        "Durata"
-      ],
       "End date": [
         "Data di fine"
       ],
       "Plan": [
         "Piano"
       ],
-      "Servers": [
-        "Server"
-      ],
-      "Start date": [
-        "Data d'inizio"
-      ],
       "Status": [
         "Stato"
-      ],
-      "Total": [
-        "Totale"
-      ],
-      "Total paid": [
-        "Totale pagato"
-      ],
-      "Users": [
-        "Utenti"
       ]
     },
     "Tooltip": {
@@ -7216,23 +7190,8 @@
       ]
     },
     "vpn_2step: billing": {
-      "${ billedText }, renews on ${ formattedEndTime }": [
-        "${ billedText }, rinnovo in data ${ formattedEndTime }"
-      ],
-      "Billed every 15 months": [
-        "Fatturato ogni 15 mesi"
-      ],
-      "Billed every 2 years": [
-        "Fatturato ogni 2 anni"
-      ],
-      "Billed every 30 months": [
-        "Fatturato ogni 30 mesi"
-      ],
       "Billed monthly": [
         "Fatturazione mensile"
-      ],
-      "Billed yearly": [
-        "Fatturazione annuale"
       ]
     },
     "vpn_2step: discount": {

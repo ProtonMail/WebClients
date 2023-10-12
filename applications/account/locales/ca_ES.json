@@ -335,6 +335,9 @@
       "Discard": [
         "Descarta"
       ],
+      "Don't know your password?": [
+        "No sabeu la vostra contrasenya?"
+      ],
       "Don't show again": [
         "No mostrar de nou"
       ],
@@ -794,6 +797,9 @@
       "Search settings": [
         "Configuració de cerca"
       ],
+      "See how": [
+        "Mira com"
+      ],
       "See plan features": [
         "Mostra les característiques del pla"
       ],
@@ -1072,9 +1078,6 @@
       ]
     },
     "Action subscription": {
-      "Manage": [
-        "Gestiona"
-      ],
       "Reactivate": [
         "Reactiva"
       ]
@@ -1270,11 +1273,6 @@
     "Baseline in trial plan": {
       "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "${ mailPlus }: la solució de correu electrònic i calendari que prioritza la privadesa per a les vostres necessitats de comunicació diàries."
-      ]
-    },
-    "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "Es renova automàticament el ${ formattedEndTime }"
       ]
     },
     "Billing cycle option": {
@@ -7184,9 +7182,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "La vostra subscripció és gestionada per Mozilla. Contacteu amb el suport de Mozilla."
-      ],
-      "Your subscription will renew automatically on ${ renewalTime }.": [
-        "La vostra subscripció es renovarà automàticament el ${ renewalTime }."
       ]
     },
     "info": {
@@ -11016,6 +11011,51 @@
         "Restableix la contrasenya"
       ]
     },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "La recuperació de compte no està disponible per a les claus d'adreces antigues."
+      ],
+      "Please generate keys before you try to change your password": [
+        "Genereu les claus abans d’intentar canviar la vostra contrasenya."
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } dia",
+        "${ timeRemaining.inDays } dies"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } hora",
+        "${ timeRemaining.inHours } hores"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teneu ${ timeRemaining.inDays } dia per restablir la vostra contrasenya.",
+        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teneu ${ timeRemaining.inDays } dies per restablir la vostra contrasenya."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teneu ${ timeRemaining.inHours } hora per restablir la vostra contrasenya.",
+        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teneu ${ timeRemaining.inHours } hores per restablir la vostra contrasenya."
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Aneu a l'aparell connectat (a la sessió on es va iniciar la sol·licitud) per canviar la vostra contrasenya."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Aquest permís caduca en ${ timeRemaining.inDays } dia.",
+        "Aquest permís caduca en ${ timeRemaining.inDays } dies."
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Aquest permís caduca en ${ timeRemaining.inHours } hora.",
+        "Aquest permís caduca en ${ timeRemaining.inHours } hores."
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Ara podeu canviar la vostra contrasenya per al compte ${ boldEmail } lliurement durant ${ boldDaysRemaining }."
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Mira com"
+      ]
+    },
     "session_recovery:available:notification": {
       "Password saved": [
         "S'ha desat la contrasenya."
@@ -11031,6 +11071,11 @@
         "Cancel·la el restabliment de contrasenya"
       ]
     },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Introduïu la vostra contrasenya actual per cancel·lar el procés de restabliment de contrasenya. No es tindran en compte cap altre canvi."
+      ]
+    },
     "session_recovery:cancellation:notification": {
       "Password reset cancelled": [
         "S'ha cancel·lat el restabliment de la contrasenya."
@@ -11039,6 +11084,11 @@
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Cancel·la el restabliment de contrasenya?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "S'ha cancel·lat la sol·licitud de restabliment de contrasenya (${ user.Email }). Si no heu sol·licitat aquesta sol·licitud, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -11068,6 +11118,25 @@
       ],
       "Learn more": [
         "Saber-ne més"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } hora més",
+        "${ gracePeriodHoursRemaining } hores més"
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "Si no heu demanat restablir la teva contrasenya, cancel·leu aquesta sol·licitud ara mateix."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "S'ha sol·licitat el restabliment de la contrasenya (${ user.Email }). Podeu canviar la vostra contrasenya en ${ hoursRemaining } hora.",
+        "S'ha sol·licitat el restabliment de la contrasenya (${ user.Email }). Podeu canviar la vostra contrasenya en ${ hoursRemaining } hores."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "Per assegurar-nos que sou vosaltres qui intenteu restablir la vostra contrasenya, esperem 72 hores abans d'aprovar les sol·licituds. Podeu canviar la vostra contrasenya en ${ boldTimeLeft }. ${ viewRequest }."
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "Hem rebut una sol·licitud de restabliment de contrasenya per a ${ boldEmail }."
       ]
     },
     "session_recovery:in_progress:link": {
@@ -11104,11 +11173,37 @@
     "session_recovery:sign_out:action": {
       "Sign out": [
         "Tanca la sessió"
+      ],
+      "Stay signed in": [
+        "Mantén la sessió iniciada"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } hora",
+        "${ gracePeriodHoursRemaining } hores"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } ara està disponible."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Si tanqueu la sessió abans de restablir la contrasenya, podríeu perdre l'accés al vostre compte."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Si tanqueu la sessió sense restablir la contrasenya, podríeu perdre l'accés al vostre compte."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Podreu restablir la vostra contrasenya en ${ boldTimeLeft }."
       ]
     },
     "session_recovery:sign_out:link": {
       "Password reset": [
         "Restabliment de contrasenya"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Tancar la sessió sense restabliment de contrasenya?"
       ]
     },
     "session_recovery:status:info": {
@@ -11703,9 +11798,6 @@
       ],
       "Expiring": [
         "Caduca"
-      ],
-      "Upcoming": [
-        "Pròximament"
       ]
     },
     "Success": {
@@ -13137,35 +13229,14 @@
       ]
     },
     "Title subscription": {
-      "Actions": [
-        "Accions"
-      ],
-      "Duration": [
-        "Durada"
-      ],
       "End date": [
         "Data de fi"
       ],
       "Plan": [
         "Pla"
       ],
-      "Servers": [
-        "Servidors"
-      ],
-      "Start date": [
-        "Data d'inici"
-      ],
       "Status": [
         "Estat"
-      ],
-      "Total": [
-        "Total"
-      ],
-      "Total paid": [
-        "Total pagat"
-      ],
-      "Users": [
-        "Usuaris"
       ]
     },
     "Title; create calendar modal": {
@@ -13466,23 +13537,8 @@
       ]
     },
     "vpn_2step: billing": {
-      "${ billedText }, renews on ${ formattedEndTime }": [
-        "${ billedText }, es renova a ${ formattedEndTime }"
-      ],
-      "Billed every 15 months": [
-        "Facturat cada 15 mesos"
-      ],
-      "Billed every 2 years": [
-        "Facturat cada 2 anys"
-      ],
-      "Billed every 30 months": [
-        "Facturat cada 30 mesos"
-      ],
       "Billed monthly": [
         "Facturat mensualment"
-      ],
-      "Billed yearly": [
-        "Facturat anualment"
       ]
     },
     "vpn_2step: discount": {

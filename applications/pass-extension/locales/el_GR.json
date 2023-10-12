@@ -29,15 +29,6 @@
       "Back": [
         "Πίσω"
       ],
-      "Can edit": [
-        "Δυνατότητα επεξεργασίας"
-      ],
-      "Can manage": [
-        "Δυνατότητα διαχείρισης"
-      ],
-      "Can view": [
-        "Δυνατότητα προβολής"
-      ],
       "Can't find your password manager? Please let us know!": [
         "Δεν μπορείτε να βρείτε τον διαχειριστή κωδικών πρόσβασης σας; Ενημερώστε μας!"
       ],
@@ -182,8 +173,8 @@
       "Importing": [
         "Εισαγωγή"
       ],
-      "Invite people": [
-        "Πρόσκληση ατόμων"
+      "Invite others": [
+        "Πρόσκληση άλλων"
       ],
       "Join shared vault": [
         "Συμμετοχή σε κοινόχρηστη κρύπτη"
@@ -199,6 +190,15 @@
       ],
       "Lock extension": [
         "Κλείδωμα προέκτασης"
+      ],
+      "Make admin": [
+        "Ορισμός ως διαχειριστή"
+      ],
+      "Make editor": [
+        "Ορισμός ως επεξεργαστή"
+      ],
+      "Make viewer": [
+        "Ορισμός ως θεατή"
       ],
       "Manage access": [
         "Διαχείριση πρόσβασης"
@@ -223,6 +223,9 @@
       ],
       "Not now": [
         "Όχι τώρα"
+      ],
+      "Open in a window": [
+        "Άνοιγμα σε παράθυρο"
       ],
       "Open navigation": [
         "Άνοιγμα μενού πλοήγησης"
@@ -280,6 +283,9 @@
       ],
       "Share": [
         "Κοινοποίηση"
+      ],
+      "Share vault": [
+        "Κοινή χρήση κρύπτης"
       ],
       "Show": [
         "Εμφάνιση"
@@ -662,6 +668,9 @@
       "Access your passwords on the go with our mobile apps.": [
         "Αποκτήστε πρόσβαση στους κωδικούς πρόσβασής σας εν κινήσει με τις εφαρμογές μας για κινητά."
       ],
+      "Admin": [
+        "Διαχειριστής"
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Το ψευδώνυμο \"${ item.aliasEmail }\" μετακινήθηκε στον κάδο απορριμμάτων - θα σταματήσει να προωθεί μηνύματα ηλεκτρονικού ταχυδρομείου στο γραμματοκιβώτιό σας"
       ],
@@ -680,23 +689,14 @@
       "Autosaved on ${ submissionURL }": [
         "Αυτόματη αποθήκευση στο ${ submissionURL }"
       ],
-      "Can create, edit, delete and export items in this vault.": [
+      "Can create, edit, delete, and export items in this vault.": [
         "Μπορεί να δημιουργήσει, επεξεργαστεί, διαγράψει και εξάγει στοιχεία σε αυτήν την κρύπτη."
-      ],
-      "Can edit": [
-        "Δυνατότητα επεξεργασίας"
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Μπορεί να παραχωρήσει και να ανακαλέσει την πρόσβαση σε αυτή την κρύπτη και να το διαγράψει."
       ],
       "Can grant and revoke access to this vault.": [
         "Μπορεί να παραχωρήσει και να ανακαλέσει την πρόσβαση σε αυτή την κρύπτη."
-      ],
-      "Can manage": [
-        "Δυνατότητα διαχείρισης"
-      ],
-      "Can view": [
-        "Δυνατότητα προβολής"
       ],
       "Can view items in this vault.": [
         "Μπορεί να προβάλει στοιχεία σε αυτή την κρύπτη."
@@ -730,6 +730,9 @@
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Εισαγάγετε εύκολα τους υπάρχοντες κωδικούς πρόσβασής σας στο ${ PASS_APP_NAME }."
+      ],
+      "Editor": [
+        "Πρόγραμμα επεξεργασίας"
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Ενεργοποιήστε το ${ PASS_APP_NAME }, συνδέοντας τον λογαριασμό σας ${ BRAND_NAME }"
@@ -801,11 +804,17 @@
       "Internet connection lost": [
         "Απώλεια σύνδεσης στο διαδίκτυο"
       ],
+      "Invitation sent": [
+        "Η πρόσκληση στάλθηκε"
+      ],
       "Invite successfully removed": [
         "Η πρόσκληση καταργήθηκε με επιτυχία"
       ],
       "Invite successfully resent": [
         "Επιτυχής αποστολή πρόσκλησης εκ νέου"
+      ],
+      "invites you to access items in": [
+        "σας προσκαλεί να αποκτήσετε πρόσβαση σε στοιχεία στη"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Φαίνεται ότι είστε ήδη συνδεδεμένοι στο ${ PASS_APP_NAME }. Εάν προσπαθείτε να συνδεθείτε με διαφορετικό λογαριασμό, αποσυνδεθείτε πρώτα από την προέκταση."
@@ -877,9 +886,6 @@
       "Passwords older than 1 day are automatically deleted from history.": [
         "Οι κωδικοί πρόσβασης που είναι παλαιότεροι από 1 ημέρα διαγράφονται αυτόματα από το ιστορικό."
       ],
-      "Pending invitation": [
-        "Πρόσκληση σε αναμονή"
-      ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Καρφίτσωμα ${ PASS_APP_NAME } στη γραμμή εργαλείων σας"
       ],
@@ -912,9 +918,6 @@
       ],
       "Select the destination vault for each imported vault.": [
         "Επιλέξτε την κρύπτη προορισμού για κάθε κρύπτη που έχει εισαχθεί."
-      ],
-      "Select the level of access this user will gain when they join your vault.": [
-        "Επιλέξτε το επίπεδο πρόσβασης που θα αποκτήσει αυτός ο χρήστης όταν συνδεθεί στην κρύπτη σας."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Οι διακομιστές είναι απρόσιτοι. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά"
@@ -965,9 +968,6 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Αυτή η εξαγωγή θα είναι μην κρυπτογραφημένη και οποιοσδήποτε έχει πρόσβαση στο εξαγόμενο αρχείο σας θα μπορεί να δει τους κωδικούς πρόσβασής σας. Για λόγους ασφαλείας, διαγράψτε το αφού ολοκληρώσετε τη χρήση του."
       ],
-      "This user will receive an invitation to join your '${ vaultName }' vault.": [
-        "Αυτός ο χρήστης θα λάβει μια πρόσκληση για συμμετοχή στη \"${ vaultName }\" κρύπτη σας."
-      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Αυτή η κρύπτη δεν είναι προς το παρόν κοινόχρηστη με κανέναν. Προσκαλέστε άτομα να τη μοιράστε με άλλους."
       ],
@@ -1004,6 +1004,9 @@
       "Verification code": [
         "Κωδικός επαλήθευσης"
       ],
+      "Viewer": [
+        "Πρόγραμμα προβολής"
+      ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Αντιμετωπίζουμε προβλήματα συγχρονισμού δεδομένων στον τοπικό σας χώρο αποθήκευσης. Βεβαιωθείτε ότι έχετε αρκετό χώρο στο δίσκο για να λειτουργεί ομαλά το ${ PASS_SHORT_APP_NAME }."
       ],
@@ -1017,8 +1020,14 @@
         "Απομένει ${ daysRemaining } ημέρα στη δοκιμαστική περίοδο σας.",
         "Απομένουν ${ daysRemaining } ημέρες στη δοκιμαστική περίοδο σας."
       ],
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
+        "Έχετε υπερβεί τον αριθμό των κρυπτών που περιλαμβάνονται στη συνδρομή σας. Τα στοιχεία μπορούν να μετακινηθούν μόνο στις πρώτες δύο κρύπτες σας. Για να μετακινήσετε στοιχεία μεταξύ όλων των κρυπτών, αναβαθμίστε τη συνδρομή σας."
+      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
         "Έχετε υπερβεί τον αριθμό των κρυπτών που περιλαμβάνονται στη συνδρομή σας. Τα στοιχεία μπορούν να μετακινηθούν μόνο στην κύρια κρύπτη. Για να μετακινήσετε στοιχεία μεταξύ όλων των κρυπτών, αναβαθμίστε τη συνδρομή σας."
+      ],
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
+        "Έχετε υπερβεί τον αριθμό των κρυπτών που περιλαμβάνονται στη συνδρομή σας. Νέα στοιχεία μπορούν να δημιουργηθούν μόνο στις πρώτες δύο κρύπτες σας. Για να δημιουργήσετε νέα στοιχεία σε όλες τις κρύπτες, αναβαθμίστε τη συνδρομή σας."
       ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
         "Έχετε υπερβεί τον αριθμό των κρυπτών που περιλαμβάνονται στη συνδρομή σας. Νέα στοιχεία μπορούν να δημιουργηθούν μόνο στην κύρια κρύπτη. Για να δημιουργήσετε νέα στοιχεία σε όλες τις κρύπτες, αναβαθμίστε τη συνδρομή σας."
@@ -1038,8 +1047,8 @@
       "You're about to create": [
         "Είστε έτοιμοι να δημιουργήσετε"
       ],
-      "You've been invited to a vault. Click here to see the invitation.": [
-        "Έχετε προσκληθεί σε μία κρύπτη. Κάντε κλικ εδώ για να δείτε την πρόσκληση."
+      "You're invited to a vault.": [
+        "Είστε προσκεκλημένοι σε μια κρύπτη."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Η συνεδρία σας στο ${ PASS_APP_NAME } είναι κλειδωμένη"
@@ -1125,6 +1134,9 @@
       ],
       "Autosave": [
         "Αυτόματη αποθήκευση"
+      ],
+      "Autosave vault": [
+        "Αυτόματη αποθήκευση κρύπτης"
       ],
       "Autosuggest": [
         "Αυτόματη πρόταση"
@@ -1234,6 +1246,9 @@
       "Label": [
         "Ετικέτα"
       ],
+      "Language": [
+        "Γλώσσα"
+      ],
       "Last 2 weeks": [
         "Τελευταίες 2 εβδομάδες"
       ],
@@ -1339,9 +1354,6 @@
       "Report a problem": [
         "Αναφορά προβλήματος"
       ],
-      "Respond": [
-        "Απάντηση"
-      ],
       "Restore all items": [
         "Επαναφορά όλων των αντικειμένων"
       ],
@@ -1353,6 +1365,9 @@
       ],
       "Select an email address": [
         "Επιλέξτε μια διεύθυνση ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Select preferred language": [
+        "Επιλέξτε την προτιμώμενη γλώσσα"
       ],
       "Select your password manager": [
         "Επιλέξτε τον διαχειριστή κωδικών πρόσβασης"
@@ -1432,11 +1447,11 @@
       "Vault": [
         "Κρύπτη"
       ],
-      "Vaults": [
-        "Κρύπτες"
-      ],
       "Verification number": [
         "Αριθμός επαλήθευσης"
+      ],
+      "View details": [
+        "Προβολή λεπτομερειών"
       ],
       "View logs": [
         "Προβολή αρχείων καταγραφής"
@@ -1612,20 +1627,17 @@
       "Permanently remove all items ?": [
         "Οριστική αφαίρεση όλων των στοιχείων;"
       ],
-      "Permissions": [
-        "Δικαιώματα"
-      ],
       "Pin the extension": [
         "Καρφίτσωμα της προέκτασης"
       ],
       "Secure your data": [
         "Ασφαλίστε τα δεδομένα σας"
       ],
+      "Set access level": [
+        "Ορισμός επιπέδου πρόσβασης"
+      ],
       "Share with": [
         "Κοινοποίηση με"
-      ],
-      "Shared vault invitation": [
-        "Πρόσκληση κοινόχρηστης κρύπτης"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Μετάβαση στο ${ PASS_APP_NAME };"
@@ -1653,6 +1665,9 @@
       ],
       "Use my email": [
         "Χρήση του ηλεκτρονικού ταχυδρομείου μου"
+      ],
+      "Vault shared with you": [
+        "Η κρύπτη που έχει κοινοποιηθεί σε εσάς"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Καλώς ήρθατε στο ${ brandNameJSX }"
@@ -1705,9 +1720,6 @@
       ],
       "An error occured while exporting your data": [
         "Παρουσιάστηκε σφάλμα κατά την εξαγωγή των δεδομένων σας"
-      ],
-      "Are you sure you want to transfer vault ownership to ${ email }?": [
-        "Είστε βέβαιοι ότι θέλετε να μεταφέρετε την ιδιοκτησία της κρύπτης στο ${ email };"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Δεν είναι δυνατή η ανάκτηση γραμματοκιβωτίων για αυτό το ψευδώνυμο αυτήν τη στιγμή"
@@ -1772,6 +1784,9 @@
       "Title is required": [
         "Απαιτείται τίτλος"
       ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "Μεταφέρετε την ιδιοκτησία αυτής της κρύπτης στο ${ email };"
+      ],
       "Trash alias ?": [
         "Διαγραφή ψευδώνυμου;"
       ],
@@ -1805,11 +1820,17 @@
       "Your plan does not allow you to create more aliases": [
         "Το σχέδιό σας δε σας επιτρέπει να δημιουργήσετε περισσότερα ψευδώνυμα"
       ],
+      "Your plan only allows you to autofill from your first two vaults": [
+        "Το πλάνο σας σάς επιτρέπει να συμπληρώνετε αυτόματα μόνο από τις πρώτες δύο κρύπτες σας"
+      ],
       "Your plan only allows you to autofill from your primary vault": [
         "Το πρόγραμμά σας σάς επιτρέπει να συμπληρώνετε αυτόματα μόνο από την κύρια κρύπτη"
       ],
       "Your session was locked due to inactivity": [
         "Η περίοδος λειτουργίας σας κλειδώθηκε λόγω αδράνειας"
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "Η συνδρομή σας δε σας επιτρέπει να δημιουργήσετε πολλαπλές κρύπτες. Όλα τα στοιχεία θα εισαχθούν στην πρώτη κρύπτη σας. Για να κάνετε εισαγωγή σε πολλαπλές κρύπτες, αναβαθμίστε τη συνδρομή σας."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
         "Η συνδρομή σας δε σας επιτρέπει να δημιουργήσετε πολλαπλές κρύπτες. Όλα τα στοιχεία θα εισαχθούν στην κύρια κρύπτη. Για να κάνετε εισαγωγή σε πολλαπλές κρύπτες, αναβαθμίστε τη συνδρομή σας."

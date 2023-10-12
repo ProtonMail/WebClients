@@ -1073,9 +1073,6 @@
       ]
     },
     "Action subscription": {
-      "Manage": [
-        "Administrer"
-      ],
       "Reactivate": [
         "Genaktiver"
       ]
@@ -1240,11 +1237,6 @@
     "Baseline in trial plan": {
       "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "${ mailPlus }: den privatlivsfokuserede mail- og kalenderløsning til dine daglige kommunikationsbehov."
-      ]
-    },
-    "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "Fornyes automatisk ${ formattedEndTime }"
       ]
     },
     "Billing cycle option": {
@@ -6382,6 +6374,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du er en loyal bruger, har din konto ekstra features aktiveret."
       ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "SMTP-indsendelse gør det muligt for tredjepartstjenester eller -enheder at sende e-mail via ${ MAIL_APP_NAME } for dine brugerdefinerede domæneadresser. Denne funktion er kun tilgængelig for ${ BRAND_NAME } for erhvervsbrugere med brugerdefinerede domæner."
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP-indsendelse giver tredjepartstjenester eller -enheder mulighed for at sende e-mails via ${ MAIL_APP_NAME } for dine brugerdomæne-adresser. For at anmode om adgang, skal du ${ createTicket } der beskriver dine brugsscenarier, hvilke brugerdomæner, du gerne vil bruge, og forventede timemæssige og daglige e-mailmængder."
       ],
@@ -6928,9 +6923,6 @@
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Du kan aktivere godkendelseslogin for at se, hvornår din konto tilgås, og fra hvilken IP-adresse. Vi registrerer den IP-adresse, der tilgår kontoen, og tidspunktet, samt mislykkede forsøg."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
-        "Du kan straks låse ovenstående opsætning op ved at tilføje ${ specificCountryCount } til antallet af IP-adresser i dit abonnement, eller kontakte os for skræddersyede løsninger."
-      ],
       "You can import one data type at a time.": [
         "Du kan importere én datatype ad gangen."
       ],
@@ -7129,9 +7121,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Dit abonnement håndteres af Mozilla. Kontakt venligst Mozilla-support."
-      ],
-      "Your subscription will renew automatically on ${ renewalTime }.": [
-        "Dit abonnement vil automatisk blive fornyet ${ renewalTime }."
       ]
     },
     "info": {
@@ -10900,6 +10889,24 @@
         "ændr din adgangskode nu"
       ]
     },
+    "session_recovery:disable:action": {
+      "Disable password reset": [
+        "Deaktivér nulstilling af adgangskode"
+      ]
+    },
+    "session_recovery:disable:info": {
+      "Make sure you have access to a recovery method.": [
+        "Sørg for, at du har adgang til en gendannelsesmetode."
+      ],
+      "You will no longer be able to request a password reset from your account settings.": [
+        "Du vil ikke længere kunne anmode om en nulstilling af adgangskoden fra dine kontoindstillinger."
+      ]
+    },
+    "session_recovery:disable:title": {
+      "Disable password reset?": [
+        "Deaktivér nulstilling af adgangskode?"
+      ]
+    },
     "session_recovery:in_progress:action": {
       "Cancel request": [
         "Annuller anmodning"
@@ -10928,6 +10935,10 @@
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "Vi har modtaget en anmodning om nulstilling af adgangskode for ${ boldEmail }."
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "Du kan ændre din adgangskode om ${ gracePeriodHoursRemaining } time",
+        "Du kan ændre din adgangskode om ${ gracePeriodHoursRemaining } timer"
       ]
     },
     "session_recovery:in_progress:link": {
@@ -10938,6 +10949,20 @@
     "session_recovery:in_progress:title": {
       "Password reset requested": [
         "Der er anmodet om nulstilling af adgangskode"
+      ]
+    },
+    "session_recovery:initiation:title": {
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "Du kan nulstille din adgangskode om ${ gracePeriodHoursRemaining } time",
+        "Du kan nulstille din adgangskode om ${ gracePeriodHoursRemaining } timer"
+      ]
+    },
+    "session_recovery:settings:action": {
+      "Allow password reset from settings": [
+        "Tillad nulstilling af adgangskode fra indstillinger"
+      ],
+      "Request a password reset from your Account settings. No recovery method needed.": [
+        "Anmod om nulstilling af adgangskode fra dine kontoindstillinger. Ingen gendannelsesmetode nødvendig."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -11517,9 +11542,6 @@
       ],
       "Expiring": [
         "Udløber"
-      ],
-      "Upcoming": [
-        "Kommende"
       ]
     },
     "Success": {
@@ -12063,6 +12085,9 @@
       "Add users": [
         "Tilføj brugere"
       ],
+      "Address and key verification": [
+        "Adresse- og nøglebekræftelse"
+      ],
       "Allocate storage": [
         "Tildel lagerplads"
       ],
@@ -12589,6 +12614,9 @@
       "Password and keys": [
         "Adgangskode og nøgler"
       ],
+      "Password reset": [
+        "Nulstilling af adgangskode"
+      ],
       "Pay invoice": [
         "Betal faktura"
       ],
@@ -12985,29 +13013,14 @@
       ]
     },
     "Title subscription": {
-      "Actions": [
-        "Handlinger"
-      ],
-      "Duration": [
-        "Varighed"
-      ],
       "End date": [
         "Slutdato"
       ],
       "Plan": [
         "Abonnement"
       ],
-      "Servers": [
-        "Servere"
-      ],
-      "Start date": [
-        "Startdato"
-      ],
       "Status": [
         "Status"
-      ],
-      "Users": [
-        "Brugere"
       ]
     },
     "Title; create calendar modal": {

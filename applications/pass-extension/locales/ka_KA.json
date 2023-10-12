@@ -29,15 +29,6 @@
       "Back": [
         "უკან"
       ],
-      "Can edit": [
-        "შეუძლია, ჩაასწოროს"
-      ],
-      "Can manage": [
-        "შეუძლია, მართოს"
-      ],
-      "Can view": [
-        "შეუძლია, ნახოს"
-      ],
       "Can't find your password manager? Please let us know!": [
         "ვერ იპოვეთ თქვენი პაროლების მმართველი? შეგვატყობინეთ!"
       ],
@@ -181,9 +172,6 @@
       ],
       "Importing": [
         "შემოტანა"
-      ],
-      "Invite people": [
-        "მოიწვიეთ ხალხი"
       ],
       "Join shared vault": [
         "გაზიარებულ საცავთან მიერთება"
@@ -366,6 +354,9 @@
       ],
       "Cannot create alias (${ error }).": [
         "ფსევდონიმის შექმნის შეცდომა (${ error })."
+      ],
+      "Cannot send invitation to this address at the moment": [
+        "ამ მისამართზე ამჟამად მოსაწვევს ვერ გავაგზავნი"
       ],
       "Could not leave vault.": [
         "საცავის დატოვების შეცდომა."
@@ -677,23 +668,11 @@
       "Autosaved on ${ submissionURL }": [
         "ავტომატურად შენახულია ბმულზე ${ submissionURL }"
       ],
-      "Can create, edit, delete and export items in this vault.": [
-        "შეუძლია ამ საცავის ელემენტების ჩასწორება/წაშლა და გატანა."
-      ],
-      "Can edit": [
-        "შეუძლია, ჩაასწოროს"
-      ],
       "Can grant and revoke access to this vault, and delete it.": [
         "შეუძლია ამ საცავზე წვდომების მინიჭება, ჩამორთმევა და წაშლა."
       ],
       "Can grant and revoke access to this vault.": [
         "შეუძლია ამ საცავზე წვდომების მინიჭება და ჩამორთმევა."
-      ],
-      "Can manage": [
-        "შეუძლია, მართოს"
-      ],
-      "Can view": [
-        "შეუძლია, ნახოს"
       ],
       "Can view items in this vault.": [
         "შეუძლია ამ საცავის ელემენტების დათვალიერება."
@@ -871,9 +850,6 @@
       "Passwords older than 1 day are automatically deleted from history.": [
         "1 დღეზე ძველი პაროლები ისტორიიდან ავტომატურად იშლება."
       ],
-      "Pending invitation": [
-        "მომლოდინე მოსაწვევი"
-      ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "${ PASS_APP_NAME }-ის მიმაგრება თქვენს ხელსაწყოების ზოლში"
       ],
@@ -906,9 +882,6 @@
       ],
       "Select the destination vault for each imported vault.": [
         "თითოეული შემოტანილი საცავისთვის სამიზნე საცავი აირჩიეთ."
-      ],
-      "Select the level of access this user will gain when they join your vault.": [
-        "აირჩიეთ წვდომის დონე, რომელსაც მომხმარებელი შეიძენს, როცა ის თქვენს საცავს შემოუერთდება."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "სერვერი მიუწვდომელია. ცოტა ხანში სცადეთ"
@@ -959,9 +932,6 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "ეს გატანა დაუშიფრავი იქნება და ყველას, ვისაც გატანილ ფაილზე წვდომა ექნება, შეეძლება, პაროლები დაინახოს. უსაფრთხოებისთვის, სჯობს, წაშალოთ ის, როცა მის გამოყენებას მორჩებით."
       ],
-      "This user will receive an invitation to join your '${ vaultName }' vault.": [
-        "ეს მომხმარებელი მიიღებს მოსაწვევს, შემოუერთდეს თქვენს საცავს '${ vaultName }'."
-      ],
       "Unable to copy to clipboard": [
         "ბუფერში დაკოპირება შეუძლებელია"
       ],
@@ -1001,6 +971,9 @@
       "You are about to create:": [
         "აპირებთ, შექმნათ:"
       ],
+      "You cannot change the mailboxes for this alias.": [
+        "ამ ფსევდონიმისთვის საფოსტო ყუთებს ვერ შეცვლით."
+      ],
       "You have ${ daysRemaining } day left in your trial period.": [
         "თქვენი სატესტო პერიოდიდან დარჩენილია ${ daysRemaining } დღე.",
         "თქვენი სატესტო პერიოდიდან დარჩენილია ${ daysRemaining } დღე."
@@ -1025,9 +998,6 @@
       ],
       "You're about to create": [
         "აპირებთ, შექმნათ"
-      ],
-      "You've been invited to a vault. Click here to see the invitation.": [
-        "მოგიწვიეს საცავში. დააწკაპუნეთ მოსაწვევის სანახავად."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "თქვენი ${ PASS_APP_NAME }-ის სესია დაბლოკილია"
@@ -1222,6 +1192,9 @@
       "Label": [
         "ჭდე"
       ],
+      "Language": [
+        "ენა"
+      ],
       "Last 2 weeks": [
         "ბოლო 2 კვირა"
       ],
@@ -1327,9 +1300,6 @@
       "Report a problem": [
         "შეტყობინება პრობლემის შესახებ"
       ],
-      "Respond": [
-        "პასუხი"
-      ],
       "Restore all items": [
         "ყველა ელემენტის აღდგენა"
       ],
@@ -1419,9 +1389,6 @@
       ],
       "Vault": [
         "საცავი"
-      ],
-      "Vaults": [
-        "საცავები"
       ],
       "Verification number": [
         "გადამოწმების ნომერი"
@@ -1600,9 +1567,6 @@
       "Permanently remove all items ?": [
         "წავშალო სამუდამოდ ყველა ელემენტი?"
       ],
-      "Permissions": [
-        "წვდომები"
-      ],
       "Pin the extension": [
         "გაფართოების მიმაგრება"
       ],
@@ -1611,9 +1575,6 @@
       ],
       "Share with": [
         "გაზიარება"
-      ],
-      "Shared vault invitation": [
-        "გაზიარებული საცავის მოსაწვევი"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "გადავერთო ${ PASS_APP_NAME }-ზე?"
@@ -1693,9 +1654,6 @@
       ],
       "An error occured while exporting your data": [
         "შეცდომა თქვენი მონაცემების გატანისას"
-      ],
-      "Are you sure you want to transfer vault ownership to ${ email }?": [
-        "დარწმუნებული ბრძანდებით, რომ საცავის მფლობელობის ${ email }-სთვის გადაცემა, გნებავთ?"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "ამ ფსევდონიმისთვის ამჟამად საფოსტო ყუთების მიღება შეუძლებელია"
