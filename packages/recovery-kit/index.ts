@@ -60,7 +60,7 @@ const exportedTemplate = {
                 type: 'text',
                 position: {
                     x: 60,
-                    y: 22,
+                    y: 30,
                 },
                 width: 127.33,
                 height: 6.73,
@@ -75,7 +75,7 @@ const exportedTemplate = {
                 type: 'text',
                 position: {
                     x: 60,
-                    y: 31,
+                    y: 24,
                 },
                 width: 127.33,
                 height: 5.68,
@@ -155,7 +155,11 @@ export async function generatePDFKit({
         },
     ];
 
-    const pdf = await generate({ template: getTemplate(emptyTemplate), inputs, options: { font: await getFont() } });
+    const pdf = await generate({
+        template: getTemplate(emptyTemplate),
+        inputs,
+        options: { font: await getFont() },
+    });
 
     return pdf;
 }
