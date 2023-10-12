@@ -30,11 +30,12 @@ const Header = ({ isNarrow }: HeaderProps) => {
                 {isNarrow ? null : <Icon name="arrows-cross" className="mr-4" />}
                 {c('Header').t`Folders`}
             </span>
-            <span className="w10e no-mobile flex flex-align-items-center gap-2">
+            <span className="w-custom no-mobile flex flex-align-items-center gap-2" style={{ '--w-custom': '10em' }}>
                 <span className="text-bold">{c('Header').t`Notifications`}</span>
                 <Info title={c('Tooltip').t`Enable/disable desktop and mobile notifications`} />
             </span>
-            <span className="text-bold w10e text-right">{c('Header').t`Actions`}</span>
+            <span className="text-bold w-custom text-right" style={{ '--w-custom': '10em' }}>{c('Header')
+                .t`Actions`}</span>
         </div>
     );
 };
@@ -163,10 +164,16 @@ const FolderTreeViewList = ({ items = [] }: Props) => {
                                             {item.Name}
                                         </span>
                                     </div>
-                                    <div className="treeview-toggle w10e no-mobile inline-flex">
+                                    <div
+                                        className="w-custom md:w-custom no-mobile inline-flex"
+                                        style={{ '--w-custom': '6.25rem', '--md-w-custom': '10em' }}
+                                    >
                                         <ToggleNotify label={item} />
                                     </div>
-                                    <div className="treeview-actions w10e flex flex-column flex-align-items-end">
+                                    <div
+                                        className="w-custom md:w-custom flex flex-column flex-align-items-end"
+                                        style={{ '--w-custom': '6.25rem', '--md-w-custom': '10em' }}
+                                    >
                                         <div className="my-auto">
                                             <ActionsLabel label={item} />
                                         </div>

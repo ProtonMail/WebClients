@@ -86,8 +86,9 @@ const NotificationInput = ({
                     className={clsx(
                         'flex flex-nowrap mr-2 my-2',
                         fullWidth ? 'md:my-0' : 'lg:my-0',
-                        !(isAllDay && at) && 'w10e'
+                        !(isAllDay && at) && 'w-custom'
                     )}
+                    style={!(isAllDay && at) ? { '--w-custom': '10em' } : undefined}
                 >
                     <SelectTwo
                         id={id}
@@ -109,7 +110,7 @@ const NotificationInput = ({
             )}
             <span className="flex flex-nowrap flex-item-fluid">
                 {hasValueInput && (
-                    <span className="flex-item-noshrink mr-2 w5e">
+                    <span className="flex-item-noshrink mr-2 w-custom" style={{ '--w-custom': '5em' }}>
                         <IntegerInput
                             id={NOTIFICATION_INPUT_ID}
                             data-testid="notification-time-input"
@@ -171,7 +172,7 @@ const NotificationInput = ({
                             <span className={clsx('flex-item-noshrink ml-0 mr-2', fullWidth ? 'md:ml-2' : 'lg:ml-2')}>
                                 {atText}
                             </span>
-                            <span className="w8e">
+                            <span className="w-custom" style={{ '--w-custom': '8em' }}>
                                 <TimeInput
                                     data-testid="notification-time-at"
                                     value={at}

@@ -38,7 +38,8 @@ const SessionRecoveryInProgressCard = ({ className }: Props) => {
         <>
             {renderConfirmCancelModal && <ConfirmSessionRecoveryCancellationModal {...confirmCancelModalProps} />}
             <div
-                className={clsx('max-w46e rounded-lg border', className)}
+                className={clsx('max-w-custom rounded-lg border', className)}
+                style={{ '--max-w-custom': '46em' }}
                 data-testid="session_recovery:request_section"
             >
                 <div className="p-6 border-bottom border-weak">

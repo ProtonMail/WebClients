@@ -217,8 +217,11 @@ const MemberStorageSelector = ({
                                                 }
                                             >
                                                 <span
-                                                    className="inline-block user-select-none mr-2 w2e rounded"
-                                                    style={{ background: `var(${getVariableFromThemeColor(color)})` }}
+                                                    className="inline-block user-select-none mr-2 w-custom rounded"
+                                                    style={{
+                                                        background: `var(${getVariableFromThemeColor(color)})`,
+                                                        '--w-custom': '2em',
+                                                    }}
                                                 >
                                                     &nbsp;
                                                 </span>
