@@ -6,7 +6,7 @@ import clsx from '@proton/utils/clsx';
 
 import { DropdownItemIcon, type DropdownItemIconProps } from './DropdownItemIcon';
 
-export const DROPDOWN_ITEM_HEIGHT = 60;
+export const DROPDOWN_ITEM_HEIGHT = 3.75; /* rem */
 
 export const DropdownItem: VFC<
     {
@@ -20,7 +20,7 @@ export const DropdownItem: VFC<
 > = ({ onClick, title, subTitle, icon, url, disabled, autogrow, subTheme = SubTheme.VIOLET }) => (
     <DropdownMenuButton
         className={clsx('text-left h-custom', subTheme)}
-        style={autogrow ? {} : { '--h-custom': `${DROPDOWN_ITEM_HEIGHT}px` }}
+        style={autogrow ? {} : { '--h-custom': `${DROPDOWN_ITEM_HEIGHT}rem` }}
         onClick={onClick}
         disabled={disabled}
     >
