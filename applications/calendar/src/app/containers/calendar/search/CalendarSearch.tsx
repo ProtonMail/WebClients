@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { generateUID, usePopperAnchor } from '@proton/components';
 
@@ -17,17 +17,31 @@ interface Props {
 }
 
 const CalendarSearch = ({ containerRef, onSearch, onBackFromSearch }: Props) => {
+    const searchRef = useRef<HTMLDivElement>(null);
     const [uid] = useState(generateUID('advanced-search-overlay'));
     const { anchorRef, isOpen, open, close } = usePopperAnchor<HTMLDivElement>();
 
     const { cacheIndexedDB } = useEncryptedSearchLibrary();
-    const { searchParams, isEnabled, isActive: isSearchActive, loading, setIsSearching } = useCalendarSearch();
+    const {
+        searchParams,
+        isEnabled,
+        isActive: isSearchActive,
+        loading,
+        setIsSearching,
+        setSearchInput,
+        searchInput,
+    } = useCalendarSearch();
 
     const isSearchEnabled = isEnabled !== false;
 
-    const handleCloseOverlay = () => {
-        if (!isSearchActive) {
-            close();
+    const handleCloseSearch = (e: MouseEvent | TouchEvent) => {
+        // Close the overlay
+        close();
+
+        const clickedOutsideSearch = searchRef.current && !searchRef.current.contains(e.target as Node);
+
+        // Show regular calendar header when user is not searching for event results and clicking outside search
+        if (!searchParams.keyword && clickedOutsideSearch) {
             setIsSearching(false);
         }
     };
@@ -49,27 +63,29 @@ const CalendarSearch = ({ containerRef, onSearch, onBackFromSearch }: Props) => 
         if (!containerRef) {
             return;
         }
-        containerRef.addEventListener('mousedown', handleCloseOverlay, { passive: true });
-        containerRef.addEventListener('touchstart', handleCloseOverlay, { passive: true });
+        containerRef.addEventListener('mousedown', handleCloseSearch, { passive: true });
+        containerRef.addEventListener('touchstart', handleCloseSearch, { passive: true });
 
         return () => {
-            containerRef.removeEventListener('mousedown', handleCloseOverlay);
-            containerRef.removeEventListener('touchstart', handleCloseOverlay);
+            containerRef.removeEventListener('mousedown', handleCloseSearch);
+            containerRef.removeEventListener('touchstart', handleCloseSearch);
         };
-    }, [containerRef, handleCloseOverlay]);
+    }, [containerRef, handleCloseSearch]);
 
     return (
         <>
             <CalendarSearchInput
+                value={searchInput}
+                setValue={setSearchInput}
                 ref={anchorRef}
-                value={searchParams.keyword || ''}
                 onSearch={onSearch}
                 onBack={onBackFromSearch}
                 loading={loading}
                 isSearchActive={isSearchActive}
+                searchRef={searchRef}
             />
             <SearchOverlay id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close} disableFocusTrap>
-                {!isSearchEnabled && <CalendarSearchActivation onClose={handleCloseOverlay} />}
+                {!isSearchEnabled && <CalendarSearchActivation onClose={close} />}
             </SearchOverlay>
         </>
     );
