@@ -29,15 +29,6 @@
       "Back": [
         "Kembali"
       ],
-      "Can edit": [
-        "Dapat menyunting"
-      ],
-      "Can manage": [
-        "Dapat mengelola"
-      ],
-      "Can view": [
-        "Dapat melihat"
-      ],
       "Can't find your password manager? Please let us know!": [
         "Tidak dapat menemukan pengelola kata sandi Anda? Silakan beri tahu kami!"
       ],
@@ -181,9 +172,6 @@
       ],
       "Importing": [
         "Mengimpor"
-      ],
-      "Invite people": [
-        "Undang"
       ],
       "Join shared vault": [
         "Bergabung ke brankas bersama"
@@ -366,6 +354,9 @@
       ],
       "Cannot create alias (${ error }).": [
         "Alias tidak dapat dibuat (${ error })."
+      ],
+      "Cannot send invitation to this address at the moment": [
+        "Tidak dapat mengirimkan undangan dan alamat untuk saat ini"
       ],
       "Could not leave vault.": [
         "Brankas tidak dapat ditinggalkan."
@@ -663,23 +654,11 @@
       "Autosaved on ${ submissionURL }": [
         "Tersimpan secara otomatis pada ${ submissionURL }"
       ],
-      "Can create, edit, delete and export items in this vault.": [
-        "Dapat membuat, menyunting, dan mengekspor item dalam brankas ini."
-      ],
-      "Can edit": [
-        "Dapat menyunting"
-      ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Dapat memberikan dan mencabut izin akses ke brankas ini serta menghapus brankas."
       ],
       "Can grant and revoke access to this vault.": [
         "Dapat memberikan dan mencabut izin akses ke brankas ini."
-      ],
-      "Can manage": [
-        "Dapat mengelola"
-      ],
-      "Can view": [
-        "Dapat melihat"
       ],
       "Can view items in this vault.": [
         "Dapat melihat item yang terkandung dalam brankas ini."
@@ -858,9 +837,6 @@
       "Passwords older than 1 day are automatically deleted from history.": [
         "Kata sandi yang berumur lebih dari 1 hari akan dihapus dari riwayat secara otomatis."
       ],
-      "Pending invitation": [
-        "Undangan yang belum dijawab"
-      ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Sematkan ${ PASS_APP_NAME } ke toolbar Anda"
       ],
@@ -893,9 +869,6 @@
       ],
       "Select the destination vault for each imported vault.": [
         "Pilih brankas tujuan untuk setiap brankas yang diimpor."
-      ],
-      "Select the level of access this user will gain when they join your vault.": [
-        "Pilih tingkat akses yang akan didapatkan oleh pengguna ini ketika mereka bergabung ke brankas Anda."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
@@ -945,9 +918,6 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Ekspor ini tidak akan terenkripsi, dan semua orang yang memiliki akses ke berkas yang Anda ekspor akan dapat melihat kata sandi Anda. Demi keamanan Anda, mohon hapus ekspor ini setelah tidak lagi digunakan."
       ],
-      "This user will receive an invitation to join your '${ vaultName }' vault.": [
-        "Pengguna ini akan menerima undangan untuk bergabung ke brankas '${ vaultName }' milik Anda."
-      ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Brankas ini sedang tidak dibagikan dengan siapa pun. Undanglah orang-orang ke brankas ini untuk saling berbagi brankas bersama mereka."
       ],
@@ -990,6 +960,9 @@
       "You are about to create:": [
         "Anda akan membuat:"
       ],
+      "You cannot change the mailboxes for this alias.": [
+        "Anda tidak dapat mengubah kotak surat untuk alias ini."
+      ],
       "You have ${ daysRemaining } days left in your trial period.": [
         "Anda memiliki ${ daysRemaining } hari tersisa pada masa uji coba Anda."
       ],
@@ -1013,9 +986,6 @@
       ],
       "You're about to create": [
         "Anda akan membuat"
-      ],
-      "You've been invited to a vault. Click here to see the invitation.": [
-        "Anda telah diundang ke brankas. Klik di sini untuk melihat undangan."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Sesi ${ PASS_APP_NAME } Anda terkunci"
@@ -1208,6 +1178,9 @@
       "Label": [
         "Label"
       ],
+      "Language": [
+        "Bahasa"
+      ],
       "Last 2 weeks": [
         "2 minggu terakhir"
       ],
@@ -1313,9 +1286,6 @@
       "Report a problem": [
         "Laporkan masalah"
       ],
-      "Respond": [
-        "Tanggapi"
-      ],
       "Restore all items": [
         "Pulihkan seluruh item"
       ],
@@ -1404,9 +1374,6 @@
         "Nama pengguna (alias baru)"
       ],
       "Vault": [
-        "Brankas"
-      ],
-      "Vaults": [
         "Brankas"
       ],
       "Verification number": [
@@ -1586,9 +1553,6 @@
       "Permanently remove all items ?": [
         "Hapus seluruh item secara permanen ?"
       ],
-      "Permissions": [
-        "Izin"
-      ],
       "Pin the extension": [
         "Sematkan ekstensi"
       ],
@@ -1597,9 +1561,6 @@
       ],
       "Share with": [
         "Bagikan dengan"
-      ],
-      "Shared vault invitation": [
-        "Undangan brankas bersama"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Beralih ke ${ PASS_APP_NAME }?"
@@ -1679,9 +1640,6 @@
       ],
       "An error occured while exporting your data": [
         "Terdapat kesalahan pada saat mengekspor data Anda"
-      ],
-      "Are you sure you want to transfer vault ownership to ${ email }?": [
-        "Apakah Anda yakin untuk mentransfer kepemilikan brankas ini ke ${ email }?"
       ],
       "Cannot retrieve mailboxes for this alias right now": [
         "Kotak surat untuk alias ini tidak dapat diterima untuk saat ini"
