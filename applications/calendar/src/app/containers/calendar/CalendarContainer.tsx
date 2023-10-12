@@ -161,7 +161,7 @@ const CalendarContainer = ({
 
     const interactiveRef = useRef<InteractiveRef>(null);
     const timeGridViewRef = useRef<TimeGridRef>(null);
-    const { lastNonSearchViewRef, setIsSearching } = useCalendarSearch();
+    const { lastNonSearchViewRef, setIsSearching, setSearchInput } = useCalendarSearch();
 
     const [nowDate, setNowDate] = useState(() => new Date());
     const [localTimezoneId, setLocalTimezoneId] = useState<string>();
@@ -456,6 +456,7 @@ const CalendarContainer = ({
 
     const handleGoBackFromSearch = useCallback(() => {
         setCustom({ view: lastNonSearchViewRef.current || defaultView });
+        setSearchInput('');
     }, []);
 
     const [createEventCalendarBootstrap, loadingCreateEventCalendarBootstrap] = useCalendarBootstrap(
