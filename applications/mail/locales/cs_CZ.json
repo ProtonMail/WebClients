@@ -100,6 +100,12 @@
       "As Scheduled": [
         "Dle plánu"
       ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Na jednu skupinu kontaktů je povolen maximálně ${ maxContacts } kontakt",
+        "Na jednu skupinu kontaktů jsou povoleny maximálně ${ maxContacts } kontakty",
+        "Na jednu skupinu kontaktů je povoleno maximálně ${ maxContacts } kontaktů",
+        "Na jednu skupinu kontaktů je povoleno maximálně ${ maxContacts } kontaktů"
+      ],
       "Attach screenshot(s)": [
         "Přiložit sním(ek/ky) obrazovky"
       ],
@@ -697,11 +703,11 @@
       "Not saved": [
         "Neuloženo"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Otevřít ${ CALENDAR_APP_NAME }"
@@ -1155,6 +1161,12 @@
       ],
       "Yes, I'll attend": [
         "Ano, zúčastním se"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktu",
+        "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktů",
+        "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktů",
+        "Není možné odeslat soubory vCard více než ${ maxAttachments } kontaktů"
       ],
       "Zoom in": [
         "Přiblížit"
@@ -3515,6 +3527,12 @@
       "Wrong mailbox password": [
         "Chybné heslo e-mailové schránky"
       ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Nemůžete odeslat e-mail více než ${ maxContacts } příjemci najednou",
+        "Nemůžete odeslat e-mail více než ${ maxContacts } příjemcům najednou",
+        "Nemůžete odeslat e-mail více než ${ maxContacts } příjemcům najednou",
+        "Nemůžete odeslat e-mail více než ${ maxContacts } příjemcům najednou"
+      ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "Nelze otevřít více než ${ maxActiveComposer } okno editoru",
         "Nelze otevřít více než ${ maxActiveComposer } okna editoru",
@@ -3544,6 +3562,14 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vyhledávání našlo příliš mnoho výsledků. Upřesněte hledání a zkuste to prosím znovu."
+      ]
+    },
+    "Error adding participants to a calendar event": {
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "Na jednu pozvánku je povolen nejvýše ${ maxAttendees } účastník",
+        "Na jednu pozvánku jsou povoleni nejvýše ${ maxAttendees } účastníci",
+        "Na jednu pozvánku je povoleno nejvýše ${ maxAttendees } účastníků",
+        "Na jednu pozvánku je povoleno nejvýše ${ maxAttendees } účastníků"
       ]
     },
     "Error display when performing invalid move on message": {
