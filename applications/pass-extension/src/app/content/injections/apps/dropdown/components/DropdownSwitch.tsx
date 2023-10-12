@@ -13,7 +13,6 @@ import { workerBusy } from '@proton/pass/lib/worker';
 import type { MaybeNull } from '@proton/pass/types';
 import { WorkerStatus } from '@proton/pass/types';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
-import { pixelEncoder } from '@proton/pass/utils/dom';
 import { pipe, tap } from '@proton/pass/utils/fp';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -43,7 +42,7 @@ const DropdownSwitchRender: ForwardRefRenderFunction<HTMLDivElement, Props> = (
         <div
             ref={ref}
             className="min-h-custom bg-norm relative"
-            style={{ '--min-h-custom': pixelEncoder(DROPDOWN_ITEM_HEIGHT) }}
+            style={{ '--min-h-custom': `${DROPDOWN_ITEM_HEIGHT}rem` }}
         >
             {(() => {
                 if (state === null || workerBusy(status)) {
