@@ -33,6 +33,7 @@ const address: Address = {
     Type: ADDRESS_TYPE.TYPE_ORIGINAL,
     ProtonMX: true,
     ConfirmationState: 1,
+    CatchAll: false,
 };
 
 const providerLabels = labels.map((label) => {
@@ -178,7 +179,7 @@ describe('Step prepare helpers tests', () => {
                             ({
                                 Source: path,
                                 Separator: '/',
-                            } as ApiMailImporterFolder)
+                            }) as ApiMailImporterFolder
                     ),
                     isLabelMapping
                 ).folders,
@@ -214,7 +215,7 @@ describe('Step prepare helpers tests', () => {
                             Source: path,
                             Separator: '/',
                             ...(path === 'Inbox' ? { DestinationFolder: 'Inbox' } : {}),
-                        } as ApiMailImporterFolder)
+                        }) as ApiMailImporterFolder
                 )
             );
             const res = formatPrepareStepPayload({
