@@ -1016,7 +1016,7 @@ const InteractiveCalendarView = ({
         });
     };
 
-    const { setOpenedSearchItem, setIsSearching } = useCalendarSearch();
+    const { setOpenedSearchItem, setIsSearching, setSearchInput } = useCalendarSearch();
 
     const closeAllPopovers = () => {
         setInteractiveData(undefined);
@@ -1845,6 +1845,7 @@ const InteractiveCalendarView = ({
                             ) => {
                                 setIsSearching(false);
                                 setTargetEventRef(null);
+                                setSearchInput('');
                                 if (!occurrence) {
                                     return goToEvent(eventData, eventComponent);
                                 }

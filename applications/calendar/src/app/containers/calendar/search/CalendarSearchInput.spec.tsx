@@ -10,6 +10,7 @@ import CalendarSearchInput from './CalendarSearchInput';
 
 const baseProps: ComponentProps<typeof CalendarSearchInput> = {
     value: '',
+    setValue: jest.fn(),
     loading: false,
     onBack: jest.fn(),
     onSearch: jest.fn(),
