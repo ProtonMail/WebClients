@@ -532,9 +532,6 @@
       ]
     },
     "Action subscription": {
-      "Manage": [
-        "Διαχείριση"
-      ],
       "Reactivate": [
         "Επανενεργοποίηση"
       ]
@@ -634,8 +631,12 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically on ${ formattedEndTime }": [
-        "Αυτόματη ανανέωση στις ${ formattedEndTime }"
+      "${ n } month": [
+        "${ n } μήνα",
+        "${ n } μήνες"
+      ],
+      "Renews automatically for ${ renewPrice }, for ${ renewalLength }": [
+        "Ανανεώνεται αυτόματα για ${ renewPrice }, για ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -2308,11 +2309,11 @@
       "Allow platform keys": [
         "Να επιτρέπονται τα κλειδιά πλατφόρμας"
       ],
+      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
+        "Σας επιτρέπει να καταχωρείτε ενσωματωμένα κλειδιά ασφαλείας (όπως Windows Hello, Face ID, Touch ID ή εσωτερικές TPM)"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε το κλειδί ασφαλείας ${ name };"
-      ],
-      "If enabled, it allows to register built-in devices (such as Windows Hello, TouchID, FaceID, or Internal TPMs) in addition to external hardware security keys": [
-        "Εάν είναι ενεργοποιημένο, επιτρέπει την καταχώρηση ενσωματωμένων συσκευών (όπως Windows Hello, TouchID, FaceID ή εσωτερικών TPM) επιπρόσθετα στα εξωτερικά κλειδιά ασφαλείας υλικού"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Εισαγάγετε ένα κλειδί ασφαλείας συνδεδεμένο με τον ${ BRAND_NAME } λογαριασμό σας ."
@@ -3584,7 +3585,7 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Μπορείτε να το επεξεργαστείτε αυτό μία φορά για να διασφαλίσετε τη σωστή διεύθυνση ηλεκτρονικού ταχυδρομείου για επαλήθευση."
       ],
-      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number if IP addresses in your plan or reach us for tailor-made solutions.": [
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
         "Μπορείτε να ξεκλειδώσετε αμέσως την παραπάνω ρύθμιση προσθέτοντας ${ specificCountryCount } στον αριθμό διευθύνσεων IP στο πλάνο σας ή να επικοινωνήσετε μαζί μας για εξατομικευμένες λύσεις."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
@@ -3703,7 +3704,7 @@
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Η συνδρομή σας διαχειρίζεται απο το Mozilla. Επικοινωνήστε με την υποστήριξη του Mozilla."
       ],
-      "Your subscription will renew automatically on ${ renewalTime }.": [
+      "Your subscription will automatically renew on ${ renewalTime }.": [
         "Η συνδρομή σας θα ανανεωθεί αυτόματα στις ${ renewalTime }."
       ]
     },
@@ -4742,6 +4743,12 @@
       "Sign in as user": [
         "Είσοδος ως χρήστης"
       ],
+      "SMTP submission": [
+        "Υποβολή SMTP"
+      ],
+      "SMTP submission for select organizations": [
+        "Υποβολή SMTP για επιλεγμένους οργανισμούς"
+      ],
       "Split tunneling (Android and Windows)": [
         "Διαίρεση σήραγγας (Android και Windows)"
       ],
@@ -5116,6 +5123,9 @@
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
         "Μοιραστείτε τα αρχεία ή τους φακέλους σας με οποιονδήποτε, χρησιμοποιώντας ασφαλούς συνδέσμους με δυνατότητα κοινής χρήσης"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "Το SMTP επιτρέπει υπηρεσίες τρίτων ή συσκευές να στείλουν μηνύματα ηλεκτρονικού ταχυδρομείου μέσω του ${ MAIL_APP_NAME }."
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Το ειδικά σχεδιασμένο NetShield προστατεύει τη συσκευή σας και επιταχύνει την περιήγησή σας εμποδίζοντας διαφημίσεις, ιχνηλάτες και κακόβουλο λογισμικό."
@@ -6245,9 +6255,6 @@
       ],
       "Expiring": [
         "Λήγει"
-      ],
-      "Upcoming": [
-        "Προσεχή"
       ]
     },
     "Success": {
@@ -7076,35 +7083,14 @@
       ]
     },
     "Title subscription": {
-      "Actions": [
-        "Ενέργειες"
-      ],
-      "Duration": [
-        "Διάρκεια"
-      ],
       "End date": [
         "Ημερομηνία Λήξης"
       ],
       "Plan": [
         "Πρόγραμμα"
       ],
-      "Servers": [
-        "Διακομιστές"
-      ],
-      "Start date": [
-        "Ημερομηνία Έναρξης"
-      ],
       "Status": [
         "Κατάσταση"
-      ],
-      "Total": [
-        "Σύνολο"
-      ],
-      "Total paid": [
-        "Σύνολο καταβληθέντων"
-      ],
-      "Users": [
-        "Χρήστες"
       ]
     },
     "Tooltip": {
@@ -7210,23 +7196,8 @@
       ]
     },
     "vpn_2step: billing": {
-      "${ billedText }, renews on ${ formattedEndTime }": [
-        "${ billedText }, ανανεώνεται στις ${ formattedEndTime }"
-      ],
-      "Billed every 15 months": [
-        "Χρέωση κάθε 15 μήνες"
-      ],
-      "Billed every 2 years": [
-        "Χρέωση κάθε 2 χρόνια"
-      ],
-      "Billed every 30 months": [
-        "Χρέωση κάθε 30 μήνες"
-      ],
       "Billed monthly": [
         "Μηνιαία χρέωση"
-      ],
-      "Billed yearly": [
-        "Ετήσια χρέωση"
       ]
     },
     "vpn_2step: discount": {
