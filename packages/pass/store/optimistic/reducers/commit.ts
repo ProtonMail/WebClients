@@ -1,6 +1,6 @@
 import type { Reducer } from 'redux';
 
-import { arrayReplace } from '@proton/pass/utils/array';
+import { arrayReplace } from '@proton/pass/utils/array/replace';
 
 import { HistoryFlag, type OptimisticHistoryItem, type OptimisticState } from '../types';
 import { isOptimisticHistoryItem, isOptimisticHistoryItemWithId } from '../utils/assertions';

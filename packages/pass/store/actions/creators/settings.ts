@@ -1,13 +1,12 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import withCacheBlock from '@proton/pass/store/actions/with-cache-block';
+import withNotification from '@proton/pass/store/actions/with-notification';
+import { withRequestFailure, withRequestStart, withRequestSuccess } from '@proton/pass/store/actions/with-request';
+import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { ExtensionEndpoint, RecursivePartial } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp';
-
-import type { ProxiedSettings } from '../../reducers/settings';
-import withCacheBlock from '../with-cache-block';
-import withNotification from '../with-notification';
-import { withRequestFailure, withRequestStart, withRequestSuccess } from '../with-request';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 
 export const settingsEditIntent = createAction(
     'settings::edit::intent',

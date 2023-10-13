@@ -2,15 +2,14 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { ALIAS_DETAILS_MAX_AGE, ALIAS_OPTIONS_MAX_AGE } from '@proton/pass/constants';
+import withCacheBlock from '@proton/pass/store/actions/with-cache-block';
+import type { ActionCallback } from '@proton/pass/store/actions/with-callback';
+import withCallback from '@proton/pass/store/actions/with-callback';
+import withNotification from '@proton/pass/store/actions/with-notification';
+import { withRequestFailure, withRequestStart, withRequestSuccess } from '@proton/pass/store/actions/with-request';
+import type { AliasOptions } from '@proton/pass/store/reducers';
 import type { AliasMailbox } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp';
-
-import type { AliasOptions } from '../../reducers';
-import withCacheBlock from '../with-cache-block';
-import type { ActionCallback } from '../with-callback';
-import withCallback from '../with-callback';
-import withNotification from '../with-notification';
-import { withRequestFailure, withRequestStart, withRequestSuccess } from '../with-request';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 
 export const getAliasOptionsIntent = createAction(
     'alias::options::get::intent',

@@ -1,7 +1,7 @@
 import { type PrepareAction } from '@reduxjs/toolkit';
 import type { AnyAction } from 'redux';
 
-import { merge } from '@proton/pass/utils/object';
+import { merge } from '@proton/pass/utils/object/merge';
 
 export type RequestType = 'start' | 'failure' | 'success';
 
