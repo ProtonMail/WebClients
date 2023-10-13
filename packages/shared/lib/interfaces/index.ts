@@ -1,6 +1,7 @@
 import type { enums } from '@proton/crypto';
 
 export * from './Address';
+export * from './AddressForwarding';
 export * from './Api';
 export * from './ApiEnvironmentConfig';
 export * from './Checklist';

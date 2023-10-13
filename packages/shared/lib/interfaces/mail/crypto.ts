@@ -18,6 +18,7 @@ export interface SendPreferences {
     warnings?: string[];
     error?: EncryptionPreferencesError;
     ktVerificationResult?: KeyTransparencyVerificationResult;
+    encryptionDisabled?: boolean;
 }
 
 export interface Packets {

@@ -5,6 +5,7 @@ import { Address, Key, SignedKeyListItem, UserModel } from '@proton/shared/lib/i
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { getDefaultKeyFlags, getFormattedAlgorithmNames } from '@proton/shared/lib/keys';
 
+import getPermissions from './getPermissions';
 import { KeyDisplay, KeyStatus, KeyType } from './interface';
 
 interface Arguments {
@@ -17,6 +18,7 @@ interface Arguments {
     algorithmInfos: AlgorithmInfo[];
     signedKeyListMap: SimpleMap<SignedKeyListItem>;
     isWeak: boolean;
+    isE2EEForwardingKey: boolean;
 }
 
 export const getDisplayKey = ({
@@ -29,11 +31,12 @@ export const getDisplayKey = ({
     signedKeyListMap,
     Key,
     isWeak,
+    isE2EEForwardingKey,
 }: Arguments): KeyDisplay => {
     const { isSubUser, isPrivate } = User;
     const signedKeyListItem = signedKeyListMap[fingerprint];
 
-    const { ID, Flags, Primary } = Key;
+    const { ID, Flags, Primary, AddressForwardingID } = Key;
 
     const flags = signedKeyListItem?.Flags ?? Flags ?? getDefaultKeyFlags(Address);
     const primary = signedKeyListItem?.Primary ?? Primary ?? 0;
@@ -50,6 +53,7 @@ export const getDisplayKey = ({
     const canEncryptAndSign = canEncrypt && canSign;
     const isObsolete = isDecrypted && !isAddressDisabled && !canEncrypt;
     const isCompromised = !canEncrypt && !canSign;
+    const isForwarding = isE2EEForwardingKey;
 
     const status: KeyStatus = {
         isAddressDisabled,
@@ -59,21 +63,12 @@ export const getDisplayKey = ({
         isCompromised,
         isObsolete,
         isWeak,
+        isForwarding,
     };
 
     const hasUserPermission = !isSubUser || isPrivate;
     const canModify = isAddressKey && hasUserPermission && !isPrimary;
-
-    const permissions = {
-        canExportPublicKey: true,
-        canExportPrivateKey: isDecrypted,
-        canSetPrimary: canModify && !isAddressDisabled && isDecrypted && canEncryptAndSign,
-        canSetObsolete: canModify && !isAddressDisabled && isDecrypted && !isObsolete && !isCompromised,
-        canSetNotObsolete: canModify && isObsolete && !isCompromised,
-        canSetCompromised: canModify && !isCompromised,
-        canSetNotCompromised: canModify && isCompromised,
-        canDelete: canModify,
-    };
+    const canDeleteForwarding = AddressForwardingID === null;
 
     return {
         ID,
@@ -84,6 +79,13 @@ export const getDisplayKey = ({
         primary,
         algorithm: getFormattedAlgorithmNames(algorithmInfos),
         status,
-        permissions,
+        permissions: getPermissions({
+            ...status,
+            canModify,
+            canEncryptAndSign,
+            isAddressKey,
+            hasUserPermission,
+            canDeleteForwarding,
+        }),
     };
 };
