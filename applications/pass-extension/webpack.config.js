@@ -77,8 +77,8 @@ module.exports = {
         /* custom element styles */
         'styles.root': './src/app/content/injections/custom-elements/ProtonPassRoot.scss',
         'styles.control': './src/app/content/injections/custom-elements/ProtonPassControl.scss',
-        /* FF auth fallback */
-        ...(BUILD_TARGET === 'firefox' ? { authFallback: disableBrowserTrap('./src/content/firefox/index.ts') } : {}),
+        /* FF account communication fallback */
+        ...(BUILD_TARGET === 'firefox' ? { account: disableBrowserTrap('./src/app/content/firefox/index.ts') } : {}),
     },
     module: {
         strictExportPresence: true,
