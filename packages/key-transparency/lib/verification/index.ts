@@ -4,3 +4,4 @@ export * from './verifyKeys';
 export * from './verifyProofs';
 export * from './vrf';
 export * from './self-audit';
+export * from './verifyAddress';
