@@ -13,8 +13,9 @@ import type { SanitizedAliasOptions } from '@proton/pass/hooks/useAliasOptions';
 import type { AliasFormValues, AliasMailbox, MaybeNull } from '@proton/pass/types';
 
 type AliasFormProps<V extends AliasFormValues> = {
-    form: FormikContextType<V>;
     aliasOptions: MaybeNull<SanitizedAliasOptions>;
+    disabled?: boolean;
+    form: FormikContextType<V>;
     loading: boolean;
 };
 
@@ -57,13 +58,13 @@ const AliasFormBase: FC<{
     );
 };
 
-export const AliasForm = <V extends AliasFormValues>({ form, loading, aliasOptions }: AliasFormProps<V>) => {
+export const AliasForm = <V extends AliasFormValues>({ form, loading, aliasOptions, disabled }: AliasFormProps<V>) => {
     const [showAdvanced, setShowAdvanced] = useState(false);
     const toggleShowAdvanced = () => setShowAdvanced((state) => !state);
-    const disabled = loading || aliasOptions === null;
+    const disabledForm = disabled || loading || aliasOptions === null;
 
     const wrapperProps = {
-        disabled,
+        disabled: disabledForm,
         loading,
         mailboxes: aliasOptions?.mailboxes ?? [],
         toggleShowAdvanced,
@@ -84,7 +85,7 @@ export const AliasForm = <V extends AliasFormValues>({ form, loading, aliasOptio
                     label={c('Label').t`Suffix`}
                     placeholder={c('Placeholder').t`Select a suffix`}
                     component={SelectField}
-                    disabled={disabled}
+                    disabled={disabledForm}
                     loading={loading}
                 >
                     {(aliasOptions?.suffixes ?? []).map((suffix) => (
