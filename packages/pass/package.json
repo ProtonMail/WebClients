@@ -2,7 +2,12 @@
     "name": "@proton/pass",
     "description": "Proton Pass shared codebase",
     "license": "GPL-3.0",
-    "sideEffects": false,
+    "sideEffects": [
+        "./src/lib/api/api.ts",
+        "./src/lib/auth/authentication.ts",
+        "./src/lib/crypto/pass-crypto.ts",
+        "./src/lib/globals/browser.ts"
+    ],
     "scripts": {
         "build": "cross-env NODE_ENV=production proton-pack build --appMode=standalone",
         "check-types": "tsc",
