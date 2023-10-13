@@ -51,14 +51,15 @@ export const getDecryptedAttachment = async (
     attachment: Attachment,
     verification: MessageVerification | undefined,
     messageKeys: MessageKeys,
-    api: Api
+    api: Api,
+    messageFlags?: number
 ): Promise<WorkerDecryptionResult<Uint8Array>> => {
     const isOutside = messageKeys.type === 'outside';
     const encryptedBinary = await getRequest(attachment, api, messageKeys);
 
     try {
         if (!isOutside) {
-            const sessionKey = await getSessionKey(attachment, messageKeys.privateKeys);
+            const sessionKey = await getSessionKey(attachment, messageKeys.privateKeys, messageFlags);
             // verify attachment signature only when sender is verified
             const publicKeys = verification?.pinnedKeysVerified ? verification.senderPinnedKeys : undefined;
             return await decryptAndVerify(encryptedBinary, sessionKey, attachment.Signature, publicKeys);
@@ -91,7 +92,8 @@ export const getAndVerify = async (
     reverify = false,
     api: Api,
     getAttachment?: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined,
-    onUpdateAttachment?: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void
+    onUpdateAttachment?: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void,
+    messageFlags?: number
 ): Promise<WorkerDecryptionResult<Uint8Array>> => {
     const isOutside = messageKeys.type === 'outside';
     let attachmentdata: WorkerDecryptionResult<Uint8Array>;
@@ -116,11 +118,11 @@ export const getAndVerify = async (
 
             attachmentdata = isMIMEAttachment
                 ? (attachmentInState as WorkerDecryptionResult<Uint8Array>)
-                : await getDecryptedAttachment(attachment, verification, messageKeys, api);
+                : await getDecryptedAttachment(attachment, verification, messageKeys, api, messageFlags);
         }
         onUpdateAttachment(attachmentID, attachmentdata);
     } else {
-        attachmentdata = await getDecryptedAttachment(attachment, verification, messageKeys, api);
+        attachmentdata = await getDecryptedAttachment(attachment, verification, messageKeys, api, messageFlags);
     }
 
     return attachmentdata;
@@ -132,10 +134,20 @@ export const get = (
     messageKeys: MessageKeys,
     api: Api,
     getAttachment?: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined,
-    onUpdateAttachment?: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void
+    onUpdateAttachment?: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void,
+    messageFlags?: number
 ): Promise<WorkerDecryptionResult<Uint8Array>> => {
     const reverify = false;
-    return getAndVerify(attachment, verification, messageKeys, reverify, api, getAttachment, onUpdateAttachment);
+    return getAndVerify(
+        attachment,
+        verification,
+        messageKeys,
+        reverify,
+        api,
+        getAttachment,
+        onUpdateAttachment,
+        messageFlags
+    );
 };
 
 export const reverify = (
@@ -144,8 +156,18 @@ export const reverify = (
     messageKeys: MessageKeys,
     getAttachment: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined,
     onUpdateAttachment: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void,
-    api: Api
+    api: Api,
+    messageFlags?: number
 ): Promise<WorkerDecryptionResult<Uint8Array>> => {
     const reverify = true;
-    return getAndVerify(attachment, verification, messageKeys, reverify, api, getAttachment, onUpdateAttachment);
+    return getAndVerify(
+        attachment,
+        verification,
+        messageKeys,
+        reverify,
+        api,
+        getAttachment,
+        onUpdateAttachment,
+        messageFlags
+    );
 };

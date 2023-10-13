@@ -39,6 +39,7 @@ export interface InputFieldOwnProps {
     hint?: ReactNode;
     assistiveText?: ReactNode;
     disabled?: boolean;
+    disabledOnlyField?: boolean;
     bigger?: boolean;
     dense?: boolean;
     id?: string;
@@ -64,6 +65,7 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
         assistiveText,
         rootRef,
         disabled,
+        disabledOnlyField,
         bigger,
         dense: denseProp,
         error,
@@ -91,6 +93,7 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
             'field-two-container',
             isDense && 'field-two--dense',
             disabled && 'field-two--disabled',
+            disabledOnlyField && 'field-two--disabled-only-field',
             Boolean(error) && errorClassName,
             Boolean(warning) && !error && 'field-two--warning',
             bigger && 'field-two--bigger',

@@ -6,6 +6,7 @@ import { Button, ButtonProps } from '@proton/atoms';
 import clsx from '@proton/utils/clsx';
 
 import ButtonGroup from '../button/ButtonGroup';
+import { Icon, IconName } from '../icon';
 import { Info } from '../link';
 import DropdownMenu from './DropdownMenu';
 import DropdownMenuButton, { Props as DropdownMenuButtonProps } from './DropdownMenuButton';
@@ -39,6 +40,7 @@ export interface Props extends ButtonProps {
     list?: DropdownActionProps[];
     className?: string;
     autoFocus?: boolean;
+    iconName?: IconName;
 }
 
 const DropdownActions = ({
@@ -48,6 +50,7 @@ const DropdownActions = ({
     className = '',
     autoFocus = false,
     size,
+    iconName,
     ...restButtonProps
 }: Props) => {
     if (!list.length) {
@@ -68,6 +71,36 @@ const DropdownActions = ({
             >
                 {wrapTooltip(text, tooltip)}
             </Button>
+        );
+    }
+
+    if (iconName) {
+        return (
+            <SimpleDropdown
+                as={Button}
+                icon
+                size={size}
+                autoFocus={autoFocus}
+                originalPlacement="bottom-end"
+                disabled={disabled}
+                loading={loading}
+                className={clsx(['flex-item-noshrink', className])}
+                title={c('Title').t`Open actions dropdown`}
+                data-testid="dropdownActions:dropdown"
+                content={<Icon name={iconName} />}
+                hasCaret={false}
+                {...restButtonProps}
+            >
+                <DropdownMenu>
+                    {list.map(({ text, tooltip, ...restProps }, index) => {
+                        return (
+                            <DropdownMenuButton className="text-left" key={index} {...restProps}>
+                                {wrapTooltip(text, tooltip)}
+                            </DropdownMenuButton>
+                        );
+                    })}
+                </DropdownMenu>
+            </SimpleDropdown>
         );
     }
 

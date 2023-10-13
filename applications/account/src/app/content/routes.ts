@@ -27,6 +27,7 @@ interface Arguments {
     isProtonSentinelFeatureEnabled: boolean;
     isProtonSentinelUpsellEnabled: boolean;
     isOrgTwoFactorEnabled: boolean;
+    isEmailForwardingEnabled: boolean;
 }
 
 export const getRoutes = ({
@@ -46,6 +47,7 @@ export const getRoutes = ({
     isProtonSentinelFeatureEnabled,
     isProtonSentinelUpsellEnabled,
     isOrgTwoFactorEnabled,
+    isEmailForwardingEnabled,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
@@ -67,6 +69,7 @@ export const getRoutes = ({
             addresses,
             organization,
             isSmtpTokenEnabled,
+            isEmailForwardingEnabled,
         }),
         calendar: getCalendarAppRoutes(),
         drive: getDriveAppRoutes(),

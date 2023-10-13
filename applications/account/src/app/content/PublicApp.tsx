@@ -54,6 +54,7 @@ import LoginContainer from '../login/LoginContainer';
 import { getLoginMeta } from '../login/loginPagesJson';
 import AuthExtension, { AuthExtensionState } from '../public/AuthExtension';
 import DisableAccountContainer from '../public/DisableAccountContainer';
+import EmailForwardingContainer, { EmailForwardingRequest } from '../public/EmailForwardingContainer';
 import EmailUnsubscribeContainer from '../public/EmailUnsubscribeContainer';
 import ForgotUsernameContainer from '../public/ForgotUsernameContainer';
 import OAuthConfirmForkContainer from '../public/OAuthConfirmForkContainer';
@@ -125,6 +126,7 @@ const UNAUTHENTICATED_ROUTES = {
     VERIFY_EMAIL: '/verify-email',
     REMOVE_EMAIL: '/remove-email',
     DISABLE_ACCOUNT: '/disable-account',
+    EMAIL_FORWARDING: '/email-forwarding',
 };
 
 setMetricsEnabled(true);
@@ -424,6 +426,16 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                 <Route path={`${UNAUTHENTICATED_ROUTES.UNSUBSCRIBE}/:subscriptions?`}>
                     <UnAuthenticated>
                         <EmailUnsubscribeContainer />
+                    </UnAuthenticated>
+                </Route>
+                <Route path={`${UNAUTHENTICATED_ROUTES.EMAIL_FORWARDING}/accept`}>
+                    <UnAuthenticated>
+                        <EmailForwardingContainer request={EmailForwardingRequest.Accept} />
+                    </UnAuthenticated>
+                </Route>
+                <Route path={`${UNAUTHENTICATED_ROUTES.EMAIL_FORWARDING}/decline`}>
+                    <UnAuthenticated>
+                        <EmailForwardingContainer request={EmailForwardingRequest.Decline} />
                     </UnAuthenticated>
                 </Route>
                 <Route path={UNAUTHENTICATED_ROUTES.VERIFY_EMAIL}>

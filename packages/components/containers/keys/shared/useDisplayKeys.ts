@@ -20,6 +20,7 @@ interface ParsedKey {
     algorithmInfos: AlgorithmInfo[];
     isDecrypted: boolean;
     isWeak: boolean;
+    isE2EEForwardingKey: boolean;
 }
 
 const useDisplayKeys = ({ keys: maybeKeys, User, Address, loadingKeyID }: Props) => {
@@ -50,6 +51,7 @@ const useDisplayKeys = ({ keys: maybeKeys, User, Address, loadingKeyID }: Props)
                         ],
                         isDecrypted: maybePrivateKey.isPrivate(),
                         isWeak: maybePrivateKey.isWeak(),
+                        isE2EEForwardingKey: await CryptoProxy.isE2EEForwardingKey({ key: maybePrivateKey }),
                     };
                 })
             );

@@ -88,6 +88,7 @@ export const useLoadEmbeddedImages = (localID: string) => {
                     messageVerification: message.verification,
                     getAttachment,
                     onUpdateAttachment,
+                    messageFlags: message.data.Flags,
                 })
             );
             return dispatchResult as any as Promise<LoadEmbeddedResults>;
