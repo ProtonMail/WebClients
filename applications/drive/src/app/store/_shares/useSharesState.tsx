@@ -74,6 +74,12 @@ export function useSharesStateProvider() {
         );
     }, [state]);
 
+    const getRestoredPhotoShares = useCallback((): Share[] | ShareWithKey[] | undefined => {
+        return Object.values(state).filter(
+            (share) => share.state === ShareState.restored && !share.isLocked && share.type === ShareType.photos
+        );
+    }, [state]);
+
     return {
         setShares,
         removeShares,
@@ -81,6 +87,7 @@ export function useSharesStateProvider() {
         getLockedShares,
         getDefaultShareId,
         getActivePhotosShare,
+        getRestoredPhotoShares,
         setLockedVolumesForRestore,
         lockedVolumesForRestore,
     };
