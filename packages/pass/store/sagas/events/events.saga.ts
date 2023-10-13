@@ -5,7 +5,7 @@ import { all, cancel, fork, take } from 'redux-saga/effects';
 
 import { api } from '@proton/pass/lib/api/api';
 import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
-import { or } from '@proton/pass/utils/fp';
+import { or } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 
 import {

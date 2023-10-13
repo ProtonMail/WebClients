@@ -11,8 +11,8 @@ import type {
     ApiStatus,
     ApiSubscribtionEvent,
 } from '@proton/pass/types';
-import { merge } from '@proton/pass/utils/object';
-import { createPubSub } from '@proton/pass/utils/pubsub';
+import { merge } from '@proton/pass/utils/object/merge';
+import { createPubSub } from '@proton/pass/utils/pubsub/factory';
 import configureApi from '@proton/shared/lib/api';
 import {
     getApiError,

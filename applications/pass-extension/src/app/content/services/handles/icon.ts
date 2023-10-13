@@ -3,7 +3,7 @@ import {
     COUNTER_ICON_SRC,
     DISABLED_ICON_SRC,
     LOCKED_ICON_SRC,
-} from 'proton-pass-extension/app/content/constants';
+} from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import {
     applyInjectionStyles,
@@ -14,9 +14,10 @@ import type { FieldHandle, FieldIconHandle } from 'proton-pass-extension/app/con
 
 import { workerErrored, workerLocked, workerLoggedOut, workerStale } from '@proton/pass/lib/worker';
 import type { WorkerStatus } from '@proton/pass/types';
-import { animatePositionChange } from '@proton/pass/utils/dom';
-import { or, safeCall } from '@proton/pass/utils/fp';
-import { createListenerStore } from '@proton/pass/utils/listener';
+import { animatePositionChange } from '@proton/pass/utils/dom/position';
+import { or } from '@proton/pass/utils/fp/predicates';
+import { safeCall } from '@proton/pass/utils/fp/safe-call';
+import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import debounce from '@proton/utils/debounce';
 
 type CreateIconOptions = { field: FieldHandle };

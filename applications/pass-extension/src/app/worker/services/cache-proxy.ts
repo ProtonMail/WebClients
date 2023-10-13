@@ -1,7 +1,7 @@
 import { api } from '@proton/pass/lib/api/api';
 import browser from '@proton/pass/lib/globals/browser';
 import { selectCanLoadDomainImages } from '@proton/pass/store/selectors';
-import { truthy } from '@proton/pass/utils/fp';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';

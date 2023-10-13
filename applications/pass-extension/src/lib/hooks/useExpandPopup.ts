@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
 import browser from '@proton/pass/lib/globals/browser';
-import { pixelParser } from '@proton/pass/utils/dom';
+import { pixelParser } from '@proton/pass/utils/dom/computed-styles';
 import noop from '@proton/utils/noop';
 
 export const useExpandPopup = () =>

@@ -5,7 +5,7 @@ import { reportProblem } from '@proton/pass/store/actions/requests';
 import withNotification from '@proton/pass/store/actions/with-notification';
 import withRequest from '@proton/pass/store/actions/with-request';
 import { type ExtensionEndpoint } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 import { type BugPayload } from '@proton/shared/lib/api/reports';
 
 export const reportProblemIntent = createAction('report problem intent', (payload: BugPayload) =>

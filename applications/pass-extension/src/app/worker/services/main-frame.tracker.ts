@@ -3,7 +3,7 @@ import type { WebRequest } from 'webextension-polyfill';
 import browser from '@proton/pass/lib/globals/browser';
 import type { MaybeNull, TabId } from '@proton/pass/types';
 import { isFailedRequest } from '@proton/pass/utils/requests';
-import { parseUrl } from '@proton/pass/utils/url';
+import { parseUrl } from '@proton/pass/utils/url/parser';
 
 /**
  * There is currently no way to retrieve the status

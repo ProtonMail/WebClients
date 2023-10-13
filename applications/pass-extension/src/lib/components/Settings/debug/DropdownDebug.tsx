@@ -2,9 +2,9 @@ import type { ReactNode, VFC } from 'react';
 
 import type { SafeLoginItem } from '@proton/pass/types';
 import { WorkerStatus } from '@proton/pass/types';
-import { uniqueId } from '@proton/pass/utils/string';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
-import { DROPDOWN_WIDTH } from '../../../../app/content/constants';
+import { DROPDOWN_WIDTH } from '../../../../app/content/constants.static';
 import { DropdownSwitch } from '../../../../app/content/injections/apps/dropdown/components/DropdownSwitch';
 import { DropdownAction } from '../../../../app/content/types';
 import { SettingsPanel } from '../SettingsPanel';

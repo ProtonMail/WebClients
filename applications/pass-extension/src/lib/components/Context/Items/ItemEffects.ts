@@ -26,7 +26,7 @@ import { useInviteContext } from '@proton/pass/components/Invite/InviteContextPr
 import { belongsToShare, itemEq } from '@proton/pass/lib/items/item.predicates';
 import { popupTabStateSave } from '@proton/pass/store/actions/creators/popup';
 import { selectItemIdByOptimisticId } from '@proton/pass/store/selectors';
-import { invert } from '@proton/pass/utils/fp';
+import { invert } from '@proton/pass/utils/fp/predicates';
 
 import type { ItemsFilteringContextType } from './ItemsFilteringContext';
 

@@ -1,5 +1,5 @@
 import type { Item } from '@proton/pass/types';
-import { parseUrl } from '@proton/pass/utils/url';
+import { parseUrl } from '@proton/pass/utils/url/parser';
 
 export enum ItemUrlMatch {
     TOP_MATCH = 1,

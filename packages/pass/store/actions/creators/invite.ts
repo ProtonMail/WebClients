@@ -13,7 +13,7 @@ import type {
     InviteRemoveIntent,
     InviteResendIntent,
 } from '@proton/pass/types/data/invites.dto';
-import { pipe } from '@proton/pass/utils/fp';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 
 export const syncInvites = createAction<InviteState>('invites::sync');
 

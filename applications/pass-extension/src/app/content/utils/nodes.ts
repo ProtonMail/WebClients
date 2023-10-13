@@ -1,5 +1,5 @@
 import { isProcessed, selectFormCandidates, selectInputCandidates } from '@proton/pass/fathom';
-import { invert } from '@proton/pass/utils/fp';
+import { invert } from '@proton/pass/utils/fp/predicates';
 
 const unprocessed = invert(isProcessed);
 

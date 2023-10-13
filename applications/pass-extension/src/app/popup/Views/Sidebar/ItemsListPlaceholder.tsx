@@ -19,7 +19,7 @@ import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { selectOwnWritableVaults, selectShare, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { ItemType } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
-import { prop } from '@proton/pass/utils/fp';
+import { prop } from '@proton/pass/utils/fp/lens';
 import clsx from '@proton/utils/clsx';
 
 type QuickAction = {

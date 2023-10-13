@@ -1,4 +1,4 @@
-import type { Subscriber } from '@proton/pass/utils/pubsub';
+import type { Subscriber } from '@proton/pass/utils/pubsub/factory';
 import type { RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 
@@ -43,9 +43,9 @@ export type ApiContext = {
  *   that have not been auto-generated (legacy support)
  */
 export type Api = {
-    <T extends any = void, U extends string = string, M extends string = string>(config: ApiOptions<U, M>): Promise<
-        ApiResult<T, U, M>
-    >;
+    <T extends any = void, U extends string = string, M extends string = string>(
+        config: ApiOptions<U, M>
+    ): Promise<ApiResult<T, U, M>>;
     configure: (auth?: ApiAuthOptions) => void;
     subscribe: (subscribe: Subscriber<ApiSubscribtionEvent>) => () => void;
     unsubscribe: () => void;

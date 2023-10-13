@@ -13,7 +13,7 @@ import { useRequestStatusEffect } from '@proton/pass/hooks/useRequestStatusEffec
 import { reportProblemIntent } from '@proton/pass/store/actions';
 import { reportProblem } from '@proton/pass/store/actions/requests';
 import { selectRequestInFlight, selectUser } from '@proton/pass/store/selectors';
-import { isEmptyString } from '@proton/pass/utils/string';
+import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { type BugPayload } from '@proton/shared/lib/api/reports';
 
 import { SettingsPanel } from './SettingsPanel';

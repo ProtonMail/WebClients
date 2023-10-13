@@ -13,7 +13,7 @@ import type {
 import { ShareType } from '@proton/pass/types';
 import { unwrap } from '@proton/pass/utils/fp/promises';
 import { logId, logger } from '@proton/pass/utils/logger';
-import { entriesMap } from '@proton/pass/utils/object';
+import { entriesMap } from '@proton/pass/utils/object/map';
 import { getDecryptedAddressKeysHelper, getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 
 import * as processes from './processes';

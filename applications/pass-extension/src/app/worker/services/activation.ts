@@ -15,10 +15,11 @@ import {
 } from '@proton/pass/store/selectors';
 import type { MaybeNull, WorkerInitMessage, WorkerMessageWithSender, WorkerWakeUpMessage } from '@proton/pass/types';
 import { WorkerMessageType, WorkerStatus } from '@proton/pass/types';
-import { getErrorMessage } from '@proton/pass/utils/errors';
+import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { logger } from '@proton/pass/utils/logger';
-import { UNIX_HOUR, getEpoch } from '@proton/pass/utils/time';
-import { parseUrl } from '@proton/pass/utils/url';
+import { UNIX_HOUR } from '@proton/pass/utils/time/constants';
+import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+import { parseUrl } from '@proton/pass/utils/url/parser';
 
 import { checkExtensionPermissions } from '../../../lib/utils/permissions';
 import { isPopupPort } from '../../../lib/utils/port';

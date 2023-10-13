@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import type { ItemImportIntent, Maybe, UnsafeItemExtraField } from '@proton/pass/types';
-import { truthy } from '@proton/pass/utils/fp';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
-import { BITWARDEN_ANDROID_APP_FLAG, isBitwardenLinkedAndroidAppUrl } from '@proton/pass/utils/url';
+import { BITWARDEN_ANDROID_APP_FLAG, isBitwardenLinkedAndroidAppUrl } from '@proton/pass/utils/url/android';
 
 import { ImportProviderError, ImportReaderError } from '../helpers/error';
 import { getImportedVaultName, importCreditCardItem, importLoginItem, importNoteItem } from '../helpers/transformers';

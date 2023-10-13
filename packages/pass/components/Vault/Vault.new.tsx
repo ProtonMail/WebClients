@@ -12,7 +12,7 @@ import { vaultCreate } from '@proton/pass/store/actions/requests';
 import { selectPassPlan, selectVaultLimits } from '@proton/pass/store/selectors';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { VaultColor, VaultIcon } from '@proton/pass/types/protobuf/vault-v1';
-import { uniqueId } from '@proton/pass/utils/string';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 import { VaultForm, type VaultFormConsumerProps, type VaultFormValues } from './Vault.form';
 

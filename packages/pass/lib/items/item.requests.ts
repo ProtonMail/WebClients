@@ -16,9 +16,9 @@ import type {
     ItemType,
     Maybe,
 } from '@proton/pass/types';
-import { truthy } from '@proton/pass/utils/fp';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
-import { getEpoch } from '@proton/pass/utils/time';
+import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import chunk from '@proton/utils/chunk';
 import groupWith from '@proton/utils/groupWith';
 

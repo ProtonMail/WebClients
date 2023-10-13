@@ -15,7 +15,7 @@ import type {
     AutoSuggestSettings,
     DomainCriterias,
 } from '@proton/pass/types/worker/settings';
-import { partialMerge } from '@proton/pass/utils/object';
+import { partialMerge } from '@proton/pass/utils/object/merge';
 
 export type SettingsState = {
     locale?: string;

@@ -9,7 +9,7 @@ import withNotification from '@proton/pass/store/actions/with-notification';
 import { withRequestFailure, withRequestStart, withRequestSuccess } from '@proton/pass/store/actions/with-request';
 import type { AliasOptions } from '@proton/pass/store/reducers';
 import type { AliasMailbox } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 
 export const getAliasOptionsIntent = createAction(
     'alias::options::get::intent',

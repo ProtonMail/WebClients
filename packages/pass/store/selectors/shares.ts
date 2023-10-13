@@ -7,7 +7,7 @@ import { isOwnVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predi
 import type { VaultShare } from '@proton/pass/types';
 import { type Maybe, type MaybeNull, type ShareType } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
-import { and, invert } from '@proton/pass/utils/fp';
+import { and, invert } from '@proton/pass/utils/fp/predicates';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 
 import { unwrapOptimisticState } from '../optimistic/utils/transformers';

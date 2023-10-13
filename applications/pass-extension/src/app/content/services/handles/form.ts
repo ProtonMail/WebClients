@@ -5,10 +5,10 @@ import { hasUnprocessedFields } from 'proton-pass-extension/app/content/utils/no
 
 import type { FormType } from '@proton/pass/fathom';
 import { removeProcessedFlag } from '@proton/pass/fathom';
-import { getMaxZIndex } from '@proton/pass/utils/dom';
-import { createListenerStore } from '@proton/pass/utils/listener';
+import { getMaxZIndex } from '@proton/pass/utils/dom/zindex';
+import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
-import { uniqueId } from '@proton/pass/utils/string';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import debounce from '@proton/utils/debounce';
 
 import { createFieldHandles } from './field';

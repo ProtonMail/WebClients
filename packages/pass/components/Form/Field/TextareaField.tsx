@@ -5,8 +5,8 @@ import { type FieldProps } from 'formik';
 
 import { InputFieldTwo, TextAreaTwo } from '@proton/components';
 import { type InputFieldProps } from '@proton/components/components/v2/field/InputField';
-import { pipe } from '@proton/pass/utils/fp';
-import { isEmptyString } from '@proton/pass/utils/string';
+import { pipe } from '@proton/pass/utils/fp/pipe';
+import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import clsx from '@proton/utils/clsx';
 
 import { useFieldControl } from '../../../hooks/useFieldControl';

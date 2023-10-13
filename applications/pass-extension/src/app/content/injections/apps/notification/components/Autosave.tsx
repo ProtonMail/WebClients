@@ -20,9 +20,9 @@ import type { Item } from '@proton/pass/types';
 import { AutoSaveType, type FormEntryPrompt, WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { partialMerge } from '@proton/pass/utils/object';
-import { uniqueId } from '@proton/pass/utils/string';
-import { isValidURL } from '@proton/pass/utils/url';
+import { partialMerge } from '@proton/pass/utils/object/merge';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
+import { isValidURL } from '@proton/pass/utils/url/is-valid-url';
 import noop from '@proton/utils/noop';
 
 import { NotificationHeader } from './NotificationHeader';

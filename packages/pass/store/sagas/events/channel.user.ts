@@ -11,7 +11,8 @@ import { selectAllAddresses, selectLatestEventId } from '@proton/pass/store/sele
 import type { State, WorkerRootSagaOptions } from '@proton/pass/store/types';
 import type { UserEvent } from '@proton/pass/types';
 import { type Api } from '@proton/pass/types';
-import { notIn, prop } from '@proton/pass/utils/fp';
+import { prop } from '@proton/pass/utils/fp/lens';
+import { notIn } from '@proton/pass/utils/fp/predicates';
 import { logId, logger } from '@proton/pass/utils/logger';
 import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
 import type { Address } from '@proton/shared/lib/interfaces';

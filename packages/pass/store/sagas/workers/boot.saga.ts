@@ -12,7 +12,7 @@ import type { State, WorkerRootSagaOptions } from '@proton/pass/store/types';
 import type { Maybe, RequiredNonNull } from '@proton/pass/types';
 import type { EncryptedExtensionCache, ExtensionCache } from '@proton/pass/types/worker/cache';
 import { logger } from '@proton/pass/utils/logger';
-import { merge } from '@proton/pass/utils/object';
+import { merge } from '@proton/pass/utils/object/merge';
 
 function* bootWorker(options: WorkerRootSagaOptions) {
     try {
