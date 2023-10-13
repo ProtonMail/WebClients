@@ -1,11 +1,11 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { pipe } from '@proton/pass/utils/fp';
-
-import withCacheBlock from '../with-cache-block';
-import withCallback, { type ActionCallback } from '../with-callback';
-import withNotification from '../with-notification';
+import withCacheBlock from '@proton/pass/store/actions/with-cache-block';
+import type { ActionCallback } from '@proton/pass/store/actions/with-callback';
+import withCallback from '@proton/pass/store/actions/with-callback';
+import withNotification from '@proton/pass/store/actions/with-notification';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 
 export const emptyTrashIntent = createAction('trash delete intent', () => withCacheBlock({ payload: {} }));
 

@@ -1,5 +1,5 @@
 import type { Maybe } from '@proton/pass/types';
-import { isFormElement } from '@proton/pass/utils/dom';
+import { isFormElement } from '@proton/pass/utils/dom/predicates';
 
 export const parseFormAction = (form: HTMLElement): Maybe<string> => {
     const isForm = isFormElement(form);

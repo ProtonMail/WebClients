@@ -1,12 +1,6 @@
 import type { AnyAction, Reducer } from 'redux';
 
-import { CONTENT_FORMAT_VERSION, type ItemRevision, ItemState, type UniqueItem } from '@proton/pass/types';
-import { or } from '@proton/pass/utils/fp';
-import { fullMerge, objectDelete, partialMerge } from '@proton/pass/utils/object';
-import { isTrashed } from '@proton/pass/utils/pass/trash';
-import { getEpoch } from '@proton/pass/utils/time';
-import { toMap } from '@proton/shared/lib/helpers/object';
-
+import { isTrashed } from '@proton/pass/lib/items/item.predicates';
 import {
     bootSuccess,
     emptyTrashFailure,
@@ -38,7 +32,6 @@ import {
     itemTrashIntent,
     itemTrashSuccess,
     itemsBatchImported,
-    itemsRequestSuccess,
     restoreTrashFailure,
     restoreTrashIntent,
     restoreTrashSuccess,
@@ -48,11 +41,17 @@ import {
     syncSuccess,
     vaultDeleteIntent,
     vaultDeleteSuccess,
-} from '../actions';
-import { sanitizeWithCallbackAction } from '../actions/with-callback';
-import type { WrappedOptimisticState } from '../optimistic/types';
-import { combineOptimisticReducers } from '../optimistic/utils/combine-optimistic-reducers';
-import withOptimistic from '../optimistic/with-optimistic';
+} from '@proton/pass/store/actions';
+import { sanitizeWithCallbackAction } from '@proton/pass/store/actions/with-callback';
+import type { WrappedOptimisticState } from '@proton/pass/store/optimistic/types';
+import { combineOptimisticReducers } from '@proton/pass/store/optimistic/utils/combine-optimistic-reducers';
+import withOptimistic from '@proton/pass/store/optimistic/with-optimistic';
+import { CONTENT_FORMAT_VERSION, type ItemRevision, ItemState, type UniqueItem } from '@proton/pass/types';
+import { or } from '@proton/pass/utils/fp/predicates';
+import { objectDelete } from '@proton/pass/utils/object/delete';
+import { fullMerge, partialMerge } from '@proton/pass/utils/object/merge';
+import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+import { toMap } from '@proton/shared/lib/helpers/object';
 
 /*
  * itemIds are only guaranteed to be unique per share
@@ -288,16 +287,6 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
                     ),
                 ])
             );
-        }
-
-        if (itemsRequestSuccess.match(action)) {
-            const {
-                payload: { shareId, items },
-            } = action;
-
-            const itemsById = items.reduce((reduction, item) => ({ ...reduction, [item.itemId]: item }), {});
-
-            return fullMerge(state, { [shareId]: itemsById });
         }
 
         if (itemAutofillIntent.match(action)) {

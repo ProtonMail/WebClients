@@ -1,12 +1,12 @@
 import type { Reducer } from 'redux';
 
+import { bootSuccess, setUserFeatures, setUserPlan, userEvent } from '@proton/pass/store/actions';
 import type { MaybeNull, PassPlanResponse } from '@proton/pass/types';
 import { EventActions } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
-import { fullMerge, merge, objectDelete, partialMerge } from '@proton/pass/utils/object';
+import { objectDelete } from '@proton/pass/utils/object/delete';
+import { fullMerge, merge, partialMerge } from '@proton/pass/utils/object/merge';
 import type { Address, User } from '@proton/shared/lib/interfaces';
-
-import { bootSuccess, setUserFeatures, setUserPlan, userEvent } from '../actions';
 
 export type AddressState = { [addressId: string]: Address };
 export type FeatureFlagState = Partial<Record<PassFeature, boolean>> & { requestedAt?: number };

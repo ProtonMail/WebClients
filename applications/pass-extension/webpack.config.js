@@ -46,8 +46,8 @@ console.log(config);
 
 const production = ENV === 'production';
 
-const nonAccessibleWebResource = (entry) => [entry, './src/shared/extension/web-accessible-resource.ts'];
-const disableBrowserTrap = (entry) => [entry, './src/shared/extension/disable-browser-trap.ts'];
+const nonAccessibleWebResource = (entry) => [entry, './src/lib/utils/web-accessible-resource.ts'];
+const disableBrowserTrap = (entry) => [entry, './src/lib/utils/disable-browser-trap.ts'];
 
 module.exports = {
     ...(production
@@ -55,7 +55,7 @@ module.exports = {
         : { mode: 'development', devtool: 'inline-source-map' }),
     entry: {
         background: {
-            import: './src/worker/index.ts',
+            import: './src/app/worker/index.ts',
             filename: 'background.js',
             /* MV3 implementations of non-persistent background scripts change
              * depending on the platform. On chromium based browsers, we'll be
@@ -66,17 +66,17 @@ module.exports = {
              * https://bugs.chromium.org/p/chromium/issues/detail?id=1198822#c10  */
             chunkLoading: BUILD_TARGET === 'chrome' ? 'import-scripts' : 'jsonp',
         },
-        client: './src/content/client.ts',
-        dropdown: nonAccessibleWebResource('./src/content/injections/apps/dropdown/index.tsx'),
-        elements: './src/content/elements.ts',
-        notification: nonAccessibleWebResource('./src/content/injections/apps/notification/index.tsx'),
-        onboarding: './src/pages/onboarding/index.tsx',
-        orchestrator: disableBrowserTrap('./src/content/orchestrator.ts'),
-        popup: './src/popup/index.tsx',
-        settings: './src/pages/settings/index.tsx',
+        client: './src/app/content/client.ts',
+        dropdown: nonAccessibleWebResource('./src/app/content/injections/apps/dropdown/index.tsx'),
+        elements: './src/app/content/elements.ts',
+        notification: nonAccessibleWebResource('./src/app/content/injections/apps/notification/index.tsx'),
+        onboarding: './src/app/pages/onboarding/index.tsx',
+        orchestrator: disableBrowserTrap('./src/app/content/orchestrator.ts'),
+        popup: './src/app/popup/index.tsx',
+        settings: './src/app/pages/settings/index.tsx',
         /* custom element styles */
-        'styles.root': './src/content/injections/custom-elements/ProtonPassRoot.scss',
-        'styles.control': './src/content/injections/custom-elements/ProtonPassControl.scss',
+        'styles.root': './src/app/content/injections/custom-elements/ProtonPassRoot.scss',
+        'styles.control': './src/app/content/injections/custom-elements/ProtonPassControl.scss',
         /* FF auth fallback */
         ...(BUILD_TARGET === 'firefox' ? { authFallback: disableBrowserTrap('./src/content/firefox/index.ts') } : {}),
     },
@@ -111,6 +111,9 @@ module.exports = {
             punycode: false,
         },
         modules: [path.resolve(__dirname), 'node_modules'],
+        alias: {
+            'proton-pass-extension': path.resolve(__dirname, 'src/'),
+        },
     },
     cache: {
         type: 'filesystem',

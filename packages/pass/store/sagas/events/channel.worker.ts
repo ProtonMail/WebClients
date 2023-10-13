@@ -1,14 +1,14 @@
 import type { AnyAction } from 'redux';
 import { call, cancelled, take, takeLeading } from 'redux-saga/effects';
 
+import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
+import type { EventManagerEvent } from '@proton/pass/lib/events/manager';
+import { wakeupSuccess } from '@proton/pass/store/actions';
+import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
 import { logger } from '@proton/pass/utils/logger';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
-import { ACTIVE_POLLING_TIMEOUT } from '../../../events/constants';
-import type { EventManagerEvent } from '../../../events/manager';
-import { wakeupSuccess } from '../../actions';
-import type { WorkerRootSagaOptions } from '../../types';
 import type { EventChannel } from './types';
 
 /* generic worker over an EventChannel : responsible for polling
