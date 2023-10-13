@@ -2,7 +2,7 @@
 import type { AnyAction } from 'redux';
 import { all, call, fork, put, select, take } from 'redux-saga/effects';
 
-import { PassCrypto } from '@proton/pass/lib/crypto';
+import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import type { EventManagerEvent } from '@proton/pass/lib/events/manager';
 import { parseItemRevision } from '@proton/pass/lib/items/item.utils';
