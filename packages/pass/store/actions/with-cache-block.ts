@@ -1,7 +1,7 @@
 import type { AnyAction } from 'redux';
 
-import { invert } from '@proton/pass/utils/fp';
-import { merge } from '@proton/pass/utils/object';
+import { invert } from '@proton/pass/utils/fp/predicates';
+import { merge } from '@proton/pass/utils/object/merge';
 
 export type WithCacheBlock<T = AnyAction> = T & { meta: { cache: false } };
 

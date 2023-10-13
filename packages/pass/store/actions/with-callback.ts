@@ -1,7 +1,7 @@
 import cloneDeep from 'lodash/cloneDeep';
 import type { AnyAction } from 'redux';
 
-import { merge } from '@proton/pass/utils/object';
+import { merge } from '@proton/pass/utils/object/merge';
 
 export type ActionCallback<T = AnyAction> = (action: T) => void;
 

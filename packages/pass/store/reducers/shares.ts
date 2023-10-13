@@ -1,12 +1,5 @@
 import type { AnyAction } from 'redux';
 
-import type { Share } from '@proton/pass/types';
-import { ShareRole, ShareType } from '@proton/pass/types';
-import type { PendingInvite, ShareMember } from '@proton/pass/types/data/invites';
-import { or } from '@proton/pass/utils/fp';
-import { fullMerge, objectDelete, objectMap, partialMerge } from '@proton/pass/utils/object';
-import { getEpoch } from '@proton/pass/utils/time';
-
 import {
     bootSuccess,
     getShareAccessOptionsSuccess,
@@ -37,9 +30,17 @@ import {
     vaultSetPrimarySuccess,
     vaultSetPrimarySync,
     vaultTransferOwnershipSuccess,
-} from '../actions';
-import { sanitizeWithCallbackAction } from '../actions/with-callback';
-import withOptimistic from '../optimistic/with-optimistic';
+} from '@proton/pass/store/actions';
+import { sanitizeWithCallbackAction } from '@proton/pass/store/actions/with-callback';
+import withOptimistic from '@proton/pass/store/optimistic/with-optimistic';
+import type { Share } from '@proton/pass/types';
+import { ShareRole, ShareType } from '@proton/pass/types';
+import type { PendingInvite, ShareMember } from '@proton/pass/types/data/invites';
+import { or } from '@proton/pass/utils/fp/predicates';
+import { objectDelete } from '@proton/pass/utils/object/delete';
+import { objectMap } from '@proton/pass/utils/object/map';
+import { fullMerge, partialMerge } from '@proton/pass/utils/object/merge';
+import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 
 export type ShareItem<T extends ShareType = ShareType> = Share<T> & {
     invites?: PendingInvite[];

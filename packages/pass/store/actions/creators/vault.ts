@@ -1,17 +1,20 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import { vaultCreate, vaultDelete, vaultEdit, vaultSetPrimary } from '@proton/pass/store/actions/requests';
+import withCacheBlock from '@proton/pass/store/actions/with-cache-block';
+import type { ActionCallback } from '@proton/pass/store/actions/with-callback';
+import withCallback from '@proton/pass/store/actions/with-callback';
+import withNotification from '@proton/pass/store/actions/with-notification';
+import withRequest, {
+    withRequestFailure,
+    withRequestStart,
+    withRequestSuccess,
+} from '@proton/pass/store/actions/with-request';
+import { createOptimisticAction } from '@proton/pass/store/optimistic/action/create-optimistic-action';
 import type { ExtensionEndpoint, ItemRevision, MaybeNull, Share, ShareContent, ShareType } from '@proton/pass/types';
 import type { VaultTransferOwnerIntent } from '@proton/pass/types/data/vault.dto';
-import { pipe } from '@proton/pass/utils/fp';
-
-import { createOptimisticAction } from '../../optimistic/action/create-optimistic-action';
-import { vaultCreate, vaultDelete, vaultEdit, vaultSetPrimary } from '../requests';
-import withCacheBlock from '../with-cache-block';
-import type { ActionCallback } from '../with-callback';
-import withCallback from '../with-callback';
-import withNotification from '../with-notification';
-import withRequest, { withRequestFailure, withRequestStart, withRequestSuccess } from '../with-request';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 
 export const vaultCreationIntent = createOptimisticAction(
     'vault creation intent',

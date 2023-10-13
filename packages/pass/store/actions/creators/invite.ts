@@ -1,6 +1,10 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import withCacheBlock from '@proton/pass/store/actions/with-cache-block';
+import withNotification from '@proton/pass/store/actions/with-notification';
+import { withRequestFailure, withRequestStart, withRequestSuccess } from '@proton/pass/store/actions/with-request';
+import type { InviteState } from '@proton/pass/store/reducers';
 import type { ItemRevision, Share, ShareType } from '@proton/pass/types';
 import type {
     InviteAcceptIntent,
@@ -9,12 +13,7 @@ import type {
     InviteRemoveIntent,
     InviteResendIntent,
 } from '@proton/pass/types/data/invites.dto';
-import { pipe } from '@proton/pass/utils/fp';
-
-import type { InviteState } from '../../reducers/invites';
-import withCacheBlock from '../with-cache-block';
-import withNotification from '../with-notification';
-import { withRequestFailure, withRequestStart, withRequestSuccess } from '../with-request';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 
 export const syncInvites = createAction<InviteState>('invites::sync');
 

@@ -1,11 +1,11 @@
 import { type Reducer, combineReducers } from 'redux';
 
+import { stateSync } from '@proton/pass/store/actions';
+import { isStateResetAction } from '@proton/pass/store/actions/utils';
+import type { State } from '@proton/pass/store/types';
 import type { Maybe } from '@proton/pass/types';
-import { merge } from '@proton/pass/utils/object';
+import { merge } from '@proton/pass/utils/object/merge';
 
-import { stateSync } from '../actions';
-import { isStateResetAction } from '../actions/utils';
-import type { State } from '../types';
 import alias from './alias';
 import importReducer from './import';
 import invites from './invites';
