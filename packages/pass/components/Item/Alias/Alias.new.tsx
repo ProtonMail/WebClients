@@ -23,7 +23,8 @@ import { selectAliasLimits, selectVaultLimits } from '@proton/pass/store/selecto
 import type { MaybeNull, NewAliasFormValues } from '@proton/pass/types';
 import { awaiter } from '@proton/pass/utils/fp/promises';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
+import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import noop from '@proton/utils/noop';
 

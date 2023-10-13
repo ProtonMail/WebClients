@@ -1,7 +1,7 @@
 import type { AnyAction } from 'redux';
 
 import type { ExtensionEndpoint, TabId } from '@proton/pass/types';
-import { merge } from '@proton/pass/utils/object';
+import { merge } from '@proton/pass/utils/object/merge';
 
 export type EndpointOptions = { endpoint?: ExtensionEndpoint; tabId?: TabId };
 export type WithReceiverAction<T = AnyAction> = T & { meta: { receiver: EndpointOptions } };

@@ -6,10 +6,10 @@ import { getCurrentTab } from '@proton/pass/lib/extension/utils/tabs';
 import browser from '@proton/pass/lib/globals/browser';
 import { type ExtensionEndpoint, type TabId, WorkerMessageType } from '@proton/pass/types';
 import { createSharedContext } from '@proton/pass/utils/context';
-import { safeCall } from '@proton/pass/utils/fp';
+import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { logger } from '@proton/pass/utils/logger';
-import type { ParsedUrl } from '@proton/pass/utils/url';
-import { parseUrl } from '@proton/pass/utils/url';
+import type { ParsedUrl } from '@proton/pass/utils/url/parser';
+import { parseUrl } from '@proton/pass/utils/url/parser';
 
 export type ExtensionContextType = {
     endpoint: ExtensionEndpoint;

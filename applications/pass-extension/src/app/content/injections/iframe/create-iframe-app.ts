@@ -4,10 +4,12 @@ import { contentScriptMessage, portForwardingMessage, sendMessage } from '@proto
 import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import type { Dimensions, Rect } from '@proton/pass/types/utils/dom';
-import { createElement, pixelEncoder } from '@proton/pass/utils/dom';
-import { safeCall, waitUntil } from '@proton/pass/utils/fp';
-import { createListenerStore } from '@proton/pass/utils/listener';
-import { merge } from '@proton/pass/utils/object';
+import { pixelEncoder } from '@proton/pass/utils/dom/computed-styles';
+import { createElement } from '@proton/pass/utils/dom/create-element';
+import { safeCall } from '@proton/pass/utils/fp/safe-call';
+import { waitUntil } from '@proton/pass/utils/fp/wait-until';
+import { createListenerStore } from '@proton/pass/utils/listener/factory';
+import { merge } from '@proton/pass/utils/object/merge';
 
 import type {
     IFrameApp,

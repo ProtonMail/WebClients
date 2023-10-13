@@ -6,7 +6,7 @@ import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { selectItemsByType } from '@proton/pass/store/selectors';
 import { AutoSaveType, FormEntryStatus } from '@proton/pass/types';
 
-import { NOTIFICATION_HEIGHT, NOTIFICATION_WIDTH } from '../../../../app/content/constants';
+import { NOTIFICATION_HEIGHT, NOTIFICATION_WIDTH } from '../../../../app/content/constants.static';
 import { NotificationSwitch } from '../../../../app/content/injections/apps/notification/components/NotificationSwitch';
 import { NotificationAction } from '../../../../app/content/types';
 import { SettingsPanel } from '../SettingsPanel';

@@ -7,7 +7,7 @@ import { Checkbox, Icon, Option, SelectTwo } from '@proton/components';
 import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import { type ImportVault } from '@proton/pass/lib/import/types';
 import type { MaybeNull, VaultShare } from '@proton/pass/types';
-import { truthy } from '@proton/pass/utils/fp';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 
 type VaultsPickerOptionProps = {
     data: ImportVault;

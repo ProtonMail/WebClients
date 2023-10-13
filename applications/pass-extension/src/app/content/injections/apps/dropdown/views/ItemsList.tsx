@@ -15,7 +15,7 @@ import { type SafeLoginItem, WorkerMessageType } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
-import { truthy } from '@proton/pass/utils/fp';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 type Props = {

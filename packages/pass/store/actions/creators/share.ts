@@ -12,7 +12,7 @@ import type {
     ShareEditMemberAccessIntent,
     ShareRemoveMemberAccessIntent,
 } from '@proton/pass/types/data/shares.dto';
-import { pipe } from '@proton/pass/utils/fp';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 
 export const shareEditSync = createAction('share::edit:sync', (payload: { id: string; share: Share }) => ({ payload }));
 

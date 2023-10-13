@@ -10,7 +10,7 @@ import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { matchChunks } from '@proton/pass/lib/search/match-chunks';
 import { selectShare } from '@proton/pass/store/selectors';
 import type { ItemRevisionWithOptimistic, ShareType } from '@proton/pass/types';
-import { isEmptyString } from '@proton/pass/utils/string';
+import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import clsx from '@proton/utils/clsx';
 
 import { presentListItem } from './ItemListItem.utils';

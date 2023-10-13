@@ -13,7 +13,8 @@ import type {
     WorkerResponse,
 } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
-import { notIn, pipe, tap } from '@proton/pass/utils/fp';
+import { pipe, tap } from '@proton/pass/utils/fp/pipe';
+import { notIn } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 
 export const successMessage = <T extends {}>(message?: T) =>

@@ -13,7 +13,7 @@ import { VaultSelectField } from '@proton/pass/components/Form/Field/VaultSelect
 import { selectShare } from '@proton/pass/store/selectors';
 import type { MaybeNull, ShareType, VaultShare } from '@proton/pass/types';
 import { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
-import { truthy } from '@proton/pass/utils/fp';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import clsx from '@proton/utils/clsx';
 
 type ConfirmDeleteValues = { name: string; destination: string };

@@ -13,7 +13,7 @@ import { workerBusy } from '@proton/pass/lib/worker';
 import type { MaybeNull } from '@proton/pass/types';
 import { WorkerStatus } from '@proton/pass/types';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
-import { pipe, tap } from '@proton/pass/utils/fp';
+import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';

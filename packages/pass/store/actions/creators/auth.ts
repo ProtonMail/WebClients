@@ -9,7 +9,7 @@ import withCallback from '@proton/pass/store/actions/with-callback';
 import withNotification from '@proton/pass/store/actions/with-notification';
 import withRequest from '@proton/pass/store/actions/with-request';
 import type { ExtensionEndpoint } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 export const signout = createAction('signout', (payload: { soft: boolean }) => withCacheBlock({ payload }));

@@ -10,8 +10,8 @@ import { createAutofill } from 'proton-pass-extension/app/content/utils/autofill
 
 import type { FormType } from '@proton/pass/fathom';
 import { FieldType } from '@proton/pass/fathom';
-import { findBoundingInputElement } from '@proton/pass/utils/dom';
-import { createListenerStore } from '@proton/pass/utils/listener';
+import { findBoundingInputElement } from '@proton/pass/utils/dom/input';
+import { createListenerStore } from '@proton/pass/utils/listener/factory';
 
 import { createFieldIconHandle } from './icon';
 

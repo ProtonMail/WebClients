@@ -26,9 +26,9 @@ import { passwordSave } from '@proton/pass/store/actions/creators/pw-history';
 import { selectAliasLimits, selectPassPlan } from '@proton/pass/store/selectors';
 import type { ItemType } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
-import { pipe } from '@proton/pass/utils/fp';
-import { uniqueId } from '@proton/pass/utils/string';
-import { getEpoch } from '@proton/pass/utils/time';
+import { pipe } from '@proton/pass/utils/fp/pipe';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
+import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 
 import { MenuDropdown } from './MenuDropdown';
 import { Searchbar } from './Searchbar';

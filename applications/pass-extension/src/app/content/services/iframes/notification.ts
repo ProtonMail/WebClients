@@ -1,9 +1,9 @@
+import { NOTIFICATION_IFRAME_SRC } from 'proton-pass-extension/app/content/constants.runtime';
 import {
     NOTIFICATION_HEIGHT,
     NOTIFICATION_HEIGHT_SM,
-    NOTIFICATION_IFRAME_SRC,
     NOTIFICATION_WIDTH,
-} from 'proton-pass-extension/app/content/constants';
+} from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { createIFrameApp } from 'proton-pass-extension/app/content/injections/iframe/create-iframe-app';
 import type { InjectedNotification, NotificationActions } from 'proton-pass-extension/app/content/types';
@@ -12,7 +12,8 @@ import { IFrameMessageType, NotificationAction } from 'proton-pass-extension/app
 import { FormType, flagAsIgnored, removeClassifierFlags } from '@proton/pass/fathom';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { WorkerMessageType } from '@proton/pass/types';
-import { pipe, waitUntil } from '@proton/pass/utils/fp';
+import { pipe } from '@proton/pass/utils/fp/pipe';
+import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import noop from '@proton/utils/noop';
 
 export const createNotification = (): InjectedNotification => {

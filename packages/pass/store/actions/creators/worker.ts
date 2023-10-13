@@ -10,7 +10,7 @@ import withRequest from '@proton/pass/store/actions/with-request';
 import type { UserState } from '@proton/pass/store/reducers';
 import type { SynchronizationResult } from '@proton/pass/store/sagas/workers/sync';
 import type { ExtensionEndpoint, Maybe, RequiredNonNull, TabId, WorkerStatus } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 import identity from '@proton/utils/identity';
 
 export const startEventPolling = createAction('events::polling::start');

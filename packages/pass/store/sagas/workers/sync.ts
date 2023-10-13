@@ -12,12 +12,15 @@ import type { State, WorkerRootSagaOptions } from '@proton/pass/store/types';
 import type { Maybe, MaybeNull, ShareType } from '@proton/pass/types';
 import { type Share, type ShareGetResponse } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
-import { partition } from '@proton/pass/utils/array';
-import { and, invert, notIn, pipe, prop } from '@proton/pass/utils/fp';
+import { partition } from '@proton/pass/utils/array/partition';
+import { prop } from '@proton/pass/utils/fp/lens';
+import { pipe } from '@proton/pass/utils/fp/pipe';
+import { and, invert, notIn } from '@proton/pass/utils/fp/predicates';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 import { diadic } from '@proton/pass/utils/fp/variadics';
 import { logger } from '@proton/pass/utils/logger';
-import { fullMerge, merge, objectFilter } from '@proton/pass/utils/object';
+import { objectFilter } from '@proton/pass/utils/object/filter';
+import { fullMerge, merge } from '@proton/pass/utils/object/merge';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
 export type SynchronizationResult = {

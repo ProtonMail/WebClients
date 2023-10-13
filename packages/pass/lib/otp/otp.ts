@@ -1,9 +1,9 @@
 import { Secret, TOTP, URI } from 'otpauth';
 
 import type { MaybeNull } from '@proton/pass/types';
-import { merge } from '@proton/pass/utils/object';
-import { isEmptyString } from '@proton/pass/utils/string';
-import { isTotpUri } from '@proton/pass/utils/url';
+import { merge } from '@proton/pass/utils/object/merge';
+import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
+import { isTotpUri } from '@proton/pass/utils/url/totp';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
 
 export const OTP_DEFAULTS = {

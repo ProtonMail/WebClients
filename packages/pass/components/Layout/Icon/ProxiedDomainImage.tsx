@@ -1,8 +1,8 @@
 import { type CSSProperties, type VFC, useEffect, useMemo } from 'react';
 
 import { useConfig } from '@proton/components/hooks';
-import { safeCall } from '@proton/pass/utils/fp';
-import { isValidURL } from '@proton/pass/utils/url';
+import { safeCall } from '@proton/pass/utils/fp/safe-call';
+import { isValidURL } from '@proton/pass/utils/url/is-valid-url';
 
 export enum ImageStatus {
     LOADING,

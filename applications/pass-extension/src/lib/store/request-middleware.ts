@@ -3,7 +3,7 @@ import type { AnyAction, Middleware } from 'redux';
 import { isActionWithRequest } from '@proton/pass/store/actions/with-request';
 import { selectRequest } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
-import { getEpoch } from '@proton/pass/utils/time';
+import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 
 export const requestMiddleware: Middleware<{}, State> =
     ({ getState }) =>

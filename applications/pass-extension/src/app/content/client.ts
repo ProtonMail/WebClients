@@ -17,8 +17,8 @@
 import browser from '@proton/pass/lib/globals/browser';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';
-import { isMainFrame } from '@proton/pass/utils/dom';
-import { uniqueId } from '@proton/pass/utils/string';
+import { isMainFrame } from '@proton/pass/utils/dom/is-main-frame';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import noop from '@proton/utils/noop';
 
 import type { ContentScriptClientService } from './services';

@@ -1,5 +1,5 @@
 import type { Item, ItemSortFilter, ItemType, MaybeNull } from '@proton/pass/types';
-import type { ParsedUrl } from '@proton/pass/utils/url';
+import type { ParsedUrl } from '@proton/pass/utils/url/parser';
 
 export type ItemMatchFuncMap = { [T in ItemType]: ItemMatchFunc<T> };
 export type ItemMatchFunc<T extends ItemType = ItemType, Options extends any = any> = (
