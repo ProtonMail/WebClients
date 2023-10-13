@@ -116,6 +116,7 @@ const SubscribeAccount = ({ app, redirect, fullscreen, queryParams }: Props) => 
             disableCycleSelector: coupon ? true : Boolean(disableCycleSelectorParam),
             disablePlanSelection: coupon ? true : Boolean(disablePlanSelectionParam),
             hasClose: !Boolean(hideCloseParam),
+            showUserInfo: true,
             onClose: handleClose,
             onSuccess: handleSuccess,
 
