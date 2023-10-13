@@ -44,9 +44,6 @@ if (ENV !== 'production') {
 
 console.log(config);
 
-console.log({
-    'proton-pass-extension': path.resolve(__dirname, 'src/'),
-});
 const production = ENV === 'production';
 
 const nonAccessibleWebResource = (entry) => [entry, './src/lib/utils/web-accessible-resource.ts'];
