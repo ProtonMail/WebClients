@@ -141,6 +141,7 @@ export const addressKeyBuilder = build<AddressKey>('AddressKey', {
         RecoverySecretSignature: null,
         Active: 1,
         Version: 3,
+        AddressForwardingID: null,
     },
 });
 

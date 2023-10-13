@@ -62,6 +62,25 @@ export const getAddressKey = async (ID: string, userKey: PrivateKeyReference, em
     return getAddressKeyHelper(ID, userKey, key.privateKey, version);
 };
 
+export const getAddressKeyForE2EEForwarding = async (
+    ID: string,
+    userKey: PrivateKeyReference,
+    email: string,
+    version?: number
+) => {
+    const forwarderKey = await CryptoProxy.generateKey({
+        userIDs: { email: 'forwarder@test.com' },
+        curve: 'curve25519',
+    });
+    const { forwardeeKey: armoredKey } = await CryptoProxy.generateE2EEForwardingMaterial({
+        forwarderKey,
+        userIDsForForwardeeKey: { email },
+        passphrase: '123',
+    });
+    const forwardeeKey = await CryptoProxy.importPrivateKey({ armoredKey, passphrase: '123' });
+    return getAddressKeyHelper(ID, userKey, forwardeeKey, version);
+};
+
 export const getLegacyAddressKey = async (ID: string, password: string, email: string) => {
     const key = await generateAddressKey({
         email,

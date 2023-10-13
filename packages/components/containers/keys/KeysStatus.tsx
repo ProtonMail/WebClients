@@ -1,7 +1,5 @@
 import { c } from 'ttag';
 
-
-
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -15,6 +13,7 @@ const KeysStatus = ({
     isCompromised,
     isObsolete,
     isAddressDisabled,
+    isForwarding,
 }: Partial<KeyStatus> & { type: KeyType }) => {
     const list = [
         isPrimary &&
@@ -56,6 +55,12 @@ const KeysStatus = ({
                 tooltip: c('Tooltip').t`This address has been disabled`,
                 title: c('Key state badge').t`Disabled`,
                 type: 'warning',
+            } as const),
+        isForwarding &&
+            ({
+                tooltip: c('Tooltip').t`This key is used for email forwarding`,
+                title: c('Key state badge').t`Forwarding`,
+                type: 'info',
             } as const),
     ]
         .filter(isTruthy)

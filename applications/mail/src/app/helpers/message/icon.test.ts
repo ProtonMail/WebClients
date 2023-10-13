@@ -269,6 +269,27 @@ describe('icon', () => {
             };
             expect(getSendStatusIcon(sendPreferences, ktActivation)).toBeUndefined();
         });
+
+        describe('when encryption is disabled', () => {
+            it('should return a black plain lock with "Zero-access" message', () => {
+                const sendPreferences = {
+                    encryptionDisabled: true,
+                    encrypt: false,
+                    sign: false,
+                    pgpScheme: PACKAGE_TYPE.SEND_CLEAR,
+                    mimeType: MIME_TYPES.DEFAULT,
+                    hasApiKeys: false,
+                    hasPinnedKeys: false,
+                    isPublicKeyPinned: false,
+                };
+                expect(getSendStatusIcon(sendPreferences, ktActivation)).toMatchObject({
+                    colorClassName: 'color-norm',
+                    isEncrypted: false,
+                    fill: STATUS_ICONS_FILLS.PLAIN,
+                    text: 'Zero-access encrypted. Recipient has disabled end-to-end encryption on their account.',
+                });
+            });
+        });
     });
 
     describe('getSentStatusIcon for imported sent message', () => {
