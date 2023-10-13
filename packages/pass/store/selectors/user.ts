@@ -7,13 +7,16 @@ import type { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { UNIX_DAY } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
-import { type Address, UserType } from '@proton/shared/lib/interfaces';
+import { type Address, SETTINGS_STATUS, UserType } from '@proton/shared/lib/interfaces';
 
 import type { State } from '../types';
 
 export const selectUserState = ({ user }: State) => user;
 export const selectUser = ({ user: { user } }: State) => user;
 export const selectUserPlan = ({ user: { plan } }: State) => plan;
+export const selectUserSettings = ({ user: { userSettings } }: State) => userSettings;
+export const selectUserVerified = ({ user }: State) => user.userSettings?.Email?.Status === SETTINGS_STATUS.VERIFIED;
+export const selectTelemetryEnabled = ({ user }: State) => user.userSettings?.Telemetry === 1;
 
 /* Specification for pass specific plans in `/user/access` response :
  * `paid` -> Plan: Plus | Trial: null | Limits: none

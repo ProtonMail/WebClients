@@ -1,8 +1,14 @@
 import { api } from '@proton/pass/lib/api/api';
-import type { AddressState, FeatureFlagState, UserPlanState, UserState } from '@proton/pass/store/reducers';
+import type {
+    AddressState,
+    FeatureFlagState,
+    UserPlanState,
+    UserSettingsState,
+    UserState,
+} from '@proton/pass/store/reducers';
 import { selectUserState } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
-import type { RequiredNonNull } from '@proton/pass/types';
+import type { MaybeNull, RequiredNonNull } from '@proton/pass/types';
 import { PlanType } from '@proton/pass/types';
 import type { FeatureFlagsResponse } from '@proton/pass/types/api/features';
 import { PassFeaturesValues } from '@proton/pass/types/api/features';
@@ -11,8 +17,10 @@ import { UNIX_DAY } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { getLatestID } from '@proton/shared/lib/api/events';
+import { getSettings } from '@proton/shared/lib/api/settings';
 import { getUser } from '@proton/shared/lib/api/user';
 import { toMap } from '@proton/shared/lib/helpers/object';
+import type { UserSettings } from '@proton/shared/lib/interfaces';
 import type { User } from '@proton/shared/lib/interfaces/User';
 
 export const getFeatureFlags = async (
@@ -51,10 +59,23 @@ export const getUserPlan = async ({ plan }: UserState, options?: { force: boolea
     }
 };
 
+export const getUserSettings = async (): Promise<MaybeNull<UserSettingsState>> => {
+    try {
+        logger.info(`[Saga::UserSettings] syncing user settings`);
+        const { Email, Telemetry } = (await api<{ UserSettings: UserSettings }>(getSettings())).UserSettings;
+        return {
+            Email: { Status: Email.Status },
+            Telemetry: Telemetry,
+        };
+    } catch {
+        return null;
+    }
+};
+
 export const getUserData = async (state: State): Promise<RequiredNonNull<UserState>> => {
     const cached = selectUserState(state);
 
-    const [user, addresses, eventId, plan, features] = (await Promise.all([
+    const [user, addresses, eventId, plan, features, userSettings] = (await Promise.all([
         /* user model */
         cached.user ?? api<{ User: User }>(getUser()).then(({ User }) => User),
 
@@ -71,7 +92,11 @@ export const getUserData = async (state: State): Promise<RequiredNonNull<UserSta
 
         /* sync feature flags */
         await getFeatureFlags(cached),
-    ])) as [User, AddressState, string, UserPlanState, FeatureFlagState];
 
-    return { user, plan, addresses, eventId, features };
+        /* sync user settings: since user settings are handled by the event
+         * loop - no need to request them if we have some cached settings */
+        cached.userSettings ?? (await getUserSettings()),
+    ])) as [User, AddressState, string, UserPlanState, FeatureFlagState, UserSettingsState];
+
+    return { user, plan, addresses, eventId, features, userSettings };
 };

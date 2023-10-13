@@ -58,9 +58,10 @@ function* createVaultForImport(vaultName: string) {
 }
 
 function* importWorker(
-    { onItemsChange, onImportProgress, telemetry }: WorkerRootSagaOptions,
+    { onItemsChange, onImportProgress, getTelemetry }: WorkerRootSagaOptions,
     { payload: { data, provider }, meta }: WithSenderAction<ReturnType<typeof importItemsIntent>>
 ) {
+    const telemetry = getTelemetry();
     yield put(stopEventPolling());
 
     let totalItems: number = 0;
@@ -121,7 +122,7 @@ function* importWorker(
             }
         }
 
-        telemetry?.(
+        void telemetry?.pushEvent(
             createTelemetryEvent(
                 TelemetryEventName.ImportCompletion,
                 { item_count: totalItems, vaults: importVaults.length },
