@@ -20,12 +20,12 @@ export const App: VFC = () => {
     return state.loggedIn && initialized ? (
         <NavigationContextProvider>
             <ItemsFilteringContextProvider>
-                <ItemEffects />
-                <PasswordContextProvider initial={state.initial.passwordOptions}>
-                    <InviteContextProvider>
+                <InviteContextProvider>
+                    <ItemEffects />
+                    <PasswordContextProvider initial={state.initial.passwordOptions}>
                         <Main />
-                    </InviteContextProvider>
-                </PasswordContextProvider>
+                    </PasswordContextProvider>
+                </InviteContextProvider>
             </ItemsFilteringContextProvider>
         </NavigationContextProvider>
     ) : (
