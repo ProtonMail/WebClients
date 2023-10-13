@@ -1,6 +1,6 @@
 import { EVENT_VERIFICATION_STATUS, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getDtendProperty } from '@proton/shared/lib/calendar/vcalConverter';
-import { getEventStatus } from '@proton/shared/lib/calendar/vcalHelper';
+import { getVeventStatus } from '@proton/shared/lib/calendar/vcalHelper';
 import { EventModelView, SelfAddressData, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import truncate from '@proton/utils/truncate';
 
@@ -58,7 +58,7 @@ export const propertiesToModel = ({
         attendees: propertiesToAttendeeModel(attendee),
         organizer: propertiesToOrganizerModel(organizer),
         isProtonProtonInvite,
-        status: getEventStatus(veventComponent),
+        status: getVeventStatus(veventComponent),
         verificationStatus,
         isOrganizer: !!selfAddressData?.isOrganizer,
         isAttendee: !!selfAddressData?.isAttendee,

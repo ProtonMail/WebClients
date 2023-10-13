@@ -187,11 +187,15 @@ export const getIsValidMethod = (method: ICAL_METHOD, isOrganizerMode: boolean) 
     return isOrganizerMode ? ICAL_METHODS_ATTENDEE.includes(method) : ICAL_METHODS_ORGANIZER.includes(method);
 };
 
-export const getEventStatus = <T extends { status?: VcalVeventComponent['status'] }>({ status }: T) => {
+export const getVeventStatus = <T extends { status?: VcalVeventComponent['status'] }>({ status }: T) => {
     if (Object.values(ICAL_EVENT_STATUS).some((icalStatus) => icalStatus === status?.value)) {
         return status?.value as ICAL_EVENT_STATUS;
     }
     return ICAL_EVENT_STATUS.CONFIRMED;
+};
+
+export const getIsVeventCancelled = (vevent: VcalVeventComponent) => {
+    return getVeventStatus(vevent) === ICAL_EVENT_STATUS.CANCELLED;
 };
 
 export const getAttendeePartstat = (attendee: Partial<VcalAttendeeProperty> = {}, xYahooUserStatus?: string) => {
