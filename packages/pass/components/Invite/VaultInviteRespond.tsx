@@ -75,6 +75,7 @@ export const VaultInviteRespond: VFC<Invite> = (invite) => {
                     shape="solid"
                     color="norm"
                     disabled={loading || !userVerified}
+                    loading={acceptInvite.loading}
                     onClick={handleAcceptInvite}
                 >{c('Action').t`Join shared vault`}</Button>
                 <Button
@@ -82,6 +83,7 @@ export const VaultInviteRespond: VFC<Invite> = (invite) => {
                     shape="solid"
                     color="weak"
                     disabled={loading || !userVerified}
+                    loading={rejectInvite.loading}
                     onClick={handleRejectInvite}
                 >{c('Action').t`Reject invitation`}</Button>
 
