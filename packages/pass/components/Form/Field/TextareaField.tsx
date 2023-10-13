@@ -44,7 +44,11 @@ const BaseTextAreaFieldRender: ForwardRefRenderFunction<HTMLTextAreaElement, Bas
             autoGrow
             unstyled
             assistContainerClassName="hidden-empty"
-            className={clsx('border-none flex p-0 resize-none', className)}
+            className={clsx(
+                'border-none flex p-0 resize-none',
+                props.disabled ? 'color-disabled' : 'color-norm',
+                className
+            )}
             error={error}
             labelContainerClassName={clsx(
                 'm-0 text-normal text-sm',
