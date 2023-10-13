@@ -109,7 +109,6 @@
 */
 
 .calendar-dayeventcell {
-	block-size: var(--height);
 	padding-inline-end: $calendar-gridcell-margin;
 	padding-block-start: $calendar-gridcell-gutter;
 	white-space: nowrap;
