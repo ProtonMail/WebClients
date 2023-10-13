@@ -1,6 +1,6 @@
 import { api } from '@proton/pass/lib/api/api';
 import browser from '@proton/pass/lib/globals/browser';
-import { selectUserTier } from '@proton/pass/store/selectors';
+import { selectTelemetryEnabled, selectUserTier } from '@proton/pass/store/selectors';
 import { type Maybe, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { type TelemetryEvent } from '@proton/pass/types/data/telemetry';
 import { withPayloadLens } from '@proton/pass/utils/fp/lens';
@@ -8,8 +8,6 @@ import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object/merge';
 import { UNIX_HOUR, UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
-import { getSettings } from '@proton/shared/lib/api/settings';
-import type { UserSettings } from '@proton/shared/lib/interfaces';
 import chunk from '@proton/utils/chunk';
 import debounce from '@proton/utils/debounce';
 import noop from '@proton/utils/noop';
@@ -58,10 +56,7 @@ const resolveBundle = withContext<() => Promise<TelemetryEventBundle>>(async ({ 
     }
 });
 
-const isTelemetryEnabled = async (): Promise<boolean> => {
-    const { UserSettings } = await api<{ UserSettings: UserSettings }>(getSettings());
-    return UserSettings.Telemetry === 1;
-};
+const isTelemetryEnabled = () => selectTelemetryEnabled(store.getState());
 
 /* sends all events in current bundle to the telemetry endpoint
  * and returns a boolean indicating success or failure */
@@ -69,7 +64,7 @@ const sendBundle = async (bundle: TelemetryEventBundle): Promise<{ ok: true } | 
     try {
         /* skip bundle if we have reached the max retry count or */
         /* if the user settings do not allow telemetry */
-        if (bundle.retryCount >= TELEMETRY_MAX_RETRY || !(await isTelemetryEnabled())) {
+        if (bundle.retryCount >= TELEMETRY_MAX_RETRY || !isTelemetryEnabled()) {
             return { ok: false, retry: false };
         }
 
@@ -141,7 +136,7 @@ export const createTelemetryService = () => {
 
     /* resets the service's context and both clears any registered
      * alarms and any locally stored event bundle  */
-    const reset = () => {
+    const stop = () => {
         logger.info('[Worker::Telemetry] Clearing telemetry service...');
         browser.alarms.clear(TELEMETRY_ALARM_NAME).catch(noop);
 
@@ -153,14 +148,14 @@ export const createTelemetryService = () => {
 
     const start = async () => {
         try {
-            ctx.active = await isTelemetryEnabled();
+            ctx.active = isTelemetryEnabled();
             logger.info(`[Worker::Telemetry] starting service - [enabled: ${ctx.active}]`);
             const alarm = await browser.alarms.get(TELEMETRY_ALARM_NAME);
 
             if (alarm) {
                 const when = Math.max(alarm.scheduledTime / 1000 - getEpoch(), 0);
                 logger.info(`[Worker::Telemetry] found telemetry alarm in ${when}s`);
-                if (!ctx.active) reset(); /* clear any alarms if telemetry disabled */
+                if (!ctx.active) stop(); /* clear any alarms if telemetry disabled */
             } else await consumeBuffer();
         } catch (_) {
             ctx.active = false;
@@ -189,7 +184,7 @@ export const createTelemetryService = () => {
     WorkerMessageBroker.registerMessage(WorkerMessageType.TELEMETRY_EVENT, withPayloadLens('event', pushEvent));
     browser.alarms.onAlarm.addListener(({ name }) => name === TELEMETRY_ALARM_NAME && consumeBuffer());
 
-    return { reset, start, pushEvent };
+    return { stop, start, pushEvent };
 };
 
 export type TelemetryService = ReturnType<typeof createTelemetryService>;
