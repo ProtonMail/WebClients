@@ -1,9 +1,9 @@
-import { useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 
 import { DriveEvents, useDriveEventManager } from '../_events';
-import { useLink, useLinksListing } from '../_links';
+import { useLinksListing, useLinksQueue } from '../_links';
 import { isPhotoGroup, sortWithCategories, usePhotos } from '../_photos';
 import type { PhotoLink } from '../_photos';
 import { useAbortSignal, useMemoArrayNoMatterTheOrder } from './utils';
@@ -31,8 +31,8 @@ export function updateByEvents(
 export const usePhotosView = () => {
     const events = useDriveEventManager();
     const { getCachedChildren } = useLinksListing();
-    const { getLink } = useLink();
     const { shareId, linkId, isLoading, volumeId, photos, loadPhotos, removePhotosFromCache } = usePhotos();
+    const { addToQueue } = useLinksQueue();
 
     const abortSignal = useAbortSignal([volumeId]);
     const cache = shareId && linkId ? getCachedChildren(abortSignal, shareId, linkId) : undefined;
@@ -108,11 +108,12 @@ export const usePhotosView = () => {
         };
     }, [volumeId, shareId]);
 
-    const loadPhotoLink = (abortSignal: AbortSignal, linkId: string) => {
+    const loadPhotoLink = (linkId: string, domRef?: React.MutableRefObject<unknown>) => {
         if (!shareId) {
             return;
         }
-        return getLink(abortSignal, shareId, linkId);
+
+        addToQueue(shareId, linkId, domRef);
     };
 
     return {

@@ -20,7 +20,7 @@ import './PhotosCard.scss';
 type Props = {
     photo: PhotoLink;
     selected: boolean;
-    onRender: (linkId: string) => void;
+    onRender: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
     onRenderLoadedLink: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
     style: CSSProperties;
     onClick: () => void;
@@ -46,8 +46,10 @@ export const PhotosCard: FC<Props> = ({
 
     // First call when photo is rendered to request caching link meta data.
     useEffect(() => {
-        onRender(photo.linkId);
-    }, [photo.linkId]);
+        if (!photo.name) {
+            onRender(photo.linkId, ref);
+        }
+    }, [photo.name, photo.linkId]);
 
     // Once we have link meta data (link has name which is missing during
     // photo listing), we can initiate thumbnail loading.
