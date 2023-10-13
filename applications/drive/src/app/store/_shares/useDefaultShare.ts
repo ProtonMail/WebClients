@@ -6,7 +6,7 @@ import { UserShareResult } from '@proton/shared/lib/interfaces/drive/share';
 import { shareMetaShortToShare, useDebouncedRequest } from '../_api';
 import { useDebouncedFunction } from '../_utils';
 import { useVolumesState } from '../_volumes';
-import { Share, ShareWithKey } from './interface';
+import { Share, ShareState, ShareWithKey } from './interface';
 import useShare from './useShare';
 import useSharesState, { findDefaultShareId } from './useSharesState';
 import useVolume from './useVolume';
@@ -24,7 +24,8 @@ export default function useDefaultShare() {
 
     const loadUserShares = useCallback(async (): Promise<Share[]> => {
         const { Shares } = await debouncedRequest<UserShareResult>(queryUserShares());
-        const shares = Shares.map(shareMetaShortToShare);
+        // We have to ignore the deleted shares until BE stop to return them
+        const shares = Shares.map(shareMetaShortToShare).filter((share) => share.state !== ShareState.deleted);
 
         shares.forEach(({ volumeId, shareId }) => {
             volumesState.setVolumeShareIds(volumeId, [shareId]);

@@ -126,6 +126,7 @@ export interface MoveLink {
     NodePassphrase: string;
     NodePassphraseSignature: string;
     SignatureAddress: string;
+    NewShareID?: string;
 }
 
 export type DriveSectionSortKeys = keyof Pick<DriveLink, 'MIMEType' | 'ModifyTime' | 'Size' | 'Name'>;
