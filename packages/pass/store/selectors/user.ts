@@ -15,8 +15,9 @@ export const selectUserState = ({ user }: State) => user;
 export const selectUser = ({ user: { user } }: State) => user;
 export const selectUserPlan = ({ user: { plan } }: State) => plan;
 export const selectUserSettings = ({ user: { userSettings } }: State) => userSettings;
-export const selectUserVerified = ({ user }: State) => user.userSettings?.Email?.Status === SETTINGS_STATUS.VERIFIED;
 export const selectTelemetryEnabled = ({ user }: State) => user.userSettings?.Telemetry === 1;
+export const selectUserVerified = ({ user }: State) =>
+    user.user?.Type !== UserType.EXTERNAL || user.userSettings?.Email?.Status === SETTINGS_STATUS.VERIFIED;
 
 /* Specification for pass specific plans in `/user/access` response :
  * `paid` -> Plan: Plus | Trial: null | Limits: none
