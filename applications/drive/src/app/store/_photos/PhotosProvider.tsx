@@ -5,6 +5,7 @@ import { queryPhotos } from '@proton/shared/lib/api/drive/photos';
 import type { Photo as PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
 
 import { photoPayloadToPhotos, useDebouncedRequest } from '../_api';
+import { Share, ShareWithKey } from '../_shares';
 import useSharesState from '../_shares/useSharesState';
 import type { Photo } from './interface';
 
@@ -17,12 +18,15 @@ export const PhotosContext = createContext<{
     photos: Photo[];
     loadPhotos: (abortSignal: AbortSignal, volumeId: string) => void;
     removePhotosFromCache: (linkIds: string[]) => void;
+    restoredShares: Share[] | ShareWithKey[] | undefined;
 } | null>(null);
 
 export const PhotosProvider: FC = ({ children }) => {
-    const { getActivePhotosShare, getDefaultShareId } = useSharesState();
+    const { getActivePhotosShare, getDefaultShareId, getRestoredPhotoShares } = useSharesState();
     const defaultShareId = getDefaultShareId();
     const share = getActivePhotosShare();
+    const restoredShares = getRestoredPhotoShares();
+
     const request = useDebouncedRequest();
     const [photosLoading, withPhotosLoading] = useLoading();
 
@@ -68,6 +72,7 @@ export const PhotosProvider: FC = ({ children }) => {
                 photos,
                 loadPhotos,
                 removePhotosFromCache,
+                restoredShares,
             }}
         >
             {children}

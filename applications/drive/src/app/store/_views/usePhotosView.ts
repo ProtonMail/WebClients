@@ -38,7 +38,7 @@ export const usePhotosView = () => {
     const { addToQueue } = useLinksQueue();
     const { download } = useDownloadProvider();
 
-    const abortSignal = useAbortSignal([volumeId]);
+    const abortSignal = useAbortSignal([volumeId, shareId]);
     const cache = shareId && linkId ? getCachedChildren(abortSignal, shareId, linkId) : undefined;
     const cachedLinks = useMemoArrayNoMatterTheOrder(cache?.links || []);
 
