@@ -72,26 +72,17 @@ export const ItemEffects = () => {
         [selectedItem, debouncedSearch, sort, type, shareId]
     );
 
-    useShareEventEffect(
-        useMemo(
-            () => ({
-                onShareDisabled(shareId) {
-                    inviteContext.onShareDisabled(shareId);
-                    handleVaultDeletionEffects(shareId, {
-                        shareId,
-                        setShareBeingDeleted,
-                        setShareId,
-                    });
-                },
-                onItemsDeleted(shareId, itemIds) {
-                    if (shareId === selectedItem?.shareId && itemIds.includes(selectedItem?.itemId)) {
-                        unselectItem();
-                    }
-                },
-            }),
-            [shareId, shareBeingDeleted, selectedItem, unselectItem]
-        )
-    );
+    useShareEventEffect({
+        onShareDisabled: (shareId) => {
+            inviteContext.onShareDisabled(shareId);
+            handleVaultDeletionEffects(shareId, { shareId, setShareBeingDeleted, setShareId });
+        },
+        onItemsDeleted: (shareId, itemIds) => {
+            if (shareId === selectedItem?.shareId && itemIds.includes(selectedItem?.itemId)) {
+                unselectItem();
+            }
+        },
+    });
 
     /**
      * FIXME:
