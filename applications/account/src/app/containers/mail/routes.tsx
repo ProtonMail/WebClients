@@ -23,11 +23,13 @@ export const getMailAppRoutes = ({
     addresses,
     organization,
     isSmtpTokenEnabled,
+    isEmailForwardingEnabled,
 }: {
     user: UserModel;
     addresses: Address[];
     organization: Organization;
     isSmtpTokenEnabled: boolean;
+    isEmailForwardingEnabled: boolean;
 }): SidebarConfig => {
     const hasOrganization = !!organization?.HasKeys;
     const learnMoreLink = <Href href={getKnowledgeBaseUrl('/using-folders-labels')}>{c('Link').t`Learn more`}</Href>;
@@ -123,10 +125,13 @@ export const getMailAppRoutes = ({
                 ],
             },
             autoReply: {
-                text: c('Title').t`Auto-reply`,
+                text: isEmailForwardingEnabled ? c('Title').t`Auto-reply and forward` : c('Title').t`Auto-reply`,
                 to: '/auto-reply',
                 icon: 'envelope-arrow-up-and-right',
-                subsections: [{ id: 'auto-reply' }],
+                subsections: [
+                    { text: c('Title').t`Forward emails`, id: 'forward', available: isEmailForwardingEnabled },
+                    { text: c('Title').t`Auto-reply`, id: 'auto-reply' },
+                ],
             },
             domainNames: {
                 text: c('Title').t`Domain names`,

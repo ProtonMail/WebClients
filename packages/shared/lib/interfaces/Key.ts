@@ -11,7 +11,7 @@ export interface Key {
     ID: string;
     Primary: 1 | 0;
     Active: 1 | 0;
-    Flags?: number; // undefined for user keys
+    Flags?: number; // Only available for address keys
     Fingerprint: string;
     Fingerprints: string[];
     PublicKey: string; // armored key
@@ -19,12 +19,14 @@ export interface Key {
     Activation?: string;
     PrivateKey: string; // armored key
     Token?: string;
-    Signature: string;
-    RecoverySecret: string | null;
-    RecoverySecretSignature: string | null;
+    Signature?: string; // Only available for address keys
+    RecoverySecret?: string | null; // Only available for user keys
+    RecoverySecretSignature?: string | null; // Only available for user keys
+    AddressForwardingID?: string | null; // Only available for address keys
 }
 
-export type AddressKey = RequireSome<Key, 'Flags'>;
+export type AddressKey = RequireSome<Key, 'Flags' | 'Signature' | 'AddressForwardingID'>;
+export type UserKey = RequireSome<Key, 'RecoverySecret' | 'RecoverySecretSignature'>;
 
 export interface KeyPair {
     privateKey: PrivateKeyReference;
