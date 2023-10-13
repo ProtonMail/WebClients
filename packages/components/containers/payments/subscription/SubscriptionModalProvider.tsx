@@ -37,6 +37,7 @@ interface OpenCallbackProps {
     disablePlanSelection?: boolean;
     disableCycleSelector?: boolean;
     disableThanksStep?: boolean;
+    showUserInfo?: boolean;
     hasClose?: boolean;
     onClose?: () => void;
     onSuccess?: () => void;
@@ -84,6 +85,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
         disablePlanSelection?: boolean;
         disableCycleSelector?: boolean;
         disableThanksStep?: boolean;
+        showUserInfo?: boolean;
         hasClose?: boolean;
         onClose?: () => void;
         onSuccess?: () => void;
@@ -137,6 +139,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                         disablePlanSelection,
                         disableCycleSelector,
                         disableThanksStep,
+                        showUserInfo,
                         hasClose,
                         onClose,
                         onSuccess,
@@ -186,6 +189,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                             disablePlanSelection,
                             disableCycleSelector,
                             disableThanksStep,
+                            showUserInfo,
                             hasClose,
                             onClose,
                             onSuccess,
