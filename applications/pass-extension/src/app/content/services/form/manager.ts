@@ -12,7 +12,7 @@ import {
     getIgnoredParent,
     getParentFormPrediction,
     removeClassifierFlags,
-} from '@proton/pass/fathom';
+} from '@proton/pass/fathom/lib';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { WorkerMessageType } from '@proton/pass/types';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
