@@ -20,7 +20,7 @@
                 "https://*.proton.pink/*",
                 "https://*.proton.local/*"
             ],
-            "js": ["authFallback.js"],
+            "js": ["account.js"],
             "all_frames": false,
             "run_at": "document_end"
         }
