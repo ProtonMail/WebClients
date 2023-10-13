@@ -62,7 +62,8 @@ export default function useDownload() {
         );
         return {
             blocks: Revision.Blocks,
-            thumbnailHashes: Revision.Thumbnails.map((Thumbnail) => Thumbnail.Hash),
+            // We sort hashes to have the Type 1 always at first place. This is necessary for signature verification.
+            thumbnailHashes: Revision.Thumbnails.sort((a, b) => a.Type - b.Type).map((Thumbnail) => Thumbnail.Hash),
             manifestSignature: Revision.ManifestSignature,
         };
     };
