@@ -13,7 +13,12 @@ import {
     Icon,
 } from '@proton/components';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
-import { selectDefaultVault, selectShare, selectVaultsWithItemsCount } from '@proton/pass/store/selectors';
+import {
+    selectDefaultVault,
+    selectOwnWritableVaults,
+    selectShare,
+    selectVaultsWithItemsCount,
+} from '@proton/pass/store/selectors';
 import { type MaybeNull, type ShareType, type VaultShare } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 
@@ -59,6 +64,7 @@ export const VaultSubmenu: VFC<Props> = ({
     const vaults = useSelector(selectVaultsWithItemsCount);
     const defaultVault = useSelector(selectDefaultVault);
     const selectedVault = useSelector(selectShare<ShareType.Vault>(selectedShareId ?? ''));
+    const hasMultipleOwnedVaults = useSelector(selectOwnWritableVaults).length > 1;
     const selectedVaultOption = getVaultOptionInfo(selectedVault || (inTrash ? 'trash' : 'all'));
     const totalCount = useMemo(() => vaults.reduce<number>((subtotal, { count }) => subtotal + count, 0), [vaults]);
 
@@ -100,7 +106,8 @@ export const VaultSubmenu: VFC<Props> = ({
 
                 {vaults.map((vault) => {
                     const isDefaultOrPrimaryVault = defaultVault.shareId === vault.shareId;
-                    const canDelete = vault.owner && !isDefaultOrPrimaryVault;
+                    const canDelete =
+                        vault.owner && (primaryVaultDisabled ? hasMultipleOwnedVaults : !isDefaultOrPrimaryVault);
                     const sharable = sharingEnabled && (primaryVaultDisabled || !isDefaultOrPrimaryVault);
 
                     return (
