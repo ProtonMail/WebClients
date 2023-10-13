@@ -1,3 +1,4 @@
+import { generateAttendeeToken } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_RSVP, ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { generateVeventHashUID } from '@proton/shared/lib/calendar/helper';
 import {
@@ -7,12 +8,16 @@ import {
 import { getIsRruleSupported } from '@proton/shared/lib/calendar/recurrence/rrule';
 import { parse } from '@proton/shared/lib/calendar/vcal';
 import { getIsTimezoneComponent } from '@proton/shared/lib/calendar/vcalHelper';
+import { Recipient } from '@proton/shared/lib/interfaces';
+import { Attendee, CalendarEvent, Participant } from '@proton/shared/lib/interfaces/calendar';
 import { VcalVcalendar, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 
+import { MessageStateWithData } from 'proton-mail/logic/messages/messagesTypes';
+
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../test/crypto';
-import { getSupportedEventInvitation, parseVcalendar } from './invite';
+import { EventInvitation, getIsPartyCrasher, getSupportedEventInvitation, parseVcalendar } from './invite';
 
 describe('Invitations', () => {
     beforeAll(async () => {
@@ -380,6 +385,7 @@ END:VCALENDAR`;
                     },
                     sequence: { value: 0 },
                 }),
+                originalIcsHasNoOrganizer: false,
                 originalVcalInvitation: parsedInvitation,
                 originalUniqueIdentifier: 'test-event',
                 legacyUid: 'sha1-uid-1d92b0aa7fed011b07b53161798dfeb45cf4e186-original-uid-test-event',
@@ -1018,6 +1024,184 @@ END:VCALENDAR`;
                     })
                 )
             ).rejects.toThrowError('Invalid invitation');
+        });
+    });
+
+    describe('getIsPartyCrasher', () => {
+        describe('organizer mode', () => {
+            const isOrganizerMode = true;
+            const calendarEventUID = 'calendarEventUID';
+            const attendeeAddress = 'attendee@pm.me';
+            const organizerAddress = 'organizer@pm.me';
+            const message = {
+                data: {
+                    Sender: {
+                        Address: attendeeAddress,
+                    } as Recipient,
+                },
+            } as MessageStateWithData;
+
+            it('should return false when there is no event in the DB', async () => {
+                const results = await Promise.all(
+                    [true, false].map((isPartyCrasherIcs) =>
+                        getIsPartyCrasher({
+                            isOrganizerMode,
+                            message,
+                            isPartyCrasherIcs,
+                        })
+                    )
+                );
+
+                expect(results.every((result) => result === false)).toBeTruthy();
+            });
+
+            it('should return false when the event in the DB contains the attendee (decryptable event)', async () => {
+                const results = await Promise.all(
+                    [true, false].map((isPartyCrasherIcs) =>
+                        getIsPartyCrasher({
+                            isOrganizerMode,
+                            invitationApi: {
+                                attendee: {
+                                    emailAddress: attendeeAddress,
+                                } as Participant,
+                                organizer: {
+                                    emailAddress: organizerAddress,
+                                },
+                            } as RequireSome<EventInvitation, 'calendarEvent'>,
+                            message,
+                            isPartyCrasherIcs,
+                        })
+                    )
+                );
+
+                expect(results.every((result) => result === false)).toBeTruthy();
+            });
+
+            it('should return true when the event in the DB does not contain the attendee (decryptable event)', async () => {
+                const results = await Promise.all(
+                    [true, false].map((isPartyCrasherIcs) =>
+                        getIsPartyCrasher({
+                            isOrganizerMode,
+                            invitationApi: {
+                                organizer: {
+                                    emailAddress: organizerAddress,
+                                },
+                            } as RequireSome<EventInvitation, 'calendarEvent'>,
+                            message,
+                            isPartyCrasherIcs,
+                        })
+                    )
+                );
+
+                expect(results.every((result) => result === true)).toBeTruthy();
+            });
+
+            it('should return false when the event in the DB contains the attendee (undecryptable event)', async () => {
+                const results = await Promise.all(
+                    [true, false].map(async (isPartyCrasherIcs) =>
+                        getIsPartyCrasher({
+                            isOrganizerMode,
+                            calendarEvent: {
+                                UID: calendarEventUID,
+                                Attendees: [
+                                    {
+                                        Token: await generateAttendeeToken(attendeeAddress, calendarEventUID),
+                                    },
+                                ] as Attendee[],
+                            } as CalendarEvent,
+                            message,
+                            isPartyCrasherIcs,
+                        })
+                    )
+                );
+
+                expect(results.every((result) => result === false)).toBeTruthy();
+            });
+
+            it('should return true when the event in the DB does not contain the attendee (undecryptable event)', async () => {
+                const results = await Promise.all(
+                    [true, false].map((isPartyCrasherIcs) =>
+                        getIsPartyCrasher({
+                            isOrganizerMode,
+                            calendarEvent: {
+                                UID: calendarEventUID,
+                                Attendees: [] as Attendee[],
+                            } as CalendarEvent,
+                            message,
+                            isPartyCrasherIcs,
+                        })
+                    )
+                );
+
+                expect(results.every((result) => result === true)).toBeTruthy();
+            });
+        });
+
+        describe('attendee mode', () => {
+            const isOrganizerMode = false;
+            const attendeeAddress = 'attendee@pm.me';
+            const organizerAddress = 'organizer@pm.me';
+            const message = {
+                data: {
+                    Sender: {
+                        Address: organizerAddress,
+                    } as Recipient,
+                },
+            } as MessageStateWithData;
+
+            it('should return the isPartyCrasher value computed from the ics when the invitation is not in the user calendar', async () => {
+                const [truthyResult, falsyResult] = await Promise.all(
+                    [true, false].map((isPartyCrasherIcs) =>
+                        getIsPartyCrasher({
+                            isOrganizerMode,
+                            message,
+                            isPartyCrasherIcs,
+                        })
+                    )
+                );
+
+                expect(truthyResult).toEqual(true);
+                expect(falsyResult).toEqual(false);
+            });
+
+            it('should return the isPartyCrasher value computed from the ics when the user is in the invitation attendee list', async () => {
+                const [truthyResult, falsyResult] = await Promise.all(
+                    [true, false].map((isPartyCrasherIcs) =>
+                        getIsPartyCrasher({
+                            isOrganizerMode,
+                            invitationApi: {
+                                attendee: {
+                                    emailAddress: attendeeAddress,
+                                } as Participant,
+                                organizer: {
+                                    emailAddress: organizerAddress,
+                                },
+                            } as RequireSome<EventInvitation, 'calendarEvent'>,
+                            message,
+                            isPartyCrasherIcs,
+                        })
+                    )
+                );
+
+                expect(truthyResult).toEqual(true);
+                expect(falsyResult).toEqual(false);
+            });
+
+            it('should return the isPartyCrasher value computed from the ics when the user is not in the invitation attendee list', async () => {
+                const [truthyResult, falsyResult] = await Promise.all(
+                    [true, false].map((isPartyCrasherIcs) =>
+                        getIsPartyCrasher({
+                            isOrganizerMode,
+                            invitationApi: {} as RequireSome<EventInvitation, 'calendarEvent'>,
+                            message,
+                            isPartyCrasherIcs,
+                        })
+                    )
+                );
+
+                expect(truthyResult).toEqual(true);
+                expect(falsyResult).toEqual(false);
+            });
         });
     });
 });

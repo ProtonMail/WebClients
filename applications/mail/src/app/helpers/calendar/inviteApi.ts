@@ -50,17 +50,16 @@ import {
     propertyToUTCDate,
 } from '@proton/shared/lib/calendar/vcalConverter';
 import {
-    getEventStatus,
     getHasAttendee,
     getHasRecurrenceId,
     getIsAlarmComponent,
-
+    getIsVeventCancelled,
 } from '@proton/shared/lib/calendar/vcalHelper';
 import {
     getIsEventCancelled,
     getSequence,
     toApiNotifications,
-    withDtstamp
+    withDtstamp,
 } from '@proton/shared/lib/calendar/veventHelper';
 import { API_CODES } from '@proton/shared/lib/constants';
 import { omit, pick } from '@proton/shared/lib/helpers/object';
@@ -688,7 +687,7 @@ export const updateEventInvitation = async ({
     if (method === ICAL_METHOD.CANCEL) {
         let cancel = false;
         if (veventApi) {
-            if (getEventStatus(veventApi) === CANCELLED) {
+            if (getIsVeventCancelled(veventApi)) {
                 return { action: NONE };
             }
             cancel = true;
