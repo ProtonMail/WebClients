@@ -9,7 +9,7 @@ import { createIFrameApp } from 'proton-pass-extension/app/content/injections/if
 import type { InjectedNotification, NotificationActions } from 'proton-pass-extension/app/content/types';
 import { IFrameMessageType, NotificationAction } from 'proton-pass-extension/app/content/types';
 
-import { FormType, flagAsIgnored, removeClassifierFlags } from '@proton/pass/fathom/lib';
+import { FormType, flagAsIgnored, removeClassifierFlags } from '@proton/pass/fathom';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { WorkerMessageType } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';

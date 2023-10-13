@@ -2,7 +2,7 @@
 
 SCRIPT_DIR=$(dirname "$0")
 ROOT_DIR="$SCRIPT_DIR/.."
-OUT_DIR="$ROOT_DIR"/fathom/lib
+OUT_DIR="$ROOT_DIR"/fathom
 
 SUCCESS='\033[0;32m'
 ERROR='\033[0;33m'
@@ -21,7 +21,7 @@ sync() {
             yarn build
         )
         rm -rf OUT_DIR
-        cp $(find $PROTONPASS_FATHOM_DIR/dist -name "index.js" -o -name "index.d.ts" -o -name "fathom.js") $OUT_DIR
+        cp -r $PROTONPASS_FATHOM_DIR/dist/ $OUT_DIR/
         echo "${SUCCESS}Proton Pass Fathom synced"
     fi
 }
