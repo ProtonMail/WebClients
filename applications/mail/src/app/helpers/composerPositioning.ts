@@ -98,7 +98,7 @@ export const computeComposerStyle = ({
     if (isNarrow) {
         style = COMPOSER_NARROW_STYLES;
     } else if (minimized) {
-        style['--h-custom'] = '35px';
+        style['--h-custom'] = '2.5em';
     } else if (maximized) {
         const composerWidth = windowWidth - composerDimension.gutter - composerDimension.appBarWidth;
         style['--left-custom'] = `${windowWidth - composerWidth - composerDimension.gutter}px`;
