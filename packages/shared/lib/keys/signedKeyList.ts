@@ -90,9 +90,10 @@ export const createSignedKeyListForMigration = async (
     keyMigrationKTVerifier: KeyMigrationKTVerifier
 ): Promise<SignedKeyList | undefined> => {
     let signedKeyList: SignedKeyList | undefined;
-    if (!address.SignedKeyList) {
-        // Only create a new signed key list if the address didn't have one already.
-        await keyMigrationKTVerifier(address.Email);
+    if (!address.SignedKeyList || address.SignedKeyList.ObsolescenceToken) {
+        // Only create a new signed key list if the address does not have one already
+        // or the signed key list is obsolete.
+        await keyMigrationKTVerifier(address.Email, address.SignedKeyList);
         const activeKeys = getNormalizedActiveKeys(
             address,
             await getActiveKeys(address, address.SignedKeyList, address.Keys, decryptedKeys)
