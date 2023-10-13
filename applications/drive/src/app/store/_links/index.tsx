@@ -11,6 +11,7 @@ export { default as useLinks } from './useLinks';
 export { default as useLinkActions } from './useLinkActions';
 export { default as useLinksActions } from './useLinksActions';
 export { useLinksListing, usePublicLinksListing } from './useLinksListing';
+export { useLinksQueue } from './useLinksQueue';
 
 export function LinksProvider({ children }: { children: React.ReactNode }) {
     return (

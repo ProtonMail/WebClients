@@ -9,7 +9,7 @@ import { PhotosCard, PhotosGroup } from './grid';
 
 type Props = {
     data: PhotoGridItem[];
-    onItemRender: (linkId: string) => void;
+    onItemRender: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
     onItemRenderLoadedLink: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
     hasSelection: boolean;
     isLoadingMore: boolean;
