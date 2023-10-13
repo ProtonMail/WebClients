@@ -543,6 +543,10 @@ export enum CALENDAR_UPSELL_PATHS {
     MAX_CAL = 'max-cal',
 }
 
+export enum DRIVE_UPSELL_PATHS {
+    SIDEBAR = 'sidebar',
+}
+
 export enum SHARED_UPSELL_PATHS {
     MULTI_USER = 'multi-user',
     CONTACT_GROUP = 'contact-groups',
