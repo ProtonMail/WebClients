@@ -12,8 +12,8 @@ import { selectAliasLimits, selectAutosaveVault } from '@proton/pass/store/selec
 import type { ItemCreateIntent } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { uniqueId } from '@proton/pass/utils/string';
-import { getEpoch } from '@proton/pass/utils/time';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
+import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 import WorkerMessageBroker from '../channel';

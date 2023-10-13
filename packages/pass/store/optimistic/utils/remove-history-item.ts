@@ -1,6 +1,6 @@
 import type { Reducer } from 'redux';
 
-import { arrayRemove } from '@proton/pass/utils/array';
+import { arrayRemove } from '@proton/pass/utils/array/remove';
 
 import type { OptimisticState } from '../types';
 import { isOptimisticHistoryItemWithId } from './assertions';

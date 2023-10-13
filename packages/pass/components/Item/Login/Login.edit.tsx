@@ -37,12 +37,13 @@ import { itemCreationIntent } from '@proton/pass/store/actions';
 import { passwordSave } from '@proton/pass/store/actions/creators/pw-history';
 import { selectTOTPLimits } from '@proton/pass/store/selectors';
 import type { EditLoginItemFormValues } from '@proton/pass/types';
-import { prop } from '@proton/pass/utils/fp';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { merge } from '@proton/pass/utils/object';
-import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
-import { getEpoch } from '@proton/pass/utils/time';
-import { parseUrl } from '@proton/pass/utils/url';
+import { merge } from '@proton/pass/utils/object/merge';
+import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
+import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+import { parseUrl } from '@proton/pass/utils/url/parser';
 
 const FORM_ID = 'edit-login';
 

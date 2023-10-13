@@ -1,4 +1,4 @@
-import { createElement } from '@proton/pass/utils/dom';
+import { createElement } from '@proton/pass/utils/dom/create-element';
 
 import type { ProtonPassRoot } from '../custom-elements/ProtonPassRoot';
 

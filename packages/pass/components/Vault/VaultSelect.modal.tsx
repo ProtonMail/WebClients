@@ -18,7 +18,7 @@ import {
     selectWritableVaults,
     selectWritableVaultsWithItemsCount,
 } from '@proton/pass/store/selectors';
-import { prop } from '@proton/pass/utils/fp';
+import { prop } from '@proton/pass/utils/fp/lens';
 
 export type Props = Omit<ModalProps, 'onSubmit'> & {
     downgradeMessage: string;

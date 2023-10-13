@@ -7,7 +7,7 @@ import { Button } from '@proton/atoms/Button';
 import type { IconName } from '@proton/components/components';
 import { Icon } from '@proton/components/components';
 import type { ExtraFieldType, UnsafeItemExtraField } from '@proton/pass/types';
-import { partialMerge } from '@proton/pass/utils/object';
+import { partialMerge } from '@proton/pass/utils/object/merge';
 import clsx from '@proton/utils/clsx';
 
 import type { FieldBoxProps } from '../Layout/FieldBox';

@@ -1,4 +1,4 @@
-import { arrayInterpolate } from './array-interpolate';
+import { arrayInterpolate } from './interpolate';
 
 type TestEntry = { value: number };
 type TestCluster = { max: number };

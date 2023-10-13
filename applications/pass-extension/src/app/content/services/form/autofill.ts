@@ -8,10 +8,10 @@ import type { MaybeNull, WorkerMessageResponse } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import type { AutofillResult } from '@proton/pass/types/worker/autofill';
-import { first } from '@proton/pass/utils/array';
+import { first } from '@proton/pass/utils/array/first';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
-import { uniqueId } from '@proton/pass/utils/string';
-import { getEpoch } from '@proton/pass/utils/time';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
+import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import noop from '@proton/utils/noop';
 
 import { DropdownAction, type FormHandle, NotificationAction } from '../../types';

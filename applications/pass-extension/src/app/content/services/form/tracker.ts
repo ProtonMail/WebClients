@@ -1,4 +1,4 @@
-import { FORM_TRACKER_CONFIG } from 'proton-pass-extension/app/content/constants';
+import { FORM_TRACKER_CONFIG } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { FieldHandle, FormHandle, FormTracker } from 'proton-pass-extension/app/content/types';
 import { DropdownAction, FieldInjectionRule } from 'proton-pass-extension/app/content/types';
@@ -6,11 +6,11 @@ import { DropdownAction, FieldInjectionRule } from 'proton-pass-extension/app/co
 import { FieldType, FormType } from '@proton/pass/fathom';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { type MaybeNull, WorkerMessageType } from '@proton/pass/types';
-import { first } from '@proton/pass/utils/array';
-import { parseFormAction } from '@proton/pass/utils/dom';
-import { createListenerStore } from '@proton/pass/utils/listener';
+import { first } from '@proton/pass/utils/array/first';
+import { parseFormAction } from '@proton/pass/utils/dom/form';
+import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
-import { isEmptyString } from '@proton/pass/utils/string';
+import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import lastItem from '@proton/utils/lastItem';
 
 type FormTrackerState = { isSubmitting: boolean };

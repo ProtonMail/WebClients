@@ -18,7 +18,7 @@ import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
 import { getAliasDetailsIntent } from '@proton/pass/store/actions';
 import { aliasDetailsRequest } from '@proton/pass/store/actions/requests';
 import { selectAliasDetails, selectLoginItemByUsername } from '@proton/pass/store/selectors';
-import { pipe } from '@proton/pass/utils/fp';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
 
 export const AliasView: VFC<ItemViewProps<'alias'>> = ({ vault, revision, ...itemViewProps }) => {

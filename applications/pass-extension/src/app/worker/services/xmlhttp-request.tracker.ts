@@ -3,8 +3,9 @@ import type { WebRequest } from 'webextension-polyfill';
 import browser from '@proton/pass/lib/globals/browser';
 import type { TabId } from '@proton/pass/types';
 import { isFailedRequest } from '@proton/pass/utils/requests';
-import { UNIX_MINUTE, getEpoch } from '@proton/pass/utils/time';
-import { parseUrl } from '@proton/pass/utils/url';
+import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
+import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+import { parseUrl } from '@proton/pass/utils/url/parser';
 
 const filter: WebRequest.RequestFilter = {
     urls: ['<all_urls>'],

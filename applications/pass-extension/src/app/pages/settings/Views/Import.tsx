@@ -19,7 +19,7 @@ import type { ImportPayload } from '@proton/pass/lib/import/types';
 import { PROVIDER_INFO_MAP } from '@proton/pass/lib/import/types';
 import * as requests from '@proton/pass/store/actions/requests';
 import type { MaybeNull } from '@proton/pass/types';
-import { pipe, tap } from '@proton/pass/utils/fp';
+import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 export const Import: VFC = () => {

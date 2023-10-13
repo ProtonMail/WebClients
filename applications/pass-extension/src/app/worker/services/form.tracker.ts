@@ -2,9 +2,9 @@ import { FormType } from '@proton/pass/fathom';
 import type { FormEntry, FormIdentifier, Maybe, TabId, WithAutoSavePromptOptions } from '@proton/pass/types';
 import { FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
-import { merge } from '@proton/pass/utils/object';
+import { merge } from '@proton/pass/utils/object/merge';
 import { requestHasBodyFormData } from '@proton/pass/utils/requests';
-import { parseSender } from '@proton/pass/utils/url';
+import { parseSender } from '@proton/pass/utils/url/parser';
 
 import { isFormEntryCommittable, isFormEntryCommitted } from '../../../lib/utils/form-entry';
 import WorkerMessageBroker from '../channel';

@@ -8,8 +8,9 @@ import type {
     ItemType,
     MaybeNull,
 } from '@proton/pass/types';
-import { arrayInterpolate } from '@proton/pass/utils/array';
-import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK, getEpoch } from '@proton/pass/utils/time';
+import { arrayInterpolate } from '@proton/pass/utils/array/interpolate';
+import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '@proton/pass/utils/time/constants';
+import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 
 import { parseOpenedItem } from './item-proto.transformer';
 

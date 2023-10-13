@@ -1,4 +1,4 @@
-import { INPUT_BASE_STYLES_ATTR } from '../constants';
+import { INPUT_BASE_STYLES_ATTR } from '../constants.static';
 import { cleanupInputInjectedStyles } from './icon';
 
 export const DOMCleanUp = () => {

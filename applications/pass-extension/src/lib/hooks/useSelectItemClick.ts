@@ -6,7 +6,7 @@ import { popupMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { type ItemRevision, WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
-import { isEmptyString } from '@proton/pass/utils/string';
+import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 
 import { useItemsFilteringContext } from './useItemsFilteringContext';
 import { useNavigationContext } from './useNavigationContext';

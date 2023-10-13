@@ -5,7 +5,7 @@ import type { WithSenderAction } from '@proton/pass/store/actions/with-receiver'
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { selectProxiedSettings } from '@proton/pass/store/selectors';
 import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
-import { partialMerge } from '@proton/pass/utils/object';
+import { partialMerge } from '@proton/pass/utils/object/merge';
 
 function* settingsEditWorker(
     { onSettingUpdate }: WorkerRootSagaOptions,

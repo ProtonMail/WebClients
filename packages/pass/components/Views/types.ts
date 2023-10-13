@@ -6,7 +6,7 @@ import type {
     MaybeNull,
     VaultShare,
 } from '@proton/pass/types';
-import type { ParsedUrl } from '@proton/pass/utils/url';
+import type { ParsedUrl } from '@proton/pass/utils/url/parser';
 
 export type ItemViewProps<T extends ItemType = ItemType> = {
     failed: boolean;

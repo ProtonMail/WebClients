@@ -1,4 +1,4 @@
-import { MAX_MAX_DETECTION_TIME, MIN_MAX_DETECTION_TIME } from 'proton-pass-extension/app/content/constants';
+import { MAX_MAX_DETECTION_TIME, MIN_MAX_DETECTION_TIME } from 'proton-pass-extension/app/content/constants.static';
 import type { DetectedField, DetectedForm } from 'proton-pass-extension/app/content/types';
 
 import type { FieldType } from '@proton/pass/fathom';
@@ -14,7 +14,7 @@ import {
 } from '@proton/pass/fathom';
 import type { Fnode } from '@proton/pass/fathom/protonpass-fathom/fathom';
 import { logger } from '@proton/pass/utils/logger';
-import { withMaxExecutionTime } from '@proton/pass/utils/time';
+import { withMaxExecutionTime } from '@proton/pass/utils/time/performance';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 const ruleset = rulesetMaker();

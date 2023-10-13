@@ -2,10 +2,10 @@ import { itemCreationIntent, itemCreationSuccess, itemEditIntent, itemEditSucces
 import { selectAutosaveCandidate, selectAutosaveVault } from '@proton/pass/store/selectors';
 import type { AutoSavePromptOptions, FormEntry, FormEntryStatus } from '@proton/pass/types';
 import { AutoSaveType, WorkerMessageType } from '@proton/pass/types';
-import { first } from '@proton/pass/utils/array';
+import { first } from '@proton/pass/utils/array/first';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { uniqueId } from '@proton/pass/utils/string';
-import { getEpoch } from '@proton/pass/utils/time';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
+import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 
 import WorkerMessageBroker from '../channel';
 import store from '../store';

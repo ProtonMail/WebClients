@@ -5,7 +5,7 @@ import type { AnyAction } from 'redux';
 
 import { type WithRequest, withRevalidate } from '@proton/pass/store/actions/with-request';
 import { selectRequest } from '@proton/pass/store/selectors';
-import { uniqueId } from '@proton/pass/utils/string';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 type UseActionWithRequestOptions<P extends any[], R extends WithRequest<AnyAction, 'start'>> = {
     action: (requestId: string, ...args: P) => R;

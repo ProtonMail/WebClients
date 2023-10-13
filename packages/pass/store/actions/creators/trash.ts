@@ -5,7 +5,7 @@ import withCacheBlock from '@proton/pass/store/actions/with-cache-block';
 import type { ActionCallback } from '@proton/pass/store/actions/with-callback';
 import withCallback from '@proton/pass/store/actions/with-callback';
 import withNotification from '@proton/pass/store/actions/with-notification';
-import { pipe } from '@proton/pass/utils/fp';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 
 export const emptyTrashIntent = createAction('trash delete intent', () => withCacheBlock({ payload: {} }));
 
