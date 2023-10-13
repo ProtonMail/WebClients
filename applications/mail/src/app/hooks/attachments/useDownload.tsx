@@ -60,7 +60,8 @@ export const useDownload = () => {
                     messageKeys,
                     onUpdateAttachment,
                     api,
-                    getAttachment
+                    getAttachment,
+                    message.data.Flags
                 );
             } else {
                 download = await formatDownload(
@@ -69,7 +70,8 @@ export const useDownload = () => {
                     outsideKey,
                     onUpdateAttachment,
                     api,
-                    getAttachment
+                    getAttachment,
+                    message.data.Flags
                 );
             }
 
@@ -112,7 +114,8 @@ export const useDownloadAll = () => {
                     messageKeys,
                     onUpdateAttachment,
                     api,
-                    getAttachment
+                    getAttachment,
+                    message.data.Flags
                 );
             } else {
                 list = await formatDownloadAll(
@@ -120,7 +123,9 @@ export const useDownloadAll = () => {
                     message.verification,
                     outsideKey,
                     onUpdateAttachment,
-                    api
+                    api,
+                    undefined,
+                    message.data.Flags
                 );
             }
 
@@ -164,10 +169,19 @@ export const usePreview = () => {
                     messageKeys,
                     onUpdateAttachment,
                     api,
-                    getAttachment
+                    getAttachment,
+                    message.data.Flags
                 );
             } else {
-                download = await formatDownload(attachment, message.verification, outsideKey, onUpdateAttachment, api);
+                download = await formatDownload(
+                    attachment,
+                    message.verification,
+                    outsideKey,
+                    onUpdateAttachment,
+                    api,
+                    undefined,
+                    message.data.Flags
+                );
             }
 
             if (download.isError || download.verified === VERIFICATION_STATUS.SIGNED_AND_INVALID) {

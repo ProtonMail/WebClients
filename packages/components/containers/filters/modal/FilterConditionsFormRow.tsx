@@ -5,8 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import clsx from '@proton/utils/clsx';
 
-import { Icon, Input, Radio, Select, Tooltip } from '../../../components';
-import { OptionProps } from '../../../components/select/Select';
+import { Icon, Input, Option, Radio, SelectTwo, Tooltip } from '../../../components';
 import { COMPARATORS, TYPES, getComparatorLabels, getConditionTypeLabels } from '../constants';
 import { Condition, ConditionComparator, ConditionType, FilterStatement } from '../interfaces';
 
@@ -25,7 +24,7 @@ interface Props {
     isEdit: boolean;
 }
 
-const FilterConditionsRow = ({
+const FilterConditionsFormRow = ({
     isNarrow,
     conditionIndex,
     statement,
@@ -36,11 +35,7 @@ const FilterConditionsRow = ({
     isEdit,
 }: Props) => {
     const typeOptions = TYPES.map(({ value }, i) => {
-        const option: OptionProps = { text: getConditionTypeLabels(value), value };
-        if (i === 0) {
-            option.disabled = true;
-        }
-        return option;
+        return { text: getConditionTypeLabels(value), value, disabled: i === 0 };
     });
     const ConditionComparatorOptions = COMPARATORS.map(({ value }) => ({
         text: getComparatorLabels(value),
@@ -62,8 +57,8 @@ const FilterConditionsRow = ({
 
     const onRemoveToken = (i: number) => {
         setTokens((tokens) => {
-            tokens.splice(i, 1);
-            return [...tokens];
+            const newTokens = tokens.filter((_, index) => index !== i);
+            return newTokens;
         });
     };
 
@@ -133,11 +128,10 @@ const FilterConditionsRow = ({
 
     const renderToken = (token: string, i: number) => (
         <Fragment key={`Condition_${conditionIndex}_Token_${i}`}>
-            {i > 0 && <span className="mx-2">{c('Label').t`or`}</span>}
+            {i > 0 && <span className="mx-2 text-sm">{c('Label').t`or`}</span>}
             <span
                 key={`condition-${conditionIndex}-token-${i}`}
                 className="inline-flex flex-row flex-align-items-center mb-2 condition-token"
-                role="listitem"
             >
                 <span className="text-ellipsis text-no-decoration" title={token}>
                     {token}
@@ -153,7 +147,6 @@ const FilterConditionsRow = ({
     const renderGenericCondition = () => {
         return (
             <div className="mt-4 flex-item-fluid">
-                {tokens.length ? <div className="mb-2">{tokens.map(renderToken)}</div> : null}
                 <div className="flex flex-nowrap">
                     <span className="flex-item-fluid pr-4">
                         <Input
@@ -172,6 +165,7 @@ const FilterConditionsRow = ({
                     <Button disabled={!inputValue.trim()} onClick={onAddNewToken} className="button-blue">{c('Action')
                         .t`Insert`}</Button>
                 </div>
+                {tokens.length ? <div className="mt-4">{tokens.map(renderToken)}</div> : null}
             </div>
         );
     };
@@ -245,32 +239,38 @@ const FilterConditionsRow = ({
                     {isOpen ? (
                         <div className="flex">
                             <span className="w50 pr-4">
-                                <Select
-                                    options={typeOptions}
+                                <SelectTwo
                                     value={type}
-                                    onChange={(e: ChangeEvent<HTMLSelectElement>) => {
+                                    onChange={({ value }) => {
                                         handleUpdateCondition(conditionIndex, {
                                             ...condition,
-                                            type: e.target.value as ConditionType,
+                                            type: value as ConditionType,
                                         });
                                     }}
-                                />
+                                >
+                                    {typeOptions.map(({ text, value, disabled }) => (
+                                        <Option key={value} value={value} disabled={disabled} title={text} />
+                                    ))}
+                                </SelectTwo>
                             </span>
                             {type &&
                                 [ConditionType.SUBJECT, ConditionType.SENDER, ConditionType.RECIPIENT].includes(
                                     type
                                 ) && (
                                     <span className="w50">
-                                        <Select
-                                            options={ConditionComparatorOptions}
+                                        <SelectTwo
                                             value={comparator}
-                                            onChange={(e: ChangeEvent<HTMLSelectElement>) => {
+                                            onChange={({ value }) => {
                                                 handleUpdateCondition(conditionIndex, {
                                                     ...condition,
-                                                    comparator: e.target.value as ConditionComparator,
+                                                    comparator: value as ConditionComparator,
                                                 });
                                             }}
-                                        />
+                                        >
+                                            {ConditionComparatorOptions.map(({ text, value }) => (
+                                                <Option key={value} value={value} title={text} />
+                                            ))}
+                                        </SelectTwo>
                                     </span>
                                 )}
                         </div>
@@ -293,7 +293,7 @@ const FilterConditionsRow = ({
                                 className={clsx([isNarrow ? 'mt-4' : 'ml-4'])}
                                 icon
                             >
-                                <Icon name="trash" className="color-danger" alt={c('Action').t`Delete`} />
+                                <Icon name="trash" alt={c('Action').t`Delete`} />
                             </Button>
                         </Tooltip>
                     </div>
@@ -303,4 +303,4 @@ const FilterConditionsRow = ({
     );
 };
 
-export default FilterConditionsRow;
+export default FilterConditionsFormRow;

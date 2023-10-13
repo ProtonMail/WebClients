@@ -74,6 +74,15 @@ export const getSendStatusIcon = (
                 : error.message;
         return { colorClassName: 'color-danger', isEncrypted: false, fill: FAIL, text: errorMessage };
     }
+    if (sendPreferences.encryptionDisabled) {
+        return {
+            colorClassName: 'color-norm',
+            isEncrypted: false,
+            fill: PLAIN,
+            text: c('email_forwarding_2023: Composer email icon')
+                .t`Zero-access encrypted. Recipient has disabled end-to-end encryption on their account.`,
+        };
+    }
     const ktVerificationStatus = ktVerificationResult?.status;
     if (pgpScheme === SEND_PM) {
         const result = { colorClassName: 'color-info', isEncrypted: true };

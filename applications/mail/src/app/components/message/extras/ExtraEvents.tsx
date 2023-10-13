@@ -172,7 +172,8 @@ const ExtraEvents = ({ message }: Props) => {
                                         messageKeys,
                                         onUpdateAttachment,
                                         api,
-                                        getAttachment
+                                        getAttachment,
+                                        message.data.Flags
                                     );
                                     if (download.isError) {
                                         return new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.DECRYPTION_ERROR);

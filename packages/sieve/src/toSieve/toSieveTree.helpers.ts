@@ -4,6 +4,7 @@ import {
     ConditionType,
     FilterActions,
     FilterCondition,
+    FilterRedirect,
     FilterStatement,
     SimpleObject,
 } from '@proton/components/containers/filters/interfaces';
@@ -208,6 +209,18 @@ export const buildMark = ({ Read: read, Starred: starred }: { Read: boolean; Sta
     }
 
     return { blocks: [buildSetFlagThen(read, starred), { Type: 'Keep' }] };
+};
+
+export const buildRedirects = (redirects?: FilterRedirect[]) => {
+    if (!redirects) {
+        return { blocks: [] };
+    }
+    return {
+        blocks: redirects.map((redirect) => ({
+            Address: redirect.Address,
+            Type: 'Redirect',
+        })),
+    };
 };
 
 /**

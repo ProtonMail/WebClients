@@ -15,6 +15,7 @@ interface CreateAddressKeyLegacyArguments {
     passphrase: string;
     activeKeys: ActiveKey[];
     keyTransparencyVerify: KeyTransparencyVerify;
+    addressForwardingID?: string;
 }
 
 const removePrimary = (activeKey: ActiveKey): ActiveKey => {
@@ -34,6 +35,7 @@ export const createAddressKeyLegacy = async ({
     passphrase,
     activeKeys,
     keyTransparencyVerify,
+    addressForwardingID: AddressForwardingID,
 }: CreateAddressKeyLegacyArguments) => {
     const { privateKey, privateKeyArmored } = await generateAddressKey({
         email: address.Email,
@@ -57,6 +59,7 @@ export const createAddressKeyLegacy = async ({
             Primary: newActiveKey.primary,
             PrivateKey: privateKeyArmored,
             SignedKeyList,
+            AddressForwardingID,
         })
     );
     await onSKLPublishSuccess();
