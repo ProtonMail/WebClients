@@ -35,7 +35,7 @@ import {
 } from '@proton/pass/store/selectors';
 import { type MaybeNull, type ShareType, type VaultShare } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
-import { pipe, tap } from '@proton/pass/utils/fp';
+import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import clsx from '@proton/utils/clsx';
 
 const DROPDOWN_SIZE: NonNullable<DropdownProps['size']> = {

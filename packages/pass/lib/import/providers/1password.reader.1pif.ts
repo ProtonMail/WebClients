@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import type { ItemImportIntent, UnsafeItemExtraField } from '@proton/pass/types';
-import { truthy } from '@proton/pass/utils/fp';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 
 import { ImportProviderError } from '../helpers/error';

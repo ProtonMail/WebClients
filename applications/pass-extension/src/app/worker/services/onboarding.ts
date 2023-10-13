@@ -9,10 +9,11 @@ import {
     WorkerMessageType,
 } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
-import { withPayloadLens } from '@proton/pass/utils/fp';
+import { withPayloadLens } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
-import { merge } from '@proton/pass/utils/object';
-import { UNIX_DAY, getEpoch } from '@proton/pass/utils/time';
+import { merge } from '@proton/pass/utils/object/merge';
+import { UNIX_DAY } from '@proton/pass/utils/time/constants';
+import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import identity from '@proton/utils/identity';
 import noop from '@proton/utils/noop';
 

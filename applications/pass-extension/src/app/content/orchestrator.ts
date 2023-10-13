@@ -9,8 +9,8 @@
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import browser from '@proton/pass/lib/globals/browser';
 import { WorkerMessageType } from '@proton/pass/types';
-import { isMainFrame } from '@proton/pass/utils/dom';
-import { createListenerStore } from '@proton/pass/utils/listener';
+import { isMainFrame } from '@proton/pass/utils/dom/is-main-frame';
+import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 
 import { DOMCleanUp } from './injections/cleanup';

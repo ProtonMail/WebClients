@@ -7,7 +7,8 @@ import {
     passwordSave,
 } from '@proton/pass/store/actions/creators/pw-history';
 import type { MaybeNull } from '@proton/pass/types';
-import { UNIX_DAY, getEpoch } from '@proton/pass/utils/time';
+import { UNIX_DAY } from '@proton/pass/utils/time/constants';
+import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 
 export type PasswordHistoryEntry = {
     id: string;

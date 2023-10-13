@@ -11,7 +11,7 @@ import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { selectVaultLimits } from '@proton/pass/store/selectors';
 import type { VaultShare } from '@proton/pass/types';
-import { pipe, tap } from '@proton/pass/utils/fp';
+import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import noop from '@proton/utils/noop';
 
 import { VaultEdit, FORM_ID as VaultEditFormId } from './Vault.edit';

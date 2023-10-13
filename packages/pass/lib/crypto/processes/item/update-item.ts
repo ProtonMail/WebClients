@@ -1,6 +1,6 @@
 import type { ItemKey, ItemUpdateRequest } from '@proton/pass/types';
 import { CONTENT_FORMAT_VERSION, PassEncryptionTag } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 import { encryptData } from '../../utils/crypto-helpers';

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { pixelParser } from '@proton/pass/utils/dom';
+import { pixelParser } from '@proton/pass/utils/dom/computed-styles';
 import noop from '@proton/utils/noop';
 
 import { isVivaldiBrowser } from '../utils/vivaldi';

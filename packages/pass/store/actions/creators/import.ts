@@ -8,7 +8,7 @@ import withNotification from '@proton/pass/store/actions/with-notification';
 import withRequest from '@proton/pass/store/actions/with-request';
 import type { ImportEntry } from '@proton/pass/store/reducers';
 import type { ExtensionEndpoint, ItemRevision } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 
 export const importItemsIntent = createAction(
     'import items intent',

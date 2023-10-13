@@ -2,9 +2,9 @@ import type { FormikErrors } from 'formik';
 import { c } from 'ttag';
 
 import type { UrlGroupValues } from '@proton/pass/types';
-import { duplicates } from '@proton/pass/utils/array';
-import { isEmptyString } from '@proton/pass/utils/string';
-import { isValidURL } from '@proton/pass/utils/url';
+import { duplicates } from '@proton/pass/utils/array/duplicates';
+import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
+import { isValidURL } from '@proton/pass/utils/url/is-valid-url';
 
 /* validates the active URL input field */
 export const validateUrl = <V extends UrlGroupValues>({ url, urls }: V) => {

@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { cardNumberHiddenValue } from '@proton/pass/components/Form/Field/masks/credit-card';
 import type { ItemRevision, ItemType } from '@proton/pass/types';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { isEmptyString } from '@proton/pass/utils/string';
+import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 
 type PresentedListItem = { heading: string; subheading: string };
 type ItemListPresenterMap = { [T in ItemType]: (revision: ItemRevision<T>) => PresentedListItem };

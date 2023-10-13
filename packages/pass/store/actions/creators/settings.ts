@@ -6,7 +6,7 @@ import withNotification from '@proton/pass/store/actions/with-notification';
 import { withRequestFailure, withRequestStart, withRequestSuccess } from '@proton/pass/store/actions/with-request';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { ExtensionEndpoint, RecursivePartial } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 
 export const settingsEditIntent = createAction(
     'settings::edit::intent',

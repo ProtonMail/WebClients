@@ -16,9 +16,9 @@ import {
 } from '@proton/pass/store/selectors';
 import type { Maybe, SafeLoginItem } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
-import { prop } from '@proton/pass/utils/fp';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { parseSender, parseUrl } from '@proton/pass/utils/url';
+import { parseSender, parseUrl } from '@proton/pass/utils/url/parser';
 import noop from '@proton/utils/noop';
 
 export const createAutoFillService = () => {

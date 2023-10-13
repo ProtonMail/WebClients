@@ -10,7 +10,7 @@ import withSynchronousClientAction from '@proton/pass/store/actions/with-synchro
 import { createOptimisticAction } from '@proton/pass/store/optimistic/action/create-optimistic-action';
 import type { ItemDraft } from '@proton/pass/store/reducers';
 import type { ItemCreateIntent, ItemEditIntent, ItemRevision, SelectedItem } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 
 export const itemDraftSave = createAction('item draft save', (payload: ItemDraft) => withCacheBlock({ payload }));
 export const itemDraftDiscard = createAction('item draft discard', () => withCacheBlock({ payload: {} }));

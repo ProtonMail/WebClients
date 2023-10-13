@@ -6,7 +6,7 @@
  * certain effects.
  */
 import { WorkerStatus } from '@proton/pass/types';
-import { oneOf, or } from '@proton/pass/utils/fp';
+import { oneOf, or } from '@proton/pass/utils/fp/predicates';
 
 export const workerReady = oneOf(WorkerStatus.READY);
 export const workerLoggedIn = oneOf(WorkerStatus.AUTHORIZED);

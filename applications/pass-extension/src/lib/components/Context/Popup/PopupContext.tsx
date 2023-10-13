@@ -21,8 +21,8 @@ import * as requests from '@proton/pass/store/actions/requests';
 import { selectWorkerSyncing } from '@proton/pass/store/selectors';
 import type { MaybeNull, PopupInitialState, WorkerState } from '@proton/pass/types';
 import { WorkerMessageType, type WorkerMessageWithSender, WorkerStatus } from '@proton/pass/types';
-import type { ParsedUrl } from '@proton/pass/utils/url';
-import { parseUrl } from '@proton/pass/utils/url';
+import type { ParsedUrl } from '@proton/pass/utils/url/parser';
+import { parseUrl } from '@proton/pass/utils/url/parser';
 import noop from '@proton/utils/noop';
 
 export interface PopupContextValue extends ExtensionAppContextValue {

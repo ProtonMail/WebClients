@@ -5,8 +5,8 @@ import type { FormikContextType } from 'formik';
 
 import { selectAliasByAliasEmail } from '@proton/pass/store/selectors';
 import type { LoginItemFormValues } from '@proton/pass/types';
-import { merge } from '@proton/pass/utils/object';
-import { isEmptyString } from '@proton/pass/utils/string';
+import { merge } from '@proton/pass/utils/object/merge';
+import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 
 import { useAliasOptions } from './useAliasOptions';
 

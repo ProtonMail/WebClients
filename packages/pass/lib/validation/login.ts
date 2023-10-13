@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { parseOTPValue } from '@proton/pass/lib/otp/otp';
 import type { LoginItemFormValues } from '@proton/pass/types';
-import { isEmptyString } from '@proton/pass/utils/string';
+import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 
 import { validateAliasForm } from './alias';
 import { validateExtraFields } from './extra-field';

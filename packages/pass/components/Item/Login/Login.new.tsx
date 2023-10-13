@@ -39,10 +39,12 @@ import { selectTOTPLimits, selectVaultLimits } from '@proton/pass/store/selector
 import type { LoginItemFormValues, NewLoginItemFormValues } from '@proton/pass/types';
 import { type LoginWithAliasCreationDTO } from '@proton/pass/types';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { merge } from '@proton/pass/utils/object';
-import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
+import { merge } from '@proton/pass/utils/object/merge';
+import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
-import { isValidURL, parseUrl } from '@proton/pass/utils/url';
+import { isValidURL } from '@proton/pass/utils/url/is-valid-url';
+import { parseUrl } from '@proton/pass/utils/url/parser';
 
 const FORM_ID = 'new-login';
 

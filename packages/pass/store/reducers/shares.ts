@@ -36,9 +36,11 @@ import withOptimistic from '@proton/pass/store/optimistic/with-optimistic';
 import type { Share } from '@proton/pass/types';
 import { ShareRole, ShareType } from '@proton/pass/types';
 import type { PendingInvite, ShareMember } from '@proton/pass/types/data/invites';
-import { or } from '@proton/pass/utils/fp';
-import { fullMerge, objectDelete, objectMap, partialMerge } from '@proton/pass/utils/object';
-import { getEpoch } from '@proton/pass/utils/time';
+import { or } from '@proton/pass/utils/fp/predicates';
+import { objectDelete } from '@proton/pass/utils/object/delete';
+import { objectMap } from '@proton/pass/utils/object/map';
+import { fullMerge, partialMerge } from '@proton/pass/utils/object/merge';
+import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 
 export type ShareItem<T extends ShareType = ShareType> = Share<T> & {
     invites?: PendingInvite[];

@@ -22,8 +22,8 @@ import { settingsEditIntent } from '@proton/pass/store/actions';
 import { selectDisallowedDomains } from '@proton/pass/store/selectors';
 import type { CriteriaMasks } from '@proton/pass/types/worker/settings';
 import { CRITERIA_MASKS } from '@proton/pass/types/worker/settings';
-import { merge } from '@proton/pass/utils/object';
-import { parseUrl } from '@proton/pass/utils/url';
+import { merge } from '@proton/pass/utils/object/merge';
+import { parseUrl } from '@proton/pass/utils/url/parser';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { SettingsPanel } from './SettingsPanel';

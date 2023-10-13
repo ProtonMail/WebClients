@@ -16,7 +16,7 @@ import { importItems } from '@proton/pass/store/actions/requests';
 import type { ImportState } from '@proton/pass/store/reducers';
 import { selectLatestImport, selectUser } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
-import { first } from '@proton/pass/utils/array';
+import { first } from '@proton/pass/utils/array/first';
 import { orThrow, pipe } from '@proton/pass/utils/fp/pipe';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import identity from '@proton/utils/identity';

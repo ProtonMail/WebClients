@@ -1,7 +1,7 @@
 import { type VFC, useCallback, useEffect, useRef, useState } from 'react';
 
 import { type MaybeNull, WorkerStatus } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 
 import { type DropdownActions, type IFrameMessage, IFrameMessageType } from '../../../../types';
 import { useIFrameContext, useRegisterMessageHandler } from '../../context/IFrameContextProvider';

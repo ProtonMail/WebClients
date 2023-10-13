@@ -7,7 +7,7 @@ import { generatePassword } from '@proton/pass/lib/password/generator';
 import { SeperatorOptions } from '@proton/pass/lib/password/memorable';
 import { popupPasswordOptionsSave } from '@proton/pass/store/actions/creators/popup';
 import type { MaybeNull } from '@proton/pass/types';
-import { merge } from '@proton/pass/utils/object';
+import { merge } from '@proton/pass/utils/object/merge';
 import debounce from '@proton/utils/debounce';
 
 export enum CharType {
