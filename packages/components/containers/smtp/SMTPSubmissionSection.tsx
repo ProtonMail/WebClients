@@ -146,7 +146,7 @@ const SMTPSubmissionSection = () => {
     const upsellRef = getUpsellRef({
         app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
         component: UPSELL_COMPONENT.BANNER,
-        feature: MAIL_UPSELL_PATHS.BRIDGE,
+        feature: MAIL_UPSELL_PATHS.SMTP_SUBMISSION,
         isSettings: true,
     });
 
