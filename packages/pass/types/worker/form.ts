@@ -1,4 +1,5 @@
-import type { FormType } from '../../fathom';
+import type { FormType } from '@proton/pass/fathom';
+
 import type { MaybeNull } from '../utils';
 import type { WithAutoSavePromptOptions } from './autosave';
 import type { TabId } from './runtime';
@@ -13,7 +14,7 @@ export enum FormEntryStatus {
 export type FormEntryBase = {
     domain: string;
     subdomain: MaybeNull<string>;
-    type: FormType;
+    type: `${FormType}` /* avoid importing the enum */;
     action?: string /* form action attribute */;
 };
 

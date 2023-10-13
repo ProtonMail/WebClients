@@ -1,6 +1,6 @@
 import type { AnyAction } from 'redux';
 
-import { merge } from '@proton/pass/utils/object';
+import { merge } from '@proton/pass/utils/object/merge';
 
 export type WithSynchronousClientAction<T = AnyAction> = T & { meta: { sync: true } };
 

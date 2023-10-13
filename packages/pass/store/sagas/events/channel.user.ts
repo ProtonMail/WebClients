@@ -1,21 +1,22 @@
 /* eslint-disable @typescript-eslint/no-throw-literal, curly */
 import { all, fork, put, select } from 'redux-saga/effects';
 
-import { PassCrypto } from '@proton/pass/crypto';
-import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/events/constants';
+import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
+import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
+import type { EventCursor, EventManagerEvent } from '@proton/pass/lib/events/manager';
+import { getUserPlan } from '@proton/pass/lib/user/user.requests';
+import { setUserPlan, syncIntent, userEvent } from '@proton/pass/store/actions';
+import type { UserPlanState } from '@proton/pass/store/reducers';
+import { selectAllAddresses, selectLatestEventId } from '@proton/pass/store/selectors';
+import type { State, WorkerRootSagaOptions } from '@proton/pass/store/types';
 import type { UserEvent } from '@proton/pass/types';
 import { type Api } from '@proton/pass/types';
-import { notIn, prop } from '@proton/pass/utils/fp';
+import { prop } from '@proton/pass/utils/fp/lens';
+import { notIn } from '@proton/pass/utils/fp/predicates';
 import { logId, logger } from '@proton/pass/utils/logger';
 import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
 import type { Address } from '@proton/shared/lib/interfaces';
 
-import type { EventCursor, EventManagerEvent } from '../../../events/manager';
-import { setUserPlan, syncIntent, userEvent } from '../../actions';
-import type { UserPlanState } from '../../reducers';
-import { selectAllAddresses, selectLatestEventId } from '../../selectors/user';
-import type { State, WorkerRootSagaOptions } from '../../types';
-import { getUserPlan } from '../workers/user';
 import { eventChannelFactory } from './channel.factory';
 import { channelEventsWorker, channelWakeupWorker } from './channel.worker';
 import type { EventChannel } from './types';

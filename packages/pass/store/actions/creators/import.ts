@@ -1,16 +1,14 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c, msgid } from 'ttag';
 
-import type { ImportProvider } from '@proton/pass/import';
-import { type ImportPayload } from '@proton/pass/import';
+import type { ImportPayload, ImportProvider } from '@proton/pass/lib/import/types';
+import { importItems } from '@proton/pass/store/actions/requests';
+import withCacheBlock from '@proton/pass/store/actions/with-cache-block';
+import withNotification from '@proton/pass/store/actions/with-notification';
+import withRequest from '@proton/pass/store/actions/with-request';
+import type { ImportEntry } from '@proton/pass/store/reducers';
 import type { ExtensionEndpoint, ItemRevision } from '@proton/pass/types';
-import { pipe } from '@proton/pass/utils/fp';
-
-import type { ImportEntry } from '../../reducers';
-import * as requests from '../requests';
-import withCacheBlock from '../with-cache-block';
-import withNotification from '../with-notification';
-import withRequest from '../with-request';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 
 export const importItemsIntent = createAction(
     'import items intent',
@@ -18,7 +16,7 @@ export const importItemsIntent = createAction(
         pipe(
             withCacheBlock,
             withRequest({
-                id: requests.importItems(),
+                id: importItems(),
                 type: 'start',
             })
         )({ payload })
@@ -30,7 +28,7 @@ export const importItemsSuccess = createAction(
         pipe(
             withCacheBlock,
             withRequest({
-                id: requests.importItems(),
+                id: importItems(),
                 type: 'success',
             }),
             withNotification({
@@ -50,7 +48,7 @@ export const importItemsFailure = createAction('import items failure', (error: u
     pipe(
         withCacheBlock,
         withRequest({
-            id: requests.importItems(),
+            id: importItems(),
             type: 'failure',
         }),
         withNotification({

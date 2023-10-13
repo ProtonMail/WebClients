@@ -1,19 +1,18 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
+import withCacheBlock from '@proton/pass/store/actions/with-cache-block';
+import withNotification from '@proton/pass/store/actions/with-notification';
+import { withRequestFailure, withRequestStart, withRequestSuccess } from '@proton/pass/store/actions/with-request';
+import type { SynchronizationResult } from '@proton/pass/store/sagas/workers/sync';
 import type { Share, ShareRole } from '@proton/pass/types';
 import type {
     ShareAccessOptions,
     ShareEditMemberAccessIntent,
     ShareRemoveMemberAccessIntent,
 } from '@proton/pass/types/data/shares.dto';
-import { pipe } from '@proton/pass/utils/fp';
-import { isVaultShare } from '@proton/pass/utils/pass/share';
-
-import type { SynchronizationResult } from '../../sagas/workers/sync';
-import withCacheBlock from '../with-cache-block';
-import withNotification from '../with-notification';
-import { withRequestFailure, withRequestStart, withRequestSuccess } from '../with-request';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 
 export const shareEditSync = createAction('share::edit:sync', (payload: { id: string; share: Share }) => ({ payload }));
 

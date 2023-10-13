@@ -1,4 +1,4 @@
-import type { ImportProvider } from '@proton/pass/import';
+import type { ImportProvider } from '@proton/pass/lib/import/types';
 import type { PassPlanResponse } from '@proton/pass/types';
 
 import type { ItemType } from '../protobuf';

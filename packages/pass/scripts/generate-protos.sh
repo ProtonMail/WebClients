@@ -4,12 +4,14 @@ set -euxo pipefail
 
 unameOutput="$(uname -s)"
 case "${unameOutput}" in
-    Linux*)     os="linux";;
-    Darwin*)    os="macos";;
-    *)          echo "Unsupported machine"; exit 1;;
+Linux*) os="linux" ;;
+Darwin*) os="macos" ;;
+*)
+    echo "Unsupported machine"
+    exit 1
+    ;;
 esac
 echo ${os}
-
 
 SCRIPT_DIR=$(dirname "$0")
 ROOT_DIR="$SCRIPT_DIR/.."
@@ -19,7 +21,7 @@ OUT_DIR="$ROOT_DIR"/types/protobuf
 function process_file() {
     f="$1"
     # Generate bindings for file
-    npx protoc --plugin="${PLUGIN_DIR}" --ts_out "${OUT_DIR}" --proto_path "$ROOT_DIR"/protos "${f}"
+    npx protoc --plugin="${PLUGIN_DIR}" --ts_out "${OUT_DIR}" --proto_path "$ROOT_DIR"/types/protobuf/protos "${f}"
 
     # Obtain generated .ts name
     GENERATED_FILE_NAME=$(basename "${f}" | sed 's:proto:ts:g')
@@ -35,7 +37,6 @@ function process_file() {
     npx prettier --write "${GENERATED_FILE_PATH}"
 }
 
-
-for f in "$ROOT_DIR"/protos/*.proto; do
+for f in "$ROOT_DIR"/types/protobuf/protos/*.proto; do
     process_file "$f"
 done

@@ -1,24 +1,24 @@
 /* eslint-disable @typescript-eslint/no-throw-literal, curly */
 import { all, fork, put, select } from 'redux-saga/effects';
 
-import { PassCrypto } from '@proton/pass/crypto';
-import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/events/constants';
+import { getPublicKeysForEmail } from '@proton/pass/lib/auth/address';
+import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
+import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
+import { type EventManagerEvent, NOOP_EVENT } from '@proton/pass/lib/events/manager';
+import { decodeVaultContent } from '@proton/pass/lib/vaults/vault-proto.transformer';
+import { syncInvites } from '@proton/pass/store/actions';
+import type { InviteState } from '@proton/pass/store/reducers';
+import { selectFeatureFlag } from '@proton/pass/store/selectors';
+import { selectInvites } from '@proton/pass/store/selectors/invites';
+import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
 import type { InvitesGetResponse, MaybeNull } from '@proton/pass/types';
 import { type Api } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import type { Invite } from '@proton/pass/types/data/invites';
-import { truthy } from '@proton/pass/utils/fp';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logId, logger } from '@proton/pass/utils/logger';
-import { decodeVaultContent } from '@proton/pass/utils/protobuf';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
-import { type EventManagerEvent, NOOP_EVENT } from '../../../events/manager';
-import { syncInvites } from '../../actions';
-import type { InviteState } from '../../reducers/invites';
-import { selectFeatureFlag } from '../../selectors';
-import { selectInvites } from '../../selectors/invites';
-import type { WorkerRootSagaOptions } from '../../types';
-import { getPublicKeysForEmail } from '../workers/address';
 import { eventChannelFactory } from './channel.factory';
 import { channelEventsWorker, channelWakeupWorker } from './channel.worker';
 

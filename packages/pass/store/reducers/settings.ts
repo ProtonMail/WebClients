@@ -1,14 +1,5 @@
 import type { Reducer } from 'redux';
 
-import type {
-    AutoFillSettings,
-    AutoSaveSettings,
-    AutoSuggestSettings,
-    DomainCriterias,
-} from '@proton/pass/types/worker/settings';
-import { partialMerge } from '@proton/pass/utils/object';
-
-import { SessionLockStatus } from '../../types';
 import {
     itemCreationSuccess,
     sessionLockDisableSuccess,
@@ -16,7 +7,15 @@ import {
     settingsEditSuccess,
     syncLocalSettings,
     syncLock,
-} from '../actions';
+} from '@proton/pass/store/actions';
+import { SessionLockStatus } from '@proton/pass/types';
+import type {
+    AutoFillSettings,
+    AutoSaveSettings,
+    AutoSuggestSettings,
+    DomainCriterias,
+} from '@proton/pass/types/worker/settings';
+import { partialMerge } from '@proton/pass/utils/object/merge';
 
 export type SettingsState = {
     locale?: string;
@@ -35,15 +34,19 @@ export type SettingsState = {
  * sequence  (ie: if the user has been logged out) */
 export type ProxiedSettings = Omit<SettingsState, 'sessionLockRegistered' | 'sessionLockTTL'>;
 
-const INITIAL_STATE: SettingsState = {
-    sessionLockRegistered: false,
-    sessionLockTTL: undefined,
+export const INITIAL_SETTINGS: ProxiedSettings = {
     autofill: { inject: true, openOnFocus: true },
     autosave: { prompt: true },
     autosuggest: { password: true, email: true },
     createdItemsCount: 0,
-    loadDomainImages: true,
     disallowedDomains: {},
+    loadDomainImages: true,
+};
+
+const INITIAL_STATE: SettingsState = {
+    sessionLockRegistered: false,
+    sessionLockTTL: undefined,
+    ...INITIAL_SETTINGS,
 };
 
 const reducer: Reducer<SettingsState> = (state = INITIAL_STATE, action) => {
