@@ -1,0 +1,16 @@
+@import '~@proton/styles/scss/lib';
+
+.pass-import-providers--grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(#{rem(85)}, 1fr));
+}
+
+.pass-import-upload {
+	--min-h-custom: #{rem(250)};
+
+	transition: min-block-size 0.25s ease-in-out 0.05s;
+
+	&--has-file {
+		--min-h-custom: 1px;
+	}
+}

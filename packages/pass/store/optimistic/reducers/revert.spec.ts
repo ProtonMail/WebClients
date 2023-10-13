@@ -1,4 +1,4 @@
-import { uniqueId } from '@proton/pass/utils/string';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { omit } from '@proton/shared/lib/helpers/object';
 
 import type { WrappedOptimisticState } from '../types';

@@ -1,30 +1,31 @@
 /* eslint-disable @typescript-eslint/no-throw-literal, curly */
 import { all, fork, put, select, takeEvery } from 'redux-saga/effects';
 
-import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/events/constants';
-import type { Api, Maybe, Share, ShareRole, SharesGetResponse } from '@proton/pass/types';
-import { ShareType } from '@proton/pass/types';
-import { prop, truthy } from '@proton/pass/utils/fp';
-import { diadic } from '@proton/pass/utils/fp/variadics';
-import { logger } from '@proton/pass/utils/logger';
-import { merge } from '@proton/pass/utils/object/merge';
-import { hasShareAccessChanged } from '@proton/pass/utils/pass/share';
-import { toMap } from '@proton/shared/lib/helpers/object';
-
-import { type EventManagerEvent, NOOP_EVENT } from '../../../events/manager';
+import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
+import { type EventManagerEvent, NOOP_EVENT } from '@proton/pass/lib/events/manager';
+import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
+import { hasShareAccessChanged } from '@proton/pass/lib/shares/share.predicates';
+import { loadShare } from '@proton/pass/lib/shares/share.requests';
 import {
     getShareAccessOptionsIntent,
     shareAccessChange,
     sharesSync,
     vaultCreationSuccess,
     vaultSetPrimarySync,
-} from '../../actions';
-import { shareAccessOptionsRequest } from '../../actions/requests';
-import type { ItemsByShareId } from '../../reducers';
-import { selectAllShares } from '../../selectors';
-import type { WorkerRootSagaOptions } from '../../types';
-import { requestItemsForShareId } from '../workers/items';
-import { loadShare } from '../workers/shares';
+} from '@proton/pass/store/actions';
+import { shareAccessOptionsRequest } from '@proton/pass/store/actions/requests';
+import type { ItemsByShareId } from '@proton/pass/store/reducers';
+import { selectAllShares } from '@proton/pass/store/selectors';
+import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
+import type { Api, Maybe, Share, ShareRole, SharesGetResponse } from '@proton/pass/types';
+import { ShareType } from '@proton/pass/types';
+import { prop } from '@proton/pass/utils/fp/lens';
+import { truthy } from '@proton/pass/utils/fp/predicates';
+import { diadic } from '@proton/pass/utils/fp/variadics';
+import { logger } from '@proton/pass/utils/logger';
+import { merge } from '@proton/pass/utils/object/merge';
+import { toMap } from '@proton/shared/lib/helpers/object';
+
 import { eventChannelFactory } from './channel.factory';
 import { getShareChannelForks } from './channel.share';
 import { channelEventsWorker, channelWakeupWorker } from './channel.worker';

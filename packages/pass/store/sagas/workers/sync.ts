@@ -1,26 +1,27 @@
 import { put } from 'redux-saga/effects';
 
-import { PassCrypto } from '@proton/pass/crypto';
+import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
+import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
+import { loadShare, requestShares } from '@proton/pass/lib/shares/share.requests';
+import { isActiveVault, isOwnVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
+import { createVault } from '@proton/pass/lib/vaults/vault.requests';
+import { notification } from '@proton/pass/store/actions';
+import type { FeatureFlagState, ItemsByShareId, SharesState } from '@proton/pass/store/reducers';
+import { selectAllShares, selectItems } from '@proton/pass/store/selectors';
+import type { State, WorkerRootSagaOptions } from '@proton/pass/store/types';
 import type { Maybe, MaybeNull, ShareType } from '@proton/pass/types';
 import { type Share, type ShareGetResponse } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
-import { partition } from '@proton/pass/utils/array';
-import { and, invert, notIn, pipe, prop } from '@proton/pass/utils/fp';
+import { partition } from '@proton/pass/utils/array/partition';
+import { prop } from '@proton/pass/utils/fp/lens';
+import { pipe } from '@proton/pass/utils/fp/pipe';
+import { and, invert, notIn } from '@proton/pass/utils/fp/predicates';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 import { diadic } from '@proton/pass/utils/fp/variadics';
 import { logger } from '@proton/pass/utils/logger';
-import { fullMerge, merge, objectFilter } from '@proton/pass/utils/object';
-import { isActiveVault, isOwnVault, isWritableVault } from '@proton/pass/utils/pass/share';
+import { objectFilter } from '@proton/pass/utils/object/filter';
+import { fullMerge, merge } from '@proton/pass/utils/object/merge';
 import { toMap } from '@proton/shared/lib/helpers/object';
-
-import { notification } from '../../actions';
-import type { FeatureFlagState, ItemsByShareId } from '../../reducers';
-import type { SharesState } from '../../reducers/shares';
-import { selectAllShares, selectItems } from '../../selectors';
-import type { State, WorkerRootSagaOptions } from '../../types';
-import { requestItemsForShareId } from './items';
-import { loadShare, requestShares } from './shares';
-import { createVault } from './vaults';
 
 export type SynchronizationResult = {
     shares: SharesState;
