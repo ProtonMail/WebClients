@@ -87,7 +87,10 @@ export type SaveSKLToLS = (
     isCatchall?: boolean
 ) => Promise<void>;
 
-export type KeyMigrationKTVerifier = (email: string) => Promise<void>;
+export type KeyMigrationKTVerifier = (
+    email: string,
+    signedKeyList: Partial<FetchedSignedKeyList> | null | undefined
+) => Promise<void>;
 
 export enum KeyTransparencyActivation {
     DISABLED,
