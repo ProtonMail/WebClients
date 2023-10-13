@@ -66,7 +66,6 @@ export const AliasNew: VFC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmi
         initialErrors: validateNewAliasForm(initialValues),
         onSubmit: ({ name, note, shareId, aliasPrefix, aliasSuffix, mailboxes }) => {
             if (needsUpgrade) return;
-            if (!userVerified) return;
 
             if (aliasPrefix !== undefined && aliasSuffix !== undefined) {
                 const optimisticId = uniqueId();
@@ -118,6 +117,7 @@ export const AliasNew: VFC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmi
                 form.setErrors(errors);
             } else form.resetForm({ values, errors });
         },
+        lazy: !userVerified,
     });
 
     const draft = useDraftSync<NewAliasFormValues>(form, {
@@ -182,6 +182,7 @@ export const AliasNew: VFC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmi
                                     autoFocus={!draft && didMount && !needsUpgrade}
                                     key={`alias-name-${didMount}`}
                                     maxLength={MAX_ITEM_NAME_LENGTH}
+                                    disabled={!userVerified}
                                 />
                             </FieldsetCluster>
 
@@ -209,6 +210,7 @@ export const AliasNew: VFC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmi
                                     component={TextAreaField}
                                     icon="note"
                                     maxLength={MAX_ITEM_NOTE_LENGTH}
+                                    disabled={!userVerified}
                                 />
                             </FieldsetCluster>
                         </Form>
