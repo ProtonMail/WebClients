@@ -6,12 +6,10 @@ import { Banner, InlineLinkButton, useApi } from '@proton/components';
 import { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
-import { generateAttendeeToken } from '@proton/shared/lib/calendar/attendees';
 import {
     EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
-import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { Address, UserSettings } from '@proton/shared/lib/interfaces';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
@@ -32,6 +30,7 @@ import {
     getInvitationHasEventID,
     getIsInvitationFromFuture,
     getIsInvitationOutdated,
+    getIsPartyCrasher,
     getIsProtonInvite,
     getIsReinvite,
 } from '../../../../helpers/calendar/invite';
@@ -193,20 +192,14 @@ const ExtraEvent = ({
                 if (supportedRecurrenceId) {
                     supportedInvitationIcs.vevent['recurrence-id'] = supportedRecurrenceId;
                 }
-                if (isOrganizerMode) {
-                    // after fetching the DB event we can determine party crasher status on organizer mode
-                    if (invitationApi) {
-                        isPartyCrasher = !invitationApi.attendee;
-                    } else if (calendarEvent) {
-                        // if we do not have invitationApi, it means we could not decrypt calendarEvent
-                        // we can resort to checking attendee tokens in this case, since those are clear text
-                        const senderToken = await generateAttendeeToken(
-                            canonicalizeEmailByGuess(message.data.Sender.Address),
-                            calendarEvent.UID
-                        );
-                        isPartyCrasher = !calendarEvent.Attendees.some(({ Token }) => Token === senderToken);
-                    }
-                }
+                isPartyCrasher = await getIsPartyCrasher({
+                    isOrganizerMode,
+                    invitationApi,
+                    calendarEvent,
+                    message,
+                    isPartyCrasherIcs,
+                });
+
                 if (isMounted()) {
                     setModel({
                         ...model,

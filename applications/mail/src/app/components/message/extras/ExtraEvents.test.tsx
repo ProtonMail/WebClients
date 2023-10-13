@@ -1,5 +1,4 @@
-import { waitFor } from '@testing-library/react';
-import { screen } from '@testing-library/react';
+import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { useCalendarUserSettings } from '@proton/components/hooks/useCalendarUserSettings';
@@ -17,7 +16,7 @@ import {
 } from '@proton/shared/lib/calendar/constants';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
-import { API_CODES, APPS } from '@proton/shared/lib/constants';
+import { ADDRESS_STATUS, API_CODES, APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces';
@@ -67,6 +66,8 @@ const nextYear = new Date().getFullYear() + 1;
 const dummyUserName = 'test';
 const dummyUserEmailAddress = 'test@pm.me';
 const dummySenderEmailAddress = 'sender@protonmail.com';
+const dummySenderExternalEmailAddress = 'sender@gmail.com';
+const dummyRecipientExternalEmailAddress = 'recipient@gmail.com';
 const dummyUserPrimaryAddressID = 'default-address-id';
 const dummyCalendarID = 'default-calendar-id';
 const dummyCalendarName = 'My calendar';
@@ -113,6 +114,39 @@ const dummySharedEventID = 'shared-event-id';
 const dummyPassphraseID = 'passphrase-id';
 const dummyFileName = 'invite.ics';
 
+const generateCalendars = (numberOfCalendars: number, disableCalendars = false) => {
+    const calendars: CalendarWithOwnMembers[] = [];
+
+    for (let i = 0; i < numberOfCalendars; i++) {
+        const calendar = {
+            ID: `${dummyCalendarID}-${i}`,
+            Name: `${dummyCalendarName}-${i}`,
+            Description: '',
+            Type: CALENDAR_TYPE.PERSONAL,
+            Owner: { Email: dummyUserEmailAddress },
+            Members: [
+                {
+                    ID: dummyMemberID,
+                    AddressID: dummyUserPrimaryAddressID,
+                    Flags: disableCalendars ? CALENDAR_FLAGS.SELF_DISABLED : CALENDAR_FLAGS.ACTIVE,
+                    Permissions: MEMBER_PERMISSIONS.OWNS,
+                    Email: dummyUserEmailAddress,
+                    CalendarID: `${dummyCalendarID}-${i}`,
+                    Color: ACCENT_COLORS[1],
+                    Display: CALENDAR_DISPLAY.HIDDEN,
+                    Name: dummyCalendarName,
+                    Description: '',
+                    Priority: 1,
+                },
+            ],
+        };
+
+        calendars.push(calendar);
+    }
+
+    return calendars;
+};
+
 let dummyAddressKey: GeneratedKey;
 let dummyCalendarKeysAndPassphrasePromise: ReturnType<typeof generateCalendarKeysAndPassphrase>;
 
@@ -134,6 +168,7 @@ const getSetup = async ({
     memberID = dummyMemberID,
     alternativeCalendarKeysAndPassphrasePromise,
     alternativeAddressKeyPromise,
+    userAddressEnabled = true,
 }: {
     userEmailAddress?: string;
     senderEmailAddress?: string;
@@ -152,6 +187,7 @@ const getSetup = async ({
     memberID?: string;
     alternativeCalendarKeysAndPassphrasePromise?: ReturnType<typeof generateCalendarKeysAndPassphrase>;
     alternativeAddressKeyPromise?: ReturnType<typeof generateAddressKeys>;
+    userAddressEnabled?: boolean;
 }) => {
     const addressKey = userAddressKey || dummyAddressKey;
     const alternativeAddressKey = await alternativeAddressKeyPromise;
@@ -260,7 +296,11 @@ const getSetup = async ({
 
     // mock address keys to encrypt ICS attachment
     minimalCache();
-    addAddressToCache({ ID: userPrimaryAddressID, Email: userEmailAddress });
+    addAddressToCache({
+        ID: userPrimaryAddressID,
+        Email: userEmailAddress,
+        Status: userAddressEnabled ? ADDRESS_STATUS.STATUS_ENABLED : ADDRESS_STATUS.STATUS_DISABLED,
+    });
     addKeysToAddressKeysCache(userPrimaryAddressID, addressKey);
 
     return {
@@ -303,213 +343,6 @@ describe('ICS widget', () => {
     });
 
     afterEach(clearAll);
-
-    it('should display the expected fields for the "new invitation" happy case', async () => {
-        // constants
-        const anotherEmailAddress = 'another@protonmail.ch';
-
-        const ics = `BEGIN:VCALENDAR
-PRODID:-//Proton AG//WebCalendar 4.6.1//EN
-VERSION:2.0
-METHOD:REQUEST
-CALSCALE:GREGORIAN
-BEGIN:VTIMEZONE
-TZID:Europe/Zurich
-LAST-MODIFIED:20210410T122212Z
-X-LIC-LOCATION:Europe/Zurich
-BEGIN:DAYLIGHT
-TZNAME:CEST
-TZOFFSETFROM:+0100
-TZOFFSETTO:+0200
-DTSTART:19700329T020000
-RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
-END:DAYLIGHT
-BEGIN:STANDARD
-TZNAME:CET
-TZOFFSETFROM:+0200
-TZOFFSETTO:+0100
-DTSTART:19701025T030000
-RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
-END:STANDARD
-END:VTIMEZONE
-BEGIN:VEVENT
-SEQUENCE:0
-STATUS:CONFIRMED
-SUMMARY:Walk on the moon
-UID:testUID@example.domain
-DESCRIPTION:Recommended by Matthieu
-DTSTART;TZID=Europe/Zurich:20211018T110000
-DTEND;TZID=Europe/Zurich:20211018T120000
-ORGANIZER;CN=${dummySenderEmailAddress}:mailto:${dummySenderEmailAddress}
-ATTENDEE;CN=TEST;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEEDS-ACTION;X-PM-
- TOKEN=8c1a8462577e2be791f3a0286436e89c70d428f7:mailto:${dummyUserEmailAddress}
-ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEEDS-ACTION;X-PM-TOKEN=32
- f76161336da5e2c44e4d58c40e5015bba1da9d:mailto:${anotherEmailAddress}
-DTSTAMP:20211013T144456Z
-X-PM-SHARED-EVENT-ID:CDr63-NYMQl8L_dbp9qzbaSXmb9e6L8shmaxZfF3hWz9vVD3FX0j4l
- kmct4zKnoOX7KgYBPbcZFccjIsD34lAZXTuO99T1XXd7WE8B36T7s=
-X-PM-SESSION-KEY:IAhhZBd+KXKPm95M2QRJK7WgGHovpnVdJZb2mMoiwMM=
-END:VEVENT
-END:VCALENDAR`;
-
-        const message = await getSetup({
-            attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
-            methodInMimeType: ICAL_METHOD.REQUEST,
-            userCalendarSettings: dummyCalendarUserSettings,
-        });
-        await render(<ExtraEvents message={message} />, false);
-
-        // test event title
-        await screen.findByText('Walk on the moon');
-
-        // test event date
-        /**
-         * The exact text displayed in the event date field depends on the timezone and locale of the
-         * machine that runs the code. So here we just check that the date header is present. See
-         * dedicated tests of the date header component for tests of the text displayed.
-         */
-        expect(screen.getByTestId('extra-event-date-header')).toBeInTheDocument();
-
-        // test event warning
-        expect(screen.getByText('Event already ended')).toBeInTheDocument();
-
-        // test link
-        expect(screen.queryByText(`Open in ${getAppName(APPS.PROTONCALENDAR)}`)).not.toBeInTheDocument();
-
-        // test buttons
-        expect(screen.getByText(/Attending?/)).toBeInTheDocument();
-        expect(screen.getByText(/Yes/, { selector: 'button' })).toBeInTheDocument();
-        expect(screen.getByText(/Maybe/, { selector: 'button' })).toBeInTheDocument();
-        expect(screen.getByText(/No/, { selector: 'button' })).toBeInTheDocument();
-
-        // test calendar
-        expect(screen.getByText(dummyCalendarName)).toBeInTheDocument();
-
-        // test organizer
-        expect(screen.getByText('Organizer:')).toBeInTheDocument();
-        const organizerElement = screen.getByTitle(dummySenderEmailAddress);
-        expect(organizerElement).toHaveAttribute('href', expect.stringMatching(`mailto:${dummySenderEmailAddress}`));
-        expect(organizerElement).toHaveTextContent(dummySenderEmailAddress);
-
-        // test collapsed attendees
-        const showAttendeesButton = screen.getByText('Show');
-        expect(screen.queryByText(new RegExp(dummyUserEmailAddress))).not.toBeInTheDocument();
-        await userEvent.click(showAttendeesButton);
-        expect(screen.getByText('Show less')).toBeInTheDocument();
-        expect(screen.getByText(new RegExp(anotherEmailAddress))).toBeInTheDocument();
-        const selfAttendeeElement = screen.getByTitle(`You <${dummyUserEmailAddress}>`);
-        expect(selfAttendeeElement).toHaveTextContent(`You <${dummyUserEmailAddress}>`);
-        expect(selfAttendeeElement).toHaveAttribute('href', expect.stringMatching(`mailto:${dummyUserEmailAddress}`));
-    });
-
-    it('should display the expected fields for the "already accepted invitation" happy case', async () => {
-        // constants
-        const dummyUID = 'testUID@example.domain';
-        const dummyToken = await generateAttendeeToken(canonicalizeInternalEmail(dummyUserEmailAddress), dummyUID);
-
-        const ics = `BEGIN:VCALENDAR
-PRODID:-//Proton AG//WebCalendar 4.5.0//EN
-VERSION:2.0
-METHOD:REQUEST
-CALSCALE:GREGORIAN
-BEGIN:VEVENT
-SEQUENCE:1
-STATUS:CONFIRMED
-SUMMARY:Walk on Mars
-UID:${dummyUID}
-DTSTART;VALUE=DATE:20210920
-ORGANIZER;CN=ORGO:mailto:${dummySenderEmailAddress}
-ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEEDS-ACTION;X-PM-TOKEN=${dummyToken}:mailto:${dummyUserEmailAddress}
-DTSTAMP:20210917T133417Z
-END:VEVENT
-END:VCALENDAR`;
-        const eventComponent: VcalVeventComponent = {
-            component: 'vevent',
-            uid: { value: dummyUID },
-            sequence: { value: 1 },
-            dtstart: {
-                value: { year: 2021, month: 9, day: 20 },
-                parameters: { type: 'date' },
-            },
-            dtstamp: {
-                value: { year: 2021, month: 9, day: 17, hours: 13, minutes: 34, seconds: 17, isUTC: true },
-            },
-            organizer: {
-                value: `mailto:${dummySenderEmailAddress}`,
-                parameters: {
-                    cn: 'ORGO',
-                },
-            },
-            attendee: [
-                {
-                    value: `mailto:${dummyUserEmailAddress}`,
-                    parameters: {
-                        'x-pm-token': dummyToken,
-                        partstat: ICAL_ATTENDEE_STATUS.ACCEPTED,
-                        rsvp: ICAL_ATTENDEE_RSVP.TRUE,
-                    },
-                },
-            ],
-        };
-
-        const message = await getSetup({
-            attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
-            methodInMimeType: ICAL_METHOD.REQUEST,
-            veventsApi: [eventComponent],
-            eventCalendarID: dummyCalendarID,
-        });
-        await render(<ExtraEvents message={message} />, false);
-
-        // test event title
-        await screen.findByText('Walk on Mars');
-
-        // test event warning
-        expect(screen.getByText('Event already ended')).toBeInTheDocument();
-
-        // test link
-        expect(screen.getByText(`Open in ${getAppName(APPS.PROTONCALENDAR)}`)).toBeInTheDocument();
-
-        // test buttons
-        expect(screen.getByText('Attending?')).toBeInTheDocument();
-        expect(screen.getByTitle('Change my answer')).toHaveTextContent("Yes, I'll attend");
-
-        // test summary
-        expect(screen.getByText(/You already accepted this invitation./)).toBeInTheDocument();
-    });
-
-    it('should show the correct UI for an unsupported ics with import PUBLISH', async () => {
-        // constants
-        const dummyUID = 'testUID@example.domain';
-        const dummyToken = await generateAttendeeToken(canonicalizeInternalEmail(dummyUserEmailAddress), dummyUID);
-
-        // ics with unsupported time zone
-        const ics = `BEGIN:VCALENDAR
-PRODID:-//Proton AG//WebCalendar 4.5.0//EN
-VERSION:2.0
-METHOD:PUBLISH
-CALSCALE:GREGORIAN
-BEGIN:VEVENT
-SEQUENCE:1
-STATUS:CONFIRMED
-SUMMARY:Walk on Mars
-UID:${dummyUID}
-DTSTART;TZID=Mars/Olympus:20220310T114500
-ORGANIZER;CN=ORGO:mailto:${dummySenderEmailAddress}
-ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEEDS-ACTION;X-PM-TOKEN=${dummyToken}:mailto:${dummyUserEmailAddress}
-DTSTAMP:20210917T133417Z
-END:VEVENT
-END:VCALENDAR`;
-
-        const message = await getSetup({
-            attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
-            veventsApi: [],
-            eventCalendarID: dummyCalendarID,
-        });
-        await render(<ExtraEvents message={message} />, false);
-
-        expect(screen.queryByTestId('ics-widget-summary')).not.toBeInTheDocument();
-        await screen.findByText('Unsupported event');
-    });
 
     it('should not duplicate error banners', async () => {
         // constants
@@ -651,7 +484,9 @@ END:VCALENDAR`;
             await render(<ExtraEvents message={message} />, false);
 
             expect(
-                await screen.findByText(`${dummySenderEmailAddress} accepted your invitation and proposed a new time for this event.`)
+                await screen.findByText(
+                    `${dummySenderEmailAddress} accepted your invitation and proposed a new time for this event.`
+                )
             ).toBeInTheDocument();
         });
 
@@ -688,7 +523,9 @@ END:VCALENDAR`;
             await render(<ExtraEvents message={message} />, false);
 
             expect(
-                await screen.findByText(/This response is out of date. The event does not exist in your calendar anymore./)
+                await screen.findByText(
+                    /This response is out of date. The event does not exist in your calendar anymore./
+                )
             ).toBeInTheDocument();
         });
 
@@ -754,7 +591,9 @@ END:VCALENDAR`;
             await render(<ExtraEvents message={message} />, false);
 
             expect(
-                await screen.findByText(`${dummySenderEmailAddress} asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.`)
+                await screen.findByText(
+                    `${dummySenderEmailAddress} asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.`
+                )
             ).toBeInTheDocument();
         });
 
@@ -826,6 +665,185 @@ END:VCALENDAR`;
     });
 
     describe('attendee mode', () => {
+        it('should display the expected fields for the "new invitation" happy case', async () => {
+            // constants
+            const anotherEmailAddress = 'another@protonmail.ch';
+
+            const ics = `BEGIN:VCALENDAR
+PRODID:-//Proton AG//WebCalendar 4.6.1//EN
+VERSION:2.0
+METHOD:REQUEST
+CALSCALE:GREGORIAN
+BEGIN:VTIMEZONE
+TZID:Europe/Zurich
+LAST-MODIFIED:20210410T122212Z
+X-LIC-LOCATION:Europe/Zurich
+BEGIN:DAYLIGHT
+TZNAME:CEST
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZNAME:CET
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Walk on the moon
+UID:testUID@example.domain
+DESCRIPTION:Recommended by Matthieu
+DTSTART;TZID=Europe/Zurich:20211018T110000
+DTEND;TZID=Europe/Zurich:20211018T120000
+ORGANIZER;CN=${dummySenderEmailAddress}:mailto:${dummySenderEmailAddress}
+ATTENDEE;CN=TEST;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEEDS-ACTION;X-PM-
+ TOKEN=8c1a8462577e2be791f3a0286436e89c70d428f7:mailto:${dummyUserEmailAddress}
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEEDS-ACTION;X-PM-TOKEN=32
+ f76161336da5e2c44e4d58c40e5015bba1da9d:mailto:${anotherEmailAddress}
+DTSTAMP:20211013T144456Z
+X-PM-SHARED-EVENT-ID:CDr63-NYMQl8L_dbp9qzbaSXmb9e6L8shmaxZfF3hWz9vVD3FX0j4l
+ kmct4zKnoOX7KgYBPbcZFccjIsD34lAZXTuO99T1XXd7WE8B36T7s=
+X-PM-SESSION-KEY:IAhhZBd+KXKPm95M2QRJK7WgGHovpnVdJZb2mMoiwMM=
+END:VEVENT
+END:VCALENDAR`;
+
+            const message = await getSetup({
+                attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
+                methodInMimeType: ICAL_METHOD.REQUEST,
+                userCalendarSettings: dummyCalendarUserSettings,
+            });
+            await render(<ExtraEvents message={message} />, false);
+
+            // test event title
+            await screen.findByText('Walk on the moon');
+
+            // test event date
+            /**
+             * The exact text displayed in the event date field depends on the timezone and locale of the
+             * machine that runs the code. So here we just check that the date header is present. See
+             * dedicated tests of the date header component for tests of the text displayed.
+             */
+            expect(screen.getByTestId('extra-event-date-header')).toBeInTheDocument();
+
+            // test event warning
+            expect(screen.getByText('Event already ended')).toBeInTheDocument();
+
+            // test link
+            expect(screen.queryByText(`Open in ${getAppName(APPS.PROTONCALENDAR)}`)).not.toBeInTheDocument();
+
+            // test buttons
+            expect(screen.getByText(/Attending?/)).toBeInTheDocument();
+            expect(screen.getByText(/Yes/, { selector: 'button' })).toBeInTheDocument();
+            expect(screen.getByText(/Maybe/, { selector: 'button' })).toBeInTheDocument();
+            expect(screen.getByText(/No/, { selector: 'button' })).toBeInTheDocument();
+
+            // test calendar
+            expect(screen.getByText(dummyCalendarName)).toBeInTheDocument();
+
+            // test organizer
+            expect(screen.getByText('Organizer:')).toBeInTheDocument();
+            const organizerElement = screen.getByTitle(dummySenderEmailAddress);
+            expect(organizerElement).toHaveAttribute(
+                'href',
+                expect.stringMatching(`mailto:${dummySenderEmailAddress}`)
+            );
+            expect(organizerElement).toHaveTextContent(dummySenderEmailAddress);
+
+            // test collapsed attendees
+            const showAttendeesButton = screen.getByText('Show');
+            expect(screen.queryByText(new RegExp(dummyUserEmailAddress))).not.toBeInTheDocument();
+            await userEvent.click(showAttendeesButton);
+            expect(screen.getByText('Show less')).toBeInTheDocument();
+            expect(screen.getByText(new RegExp(anotherEmailAddress))).toBeInTheDocument();
+            const selfAttendeeElement = screen.getByTitle(`You <${dummyUserEmailAddress}>`);
+            expect(selfAttendeeElement).toHaveTextContent(`You <${dummyUserEmailAddress}>`);
+            expect(selfAttendeeElement).toHaveAttribute(
+                'href',
+                expect.stringMatching(`mailto:${dummyUserEmailAddress}`)
+            );
+        });
+
+        it('should display the expected fields for the "already accepted invitation" happy case', async () => {
+            // constants
+            const dummyUID = 'testUID@example.domain';
+            const dummyToken = await generateAttendeeToken(canonicalizeInternalEmail(dummyUserEmailAddress), dummyUID);
+
+            const ics = `BEGIN:VCALENDAR
+PRODID:-//Proton AG//WebCalendar 4.5.0//EN
+VERSION:2.0
+METHOD:REQUEST
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Walk on Mars
+UID:${dummyUID}
+DTSTART;VALUE=DATE:20210920
+ORGANIZER;CN=ORGO:mailto:${dummySenderEmailAddress}
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEEDS-ACTION;X-PM-TOKEN=${dummyToken}:mailto:${dummyUserEmailAddress}
+DTSTAMP:20210917T133417Z
+END:VEVENT
+END:VCALENDAR`;
+            const eventComponent: VcalVeventComponent = {
+                component: 'vevent',
+                uid: { value: dummyUID },
+                sequence: { value: 1 },
+                dtstart: {
+                    value: { year: 2021, month: 9, day: 20 },
+                    parameters: { type: 'date' },
+                },
+                dtstamp: {
+                    value: { year: 2021, month: 9, day: 17, hours: 13, minutes: 34, seconds: 17, isUTC: true },
+                },
+                organizer: {
+                    value: `mailto:${dummySenderEmailAddress}`,
+                    parameters: {
+                        cn: 'ORGO',
+                    },
+                },
+                attendee: [
+                    {
+                        value: `mailto:${dummyUserEmailAddress}`,
+                        parameters: {
+                            'x-pm-token': dummyToken,
+                            partstat: ICAL_ATTENDEE_STATUS.ACCEPTED,
+                            rsvp: ICAL_ATTENDEE_RSVP.TRUE,
+                        },
+                    },
+                ],
+            };
+
+            const message = await getSetup({
+                attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
+                methodInMimeType: ICAL_METHOD.REQUEST,
+                veventsApi: [eventComponent],
+                eventCalendarID: dummyCalendarID,
+            });
+            await render(<ExtraEvents message={message} />, false);
+
+            // test event title
+            await screen.findByText('Walk on Mars');
+
+            // test event warning
+            expect(screen.getByText('Event already ended')).toBeInTheDocument();
+
+            // test link
+            expect(screen.getByText(`Open in ${getAppName(APPS.PROTONCALENDAR)}`)).toBeInTheDocument();
+
+            // test buttons
+            expect(screen.getByText('Attending?')).toBeInTheDocument();
+            expect(screen.getByTitle('Change my answer')).toHaveTextContent("Yes, I'll attend");
+
+            // test summary
+            expect(screen.getByText(/You already accepted this invitation./)).toBeInTheDocument();
+        });
+
         it('shows the correct UI for an outdated invitation', async () => {
             const dummyUID = 'testUID@example.domain';
             const dummyToken = await generateAttendeeToken(canonicalizeInternalEmail(dummyUserEmailAddress), dummyUID);
@@ -1041,6 +1059,40 @@ END:VCALENDAR`;
             await waitFor(() => expect(screen.queryByTestId('ics-widget-summary')).not.toBeInTheDocument());
         });
 
+        it('should show the correct UI for an unsupported ics with import PUBLISH', async () => {
+            // constants
+            const dummyUID = 'testUID@example.domain';
+            const dummyToken = await generateAttendeeToken(canonicalizeInternalEmail(dummyUserEmailAddress), dummyUID);
+
+            // ics with unsupported time zone
+            const ics = `BEGIN:VCALENDAR
+PRODID:-//Proton AG//WebCalendar 4.5.0//EN
+VERSION:2.0
+METHOD:PUBLISH
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Walk on Mars
+UID:${dummyUID}
+DTSTART;TZID=Mars/Olympus:20220310T114500
+ORGANIZER;CN=ORGO:mailto:${dummySenderEmailAddress}
+ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEEDS-ACTION;X-PM-TOKEN=${dummyToken}:mailto:${dummyUserEmailAddress}
+DTSTAMP:20210917T133417Z
+END:VEVENT
+END:VCALENDAR`;
+
+            const message = await getSetup({
+                attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
+                veventsApi: [],
+                eventCalendarID: dummyCalendarID,
+            });
+            await render(<ExtraEvents message={message} />, false);
+
+            expect(screen.queryByTestId('ics-widget-summary')).not.toBeInTheDocument();
+            await screen.findByText('Unsupported event');
+        });
+
         it('should show the correct UI for a supported ics with import PUBLISH', async () => {
             // constants
             const dummyUID = 'testUID@example.domain';
@@ -1072,6 +1124,305 @@ END:VCALENDAR`;
             await render(<ExtraEvents message={message} />, false);
 
             expect(screen.queryByTestId('ics-widget-summary')).not.toBeInTheDocument();
+        });
+
+        describe('Party crasher ICS widget', () => {
+            describe('Internal organizer', () => {
+                it('should not be possible to accept the event when the attendee is a party crasher and the organizer is internal', async () => {
+                    const ics = `BEGIN:VCALENDAR
+PRODID:-//Proton AG//WebCalendar 4.5.0//EN
+VERSION:2.0
+METHOD:REQUEST
+CALSCALE:GREGORIAN
+BEGIN:VTIMEZONE
+TZID:Europe/Zurich
+LAST-MODIFIED:20210410T122212Z
+X-LIC-LOCATION:Europe/Zurich
+BEGIN:DAYLIGHT
+TZNAME:CEST
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZNAME:CET
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Walk on the moon
+UID:testUID@proton.me
+DESCRIPTION:Recommended by Matthieu
+DTSTART;TZID=Europe/Zurich:20211018T110000
+DTEND;TZID=Europe/Zurich:20211018T120000
+ORGANIZER;CN=${dummySenderEmailAddress}:mailto:${dummySenderEmailAddress}
+ATTENDEE;CN=${dummyRecipientExternalEmailAddress};ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=ACCEPTED:mailto:${dummyRecipientExternalEmailAddress}
+END:VEVENT
+END:VCALENDAR`;
+
+                    // dummySenderEmailAddress sends an invitation to dummyRecipientExternalEmailAddress
+                    // Then dummyRecipientExternalEmailAddress forwards the invite to dummyUserEmailAddress.
+                    // => dummyUserEmailAddress is now a party crasher
+                    const message = await getSetup({
+                        attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
+                        methodInMimeType: ICAL_METHOD.REQUEST,
+                        userCalendarSettings: dummyCalendarUserSettings,
+                        senderEmailAddress: dummyRecipientExternalEmailAddress,
+                    });
+                    await render(<ExtraEvents message={message} />, false);
+                    // Alert is displayed
+                    expect(
+                        await screen.findByText(
+                            `You cannot respond to ${BRAND_NAME} invites if you're not on the participants list at the moment.`
+                        )
+                    ).toBeInTheDocument();
+
+                    // test buttons
+                    expect(screen.queryByText(/Attending?/)).not.toBeInTheDocument();
+                    expect(screen.queryByText(/Yes/, { selector: 'button' })).not.toBeInTheDocument();
+                    expect(screen.queryByText(/Maybe/, { selector: 'button' })).not.toBeInTheDocument();
+                    expect(screen.queryByText(/No/, { selector: 'button' })).not.toBeInTheDocument();
+                });
+            });
+
+            describe('External organizer', () => {
+                const partyCrasherExternalICS = `BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+METHOD:REQUEST
+CALSCALE:GREGORIAN
+BEGIN:VTIMEZONE
+TZID:Europe/Zurich
+LAST-MODIFIED:20210410T122212Z
+X-LIC-LOCATION:Europe/Zurich
+BEGIN:DAYLIGHT
+TZNAME:CEST
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZNAME:CET
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Walk on the moon
+UID:testUID@example.domain
+DESCRIPTION:Recommended by Matthieu
+DTSTART;TZID=Europe/Zurich:20211018T110000
+DTEND;TZID=Europe/Zurich:20211018T120000
+ORGANIZER;CN=${dummySenderExternalEmailAddress}:mailto:${dummySenderExternalEmailAddress}
+ATTENDEE;CN=${dummyRecipientExternalEmailAddress};ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=ACCEPTED:mailto:${dummyRecipientExternalEmailAddress}
+END:VEVENT
+END:VCALENDAR`;
+                it('should be possible to accept the event when the attendee is a party crasher and the organizer is external', async () => {
+                    // dummySenderExternalEmailAddress sends an invitation to dummyRecipientExternalEmailAddress
+                    // Then dummyRecipientExternalEmailAddress forwards the invite to dummyUserEmailAddress.
+                    // => dummyUserEmailAddress is now a party crasher
+                    const message = await getSetup({
+                        attachments: [
+                            { attachmentID: dummyAttachmentID, filename: dummyFileName, ics: partyCrasherExternalICS },
+                        ],
+                        methodInMimeType: ICAL_METHOD.REQUEST,
+                        userCalendarSettings: dummyCalendarUserSettings,
+                        senderEmailAddress: dummyRecipientExternalEmailAddress,
+                    });
+                    await render(<ExtraEvents message={message} />, false);
+                    // Alert is displayed
+                    expect(
+                        await screen.findByText('Your email address is not in the original participants list.')
+                    ).toBeInTheDocument();
+
+                    // test buttons
+                    expect(screen.getByText(/Attending?/)).toBeInTheDocument();
+                    expect(screen.getByText(/Yes/, { selector: 'button' })).toBeInTheDocument();
+                    expect(screen.getByText(/Maybe/, { selector: 'button' })).toBeInTheDocument();
+                    expect(screen.getByText(/No/, { selector: 'button' })).toBeInTheDocument();
+                });
+
+                it('should show widget when the attendee is a party crasher which accepted the invite, and the organizer is external', async () => {
+                    const dummyUID = 'testUID@example.domain';
+                    const dummyToken = await generateAttendeeToken(
+                        canonicalizeInternalEmail(dummyUserEmailAddress),
+                        dummyUID
+                    );
+
+                    const ics = `BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+METHOD:REQUEST
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20210920
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Walk on the moon
+UID:${dummyUID}
+DESCRIPTION:Recommended by Matthieu
+ORGANIZER;CN=${dummySenderExternalEmailAddress}:mailto:${dummySenderExternalEmailAddress}
+ATTENDEE;CN=${dummyRecipientExternalEmailAddress};ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=ACCEPTED:mailto:${dummyRecipientExternalEmailAddress}
+DTSTAMP:20210917T133417Z
+END:VEVENT
+END:VCALENDAR`;
+
+                    const eventComponent: VcalVeventComponent = {
+                        component: 'vevent',
+                        uid: { value: dummyUID },
+                        sequence: { value: 1 },
+                        dtstart: {
+                            value: { year: 2021, month: 9, day: 20 },
+                            parameters: { type: 'date' },
+                        },
+                        dtstamp: {
+                            value: { year: 2021, month: 9, day: 17, hours: 13, minutes: 34, seconds: 17, isUTC: true },
+                        },
+                        organizer: {
+                            value: `mailto:${dummySenderExternalEmailAddress}`,
+                            parameters: {
+                                cn: 'ORGO',
+                            },
+                        },
+                        attendee: [
+                            {
+                                value: `mailto:${dummyRecipientExternalEmailAddress}`,
+                                parameters: {
+                                    partstat: ICAL_ATTENDEE_STATUS.ACCEPTED,
+                                    rsvp: ICAL_ATTENDEE_RSVP.TRUE,
+                                },
+                            },
+                            {
+                                value: `mailto:${dummyUserEmailAddress}`,
+                                parameters: {
+                                    'x-pm-token': dummyToken,
+                                    partstat: ICAL_ATTENDEE_STATUS.ACCEPTED,
+                                    rsvp: ICAL_ATTENDEE_RSVP.TRUE,
+                                },
+                            },
+                        ],
+                    };
+
+                    // dummySenderExternalEmailAddress sends an invitation to dummyRecipientExternalEmailAddress
+                    // Then dummyRecipientExternalEmailAddress forwards the invite to dummyUserEmailAddress.
+                    // => dummyUserEmailAddress is now a party crasher, and he accepted the invite.
+                    const message = await getSetup({
+                        attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
+                        methodInMimeType: ICAL_METHOD.REQUEST,
+                        userCalendarSettings: dummyCalendarUserSettings,
+                        senderEmailAddress: dummyRecipientExternalEmailAddress,
+                        veventsApi: [eventComponent],
+                    });
+                    await render(<ExtraEvents message={message} />, false);
+
+                    await screen.findByText('Walk on the moon');
+
+                    // Alert is displayed
+                    expect(
+                        screen.getByText('Your email address is not in the original participants list.')
+                    ).toBeInTheDocument();
+
+                    // test buttons
+                    expect(screen.getByText(/Attending?/)).toBeInTheDocument();
+                    expect(screen.getByTitle('Change my answer')).toHaveTextContent("Yes, I'll attend");
+                });
+
+                it('should show widget when the attendee is a party crasher with disabled address, and organizer is external', async () => {
+                    // dummySenderExternalEmailAddress sends an invitation to dummyRecipientExternalEmailAddress
+                    // Then dummyRecipientExternalEmailAddress forwards the invite to dummyUserEmailAddress.
+                    // => dummyUserEmailAddress is now a party crasher
+                    const message = await getSetup({
+                        attachments: [
+                            { attachmentID: dummyAttachmentID, filename: dummyFileName, ics: partyCrasherExternalICS },
+                        ],
+                        methodInMimeType: ICAL_METHOD.REQUEST,
+                        userCalendarSettings: dummyCalendarUserSettings,
+                        senderEmailAddress: dummyRecipientExternalEmailAddress,
+                        userAddressEnabled: false,
+                    });
+                    await render(<ExtraEvents message={message} />, false);
+                    // Alert is displayed
+                    expect(await screen.findByText('You cannot reply from the invited address.')).toBeInTheDocument();
+
+                    // test buttons
+                    expect(screen.queryByText(/Attending?/)).not.toBeInTheDocument();
+                    expect(screen.queryByText(/Yes/, { selector: 'button' })).not.toBeInTheDocument();
+                    expect(screen.queryByText(/Maybe/, { selector: 'button' })).not.toBeInTheDocument();
+                    expect(screen.queryByText(/No/, { selector: 'button' })).not.toBeInTheDocument();
+                });
+
+                it('should show widget when the attendee is a party crasher with disabled calendars, and organizer is external', async () => {
+                    // dummySenderExternalEmailAddress sends an invitation to dummyRecipientExternalEmailAddress
+                    // Then dummyRecipientExternalEmailAddress forwards the invite to dummyUserEmailAddress.
+                    // => dummyUserEmailAddress is now a party crasher
+                    const message = await getSetup({
+                        attachments: [
+                            { attachmentID: dummyAttachmentID, filename: dummyFileName, ics: partyCrasherExternalICS },
+                        ],
+                        methodInMimeType: ICAL_METHOD.REQUEST,
+                        userCalendarSettings: dummyCalendarUserSettings,
+                        senderEmailAddress: dummyRecipientExternalEmailAddress,
+                        defaultCalendarID: 'calendar-key-id-0',
+                        userCalendars: generateCalendars(2, true),
+                    });
+                    await render(<ExtraEvents message={message} />, false);
+                    // Alert is displayed
+                    expect(await screen.findByText('All your calendars are disabled.')).toBeInTheDocument();
+                    expect(
+                        await screen.findByText('Create a calendar linked to an active email address.')
+                    ).toBeInTheDocument();
+
+                    // test buttons
+                    expect(screen.getByText(/Attending?/)).toBeInTheDocument();
+                    expect(screen.getByText(/Yes/, { selector: 'button' })).toBeInTheDocument();
+                    expect(screen.getByText(/Maybe/, { selector: 'button' })).toBeInTheDocument();
+                    expect(screen.getByText(/No/, { selector: 'button' })).toBeInTheDocument();
+                });
+
+                it('should show widget when the attendee is a party crasher with disabled calendars, calendar limit reached, and organizer is external', async () => {
+                    // dummySenderExternalEmailAddress sends an invitation to dummyRecipientExternalEmailAddress
+                    // Then dummyRecipientExternalEmailAddress forwards the invite to dummyUserEmailAddress.
+                    // => dummyUserEmailAddress is now a party crasher
+                    const message = await getSetup({
+                        attachments: [
+                            { attachmentID: dummyAttachmentID, filename: dummyFileName, ics: partyCrasherExternalICS },
+                        ],
+                        methodInMimeType: ICAL_METHOD.REQUEST,
+                        userCalendarSettings: dummyCalendarUserSettings,
+                        senderEmailAddress: dummyRecipientExternalEmailAddress,
+                        defaultCalendarID: 'calendar-key-id-0',
+                        userCalendars: generateCalendars(25, true),
+                    });
+                    await render(<ExtraEvents message={message} />, false);
+                    // Alert is displayed
+                    expect(await screen.findByText('All your calendars are disabled.')).toBeInTheDocument();
+                    expect(
+                        await screen.findByText('Enable an email address linked to one of your calendars.')
+                    ).toBeInTheDocument();
+                    expect(
+                        await screen.findByText(
+                            'Or you can delete one of your calendars and create a new one linked to an active email address.'
+                        )
+                    ).toBeInTheDocument();
+
+                    // test buttons
+                    expect(screen.getByText(/Attending?/)).toBeInTheDocument();
+                    expect(screen.getByText(/Yes/, { selector: 'button' })).toBeInTheDocument();
+                    expect(screen.getByText(/Maybe/, { selector: 'button' })).toBeInTheDocument();
+                    expect(screen.getByText(/No/, { selector: 'button' })).toBeInTheDocument();
+                });
+            });
         });
     });
 });
