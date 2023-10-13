@@ -24,6 +24,8 @@ export const MESSAGE_FLAGS = {
     FLAG_PHISHING_AUTO: Math.pow(2, 30), // Incoming mail is marked as phishing by anti-spam filters.
     FLAG_FROZEN_EXPIRATION: JSBI.BigInt(Math.pow(2, 32)), // Messages where the expiration time cannot be changed
     FLAG_SUSPICIOUS: JSBI.BigInt(Math.pow(2, 33)), // System flagged this message as a suspicious email
+    FLAG_AUTO_FORWARDER: JSBI.BigInt(Math.pow(2, 34)), // Message is auto-forwarded
+    FLAG_AUTO_FORWARDEE: JSBI.BigInt(Math.pow(2, 35)), // Message is auto-forwarded
 };
 
 export enum VERIFICATION_STATUS {

@@ -153,6 +153,7 @@ export const useInitializeMessage = () => {
                         messageVerification: message.verification,
                         getAttachment,
                         onUpdateAttachment,
+                        messageFlags: message.data.Flags,
                     })
                 ) as any as Promise<PayloadAction<LoadEmbeddedResults, string, { arg: LoadEmbeddedParams }>>;
                 const { payload } = await dispatchResult;

@@ -35,6 +35,7 @@ export interface KeyStatus {
     isObsolete: boolean;
     isLoading: boolean;
     isWeak: boolean;
+    isForwarding: boolean;
 }
 
 export interface KeyDisplay {

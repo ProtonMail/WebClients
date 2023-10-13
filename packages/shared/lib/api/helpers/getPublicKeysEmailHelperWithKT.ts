@@ -31,7 +31,7 @@ const getExternalKeys = (keys: ProcessedApiAddressKey[]) => {
     return keys.filter(({ source }) => source !== ApiAddressKeySource.PROTON);
 };
 
-const castKeys = (keys: ProcessedApiAddressKey[]): ProcessedApiKey[] => {
+export const castKeys = (keys: ProcessedApiAddressKey[]): ProcessedApiKey[] => {
     return keys.map(({ armoredPublicKey, flags, publicKeyRef }) => {
         return { armoredKey: armoredPublicKey, flags, publicKey: publicKeyRef };
     });
@@ -49,7 +49,14 @@ const getPublicKeysEmailHelperWithKT = async (
 ): Promise<ApiKeysConfig> => {
     try {
         const { addressKeys, catchAllKeys, unverifiedKeys, addressKTResult, catchAllKTResult, ...rest } =
-            await getAndVerifyApiKeys(api, Email, true, verifyOutboundPublicKeys, silence, noCache);
+            await getAndVerifyApiKeys({
+                api,
+                Email,
+                keysIntendedForEmail: true,
+                verifyOutboundPublicKeys,
+                silence,
+                noCache,
+            });
 
         // First we use verified internal address keys
         const mailCapableAddressKeys = addressKeys.filter((key) => supportsMail(key.flags));

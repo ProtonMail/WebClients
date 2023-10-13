@@ -12,7 +12,13 @@ import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { Address } from '@proton/shared/lib/interfaces';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
-import { getDate, getParsedHeadersFirstValue, getSender, isMIME } from '@proton/shared/lib/mail/messages';
+import {
+    getDate,
+    getParsedHeadersFirstValue,
+    getSender,
+    isAutoForwardee,
+    isMIME,
+} from '@proton/shared/lib/mail/messages';
 
 import { MessageErrors } from '../../logic/messages/messagesTypes';
 import { convert } from '../attachment/attachmentConverter';
@@ -121,6 +127,9 @@ const decryptLegacyMessage = async (
                 decryptionKeys: privateKeys,
                 verificationKeys: [],
                 format: 'binary',
+                config: {
+                    allowForwardedMessages: isAutoForwardee(message),
+                },
             });
         } else {
             result = await CryptoProxy.decryptMessageLegacy({

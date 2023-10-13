@@ -45,14 +45,21 @@ const importKeys = (keys: ApiAddressKey[]): Promise<ProcessedApiAddressKey[]> =>
     );
 };
 
-export const getAndVerifyApiKeys = async (
-    api: Api,
-    Email: string,
-    keysIntendedForEmail: boolean,
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys,
+export const getAndVerifyApiKeys = async ({
+    api,
+    Email,
+    keysIntendedForEmail,
+    verifyOutboundPublicKeys,
     silence = false,
-    noCache = false
-): Promise<ApiKeysWithKTStatus> => {
+    noCache = false,
+}: {
+    api: Api;
+    Email: string;
+    keysIntendedForEmail: boolean;
+    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
+    silence?: boolean;
+    noCache?: boolean;
+}): Promise<ApiKeysWithKTStatus> => {
     const config: any = { ...getAllPublicKeys({ Email, InternalOnly: keysIntendedForEmail ? 0 : 1 }), silence };
     if (noCache) {
         config.cache = 'no-cache';

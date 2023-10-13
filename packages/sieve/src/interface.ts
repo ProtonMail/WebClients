@@ -149,3 +149,20 @@ export interface MainNodeType {
         Type: string;
     };
 }
+
+export type SieveBranch =
+    | {
+          List: string[];
+          Type: string;
+      }
+    | {
+          Name: string;
+          Value: string;
+          Flags: never[];
+          Type: string;
+      }
+    | {
+          Text: string;
+          Type: string;
+      }
+    | ItType;

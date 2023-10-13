@@ -54,6 +54,7 @@ export interface EncryptionPreferences {
     error?: EncryptionPreferencesError;
     emailAddressWarnings?: string[];
     ktVerificationResult?: KeyTransparencyVerificationResult;
+    encryptionDisabled?: boolean;
 }
 
 const extractEncryptionPreferencesOwnAddress = (
@@ -329,8 +330,10 @@ const extractEncryptionPreferencesExternalWithoutWKDKeys = (publicKeyModel: Publ
         emailAddressWarnings,
         emailAddressErrors,
         ktVerificationResult,
+        disabledEncryptionFingerprints,
     } = publicKeyModel;
     const hasPinnedKeys = !!pinnedKeys.length;
+    const encryptionDisabled = apiKeys.every((key) => disabledEncryptionFingerprints.has(key.getFingerprint()));
     const result = {
         encrypt,
         sign,
@@ -347,6 +350,7 @@ const extractEncryptionPreferencesExternalWithoutWKDKeys = (publicKeyModel: Publ
         contactSignatureTimestamp,
         emailAddressWarnings,
         ktVerificationResult,
+        encryptionDisabled,
     };
     if (emailAddressErrors?.length) {
         const errorString = emailAddressErrors[0];
