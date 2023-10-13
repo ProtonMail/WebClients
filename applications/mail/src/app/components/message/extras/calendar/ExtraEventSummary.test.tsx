@@ -42,6 +42,7 @@ function renderComponent({
         isImport: false,
         isOrganizerMode: false,
         hasMultipleVevents: false,
+        hasProtonUID: true,
         timeStatus: EVENT_TIME_STATUS.FUTURE,
         isAddressActive: true,
         isAddressDisabled: false,
