@@ -179,16 +179,24 @@ export default function useActions() {
 
     const moveLinks = async (
         abortSignal: AbortSignal,
-        shareId: string,
-        linksToMove: LinkInfo[],
-        newParentLinkId: string
+        {
+            shareId,
+            linksToMove,
+            newParentLinkId,
+            newShareId,
+        }: {
+            shareId: string;
+            linksToMove: LinkInfo[];
+            newParentLinkId: string;
+            newShareId?: string;
+        }
     ) => {
         if (!linksToMove.length) {
             return;
         }
 
         const linkIds = linksToMove.map(({ linkId }) => linkId);
-        const result = await links.moveLinks(abortSignal, shareId, linkIds, newParentLinkId);
+        const result = await links.moveLinks(abortSignal, { shareId, linkIds, newParentLinkId, newShareId });
 
         // This is a bit ugly, but the photo linkId cache is not connected
         // very well to the rest of our state.
@@ -206,7 +214,12 @@ export default function useActions() {
             const undoResult = aggregateResults(
                 await Promise.all(
                     Object.entries(linkIdsPerParentId).map(async ([parentLinkId, toMoveBackIds]) => {
-                        return links.moveLinks(abortSignal, shareId, toMoveBackIds, parentLinkId);
+                        return links.moveLinks(abortSignal, {
+                            shareId,
+                            linkIds: toMoveBackIds,
+                            newParentLinkId: parentLinkId,
+                            newShareId,
+                        });
                     })
                 )
             );
