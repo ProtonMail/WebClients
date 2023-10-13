@@ -7,15 +7,15 @@ import type { EventCursor, EventManagerEvent } from '@proton/pass/lib/events/man
 import { getUserPlan } from '@proton/pass/lib/user/user.requests';
 import { setUserPlan, syncIntent, userEvent } from '@proton/pass/store/actions';
 import type { UserPlanState } from '@proton/pass/store/reducers';
-import { selectAllAddresses, selectLatestEventId } from '@proton/pass/store/selectors';
+import { selectAllAddresses, selectLatestEventId, selectUserSettings } from '@proton/pass/store/selectors';
 import type { State, WorkerRootSagaOptions } from '@proton/pass/store/types';
-import type { UserEvent } from '@proton/pass/types';
+import type { MaybeNull, UserEvent } from '@proton/pass/types';
 import { type Api } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { notIn } from '@proton/pass/utils/fp/predicates';
 import { logId, logger } from '@proton/pass/utils/logger';
 import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
-import type { Address } from '@proton/shared/lib/interfaces';
+import type { Address, UserSettings } from '@proton/shared/lib/interfaces';
 
 import { eventChannelFactory } from './channel.factory';
 import { channelEventsWorker, channelWakeupWorker } from './channel.worker';
@@ -24,14 +24,21 @@ import type { EventChannel } from './types';
 function* onUserEvent(
     event: EventManagerEvent<UserEvent>,
     _: EventChannel<UserEvent>,
-    { getAuth }: WorkerRootSagaOptions
+    { getAuth, getTelemetry }: WorkerRootSagaOptions
 ) {
+    const telemetry = getTelemetry();
     if ('error' in event) throw event.error;
 
     yield put(userEvent(event));
 
     logger.info(`[ServerEvents::User] event ${logId(event.EventID!)}`);
     const { User: user } = event;
+
+    if (event.UserSettings && telemetry) {
+        const { Telemetry } = event.UserSettings;
+        const userSettings: MaybeNull<UserSettings> = yield select(selectUserSettings);
+        if (Telemetry !== userSettings?.Telemetry) telemetry[Telemetry === 1 ? 'start' : 'stop']();
+    }
 
     /* if the subscription/invoice changes, refetch the user Plan */
     if (event.Subscription || event.Invoices) {

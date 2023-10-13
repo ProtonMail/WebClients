@@ -19,7 +19,6 @@ import {
     WorkerMessageType,
     WorkerStatus,
 } from '@proton/pass/types';
-import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
 import { logger } from '@proton/pass/utils/logger';
 
 import { workerMiddleware } from './worker.middleware';
@@ -62,6 +61,7 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
     ),
 
     getLocalSettings: withContext((ctx) => ctx.service.settings.resolve()),
+    getTelemetry: withContext((ctx) => ctx.service.telemetry),
     getWorkerState: withContext((ctx) => ctx.getState()),
 
     /* Sets the worker status according to the
@@ -69,9 +69,11 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
      * clear */
     onBoot: withContext(async (ctx, result) => {
         if (result.ok) {
+            void ctx.service.telemetry?.start();
             ctx.setStatus(WorkerStatus.READY);
             WorkerMessageBroker.buffer.flush();
         } else {
+            ctx.service.telemetry?.stop();
             ctx.setStatus(WorkerStatus.ERROR);
             if (result.clearCache) await ctx.service.storage.local.unset(['salt', 'state', 'snapshot']);
         }
@@ -164,10 +166,6 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
     },
 
     onSignout: withContext(({ service: { auth } }) => auth.logout()),
-
-    telemetry: withContext<(event: TelemetryEvent) => void>((ctx, event) => {
-        void ctx.service.telemetry?.pushEvent(event);
-    }),
 };
 
 sagaMiddleware.run(workerRootSaga.bind(null, options));
