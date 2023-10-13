@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { FAMILY_MAX_USERS, PLANS } from '@proton/shared/lib/constants';
+import { FAMILY_MAX_USERS, PLANS, PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import { Audience, PlansMap } from '@proton/shared/lib/interfaces';
 
 import { getStorage } from './drive';
@@ -60,6 +60,15 @@ const getEasySwitch = (): PlanCardFeatureDefinition => {
     };
 };
 
+const getSentinel = (included: boolean = true): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`${PROTON_SENTINEL_NAME} program`,
+        tooltip: c('new_plans: tooltip')
+            .t`Provides the highest level of account security protection and specialist support`,
+        included: included,
+    };
+};
+
 export const getHighlightFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
     return [
         getUsers(),
@@ -78,6 +87,22 @@ export const getHighlightFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.BUNDLE_PRO]: getSupport('priority'),
                 [PLANS.VPN_PRO]: getSupport('priority'),
                 [PLANS.VPN_BUSINESS]: getSupport('priority'),
+            },
+        },
+        {
+            name: 'sentinel',
+            plans: {
+                [PLANS.FREE]: getSentinel(false),
+                [PLANS.BUNDLE]: getSentinel(),
+                [PLANS.MAIL]: getSentinel(),
+                [PLANS.VPN]: getSentinel(),
+                [PLANS.DRIVE]: getSentinel(),
+                [PLANS.PASS_PLUS]: getSentinel(),
+                [PLANS.FAMILY]: getSentinel(),
+                [PLANS.MAIL_PRO]: getSentinel(),
+                [PLANS.BUNDLE_PRO]: getSentinel(),
+                [PLANS.VPN_PRO]: getSentinel(),
+                [PLANS.VPN_BUSINESS]: getSentinel(),
             },
         },
         {
