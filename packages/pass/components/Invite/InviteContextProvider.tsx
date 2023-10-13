@@ -41,7 +41,6 @@ export const InviteContextProvider: FC = ({ children }) => {
         setView('invite');
     }, []);
 
-    const respondToInvite = useCallback(async (invite: Invite) => setInvite(invite), []);
     const onInviteResponse = useCallback(() => setInvite(null), []);
 
     const manageAccess = useCallback((shareId: string) => {
@@ -54,14 +53,6 @@ export const InviteContextProvider: FC = ({ children }) => {
         setView(null);
     }, []);
 
-    const onShareDisabled = useCallback((disabledShareId: string) => {
-        if (disabledShareId === shareId) {
-            setShareId(null);
-            setInvite(null);
-            setView(null);
-        }
-    }, []);
-
     const contextValue = useMemo<InviteContextValue>(
         () => ({
             shareId,
@@ -69,8 +60,14 @@ export const InviteContextProvider: FC = ({ children }) => {
             createInvite,
             manageAccess,
             onInviteResponse,
-            onShareDisabled,
-            respondToInvite,
+            onShareDisabled: (disabledShareId: string) => {
+                if (disabledShareId === shareId) {
+                    setShareId(null);
+                    setInvite(null);
+                    setView(null);
+                }
+            },
+            respondToInvite: setInvite,
         }),
         [shareId]
     );
