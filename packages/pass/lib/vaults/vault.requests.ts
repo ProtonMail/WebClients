@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { api } from '@proton/pass/lib/api/api';
-import { PassCrypto } from '@proton/pass/lib/crypto';
+import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { getAllShareKeys, getShareLatestEventId } from '@proton/pass/lib/shares/share.requests';
 import { decodeVaultContent, encodeVaultContent } from '@proton/pass/lib/vaults/vault-proto.transformer';
 import type { VaultTransferOwnerIntent } from '@proton/pass/types';
