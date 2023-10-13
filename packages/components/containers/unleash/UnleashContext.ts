@@ -5,6 +5,7 @@
 enum MailFeatureFlag {
     AttachmentThumbnails = 'AttachmentThumbnails',
     WebMailPageSizeSetting = 'WebMailPageSizeSetting',
+    EmailForwarding = 'EmailForwarding',
 }
 
 enum AccountFlag {

@@ -18,7 +18,8 @@ export const extractKeysFromAttachments = async (
     messageKeys: MessageKeys,
     getAttachment: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined,
     onUpdateAttachment: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void,
-    api: Api
+    api: Api,
+    messageFlags?: number
 ) => {
     const keyAttachments =
         attachments.filter(({ Name, Size }) => splitExtension(Name)[1] === 'asc' && (Size || 0) < LARGE_KEY_SIZE) || [];
@@ -33,7 +34,8 @@ export const extractKeysFromAttachments = async (
                         messageKeys,
                         api,
                         getAttachment,
-                        onUpdateAttachment
+                        onUpdateAttachment,
+                        messageFlags
                     );
                     const key = await CryptoProxy.importPublicKey({ armoredKey: arrayToBinaryString(data) });
                     return key;

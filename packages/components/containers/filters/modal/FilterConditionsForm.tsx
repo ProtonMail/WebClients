@@ -1,20 +1,11 @@
-import { useEffect, useState } from 'react';
-
 import { c } from 'ttag';
 
 import clsx from '@proton/utils/clsx';
 
 import { Radio, UnderlineButton } from '../../../components';
-import { generateUID } from '../../../helpers';
-import { Condition, ConditionComparator, ConditionType, FilterStatement, SimpleFilterModalModel } from '../interfaces';
+import { FilterStatement, SimpleFilterModalModel } from '../interfaces';
 import FilterConditionsFormRow from './FilterConditionsFormRow';
-
-const generateNewCondition = () => ({
-    type: ConditionType.SELECT,
-    comparator: ConditionComparator.CONTAINS,
-    isOpen: true,
-    id: generateUID('condition'),
-});
+import useFilterConditions from './useFilterConditions';
 
 interface Props {
     isNarrow: boolean;
@@ -24,33 +15,10 @@ interface Props {
 }
 
 const FilterConditionsForm = ({ isEdit, isNarrow, model, onChange }: Props) => {
-    const [conditions, setConditions] = useState<Condition[]>(
-        model.conditions.length ? model.conditions : [generateNewCondition()]
+    const { conditions, onDeleteCondition, onUpdateCondition, onAddCondition } = useFilterConditions(
+        model.conditions.length ? model.conditions : undefined,
+        (conditions) => onChange({ ...model, conditions })
     );
-
-    const onAddCondition = () => {
-        setConditions((conditions: Condition[]) => {
-            return [...conditions, { ...generateNewCondition() }];
-        });
-    };
-
-    const onDeleteCondition = (i: number) => {
-        setConditions((conditions: Condition[]) => {
-            conditions.splice(i, 1);
-            return [...conditions];
-        });
-    };
-
-    const onUpdateCondition = (index: number, condition: Condition) => {
-        setConditions((conditions: Condition[]) => {
-            conditions[index] = condition;
-            return [...conditions];
-        });
-    };
-
-    useEffect(() => {
-        onChange({ ...model, conditions });
-    }, [conditions]);
 
     return (
         <>

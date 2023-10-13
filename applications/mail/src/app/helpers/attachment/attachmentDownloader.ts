@@ -27,7 +27,8 @@ export const formatDownload = async (
     messageKeys: MessageKeys,
     onUpdateAttachment: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void,
     api: Api,
-    getAttachment?: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined
+    getAttachment?: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined,
+    messageFlags?: number
 ): Promise<Download> => {
     try {
         const reverify = !!(verification?.pinnedKeysVerified && verification.senderPinnedKeys?.length);
@@ -38,7 +39,8 @@ export const formatDownload = async (
             reverify,
             api,
             getAttachment,
-            onUpdateAttachment
+            onUpdateAttachment,
+            messageFlags
         );
         return {
             attachment,
@@ -89,7 +91,8 @@ export const formatDownloadAll = async (
     messageKeys: MessageKeys,
     onUpdateAttachment: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void,
     api: Api,
-    getAttachment?: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined
+    getAttachment?: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined,
+    messageFlags?: number
 ): Promise<Download[]> => {
     const { list }: { list: Attachment[] } = attachments.reduce(
         (acc: any, att) => {
@@ -111,7 +114,9 @@ export const formatDownloadAll = async (
     );
 
     return Promise.all(
-        list.map((att) => formatDownload(att, verification, messageKeys, onUpdateAttachment, api, getAttachment))
+        list.map((att) =>
+            formatDownload(att, verification, messageKeys, onUpdateAttachment, api, getAttachment, messageFlags)
+        )
     );
 };
 

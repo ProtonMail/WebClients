@@ -18,6 +18,7 @@ import {
     useAddresses,
     useDeviceRecovery,
     useFeatures,
+    useFlag,
     useIsDataRecoveryAvailable,
     useOrganization,
     useRecoveryNotification,
@@ -28,6 +29,7 @@ import {
 } from '@proton/components';
 import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
+import useIncomingAddressForwarding from '@proton/components/hooks/useIncomingAddressForwarding';
 import { useIsSessionRecoveryAvailable } from '@proton/components/hooks/useSessionRecovery';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { getToApp } from '@proton/shared/lib/authentication/apps';
@@ -101,6 +103,7 @@ const MainContainer = () => {
     const [addresses] = useAddresses();
     const [organization, loadingOrganization] = useOrganization();
     const [subscription, loadingSubscription] = useSubscription();
+    const [incomingAddressForwardings = [], loadingIncomingAddressForwardings] = useIncomingAddressForwarding();
     const location = useLocation();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { isNarrow, isDesktop } = useActiveBreakpoint();
@@ -127,6 +130,7 @@ const MainContainer = () => {
     const isProtonSentinelFeatureEnabled = getFeature(FeatureCode.ProtonSentinel).feature?.Value === true;
     const isProtonSentinelUpsellEnabled = getFeature(FeatureCode.ProtonSentinelUpsell).feature?.Value === true;
     const isOrgTwoFactorEnabled = getFeature(FeatureCode.OrgTwoFactor).feature?.Value === true;
+    const isEmailForwardingEnabled = useFlag('EmailForwarding') || incomingAddressForwardings.length > 0;
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
@@ -154,6 +158,7 @@ const MainContainer = () => {
         isProtonSentinelFeatureEnabled,
         isProtonSentinelUpsellEnabled,
         isOrgTwoFactorEnabled,
+        isEmailForwardingEnabled,
     });
 
     useEffect(() => {
@@ -229,6 +234,7 @@ const MainContainer = () => {
             loadingFeatures ||
             loadingSubscription ||
             loadingDataRecovery ||
+            loadingIncomingAddressForwardings ||
             loadingIsSessionRecoveryAvailable
         ) {
             return <PrivateMainAreaLoading />;
