@@ -117,6 +117,7 @@ export interface Props extends Pick<ModalProps<'div'>, 'open' | 'onClose' | 'onE
     disableThanksStep?: boolean;
     defaultAudience?: Audience;
     disableCycleSelector?: boolean;
+    hasClose?: boolean;
     defaultSelectedProductPlans: ReturnType<typeof getDefaultSelectedProductPlans>;
     onSuccess?: () => void;
     fromPlan: FromPlan;
@@ -153,6 +154,7 @@ const SubscriptionModal = ({
     onSuccess,
     disablePlanSelection,
     disableCycleSelector: maybeDisableCycleSelector,
+    hasClose = true,
     disableThanksStep,
     defaultAudience = Audience.B2C,
     defaultSelectedProductPlans,
@@ -643,7 +645,7 @@ const SubscriptionModal = ({
                 as="form"
                 size="large"
             >
-                <ModalTwoHeader title={TITLE[model.step]} />
+                <ModalTwoHeader title={TITLE[model.step]} hasClose={hasClose} />
                 <ModalTwoContent>
                     <div ref={topRef} />
                     {model.step === SUBSCRIPTION_STEPS.NETWORK_ERROR && <GenericError />}
