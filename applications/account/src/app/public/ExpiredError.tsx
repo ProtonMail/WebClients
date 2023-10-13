@@ -21,7 +21,7 @@ const ReportLink = () => {
 };
 
 interface Props {
-    type: 'report' | 'email' | 'unsubscribe';
+    type: 'report' | 'email' | 'unsubscribe' | 'forwarding';
 }
 
 const getTexts = (type: Props['type']) => {
@@ -43,6 +43,12 @@ const getTexts = (type: Props['type']) => {
                     {c('Error message, recovery').t`Sign in to verify`}
                 </ButtonLike>
             ),
+        };
+    }
+    if (type === 'forwarding') {
+        return {
+            title: c('Info').t`Link expired`,
+            description: c('Info').t`We just sent you a new link.`,
         };
     }
     return {

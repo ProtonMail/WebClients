@@ -113,6 +113,11 @@ export interface FilterOperator {
     value: FilterStatement;
 }
 
+export interface FilterRedirect {
+    Address: string;
+    Copy?: boolean;
+}
+
 export interface FilterActions {
     FileInto: string[];
     Mark: {
@@ -120,6 +125,7 @@ export interface FilterActions {
         Starred: boolean;
     };
     Vacation?: string | null;
+    Redirects?: FilterRedirect[];
 }
 
 export interface FilterCondition {

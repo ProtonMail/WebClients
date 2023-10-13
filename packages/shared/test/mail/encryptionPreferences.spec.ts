@@ -51,6 +51,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
         encryptionCapableFingerprints: new Set([]),
         obsoleteFingerprints: new Set([]),
         compromisedFingerprints: new Set([]),
+        disabledEncryptionFingerprints: new Set([]),
         isPGPExternal: false,
         isPGPInternal: true,
         isPGPExternalWithWKDKeys: false,
@@ -330,6 +331,7 @@ const testExtractEncryptionPreferencesWithWKD = (encrypt: boolean) =>
             encryptionCapableFingerprints: new Set([]),
             obsoleteFingerprints: new Set([]),
             compromisedFingerprints: new Set([]),
+            disabledEncryptionFingerprints: new Set([]),
             isPGPExternal: true,
             isPGPInternal: false,
             isPGPExternalWithWKDKeys: true,
@@ -565,6 +567,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
         encryptionCapableFingerprints: new Set([]),
         obsoleteFingerprints: new Set([]),
         compromisedFingerprints: new Set([]),
+        disabledEncryptionFingerprints: new Set([]),
         isPGPExternal: true,
         isPGPInternal: false,
         isPGPExternalWithWKDKeys: false,
@@ -601,6 +604,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             contactSignatureTimestamp: new Date(0),
             emailAddressWarnings: undefined,
             ktVerificationResult,
+            encryptionDisabled: true,
         });
     });
 
@@ -631,6 +635,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             contactSignatureTimestamp: undefined,
             emailAddressWarnings: undefined,
             ktVerificationResult,
+            encryptionDisabled: true,
         });
     });
 
@@ -653,6 +658,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             contactSignatureTimestamp: new Date(0),
             emailAddressWarnings: undefined,
             ktVerificationResult,
+            encryptionDisabled: true,
         });
     });
 
@@ -689,6 +695,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             contactSignatureTimestamp: new Date(0),
             emailAddressWarnings: undefined,
             ktVerificationResult,
+            encryptionDisabled: true,
         });
     });
 
@@ -754,6 +761,7 @@ describe('extractEncryptionPreferences for an own address', () => {
         encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey2']),
         obsoleteFingerprints: new Set([]),
         compromisedFingerprints: new Set([]),
+        disabledEncryptionFingerprints: new Set([]),
         isPGPExternal: false,
         isPGPInternal: true,
         isPGPExternalWithWKDKeys: false,

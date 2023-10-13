@@ -11,10 +11,12 @@ import {
     FiltersModel,
     ImportReportsModel,
     ImportersModel,
+    IncomingAddressForwardingModel,
     LabelsModel,
     MailSettingsModel,
     MembersModel,
     OrganizationModel,
+    OutgoingAddressForwardingModel,
     PaymentMethodsModel,
     SubscriptionModel,
     UserInvitationModel,
@@ -42,6 +44,8 @@ const EVENT_MODELS = [
     ContactsModel,
     ContactEmailsModel,
     UserInvitationModel,
+    OutgoingAddressForwardingModel,
+    IncomingAddressForwardingModel,
 ];
 
 const PRELOAD_MODELS = [UserSettingsModel, MailSettingsModel, UserModel];

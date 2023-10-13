@@ -16,7 +16,6 @@ import {
     KeyPair,
     KeysPair,
     AddressKey as tsAddressKey,
-    Key as tsKey,
 } from '../interfaces';
 import { decryptMemberToken } from './memberToken';
 
@@ -148,7 +147,7 @@ export const getAddressKeyToken = ({
 };
 
 export const getAddressKeyPassword = (
-    { Activation, Token, Signature }: tsKey,
+    { Activation, Token, Signature }: tsAddressKey,
     userKeys: KeysPair,
     keyPassword: string,
     organizationKey?: KeyPair

@@ -30,6 +30,7 @@ import {
     UserKeysSection,
     useAddresses,
 } from '@proton/components';
+import ForwardSection from '@proton/components/containers/forward/ForwardSection';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 
 import type { getMailAppRoutes } from './routes';
@@ -86,6 +87,7 @@ const MailSettingsRouter = ({
             </Route>
             <Route path={getSectionPath(path, autoReply)}>
                 <PrivateMainSettingsArea config={autoReply}>
+                    <ForwardSection />
                     <AutoReplySection />
                 </PrivateMainSettingsArea>
             </Route>

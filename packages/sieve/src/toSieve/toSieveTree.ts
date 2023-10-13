@@ -7,6 +7,7 @@ import {
     buildCondition,
     buildFileInto,
     buildMark,
+    buildRedirects,
     buildVacation,
     validateSimpleRepresentation,
 } from './toSieveTree.helpers';
@@ -22,6 +23,7 @@ export const toSieveTree = (simple: SimpleObject, version: SIEVE_VERSION = V1) =
         const fileInto = buildFileInto(simple.Actions.FileInto);
         const mark = buildMark(simple.Actions.Mark);
         const vacation = buildVacation(simple.Actions.Vacation, version);
+        const redirects = buildRedirects(simple.Actions.Redirects);
 
         return buildBasicTree(
             {
@@ -30,7 +32,7 @@ export const toSieveTree = (simple: SimpleObject, version: SIEVE_VERSION = V1) =
                 tests: condition.tests,
                 comparators: condition.comparators,
                 dollarNeeded: condition.dollarNeeded || fileInto.dollarNeeded || vacation.dollarNeeded,
-                thens: [...fileInto.blocks, ...mark.blocks, ...vacation.blocks],
+                thens: [...fileInto.blocks, ...mark.blocks, ...vacation.blocks, ...redirects.blocks],
             },
             version
         );
