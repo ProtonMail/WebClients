@@ -1,7 +1,7 @@
 import type { ReactNode, VFC } from 'react';
 import { useSelector } from 'react-redux';
 
-import { FormType } from '@proton/pass/fathom';
+import { FormType } from '@proton/pass/fathom/lib';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { selectItemsByType } from '@proton/pass/store/selectors';
 import { AutoSaveType, FormEntryStatus } from '@proton/pass/types';

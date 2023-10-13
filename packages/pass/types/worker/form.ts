@@ -1,4 +1,5 @@
-import type { FormType } from '../../fathom';
+import type { FormType } from '@proton/pass/fathom/lib';
+
 import type { MaybeNull } from '../utils';
 import type { WithAutoSavePromptOptions } from './autosave';
 import type { TabId } from './runtime';

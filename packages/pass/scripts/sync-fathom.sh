@@ -2,7 +2,7 @@
 
 SCRIPT_DIR=$(dirname "$0")
 ROOT_DIR="$SCRIPT_DIR/.."
-OUT_DIR="$ROOT_DIR"/fathom/protonpass-fathom
+OUT_DIR="$ROOT_DIR"/fathom/lib
 
 SUCCESS='\033[0;32m'
 ERROR='\033[0;33m'
