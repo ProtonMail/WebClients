@@ -18,7 +18,7 @@ import {
 
 export const loadEmbedded = createAsyncThunk<LoadEmbeddedResults, LoadEmbeddedParams>(
     'messages/embeddeds/load',
-    async ({ attachments, api, messageVerification, messageKeys, getAttachment, onUpdateAttachment }) => {
+    async ({ attachments, api, messageVerification, messageKeys, getAttachment, onUpdateAttachment, messageFlags }) => {
         return Promise.all(
             attachments.map(async (attachment) => {
                 const buffer = await get(
@@ -27,7 +27,8 @@ export const loadEmbedded = createAsyncThunk<LoadEmbeddedResults, LoadEmbeddedPa
                     messageKeys,
                     api,
                     getAttachment,
-                    onUpdateAttachment
+                    onUpdateAttachment,
+                    messageFlags
                 );
                 return {
                     attachment,

@@ -1,9 +1,11 @@
+import { CryptoProxy } from '@proton/crypto';
 import { getReplacedAddressKeyTokens } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
 import { createUserKeyRoute, replaceAddressTokens } from '../../api/keys';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '../../constants';
-import { Address, Api, DecryptedKey, EncryptionConfig, KeyTransparencyVerify } from '../../interfaces';
+import { Address, Api, DecryptedKey, EncryptionConfig, KeyTransparencyVerify, UserModel } from '../../interfaces';
+import { storeDeviceRecovery } from '../../recoveryFile/deviceRecovery';
 import { getActiveKeys } from '../getActiveKeys';
 import { getPrimaryKey } from '../getPrimaryKey';
 import { getHasMigratedAddressKeys } from '../keyMigration';
@@ -63,17 +65,25 @@ export const addAddressKeysProcess = async ({
 interface CreateAddressKeyLegacyArguments {
     api: Api;
     encryptionConfig?: EncryptionConfig;
+    user: UserModel;
     userKeys: DecryptedKey[];
     addresses: Address[];
     passphrase: string;
+    isDeviceRecoveryAvailable?: boolean;
+    isDeviceRecoveryEnabled?: boolean;
+    call: () => Promise<void>;
 }
 
 export const addUserKeysProcess = async ({
     api,
     encryptionConfig = ENCRYPTION_CONFIGS[DEFAULT_ENCRYPTION_CONFIG],
+    user,
     userKeys,
     addresses,
     passphrase,
+    isDeviceRecoveryAvailable,
+    isDeviceRecoveryEnabled,
+    call,
 }: CreateAddressKeyLegacyArguments) => {
     const { privateKey, privateKeyArmored } = await generateUserKey({
         passphrase,
@@ -93,6 +103,19 @@ export const addUserKeysProcess = async ({
             await api(replaceAddressTokens(replacedResult)).catch(/*ignore failures */ noop);
         }
     }
+
+    // Store a new device recovery immediately to avoid having the storing trigger asynchronously which would cause red notification flashes
+    if (isDeviceRecoveryAvailable && isDeviceRecoveryEnabled) {
+        const publicKey = await CryptoProxy.importPublicKey({
+            binaryKey: await CryptoProxy.exportPublicKey({ key: privateKey, format: 'binary' }),
+        });
+        await storeDeviceRecovery({
+            api,
+            user,
+            userKeys: [{ ID: 'tmp-id', privateKey, publicKey }, ...userKeys],
+        });
+    }
+    await call();
 
     return privateKey;
 };

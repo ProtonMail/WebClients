@@ -1,9 +1,13 @@
+import JSBI from 'jsbi';
+
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 import { binaryStringToArray, decodeBase64 } from '@proton/crypto/lib/utils';
 
 import { MIME_TYPES } from '../../constants';
+import { hasBitBigInt } from '../../helpers/bitset';
 import { Attachment } from '../../interfaces/mail/Message';
 import { Packets } from '../../interfaces/mail/crypto';
+import { MESSAGE_FLAGS } from '../constants';
 
 export const encryptAttachment = async (
     data: Uint8Array | string,
@@ -46,14 +50,21 @@ export const encryptAttachment = async (
 
 export const getSessionKey = async (
     attachment: Pick<Attachment, 'KeyPackets'>,
-    privateKeys: PrivateKeyReference[]
+    privateKeys: PrivateKeyReference[],
+    messageFlags?: number
 ): Promise<SessionKey> => {
     // if (attachment.sessionKey) {
     //     return attachment;
     // }
 
     const keyPackets = binaryStringToArray(decodeBase64(attachment.KeyPackets) || '');
-    const options = { binaryMessage: keyPackets, decryptionKeys: privateKeys };
+    const options = {
+        binaryMessage: keyPackets,
+        decryptionKeys: privateKeys,
+        config: {
+            allowForwardedMessages: hasBitBigInt(JSBI.BigInt(messageFlags || 0), MESSAGE_FLAGS.FLAG_AUTO_FORWARDEE),
+        },
+    };
 
     // if (isOutside()) {
     //     options.passwords = [eoStore.getPassword()];
