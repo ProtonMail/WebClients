@@ -33,7 +33,7 @@ const SubscribeAccount = ({ app, redirect, fullscreen, queryParams }: Props) => 
     const [open, loadingSubscriptionModal] = useSubscriptionModal();
     const [type, setType] = useState<SubscribeType | undefined>(undefined);
 
-    const loading = loadingSubscriptionModal || loadingSubscription;
+    const loading = loadingSubscriptionModal || loadingSubscription || loadingPlans;
 
     const canEdit = canPay(user);
 
@@ -69,7 +69,6 @@ const SubscribeAccount = ({ app, redirect, fullscreen, queryParams }: Props) => 
 
         const maybeStart = queryParams.get('start');
         const maybeType = queryParams.get('type');
-        const maybeDisableCycleSelector = queryParams.get('disableCycleSelector');
 
         const cycleParam = parseInt(queryParams.get('cycle') as any, 10);
         const parsedCycle = cycleParam && getValidCycle(cycleParam);
@@ -100,23 +99,31 @@ const SubscribeAccount = ({ app, redirect, fullscreen, queryParams }: Props) => 
             return user.isFree ? SUBSCRIPTION_STEPS.PLAN_SELECTION : SUBSCRIPTION_STEPS.CUSTOMIZATION;
         })();
 
+        const disableCycleSelectorParam = queryParams.get('disableCycleSelector');
+        const disablePlanSelectionParam = queryParams.get('disablePlanSelection');
+        const hideCloseParam = queryParams.get('hideClose');
+
         onceRef.current = true;
+
         open({
             step,
-            onClose: handleClose,
-            onSuccess: handleSuccess,
-            plan: plan,
+            plan,
             coupon,
             cycle: parsedCycle || subscription?.Cycle || DEFAULT_CYCLE,
             currency: parsedCurrency,
             fullscreen,
             disableThanksStep: true,
-            disableCycleSelector: Boolean(maybeDisableCycleSelector),
+            disableCycleSelector: coupon ? true : Boolean(disableCycleSelectorParam),
+            disablePlanSelection: coupon ? true : Boolean(disablePlanSelectionParam),
+            hasClose: !Boolean(hideCloseParam),
+            onClose: handleClose,
+            onSuccess: handleSuccess,
+
             metrics: {
                 source: 'lite-subscribe',
             },
         });
-    }, [user, loading, loadingPlans]);
+    }, [user, loading]);
 
     if (loading) {
         return <LiteLoaderPage />;
