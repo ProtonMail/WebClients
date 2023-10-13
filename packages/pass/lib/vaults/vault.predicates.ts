@@ -1,4 +1,4 @@
-import { PassCrypto } from '@proton/pass/lib/crypto';
+import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import type { Share } from '@proton/pass/types';
 import { ShareRole, ShareType } from '@proton/pass/types';
 

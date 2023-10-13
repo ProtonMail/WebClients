@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { PassCrypto } from '@proton/pass/lib/crypto';
+import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import type {
     ItemRevision,
     ItemRevisionContentsResponse,
