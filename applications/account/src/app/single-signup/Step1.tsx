@@ -952,7 +952,7 @@ const Step1 = ({
                                 style={
                                     isDesktop
                                         ? {
-                                              '--w-custom': '354px',
+                                              '--w-custom': '22.125rem',
                                           }
                                         : undefined
                                 }
@@ -1142,7 +1142,7 @@ const Step1 = ({
                                 </div>
                                 <div
                                     className={clsx(isDesktop && 'w-custom')}
-                                    style={isDesktop ? { '--w-custom': '300px' } : undefined}
+                                    style={isDesktop ? { '--w-custom': '18.75rem' } : undefined}
                                 >
                                     <div className="border rounded-xl border-weak px-3 py-4">
                                         <div className="flex flex-column gap-3">

@@ -85,7 +85,7 @@ const CalendarSearchInput = (
                 <div
                     className="searchbox flex max-w-custom"
                     role="search"
-                    style={{ '--max-w-custom': '360px' }}
+                    style={{ '--max-w-custom': '22.5rem' }}
                     ref={ref}
                 >
                     <div className="w100 m-auto">
