@@ -1,9 +1,9 @@
 import { MAX_MAX_DETECTION_TIME, MIN_MAX_DETECTION_TIME } from 'proton-pass-extension/app/content/constants.static';
 import type { DetectedField, DetectedForm } from 'proton-pass-extension/app/content/types';
 
-import type { FieldType } from '@proton/pass/fathom';
+import type { FNode } from '@proton/pass/fathom';
+import type { FieldType } from '@proton/pass/fathom/lib';
 import {
-    type FNode,
     FormType,
     clearDetectionCache,
     fieldTypes,
@@ -11,8 +11,7 @@ import {
     prepass,
     rulesetMaker,
     shouldRunClassifier,
-} from '@proton/pass/fathom';
-import type { Fnode } from '@proton/pass/fathom/protonpass-fathom/fathom';
+} from '@proton/pass/fathom/lib';
 import { logger } from '@proton/pass/utils/logger';
 import { withMaxExecutionTime } from '@proton/pass/utils/time/performance';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -59,7 +58,7 @@ const getPredictionsFor = <T extends string>(
      * `allThrough` effect which will flag the nodes */
     boundRuleset.get(options.type);
 
-    const predictions = options.subTypes.reduce<Map<Fnode, PredictionResult<T>>>((results, subType) => {
+    const predictions = options.subTypes.reduce<Map<FNode, PredictionResult<T>>>((results, subType) => {
         const fnodes: FNode[] = boundRuleset.get(subType);
         fnodes.forEach((fnode) => {
             const score = fnode.hasType('cache') ? 1 : fnode.scoreFor(subType);

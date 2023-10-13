@@ -1,5 +1,3 @@
-import type { fathom } from './protonpass-fathom';
-
-export * from './protonpass-fathom';
+import type { fathom } from './lib';
 
 export type FNode = InstanceType<typeof fathom.Fnode>;
