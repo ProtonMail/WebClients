@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 import type { WorkerMessageWithSender } from '@proton/pass/types';
 import { ShareEventType, WorkerMessageType } from '@proton/pass/types';
@@ -6,15 +6,18 @@ import { ShareEventType, WorkerMessageType } from '@proton/pass/types';
 import { ExtensionContext } from '../context/extension-context';
 
 type UseShareServerEventHookOptions = {
-    listen?: boolean;
     onShareDisabled: (shareId: string) => void;
     onItemsDeleted?: (shareId: string, itemIds: string[]) => void;
 };
 
 export const useShareEventEffect = (options: UseShareServerEventHookOptions) => {
-    useEffect(() => {
-        if (options?.listen === false) return;
+    const optionsRef = useRef<UseShareServerEventHookOptions>(options);
 
+    useEffect(() => {
+        optionsRef.current = options;
+    }, [options]);
+
+    useEffect(() => {
         const { port } = ExtensionContext.get();
 
         const handleShareServerEvent = (message: WorkerMessageWithSender) => {
@@ -22,19 +25,16 @@ export const useShareEventEffect = (options: UseShareServerEventHookOptions) => 
                 const { payload } = message;
 
                 switch (payload.type) {
-                    case ShareEventType.SHARE_DISABLED: {
-                        return options.onShareDisabled(payload.shareId);
-                    }
-
-                    case ShareEventType.ITEMS_DELETED: {
+                    case ShareEventType.SHARE_DISABLED:
+                        return optionsRef.current.onShareDisabled(payload.shareId);
+                    case ShareEventType.ITEMS_DELETED:
                         const { shareId, itemIds } = payload;
-                        return options.onItemsDeleted?.(shareId, itemIds);
-                    }
+                        return optionsRef.current.onItemsDeleted?.(shareId, itemIds);
                 }
             }
         };
 
         port.onMessage.addListener(handleShareServerEvent);
         return () => port.onMessage.removeListener(handleShareServerEvent);
-    }, [options]);
+    }, []);
 };
