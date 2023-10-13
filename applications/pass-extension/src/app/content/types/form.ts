@@ -1,4 +1,4 @@
-import type { FieldType, FormType } from '@proton/pass/fathom';
+import type { FieldType, FormType } from '@proton/pass/fathom/lib';
 import type { MaybeNull } from '@proton/pass/types';
 
 import { type AutofillOptions } from '../utils/autofill';
