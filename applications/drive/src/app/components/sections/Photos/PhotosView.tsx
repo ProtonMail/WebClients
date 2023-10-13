@@ -14,6 +14,7 @@ import ToolbarRow from '../ToolbarRow/ToolbarRow';
 import { PhotosEmptyView } from './PhotosEmptyView';
 import { PhotosGrid } from './PhotosGrid';
 import { PhotosClearSelectionButton } from './components/PhotosClearSelectionButton';
+import PhotosRecoveryBanner from './components/PhotosRecoveryBanner/PhotosRecoveryBanner';
 import { usePhotosSelection } from './hooks';
 import { PhotosToolbar } from './toolbar';
 
@@ -128,7 +129,7 @@ export const PhotosView: FC<void> = () => {
                     onExit={() => setPreviewLinkId(undefined)}
                 />
             )}
-
+            <PhotosRecoveryBanner />
             <UploadDragDrop
                 disabled={isUploadDisabled}
                 isForPhotos
