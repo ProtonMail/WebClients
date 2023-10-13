@@ -1,4 +1,4 @@
-import { uniqueId } from '@proton/pass/utils/string';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 import type { OptimisticState } from '../types';
 import type { TestState } from '../utils/testing.utils';

@@ -2,8 +2,8 @@ import jszip from 'jszip';
 import { c } from 'ttag';
 
 import type { ItemImportIntent, Maybe, UnsafeItemExtraField } from '@proton/pass/types';
-import { extractFirst } from '@proton/pass/utils/array';
-import { truthy } from '@proton/pass/utils/fp';
+import { extractFirst } from '@proton/pass/utils/array/extract-first';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import lastItem from '@proton/utils/lastItem';
 

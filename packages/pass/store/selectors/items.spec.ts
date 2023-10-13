@@ -1,6 +1,6 @@
 import type { State } from '@proton/pass/store/types';
 import { ItemState } from '@proton/pass/types';
-import { parseUrl } from '@proton/pass/utils/url';
+import { parseUrl } from '@proton/pass/utils/url/parser';
 
 import { selectAutofillCandidates, selectItemsByDomain } from './items';
 

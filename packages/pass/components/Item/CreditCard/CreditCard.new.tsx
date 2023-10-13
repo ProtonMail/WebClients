@@ -25,8 +25,8 @@ import { validateCreditCardForm } from '@proton/pass/lib/validation/credit-card'
 import { selectVaultLimits } from '@proton/pass/store/selectors';
 import { CardType } from '@proton/pass/types/protobuf/item-v1';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { uniqueId } from '@proton/pass/utils/string';
-import { getEpoch } from '@proton/pass/utils/time';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
+import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 
 const FORM_ID = 'new-creditCard';
 

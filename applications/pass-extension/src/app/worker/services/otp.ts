@@ -5,12 +5,12 @@ import { parseOTPValue } from '@proton/pass/lib/otp/otp';
 import { selectAutofillCandidates, selectItemByShareIdAndId } from '@proton/pass/store/selectors';
 import type { OtpRequest, WorkerMessageResponse } from '@proton/pass/types';
 import { type OtpCode, WorkerMessageType } from '@proton/pass/types';
-import { withPayload } from '@proton/pass/utils/fp';
+import { withPayload } from '@proton/pass/utils/fp/lens';
 import { logId, logger } from '@proton/pass/utils/logger';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { getEpoch } from '@proton/pass/utils/time';
-import type { ParsedSender } from '@proton/pass/utils/url';
-import { parseSender } from '@proton/pass/utils/url';
+import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+import type { ParsedSender } from '@proton/pass/utils/url/parser';
+import { parseSender } from '@proton/pass/utils/url/parser';
 
 import WorkerMessageBroker from '../channel';
 import { withContext } from '../context';

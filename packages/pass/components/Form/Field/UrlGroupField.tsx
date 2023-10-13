@@ -7,8 +7,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Icon, InputFieldTwo } from '@proton/components/';
 import type { UrlGroupValues, UrlItem } from '@proton/pass/types';
-import { isEmptyString, uniqueId } from '@proton/pass/utils/string';
-import { isValidURL } from '@proton/pass/utils/url';
+import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
+import { isValidURL } from '@proton/pass/utils/url/is-valid-url';
 
 import { FieldBox } from './Layout/FieldBox';
 

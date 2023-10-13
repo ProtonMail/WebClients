@@ -4,12 +4,13 @@ import { obfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import { parseOTPValue } from '@proton/pass/lib/otp/otp';
 import type { Item, ItemImportIntent, Maybe, MaybeNull, UnsafeItemExtraField } from '@proton/pass/types';
 import { CardType } from '@proton/pass/types/protobuf/item-v1';
-import { prop, truthy } from '@proton/pass/utils/fp';
+import { prop } from '@proton/pass/utils/fp/lens';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { uniqueId } from '@proton/pass/utils/string';
-import { getEpoch } from '@proton/pass/utils/time';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getFormattedDayFromTimestamp } from '@proton/pass/utils/time/format';
-import { isValidURL } from '@proton/pass/utils/url';
+import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+import { isValidURL } from '@proton/pass/utils/url/is-valid-url';
 
 export const getImportedVaultName = (vaultName?: string) => {
     if (!vaultName) {

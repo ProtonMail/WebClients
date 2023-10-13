@@ -11,9 +11,9 @@ import { asIfNotOptimistic } from '@proton/pass/store/optimistic/selectors/selec
 import { reducerMap } from '@proton/pass/store/reducers';
 import type { State, WorkerRootSagaOptions } from '@proton/pass/store/types';
 import { PassEncryptionTag } from '@proton/pass/types';
-import { or } from '@proton/pass/utils/fp';
+import { or } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
-import { objectFilter } from '@proton/pass/utils/object';
+import { objectFilter } from '@proton/pass/utils/object/filter';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import { wait } from '@proton/shared/lib/helpers/promise';
 

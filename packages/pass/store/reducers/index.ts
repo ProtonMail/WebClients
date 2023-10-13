@@ -4,7 +4,7 @@ import { stateSync } from '@proton/pass/store/actions';
 import { isStateResetAction } from '@proton/pass/store/actions/utils';
 import type { State } from '@proton/pass/store/types';
 import type { Maybe } from '@proton/pass/types';
-import { merge } from '@proton/pass/utils/object';
+import { merge } from '@proton/pass/utils/object/merge';
 
 import alias from './alias';
 import importReducer from './import';

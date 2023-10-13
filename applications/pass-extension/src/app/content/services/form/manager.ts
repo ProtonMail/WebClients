@@ -15,7 +15,7 @@ import {
 } from '@proton/pass/fathom';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { WorkerMessageType } from '@proton/pass/types';
-import { createListenerStore } from '@proton/pass/utils/listener';
+import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 import debounce from '@proton/utils/debounce';
 

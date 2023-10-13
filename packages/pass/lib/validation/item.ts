@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
 import type { BaseItemValues, Maybe } from '@proton/pass/types';
-import { isEmptyString } from '@proton/pass/utils/string';
+import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 
 export const validateItemName = (name: string): Maybe<string> => {
     if (isEmptyString(name)) return c('Warning').t`Title is required`;

@@ -20,7 +20,7 @@ import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import { INITIAL_SETTINGS, type ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { Maybe, MaybeNull, RecursivePartial, WorkerMessage, WorkerState } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
-import { safeCall } from '@proton/pass/utils/fp';
+import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { logger } from '@proton/pass/utils/logger';
 import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
 import { loadLocale } from '@proton/shared/lib/i18n/loadLocale';

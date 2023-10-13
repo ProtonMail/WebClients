@@ -3,7 +3,7 @@ import getYear from 'date-fns/getYear';
 import { c } from 'ttag';
 
 import type { ItemImportIntent } from '@proton/pass/types';
-import { truthy } from '@proton/pass/utils/fp';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import capitalize from '@proton/utils/capitalize';
 import groupWith from '@proton/utils/groupWith';

@@ -21,7 +21,7 @@ import { workerReady } from '@proton/pass/lib/worker';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { WorkerMessageType, type WorkerMessageWithSender, type WorkerState } from '@proton/pass/types';
-import { createListenerStore } from '@proton/pass/utils/listener';
+import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 

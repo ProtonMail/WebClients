@@ -1,4 +1,5 @@
-import { DROPDOWN_IFRAME_SRC, DROPDOWN_WIDTH, MIN_DROPDOWN_HEIGHT } from 'proton-pass-extension/app/content/constants';
+import { DROPDOWN_IFRAME_SRC } from 'proton-pass-extension/app/content/constants.runtime';
+import { DROPDOWN_WIDTH, MIN_DROPDOWN_HEIGHT } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { createIFrameApp } from 'proton-pass-extension/app/content/injections/iframe/create-iframe-app';
 import type {
@@ -11,9 +12,12 @@ import { DropdownAction, IFrameMessageType } from 'proton-pass-extension/app/con
 
 import { deriveAliasPrefix } from '@proton/pass/lib/validation/alias';
 import { type MaybeNull } from '@proton/pass/types';
-import { animatePositionChange, createStyleCompute, getComputedHeight } from '@proton/pass/utils/dom';
-import { pipe, truthy, waitUntil } from '@proton/pass/utils/fp';
-import { createListenerStore } from '@proton/pass/utils/listener';
+import { createStyleCompute, getComputedHeight } from '@proton/pass/utils/dom/computed-styles';
+import { animatePositionChange } from '@proton/pass/utils/dom/position';
+import { pipe } from '@proton/pass/utils/fp/pipe';
+import { truthy } from '@proton/pass/utils/fp/predicates';
+import { waitUntil } from '@proton/pass/utils/fp/wait-until';
+import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { getScrollParent } from '@proton/shared/lib/helpers/dom';
 
 type DropdownFieldRef = { current: MaybeNull<FieldHandle> };

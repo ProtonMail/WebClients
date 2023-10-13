@@ -15,7 +15,7 @@ import type { InvitesGetResponse, MaybeNull } from '@proton/pass/types';
 import { type Api } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import type { Invite } from '@proton/pass/types/data/invites';
-import { truthy } from '@proton/pass/utils/fp';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logId, logger } from '@proton/pass/utils/logger';
 import { toMap } from '@proton/shared/lib/helpers/object';
 

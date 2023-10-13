@@ -29,8 +29,8 @@ import selectFailedAction from '@proton/pass/store/optimistic/selectors/select-f
 import { selectByShareId, selectItemWithOptimistic, selectShareOrThrow } from '@proton/pass/store/selectors';
 import type { ItemType, SelectedItem, ShareType } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
-import { pipe } from '@proton/pass/utils/fp';
-import { uniqueId } from '@proton/pass/utils/string';
+import { pipe } from '@proton/pass/utils/fp/pipe';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 const itemTypeViewMap: { [T in ItemType]: VFC<ItemViewProps<T>> } = {
     login: LoginView,

@@ -24,9 +24,11 @@ import type {
     MaybeNull,
     UniqueItem,
 } from '@proton/pass/types';
-import { invert, pipe, prop } from '@proton/pass/utils/fp';
+import { prop } from '@proton/pass/utils/fp/lens';
+import { pipe } from '@proton/pass/utils/fp/pipe';
+import { invert } from '@proton/pass/utils/fp/predicates';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { isEmptyString } from '@proton/pass/utils/string';
+import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 
 import { unwrapOptimisticState } from '../optimistic/utils/transformers';
 import { withOptimisticItemsByShareId } from '../reducers/items';

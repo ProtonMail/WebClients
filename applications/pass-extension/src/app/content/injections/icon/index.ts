@@ -1,15 +1,15 @@
 import type { MaybeNull } from '@proton/pass/types';
-import type { BoundComputeStyles } from '@proton/pass/utils/dom';
 import {
-    createElement,
+    type BoundComputeStyles,
     createStyleCompute,
     getComputedHeight,
     pixelEncoder,
     pixelParser,
-    repaint,
-} from '@proton/pass/utils/dom';
+} from '@proton/pass/utils/dom/computed-styles';
+import { createElement } from '@proton/pass/utils/dom/create-element';
+import { repaint } from '@proton/pass/utils/dom/repaint';
 
-import { ICON_MAX_HEIGHT, ICON_MIN_HEIGHT, ICON_PADDING, INPUT_BASE_STYLES_ATTR } from '../../constants';
+import { ICON_MAX_HEIGHT, ICON_MIN_HEIGHT, ICON_PADDING, INPUT_BASE_STYLES_ATTR } from '../../constants.static';
 import type { FieldHandle } from '../../types';
 import type { ProtonPassControl } from '../custom-elements/ProtonPassControl';
 

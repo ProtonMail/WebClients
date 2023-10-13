@@ -5,8 +5,8 @@ import type { ExportPayload, ExportedItem } from '@proton/pass/lib/export/types'
 import { pageMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { obfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import { type ItemImportIntent, ItemState, WorkerMessageType } from '@proton/pass/types';
-import { partition } from '@proton/pass/utils/array';
-import { prop } from '@proton/pass/utils/fp';
+import { partition } from '@proton/pass/utils/array/partition';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';

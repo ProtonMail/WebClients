@@ -1,5 +1,5 @@
 import { WorkerMessageType } from '@proton/pass/types';
-import { withPayloadLens } from '@proton/pass/utils/fp';
+import { withPayloadLens } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
 
 import WorkerMessageBroker from '../channel';

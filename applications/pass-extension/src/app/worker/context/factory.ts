@@ -31,7 +31,8 @@ import {
 } from '@proton/pass/lib/worker';
 import type { WorkerStatus } from '@proton/pass/types';
 import { type Api, WorkerMessageType } from '@proton/pass/types';
-import { or, waitUntil } from '@proton/pass/utils/fp';
+import { or } from '@proton/pass/utils/fp/predicates';
+import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { logger } from '@proton/pass/utils/logger';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';

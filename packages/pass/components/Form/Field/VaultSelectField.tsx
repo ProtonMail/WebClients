@@ -9,7 +9,8 @@ import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { selectVaultLimits, selectWritableVaults } from '@proton/pass/store/selectors';
 import { type Maybe } from '@proton/pass/types';
 import { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
-import { notIn, prop } from '@proton/pass/utils/fp';
+import { prop } from '@proton/pass/utils/fp/lens';
+import { notIn } from '@proton/pass/utils/fp/predicates';
 
 import { SelectField, type SelectFieldProps } from './SelectField';
 
