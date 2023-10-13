@@ -8,8 +8,8 @@ import {
 } from 'proton-pass-extension/app/content/utils/action-trap';
 import { createAutofill } from 'proton-pass-extension/app/content/utils/autofill';
 
-import type { FormType } from '@proton/pass/fathom/lib';
-import { FieldType } from '@proton/pass/fathom/lib';
+import type { FormType } from '@proton/pass/fathom';
+import { FieldType } from '@proton/pass/fathom';
 import { findBoundingInputElement } from '@proton/pass/utils/dom/input';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 

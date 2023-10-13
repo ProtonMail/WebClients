@@ -1,4 +1,4 @@
-import { isProcessed, selectFormCandidates, selectInputCandidates } from '@proton/pass/fathom/lib';
+import { isProcessed, selectFormCandidates, selectInputCandidates } from '@proton/pass/fathom';
 import { invert } from '@proton/pass/utils/fp/predicates';
 
 const unprocessed = invert(isProcessed);
