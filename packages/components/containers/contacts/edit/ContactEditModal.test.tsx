@@ -80,7 +80,7 @@ END:VCARD`;
         getByDisplayValue('TestNote');
     });
 
-    it.skip('should update basic properties', async () => {
+    it('should update basic properties', async () => {
         const vcard = `BEGIN:VCARD
 VERSION:4.0
 UID:urn:uuid:4fbe8971-0bc3-424c-9c26-36c3e1eff6b1
@@ -88,6 +88,7 @@ FN:J. Doe
 EMAIL:jdoe@example.com
 TEL:testtel
 NOTE:TestNote
+N:Doe;John;;;
 END:VCARD`;
 
         const vCardContact = parseToVCard(vcard);
@@ -165,7 +166,7 @@ END:VCARD`.replaceAll('\n', '\r\n');
 VERSION:4.0
 TEL;PREF=1:newtel
 NOTE:NewNote
-N:;;;;
+N:Doe;John;;;
 TITLE:NewTitle
 END:VCARD`.replaceAll('\n', '\r\n');
 
