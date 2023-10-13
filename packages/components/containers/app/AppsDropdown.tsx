@@ -54,7 +54,7 @@ const AppsDropdown = ({ onDropdownClick, app, ...rest }: AppsDropdownProps, ref:
                                 >
                                     <div
                                         className="apps-dropdown-logo-wrapper flex flex-align-items-center flex-justify-center rounded-lg border border-weak w-custom h-custom mx-auto"
-                                        style={{ '--w-custom': '52px', '--h-custom': '52px' }}
+                                        style={{ '--w-custom': '3.25rem', '--h-custom': '3.25rem' }}
                                     >
                                         <Logo
                                             appName={appToLinkTo}
