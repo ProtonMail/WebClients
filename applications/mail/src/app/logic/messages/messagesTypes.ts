@@ -365,6 +365,7 @@ export interface LoadEmbeddedParams {
     messageKeys: MessageKeys;
     getAttachment: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined;
     onUpdateAttachment: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void;
+    messageFlags: number;
 }
 
 export type LoadEmbeddedResults = { attachment: Attachment; blob: string }[];

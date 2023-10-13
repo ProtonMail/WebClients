@@ -76,6 +76,7 @@ export interface ContactPublicKeyModel {
     obsoleteFingerprints: Set<string>; // Keys that are not allowed to encrypt, because they are marked as obsolete.
     encryptionCapableFingerprints: Set<string>; // Keys that are capable of encryption (regardless of whether they are allowed to encrypt).
     compromisedFingerprints: Set<string>; // Keys that are not allowed to encrypt nor sign, because they are marked as compromised
+    disabledEncryptionFingerprints: Set<string>; // Keys no-encrypted
     isPGPExternal: boolean;
     isPGPInternal: boolean;
     isPGPExternalWithWKDKeys: boolean;
@@ -102,6 +103,7 @@ export interface PublicKeyModel {
     scheme: PGP_SCHEMES;
     trustedFingerprints: Set<string>;
     obsoleteFingerprints: Set<string>;
+    disabledEncryptionFingerprints: Set<string>;
     encryptionCapableFingerprints: Set<string>;
     compromisedFingerprints: Set<string>;
     isPGPExternal: boolean;

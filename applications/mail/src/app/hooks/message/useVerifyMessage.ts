@@ -56,12 +56,14 @@ export const useVerifyMessage = (localID: string) => {
                     verificationPreferences.verifyingKeys
                 );
 
+                const messageData = getData();
                 attachedPublicKeys = await extractKeysFromAttachments(
-                    getData().Attachments,
+                    messageData.Attachments,
                     messageKeys,
                     getAttachment,
                     onUpdateAttachment,
-                    api
+                    api,
+                    messageData.Flags
                 );
                 const autocryptKeys = await extractKeysFromAutocrypt(getData().ParsedHeaders, senderAddress);
 

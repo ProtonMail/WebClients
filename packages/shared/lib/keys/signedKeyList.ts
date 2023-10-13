@@ -1,5 +1,6 @@
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import { KT_SKL_SIGNING_CONTEXT } from '@proton/key-transparency/lib';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { getIsAddressDisabled } from '../helpers/address';
 import {
@@ -38,20 +39,31 @@ export const getSignedKeyListWithDeferredPublish = async (
     address: Address,
     keyTransparencyVerify: KeyTransparencyVerify
 ): Promise<[SignedKeyList, OnSKLPublishSuccess]> => {
-    const transformedKeys = await Promise.all(
-        keys.map(async ({ flags, primary, sha256Fingerprints, fingerprint }) => ({
-            Primary: primary,
-            Flags: flags,
-            Fingerprint: fingerprint,
-            SHA256Fingerprints: sha256Fingerprints,
-        }))
-    );
+    const transformedKeys = (
+        await Promise.all(
+            keys.map(async ({ privateKey, flags, primary, sha256Fingerprints, fingerprint }) => {
+                const result = await CryptoProxy.isE2EEForwardingKey({ key: privateKey });
+
+                if (result) {
+                    return false;
+                }
+
+                return {
+                    Primary: primary,
+                    Flags: flags,
+                    Fingerprint: fingerprint,
+                    SHA256Fingerprints: sha256Fingerprints,
+                };
+            })
+        )
+    ).filter(isTruthy);
     const data = JSON.stringify(transformedKeys);
     const signingKey = keys[0]?.privateKey;
     if (!signingKey) {
         throw new Error('Missing primary signing key');
     }
 
+    // TODO: Could be filtered as well
     const publicKeys = keys.map((key) => key.publicKey);
 
     const signedKeyList: SignedKeyList = {
@@ -74,8 +86,17 @@ export const getSignedKeyList = async (
     address: Address,
     keyTransparencyVerify: KeyTransparencyVerify
 ): Promise<SignedKeyList> => {
+    const activeKeysWithoutForwarding = (
+        await Promise.all(
+            keys.map(async (key) => {
+                const result = await CryptoProxy.isE2EEForwardingKey({ key: key.privateKey });
+                return result ? false : key;
+            })
+        )
+    ).filter(isTruthy);
+
     const [signedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
-        keys,
+        activeKeysWithoutForwarding,
         address,
         keyTransparencyVerify
     );

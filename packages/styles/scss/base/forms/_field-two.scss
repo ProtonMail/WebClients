@@ -57,7 +57,7 @@
 		border-color: var(--signal-warning);
 	}
 
-	&--disabled {
+	&--disabled:not(.field-two--disabled-only-field) {
 		color: var(--field-disabled-text-color);
 	}
 
@@ -66,6 +66,15 @@
 	&--disabled &-assist {
 		color: inherit;
 		cursor: default;
+	}
+
+	&--disabled-only-field {
+		.select,
+		.input.disabled {
+			background-color: var(--background-weak);
+			color: var(--text-hint);
+			border-color: var(--background-weak);
+		}
 	}
 
 	&--bigger .input-element,
