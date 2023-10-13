@@ -3,8 +3,8 @@ import { createFormTracker } from 'proton-pass-extension/app/content/services/fo
 import type { DetectedField, DetectedForm, FormHandle } from 'proton-pass-extension/app/content/types';
 import { hasUnprocessedFields } from 'proton-pass-extension/app/content/utils/nodes';
 
-import type { FormType } from '@proton/pass/fathom';
-import { removeProcessedFlag } from '@proton/pass/fathom';
+import type { FormType } from '@proton/pass/fathom/lib';
+import { removeProcessedFlag } from '@proton/pass/fathom/lib';
 import { getMaxZIndex } from '@proton/pass/utils/dom/zindex';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';

@@ -10,5 +10,5 @@ module.exports = {
         '@typescript-eslint/consistent-type-imports': 'error',
         curly: ['error', 'multi-line'],
     },
-    ignorePatterns: ['.eslintrc.js', 'fathom/protonpass-fathom/'],
+    ignorePatterns: ['.eslintrc.js', 'fathom/lib/'],
 };

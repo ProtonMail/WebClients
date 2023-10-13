@@ -1,4 +1,4 @@
-import { FormType } from '@proton/pass/fathom';
+import { FormType } from '@proton/pass/fathom/lib';
 import type { FormEntry, FormIdentifier, Maybe, TabId, WithAutoSavePromptOptions } from '@proton/pass/types';
 import { FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';

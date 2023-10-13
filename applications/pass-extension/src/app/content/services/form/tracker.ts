@@ -3,7 +3,7 @@ import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { FieldHandle, FormHandle, FormTracker } from 'proton-pass-extension/app/content/types';
 import { DropdownAction, FieldInjectionRule } from 'proton-pass-extension/app/content/types';
 
-import { FieldType, FormType } from '@proton/pass/fathom';
+import { FieldType, FormType } from '@proton/pass/fathom/lib';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
