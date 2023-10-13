@@ -1,4 +1,5 @@
 import { CryptoProxy } from '@proton/crypto';
+import { Api as CryptoApi } from '@proton/crypto/lib/worker/api';
 import { authentication } from '@proton/pass/lib/auth/authentication';
 import type {
     PassCryptoManagerContext,
@@ -40,6 +41,11 @@ function assertHydrated(ctx: PassCryptoManagerContext): asserts ctx is Required<
 }
 
 const createPassCrypto = (): PassCryptoWorker => {
+    if (process.env.NODE_ENV !== 'test') {
+        CryptoApi.init();
+        CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
+    }
+
     const context: PassCryptoManagerContext = {
         user: undefined,
         userKeys: [],
