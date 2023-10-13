@@ -1,8 +1,7 @@
 import { MAX_MAX_DETECTION_TIME, MIN_MAX_DETECTION_TIME } from 'proton-pass-extension/app/content/constants.static';
 import type { DetectedField, DetectedForm } from 'proton-pass-extension/app/content/types';
 
-import type { FNode } from '@proton/pass/fathom';
-import type { FieldType } from '@proton/pass/fathom/lib';
+import type { FieldType } from '@proton/pass/fathom';
 import {
     FormType,
     clearDetectionCache,
@@ -11,7 +10,8 @@ import {
     prepass,
     rulesetMaker,
     shouldRunClassifier,
-} from '@proton/pass/fathom/lib';
+} from '@proton/pass/fathom';
+import type { Fnode } from '@proton/pass/fathom/fathom';
 import { logger } from '@proton/pass/utils/logger';
 import { withMaxExecutionTime } from '@proton/pass/utils/time/performance';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -20,7 +20,7 @@ const ruleset = rulesetMaker();
 const NOOP_EL = document.createElement('form');
 
 type BoundRuleset = ReturnType<typeof ruleset.against>;
-type PredictionResult<T extends string> = { fnode: FNode; type: T; score: number };
+type PredictionResult<T extends string> = { fnode: Fnode; type: T; score: number };
 type PredictionBestSelector<T extends string> = (a: PredictionResult<T>, b: PredictionResult<T>) => PredictionResult<T>;
 
 /* We should run the detection when :
@@ -58,8 +58,8 @@ const getPredictionsFor = <T extends string>(
      * `allThrough` effect which will flag the nodes */
     boundRuleset.get(options.type);
 
-    const predictions = options.subTypes.reduce<Map<FNode, PredictionResult<T>>>((results, subType) => {
-        const fnodes: FNode[] = boundRuleset.get(subType);
+    const predictions = options.subTypes.reduce<Map<Fnode, PredictionResult<T>>>((results, subType) => {
+        const fnodes: Fnode[] = boundRuleset.get(subType);
         fnodes.forEach((fnode) => {
             const score = fnode.hasType('cache') ? 1 : fnode.scoreFor(subType);
             const candidate = { type: subType, fnode, score };

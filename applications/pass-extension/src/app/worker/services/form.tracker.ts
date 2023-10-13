@@ -1,4 +1,3 @@
-import { FormType } from '@proton/pass/fathom/lib';
 import type { FormEntry, FormIdentifier, Maybe, TabId, WithAutoSavePromptOptions } from '@proton/pass/types';
 import { FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
@@ -14,8 +13,8 @@ import { createXMLHTTPRequestTracker } from './xmlhttp-request.tracker';
 
 const isPartialFormData = ({ type, data }: Pick<FormEntry, 'data' | 'type'>): boolean => {
     switch (type) {
-        case FormType.LOGIN:
-        case FormType.REGISTER: {
+        case 'login':
+        case 'register': {
             return !(data.username?.trim() && data.password?.trim());
         }
         default:
