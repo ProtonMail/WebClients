@@ -1,7 +1,7 @@
 import { put } from 'redux-saga/effects';
 
 import { api } from '@proton/pass/lib/api/api';
-import { PassCrypto } from '@proton/pass/lib/crypto';
+import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { moveItems } from '@proton/pass/lib/items/item.requests';
 import { vaultDeleteFailure, vaultDeleteIntent, vaultDeleteSuccess } from '@proton/pass/store/actions';
 import { takeEveryBefore } from '@proton/pass/store/sagas/utils/take.before';

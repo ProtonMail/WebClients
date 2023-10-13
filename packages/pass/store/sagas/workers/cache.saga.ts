@@ -2,7 +2,7 @@ import type { AnyAction } from 'redux';
 import type { Task } from 'redux-saga';
 import { cancel, fork, select, take, takeLatest } from 'redux-saga/effects';
 
-import { PassCrypto } from '@proton/pass/lib/crypto';
+import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { CACHE_SALT_LENGTH, encryptData, getCacheEncryptionKey } from '@proton/pass/lib/crypto/utils';
 import { workerReady } from '@proton/pass/lib/worker';
 import { signout, stateLock } from '@proton/pass/store/actions';

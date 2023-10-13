@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { api } from '@proton/pass/lib/api/api';
-import { PassCrypto } from '@proton/pass/lib/crypto';
+import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { type PendingInvite } from '@proton/pass/types/data/invites';
 import type {
     InviteAcceptIntent,

@@ -1,6 +1,6 @@
 import { put } from 'redux-saga/effects';
 
-import { PassCrypto } from '@proton/pass/lib/crypto';
+import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import { loadShare, requestShares } from '@proton/pass/lib/shares/share.requests';
 import { isActiveVault, isOwnVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';

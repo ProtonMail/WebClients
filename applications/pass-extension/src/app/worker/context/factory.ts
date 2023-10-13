@@ -19,7 +19,7 @@ import { createTelemetryService } from 'proton-pass-extension/app/worker/service
 import { setPopupIcon } from 'proton-pass-extension/lib/utils/popup-icon';
 import { getExtensionVersion } from 'proton-pass-extension/lib/utils/version';
 
-import { PassCrypto } from '@proton/pass/lib/crypto';
+import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
 import {
     workerErrored,
