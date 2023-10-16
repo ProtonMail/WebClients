@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 import { c } from 'ttag';
 
 import { CYCLE, DEFAULT_CURRENCY, MEMBER_ADDON_PREFIX } from '@proton/shared/lib/constants';
@@ -6,23 +8,15 @@ import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
 import {
     TotalPricing,
     allCycles,
-    getNormalCycleFromCustomCycle,
     getPricingFromPlanIDs,
     getTotalFromPricing,
 } from '@proton/shared/lib/helpers/subscription';
-import {
-    Currency,
-    PlanIDs,
-    PlansMap,
-    SubscriptionCheckResponse,
-    SubscriptionModel,
-} from '@proton/shared/lib/interfaces';
+import { Currency, PlanIDs, PlansMap, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { Option, Price, Radio, SelectTwo } from '../../../components';
+import { EllipsisLoader, Option, Price, Radio, SelectTwo } from '../../../components';
 import InputField from '../../../components/v2/field/InputField';
-import { getMonthFreeText, getMonthsFree } from '../../offers/helpers/offerCopies';
-import RenewalNotice from '../RenewalNotice';
+import { getMonthFreeText } from '../../offers/helpers/offerCopies';
 import { getShortBillingText } from '../helper';
 
 export interface Props {
@@ -35,16 +29,13 @@ export interface Props {
     planIDs: PlanIDs;
     disabled?: boolean;
     faded?: boolean;
-    isCustomBilling?: boolean;
-    isScheduledSubscription?: boolean;
-    subscription?: SubscriptionModel;
 }
 
 type TotalPricings = {
     [key in CYCLE]: TotalPricing;
 };
 
-const getDiscountPrice = (discount: number, currency: Currency) => {
+export const getDiscountPrice = (discount: number, currency: Currency) => {
     return discount ? (
         <>
             {c('Subscription saving').t`Save`}
@@ -55,7 +46,46 @@ const getDiscountPrice = (discount: number, currency: Currency) => {
     ) : null;
 };
 
+const singleClassName =
+    'p-4 mb-4 border rounded bg-norm flex flex-nowrap flex-align-items-stretch border-primary border-2';
+
+export const SubscriptionItemView = ({
+    title,
+    loading,
+    topRight,
+    bottomLeft,
+    bottomRight,
+}: {
+    title: ReactNode;
+    topRight: ReactNode;
+    bottomLeft: ReactNode;
+    bottomRight: ReactNode;
+    loading?: boolean;
+}) => {
+    return (
+        <div className={singleClassName}>
+            <div className="flex-item-fluid pl-2">
+                <div className="flex flex-align-items-center">
+                    <div className="flex-item-fluid-auto mr-4">
+                        <strong className="text-lg">{title}</strong>
+                    </div>
+                    <strong className="text-lg flex-item-noshrink color-primary">
+                        {loading ? <EllipsisLoader /> : topRight}
+                    </strong>
+                </div>
+                <div className="flex flex-align-items-center">
+                    <span className="color-weak flex flex-item-fluid-auto">
+                        {loading ? <EllipsisLoader /> : bottomLeft}
+                    </span>
+                    <span className="color-success flex flex-item-noshrink">{loading ? null : bottomRight}</span>
+                </div>
+            </div>
+        </div>
+    );
+};
+
 const CycleItemView = ({
+    loading,
     currency,
     text,
     total,
@@ -65,6 +95,7 @@ const CycleItemView = ({
     freeMonths,
     cycle,
 }: {
+    loading?: boolean;
     currency: Currency;
     text: string;
     total: number;
@@ -75,40 +106,48 @@ const CycleItemView = ({
     cycle: CYCLE;
 }) => {
     return (
-        <>
-            <div className="flex-item-fluid pl-2">
-                <div className="flex flex-align-items-center">
-                    <div className="flex-item-fluid-auto mr-4">
-                        <strong className="text-lg">{text}</strong>
-                        {freeMonths > 0 && (
-                            <span className="color-success">
-                                {` + `}
-                                {getMonthFreeText(freeMonths)}
-                            </span>
-                        )}
-                    </div>
-                    <strong className="text-lg flex-item-noshrink color-primary">
-                        {c('Subscription price').t`For`}
-                        <Price className="ml-1" currency={currency} data-testid="subscription-total-price">
-                            {total}
-                        </Price>
-                    </strong>
+        <div className="flex-item-fluid pl-2">
+            <div className="flex flex-align-items-center">
+                <div className="flex-item-fluid-auto mr-4">
+                    <strong className="text-lg">{text}</strong>
+                    {freeMonths > 0 && (
+                        <span className="color-success">
+                            {` + `}
+                            {getMonthFreeText(freeMonths)}
+                        </span>
+                    )}
                 </div>
-                <div className="flex flex-align-items-center">
-                    <span
-                        className="color-weak flex flex-item-fluid-auto"
-                        data-testid={`price-per-user-per-month-${cycle}`}
-                    >
+                <strong className="text-lg flex-item-noshrink color-primary">
+                    {loading ? (
+                        <EllipsisLoader />
+                    ) : (
+                        <>
+                            {c('Subscription price').t`For`}
+                            <Price className="ml-1" currency={currency} data-testid="subscription-total-price">
+                                {total}
+                            </Price>
+                        </>
+                    )}
+                </strong>
+            </div>
+            <div className="flex flex-align-items-center">
+                <span
+                    className="color-weak flex flex-item-fluid-auto"
+                    data-testid={`price-per-user-per-month-${cycle}`}
+                >
+                    {loading ? (
+                        <EllipsisLoader />
+                    ) : (
                         <Price currency={currency} suffix={monthlySuffix} data-testid="price-value-per-user-per-month">
                             {totalPerMonth}
                         </Price>
-                    </span>
-                    <span className="color-success flex flex-item-noshrink">
-                        {getDiscountPrice(discount, currency)}
-                    </span>
-                </div>
+                    )}
+                </span>
+                <span className="color-success flex flex-item-noshrink">
+                    {loading ? null : getDiscountPrice(discount, currency)}
+                </span>
             </div>
-        </>
+        </div>
     );
 };
 
@@ -123,8 +162,8 @@ const CycleItem = ({
     cycle: CYCLE;
     currency: Currency;
 }) => {
-    const replacementCycle = getNormalCycleFromCustomCycle(cycle) || cycle;
-    const freeMonths = getMonthsFree(cycle);
+    const replacementCycle = cycle;
+    const freeMonths = 0;
     const { total, perUserPerMonth, discount } = totals[replacementCycle];
 
     return (
@@ -141,10 +180,7 @@ const CycleItem = ({
     );
 };
 
-const singleClassName =
-    'p-4 mb-4 border rounded bg-norm flex flex-nowrap flex-align-items-stretch border-primary border-2';
-
-const getMonthlySuffix = (planIDs: PlanIDs) => {
+export const getMonthlySuffix = (planIDs: PlanIDs) => {
     const supportedAddons = getSupportedAddons(planIDs);
     return Object.keys(supportedAddons).some((addon) => addon.startsWith(MEMBER_ADDON_PREFIX))
         ? c('Suffix').t`/user per month`
@@ -155,21 +191,24 @@ export const SubscriptionCheckoutCycleItem = ({
     checkResult,
     plansMap,
     planIDs,
+    loading,
 }: {
     checkResult: SubscriptionCheckResponse | undefined;
     plansMap: PlansMap;
     planIDs: PlanIDs;
+    loading?: boolean;
 }) => {
     const cycle = checkResult?.Cycle || CYCLE.MONTHLY;
     const currency = checkResult?.Currency || DEFAULT_CURRENCY;
-    const replacementCycle = getNormalCycleFromCustomCycle(cycle) || cycle;
-    const freeMonths = getMonthsFree(cycle);
+    const replacementCycle = cycle;
+    const freeMonths = 0;
 
     const result = getCheckout({ planIDs, plansMap, checkResult });
 
     return (
         <div className={singleClassName}>
             <CycleItemView
+                loading={loading}
                 text={getShortBillingText(replacementCycle)}
                 currency={currency}
                 discount={result.discountPerCycle}
@@ -193,9 +232,6 @@ const SubscriptionCycleSelector = ({
     planIDs,
     plansMap,
     faded,
-    isCustomBilling = false,
-    isScheduledSubscription = false,
-    subscription,
 }: Props) => {
     const filteredCycles = [CYCLE.YEARLY, CYCLE.MONTHLY].filter((cycle) => cycle >= minimumCycle);
 
@@ -216,17 +252,9 @@ const SubscriptionCycleSelector = ({
         const cycle = cycles[0];
 
         return (
-            <>
-                <div className={clsx(singleClassName, 'mb-2', fadedClasses)}>
-                    <CycleItem monthlySuffix={monthlySuffix} totals={totals} cycle={cycle} currency={currency} />
-                </div>
-                <RenewalNotice
-                    renewCycle={cycleSelected}
-                    isCustomBilling={isCustomBilling}
-                    isScheduledSubscription={isScheduledSubscription}
-                    subscription={subscription}
-                />
-            </>
+            <div className={clsx(singleClassName, 'mb-2', fadedClasses)}>
+                <CycleItem monthlySuffix={monthlySuffix} totals={totals} cycle={cycle} currency={currency} />
+            </div>
         );
     }
 
@@ -263,66 +291,47 @@ const SubscriptionCycleSelector = ({
                         );
                     })}
                 </InputField>
-                <RenewalNotice
-                    renewCycle={cycleSelected}
-                    isCustomBilling={isCustomBilling}
-                    isScheduledSubscription={isScheduledSubscription}
-                    subscription={subscription}
-                    className="mt-2"
-                />
             </div>
         );
     }
 
     return (
-        <>
-            <ul className={clsx('unstyled m-0 plan-cycle-selector', fadedClasses)}>
-                {cycles.map((cycle) => {
-                    const isSelected = cycle === cycleSelected;
-                    return (
-                        <li
-                            key={`${cycle}`}
-                            className="flex flex-align-items-stretch mb-4"
-                            data-testid={`cycle-${cycle}`}
+        <ul className={clsx('unstyled m-0 plan-cycle-selector', fadedClasses)}>
+            {cycles.map((cycle) => {
+                const isSelected = cycle === cycleSelected;
+                return (
+                    <li key={`${cycle}`} className="flex flex-align-items-stretch mb-4" data-testid={`cycle-${cycle}`}>
+                        <button
+                            className={clsx([
+                                'w100 p-4 plan-cycle-button flex flex-nowrap border rounded text-left',
+                                isSelected && 'border-primary',
+                                isSelected && 'border-2',
+                            ])}
+                            disabled={disabled}
+                            onClick={() => onChangeCycle(cycle)}
+                            type="button"
+                            aria-pressed={isSelected}
                         >
-                            <button
-                                className={clsx([
-                                    'w100 p-4 plan-cycle-button flex flex-nowrap border rounded text-left',
-                                    isSelected && 'border-primary',
-                                    isSelected && 'border-2',
-                                ])}
-                                disabled={disabled}
-                                onClick={() => onChangeCycle(cycle)}
-                                type="button"
-                                aria-pressed={isSelected}
-                            >
-                                <div className="flex-item-noshrink" aria-hidden="true">
-                                    <Radio
-                                        id={`${cycle}`}
-                                        name="cycleFakeField"
-                                        tabIndex={-1}
-                                        checked={isSelected}
-                                        readOnly
-                                    />
-                                </div>
-                                <CycleItem
-                                    totals={totals}
-                                    monthlySuffix={monthlySuffix}
-                                    currency={currency}
-                                    cycle={cycle}
+                            <div className="flex-item-noshrink" aria-hidden="true">
+                                <Radio
+                                    id={`${cycle}`}
+                                    name="cycleFakeField"
+                                    tabIndex={-1}
+                                    checked={isSelected}
+                                    readOnly
                                 />
-                            </button>
-                        </li>
-                    );
-                })}
-            </ul>
-            <RenewalNotice
-                renewCycle={cycleSelected}
-                isCustomBilling={isCustomBilling}
-                isScheduledSubscription={isScheduledSubscription}
-                subscription={subscription}
-            />
-        </>
+                            </div>
+                            <CycleItem
+                                totals={totals}
+                                monthlySuffix={monthlySuffix}
+                                currency={currency}
+                                cycle={cycle}
+                            />
+                        </button>
+                    </li>
+                );
+            })}
+        </ul>
     );
 };
 

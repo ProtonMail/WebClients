@@ -17,6 +17,7 @@ import {
     KeyTransparencyActivation,
     Organization,
     Plan,
+    PlansMap,
     Subscription,
     SubscriptionCheckResponse,
     User,
@@ -94,6 +95,7 @@ export interface SignupModel {
     subscriptionData: SubscriptionData;
     domains: string[];
     plans: Plan[];
+    plansMap: PlansMap;
     paymentMethodStatus: PaymentMethodStatus;
     humanVerificationMethods: HumanVerificationMethodType[];
     humanVerificationToken: string;
@@ -128,10 +130,9 @@ interface BaseAccountData {
     payload: ChallengeResult;
 }
 
-export type AccountData =
-    | BaseAccountData & {
-          signupType: SignupType;
-      };
+export type AccountData = BaseAccountData & {
+    signupType: SignupType;
+};
 
 export enum HumanVerificationTrigger {
     ExternalCheck,

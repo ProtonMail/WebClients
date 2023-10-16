@@ -21,7 +21,7 @@ const config: OfferConfig = {
                 [PLANS.BUNDLE]: 1,
             },
             cycle: CYCLE.TWO_YEARS,
-            popular: true,
+            popular: 1,
             features: getUnlimitedDealFeatures,
             getCTAContent: () => c('specialoffer: Action, Unlimited is a plan name').t`Go Unlimited`,
         },

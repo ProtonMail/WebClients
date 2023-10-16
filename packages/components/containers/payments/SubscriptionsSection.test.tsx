@@ -147,13 +147,13 @@ describe('SubscriptionsSection', () => {
 
     it('should show renewal notice if there is no upcoming subscription', () => {
         const { getByTestId } = render(<ContextSubscriptionSection />);
-        expect(getByTestId('renewalNotice')).toHaveTextContent('Renews automatically for CHF 12.99, for 1 month');
+        expect(getByTestId('renewalNotice')).toHaveTextContent('Renews automatically at CHF 12.99, for 1 month');
     });
 
     it('should show renewal notice if there is upcoming subscription', () => {
         subscription.UpcomingSubscription = upcoming;
         const { getByTestId } = render(<ContextSubscriptionSection />);
-        expect(getByTestId('renewalNotice')).toHaveTextContent('Renews automatically for CHF 119.88, for 12 months');
+        expect(getByTestId('renewalNotice')).toHaveTextContent('Renews automatically at CHF 119.88, for 12 months');
     });
 
     it('should now show renewal notice if subscription is expiring', () => {

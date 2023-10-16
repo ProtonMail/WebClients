@@ -46,7 +46,7 @@ export const getSummaryPlan = (plan: Plan | undefined, vpnServersCountData: VPNS
     }
 
     if (plan && plan?.Name === PLANS.BUNDLE) {
-        const shortPlan = getBundlePlan(plan);
+        const shortPlan = getBundlePlan(plan, vpnServersCountData);
         return {
             logo: (
                 <div>
@@ -59,7 +59,7 @@ export const getSummaryPlan = (plan: Plan | undefined, vpnServersCountData: VPNS
                 getMailAppFeature(),
                 getCalendarAppFeature(),
                 getDriveAppFeature(),
-                getVPNAppFeature(),
+                getVPNAppFeature({ serversCount: vpnServersCountData }),
                 getPassAppFeature(),
             ],
         };
@@ -79,7 +79,7 @@ export const getSummaryPlan = (plan: Plan | undefined, vpnServersCountData: VPNS
                 getMailAppFeature(),
                 getCalendarAppFeature(),
                 getDriveAppFeature(),
-                getVPNAppFeature(),
+                getVPNAppFeature({ serversCount: vpnServersCountData }),
                 getPassAppFeature(),
             ],
         };

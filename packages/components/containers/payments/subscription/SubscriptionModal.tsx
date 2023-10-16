@@ -3,7 +3,10 @@ import { FormEvent, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { FeatureCode } from '@proton/components/containers';
+import { getShortBillingText } from '@proton/components/containers/payments/helper';
+import VPNPassPromotionButton from '@proton/components/containers/payments/subscription/VPNPassPromotionButton';
 import usePaymentToken from '@proton/components/containers/payments/usePaymentToken';
 import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import {
@@ -17,12 +20,22 @@ import metrics, { observeApiError } from '@proton/metrics';
 import { WebPaymentsSubscriptionStepsTotal } from '@proton/metrics/types/web_payments_subscription_steps_total_v1.schema';
 import { checkSubscription, deleteSubscription, subscribe } from '@proton/shared/lib/api/payments';
 import { getShouldCalendarPreventSubscripitionChange, willHavePaidMail } from '@proton/shared/lib/calendar/plans';
-import { APPS, APP_NAMES, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
+import {
+    APPS,
+    APP_NAMES,
+    CYCLE,
+    DEFAULT_CURRENCY,
+    DEFAULT_CYCLE,
+    PASS_APP_NAME,
+    PLANS,
+    PLAN_TYPES,
+} from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { getIsCustomCycle, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
+import { canUpsellToVPNPassBundle } from '@proton/shared/lib/helpers/blackfriday';
+import { getCheckout, getIsCustomCycle, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasBonuses } from '@proton/shared/lib/helpers/organization';
-import { hasPlanIDs, supportAddons } from '@proton/shared/lib/helpers/planIDs';
+import { getPlanFromCheckout, hasPlanIDs, supportAddons } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { hasMigrationDiscount, hasNewVisionary, hasVPN } from '@proton/shared/lib/helpers/subscription';
 import {
@@ -74,7 +87,11 @@ import CalendarDowngradeModal from './CalendarDowngradeModal';
 import PlanCustomization from './PlanCustomization';
 import { DiscountWarningModal, NewVisionaryWarningModal } from './PlanLossWarningModal';
 import PlanSelection from './PlanSelection';
-import SubscriptionCycleSelector from './SubscriptionCycleSelector';
+import SubscriptionCycleSelector, {
+    SubscriptionItemView,
+    getDiscountPrice,
+    getMonthlySuffix,
+} from './SubscriptionCycleSelector';
 import SubscriptionSubmitButton from './SubscriptionSubmitButton';
 import { useCancelSubscriptionFlow } from './cancelSubscription';
 import { SUBSCRIPTION_STEPS, subscriptionModalClassName } from './constants';
@@ -554,6 +571,37 @@ const SubscriptionModal = ({
         void withLoading(run());
     };
 
+    const handleUpsellVPNPassBundle = () => {
+        if (loadingCheck) {
+            return;
+        }
+
+        let newModel: Model;
+        if (model.planIDs[PLANS.VPN]) {
+            const cycleChange = ![CYCLE.FIFTEEN, CYCLE.THIRTY].includes(model.cycle)
+                ? { cycle: CYCLE.FIFTEEN }
+                : undefined;
+            newModel = {
+                ...model,
+                ...cycleChange,
+                planIDs: {
+                    [PLANS.VPN_PASS_BUNDLE]: 1,
+                },
+            };
+        } else {
+            newModel = {
+                ...model,
+                planIDs: {
+                    [PLANS.VPN]: 1,
+                },
+            };
+        }
+        setModel(newModel);
+        const checkPromise = check(newModel);
+        void withLoadingCheck(checkPromise);
+        void withBlockCycleSelector(checkPromise);
+    };
+
     return (
         <>
             {cancelSubscriptionModals}
@@ -678,6 +726,7 @@ const SubscriptionModal = ({
                                         currency={model.currency}
                                         cycle={model.cycle}
                                         planIDs={model.planIDs}
+                                        subscription={subscription}
                                         onChangeCurrency={handleChangeCurrency}
                                         {...checkoutModifiers}
                                     />
@@ -689,25 +738,89 @@ const SubscriptionModal = ({
                         <div className="subscriptionCheckout-top-container">
                             <div className="flex-item-fluid on-mobile-w100 pr-4 md:pr-0 lg:pr-6 pt-6">
                                 <div className="mx-auto max-w37e subscriptionCheckout-options ">
-                                    {!disableCycleSelector && (
-                                        <>
-                                            <h2 className="text-2xl text-bold mb-4">{c('Label')
-                                                .t`Subscription options`}</h2>
-                                            <div className="mb-8">
-                                                <SubscriptionCycleSelector
-                                                    mode="buttons"
-                                                    plansMap={plansMap}
-                                                    planIDs={model.planIDs}
-                                                    cycle={model.cycle}
-                                                    currency={model.currency}
-                                                    onChangeCycle={handleChangeCycle}
-                                                    disabled={loadingCheck}
-                                                    subscription={subscription}
-                                                    {...checkoutModifiers}
-                                                />
-                                            </div>
-                                        </>
-                                    )}
+                                    {(() => {
+                                        if (isFreePlanSelected) {
+                                            return null;
+                                        }
+                                        if (disableCycleSelector) {
+                                            return (
+                                                <>
+                                                    <h2 className="text-2xl text-bold mb-4">
+                                                        {c('Label').t`New plan`}
+                                                    </h2>
+                                                    <div className="mb-8">
+                                                        {(() => {
+                                                            const plan = getPlanFromCheckout(model.planIDs, plansMap);
+                                                            const result = getCheckout({
+                                                                planIDs: model.planIDs,
+                                                                plansMap,
+                                                                checkResult,
+                                                            });
+                                                            return (
+                                                                <SubscriptionItemView
+                                                                    title={plan?.Title}
+                                                                    bottomLeft={getShortBillingText(model.cycle)}
+                                                                    topRight={getSimplePriceString(
+                                                                        model.currency,
+                                                                        result.withDiscountPerMonth,
+                                                                        getMonthlySuffix(model.planIDs)
+                                                                    )}
+                                                                    bottomRight={getDiscountPrice(
+                                                                        result.discountPerCycle,
+                                                                        model.currency
+                                                                    )}
+                                                                    loading={loadingCheck}
+                                                                />
+                                                            );
+                                                        })()}
+                                                        {canUpsellToVPNPassBundle(
+                                                            model.planIDs,
+                                                            model.cycle,
+                                                            couponCode
+                                                        ) && (
+                                                            <VPNPassPromotionButton
+                                                                onClick={handleUpsellVPNPassBundle}
+                                                                currency={model.currency}
+                                                                cycle={model.cycle}
+                                                            />
+                                                        )}
+                                                        {model.planIDs[PLANS.VPN_PASS_BUNDLE] && (
+                                                            <Button
+                                                                className="flex flex-nowrap flex-align-items-center flex-justify-center"
+                                                                fullWidth
+                                                                color="weak"
+                                                                shape="outline"
+                                                                onClick={handleUpsellVPNPassBundle}
+                                                            >
+                                                                <Icon name="trash" size={14} />
+                                                                <span className="ml-2">
+                                                                    {c('bf2023: Action').t`Remove ${PASS_APP_NAME}`}
+                                                                </span>
+                                                            </Button>
+                                                        )}
+                                                    </div>
+                                                </>
+                                            );
+                                        }
+                                        return (
+                                            <>
+                                                <h2 className="text-2xl text-bold mb-4">
+                                                    {c('Label').t`Subscription options`}
+                                                </h2>
+                                                <div className="mb-8">
+                                                    <SubscriptionCycleSelector
+                                                        mode="buttons"
+                                                        plansMap={plansMap}
+                                                        planIDs={model.planIDs}
+                                                        cycle={model.cycle}
+                                                        currency={model.currency}
+                                                        onChangeCycle={handleChangeCycle}
+                                                        disabled={loadingCheck}
+                                                    />
+                                                </div>
+                                            </>
+                                        );
+                                    })()}
                                     {/* avoid mounting/unmounting the component which re-triggers the hook */}
                                     <div className={amountDue ? undefined : 'hidden'}>
                                         <Payment
@@ -769,6 +882,7 @@ const SubscriptionModal = ({
                                         vpnServers={vpnServers}
                                         loading={loadingCheck}
                                         currency={model.currency}
+                                        subscription={subscription}
                                         cycle={model.cycle}
                                         planIDs={model.planIDs}
                                         gift={
@@ -838,9 +952,7 @@ const SubscriptionModal = ({
                                                     currency={model.currency}
                                                     onChangeCycle={handleChangeCycle}
                                                     disabled={loadingCheck}
-                                                    subscription={subscription}
                                                     faded={blockCycleSelector}
-                                                    {...checkoutModifiers}
                                                 />
                                             </div>
                                         </>
@@ -902,6 +1014,7 @@ const SubscriptionModal = ({
                                                 disabled={isFreeUserWithFreePlanSelected || !canPay}
                                             />
                                         }
+                                        subscription={subscription}
                                         plansMap={plansMap}
                                         checkResult={checkResult}
                                         vpnServers={vpnServers}

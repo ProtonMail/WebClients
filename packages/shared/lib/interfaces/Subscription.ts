@@ -4,9 +4,9 @@ export type Currency = 'EUR' | 'CHF' | 'USD';
 export type Cycle = CYCLE.MONTHLY | CYCLE.YEARLY | CYCLE.TWO_YEARS | CYCLE.THIRTY | CYCLE.FIFTEEN;
 
 export interface CycleMapping<T> {
-    [CYCLE.MONTHLY]: T;
-    [CYCLE.YEARLY]: T;
-    [CYCLE.TWO_YEARS]: T;
+    [CYCLE.MONTHLY]?: T;
+    [CYCLE.YEARLY]?: T;
+    [CYCLE.TWO_YEARS]?: T;
     // Not always included for all plans
     [CYCLE.THIRTY]?: T;
     [CYCLE.FIFTEEN]?: T;

@@ -21,20 +21,20 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { queryPaymentMethodStatus, queryPlans } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { ProductParam } from '@proton/shared/lib/apps/product';
-import { APP_NAMES, CLIENT_TYPES, CYCLE, DEFAULT_CURRENCY, PLANS, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { APP_NAMES, CLIENT_TYPES, COUPON_CODES, PLANS, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { getIsVpnB2BPlan, getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
-import { Api, Cycle, CycleMapping, Plan, PlansMap } from '@proton/shared/lib/interfaces';
-import { FREE_PLAN, getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
+import { getIsVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
+import { Plan, PlansMap } from '@proton/shared/lib/interfaces';
+import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
 import noop from '@proton/utils/noop';
 
-import { getPlanFromPlanIDs, getSubscriptionPrices } from '../signup/helper';
-import { SignupCacheResult, SignupType, SubscriptionData } from '../signup/interfaces';
-import { SignupParameters, getPlanIDsFromParams, getSignupSearchParams } from '../signup/searchParams';
+import { getPlanFromPlanIDs } from '../signup/helper';
+import { SignupCacheResult, SignupType } from '../signup/interfaces';
+import { getSignupSearchParams } from '../signup/searchParams';
 import {
     getSubscriptionMetricsData,
     handleDone,
@@ -52,7 +52,7 @@ import Step1 from './Step1';
 import Step2 from './Step2';
 import Step3 from './Step3';
 import Step4 from './Step4';
-import { getUpsellShortPlan } from './helper';
+import { getInitialSubscriptionDataForAllCycles, getUpsellShortPlan } from './helper';
 import onboardingVPNWelcome2 from './illustration.svg';
 import { TelemetryMeasurementData } from './measure';
 import vpnUpsellIllustration from './vpn-upsell-illustration.svg';
@@ -126,77 +126,17 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
         }));
     };
 
-    const selectedPlan = getPlanFromPlanIDs(model.plans, model.subscriptionData.planIDs) || FREE_PLAN;
+    const selectedPlan = getPlanFromPlanIDs(model.plansMap, model.subscriptionData.planIDs) || FREE_PLAN;
     const upsellShortPlan = getUpsellShortPlan(selectedPlan, vpnServersCountData);
 
     const isB2bPlan = getIsVpnB2BPlan(selectedPlan?.Name as PLANS);
-    const isDarkBg = isB2bPlan;
+    const background = isB2bPlan
+        ? 'dark'
+        : signupParameters.coupon === COUPON_CODES.BLACK_FRIDAY_2023
+        ? 'bf2023'
+        : undefined;
 
     useEffect(() => {
-        const getSubscriptionData = async (
-            api: Api,
-            plans: Plan[],
-            signupParameters: SignupParameters,
-            cycle: Cycle
-        ): Promise<SubscriptionData> => {
-            const prePlanIDs = getPlanIDsFromParams(plans, signupParameters);
-            const currency = signupParameters.currency || plans?.[0]?.Currency || DEFAULT_CURRENCY;
-            const { planIDs, checkResult } = await getSubscriptionPrices(
-                api,
-                prePlanIDs || {},
-                currency,
-                cycle,
-                signupParameters.coupon
-            )
-                .then((checkResult) => {
-                    return {
-                        checkResult,
-                        planIDs: prePlanIDs,
-                    };
-                })
-                .catch(() => {
-                    // If the check call fails, just reset everything
-                    return {
-                        checkResult: getFreeCheckResult(
-                            signupParameters.currency,
-                            // "Reset" the cycle because the custom cycles are only valid with a coupon
-                            getNormalCycleFromCustomCycle(cycle)
-                        ),
-                        planIDs: undefined,
-                    };
-                });
-            return {
-                cycle: checkResult.Cycle,
-                minimumCycle: signupParameters.minimumCycle,
-                currency: checkResult.Currency,
-                checkResult,
-                planIDs: planIDs || {},
-                skipUpsell: !!planIDs,
-            };
-        };
-
-        const getInitialSubscriptionDataForAllCycles = async (Plans: Plan[]) => {
-            const [subscriptionDataMonthly, subscriptionDataYearly, subscriptionDataTwoYears] = await Promise.all(
-                [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS].map((cycle) =>
-                    getSubscriptionData(silentApi, Plans, signupParameters, cycle)
-                )
-            );
-
-            const subscriptionDataCycleMapping: CycleMapping<SubscriptionData> = {
-                [CYCLE.MONTHLY]: subscriptionDataMonthly,
-                [CYCLE.YEARLY]: subscriptionDataYearly,
-                [CYCLE.TWO_YEARS]: subscriptionDataTwoYears,
-            };
-
-            const subscriptionData: SubscriptionData =
-                subscriptionDataCycleMapping[signupParameters.cycle] ?? subscriptionDataCycleMapping[CYCLE.TWO_YEARS];
-
-            return {
-                subscriptionData,
-                subscriptionDataCycleMapping,
-            };
-        };
-
         const fetchDependencies = async () => {
             await startUnAuthFlow().catch(noop);
 
@@ -214,9 +154,11 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                 ).then(({ Plans }) => Plans),
             ]);
 
-            const { subscriptionData, subscriptionDataCycleMapping } = await getInitialSubscriptionDataForAllCycles(
-                Plans
-            );
+            const { subscriptionData, subscriptionDataCycleMapping } = await getInitialSubscriptionDataForAllCycles({
+                api: silentApi,
+                signupParameters,
+                Plans,
+            });
             const plansMap = toMap(Plans, 'Name') as PlansMap;
 
             void measure({
@@ -271,7 +213,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
             wait(3500),
         ]);
 
-        void measure(getSignupTelemetryData(model.plans, cache));
+        void measure(getSignupTelemetryData(model.plansMap, cache));
 
         return result.cache;
     };
@@ -322,7 +264,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                         loading={loading}
                         selectedPlan={selectedPlan}
                         isB2bPlan={isB2bPlan}
-                        isDarkBg={isDarkBg}
+                        background={background}
                         vpnServersCountData={vpnServersCountData}
                         upsellShortPlan={upsellShortPlan}
                         model={model}
@@ -391,7 +333,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                         }
                         product={VPN_APP_NAME}
                         isB2bPlan={isB2bPlan}
-                        isDarkBg={isDarkBg}
+                        background={background}
                         img={<img src={onboardingVPNWelcome} alt={c('Onboarding').t`Welcome to ${VPN_APP_NAME}`} />}
                         onSetup={async () => {
                             if (!cache || cache.type !== 'signup') {
@@ -447,7 +389,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                         password={cache?.accountData.password || ''}
                         product={VPN_APP_NAME}
                         isB2bPlan={isB2bPlan}
-                        isDarkBg={isDarkBg}
+                        background={background}
                         onComplete={async (newPassword: string | undefined) => {
                             if (!cache || cache.type !== 'signup') {
                                 throw new Error('Missing cache');
@@ -495,7 +437,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                     <Step4
                         product={VPN_APP_NAME}
                         isB2bPlan={isB2bPlan}
-                        isDarkBg={isDarkBg}
+                        background={background}
                         onSetup={async () => {
                             if (!cache || cache.type !== 'signup') {
                                 throw new Error('Missing cache');

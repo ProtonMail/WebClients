@@ -34,6 +34,9 @@ export const PlanCardFeatureList = ({
     className,
     itemClassName,
 }: FeatureListProps) => {
+    if (!features.length) {
+        return null;
+    }
     return (
         <ul
             className={clsx(
