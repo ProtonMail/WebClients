@@ -75,7 +75,7 @@ const CalendarSearchView = ({
 }: Props) => {
     const [closestToDateRef, setClosestToDateRef] = useState<HTMLDivElement | null>(null);
 
-    const { items, loading } = useCalendarSearch();
+    const { items, recurrenceIDsMap, loading } = useCalendarSearch();
     const [calendarViewEvents, setCalendarViewEvents] = useState<CalendarViewEvent[]>([]);
 
     const calendarsMap = useMemo(
@@ -117,7 +117,7 @@ const CalendarSearchView = ({
 
     const visualItems = useMemo(() => {
         return getVisualSearchItems({
-            items: expandAndOrderItems(visibleItems, calendarsEventsCacheRef.current, date),
+            items: expandAndOrderItems(visibleItems, calendarsEventsCacheRef.current, recurrenceIDsMap, date),
             calendarsMap,
             tzid,
             date,
