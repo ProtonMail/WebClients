@@ -40,9 +40,9 @@ const getFeatures = (): OfferFeatures[] => [
 const getContent = (type: UpsellingModalType): UpsellModalContent =>
     ({
         'free-trial': {
-            title: 'Enjoy your free trial',
+            title: 'Your welcome gift',
             description: undefined,
-            upgradeLabel: c('Action').t`Upgrade to keep these features`,
+            upgradeLabel: c('Action').t`Upgrade now`,
         },
         'pass-plus': {
             title: 'Pass Plus',
@@ -105,11 +105,14 @@ export const UpsellingModal: VFC<Props> = ({ type, ...props }) => {
                 </Card>
                 {daysRemaining !== null && (
                     <div className="text-sm">
-                        {c('Info').ngettext(
-                            msgid`You have ${daysRemaining} day left in your trial period.`,
-                            `You have ${daysRemaining} days left in your trial period.`,
-                            daysRemaining
-                        )}
+                        {
+                            // translator: the word "these" refers to premium features listed above
+                            c('Info').ngettext(
+                                msgid`You have ${daysRemaining} day left to try these and other premium features.`,
+                                `You have ${daysRemaining} days left to try these and other premium features.`,
+                                daysRemaining
+                            )
+                        }
                     </div>
                 )}
                 {type === 'free-trial' && (

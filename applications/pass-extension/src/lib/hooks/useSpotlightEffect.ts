@@ -19,7 +19,7 @@ import { selectMostRecentInvite } from '@proton/pass/store/selectors/invites';
 import type { Callback, MaybeNull, WorkerMessageWithSender } from '@proton/pass/types';
 import { OnboardingMessage, WorkerMessageType } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
-import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
@@ -109,9 +109,9 @@ export const useSpotlightEffect = () => {
             },
             [OnboardingMessage.TRIAL]: {
                 id: 'trial',
-                title: c('Title').t`Enjoy your free trial`,
+                title: c('Title').t`Our welcome gift to you`,
                 message: c('Info')
-                    .t`Check out all the exclusive features that are available to you for a limited time.`,
+                    .t`7 days to try premium features for free. Only during your first week of ${BRAND_NAME}.`,
                 className: 'ui-orange',
                 onClose: withAcknowledgment(noop),
                 action: {

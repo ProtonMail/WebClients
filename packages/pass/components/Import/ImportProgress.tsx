@@ -26,7 +26,7 @@ export const ImportProgress: FC<{ total: number; port?: Runtime.Port }> = ({ tot
 
     return (
         <>
-            {c('Info').t`Import in progress :`}{' '}
+            {c('Info').t`Import in progress:`}{' '}
             <strong className="mx-2">
                 {progress}/{total} {c('Info').ngettext(msgid`item`, `items`, total)}
             </strong>

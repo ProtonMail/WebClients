@@ -82,7 +82,7 @@ export const ExtraFieldComponent: VFC<ExtraFieldProps> = (props) => {
                     !fieldValueEmpty && 'color-weak',
                     touched && error?.fieldName && 'placeholder-danger'
                 )}
-                placeholder={c('Label').t`Label`}
+                placeholder={c('Label').t`Field name`}
                 autoFocus={autoFocus}
                 field={{
                     ...field,
