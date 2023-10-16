@@ -32,10 +32,10 @@ export type PassCryptoSnapshot = Pick<PassCryptoManagerContext, 'shareManagers'>
 export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSnapshot> {
     getContext: () => PassCryptoManagerContext;
     hydrate: (data: {
-        keyPassword: string;
-        user: User;
         addresses: Address[];
+        keyPassword: string;
         snapshot?: SerializedCryptoContext<PassCryptoSnapshot>;
+        user: User;
     }) => Promise<void>;
     clear: () => void;
     getShareManager: (shareId: string) => ShareManager;
@@ -51,26 +51,28 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
     openItem: (data: { shareId: string; encryptedItem: ItemRevisionContentsResponse }) => Promise<OpenedItem>;
     createItem: (data: { shareId: string; content: Uint8Array }) => Promise<ItemCreateRequest>;
     updateItem: (data: {
-        shareId: string;
         content: Uint8Array;
-        latestItemKey: ItemKeyResponse;
         lastRevision: number;
+        latestItemKey: ItemKeyResponse;
+        shareId: string;
     }) => Promise<ItemUpdateRequest>;
     moveItem: (data: { destinationShareId: string; content: Uint8Array }) => Promise<ItemMoveSingleToShareRequest>;
     createVaultInvite: (data: {
-        shareId: string;
         email: string;
-        role: ShareRole;
         inviteePublicKey: string;
+        role: ShareRole;
+        shareId: string;
     }) => Promise<InviteCreateRequest>;
     acceptVaultInvite: (data: {
+        invitedEmail: string;
         inviteKeys: KeyRotationKeyPair[];
         inviterPublicKeys: string[];
     }) => Promise<InviteAcceptRequest>;
     readVaultInvite: (data: {
+        encryptedVaultContent: string;
+        invitedEmail: string;
         inviteKey: KeyRotationKeyPair;
         inviterPublicKeys: string[];
-        encryptedVaultContent: string;
     }) => Promise<Uint8Array>;
 }
 
