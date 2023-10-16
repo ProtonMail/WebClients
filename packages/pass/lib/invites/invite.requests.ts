@@ -41,7 +41,7 @@ export const createInvite = async ({ shareId, email, role }: InviteCreateIntent)
                     shareId,
                     email,
                     role,
-                    inviteePublicKey: await getPrimaryPublicKeyForEmail(email),
+                    invitedPublicKey: await getPrimaryPublicKeyForEmail(email),
                 });
             } catch {
                 throw new Error(c('Error').t`Cannot send invitation to this address at the moment`);
