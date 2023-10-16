@@ -25,11 +25,13 @@ import {
     defaultESStatus,
 } from './constants';
 import {
+    IndexingMetrics,
     buildContentDB,
     buildMetadataDB,
     cacheIDB,
     esSentryReport,
     findItemIndex,
+    gatherIndexingMetrics,
     getIndexKey,
     highlightJSX,
     hybridSearch,
@@ -40,7 +42,7 @@ import {
     requestPersistence,
     retryAPICalls,
     retryContentIndexing,
-    sendIndexingMetrics,
+    sendIndexingMetricsForMail,
     sendSearchingMetrics,
     syncItemEvents,
     uncachedSearch,
@@ -86,24 +88,27 @@ import { useEncryptedSearchStatus } from './useEncryptedSearchStatus';
 interface Props<ESItemMetadata, ESSearchParameters, ESItemContent = void> {
     refreshMask: number;
     esCallbacks: ESCallbacks<ESItemMetadata, ESSearchParameters, ESItemContent>;
-    successMessage: string;
-    notifyMetadataIndexed?: boolean;
+    contentIndexingSuccessMessage?: string;
+    onMetadataIndexed?: (metrics: IndexingMetrics) => void;
+    sendMetricsOnSearch?: boolean;
 }
 
 /**
- * Provide the core funcionalities of ES.
+ * Provide the core functionalities of ES.
  * @param refreshMask A number representing the bit the BE sets to REFRESH_ALL on the specific
  * client
  * @param esCallbacks All the callbacks that are product-specific and therefore need to be passed
  * to the ES core functions to work
- * @param successMessage The text that is showing in a green notification upon completing indexing
- * @returns An empy instance of the ES IndexedDB
+ * @param contentIndexingSuccessMessage The text that is showing in a green notification upon completing indexing
+ * @param sendMetricsOnSearch Determines whether to send metrics on each single search. Only meant for Mail
+ * @returns An empty instance of the ES IndexedDB
  */
 const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, ESItemContent = void>({
     refreshMask,
     esCallbacks: inputESCallbacks,
-    successMessage,
-    notifyMetadataIndexed = false,
+    contentIndexingSuccessMessage,
+    onMetadataIndexed,
+    sendMetricsOnSearch,
 }: Props<ESItemMetadata, ESSearchParameters, ESItemContent>) => {
     const getUserKeys = useGetUserKeys();
     const api = useApi();
@@ -417,7 +422,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             isRefreshing: true,
         }));
 
-        // Resetting is necessery to show appropriate UI when syncing immediately after refreshing
+        // Resetting is necessary to show appropriate UI when syncing immediately after refreshing
         void resetProgress('content');
 
         try {
@@ -567,7 +572,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         }
 
         // esSupported is false when we can't initialise IndexedDB and therefore ES
-        // will be cache only.
+        // will be cache-only.
         setESStatus((esStatus) => ({
             ...esStatus,
             esSupported,
@@ -585,18 +590,20 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         }
 
         let success = false;
+        let isInitialIndexing = true;
         while (!success) {
-            success = await buildMetadataDB<ESItemMetadata>(
+            success = await buildMetadataDB<ESItemMetadata>({
                 userID,
                 esSupported,
                 indexKey,
                 esCacheRef,
-                esCallbacks.queryItemsMetadata,
-                esCallbacks.getItemInfo,
+                queryItemsMetadata: esCallbacks.queryItemsMetadata,
+                getItemInfo: esCallbacks.getItemInfo,
                 abortIndexingRef,
-                recordMetadataProgress,
-                isBackgroundIndexing
-            );
+                recordProgress: recordMetadataProgress,
+                isInitialIndexing,
+                isBackgroundIndexing,
+            });
 
             // Kill switch in case user logs out or deletes data
             if (abortIndexingRef.current.signal.aborted) {
@@ -605,6 +612,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
 
             // In case the procedure failed, wait some time before re-starting
             if (!success) {
+                isInitialIndexing = false;
                 await wait(2 * SECOND);
             }
         }
@@ -633,16 +641,18 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         const wasESDBCreated = await checkVersionedESDB(userID);
 
         // Paginated indexing has the problem that if the user deletes completely some items
-        // in pages that have already been queried, all subsequent items are shifted. Therefore
-        // later pages will contain different items than if the deletion had never occured. The
+        // in pages that have already been queried, all subsequent items are shifted. Therefore,
+        // later pages will contain different items than if the deletion had never occurred. The
         // end result is that some items are not indexed. Since it's tricky and slow to figure
         // out which ones, we instead just delete everything and notify users
+        let metrics;
         if (wasESDBCreated) {
             const totalIndexed = await readNumMetadata(userID);
             if (typeof totalIndexed === 'undefined' || totalIndexed < expectedTotalIndexed) {
                 return handleError();
             }
-
+            await metadataIndexingProgress.addTimestamp(userID, TIMESTAMP_TYPE.STOP);
+            metrics = await gatherIndexingMetrics(userID, 'metadata');
             await metadataIndexingProgress.setActiveStatus(userID);
             await toggleEnabled(userID);
         }
@@ -653,14 +663,12 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             esEnabled: true,
         }));
 
-        if (notifyMetadataIndexed) {
-            createNotification({
-                text: successMessage,
-            });
+        if (metrics) {
+            onMetadataIndexed?.(metrics);
         }
 
         // In case this process did not create an IDB, e.g. because it's a memory only
-        // metadata index, it cannot be considered succesfull as otherwise content
+        // metadata index, it cannot be considered successful as otherwise content
         // indexing would be tried
         return wasESDBCreated;
     };
@@ -842,11 +850,11 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         await catchUpPromise;
 
         await contentIndexingProgress.addTimestamp(userID, TIMESTAMP_TYPE.STOP);
-        void sendIndexingMetrics(api, userID);
+        void sendIndexingMetricsForMail(api, userID);
 
-        if (notify) {
+        if (notify && contentIndexingSuccessMessage) {
             createNotification({
-                text: successMessage,
+                text: contentIndexingSuccessMessage,
             });
         }
     };
@@ -857,7 +865,8 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
     const newEncryptedSearch: EncryptedSearchExecution<ESItemMetadata, ESItemContent, ESSearchParameters> = async (
         setResultsList,
         esSearchParams,
-        minimumItems
+        minimumItems,
+        sendMetricsOnSearch
     ) => {
         const t1 = performance.now();
         const {
@@ -934,15 +943,17 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             }));
             setResultsList(searchResults);
 
-            const t2 = performance.now();
-            void sendSearchingMetrics(
-                api,
-                userID,
-                esCacheRef.current.cacheSize,
-                Math.ceil(t2 - t1),
-                isFirstSearch,
-                esCacheRef.current.isCacheLimited
-            );
+            if (sendMetricsOnSearch) {
+                const t2 = performance.now();
+                void sendSearchingMetrics(
+                    api,
+                    userID,
+                    esCacheRef.current.cacheSize,
+                    Math.ceil(t2 - t1),
+                    isFirstSearch,
+                    esCacheRef.current.isCacheLimited
+                );
+            }
         }
 
         return true;
@@ -1047,7 +1058,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         abortSearchingRef.current.abort();
         setESStatus((esStatus) => resetSearchStatus(esStatus));
 
-        return newEncryptedSearch(setResultsList, esSearchParams, minimumItems);
+        return newEncryptedSearch(setResultsList, esSearchParams, minimumItems, sendMetricsOnSearch);
     };
 
     /**
@@ -1071,7 +1082,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
      * which then needs to be displayed in the UI. Note that the keywords to highlight are extracted
      * directly with the parseSearchParams callback
      * @param content the string where to insert the markdown
-     * @param setAutoScroll whether to insert the data-auto-scroll attribute to the first istance of
+     * @param setAutoScroll whether to insert the data-auto-scroll attribute to the first instance of
      * the inserted mark tags. The UI should automatically scroll, if possible, to said first tag
      * @returns the string containing the markdown
      */
@@ -1155,7 +1166,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
      */
     const handleEvent = async (event: ESEvent<ESItemMetadata> | undefined) => {
         // An event can be undefined in case of network instability, but since the app doesn't receive
-        // the update inside the event it's ok to ignor it
+        // the update inside the event it's ok to ignore it
         if (!event) {
             return;
         }
