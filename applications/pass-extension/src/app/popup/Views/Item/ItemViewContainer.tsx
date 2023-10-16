@@ -5,6 +5,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { useNavigationContext } from 'proton-pass-extension/lib/hooks/useNavigationContext';
 import { c } from 'ttag';
 
+import { useInviteContext } from '@proton/pass/components/Invite/InviteContextProvider';
 import { AliasView } from '@proton/pass/components/Item/Alias/Alias.view';
 import { CreditCardView } from '@proton/pass/components/Item/CreditCard/CreditCard.view';
 import { LoginView } from '@proton/pass/components/Item/Login/Login.view';
@@ -54,6 +55,8 @@ export const ItemViewContainer: VFC = () => {
     const failedItemActionSelector = pipe(selectByShareId, selectFailedAction(optimisticItemId));
     const failure = useSelector(failedItemActionSelector);
 
+    const inviteContext = useInviteContext();
+
     if (item === undefined) return <Panel />;
 
     const trashed = isTrashed(item);
@@ -84,6 +87,8 @@ export const ItemViewContainer: VFC = () => {
         closeVaultSelect();
     };
 
+    const handleVaultManage = () => inviteContext.manageAccess(shareId);
+
     const ItemTypeViewComponent = itemTypeViewMap[item.data.type] as VFC<ItemViewProps>;
 
     return (
@@ -99,6 +104,7 @@ export const ItemViewContainer: VFC = () => {
                 handleDismissClick={handleDismiss}
                 handleRestoreClick={handleRestore}
                 handleDeleteClick={handleDelete}
+                handleManageClick={handleVaultManage}
                 optimistic={item.optimistic}
                 failed={item.failed}
                 trashed={trashed}
