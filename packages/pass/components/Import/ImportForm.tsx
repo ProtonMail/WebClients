@@ -65,7 +65,7 @@ export const ImportForm: VFC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ f
                         ))}
                     </div>
                     <Href href="https://protonmail.uservoice.com/forums/953584-proton-pass">{c('Action')
-                        .t`Can't find your password manager? Please let us know!`}</Href>
+                        .t`Your password manager not here? Request it.`}</Href>
                 </>
             )}
 

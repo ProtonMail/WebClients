@@ -279,7 +279,7 @@ export const MenuDropdown: VFC = () => {
                 onClose={handleTrashEmpty.cancel}
                 onSubmit={handleTrashEmpty.confirm}
                 alertText={c('Warning')
-                    .t`All your trashed items will be permanently deleted. You can not undo this action.`}
+                    .t`All your trashed items will be permanently deleted. You cannot undo this action.`}
                 submitText={c('Action').t`Delete all`}
             />
 

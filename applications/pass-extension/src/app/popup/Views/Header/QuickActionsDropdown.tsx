@@ -72,7 +72,7 @@ export const QuickActionsDropdown: VFC<{ disabled?: boolean; parsedUrl: Maybe<Pa
         () => [
             { label: c('Label').t`Login`, type: 'login' },
             { label: c('Label').t`Alias`, type: 'alias' },
-            { label: c('Label').t`Credit Card`, type: 'creditCard' },
+            { label: c('Label').t`Card`, type: 'creditCard' },
             { label: c('Label').t`Note`, type: 'note' },
         ],
         []

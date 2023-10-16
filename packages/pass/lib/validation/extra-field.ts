@@ -10,19 +10,19 @@ export const validateExtraFields = <T extends ExtraFieldGroupValues>(values: T) 
     const errors = values.extraFields.map((field) => {
         const fieldErrors: FormikErrors<UnsafeItemExtraField> = {};
 
-        if (isEmptyString(field.fieldName)) fieldErrors.fieldName = c('Validation').t`Label is required`;
+        if (isEmptyString(field.fieldName)) fieldErrors.fieldName = c('Validation').t`Field name is required`;
 
         switch (field.type) {
             case 'totp':
                 const isTotpEmpty = isEmptyString(field.data.totpUri);
 
                 if (isTotpEmpty) {
-                    fieldErrors.data = { totpUri: c('Validation').t`OTP Secret or URI required` };
+                    fieldErrors.data = { totpUri: c('Validation').t`OTP secret or URI required` };
                     break;
                 }
 
                 if (!isTotpEmpty && !parseOTPValue(field.data.totpUri)) {
-                    fieldErrors.data = { totpUri: c('Validation').t`OTP Secret or URI is invalid` };
+                    fieldErrors.data = { totpUri: c('Validation').t`OTP secret or URI is invalid` };
                     break;
                 }
         }
