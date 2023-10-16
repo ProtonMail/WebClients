@@ -35,12 +35,17 @@ export const enum Steps {
     SetupOrg,
 }
 
+export interface SubscriptionDataCycleMapping {
+    planIDs: PlanIDs;
+    mapping: CycleMapping<SubscriptionData>;
+}
+
 export interface SignupModelV2 {
     session: SessionData | undefined;
     inviteData: InviteData | undefined;
     referralData: ReferralData | undefined;
     subscriptionData: SubscriptionData;
-    subscriptionDataCycleMapping: CycleMapping<SubscriptionData>;
+    subscriptionDataCycleMapping: SubscriptionDataCycleMapping[];
     domains: string[];
     plans: Plan[];
     plansMap: PlansMap;

@@ -15,6 +15,7 @@ interface Props {
     hasGuarantee?: boolean;
     hasPayments?: boolean;
     description?: ReactNode;
+    renewNotice: ReactNode;
 }
 
 const Checkout = ({
@@ -25,6 +26,7 @@ const Checkout = ({
     hasGuarantee,
     hasPayments = true,
     description,
+    renewNotice,
 }: Props) => {
     return (
         <div className="p-6">
@@ -43,6 +45,7 @@ const Checkout = ({
 
             <div className={loading ? 'opacity-50 no-pointer-events-children' : ''}>{children}</div>
             <div className="text-sm lh-standard">
+                {hasPayments && renewNotice}
                 {hasPayments ? (
                     <div className="flex flex-nowrap color-weak my-2">
                         <span className="flex-item-noshrink mr-2">

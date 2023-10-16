@@ -9,19 +9,19 @@ import noop from '@proton/utils/noop';
 import Content from '../public/Content';
 import Main from '../public/Main';
 import { LoadingTextStepper } from '../signup/LoadingStep';
-import Layout from './Layout';
+import Layout, { Background } from './Layout';
 import illustration from './business-onboarding-illustration.svg';
 
 const Step4 = ({
     onSetup,
     product,
     isB2bPlan,
-    isDarkBg,
+    background,
 }: {
     onSetup: () => Promise<void>;
     product: string;
     isB2bPlan: boolean;
-    isDarkBg: boolean;
+    background?: Background;
 }) => {
     const steps: string[] = [c('Info').t`Saving your password`, c('Info').t`Setting up your organization`].filter(
         isTruthy
@@ -39,7 +39,7 @@ const Step4 = ({
     }, []);
 
     return (
-        <Layout hasDecoration={false} isB2bPlan={isB2bPlan} isDarkBg={isDarkBg}>
+        <Layout hasDecoration={false} isB2bPlan={isB2bPlan} background={background}>
             <Main>
                 <Content>
                     <div className="text-center pt-6" role="alert">

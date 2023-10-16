@@ -17,7 +17,17 @@ export type OfferId =
     | 'mail-trial-2023'
     | 'summer-2023'
     | 'family-3-deal-2023'
-    | 'family-1-deal-2023';
+    | 'family-1-deal-2023'
+    | 'black-friday-2023-inbox-free'
+    | 'black-friday-2023-inbox-mail'
+    | 'black-friday-2023-inbox-unlimited'
+    | 'black-friday-2023-vpn-free'
+    | 'black-friday-2023-vpn-monthly'
+    | 'black-friday-2023-vpn-yearly'
+    | 'black-friday-2023-vpn-two-years'
+    | 'black-friday-2023-drive-free'
+    | 'black-friday-2023-drive-plus'
+    | 'black-friday-2023-drive-unlimited';
 
 export type OfferGlobalFeatureCodeValue = Record<OfferId, boolean>;
 
@@ -82,7 +92,7 @@ export interface Deal {
     getCTAContent?: () => string;
     planIDs: PlanIDs; // planIDs used to subscribe
     planName: PLANS; // plan display in the deal
-    popular?: boolean;
+    popular?: number; // 1 = most popular, 2 = second most popular, etc.
     header?: () => string | ReactNode;
     star?: string;
 }

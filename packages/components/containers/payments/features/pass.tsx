@@ -9,7 +9,8 @@ export const getPassAppFeature = (): PlanCardFeatureDefinition => {
         text: PASS_APP_NAME,
         included: true,
         icon: 'brand-proton',
-        tooltip: c('tooltip').t`${PASS_APP_NAME}: end-to-end encrypted password manager`,
+        tooltip: c('tooltip')
+            .t`${PASS_APP_NAME}: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.`,
     };
 };
 

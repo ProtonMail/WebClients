@@ -19,7 +19,7 @@ const config: OfferConfig = {
                 [PLANS.BUNDLE]: 1,
             },
             cycle: CYCLE.TWO_YEARS,
-            popular: true,
+            popular: 1,
             features: getUnlimitedDealFeatures,
         },
     ],

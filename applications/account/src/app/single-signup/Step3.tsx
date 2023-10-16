@@ -33,7 +33,7 @@ import noop from '@proton/utils/noop';
 import Content from '../public/Content';
 import Header from '../public/Header';
 import Main from '../public/Main';
-import Layout from './Layout';
+import Layout, { Background } from './Layout';
 import { Measure } from './interface';
 
 const CopyPasswordModal = ({
@@ -128,7 +128,7 @@ const Step3 = ({
     email,
     measure,
     isB2bPlan,
-    isDarkBg,
+    background,
     product,
 }: {
     password: string;
@@ -136,7 +136,7 @@ const Step3 = ({
     onComplete: (newPassword: string | undefined) => Promise<void>;
     measure: Measure;
     isB2bPlan: boolean;
-    isDarkBg: boolean;
+    background?: Background;
     product: string;
 }) => {
     const [setOwnPasswordMode, setSetOwnPasswordMode] = useState(false);
@@ -186,7 +186,7 @@ const Step3 = ({
         : undefined;
 
     return (
-        <Layout hasDecoration={false} onBack={onBack} isB2bPlan={isB2bPlan} isDarkBg={isDarkBg}>
+        <Layout hasDecoration={false} onBack={onBack} isB2bPlan={isB2bPlan} background={background}>
             <Main>
                 <Header
                     title={c('Title').t`Set your password`}

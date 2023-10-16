@@ -18,7 +18,7 @@ import {
     getPricingFromPlanIDs,
     getTotalFromPricing,
 } from '@proton/shared/lib/helpers/subscription';
-import { Currency, Plan, PlanIDs, PlansMap } from '@proton/shared/lib/interfaces';
+import { Currency, Plan, PlanIDs, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import clsx from '@proton/utils/clsx';
 
@@ -63,9 +63,9 @@ export const getBilledText = (cycle: CYCLE): string | null => {
         case CYCLE.TWO_YEARS:
             return c('pass_signup_2023: Info').t`per month, billed every two years`;
         case CYCLE.FIFTEEN:
-            return c('pass_signup_2023: Info').t`per month, billed every 15 months`;
+            return c('pass_signup_2023: Info').t`per month`;
         case CYCLE.THIRTY:
-            return c('pass_signup_2023: Info').t`per month, billed every 30 months`;
+            return c('pass_signup_2023: Info').t`per month`;
         default:
             return null;
     }
@@ -288,6 +288,7 @@ export const UpsellCardSelector = ({
     currency,
     onSelect,
     onKeep,
+    vpnServersCountData,
 }: {
     relativePrice: string;
     plan: Plan | undefined;
@@ -297,6 +298,7 @@ export const UpsellCardSelector = ({
     currency: Currency;
     onSelect: () => void;
     onKeep: () => void;
+    vpnServersCountData: VPNServersCountData;
 }) => {
     if (!currentPlan) {
         return null;
@@ -417,7 +419,10 @@ export const UpsellCardSelector = ({
                             subsection={
                                 <>
                                     {[PLANS.BUNDLE, PLANS.BUNDLE_PRO].includes(plan.Name as any) && (
-                                        <BundlePlanSubSection className="mb-4" />
+                                        <BundlePlanSubSection
+                                            className="mb-4"
+                                            vpnServersCountData={vpnServersCountData}
+                                        />
                                     )}
                                     <Button color="norm" fullWidth onClick={onSelect}>
                                         {c('pass_signup_2023: Action').t`Upgrade my plan`}
