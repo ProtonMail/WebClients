@@ -47,11 +47,11 @@ export const DiscardableModalPanel: FC<DiscardableModalProps> = ({ discardable, 
                 {children({ confirm: doConfirm, didMount })}
 
                 <ConfirmationModal
-                    title={c('Title').t`Discard changes ?`}
+                    title={c('Title').t`Discard changes?`}
                     open={confirm.opened}
                     onClose={() => ensureMounted(setConfirm)({ opened: false }) /* view may have been unmounted */}
                     onSubmit={onDiscard}
-                    alertText={c('Warning').t`You have unsaved changes, are you sure you want to discard them?`}
+                    alertText={c('Warning').t`You have unsaved changes.`}
                     submitText={c('Action').t`Discard`}
                 />
             </SidebarModal>
