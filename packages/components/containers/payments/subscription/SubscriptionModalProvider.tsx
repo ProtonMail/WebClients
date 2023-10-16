@@ -144,12 +144,11 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                             return;
                         }
 
-                        // The 15 and 30 month cycle are only valid coming from the black friday modal.
-                        // or Edit billing details.
+                        // Users that are on the 15 or 30-month cycle should not default to that, e.g. when clicking
+                        // "explore other plans"
                         const subscriptionCycle = disablePlanSelection
                             ? subscription.Cycle
                             : getNormalCycleFromCustomCycle(subscription.Cycle);
-
                         const planIDs = plan
                             ? switchPlan({
                                   planIDs: subscriptionPlanIDs,

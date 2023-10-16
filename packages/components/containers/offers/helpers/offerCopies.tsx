@@ -2,9 +2,18 @@ import { ReactElement } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { CALENDAR_APP_NAME, CYCLE, DRIVE_APP_NAME, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import {
+    BRAND_NAME,
+    CALENDAR_APP_NAME,
+    CALENDAR_SHORT_APP_NAME,
+    CYCLE,
+    DRIVE_APP_NAME,
+    DRIVE_SHORT_APP_NAME,
+    MAIL_APP_NAME,
+    MAIL_SHORT_APP_NAME,
+    VPN_SHORT_APP_NAME,
+} from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
 
 export const getMonthFreeText = (n: number) => {
     return c('specialoffer: Deal').ngettext(msgid`${n} month FREE`, `${n} months FREE`, n);
@@ -22,28 +31,9 @@ export const getMonthsFree = (cycle: CYCLE) => {
 
 const getStorageSizeFeature = (storageSize: string, vpn?: boolean) => {
     return {
-        name: c('specialoffer: Deal details').t`${storageSize} total storage`,
-        tooltip: vpn
-            ? undefined
-            : c('specialoffer: Tooltip')
-                  .t`Storage space is shared across ${MAIL_APP_NAME}, ${CALENDAR_APP_NAME}, and ${DRIVE_APP_NAME}.`,
+        name: c('bf2023: Deal details').t`${storageSize} storage`,
+        tooltip: vpn ? undefined : c('bf2023: Tooltip').t`Storage space is shared across all ${BRAND_NAME} apps.`,
     };
-};
-
-export const getMailPlusFeatures = () => {
-    return [
-        getStorageSizeFeature(humanSize(15 * 1024 ** 3, undefined, undefined, 0)),
-        {
-            name: c('specialoffer: Deal details').t`All paid Mail and Calendar features`,
-            tooltip: c('specialoffer: Tooltip')
-                .t`Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.`,
-        },
-        {
-            name: c('summer2023: Short tool name to present Proton Pass').t`Password manager`,
-            tooltip: c('summer2023: Describe Proton Pass')
-                .t`Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.`,
-        },
-    ];
 };
 
 export const getUnlimitedFeatures = () => {
@@ -71,7 +61,7 @@ export const getMailDealFeatures = () => {
     return [
         getStorageSizeFeature(humanSize(15 * 1024 ** 3, undefined, undefined, 0)),
         {
-            name: c('summer2023: Deal details').t`Premium Mail and Calendar`,
+            name: c('summer2023: Deal details').t`Premium ${MAIL_SHORT_APP_NAME} & ${CALENDAR_SHORT_APP_NAME}`,
             tooltip: c('summer2023: Tooltip')
                 .t`Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.`,
         },
@@ -82,17 +72,17 @@ export const getUnlimitedDealFeatures = () => {
     return [
         getStorageSizeFeature(humanSize(500 * 1024 ** 3, undefined, undefined, 0)),
         {
-            name: c('specialoffer: Deal details').t`Premium Mail and Calendar`,
+            name: c('specialoffer: Deal details').t`Premium ${MAIL_SHORT_APP_NAME} & ${CALENDAR_SHORT_APP_NAME}`,
             tooltip: c('specialoffer: Tooltip')
                 .t`Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.`,
         },
         {
-            name: c('summer2023: Deal details').t`Premium Drive`,
+            name: c('summer2023: Deal details').t`Premium ${DRIVE_SHORT_APP_NAME}`,
             tooltip: c('summer2023: Tooltip')
                 .t`Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.`,
         },
         {
-            name: c('specialoffer: Deal details').t`Premium VPN`,
+            name: c('specialoffer: Deal details').t`Premium ${VPN_SHORT_APP_NAME}`,
             tooltip: c('summer2023: Tooltip')
                 .t`Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.`,
         },
@@ -104,6 +94,136 @@ export const getUnlimitedDealFeatures = () => {
     ];
 };
 
+const getPremiumVPNFeature = () => ({
+    name: c('bf2023: Deal details').t`Premium ${VPN_SHORT_APP_NAME}`,
+    tooltip: c('bf2023: Tooltip')
+        .t`Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.`,
+});
+
+const getPremiumPasswordManagerFeature = () => ({
+    name: c('bf2023: Deal details').t`Premium Password Manager`,
+    tooltip: c('bf2023: Tooltip')
+        .t`Secure logins on all your devices. Includes unlimited aliases, sharing, vaults, integrated 2FA and more.`,
+});
+
+const getPremiumDriveFeature = () => ({
+    name: c('bf2023: Deal details').t`Premium ${DRIVE_SHORT_APP_NAME}`,
+    tooltip: c('bf2023: Tooltip')
+        .t`Secure your files, folders and photos with end-to-end and zero-access encryption. Includes version history, encrypted file sharing, and more.`,
+});
+
+const getPremiumInboxFeature = (domains?: number, addresses?: number) => {
+    const name = c('bf2023: Deal details').t`Premium ${MAIL_SHORT_APP_NAME} & ${CALENDAR_SHORT_APP_NAME}`;
+
+    if (domains && addresses) {
+        if (addresses === 10) {
+            const aliases = 10;
+            return {
+                name,
+                tooltip: c('bf2023: Tooltip')
+                    .t`Includes support for ${domains} custom email domain, ${addresses} email addresses, ${aliases} hide-my-email aliases, calendar sharing, and more.`,
+            };
+        }
+
+        return {
+            name,
+            tooltip: c('bf2023: Tooltip')
+                .t`Includes support for ${domains} custom email domain, ${addresses} email addresses, unlimited hide-my-email aliases, calendar sharing, and more.`,
+        };
+    }
+
+    return {
+        name,
+        tooltip: c('bf2023: Tooltip')
+            .t`Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.`,
+    };
+};
+
+export const getMailPlusInboxFeatures = () => {
+    return [
+        getStorageSizeFeature(humanSize(15 * 1024 ** 3, undefined, undefined, 0)),
+        {
+            name: c('specialoffer: Deal details').t`1 user`,
+        },
+        getPremiumInboxFeature(1, 10),
+    ];
+};
+
+export const getUnlimitedVPNFeatures = () => [
+    getPremiumVPNFeature(),
+    getPremiumPasswordManagerFeature(),
+    getPremiumDriveFeature(),
+    getPremiumInboxFeature(),
+];
+
+export const getUnlimitedInboxFeatures = () => [
+    getStorageSizeFeature(humanSize(500 * 1024 ** 3, undefined, undefined, 0)),
+    { name: c('bf2023: Deal details').t`1 user` },
+    getPremiumInboxFeature(3, 15),
+    getPremiumDriveFeature(),
+    getPremiumVPNFeature(),
+    getPremiumPasswordManagerFeature(),
+];
+
+export const getFamilyInboxFeatures = () => [
+    // humanSize doesn't support TB and we don't want to add it yet because of "nice numbers" rounding issues.
+    getStorageSizeFeature(c('bf2023: Deal details').t`3 TB`),
+    { name: c('bf2023: Deal details').t`6 users` },
+    getPremiumInboxFeature(3, 90),
+    getPremiumDriveFeature(),
+    getPremiumVPNFeature(),
+    getPremiumPasswordManagerFeature(),
+];
+
+export const getDriveFeatures = () => [
+    getStorageSizeFeature(humanSize(200 * 1024 ** 3, undefined, undefined, 0)),
+    { name: c('bf2023: Deal details').t`1 user` },
+    {
+        name: c('bf2023: Deal details').t`Extended version history`,
+        tooltip: c('bf2023: Tooltip').t`Store up to 200 versions of each file for up to 10 years.`,
+    },
+];
+
+export const getUnlimitedDriveFeatures = () => [
+    getStorageSizeFeature(humanSize(500 * 1024 ** 3, undefined, undefined, 0)),
+    { name: c('bf2023: Deal details').t`1 user` },
+    getPremiumDriveFeature(),
+    getPremiumInboxFeature(3, 15),
+    getPremiumVPNFeature(),
+    getPremiumPasswordManagerFeature(),
+];
+
+export const getFamilyDriveFeatures = () => [
+    // humanSize doesn't support TB and we don't want to add it yet because of "nice numbers" rounding issues.
+    getStorageSizeFeature(c('bf2023: Deal details').t`3 TB`),
+    { name: c('bf2023: Deal details').t`6 users` },
+    getPremiumDriveFeature(),
+    getPremiumInboxFeature(3, 90),
+    getPremiumVPNFeature(),
+    getPremiumPasswordManagerFeature(),
+];
+
+export const getVPNFeatures = () => [
+    {
+        name: c('bf2023: Deal details').t`3,000+ servers across 65+ countries`,
+    },
+    {
+        name: c('bf2023: Deal details').t`High speed streaming`,
+        tooltip: c('bf2023: Tooltip')
+            .t`Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.`,
+    },
+    {
+        name: c('bf2023: Deal details').t`Ad-blocker and malware protection`,
+        tooltip: c('bf2023: Tooltip')
+            .t`Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.`,
+    },
+    {
+        name: c('bf2023: Deal details').t`Fast BitTorrent downloads`,
+        tooltip: c('bf2023: Tooltip')
+            .t`Unlock peer-to-peer downloads and file sharing. Increase upload and download speeds and hide your IP address.`,
+    },
+];
+
 export const getVisionaryFeatures = () => [
     // humanSize doesn't support TB and we don't want to add it yet because of "nice numbers" rounding issues.
     getStorageSizeFeature(c('specialoffer: Deal details').t`3 TB`),
@@ -113,12 +233,13 @@ export const getVisionaryFeatures = () => [
             .t`Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.`,
     },
     {
-        name: c('specialoffer: Deal details').t`Premium Mail, Calendar and Drive`,
+        name: c('specialoffer: Deal details')
+            .t`Premium ${MAIL_SHORT_APP_NAME}, ${CALENDAR_SHORT_APP_NAME} & ${DRIVE_SHORT_APP_NAME}`,
         tooltip: c('specialoffer: Tooltip')
             .t`All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.`,
     },
     {
-        name: c('specialoffer: Deal details').t`Premium VPN`,
+        name: c('specialoffer: Deal details').t`Premium ${VPN_SHORT_APP_NAME}`,
         tooltip: c('specialoffer: Tooltip')
             .t`Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.`,
     },
@@ -142,17 +263,17 @@ export const getFamilyFeatures = () => [
             .t`Storage space is shared between family members across ${MAIL_APP_NAME}, ${CALENDAR_APP_NAME}, and ${DRIVE_APP_NAME}.`,
     },
     {
-        name: c('familyOffer_2023:Deal details').t`Premium Mail and Calendar`,
+        name: c('familyOffer_2023:Deal details').t`Premium ${MAIL_SHORT_APP_NAME} & ${CALENDAR_SHORT_APP_NAME}`,
         tooltip: c('familyOffer_2023:Tooltip')
             .t`Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.`,
     },
     {
-        name: c('familyOffer_2023:Deal details').t`Premium Drive`,
+        name: c('familyOffer_2023:Deal details').t`Premium ${DRIVE_SHORT_APP_NAME}`,
         tooltip: c('familyOffer_2023:Tooltip')
             .t`Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.`,
     },
     {
-        name: c('familyOffer_2023:Deal details').t`Premium VPN`,
+        name: c('familyOffer_2023:Deal details').t`Premium ${VPN_SHORT_APP_NAME}`,
         tooltip: c('familyOffer_2023:Tooltip')
             .t`Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.`,
     },
@@ -176,18 +297,6 @@ export const getVPNPlusFeatures = () => [
             .t`Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.`,
     },
 ];
-
-export const getUnlimitedVPNFeatures = () => {
-    return [
-        {
-            name: `${VPN_APP_NAME} Plus`,
-        },
-        {
-            name: c('specialoffer: Deal details').t`Mail, Calendar, Drive`,
-        },
-        getStorageSizeFeature(humanSize(500 * 1024 ** 3, undefined, undefined, 0), true),
-    ];
-};
 
 export const getDealBilledDescription = (cycle: CYCLE, amount: ReactElement): string | string[] | null => {
     switch (cycle) {
@@ -234,22 +343,19 @@ const getDealDurationText = (cycle: CYCLE | undefined) => {
         return c('specialoffer: Offers').t`2 years`;
     }
 
-    return c('specialoffer: Offers').ngettext(msgid`for ${n} month`, `for ${n} months`, n);
+    if (n === 15) {
+        return c('specialoffer: Offers').t`15 months`;
+    }
+
+    if (n === 30) {
+        return c('specialoffer: Offers').t`30 months`;
+    }
+
+    return c('specialoffer: Offers').ngettext(msgid`${n} month`, `${n} months`, n);
 };
 
 export const getDealDuration = (cycle: CYCLE): ReactElement | null => {
-    const freeMonths = getMonthsFree(cycle);
-    return (
-        <>
-            {getDealDurationText(getNormalCycleFromCustomCycle(cycle))}
-            {freeMonths > 0 && (
-                <span className="color-success">
-                    {` + `}
-                    {getMonthFreeText(freeMonths)}
-                </span>
-            )}
-        </>
-    );
+    return <>{getDealDurationText(cycle)}</>;
 };
 
 export const getRenewDescription = (

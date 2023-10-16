@@ -11,7 +11,7 @@ const DealCTA = () => {
     return (
         <Button
             color="norm"
-            shape={popular ? 'solid' : 'outline'}
+            shape={popular === 1 ? 'solid' : 'outline'}
             className="mb-4"
             fullWidth
             onClick={() => {
