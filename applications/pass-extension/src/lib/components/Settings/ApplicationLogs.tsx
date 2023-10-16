@@ -70,23 +70,22 @@ export const ApplicationLogs: VFC = () => {
                 </>
             )}
             {!showLogs && (
-                <Button
-                    icon
-                    shape="ghost"
-                    className="w-full flex flex-align-items-center"
-                    onClick={() => setShowLogs(true)}
-                >
-                    <Icon name="window-terminal" className="mr-2" />
-                    <span className="flex-item-fluid">{c('Label').t`View logs`}</span>
-                    <Icon name="chevron-down" />
+                <Button icon shape="ghost" className="w-full" onClick={() => setShowLogs(true)}>
+                    <div className="flex flex-align-items-center">
+                        <Icon name="window-terminal" className="mr-2" />
+                        <span className="flex-item-fluid">{c('Label').t`View logs`}</span>
+                        <Icon name="chevron-down" />
+                    </div>
                 </Button>
             )}
 
             <hr className="border-weak my-2" />
 
-            <Button icon shape="ghost" onClick={downloadLogs} className="w-full flex flex-align-items-center">
-                <Icon name="arrow-down-to-square" className="mr-2" />
-                <span className="flex-item-fluid">{c('Label').t`Download logs`}</span>
+            <Button icon shape="ghost" onClick={downloadLogs} className="w-full">
+                <div className="flex flex-align-items-center flex flex-align-items-center">
+                    <Icon name="arrow-down-to-square" className="mr-2" />
+                    <span className="flex-item-fluid">{c('Label').t`Download logs`}</span>
+                </div>
             </Button>
         </SettingsPanel>
     );

@@ -16,7 +16,7 @@ export const Developer: VFC = () => {
                 <Button
                     icon
                     shape="ghost"
-                    className="w-full flex flex-align-items-center border-norm"
+                    className="w-full"
                     onClick={() =>
                         sendMessage(
                             pageMessage({
@@ -26,14 +26,16 @@ export const Developer: VFC = () => {
                         )
                     }
                 >
-                    <Icon name="brand-chrome" className="mr-2" />
-                    <span className="flex-item-fluid text-left">Trigger update</span>
-                    <span className="text-xs color-weak">Triggers a fake update (keep popup opened)</span>
+                    <div className="flex flex-align-items-center flex flex-align-items-center">
+                        <Icon name="brand-chrome" className="mr-2" />
+                        <span className="flex-item-fluid text-left">Trigger update</span>
+                        <span className="text-xs color-weak">Triggers a fake update (keep popup opened)</span>
+                    </div>
                 </Button>
                 <Button
                     icon
                     shape="ghost"
-                    className="w-full flex flex-align-items-center border-norm"
+                    className="w-full"
                     onClick={() =>
                         sendMessage(
                             pageMessage({
@@ -43,9 +45,11 @@ export const Developer: VFC = () => {
                         )
                     }
                 >
-                    <Icon name="drive" className="mr-2" />
-                    <span className="flex-item-fluid text-left">Trigger full disk</span>
-                    <span className="text-xs color-weak">Triggers a fake disk full event (open popup after)</span>
+                    <div className="flex flex-align-items-center flex flex-align-items-center">
+                        <Icon name="drive" className="mr-2" />
+                        <span className="flex-item-fluid text-left">Trigger full disk</span>
+                        <span className="text-xs color-weak">Triggers a fake disk full event (open popup after)</span>
+                    </div>
                 </Button>
             </SettingsPanel>
             <DropdownDebug />
