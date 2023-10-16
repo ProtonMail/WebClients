@@ -1,6 +1,8 @@
+import { MutableRefObject } from 'react';
+
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
 
-import { ESEvent, ESIndexingState, ESItem, ESItemInfo, ESStatus, ESTimepoint } from './interfaces';
+import { CachedItem, ESEvent, ESIndexingState, ESItem, ESItemInfo, ESStatus, ESTimepoint } from './interfaces';
 
 /**
  * Show or update the search results in the UI
@@ -174,6 +176,11 @@ export interface EncryptedSearchFunctions<ESItemMetadata, ESSearchParameters, ES
     toggleEncryptedSearch: () => Promise<void>;
 
     /**
+     * Returns the ES cache, a map of indexed items. If the cache is not initialized, the return will be an empty map
+     */
+    getCache: () => Map<string, CachedItem<ESItemMetadata, ESItemContent>>;
+
+    /**
      * Reset the cache to its default empty state
      */
     resetCache: () => void;
@@ -188,7 +195,7 @@ export interface EncryptedSearchFunctions<ESItemMetadata, ESSearchParameters, ES
      * The first number in the returned list is the current number of items processed while
      * the second is the total number of items to process. It is useful to show a progress bar.
      */
-    progressRecorderRef: React.MutableRefObject<ESTimepoint>;
+    progressRecorderRef: MutableRefObject<ESTimepoint>;
 
     /**
      * An object containing variables describing the status of the indexing progress

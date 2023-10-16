@@ -130,7 +130,6 @@ export const getESCallbacks = ({
 
         // some calendars might have no event so if there is others, we want to forward query to them
         if (!esMetadataEvents.length && newRecoveryPoint.currentCalendarId) {
-            console.warn('empty calendar, skipping: next one please!');
             await setNewRecoveryPoint?.();
             return queryItemsMetadata(signal, isBackgroundIndexing);
         }
