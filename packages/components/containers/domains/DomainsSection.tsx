@@ -17,6 +17,7 @@ import { getDomainsSupportURL } from '@proton/shared/lib/helpers/url';
 import { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 import { DomainsModel } from '@proton/shared/lib/models';
 import { loadModels } from '@proton/shared/lib/models/helper';
+import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { DropdownActions, Loader, Table, TableBody, TableHeader, TableRow, useModalState } from '../../components';
@@ -200,8 +201,8 @@ const DomainsSectionUpgrade = () => {
 };
 
 const DomainsSection = () => {
-    const [{ isAdmin, isSubUser }] = useUser();
-    const hasPermission = isAdmin && !isSubUser;
+    const [user] = useUser();
+    const hasPermission = user.isAdmin && !user.isSubUser && hasPaidMail(user);
 
     return hasPermission ? <DomainsSectionInternal /> : <DomainsSectionUpgrade />;
 };
