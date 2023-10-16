@@ -1,39 +1,34 @@
-import { call, fork, put, race, select, take } from 'redux-saga/effects';
+import { call, put, race, select, take } from 'redux-saga/effects';
 
-import { getFeatureFlags, getUserPlan, getUserSettings } from '@proton/pass/lib/user/user.requests';
 import {
-    setUserFeatures,
-    setUserPlan,
-    setUserSettings,
+    getUserFeaturesIntent,
+    getUserPlanIntent,
     syncFailure,
     syncIntent,
     syncSuccess,
 } from '@proton/pass/store/actions';
+import { userFeaturesRequest, userPlanRequest } from '@proton/pass/store/actions/requests';
 import { isStateResetAction } from '@proton/pass/store/actions/utils';
+import { withRevalidate } from '@proton/pass/store/actions/with-request';
 import { asIfNotOptimistic } from '@proton/pass/store/optimistic/selectors/select-is-optimistic';
-import type { FeatureFlagState, UserPlanState, UserSettingsState } from '@proton/pass/store/reducers';
 import { reducerMap } from '@proton/pass/store/reducers';
 import type { SynchronizationResult } from '@proton/pass/store/sagas/workers/sync';
 import { SyncType, synchronize } from '@proton/pass/store/sagas/workers/sync';
-import { selectFeatureFlags } from '@proton/pass/store/selectors';
+import { selectFeatureFlags, selectUser } from '@proton/pass/store/selectors';
 import type { State, WorkerRootSagaOptions } from '@proton/pass/store/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 function* syncWorker(options: WorkerRootSagaOptions) {
     const state = (yield select()) as State;
+    const user = selectUser(state);
+
+    if (!user) return;
+
     try {
         yield wait(1500);
 
-        yield fork(function* () {
-            const plan: UserPlanState = yield getUserPlan(state.user, { force: true });
-            yield put(setUserPlan(plan));
-
-            const features: FeatureFlagState = yield getFeatureFlags(state.user, { force: true });
-            yield put(setUserFeatures(features));
-
-            const userSettings: UserSettingsState = yield getUserSettings();
-            yield put(setUserSettings(userSettings));
-        });
+        yield put(withRevalidate(getUserPlanIntent(userPlanRequest(user.ID))));
+        yield put(withRevalidate(getUserFeaturesIntent(userFeaturesRequest(user.ID))));
 
         const sync: SynchronizationResult = yield call(
             synchronize,
