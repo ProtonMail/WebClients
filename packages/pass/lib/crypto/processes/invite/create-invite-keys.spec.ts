@@ -19,12 +19,12 @@ describe('create invite keys crypto process', () => {
             Array.from({ length: 4 }).map((_, rotation) => createRandomVaultKey(rotation))
         );
 
-        const inviteeKey = await createRandomKey();
+        const invitedKey = await createRandomKey();
         const inviterKey = await createRandomKey();
 
         const inviteKeys = await createInviteKeys({
             targetKeys: vaultKeys,
-            inviteePublicKey: inviteeKey.publicKey,
+            invitedPublicKey: invitedKey.publicKey,
             inviterPrivateKey: inviterKey.privateKey,
         });
 
@@ -34,7 +34,7 @@ describe('create invite keys crypto process', () => {
 
                 return CryptoProxy.decryptMessage({
                     binaryMessage,
-                    decryptionKeys: inviteeKey.privateKey,
+                    decryptionKeys: invitedKey.privateKey,
                     verificationKeys: inviterKey.publicKey,
                     format: 'binary',
                     context: {

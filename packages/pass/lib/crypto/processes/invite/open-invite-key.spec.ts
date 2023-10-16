@@ -13,18 +13,18 @@ describe('open invite keys', () => {
 
     test('should decrypt target keys correctly', async () => {
         const vaultKey = await createRandomVaultKey(0);
-        const inviteeKey = await createRandomKey();
+        const invitedKey = await createRandomKey();
         const inviterKeys = await Promise.all(Array.from({ length: 4 }).map(() => createRandomKey()));
 
         const [inviteKey] = await createInviteKeys({
             targetKeys: [vaultKey],
-            inviteePublicKey: inviteeKey.publicKey,
+            invitedPublicKey: invitedKey.publicKey,
             inviterPrivateKey: inviterKeys[2].privateKey,
         });
 
         const openedInviteKeys = await openInviteKey({
             inviteKey,
-            inviteePrivateKey: inviteeKey.privateKey,
+            invitedPrivateKey: invitedKey.privateKey,
             inviterPublicKeys: inviterKeys.map((key) => key.publicKey),
         });
 

@@ -6,19 +6,19 @@ import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
 type OpenInviteKeyProcessParams = {
     inviteKey: KeyRotationKeyPair;
-    inviteePrivateKey: PrivateKeyReference;
+    invitedPrivateKey: PrivateKeyReference;
     inviterPublicKeys: PublicKeyReference[];
 };
 
 export const openInviteKey = async ({
     inviteKey,
-    inviteePrivateKey,
+    invitedPrivateKey,
     inviterPublicKeys,
 }: OpenInviteKeyProcessParams): Promise<Uint8Array> =>
     (
         await CryptoProxy.decryptMessage({
             binaryMessage: base64StringToUint8Array(inviteKey.Key),
-            decryptionKeys: inviteePrivateKey,
+            decryptionKeys: invitedPrivateKey,
             verificationKeys: inviterPublicKeys,
             format: 'binary',
             context: {
