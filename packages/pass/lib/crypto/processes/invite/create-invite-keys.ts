@@ -5,13 +5,13 @@ import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 type CreateInviteKeysProcessParams = {
     targetKeys: (VaultKey | ItemKey)[];
-    inviteePublicKey: PublicKeyReference;
+    invitedPublicKey: PublicKeyReference;
     inviterPrivateKey: PrivateKeyReference;
 };
 
 export const createInviteKeys = async ({
     targetKeys,
-    inviteePublicKey,
+    invitedPublicKey,
     inviterPrivateKey,
 }: CreateInviteKeysProcessParams): Promise<KeyRotationKeyPair[]> => {
     return Promise.all(
@@ -21,7 +21,7 @@ export const createInviteKeys = async ({
                     (
                         await CryptoProxy.encryptMessage({
                             binaryData,
-                            encryptionKeys: [inviteePublicKey],
+                            encryptionKeys: [invitedPublicKey],
                             signingKeys: [inviterPrivateKey],
                             format: 'binary',
                             context: {

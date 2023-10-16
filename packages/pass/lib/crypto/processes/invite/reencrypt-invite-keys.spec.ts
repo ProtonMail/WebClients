@@ -20,18 +20,18 @@ describe('acceptVaultInvite crypto process', () => {
         );
 
         const userKey = await createRandomKey();
-        const inviteeKey = await createRandomKey();
+        const invitedKey = await createRandomKey();
         const inviterKeys = await Promise.all(Array.from({ length: 4 }).map(() => createRandomKey()));
 
         const inviteKeys = await createInviteKeys({
             targetKeys: vaultKeys,
-            inviteePublicKey: inviteeKey.publicKey,
+            invitedPublicKey: invitedKey.publicKey,
             inviterPrivateKey: inviterKeys[2].privateKey,
         });
 
         const reencryptedKeys = await reencryptInviteKeys({
             inviteKeys,
-            inviteePrivateKey: inviteeKey.privateKey,
+            invitedPrivateKey: invitedKey.privateKey,
             inviterPublicKeys: inviterKeys.map((key) => key.privateKey),
             userKey: userKey,
         });
