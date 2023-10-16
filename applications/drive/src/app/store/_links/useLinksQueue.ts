@@ -33,6 +33,10 @@ export const useLinksQueue = () => {
                     }
                 });
 
+                if (queue.current.size === 0) {
+                    break;
+                }
+
                 const linkIds = Array.from(queue.current);
 
                 try {
