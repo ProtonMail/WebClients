@@ -37,7 +37,7 @@ const config: OfferConfig = {
             cycle: CYCLE.THIRTY,
             couponCode: COUPON_CODES.VPN_BLACK_FRIDAY_2022,
             features: getVPNPlusFeatures,
-            popular: true,
+            popular: 1,
             header: LifetimeDeal,
         },
         {

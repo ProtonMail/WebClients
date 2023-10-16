@@ -21,6 +21,8 @@ import LayoutHeader from '../single-signup-v2/LayoutHeader';
 
 import './Layout.scss';
 
+export type Background = 'dark' | 'bf2023';
+
 export interface Props {
     children: ReactNode;
     bottomRight?: ReactNode;
@@ -29,7 +31,7 @@ export interface Props {
     languageSelect?: boolean;
     onBack?: () => void;
     className?: string;
-    isDarkBg?: boolean;
+    background?: Background;
     isB2bPlan?: boolean;
 }
 
@@ -41,19 +43,20 @@ const Layout = ({
     headerClassName,
     languageSelect = true,
     onBack,
-    isDarkBg,
+    background,
     isB2bPlan,
 }: Props) => {
     const { APP_NAME } = useConfig();
     const { isTinyMobile } = useActiveBreakpoint();
 
+    const isDarkBg = ['bf2023', 'dark'].includes(background as any);
     const protonLogo = isB2bPlan ? (
         <>
             <ProtonForBusinessLogo className="proton-for-business-logo" />
             <VpnForBusinessLogo className="vpn-for-business-logo" />
         </>
     ) : (
-        <VpnLogo variant="with-wordmark" />
+        <VpnLogo className={clsx(isDarkBg && 'vpn-logo--light', 'vpn-logo')} variant="with-wordmark" />
     );
 
     const href = (() => {
@@ -72,7 +75,11 @@ const Layout = ({
         <div
             className={clsx(
                 'flex-no-min-children flex-nowrap flex-column h100 scroll-if-needed relative',
-                isDarkBg ? 'signup-v1-bg--dark' : 'signup-v1-bg',
+                background === 'dark'
+                    ? 'signup-v1-bg--dark'
+                    : background === 'bf2023'
+                    ? 'signup-v1-bg--bf2023'
+                    : 'signup-v1-bg',
                 className
             )}
         >

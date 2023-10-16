@@ -15,9 +15,16 @@ import {
     PASS_APP_NAME,
     VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
+import { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-const BundlePlanSubSection = ({ className }: { className?: string }) => {
+const BundlePlanSubSection = ({
+    className,
+    vpnServersCountData,
+}: {
+    className?: string;
+    vpnServersCountData: VPNServersCountData;
+}) => {
     const logoSize = 32;
     return (
         <div className={clsx(className, 'bg-weak p-4 rounded-xl w100')}>
@@ -50,7 +57,7 @@ const BundlePlanSubSection = ({ className }: { className?: string }) => {
                         app: APPS.PROTONVPN_SETTINGS,
                         title: VPN_APP_NAME,
                         logo: <VpnLogo variant="glyph-only" size={logoSize} />,
-                        tooltip: getVPNAppFeature().tooltip,
+                        tooltip: getVPNAppFeature({ serversCount: vpnServersCountData }).tooltip,
                     },
                     {
                         app: APPS.PROTONPASS,

@@ -3,7 +3,7 @@ import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
-import { Currency, Plan } from '@proton/shared/lib/interfaces';
+import { Currency, PlansMap } from '@proton/shared/lib/interfaces';
 import { Clients } from '@proton/shared/lib/pass/constants';
 
 import { getPlanFromPlanIDs } from '../signup/helper';
@@ -201,8 +201,8 @@ export const getPaymentMethodsAvailable = (paymentMethodsAvailable: PaymentMetho
     };
 };
 
-export const getSignupTelemetryData = (plans: Plan[], cache: SignupCacheResult): SignupFinishEvents => {
-    const plan = getPlanFromPlanIDs(plans, cache.subscriptionData.planIDs)?.Name as PLANS | undefined;
+export const getSignupTelemetryData = (plansMap: PlansMap, cache: SignupCacheResult): SignupFinishEvents => {
+    const plan = getPlanFromPlanIDs(plansMap, cache.subscriptionData.planIDs)?.Name as PLANS | undefined;
 
     if (!plan || !hasPlanIDs(cache.subscriptionData.planIDs)) {
         return {
