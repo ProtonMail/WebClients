@@ -8,17 +8,17 @@ import { openInviteKey } from './open-invite-key';
 type ReadVaultInviteContentProcessParams = {
     inviteKey: KeyRotationKeyPair;
     encryptedVaultContent: string;
-    inviteePrivateKey: PrivateKeyReference;
+    invitedPrivateKey: PrivateKeyReference;
     inviterPublicKeys: PublicKeyReference[];
 };
 
 export const readVaultInviteContent = async ({
     inviteKey,
     encryptedVaultContent,
-    inviteePrivateKey,
+    invitedPrivateKey,
     inviterPublicKeys,
 }: ReadVaultInviteContentProcessParams): Promise<Uint8Array> => {
-    const openedVaultKey = await openInviteKey({ inviteKey, inviteePrivateKey, inviterPublicKeys });
+    const openedVaultKey = await openInviteKey({ inviteKey, invitedPrivateKey, inviterPublicKeys });
     const vaultKey = await getSymmetricKey(openedVaultKey);
 
     return decryptData(vaultKey, base64StringToUint8Array(encryptedVaultContent), PassEncryptionTag.VaultContent);

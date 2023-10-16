@@ -41,7 +41,7 @@ export const createInvite = async ({ shareId, email, role }: InviteCreateIntent)
                     shareId,
                     email,
                     role,
-                    inviteePublicKey: await getPrimaryPublicKeyForEmail(email),
+                    invitedPublicKey: await getPrimaryPublicKeyForEmail(email),
                 });
             } catch {
                 throw new Error(c('Error').t`Cannot send invitation to this address at the moment`);
@@ -55,12 +55,13 @@ export const resendInvite = async ({ shareId, inviteId }: InviteResendIntent) =>
 export const removeInvite = async ({ shareId, inviteId }: InviteRemoveIntent) =>
     api({ url: `pass/v1/share/${shareId}/invite/${inviteId}`, method: 'delete' });
 
-export const acceptInvite = async ({ inviteToken, inviterEmail, inviteKeys }: InviteAcceptIntent) => {
+export const acceptInvite = async ({ inviteToken, inviterEmail, invitedEmail, inviteKeys }: InviteAcceptIntent) => {
     return (
         await api({
             url: `pass/v1/invite/${inviteToken}`,
             method: 'post',
             data: await PassCrypto.acceptVaultInvite({
+                invitedEmail,
                 inviteKeys,
                 inviterPublicKeys: await getPublicKeysForEmail(inviterEmail),
             }),
