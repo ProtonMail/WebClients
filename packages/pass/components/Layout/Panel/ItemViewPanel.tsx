@@ -42,6 +42,7 @@ export const ItemViewPanel: FC<Props> = ({
     handleMoveToVaultClick,
     handleRestoreClick,
     handleDeleteClick,
+    handleManageClick,
 
     children,
 }) => {
@@ -116,6 +117,20 @@ export const ItemViewPanel: FC<Props> = ({
                             </Button>,
 
                             ...actions,
+
+                            shared && (
+                                <Button
+                                    icon
+                                    pill
+                                    color="weak"
+                                    shape="solid"
+                                    size="medium"
+                                    title={c('Action').t`See members`}
+                                    onClick={handleManageClick}
+                                >
+                                    <Icon name="users-plus" alt={c('Action').t`See members`} size={20} />
+                                </Button>
+                            ),
 
                             <QuickActionsDropdown
                                 key="item-quick-actions-dropdown"
