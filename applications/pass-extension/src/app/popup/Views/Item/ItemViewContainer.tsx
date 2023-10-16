@@ -55,27 +55,27 @@ export const ItemViewContainer: VFC = () => {
     const item = useSelector(itemSelector);
 
     const failedItemActionSelector = pipe(selectByShareId, selectFailedAction(optimisticItemId));
-    const failureAction = useSelector(failedItemActionSelector);
+    const failure = useSelector(failedItemActionSelector);
 
     if (item === undefined) return <Panel />;
 
     const trashed = isTrashed(item);
 
     const handleEdit = () => history.push(`/share/${shareId}/item/${itemId}/edit`);
-    const handleRetry = () => failureAction !== undefined && dispatch(failureAction);
+    const handleRetry = () => failure !== undefined && dispatch(failure.action);
     const handleTrash = () => dispatch(itemTrashIntent({ itemId, shareId, item }));
     const handleMove = () => openVaultSelect(item.shareId);
     const handleRestore = () => dispatch(itemRestoreIntent({ item, itemId, shareId }));
     const handleDelete = () => dispatch(itemDeleteIntent({ item, itemId, shareId }));
 
     const handleDismiss = () => {
-        if (failureAction === undefined) return;
+        if (failure === undefined) return;
 
-        if (itemCreationIntent.match(failureAction)) {
+        if (itemCreationIntent.match(failure.action)) {
             dispatch(itemCreationDismiss({ shareId, optimisticId: itemId, item }));
         }
 
-        if (itemEditIntent.match(failureAction)) {
+        if (itemEditIntent.match(failure.action)) {
             dispatch(itemEditDismiss({ shareId, itemId, item }));
         }
     };
