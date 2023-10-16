@@ -4,11 +4,11 @@ import { all, fork, put, select } from 'redux-saga/effects';
 import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import type { EventCursor, EventManagerEvent } from '@proton/pass/lib/events/manager';
-import { getUserPlan } from '@proton/pass/lib/user/user.requests';
-import { setUserPlan, syncIntent, userEvent } from '@proton/pass/store/actions';
-import type { UserPlanState } from '@proton/pass/store/reducers';
+import { getUserPlanIntent, syncIntent, userEvent } from '@proton/pass/store/actions';
+import { userPlanRequest } from '@proton/pass/store/actions/requests';
+import { withRevalidate } from '@proton/pass/store/actions/with-request';
 import { selectAllAddresses, selectLatestEventId, selectUserSettings } from '@proton/pass/store/selectors';
-import type { State, WorkerRootSagaOptions } from '@proton/pass/store/types';
+import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
 import type { MaybeNull, UserEvent } from '@proton/pass/types';
 import { type Api } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -42,11 +42,8 @@ function* onUserEvent(
 
     /* if the subscription/invoice changes, refetch the user Plan */
     if (event.Subscription || event.Invoices) {
-        yield fork(function* () {
-            const { user } = (yield select()) as State;
-            const plan = (yield getUserPlan(user, { force: true })) as UserPlanState;
-            yield put(setUserPlan(plan));
-        });
+        const getPlanAction = withRevalidate(getUserPlanIntent(userPlanRequest(getAuth().getUserID()!)));
+        yield put(getPlanAction);
     }
 
     /* if we get the user model from the event, check if

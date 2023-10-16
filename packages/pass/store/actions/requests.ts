@@ -28,3 +28,6 @@ export const inviteResendRequest = (inviteId: string) => `invite::resend::${invi
 export const inviteAcceptRequest = (token: string) => `invite::accept::${token}`;
 export const inviteRejectRequest = (token: string) => `invite::reject::${token}`;
 export const inviteRemoveRequest = (inviteId: string) => `invite::remove::${inviteId}`;
+
+export const userPlanRequest = (userId: string) => `user::plan::${userId}`;
+export const userFeaturesRequest = (userId: string) => `user::features::${userId}`;
