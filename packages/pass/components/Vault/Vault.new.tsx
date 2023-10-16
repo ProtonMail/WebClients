@@ -5,8 +5,10 @@ import { FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { ItemCard } from '@proton/pass/components/Item/ItemCard';
+import type { RequestEntryFromAction } from '@proton/pass/hooks/useActionWithRequest';
 import { useRequestStatusEffect } from '@proton/pass/hooks/useRequestStatusEffect';
 import { validateVaultVaultsWithEffect } from '@proton/pass/lib/validation/vault';
+import type { vaultCreationSuccess } from '@proton/pass/store/actions';
 import { vaultCreationIntent } from '@proton/pass/store/actions';
 import { vaultCreate } from '@proton/pass/store/actions/requests';
 import { selectPassPlan, selectVaultLimits } from '@proton/pass/store/selectors';
@@ -16,16 +18,24 @@ import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 import { VaultForm, type VaultFormConsumerProps, type VaultFormValues } from './Vault.form';
 
+type Props = VaultFormConsumerProps & { onVaultCreated: (shareId: string) => void };
 export const FORM_ID = 'vault-create';
 
-export const VaultNew: VFC<VaultFormConsumerProps> = ({ onSubmit, onSuccess, onFailure, onFormValidChange }) => {
+export const VaultNew: VFC<Props> = ({ onSubmit, onSuccess, onFailure, onFormValidChange, onVaultCreated }) => {
     const dispatch = useDispatch();
     const { vaultLimitReached } = useSelector(selectVaultLimits);
     const passPlan = useSelector(selectPassPlan);
 
     const optimisticId = useMemo(() => uniqueId(), []);
     const requestId = useMemo(() => vaultCreate(optimisticId), [optimisticId]);
-    useRequestStatusEffect(requestId, { onSuccess, onFailure });
+
+    useRequestStatusEffect(requestId, {
+        onFailure,
+        onSuccess: (req: RequestEntryFromAction<ReturnType<typeof vaultCreationSuccess>>) => {
+            onVaultCreated?.(req.data.shareId);
+            onSuccess?.();
+        },
+    });
 
     const form = useFormik<VaultFormValues>({
         initialValues: {
