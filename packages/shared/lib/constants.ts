@@ -535,6 +535,7 @@ export enum MAIL_UPSELL_PATHS {
     UNLIMITED_FILTERS = 'unlimited-filters',
     UNLIMITED_ADDRESSES = 'unlimited-addresses',
     FORWARD_EMAILS = 'forward-emails',
+    SMTP_SUBMISSION = 'smtp-submission',
 }
 
 export enum CALENDAR_UPSELL_PATHS {
