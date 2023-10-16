@@ -3,9 +3,10 @@ import { c, msgid } from 'ttag';
 import { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
 import { useLoading } from '@proton/hooks';
 import { changeRenewState } from '@proton/shared/lib/api/payments';
+import { COUPON_CODES, PLANS } from '@proton/shared/lib/constants';
 import { getCheckResultFromSubscription, getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
+import { getNormalCycleFromCustomCycle, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import { Renew } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -47,9 +48,10 @@ const SubscriptionsSection = () => {
 
     const plansMap = toMap(plans, 'Name');
 
+    const currentPlanIDs = getPlanIDs(current);
     const currentCheckout = getCheckout({
         plansMap,
-        planIDs: getPlanIDs(current),
+        planIDs: currentPlanIDs,
         checkResult: getCheckResultFromSubscription(current),
     });
 
@@ -76,17 +78,22 @@ const SubscriptionsSection = () => {
     const latestSubscription = upcoming ?? current;
     const renewPrice = (
         <Price key="renewal-price" currency={latestSubscription.Currency}>
-            {latestSubscription.RenewAmount}
+            {current.CouponCode === COUPON_CODES.BLACK_FRIDAY_2023 &&
+            // The API doesn't return the correct next cycle or RenewAmount for the VPN or VPN+Pass bundle plan since we don't have chargebee
+            // So we calculate it with the cycle discount here
+            (currentPlanIDs[PLANS.VPN] || currentPlanIDs[PLANS.VPN_PASS_BUNDLE])
+                ? currentCheckout.withDiscountPerCycle
+                : latestSubscription.RenewAmount}
         </Price>
     );
 
-    const n = latestSubscription.Cycle;
-    // translator: that's a part of the full sentence "Renews automatically for ${renewPrice}, for {renewalLength} Month(s)"
+    const n = getNormalCycleFromCustomCycle(latestSubscription.Cycle);
+    // translator: that's a part of the full sentence "Renews automatically at ${renewPrice}, for {renewalLength} Month(s)"
     const renewalLength = c('Billing cycle').ngettext(msgid`${n} month`, `${n} months`, n);
 
     const renewalText = (
         <span data-testid="renewalNotice">{c('Billing cycle')
-            .jt`Renews automatically for ${renewPrice}, for ${renewalLength}`}</span>
+            .jt`Renews automatically at ${renewPrice}, for ${renewalLength}`}</span>
     );
 
     const status = subscriptionExpiresSoon
