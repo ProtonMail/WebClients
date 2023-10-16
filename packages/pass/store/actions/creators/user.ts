@@ -2,10 +2,8 @@ import { createAction } from '@reduxjs/toolkit';
 
 import withCacheBlock from '@proton/pass/store/actions/with-cache-block';
 import { withRequestFailure, withRequestStart, withRequestSuccess } from '@proton/pass/store/actions/with-request';
-import type { FeatureFlagState, UserPlanState, UserSettingsState } from '@proton/pass/store/reducers';
+import type { FeatureFlagState, UserPlanState } from '@proton/pass/store/reducers';
 import { UNIX_DAY, UNIX_HOUR } from '@proton/pass/utils/time/constants';
-
-export const setUserSettings = createAction<UserSettingsState>('user::set::settings');
 
 export const getUserFeaturesIntent = createAction(
     'user::features::get::intent',
