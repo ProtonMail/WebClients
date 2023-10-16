@@ -180,6 +180,7 @@ export const defaultESContext: EncryptedSearchFunctions<any, any, any> = {
     pauseMetadataIndexing: async () => {},
     cacheIndexedDB: async () => {},
     toggleEncryptedSearch: async () => {},
+    getCache: () => new Map(),
     resetCache: () => {},
     correctDecryptionErrors: async () => 0,
     esStatus: defaultESStatus,
