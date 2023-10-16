@@ -197,23 +197,38 @@ export const storeItemsMetadata = async <ESItemMetadata extends Object>(
  * Start metadata indexing
  * @returns true when process is gracefully stopped (or paused)
  */
-export const buildMetadataDB = async <ESItemMetadata extends Object>(
-    userID: string,
-    esSupported: boolean,
-    indexKey: CryptoKey | undefined,
-    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, unknown>>,
-    queryItemsMetadata: InternalESCallbacks<ESItemMetadata, unknown>['queryItemsMetadata'],
-    getItemInfo: GetItemInfo<ESItemMetadata>,
-    abortIndexingRef: React.MutableRefObject<AbortController>,
-    recordProgress: () => Promise<void>,
-    isBackgroundIndexing?: boolean
-) => {
+export const buildMetadataDB = async <ESItemMetadata extends Object>({
+    userID,
+    esSupported,
+    indexKey,
+    esCacheRef,
+    queryItemsMetadata,
+    getItemInfo,
+    abortIndexingRef,
+    recordProgress,
+    isInitialIndexing = true,
+    isBackgroundIndexing,
+}: {
+    userID: string;
+    esSupported: boolean;
+    indexKey: CryptoKey | undefined;
+    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, unknown>>;
+    queryItemsMetadata: InternalESCallbacks<ESItemMetadata, unknown>['queryItemsMetadata'];
+    getItemInfo: GetItemInfo<ESItemMetadata>;
+    abortIndexingRef: React.MutableRefObject<AbortController>;
+    recordProgress: () => Promise<void>;
+    isInitialIndexing?: boolean;
+    isBackgroundIndexing?: boolean;
+}) => {
+    if (isInitialIndexing) {
+        await metadataIndexingProgress.addTimestamp(userID, TIMESTAMP_TYPE.START);
+    }
     let { resultMetadata, setRecoveryPoint } = await queryItemsMetadata(
         abortIndexingRef.current.signal,
         isBackgroundIndexing
     );
 
-    // If it's undefined, it means an error occured
+    // If it's undefined, it means an error occurred
     if (!resultMetadata) {
         return false;
     }

@@ -1,12 +1,13 @@
 import { ReactNode, createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { c } from 'ttag';
-
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { useCalendarModelEventManager } from '@proton/components/containers/eventManager';
 import { useApi, useEventManager, useGetCalendarEventRaw, useUser } from '@proton/components/hooks';
-import { defaultESContext, useEncryptedSearch } from '@proton/encrypted-search';
+import { IndexingMetrics, defaultESContext, useEncryptedSearch } from '@proton/encrypted-search';
+import { TelemetryCalendarEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
+import { MINUTE_IN_SECONDS } from '@proton/shared/lib/constants';
+import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { CalendarEventManager, CalendarEventsEventManager } from '@proton/shared/lib/interfaces/calendar/EventManager';
 
@@ -67,12 +68,22 @@ const EncryptedSearchLibraryProvider = ({ calendarIDs, hasReactivatedCalendarsRe
         [api, calendarIDs, history, userID, getCalendarEventRaw]
     );
 
-    const successMessage = c('Success').t`Calendar search activated`;
+    const handleIndexingMetrics = (metrics: IndexingMetrics) => {
+        const { numInterruptions, numPauses, indexTime, totalItems } = metrics;
+        const roundedIndexTimeInMinutes = Math.round(indexTime / MINUTE_IN_SECONDS);
+
+        void sendTelemetryReport({
+            api,
+            measurementGroup: TelemetryMeasurementGroups.calendarEncryptedSearch,
+            event: TelemetryCalendarEvents.enable_encrypted_search,
+            values: { numInterruptions, numPauses, indexTime: roundedIndexTimeInMinutes, totalItems },
+        });
+    };
 
     const esLibraryFunctions = useEncryptedSearch<ESCalendarMetadata, ESCalendarSearchParams, ESCalendarContent>({
         refreshMask: 1,
         esCallbacks,
-        successMessage,
+        onMetadataIndexed: handleIndexingMetrics,
     });
     const { isConfigFromESDBLoaded, cachedIndexKey, esEnabled } = esLibraryFunctions.esStatus;
 

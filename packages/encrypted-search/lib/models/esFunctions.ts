@@ -32,7 +32,8 @@ export type EncryptedSearch<ESItemMetadata, ESItemContent> = (
 export type EncryptedSearchExecution<ESItemMetadata, ESItemContent, ESSearchParameters> = (
     setResultsList: ESSetResultsList<ESItemMetadata, ESItemContent>,
     esSearchParams: ESSearchParameters,
-    minimumItems: number | undefined
+    minimumItems: number | undefined,
+    sendMetricsOnSearch?: boolean
 ) => Promise<boolean>;
 export type HighlightString = (content: string, setAutoScroll: boolean) => string;
 
