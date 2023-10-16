@@ -157,6 +157,13 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
     };
 
     /**
+     * Return cache
+     */
+    const getCache = () => {
+        return esCacheRef.current.esCache;
+    };
+
+    /**
      * Reset the cache to its default empty state
      */
     const resetCache = () => {
@@ -1287,6 +1294,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
             esDelete,
             handleEvent,
             initializeES,
+            getCache,
             resetCache,
             esStatus,
             esIndexingProgressState,

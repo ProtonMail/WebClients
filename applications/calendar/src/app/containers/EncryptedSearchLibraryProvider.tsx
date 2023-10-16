@@ -7,10 +7,16 @@ import { useContactEmailsCache } from '@proton/components/containers/contacts/Co
 import { useCalendarModelEventManager } from '@proton/components/containers/eventManager';
 import { useApi, useEventManager, useGetCalendarEventRaw, useUser } from '@proton/components/hooks';
 import { defaultESContext, useEncryptedSearch } from '@proton/encrypted-search';
+import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { CalendarEventManager, CalendarEventsEventManager } from '@proton/shared/lib/interfaces/calendar/EventManager';
 
 import { getESCallbacks } from '../helpers/encryptedSearch/calendarESCallbacks';
-import { processCalendarEvents, processCoreEvents } from '../helpers/encryptedSearch/esUtils';
+import {
+    buildRecurrenceIDsMap,
+    processCalendarEvents,
+    processCoreEvents,
+    updateRecurrenceIDsMap,
+} from '../helpers/encryptedSearch/esUtils';
 import {
     ESCalendarContent,
     ESCalendarMetadata,
@@ -20,11 +26,13 @@ import {
 
 interface EncryptedSearchLibrary extends EncryptedSearchFunctionsCalendar {
     isLibraryInitialized: boolean;
+    recurrenceIDsMap: SimpleMap<number[]>;
 }
 
 const EncryptedSearchLibraryContext = createContext<EncryptedSearchLibrary>({
     ...defaultESContext,
     isLibraryInitialized: false,
+    recurrenceIDsMap: {},
 });
 
 export const useEncryptedSearchLibrary = () => useContext(EncryptedSearchLibraryContext);
@@ -45,6 +53,7 @@ const EncryptedSearchLibraryProvider = ({ calendarIDs, hasReactivatedCalendarsRe
     const { subscribe: calendarSubscribe } = useCalendarModelEventManager();
 
     const [isLibraryInitialized, setIsLibraryInitialized] = useState(false);
+    const [recurrenceIDsMap, setRecurrenceIDsMap] = useState<SimpleMap<number[]>>({});
 
     const esCallbacks = useMemo(
         () =>
@@ -65,6 +74,7 @@ const EncryptedSearchLibraryProvider = ({ calendarIDs, hasReactivatedCalendarsRe
         esCallbacks,
         successMessage,
     });
+    const { isConfigFromESDBLoaded, cachedIndexKey, esEnabled } = esLibraryFunctions.esStatus;
 
     // Core loop
     useEffect(() => {
@@ -119,13 +129,14 @@ const EncryptedSearchLibraryProvider = ({ calendarIDs, hasReactivatedCalendarsRe
                     api,
                     getCalendarEventRaw
                 );
+                if (cachedIndexKey) {
+                    await updateRecurrenceIDsMap(userID, cachedIndexKey, CalendarEvents, setRecurrenceIDsMap);
+                }
 
                 return esLibraryFunctions.handleEvent(esEvent);
             }
         );
-    }, [calendarIDs, esLibraryFunctions, esCallbacks]);
-
-    const { isConfigFromESDBLoaded } = esLibraryFunctions.esStatus;
+    }, [calendarIDs, esLibraryFunctions, esCallbacks, cachedIndexKey]);
 
     useEffect(() => {
         if (!isConfigFromESDBLoaded) {
@@ -146,7 +157,28 @@ const EncryptedSearchLibraryProvider = ({ calendarIDs, hasReactivatedCalendarsRe
         void initializeLibrary();
     }, [isConfigFromESDBLoaded]);
 
-    const value = { ...esLibraryFunctions, isLibraryInitialized };
+    useEffect(
+        () => {
+            /**
+             * We can't run this logic in the previous useEffect because we have to wait for React to update the
+             * encrypted search state before running cacheIndexedDB.
+             * The library does not offer a way to decouple internal logic from React state logic
+             */
+            if (!isLibraryInitialized || !esEnabled) {
+                return;
+            }
+            const computeRecurrenceIDsMap = async () => {
+                // we have to initialize the cache early to build the recurrenceIDs map, to be done in the other useEffect
+                await esLibraryFunctions.cacheIndexedDB();
+                setRecurrenceIDsMap(buildRecurrenceIDsMap(esLibraryFunctions.getCache()));
+            };
+            void computeRecurrenceIDsMap();
+        },
+        // getting the cache is a heavy operation; with these dependencies it should be run just once per app lifecycle
+        [isLibraryInitialized, esEnabled]
+    );
+
+    const value = { ...esLibraryFunctions, isLibraryInitialized, recurrenceIDsMap };
 
     return <EncryptedSearchLibraryContext.Provider value={value}>{children}</EncryptedSearchLibraryContext.Provider>;
 };
