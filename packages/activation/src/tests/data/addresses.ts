@@ -14,6 +14,7 @@ const activeKey: AddressKey = {
     RecoverySecret: null,
     RecoverySecretSignature: null,
     Flags: 1,
+    AddressForwardingID: 'AddressForwardingID',
 };
 
 const disabledKey: AddressKey = {
