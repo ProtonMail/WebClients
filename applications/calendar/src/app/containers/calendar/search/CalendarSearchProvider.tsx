@@ -1,3 +1,4 @@
+import {SimpleMap} from '@proton/shared/lib/interfaces';
 import {
     MutableRefObject,
     ReactNode,
@@ -24,6 +25,7 @@ import { VisualSearchItem } from './interface';
 interface UseCalendarSearch {
     searchParams: ESCalendarSearchParams;
     items: ESItem<ESCalendarMetadata, ESCalendarContent>[];
+    recurrenceIDsMap: SimpleMap<number[]>;
     search: (params: ESCalendarSearchParams) => void;
     triggerSearch: () => void;
     hasSearchedCounter: number;
@@ -49,6 +51,7 @@ interface UseCalendarSearch {
 const CalendarSearchContext = createContext<UseCalendarSearch>({
     searchParams: {},
     items: [],
+    recurrenceIDsMap: {},
     search: noop,
     triggerSearch: noop,
     openedSearchItem: undefined,
@@ -72,7 +75,7 @@ interface Props {
 }
 const CalendarSearchProvider = ({ children }: Props) => {
     const history = useHistory();
-    const { isLibraryInitialized, encryptedSearch, esStatus } = useEncryptedSearchLibrary();
+    const { isLibraryInitialized, encryptedSearch, recurrenceIDsMap, esStatus } = useEncryptedSearchLibrary();
 
     const searchParams = extractSearchParameters(history.location);
     const keyword = searchParams?.keyword || '';
@@ -132,6 +135,7 @@ const CalendarSearchProvider = ({ children }: Props) => {
     const value = {
         searchParams,
         items,
+        recurrenceIDsMap,
         search,
         triggerSearch,
         hasSearchedCounter,
