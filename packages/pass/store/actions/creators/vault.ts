@@ -64,6 +64,7 @@ export const vaultCreationSuccess = createOptimisticAction(
             withRequest({
                 type: 'success',
                 id: vaultCreate(payload.id),
+                data: { shareId: payload.share.shareId },
             }),
             withNotification({
                 type: 'success',
