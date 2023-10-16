@@ -110,7 +110,7 @@ const FilterPreviewConditions = ({ isOpen, isNarrow, toggleOpen, model }: Props)
                 ))}
             </div>
         ) : (
-            <div className="pt-2 max-w100 text-ellipsis" title={title}>
+            <div className="max-w-full text-ellipsis" title={title}>
                 {conditionsRows.map((cond, i) => (
                     <span key={`preview-condition-${i}`}>
                         {i === 0 ? ifLabel : operator.toLowerCase()}
@@ -124,8 +124,12 @@ const FilterPreviewConditions = ({ isOpen, isNarrow, toggleOpen, model }: Props)
 
     return (
         <div className="border-bottom">
-            <div className="flex flex-nowrap on-mobile-flex-column align-items-center py-4">
-                <button type="button" className={clsx(['w20 text-left', isNarrow && 'mb-4'])} onClick={toggleOpen}>
+            <div className="flex-no-min-children flex-nowrap flex-column md:flex-row align-items-center py-4">
+                <button
+                    type="button"
+                    className={clsx(['w-full md:w-1/5 text-left', isNarrow && 'mb-4'])}
+                    onClick={toggleOpen}
+                >
                     <Icon name="chevron-down" className={clsx([isOpen && 'rotateX-180'])} />
                     <span className="ml-2">{c('Label').t`Conditions`}</span>
                 </button>
