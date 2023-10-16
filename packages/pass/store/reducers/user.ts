@@ -1,6 +1,6 @@
 import type { Reducer } from 'redux';
 
-import { bootSuccess, setUserFeatures, setUserPlan, setUserSettings, userEvent } from '@proton/pass/store/actions';
+import { bootSuccess, getUserFeaturesSuccess, getUserPlanSuccess, userEvent } from '@proton/pass/store/actions';
 import type { MaybeNull, PassPlanResponse } from '@proton/pass/types';
 import { EventActions } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
@@ -9,8 +9,8 @@ import { fullMerge, merge, partialMerge } from '@proton/pass/utils/object/merge'
 import type { Address, SETTINGS_STATUS, User } from '@proton/shared/lib/interfaces';
 
 export type AddressState = { [addressId: string]: Address };
-export type FeatureFlagState = Partial<Record<PassFeature, boolean>> & { requestedAt?: number };
-export type UserPlanState = PassPlanResponse & { requestedAt?: number };
+export type FeatureFlagState = Partial<Record<PassFeature, boolean>>;
+export type UserPlanState = PassPlanResponse;
 export type UserSettingsState = { Email?: { Status: SETTINGS_STATUS }; Telemetry?: 1 | 0 };
 
 export type UserState = {
@@ -69,10 +69,9 @@ const reducer: Reducer<UserState> = (state = initialState, action) => {
         };
     }
 
-    if (setUserPlan.match(action)) return partialMerge(state, { plan: action.payload });
-    if (setUserSettings.match(action)) return partialMerge(state, { userSettings: action.payload });
+    if (getUserPlanSuccess.match(action)) return partialMerge(state, { plan: action.payload });
 
-    if (setUserFeatures.match(action)) {
+    if (getUserFeaturesSuccess.match(action)) {
         state.features = null; /* wipe all features before merge */
         return partialMerge(state, { features: action.payload });
     }
