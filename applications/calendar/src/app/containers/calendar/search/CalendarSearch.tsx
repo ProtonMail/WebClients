@@ -46,6 +46,12 @@ const CalendarSearch = ({ containerRef, onSearch, onBackFromSearch }: Props) => 
         }
     };
 
+    const handleCloseOverlay = () => {
+        close();
+
+        setIsSearching(false);
+    };
+
     useEffect(() => {
         void cacheIndexedDB();
     }, []);
@@ -84,8 +90,8 @@ const CalendarSearch = ({ containerRef, onSearch, onBackFromSearch }: Props) => 
                 isSearchActive={isSearchActive}
                 searchRef={searchRef}
             />
-            <SearchOverlay id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close} disableFocusTrap>
-                {!isSearchEnabled && <CalendarSearchActivation onClose={close} />}
+            <SearchOverlay id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={handleCloseOverlay} disableFocusTrap>
+                {!isSearchEnabled && <CalendarSearchActivation onClose={handleCloseOverlay} />}
             </SearchOverlay>
         </>
     );
