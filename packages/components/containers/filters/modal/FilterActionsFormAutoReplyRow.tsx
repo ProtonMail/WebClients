@@ -42,13 +42,13 @@ const FilterActionsFormAutoReplyRow = ({ isEdit, isNarrow, actions, handleUpdate
     return (
         <>
             <div
-                className="flex flex-nowrap on-mobile-flex-column align-items-center pt-4 "
+                className="flex-no-min-children flex-nowrap flex-column md:flex-row  align-items-center pt-4"
                 data-testid="filter-modal:auto-reply-row"
             >
                 {user.hasPaidMail ? (
                     <>
-                        <label htmlFor="autoReply" className={clsx(['w20 pt-2', isNarrow && 'mb-4'])}>
-                            <span className={clsx([!isNarrow && 'ml-4'])}>{c('Label').t`Send auto-reply`}</span>
+                        <label htmlFor="autoReply" className="w-full md:w-1/5 pt-2">
+                            <span>{c('Label').t`Send auto-reply`}</span>
                         </label>
                         <div className={clsx(['flex flex-column flex-item-fluid pt-2', !isNarrow && 'ml-4'])}>
                             <Toggle
@@ -62,7 +62,7 @@ const FilterActionsFormAutoReplyRow = ({ isEdit, isNarrow, actions, handleUpdate
                     </>
                 ) : (
                     <>
-                        <div className={clsx(['w20 mr-4 pt-2', isNarrow && 'mb-4'])}>
+                        <div className={clsx(['w-full md:w-1/5 mr-4 pt-2', isNarrow && 'mb-4'])}>
                             <span className="mx-2">{c('Label').t`Send auto-reply`}</span>
                         </div>
                         <Tooltip title={c('Tooltip').t`This feature is only available for paid users`}>
@@ -74,7 +74,7 @@ const FilterActionsFormAutoReplyRow = ({ isEdit, isNarrow, actions, handleUpdate
                 )}
             </div>
             {editorVisible && user.hasPaidMail && (
-                <div className="w100 mt-4">
+                <div className="w-full mt-4">
                     <Editor
                         onReady={handleReady}
                         metadata={{ supportImages: false }}

@@ -51,17 +51,25 @@ const FooterFilterModal = ({ model, errors, onClose, onChange, loading }: Props)
     return (
         <>
             {step === Step.NAME ? (
-                <Button shape="outline" disabled={loading} onClick={onClose}>{c('Action').t`Cancel`}</Button>
+                <div>
+                    <Button shape="outline" className="w-full sm:w-auto" disabled={loading} onClick={onClose}>{c(
+                        'Action'
+                    ).t`Cancel`}</Button>
+                </div>
             ) : (
-                <Button shape="outline" disabled={loading} onClick={handleBack}>{c('Action').t`Back`}</Button>
+                <div>
+                    <Button shape="outline" className="w-full sm:w-auto" disabled={loading} onClick={handleBack}>{c(
+                        'Action'
+                    ).t`Back`}</Button>
+                </div>
             )}
-            <div>
+            <div className="flex">
                 {step !== Step.PREVIEW && (
                     <Button
                         shape="outline"
                         disabled={isNextButtonDisabled()}
                         onClick={handleNext}
-                        className={clsx([step === Step.ACTIONS && 'mr-4'])}
+                        className={clsx(['w-full sm:w-auto mb-2 lg:mb-0', step === Step.ACTIONS && 'sm:mr-4'])}
                         data-testid="filter-modal:next-button"
                     >
                         {step === Step.ACTIONS ? c('Action').t`Preview` : c('Action').t`Next`}
@@ -71,6 +79,7 @@ const FooterFilterModal = ({ model, errors, onClose, onChange, loading }: Props)
                 {[Step.ACTIONS, Step.PREVIEW].includes(step) && (
                     <Button
                         color="norm"
+                        className="w-full sm:w-auto mb-2 lg:mb-0"
                         disabled={loading || !!errors.name || !!errors.conditions || !!errors.actions}
                         type="submit"
                     >{c('Action').t`Save`}</Button>
