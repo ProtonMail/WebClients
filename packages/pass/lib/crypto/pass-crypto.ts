@@ -294,7 +294,7 @@ const createPassCrypto = (): PassCryptoWorker => {
             return processes.moveItem({ destinationShareId, destinationVaultKey, content });
         },
 
-        async createVaultInvite({ shareId, inviteePublicKey, email, role }) {
+        async createVaultInvite({ shareId, invitedPublicKey, email, role }) {
             assertHydrated(context);
 
             const shareManager = getShareManager(shareId);
@@ -305,7 +305,7 @@ const createPassCrypto = (): PassCryptoWorker => {
 
             const inviteKeys = await processes.createInviteKeys({
                 targetKeys: shareManager.getVaultKeys(),
-                inviteePublicKey: await CryptoProxy.importPublicKey({ armoredKey: inviteePublicKey }),
+                invitedPublicKey: await CryptoProxy.importPublicKey({ armoredKey: invitedPublicKey }),
                 inviterPrivateKey: (await getPrimaryAddressKey(inviterAddress)).privateKey,
             });
 
@@ -321,7 +321,7 @@ const createPassCrypto = (): PassCryptoWorker => {
             const vaultKeys = await processes.reencryptInviteKeys({
                 userKey: context.primaryUserKey,
                 inviteKeys,
-                inviteePrivateKey: (await getPrimaryAddressKey(invitedAddress)).privateKey,
+                invitedPrivateKey: (await getPrimaryAddressKey(invitedAddress)).privateKey,
                 inviterPublicKeys: await Promise.all(
                     inviterPublicKeys.map((armoredKey) => CryptoProxy.importPublicKey({ armoredKey }))
                 ),
@@ -339,7 +339,7 @@ const createPassCrypto = (): PassCryptoWorker => {
             return processes.readVaultInviteContent({
                 inviteKey,
                 encryptedVaultContent,
-                inviteePrivateKey: (await getPrimaryAddressKey(invitedAddress)).privateKey,
+                invitedPrivateKey: (await getPrimaryAddressKey(invitedAddress)).privateKey,
                 inviterPublicKeys: await Promise.all(
                     inviterPublicKeys.map((armoredKey) => CryptoProxy.importPublicKey({ armoredKey }))
                 ),

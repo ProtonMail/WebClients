@@ -8,20 +8,20 @@ import { openInviteKey } from './open-invite-key';
 
 type ReencryptInviteKeysProcessParams = {
     inviteKeys: KeyRotationKeyPair[];
-    inviteePrivateKey: PrivateKeyReference;
+    invitedPrivateKey: PrivateKeyReference;
     inviterPublicKeys: PublicKeyReference[];
     userKey: DecryptedKey;
 };
 
 export const reencryptInviteKeys = async ({
     inviteKeys,
-    inviteePrivateKey,
+    invitedPrivateKey,
     inviterPublicKeys,
     userKey,
 }: ReencryptInviteKeysProcessParams): Promise<KeyRotationKeyPair[]> =>
     Promise.all(
         inviteKeys.map(async (inviteKey): Promise<KeyRotationKeyPair> => {
-            const vaultKey = await openInviteKey({ inviteKey, inviteePrivateKey, inviterPublicKeys });
+            const vaultKey = await openInviteKey({ inviteKey, invitedPrivateKey, inviterPublicKeys });
 
             const { message: encryptedVaultKey } = await CryptoProxy.encryptMessage({
                 binaryData: vaultKey,
