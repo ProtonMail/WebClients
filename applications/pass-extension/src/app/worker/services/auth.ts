@@ -13,15 +13,16 @@ import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message'
 import browser from '@proton/pass/lib/globals/browser';
 import { workerLocked, workerReady } from '@proton/pass/lib/worker';
 import {
+    getUserPlanSuccess,
     notification,
     sessionUnlockFailure,
     sessionUnlockIntent,
     sessionUnlockSuccess,
-    setUserPlan,
     stateDestroy,
     stateLock,
     syncLock,
 } from '@proton/pass/store/actions';
+import { userPlanRequest } from '@proton/pass/store/actions/requests';
 import { selectUser } from '@proton/pass/store/selectors';
 import type { Api, Maybe, WorkerMessageResponse } from '@proton/pass/types';
 import { SessionLockStatus, WorkerMessageType, WorkerStatus } from '@proton/pass/types';
@@ -271,7 +272,10 @@ export const createAuthService = ({
                  * make sure to catch 403 in this catch block. It is handled by
                  * the session lock check in the AuthService::login call right now */
                 await api({ url: `pass/v1/user/access`, method: 'get' })
-                    .then(({ Access }) => store.dispatch(setUserPlan({ ...Access!.Plan, requestedAt: getEpoch() })))
+                    .then(({ Access }) => {
+                        const action = getUserPlanSuccess(userPlanRequest(session.UserID), { ...Access!.Plan });
+                        store.dispatch(action);
+                    })
                     .catch((e) => {
                         if (!api.getStatus().sessionLocked) throw e;
                     });
