@@ -1,12 +1,6 @@
 import type { Reducer } from 'redux';
 
-import {
-    bootSuccess,
-    getUserFeaturesSuccess,
-    getUserPlanSuccess,
-    setUserSettings,
-    userEvent,
-} from '@proton/pass/store/actions';
+import { bootSuccess, getUserFeaturesSuccess, getUserPlanSuccess, userEvent } from '@proton/pass/store/actions';
 import type { MaybeNull, PassPlanResponse } from '@proton/pass/types';
 import { EventActions } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
@@ -74,8 +68,6 @@ const reducer: Reducer<UserState> = (state = initialState, action) => {
             userSettings,
         };
     }
-
-    if (setUserSettings.match(action)) return partialMerge(state, { userSettings: action.payload });
 
     if (getUserPlanSuccess.match(action)) return partialMerge(state, { plan: action.payload });
 
