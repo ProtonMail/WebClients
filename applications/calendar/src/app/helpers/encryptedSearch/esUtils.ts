@@ -2,6 +2,7 @@ import { Location } from 'history';
 
 import { CryptoProxy } from '@proton/crypto';
 import {
+    CachedItem,
     ESEvent,
     ESItemEvent,
     ES_MAX_CONCURRENT,
@@ -14,6 +15,7 @@ import {
     normalizeKeyword,
     readAllLastEvents,
     readMetadataBatch,
+    readMetadataItem,
     readSortedIDs,
 } from '@proton/encrypted-search';
 import { getEvent, queryEventsIDs, queryLatestModelEventID } from '@proton/shared/lib/api/calendars';
@@ -21,21 +23,24 @@ import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { getSearchParams as getSearchParamsFromURL, stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
-import { Api } from '@proton/shared/lib/interfaces';
+import { Api, SimpleMap } from '@proton/shared/lib/interfaces';
 import {
     CalendarEvent,
+    CalendarEventWithoutBlob,
     CalendarEventsIDsQuery,
     VcalAttendeeProperty,
     VcalOrganizerProperty,
 } from '@proton/shared/lib/interfaces/calendar';
 import { CalendarEventManager, CalendarEventsEventManager } from '@proton/shared/lib/interfaces/calendar/EventManager';
 import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
+import unique from '@proton/utils/unique';
 
 import { propertiesToAttendeeModel } from '../../components/eventModal/eventForm/propertiesToAttendeeModel';
 import { propertiesToOrganizerModel } from '../../components/eventModal/eventForm/propertiesToOrganizerModel';
 import { CalendarSearchQuery } from '../../containers/calendar/interface';
 import {
     ESAttendeeModel,
+    ESCalendarContent,
     ESCalendarMetadata,
     ESCalendarSearchParams,
     ESOrganizerModel,
@@ -45,6 +50,8 @@ import { CALENDAR_CORE_LOOP } from './constants';
 export const generateID = (calendarID: string, eventID: string) => `${calendarID}.${eventID}`;
 export const getCalendarIDFromItemID = (itemID: string) => itemID.split('.')[0];
 export const getEventIDFromItemID = (itemID: string) => itemID.split('.')[1];
+
+export const getEventKey = (calendarID: string, uid: string) => `${calendarID}-${uid}`;
 
 export const generateOrder = async (ID: string) => {
     const numericalID = ID.split('').map((char) => char.charCodeAt(0));
@@ -258,6 +265,105 @@ export const getESEventsFromCalendarInBatch = async ({
         events,
         cursor,
     };
+};
+
+const pushToRecurrenceIDsMap = (map: SimpleMap<number[]>, calendarID: string, UID: string, recurrenceID: number) => {
+    const key = getEventKey(calendarID, UID);
+    const entry = map[key];
+    map[key] = entry ? [...entry, recurrenceID] : [recurrenceID];
+};
+
+const getItemMetadataFromEventID = async (eventID: string, userID: string, itemIDs: string[], indexKey: CryptoKey) => {
+    const itemID = itemIDs.find((itemID) => getEventIDFromItemID(itemID) === eventID);
+    if (!itemID) {
+        return;
+    }
+    return readMetadataItem<ESCalendarMetadata>(userID, itemID, indexKey);
+};
+
+const handleCreateRecurrenceIDInMap = (map: SimpleMap<number[]>, event: CalendarEventWithoutBlob) => {
+    const { CalendarID, UID, RecurrenceID } = event;
+    if (!RecurrenceID) {
+        return;
+    }
+    pushToRecurrenceIDsMap(map, CalendarID, UID, RecurrenceID);
+};
+
+const handleDeleteRecurrenceIDInMap = async (
+    map: SimpleMap<number[]>,
+    eventID: string,
+    userID: string,
+    itemIDs: string[],
+    indexKey: CryptoKey
+) => {
+    const metadata = await getItemMetadataFromEventID(eventID, userID, itemIDs, indexKey);
+    if (!metadata?.RecurrenceID) {
+        return;
+    }
+    pushToRecurrenceIDsMap(map, metadata.CalendarID, metadata.UID, metadata.RecurrenceID);
+};
+
+/**
+ * Builds a global map of recurrence ids
+ */
+export const buildRecurrenceIDsMap = (cache: Map<string, CachedItem<ESCalendarMetadata, ESCalendarContent>>) => {
+    const result: SimpleMap<number[]> = {};
+    const iterator = cache.values();
+    let iteration = iterator.next();
+
+    while (!iteration.done) {
+        const {
+            metadata: { CalendarID, UID, RecurrenceID },
+        } = iteration.value;
+        iteration = iterator.next();
+        if (!RecurrenceID) {
+            continue;
+        }
+        pushToRecurrenceIDsMap(result, CalendarID, UID, RecurrenceID);
+    }
+
+    return result;
+};
+
+export const updateRecurrenceIDsMap = async (
+    userID: string,
+    indexKey: CryptoKey,
+    events: CalendarEventsEventManager[],
+    updateMap: (setter: (map: SimpleMap<number[]>) => SimpleMap<number[]>) => void
+) => {
+    const additions: SimpleMap<number[]> = {};
+    const deletions: SimpleMap<number[]> = {};
+
+    const itemIDs: string[] = [];
+    if (events.some(({ Action }) => [EVENT_ACTIONS.DELETE, EVENT_ACTIONS.UPDATE].includes(Action))) {
+        itemIDs.push(...((await readSortedIDs(userID, false)) || []));
+    }
+
+    await Promise.all(
+        events.map(async (event) => {
+            if (event.Action === EVENT_ACTIONS.DELETE) {
+                handleDeleteRecurrenceIDInMap(deletions, event.ID, userID, itemIDs, indexKey);
+            } else if (event.Action === EVENT_ACTIONS.CREATE) {
+                handleCreateRecurrenceIDInMap(additions, event.Event);
+            } else if (event.Action === EVENT_ACTIONS.UPDATE) {
+                handleCreateRecurrenceIDInMap(additions, event.Event);
+                handleDeleteRecurrenceIDInMap(deletions, event.ID, userID, itemIDs, indexKey);
+            }
+        })
+    );
+
+    updateMap((map: SimpleMap<number[]>) => {
+        const result: SimpleMap<number[]> = { ...map };
+        Object.entries(additions).forEach(([UID, recurrenceIDs]) => {
+            const value = unique([...(result[UID] || []), ...(recurrenceIDs || [])]);
+            result[UID] = value.length ? value : undefined;
+        });
+        Object.entries(deletions).forEach(([UID, recurrenceIDs]) => {
+            result[UID] = result[UID]?.filter((recurrenceID) => !recurrenceIDs?.includes(recurrenceID));
+        });
+
+        return result;
+    });
 };
 
 /**
