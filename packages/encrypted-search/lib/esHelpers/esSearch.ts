@@ -125,7 +125,7 @@ export const decryptFromDB = async <Plaintext>(
 };
 
 /**
- * Perfom an uncached search, i.e. with data being retrieved directly from IDB
+ * Perform an uncached search, i.e. with data being retrieved directly from IDB
  */
 export const uncachedSearch = async <ESItemMetadata, ESItemContent, ESSearchParameters>(
     userID: string,
@@ -214,7 +214,7 @@ export const uncachedSearch = async <ESItemMetadata, ESItemContent, ESSearchPara
 };
 
 /**
- * Perfom a cached search, i.e. over cached items only, potentially over a partial
+ * Perform a cached search, i.e. over cached items only, potentially over a partial
  * cache, i.e. still being built, therefore we need to keep track of how many
  * items were searched
  */
@@ -312,7 +312,7 @@ export const hybridSearch = async <ESItemMetadata, ESItemContent, ESSearchParame
     }
 
     // Items in cache are the most recent ones, therefore if the cache is not ready and full and the search
-    // is in descending order, we cannot used cached items
+    // is in descending order, we cannot use cached items
     if (isReverse || (esCacheRef.current.isCacheReady && !esCacheRef.current.isCacheLimited)) {
         // We have to wait for the cache to contain at least one message, because if it is empty the iterator
         // will be exhausted immediately and will not loop over newly inserted messages when they'll come in
