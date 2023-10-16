@@ -376,6 +376,7 @@ const Step1 = ({
                                 plan={options.plan}
                                 cycle={options.cycle}
                                 currency={options.currency}
+                                vpnServersCountData={vpnServersCountData}
                                 onSelect={() => {
                                     accountStepPaymentRef.current?.scrollIntoView();
                                 }}

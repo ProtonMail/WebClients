@@ -301,7 +301,7 @@ describe('should get checkout result', () => {
             withDiscountPerMonth: 399.2,
             withoutDiscountPerMonth: 999,
             discountPerCycle: 17994,
-            discountPercent: 50,
+            discountPercent: 60,
             membersPerMonth: 999,
             addonsPerMonth: 0,
         });

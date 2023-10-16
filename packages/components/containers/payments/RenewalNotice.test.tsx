@@ -39,7 +39,9 @@ describe('<RenewalNotice />', () => {
                 subscription={undefined}
             />
         );
-        expect(container).toHaveTextContent(`Your subscription will automatically renew on ${expectedDateString}.`);
+        expect(container).toHaveTextContent(
+            `Subscription auto-renews every 12 months. Your next billing date is ${expectedDateString}.`
+        );
     });
 
     it('should use period end date if custom billing is enabled', () => {
@@ -62,7 +64,9 @@ describe('<RenewalNotice />', () => {
                 }
             />
         );
-        expect(container).toHaveTextContent(`Your subscription will automatically renew on ${expectedDateString}.`);
+        expect(container).toHaveTextContent(
+            `Subscription auto-renews every 12 months. Your next billing date is ${expectedDateString}.`
+        );
     });
 
     it('should use the end of upcoming subscription period if scheduled subscription is enabled', () => {
@@ -86,6 +90,8 @@ describe('<RenewalNotice />', () => {
 
         const expectedDateString = '02/03/2026'; // and finally the renewal date is 02/03/2026 (3rd of February 2026)
 
-        expect(container).toHaveTextContent(`Your subscription will automatically renew on ${expectedDateString}.`);
+        expect(container).toHaveTextContent(
+            `Subscription auto-renews every 24 months. Your next billing date is ${expectedDateString}.`
+        );
     });
 });

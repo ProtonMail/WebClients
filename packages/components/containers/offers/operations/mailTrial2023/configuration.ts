@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { FeatureCode } from '@proton/components/containers/features';
 import { CYCLE, PLANS } from '@proton/shared/lib/constants';
 
-import { getMailPlusFeatures, getUnlimitedFeatures } from '../../helpers/offerCopies';
+import { getMailPlusInboxFeatures, getUnlimitedFeatures } from '../../helpers/offerCopies';
 import { OfferConfig } from '../../interface';
 import Layout from './Layout';
 import bannerImage from './upsell_mail-plus-free-trial.png';
@@ -20,8 +20,7 @@ const config: OfferConfig = {
                 [PLANS.MAIL]: 1,
             },
             cycle: CYCLE.YEARLY,
-            popular: false,
-            features: getMailPlusFeatures,
+            features: getMailPlusInboxFeatures,
             getCTAContent: () => c('Action').t`Upgrade now`,
         },
         {
@@ -31,7 +30,7 @@ const config: OfferConfig = {
                 [PLANS.BUNDLE]: 1,
             },
             cycle: CYCLE.TWO_YEARS,
-            popular: true,
+            popular: 1,
             features: getUnlimitedFeatures,
             getCTAContent: () => c('Action').t`Upgrade now`,
         },
@@ -42,7 +41,6 @@ const config: OfferConfig = {
                 [PLANS.BUNDLE]: 1,
             },
             cycle: CYCLE.YEARLY,
-            popular: false,
             features: getUnlimitedFeatures,
             getCTAContent: () => c('Action').t`Upgrade now`,
         },

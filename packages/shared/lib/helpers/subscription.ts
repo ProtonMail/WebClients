@@ -31,6 +31,7 @@ const {
     DRIVE_PRO,
     PASS_PLUS,
     VPN,
+    VPN_PASS_BUNDLE,
     ENTERPRISE,
     BUNDLE,
     BUNDLE_PRO,
@@ -88,6 +89,7 @@ export const isManagedExternally = (
 export const hasVisionary = (subscription: Subscription | undefined) => hasSomePlan(subscription, VISIONARY);
 export const hasNewVisionary = (subscription: Subscription | undefined) => hasSomePlan(subscription, NEW_VISIONARY);
 export const hasVPN = (subscription: Subscription | undefined) => hasSomePlan(subscription, VPN);
+export const hasVPNPassBundle = (subscription: Subscription | undefined) => hasSomePlan(subscription, VPN_PASS_BUNDLE);
 export const hasMail = (subscription: Subscription | undefined) => hasSomePlan(subscription, MAIL);
 export const hasMailPro = (subscription: Subscription | undefined) => hasSomePlan(subscription, MAIL_PRO);
 export const hasDrive = (subscription: Subscription | undefined) => hasSomePlan(subscription, DRIVE);
@@ -230,6 +232,10 @@ export const getValidCycle = (cycle: number): CYCLE | undefined => {
     return allCycles.includes(cycle) ? cycle : undefined;
 };
 
+export const getIsCustomCycle = (subscription?: Subscription) => {
+    return customCycles.includes(subscription?.Cycle as any);
+};
+
 export function getNormalCycleFromCustomCycle(cycle: CYCLE): CYCLE;
 
 export function getNormalCycleFromCustomCycle(cycle: CYCLE | undefined): CYCLE | undefined {
@@ -255,6 +261,14 @@ export const hasMonthly = (subscription?: Subscription) => {
 
 export const hasTwoYears = (subscription?: Subscription) => {
     return subscription?.Cycle === CYCLE.TWO_YEARS;
+};
+
+export const hasFifteen = (subscription?: Subscription) => {
+    return subscription?.Cycle === CYCLE.FIFTEEN;
+};
+
+export const hasThirty = (subscription?: Subscription) => {
+    return subscription?.Cycle === CYCLE.THIRTY;
 };
 
 interface PricingForCycles {
@@ -305,7 +319,7 @@ function getPlanMembers(plan: Plan, quantity: number): number {
     return membersNumberInPlan * quantity;
 }
 
-export const INCLUDED_IP_PRICING: Pricing = {
+export const INCLUDED_IP_PRICING = {
     [CYCLE.MONTHLY]: 4999,
     [CYCLE.YEARLY]: 3999 * CYCLE.YEARLY,
     [CYCLE.TWO_YEARS]: 3599 * CYCLE.TWO_YEARS,

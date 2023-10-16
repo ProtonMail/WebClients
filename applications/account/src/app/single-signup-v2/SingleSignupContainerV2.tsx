@@ -50,7 +50,7 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
-import { Audience, Cycle, CycleMapping, Plan, PlansMap } from '@proton/shared/lib/interfaces';
+import { Audience, Cycle, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import { FREE_PLAN, getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import { hasPaidPass } from '@proton/shared/lib/user/helpers';
@@ -104,16 +104,23 @@ const getDefaultSubscriptionData = (cycle: Cycle): SubscriptionData => {
     };
 };
 
-const subscriptionDataCycleMapping: CycleMapping<SubscriptionData> = {
-    [CYCLE.MONTHLY]: getDefaultSubscriptionData(CYCLE.MONTHLY),
-    [CYCLE.YEARLY]: getDefaultSubscriptionData(CYCLE.YEARLY),
-    [CYCLE.TWO_YEARS]: getDefaultSubscriptionData(CYCLE.TWO_YEARS),
-};
+const subscriptionDataCycleMapping = [
+    {
+        planIDs: {},
+        mapping: {
+            [CYCLE.MONTHLY]: getDefaultSubscriptionData(CYCLE.MONTHLY),
+            [CYCLE.YEARLY]: getDefaultSubscriptionData(CYCLE.YEARLY),
+            [CYCLE.TWO_YEARS]: getDefaultSubscriptionData(CYCLE.TWO_YEARS),
+            [CYCLE.FIFTEEN]: getDefaultSubscriptionData(CYCLE.FIFTEEN),
+            [CYCLE.THIRTY]: getDefaultSubscriptionData(CYCLE.THIRTY),
+        },
+    },
+];
 
 export const defaultSignupModel: SignupModelV2 = {
     session: undefined,
     domains: [],
-    subscriptionData: subscriptionDataCycleMapping[CYCLE.YEARLY],
+    subscriptionData: subscriptionDataCycleMapping[0].mapping[CYCLE.YEARLY],
     subscriptionDataCycleMapping,
     paymentMethodStatus: {
         Card: false,
@@ -221,6 +228,7 @@ const SingleSignupContainerV2 = ({
         CustomStep,
     } = getPassConfiguration({
         isDesktop,
+        vpnServersCountData,
     });
 
     useEffect(() => {
@@ -298,7 +306,7 @@ const SingleSignupContainerV2 = ({
         }).catch(noop);
     };
 
-    const selectedPlan = getPlanFromPlanIDs(model.plans, model.subscriptionData.planIDs) || FREE_PLAN;
+    const selectedPlan = getPlanFromPlanIDs(model.plansMap, model.subscriptionData.planIDs) || FREE_PLAN;
     const upsellPlanCard = planCards.find((planCard) => planCard.type === 'best');
 
     const triggerModals = (session: SessionData, options?: { ignoreUnlock: boolean }) => {
@@ -668,7 +676,7 @@ const SingleSignupContainerV2 = ({
             wait(3500),
         ]);
 
-        measure(getSignupTelemetryData(model.plans, cache));
+        measure(getSignupTelemetryData(model.plansMap, cache));
 
         silentApi(updateFeatureValue(FeatureCode.PassSignup, true)).catch(noop);
 

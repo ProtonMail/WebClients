@@ -26,7 +26,7 @@ const config: OfferConfig = {
             couponCode: COUPON_CODES.MAIL_BLACK_FRIDAY_2022,
             features: getVisionaryFeatures,
             star: '1',
-            popular: true,
+            popular: 1,
         },
     ],
     layout: Layout,
