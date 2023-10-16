@@ -1,4 +1,6 @@
+import { ESProgress, estimateIndexingDuration, readSize } from '@proton/encrypted-search/lib';
 import { MINUTE, SECOND } from '@proton/shared/lib/constants';
+import { Unwrap } from '@proton/shared/lib/interfaces';
 
 import { IndexedDBRow, getIndexingProgressQueryHelpers } from '../esIDB';
 
@@ -45,3 +47,31 @@ export const estimateIndexingProgress = async (
         return { estimatedMinutes, currentProgressValue };
     }
 };
+
+const produceIndexingMetrics = async (userID: string, progressBlob: ESProgress) => {
+    const { totalItems, isRefreshed, numPauses, timestamps, originalEstimate } = progressBlob;
+    const { indexTime, totalInterruptions } = estimateIndexingDuration(timestamps);
+    const indexSize = (await readSize(userID)) || 0;
+
+    return {
+        numInterruptions: totalInterruptions - numPauses,
+        numPauses,
+        indexSize,
+        originalEstimate,
+        indexTime,
+        totalItems,
+        isRefreshed,
+    };
+};
+
+export const gatherIndexingMetrics = async (userID: string, row: IndexedDBRow) => {
+    const indexingProgress = getIndexingProgressQueryHelpers(row);
+    const progressBlob = await indexingProgress.read(userID);
+    if (!progressBlob) {
+        return;
+    }
+
+    return produceIndexingMetrics(userID, progressBlob);
+};
+
+export type IndexingMetrics = Unwrap<ReturnType<typeof produceIndexingMetrics>>;

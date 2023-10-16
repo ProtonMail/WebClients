@@ -26,7 +26,7 @@ export const useEncryptedSearchStatus = <ESItemMetadata extends Object, ESSearch
     userID: string;
 }): [
     ESStatus<ESItemMetadata, ESItemContent, ESSearchParameters>,
-    React.Dispatch<React.SetStateAction<ESStatus<ESItemMetadata, ESItemContent, ESSearchParameters>>>
+    React.Dispatch<React.SetStateAction<ESStatus<ESItemMetadata, ESItemContent, ESSearchParameters>>>,
 ] => {
     const [esStatus, setESStatus] =
         useState<ESStatus<ESItemMetadata, ESItemContent, ESSearchParameters>>(defaultESStatus);
@@ -53,7 +53,7 @@ export const useEncryptedSearchStatus = <ESItemMetadata extends Object, ESSearch
                     }));
                 }
             } catch (error) {
-                console.warn('an error occured on init es status', error);
+                console.warn('an error occurred on init es status', error);
             }
 
             /**

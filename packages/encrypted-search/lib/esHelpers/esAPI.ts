@@ -94,9 +94,10 @@ const sendESMetrics: SendESMetrics = async (api, Title, Data) =>
     sendMetricsReport(api, METRICS_LOG.ENCRYPTED_SEARCH, Title, Data);
 
 /**
- * Send metrics about the indexing process
+ * Send metrics about the indexing process (only for Mail)
+ * TODO: move to Mail and convert into generic callback for useEncryptedSearch
  */
-export const sendIndexingMetrics = async (api: Api, userID: string) => {
+export const sendIndexingMetricsForMail = async (api: Api, userID: string) => {
     const progressBlob = await contentIndexingProgress.read(userID);
     if (!progressBlob) {
         return;
