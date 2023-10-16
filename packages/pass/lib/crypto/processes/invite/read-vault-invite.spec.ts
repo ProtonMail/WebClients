@@ -17,7 +17,7 @@ describe('read vault invite content', () => {
     afterAll(async () => releaseCryptoProxy());
 
     test('should decrypt encrypted vault content correctly', async () => {
-        const inviteeKey = await createRandomKey();
+        const invitedKey = await createRandomKey();
         const inviterKeys = await Promise.all(Array.from({ length: 4 }).map(() => createRandomKey()));
 
         const vaultKey = await createRandomVaultKey(0);
@@ -26,14 +26,14 @@ describe('read vault invite content', () => {
 
         const [inviteKey] = await createInviteKeys({
             targetKeys: [vaultKey],
-            inviteePublicKey: inviteeKey.publicKey,
+            invitedPublicKey: invitedKey.publicKey,
             inviterPrivateKey: inviterKeys[0].privateKey,
         });
 
         const decryptedVaultContent = await readVaultInviteContent({
             inviteKey,
             encryptedVaultContent: uint8ArrayToBase64String(encryptedVaultContent),
-            inviteePrivateKey: inviteeKey.privateKey,
+            invitedPrivateKey: invitedKey.privateKey,
             inviterPublicKeys: inviterKeys.map((key) => key.publicKey),
         });
 
