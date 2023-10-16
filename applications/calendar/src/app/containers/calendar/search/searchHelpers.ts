@@ -23,6 +23,7 @@ import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import groupWith from '@proton/utils/groupWith';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { getEventKey } from '../../../helpers/encryptedSearch/esUtils';
 import { ESCalendarContent, ESCalendarMetadata } from '../../../interfaces/encryptedSearch';
 import { getCurrentEvent } from '../eventActions/recurringHelper';
 import getComponentFromCalendarEventWithoutBlob from '../eventStore/cache/getComponentFromCalendarEventWithoutBlob';
@@ -179,27 +180,12 @@ export const expandSearchItem = ({
     }
 };
 
-const getEventKey = (calendarID: string, uid: string) => `${calendarID}-${uid}`;
-
 export const expandAndOrderItems = (
     items: ESItem<ESCalendarMetadata, ESCalendarContent>[],
     calendarsEventsCache: CalendarsEventsCache,
+    recurrenceIDsMap: SimpleMap<number[]>,
     date: Date
 ) => {
-    const recurrenceIDsMap = items.reduce<SimpleMap<number[]>>((acc, { CalendarID, UID, RecurrenceID }) => {
-        if (!RecurrenceID) {
-            return acc;
-        }
-        const key = getEventKey(CalendarID, UID);
-        const entry = acc[key];
-        if (entry) {
-            entry.push(RecurrenceID);
-        } else {
-            acc[key] = [RecurrenceID];
-        }
-
-        return acc;
-    }, {});
     const expanded = items
         .map((item) => {
             const { CalendarID, UID } = item;
