@@ -15,6 +15,7 @@ import { ShareType } from '@proton/pass/types';
 import { unwrap } from '@proton/pass/utils/fp/promises';
 import { logId, logger } from '@proton/pass/utils/logger';
 import { entriesMap } from '@proton/pass/utils/object/map';
+import type { Address } from '@proton/shared/lib/interfaces';
 import { getDecryptedAddressKeysHelper, getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 
 import * as processes from './processes';
@@ -72,11 +73,8 @@ const createPassCrypto = (): PassCryptoWorker => {
     };
 
     /* Resolves the decrypted address key reference */
-    const getAddressKey = async (addressId: string) => {
+    const getPrimaryAddressKey = async (address: Address) => {
         assertHydrated(context);
-
-        const address = context.addresses.find((address) => address.ID === addressId);
-        if (address === undefined) throw new PassCryptoShareError('Unknown address ID');
 
         const [primaryAddressKey] = await getDecryptedAddressKeysHelper(
             address.Keys,
@@ -302,22 +300,28 @@ const createPassCrypto = (): PassCryptoWorker => {
             const shareManager = getShareManager(shareId);
             const share = shareManager.getShare();
 
+            const inviterAddress = context.addresses.find((address) => address.Email === share.addressId);
+            if (inviterAddress === undefined) throw new PassCryptoError('Could not find invited address key');
+
             const inviteKeys = await processes.createInviteKeys({
                 targetKeys: shareManager.getVaultKeys(),
                 inviteePublicKey: await CryptoProxy.importPublicKey({ armoredKey: inviteePublicKey }),
-                inviterPrivateKey: (await getAddressKey(share.addressId)).privateKey,
+                inviterPrivateKey: (await getPrimaryAddressKey(inviterAddress)).privateKey,
             });
 
             return { Keys: inviteKeys, Email: email, ShareRoleID: role, TargetType: ShareType.Vault };
         },
 
-        async acceptVaultInvite({ inviteKeys, inviterPublicKeys }) {
+        async acceptVaultInvite({ inviteKeys, invitedEmail, inviterPublicKeys }) {
             assertHydrated(context);
+
+            const invitedAddress = context.addresses.find((address) => address.Email === invitedEmail);
+            if (invitedAddress === undefined) throw new PassCryptoError('Could not find invited address key');
 
             const vaultKeys = await processes.reencryptInviteKeys({
                 userKey: context.primaryUserKey,
                 inviteKeys,
-                inviteePrivateKey: (await getAddressKey(context.primaryAddress.ID)).privateKey,
+                inviteePrivateKey: (await getPrimaryAddressKey(invitedAddress)).privateKey,
                 inviterPublicKeys: await Promise.all(
                     inviterPublicKeys.map((armoredKey) => CryptoProxy.importPublicKey({ armoredKey }))
                 ),
@@ -326,13 +330,16 @@ const createPassCrypto = (): PassCryptoWorker => {
             return { Keys: vaultKeys };
         },
 
-        async readVaultInvite({ inviteKey, encryptedVaultContent, inviterPublicKeys }) {
+        async readVaultInvite({ inviteKey, invitedEmail, encryptedVaultContent, inviterPublicKeys }) {
             assertHydrated(context);
+
+            const invitedAddress = context.addresses.find((address) => address.Email === invitedEmail);
+            if (invitedAddress === undefined) throw new PassCryptoError('Could not find invited address key');
 
             return processes.readVaultInviteContent({
                 inviteKey,
                 encryptedVaultContent,
-                inviteePrivateKey: (await getAddressKey(context.primaryAddress.ID)).privateKey,
+                inviteePrivateKey: (await getPrimaryAddressKey(invitedAddress)).privateKey,
                 inviterPublicKeys: await Promise.all(
                     inviterPublicKeys.map((armoredKey) => CryptoProxy.importPublicKey({ armoredKey }))
                 ),

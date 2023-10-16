@@ -17,7 +17,7 @@ import { useInviteContext } from './InviteContextProvider';
 import { UserVerificationMessage } from './UserVerificationMessage';
 
 export const VaultInviteRespond: VFC<Invite> = (invite) => {
-    const { inviterEmail, vault, token } = invite;
+    const { inviterEmail, invitedEmail, token, vault } = invite;
     const { itemCount, memberCount } = vault;
     const { onInviteResponse } = useInviteContext();
 
@@ -34,7 +34,7 @@ export const VaultInviteRespond: VFC<Invite> = (invite) => {
     });
 
     const handleRejectInvite = () => rejectInvite.dispatch({ inviteToken: invite.token });
-    const handleAcceptInvite = () => acceptInvite.dispatch({ inviteToken: token, inviterEmail });
+    const handleAcceptInvite = () => acceptInvite.dispatch({ inviteToken: token, inviterEmail, invitedEmail });
 
     const loading = acceptInvite.loading || rejectInvite.loading;
     const userVerified = useSelector(selectUserVerified);
