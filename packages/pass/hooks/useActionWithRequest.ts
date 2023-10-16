@@ -3,15 +3,24 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import type { AnyAction } from 'redux';
 
+import type { RequestOptions } from '@proton/pass/store/actions/with-request';
 import { type WithRequest, withRevalidate } from '@proton/pass/store/actions/with-request';
+import type { RequestEntry } from '@proton/pass/store/reducers';
 import { selectRequest } from '@proton/pass/store/selectors';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
-type UseActionWithRequestOptions<P extends any[], R extends WithRequest<AnyAction, 'start'>> = {
-    action: (requestId: string, ...args: P) => R;
-    onStart?: () => void;
-    onSuccess?: () => void;
-    onFailure?: () => void;
+export type RequestEntryFromAction<A extends WithRequest<AnyAction, any>> = A['meta']['request'] extends RequestOptions<
+    infer T,
+    infer D
+>
+    ? RequestEntry<T, D>
+    : never;
+
+type UseActionWithRequestOptions<P extends any[], A extends WithRequest<AnyAction, 'start'>> = {
+    action: (requestId: string, ...args: P) => A;
+    onStart?: <R extends RequestEntry<'start', any>>(request: R) => void;
+    onSuccess?: <R extends RequestEntry<'success', any>>(request: R) => void;
+    onFailure?: <R extends RequestEntry<'failure', any>>(request: R) => void;
     requestId?: ((...args: P) => string) | string;
 };
 
@@ -56,18 +65,20 @@ export const useActionWithRequest = <P extends any[], R extends WithRequest<AnyA
     }, [options]);
 
     useEffect(() => {
-        switch (req?.status) {
+        if (req === undefined) return;
+
+        switch (req.status) {
             case 'start':
                 setLoading(true);
-                return optionsRef.current.onStart?.();
+                return optionsRef.current.onStart?.(req);
             case 'success':
                 setLoading(false);
-                return optionsRef.current.onSuccess?.();
+                return optionsRef.current.onSuccess?.(req);
             case 'failure':
                 setLoading(false);
-                return optionsRef.current.onFailure?.();
+                return optionsRef.current.onFailure?.(req);
         }
-    }, [req?.status]);
+    }, [req]);
 
     const progress = req?.status === 'start' ? req.progress ?? 0 : 100;
 
