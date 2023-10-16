@@ -120,7 +120,7 @@ export const ItemsListPlaceholder: VFC = () => {
                             key={`quick-action-${type}`}
                             className={clsx('w-full relative', subTheme)}
                             onClick={onClick}
-                            disabled={!(selectedShare && isWritableVault(selectedShare))}
+                            disabled={selectedShare && !isWritableVault(selectedShare)}
                         >
                             <Icon
                                 name={icon}
