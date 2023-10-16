@@ -109,7 +109,7 @@ export const ItemViewPanel: FC<Props> = ({
                                 shape="solid"
                                 color="norm"
                                 onClick={handleEditClick}
-                                disabled={readOnly}
+                                disabled={optimistic || readOnly}
                             >
                                 <Icon name="pencil" className="mr-1" />
                                 <span>{c('Action').t`Edit`}</span>
