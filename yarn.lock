@@ -9096,6 +9096,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/nodemailer@npm:^6.4.11":
+  version: 6.4.13
+  resolution: "@types/nodemailer@npm:6.4.13"
+  dependencies:
+    "@types/node": "npm:*"
+  checksum: 1e176df3f3cf13564055d1c76744df8950a2429c4d1a0b8e41e5ffd3d1ffadd5d32f840aaffcc41e994c2fcffceccb47655a0d867733256bb47dd5695ee62774
+  languageName: node
+  linkType: hard
+
 "@types/normalize-package-data@npm:^2.4.0, @types/normalize-package-data@npm:^2.4.1":
   version: 2.4.1
   resolution: "@types/normalize-package-data@npm:2.4.1"
@@ -11140,7 +11149,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"arrify@npm:^2.0.1":
+"arrify@npm:^2.0.0, arrify@npm:^2.0.1":
   version: 2.0.1
   resolution: "arrify@npm:2.0.1"
   checksum: 3fb30b5e7c37abea1907a60b28a554d2f0fc088757ca9bf5b684786e583fdf14360721eb12575c1ce6f995282eab936712d3c4389122682eafab0e0b57f78dbb
@@ -12739,6 +12748,13 @@ __metadata:
   version: 5.2.2
   resolution: "big.js@npm:5.2.2"
   checksum: 230520f1ff920b2d2ce3e372d77a33faa4fa60d802fe01ca4ffbc321ee06023fe9a741ac02793ee778040a16b7e497f7d60c504d1c402b8fdab6f03bb785a25f
+  languageName: node
+  linkType: hard
+
+"bignumber.js@npm:^9.0.0":
+  version: 9.1.2
+  resolution: "bignumber.js@npm:9.1.2"
+  checksum: e17786545433f3110b868725c449fa9625366a6e675cd70eb39b60938d6adbd0158cb4b3ad4f306ce817165d37e63f4aa3098ba4110db1d9a3b9f66abfbaf10d
   languageName: node
   linkType: hard
 
@@ -15952,6 +15968,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"del@npm:^7.1.0":
+  version: 7.1.0
+  resolution: "del@npm:7.1.0"
+  dependencies:
+    globby: "npm:^13.1.2"
+    graceful-fs: "npm:^4.2.10"
+    is-glob: "npm:^4.0.3"
+    is-path-cwd: "npm:^3.0.0"
+    is-path-inside: "npm:^4.0.0"
+    p-map: "npm:^5.5.0"
+    rimraf: "npm:^3.0.2"
+    slash: "npm:^4.0.0"
+  checksum: 5ad2777b69e386b414ba77f5eba23bb52422c096f4c084c0d1d829ee4776d1a025a6f69765906907c4137026e9bd071ee9d422fd531b1417ef546adc7eb6fada
+  languageName: node
+  linkType: hard
+
 "delayed-stream@npm:~1.0.0":
   version: 1.0.0
   resolution: "delayed-stream@npm:1.0.0"
@@ -16535,7 +16567,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ecdsa-sig-formatter@npm:1.0.11":
+"ecdsa-sig-formatter@npm:1.0.11, ecdsa-sig-formatter@npm:^1.0.11":
   version: 1.0.11
   resolution: "ecdsa-sig-formatter@npm:1.0.11"
   dependencies:
@@ -18215,7 +18247,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"extend@npm:^3.0.0":
+"extend@npm:^3.0.0, extend@npm:^3.0.2":
   version: 3.0.2
   resolution: "extend@npm:3.0.2"
   checksum: 73bf6e27406e80aa3e85b0d1c4fd987261e628064e170ca781125c0b635a3dabad5e05adbf07595ea0cf1e6c5396cacb214af933da7cbaf24fe75ff14818e8f9
@@ -18390,6 +18422,13 @@ __metadata:
   version: 2.1.1
   resolution: "fast-safe-stringify@npm:2.1.1"
   checksum: d90ec1c963394919828872f21edaa3ad6f1dddd288d2bd4e977027afff09f5db40f94e39536d4646f7e01761d704d72d51dce5af1b93717f3489ef808f5f4e4d
+  languageName: node
+  linkType: hard
+
+"fast-text-encoding@npm:^1.0.0":
+  version: 1.0.6
+  resolution: "fast-text-encoding@npm:1.0.6"
+  checksum: e1d0381bda229c92c7906f63308f3b9caca8c78b732768b1ee16f560089ed21bc159bbe1434138ccd3815931ec8d4785bdade1ad1c45accfdf27ac6606ac67d2
   languageName: node
   linkType: hard
 
@@ -18990,6 +19029,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"foldline@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "foldline@npm:1.1.0"
+  checksum: 27b0d66a0d34e319d9ad50dfacc1821b3cf6f091ba90540359fc0b5d821dab5a38947e61daf6885484e0a60826b69186f923adbc7f0b6dc5e6d9ad66cd1a6414
+  languageName: node
+  linkType: hard
+
 "follow-redirects@npm:^1.0.0, follow-redirects@npm:^1.14.0, follow-redirects@npm:^1.15.0":
   version: 1.15.3
   resolution: "follow-redirects@npm:1.15.3"
@@ -19530,6 +19576,50 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gaxios@npm:^5.0.0, gaxios@npm:^5.0.1":
+  version: 5.1.3
+  resolution: "gaxios@npm:5.1.3"
+  dependencies:
+    extend: "npm:^3.0.2"
+    https-proxy-agent: "npm:^5.0.0"
+    is-stream: "npm:^2.0.0"
+    node-fetch: "npm:^2.6.9"
+  checksum: eb1fd1910491c18445b4e22932098346b3c16917caa3b71567abba296e2d3dcf53d4ede47825ec06223f8943ea35744553d66238c5ad8f3f7835d9dc8ed540ba
+  languageName: node
+  linkType: hard
+
+"gaxios@npm:^6.0.0, gaxios@npm:^6.0.3":
+  version: 6.1.1
+  resolution: "gaxios@npm:6.1.1"
+  dependencies:
+    extend: "npm:^3.0.2"
+    https-proxy-agent: "npm:^7.0.1"
+    is-stream: "npm:^2.0.0"
+    node-fetch: "npm:^2.6.9"
+  checksum: 3c54094a7b45a20fe4d5e88f3a3284ea7ba9639ffbe33b4eb500578a4269cfaa6ba93b773ea4c292d9fc15f413347cd37db6a1daf7360e13e895c1201c788585
+  languageName: node
+  linkType: hard
+
+"gcp-metadata@npm:^5.3.0":
+  version: 5.3.0
+  resolution: "gcp-metadata@npm:5.3.0"
+  dependencies:
+    gaxios: "npm:^5.0.0"
+    json-bigint: "npm:^1.0.0"
+  checksum: c0570f8ed821429444d6d9d46279831aa1b68092bd5f394928dd816c39904721f8a80ed463fcbeb607a469b1917fe24dad0e66dc4a94388620c9172a54fb5a5f
+  languageName: node
+  linkType: hard
+
+"gcp-metadata@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "gcp-metadata@npm:6.0.0"
+  dependencies:
+    gaxios: "npm:^6.0.0"
+    json-bigint: "npm:^1.0.0"
+  checksum: 291d3e8a4f95ea2ff822f0b2c0d678d254313073a28f5dbc09223a9ea173567ca375c0bcefe53ec1c525df6277207a174c655c10597873a6d9da7f199dc5dc96
+  languageName: node
+  linkType: hard
+
 "gensync@npm:^1.0.0-beta.1, gensync@npm:^1.0.0-beta.2":
   version: 1.0.0-beta.2
   resolution: "gensync@npm:1.0.0-beta.2"
@@ -20051,6 +20141,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gmail-tester@npm:^1.3.8":
+  version: 1.3.8
+  resolution: "gmail-tester@npm:1.3.8"
+  dependencies:
+    googleapis: "npm:^109.0.1"
+    open: "npm:^8.4.0"
+    server-destroy: "npm:^1.0.1"
+  checksum: 7764f57917528b5ef6af664f686e501284c1f5d8be94c543b809747e5f709f43726b436c40535182cc4e21d8a824cc3dfc198d68feec931cc2f318b3ade860de
+  languageName: node
+  linkType: hard
+
 "gonzales-pe@npm:^4.3.0":
   version: 4.3.0
   resolution: "gonzales-pe@npm:4.3.0"
@@ -20059,6 +20160,97 @@ __metadata:
   bin:
     gonzales: bin/gonzales.js
   checksum: b99a6ef4bf28ca0b0adcc0b42fd0179676ee8bfe1d3e3c0025d7d38ba35a3f2d5b1d4beb16101a7fc7cb2dbda1ec045bbce0932697095df41d729bac1703476f
+  languageName: node
+  linkType: hard
+
+"google-auth-library@npm:^8.0.2":
+  version: 8.9.0
+  resolution: "google-auth-library@npm:8.9.0"
+  dependencies:
+    arrify: "npm:^2.0.0"
+    base64-js: "npm:^1.3.0"
+    ecdsa-sig-formatter: "npm:^1.0.11"
+    fast-text-encoding: "npm:^1.0.0"
+    gaxios: "npm:^5.0.0"
+    gcp-metadata: "npm:^5.3.0"
+    gtoken: "npm:^6.1.0"
+    jws: "npm:^4.0.0"
+    lru-cache: "npm:^6.0.0"
+  checksum: a9b101e15ba0457d3abe548b59323211f2c34071721da73a74ba6a773e199e73736910fd7d39b0c978eb7655220ae6f90f4e0b5665419d298ab544f9159d1625
+  languageName: node
+  linkType: hard
+
+"google-auth-library@npm:^9.0.0":
+  version: 9.1.0
+  resolution: "google-auth-library@npm:9.1.0"
+  dependencies:
+    base64-js: "npm:^1.3.0"
+    ecdsa-sig-formatter: "npm:^1.0.11"
+    gaxios: "npm:^6.0.0"
+    gcp-metadata: "npm:^6.0.0"
+    gtoken: "npm:^7.0.0"
+    jws: "npm:^4.0.0"
+    lru-cache: "npm:^6.0.0"
+  checksum: 6314d2a5d26ebebc48ec721066433153bf3bd001dca83366240dd4f4483739d6a06aa64284efd2f60d1bba757157bc84db51facb4752be0c98d5febd12916305
+  languageName: node
+  linkType: hard
+
+"google-p12-pem@npm:^4.0.0":
+  version: 4.0.1
+  resolution: "google-p12-pem@npm:4.0.1"
+  dependencies:
+    node-forge: "npm:^1.3.1"
+  bin:
+    gp12-pem: build/src/bin/gp12-pem.js
+  checksum: 2cd15077cb2179306870223c65b49d38f0860bd8cc60da8072cc632c9aad8cb7e61e46e63d72e8ef3fca27ad9e6b8870db6cc809839f279382d9cc4d891a9a7b
+  languageName: node
+  linkType: hard
+
+"googleapis-common@npm:^6.0.0":
+  version: 6.0.4
+  resolution: "googleapis-common@npm:6.0.4"
+  dependencies:
+    extend: "npm:^3.0.2"
+    gaxios: "npm:^5.0.1"
+    google-auth-library: "npm:^8.0.2"
+    qs: "npm:^6.7.0"
+    url-template: "npm:^2.0.8"
+    uuid: "npm:^9.0.0"
+  checksum: 7db7b6010d0ea00c01c74cb4ed1a7f8df7d6477a13b49a9bcf799cade322eb3e3a89655651f20cb5208f6d7d68b5a96f44befa35578bc290c732f7547fa31795
+  languageName: node
+  linkType: hard
+
+"googleapis-common@npm:^7.0.0":
+  version: 7.0.0
+  resolution: "googleapis-common@npm:7.0.0"
+  dependencies:
+    extend: "npm:^3.0.2"
+    gaxios: "npm:^6.0.3"
+    google-auth-library: "npm:^9.0.0"
+    qs: "npm:^6.7.0"
+    url-template: "npm:^2.0.8"
+    uuid: "npm:^9.0.0"
+  checksum: 682dff6af5f1d387d4325fc90bcc75cb6b971a6f9c41c636daade550312711121a2f94c75835b103aa788dd2ddd33370e9bf0c0524f17ca03d97a9d643a1989e
+  languageName: node
+  linkType: hard
+
+"googleapis@npm:^109.0.1":
+  version: 109.0.1
+  resolution: "googleapis@npm:109.0.1"
+  dependencies:
+    google-auth-library: "npm:^8.0.2"
+    googleapis-common: "npm:^6.0.0"
+  checksum: bc28d044d99a2325538277c3a86fbcdf21d7f3e03e6513ba547d2186b95302850effa5ed096a73e059b2b3312ccbc9247782907a34f2af78864febf6dcbbfaff
+  languageName: node
+  linkType: hard
+
+"googleapis@npm:^127.0.0":
+  version: 127.0.0
+  resolution: "googleapis@npm:127.0.0"
+  dependencies:
+    google-auth-library: "npm:^9.0.0"
+    googleapis-common: "npm:^7.0.0"
+  checksum: 27522132b39b260400b1f62b8339a35c48b27ed94cf903097ed1e28486457eaf21d3f33117e7bdab0fe1f88622d081bfaea16f46a974847416069adb59c4dfb0
   languageName: node
   linkType: hard
 
@@ -20161,6 +20353,27 @@ __metadata:
   version: 16.8.1
   resolution: "graphql@npm:16.8.1"
   checksum: 129c318156b466f440914de80dbf7bc67d17f776f2a088a40cb0da611d19a97c224b1c6d2b13cbcbc6e5776e45ed7468b8432f9c3536724e079b44f1a3d57a8a
+  languageName: node
+  linkType: hard
+
+"gtoken@npm:^6.1.0":
+  version: 6.1.2
+  resolution: "gtoken@npm:6.1.2"
+  dependencies:
+    gaxios: "npm:^5.0.1"
+    google-p12-pem: "npm:^4.0.0"
+    jws: "npm:^4.0.0"
+  checksum: d660fbb8ad00a9f5b6eb426090593cb2a07d63dc22a11b0cf155d43779b6078f804e3467e37deb9a1c078ae34e683070279dc5a1577c50e0e3166a6a6748d98e
+  languageName: node
+  linkType: hard
+
+"gtoken@npm:^7.0.0":
+  version: 7.0.1
+  resolution: "gtoken@npm:7.0.1"
+  dependencies:
+    gaxios: "npm:^6.0.0"
+    jws: "npm:^4.0.0"
+  checksum: 549d46bf34756b3ce526bdc9c147b7226890398afcf81e3a7f21ef373be0ccf6341f73f461b66861d7a921820bd858c812733373aa3979ba56d3130669bc0fd9
   languageName: node
   linkType: hard
 
@@ -20910,6 +21123,23 @@ __metadata:
     quick-lru: "npm:^5.1.1"
     resolve-alpn: "npm:^1.2.0"
   checksum: ae9893059dc392485a44aa63887c535225359aec4fcdbb5f07a475021b31bd4305648f73d4c54d1c23ebcd93f3fe21a035d982383fd431762e288d59515b0344
+  languageName: node
+  linkType: hard
+
+"httpntlm@npm:1.6.1":
+  version: 1.6.1
+  resolution: "httpntlm@npm:1.6.1"
+  dependencies:
+    httpreq: "npm:>=0.4.22"
+    underscore: "npm:~1.7.0"
+  checksum: cea2079d5427c116d1661f8c707cc9c08f34eac0c3a4265590a68a88bc0871f5b726c9c171018dde177d974e954b0cd6dfcd51e822419fe8750f44a64f52cd4a
+  languageName: node
+  linkType: hard
+
+"httpreq@npm:>=0.4.22":
+  version: 1.1.1
+  resolution: "httpreq@npm:1.1.1"
+  checksum: d7d30d2e744277d8f0183d2388721c85116aa072b8bd514707abb3fae075c661953454116cd91e4460e4d941513aba398be4110b1617bbe598103ed915ba932c
   languageName: node
   linkType: hard
 
@@ -21996,6 +22226,13 @@ __metadata:
   dependencies:
     symbol-observable: "npm:^1.1.0"
   checksum: cf3166b0822f70ad06e7851e09430166ce658349d54aaa64c93a03320420b9285735821b23164bdce741ff83a86730ac3e53035ce4e2511ed843dbff4105bfa2
+  languageName: node
+  linkType: hard
+
+"is-path-cwd@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "is-path-cwd@npm:3.0.0"
+  checksum: 8135b789c74e137501ca33b11a846c32d160c517037c0ce390004a98335e010b9712792d97c73d9e98a5ecbcfd03589a81e95c72e1c05014a69fead963a02753
   languageName: node
   linkType: hard
 
@@ -23321,6 +23558,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"json-bigint@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "json-bigint@npm:1.0.0"
+  dependencies:
+    bignumber.js: "npm:^9.0.0"
+  checksum: e3f34e43be3284b573ea150a3890c92f06d54d8ded72894556357946aeed9877fd795f62f37fe16509af189fd314ab1104d0fd0f163746ad231b9f378f5b33f4
+  languageName: node
+  linkType: hard
+
 "json-buffer@npm:3.0.1":
   version: 3.0.1
   resolution: "json-buffer@npm:3.0.1"
@@ -23572,6 +23818,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jwa@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "jwa@npm:2.0.0"
+  dependencies:
+    buffer-equal-constant-time: "npm:1.0.1"
+    ecdsa-sig-formatter: "npm:1.0.11"
+    safe-buffer: "npm:^5.0.1"
+  checksum: 6baab823b93c038ba1d2a9e531984dcadbc04e9eb98d171f4901b7a40d2be15961a359335de1671d78cb6d987f07cbe5d350d8143255977a889160c4d90fcc3c
+  languageName: node
+  linkType: hard
+
 "jws@npm:^3.2.2":
   version: 3.2.2
   resolution: "jws@npm:3.2.2"
@@ -23579,6 +23836,16 @@ __metadata:
     jwa: "npm:^1.4.1"
     safe-buffer: "npm:^5.0.1"
   checksum: e770704533d92df358adad7d1261fdecad4d7b66fa153ba80d047e03ca0f1f73007ce5ed3fbc04d2eba09ba6e7e6e645f351e08e5ab51614df1b0aa4f384dfff
+  languageName: node
+  linkType: hard
+
+"jws@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "jws@npm:4.0.0"
+  dependencies:
+    jwa: "npm:^2.0.0"
+    safe-buffer: "npm:^5.0.1"
+  checksum: f1ca77ea5451e8dc5ee219cb7053b8a4f1254a79cb22417a2e1043c1eb8a569ae118c68f24d72a589e8a3dd1824697f47d6bd4fb4bebb93a3bdf53545e721661
   languageName: node
   linkType: hard
 
@@ -26322,6 +26589,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"node-fetch@npm:^2.6.9":
+  version: 2.7.0
+  resolution: "node-fetch@npm:2.7.0"
+  dependencies:
+    whatwg-url: "npm:^5.0.0"
+  peerDependencies:
+    encoding: ^0.1.0
+  peerDependenciesMeta:
+    encoding:
+      optional: true
+  checksum: b55786b6028208e6fbe594ccccc213cab67a72899c9234eb59dba51062a299ea853210fcf526998eaa2867b0963ad72338824450905679ff0fa304b8c5093ae8
+  languageName: node
+  linkType: hard
+
 "node-fetch@npm:^3.0.0, node-fetch@npm:^3.1.1, node-fetch@npm:^3.3.1, node-fetch@npm:^3.3.2":
   version: 3.3.2
   resolution: "node-fetch@npm:3.3.2"
@@ -26333,7 +26614,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-forge@npm:^1":
+"node-forge@npm:^1, node-forge@npm:^1.3.1":
   version: 1.3.1
   resolution: "node-forge@npm:1.3.1"
   checksum: e882819b251a4321f9fc1d67c85d1501d3004b4ee889af822fd07f64de3d1a8e272ff00b689570af0465d65d6bf5074df9c76e900e0aff23e60b847f2a46fbe8
@@ -26503,6 +26784,47 @@ __metadata:
     path-exists: "npm:^5.0.0"
     semver: "npm:^7.3.8"
   checksum: 7494a0018eeab0baec717c51719cc25c05c7332c854904e1608bf4dfd9bb6337bb7da39bd52fe4fa56a60a8e777a99e90e5fa1aabde556e7c7edaa7272452838
+  languageName: node
+  linkType: hard
+
+"nodemailer-fetch@npm:1.6.0":
+  version: 1.6.0
+  resolution: "nodemailer-fetch@npm:1.6.0"
+  checksum: 47b1aa2c7704582663b71b314251260bd9ceeb7f88cd016a27060a10dab41e21ad14e24a46fdbd1cf9a8c056824f99e56415653c6134b82e80c756baa67218b5
+  languageName: node
+  linkType: hard
+
+"nodemailer-shared@npm:1.1.0":
+  version: 1.1.0
+  resolution: "nodemailer-shared@npm:1.1.0"
+  dependencies:
+    nodemailer-fetch: "npm:1.6.0"
+  checksum: 15d19fb0d1b546527da4e2d443cd53e50c3a7638b5b33a1ccd7ddc401680bc9163337cf09f6fb4e76a5f12de42f5fadf85dad80e56378edc3c27dd641413b3f7
+  languageName: node
+  linkType: hard
+
+"nodemailer-smtp-transport@npm:^2.7.4":
+  version: 2.7.4
+  resolution: "nodemailer-smtp-transport@npm:2.7.4"
+  dependencies:
+    nodemailer-shared: "npm:1.1.0"
+    nodemailer-wellknown: "npm:0.1.10"
+    smtp-connection: "npm:2.12.0"
+  checksum: e5e2c40be2b0e3c926e11ec70681aeef9a4d616b339380cc83982fa5a4f02d34613f28b6d14b7fab8867c620e82274ddb06866d1ca77e1775c83334e4bb77ae9
+  languageName: node
+  linkType: hard
+
+"nodemailer-wellknown@npm:0.1.10":
+  version: 0.1.10
+  resolution: "nodemailer-wellknown@npm:0.1.10"
+  checksum: 67e9a4ef1d47184f0615b37d123ce2370e24be4f9149ed8e59415685269ed83fcbcfa248406da14f53f5d4f82936526e845e043ef67e2bfe52145d3b026ff292
+  languageName: node
+  linkType: hard
+
+"nodemailer@npm:^6.9.6":
+  version: 6.9.7
+  resolution: "nodemailer@npm:6.9.7"
+  checksum: 5ea7f781782361890d4492dc2412496e89fb04c498814e6c4fe7b168a27d7491a00f725cf90c26768907506e8afb76e8cfe6f6300def9940bc7f7e323405eaa6
   languageName: node
   linkType: hard
 
@@ -27377,7 +27699,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"p-map@npm:5.5.0, p-map@npm:^5.0.0, p-map@npm:^5.1.0, p-map@npm:^5.3.0":
+"p-map@npm:5.5.0, p-map@npm:^5.0.0, p-map@npm:^5.1.0, p-map@npm:^5.3.0, p-map@npm:^5.5.0":
   version: 5.5.0
   resolution: "p-map@npm:5.5.0"
   dependencies:
@@ -29315,16 +29637,24 @@ __metadata:
     "@playwright/test": "npm:^1.39.0"
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@types/chance": "npm:^1.1.5"
+    "@types/nodemailer": "npm:^6.4.11"
     chance: "npm:^1.1.11"
     cross-fetch: "npm:^4.0.0"
     date-fns: "npm:^2.30.0"
+    del: "npm:^7.1.0"
     eslint: "npm:^8.52.0"
+    gmail-tester: "npm:^1.3.8"
+    googleapis: "npm:^127.0.0"
     mailosaur: "npm:^8.6.1"
     node-fetch: "npm:^3.3.2"
+    nodemailer: "npm:^6.9.6"
+    nodemailer-smtp-transport: "npm:^2.7.4"
     openpgp: "npm:@protontech/openpgp@^5.10.2"
     pdf-parse: "npm:^1.1.1"
+    prettier: "npm:^3.0.3"
     proxy-agent: "npm:^6.3.1"
     totp-generator: "npm:^0.0.14"
+    vcf: "npm:^2.1.1"
   languageName: unknown
   linkType: soft
 
@@ -29751,6 +30081,15 @@ __metadata:
   dependencies:
     side-channel: "npm:^1.0.4"
   checksum: 4e4875e4d7c7c31c233d07a448e7e4650f456178b9dd3766b7cfa13158fdb24ecb8c4f059fa91e820dc6ab9f2d243721d071c9c0378892dcdad86e9e9a27c68f
+  languageName: node
+  linkType: hard
+
+"qs@npm:^6.7.0":
+  version: 6.11.2
+  resolution: "qs@npm:6.11.2"
+  dependencies:
+    side-channel: "npm:^1.0.4"
+  checksum: 4f95d4ff18ed480befcafa3390022817ffd3087fc65f146cceb40fc5edb9fa96cb31f648cae2fa96ca23818f0798bd63ad4ca369a0e22702fcd41379b3ab6571
   languageName: node
   linkType: hard
 
@@ -32006,6 +32345,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"server-destroy@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "server-destroy@npm:1.0.1"
+  checksum: ab771f12b24cde1bc622cce0c14a1365f3ab0685937c641c762916fb43aa7a03d6c577cc4375ea5361d6bc1bb20ab689ec5723086e5798c6781edb61287e24b8
+  languageName: node
+  linkType: hard
+
 "set-blocking@npm:^2.0.0, set-blocking@npm:~2.0.0":
   version: 2.0.0
   resolution: "set-blocking@npm:2.0.0"
@@ -32308,6 +32654,16 @@ __metadata:
   version: 4.2.0
   resolution: "smart-buffer@npm:4.2.0"
   checksum: a16775323e1404dd43fabafe7460be13a471e021637bc7889468eb45ce6a6b207261f454e4e530a19500cc962c4cc5348583520843b363f4193cee5c00e1e539
+  languageName: node
+  linkType: hard
+
+"smtp-connection@npm:2.12.0":
+  version: 2.12.0
+  resolution: "smtp-connection@npm:2.12.0"
+  dependencies:
+    httpntlm: "npm:1.6.1"
+    nodemailer-shared: "npm:1.1.0"
+  checksum: 1abbae665dd2bce09e8a7b552b22e0c0d300c834159e00300d42a7ef30a608fffd3c21002660d1574abfe892481441045370593edf1300dcf8d92da79ff27d06
   languageName: node
   linkType: hard
 
@@ -35058,6 +35414,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"underscore@npm:~1.7.0":
+  version: 1.7.0
+  resolution: "underscore@npm:1.7.0"
+  checksum: 03d6d187c88031c8bf6fada822f43e956974b87dfd37232960e637dc10036968596b644ba4a65bdf09390493eff121d780e276c016addea6e2b3d5b6dd848696
+  languageName: node
+  linkType: hard
+
 "unfetch@npm:^4.2.0":
   version: 4.2.0
   resolution: "unfetch@npm:4.2.0"
@@ -35473,6 +35836,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"url-template@npm:^2.0.8":
+  version: 2.0.8
+  resolution: "url-template@npm:2.0.8"
+  checksum: 56a15057eacbcf05d52b0caed8279c8451b3dd9d32856a1fdd91c6dc84dcb1646f12bafc756b7ade62ca5b1564da8efd7baac5add35868bafb43eb024c62805b
+  languageName: node
+  linkType: hard
+
 "url@npm:^0.11.0":
   version: 0.11.0
   resolution: "url@npm:0.11.0"
@@ -35717,6 +36087,16 @@ __metadata:
   version: 1.1.2
   resolution: "vary@npm:1.1.2"
   checksum: f15d588d79f3675135ba783c91a4083dcd290a2a5be9fcb6514220a1634e23df116847b1cc51f66bfb0644cf9353b2abb7815ae499bab06e46dd33c1a6bf1f4f
+  languageName: node
+  linkType: hard
+
+"vcf@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "vcf@npm:2.1.1"
+  dependencies:
+    camelcase: "npm:^5.0.0"
+    foldline: "npm:^1.1.0"
+  checksum: 3e0c39d2804450437550308c245cdeea1a86d3b369c4ffc18c17796a70e58131bd18fd036b9300dd30fb4de6d7d603e04099232b545fe0575164debeb22c7df1
   languageName: node
   linkType: hard
 
