@@ -83,13 +83,19 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
         dispatch(vaultDeleteIntent({ id: vault.shareId, content: vault.content, destinationShareId }));
     };
 
-    const handleTrashRestore = () => dispatch(restoreTrashIntent());
-    const handleVaultCreate = withClose(() => setVaultModalProps({ open: true, payload: { type: 'new' } }));
+    const handleVaultCreate = withClose(() =>
+        setVaultModalProps({
+            open: true,
+            payload: { type: 'new', onVaultCreated: setShareId },
+        })
+    );
+
     const handleVaultEdit = (vault: VaultShare) => setVaultModalProps({ open: true, payload: { type: 'edit', vault } });
     const handleVaultInvite = ({ shareId }: VaultShare) => inviteContext.createInvite(shareId);
     const handleVaultManage = withClose(({ shareId }: VaultShare) => inviteContext.manageAccess(shareId));
     const handleVaultLeave = useConfirm(leaveVault.dispatch);
     const handleTrashEmpty = useConfirm(() => dispatch(emptyTrashIntent()));
+    const handleTrashRestore = () => dispatch(restoreTrashIntent());
 
     const feedbackLinks: SubmenuLinkItem[] = [
         {
