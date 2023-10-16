@@ -1,3 +1,4 @@
+const isFixMode = process.argv.includes('--fix');
 module.exports = {
     extends: ['@proton/eslint-config-proton'],
     parser: '@typescript-eslint/parser',
@@ -7,7 +8,9 @@ module.exports = {
     },
     rules: {
         'react/prop-types': 'off',
-        'react-hooks/exhaustive-deps': 'warn',
+        ...(!isFixMode && {
+            'react-hooks/exhaustive-deps': 'warn',
+        }),
         'no-console': [
             'error',
             {
