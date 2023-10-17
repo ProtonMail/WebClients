@@ -188,21 +188,24 @@ describe('PassCrypto', () => {
             };
 
             const encryptedShare: ShareGetResponse = {
-                ShareID: `shareId-${Math.random()}`,
-                VaultID: `vaultId-${Math.random()}`,
                 AddressID: vault.AddressID,
-                TargetType: ShareType.Vault,
-                TargetID: `targetId-${Math.random()}`,
                 Content: vault.Content,
-                Permission: 1,
-                ContentKeyRotation: 42,
                 ContentFormatVersion: CONTENT_FORMAT_VERSION,
-                ExpireTime: 0,
+                ContentKeyRotation: 42,
                 CreateTime: 0,
-                Primary: false,
+                ExpireTime: 0,
+                NewUserInvitesReady: 0,
                 Owner: true,
-                TargetMembers: 0,
+                PendingInvites: 0,
+                Permission: 1,
+                Primary: false,
                 Shared: false,
+                ShareID: `shareId-${Math.random()}`,
+                TargetID: `targetId-${Math.random()}`,
+                TargetMaxMembers: 2,
+                TargetMembers: 0,
+                TargetType: ShareType.Vault,
+                VaultID: `vaultId-${Math.random()}`,
             };
 
             /* register the share */
@@ -245,21 +248,24 @@ describe('PassCrypto', () => {
 
             /* mock response */
             const encryptedShare: ShareGetResponse = {
-                ShareID: `shareId-${Math.random()}`,
-                VaultID: `vaultId-${Math.random()}`,
                 AddressID: vault.AddressID,
-                TargetType: ShareType.Vault,
-                TargetID: `targetId-${Math.random()}`,
                 Content: vault.Content,
-                Permission: 1,
-                ContentKeyRotation: 1,
                 ContentFormatVersion: CONTENT_FORMAT_VERSION,
-                ExpireTime: 0,
+                ContentKeyRotation: 1,
                 CreateTime: 0,
-                Primary: false,
+                ExpireTime: 0,
+                NewUserInvitesReady: 0,
                 Owner: true,
-                TargetMembers: 0,
+                PendingInvites: 0,
+                Permission: 1,
+                Primary: false,
                 Shared: false,
+                ShareID: `shareId-${Math.random()}`,
+                TargetID: `targetId-${Math.random()}`,
+                TargetMaxMembers: 2,
+                TargetMembers: 0,
+                TargetType: ShareType.Vault,
+                VaultID: `vaultId-${Math.random()}`,
             };
 
             const share = await PassCrypto.openShare({ encryptedShare, shareKeys: [shareKey] });
@@ -302,21 +308,24 @@ describe('PassCrypto', () => {
             const vault = await PassCrypto.createVault(content);
 
             const encryptedShare: ShareGetResponse = {
-                ShareID: `shareId-${Math.random()}`,
-                VaultID: `vaultId-${Math.random()}`,
                 AddressID: vault.AddressID,
-                TargetType: ShareType.Vault,
-                TargetID: `targetId-${Math.random()}`,
                 Content: vault.Content,
-                Permission: 1,
-                ContentKeyRotation: 2,
                 ContentFormatVersion: CONTENT_FORMAT_VERSION,
-                ExpireTime: 0,
+                ContentKeyRotation: 2,
                 CreateTime: 0,
-                Primary: false,
+                ExpireTime: 0,
+                NewUserInvitesReady: 0,
                 Owner: true,
-                TargetMembers: 0,
+                PendingInvites: 0,
+                Permission: 1,
+                Primary: false,
                 Shared: false,
+                ShareID: `shareId-${Math.random()}`,
+                TargetID: `targetId-${Math.random()}`,
+                TargetMaxMembers: 2,
+                TargetMembers: 0,
+                TargetType: ShareType.Vault,
+                VaultID: `vaultId-${Math.random()}`,
             };
 
             await expect(PassCrypto.openShare({ encryptedShare, shareKeys: [] })).rejects.toThrow(
@@ -338,21 +347,24 @@ describe('PassCrypto', () => {
             };
 
             const encryptedShare: ShareGetResponse = {
-                ShareID: `shareId-${Math.random()}`,
-                VaultID: `vaultId-${Math.random()}`,
                 AddressID: vault.AddressID,
-                TargetType: ShareType.Vault,
-                TargetID: `targetId-${Math.random()}`,
                 Content: vault.Content,
-                Permission: 1,
-                ContentKeyRotation: 2,
                 ContentFormatVersion: CONTENT_FORMAT_VERSION,
-                ExpireTime: 0,
+                ContentKeyRotation: 2,
                 CreateTime: 0,
-                Primary: false,
+                ExpireTime: 0,
+                NewUserInvitesReady: 0,
                 Owner: true,
-                TargetMembers: 0,
+                PendingInvites: 0,
+                Permission: 1,
+                Primary: false,
                 Shared: false,
+                ShareID: `shareId-${Math.random()}`,
+                TargetID: `targetId-${Math.random()}`,
+                TargetMaxMembers: 2,
+                TargetMembers: 0,
+                TargetType: ShareType.Vault,
+                VaultID: `vaultId-${Math.random()}`,
             };
 
             await expect(PassCrypto.openShare({ encryptedShare, shareKeys: [shareKey] })).rejects.toThrow(
@@ -373,21 +385,24 @@ describe('PassCrypto', () => {
             };
 
             const encryptedShare: ShareGetResponse = {
-                ShareID: `shareId-${Math.random()}`,
-                VaultID: `vaultId-${Math.random()}`,
                 AddressID: vault.AddressID,
-                TargetType: ShareType.Vault,
-                TargetID: `targetId-${Math.random()}`,
                 Content: vault.Content,
-                Permission: 1,
-                ContentKeyRotation: 1,
                 ContentFormatVersion: CONTENT_FORMAT_VERSION,
-                ExpireTime: 0,
+                ContentKeyRotation: 1,
                 CreateTime: 0,
-                Primary: false,
+                ExpireTime: 0,
+                NewUserInvitesReady: 0,
                 Owner: true,
-                TargetMembers: 0,
+                PendingInvites: 0,
+                Permission: 1,
+                Primary: false,
                 Shared: false,
+                ShareID: `shareId-${Math.random()}`,
+                TargetID: `targetId-${Math.random()}`,
+                TargetMaxMembers: 2,
+                TargetMembers: 0,
+                TargetType: ShareType.Vault,
+                VaultID: `vaultId-${Math.random()}`,
             };
 
             expect(await PassCrypto.openShare({ encryptedShare, shareKeys: [shareKey] })).toEqual(null);
