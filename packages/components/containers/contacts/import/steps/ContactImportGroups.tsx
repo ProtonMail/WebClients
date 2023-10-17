@@ -213,7 +213,7 @@ const ContactImportGroups = ({ model, setModel, onClose }: Props) => {
                         onChange={handleChangeAction}
                     />
                 </div>
-                <div className="flex-item-fluid w30">
+                <div className="flex-item-fluid w-3/10">
                     <SelectGroup
                         contactGroups={model.contactGroups}
                         action={action}

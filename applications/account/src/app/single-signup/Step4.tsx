@@ -50,7 +50,7 @@ const Step4 = ({
                         <img src={illustration} alt={c('Onboarding').t`Welcome to ${product}`} />
                     </div>
                     <div className="text-center pt-7 md:pt-0" role="alert">
-                        <div className="inline-block w70">
+                        <div className="inline-block w-7/10">
                             <LoadingTextStepper steps={steps} />
                         </div>
                     </div>

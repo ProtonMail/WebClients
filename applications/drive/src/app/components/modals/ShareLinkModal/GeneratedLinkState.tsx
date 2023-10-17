@@ -142,7 +142,7 @@ function GeneratedLinkState({
     const boldNameText = (
         <span key="name" style={{ whiteSpace: 'nowrap' }}>
             <b>
-                <FileNameDisplay text={itemName} className="max-w80" />
+                <FileNameDisplay text={itemName} className="max-w-4/5" />
             </b>
             :
         </span>

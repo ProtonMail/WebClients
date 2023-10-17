@@ -119,7 +119,7 @@ const MessageBodyIframe = ({
                 scrolling="yes"
                 frameBorder="0"
                 ref={iframeRef}
-                className={clsx([initStatus !== 'start' ? 'w-full' : 'w0 h0', isResizing && 'no-pointer-events'])}
+                className={clsx([initStatus !== 'start' ? 'w-full' : 'w-0 h0', isResizing && 'no-pointer-events'])}
                 data-testid="content-iframe"
                 data-subject={message.data?.Subject}
                 sandbox={getIframeSandboxAttributes(isPrint)}

@@ -21,7 +21,7 @@ function LabelSortableList({ items, ...rest }: Props) {
                 <caption className="sr-only">{c('Settings/labels').t`Labels/Folders`}</caption>
                 <OrderableTableHeader>
                     <tr>
-                        <th scope="col" className="w5">
+                        <th scope="col" className="w-custom" style={{ '--w-custom': '5%' }}>
                             <Icon name="arrows-cross" />
                         </th>
                         <th scope="col">{c('Settings/labels - table').t`Labels`}</th>

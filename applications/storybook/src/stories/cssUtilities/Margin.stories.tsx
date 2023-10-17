@@ -503,7 +503,7 @@ export const Sandbox = () => {
     return (
         <>
             <div className="flex flex-justify-space-between mb-7">
-                <div className="w25">
+                <div className="w-1/4">
                     {selectedMargin.map(({ id, checked, value }) => (
                         <Label htmlFor={id} key={id} className="flex flex-nowrap flex-align-items-center gap-4 mb-4">
                             <Checkbox
@@ -514,9 +514,9 @@ export const Sandbox = () => {
                                 }}
                             />
 
-                            <span className="text-semibold w10">{id}</span>
+                            <span className="text-semibold w-1/10">{id}</span>
 
-                            <span className="w10 flex flex-item-noshrink flex-justify-center">
+                            <span className="w-1/10 flex flex-item-noshrink flex-justify-center">
                                 <span className="bg-primary rounded-sm flex-item-noshrink flex-item-nogrow">
                                     <span className={`${id}0-25 block rounded-sm bg-primary`}>
                                         <span
@@ -535,7 +535,7 @@ export const Sandbox = () => {
                         </Label>
                     ))}
                 </div>
-                <div className="border rounded w60 relative">
+                <div className="border rounded w-4/6 relative">
                     {containerClasses}
                     <div
                         className={`${containerClasses(assembleClasses(selectedMargin))} bg-strong rounded-sm`}

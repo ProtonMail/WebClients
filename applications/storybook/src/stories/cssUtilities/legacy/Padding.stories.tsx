@@ -206,13 +206,9 @@ export const Sandbox = () => {
     return (
         <>
             <div className="flex flex-justify-space-between">
-                <div className="w25">
+                <div className="w-1/4">
                     {selectedPadding.map(({ id, checked, value }) => (
-                        <Label
-                            htmlFor={id}
-                            key={id}
-                            className="flex flex-nowrap flex-align-items-center gap-4 mb-4"
-                        >
+                        <Label htmlFor={id} key={id} className="flex flex-nowrap flex-align-items-center gap-4 mb-4">
                             <Checkbox
                                 id={id}
                                 checked={checked}
@@ -221,9 +217,9 @@ export const Sandbox = () => {
                                 }}
                             />
 
-                            <span className="text-semibold w10">{id}</span>
+                            <span className="text-semibold w-1/10">{id}</span>
 
-                            <span className="w10 flex flex-item-noshrink flex-justify-center">
+                            <span className="w-1/10 flex flex-item-noshrink flex-justify-center">
                                 <span className="bg-primary rounded-sm flex-item-noshrink flex-item-nogrow">
                                     <span className={`${id}0-25 block rounded-sm bg-primary`}>
                                         <span
@@ -242,7 +238,7 @@ export const Sandbox = () => {
                         </Label>
                     ))}
                 </div>
-                <div className="border rounded w60 relative flex flex-justify-center flex-align-items-center p-14">
+                <div className="border rounded w-4/6 relative flex flex-justify-center flex-align-items-center p-14">
                     <div className="bg-primary flex-item-nogrow rounded-sm overflow-hidden">
                         <div
                             className={assembleClasses(selectedPadding)}
