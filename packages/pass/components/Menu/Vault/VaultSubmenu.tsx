@@ -13,12 +13,7 @@ import {
     Icon,
 } from '@proton/components';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
-import {
-    selectDefaultVault,
-    selectOwnWritableVaults,
-    selectShare,
-    selectVaultsWithItemsCount,
-} from '@proton/pass/store/selectors';
+import { selectOwnWritableVaults, selectShare, selectVaultsWithItemsCount } from '@proton/pass/store/selectors';
 import { type MaybeNull, type ShareType, type VaultShare } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 
@@ -59,10 +54,8 @@ export const VaultSubmenu: VFC<Props> = ({
     const history = useHistory();
 
     const sharingEnabled = useFeatureFlag(PassFeature.PassSharingV1);
-    const primaryVaultDisabled = useFeatureFlag(PassFeature.PassRemovePrimaryVault);
 
     const vaults = useSelector(selectVaultsWithItemsCount);
-    const defaultVault = useSelector(selectDefaultVault);
     const selectedVault = useSelector(selectShare<ShareType.Vault>(selectedShareId ?? ''));
     const hasMultipleOwnedVaults = useSelector(selectOwnWritableVaults).length > 1;
     const selectedVaultOption = getVaultOptionInfo(selectedVault || (inTrash ? 'trash' : 'all'));
@@ -105,10 +98,7 @@ export const VaultSubmenu: VFC<Props> = ({
                 />
 
                 {vaults.map((vault) => {
-                    const isDefaultOrPrimaryVault = defaultVault.shareId === vault.shareId;
-                    const canDelete =
-                        vault.owner && (primaryVaultDisabled ? hasMultipleOwnedVaults : !isDefaultOrPrimaryVault);
-                    const sharable = sharingEnabled && (primaryVaultDisabled || !isDefaultOrPrimaryVault);
+                    const canDelete = vault.owner && hasMultipleOwnedVaults;
 
                     return (
                         <VaultItem
@@ -117,7 +107,7 @@ export const VaultSubmenu: VFC<Props> = ({
                             count={vault.count}
                             label={vault.content.name}
                             selected={!inTrash && selectedShareId === vault.shareId}
-                            sharable={sharable}
+                            sharable={sharingEnabled}
                             onSelect={() => handleSelect(vault)}
                             onDelete={canDelete ? () => handleVaultDelete(vault) : undefined}
                             onEdit={isWritableVault(vault) ? () => handleVaultEdit(vault) : undefined}

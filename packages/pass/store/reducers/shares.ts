@@ -25,10 +25,6 @@ import {
     vaultEditFailure,
     vaultEditIntent,
     vaultEditSuccess,
-    vaultSetPrimaryFailure,
-    vaultSetPrimaryIntent,
-    vaultSetPrimarySuccess,
-    vaultSetPrimarySync,
     vaultTransferOwnershipSuccess,
 } from '@proton/pass/store/actions';
 import { sanitizeWithCallbackAction } from '@proton/pass/store/actions/with-callback';
@@ -36,9 +32,7 @@ import withOptimistic from '@proton/pass/store/optimistic/with-optimistic';
 import type { Share } from '@proton/pass/types';
 import { ShareRole, ShareType } from '@proton/pass/types';
 import type { PendingInvite, ShareMember } from '@proton/pass/types/data/invites';
-import { or } from '@proton/pass/utils/fp/predicates';
 import { objectDelete } from '@proton/pass/utils/object/delete';
-import { objectMap } from '@proton/pass/utils/object/map';
 import { fullMerge, partialMerge } from '@proton/pass/utils/object/merge';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 
@@ -68,11 +62,6 @@ export const withOptimisticShares = withOptimistic<SharesState>(
             initiate: vaultDeleteIntent.optimisticMatch,
             revert: vaultDeleteFailure.optimisticMatch,
             commit: vaultDeleteSuccess.optimisticMatch,
-        },
-        {
-            initiate: vaultSetPrimaryIntent.optimisticMatch,
-            revert: vaultSetPrimaryFailure.optimisticMatch,
-            commit: vaultSetPrimarySuccess.optimisticMatch,
         },
     ],
     (state = {}, action: AnyAction) => {
@@ -105,7 +94,6 @@ export const withOptimisticShares = withOptimistic<SharesState>(
                     targetId: id,
                     content: content,
                     targetType: ShareType.Vault,
-                    primary: false,
                     eventId: '',
                     targetMembers: 1,
                     owner: true,
@@ -147,10 +135,6 @@ export const withOptimisticShares = withOptimistic<SharesState>(
             });
 
             return partialMerge(state, { [shareId]: { owner: false, shareRoleId: ShareRole.ADMIN, members } });
-        }
-
-        if (or(vaultSetPrimaryIntent.match, vaultSetPrimarySync.match)(action)) {
-            return objectMap(state!)((shareId, share) => ({ ...share, primary: shareId === action.payload.id }));
         }
 
         if (inviteCreationSuccess.match(action)) {

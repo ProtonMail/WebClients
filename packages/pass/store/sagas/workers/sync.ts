@@ -36,12 +36,11 @@ export enum SyncType {
 export function* synchronize(
     state: State,
     type: SyncType,
-    features: MaybeNull<FeatureFlagState>,
+    _: MaybeNull<FeatureFlagState>,
     { onShareEventDisabled }: WorkerRootSagaOptions
-): Generator<unknown, SynchronizationResult> {
+) {
     const cachedShares = selectAllShares(state);
     const remote = ((yield requestShares()) as ShareGetResponse[]).sort(sortOn('CreateTime', 'ASC'));
-    let primaryShareId = remote.find(({ Primary }) => Primary === true)?.ShareID;
 
     /* `cachedShareIds`: all shares currently in local cache
      * `inactiveCachedShareIds` : cached shares which can no longer be opened
@@ -91,21 +90,21 @@ export function* synchronize(
      * check the active remote shares and the local cached shares */
     const incomingShares = activeRemoteShares.map(prop('share')) as Share[];
     const incomingShareIds = incomingShares.map(prop('shareId'));
-
-    const primaryVaultDisabled = features?.PassRemovePrimaryVault ?? false;
     const hasDefaultVault = incomingShares.concat(cachedShares).some(and(isActiveVault, isWritableVault, isOwnVault));
 
     /* When syncing, if no owned writable vault exists, create it. This
      * accounts for first login, default vault being disabledl. */
     if (!hasDefaultVault) {
-        logger.info(`[Saga::Sync] No default vault found, creating primary vault..`);
-        const primaryVault = (yield createVault({
-            content: { name: 'Personal', description: 'Personal vault', display: {} },
-            ...(primaryVaultDisabled ? {} : { primary: true }),
-        })) as Share<ShareType.Vault>;
+        logger.info(`[Saga::Sync] No default vault found, creating initial vault..`);
+        const defaultVault: Share<ShareType.Vault> = yield createVault({
+            content: {
+                name: 'Personal',
+                description: 'Personal vault',
+                display: {},
+            },
+        });
 
-        primaryShareId = primaryVault.shareId;
-        incomingShares.push(primaryVault);
+        incomingShares.push(defaultVault);
     }
 
     logger.info(`[Saga::Sync] Discovered ${cachedShareIds.length} share(s) in cache`);
@@ -132,10 +131,7 @@ export function* synchronize(
 
     /* Exclude the deleted shares from the cached shares
      * and merge with the new shares */
-    const shares = cachedShares
-        .filter(({ shareId }) => !disabledShareIds.includes(shareId))
-        .concat(incomingShares)
-        .map((share) => ({ ...share, primary: share.shareId === primaryShareId }));
+    const shares = cachedShares.filter(({ shareId }) => !disabledShareIds.includes(shareId)).concat(incomingShares);
 
     return {
         shares: toMap(shares, 'shareId'),

@@ -6,7 +6,6 @@ import type { Dispatch } from 'redux';
 import { c } from 'ttag';
 
 import { Checkbox } from '@proton/components/components';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { settingsEditIntent } from '@proton/pass/store/actions';
 import { settingsEdit } from '@proton/pass/store/actions/requests';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
@@ -17,7 +16,6 @@ import {
     selectWritableVaults,
 } from '@proton/pass/store/selectors';
 import type { RecursivePartial } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -41,7 +39,7 @@ type SettingsSection = {
 };
 
 const getSettings =
-    (settings: ProxiedSettings, primaryVaultDisabled: boolean) =>
+    (settings: ProxiedSettings) =>
     (dispatch: Dispatch): SettingsSection[] => {
         const onSettingsUpdate = (update: RecursivePartial<ProxiedSettings>) =>
             dispatch(settingsEditIntent('behaviors', update));
@@ -84,7 +82,7 @@ const getSettings =
                         onChange: (checked) => onSettingsUpdate({ autosave: { prompt: checked } }),
                     },
                 ],
-                extra: primaryVaultDisabled && (
+                extra: (
                     <VaultSetting
                         label={c('Label').t`Autosave vault`}
                         optionsSelector={selectWritableVaults}
@@ -130,14 +128,13 @@ const getSettings =
 export const Behaviors: VFC = () => {
     const dispatch = useDispatch();
     const settings = useSelector(selectProxiedSettings);
-    const primaryVaultDisabled = useFeatureFlag(PassFeature.PassRemovePrimaryVault);
     const loading = useSelector(selectRequestInFlight(settingsEdit('behaviors')));
 
     return (
         <>
             {useMemo(
-                () => getSettings(settings, primaryVaultDisabled),
-                [settings, primaryVaultDisabled]
+                () => getSettings(settings),
+                [settings]
             )(dispatch).map((section, i) => (
                 <SettingsPanel key={`settings-section-${i}`} title={section.label}>
                     {section.settings.map((setting, j) => (
