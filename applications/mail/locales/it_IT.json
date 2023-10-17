@@ -98,7 +98,7 @@
         "Archivio"
       ],
       "As Scheduled": [
-        "Come Programmato"
+        "Come programmato"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "È consentito al massimo ${ maxContacts } contatto per ogni gruppo di contatti",
@@ -216,7 +216,7 @@
         "Conferma l'apertura del link ${ linkToShow }"
       ],
       "Contact group": [
-        "Gruppo di contatto"
+        "Gruppo di contatti"
       ],
       "Continue": [
         "Continua"
@@ -243,7 +243,7 @@
         "Copia la password negli appunti"
       ],
       "Create a new contact group": [
-        "Crea un nuovo gruppo di contatto"
+        "Crea nuovo gruppo di contatti"
       ],
       "Create a new folder": [
         "Crea una nuova cartella"
@@ -280,8 +280,8 @@
         "Elimina ${ selectedCount } contatti"
       ],
       "Delete ${ selectedCount } contact group": [
-        "Elimina ${ selectedCount } gruppo di contatto",
-        "Elimina ${ selectedCount } gruppi di contatto"
+        "Elimina ${ selectedCount } gruppo di contatti",
+        "Elimina ${ selectedCount } gruppi di contatti"
       ],
       "Delete all": [
         "Elimina tutto"
@@ -473,7 +473,7 @@
         "alias Hide-my-email"
       ],
       "Image could not be loaded with tracker protection.": [
-        "Non è possibile caricare l'immagine con la protezione da tracciamento attiva."
+        "Impossibile caricare l'immagine con la protezione da tracker attiva."
       ],
       "Image will be loaded without a proxy": [
         "L'immagine verrà caricata senza proxy."
@@ -695,11 +695,11 @@
       "Not saved": [
         "Non salvato"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Apri ${ CALENDAR_APP_NAME }"
@@ -846,7 +846,7 @@
         "Salvataggio${ ellipsis }"
       ],
       "Schedule message": [
-        "Pianifica messaggio"
+        "Programma il messaggio"
       ],
       "Search": [
         "Cerca"
@@ -984,7 +984,7 @@
         "Salta verifica"
       ],
       "Some images could not be loaded with tracker protection.": [
-        "Non è possibile caricare alcune immagini con la protezione da tracciamento attiva."
+        "Impossibile caricare alcune immagini con la protezione da tracker attiva."
       ],
       "Star": [
         "Aggiungi alla posta preferita"
@@ -1296,6 +1296,93 @@
       ],
       "Sender verification passed": [
         "Verifica del mittente avvenuta con successo"
+      ]
+    },
+    "bf2023: Deal details": {
+      "${ storageSize } storage": [
+        "${ storageSize } di archiviazione"
+      ],
+      "1 user": [
+        "1 utente"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "3,000+ servers across 65+ countries": [
+        "Oltre 3,000 server in più di 65 Paesi"
+      ],
+      "6 users": [
+        "6 utenti"
+      ],
+      "Ad-blocker and malware protection": [
+        "Ad-blocker e protezione da malware"
+      ],
+      "Extended version history": [
+        "Cronologia delle versioni estesa"
+      ],
+      "Fast BitTorrent downloads": [
+        "Download BitTorrent veloci"
+      ],
+      "High speed streaming": [
+        "Streaming ad alta velocità"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } premium"
+      ],
+      "Premium Password Manager": [
+        "Password manager premium"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Gli sconti si basano sui prezzi mensili standard."
+      ],
+      "Learn more about our Black Friday offers": [
+        "Scopri di più sulle nostre offerte per il Black Friday"
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Alla fine del ciclo di fatturazione l'abbonamento si rinnoverà automaticamente con lo sconto e la durata standard."
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "Accedi a contenuti bloccati e naviga in modalità privata. Include oltre 3,000 server in più di 65 Paesi, le più elevate velocità VPN, servizi di streaming in tutto il mondo, blocco di malware e annunci, download BitTorrent veloci e molto altro."
+      ],
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Accedi ai contenuti dei servizi di streaming, tra cui Netflix, Disney+, Prime Video e altri ancora, da qualsiasi luogo."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
+        "Include il supporto per ${ domains } domini email personalizzati, ${ addresses } indirizzi email, ${ aliases } alias hide-my-email, condivisione del calendario e molto altro."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Include il supporto per ${ domains } domini email personalizzati, ${ addresses } indirizzi email, alias hide-my-email illimitati, condivisione del calendario e molto altro."
+      ],
+      "Secure logins on all your devices. Includes unlimited aliases, sharing, vaults, integrated 2FA and more.": [
+        "Accesso sicuro a tutti i tuoi dispositivi. Include un numero illimitato di alias, condivisioni, casseforti, 2FA integrati e molto altro ancora."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Proteggi le tue email e i tuoi impegni con la crittografia end-to-end. Include il supporto per domini email personalizzati, 15 indirizzi email, alias hide-my-email illimitati, condivisione del calendario e altro ancora."
+      ],
+      "Secure your files, folders and photos with end-to-end and zero-access encryption. Includes version history, encrypted file sharing, and more.": [
+        "Proteggi i tuoi file, cartelle e foto con la crittografia end-to-end e ad accesso zero. Include la cronologia delle versioni, la condivisione criptata dei file e molto altro."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield è progettato su misura per proteggere i dispositivi e accelerare la navigazione bloccando annunci, tracker e malware."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "Lo spazio di archiviazione è condiviso tra tutte le app ${ BRAND_NAME }."
+      ],
+      "Store up to 200 versions of each file for up to 10 years.": [
+        "Archivia fino a 200 versioni di ogni file per un massimo di 10 anni."
+      ],
+      "Unlock peer-to-peer downloads and file sharing. Increase upload and download speeds and hide your IP address.": [
+        "Sblocca i download e la condivisione di file peer-to-peer. Aumenta la velocità di upload e download e nascondi il tuo indirizzo IP."
       ]
     },
     "Billing cycle option": {
@@ -1636,8 +1723,11 @@
       "You already tentatively accepted this invitation.": [
         "Hai già accettato provvisoriamente questo invito."
       ],
-      "Your email address is not in the participants list": [
-        "Il tuo indirizzo email non è nell'elenco dei partecipanti"
+      "You cannot respond to ${ BRAND_NAME } invites if you're not on the participants list at the moment.": [
+        "Non puoi rispondere agli inviti di ${ BRAND_NAME } se non sei sull'elenco dei partecipanti in questo momento."
+      ],
+      "Your email address is not in the original participants list.": [
+        "Il tuo indirizzo email non è nell'elenco dei partecipanti originale."
       ]
     },
     "Calendar widget banner": {
@@ -1934,10 +2024,10 @@
     },
     "Confirm modal title": {
       "Edit and reschedule": [
-        "Modifica e ripianifica"
+        "Modifica e programma di nuovo"
       ],
       "Message saved to Drafts": [
-        "Messaggio salvato nelle Bozze"
+        "Messaggio salvato nelle bozze"
       ],
       "Quit import customization?": [
         "Abbandona la personalizzazione dell'importazione?"
@@ -2939,7 +3029,7 @@
         "Attiva la protezione dai tracker email per impedire agli inserzionisti e ad altri soggetti di tracciare la tua posizione geografica e la tua attività online."
       ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
-        "Sblocca i messaggi programmati personalizzati e altri benefici effettuando l'upgrade del tuo piano."
+        "Sblocca la programmazione dei messaggi personalizzata e altri vantaggi quando effettui l'upgrade del tuo piano."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Sblocca filtri illimitati che ordinano la tua posta in arrivo per te e altre funzionalità premium quando effettui l'upgrade."
@@ -2954,7 +3044,7 @@
         "Non abbiamo trovato alcun tracker o URL di tracciamento noto in questa email."
       ],
       "When do you want your message to be sent?": [
-        "Quando vuoi che il messaggio venga inviato?"
+        "Quando vuoi che il tuo messaggio sia inviato?"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "È possibile importare eventi con il formato iCal (file ICS). Il file dovrebbe avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } e avere fino a ${ MAX_IMPORT_EVENTS_STRING } eventi. Se il file è più grande, dividilo in file più piccoli."
@@ -3083,6 +3173,11 @@
       ],
       "Update for an event starting on ${ formattedStart }": [
         "Aggiornamento per un evento che inizia il ${ formattedStart }"
+      ]
+    },
+    "email_forwarding_2023: Composer email icon": {
+      "Zero-access encrypted. Recipient has disabled end-to-end encryption on their account.": [
+        "Crittografato zero access. Il destinatario ha disabilitato la crittografia end-to-end sul suo account."
       ]
     },
     "empty messages: success": {
@@ -3830,14 +3925,14 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Drive premium"
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } premium"
       ],
-      "Premium Mail and Calendar": [
-        "Mail e Calendar premium"
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME } premium"
       ],
-      "Premium VPN": [
-        "VPN premium"
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } premium"
       ],
       "Up to 6 users": [
         "Fino a 6 utenti"
@@ -4703,7 +4798,7 @@
         "${ groupCounts } gruppi trovati"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
-        "${ MAIL_APP_NAME } può proteggere anche la tua attività."
+        "${ MAIL_APP_NAME } può proteggere anche la tua azienda."
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } messaggio non può essere spostato.",
@@ -4786,8 +4881,8 @@
         "${ unread } messaggi non letti"
       ],
       "${ unreadCount } scheduled message": [
-        "${ unreadCount } messaggio pianificato",
-        "${ unreadCount } messaggi pianificati"
+        "${ unreadCount } messaggio programmato",
+        "${ unreadCount } messaggi programmati"
       ],
       "${ unreadCount } unread conversation": [
         "${ unreadCount } conversazione non letta",
@@ -4972,7 +5067,7 @@
         "Chiudi questa schermata per uscire."
       ],
       "Confirm phishing report": [
-        "Conferma segnalazione di phishing"
+        "Conferma la segnalazione di phishing"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Il contatto è assegnato al gruppo ${ contactGroupName }."
@@ -4982,6 +5077,9 @@
       ],
       "Copied to clipboard": [
         "Copiato negli appunti"
+      ],
+      "Copy the link to clipboard": [
+        "Copia il link negli appunti"
       ],
       "Country code": [
         "Codice nazione"
@@ -4997,7 +5095,7 @@
         "Crea un'etichetta per i messaggi importati, il periodo di tempo dell'importazione e le etichette che desideri importare."
       ],
       "Create a new contact group": [
-        "Crea un nuovo gruppo di contatto"
+        "Crea nuovo gruppo di contatti"
       ],
       "Create in": [
         "Crea in"
@@ -5190,7 +5288,7 @@
         "Sto inviando questo messaggio ad un utente non-${ MAIL_APP_NAME }."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Se stai avendo problemi con la creazione del tuo account, per favore invia una richiesta. Ti risponderemo nell'arco di una giornata lavorativa."
+        "Se stai avendo problemi con la creazione del tuo account, chiedi un invito e ti risponderemo entro un giorno lavorativo."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Se credi che questo sia un errore, contattaci ${ contactLink }."
@@ -5664,7 +5762,7 @@
         "Questo browser non supporta l'anteprima dei documenti PDF. Scarica il file."
       ],
       "This conversation contains a scheduled message. Sending of this message will be canceled.": [
-        "Questa conversazione contiene un messaggio pianificato. L'invio di questo messaggio verrà annullato."
+        "Questa conversazione contiene un messaggio programmato. L'invio di questo messaggio verrà annullato."
       ],
       "This conversation contains non-trashed messages.": [
         "Questa conversazione contiene messaggi non cestinati."
@@ -5720,7 +5818,7 @@
         "Questi messaggi verranno segnalati come spam. Vorresti anche terminare la sottoscrizione a future email?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
-        "Questo messaggio verrà spostato nelle bozze così che potrai modificarlo. Dovrai pianificare nuovamente il suo invio."
+        "Questo messaggio verrà spostato nelle bozze così che potrai modificarlo. Dovrai programmare nuovamente il suo invio."
       ],
       "This message will be sent in the morning at ${ formattedTime }": [
         "Questo messaggio verrà inviato la mattina alle ${ formattedTime }"
@@ -5729,7 +5827,7 @@
         "Questo messaggio verrà inviato il ${ dateString } alle ${ formattedTime }"
       ],
       "This message will be sent shortly": [
-        "Questo messaggio sarà inviato a breve"
+        "Questo messaggio verrà inviato a breve"
       ],
       "This message will be sent today at ${ formattedTime }": [
         "Questo messaggio verrà inviato oggi alle ${ formattedTime }"
@@ -5777,7 +5875,7 @@
         "Per utilizzare la Verifica dell'indirizzo, devi contrassegnare attendibile una o più chiavi pubbliche disponibili, compresa quella che vuoi utilizzare per l'invio. In questo modo si evita che le chiavi di crittografia vengano falsificate."
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
-        "Troppi messaggi sono in attesa di essere inviati. Per pianificare questo messaggio, attendi finché un altro non verrà inviato."
+        "Troppi messaggi sono in attesa di essere inviati. Per programmare questo messaggio, attendi finché un altro non verrà inviato."
       ],
       "Trackers blocked:": [
         "Tracker bloccati:"
@@ -6417,7 +6515,7 @@
         "Condizioni"
       ],
       "Confirm password": [
-        "Conferma password"
+        "Conferma la password"
       ],
       "Contacts": [
         "Contatti"
@@ -6961,7 +7059,7 @@
         "Richiedi un invito"
       ],
       "Scheduled": [
-        "Pianificata"
+        "Programmata"
       ],
       "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
         "Sincronizza facilmente file e cartelle tra il tuo computer e ${ DRIVE_APP_NAME }."
@@ -7081,7 +7179,7 @@
         "Posta in arrivo"
       ],
       "Scheduled": [
-        "Programmato"
+        "Programmata"
       ],
       "Sent": [
         "Inviata"
@@ -7125,7 +7223,7 @@
         "Invio programmato annullato"
       ],
       "Scheduling canceled. Message has been moved to Drafts.": [
-        "Pianificazione annullata. Il messaggio è stato spostato nelle Bozze."
+        "Programmazione annullata. Il messaggio è stato spostato nelle bozze."
       ],
       "Sending undone": [
         "Invio annullato"
@@ -7369,10 +7467,13 @@
         "Blocco rimosso"
       ],
       "Contact group created": [
-        "Gruppo di contatto creato"
+        "Gruppo di contatti creato"
       ],
       "Contact group updated": [
-        "Gruppo di contatto aggiornato"
+        "Gruppo di contatti aggiornato"
+      ],
+      "Link copied to clipboard": [
+        "Link copiato negli appunti"
       ],
       "Password has been set successfully": [
         "La password è stata impostata con successo"
@@ -7763,7 +7864,7 @@
         "Nessun messaggio trovato"
       ],
       "No messages scheduled": [
-        "Nessun messaggio pianificato"
+        "Nessun messaggio programmato"
       ],
       "No results found": [
         "Nessun risultato trovato"
@@ -8114,8 +8215,8 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "${ storageSize } di spazio di archiviazione totale"
+      "1 user": [
+        "1 utente"
       ],
       "3 TB": [
         "3 TB"
@@ -8135,17 +8236,17 @@
       "Highest VPN speed": [
         "Massima velocità della VPN"
       ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e ${ DRIVE_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } premium"
+      ],
       "Premium early access": [
         "Accesso anticipato premium"
-      ],
-      "Premium Mail and Calendar": [
-        "Mail e Calendar premium"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "Mail, Calendar e Drive premium"
-      ],
-      "Premium VPN": [
-        "VPN premium"
       ],
       "Secure cloud storage": [
         "Archiviazione sul cloud sicura"
@@ -8158,9 +8259,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "Gli sconti si basano sui prezzi mensili standard."
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Questo abbonamento si rinnova automaticamente ogni 2 anni alla stessa tariffa fino a quando non viene annullato."
       ]
@@ -8191,14 +8289,24 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } mese",
+        "${ n } mesi"
+      ],
       "/ month": [
         "/ mese"
       ],
       "1 year": [
         "1 anno"
       ],
+      "15 months": [
+        "15 mesi"
+      ],
       "2 years": [
         "2 anni"
+      ],
+      "30 months": [
+        "30 mesi"
       ],
       "Billed at ${ amount } for 1 month": [
         "Addebito di ${ amount } per 1 mese"
@@ -8214,10 +8322,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Addebito di ${ amount } per 30 mesi"
-      ],
-      "for ${ n } month": [
-        "per ${ n } mese",
-        "per ${ n } mesi"
       ],
       "Get the deal": [
         "Acquista"
@@ -8286,9 +8390,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Tutti i nostri servizi premium con il massimo dei limiti: 100 indirizzi email, supporto per 10 domini personalizzati, alias Hide-my-email illimitati, condivisione dei calendari, archiviazione sul cloud e condivisione dei file crittografati, e molto altro."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Include il supporto per 1 dominio email personalizzato, 10 indirizzi email, 10 alias Hide-my-email, condivisione del calendario e molto altro."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Include il supporto per 3 domini email personalizzati, 15 indirizzi email, alias Hide-my-email illimitati, condivisione del calendario e molto altro."
       ],
@@ -8300,9 +8401,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteggi i tuoi file con l'archiviazione cloud crittografata. Include la sincronizzazione automatica, la condivisione crittografata dei file e molto altro."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Lo spazio d'archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -8319,7 +8417,7 @@
         "Invita gli amici su ${ BRAND_NAME }"
       ],
       "Schedule send": [
-        "Pianifica invio"
+        "Programma l'invio"
       ],
       "Search just got smarter and faster": [
         "La ricerca è diventata più intelligente e veloce."
@@ -8471,8 +8569,8 @@
         "Contatti eliminati"
       ],
       "Contact group deleted": [
-        "Gruppo di contatto eliminato",
-        "Gruppi di contatto eliminati"
+        "Gruppo di contatti eliminato",
+        "Gruppi di contatti eliminati"
       ],
       "Contact saved": [
         "Contatto salvato"
@@ -8594,7 +8692,7 @@
         "Numero di telefono copiato negli appunti"
       ],
       "Preference saved": [
-        "Preferenze salvate"
+        "Preferenza salvata"
       ],
       "Preferences saved": [
         "Preferenze salvate"
@@ -8637,24 +8735,14 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "Drive premium"
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } premium"
       ],
-      "Premium Mail and Calendar": [
-        "Mail e Calendar premium"
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME } premium"
       ],
       "Premium Password Manager": [
         "Password manager premium"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Memorizza in modo sicuro le tue password e inseriscile automaticamente nei siti web. Include password illimitate, generatore di password, e molto altro."
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "Password manager"
       ]
     },
     "summer2023: Tooltip": {
@@ -8875,7 +8963,7 @@
         "Dettagli contatto"
       ],
       "Contact group": [
-        "Gruppo di contatto"
+        "Gruppo di contatti"
       ],
       "Contacts": [
         "Contatti"
@@ -8927,8 +9015,8 @@
         "Elimina ${ count } contatti"
       ],
       "Delete ${ count } contact group": [
-        "Elimina ${ count } gruppo di contatto",
-        "Elimina ${ count } gruppi di contatto"
+        "Elimina ${ count } gruppo di contatti",
+        "Elimina ${ count } gruppi di contatti"
       ],
       "Delete ${ count } conversation": [
         "Elimina ${ count } conversazione",
@@ -9055,7 +9143,7 @@
         "Codice di verifica non valido"
       ],
       "Keep your inbox organized": [
-        "Mantieni la tua casella email organizzata"
+        "Mantieni la tua posta in arrivo organizzata"
       ],
       "Label as": [
         "Etichetta come"
@@ -9064,7 +9152,7 @@
         "Opzioni etichetta"
       ],
       "Link confirmation": [
-        "Conferma link"
+        "Conferma dei link"
       ],
       "Load embedded images": [
         "Carica le immagini incorporate"
@@ -9133,7 +9221,7 @@
         "Sposta nel cestino"
       ],
       "Moving a scheduled message": [
-        "Spostando un messaggio pianificato"
+        "Spostamento di un messaggio programmato"
       ],
       "New message": [
         "Nuovo messaggio"
@@ -9217,7 +9305,7 @@
         "Risparmia tempo con i filtri per email."
       ],
       "Schedule send": [
-        "Pianifica invio"
+        "Programma l'invio"
       ],
       "Select a theme": [
         "Seleziona un tema"
@@ -9403,7 +9491,7 @@
         "Le sottocartelle di sistema verranno visualizzate come cartelle separate in ${ MAIL_APP_NAME }"
       ],
       "The image could not be loaded": [
-        "Impossibile caricare l’immagine."
+        "Impossibile caricare l’immagine"
       ],
       "The image could not be loaded using proxy": [
         "Impossibile caricare l’immagine usando il proxy."
@@ -9479,7 +9567,7 @@
         "Sei sicuro di voler eliminare definitivamente questi gruppi di contatti?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
-        "Sei sicuro di voler eliminare definitivamente questo gruppo di contatto?"
+        "Sei sicuro di voler eliminare definitivamente questo gruppo di contatti?"
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Sei sicuro di voler eliminare definitivamente questo contatto?"

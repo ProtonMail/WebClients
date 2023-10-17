@@ -703,11 +703,11 @@
       "Not saved": [
         "Neuloženo"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Otevřít ${ CALENDAR_APP_NAME }"
@@ -1647,9 +1647,6 @@
       ],
       "You already tentatively accepted this invitation.": [
         "Toto pozvání jste již předběžně přijali."
-      ],
-      "Your email address is not in the participants list": [
-        "Vaše e-mailová adresa není v seznamu účastníků"
       ]
     },
     "Calendar widget banner": {
@@ -3884,15 +3881,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Prémiový Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Prémiový Mail a Calendar"
-      ],
-      "Premium VPN": [
-        "Prémiová VPN"
-      ],
       "Up to 6 users": [
         "Až 6 uživatelů"
       ]
@@ -5622,7 +5610,7 @@
         "Prosíme vyplňte toto pole."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
-        "Upozorňujeme, že adresy přiřazené k těmto skupinám NEBUDOU odstraněny."
+        "Upozorňujeme, že adresy přiřazené k těmto skupinám NEBUDOU smazány."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Vezměte na vědomí, že adresy přiřazené k této skupině NEBUDOU smazány."
@@ -8398,9 +8386,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "${ storageSize } úložného prostoru"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -8422,15 +8407,6 @@
       "Premium early access": [
         "Prémiový předběžný přístup"
       ],
-      "Premium Mail and Calendar": [
-        "Prémiový Mail a Calendar"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "Prémiový Mail, Calendar a Drive"
-      ],
-      "Premium VPN": [
-        "Prémiová VPN"
-      ],
       "Secure cloud storage": [
         "Bezpečné cloudové úložiště"
       ],
@@ -8442,9 +8418,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "Slevy jsou počítány na základě standardních měsíčních cen."
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Předplatné se bude každé dva roky automaticky obnovovat se stejnou cenou, dokud nebude zrušeno."
       ]
@@ -8498,12 +8471,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Účtováno ${ amount } za 30 měsíců"
-      ],
-      "for ${ n } month": [
-        "na ${ n } měsíc",
-        "na ${ n } měsíce",
-        "na ${ n } měsíců",
-        "na ${ n } měsíců"
       ],
       "Get the deal": [
         "Využít nabídku"
@@ -8572,9 +8539,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Všechny naše prémiové služby s nejvyššími limity: 100 e-mailových adres, podpora 10 vlastních domén, neomezený počet aliasů hide-my-email, sdílení kalendáře, šifrované cloudové úložiště a sdílení souborů a další."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Obsahuje podporu 1 vlastní e-mailové domény, 10 e-mailových adres, 10 aliasů Hide-my-email, sdílení kalendáře a další funkce."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Zahrnuje podporu 3 vlastních e-mailových domén, 15 e-mailových adres, neomezený počet aliasů Hide-my-email, sdílení kalendáře a další."
       ],
@@ -8586,9 +8550,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Zahrnuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, a ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -8971,24 +8932,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "Prémiový Disk"
-      ],
-      "Premium Mail and Calendar": [
-        "Prémiový Mail a Kalendář"
-      ],
       "Premium Password Manager": [
         "Prémiový správce hesel"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Bezpečné ukládání hesel a jejich automatické vyplňování na webových stránkách. Obsahuje neomezený počet hesel, automatické vyplňování, generátor hesel a další funkce."
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "Správce hesel"
       ]
     },
     "summer2023: Tooltip": {
@@ -9850,7 +9795,7 @@
         "Jste si jistí, že chcete trvale smazat ${ count } kontaktů?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
-        "Opravdu chcete tyto skupiny kontaktů trvale odstranit?"
+        "Opravdu chcete tyto skupiny kontaktů trvale smazat?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Opravdu chcete nevratně smazat tuto skupinu kontaktů?"

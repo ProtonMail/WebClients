@@ -695,10 +695,10 @@
       "Not saved": [
         "Tallentamaton"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -1635,9 +1635,6 @@
       ],
       "You already tentatively accepted this invitation.": [
         "Olet jo alustavasti hyväksynyt kutsun."
-      ],
-      "Your email address is not in the participants list": [
-        "Sähköpostiosoitettasi ei ole osallistujalistalla"
       ]
     },
     "Calendar widget banner": {
@@ -3085,6 +3082,11 @@
         "Päivitys ${ formattedStart } alkavaan tapahtumaan"
       ]
     },
+    "email_forwarding_2023: Composer email icon": {
+      "Zero-access encrypted. Recipient has disabled end-to-end encryption on their account.": [
+        "Zero-access-salattu. Vastaanottaja on poistanut päästä päähän -salauksen käytöstä tililtään."
+      ]
+    },
     "empty messages: success": {
       "Folder cleared": [
         "Kansio tyhjennettiin"
@@ -3830,15 +3832,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Premium Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Premium Mail ja Calendar"
-      ],
-      "Premium VPN": [
-        "Premium VPN"
-      ],
       "Up to 6 users": [
         "Enintään 6 käyttäjää"
       ]
@@ -8114,9 +8107,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "Yhteensä ${ storageSize } tallennustilaa"
-      ],
       "3 TB": [
         "3 Tt"
       ],
@@ -8138,15 +8128,6 @@
       "Premium early access": [
         "Premium-ennakkokäyttö"
       ],
-      "Premium Mail and Calendar": [
-        "Premium Mail ja Calendar"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "Premium Mail, Calendar ja Drive"
-      ],
-      "Premium VPN": [
-        "Premium VPN"
-      ],
       "Secure cloud storage": [
         "Turvallinen pilvitallennustila"
       ],
@@ -8158,9 +8139,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "Alennukset perustuvat normaaliin kuukausihintaan."
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Tilaus uudistuu automaattisesti kahden vuoden välein samalla hinnalla kunnes se perutaan."
       ]
@@ -8214,10 +8192,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Laskutetaan ${ amount } 30 kuukauden ajan"
-      ],
-      "for ${ n } month": [
-        "${ n } kuukaudeksi",
-        "${ n } kuukaudeksi"
       ],
       "Get the deal": [
         "Hanki tarjous"
@@ -8286,9 +8260,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Kaikki premium-palvelumme parhaimmillaan: 100 sähköpostiosoitetta, tuki 10 omalle verkkotunnukselle, rajattomasti Hide-my-email-aliaksia, kalenterijako, salattu pilvitallennus tiedostojen jaolla sekä paljon muuta."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Sisältää tuen yhdelle omalle sähköpostiverkkotunnukselle, 10 sähköpostiosoitteelle, 10 Hide-my-email-aliakselle, kalenterijaolle sekä paljon muuta."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Sisältää tuen kolmelle omalle sähköpostiverkkotunnukselle, 15 sähköpostiosoitteelle, rajattomasti Hide-my-email-aliaksia, kalenterijaon sekä paljon muuta."
       ],
@@ -8300,9 +8271,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää automaattisen synkronoinnin, salatun tiedostojen jakamisen ja paljon muuta."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Tallennustila jaetaan ${ MAIL_APP_NAME }in, ${ CALENDAR_APP_NAME }in ja ${ DRIVE_APP_NAME }n välillä."
       ]
     },
     "Spotlight": {
@@ -8637,24 +8605,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "Premium Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Premium Mail ja Calendar"
-      ],
       "Premium Password Manager": [
         "Premium salasanahallinta"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Tallenna salasanasi turvallisesti ja täytä ne automaattisesti verkkosivustoilla. Sisältää rajattomasti salasanoja, automaattisen täytön, salasanageneraattorin ja paljon muuta."
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "Salasanahallinta"
       ]
     },
     "summer2023: Tooltip": {
