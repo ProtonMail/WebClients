@@ -91,8 +91,8 @@ function useFileViewBase(
             // We force jpg type as thumbnails are always jpg for photos
             setContentsMimeType(SupportedMimeTypes.jpg);
             try {
-                const hdThumbnail = await getPreviewThumbnail(abortSignal, shareId, linkId);
-                setContents(hdThumbnail);
+                const previewThumbnail = await getPreviewThumbnail(abortSignal, shareId, linkId);
+                setContents(previewThumbnail);
             } catch {
                 setContents(undefined);
             }
