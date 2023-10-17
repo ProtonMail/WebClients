@@ -98,3 +98,5 @@ export type SelectedItem = UniqueItem;
 export type ItemSortFilter = 'recent' | 'titleASC' | 'createTimeDESC' | 'createTimeASC';
 export type ItemTypeFilter = '*' | ItemType;
 export type ItemFilters = { sort: ItemSortFilter; type: ItemTypeFilter; shareId: MaybeNull<string> };
+
+export type WithItemCount<T> = T & { count: number };
