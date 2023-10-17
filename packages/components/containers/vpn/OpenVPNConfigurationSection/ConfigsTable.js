@@ -96,7 +96,7 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, onS
             <thead>
                 <tr>
                     <TableCell
-                        className={clsx(['on-mobile-wauto', category === CATEGORY.SERVER ? 'w25' : 'w33'])}
+                        className={clsx(['on-mobile-wauto', category === CATEGORY.SERVER ? 'w-1/4' : 'w-1/3'])}
                         type="header"
                     >
                         {[CATEGORY.SERVER, CATEGORY.FREE].includes(category)
@@ -104,14 +104,15 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, onS
                             : c('TableHeader').t`Country`}
                     </TableCell>
                     {category === CATEGORY.SERVER ? (
-                        <TableCell className="on-mobile-wauto w25" type="header">{c('TableHeader').t`City`}</TableCell>
+                        <TableCell className="on-mobile-wauto w-1/4" type="header">{c('TableHeader')
+                            .t`City`}</TableCell>
                     ) : null}
                     <TableCell
-                        className={clsx(['on-mobile-wauto', category === CATEGORY.SERVER ? 'w25' : 'w33'])}
+                        className={clsx(['on-mobile-wauto', category === CATEGORY.SERVER ? 'w-1/4' : 'w-1/3'])}
                         type="header"
                     >{c('TableHeader').t`Status`}</TableCell>
                     <TableCell
-                        className={clsx(['on-mobile-wauto', category === CATEGORY.SERVER ? 'w25' : 'w33'])}
+                        className={clsx(['on-mobile-wauto', category === CATEGORY.SERVER ? 'w-1/4' : 'w-1/3'])}
                         type="header"
                     >{c('TableHeader').t`Action`}</TableCell>
                 </tr>

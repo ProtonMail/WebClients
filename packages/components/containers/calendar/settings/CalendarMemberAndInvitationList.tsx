@@ -72,7 +72,8 @@ const CalendarMemberAndInvitationList = ({
                         <TableHeaderCell>{c('Header').t`User`}</TableHeaderCell>
                         {displayPermissions && <TableHeaderCell>{c('Header').t`Permissions`}</TableHeaderCell>}
                         {displayStatus && <TableHeaderCell>{c('Header').t`Status`}</TableHeaderCell>}
-                        <TableHeaderCell className="w15">{c('Header').t`Action`}</TableHeaderCell>
+                        <TableHeaderCell className="w-custom" style={{ '--w-custom': '15%' }}>{c('Header')
+                            .t`Action`}</TableHeaderCell>
                     </TableRow>
                 </TableHeader>
                 <TableBody>

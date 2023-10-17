@@ -1,7 +1,6 @@
 import { getTitle } from '../../helpers/title';
 import mdx from './Lists.mdx';
 
-
 export default {
     title: getTitle(__filename, false),
     parameters: {
@@ -12,7 +11,7 @@ export default {
 };
 
 export const Lists = () => (
-    <div className="w49 flex-align-self-center">
+    <div className="w-1/2 flex-align-self-center">
         <div className="flex gap-7">
             <div>
                 <ul className="m-0">

@@ -63,12 +63,12 @@ export const FlexWrap = () => (
     <>
         <h3>Default:</h3>
         <div className="flex rounded overflow-hidden border">
-            <div className="bg-primary p-4 w20">div</div>
-            <span className="bg-primary p-4 w20">span</span>
-            <em className="bg-primary p-4 w20">em</em>
-            <div className="bg-primary p-4 w20">div</div>
-            <span className="bg-primary p-4 w20">span</span>
-            <em className="bg-primary p-4 w20">em</em>
+            <div className="bg-primary p-4 w-1/5">div</div>
+            <span className="bg-primary p-4 w-1/5">span</span>
+            <em className="bg-primary p-4 w-1/5">em</em>
+            <div className="bg-primary p-4 w-1/5">div</div>
+            <span className="bg-primary p-4 w-1/5">span</span>
+            <em className="bg-primary p-4 w-1/5">em</em>
         </div>
     </>
 );
@@ -77,12 +77,12 @@ export const FlexNowrap = () => (
     <>
         <h3>No Wrap:</h3>
         <div className="flex flex-nowrap rounded overflow-hidden border">
-            <div className="bg-primary p-4 w20">div</div>
-            <span className="bg-primary p-4 w20">span</span>
-            <em className="bg-primary p-4 w20">em</em>
-            <div className="bg-primary p-4 w20">div</div>
-            <span className="bg-primary p-4 w20">span</span>
-            <em className="bg-primary p-4 w20">em</em>
+            <div className="bg-primary p-4 w-1/5">div</div>
+            <span className="bg-primary p-4 w-1/5">span</span>
+            <em className="bg-primary p-4 w-1/5">em</em>
+            <div className="bg-primary p-4 w-1/5">div</div>
+            <span className="bg-primary p-4 w-1/5">span</span>
+            <em className="bg-primary p-4 w-1/5">em</em>
         </div>
     </>
 );

@@ -82,7 +82,7 @@ const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorS
     return (
         <li className="border-bottom">
             <Wrapper checked={checked} editMode={editMode} disabled={disabled} checkboxId={folderItem.id}>
-                <div className="flex w50 flex-nowrap flex-align-items-center flex-item-noshrink pr-2">
+                <div className="flex w-1/2 flex-nowrap flex-align-items-center flex-item-noshrink pr-2">
                     <div
                         className="flex-item-noshrink ml-custom"
                         style={indentStyle(providerPath.length)}
@@ -106,7 +106,7 @@ const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorS
                         {folderProviderName}
                     </div>
                 </div>
-                <div className="flex w50 pl-2">
+                <div className="flex w-1/2 pl-2">
                     <div
                         className={clsx(['flex flex-nowrap flex-align-items-center ml-custom'])}
                         style={indentStyle(protonPath.length)}

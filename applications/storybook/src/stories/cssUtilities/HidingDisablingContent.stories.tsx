@@ -1,11 +1,8 @@
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 
-
-
 import { getTitle } from '../../helpers/title';
 import mdx from './HidingDisablingContent.mdx';
-
 
 export default {
     title: getTitle(__filename, false),
@@ -59,13 +56,13 @@ export const PointerEventsNone = () => (
     /*
 
 <div class="flex flex-justify-space-between mb-8 on-mobile-flex-column">
-    <div class="w49 flex-align-self-center">
+    <div class="w-1/2 flex-align-self-center">
         Applies <code>pointer-events: none</code> to element.
         <br />
         If you need to remove pointer events on all children of an element, you may use{' '}
         <code>no-pointer-events-children</code> class.
     </div>
-    <div class="w49">
+    <div class="w-1/2">
         <Source
             language="html"
             light

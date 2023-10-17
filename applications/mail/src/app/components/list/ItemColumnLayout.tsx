@@ -235,7 +235,7 @@ const ItemColumnLayout = ({
                 <>
                     <div
                         className={clsx([
-                            'flex flex-nowrap flex-align-items-center item-secondline item-es-result max-w80 no-scroll',
+                            'flex flex-nowrap flex-align-items-center item-secondline item-es-result max-w-4/5 no-scroll',
                             isCompactView && 'mb-3',
                         ])}
                         aria-hidden="true"

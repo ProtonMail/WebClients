@@ -16,7 +16,7 @@ export const FlexItemFluid = () => {
             <div className="bg-primary p-4 w-custom" style={{ '--w-custom': '9.375rem' }}>
                 150px wide
             </div>
-            <span className="bg-primary p-4 w25">25% wide</span>
+            <span className="bg-primary p-4 w-1/4">25% wide</span>
             <em className="flex-item-fluid bg-info p-4">.flex-item-fluid</em>
         </div>
     );
@@ -28,7 +28,7 @@ export const FlexItemFluidAuto = () => {
             <div className="bg-primary p-4 w-custom" style={{ '--w-custom': '9.375rem' }}>
                 150px wide
             </div>
-            <span className="bg-primary p-4 w25">25% wide</span>
+            <span className="bg-primary p-4 w-1/4">25% wide</span>
             <em className="flex-item-fluid-auto bg-info p-4">.flex-item-fluid-auto</em>
         </div>
     );
@@ -40,7 +40,7 @@ export const FlexItemGrow = () => {
             <div className="bg-primary p-4 w-custom" style={{ '--w-custom': '9.375rem' }}>
                 150px wide
             </div>
-            <span className="bg-primary p-4 w25">25% wide</span>
+            <span className="bg-primary p-4 w-1/4">25% wide</span>
             <em className="flex-item-grow-2 bg-info p-4">.flex-item-grow-2</em>
         </div>
     );
@@ -52,7 +52,7 @@ export const FlexItemNoShrink = () => {
             <div className="bg-primary p-4 w-custom" style={{ '--w-custom': '9.375rem' }}>
                 150px wide
             </div>
-            <span className="bg-primary p-4 w25">25% wide</span>
+            <span className="bg-primary p-4 w-1/4">25% wide</span>
             <em className="flex-item-noshrink bg-info p-4">.flex-item-noshrink</em>
         </div>
     );
@@ -64,7 +64,7 @@ export const FlexItemNoGrow = () => {
             <div className="bg-primary p-4 w-custom" style={{ '--w-custom': '9.375rem' }}>
                 150px wide
             </div>
-            <span className="bg-primary p-4 w25">25% wide</span>
+            <span className="bg-primary p-4 w-1/4">25% wide</span>
             <em className="flex-item-nogrow bg-info p-4">.flex-item-nogrow</em>
         </div>
     );
@@ -76,7 +76,7 @@ export const FlexItemNoGrowNoShrink = () => {
             <div className="bg-primary p-4 w-custom" style={{ '--w-custom': '9.375rem' }}>
                 150px wide
             </div>
-            <span className="bg-primary p-4 w25">25% wide</span>
+            <span className="bg-primary p-4 w-1/4">25% wide</span>
             <em className="flex-item-nogrow flex-item-noshrink bg-info p-4">static width</em>
         </div>
     );
@@ -88,7 +88,7 @@ export const FlexItemNoFlex = () => {
             <div className="bg-primary p-4 w-custom" style={{ '--w-custom': '9.375rem' }}>
                 150px wide
             </div>
-            <span className="bg-primary p-4 w25">25% wide</span>
+            <span className="bg-primary p-4 w-1/4">25% wide</span>
             <em className="flex-item-noflex bg-info p-4">.flex-item-noflex</em>
         </div>
     );
