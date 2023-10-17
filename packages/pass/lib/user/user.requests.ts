@@ -2,13 +2,13 @@ import { api } from '@proton/pass/lib/api/api';
 import type {
     AddressState,
     FeatureFlagState,
-    UserPlanState,
+    UserAccessState,
     UserSettingsState,
     UserState,
 } from '@proton/pass/store/reducers';
 import { selectUserState } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
-import type { MaybeNull, RequiredNonNull } from '@proton/pass/types';
+import type { RequiredNonNull } from '@proton/pass/types';
 import type { FeatureFlagsResponse } from '@proton/pass/types/api/features';
 import { PassFeaturesValues } from '@proton/pass/types/api/features';
 import { logger } from '@proton/pass/utils/logger';
@@ -30,13 +30,13 @@ export const getFeatureFlags = async (): Promise<FeatureFlagState> => {
     }, {});
 };
 
-export const getUserPlan = async (): Promise<UserPlanState> => {
-    logger.info(`[Saga::UserPlan] syncing user access plan`);
-    const { Plan } = (await api({ url: 'pass/v1/user/access', method: 'get' })).Access!;
-    return Plan;
+export const getUserAccess = async (): Promise<RequiredNonNull<UserAccessState>> => {
+    logger.info(`[Saga::UserPlan] syncing user access`);
+    const { Access } = await api({ url: 'pass/v1/user/access', method: 'get' });
+    return { plan: Access!.Plan, waitingNewUserInvites: Access!.WaitingNewUserInvites };
 };
 
-export const getUserSettings = async (): Promise<MaybeNull<UserSettingsState>> => {
+export const getUserSettings = async (): Promise<UserSettingsState> => {
     try {
         logger.info(`[Saga::UserSettings] syncing user settings`);
         const { Email, Telemetry } = (await api<{ UserSettings: UserSettings }>(getSettings())).UserSettings;
@@ -45,27 +45,27 @@ export const getUserSettings = async (): Promise<MaybeNull<UserSettingsState>> =
             Telemetry: Telemetry,
         };
     } catch {
-        return null;
+        return {};
     }
 };
 
 export const getUserData = async (state: State): Promise<RequiredNonNull<UserState>> => {
     const cached = selectUserState(state);
 
-    const [user, addresses, eventId, plan, features, userSettings] = (await Promise.all([
-        /* user model */
+    const [user, eventId, features, userSettings, addresses, access] = await Promise.all([
         cached.user ?? api<{ User: User }>(getUser()).then(({ User }) => User),
+        cached.eventId ?? api<{ EventID: string }>(getLatestID()).then(({ EventID }) => EventID),
+        cached.features ?? (await getFeatureFlags()),
+        cached.userSettings ?? (await getUserSettings()) ?? {},
 
-        /* user addresses */
         Object.keys(cached.addresses).length > 0
             ? cached.addresses
             : getAllAddresses(api).then((addresses): AddressState => toMap(addresses, 'ID')),
 
-        cached.eventId ?? api<{ EventID: string }>(getLatestID()).then(({ EventID }) => EventID),
-        cached.plan ?? (await getUserPlan()),
-        cached.features ?? (await getFeatureFlags()),
-        cached.userSettings ?? (await getUserSettings()),
-    ])) as [User, AddressState, string, UserPlanState, FeatureFlagState, UserSettingsState];
+        cached.plan && cached.waitingNewUserInvites
+            ? { plan: cached.plan, waitingNewUserInvites: cached.waitingNewUserInvites }
+            : await getUserAccess(),
+    ]);
 
-    return { user, plan, addresses, eventId, features, userSettings };
+    return { user, ...access, addresses, eventId, features, userSettings };
 };
