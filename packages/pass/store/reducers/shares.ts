@@ -96,6 +96,7 @@ export const withOptimisticShares = withOptimistic<SharesState>(
                     targetType: ShareType.Vault,
                     eventId: '',
                     targetMembers: 1,
+                    targetMaxMembers: 1, // optimistically me
                     owner: true,
                     shareRoleId: ShareRole.ADMIN,
                     shared: false,
