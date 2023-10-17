@@ -13,18 +13,20 @@ export type InviteContextValue = {
     shareId: MaybeNull<string>;
     close: () => void;
     createInvite: (shareId: string) => void;
+    createInviteWithVaultCreation: (shareId: string) => void;
     manageAccess: (shareId: string) => void;
     onInviteResponse: () => void;
     onShareDisabled: (disabledShareId: string) => void;
     respondToInvite: (invite: Invite) => void;
 };
 
-export type InviteView = 'invite' | 'manage';
+export type InviteView = 'invite-existing' | 'invite-new' | 'manage';
 
 const InviteContext = createContext<InviteContextValue>({
     shareId: null,
     close: noop,
     createInvite: noop,
+    createInviteWithVaultCreation: noop,
     manageAccess: noop,
     onInviteResponse: noop,
     onShareDisabled: noop,
@@ -38,7 +40,12 @@ export const InviteContextProvider: FC = ({ children }) => {
 
     const createInvite = useCallback(async (shareId: string) => {
         setShareId(shareId);
-        setView('invite');
+        setView('invite-existing');
+    }, []);
+
+    const createInviteWithVaultCreation = useCallback(async (shareId: string) => {
+        setShareId(shareId);
+        setView('invite-new');
     }, []);
 
     const onInviteResponse = useCallback(() => setInvite(null), []);
@@ -58,6 +65,7 @@ export const InviteContextProvider: FC = ({ children }) => {
             shareId,
             close,
             createInvite,
+            createInviteWithVaultCreation,
             manageAccess,
             onInviteResponse,
             onShareDisabled: (disabledShareId: string) => {
@@ -77,8 +85,10 @@ export const InviteContextProvider: FC = ({ children }) => {
             {shareId &&
                 (() => {
                     switch (view) {
-                        case 'invite':
+                        case 'invite-existing':
                             return <VaultInviteCreate shareId={shareId} />;
+                        case 'invite-new':
+                            return <VaultInviteCreate shareId={shareId} withVaultCreation />;
                         case 'manage':
                             return <VaultAccessManager shareId={shareId} />;
                     }
