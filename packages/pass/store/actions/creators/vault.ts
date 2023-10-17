@@ -1,7 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { vaultCreate, vaultDelete, vaultEdit, vaultSetPrimary } from '@proton/pass/store/actions/requests';
+import { vaultCreate, vaultDelete, vaultEdit } from '@proton/pass/store/actions/requests';
 import withCacheBlock from '@proton/pass/store/actions/with-cache-block';
 import type { ActionCallback } from '@proton/pass/store/actions/with-callback';
 import withCallback from '@proton/pass/store/actions/with-callback';
@@ -12,7 +12,7 @@ import withRequest, {
     withRequestSuccess,
 } from '@proton/pass/store/actions/with-request';
 import { createOptimisticAction } from '@proton/pass/store/optimistic/action/create-optimistic-action';
-import type { ExtensionEndpoint, ItemRevision, MaybeNull, Share, ShareContent, ShareType } from '@proton/pass/types';
+import type { ItemRevision, MaybeNull, Share, ShareContent, ShareType } from '@proton/pass/types';
 import type { VaultTransferOwnerIntent } from '@proton/pass/types/data/vault.dto';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
@@ -167,57 +167,6 @@ export const vaultDeleteSuccess = createOptimisticAction(
         )({ payload }),
     ({ payload }) => payload.id
 );
-
-export const vaultSetPrimaryIntent = createOptimisticAction(
-    'vault set primary intent',
-    (payload: { id: string; name: string }) =>
-        pipe(
-            withCacheBlock,
-            withRequest({
-                type: 'start',
-                id: vaultSetPrimary(payload.id),
-            })
-        )({ payload }),
-    ({ payload }) => payload.id
-);
-
-export const vaultSetPrimaryFailure = createOptimisticAction(
-    'vault set primary failure',
-    (payload: { id: string; name: string }, error: unknown, receiver?: ExtensionEndpoint) =>
-        pipe(
-            withCacheBlock,
-            withRequest({
-                type: 'failure',
-                id: vaultSetPrimary(payload.id),
-            }),
-            withNotification({
-                type: 'error',
-                text: c('Error').t`Setting "${payload.name}" as primary vault failed`,
-                receiver,
-                error,
-            })
-        )({ payload, error }),
-    ({ payload }) => payload.id
-);
-
-export const vaultSetPrimarySuccess = createOptimisticAction(
-    'vault set primary success',
-    (payload: { id: string; name: string }, receiver?: ExtensionEndpoint) =>
-        pipe(
-            withRequest({
-                type: 'success',
-                id: vaultSetPrimary(payload.id),
-            }),
-            withNotification({
-                type: 'info',
-                text: c('Info').t`"${payload.name}" set as primary vault`,
-                receiver,
-            })
-        )({ payload }),
-    ({ payload }) => payload.id
-);
-
-export const vaultSetPrimarySync = createAction('vault set primary sync', (payload: { id: string }) => ({ payload }));
 
 export const vaultTransferOwnerIntent = createAction(
     'share::ownership::transfer::intent',

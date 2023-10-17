@@ -9,13 +9,11 @@ import { type Share, type ShareContent, ShareRole, type ShareType, type VaultCre
 
 export const createVault = async (data: {
     content: ShareContent<ShareType.Vault>;
-    primary?: boolean;
 }): Promise<Share<ShareType.Vault>> => {
     const encoded = encodeVaultContent(data.content);
 
     const encryptedVault: VaultCreateRequest = {
         ...(await PassCrypto.createVault(encoded)),
-        Primary: data.primary ?? false,
     };
 
     const encryptedShare = (
@@ -41,7 +39,6 @@ export const createVault = async (data: {
         createTime: share.createTime,
         eventId,
         owner: true,
-        primary: Boolean(encryptedShare.Primary),
         shared: false,
         shareId: share.shareId,
         shareRoleId: ShareRole.ADMIN,
@@ -82,7 +79,6 @@ export const editVault = async (
         content: decodeVaultContent(share.content),
         eventId,
         owner: share.owner,
-        primary: Boolean(encryptedShare.Primary),
         shared: share.shared,
         shareId: share.shareId,
         shareRoleId: share.shareRoleId,
