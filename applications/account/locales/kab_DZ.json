@@ -284,9 +284,6 @@
       "Delete": [
         "Kkes"
       ],
-      "Delete and confirm": [
-        "Kkes sakin sentem"
-      ],
       "Delete Gateway": [
         "Kkes tanezgert"
       ],
@@ -763,9 +760,6 @@
       ],
       "Save address": [
         "Sekles tansa"
-      ],
-      "Save changes": [
-        "Sekles ibeddilen"
       ],
       "Save ICS file": [
         "Sekles ifuyla ICS"
@@ -3651,15 +3645,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Imeɣri premium"
-      ],
-      "Premium Mail and Calendar": [
-        "Imayl d uwitay premium"
-      ],
-      "Premium VPN": [
-        "VPN premium"
-      ],
       "Up to 6 users": [
         "Armi d 6 n iseqdacen"
       ]
@@ -5534,12 +5519,6 @@
       "Setting up your organization": [
         "Sbadu tkebbanit-ik"
       ],
-      "Settings update failed": [
-        "Aleqqem n yiɣewwaren yecceḍ"
-      ],
-      "Settings updated": [
-        "Ttwaleqmen yiɣewwaren"
-      ],
       "Show original message": [
         "Sken izen anaṣli"
       ],
@@ -5736,9 +5715,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Salu tura aɣawas-ik i wakken ad tesɛuḍ timahilin, ifarisen d uḥraz premium s ssuma igerrzen"
       ],
-      "Upgrade to unlock": [
-        "Sali ad yeldi"
-      ],
       "Upload picture": [
         "Sili tugna"
       ],
@@ -5765,9 +5741,6 @@
       ],
       "Version ${ version }": [
         "Lqem ${ version }"
-      ],
-      "Version history": [
-        "Amezruy n lqem"
       ],
       "Visa Secure logo": [
         "Alugu n Visa Secure"
@@ -8110,20 +8083,20 @@
         "Asefrek n terbaɛt"
       ]
     },
-    "new_plans: info": {
-      "Most popular": [
-        "Ittwassen aṭas"
-      ],
-      "Popular": [
-        "Mucaɛ"
-      ]
-    },
     "new_plans: Info": {
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "I ukemmel n useqdec n ${ MAIL_APP_NAME }s tmahilin premium, fren amultaɣ-ik d textiṛiyin n uxelleṣ."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Aneεruḍ-ik·im ad yekfu deg ${ formattedPeriodEndDate }"
+      ]
+    },
+    "new_plans: info": {
+      "Most popular": [
+        "Ittwassen aṭas"
+      ],
+      "Popular": [
+        "Mucaɛ"
       ]
     },
     "new_plans: Label": {
@@ -9213,9 +9186,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "${ storageSize } n uḥraz asemday"
-      ],
       "3 TB": [
         "3 TAṬ"
       ],
@@ -9236,15 +9206,6 @@
       ],
       "Premium early access": [
         "Anekcum Premium uzwir"
-      ],
-      "Premium Mail and Calendar": [
-        "Imayl d uwitay premium"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "Imayl, awitay d yimenɣri"
-      ],
-      "Premium VPN": [
-        "VPN premium"
       ],
       "Secure cloud storage": [
         "Aḥraz n usigna aɣellsan"
@@ -9289,10 +9250,6 @@
       "2 years": [
         "2 n yiseggasen"
       ],
-      "for ${ n } month": [
-        "i ${ n } wayyur",
-        "i ${ n } wayyuren"
-      ],
       "Get the deal": [
         "Faṛes tagnit"
       ],
@@ -9324,11 +9281,6 @@
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Sali, tḥerzeḍ ugar s 2 yiseggasen n ${ planName }"
-      ]
-    },
-    "specialoffer: Tooltip": {
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Tallunt n uḥraz tettwabḍa gar ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, d ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -9375,14 +9327,8 @@
       ]
     },
     "Subscription": {
-      "Billed every 15 months": [
-        "After n yal 15 wayyuren"
-      ],
       "Billed every 2 years": [
         "After n yal 2 yiseggasen"
-      ],
-      "Billed every 30 months": [
-        "After n yal 30 wayyuren"
       ],
       "Billed monthly": [
         "Tifaṭurin n wayyuren"
@@ -9736,19 +9682,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "Imeɣri premium"
-      ],
-      "Premium Mail and Calendar": [
-        "Imayl d uwitay premium"
-      ],
       "Premium Password Manager": [
         "Amsefrak n wawal uffir premium"
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "Amsefrak n wawal uffir"
       ]
     },
     "Tab in domain modal": {
@@ -10192,9 +10127,6 @@
       ],
       "Delete user?": [
         "Kkes aseqdac?"
-      ],
-      "Delete version history?": [
-        "Kkes azray n lqem?"
       ],
       "Disable ${ email }": [
         "Sens ${ email }"
