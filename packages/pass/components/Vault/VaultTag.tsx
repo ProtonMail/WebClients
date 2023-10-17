@@ -22,12 +22,12 @@ export const VaultTag: VFC<Props> = ({ title, shared = false, icon, color, count
     return (
         <div
             className={clsx(
-                'pass-vault-tag flex flex-align-items-center text-sm gap-x-1 flex-nowrap',
+                'pass-vault-tag flex flex-align-items-center text-sm gap-x-2 flex-nowrap',
                 shared && 'pass-vault-tag--shared'
             )}
             style={shared ? { '--vault-icon-color': VAULT_COLOR_MAP[color ?? VaultColor.COLOR1] } : undefined}
         >
-            {<Icon className="mr-1" name={icon} size={iconSize} />}
+            {<Icon className="flex-item-noshrink" name={icon} size={iconSize} />}
             <span className="text-ellipsis">{title}</span>
             {count !== undefined && count > 1 && <span className="flex-item-noshrink">• {count}</span>}
         </div>

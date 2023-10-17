@@ -4,7 +4,7 @@ import { createSelector } from '@reduxjs/toolkit';
 import { isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import { isOwnVault, isSharedVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
-import type { VaultShare } from '@proton/pass/types';
+import type { VaultShare, WithItemCount } from '@proton/pass/types';
 import { type Maybe, type MaybeNull, type ShareType } from '@proton/pass/types';
 import { and, invert } from '@proton/pass/utils/fp/predicates';
 import { sortOn } from '@proton/pass/utils/fp/sort';
@@ -87,7 +87,7 @@ export const selectVaultWithItemsCount = (shareId: string) =>
     createSelector(
         selectShareOrThrow<ShareType.Vault>(shareId),
         selectItems,
-        (share, itemsByShareId): ShareItem<ShareType.Vault> & { count: number } => ({
+        (share, itemsByShareId): WithItemCount<ShareItem<ShareType.Vault>> => ({
             ...share,
             count: Object.values(itemsByShareId?.[share?.shareId] ?? {}).filter(invert(isTrashed)).length,
         })
