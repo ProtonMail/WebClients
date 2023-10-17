@@ -5,16 +5,45 @@
   },
   "contexts": {
     "Action": {
+      "Add current url": [
+        "Add current URL"
+      ],
       "Generated password": [
         "Generated passwords"
+      ]
+    },
+    "Error": {
+      "Invalid url": [
+        "Invalid URL"
+      ],
+      "The url is in the list": [
+        "The URL is in the list"
       ]
     },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         "Upgrade to a paid plan to create multiple vaults."
+      ],
+      "Discover ${ PASS_APP_NAME } Youtube Video": [
+        "Discover ${ PASS_APP_NAME } YouTube Video"
+      ],
+      "Enter your pin code": [
+        "Enter your PIN code"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
+        "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you."
+      ],
+      "Please enter your current pin code to continue": [
+        "Please enter your current PIN code to continue"
       ]
     },
     "Label": {
+      "Capitalise": [
+        "Capitalize"
+      ],
+      "Imported from : ": [
+        "Imported from: "
+      ],
       "Need help ?": [
         "Need help?"
       ]
@@ -26,11 +55,40 @@
       "Discard changes ?": [
         "Discard changes?"
       ],
+      "Enter your Pin": [
+        "Enter your PIN"
+      ],
       "Hide my email": [
         "Hide-my-email"
+      ],
+      "Leave vault ?": [
+        "Leave vault?"
+      ],
+      "Permanently remove all items ?": [
+        "Permanently remove all items?"
+      ]
+    },
+    "Validation": {
+      "Duplicated url": [
+        "Duplicated URL"
+      ],
+      "Url already exists": [
+        "URL already exists"
+      ],
+      "Url cannot be empty": [
+        "URL cannot be empty"
+      ],
+      "Url is invalid": [
+        "URL is invalid"
       ]
     },
     "Warning": {
+      "An error occured while exporting your data": [
+        "An error occurred while exporting your data"
+      ],
+      "Trash alias ?": [
+        "Trash alias?"
+      ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You can not undo this action": [
         "Vault \"${ vaultName }\" and all its items will be permanently deleted. You can not undo this action."
       ],

@@ -12,7 +12,7 @@
         "Přidat aktuální URL"
       ],
       "Add domain to pause list": [
-        "Přidat doménu na vyčkávací seznam"
+        "Přidat doménu na seznam pozastavených"
       ],
       "Add more": [
         "Přidat další"
@@ -333,7 +333,7 @@
     },
     "Description": {
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
-        "Seznam domén, ve kterých jsou určité automatické funkce v ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) by se neměly spouštět."
+        "Seznam domén, na kterých by neměly být spuštěny automatické funkce ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave)."
       ]
     },
     "Error": {
@@ -1012,7 +1012,7 @@
         "Chystáte se vytvořit:"
       ],
       "You cannot change the mailboxes for this alias.": [
-        "Poštovní schránky pro tento alias nelze měnit."
+        "Nemůžete měnit e-mailové schránky tohoto aliasu."
       ],
       "You have ${ daysRemaining } day left in your trial period.": [
         "Do konce zkušební doby zbývá ${ daysRemaining } den.",
@@ -1320,7 +1320,7 @@
         "Hesla"
       ],
       "Pause list": [
-        "Vyčkávací seznam"
+        "Seznam pozastavených"
       ],
       "Permanently delete items": [
         "Trvale smazat položky"
