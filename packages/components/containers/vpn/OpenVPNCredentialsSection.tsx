@@ -52,8 +52,8 @@ const OpenVPNCredentialsSection = (props: Props) => {
                         {c('Info').t`We advise you to use official ${VPN_APP_NAME} applications when possible.`}
                     </SettingsParagraph>
                     <SettingsParagraph>
-                        {c('Info').jt`
-                     You cannot use the OpenVPN / IKEv2 credentials to sign in to ${VPN_APP_NAME} applications or the ${VPN_APP_NAME} dashboard. ${learnMore}`}
+                        {c('Info')
+                            .jt`These credentials cannot be used to sign in to our official ${VPN_APP_NAME} apps. ${learnMore}`}
                     </SettingsParagraph>
                 </>
             ) : (
@@ -63,8 +63,8 @@ const OpenVPNCredentialsSection = (props: Props) => {
                             .t`Use the following credentials when connecting to ${VPN_APP_NAME} servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.`}
                     </SettingsParagraph>
                     <SettingsParagraph>
-                        {c('Info').jt`
-                    Do not use the OpenVPN / IKEv2 credentials in ${VPN_APP_NAME} applications or on the ${VPN_APP_NAME} dashboard. ${learnMore}`}
+                        {c('Info')
+                            .jt`These credentials cannot be used to sign in to our official ${VPN_APP_NAME} apps. ${learnMore}`}
                     </SettingsParagraph>
                 </>
             )}
