@@ -21,7 +21,7 @@ const CustomizeMailImportModalLabel = ({ label, onEditLabel }: Props) => {
                         <Icon name="info-circle" className="ml-2" />
                     </Tooltip>
                 </Label>
-                <Field className="wauto flex flex-align-items-center flex-nowrap">
+                <Field className="w-auto flex flex-align-items-center flex-nowrap">
                     {label.Name && (
                         <LabelStack
                             labels={[
