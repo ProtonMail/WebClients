@@ -22,6 +22,7 @@ export const openShare = async ({ encryptedShare, ...options }: OpenShareProcess
         owner: encryptedShare.Owner,
         shared: encryptedShare.Shared,
         targetMembers: encryptedShare.TargetMembers,
+        targetMaxMembers: encryptedShare.TargetMaxMembers,
         shareRoleId: encryptedShare.ShareRoleID! as ShareRole, // fixme : check optionality
     };
 
