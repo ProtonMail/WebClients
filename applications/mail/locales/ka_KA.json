@@ -695,10 +695,10 @@
       "Not saved": [
         "არაა შენახული"
       ],
-      "OK": [
+      "Ok": [
         "დიახ"
       ],
-      "Ok": [
+      "OK": [
         "დიახ"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -1636,8 +1636,11 @@
       "You already tentatively accepted this invitation.": [
         "თქვენ წინასწარ უკვე დაეთანხმეთ მოსაწვევს."
       ],
-      "Your email address is not in the participants list": [
-        "ელფოსტის თქვენი მისამართი მონაწილეთა სიაში არაა"
+      "You cannot respond to ${ BRAND_NAME } invites if you're not on the participants list at the moment.": [
+        "${ BRAND_NAME }-ის მოსაწვევებს ვერ უპასუხებთ, თუ მონაწილეთა სიაში არ ბრძანდებით."
+      ],
+      "Your email address is not in the original participants list.": [
+        "ელფოსტის თქვენი მისამართი საწყის მონაწილეთა სიაში არაა."
       ]
     },
     "Calendar widget banner": {
@@ -3085,6 +3088,11 @@
         "მოვლენის განახლება ${ formattedStart }-დან"
       ]
     },
+    "email_forwarding_2023: Composer email icon": {
+      "Zero-access encrypted. Recipient has disabled end-to-end encryption on their account.": [
+        "დაშიფრულია ნულოვანი წვდომით. მიმღებმა, თავის ანგარიშზე, გამჭოლი დაშიფვრა გამორთო."
+      ]
+    },
     "empty messages: success": {
       "Folder cleared": [
         "საქაღალდე გასუფთავებულია"
@@ -3830,15 +3838,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "ფასიანი Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Mail-ის და Calendar-ის ფასიანი ვერსია"
-      ],
-      "Premium VPN": [
-        "ფასიანი VPN"
-      ],
       "Up to 6 users": [
         "6-მდე მომხმარებელი"
       ]
@@ -4982,6 +4981,9 @@
       ],
       "Copied to clipboard": [
         "დაკოპირდა გაცვლის ბაფერში"
+      ],
+      "Copy the link to clipboard": [
+        "ბმულის ბაფერში კოპირება"
       ],
       "Country code": [
         "ქვეყნის კოდი"
@@ -7374,6 +7376,9 @@
       "Contact group updated": [
         "კონტაქტების ჯგუფი განახლდა"
       ],
+      "Link copied to clipboard": [
+        "ბმული კოპირებულია ბუფერში"
+      ],
       "Password has been set successfully": [
         "პაროლი წარმატებით დადგა"
       ],
@@ -7895,6 +7900,9 @@
         "პაროლის შეცვლის მოთხოვნა დაშვებულია (${ user.Email }). გაქვთ ${ timeRemaining.inHours } საათი, პაროლი შეცვალოთ.",
         "პაროლის შეცვლის მოთხოვნა დაშვებულია (${ user.Email }). გაქვთ ${ timeRemaining.inHours } საათი, პაროლი შეცვალოთ."
       ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "პაროლის შესაცვლელად გადადით მოწყობილობაზე (სესიაში, საიდანაც მოთხოვნა გამოიგაზვნა), რომელზეც შესული ბრძანდებით."
+      ],
       "This permission expires in ${ timeRemaining.inDays } day": [
         "ამ წვდომის ვადა ${ timeRemaining.inDays } დღეში იწურება",
         "ამ წვდომის ვადა ${ timeRemaining.inDays } დღეში იწურება"
@@ -7902,6 +7910,9 @@
       "This permission expires in ${ timeRemaining.inHours } hour": [
         "ამ წვდომის ვადა ${ timeRemaining.inHours } საათში იწურება",
         "ამ წვდომის ვადა ${ timeRemaining.inHours } საათში იწურება"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "ახლა შეგიძლიათ შეცვალოთ პაროლი ანგარიშისთვის ${ boldEmail }, თავისუფლად, შუალედში \"${ boldDaysRemaining }\"."
       ]
     },
     "session_recovery:available:link": {
@@ -7924,6 +7935,11 @@
         "პაროლის შეცვლის გაუქმება"
       ]
     },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "პაროლის შეცვლის პროცესის გასაუქმებლად, შეიყვანეთ მიმდინარე თქვენი პაროლი. სხვა ცვლილებები ძალაში არ შევა."
+      ]
+    },
     "session_recovery:cancellation:notification": {
       "Password reset cancelled": [
         "პაროლის შეცვლა გაუქმდა"
@@ -7932,6 +7948,11 @@
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "გავაუქმო პაროლის შეცვლა?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "პაროლის შეცვლის მოთხოვვნა გაუქმდა (${ user.Email }). თუ ეს მოთხოვნა თქვენ არ გეკუთვნით, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7957,6 +7978,13 @@
       ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "თუ პაროლის შეცვლა თქვენ არ მოგითხოვიათ, გააუქმეთ ეს მოთხოვნა."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "პაროლის შეცვლა მოთხოვნილია (${ user.Email }) პაროლის შეცვლა ${ hoursRemaining } საათში შეგეძლებათ.",
+        "პაროლის შეცვლა მოთხოვნილია (${ user.Email }) პაროლის შეცვლა ${ hoursRemaining } საათში შეგეძლებათ."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "იმისათვის, რომ დავრწმუნდეთ, რომ ნამდვილად თქვენ ცდილობთ პაროლის შეცვლას, ჩვენ, მოთხოვნის შესრულებამდე 72 საათს მოვიცდით. პაროლს შეცვლა შეგიძლიათ შემდეგ დროში: ${ boldTimeLeft }. ${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "მივიღეთ პაროლის შეცვლს მოთხოვნა ${ boldEmail }-სთვის."
@@ -7987,6 +8015,12 @@
       ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } ახლა ხელმისაწვდომია."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "თუ გახვალთ მანამდე, სანამ პაროლს შეცლით, შეიძლება, თქვენს ანგარიშზე წვდომა დაკარგოთ."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "თუ გახვალთ პაროლის შეცლის გარეშე, შეიძლება, თქვენს ანგარიშზე წვდომა დაკარგოთ."
       ],
       "You will be able to reset your password in ${ boldTimeLeft }.": [
         "პაროლის შეცვლის დაწყება ${ boldTimeLeft }-ში შეგეძლებათ."
@@ -8085,9 +8119,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "ჯამში საცავი ${ storageSize }"
-      ],
       "3 TB": [
         "3 ტბ"
       ],
@@ -8109,15 +8140,6 @@
       "Premium early access": [
         "ადრეული წვდომა ახალ ფუნქციებზე"
       ],
-      "Premium Mail and Calendar": [
-        "Mail-ის და Calendar-ის ფასიანი ვერსია"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "ფასიანი Mail, Calender და Drive"
-      ],
-      "Premium VPN": [
-        "ფასიანი VPN"
-      ],
       "Secure cloud storage": [
         "დაცული ღრუბლოვანი საცავი"
       ],
@@ -8129,9 +8151,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "ფასდაკლებები თვეში ერთხელ გადახდის ფასებს ეყრდნობა."
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "ეს გამოწერა მანამდე გაუქმდება ყოველ 2 წელიწადში ერთხელ იმავე სიხშირით, სანამ გააუქმებთ."
       ]
@@ -8185,10 +8204,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "გადაიხადეთ ${ amount } 30 თვისთვის"
-      ],
-      "for ${ n } month": [
-        "${ n } თვით",
-        "${ n } თვით"
       ],
       "Get the deal": [
         "ფასდაკლების მიღება"
@@ -8257,9 +8272,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "ყველა ჩვენი ფასიანი სერვისის მაქსიმალური შეზღუდვებია: 100 ელფოსტის მისამართი, 10 მომხმარებლის დომენის მხარდაჭერა, განუსაზღვრელი Hide-my-email-ის მეტსახელები, კალენდრის გაზიარება, დაშიფრული ღრუბლოვანი საცავი და ფაილების გაზიარება და სხვ."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "შეიცავს 1 თქვენი ელფოსტის დომენის, 10 ელფოსტის მისამართის, 10 Hide-my-email-ის მეტსახელს, კალენდრის გაზიარებას და სხვ."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "შეიცავს 3 თქვენი ელფოსტის დომენის, 15 ელფოსტის მისამართის, შეუზღუდავ Hide-my-email-ის მეტსახელს, კალენდრის გაზიარებას და სხვ."
       ],
@@ -8271,9 +8283,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს შეიცავს ავტომატურ სინქრონიზაციას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "საცავის სივრცე გაზიარებულია ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }-სა და ${ DRIVE_APP_NAME }-ს შორის."
       ]
     },
     "Spotlight": {
@@ -8608,24 +8617,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "ფასიანი Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Mail-ის და Calendar-ის ფასიანი ვერსია"
-      ],
       "Premium Password Manager": [
         "პაროლების მმართველის ფასიანი ვერსია"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "დაიმახსოვრეთ პაროლები დაცულად და შეავსეთ ისინი ავტომატურად ვებგვერდებზე. შეიცავს ულიმიტო პაროლებს, ავტომატურ შევსებას, პაროლების გენერატორს და სხვ."
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "პაროლების მმართველი"
       ]
     },
     "summer2023: Tooltip": {
