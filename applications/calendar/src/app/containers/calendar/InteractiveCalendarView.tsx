@@ -1312,6 +1312,8 @@ const InteractiveCalendarView = ({
                 ...updatePersonalPartActions.map(({ data: { calendarID } }) => calendarID),
             ]);
             await handleUpdateVisibility(uniqueCalendarIDs);
+            // we call the calendar event managers to trigger an ES IndexedDB sync (needed in case you search immediately for the event changes you just saved)
+            void calendarCall(uniqueCalendarIDs);
             calendarsEventsCache.rerender?.();
             handleCreateNotification(texts);
             if (sendActions.length) {
@@ -1329,8 +1331,6 @@ const InteractiveCalendarView = ({
                 const hasChanged = +newStartDate !== +(isDuplicatingEvent ? temporaryEvent.tmpData.initialDate : date);
                 changeDate(newStartDate, hasChanged);
             }
-            // call the calendar event managers to trigger an ES IndexedDB sync (needed in case you search immediately for the event changes you just saved)
-            void calendarCall(uniqueCalendarIDs);
         } catch (e: any) {
             createNotification({ text: e.message, type: 'error' });
         } finally {
@@ -1380,15 +1380,15 @@ const InteractiveCalendarView = ({
                 );
                 upsertSyncMultiActionsResponses(syncActions, syncResponses, calendarsEventCache, getOpenedMailEvents);
             }
-            calendarsEventCache.rerender?.();
-            handleCreateNotification(texts);
             const uniqueCalendarIDs = unique([
                 ...syncActions.map(({ calendarID }) => calendarID),
                 ...updatePartstatActions.map(({ data: { calendarID } }) => calendarID),
                 ...updatePersonalPartActions.map(({ data: { calendarID } }) => calendarID),
             ]);
-            // call the calendar event managers to trigger an ES IndexedDB sync (needed in case you search immediately for the events you just deleted)
+            // we call the calendar event managers to trigger an ES IndexedDB sync (needed in case you search immediately for the events you just deleted)
             void calendarCall(uniqueCalendarIDs);
+            calendarsEventCache.rerender?.();
+            handleCreateNotification(texts);
         } catch (e: any) {
             createNotification({ text: e.message, type: 'error' });
         }
