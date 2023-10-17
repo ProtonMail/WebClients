@@ -3,7 +3,7 @@ import { useRouteMatch } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import {  SidebarList } from '@proton/components';
+import { SidebarList } from '@proton/components';
 
 import { ShareWithKey, usePhotos, usePhotosFeatureFlag } from '../../../../store';
 import { DriveSectionRouteProps } from '../../../sections/Drive/DriveView';
@@ -18,7 +18,7 @@ interface Props {
 
 const DriveSidebarList = ({ shareId, userShares }: Props) => {
     const match = useRouteMatch<DriveSectionRouteProps>();
-    const isForPhotossEnabled = usePhotosFeatureFlag();
+    const isPhotosEnabled = usePhotosFeatureFlag();
     const { hasPhotosShare } = usePhotos();
 
     const [sidebarWidth, setSidebarWidth] = useState('100%');
@@ -39,7 +39,7 @@ const DriveSidebarList = ({ shareId, userShares }: Props) => {
                 />
             ))}
             <DriveSidebarDevices path={match.url} setSidebarLevel={setSidebarLevel} />
-            {isForPhotossEnabled && hasPhotosShare && (
+            {isPhotosEnabled && hasPhotosShare && (
                 <DriveSidebarListItem to="/photos" icon="image" isActive={match.url === '/photos'}>
                     <span className="text-ellipsis" title={c('Link').t`Photos`}>
                         {c('Link').t`Photos`}
