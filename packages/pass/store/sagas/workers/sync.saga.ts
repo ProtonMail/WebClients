@@ -1,13 +1,13 @@
 import { call, put, race, select, take } from 'redux-saga/effects';
 
 import {
+    getUserAccessIntent,
     getUserFeaturesIntent,
-    getUserPlanIntent,
     syncFailure,
     syncIntent,
     syncSuccess,
 } from '@proton/pass/store/actions';
-import { userFeaturesRequest, userPlanRequest } from '@proton/pass/store/actions/requests';
+import { userAccessRequest, userFeaturesRequest } from '@proton/pass/store/actions/requests';
 import { isStateResetAction } from '@proton/pass/store/actions/utils';
 import { withRevalidate } from '@proton/pass/store/actions/with-request';
 import { asIfNotOptimistic } from '@proton/pass/store/optimistic/selectors/select-is-optimistic';
@@ -27,7 +27,7 @@ function* syncWorker(options: WorkerRootSagaOptions) {
     try {
         yield wait(1500);
 
-        yield put(withRevalidate(getUserPlanIntent(userPlanRequest(user.ID))));
+        yield put(withRevalidate(getUserAccessIntent(userAccessRequest(user.ID))));
         yield put(withRevalidate(getUserFeaturesIntent(userFeaturesRequest(user.ID))));
 
         const sync: SynchronizationResult = yield call(
