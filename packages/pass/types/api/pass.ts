@@ -22,6 +22,21 @@ export type ItemMoveMultipleToShareRequest = {
     Items: ItemMoveIndividualToShareRequest[];
 };
 
+export type NewUserInviteCreateRequest = {
+    /* Email of the target user */
+    Email: string;
+    /* Invite target type. 1 = Vault, 2 = Item */
+    TargetType: number;
+    /* Base64 signature of "inviteemail|base64(vaultKey)" signed with the admin's address key */
+    Signature: string;
+    /* ShareRoleID for this invite. The values are in the top level Pass docs. */
+    ShareRoleID: string;
+    /* Invite encrypted item ID (only in case the invite is of type Item) */
+    ItemID?: string | null;
+    /* Expiration time for the share */
+    ExpirationTime?: number | null;
+};
+
 export type ItemCreateRequest = {
     /* Encrypted ID of the VaultKey used to create this item */
     KeyRotation: number;
@@ -135,6 +150,8 @@ export type InviteCreateRequest = {
     TargetType: number;
     /* ShareRoleID for this invite. The values are in the top level Pass docs. */
     ShareRoleID?: string;
+    /* If this invite is generated from a new user invite. ID of the original new user invite */
+    SourceNewUserInviteID?: string | null;
     /* Invite encrypted item ID (only in case the invite is of type Item) */
     ItemID?: string | null;
     /* Expiration time for the share */
@@ -199,6 +216,8 @@ export type ItemRevisionContentsResponse = {
     ItemKey?: string | null;
     /* Revision state. Values: 1 = Active, 2 = Trashed */
     State: number;
+    /* Whether this item is pinned for this user */
+    Pinned?: boolean;
     /* In case this item contains an alias, this is the email address for the alias */
     AliasEmail?: string | null;
     /* Creation time of the item */
@@ -248,8 +267,14 @@ export type ShareGetResponse = {
     TargetID: string;
     /* Members for the target of this share */
     TargetMembers: number;
+    /* Max members allowed for the target of this share */
+    TargetMaxMembers: number;
     /* Whether this share is shared or not */
     Shared: boolean;
+    /* How many invites are pending of acceptance */
+    PendingInvites: number;
+    /* How many new user invites are waiting for an admin to create the proper invite */
+    NewUserInvitesReady: number;
     /* Permissions for this share */
     Permission: number;
     /* ShareRoleID for this share. The values are in the top level Pass docs. */
@@ -355,8 +380,10 @@ export type SharesGetResponse = {
 };
 
 export type InvitesForVaultGetResponse = {
-    /* ShareInvites */
+    /* Invites for this share */
     Invites: VaultInviteData[];
+    /* New user invites for this share */
+    NewUserInvites: NewUserInviteGetResponse[];
 };
 
 export type ActiveSharesInVaultGetResponse = {
@@ -393,6 +420,8 @@ export type UserAccessGetResponse = {
     Plan: PassPlanResponse;
     /* Pending invites for this user */
     PendingInvites: number;
+    /* Number of new user invites ready for an admin to accept */
+    WaitingNewUserInvites: number;
 };
 
 export type UserAccessCheckGetResponse = {
@@ -502,9 +531,13 @@ export type InviteDataForUser = {
     InviterEmail: string;
     /* Invited email */
     InvitedEmail: string;
+    /* Invited AddressID */
+    InvitedAddressID?: string;
     /* Share keys encrypted for the address key of the invitee and signed with the user keys of the inviter */
     Keys: KeyRotationKeyPair[];
     VaultData?: InviteVaultDataForUser;
+    /* True if the invite comes from a NewUserInvite */
+    FromNewUser: boolean;
     /* Creation time for the invite */
     CreateTime: number;
 };
@@ -566,6 +599,29 @@ export type VaultInviteData = {
     CreateTime: number;
     /* Modify time for the invite */
     ModifyTime: number;
+};
+
+export type NewUserInviteGetResponse = {
+    /* ID of the invite */
+    NewUserInviteID?: string;
+    /* State of the invite. <ul><li>1 - Waiting for user creation.</li><li>2 - User has been created and invite can be created</li></ul> */
+    State?: number;
+    /* Type of target for this invite */
+    TargetType?: number;
+    /* TargetID for this invite */
+    TargetID?: string;
+    /* Share role for this invite */
+    ShareRoleID?: string;
+    /* Invited email */
+    InvitedEmail?: string;
+    /* Email of the inviter */
+    InviterEmail?: string;
+    /* Base64 encoded signature with the inviter email address keys */
+    Signature?: string;
+    /* Creation time for the invite */
+    CreateTime?: number;
+    /* Last modification time for the invite */
+    ModifyTime?: number;
 };
 
 export type PassPlanResponse = {
@@ -718,6 +774,12 @@ export type ApiResponse<Path extends string, Method extends ApiMethod> = Path ex
     ? Method extends `get`
         ? { Code?: ResponseCodeSuccess; Revisions?: ItemRevisionListResponse }
         : never
+    : Path extends `pass/v1/share/${string}/item/${string}/pin`
+    ? Method extends `post`
+        ? { Code?: ResponseCodeSuccess; Item?: ItemRevisionContentsResponse }
+        : Method extends `delete`
+        ? { Code?: ResponseCodeSuccess; Item?: ItemRevisionContentsResponse }
+        : never
     : Path extends `pass/v1/share/${string}/item/${string}/lastuse`
     ? Method extends `put`
         ? { Code?: ResponseCodeSuccess; Revision?: ItemRevisionContentsResponse }
@@ -740,6 +802,10 @@ export type ApiResponse<Path extends string, Method extends ApiMethod> = Path ex
         : Method extends `post`
         ? { Code?: ResponseCodeSuccess; Item?: ItemRevisionContentsResponse }
         : Method extends `delete`
+        ? { Code?: ResponseCodeSuccess }
+        : never
+    : Path extends `pass/v1/share/${string}/invite/new_user`
+    ? Method extends `post`
         ? { Code?: ResponseCodeSuccess }
         : never
     : Path extends `pass/v1/share/${string}/invite/${string}/reminder`
@@ -908,6 +974,12 @@ export type ApiRequest<Path extends string, Method extends ApiMethod> = Path ext
     ? Method extends `get`
         ? never
         : never
+    : Path extends `pass/v1/share/${string}/item/${string}/pin`
+    ? Method extends `post`
+        ? never
+        : Method extends `delete`
+        ? never
+        : never
     : Path extends `pass/v1/share/${string}/item/${string}/lastuse`
     ? Method extends `put`
         ? UpdateItemLastUseTimeRequest
@@ -931,6 +1003,10 @@ export type ApiRequest<Path extends string, Method extends ApiMethod> = Path ext
         ? ItemCreateRequest
         : Method extends `delete`
         ? ItemsToSoftDeleteRequest
+        : never
+    : Path extends `pass/v1/share/${string}/invite/new_user`
+    ? Method extends `post`
+        ? NewUserInviteCreateRequest
         : never
     : Path extends `pass/v1/share/${string}/invite/${string}/reminder`
     ? Method extends `post`
