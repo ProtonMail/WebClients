@@ -125,17 +125,6 @@ export const getCustomFields = (included: boolean = false): PlanCardFeatureDefin
     };
 };
 
-export const getSharing = (included: boolean = false): PlanCardFeatureDefinition => {
-    return {
-        text: included
-            ? c('new_plans: feature').t`Vault and Item sharing (coming soon)`
-            : c('new_plans: feature').t`Vault and Item sharing`,
-        included,
-        icon: 'arrow-up-from-square',
-        status: 'coming-soon',
-    };
-};
-
 const getVaultSharingText = (n: number) => {
     return c('new_plans: feature').ngettext(
         msgid`Vault sharing (up to ${n} person)`,
@@ -236,6 +225,22 @@ export const getPassFeatures = (): PlanCardFeature[] => {
             },
         },
         {
+            name: 'vault-and-item-sharing',
+            plans: {
+                [PLANS.FREE]: getVaultSharing(3),
+                [PLANS.BUNDLE]: getVaultSharing(10),
+                [PLANS.MAIL]: getVaultSharing(3),
+                [PLANS.VPN]: getVaultSharing(3),
+                [PLANS.DRIVE]: getVaultSharing(3),
+                [PLANS.PASS_PLUS]: getVaultSharing(10),
+                [PLANS.FAMILY]: getVaultSharing(10),
+                [PLANS.MAIL_PRO]: getVaultSharing(3),
+                [PLANS.BUNDLE_PRO]: getVaultSharing(10),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
+            },
+        },
+        {
             name: '2fa-authenticator',
             plans: {
                 [PLANS.FREE]: get2FAAuthenticator(),
@@ -263,22 +268,6 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.FAMILY]: getCustomFields(true),
                 [PLANS.MAIL_PRO]: getCustomFields(),
                 [PLANS.BUNDLE_PRO]: getCustomFields(true),
-                [PLANS.VPN_PRO]: null,
-                [PLANS.VPN_BUSINESS]: null,
-            },
-        },
-        {
-            name: 'vault-and-item-sharing',
-            plans: {
-                [PLANS.FREE]: getSharing(),
-                [PLANS.BUNDLE]: getSharing(true),
-                [PLANS.MAIL]: getSharing(),
-                [PLANS.VPN]: getSharing(),
-                [PLANS.DRIVE]: getSharing(),
-                [PLANS.PASS_PLUS]: getSharing(true),
-                [PLANS.FAMILY]: getSharing(true),
-                [PLANS.MAIL_PRO]: getSharing(),
-                [PLANS.BUNDLE_PRO]: getSharing(true),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
             },
