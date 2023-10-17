@@ -53,7 +53,7 @@ const Step2 = ({
                     </div>
                     <div className="pb-4 text-center m-auto w-full">{img}</div>
                     <div className="text-center pt-7 md:pt-0" role="alert">
-                        <div className="inline-block w70">
+                        <div className="inline-block w-7/10">
                             <LoadingTextStepper steps={steps} />
                         </div>
                     </div>

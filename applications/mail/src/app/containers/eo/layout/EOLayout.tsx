@@ -66,28 +66,28 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
                 <div className="mx-auto mt-8">
                     <Href
                         href={getStaticURL('/mail')}
-                        className="inline-block m-0 md:mx-2 on-tiny-mobile-w25"
+                        className="inline-block m-0 md:mx-2 w-1/4 sm:w-auto"
                         title={MAIL_APP_NAME}
                     >
                         <MailLogo variant="glyph-only" size={size} />
                     </Href>
                     <Href
                         href={getStaticURL('/calendar')}
-                        className="inline-block m-0 md:mx-2 on-tiny-mobile-w25"
+                        className="inline-block m-0 md:mx-2 w-1/4 sm:w-auto"
                         title={CALENDAR_APP_NAME}
                     >
                         <CalendarLogo variant="glyph-only" size={size} />
                     </Href>
                     <Href
                         href={getStaticURL('/drive')}
-                        className="inline-block m-0 md:mx-2 on-tiny-mobile-w25"
+                        className="inline-block m-0 md:mx-2 w-1/4 sm:w-auto"
                         title={DRIVE_APP_NAME}
                     >
                         <DriveLogo variant="glyph-only" size={size} />
                     </Href>
                     <Href
                         href="https://protonvpn.com"
-                        className="inline-block m-0 md:mx-2 on-tiny-mobile-w25"
+                        className="inline-block m-0 md:mx-2 w-1/4 sm:w-auto"
                         title={VPN_APP_NAME}
                     >
                         <VpnLogo variant="glyph-only" size={size} />

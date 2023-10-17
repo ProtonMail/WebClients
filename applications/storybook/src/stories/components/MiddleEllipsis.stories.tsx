@@ -17,4 +17,4 @@ const textToEllipsis = `mySuperLoooooooooooooooooooooooooooooooooooooooooooooooo
 
 export const Basic = () => <MiddleEllipsis text={textToEllipsis} />;
 export const Title = () => <MiddleEllipsis displayTitle={false} text={textToEllipsis} />;
-export const Classes = () => <MiddleEllipsis className="w50" text={textToEllipsis} />;
+export const Classes = () => <MiddleEllipsis className="w-1/2" text={textToEllipsis} />;

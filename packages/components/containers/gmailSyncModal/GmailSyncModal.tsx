@@ -87,7 +87,7 @@ const GmailSyncModal = ({ onSyncCallback, onSyncSkipCallback, noSkip, ...rest }:
                         )}
                     </div>
                 </div>
-                <div className="no-mobile no-tablet w60">
+                <div className="no-mobile no-tablet w-6/10">
                     <GmailSyncModalAnimation />
                 </div>
             </ModalContent>

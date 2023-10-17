@@ -60,7 +60,11 @@ export const DeviceNameCell = ({ item }: { item: DeviceItem }) => {
 
 export const ModifiedCell = ({ item }: { item: DriveItem }) => {
     return (
-        <TableCell className="flex flex-align-items-center m-0 w15" data-testid="column-modified">
+        <TableCell
+            className="flex flex-align-items-center m-0 w-custom"
+            style={{ '--w-custom': '15%' }}
+            data-testid="column-modified"
+        >
             <TimeCell time={item.fileModifyTime} />
         </TableCell>
     );
@@ -68,7 +72,11 @@ export const ModifiedCell = ({ item }: { item: DriveItem }) => {
 
 export const ModifiedCellDevice = ({ item }: { item: DeviceItem }) => {
     return (
-        <TableCell className="flex flex-align-items-center m-0 w15" data-testid="column-modified">
+        <TableCell
+            className="flex flex-align-items-center m-0 w-custom"
+            style={{ '--w-custom': '15%' }}
+            data-testid="column-modified"
+        >
             <TimeCell time={item.modificationTime} />
         </TableCell>
     );
@@ -78,7 +86,8 @@ export function SizeCell({ item }: { item: DriveItem | TrashItem }) {
     const { isDesktop } = useActiveBreakpoint();
     return (
         <TableCell
-            className={clsx(['flex flex-align-items-center m-0', isDesktop ? 'w10' : 'w15'])}
+            className="flex flex-align-items-center m-0 w-custom"
+            style={{ '--w-custom': isDesktop ? '10%' : '15%' }}
             data-testid="column-size"
         >
             {item.isFile ? <SizeCellBase size={item.size} /> : '-'}
@@ -88,7 +97,7 @@ export function SizeCell({ item }: { item: DriveItem | TrashItem }) {
 
 export const DeletedCell = ({ item }: { item: TrashItem }) => {
     return (
-        <TableCell className="m-0 w25" data-testid="column-trashed">
+        <TableCell className="m-0 w-1/4" data-testid="column-trashed">
             <TimeCell time={item.trashed || item.fileModifyTime} />
         </TableCell>
     );
@@ -96,7 +105,7 @@ export const DeletedCell = ({ item }: { item: TrashItem }) => {
 
 export const CreatedCell = ({ item }: { item: TrashItem }) => {
     return (
-        <TableCell className="m-0 w15" data-testid="column-share-created">
+        <TableCell className="m-0 w-custom" style={{ '--w-custom': '15%' }} data-testid="column-share-created">
             {item.shareUrl?.createTime && <TimeCell time={item.shareUrl.createTime} />}
         </TableCell>
     );
@@ -107,7 +116,7 @@ export const LocationCell = ({ item }: { item: TrashItem | SharedLinkItem }) => 
     const shareId = item.rootShareId;
 
     return (
-        <TableCell className={clsx(['m-0', isDesktop ? 'w20' : 'w25'])} data-testid="column-location">
+        <TableCell className={clsx(['m-0', isDesktop ? 'w-1/5' : 'w-1/4'])} data-testid="column-location">
             <LocationCellBase shareId={shareId} parentLinkId={item.parentLinkId} />
         </TableCell>
     );
@@ -115,7 +124,7 @@ export const LocationCell = ({ item }: { item: TrashItem | SharedLinkItem }) => 
 
 export const AccessCountCell = ({ item }: { item: TrashItem }) => {
     return (
-        <TableCell className="m-0 w15" data-testid="column-num-accesses">
+        <TableCell className="m-0 w-custom" style={{ '--w-custom': '15%' }} data-testid="column-num-accesses">
             {formatAccessCount(item.shareUrl?.numAccesses)}
         </TableCell>
     );
@@ -143,7 +152,7 @@ export const ExpirationCell = ({ item }: { item: TrashItem }) => {
     }
 
     return (
-        <TableCell className="m-0 w20" data-testid="column-share-expires">
+        <TableCell className="m-0 w-1/5" data-testid="column-share-expires">
             {expiration}
         </TableCell>
     );

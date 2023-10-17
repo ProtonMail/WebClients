@@ -198,7 +198,7 @@ const UploadDragDrop = ({
             onDragOver={handleDragOver}
             onDrop={preventDefaultEvent}
         >
-            <img className="visibility-hidden absolute h0 w0" src={dragdropImageSvg} alt="" aria-hidden="true" />
+            <img className="visibility-hidden absolute h0 w-0" src={dragdropImageSvg} alt="" aria-hidden="true" />
             {children}
             {overlayEnabled && overlayIsVisible && (
                 <div

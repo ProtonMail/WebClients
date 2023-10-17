@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { c } from 'ttag';
 
 import { Info, TableCell } from '@proton/components/components';
@@ -11,6 +13,7 @@ type HeaderCellItem = {
     key: string;
     node: string | React.JSX.Element;
     className?: string;
+    style?: React.CSSProperties;
 };
 
 const UsersAndAddressesSectionHeader = ({ mode }: { mode: UserManagementMode }) => {
@@ -27,7 +30,8 @@ const UsersAndAddressesSectionHeader = ({ mode }: { mode: UserManagementMode }) 
                 </span>
             </div>
         ),
-        className: 'w15',
+        className: 'w-custom',
+        style: { '--w-custom': '15%' },
     };
     const addressTitle =
         mode === UserManagementMode.VPN_B2B
@@ -35,7 +39,7 @@ const UsersAndAddressesSectionHeader = ({ mode }: { mode: UserManagementMode }) 
             : c('Title header for members table').t`Addresses`;
 
     const headerCells: HeaderCellItem[] = [
-        { key: 'name', node: c('Title header for members table').t`Name`, className: 'w30' },
+        { key: 'name', node: c('Title header for members table').t`Name`, className: 'w-3/10' },
         mode === UserManagementMode.DEFAULT && roleCell,
         {
             key: 'addresses',
@@ -46,7 +50,7 @@ const UsersAndAddressesSectionHeader = ({ mode }: { mode: UserManagementMode }) 
                     </span>
                 </>
             ),
-            className: 'w25',
+            className: 'w-1/4',
         },
         mode === UserManagementMode.VPN_B2B && roleCell,
         mode === UserManagementMode.DEFAULT && {
@@ -59,9 +63,9 @@ const UsersAndAddressesSectionHeader = ({ mode }: { mode: UserManagementMode }) 
                     >{c('Title header for members table').t`Features`}</span>
                 </>
             ),
-            className: 'w25',
+            className: 'w-1/4',
         },
-        { key: 'actions', node: '', className: 'w15' },
+        { key: 'actions', node: '', className: 'w-custom', style: { '--w-custom': '15%' } },
     ].filter(isTruthy);
 
     return (

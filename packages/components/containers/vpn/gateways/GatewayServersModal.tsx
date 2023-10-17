@@ -192,23 +192,38 @@ const GatewayServersModal = ({
                         <thead>
                             <tr>
                                 <TableCell key="country" type="header">{c('Header').t`Country`}</TableCell>
-                                <TableCell key="server" type="header" className="w10">
+                                <TableCell key="server" type="header" className="w-1/10">
                                     {c('Header').t`Server`}
                                 </TableCell>
-                                <TableCell key="status" type="header" className="w15">
+                                <TableCell
+                                    key="status"
+                                    type="header"
+                                    className="w-custom"
+                                    style={{ '--w-custom': '15%' }}
+                                >
                                     {c('Header').t`Status`}
                                 </TableCell>
                                 {showIP && (
-                                    <TableCell key="ip" type="header" className="w15">
+                                    <TableCell
+                                        key="ip"
+                                        type="header"
+                                        className="w-custom"
+                                        style={{ '--w-custom': '15%' }}
+                                    >
                                         {c('Header').t`IP address`}
                                     </TableCell>
                                 )}
                                 {showLoad && (
-                                    <TableCell key="load" type="header" className="w15">
+                                    <TableCell
+                                        key="load"
+                                        type="header"
+                                        className="w-custom"
+                                        style={{ '--w-custom': '15%' }}
+                                    >
                                         {c('Header').t`Server load`}
                                     </TableCell>
                                 )}
-                                <TableCell key="manage" type="header" className="w10">
+                                <TableCell key="manage" type="header" className="w-1/10">
                                     &nbsp;
                                 </TableCell>
                             </tr>
@@ -237,7 +252,11 @@ const GatewayServersModal = ({
                                                       ]
                                                           .filter(Boolean)
                                                           .map((ip) => (
-                                                              <div key={'ip-' + ip} className="text-ellipsis" title={ip || undefined}>
+                                                              <div
+                                                                  key={'ip-' + ip}
+                                                                  className="text-ellipsis"
+                                                                  title={ip || undefined}
+                                                              >
                                                                   {ip}
                                                               </div>
                                                           ))}

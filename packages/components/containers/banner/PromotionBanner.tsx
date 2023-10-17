@@ -66,12 +66,12 @@ const PromotionBanner = ({
                             return 'm-2 pl-4 w-full';
                         }
                     })(),
-                    loading && 'w33'
+                    loading && 'w-1/3'
                 )}
             >
                 {loading ? (
                     <span
-                        className={clsx('bg-promotion-loading', contentCentered ? 'w-full' : 'w33')}
+                        className={clsx('bg-promotion-loading', contentCentered ? 'w-full' : 'w-1/3')}
                         data-testid="promotion-banner:loading"
                     />
                 ) : (
@@ -82,7 +82,7 @@ const PromotionBanner = ({
                                 {description}
                             </div>
                         )}
-                        {cta && <div className="flex-item-noshrink ml-2 max-w50 text-right">{cta}</div>}
+                        {cta && <div className="flex-item-noshrink ml-2 max-w-1/2 text-right">{cta}</div>}
                     </>
                 )}
             </div>

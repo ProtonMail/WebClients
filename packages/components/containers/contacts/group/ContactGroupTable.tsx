@@ -20,7 +20,7 @@ const ContactGroupTable = ({ contactEmails, onDelete }: Props) => {
                         <TableCell type="header">{c('Table header').t`Name`}</TableCell>
                         <TableCell type="header">{c('Table header').t`Address`}</TableCell>
                         {onDelete ? (
-                            <TableCell type="header" className="w20">
+                            <TableCell type="header" className="w-1/5">
                                 {c('Table header').t`Action`}
                             </TableCell>
                         ) : null}

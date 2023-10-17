@@ -75,7 +75,7 @@ const StepSuccess = () => {
         <ModalTwo {...modalProps} size="xlarge">
             <ModalTwoContent>
                 <div className="text-center mb-8" data-testid="StepSuccess:Modal">
-                    <img src={importStartedSvg} alt="" className="max-w80" />
+                    <img src={importStartedSvg} alt="" className="max-w-4/5" />
                     <h3>{c('Info').t`Import in progress`}</h3>
                     <div className="mb-4">{c('Info').t`Importing your data from ${fromEmail} to ${toEmail}.`}</div>
                     <div>{c('Info').t`We'll notify you when the import is done.`}</div>
