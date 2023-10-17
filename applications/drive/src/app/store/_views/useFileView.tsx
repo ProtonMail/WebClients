@@ -92,7 +92,7 @@ function useFileViewBase(
             setContentsMimeType(SupportedMimeTypes.jpg);
             try {
                 const hdThumbnail = await getPreviewThumbnail(abortSignal, shareId, linkId);
-                setContents(await hdThumbnail.contents);
+                setContents(hdThumbnail);
             } catch {
                 setContents(undefined);
             }
