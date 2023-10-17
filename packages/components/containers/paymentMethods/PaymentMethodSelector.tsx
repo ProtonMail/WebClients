@@ -56,7 +56,7 @@ const PaymentMethodSelector = ({ method, lastUsedMethod, options, onChange, forc
             id="select-method"
             value={method}
             onChange={({ value }) => onChange(value)}
-            className={clsx(narrow && 'wauto')}
+            className={clsx(narrow && 'w-auto')}
             size={size}
             data-testid="payment-method-selector"
         >

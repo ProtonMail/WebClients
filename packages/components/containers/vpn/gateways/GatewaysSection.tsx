@@ -126,7 +126,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                     <div className="m-5 mt-6" style={{ minWidth: '38px' }}>
                         <img
                             key="gateway-upgrade-image"
-                            className="hauto"
+                            className="h-auto"
                             src={gatewaySvg}
                             alt=""
                             width={96}
