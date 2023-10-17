@@ -80,7 +80,7 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
                 <p className="text-keep-space">{labelCount ? counterMessage : null}</p>
                 <hr className="my-8" />
                 <div className="text-rg">
-                    <img className="hauto" src={envelope} alt={c('Alternative text for welcome image').t`Welcome`} />
+                    <img className="h-auto" src={envelope} alt={c('Alternative text for welcome image').t`Welcome`} />
                 </div>
             </Container>
         </>

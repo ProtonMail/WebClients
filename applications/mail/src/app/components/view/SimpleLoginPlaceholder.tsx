@@ -25,7 +25,7 @@ const SimpleLoginPlaceholder = () => {
                 <img
                     src={connectSimpleLoginSvg}
                     alt={c('Alternative text for conversation image').t`Conversation`}
-                    className="hauto"
+                    className="h-auto"
                 />
             </div>
             <h2 className="text-bold">{c('Title').t`Don't give spam a chance`}</h2>

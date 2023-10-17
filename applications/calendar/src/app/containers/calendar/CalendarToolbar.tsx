@@ -55,7 +55,7 @@ const CalendarToolbar = ({
                         <div className="flex flex-nowrap no-mobile no-tablet">
                             <TimeZoneSelector
                                 data-testid="calendar-view:time-zone-dropdown"
-                                className="wauto toolbar-button"
+                                className="w-auto toolbar-button"
                                 date={date}
                                 timezone={timezone}
                                 onChange={setTzid}

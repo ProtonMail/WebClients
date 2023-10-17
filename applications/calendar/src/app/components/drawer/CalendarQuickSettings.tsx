@@ -70,7 +70,7 @@ const CalendarQuickSettings = ({ onBackFromSearch }: Props) => {
                             view={calendarUserSettings.ViewPreference}
                             loading={loadingView}
                             onChange={(ViewPreference) => withLoadingView(handleChange({ ViewPreference }))}
-                            className="quickSettingsSectionRow-select wauto"
+                            className="quickSettingsSectionRow-select w-auto"
                             unstyledSelect
                         />
                     }
@@ -79,7 +79,7 @@ const CalendarQuickSettings = ({ onBackFromSearch }: Props) => {
                 <QuickSettingsSectionRow
                     label={c('Label').t`Week start`}
                     action={
-                        <WeekStartSelector className="quickSettingsSectionRow-select wauto" unstyledSelect shortText />
+                        <WeekStartSelector className="quickSettingsSectionRow-select w-auto" unstyledSelect shortText />
                     }
                 />
 
@@ -109,7 +109,7 @@ const CalendarQuickSettings = ({ onBackFromSearch }: Props) => {
                         <PrimaryTimezoneSelector
                             id="primary-timezone"
                             calendarUserSettings={calendarUserSettings}
-                            className="wauto"
+                            className="w-auto"
                             abbreviatedTimezone="city"
                             unstyledSelect
                             selectMaxHeight="20rem"
@@ -133,7 +133,7 @@ const CalendarQuickSettings = ({ onBackFromSearch }: Props) => {
                             <SecondaryTimezoneSelector
                                 id="secondary-timezone"
                                 calendarUserSettings={calendarUserSettings}
-                                className="wauto"
+                                className="w-auto"
                                 abbreviatedTimezone="city"
                                 unstyledSelect
                                 selectMaxHeight="20rem"

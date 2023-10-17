@@ -111,7 +111,7 @@ const InviteSendEmail = () => {
             <div className="flex gap-2 flex-nowrap flex-align-items-end on-mobile-flex-column rounded">
                 <div className="flex-item-fluid-auto">
                     <div
-                        className="addresses-wrapper field hauto flex gap-2 px-2"
+                        className="addresses-wrapper field h-auto flex gap-2 px-2"
                         onClick={() => {
                             anchorRef.current?.focus();
                         }}

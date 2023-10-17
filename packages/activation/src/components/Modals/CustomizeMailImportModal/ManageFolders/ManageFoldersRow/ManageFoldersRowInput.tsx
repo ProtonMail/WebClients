@@ -66,7 +66,7 @@ const ManageFolderRowInput = ({
             }}
             dense
             error={error}
-            className="hauto"
+            className="h-auto"
         />
     );
 };
