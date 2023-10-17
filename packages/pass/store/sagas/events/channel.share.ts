@@ -79,6 +79,7 @@ const onShareEvent = (shareId: string) =>
                             shareRoleId: share.shareRoleId,
                             targetId: share.targetId,
                             targetMembers: share.targetMembers,
+                            targetMaxMembers: share.targetMaxMembers,
                             targetType: share.targetType,
                             vaultId: share.vaultId,
                         },
