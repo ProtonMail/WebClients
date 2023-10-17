@@ -6,7 +6,7 @@ export type InviteResendIntent = { shareId: string; inviteId: string };
 export type InviteRemoveIntent = { shareId: string; inviteId: string };
 export type InviteRejectIntent = { inviteToken: string };
 export type InviteAcceptIntent = {
-    invitedEmail: string;
+    invitedAddressId: string;
     inviteKeys: KeyRotationKeyPair[];
     inviterEmail: string;
     inviteToken: string;

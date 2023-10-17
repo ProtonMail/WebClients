@@ -31,20 +31,23 @@ describe('openShare crypto process', () => {
         });
 
         const encryptedShare: ShareGetResponse = {
-            ShareID: shareId,
-            VaultID: vaultId,
             AddressID: addressId,
-            TargetType: ShareType.Vault,
-            TargetID: vaultId,
-            Permission: permission,
             Content: vault.Content,
-            ContentKeyRotation: 1,
             ContentFormatVersion: CONTENT_FORMAT_VERSION,
+            ContentKeyRotation: 1,
             CreateTime: createTime,
-            Primary: false,
+            NewUserInvitesReady: 0,
             Owner: true,
-            TargetMembers: 0,
+            PendingInvites: 0,
+            Permission: permission,
+            Primary: false,
             Shared: false,
+            ShareID: shareId,
+            TargetID: vaultId,
+            TargetMaxMembers: 2,
+            TargetMembers: 0,
+            TargetType: ShareType.Vault,
+            VaultID: vaultId,
         };
 
         const share = await openShare({ type: ShareType.Vault, encryptedShare, vaultKey });
