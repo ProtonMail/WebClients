@@ -419,7 +419,7 @@ const CalendarContainerView = ({
     } = useSpotlightOnFeature(FeatureCode.CalendarEncryptedSearchSpotlight, !isNarrow && !isWelcomeFlow, {
         alpha: Date.UTC(2023, 8, 13, 12),
         beta: Date.UTC(2023, 8, 20, 12),
-        default: Date.UTC(2023, 8, 27, 12),
+        default: Date.UTC(2023, 9, 19, 12),
     });
     const shouldShowCalendarSearchSpotlight = useSpotlightShow(showSearchSpotlight);
 
