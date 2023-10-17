@@ -64,13 +64,13 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         shareId: string;
     }) => Promise<InviteCreateRequest>;
     acceptVaultInvite: (data: {
-        invitedEmail: string;
+        invitedAddressId: string;
         inviteKeys: KeyRotationKeyPair[];
         inviterPublicKeys: string[];
     }) => Promise<InviteAcceptRequest>;
     readVaultInvite: (data: {
         encryptedVaultContent: string;
-        invitedEmail: string;
+        invitedAddressId: string;
         inviteKey: KeyRotationKeyPair;
         inviterPublicKeys: string[];
     }) => Promise<Uint8Array>;
