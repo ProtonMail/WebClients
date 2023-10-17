@@ -173,14 +173,23 @@
       "Importing": [
         "正在匯入"
       ],
+      "Join shared vault": [
+        "加入共享的保管庫"
+      ],
       "Learn more": [
         "瞭解詳情"
       ],
       "Leave": [
         "離開"
       ],
+      "Leave vault": [
+        "離開保管庫"
+      ],
       "Lock extension": [
         "鎖定擴充"
+      ],
+      "Manage access": [
+        "管理存取權限"
       ],
       "Manually sync your data": [
         "手動同步您的資料"
@@ -221,11 +230,20 @@
       "Regenerate": [
         "重新生成"
       ],
+      "Reject invitation": [
+        "拒絕邀請"
+      ],
       "Reload extension": [
         "重新整理擴充功能"
       ],
+      "Remove access": [
+        "移除存取權限"
+      ],
       "Request a feature": [
         "提出新功能建議"
+      ],
+      "Resend invitation": [
+        "重新發送邀請"
       ],
       "Restore item": [
         "還原項目"
@@ -238,6 +256,12 @@
       ],
       "Saving": [
         "儲存中..."
+      ],
+      "See members": [
+        "檢視成員"
+      ],
+      "Send invite": [
+        "寄送邀請"
       ],
       "Send us a message": [
         "傳送訊息給我們"
@@ -268,6 +292,9 @@
       ],
       "Submitting report...": [
         "正在送出報告..."
+      ],
+      "Transfer ownership": [
+        "轉移所有權"
       ],
       "Try again": [
         "再試一次"
@@ -328,6 +355,9 @@
       "Cannot create alias (${ error }).": [
         "無法創建別名 (${ error })。"
       ],
+      "Could not leave vault.": [
+        "無法離開保管庫。"
+      ],
       "Could not open created vault": [
         "無法開啟被新增的保管庫"
       ],
@@ -367,6 +397,9 @@
       "Error reporting problem": [
         "回報錯誤問題"
       ],
+      "Failed resending invite.": [
+        "重新發送邀請時失敗。"
+      ],
       "File could not be parsed": [
         "檔案無法剖析"
       ],
@@ -381,6 +414,18 @@
       ],
       "Invalid url": [
         "無效的網址"
+      ],
+      "Invitation could not be accepted": [
+        "邀請函無法被接受"
+      ],
+      "Invitation could not be rejected": [
+        "邀請函無法被回絕"
+      ],
+      "Invite creation failed.": [
+        "邀請創建失敗"
+      ],
+      "Invite successfully sent": [
+        "邀請已成功傳送"
       ],
       "Item content cannot exceed 40KB": [
         "項目無法超越40KB"
@@ -531,6 +576,12 @@
       "${ count } items": [
         "${ count } 個項目"
       ],
+      "${ itemCount } items": [
+        "${ itemCount }項目"
+      ],
+      "${ memberCount } members": [
+        "${ memberCount } 位成員"
+      ],
       "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
         "${ PASS_APP_NAME } 只會匯入登入和附註。目前不支援護照、附件與其他。"
       ],
@@ -545,6 +596,9 @@
       ],
       "${ trialDaysLeft } days left": [
         "剩下${ trialDaysLeft }天"
+      ],
+      "${ vault.count } items": [
+        "${ vault.count }項目"
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "有${ PASS_APP_NAME }可用更新。更新可使用最新的功能及錯誤修復。"
@@ -575,6 +629,9 @@
       ],
       "Autosaved on ${ submissionURL }": [
         "於${ submissionURL }自動存取"
+      ],
+      "Can grant and revoke access to this vault, and delete it.": [
+        "可取得及撤銷此保管庫，及刪除。"
       ],
       "Check out all the exclusive features that are available to you for a limited time.": [
         "查看限時提供給您的獨家功能"
@@ -711,6 +768,9 @@
       "Loading...": [
         "載入中‧‧‧"
       ],
+      "me": [
+        "我"
+      ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "超越密碼管理器，${ PASS_APP_NAME }保護密碼及私人的電子郵件地址及電子郵件別名。使用與${ MAIL_APP_NAME }相同技術，您的資料使用點到點加密，只有您能存取。"
       ],
@@ -728,6 +788,9 @@
       ],
       "Open the Extensions menu": [
         "開啟擴充功能選單"
+      ],
+      "Owner": [
+        "擁有者"
       ],
       "Password copied": [
         "已複製密碼"
@@ -1557,6 +1620,9 @@
       "PGP encrypted export file requires passphrase": [
         "PGP加密匯出需要驗證短語"
       ],
+      "Please enter a valid email address": [
+        "請輸入一個有效的電子郵件地址"
+      ],
       "Please log back in": [
         "請重新登入"
       ],
@@ -1598,6 +1664,9 @@
       ],
       "You must select at least one mailbox": [
         "你必須至少選擇一個收件夾"
+      ],
+      "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
+        "您不再擁有保管庫的存取權。若要重新加入，您需要新的邀請。"
       ],
       "Your plan does not allow you to create more aliases": [
         "您的訂閱無法創建更多的別名"

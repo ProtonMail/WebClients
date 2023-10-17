@@ -1290,13 +1290,55 @@
         "${ mailPlus }: den integritetsprioriterade e-post och kalenderlösningen för dina vardagliga kommunikationsbehov."
       ]
     },
+    "bf2023: Action": {
+      "Add ${ PASS_APP_NAME }": [
+        "Lägg till ${ PASS_APP_NAME }"
+      ],
+      "Add ${ plan } for ${ price } per month": [
+        "Lägg till ${ plan } för ${ price } per månad"
+      ],
+      "Remove": [
+        "Ta bort"
+      ],
+      "Remove ${ PASS_APP_NAME }": [
+        "Ta bort ${ PASS_APP_NAME }"
+      ]
+    },
+    "bf2023: Deal details": {
+      "${ storageSize } storage": [
+        "${ storageSize } lagringsutrymme"
+      ],
+      "1 user": [
+        "1 användare"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 användare"
+      ],
+      "Ad-blocker and malware protection": [
+        "Annonsblockerare och skydd mot skadlig kod"
+      ],
+      "Extended version history": [
+        "Utökad versionshistorik"
+      ],
+      "High speed streaming": [
+        "Höghastighetsstreaming"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Store up to 200 versions of each file for up to 10 years.": [
+        "Lagra upp till 200 versioner av varje fil i upp till 10 år."
+      ]
+    },
     "Billing cycle": {
       "${ n } month": [
         "${ n } månad",
         "${ n } månader"
-      ],
-      "Renews automatically for ${ renewPrice }, for ${ renewalLength }": [
-        "Förnyas automatiskt för ${ renewPrice }, i ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -1837,6 +1879,11 @@
       ],
       "matches": [
         "matchar"
+      ]
+    },
+    "Condition label": {
+      "If": [
+        "Om"
       ]
     },
     "Confirm modal title": {
@@ -3146,6 +3193,274 @@
         "E-postverifiering skickat till ${ address }"
       ]
     },
+    "email_forwarding_2023: Action": {
+      "Accept": [
+        "Acceptera"
+      ],
+      "Add condition": [
+        "Lägg till villkor"
+      ],
+      "Add forwarding rule": [
+        "Lägg till regel för vidarebefordran"
+      ],
+      "Back": [
+        "Tillbaka"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Decline": [
+        "Avböj"
+      ],
+      "Delete": [
+        "Ta bort"
+      ],
+      "Delete this condition": [
+        "Ta bort detta villkor"
+      ],
+      "Edit conditions": [
+        "Redigera villkor"
+      ],
+      "Next": [
+        "Nästa"
+      ],
+      "Pause": [
+        "Pausa"
+      ],
+      "Re-enable": [
+        "Aktivera igen"
+      ],
+      "Re-send confirmation email": [
+        "Skicka e-postbekräftelse igen"
+      ],
+      "Remove “${ value }”": [
+        "Ta bort “${ value }“"
+      ],
+      "Request confirmation": [
+        "Begär bekräftelse"
+      ],
+      "Resume": [
+        "Återuppta"
+      ],
+      "Save": [
+        "Spara"
+      ],
+      "Send confirmation email": [
+        "Skicka e-postbekräftelse"
+      ],
+      "Set up email forwarding": [
+        "Ställ in vidarebefordran av e-post"
+      ]
+    },
+    "email_forwarding_2023: Description": {
+      "Unlock email forwarding to easily manage incoming information and more premium features when you upgrade.": [
+        "Lås upp vidarebefordran av e-post för att enkelt hantera inkommande information och fler premiumfunktioner när du uppgraderar."
+      ]
+    },
+    "email_forwarding_2023: Error": {
+      "Condition incomplete, please add a token": [
+        "Villkor ofullständigt, lägg till en token"
+      ],
+      "Token already exists": [
+        "Token finns redan"
+      ]
+    },
+    "email_forwarding_2023: Error message, recovery": {
+      "Please try opening the link again.": [
+        "Försök att öppna länken igen."
+      ]
+    },
+    "email_forwarding_2023: Forwarding tooltip": {
+      "Emails forwarded to you are excluded and will not be forwarded.": [
+        "E-post vidarebefordrad till dig är exkluderade och kommer inte att vidarebefordras."
+      ]
+    },
+    "email_forwarding_2023: Header": {
+      "Actions": [
+        "Åtgärder"
+      ],
+      "From": [
+        "Från"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "To": [
+        "Till"
+      ]
+    },
+    "email_forwarding_2023: Incoming forwarding tab name": {
+      "From me": [
+        "Från mig"
+      ]
+    },
+    "email_forwarding_2023: Info": {
+      "A confirmation email will be sent to ${ boldForwardeeEmail }": [
+        "En e-postbekräftelse kommer att skickas till ${ boldForwardeeEmail }"
+      ],
+      "A new encryption key will be generated for ${ boldForwarderEmail }.": [
+        "En ny krypteringsnyckel kommer att genereras för ${ boldForwarderEmail }."
+      ],
+      "Forwardee is invited and needs to accept/reject the invitation or update": [
+        "Mottagaren är inbjuden och måste acceptera/avvisa inbjudan eller uppdatera"
+      ],
+      "Forwarding is active": [
+        "Vidarebefordran är aktiv"
+      ],
+      "Forwarding to ${ BRAND_NAME } addresses will keep your communication end-to-end encrypted. When forwarding externally, encryption might need to be removed.": [
+        "Vidarebefordran till ${ BRAND_NAME }-adresser kommer att behålla din kommunikation end-to-end krypterad. Vid extern vidarebefordran kan kryptering behöva tas bort."
+      ],
+      "Forwarding to an address without end-to-end encryption requires disabling end-to-end encryption for your ${ boldForwarderEmail } email address. ": [
+        "Vidarebefordran till en adress utan end-to-end-kryptering kräver att du inaktiverar end-to-end-kryptering för din e-postadress ${ boldForwarderEmail }. "
+      ],
+      "Forwarding to this address will become active once the recipient accepts the forwarding.": [
+        "Vidarebefordran till denna adress blir aktiv när mottagaren accepterar vidarebefordran."
+      ],
+      "No incoming forwarding rules": [
+        "Inga regler för inkommande vidarebefordran"
+      ],
+      "No outgoing forwarding rules": [
+        "Inga regler för utgående vidarebefordran"
+      ],
+      "Please update your forwarding keys": [
+        "Uppdatera dina nycklar för vidarebefordran"
+      ],
+      "The forwardee rejected the forwarding request": [
+        "Mottagaren avvisade begäran om vidarebefordran"
+      ],
+      "The forwarding is temporarily paused": [
+        "Vidarebefordran är tillfälligt pausad"
+      ],
+      "You can safely close this tab.": [
+        "Du kan stänga denna flik säkert."
+      ],
+      "You won't receive emails forwarded automatically from ${ boldForwarderEmail }.": [
+        "Du kommer inte få e-post vidarebefordrade automatiskt från ${ boldForwarderEmail }."
+      ]
+    },
+    "email_forwarding_2023: Label": {
+      "And": [
+        "Och"
+      ],
+      "Forward from": [
+        "Vidarebefordran från"
+      ],
+      "Forward to": [
+        "Vidarebefordra till"
+      ],
+      "or": [
+        "eller"
+      ],
+      "Or": [
+        "Eller"
+      ],
+      "With attachment": [
+        "Med bilaga"
+      ],
+      "Without attachment": [
+        "Utan bilaga"
+      ]
+    },
+    "email_forwarding_2023: Link": {
+      "Learn more": [
+        "Lär dig mer"
+      ]
+    },
+    "email_forwarding_2023: Outgoing forwarding tab name": {
+      "To me": [
+        "Till mig"
+      ]
+    },
+    "email_forwarding_2023: Placeholder": {
+      "Condition:": [
+        "Villkor:"
+      ],
+      "Enter email address": [
+        "Ange e-postadress"
+      ],
+      "Type text or keyword": [
+        "Skriv text eller nyckelord"
+      ],
+      "Type text or keyword for this condition:": [
+        "Skriv text eller nyckelord för detta villkor:"
+      ]
+    },
+    "email_forwarding_2023: Prompt": {
+      "Forwarding to the destination address will end.": [
+        "Vidarebefordran till destinationsadressen kommer att avslutas."
+      ]
+    },
+    "email_forwarding_2023: Status": {
+      "Active": [
+        "Aktiv"
+      ],
+      "Declined": [
+        "Avböjd"
+      ],
+      "Outdated": [
+        "Föråldrad"
+      ],
+      "Paused": [
+        "Pausad"
+      ],
+      "Pending": [
+        "Väntande"
+      ]
+    },
+    "email_forwarding_2023: Success": {
+      "A new encryption key has been generated for ${ forwarderEmail }.": [
+        "En ny krypteringsnyckel har genererats för ${ forwarderEmail }."
+      ],
+      "Changes saved": [
+        "Ändringar sparade"
+      ],
+      "Email sent to ${ forward.ForwardeeEmail }": [
+        "E-post skickas till ${ forward.ForwardeeEmail }"
+      ],
+      "Email sent to ${ forwardeeEmail }.": [
+        "E-post skickas till ${ forwardeeEmail }."
+      ],
+      "Forwarding accepted": [
+        "Vidarebefordran accepterad"
+      ],
+      "Forwarding declined": [
+        "Vidarebefordran avböjd"
+      ],
+      "Forwarding deleted": [
+        "Vidarebefordran borttagen"
+      ],
+      "Forwarding paused": [
+        "Vidarebefordran pausad"
+      ],
+      "Forwarding resumed": [
+        "Vidarebefordran återupptagen"
+      ]
+    },
+    "email_forwarding_2023: Title": {
+      "Automatically forward emails to other accounts": [
+        "Vidarebefordra automatiskt e-post till andra konton"
+      ],
+      "Delete forwarding?": [
+        "Ta bort vidarebefordran?"
+      ],
+      "Email forwarding deactivated": [
+        "Vidarebefordran av e-post inaktiverat"
+      ],
+      "Forwarding activated": [
+        "Vidarebefordran aktiverad"
+      ],
+      "Request confirmation": [
+        "Begär bekräftelse"
+      ],
+      "Set up forwarding": [
+        "Ställ in vidarebefordran"
+      ]
+    },
+    "email_forwarding_2023: Warning": {
+      "Warning": [
+        "Varning"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "2FA"
@@ -4053,15 +4368,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Premium Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Premium Mail och Calendar"
-      ],
-      "Premium VPN": [
-        "Premium VPN"
-      ],
       "Up to 6 users": [
         "Upp till 6 användare"
       ]
@@ -5482,9 +5788,6 @@
       "Align right": [
         "Högerjustera"
       ],
-      "All ${ BRAND_NAME } apps and their premium features": [
-        "Alla ${ BRAND_NAME }-appar och deras premiumfunktioner"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Alla (${ totalFoldersCount } mapp)",
         "Alla (${ totalFoldersCount } mappar)"
@@ -5685,6 +5988,9 @@
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Om du fortsätter kommer ditt ${ BRAND_NAME }-konto anslutas till ${ name }."
+      ],
+      "Copy the link to clipboard": [
+        "Kopiera länken till urklipp"
       ],
       "Copy the suggested password to clipboard": [
         "Kopiera det föreslagna lösenordet till urklipp"
@@ -6181,6 +6487,9 @@
       "Link deleted": [
         "Länk borttagen"
       ],
+      "Link expired": [
+        "Länk löpt ut"
+      ],
       "Link type": [
         "Länktyp"
       ],
@@ -6377,14 +6686,8 @@
       "per month, billed every 12 months": [
         "per månad, faktureras var 12:e månad"
       ],
-      "per month, billed every 15 months": [
-        "per månad, faktureras var 15:e månad"
-      ],
       "per month, billed every 24 months": [
         "per månad, faktureras var 24:e månad"
-      ],
-      "per month, billed every 30 months": [
-        "per månad, faktureras var 30:e månad"
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "PGP-klienter är mer benägna att automatiskt upptäcka dina PGP-nycklar om utgående meddelanden signeras."
@@ -6605,7 +6908,7 @@
         "Ställer in din organisation"
       ],
       "Settings update failed": [
-        "Uppdatering av inställningar misslyckades"
+        "Misslyckades att uppdatera inställningar"
       ],
       "Settings updated": [
         "Inställningar uppdaterade"
@@ -6621,6 +6924,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du är en lojal användare har ditt konto ytterligare funktioner aktiverade."
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "SMTP-inlämning tillåter tredjepartstjänster eller enheter att skicka e-post via ${ MAIL_APP_NAME } för dina anpassade domänadresser. Denna funktion är endast tillgänglig för ${ BRAND_NAME } för Business-användare med anpassade domäner."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP-inlämning tillåter tredjepartstjänster eller enheter att skicka e-post via ${ MAIL_APP_NAME } för dina anpassade domänadresser. För att begära åtkomst, ${ createTicket } som beskriver dina användningsfall, vilka anpassade domäner du vill använda och förväntade e-postvolymer per timme och dagligen."
@@ -7034,6 +7340,9 @@
       "We generated a strong password for you": [
         "Vi genererade ett starkt lösenord åt dig"
       ],
+      "We just sent you a new link.": [
+        "Vi har precis skickat en ny länk till dig."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Vi måste autentisera din betalningsmetod med din bank."
       ],
@@ -7346,6 +7655,9 @@
       "Your login information will not be saved after the import is completed.": [
         "Dina inloggningsuppgifter kommer inte att sparas när importen är slutförd."
       ],
+      "Your next billing date is ${ renewalTime }.": [
+        "Ditt nästa faktureringsdatum är${ renewalTime }."
+      ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Ditt organisationslösenord kan delas med andra användare som du vill ge administrativa privilegier. Det är också en nödåterställningskod för att få åtkomst till din organisation om du förlorar åtkomsten till ditt konto. Spara detta lösenord och förvara det säkert."
       ],
@@ -7369,9 +7681,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Din prenumeration hanteras av Mozilla. Kontakta Mozillas support."
-      ],
-      "Your subscription will automatically renew on ${ renewalTime }.": [
-        "Din prenumeration kommer förnyas automatiskt den ${ renewalTime }."
       ]
     },
     "info": {
@@ -7527,6 +7836,9 @@
       ],
       "Disabled": [
         "Inaktiverad"
+      ],
+      "Forwarding": [
+        "Vidarebefordran"
       ],
       "Inactive": [
         "Inaktiv"
@@ -8356,6 +8668,9 @@
       ],
       "New password": [
         "Nytt lösenord"
+      ],
+      "New plan": [
+        "Nytt paket"
       ],
       "No filter": [
         "Inget filter"
@@ -9481,6 +9796,9 @@
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } med obegränsat antal hide-my-email-alias"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "Program ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ size } attachment size": [
         "${ size } bilagestorlek"
       ],
@@ -9502,7 +9820,7 @@
       "99.95% SLA": [
         "99.95 % SLA"
       ],
-      "Ad-blocker & malware protection": [
+      "Ad-blocker and malware protection": [
         "Annonsblockerare och skydd mot skadlig kod"
       ],
       "Admin console": [
@@ -9789,6 +10107,17 @@
         "Teamhantering"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "För att fortsätta använda ${ MAIL_APP_NAME } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Din provperiod slutar den ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutar med ${ last4 }"
@@ -9878,17 +10207,6 @@
         "Du har ett kampanjpris på ditt nuvarande paket. Om du nedgraderar ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du försöker prenumerera igen."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "För att fortsätta använda ${ MAIL_APP_NAME } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Din provperiod slutar den ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } av ${ humanMaxSpace }"
@@ -9966,18 +10284,6 @@
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
-        "${ CALENDAR_APP_NAME }: end-to-end krypterad kalender"
-      ],
-      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
-        "${ DRIVE_APP_NAME }: end-to-end krypterad molnlagring"
-      ],
-      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
-        "${ MAIL_APP_NAME }: end-to-end krypterad e-post"
-      ],
-      "${ VPN_APP_NAME }: unblock content, browse privately": [
-        "${ VPN_APP_NAME }: avblockera innehåll, surfa privat"
-      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Få åtkomst till innehåll på streamingtjänster, inklusive Netflix, Disney+ och Prime Video, var som helst"
       ],
@@ -10249,6 +10555,9 @@
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "Nyckel med fingeravtryck ${ fp } har tagits bort."
+      ],
+      "Link copied to clipboard": [
+        "Länk kopierad till urklipp"
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN/IKEv2-inloggningsuppgifter återskapat"
@@ -10820,14 +11129,11 @@
       "Open-source and audited": [
         "Öppen källkod och granskad"
       ],
+      "per month": [
+        "per månad"
+      ],
       "per month, billed annually": [
         "per månad, faktureras årligen"
-      ],
-      "per month, billed every 15 months": [
-        "per månad, faktureras var 15:e månad"
-      ],
-      "per month, billed every 30 months": [
-        "per månad, faktureras var 30:e månad"
       ],
       "per month, billed every month": [
         "per månad, faktureras varje månad"
@@ -11731,8 +12037,8 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "${ storageSize } totalt lagringsutrymme"
+      "1 user": [
+        "1 användare"
       ],
       "3 TB": [
         "3 TB"
@@ -11755,15 +12061,6 @@
       "Premium early access": [
         "Premium förhandstillgång"
       ],
-      "Premium Mail and Calendar": [
-        "Premium Mail och Calendar"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "Premium Mail, Calendar och Drive"
-      ],
-      "Premium VPN": [
-        "Premium VPN"
-      ],
       "Secure cloud storage": [
         "Säker molnlagring"
       ],
@@ -11775,9 +12072,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "Rabatterna är baserade på ordinarie månadspriser."
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Denna prenumeration kommer automatiskt att förnyas vartannat år med samma taxa tills den avbryts."
       ]
@@ -11813,14 +12107,24 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } månad",
+        "${ n } månader"
+      ],
       "/ month": [
         "/månad"
       ],
       "1 year": [
         "1 år"
       ],
+      "15 months": [
+        "15 månader"
+      ],
       "2 years": [
         "2 år"
+      ],
+      "30 months": [
+        "30 månader"
       ],
       "Billed at ${ amount } for 1 month": [
         "Fakturerad med ${ amount } för 1 månad"
@@ -11836,10 +12140,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Fakturerad med ${ amount } för 30 månader"
-      ],
-      "for ${ n } month": [
-        "i ${ n } månad",
-        "i ${ n } månader"
       ],
       "Get the deal": [
         "Ta del av erbjudandet"
@@ -11908,9 +12208,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Alla våra premiumtjänster med sina högsta gränser: 100 e-postadresser, stöd för 10 anpassade domäner, obegränsade Hide-my-email-alias, kalenderdelning, krypterad molnlagring och fildelning och mer."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Inkluderar stöd för 1 anpassad e-postdomän, 10 e-postadresser, 10 Hide-my-email-alias, kalenderdelning och mer."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderar stöd för 3 anpassade e-postdomäner, 15 e-postadresser, obegränsat antal Hide-my-email-alias, kalenderdelning och mer."
       ],
@@ -11922,9 +12219,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Säkra dina filer med krypterad molnlagring. Inkluderar automatisk synkronisering, krypterad fildelning och mer."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Lagringsutrymmet delas mellan ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } och ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -11990,14 +12284,8 @@
       ]
     },
     "Subscription": {
-      "Billed every 15 months": [
-        "Faktureras var 15:e månad"
-      ],
       "Billed every 2 years": [
         "Faktureras vartannat år"
-      ],
-      "Billed every 30 months": [
-        "Faktureras var 30:e månad"
       ],
       "Billed monthly": [
         "Faktureras månadsvis"
@@ -12399,24 +12687,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "Premium Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Premium Mail och Calendar"
-      ],
       "Premium Password Manager": [
         "Premium lösenordshanterare"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Lagra dina lösenord på ett säkert sätt och autofyll dem på webbplatser. Inkluderar obegränsade lösenord, autofyll, lösenordsgenerator och mer."
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "Lösenordshanterare"
       ]
     },
     "summer2023: Tooltip": {
@@ -12719,6 +12991,9 @@
       ],
       "Auto-reply": [
         "Automatiskt svar"
+      ],
+      "Auto-reply and forward": [
+        "Svara automatiskt och vidarebefordra"
       ],
       "Automatically sign outgoing messages?": [
         "Signera automatiskt utgående meddelanden?"
@@ -13049,6 +13324,9 @@
       ],
       "Folders and labels": [
         "Mappar och etiketter"
+      ],
+      "Forward emails": [
+        "Vidarebefordra e-post"
       ],
       "Gateways": [
         "Gateways"
@@ -13764,6 +14042,9 @@
       "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
         "Denna nyckel används av ${ MAIL_APP_NAME } for att kryptera din kontakts uppgifter"
       ],
+      "This key is used for email forwarding": [
+        "Denna nyckel används för vidarebefordran av e-post"
+      ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Använd din webbläsares standardrullningslister. Dessa är vanligtvis större och enklare att använda"
       ],
@@ -13799,11 +14080,6 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Ditt externa konto kan ha nått sin bandbreddsgräns för det här dygnet. ${ BRAND_NAME } kommer att försöka återuppta importen så snart som möjligt."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
-        "${ PASS_APP_NAME }: end-to-end krypterad lösenordshanterare"
       ]
     },
     "Tooltip automatically attach public key": {
@@ -13957,8 +14233,14 @@
       "1-year": [
         "1 år"
       ],
+      "15-month": [
+        "15 månader"
+      ],
       "2-year": [
         "2-årig"
+      ],
+      "30-month": [
+        "30 månader"
       ],
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "Få ${ discount } rabatt med en ${ billingCycle } prenumeration"

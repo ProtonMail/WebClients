@@ -2950,15 +2950,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Drive prémium"
-      ],
-      "Premium Mail and Calendar": [
-        "Mail y Calendar prémium"
-      ],
-      "Premium VPN": [
-        "VPN prémium"
-      ],
       "Up to 6 users": [
         "Hasta 6 usuarios"
       ]
@@ -3663,6 +3654,9 @@
       ],
       "Contact unassigned to group ${ contactGroupName }": [
         "Contacto eliminado del grupo ${ contactGroupName }."
+      ],
+      "Copy the link to clipboard": [
+        "Copiar el enlace al portapapeles"
       ],
       "Country code": [
         "Código de país"
@@ -5100,6 +5094,9 @@
       ],
       "Contact group updated": [
         "Grupo de contactos actualizado"
+      ],
+      "Link copied to clipboard": [
+        "El enlace ha sido copiado al portapapeles."
       ]
     },
     "Notification in holidays calendar modal": {
@@ -5834,9 +5831,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "${ storageSize } de almacenamiento total"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -5858,15 +5852,6 @@
       "Premium early access": [
         "Acceso anticipado premium"
       ],
-      "Premium Mail and Calendar": [
-        "Mail y Calendar premium"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "Mail, Calendar y Drive premium"
-      ],
-      "Premium VPN": [
-        "VPN premium"
-      ],
       "Secure cloud storage": [
         "Almacenamiento seguro en la nube"
       ],
@@ -5878,9 +5863,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "Los descuentos se basan en la cuota estándar mensual."
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Esta suscripción se renovará automáticamente cada 2 años al mismo precio hasta su cancelación."
       ]
@@ -5934,10 +5916,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Al precio de ${ amount } durante 30 meses"
-      ],
-      "for ${ n } month": [
-        "durante ${ n } mes",
-        "durante ${ n } meses"
       ],
       "Get the deal": [
         "Aprovecha la oportunidad"
@@ -6006,9 +5984,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Todos nuestros servicios premium: 100 direcciones de correo electrónico, compatibilidad con 10 dominios personalizados, alias ilimitados de Hide-my-email, posibilidad de compartir calendarios y archivos cifrados, almacenamiento cifrado en la nube, etc."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 alias de Hide-my-email, posibilidad de compartir calendario, etc."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, 15 direcciones de correo electrónico, alias ilimitados de Hide-my-email, posibilidad de compartir calendario, etc."
       ],
@@ -6020,9 +5995,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protege tus archivos con el almacenamiento cifrado en la nube. Incluye sincronización automática, posibilidad de compartir archivos cifrados, etc."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "El espacio de almacenamiento se reparte entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -6106,9 +6078,6 @@
       ],
       "Calendar information updated": [
         "Información del calendario actualizada"
-      ],
-      "Calendar search activated": [
-        "La búsqueda en el calendario ha sido activada."
       ],
       "Calendar updated": [
         "Calendario actualizado"
@@ -6232,24 +6201,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "Drive premium"
-      ],
-      "Premium Mail and Calendar": [
-        "Mail y Calendar premium"
-      ],
       "Premium Password Manager": [
         "Administrador de contraseñas premium"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Almacena tus contraseñas e introdúcelas automáticamente en los sitios web con toda seguridad. Incluye contraseñas ilimitadas, introducción automática, generador de contraseñas, etc."
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "Gestor de contraseñas"
       ]
     },
     "summer2023: Tooltip": {

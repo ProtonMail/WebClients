@@ -1296,6 +1296,14 @@
         "${ mailPlus }: Prywatna poczta i kalendarz do codziennej komunikacji."
       ]
     },
+    "Billing cycle": {
+      "${ n } month": [
+        "${ n } miesiąc",
+        "${ n } miesiące",
+        "${ n } miesięcy",
+        "${ n } miesiąca"
+      ]
+    },
     "Billing cycle option": {
       "1 month": [
         "1 miesiąc"
@@ -1840,6 +1848,11 @@
       ],
       "matches": [
         "pasuje do"
+      ]
+    },
+    "Condition label": {
+      "If": [
+        "Jeśli"
       ]
     },
     "Confirm modal title": {
@@ -3159,6 +3172,274 @@
         "Wiadomość weryfikacyjna została wysłana do ${ address }"
       ]
     },
+    "email_forwarding_2023: Action": {
+      "Accept": [
+        "Akceptuj"
+      ],
+      "Add condition": [
+        "Dodaj warunek"
+      ],
+      "Add forwarding rule": [
+        "Dodaj regułę przekierowania"
+      ],
+      "Back": [
+        "Wstecz"
+      ],
+      "Cancel": [
+        "Anuluj"
+      ],
+      "Decline": [
+        "Odrzuć"
+      ],
+      "Delete": [
+        "Usuń"
+      ],
+      "Delete this condition": [
+        "Usuń warunek"
+      ],
+      "Edit conditions": [
+        "Edytuj warunki"
+      ],
+      "Next": [
+        "Dalej"
+      ],
+      "Pause": [
+        "Wstrzymaj"
+      ],
+      "Re-enable": [
+        "Włącz ponownie"
+      ],
+      "Re-send confirmation email": [
+        "Wyślij ponownie potwierdzenie odczytu"
+      ],
+      "Remove “${ value }”": [
+        "Usuń “${ value }”"
+      ],
+      "Request confirmation": [
+        "Poproś o potwierdzenie odczytu"
+      ],
+      "Resume": [
+        "Wznów"
+      ],
+      "Save": [
+        "Zapisz"
+      ],
+      "Send confirmation email": [
+        "Wyślij potwierdzenie odczytu"
+      ],
+      "Set up email forwarding": [
+        "Ustaw przekierowanie"
+      ]
+    },
+    "email_forwarding_2023: Description": {
+      "Unlock email forwarding to easily manage incoming information and more premium features when you upgrade.": [
+        "Ulepsz konto, aby odblokować przekierowywanie wiadomości dla łatwego zarządzania przychodzącymi wiadomościami i więcej funkcji premium."
+      ]
+    },
+    "email_forwarding_2023: Error": {
+      "Condition incomplete, please add a token": [
+        "Warunek jest niekompletny. Dodaj token"
+      ],
+      "Token already exists": [
+        "Token już istnieje"
+      ]
+    },
+    "email_forwarding_2023: Error message, recovery": {
+      "Please try opening the link again.": [
+        "Otwórz ponownie link."
+      ]
+    },
+    "email_forwarding_2023: Forwarding tooltip": {
+      "Emails forwarded to you are excluded and will not be forwarded.": [
+        "Wiadomości przekierowane są wykluczone i nie będą przekazywane dalej."
+      ]
+    },
+    "email_forwarding_2023: Header": {
+      "Actions": [
+        "Akcje"
+      ],
+      "From": [
+        "Od"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "To": [
+        "Do"
+      ]
+    },
+    "email_forwarding_2023: Incoming forwarding tab name": {
+      "From me": [
+        "Ode mnie"
+      ]
+    },
+    "email_forwarding_2023: Info": {
+      "A confirmation email will be sent to ${ boldForwardeeEmail }": [
+        "Potwierdzenie odczytu zostanie wysłane na adres ${ boldForwardeeEmail }"
+      ],
+      "A new encryption key will be generated for ${ boldForwarderEmail }.": [
+        "Nowy klucz szyfrowania zostanie wygenerowany dla adresu ${ boldForwarderEmail }."
+      ],
+      "Forwardee is invited and needs to accept/reject the invitation or update": [
+        "Odbiorca został zaproszony i musi zaakceptować lub odrzucić zaproszenie"
+      ],
+      "Forwarding is active": [
+        "Przekierowywanie jest włączone"
+      ],
+      "Forwarding to ${ BRAND_NAME } addresses will keep your communication end-to-end encrypted. When forwarding externally, encryption might need to be removed.": [
+        "Przekierowanie na adresy ${ BRAND_NAME } zachowa szyfrowanie end-to-end. Podczas przekierowywania na zewnątrz może być konieczne usunięcie szyfrowania."
+      ],
+      "Forwarding to an address without end-to-end encryption requires disabling end-to-end encryption for your ${ boldForwarderEmail } email address. ": [
+        "Przekierowanie na adres bez szyfrowania end-to-end wymaga wyłączenia szyfrowania end-to-end dla adresu ${ boldForwarderEmail }."
+      ],
+      "Forwarding to this address will become active once the recipient accepts the forwarding.": [
+        "Przekierowanie na ten adres stanie się aktywne, gdy odbiorca zaakceptuje je."
+      ],
+      "No incoming forwarding rules": [
+        "Brak przychodzących reguł przekierowywania"
+      ],
+      "No outgoing forwarding rules": [
+        "Brak wychodzących reguł przekierowywania"
+      ],
+      "Please update your forwarding keys": [
+        "Zaktualizuj klucze przekierowania"
+      ],
+      "The forwardee rejected the forwarding request": [
+        "Odbiorca odrzucił żądanie przekierowywania"
+      ],
+      "The forwarding is temporarily paused": [
+        "Przekierowywanie zostało wstrzymane"
+      ],
+      "You can safely close this tab.": [
+        "Możesz zamknąć tę kartę."
+      ],
+      "You won't receive emails forwarded automatically from ${ boldForwarderEmail }.": [
+        "Nie będziesz otrzymywać wiadomości automatycznie przekierowanych z adresu ${ boldForwarderEmail }."
+      ]
+    },
+    "email_forwarding_2023: Label": {
+      "And": [
+        "oraz"
+      ],
+      "Forward from": [
+        "Przekaż od"
+      ],
+      "Forward to": [
+        "Przekaż do"
+      ],
+      "or": [
+        "lub"
+      ],
+      "Or": [
+        "lub"
+      ],
+      "With attachment": [
+        "Z załącznikiem"
+      ],
+      "Without attachment": [
+        "Bez załącznika"
+      ]
+    },
+    "email_forwarding_2023: Link": {
+      "Learn more": [
+        "Dowiedz się więcej"
+      ]
+    },
+    "email_forwarding_2023: Outgoing forwarding tab name": {
+      "To me": [
+        "Do mnie"
+      ]
+    },
+    "email_forwarding_2023: Placeholder": {
+      "Condition:": [
+        "Warunek:"
+      ],
+      "Enter email address": [
+        "Wpisz adres e-mail"
+      ],
+      "Type text or keyword": [
+        "Wpisz tekst lub słowo kluczowe"
+      ],
+      "Type text or keyword for this condition:": [
+        "Wpisz tekst lub słowo kluczowe:"
+      ]
+    },
+    "email_forwarding_2023: Prompt": {
+      "Forwarding to the destination address will end.": [
+        "Przekierowywanie zostanie zakończone."
+      ]
+    },
+    "email_forwarding_2023: Status": {
+      "Active": [
+        "Aktywne"
+      ],
+      "Declined": [
+        "Odrzucone"
+      ],
+      "Outdated": [
+        "Nieaktualne"
+      ],
+      "Paused": [
+        "Wstrzymane"
+      ],
+      "Pending": [
+        "Oczekujące"
+      ]
+    },
+    "email_forwarding_2023: Success": {
+      "A new encryption key has been generated for ${ forwarderEmail }.": [
+        "Nowy klucz szyfrowania zostanie wygenerowany dla adresu ${ forwarderEmail }."
+      ],
+      "Changes saved": [
+        "Zmiany zostały zapisane"
+      ],
+      "Email sent to ${ forward.ForwardeeEmail }": [
+        "Wiadomość została wysłana do ${ forward.ForwardeeEmail }"
+      ],
+      "Email sent to ${ forwardeeEmail }.": [
+        "Wiadomość została wysłana do ${ forwardeeEmail }."
+      ],
+      "Forwarding accepted": [
+        "Przekierowanie zostało zaakceptowane"
+      ],
+      "Forwarding declined": [
+        "Przekierowanie zostało odrzucone"
+      ],
+      "Forwarding deleted": [
+        "Przekierowanie zostało usunięte"
+      ],
+      "Forwarding paused": [
+        "Przekierowywanie zostało wstrzymane"
+      ],
+      "Forwarding resumed": [
+        "Przekierowywanie zostało wznowione"
+      ]
+    },
+    "email_forwarding_2023: Title": {
+      "Automatically forward emails to other accounts": [
+        "Automatyczne przekierowanie wiadomości do innych kont"
+      ],
+      "Delete forwarding?": [
+        "Usunąć przekierowanie?"
+      ],
+      "Email forwarding deactivated": [
+        "Przekierowanie zostało wyłączone"
+      ],
+      "Forwarding activated": [
+        "Przekierowanie zostało włączone"
+      ],
+      "Request confirmation": [
+        "Poproś o potwierdzenie odczytu"
+      ],
+      "Set up forwarding": [
+        "Ustaw przekierowanie"
+      ]
+    },
+    "email_forwarding_2023: Warning": {
+      "Warning": [
+        "Ostrzeżenie"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "Uwierzytelnianie dwustopniowe"
@@ -4080,15 +4361,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Usługa Drive w wersji premium"
-      ],
-      "Premium Mail and Calendar": [
-        "Usługi Mail i Calendar w wersji premium"
-      ],
-      "Premium VPN": [
-        "Usługa VPN w wersji premium"
-      ],
       "Up to 6 users": [
         "Do 6 użytkowników"
       ]
@@ -5583,9 +5855,6 @@
       "Align right": [
         "Wyrównaj do prawej"
       ],
-      "All ${ BRAND_NAME } apps and their premium features": [
-        "Wszystkie aplikacje ${ BRAND_NAME } i ich funkcje premium"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Wszystkie (${ totalFoldersCount } folder)",
         "Wszystkie (${ totalFoldersCount } foldery)",
@@ -5792,6 +6061,9 @@
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Kontynuowanie połączy konto ${ BRAND_NAME } z ${ name }."
+      ],
+      "Copy the link to clipboard": [
+        "Kopiuj link do schowka"
       ],
       "Copy the suggested password to clipboard": [
         "Kopiuj sugerowane hasło do schowka"
@@ -6300,6 +6572,9 @@
       "Link deleted": [
         "Link został usunięty"
       ],
+      "Link expired": [
+        "Link wygasł"
+      ],
       "Link type": [
         "Typ linku"
       ],
@@ -6498,14 +6773,8 @@
       "per month, billed every 12 months": [
         "miesięcznie, płatne co 12 miesięcy"
       ],
-      "per month, billed every 15 months": [
-        "miesięcznie, płatne co 15 miesięcy"
-      ],
       "per month, billed every 24 months": [
         "miesięcznie, płatne co 24 miesiące"
-      ],
-      "per month, billed every 30 months": [
-        "miesięcznie, płatne co 30 miesięcy"
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "Podpisywanie wiadomości wychodzących ułatwi klientom PGP automatyczne rozpoznanie Twoich kluczy PGP."
@@ -7170,6 +7439,9 @@
       "We generated a strong password for you": [
         "Wygenerowaliśmy silne hasło"
       ],
+      "We just sent you a new link.": [
+        "Wysłaliśmy nowy link."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Musimy zweryfikować metodę płatności z Twoim bankiem."
       ],
@@ -7307,6 +7579,9 @@
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Możesz włączyć logi logowania, aby widzieć udane i nieudane próby logowania oraz adresy IP, z których te próby nastąpiły."
+      ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
+        "Możesz natychmiast odblokować powyższą konfigurację, dodając dodatkowe adresy IP (${ specificCountryCount }) do swojego planu. Opcjonalnie skontaktuj się z nami w sprawie indywidualnej oferty."
       ],
       "You can import one data type at a time.": [
         "Możesz importować jeden typ danych jednocześnie."
@@ -7520,9 +7795,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Twoja subskrypcja jest zarządzana przez Mozillę. Skontaktuj się z pomocą techniczną Mozilli."
-      ],
-      "Your subscription will automatically renew on ${ renewalTime }.": [
-        "Twoja subskrypcja odnowi się automatycznie ${ renewalTime }."
       ]
     },
     "info": {
@@ -7678,6 +7950,9 @@
       ],
       "Disabled": [
         "Wyłączony"
+      ],
+      "Forwarding": [
+        "Przekierowanie"
       ],
       "Inactive": [
         "Nieaktywny"
@@ -9692,6 +9967,9 @@
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } z nieograniczoną liczbą aliasów hide-my-email"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "Program ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ size } attachment size": [
         "${ size } rozmiaru załącznika"
       ],
@@ -9712,9 +9990,6 @@
       ],
       "99.95% SLA": [
         "Umowa SLA 99,95%"
-      ],
-      "Ad-blocker & malware protection": [
-        "Blokada reklam i ochrona przed złośliwym oprogramowaniem"
       ],
       "Admin console": [
         "Konsola administratora"
@@ -10006,6 +10281,17 @@
         "Zarządzanie zespołem"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "W przeciwnym razie dostęp do konta zostanie ograniczony, a następnie wyłączony."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ MAIL_APP_NAME } z funkcjami premium."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Wersja próbna zakończy się ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } kończąca się na ${ last4 }"
@@ -10095,17 +10381,6 @@
         "Korzystasz z promocyjnej ceny na swój obecny plan. Jeśli obniżysz plan, stracisz promocyjną cenę i nie będzie ona dostępna przy ponownej subskrypcji."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "W przeciwnym razie dostęp do konta zostanie ograniczony, a następnie wyłączony."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ MAIL_APP_NAME } z funkcjami premium."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Wersja próbna zakończy się ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } z ${ humanMaxSpace }"
@@ -10185,18 +10460,6 @@
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
-        "${ CALENDAR_APP_NAME }: kalendarz szyfrowany end-to-end"
-      ],
-      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
-        "${ DRIVE_APP_NAME }: przestrzeń dyskowa w chmurze szyfrowana end-to-end"
-      ],
-      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
-        "${ MAIL_APP_NAME }: poczta szyfrowana end-to-end"
-      ],
-      "${ VPN_APP_NAME }: unblock content, browse privately": [
-        "${ VPN_APP_NAME }: odblokuj zawartość, przeglądaj Internet prywatnie"
-      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Uzyskaj dostęp do usług streamingu, takich jak Netflix, Disney+ i Prime Video, gdziekolwiek jesteś"
       ],
@@ -10304,6 +10567,9 @@
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Chroń rodzinę przed szkodliwymi stronami internetowymi i uzyskaj dostęp do szybkich serwerów, aby odtwarzać ulubione treści"
+      ],
+      "Provides the highest level of account security protection and specialist support": [
+        "Zapewnia najwyższy poziom ochrony konta i specjalistyczne wsparcie."
       ],
       "Quickly set up out-of-office messages": [
         "Ustaw autoresponder na czas swojej nieobecności"
@@ -10472,6 +10738,9 @@
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "Klucz z odciskiem ${ fp } został usunięty."
+      ],
+      "Link copied to clipboard": [
+        "Link został skopiowany do schowka"
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Dane logowania OpenVPN / IKEv2 zostały ponownie wygenerowane"
@@ -11061,12 +11330,6 @@
       ],
       "per month, billed annually": [
         "miesięcznie, płatne rocznie"
-      ],
-      "per month, billed every 15 months": [
-        "miesięcznie, płatne co 15 miesięcy"
-      ],
-      "per month, billed every 30 months": [
-        "miesięcznie, płatne co 30 miesięcy"
       ],
       "per month, billed every month": [
         "miesięcznie, płatne co miesiąc"
@@ -11768,7 +12031,7 @@
         "Żądanie zresetowania hasła"
       ],
       "To disallow password reset, you must have a recovery method set up.": [
-        "Aby uniemożliwić resetowanie hasła, należy skonfigurować metodę odzyskiwania."
+        "Aby wyłączyć resetowanie hasła, skonfiguruj metodę odzyskiwania."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -12000,9 +12263,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "${ storageSize } przestrzeni dyskowej"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -12021,20 +12281,8 @@
       "Highest VPN speed": [
         "Najwyższa prędkość VPN"
       ],
-      "Mail, Calendar, Drive": [
-        "Usługi Mail, Calendar i Drive"
-      ],
       "Premium early access": [
         "Wczesny dostęp premium"
-      ],
-      "Premium Mail and Calendar": [
-        "Usługi Mail i Calendar w wersji premium"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "Usługi Mail, Calendar i Drive w wersji premium"
-      ],
-      "Premium VPN": [
-        "VPN premium"
       ],
       "Secure cloud storage": [
         "Bezpieczna przestrzeń dyskowa w chmurze"
@@ -12047,9 +12295,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "Rabaty są obliczane na podstawie standardowych cen miesięcznych."
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Subskrypcja będzie odnawiana automatycznie co 2 lata za tę samą cenę aż do momentu anulowania jej."
       ]
@@ -12108,12 +12353,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Płatne ${ amount } za 30 miesięcy"
-      ],
-      "for ${ n } month": [
-        "za ${ n } miesiąc",
-        "za ${ n } miesiące",
-        "za ${ n } miesięcy",
-        "za ${ n } miesięcy"
       ],
       "Get the deal": [
         "Uzyskaj ofertę"
@@ -12182,9 +12421,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Wszystkie nasze usługi premium z najwyższymi limitami: 100 adresów e-mail, obsługa 10 niestandardowych domen, nieograniczona liczba aliasów hide-my-email, udostępnianie kalendarza, szyfrowane przechowywanie, udostępnianie plików i wiele więcej."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Zawiera obsługę 1 niestandardowej domeny, 10 adresów e-mail, 10 aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Zawiera obsługę 3 niestandardowych domen, 15 adresów e-mail, nieograniczoną liczbę aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
       ],
@@ -12196,9 +12432,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpiecz pliki dzięki szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Przestrzeń dyskowa jest dzielona pomiędzy usługami ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -12264,14 +12497,8 @@
       ]
     },
     "Subscription": {
-      "Billed every 15 months": [
-        "Płatne co 15 miesięcy"
-      ],
       "Billed every 2 years": [
         "Płatne co 2 lata"
-      ],
-      "Billed every 30 months": [
-        "Płatne co 30 miesięcy"
       ],
       "Billed monthly": [
         "Płatne miesięcznie"
@@ -12701,24 +12928,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "Usługa Drive w wersji premium"
-      ],
-      "Premium Mail and Calendar": [
-        "Usługi Mail i Calendar w wersji premium"
-      ],
       "Premium Password Manager": [
         "Menedżer haseł w wersji Premium"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "W bezpieczny sposób przechowuj hasła i automatycznie je uzupełniaj w witrynach internetowych. Obejmuje nieograniczoną liczbę haseł, opcję automatycznego uzupełniania, generator haseł i nie tylko."
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "Menadżer haseł"
       ]
     },
     "summer2023: Tooltip": {
@@ -13033,6 +13244,9 @@
       ],
       "Auto-reply": [
         "Autoresponder"
+      ],
+      "Auto-reply and forward": [
+        "Autoresponder i przekierowanie"
       ],
       "Automatically sign outgoing messages?": [
         "Czy chcesz podpisywać automatycznie wiadomości wychodzące?"
@@ -13369,6 +13583,9 @@
       ],
       "Folders and labels": [
         "Foldery i etykiety"
+      ],
+      "Forward emails": [
+        "Przekieruj wiadomości"
       ],
       "Gateways": [
         "Bramy"
@@ -14090,6 +14307,9 @@
       "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
         "Ten klucz jest używany przez ${ MAIL_APP_NAME } do szyfrowania danych kontaktów"
       ],
+      "This key is used for email forwarding": [
+        "Klucz jest używany do przekierowywania wiadomości"
+      ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Używaj domyślnych pasków przewijania przeglądarki. Są one zazwyczaj większe i łatwiejsze w użyciu"
       ],
@@ -14125,11 +14345,6 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Limit dobowy przepustowości konta zewnętrznego mógł zostać osiągnięty. ${ BRAND_NAME } spróbuje wznowić proces importowania najszybciej, jak będzie to możliwe."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
-        "${ PASS_APP_NAME }: menadżer haseł szyfrowany end-to-end"
       ]
     },
     "Tooltip automatically attach public key": {

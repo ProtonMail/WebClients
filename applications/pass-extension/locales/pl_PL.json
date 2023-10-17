@@ -1057,13 +1057,13 @@
         "Pozostało ${ daysRemaining } dnia wersji próbnej."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
-        "Przekroczono liczbę sejfów objętych subskrypcją. Przedmioty można przenosić tylko do dwóch pierwszych sejfów. Aby przenosić przedmioty między wszystkimi sejfami, uaktualnij subskrypcję."
+        "Przekroczono maksymalną liczbę sejfów w obecnej subskrypcji. Elementy mogą być przenoszone tylko do 2 pierwszych sejfów. Ulepsz plan, aby przenosić elementy do innych sejfów."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
         "Przekroczono maksymalną liczbę sejfów w obecnej subskrypcji. Elementy mogą być przenoszone tylko do głównego sejfu. Ulepsz plan, aby przenosić elementy do innych sejfów."
       ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
-        "Przekroczono liczbę sejfów objętych subskrypcją. Nowe elementy można tworzyć tylko w dwóch pierwszych sejfach. Aby utworzyć nowe elementy we wszystkich sejfach, uaktualnij subskrypcję."
+        "Przekroczono maksymalną liczbę sejfów w obecnej subskrypcji. Nowe elementy mogą być tworzone tylko w 2 pierwszych sejfach. Ulepsz plan, aby tworzyć nowe elementy we wszystkich sejfach."
       ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
         "Przekroczono maksymalną liczbę sejfów w obecnej subskrypcji. Nowe elementy mogą być tworzone tylko w sejfie głównym. Ulepsz plan, aby tworzyć nowe elementy we wszystkich sejfach."
@@ -1812,6 +1812,12 @@
       "Please log back in": [
         "Zaloguj się ponownie"
       ],
+      "Please verify your email address in order to use email aliases": [
+        "Zweryfikuj adres e-mail, aby użyć aliasów"
+      ],
+      "Please verify your email address in order to use vault sharing": [
+        "Zweryfikuj adres e-mail, aby udostępnić sejf"
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Raporty nie są szyfrowane end-to-end. Nie wysyłaj żadnych poufnych informacji."
       ],
@@ -1870,7 +1876,7 @@
         "Sesja została zablokowana z powodu nieaktywności"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
-        "Subskrypcja nie pozwala na tworzenie wielu sejfów. Wszystkie elementy zostaną zaimportowane do pierwszego sejfu. Aby importować do wielu sejfów, należy zaktualizować subskrypcję."
+        "Subskrypcja nie pozwala na tworzenie wielu sejfów. Wszystkie elementy zostaną zaimportowane do pierwszego sejfu. Ulepsz plan, aby importować do wielu sejfów."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
         "Twoja subskrypcja nie pozwala na tworzenie wielu sejfów. Wszystkie elementy zostaną zaimportowane do głównego sejfu. Ulepsz plan, aby importować do wielu sejfów."

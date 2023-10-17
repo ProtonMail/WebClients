@@ -269,9 +269,6 @@
       "Delete": [
         "मिटाएं"
       ],
-      "Delete and confirm": [
-        "मिटाएं और पक्का करें"
-      ],
       "Delete link": [
         "लिंक मिटाएं"
       ],
@@ -703,9 +700,6 @@
       ],
       "Save address": [
         "पता सहेजें"
-      ],
-      "Save changes": [
-        "बदलाव सेव करें"
       ],
       "Save ICS file": [
         "आईसीएस फ़ाइल सहेजें"
@@ -3686,15 +3680,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "प्रीमियम ड्राइव"
-      ],
-      "Premium Mail and Calendar": [
-        "प्रीमियम मेल और कैलेंडर"
-      ],
-      "Premium VPN": [
-        "प्रीमियम वीपीएन"
-      ],
       "Up to 6 users": [
         "6 यूज़र तक"
       ]
@@ -5732,12 +5717,6 @@
       "Setting up your Drive": [
         "आपका ड्राइव सेट कर रहे"
       ],
-      "Settings update failed": [
-        "सेटिंग अपडेट असफल"
-      ],
-      "Settings updated": [
-        "सेटिंग अपडेट किया"
-      ],
       "Show original message": [
         "मूल संदेश दिखाएं"
       ],
@@ -6018,9 +5997,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "विशेष मूल्य पर प्रीमियम सुविधाएं, उत्पाद और संग्रहण प्राप्त करने के लिए अभी अपग्रेड करें"
       ],
-      "Upgrade to unlock": [
-        "खोलने के लिए अपग्रेड करें"
-      ],
       "Upload picture": [
         "तसवीर डालें"
       ],
@@ -6059,9 +6035,6 @@
       ],
       "Version ${ version }": [
         "संस्करण ${ version }"
-      ],
-      "Version history": [
-        "संस्करण इतिहास"
       ],
       "Visa Secure logo": [
         "Visa सेक्योर लोगो"
@@ -7047,9 +7020,6 @@
       ],
       "Don't ask again": [
         "फिर से ना पूछें"
-      ],
-      "Don't keep versions": [
-        "संस्करण ना रखें"
       ],
       "Duration": [
         "अवधि"
@@ -8259,9 +8229,6 @@
       "99.95% SLA": [
         "99.95% एसएलए"
       ],
-      "Ad-blocker & malware protection": [
-        "ऐड-ब्लॉकर और मालवेयर सुरक्षा"
-      ],
       "Admin console": [
         "एडमिन कंसोल"
       ],
@@ -8488,6 +8455,14 @@
         "टीम संभालना"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "वरना आपके खाते तक का एक्सेस सीमित होगा, और आखिर में आपका खाता अक्षम कर दिया जाएगा।"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } के प्रीमियम सुविधाओं का इस्तेमाल जारी रखने के लिए अपनी सदस्यता और भुगतान तरीका चुनें।"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } खत्म होता है ${ last4 } से"
@@ -8557,14 +8532,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "आप अपने अभी चल रहे प्लान पे छूट पा रहे हैं। अगर डाउनग्रेड करते हैं, तो आप छूट खो देंगे और अगर वापिस सदस्यता लेने की कोशिश करते है तो वो मौजूद नहीं होगा।"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "वरना आपके खाते तक का एक्सेस सीमित होगा, और आखिर में आपका खाता अक्षम कर दिया जाएगा।"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } के प्रीमियम सुविधाओं का इस्तेमाल जारी रखने के लिए अपनी सदस्यता और भुगतान तरीका चुनें।"
       ]
     },
     "new_plans: Label": {
@@ -9658,9 +9625,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "कुल स्टोरेज ${ storageSize }"
-      ],
       "3 TB": [
         "3 टीबी"
       ],
@@ -9681,15 +9645,6 @@
       ],
       "Premium early access": [
         "प्रीमियम जल्दी एक्सेस"
-      ],
-      "Premium Mail and Calendar": [
-        "प्रीमियम मेल और कैलेंडर"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "प्रीमियम मेल, कैलेंडर, और ड्राइव"
-      ],
-      "Premium VPN": [
-        "प्रीमियम वीपीएन"
       ],
       "Secure cloud storage": [
         "सुरक्षित क्लाउड स्टोरेज"
@@ -9752,10 +9707,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "30 महीने के लिए ${ amount } का बिल"
-      ],
-      "for ${ n } month": [
-        "${ n } महीने के लिए",
-        "${ n } महीने के लिए"
       ],
       "Get the deal": [
         "सौदा लें"
@@ -10615,9 +10566,6 @@
       ],
       "Delete user": [
         "उपयोगकर्ता को हटाएँ"
-      ],
-      "Delete version history?": [
-        "संस्करण इतिहास मिटाएं?"
       ],
       "Disable ${ email }": [
         "${ email } अक्षम करें"

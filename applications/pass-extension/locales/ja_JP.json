@@ -173,14 +173,35 @@
       "Importing": [
         "インポート"
       ],
+      "Invite others": [
+        "他の人に招待"
+      ],
+      "Join shared vault": [
+        "共有フォルダーに参加"
+      ],
       "Learn more": [
         "詳細"
       ],
       "Leave": [
         "退出"
       ],
+      "Leave vault": [
+        "フォルダーを出る"
+      ],
       "Lock extension": [
         "ロック延長"
+      ],
+      "Make admin": [
+        "管理者として設定"
+      ],
+      "Make editor": [
+        "編集者として設定"
+      ],
+      "Make viewer": [
+        "閲覧者として設定"
+      ],
+      "Manage access": [
+        "アクセス管理"
       ],
       "Manually sync your data": [
         "手動でデータを同期する"
@@ -203,6 +224,9 @@
       "Not now": [
         "今ではない"
       ],
+      "Open in a window": [
+        "ウィンドウで開く"
+      ],
       "Open navigation": [
         "ナビゲーションを開く"
       ],
@@ -221,11 +245,20 @@
       "Regenerate": [
         "再生成"
       ],
+      "Reject invitation": [
+        "招待を拒否する"
+      ],
       "Reload extension": [
         "リロード拡張機能"
       ],
+      "Remove access": [
+        "アクセス権の削除"
+      ],
       "Request a feature": [
         "機能を提案"
+      ],
+      "Resend invitation": [
+        "招待の再送"
       ],
       "Restore item": [
         "アイテムを復元"
@@ -239,11 +272,20 @@
       "Saving": [
         "保存中"
       ],
+      "See members": [
+        "メンバーの表示"
+      ],
+      "Send invite": [
+        "招待を送信"
+      ],
       "Send us a message": [
         "メッセージを送る"
       ],
       "Share": [
         "共有"
+      ],
+      "Share vault": [
+        "フォルダーの共有"
       ],
       "Show": [
         "表示"
@@ -268,6 +310,9 @@
       ],
       "Submitting report...": [
         "レポートを送信中..."
+      ],
+      "Transfer ownership": [
+        "所有権の移行"
       ],
       "Try again": [
         "再試行"
@@ -328,11 +373,23 @@
       "Cannot create alias (${ error }).": [
         "エイリアスを作成できません (${ error })。"
       ],
+      "Cannot send invitation to this address at the moment": [
+        "現在、このアドレスに招待を送信することができません。"
+      ],
+      "Could not leave vault.": [
+        "フォルダーから退出できません"
+      ],
       "Could not open created vault": [
         "作成された保管庫を開けませんでした"
       ],
+      "Could not open invited vault": [
+        "招待されたフォルダーを開けませんでした。"
+      ],
       "Could not open updated vault": [
         "更新された保管庫を開けませんでした"
+      ],
+      "Could not resolve share members": [
+        "共有メンバーを解決できませんでした"
       ],
       "Could not resume your session : ${ description }": [
         "セッションを再開できませんでした: ${ description }"
@@ -367,6 +424,21 @@
       "Error reporting problem": [
         "エラー報告の問題"
       ],
+      "Failed removing the invite.": [
+        "招待の削除に失敗しました。"
+      ],
+      "Failed resending invite.": [
+        "招待の再送信に失敗しました。"
+      ],
+      "Failed to edit user's access.": [
+        "ユーザーのアクセスを削除できませんでした。"
+      ],
+      "Failed to remove user's access.": [
+        "ユーザーのアクセスを削除できませんでした。"
+      ],
+      "Failed to transfer this vault's ownership.": [
+        "このフォルダーの所有権の移行に失敗しました。"
+      ],
       "File could not be parsed": [
         "ファイルを解析できませんでした。"
       ],
@@ -381,6 +453,18 @@
       ],
       "Invalid url": [
         "無効なURL"
+      ],
+      "Invitation could not be accepted": [
+        "招待は承認できません"
+      ],
+      "Invitation could not be rejected": [
+        "招待は拒否できませんでした。"
+      ],
+      "Invite creation failed.": [
+        "招待の作成に失敗しました。"
+      ],
+      "Invite successfully sent": [
+        "招待が正常に送信されました。"
       ],
       "Item content cannot exceed 40KB": [
         "アイテムの内容が40KBを超えることはできません"
@@ -437,7 +521,7 @@
         "インポートしようとしているファイルは空です。"
       ],
       "The url is in the list": [
-        "URLはリストの中にある"
+        "Urlはリストの中にある"
       ],
       "Too many failed attempts. Please sign in again.": [
         "失敗が多すぎます。もう一度サインインしてください。"
@@ -456,6 +540,9 @@
       ],
       "Unknown error": [
         "原因不明なエラーが発生しました"
+      ],
+      "Unknown invite": [
+        "不明な招待"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "サポートされていない ${ PASS_APP_NAME } ファイル形式"
@@ -531,6 +618,12 @@
       "${ count } items": [
         "${ count } 件のアイテム"
       ],
+      "${ itemCount } items": [
+        "${ itemCount }個のアイテム"
+      ],
+      "${ memberCount } members": [
+        "${ memberCount }人のメンバー"
+      ],
       "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
         "${ PASS_APP_NAME } はログインとメモのみをインポートします。 パスポートや添付ファイル等には現時点では対応していません。"
       ],
@@ -546,6 +639,9 @@
       "${ trialDaysLeft } days left": [
         "残り ${ trialDaysLeft } 日"
       ],
+      "${ vault.count } items": [
+        "${ vault.count }個のアイテム"
+      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "${ PASS_APP_NAME } の新しいバージョンが利用可能です。 最新の機能やバグ修正をお楽しみいただくには、更新してください。"
       ],
@@ -557,6 +653,9 @@
       ],
       "Access your passwords on the go with our mobile apps.": [
         "モバイルアプリで外出先からパスワードにアクセス。"
+      ],
+      "Admin": [
+        "管理者"
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "エイリアス「${ item.aliasEmail }」はゴミ箱に移動されました - メールボックスへのメールの転送は停止されます"
@@ -575,6 +674,18 @@
       ],
       "Autosaved on ${ submissionURL }": [
         "${ submissionURL } に自動保存されました"
+      ],
+      "Can create, edit, delete, and export items in this vault.": [
+        "このフォルダー内のアイテムを作成、編集、削除、エクスポートすることができます。"
+      ],
+      "Can grant and revoke access to this vault, and delete it.": [
+        "このフォルダーへのアクセス権を付与したり、取り消したりすることができます。また、このフォルダーを削除することもできます。"
+      ],
+      "Can grant and revoke access to this vault.": [
+        "このフォルダーへのアクセス権を付与したり、取り消したりすることができます。"
+      ],
+      "Can view items in this vault.": [
+        "このフォルダー内のアイテムを閲覧できます。"
       ],
       "Check out all the exclusive features that are available to you for a limited time.": [
         "期間限定で利用できるすべての限定機能をチェックしよう。"
@@ -606,6 +717,9 @@
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "既存のパスワードを ${ PASS_APP_NAME } に簡単にインポートします。"
       ],
+      "Editor": [
+        "エディター"
+      ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "${ BRAND_NAME } アカウントを接続して ${ PASS_APP_NAME } を有効にします"
       ],
@@ -613,7 +727,7 @@
         "検証コードを入力してください。桁数は ${ digit } 桁です。"
       ],
       "Enter your pin code": [
-        "PIN コードを入力"
+        "Pin コードを入力"
       ],
       "Enter your PIN code": [
         "PINコードの入力"
@@ -675,6 +789,18 @@
       "Internet connection lost": [
         "インターネット接続が切断されました"
       ],
+      "Invitation sent": [
+        "招待状の送信"
+      ],
+      "Invite successfully removed": [
+        "招待が正常に削除されました。"
+      ],
+      "Invite successfully resent": [
+        "招待を正常に再送しました。"
+      ],
+      "invites you to access items in": [
+        "あなたにアイテムへのアクセスを招待しています。"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "すでに ${ PASS_APP_NAME } にログインしているようです。 別のアカウントでログインしようとしている場合は、まず拡張機能からログアウトしてください。"
       ],
@@ -711,6 +837,9 @@
       "Loading...": [
         "読み込み中..."
       ],
+      "me": [
+        "私"
+      ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } は単なるパスワード マネージャーではなく、メール エイリアスを介してパスワードと個人メール アドレスを保護します。 ${ MAIL_APP_NAME } の背後にある同じテクノロジーを利用して、あなたのデータはエンドツーエンドで暗号化され、あなただけがアクセスできます。"
       ],
@@ -728,6 +857,12 @@
       ],
       "Open the Extensions menu": [
         "拡張機能メニューを開く"
+      ],
+      "Owner": [
+        "所有者"
+      ],
+      "Ownership successfully transfered. You are no long the owner of this vault.": [
+        "所有権は正常に移行されました。あなたはもうこのフォルダーの所有者ではありません。"
       ],
       "Password copied": [
         "パスワードをコピーしました"
@@ -792,6 +927,9 @@
       "Successfully exported all your items": [
         "すべてのアイテムのエクスポートに成功"
       ],
+      "Successfully left the vault": [
+        "フォルダーを正常に退出しました。"
+      ],
       "Successfully synced all vaults": [
         "すべての保管庫が正常に同期されました"
       ],
@@ -807,8 +945,14 @@
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "貼り付けようとしているテキストは、許容される最大長の ${ maxLength } 文字を超えています。"
       ],
+      "The user did not accept the invitation yet.": [
+        "ユーザーはまだ招待を受け入れていません。"
+      ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "このエクスポートは暗号化されていないため、エクスポートしたファイルにアクセスできる人は誰でもパスワードを見ることができます。セキュリティのため、使い終わったら削除してください。"
+      ],
+      "This vault is not currently shared with anyone. Invite people to share it with others.": [
+        "このフォルダーは現在誰とも共有されていません。他の人と共有するために人々を招待してください。"
       ],
       "Unable to copy to clipboard": [
         "クリップボードにコピーできない"
@@ -821,6 +965,12 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } をアップグレードします"
+      ],
+      "User's access removed": [
+        "ユーザーのアクセス権を削除しました。"
+      ],
+      "User's access sucessfuly updated": [
+        "ユーザーのアクセス権を正常に更新しました。"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "保管庫「${ payload.content.name }」が正常に削除されました"
@@ -837,17 +987,29 @@
       "Verification code": [
         "検証コード"
       ],
+      "Viewer": [
+        "ビューアー"
+      ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "ローカルストレージとのデータ同期で問題が生じています。${ PASS_SHORT_APP_NAME } の動作に必要なディスクの空き容量があることを確認してください。"
       ],
       "You are about to create:": [
         "あなたはこれから作成しようとしています:"
       ],
+      "You cannot change the mailboxes for this alias.": [
+        "このエイリアスのメールボックスを変更することはできません。"
+      ],
       "You have ${ daysRemaining } days left in your trial period.": [
         "あなたのトライアル期限は、残り ${ daysRemaining } 日です。"
       ],
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
+        "あなたのサブスクリプションに含まれるフォルダーの最大数を超えています。アイテムは最初の2つのフォルダーにのみ移動できます。すべてのフォルダー間でアイテムを移動するには、サブスクリプションをアップグレードしてください。"
+      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
         "サブスクリプションに含まれる保管庫の数を超えています。アイテムはプライマリ保管庫にのみ移動できます。すべての保管庫間でアイテムを移動するには、サブスクリプションをアップグレードしてください。"
+      ],
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
+        "「あなたのサブスクリプションに含まれるフォルダーの最大数を超えています。新しいアイテムは最初の2つのフォルダーでのみ作成できます。すべてのフォルダーで新しいアイテムを作成するには、サブスクリプションをアップグレードしてください。"
       ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
         "サブスクリプションに含まれるデータ保管庫の数を超えています。新しいアイテムは、プライマリ保管庫でのみ作成できます。すべてのデータ保管庫に新しいアイテムを作成するには、サブスクリプションをアップグレードしてください。"
@@ -866,6 +1028,9 @@
       ],
       "You're about to create": [
         "これから作成しようとしています"
+      ],
+      "You're invited to a vault.": [
+        "フォルダーへの招待があります。"
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "${ PASS_APP_NAME } セッションはロックされています"
@@ -949,6 +1114,9 @@
       ],
       "Autosave": [
         "自動保存"
+      ],
+      "Autosave vault": [
+        "自動保存フォルダー"
       ],
       "Autosuggest": [
         "オートサジェスト"
@@ -1178,6 +1346,9 @@
       "Select an email address": [
         "メールアドレスを選択"
       ],
+      "Select preferred language": [
+        "お好みの言語を選択"
+      ],
       "Select your password manager": [
         "パスワードマネージャーを選択"
       ],
@@ -1256,8 +1427,14 @@
       "Vault": [
         "保管庫"
       ],
+      "Vaults": [
+        "フォルダー"
+      ],
       "Verification number": [
         "検証番号"
+      ],
+      "View details": [
+        "詳細の表示"
       ],
       "View logs": [
         "ログを表示"
@@ -1333,7 +1510,7 @@
         "MM/YYYY"
       ],
       "Move items to another vault (optional)": [
-        "アイテムを別の保管庫に移動（オプション）"
+        "アイテムを別の保管庫に移動(オプション)"
       ],
       "Pick a vault": [
         "保管庫を選択"
@@ -1404,7 +1581,7 @@
         "${ PASS_APP_NAME } をお楽しみですか?"
       ],
       "Enter your Pin": [
-        "PINを入力"
+        "Pinを入力"
       ],
       "Fill & copy password": [
         "パスワードを入力してコピー"
@@ -1422,7 +1599,10 @@
         "インポート - ${ date }"
       ],
       "Import to vault(s)": [
-        "保管庫へのインポート"
+        "一つ(複数)のフォルダーへのインポート"
+      ],
+      "Leave vault ?": [
+        "フォルダーをでますか？"
       ],
       "Low disk space": [
         "ディスクの空き容量が低下"
@@ -1436,6 +1616,12 @@
       "Secure your data": [
         "データの保護"
       ],
+      "Set access level": [
+        "アクセスレベルの設定"
+      ],
+      "Share with": [
+        "と共有する"
+      ],
       "Switching to ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME } に切り替えますか?"
       ],
@@ -1444,6 +1630,9 @@
       ],
       "The extension is now ready to use.": [
         "これで拡張機能を使用する準備が整った。"
+      ],
+      "Transfer ownership": [
+        "所有権の移行"
       ],
       "Trash empty": [
         "ゴミ箱は空です"
@@ -1459,6 +1648,9 @@
       ],
       "Use my email": [
         "私の電子メールを使用する"
+      ],
+      "Vault shared with you": [
+        "あなたと共有しているフォルダー"
       ],
       "Welcome to ${ brandNameJSX }": [
         "${ brandNameJSX } へようこそ"
@@ -1490,13 +1682,13 @@
         "OTP シークレットまたは URI が必要です"
       ],
       "Url already exists": [
-        "URL は既に存在します"
+        "Url は既に存在します"
       ],
       "Url cannot be empty": [
-        "URL を入力してください"
+        "Url を入力してください"
       ],
       "Url is invalid": [
-        "URL が無効です"
+        "Url が無効です"
       ]
     },
     "Warning": {
@@ -1557,8 +1749,17 @@
       "PGP encrypted export file requires passphrase": [
         "PGP暗号化エクスポートファイルにはパスフレーズが必要です。"
       ],
+      "Please enter a valid email address": [
+        "有効なメールアドレスを入力してください。"
+      ],
       "Please log back in": [
         "ログインし直してください"
+      ],
+      "Please verify your email address in order to use email aliases": [
+        "メールアドレスを使用するためにメールアドレスの認証を行ってください"
+      ],
+      "Please verify your email address in order to use vault sharing": [
+        "フォルダーの共有を行うためにメールアドレスの認証を行ってください"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "報告はエンドツーエンド暗号化されません。機密情報を送信しないでください。"
@@ -1571,6 +1772,9 @@
       ],
       "Title is required": [
         "タイトルは必須です"
+      ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "このフォルダーの所有権を${ email }に移転しますか？"
       ],
       "Trash alias ?": [
         "ゴミ箱の別名?"
@@ -1599,14 +1803,23 @@
       "You must select at least one mailbox": [
         "少なくとも1つのメールボックスを選択する必要があります。"
       ],
+      "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
+        "あなたはこのフォルダーへのアクセスを持たなくなります。再度参加するには、新しい招待が必要です。"
+      ],
       "Your plan does not allow you to create more aliases": [
         "あなたのプランでは、それ以上のエイリアスを作成することはできません。"
+      ],
+      "Your plan only allows you to autofill from your first two vaults": [
+        "あなたのプランでは、最初の2つのフォルダーからのみ自動入力が許可されています。"
       ],
       "Your plan only allows you to autofill from your primary vault": [
         "あなたのプランではプライマリー保管庫からの自動入力のみが利用可能です。"
       ],
       "Your session was locked due to inactivity": [
         "非アクティブのためセッションがロックされました"
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "あなたのサブスクリプションでは、複数のフォルダーを作成することはできません。すべてのアイテムは最初のフォルダーにインポートされます。複数のフォルダーにインポートするには、サブスクリプションをアップグレードしてください。"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
         "あなたのプランでは複数の保管庫を作成することはできません。すべてのアイテムはプライマリー保管庫にインポートされます。複数の保管庫にインポートするには、プランをアップグレードしてください。"

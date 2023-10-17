@@ -293,9 +293,6 @@
       "Delete": [
         "Sil"
       ],
-      "Delete and confirm": [
-        "Sil ve onayla"
-      ],
       "Delete Gateway": [
         "Ağ geçidini sil"
       ],
@@ -781,9 +778,6 @@
       ],
       "Save address": [
         "Adresi kaydet"
-      ],
-      "Save changes": [
-        "Değişiklikleri kaydet"
       ],
       "Save ICS file": [
         "ICS dosyasını kaydet"
@@ -3143,6 +3137,11 @@
         "Doğrulama e-postası ${ address } alıcısına gönderildi"
       ]
     },
+    "email_forwarding_2023: Action": {
+      "Accept": [
+        "Kabul et"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "İki adımlı doğrulama"
@@ -4050,15 +4049,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Ücretli Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Ücretli Mail ve Calendar"
-      ],
-      "Premium VPN": [
-        "Ücretli VPN"
-      ],
       "Up to 6 users": [
         "6 kullanıcıya kadar"
       ]
@@ -5250,9 +5240,6 @@
       "${ discountPercentage } forever": [
         "${ discountPercentage } sonsuza dek"
       ],
-      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } artık dosyalarınızın önceki sürümlerini tutmayacak."
-      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } geçersiz"
       ],
@@ -5478,9 +5465,6 @@
       ],
       "Align right": [
         "Sağa hizala"
-      ],
-      "All ${ BRAND_NAME } apps and their premium features": [
-        "Tüm ${ BRAND_NAME } uygulamaları ve ücretli özellikleri"
       ],
       "All (${ totalFoldersCount } folder)": [
         "Tümü (${ totalFoldersCount } klasör)",
@@ -6374,14 +6358,8 @@
       "per month, billed every 12 months": [
         "aylık, 12 ayda bir faturalanır"
       ],
-      "per month, billed every 15 months": [
-        "aylık, 15 ayda bir faturalanır"
-      ],
       "per month, billed every 24 months": [
         "aylık, 24 ayda bir faturalanır"
-      ],
-      "per month, billed every 30 months": [
-        "aylık, 30 ayda bir faturalanır"
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "Giden iletiler imzalanırsa, PGP istemcilerinin PGP anahtarlarınızı otomatik olarak algılama olasılığı yükselir."
@@ -6601,12 +6579,6 @@
       "Setting up your organization": [
         "Kuruluşunuz ayarlanıyor"
       ],
-      "Settings update failed": [
-        "Ayarlar güncellenemedi"
-      ],
-      "Settings updated": [
-        "Ayarlar güncellendi"
-      ],
       "Show original message": [
         "Özgün iletiyi göster"
       ],
@@ -6791,12 +6763,6 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Bu işlem, geçerli ücretli aboneliğinizi iptal edecek ve kazandığınız sadık kullanıcı ek faydalarını kaybedeceksiniz. Aboneliğinizin kalan bakiyesi hesap kredisi olarak geri ödenecek."
       ],
-      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Bu işlem, dosyalarınızın ${ rententionLabel } tarihinden önceki tüm sürümlerini siler."
-      ],
-      "This will delete all previous versions of your files.": [
-        "Bu işlem dosyalarınızın tüm önceki sürümlerini siler."
-      ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Bu işlem, geçerli kurtarma ifadenizi kapatır. Bu ifadeyi artık hesabınıza erişmek veya verilerinizin şifresini çözmek için kullanamazsınız."
       ],
@@ -6956,9 +6922,6 @@
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Hesabınızı paylaşması daha kolay ve daha kısa @pm.me adresi ile kullanmak için tarifenizi yükseltin. İngilizce olarak \"${ MAIL_APP_NAME } ben\" ya da \"Bana özel ileti\" anlamına gelir."
       ],
-      "Upgrade to unlock": [
-        "Kilidi açmak için yükseltin"
-      ],
       "Upload picture": [
         "Görsel yükle"
       ],
@@ -7006,9 +6969,6 @@
       ],
       "Version ${ version }": [
         "Sürüm ${ version }"
-      ],
-      "Version history": [
-        "Sürüm geçmişi"
       ],
       "Visa Secure logo": [
         "Visa Secure logosu"
@@ -7363,9 +7323,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Aboneliğiniz Mozilla tarafından yönetiliyor. Lütfen Mozilla destek ekibi ile görüşün."
-      ],
-      "Your subscription will automatically renew on ${ renewalTime }.": [
-        "Aboneliğiniz ${ renewalTime } tarihinde otomatik olarak yenilenecektir."
       ]
     },
     "info": {
@@ -8113,9 +8070,6 @@
       ],
       "Don't ask again": [
         "Bir daha sorma"
-      ],
-      "Don't keep versions": [
-        "Sürüm geçmişi tutulmasın"
       ],
       "Duration": [
         "Süre"
@@ -9496,9 +9450,6 @@
       "99.95% SLA": [
         "%99.95 hizmet sürekliliği"
       ],
-      "Ad-blocker & malware protection": [
-        "Reklam ve kötü amaçlı yazılım engelleyici"
-      ],
       "Admin console": [
         "Yönetici panosu"
       ],
@@ -9783,6 +9734,17 @@
         "Ekip yönetimi"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanımdan kaldırılacak."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Deneme süreniz ${ formattedPeriodEndDate } tarihinde sona eriyor"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, ${ last4 } içinde sona erecek"
@@ -9872,17 +9834,6 @@
         "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat ücretinizi kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanımdan kaldırılacak."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Deneme süreniz ${ formattedPeriodEndDate } tarihinde sona eriyor"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } / ${ humanMaxSpace }"
@@ -9960,18 +9911,6 @@
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
-        "${ CALENDAR_APP_NAME }: Uçtan uca şifrelenmiş takvim"
-      ],
-      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
-        "${ DRIVE_APP_NAME }: Uçtan uca şifrelenmiş bulut depolama alanı"
-      ],
-      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
-        "${ MAIL_APP_NAME }: Uçtan uca şifrelenmiş e-posta"
-      ],
-      "${ VPN_APP_NAME }: unblock content, browse privately": [
-        "${ VPN_APP_NAME }: Engellenen içeriğe erişin, gizli kalarak gezinin"
-      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Netflix, Disney+ ve Prime Video gibi yayın akışı hizmetlerindeki içeriğe her yerden erişin"
       ],
@@ -10816,12 +10755,6 @@
       ],
       "per month, billed annually": [
         "aylık, yılda bir faturalanır"
-      ],
-      "per month, billed every 15 months": [
-        "aylık, 15 ayda bir faturalanır"
-      ],
-      "per month, billed every 30 months": [
-        "aylık, 30 ayda bir faturalanır"
       ],
       "per month, billed every month": [
         "aylık, ayda bir faturalanır"
@@ -11725,9 +11658,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "${ storageSize } toplam depolama alanı"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -11749,15 +11679,6 @@
       "Premium early access": [
         "Öncelikli erken erişim"
       ],
-      "Premium Mail and Calendar": [
-        "Ücretli Mail ve Calendar"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "Ücretli Mail, Calendar ve Drive"
-      ],
-      "Premium VPN": [
-        "Ücretli VPN"
-      ],
       "Secure cloud storage": [
         "Güvenli bulut depolama alanı"
       ],
@@ -11769,9 +11690,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "İndirimler standart aylık ücretlendirmeye göre yapılır."
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Bu abonelik, iptal edilene kadar 2 yılda bir aynı tutarla otomatik olarak yenilenir."
       ]
@@ -11830,10 +11748,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "30 aylık ${ amount } olarak faturalanır"
-      ],
-      "for ${ n } month": [
-        "${ n } ay için",
-        "${ n } ay için"
       ],
       "Get the deal": [
         "Tekliften yararlanın"
@@ -11902,9 +11816,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "En yüksek sınırları olan tüm ücretli hizmetler: 100 e-posta adresi, 10 özel etki alanı, sınırsız hide-my-email takma adı, takvim gönderisi, şifrelenmiş bulut depolama alanı, dosya paylaşımı ve diğer özellikler."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "1 özel e-posta etki alanı, 10 e-posta adresi, 10 hide-my-email takma adı, takvim paylaşımı ve diğer özellikler."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "3 özel e-posta etki alanı, 15 e-posta adresi, sınırsız sayıda hide-my-email takma adı, takvim paylaşımı ve diğer özellikler."
       ],
@@ -11916,9 +11827,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır."
       ]
     },
     "Spotlight": {
@@ -11984,14 +11892,8 @@
       ]
     },
     "Subscription": {
-      "Billed every 15 months": [
-        "15 ayda bir faturalanır"
-      ],
       "Billed every 2 years": [
         "2 yılda bir faturalanır"
-      ],
-      "Billed every 30 months": [
-        "30 ayda bir faturalanır"
       ],
       "Billed monthly": [
         "Ayda bir faturalanır"
@@ -12393,24 +12295,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "Ücretli Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Ücretli Mail ve Calendar"
-      ],
       "Premium Password Manager": [
         "Ücretli Parola Yöneticisi"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Parolalarınızı güvenle saklayın ve sitelerde otomatik olarak kullanın. Sınırsız parola, otomatik doldurma, parola oluşturucu ve daha fazlasını içerir."
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "Parola yöneticisi"
       ]
     },
     "summer2023: Tooltip": {
@@ -12922,9 +12808,6 @@
       ],
       "Delete user?": [
         "Kullanıcı silinsin mi?"
-      ],
-      "Delete version history?": [
-        "Sürüm geçmişi silinsin mi?"
       ],
       "Disable ${ email }": [
         "${ email } adresini kullanımdan kaldır"
@@ -13793,11 +13676,6 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Dış hesabınız 24 saatlik bant genişliği sınırına ulaşmış olabilir. ${ BRAND_NAME }, olabilecek en kısa sürede içe aktarma işlemini sürdürmeye çalışacak."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
-        "${ PASS_APP_NAME }: Uçtan uca şifrelenmiş parola yöneticisi"
       ]
     },
     "Tooltip automatically attach public key": {

@@ -630,13 +630,55 @@
         "Detta kommer att koppla från alla routrar och klienter som använder detta certifikat."
       ]
     },
+    "bf2023: Action": {
+      "Add ${ PASS_APP_NAME }": [
+        "Lägg till ${ PASS_APP_NAME }"
+      ],
+      "Add ${ plan } for ${ price } per month": [
+        "Lägg till ${ plan } för ${ price } per månad"
+      ],
+      "Remove": [
+        "Ta bort"
+      ],
+      "Remove ${ PASS_APP_NAME }": [
+        "Ta bort ${ PASS_APP_NAME }"
+      ]
+    },
+    "bf2023: Deal details": {
+      "${ storageSize } storage": [
+        "${ storageSize } lagringsutrymme"
+      ],
+      "1 user": [
+        "1 användare"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 användare"
+      ],
+      "Ad-blocker and malware protection": [
+        "Annonsblockerare och skydd mot skadlig kod"
+      ],
+      "Extended version history": [
+        "Utökad versionshistorik"
+      ],
+      "High speed streaming": [
+        "Höghastighetsstreaming"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Store up to 200 versions of each file for up to 10 years.": [
+        "Lagra upp till 200 versioner av varje fil i upp till 10 år."
+      ]
+    },
     "Billing cycle": {
       "${ n } month": [
         "${ n } månad",
         "${ n } månader"
-      ],
-      "Renews automatically for ${ renewPrice }, for ${ renewalLength }": [
-        "Förnyas automatiskt för ${ renewPrice }, i ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -2018,15 +2060,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Premium Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Premium Mail och Calendar"
-      ],
-      "Premium VPN": [
-        "Premium VPN"
-      ],
       "Up to 6 users": [
         "Upp till 6 användare"
       ]
@@ -2657,9 +2690,6 @@
       "Admin account allocation": [
         "Allokering för administratörskonto"
       ],
-      "All ${ BRAND_NAME } apps and their premium features": [
-        "Alla ${ BRAND_NAME }-appar och deras premiumfunktioner"
-      ],
       "All your changes will be lost.": [
         "Alla dina ändringar kommer att gå förlorade."
       ],
@@ -3109,14 +3139,8 @@
       "per month, billed every 12 months": [
         "per månad, faktureras var 12:e månad"
       ],
-      "per month, billed every 15 months": [
-        "per månad, faktureras var 15:e månad"
-      ],
       "per month, billed every 24 months": [
         "per månad, faktureras var 24:e månad"
-      ],
-      "per month, billed every 30 months": [
-        "per månad, faktureras var 30:e månad"
       ],
       "Plan upgrade required": [
         "Uppgradering av paket krävs"
@@ -3692,6 +3716,9 @@
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Din information är säker hos oss. Vi kommer endast kontakta dig när det krävs för att tillhandahålla våra tjänster."
       ],
+      "Your next billing date is ${ renewalTime }.": [
+        "Ditt nästa faktureringsdatum är${ renewalTime }."
+      ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Ditt organisationslösenord kan delas med andra användare som du vill ge administrativa privilegier. Det är också en nödåterställningskod för att få åtkomst till din organisation om du förlorar åtkomsten till ditt konto. Spara detta lösenord och förvara det säkert."
       ],
@@ -3703,9 +3730,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Din prenumeration hanteras av Mozilla. Kontakta Mozillas support."
-      ],
-      "Your subscription will automatically renew on ${ renewalTime }.": [
-        "Din prenumeration kommer förnyas automatiskt den ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -4047,6 +4071,9 @@
       ],
       "New password": [
         "Nytt lösenord"
+      ],
+      "New plan": [
+        "Nytt paket"
       ],
       "No filter": [
         "Inget filter"
@@ -4539,6 +4566,9 @@
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } med obegränsat antal hide-my-email-alias"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "Program ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ size } attachment size": [
         "${ size } bilagestorlek"
       ],
@@ -4560,7 +4590,7 @@
       "99.95% SLA": [
         "99.95 % SLA"
       ],
-      "Ad-blocker & malware protection": [
+      "Ad-blocker and malware protection": [
         "Annonsblockerare och skydd mot skadlig kod"
       ],
       "Admin console": [
@@ -4976,18 +5006,6 @@
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
-        "${ CALENDAR_APP_NAME }: end-to-end krypterad kalender"
-      ],
-      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
-        "${ DRIVE_APP_NAME }: end-to-end krypterad molnlagring"
-      ],
-      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
-        "${ MAIL_APP_NAME }: end-to-end krypterad e-post"
-      ],
-      "${ VPN_APP_NAME }: unblock content, browse privately": [
-        "${ VPN_APP_NAME }: avblockera innehåll, surfa privat"
-      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Få åtkomst till innehåll på streamingtjänster, inklusive Netflix, Disney+ och Prime Video, var som helst"
       ],
@@ -5885,8 +5903,8 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "${ storageSize } totalt lagringsutrymme"
+      "1 user": [
+        "1 användare"
       ],
       "3 TB": [
         "3 TB"
@@ -5909,15 +5927,6 @@
       "Premium early access": [
         "Premium förhandstillgång"
       ],
-      "Premium Mail and Calendar": [
-        "Premium Mail och Calendar"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "Premium Mail, Calendar och Drive"
-      ],
-      "Premium VPN": [
-        "Premium VPN"
-      ],
       "Secure cloud storage": [
         "Säker molnlagring"
       ],
@@ -5929,9 +5938,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "Rabatterna är baserade på ordinarie månadspriser."
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Denna prenumeration kommer automatiskt att förnyas vartannat år med samma taxa tills den avbryts."
       ]
@@ -5962,14 +5968,24 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } månad",
+        "${ n } månader"
+      ],
       "/ month": [
         "/månad"
       ],
       "1 year": [
         "1 år"
       ],
+      "15 months": [
+        "15 månader"
+      ],
       "2 years": [
         "2 år"
+      ],
+      "30 months": [
+        "30 månader"
       ],
       "Billed at ${ amount } for 1 month": [
         "Fakturerad med ${ amount } för 1 månad"
@@ -5985,10 +6001,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Fakturerad med ${ amount } för 30 månader"
-      ],
-      "for ${ n } month": [
-        "i ${ n } månad",
-        "i ${ n } månader"
       ],
       "Get the deal": [
         "Ta del av erbjudandet"
@@ -6057,9 +6069,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Alla våra premiumtjänster med sina högsta gränser: 100 e-postadresser, stöd för 10 anpassade domäner, obegränsade Hide-my-email-alias, kalenderdelning, krypterad molnlagring och fildelning och mer."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Inkluderar stöd för 1 anpassad e-postdomän, 10 e-postadresser, 10 Hide-my-email-alias, kalenderdelning och mer."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderar stöd för 3 anpassade e-postdomäner, 15 e-postadresser, obegränsat antal Hide-my-email-alias, kalenderdelning och mer."
       ],
@@ -6071,9 +6080,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Säkra dina filer med krypterad molnlagring. Inkluderar automatisk synkronisering, krypterad fildelning och mer."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Lagringsutrymmet delas mellan ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } och ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -6104,14 +6110,8 @@
       ]
     },
     "Subscription": {
-      "Billed every 15 months": [
-        "Faktureras var 15:e månad"
-      ],
       "Billed every 2 years": [
         "Faktureras vartannat år"
-      ],
-      "Billed every 30 months": [
-        "Faktureras var 30:e månad"
       ],
       "Billed monthly": [
         "Faktureras månadsvis"
@@ -6405,24 +6405,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "Premium Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Premium Mail och Calendar"
-      ],
       "Premium Password Manager": [
         "Premium lösenordshanterare"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Lagra dina lösenord på ett säkert sätt och autofyll dem på webbplatser. Inkluderar obegränsade lösenord, autofyll, lösenordsgenerator och mer."
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "Lösenordshanterare"
       ]
     },
     "summer2023: Tooltip": {
@@ -7122,11 +7106,6 @@
         "Verifierad e-postadress"
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
-        "${ PASS_APP_NAME }: end-to-end krypterad lösenordshanterare"
-      ]
-    },
     "Tor out of date": {
       "stable release": [
         "stabil utgåva"
@@ -7207,8 +7186,14 @@
       "1-year": [
         "1 år"
       ],
+      "15-month": [
+        "15 månader"
+      ],
       "2-year": [
         "2-årig"
+      ],
+      "30-month": [
+        "30 månader"
       ],
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "Få ${ discount } rabatt med en ${ billingCycle } prenumeration"

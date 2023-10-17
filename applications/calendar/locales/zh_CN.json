@@ -60,6 +60,9 @@
       "Add phone number": [
         "添加电话号码"
       ],
+      "Add public holidays": [
+        "添加公众假期"
+      ],
       "Add to group": [
         "添加至群组"
       ],
@@ -146,6 +149,9 @@
       ],
       "Copy address": [
         "复制地址"
+      ],
+      "Copy email address": [
+        "复制电子邮件地址"
       ],
       "Copy email to clipboard": [
         "复制邮箱地址"
@@ -390,6 +396,9 @@
       "Open settings": [
         "打开设置"
       ],
+      "Pause indexing": [
+        "暂停索引"
+      ],
       "Preview contact": [
         "预览联系人"
       ],
@@ -453,6 +462,9 @@
       "Reset to default": [
         "重置所有选项"
       ],
+      "Resume indexing": [
+        "恢复索引"
+      ],
       "Save": [
         "保存"
       ],
@@ -473,6 +485,9 @@
       ],
       "Select calendar view": [
         "选择日历视图"
+      ],
+      "Select time zone": [
+        "选择时区"
       ],
       "Send": [
         "发送​​"
@@ -920,6 +935,11 @@
         "允许查看所有日程详情"
       ]
     },
+    "Calendar sharing error": {
+      "Failed to retrieve contact information for ${ address }": [
+        "未能检索 ${ address } 的联系信息"
+      ]
+    },
     "Calendar sidebar dropdown item": {
       "Add calendar from URL": [
         "通过链接添加日历"
@@ -977,6 +997,9 @@
       ]
     },
     "Calendar view": {
+      "Custom": [
+        "自定义"
+      ],
       "Day": [
         "天"
       ],
@@ -1938,6 +1961,11 @@
         "奥兰群岛"
       ]
     },
+    "Country select label": {
+      "Based on your time zone": [
+        "根据您的时区"
+      ]
+    },
     "Custom frequency option": {
       "After repeating…": [
         "重复…"
@@ -2050,6 +2078,9 @@
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
         "文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且联系人总数上限为 ${ MAX_IMPORT_CONTACTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
+      ],
+      "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
+        "这可能需要几分钟的时间。同时，您可以像往常一样继续使用日历。"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖动可调整联系人合并优先级，未勾选的联系人不会被合并。"
@@ -2263,6 +2294,9 @@
       ],
       "Error: ${ errorMessage }": [
         "错误：${ errorMessage }"
+      ],
+      "Event not found": [
+        "未找到事件"
       ],
       "Failed to get original occurrence in series": [
         "无法获取序列中的原始事件"
@@ -2516,6 +2550,9 @@
       "Validation error": [
         "验证失败"
       ],
+      "You already added this holidays calendar": [
+        "您已添加此假期日历"
+      ],
       "You have reached the contacts limit for your account": [
         "您的账户联系人数量已达上限"
       ],
@@ -2569,6 +2606,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "加密失败"
+      ],
+      "Missing FN property": [
+        "缺少 FN 属性"
       ],
       "vCard versions < 3.0 not supported": [
         "不支持 vCard 3.0 以下版本"
@@ -2743,6 +2783,14 @@
         "${ numberOfAttendees } 名参与者"
       ]
     },
+    "Event info in search view; event duration": {
+      "All day": [
+        "全天"
+      ],
+      "All day, lasts ${ plusDaysToEnd } days": [
+        "全天，持续 ${ plusDaysToEnd } 天"
+      ]
+    },
     "Event info. Organizer name": {
       "You": [
         "你"
@@ -2849,15 +2897,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "高级云盘"
-      ],
-      "Premium Mail and Calendar": [
-        "高级邮件和日历"
-      ],
-      "Premium VPN": [
-        "高级VPN"
-      ],
       "Up to 6 users": [
         "多达 6 位用户"
       ]
@@ -3391,6 +3430,9 @@
       "${ contactsLength } contacts": [
         "${ contactsLength } 位联系人"
       ],
+      "${ firstItems } and ${ lastItem }": [
+        "${ firstItems } 和 ${ lastItem }"
+      ],
       "${ groupCounts } groups found": [
         "找到 ${ groupCounts } 个群组"
       ],
@@ -3475,6 +3517,9 @@
       "Attention required": [
         "需要关注"
       ],
+      "Based on your time zone": [
+        "根据您的时区"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "重新接收验证码前，请先检查垃圾邮件文件夹，并确认邮箱地址 ${ strong } 是否正确。"
       ],
@@ -3487,6 +3532,9 @@
       "Calendar side panel": [
         "日历侧边栏"
       ],
+      "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
+        "找不到您要找的活动？隐藏日历中的某些事件符合您的查询。要查看这些结果，请打开 ${ hiddenWithItemsCalendarList } 的可见性。"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "记不住密码？我们可以帮助您清除使用此密钥加密的所有联系人的加密数据，并在此过程中忽略警告。"
       ],
@@ -3498,6 +3546,9 @@
       ],
       "Clear encrypted search data": [
         "清除加密的搜索数据"
+      ],
+      "Clearing browser data will clear the search index on this device. All calendar events would need to be re-indexed again to use the search functionality.": [
+        "清除浏览器数据将清除该设备上的搜索索引。所有日历事件都需要再次重新索引才能使用搜索功能。"
       ],
       "Clears browser data related to the encrypted search.": [
         "清除与加密搜索相关的浏览器数据。"
@@ -3642,6 +3693,12 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "将您的数据从${ importedEmailAddress } 导入到${ toEmail }"
+      ],
+      "Indexing events: ${ current }/${ total }": [
+        "正在索引事件：${ current }/${ total }"
+      ],
+      "Indexing paused": [
+        "索引已暂停"
       ],
       "Inherited from parent folder": [
         "与上层文件夹一致"
@@ -4091,6 +4148,9 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
+      "At most ${ maxAttendees } participants are allowed per invitation": [
+        "每次邀请最多允许 ${ maxAttendees } 名参与者"
+      ],
       "Creating invites in a shared calendar is not allowed": [
         "无法在已共享的日历中创建邀请"
       ]
@@ -4323,6 +4383,9 @@
       "Label messages as": [
         "给导入的邮件加标签"
       ],
+      "Language": [
+        "语言"
+      ],
       "Last 12 months only": [
         "仅过去 12 个月"
       ],
@@ -4407,6 +4470,9 @@
       "Postal code": [
         "邮编"
       ],
+      "Primary": [
+        "基本的"
+      ],
       "Public keys": [
         "公钥"
       ],
@@ -4421,6 +4487,12 @@
       ],
       "Reveal password": [
         "显示密码"
+      ],
+      "Secondary": [
+        "次要"
+      ],
+      "Secondary time zone": [
+        "第二时区"
       ],
       "Show week numbers": [
         "显示周数"
@@ -4623,6 +4695,9 @@
       ]
     },
     "Modal action": {
+      "Cancel": [
+        "取消"
+      ],
       "Manage calendars": [
         "管理日历"
       ],
@@ -4644,8 +4719,17 @@
       ]
     },
     "Modal title": {
+      "Add public holidays": [
+        "添加公众假期"
+      ],
       "Cannot add more calendars": [
         "无法添加更多日历"
+      ],
+      "Edit calendar": [
+        "编辑日历"
+      ],
+      "Get a country's official public holidays calendar.": [
+        "获取一个国家/地区的官方公共假期日历。"
       ],
       "How to import calendars from another service": [
         "如何从其他服务导入日历"
@@ -4881,6 +4965,17 @@
         "群组已更改"
       ]
     },
+    "Notification in holidays calendar modal": {
+      "Adding holidays calendar failed": [
+        "添加节假日日历失败"
+      ],
+      "Calendar added": [
+        "日历已添加"
+      ],
+      "Calendar updated": [
+        "日历已更新"
+      ]
+    },
     "Notification in share calendar modal": {
       "Members added": [
         "成员已添加"
@@ -5049,6 +5144,9 @@
       "All events": [
         "所有日程"
       ],
+      "Auto": [
+        "自动"
+      ],
       "Automatic (${ defaultDay })": [
         "自动 (${ defaultDay })"
       ],
@@ -5179,6 +5277,9 @@
       "Image URL": [
         "图像 URL"
       ],
+      "Indexing...": [
+        "索引中..."
+      ],
       "Last name": [
         "姓"
       ],
@@ -5193,6 +5294,12 @@
       ],
       "Please describe the problem and include any error messages": [
         "请说明您的问题，并附上看到的所有错误提示"
+      ],
+      "Please select a country": [
+        "请选择国家"
+      ],
+      "Search events": [
+        "搜索事件"
       ],
       "Search for group name": [
         "搜索群组名称"
@@ -5288,6 +5395,9 @@
       ]
     },
     "Select search results": {
+      "Check your spelling or select a country from the list.": [
+        "检查拼写或从列表中选择一个国家/地区。"
+      ],
       "No results found": [
         "未找到结果"
       ]
@@ -5482,9 +5592,22 @@
         "与 ${ BRAND_NAME } 用户分享"
       ]
     },
+    "Shared calendar; Info about calendar owner": {
+      "Shared by ${ ownerName }": [
+        "由 ${ ownerName } 共享"
+      ]
+    },
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "管理日历"
+      ]
+    },
+    "Signature verification error when joining calendar": {
+      "Signature verification error": [
+        "签名验证错误"
+      ],
+      "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
+        "您已启用 ${ boldSenderEmail } 的地址验证。我们无法验证此日历邀请的真实性。这可能是由于该联系人的加密密钥发生了变化。请检查其高级 PGP 设置，或者您可以向 ${ boldSenderEmail } 请求新邀请。"
       ]
     },
     "Signing preference for emails": {
@@ -5531,9 +5654,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "${ storageSize } 总存储空间"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -5555,15 +5675,6 @@
       "Premium early access": [
         "抢先体验高级功能"
       ],
-      "Premium Mail and Calendar": [
-        "高级邮箱与日历账户"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "享受 Mail、Calendar、Drive 全部高级功能"
-      ],
-      "Premium VPN": [
-        "高级 VPN 账户"
-      ],
       "Secure cloud storage": [
         "安全的云存储"
       ],
@@ -5575,9 +5686,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "折扣基于标准月费计算。"
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "每两年账户将以相同费率自动续费，直至手动退订。"
       ]
@@ -5631,9 +5739,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "30个月的费用为${ amount }"
-      ],
-      "for ${ n } months": [
-        "${ n } 个月"
       ],
       "Get the deal": [
         "立即享受优惠"
@@ -5702,9 +5807,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "顶格享受我们的所有高级服务：100 个邮箱地址、10 个自有域名、无限量 Hide My Email 邮箱别名、日程共享、支持文件共享的加密云盘等。"
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "支持 1 个自有域名、10 个邮箱地址、10 个 Hide My Email 邮箱别名、日程共享等功能。"
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "支持 3 个自有域名、15 个邮箱地址、无限量 Hide My Email 邮箱别名、日程共享等功能。"
       ],
@@ -5716,17 +5818,26 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "使用加密的云存储保护您的文件。 包括自动同步、加密文件共享等。"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 均共用同一存储空间。"
       ]
     },
     "Spotlight": {
+      "Add your country's public holidays to your calendar.": [
+        "将您所在国家/地区的公共假期添加到您的日历中。"
+      ],
+      "Easily find the event you're looking for with our new search feature.": [
+        "使用我们新的搜索功能轻松找到您正在寻找的活动。"
+      ],
       "Get up to ${ credits } in credits.": [
         "最高可获 ${ credits } 余额奖励。"
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "邀请好友注册 ${ BRAND_NAME }"
+      ],
+      "Public holidays are here!": [
+        "公众假期来了！"
+      ],
+      "Search for events": [
+        "搜索事件"
       ]
     },
     "Storage": {
@@ -5743,6 +5854,9 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "日历链接"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
+        "要订阅外部或公共日历及其更新，请输入 URL。日历的只读版本将添加到您的其他日历中。\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -5904,24 +6018,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "高级云盘账户"
-      ],
-      "Premium Mail and Calendar": [
-        "高级邮箱与日历账户"
-      ],
       "Premium Password Manager": [
         "高级密码管理器"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "安全地存储您的密码并在网站上自动填充它们。包括无限密码、自动填充、密码生成器等。"
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "密码管理器"
       ]
     },
     "summer2023: Tooltip": {
@@ -6037,6 +6135,11 @@
       ],
       "${ minutes } minutes": [
         "${ minutes } 分钟"
+      ]
+    },
+    "Timezone search placeholder": {
+      "Search time zones": [
+        "搜索时区"
       ]
     },
     "Title": {
@@ -6385,6 +6488,9 @@
       "Warning: suspected fake website": [
         "警告：疑似虚假网站"
       ],
+      "We're setting up Calendar search": [
+        "我们正在设置日历搜索"
+      ],
       "We've locked some calendars to protect your data": [
         "为保护您的数据，我们已锁定一些日历"
       ],
@@ -6490,6 +6596,14 @@
       ],
       "You do not have any contacts to export": [
         "您没有任何联系人可导出"
+      ]
+    },
+    "Tooltip; share calendar modal ": {
+      "Shared end-to-end encrypted": [
+        "共享已经过端到端加密"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "与经过验证的联系人端对端加密共享"
       ]
     },
     "Validation": {

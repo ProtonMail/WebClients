@@ -703,11 +703,11 @@
       "Not saved": [
         "Nie zapisano"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Otwórz ${ CALENDAR_APP_NAME }"
@@ -1648,8 +1648,11 @@
       "You already tentatively accepted this invitation.": [
         "Wstępnie zaakceptowano zaproszenie."
       ],
-      "Your email address is not in the participants list": [
-        "Twój adres e-mail nie znajduje się na liście uczestników"
+      "You cannot respond to ${ BRAND_NAME } invites if you're not on the participants list at the moment.": [
+        "Nie możesz odpowiedzieć na zaproszenia ${ BRAND_NAME }, jeśli nie jesteś na liście uczestników."
+      ],
+      "Your email address is not in the original participants list.": [
+        "Twój adres e-mail nie znajduje się na liście uczestników."
       ]
     },
     "Calendar widget banner": {
@@ -3111,6 +3114,11 @@
         "Aktualizacja wydarzenia rozpoczynającego się w dniu: ${ formattedStart }"
       ]
     },
+    "email_forwarding_2023: Composer email icon": {
+      "Zero-access encrypted. Recipient has disabled end-to-end encryption on their account.": [
+        "Przechowywana z szyfrowaniem po stronie klienta. Odbiorca wyłączył szyfrowanie end-to-end na swoim koncie."
+      ]
+    },
     "empty messages: success": {
       "Folder cleared": [
         "Folder został wyczyszczony"
@@ -3884,15 +3892,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Usługa Drive w wersji premium"
-      ],
-      "Premium Mail and Calendar": [
-        "Usługi Mail i Calendar w wersji premium"
-      ],
-      "Premium VPN": [
-        "Usługa VPN w wersji premium"
-      ],
       "Up to 6 users": [
         "Do 6 użytkowników"
       ]
@@ -5152,6 +5151,9 @@
       ],
       "Copied to clipboard": [
         "Skopiowano do schowka"
+      ],
+      "Copy the link to clipboard": [
+        "Kopiuj link do schowka"
       ],
       "Country code": [
         "Kod kraju"
@@ -7610,6 +7612,9 @@
       "Contact group updated": [
         "Grupa kontaktów została zaktualizowana"
       ],
+      "Link copied to clipboard": [
+        "Link został skopiowany do schowka"
+      ],
       "Password has been set successfully": [
         "Hasło zostało ustawione"
       ],
@@ -8392,9 +8397,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "${ storageSize } przestrzeni dyskowej"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -8413,20 +8415,8 @@
       "Highest VPN speed": [
         "Najwyższa prędkość VPN"
       ],
-      "Mail, Calendar, Drive": [
-        "Usługi Mail, Calendar i Drive"
-      ],
       "Premium early access": [
         "Wczesny dostęp premium"
-      ],
-      "Premium Mail and Calendar": [
-        "Usługi Mail i Calendar w wersji premium"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "Usługi Mail, Calendar i Drive w wersji premium"
-      ],
-      "Premium VPN": [
-        "VPN premium"
       ],
       "Secure cloud storage": [
         "Bezpieczna przestrzeń dyskowa w chmurze"
@@ -8439,9 +8429,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "Rabaty są obliczane na podstawie standardowych cen miesięcznych."
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Subskrypcja będzie odnawiana automatycznie co 2 lata za tę samą cenę aż do momentu anulowania jej."
       ]
@@ -8495,12 +8482,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Płatne ${ amount } za 30 miesięcy"
-      ],
-      "for ${ n } month": [
-        "za ${ n } miesiąc",
-        "za ${ n } miesiące",
-        "za ${ n } miesięcy",
-        "za ${ n } miesięcy"
       ],
       "Get the deal": [
         "Uzyskaj ofertę"
@@ -8569,9 +8550,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Wszystkie nasze usługi premium z najwyższymi limitami: 100 adresów e-mail, obsługa 10 niestandardowych domen, nieograniczona liczba aliasów hide-my-email, udostępnianie kalendarza, szyfrowane przechowywanie, udostępnianie plików i wiele więcej."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Zawiera obsługę 1 niestandardowej domeny, 10 adresów e-mail, 10 aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Zawiera obsługę 3 niestandardowych domen, 15 adresów e-mail, nieograniczoną liczbę aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
       ],
@@ -8583,9 +8561,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpiecz pliki dzięki szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Przestrzeń dyskowa jest dzielona pomiędzy usługami ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -8968,24 +8943,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "Usługa Drive w wersji premium"
-      ],
-      "Premium Mail and Calendar": [
-        "Usługi Mail i Calendar w wersji premium"
-      ],
       "Premium Password Manager": [
         "Menedżer haseł w wersji Premium"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "W bezpieczny sposób przechowuj hasła i automatycznie je uzupełniaj w witrynach internetowych. Obejmuje nieograniczoną liczbę haseł, opcję automatycznego uzupełniania, generator haseł i nie tylko."
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "Menadżer haseł"
       ]
     },
     "summer2023: Tooltip": {
