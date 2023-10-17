@@ -11,7 +11,6 @@ import {
     shareAccessChange,
     sharesSync,
     vaultCreationSuccess,
-    vaultSetPrimarySync,
 } from '@proton/pass/store/actions';
 import { shareAccessOptionsRequest } from '@proton/pass/store/actions/requests';
 import type { ItemsByShareId } from '@proton/pass/store/reducers';
@@ -19,7 +18,6 @@ import { selectAllShares } from '@proton/pass/store/selectors';
 import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
 import type { Api, Maybe, Share, ShareRole, SharesGetResponse } from '@proton/pass/types';
 import { ShareType } from '@proton/pass/types';
-import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { diadic } from '@proton/pass/utils/fp/variadics';
 import { logger } from '@proton/pass/utils/logger';
@@ -43,11 +41,9 @@ function* onSharesEvent(
     if ('error' in event) throw event.error;
 
     const localShares: Share[] = yield select(selectAllShares);
-    const localPrimaryShareId = localShares.find(prop('primary'))?.shareId;
     const localShareIds = localShares.map(({ shareId }) => shareId);
 
     const remoteShares = event.Shares;
-    const remotePrimaryShareId = remoteShares.find(prop('Primary'))?.ShareID;
 
     const newShares = remoteShares.filter((share) => !localShareIds.includes(share.ShareID));
     logger.info(`[Saga::SharesChannel]`, `${newShares.length} remote share(s) not in cache`);
@@ -73,10 +69,6 @@ function* onSharesEvent(
             yield put(sharesSync({ shares: toMap(activeNewShares, 'shareId'), items }));
             yield all(activeNewShares.map(getShareChannelForks(api, options)).flat());
         }
-    }
-
-    if (remotePrimaryShareId && localPrimaryShareId !== remotePrimaryShareId) {
-        yield put(vaultSetPrimarySync({ id: remotePrimaryShareId }));
     }
 
     yield fork(function* () {
