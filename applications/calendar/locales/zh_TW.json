@@ -33,6 +33,9 @@
       "Add address": [
         "加入電郵位址"
       ],
+      "Add birthday": [
+        "添加生日"
+      ],
       "Add contact": [
         "加入聯絡人"
       ],
@@ -48,6 +51,9 @@
       "Add new group": [
         "建立新的群組"
       ],
+      "Add note": [
+        "新增備註"
+      ],
       "Add notification": [
         "加入通知"
       ],
@@ -62,6 +68,9 @@
       ],
       "Apply": [
         "套用"
+      ],
+      "At most ${ maxContacts } contacts are allowed per contact group": [
+        "每個聯絡人群組至多允許 ${ maxContacts } 個聯絡人"
       ],
       "Attach screenshot(s)": [
         "貼附螢幕截圖"
@@ -197,6 +206,9 @@
       ],
       "Discard": [
         "放棄"
+      ],
+      "Don't know your password?": [
+        "不知您的密碼?"
       ],
       "Done": [
         "完成"
@@ -375,6 +387,9 @@
       "No, thanks": [
         "不用了，謝謝"
       ],
+      "Ok": [
+        "確定"
+      ],
       "OK": [
         "好"
       ],
@@ -461,6 +476,9 @@
       ],
       "Search countries": [
         "搜尋國家與地區"
+      ],
+      "See how": [
+        "看看怎麼做"
       ],
       "See plan features": [
         "看看方案功能"
@@ -617,6 +635,9 @@
       ],
       "Yes, I'll attend": [
         "是，我會出席"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "您不能傳送有超過 ${ maxAttachments } 個聯絡人的 vCard 檔案"
       ]
     },
     "Action subline": {
@@ -1101,8 +1122,17 @@
       "Birthday": [
         "生日"
       ],
+      "Display name": [
+        "顯示名稱"
+      ],
       "Email": [
         "電郵"
+      ],
+      "Enter a display name or nickname": [
+        "輸入顯示名稱或暱稱"
+      ],
+      "First name": [
+        "名"
       ],
       "Gender": [
         "性別"
@@ -1112,6 +1142,9 @@
       ],
       "Language": [
         "語言"
+      ],
+      "Last name": [
+        "姓氏"
       ],
       "Logo": [
         "頭像"
@@ -2282,6 +2315,9 @@
       "Failed to get original occurrence in series": [
         "無法取得系列中原本事件"
       ],
+      "First name is too long": [
+        "名字太長"
+      ],
       "Folder name cannot be empty.": [
         "資料夾名稱不能留空。"
       ],
@@ -2296,6 +2332,9 @@
       ],
       "Incorrect mailbox password. Please try again.": [
         "郵箱密碼不正確。請再試一次."
+      ],
+      "Incorrect username": [
+        "錯誤的使用者名稱"
       ],
       "Interval cannot be empty": [
         "間隔不能為空白"
@@ -2326,6 +2365,9 @@
       ],
       "Label name cannot be empty.": [
         "標籤名稱不能留空。"
+      ],
+      "Last name is too long": [
+        "姓氏太長"
       ],
       "Merge at least ${ calendarsToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
         "請至少將 ${ calendarsToFixCount } 個行事曆與現存的 ${ BRAND_NAME } calendar 合併"
@@ -2377,6 +2419,9 @@
       ],
       "Please fix the highlighted conflicts to proceed.": [
         "請先修正已標示的衝突以便繼續。"
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "請提供名字、姓氏或顯示名稱"
       ],
       "Port is required": [
         "通訊埠為必填"
@@ -2521,6 +2566,9 @@
       ],
       "You already added this holidays calendar": [
         "您已新增此假期行事曆"
+      ],
+      "You can't send a mail to more than ${ maxContacts } recipients": [
+        "您無法將電子郵件傳送給超過 ${ maxContacts } 位收件人"
       ],
       "You have reached the contacts limit for your account": [
         "您的帳號已達聯絡人數量限制"
@@ -2874,15 +2922,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "進階版雲端硬碟"
-      ],
-      "Premium Mail and Calendar": [
-        "進階版郵件與行事曆"
-      ],
-      "Premium VPN": [
-        "進階版 VPN"
-      ],
       "Up to 6 users": [
         "多達 6 位使用者"
       ]
@@ -3790,6 +3829,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME 使用目前的編輯器模式自動傳送訊息。"
+      ],
+      "Please note that addresses assigned to these groups will NOT be deleted.": [
+        "請注意：指派到此群組中的電子郵件地址不會被刪除。"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "請注意：指派到此群組中的電郵位址將不會被刪除。"
@@ -5278,6 +5320,9 @@
       "Filter groups": [
         "篩選群組"
       ],
+      "First name": [
+        "名字"
+      ],
       "Group name": [
         "群組名稱"
       ],
@@ -5286,6 +5331,9 @@
       ],
       "Indexing...": [
         "正在製作索引……"
+      ],
+      "Last name": [
+        "姓氏"
       ],
       "Name": [
         "名稱"
@@ -5406,6 +5454,166 @@
         "查無結果"
       ]
     },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "取消重設"
+      ],
+      "Reset password": [
+        "重設密碼"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "帳號備援不適用於舊的地址金鑰"
+      ],
+      "Please generate keys before you try to change your password": [
+        "請在您試著改變您的密碼前生成金鑰"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } days": [
+        "${ timeRemaining.inDays }天"
+      ],
+      "${ timeRemaining.inHours } hours": [
+        "${ timeRemaining.inHours }小時"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } days to reset your password.": [
+        "重設密碼請求已核准 (${ user.Email })。您可以在${ timeRemaining.inDays }天內重設您的密碼。"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hours to reset your password.": [
+        "重設密碼請求已核准 (${ user.Email })。您可以在${ timeRemaining.inHours }小時內重設您的密碼。"
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "請前往已登入的裝置（在發起請求的工作階段中）變更您的密碼。"
+      ],
+      "This permission expires in ${ timeRemaining.inDays } days": [
+        "此權限將在${ timeRemaining.inDays }天後過期"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hours": [
+        "此權限將在${ timeRemaining.inHours }小時後過期"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "現在您可以在${ boldDaysRemaining }內免費變更帳號 ${ boldEmail } 的密碼。"
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "看看怎麼做"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "密碼已儲存"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "重置您的密碼"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "取消密碼重設"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "輸入您目前的密碼以取消密碼重設流程。其他變更將不會生效。"
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "已取消密碼重設"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "取消密碼重設？"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "密碼重設請求已取消 (${ user.Email })。若您並未做出此請求，${ changePasswordLink }。"
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "立刻變更您的密碼"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "取消請求"
+      ],
+      "Got it": [
+        "瞭解"
+      ],
+      "Learn more": [
+        "了解更多"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hours": [
+        "還剩下${ gracePeriodHoursRemaining }小時"
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "若您沒有請求重設密碼，請立刻取消請求。"
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hours.": [
+        "已請求重設密碼 (${ user.Email })。您可以在${ hoursRemaining }小時後變更您的密碼。"
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "為了確保確實是您在嘗試重設密碼，我們會等待 72 小時才核准請求。您可以在 ${ boldTimeLeft } 後變更密碼。${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "我們收到了 ${ boldEmail } 的密碼重設請求。"
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "檢視請求"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "請求重設密碼"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "登出"
+      ],
+      "Stay signed in": [
+        "保存登錄"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hours": [
+        "${ gracePeriodHoursRemaining }小時"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } 現在可用。"
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "若您在重設密碼前登出，您可能會遺失對您帳號的存取權。"
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "若您並未重設密碼而登出，您可能會遺失對您帳號的存取權。"
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "您將可以在${ boldTimeLeft }重設您的密碼。"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "密碼重設"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "登出而不重設密碼？"
+      ]
+    },
     "Settings update growler warning": {
       "Failed to update settings": [
         "未能更新設定"
@@ -5498,9 +5706,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "${ storageSize } 總儲存空間"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -5522,15 +5727,6 @@
       "Premium early access": [
         "進階版搶先體驗"
       ],
-      "Premium Mail and Calendar": [
-        "進階版郵件與行事曆"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "進階版郵件、行事曆與雲端硬碟"
-      ],
-      "Premium VPN": [
-        "進階版 VPN"
-      ],
       "Secure cloud storage": [
         "安全的雲端儲存空間"
       ],
@@ -5542,9 +5738,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "折扣基於每月基本價格。"
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "此訂閱將每 2 年自動以相同的費用續訂，直到被取消為止。"
       ]
@@ -5598,9 +5791,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "30 個月的費用為${ amount }"
-      ],
-      "for ${ n } months": [
-        "為期 ${ n } 個月"
       ],
       "Get the deal": [
         "取得優惠"
@@ -5669,9 +5859,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "我們所有具有最高限制的進階版服務：100 組電子郵件位址、支援 10 組自訂網域、無限制的隱藏 hide-my-email 別名、行事曆分享、加密雲端儲存與檔案分享等。"
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "包含對 1 個自訂電子郵件網域、10 組電子郵件位址、10 組 hide-my-email 別名、行事曆分享與更多功能的支援。"
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "包含對 3 個自訂電子郵件網域、15 組電子郵件位址、無限組 hide-my-email 別名、行事曆分享與更多功能的支援。"
       ],
@@ -5683,9 +5870,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "使用加密的雲端存儲保護您的檔案。包含自動同步、加密檔案分享等。"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -5768,9 +5952,6 @@
       ],
       "Calendar information updated": [
         "行事曆資訊已更新"
-      ],
-      "Calendar search activated": [
-        "已啟用行事曆搜尋"
       ],
       "Calendar updated": [
         "行事曆已更新"
@@ -5889,24 +6070,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "付費版雲端硬碟"
-      ],
-      "Premium Mail and Calendar": [
-        "付費版信件和行事曆"
-      ],
       "Premium Password Manager": [
         "付費版密碼管理器"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "安全處存密碼和自動填入網站。包含無限密碼、自動填入、密碼生成、和更多。"
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "密碼管理員"
       ]
     },
     "summer2023: Tooltip": {
@@ -5986,8 +6151,14 @@
       "Display name": [
         "顯示名稱"
       ],
+      "First name": [
+        "名字"
+      ],
       "Import": [
         "匯入"
+      ],
+      "Last name": [
+        "姓氏"
       ],
       "Values": [
         "值"
@@ -6062,6 +6233,9 @@
       ],
       "Billing cycle": [
         "繳款單週期"
+      ],
+      "Birthday": [
+        "生日"
       ],
       "Calendar": [
         "行事曆"
@@ -6221,6 +6395,9 @@
       ],
       "Night theme": [
         "夜間佈景主題"
+      ],
+      "Notes": [
+        "備註"
       ],
       "Open actions dropdown": [
         "展開操作下拉選單"
@@ -6519,6 +6696,9 @@
       ],
       "Are you sure you want to permanently delete ${ count } contacts?": [
         "您確定要永久刪除 ${ count } 位聯絡人嗎？"
+      ],
+      "Are you sure you want to permanently delete these contact groups?": [
+        "您確定要永久刪除這些連絡人群組嗎？"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "您確定要永久刪除此聯絡人群組嗎？"
