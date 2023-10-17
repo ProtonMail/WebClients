@@ -4,8 +4,8 @@ import { all, fork, put, select } from 'redux-saga/effects';
 import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import type { EventCursor, EventManagerEvent } from '@proton/pass/lib/events/manager';
-import { getUserPlanIntent, syncIntent, userEvent } from '@proton/pass/store/actions';
-import { userPlanRequest } from '@proton/pass/store/actions/requests';
+import { getUserAccessIntent, syncIntent, userEvent } from '@proton/pass/store/actions';
+import { userAccessRequest } from '@proton/pass/store/actions/requests';
 import { withRevalidate } from '@proton/pass/store/actions/with-request';
 import { selectAllAddresses, selectLatestEventId, selectUserSettings } from '@proton/pass/store/selectors';
 import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
@@ -42,7 +42,7 @@ function* onUserEvent(
 
     /* if the subscription/invoice changes, refetch the user Plan */
     if (event.Subscription || event.Invoices) {
-        const getPlanAction = withRevalidate(getUserPlanIntent(userPlanRequest(getAuth().getUserID()!)));
+        const getPlanAction = withRevalidate(getUserAccessIntent(userAccessRequest(getAuth().getUserID()!)));
         yield put(getPlanAction);
     }
 

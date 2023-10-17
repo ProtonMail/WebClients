@@ -24,13 +24,12 @@ function* bootWorker(options: WorkerRootSagaOptions) {
         const state = cache?.state ? merge(currentState, cache.state, { excludeEmpty: true }) : currentState;
 
         logger.info(`[Saga::Boot] ${cache !== undefined ? 'Booting from cache' : 'Cache not found during boot'}`);
-        const userData: RequiredNonNull<UserState> = yield getUserData(state);
-        const { user, plan, addresses, eventId, features, userSettings } = userData;
+        const data: RequiredNonNull<UserState> = yield getUserData(state);
 
         yield call(PassCrypto.hydrate, {
-            user,
+            user: data.user,
             keyPassword: options.getAuth().getPassword(),
-            addresses: Object.values(addresses),
+            addresses: Object.values(data.addresses),
             snapshot: cache?.snapshot,
         });
 
@@ -39,8 +38,8 @@ function* bootWorker(options: WorkerRootSagaOptions) {
         yield put(syncLocalSettings(yield options.getLocalSettings()));
 
         /* trigger a partial synchronization */
-        const sync = (yield synchronize(state, SyncType.PARTIAL, features, options)) as SynchronizationResult;
-        yield put(bootSuccess({ user, plan, addresses, eventId, sync, features, userSettings }));
+        const sync = (yield synchronize(state, SyncType.PARTIAL, data.features, options)) as SynchronizationResult;
+        yield put(bootSuccess({ ...data, sync }));
 
         options.onBoot?.({ ok: true });
     } catch (error: unknown) {

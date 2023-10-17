@@ -7,9 +7,9 @@ import withNotification from '@proton/pass/store/actions/with-notification';
 import type { EndpointOptions } from '@proton/pass/store/actions/with-receiver';
 import { withReceiver } from '@proton/pass/store/actions/with-receiver';
 import withRequest from '@proton/pass/store/actions/with-request';
-import type { UserState } from '@proton/pass/store/reducers';
+import type { SafeUserState } from '@proton/pass/store/reducers';
 import type { SynchronizationResult } from '@proton/pass/store/sagas/workers/sync';
-import type { ExtensionEndpoint, Maybe, RequiredNonNull, TabId, WorkerStatus } from '@proton/pass/types';
+import type { ExtensionEndpoint, Maybe, TabId, WorkerStatus } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import identity from '@proton/utils/identity';
 
@@ -67,7 +67,7 @@ export const bootFailure = createAction('boot failure', (error: unknown) =>
 
 export const bootSuccess = createAction(
     'boot success',
-    (payload: RequiredNonNull<UserState> & { sync: Maybe<SynchronizationResult> }) =>
+    (payload: { userState: SafeUserState; sync: Maybe<SynchronizationResult> }) =>
         pipe(
             withCacheBlock,
             withRequest({
