@@ -28,6 +28,7 @@ import {
     DEFAULT_CYCLE,
     PASS_APP_NAME,
     PLANS,
+    PLAN_NAMES,
     PLAN_TYPES,
 } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -37,7 +38,8 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasBonuses } from '@proton/shared/lib/helpers/organization';
 import { getPlanFromCheckout, hasPlanIDs, supportAddons } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { hasMigrationDiscount, hasNewVisionary, hasVPN } from '@proton/shared/lib/helpers/subscription';
+import { getInitials } from '@proton/shared/lib/helpers/string';
+import { getPrimaryPlan, hasMigrationDiscount, hasNewVisionary, hasVPN } from '@proton/shared/lib/helpers/subscription';
 import {
     Audience,
     Currency,
@@ -48,7 +50,7 @@ import {
     SubscriptionCheckResponse,
 } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
-import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
+import { FREE_PLAN, getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';
 import debounce from '@proton/utils/debounce';
@@ -117,6 +119,8 @@ export interface Props extends Pick<ModalProps<'div'>, 'open' | 'onClose' | 'onE
     disableThanksStep?: boolean;
     defaultAudience?: Audience;
     disableCycleSelector?: boolean;
+    showUserInfo?: boolean;
+    hasClose?: boolean;
     defaultSelectedProductPlans: ReturnType<typeof getDefaultSelectedProductPlans>;
     onSuccess?: () => void;
     fromPlan: FromPlan;
@@ -142,6 +146,41 @@ const BACK: Partial<{ [key in SUBSCRIPTION_STEPS]: SUBSCRIPTION_STEPS }> = {
 
 const getCodes = ({ gift, coupon }: Model): string[] => [gift, coupon].filter(isTruthy);
 
+const UserInfo = ({ className, app }: { className?: string; app: APP_NAMES }) => {
+    const [user] = useUser();
+
+    const [subscription] = useSubscription();
+    const primaryPlan = getPrimaryPlan(subscription, app);
+    const planTitle = primaryPlan?.Title || PLAN_NAMES[FREE_PLAN.Name as PLANS];
+
+    const { Email, DisplayName, Name } = user;
+    const nameToDisplay = DisplayName || Name;
+    const initials = getInitials(nameToDisplay || Email || '');
+
+    const name = Email ? Email : nameToDisplay;
+
+    return (
+        <div className={clsx('flex flex-nowrap flex-align-items-center', className)}>
+            <span
+                className="my-auto rounded bg-weak p-1 inline-block relative flex flex-item-noshrink min-w-custom min-h-custom"
+                aria-hidden="true"
+                style={{
+                    '--min-w-custom': '2rem',
+                    '--min-h-custom': '2rem',
+                }}
+            >
+                <span className="m-auto">{initials}</span>
+            </span>
+            <div className="ml-3 flex gap-2">
+                <span className="text-ellipsis" title={name}>
+                    {name}
+                </span>
+                <span className="color-weak">({planTitle})</span>
+            </div>
+        </div>
+    );
+};
+
 const SubscriptionModal = ({
     app,
     step = SUBSCRIPTION_STEPS.PLAN_SELECTION,
@@ -153,6 +192,8 @@ const SubscriptionModal = ({
     onSuccess,
     disablePlanSelection,
     disableCycleSelector: maybeDisableCycleSelector,
+    showUserInfo = false,
+    hasClose = true,
     disableThanksStep,
     defaultAudience = Audience.B2C,
     defaultSelectedProductPlans,
@@ -643,7 +684,7 @@ const SubscriptionModal = ({
                 as="form"
                 size="large"
             >
-                <ModalTwoHeader title={TITLE[model.step]} />
+                <ModalTwoHeader title={TITLE[model.step]} hasClose={hasClose} />
                 <ModalTwoContent>
                     <div ref={topRef} />
                     {model.step === SUBSCRIPTION_STEPS.NETWORK_ERROR && <GenericError />}
@@ -735,185 +776,192 @@ const SubscriptionModal = ({
                         </div>
                     )}
                     {model.step === SUBSCRIPTION_STEPS.CHECKOUT && (
-                        <div className="subscriptionCheckout-top-container">
-                            <div className="flex-item-fluid on-mobile-w100 pr-4 md:pr-0 lg:pr-6 pt-6">
-                                <div className="mx-auto max-w37e subscriptionCheckout-options ">
-                                    {(() => {
-                                        if (isFreePlanSelected) {
-                                            return null;
-                                        }
-                                        if (disableCycleSelector) {
+                        <>
+                            {showUserInfo && <UserInfo app={app} className="mb-4 mt-2" />}
+
+                            <div className="subscriptionCheckout-top-container">
+                                <div className="flex-item-fluid on-mobile-w100 pr-4 md:pr-0 lg:pr-6 pt-6">
+                                    <div className="mx-auto max-w37e subscriptionCheckout-options ">
+                                        {(() => {
+                                            if (isFreePlanSelected) {
+                                                return null;
+                                            }
+                                            if (disableCycleSelector) {
+                                                return (
+                                                    <>
+                                                        <h2 className="text-2xl text-bold mb-4">
+                                                            {c('Label').t`New plan`}
+                                                        </h2>
+                                                        <div className="mb-8">
+                                                            {(() => {
+                                                                const plan = getPlanFromCheckout(
+                                                                    model.planIDs,
+                                                                    plansMap
+                                                                );
+                                                                const result = getCheckout({
+                                                                    planIDs: model.planIDs,
+                                                                    plansMap,
+                                                                    checkResult,
+                                                                });
+                                                                return (
+                                                                    <SubscriptionItemView
+                                                                        title={plan?.Title}
+                                                                        bottomLeft={getShortBillingText(model.cycle)}
+                                                                        topRight={getSimplePriceString(
+                                                                            model.currency,
+                                                                            result.withDiscountPerMonth,
+                                                                            getMonthlySuffix(model.planIDs)
+                                                                        )}
+                                                                        bottomRight={getDiscountPrice(
+                                                                            result.discountPerCycle,
+                                                                            model.currency
+                                                                        )}
+                                                                        loading={loadingCheck}
+                                                                    />
+                                                                );
+                                                            })()}
+                                                            {canUpsellToVPNPassBundle(
+                                                                model.planIDs,
+                                                                model.cycle,
+                                                                couponCode
+                                                            ) && (
+                                                                <VPNPassPromotionButton
+                                                                    onClick={handleUpsellVPNPassBundle}
+                                                                    currency={model.currency}
+                                                                    cycle={model.cycle}
+                                                                />
+                                                            )}
+                                                            {model.planIDs[PLANS.VPN_PASS_BUNDLE] && (
+                                                                <Button
+                                                                    className="flex flex-nowrap flex-align-items-center flex-justify-center"
+                                                                    fullWidth
+                                                                    color="weak"
+                                                                    shape="outline"
+                                                                    onClick={handleUpsellVPNPassBundle}
+                                                                >
+                                                                    <Icon name="trash" size={14} />
+                                                                    <span className="ml-2">
+                                                                        {c('bf2023: Action').t`Remove ${PASS_APP_NAME}`}
+                                                                    </span>
+                                                                </Button>
+                                                            )}
+                                                        </div>
+                                                    </>
+                                                );
+                                            }
                                             return (
                                                 <>
                                                     <h2 className="text-2xl text-bold mb-4">
-                                                        {c('Label').t`New plan`}
+                                                        {c('Label').t`Subscription options`}
                                                     </h2>
                                                     <div className="mb-8">
-                                                        {(() => {
-                                                            const plan = getPlanFromCheckout(model.planIDs, plansMap);
-                                                            const result = getCheckout({
-                                                                planIDs: model.planIDs,
-                                                                plansMap,
-                                                                checkResult,
-                                                            });
-                                                            return (
-                                                                <SubscriptionItemView
-                                                                    title={plan?.Title}
-                                                                    bottomLeft={getShortBillingText(model.cycle)}
-                                                                    topRight={getSimplePriceString(
-                                                                        model.currency,
-                                                                        result.withDiscountPerMonth,
-                                                                        getMonthlySuffix(model.planIDs)
-                                                                    )}
-                                                                    bottomRight={getDiscountPrice(
-                                                                        result.discountPerCycle,
-                                                                        model.currency
-                                                                    )}
-                                                                    loading={loadingCheck}
-                                                                />
-                                                            );
-                                                        })()}
-                                                        {canUpsellToVPNPassBundle(
-                                                            model.planIDs,
-                                                            model.cycle,
-                                                            couponCode
-                                                        ) && (
-                                                            <VPNPassPromotionButton
-                                                                onClick={handleUpsellVPNPassBundle}
-                                                                currency={model.currency}
-                                                                cycle={model.cycle}
-                                                            />
-                                                        )}
-                                                        {model.planIDs[PLANS.VPN_PASS_BUNDLE] && (
-                                                            <Button
-                                                                className="flex flex-nowrap flex-align-items-center flex-justify-center"
-                                                                fullWidth
-                                                                color="weak"
-                                                                shape="outline"
-                                                                onClick={handleUpsellVPNPassBundle}
-                                                            >
-                                                                <Icon name="trash" size={14} />
-                                                                <span className="ml-2">
-                                                                    {c('bf2023: Action').t`Remove ${PASS_APP_NAME}`}
-                                                                </span>
-                                                            </Button>
-                                                        )}
+                                                        <SubscriptionCycleSelector
+                                                            mode="buttons"
+                                                            plansMap={plansMap}
+                                                            planIDs={model.planIDs}
+                                                            cycle={model.cycle}
+                                                            currency={model.currency}
+                                                            onChangeCycle={handleChangeCycle}
+                                                            disabled={loadingCheck}
+                                                        />
                                                     </div>
                                                 </>
                                             );
-                                        }
-                                        return (
-                                            <>
-                                                <h2 className="text-2xl text-bold mb-4">
-                                                    {c('Label').t`Subscription options`}
-                                                </h2>
-                                                <div className="mb-8">
-                                                    <SubscriptionCycleSelector
-                                                        mode="buttons"
-                                                        plansMap={plansMap}
-                                                        planIDs={model.planIDs}
-                                                        cycle={model.cycle}
-                                                        currency={model.currency}
-                                                        onChangeCycle={handleChangeCycle}
-                                                        disabled={loadingCheck}
+                                        })()}
+                                        {/* avoid mounting/unmounting the component which re-triggers the hook */}
+                                        <div className={amountDue ? undefined : 'hidden'}>
+                                            <Payment
+                                                api={api}
+                                                type="subscription"
+                                                paypal={paypal}
+                                                paypalCredit={paypalCredit}
+                                                method={method}
+                                                amount={amountDue}
+                                                currency={checkResult?.Currency}
+                                                coupon={couponCode}
+                                                card={card}
+                                                onMethod={setMethod}
+                                                onCard={setCard}
+                                                cardErrors={cardErrors}
+                                                creditCardTopRef={creditCardTopRef}
+                                                onBitcoinTokenValidated={async (data) => {
+                                                    setBitcoinValidated(true);
+                                                    await handleSubscribe({
+                                                        ...data,
+                                                        Amount: amountDue,
+                                                        Currency: checkResult?.Currency as Currency,
+                                                    });
+                                                }}
+                                                onAwaitingBitcoinPayment={setAwaitingBitcoinPayment}
+                                            />
+                                        </div>
+                                        <div className={amountDue || !checkResult ? 'hidden' : undefined}>
+                                            <h2 className="text-2xl text-bold mb-4">{c('Label').t`Payment details`}</h2>
+                                            <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>
+                                            {checkResult?.Credit && creditsRemaining ? (
+                                                <div className="mb-4">{c('Info')
+                                                    .t`Please note that upon clicking the Confirm button, your account will have ${creditsRemaining} credits remaining.`}</div>
+                                            ) : null}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="subscriptionCheckout-column bg-weak on-mobile-w100 rounded">
+                                    <div
+                                        className="subscriptionCheckout-container sticky-top"
+                                        data-testid="subscription-checkout"
+                                    >
+                                        <SubscriptionCheckout
+                                            submit={
+                                                <SubscriptionSubmitButton
+                                                    currency={model.currency}
+                                                    onClose={onClose}
+                                                    paypal={paypal}
+                                                    step={model.step}
+                                                    loading={loading || bitcoinLoading}
+                                                    method={method}
+                                                    checkResult={checkResult}
+                                                    className="w100"
+                                                    disabled={isFreeUserWithFreePlanSelected || !canPay}
+                                                />
+                                            }
+                                            plansMap={plansMap}
+                                            checkResult={checkResult}
+                                            vpnServers={vpnServers}
+                                            loading={loadingCheck}
+                                            currency={model.currency}
+                                            subscription={subscription}
+                                            cycle={model.cycle}
+                                            planIDs={model.planIDs}
+                                            gift={
+                                                <>
+                                                    {couponCode && (
+                                                        <div className="flex flex-align-items-center mb-1">
+                                                            <Icon name="gift" className="mr-2 mb-1" />
+                                                            <Tooltip title={couponDescription}>
+                                                                <code>{couponCode.toUpperCase()}</code>
+                                                            </Tooltip>
+                                                        </div>
+                                                    )}
+                                                    <PaymentGiftCode
+                                                        giftCodeRef={giftCodeRef}
+                                                        key={
+                                                            /* Reset the toggle state when a coupon code gets applied */
+                                                            couponCode
+                                                        }
+                                                        giftCode={model.gift}
+                                                        onApply={handleGift}
+                                                        loading={loadingGift}
                                                     />
-                                                </div>
-                                            </>
-                                        );
-                                    })()}
-                                    {/* avoid mounting/unmounting the component which re-triggers the hook */}
-                                    <div className={amountDue ? undefined : 'hidden'}>
-                                        <Payment
-                                            api={api}
-                                            type="subscription"
-                                            paypal={paypal}
-                                            paypalCredit={paypalCredit}
-                                            method={method}
-                                            amount={amountDue}
-                                            currency={checkResult?.Currency}
-                                            coupon={couponCode}
-                                            card={card}
-                                            onMethod={setMethod}
-                                            onCard={setCard}
-                                            cardErrors={cardErrors}
-                                            creditCardTopRef={creditCardTopRef}
-                                            onBitcoinTokenValidated={async (data) => {
-                                                setBitcoinValidated(true);
-                                                await handleSubscribe({
-                                                    ...data,
-                                                    Amount: amountDue,
-                                                    Currency: checkResult?.Currency as Currency,
-                                                });
-                                            }}
-                                            onAwaitingBitcoinPayment={setAwaitingBitcoinPayment}
+                                                </>
+                                            }
+                                            onChangeCurrency={handleChangeCurrency}
+                                            nextSubscriptionStart={subscription.PeriodEnd}
+                                            {...checkoutModifiers}
                                         />
                                     </div>
-                                    <div className={amountDue || !checkResult ? 'hidden' : undefined}>
-                                        <h2 className="text-2xl text-bold mb-4">{c('Label').t`Payment details`}</h2>
-                                        <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>
-                                        {checkResult?.Credit && creditsRemaining ? (
-                                            <div className="mb-4">{c('Info')
-                                                .t`Please note that upon clicking the Confirm button, your account will have ${creditsRemaining} credits remaining.`}</div>
-                                        ) : null}
-                                    </div>
                                 </div>
                             </div>
-                            <div className="subscriptionCheckout-column bg-weak on-mobile-w100 rounded">
-                                <div
-                                    className="subscriptionCheckout-container sticky-top"
-                                    data-testid="subscription-checkout"
-                                >
-                                    <SubscriptionCheckout
-                                        submit={
-                                            <SubscriptionSubmitButton
-                                                currency={model.currency}
-                                                onClose={onClose}
-                                                paypal={paypal}
-                                                step={model.step}
-                                                loading={loading || bitcoinLoading}
-                                                method={method}
-                                                checkResult={checkResult}
-                                                className="w100"
-                                                disabled={isFreeUserWithFreePlanSelected || !canPay}
-                                            />
-                                        }
-                                        plansMap={plansMap}
-                                        checkResult={checkResult}
-                                        vpnServers={vpnServers}
-                                        loading={loadingCheck}
-                                        currency={model.currency}
-                                        subscription={subscription}
-                                        cycle={model.cycle}
-                                        planIDs={model.planIDs}
-                                        gift={
-                                            <>
-                                                {couponCode && (
-                                                    <div className="flex flex-align-items-center mb-1">
-                                                        <Icon name="gift" className="mr-2 mb-1" />
-                                                        <Tooltip title={couponDescription}>
-                                                            <code>{couponCode.toUpperCase()}</code>
-                                                        </Tooltip>
-                                                    </div>
-                                                )}
-                                                <PaymentGiftCode
-                                                    giftCodeRef={giftCodeRef}
-                                                    key={
-                                                        /* Reset the toggle state when a coupon code gets applied */
-                                                        couponCode
-                                                    }
-                                                    giftCode={model.gift}
-                                                    onApply={handleGift}
-                                                    loading={loadingGift}
-                                                />
-                                            </>
-                                        }
-                                        onChangeCurrency={handleChangeCurrency}
-                                        nextSubscriptionStart={subscription.PeriodEnd}
-                                        {...checkoutModifiers}
-                                    />
-                                </div>
-                            </div>
-                        </div>
+                        </>
                     )}
                     {model.step === SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION && (
                         <div className="subscriptionCheckout-top-container">
