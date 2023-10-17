@@ -1,5 +1,6 @@
 import { ReactElement } from 'react';
 
+import { useFlag } from '@unleash/proxy-client-react';
 import { c } from 'ttag';
 
 import { useConfig } from '@proton/components/hooks';
@@ -173,6 +174,8 @@ const PlanSelection = ({
     const isVpnSettingsApp = APP_NAME === APPS.PROTONVPN_SETTINGS;
     const currentPlan = subscription ? subscription.Plans?.find(({ Type }) => Type === PLAN_TYPES.PLAN) : null;
 
+    const passVaultSharingEnabled = useFlag('PassVaultSharingDescription');
+
     const enabledProductB2CPlans = [PLANS.MAIL, PLANS.VPN, PLANS.DRIVE, PLANS.PASS_PLUS].filter(isTruthy);
     const enabledProductB2BPlans = [PLANS.MAIL_PRO /*, PLANS.DRIVE_PRO*/];
 
@@ -212,7 +215,12 @@ const PlanSelection = ({
     }
 
     const isSignupMode = mode === 'signup';
-    const features = getAllFeatures(plansMap, vpnServers, calendarSharingEnabled);
+    const features = getAllFeatures({
+        plansMap,
+        serversCount: vpnServers,
+        calendarSharingEnabled,
+        passVaultSharingEnabled,
+    });
 
     const plansListB2C = getPlansList(enabledProductB2CPlans, plansMap);
     const recommendedPlans = [PLANS.BUNDLE, PLANS.BUNDLE_PRO, PLANS.FAMILY];
