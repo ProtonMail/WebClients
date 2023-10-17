@@ -634,9 +634,6 @@
       "${ n } month": [
         "${ n } kuukaudeksi",
         "${ n } kuukaudeksi"
-      ],
-      "Renews automatically for ${ renewPrice }, for ${ renewalLength }": [
-        "Uudistuu automaattisesti ${ renewalLength } hintaan ${ renewPrice } ."
       ]
     },
     "Billing cycle option": {
@@ -2018,15 +2015,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Premium Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Premium Mail ja Calendar"
-      ],
-      "Premium VPN": [
-        "Premium VPN"
-      ],
       "Up to 6 users": [
         "Enintään 6 käyttäjää"
       ]
@@ -2657,9 +2645,6 @@
       "Admin account allocation": [
         "Ylläpitotilin varaus"
       ],
-      "All ${ BRAND_NAME } apps and their premium features": [
-        "Kaikki ${ BRAND_NAME }-sovellukset ja niiden premium-ominaisuudet"
-      ],
       "All your changes will be lost.": [
         "Kaikki muutokset menetetään."
       ],
@@ -3109,14 +3094,8 @@
       "per month, billed every 12 months": [
         "kuukaudessa, laskutus 12 kuukauden välein"
       ],
-      "per month, billed every 15 months": [
-        "kuukaudessa, laskutus 15 kuukauden välein"
-      ],
       "per month, billed every 24 months": [
         "kuukaudessa, laskutus 24 kuukauden välein"
-      ],
-      "per month, billed every 30 months": [
-        "kuukaudessa, laskutus 30 kuukauden välein"
       ],
       "Plan upgrade required": [
         "Tilauspäivitys vaaditaan"
@@ -3585,6 +3564,9 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Voit muokata tätä kerran varmistaaksesi, että sähköpostiosoite on oikea vahvistusta varten."
       ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
+        "Voit avata yllä olevan määrityksen heti lisäämällä ${ specificCountryCount } tilauksesi IP-osoitteiden määrään tai ottamalla meihin yhteyttä räätälöityjä ratkaisuja varten."
+      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenterin. Poista ennen ${ MAIL_SHORT_APP_NAME }-tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjä, jolle olet jakanut kalentereitasi.",
         "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenteria. Poista ennen ${ MAIL_SHORT_APP_NAME }-tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjät, joille olet jakanut kalentereitasi."
@@ -3700,9 +3682,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Tilaustasi hallinnoi Mozilla. Ota yhteyttä Mozillan tukeen."
-      ],
-      "Your subscription will automatically renew on ${ renewalTime }.": [
-        "Tilauksesi uudistuu automaattisesti ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -4536,6 +4515,9 @@
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } ilman Hide-my-email-aliasrajoitusta"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } -ohjelma"
+      ],
       "${ size } attachment size": [
         "${ size } liitteen koko"
       ],
@@ -4556,9 +4538,6 @@
       ],
       "99.95% SLA": [
         "99.95 % SLA"
-      ],
-      "Ad-blocker & malware protection": [
-        "Mainos- ja haittaohjelmaesto"
       ],
       "Admin console": [
         "Hallintapaneeli"
@@ -4973,18 +4952,6 @@
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
-        "${ CALENDAR_APP_NAME }: päästä päähän -salattu kalenteri"
-      ],
-      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
-        "${ DRIVE_APP_NAME }: päästä päähän -salattu pilvitallennustila"
-      ],
-      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
-        "${ MAIL_APP_NAME }: päästä päähän -salattu sähköposti"
-      ],
-      "${ VPN_APP_NAME }: unblock content, browse privately": [
-        "${ VPN_APP_NAME }: käytä estettyä sisältöä, selaa yksityisesti"
-      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Käytä mm. Netflixin, Disney+:n ja Prime Videon kaltaisten suoratoistopalveluiden sisältöä mistä tahansa"
       ],
@@ -5090,6 +5057,9 @@
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Suojaa perhettäsi haitallisilta verkkosivustoilta ja käytä nopeita VPN-palvelimia suoratoistaaksesi suosikkisisältöäsi"
+      ],
+      "Provides the highest level of account security protection and specialist support": [
+        "Tarjoaa korkeimman tason tilin suojauksen ja asiantuntijatuen"
       ],
       "Quickly set up out-of-office messages": [
         "Määritä \"poissa toimistolta\" -viestit nopeasti"
@@ -5882,9 +5852,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "Yhteensä ${ storageSize } tallennustilaa"
-      ],
       "3 TB": [
         "3 Tt"
       ],
@@ -5906,15 +5873,6 @@
       "Premium early access": [
         "Premium-ennakkokäyttö"
       ],
-      "Premium Mail and Calendar": [
-        "Premium Mail ja Calendar"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "Premium Mail, Calendar ja Drive"
-      ],
-      "Premium VPN": [
-        "Premium VPN"
-      ],
       "Secure cloud storage": [
         "Turvallinen pilvitallennustila"
       ],
@@ -5926,9 +5884,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "Alennukset perustuvat normaaliin kuukausihintaan."
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Tilaus uudistuu automaattisesti kahden vuoden välein samalla hinnalla kunnes se perutaan."
       ]
@@ -5982,10 +5937,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Laskutetaan ${ amount } 30 kuukauden ajan"
-      ],
-      "for ${ n } month": [
-        "${ n } kuukaudeksi",
-        "${ n } kuukaudeksi"
       ],
       "Get the deal": [
         "Hanki tarjous"
@@ -6054,9 +6005,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Kaikki premium-palvelumme parhaimmillaan: 100 sähköpostiosoitetta, tuki 10 omalle verkkotunnukselle, rajattomasti Hide-my-email-aliaksia, kalenterijako, salattu pilvitallennus tiedostojen jaolla sekä paljon muuta."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Sisältää tuen yhdelle omalle sähköpostiverkkotunnukselle, 10 sähköpostiosoitteelle, 10 Hide-my-email-aliakselle, kalenterijaolle sekä paljon muuta."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Sisältää tuen kolmelle omalle sähköpostiverkkotunnukselle, 15 sähköpostiosoitteelle, rajattomasti Hide-my-email-aliaksia, kalenterijaon sekä paljon muuta."
       ],
@@ -6068,9 +6016,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää automaattisen synkronoinnin, salatun tiedostojen jakamisen ja paljon muuta."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Tallennustila jaetaan ${ MAIL_APP_NAME }in, ${ CALENDAR_APP_NAME }in ja ${ DRIVE_APP_NAME }n välillä."
       ]
     },
     "Spotlight": {
@@ -6101,14 +6046,8 @@
       ]
     },
     "Subscription": {
-      "Billed every 15 months": [
-        "Laskutetaan 15 kuukauden välein"
-      ],
       "Billed every 2 years": [
         "Laskutetaan 2 vuoden välein"
-      ],
-      "Billed every 30 months": [
-        "Laskutetaan 30 kuukauden välein"
       ],
       "Billed monthly": [
         "Laskutetaan kuukausittain"
@@ -6402,24 +6341,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "Premium Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Premium Mail ja Calendar"
-      ],
       "Premium Password Manager": [
         "Premium salasanahallinta"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Tallenna salasanasi turvallisesti ja täytä ne automaattisesti verkkosivustoilla. Sisältää rajattomasti salasanoja, automaattisen täytön, salasanageneraattorin ja paljon muuta."
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "Salasanahallinta"
       ]
     },
     "summer2023: Tooltip": {
@@ -7117,11 +7040,6 @@
       ],
       "Verified email address": [
         "Vahvistettu sähköpostiosoite"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
-        "${ PASS_APP_NAME }: päästä päähän -salattu salasanahallinta"
       ]
     },
     "Tor out of date": {

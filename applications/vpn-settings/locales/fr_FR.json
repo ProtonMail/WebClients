@@ -18,7 +18,7 @@
         "Ajouter une adresse"
       ],
       "Add credit / debit card": [
-        "Ajouter une carte de crédit/débit"
+        "Ajouter une carte de paiement"
       ],
       "Add credits": [
         "Ajouter des crédits"
@@ -628,6 +628,12 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Cela déconnectera tous les routeurs et les clients utilisant ce certificat."
+      ]
+    },
+    "Billing cycle": {
+      "${ n } month": [
+        "${ n } mois",
+        "${ n } mois"
       ]
     },
     "Billing cycle option": {
@@ -2009,15 +2015,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Drive version premium"
-      ],
-      "Premium Mail and Calendar": [
-        "Mail et Calendar version premium"
-      ],
-      "Premium VPN": [
-        "VPN version premium"
-      ],
       "Up to 6 users": [
         "Jusqu'à 6 utilisateurs"
       ]
@@ -2648,9 +2645,6 @@
       "Admin account allocation": [
         "Attribution de compte administrateur"
       ],
-      "All ${ BRAND_NAME } apps and their premium features": [
-        "Toutes les applications ${ BRAND_NAME } et leurs fonctionnalités premium"
-      ],
       "All your changes will be lost.": [
         "Toutes vos modifications seront perdues."
       ],
@@ -3100,14 +3094,8 @@
       "per month, billed every 12 months": [
         "par mois (facturation tous les 12 mois)"
       ],
-      "per month, billed every 15 months": [
-        "par mois (facturation tous les 15 mois)"
-      ],
       "per month, billed every 24 months": [
         "par mois (facturation tous les 24 mois)"
-      ],
-      "per month, billed every 30 months": [
-        "par mois (facturation tous les 30 mois)"
       ],
       "Plan upgrade required": [
         "Un abonnement supérieur est nécessaire."
@@ -3624,10 +3612,10 @@
         "Vous devez désactiver ou supprimer vos autres utilisateurs ${ MAIL_APP_NAME }, adresses et domaines personnalisés avant de pouvoir passer à un abonnement inférieur."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        "Pour pouvoir ajouter PayPal comme méthode de paiement, vous devez associer une carte de crédit ou un compte bancaire à votre compte PayPal."
+        "Pour pouvoir ajouter PayPal comme méthode de paiement, vous devez associer une carte de paiement ou un compte bancaire à votre compte PayPal."
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Vous devez avoir une carte de crédit ou un compte bancaire lié à votre compte PayPal. Si ce n'est pas le cas, cliquez sur le lien ci-dessous."
+        "Vous devez avoir une carte de paiement ou un compte bancaire lié à votre compte PayPal. Si ce n'est pas le cas, cliquez sur le lien ci-dessous."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Vous avez atteint ${ spaceDisplayed } % de votre capacité de stockage. ${ freeUpMessage } ${ upgradeLink }"
@@ -3857,7 +3845,7 @@
         "Montant BTC"
       ],
       "Card details": [
-        "Informations de carte bancaire"
+        "Informations de carte"
       ],
       "Card holder": [
         "Titulaire de la carte"
@@ -4274,7 +4262,7 @@
         "Payer la facture"
       ],
       "Paypal without credit card": [
-        "PayPal sans carte de crédit"
+        "PayPal sans carte de paiement"
       ],
       "Privacy policy": [
         "Politique de confidentialité"
@@ -4527,6 +4515,9 @@
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } avec des alias « hide-my-email » illimités"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "Programme ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ size } attachment size": [
         "${ size } de pièces jointes"
       ],
@@ -4548,9 +4539,6 @@
       "99.95% SLA": [
         "SLA/uptime : 99,95 % de disponibilité du service"
       ],
-      "Ad-blocker & malware protection": [
-        "Bloqueur de publicités et protection contre les logiciels malveillants"
-      ],
       "Admin console": [
         "Console d'administration"
       ],
@@ -4567,7 +4555,7 @@
         "Réponse automatique"
       ],
       "Autofill credit cards (coming soon)": [
-        "Remplissage automatique pour les cartes bancaires (prochainement)"
+        "Remplissage automatique pour les cartes de paiement (prochainement)"
       ],
       "Available on all platforms": [
         "Disponible sur toutes les plateformes"
@@ -4964,18 +4952,6 @@
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
-        "${ CALENDAR_APP_NAME } : calendrier chiffré de bout en bout"
-      ],
-      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
-        "${ DRIVE_APP_NAME } : stockage cloud chiffré de bout en bout"
-      ],
-      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
-        "${ MAIL_APP_NAME } : messagerie chiffrée de bout en bout"
-      ],
-      "${ VPN_APP_NAME }: unblock content, browse privately": [
-        "${ VPN_APP_NAME } : débloquez des contenus et surfez de façon anonyme"
-      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Accédez aux contenus des services de streaming, dont Netflix, Amazon Prime Video, Canal+, Disney+, France.tv, TF1… où que vous soyez."
       ],
@@ -5044,7 +5020,7 @@
         "Sécurisez les ressources de votre entreprise sur internet et rendez-les accessibles uniquement par le biais de vos passerelles privées."
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
-        "Gérez votre abonnement, notamment sa personnalisation. Les moyens de paiement acceptés sont les cartes de crédit, PayPal, les cryptomonnaies et les virements bancaires."
+        "Gérez votre abonnement, notamment sa personnalisation. Les moyens de paiement acceptés sont les cartes de paiement, PayPal, les cryptomonnaies et les virements bancaires."
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Les jours ouvrés, l'équipe support client ${ BRAND_NAME } vous apporte son aide dans les 24 heures suivant votre demande."
@@ -5082,6 +5058,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Protégez votre famille des sites internet malveillants et accédez à nos serveurs VPN haut débit pour regarder vos contenus préférés en streaming."
       ],
+      "Provides the highest level of account security protection and specialist support": [
+        "Assure le plus haut niveau de protection et une assistance spécialisée en matière de sécurité des comptes."
+      ],
       "Quickly set up out-of-office messages": [
         "Configurez rapidement des messages d'absence."
       ],
@@ -5113,7 +5092,7 @@
         "Partagez vos fichiers ou dossiers avec qui vous voulez grâce à des liens sécurisés et partageables."
       ],
       "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
-        "Le protocole SMTP permet à des services ou des appareils tiers d'envoyer des messages en utilisant ${ MAIL_APP_NAME }."
+        "Le SMTP permet à des services ou des appareils tiers d'envoyer des messages en utilisant ${ MAIL_APP_NAME }."
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "NetShield est une fonctionnalité spécialement conçue pour protéger votre appareil et accélérer votre navigation en bloquant les publicités, traqueurs et logiciels malveillants."
@@ -5347,10 +5326,10 @@
     },
     "Payment method option": {
       "Credit/debit card": [
-        "Carte de crédit/débit"
+        "Carte de paiement"
       ],
       "New credit/debit card": [
-        "Nouvelle carte de crédit/débit"
+        "Nouvelle carte de paiement"
       ]
     },
     "Placeholder": {
@@ -5873,9 +5852,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "${ storageSize } d'espace de stockage total"
-      ],
       "3 TB": [
         "3 To"
       ],
@@ -5897,15 +5873,6 @@
       "Premium early access": [
         "Accès premium en avant-première"
       ],
-      "Premium Mail and Calendar": [
-        "Mail et Calendar premium"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "Mail, Calendar et Drive premium"
-      ],
-      "Premium VPN": [
-        "VPN premium"
-      ],
       "Secure cloud storage": [
         "Stockage cloud sécurisé"
       ],
@@ -5917,9 +5884,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "Les réductions sont calculées sur les prix mensuels habituels."
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Cet abonnement se renouvellera automatiquement tous les 2 ans au même prix jusqu'à ce qu'il soit annulé."
       ]
@@ -5973,10 +5937,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Facturé ${ amount } pour 30 mois"
-      ],
-      "for ${ n } month": [
-        "pour ${ n } mois",
-        "pour ${ n } mois"
       ],
       "Get the deal": [
         "J'en profite"
@@ -6045,9 +6005,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Tous nos services premium au plus haut niveau : 100 adresses e-mail, la prise en charge de 10 domaines personnalisés, un nombre illimité d'alias « hide-my-email », le partage de calendriers, le stockage cloud et le partage de fichiers chiffrés…"
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias « hide-my-email », du partage de calendrier…"
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 15 adresses e-mail, d'un nombre illimité d'alias « hide-my-email », du partage de calendrier…"
       ],
@@ -6059,9 +6016,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sécurisez vos fichiers grâce au stockage cloud chiffré. Comprend la synchronisation automatique, le partage de fichiers chiffrés et d'autres fonctionnalités."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "L'espace de stockage est partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -6092,14 +6046,8 @@
       ]
     },
     "Subscription": {
-      "Billed every 15 months": [
-        "Facturé tous les 15 mois"
-      ],
       "Billed every 2 years": [
         "Facturé tous les 2 ans"
-      ],
-      "Billed every 30 months": [
-        "Facturé tous les 30 mois"
       ],
       "Billed monthly": [
         "Facturé mensuellement"
@@ -6393,29 +6341,13 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "Drive version premium"
-      ],
-      "Premium Mail and Calendar": [
-        "Mail et Calendar version premium"
-      ],
       "Premium Password Manager": [
         "Gestionnaire de mots de passe premium"
       ]
     },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Enregistrez vos mots de passe en toute sécurité et renseignez-les automatiquement sur les sites internet. Profitez d'un nombre illimité de mots de passe, du remplissage automatique, d'un générateur de mots de passe et de bien d'autres fonctionnalités."
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "Gestionnaire de mots de passe"
-      ]
-    },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Créez des identifiants de connexion sécurisés sur tous vos appareils. Profitez d'un nombre illimité d'alias, de 20 coffres-forts, de l'authentification à deux facteurs (2FA) intégrée, du remplissage automatique des cartes bancaires et de bien d'autres fonctionnalités."
+        "Créez des identifiants de connexion sécurisés sur tous vos appareils. Profitez d'un nombre illimité d'alias, de 20 coffres-forts, de l'authentification à deux facteurs (2FA) intégrée, du remplissage automatique des cartes de paiement et de bien d'autres fonctionnalités."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Cela comprend 2 950 serveurs répartis dans plus de 65 pays, la possibilité de connecter jusqu'à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
@@ -6552,7 +6484,7 @@
         "Ajouter une adresse"
       ],
       "Add credit/debit card": [
-        "Ajouter une carte de crédit/débit"
+        "Ajouter une carte de paiement"
       ],
       "Add credits": [
         "Ajouter des crédits"
@@ -6725,7 +6657,7 @@
         "Téléchargements"
       ],
       "Edit credit/debit card": [
-        "Modifier la carte de crédit/débit"
+        "Modifier la carte de paiement"
       ],
       "Edit display name": [
         "Modifier le nom d’affichage"
@@ -7108,11 +7040,6 @@
       ],
       "Verified email address": [
         "Adresse e-mail vérifiée"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
-        "${ PASS_APP_NAME } : gestionnaire de mots de passe chiffré de bout en bout"
       ]
     },
     "Tor out of date": {

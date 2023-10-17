@@ -634,9 +634,6 @@
       "${ n } month": [
         "${ n } mes",
         "${ n } meses"
-      ],
-      "Renews automatically for ${ renewPrice }, for ${ renewalLength }": [
-        "Se renueva automáticamente por ${ renewPrice }, durante ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -2018,15 +2015,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Drive premium"
-      ],
-      "Premium Mail and Calendar": [
-        "Correo y calendario premium"
-      ],
-      "Premium VPN": [
-        "VPN premium"
-      ],
       "Up to 6 users": [
         "Hasta 6 usuarios"
       ]
@@ -2657,9 +2645,6 @@
       "Admin account allocation": [
         "Cuenta administrador de asignación"
       ],
-      "All ${ BRAND_NAME } apps and their premium features": [
-        "Todas las apps de ${ BRAND_NAME } y sus funciones premium"
-      ],
       "All your changes will be lost.": [
         "Todos sus cambios se perderán."
       ],
@@ -3109,14 +3094,8 @@
       "per month, billed every 12 months": [
         "al mes con facturación cada 12 meses"
       ],
-      "per month, billed every 15 months": [
-        "al mes con facturación cada 15 meses"
-      ],
       "per month, billed every 24 months": [
         "al mes con facturación cada 24 meses"
-      ],
-      "per month, billed every 30 months": [
-        "al mes con facturación cada 30 meses"
       ],
       "Plan upgrade required": [
         "Se requiere actualizar el plan"
@@ -3703,9 +3682,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Su suscripción es gestionada por Mozilla. Contacte con el soporte de Mozilla."
-      ],
-      "Your subscription will automatically renew on ${ renewalTime }.": [
-        "Su suscripción se renovará automáticamente en ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -4539,6 +4515,9 @@
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } con alias de hide-my-email ilimitados"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "Programa ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ size } attachment size": [
         "${ size } en archivos adjuntos"
       ],
@@ -4559,9 +4538,6 @@
       ],
       "99.95% SLA": [
         "SLA del 99,95%"
-      ],
-      "Ad-blocker & malware protection": [
-        "Bloqueador de anuncios y protección de malware"
       ],
       "Admin console": [
         "Consola de administración"
@@ -4976,18 +4952,6 @@
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
-        "${ CALENDAR_APP_NAME }: calendario cifrado de extremo a extremo"
-      ],
-      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
-        "${ DRIVE_APP_NAME }: almacenamiento en la nube cifrado de extremo a extremo"
-      ],
-      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
-        "${ MAIL_APP_NAME }: correo electrónico cifrado de extremo a extremo"
-      ],
-      "${ VPN_APP_NAME }: unblock content, browse privately": [
-        "${ VPN_APP_NAME }: desbloquee contenido, navegue en privado"
-      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Acceda desde cualquier lugar al contenido de servicios de streaming, como Netflix, Disney+ y Prime Video"
       ],
@@ -5093,6 +5057,9 @@
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Proteja su familia de sitios web dañinos y acceda a nuestros servidores VPN de gran velocidad para transmitir su contenido favorito"
+      ],
+      "Provides the highest level of account security protection and specialist support": [
+        "Proporciona el nivel más alto de protección de tu cuenta y un soporte especializado."
       ],
       "Quickly set up out-of-office messages": [
         "Configure mensajes rápidamente para informar de que no está en la oficina"
@@ -5885,9 +5852,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "${ storageSize } de almacenamiento total"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -5906,20 +5870,8 @@
       "Highest VPN speed": [
         "Máxima velocidad de VPN"
       ],
-      "Mail, Calendar, Drive": [
-        "Mail, Calendar y Drive"
-      ],
       "Premium early access": [
         "Acceso anticipado premium"
-      ],
-      "Premium Mail and Calendar": [
-        "Mail y Calendar premium"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "Mail, Calendar y Drive premium"
-      ],
-      "Premium VPN": [
-        "VPN premium"
       ],
       "Secure cloud storage": [
         "Almacenamiento seguro en la nube"
@@ -5932,9 +5884,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "Los descuentos se basan en los precios estándares mensuales."
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Esta suscripción se renovará automáticamente cada 2 años con la misma tarifa hasta que sea cancelada."
       ]
@@ -5988,10 +5937,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Al precio de ${ amount } durante 30 meses"
-      ],
-      "for ${ n } month": [
-        "por ${ n } mes",
-        "por ${ n } meses"
       ],
       "Get the deal": [
         "Obtener la oferta"
@@ -6060,9 +6005,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Todos nuestros servicios premium al máximo: 100 direcciones de correo electrónico, compatibilidad con 10 dominios personalizados, alias ilimitados de Hide-my-email, posibilidad de compartir calendarios y archivos cifrados, almacenamiento cifrado en la nube, etc."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 alias de Hide-my-email, posibilidad de compartir calendario, etc."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, 15 direcciones de correo electrónico, alias ilimitados de Hide-my-email, posibilidad de compartir calendario, etc."
       ],
@@ -6074,9 +6016,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteja sus archivos con almacenamiento en la nube cifrado. Incluye sincronización automática, uso compartido de archivos cifrados y más."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Espacio de almacenamiento compartido en ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -6107,14 +6046,8 @@
       ]
     },
     "Subscription": {
-      "Billed every 15 months": [
-        "Facturación cada 15 meses"
-      ],
       "Billed every 2 years": [
         "Facturación cada 2 años"
-      ],
-      "Billed every 30 months": [
-        "Facturación cada 30 meses"
       ],
       "Billed monthly": [
         "Facturación mensual"
@@ -6408,24 +6341,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "Drive premium"
-      ],
-      "Premium Mail and Calendar": [
-        "Correo y calendario premium"
-      ],
       "Premium Password Manager": [
         "Administrador de contraseñas premium"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Guarde sus contraseñas con seguridad y complételas de forma automática en los sitios web. Se incluyen contraseñas ilimitadas, función de completado automático, generador de contraseñas y más."
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "Gestor de contraseñas"
       ]
     },
     "summer2023: Tooltip": {
@@ -7123,11 +7040,6 @@
       ],
       "Verified email address": [
         "Correo electrónico verificado"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
-        "${ PASS_APP_NAME }: gestor de contraseñas cifrado de extremo a extremo"
       ]
     },
     "Tor out of date": {

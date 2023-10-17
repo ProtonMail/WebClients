@@ -630,6 +630,76 @@
         "Dadurch werden alle Router und Clients, die dieses Zertifikat verwenden, getrennt."
       ]
     },
+    "bf2023: Deal details": {
+      "${ storageSize } storage": [
+        "${ storageSize } Speicherplatz"
+      ],
+      "1 user": [
+        "1 Benutzer"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "3,000+ servers across 65+ countries": [
+        "Mehr als 3.000 Server verteilt über 65 Länder"
+      ],
+      "6 users": [
+        "6 Benutzer"
+      ],
+      "Ad-blocker and malware protection": [
+        "Werbeblocker & Malware-Schutz"
+      ],
+      "Extended version history": [
+        "Erweiterter Versionsverlauf"
+      ],
+      "Fast BitTorrent downloads": [
+        "Schnelle BitTorrent-Downloads"
+      ],
+      "High speed streaming": [
+        "Hochgeschwindigkeits-Steaming"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium-${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium-${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium-${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Premium Passwort-Manager"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "Greife auf blockierte Inhalte zu und surfe privat. Enthält über 3.000 Server verteilt über 65 Länder, höchste VPN-Geschwindigkeiten, weltweite Streaming-Dienste, Malware- und Werbeblocker, schnelle BitTorrent-Downloads und mehr."
+      ],
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Greife von überall aus auf Inhalte von Streaming-Diensten zu, darunter Netflix, Disney+, Prime Video und andere."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
+        "Beinhaltet Unterstützung für ${ domains } eigene E-Mail-Domains, ${ addresses } E-Mail-Adressen, ${ aliases } hide-my-email-Aliasse, Kalenderfreigabe und mehr."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Beinhaltet Unterstützung für ${ domains } eigene E-Mail-Domains, ${ addresses } E-Mail-Adressen, unbegrenzte hide-my-email-Aliasse, Kalenderfreigabe und mehr."
+      ],
+      "Secure logins on all your devices. Includes unlimited aliases, sharing, vaults, integrated 2FA and more.": [
+        "Sichere Anmeldungen auf all deinen Geräten. Mit unbegrenzten Aliassen, Freigaben, Tresoren, integrierter 2FA und mehr."
+      ],
+      "Secure your files, folders and photos with end-to-end and zero-access encryption. Includes version history, encrypted file sharing, and more.": [
+        "Sichere deine Dateien, Ordner und Fotos mit Ende-zu-Ende- und Zero-Access-Verschlüsselung. Enthält Versionsverläufe, verschlüsselte Dateifreigaben und mehr."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Das speziell entwickelte NetShield schützt deine Geräte und beschleunigt das Surfen durch das Blockieren von Werbung, Trackern und Malware."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "Der Speicherplatz wird von allen ${ BRAND_NAME }-Apps gemeinsam genutzt."
+      ],
+      "Store up to 200 versions of each file for up to 10 years.": [
+        "Speichere bis zu 200 Versionen jeder Datei für bis zu 10 Jahre."
+      ]
+    },
     "Billing cycle": {
       "${ n } month": [
         "${ n } Monat",
@@ -2015,15 +2085,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Premium-Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Premium Mail und Calendar"
-      ],
-      "Premium VPN": [
-        "Premium-VPN"
-      ],
       "Up to 6 users": [
         "Bis zu 6 Benutzer"
       ]
@@ -2305,6 +2366,9 @@
       ],
       "Allow platform keys": [
         "Plattform-Schlüssel zulassen"
+      ],
+      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
+        "Ermöglicht die Registrierung integrierter Sicherheitsschlüssel (wie Windows Hello, Face ID, Touch ID oder interne TPM)"
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Bist du dir sicher, dass du den Sicherheitsschlüssel ${ name } löschen möchtest?"
@@ -2650,9 +2714,6 @@
       ],
       "Admin account allocation": [
         "Admin-Konto-Zuweisung"
-      ],
-      "All ${ BRAND_NAME } apps and their premium features": [
-        "Alle ${ BRAND_NAME } Anwendungen und ihre Premiumfunktionen"
       ],
       "All your changes will be lost.": [
         "Alle deine Änderungen gehen dabei verloren."
@@ -3103,14 +3164,8 @@
       "per month, billed every 12 months": [
         "pro Monat, Abrechnung alle 12 Monate"
       ],
-      "per month, billed every 15 months": [
-        "pro Monat, Abrechnung alle 15 Monate"
-      ],
       "per month, billed every 24 months": [
         "pro Monat, Abrechnung alle 24 Monate"
-      ],
-      "per month, billed every 30 months": [
-        "pro Monat, Abrechnung alle 30 Monate"
       ],
       "Plan upgrade required": [
         "Umstieg auf ein anderes Abo erforderlich"
@@ -3697,9 +3752,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Dein Abonnement wird von Mozilla verwaltet. Bitte kontaktiere den Mozilla-Support."
-      ],
-      "Your subscription will automatically renew on ${ renewalTime }.": [
-        "Dein Abonnement wird am ${ renewalTime } automatisch verlängert."
       ]
     },
     "Info for cash payment method": {
@@ -4533,6 +4585,9 @@
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } mit unbegrenzten hide-my-email-Aliassen"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME }-Programm"
+      ],
       "${ size } attachment size": [
         "Anhänge mit einer Größe von ${ size }"
       ],
@@ -4553,9 +4608,6 @@
       ],
       "99.95% SLA": [
         "Dienstleistungsvereinbarung über 99,95 % Verfügbarkeit"
-      ],
-      "Ad-blocker & malware protection": [
-        "Werbeblocker & Malware-Schutz"
       ],
       "Admin console": [
         "Adminkonsole"
@@ -4970,18 +5022,6 @@
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
-        "${ CALENDAR_APP_NAME }: Ende-zu-Ende-verschlüsselter Kalender"
-      ],
-      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
-        "${ DRIVE_APP_NAME }: Ende-zu-Ende-verschlüsselter Cloud-Speicher"
-      ],
-      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
-        "${ MAIL_APP_NAME }: Ende-zu-Ende-verschlüsselte E-Mails"
-      ],
-      "${ VPN_APP_NAME }: unblock content, browse privately": [
-        "${ VPN_APP_NAME }: Inhalte entsperren, privat surfen"
-      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Greife von überall aus auf Inhalte von Streaming-Diensten zu, darunter Netflix, Disney+ und Prime Video."
       ],
@@ -5577,6 +5617,9 @@
       ]
     },
     "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "Kontowiederherstellung für ältere Adressschlüssel ist nicht verfügbar"
+      ],
       "Please generate keys before you try to change your password": [
         "Bitte generiere Schlüssel, bevor du versuchst dein Passwort zu ändern."
       ]
@@ -5589,6 +5632,12 @@
       "${ timeRemaining.inHours } hour": [
         "${ timeRemaining.inHours } Stunde",
         "${ timeRemaining.inHours } Stunden"
+      ],
+      "Didn’t make this request?": [
+        "Du hast diese Anfrage nicht gestellt?"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Wenn du nicht darum gebeten hast, dein Passwort zurückzusetzen, breche die Anfrage jetzt ab."
       ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
         "Anfrage zur Passwortzurücksetzung genehmigt (${ user.Email }). Du hast ${ timeRemaining.inDays } Tag, um dein Passwort zurückzusetzen.",
@@ -5614,6 +5663,9 @@
       ],
       "You can now reset your password": [
         "Du kannst dein Passwort jetzt zurücksetzen."
+      ],
+      "You can reset your password until ${ boldDate }.": [
+        "Du kannst dein Passwort bis zum ${ boldDate } zurücksetzen."
       ]
     },
     "session_recovery:available:link": {
@@ -5658,7 +5710,7 @@
     },
     "session_recovery:cancelled:link": {
       "change your password now": [
-        "Passwort jetzt ändern"
+        "ändere jetzt dein Passwort"
       ]
     },
     "session_recovery:in_progress:action": {
@@ -5680,11 +5732,17 @@
         "${ gracePeriodHoursRemaining } weitere Stunde",
         "${ gracePeriodHoursRemaining } weitere Stunden"
       ],
+      "Didn’t make this request?": [
+        "Du hast diese Anfrage nicht gestellt?"
+      ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Wenn du nicht darum gebeten hast, dein Passwort zurückzusetzen, breche die Anfrage jetzt ab."
       ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Wenn du nicht darum gebeten hast, dein Passwort zurückzusetzen, breche diese Anfrage jetzt ab."
+      ],
+      "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
+        "Passwortzurücksetzung verfügbar ab dem ${ boldDate }. Dies gibt dir Zeit, alle betrügerischen Anfragen zu abzubrechen."
       ],
       "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
         "Passwortzurücksetzung angefordert (${ user.Email }). Du kannst dein Passwort in ${ hoursRemaining } Stunde ändern.",
@@ -5715,11 +5773,23 @@
       "Got it": [
         "Verstanden"
       ],
+      "Request password reset": [
+        "Passwortzurücksetzung anfordern"
+      ],
       "Use recovery method": [
         "Wiederherstellungsmethode verwenden"
       ]
     },
     "session_recovery:initiation:info": {
+      "For security reasons, you’ll have to wait **72 hours** before you can change your password.": [
+        "Aus Sicherheitsgründen musst du **72 Stunden** warten, bevor du dein Passwort ändern kannst."
+      ],
+      "If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.": [
+        "Wenn du eine **Wiederherstellungsmethode** eingerichtet hast, versuche stattdessen die Kontowiederherstellung. Damit kannst du dein Passwort sofort ändern."
+      ],
+      "We will contact you again when the password reset is available.": [
+        "Wir werden dich kontaktieren, sobald die Passwortzurücksetzung verfügbar ist."
+      ],
       "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
         "Du kannst den Status deiner Anfrage jederzeit in der ${ accountAndPasswordSectionLink } in den Einstellungen überprüfen."
       ]
@@ -5735,6 +5805,9 @@
       ]
     },
     "session_recovery:initiation:title": {
+      "Request password reset?": [
+        "Passwortzurücksetzung anfordern?"
+      ],
       "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
         "In ${ gracePeriodHoursRemaining } Stunde kannst du dein Passwort zurücksetzen.",
         "In ${ gracePeriodHoursRemaining } Stunden kannst du dein Passwort zurücksetzen."
@@ -5760,7 +5833,7 @@
         "Wenn du dich abmeldest, bevor du dein Passwort zurücksetzt, kannst du den Zugang zu deinem Konto verlieren."
       ],
       "If you sign out without resetting your password, you could lose access to your account.": [
-        "Wenn du dich abmeldest, bevor du dein Passwort zurücksetzt, kannst du den Zugang zu deinem Konto verlieren."
+        "Wenn du dich abmeldest, ohne dass du dein Passwort zurücksetzt, kannst du den Zugang zu deinem Konto verlieren."
       ],
       "You will be able to reset your password in ${ boldTimeLeft }.": [
         "Du kannst dein Passwort in ${ boldTimeLeft } zurücksetzen."
@@ -5768,7 +5841,7 @@
     },
     "session_recovery:sign_out:link": {
       "Password reset": [
-        "Passwort zurückgesetzt"
+        "Passwort zurücksetzen"
       ]
     },
     "session_recovery:sign_out:title": {
@@ -5782,6 +5855,11 @@
       ],
       "Pending": [
         "Ausstehend"
+      ]
+    },
+    "session_recovery:status:title": {
+      "Password reset request": [
+        "Anfrage zur Passwortzurücksetzung"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -5841,9 +5919,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "${ storageSize } Speicherplatz insgesamt"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -5865,15 +5940,6 @@
       "Premium early access": [
         "Premium-frühzeitiger Zugang"
       ],
-      "Premium Mail and Calendar": [
-        "Premium Mail und Calendar"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "Premium-Mail, Calendar und Drive"
-      ],
-      "Premium VPN": [
-        "Premium-VPN"
-      ],
       "Secure cloud storage": [
         "Sicherer Cloud-Speicher"
       ],
@@ -5885,9 +5951,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "Rabatte werden auf Grundlage des monatlichen Standardpreises berechnet."
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Dieses Abonnement verlängert sich alle zwei Jahre automatisch, bis es gekündigt wird."
       ]
@@ -5918,6 +5981,10 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } Monat",
+        "${ n } Monate"
+      ],
       "/ month": [
         "/ Monat"
       ],
@@ -5941,10 +6008,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Für 30 Monate mit ${ amount } abgerechnet"
-      ],
-      "for ${ n } month": [
-        "für ${ n } Monat",
-        "für ${ n } Monate"
       ],
       "Get the deal": [
         "Jetzt zugreifen"
@@ -6013,9 +6076,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Alle unsere Premium-Services mit ihren höchsten Limits: 100 E-Mail-Adressen, Unterstützung für 10 eigene Domains, unbegrenzte Hide-my-email-Aliasse, Kalenderfreigabe, verschlüsselter Cloud-Speicher und Dateifreigabe, und vieles mehr."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Beinhaltet Unterstützung für eine eigene E-Mail-Domain, 10 E-Mail-Adressen, 10 Hide-my-email-Aliasse, Kalenderfreigabe und mehr."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Beinhaltet Unterstützung für 3 eigene E-Mail-Domains, 15 E-Mail-Adressen, unbegrenzte Hide-my-email-Aliasse, Kalenderfreigabe und mehr."
       ],
@@ -6027,9 +6087,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Beinhaltet automatische Synchronisierung, verschlüsselte Dateifreigabe und mehr."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
       ]
     },
     "Spotlight": {
@@ -6060,14 +6117,8 @@
       ]
     },
     "Subscription": {
-      "Billed every 15 months": [
-        "Wird alle 15 Monate abgerechnet"
-      ],
       "Billed every 2 years": [
         "Wird alle 2 Jahre abgerechnet"
-      ],
-      "Billed every 30 months": [
-        "Wird alle 30 Monate abgerechnet"
       ],
       "Billed monthly": [
         "Wird monatlich abgerechnet"
@@ -6361,24 +6412,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "Premium-Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Premium Mail und Calendar"
-      ],
       "Premium Password Manager": [
         "Premium-Passwortmanager"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Speichere deine Passwörter sicher und lasse sie automatisch auf Websites einfügen. Beinhaltet unbegrenzte Passwörter, automatisches Einfügen, Passwortgenerator und mehr."
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "Passwort-Manager"
       ]
     },
     "summer2023: Tooltip": {
@@ -7076,11 +7111,6 @@
       ],
       "Verified email address": [
         "E-Mail-Adresse bestätigt"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
-        "${ PASS_APP_NAME }: Ende-zu-Ende-verschlüsselter Passwort-Manager"
       ]
     },
     "Tor out of date": {

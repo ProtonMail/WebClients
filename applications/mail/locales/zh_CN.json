@@ -688,10 +688,10 @@
       "Not saved": [
         "未保存"
       ],
-      "OK": [
+      "Ok": [
         "确定"
       ],
-      "Ok": [
+      "OK": [
         "确定"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -1623,9 +1623,6 @@
       ],
       "You already tentatively accepted this invitation.": [
         "您已暂时接受了此邀请。"
-      ],
-      "Your email address is not in the participants list": [
-        "您的邮箱地址不在参与者列表中"
       ]
     },
     "Calendar widget banner": {
@@ -3533,6 +3530,9 @@
       "Encryption failed": [
         "加密失败"
       ],
+      "Missing FN property": [
+        "缺少 FN 属性"
+      ],
       "vCard versions < 3.0 not supported": [
         "不支持 vCard 3.0 以下版本"
       ]
@@ -3786,15 +3786,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "高级云盘"
-      ],
-      "Premium Mail and Calendar": [
-        "高级邮件和日历"
-      ],
-      "Premium VPN": [
-        "高级VPN"
-      ],
       "Up to 6 users": [
         "多达 6 位用户"
       ]
@@ -7898,9 +7889,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "${ storageSize } 总存储空间"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -7922,15 +7910,6 @@
       "Premium early access": [
         "抢先体验高级功能"
       ],
-      "Premium Mail and Calendar": [
-        "高级邮箱与日历账户"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "享受 Mail、Calendar、Drive 全部高级功能"
-      ],
-      "Premium VPN": [
-        "高级 VPN 账户"
-      ],
       "Secure cloud storage": [
         "安全的云存储"
       ],
@@ -7942,9 +7921,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "折扣基于标准月费计算。"
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "每两年账户将以相同费率自动续费，直至手动退订。"
       ]
@@ -7998,9 +7974,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "30个月的费用为${ amount }"
-      ],
-      "for ${ n } months": [
-        "${ n } 个月"
       ],
       "Get the deal": [
         "立即享受优惠"
@@ -8069,9 +8042,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "顶格享受我们的所有高级服务：100 个邮箱地址、10 个自有域名、无限量 Hide My Email 邮箱别名、日程共享、支持文件共享的加密云盘等。"
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "支持 1 个自有域名、10 个邮箱地址、10 个 Hide My Email 邮箱别名、日程共享等功能。"
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "支持 3 个自有域名、15 个邮箱地址、无限量 Hide My Email 邮箱别名、日程共享等功能。"
       ],
@@ -8083,9 +8053,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "使用加密的云存储保护您的文件。 包括自动同步、加密文件共享等。"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 均共用同一存储空间。"
       ]
     },
     "Spotlight": {
@@ -8393,24 +8360,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "高级云盘账户"
-      ],
-      "Premium Mail and Calendar": [
-        "高级邮箱与日历账户"
-      ],
       "Premium Password Manager": [
         "高级密码管理器"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "安全地存储您的密码并在网站上自动填充它们。包括无限密码、自动填充、密码生成器等。"
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "密码管理器"
       ]
     },
     "summer2023: Tooltip": {

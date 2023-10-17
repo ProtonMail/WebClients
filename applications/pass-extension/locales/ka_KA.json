@@ -173,6 +173,9 @@
       "Importing": [
         "შემოტანა"
       ],
+      "Invite others": [
+        "სხვების მოწვევა"
+      ],
       "Join shared vault": [
         "გაზიარებულ საცავთან მიერთება"
       ],
@@ -187,6 +190,15 @@
       ],
       "Lock extension": [
         "გაფართოების დაბლოკვა"
+      ],
+      "Make admin": [
+        "ადმინობის მინიჭება"
+      ],
+      "Make editor": [
+        "რედაქტორობის მინიჭება"
+      ],
+      "Make viewer": [
+        "მნახველობის მინიჭება"
       ],
       "Manage access": [
         "წვდომის მართვა"
@@ -211,6 +223,9 @@
       ],
       "Not now": [
         "არა ახლა"
+      ],
+      "Open in a window": [
+        "ფანჯარაში გახსნა"
       ],
       "Open navigation": [
         "ნავიგაციის გახსნა"
@@ -268,6 +283,9 @@
       ],
       "Share": [
         "გაზიარება"
+      ],
+      "Share vault": [
+        "საცავის გაზიარება"
       ],
       "Show": [
         "ჩვენება"
@@ -650,6 +668,9 @@
       "Access your passwords on the go with our mobile apps.": [
         "იქონიეთ წვდომა თქვენს პაროლებთან, ჩვენი მობილური აპლიკაციებით, მგზავრობის დროსაც."
       ],
+      "Admin": [
+        "ადმინისტრატორი"
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "ფსევდონიმი \"${ item.aliasEmail }\" გადატანილია ნაგვის ყუთში. ეს ელფოსტების თქვენს საფოსტო ყუთში გადამისამართებას შეწყვეტს"
       ],
@@ -667,6 +688,9 @@
       ],
       "Autosaved on ${ submissionURL }": [
         "ავტომატურად შენახულია ბმულზე ${ submissionURL }"
+      ],
+      "Can create, edit, delete, and export items in this vault.": [
+        "შეუძლია ამ საცავის ელემენტების ჩასწორება, წაშლა და გატანა."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "შეუძლია ამ საცავზე წვდომების მინიჭება, ჩამორთმევა და წაშლა."
@@ -706,6 +730,9 @@
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "ადვილად შემოიტანეთ თქვენი არსებული პაროლები ${ PASS_APP_NAME }-ში."
+      ],
+      "Editor": [
+        "რედაქტორი"
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "ჩართეთ ${ PASS_APP_NAME } ${ BRAND_NAME }-ის ანგარიშის მიმაგრებით"
@@ -777,11 +804,17 @@
       "Internet connection lost": [
         "ინტერნეტკავშირი დაკარგულია"
       ],
+      "Invitation sent": [
+        "მოსაწვევი გაგზავნილია"
+      ],
       "Invite successfully removed": [
         "მოსაწვევი წარმატებით წაიშალა"
       ],
       "Invite successfully resent": [
         "მოსაწვევი წარმატებით გაიგზავნა თავიდან"
+      ],
+      "invites you to access items in": [
+        "გიწვევთ ელემენტებზე წვდომსთვის"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "როგორც ჩანს, ${ PASS_APP_NAME }-ში უკვე შესული ბრძანდებით. თუ ცდილობთ, სხვა მომხმარებლით შეხვიდეთ, ჯერ გამოდით."
@@ -843,6 +876,9 @@
       ],
       "Owner": [
         "მფლობელი"
+      ],
+      "Ownership successfully transfered. You are no long the owner of this vault.": [
+        "მფლობელობის გადაცემა წარმატებით დასრულდა. ამ საცავის მფლობელი აღარ ბრძანდებით."
       ],
       "Password copied": [
         "პაროლი დაკოპირდა"
@@ -932,6 +968,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "ეს გატანა დაუშიფრავი იქნება და ყველას, ვისაც გატანილ ფაილზე წვდომა ექნება, შეეძლება, პაროლები დაინახოს. უსაფრთხოებისთვის, სჯობს, წაშალოთ ის, როცა მის გამოყენებას მორჩებით."
       ],
+      "This vault is not currently shared with anyone. Invite people to share it with others.": [
+        "ეს საცავი ამჟამად გაზიარებული არაა. მოიწვიეთ ხალხი და გაუზიარეთ ის მათ."
+      ],
       "Unable to copy to clipboard": [
         "ბუფერში დაკოპირება შეუძლებელია"
       ],
@@ -965,6 +1004,9 @@
       "Verification code": [
         "გადამოწმების კოდი"
       ],
+      "Viewer": [
+        "მთვალიერებელი"
+      ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "თქვენს ლოკალურ საცავთან მონაცემების სინქრონიზაციის პრობლემა. დარწუნდით, რომ ${ PASS_SHORT_APP_NAME }-ის სამუშაოდ საკმარისი ადგილი გაგაჩნიათ."
       ],
@@ -978,8 +1020,14 @@
         "თქვენი სატესტო პერიოდიდან დარჩენილია ${ daysRemaining } დღე.",
         "თქვენი სატესტო პერიოდიდან დარჩენილია ${ daysRemaining } დღე."
       ],
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
+        "თქვენ გადააცილეთ ტარიფისთვის დასაშვები საცავების რაოდენობას. ელემენტები, მხოლოდ, პირველ ორ საცავში შეგიძლიათ, გადაიტანოთ. საცავებს შორის ელემენტების გადასატანად ასწიეთ თქვენი სატარიფო გეგმა."
+      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
         "თქვენ გადააცილეთ ტარიფისთვის დასაშვები საცავების რაოდენობას. ელემენტები, მხოლოდ, ძირითად საცავში შეგიძლიათ, გადაიტანოთ. საცავებს შორის ელემენტების გადასატანად ასწიეთ თქვენი სატარიფო გეგმა."
+      ],
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
+        "თქვენ გადააცილეთ ტარიფისთვის დასაშვები საცავების რაოდენობას. ელემენტები, მხოლოდ, პირველ ორ საცავში შეგიძლიათ, შექმნათ. საცავებს შორის ელემენტების გადასატანად ასწიეთ თქვენი სატარიფო გეგმა."
       ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
         "გადააცილეთ თქვენი ტარიფისთვის დასაშვები საცავების რაოდენობას. ელემენტები, მხოლოდ, ძირითად საცავში შეგიძლიათ, შექმნათ. ახალი ელემენტების ყველა საცავში შესაქმნელად ასწირეთ თქვენი სატარიფო გეგმა."
@@ -998,6 +1046,9 @@
       ],
       "You're about to create": [
         "აპირებთ, შექმნათ"
+      ],
+      "You're invited to a vault.": [
+        "გაქვთ მოსაწვევს საცავი."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "თქვენი ${ PASS_APP_NAME }-ის სესია დაბლოკილია"
@@ -1083,6 +1134,9 @@
       ],
       "Autosave": [
         "ავტომატური შენახვა"
+      ],
+      "Autosave vault": [
+        "საცავის ავტომატური შენახვა"
       ],
       "Autosuggest": [
         "ავტომატური რჩევა"
@@ -1312,6 +1366,9 @@
       "Select an email address": [
         "აირჩიეთ ელფოსტის მისამართი"
       ],
+      "Select preferred language": [
+        "ამოირჩიეთ სასურველი ენა"
+      ],
       "Select your password manager": [
         "აირჩიეთ თქვენი პაროლების მმართველი"
       ],
@@ -1390,8 +1447,14 @@
       "Vault": [
         "საცავი"
       ],
+      "Vaults": [
+        "საცავები"
+      ],
       "Verification number": [
         "გადამოწმების ნომერი"
+      ],
+      "View details": [
+        "დეტალების ხილვა"
       ],
       "View logs": [
         "ჟურნალის ნახვა"
@@ -1573,6 +1636,9 @@
       "Secure your data": [
         "დაიცავით თქვენი მონაცემები"
       ],
+      "Set access level": [
+        "წვდომის დონის დაყენება"
+      ],
       "Share with": [
         "გაზიარება"
       ],
@@ -1602,6 +1668,9 @@
       ],
       "Use my email": [
         "ჩემი ელფოსტის გამოყენება"
+      ],
+      "Vault shared with you": [
+        "თქვენთან გაზიარებული საცავი"
       ],
       "Welcome to ${ brandNameJSX }": [
         "კეთილი იყოს თქვენი მობრძანება ${ brandNameJSX }-ში"
@@ -1718,6 +1787,9 @@
       "Title is required": [
         "სათაური აუცილებელია"
       ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "გადავცე ამ საცავს ფლობის უფლება ${ email }-ს?"
+      ],
       "Trash alias ?": [
         "წავშალო ფსევდონიმები?"
       ],
@@ -1745,14 +1817,23 @@
       "You must select at least one mailbox": [
         "უნდა მიუთითოთ ერთი საფოსტო ყუთი მაინც"
       ],
+      "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
+        "საცავთან წვდომა აღარ გექნებათ. თავიდან მისაერთებლად, ახალი მოსაწვევი დაგჭირდებათ."
+      ],
       "Your plan does not allow you to create more aliases": [
         "თქვენი სატარიფო გეგმა მეტი ფსევდონიმის შექმნის უფლებას არ გაძლევთ"
+      ],
+      "Your plan only allows you to autofill from your first two vaults": [
+        "თქვენი ტარიფი ავტომატურად შევსებას, მხოლოდ, პირველი ორი საცავიდან შეიცავს"
       ],
       "Your plan only allows you to autofill from your primary vault": [
         "თქვენი ტარიფი ავტომატურად შევსებას, მხოლოდ, ძირითადი საცავიდან შეიცავს"
       ],
       "Your session was locked due to inactivity": [
         "თქვენი სესია დაიბლოკა არააქტიურობის გამო"
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "თქვენი სატარიფო გეგმა ერთზე მეტი საცავის შექმნის უფლებას არ გაძლევთ. ყველა ელემენტი პირველ საცავში იქნება შემოტანილი. ერთზე მეტი საცავში შემოსატანად ასწიეთ თქვენი სატარიფო გეგმა."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
         "თქვენი სატარიფო გეგმა ერთზე მეტი საცავის შექმნის უფლებას არ გაძლევთ. ყველა ელემენტი მთავარ საცავში იქნება შემოტანილი. ერთზე მეტი საცავში შემოსატანად ასწიეთ თქვენი სატარიფო გეგმა."

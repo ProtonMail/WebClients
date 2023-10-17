@@ -695,10 +695,10 @@
       "Not saved": [
         "Non enregistré"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -1636,8 +1636,11 @@
       "You already tentatively accepted this invitation.": [
         "Vous avez déjà provisoirement accepté cette invitation."
       ],
-      "Your email address is not in the participants list": [
-        "Votre adresse e-mail n'est pas dans la liste des participants."
+      "You cannot respond to ${ BRAND_NAME } invites if you're not on the participants list at the moment.": [
+        "Vous ne pouvez pas répondre aux invitations ${ BRAND_NAME } lorsque vous ne faites pas partie des participants."
+      ],
+      "Your email address is not in the original participants list.": [
+        "Votre adresse e-mail n'est pas dans la liste d'origine des participants."
       ]
     },
     "Calendar widget banner": {
@@ -3085,6 +3088,11 @@
         "Mise à jour d'un événement qui commence ${ formattedStart }"
       ]
     },
+    "email_forwarding_2023: Composer email icon": {
+      "Zero-access encrypted. Recipient has disabled end-to-end encryption on their account.": [
+        "Chiffrement zéro accès. Le destinataire a désactivé le chiffrement de bout en bout sur son compte."
+      ]
+    },
     "empty messages: success": {
       "Folder cleared": [
         "Le dossier a été vidé."
@@ -3830,15 +3838,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Drive version premium"
-      ],
-      "Premium Mail and Calendar": [
-        "Mail et Calendar version premium"
-      ],
-      "Premium VPN": [
-        "VPN version premium"
-      ],
       "Up to 6 users": [
         "Jusqu'à 6 utilisateurs"
       ]
@@ -4983,6 +4982,9 @@
       "Copied to clipboard": [
         "Copié dans le presse-papiers"
       ],
+      "Copy the link to clipboard": [
+        "Copier le lien dans le presse-papiers"
+      ],
       "Country code": [
         "Indicatif du pays"
       ],
@@ -5686,7 +5688,7 @@
         "Cette invitation est enregistrée dans un calendrier désactivé."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Ce lien mène à un site web qui pourrait essayer de voler vos informations, comme des mots de passe et des informations de carte bancaire."
+        "Ce lien mène à un site web qui pourrait essayer de voler vos informations, comme des mots de passe et des informations de carte de paiement."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Ce lien pourrait être une attaque homographique et ne peut pas être ouvert avec le navigateur Edge. Si vous n'avez aucun doute sur la légitimité de ce lien, utilisez un autre navigateur pour l'ouvrir."
@@ -7374,6 +7376,9 @@
       "Contact group updated": [
         "Le groupe de contacts a été mis à jour."
       ],
+      "Link copied to clipboard": [
+        "Le lien est copié dans le presse-papiers."
+      ],
       "Password has been set successfully": [
         "Le mot de passe a été défini."
       ],
@@ -8114,9 +8119,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "${ storageSize } d'espace de stockage total"
-      ],
       "3 TB": [
         "3 To"
       ],
@@ -8138,15 +8140,6 @@
       "Premium early access": [
         "Accès premium en avant-première"
       ],
-      "Premium Mail and Calendar": [
-        "Mail et Calendar premium"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "Mail, Calendar et Drive premium"
-      ],
-      "Premium VPN": [
-        "VPN premium"
-      ],
       "Secure cloud storage": [
         "Stockage cloud sécurisé"
       ],
@@ -8158,9 +8151,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "Les réductions sont calculées sur les prix mensuels habituels."
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Cet abonnement se renouvellera automatiquement tous les 2 ans au même prix jusqu'à ce qu'il soit annulé."
       ]
@@ -8214,10 +8204,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Facturé ${ amount } pour 30 mois"
-      ],
-      "for ${ n } month": [
-        "pour ${ n } mois",
-        "pour ${ n } mois"
       ],
       "Get the deal": [
         "J'en profite"
@@ -8286,9 +8272,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Tous nos services premium au plus haut niveau : 100 adresses e-mail, la prise en charge de 10 domaines personnalisés, un nombre illimité d'alias « hide-my-email », le partage de calendriers, le stockage cloud et le partage de fichiers chiffrés…"
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias « hide-my-email », du partage de calendrier…"
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de 15 adresses e-mail, d'un nombre illimité d'alias « hide-my-email », du partage de calendrier…"
       ],
@@ -8300,9 +8283,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sécurisez vos fichiers grâce au stockage cloud chiffré. Comprend la synchronisation automatique, le partage de fichiers chiffrés et d'autres fonctionnalités."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "L'espace de stockage est partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -8637,29 +8617,13 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "Drive version premium"
-      ],
-      "Premium Mail and Calendar": [
-        "Mail et Calendar version premium"
-      ],
       "Premium Password Manager": [
         "Gestionnaire de mots de passe premium"
       ]
     },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Enregistrez vos mots de passe en toute sécurité et renseignez-les automatiquement sur les sites internet. Profitez d'un nombre illimité de mots de passe, de la fonctionnalité de remplissage automatique, d'un générateur de mots de passe et de bien d'autres fonctionnalités."
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "Gestionnaire de mots de passe"
-      ]
-    },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Créez des identifiants de connexion sécurisés sur tous vos appareils. Profitez d'un nombre illimité d'alias, de 20 coffres-forts, de l'authentification à deux facteurs (2FA) intégrée, du remplissage automatique des cartes bancaires et de bien d'autres fonctionnalités."
+        "Créez des identifiants de connexion sécurisés sur tous vos appareils. Profitez d'un nombre illimité d'alias, de 20 coffres-forts, de l'authentification à deux facteurs (2FA) intégrée, du remplissage automatique des cartes de paiement et de bien d'autres fonctionnalités."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Comprend 2 950 serveurs répartis dans plus de 65 pays, la possibilité de connecter jusqu'à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
