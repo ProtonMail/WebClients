@@ -630,6 +630,12 @@
         "გაითიშება ყველა რაუტერი და კლიენტი, რომელიც ამ სერტიფიკატს იყენებს."
       ]
     },
+    "Billing cycle": {
+      "${ n } month": [
+        "${ n } თვე",
+        "${ n } თვე"
+      ]
+    },
     "Billing cycle option": {
       "1 month": [
         "1 თვე"
@@ -2009,15 +2015,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "ფასიანი Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Mail-ის და Calendar-ის ფასიანი ვერსია"
-      ],
-      "Premium VPN": [
-        "ფასიანი VPN"
-      ],
       "Up to 6 users": [
         "6-მდე მომხმარებელი"
       ]
@@ -2299,6 +2296,9 @@
       ],
       "Allow platform keys": [
         "პლატფორმის გასაღებების დაშვება"
+      ],
+      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
+        "საშუალებას გაძლევთ, დაარეგისტრიროთ ჩაშენებული უსაფრთხოებს გასაღებები (მაგ: Windows Hello, Face ID, Touch ID ან შიდა TPM)"
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, წაშალოთ უსაფრთხოების გასაღები ${ name }?"
@@ -2644,9 +2644,6 @@
       ],
       "Admin account allocation": [
         "ადმინისტრატორის ანგარიშის გამოყოფა"
-      ],
-      "All ${ BRAND_NAME } apps and their premium features": [
-        "${ BRAND_NAME }-ის ყველა აპი და მათი ფასიანი ფუნქციები"
       ],
       "All your changes will be lost.": [
         "ყველა თქვენი ცვლილება დაიკარგება."
@@ -3097,14 +3094,8 @@
       "per month, billed every 12 months": [
         "ყოველთვე, გადაიხდით 12 თვეში ერთხელ"
       ],
-      "per month, billed every 15 months": [
-        "ყოველთვე, გადაიხდით 15 თვეში ერთხელ"
-      ],
       "per month, billed every 24 months": [
         "ყოველთვე, გადაიხდით 24 თვეში ერთხელ"
-      ],
-      "per month, billed every 30 months": [
-        "ყოველთვე, გადაიხდით 30 თვეში ერთხელ"
       ],
       "Plan upgrade required": [
         "აუცილებელია ტარიფის აწევა"
@@ -3572,6 +3563,9 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "იმისათვის, რომ დარწმუნდეთ, რომ ეს გადასამოწმებლად სწორი ელფოსტის მისამართია, ის, შეგიძლიათ, ერთხელ ჩაასწოროთ."
+      ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
+        "ზედა პარამეტრები შეგიძლიათ, თქვენს ტარიფში ${ specificCountryCount } IP მისამართის დამატებით განბლოკოთ, ან, მორგებული გადაწყვეტილებებისთვის, დაგვიკავშირდით"
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "შეგიძლიათ გქონდეთ ${ MAX_CALENDARS_FREE }-მდე კალენდარი. წაშალეთ გაზიარებული კალენდრის ბმულები და ყველა ${ BRAND_NAME }-ის მომხმარებელი, ვისაც კალენდარი გაუზიარეთ, სანამ თქვენს ${ MAIL_SHORT_APP_NAME }-ის გამოწერას გააუქმებდით.",
@@ -4521,6 +4515,9 @@
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } ულიმიტო hide-my-email ფსევდონიმებით"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } პროგრამა"
+      ],
       "${ size } attachment size": [
         "${ size } მიმაგრებული ფაილი"
       ],
@@ -4541,9 +4538,6 @@
       ],
       "99.95% SLA": [
         "99.95% SLA"
-      ],
-      "Ad-blocker & malware protection": [
-        "რეკლამების ბლოკირება და არასასურველი პროგრამებისგან დაცვა"
       ],
       "Admin console": [
         "ადმინისტრირების კონსოლი"
@@ -4727,6 +4721,9 @@
       ],
       "SMTP submission": [
         "SMTP-ის მორგება"
+      ],
+      "SMTP submission for select organizations": [
+        "SMTP მორგება არჩეული ორგანიზაციებისთვის"
       ],
       "Split tunneling (Android and Windows)": [
         "დაყოფილი ტუნელირება (Android-ზე და Windows-ზე)"
@@ -4955,18 +4952,6 @@
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
-        "${ CALENDAR_APP_NAME }: გამჭოლად-დაშიფრული კალენდარი"
-      ],
-      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
-        "${ DRIVE_APP_NAME }: გამჭოლად-დაშიფრული ღრუბლოვანი საცავი"
-      ],
-      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
-        "${ MAIL_APP_NAME }: გამჭოლად დაშიფრული ელფოსტა"
-      ],
-      "${ VPN_APP_NAME }: unblock content, browse privately": [
-        "${ VPN_APP_NAME }: განბლოკეთ შემცველობა, იმუშავეთ ინტერნეტში ანონიმურად"
-      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "იქონიეთ წვდომა სტრიმინგის სერვისებთან, Netflix, Display+ და Prime Video-ის ჩათვლით, ნებისმიერი ადგილიდან"
       ],
@@ -5073,6 +5058,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "დაიცავით თქვენი ოჯახი მავნე ვებგვერდებისგან და იქონიეთ წვდომა ჩვენს ჩქაროსნულ VPN სერვერებთან თქვენი საყვარელი ვიდეონაკადებისთვის"
       ],
+      "Provides the highest level of account security protection and specialist support": [
+        "ანგარიშის უსაფრთხოების დაცვის უმაღლესი დონე და სპეციალისტის მხარდაჭერა"
+      ],
       "Quickly set up out-of-office messages": [
         "სწრაფად დააყენეთ ავტომოპასუხე"
       ],
@@ -5102,6 +5090,9 @@
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
         "გაუზიარეთ თქვენი ფაილები და საქაღალდეები ვისაც თქვენ გნებავთ, დაცული, გაზიარებადი ბმულებით"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTP საშუალებას აძლევს მესამე პირებს ან მოწყობილობებს, ელფოსტა ${ MAIL_APP_NAME }-ის გავლით გააგზავნონ."
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "NetShield-ი იცავს თქვენს მოწყობილობას და აჩქარებს ინტერნეტში მუშაობას რეკლამების, ტრეკერების და არასასურველი პროგრამების დაბლოკვით"
@@ -5575,6 +5566,12 @@
         "${ timeRemaining.inHours } საათი",
         "${ timeRemaining.inHours } საათი"
       ],
+      "Didn’t make this request?": [
+        "არ გამოგიგზავნიათ ეს მოთხოვნა?"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "თუ პაროლის შეცვლა თქვენ არ მოგითხოვიათ, გააუქმეთ მოთხოვნა."
+      ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
         "პაროლის შეცვლის მოთხოვნა დაშვებულია (${ user.Email }). გაქვთ ${ timeRemaining.inDays } დღე, პაროლი შეცვალოთ.",
         "პაროლის შეცვლის მოთხოვნა დაშვებულია (${ user.Email }). გაქვთ ${ timeRemaining.inDays } დღე, პაროლი შეცვალოთ."
@@ -5583,6 +5580,9 @@
         "პაროლის შეცვლის მოთხოვნა დაშვებულია (${ user.Email }). გაქვთ ${ timeRemaining.inHours } საათი, პაროლი შეცვალოთ.",
         "პაროლის შეცვლის მოთხოვნა დაშვებულია (${ user.Email }). გაქვთ ${ timeRemaining.inHours } საათი, პაროლი შეცვალოთ."
       ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "პაროლის შესაცვლელად გადადით მოწყობილობაზე (სესიაში, საიდანაც მოთხოვნა გამოიგაზვნა), რომელზეც შესული ბრძანდებით."
+      ],
       "This permission expires in ${ timeRemaining.inDays } day": [
         "ამ წვდომის ვადა ${ timeRemaining.inDays } დღეში იწურება",
         "ამ წვდომის ვადა ${ timeRemaining.inDays } დღეში იწურება"
@@ -5590,6 +5590,15 @@
       "This permission expires in ${ timeRemaining.inHours } hour": [
         "ამ წვდომის ვადა ${ timeRemaining.inHours } საათში იწურება",
         "ამ წვდომის ვადა ${ timeRemaining.inHours } საათში იწურება"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "ახლა შეგიძლიათ შეცვალოთ პაროლი ანგარიშისთვის ${ boldEmail }, თავისუფლად, შუალედში \"${ boldDaysRemaining }\"."
+      ],
+      "You can now reset your password": [
+        "ახლა შეგიძლიათ, პაროლი შეცვალოთ"
+      ],
+      "You can reset your password until ${ boldDate }.": [
+        "პაროლის შეცვლა, შეგიძლიათ, თარიღამდე ${ boldDate }"
       ]
     },
     "session_recovery:available:link": {
@@ -5612,6 +5621,11 @@
         "პაროლის შეცვლის გაუქმება"
       ]
     },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "პაროლის შეცვლის პროცესის გასაუქმებლად, შეიყვანეთ მიმდინარე თქვენი პაროლი. სხვა ცვლილებები ძალაში არ შევა."
+      ]
+    },
     "session_recovery:cancellation:notification": {
       "Password reset cancelled": [
         "პაროლის შეცვლა გაუქმდა"
@@ -5620,6 +5634,11 @@
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "გავაუქმო პაროლის შეცვლა?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "პაროლის შეცვლის მოთხოვვნა გაუქმდა (${ user.Email }). თუ ეს მოთხოვნა თქვენ არ გეკუთვნით, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -5646,11 +5665,31 @@
         "კიდევ ${ gracePeriodHoursRemaining } საათი",
         "კიდევ ${ gracePeriodHoursRemaining } საათი"
       ],
+      "Didn’t make this request?": [
+        "არ გამოგიგზავნიათ ეს მოთხოვნა?"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "თუ პაროლის შეცვლა თქვენ არ მოგითხოვიათ, გააუქმეთ მოთხოვნა."
+      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "თუ პაროლის შეცვლა თქვენ არ მოგითხოვიათ, გააუქმეთ ეს მოთხოვნა."
       ],
+      "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
+        "პაროლის შეცვლის შესაძლებლობა გექნებათ: ${ boldDate }. ეს გაძლევთ დროს, გააუქმოთ მავნე მოთხოვნები."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "პაროლის შეცვლა მოთხოვნილია (${ user.Email }) პაროლის შეცვლა ${ hoursRemaining } საათში შეგეძლებათ.",
+        "პაროლის შეცვლა მოთხოვნილია (${ user.Email }) პაროლის შეცვლა ${ hoursRemaining } საათში შეგეძლებათ."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "იმისათვის, რომ დავრწმუნდეთ, რომ ნამდვილად თქვენ ცდილობთ პაროლის შეცვლას, ჩვენ, მოთხოვნის შესრულებამდე 72 საათს მოვიცდით. პაროლს შეცვლა შეგიძლიათ შემდეგ დროში: ${ boldTimeLeft }. ${ viewRequest }"
+      ],
       "We received a password reset request for ${ boldEmail }.": [
         "მივიღეთ პაროლის შეცვლს მოთხოვნა ${ boldEmail }-სთვის."
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "პაროლი, შეგიძლიათ, ${ gracePeriodHoursRemaining } საათში შეცვალოთ",
+        "პაროლი, შეგიძლიათ, ${ gracePeriodHoursRemaining } საათში შეცვალოთ"
       ]
     },
     "session_recovery:in_progress:link": {
@@ -5674,6 +5713,20 @@
         "აღდგენის მეთოდის გამოყენება"
       ]
     },
+    "session_recovery:initiation:info": {
+      "For security reasons, you’ll have to wait **72 hours** before you can change your password.": [
+        "უსაფრთხოებისთვის, პაროლის შეცვლამდე **72 საათი** უნდა მოიცადოთ."
+      ],
+      "If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.": [
+        "თუ **აღდგენის მეთოდი** დაყენებული გაქვთ, სცადეთ, ანგარიში აღადგინოთ. ეს საშუალებას მოგცემთ, პაროლი მაშინვე შეცვალოთ."
+      ],
+      "We will contact you again when the password reset is available.": [
+        "დაიკავშირდებით, როცა პაროლის შეცვლა ხელმისაწვდომი იქნება."
+      ],
+      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
+        "თქვენი მოთხოვნის სტატუსის შემოწმება ნებისმიერ დროს შეგიძლიათ, მორგების ფანჯარაში, ${ accountAndPasswordSectionLink }."
+      ]
+    },
     "session_recovery:initiation:link": {
       "account and password section": [
         "მომხმარებლისა და პაროლის სექცია"
@@ -5687,6 +5740,10 @@
     "session_recovery:initiation:title": {
       "Request password reset?": [
         "მოვითხოვო პაროლის შეცვლა?"
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "პაროლის შეცვლის დაწყება ${ gracePeriodHoursRemaining }-ში შეგეძლებათ.",
+        "პაროლის შეცვლის დაწყება ${ gracePeriodHoursRemaining }-ში შეგეძლებათ."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -5704,6 +5761,12 @@
       ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } ახლა ხელმისაწვდომია."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "თუ გახვალთ მანამდე, სანამ პაროლს შეცლით, შეიძლება, თქვენს ანგარიშზე წვდომა დაკარგოთ."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "თუ გახვალთ პაროლის შეცლის გარეშე, შეიძლება, თქვენს ანგარიშზე წვდომა დაკარგოთ."
       ],
       "You will be able to reset your password in ${ boldTimeLeft }.": [
         "პაროლის შეცვლის დაწყება ${ boldTimeLeft }-ში შეგეძლებათ."
@@ -5789,9 +5852,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "ჯამში საცავი ${ storageSize }"
-      ],
       "3 TB": [
         "3 ტბ"
       ],
@@ -5813,15 +5873,6 @@
       "Premium early access": [
         "ადრეული წვდომა ახალ ფუნქციებზე"
       ],
-      "Premium Mail and Calendar": [
-        "Mail-ის და Calendar-ის ფასიანი ვერსია"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "ფასიანი Mail, Calender და Drive"
-      ],
-      "Premium VPN": [
-        "ფასიანი VPN"
-      ],
       "Secure cloud storage": [
         "დაცული ღრუბლოვანი საცავი"
       ],
@@ -5833,9 +5884,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "ფასდაკლებები თვეში ერთხელ გადახდის ფასებს ეყრდნობა."
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "ეს გამოწერა მანამდე გაუქმდება ყოველ 2 წელიწადში ერთხელ იმავე სიხშირით, სანამ გააუქმებთ."
       ]
@@ -5889,10 +5937,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "გადაიხადეთ ${ amount } 30 თვისთვის"
-      ],
-      "for ${ n } month": [
-        "${ n } თვით",
-        "${ n } თვით"
       ],
       "Get the deal": [
         "ფასდაკლების მიღება"
@@ -5961,9 +6005,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "ყველა ჩვენი ფასიანი სერვისის მაქსიმალური შეზღუდვებია: 100 ელფოსტის მისამართი, 10 მომხმარებლის დომენის მხარდაჭერა, განუსაზღვრელი Hide-my-email-ის მეტსახელები, კალენდრის გაზიარება, დაშიფრული ღრუბლოვანი საცავი და ფაილების გაზიარება და სხვ."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "შეიცავს 1 თქვენი ელფოსტის დომენის, 10 ელფოსტის მისამართის, 10 Hide-my-email-ის მეტსახელს, კალენდრის გაზიარებას და სხვ."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "შეიცავს 3 თქვენი ელფოსტის დომენის, 15 ელფოსტის მისამართის, შეუზღუდავ Hide-my-email-ის მეტსახელს, კალენდრის გაზიარებას და სხვ."
       ],
@@ -5975,9 +6016,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს შეიცავს ავტომატურ სინქრონიზაციას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "საცავის სივრცე გაზიარებულია ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }-სა და ${ DRIVE_APP_NAME }-ს შორის."
       ]
     },
     "Spotlight": {
@@ -6008,14 +6046,8 @@
       ]
     },
     "Subscription": {
-      "Billed every 15 months": [
-        "გადახდა 15 თვეში ერთხელ"
-      ],
       "Billed every 2 years": [
         "გადახდა 2 წელიწადში ერთხელ"
-      ],
-      "Billed every 30 months": [
-        "გადახდა 30 თვეში ერთხელ"
       ],
       "Billed monthly": [
         "გადაიხდით თვეში ერთხელ"
@@ -6309,24 +6341,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "ფასიანი Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Mail-ის და Calendar-ის ფასიანი ვერსია"
-      ],
       "Premium Password Manager": [
         "პაროლების მმართველის ფასიანი ვერსია"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "დაიმახსოვრეთ პაროლები დაცულად და შეავსეთ ისინი ავტომატურად ვებგვერდებზე. შეიცავს ულიმიტო პაროლებს, ავტომატურ შევსებას, პაროლების გენერატორს და სხვ."
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "პაროლების მმართველი"
       ]
     },
     "summer2023: Tooltip": {
@@ -7024,11 +7040,6 @@
       ],
       "Verified email address": [
         "გადამოწმებული ელფოსტის მისამართი"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
-        "${ PASS_APP_NAME } გამჭოლად-დაშიფრული პაროლების მმართველი"
       ]
     },
     "Tor out of date": {
