@@ -74,7 +74,7 @@ const onShareEvent = (shareId: string) =>
                             createTime: share.createTime,
                             eventId: LatestEventID,
                             owner: share.owner,
-                            primary: Boolean(UpdatedShare.Primary),
+                            primary: false, // FIXME: remove `primary`
                             shared: share.shared,
                             shareId: share.shareId,
                             shareRoleId: share.shareRoleId,
