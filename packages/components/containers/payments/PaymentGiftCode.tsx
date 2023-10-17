@@ -64,7 +64,7 @@ const PaymentGiftCode = ({ giftCodeRef, giftCode = '', onApply, loading }: Props
         };
 
         return (
-            <div className="flex flex-nowrap flex-align-items-center flex-align-items-start">
+            <div className="flex flex-nowrap flex-align-items-center flex-align-items-start mb-2">
                 <div className="pr-2 flex-item-fluid">
                     <Input
                         value={code}
