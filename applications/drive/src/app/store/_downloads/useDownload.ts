@@ -209,22 +209,36 @@ export default function useDownload() {
         });
     };
 
+    const getThumbnailFromBlobUrl = async (thumbnailUrl: string) => {
+        return fetch(thumbnailUrl)
+            .then((r) => r.blob())
+            .then((blob) => blob.stream() as ReadableStream<Uint8Array>)
+            .then((buffer) => streamToBuffer(buffer));
+    };
+
     const getPreviewThumbnail = async (abortSignal: AbortSignal, shareId: string, linkId: string) => {
-        const { activeRevision } = await getLink(abortSignal, shareId, linkId);
+        const { activeRevision, cachedThumbnailUrl } = await getLink(abortSignal, shareId, linkId);
         if (!activeRevision?.id) {
             throw new Error(c('Error').t`The original file has missing active revision`);
         }
+
         const res = (await debouncedRequest(
             queryFileRevisionThumbnail(shareId, linkId, activeRevision.id, ThumbnailType.HD_PREVIEW),
             abortSignal
         ).catch((err) => {
             if (err.data.Code === 2501) {
+                if (cachedThumbnailUrl) {
+                    return;
+                }
                 return debouncedRequest(
                     queryFileRevisionThumbnail(shareId, linkId, activeRevision.id, ThumbnailType.PREVIEW)
                 );
             }
             return err;
         })) as DriveFileRevisionThumbnailResult;
+        if (!res && cachedThumbnailUrl) {
+            return getThumbnailFromBlobUrl(cachedThumbnailUrl);
+        }
         const thumbnail = await downloadThumbnail(
             abortSignal,
             shareId,
@@ -232,7 +246,7 @@ export default function useDownload() {
             res.ThumbnailBareURL,
             res.ThumbnailToken
         );
-        return thumbnail;
+        return thumbnail.contents;
     };
 
     return {
