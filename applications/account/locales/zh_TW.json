@@ -293,9 +293,6 @@
       "Delete": [
         "刪除"
       ],
-      "Delete and confirm": [
-        "同意刪除"
-      ],
       "Delete Gateway": [
         "刪除閘道器"
       ],
@@ -334,6 +331,9 @@
       ],
       "Discard": [
         "放棄"
+      ],
+      "Don't know your password?": [
+        "不知您的密碼?"
       ],
       "Don't show again": [
         "日後免再顯示"
@@ -623,6 +623,9 @@
       "OK": [
         "好"
       ],
+      "Ok": [
+        "確定"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "開啟 ${ CALENDAR_APP_NAME } 設定"
       ],
@@ -776,9 +779,6 @@
       "Save address": [
         "儲存電郵位址"
       ],
-      "Save changes": [
-        "儲存變更"
-      ],
       "Save ICS file": [
         "儲存 ICS 檔案"
       ],
@@ -793,6 +793,9 @@
       ],
       "Search settings": [
         "搜尋的設定值"
+      ],
+      "See how": [
+        "看看怎麼做"
       ],
       "See plan features": [
         "看看方案功能"
@@ -1485,6 +1488,11 @@
         "與任何人分享"
       ]
     },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "再顯示 ${ remainingItems } 個"
+      ]
+    },
     "Calendar share permission label": {
       "Edit event details": [
         "編輯事件詳細資訊"
@@ -1847,8 +1855,14 @@
       "Birthday": [
         "生日"
       ],
+      "Display name": [
+        "顯示名稱"
+      ],
       "Email": [
         "電郵"
+      ],
+      "First name": [
+        "名"
       ],
       "Gender": [
         "性別"
@@ -1858,6 +1872,9 @@
       ],
       "Language": [
         "語言"
+      ],
+      "Last name": [
+        "姓氏"
       ],
       "Logo": [
         "頭像"
@@ -3163,6 +3180,9 @@
       "Contact signature not verified": [
         "聯絡人簽章尚未驗證"
       ],
+      "Could not save preference": [
+        "無法儲存偏好設定"
+      ],
       "Deselect at least ${ calendarsToFixCount } calendars": [
         "請取消選取至少 ${ calendarsToFixCount } 個行事曆"
       ],
@@ -3231,6 +3251,9 @@
       ],
       "Incorrect password": [
         "密碼錯誤"
+      ],
+      "Incorrect username": [
+        "錯誤的使用者名稱"
       ],
       "Invalid ${ name } code": [
         "${ name } 代碼無效"
@@ -3997,15 +4020,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "進階版雲端硬碟"
-      ],
-      "Premium Mail and Calendar": [
-        "進階版郵件與行事曆"
-      ],
-      "Premium VPN": [
-        "進階版 VPN"
-      ],
       "Up to 6 users": [
         "多達 6 位使用者"
       ]
@@ -4320,6 +4334,9 @@
       "Allow platform keys": [
         "允許平台金鑰"
       ],
+      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
+        "允許您註冊內建安全金鑰（如 Windows Hello、Face ID、Touch ID 或內部 TPM）"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "您確定要永久刪除此安全性金鑰 ${ name } 嗎？"
       ],
@@ -4600,6 +4617,9 @@
       ],
       "Set up ${ strongText } from Gmail": [
         "設定${ strongText }至Gmail"
+      ],
+      "This feature is currently unavailable": [
+        "此功能暫未開放"
       ],
       "Update your logins": [
         "更新您的登入"
@@ -5173,9 +5193,6 @@
       "${ discountPercentage } forever": [
         "${ discountPercentage } 永久折扣"
       ],
-      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } 將不再為您的檔案保留先前的版本。"
-      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } 無效"
       ],
@@ -5382,9 +5399,6 @@
       ],
       "Align right": [
         "靠右對齊"
-      ],
-      "All ${ BRAND_NAME } apps and their premium features": [
-        "所有 ${ BRAND_NAME } 應用程式與其進階功能"
       ],
       "All (${ totalFoldersCount } folders)": [
         "全部 (${ totalFoldersCount } 個資料夾)"
@@ -6268,14 +6282,8 @@
       "per month, billed every 12 months": [
         "每月，每12個月收費"
       ],
-      "per month, billed every 15 months": [
-        "每月，每15個月收費"
-      ],
       "per month, billed every 24 months": [
         "每月，每24個月收費"
-      ],
-      "per month, billed every 30 months": [
-        "每月，每30個月收費"
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "若外寄郵件已被簽署，PGP 用戶端很可能會自動偵測您的 PGP 金鑰。"
@@ -6493,12 +6501,6 @@
       "Setting up your organization": [
         "設定您的組織"
       ],
-      "Settings update failed": [
-        "更新設定失敗"
-      ],
-      "Settings updated": [
-        "已更新設定"
-      ],
       "Show original message": [
         "顯示原始訊息"
       ],
@@ -6679,12 +6681,6 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "這將會取消您目前已付費的訂閱，您也會一併失去您累積的任何答謝長期支援的惠益。您的訂閱餘數將會以帳號餘額退還。"
       ],
-      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "這將會為您的檔案刪除${ rententionLabel }之前所有先前的版本。"
-      ],
-      "This will delete all previous versions of your files.": [
-        "這將會為您的檔案刪除所有先前的版本。"
-      ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "這將讓你目前的復原短語被提用。你無法再使用它來存取你的帳號或是解密你的資料。"
       ],
@@ -6844,9 +6840,6 @@
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "升級以新增較短且易於分享的 @pm.me 地址到您的帳號。其代表「${ MAIL_APP_NAME } 我」或是「寄私人訊息給我」。"
       ],
-      "Upgrade to unlock": [
-        "升級以解鎖"
-      ],
       "Upload picture": [
         "上載圖像"
       ],
@@ -6894,9 +6887,6 @@
       ],
       "Version ${ version }": [
         "版本 ${ version }"
-      ],
-      "Version history": [
-        "版本歷史紀錄"
       ],
       "Visa Secure logo": [
         "Visa Secure 標誌"
@@ -7887,6 +7877,9 @@
       "Conversation grouping": [
         "對話群組"
       ],
+      "Conversations per page": [
+        "每頁的對話"
+      ],
       "Copy": [
         "複製"
       ],
@@ -7982,9 +7975,6 @@
       ],
       "Don't ask again": [
         "不要再次詢問"
-      ],
-      "Don't keep versions": [
-        "不要保留版本紀錄"
       ],
       "Duration": [
         "期間"
@@ -8174,6 +8164,9 @@
       ],
       "Message": [
         "郵件"
+      ],
+      "Messages per page": [
+        "每頁訊息"
       ],
       "Moderate NAT": [
         "中等 NAT"
@@ -8502,6 +8495,9 @@
       "Verification code": [
         "驗證碼"
       ],
+      "Verify keys with Key Transparency": [
+        "使用 Key Transparency 驗證金鑰"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "很抱歉您想離開。請告訴我們原因以讓我們改進。"
       ],
@@ -8633,6 +8629,11 @@
       ],
       "Expired": [
         "已過期"
+      ]
+    },
+    "Label to  inform a feature is only available on Beta": {
+      "Beta": [
+        "測試版"
       ]
     },
     "Label to change composer mode": {
@@ -9328,9 +9329,6 @@
       "99.95% SLA": [
         "99.95% 服務層級協議"
       ],
-      "Ad-blocker & malware protection": [
-        "廣告攔截與惡意程式保護"
-      ],
       "Admin console": [
         "管理員主控台"
       ],
@@ -9508,6 +9506,12 @@
       "Sign in as user": [
         "登入為使用者"
       ],
+      "SMTP submission": [
+        "SMTP 傳送"
+      ],
+      "SMTP submission for select organizations": [
+        "選定組織的 SMTP 傳送"
+      ],
       "Split tunneling (Android and Windows)": [
         "分隔通道(Android 與 Windows)"
       ],
@@ -9606,6 +9610,17 @@
         "團隊管理"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "要繼續使用有進階功能的 ${ MAIL_APP_NAME }，請選擇您的訂購授權與繳款選項。"
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "您的試用期結束於 ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } 後四碼 ${ last4 }"
@@ -9695,17 +9710,6 @@
         "你正在當前的計畫中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "要繼續使用有進階功能的 ${ MAIL_APP_NAME }，請選擇您的訂購授權與繳款選項。"
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "您的試用期結束於 ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "全部有 ${ humanMaxSpace }，已使用 ${ humanUsedSpace }"
@@ -9782,18 +9786,6 @@
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
-        "${ CALENDAR_APP_NAME }:點對點加密的行事曆"
-      ],
-      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
-        "${ DRIVE_APP_NAME }:端對端加密的雲端儲存"
-      ],
-      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
-        "${ MAIL_APP_NAME }:端對端加密的電子郵件"
-      ],
-      "${ VPN_APP_NAME }: unblock content, browse privately": [
-        "${ VPN_APP_NAME }:解鎖內容、更隱私的瀏覽"
-      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "在世界各地輕鬆存取影音串流內容，包括 Netflix、Disney+、Prime Video 等"
       ],
@@ -9929,6 +9921,9 @@
       "Share your files or folders with anyone by using secure, shareable links": [
         "以安全、可分享的連結與任何人分享您的檔案或資料夾"
       ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTP 允許第三方服務或裝置透過 ${ MAIL_APP_NAME } 傳送郵件。"
+      ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "NetShield 保護您的裝置並透過攔截廣告、追蹤程式與惡意軟體來加快您的瀏覽速度"
       ],
@@ -9970,6 +9965,9 @@
       ]
     },
     "new_plans: upgrade": {
+      "Included with ${ BRAND_NAME } for Business, ${ familyPlanName } and ${ mailProPlanName }.": [
+        "包含在 ${ BRAND_NAME } 商業版、${ familyPlanName } 與 ${ mailProPlanName }。"
+      ],
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "包含於 ${ plus }、${ bundle } 和 ${ BRAND_NAME } 企業版。"
       ],
@@ -10524,6 +10522,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ appName } benefits": [
+        "${ appName } 福利"
+      ],
       "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
         "${ PASS_APP_NAME }於Firefox瀏覽器擴充提供。"
       ],
@@ -10619,12 +10620,6 @@
       ],
       "per month, billed annually": [
         "每年，每年收費"
-      ],
-      "per month, billed every 15 months": [
-        "每月，每15個月收費"
-      ],
-      "per month, billed every 30 months": [
-        "每月，每30個月收費"
       ],
       "per month, billed every month": [
         "每月，每月收費"
@@ -11066,6 +11061,284 @@
         "待創建"
       ]
     },
+    "session_recovery:available:action": {
+      "Cancel password reset": [
+        "取消密碼重設"
+      ],
+      "Cancel reset": [
+        "取消重設"
+      ],
+      "Reset password": [
+        "重設密碼"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "帳號備援不適用於舊的地址金鑰"
+      ],
+      "Please generate keys before you try to change your password": [
+        "請在您試著改變您的密碼前生成金鑰"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } days": [
+        "${ timeRemaining.inDays }天"
+      ],
+      "${ timeRemaining.inHours } hours": [
+        "${ timeRemaining.inHours }小時"
+      ],
+      "Didn’t make this request?": [
+        "沒有提出這個請求嗎？"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "若您沒有請求重設密碼，請立刻取消請求。"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } days to reset your password.": [
+        "重設密碼請求已核准 (${ user.Email })。您可以在${ timeRemaining.inDays }天內重設您的密碼。"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hours to reset your password.": [
+        "重設密碼請求已核准 (${ user.Email })。您可以在${ timeRemaining.inHours }小時內重設您的密碼。"
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "請前往已登入的裝置（在發起請求的工作階段中）變更您的密碼。"
+      ],
+      "This permission expires in ${ timeRemaining.inDays } days": [
+        "此權限將在${ timeRemaining.inDays }天後過期"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hours": [
+        "此權限將在${ timeRemaining.inHours }小時後過期"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "現在您可以在${ boldDaysRemaining }內免費變更帳號 ${ boldEmail } 的密碼。"
+      ],
+      "You can now reset your password": [
+        "您現在可以重設密碼了。"
+      ],
+      "You can reset your password until ${ boldDate }.": [
+        "您可以在 ${ boldDate } 前重設密碼。"
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "看看怎麼做"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "密碼已儲存"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "重置您的密碼"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "取消密碼重設"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "輸入您目前的密碼以取消密碼重設流程。其他變更將不會生效。"
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "已取消密碼重設"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "取消密碼重設？"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "密碼重設請求已取消 (${ user.Email })。若您並未做出此請求，${ changePasswordLink }。"
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "立刻變更您的密碼"
+      ]
+    },
+    "session_recovery:disable:action": {
+      "Disable password reset": [
+        "停用密碼重設"
+      ]
+    },
+    "session_recovery:disable:info": {
+      "Make sure you have access to a recovery method.": [
+        "確保您有權存取備援方法。"
+      ],
+      "You will no longer be able to request a password reset from your account settings.": [
+        "您將無法再從帳號設定中要求重設密碼。"
+      ]
+    },
+    "session_recovery:disable:title": {
+      "Disable password reset?": [
+        "停用密碼重設？"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel password reset": [
+        "取消密碼重設"
+      ],
+      "Cancel request": [
+        "取消請求"
+      ],
+      "Got it": [
+        "瞭解"
+      ],
+      "Learn more": [
+        "了解更多"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hours": [
+        "還剩下${ gracePeriodHoursRemaining }小時"
+      ],
+      "Didn’t make this request?": [
+        "沒有提出這個請求嗎？"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "若您沒有請求重設密碼，請立刻取消請求。"
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "若您沒有請求重設密碼，請立刻取消請求。"
+      ],
+      "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
+        "密碼重設從 ${ boldDate } 開始可使用。這讓您有時間取消任何詐騙請求。"
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hours.": [
+        "已請求重設密碼 (${ user.Email })。您可以在${ hoursRemaining }小時後變更您的密碼。"
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "為了確保確實是您在嘗試重設密碼，我們會等待 72 小時才核准請求。您可以在 ${ boldTimeLeft } 後變更密碼。${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "我們收到了 ${ boldEmail } 的密碼重設請求。"
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hours": [
+        "您可以在${ gracePeriodHoursRemaining }小時內變更您的密碼"
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "檢視請求"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "請求重設密碼"
+      ]
+    },
+    "session_recovery:initiation:action": {
+      "Got it": [
+        "瞭解"
+      ],
+      "Request password reset": [
+        "請求重設密碼"
+      ],
+      "Use recovery method": [
+        "使用備援方法"
+      ]
+    },
+    "session_recovery:initiation:info": {
+      "For security reasons, you’ll have to wait **72 hours** before you can change your password.": [
+        "出於安全因素，您必須等待**72小時**才能變更密碼。"
+      ],
+      "If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.": [
+        "若您設定了**備援方法**，請嘗試帳號救援。這將讓您可以立刻變更密碼。"
+      ],
+      "We will contact you again when the password reset is available.": [
+        "當密碼重設可用時，我們會再次聯絡您。"
+      ],
+      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
+        "您可以隨時在設定的 ${ accountAndPasswordSectionLink } 中檢查請求的狀態。"
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "account and password section": [
+        "帳號與密碼小節"
+      ]
+    },
+    "session_recovery:initiation:notification": {
+      "Password reset confirmed": [
+        "已確認密碼重設"
+      ]
+    },
+    "session_recovery:initiation:title": {
+      "Request password reset?": [
+        "請求密碼重設？"
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hours": [
+        "您將可以在${ gracePeriodHoursRemaining }小時內重設您的密碼"
+      ]
+    },
+    "session_recovery:settings:action": {
+      "Allow password reset from settings": [
+        "允許從設定重設密碼"
+      ],
+      "Request a password reset from your Account settings. No recovery method needed.": [
+        "從您的帳號設定請求密碼重設。不需要備援方法。"
+      ],
+      "Request password reset": [
+        "請求重設密碼"
+      ],
+      "To disallow password reset, you must have a recovery method set up.": [
+        "若要停用密碼重設，您必須設定備援方法。"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "登出"
+      ],
+      "Stay signed in": [
+        "保存登錄"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hours": [
+        "${ gracePeriodHoursRemaining }小時"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } 現在可用。"
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "若您在重設密碼前登出，您可能會遺失對您帳號的存取權。"
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "若您並未重設密碼而登出，您可能會遺失對您帳號的存取權。"
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "您將可以在${ boldTimeLeft }重設您的密碼。"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "密碼重設"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "登出而不重設密碼？"
+      ]
+    },
+    "session_recovery:status:info": {
+      "Available": [
+        "可用"
+      ],
+      "Pending": [
+        "擱置中"
+      ]
+    },
+    "session_recovery:status:title": {
+      "Password reset request": [
+        "請求重設密碼"
+      ]
+    },
     "Settings description": {
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "以我們安全的匯入與轉寄工具，完成隱私之進化。"
@@ -11232,9 +11505,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "${ storageSize } 總儲存空間"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -11256,15 +11526,6 @@
       "Premium early access": [
         "進階版搶先體驗"
       ],
-      "Premium Mail and Calendar": [
-        "進階版郵件與行事曆"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "進階版郵件、行事曆與雲端硬碟"
-      ],
-      "Premium VPN": [
-        "進階版 VPN"
-      ],
       "Secure cloud storage": [
         "安全的雲端儲存空間"
       ],
@@ -11276,9 +11537,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "折扣基於每月基本價格。"
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "此訂閱將每 2 年自動以相同的費用續訂，直到被取消為止。"
       ]
@@ -11337,9 +11595,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "30 個月的費用為${ amount }"
-      ],
-      "for ${ n } months": [
-        "為期${ n }個月"
       ],
       "Get the deal": [
         "取得優惠"
@@ -11408,9 +11663,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "我們所有具有最高限制的進階版服務：100 組電子郵件位址、支援 10 組自訂網域、無限制的隱藏 hide-my-email 別名、行事曆分享、加密雲端儲存與檔案分享等。"
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "包含對 1 個自訂電子郵件網域、10 組電子郵件位址、10 組 hide-my-email 別名、行事曆分享與更多功能的支援。"
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "包含對 3 個自訂電子郵件網域、15 組電子郵件位址、無限組 hide-my-email 別名、行事曆分享與更多功能的支援。"
       ],
@@ -11422,9 +11674,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "使用加密的雲端存儲保護您的檔案。包含自動同步、加密檔案分享等。"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -11487,14 +11736,8 @@
       ]
     },
     "Subscription": {
-      "Billed every 15 months": [
-        "15 個月繳制"
-      ],
       "Billed every 2 years": [
         "雙年繳制"
-      ],
-      "Billed every 30 months": [
-        "30 個月繳制"
       ],
       "Billed monthly": [
         "月繳"
@@ -11882,24 +12125,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "付費版雲端硬碟"
-      ],
-      "Premium Mail and Calendar": [
-        "付費版信件和行事曆"
-      ],
       "Premium Password Manager": [
         "付費版密碼管理器"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "安全處存密碼和自動填入網站。包含無限密碼、自動填入、密碼生成、和更多。"
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "密碼管理員"
       ]
     },
     "summer2023: Tooltip": {
@@ -12161,6 +12388,9 @@
       "Add users": [
         "新增使用者"
       ],
+      "Address and key verification": [
+        "地址與金鑰驗證"
+      ],
       "Allocate storage": [
         "分配儲存空間"
       ],
@@ -12400,9 +12630,6 @@
       ],
       "Delete user?": [
         "刪除使用者?"
-      ],
-      "Delete version history?": [
-        "刪除版本紀錄?"
       ],
       "Disable ${ email }": [
         "停用 ${ email }"
@@ -12682,6 +12909,9 @@
       ],
       "Password and keys": [
         "密碼和金鑰"
+      ],
+      "Password reset": [
+        "密碼重設"
       ],
       "Pay invoice": [
         "支付帳單"
@@ -13217,6 +13447,9 @@
       "This feature is only available for paid users": [
         "此功能僅提供給付費使用者"
       ],
+      "This feature is only available on Beta": [
+        "此功能僅在測試版提供"
+      ],
       "This key cannot be used for encryption": [
         "此金鑰不能用於加密"
       ],
@@ -13261,11 +13494,6 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "您的外部帳號可能已達其24小時頻寬限制。${ BRAND_NAME } 將會盡快重試匯入。"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
-        "${ PASS_APP_NAME }:端對端加密的密碼管理器"
       ]
     },
     "Tooltip automatically attach public key": {
