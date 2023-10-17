@@ -45,20 +45,21 @@ function* onInvitesEvent(event: EventManagerEvent<InvitesGetResponse>) {
             try {
                 const encodedVault = await PassCrypto.readVaultInvite({
                     encryptedVaultContent: encryptedVault.Content,
-                    invitedEmail: invite.InvitedEmail,
+                    invitedAddressId: invite.InvitedAddressID!,
                     inviteKey: inviteKey,
                     inviterPublicKeys: await getPublicKeysForEmail(invite.InviterEmail),
                 });
 
                 return {
-                    token: invite.InviteToken,
-                    targetId: invite.TargetID,
-                    targetType: invite.TargetType,
-                    remindersSent: invite.RemindersSent,
+                    createTime: invite.CreateTime,
+                    invitedAddressId: invite.InvitedAddressID!,
                     invitedEmail: invite.InvitedEmail,
                     inviterEmail: invite.InviterEmail,
-                    createTime: invite.CreateTime,
                     keys: invite.Keys,
+                    remindersSent: invite.RemindersSent,
+                    targetId: invite.TargetID,
+                    targetType: invite.TargetType,
+                    token: invite.InviteToken,
                     vault: {
                         content: decodeVaultContent(encodedVault),
                         memberCount: encryptedVault.MemberCount!,
