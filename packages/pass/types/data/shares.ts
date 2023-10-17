@@ -29,7 +29,6 @@ export type ShareBase<T extends ShareType = ShareType> = {
     content: ShareContent<T>;
     createTime: number;
     owner: boolean;
-    primary: boolean;
     shared: boolean;
     shareId: string;
     shareRoleId: ShareRole;
