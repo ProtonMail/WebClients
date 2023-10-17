@@ -136,6 +136,23 @@ export const getSharing = (included: boolean = false): PlanCardFeatureDefinition
     };
 };
 
+const getVaultSharingText = (n: number) => {
+    return c('new_plans: feature').ngettext(
+        msgid`Vault sharing (up to ${n} person)`,
+        `Vault sharing (up to ${n} people)`,
+        n
+    );
+};
+
+export const getVaultSharing = (n: number): PlanCardFeatureDefinition => {
+    return {
+        text: getVaultSharingText(n),
+        icon: 'arrow-up-from-square',
+        included: true,
+        hideInDowngrade: true,
+    };
+};
+
 export const getDataBreachMonitoring = (included: boolean = false): PlanCardFeatureDefinition => {
     return {
         text: included
