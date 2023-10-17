@@ -135,7 +135,7 @@ function useFileViewBase(
                 buffer: isFallbackContents ? undefined : contents,
             },
         ]);
-    }, [shareId, link, contents]);
+    }, [shareId, link, contents, isFallbackContents]);
 
     return {
         isLinkLoading: !link && !error,
