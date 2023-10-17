@@ -3,12 +3,12 @@ import { type MaybeNull } from '../utils';
 import type { ShareRole, ShareType, VaultShareContent } from './shares';
 
 export type InviteBase = {
+    createTime: number;
     invitedEmail: string;
     inviterEmail: string;
-    targetType: ShareType;
-    targetId: string;
     remindersSent: number;
-    createTime: number;
+    targetId: string;
+    targetType: ShareType;
 };
 
 export type PendingInvite = InviteBase & {
@@ -18,24 +18,25 @@ export type PendingInvite = InviteBase & {
 
 export type InviteVaultData = {
     content: VaultShareContent;
-    memberCount: number;
     itemCount: number;
+    memberCount: number;
 };
 
 export type Invite = InviteBase & {
-    token: string;
+    invitedAddressId: string;
     keys: KeyRotationKeyPair[];
+    token: string;
     vault: InviteVaultData;
 };
 
 export type ShareMember = {
-    shareId: string;
-    name: string;
-    email: string;
-    owner: boolean;
-    targetType: ShareType;
-    targetId: string;
-    shareRoleId: ShareRole;
-    expireTime?: MaybeNull<number>;
     createTime: number;
+    email: string;
+    expireTime?: MaybeNull<number>;
+    name: string;
+    owner: boolean;
+    shareId: string;
+    shareRoleId: ShareRole;
+    targetId: string;
+    targetType: ShareType;
 };
