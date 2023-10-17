@@ -188,6 +188,9 @@
       "Lock extension": [
         "확장 프로그램 잠금"
       ],
+      "Make viewer": [
+        "뷰어 생성"
+      ],
       "Manage access": [
         "접근 관리"
       ],
@@ -219,7 +222,7 @@
         "Android용 Pass"
       ],
       "Pass for iOS": [
-        "Pass"
+        "iOS용 Pass"
       ],
       "Proceed": [
         "계속"
@@ -1065,10 +1068,13 @@
         "2FA 자동 완성"
       ],
       "Automatically open autofill when focusing login fields": [
-        "로그인란에 있을 때 자동 완성을 표시합니다."
+        "로그인란에 있을 때 자동 완성을 표시"
       ],
       "Autosave": [
         "자동 저장"
+      ],
+      "Autosave vault": [
+        "금고 자동저장"
       ],
       "Autosuggest": [
         "자동 제안"
@@ -1298,6 +1304,9 @@
       "Select an email address": [
         "이메일 주소 선택"
       ],
+      "Select preferred language": [
+        "선호하는 언어 선택"
+      ],
       "Select your password manager": [
         "비밀 번호 관리자를 선택하세요"
       ],
@@ -1376,8 +1385,14 @@
       "Vault": [
         "금고"
       ],
+      "Vaults": [
+        "금고"
+      ],
       "Verification number": [
         "인증 번호"
+      ],
+      "View details": [
+        "세부사항 보기"
       ],
       "View logs": [
         "로그 보기"
@@ -1559,6 +1574,9 @@
       "Secure your data": [
         "데이터를 보호하세요"
       ],
+      "Set access level": [
+        "접근 수준 설정"
+      ],
       "Share with": [
         "공유 대상:"
       ],
@@ -1588,6 +1606,9 @@
       ],
       "Use my email": [
         "나의 이메일 사용"
+      ],
+      "Vault shared with you": [
+        "나와 공유된 금고"
       ],
       "Welcome to ${ brandNameJSX }": [
         "${ brandNameJSX }에 오신 것을 환영합니다."
@@ -1692,6 +1713,12 @@
       "Please log back in": [
         "다시 로그인해 주세요."
       ],
+      "Please verify your email address in order to use email aliases": [
+        "이메일 별명을 사용하려면 이메일 주소를 인증해 주세요."
+      ],
+      "Please verify your email address in order to use vault sharing": [
+        "금고 공유를 사용하려면 이메일 주소를 인증해 주세요."
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "보고서는 종단간 암호화되지 않음으로 민감한 정보를 보내지 마십시오."
       ],
@@ -1703,6 +1730,9 @@
       ],
       "Title is required": [
         "필수 필드"
+      ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "금고의 소유권을 ${ email }으로 이동하시겠어요?"
       ],
       "Trash alias ?": [
         "별명 삭제 ?"
@@ -1737,11 +1767,17 @@
       "Your plan does not allow you to create more aliases": [
         "사용자의 플랜에서 생성할 수 있는 별명보다 더 많이 생성할 수 없습니다."
       ],
+      "Your plan only allows you to autofill from your first two vaults": [
+        "사용자의 플랜에서 처음 두개 금고에서만 자동 완성을 지원합니다."
+      ],
       "Your plan only allows you to autofill from your primary vault": [
         "사용자의 플랜에서 기본 금고에서만 자동 완성을 지원합니다."
       ],
       "Your session was locked due to inactivity": [
         "세션이 비활성화로 인해 잠겼습니다."
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "현재 구독에서 다중 금고 생성을 지원하지 않습니다. 모든 항목이 처음 금고에 저장됩니다. 여러 개의 금고를 생성하려면 구독을 업그레이드 하세요."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
         "현재 구독에서 다중 금고 생성을 지원하지 않습니다. 모든 항목이 기본 금고에 저장됩니다. 여러 개의 금고를 생성하려면 구독을 업그레이드 하세요."

@@ -173,6 +173,9 @@
       "Importing": [
         "Importovanie"
       ],
+      "Invite others": [
+        "Pozvať iných"
+      ],
       "Join shared vault": [
         "Pripojiť sa k zdieľanému trezoru"
       ],
@@ -187,6 +190,15 @@
       ],
       "Lock extension": [
         "Zamknúť rozšírenie"
+      ],
+      "Make admin": [
+        "Urobiť správcom"
+      ],
+      "Make editor": [
+        "Upravovať"
+      ],
+      "Make viewer": [
+        "Čítať"
       ],
       "Manage access": [
         "Spravovať prístup"
@@ -211,6 +223,9 @@
       ],
       "Not now": [
         "Teraz nie"
+      ],
+      "Open in a window": [
+        "Otvoriť v okne"
       ],
       "Open navigation": [
         "Otvoriť menu"
@@ -268,6 +283,9 @@
       ],
       "Share": [
         "Zdieľať"
+      ],
+      "Share vault": [
+        "Zdielať trezor"
       ],
       "Show": [
         "Zobraziť"
@@ -678,6 +696,9 @@
       "Access your passwords on the go with our mobile apps.": [
         "Pristupujte k svojim heslám na cestách pomocou našich mobilných aplikácií."
       ],
+      "Admin": [
+        "Admin"
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" presunutý do koša – prestanú sa preposielať emaily do vašej poštovej schránky"
       ],
@@ -695,6 +716,9 @@
       ],
       "Autosaved on ${ submissionURL }": [
         "Automaticky uložené ${ submissionURL }"
+      ],
+      "Can create, edit, delete, and export items in this vault.": [
+        "Môžete vytvárať, upravovať, mazať a exportovať položky v tomto trezore."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Môže udeliť alebo zrušiť prístup k tomuto trezoru a vymazať ho."
@@ -734,6 +758,9 @@
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Jednoducho importujte svoje existujúce heslá do ${ PASS_APP_NAME }."
+      ],
+      "Editor": [
+        "Editor"
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Povoľte ${ PASS_APP_NAME } pripojením svojho účtu ${ BRAND_NAME }"
@@ -807,11 +834,17 @@
       "Internet connection lost": [
         "Strata internetového pripojenia"
       ],
+      "Invitation sent": [
+        "Pozvánka bol odoslaná"
+      ],
       "Invite successfully removed": [
         "Pozvánka bola úspešne odstránená."
       ],
       "Invite successfully resent": [
         "Pozvánka bola znova úspešne odoslaná"
+      ],
+      "invites you to access items in": [
+        "vás pozýva na prístup k položkám v"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Zdá sa, že ste už prihlásený do ${ PASS_APP_NAME }. Ak sa pokúšate prihlásiť pomocou iného účtu, najskôr sa odhláste z rozšírenia."
@@ -1005,6 +1038,9 @@
       "Verification code": [
         "Overovací kód"
       ],
+      "Viewer": [
+        "Zobrazovač"
+      ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Máme problém so synchronizáciou údajov do vašeho lokálneho úložiska. Uistite sa, že máte dostatok miesta na disku pre správne fungovanie ${ PASS_SHORT_APP_NAME }."
       ],
@@ -1020,8 +1056,14 @@
         "Do konca skúšobného obdobia zostáva ${ daysRemaining } dní.",
         "Do konca skúšobného obdobia zostáva ${ daysRemaining } dní."
       ],
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
+        "Prekročili ste počet trezorov zahrnutých vo vašom predplatnom. Položky je možné presunúť iba do vašich prvých dvoch trezorov. Pre presúvanie položiek medzi všetkými trezormi aktualizujte vaše predplatné."
+      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
         "Prekročili ste počet trezorov zahrnutých vo vašom predplatnom. Položky je možné presunúť iba do primárneho trezoru. Pre presúvanie položiek medzi všetkými trezormi upgradujte svoje predplatné."
+      ],
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
+        "Prekročili ste počet trezorov zahrnutých vo vašom predplatnom. Nové položky je možné vytvárať len vo vašich prvých dvoch trezoroch. Pre vytvorenie položiek vo všetkých trezoroch aktualizujte svoje predplatné."
       ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
         "Prekročili ste počet trezorov zahrnutých vo vašom predplatnom. Nové položky je možné vytvoriť iba v primárnom trezore. Pre vytvorenie položiek vo všetkých trezoroch upgradujte svoje predplatné."
@@ -1040,6 +1082,9 @@
       ],
       "You're about to create": [
         "Chystáte sa vytvoriť"
+      ],
+      "You're invited to a vault.": [
+        "Ste pozvaní do trezoru."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Vaša relácia ${ PASS_APP_NAME } je uzamknutá"
@@ -1129,6 +1174,9 @@
       ],
       "Autosave": [
         "Automatické ukladanie"
+      ],
+      "Autosave vault": [
+        "Automatické ukladanie trezora"
       ],
       "Autosuggest": [
         "Automatický návrh"
@@ -1358,6 +1406,9 @@
       "Select an email address": [
         "Vyberte emailovú adresu"
       ],
+      "Select preferred language": [
+        "Vyberte preferovaný jazyk"
+      ],
       "Select your password manager": [
         "Vyberte správcu hesiel"
       ],
@@ -1436,8 +1487,14 @@
       "Vault": [
         "Trezor"
       ],
+      "Vaults": [
+        "Trezory"
+      ],
       "Verification number": [
         "Overovacie číslo"
+      ],
+      "View details": [
+        "Zobraziť podrobnosti"
       ],
       "View logs": [
         "Zobraziť záznamy"
@@ -1619,6 +1676,9 @@
       "Secure your data": [
         "Zabezpečte svoje údaje"
       ],
+      "Set access level": [
+        "Nastavte úroveň prístupu"
+      ],
       "Share with": [
         "Zdieľať s"
       ],
@@ -1648,6 +1708,9 @@
       ],
       "Use my email": [
         "Použiť môj email"
+      ],
+      "Vault shared with you": [
+        "Trezor zdieľaný s vami"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Víta vás ${ brandNameJSX }"
@@ -1753,7 +1816,7 @@
         "Prihláste sa znova prosím"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Hlásenia nie sú zabezpečené koncovým šifrovaním, neposielajte žiadne citlivé informácie."
+        "Hlásenia nie sú zabezpečené end-to-end šifrovaním, neposielajte žiadne citlivé informácie, prosím."
       ],
       "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
         "Pri spúšťaní ${ PASS_APP_NAME } sa niečo pokazilo. Skúste prosím obnoviť alebo znova načítať rozšírenie."
@@ -1763,6 +1826,9 @@
       ],
       "Title is required": [
         "Názov je povinný"
+      ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "Preniesť vlastníctvo tohto trezora na ${ email }?"
       ],
       "Trash alias ?": [
         "Odstrániť alias?"
@@ -1797,11 +1863,17 @@
       "Your plan does not allow you to create more aliases": [
         "Váš plán vám neumožňuje vytvoriť viac aliasov"
       ],
+      "Your plan only allows you to autofill from your first two vaults": [
+        "Váš plán umožňuje automatické vypĺňanie len z vašich prvých dvoch trezorov"
+      ],
       "Your plan only allows you to autofill from your primary vault": [
         "Váš plán umožňuje automatické vypĺňanie len z vášho primárneho trezoru"
       ],
       "Your session was locked due to inactivity": [
         "Vaša relácia bola uzamknutá kvôli nečinnosti"
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "Vaše predplatné vám neumožňuje vytvoriť viacero trezorov. Všetky položky budú importované do vášho prvého trezoru. Pre importovanie do viacerých trezorov, aktualizujte vaše predplatné."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
         "Vaše predplatné vám neumožňuje vytvoriť viacero trezorov. Všetky položky budú importované do primárneho trezoru. Pre importovanie do viacerých trezorov, upgradujte svoje predplatné."
