@@ -1296,6 +1296,14 @@
         "${ mailPlus }: řešení e-mailu a kalendáře pro každodenní komunikaci s ohledem na soukromí."
       ]
     },
+    "Billing cycle": {
+      "${ n } month": [
+        "${ n } měsíc",
+        "${ n } měsíce",
+        "${ n } měsíců",
+        "${ n } měsíců"
+      ]
+    },
     "Billing cycle option": {
       "1 month": [
         "1 měsíc"
@@ -1840,6 +1848,11 @@
       ],
       "matches": [
         "se shoduje"
+      ]
+    },
+    "Condition label": {
+      "If": [
+        "Pokud"
       ]
     },
     "Confirm modal title": {
@@ -4080,15 +4093,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Prémiový Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Prémiový Mail a Calendar"
-      ],
-      "Premium VPN": [
-        "Prémiová VPN"
-      ],
       "Up to 6 users": [
         "Až 6 uživatelů"
       ]
@@ -4413,7 +4417,7 @@
         "Povolit klíče platformy"
       ],
       "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Umožňuje registrovat integrované bezpečnostní klíče (např. Windows Hello, Face ID, Touch ID nebo interní TPM)."
+        "Umožňuje registrovat vestavěné bezpečnostní klíče (například Windows Hello, Face ID, Touch ID nebo interní TPM)."
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Opravdu chcete odstranit bezpečnostní klíč ${ name }?"
@@ -5583,9 +5587,6 @@
       "Align right": [
         "Zarovnat doprava"
       ],
-      "All ${ BRAND_NAME } apps and their premium features": [
-        "Všechny ${ BRAND_NAME } aplikace a jejich prémiové funkce"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Všechna (${ totalFoldersCount } složka)",
         "Všechny (${ totalFoldersCount } složky)",
@@ -6300,6 +6301,9 @@
       "Link deleted": [
         "Odkaz odstraněn"
       ],
+      "Link expired": [
+        "Odkaz vypršel"
+      ],
       "Link type": [
         "Typ odkazu"
       ],
@@ -6498,14 +6502,8 @@
       "per month, billed every 12 months": [
         "za měsíc, účtováno každých 12 měsíců"
       ],
-      "per month, billed every 15 months": [
-        "za měsíc, účtováno každých 15 měsíců"
-      ],
       "per month, billed every 24 months": [
         "za měsíc, účtováno každých 24 měsíců"
-      ],
-      "per month, billed every 30 months": [
-        "za měsíc, účtováno každých 30 měsíců"
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "Klienti PGP s větší pravděpodobností automaticky rozpoznají vaše PGP klíče, pokud jsou odchozí zprávy podepsány."
@@ -6730,7 +6728,7 @@
         "Nastavení vaší organizace"
       ],
       "Settings update failed": [
-        "Aktualizace nastavení se nezdařila"
+        "Aktualizace nastavení selhala"
       ],
       "Settings updated": [
         "Nastavení aktualizováno"
@@ -7167,6 +7165,9 @@
       "We generated a strong password for you": [
         "Vygenerovali jsme vám silné heslo"
       ],
+      "We just sent you a new link.": [
+        "Právě jsme vám poslali nový odkaz."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Potřebujeme ověřit váš způsob platby u vaší banky."
       ],
@@ -7304,6 +7305,9 @@
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Můžete zapnout zaznamenávání přihlášení, abyste měli přehled kdy a ze které IP adresy bylo přistoupeno k vašemu účtu. Budeme zaznamenávat IP adresu a čas přístupu k vašemu účtu, stejně jako nepovedená přihlášení."
+      ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
+        "Výše uvedené nastavení můžete okamžitě odemknout přidáním ${ specificCountryCount } k počtu IP adres ve vašem tarifu nebo nás kontaktujte pro řešení na míru."
       ],
       "You can import one data type at a time.": [
         "Importovat můžete vždy jeden typ dat."
@@ -7672,6 +7676,9 @@
       ],
       "Disabled": [
         "Vypnuto"
+      ],
+      "Forwarding": [
+        "Přeposílání"
       ],
       "Inactive": [
         "Neaktivní"
@@ -9686,6 +9693,9 @@
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } s neomezeným počtem aliasů hide-my-email"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "Program ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ size } attachment size": [
         "${ size } velikost přílohy"
       ],
@@ -9706,9 +9716,6 @@
       ],
       "99.95% SLA": [
         "99.95% SLA Dostupnost"
-      ],
-      "Ad-blocker & malware protection": [
-        "Blokování reklam a ochrana před malwarem"
       ],
       "Admin console": [
         "Konzole správce"
@@ -9897,10 +9904,10 @@
         "Přihlasit se jako uživatel"
       ],
       "SMTP submission": [
-        "Odesílání SMTP"
+        "SMTP odesílání"
       ],
       "SMTP submission for select organizations": [
-        "Odesílání SMTP pro vybrané organizace"
+        "SMTP odesílání pro vybrané organizace"
       ],
       "Split tunneling (Android and Windows)": [
         "Split Tunneling (Android a Windows)"
@@ -10000,6 +10007,17 @@
         "Řízení týmu"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Zkušební verze končí ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } končící ${ last4 }"
@@ -10089,17 +10107,6 @@
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Zkušební verze končí ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } z ${ humanMaxSpace }"
@@ -10179,18 +10186,6 @@
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
-        "${ CALENDAR_APP_NAME }: koncově šifrovaný kalendář"
-      ],
-      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
-        "${ DRIVE_APP_NAME }: koncově šifrované cloudové úložiště"
-      ],
-      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
-        "${ MAIL_APP_NAME }: koncově šifrovaný e-mail"
-      ],
-      "${ VPN_APP_NAME }: unblock content, browse privately": [
-        "${ VPN_APP_NAME }: odblokování obsahu, soukromé prohlížení"
-      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Získejte přístup k obsahu na streamovacích službách, včetně Netflix, Disney+, Prime Video, odkudkoliv"
       ],
@@ -10299,6 +10294,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Chraňte vaši rodinu před škodlivými webovými stránkami a mějte přístup k našim vysokorychlostním VPN serverům pro streamování vašeho oblíbeného obsahu"
       ],
+      "Provides the highest level of account security protection and specialist support": [
+        "Poskytuje nejvyšší úroveň zabezpečení účtu a odbornou podporu"
+      ],
       "Quickly set up out-of-office messages": [
         "Rychle nastavte zprávy mimo kancelář"
       ],
@@ -10374,7 +10372,7 @@
     },
     "new_plans: upgrade": {
       "Included with ${ BRAND_NAME } for Business, ${ familyPlanName } and ${ mailProPlanName }.": [
-        "Včetně ${ BRAND_NAME } for Business, ${ familyPlanName } a ${ mailProPlanName }."
+        "Dostupné v rámci ${ BRAND_NAME } for Business, ${ familyPlanName } a ${ mailProPlanName }."
       ],
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Dostupné v rámci ${ plus }, ${ bundle }, a ${ BRAND_NAME } pro Firmy."
@@ -11056,12 +11054,6 @@
       "per month, billed annually": [
         "za měsíc, účtováno ročně"
       ],
-      "per month, billed every 15 months": [
-        "za měsíc, účtováno kažkých 15 měsíců"
-      ],
-      "per month, billed every 30 months": [
-        "za měsíc, účtováno kažkých 30 měsíců"
-      ],
       "per month, billed every month": [
         "za měsíc, účtováno kažký měsíc"
       ],
@@ -11538,10 +11530,10 @@
         "${ timeRemaining.inHours } hodin"
       ],
       "Didn’t make this request?": [
-        "Nepodal jste tuto žádost?"
+        "Toto není vaše žádost?"
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
-        "Pokud jste o obnovení hesla nepožádali, žádost nyní zrušte."
+        "Pokud jste o resetování hesla nepožádali, žádost nyní zrušte."
       ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
         "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inDays } den.",
@@ -11635,7 +11627,7 @@
         "Ujistěte se, že máte přístup k metodě obnovení."
       ],
       "You will no longer be able to request a password reset from your account settings.": [
-        "V nastavení účtu již nebude možné požádat o obnovení hesla."
+        "V nastavení účtu již nebude možné požádat o resetování hesla."
       ]
     },
     "session_recovery:disable:title": {
@@ -11665,16 +11657,16 @@
         "Zbývá ${ gracePeriodHoursRemaining } hodin"
       ],
       "Didn’t make this request?": [
-        "Nepodal jste tuto žádost?"
+        "Toto není vaše žádost?"
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
-        "Pokud jste o obnovení hesla nepožádali, žádost nyní zrušte."
+        "Pokud jste o resetování hesla nepožádali, žádost nyní zrušte."
       ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Pokud jste o obnovení hesla nepožádali, ihned zrušte tento požadavek."
       ],
       "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
-        "Obnovení hesla je k dispozici od ${ boldDate }. To vám dává čas na zrušení případných podvodných žádostí."
+        "Resetování hesla je k dispozici od ${ boldDate }. Díky tomu máte čas na zrušení případných podvodných žádostí."
       ],
       "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
         "Požadavek na obnovení hesla (${ user.Email }). Heslo můžete změnit za ${ hoursRemaining } hodinu.",
@@ -11727,12 +11719,12 @@
         "Až bude resetování hesla k dispozici, budeme vás znovu kontaktovat."
       ],
       "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
-        "Stav žádosti můžete kdykoli zkontrolovat v části ${ accountAndPasswordSectionLink } nastavení."
+        "Stav žádosti můžete kdykoli zkontrolovat v ${ accountAndPasswordSectionLink } v nastavení."
       ]
     },
     "session_recovery:initiation:link": {
       "account and password section": [
-        "sekce účtu a hesla"
+        "sekci účtu a hesla"
       ]
     },
     "session_recovery:initiation:notification": {
@@ -11753,16 +11745,16 @@
     },
     "session_recovery:settings:action": {
       "Allow password reset from settings": [
-        "Povolit obnovení hesla z nastavení"
+        "Povolit resetování hesla z Nastavení"
       ],
       "Request a password reset from your Account settings. No recovery method needed.": [
-        "V nastavení účtu si vyžádejte obnovení hesla. Obnovení hesla není nutné."
+        "O resetování hesla můžete požádat v nastavení účtu. Není potřeba žádná metoda obnovení."
       ],
       "Request password reset": [
         "Požádat o resetování hesla"
       ],
       "To disallow password reset, you must have a recovery method set up.": [
-        "Chcete-li zakázat obnovení hesla, musíte mít nastavenou metodu obnovení."
+        "Chcete-li zakázat resetování hesla, musíte mít nastavenou metodu obnovení."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -11808,7 +11800,7 @@
         "K dispozici"
       ],
       "Pending": [
-        "Čekající"
+        "Čeká na vyřízení"
       ]
     },
     "session_recovery:status:title": {
@@ -12000,9 +11992,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "${ storageSize } úložného prostoru"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -12024,15 +12013,6 @@
       "Premium early access": [
         "Prémiový předběžný přístup"
       ],
-      "Premium Mail and Calendar": [
-        "Prémiový Mail a Calendar"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "Prémiový Mail, Calendar a Drive"
-      ],
-      "Premium VPN": [
-        "Prémiová VPN"
-      ],
       "Secure cloud storage": [
         "Bezpečné cloudové úložiště"
       ],
@@ -12044,9 +12024,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "Slevy jsou počítány na základě standardních měsíčních cen."
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Předplatné se bude každé dva roky automaticky obnovovat se stejnou cenou, dokud nebude zrušeno."
       ]
@@ -12105,12 +12082,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Účtováno ${ amount } za 30 měsíců"
-      ],
-      "for ${ n } month": [
-        "na ${ n } měsíc",
-        "na ${ n } měsíce",
-        "na ${ n } měsíců",
-        "na ${ n } měsíců"
       ],
       "Get the deal": [
         "Využít nabídku"
@@ -12179,9 +12150,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Všechny naše prémiové služby s nejvyššími limity: 100 e-mailových adres, podpora 10 vlastních domén, neomezený počet aliasů hide-my-email, sdílení kalendáře, šifrované cloudové úložiště a sdílení souborů a další."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Obsahuje podporu 1 vlastní e-mailové domény, 10 e-mailových adres, 10 aliasů Hide-my-email, sdílení kalendáře a další funkce."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Zahrnuje podporu 3 vlastních e-mailových domén, 15 e-mailových adres, neomezený počet aliasů Hide-my-email, sdílení kalendáře a další."
       ],
@@ -12193,9 +12161,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Zahrnuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, a ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -12261,14 +12226,8 @@
       ]
     },
     "Subscription": {
-      "Billed every 15 months": [
-        "Účtováno každých 15 měsíců"
-      ],
       "Billed every 2 years": [
         "Účtováno každé 2 roky"
-      ],
-      "Billed every 30 months": [
-        "Účtováno každých 30 měsíců"
       ],
       "Billed monthly": [
         "Účtováno měsíčně"
@@ -12698,24 +12657,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "Prémiový Disk"
-      ],
-      "Premium Mail and Calendar": [
-        "Prémiový Mail a Kalendář"
-      ],
       "Premium Password Manager": [
         "Prémiový správce hesel"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Bezpečné ukládání hesel a jejich automatické vyplňování na webových stránkách. Obsahuje neomezený počet hesel, automatické vyplňování, generátor hesel a další funkce."
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "Správce hesel"
       ]
     },
     "summer2023: Tooltip": {
@@ -13030,6 +12973,9 @@
       ],
       "Auto-reply": [
         "Automatická odpověď"
+      ],
+      "Auto-reply and forward": [
+        "Automatická odpověď a přeposlání"
       ],
       "Automatically sign outgoing messages?": [
         "Automaticky podepisovat odchozí zprávy?"
@@ -13366,6 +13312,9 @@
       ],
       "Folders and labels": [
         "Složky a štítky"
+      ],
+      "Forward emails": [
+        "Přeposlat e-maily"
       ],
       "Gateways": [
         "Brány"
@@ -14087,6 +14036,9 @@
       "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
         "Tento klíč používá ${ MAIL_APP_NAME } k šifrování dat vašeho kontaktu"
       ],
+      "This key is used for email forwarding": [
+        "Tento klíč se používá k přeposílání e-mailů"
+      ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Použijte výchozí posuvníky prohlížeče. Ty jsou obvykle větší a snadněji se používají"
       ],
@@ -14124,11 +14076,6 @@
         "Váš externí účet možná dosáhl 24-hodinového omezení datového přenosu. ${ BRAND_NAME } se pokusí pokračovat v importu co nejdříve."
       ]
     },
-    "tooltip": {
-      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
-        "${ PASS_APP_NAME }: koncově šifrovaný správce hesel"
-      ]
-    },
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
         "Automaticky přidá veřejný klíč ke každé odeslané zprávě. Příjemci tak budou moci ověřit pravost vašich zpráv a odeslat zašifrovanou zprávu i Vám."
@@ -14136,7 +14083,7 @@
     },
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
-        "Vyberte výchozí nastavení PGP používané pro podepisování nebo šifrování zpráv s jinými než ${ BRAND_NAME } PGP uživateli. Všimněte si, že Inline PGP vynucuje zasílání zpráv v prostém textu."
+        "Vyberte výchozí nastavení PGP používané pro podepisování nebo šifrování zpráv s uživateli, kteří nepoužívají ${ BRAND_NAME } PGP. Všimněte si, že Inline PGP vynucuje zasílání zpráv ve formě prostého textu."
       ]
     },
     "Tooltip prompt to trust keys": {

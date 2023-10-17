@@ -1,0 +1,1121 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=1; plural=0;",
+    "language": "ko_KO"
+  },
+  "contexts": {
+    "Action": {
+      "Authenticate": [
+        "인증"
+      ],
+      "Back": [
+        "이전"
+      ],
+      "Cancel": [
+        "취소"
+      ],
+      "Close": [
+        "닫기"
+      ],
+      "Continue": [
+        "계속"
+      ],
+      "Don't know your password?": [
+        "비밀번호를 잊으셨나요?"
+      ],
+      "Edit email address": [
+        "이메일 주소 추가"
+      ],
+      "Edit phone number": [
+        "휴대전화 번호 변경"
+      ],
+      "Edit sign-in details": [
+        "로그인 정보 변경"
+      ],
+      "Get verification code": [
+        "인증코드 전송"
+      ],
+      "More info: ${ safeTitle }": [
+        "추가 정보: ${ safeTitle }"
+      ],
+      "Refresh the page": [
+        "페이지 새로 고침"
+      ],
+      "Request new code": [
+        "새 코드를 요청합니다."
+      ],
+      "Resend code": [
+        "코드 다시 보내기"
+      ],
+      "Search countries": [
+        "국가 검색"
+      ],
+      "Submit": [
+        "제출"
+      ],
+      "Try another method": [
+        "다른 방법 시도"
+      ],
+      "Use authentication code": [
+        "인증 코드를 사용"
+      ],
+      "Use recovery code": [
+        "복구코드 사용"
+      ],
+      "Verify": [
+        "인증"
+      ],
+      "Verify account": [
+        "계정 인증"
+      ],
+      "View invoice": [
+        "청구서 보기"
+      ]
+    },
+    "Country name": {
+      "Abkhazia": [
+        "압하지야"
+      ],
+      "Afghanistan": [
+        "아프가니스탄"
+      ],
+      "Albania": [
+        "알바니아"
+      ],
+      "Algeria": [
+        "알제리"
+      ],
+      "American Samoa": [
+        "미국령 사모아"
+      ],
+      "Andorra": [
+        "안도라"
+      ],
+      "Angola": [
+        "앙골라"
+      ],
+      "Anguilla": [
+        "앵귈라"
+      ],
+      "Antarctica": [
+        "남극"
+      ],
+      "Antigua and Barbuda": [
+        "앤티가 바부다"
+      ],
+      "Argentina": [
+        "아르헨티나"
+      ],
+      "Armenia": [
+        "아르메니아"
+      ],
+      "Aruba": [
+        "아루바"
+      ],
+      "Ascension Island": [
+        "어센션 섬"
+      ],
+      "Australia": [
+        "호주"
+      ],
+      "Austria": [
+        "오스트리아"
+      ],
+      "Azerbaijan": [
+        "아제르바이잔"
+      ],
+      "Bahamas": [
+        "바하마"
+      ],
+      "Bahrain": [
+        "바레인"
+      ],
+      "Bangladesh": [
+        "방글라데시"
+      ],
+      "Barbados": [
+        "바베이도스"
+      ],
+      "Belarus": [
+        "벨라루스"
+      ],
+      "Belgium": [
+        "벨기에"
+      ],
+      "Belize": [
+        "벨리즈"
+      ],
+      "Benin": [
+        "베냉"
+      ],
+      "Bermuda": [
+        "버뮤다"
+      ],
+      "Bhutan": [
+        "부탄"
+      ],
+      "Bolivia": [
+        "볼리비아"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "보네르, 신트외스타티위스, 사바"
+      ],
+      "Bosnia and Herzegovina": [
+        "보스니아 헤르체고비나"
+      ],
+      "Botswana": [
+        "보츠와나"
+      ],
+      "Bouvet Island": [
+        "부베 섬"
+      ],
+      "Brazil": [
+        "브라질"
+      ],
+      "British Indian Ocean Territory": [
+        "영국령 인도양 지역"
+      ],
+      "Brunei Darussalam": [
+        "브루나이 다루살람"
+      ],
+      "Bulgaria": [
+        "불가리아"
+      ],
+      "Burkina Faso": [
+        "부르키나파소"
+      ],
+      "Burundi": [
+        "부룬디"
+      ],
+      "Cambodia": [
+        "캄보디아"
+      ],
+      "Cameroon": [
+        "카메룬"
+      ],
+      "Canada": [
+        "캐나다"
+      ],
+      "Cape Verde": [
+        "카보베르데"
+      ],
+      "Cayman Islands": [
+        "케이맨 제도"
+      ],
+      "Central African Republic": [
+        "중앙아프리카 공화국"
+      ],
+      "Chad": [
+        "차드"
+      ],
+      "Chile": [
+        "칠레"
+      ],
+      "China": [
+        "중국"
+      ],
+      "Christmas Island": [
+        "크리스마스 섬"
+      ],
+      "Cocos (Keeling) Islands": [
+        "코코스 제도"
+      ],
+      "Colombia": [
+        "콜롬비아"
+      ],
+      "Comoros": [
+        "코모로"
+      ],
+      "Congo": [
+        "콩고"
+      ],
+      "Congo, Democratic Republic of the": [
+        "콩고민주공화국"
+      ],
+      "Cook Islands": [
+        "쿡 제도"
+      ],
+      "Costa Rica": [
+        "코스타리카"
+      ],
+      "Croatia": [
+        "크로아티아"
+      ],
+      "Cuba": [
+        "쿠바"
+      ],
+      "Curaçao": [
+        "퀴라소"
+      ],
+      "Cyprus": [
+        "키프로스"
+      ],
+      "Czech Republic": [
+        "체코"
+      ],
+      "Côte d'Ivoire": [
+        "코트디부아르"
+      ],
+      "Denmark": [
+        "덴마크"
+      ],
+      "Djibouti": [
+        "지부티"
+      ],
+      "Dominica": [
+        "도미니카 연방"
+      ],
+      "Dominican Republic": [
+        "도미니카 공화국"
+      ],
+      "Ecuador": [
+        "에콰도르"
+      ],
+      "Egypt": [
+        "이집트"
+      ],
+      "El Salvador": [
+        "엘살바도르"
+      ],
+      "Equatorial Guinea": [
+        "적도 기니"
+      ],
+      "Eritrea": [
+        "에리트레아"
+      ],
+      "Estonia": [
+        "에스토니아"
+      ],
+      "Eswatini": [
+        "에스와티니"
+      ],
+      "Ethiopia": [
+        "에티오피아"
+      ],
+      "Falkland Islands": [
+        "포클랜드 제도"
+      ],
+      "Faroe Islands": [
+        "페로 제도"
+      ],
+      "Federated States of Micronesia": [
+        "미크로네시아 연방"
+      ],
+      "Fiji": [
+        "피지"
+      ],
+      "Finland": [
+        "핀란드"
+      ],
+      "France": [
+        "프랑스"
+      ],
+      "French Guiana": [
+        "프랑스령 기아나"
+      ],
+      "French Polynesia": [
+        "영국령 폴리네시아"
+      ],
+      "French Southern Territories": [
+        "프랑스 남부 영토"
+      ],
+      "Gabon": [
+        "가봉"
+      ],
+      "Gambia": [
+        "감비아"
+      ],
+      "Georgia": [
+        "조지아"
+      ],
+      "Germany": [
+        "독일"
+      ],
+      "Ghana": [
+        "가나"
+      ],
+      "Gibraltar": [
+        "지브롤터"
+      ],
+      "Greece": [
+        "그리스"
+      ],
+      "Greenland": [
+        "그린란드"
+      ],
+      "Grenada": [
+        "그레나다"
+      ],
+      "Guadeloupe": [
+        "과들루프"
+      ],
+      "Guam": [
+        "괌"
+      ],
+      "Guatemala": [
+        "과테말라"
+      ],
+      "Guernsey": [
+        "건지 섬"
+      ],
+      "Guinea": [
+        "기니"
+      ],
+      "Guinea-Bissau": [
+        "기니비사우"
+      ],
+      "Guyana": [
+        "가이아나"
+      ],
+      "Haiti": [
+        "아이티"
+      ],
+      "Heard Island and McDonald Islands": [
+        "허드 맥도널드 제도"
+      ],
+      "Holy See (Vatican City State)": [
+        "교황청 (바티칸 시국)"
+      ],
+      "Honduras": [
+        "온두라스"
+      ],
+      "Hong Kong": [
+        "홍콩"
+      ],
+      "Hungary": [
+        "헝가리"
+      ],
+      "Iceland": [
+        "아이슬란드"
+      ],
+      "India": [
+        "인도"
+      ],
+      "Indonesia": [
+        "인도네시아"
+      ],
+      "International": [
+        "국제"
+      ],
+      "Iran": [
+        "이란"
+      ],
+      "Iraq": [
+        "이라크"
+      ],
+      "Ireland": [
+        "아일랜드"
+      ],
+      "Isle of Man": [
+        "맨섬"
+      ],
+      "Israel": [
+        "이스라엘"
+      ],
+      "Italy": [
+        "이탈리아"
+      ],
+      "Jamaica": [
+        "자메이카"
+      ],
+      "Japan": [
+        "일본"
+      ],
+      "Jersey": [
+        "저지 섬"
+      ],
+      "Jordan": [
+        "요르단"
+      ],
+      "Kazakhstan": [
+        "카자흐스탄"
+      ],
+      "Kenya": [
+        "케냐"
+      ],
+      "Kiribati": [
+        "키리바시"
+      ],
+      "Kosovo": [
+        "코소보"
+      ],
+      "Kuwait": [
+        "쿠웨이트"
+      ],
+      "Kyrgyzstan": [
+        "키르기스스탄"
+      ],
+      "Laos": [
+        "라오스"
+      ],
+      "Latvia": [
+        "라트비아"
+      ],
+      "Lebanon": [
+        "레바논"
+      ],
+      "Lesotho": [
+        "레소토"
+      ],
+      "Liberia": [
+        "라이베리아"
+      ],
+      "Libya": [
+        "리비아"
+      ],
+      "Liechtenstein": [
+        "리히텐슈타인"
+      ],
+      "Lithuania": [
+        "리투아니아"
+      ],
+      "Luxembourg": [
+        "룩셈부르크"
+      ],
+      "Macao": [
+        "마카오"
+      ],
+      "Madagascar": [
+        "마다가스카르"
+      ],
+      "Malawi": [
+        "말라위"
+      ],
+      "Malaysia": [
+        "말레이시아"
+      ],
+      "Maldives": [
+        "몰디브"
+      ],
+      "Mali": [
+        "말리"
+      ],
+      "Malta": [
+        "몰타"
+      ],
+      "Marshall Islands": [
+        "마쉘섬"
+      ],
+      "Martinique": [
+        "마르티니크"
+      ],
+      "Mauritania": [
+        "모리타니"
+      ],
+      "Mauritius": [
+        "모리셔스"
+      ],
+      "Mayotte": [
+        "마요테"
+      ],
+      "Mexico": [
+        "멕시코"
+      ],
+      "Moldova": [
+        "몰도바"
+      ],
+      "Monaco": [
+        "모나코"
+      ],
+      "Mongolia": [
+        "몽골"
+      ],
+      "Montenegro": [
+        "몬테네그로"
+      ],
+      "Montserrat": [
+        "몬트세라트(섬)"
+      ],
+      "Morocco": [
+        "모로코"
+      ],
+      "Mozambique": [
+        "모잠비크"
+      ],
+      "Myanmar": [
+        "미얀마"
+      ],
+      "Namibia": [
+        "나미비아"
+      ],
+      "Nauru": [
+        "나우루"
+      ],
+      "Nepal": [
+        "네팔"
+      ],
+      "Netherlands": [
+        "네델란드"
+      ],
+      "New Caledonia": [
+        "뉴 칼레도니아"
+      ],
+      "New Zealand": [
+        "뉴질랜드"
+      ],
+      "Nicaragua": [
+        "니카라과"
+      ],
+      "Niger": [
+        "니거"
+      ],
+      "Nigeria": [
+        "나이지리아"
+      ],
+      "Niue": [
+        "니우에 섬"
+      ],
+      "Norfolk Island": [
+        "노포크 섬"
+      ],
+      "North Korea": [
+        "북한"
+      ],
+      "North Macedonia": [
+        "북마케도니아"
+      ],
+      "Northern Mariana Islands": [
+        "북마리아나섬"
+      ],
+      "Norway": [
+        "노르웨이"
+      ],
+      "Oman": [
+        "오만"
+      ],
+      "Pakistan": [
+        "파키스탄"
+      ],
+      "Palau": [
+        "팔라우"
+      ],
+      "Palestine": [
+        "팔레스타인"
+      ],
+      "Panama": [
+        "파나마"
+      ],
+      "Papua New Guinea": [
+        "파푸아 뉴기니"
+      ],
+      "Paraguay": [
+        "파라과이"
+      ],
+      "Peru": [
+        "페루"
+      ],
+      "Philippines": [
+        "필란드"
+      ],
+      "Pitcairn": [
+        "피트케언"
+      ],
+      "Poland": [
+        "폴란드"
+      ],
+      "Portugal": [
+        "포루투갈"
+      ],
+      "Puerto Rico": [
+        "미 자치령 푸에르토리코섬"
+      ],
+      "Qatar": [
+        "카타르"
+      ],
+      "Reunion": [
+        "리뉴니언"
+      ],
+      "Romania": [
+        "루마니아"
+      ],
+      "Russia": [
+        "러시아"
+      ],
+      "Rwanda": [
+        "르완다"
+      ],
+      "Saint Barthélemy": [
+        "생바르텔레미"
+      ],
+      "Saint Helena": [
+        "세인트 헬레나"
+      ],
+      "Saint Kitts and Nevis": [
+        "세인트키츠 네비스"
+      ],
+      "Saint Lucia": [
+        "세인트루시아"
+      ],
+      "Saint Martin (French Part)": [
+        "세인트 마틴 (프랑스령)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "생 피에르와 미클롱"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "세인트빈센트 그레나딘"
+      ],
+      "Samoa": [
+        "사모아 제도"
+      ],
+      "San Marino": [
+        "샌 마리노"
+      ],
+      "Sao Tome and Principe": [
+        "상투메 프린시페"
+      ],
+      "Saudi Arabia": [
+        "사우디아라비아"
+      ],
+      "Senegal": [
+        "세네갈"
+      ],
+      "Serbia": [
+        "세르비아"
+      ],
+      "Seychelles": [
+        "세이셸"
+      ],
+      "Sierra Leone": [
+        "시에나 르오네"
+      ],
+      "Singapore": [
+        "싱가포르"
+      ],
+      "Sint Maarten": [
+        "신트 마르텐"
+      ],
+      "Slovakia": [
+        "슬로바키아"
+      ],
+      "Slovenia": [
+        "슬로베니아"
+      ],
+      "Solomon Islands": [
+        "솔로몬 제도"
+      ],
+      "Somalia": [
+        "소말리아"
+      ],
+      "South Africa": [
+        "남아프리카"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "사우스조지아 사우스샌드위치 제도"
+      ],
+      "South Korea": [
+        "대한민국"
+      ],
+      "South Ossetia": [
+        "남오세티야"
+      ],
+      "South Sudan": [
+        "남수단"
+      ],
+      "Spain": [
+        "스페인"
+      ],
+      "Sri Lanka": [
+        "스리랑카"
+      ],
+      "Sudan": [
+        "수단"
+      ],
+      "Suriname": [
+        "수리남"
+      ],
+      "Svalbard and Jan Mayen": [
+        "스발바르와 얀마옌"
+      ],
+      "Sweden": [
+        "스웨덴"
+      ],
+      "Switzerland": [
+        "스위스"
+      ],
+      "Syria": [
+        "시리아"
+      ],
+      "Taiwan": [
+        "타이완"
+      ],
+      "Tajikistan": [
+        "타지키스탄"
+      ],
+      "Tanzania": [
+        "탄자니아"
+      ],
+      "Thailand": [
+        "태국"
+      ],
+      "Timor-Leste": [
+        "동티모르"
+      ],
+      "Togo": [
+        "토고"
+      ],
+      "Tokelau": [
+        "토켈라우"
+      ],
+      "Tonga": [
+        "통가"
+      ],
+      "Trinidad and Tobago": [
+        "트리니다드 토바고"
+      ],
+      "Tristan da Cunha": [
+        "트리스탄 다 쿠나"
+      ],
+      "Tunisia": [
+        "튀니지"
+      ],
+      "Turkey": [
+        "터키"
+      ],
+      "Turkmenistan": [
+        "투르크메니스탄"
+      ],
+      "Turks and Caicos Islands": [
+        "터크스 카이코스 군도"
+      ],
+      "Tuvalu": [
+        "투발루"
+      ],
+      "Uganda": [
+        "우간다"
+      ],
+      "Ukraine": [
+        "우크라이나"
+      ],
+      "United Arab Emirates": [
+        "아랍에미리트"
+      ],
+      "United Kingdom": [
+        "영국"
+      ],
+      "United States": [
+        "미국"
+      ],
+      "United States Minor Outlying Islands": [
+        "미국령 군소 제도"
+      ],
+      "Uruguay": [
+        "우루과이"
+      ],
+      "Uzbekistan": [
+        "우즈베키스탄"
+      ],
+      "Vanuatu": [
+        "바누타우"
+      ],
+      "Venezuela": [
+        "베네수엘라"
+      ],
+      "Vietnam": [
+        "베트남"
+      ],
+      "Virgin Islands, British": [
+        "영국령 버진 아일랜드"
+      ],
+      "Virgin Islands, U.S.": [
+        "미국령 버진 아일랜드"
+      ],
+      "Wallis and Futuna": [
+        "월리스 푸투나"
+      ],
+      "Western Sahara": [
+        "서사하라"
+      ],
+      "Yemen": [
+        "예멘"
+      ],
+      "Zambia": [
+        "잠비아"
+      ],
+      "Zimbabwe": [
+        "짐바브웨"
+      ],
+      "Åland Islands": [
+        "올란드 제도"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "기한이 지난 청구서"
+      ]
+    },
+    "Error": {
+      "Email is not valid": [
+        "유효하지 않은 이메일"
+      ],
+      "Enter 6 digits": [
+        "6자리 숫자를 입력해 주세요"
+      ],
+      "Incorrect username": [
+        "잘못된 사용자 이름"
+      ],
+      "Invalid verification code": [
+        "잘못된 검증 코드"
+      ],
+      "Not a valid number": [
+        "유효하지 않은 번호"
+      ],
+      "Passwords do not match": [
+        "비밀번호가 일치하지 않습니다"
+      ],
+      "Request timed out": [
+        "요청 시간이 초과되었습니다."
+      ],
+      "The email addresses do not match": [
+        "이메일 주소가 일치하지 않습니다."
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "이 필드가 최대 ${ maximumLength } 글자를 초과합니다."
+      ],
+      "This field is required": [
+        "필수 기재 항목입니다"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "이 필드에는 ${ minimumLength }자 이상이 필요합니다."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "문자, 숫자 및 _.- 만 사용하십시오"
+      ],
+      "Unknown error": [
+        "알 수 없는 오류"
+      ],
+      "Username must begin with a letter or digit": [
+        "사용자명은 문자로 시작해야 합니다"
+      ],
+      "Username must end with a letter or digit": [
+        "사용자 이름은 문자로 시작하여야 합니다."
+      ]
+    },
+    "Error message": {
+      "Error: ${ errorMessage }": [
+        "오류: ${ errorMessage }"
+      ],
+      "Please refresh the page or try again later.": [
+        "페이지를 새로고침 하거나 다시 시도하세요."
+      ],
+      "Something went wrong": [
+        "문제가 발생했습니다"
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "이 페이지를 로드할 수 없습니다. 페이지를 새로고침 하거나 인터넷 연결을 확인하세요."
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "사용자의 보안 키 인증에 문제가 발생했습니다. 나중에 다시 시도하세요."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "${ BRAND_NAME } 계정에 연결된 보안 키를 삽입하십시오."
+      ],
+      "Security key": [
+        "보안 키"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "보안 키"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "시스템 기본값"
+      ],
+      "Theme font": [
+        "테마 폰트"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "크게"
+      ],
+      "Medium (recommended)": [
+        "중간 (권장)"
+      ],
+      "Small": [
+        "적게"
+      ],
+      "Very large": [
+        "매우 크게"
+      ],
+      "Very small": [
+        "매우 작게"
+      ]
+    },
+    "Human verification method": {
+      "Email": [
+        "이메일"
+      ],
+      "Manual": [
+        "수동"
+      ],
+      "No verification method available": [
+        "사용 가능한 인증 방법 없음"
+      ]
+    },
+    "Info": {
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "전화번호는 오직 하나의 ${ BRAND_NAME } 계정의 인증에만 사용할 수 있습니다"
+      ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "새 인증 코드를 요청하기 전에 스팸 폴더를 확인하고 ${ strong } 이(가) 올바른 주소인지 확인하세요."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "${ strong } 로 새 인증 코드를 보내려면 \"새 코드 요청\"을 클릭하세요. 이 전화번호가 잘못된 경우 \"수정\"을 클릭하여 수정하세요."
+      ],
+      "Country code": [
+        "국가 코드"
+      ],
+      "Each code can only be used once": [
+        "각각의 코드는 한 번만 사용 가능합니다"
+      ],
+      "Edit email address": [
+        "이메일 주소 변경"
+      ],
+      "Enter the code from your authenticator app": [
+        "인증 앱의 코드를 입력하세요"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "${ destinationText } 로 전송된 인증 코드를 입력하세요."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "인증 코드를 입력하세요. ${ digit } 자리."
+      ],
+      "Enter your own password (as organization admin).": [
+        "자신의 비밀번호 입력 (조직 관리자와 같음)"
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "계정을 만드는 데 문제가 있는 경우 초대를 요청하면 영업일 기준 1일 이내에 응답해 드려요."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "받은 편지함에 이메일이 없으면 스팸 폴더를 확인하세요."
+      ],
+      "Internet connection lost": [
+        "인터넷 연결 없음"
+      ],
+      "Learn more": [
+        "더 알아보기"
+      ],
+      "Loading": [
+        "로딩 중"
+      ],
+      "No results found": [
+        "결과를 찾을 수 없음"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "서버에 연결할 수 없음. 몇 분 뒤에 다시 시도하세요"
+      ],
+      "Session timed out": [
+        "세션 시간 초과됨"
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "스팸 및 남용을 방지하려면 사람임을 확인하세요."
+      ],
+      "We'll send a new verification code to ${ strong }": [
+        "${ strong } 에 새 인증 코드를 보내드려요."
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "이중 인증을 설정하면, 인증 앱에 접근할 수 없을 때 로그인 시 사용할 수 없는 복구 코드를 제공해드립니다."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "새 인증 코드를 받거나 다른 인증 방법을 사용하시겠습니까?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "새 인증 코드를 받으실래요?"
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 28일 뒤, 받은 편지함으로 이메일이 더 이상 전달되지 않으며, 드라이브 공유 링크가 잠기며, 더 이상 새로운 파일을 업로드 할 수 없습니다. 서비스를 계속 사용하려면, 기한이 지난 청구서를 결제해주세요."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "고객님의 ${ BRAND_NAME } 계정이 정지되었습니다. 이메일이 더 이상 받은 편지함으로 전송되지 않으며, 드라이브 공유 링크가 더 이상 활성화 되지 않으며, 새로운 파일을 업로드 할 수도 없습니다. 계정 사용을 계속하려면, 기한이 지난 청구서를 결제해주세요."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "귀하의 이메일 주소는 이번 인증에만 사용돼요."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "귀하의 전화번호는 이번 인증에만 사용돼요."
+      ]
+    },
+    "Label": {
+      "Authenticator app": [
+        "인증 앱"
+      ],
+      "Code is 6 digits without spaces": [
+        "코드는 공백 없이 6자리에요."
+      ],
+      "Email address": [
+        "이메일 주소"
+      ],
+      "Hide password": [
+        "비밀번호 숨기기"
+      ],
+      "Password": [
+        "암호"
+      ],
+      "Phone number": [
+        "전화번호"
+      ],
+      "Reveal password": [
+        "비밀번호 표시"
+      ],
+      "Verification code": [
+        "인증 코드"
+      ],
+      "Your password (admin)": [
+        "사용자의 비밀번호 (관리자)"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "더 알아보기"
+      ],
+      "Request an invite": [
+        "가입 요청하기"
+      ]
+    },
+    "Placeholder": {
+      "Password": [
+        "비밀번호"
+      ]
+    },
+    "Success": {
+      "Code sent to ${ methodTo }": [
+        "${ methodTo } 로 코드가 전송됨"
+      ],
+      "Verification successful": [
+        "인증 성공"
+      ]
+    },
+    "Title": {
+      "Enter your password": [
+        "비밀번호를 입력하십시오"
+      ],
+      "Human verification": [
+        "사람임을 인증"
+      ],
+      "Invalid verification code": [
+        "잘못된 검증 코드"
+      ],
+      "Request new code": [
+        "새 코드 요청"
+      ],
+      "Sign in with 2FA": [
+        "2FA로 로그인"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } characters": [
+        "비밀번호는 최소 ${ length } 자 이상이어야 합니다."
+      ],
+      "Try a shorter username (${ n } characters max)": [
+        "더 짧은 이름을 사용하세요 (최대 ${ n }글자)"
+      ]
+    }
+  }
+}

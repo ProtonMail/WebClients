@@ -2553,15 +2553,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Premium Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Premium Mail og Kalender"
-      ],
-      "Premium VPN": [
-        "Premium VPN"
-      ],
       "Up to 6 users": [
         "Op til 6 brugere"
       ]
@@ -3336,6 +3327,9 @@
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Fortsæt med at bruge ${ DRIVE_APP_NAME } og lås op for drev senere"
       ],
+      "Copy the link to clipboard": [
+        "Kopiér linket til udklipsholder"
+      ],
       "Country code": [
         "Landekode"
       ],
@@ -3965,7 +3959,7 @@
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Dette vil slette linket og fjerne adgangen til din fil eller mappe for alle, der har linket.",
-        "Dette vil slette linkene og fjerne adgangen til dine file eller mapper for alle, der har linkene."
+        "Dette vil slette linkene og fjerne adgangen til dine filer eller mapper for alle, der har linkene."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
         "Dette vil fjerne den synkroniserede ${ deviceName } fra ${ DRIVE_APP_NAME } og stoppe synkroniseringen af mapper, du har tilføjet til Mine computere."
@@ -4998,16 +4992,16 @@
         "${ numberOfItems } elementer kunne ikke flyttes til papirkurven"
       ],
       "${ numberOfItems } item failed to be restored from trash": [
-        "${ numberOfItems } element kunne ikke gendannes fra papirkurv",
-        "${ numberOfItems } elementer kunne ikke gendannes fra papirkurv"
+        "${ numberOfItems } element kunne ikke gendannes fra papirkurven",
+        "${ numberOfItems } elementer kunne ikke gendannes fra papirkurven"
       ],
       "${ numberOfItems } item moved to trash": [
-        "${ numberOfItems } element flyttet til papirkurv",
-        "${ numberOfItems } elementer flyttet til papirkurv"
+        "${ numberOfItems } element flyttet til papirkurven",
+        "${ numberOfItems } elementer flyttet til papirkurven"
       ],
       "${ numberOfItems } item restored from trash": [
-        "${ numberOfItems } element gendannet fra papirkurv",
-        "${ numberOfItems } elementer gendannet fra papirkurv"
+        "${ numberOfItems } element gendannet fra papirkurven",
+        "${ numberOfItems } elementer gendannet fra papirkurven"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } element flyttet",
@@ -5069,6 +5063,9 @@
       ],
       "File or folder is missing a name": [
         "Der mangler et navn på en fil eller mappe"
+      ],
+      "Link copied to clipboard": [
+        "Link kopieret til udklipsholder"
       ],
       "Move ${ itemsToMoveCount } file": [
         "Flyt ${ itemsToMoveCount } fil",
@@ -5606,9 +5603,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "${ storageSize } lagerplads i alt"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -5630,15 +5624,6 @@
       "Premium early access": [
         "Premium tidlig adgang"
       ],
-      "Premium Mail and Calendar": [
-        "Premium Mail og Kalender"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "Premium Mail, Kalender og Drev"
-      ],
-      "Premium VPN": [
-        "Premium VPN"
-      ],
       "Secure cloud storage": [
         "Sikker Cloud-lagerplads"
       ],
@@ -5650,9 +5635,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "Rabatter er baseret på den månedlige standardpris."
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Dette abonnement bliver automatisk fornyet hvert 2. år til samme pris, indtil det annulleres."
       ]
@@ -5706,10 +5688,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Faktureret med ${ amount } for 30 måneder"
-      ],
-      "for ${ n } month": [
-        "i ${ n } måned",
-        "i ${ n } måneder"
       ],
       "Get the deal": [
         "Få tilbuddet"
@@ -5778,9 +5756,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Alle vores premium-tjenester med deres højeste grænser: 100 e-mailadresser, mulighed for 10 brugerdomæner, ubegrænsede Hide-my-email-aliasser, kalenderdeling, krypteret cloud-lagring og fildeling og meget mere."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Inkluderer support for 1 tilpasset e-maildomæne, 10 e-mailadresser, 10 Hide-my-email-aliasser, kalenderdeling med mere."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderer support til 3 tilpassede e-maildomæner, 15 e-mailadresser, ubegrænsede Hide-my-email-aliasser, kalenderdeling med mere."
       ],
@@ -5792,9 +5767,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beskyt dine filer med krypteret lagring i skyen. Inkluderer automatisk synkronisering, krypteret fildeling og meget mere."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, og ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -5812,6 +5784,9 @@
       ]
     },
     "Storage": {
+      "Get storage": [
+        "Få lagerplads"
+      ],
       "Release notes": [
         "Udgivelsesnoter"
       ],
@@ -5898,24 +5873,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "Premium Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Premium Mail og Kalender"
-      ],
       "Premium Password Manager": [
         "Premium Adgangskodeadministrator"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Gem sikkert dine adgangskoder og udfyld dem automatisk på hjemmesider. Indeholder ubegrænsede adgangskoder, autofyld, adgangskodegenerator og meget mere."
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "Adgangskodeadministrator"
       ]
     },
     "summer2023: Tooltip": {

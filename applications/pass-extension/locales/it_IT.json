@@ -224,6 +224,9 @@
       "Not now": [
         "Non ora"
       ],
+      "Open in a window": [
+        "Apri in una finestra"
+      ],
       "Open navigation": [
         "Apri navigazione"
       ],
@@ -356,7 +359,7 @@
         "${ provider }Impossibile analizzare il file .${ errorDetail }"
       ],
       "Alias options could not be resolved": [
-        "Le opzioni alias non possono essere risolte"
+        "Impossibile determinare le opzioni alias"
       ],
       "Authentication error": [
         "Errore di autenticazione"
@@ -1154,7 +1157,7 @@
         "Carte"
       ],
       "Confirm vault name": [
-        "Conferma nome cassaforte"
+        "Conferma il nome della cassaforte"
       ],
       "Create a credit card": [
         "Crea una carta di credito"
@@ -1443,6 +1446,9 @@
       ],
       "Vault": [
         "Cassaforte"
+      ],
+      "Vaults": [
+        "Casseforti"
       ],
       "Verification number": [
         "Numero di verifica"
@@ -1769,6 +1775,12 @@
       "Please log back in": [
         "Per favore accedi nuovamente"
       ],
+      "Please verify your email address in order to use email aliases": [
+        "Verifica il tuo indirizzo email per poter utilizzare gli alias email"
+      ],
+      "Please verify your email address in order to use vault sharing": [
+        "Verifica il tuo indirizzo email per poter utilizzare la condivisione delle casseforti"
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Le segnalazioni non sono crittografate end-to-end, non inviare alcuna informazione sensibile."
       ],
@@ -1809,7 +1821,7 @@
         "Sono presenti modifiche non salvate. Vuoi davvero scartarle?"
       ],
       "You must select at least one mailbox": [
-        "È necessario selezionare almeno un casella email"
+        "Devi selezionare almeno un casella di posta"
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Non avrai più accesso a questa cassaforte. Per unirti nuovamente avrai bisogno di un nuovo invito."

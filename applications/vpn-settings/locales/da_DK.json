@@ -566,8 +566,23 @@
       "Disable": [
         "Deaktivér"
       ],
+      "Disable E2EE mail": [
+        "Deaktivér E2EE-mail"
+      ],
+      "Disallow unsigned mail": [
+        "Tillad ikke usigneret mail"
+      ],
+      "Edit": [
+        "Redigér"
+      ],
+      "Edit address": [
+        "Redigér adresse"
+      ],
       "Enable": [
         "Aktivér"
+      ],
+      "Enable E2EE mail": [
+        "Aktivér E2EE-mail"
       ],
       "Generate missing keys": [
         "Generér manglende nøgler"
@@ -583,6 +598,9 @@
       "Active": [
         "Aktiv"
       ],
+      "Allow unsigned mail": [
+        "Tillad usigneret mail"
+      ],
       "Default": [
         "Standard"
       ],
@@ -595,13 +613,27 @@
       "Missing keys": [
         "Nøgler mangler"
       ],
+      "No E2EE mail": [
+        "Ingen E2EE-mail"
+      ],
       "Orphan": [
         "Forældreløs"
+      ]
+    },
+    "Admin": {
+      "admin": [
+        "admin"
       ]
     },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Dette vil afbryde forbindelsen til alle routere og klienter, der bruger dette certifikat."
+      ]
+    },
+    "Billing cycle": {
+      "${ n } month": [
+        "${ n } måned",
+        "${ n } måneder"
       ]
     },
     "Billing cycle option": {
@@ -711,6 +743,11 @@
       "Total for ${ n } month": [
         "I alt for ${ n } måned",
         "I alt for ${ n } måneder"
+      ]
+    },
+    "Checkout summary": {
+      "Users": [
+        "Brugere"
       ]
     },
     "Collapsible tooltip": {
@@ -1645,6 +1682,11 @@
         "Bekræftelses e-mail afsendt til ${ address }"
       ]
     },
+    "Enabled 2FA": {
+      "2FA": [
+        "2FA"
+      ]
+    },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan også tjekke vores ${ statusPageLink }"
@@ -1961,15 +2003,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Premium Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Premium Mail og Kalender"
-      ],
-      "Premium VPN": [
-        "Premium VPN"
-      ],
       "Up to 6 users": [
         "Op til 6 brugere"
       ]
@@ -2515,9 +2548,6 @@
       "Admin account allocation": [
         "Admin-konto tildeling"
       ],
-      "All ${ BRAND_NAME } apps and their premium features": [
-        "Alle ${ BRAND_NAME }-apps og deres premium-funktioner"
-      ],
       "All your changes will be lost.": [
         "Alle dine ændringer vil gå tabt."
       ],
@@ -2967,14 +2997,8 @@
       "per month, billed every 12 months": [
         "Pr. måned, faktureres hver 12. måned"
       ],
-      "per month, billed every 15 months": [
-        "Pr. måned, faktureres hver 15. måned"
-      ],
       "per month, billed every 24 months": [
         "Pr. måned, faktureres hver 24. måned"
-      ],
-      "per month, billed every 30 months": [
-        "Pr. måned, faktureres hver 30. måned"
       ],
       "Plan upgrade required": [
         "Abonnementsopgradering påkrævet"
@@ -3442,6 +3466,9 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Du kan redigere dette én gang for at sikre den korrekte e-mailadresse til bekræftelse."
+      ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
+        "Du kan straks låse op for ovenstående opsætning ved at tilføje ${ specificCountryCount } til antallet af IP-adresser i dit abonnement eller kontakte os for skræddersyede løsninger."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalender. Fjern venligst delte kalenderlinks og enhver ${ BRAND_NAME } bruger, som du har delt dine kalendere med, før du annullerer dit ${ MAIL_SHORT_APP_NAME }-abonnement.",
@@ -4403,9 +4430,6 @@
       "24/7 support": [
         "24/7 support"
       ],
-      "Ad-blocker & malware protection": [
-        "Annonceblokering og beskyttelse mod malware"
-      ],
       "Admin console": [
         "Administrationskonsol"
       ],
@@ -4688,6 +4712,9 @@
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Omfattende privatlivsbeskyttelse og sikkerhed med alle ${ BRAND_NAME }-tjenester kombineret."
       ],
+      "For next-level password management and identity protection.": [
+        "For avanceret adgangskodehåndtering og identitetsbeskyttelse."
+      ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Hvis du sletter din konto, mister du alle fordelene ved ${ visionary }-abonnementet, og det vil ikke være tilgængeligt, hvis du opretter en ny konto."
       ],
@@ -4795,12 +4822,6 @@
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
-        "${ CALENDAR_APP_NAME }: end-to-end krypteret kalender"
-      ],
-      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
-        "${ DRIVE_APP_NAME }: end-to-end krypteret lagring i skyen"
-      ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
         "Tillader at du forbinder til mere end ét netværk samtidigt, eks. kan du streame en film fra et andet land, samtidigt med at du får lokale søgeresultater"
       ],
@@ -5342,6 +5363,9 @@
       ]
     },
     "session_recovery:in_progress:action": {
+      "Cancel password reset": [
+        "Annullér nulstilling af adgangskode"
+      ],
       "Cancel request": [
         "Annuller anmodning"
       ],
@@ -5473,9 +5497,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "${ storageSize } lagerplads i alt"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -5497,15 +5518,6 @@
       "Premium early access": [
         "Premium tidlig adgang"
       ],
-      "Premium Mail and Calendar": [
-        "Premium Mail og Kalender"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "Premium Mail, Kalender og Drev"
-      ],
-      "Premium VPN": [
-        "Premium VPN"
-      ],
       "Secure cloud storage": [
         "Sikker Cloud-lagerplads"
       ],
@@ -5517,9 +5529,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "Rabatter er baseret på den månedlige standardpris."
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Dette abonnement bliver automatisk fornyet hvert 2. år til samme pris, indtil det annulleres."
       ]
@@ -5573,10 +5582,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Faktureret med ${ amount } for 30 måneder"
-      ],
-      "for ${ n } month": [
-        "i ${ n } måned",
-        "i ${ n } måneder"
       ],
       "Get the deal": [
         "Få tilbuddet"
@@ -5645,9 +5650,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Alle vores premium-tjenester med deres højeste grænser: 100 e-mailadresser, mulighed for 10 brugerdomæner, ubegrænsede Hide-my-email-aliasser, kalenderdeling, krypteret cloud-lagring og fildeling og meget mere."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Inkluderer support for 1 tilpasset e-maildomæne, 10 e-mailadresser, 10 Hide-my-email-aliasser, kalenderdeling med mere."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderer support til 3 tilpassede e-maildomæner, 15 e-mailadresser, ubegrænsede Hide-my-email-aliasser, kalenderdeling med mere."
       ],
@@ -5659,9 +5661,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beskyt dine filer med krypteret lagring i skyen. Inkluderer automatisk synkronisering, krypteret fildeling og meget mere."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, og ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -5692,14 +5691,8 @@
       ]
     },
     "Subscription": {
-      "Billed every 15 months": [
-        "Faktureres hver 15. måned"
-      ],
       "Billed every 2 years": [
         "Faktureres hvert 2. år"
-      ],
-      "Billed every 30 months": [
-        "Faktureres hver 30. måned"
       ],
       "Billed monthly": [
         "Faktureres månedligt"
@@ -5969,24 +5962,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "Premium Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Premium Mail og Kalender"
-      ],
       "Premium Password Manager": [
         "Premium Adgangskodeadministrator"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Gem sikkert dine adgangskoder og udfyld dem automatisk på hjemmesider. Indeholder ubegrænsede adgangskoder, autofyld, adgangskodegenerator og meget mere."
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "Adgangskodeadministrator"
       ]
     },
     "summer2023: Tooltip": {
@@ -6636,6 +6613,9 @@
       "Addresses": [
         "Adresser"
       ],
+      "Email": [
+        "E-mail"
+      ],
       "Features": [
         "Funktioner"
       ],
@@ -6752,6 +6732,11 @@
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "${ numberOfServers } i ${ numberOfCountries } land",
         "${ numberOfServers } i ${ numberOfCountries } lande"
+      ]
+    },
+    "vpn_2step: discount": {
+      "1-year": [
+        "1 år"
       ]
     },
     "vpn_2step: info": {

@@ -28,6 +28,9 @@
       "Add Bcc recipients": [
         "Bcc に宛先を追加"
       ],
+      "Add birthday": [
+        "誕生日を追加"
+      ],
       "Add Cc recipients": [
         "Cc に宛先を追加"
       ],
@@ -48,6 +51,9 @@
       ],
       "Add new group": [
         "新しいグループを追加"
+      ],
+      "Add note": [
+        "メモを追加"
       ],
       "Add participant": [
         "参加者を追加"
@@ -93,6 +99,9 @@
       ],
       "As Scheduled": [
         "予定通り"
+      ],
+      "At most ${ maxContacts } contacts are allowed per contact group": [
+        "1つの連絡グループごとに最大で${ maxContacts }件の連絡先が許可されています。"
       ],
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
@@ -306,6 +315,9 @@
       ],
       "Discard": [
         "破棄"
+      ],
+      "Don't know your password?": [
+        "パスワードを忘れましたか？"
       ],
       "Done": [
         "完了"
@@ -679,6 +691,9 @@
       "Not saved": [
         "未保存"
       ],
+      "Ok": [
+        "Ok"
+      ],
       "OK": [
         "OK"
       ],
@@ -843,6 +858,9 @@
       ],
       "See business plans": [
         "ビジネスプランを表示"
+      ],
+      "See how": [
+        "方法の確認"
       ],
       "See plan features": [
         "プランの機能を見る"
@@ -1128,6 +1146,9 @@
       ],
       "Yes, I'll attend": [
         "はい、参加します"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "${ maxAttachments }件を超える連絡先のvCardファイルを送信できません。"
       ],
       "Zoom in": [
         "拡大"
@@ -1609,8 +1630,11 @@
       "You already tentatively accepted this invitation.": [
         "この招待を仮承諾済みです。"
       ],
-      "Your email address is not in the participants list": [
-        "あなたのメールアドレスは参加者リストにありません"
+      "You cannot respond to ${ BRAND_NAME } invites if you're not on the participants list at the moment.": [
+        "現時点で参加者リストに含まれていない場合、${ BRAND_NAME }の招待には応答できません。"
+      ],
+      "Your email address is not in the original participants list.": [
+        "あなたのメールアドレスは参加者リストに含まれていません。"
       ]
     },
     "Calendar widget banner": {
@@ -1929,8 +1953,17 @@
       "Birthday": [
         "誕生日"
       ],
+      "Display name": [
+        "表示名"
+      ],
       "Email": [
         "メールアドレス"
+      ],
+      "Enter a display name or nickname": [
+        "表示名またはニックネームを入力してください。"
+      ],
+      "First name": [
+        "名"
       ],
       "Gender": [
         "性別"
@@ -1940,6 +1973,9 @@
       ],
       "Language": [
         "言語"
+      ],
+      "Last name": [
+        "姓"
       ],
       "Logo": [
         "ロゴ"
@@ -3039,6 +3075,11 @@
         "${ formattedStart } から始まる予定の更新"
       ]
     },
+    "email_forwarding_2023: Composer email icon": {
+      "Zero-access encrypted. Recipient has disabled end-to-end encryption on their account.": [
+        "ゼロアクセス暗号化。受信者のアカウントでエンドツーエンドの暗号化を無効にしている。"
+      ]
+    },
     "empty messages: success": {
       "Folder cleared": [
         "フォルダーをクリアしました"
@@ -3113,6 +3154,9 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "このブラウザでは、内容の検索を有効にできません。プライベートブラウジングモードを閉じるか別のブラウザーを使用してください。"
       ],
+      "Could not save preference": [
+        "設定を保存できませんでした。"
+      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "復号エラー: 暗号化されたメッセージのコンテンツ復号に失敗しました。"
       ],
@@ -3164,6 +3208,9 @@
       "Filter with this name already exists": [
         "この名前のフィルターが既に存在します"
       ],
+      "First name is too long": [
+        "名前が長すぎます。"
+      ],
       "Folder name cannot be empty.": [
         "フォルダー名は空にできません。"
       ],
@@ -3178,6 +3225,9 @@
       ],
       "Incorrect mailbox password. Please try again.": [
         "無効な受信トレイのパスワードです。再度お試しください。"
+      ],
+      "Incorrect username": [
+        "ユーザー名に間違いがあります。"
       ],
       "Invalid email address": [
         "メールアドレスが正しくありません"
@@ -3196,6 +3246,9 @@
       ],
       "Label name cannot be empty.": [
         "ラベル名を空にできません。"
+      ],
+      "Last name is too long": [
+        "姓が長すぎます。"
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "添付ファイルの最大数 (${ attachmentsCountLimit }) を超えました。"
@@ -3250,6 +3303,9 @@
       ],
       "Please fix the highlighted conflicts to proceed.": [
         "続行するためにハイライトされた競合を修正してください。"
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "名前、姓、または表示名のいずれかを入力してください。"
       ],
       "Port is required": [
         "ポートは必須です"
@@ -3439,6 +3495,11 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "一致する項目が多すぎるため、検索対象をより絞り込んでもう一度お試しください。"
+      ]
+    },
+    "Error adding participants to a calendar event": {
+      "At most ${ maxAttendees } participants are allowed per invitation": [
+        "1つの招待ごとに最大で${ maxAttendees }人の参加者が許可されています。"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -3750,15 +3811,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "プレミアム Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "プレミアム Mail と Calendar"
-      ],
-      "Premium VPN": [
-        "プレミアム VPN"
-      ],
       "Up to 6 users": [
         "最大6人のユーザー"
       ]
@@ -4184,6 +4236,9 @@
       ],
       "Storage unlocked": [
         "ストレージのロック解除"
+      ],
+      "This feature is currently unavailable": [
+        "この機能は現在ご利用いただけません。"
       ],
       "Update your logins": [
         "ログイン情報を更新する"
@@ -4842,6 +4897,9 @@
       "Copied to clipboard": [
         "クリップボードにコピーされました"
       ],
+      "Copy the link to clipboard": [
+        "リンクをコピー"
+      ],
       "Country code": [
         "国コード"
       ],
@@ -5282,6 +5340,9 @@
       ],
       "Please fill out this field.": [
         "このフィールドに入力してください。"
+      ],
+      "Please note that addresses assigned to these groups will NOT be deleted.": [
+        "これらのグループに割り当てられたアドレスは削除されませんので、ご注意ください。"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "グループに割り当てられたアドレスは削除されません。"
@@ -6253,6 +6314,9 @@
       "Contacts": [
         "連絡先"
       ],
+      "Conversations per page": [
+        "1ページあたりの会話数"
+      ],
       "Copy": [
         "コピー"
       ],
@@ -6417,6 +6481,9 @@
       ],
       "Mark as": [
         "印をつける"
+      ],
+      "Messages per page": [
+        "1ページごとのメッセージ数"
       ],
       "Move ${ sidebarElementName }": [
         "${ sidebarElementName } へ移動"
@@ -7191,6 +7258,9 @@
       "Contact group updated": [
         "連絡先グループが更新されました"
       ],
+      "Link copied to clipboard": [
+        "クリップボードにリンクがコピーされました"
+      ],
       "Password has been set successfully": [
         "パスワードは正常に設定されました"
       ],
@@ -7370,6 +7440,9 @@
       "Filter labels": [
         "絞り込むラベル名"
       ],
+      "First name": [
+        "名"
+      ],
       "Group name": [
         "グループ名"
       ],
@@ -7378,6 +7451,9 @@
       ],
       "Image URL": [
         "画像の URL"
+      ],
+      "Last name": [
+        "姓"
       ],
       "Link": [
         "リンク"
@@ -7663,6 +7739,166 @@
         "暗号化されずに送受信されたメッセージ"
       ]
     },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "リクエストのキャンセル　"
+      ],
+      "Reset password": [
+        "パスワードのリセット"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "旧式のアドレスキーに対してはアカウントの回復が利用できません。"
+      ],
+      "Please generate keys before you try to change your password": [
+        "パスワードを変更する前に、キーを生成してください。"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } days": [
+        "${ timeRemaining.inDays } 日"
+      ],
+      "${ timeRemaining.inHours } hours": [
+        "${ timeRemaining.inHours }時間"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } days to reset your password.": [
+        "パスワードリセットリクエストが承認されました(${ user.Email })。パスワードをリセットできるのはあと${ timeRemaining.inDays }日です。"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hours to reset your password.": [
+        "パスワードリセットのリクエストが承認されました(${ user.Email })。パスワードをリセットできる時間は残り${ timeRemaining.inHours }時間あります。"
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "サインインしているデバイス (パスワード変更の要求がされたデバイス)に移動して、パスワードを変更してください。"
+      ],
+      "This permission expires in ${ timeRemaining.inDays } days": [
+        "この許可はあと${ timeRemaining.inDays }日で期限切れになります。"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hours": [
+        "この許可はあと${ timeRemaining.inHours }時間で期限切れになります。"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "アカウント ${ boldEmail } のパスワードを、あと ${ boldDaysRemaining } 日間は自由に変更可能です。"
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "方法の確認"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "パスワードが保存されました。"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "パスワードをリセットしてください"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "パスワードリセットを取り消す"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "パスワードリセットのプロセスをキャンセルするには、現在のパスワードを入力してください。他に変更は適用されません。"
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "パスワードリセットが取り消されました"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "パスワードリセットを取り消しますか？"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "パスワードリセットのリクエストがキャンセルされました(${ user.Email })。もしリクエストを行っていない場合、${ changePasswordLink }。"
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "今すぐパスワードを変更してください。"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "リクエストの取り消し"
+      ],
+      "Got it": [
+        "了解"
+      ],
+      "Learn more": [
+        "詳細"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hours": [
+        "あと${ gracePeriodHoursRemaining }時間"
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "パスワードをリセットするように要求していない場合、このリクエストを今すぐキャンセルしてください。"
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hours.": [
+        "パスワードリセットがリクエストされました(${ user.Email })。パスワードを変更できるのはあと${ hoursRemaining }時間後です。"
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "パスワードをリセットしようとしているのが本当にあなたであることを確認するために、リクエストを承認する前に72時間待っています。パスワードを変更できるのはあと${ boldTimeLeft }です。${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "${ boldEmail }のパスワードリセットリクエストを受け取りました。"
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "リクエストの確認"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "パスワード再設定リクエスト"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "サインアウト"
+      ],
+      "Stay signed in": [
+        "サインインを維持"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hours": [
+        "${ gracePeriodHoursRemaining } 時間"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } が現在利用可能です。"
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "パスワードをリセットする前にサインアウトすると、アカウントへのアクセスを失う可能性があります。"
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "パスワードをリセットせずにサインアウトすると、アカウントへのアクセスが失われる可能性があります"
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "パスワードをリセットできるのはあと ${ boldTimeLeft } です。"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "パスワードのリセット"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "パスワードリセットせずにサインアウトしますか？"
+      ]
+    },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
         "PGP 暗号化されたメッセージです。送信者の検証に失敗しました: ${ verificationErrorsMessage }"
@@ -7741,9 +7977,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "合計 ${ storageSize } のストレージ"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -7765,15 +7998,6 @@
       "Premium early access": [
         "プレミアム早期アクセス"
       ],
-      "Premium Mail and Calendar": [
-        "プレミアム Mail と Calendar"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "プレミアム Mail、Calendar、Drive"
-      ],
-      "Premium VPN": [
-        "プレミアム VPN"
-      ],
       "Secure cloud storage": [
         "安全なクラウドストレージ"
       ],
@@ -7785,9 +8009,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "割引は標準の月額料金に基づいて計算されます。"
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "サブスクリプションはキャンセルされるまで2年ごとに同じ割引率で自動更新されます。"
       ]
@@ -7841,9 +8062,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "30 か月毎に ${ amount } の支払い"
-      ],
-      "for ${ n } months": [
-        "${ n } か月間"
       ],
       "Get the deal": [
         "割引を入手"
@@ -7912,9 +8130,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "すべてのプレミアムサービスを高い自由度で利用できます。100 件のメールアドレス、10 件の独自ドメイン対応、無制限の hide-my-email エイリアス、カレンダー共有、暗号化クラウドストレージとファイル共有など。"
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "1 件の独自メールドメイン対応、10 件のメールアドレス、10 件の hide-my-email エイリアス、カレンダー共有などが含まれます。"
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "3 件の独自メールドメイン対応、15 件のメールアドレス、無制限の hide-my-email エイリアス、カレンダー共有などが含まれます。"
       ],
@@ -7926,9 +8141,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "暗号化クラウドストレージでファイルの安全を保ちます。自動同期、暗号化ファイル共有などが含まれます。"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます。"
       ]
     },
     "Spotlight": {
@@ -8236,24 +8448,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "プレミアム Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "プレミアム Mail と Calendar"
-      ],
       "Premium Password Manager": [
         "プレミアムパスワードマネージャー"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "安全にパスワードを保存し、ウェブサイト上で自動入力します。無制限のパスワード、自動入力、パスワード生成などが含まれています。"
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "パスワードマネージャー"
       ]
     },
     "summer2023: Tooltip": {
@@ -8333,8 +8529,14 @@
       "Display name": [
         "表示名"
       ],
+      "First name": [
+        "名"
+      ],
       "Import": [
         "インポート"
+      ],
+      "Last name": [
+        "姓"
       ],
       "Values": [
         "値"
@@ -8421,6 +8623,9 @@
       ],
       "Billing cycle": [
         "支払い間隔"
+      ],
+      "Birthday": [
+        "誕生日"
       ],
       "Blind Carbon Copy": [
         "ブラインドカーボンコピー (Blind Carbon Copy)"
@@ -8727,6 +8932,9 @@
       ],
       "No trackers found": [
         "トラッカーは見つかりませんでした"
+      ],
+      "Notes": [
+        "メモ"
       ],
       "Open actions dropdown": [
         "アクションのドロップダウンを開く"
@@ -9041,6 +9249,9 @@
       ],
       "Are you sure you want to permanently delete ${ count } contacts?": [
         "${ count } 件の連絡先を完全に削除してよろしいですか？"
+      ],
+      "Are you sure you want to permanently delete these contact groups?": [
+        "これらの連絡先グループを永久に削除してもよろしいですか？"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "この連絡先グループを完全に削除してよろしいですか?"

@@ -293,9 +293,6 @@
       "Delete": [
         "Ștergere"
       ],
-      "Delete and confirm": [
-        "Ștergere și confirmare"
-      ],
       "Delete Gateway": [
         "Ștergere poartă de acces"
       ],
@@ -781,9 +778,6 @@
       ],
       "Save address": [
         "Salvare adresă"
-      ],
-      "Save changes": [
-        "Salvare modificări"
       ],
       "Save ICS file": [
         "Salvare fișier ICS"
@@ -4062,15 +4056,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Drive premium"
-      ],
-      "Premium Mail and Calendar": [
-        "Mail și Calendar premium"
-      ],
-      "Premium VPN": [
-        "VPN premium"
-      ],
       "Up to 6 users": [
         "Până la 6 utilizatori"
       ]
@@ -4390,6 +4375,9 @@
       ],
       "Allow platform keys": [
         "Permitere chei platformă"
+      ],
+      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
+        "Permite înregistrarea cheilor integrate (cum ar fi Windows Hello, Face ID, Touch ID sau TPM intern)."
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Sigur ștergeți cheia de securitate ${ name }?"
@@ -5277,9 +5265,6 @@
       "${ discountPercentage } forever": [
         "${ discountPercentage } permanent"
       ],
-      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } nu va mai păstra versiunile anterioare ale fișierelor."
-      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } nu este validă"
       ],
@@ -5524,9 +5509,6 @@
       ],
       "Align right": [
         "Aliniere la dreapta"
-      ],
-      "All ${ BRAND_NAME } apps and their premium features": [
-        "Toate aplicațiile ${ BRAND_NAME } și funcțiile lor premium"
       ],
       "All (${ totalFoldersCount } folder)": [
         "Toate (Un folder)",
@@ -6430,14 +6412,8 @@
       "per month, billed every 12 months": [
         "pe lună, facturat la fiecare 12 de luni"
       ],
-      "per month, billed every 15 months": [
-        "pe lună, facturat la fiecare 15 luni"
-      ],
       "per month, billed every 24 months": [
         "pe lună, facturat la fiecare 24 de luni"
-      ],
-      "per month, billed every 30 months": [
-        "pe lună, facturat la fiecare 30 de luni"
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "Clienții PGP probabil vor detecta automat cheile PGP dacă mesajele trimise sunt semnate."
@@ -6659,12 +6635,6 @@
       "Setting up your organization": [
         "Setare organizație"
       ],
-      "Settings update failed": [
-        "Actualizarea setărilor a eșuat."
-      ],
-      "Settings updated": [
-        "Setările s-au actualizat."
-      ],
       "Show original message": [
         "Afișare mesaj original"
       ],
@@ -6853,12 +6823,6 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Aceasta vă va anula abonamentul plătit și veți pierde orice beneficii de loialitate acumulate. Soldul rămas din abonament va fi returnat ca și credit în cont."
       ],
-      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Aceasta va șterge toate versiunile anterioare ale fișierelor mai vechi de ${ rententionLabel }."
-      ],
-      "This will delete all previous versions of your files.": [
-        "Aceasta va șterge toate versiunile anterioare ale fișierelor."
-      ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Aceasta va dezactiva fraza actuală de recuperare. Nu o veți putea folosi pentru a vă accesa contul sau să decriptați datele."
       ],
@@ -7018,9 +6982,6 @@
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Modernizați contul pentru a adăuga o adresă @pm.me mai scurtă în cont, care este mai ușor de partajat. Înseamnă „${ MAIL_APP_NAME } al meu” sau „Mesaj privat mie”."
       ],
-      "Upgrade to unlock": [
-        "Modernizați contul pentru deblocare."
-      ],
       "Upload picture": [
         "Încărcare imagine"
       ],
@@ -7068,9 +7029,6 @@
       ],
       "Version ${ version }": [
         "Versiunea ${ version }"
-      ],
-      "Version history": [
-        "Istoric versiuni"
       ],
       "Visa Secure logo": [
         "Logo Visa Secure"
@@ -8186,9 +8144,6 @@
       "Don't ask again": [
         "Nu mă mai întreba"
       ],
-      "Don't keep versions": [
-        "Fără păstrare versiuni"
-      ],
       "Duration": [
         "Durata"
       ],
@@ -8842,6 +8797,11 @@
       ],
       "Expired": [
         "Expirată"
+      ]
+    },
+    "Label to  inform a feature is only available on Beta": {
+      "Beta": [
+        "Beta"
       ]
     },
     "Label to change composer mode": {
@@ -9589,9 +9549,6 @@
       "99.95% SLA": [
         "Disponibilitate minimă a serviciului 99,95%"
       ],
-      "Ad-blocker & malware protection": [
-        "Protecție malware și antireclame"
-      ],
       "Admin console": [
         "Consolă administrare"
       ],
@@ -9775,6 +9732,12 @@
       "Sign in as user": [
         "Conectați-vă ca utilizator"
       ],
+      "SMTP submission": [
+        "Trimitere SMTP"
+      ],
+      "SMTP submission for select organizations": [
+        "Trimiteri SMTP pentru organizații selectate"
+      ],
       "Split tunneling (Android and Windows)": [
         "Trafic divizat (Android și Windows)"
       ],
@@ -9873,6 +9836,17 @@
         "Gestionare echipă"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Perioada de probare se termină ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } care se termină cu ${ last4 }"
@@ -9962,17 +9936,6 @@
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Perioada de probare se termină ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } din ${ humanMaxSpace }"
@@ -10051,18 +10014,6 @@
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
-        "${ CALENDAR_APP_NAME }: calendar criptat în ambele sensuri."
-      ],
-      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
-        "${ DRIVE_APP_NAME }: stocare în cloud criptată în ambele sensuri."
-      ],
-      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
-        "${ MAIL_APP_NAME }: e-mail criptat în ambele sensuri."
-      ],
-      "${ VPN_APP_NAME }: unblock content, browse privately": [
-        "${ VPN_APP_NAME }: deblocare conținut, navigare anonimă"
-      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Accesați de oriunde conținutul serviciilor de transmisii în flux, inclusiv Netflix, Disney + și Prime Video."
       ],
@@ -10200,6 +10151,9 @@
       "Share your files or folders with anyone by using secure, shareable links": [
         "Partajați fișierele sau folderele cu oricine utilizând legături sigure și partajabile."
       ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTP permite serviciilor sau dispozitivelor terțe să trimită mesaje prin ${ MAIL_APP_NAME }."
+      ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "NetShield special conceput să vă protejeze dispozitivul și să vă accelereze navigarea prin blocarea reclamelor, monitorizării și a programelor malițioase."
       ],
@@ -10241,6 +10195,9 @@
       ]
     },
     "new_plans: upgrade": {
+      "Included with ${ BRAND_NAME } for Business, ${ familyPlanName } and ${ mailProPlanName }.": [
+        "Inclus cu ${ BRAND_NAME } for Business, ${ familyPlanName } și ${ mailProPlanName }."
+      ],
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Inclus cu ${ plus }, ${ bundle } și ${ BRAND_NAME } for Business."
       ],
@@ -10813,6 +10770,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ appName } benefits": [
+        "Beneficii ${ appName }"
+      ],
       "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
         "${ PASS_APP_NAME } este disponibil ca extensie de navigator pe pagina de suplimente Firefox."
       ],
@@ -10908,12 +10868,6 @@
       ],
       "per month, billed annually": [
         "pe lună, facturat anual"
-      ],
-      "per month, billed every 15 months": [
-        "pe lună, facturat la fiecare 15 luni"
-      ],
-      "per month, billed every 30 months": [
-        "pe lună, facturat la fiecare 30 de luni"
       ],
       "per month, billed every month": [
         "pe lună, facturat în fiecare lună"
@@ -11358,6 +11312,9 @@
       ]
     },
     "session_recovery:available:action": {
+      "Cancel password reset": [
+        "Anulare resetare parolă"
+      ],
       "Cancel reset": [
         "Anulare resetare"
       ],
@@ -11384,6 +11341,12 @@
         "${ timeRemaining.inHours } ore",
         "${ timeRemaining.inHours } de ore"
       ],
+      "Didn’t make this request?": [
+        "Nu ați făcut această solicitare?"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Dacă nu ați solicitat resetarea parolei, anulați solicitarea acum."
+      ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
         "Solicitate de resetare parolă acceptată (${ user.Email }). Aveți la dispoziție ${ timeRemaining.inDays } zi pentru a reseta parola.",
         "Solicitate de resetare parolă acceptată (${ user.Email }). Aveți la dispoziție ${ timeRemaining.inDays } zile pentru a reseta parola.",
@@ -11409,6 +11372,12 @@
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Acum vă puteți schimba parola pentru contul ${ boldEmail } timp de ${ boldDaysRemaining }."
+      ],
+      "You can now reset your password": [
+        "Acum vă puteți reseta parola"
+      ],
+      "You can reset your password until ${ boldDate }.": [
+        "Vă puteți reseta parola până la ${ boldDate }."
       ]
     },
     "session_recovery:available:link": {
@@ -11456,7 +11425,28 @@
         "schimbați-vă acum parola"
       ]
     },
+    "session_recovery:disable:action": {
+      "Disable password reset": [
+        "Dezactivare resetare parolă"
+      ]
+    },
+    "session_recovery:disable:info": {
+      "Make sure you have access to a recovery method.": [
+        "Asigurați-vă că aveți acces la o metodă de recuperare."
+      ],
+      "You will no longer be able to request a password reset from your account settings.": [
+        "Nu veți mai putea solicita o resetare a parolei din setările contului."
+      ]
+    },
+    "session_recovery:disable:title": {
+      "Disable password reset?": [
+        "Dezactivați resetarea parolei?"
+      ]
+    },
     "session_recovery:in_progress:action": {
+      "Cancel password reset": [
+        "Anulare resetare parolă"
+      ],
       "Cancel request": [
         "Anulare solicitare"
       ],
@@ -11473,8 +11463,17 @@
         "Au mai rămas ${ gracePeriodHoursRemaining } ore.",
         "Au mai rămas ${ gracePeriodHoursRemaining } de ore."
       ],
+      "Didn’t make this request?": [
+        "Nu ați făcut această solicitare?"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Dacă nu ați solicitat resetarea parolei, anulați solicitarea acum."
+      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Dacă nu ați solicitat resetarea parolei, anulați această solicitare acum."
+      ],
+      "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
+        "Resetarea parolei este disponibilă din ${ boldDate }. Aceasta vă oferă timp să anulați orice solicitare frauduloasă."
       ],
       "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
         "Solicitare de resetare parolă (${ user.Email }). Puteți să vă schimbați parola timp de ${ hoursRemaining } oră.",
@@ -11486,6 +11485,11 @@
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "S-a primit o solicitare de resetare a parolei pentru ${ boldEmail }."
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "Vă puteți schimba parola peste ${ gracePeriodHoursRemaining } oră.",
+        "Vă puteți schimba parola peste ${ gracePeriodHoursRemaining } ore.",
+        "Vă puteți schimba parola peste ${ gracePeriodHoursRemaining } de ore."
       ]
     },
     "session_recovery:in_progress:link": {
@@ -11498,7 +11502,27 @@
         "Solicitare resetare parolă"
       ]
     },
+    "session_recovery:initiation:action": {
+      "Got it": [
+        "Am înțeles"
+      ],
+      "Request password reset": [
+        "Solicitare resetare parolă"
+      ],
+      "Use recovery method": [
+        "Folosire metodă de recuperare"
+      ]
+    },
     "session_recovery:initiation:info": {
+      "For security reasons, you’ll have to wait **72 hours** before you can change your password.": [
+        "Din motive de securitate, va trebui să așteptați **72 de ore** înainte de a vă putea modifica parola."
+      ],
+      "If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.": [
+        "Dacă aveți o **metodă de recuperare** activată, încercați opțiunea de recuperare a contului. Aceasta vă va permite să vă modificați parola imediat."
+      ],
+      "We will contact you again when the password reset is available.": [
+        "Veți primi o notificare când vă veți putea reseta parola."
+      ],
       "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
         "Puteți verifica starea solicitării oricând ${ accountAndPasswordSectionLink } din setări."
       ]
@@ -11506,6 +11530,35 @@
     "session_recovery:initiation:link": {
       "account and password section": [
         "în secțiunea „Cont și parolă”"
+      ]
+    },
+    "session_recovery:initiation:notification": {
+      "Password reset confirmed": [
+        "Resetarea parolei confirmată"
+      ]
+    },
+    "session_recovery:initiation:title": {
+      "Request password reset?": [
+        "Solicitați resetarea parolei?"
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "Vă puteți reseta parola peste ${ gracePeriodHoursRemaining } oră.",
+        "Vă puteți reseta parola peste ${ gracePeriodHoursRemaining } ore.",
+        "Vă puteți reseta parola peste ${ gracePeriodHoursRemaining } de ore."
+      ]
+    },
+    "session_recovery:settings:action": {
+      "Allow password reset from settings": [
+        "Permitere resetare a parolei din setări"
+      ],
+      "Request a password reset from your Account settings. No recovery method needed.": [
+        "Solicitați o resetare a parolei din setările contului. Nu este necesară nici o metodă de recuperare."
+      ],
+      "Request password reset": [
+        "Solicitare resetare parolă"
+      ],
+      "To disallow password reset, you must have a recovery method set up.": [
+        "Pentru a bloca resetarea parolei, trebuie să aveți o metodă de recuperare activată."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -11543,6 +11596,19 @@
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
         "Vă deconectați fără a vă reseta parola?"
+      ]
+    },
+    "session_recovery:status:info": {
+      "Available": [
+        "Disponibilă"
+      ],
+      "Pending": [
+        "În așteptare"
+      ]
+    },
+    "session_recovery:status:title": {
+      "Password reset request": [
+        "Solicitare resetare parolă"
       ]
     },
     "Settings description": {
@@ -11723,9 +11789,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "${ storageSize } spațiu total"
-      ],
       "3 TB": [
         "3 TiB"
       ],
@@ -11747,15 +11810,6 @@
       "Premium early access": [
         "Acces timpuriu premium"
       ],
-      "Premium Mail and Calendar": [
-        "Mail și Calendar premium"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "Mail, Calendar și Drive premium"
-      ],
-      "Premium VPN": [
-        "VPN premium"
-      ],
       "Secure cloud storage": [
         "Stocare securizată în cloud"
       ],
@@ -11767,9 +11821,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "Reducerile sunt bazate pe prețul standard lunar."
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Abonamentul se va reînnoi în mod automat peste 2 ani, la același preț, până când este anulat."
       ]
@@ -11828,11 +11879,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Facturat cu ${ amount } pentru 30 de luni"
-      ],
-      "for ${ n } month": [
-        "pentru ${ n } lună",
-        "pentru ${ n } luni",
-        "pentru ${ n } de luni"
       ],
       "Get the deal": [
         "Obțineți oferta"
@@ -11901,9 +11947,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Toate serviciile noastre premium cu limitele la maxim: 100 de adrese de e-mail, suport pentru 10 domenii personale, aliasuri nelimitate hide-my-email, partajare calendar, stocare criptată în cloud și fișiere partajate și multe altele."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Include suport pentru un domeniu de e-mail personal, 10 adrese de e-mail, 10 aliasuri hide-my-email, partajare calendar și altele."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Include suport pentru 3 domenii de e-mail personale, 15 adrese de e-mail, aliasuri nelimitate hide-my-email, partajare calendar și altele."
       ],
@@ -11915,9 +11958,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Spațiul de stocare este distribuit între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -11983,14 +12023,8 @@
       ]
     },
     "Subscription": {
-      "Billed every 15 months": [
-        "Facturat la 15 luni"
-      ],
       "Billed every 2 years": [
         "Facturat la doi ani"
-      ],
-      "Billed every 30 months": [
-        "Facturat la 30 de luni"
       ],
       "Billed monthly": [
         "Facturat lunar"
@@ -12406,24 +12440,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "Drive premium"
-      ],
-      "Premium Mail and Calendar": [
-        "Mail Premium și Calendar"
-      ],
       "Premium Password Manager": [
         "Gestionare parole premium"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Stocați-vă parolele și completați-le automat pe paginile web. Include parole nelimitate, completare automată, generator de parole și multe altele."
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "Manager de parole"
       ]
     },
     "summer2023: Tooltip": {
@@ -12697,6 +12715,9 @@
       "Add users": [
         "Adăugare utilizatori"
       ],
+      "Address and key verification": [
+        "Verificare adresă și cheie"
+      ],
       "Allocate storage": [
         "Alocare spațiu"
       ],
@@ -12940,9 +12961,6 @@
       ],
       "Delete user?": [
         "Ștergere utilizator?"
-      ],
-      "Delete version history?": [
-        "Ștergeți istoricul versiunilor?"
       ],
       "Disable ${ email }": [
         "Dezactivare ${ email }"
@@ -13226,6 +13244,9 @@
       ],
       "Password and keys": [
         "Parolă și chei"
+      ],
+      "Password reset": [
+        "Resetare parolă"
       ],
       "Pay invoice": [
         "Plată factură"
@@ -13765,6 +13786,9 @@
       "This feature is only available for paid users": [
         "Această opțiune este valabilă doar pentru utilizatorii cu plată."
       ],
+      "This feature is only available on Beta": [
+        "Această funcție este disponibilă doar în versiunea beta."
+      ],
       "This key cannot be used for encryption": [
         "Această cheie nu poate fi folosită pentru criptare."
       ],
@@ -13809,11 +13833,6 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Contul extern ar putea să fi atins limita lățimii de bandă pentru 24 de ore. ${ BRAND_NAME } va încerca să reia importarea cât mai curând posibil."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
-        "${ PASS_APP_NAME }: manager de parole criptat în ambele sensuri."
       ]
     },
     "Tooltip automatically attach public key": {

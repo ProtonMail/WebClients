@@ -494,6 +494,12 @@
       ],
       "${ price } per user": [
         "${ price } за пользователя"
+      ],
+      "${ users } user": [
+        "${ users } пользователь",
+        "${ users } пользователя",
+        "${ users } пользователей",
+        "${ users } пользователей"
       ]
     },
     "Address action": {
@@ -1918,15 +1924,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Платная версия Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Платная версия Mail и Calendar"
-      ],
-      "Premium VPN": [
-        "Платная версия VPN"
-      ],
       "Up to 6 users": [
         "До 6 пользователей"
       ]
@@ -2531,9 +2528,6 @@
       "Admin account allocation": [
         "Распределение аккаунтов администраторов"
       ],
-      "All ${ BRAND_NAME } apps and their premium features": [
-        "Все приложения ${ BRAND_NAME } и их платные функции"
-      ],
       "All your changes will be lost.": [
         "Все ваши изменения будут потеряны."
       ],
@@ -2924,14 +2918,8 @@
       "per month, billed every 12 months": [
         "в месяц, оплачивается каждые 12 месяцев"
       ],
-      "per month, billed every 15 months": [
-        "в месяц, оплачивается каждые 15 месяцев"
-      ],
       "per month, billed every 24 months": [
         "в месяц, оплачивается каждые 24 месяца"
-      ],
-      "per month, billed every 30 months": [
-        "в месяц, оплачивается каждые 30 месяцев"
       ],
       "Plan upgrade required": [
         "Требуется улучшение тарифа"
@@ -4331,9 +4319,6 @@
       "99.95% SLA": [
         "99,95% SLA"
       ],
-      "Ad-blocker & malware protection": [
-        "Блокировщик рекламы и защита от вредоносного ПО"
-      ],
       "Admin console": [
         "Панель администратора"
       ],
@@ -5400,9 +5385,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "Хранилище объемом ${ storageSize }"
-      ],
       "3 TB": [
         "3 ТБ"
       ],
@@ -5424,15 +5406,6 @@
       "Premium early access": [
         "Ранний доступ"
       ],
-      "Premium Mail and Calendar": [
-        "Платная версия Mail и Calendar"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "Платные версии Mail, Calendar и Drive"
-      ],
-      "Premium VPN": [
-        "Платная версия VPN"
-      ],
       "Secure cloud storage": [
         "Безопасное облачное хранилище"
       ],
@@ -5444,9 +5417,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "Скидки рассчитываются исходя из стандартной платы за 1 месяц."
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Подписка будет автоматически продлеваться каждые 2 года по той же цене до тех пор, пока вы ее не отмените."
       ]
@@ -5500,12 +5470,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Оплата ${ amount } за 30 месяцев."
-      ],
-      "for ${ n } month": [
-        "за ${ n } месяц",
-        "за ${ n } месяца",
-        "за ${ n } месяцев",
-        "за ${ n } месяцев"
       ],
       "Get the deal": [
         "Получить скидку"
@@ -5574,9 +5538,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Все наших платные сервисы с максимальными лимитами: 100 адресов электронной почты, поддержка 10 своих доменов и неограниченного числа псевдонимов hide-my-email, совместный доступ к календарю, зашифрованное облачное хранилище и обмен файлами, и другое."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Включает поддержку 1 своего домена, 10 адресов электронной почты, 10 псевдонимов hide-my-email, совместный доступ к календарю и другие преимущества."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Включает поддержку 3 своих доменов, 15 адресов электронной почты, неограниченного количества псевдонимов hide-my-email, совместный доступ к календарю и другие преимущества."
       ],
@@ -5588,9 +5549,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Переместите свои материалы в облачное хранилище с шифрованием. Включает автоматическую синхронизацию, зашифрованный обмен файлами и другие преимущества."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Общее хранилище для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }"
       ]
     },
     "Spotlight": {
@@ -5621,14 +5579,8 @@
       ]
     },
     "Subscription": {
-      "Billed every 15 months": [
-        "Оплата каждые 15 месяцев"
-      ],
       "Billed every 2 years": [
         "Оплата каждые 2 года"
-      ],
-      "Billed every 30 months": [
-        "Оплата каждые 30 месяцев"
       ],
       "Billed monthly": [
         "Ежемесячная оплата"
@@ -5941,24 +5893,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "Платная версия Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Платная версия Mail и Calendar"
-      ],
       "Premium Password Manager": [
         "Платная версия менеджера паролей"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Храните неограниченное количество паролей в безопасности и используйте их автозаполнение, чтобы входить в аккаунты одним нажатием. Мы также предлагаем генератор паролей и другие функции."
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "Менеджер паролей"
       ]
     },
     "summer2023: Tooltip": {
