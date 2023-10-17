@@ -15,7 +15,7 @@ import { Button } from '@proton/atoms/Button';
 import { Vr } from '@proton/atoms/Vr';
 import { Icon, InlineLinkButton } from '@proton/components/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import { CurrencySelector, CycleSelector } from '@proton/components/containers';
+import { CurrencySelector, CycleSelector, useFlag } from '@proton/components/containers';
 import { getShortBillingText } from '@proton/components/containers/payments/helper';
 import { useLoading } from '@proton/hooks';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -129,6 +129,8 @@ const Step1 = ({
     const [loadingPaymentDetails, withLoadingPaymentDetails] = useLoading();
     const accountDetailsRef = useRef<AccountStepDetailsRef>();
     const accountStepPaymentRef = useRef<AccountStepPaymentRef>();
+
+    const passVaultSharingEnabled = useFlag('PassVaultSharingDescription');
 
     const createFlow = useFlowRef();
 
@@ -413,7 +415,7 @@ const Step1 = ({
                                     logo={<FreeLogo app={app} />}
                                     discount={0}
                                     free
-                                    features={getFreePassFeatures()}
+                                    features={getFreePassFeatures(passVaultSharingEnabled)}
                                 ></RightPlanSummary>
                             </RightSummary>
                         ) : (

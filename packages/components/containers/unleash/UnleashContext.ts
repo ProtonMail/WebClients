@@ -11,6 +11,7 @@ enum MailFeatureFlag {
 enum AccountFlag {
     MaintenanceImporter = 'MaintenanceImporter',
     SignedInAccountRecovery = 'SignedInAccountRecovery',
+    PassVaultSharingDescription = 'PassVaultSharingDescription',
 }
 
 export type FeatureFlag = `${MailFeatureFlag}` | `${AccountFlag}`;
