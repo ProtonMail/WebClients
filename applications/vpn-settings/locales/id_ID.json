@@ -627,6 +627,11 @@
         "Tindakan ini akan memutuskan seluruh sambungan router dan klien yang menggunakan sertifikat ini."
       ]
     },
+    "Billing cycle": {
+      "${ n } months": [
+        "${ n } bulan"
+      ]
+    },
     "Billing cycle option": {
       "1 month": [
         "1 bulan"
@@ -2004,15 +2009,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Drive Premium"
-      ],
-      "Premium Mail and Calendar": [
-        "Mail dan Calendar Premium"
-      ],
-      "Premium VPN": [
-        "VPN Premium"
-      ],
       "Up to 6 users": [
         "Sampai 6 pengguna"
       ]
@@ -2291,6 +2287,9 @@
       ],
       "Allow platform keys": [
         "Izinkan kunci platform"
+      ],
+      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
+        "Memungkinkan Anda untuk mendaftar kunci keamanan bawaan (seperti Windows Hello, Face ID, Touch ID, atau TPM internal)"
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Apakah Anda yakin untuk menghapus kunci keamanan ${ name }?"
@@ -2622,9 +2621,6 @@
       ],
       "Admin account allocation": [
         "Alokasi akun admin"
-      ],
-      "All ${ BRAND_NAME } apps and their premium features": [
-        "Seluruh aplikasi ${ BRAND_NAME } dan berbagai fitur premium di dalamnya"
       ],
       "All your changes will be lost.": [
         "Seluruh perubahan yang belum Anda simpan akan hilang."
@@ -3073,14 +3069,8 @@
       "per month, billed every 12 months": [
         "per bulan, ditagihkan setiap 12 bulan"
       ],
-      "per month, billed every 15 months": [
-        "per bulan, ditagihkan setiap 15 bulan"
-      ],
       "per month, billed every 24 months": [
         "per bulan, ditagihkan setiap 24 bulan"
-      ],
-      "per month, billed every 30 months": [
-        "per bulan, ditagihkan setiap 30 bulan"
       ],
       "Plan upgrade required": [
         "Diperlukan peningkatan paket"
@@ -3540,6 +3530,9 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Anda dapat menyunting alamat ini satu kali untuk memastikan bahwa alamat surel yang akan digunakan untuk verifikasi ini telah sesuai."
+      ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
+        "Anda dapat segera membuka kunci penyiapan di atas dengan menambahkan ${ specificCountryCount } ke jumlah alamat IP dalam paket Anda atau hubungi kami untuk solusi yang dibuat khusus untuk Anda."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Anda dapat menyimpan hingga ${ MAX_CALENDARS_FREE } kalender. Mohon hapus tautan kalender bersama yang ada dan seluruh pengguna ${ BRAND_NAME } yang berbagi kalender dengan Anda sebelum membatalkan langganan ${ MAIL_SHORT_APP_NAME } Anda."
@@ -4465,6 +4458,9 @@
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } dengan jumlah alias hide-my-email yang tak terbatas"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "Program ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ size } attachment size": [
         "Batas ukuran lampiran ${ size }"
       ],
@@ -4485,9 +4481,6 @@
       ],
       "99.95% SLA": [
         "99.95% SLA"
-      ],
-      "Ad-blocker & malware protection": [
-        "Pemblokiran iklan & perlindungan malware"
       ],
       "Admin console": [
         "Konsol admin"
@@ -4665,6 +4658,12 @@
       ],
       "Sign in as user": [
         "Masuk sebagai pengguna tertentu"
+      ],
+      "SMTP submission": [
+        "Submisi SMTP"
+      ],
+      "SMTP submission for select organizations": [
+        "Submisi SMTP untuk organisasi pilihan"
       ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android dan Windows)"
@@ -4892,18 +4891,6 @@
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
-        "${ CALENDAR_APP_NAME }: kalender yang terenkripsi end-to-end"
-      ],
-      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
-        "${ DRIVE_APP_NAME }: ruang penyimpanan cloud yang terenkripsi end-to-end"
-      ],
-      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
-        "${ MAIL_APP_NAME }: surel yang terenkripsi end-to-end"
-      ],
-      "${ VPN_APP_NAME }: unblock content, browse privately": [
-        "${ VPN_APP_NAME }: buka blokir konten, jelajahi internet secara privat"
-      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Akses berbagai konten streaming seperti Netflix, Disney+, dan Prime Video di mana pun Anda berada"
       ],
@@ -5009,6 +4996,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Lindungi keluarga Anda dari situs web berbahaya dan akses berbagai tayangan streaming favorit Anda dengan server VPN berkecepatan tinggi kami"
       ],
+      "Provides the highest level of account security protection and specialist support": [
+        "Menyediakan perlindungan keamanan akun yang tertinggi dan layanan dukungan spesialis"
+      ],
       "Quickly set up out-of-office messages": [
         "Siapkan pesan balasan otomatis dengan cepat"
       ],
@@ -5038,6 +5028,9 @@
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
         "Bagikan berkas atau folder Anda dengan siapa pun melalui tautan yang aman dan mudah untuk dibagikan"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTP memungkinkan layanan atau perangkat pihak ketiga untuk mengirimkan surel melalui ${ MAIL_APP_NAME }."
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Teknologi NetShield kami dirancang secara khusus untuk melindungi perangkat Anda dan mempercepat perambanan Anda dengan memblokir iklan, program pelacak, serta malware"
@@ -5776,9 +5769,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "${ storageSize } jumlah penyimpanan"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -5800,15 +5790,6 @@
       "Premium early access": [
         "Akses dini Premium"
       ],
-      "Premium Mail and Calendar": [
-        "Mail dan Calendar Premium"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "Mail, Calendar, dan Drive Premium"
-      ],
-      "Premium VPN": [
-        "VPN Premium"
-      ],
       "Secure cloud storage": [
         "Penyimpanan awan aman"
       ],
@@ -5820,9 +5801,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "Diskon berdasarkan harga standar per bulan."
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Langganan ini akan otomatis diperbarui setiap 2 tahun dengan tarif yang sama hingga dibatalkan."
       ]
@@ -5876,9 +5854,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Tertagih dengan harga ${ amount } selama 30 bulan"
-      ],
-      "for ${ n } months": [
-        "untuk ${ n } bulan"
       ],
       "Get the deal": [
         "Dapatkan penawaran"
@@ -5947,9 +5922,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Semua layanan premium kami dengan batas tertinggi: 100 alamat surel, dukungan 10 domain kustom, alias Hide-my-email tidak terbatas, pembagian kalender, penyimpanan awan dan pembagian berkas terenkripsi, dan lebih banyak lagi."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Meliputi dukungan 1 domain email khusus, 10 alamat email, 10 alias Hide-my-email, fitur berbagi kalender, dan masih banyak lagi."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Meliputi dukungan 3 domain email khusus, 15 alamat email, alias Hide-my-email tidak terbatas, fitur berbagi kalender, dan masih banyak lagi."
       ],
@@ -5961,9 +5933,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan penyimpanan awan terenkripsi. Beserta sinkronisasi otomatis, pembagian berkas terenkripsi, dan lebih banyak lagi."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Ruang penyimpanan terbagi antara ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -5994,14 +5963,8 @@
       ]
     },
     "Subscription": {
-      "Billed every 15 months": [
-        "Ditagihkan setiap 15 bulan"
-      ],
       "Billed every 2 years": [
         "Ditagihkan setiap 2 tahun"
-      ],
-      "Billed every 30 months": [
-        "Ditagihkan setiap 30 bulan"
       ],
       "Billed monthly": [
         "Ditagih bulanan"
@@ -6281,24 +6244,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "Drive Premium"
-      ],
-      "Premium Mail and Calendar": [
-        "Mail dan Calendar Premium"
-      ],
       "Premium Password Manager": [
         "Password Manager Premium"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Simpan sandi Anda secara aman dan otomatis isi pada situs web. Termasuk sandi tidak terbatas, pengisi otomatis, pembuat sandi, dan banyak fitur lainnya."
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "Pengelola kata sandi"
       ]
     },
     "summer2023: Tooltip": {
@@ -6991,11 +6938,6 @@
       ],
       "Verified email address": [
         "Alamat surel terverifikasi"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
-        "${ PASS_APP_NAME }: pengelola kata sandi yang terenkripsi end-to-end"
       ]
     },
     "Tor out of date": {

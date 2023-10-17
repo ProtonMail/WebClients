@@ -802,6 +802,93 @@
         "Падзея не падтрымліваецца"
       ]
     },
+    "bf2023: Deal details": {
+      "${ storageSize } storage": [
+        "Аб'ём сховішча: ${ storageSize }"
+      ],
+      "1 user": [
+        "1 карыстальнік"
+      ],
+      "3 TB": [
+        "3 ТБ"
+      ],
+      "3,000+ servers across 65+ countries": [
+        "Больш за 3000 сервераў у больш як 65 краінах"
+      ],
+      "6 users": [
+        "6 карыстальнікаў"
+      ],
+      "Ad-blocker and malware protection": [
+        "Блакіроўшчык рэкламы і абарона ад шкодных праграм"
+      ],
+      "Extended version history": [
+        "Пашыраная гісторыя версій"
+      ],
+      "Fast BitTorrent downloads": [
+        "Хуткія спампоўванні ў BitTorrent"
+      ],
+      "High speed streaming": [
+        "Высакахуткасныя трансляцыі"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Прэміяльны ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Прэміяльны ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльны ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Прэміяльны менеджар пароляў"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Скідкі разлічваюцца на падставе стандартнай платы за месяц."
+      ],
+      "Learn more about our Black Friday offers": [
+        "Даведайцеся больш пра прапанову \"Чорная пятніца\""
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Ваша падпіска будзе аўтаматычна падаўжацца са стандартнай скідкай і працягвацца ў канцы перыяду аплаты."
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "Доступ да заблакіраванага змесціва і прыватны прагляд старонак у інтэрнэце. Уключаючы 3000 сервераў, якія ахопліваюць 65 краін, найвышэйшую хуткасць VPN, сэрвісы з трансляцыямі па ўсім свеце, блакіроўку шкодных праграм і рэкламы, хуткія спампоўванні ў BitTorrent, а таксама іншыя функцыі."
+      ],
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Атрымлівайце доступ да змесціва сэрвісаў з трансляцыямі, такіх як Netflix, Disney+, Prime Video з любой краіны ў свеце."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
+        "Уключае падтрымку для ${ domains } карыстальніцкіх даменаў электроннай пошты, ${ addresses } адрасоў электроннай пошты, ${ aliases } псеўданімаў Hide-my-email, абагульванне календара і іншыя функцыі."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Уключае падтрымку для ${ domains } карыстальніцкіх даменаў электроннай пошты, ${ addresses } адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў Hide-my-email, абагульванне календара і іншыя функцыі."
+      ],
+      "Secure logins on all your devices. Includes unlimited aliases, sharing, vaults, integrated 2FA and more.": [
+        "Бяспечны ўваход на ўсіх прыладах. Уключаючы неабмежаваную колькасць псеўданімаў, абагульненняў, сховішчаў, інтэграцыю 2ФА і іншыя функцыі."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае падтрымку карыстальніцкіх даменаў электроннай пошты, 15 адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў электроннай пошты hide-my-email, абагульванне календара, а таксама іншыя функцыі."
+      ],
+      "Secure your files, folders and photos with end-to-end and zero-access encryption. Includes version history, encrypted file sharing, and more.": [
+        "Абараніце свае файлы, папкі і фотаздымкі пры дапамозе скразнога шыфравання з нулявым доступам. Уключае гісторыю версій, абагульненне зашыфраваных файлаў, а таксама іншыя функцыі."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Адмыслова распрацаваная функцыя NetShield абароніць вашы прылады і паскорыць прагляд старонак, дзякуючы блакіраванню рэкламы, праграм сачэння і шкодных праграм."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "Прастора сховішча размеркавана паміж усімі праграмамі ${ BRAND_NAME }"
+      ],
+      "Store up to 200 versions of each file for up to 10 years.": [
+        "Захоўвайце да 200 версій кожнага файла да 10 гадоў."
+      ],
+      "Unlock peer-to-peer downloads and file sharing. Increase upload and download speeds and hide your IP address.": [
+        "Разблакіруйце аднарангавыя спампоўванні і абагульванне файлаў. Павялічце хуткасць запампоўвання або спампоўвання файлаў і схавайце свой IP-адрас ад іншых."
+      ]
+    },
     "Billing cycle option": {
       "Annually": [
         "Штогод"
@@ -2579,14 +2666,14 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Прэміяльныя функцыі Drive"
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Прэміяльны ${ DRIVE_SHORT_APP_NAME }"
       ],
-      "Premium Mail and Calendar": [
-        "Прэміяльныя функцыі Mail і Calendar"
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Прэміяльны ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
       ],
-      "Premium VPN": [
-        "Прэміяльныя функцыі VPN"
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльны ${ VPN_SHORT_APP_NAME }"
       ],
       "Up to 6 users": [
         "Да 6 карыстальнікаў"
@@ -3447,6 +3534,9 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Працягнуць выкарыстоўваць ${ DRIVE_APP_NAME } і разблакіраваць дыск пазней"
+      ],
+      "Copy the link to clipboard": [
+        "Скапіяваць спасылку ў буфер абмену"
       ],
       "Country code": [
         "Код краіны"
@@ -5236,6 +5326,9 @@
       "File or folder is missing a name": [
         "Адсутнічае назва папкі або файла"
       ],
+      "Link copied to clipboard": [
+        "Спасылка скапіявана ў буфер абмену"
+      ],
       "Move ${ itemsToMoveCount } file": [
         "Перамясціць ${ itemsToMoveCount } файл",
         "Перамясціць ${ itemsToMoveCount } файлы",
@@ -5820,8 +5913,8 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "Агульны аб'ём сховішча: ${ storageSize }"
+      "1 user": [
+        "1 карыстальнік"
       ],
       "3 TB": [
         "3 ТБ"
@@ -5841,17 +5934,17 @@
       "Highest VPN speed": [
         "Найвышэйшая хуткасць VPN"
       ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Прэміяльны ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "Прэміяльны ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Прэміяльны ${ VPN_SHORT_APP_NAME }"
+      ],
       "Premium early access": [
         "Ранні доступ да новых функцый"
-      ],
-      "Premium Mail and Calendar": [
-        "Прэміяльныя функцыі Mail і Calendar"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "Прэміяльныя функцыі Mail, Calendar і Drive"
-      ],
-      "Premium VPN": [
-        "Прэміяльныя функцыі VPN"
       ],
       "Secure cloud storage": [
         "Бяспечнае воблачнае сховішча"
@@ -5864,9 +5957,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "Скідкі разлічваюцца на падставе стандартнай платы за месяц."
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Падпіска будзе аўтаматычна падаўжацца кожныя 2 гады з той жа цаной, пакуль вы яе не скасуеце."
       ]
@@ -5897,14 +5987,26 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } месяц",
+        "${ n } месяцы",
+        "${ n } месяцаў",
+        "${ n } месяцаў"
+      ],
       "/ month": [
         "/ месяц"
       ],
       "1 year": [
         "1 год"
       ],
+      "15 months": [
+        "15 месяцаў"
+      ],
       "2 years": [
         "2 гады"
+      ],
+      "30 months": [
+        "30 месяцаў"
       ],
       "Billed at ${ amount } for 1 month": [
         "Аплачваецца ${ amount } за 1 месяц"
@@ -5920,12 +6022,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Аплачваецца ${ amount } за 30 месяцаў"
-      ],
-      "for ${ n } month": [
-        "за ${ n } месяц",
-        "за ${ n } месяцы",
-        "за ${ n } месяцаў",
-        "за ${ n } месяца"
       ],
       "Get the deal": [
         "Скарыстацца прапановай"
@@ -5994,9 +6090,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Усе нашы прэміяльныя сэрвісы з іх найвышэйшымі квотамі: 100 адрасоў электроннай пошты, падтрымка для 10 карыстальніцкіх даменаў, неабмежаваная колькасць псеўданімаў Hide-my-email, абагульванне календара, зашыфраванае воблачнае сховішча і абагульванне файлаў, а таксама іншыя функцыі."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Уключае падтрымку для 1 карыстальніцкага дамена электроннай пошты, 10 адрасоў электроннай пошты, 10 псеўданімаў Hide-my-email, абагульванне календара і іншыя функцыі."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, 15 адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў Hide-my-email, абагульванне календара і іншыя функцыі."
       ],
@@ -6008,9 +6101,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Абараніце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае аўтаматычную сінхранізацыю, шыфраванае абагульванне файлаў і іншыя функцыі."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Прастора сховішча размеркавана паміж ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -6028,6 +6118,9 @@
       ]
     },
     "Storage": {
+      "Get storage": [
+        "Атрымаць сховішча"
+      ],
       "Release notes": [
         "Нататкі да выпуску"
       ],
@@ -6120,24 +6213,14 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "Прэміяльныя функцыі Drive"
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Прэміяльны ${ DRIVE_SHORT_APP_NAME }"
       ],
-      "Premium Mail and Calendar": [
-        "Прэміяльныя функцыі Mail і Calendar"
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Прэміяльны ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Прэміяльныя функцыі менеджара пароляў"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Бяспечна захоўвайце свае паролі і аўтаматычна запаўняйце іх на вэб-сайтах. Уключае неабмежаваную колькасць пароляў, аўтаматычнае запаўненне, генератар пароляў і іншыя функцыі."
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "Менеджар пароляў"
       ]
     },
     "summer2023: Tooltip": {
