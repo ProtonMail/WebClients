@@ -55,13 +55,13 @@ export const resendInvite = async ({ shareId, inviteId }: InviteResendIntent) =>
 export const removeInvite = async ({ shareId, inviteId }: InviteRemoveIntent) =>
     api({ url: `pass/v1/share/${shareId}/invite/${inviteId}`, method: 'delete' });
 
-export const acceptInvite = async ({ inviteToken, inviterEmail, invitedEmail, inviteKeys }: InviteAcceptIntent) => {
+export const acceptInvite = async ({ inviteToken, inviterEmail, invitedAddressId, inviteKeys }: InviteAcceptIntent) => {
     return (
         await api({
             url: `pass/v1/invite/${inviteToken}`,
             method: 'post',
             data: await PassCrypto.acceptVaultInvite({
-                invitedEmail,
+                invitedAddressId,
                 inviteKeys,
                 inviterPublicKeys: await getPublicKeysForEmail(inviterEmail),
             }),
