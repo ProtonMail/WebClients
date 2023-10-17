@@ -8,6 +8,7 @@ import {
     getHideMyEmailAliases,
     getItems,
     getLoginsAndNotes,
+    getVaultSharing,
 } from '@proton/components/containers/payments/features/pass';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { APPS, CYCLE, PASS_APP_NAME, PASS_SHORT_APP_NAME, PLANS } from '@proton/shared/lib/constants';
@@ -67,7 +68,7 @@ export const getPassBenefits = (): BenefitItem[] => {
 };
 
 export const getFreePassFeatures = () => {
-    return [getLoginsAndNotes(), getDevices(), getHideMyEmailAliases(10)];
+    return [getLoginsAndNotes(), getDevices(), getHideMyEmailAliases(10), getVaultSharing(3)];
 };
 
 export const getCustomPassFeatures = () => {
@@ -78,6 +79,7 @@ export const getCustomPassFeatures = () => {
         get2FAAuthenticator(true),
         getItems(),
         getCreditCards(),
+        getVaultSharing(10),
     ];
 };
 
