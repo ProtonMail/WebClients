@@ -26,7 +26,7 @@ export const Font = () => (
         <Table>
             <TableHeader>
                 <TableRow>
-                    <TableCell type="header" className="w30">
+                    <TableCell type="header" className="w-1/3">
                         Usage
                     </TableCell>
                     <TableCell type="header">Demonstration</TableCell>
@@ -67,7 +67,7 @@ export const Headings = () => (
         <Table>
             <TableHeader>
                 <TableRow>
-                    <TableCell type="header" className="w30">
+                    <TableCell type="header" className="w-1/3">
                         Usage
                     </TableCell>
                     <TableCell type="header">Demonstration</TableCell>
@@ -132,7 +132,7 @@ export const Text = () => (
         <Table>
             <TableHeader>
                 <TableRow>
-                    <TableCell type="header" className="w30">
+                    <TableCell type="header" className="w-1/3">
                         Usage
                     </TableCell>
                     <TableCell type="header">Demonstration</TableCell>
@@ -226,7 +226,7 @@ const TypoColorsTable = () => (
     <Table>
         <TableHeader>
             <TableRow>
-                <TableCell type="header" className="w30">
+                <TableCell type="header" className="w-1/3">
                     Usage
                 </TableCell>
                 <TableCell type="header">Demonstration</TableCell>
@@ -292,7 +292,7 @@ export const Monospace = () => (
         <Table>
             <TableHeader>
                 <TableRow>
-                    <TableCell type="header" className="w30">
+                    <TableCell type="header" className="w-1/3">
                         Usage
                     </TableCell>
                     <TableCell type="header">Demonstration</TableCell>

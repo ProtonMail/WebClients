@@ -48,7 +48,7 @@ const ColorPicker = ({ color = '#5252CC', onChange, ...rest }: Props) => {
                 {...restDropdownProps}
                 as="button"
                 type="button"
-                className={clsx([className, 'field select w50 flex flex-align-items-center py-0 pl-2'])}
+                className={clsx([className, 'field select w-1/2 flex flex-align-items-center py-0 pl-2'])}
                 hasCaret
                 ref={anchorRef}
                 isOpen={isOpen}

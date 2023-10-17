@@ -17,7 +17,7 @@ const StepImportingContent = ({ importedEmailAddress, toEmail, onClose, isCurren
 
     return (
         <div className="text-center mb-8">
-            <img src={importStartedSvg} alt="" className="max-w80" />
+            <img src={importStartedSvg} alt="" className="max-w-4/5" />
             <h3>{c('Info').t`Import in progress`}</h3>
             <div className="mb-4">{c('Info').t`Importing your data from ${importedEmailAddress} to ${toEmail}.`}</div>
             <div>{c('Info').t`We'll notify you when the import is done.`}</div>

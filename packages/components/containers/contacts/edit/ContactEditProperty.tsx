@@ -105,7 +105,7 @@ const ContactEditProperty = (
                 <span
                     className={clsx([
                         'contact-modal-select flex flex-nowrap mb-2 md:mb-4 flex-align-items-start on-mobile-flex-align-self-start',
-                        labelWidthClassName || 'w30',
+                        labelWidthClassName || 'w-3/10',
                     ])}
                 >
                     <ContactEditLabel
