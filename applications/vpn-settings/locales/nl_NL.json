@@ -630,6 +630,12 @@
         "Dit zal alle routers en clients die dit certificaat gebruiken loskoppelen."
       ]
     },
+    "Billing cycle": {
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
+      ]
+    },
     "Billing cycle option": {
       "1 month": [
         "1 maand"
@@ -2009,15 +2015,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Premium Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Premium Mail en Calendar"
-      ],
-      "Premium VPN": [
-        "Premium VPN"
-      ],
       "Up to 6 users": [
         "Tot 6 gebruikers"
       ]
@@ -2296,6 +2293,9 @@
       ],
       "Add a name to identify your security key with.": [
         "Voeg een naam to om uw beveiligingssleutel mee te identificeren."
+      ],
+      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
+        "Het toevoegen van beveiligingssleutels wordt toegestaan (bijv. Windows Hello, gezichts- of vingerafdrukherkenning, ingebouwde TPM's)"
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Weet u zeker dat u de beveiligingssleutel ${ name } wilt verwijderen?"
@@ -2641,9 +2641,6 @@
       ],
       "Admin account allocation": [
         "Toewijzing beheerdersaccount"
-      ],
-      "All ${ BRAND_NAME } apps and their premium features": [
-        "Alle ${ BRAND_NAME }-apps en hun premium functies"
       ],
       "All your changes will be lost.": [
         "Alle wijzigingen gaan verloren."
@@ -3094,14 +3091,8 @@
       "per month, billed every 12 months": [
         "per maand, gefactureerd elke 12 maanden"
       ],
-      "per month, billed every 15 months": [
-        "per maand, gefactureerd elke 15 maanden"
-      ],
       "per month, billed every 24 months": [
         "per maand, gefactureerd elke 24 maanden"
-      ],
-      "per month, billed every 30 months": [
-        "per maand, gefactureerd elke 30 maanden"
       ],
       "Plan upgrade required": [
         "Upgrade van abonnement vereist"
@@ -3569,6 +3560,9 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "U kunt dit eenmaal bewerken om ervoor te zorgen dat het juiste e-mailadres voor verificatie is ingevoerd."
+      ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
+        "U kunt meteen de installatie ontgrendelen door ${ specificCountryCount } toe te voegen aan de hoeveelheid IP-adressen in uw abonnement of neem contact op met ons voor oplossingen op maat."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert.",
@@ -4518,6 +4512,9 @@
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } met onbeperkte hide-my-email-aliassen"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } programma"
+      ],
       "${ size } attachment size": [
         "${ size } bijlagegrootte"
       ],
@@ -4538,9 +4535,6 @@
       ],
       "99.95% SLA": [
         "99,95% SLA"
-      ],
-      "Ad-blocker & malware protection": [
-        "Adblocker en bescherming tegen malware"
       ],
       "Admin console": [
         "Beheerdersconsole"
@@ -4721,6 +4715,12 @@
       ],
       "Sign in as user": [
         "Inloggen als gebruiker"
+      ],
+      "SMTP submission": [
+        "SMTP-indiening"
+      ],
+      "SMTP submission for select organizations": [
+        "SMTP-indiening voor beperkte organisaties"
       ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android en Windows)"
@@ -4949,18 +4949,6 @@
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
-        "${ CALENDAR_APP_NAME }: end-to-end versleutelde agenda"
-      ],
-      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
-        "${ DRIVE_APP_NAME }: end-to-end versleutelde cloudopslag"
-      ],
-      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
-        "${ MAIL_APP_NAME }: end-to-end versleutelde e-mail"
-      ],
-      "${ VPN_APP_NAME }: unblock content, browse privately": [
-        "${ VPN_APP_NAME }: inhoud deblokkeren, privé browsen"
-      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Bekijk content van streamingdiensten, waaronder Netflix, Disney+ en Prime Video, waar u maar wilt"
       ],
@@ -5549,6 +5537,14 @@
         "Wachtwoord resetten"
       ]
     },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "Accountherstel niet beschikbaar voor verouderde adressleutels"
+      ],
+      "Please generate keys before you try to change your password": [
+        "Genereer sleutels voordat u uw wachtwoord probeert te wijzigen"
+      ]
+    },
     "session_recovery:available:info": {
       "${ timeRemaining.inDays } day": [
         "${ timeRemaining.inDays } dag",
@@ -5576,11 +5572,52 @@
       "This permission expires in ${ timeRemaining.inHours } hour": [
         "Deze toestemming verloopt binnen ${ timeRemaining.inHours } uur",
         "Deze toestemming verloopt binnen ${ timeRemaining.inHours } uren"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "U kan uw wachtwoord vrijelijk wijzigen voor de account ${ boldEmail } gedurende ${ boldDaysRemaining }."
+      ],
+      "You can now reset your password": [
+        "U kunt uw wachtwoord nu opnieuw instellen"
       ]
     },
     "session_recovery:available:link": {
       "See how": [
         "Zie hoe"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Wachtwoord opgeslagen"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Uw wachtwoord opnieuw instellen"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Wachtwoord reset annuleren"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Vul uw huidig wachtwoord in om uw het resetten van uw wachtwoord te annuleren. Er zullen geen veranderingen plaatsvinden."
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "Wachtwoord reset geannuleerd"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Wachtwoord reset annuleren?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Aanvraag wijziging wachtwoord (${ user.Email }) geannuleerd. Als u deze aanvraag niet hebt gemaakt, ${ changePasswordLink }"
       ]
     },
     "session_recovery:cancelled:link": {
@@ -5589,6 +5626,9 @@
       ]
     },
     "session_recovery:in_progress:action": {
+      "Cancel password reset": [
+        "Wachtwoord reset annuleren"
+      ],
       "Cancel request": [
         "Aanvraag annuleren"
       ],
@@ -5600,17 +5640,96 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } uur",
+        "${ gracePeriodHoursRemaining } uren"
+      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Indien u geen wachtwoord reset hebt aangevraagd, annuleer deze aanvraag dan nu."
       ],
+      "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
+        "Wachtwoord reset beschikbaar vanaf ${ boldDate }. Dit geeft u de tijd om frauduleuze aanvragen te annuleren."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Wachtwoord reset aangevraagd (${ user.Email }). Uw wachtwoord kan gewijzigd worden in ${ hoursRemaining } uur.",
+        "Wachtwoord reset aangevraagd (${ user.Email }). Uw wachtwoord kan gewijzigd worden in ${ hoursRemaining } uren."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "Om er zeker van te zijn dat u het bent die probeert uw wachtwoord te resetten, wachten we 72 uur voordat we verzoeken goedkeuren. U kan uw wachtwoord wijzigen in ${ boldTimeLeft }. ${ viewRequest }"
+      ],
       "We received a password reset request for ${ boldEmail }.": [
         "We ontvingen een wachtwoord reset aanvraag voor ${ boldEmail }."
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "U kan uw wachtwoord wijzigen in ${ gracePeriodHoursRemaining } uren",
+        "U kan uw wachtwoord wijzigen in ${ gracePeriodHoursRemaining } uur"
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "Aanvraag bekijken"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "Wachtwoord reset aangevraagd"
+      ]
+    },
+    "session_recovery:initiation:action": {
+      "Got it": [
+        "Begrepen"
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "account and password section": [
+        "accountinstellingen"
+      ]
+    },
+    "session_recovery:initiation:title": {
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "U kan uw wachtwoord resetten in ${ gracePeriodHoursRemaining } uur",
+        "U kan uw wachtwoord resetten in ${ gracePeriodHoursRemaining } uren"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Uitloggen"
+      ],
+      "Stay signed in": [
+        "Blijf ingelogd"
       ]
     },
     "session_recovery:sign_out:info": {
       "${ gracePeriodHoursRemaining } hour": [
         "${ gracePeriodHoursRemaining } uur",
         "${ gracePeriodHoursRemaining } uren"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } is nu beschikbaar"
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Als u uitlogt voordat u uw wachtwoord reset, kan u de toegang tot uw account verliezen."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Als u uitlogt zonder uw wachtwoord te resetten, kan u de toegang tot uw account verliezen."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "U kan uw wachtwoord resetten in ${ boldTimeLeft }."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Wachtwoord reset"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Uitloggen zonder wachtwoord reset?"
+      ]
+    },
+    "session_recovery:status:info": {
+      "Available": [
+        "Beschikbaar"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -5670,9 +5789,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "${ storageSize } opslagruimte"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -5694,15 +5810,6 @@
       "Premium early access": [
         "Premium vroege toegang"
       ],
-      "Premium Mail and Calendar": [
-        "Premium Mail en Calendar"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "Premium Mail, Calendar en Drive"
-      ],
-      "Premium VPN": [
-        "Premium VPN"
-      ],
       "Secure cloud storage": [
         "Veilige cloudopslag"
       ],
@@ -5714,9 +5821,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "Kortingen zijn gebaseerd op de standaardprijs per maand."
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Dit abonnement wordt na 2 jaar automatisch verlengd tegen dezelfde prijs totdat het wordt opgezegd."
       ]
@@ -5770,10 +5874,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "U betaalt ${ amount } voor 30 maanden"
-      ],
-      "for ${ n } month": [
-        "voor ${ n } maand",
-        "voor ${ n } maanden"
       ],
       "Get the deal": [
         "Kies deze deal"
@@ -5842,9 +5942,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Al onze premium diensten met hun hoogste limieten: 100 e-mailadressen, ondersteuning voor 10 aangepaste domeinen, onbeperkt Hide-my-email-aliassen, gedeelde agenda's, versleutelde cloudopslag, versleuteld bestanden delen en meer."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Ondersteuning voor 1 aangepast e-maildomein, 10 e-mailadressen, 10 Hide-my-email-aliassen, gedeelde agenda's en meer."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Ondersteuning voor 3 aangepaste e-maildomeinen, 15 e-mailadressen, onbeperkt Hide-my-email-aliassen, gedeelde agenda's en meer."
       ],
@@ -5856,9 +5953,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld bestanden delen en meer."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Opslagruimte wordt gedeeld tussen ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -5889,14 +5983,8 @@
       ]
     },
     "Subscription": {
-      "Billed every 15 months": [
-        "Wordt om de 15 maanden gefactureerd"
-      ],
       "Billed every 2 years": [
         "Wordt om de 2 jaar gefactureerd"
-      ],
-      "Billed every 30 months": [
-        "Wordt om de 30 maanden gefactureerd"
       ],
       "Billed monthly": [
         "Maandelijks gefactureerd"
@@ -6190,24 +6278,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "Premium Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Premium Mail en Calendar"
-      ],
       "Premium Password Manager": [
         "Premium wachtwoordmanager"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Sla uw wachtwoorden veilig op en vul ze automatisch in op websites. Met een onbeperkt aantal wachtwoorden, automatisch invullen, wachtwoordgenerator en meer."
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "Wachtwoordbeheer"
       ]
     },
     "summer2023: Tooltip": {
@@ -6905,11 +6977,6 @@
       ],
       "Verified email address": [
         "Geverifieerd e-mail adres"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
-        "${ PASS_APP_NAME }: end-to-end gecodeerde wachtwoordbeheerder"
       ]
     },
     "Tor out of date": {
