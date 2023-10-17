@@ -636,6 +636,14 @@
         "Spowoduje to rozłączenie wszystkich routerów i klientów używających tego certyfikatu."
       ]
     },
+    "Billing cycle": {
+      "${ n } month": [
+        "${ n } miesiąc",
+        "${ n } miesiące",
+        "${ n } miesięcy",
+        "${ n } miesiąca"
+      ]
+    },
     "Billing cycle option": {
       "1 month": [
         "1 miesiąc"
@@ -2019,15 +2027,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Usługa Drive w wersji premium"
-      ],
-      "Premium Mail and Calendar": [
-        "Usługi Mail i Calendar w wersji premium"
-      ],
-      "Premium VPN": [
-        "Usługa VPN w wersji premium"
-      ],
       "Up to 6 users": [
         "Do 6 użytkowników"
       ]
@@ -2692,9 +2691,6 @@
       "Admin account allocation": [
         "Przestrzeń dyskowa administratora"
       ],
-      "All ${ BRAND_NAME } apps and their premium features": [
-        "Wszystkie aplikacje ${ BRAND_NAME } i ich funkcje premium"
-      ],
       "All your changes will be lost.": [
         "Wszystkie zmiany zostaną utracone."
       ],
@@ -3148,14 +3144,8 @@
       "per month, billed every 12 months": [
         "miesięcznie, płatne co 12 miesięcy"
       ],
-      "per month, billed every 15 months": [
-        "miesięcznie, płatne co 15 miesięcy"
-      ],
       "per month, billed every 24 months": [
         "miesięcznie, płatne co 24 miesiące"
-      ],
-      "per month, billed every 30 months": [
-        "miesięcznie, płatne co 30 miesięcy"
       ],
       "Plan upgrade required": [
         "Ulepszenie planu jest wymagane"
@@ -3640,6 +3630,9 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Edytuj adres, aby zweryfikować prawidłowy adres pomocniczy."
       ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
+        "Możesz natychmiast odblokować powyższą konfigurację, dodając dodatkowe adresy IP (${ specificCountryCount }) do swojego planu. Opcjonalnie skontaktuj się z nami w sprawie indywidualnej oferty."
+      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Możesz posiadać do ${ MAX_CALENDARS_FREE } kalendarza. Zanim anulujesz subskrypcję ${ MAIL_SHORT_APP_NAME }, usuń linki kalendarza oraz wszystkich użytkowników ${ BRAND_NAME }, którym udostępniasz kalendarze.",
         "Możesz posiadać do ${ MAX_CALENDARS_FREE } kalendarzy. Zanim anulujesz subskrypcję ${ MAIL_SHORT_APP_NAME }, usuń linki kalendarza oraz wszystkich użytkowników ${ BRAND_NAME }, którym udostępniasz kalendarze.",
@@ -3765,9 +3758,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Twoja subskrypcja jest zarządzana przez Mozillę. Skontaktuj się z pomocą techniczną Mozilli."
-      ],
-      "Your subscription will automatically renew on ${ renewalTime }.": [
-        "Twoja subskrypcja odnowi się automatycznie ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -4639,6 +4629,9 @@
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } z nieograniczoną liczbą aliasów hide-my-email"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "Program ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ size } attachment size": [
         "${ size } rozmiaru załącznika"
       ],
@@ -4659,9 +4652,6 @@
       ],
       "99.95% SLA": [
         "Umowa SLA 99,95%"
-      ],
-      "Ad-blocker & malware protection": [
-        "Blokada reklam i ochrona przed złośliwym oprogramowaniem"
       ],
       "Admin console": [
         "Konsola administratora"
@@ -5084,18 +5074,6 @@
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
-        "${ CALENDAR_APP_NAME }: kalendarz szyfrowany end-to-end"
-      ],
-      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
-        "${ DRIVE_APP_NAME }: przestrzeń dyskowa w chmurze szyfrowana end-to-end"
-      ],
-      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
-        "${ MAIL_APP_NAME }: poczta szyfrowana end-to-end"
-      ],
-      "${ VPN_APP_NAME }: unblock content, browse privately": [
-        "${ VPN_APP_NAME }: odblokuj zawartość, przeglądaj Internet prywatnie"
-      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Uzyskaj dostęp do usług streamingu, takich jak Netflix, Disney+ i Prime Video, gdziekolwiek jesteś"
       ],
@@ -5203,6 +5181,9 @@
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Chroń rodzinę przed szkodliwymi stronami internetowymi i uzyskaj dostęp do szybkich serwerów, aby odtwarzać ulubione treści"
+      ],
+      "Provides the highest level of account security protection and specialist support": [
+        "Zapewnia najwyższy poziom ochrony konta i specjalistyczne wsparcie."
       ],
       "Quickly set up out-of-office messages": [
         "Ustaw autoresponder na czas swojej nieobecności"
@@ -6031,9 +6012,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "${ storageSize } przestrzeni dyskowej"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -6052,20 +6030,8 @@
       "Highest VPN speed": [
         "Najwyższa prędkość VPN"
       ],
-      "Mail, Calendar, Drive": [
-        "Usługi Mail, Calendar i Drive"
-      ],
       "Premium early access": [
         "Wczesny dostęp premium"
-      ],
-      "Premium Mail and Calendar": [
-        "Usługi Mail i Calendar w wersji premium"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "Usługi Mail, Calendar i Drive w wersji premium"
-      ],
-      "Premium VPN": [
-        "VPN premium"
       ],
       "Secure cloud storage": [
         "Bezpieczna przestrzeń dyskowa w chmurze"
@@ -6078,9 +6044,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "Rabaty są obliczane na podstawie standardowych cen miesięcznych."
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Subskrypcja będzie odnawiana automatycznie co 2 lata za tę samą cenę aż do momentu anulowania jej."
       ]
@@ -6134,12 +6097,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Płatne ${ amount } za 30 miesięcy"
-      ],
-      "for ${ n } month": [
-        "za ${ n } miesiąc",
-        "za ${ n } miesiące",
-        "za ${ n } miesięcy",
-        "za ${ n } miesięcy"
       ],
       "Get the deal": [
         "Uzyskaj ofertę"
@@ -6208,9 +6165,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Wszystkie nasze usługi premium z najwyższymi limitami: 100 adresów e-mail, obsługa 10 niestandardowych domen, nieograniczona liczba aliasów hide-my-email, udostępnianie kalendarza, szyfrowane przechowywanie, udostępnianie plików i wiele więcej."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Zawiera obsługę 1 niestandardowej domeny, 10 adresów e-mail, 10 aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Zawiera obsługę 3 niestandardowych domen, 15 adresów e-mail, nieograniczoną liczbę aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
       ],
@@ -6222,9 +6176,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpiecz pliki dzięki szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Przestrzeń dyskowa jest dzielona pomiędzy usługami ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -6255,14 +6206,8 @@
       ]
     },
     "Subscription": {
-      "Billed every 15 months": [
-        "Płatne co 15 miesięcy"
-      ],
       "Billed every 2 years": [
         "Płatne co 2 lata"
-      ],
-      "Billed every 30 months": [
-        "Płatne co 30 miesięcy"
       ],
       "Billed monthly": [
         "Płatne miesięcznie"
@@ -6584,24 +6529,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "Usługa Drive w wersji premium"
-      ],
-      "Premium Mail and Calendar": [
-        "Usługi Mail i Calendar w wersji premium"
-      ],
       "Premium Password Manager": [
         "Menedżer haseł w wersji Premium"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "W bezpieczny sposób przechowuj hasła i automatycznie je uzupełniaj w witrynach internetowych. Obejmuje nieograniczoną liczbę haseł, opcję automatycznego uzupełniania, generator haseł i nie tylko."
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "Menadżer haseł"
       ]
     },
     "summer2023: Tooltip": {
@@ -7309,11 +7238,6 @@
       ],
       "Verified email address": [
         "Adres e-mail został zweryfikowany"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
-        "${ PASS_APP_NAME }: menadżer haseł szyfrowany end-to-end"
       ]
     },
     "Tor out of date": {

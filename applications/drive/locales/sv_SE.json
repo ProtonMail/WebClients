@@ -794,6 +794,37 @@
         "Händelse stöds inte"
       ]
     },
+    "bf2023: Deal details": {
+      "${ storageSize } storage": [
+        "${ storageSize } lagringsutrymme"
+      ],
+      "1 user": [
+        "1 användare"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 användare"
+      ],
+      "Ad-blocker and malware protection": [
+        "Annonsblockerare och skydd mot skadlig kod"
+      ],
+      "Extended version history": [
+        "Utökad versionshistorik"
+      ],
+      "High speed streaming": [
+        "Höghastighetsstreaming"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Store up to 200 versions of each file for up to 10 years.": [
+        "Lagra upp till 200 versioner av varje fil i upp till 10 år."
+      ]
+    },
     "Billing cycle option": {
       "Annually": [
         "Årligen"
@@ -2553,15 +2584,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Premium Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Premium Mail och Calendar"
-      ],
-      "Premium VPN": [
-        "Premium VPN"
-      ],
       "Up to 6 users": [
         "Upp till 6 användare"
       ]
@@ -3335,6 +3357,9 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Fortsätt använda ${ DRIVE_APP_NAME } och lås upp disken senare"
+      ],
+      "Copy the link to clipboard": [
+        "Kopiera länken till urklipp"
       ],
       "Country code": [
         "Landskod"
@@ -5070,6 +5095,9 @@
       "File or folder is missing a name": [
         "Fil eller mapp saknar ett namn"
       ],
+      "Link copied to clipboard": [
+        "Länk kopierad till urklipp"
+      ],
       "Move ${ itemsToMoveCount } file": [
         "Flytta ${ itemsToMoveCount } fil",
         "Flytta ${ itemsToMoveCount } filer"
@@ -5606,8 +5634,8 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "${ storageSize } totalt lagringsutrymme"
+      "1 user": [
+        "1 användare"
       ],
       "3 TB": [
         "3 TB"
@@ -5630,15 +5658,6 @@
       "Premium early access": [
         "Premium förhandstillgång"
       ],
-      "Premium Mail and Calendar": [
-        "Premium Mail och Calendar"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "Premium Mail, Calendar och Drive"
-      ],
-      "Premium VPN": [
-        "Premium VPN"
-      ],
       "Secure cloud storage": [
         "Säker molnlagring"
       ],
@@ -5650,9 +5669,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "Rabatterna är baserade på ordinarie månadspriser."
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Denna prenumeration kommer automatiskt att förnyas vartannat år med samma taxa tills den avbryts."
       ]
@@ -5683,14 +5699,24 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } månad",
+        "${ n } månader"
+      ],
       "/ month": [
         "/månad"
       ],
       "1 year": [
         "1 år"
       ],
+      "15 months": [
+        "15 månader"
+      ],
       "2 years": [
         "2 år"
+      ],
+      "30 months": [
+        "30 månader"
       ],
       "Billed at ${ amount } for 1 month": [
         "Fakturerad med ${ amount } för 1 månad"
@@ -5706,10 +5732,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Fakturerad med ${ amount } för 30 månader"
-      ],
-      "for ${ n } month": [
-        "i ${ n } månad",
-        "i ${ n } månader"
       ],
       "Get the deal": [
         "Ta del av erbjudandet"
@@ -5778,9 +5800,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Alla våra premiumtjänster med sina högsta gränser: 100 e-postadresser, stöd för 10 anpassade domäner, obegränsade Hide-my-email-alias, kalenderdelning, krypterad molnlagring och fildelning och mer."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Inkluderar stöd för 1 anpassad e-postdomän, 10 e-postadresser, 10 Hide-my-email-alias, kalenderdelning och mer."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderar stöd för 3 anpassade e-postdomäner, 15 e-postadresser, obegränsat antal Hide-my-email-alias, kalenderdelning och mer."
       ],
@@ -5792,9 +5811,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Säkra dina filer med krypterad molnlagring. Inkluderar automatisk synkronisering, krypterad fildelning och mer."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Lagringsutrymmet delas mellan ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } och ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -5812,6 +5828,9 @@
       ]
     },
     "Storage": {
+      "Get storage": [
+        "Skaffa lagringsutrymme"
+      ],
       "Release notes": [
         "Utgivningsnoteringar"
       ],
@@ -5898,24 +5917,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "Premium Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Premium Mail och Calendar"
-      ],
       "Premium Password Manager": [
         "Premium lösenordshanterare"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Lagra dina lösenord på ett säkert sätt och autofyll dem på webbplatser. Inkluderar obegränsade lösenord, autofyll, lösenordsgenerator och mer."
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "Lösenordshanterare"
       ]
     },
     "summer2023: Tooltip": {

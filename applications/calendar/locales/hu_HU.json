@@ -33,6 +33,9 @@
       "Add address": [
         "Cím hozzáadása"
       ],
+      "Add birthday": [
+        "Születésnap hozzáadása"
+      ],
       "Add contact": [
         "Új névjegy"
       ],
@@ -48,6 +51,9 @@
       "Add new group": [
         "Új csoport hozzáadása"
       ],
+      "Add note": [
+        "Jegyzet hozzáadása"
+      ],
       "Add notification": [
         "Új emlékeztető"
       ],
@@ -62,6 +68,10 @@
       ],
       "Apply": [
         "Alkalmazás"
+      ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Legfeljebb ${ maxContacts } névjegy lehet egy névjegy csoportban",
+        "Legfeljebb ${ maxContacts } névjegy lehet egy névjegy csoportban"
       ],
       "Attach screenshot(s)": [
         "Képernyőkép(ek) csatolása"
@@ -199,6 +209,9 @@
       ],
       "Discard": [
         "Elvetés"
+      ],
+      "Don't know your password?": [
+        "Nem tudja a jelszavát?"
       ],
       "Done": [
         "Kész"
@@ -377,6 +390,9 @@
       "No, thanks": [
         "Köszönöm, nem"
       ],
+      "Ok": [
+        "OK"
+      ],
       "OK": [
         "OK"
       ],
@@ -385,6 +401,9 @@
       ],
       "Open settings": [
         "Beállítások megnyitása"
+      ],
+      "Pause indexing": [
+        "Indexelés szüneteltetése"
       ],
       "Preview contact": [
         "Névjegy előnézet"
@@ -449,6 +468,9 @@
       "Reset to default": [
         "Alapbeállítások visszaállítása"
       ],
+      "Resume indexing": [
+        "Indexelés folytatása"
+      ],
       "Save": [
         "Mentés"
       ],
@@ -457,6 +479,9 @@
       ],
       "Search countries": [
         "Ország keresése"
+      ],
+      "See how": [
+        "Lásd hogyan"
       ],
       "See plan features": [
         "Csomag részleteinek megtekintése"
@@ -536,11 +561,17 @@
       "Submit": [
         "Küldés"
       ],
+      "Switch or add account": [
+        "Fiók váltása vagy hozzáadása"
+      ],
       "Today": [
         "Ma"
       ],
       "Toggle Contact app": [
         "Névjegyek alkalmazás váltása"
+      ],
+      "Toggle settings": [
+        "Beállítások kapcsolása"
       ],
       "Trust": [
         "Megbízható"
@@ -607,6 +638,10 @@
       ],
       "Yes, I'll attend": [
         "Igen, ott leszek"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Egyszerre nem küldhet el több mint ${ maxAttachments } vCard névjegyfájlt",
+        "Egyszerre nem küldhet el több mint ${ maxAttachments } vCard névjegyfájlt"
       ]
     },
     "Action subline": {
@@ -1094,8 +1129,14 @@
       "Birthday": [
         "Születésnap"
       ],
+      "Display name": [
+        "Megjelenített név"
+      ],
       "Email": [
         "E-mail"
+      ],
+      "First name": [
+        "Keresztnév"
       ],
       "Gender": [
         "Nem"
@@ -1105,6 +1146,9 @@
       ],
       "Language": [
         "Nyelv"
+      ],
+      "Last name": [
+        "Vezetéknév"
       ],
       "Logo": [
         "Logó"
@@ -2054,6 +2098,9 @@
         "A fájl mérete maximum ${ MAX_IMPORT_FILE_SIZE_STRING } lehet és legfeljebb ${ MAX_IMPORT_CONTACTS_STRING } névjegyet tartalmazhat. Ha nagyobb a fájl, vágja több kisebb darabra.",
         "A fájl mérete maximum ${ MAX_IMPORT_FILE_SIZE_STRING } lehet és legfeljebb ${ MAX_IMPORT_CONTACTS_STRING } névjegyet tartalmazhat. Ha nagyobb a fájl, vágja több kisebb darabra."
       ],
+      "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
+        "Ez eltarthat egy pár percig. Közben használhatja a Naptárat ahogy szokta."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Húzással határozza meg az egyesítés prioritását. Szüntesse meg a kijelölést azoknál, amelyeket nem szeretne egyesíteni."
       ],
@@ -2290,8 +2337,14 @@
       "Error: ${ errorMessage }": [
         "Hiba: ${ errorMessage }"
       ],
+      "Event not found": [
+        "Az esemény nem található"
+      ],
       "Failed to get original occurrence in series": [
         "Az eredeti előfordulás nem található a szériában"
+      ],
+      "First name is too long": [
+        "A keresztnév túl hosszú"
       ],
       "Folder name cannot be empty.": [
         "A mappa nevének megadása szükséges."
@@ -2307,6 +2360,9 @@
       ],
       "Incorrect mailbox password. Please try again.": [
         "Hibás e-mail titkosítási jelszó. Kérjük, próbálja újra."
+      ],
+      "Incorrect username": [
+        "Helytelen felhasználónév"
       ],
       "Interval cannot be empty": [
         "Az intervallum nem lehet üres"
@@ -2337,6 +2393,9 @@
       ],
       "Label name cannot be empty.": [
         "A címke neve nem lehet üres."
+      ],
+      "Last name is too long": [
+        "A vezetéknév túl hosszú."
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Fűzzön össze legalább ${ calendarsToFixCount } naptárat egy meglévő ${ BRAND_NAME } naptárral",
@@ -2525,6 +2584,10 @@
       ],
       "You already added this holidays calendar": [
         "Már hozzáadta ezt a munkaszüneti naptárat"
+      ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Nem küldhet emailt több, mint ${ maxContacts } címzettnek",
+        "Nem küldhet emailt több, mint ${ maxContacts } címzettnek"
       ],
       "You have reached the contacts limit for your account": [
         "Elérte a fiókhoz létrehozható névjegyek maximális számát"
@@ -2747,6 +2810,14 @@
         "A pont megadása kötelező"
       ]
     },
+    "esCalendar": {
+      "No result": [
+        "Nincs eredmény"
+      ],
+      "Results": [
+        "Eredmények"
+      ]
+    },
     "Event canceled status badge": {
       "canceled": [
         "törölve"
@@ -2756,6 +2827,15 @@
       "${ numberOfAttendees } participant": [
         "${ numberOfAttendees } résztvevő",
         "${ numberOfAttendees } résztvevő"
+      ]
+    },
+    "Event info in search view; event duration": {
+      "All day": [
+        "Egész nap"
+      ],
+      "All day, lasts ${ plusDaysToEnd } day": [
+        "Egész nap, ${ plusDaysToEnd } napig tart",
+        "Egész nap, ${ plusDaysToEnd } napig tart"
       ]
     },
     "Event info. Organizer name": {
@@ -2864,15 +2944,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Prémium Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Prémium Mail és Calendar"
-      ],
-      "Premium VPN": [
-        "Prémium VPN"
-      ],
       "Up to 6 users": [
         "Maximum 6 felhasználóig"
       ]
@@ -3426,6 +3497,9 @@
         "${ contactsLength } névjegy",
         "${ contactsLength } névjegy"
       ],
+      "${ firstItems } and ${ lastItem }": [
+        "${ firstItems } és ${ lastItem }"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } csoport található",
         "${ groupCounts } csoport található"
@@ -3441,6 +3515,10 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } a(z) ${ providerCalendars.length } naptárból",
         "${ selectedCalendarsTotal } a(z) ${ providerCalendars.length } naptárból"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } névjegy kiválasztva",
+        "${ selectedContactsLength }/${ contactsLength } névjegy kiválasztva"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } mappa kiválasztva",
@@ -3498,6 +3576,10 @@
         "Mind (${ totalFoldersCount } címke)",
         "Mind (${ totalFoldersCount } címke)"
       ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Az összes névjegye importálásra kerül, maximum ${ MAX_CONTACTS_PER_USER } darabig",
+        "Az összes névjegye importálásra kerül, maximum ${ MAX_CONTACTS_PER_USER } darabig"
+      ],
       "An invitation will be sent to added participants.": [
         "Egy meghívó kerül elküldésre az összes résztvevőnek."
       ],
@@ -3531,6 +3613,9 @@
       "Calendar side panel": [
         "Naptár oldalsó panel"
       ],
+      "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
+        "Nem találja a keresett eseményeket? A rejtett naptárban néhány esemény megegyezik keresésével. Hogy lássa azokat a találatokat is, kapcsolja be a láthatóságot ennek:${ hiddenWithItemsCalendarList }."
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nem emlékszik a jelszóra? Lehetőség van arra, hogy az összes olyan névjegyadatot törölje, amelyet ezzel a kulccsal titkosított, így megszüntetheti ezt a figyelmeztetést."
       ],
@@ -3542,6 +3627,9 @@
       ],
       "Clear encrypted search data": [
         "Titkosított keresési adatok törlése"
+      ],
+      "Clearing browser data will clear the search index on this device. All calendar events would need to be re-indexed again to use the search functionality.": [
+        "A böngésző adatainak törlése a keresési indexet is törölni fogja ezen az eszközön. Az összes naptári eseményt újra kell indexelni, hogy a keresés funkciót használni tudja."
       ],
       "Clears browser data related to the encrypted search.": [
         "Törli a böngésző adatait a titkosított keresésre vonatkozólag."
@@ -3612,6 +3700,9 @@
       ],
       "Each code can only be used once": [
         "Minden kódot csak egyszer lehet felhasználni"
+      ],
+      "Edit email address": [
+        "E-mail cím szerkesztése"
       ],
       "Emails are automatically signed": [
         "Az e-mailek automatikusan aláírásra kerülnek"
@@ -3689,6 +3780,12 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Adatok importálása a(z) ${ importedEmailAddress } címről a(z) ${ toEmail } címre."
+      ],
+      "Indexing events: ${ current }/${ total }": [
+        "${ current }/${ total } esemény indexelése"
+      ],
+      "Indexing paused": [
+        "Indexelés szüneteltetve"
       ],
       "Inherited from parent folder": [
         "Örökölve a tartalmazó mappáról"
@@ -3788,6 +3885,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "A PGP/MIME automatikusan a szerkesztőablak módja szerinti formátumban küldi az üzenetet."
+      ],
+      "Please note that addresses assigned to these groups will NOT be deleted.": [
+        "A csoporthoz rendelt címek NEM kerülnek törlésre."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "A csoporthoz rendelt címek NEM kerülnek törlésre."
@@ -3933,6 +4033,9 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "A cím hitelesítés használatához egy vagy több nyilvános kulcsot megbízhatóként kell megjelölnie, beleértve azt is amelyiket a küldéshez szeretné használni. Ez megakadályozza hamisított titkosítási kulcsok használatát."
+      ],
+      "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
+        "Próbálja ki a ${ BRAND_NAME } új funkcióit, frissítéseit és termékeit mielőtt azok elérhetővé válnak a nyilvánosság számára. Ez újra fogja tölteni az alkalmazást"
       ],
       "Update recurring event": [
         "Ismétlődő esemény frissítése"
@@ -4097,6 +4200,16 @@
         "Úgy tűnik, hogy a rendszer időzónája ${ timezone } -re változott. Szeretne erre az időzónára frissíteni?"
       ]
     },
+    "Info calendar search": {
+      "You can either update your search query or close search to go back to calendar views": [
+        "Frissítheti keresését vagy bezárhatja a keresést, hogy visszatérjen a naptár nézetekhez"
+      ]
+    },
+    "Info message": {
+      "No results found": [
+        "Nincs találat"
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "Kattintson a részletekért"
@@ -4141,6 +4254,10 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "Legfeljebb ${ maxAttendees } résztvevő megengedett meghívónként",
+        "Legfeljebb ${ maxAttendees } résztvevő megengedett meghívónként"
+      ],
       "Creating invites in a shared calendar is not allowed": [
         "Megosztott naptárakban nem engedélyezett a meghívók létrehozása"
       ]
@@ -5295,11 +5412,20 @@
       "Filter groups": [
         "Csoportok szűrése"
       ],
+      "First name": [
+        "Keresztnév"
+      ],
       "Group name": [
         "Csoport név"
       ],
       "Image URL": [
         "Kép URL"
+      ],
+      "Indexing...": [
+        "Indexelés..."
+      ],
+      "Last name": [
+        "Vezetéknév"
       ],
       "Name": [
         "Név"
@@ -5315,6 +5441,9 @@
       ],
       "Please select a country": [
         "Válasszon ki egy országot"
+      ],
+      "Search events": [
+        "Események keresése"
       ],
       "Search for group name": [
         "Csoport név keresése"
@@ -5420,6 +5549,150 @@
         "Nincs találat"
       ]
     },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "Visszaállítás törlése"
+      ],
+      "Reset password": [
+        "Jelszó visszaállítása"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "A fiók-visszaállítás nem érhető el régi című kulcsoknak"
+      ],
+      "Please generate keys before you try to change your password": [
+        "Hozza létre a titkosítási kulcsokat mielőtt megváltoztatná a jelszavát"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } nap",
+        "${ timeRemaining.inDays } nap"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } óra",
+        "${ timeRemaining.inHours } óra"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Jelszó újrabeállítási igénylés elfogadva (${ user.Email }). ${ timeRemaining.inDays } órája maradt jelszava megváltoztatására.",
+        "Jelszó újrabeállítási igénylés elfogadva (${ user.Email }). ${ timeRemaining.inDays } órája maradt jelszava megváltoztatására."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Jelszó újrabeállítás igénylés elfogadva (${ user.Email }). ${ timeRemaining.inHours } órája maradt jelszava megváltoztatására.",
+        "Jelszó újrabeállítási igénylés elfogadva (${ user.Email }). ${ timeRemaining.inHours } órája maradt jelszava megváltoztatására."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Ez az engedély${ timeRemaining.inDays } órán belül lejár",
+        "Ez az engedély ${ timeRemaining.inDays } órán belül lejár"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Ez az engedély ${ timeRemaining.inHours } órán belül lejár",
+        "Ez az engedély${ timeRemaining.inHours } órán belül lejár"
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Lássa hogyan"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Jelszó elmentve"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Állítsa vissza a jelszavát"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Jelszó visszaállítás megszakítása"
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "Jelszó visszaállítás megszakítva"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Jelszó visszaállítás megszakítása?"
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "jelszó megváltoztatása most"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "Kérelem törlése"
+      ],
+      "Got it": [
+        "Értem"
+      ],
+      "Learn more": [
+        "Tudjon meg többet"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } óra maradt.",
+        "${ gracePeriodHoursRemaining } óra maradt."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Jelszó újrabeállítás igényelve (${ user.Email }). A jelszót ${ hoursRemaining } órán belül változtathatja meg.",
+        "Jelszó újrabeállítás igényelve (${ user.Email }). A jelszót ${ hoursRemaining } órán belül változtathatja meg."
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "Kérelem megtekintése"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "Jelszó visszaállítási kérelem történt"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Kijelentkezés"
+      ],
+      "Stay signed in": [
+        "Bejelentkezve marad"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } óra",
+        "${ gracePeriodHoursRemaining } óra"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } már elérhető."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Ha a jelszó visszaállítása előtt lép ki, elveszítheti hozzáférését a fiókhoz."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Ha a jelszó visszaállítása nélkül lép ki, elveszítheti hozzáférését a fiókhoz."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "A jelszavát ${ boldTimeLeft } múlva tudja megváltoztatni."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Jelszó visszaállítás"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Kijelentkezik jelszó visszaállítás nélkül?"
+      ]
+    },
     "Settings update growler warning": {
       "Failed to update settings": [
         "Beállítások frissítése sikertelen"
@@ -5518,9 +5791,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "${ storageSize } teljes tárhely"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -5542,15 +5812,6 @@
       "Premium early access": [
         "Prémium korai-hozzáférés"
       ],
-      "Premium Mail and Calendar": [
-        "Prémium Mail és Calendar"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "Prémium Mail, Calendar és Drive"
-      ],
-      "Premium VPN": [
-        "Prémium VPN"
-      ],
       "Secure cloud storage": [
         "Biztonságos felhőtárhely"
       ],
@@ -5562,9 +5823,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "A kedvezmények a standard havi árazás alapján kerülnek kiszámításra"
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Ez az előfizetés minden 2 évben automatikusan megújul, ugyanazon az áron, amíg felmondásra nem kerül"
       ]
@@ -5618,10 +5876,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "30 hónapra ${ amount } számlázva"
-      ],
-      "for ${ n } month": [
-        "${ n } hónapra",
-        "${ n } hónapra"
       ],
       "Get the deal": [
         "Érdekel az ajánlat"
@@ -5690,9 +5944,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Minden prémium szolgáltatásunk a legmagasabb korlátokkal: 100 e-mail cím, 10 saját domain név támogatása, korlátlan számú hide-my-email álnév, naptármegosztás, titkosított felhőalapú tárolás és fájlmegosztás stb."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Tartalmazza 1 egyéni e-mail domain név, 10 e-mail cím, 10 hide-my-email álnév, naptármegosztás és még sok más támogatását."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Tartalmazza 3 egyéni e-mail domain név, 15 e-mail cím, korlátlan hide-my-email álnév, naptármegosztás és még sok más támogatását."
       ],
@@ -5704,14 +5955,14 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Tartsa biztonságban fájljait, titkosított felhőtárhelyen. Automatikus szinkronizálást, titkosított megosztás és további lehetőségeket tartalmaz."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "A tárhely megoszlik a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, és a ${ DRIVE_APP_NAME } közt."
       ]
     },
     "Spotlight": {
       "Add your country's public holidays to your calendar.": [
         "Vegye fel az országa szerinti munkaszüneti napokat a naptárába."
+      ],
+      "Easily find the event you're looking for with our new search feature.": [
+        "Találja meg könnyen az eseményt, amit keres, az új keresés funkcióval."
       ],
       "Get up to ${ credits } in credits.": [
         "Szerezzen akár ${ credits } kreditet."
@@ -5721,6 +5972,9 @@
       ],
       "Public holidays are here!": [
         "Már elérhetők a munkaszüneti napok!"
+      ],
+      "Search for events": [
+        "Eseményekre keresés"
       ]
     },
     "Storage": {
@@ -5907,32 +6161,36 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "Prémium tárhely"
-      ],
-      "Premium Mail and Calendar": [
-        "Prémium levelezés és naptár"
-      ],
       "Premium Password Manager": [
         "Prémium jelszókezelő"
       ]
     },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "Jelszókezelő"
-      ]
-    },
     "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Hozzon létre bejelentkezési adatokat összes eszközén. Végtelen számú aliast, 20 trezort, beépített 2FA-t, hitelkártya automatikus kitöltését, valamint további lehetőségeket is tartalmaz"
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "2950+ szerver, több mint 65 országban, csatlakoztasson akár 10 eszközt, érje el a videós szolgáltatásokat bárhonnan a világban, vírus és reklámblokkolót, valamint további lehetőségeket is tartalmaz."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Tartalmazza 1 saját e-mail domain név támogatását, 10 e-mail címet, 10 hide-my-email álnevet, naptármegosztást és egyebeket."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Tartsa biztonságban fájljait, titkosított felhőtárhelyen. Kiadási történetet, titkosított megosztást és további lehetőségeket tartalmaz."
       ]
     },
     "summer2023:Footer": {
+      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
+        "* Az előfizetése, ugyanazon a kedvezményes áron, automatikusan megújul a számlázási ciklus végén."
+      ],
       "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
         "A kedvezmények a standard havi árakon alapulnak. Ez az ajánlat csak az első alkalommal előfizetők számára érhető el."
       ]
     },
     "summer2023:Info": {
+      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
+        "Szerezze be a legjobbat, amit ${ BRAND_NAME } kínál, exklúzív kezdvezménnyel, korlátozott ideig."
+      ],
       "We’re celebrating the nine-year anniversary of our crowdfunding!": [
         "Közösségi finanszírozásunk kilenc éves jubileumát ünnepeljük!"
       ]
@@ -5984,8 +6242,14 @@
       "Display name": [
         "Megjelenített név"
       ],
+      "First name": [
+        "Keresztnév"
+      ],
       "Import": [
         "Importálás"
+      ],
+      "Last name": [
+        "Vezetéknév"
       ],
       "Values": [
         "Értékek"
@@ -6068,6 +6332,9 @@
       ],
       "Billing cycle": [
         "Számlázási ciklus"
+      ],
+      "Birthday": [
+        "Születésnap"
       ],
       "Calendar": [
         "Naptár"
@@ -6231,6 +6498,9 @@
       "Night theme": [
         "Éjszakai téma"
       ],
+      "Notes": [
+        "Jegyzetek"
+      ],
       "Open actions dropdown": [
         "Műveletek menü megnyitása"
       ],
@@ -6372,6 +6642,9 @@
       "Warning: suspected fake website": [
         "Figyelem: gyanítottan hamis weboldal"
       ],
+      "We're setting up Calendar search": [
+        "A Naptárban keresést állítjuk be"
+      ],
       "We've locked some calendars to protect your data": [
         "Néhány naptárat - az adatai védelme érdekében - zároltunk"
       ],
@@ -6511,6 +6784,9 @@
       ]
     },
     "View event button tooltip": {
+      "Navigate to event": [
+        "Eseményhez navigálás"
+      ],
       "Open in a new tab": [
         "Megnyitás új lapon"
       ]

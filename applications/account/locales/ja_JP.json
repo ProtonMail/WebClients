@@ -335,6 +335,9 @@
       "Discard": [
         "破棄"
       ],
+      "Don't know your password?": [
+        "パスワードを忘れましたか？"
+      ],
       "Don't show again": [
         "次回から表示しない"
       ],
@@ -623,6 +626,9 @@
       "OK": [
         "OK"
       ],
+      "Ok": [
+        "Ok"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } の設定を開く"
       ],
@@ -793,6 +799,9 @@
       ],
       "Search settings": [
         "設定の検索"
+      ],
+      "See how": [
+        "方法の確認"
       ],
       "See plan features": [
         "プランの機能を見る"
@@ -1071,7 +1080,7 @@
         "いいえ"
       ],
       "Try free for 30 days": [
-        "30日間無料お試し"
+        "30日間無料のお試し"
       ]
     },
     "Action subscription": {
@@ -1276,6 +1285,11 @@
     "Baseline in trial plan": {
       "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "${ mailPlus }: 日常のコミュニケーション ニーズに応えるプライバシー最優先のメールおよびカレンダー ソリューション。"
+      ]
+    },
+    "Billing cycle": {
+      "${ n } months": [
+        "${ n } 月"
       ]
     },
     "Billing cycle option": {
@@ -1483,6 +1497,11 @@
       ],
       "Share with anyone": [
         "ほかの人に共有"
+      ]
+    },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "さらに${ remainingItems }を表示"
       ]
     },
     "Calendar share permission label": {
@@ -1810,6 +1829,11 @@
         "以下と一致する場合"
       ]
     },
+    "Condition label": {
+      "If": [
+        "仮に"
+      ]
+    },
     "Confirm modal title": {
       "Import is incomplete!": [
         "インポートが完了していません！"
@@ -1847,8 +1871,14 @@
       "Birthday": [
         "誕生日"
       ],
+      "Display name": [
+        "表示名"
+      ],
       "Email": [
         "メールアドレス"
+      ],
+      "First name": [
+        "名"
       ],
       "Gender": [
         "性別"
@@ -1858,6 +1888,9 @@
       ],
       "Language": [
         "言語"
+      ],
+      "Last name": [
+        "姓"
       ],
       "Logo": [
         "ロゴ"
@@ -3103,6 +3136,274 @@
         "確認メールが ${ address } に送信されました"
       ]
     },
+    "email_forwarding_2023: Action": {
+      "Accept": [
+        "承認する"
+      ],
+      "Add condition": [
+        "条件追加"
+      ],
+      "Add forwarding rule": [
+        "転送ルールの追加"
+      ],
+      "Back": [
+        "戻る"
+      ],
+      "Cancel": [
+        "キャンセル"
+      ],
+      "Decline": [
+        "拒否する"
+      ],
+      "Delete": [
+        "削除"
+      ],
+      "Delete this condition": [
+        "この条件を削除する"
+      ],
+      "Edit conditions": [
+        "編集条件"
+      ],
+      "Next": [
+        "次へ"
+      ],
+      "Pause": [
+        "一時停止"
+      ],
+      "Re-enable": [
+        "再有効化"
+      ],
+      "Re-send confirmation email": [
+        "確認メールを再送する"
+      ],
+      "Remove “${ value }”": [
+        "“${ value }” を削除します"
+      ],
+      "Request confirmation": [
+        "確認のリクエスト"
+      ],
+      "Resume": [
+        "再開する"
+      ],
+      "Save": [
+        "保存"
+      ],
+      "Send confirmation email": [
+        "確認メールを送信する"
+      ],
+      "Set up email forwarding": [
+        "メール転送の設定"
+      ]
+    },
+    "email_forwarding_2023: Description": {
+      "Unlock email forwarding to easily manage incoming information and more premium features when you upgrade.": [
+        "アップグレードすると、受信情報を簡単に管理できるメール転送機能や、その他のプレミアム機能が利用できるようになります。"
+      ]
+    },
+    "email_forwarding_2023: Error": {
+      "Condition incomplete, please add a token": [
+        "条件が不完全です。トークンを追加してください"
+      ],
+      "Token already exists": [
+        "トークンはすでに存在する"
+      ]
+    },
+    "email_forwarding_2023: Error message, recovery": {
+      "Please try opening the link again.": [
+        "もう一度リンクを開いてみてください。"
+      ]
+    },
+    "email_forwarding_2023: Forwarding tooltip": {
+      "Emails forwarded to you are excluded and will not be forwarded.": [
+        "あなたに転送されたメールは除外され、転送されません。"
+      ]
+    },
+    "email_forwarding_2023: Header": {
+      "Actions": [
+        "動作"
+      ],
+      "From": [
+        "差出人"
+      ],
+      "Status": [
+        "状態"
+      ],
+      "To": [
+        "宛先"
+      ]
+    },
+    "email_forwarding_2023: Incoming forwarding tab name": {
+      "From me": [
+        "自分から"
+      ]
+    },
+    "email_forwarding_2023: Info": {
+      "A confirmation email will be sent to ${ boldForwardeeEmail }": [
+        "確認メールが ${ boldForwardeeEmail } に送信されます"
+      ],
+      "A new encryption key will be generated for ${ boldForwarderEmail }.": [
+        "${ boldForwarderEmail } に対して新しい暗号化キーが生成されます。"
+      ],
+      "Forwardee is invited and needs to accept/reject the invitation or update": [
+        "転送先が招待されており、招待を承諾/拒否するか更新する必要があります"
+      ],
+      "Forwarding is active": [
+        "転送が有効"
+      ],
+      "Forwarding to ${ BRAND_NAME } addresses will keep your communication end-to-end encrypted. When forwarding externally, encryption might need to be removed.": [
+        "${ BRAND_NAME } アドレスに転送すると、通信がエンドツーエンドで暗号化されます。 外部に転送する場合、暗号化を削除する必要がある場合があります。"
+      ],
+      "Forwarding to an address without end-to-end encryption requires disabling end-to-end encryption for your ${ boldForwarderEmail } email address. ": [
+        "エンドツーエンド暗号化を使用しないアドレスに転送するには、${ boldForwarderEmail }メールアドレスのエンドツーエンド暗号化を無効にする必要があります。 "
+      ],
+      "Forwarding to this address will become active once the recipient accepts the forwarding.": [
+        "このアドレスへの転送は、受信者が転送を承諾した時点で有効になります。"
+      ],
+      "No incoming forwarding rules": [
+        "受信転送ルールがありません"
+      ],
+      "No outgoing forwarding rules": [
+        "送信転送ルールなし"
+      ],
+      "Please update your forwarding keys": [
+        "転送キーを更新してください"
+      ],
+      "The forwardee rejected the forwarding request": [
+        "転送先が転送要求を拒否した"
+      ],
+      "The forwarding is temporarily paused": [
+        "転送が一時的に中断される"
+      ],
+      "You can safely close this tab.": [
+        "安心してこのタブを閉じてください。"
+      ],
+      "You won't receive emails forwarded automatically from ${ boldForwarderEmail }.": [
+        "${ boldForwarderEmail } から自動的に転送されたメールは受信できません。"
+      ]
+    },
+    "email_forwarding_2023: Label": {
+      "And": [
+        "かつ"
+      ],
+      "Forward from": [
+        "転送元"
+      ],
+      "Forward to": [
+        "転送先"
+      ],
+      "or": [
+        "または"
+      ],
+      "Or": [
+        "または"
+      ],
+      "With attachment": [
+        "添付ファイル付き"
+      ],
+      "Without attachment": [
+        "添付ファイルなし"
+      ]
+    },
+    "email_forwarding_2023: Link": {
+      "Learn more": [
+        "より詳しく"
+      ]
+    },
+    "email_forwarding_2023: Outgoing forwarding tab name": {
+      "To me": [
+        "自分に"
+      ]
+    },
+    "email_forwarding_2023: Placeholder": {
+      "Condition:": [
+        "状態："
+      ],
+      "Enter email address": [
+        "メールアドレスを入力"
+      ],
+      "Type text or keyword": [
+        "テキストまたはキーワードを入力"
+      ],
+      "Type text or keyword for this condition:": [
+        "この条件のテキストまたはキーワードを入力します："
+      ]
+    },
+    "email_forwarding_2023: Prompt": {
+      "Forwarding to the destination address will end.": [
+        "宛先アドレスへの転送は終了する。"
+      ]
+    },
+    "email_forwarding_2023: Status": {
+      "Active": [
+        "有効"
+      ],
+      "Declined": [
+        "拒否"
+      ],
+      "Outdated": [
+        "期限切れ"
+      ],
+      "Paused": [
+        "一時停止"
+      ],
+      "Pending": [
+        "保留中"
+      ]
+    },
+    "email_forwarding_2023: Success": {
+      "A new encryption key has been generated for ${ forwarderEmail }.": [
+        "${ forwarderEmail } 用に新しい暗号化キーが生成されました。"
+      ],
+      "Changes saved": [
+        "変更の保存"
+      ],
+      "Email sent to ${ forward.ForwardeeEmail }": [
+        "${ forward.ForwardeeEmail } に電子メールが送信されました"
+      ],
+      "Email sent to ${ forwardeeEmail }.": [
+        "${ forwardeeEmail } に電子メールが送信されました。"
+      ],
+      "Forwarding accepted": [
+        "転送を受け付けました"
+      ],
+      "Forwarding declined": [
+        "転送が拒否されました"
+      ],
+      "Forwarding deleted": [
+        "転送が削除されました"
+      ],
+      "Forwarding paused": [
+        "転送一時停止中"
+      ],
+      "Forwarding resumed": [
+        "転送再開"
+      ]
+    },
+    "email_forwarding_2023: Title": {
+      "Automatically forward emails to other accounts": [
+        "他のアカウントにメールを自動転送"
+      ],
+      "Delete forwarding?": [
+        "転送を削除しますか？"
+      ],
+      "Email forwarding deactivated": [
+        "メール転送が無効になりました"
+      ],
+      "Forwarding activated": [
+        "転送が有効化されました"
+      ],
+      "Request confirmation": [
+        "確認のリクエスト"
+      ],
+      "Set up forwarding": [
+        "転送の設定"
+      ]
+    },
+    "email_forwarding_2023: Warning": {
+      "Warning": [
+        "警告"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "2要素認証"
@@ -3162,6 +3463,9 @@
       ],
       "Contact signature not verified": [
         "連絡先の署名が検証されていません"
+      ],
+      "Could not save preference": [
+        "設定を保存できませんでした。"
       ],
       "Deselect at least ${ calendarsToFixCount } calendars": [
         "${ calendarsToFixCount } 件のカレンダーの選択を解除"
@@ -3231,6 +3535,9 @@
       ],
       "Incorrect password": [
         "パスワードが正しくありません"
+      ],
+      "Incorrect username": [
+        "ユーザー名に間違いがあります。"
       ],
       "Invalid ${ name } code": [
         "無効な ${ name } コードです"
@@ -3997,15 +4304,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "プレミアム Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "プレミアム Mail と Calendar"
-      ],
-      "Premium VPN": [
-        "プレミアム VPN"
-      ],
       "Up to 6 users": [
         "最大6人のユーザー"
       ]
@@ -4320,6 +4618,9 @@
       "Allow platform keys": [
         "プラットフォームキーを許可する"
       ],
+      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
+        "組み込みセキュリティキー (Windows Hello、Face ID、Touch ID、または内部TPMなど)を登録できます。"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "セキュリティキー ${ name } を削除してよろしいですか？"
       ],
@@ -4600,6 +4901,9 @@
       ],
       "Set up ${ strongText } from Gmail": [
         "Gmail から ${ strongText } を設定する"
+      ],
+      "This feature is currently unavailable": [
+        "この機能は現在ご利用いただけません。"
       ],
       "Update your logins": [
         "ログイン情報を更新する"
@@ -5150,7 +5454,7 @@
         "${ BRAND_NAME } は他のメールプロバイダーとの接続が失われたためインポートを一時停止しました。再接続してください。"
       ],
       "${ BRAND_NAME } paused an import because your account is running low on space. You can:": [
-        "アカウントの空き容量が少なくなっているため、${ BRAND_NAME } はインポートを一時停止しました。以下のことが可能です:"
+        "アカウントの空き容量が少なくなっているため、 ${ BRAND_NAME } はインポートを一時停止しました。以下のことが可能です:"
       ],
       "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "${ BRAND_NAME } は、メール プロバイダーがアカウントの ${ bandwidthLimitLink } をリセットするとすぐにインポートを再開しようとします。 何もする必要はありません。 インポートをキャンセルすると再開できなくなり、最初からやり直す必要があります。"
@@ -5174,7 +5478,7 @@
         "永久に ${ discountPercentage } 割引"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } はファイルの以前のバージョンを保持しなくなります。"
+        "${ DRIVE_APP_NAME }は以前のファイルバージョンを保存しなくなります。"
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } は無効です"
@@ -5383,9 +5687,6 @@
       "Align right": [
         "右揃え"
       ],
-      "All ${ BRAND_NAME } apps and their premium features": [
-        "すべての ${ BRAND_NAME } アプリとそのプレミアム機能"
-      ],
       "All (${ totalFoldersCount } folders)": [
         "すべて (${ totalFoldersCount } フォルダー)"
       ],
@@ -5584,6 +5885,9 @@
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "続行すると、${ BRAND_NAME } アカウントが ${ name } に接続されます。"
       ],
+      "Copy the link to clipboard": [
+        "リンクをコピー"
+      ],
       "Copy the suggested password to clipboard": [
         "提案されたパスワードをクリップボードにコピーする"
       ],
@@ -5663,7 +5967,7 @@
         "専用サーバー"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
-        "専用IPアドレスを持つ専用サーバーをプライベートゲートウェイに追加することで、きめ細かなアクセス制御が可能になります。"
+        "一つ(複数)の専用IPアドレスを持つ専用サーバーをプライベートゲートウェイに追加することで、きめ細かなアクセス制御が可能になります。"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "他の MX レコードを削除するか、他と比較して ${ MAIL_APP_NAME } の優先度が最も小さい値であることをご確認ください。"
@@ -6073,6 +6377,9 @@
       "Link deleted": [
         "リンクが削除されました"
       ],
+      "Link expired": [
+        "リンクの期限が切れました"
+      ],
       "Link type": [
         "リンクの種類"
       ],
@@ -6125,7 +6432,7 @@
         "3文字以上20文字以内。"
       ],
       "Must contain only letters, digits, and dashes (-).": [
-        "アルファベット、数字、ダッシュ（-）のみ。"
+        "アルファベット、数字、ダッシュ(-)のみ。"
       ],
       "Must not contain spaces.": [
         "スペースを含んではならない。"
@@ -6268,14 +6575,8 @@
       "per month, billed every 12 months": [
         "月額、12ヶ月ごとに請求"
       ],
-      "per month, billed every 15 months": [
-        "月額、15ヶ月ごとに請求"
-      ],
       "per month, billed every 24 months": [
         "月額、24ヶ月ごとに請求"
-      ],
-      "per month, billed every 30 months": [
-        "月額、30ヶ月ごとに請求"
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "送信メッセージに署名がある場合、ほとんどの PGP クライアントは PGP 鍵を自動検出します。"
@@ -6494,7 +6795,7 @@
         "組織の設定"
       ],
       "Settings update failed": [
-        "設定の更新に失敗しました"
+        "設定の更新が失敗しました"
       ],
       "Settings updated": [
         "設定が更新されました"
@@ -6510,6 +6811,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "あなたは忠実なユーザーですので、あなたのアカウントには追加機能が有効になっています。"
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "SMTP送信は、サードパーティのサービスやデバイスがあなたの独自ドメインアドレス用に${ MAIL_APP_NAME }を介してメールを送信することを許可します。この機能は、独自ドメインを持つ${ BRAND_NAME }のビジネスユーザーのみに利用可能です。"
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP 送信により、サードパーティのサービスまたはデバイスがカスタム ドメイン アドレスの ${ MAIL_APP_NAME } を介して電子メールを送信できるようになります。 アクセスをリクエストするには、ユースケース、使用したいカスタム ドメイン、および予想される時間ごとおよび日ごとの電子メールの量を説明する ${ createTicket } を送信してください。"
@@ -6680,10 +6984,10 @@
         "この操作により、現在の有料サブスクリプションがキャンセルされ、これまでに蓄積されたロイヤルティ特典が失われます。ご利用料金の残高分はアカウントクレジットとして返金されます。"
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "これにより、${ rententionLabel } よりも古いファイルの以前のバージョンがすべて削除されます。"
+        "これにより、${ rententionLabel }より古い以前のファイルバージョンがすべて削除されます。"
       ],
       "This will delete all previous versions of your files.": [
-        "これにより、以前のバージョンのファイルはすべて削除されます。"
+        "ファイルの以前のバージョンは全て削除されます。"
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "現在の回復用フレーズは無効になります。この回復用フレーズでアカウントにアクセスしたりデータを復元することはできなくなります。"
@@ -6845,7 +7149,7 @@
         "アップグレードして、アカウントにより短く共有しやすい @pm.me アドレスを追加します。これは \"私に ${ MAIL_APP_NAME } で\" と \"プライベートメッセージを私に\" という意味です。"
       ],
       "Upgrade to unlock": [
-        "アップグレードしてアンロック"
+        "アップグレードしてロックを解除"
       ],
       "Upload picture": [
         "写真をアップロード"
@@ -6918,6 +7222,9 @@
       ],
       "We generated a strong password for you": [
         "強力なパスワードを作成しました"
+      ],
+      "We just sent you a new link.": [
+        "ただいま新しいリンクを送信しました"
       ],
       "We need to authenticate your payment method with your bank.": [
         "お客様のお支払方法を銀行で認証する必要があります。"
@@ -7050,6 +7357,9 @@
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "認証サインインを有効にすると、自分のアカウントにいつ、どのIPからアクセスがあったかを確認することができます。アカウントにアクセスしたIPアドレスと時間、失敗した試行回数を記録します。"
+      ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
+        "プラン内の IP アドレス番号に ${ specificCountryCount } を追加することで、上記の設定をすぐに利用できます。特別な対応が必要な場合は私たちにご相談ください"
       ],
       "You can import one data type at a time.": [
         "1 回にインポートできるのは 1 種類のみです。"
@@ -7397,6 +7707,9 @@
       ],
       "Disabled": [
         "無効"
+      ],
+      "Forwarding": [
+        "転送"
       ],
       "Inactive": [
         "無効"
@@ -7887,6 +8200,9 @@
       "Conversation grouping": [
         "会話のグループ化"
       ],
+      "Conversations per page": [
+        "1ページあたりの会話数"
+      ],
       "Copy": [
         "コピー"
       ],
@@ -8174,6 +8490,9 @@
       ],
       "Message": [
         "メッセージ"
+      ],
+      "Messages per page": [
+        "1ページごとのメッセージ数"
       ],
       "Moderate NAT": [
         "モデレート NAT"
@@ -8502,6 +8821,9 @@
       "Verification code": [
         "認証コード"
       ],
+      "Verify keys with Key Transparency": [
+        "Key Transparencyでキーを確認する"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "今後の改善のため、アカウントを削除する理由をお聞かせください。"
       ],
@@ -8633,6 +8955,11 @@
       ],
       "Expired": [
         "有効期限切れ"
+      ]
+    },
+    "Label to  inform a feature is only available on Beta": {
+      "Beta": [
+        "ベータ版"
       ]
     },
     "Label to change composer mode": {
@@ -9307,6 +9634,9 @@
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "無制限の Hide-my-email エイリアス付きの ${ PASS_APP_NAME }"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME }プログラム"
+      ],
       "${ size } attachment size": [
         "${ size } の添付ファイル"
       ],
@@ -9327,9 +9657,6 @@
       ],
       "99.95% SLA": [
         "SLA 99.95%"
-      ],
-      "Ad-blocker & malware protection": [
-        "広告ブロッカーとマルウェアからの保護"
       ],
       "Admin console": [
         "管理者コンソール"
@@ -9508,6 +9835,12 @@
       "Sign in as user": [
         "ユーザーとしてサインイン"
       ],
+      "SMTP submission": [
+        "SMTP送信"
+      ],
+      "SMTP submission for select organizations": [
+        "一部の組織向けのSMTP送信"
+      ],
       "Split tunneling (Android and Windows)": [
         "スプリットトンネル (Android と Windows)"
       ],
@@ -9606,6 +9939,17 @@
         "チームマネジメント"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "トライアルは ${ formattedPeriodEndDate } に終了します"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 } で終わる ${ brand }"
@@ -9695,17 +10039,6 @@
         "現在ご契約中のプランでは、キャンペーン価格をご利用いただけます。アカウントをダウングレードすると、キャンペーン価格が適用されなくなります。"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "トライアルは ${ formattedPeriodEndDate } に終了します"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanMaxSpace } のうち ${ humanUsedSpace }"
@@ -9782,18 +10115,6 @@
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
-        "${ CALENDAR_APP_NAME }: エンドツーエンドで暗号化されたカレンダー"
-      ],
-      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
-        "${ DRIVE_APP_NAME }: エンドツーエンド暗号化クラウドストレージ"
-      ],
-      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
-        "${ MAIL_APP_NAME }: エンドツーエンド暗号化メール"
-      ],
-      "${ VPN_APP_NAME }: unblock content, browse privately": [
-        "${ VPN_APP_NAME }: コンテンツを自由にプライベートに閲覧する"
-      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "どこでも Netflix や Disney+ および Prime Video を含むストリーミングサービスにアクセスします"
       ],
@@ -9804,7 +10125,7 @@
         "同時に複数のネットワークにアクセスできます。たとえば、ローカルの検索結果を取得しながら、別の国から映画をストリーミングできます。"
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
-        "受信メッセージへの自動返信が可能になります"
+        "受信メッセージへの(自動)返信が可能になります"
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "現在、プロモーション目的やプログラム制御のメールの一括送信はサポートしていません。このような場合は、専用のメールサービスプロバイダーを使用することをおすすめします。"
@@ -9819,10 +10140,10 @@
         "${ n } 個までのカレンダーを作成または友人/家族/同僚/組織のカレンダーを追加"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
-        "最大 ${ n } 個の電子メール アドレス/エイリアスを作成し、家族に割り当てることができます。 これらはオンライン Id に使用します (例: ショッピングアカウントのJohnShopper@${ domain })。"
+        "最大 ${ n } 個の電子メール アドレス/エイリアスを作成し、家族に割り当てることができます。 これらはオンライン Id に使用します。\n例: ショッピングアカウントのJohnShopper@${ domain }。"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "専用IPアドレスを持つ専用サーバーをプライベートゲートウェイに追加することで、きめ細かなアクセス制御が可能になります。"
+        "一つ(複数)の専用IPアドレスを持つ専用サーバーをプライベートゲートウェイに追加することで、きめ細かなアクセス制御が可能になります。"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "複数のサーバーを経由してインターネットトラフィックを送受信することで、高度なプライバシー上の脅威からあなたを保護します"
@@ -9899,6 +10220,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "有害な Web サイトから家族を守り、高速 VPN サーバーにアクセスしてお気に入りのコンテンツをストリーミングしましょう"
       ],
+      "Provides the highest level of account security protection and specialist support": [
+        "最高レベルのアカウントセキュリティ保護と専門家サポートを提供します。"
+      ],
       "Quickly set up out-of-office messages": [
         "不在時のメッセージをすばやく設定する"
       ],
@@ -9928,6 +10252,9 @@
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
         "安全で共有可能なリンクを使用して、ファイルやフォルダを誰とでも共有できます"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTPは第三者のサービスやデバイスが${ MAIL_APP_NAME }を介してメールを送信できるようにします。"
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "特別に設計された NetShield は広告、トラッカー、マルウェアをブロックすることでデバイスを保護、ブラウジングを高速化します。"
@@ -9970,6 +10297,9 @@
       ]
     },
     "new_plans: upgrade": {
+      "Included with ${ BRAND_NAME } for Business, ${ familyPlanName } and ${ mailProPlanName }.": [
+        "${ BRAND_NAME } for Business、${ familyPlanName }、および${ mailProPlanName }に含まれています。"
+      ],
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "${ plus }、${ bundle }、${ BRAND_NAME } for Business に含まれます。"
       ],
@@ -10057,6 +10387,9 @@
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "フィンガープリント ${ fp } の鍵が削除されました。"
+      ],
+      "Link copied to clipboard": [
+        "クリップボードにリンクがコピーされました"
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 認証情報を更新しました"
@@ -10524,6 +10857,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ appName } benefits": [
+        "${ appName }の利点"
+      ],
       "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
         "${ PASS_APP_NAME } は、Firefox アドオンのブラウザ拡張機能として利用できます。"
       ],
@@ -10619,12 +10955,6 @@
       ],
       "per month, billed annually": [
         "月払い、年払い"
-      ],
-      "per month, billed every 15 months": [
-        "月額、15ヶ月ごとに請求"
-      ],
-      "per month, billed every 30 months": [
-        "月額、30ヶ月ごとに請求"
       ],
       "per month, billed every month": [
         "月額、毎月請求"
@@ -11066,6 +11396,284 @@
         "作成される"
       ]
     },
+    "session_recovery:available:action": {
+      "Cancel password reset": [
+        "パスワードリセットをキャンセルする"
+      ],
+      "Cancel reset": [
+        "リクエストのキャンセル　"
+      ],
+      "Reset password": [
+        "パスワードのリセット"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "旧式のアドレスキーに対してはアカウントの回復が利用できません。"
+      ],
+      "Please generate keys before you try to change your password": [
+        "パスワードを変更する前に、キーを生成してください。"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } days": [
+        "${ timeRemaining.inDays } 日"
+      ],
+      "${ timeRemaining.inHours } hours": [
+        "${ timeRemaining.inHours }時間"
+      ],
+      "Didn’t make this request?": [
+        "この要求を行っていませんか？"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "パスワードのリセットを要求していない場合、要求をキャンセルしてください。"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } days to reset your password.": [
+        "パスワードリセットリクエストが承認されました(${ user.Email })。パスワードをリセットできるのはあと${ timeRemaining.inDays }日です。"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hours to reset your password.": [
+        "パスワードリセットのリクエストが承認されました(${ user.Email })。パスワードをリセットできる時間は残り${ timeRemaining.inHours }時間あります。"
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "サインインしているデバイス (パスワード変更の要求がされたデバイス)に移動して、パスワードを変更してください。"
+      ],
+      "This permission expires in ${ timeRemaining.inDays } days": [
+        "この許可はあと${ timeRemaining.inDays }日で期限切れになります。"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hours": [
+        "この許可はあと${ timeRemaining.inHours }時間で期限切れになります。"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "アカウント ${ boldEmail } のパスワードを、あと ${ boldDaysRemaining } 日間は自由に変更可能です。"
+      ],
+      "You can now reset your password": [
+        "現在、パスワードをリセットできます"
+      ],
+      "You can reset your password until ${ boldDate }.": [
+        "${ boldDate }までパスワードをリセットできます。"
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "方法の確認"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "パスワードが保存されました。"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "パスワードをリセットしてください"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "パスワードリセットを取り消す"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "パスワードリセットのプロセスをキャンセルするには、現在のパスワードを入力してください。他に変更は適用されません。"
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "パスワードリセットが取り消されました"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "パスワードリセットを取り消しますか？"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "パスワードリセットのリクエストがキャンセルされました(${ user.Email })。もしリクエストを行っていない場合、${ changePasswordLink }。"
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "今すぐパスワードを変更してください。"
+      ]
+    },
+    "session_recovery:disable:action": {
+      "Disable password reset": [
+        "パスワードリセットを無効にします"
+      ]
+    },
+    "session_recovery:disable:info": {
+      "Make sure you have access to a recovery method.": [
+        "復旧方法へのアクセスができることを確認してください。"
+      ],
+      "You will no longer be able to request a password reset from your account settings.": [
+        "アカウント設定からパスワードリセットの要求を行うことはできなくなります。"
+      ]
+    },
+    "session_recovery:disable:title": {
+      "Disable password reset?": [
+        "パスワードリセットを無効にしますか？"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel password reset": [
+        "パスワードリセットをキャンセルする"
+      ],
+      "Cancel request": [
+        "リクエストの取り消し"
+      ],
+      "Got it": [
+        "了解"
+      ],
+      "Learn more": [
+        "詳細"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hours": [
+        "あと${ gracePeriodHoursRemaining }時間"
+      ],
+      "Didn’t make this request?": [
+        "この要求は行っていませんか？"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "あなたがパスワードのリセットを要求していない場合、すぐに要求をキャンセルしてください。"
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "パスワードをリセットするように要求していない場合、このリクエストを今すぐキャンセルしてください。"
+      ],
+      "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
+        "${ boldDate }からパスワードリセットが可能です。これにより、不正な要求をキャンセルするための時間が与えられます。"
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hours.": [
+        "パスワードリセットがリクエストされました(${ user.Email })。パスワードを変更できるのはあと${ hoursRemaining }時間後です。"
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "パスワードをリセットしようとしているのが本当にあなたであることを確認するために、リクエストを承認する前に72時間待っています。パスワードを変更できるのはあと${ boldTimeLeft }です。${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "${ boldEmail }のパスワードリセットリクエストを受け取りました。"
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hours": [
+        "${ gracePeriodHoursRemaining } 時間後にパスワードを変更できます"
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "リクエストの確認"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "パスワード再設定リクエスト"
+      ]
+    },
+    "session_recovery:initiation:action": {
+      "Got it": [
+        "了解"
+      ],
+      "Request password reset": [
+        "パスワードリセットのリクエストを送信します。"
+      ],
+      "Use recovery method": [
+        "リカバリーメソッドを使用してください。"
+      ]
+    },
+    "session_recovery:initiation:info": {
+      "For security reasons, you’ll have to wait **72 hours** before you can change your password.": [
+        "セキュリティの理由から、パスワードを変更する前に**72時間**待たなければなりません。"
+      ],
+      "If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.": [
+        "**リカバリーメソッド**を設定している場合、アカウントの回復を試してみてください。これにより、直ちにパスワードを変更できます。"
+      ],
+      "We will contact you again when the password reset is available.": [
+        "パスワードリセットが利用可能になった際に、再度ご連絡いたします。"
+      ],
+      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
+        "いつでも設定の${ accountAndPasswordSectionLink }でリクエストのステータスを確認できます。"
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "account and password section": [
+        "アカウントとパスワードセクション"
+      ]
+    },
+    "session_recovery:initiation:notification": {
+      "Password reset confirmed": [
+        "パスワードリセットが確認されました。"
+      ]
+    },
+    "session_recovery:initiation:title": {
+      "Request password reset?": [
+        "パスワードリセットをリクエストしますか？"
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hours": [
+        "${ gracePeriodHoursRemaining } 時間後にパスワードをリセットできるようになります"
+      ]
+    },
+    "session_recovery:settings:action": {
+      "Allow password reset from settings": [
+        "設定からパスワードリセットを許可する"
+      ],
+      "Request a password reset from your Account settings. No recovery method needed.": [
+        "アカウント設定からパスワードリセットを要求してください。復旧方法は必要ありません。"
+      ],
+      "Request password reset": [
+        "パスワードリセットを要求する"
+      ],
+      "To disallow password reset, you must have a recovery method set up.": [
+        "パスワードリセットを禁止するには、復旧方法を設定する必要があります"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "サインアウト"
+      ],
+      "Stay signed in": [
+        "サインインを維持"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hours": [
+        "${ gracePeriodHoursRemaining } 時間"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } が現在利用可能です。"
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "パスワードをリセットする前にサインアウトすると、アカウントへのアクセスを失う可能性があります。"
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "パスワードをリセットせずにサインアウトすると、アカウントへのアクセスが失われる可能性があります"
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "パスワードをリセットできるのはあと ${ boldTimeLeft } です。"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "パスワードのリセット"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "パスワードリセットせずにサインアウトしますか？"
+      ]
+    },
+    "session_recovery:status:info": {
+      "Available": [
+        "利用可能"
+      ],
+      "Pending": [
+        "保留中"
+      ]
+    },
+    "session_recovery:status:title": {
+      "Password reset request": [
+        "パスワードリセット要求"
+      ]
+    },
     "Settings description": {
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "安全なインポート・転送ツールで、プライバシーに移行しましょう。"
@@ -11232,9 +11840,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "合計 ${ storageSize } のストレージ"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -11256,15 +11861,6 @@
       "Premium early access": [
         "プレミアム早期アクセス"
       ],
-      "Premium Mail and Calendar": [
-        "プレミアム Mail と Calendar"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "プレミアム Mail、Calendar、Drive"
-      ],
-      "Premium VPN": [
-        "プレミアム VPN"
-      ],
       "Secure cloud storage": [
         "安全なクラウドストレージ"
       ],
@@ -11276,9 +11872,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "割引は標準の月額料金に基づいて計算されます。"
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "サブスクリプションはキャンセルされるまで2年ごとに同じ割引率で自動更新されます。"
       ]
@@ -11337,9 +11930,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "30 か月毎に ${ amount } の支払い"
-      ],
-      "for ${ n } months": [
-        "${ n } か月間"
       ],
       "Get the deal": [
         "割引を入手"
@@ -11408,9 +11998,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "すべてのプレミアムサービスを高い自由度で利用できます。100 件のメールアドレス、10 件の独自ドメイン対応、無制限の hide-my-email エイリアス、カレンダー共有、暗号化クラウドストレージとファイル共有など。"
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "1 件の独自メールドメイン対応、10 件のメールアドレス、10 件の hide-my-email エイリアス、カレンダー共有などが含まれます。"
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "3 件の独自メールドメイン対応、15 件のメールアドレス、無制限の hide-my-email エイリアス、カレンダー共有などが含まれます。"
       ],
@@ -11422,9 +12009,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "暗号化クラウドストレージでファイルの安全を保ちます。自動同期、暗号化ファイル共有などが含まれます。"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます。"
       ]
     },
     "Spotlight": {
@@ -11490,14 +12074,8 @@
       ]
     },
     "Subscription": {
-      "Billed every 15 months": [
-        "15ヶ月ごとに請求"
-      ],
       "Billed every 2 years": [
         "2年ごとに請求"
-      ],
-      "Billed every 30 months": [
-        "30ヶ月ごとに請求"
       ],
       "Billed monthly": [
         "毎月請求"
@@ -11885,24 +12463,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "プレミアム Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "プレミアム Mail と Calendar"
-      ],
       "Premium Password Manager": [
         "プレミアムパスワードマネージャー"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "安全にパスワードを保存し、ウェブサイト上で自動入力します。無制限のパスワード、自動入力、パスワード生成などが含まれています。"
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "パスワードマネージャー"
       ]
     },
     "summer2023: Tooltip": {
@@ -12164,6 +12726,9 @@
       "Add users": [
         "ユーザー追加"
       ],
+      "Address and key verification": [
+        "アドレスとキー認証"
+      ],
       "Allocate storage": [
         "ストレージを割り当てる"
       ],
@@ -12196,6 +12761,9 @@
       ],
       "Auto-reply": [
         "自動返信"
+      ],
+      "Auto-reply and forward": [
+        "自動返信と転送"
       ],
       "Automatically sign outgoing messages?": [
         "送信メッセージに自動で署名しますか?"
@@ -12524,6 +13092,9 @@
       "Folders and labels": [
         "フォルダーとラベル"
       ],
+      "Forward emails": [
+        "メールを転送する"
+      ],
       "Gateways": [
         "ゲートウェイ"
       ],
@@ -12685,6 +13256,9 @@
       ],
       "Password and keys": [
         "パスワードと鍵"
+      ],
+      "Password reset": [
+        "パスワードリセット"
       ],
       "Pay invoice": [
         "請求の支払い"
@@ -13220,6 +13794,9 @@
       "This feature is only available for paid users": [
         "この機能は課金ユーザーのみが利用できます"
       ],
+      "This feature is only available on Beta": [
+        "この機能はベータ版でのみ利用可能です"
+      ],
       "This key cannot be used for encryption": [
         "この鍵は暗号化に使用できません"
       ],
@@ -13228,6 +13805,9 @@
       ],
       "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
         "このキーは連絡先データを暗号化するのに ${ MAIL_APP_NAME } で使用されています"
+      ],
+      "This key is used for email forwarding": [
+        "このキーはメール転送に使用されます。"
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "ブラウザのデフォルトのスクロールバーを使用します。これは通常、大きくて使いやすいです。"
@@ -13264,11 +13844,6 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "外部アカウントが 24 時間の帯域幅制限に達している可能性があります。 ${ BRAND_NAME } は、できるだけ早くインポートを再開しようとします。"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
-        "${ PASS_APP_NAME }: エンドツーエンドの暗号化パスワード マネージャー"
       ]
     },
     "Tooltip automatically attach public key": {
