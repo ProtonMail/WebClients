@@ -17,7 +17,7 @@ import DriveWindow from '../components/layout/DriveWindow';
 import DriveStartupModals from '../components/modals/DriveStartupModals';
 import GiftFloatingButton from '../components/onboarding/GiftFloatingButton';
 import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
-import { DriveProvider, useDefaultShare, useDriveEventManager, useSearchControl } from '../store';
+import { DriveProvider, useDefaultShare, useDriveEventManager, usePhotosFeatureFlag, useSearchControl } from '../store';
 import DevicesContainer from './DevicesContainer';
 import FolderContainer from './FolderContainer';
 import OnboardingContainer from './OnboardingContainer';
@@ -46,6 +46,7 @@ const InitContainer = () => {
     const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
     const { searchEnabled } = useSearchControl();
     const driveEventManager = useDriveEventManager();
+    const isPhotosEnabled = usePhotosFeatureFlag();
 
     useEffect(() => {
         const initPromise = getDefaultShare()
@@ -104,7 +105,7 @@ const InitContainer = () => {
                     <Route path="/devices" component={DevicesContainer} />
                     <Route path="/trash" component={TrashContainer} />
                     <Route path="/shared-urls" component={SharedURLsContainer} />
-                    <Route path="/photos" component={PhotosContainer} />
+                    {isPhotosEnabled && <Route path="/photos" component={PhotosContainer} />}
                     {searchEnabled && <Route path="/search" component={SearchContainer} />}
                     <Route path="/:shareId?/:type/:linkId?" component={FolderContainer} />
                     <Redirect to={`/${defaultShareRoot?.shareId}/folder/${defaultShareRoot?.linkId}`} />
