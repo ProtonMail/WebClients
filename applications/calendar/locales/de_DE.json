@@ -768,6 +768,76 @@
         "Optional"
       ]
     },
+    "bf2023: Deal details": {
+      "${ storageSize } storage": [
+        "${ storageSize } Speicherplatz"
+      ],
+      "1 user": [
+        "1 Benutzer"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "3,000+ servers across 65+ countries": [
+        "Mehr als 3.000 Server verteilt über 65 Länder"
+      ],
+      "6 users": [
+        "6 Benutzer"
+      ],
+      "Ad-blocker and malware protection": [
+        "Werbeblocker & Malware-Schutz"
+      ],
+      "Extended version history": [
+        "Erweiterter Versionsverlauf"
+      ],
+      "Fast BitTorrent downloads": [
+        "Schnelle BitTorrent-Downloads"
+      ],
+      "High speed streaming": [
+        "Hochgeschwindigkeits-Steaming"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium-${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium-${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium-${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Premium Passwort-Manager"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "Greife auf blockierte Inhalte zu und surfe privat. Enthält über 3.000 Server verteilt über 65 Länder, höchste VPN-Geschwindigkeiten, weltweite Streaming-Dienste, Malware- und Werbeblocker, schnelle BitTorrent-Downloads und mehr."
+      ],
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Greife von überall aus auf Inhalte von Streaming-Diensten zu, darunter Netflix, Disney+, Prime Video und andere."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
+        "Beinhaltet Unterstützung für ${ domains } eigene E-Mail-Domains, ${ addresses } E-Mail-Adressen, ${ aliases } hide-my-email-Aliasse, Kalenderfreigabe und mehr."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Beinhaltet Unterstützung für ${ domains } eigene E-Mail-Domains, ${ addresses } E-Mail-Adressen, unbegrenzte hide-my-email-Aliasse, Kalenderfreigabe und mehr."
+      ],
+      "Secure logins on all your devices. Includes unlimited aliases, sharing, vaults, integrated 2FA and more.": [
+        "Sichere Anmeldungen auf all deinen Geräten. Mit unbegrenzten Aliassen, Freigaben, Tresoren, integrierter 2FA und mehr."
+      ],
+      "Secure your files, folders and photos with end-to-end and zero-access encryption. Includes version history, encrypted file sharing, and more.": [
+        "Sichere deine Dateien, Ordner und Fotos mit Ende-zu-Ende- und Zero-Access-Verschlüsselung. Enthält Versionsverläufe, verschlüsselte Dateifreigaben und mehr."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Das speziell entwickelte NetShield schützt deine Geräte und beschleunigt das Surfen durch das Blockieren von Werbung, Trackern und Malware."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "Der Speicherplatz wird von allen ${ BRAND_NAME }-Apps gemeinsam genutzt."
+      ],
+      "Store up to 200 versions of each file for up to 10 years.": [
+        "Speichere bis zu 200 Versionen jeder Datei für bis zu 10 Jahre."
+      ]
+    },
     "Billing cycle option": {
       "Annually": [
         "Jährlich"
@@ -2950,15 +3020,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Premium-Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Premium Mail und Calendar"
-      ],
-      "Premium VPN": [
-        "Premium-VPN"
-      ],
       "Up to 6 users": [
         "Bis zu 6 Benutzer"
       ]
@@ -3663,6 +3724,9 @@
       ],
       "Contact unassigned to group ${ contactGroupName }": [
         "Zuweisung des Kontaktes für Gruppe ${ contactGroupName } entfernt."
+      ],
+      "Copy the link to clipboard": [
+        "Link in die Zwischenablage kopieren"
       ],
       "Country code": [
         "Ländercode"
@@ -5100,6 +5164,9 @@
       ],
       "Contact group updated": [
         "Kontaktgruppe aktualisiert"
+      ],
+      "Link copied to clipboard": [
+        "Link in die Zwischenablage kopiert"
       ]
     },
     "Notification in holidays calendar modal": {
@@ -5576,6 +5643,9 @@
       ]
     },
     "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "Kontowiederherstellung für ältere Adressschlüssel ist nicht verfügbar"
+      ],
       "Please generate keys before you try to change your password": [
         "Bitte generiere Schlüssel, bevor du versuchst dein Passwort zu ändern."
       ]
@@ -5654,7 +5724,7 @@
     },
     "session_recovery:cancelled:link": {
       "change your password now": [
-        "Passwort jetzt ändern"
+        "ändere jetzt dein Passwort"
       ]
     },
     "session_recovery:in_progress:action": {
@@ -5717,7 +5787,7 @@
         "Wenn du dich abmeldest, bevor du dein Passwort zurücksetzt, kannst du den Zugang zu deinem Konto verlieren."
       ],
       "If you sign out without resetting your password, you could lose access to your account.": [
-        "Wenn du dich abmeldest, bevor du dein Passwort zurücksetzt, kannst du den Zugang zu deinem Konto verlieren."
+        "Wenn du dich abmeldest, ohne dass du dein Passwort zurücksetzt, kannst du den Zugang zu deinem Konto verlieren."
       ],
       "You will be able to reset your password in ${ boldTimeLeft }.": [
         "Du kannst dein Passwort in ${ boldTimeLeft } zurücksetzen."
@@ -5725,7 +5795,7 @@
     },
     "session_recovery:sign_out:link": {
       "Password reset": [
-        "Passwort zurückgesetzt"
+        "Passwort zurücksetzen"
       ]
     },
     "session_recovery:sign_out:title": {
@@ -5831,9 +5901,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "${ storageSize } Speicherplatz insgesamt"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -5855,15 +5922,6 @@
       "Premium early access": [
         "Premium-frühzeitiger Zugang"
       ],
-      "Premium Mail and Calendar": [
-        "Premium Mail und Calendar"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "Premium-Mail, Calendar und Drive"
-      ],
-      "Premium VPN": [
-        "Premium-VPN"
-      ],
       "Secure cloud storage": [
         "Sicherer Cloud-Speicher"
       ],
@@ -5875,9 +5933,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "Rabatte werden auf Grundlage des monatlichen Standardpreises berechnet."
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Dieses Abonnement verlängert sich alle zwei Jahre automatisch, bis es gekündigt wird."
       ]
@@ -5908,6 +5963,10 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } Monat",
+        "${ n } Monate"
+      ],
       "/ month": [
         "/ Monat"
       ],
@@ -5931,10 +5990,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Für 30 Monate mit ${ amount } abgerechnet"
-      ],
-      "for ${ n } month": [
-        "für ${ n } Monat",
-        "für ${ n } Monate"
       ],
       "Get the deal": [
         "Jetzt zugreifen"
@@ -6003,9 +6058,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Alle unsere Premium-Services mit ihren höchsten Limits: 100 E-Mail-Adressen, Unterstützung für 10 eigene Domains, unbegrenzte Hide-my-email-Aliasse, Kalenderfreigabe, verschlüsselter Cloud-Speicher und Dateifreigabe, und vieles mehr."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Beinhaltet Unterstützung für eine eigene E-Mail-Domain, 10 E-Mail-Adressen, 10 Hide-my-email-Aliasse, Kalenderfreigabe und mehr."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Beinhaltet Unterstützung für 3 eigene E-Mail-Domains, 15 E-Mail-Adressen, unbegrenzte Hide-my-email-Aliasse, Kalenderfreigabe und mehr."
       ],
@@ -6017,9 +6069,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Beinhaltet automatische Synchronisierung, verschlüsselte Dateifreigabe und mehr."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
       ]
     },
     "Spotlight": {
@@ -6103,9 +6152,6 @@
       ],
       "Calendar information updated": [
         "Kalenderinformationen aktualisiert"
-      ],
-      "Calendar search activated": [
-        "Kalendersuche aktiviert"
       ],
       "Calendar updated": [
         "Kalender aktualisiert"
@@ -6229,24 +6275,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "Premium-Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Premium Mail und Calendar"
-      ],
       "Premium Password Manager": [
         "Premium-Passwortmanager"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Speichere deine Passwörter sicher und lasse sie automatisch auf Websites einfügen. Beinhaltet unbegrenzte Passwörter, automatisches Einfügen, Passwortgenerator und mehr."
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "Passwort-Manager"
       ]
     },
     "summer2023: Tooltip": {
