@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { useLoading } from '@proton/hooks';
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
+import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { isIgnoredError } from '../../utils/errorHandling';
@@ -62,6 +63,7 @@ function useFileViewBase(
     const [link, setLink] = useState<DecryptedLink>();
     const [contents, setContents] = useState<Uint8Array[]>();
     const [contentsMimeType, setContentsMimeType] = useState<string>();
+    const [isFallbackContents, setIsFallbackContents] = useState<boolean>(false);
 
     const preloadFile = async (abortSignal: AbortSignal) => {
         const link = await getLink(abortSignal, shareId, linkId);
@@ -87,9 +89,10 @@ function useFileViewBase(
 
             setContents(await streamToBuffer(stream));
             // Fallback is only available for photos in private context
-        } else if (!!link.activeRevision?.photo && getPreviewThumbnail) {
+        } else if (!!link.activeRevision?.photo && getPreviewThumbnail && !isVideo(link.mimeType)) {
             // We force jpg type as thumbnails are always jpg for photos
             setContentsMimeType(SupportedMimeTypes.jpg);
+            setIsFallbackContents(true);
             try {
                 const previewThumbnail = await getPreviewThumbnail(abortSignal, shareId, linkId);
                 setContents(previewThumbnail);
@@ -129,7 +132,7 @@ function useFileViewBase(
             {
                 ...link,
                 shareId,
-                buffer: contents,
+                buffer: isFallbackContents ? undefined : contents,
             },
         ]);
     }, [shareId, link, contents]);
