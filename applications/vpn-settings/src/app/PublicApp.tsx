@@ -16,6 +16,7 @@ import {
     ProtonLoginCallback,
     UnAuthenticated,
     UnAuthenticatedApiProvider,
+    UnleashFlagProvider,
 } from '@proton/components';
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
 import ModalsChildren from '@proton/components/containers/modals/Children';
@@ -62,71 +63,73 @@ const InnerPublicApp = ({ onLogin, loader, location }: InnerPublicAppProps) => {
         <>
             <ModalsChildren />
             <UnAuthenticatedApiProvider loader={loader}>
-                <FeaturesProvider>
-                    <ExperimentsProvider>
-                        <ForceRefreshContext.Provider value={refresh}>
-                            <UnAuthenticated>
-                                <Switch location={location}>
-                                    <Route path="/reset-password">
-                                        <AccountResetPasswordContainer
-                                            metaTags={resetPasswordPage()}
-                                            loginUrl={paths.login}
-                                            setupVPN={false}
-                                            toApp={APPS.PROTONVPN_SETTINGS}
-                                            onLogin={async (...args) => onLogin(...args)}
+                <UnleashFlagProvider>
+                    <FeaturesProvider>
+                        <ExperimentsProvider>
+                            <ForceRefreshContext.Provider value={refresh}>
+                                <UnAuthenticated>
+                                    <Switch location={location}>
+                                        <Route path="/reset-password">
+                                            <AccountResetPasswordContainer
+                                                metaTags={resetPasswordPage()}
+                                                loginUrl={paths.login}
+                                                setupVPN={false}
+                                                toApp={APPS.PROTONVPN_SETTINGS}
+                                                onLogin={async (...args) => onLogin(...args)}
+                                            />
+                                        </Route>
+                                        <Route path="/forgot-username">
+                                            <AccountForgotUsernameContainer
+                                                metaTags={forgotUsernamePage()}
+                                                loginUrl={paths.login}
+                                            />
+                                        </Route>
+                                        <Route path="/pre-invite/:selector/:token">
+                                            <AccountSignupInviteContainer
+                                                loader={loader}
+                                                clientType={CLIENT_TYPES.VPN}
+                                                onValid={(inviteData) =>
+                                                    history.replace({
+                                                        pathname: paths.signup,
+                                                        state: { invite: inviteData },
+                                                    })
+                                                }
+                                                onInvalid={() => history.push(paths.signup)}
+                                            />
+                                        </Route>
+                                        <Route path={['/pricing', '/signup']}>
+                                            <AccountSingleSignupContainer
+                                                metaTags={signupPage()}
+                                                toApp={APPS.PROTONVPN_SETTINGS}
+                                                loader={loader}
+                                                productParam={APPS.PROTONVPN_SETTINGS}
+                                                clientType={CLIENT_TYPES.VPN}
+                                                onLogin={async (args) =>
+                                                    onLogin({
+                                                        ...args,
+                                                        path: '/downloads?prompt',
+                                                    })
+                                                }
+                                            />
+                                        </Route>
+                                        <Route path="/login">
+                                            <LoginContainer metaTags={loginPage()} onLogin={onLogin} paths={paths} />
+                                        </Route>
+                                        <Redirect
+                                            to={{
+                                                pathname: paths.login,
+                                                state: {
+                                                    ...(typeof location.state === 'object' ? location.state : {}),
+                                                    from: location,
+                                                },
+                                            }}
                                         />
-                                    </Route>
-                                    <Route path="/forgot-username">
-                                        <AccountForgotUsernameContainer
-                                            metaTags={forgotUsernamePage()}
-                                            loginUrl={paths.login}
-                                        />
-                                    </Route>
-                                    <Route path="/pre-invite/:selector/:token">
-                                        <AccountSignupInviteContainer
-                                            loader={loader}
-                                            clientType={CLIENT_TYPES.VPN}
-                                            onValid={(inviteData) =>
-                                                history.replace({
-                                                    pathname: paths.signup,
-                                                    state: { invite: inviteData },
-                                                })
-                                            }
-                                            onInvalid={() => history.push(paths.signup)}
-                                        />
-                                    </Route>
-                                    <Route path={['/pricing', '/signup']}>
-                                        <AccountSingleSignupContainer
-                                            metaTags={signupPage()}
-                                            toApp={APPS.PROTONVPN_SETTINGS}
-                                            loader={loader}
-                                            productParam={APPS.PROTONVPN_SETTINGS}
-                                            clientType={CLIENT_TYPES.VPN}
-                                            onLogin={async (args) =>
-                                                onLogin({
-                                                    ...args,
-                                                    path: '/downloads?prompt',
-                                                })
-                                            }
-                                        />
-                                    </Route>
-                                    <Route path="/login">
-                                        <LoginContainer metaTags={loginPage()} onLogin={onLogin} paths={paths} />
-                                    </Route>
-                                    <Redirect
-                                        to={{
-                                            pathname: paths.login,
-                                            state: {
-                                                ...(typeof location.state === 'object' ? location.state : {}),
-                                                from: location,
-                                            },
-                                        }}
-                                    />
-                                </Switch>
-                            </UnAuthenticated>
-                        </ForceRefreshContext.Provider>
-                    </ExperimentsProvider>
-                </FeaturesProvider>
+                                    </Switch>
+                                </UnAuthenticated>
+                            </ForceRefreshContext.Provider>
+                        </ExperimentsProvider>
+                    </FeaturesProvider>
+                </UnleashFlagProvider>
             </UnAuthenticatedApiProvider>
         </>
     );
