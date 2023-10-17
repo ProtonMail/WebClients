@@ -1994,15 +1994,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Drive premium"
-      ],
-      "Premium Mail and Calendar": [
-        "Premium Mail e Calendar"
-      ],
-      "Premium VPN": [
-        "VPN premium"
-      ],
       "Up to 6 users": [
         "Até 6 utilizadores"
       ]
@@ -2627,9 +2618,6 @@
       "Admin account allocation": [
         "Alocação da conta do administrador"
       ],
-      "All ${ BRAND_NAME } apps and their premium features": [
-        "Todas as aplicações ${ BRAND_NAME } e os seus recursos premium"
-      ],
       "All your changes will be lost.": [
         "Todas as suas alterações serão perdidas."
       ],
@@ -3082,14 +3070,8 @@
       "per month, billed every 12 months": [
         "por mês, faturado a cada 12 meses"
       ],
-      "per month, billed every 15 months": [
-        "por mês, faturado a cada 15 meses"
-      ],
       "per month, billed every 24 months": [
         "por mês, faturado a cada 24 meses"
-      ],
-      "per month, billed every 30 months": [
-        "por mês, faturado a cada 30 meses"
       ],
       "Plan upgrade required": [
         "Actualização do plano obrigatória"
@@ -4530,9 +4512,6 @@
       "99.95% SLA": [
         "SLA de 99,95%"
       ],
-      "Ad-blocker & malware protection": [
-        "Bloqueio de anúncios e proteção contra malware"
-      ],
       "Admin console": [
         "Consola de administração"
       ],
@@ -4940,18 +4919,6 @@
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
-        "${ CALENDAR_APP_NAME }: calendário encriptado de ponta a ponta"
-      ],
-      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
-        "${ DRIVE_APP_NAME }: armazenamento na nuvem encriptado de ponta a ponta"
-      ],
-      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
-        "${ MAIL_APP_NAME }: e-mail encriptado de ponta a ponta"
-      ],
-      "${ VPN_APP_NAME }: unblock content, browse privately": [
-        "${ VPN_APP_NAME }: desbloqueie conteúdos e navegue em privado"
-      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Aceda a conteúdos em serviços de streaming, incluindo Netflix, Disney+ e Prime Video, a partir de qualquer lugar"
       ],
@@ -5017,7 +4984,7 @@
         "Tal como uma pasta, um cofre e é uma forma prática de organizar os seus itens. A partilha de cofres com amigos e familiares está a ser preparada."
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
-        "Bloqueie os seus recursos de empresa da internet pública e torne-os acessíveis apenas através dos seus gateways privados"
+        "Bloqueie os recursos da sua empresa da Internet pública e torne-os acessíveis apenas através dos seus gateways privados"
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Gere a sua subscrição, incluindo a personalização do seu plano. Os métodos de pagamento aceites são cartão de crédito, PayPal, criptomoeda e transferência bancária."
@@ -5026,7 +4993,7 @@
         "Nos dias úteis, a equipa de apoio ao cliente de ${ BRAND_NAME } irá ajudá-lo no prazo de 24 horas após o seu pedido."
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Uma ligação VPN permite que um dispositivo se ligue a ${ BRAND_NAME } VPN ea qualquer momento. Por exemplo, para ligar um telefone e um computador portátil à ${ BRAND_NAME_TWO } VPN ao mesmo tempo, são necessárias duas ligações VPN."
+        "Uma ligação VPN permite que um dispositivo se ligue a ${ BRAND_NAME } VPN em qualquer altura. Por exemplo, para ligar um telemóvel e um computador portátil à ${ BRAND_NAME_TWO } VPN ao mesmo tempo, são necessárias duas ligações VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opção para ver as caixas de entrada de utilizadores não privados como o utilizador faria, incluindo todas as mensagens e detalhes de contacto"
@@ -5107,13 +5074,13 @@
         "Suporte para protocolos de partilha de ficheiros, como o BitTorrent"
       ],
       "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Endereços de e-mail únicos e a pedido que protegem a sua identidade em linha e lhe dão um maior controlo sobre as mensagens que chegam à sua caixa de entrada. SimpleLogin por ${ BRAND_NAME }."
+        "Endereços de e-mail únicos e instantâneos que protegem a sua identidade online e permitem-lhe controlar o que aparece na sua caixa de entrada. Do SimpleLogin por ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Utilize os seus próprios endereços de domínio de e-mail personalizado. Por exemplo: você@oseunome.pt"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        "Não mantemos registos de utilização de sessões do que faz em linha e não registamos metadados que possam comprometer a sua privacidade."
+        "Não mantemos registos de utilização de sessões do que faz online e não registamos metadados que possam comprometer a sua privacidade."
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
         "Estamos empenhados em ajudar os clientes sujeitos aos regulamentos HIPAA/HITECH a salvaguardar as informações de saúde protegidas (PHI). Estão disponíveis BAAs assinados para todos os clientes ${ BRAND_NAME } para empresas."
@@ -5187,7 +5154,7 @@
         "Gateways privados"
       ],
       "Require 2FA": [
-        "Requerer 2FA"
+        "Requer A2F"
       ]
     },
     "Notification": {
@@ -5610,9 +5577,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "${ storageSize } de armazenamento total"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -5634,15 +5598,6 @@
       "Premium early access": [
         "Acesso antecipado premium"
       ],
-      "Premium Mail and Calendar": [
-        "Premium Mail e Calendar"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "Mail, Calendar e Drive premium"
-      ],
-      "Premium VPN": [
-        "VPN premium"
-      ],
       "Secure cloud storage": [
         "Armazenamento seguro na nuvem"
       ],
@@ -5654,9 +5609,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "Os descontos baseiam-se no preço mensal normal."
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Esta subscrição será renovada automaticamente a cada 2 anos ao mesmo preço até ser cancelada."
       ]
@@ -5710,10 +5662,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Faturado a ${ amount } durante 30 meses"
-      ],
-      "for ${ n } month": [
-        "por ${ n } mês.",
-        "por ${ n } meses."
       ],
       "Get the deal": [
         "Obtenha a promoção"
@@ -5782,9 +5730,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Todos os nossos serviços premium com os limites mais altos: 100 endereços de e-mail, suporte para 10 domínios personalizados, aliases ilimitados do Hide-my-email, partilha de calendário, armazenamento encriptado na nuvem e partilha de ficheiros e muito mais."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Inclui o suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases Hide-my-email, partilha de calendário e muito mais."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Inclui o suporte para 3 domínios de e-mail personalizados, 15 endereços de e-mail, aliases ilimitados do Hide-my-email, partilha de calendário e muito mais."
       ],
@@ -5796,9 +5741,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui sincronização automática, partilha de ficheiros encriptados e muito mais."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "O espaço de armazenamento é partilhado entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -5829,14 +5771,8 @@
       ]
     },
     "Subscription": {
-      "Billed every 15 months": [
-        "Faturação a cada 15 meses"
-      ],
       "Billed every 2 years": [
         "Faturado a cada 2 anos"
-      ],
-      "Billed every 30 months": [
-        "Faturação a cada 30 meses"
       ],
       "Billed monthly": [
         "Faturado mensalmente"
@@ -6130,24 +6066,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "Versão premium do Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Versão premium do Mail e Calendar"
-      ],
       "Premium Password Manager": [
         "Versão premium do gestor de palavras-passe"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Armazene as suas palavras-passe com segurança e preencha-as automaticamente nos sítios web. Inclui palavras-passe ilimitadas, preenchimento automático, gerador de palavras-passe e mais."
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "Gestor de palavras-passe"
       ]
     },
     "summer2023: Tooltip": {
@@ -6845,11 +6765,6 @@
       ],
       "Verified email address": [
         "Endereço de e-mail verificado"
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
-        "${ PASS_APP_NAME }: gestor de plavaras-passe encriptadas de ponta a ponta"
       ]
     },
     "Tor out of date": {

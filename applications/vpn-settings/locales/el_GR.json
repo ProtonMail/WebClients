@@ -630,12 +630,125 @@
         "Αυτό θα αποσυνδέσει όλους τους δρομολογητές και πελάτες που χρησιμοποιούν αυτό το πιστοποιητικό."
       ]
     },
+    "bf2023: Action": {
+      "**Add our encrypted password manager** for only ${ price }": [
+        "**Προσθέστε τον κρυπτογραφημένο διαχειριστή κωδικών πρόσβασης** μόνο για ${ price }"
+      ],
+      "Add ${ PASS_APP_NAME }": [
+        "Προσθέστε το ${ PASS_APP_NAME }"
+      ],
+      "Add ${ plan } for ${ price } per month": [
+        "Προσθέστε ${ plan } για ${ price } ανά μήνα"
+      ],
+      "Add ${ plan } to your plan by subscribing to 15 months": [
+        "Προσθέστε ${ plan } στο πλάνο σας κάνοντας εγγραφή σε 15 μήνες"
+      ],
+      "Get the deal": [
+        "Αποκτήστε την προσφορά"
+      ],
+      "Remove": [
+        "Αφαίρεση"
+      ],
+      "Remove ${ PASS_APP_NAME }": [
+        "Αφαίρεση ${ PASS_APP_NAME }"
+      ],
+      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
+        "Εγγραφείτε για 15 μήνες και αποκτήστε τον **κρυπτογραφημένο διαχειριστή κωδικών πρόσβασης** μόνο με ${ priceNoSuffix } επιπλέον ανά μήνα!"
+      ]
+    },
+    "bf2023: Deal details": {
+      "${ storageSize } storage": [
+        "${ storageSize } αποθηκευτικού χώρου"
+      ],
+      "1 user": [
+        "1 χρήστης"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "3,000+ servers across 65+ countries": [
+        "3,000+ διακομιστές σε 65+ χώρες"
+      ],
+      "6 users": [
+        "6 χρήστες"
+      ],
+      "Ad-blocker and malware protection": [
+        "Αποκλεισμός διαφημίσεων και προστασία από κακόβουλο λογισμικό"
+      ],
+      "Extended version history": [
+        "Εκτεταμένο ιστορικό εκδόσεων"
+      ],
+      "Fast BitTorrent downloads": [
+        "Γρήγορο κατέβασμα BitTorrent"
+      ],
+      "High speed streaming": [
+        "Ροή υψηλής ταχύτητας"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Premium Διαχειριστής Κωδικών Πρόσβασης"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση."
+      ],
+      "Learn more about our Black Friday offers": [
+        "Μάθετε περισσότερα για τις προσφορές της Black Friday"
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Η συνδρομή σας θα ανανεωθεί αυτόματα με την τυπική μειωμένη τιμή και διάρκεια στο τέλος του κύκλου χρέωσης."
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "Αποκτήστε πρόσβαση σε αποκλεισμένο περιεχόμενο και περιηγηθείτε ιδιωτικά. Περιλαμβάνει 3.000+ διακομιστές σε 65+ χώρες, ύψιστες ταχύτητες VPN, παγκόσμιες υπηρεσίες ροής, αποκλεισμό κακόβουλου λογισμικού και προγράμματα διαφημίσεων, γρήγορες λήψεις BitTorrent και πολλά άλλα."
+      ],
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Αποκτήστε πρόσβαση σε περιεχόμενο σε υπηρεσίες ροής, συμπεριλαμβανομένων των Netflix, Disney+ και Prime Video, και άλλων, από οπουδήποτε."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
+        "Περιλαμβάνει υποστήριξη για ${ domains } προσαρμοσμένο τομέα email, ${ addresses } διευθύνσεις ηλεκτρονικού ταχυδρομείου, ${ aliases } hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και άλλα."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Περιλαμβάνει υποστήριξη για ${ domains } προσαρμοσμένο τομέα email, ${ addresses } διευθύνσεις ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και άλλα."
+      ],
+      "Secure logins on all your devices. Includes unlimited aliases, sharing, vaults, integrated 2FA and more.": [
+        "Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, κρύπτες, ενσωματωμένο 2FA και πολλά άλλα."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Ασφαλίστε τα email σας και προγραμματίστε με κρυπτογράφηση από άκρο σε άκρο. Περιλαμβάνει υποστήριξη για προσαρμοσμένους τομείς email, 15 διευθύνσεις ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και πολλά άλλα."
+      ],
+      "Secure your files, folders and photos with end-to-end and zero-access encryption. Includes version history, encrypted file sharing, and more.": [
+        "Ασφαλίστε τα αρχεία, τους φακέλους και τις φωτογραφίες σας με κρυπτογράφηση από άκρο σε άκρο και μηδενικής πρόσβασης. Περιλαμβάνει ιστορικό εκδόσεων, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Το ειδικά σχεδιασμένο NetShield προστατεύει τις συσκευές σας και επιταχύνει την περιήγησή σας εμποδίζοντας διαφημίσεις, ιχνηλάτες και κακόβουλο λογισμικό."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "Ο αποθηκευτικός χώρος μοιράζεται μεταξύ όλων των ${ BRAND_NAME } εφαρμογών."
+      ],
+      "Store up to 200 versions of each file for up to 10 years.": [
+        "Αποθηκεύστε έως 200 εκδόσεις κάθε αρχείου για έως και 10 χρόνια."
+      ],
+      "Unlock peer-to-peer downloads and file sharing. Increase upload and download speeds and hide your IP address.": [
+        "Ξεκλειδώστε ομότιμες λήψεις και κοινή χρήση αρχείων. Αυξήστε τις ταχύτητες μεταφόρτωσης και λήψης και αποκρύψτε τη διεύθυνση IP σας."
+      ]
+    },
     "Billing cycle": {
       "${ n } month": [
         "${ n } μήνα",
         "${ n } μήνες"
       ],
-      "Renews automatically for ${ renewPrice }, for ${ renewalLength }": [
+      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
         "Ανανεώνεται αυτόματα για ${ renewPrice }, για ${ renewalLength }"
       ]
     },
@@ -2018,14 +2131,14 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Premium μονάδα αποθήκευσης"
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
       ],
-      "Premium Mail and Calendar": [
-        "Premium αλληλογραφία και ημερολόγιο"
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
       ],
-      "Premium VPN": [
-        "Premium εικονικό ιδιωτικό δίκτυο"
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Up to 6 users": [
         "Έως 6 χρήστες"
@@ -2657,8 +2770,14 @@
       "Admin account allocation": [
         "Κατανομή στον λογαριασμό του διαχειριστή"
       ],
-      "All ${ BRAND_NAME } apps and their premium features": [
-        "Όλες οι εφαρμογές ${ BRAND_NAME } και οι premium δυνατότητές τους"
+      "After this date, you'll be billed every 12 months at the normal yearly rate.": [
+        "Μετά από αυτήν την ημερομηνία, θα χρεώνεστε κάθε 12 μήνες με την κανονική ετήσια τιμή."
+      ],
+      "After this date, you'll be billed every 24 months at the normal 2-year rate.": [
+        "Μετά από αυτήν την ημερομηνία, θα χρεώνεστε κάθε 24 μήνες με την κανονική τιμή 2 ετών."
+      ],
+      "After this date, you'll be billed every month at the regular price.": [
+        "Μετά από αυτήν την ημερομηνία, θα χρεώνεστε κάθε μήνα στην κανονική τιμή."
       ],
       "All your changes will be lost.": [
         "Όλες οι αλλαγές σας θα χαθούν."
@@ -3109,14 +3228,8 @@
       "per month, billed every 12 months": [
         "ανά μήνα, χρεώνεται κάθε 12 μήνες"
       ],
-      "per month, billed every 15 months": [
-        "ανά μήνα, χρεώνεται κάθε 15 μήνες"
-      ],
       "per month, billed every 24 months": [
         "ανά μήνα, χρεώνεται κάθε 24 μήνες"
-      ],
-      "per month, billed every 30 months": [
-        "ανά μήνα, χρεώνεται κάθε 30 μήνες"
       ],
       "Plan upgrade required": [
         "Απαιτείται αναβάθμιση πακέτου"
@@ -3273,6 +3386,15 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Υποβάλετε μια κατάθεση χρησιμοποιώντας την ακόλουθη διεύθυνση ή σαρώστε τον κωδικό QR. Η κατάθεσή σας θα εμφανιστεί στον λογαριασμό σας μετά την επιβεβαίωση."
+      ],
+      "Subscription auto-renews every 12 months.": [
+        "Η συνδρομή ανανεώνεται αυτόματα κάθε 12 μήνες."
+      ],
+      "Subscription auto-renews every 24 months.": [
+        "Η συνδρομή ανανεώνεται αυτόματα κάθε 24 μήνες."
+      ],
+      "Subscription auto-renews every month.": [
+        "Η συνδρομή ανανεώνεται αυτόματα κάθε μήνα."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Λήξη συνδρομής: Ενεργοποιήστε ξανά κατά ${ byDate } για να διατηρήσετε τα οφέλη σας ${ planName }. ${ reactivateLink }"
@@ -3692,6 +3814,9 @@
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Οι πληροφορίες σας είναι ασφαλείς μαζί μας. Θα επικοινωνήσουμε μαζί σας μόνο όταν απαιτείται για την παροχή των υπηρεσιών μας."
       ],
+      "Your next billing date is ${ renewalTime }.": [
+        "Η επόμενη ημερομηνία χρέωσης είναι ${ renewalTime }."
+      ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Ο κωδικός πρόσβασης για τον οργανισμό σας μπορεί να διαμοιραστεί με άλλους χρήστες που θέλετε να δώσετε δικαιώματα διαχειριστή. Είναι επίσης ένας κώδικας επείγουσας ανάκτησης για να αποκτήσετε πρόσβαση στον οργανισμό σας σε περίπτωση που χάσετε την πρόσβαση στο λογαριασμό σας. Παρακαλώ αποθηκεύστε αυτόν τον κωδικό και κρατήστε τον ασφαλή."
       ],
@@ -3704,7 +3829,7 @@
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Η συνδρομή σας διαχειρίζεται απο το Mozilla. Επικοινωνήστε με την υποστήριξη του Mozilla."
       ],
-      "Your subscription will automatically renew on ${ renewalTime }.": [
+      "Your subscription will auto-renew on ${ renewalTime }.": [
         "Η συνδρομή σας θα ανανεωθεί αυτόματα στις ${ renewalTime }."
       ]
     },
@@ -4047,6 +4172,9 @@
       ],
       "New password": [
         "Νέος κωδικός"
+      ],
+      "New plan": [
+        "Νέο πλάνο"
       ],
       "No filter": [
         "Χωρίς φίλτρο"
@@ -4539,6 +4667,9 @@
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } με απεριόριστα hide-my-email ψευδώνυμα"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } πρόγραμμα"
+      ],
       "${ size } attachment size": [
         "${ size } μέγεθος συνημμένων"
       ],
@@ -4560,7 +4691,7 @@
       "99.95% SLA": [
         "99.95% SLA"
       ],
-      "Ad-blocker & malware protection": [
+      "Ad-blocker and malware protection": [
         "Αποκλεισμός διαφημίσεων και προστασία από κακόβουλο λογισμικό"
       ],
       "Admin console": [
@@ -4976,17 +5107,17 @@
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
-        "${ CALENDAR_APP_NAME }: διατερματικά κρυπτογραφημένο ημερολόγιο"
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Ασφαλίστε το χρονοδιάγραμμά σας με κρυπτογράφηση από άκρο σε άκρο. Περιλαμβάνει υποστήριξη για προσαρμοσμένα ημερολόγια, κοινή χρήση ημερολογίου και πολλά άλλα."
       ],
-      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
-        "${ DRIVE_APP_NAME }: κρυπτογραφημένος χώρος αποθήκευσης cloud από άκρο σε άκρο"
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης στο cloud. Περιλαμβάνει ιστορικό εκδόσεων, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
       ],
-      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
-        "${ MAIL_APP_NAME }: κρυπτογραφημένο email από άκρο σε άκρο"
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: Ασφαλίστε τα μηνύματα ηλεκτρονικού ταχυδρομείου σας με κρυπτογράφηση από άκρο σε άκρο. Περιλαμβάνει υποστήριξη για προσαρμοσμένους τομείς email, 15 διευθύνσεις ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
       ],
-      "${ VPN_APP_NAME }: unblock content, browse privately": [
-        "${ VPN_APP_NAME }: ξεμπλοκάρετε περιεχόμενο, περιηγείστε ιδιωτικά"
+      "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "${ VPN_APP_NAME }: Αποκτήστε πρόσβαση σε αποκλεισμένο περιεχόμενο και περιηγηθείτε ιδιωτικά. Περιλαμβάνει ${ serversAndCountries }, υψηλότερες ταχύτητες VPN, πρόσβαση σε παγκόσμιες υπηρεσίες ροής, κακόβουλο λογισμικό και πρόγραμμα αποκλεισμού διαφημίσεων, γρήγορες λήψεις BitTorrent και πολλά άλλα."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Αποκτήστε πρόσβαση σε περιεχόμενο σε υπηρεσίες ροής, συμπεριλαμβανομένων των Netflix, Disney+ και Prime Video, από οπουδήποτε"
@@ -5093,6 +5224,9 @@
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Προστατέψτε την οικογένειά σας από επιβλαβείς ιστότοπους και αποκτήστε πρόσβαση στους διακομιστές VPN υψηλής ταχύτητας για να μεταδώσετε το αγαπημένο σας περιεχόμενο"
+      ],
+      "Provides the highest level of account security protection and specialist support": [
+        "Παρέχει το υψηλότερο επίπεδο προστασίας ασφάλειας λογαριασμού και εξειδικευμένη υποστήριξη"
       ],
       "Quickly set up out-of-office messages": [
         "Γρήγορος ορισμός μηνυμάτων εκτός γραφείου"
@@ -5885,8 +6019,8 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "${ storageSize } συνολικός αποθηκευτικός χώρος"
+      "1 user": [
+        "1 χρήστης"
       ],
       "3 TB": [
         "3 TB"
@@ -5906,17 +6040,17 @@
       "Highest VPN speed": [
         "Ύψιστη ταχύτητα VPN"
       ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
       "Premium early access": [
         "Premium πρώιμη πρόσβαση"
-      ],
-      "Premium Mail and Calendar": [
-        "Premium Αλληλογραφία και Ημερολόγιο"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "Premium Αλληλογραφία, Ημερολόγιο και Μονάδα Αποθήκευσης"
-      ],
-      "Premium VPN": [
-        "Premium VPN"
       ],
       "Secure cloud storage": [
         "Ασφαλής αποθήκευση στο cloud"
@@ -5929,9 +6063,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση."
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Αυτή η συνδρομή θα ανανεώνεται αυτόματα κάθε 2 χρόνια με την ίδια τιμή μέχρι να ακυρωθεί."
       ]
@@ -5962,14 +6093,24 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } μήνα",
+        "${ n } μήνες"
+      ],
       "/ month": [
         "/ μήνας"
       ],
       "1 year": [
         "1 έτος"
       ],
+      "15 months": [
+        "15 μήνες"
+      ],
       "2 years": [
         "2 χρόνια"
+      ],
+      "30 months": [
+        "30 μήνες"
       ],
       "Billed at ${ amount } for 1 month": [
         "Χρεωμένο στα ${ amount } για 1 μήνα"
@@ -5985,10 +6126,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Χρεωμένο στα ${ amount } για 30 μήνες"
-      ],
-      "for ${ n } month": [
-        "για ${ n } μήνα",
-        "για ${ n } μήνες"
       ],
       "Get the deal": [
         "Αποκτήστε την προσφορά"
@@ -6057,9 +6194,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Όλες οι premium υπηρεσίες μας με τα υψηλότερα όριά τους: 100 διευθύνσεις email, υποστήριξη για 10 προσαρμοσμένους τομείς, απεριόριστα hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου, κρυπτογραφημένη αποθήκευση cloud και κοινή χρήση αρχείων και πολλά άλλα."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Περιλαμβάνει υποστήριξη για 1 προσαρμοσμένο τομέα ηλεκτρονικού ταχυδρομείου, 10 διευθύνσεις ηλεκτρονικού ταχυδρομείου, 10 hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και πολλά άλλα."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Περιλαμβάνει υποστήριξη για 3 προσαρμοσμένους τομείς ηλεκτρονικού ταχυδρομείου, 15 διευθύνσεις ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και πολλά άλλα."
       ],
@@ -6071,9 +6205,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Ο αποθηκευτικός χώρος μοιράζεται μεταξύ των ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } και ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -6104,14 +6235,14 @@
       ]
     },
     "Subscription": {
-      "Billed every 15 months": [
-        "Χρέωση κάθε 15 μήνες"
-      ],
       "Billed every 2 years": [
         "Χρέωση κάθε 2 χρόνια"
       ],
-      "Billed every 30 months": [
-        "Χρέωση κάθε 30 μήνες"
+      "Billed for 15 months": [
+        "Χρέωση για 15 μήνες"
+      ],
+      "Billed for 30 months": [
+        "Χρέωση για 30 μήνες"
       ],
       "Billed monthly": [
         "Μηνιαία χρέωση"
@@ -6405,24 +6536,14 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "Premium Μονάδα Αποθήκευσης"
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
       ],
-      "Premium Mail and Calendar": [
-        "Premium Αλληλογραφία και Ημερολόγιο"
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Premium Διαχειριστής Κωδικών Πρόσβασης"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Αποθηκεύστε με ασφάλεια τους κωδικούς πρόσβασής σας και συμπληρώστε τους αυτόματα σε ιστότοπους. Περιλαμβάνει απεριόριστους κωδικούς πρόσβασης, αυτόματη συμπλήρωση, γεννήτρια κωδικών πρόσβασης και πολλά άλλα."
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "Διαχειριστής κωδικού"
       ]
     },
     "summer2023: Tooltip": {
@@ -7120,8 +7241,8 @@
       ]
     },
     "tooltip": {
-      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
-        "${ PASS_APP_NAME }: διατερματικά κρυπτογραφημένος διαχειριστής κωδικών πρόσβασης"
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
       ]
     },
     "Tor out of date": {
@@ -7204,8 +7325,14 @@
       "1-year": [
         "1ετής"
       ],
+      "15-month": [
+        "15μηνη"
+      ],
       "2-year": [
         "2ετής"
+      ],
+      "30-month": [
+        "30μηνη"
       ],
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "Λάβετε έκπτωση ${ discount } με ${ billingCycle } συνδρομή"
