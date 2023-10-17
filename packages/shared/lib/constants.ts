@@ -763,7 +763,7 @@ export const PLAN_NAMES = {
     [PLANS.NEW_VISIONARY]: 'Visionary',
     [PLANS.VPN_PRO]: 'VPN Essentials',
     [PLANS.VPN_BUSINESS]: 'VPN Business',
-    [PLANS.VPN_PASS_BUNDLE]: 'VPN + Pass',
+    [PLANS.VPN_PASS_BUNDLE]: 'VPN and Pass bundle',
 };
 
 export const MEMBER_PLAN_MAPPING = {
