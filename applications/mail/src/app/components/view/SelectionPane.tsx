@@ -226,7 +226,7 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
                         <img
                             src={conversationSvg}
                             alt={c('Alternative text for conversation image').t`Conversation`}
-                            className="hauto"
+                            className="h-auto"
                         />
                     </div>
                     {checkeds > 0 && <Button onClick={() => onCheckAll(false)}>{c('Action').t`Deselect`}</Button>}
