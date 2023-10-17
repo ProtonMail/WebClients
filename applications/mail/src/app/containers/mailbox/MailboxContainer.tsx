@@ -28,6 +28,7 @@ import { MAIL_PAGE_SIZE, SHOW_MOVED, VIEW_MODE } from '@proton/shared/lib/mail/m
 import { isDraft } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
+import SpotlightEmailForwarding from 'proton-mail/components/header/SpotlightEmailForwarding';
 import useMailDrawer from 'proton-mail/hooks/drawer/useMailDrawer';
 
 import ConversationView from '../../components/conversation/ConversationView';
@@ -485,7 +486,11 @@ const MailboxContainer = ({
                     selectedIDs={selectedIDs}
                     labelID={labelID}
                     toolbar={toolbar(true)}
-                    settingsButton={<QuickSettingsAppButton />}
+                    settingsButton={
+                        <SpotlightEmailForwarding>
+                            <QuickSettingsAppButton />
+                        </SpotlightEmailForwarding>
+                    }
                 />
 
                 <PrivateMainArea
