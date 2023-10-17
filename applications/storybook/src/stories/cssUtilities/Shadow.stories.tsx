@@ -18,7 +18,7 @@ export const Shadow = () => {
             <TableHeader>
                 <TableRow>
                     <TableCell type="header">Class</TableCell>
-                    <TableCell type="header" className="w50">
+                    <TableCell type="header" className="w-1/2">
                         Explanation
                     </TableCell>
                     <TableCell type="header" className="text-right">

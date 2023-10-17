@@ -525,7 +525,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                         <thead>
                             <tr>
                                 <TableCell key="name" type="header">{c('Header').t`Name`}</TableCell>
-                                <TableCell key="status" type="header" className="w10">
+                                <TableCell key="status" type="header" className="w-1/10">
                                     {c('Header').t`Status`}
                                 </TableCell>
                                 <TableCell key="servers" type="header">{c('Header').t`Servers`}</TableCell>

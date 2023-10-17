@@ -114,7 +114,7 @@ const AddressesSummary = ({
                         );
                     })}
                 </span>
-                <span className="flex flex-nowrap flex-item-noshrink on-mobile-max-w33 on-tiny-mobile-max-w50">
+                <span className="flex flex-nowrap flex-item-noshrink max-w-1/2 sm:max-w-1/3 md:max-w-none">
                     <AddressesCCButton
                         classNames="composer-addresses-ccbcc composer-addresses-ccbcc-fakefield text-ellipsis flex-item-noshrink"
                         disabled={disabled}

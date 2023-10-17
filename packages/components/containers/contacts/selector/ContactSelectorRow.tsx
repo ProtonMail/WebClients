@@ -31,9 +31,15 @@ const ContactSelectorRow = ({ style, onCheck, contact, checked, isNarrow }: Prop
                     id={contact.ID}
                 >
                     <div
-                        className={clsx(['flex-item-fluid flex-align-items-center max-w-full h100', !isNarrow && 'flex'])}
+                        className={clsx([
+                            'flex-item-fluid flex-align-items-center max-w-full h100',
+                            !isNarrow && 'flex',
+                        ])}
                     >
-                        <div className={clsx(['pl-4 flex', !isNarrow && 'w45'])}>
+                        <div
+                            className={clsx(['pl-4 flex', !isNarrow && 'w-custom'])}
+                            style={!isNarrow ? { '--w-custom': '45%' } : undefined}
+                        >
                             <span className="inline-block text-ellipsis max-w-full pr-4">{contact.Name}</span>
                         </div>
                         <div className="flex-item-fluid flex pl-4 md:pl-0">
