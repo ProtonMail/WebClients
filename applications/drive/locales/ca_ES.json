@@ -2553,15 +2553,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Drive prèmium"
-      ],
-      "Premium Mail and Calendar": [
-        "Correu i Calendari prèmium"
-      ],
-      "Premium VPN": [
-        "VPN prèmium"
-      ],
       "Up to 6 users": [
         "Fins a 6 usuaris"
       ]
@@ -3335,6 +3326,9 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Continueu utilitzant ${ DRIVE_APP_NAME } i desbloquegeu la unitat més tard"
+      ],
+      "Copy the link to clipboard": [
+        "Copia l'enllaç al porta-retalls"
       ],
       "Country code": [
         "Codi de país"
@@ -5070,6 +5064,9 @@
       "File or folder is missing a name": [
         "Falta un nom pel fitxer o carpeta"
       ],
+      "Link copied to clipboard": [
+        "S'ha copiat l'enllaç al porta-retalls."
+      ],
       "Move ${ itemsToMoveCount } file": [
         "Mou ${ itemsToMoveCount } fitxer",
         "Mou ${ itemsToMoveCount } fitxers"
@@ -5606,9 +5603,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "${ storageSize } d'emmagatzematge total"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -5630,15 +5624,6 @@
       "Premium early access": [
         "Accés anticipat prèmium"
       ],
-      "Premium Mail and Calendar": [
-        "Correu i Calendari prèmium"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "Correu, Calendari i Drive prèmium"
-      ],
-      "Premium VPN": [
-        "VPN prèmium"
-      ],
       "Secure cloud storage": [
         "Emmagatzematge al núvol segur"
       ],
@@ -5650,9 +5635,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "Els descomptes es basen en els preus mensuals estàndard."
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Aquesta subscripció es renovarà automàticament cada 2 anys al mateix preu fins que es cancel·li."
       ]
@@ -5706,10 +5688,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Facturat a ${ amount } durant 30 mesos"
-      ],
-      "for ${ n } month": [
-        "per a ${ n } mes",
-        "durant ${ n } mesos"
       ],
       "Get the deal": [
         "Obteniu l’oferta"
@@ -5778,9 +5756,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Tots els nostres serveis prèmium al seu límit màxim: 100 adreces de correu electrònic, suport per a 10 dominis personalitzats, àlies hide-my-email il·limitats, compartició de calendaris, emmagatzematge al núvol encriptat, compartició de fitxers, i més."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Inclou suport per a 1 domini de correu electrònic personalitzat, 10 adreces de correu electrònic, 10 àlies hide-my-email, compartició de calendari i més."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Inclou suport per a 3 dominis de correu electrònic personalitzats, 15 adreces de correu electrònic, àlies il·limitats de hide-my-email, compartició de calendari i més."
       ],
@@ -5792,9 +5767,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protegiu els vostres fitxers amb emmagatzematge al núvol xifrat. Inclou sincronització automàtica, compartició de fitxers xifrats i més."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "L'espai d'emmagatzematge es comparteix entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -5812,6 +5784,9 @@
       ]
     },
     "Storage": {
+      "Get storage": [
+        "Obteniu més emmagatzematge"
+      ],
       "Release notes": [
         "Notes de la versió"
       ],
@@ -5898,24 +5873,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "Drive prèmium"
-      ],
-      "Premium Mail and Calendar": [
-        "Correu i Calendari prèmium"
-      ],
       "Premium Password Manager": [
         "Gestor de Contrasenyes prèmium"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Deseu de forma segura les vostres contrasenyes i inseriu-les automàticament a llocs web. Inclou, entre d'altres, contrasenyes il·limitades, inserció automàtica i generador de contrasenyes."
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "Gestor de contrasenyes"
       ]
     },
     "summer2023: Tooltip": {
