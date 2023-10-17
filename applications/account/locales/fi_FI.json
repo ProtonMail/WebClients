@@ -1294,9 +1294,6 @@
       "${ n } month": [
         "${ n } kuukaudeksi",
         "${ n } kuukaudeksi"
-      ],
-      "Renews automatically for ${ renewPrice }, for ${ renewalLength }": [
-        "Uudistuu automaattisesti ${ renewalLength } hintaan ${ renewPrice } ."
       ]
     },
     "Billing cycle option": {
@@ -1837,6 +1834,11 @@
       ],
       "matches": [
         "vastaa"
+      ]
+    },
+    "Condition label": {
+      "If": [
+        "Jos"
       ]
     },
     "Confirm modal title": {
@@ -3146,6 +3148,274 @@
         "Vahvistusviesti lähetettiin osoitteeseen ${ address }"
       ]
     },
+    "email_forwarding_2023: Action": {
+      "Accept": [
+        "Hyväksy"
+      ],
+      "Add condition": [
+        "Lisää ehto"
+      ],
+      "Add forwarding rule": [
+        "Lisää ohjaussääntö"
+      ],
+      "Back": [
+        "Takaisin"
+      ],
+      "Cancel": [
+        "Peruuta"
+      ],
+      "Decline": [
+        "Kieltäydy"
+      ],
+      "Delete": [
+        "Poista"
+      ],
+      "Delete this condition": [
+        "Poista ehto"
+      ],
+      "Edit conditions": [
+        "Muokkaa ehtoja"
+      ],
+      "Next": [
+        "Seuraava"
+      ],
+      "Pause": [
+        "Keskeytä"
+      ],
+      "Re-enable": [
+        "Ota käyttöön uudelleen"
+      ],
+      "Re-send confirmation email": [
+        "Lähetä vahvistusviesti uudelleen"
+      ],
+      "Remove “${ value }”": [
+        "Poista \"${ value }\""
+      ],
+      "Request confirmation": [
+        "Pyydä vahvistus"
+      ],
+      "Resume": [
+        "Jatka"
+      ],
+      "Save": [
+        "Tallenna"
+      ],
+      "Send confirmation email": [
+        "Lähetä vahvistusviesti"
+      ],
+      "Set up email forwarding": [
+        "Määritä sähköpostin ohjaus"
+      ]
+    },
+    "email_forwarding_2023: Description": {
+      "Unlock email forwarding to easily manage incoming information and more premium features when you upgrade.": [
+        "Avaa sähköpostin ohjaus parempaan saapuvien tietojen hallintaan sekä muita premium-ominaisuuksia päivittämällä tilauksesi."
+      ]
+    },
+    "email_forwarding_2023: Error": {
+      "Condition incomplete, please add a token": [
+        "Ehto on keskeneräinen. Lisää tunniste."
+      ],
+      "Token already exists": [
+        "Tunniste on jo olemassa"
+      ]
+    },
+    "email_forwarding_2023: Error message, recovery": {
+      "Please try opening the link again.": [
+        "Yritä avata linkki uudelleen."
+      ]
+    },
+    "email_forwarding_2023: Forwarding tooltip": {
+      "Emails forwarded to you are excluded and will not be forwarded.": [
+        "Sinulle osoitetut viestit ohitetaan eikä niitä ohjata."
+      ]
+    },
+    "email_forwarding_2023: Header": {
+      "Actions": [
+        "Toiminnot"
+      ],
+      "From": [
+        "Osoitteesta"
+      ],
+      "Status": [
+        "Tila"
+      ],
+      "To": [
+        "Osoitteeseen"
+      ]
+    },
+    "email_forwarding_2023: Incoming forwarding tab name": {
+      "From me": [
+        "Minulta"
+      ]
+    },
+    "email_forwarding_2023: Info": {
+      "A confirmation email will be sent to ${ boldForwardeeEmail }": [
+        "Osoitteeseen ${ boldForwardeeEmail } lähetetään vahvistusviesti"
+      ],
+      "A new encryption key will be generated for ${ boldForwarderEmail }.": [
+        "Osoitteelle ${ boldForwarderEmail } luodaan uusi salausavain."
+      ],
+      "Forwardee is invited and needs to accept/reject the invitation or update": [
+        "Ohjauksen vastaanottaja on kutsuttu ja hänen on hyväksyttävä/hylättävä kutsu tai päivitettävä"
+      ],
+      "Forwarding is active": [
+        "Ohjaus on käytössä"
+      ],
+      "Forwarding to ${ BRAND_NAME } addresses will keep your communication end-to-end encrypted. When forwarding externally, encryption might need to be removed.": [
+        "Ohjaus ${ BRAND_NAME }-osoitteisiin pitää viestintäsi päästä päähän -salattuna. Ulkoisiin palveluihin ohjattaessa salaus täytyy mahdollisesti poistaa."
+      ],
+      "Forwarding to an address without end-to-end encryption requires disabling end-to-end encryption for your ${ boldForwarderEmail } email address. ": [
+        "Ohjaus päästä päähän -salaamattomaan osoitteeseen vaatii salauksen käytöstä poiston ohjaavalta ${ boldForwarderEmail }-osoitteeltasi."
+      ],
+      "Forwarding to this address will become active once the recipient accepts the forwarding.": [
+        "Ohjaus tähän osoitteeseen alkaa, kun vastaanottaja hyväksyy ohjauksen."
+      ],
+      "No incoming forwarding rules": [
+        "Saapuvien ohjaussääntöjä ei ole"
+      ],
+      "No outgoing forwarding rules": [
+        "Lähtevien ohjaussääntöjä ei ole"
+      ],
+      "Please update your forwarding keys": [
+        "Päivitä ohjausavaimesi"
+      ],
+      "The forwardee rejected the forwarding request": [
+        "Ohjauksen vastaanottaja hylkäsi ohjauspyynnön."
+      ],
+      "The forwarding is temporarily paused": [
+        "Ohjaus on tilapäisesti keskeytetty"
+      ],
+      "You can safely close this tab.": [
+        "Voit sulkea välilehden turvallisesti"
+      ],
+      "You won't receive emails forwarded automatically from ${ boldForwarderEmail }.": [
+        "Et vastaanota osoitteesta ${ boldForwarderEmail } ohjattuja viestejä automaattisesti."
+      ]
+    },
+    "email_forwarding_2023: Label": {
+      "And": [
+        "Ja"
+      ],
+      "Forward from": [
+        "Ohjattu osoitteesta"
+      ],
+      "Forward to": [
+        "Ohjattu osoitteeseen"
+      ],
+      "or": [
+        "tai"
+      ],
+      "Or": [
+        "Tai"
+      ],
+      "With attachment": [
+        "Sisällytä liitteet"
+      ],
+      "Without attachment": [
+        "Älä sisällytä liitteitä"
+      ]
+    },
+    "email_forwarding_2023: Link": {
+      "Learn more": [
+        "Lue lisää"
+      ]
+    },
+    "email_forwarding_2023: Outgoing forwarding tab name": {
+      "To me": [
+        "Minulle"
+      ]
+    },
+    "email_forwarding_2023: Placeholder": {
+      "Condition:": [
+        "Ehto:"
+      ],
+      "Enter email address": [
+        "Syötä sähköpostiosoite"
+      ],
+      "Type text or keyword": [
+        "Syötä teksti tai avainsana"
+      ],
+      "Type text or keyword for this condition:": [
+        "Syötä ehdon teksti tai avainsana:"
+      ]
+    },
+    "email_forwarding_2023: Prompt": {
+      "Forwarding to the destination address will end.": [
+        "Ohjaus kohdeosoitteeseen päättyy."
+      ]
+    },
+    "email_forwarding_2023: Status": {
+      "Active": [
+        "Käytössä"
+      ],
+      "Declined": [
+        "Hylätty"
+      ],
+      "Outdated": [
+        "Vanhentunut"
+      ],
+      "Paused": [
+        "Keskeytetty"
+      ],
+      "Pending": [
+        "Odottaa"
+      ]
+    },
+    "email_forwarding_2023: Success": {
+      "A new encryption key has been generated for ${ forwarderEmail }.": [
+        "Osoitteelle ${ forwarderEmail } luotiin uusi salausavain."
+      ],
+      "Changes saved": [
+        "Muutokset tallennettiin"
+      ],
+      "Email sent to ${ forward.ForwardeeEmail }": [
+        "Viesti lähetettiin osoitteeseen ${ forward.ForwardeeEmail }"
+      ],
+      "Email sent to ${ forwardeeEmail }.": [
+        "Viesti lähetettiin osoitteeseen ${ forwardeeEmail }."
+      ],
+      "Forwarding accepted": [
+        "Ohjaus hyväksyttiin"
+      ],
+      "Forwarding declined": [
+        "Ohjaus hylättiin"
+      ],
+      "Forwarding deleted": [
+        "Ohjaus poistettiin"
+      ],
+      "Forwarding paused": [
+        "Ohjaus keskeytettiin"
+      ],
+      "Forwarding resumed": [
+        "Ohjausta jatkettiin"
+      ]
+    },
+    "email_forwarding_2023: Title": {
+      "Automatically forward emails to other accounts": [
+        "Ohjaa viestit automaattisesti muille tileille"
+      ],
+      "Delete forwarding?": [
+        "Poistetaanko ohjaus?"
+      ],
+      "Email forwarding deactivated": [
+        "Ohjaus ei ole käytössä"
+      ],
+      "Forwarding activated": [
+        "Ohjaus on käytössä"
+      ],
+      "Request confirmation": [
+        "Pyydä vahvistus"
+      ],
+      "Set up forwarding": [
+        "Määritä ohjaus"
+      ]
+    },
+    "email_forwarding_2023: Warning": {
+      "Warning": [
+        "Varoitus"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "2FA"
@@ -4053,15 +4323,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Premium Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Premium Mail ja Calendar"
-      ],
-      "Premium VPN": [
-        "Premium VPN"
-      ],
       "Up to 6 users": [
         "Enintään 6 käyttäjää"
       ]
@@ -5482,9 +5743,6 @@
       "Align right": [
         "Tasaa oikealle"
       ],
-      "All ${ BRAND_NAME } apps and their premium features": [
-        "Kaikki ${ BRAND_NAME }-sovellukset ja niiden premium-ominaisuudet"
-      ],
       "All (${ totalFoldersCount } folder)": [
         "Kaikki (${ totalFoldersCount } kansio)",
         "Kaikki (${ totalFoldersCount } kansiota)"
@@ -6181,6 +6439,9 @@
       "Link deleted": [
         "Linkki poistettiin"
       ],
+      "Link expired": [
+        "Linkki vanhentunut"
+      ],
       "Link type": [
         "Linkin tyyppi"
       ],
@@ -6377,14 +6638,8 @@
       "per month, billed every 12 months": [
         "kuukaudessa, laskutus 12 kuukauden välein"
       ],
-      "per month, billed every 15 months": [
-        "kuukaudessa, laskutus 15 kuukauden välein"
-      ],
       "per month, billed every 24 months": [
         "kuukaudessa, laskutus 24 kuukauden välein"
-      ],
-      "per month, billed every 30 months": [
-        "kuukaudessa, laskutus 30 kuukauden välein"
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "PGP-asiakkaat havaitsevat PGP-avaimesi helpommin automaattisesti, jos lähtevät viestit on allekirjoitettu."
@@ -6605,10 +6860,10 @@
         "Määritetään organisaatiotasi"
       ],
       "Settings update failed": [
-        "Asetusten tallennus epäonnistui"
+        "Asetusten päivittäminen epäonnistui"
       ],
       "Settings updated": [
-        "Asetukset tallennettiin"
+        "Asetukset päivitetty"
       ],
       "Show original message": [
         "Näytä alkuperäinen viesti"
@@ -6798,7 +7053,7 @@
         "Tämä lopettaa nykyisen tilauksen ja menetät kaikki kertyneet uskollisuusedut. Jäljellä oleva tilausaika palautetaan tilillesi krediitteinä."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Tämä poistaa kaikki tiedostojesi aiemmat ${ rententionLabel } vanhemmat versiot."
+        "Tämä poistaa kaikki aiemmat versiot tiedostoistasi, jotka ovat vanhempia kuin ${ rententionLabel }."
       ],
       "This will delete all previous versions of your files.": [
         "Tämä poistaa tiedostojesi kaikki aiemmat versiot."
@@ -7037,6 +7292,9 @@
       "We generated a strong password for you": [
         "Loimme sinulle vahvan salasanan"
       ],
+      "We just sent you a new link.": [
+        "Lähetimme sinulle juuri uuden linkin."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Maksutapa on vahvistettava pankistasi."
       ],
@@ -7170,6 +7428,9 @@
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Voit ottaa todennuslokin käyttöön nähdäksesi, milloin ja mistä IP-osoitteista tiliäsi on käytetty. Tallennamme tilin käytön IP-osoitteen, ajan sekä epäonnistuneet yritykset."
+      ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
+        "Voit avata yllä olevan määrityksen heti lisäämällä ${ specificCountryCount } tilauksesi IP-osoitteiden määrään tai ottamalla meihin yhteyttä räätälöityjä ratkaisuja varten."
       ],
       "You can import one data type at a time.": [
         "Voit tuoda vain yhden tietotyypin kerrallaan."
@@ -7369,9 +7630,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Tilaustasi hallinnoi Mozilla. Ota yhteyttä Mozillan tukeen."
-      ],
-      "Your subscription will automatically renew on ${ renewalTime }.": [
-        "Tilauksesi uudistuu automaattisesti ${ renewalTime }."
       ]
     },
     "info": {
@@ -9481,6 +9739,9 @@
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } ilman Hide-my-email-aliasrajoitusta"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } -ohjelma"
+      ],
       "${ size } attachment size": [
         "${ size } liitteen koko"
       ],
@@ -9501,9 +9762,6 @@
       ],
       "99.95% SLA": [
         "99.95 % SLA"
-      ],
-      "Ad-blocker & malware protection": [
-        "Mainos- ja haittaohjelmaesto"
       ],
       "Admin console": [
         "Hallintapaneeli"
@@ -9789,6 +10047,17 @@
         "Tiimin hallinta"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Muutoin pääsyä tililesi rajoitetaan ja aikanaan tilisi poistetaan käytöstä."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Jatkaaksesi ${ MAIL_APP_NAME }n käyttämistä premium-ominaisuuksilla, valitse tilaus ja maksutapa."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Kokeilujaksosi päättyy ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, päättyy ${ last4 }"
@@ -9878,17 +10147,6 @@
         "Nykyisellä tilauksellasi nautit alennetusta etuhinnasta. Jos alennat tilisi, menetät etuhinnan, eikä se ole enää käytettävissä, jos joskus palaat tilaajaksi."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Muutoin pääsyä tililesi rajoitetaan ja aikanaan tilisi poistetaan käytöstä."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Jatkaaksesi ${ MAIL_APP_NAME }n käyttämistä premium-ominaisuuksilla, valitse tilaus ja maksutapa."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Kokeilujaksosi päättyy ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace }/${ humanMaxSpace }"
@@ -9966,18 +10224,6 @@
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
-        "${ CALENDAR_APP_NAME }: päästä päähän -salattu kalenteri"
-      ],
-      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
-        "${ DRIVE_APP_NAME }: päästä päähän -salattu pilvitallennustila"
-      ],
-      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
-        "${ MAIL_APP_NAME }: päästä päähän -salattu sähköposti"
-      ],
-      "${ VPN_APP_NAME }: unblock content, browse privately": [
-        "${ VPN_APP_NAME }: käytä estettyä sisältöä, selaa yksityisesti"
-      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Käytä mm. Netflixin, Disney+:n ja Prime Videon kaltaisten suoratoistopalveluiden sisältöä mistä tahansa"
       ],
@@ -10083,6 +10329,9 @@
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Suojaa perhettäsi haitallisilta verkkosivustoilta ja käytä nopeita VPN-palvelimia suoratoistaaksesi suosikkisisältöäsi"
+      ],
+      "Provides the highest level of account security protection and specialist support": [
+        "Tarjoaa korkeimman tason tilin suojauksen ja asiantuntijatuen"
       ],
       "Quickly set up out-of-office messages": [
         "Määritä \"poissa toimistolta\" -viestit nopeasti"
@@ -10822,12 +11071,6 @@
       ],
       "per month, billed annually": [
         "kuukaudessa, laskutetaan vuosittain"
-      ],
-      "per month, billed every 15 months": [
-        "kuukaudessa, laskutetaan 15 kuukauden välein"
-      ],
-      "per month, billed every 30 months": [
-        "kuukaudessa, laskutetaan 30 kuukauden välein"
       ],
       "per month, billed every month": [
         "kuukaudessa, laskutetaan kuukausittain"
@@ -11731,9 +11974,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "Yhteensä ${ storageSize } tallennustilaa"
-      ],
       "3 TB": [
         "3 Tt"
       ],
@@ -11755,15 +11995,6 @@
       "Premium early access": [
         "Premium-ennakkokäyttö"
       ],
-      "Premium Mail and Calendar": [
-        "Premium Mail ja Calendar"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "Premium Mail, Calendar ja Drive"
-      ],
-      "Premium VPN": [
-        "Premium VPN"
-      ],
       "Secure cloud storage": [
         "Turvallinen pilvitallennustila"
       ],
@@ -11775,9 +12006,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "Alennukset perustuvat normaaliin kuukausihintaan."
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Tilaus uudistuu automaattisesti kahden vuoden välein samalla hinnalla kunnes se perutaan."
       ]
@@ -11836,10 +12064,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Laskutetaan ${ amount } 30 kuukauden ajan"
-      ],
-      "for ${ n } month": [
-        "${ n } kuukaudeksi",
-        "${ n } kuukaudeksi"
       ],
       "Get the deal": [
         "Hanki tarjous"
@@ -11908,9 +12132,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Kaikki premium-palvelumme parhaimmillaan: 100 sähköpostiosoitetta, tuki 10 omalle verkkotunnukselle, rajattomasti Hide-my-email-aliaksia, kalenterijako, salattu pilvitallennus tiedostojen jaolla sekä paljon muuta."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Sisältää tuen yhdelle omalle sähköpostiverkkotunnukselle, 10 sähköpostiosoitteelle, 10 Hide-my-email-aliakselle, kalenterijaolle sekä paljon muuta."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Sisältää tuen kolmelle omalle sähköpostiverkkotunnukselle, 15 sähköpostiosoitteelle, rajattomasti Hide-my-email-aliaksia, kalenterijaon sekä paljon muuta."
       ],
@@ -11922,9 +12143,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää automaattisen synkronoinnin, salatun tiedostojen jakamisen ja paljon muuta."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Tallennustila jaetaan ${ MAIL_APP_NAME }in, ${ CALENDAR_APP_NAME }in ja ${ DRIVE_APP_NAME }n välillä."
       ]
     },
     "Spotlight": {
@@ -11990,14 +12208,8 @@
       ]
     },
     "Subscription": {
-      "Billed every 15 months": [
-        "Laskutetaan 15 kuukauden välein"
-      ],
       "Billed every 2 years": [
         "Laskutetaan 2 vuoden välein"
-      ],
-      "Billed every 30 months": [
-        "Laskutetaan 30 kuukauden välein"
       ],
       "Billed monthly": [
         "Laskutetaan kuukausittain"
@@ -12399,24 +12611,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "Premium Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Premium Mail ja Calendar"
-      ],
       "Premium Password Manager": [
         "Premium salasanahallinta"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Tallenna salasanasi turvallisesti ja täytä ne automaattisesti verkkosivustoilla. Sisältää rajattomasti salasanoja, automaattisen täytön, salasanageneraattorin ja paljon muuta."
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "Salasanahallinta"
       ]
     },
     "summer2023: Tooltip": {
@@ -13799,11 +13995,6 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Ulkoinen tililisi on saattanut saavuttaa sille asetetun 24-tunnin tiedonsiirtorajoituksen. ${ BRAND_NAME } pyrkii jatkamaan tuontia mahdollisimman pian."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
-        "${ PASS_APP_NAME }: päästä päähän -salattu salasanahallinta"
       ]
     },
     "Tooltip automatically attach public key": {

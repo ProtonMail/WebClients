@@ -293,9 +293,6 @@
       "Delete": [
         "Eliminar"
       ],
-      "Delete and confirm": [
-        "Confirmar e eliminar"
-      ],
       "Delete Gateway": [
         "Eliminar o gateway"
       ],
@@ -775,9 +772,6 @@
       ],
       "Save address": [
         "Guardar endereço"
-      ],
-      "Save changes": [
-        "Guardar as alterações"
       ],
       "Save ICS file": [
         "Guardar ficheiro ICS"
@@ -4011,15 +4005,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium Drive": [
-        "Drive premium"
-      ],
-      "Premium Mail and Calendar": [
-        "Premium Mail e Calendar"
-      ],
-      "Premium VPN": [
-        "VPN premium"
-      ],
       "Up to 6 users": [
         "Até 6 utilizadores"
       ]
@@ -5205,9 +5190,6 @@
       "${ discountPercentage } forever": [
         "${ discountPercentage } para sempre"
       ],
-      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } deixará de manter as versões anteriores dos seus ficheiros."
-      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } não é válido."
       ],
@@ -5433,9 +5415,6 @@
       ],
       "Align right": [
         "Alinhar à direita"
-      ],
-      "All ${ BRAND_NAME } apps and their premium features": [
-        "Todas as aplicações ${ BRAND_NAME } e os seus recursos premium"
       ],
       "All (${ totalFoldersCount } folder)": [
         "Tudo (${ totalFoldersCount } pasta)",
@@ -6332,14 +6311,8 @@
       "per month, billed every 12 months": [
         "por mês, faturado a cada 12 meses"
       ],
-      "per month, billed every 15 months": [
-        "por mês, faturado a cada 15 meses"
-      ],
       "per month, billed every 24 months": [
         "por mês, faturado a cada 24 meses"
-      ],
-      "per month, billed every 30 months": [
-        "por mês, faturado a cada 30 meses"
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
         "É mais provável que clientes PGP detectem automaticamente as suas chaves PGP se as mensagens de saída forem assinadas."
@@ -6559,12 +6532,6 @@
       "Setting up your organization": [
         "A configurar a sua organização"
       ],
-      "Settings update failed": [
-        "Erro de atualização das definições"
-      ],
-      "Settings updated": [
-        "As definições foram atualizadas."
-      ],
       "Show original message": [
         "Mostrar mensagem original"
       ],
@@ -6749,12 +6716,6 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Isto cancelará a sua subscrição paga atual e perderá qualquer benefício de fidelidade acumulado. O saldo restante da sua assinatura será devolvido como créditos na conta."
       ],
-      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Isto eliminará todas as versões anteriores dos seus ficheiros com mais de ${ rententionLabel }."
-      ],
-      "This will delete all previous versions of your files.": [
-        "Isto irá eliminar todas as versões anteriores dos seus ficheiros."
-      ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Isto irá desativar a sua frase de recuperação atual. Não será possível utilizá-la para aceder à sua conta ou desencriptar os seus dados."
       ],
@@ -6917,9 +6878,6 @@
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Atualize para adicionar um endereço @pm.me mais curto à sua conta que seja mais fácil de partilhar. Significa \"${ MAIL_APP_NAME } me\" ou \"Mensagem privada para mim\"."
       ],
-      "Upgrade to unlock": [
-        "Actualize para desbloquear"
-      ],
       "Upload picture": [
         "Enviar imagem"
       ],
@@ -6967,9 +6925,6 @@
       ],
       "Version ${ version }": [
         "Versão ${ version }"
-      ],
-      "Version history": [
-        "Histórico das versões"
       ],
       "Visa Secure logo": [
         "Logo Visa Secure"
@@ -8068,9 +8023,6 @@
       ],
       "Don't ask again": [
         "Não perguntar novamente"
-      ],
-      "Don't keep versions": [
-        "Não manter as versões"
       ],
       "Duration": [
         "Duração"
@@ -9448,9 +9400,6 @@
       "99.95% SLA": [
         "SLA de 99,95%"
       ],
-      "Ad-blocker & malware protection": [
-        "Bloqueio de anúncios e proteção contra malware"
-      ],
       "Admin console": [
         "Consola de administração"
       ],
@@ -9729,6 +9678,17 @@
         "Gestão de equipa"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Caso contrário, o acesso à sua conta será limitado e a sua conta acabará por ser desativada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar a utilizar ${ MAIL_APP_NAME } com funcionalidades premium, escolha a sua subscrição e as opções de pagamento."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "A sua avaliação termina em ${ formattedPeriodEndDate }."
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina com ${ last4 }"
@@ -9815,17 +9775,6 @@
         "Está a beneficiar de um preço promocional no seu plano atual. Ao alterar a sua subscrição da sua conta, perderá o preço promocional e este não estará disponível se tentar subscrever novamente."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Caso contrário, o acesso à sua conta será limitado e a sua conta acabará por ser desativada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar a utilizar ${ MAIL_APP_NAME } com funcionalidades premium, escolha a sua subscrição e as opções de pagamento."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "A sua avaliação termina em ${ formattedPeriodEndDate }."
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } de ${ humanMaxSpace }"
@@ -9903,18 +9852,6 @@
       ]
     },
     "new_plans: tooltip": {
-      "${ CALENDAR_APP_NAME }: end-to-end encrypted calendar": [
-        "${ CALENDAR_APP_NAME }: calendário encriptado de ponta a ponta"
-      ],
-      "${ DRIVE_APP_NAME }: end-to-end encrypted cloud storage": [
-        "${ DRIVE_APP_NAME }: armazenamento na nuvem encriptado de ponta a ponta"
-      ],
-      "${ MAIL_APP_NAME }: end-to-end encrypted email": [
-        "${ MAIL_APP_NAME }: e-mail encriptado de ponta a ponta"
-      ],
-      "${ VPN_APP_NAME }: unblock content, browse privately": [
-        "${ VPN_APP_NAME }: desbloqueie conteúdos e navegue em privado"
-      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Aceda a conteúdos em serviços de streaming, incluindo Netflix, Disney+ e Prime Video, a partir de qualquer lugar"
       ],
@@ -9980,7 +9917,7 @@
         "Tal como uma pasta, um cofre e é uma forma prática de organizar os seus itens. A partilha de cofres com amigos e familiares está a ser preparada."
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
-        "Bloqueie os seus recursos de empresa da internet pública e torne-os acessíveis apenas através dos seus gateways privados"
+        "Bloqueie os recursos da sua empresa da Internet pública e torne-os acessíveis apenas através dos seus gateways privados"
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Gere a sua subscrição, incluindo a personalização do seu plano. Os métodos de pagamento aceites são cartão de crédito, PayPal, criptomoeda e transferência bancária."
@@ -9989,7 +9926,7 @@
         "Nos dias úteis, a equipa de apoio ao cliente de ${ BRAND_NAME } irá ajudá-lo no prazo de 24 horas após o seu pedido."
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Uma ligação VPN permite que um dispositivo se ligue a ${ BRAND_NAME } VPN ea qualquer momento. Por exemplo, para ligar um telefone e um computador portátil à ${ BRAND_NAME_TWO } VPN ao mesmo tempo, são necessárias duas ligações VPN."
+        "Uma ligação VPN permite que um dispositivo se ligue a ${ BRAND_NAME } VPN em qualquer altura. Por exemplo, para ligar um telemóvel e um computador portátil à ${ BRAND_NAME_TWO } VPN ao mesmo tempo, são necessárias duas ligações VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opção para ver as caixas de entrada de utilizadores não privados como o utilizador faria, incluindo todas as mensagens e detalhes de contacto"
@@ -10070,13 +10007,13 @@
         "Suporte para protocolos de partilha de ficheiros, como o BitTorrent"
       ],
       "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
-        "Endereços de e-mail únicos e a pedido que protegem a sua identidade em linha e lhe dão um maior controlo sobre as mensagens que chegam à sua caixa de entrada. SimpleLogin por ${ BRAND_NAME }."
+        "Endereços de e-mail únicos e instantâneos que protegem a sua identidade online e permitem-lhe controlar o que aparece na sua caixa de entrada. Do SimpleLogin por ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Utilize os seus próprios endereços de domínio de e-mail personalizado. Por exemplo: você@oseunome.pt"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        "Não mantemos registos de utilização de sessões do que faz em linha e não registamos metadados que possam comprometer a sua privacidade."
+        "Não mantemos registos de utilização de sessões do que faz online e não registamos metadados que possam comprometer a sua privacidade."
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
         "Estamos empenhados em ajudar os clientes sujeitos aos regulamentos HIPAA/HITECH a salvaguardar as informações de saúde protegidas (PHI). Estão disponíveis BAAs assinados para todos os clientes ${ BRAND_NAME } para empresas."
@@ -10153,7 +10090,7 @@
         "Gateways privados"
       ],
       "Require 2FA": [
-        "Requerer 2FA"
+        "Requer A2F"
       ]
     },
     "Notification": {
@@ -10760,12 +10697,6 @@
       "per month, billed annually": [
         "por mês, pago anualmente"
       ],
-      "per month, billed every 15 months": [
-        "por mês com faturação a cada 15 meses"
-      ],
-      "per month, billed every 30 months": [
-        "por mês com faturação a cada 30 meses"
-      ],
       "per month, billed every month": [
         "por mês, pago a cada mês"
       ],
@@ -11209,15 +11140,15 @@
     },
     "session_recovery:disable:info": {
       "Make sure you have access to a recovery method.": [
-        "Verifique se você possui acesso a um método de recuperação."
+        "Certifique-se de que tem acesso a um método de recuperação."
       ],
       "You will no longer be able to request a password reset from your account settings.": [
-        "Você não poderá mais solicitar uma restabelecer de senha nas configurações da sua conta."
+        "Deixará de poder solicitar uma reposição da palavra-passe nas definições da sua conta."
       ]
     },
     "session_recovery:disable:title": {
       "Disable password reset?": [
-        "Desativar redefinição de senha?"
+        "Desativar a reposição da palavra-passe?"
       ]
     },
     "session_recovery:in_progress:info": {
@@ -11404,9 +11335,6 @@
       ]
     },
     "specialoffer: Deal details": {
-      "${ storageSize } total storage": [
-        "${ storageSize } de armazenamento total"
-      ],
       "3 TB": [
         "3 TB"
       ],
@@ -11425,20 +11353,8 @@
       "Highest VPN speed": [
         "Velocidade VPN mais elevada"
       ],
-      "Mail, Calendar, Drive": [
-        "Mail, Calendar e Drive"
-      ],
       "Premium early access": [
         "Acesso antecipado premium"
-      ],
-      "Premium Mail and Calendar": [
-        "Premium Mail e Calendar"
-      ],
-      "Premium Mail, Calendar and Drive": [
-        "Mail, Calendar e Drive premium"
-      ],
-      "Premium VPN": [
-        "VPN premium"
       ],
       "Secure cloud storage": [
         "Armazenamento seguro na nuvem"
@@ -11451,9 +11367,6 @@
       ]
     },
     "specialoffer: Footer": {
-      "Discounts are based on the standard monthly pricing.": [
-        "Os descontos baseiam-se no preço mensal normal."
-      ],
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Esta subscrição será renovada automaticamente a cada 2 anos ao mesmo preço até ser cancelada."
       ]
@@ -11512,10 +11425,6 @@
       ],
       "Billed at ${ amount } for 30 months": [
         "Faturado a ${ amount } durante 30 meses"
-      ],
-      "for ${ n } month": [
-        "por ${ n } mês.",
-        "por ${ n } meses."
       ],
       "Get the deal": [
         "Obtenha a promoção"
@@ -11584,9 +11493,6 @@
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Todos os nossos serviços premium com os limites mais altos: 100 endereços de e-mail, suporte para 10 domínios personalizados, aliases ilimitados do Hide-my-email, partilha de calendário, armazenamento encriptado na nuvem e partilha de ficheiros e muito mais."
       ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Inclui o suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases Hide-my-email, partilha de calendário e muito mais."
-      ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Inclui o suporte para 3 domínios de e-mail personalizados, 15 endereços de e-mail, aliases ilimitados do Hide-my-email, partilha de calendário e muito mais."
       ],
@@ -11598,9 +11504,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui sincronização automática, partilha de ficheiros encriptados e muito mais."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "O espaço de armazenamento é partilhado entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
       ]
     },
     "Spotlight": {
@@ -11666,14 +11569,8 @@
       ]
     },
     "Subscription": {
-      "Billed every 15 months": [
-        "Faturação a cada 15 meses"
-      ],
       "Billed every 2 years": [
         "Faturado a cada 2 anos"
-      ],
-      "Billed every 30 months": [
-        "Faturação a cada 30 meses"
       ],
       "Billed monthly": [
         "Faturado mensalmente"
@@ -12075,24 +11972,8 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Drive": [
-        "Versão premium do Drive"
-      ],
-      "Premium Mail and Calendar": [
-        "Versão premium do Mail e Calendar"
-      ],
       "Premium Password Manager": [
         "Versão premium do gestor de palavras-passe"
-      ]
-    },
-    "summer2023: Describe Proton Pass": {
-      "Securely store your passwords and autofill them on websites. Includes unlimited passwords, autofill, password generator, and more.": [
-        "Armazene as suas palavras-passe com segurança e preencha-as automaticamente nos sítios web. Inclui palavras-passe ilimitadas, preenchimento automático, gerador de palavras-passe e mais."
-      ]
-    },
-    "summer2023: Short tool name to present Proton Pass": {
-      "Password manager": [
-        "Gestor de palavras-passe"
       ]
     },
     "summer2023: Tooltip": {
@@ -12601,9 +12482,6 @@
       ],
       "Delete user?": [
         "Eliminar utilizador?"
-      ],
-      "Delete version history?": [
-        "Eliminar o histórico de versões?"
       ],
       "Disable ${ email }": [
         "Desativar ${ email }"
@@ -13469,11 +13347,6 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "A sua conta externa pode ter atingido o limite de largura de banda de 24 horas. ${ BRAND_NAME } tentará retomar a importação assim que possível."
-      ]
-    },
-    "tooltip": {
-      "${ PASS_APP_NAME }: end-to-end encrypted password manager": [
-        "${ PASS_APP_NAME }: gestor de plavaras-passe encriptadas de ponta a ponta"
       ]
     },
     "Tooltip automatically attach public key": {
