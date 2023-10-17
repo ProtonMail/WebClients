@@ -1,7 +1,5 @@
 import { c } from 'ttag';
 
-
-
 import { Button, CircleLoader } from '@proton/atoms';
 import {
     Checkbox,
@@ -66,7 +64,10 @@ const CalendarSidebarListItem = ({
     const isCalendarWritable = getIsCalendarWritable(calendar);
 
     const leftNode = loadingVisibility ? (
-        <div className="flex flex-align-items-center flex-justify-center w-custom" style={{ '--w-custom': '1.25rem' }}>
+        <div
+            className="flex flex-align-items-center flex-justify-center w-custom ml-custom"
+            style={{ '--w-custom': '1.25rem', '--ml-custom': 'calc(var(--space-1) * -1)' }}
+        >
             <CircleLoader size="small" color={Color} />
         </div>
     ) : (
