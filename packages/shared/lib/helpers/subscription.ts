@@ -14,7 +14,7 @@ import {
     PLAN_TYPES,
     isFreeSubscription,
 } from '../constants';
-import { External, Plan, PlanIDs, PlansMap, Pricing, Subscription } from '../interfaces';
+import { External, Plan, PlanIDs, PlansMap, Pricing, Subscription, SubscriptionModel } from '../interfaces';
 import { hasBit } from './bitset';
 
 const { PLAN, ADDON } = PLAN_TYPES;
@@ -529,4 +529,8 @@ export const getVPNDedicatedIPs = (subscription: Subscription | undefined) => {
         (acc, { Name, Quantity }) => acc + (Name.startsWith('1ip') ? Quantity : 0),
         IPS_INCLUDED_IN_PLAN[planName] || 0 // 1 IP is included in the Business plan
     );
+};
+
+export const getHasCoupon = (subscription: SubscriptionModel | undefined, coupon: string) => {
+    return [subscription?.CouponCode, subscription?.UpcomingSubscription?.CouponCode].includes(coupon);
 };
