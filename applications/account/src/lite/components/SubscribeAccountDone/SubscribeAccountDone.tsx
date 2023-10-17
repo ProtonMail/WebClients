@@ -4,14 +4,15 @@ import { SubscribeType } from '../../types/SubscribeType';
 import updateSuccess from './updateSuccess.svg';
 
 const SubscribeAccountDone = ({ type }: { type: SubscribeType }) => {
-    const successText = c('Info').t`Account successfully updated`;
     return (
-        <div className="text-center">
+        <div className="py-14 text-center">
             {type === SubscribeType.Subscribed && (
-                <div className="mb-4">
-                    <h3 className="text-bold text-xl">{successText}</h3>
-                    <img src={updateSuccess} alt={successText} />
-                </div>
+                <>
+                    <img src={updateSuccess} alt="" />
+                    <h1 className="text-bold text-2xl my-2">
+                        {c('Info').t`Your account has been successfully updated`}
+                    </h1>
+                </>
             )}
             <div>{c('Info').t`You can now close this window.`}</div>
         </div>
