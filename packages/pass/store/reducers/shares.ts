@@ -94,18 +94,19 @@ export const withOptimisticShares = withOptimistic<SharesState>(
 
             return fullMerge(state, {
                 [id]: {
-                    createTime: getEpoch(),
-                    shareId: id,
-                    vaultId: id,
-                    targetId: id,
                     content: content,
-                    targetType: ShareType.Vault,
+                    createTime: getEpoch(),
                     eventId: '',
-                    targetMembers: 1,
-                    targetMaxMembers: 1, // optimistically me
+                    newUserInvitesReady: 0,
                     owner: true,
-                    shareRoleId: ShareRole.ADMIN,
                     shared: false,
+                    shareId: id,
+                    shareRoleId: ShareRole.ADMIN,
+                    targetId: id,
+                    targetMaxMembers: 1,
+                    targetMembers: 1,
+                    targetType: ShareType.Vault,
+                    vaultId: id,
                 },
             });
         }
