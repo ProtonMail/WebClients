@@ -1,8 +1,19 @@
 import { ChangeEvent, Dispatch, FormEvent, SetStateAction } from 'react';
 
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
+import {
+    Alert,
+    AttachedFile,
+    Dropzone,
+    FileInput,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+    SettingsLink,
+} from '@proton/components';
+import { APPS } from '@proton/shared/lib/constants';
 import {
     MAX_CONTACTS_PER_USER,
     MAX_IMPORT_CONTACTS_STRING,
@@ -18,15 +29,6 @@ import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { EXTENSION, IMPORT_STEPS, ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
 
-import {
-    Alert,
-    AttachedFile,
-    Dropzone,
-    FileInput,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-} from '../../../../components';
 import { useFeature } from '../../../../hooks';
 import { FeatureCode } from '../../../features';
 import { getInitialState } from '../ContactImportModal';
@@ -145,28 +147,29 @@ const ContactImportAttaching = ({ model, setModel, onClose }: Props) => {
         }
     };
 
-    const alert = model.failure ? (
-        <Alert className="mb-4" type="error">
-            {model.failure?.message}
-        </Alert>
-    ) : (
-        <Alert className="mb-4">
-            {c('Description').ngettext(
-                msgid`The file should have a maximum size of ${MAX_IMPORT_FILE_SIZE_STRING} and have ${MAX_IMPORT_CONTACTS_STRING} contact. If your file is bigger, please split it into smaller files.`,
-                `The file should have a maximum size of ${MAX_IMPORT_FILE_SIZE_STRING} and have up to ${MAX_IMPORT_CONTACTS_STRING} contacts. If your file is bigger, please split it into smaller files.`,
-                MAX_CONTACTS_PER_USER
-            )}
-            <div>
-                <Href href={getKnowledgeBaseUrl('/adding-contacts')}>{c('Link').t`Learn more`}</Href>
-            </div>
-        </Alert>
+    const easySwitchLink = (
+        <SettingsLink app={APPS.PROTONMAIL} path="/easy-switch" target="_blank">{c('description')
+            .t`use the Easy Switch import assistant`}</SettingsLink>
     );
+
+    const learnMoreLink = <Href href={getKnowledgeBaseUrl('/adding-contacts')}>{c('Link').t`Learn more`}</Href>;
 
     return (
         <form className="modal-two-dialog-container h100" onSubmit={handleSubmit}>
             <ModalTwoHeader title={c('Title').t`Import contacts`} />
             <ModalTwoContent>
-                {alert}
+                {model.failure ? (
+                    <Alert className="mb-4" type="error">
+                        {model.failure?.message}
+                    </Alert>
+                ) : (
+                    <>
+                        <p className="mb-2">{c('Description')
+                            .jt`To import your contacts from Google or Outlook, ${easySwitchLink}.`}</p>
+                        <p className="mt-0">{c('Description')
+                            .jt`For import via CSV and VCF file, ensure the file does not exceed ${MAX_IMPORT_FILE_SIZE_STRING} or ${MAX_IMPORT_CONTACTS_STRING} contacts. If your file is bigger, please split it into smaller files. ${learnMoreLink}.`}</p>
+                    </>
+                )}
                 <Dropzone onDrop={onAddFiles} size="small" shape="flashy">
                     <div className="flex flex-align-items-center flex-justify-center border p-4 rounded-xl">
                         {model.fileAttached ? (

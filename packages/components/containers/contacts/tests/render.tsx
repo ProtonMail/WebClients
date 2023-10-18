@@ -1,17 +1,22 @@
 import { ReactElement, ReactNode } from 'react';
+import { Router } from 'react-router';
 
 import { RenderResult, render as originalRender } from '@testing-library/react';
-import { resolvedRequest } from 'proton-mail/src/app/helpers/test/cache';
+import { MemoryHistory, createMemoryHistory } from 'history';
 
 import { CryptoApiInterface, VERIFICATION_STATUS } from '@proton/crypto';
-import { CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
+import { APPS, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
 import { prepareVCardContact } from '@proton/shared/lib/contacts/encrypt';
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
 import createCache from '@proton/shared/lib/helpers/cache';
+import { ProtonConfig } from '@proton/shared/lib/interfaces';
 import { STATUS } from '@proton/shared/lib/models/cache';
+
+import { resolvedRequest } from 'proton-mail/src/app/helpers/test/cache';
 
 import ApiContext from '../../api/apiContext';
 import { CacheProvider } from '../../cache';
+import { ConfigProvider } from '../../config';
 import EventManagerContext from '../../eventManager/context';
 import FeaturesProvider from '../../features/FeaturesProvider';
 import { NotificationsContext } from '../../notifications';
@@ -54,6 +59,20 @@ export const notificationManager = {
     clearNotifications: jest.fn(),
     setOffset: jest.fn(),
 };
+
+let history: MemoryHistory;
+export const getHistory = () => history;
+export const resetHistory = () => {
+    history = createMemoryHistory({ initialEntries: ['/inbox'] });
+};
+resetHistory();
+
+export const config = {
+    APP_NAME: APPS.PROTONMAIL,
+    APP_VERSION: 'test-version',
+    DATE_VERSION: 'test-date-version',
+} as ProtonConfig;
+
 export const eventManager = {
     start: jest.fn(),
     stop: jest.fn(),
@@ -62,17 +81,21 @@ export const eventManager = {
 } as any;
 
 const TestProvider = ({ children }: { children: ReactNode }) => (
-    <ApiContext.Provider value={api}>
-        <CacheProvider cache={cache}>
-            <FeaturesProvider>
-                <NotificationsContext.Provider value={notificationManager}>
-                    <EventManagerContext.Provider value={eventManager}>
-                        <ContactProvider>{children}</ContactProvider>
-                    </EventManagerContext.Provider>
-                </NotificationsContext.Provider>
-            </FeaturesProvider>
-        </CacheProvider>
-    </ApiContext.Provider>
+    <ConfigProvider config={config}>
+        <ApiContext.Provider value={api}>
+            <CacheProvider cache={cache}>
+                <FeaturesProvider>
+                    <NotificationsContext.Provider value={notificationManager}>
+                        <EventManagerContext.Provider value={eventManager}>
+                            <Router history={history}>
+                                <ContactProvider>{children}</ContactProvider>
+                            </Router>
+                        </EventManagerContext.Provider>
+                    </NotificationsContext.Provider>
+                </FeaturesProvider>
+            </CacheProvider>
+        </ApiContext.Provider>
+    </ConfigProvider>
 );
 
 export const addToCache = (key: string, value: any) => {
