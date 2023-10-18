@@ -11,7 +11,7 @@ import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal'
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { ShareMember } from '@proton/pass/components/Share/ShareMember';
-import { SharePendingMember } from '@proton/pass/components/Share/SharePendingMember';
+import { PendingExistingMember, PendingNewMember } from '@proton/pass/components/Share/SharePendingMember';
 import { SharedVaultItem } from '@proton/pass/components/Vault/SharedVaultItem';
 import { useShareAccessOptionsPolling } from '@proton/pass/hooks/useShareAccessOptionsPolling';
 import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
@@ -106,22 +106,20 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
                             switch (item.type) {
                                 case 'new':
                                     return (
-                                        <SharePendingMember
-                                            type="new"
+                                        <PendingNewMember
                                             shareId={shareId}
                                             key={item.key}
                                             email={item.invite.invitedEmail}
-                                            inviteId={item.invite.newUserInviteId}
+                                            newUserInviteId={item.invite.newUserInviteId}
                                             canManage={canManage}
                                             state={item.invite.state}
                                         />
                                     );
                                 case 'existing':
                                     return (
-                                        <SharePendingMember
-                                            type="existing"
-                                            shareId={shareId}
+                                        <PendingExistingMember
                                             key={item.key}
+                                            shareId={shareId}
                                             email={item.invite.invitedEmail}
                                             inviteId={item.invite.inviteId}
                                             canManage={canManage}
