@@ -12,9 +12,9 @@ export enum ShareRole {
 }
 
 export type VaultShareContent = {
-    name: string;
     description: string;
     display: { icon?: VaultIcon; color?: VaultColor };
+    name: string;
 };
 
 export type ItemShareContent = {};
@@ -28,13 +28,14 @@ export type ShareContent<T extends ShareType = ShareType> = T extends ShareType.
 export type ShareBase<T extends ShareType = ShareType> = {
     content: ShareContent<T>;
     createTime: number;
+    newUserInvitesReady: number;
     owner: boolean;
     shared: boolean;
     shareId: string;
     shareRoleId: ShareRole;
     targetId: string;
-    targetMembers: number;
     targetMaxMembers: number;
+    targetMembers: number;
     targetType: T;
     vaultId: string;
 };
@@ -42,3 +43,12 @@ export type ShareBase<T extends ShareType = ShareType> = {
 export type WithEventId<T> = T & { eventId: string };
 export type Share<T extends ShareType = ShareType> = WithEventId<ShareBase<T>>;
 export type VaultShare = Share<ShareType.Vault>;
+
+export type ShareAccessKeys =
+    | 'newUserInvitesReady'
+    | 'owner'
+    | 'shared'
+    | 'shareId'
+    | 'shareRoleId'
+    | 'targetMaxMembers'
+    | 'targetMembers';

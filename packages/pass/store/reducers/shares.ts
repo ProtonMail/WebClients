@@ -6,7 +6,8 @@ import {
     inviteAcceptSuccess,
     inviteCreationSuccess,
     inviteRemoveSuccess,
-    inviteResendSuccess,
+    newUserInvitePromoteSuccess,
+    newUserInviteRemoveSuccess,
     shareAccessChange,
     shareDeleteSync,
     shareEditMemberAccessSuccess,
@@ -31,13 +32,14 @@ import { sanitizeWithCallbackAction } from '@proton/pass/store/actions/with-call
 import withOptimistic from '@proton/pass/store/optimistic/with-optimistic';
 import type { Share } from '@proton/pass/types';
 import { ShareRole, ShareType } from '@proton/pass/types';
-import type { PendingInvite, ShareMember } from '@proton/pass/types/data/invites';
+import type { NewUserPendingInvite, PendingInvite, ShareMember } from '@proton/pass/types/data/invites';
 import { objectDelete } from '@proton/pass/utils/object/delete';
 import { fullMerge, partialMerge } from '@proton/pass/utils/object/merge';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 
 export type ShareItem<T extends ShareType = ShareType> = Share<T> & {
     invites?: PendingInvite[];
+    newUserInvites?: NewUserPendingInvite[];
     members?: ShareMember[];
 };
 
@@ -78,9 +80,14 @@ export const withOptimisticShares = withOptimistic<SharesState>(
         }
 
         if (shareEvent.match(action) && state !== null) {
-            return partialMerge(state, {
-                [action.payload.shareId]: { eventId: action.payload.Events.LatestEventID },
-            });
+            const { shareId, Events } = action.payload;
+            const currentEventId = state[shareId].eventId;
+
+            return Events.LatestEventID === currentEventId
+                ? state
+                : partialMerge(state, {
+                      [action.payload.shareId]: { eventId: action.payload.Events.LatestEventID },
+                  });
         }
 
         if (vaultCreationIntent.match(action)) {
@@ -88,18 +95,19 @@ export const withOptimisticShares = withOptimistic<SharesState>(
 
             return fullMerge(state, {
                 [id]: {
-                    createTime: getEpoch(),
-                    shareId: id,
-                    vaultId: id,
-                    targetId: id,
                     content: content,
-                    targetType: ShareType.Vault,
+                    createTime: getEpoch(),
                     eventId: '',
-                    targetMembers: 1,
-                    targetMaxMembers: 1, // optimistically me
+                    newUserInvitesReady: 0,
                     owner: true,
-                    shareRoleId: ShareRole.ADMIN,
                     shared: false,
+                    shareId: id,
+                    shareRoleId: ShareRole.ADMIN,
+                    targetId: id,
+                    targetMaxMembers: 1,
+                    targetMembers: 1,
+                    targetType: ShareType.Vault,
+                    vaultId: id,
                 },
             });
         }
@@ -142,19 +150,29 @@ export const withOptimisticShares = withOptimistic<SharesState>(
             return partialMerge(state, { [action.payload.shareId]: { shared: true } });
         }
 
-        if (inviteResendSuccess.match(action)) {
-            const { shareId, inviteId } = action.payload;
-            return partialMerge(state, { [shareId]: { inviteId, shared: true } });
+        if (newUserInvitePromoteSuccess.match(action)) {
+            const { shareId, invites, newUserInvites } = action.payload;
+            return partialMerge(state, { [shareId]: { newUserInvites, invites } });
         }
 
         if (inviteRemoveSuccess.match(action)) {
             const { shareId, inviteId } = action.payload;
-            const share = state[shareId];
-            const members = share.members ?? [];
-            const invites = (share.invites ?? []).filter((invite) => invite.inviteId !== inviteId);
-            const shared = members.length > 1 || invites.length > 0;
+            const { members = [], invites = [], newUserInvites = [] } = state[shareId];
 
-            return partialMerge(state, { [shareId]: { invites, shared } });
+            const update = invites.filter((invite) => invite.inviteId !== inviteId);
+            const shared = members.length > 1 || update.length > 0 || newUserInvites.length > 0;
+
+            return partialMerge(state, { [shareId]: { invites: update, shared } });
+        }
+
+        if (newUserInviteRemoveSuccess.match(action)) {
+            const { shareId, newUserInviteId } = action.payload;
+            const { members = [], invites = [], newUserInvites = [] } = state[shareId];
+
+            const update = newUserInvites.filter((invite) => invite.newUserInviteId !== newUserInviteId);
+            const shared = members.length > 1 || invites.length > 0 || update.length > 0;
+
+            return partialMerge(state, { [shareId]: { newUserInvites: update, shared } });
         }
 
         if (shareAccessChange.match(action)) {
@@ -163,8 +181,8 @@ export const withOptimisticShares = withOptimistic<SharesState>(
         }
 
         if (getShareAccessOptionsSuccess.match(action)) {
-            const { shareId, invites, members } = action.payload;
-            return partialMerge(state, { [shareId]: { invites, members } });
+            const { shareId, invites, newUserInvites, members } = action.payload;
+            return partialMerge(state, { [shareId]: { invites, members, newUserInvites } });
         }
 
         if (shareEditMemberAccessSuccess.match(action)) {

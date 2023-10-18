@@ -5,7 +5,9 @@ import { c } from 'ttag';
 import { ButtonLike } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
-import { ShareRole, type VaultShare } from '@proton/pass/types';
+import { type ShareItem } from '@proton/pass/store/reducers';
+import type { ShareType } from '@proton/pass/types';
+import { ShareRole } from '@proton/pass/types';
 
 import { CountLabel } from '../../Layout/Dropdown/CountLabel';
 import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
@@ -16,7 +18,7 @@ type Props = {
     label: string;
     selected: boolean;
     sharable?: boolean;
-    share?: VaultShare;
+    share?: ShareItem<ShareType.Vault>;
     onDelete?: () => void;
     onEdit?: () => void;
     onInvite?: () => void;
@@ -47,6 +49,7 @@ export const VaultItem: VFC<Props> = ({
     const withActions = onEdit || onDelete || onInvite || onManage || onLeave;
     const allowSharing = sharable && share !== undefined;
     const shared = share?.shared ?? false;
+    const notification = (share?.newUserInvitesReady ?? 0) > 0;
 
     return (
         <DropdownMenuButton
@@ -65,7 +68,20 @@ export const VaultItem: VFC<Props> = ({
                         onClick={handleClickEvent(onManage)}
                         shape="ghost"
                         title={c('Action').t`See members`}
+                        className="relative"
                     >
+                        {notification && (
+                            <Icon
+                                name="exclamation-circle-filled"
+                                size={12}
+                                className="absolute top-custom right-custom"
+                                style={{
+                                    '--top-custom': '4px',
+                                    '--right-custom': '-4px',
+                                    color: 'var(--signal-danger)',
+                                }}
+                            />
+                        )}
                         <Icon name="users" alt={c('Action').t`See members`} color="var(--text-weak)" />
                     </ButtonLike>
                 )

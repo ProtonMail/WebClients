@@ -73,7 +73,7 @@ const reducer: Reducer<SettingsState> = (state = INITIAL_STATE, action) => {
 
         /* `disallowedDomains` update should act as a setter */
         if ('disallowedDomains' in action.payload) update.disallowedDomains = {};
-        return partialMerge(update, action.payload);
+        return partialMerge<SettingsState>(update, action.payload);
     }
 
     if (itemCreationSuccess.match(action)) {
@@ -81,7 +81,7 @@ const reducer: Reducer<SettingsState> = (state = INITIAL_STATE, action) => {
     }
 
     if (syncLocalSettings.match(action)) {
-        return partialMerge(state, action.payload);
+        return partialMerge<SettingsState>(state, action.payload);
     }
 
     return state;

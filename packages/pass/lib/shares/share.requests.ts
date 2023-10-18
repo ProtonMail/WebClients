@@ -10,7 +10,7 @@ import {
 import { type ShareMember } from '@proton/pass/types/data/invites';
 import type { ShareEditMemberAccessIntent, ShareRemoveMemberAccessIntent } from '@proton/pass/types/data/shares.dto';
 
-import { decryptShareResponse } from './share.utils';
+import { parseShareResponse } from './share.utils';
 
 /* ⚠️ This endpoint is not paginated yet back-end side. */
 export const getAllShareKeys = async (shareId: string): Promise<ShareKeyResponse[]> => {
@@ -33,7 +33,7 @@ export const getShareLatestEventId = async (shareId: string): Promise<string> =>
 
 const loadVaultShareById = async (shareId: string): Promise<Maybe<Share<ShareType.Vault>>> => {
     const encryptedShare = await api({ url: `pass/v1/share/${shareId}`, method: 'get' });
-    return decryptShareResponse(encryptedShare.Share!);
+    return parseShareResponse(encryptedShare.Share!);
 };
 
 export const requestShares = async (): Promise<ShareGetResponse[]> =>
