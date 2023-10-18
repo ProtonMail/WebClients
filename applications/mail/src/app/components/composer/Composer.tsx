@@ -17,7 +17,6 @@ import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
-import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
@@ -259,13 +258,7 @@ const Composer = (
                 handleSendAnyway={handleSendAnyway}
                 handleCancelSend={handleCancelSend}
             />
-            <div
-                className={clsx([
-                    'composer-blur-container flex flex-column flex-item-fluid max-w100',
-                    // Only hide the editor not to unload it each time a modal is on top
-                    innerModal === ComposerInnerModalStates.None ? 'flex' : 'hidden',
-                ])}
-            >
+            <div className="composer-blur-container flex flex-column flex-item-fluid max-w100">
                 <div
                     ref={bodyRef}
                     className="composer-body-container flex flex-column flex-nowrap flex-item-fluid max-w100 mt-2"
