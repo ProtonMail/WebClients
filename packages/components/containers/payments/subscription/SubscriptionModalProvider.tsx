@@ -39,6 +39,7 @@ interface OpenCallbackProps {
     disableThanksStep?: boolean;
     showUserInfo?: boolean;
     hasClose?: boolean;
+    disableCloseOnEscape?: boolean;
     onClose?: () => void;
     onSuccess?: () => void;
     fullscreen?: boolean;
@@ -87,6 +88,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
         disableThanksStep?: boolean;
         showUserInfo?: boolean;
         hasClose?: boolean;
+        disableCloseOnEscape?: boolean;
         onClose?: () => void;
         onSuccess?: () => void;
         fullscreen?: boolean;
@@ -141,6 +143,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                         disableThanksStep,
                         showUserInfo,
                         hasClose,
+                        disableCloseOnEscape,
                         onClose,
                         onSuccess,
                         fullscreen,
@@ -191,6 +194,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                             disableThanksStep,
                             showUserInfo,
                             hasClose,
+                            disableCloseOnEscape,
                             onClose,
                             onSuccess,
                             fullscreen,
