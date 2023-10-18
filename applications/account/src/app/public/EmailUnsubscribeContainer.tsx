@@ -153,7 +153,7 @@ const EmailUnsubscribeContainer = () => {
     const categoriesJsx = <EmailSubscriptionCategories key="subscription-categories" news={subscriptionBits} />;
 
     return (
-        <main className="main-area h100">
+        <main className="main-area h-full">
             {(() => {
                 if (error) {
                     if (error.type === ErrorType.Expired) {

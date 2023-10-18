@@ -44,7 +44,7 @@ const DrawerView = ({
 
     return (
         <div
-            className={clsx('drawer-app-view h100 w-full flex flex-column', className)}
+            className={clsx('drawer-app-view h-full w-full flex flex-column', className)}
             onAnimationEnd={handleOnAnimationEnd}
             {...rest}
         >

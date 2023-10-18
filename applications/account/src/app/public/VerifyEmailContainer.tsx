@@ -58,7 +58,7 @@ const VerifyEmailContainer = ({ onSubscribe }: Props) => {
     }, []);
 
     return (
-        <main className="main-area h100">
+        <main className="main-area h-full">
             {(() => {
                 if (error) {
                     if (error.type === ErrorType.Expired) {
@@ -93,7 +93,7 @@ const VerifyEmailContainer = ({ onSubscribe }: Props) => {
                 }
                 return (
                     <PublicLayout
-                        className="h100"
+                        className="h-full"
                         img={<img src={accountIllustration} alt="" />}
                         header={c('Email').t`Email verified`}
                         main={

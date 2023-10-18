@@ -90,7 +90,7 @@ export const SandboxedPreview: FC<Props> = ({ contents, mimeType, onDownload }) 
             title={c('Title').t`Preview`}
             src="about:blank"
             ref={ref}
-            className="file-preview-container w-full h100"
+            className="file-preview-container w-full h-full"
             sandbox="allow-scripts"
             // Attribute is still experimental: https://developer.mozilla.org/en-US/docs/Web/API/HTMLIFrameElement/csp
             // @ts-ignore

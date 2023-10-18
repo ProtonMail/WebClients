@@ -139,7 +139,7 @@ const LoginForm = ({
                 method="post"
             >
                 <Challenge
-                    className="h0 absolute"
+                    className="h-0 absolute"
                     empty
                     tabIndex={-1}
                     challengeRef={challengeRefLogin}
