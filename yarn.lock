@@ -5217,7 +5217,7 @@ __metadata:
     "@types/react-router": ^5.1.20
     "@types/react-router-dom": ^5.3.3
     "@types/react-virtualized": ^9.21.23
-    "@unleash/proxy-client-react": ^3.6.0
+    "@unleash/proxy-client-react": ^4.0.3
     babel-jest: ^29.7.0
     babel-plugin-transform-require-context: ^0.1.1
     card-validator: ^8.1.1
@@ -5253,7 +5253,7 @@ __metadata:
     tinycolor2: ^1.6.0
     ttag: ^1.7.25
     typescript: ^5.2.2
-    unleash-proxy-client: ^2.5.0
+    unleash-proxy-client: ^3.1.0
   peerDependencies:
     "@proton/cross-storage": "*"
     "@proton/crypto": "*"
@@ -9368,12 +9368,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@unleash/proxy-client-react@npm:^3.6.0":
-  version: 3.6.0
-  resolution: "@unleash/proxy-client-react@npm:3.6.0"
+"@unleash/proxy-client-react@npm:^4.0.3":
+  version: 4.0.3
+  resolution: "@unleash/proxy-client-react@npm:4.0.3"
   peerDependencies:
-    unleash-proxy-client: ^2.5.0
-  checksum: 010ef403958ebb5dbe8b7e53aa249255af62468f35ecc8984053012ce92913d9006d4c1af6d297aee85d07dfc15bcb713d5af702928a677f4337614c7743d672
+    unleash-proxy-client: ^3.0.0
+  checksum: e101f80aed83126a1e28e423cfcb46f30551b79b559c4b1c9b74044b8879916afee16a795de55a2d6310e32bd037ede46e65c4caf978a8bef62c41ce246ec5d7
   languageName: node
   linkType: hard
 
@@ -33948,13 +33948,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"unleash-proxy-client@npm:^2.5.0":
-  version: 2.5.0
-  resolution: "unleash-proxy-client@npm:2.5.0"
+"unleash-proxy-client@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "unleash-proxy-client@npm:3.1.0"
   dependencies:
     tiny-emitter: ^2.1.0
-    uuid: ^8.3.2
-  checksum: 937cb2c0c1b5f9de1f97af379126e79d66accad13cf3b3e9876514e0bb9018ef4bff118baf589ee2d96bc8a617fd5186dbc26b5c4e7a575ac4c327db28cd6bd3
+    uuid: ^9.0.1
+  checksum: 18e8aee40f893f3b0264c1ce2ecbace63c62e61445568321afff4bb460b6ee0f36467cff01ebc9027a033017f3e79ccaa12ccc7a1a5be57a74502ef961c3bd60
   languageName: node
   linkType: hard
 
@@ -34248,6 +34248,15 @@ fsevents@^1.2.7:
   bin:
     uuid: dist/bin/uuid
   checksum: 5575a8a75c13120e2f10e6ddc801b2c7ed7d8f3c8ac22c7ed0c7b2ba6383ec0abda88c905085d630e251719e0777045ae3236f04c812184b7c765f63a70e58df
+  languageName: node
+  linkType: hard
+
+"uuid@npm:^9.0.1":
+  version: 9.0.1
+  resolution: "uuid@npm:9.0.1"
+  bin:
+    uuid: dist/bin/uuid
+  checksum: 39931f6da74e307f51c0fb463dc2462807531dc80760a9bff1e35af4316131b4fc3203d16da60ae33f07fdca5b56f3f1dd662da0c99fea9aaeab2004780cc5f4
   languageName: node
   linkType: hard
 
