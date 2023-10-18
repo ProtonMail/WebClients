@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { EasySwitchOauthImportButton, EasySwitchProvider } from '@proton/activation';
-import { EASY_SWITCH_SOURCE, ImportType } from '@proton/activation/src/interface';
+import { EASY_SWITCH_SOURCE, ImportProvider, ImportType } from '@proton/activation/src/interface';
 import { Href } from '@proton/atoms';
 import { getProbablyActiveCalendars, getWritableCalendars } from '@proton/shared/lib/calendar/calendar';
 import { IMPORT_CALENDAR_FAQ_URL } from '@proton/shared/lib/calendar/constants';
@@ -64,6 +64,7 @@ const CalendarImportSection = ({ calendars, initialCalendar, user }: Props) => {
                         source={EASY_SWITCH_SOURCE.IMPORT_CALENDAR_SETTINGS}
                         defaultCheckedTypes={[ImportType.CALENDAR]}
                         displayOn={'GoogleCalendar'}
+                        provider={ImportProvider.GOOGLE}
                     />
                 </EasySwitchProvider>
             )}
