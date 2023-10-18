@@ -2,19 +2,17 @@ import { c } from 'ttag';
 
 import { api } from '@proton/pass/lib/api/api';
 import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
-import { getAllShareKeys, getShareLatestEventId } from '@proton/pass/lib/shares/share.requests';
-import { decodeVaultContent, encodeVaultContent } from '@proton/pass/lib/vaults/vault-proto.transformer';
+import { getAllShareKeys } from '@proton/pass/lib/shares/share.requests';
+import { parseShareResponse } from '@proton/pass/lib/shares/share.utils';
+import { encodeVaultContent } from '@proton/pass/lib/vaults/vault-proto.transformer';
 import type { VaultTransferOwnerIntent } from '@proton/pass/types';
-import { type Share, type ShareContent, ShareRole, type ShareType, type VaultCreateRequest } from '@proton/pass/types';
+import { type Share, type ShareContent, type ShareType, type VaultCreateRequest } from '@proton/pass/types';
 
 export const createVault = async (data: {
     content: ShareContent<ShareType.Vault>;
 }): Promise<Share<ShareType.Vault>> => {
     const encoded = encodeVaultContent(data.content);
-
-    const encryptedVault: VaultCreateRequest = {
-        ...(await PassCrypto.createVault(encoded)),
-    };
+    const encryptedVault: VaultCreateRequest = { ...(await PassCrypto.createVault(encoded)) };
 
     const encryptedShare = (
         await api({
@@ -24,41 +22,19 @@ export const createVault = async (data: {
         })
     ).Share!;
 
-    const [eventId, shareKeys] = await Promise.all([
-        getShareLatestEventId(encryptedShare.ShareID),
-        getAllShareKeys(encryptedShare.ShareID),
-    ]);
-
-    const share = await PassCrypto.openShare<ShareType.Vault>({ encryptedShare, shareKeys });
+    const share = await parseShareResponse(encryptedShare);
     if (!share) throw new Error(c('Error').t`Could not open created vault`);
 
-    const content = decodeVaultContent(share.content);
-
-    return {
-        content,
-        createTime: share.createTime,
-        eventId,
-        owner: true,
-        shared: false,
-        shareId: share.shareId,
-        shareRoleId: ShareRole.ADMIN,
-        targetId: share.targetId,
-        targetMembers: 1,
-        targetMaxMembers: share.targetMaxMembers,
-        targetType: share.targetType,
-        vaultId: share.vaultId,
-    };
+    return share;
 };
 
 export const editVault = async (
     shareId: string,
     content: ShareContent<ShareType.Vault>
 ): Promise<Share<ShareType.Vault>> => {
-    /**
-     * Future-proofing : retrieve all share keys
-     * and update the share in the crypto context
-     */
-    const [eventId, shareKeys] = await Promise.all([getShareLatestEventId(shareId), getAllShareKeys(shareId)]);
+    /* Future-proofing : retrieve all share keys
+     * and update the share in the crypto context */
+    const shareKeys = await getAllShareKeys(shareId);
     await PassCrypto.updateShareKeys({ shareId, shareKeys });
 
     const encoded = encodeVaultContent(content);
@@ -72,23 +48,10 @@ export const editVault = async (
         })
     ).Share!;
 
-    const share = await PassCrypto.openShare<ShareType.Vault>({ encryptedShare, shareKeys });
+    const share = await parseShareResponse(encryptedShare, { shareKeys });
     if (!share) throw new Error(c('Error').t`Could not open updated vault`);
 
-    return {
-        createTime: share.createTime,
-        content: decodeVaultContent(share.content),
-        eventId,
-        owner: share.owner,
-        shared: share.shared,
-        shareId: share.shareId,
-        shareRoleId: share.shareRoleId,
-        targetId: share.targetId,
-        targetMembers: share.targetMembers,
-        targetMaxMembers: share.targetMaxMembers,
-        targetType: share.targetType,
-        vaultId: share.vaultId,
-    };
+    return share;
 };
 
 export const vaultTransferOwner = async ({ shareId, userShareId }: VaultTransferOwnerIntent) =>
