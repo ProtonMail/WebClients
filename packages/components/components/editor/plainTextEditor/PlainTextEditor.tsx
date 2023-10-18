@@ -41,9 +41,9 @@ const PlainTextEditor = ({ onFocus, onReady, onChange, children, ...rest }: Prop
     }, []);
 
     return (
-        <div className="w-full h100 pt-2 pb-4 px-2" {...rest}>
+        <div className="w-full h-full pt-2 pb-4 px-2" {...rest}>
             <textarea
-                className="w-full h100"
+                className="w-full h-full"
                 ref={textareaRef}
                 onFocus={onFocus}
                 onChange={(event: ChangeEvent<HTMLTextAreaElement>) => {

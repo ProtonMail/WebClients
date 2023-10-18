@@ -92,7 +92,7 @@ const PlanCard = ({
         <>
             <div
                 className={clsx([
-                    'border relative h100 plan-selection-plan p-6 pb-0 flex flex-column flex-nowrap',
+                    'border relative h-full plan-selection-plan p-6 pb-0 flex flex-column flex-nowrap',
                     isCurrentPlan && 'plan-selection-plan-current-card',
                     recommended && 'plan-selection-plan-recommended border-primary',
                 ])}

@@ -85,7 +85,7 @@ const ImportCsvModalContent = ({ model, setModel, onClose }: Props) => {
     };
 
     return (
-        <form className="modal-two-dialog-container h100" onSubmit={handleSubmit}>
+        <form className="modal-two-dialog-container h-full" onSubmit={handleSubmit}>
             <ModalTwoHeader title={c('Title').t`Import contacts`} />
             <ModalTwoContent>
                 <Alert className="mb-4">

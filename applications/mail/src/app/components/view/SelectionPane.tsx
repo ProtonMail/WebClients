@@ -182,7 +182,7 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
 
     if (loadingSimpleLoadingFeature || isFetchingAccountLinked) {
         return (
-            <div className="flex h100 py-4 px-7">
+            <div className="flex h-full py-4 px-7">
                 <div className="m-auto text-center max-w-custom" style={{ '--max-w-custom': '30em' }}>
                     <Loader />
                 </div>
