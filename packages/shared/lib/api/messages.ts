@@ -2,18 +2,41 @@ import { SimpleMap } from '../interfaces';
 import { Message } from '../interfaces/mail/Message';
 import { PackageDirect } from '../interfaces/mail/crypto';
 import { CREATE_DRAFT_MESSAGE_ACTION, SEND_MESSAGE_DIRECT_ACTION } from '../interfaces/message';
-import { MailboxItemsQueryParams } from './mailbox';
 
 type BaseMessage = Pick<
     Message,
     'ToList' | 'CCList' | 'BCCList' | 'Subject' | 'Sender' | 'Body' | 'MIMEType' | 'Attachments' | 'Flags'
 >;
 
+interface QueryMessageMetadataParams {
+    Location?: string;
+    Page?: number;
+    PageSize?: number;
+    Limit?: number;
+    LabelID?: string | string[];
+    Sort?: string;
+    Desc?: number;
+    Begin?: number;
+    End?: number;
+    BeginID?: string;
+    EndID?: string;
+    Keyword?: string;
+    To?: string;
+    From?: string;
+    Subject?: string;
+    Attachments?: number;
+    Starred?: number;
+    Unread?: number;
+    AddressID?: string;
+    ID?: string;
+    AutoWildcard?: number;
+}
+
 export const queryMessageMetadata = ({
     Location,
-    Page = 0,
-    PageSize = 50,
-    Limit = 50,
+    Page,
+    PageSize,
+    Limit,
     LabelID,
     Sort = 'Time',
     Desc = 1,
@@ -31,9 +54,7 @@ export const queryMessageMetadata = ({
     AddressID,
     ID,
     AutoWildcard,
-    Anchor,
-    AnchorID,
-}: MailboxItemsQueryParams) => ({
+}: QueryMessageMetadataParams) => ({
     method: 'get',
     url: 'mail/v4/messages',
     params: {
@@ -58,8 +79,6 @@ export const queryMessageMetadata = ({
         AddressID,
         ID,
         AutoWildcard,
-        Anchor,
-        AnchorID,
     },
 });
 
