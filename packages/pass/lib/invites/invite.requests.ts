@@ -1,6 +1,6 @@
 import { api } from '@proton/pass/lib/api/api';
 import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
-import { type PendingInvite } from '@proton/pass/types/data/invites';
+import type { NewUserPendingInvite, PendingInvite } from '@proton/pass/types/data/invites';
 import type {
     InviteAcceptIntent,
     InviteCreateIntent,
@@ -11,22 +11,40 @@ import type {
 
 import { getPublicKeysForEmail } from '../auth/address';
 
-export const loadInvites = async (shareId: string): Promise<PendingInvite[]> => {
-    const { Invites } = await api({
+export const loadInvites = async (
+    shareId: string
+): Promise<{ invites: PendingInvite[]; newUserInvites: NewUserPendingInvite[] }> => {
+    const { Invites, NewUserInvites } = await api({
         url: `pass/v1/share/${shareId}/invite`,
         method: 'get',
     });
 
-    return Invites.map((invite) => ({
-        inviteId: invite.InviteID,
-        targetId: invite.TargetID,
-        targetType: invite.TargetType,
-        invitedEmail: invite.InvitedEmail,
-        inviterEmail: invite.InviterEmail,
-        remindersSent: invite.RemindersSent,
-        createTime: invite.CreateTime,
-        modifyTime: invite.ModifyTime,
-    }));
+    return {
+        invites: Invites.map(
+            (invite): PendingInvite => ({
+                inviteId: invite.InviteID,
+                targetId: invite.TargetID,
+                targetType: invite.TargetType,
+                invitedEmail: invite.InvitedEmail,
+                inviterEmail: invite.InviterEmail,
+                remindersSent: invite.RemindersSent,
+                createTime: invite.CreateTime,
+                modifyTime: invite.ModifyTime,
+            })
+        ),
+        newUserInvites: NewUserInvites.map(
+            (invite): NewUserPendingInvite => ({
+                newUserInviteId: invite.NewUserInviteID!,
+                targetId: invite.TargetID!,
+                targetType: invite.TargetType!,
+                invitedEmail: invite.InvitedEmail!,
+                inviterEmail: invite.InviterEmail!,
+                createTime: invite.CreateTime!,
+                signature: invite.Signature!,
+                state: invite.State!,
+            })
+        ),
+    };
 };
 
 export const createInvite = async ({
