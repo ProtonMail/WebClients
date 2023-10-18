@@ -57,6 +57,7 @@ export enum FeatureCode {
     ESUserInterface = 'ESUserInterface',
     EarlyAccessScope = 'EarlyAccess',
     EasySwitch = 'EasySwitch',
+    EmailForwardingSpotlight = 'EmailForwardingSpotlight',
     HolidaysCalendars = 'HolidaysCalendars',
     HolidaysCalendarsSpotlight = 'HolidaysCalendarsSpotlight',
     KeyTransparencyAccount = 'KeyTransparencyWebAccount',
