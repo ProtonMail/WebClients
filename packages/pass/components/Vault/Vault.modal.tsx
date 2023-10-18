@@ -19,12 +19,7 @@ import { type VaultFormConsumerProps } from './Vault.form';
 import { VaultNew, FORM_ID as VaultNewFormId } from './Vault.new';
 
 export type Props = {
-    payload:
-        | { type: 'new' }
-        | {
-              type: 'edit';
-              vault: VaultShare;
-          };
+    payload: { type: 'new'; onVaultCreated: (shareId: string) => void } | { type: 'edit'; vault: VaultShare };
 } & ModalProps;
 
 export const VaultModal: FC<Props> = ({ payload, onClose = noop, ...props }) => {
@@ -93,7 +88,7 @@ export const VaultModal: FC<Props> = ({ payload, onClose = noop, ...props }) => 
                     />
                 }
             >
-                {payload.type === 'new' && <VaultNew {...vaultViewProps} />}
+                {payload.type === 'new' && <VaultNew onVaultCreated={payload.onVaultCreated} {...vaultViewProps} />}
                 {payload.type === 'edit' && <VaultEdit vault={payload.vault} {...vaultViewProps} />}
             </Panel>
         </SidebarModal>
