@@ -1,26 +1,33 @@
 import type { Reducer } from 'redux';
 
-import { bootSuccess, getUserFeaturesSuccess, getUserPlanSuccess, userEvent } from '@proton/pass/store/actions';
-import type { MaybeNull, PassPlanResponse } from '@proton/pass/types';
+import { bootSuccess, getUserAccessSuccess, getUserFeaturesSuccess, userEvent } from '@proton/pass/store/actions';
+import type { MaybeNull, PassPlanResponse, RequiredNonNull } from '@proton/pass/types';
 import { EventActions } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
 import { objectDelete } from '@proton/pass/utils/object/delete';
 import { fullMerge, merge, partialMerge } from '@proton/pass/utils/object/merge';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import type { Address, SETTINGS_STATUS, User } from '@proton/shared/lib/interfaces';
 
 export type AddressState = { [addressId: string]: Address };
 export type FeatureFlagState = Partial<Record<PassFeature, boolean>>;
-export type UserPlanState = PassPlanResponse;
 export type UserSettingsState = { Email?: { Status: SETTINGS_STATUS }; Telemetry?: 1 | 0 };
+
+export type UserAccessState = {
+    plan: MaybeNull<PassPlanResponse>;
+    waitingNewUserInvites: number;
+};
 
 export type UserState = {
     addresses: AddressState;
     eventId: MaybeNull<string>;
     features: MaybeNull<FeatureFlagState>;
-    plan: MaybeNull<UserPlanState>;
     user: MaybeNull<User>;
     userSettings: MaybeNull<UserSettingsState>;
-};
+} & UserAccessState;
+
+export type SafeUserState = RequiredNonNull<UserState>;
+export type SafeUserAccessState = RequiredNonNull<UserAccessState>;
 
 const initialState: UserState = {
     addresses: {},
@@ -29,25 +36,28 @@ const initialState: UserState = {
     plan: null,
     user: null,
     userSettings: null,
+    waitingNewUserInvites: 0,
 };
 
 const reducer: Reducer<UserState> = (state = initialState, action) => {
     if (bootSuccess.match(action)) {
+        const { userState } = action.payload;
         return fullMerge(state, {
-            addresses: action.payload.addresses,
-            eventId: action.payload.eventId,
-            features: action.payload.features,
-            plan: action.payload.plan,
-            user: action.payload.user,
-            userSettings: action.payload.userSettings,
+            addresses: userState.addresses,
+            eventId: userState.eventId,
+            features: userState.features,
+            plan: userState.plan,
+            user: userState.user,
+            userSettings: userState.userSettings,
+            waitingNewUserInvites: userState.waitingNewUserInvites,
         });
     }
 
     if (userEvent.match(action)) {
+        if (action.payload.EventID === state.eventId) return state;
+
         const { Addresses = [], User, EventID, UserSettings } = action.payload;
-
         const user = User ?? state.user;
-
         const eventId = EventID ?? null;
 
         const userSettings = UserSettings
@@ -69,7 +79,18 @@ const reducer: Reducer<UserState> = (state = initialState, action) => {
         };
     }
 
-    if (getUserPlanSuccess.match(action)) return partialMerge(state, { plan: action.payload });
+    /* triggered on each popup wakeup: avoid unnecessary re-renders */
+    if (getUserAccessSuccess.match(action)) {
+        const { plan, waitingNewUserInvites } = action.payload;
+        const didChange = waitingNewUserInvites !== state.waitingNewUserInvites || !isDeepEqual(plan, state.plan);
+
+        return didChange
+            ? partialMerge(state, {
+                  plan: action.payload.plan,
+                  waitingNewUserInvites: action.payload.waitingNewUserInvites,
+              })
+            : state;
+    }
 
     if (getUserFeaturesSuccess.match(action)) {
         state.features = null; /* wipe all features before merge */

@@ -7,7 +7,7 @@ import type { PullForkResponse, RefreshSessionResponse } from '@proton/shared/li
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { encodeBase64URL, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
-import type { User as tsUser } from '@proton/shared/lib/interfaces';
+import type { User } from '@proton/shared/lib/interfaces';
 
 import type { ExtensionSession } from './session';
 
@@ -45,7 +45,7 @@ export const consumeFork = async ({
 
     const { UID, RefreshToken } = await api<PullForkResponse>(pullForkParams);
     const refresh = await api<RefreshSessionResponse>(withUIDHeaders(UID, refreshTokens({ RefreshToken })));
-    const { User } = await api<{ User: tsUser }>(withAuthHeaders(UID, refresh.AccessToken, getUser()));
+    const { User } = await api<{ User: User }>(withAuthHeaders(UID, refresh.AccessToken, getUser()));
 
     return {
         AccessToken: refresh.AccessToken,

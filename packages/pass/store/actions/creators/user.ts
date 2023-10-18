@@ -2,8 +2,8 @@ import { createAction } from '@reduxjs/toolkit';
 
 import withCacheBlock from '@proton/pass/store/actions/with-cache-block';
 import { withRequestFailure, withRequestStart, withRequestSuccess } from '@proton/pass/store/actions/with-request';
-import type { FeatureFlagState, UserPlanState } from '@proton/pass/store/reducers';
-import { UNIX_DAY, UNIX_HOUR } from '@proton/pass/utils/time/constants';
+import type { FeatureFlagState, SafeUserAccessState } from '@proton/pass/store/reducers';
+import { UNIX_HOUR } from '@proton/pass/utils/time/constants';
 
 export const getUserFeaturesIntent = createAction(
     'user::features::get::intent',
@@ -12,7 +12,7 @@ export const getUserFeaturesIntent = createAction(
 
 export const getUserFeaturesSuccess = createAction(
     'user::features::get::success',
-    withRequestSuccess((payload: FeatureFlagState) => ({ payload }), { maxAge: UNIX_HOUR })
+    withRequestSuccess((payload: FeatureFlagState) => ({ payload }), { maxAge: UNIX_HOUR / 2 })
 );
 
 export const getUserFeaturesFailure = createAction(
@@ -20,17 +20,17 @@ export const getUserFeaturesFailure = createAction(
     withRequestFailure((error: unknown) => withCacheBlock({ payload: {}, error }))
 );
 
-export const getUserPlanIntent = createAction(
-    'user::plan::get::intent',
+export const getUserAccessIntent = createAction(
+    'user::access::get::intent',
     withRequestStart(() => withCacheBlock({ payload: {} }))
 );
 
-export const getUserPlanSuccess = createAction(
-    'user::plan::get::success',
-    withRequestSuccess((payload: UserPlanState) => ({ payload }), { maxAge: UNIX_DAY })
+export const getUserAccessSuccess = createAction(
+    'user::access::get::success',
+    withRequestSuccess((payload: SafeUserAccessState) => ({ payload }), { maxAge: UNIX_HOUR / 2 })
 );
 
-export const getUserPlanFailure = createAction(
-    'user::plan::get::failure',
+export const getUserAccessFailure = createAction(
+    'user::access::get::failure',
     withRequestFailure((error: unknown) => withCacheBlock({ payload: {}, error }))
 );

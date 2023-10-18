@@ -29,5 +29,8 @@ export const inviteAcceptRequest = (token: string) => `invite::accept::${token}`
 export const inviteRejectRequest = (token: string) => `invite::reject::${token}`;
 export const inviteRemoveRequest = (inviteId: string) => `invite::remove::${inviteId}`;
 
-export const userPlanRequest = (userId: string) => `user::plan::${userId}`;
+export const newUserInvitePromoteRequest = (newUserInviteId: string) => `new-user-invite::promote::${newUserInviteId}`;
+export const newUserInviteRemoveRequest = (newUserInviteId: string) => `new-user-invite::remove::${newUserInviteId}`;
+
+export const userAccessRequest = (userId: string) => `user::access::${userId}`;
 export const userFeaturesRequest = (userId: string) => `user::features::${userId}`;
