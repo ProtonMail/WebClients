@@ -195,31 +195,16 @@ const GatewayServersModal = ({
                                 <TableCell key="server" type="header" className="w-1/10">
                                     {c('Header').t`Server`}
                                 </TableCell>
-                                <TableCell
-                                    key="status"
-                                    type="header"
-                                    className="w-custom"
-                                    style={{ '--w-custom': '15%' }}
-                                >
+                                <TableCell key="status" type="header" className="w-1/6">
                                     {c('Header').t`Status`}
                                 </TableCell>
                                 {showIP && (
-                                    <TableCell
-                                        key="ip"
-                                        type="header"
-                                        className="w-custom"
-                                        style={{ '--w-custom': '15%' }}
-                                    >
+                                    <TableCell key="ip" type="header" className="w-1/6">
                                         {c('Header').t`IP address`}
                                     </TableCell>
                                 )}
                                 {showLoad && (
-                                    <TableCell
-                                        key="load"
-                                        type="header"
-                                        className="w-custom"
-                                        style={{ '--w-custom': '15%' }}
-                                    >
+                                    <TableCell key="load" type="header" className="w-1/6">
                                         {c('Header').t`Server load`}
                                     </TableCell>
                                 )}

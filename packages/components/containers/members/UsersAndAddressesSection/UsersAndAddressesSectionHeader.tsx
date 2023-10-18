@@ -30,8 +30,7 @@ const UsersAndAddressesSectionHeader = ({ mode }: { mode: UserManagementMode }) 
                 </span>
             </div>
         ),
-        className: 'w-custom',
-        style: { '--w-custom': '15%' },
+        className: 'w-1/6',
     };
     const addressTitle =
         mode === UserManagementMode.VPN_B2B
@@ -65,7 +64,7 @@ const UsersAndAddressesSectionHeader = ({ mode }: { mode: UserManagementMode }) 
             ),
             className: 'w-1/4',
         },
-        { key: 'actions', node: '', className: 'w-custom', style: { '--w-custom': '15%' } },
+        { key: 'actions', node: '', className: 'w-1/6' },
     ].filter(isTruthy);
 
     return (
