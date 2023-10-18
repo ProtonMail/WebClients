@@ -6,7 +6,8 @@ import {
     inviteAcceptSuccess,
     inviteCreationSuccess,
     inviteRemoveSuccess,
-    inviteResendSuccess,
+    newUserInvitePromoteSuccess,
+    newUserInviteRemoveSuccess,
     shareAccessChange,
     shareDeleteSync,
     shareEditMemberAccessSuccess,
@@ -149,19 +150,29 @@ export const withOptimisticShares = withOptimistic<SharesState>(
             return partialMerge(state, { [action.payload.shareId]: { shared: true } });
         }
 
-        if (inviteResendSuccess.match(action)) {
-            const { shareId, inviteId } = action.payload;
-            return partialMerge(state, { [shareId]: { inviteId, shared: true } });
+        if (newUserInvitePromoteSuccess.match(action)) {
+            const { shareId, invites, newUserInvites } = action.payload;
+            return partialMerge(state, { [shareId]: { newUserInvites, invites } });
         }
 
         if (inviteRemoveSuccess.match(action)) {
             const { shareId, inviteId } = action.payload;
-            const share = state[shareId];
-            const members = share.members ?? [];
-            const invites = (share.invites ?? []).filter((invite) => invite.inviteId !== inviteId);
-            const shared = members.length > 1 || invites.length > 0;
+            const { members = [], invites = [], newUserInvites = [] } = state[shareId];
 
-            return partialMerge(state, { [shareId]: { invites, shared } });
+            const update = invites.filter((invite) => invite.inviteId !== inviteId);
+            const shared = members.length > 1 || update.length > 0 || newUserInvites.length > 0;
+
+            return partialMerge(state, { [shareId]: { invites: update, shared } });
+        }
+
+        if (newUserInviteRemoveSuccess.match(action)) {
+            const { shareId, newUserInviteId } = action.payload;
+            const { members = [], invites = [], newUserInvites = [] } = state[shareId];
+
+            const update = newUserInvites.filter((invite) => invite.newUserInviteId !== newUserInviteId);
+            const shared = members.length > 1 || invites.length > 0 || update.length > 0;
+
+            return partialMerge(state, { [shareId]: { newUserInvites: update, shared } });
         }
 
         if (shareAccessChange.match(action)) {
