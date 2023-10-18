@@ -1,7 +1,7 @@
 import type { Reducer } from 'redux';
 
 import { bootSuccess, getUserAccessSuccess, getUserFeaturesSuccess, userEvent } from '@proton/pass/store/actions';
-import type { MaybeNull, PassPlanResponse } from '@proton/pass/types';
+import type { MaybeNull, PassPlanResponse, RequiredNonNull } from '@proton/pass/types';
 import { EventActions } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
 import { objectDelete } from '@proton/pass/utils/object/delete';
@@ -25,6 +25,9 @@ export type UserState = {
     userSettings: MaybeNull<UserSettingsState>;
 } & UserAccessState;
 
+export type SafeUserState = RequiredNonNull<UserState>;
+export type SafeUserAccessState = RequiredNonNull<UserAccessState>;
+
 const initialState: UserState = {
     addresses: {},
     eventId: null,
@@ -37,14 +40,15 @@ const initialState: UserState = {
 
 const reducer: Reducer<UserState> = (state = initialState, action) => {
     if (bootSuccess.match(action)) {
+        const { userState } = action.payload;
         return fullMerge(state, {
-            addresses: action.payload.addresses,
-            eventId: action.payload.eventId,
-            features: action.payload.features,
-            plan: action.payload.plan,
-            user: action.payload.user,
-            userSettings: action.payload.userSettings,
-            waitingNewUserInvites: action.payload.waitingNewUserInvites,
+            addresses: userState.addresses,
+            eventId: userState.eventId,
+            features: userState.features,
+            plan: userState.plan,
+            user: userState.user,
+            userSettings: userState.userSettings,
+            waitingNewUserInvites: userState.waitingNewUserInvites,
         });
     }
 
@@ -76,8 +80,8 @@ const reducer: Reducer<UserState> = (state = initialState, action) => {
 
     if (getUserAccessSuccess.match(action)) {
         return partialMerge(state, {
-            plan: action.payload.Plan,
-            waitingNewUserInvites: action.payload.WaitingNewUserInvites,
+            plan: action.payload.plan,
+            waitingNewUserInvites: action.payload.waitingNewUserInvites,
         });
     }
 
