@@ -16,11 +16,9 @@ import {
     selectVaultLimits,
     selectWritableVaults,
 } from '@proton/pass/store/selectors';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { omit } from '@proton/shared/lib/helpers/object';
 
-import { useFeatureFlag } from '../../hooks/useFeatureFlag';
 import { UpgradeButton } from '../Layout/Button/UpgradeButton';
 import { ImportVaultPickerOption } from './ImportVaultsPickerOption';
 
@@ -39,7 +37,6 @@ export const ImportVaultsPickerModal: VFC<ImportVaultsPickerProps> = ({ payload,
     const defaultVault = useSelector(selectDefaultVault);
     const { vaultLimit, vaultTotalCount } = useSelector(selectVaultLimits);
     const plan = useSelector(selectPassPlan);
-    const primaryVaultDisabled = useFeatureFlag(PassFeature.PassRemovePrimaryVault);
 
     const handleSubmit = useCallback(
         (values: VaultsPickerFormValues) =>
@@ -89,11 +86,8 @@ export const ImportVaultsPickerModal: VFC<ImportVaultsPickerProps> = ({ payload,
                                     <hr className="mt-2 mb-2" />
                                     {plan === UserPassPlan.FREE ? (
                                         <>
-                                            {primaryVaultDisabled
-                                                ? c('Warning')
-                                                      .t`Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.`
-                                                : c('Warning')
-                                                      .t`Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.`}
+                                            {c('Warning')
+                                                .t`Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.`}
                                             <UpgradeButton inline className="ml-1" />
                                         </>
                                     ) : (

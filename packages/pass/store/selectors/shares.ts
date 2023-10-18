@@ -6,7 +6,6 @@ import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import { isOwnVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import type { VaultShare } from '@proton/pass/types';
 import { type Maybe, type MaybeNull, type ShareType } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { and, invert } from '@proton/pass/utils/fp/predicates';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 
@@ -16,7 +15,6 @@ import type { State } from '../types';
 import { SelectorError } from './errors';
 import { selectItems } from './items';
 import { selectProxiedSettings } from './settings';
-import { selectFeatureFlag } from './user';
 
 export const selectShares = ({ shares }: State) => shares;
 
@@ -45,22 +43,10 @@ const createVaultsWithItemsCountSelector = (vaultSelector: Selector<State, Vault
 export const selectVaultsWithItemsCount = createVaultsWithItemsCountSelector(selectAllVaults);
 export const selectWritableVaultsWithItemsCount = createVaultsWithItemsCountSelector(selectWritableVaults);
 
-/**
- * While the `PassRemovePrimaryVault` is disabled, we should still
- * resolve the primary vault when selecting the default vault. When
- * all clients are ready, we can safely drop this condition. The default
- * vault should be the oldest vault I own and can write to.
- */
+/* The default vault should be the oldest vault I own and can write to */
 export const selectDefaultVault = createSelector(
-    [selectAllVaults, selectOwnWritableVaults, selectFeatureFlag(PassFeature.PassRemovePrimaryVault)],
-    (vaults, ownWritableVaults, disablePrimaryVault) => {
-        if (!disablePrimaryVault) {
-            const primaryVault = vaults.find((vault) => vault.primary);
-            if (primaryVault) return primaryVault;
-        }
-
-        return ownWritableVaults.filter((share) => share.owner).sort(sortOn('createTime', 'ASC'))[0];
-    }
+    [selectOwnWritableVaults],
+    (ownWritableVaults) => ownWritableVaults.filter((share) => share.owner).sort(sortOn('createTime', 'ASC'))[0]
 );
 
 /* If autosave vault is not set, fallback to default vault */
@@ -87,10 +73,7 @@ export const selectShareOrThrow =
     <T extends ShareType = ShareType>(shareId: string) =>
     (state: State): ShareItem<T> => {
         const share = selectShare<T>(shareId)(state);
-
-        if (!share) {
-            throw new SelectorError(`Share ${shareId} not found`);
-        }
+        if (!share) throw new SelectorError(`Share ${shareId} not found`);
 
         return share;
     };
