@@ -33,7 +33,6 @@ import trashRestore from './vaults/trash-restore.saga';
 import vaultCreation from './vaults/vault-creation.saga';
 import vaultDelete from './vaults/vault-delete.saga';
 import vaultEdit from './vaults/vault-edit.saga';
-import vaultSetPrimary from './vaults/vault-set-primary.saga';
 import vaultTransferOwner from './vaults/vault-transfer-owner.saga';
 import boot from './workers/boot.saga';
 import cache from './workers/cache.saga';
@@ -86,7 +85,6 @@ export function* workerRootSaga(options: WorkerRootSagaOptions) {
             vaultCreation,
             vaultEdit,
             vaultDelete,
-            vaultSetPrimary,
             vaultTransferOwner,
             wakeup,
         ].map((saga) => saga(options))

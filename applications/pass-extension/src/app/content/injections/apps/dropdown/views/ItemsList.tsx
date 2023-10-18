@@ -12,7 +12,6 @@ import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { type SafeLoginItem, WorkerMessageType } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { truthy } from '@proton/pass/utils/fp/predicates';
@@ -27,10 +26,8 @@ type Props = {
 };
 
 export const ItemsList: VFC<Props> = ({ items, needsUpgrade, visible, onMessage, onClose }) => {
-    const { settings, features } = useIFrameContext();
+    const { settings } = useIFrameContext();
     const navigateToUpgrade = useNavigateToUpgrade();
-
-    const primaryVaultDisabled = features[PassFeature.PassRemovePrimaryVault] ?? false;
 
     useEffect(() => {
         if (visible) {
@@ -55,9 +52,7 @@ export const ItemsList: VFC<Props> = ({ items, needsUpgrade, visible, onMessage,
                         title={c('Info').t`Upgrade ${PASS_APP_NAME}`}
                         subTitle={
                             <span className="text-sm block">
-                                {primaryVaultDisabled
-                                    ? c('Warning').t`Your plan only allows you to autofill from your first two vaults`
-                                    : c('Warning').t`Your plan only allows you to autofill from your primary vault`}
+                                {c('Warning').t`Your plan only allows you to autofill from your first two vaults`}
                             </span>
                         }
                         onClick={navigateToUpgrade}
