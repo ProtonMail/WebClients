@@ -752,8 +752,8 @@ const SubscriptionContainer = ({
             )}
             {model.step === SUBSCRIPTION_STEPS.CUSTOMIZATION && (
                 <div className="subscriptionCheckout-top-container">
-                    <div className="flex-item-fluid on-mobile-w100 pr-4 md:pr-0 lg:pr-6 pt-6">
-                        <div className="max-w50e">
+                    <div className="flex-item-fluid w-full md:w-auto pr-4 md:pr-0 lg:pr-6 pt-6">
+                        <div className="max-w-custom" style={{ '--max-w-custom': '50em' }}>
                             <PlanCustomization
                                 loading={loadingCheck}
                                 currency={model.currency}
@@ -767,7 +767,7 @@ const SubscriptionContainer = ({
                             />
                         </div>
                     </div>
-                    <div className="subscriptionCheckout-column bg-weak on-mobile-w100 rounded">
+                    <div className="subscriptionCheckout-column bg-weak rounded">
                         <div className="subscriptionCheckout-container sticky-top" data-testid="subscription-checkout">
                             <SubscriptionCheckout
                                 submit={
@@ -804,8 +804,8 @@ const SubscriptionContainer = ({
             {model.step === SUBSCRIPTION_STEPS.CHECKOUT && (
                 <>
                     <div className="subscriptionCheckout-top-container">
-                        <div className="flex-item-fluid on-mobile-w100 pr-4 md:pr-0 lg:pr-6 pt-6">
-                            <div className="mx-auto max-w37e subscriptionCheckout-options ">
+                        <div className="flex-item-fluid w-full md:w-auto pr-4 md:pr-0 lg:pr-6 pt-6">
+                            <div className="mx-auto max-w-custom subscriptionCheckout-options" style={{ '--max-w-custom': '37em' }}>
                                 {(() => {
                                     if (isFreePlanSelected) {
                                         return null;
@@ -925,7 +925,7 @@ const SubscriptionContainer = ({
                                 </div>
                             </div>
                         </div>
-                        <div className="subscriptionCheckout-column bg-weak on-mobile-w100 rounded">
+                        <div className="subscriptionCheckout-column bg-weak rounded">
                             <div
                                 className="subscriptionCheckout-container sticky-top"
                                 data-testid="subscription-checkout"
@@ -940,7 +940,7 @@ const SubscriptionContainer = ({
                                             loading={loading || bitcoinLoading}
                                             method={method}
                                             checkResult={checkResult}
-                                            className="w100"
+                                            className="w-full"
                                             disabled={isFreeUserWithFreePlanSelected || !canPay}
                                         />
                                     }
@@ -987,7 +987,7 @@ const SubscriptionContainer = ({
             )}
             {model.step === SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION && (
                 <div className="subscriptionCheckout-top-container">
-                    <div className="flex-item-fluid on-mobile-w100 pr-4 md:pr-0 lg:pr-6 pt-6">
+                    <div className="flex-item-fluid w-full md:w-auto pr-4 md:pr-0 lg:pr-6 pt-6">
                         <h2 className="text-2xl text-bold mb-6">{c('Label').t`Organization size`}</h2>
                         <PlanCustomization
                             loading={blockAccountSizeSelector}
@@ -1008,7 +1008,7 @@ const SubscriptionContainer = ({
                             currentSubscription={subscription}
                             className="mb-8"
                         />
-                        <div className="mx-auto max-w37e subscriptionCheckout-options">
+                        <div className="mx-auto max-w-custom subscriptionCheckout-options" style={{ '--max-w-custom': '37em' }}>
                             {!disableCycleSelector && (
                                 <>
                                     <h2 className="text-2xl text-bold mb-6">{c('Label').t`Select your plan`}</h2>
@@ -1064,7 +1064,7 @@ const SubscriptionContainer = ({
                             </div>
                         </div>
                     </div>
-                    <div className="subscriptionCheckout-column bg-weak on-mobile-w100 rounded">
+                    <div className="subscriptionCheckout-column bg-weak rounded">
                         <div className="subscriptionCheckout-container sticky-top" data-testid="subscription-checkout">
                             <SubscriptionCheckout
                                 submit={
@@ -1076,7 +1076,7 @@ const SubscriptionContainer = ({
                                         loading={loading || bitcoinLoading}
                                         method={method}
                                         checkResult={checkResult}
-                                        className="w100"
+                                        className="w-full"
                                         disabled={isFreeUserWithFreePlanSelected || !canPay}
                                     />
                                 }
