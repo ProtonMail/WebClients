@@ -42,8 +42,7 @@ export const modificationDate = {
     type: 'fileModifyTime',
     getText: () => c('Label').t`Modified`,
     props: {
-        className: 'w-custom',
-        style: { '--w-custom': '15%' },
+        className: 'w-1/6',
     },
     sorting: true,
 };
@@ -52,8 +51,7 @@ export const creationDate = {
     type: 'linkCreateTime',
     getText: () => c('Label').t`Created`,
     props: {
-        className: 'w-custom',
-        style: { '--w-custom': '15%' },
+        className: 'w-1/6',
     },
     sorting: true,
 };
@@ -62,8 +60,7 @@ export const accessCount = {
     type: 'numAccesses',
     getText: () => c('Label').t`# of downloads`,
     props: {
-        className: 'w-custom',
-        style: { '--w-custom': '15%' },
+        className: 'w-1/6',
     },
     sorting: true,
 };
