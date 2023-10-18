@@ -1,3 +1,9 @@
+## Release 5.0.30 — Oct 18, 2023
+
+### Improvements
+
+-   You can now preview email attachments directly from the list view
+
 ## Release 5.0.29 — Sep 27, 2023
 
 ### Improvements
