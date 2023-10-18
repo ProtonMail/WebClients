@@ -160,13 +160,10 @@ const AdvancedSearch = ({
     };
 
     const handleStartDateChange = async (begin: Date | undefined) => {
-        if (begin) {
-            let oldestTime = -1;
+        if (esEnabled && isDBLimited && begin) {
             const wasIndexingDone = await contentIndexingProgress.isIndexingDone(user.ID);
-            if (wasIndexingDone && isDBLimited) {
-                oldestTime = lastContentTime;
-            }
-            if (oldestTime !== -1 && isBefore(begin, oldestTime)) {
+            // In an encrypted search context, it's not possible to search for data that predates the timestamp of the most recently indexed content
+            if (wasIndexingDone && isBefore(begin, lastContentTime)) {
                 return;
             }
         }
