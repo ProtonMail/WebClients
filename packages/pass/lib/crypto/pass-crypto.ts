@@ -310,6 +310,26 @@ const createPassCrypto = (): PassCryptoWorker => {
             return { Keys: inviteKeys, Email: email, ShareRoleID: role, TargetType: ShareType.Vault };
         },
 
+        async createNewUserVaultInvite({ shareId, email, role }) {
+            assertHydrated(context);
+
+            const shareManager = getShareManager(shareId);
+            const share = shareManager.getShare();
+
+            const signature = await processes.createNewUserSignature({
+                inviterPrivateKey: (await getPrimaryAddressKeyById(share.addressId)).privateKey,
+                invitedEmail: email,
+                vaultKey: shareManager.getVaultKey(shareManager.getLatestRotation()),
+            });
+
+            return {
+                Email: email,
+                ShareRoleID: role,
+                Signature: signature,
+                TargetType: ShareType.Vault,
+            };
+        },
+
         async acceptVaultInvite({ inviteKeys, invitedAddressId, inviterPublicKeys }) {
             assertHydrated(context);
 
