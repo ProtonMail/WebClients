@@ -532,7 +532,12 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                                 {isAdmin && (
                                     <>
                                         <TableCell key="members" type="header">{c('Header').t`Members`}</TableCell>
-                                        <TableCell key="manage" type="header" className="w-12">
+                                        <TableCell
+                                            key="manage"
+                                            type="header"
+                                            className="w-custom"
+                                            style={{ '--w-custom': '12rem' }}
+                                        >
                                             &nbsp;
                                         </TableCell>
                                     </>
