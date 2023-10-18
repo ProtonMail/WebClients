@@ -1,5 +1,5 @@
 import { api } from '@proton/pass/lib/api/api';
-import type { PublicKeysResponse } from '@proton/pass/types';
+import type { Maybe, PublicKeysResponse } from '@proton/pass/types';
 import { getPublicKeys } from '@proton/shared/lib/api/keys';
 
 export const getPublicKeysForEmail = async (email: string): Promise<string[]> => {
@@ -7,7 +7,7 @@ export const getPublicKeysForEmail = async (email: string): Promise<string[]> =>
     return publicKeys.Keys.map((key) => key.PublicKey);
 };
 
-export const getPrimaryPublicKeyForEmail = async (email: string): Promise<string> => {
+export const getPrimaryPublicKeyForEmail = async (email: string): Promise<Maybe<string>> => {
     const publicKeys = await getPublicKeysForEmail(email);
-    return publicKeys[0];
+    return publicKeys?.[0];
 };
