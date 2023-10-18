@@ -6,7 +6,6 @@ export type InviteBase = {
     createTime: number;
     invitedEmail: string;
     inviterEmail: string;
-    remindersSent: number;
     targetId: string;
     targetType: ShareType;
 };
@@ -14,6 +13,18 @@ export type InviteBase = {
 export type PendingInvite = InviteBase & {
     inviteId: string;
     modifyTime: number;
+    remindersSent: number;
+};
+
+export enum NewUserInviteState {
+    WAITING = 1,
+    READY = 2,
+}
+
+export type NewUserPendingInvite = InviteBase & {
+    newUserInviteId: string;
+    signature: string;
+    state: NewUserInviteState;
 };
 
 export type InviteVaultData = {
@@ -25,6 +36,7 @@ export type InviteVaultData = {
 export type Invite = InviteBase & {
     invitedAddressId: string;
     keys: KeyRotationKeyPair[];
+    remindersSent: number;
     token: string;
     vault: InviteVaultData;
 };

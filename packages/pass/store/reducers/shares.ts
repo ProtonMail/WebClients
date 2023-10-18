@@ -31,13 +31,14 @@ import { sanitizeWithCallbackAction } from '@proton/pass/store/actions/with-call
 import withOptimistic from '@proton/pass/store/optimistic/with-optimistic';
 import type { Share } from '@proton/pass/types';
 import { ShareRole, ShareType } from '@proton/pass/types';
-import type { PendingInvite, ShareMember } from '@proton/pass/types/data/invites';
+import type { NewUserPendingInvite, PendingInvite, ShareMember } from '@proton/pass/types/data/invites';
 import { objectDelete } from '@proton/pass/utils/object/delete';
 import { fullMerge, partialMerge } from '@proton/pass/utils/object/merge';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 
 export type ShareItem<T extends ShareType = ShareType> = Share<T> & {
     invites?: PendingInvite[];
+    newUserInvites?: NewUserPendingInvite[];
     members?: ShareMember[];
 };
 
@@ -163,8 +164,8 @@ export const withOptimisticShares = withOptimistic<SharesState>(
         }
 
         if (getShareAccessOptionsSuccess.match(action)) {
-            const { shareId, invites, members } = action.payload;
-            return partialMerge(state, { [shareId]: { invites, members } });
+            const { shareId, invites, newUserInvites, members } = action.payload;
+            return partialMerge(state, { [shareId]: { invites, members, newUserInvites } });
         }
 
         if (shareEditMemberAccessSuccess.match(action)) {
