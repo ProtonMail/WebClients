@@ -79,10 +79,12 @@ function* onSharesEvent(
             if (localShare && hasShareAccessChanged(localShare, share)) {
                 yield put(
                     shareAccessChange({
-                        shareId,
+                        newUserInvitesReady: share.NewUserInvitesReady,
                         owner: share.Owner,
                         shared: share.Shared,
+                        shareId,
                         shareRoleId: share.ShareRoleID as ShareRole,
+                        targetMaxMembers: share.TargetMaxMembers,
                         targetMembers: share.TargetMembers,
                     })
                 );
