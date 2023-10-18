@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
 import { Icon } from '@proton/components';
+import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { ShareRole, type VaultShare } from '@proton/pass/types';
 
 import { CountLabel } from '../../Layout/Dropdown/CountLabel';
@@ -104,7 +105,7 @@ export const VaultItem: VFC<Props> = ({
                         {allowSharing && !shared && (
                             <DropdownMenuButton
                                 className="flex flex-align-items-center py-2 px-4"
-                                disabled={!sharable}
+                                disabled={!sharable || !isWritableVault(share)}
                                 icon="user-plus"
                                 label={c('Action').t`Share`}
                                 onClick={handleClickEvent(onInvite)}

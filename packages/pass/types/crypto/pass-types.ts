@@ -38,6 +38,7 @@ type OpenedShareBase = {
     owner: boolean;
     shared: boolean;
     targetMembers: number;
+    targetMaxMembers: number;
     shareRoleId: ShareRole;
 };
 
