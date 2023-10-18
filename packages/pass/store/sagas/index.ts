@@ -15,6 +15,8 @@ import inviteCreate from './invites/invite-create.saga';
 import inviteReject from './invites/invite-reject.saga';
 import inviteRemove from './invites/invite-remove.saga';
 import inviteResend from './invites/invite-resend.saga';
+import newUserInvitePromote from './invites/new-user-invite-promote.saga';
+import newUserInviteRemove from './invites/new-user-invite-remove.saga';
 import itemCreation from './items/item-creation.saga';
 import itemDelete from './items/item-delete.saga';
 import itemEdit from './items/item-edit.saga';
@@ -46,8 +48,8 @@ import wakeup from './workers/wakeup.saga';
 export function* workerRootSaga(options: WorkerRootSagaOptions) {
     yield all(
         [
-            aliasOptionsRequest,
             aliasDetailsRequest,
+            aliasOptionsRequest,
             boot,
             cache,
             events,
@@ -55,36 +57,38 @@ export function* workerRootSaga(options: WorkerRootSagaOptions) {
             inviteAccept,
             inviteCreate,
             inviteReject,
-            inviteResend,
             inviteRemove,
+            inviteResend,
             itemCreation,
+            itemDelete,
             itemEdit,
             itemMove,
-            itemTrash,
-            itemDelete,
             itemRestore,
             itemsImport,
-            trashDelete,
-            trashRestore,
+            itemTrash,
             itemUsed,
+            newUserInvitePromote,
+            newUserInviteRemove,
             notification,
             reportProblem,
             request,
-            shareAccessOptions,
-            shareEditRole,
-            shareLeave,
-            shareRemoveMember,
             sessionLockDisable,
             sessionLockEnable,
             sessionLockImmediate,
             sessionUnlock,
             settings,
+            shareAccessOptions,
+            shareEditRole,
+            shareLeave,
+            shareRemoveMember,
             signout,
             sync,
+            trashDelete,
+            trashRestore,
             userPlan,
             vaultCreation,
-            vaultEdit,
             vaultDelete,
+            vaultEdit,
             vaultTransferOwner,
             wakeup,
         ].map((saga) => saga(options))
