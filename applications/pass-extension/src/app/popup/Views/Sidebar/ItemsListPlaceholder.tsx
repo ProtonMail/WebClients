@@ -14,11 +14,9 @@ import { ItemCard } from '@proton/pass/components/Item/ItemCard';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { itemTypeToIconName } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { selectOwnWritableVaults, selectShare, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { ItemType } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { prop } from '@proton/pass/utils/fp/lens';
 import clsx from '@proton/utils/clsx';
 
@@ -33,7 +31,6 @@ type QuickAction = {
 export const ItemsListPlaceholder: VFC = () => {
     const history = useHistory();
     const openSettings = useOpenSettingsTab();
-    const primaryVaultDisabled = useFeatureFlag(PassFeature.PassRemovePrimaryVault);
 
     const { isCreating } = useNavigationContext();
 
@@ -93,11 +90,8 @@ export const ItemsListPlaceholder: VFC = () => {
             >
                 <span className="text-semibold inline-block">{c('Title').t`Your vault is empty`}</span>
                 <ItemCard>
-                    {primaryVaultDisabled
-                        ? c('Info')
-                              .t`You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.`
-                        : c('Info')
-                              .t`You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.`}
+                    {c('Info')
+                        .t`You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.`}
                 </ItemCard>
                 <UpgradeButton />
             </div>

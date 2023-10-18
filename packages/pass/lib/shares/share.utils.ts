@@ -28,7 +28,6 @@ export const decryptShareResponse = async (
             createTime: share.createTime,
             eventId,
             owner: share.owner,
-            primary: Boolean(encryptedShare.Primary),
             shared: share.shared,
             shareId: share.shareId,
             shareRoleId: share.shareRoleId,
