@@ -4,7 +4,12 @@ import { ESStatus, ES_EXTRA_RESULTS_LIMIT } from '@proton/encrypted-search';
 import { LabelCount } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { DEFAULT_PLACEHOLDERS_COUNT, MAX_ELEMENT_LIST_LOAD_RETRIES } from '../../constants';
+import {
+    DEFAULT_PLACEHOLDERS_COUNT,
+    ELEMENTS_CACHE_REQUEST_SIZE,
+    MAX_ELEMENT_LIST_LOAD_RETRIES,
+    PAGE_SIZE,
+} from '../../constants';
 import {
     hasAttachments,
     hasAttachmentsFilter,
@@ -25,7 +30,6 @@ const beforeFirstLoad = (state: RootState) => state.elements.beforeFirstLoad;
 export const elementsMap = (state: RootState) => state.elements.elements;
 export const params = (state: RootState) => state.elements.params;
 const page = (state: RootState) => state.elements.page;
-const pageSize = (state: RootState) => state.elements.pageSize;
 const pages = (state: RootState) => state.elements.pages;
 const bypassFilter = (state: RootState) => state.elements.bypassFilter;
 const pendingRequest = (state: RootState) => state.elements.pendingRequest;
@@ -45,15 +49,15 @@ const currentESDBStatus = (
 const currentCounts = (_: RootState, { counts }: { counts: { counts: LabelCount[]; loading: boolean } }) => counts;
 
 export const elements = createSelector(
-    [elementsMap, params, page, pageSize, pages, bypassFilter],
-    (elements, params, page, pageSize, pages, bypassFilter) => {
+    [elementsMap, params, page, pages, bypassFilter],
+    (elements, params, page, pages, bypassFilter) => {
         // Getting all params from the cache and not from scoped params
         // To prevent any desynchronization between cache and the output of the memo
         const { labelID, sort, filter } = params;
 
         const minPage = pages.reduce((acc, page) => (page < acc ? page : acc), pages[0]);
-        const startIndex = (page - minPage) * pageSize;
-        const endIndex = startIndex + pageSize;
+        const startIndex = (page - minPage) * PAGE_SIZE;
+        const endIndex = startIndex + PAGE_SIZE;
         const elementsArray = Object.values(elements);
         const filtered = elementsArray
             .filter((element) => hasLabel(element, labelID))
@@ -103,16 +107,13 @@ export const expiringElements = createSelector([params, elements], (params, elem
  * It only checks when there is not a full page to show if the label has more than a cache size of elements
  * It doesn't rely at all on the optimistic counter logic
  */
-export const needsMoreElements = createSelector(
-    [total, page, pageSize, elementsLength],
-    (total, page, pageSize, elementsLength) => {
-        if (total === undefined) {
-            return false;
-        }
-        const howManyElementsAhead = total - page * pageSize;
-        return elementsLength < pageSize && howManyElementsAhead > pageSize * 2;
+export const needsMoreElements = createSelector([total, page, elementsLength], (total, page, elementsLength) => {
+    if (total === undefined) {
+        return false;
     }
-);
+    const howManyElementsAhead = total - page * PAGE_SIZE;
+    return elementsLength < PAGE_SIZE && howManyElementsAhead > ELEMENTS_CACHE_REQUEST_SIZE;
+});
 
 export const paramsChanged = createSelector([params, currentParams], (params, currentParams) => {
     const paramsChanged =
@@ -223,23 +224,23 @@ export const dynamicTotal = createSelector(
  * Has to be used only for non sensitive behaviors
  */
 export const dynamicPageLength = createSelector(
-    [page, pageSize, dynamicTotal, params, bypassFilter],
-    (page, pageSize, dynamicTotal, params, bypassFilter) => {
+    [page, dynamicTotal, params, bypassFilter],
+    (page, dynamicTotal, params, bypassFilter) => {
         if (dynamicTotal === undefined) {
             return undefined;
         }
-        return expectedPageLength(page, pageSize, dynamicTotal, isFilter(params.filter) ? bypassFilter.length : 0);
+        return expectedPageLength(page, dynamicTotal, isFilter(params.filter) ? bypassFilter.length : 0);
     }
 );
 
 export const placeholderCount = createSelector(
-    [page, pageSize, total, params, dynamicPageLength],
-    (page, pageSize, total, params, dynamicPageLength) => {
+    [page, total, params, dynamicPageLength],
+    (page, total, params, dynamicPageLength) => {
         if (dynamicPageLength !== undefined) {
             return dynamicPageLength;
         }
         if (total !== undefined) {
-            return expectedPageLength(page, pageSize, total, isFilter(params.filter) ? bypassFilter.length : 0);
+            return expectedPageLength(page, total, isFilter(params.filter) ? bypassFilter.length : 0);
         }
         return DEFAULT_PLACEHOLDERS_COUNT;
     }

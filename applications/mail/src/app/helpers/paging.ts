@@ -1,31 +1,22 @@
-import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
+import { PAGE_SIZE } from '../constants';
 
-export const pageCount = (total: number, pageSize: MAIL_PAGE_SIZE) => Math.ceil(total / pageSize) || 0;
+export const pageCount = (total: number) => Math.ceil(total / PAGE_SIZE) || 0;
 
-export const expectedPageLength = (
-    page: number,
-    pageSize: MAIL_PAGE_SIZE,
-    inputTotal: number,
-    filterBypassCount: number
-) => {
+export const expectedPageLength = (page: number, inputTotal: number, filterBypassCount: number) => {
     const total = inputTotal + filterBypassCount;
 
     if (total === 0) {
         return 0;
     }
-    const count = pageCount(total, pageSize);
-
+    const count = pageCount(total);
     if (page >= count) {
         return 0;
     }
-
-    if (total % pageSize === 0) {
-        return pageSize;
+    if (total % PAGE_SIZE === 0) {
+        return PAGE_SIZE;
     }
-
     if (count - 1 === page) {
-        return total % pageSize;
+        return total % PAGE_SIZE;
     }
-
-    return pageSize;
+    return PAGE_SIZE;
 };

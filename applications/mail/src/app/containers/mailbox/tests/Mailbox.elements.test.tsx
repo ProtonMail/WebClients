@@ -1,9 +1,9 @@
 import { fireEvent } from '@testing-library/react';
 
 import { queryConversations } from '@proton/shared/lib/api/conversations';
-import { DEFAULT_MAIL_PAGE_SIZE, MAX_MESSAGES_FETCH_CHUNK_SIZE } from '@proton/shared/lib/constants';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 
+import { ELEMENTS_CACHE_REQUEST_SIZE, PAGE_SIZE } from '../../../constants';
 import { addApiMock, api, apiMocks, clearAll, getHistory, tick, waitForSpyCall } from '../../../helpers/test/helper';
 import { Element } from '../../../models/element';
 import { Sort } from '../../../models/tools';
@@ -61,7 +61,7 @@ describe('Mailbox element list', () => {
         });
 
         it('should limit to the page size', async () => {
-            const total = DEFAULT_MAIL_PAGE_SIZE + 5;
+            const total = PAGE_SIZE + 5;
             const { getItems } = await setup({
                 conversations: getElements(total),
                 page: 0,
@@ -69,18 +69,18 @@ describe('Mailbox element list', () => {
             });
             const items = getItems();
 
-            expect(items.length).toBe(DEFAULT_MAIL_PAGE_SIZE);
+            expect(items.length).toBe(PAGE_SIZE);
         });
 
         it('should returns the current page', async () => {
             const page1 = 0;
             const page2 = 1;
-            const total = DEFAULT_MAIL_PAGE_SIZE + 2;
+            const total = PAGE_SIZE + 2;
             const conversations = getElements(total);
 
             const { rerender, getItems } = await setup({ conversations, totalConversations: total, page: page1 });
             let items = getItems();
-            expect(items.length).toBe(DEFAULT_MAIL_PAGE_SIZE);
+            expect(items.length).toBe(PAGE_SIZE);
 
             await rerender({ page: page2 });
             items = getItems();
@@ -139,29 +139,27 @@ describe('Mailbox element list', () => {
     describe('request effect', () => {
         it('should send request for conversations current page', async () => {
             const page = 0;
-            const total = DEFAULT_MAIL_PAGE_SIZE + 3;
+            const total = PAGE_SIZE + 3;
             const expectedRequest = {
                 ...queryConversations({
                     LabelID: labelID,
                     Sort: 'Time',
-                    Limit: MAX_MESSAGES_FETCH_CHUNK_SIZE,
-                    PageSize: DEFAULT_MAIL_PAGE_SIZE,
-                }),
+                    Limit: ELEMENTS_CACHE_REQUEST_SIZE,
+                    PageSize: PAGE_SIZE,
+                } as any),
                 signal: new AbortController().signal,
             };
 
             const { getItems } = await setup({
-                conversations: getElements(DEFAULT_MAIL_PAGE_SIZE),
+                conversations: getElements(PAGE_SIZE),
                 page,
                 totalConversations: total,
             });
 
-            console.log(api.mock.calls);
-
             expect(api).toHaveBeenCalledWith(expectedRequest);
 
             const items = getItems();
-            expect(items.length).toBe(DEFAULT_MAIL_PAGE_SIZE);
+            expect(items.length).toBe(PAGE_SIZE);
         });
     });
 
@@ -214,7 +212,7 @@ describe('Mailbox element list', () => {
 
     describe('page navigation', () => {
         it('should navigate on the last page when the one asked is too big', async () => {
-            const conversations = getElements(DEFAULT_MAIL_PAGE_SIZE * 1.5);
+            const conversations = getElements(PAGE_SIZE * 1.5);
             apiMocks['mail/v4/conversations'] = [
                 {
                     method: 'get',
@@ -224,10 +222,7 @@ describe('Mailbox element list', () => {
                             return { Total: conversations.length, Conversations: [] };
                         }
                         if (page <= 1) {
-                            return {
-                                Total: conversations.length,
-                                Conversations: conversations.slice(DEFAULT_MAIL_PAGE_SIZE),
-                            };
+                            return { Total: conversations.length, Conversations: conversations.slice(PAGE_SIZE) };
                         }
                     },
                 },
@@ -244,27 +239,21 @@ describe('Mailbox element list', () => {
             await rerender({ page: 1 });
 
             const items = getItems();
-            expect(items.length).toBe(conversations.length % DEFAULT_MAIL_PAGE_SIZE);
+            expect(items.length).toBe(conversations.length % PAGE_SIZE);
         });
 
         it('should navigate on the previous one when the current one is emptied', async () => {
-            const conversations = getElements(DEFAULT_MAIL_PAGE_SIZE * 1.5);
+            const conversations = getElements(PAGE_SIZE * 1.5);
             apiMocks['mail/v4/conversations'] = [
                 {
                     method: 'get',
                     handler: (args: any) => {
                         const page = args.params.Page;
                         if (page === 0) {
-                            return {
-                                Total: conversations.length,
-                                Conversations: conversations.slice(0, DEFAULT_MAIL_PAGE_SIZE),
-                            };
+                            return { Total: conversations.length, Conversations: conversations.slice(0, PAGE_SIZE) };
                         }
                         if (page === 1) {
-                            return {
-                                Total: conversations.length,
-                                Conversations: conversations.slice(DEFAULT_MAIL_PAGE_SIZE),
-                            };
+                            return { Total: conversations.length, Conversations: conversations.slice(PAGE_SIZE) };
                         }
                     },
                 },
@@ -280,7 +269,7 @@ describe('Mailbox element list', () => {
             const archive = getByTestId('toolbar:movetoarchive');
             fireEvent.click(archive);
 
-            await sendEvent({ ConversationCounts: [{ LabelID: labelID, Total: DEFAULT_MAIL_PAGE_SIZE, Unread: 0 }] });
+            await sendEvent({ ConversationCounts: [{ LabelID: labelID, Total: PAGE_SIZE, Unread: 0 }] });
 
             await waitForSpyCall(labelRequestSpy);
 
@@ -288,17 +277,14 @@ describe('Mailbox element list', () => {
         });
 
         it('should show correct number of placeholder navigating on last page', async () => {
-            const conversations = getElements(DEFAULT_MAIL_PAGE_SIZE * 1.5);
+            const conversations = getElements(PAGE_SIZE * 1.5);
             apiMocks['mail/v4/conversations'] = [
                 {
                     method: 'get',
                     handler: (args: any) => {
                         const page = args.params.Page;
                         if (page === 0) {
-                            return {
-                                Total: conversations.length,
-                                Conversations: conversations.slice(0, DEFAULT_MAIL_PAGE_SIZE),
-                            };
+                            return { Total: conversations.length, Conversations: conversations.slice(0, PAGE_SIZE) };
                         }
                         if (page === 1) {
                             return new Promise(() => {});
@@ -312,7 +298,7 @@ describe('Mailbox element list', () => {
             await rerender({ page: 1 });
 
             const items = getItems();
-            expect(items.length).toBe(conversations.length % DEFAULT_MAIL_PAGE_SIZE);
+            expect(items.length).toBe(conversations.length % PAGE_SIZE);
         });
     });
 });

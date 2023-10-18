@@ -9,7 +9,6 @@ import { useNotifications } from '@proton/components';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { isSearch } from '../../helpers/elements';
 import { parseSearchParams } from '../../helpers/encryptedSearch';
-import useMailModel from '../../hooks/useMailModel';
 import {
     addESResults,
     load as loadAction,
@@ -46,7 +45,6 @@ export const useApplyEncryptedSearch = ({
     onPage,
 }: EncryptedSearchParams) => {
     const history = useHistory();
-    const { PageSize: pageSize } = useMailModel('MailSettings');
     const { createNotification } = useNotifications();
     const dispatch = useAppDispatch();
 
@@ -84,7 +82,7 @@ export const useApplyEncryptedSearch = ({
                     dispatch(manualFulfilled());
                     onPage(0);
                 } else {
-                    void dispatch(loadAction({ page, pageSize, params, abortController: undefined }));
+                    void dispatch(loadAction({ conversationMode, page, params, abortController: undefined }));
                 }
             }
         } catch (error: any) {
@@ -92,7 +90,7 @@ export const useApplyEncryptedSearch = ({
                 text: c('Error').t`There has been an issue with content search. Default search has been used instead.`,
                 type: 'error',
             });
-            void dispatch(loadAction({ page, pageSize, params, abortController: undefined }));
+            void dispatch(loadAction({ conversationMode, page, params, abortController: undefined }));
         }
     };
 
