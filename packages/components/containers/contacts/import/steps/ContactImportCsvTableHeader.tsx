@@ -21,7 +21,7 @@ const ContactImportCsvTableHeader = ({
     return (
         <thead {...rest}>
             <tr>
-                <TableCell type="header" className="w-custom text-center" style={{ '--w-custom': '15%' }}>
+                <TableCell type="header" className="w-1/6 text-center">
                     {c('TableHeader').t`Import`}
                 </TableCell>
                 <TableCell type="header" className="text-center">{c('TableHeader').t`CSV field`}</TableCell>
