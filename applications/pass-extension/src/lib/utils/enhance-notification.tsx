@@ -1,3 +1,4 @@
+import { SSO_URL } from 'proton-pass-extension/app/config';
 import { c } from 'ttag';
 
 import { Icon, InlineLinkButton } from '@proton/components/components';
@@ -5,8 +6,6 @@ import browser from '@proton/pass/lib/globals/browser';
 import type { Notification } from '@proton/pass/store/actions/with-notification';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import noop from '@proton/utils/noop';
-
-import { SSO_URL } from '../../app/config';
 
 const reactivateLink = (
     <InlineLinkButton

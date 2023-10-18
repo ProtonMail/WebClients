@@ -2,20 +2,21 @@ import { useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 
 import type { RequestType } from '@proton/pass/store/actions/with-request';
-import { selectRequestStatus } from '@proton/pass/store/selectors';
+import type { RequestEntry } from '@proton/pass/store/reducers';
+import { selectRequest } from '@proton/pass/store/selectors';
 import type { Maybe } from '@proton/pass/types';
 
 type Options = {
-    onStart?: () => void;
-    onSuccess?: () => void;
-    onFailure?: () => void;
+    onStart?: <R extends RequestEntry<'start', any>>(request: R) => void;
+    onSuccess?: <R extends RequestEntry<'success', any>>(request: R) => void;
+    onFailure?: <R extends RequestEntry<'failure', any>>(request: R) => void;
 };
 
 /* `options` is wrapped in a ref to avoid setting it as
  * a dependency to the status change effect. We only want
  * to trigger the callbacks once. */
 export const useRequestStatusEffect = (requestId: string, options: Options): Maybe<RequestType> => {
-    const status = useSelector(selectRequestStatus(requestId));
+    const req = useSelector(selectRequest(requestId));
     const optionsRef = useRef<Options>(options);
 
     useEffect(() => {
@@ -23,15 +24,17 @@ export const useRequestStatusEffect = (requestId: string, options: Options): May
     }, [options]);
 
     useEffect(() => {
-        switch (status) {
-            case 'start':
-                return optionsRef.current.onStart?.();
-            case 'success':
-                return optionsRef.current.onSuccess?.();
-            case 'failure':
-                return optionsRef.current.onFailure?.();
-        }
-    }, [status]);
+        if (!req) return;
 
-    return status;
+        switch (req.status) {
+            case 'start':
+                return optionsRef.current.onStart?.(req);
+            case 'success':
+                return optionsRef.current.onSuccess?.(req);
+            case 'failure':
+                return optionsRef.current.onFailure?.(req);
+        }
+    }, [req]);
+
+    return req?.status;
 };
