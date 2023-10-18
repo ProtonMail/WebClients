@@ -1,5 +1,3 @@
-import { c } from 'ttag';
-
 import { api } from '@proton/pass/lib/api/api';
 import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { type PendingInvite } from '@proton/pass/types/data/invites';
@@ -11,7 +9,7 @@ import type {
     InviteResendIntent,
 } from '@proton/pass/types/data/invites.dto';
 
-import { getPrimaryPublicKeyForEmail, getPublicKeysForEmail } from '../auth/address';
+import { getPublicKeysForEmail } from '../auth/address';
 
 export const loadInvites = async (shareId: string): Promise<PendingInvite[]> => {
     const { Invites } = await api({
@@ -31,22 +29,23 @@ export const loadInvites = async (shareId: string): Promise<PendingInvite[]> => 
     }));
 };
 
-export const createInvite = async ({ shareId, email, role }: InviteCreateIntent) =>
+export const createInvite = async ({
+    email,
+    invitedPublicKey,
+    role,
+    shareId,
+}: InviteCreateIntent & { invitedPublicKey: string }) =>
     api({
         url: `pass/v1/share/${shareId}/invite`,
         method: 'post',
-        data: await (async () => {
-            try {
-                return await PassCrypto.createVaultInvite({
-                    shareId,
-                    email,
-                    role,
-                    invitedPublicKey: await getPrimaryPublicKeyForEmail(email),
-                });
-            } catch {
-                throw new Error(c('Error').t`Cannot send invitation to this address at the moment`);
-            }
-        })(),
+        data: await PassCrypto.createVaultInvite({ shareId, email, role, invitedPublicKey }),
+    });
+
+export const createNewUserInvite = async ({ email, role, shareId }: InviteCreateIntent) =>
+    api({
+        url: `pass/v1/share/${shareId}/invite/new_user`,
+        method: 'post',
+        data: await PassCrypto.createNewUserVaultInvite({ email, role, shareId }),
     });
 
 export const resendInvite = async ({ shareId, inviteId }: InviteResendIntent) =>
