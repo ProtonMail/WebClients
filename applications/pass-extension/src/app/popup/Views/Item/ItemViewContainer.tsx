@@ -12,7 +12,6 @@ import { NoteView } from '@proton/pass/components/Item/Note/Note.view';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { VaultSelectModal, useVaultSelectModalHandles } from '@proton/pass/components/Vault/VaultSelect.modal';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { getItemActionId } from '@proton/pass/lib/items/item.utils';
 import {
@@ -28,7 +27,6 @@ import {
 import selectFailedAction from '@proton/pass/store/optimistic/selectors/select-failed-action';
 import { selectByShareId, selectItemWithOptimistic, selectShareOrThrow } from '@proton/pass/store/selectors';
 import type { ItemType, SelectedItem, ShareType } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
@@ -42,7 +40,6 @@ const itemTypeViewMap: { [T in ItemType]: VFC<ItemViewProps<T>> } = {
 export const ItemViewContainer: VFC = () => {
     const dispatch = useDispatch();
     const history = useHistory();
-    const primaryVaultDisabled = useFeatureFlag(PassFeature.PassRemovePrimaryVault);
 
     const { shareId, itemId } = useParams<SelectedItem>();
     const optimisticItemId = getItemActionId({ itemId, shareId });
@@ -108,13 +105,8 @@ export const ItemViewContainer: VFC = () => {
             />
 
             <VaultSelectModal
-                downgradeMessage={
-                    primaryVaultDisabled
-                        ? c('Info')
-                              .t`You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.`
-                        : c('Info')
-                              .t`You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.`
-                }
+                downgradeMessage={c('Info')
+                    .t`You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.`}
                 onSubmit={handleVaultSelect}
                 onClose={closeVaultSelect}
                 {...modalState}
