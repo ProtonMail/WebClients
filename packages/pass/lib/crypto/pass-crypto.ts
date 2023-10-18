@@ -330,6 +330,20 @@ const createPassCrypto = (): PassCryptoWorker => {
             };
         },
 
+        async promoteInvite({ shareId, invitedPublicKey }) {
+            assertHydrated(context);
+
+            const shareManager = getShareManager(shareId);
+            const share = shareManager.getShare();
+            const inviteKeys = await processes.createInviteKeys({
+                targetKeys: shareManager.getVaultKeys(),
+                invitedPublicKey: await CryptoProxy.importPublicKey({ armoredKey: invitedPublicKey }),
+                inviterPrivateKey: (await getPrimaryAddressKeyById(share.addressId)).privateKey,
+            });
+
+            return { Keys: inviteKeys };
+        },
+
         async acceptVaultInvite({ inviteKeys, invitedAddressId, inviterPublicKeys }) {
             assertHydrated(context);
 

@@ -1,6 +1,9 @@
 import type { KeyRotationKeyPair } from '../api';
 import type { ShareRole } from './shares';
 
+export type NewUserInvitePromoteIntent = { newUserInviteId: string; shareId: string };
+export type NewUserInviteRemoveIntent = { newUserInviteId: string; shareId: string };
+
 export type InviteCreateIntent = { shareId: string; email: string; role: ShareRole };
 export type InviteResendIntent = { shareId: string; inviteId: string };
 export type InviteRemoveIntent = { shareId: string; inviteId: string };
