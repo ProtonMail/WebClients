@@ -53,6 +53,7 @@ export enum OnePassCreditCardFieldId {
     NUMBER = 'ccnum',
     TYPE = 'type',
     VALID_FROM = 'validFrom',
+    PIN = 'pin',
 }
 
 export type OnePassCreditCardFields = { [K in OnePassCreditCardFieldId]?: OnePassField };
