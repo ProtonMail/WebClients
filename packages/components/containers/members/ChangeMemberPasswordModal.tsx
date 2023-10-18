@@ -15,7 +15,7 @@ import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
 import { authMember } from '@proton/shared/lib/api/members';
 import { getOrganizationKeys } from '@proton/shared/lib/api/organization';
-import { disableTotp } from '@proton/shared/lib/api/settings';
+import { disable2FA } from '@proton/shared/lib/api/settings';
 import { getUser, lockSensitiveSettings } from '@proton/shared/lib/api/user';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import {
@@ -193,7 +193,7 @@ const ChangeMemberPasswordModal = ({ member, onClose, ...rest }: Props) => {
             await srpVerify({
                 api: memberApi,
                 credentials,
-                config: disableTotp(),
+                config: disable2FA(),
             });
         }
 
