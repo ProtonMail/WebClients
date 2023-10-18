@@ -427,11 +427,11 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                                         .t`private`}</Badge>
                                                 </span>
                                             )}
+                                            {member['2faStatus'] > 0 && (
+                                                <Badge type="origin" className="rounded-sm">{c('Enabled 2FA')
+                                                    .t`2FA`}</Badge>
+                                            )}
                                         </div>
-                                        {member['2faStatus'] > 0 && (
-                                            <Badge type="origin" className="rounded-sm">{c('Enabled 2FA')
-                                                .t`2FA`}</Badge>
-                                        )}
                                     </div>
                                 </TableCell>
                                 {!hasVpnB2BPlan && roleCell}
