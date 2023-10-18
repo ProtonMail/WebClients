@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { BRAND_NAME, PASS_APP_NAME, PLANS } from '@proton/shared/lib/constants';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
@@ -136,6 +137,23 @@ export const getSharing = (included: boolean = false): PlanCardFeatureDefinition
     };
 };
 
+const getVaultSharingText = (n: number) => {
+    return c('new_plans: feature').ngettext(
+        msgid`Vault sharing (up to ${n} person)`,
+        `Vault sharing (up to ${n} people)`,
+        n
+    );
+};
+
+export const getVaultSharing = (n: number): PlanCardFeatureDefinition => {
+    return {
+        text: getVaultSharingText(n),
+        icon: 'arrow-up-from-square',
+        included: true,
+        hideInDowngrade: true,
+    };
+};
+
 export const getDataBreachMonitoring = (included: boolean = false): PlanCardFeatureDefinition => {
     return {
         text: included
@@ -152,7 +170,7 @@ export const FREE_VAULTS = 1;
 
 export const PASS_PLUS_VAULTS = 20;
 
-export const getPassFeatures = (): PlanCardFeature[] => {
+export const getPassFeatures = (passVaultSharingEnabled: boolean): PlanCardFeature[] => {
     return [
         {
             name: 'passwords-and-notes',
@@ -218,6 +236,24 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_BUSINESS]: null,
             },
         },
+        passVaultSharingEnabled
+            ? {
+                  name: 'vault-and-item-sharing',
+                  plans: {
+                      [PLANS.FREE]: getVaultSharing(3),
+                      [PLANS.BUNDLE]: getVaultSharing(10),
+                      [PLANS.MAIL]: getVaultSharing(3),
+                      [PLANS.VPN]: getVaultSharing(3),
+                      [PLANS.DRIVE]: getVaultSharing(3),
+                      [PLANS.PASS_PLUS]: getVaultSharing(10),
+                      [PLANS.FAMILY]: getVaultSharing(10),
+                      [PLANS.MAIL_PRO]: getVaultSharing(3),
+                      [PLANS.BUNDLE_PRO]: getVaultSharing(10),
+                      [PLANS.VPN_PRO]: null,
+                      [PLANS.VPN_BUSINESS]: null,
+                  },
+              }
+            : null,
         {
             name: '2fa-authenticator',
             plans: {
@@ -250,22 +286,24 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_BUSINESS]: null,
             },
         },
-        {
-            name: 'vault-and-item-sharing',
-            plans: {
-                [PLANS.FREE]: getSharing(),
-                [PLANS.BUNDLE]: getSharing(true),
-                [PLANS.MAIL]: getSharing(),
-                [PLANS.VPN]: getSharing(),
-                [PLANS.DRIVE]: getSharing(),
-                [PLANS.PASS_PLUS]: getSharing(true),
-                [PLANS.FAMILY]: getSharing(true),
-                [PLANS.MAIL_PRO]: getSharing(),
-                [PLANS.BUNDLE_PRO]: getSharing(true),
-                [PLANS.VPN_PRO]: null,
-                [PLANS.VPN_BUSINESS]: null,
-            },
-        },
+        passVaultSharingEnabled
+            ? null
+            : {
+                  name: 'vault-and-item-sharing',
+                  plans: {
+                      [PLANS.FREE]: getSharing(),
+                      [PLANS.BUNDLE]: getSharing(true),
+                      [PLANS.MAIL]: getSharing(),
+                      [PLANS.VPN]: getSharing(),
+                      [PLANS.DRIVE]: getSharing(),
+                      [PLANS.PASS_PLUS]: getSharing(true),
+                      [PLANS.FAMILY]: getSharing(true),
+                      [PLANS.MAIL_PRO]: getSharing(),
+                      [PLANS.BUNDLE_PRO]: getSharing(true),
+                      [PLANS.VPN_PRO]: null,
+                      [PLANS.VPN_BUSINESS]: null,
+                  },
+              },
         {
             name: 'data-breach-monitoring',
             plans: {
@@ -282,7 +320,7 @@ export const getPassFeatures = (): PlanCardFeature[] => {
                 [PLANS.VPN_BUSINESS]: null,
             },
         },
-    ];
+    ].filter(isTruthy);
 };
 
 export const getPassIdentityFeature = (): PlanCardFeatureDefinition => {

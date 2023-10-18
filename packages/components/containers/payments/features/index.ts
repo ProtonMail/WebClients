@@ -11,17 +11,23 @@ import { getMailFeatures } from './mail';
 import { getPassFeatures } from './pass';
 import { getVPNFeatures } from './vpn';
 
-export const getAllFeatures = (
-    plansMap: PlansMap,
-    serversCount: VPNServersCountData,
-    calendarSharingEnabled: boolean
-) => {
+export const getAllFeatures = ({
+    plansMap,
+    serversCount,
+    calendarSharingEnabled,
+    passVaultSharingEnabled,
+}: {
+    plansMap: PlansMap;
+    serversCount: VPNServersCountData;
+    calendarSharingEnabled: boolean;
+    passVaultSharingEnabled: boolean;
+}) => {
     return {
         highlight: getHighlightFeatures(plansMap),
         mail: getMailFeatures(plansMap),
         calendar: getCalendarFeatures(plansMap, calendarSharingEnabled),
         drive: getDriveFeatures(plansMap),
-        pass: getPassFeatures(),
+        pass: getPassFeatures(passVaultSharingEnabled),
         vpn: getVPNFeatures(serversCount),
         team: getTeamManagementFeatures(),
         support: getSupportFeatures(),
