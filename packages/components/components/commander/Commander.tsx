@@ -86,7 +86,7 @@ const Commander = ({ onClose, list, ...rest }: Props) => {
             enableCloseWhenClickOutside
             {...rest}
         >
-            <div className="flex flex-column flex-nowrap h100">
+            <div className="flex flex-column flex-nowrap h-full">
                 <div className="border-bottom commander-search-wrapper py-1 flex-item-noshrink">
                     <label className="sr-only" htmlFor="commander-search-input">
                         {c('Label').t`Type a command...`}

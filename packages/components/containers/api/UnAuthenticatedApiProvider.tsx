@@ -40,7 +40,7 @@ const UnAuthenticatedApiProvider = ({ children, loader }: Props) => {
     return (
         <ApiContext.Provider value={apiCallback}>
             <Challenge
-                className="h0 absolute"
+                className="h-0 absolute"
                 empty
                 tabIndex={-1}
                 challengeRef={challengeRefLogin}

@@ -416,7 +416,10 @@ const CreateUserAccountsModal = ({ verifiedDomains, usersToImport, app, onClose,
                         </TableBody>
                     </Table>
                 ) : (
-                    <div className="flex flex-align-items-center flex-justify-center min-h10e">
+                    <div
+                        className="flex flex-align-items-center flex-justify-center min-h-custom"
+                        style={{ '--min-h-custom': '10em' }}
+                    >
                         <p className="color-weak">{c('Create user accounts empty state').t`No search results found`}</p>
                     </div>
                 ),

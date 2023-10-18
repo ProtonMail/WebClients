@@ -60,7 +60,7 @@ const DropzoneContent = ({
             className={clsx(
                 'dropzone-content dropzone-content--hovered',
                 prefixClasses('flex flex-justify-center flex-align-items-center'),
-                embedded ? 'dropzone-content--embedded' : 'h100 w-full absolute-cover',
+                embedded ? 'dropzone-content--embedded' : 'h-full w-full absolute-cover',
                 rounded && prefixClasses('rounded-xl'),
                 border && 'dropzone--bordered',
                 isTransparentShape && 'dropzone-content--transparent',

@@ -482,7 +482,7 @@ export const Sandbox = () => {
             classes.includes('mt-auto') ||
             classes.includes('mb-auto')
         ) {
-            return 'h100';
+            return 'h-full';
         } else if (classes.includes('auto')) {
             return '';
         } else {

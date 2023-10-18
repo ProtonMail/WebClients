@@ -43,7 +43,7 @@ const LoaderPage = ({ documentTitle = '', text, loaderClassName = '' }: Props) =
 
     return (
         <div
-            className="h100"
+            className="h-full"
             // Ignore drag & drop during loading to avoid issue when user drops
             // file too soon before the app is ready causing stop of the app
             // load and showing the file instead.

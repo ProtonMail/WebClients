@@ -109,7 +109,7 @@ const EmailForwardingContainer = ({ request }: Props) => {
     }, []);
 
     return (
-        <main className="main-area h100">
+        <main className="main-area h-full">
             {(() => {
                 if (error) {
                     if (error.type === ErrorType.Expired) {
@@ -137,7 +137,7 @@ const EmailForwardingContainer = ({ request }: Props) => {
                 }
                 return (
                     <PublicLayout
-                        className="h100"
+                        className="h-full"
                         img={<img src={accountIllustration} alt="" />}
                         header={header}
                         main={main}

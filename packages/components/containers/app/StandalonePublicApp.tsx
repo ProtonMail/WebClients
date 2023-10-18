@@ -16,7 +16,7 @@ const StandalonePublicApp = ({ onLogin, locales }: Props) => {
     return (
         <StandardPublicApp loader={loaderPage} locales={locales}>
             <UnAuthenticatedApiProvider loader={loaderPage}>
-                <div className="h100 flex flex-justify-center flex-align-items-center">
+                <div className="h-full flex flex-justify-center flex-align-items-center">
                     <div className="w-custom" style={{ '--w-custom': '20em' }}>
                         <MinimalLoginContainer onLogin={onLogin} />
                     </div>

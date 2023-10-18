@@ -207,7 +207,7 @@ const LoginForm = ({
             >
                 {hasChallenge && (
                     <Challenge
-                        className="h0"
+                        className="h-0"
                         tabIndex={-1}
                         challengeRef={challengeRefLogin}
                         name="login"

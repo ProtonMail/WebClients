@@ -213,7 +213,7 @@ function GeneratedLinkState({
                                             }}
                                         />
                                     </div>
-                                    <div className="flex-no-min-children flex-item-fluid mb-2 md:mb-0 field-two-icon-container-empty on-mobile-min-h0">
+                                    <div className="flex-no-min-children flex-item-fluid mb-2 md:mb-0 field-two-icon-container-empty min-h-0 md:min-h-none">
                                         {passwordToggledOn && (
                                             <>
                                                 <InputFieldTwo
@@ -255,7 +255,7 @@ function GeneratedLinkState({
                                             onChange={onIncludeExpirationTimeToogle}
                                         />
                                     </div>
-                                    <div className="flex-no-min-children flex-item-fluid flex-align-items-center mb-2 md:mb-0 field-two-icon-container-empty on-mobile-min-h0">
+                                    <div className="flex-no-min-children flex-item-fluid flex-align-items-center mb-2 md:mb-0 field-two-icon-container-empty min-h-0 md:min-h-none">
                                         {expirationToggledOn && (
                                             <ExpirationTimeDatePicker
                                                 disabled={saving}

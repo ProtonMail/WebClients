@@ -241,7 +241,7 @@ const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails,
                                     <div className="flex flex-nowrap flex-item-fluid contact-list-row p-4">
                                         <div>
                                             <Checkbox
-                                                className="w-full h100"
+                                                className="w-full h-full"
                                                 checked={isAllChecked}
                                                 onChange={handleCheckAll}
                                             />
