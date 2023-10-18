@@ -166,7 +166,7 @@ describe('Import 1password 1pif', () => {
         expect(creditCardItem.type).toEqual('creditCard');
         expect(deobfuscate(creditCardItem.metadata.note)).toEqual('this is credit card item note');
         expect(deobfuscate(creditCardItem.content.number)).toEqual('4242333342423333');
-        expect(deobfuscate(creditCardItem.content.pin)).toEqual('');
+        expect(deobfuscate(creditCardItem.content.pin)).toEqual('1234');
         expect(deobfuscate(creditCardItem.content.verificationNumber)).toEqual('123');
         expect(creditCardItem.content.cardType).toEqual(CardType.Unspecified);
         expect(creditCardItem.content.cardholderName).toEqual('A B');
