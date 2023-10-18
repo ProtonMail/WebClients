@@ -28,6 +28,13 @@ function* onInvitesEvent(event: EventManagerEvent<InvitesGetResponse>) {
     if ('error' in event) throw event.error;
 
     const cachedInvites: InviteState = yield select(selectInvites);
+    const cachedInviteTokens = Object.keys(cachedInvites);
+
+    const noop =
+        event.Invites.length === cachedInviteTokens.length &&
+        event.Invites.every(({ InviteToken }) => cachedInviteTokens.includes(InviteToken));
+
+    if (noop) return;
 
     const invites: MaybeNull<Invite>[] = yield Promise.all(
         event.Invites.map<Promise<MaybeNull<Invite>>>(async (invite) => {

@@ -79,9 +79,14 @@ export const withOptimisticShares = withOptimistic<SharesState>(
         }
 
         if (shareEvent.match(action) && state !== null) {
-            return partialMerge(state, {
-                [action.payload.shareId]: { eventId: action.payload.Events.LatestEventID },
-            });
+            const { shareId, Events } = action.payload;
+            const currentEventId = state[shareId].eventId;
+
+            return Events.LatestEventID === currentEventId
+                ? state
+                : partialMerge(state, {
+                      [action.payload.shareId]: { eventId: action.payload.Events.LatestEventID },
+                  });
         }
 
         if (vaultCreationIntent.match(action)) {
