@@ -34,6 +34,7 @@ export type ShareBase<T extends ShareType = ShareType> = {
     shareRoleId: ShareRole;
     targetId: string;
     targetMembers: number;
+    targetMaxMembers: number;
     targetType: T;
     vaultId: string;
 };
