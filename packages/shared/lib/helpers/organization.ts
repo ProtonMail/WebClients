@@ -1,4 +1,4 @@
-import { ORGANIZATION_FLAGS, ORGANIZATION_TWOFA_SETTING } from '../constants';
+import { MEMBER_PERMISSIONS, ORGANIZATION_FLAGS, ORGANIZATION_TWOFA_SETTING } from '../constants';
 import { Organization } from '../interfaces';
 import { hasBit } from './bitset';
 
@@ -63,8 +63,22 @@ export const humanReadableFlags = (organization: Partial<Organization> = {}) => 
     return flags.length > 0 ? flags.join(', ') : '-';
 };
 
+export const humanReadablePermissions = (organization: Partial<Organization> = {}) => {
+    let permissions = [];
+
+    if (hasBit(organization.Permissions, MEMBER_PERMISSIONS.MANAGE_FORWARDING)) {
+        permissions.push('Forwarding');
+    }
+
+    return permissions.length > 0 ? permissions.join(', ') : '-';
+};
+
 export const hasFlag = (organization: Partial<Organization> = {}, mask: number) => {
     return hasBit(Number(organization.Flags), Number(mask));
+};
+
+export const hasPermission = (organization: Partial<Organization> = {}, mask: number) => {
+    return hasBit(Number(organization.Permissions), Number(mask));
 };
 
 export const hasOrganizationSetup = (organization: Partial<Organization> = {}) => {
