@@ -1,5 +1,3 @@
-import type { Address, DecryptedKey, User } from '@proton/shared/lib/interfaces';
-
 import type {
     InviteAcceptRequest,
     InviteCreateRequest,
@@ -9,13 +7,16 @@ import type {
     ItemRevisionContentsResponse,
     ItemUpdateRequest,
     KeyRotationKeyPair,
+    NewUserInviteCreateRequest,
     ShareGetResponse,
     ShareKeyResponse,
     VaultCreateRequest,
     VaultUpdateRequest,
-} from '../api';
-import type { ShareRole, ShareType } from '../data/shares';
-import type { MaybeNull } from '../utils';
+} from '@proton/pass/types/api';
+import type { ShareRole, ShareType } from '@proton/pass/types/data/shares';
+import type { MaybeNull } from '@proton/pass/types/utils';
+import type { Address, DecryptedKey, User } from '@proton/shared/lib/interfaces';
+
 import type { ItemKey, OpenedItem, Rotation, ShareId, TypedOpenedShare, VaultKey } from './pass-types';
 
 export type PassCryptoManagerContext = {
@@ -63,6 +64,11 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         role: ShareRole;
         shareId: string;
     }) => Promise<InviteCreateRequest>;
+    createNewUserVaultInvite: (data: {
+        email: string;
+        role: ShareRole;
+        shareId: string;
+    }) => Promise<NewUserInviteCreateRequest>;
     acceptVaultInvite: (data: {
         invitedAddressId: string;
         inviteKeys: KeyRotationKeyPair[];

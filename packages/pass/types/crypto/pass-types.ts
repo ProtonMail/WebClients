@@ -8,8 +8,8 @@ export enum PassEncryptionTag {
 }
 
 export enum PassSignatureContext {
-    VaultInviteInternal = 'pass.invite.vault.existing-user',
-    VaultInviteExternal = 'pass.invite.vault.new-user',
+    VaultInviteExistingUser = 'pass.invite.vault.existing-user',
+    VaultInviteNewUser = 'pass.invite.vault.new-user',
 }
 
 export const CONTENT_FORMAT_VERSION = 1;
