@@ -43,7 +43,7 @@ const DKIMSection = ({ domain }) => {
             <Table responsive="cards">
                 <TableHeader>
                     <TableRow>
-                        <TableCell type="header" className="w-custom" style={{ '--w-custom': '15%' }}>
+                        <TableCell type="header" className="w-1/6">
                             {c('Header for domain modal').t`Type`}
                         </TableCell>
                         <TableCell type="header">{c('Header for domain modal').t`Host name`}</TableCell>

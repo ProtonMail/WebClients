@@ -159,12 +159,9 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                         <th scope="col" className="text-ellipsis" title={c('Table header').t`Type`}>{c('Table header')
                             .t`Type`}</th>
                     )}
-                    <th
-                        scope="col"
-                        className="text-ellipsis w-custom"
-                        style={{ '--w-custom': '15%' }}
-                        title={c('Table header').t`Status`}
-                    >{c('Table header').t`Status`}</th>
+                    <th scope="col" className="text-ellipsis w-1/6" title={c('Table header').t`Status`}>{c(
+                        'Table header'
+                    ).t`Status`}</th>
                     <th
                         scope="col"
                         className={clsx(['text-ellipsis', isNarrow && 'w-2/5'])}
