@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import { DEFAULT_MAIL_PAGE_SIZE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { globalReset } from '../actions';
 import { deleteDraft } from '../messages/draft/messagesDraftActions';
@@ -26,7 +26,6 @@ import {
     reset,
     retry,
     updatePage,
-    updatePageSize,
 } from './elementsActions';
 import {
     addESResults as addESResultsReducer,
@@ -53,13 +52,11 @@ import {
     reset as resetReducer,
     retry as retryReducer,
     updatePage as updatePageReducer,
-    updatePageSize as updatePageSizeReducer,
 } from './elementsReducers';
 import { ElementsState, ElementsStateParams, NewStateParams, TaskRunningInfo } from './elementsTypes';
 
 export const newState = ({
     page = 0,
-    pageSize = DEFAULT_MAIL_PAGE_SIZE,
     params = {},
     retry = { payload: null, count: 0, error: undefined },
     beforeFirstLoad = true,
@@ -73,7 +70,6 @@ export const newState = ({
         search: {},
         esEnabled: false,
     };
-
     return {
         beforeFirstLoad,
         invalidated: false,
@@ -81,7 +77,6 @@ export const newState = ({
         pendingActions: 0,
         params: { ...defaultParams, ...params },
         page,
-        pageSize,
         total: undefined,
         elements: {},
         pages: [],
@@ -104,7 +99,6 @@ const elementsSlice = createSlice({
 
         builder.addCase(reset, resetReducer);
         builder.addCase(updatePage, updatePageReducer);
-        builder.addCase(updatePageSize, updatePageSizeReducer);
         builder.addCase(load.pending, loadPending);
         builder.addCase(load.fulfilled, loadFulfilled);
         builder.addCase(retry, retryReducer);

@@ -1,9 +1,9 @@
 import { act } from '@testing-library/react';
 
-import { DEFAULT_MAIL_PAGE_SIZE, EVENT_ACTIONS } from '@proton/shared/lib/constants';
+import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { DEFAULT_PLACEHOLDERS_COUNT } from '../../../constants';
+import { DEFAULT_PLACEHOLDERS_COUNT, PAGE_SIZE } from '../../../constants';
 import { addApiResolver, addToCache, api, clearAll, render } from '../../../helpers/test/helper';
 import { Conversation } from '../../../models/conversation';
 import { MessageEvent } from '../../../models/event';
@@ -46,7 +46,7 @@ describe('Mailbox elements list reacting to events', () => {
         });
 
         expectElements(getItems, total, false);
-        expect(api.mock.calls.length).toBe(6);
+        expect(api.mock.calls.length).toBe(5);
     });
 
     it('should not reload the list on an update event if a filter is active', async () => {
@@ -80,25 +80,20 @@ describe('Mailbox elements list reacting to events', () => {
 
     it('should reload the list on an update event if has not list from start', async () => {
         const page = 2;
-        const total = DEFAULT_MAIL_PAGE_SIZE * 6 + 2;
+        const total = PAGE_SIZE * 6 + 2;
         const { getItems } = await setup({
-            conversations: getElements(DEFAULT_MAIL_PAGE_SIZE),
+            conversations: getElements(PAGE_SIZE),
             page,
             totalConversations: total,
         });
 
         const ID = 'id0';
-
         await sendEvent({
             Conversations: [{ ID, Action: EVENT_ACTIONS.UPDATE, Conversation: { ID } as Conversation }],
         });
 
-        expectElements(getItems, DEFAULT_MAIL_PAGE_SIZE, false);
-
-        /**
-         * `/get conversations` should be called twice at render and twice on reload
-         */
-        expect(api).toHaveBeenCalledTimes(7);
+        expectElements(getItems, PAGE_SIZE, false);
+        expect(api.mock.calls.length).toBe(5);
     });
 
     it('should reload the list on an delete event if a search is active', async () => {
@@ -112,7 +107,7 @@ describe('Mailbox elements list reacting to events', () => {
         });
 
         expectElements(getItems, total, false);
-        expect(api.mock.calls.length).toBe(6);
+        expect(api.mock.calls.length).toBe(5);
     });
 
     it('should not reload the list on count event when a search is active', async () => {
@@ -127,11 +122,11 @@ describe('Mailbox elements list reacting to events', () => {
             MessageCounts: [{ LabelID: labelID, Total: 10, Unread: 10 }],
         });
 
-        expect(api.mock.calls.length).toBe(5);
+        expect(api.mock.calls.length).toBe(4);
     });
 
     it('should not show the loader if not live cache but params has not changed', async () => {
-        const total = DEFAULT_MAIL_PAGE_SIZE;
+        const total = PAGE_SIZE;
         const search = { keyword: 'test' };
         const messages = getElements(total);
 
@@ -172,7 +167,7 @@ describe('Mailbox elements list reacting to events', () => {
     });
 
     it('should show the loader if not live cache and params has changed', async () => {
-        const total = DEFAULT_MAIL_PAGE_SIZE;
+        const total = PAGE_SIZE;
         const search = { keyword: 'test' };
         const messages = getElements(total);
 

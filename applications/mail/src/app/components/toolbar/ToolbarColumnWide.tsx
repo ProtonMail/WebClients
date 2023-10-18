@@ -116,13 +116,7 @@ const ToolbarColumnWide = ({
 
                 {(!localIsTiny && selectedIDs.length > 0) || selectedIDs.length === 0 ? (
                     <div className="flex flex-align-items-center flex-item-noshrink toolbar-inner gap-2">
-                        <PagingControls
-                            loading={loading}
-                            page={page}
-                            pageSize={mailSettings.PageSize}
-                            total={total}
-                            onPage={onPage}
-                        />
+                        <PagingControls loading={loading} page={page} total={total} onPage={onPage} />
                     </div>
                 ) : undefined}
             </nav>
