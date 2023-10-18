@@ -8,6 +8,7 @@ import type {
     ItemUpdateRequest,
     KeyRotationKeyPair,
     NewUserInviteCreateRequest,
+    NewUserInvitePromoteRequest,
     ShareGetResponse,
     ShareKeyResponse,
     VaultCreateRequest,
@@ -64,6 +65,7 @@ export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSn
         role: ShareRole;
         shareId: string;
     }) => Promise<InviteCreateRequest>;
+    promoteInvite: (data: { shareId: string; invitedPublicKey: string }) => Promise<NewUserInvitePromoteRequest>;
     createNewUserVaultInvite: (data: {
         email: string;
         role: ShareRole;
