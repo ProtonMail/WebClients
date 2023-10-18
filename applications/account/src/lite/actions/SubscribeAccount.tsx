@@ -101,7 +101,7 @@ const SubscribeAccount = ({ app, redirect, fullscreen, queryParams }: Props) => 
 
         const disableCycleSelectorParam = queryParams.get('disableCycleSelector');
         const disablePlanSelectionParam = queryParams.get('disablePlanSelection');
-        const hideCloseParam = queryParams.get('hideClose');
+        const hideClose = Boolean(queryParams.get('hideClose'));
 
         onceRef.current = true;
 
@@ -115,7 +115,8 @@ const SubscribeAccount = ({ app, redirect, fullscreen, queryParams }: Props) => 
             disableThanksStep: true,
             disableCycleSelector: coupon ? true : Boolean(disableCycleSelectorParam),
             disablePlanSelection: coupon ? true : Boolean(disablePlanSelectionParam),
-            hasClose: !Boolean(hideCloseParam),
+            hasClose: !hideClose,
+            disableCloseOnEscape: hideClose,
             showUserInfo: true,
             onClose: handleClose,
             onSuccess: handleSuccess,
