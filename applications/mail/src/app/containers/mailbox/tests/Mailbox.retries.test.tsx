@@ -1,9 +1,10 @@
-import { fireEvent, screen } from '@testing-library/react';
+import { fireEvent } from '@testing-library/react';
 import { act } from '@testing-library/react';
 
-import { DEFAULT_MAIL_PAGE_SIZE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
+import { PAGE_SIZE } from '../../../constants';
 import { addApiMock, clearAll, tick } from '../../../helpers/test/helper';
 import { expectElements, getElements, setup } from './Mailbox.test.helpers';
 
@@ -62,8 +63,8 @@ describe('Mailbox retries and waitings', () => {
     });
 
     it('should wait for all API actions to be finished before loading elements', async () => {
-        const conversations = getElements(DEFAULT_MAIL_PAGE_SIZE * 2, MAILBOX_LABEL_IDS.INBOX);
-        const totalConversations = DEFAULT_MAIL_PAGE_SIZE * 3;
+        const conversations = getElements(PAGE_SIZE * 2, MAILBOX_LABEL_IDS.INBOX);
+        const totalConversations = PAGE_SIZE * 3;
 
         const conversationRequestSpy = jest.fn(() => {
             return { Total: totalConversations, Conversations: conversations };
@@ -78,42 +79,42 @@ describe('Mailbox retries and waitings', () => {
         });
         addApiMock('mail/v4/conversations/label', labelRequestSpy, 'put');
 
-        const { getItems } = await setup({
+        const { getItems, getByTestId } = await setup({
             labelID: MAILBOX_LABEL_IDS.INBOX,
             totalConversations,
             mockConversations: false,
         });
 
-        const checkAll = screen.getByTestId('toolbar:select-all-checkbox');
+        const checkAll = getByTestId('toolbar:select-all-checkbox');
 
         await act(async () => {
             fireEvent.click(checkAll);
             await tick();
-            let trash = screen.getByTestId('toolbar:movetotrash');
+            let trash = getByTestId('toolbar:movetotrash');
             fireEvent.click(trash);
             await tick();
             fireEvent.click(checkAll);
             await tick();
-            trash = screen.getByTestId('toolbar:movetotrash');
+            trash = getByTestId('toolbar:movetotrash');
             fireEvent.click(trash);
             await tick();
         });
 
-        expect(conversationRequestSpy).toHaveBeenCalledTimes(2);
-        expectElements(getItems, DEFAULT_MAIL_PAGE_SIZE, true);
+        expect(conversationRequestSpy).toHaveBeenCalledTimes(1);
+        expectElements(getItems, PAGE_SIZE, true);
 
         await act(async () => {
             resolvers[0]({ UndoToken: 'fake' });
         });
 
-        expect(conversationRequestSpy).toHaveBeenCalledTimes(2);
-        expectElements(getItems, DEFAULT_MAIL_PAGE_SIZE, true);
+        expect(conversationRequestSpy).toHaveBeenCalledTimes(1);
+        expectElements(getItems, PAGE_SIZE, true);
 
         await act(async () => {
             resolvers[1]({ UndoToken: 'fake' });
         });
 
-        expect(conversationRequestSpy).toHaveBeenCalledTimes(4);
-        expectElements(getItems, DEFAULT_MAIL_PAGE_SIZE, false);
+        expect(conversationRequestSpy).toHaveBeenCalledTimes(2);
+        expectElements(getItems, PAGE_SIZE, false);
     });
 });

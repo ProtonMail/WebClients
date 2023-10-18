@@ -24,7 +24,7 @@ import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
 import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { MAIL_PAGE_SIZE, SHOW_MOVED, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
+import { SHOW_MOVED, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
@@ -168,7 +168,6 @@ const MailboxContainer = ({
         conversationMode: isConversationMode(inputLabelID, mailSettings, location),
         labelID: inputLabelID,
         page: pageFromUrl(location),
-        pageSize: mailSettings?.PageSize ?? MAIL_PAGE_SIZE.FIFTY,
         sort,
         filter,
         search: searchParameters,
@@ -176,7 +175,6 @@ const MailboxContainer = ({
     };
 
     const { labelID, elements, elementIDs, loading, placeholderCount, total } = useElements(elementsParams);
-
     const { handleDelete: permanentDelete, modal: deleteModal } = usePermanentDelete(labelID);
     useApplyEncryptedSearch(elementsParams);
 
@@ -361,7 +359,6 @@ const MailboxContainer = ({
                 filter={filter}
                 mailSettings={mailSettings}
                 toolbarInHeader={toolbarInHeader}
-                loading={loading}
             />
         );
     };

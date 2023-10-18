@@ -6,7 +6,7 @@ import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo'
 import { labelConversations } from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import { labelMessages } from '@proton/shared/lib/api/messages';
-import { MAILBOX_LABEL_IDS, DEFAULT_MAIL_PAGE_SIZE } from '@proton/shared/lib/constants';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 
@@ -19,7 +19,7 @@ import MoveScheduledModal from '../../components/message/modals/MoveScheduledMod
 import MoveToSpamModal from '../../components/message/modals/MoveToSpamModal';
 import MoveAllNotificationButton from '../../components/notifications/MoveAllNotificationButton';
 import UndoActionNotification from '../../components/notifications/UndoActionNotification';
-import { SUCCESS_NOTIFICATION_EXPIRATION } from '../../constants';
+import { PAGE_SIZE, SUCCESS_NOTIFICATION_EXPIRATION } from '../../constants';
 import { isMessage as testIsMessage, isSearch as testIsSearch } from '../../helpers/elements';
 import { isCustomLabel, isLabel } from '../../helpers/labels';
 import { getMessagesAuthorizedToMove } from '../../helpers/message/messages';
@@ -61,8 +61,6 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
         { isMessage: boolean; elements: Element[] },
         { unsubscribe: boolean; remember: boolean }
     >(MoveToSpamModal);
-
-    const pageSize = mailSettings?.PageSize ?? DEFAULT_MAIL_PAGE_SIZE;
 
     const moveToFolder = useCallback(
         async (
@@ -184,7 +182,7 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                 };
 
                 const suggestMoveAll =
-                    elements.length === pageSize &&
+                    elements.length === PAGE_SIZE &&
                     folderID === TRASH &&
                     !isCustomLabel(fromLabelID, labels) &&
                     !isSearch;
