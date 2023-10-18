@@ -32,6 +32,9 @@ export const useComposerInnerModals = ({ pendingFiles, handleCancelAddAttachment
         if (pendingFiles && pendingFiles.length > 0) {
             setInnerModal(ComposerInnerModalStates.InsertImage);
         }
+        if (innerModal === ComposerInnerModalStates.InsertImage && (!pendingFiles || pendingFiles.length === 0)) {
+            setInnerModal(ComposerInnerModalStates.None);
+        }
     }, [pendingFiles]);
 
     const handlePassword = () => {
