@@ -79,11 +79,6 @@
 		min-block-size: rem(390); // value to keep back button centered when > mobile breakpoint
 	}
 
-	// fix for plans, same as in subscription flow
-	&:not([class*='mw']) {
-		max-inline-size: rem(1500);
-	}
-
 	$three-column-breakpoint: 1300px;
 	@include media('>#{$three-column-breakpoint}') {
 		&-three-columns {
