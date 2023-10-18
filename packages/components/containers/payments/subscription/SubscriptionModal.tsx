@@ -121,6 +121,7 @@ export interface Props extends Pick<ModalProps<'div'>, 'open' | 'onClose' | 'onE
     disableCycleSelector?: boolean;
     showUserInfo?: boolean;
     hasClose?: boolean;
+    disableCloseOnEscape?: boolean;
     defaultSelectedProductPlans: ReturnType<typeof getDefaultSelectedProductPlans>;
     onSuccess?: () => void;
     fromPlan: FromPlan;
@@ -194,6 +195,7 @@ const SubscriptionModal = ({
     disableCycleSelector: maybeDisableCycleSelector,
     showUserInfo = false,
     hasClose = true,
+    disableCloseOnEscape,
     disableThanksStep,
     defaultAudience = Audience.B2C,
     defaultSelectedProductPlans,
@@ -683,6 +685,7 @@ const SubscriptionModal = ({
                 {...rest}
                 as="form"
                 size="large"
+                disableCloseOnEscape={disableCloseOnEscape}
             >
                 <ModalTwoHeader title={TITLE[model.step]} hasClose={hasClose} />
                 <ModalTwoContent>
@@ -897,7 +900,8 @@ const SubscriptionModal = ({
                                         </div>
                                         <div className={amountDue || !checkResult ? 'hidden' : undefined}>
                                             <h2 className="text-2xl text-bold mb-4">{c('Label').t`Payment details`}</h2>
-                                            <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>
+                                            <div className="mb-4">{c('Info')
+                                                .t`No payment is required at this time.`}</div>
                                             {checkResult?.Credit && creditsRemaining ? (
                                                 <div className="mb-4">{c('Info')
                                                     .t`Please note that upon clicking the Confirm button, your account will have ${creditsRemaining} credits remaining.`}</div>
