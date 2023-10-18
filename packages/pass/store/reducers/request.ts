@@ -7,38 +7,28 @@ import { objectDelete } from '@proton/pass/utils/object/delete';
 import { partialMerge } from '@proton/pass/utils/object/merge';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 
-export type RequestEntry<T extends RequestType = RequestType> = Extract<
+export type RequestEntry<Type extends RequestType = RequestType, Data = undefined> = Extract<
     | { status: 'start'; progress?: number }
     | { status: 'success'; expiresAt?: number }
     | { status: 'failure'; expiresAt?: number },
-    { status: T }
->;
+    { status: Type }
+> & { data: Data };
 
 export type RequestState = { [requestId: string]: RequestEntry };
-
-export const sanitizeRequestState = (state: RequestState): RequestState => {
-    if (Object.keys(state).length === 0) {
-        return state;
-    }
-
-    return Object.fromEntries(
-        Object.entries(state).filter(([, { status }]) => status !== 'success' && status !== 'failure')
-    );
-};
 
 const requestReducer: Reducer<RequestState> = (state = {}, action: AnyAction) => {
     if (isActionWithRequest(action)) {
         const { request } = action.meta;
         const nextState = { ...state };
 
-        const entry: RequestEntry = (() => {
+        const entry = ((): RequestEntry<RequestType, any> => {
             switch (request.type) {
                 case 'start':
-                    return { status: request.type, progress: 0 };
-                case 'failure':
-                case 'success':
+                    return { status: request.type, progress: 0, data: undefined };
+                default:
                     return {
                         status: request.type,
+                        data: 'data' in request ? request.data : undefined,
                         ...(request.maxAge ? { expiresAt: getEpoch() + request.maxAge } : { expiresAt: undefined }),
                     };
             }
