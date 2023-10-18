@@ -23,8 +23,8 @@ function* shareAccessOptionsWorker({ payload, meta: { request } }: ReturnType<ty
 
         const accessOptions: ShareAccessOptions = {
             shareId,
-            invites: isShareManageable(share) ? yield loadInvites(shareId) : undefined,
             members: share.shared ? yield loadShareMembers(shareId) : [],
+            ...(isShareManageable(share) ? yield loadInvites(shareId) : {}),
         };
 
         yield put(getShareAccessOptionsSuccess(request.id, accessOptions));

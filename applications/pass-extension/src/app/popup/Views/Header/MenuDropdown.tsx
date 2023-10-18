@@ -1,4 +1,4 @@
-import { type VFC, memo, useState } from 'react';
+import { type VFC, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { handleVaultDeletionEffects } from 'proton-pass-extension/lib/components/Context/Items/ItemEffects';
@@ -33,7 +33,7 @@ import {
     selectShare,
     selectUser,
 } from '@proton/pass/store/selectors';
-import { type MaybeNull, type ShareType, type VaultShare } from '@proton/pass/types';
+import type { MaybeNull, ShareType, VaultShare } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import clsx from '@proton/utils/clsx';
@@ -44,25 +44,24 @@ const DROPDOWN_SIZE: NonNullable<DropdownProps['size']> = {
     maxHeight: '380px',
 };
 
-const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
-    const { sync, lock, logout, ready } = usePopupContext();
+export const MenuDropdown: VFC = () => {
+    const inviteContext = useInviteContext();
+    const { sync, lock, logout, ready, expanded } = usePopupContext();
     const { inTrash, unselectItem } = useNavigationContext();
     const { shareId, setSearch, setShareId, setShareBeingDeleted } = useItemsFilteringContext();
 
-    const vault = useSelector(selectShare<ShareType.Vault>(shareId));
-
-    const passPlan = useSelector(selectPassPlan);
-    const planDisplayName = useSelector(selectPlanDisplayName);
-
-    const user = useSelector(selectUser);
-
-    const openSettings = useOpenSettingsTab();
-
-    const dispatch = useDispatch();
-    const canLock = useSelector(selectHasRegisteredLock);
-    const inviteContext = useInviteContext();
     const [deleteVault, setDeleteVault] = useState<MaybeNull<VaultShare>>(null);
     const [vaultModalProps, setVaultModalProps] = useState<MaybeNull<VaultModalProps>>(null);
+
+    const vault = useSelector(selectShare<ShareType.Vault>(shareId));
+    const passPlan = useSelector(selectPassPlan);
+    const planDisplayName = useSelector(selectPlanDisplayName);
+    const user = useSelector(selectUser);
+    const canLock = useSelector(selectHasRegisteredLock);
+
+    const openSettings = useOpenSettingsTab();
+    const dispatch = useDispatch();
+    const expandPopup = useExpandPopup();
 
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const withClose = <P extends any[], R extends any>(cb: (...args: P) => R) => pipe(cb, tap(close));
@@ -153,12 +152,9 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
         },
     ];
 
-    const { expanded } = usePopupContext();
-    const expandPopup = useExpandPopup();
-
     return (
         <>
-            <nav className={className}>
+            <nav>
                 <Button
                     icon
                     shape="solid"
@@ -297,5 +293,3 @@ const MenuDropdownRaw: VFC<{ className?: string }> = ({ className }) => {
         </>
     );
 };
-
-export const MenuDropdown = memo(MenuDropdownRaw);

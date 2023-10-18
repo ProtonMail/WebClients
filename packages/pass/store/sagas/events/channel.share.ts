@@ -2,12 +2,11 @@
 import type { AnyAction } from 'redux';
 import { all, call, fork, put, select, take } from 'redux-saga/effects';
 
-import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import type { EventManagerEvent } from '@proton/pass/lib/events/manager';
 import { parseItemRevision } from '@proton/pass/lib/items/item.utils';
-import { getAllShareKeys, getShareLatestEventId } from '@proton/pass/lib/shares/share.requests';
-import { decodeVaultContent } from '@proton/pass/lib/vaults/vault-proto.transformer';
+import { getShareLatestEventId } from '@proton/pass/lib/shares/share.requests';
+import { parseShareResponse } from '@proton/pass/lib/shares/share.utils';
 import {
     itemDeleteSync,
     itemEditSync,
@@ -19,16 +18,7 @@ import {
 } from '@proton/pass/store/actions';
 import { selectAllShares, selectShare } from '@proton/pass/store/selectors';
 import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
-import type {
-    Api,
-    ItemRevision,
-    Maybe,
-    MaybeNull,
-    PassEventListResponse,
-    Share,
-    ShareKeyResponse,
-    TypedOpenedShare,
-} from '@proton/pass/types';
+import type { Api, ItemRevision, Maybe, PassEventListResponse, Share } from '@proton/pass/types';
 import { ShareType } from '@proton/pass/types';
 import { logId, logger } from '@proton/pass/utils/logger';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -55,37 +45,12 @@ const onShareEvent = (shareId: string) =>
         yield put(shareEvent({ ...event, shareId }));
 
         const { Events } = event;
-        const { LatestEventID, DeletedItemIDs, UpdatedItems, UpdatedShare, LastUseItems } = Events;
-        logger.info(`[Saga::ShareChannel] event ${logId(LatestEventID)} for share ${logId(shareId)}`);
+        const { LatestEventID: eventId, DeletedItemIDs, UpdatedItems, UpdatedShare, LastUseItems } = Events;
+        logger.info(`[Saga::ShareChannel] event ${logId(eventId)} for share ${logId(shareId)}`);
 
         if (UpdatedShare && UpdatedShare.TargetType === ShareType.Vault) {
-            const shareKeys: ShareKeyResponse[] = yield getAllShareKeys(UpdatedShare.ShareID);
-            const share: MaybeNull<TypedOpenedShare<ShareType.Vault>> = yield PassCrypto.openShare({
-                encryptedShare: UpdatedShare,
-                shareKeys,
-            });
-
-            if (share) {
-                yield put(
-                    shareEditSync({
-                        id: share.shareId,
-                        share: {
-                            content: decodeVaultContent(share.content),
-                            createTime: share.createTime,
-                            eventId: LatestEventID,
-                            owner: share.owner,
-                            shared: share.shared,
-                            shareId: share.shareId,
-                            shareRoleId: share.shareRoleId,
-                            targetId: share.targetId,
-                            targetMembers: share.targetMembers,
-                            targetMaxMembers: share.targetMaxMembers,
-                            targetType: share.targetType,
-                            vaultId: share.vaultId,
-                        },
-                    })
-                );
-            }
+            const share: Maybe<Share<ShareType.Vault>> = yield parseShareResponse(UpdatedShare, { eventId });
+            if (share) yield put(shareEditSync({ id: share.shareId, share }));
         }
 
         if (DeletedItemIDs.length > 0) {
