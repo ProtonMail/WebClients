@@ -30,7 +30,7 @@ const App = () => {
             <Switch>
                 <Route path="/urls">
                     <StandardPublicApp loader={<LoaderPage />} locales={locales}>
-                        <div className="h100">
+                        <div className="h-full">
                             <PublicSharedLinkContainer />
                         </div>
                     </StandardPublicApp>

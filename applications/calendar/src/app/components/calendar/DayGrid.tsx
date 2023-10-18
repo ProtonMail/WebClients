@@ -113,9 +113,9 @@ const DayGrid = ({
     }, [rows, formatDate]);
 
     return (
-        <div className="flex-item-fluid scroll-if-needed h100 is-month-view" {...rest}>
+        <div className="flex-item-fluid scroll-if-needed h-full is-month-view" {...rest}>
             {children}
-            <div className="calendar-daygrid flex flex-column relative h100">
+            <div className="calendar-daygrid flex flex-column relative h-full">
                 <div data-testid="calendar-month-view:week-header" className="flex calendar-daygrid-days">
                     {displayWeekNumbers ? <div className="calendar-daygrid-weeknumber-width" /> : null}
                     {rows[0].map((day) => {
@@ -167,7 +167,7 @@ const DayGrid = ({
 
                             return (
                                 // eslint-disable-next-line react/no-array-index-key
-                                <div key={rowIndex} className="flex-item-fluid flex flex-column h100 w-full relative">
+                                <div key={rowIndex} className="flex-item-fluid flex flex-column h-full w-full relative">
                                     <div
                                         data-testid="calendar-month-view:week-row"
                                         className="flex calendar-daygrid-columns no-pointer-events"

@@ -221,7 +221,7 @@ const AddressesInput = ({
                 aria-hidden="true"
                 {...containerDragHandlers}
             >
-                <div className="flex-item-fluid flex flex-wrap max-w-full max-h100 relative" ref={containerRef}>
+                <div className="flex-item-fluid flex flex-wrap max-w-full max-h-full relative" ref={containerRef}>
                     {recipientsOrGroups.map((recipientOrGroup, index) => (
                         <Fragment key={getRecipientOrGroupKey(recipientOrGroup)}>
                             {index === placeholderPosition && dragPlaceholder}

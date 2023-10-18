@@ -393,7 +393,7 @@ const TimeGrid = ({
                 </div>
             </div>
             <div
-                className={clsx(['flex-item-fluid scroll-if-needed h100 calendar-time-grid', displayViewClass])}
+                className={clsx(['flex-item-fluid scroll-if-needed h-full calendar-time-grid', displayViewClass])}
                 ref={scrollRef}
                 {...rest}
             >
@@ -419,7 +419,7 @@ const TimeGrid = ({
                                 return (
                                     <div
                                         data-testid="calendar-week-day-view:weekday-column"
-                                        className="flex-item-fluid relative calendar-grid-gridcell h100"
+                                        className="flex-item-fluid relative calendar-grid-gridcell h-full"
                                         key={key}
                                     >
                                         <DayEvents

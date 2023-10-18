@@ -22,7 +22,7 @@ const EmailUnsubscribed = ({
 }: EmailUnsubscribedProps) => {
     return (
         <PublicLayout
-            className="h100"
+            className="h-full"
             header={c('Email Unsubscribe').t`Email subscriptions`}
             main={
                 <div className="text-center">
