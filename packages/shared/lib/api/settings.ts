@@ -181,6 +181,11 @@ export const disableTotp = () => ({
     method: 'put',
 });
 
+export const disable2FA = () => ({
+    url: 'core/v4/settings/2fa',
+    method: 'put',
+});
+
 export const updateHideDrawer = (HideSidePanel: DRAWER_VISIBILITY) => ({
     url: 'core/v4/settings/hide-side-panel',
     method: 'put',
