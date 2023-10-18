@@ -14,10 +14,8 @@ const MergeTableHeader = () => {
             <tr>
                 <TableCell type="header"> </TableCell>
                 <TableCell type="header">{c('TableHeader').t`Display name`}</TableCell>
-                <TableCell type="header" className="w-custom" style={{ '--w-custom': '15%' }}>{c('TableHeader')
-                    .t`First name`}</TableCell>
-                <TableCell type="header" className="w-custom" style={{ '--w-custom': '15%' }}>{c('TableHeader')
-                    .t`Last name`}</TableCell>
+                <TableCell type="header" className="w-1/6">{c('TableHeader').t`First name`}</TableCell>
+                <TableCell type="header" className="w-1/6">{c('TableHeader').t`Last name`}</TableCell>
                 <TableCell type="header">{c('TableHeader').t`Address`}</TableCell>
                 <TableCell type="header">{c('TableHeader').t`Actions`}</TableCell>
             </tr>
