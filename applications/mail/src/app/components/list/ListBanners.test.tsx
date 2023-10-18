@@ -96,7 +96,7 @@ describe('ListBanners', () => {
                 />
             );
 
-            expect(screen.getByText(/Don't find what you are looking for\?/i)).toBeInTheDocument();
+            expect(screen.getByText(/Can't find what you're looking for\?/i)).toBeInTheDocument();
             const includeButton = screen.getByRole('button', { name: /Include Spam\/Trash in your search results./i });
             await userEvent.click(includeButton);
             await waitFor(() => {
