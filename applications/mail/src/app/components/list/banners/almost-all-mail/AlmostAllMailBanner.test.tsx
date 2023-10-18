@@ -33,7 +33,7 @@ describe('AlmostAllMailBanner', () => {
         it('should render banner', () => {
             render(<AlmostAllMailBanner />);
 
-            expect(screen.getByText("Don't find what you are looking for?")).toBeInTheDocument();
+            expect(screen.getByText("Can't find what you're looking for?")).toBeInTheDocument();
 
             const button = screen.getByRole('button', { name: /Include Spam\/Trash in your search results/ });
             expect(button).toBeInTheDocument();
