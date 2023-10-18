@@ -43,3 +43,12 @@ export type ShareBase<T extends ShareType = ShareType> = {
 export type WithEventId<T> = T & { eventId: string };
 export type Share<T extends ShareType = ShareType> = WithEventId<ShareBase<T>>;
 export type VaultShare = Share<ShareType.Vault>;
+
+export type ShareAccessKeys =
+    | 'newUserInvitesReady'
+    | 'owner'
+    | 'shared'
+    | 'shareId'
+    | 'shareRoleId'
+    | 'targetMaxMembers'
+    | 'targetMembers';
