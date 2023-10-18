@@ -39,7 +39,7 @@ export const inviteCreationFailure = createAction(
             withCacheBlock,
             withNotification({
                 type: 'error',
-                text: c('Error').t`Invite creation failed.`,
+                text: c('Error').t`Cannot send invitation to this address at the moment`,
                 error,
             })
         )({ payload: {} })
