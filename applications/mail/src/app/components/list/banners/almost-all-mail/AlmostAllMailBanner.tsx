@@ -28,8 +28,8 @@ const AlmostAllMailBanner = () => {
             </div>
             <div className="flex-item-fluid pl-1">
                 {
-                    // translator: sentence appear when a user has AlmostAllMail setting on, excluding spam/trash for the search results. Complete sentence example: "Don't find what you are looking for? <Include Spam/Trash in your search results.>"
-                    c('Info').jt`Don't find what you are looking for? ${displayAllMailButton}`
+                    // translator: sentence appear when a user has AlmostAllMail setting on, excluding spam/trash for the search results. Complete sentence example: "Can't find what you're looking for? <Include Spam/Trash in your search results.>"
+                    c('Info').jt`Can't find what you're looking for? ${displayAllMailButton}`
                 }
             </div>
         </div>
