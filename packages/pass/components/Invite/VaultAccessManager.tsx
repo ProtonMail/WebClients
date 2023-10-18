@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { Icon } from '@proton/components/components';
 import { useInviteContext } from '@proton/pass/components/Invite/InviteContextProvider';
+import { ItemCard } from '@proton/pass/components/Item/ItemCard';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
@@ -14,9 +15,10 @@ import { SharePendingMember } from '@proton/pass/components/Share/SharePendingMe
 import { SharedVaultItem } from '@proton/pass/components/Vault/SharedVaultItem';
 import { useShareAccessOptionsPolling } from '@proton/pass/hooks/useShareAccessOptionsPolling';
 import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
-import { selectVaultWithItemsCount } from '@proton/pass/store/selectors';
-import type { PendingInvite } from '@proton/pass/types';
+import { selectOwnWritableVaults, selectPassPlan, selectVaultWithItemsCount } from '@proton/pass/store/selectors';
+import type { Maybe, PendingInvite } from '@proton/pass/types';
 import { type ShareMember as ShareMemberType } from '@proton/pass/types';
+import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 
 type Props = { shareId: string };
@@ -27,8 +29,10 @@ type VaultAccessListItem =
 export const VaultAccessManager: FC<Props> = ({ shareId }) => {
     const { createInvite, close } = useInviteContext();
     const vault = useSelector(selectVaultWithItemsCount(shareId));
+    const plan = useSelector(selectPassPlan);
     const loading = useShareAccessOptionsPolling(shareId);
     const canManage = isShareManageable(vault);
+    const hasMultipleOwnedWritableVaults = useSelector(selectOwnWritableVaults).length > 1;
 
     const listItems = useMemo<VaultAccessListItem[]>(
         () =>
@@ -42,6 +46,16 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
             ].sort(sortOn('key', 'ASC')),
         [vault]
     );
+
+    const memberLimitReached = listItems.length >= vault.targetMaxMembers;
+
+    const warning = useMemo<Maybe<string>>(() => {
+        if (canManage && memberLimitReached) {
+            return plan === UserPassPlan.FREE
+                ? c('Warning').t`Upgrade to a paid plan to invite more members to this vault.`
+                : c('Warning').t`You have reached the limit of members who can access this vault.`;
+        }
+    }, [canManage, listItems, plan]);
 
     return (
         <SidebarModal onClose={close} open>
@@ -66,7 +80,7 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
                                 color="norm"
                                 pill
                                 onClick={() => createInvite(shareId)}
-                                disabled={!canManage}
+                                disabled={!canManage || memberLimitReached}
                             >
                                 {c('Action').t`Invite others`}
                             </Button>,
@@ -78,6 +92,7 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
 
                 {vault.shared ? (
                     <div className="flex flex-column gap-y-3">
+                        {warning && <ItemCard className="mb-2">{warning}</ItemCard>}
                         {listItems.map((item) => {
                             switch (item.type) {
                                 case 'member':
@@ -91,7 +106,7 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
                                             owner={item.member.owner}
                                             role={item.member.shareRoleId}
                                             canManage={canManage}
-                                            canTransfer={vault.owner}
+                                            canTransfer={vault.owner && hasMultipleOwnedWritableVaults}
                                         />
                                     );
                                 case 'pending':

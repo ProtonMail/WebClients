@@ -44,6 +44,7 @@ export const createVault = async (data: {
         shareRoleId: ShareRole.ADMIN,
         targetId: share.targetId,
         targetMembers: 1,
+        targetMaxMembers: share.targetMaxMembers,
         targetType: share.targetType,
         vaultId: share.vaultId,
     };
@@ -84,6 +85,7 @@ export const editVault = async (
         shareRoleId: share.shareRoleId,
         targetId: share.targetId,
         targetMembers: share.targetMembers,
+        targetMaxMembers: share.targetMaxMembers,
         targetType: share.targetType,
         vaultId: share.vaultId,
     };
