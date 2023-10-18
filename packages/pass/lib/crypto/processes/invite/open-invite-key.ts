@@ -22,7 +22,7 @@ export const openInviteKey = async ({
             verificationKeys: inviterPublicKeys,
             format: 'binary',
             context: {
-                value: PassSignatureContext.VaultInviteInternal,
+                value: PassSignatureContext.VaultInviteExistingUser,
                 required: true,
             },
         })

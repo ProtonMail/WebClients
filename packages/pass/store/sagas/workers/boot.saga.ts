@@ -1,22 +1,74 @@
-import { call, put, select, takeLeading } from 'redux-saga/effects';
+import { all, call, put, select, takeLeading } from 'redux-saga/effects';
 
+import { api } from '@proton/pass/lib/api/api';
 import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { decryptCachedState } from '@proton/pass/lib/crypto/utils/cache.decrypt';
 import { isPassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
-import { getUserData } from '@proton/pass/lib/user/user.requests';
-import { boot, bootFailure, bootSuccess, stateSync, syncLocalSettings } from '@proton/pass/store/actions';
-import type { UserState } from '@proton/pass/store/reducers';
+import { getFeatureFlags, getUserAccess, getUserSettings } from '@proton/pass/lib/user/user.requests';
+import {
+    boot,
+    bootFailure,
+    bootSuccess,
+    getUserAccessSuccess,
+    getUserFeaturesSuccess,
+    stateSync,
+    syncLocalSettings,
+} from '@proton/pass/store/actions';
+import { userAccessRequest, userFeaturesRequest } from '@proton/pass/store/actions/requests';
+import type { FeatureFlagState, SafeUserAccessState, SafeUserState } from '@proton/pass/store/reducers';
 import type { SynchronizationResult } from '@proton/pass/store/sagas/workers/sync';
 import { SyncType, synchronize } from '@proton/pass/store/sagas/workers/sync';
+import { selectUserState } from '@proton/pass/store/selectors';
 import type { State, WorkerRootSagaOptions } from '@proton/pass/store/types';
-import type { Maybe, RequiredNonNull } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types';
 import type { EncryptedExtensionCache, ExtensionCache } from '@proton/pass/types/worker/cache';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object/merge';
+import { getAllAddresses } from '@proton/shared/lib/api/addresses';
+import { getLatestID } from '@proton/shared/lib/api/events';
+import { getUser } from '@proton/shared/lib/api/user';
+import { toMap } from '@proton/shared/lib/helpers/object';
+import { type User } from '@proton/shared/lib/interfaces';
+
+type UserData = Omit<SafeUserState, keyof SafeUserAccessState> & { access: SafeUserAccessState };
+
+function* bootUserState(userId: string, state: State) {
+    const { plan, waitingNewUserInvites, ...cached } = selectUserState(state);
+
+    const { access, ...userState }: UserData = yield all({
+        user: call(async () => cached.user ?? api<{ User: User }>(getUser()).then(prop('User'))),
+        eventId: call(async () => cached.eventId ?? api<{ EventID: string }>(getLatestID()).then(prop('EventID'))),
+        userSettings: call(async () => cached.userSettings ?? getUserSettings()),
+        access: call(function* () {
+            if (plan && waitingNewUserInvites !== undefined) return { plan, waitingNewUserInvites };
+            const access: SafeUserAccessState = yield getUserAccess();
+            yield put(getUserAccessSuccess(userAccessRequest(userId), access));
+            return access;
+        }),
+        addresses: call(async () =>
+            Object.keys(cached.addresses).length > 0
+                ? cached.addresses
+                : getAllAddresses(api).then((addresses) => toMap(addresses, 'ID'))
+        ),
+
+        features: call(function* () {
+            if (cached.features) return cached.features;
+            const features: FeatureFlagState = yield getFeatureFlags();
+            yield put(getUserFeaturesSuccess(userFeaturesRequest(userId), features));
+            return features;
+        }),
+    });
+
+    return <SafeUserState>{ ...userState, ...access };
+}
 
 function* bootWorker(options: WorkerRootSagaOptions) {
     try {
-        const sessionLockToken = options.getAuth().getLockToken();
+        const auth = options.getAuth();
+        const userId = auth.getUserID()!;
+        const sessionLockToken = auth.getLockToken();
+
         const encryptedCache: Partial<EncryptedExtensionCache> = yield options.getCache();
         const cache: Maybe<ExtensionCache> = yield decryptCachedState(encryptedCache, sessionLockToken);
 
@@ -24,13 +76,12 @@ function* bootWorker(options: WorkerRootSagaOptions) {
         const state = cache?.state ? merge(currentState, cache.state, { excludeEmpty: true }) : currentState;
 
         logger.info(`[Saga::Boot] ${cache !== undefined ? 'Booting from cache' : 'Cache not found during boot'}`);
-        const userData: RequiredNonNull<UserState> = yield getUserData(state);
-        const { user, plan, addresses, eventId, features, userSettings } = userData;
+        const userState: SafeUserState = yield call(bootUserState, userId, state);
 
         yield call(PassCrypto.hydrate, {
-            user,
-            keyPassword: options.getAuth().getPassword(),
-            addresses: Object.values(addresses),
+            user: userState.user,
+            keyPassword: auth.getPassword(),
+            addresses: Object.values(userState.addresses),
             snapshot: cache?.snapshot,
         });
 
@@ -39,18 +90,14 @@ function* bootWorker(options: WorkerRootSagaOptions) {
         yield put(syncLocalSettings(yield options.getLocalSettings()));
 
         /* trigger a partial synchronization */
-        const sync = (yield synchronize(state, SyncType.PARTIAL, features, options)) as SynchronizationResult;
-        yield put(bootSuccess({ user, plan, addresses, eventId, sync, features, userSettings }));
+        const sync = (yield synchronize(state, SyncType.PARTIAL, userState.features, options)) as SynchronizationResult;
+        yield put(bootSuccess({ sync, userState }));
 
         options.onBoot?.({ ok: true });
     } catch (error: unknown) {
         logger.warn('[Saga::Boot]', error);
         yield put(bootFailure(error));
-
-        options.onBoot?.({
-            ok: false,
-            clearCache: isPassCryptoError(error),
-        });
+        options.onBoot?.({ ok: false, clearCache: isPassCryptoError(error) });
     }
 }
 

@@ -12,18 +12,19 @@ type OpenShareProcessParams = { encryptedShare: ShareGetResponse } & (
 export const openShare = async ({ encryptedShare, ...options }: OpenShareProcessParams): Promise<OpenedShare> => {
     const base = {
         addressId: encryptedShare.AddressID,
-        targetType: encryptedShare.TargetType,
-        targetId: encryptedShare.TargetID,
-        shareId: encryptedShare.ShareID,
-        vaultId: encryptedShare.VaultID,
-        permission: encryptedShare.Permission,
         createTime: encryptedShare.CreateTime,
         expireTime: encryptedShare.ExpireTime,
+        newUserInvitesReady: encryptedShare.NewUserInvitesReady,
         owner: encryptedShare.Owner,
+        permission: encryptedShare.Permission,
         shared: encryptedShare.Shared,
-        targetMembers: encryptedShare.TargetMembers,
-        targetMaxMembers: encryptedShare.TargetMaxMembers,
+        shareId: encryptedShare.ShareID,
         shareRoleId: encryptedShare.ShareRoleID! as ShareRole, // fixme : check optionality
+        targetId: encryptedShare.TargetID,
+        targetMaxMembers: encryptedShare.TargetMaxMembers,
+        targetMembers: encryptedShare.TargetMembers,
+        targetType: encryptedShare.TargetType,
+        vaultId: encryptedShare.VaultID,
     };
 
     switch (options.type) {
