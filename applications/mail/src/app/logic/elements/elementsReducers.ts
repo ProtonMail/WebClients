@@ -3,12 +3,11 @@ import { Draft } from 'immer';
 
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 import diff from '@proton/utils/diff';
 import isTruthy from '@proton/utils/isTruthy';
 import range from '@proton/utils/range';
 
-import { MAX_ELEMENT_LIST_LOAD_RETRIES } from '../../constants';
+import { MAX_ELEMENT_LIST_LOAD_RETRIES, PAGE_SIZE } from '../../constants';
 import { parseLabelIDsInEvent, isMessage as testIsMessage } from '../../helpers/elements';
 import { Conversation } from '../../models/conversation';
 import { Element } from '../../models/element';
@@ -45,13 +44,9 @@ export const updatePage = (state: Draft<ElementsState>, action: PayloadAction<nu
     state.page = action.payload;
 };
 
-export const updatePageSize = (state: Draft<ElementsState>, action: PayloadAction<MAIL_PAGE_SIZE>) => {
-    state.pageSize = action.payload;
-};
-
 export const retry = (
     state: Draft<ElementsState>,
-    action: PayloadAction<{ queryParameters: unknown; error: Error | undefined }>
+    action: PayloadAction<{ queryParameters: any; error: Error | undefined }>
 ) => {
     state.beforeFirstLoad = false;
     state.invalidated = false;
@@ -144,7 +139,7 @@ export const eventUpdatesFulfilled = (
 
 export const addESResults = (state: Draft<ElementsState>, action: PayloadAction<ESResults>) => {
     const total = action.payload.elements.length;
-    const pages = range(0, Math.ceil(total / state.pageSize));
+    const pages = range(0, Math.ceil(total / PAGE_SIZE));
     // Retry is disabled for encrypted search results, to avoid re-triggering the search several times
     // when there are no results
     Object.assign(state, {

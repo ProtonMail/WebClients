@@ -139,7 +139,6 @@ export const setup = async ({
     if (mockMessages) {
         addApiMock('mail/v4/messages', () => ({ Total: totalMessages, Messages: messages }));
     }
-
     if (mockConversations) {
         addApiMock('mail/v4/conversations', () => ({ Total: totalConversations, Conversations: conversations }));
     }
