@@ -12,7 +12,7 @@ import {
     CollapsibleHeaderIconButton,
     Icon,
 } from '@proton/components';
-import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
+import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
 import { selectOwnVaults, selectShare, selectVaultsWithItemsCount } from '@proton/pass/store/selectors';
 import { type MaybeNull, type ShareType, type VaultShare } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
@@ -98,6 +98,7 @@ export const VaultSubmenu: VFC<Props> = ({
                 />
 
                 {vaults.map((vault) => {
+                    const canEdit = isShareManageable(vault);
                     const canDelete = vault.owner && hasMultipleOwnVaults;
 
                     return (
@@ -110,7 +111,7 @@ export const VaultSubmenu: VFC<Props> = ({
                             sharable={sharingEnabled}
                             onSelect={() => handleSelect(vault)}
                             onDelete={canDelete ? () => handleVaultDelete(vault) : undefined}
-                            onEdit={isWritableVault(vault) ? () => handleVaultEdit(vault) : undefined}
+                            onEdit={canEdit ? () => handleVaultEdit(vault) : undefined}
                             onInvite={() => handleVaultInvite(vault)}
                             onManage={() => handleVaultManage(vault)}
                             onLeave={() => handleVaultLeave(vault)}

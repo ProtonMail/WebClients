@@ -14,4 +14,6 @@ export const hasShareAccessChanged = (current: Share, incoming: ShareGetResponse
     current.owner !== incoming.Owner ||
     current.shareRoleId !== incoming.ShareRoleID ||
     current.shared !== incoming.Shared ||
-    current.targetMembers !== incoming.TargetMembers;
+    current.targetMembers !== incoming.TargetMembers ||
+    current.newUserInvitesReady !== incoming.NewUserInvitesReady ||
+    current.targetMaxMembers !== incoming.TargetMaxMembers;

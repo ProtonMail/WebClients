@@ -6,7 +6,7 @@ import withCacheBlock from '@proton/pass/store/actions/with-cache-block';
 import withNotification from '@proton/pass/store/actions/with-notification';
 import { withRequestFailure, withRequestStart, withRequestSuccess } from '@proton/pass/store/actions/with-request';
 import type { SynchronizationResult } from '@proton/pass/store/sagas/workers/sync';
-import type { Share, ShareRole } from '@proton/pass/types';
+import type { Share, ShareAccessKeys, ShareRole } from '@proton/pass/types';
 import type {
     ShareAccessOptions,
     ShareEditMemberAccessIntent,
@@ -137,7 +137,6 @@ export const getShareAccessOptionsFailure = createAction(
     )
 );
 
-export const shareAccessChange = createAction(
-    'share::access::change',
-    (payload: Pick<Share, 'shareId' | 'owner' | 'shared' | 'shareRoleId' | 'targetMembers'>) => ({ payload })
-);
+export const shareAccessChange = createAction('share::access::change', (payload: Pick<Share, ShareAccessKeys>) => ({
+    payload,
+}));

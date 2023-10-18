@@ -1,4 +1,5 @@
 export * from './invite/create-invite-keys';
+export * from './invite/create-new-user-signature';
 export * from './invite/open-invite-key';
 export * from './invite/read-vault-invite';
 export * from './invite/reencrypt-invite-keys';

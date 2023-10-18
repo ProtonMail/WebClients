@@ -11,20 +11,20 @@ import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal'
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { ShareMember } from '@proton/pass/components/Share/ShareMember';
-import { SharePendingMember } from '@proton/pass/components/Share/SharePendingMember';
+import { PendingExistingMember, PendingNewMember } from '@proton/pass/components/Share/SharePendingMember';
 import { SharedVaultItem } from '@proton/pass/components/Vault/SharedVaultItem';
 import { useShareAccessOptionsPolling } from '@proton/pass/hooks/useShareAccessOptionsPolling';
 import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
 import { selectOwnWritableVaults, selectPassPlan, selectVaultWithItemsCount } from '@proton/pass/store/selectors';
-import type { Maybe, PendingInvite } from '@proton/pass/types';
+import type { NewUserPendingInvite, PendingInvite } from '@proton/pass/types';
 import { type ShareMember as ShareMemberType } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 
 type Props = { shareId: string };
-type VaultAccessListItem =
-    | { key: string; type: 'pending'; invite: PendingInvite }
-    | { key: string; type: 'member'; member: ShareMemberType };
+type InviteListItem =
+    | { key: string; type: 'existing'; invite: PendingInvite }
+    | { key: string; type: 'new'; invite: NewUserPendingInvite };
 
 export const VaultAccessManager: FC<Props> = ({ shareId }) => {
     const { createInvite, close } = useInviteContext();
@@ -34,28 +34,34 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
     const canManage = isShareManageable(vault);
     const hasMultipleOwnedWritableVaults = useSelector(selectOwnWritableVaults).length > 1;
 
-    const listItems = useMemo<VaultAccessListItem[]>(
+    const members = useMemo<ShareMemberType[]>(() => (vault.members ?? []).sort(sortOn('email', 'ASC')), [vault]);
+    const invites = useMemo<InviteListItem[]>(
         () =>
             [
                 ...(vault.invites ?? []).map((invite) => ({
                     key: invite.invitedEmail,
-                    type: 'pending' as const,
+                    type: 'existing' as const,
                     invite,
                 })),
-                ...(vault.members ?? []).map((member) => ({ key: member.email, type: 'member' as const, member })),
+                ...(vault.newUserInvites ?? []).map((invite) => ({
+                    key: invite.invitedEmail,
+                    type: 'new' as const,
+                    invite,
+                })),
             ].sort(sortOn('key', 'ASC')),
         [vault]
     );
 
-    const memberLimitReached = listItems.length >= vault.targetMaxMembers;
+    const totalCount = members.length + invites.length;
+    const memberLimitReached = totalCount >= vault.targetMaxMembers;
 
-    const warning = useMemo<Maybe<string>>(() => {
+    const warning = (() => {
         if (canManage && memberLimitReached) {
             return plan === UserPassPlan.FREE
                 ? c('Warning').t`Upgrade to a paid plan to invite more members to this vault.`
                 : c('Warning').t`You have reached the limit of members who can access this vault.`;
         }
-    }, [canManage, listItems, plan]);
+    })();
 
     return (
         <SidebarModal onClose={close} open>
@@ -92,28 +98,28 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
 
                 {vault.shared ? (
                     <div className="flex flex-column gap-y-3">
-                        {warning && <ItemCard className="mb-2">{warning}</ItemCard>}
-                        {listItems.map((item) => {
+                        {warning && <ItemCard>{warning}</ItemCard>}
+
+                        {invites.length > 0 && <span className="color-weak">{c('Label').t`Invitations`}</span>}
+
+                        {invites.map((item) => {
                             switch (item.type) {
-                                case 'member':
+                                case 'new':
                                     return (
-                                        <ShareMember
-                                            key={item.key}
-                                            email={item.member.email}
+                                        <PendingNewMember
                                             shareId={shareId}
-                                            userShareId={item.member.shareId}
-                                            me={vault.shareId === item.member.shareId}
-                                            owner={item.member.owner}
-                                            role={item.member.shareRoleId}
+                                            key={item.key}
+                                            email={item.invite.invitedEmail}
+                                            newUserInviteId={item.invite.newUserInviteId}
                                             canManage={canManage}
-                                            canTransfer={vault.owner && hasMultipleOwnedWritableVaults}
+                                            state={item.invite.state}
                                         />
                                     );
-                                case 'pending':
+                                case 'existing':
                                     return (
-                                        <SharePendingMember
-                                            shareId={shareId}
+                                        <PendingExistingMember
                                             key={item.key}
+                                            shareId={shareId}
                                             email={item.invite.invitedEmail}
                                             inviteId={item.invite.inviteId}
                                             canManage={canManage}
@@ -121,6 +127,22 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
                                     );
                             }
                         })}
+
+                        {members.length > 0 && <span className="color-weak">{c('Label').t`Members`}</span>}
+
+                        {members.map((member) => (
+                            <ShareMember
+                                key={member.email}
+                                email={member.email}
+                                shareId={shareId}
+                                userShareId={member.shareId}
+                                me={vault.shareId === member.shareId}
+                                owner={member.owner}
+                                role={member.shareRoleId}
+                                canManage={canManage}
+                                canTransfer={vault.owner && hasMultipleOwnedWritableVaults}
+                            />
+                        ))}
                     </div>
                 ) : (
                     <div className="absolute-center flex flex-column gap-y-3 text-center color-weak text-sm">

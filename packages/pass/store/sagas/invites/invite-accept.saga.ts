@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { acceptInvite } from '@proton/pass/lib/invites/invite.requests';
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
-import { decryptShareResponse } from '@proton/pass/lib/shares/share.utils';
+import { parseShareResponse } from '@proton/pass/lib/shares/share.utils';
 import {
     inviteAcceptFailure,
     inviteAcceptIntent,
@@ -25,7 +25,7 @@ function* acceptInviteWorker({ payload, meta: { request } }: ReturnType<typeof i
         if (!invite) throw new Error(c('Error').t`Unknown invite`);
 
         const encryptedShare: ShareGetResponse = yield acceptInvite({ ...payload, inviteKeys: invite.keys });
-        const share: Maybe<Share<ShareType.Vault>> = yield decryptShareResponse(encryptedShare);
+        const share: Maybe<Share<ShareType.Vault>> = yield parseShareResponse(encryptedShare);
         if (!share) throw new Error(c('Error').t`Could not open invited vault`);
 
         const progressChannel = eventChannel<RequestProgress<ItemRevision[]>>((emitter) => {

@@ -13,7 +13,6 @@ import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message'
 import browser from '@proton/pass/lib/globals/browser';
 import { workerLocked, workerReady } from '@proton/pass/lib/worker';
 import {
-    getUserPlanSuccess,
     notification,
     sessionUnlockFailure,
     sessionUnlockIntent,
@@ -22,7 +21,6 @@ import {
     stateLock,
     syncLock,
 } from '@proton/pass/store/actions';
-import { userPlanRequest } from '@proton/pass/store/actions/requests';
 import { selectUser } from '@proton/pass/store/selectors';
 import type { Api, Maybe, WorkerMessageResponse } from '@proton/pass/types';
 import { SessionLockStatus, WorkerMessageType, WorkerStatus } from '@proton/pass/types';
@@ -265,20 +263,6 @@ export const createAuthService = ({
                 /* if the session is locked we might not be considered
                  * fully logged in but we can still persist the session */
                 if (loggedIn || workerLocked(ctx.status)) void authService.persistSession();
-
-                /* if we get a locked session error on user/access we should not
-                 * show a login error : user will have to unlock. FIXME: when
-                 * removing the session-lock mechanism (and moving to biometrics)
-                 * make sure to catch 403 in this catch block. It is handled by
-                 * the session lock check in the AuthService::login call right now */
-                await api({ url: `pass/v1/user/access`, method: 'get' })
-                    .then(({ Access }) => {
-                        const action = getUserPlanSuccess(userPlanRequest(session.UserID), { ...Access!.Plan });
-                        store.dispatch(action);
-                    })
-                    .catch((e) => {
-                        if (!api.getStatus().sessionLocked) throw e;
-                    });
 
                 return {
                     payload: {
