@@ -6,6 +6,7 @@ import { EventActions } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
 import { objectDelete } from '@proton/pass/utils/object/delete';
 import { fullMerge, merge, partialMerge } from '@proton/pass/utils/object/merge';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import type { Address, SETTINGS_STATUS, User } from '@proton/shared/lib/interfaces';
 
 export type AddressState = { [addressId: string]: Address };
@@ -53,10 +54,10 @@ const reducer: Reducer<UserState> = (state = initialState, action) => {
     }
 
     if (userEvent.match(action)) {
+        if (action.payload.EventID === state.eventId) return state;
+
         const { Addresses = [], User, EventID, UserSettings } = action.payload;
-
         const user = User ?? state.user;
-
         const eventId = EventID ?? null;
 
         const userSettings = UserSettings
@@ -78,11 +79,17 @@ const reducer: Reducer<UserState> = (state = initialState, action) => {
         };
     }
 
+    /* triggered on each popup wakeup: avoid unnecessary re-renders */
     if (getUserAccessSuccess.match(action)) {
-        return partialMerge(state, {
-            plan: action.payload.plan,
-            waitingNewUserInvites: action.payload.waitingNewUserInvites,
-        });
+        const { plan, waitingNewUserInvites } = action.payload;
+        const didChange = waitingNewUserInvites !== state.waitingNewUserInvites || !isDeepEqual(plan, state.plan);
+
+        return didChange
+            ? partialMerge(state, {
+                  plan: action.payload.plan,
+                  waitingNewUserInvites: action.payload.waitingNewUserInvites,
+              })
+            : state;
     }
 
     if (getUserFeaturesSuccess.match(action)) {
