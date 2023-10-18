@@ -1,7 +1,7 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 
 import { moveAll as moveAllRequest, queryMessageMetadata } from '@proton/shared/lib/api/messages';
-import { DEFAULT_MAIL_PAGE_SIZE, MAILBOX_LABEL_IDS, SECOND } from '@proton/shared/lib/constants';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import diff from '@proton/utils/diff';
 import unique from '@proton/utils/unique';
@@ -18,7 +18,12 @@ import {
     QueryResults,
     TaskRunningInfo,
 } from './elementsTypes';
-import { queryElement, queryElementsInBatch, refreshTaskRunningTimeout } from './helpers/elementQuery';
+import {
+    getQueryElementsParameters,
+    queryElement,
+    queryElements,
+    refreshTaskRunningTimeout,
+} from './helpers/elementQuery';
 
 const REFRESHES = [5, 10, 20];
 
@@ -26,9 +31,7 @@ export const reset = createAction<NewStateParams>('elements/reset');
 
 export const updatePage = createAction<number>('elements/updatePage');
 
-export const updatePageSize = createAction<number>('elements/updatePageSize');
-
-export const retry = createAction<{ queryParameters: unknown; error: Error | undefined }>('elements/retry');
+export const retry = createAction<{ queryParameters: any; error: Error | undefined }>('elements/retry');
 
 export const load = createAsyncThunk<
     { result: QueryResults; taskRunning: TaskRunningInfo },
@@ -37,52 +40,31 @@ export const load = createAsyncThunk<
 >(
     'elements/load',
     async (
-        {
-            page: clientPage,
-            pageSize: settingsPageSize = DEFAULT_MAIL_PAGE_SIZE,
-            params,
-            abortController,
-            count = 1,
-        }: QueryParams,
+        { page, params, abortController, conversationMode, count = 1 }: QueryParams,
         { dispatch, getState, extra }
     ) => {
-        const result = await queryElementsInBatch(
-            extra.api,
-            clientPage,
-            settingsPageSize,
-            params,
-            abortController
-        ).catch((error: any | undefined) => {
+        const queryParameters = getQueryElementsParameters({ page, params });
+        let result;
+        try {
+            result = await queryElements(extra.api, abortController, conversationMode, queryParameters);
+        } catch (error: any | undefined) {
             // Wait a couple of seconds before retrying
             setTimeout(() => {
-                dispatch(retry({ queryParameters: { clientPage, settingsPageSize, params }, error }));
-            }, 2 * SECOND);
-
+                dispatch(retry({ queryParameters, error }));
+            }, 2000);
             throw error;
-        });
-
+        }
         if (result.Stale === 1 && REFRESHES?.[count]) {
-            const ms = 1 * SECOND * REFRESHES[count];
-
+            const ms = 1000 * REFRESHES[count];
             // Wait few seconds before retrying
             setTimeout(() => {
                 if (isDeepEqual((getState() as RootState).elements.params, params)) {
-                    void dispatch(
-                        load({
-                            page: clientPage,
-                            pageSize: settingsPageSize,
-                            params,
-                            abortController,
-                            count: count + 1,
-                        })
-                    );
+                    void dispatch(load({ page, params, abortController, conversationMode, count: count + 1 }));
                 }
             }, ms);
         }
-
         const taskLabels = Object.keys(result.TasksRunning || {});
         const taskRunning = { ...(getState() as RootState).elements.taskRunning };
-
         if (taskLabels.length) {
             taskRunning.labelIDs = unique([...taskRunning.labelIDs, ...taskLabels]);
             taskRunning.timeoutID = refreshTaskRunningTimeout(taskRunning.labelIDs, {
@@ -90,7 +72,6 @@ export const load = createAsyncThunk<
                 dispatch,
             });
         }
-
         return { result, taskRunning };
     }
 );

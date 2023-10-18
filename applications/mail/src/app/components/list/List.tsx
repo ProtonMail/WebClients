@@ -2,10 +2,9 @@ import { ChangeEvent, Fragment, ReactNode, Ref, RefObject, forwardRef, memo, use
 
 import { c, msgid } from 'ttag';
 
-import { useConversationCounts, useItemsDraggable, useMessageCounts } from '@proton/components';
+import { PaginationRow, useConversationCounts, useItemsDraggable, useMessageCounts } from '@proton/components';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { CHECKLIST_DISPLAY_TYPE, UserSettings } from '@proton/shared/lib/interfaces';
-import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 import clsx from '@proton/utils/clsx';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
@@ -24,7 +23,6 @@ import UsersOnboardingChecklist from '../checklist/UsersOnboardingChecklist';
 import EmptyListPlaceholder from '../view/EmptyListPlaceholder';
 import Item from './Item';
 import ListBanners from './ListBanners';
-import ListPagination from './ListPagination';
 import { ResizeHandle } from './ResizeHandle';
 import useEncryptedSearchList from './useEncryptedSearchList';
 import { useItemContextMenu } from './useItemContextMenu';
@@ -104,7 +102,6 @@ const List = (
 ) => {
     const mailSettings = useMailModel('MailSettings');
     const { shouldHighlight, esStatus } = useEncryptedSearchContext();
-
     // Override compactness of the list view to accomodate body preview when showing encrypted search results
     const { contentIndexingDone, esEnabled } = esStatus;
     const shouldOverrideCompactness = shouldHighlight() && contentIndexingDone && esEnabled;
@@ -116,9 +113,7 @@ const List = (
     const displayPlaceholders = loading && inputElements?.length === 0;
 
     const elements = usePlaceholders(inputElements, displayPlaceholders, placeholderCount);
-
-    const pageSize = mailSettings?.PageSize ?? MAIL_PAGE_SIZE.FIFTY;
-    const pagingHandlers = usePaging(inputPage, pageSize, inputTotal, onPage);
+    const pagingHandlers = usePaging(inputPage, inputTotal, onPage);
     const { total, page } = pagingHandlers;
 
     const [messageCounts] = useMessageCounts();
@@ -133,12 +128,8 @@ const List = (
 
     // ES options: offer users the option to turn off ES if it's taking too long, and
     // enable/disable UI elements for incremental partial searches
-    const { isESLoading, showESSlowToolbar, loadingElement, useLoadingElement } = useEncryptedSearchList(
-        isSearch,
-        loading,
-        page,
-        total
-    );
+    const { isESLoading, showESSlowToolbar, loadingElement, disableGoToLast, useLoadingElement } =
+        useEncryptedSearchList(isSearch, loading, page, total);
 
     const { draggedIDs, handleDragStart, handleDragEnd } = useItemsDraggable(
         elements,
@@ -256,9 +247,13 @@ const List = (
 
                                 {useLoadingElement && loadingElement}
 
-                                {total > 1 && (
+                                {!loading && total > 1 && (
                                     <div className="p-5 flex flex-column flex-align-items-center flex-item-noshrink">
-                                        <ListPagination {...pagingHandlers} loading={loading} />
+                                        <PaginationRow
+                                            {...pagingHandlers}
+                                            disabled={loading}
+                                            disableGoToLast={disableGoToLast}
+                                        />
                                     </div>
                                 )}
                             </>

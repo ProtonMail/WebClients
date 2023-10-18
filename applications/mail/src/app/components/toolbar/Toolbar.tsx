@@ -76,21 +76,16 @@ const Toolbar = (props: Props) => {
         selectAll: <SelectAll {...selectAllProps} />,
     };
 
-    switch (variant) {
-        case 'headerNarrow':
-            return <ToolbarHeaderNarrow {...commonProps} />;
-        case 'narrow':
-            return <ToolbarNarrow {...commonProps} />;
-        case 'headerMessageNarrow':
-            return <ToolbarHeaderMessageNarrow {...commonProps} />;
-        case 'headerMessageWide':
-            return <ToolbarHeaderMessageWide {...commonProps} />;
-        case 'rowWide':
-            return <ToolbarRowWide {...commonProps} />;
-        default:
-            // columnWide
-            return <ToolbarColumnWide {...commonProps} />;
-    }
+    return (
+        <>
+            {'headerNarrow' === variant && <ToolbarHeaderNarrow {...commonProps} />}
+            {'narrow' === variant && <ToolbarNarrow {...commonProps} />}
+            {'headerMessageNarrow' === variant && <ToolbarHeaderMessageNarrow {...commonProps} />}
+            {'headerMessageWide' === variant && <ToolbarHeaderMessageWide {...commonProps} />}
+            {'rowWide' === variant && <ToolbarRowWide {...commonProps} />}
+            {'columnWide' === variant && <ToolbarColumnWide {...commonProps} />}
+        </>
+    );
 };
 
 export default memo(Toolbar);

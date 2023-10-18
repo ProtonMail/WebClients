@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { defaultESContext } from '@proton/encrypted-search';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
-import { APPS, DEFAULT_MAIL_PAGE_SIZE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { APPS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { ESDBStatusMail, EncryptedSearchFunctionsMail } from './models/encryptedSearch';
@@ -11,7 +11,9 @@ export const MAIN_ROUTE_PATH = '/:labelID?/:elementID?/:messageID?';
 export const EXPIRATION_CHECK_FREQUENCY = 10000; // each 10 seconds
 export const MAX_EXPIRATION_TIME = 672; // hours
 export const DEFAULT_EO_EXPIRATION_DAYS = 28;
-export const DEFAULT_PLACEHOLDERS_COUNT = DEFAULT_MAIL_PAGE_SIZE;
+export const PAGE_SIZE = 50;
+export const ELEMENTS_CACHE_REQUEST_SIZE = 100;
+export const DEFAULT_PLACEHOLDERS_COUNT = PAGE_SIZE;
 export const ATTACHMENT_MAX_SIZE = 25000000; // bytes -> 25MB
 export const LARGE_KEY_SIZE = 50 * 1024;
 export const LOAD_RETRY_COUNT = 3;
