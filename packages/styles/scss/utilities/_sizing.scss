@@ -1,99 +1,49 @@
 @use 'sass:math';
+@use 'sass:map';
 
-@include responsive-classes(wauto) {
-	inline-size: auto;
-	min-inline-size: 0;
+@function pixel-to-rem($value) {
+	@return if(type-of($value) == 'number' and unitless($value), rem($value), $value);
 }
 
-.hauto {
-	block-size: auto;
-}
+$dummy-map: ();
 
-.h0 {
-	block-size: 0;
-}
+/// These sizings were defined in collaboration with the Design team.
+/// Please contact the UXE team if you need any additional one.
+/// If you can't find what you need, please consider using custom sizing utilities:
+/// https://design-system.protontech.ch/?path=/docs/css-utilities-sizing--fractions#custom
 
-@include responsive-classes(h100) {
-	block-size: 100%;
-}
+@each $direction, $property in (w: inline, h: block) {
+	@each $boundary in (min, '', max) {
+		// Common property name
+		$propname: dash-join($boundary, $property, 'size');
 
-/* prettier-ignore */
-@each $width in (0, 1, 2, 3, 5, 10, 15, 20, 25, 30, math.div(100,3), 40, 45, 49, 50, 60, math.div(100,3) * 2, 70, 75, 80, 90, 95, 100) {
-	.w#{floor($width)} {
-		inline-size: #{$width * 1%};
+		// Framework
+		@each $sizingname, $size in ('0': 0, 'px': '1px', '2': 8, '4': 16, 'full': 100%, 'auto': 'auto', 'none': 'none') {
+			@if not(($sizingname == 'auto' and $boundary != '') or ($sizingname == 'none' and $boundary == '')) {
+				$classname: dash-join($boundary, $direction, $sizingname);
+				$value: pixel-to-rem($size);
+				$dummy-map: map.merge($dummy-map, (#{$classname}: (#{$propname}: #{$value})));
+			}
+		}
+
+		// Fractions
+		@if $direction == 'w' {
+			// Do not add any new value here without asking UXE team!
+			@each $i in (2, 3, 4, 5, 6, 10) {
+				@for $j from 1 through $i - 1 {
+					$classname: dash-join($boundary, $direction, $j + '\\\/' + $i);
+					$value: math.div($j, $i) * 100%;
+					$dummy-map: map.merge($dummy-map, (#{$classname}: (#{$propname}: #{$value})));
+				}
+			}
+		}
+
+		// Customs
+		$classname: dash-join($boundary, $direction, 'custom');
+		$value: var(--#{'[BPN]' + $classname});
+		$dummy-map: map.merge($dummy-map, (#{$classname}: (#{$propname}: #{$value})));
 	}
 }
 
-// .w500p { inline-size: 500px; }
-@each $width in (10, 40, 50, 70, 80, 90, 150, 200, 250, 300, 500) {
-	.w#{$width}p {
-		inline-size: #{$width}px;
-	}
-}
-
-// .w500r { inline-size: 500rem; }
-// seems
-// @each $width in (33) {
-// 	.w#{$width}r {
-// 		inline-size: #{$width}rem;
-// 	}
-// }
-
-// .w16e { width: 16em; }
-@each $width in (2, 3, 4, 5, 6, 8, 10, 11, 13, 14, 15, 16, 20, 24) {
-	.w#{$width}e {
-		inline-size: #{$width}em;
-	}
-}
-
-// .max-w50 { max-inline-size: 50%; }
-@each $max-width in (50, 60, 80, 100) {
-	.max-w#{$max-width} {
-		max-inline-size: #{$max-width * 1%};
-	}
-}
-
-// .max-w500p { max-inline-size: 500px; }
-@each $max-width in (100, 270, 650) {
-	.max-w#{$max-width}p {
-		max-inline-size: #{$max-width}px;
-	}
-}
-
-// .max-w500ch { max-inline-size: 500ch; }
-@each $max-width in (70) {
-	.max-w#{$max-width}ch {
-		max-inline-size: #{$max-width}ch;
-	}
-}
-
-// .max-w50e { max-inline-size: 50em; }
-@each $max-width in (5, 7, 8, 13, 15, 18, 20, 24, 30, 37, 40, 43, 46, 50, 52, 57, 60, 69) {
-	.max-w#{$max-width}e {
-		max-inline-size: #{$max-width}em;
-	}
-}
-
-// .mw48r { max-inline-size: 48rem; }
-@each $max-width in (30, 52) {
-	.mw#{$max-width}r {
-		max-inline-size: #{$max-width}rem;
-	}
-}
-
-// .min-w50e { min-inline-size: 50em; }
-@each $min-width in (1.4, 2, 3, 5, 7, 9, 14, 35) {
-	// inspect to convert to string
-	$fragment-class: str-replace(inspect($min-width), '.', '-');
-
-	.min-w#{$fragment-class}e {
-		min-inline-size: #{$min-width}em;
-	}
-}
-
-// .min-h50e { min-block-size: 50em; }
-@each $min-height in (5, 10, 16) {
-	.min-h#{$min-height}e {
-		min-block-size: #{$min-height}em;
-	}
-}
+// We need to serialize the classes to avoid any cascade ordering issues
+@include responsive-classes($dummy-map);
