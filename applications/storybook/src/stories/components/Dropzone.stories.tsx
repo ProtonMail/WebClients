@@ -151,7 +151,7 @@ export const Custom = () => {
                     }, {})}
                 >
                     <div className="flex flex-align-items-center w-full border p-4" style={{ minHeight: '300px' }}>
-                        <div className="flex flex-column text-center h100 w-full">
+                        <div className="flex flex-column text-center h-full w-full">
                             <span>Hover with a file to see the dropzone (or select showDragOverState toggle)</span>
                             <br />
                             <span>This is the children content</span>
@@ -171,7 +171,7 @@ export const Invisible = () => {
             <div className="mt-4 flex flex-align-items-center">
                 <Dropzone onDrop={handleAddFile} shape="invisible">
                     <div className="flex flex-align-items-center w-full border p-4" style={{ minHeight: '300px' }}>
-                        <div className="flex flex-column text-center h100 w-full">
+                        <div className="flex flex-column text-center h-full w-full">
                             <span>Hover with a file to see the dropzone (or select showDragOverState toggle)</span>
                             <br />
                             <span>This is the children content</span>

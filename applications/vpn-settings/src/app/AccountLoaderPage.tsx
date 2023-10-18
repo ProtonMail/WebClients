@@ -16,7 +16,7 @@ const AccountLoaderPage = ({ text, loaderClassName = '' }: Props) => {
     const textToDisplay = text || c('Info').t`Loading ${appName}`;
 
     return (
-        <div className="h100">
+        <div className="h-full">
             <div className={clsx(['absolute-center text-center'])}>
                 <div>
                     <img

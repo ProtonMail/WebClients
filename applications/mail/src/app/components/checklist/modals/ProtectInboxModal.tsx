@@ -51,7 +51,7 @@ const ProtectInboxStep = ({ img, title, description, knowledgeBaseLink }: Protec
         <div>
             <img src={img} alt="" className="w-full h-custom" style={{ '--h-custom': '15rem' }} />
             {/* Avoid text jumping when changing step, fixed height ensure proper display of the text */}
-            <div className="mb-0 mt-2 h-custom min-h5e">
+            <div className="mb-0 mt-2 h-custom min-h-custom" style={{ '--min-h-custom': '5em' }}>
                 <h1 className="text-bold text-2xl mt-4">{title}</h1>
                 <span className="m-0">{description}</span>{' '}
                 {knowledgeBaseLink && (

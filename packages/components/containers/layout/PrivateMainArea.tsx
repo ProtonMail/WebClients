@@ -39,7 +39,7 @@ const PrivateMainAreaBase = (
                 hasToolbar ? 'main-area--with-toolbar' : 'main-area',
                 hasRowMode ? 'main-area--row-mode' : undefined,
                 !drawerSidebar ? 'main-area-border' : undefined,
-                'flex-item-fluid-auto relative h100',
+                'flex-item-fluid-auto relative h-full',
                 className,
             ])}
             ref={ref}
@@ -48,13 +48,13 @@ const PrivateMainAreaBase = (
             <div
                 className={clsx(
                     'flex flex-nowrap w-full',
-                    drawerSidebar ? 'h100 relative overflow-hidden' : undefined,
+                    drawerSidebar ? 'h-full relative overflow-hidden' : undefined,
                     isProminent ? 'ui-prominent' : undefined
                 )}
             >
                 <div
                     className={clsx(
-                        'flex flex-nowrap w-full h100',
+                        'flex flex-nowrap w-full h-full',
                         hasDrawerSidebar ? 'main-area-border overflow-hidden' : 'overflow-auto',
                         hasDrawerSidebar && mainBordered ? 'main-area-rounded--right' : undefined,
                         isProminent ? 'ui-standard main-area-rounded--left' : undefined
