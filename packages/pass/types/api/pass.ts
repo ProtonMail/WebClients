@@ -37,6 +37,11 @@ export type NewUserInviteCreateRequest = {
     ExpirationTime?: number | null;
 };
 
+export type NewUserInvitePromoteRequest = {
+    /* List of keys encrypted for the other user's address key and signed with your address key */
+    Keys: KeyRotationKeyPair[];
+};
+
 export type ItemCreateRequest = {
     /* Encrypted ID of the VaultKey used to create this item */
     KeyRotation: number;
@@ -440,6 +445,13 @@ export type ItemMoveIndividualToShareRequest = {
     Item: ItemCreateRequest;
 };
 
+export type KeyRotationKeyPair = {
+    /* Key rotation */
+    KeyRotation: number;
+    /* Encrypted key encoded in base64 */
+    Key: string;
+};
+
 export type ItemCreateRequest2 = {};
 
 export type ImportItemRequest = {
@@ -452,13 +464,6 @@ export type ImportItemRequest = {
     CreateTime?: number | null;
     /* When was this item modified. By default it will be now */
     ModifyTime?: number | null;
-};
-
-export type KeyRotationKeyPair = {
-    /* Key rotation */
-    KeyRotation: number;
-    /* Encrypted key encoded in base64 */
-    Key: string;
 };
 
 export type ItemIDRevision = {};
@@ -589,6 +594,8 @@ export type VaultInviteData = {
     InvitedEmail: string;
     /* Email of the user who created the invite */
     InviterEmail: string;
+    /* Share role for this invite */
+    ShareRoleID: string;
     /* Target type for the invite */
     TargetType: number;
     /* Target ID for the invite */
@@ -804,6 +811,14 @@ export type ApiResponse<Path extends string, Method extends ApiMethod> = Path ex
         : Method extends `delete`
         ? { Code?: ResponseCodeSuccess }
         : never
+    : Path extends `pass/v1/share/${string}/invite/new_user/${string}/keys`
+    ? Method extends `post`
+        ? { Code?: ResponseCodeSuccess }
+        : never
+    : Path extends `pass/v1/share/${string}/invite/new_user/${string}`
+    ? Method extends `delete`
+        ? { Code?: ResponseCodeSuccess }
+        : never
     : Path extends `pass/v1/share/${string}/invite/new_user`
     ? Method extends `post`
         ? { Code?: ResponseCodeSuccess }
@@ -1003,6 +1018,14 @@ export type ApiRequest<Path extends string, Method extends ApiMethod> = Path ext
         ? ItemCreateRequest
         : Method extends `delete`
         ? ItemsToSoftDeleteRequest
+        : never
+    : Path extends `pass/v1/share/${string}/invite/new_user/${string}/keys`
+    ? Method extends `post`
+        ? NewUserInvitePromoteRequest
+        : never
+    : Path extends `pass/v1/share/${string}/invite/new_user/${string}`
+    ? Method extends `delete`
+        ? never
         : never
     : Path extends `pass/v1/share/${string}/invite/new_user`
     ? Method extends `post`
