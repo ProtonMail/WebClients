@@ -128,6 +128,7 @@ const processCreditCardItem = (item: OnePassLegacyItem): ItemImportIntent<'credi
         number: item.secureContents.ccnum,
         verificationNumber: item.secureContents.cvv,
         expirationDate,
+        pin: item.secureContents.pin,
     });
 };
 
