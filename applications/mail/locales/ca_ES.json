@@ -101,8 +101,8 @@
         "Tal com s'ha programat"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
-        "El nombre màxim de contactes per grup de contactes és de ${ maxContacts }.",
-        "El nombre màxim de contactes per grup de contactes és de ${ maxContacts }."
+        "Es permet un màxim d'${ maxContacts } contacte per grup de contactes.",
+        "Es permet un màxim de ${ maxContacts } contactes per grup de contactes."
       ],
       "Attach screenshot(s)": [
         "Adjunta una o més captures de pantalla"
@@ -1153,7 +1153,7 @@
         "Sí, hi assistiré"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "No podeu enviar fitxers vCard de més de ${ maxAttachments } contactes.",
+        "No podeu enviar fitxers vCard de més d'${ maxAttachments } contacte.",
         "No podeu enviar fitxers vCard de més de ${ maxAttachments } contactes."
       ],
       "Zoom in": [
@@ -3164,9 +3164,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "La cerca de continguts no es pot activar en aquest navegador. Tanqueu el mode de navegació privada o utilitzeu un altre navegador."
       ],
-      "Could not save preference": [
-        "No s'ha pogut desar la preferència."
-      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "S'ha produït un error de desxifratge: no s'ha pogut desxifrar el contingut xifrat d’aquest missatge."
       ],
@@ -3485,7 +3482,7 @@
         "Contrasenya de la bústia de correu incorrecta"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
-        "No podeu enviar un correu a més de ${ maxContacts } destinatari.",
+        "No podeu enviar un correu a més d'${ maxContacts } destinatari.",
         "No podeu enviar un correu a més de ${ maxContacts } destinataris."
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
@@ -4744,8 +4741,8 @@
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendaris"
       ],
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
-        "${ selectedContactsLength }/${ contactsLength } contacte seleccionat",
-        "${ selectedContactsLength }/${ contactsLength } contactes seleccionats"
+        "${ selectedContactsLength } contacte seleccionat de ${ contactsLength }",
+        "${ selectedContactsLength } contactes seleccionats de ${ contactsLength }"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } carpeta seleccionada",
@@ -5038,9 +5035,6 @@
       ],
       "Do you want to re-sign the contact details?": [
         "Voleu tornar a signar els detalls de contacte?"
-      ],
-      "Don't find what you are looking for? ${ displayAllMailButton }": [
-        "No trobeu el que esteu buscant? ${ displayAllMailButton }"
       ],
       "Don't forget to share the password with the recipient": [
         "No oblidi compartir la contrassenya amb el destinatari"
@@ -5431,7 +5425,7 @@
         "Empleneu aquest camp."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
-        "Tingueu en compte que les adreces assignades a aquests grups NO se suprimeixen."
+        "Teniu en compte que les adreces assignades a aquests grups NO se suprimiran."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Tingueu en compte que les adreces assignades a aquest grup NO se suprimiran."
@@ -6419,9 +6413,6 @@
       "Contacts": [
         "Contactes"
       ],
-      "Conversations per page": [
-        "Conversacions per pàgina"
-      ],
       "Copy": [
         "Copia"
       ],
@@ -6586,9 +6577,6 @@
       ],
       "Mark as": [
         "Marca com a"
-      ],
-      "Messages per page": [
-        "Missatges per pàgina"
       ],
       "Move ${ sidebarElementName }": [
         "Mou ${ sidebarElementName }"
@@ -7888,12 +7876,12 @@
         "${ timeRemaining.inHours } hores"
       ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teneu ${ timeRemaining.inDays } dia per restablir la vostra contrasenya.",
-        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teneu ${ timeRemaining.inDays } dies per restablir la vostra contrasenya."
+        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inDays } dia per restablir la vostra contrasenya.",
+        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inDays } dies per restablir la vostra contrasenya."
       ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teneu ${ timeRemaining.inHours } hora per restablir la vostra contrasenya.",
-        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teneu ${ timeRemaining.inHours } hores per restablir la vostra contrasenya."
+        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inHours } hora per restablir la vostra contrasenya.",
+        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inHours } hores per restablir la vostra contrasenya."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Aneu a l'aparell connectat (a la sessió on es va iniciar la sol·licitud) per canviar la vostra contrasenya."
