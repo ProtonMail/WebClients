@@ -46,10 +46,12 @@ import {
     FREE_PASS_ALIASES,
     FREE_VAULTS,
     PASS_PLUS_VAULTS,
+    get2FAAuthenticator,
     getCustomFields,
     getDevices,
     getHideMyEmailAliases,
     getLoginsAndNotes,
+    getVaultSharing,
     getVaults,
 } from '../../features/pass';
 import {
@@ -267,9 +269,10 @@ const SubscriptionPanel = ({
         );
     };
 
-    const getVpnPlus = () => {
+    const getVpnPlusItems = (): Item[] => {
         const maxVpn = 10;
-        const items: Item[] = [
+
+        return [
             {
                 icon: 'brand-proton-vpn',
                 text: c('Subscription attribute').ngettext(
@@ -291,7 +294,28 @@ const SubscriptionPanel = ({
                 text: getPlusServers(vpnServers.paid.servers, vpnServers.paid.countries),
             },
         ];
+    };
 
+    const getVpnPass = () => {
+        const vpnItems = getVpnPlusItems();
+
+        const items: Item[] = [
+            ...vpnItems,
+            getLoginsAndNotes(),
+            getHideMyEmailAliases('unlimited'),
+            get2FAAuthenticator(true),
+            getVaultSharing(10),
+        ];
+
+        return (
+            <StripedList alternate="odd">
+                <SubscriptionItems items={items} />
+            </StripedList>
+        );
+    };
+
+    const getVpnPlus = () => {
+        const items = getVpnPlusItems();
         return (
             <StripedList alternate="odd">
                 <SubscriptionItems items={items} />
@@ -514,8 +538,11 @@ const SubscriptionPanel = ({
                 if (user.isFree && app === APPS.PROTONVPN_SETTINGS) {
                     return getVpnAppFree();
                 }
-                if (hasVPN(subscription) || hasVPNPassBundle(subscription)) {
+                if (hasVPN(subscription)) {
                     return getVpnPlus();
+                }
+                if (hasVPNPassBundle(subscription)) {
+                    return getVpnPass();
                 }
                 if (user.isFree && app === APPS.PROTONPASS) {
                     return getPassAppFree();
