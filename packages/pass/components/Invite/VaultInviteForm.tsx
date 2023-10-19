@@ -1,7 +1,7 @@
-import { type FC } from 'react';
+import type { VFC } from 'react';
 import { useSelector } from 'react-redux';
 
-import { Form, type FormikContextType } from 'formik';
+import { type FormikContextType } from 'formik';
 import { c } from 'ttag';
 
 import { Icon } from '@proton/components/components';
@@ -9,8 +9,10 @@ import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { RadioGroupField } from '@proton/pass/components/Form/Field/RadioGroupField';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
+import { FadeIn } from '@proton/pass/components/Layout/Animation/FadeIn';
 import { IconBox } from '@proton/pass/components/Layout/Icon/IconBox';
 import { shareRoleOptions } from '@proton/pass/components/Share/ShareRoleOptions';
+import { VaultForm } from '@proton/pass/components/Vault/Vault.form';
 import { selectUserVerified } from '@proton/pass/store/selectors';
 import type { InviteFormValues } from '@proton/pass/types';
 
@@ -18,17 +20,17 @@ import { UserVerificationMessage } from './UserVerificationMessage';
 
 export const FORM_ID = 'vault-invite';
 
-type Props = { form: FormikContextType<InviteFormValues> };
+type Props = { form: FormikContextType<InviteFormValues>; autoFocus?: boolean };
 
-export const VaultInviteForm: FC<Props> = ({ form }) => {
+export const VaultInviteForm: VFC<Props> = ({ form, autoFocus }) => {
     const { email, step } = form.values;
     const userVerified = useSelector(selectUserVerified);
 
     return (
-        <Form id={FORM_ID}>
+        <>
             {!userVerified && <UserVerificationMessage />}
             {step === 'email' && (
-                <>
+                <FadeIn>
                     <h2 className="text-xl text-bold mb-3">{c('Title').t`Share with`}</h2>
                     <FieldsetCluster>
                         <Field
@@ -37,13 +39,21 @@ export const VaultInviteForm: FC<Props> = ({ form }) => {
                             placeholder={c('Placeholder').t`Email address`}
                             type="email"
                             disabled={!userVerified}
+                            autoFocus={autoFocus}
+                            key={`autofocus-email-${autoFocus}`}
                         />
                     </FieldsetCluster>
-                </>
+                </FadeIn>
+            )}
+
+            {step === 'vault' && (
+                <FadeIn className="flex flex-column gap-y-4">
+                    <VaultForm form={form as FormikContextType<InviteFormValues<true>>} autoFocus={autoFocus} />
+                </FadeIn>
             )}
 
             {step === 'permissions' && (
-                <>
+                <FadeIn>
                     <h2 className="text-xl text-bold mb-3">{c('Title').t`Set access level`}</h2>
                     <button
                         className="flex flex-align-items-center flex-nowrap gap-3 mb-3"
@@ -67,8 +77,8 @@ export const VaultInviteForm: FC<Props> = ({ form }) => {
                             options={shareRoleOptions()}
                         />
                     </div>
-                </>
+                </FadeIn>
             )}
-        </Form>
+        </>
     );
 };

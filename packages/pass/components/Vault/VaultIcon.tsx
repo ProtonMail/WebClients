@@ -36,7 +36,7 @@ export const VaultIcon: VFC<Props> = ({
         className={clsx([
             `pass-vault-icon rounded-xl relative w-custom h-custom`,
             background && 'background',
-            size >= 32 && 'rounded-full',
+            size >= 20 && 'rounded-full',
             className,
         ])}
         style={{

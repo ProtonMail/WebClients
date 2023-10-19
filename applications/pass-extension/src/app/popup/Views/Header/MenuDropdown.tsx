@@ -26,6 +26,7 @@ import { useActionWithRequest } from '@proton/pass/hooks/useActionWithRequest';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import { emptyTrashIntent, restoreTrashIntent, shareLeaveIntent, vaultDeleteIntent } from '@proton/pass/store/actions';
 import { shareLeaveRequest } from '@proton/pass/store/actions/requests';
+import type { VaultShareItem } from '@proton/pass/store/reducers';
 import {
     selectHasRegisteredLock,
     selectPassPlan,
@@ -33,7 +34,7 @@ import {
     selectShare,
     selectUser,
 } from '@proton/pass/store/selectors';
-import type { MaybeNull, ShareType, VaultShare } from '@proton/pass/types';
+import type { MaybeNull, ShareType } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import clsx from '@proton/utils/clsx';
@@ -50,7 +51,7 @@ export const MenuDropdown: VFC = () => {
     const { inTrash, unselectItem } = useNavigationContext();
     const { shareId, setSearch, setShareId, setShareBeingDeleted } = useItemsFilteringContext();
 
-    const [deleteVault, setDeleteVault] = useState<MaybeNull<VaultShare>>(null);
+    const [deleteVault, setDeleteVault] = useState<MaybeNull<VaultShareItem>>(null);
     const [vaultModalProps, setVaultModalProps] = useState<MaybeNull<VaultModalProps>>(null);
 
     const vault = useSelector(selectShare<ShareType.Vault>(shareId));
@@ -77,7 +78,7 @@ export const MenuDropdown: VFC = () => {
         setSearch('');
     });
 
-    const handleVaultDelete = (vault: VaultShare, destinationShareId: MaybeNull<string>) => {
+    const handleVaultDelete = (vault: VaultShareItem, destinationShareId: MaybeNull<string>) => {
         handleVaultDeletionEffects(vault.shareId, { shareId, setShareBeingDeleted, setShareId });
         dispatch(vaultDeleteIntent({ id: vault.shareId, content: vault.content, destinationShareId }));
     };
@@ -89,9 +90,11 @@ export const MenuDropdown: VFC = () => {
         })
     );
 
-    const handleVaultEdit = (vault: VaultShare) => setVaultModalProps({ open: true, payload: { type: 'edit', vault } });
-    const handleVaultInvite = ({ shareId }: VaultShare) => inviteContext.createInvite(shareId);
-    const handleVaultManage = withClose(({ shareId }: VaultShare) => inviteContext.manageAccess(shareId));
+    const handleVaultEdit = (vault: VaultShareItem) =>
+        setVaultModalProps({ open: true, payload: { type: 'edit', vault } });
+
+    const handleVaultInvite = (vault: VaultShareItem) => inviteContext.createInvite({ vault });
+    const handleVaultManage = withClose(({ shareId }: VaultShareItem) => inviteContext.manageAccess(shareId));
     const handleVaultLeave = useConfirm(leaveVault.dispatch);
     const handleTrashEmpty = useConfirm(() => dispatch(emptyTrashIntent()));
     const handleTrashRestore = () => dispatch(restoreTrashIntent());
