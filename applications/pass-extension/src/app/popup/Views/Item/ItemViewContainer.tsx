@@ -78,10 +78,14 @@ export const ItemViewContainer: VFC = () => {
     const handleDelete = () => dispatch(itemDeleteIntent({ item, itemId, shareId }));
     const handleInviteClick = () => setInviteOpen(true);
     const handleVaultManage = () => inviteContext.manageAccess(shareId);
-    const handleCreateSharedVault = () => setInviteOpen(false);
+
+    const handleCreateSharedVault = () => {
+        inviteContext.createSharedVault({ item: { shareId, itemId } });
+        setInviteOpen(false);
+    };
 
     const handleShareVaultClick = () => {
-        inviteContext.createInvite(shareId);
+        inviteContext.createInvite({ vault });
         setInviteOpen(false);
     };
 
@@ -105,6 +109,7 @@ export const ItemViewContainer: VFC = () => {
         selectItem(destinationShareId, optimisticId);
 
         closeVaultSelect();
+        setInviteOpen(false);
     };
 
     const ItemTypeViewComponent = itemTypeViewMap[item.data.type] as VFC<ItemViewProps>;

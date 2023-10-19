@@ -9,8 +9,8 @@ import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButt
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
+import type { VaultShareItem } from '@proton/pass/store/reducers';
 import { selectVaultLimits } from '@proton/pass/store/selectors';
-import type { VaultShare } from '@proton/pass/types';
 import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import noop from '@proton/utils/noop';
 
@@ -19,7 +19,7 @@ import { type VaultFormConsumerProps } from './Vault.form';
 import { VaultNew, FORM_ID as VaultNewFormId } from './Vault.new';
 
 export type Props = {
-    payload: { type: 'new'; onVaultCreated: (shareId: string) => void } | { type: 'edit'; vault: VaultShare };
+    payload: { type: 'new'; onVaultCreated: (shareId: string) => void } | { type: 'edit'; vault: VaultShareItem };
 } & ModalProps;
 
 export const VaultModal: FC<Props> = ({ payload, onClose = noop, ...props }) => {

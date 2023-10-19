@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
-import { type VaultShare } from '@proton/pass/types';
+import type { VaultShareItem } from '@proton/pass/store/reducers';
 import type { VaultColor as VaultColorEnum } from '@proton/pass/types/protobuf/vault-v1';
 
 import { type VaultIconName } from '../../Vault/VaultIcon';
 
-export type VaultOption = 'all' | 'trash' | VaultShare;
+export type VaultOption = 'all' | 'trash' | VaultShareItem;
 
 export const getVaultOptionInfo = (
     vault: VaultOption

@@ -1,98 +1,93 @@
 import type { FC } from 'react';
-import { createContext, useCallback, useContext, useMemo, useState } from 'react';
+import { createContext, useContext, useMemo, useState } from 'react';
 
 import type { MaybeNull } from '@proton/pass/types';
 import type { Invite } from '@proton/pass/types/data/invites';
 import noop from '@proton/utils/noop';
 
 import { VaultAccessManager } from './VaultAccessManager';
-import { VaultInviteCreate } from './VaultInviteCreate';
+import { VaultInviteCreate, type VaultInviteCreateValues } from './VaultInviteCreate';
 import { VaultInviteRespond } from './VaultInviteRespond';
 
 export type InviteContextValue = {
-    shareId: MaybeNull<string>;
     close: () => void;
-    createInvite: (shareId: string) => void;
-    createInviteWithVaultCreation: (shareId: string) => void;
+    createInvite: (props: VaultInviteCreateValues<false>) => void;
+    createSharedVault: (props: VaultInviteCreateValues<true>) => void;
     manageAccess: (shareId: string) => void;
     onInviteResponse: () => void;
     onShareDisabled: (disabledShareId: string) => void;
     respondToInvite: (invite: Invite) => void;
 };
 
-export type InviteView = 'invite-existing' | 'invite-new' | 'manage';
-
 const InviteContext = createContext<InviteContextValue>({
-    shareId: null,
     close: noop,
     createInvite: noop,
-    createInviteWithVaultCreation: noop,
+    createSharedVault: noop,
     manageAccess: noop,
     onInviteResponse: noop,
     onShareDisabled: noop,
     respondToInvite: noop,
 });
 
+type InviteContextState =
+    | ({ view: 'invite' } & VaultInviteCreateValues<false>)
+    | ({ view: 'invite-new' } & VaultInviteCreateValues<true>)
+    | { view: 'manage'; shareId: string };
+
 export const InviteContextProvider: FC = ({ children }) => {
-    const [shareId, setShareId] = useState<MaybeNull<string>>(null);
-    const [view, setView] = useState<MaybeNull<InviteView>>(null);
+    const [state, setState] = useState<MaybeNull<InviteContextState>>(null);
     const [invite, setInvite] = useState<MaybeNull<Invite>>(null);
 
-    const createInvite = useCallback(async (shareId: string) => {
-        setShareId(shareId);
-        setView('invite-existing');
-    }, []);
-
-    const createInviteWithVaultCreation = useCallback(async (shareId: string) => {
-        setShareId(shareId);
-        setView('invite-new');
-    }, []);
-
-    const onInviteResponse = useCallback(() => setInvite(null), []);
-
-    const manageAccess = useCallback((shareId: string) => {
-        setShareId(shareId);
-        setView('manage');
-    }, []);
-
-    const close = useCallback(() => {
-        setShareId(null);
-        setView(null);
-    }, []);
+    const handles = useMemo(
+        () => ({
+            close: () => setState(null),
+            createInvite: (props: VaultInviteCreateValues<false>) => setState({ view: 'invite', ...props }),
+            createSharedVault: (props: VaultInviteCreateValues<true>) => setState({ view: 'invite-new', ...props }),
+            manageAccess: (shareId: string) => setState({ view: 'manage', shareId }),
+            onInviteResponse: () => setInvite(null),
+        }),
+        []
+    );
 
     const contextValue = useMemo<InviteContextValue>(
         () => ({
-            shareId,
-            close,
-            createInvite,
-            createInviteWithVaultCreation,
-            manageAccess,
-            onInviteResponse,
+            ...handles,
             onShareDisabled: (disabledShareId: string) => {
+                const shareId = (() => {
+                    switch (state?.view) {
+                        case 'invite':
+                            return state.vault.shareId;
+                        case 'manage':
+                            return state.shareId;
+                        default:
+                            return null;
+                    }
+                })();
+
                 if (disabledShareId === shareId) {
-                    setShareId(null);
                     setInvite(null);
-                    setView(null);
+                    setState(null);
                 }
             },
             respondToInvite: setInvite,
         }),
-        [shareId]
+        [state]
     );
 
     return (
         <InviteContext.Provider value={contextValue}>
-            {shareId &&
-                (() => {
-                    switch (view) {
-                        case 'invite-existing':
-                            return <VaultInviteCreate shareId={shareId} />;
-                        case 'invite-new':
-                            return <VaultInviteCreate shareId={shareId} withVaultCreation />;
-                        case 'manage':
-                            return <VaultAccessManager shareId={shareId} />;
-                    }
-                })()}
+            {(() => {
+                switch (state?.view) {
+                    case 'invite':
+                        return <VaultInviteCreate withVaultCreation={false} {...state} />;
+                    case 'invite-new':
+                        return <VaultInviteCreate withVaultCreation {...state} />;
+                    case 'manage':
+                        return <VaultAccessManager shareId={state.shareId} />;
+                    default:
+                        return null;
+                }
+            })()}
 
             {invite && <VaultInviteRespond {...invite} />}
             {children}
