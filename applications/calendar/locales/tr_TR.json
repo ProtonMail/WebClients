@@ -931,8 +931,8 @@
         "Bu takvim daha fazla ${ BRAND_NAME } kullanıcısı ile paylaşılamıyor"
       ],
       "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
-        "Bu takvim için eklenebilecek en fazla ${ MAX_CALENDAR_MEMBERS } üye sayısına ulaştınız.\nBu takvimi başka ${ BRAND_NAME } hesapları ile paylaşmak için var olan üyelerden bazılarını silin.",
-        "Bu takvim için eklenebilecek en fazla ${ MAX_CALENDAR_MEMBERS } üye sayısına ulaştınız.\nBu takvimi başka ${ BRAND_NAME } hesapları ile paylaşmak için var olan üyelerden bazılarını silin."
+        "Bu takvim için eklenebilecek en fazla ${ MAX_CALENDAR_MEMBERS } üye sayısına ulaştınız.\nBu takvimi başka ${ BRAND_NAME } hesapları ile paylaşmak için var olan üyelerden bazılarını kaldırın.",
+        "Bu takvim için eklenebilecek en fazla ${ MAX_CALENDAR_MEMBERS } üye sayısına ulaştınız.\nBu takvimi başka ${ BRAND_NAME } hesapları ile paylaşmak için var olan üyelerden bazılarını kaldırın."
       ],
       "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
         "Bu takvim için eklenebilecek en fazla ${ MAX_LINKS_PER_CALENDAR } bağlantı sayısına ulaştınız. \nBu takvime yeni bir bağlantı oluşturmak için var olan bağlantılardan birini silin.",
@@ -2282,7 +2282,7 @@
         "Takvim sınırına ulaşıldı"
       ],
       "Cancellation failed to be sent": [
-        "İptal bilgilendirmesi gönderilemedi"
+        "İptal bildirimi gönderilemedi"
       ],
       "Cannot export this contact": [
         "Bu kişi dışa aktarılamadı"
@@ -2950,6 +2950,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Ücretli ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Ücretli ${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Ücretli ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "6 kullanıcıya kadar"
       ]
@@ -3551,13 +3560,13 @@
         "(${ memberCount } üye)"
       ],
       "A cancellation email will be sent to removed participants.": [
-        "Çıkarılan katılımcılara bir iptal bilgilendirmesi e-postası gönderilecek."
+        "Kaldırılan katılımcılara bir iptal bildirimi e-postası gönderilecek."
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
-        "Etkinlik katılımcılarına bir iptal bilgilendirmesi e-postası gönderilecek. Bu dizideki tüm etkinlikleri silmek ister misiniz?"
+        "Etkinlik katılımcılarına bir iptal bildirimi e-postası gönderilecek. Bu dizideki tüm etkinlikleri silmek ister misiniz?"
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
-        "Etkinlik katılımcılarına bir iptal bilgilendirmesi e-postası gönderilecek. Bu etkinliği silmek ister misiniz?"
+        "Etkinlik katılımcılarına bir iptal bildirimi e-postası gönderilecek. Bu etkinliği silmek ister misiniz?"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Bir telefon numarası yalnızca bir ${ BRAND_NAME } hesabını doğrulamak için kullanılabilir"
@@ -3566,10 +3575,10 @@
         "Ödenmemiş faturalar nedeniyle hesap erişimi kısıtlandı. Lütfen yöneticinizle görüşün."
       ],
       "Added and removed participants will be notified about all the events in this series.": [
-        "Bu dizideki tüm etkinlikler eklenen ve çıkarılan katılımcılara bildirilecek."
+        "Bu dizideki tüm etkinlikler eklenen ve kaldırılan katılımcılara bildirilecek."
       ],
       "Added and removed participants will be notified.": [
-        "Eklenen ve çıkarılan katılımcılara bildirilecek."
+        "Eklenen ve kaldırılan katılımcılara bildirim gönderilecek."
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Bu adres için güvenilen anahtarlar ile adres doğrulama özelliği açıldı. Bu adrese e-posta gönderebilmek için, önce göndermek için kullanılabilecek herkese açık anahtarlara güvenin."
@@ -3654,6 +3663,9 @@
       ],
       "Contact unassigned to group ${ contactGroupName }": [
         "Kişi ${ contactGroupName } grubundan çıkarıldı"
+      ],
+      "Copy the link to clipboard": [
+        "Bağlantıyı panoya kopyala"
       ],
       "Country code": [
         "Ülke kodu"
@@ -3742,13 +3754,13 @@
         "Kalan süre öngörülüyor..."
       ],
       "Existent and added participants will be notified.": [
-        "Var olan ve eklenen katılımcılara bildirilecek."
+        "Var olan ve eklenen katılımcılara bildirim gönderilecek."
       ],
       "Existent and removed participants will be notified.": [
-        "Var olan ve çıkarılan katılımcılara bildirilecek."
+        "Var olan ve kaldırılan katılımcılara bildirim gönderilecek."
       ],
       "Existent, added and removed participants will be notified.": [
-        "Var olan, eklenen ve çıkarılan katılımcılara bildirilecek."
+        "Var olan, eklenen ve kaldırılan katılımcılara bildirim gönderilecek."
       ],
       "Free up some space or add more storage space.": [
         "Biraz boş yer açın ya da daha fazla depolama alanı ekleyin."
@@ -3872,7 +3884,7 @@
         "Herhangi bir sonuç bulunamadı"
       ],
       "None of the participants can be notified about your changes:": [
-        "Katılımcıların hiçbiri değişiklikleriniz hakkında bilgilendirilemez:"
+        "Değişiklikleriniz katılımcıların hiçbirine bildirilemeyecek:"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Yüklenen anahtarların hiçbiri şifreleme için geçerli değil. Bu adrese ileti gönderebilmek için lütfen geçerli bir anahtar yükleyin ya da \"E-postalar şifrelensin\" seçeneğini kapatın."
@@ -3939,7 +3951,7 @@
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
       ],
       "Removed participants will be notified.": [
-        "Çıkarılan katılımcılara bildirilecek."
+        "Kaldırılan katılımcılara bildirim gönderilecek."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Bu adrese, bir e-posta gönderilirken varsayılan olarak kullanılmasını istediğiniz e-posta biçimini seçin."
@@ -3975,7 +3987,7 @@
         "Dışa aktarmadan önce bu uygulamanın kişilerin şifresini yerel olarak çözmesi gerekiyor. İşlemin sonunda, indirebileceğiniz bir VCF dosyası oluşturulacak."
       ],
       "The following participants cannot be notified about your changes:": [
-        "Şu katılımcılar değişiklikleriniz hakkında bilgilendirilemez:"
+        "Değişiklikleriniz şu katılımcılara bildirilemeyecek:"
       ],
       "The organizer cannot be notified that you decline the invitation:": [
         "Düzenleyiciye daveti reddettiğiniz bildirilemez:"
@@ -4143,7 +4155,7 @@
         "Kaydedilmemiş tüm değişiklikleri kaybedeceksiniz."
       ],
       "You will update all the events in this series. Added and removed participants will be notified.": [
-        "Bu dizideki tüm etkinlikleri güncelleyeceksiniz. Değişiklikler eklenen ve çıkarılan katılımcılara bildirilecek."
+        "Bu dizideki tüm etkinlikleri güncelleyeceksiniz. Değişiklikler eklenen ve kaldırılan katılımcılara bildirilecek."
       ],
       "You will update all the events in this series. An invitation will be sent to the event participants.": [
         "Bu dizideki tüm etkinlikleri güncelleyeceksiniz. Etkinlik katılımcılarına bir davet gönderilecek."
@@ -4152,13 +4164,13 @@
         "Bu dizideki tüm etkinlikleri güncelleyeceksiniz. Değişiklikler var olan ve eklenen katılımcılara bildirilecek."
       ],
       "You will update all the events in this series. Existent and removed participants will be notified.": [
-        "Bu dizideki tüm etkinlikleri güncelleyeceksiniz. Değişiklikler var olan ve çıkarılmış katılımcılara bildirilecek."
+        "Bu dizideki tüm etkinlikleri güncelleyeceksiniz. Değişiklikler var olan ve kaldırılan katılımcılara bildirilecek."
       ],
       "You will update all the events in this series. Existent, added and removed participants will be notified.": [
-        "Bu dizideki tüm etkinlikleri güncelleyeceksiniz. Değişiklikler var olan, eklenen ve çıkarılan katılımcılara bildirilecek."
+        "Bu dizideki tüm etkinlikleri güncelleyeceksiniz. Değişiklikler var olan, eklenen ve kaldırılan katılımcılara bildirilecek."
       ],
       "You will update all the events in this series. Removed participants will be notified.": [
-        "Bu dizideki tüm etkinlikleri güncelleyeceksiniz. Değişiklikler çıkarılmış katılımcılara bildirilecek."
+        "Bu dizideki tüm etkinlikleri güncelleyeceksiniz. Değişiklikler kaldırılan katılımcılara bildirilecek."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Kişi gruplarında bulunabilecek en fazla adres sayısına ulaştınız:"
@@ -4182,10 +4194,10 @@
         "Hesabınızda süresi geçmiş en az bir fatura var. Hesabınıza erişim kısıtlandı. Ödeme yapmazsanız e-postalarınız ve paylaşım bağlantılarınız engellenecek. ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
-        "Adresiniz kullanımdan kaldırılmış. Etkinlik katılımcılarına bir iptal bilgilendirmesi e-postası gönderilemeyecek. Yine de bu dizideki tüm etkinlikleri silmek ister misiniz?"
+        "Adresiniz kullanımdan kaldırılmış. Etkinlik katılımcılarına bir iptal bildirimi e-postası gönderilemeyecek. Yine de bu dizideki tüm etkinlikleri silmek ister misiniz?"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
-        "Adresiniz kullanımdan kaldırılmış. Etkinlik katılımcılarına bir iptal bilgilendirmesi e-postası gönderilemeyecek. Yine de bu etkinliği silmek ister misiniz?"
+        "Adresiniz kullanımdan kaldırılmış. Etkinlik katılımcılarına bir iptal bildirimi e-postası gönderilemeyecek. Yine de bu etkinliği silmek ister misiniz?"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Verileriniz ${ importedEmailAddressStrong } üzerinden ${ BRAND_NAME } hesabınız içine aktarılmaya hazır."
@@ -5091,6 +5103,9 @@
       ],
       "Contact group updated": [
         "Kişi grubu güncellendi"
+      ],
+      "Link copied to clipboard": [
+        "Bağlantı panoya kopyalandı"
       ]
     },
     "Notification in holidays calendar modal": {
@@ -5825,6 +5840,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 kullanıcı"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -5842,6 +5860,15 @@
       ],
       "Highest VPN speed": [
         "En yüksek VPN hızı"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Ücretli ${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "Ücretli ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } ve ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Ücretli ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium early access": [
         "Öncelikli erken erişim"
@@ -5887,14 +5914,24 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } ay",
+        "${ n } ay"
+      ],
       "/ month": [
         "/ ay"
       ],
       "1 year": [
         "1 yıl"
       ],
+      "15 months": [
+        "15 ay"
+      ],
       "2 years": [
         "2 yıl"
+      ],
+      "30 months": [
+        "30 ay"
       ],
       "Billed at ${ amount } for 1 month": [
         "1 aylık ${ amount } olarak faturalanır"
@@ -6041,7 +6078,7 @@
         "${ countMergeableContacts } kişi aynı görünüyor."
       ],
       "A cancellation email will be sent to removed participants for all the events in this series.": [
-        "Çıkarılan katılımcılara bu dizideki tüm etkinlikler için bir iptal bilgilendirmesi gönderilecek."
+        "Kaldırılan katılımcılara bu dizideki tüm etkinlikler için bir iptal bildirimi gönderilecek."
       ],
       "Address copied to clipboard": [
         "Adres panoya kopyalandı"
@@ -6080,16 +6117,16 @@
         "İçe aktarma iptal ediliyor"
       ],
       "Cancellation sent and all events deleted": [
-        "İptal bilgilendirmesi gönderildi ve tüm etkinlikler silindi"
+        "İptal bildirimi gönderildi ve tüm etkinlikler silindi"
       ],
       "Cancellation sent and event deleted": [
-        "İptal bilgilendirmesi gönderildi ve etkinlik silindi"
+        "İptal bildirimi gönderildi ve etkinlik silindi"
       ],
       "Cancellation sent and participants removed": [
-        "İptal bilgilendirmesi gönderildi ve katılımcılar çıkarıldı"
+        "İptal bildirimi gönderildi ve katılımcılar kaldırıldı"
       ],
       "Cancellation sent and participants removed from all events": [
-        "İptal bilgilendirmesi gönderildi ve katılımcılar tüm etkinlliklerden çıkarıldı"
+        "İptal bildirimi gönderildi ve katılımcılar tüm etkinlliklerden kaldırıldı"
       ],
       "Code sent to ${ methodTo }": [
         "Kod ${ methodTo } alıcısına gönderildi"
@@ -6151,13 +6188,13 @@
         "Davet gönderildi ve katılımcılar tüm etkinliklere eklendi"
       ],
       "Participants notified and all events updated": [
-        "Katılımcılar bilgilendirildi ve tüm etkinlikler güncellendi"
+        "Katılımcılara bildirim gönderildi ve değişiklikler kaydedildi"
       ],
       "Participants notified and changes saved": [
-        "Katılımcılar bilgilendirildi ve değişiklikler kaydedildi"
+        "Katılımcılara bildirim gönderildi ve değişiklikler kaydedildi"
       ],
       "Participants notified and event updated": [
-        "Katılımcılar bilgilendirildi ve etkinlik güncellendi"
+        "Katılımcılara bildirim gönderildi ve değişiklikler kaydedildi"
       ],
       "Participation status updated": [
         "Katılım durumu güncellendi"
@@ -6195,6 +6232,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Ücretli ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Ücretli ${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Premium Password Manager": [
         "Ücretli Parola Yöneticisi"
       ]
