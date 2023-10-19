@@ -78,8 +78,7 @@ export function SizeCell({ item }: { item: DriveItem | TrashItem }) {
     const { isDesktop } = useActiveBreakpoint();
     return (
         <TableCell
-            className="flex flex-align-items-center m-0 w-custom"
-            style={{ '--w-custom': isDesktop ? '10%' : '15%' }}
+            className={clsx(['flex flex-align-items-center m-0', isDesktop ? 'w-1/10' : 'w-1/6'])}
             data-testid="column-size"
         >
             {item.isFile ? <SizeCellBase size={item.size} /> : '-'}
