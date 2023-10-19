@@ -6,13 +6,7 @@ import { type EventManagerEvent, NOOP_EVENT } from '@proton/pass/lib/events/mana
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import { hasShareAccessChanged } from '@proton/pass/lib/shares/share.predicates';
 import { loadShare } from '@proton/pass/lib/shares/share.requests';
-import {
-    getShareAccessOptionsIntent,
-    shareAccessChange,
-    sharesSync,
-    vaultCreationSuccess,
-} from '@proton/pass/store/actions';
-import { shareAccessOptionsRequest } from '@proton/pass/store/actions/requests';
+import { shareAccessChange, sharesSync, vaultCreationSuccess } from '@proton/pass/store/actions';
 import type { ItemsByShareId } from '@proton/pass/store/reducers';
 import { selectAllShares } from '@proton/pass/store/selectors';
 import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
@@ -88,8 +82,6 @@ function* onSharesEvent(
                         targetMembers: share.TargetMembers,
                     })
                 );
-
-                yield put(getShareAccessOptionsIntent(shareAccessOptionsRequest(share.ShareID), share.ShareID));
             }
         }
     });
