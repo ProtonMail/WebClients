@@ -458,12 +458,6 @@
       "Invitation could not be rejected": [
         "Inbjudan kunde inte avvisas"
       ],
-      "Invite creation failed.": [
-        "Misslyckades skapa inbjudan."
-      ],
-      "Invite successfully sent": [
-        "Inbjudan skickad"
-      ],
       "Item content cannot exceed 40KB": [
         "Objektinnehåll får inte överstiga 40 kB"
       ],
@@ -496,9 +490,6 @@
       ],
       "Restoring item failed": [
         "Misslyckades att återställa objekt"
-      ],
-      "Setting \"${ payload.name }\" as primary vault failed": [
-        "Misslyckades ställa in “${ payload.name }“ som primärt valv"
       ],
       "Settings update failed": [
         "Misslyckades att uppdatera inställningar"
@@ -614,9 +605,6 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Uppdatering ”${ payload.item.data.metadata.name }” avfärdades"
-      ],
-      "\"${ payload.name }\" set as primary vault": [
-        "“${ payload.name }“ inställt som primärt valv"
       ],
       "${ count } item": [
         "${ count } objekt",
@@ -1020,14 +1008,8 @@
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Du har överskridit antalet valv inkluderat i din prenumeration. Objekt kan endast flyttas till dina två första valv. För att flytta objekt mellan alla valv, uppgradera din prenumeration."
       ],
-      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
-        "Du har överskridit antalet valv inkluderat i din prenumeration. Objekt kan endast flyttas till ditt primära valv. För att flytta objekt mellan alla valv, uppgradera din prenumeration."
-      ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
         "Du har överskridit antalet valv inkluderat i din prenumeration. Nya objekt kan endast skapas i dina två första valv. För att skapa nya objekt i alla valv, uppgradera din prenumeration."
-      ],
-      "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
-        "Du har överskridit antalet valv inkluderat i din prenumeration. Nya objekt kan endast skapas i ditt primära valv. För att skapa nya objekt i alla valv, uppgradera din prenumeration."
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Du har nått gränsen för alias du kan skapa. Skapa ett obegränsat antal alias när du uppgraderar din prenumeration."
@@ -1336,9 +1318,6 @@
       "Prefix": [
         "Prefix"
       ],
-      "Primary vault": [
-        "Primärt valv"
-      ],
       "Prompt for auto-save": [
         "Uppmana för autospara"
       ],
@@ -1442,9 +1421,6 @@
         "Användarnamn (nytt alias)"
       ],
       "Vault": [
-        "Valv"
-      ],
-      "Vaults": [
         "Valv"
       ],
       "Verification number": [
@@ -1802,6 +1778,9 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Kan inte logga in på ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
+      "Upgrade to a paid plan to invite more members to this vault.": [
+        "Uppgradera till ett betalt paket för att bjuda in fler medlemmar till detta valv."
+      ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You can not undo this action": [
         "Valv ”${ vaultName }” och alla dess objekt kommer att tas bort permanent. Du kan inte ångra denna åtgärd"
       ],
@@ -1813,6 +1792,12 @@
       ],
       "You cannot create more vaults than your subscription allows.": [
         "Du kan inte skapa fler valv än vad din prenumeration tillåter."
+      ],
+      "You have reached the limit of members who can access this vault.": [
+        "Du har nått gränsen för medlemmar som kan komma åt detta valv."
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "Du har nått gränsen för valven du kan ha i ditt paket."
       ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "Du har osparade ändringar. Är du säker på att du vill kasta dem?"
@@ -1829,17 +1814,11 @@
       "Your plan only allows you to autofill from your first two vaults": [
         "Ditt paket tillåter dig endast att fylla i automatiskt från dina två första valv"
       ],
-      "Your plan only allows you to autofill from your primary vault": [
-        "Ditt paket tillåter endast att fylla i automatiskt från ditt primära valv"
-      ],
       "Your session was locked due to inactivity": [
         "Din session låstes på grund av inaktivitet"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Din prenumeration tillåter inte att du skapar flera valv. Alla objekt kommer att importeras till ditt första valv. För att importera till flera valv, uppgradera din prenumeration."
-      ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
-        "Din prenumeration tillåter inte att du skapar flera valv. Alla objekt kommer att importeras till ditt primära valv som standard. För att importera till flera valv, uppgradera din prenumeration."
       ]
     }
   }

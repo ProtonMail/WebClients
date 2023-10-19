@@ -461,12 +461,6 @@
       "Invitation could not be rejected": [
         "L'invitation n'a pas pu être refusée."
       ],
-      "Invite creation failed.": [
-        "La création de l'invitation n'a pas abouti."
-      ],
-      "Invite successfully sent": [
-        "L'invitation a été envoyée."
-      ],
       "Item content cannot exceed 40KB": [
         "Le contenu de l'élément ne peut pas dépasser 40 Ko."
       ],
@@ -499,9 +493,6 @@
       ],
       "Restoring item failed": [
         "La restauration de l'élément n'a pas abouti."
-      ],
-      "Setting \"${ payload.name }\" as primary vault failed": [
-        "« ${ payload.name } » n'a pas pu être défini comme coffre-fort principal."
       ],
       "Settings update failed": [
         "La mise à jour des paramètres n'a pas abouti."
@@ -617,9 +608,6 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "La mise à jour de « ${ payload.item.data.metadata.name } » a été rejetée."
-      ],
-      "\"${ payload.name }\" set as primary vault": [
-        "« ${ payload.name } » est défini comme coffre-fort principal."
       ],
       "${ count } item": [
         "${ count } élément",
@@ -1023,14 +1011,8 @@
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Vous avez dépassé le nombre de coffres-forts prévus dans votre abonnement. Les éléments peuvent uniquement être déplacés dans vos deux premiers coffres-forts. Changez d'abonnement pour pouvoir déplacer les éléments entre tous les coffres-forts."
       ],
-      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
-        "Vous avez dépassé le nombre de coffres-forts prévus dans votre abonnement. Les éléments peuvent uniquement être déplacés vers votre coffre-fort principal. Changez d'abonnement pour pouvoir déplacer des éléments entre tous les coffres-forts."
-      ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
         "Vous avez dépassé le nombre de coffres-forts prévus dans votre abonnement. Les nouveaux éléments peuvent uniquement être créés dans vos deux premiers coffres-forts. Changez d'abonnement pour pouvoir créer de nouveaux éléments dans tous les coffres-forts."
-      ],
-      "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
-        "Vous avez dépassé le nombre de coffres-forts prévus dans votre abonnement. Les nouveaux éléments peuvent uniquement être créés dans votre coffre-fort principal. Changez d'abonnement pour pouvoir créer de nouveaux éléments dans tous les coffres-forts."
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Vous avez atteint le nombre maximum d'alias que vous pouvez créer. Changez d'abonnement pour créer un nombre illimité d'alias."
@@ -1339,9 +1321,6 @@
       "Prefix": [
         "Préfixe"
       ],
-      "Primary vault": [
-        "Coffre-fort principal"
-      ],
       "Prompt for auto-save": [
         "Demander l'enregistrement automatique"
       ],
@@ -1446,9 +1425,6 @@
       ],
       "Vault": [
         "Coffre-fort"
-      ],
-      "Vaults": [
-        "Coffres-forts"
       ],
       "Verification number": [
         "Numéro de vérification"
@@ -1832,17 +1808,11 @@
       "Your plan only allows you to autofill from your first two vaults": [
         "Votre abonnement vous permet d'utiliser la fonctionnalité de remplissage automatique uniquement depuis vos deux premiers coffres-forts."
       ],
-      "Your plan only allows you to autofill from your primary vault": [
-        "Votre abonnement actuel permet le remplissage automatique uniquement à partir de votre coffre-fort principal."
-      ],
       "Your session was locked due to inactivity": [
         "Votre session a été verrouillée suite à une période d'inactivité."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Votre abonnement ne vous permet pas de créer plusieurs coffres-forts. Tous les éléments seront importés dans votre premier coffre-fort. Changez d'abonnement pour pouvoir importer dans plusieurs coffres-forts."
-      ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
-        "Votre abonnement ne vous permet pas de créer plusieurs coffres-forts. Tous les éléments seront importés dans votre coffre-fort principal. Changez d'abonnement pour pouvoir importer dans plusieurs coffres-forts."
       ]
     }
   }

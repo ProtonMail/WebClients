@@ -463,12 +463,6 @@
       "Invitation could not be rejected": [
         "Zaproszenie nie może zostać odrzucone"
       ],
-      "Invite creation failed.": [
-        "Utworzenie zaproszenia nie powiodło się."
-      ],
-      "Invite successfully sent": [
-        "Zaproszenie zostało wysłane"
-      ],
       "Item content cannot exceed 40KB": [
         "Rozmiar elementu nie może przekraczać 40kb"
       ],
@@ -501,9 +495,6 @@
       ],
       "Restoring item failed": [
         "Przywracanie elementu nie powiodło się"
-      ],
-      "Setting \"${ payload.name }\" as primary vault failed": [
-        "Ustawienie sejfu \"${ payload.name }\" jako sejfu głównego nie powiodło się"
       ],
       "Settings update failed": [
         "Aktualizacja ustawień nie powiodła się"
@@ -629,9 +620,6 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Aktualizacja \"${ payload.item.data.metadata.name }\" została odrzucona"
-      ],
-      "\"${ payload.name }\" set as primary vault": [
-        "Sejf \"${ payload.name }\" został ustawiony jako główny"
       ],
       "${ count } item": [
         "${ count } element",
@@ -1059,14 +1047,8 @@
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Przekroczono maksymalną liczbę sejfów w obecnej subskrypcji. Elementy mogą być przenoszone tylko do 2 pierwszych sejfów. Ulepsz plan, aby przenosić elementy do innych sejfów."
       ],
-      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
-        "Przekroczono maksymalną liczbę sejfów w obecnej subskrypcji. Elementy mogą być przenoszone tylko do głównego sejfu. Ulepsz plan, aby przenosić elementy do innych sejfów."
-      ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
         "Przekroczono maksymalną liczbę sejfów w obecnej subskrypcji. Nowe elementy mogą być tworzone tylko w 2 pierwszych sejfach. Ulepsz plan, aby tworzyć nowe elementy we wszystkich sejfach."
-      ],
-      "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
-        "Przekroczono maksymalną liczbę sejfów w obecnej subskrypcji. Nowe elementy mogą być tworzone tylko w sejfie głównym. Ulepsz plan, aby tworzyć nowe elementy we wszystkich sejfach."
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Osiągnięto maksymalną liczbę aliasów, które możesz utworzyć. Ulepsz subskrypcję, aby utworzyć nieograniczoną liczbę aliasów."
@@ -1379,9 +1361,6 @@
       "Prefix": [
         "Przedrostek"
       ],
-      "Primary vault": [
-        "Sejf główny"
-      ],
       "Prompt for auto-save": [
         "Proponuj automatyczne zapisywanie"
       ],
@@ -1483,9 +1462,6 @@
       ],
       "Vault": [
         "Sejf"
-      ],
-      "Vaults": [
-        "Sejfy"
       ],
       "Verification number": [
         "Kod CCV"
@@ -1842,6 +1818,9 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Nie można zalogować się do ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
+      "Upgrade to a paid plan to invite more members to this vault.": [
+        "Ulepsz do płatnego planu, aby zapraszać więcej użytkowników do sejfu."
+      ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You can not undo this action": [
         "Sejf \"${ vaultName }\" i wszystkie jego elementy zostaną trwale usunięte. Tej akcji nie można cofnąć"
       ],
@@ -1869,17 +1848,11 @@
       "Your plan only allows you to autofill from your first two vaults": [
         "Twój plan pozwala na autouzupełnianie tylko z sejfu głównego"
       ],
-      "Your plan only allows you to autofill from your primary vault": [
-        "Twój plan pozwala na autouzupełnianie tylko z sejfu głównego"
-      ],
       "Your session was locked due to inactivity": [
         "Sesja została zablokowana z powodu nieaktywności"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Subskrypcja nie pozwala na tworzenie wielu sejfów. Wszystkie elementy zostaną zaimportowane do pierwszego sejfu. Ulepsz plan, aby importować do wielu sejfów."
-      ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
-        "Twoja subskrypcja nie pozwala na tworzenie wielu sejfów. Wszystkie elementy zostaną zaimportowane do głównego sejfu. Ulepsz plan, aby importować do wielu sejfów."
       ]
     }
   }
