@@ -2,6 +2,7 @@ import { type VFC, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 
+import { useItemsFilteringContext } from 'proton-pass-extension/lib/hooks/useItemsFilteringContext';
 import { useNavigationContext } from 'proton-pass-extension/lib/hooks/useNavigationContext';
 import { c } from 'ttag';
 
@@ -47,6 +48,7 @@ const itemTypeViewMap: { [T in ItemType]: VFC<ItemViewProps<T>> } = {
 
 export const ItemViewContainer: VFC = () => {
     const { selectItem } = useNavigationContext();
+    const filters = useItemsFilteringContext();
     const inviteContext = useInviteContext();
 
     const dispatch = useDispatch();
@@ -98,7 +100,10 @@ export const ItemViewContainer: VFC = () => {
     const doMoveItem = (destinationShareId: string) => {
         const optimisticId = uniqueId();
         dispatch(itemMoveIntent({ item, shareId: destinationShareId, optimisticId }));
+
+        if (filters.shareId) filters.setShareId(destinationShareId);
         selectItem(destinationShareId, optimisticId);
+
         closeVaultSelect();
     };
 
