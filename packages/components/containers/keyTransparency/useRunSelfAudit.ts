@@ -39,7 +39,7 @@ const useRunSelfAudit = () => {
     const [{ ID: userID }] = useUser();
     const api = getSilentApi(useApi());
     const { APP_NAME: appName } = useConfig();
-    const ktLSAPI = getKTLocalStorage(appName);
+    const ktLSAPIPromise = getKTLocalStorage(appName);
     const uploadMissingSKL = useUploadMissingSKL();
     const saveSKLToLS = useSaveSKLToLS();
     const reportSelfAuditErrors = useReportSelfAuditErrors();
@@ -77,6 +77,7 @@ const useRunSelfAudit = () => {
         const userKeys = await getUserKeys();
         const userPrivateKeys = userKeys.map(({ privateKey }) => privateKey);
         const { publicKey: userPrimaryPublicKey } = getPrimaryKey(userKeys) || {};
+        const ktLSAPI = await ktLSAPIPromise;
         if (!userPrimaryPublicKey) {
             throw new Error('User has no user keys');
         }
