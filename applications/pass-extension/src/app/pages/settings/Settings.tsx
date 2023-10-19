@@ -5,10 +5,10 @@ import { HashRouter, Route, Switch, useHistory } from 'react-router-dom';
 
 import { APP_VERSION } from 'proton-pass-extension/app/config';
 import { ExtensionApp } from 'proton-pass-extension/lib/components/Extension/ExtensionApp';
-import { ExtensionContextProvider } from 'proton-pass-extension/lib/components/Extension/ExtensionContext';
+import { ExtensionConnect } from 'proton-pass-extension/lib/components/Extension/ExtensionConnect';
 import { ExtensionHead } from 'proton-pass-extension/lib/components/Extension/ExtensionHead';
 import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
-import { useExtensionContext } from 'proton-pass-extension/lib/hooks/useExtensionContext';
+import { useExtensionConnectContext } from 'proton-pass-extension/lib/hooks/useExtensionConnectContext';
 import { createClientStore } from 'proton-pass-extension/lib/store/client-store';
 import { c, msgid } from 'ttag';
 
@@ -78,7 +78,7 @@ const getSettingsTabs: () => (Tab & { pathname: string })[] = () => {
 };
 
 const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
-    const context = useExtensionContext();
+    const context = useExtensionConnectContext();
     const user = useSelector(selectUser);
     const passPlan = useSelector(selectPassPlan);
     const planDisplayName = useSelector(selectPlanDisplayName);
@@ -178,11 +178,7 @@ const SettingsApp: VFC = () => {
 
     return (
         <HashRouter>
-            <ExtensionContextProvider
-                endpoint="page"
-                messageFactory={pageMessage}
-                onWorkerMessage={handleWorkerMessage}
-            >
+            <ExtensionConnect endpoint="page" messageFactory={pageMessage} onWorkerMessage={handleWorkerMessage}>
                 <div
                     className="pass-settings flex flex-column ui-standard w-full p-4 mx-auto bg-weak min-h-custom"
                     style={{ '--min-h-custom': '100vh' }}
@@ -197,7 +193,7 @@ const SettingsApp: VFC = () => {
                         />
                     </Switch>
                 </div>
-            </ExtensionContextProvider>
+            </ExtensionConnect>
         </HashRouter>
     );
 };
