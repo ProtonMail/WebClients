@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';
 
 import { checkExtensionPermissions } from '../utils/permissions';
-import { useExtensionContext } from './useExtensionContext';
+import { useExtensionConnectContext } from './useExtensionConnectContext';
 
 /* On hook first run : we programatically check the permissions
  * using the browser API. We then setup a listener for the worker
@@ -11,7 +11,7 @@ import { useExtensionContext } from './useExtensionContext';
  * while the clients are running */
 export const usePermissionsGranted = (): boolean => {
     const [valid, setValid] = useState<boolean>(false);
-    const { context: extensionContext } = useExtensionContext();
+    const { context: extensionContext } = useExtensionConnectContext();
 
     const checkForPermissions = useCallback(async () => {
         try {
