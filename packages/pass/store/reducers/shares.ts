@@ -176,8 +176,8 @@ export const withOptimisticShares = withOptimistic<SharesState>(
         }
 
         if (shareAccessChange.match(action)) {
-            const { shareId, owner, shared, shareRoleId, targetMembers } = action.payload;
-            return partialMerge(state, { [shareId]: { owner, shared, shareRoleId, targetMembers } });
+            const { shareId, ...shareAccessOptions } = action.payload;
+            return partialMerge(state, { [shareId]: shareAccessOptions });
         }
 
         if (getShareAccessOptionsSuccess.match(action)) {
