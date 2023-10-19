@@ -140,7 +140,7 @@ const Sidebar = ({
                 <div
                     className={clsx(
                         growContent ? 'flex-item-fluid' : 'flex-item-nogrow',
-                        'flex-nowrap flex flex-column overflow-overlay pb-4 md:mt-2'
+                        'flex-nowrap flex flex-column overflow-overlay pb-2 md:mt-2'
                     )}
                 >
                     {contactsButton}
