@@ -410,12 +410,6 @@
       "Invitation could not be rejected": [
         "Приглашение не может быть отклонено"
       ],
-      "Invite creation failed.": [
-        "Сбой создания приглашения."
-      ],
-      "Invite successfully sent": [
-        "Приглашение успешно отправлено"
-      ],
       "Item content cannot exceed 40KB": [
         "Содержимое элемента не может превышать 40 Кбайт"
       ],
@@ -448,9 +442,6 @@
       ],
       "Restoring item failed": [
         "Ошибка при восстановлении элемента"
-      ],
-      "Setting \"${ payload.name }\" as primary vault failed": [
-        "Сбой при установке хранилища \"${ payload.name }\" как главного"
       ],
       "Settings update failed": [
         "Ошибка при обновлении настроек"
@@ -576,9 +567,6 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Обновление \"${ payload.item.data.metadata.name }\" было отклонено"
-      ],
-      "\"${ payload.name }\" set as primary vault": [
-        "Хранилище \"${ payload.name }\" установлено как основное"
       ],
       "${ count } item": [
         "${ count } элемент",
@@ -982,12 +970,6 @@
         "У вас осталось ${ daysRemaining } дней пробного периода.",
         "У вас осталось ${ daysRemaining } дня пробного периода."
       ],
-      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
-        "Вы превысили количество хранилищ, включенных в вашу подписку. Элементы могут быть перемещены только в ваше основное хранилище. Чтобы перемещать элементы между всеми хранилищами, улучшите свою подписку."
-      ],
-      "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
-        "Вы превысили количество хранилищ, включенных в вашу подписку. Новые элементы могут быть созданы только в вашем основном хранилище. Чтобы создавать новые элементы во всех хранилищах, обновите вашу подписку."
-      ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Вы достигли лимита на количество псевдонимов, которые можно создать. Создавайте неограниченное количество псевдонимов, улучшив свою подписку."
       ],
@@ -1292,9 +1274,6 @@
       ],
       "Prefix": [
         "Префикс"
-      ],
-      "Primary vault": [
-        "Главное хранилище"
       ],
       "Prompt for auto-save": [
         "Предлагать автосохранение"
@@ -1747,14 +1726,8 @@
       "Your plan does not allow you to create more aliases": [
         "Ваш тариф не позволяет вам создать больше псевдонимов"
       ],
-      "Your plan only allows you to autofill from your primary vault": [
-        "На вашем тарифе автозаполнение разрешено только для основного хранилища."
-      ],
       "Your session was locked due to inactivity": [
         "Ваша сессия заблокирована из-за отсутствия активности"
-      ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
-        "Ваша подписка не позволяет создавать несколько хранилищ. Все элементы будут импортированы в ваше основное хранилище. Чтобы импортировать в несколько хранилищ, улучшите свою подписку."
       ]
     }
   }

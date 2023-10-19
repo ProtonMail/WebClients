@@ -463,12 +463,6 @@
       "Invitation could not be rejected": [
         "Pozvánku nie je možné odmietnuť"
       ],
-      "Invite creation failed.": [
-        "Vytvorenie pozvánky zlyhalo."
-      ],
-      "Invite successfully sent": [
-        "Pozvánka bola úspešne odoslaná"
-      ],
       "Item content cannot exceed 40KB": [
         "Obsah položky nesmie presiahnuť 40KB"
       ],
@@ -501,9 +495,6 @@
       ],
       "Restoring item failed": [
         "Obnovenie položky zlyhalo"
-      ],
-      "Setting \"${ payload.name }\" as primary vault failed": [
-        "Nastavenie ${ payload.name } ako primárneho trezoru zlyhalo"
       ],
       "Settings update failed": [
         "Aktualizácia nastavení zlyhala"
@@ -629,9 +620,6 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" aktualizácia bola zamietnutá"
-      ],
-      "\"${ payload.name }\" set as primary vault": [
-        "\"${ payload.name }\" nastavený ako primárny trezor"
       ],
       "${ count } item": [
         "${ count } položka",
@@ -1059,14 +1047,8 @@
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Prekročili ste počet trezorov zahrnutých vo vašom predplatnom. Položky je možné presunúť iba do vašich prvých dvoch trezorov. Pre presúvanie položiek medzi všetkými trezormi aktualizujte vaše predplatné."
       ],
-      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
-        "Prekročili ste počet trezorov zahrnutých vo vašom predplatnom. Položky je možné presunúť iba do primárneho trezoru. Pre presúvanie položiek medzi všetkými trezormi upgradujte svoje predplatné."
-      ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
         "Prekročili ste počet trezorov zahrnutých vo vašom predplatnom. Nové položky je možné vytvárať len vo vašich prvých dvoch trezoroch. Pre vytvorenie položiek vo všetkých trezoroch aktualizujte svoje predplatné."
-      ],
-      "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
-        "Prekročili ste počet trezorov zahrnutých vo vašom predplatnom. Nové položky je možné vytvoriť iba v primárnom trezore. Pre vytvorenie položiek vo všetkých trezoroch upgradujte svoje predplatné."
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Dosiahli ste limit aliasov, ktoré môžete vytvoriť. Vytvorte neobmedzený počet aliasov po upgrade predplatného."
@@ -1379,9 +1361,6 @@
       "Prefix": [
         "Predpona"
       ],
-      "Primary vault": [
-        "Primárny trezor"
-      ],
       "Prompt for auto-save": [
         "Výzva na automatické ukladanie"
       ],
@@ -1486,9 +1465,6 @@
       ],
       "Vault": [
         "Trezor"
-      ],
-      "Vaults": [
-        "Trezory"
       ],
       "Verification number": [
         "Overovacie číslo"
@@ -1815,6 +1791,12 @@
       "Please log back in": [
         "Prihláste sa znova prosím"
       ],
+      "Please verify your email address in order to use email aliases": [
+        "Ak chcete používať e-mailové aliasy, overte svoju e-mailovú adresu, prosím"
+      ],
+      "Please verify your email address in order to use vault sharing": [
+        "Aby ste mohli využívať zdieľanie trezoru, overte svoju e-mailovú adresu, prosím"
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Hlásenia nie sú zabezpečené end-to-end šifrovaním, neposielajte žiadne citlivé informácie, prosím."
       ],
@@ -1866,17 +1848,11 @@
       "Your plan only allows you to autofill from your first two vaults": [
         "Váš plán umožňuje automatické vypĺňanie len z vašich prvých dvoch trezorov"
       ],
-      "Your plan only allows you to autofill from your primary vault": [
-        "Váš plán umožňuje automatické vypĺňanie len z vášho primárneho trezoru"
-      ],
       "Your session was locked due to inactivity": [
         "Vaša relácia bola uzamknutá kvôli nečinnosti"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Vaše predplatné vám neumožňuje vytvoriť viacero trezorov. Všetky položky budú importované do vášho prvého trezoru. Pre importovanie do viacerých trezorov, aktualizujte vaše predplatné."
-      ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
-        "Vaše predplatné vám neumožňuje vytvoriť viacero trezorov. Všetky položky budú importované do primárneho trezoru. Pre importovanie do viacerých trezorov, upgradujte svoje predplatné."
       ]
     }
   }

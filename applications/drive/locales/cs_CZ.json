@@ -2579,6 +2579,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Prémiové funkce ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Prémiové funkce ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Prémiové funkce ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "Až 6 uživatelů"
       ]
@@ -3439,6 +3448,9 @@
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Pokračujte v používání ${ DRIVE_APP_NAME } a odemkněte disk později"
       ],
+      "Copy the link to clipboard": [
+        "Kopírovat odkaz do schránky"
+      ],
       "Country code": [
         "Kód země"
       ],
@@ -3836,7 +3848,7 @@
         "z"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
-        "Jedna ze zašifrovaných jednotek je uzamčená. Je to pravděpodobně způsobeno nedávným resetem hesla."
+        "Jeden z vašich šifrovaných disků je uzamčen. Je to pravděpodobně způsobeno nedávným resetem hesla."
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Jeden nebo více důvěryhodných klíčů byl vlastníkem označen jako \"kompromitovaný\". Doporučujeme, abyste u takových klíčů vybrali volbu \"Nedůvěřovat\"."
@@ -5227,6 +5239,9 @@
       "File or folder is missing a name": [
         "Souboru nebo složce chybí název"
       ],
+      "Link copied to clipboard": [
+        "Odkaz zkopírován do schránky"
+      ],
       "Move ${ itemsToMoveCount } file": [
         "Přesunout ${ itemsToMoveCount } soubor",
         "Přesunout ${ itemsToMoveCount } soubory",
@@ -5811,6 +5826,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 uživatel"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -5828,6 +5846,15 @@
       ],
       "Highest VPN speed": [
         "Nejvyšší rychlost VPN"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Prémiové funkce ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "Prémiové funkce ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } a ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Prémiové funkce ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium early access": [
         "Prémiový předběžný přístup"
@@ -5873,14 +5900,26 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } měsíc",
+        "${ n } měsíce",
+        "${ n } měsíců",
+        "${ n } měsíců"
+      ],
       "/ month": [
         "/ měsíc"
       ],
       "1 year": [
         "1 rok"
       ],
+      "15 months": [
+        "15 měsíců"
+      ],
       "2 years": [
         "2 roky"
+      ],
+      "30 months": [
+        "30 měsíců"
       ],
       "Billed at ${ amount } for 1 month": [
         "Účtováno ${ amount } za 1 měsíc"
@@ -5992,6 +6031,9 @@
       ]
     },
     "Storage": {
+      "Get storage": [
+        "Získat úložiště"
+      ],
       "Release notes": [
         "Seznam změn"
       ],
@@ -6084,6 +6126,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Prémiové funkce ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Prémiové funkce ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Premium Password Manager": [
         "Prémiový správce hesel"
       ]

@@ -355,6 +355,9 @@
       "Cannot create alias (${ error }).": [
         "無法創建別名 (${ error })。"
       ],
+      "Cannot send invitation to this address at the moment": [
+        "目前無法將邀請發送至此地址"
+      ],
       "Could not leave vault.": [
         "無法離開保管庫。"
       ],
@@ -421,12 +424,6 @@
       "Invitation could not be rejected": [
         "邀請函無法被回絕"
       ],
-      "Invite creation failed.": [
-        "邀請創建失敗"
-      ],
-      "Invite successfully sent": [
-        "邀請已成功傳送"
-      ],
       "Item content cannot exceed 40KB": [
         "項目無法超越40KB"
       ],
@@ -459,9 +456,6 @@
       ],
       "Restoring item failed": [
         "還原項目失敗"
-      ],
-      "Setting \"${ payload.name }\" as primary vault failed": [
-        "設定${ payload.name }為主要保管庫失敗"
       ],
       "Settings update failed": [
         "設定更新失敗"
@@ -569,9 +563,6 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "${ payload.item.data.metadata.name }已忽略更新"
-      ],
-      "\"${ payload.name }\" set as primary vault": [
-        "${ payload.name }設為主要保管庫"
       ],
       "${ count } items": [
         "${ count } 個項目"
@@ -909,12 +900,6 @@
       "You have ${ daysRemaining } days left in your trial period.": [
         "還剩 ${ daysRemaining } 天免費試用"
       ],
-      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
-        "您以達到訂閱的最高的保管庫上限。項目只能移置主要保管庫。若要於保管庫之間移動，升級級方案"
-      ],
-      "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
-        "您以達到訂閱的最高的保管庫上限。項目只能移置主要保管庫。若要於保管庫之間移動，升級級方案"
-      ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "你以達到新增別名。升級訂閱以新增無限別名"
       ],
@@ -1213,9 +1198,6 @@
       ],
       "Prefix": [
         "前綴"
-      ],
-      "Primary vault": [
-        "主要的保管庫"
       ],
       "Prompt for auto-save": [
         "提示自動儲存"
@@ -1671,14 +1653,8 @@
       "Your plan does not allow you to create more aliases": [
         "您的訂閱無法創建更多的別名"
       ],
-      "Your plan only allows you to autofill from your primary vault": [
-        "您的方案只允許從主要保自動填入"
-      ],
       "Your session was locked due to inactivity": [
         "您的作業階段因為使用而鎖定"
-      ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
-        "您的訂閱不允許新增多重保管庫。預設會把所有項目匯入主要保管庫。若要匯入多重保管庫，需升級訂閱。"
       ]
     }
   }

@@ -461,12 +461,6 @@
       "Invitation could not be rejected": [
         "Fehler beim Ablehnen der Einladung."
       ],
-      "Invite creation failed.": [
-        "Fehler beim Erstellen der Einladung."
-      ],
-      "Invite successfully sent": [
-        "Einladung erfolgreich versendet"
-      ],
       "Item content cannot exceed 40KB": [
         "Der Inhalt des Eintrags darf 40 KB nicht überschreiten."
       ],
@@ -499,9 +493,6 @@
       ],
       "Restoring item failed": [
         "Fehler beim Wiederherstellen des Eintrags."
-      ],
-      "Setting \"${ payload.name }\" as primary vault failed": [
-        "Festlegen von \"${ payload.name }\" als primärer Tresor fehlgeschlagen."
       ],
       "Settings update failed": [
         "Fehler beim Aktualisieren der Einstellungen."
@@ -617,9 +608,6 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Die Aktualisierung von \"${ payload.item.data.metadata.name }\" wurde verworfen."
-      ],
-      "\"${ payload.name }\" set as primary vault": [
-        "\"${ payload.name }\" als primärer Tresor festgelegt."
       ],
       "${ count } item": [
         "${ count } Eintrag",
@@ -812,6 +800,9 @@
       ],
       "Invite successfully resent": [
         "Einladung erfolgreich erneut versendet."
+      ],
+      "invites you to access items in": [
+        "lädt Sie zum Zugriff auf Elemente in"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Es scheint, dass du bereits bei ${ PASS_APP_NAME } angemeldet bist. Wenn du versuchst, dich mit einem anderen Konto anzumelden, melde dich bitte zuerst bei der Erweiterung ab."
@@ -1020,14 +1011,8 @@
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Du hast die Anzahl der in deinem Abonnement enthaltenen Tresore überschritten. Einträge können nur in deine ersten zwei Tresore verschoben werden. Um Einträge zwischen allen Tresoren zu verschieben, upgrade dein Abonnement."
       ],
-      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
-        "Du hast die Anzahl der in deinem Abonnement enthaltenen Tresore überschritten. Einträge können nur in deinen primären Tresor verschoben werden. Um Einträge zwischen allen Tresoren zu verschieben, upgrade dein Abonnement."
-      ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
         "Du hast die Anzahl der in deinem Abonnement enthaltenen Tresore überschritten. Neue Einträge können nur in deinen ersten zwei Tresoren erstellt werden. Um neue Einträge in allen Tresoren zu erstellen, upgrade dein Abonnement."
-      ],
-      "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
-        "Du hast die Anzahl der in deinem Abonnement enthaltenen Tresore überschritten. Neue Einträge können nur in deinem primären Tresor erstellt werden. Um neue Einträge in allen Tresoren zu erstellen, upgrade dein Abonnement."
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Du hast das Limit an Aliassen erreicht, die du erstellen kannst. Ein Upgrade deines Abonnements ermöglicht dir das Erstellen von unbegrenzten Aliassen."
@@ -1336,9 +1321,6 @@
       "Prefix": [
         "Präfix"
       ],
-      "Primary vault": [
-        "Primärer Tresor"
-      ],
       "Prompt for auto-save": [
         "Aufforderung zum Auto-Speichern"
       ],
@@ -1443,9 +1425,6 @@
       ],
       "Vault": [
         "Tresor"
-      ],
-      "Vaults": [
-        "Tresore"
       ],
       "Verification number": [
         "Kartenprüfnummer"
@@ -1790,6 +1769,9 @@
       "Title is required": [
         "Titel ist erforderlich"
       ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "Übertragen Sie das Eigentum an diesem Tresor auf ${ email }?"
+      ],
       "Trash alias ?": [
         "Alias in den Papierkorb verschieben?"
       ],
@@ -1826,17 +1808,11 @@
       "Your plan only allows you to autofill from your first two vaults": [
         "Dein Abonnement gestattet dir nur das automatische Ausfüllen aus deinen ersten zwei Tresoren."
       ],
-      "Your plan only allows you to autofill from your primary vault": [
-        "Dein Abonnement gestattet dir nur das automatische Ausfüllen aus deinem primären Tresor."
-      ],
       "Your session was locked due to inactivity": [
         "Deine Sitzung wurde aufgrund von Inaktivität gesperrt."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Dein Abonnement erlaubt es dir nicht, mehrere Tresore zu erstellen. Alle Einträge werden in deinen ersten Tresor importiert. Um in mehrere Tresore zu importieren, musst du dein Abonnement upgraden."
-      ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
-        "Dein Abonnement erlaubt es dir nicht, mehrere Tresore zu erstellen. Alle Einträge werden in deinen primären Tresor importiert. Um in mehrere Tresore zu importieren, musst du dein Abonnement upgraden."
       ]
     }
   }

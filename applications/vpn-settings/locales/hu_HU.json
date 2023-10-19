@@ -26,6 +26,9 @@
       "Add domain": [
         "Domain hozzáadása"
       ],
+      "Add multiple users": [
+        "Több felhasználó hozzáadása"
+      ],
       "Add PayPal": [
         "PayPal hozzáadása"
       ],
@@ -98,6 +101,9 @@
       "Create": [
         "Létrehozás"
       ],
+      "Create user": [
+        "Felhasználó készítés"
+      ],
       "Create users": [
         "Felhasználók létrehozása"
       ],
@@ -115,6 +121,9 @@
       ],
       "Delete": [
         "Törlés"
+      ],
+      "Delete user": [
+        "Felhasználó törlése"
       ],
       "Delete your account": [
         "Fiók törlése"
@@ -148,6 +157,9 @@
       ],
       "Download all configurations": [
         "Összes beállítás letöltése"
+      ],
+      "Download our CSV template": [
+        "CSV-sablonunk letöltése"
       ],
       "Edit": [
         "Szerkesztés"
@@ -200,6 +212,9 @@
       "Get more addresses": [
         "Több cím megszerzése"
       ],
+      "Get more licenses": [
+        "Több licensz megszerzése"
+      ],
       "Get the deal": [
         "Érdekel az ajánlat"
       ],
@@ -229,6 +244,9 @@
       ],
       "Keep my ${ vpnPlanNameShort } subscription": [
         "A ${ vpnPlanNameShort } előfizetés megtartása"
+      ],
+      "Let's talk": [
+        "Beszélgessünk!"
       ],
       "Load more": [
         "Több betöltése"
@@ -265,6 +283,9 @@
       ],
       "Pay": [
         "Fizetés"
+      ],
+      "Pay ${ price }": [
+        "${ price } fizetése"
       ],
       "Pay ${ price } now": [
         "${ price } kifizetése"
@@ -537,6 +558,12 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Ez le fogja választani az összes routert és klienst, ami ezt a tanúsítvány használja."
+      ]
+    },
+    "Billing cycle": {
+      "${ n } month": [
+        "${ n } hónap",
+        "${ n } hónap"
       ]
     },
     "Billing cycle option": {
@@ -1582,6 +1609,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Továbbá meglátogathatja az ${ statusPageLink }"
       ],
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "Az Ön felhasználóneve: ${ Local }. ${ Local }@${ Domain } e-mail cím létrehozásához válassza a Beállítások Üzenetek és szerkesztés Rövid domain (pm.me) menüpontot"
+      ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "Minden tárhely terület kiosztásra került. Kérjük csökkentse más felhasználók tárhelyét."
       ],
@@ -1599,6 +1629,9 @@
       ],
       "Domain not available, try again later": [
         "A domain név nem érhető el, próbálja meg később"
+      ],
+      "Email address is invalid": [
+        "Az e-mail cím érvénytelen"
       ],
       "Email is not valid": [
         "Érvénytelen e-mail cím"
@@ -1666,6 +1699,9 @@
       "Passwords do not match": [
         "A jelszavak nem egyeznek"
       ],
+      "Payment process canceled": [
+        "A fizetés folyamata megszakítva"
+      ],
       "Payment process consumed": [
         "Fizetési folyamat befejezve"
       ],
@@ -1720,6 +1756,9 @@
       "Tab closed": [
         "Fül bezárva"
       ],
+      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
+        "Az Ön által használt böngésző nem támogatja a kívánt fizetési módot. Kérjük, használjon másik böngészőt, vagy jelentkezzen be egy számítógépről."
+      ],
       "The email addresses do not match": [
         "Az e-mail címek nem egyeznek"
       ],
@@ -1746,6 +1785,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Legalább ${ minimumLength } karakter szükséges ebben a mezőben."
+      ],
+      "Try again later": [
+        "Próbáld újra később"
       ],
       "Try using only letters, numerals, and _.-": [
         "Próbáljon csak betűket, számokat és _.-t használni"
@@ -1855,6 +1897,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Prémium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Prémium ${ MAIL_SHORT_APP_NAME } és ${ CALENDAR_SHORT_APP_NAME }."
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Prémium ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "Maximum 6 felhasználóig"
       ]
@@ -2386,9 +2437,6 @@
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "Semmiképp NE felejtse el ezt a jelszót. Ha elfelejti, nem fog tudni sem bejelentkezni, sem pedig az üzeneteit visszafejteni."
       ],
-      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Ne használja az OpenVPN / IKEv2 adatokat a ${ VPN_APP_NAME } alkalmazásban vagy a ${ VPN_APP_NAME } vezérlőpulton. ${ learnMore }"
-      ],
       "Done": [
         "Kész"
       ],
@@ -2815,6 +2863,9 @@
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Ezeket a beállításokat WireGuard routerekkel és hivatalos kliensekkel való működéshez biztosítottuk."
       ],
+      "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
+        "Ezeket az azonosítókat nem lehet használni hivatalos ${ VPN_APP_NAME } alkalmazásainkhoz történő bejelentkezéshez. ${ learnMore }"
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Ez a fiók felfüggesztésre került a szabályzat valószínűsíthető megsértése miatt."
       ],
@@ -2907,6 +2958,9 @@
       ],
       "Unverified email address.": [
         "Hitelesítetlen e-mail cím"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Legfeljebb ${ FAMILY_MAX_USERS } felhasználó"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Váltson nagyobb csomagra a prémium funkciókért, termékekért és tárhelyért, egy kedvezményes áron"
@@ -3023,6 +3077,9 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Ezt egyszer szerkeszheti, hogy biztosítsa a helyes email címet hitelesítéshez."
       ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
+        "Azonnal feloldhatja a fenti beállítást azzal, hogy hozzáad ${ specificCountryCount }-ot a csomagjában lévő IP címek számához vagy lépjen kapcsolatba velünk személyre szabott megoldáshoz"
+      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. A ${ MAIL_SHORT_APP_NAME } előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat és a ${ BRAND_NAME } felhasználókat akivel megosztotta a naptárait.",
         "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. A ${ MAIL_SHORT_APP_NAME } előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat és a ${ BRAND_NAME } felhasználókat akivel megosztotta a naptárait."
@@ -3047,9 +3104,6 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Az alábbi bejelentkezéssel csatlakozhat a ${ VPN_APP_NAME } szerverekhez ha valamilyen külső VPN alkalmazást használ, mint például Tunnelblick macOS-en vagy OpenVPN GNU/Linux-on."
-      ],
-      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Nem használhatja az OpenVPN / IKEv2 bejelentkezési adatokat a ${ VPN_APP_NAME } alkalmazásokban való bejelentkezéshez vagy a ${ VPN_APP_NAME } vezérlőpulthoz. ${ learnMore }"
       ],
       "You have no saved payment methods.": [
         "Nincs elmentve fizetési mód."
@@ -4369,8 +4423,23 @@
       "An external address cannot be default": [
         "Egy külső cím nem lehet alapértelmezett"
       ],
+      "Invalid code": [
+        "Érvénytelen kód"
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 azonosító frissítve"
+      ],
+      "Reminder has been sent": [
+        "Az emlékeztető el lett küldve"
+      ],
+      "Two-factor authentication has been enforced for administrators": [
+        "A kétlépcsős hitelesítés használata kötelezővé lett téve rendszergazdáknak"
+      ],
+      "Two-factor authentication has been enforced for all members": [
+        "A kétlépcsős hitelesítés használata kötelezővé lett téve minden tagnak"
+      ],
+      "Two-factor authentication is not required anymore": [
+        "A kétlépcsős hitelesítés használata már nem szükséges"
       ]
     },
     "Onboarding": {
@@ -4641,6 +4710,9 @@
         "Jelszó újrabeállítás igénylés elfogadva (${ user.Email }). ${ timeRemaining.inHours } órája maradt jelszava megváltoztatására.",
         "Jelszó újrabeállítási igénylés elfogadva (${ user.Email }). ${ timeRemaining.inHours } órája maradt jelszava megváltoztatására."
       ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Kérlek, menj a bejelentkezett eszközre (abban a munkamenetben, ahol a kérés indult), hogy megváltoztasd a jelszavadat."
+      ],
       "This permission expires in ${ timeRemaining.inDays } day": [
         "Ez az engedély${ timeRemaining.inDays } órán belül lejár",
         "Ez az engedély ${ timeRemaining.inDays } órán belül lejár"
@@ -4648,6 +4720,9 @@
       "This permission expires in ${ timeRemaining.inHours } hour": [
         "Ez az engedély ${ timeRemaining.inHours } órán belül lejár",
         "Ez az engedély${ timeRemaining.inHours } órán belül lejár"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Most szabadon megváltoztathatod a jelszavadat a(z) ${ boldEmail } fiókhoz ${ boldDaysRemaining }-ig."
       ]
     },
     "session_recovery:available:link": {
@@ -4670,6 +4745,11 @@
         "Jelszó visszaállítás megszakítása"
       ]
     },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Írd be jelenlegi jelszavadat a jelszóvisszaállítási folyamat megszakításához. Más változás nem lép életbe."
+      ]
+    },
     "session_recovery:cancellation:notification": {
       "Password reset cancelled": [
         "Jelszó visszaállítás megszakítva"
@@ -4678,6 +4758,11 @@
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Jelszó visszaállítás megszakítása?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "A jelszóvisszaállítási kérés megszakadt (${ user.Email }). Ha te nem kezdeményezted ezt a kérést, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -4701,9 +4786,22 @@
         "${ gracePeriodHoursRemaining } óra maradt.",
         "${ gracePeriodHoursRemaining } óra maradt."
       ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "Ha nem te kérted a jelszóvisszaállítást, akkor most mond le ezt a kérelmet"
+      ],
       "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
         "Jelszó újrabeállítás igényelve (${ user.Email }). A jelszót ${ hoursRemaining } órán belül változtathatja meg.",
         "Jelszó újrabeállítás igényelve (${ user.Email }). A jelszót ${ hoursRemaining } órán belül változtathatja meg."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "Hogy biztosak lehessünk benne, hogy valóban te próbálod visszaállítani a jelszavad, 72 órát várunk a kérések jóváhagyásáig. A jelszavadat megváltoztathatod ${ boldTimeLeft } alatt. ${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "Megkaptuk a jelszóvisszaállítási kérést a következő e-mail címre: ${ boldEmail }."
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } óra múlva tudja jelszavát megváltoztatni",
+        "${ gracePeriodHoursRemaining } óra múlva tudja jelszavát megváltoztatni"
       ]
     },
     "session_recovery:in_progress:link": {
@@ -4714,6 +4812,12 @@
     "session_recovery:in_progress:title": {
       "Password reset requested": [
         "Jelszó visszaállítási kérelem történt"
+      ]
+    },
+    "session_recovery:initiation:title": {
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "A jelszavát ${ gracePeriodHoursRemaining } múlva tudja visszaállítani.",
+        "A jelszavát ${ gracePeriodHoursRemaining } múlva tudja visszaállítani."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -4798,6 +4902,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 felhasználó"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -4815,6 +4922,15 @@
       ],
       "Highest VPN speed": [
         "Legnagyobb VPN sebesség"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Prémium ${ MAIL_SHORT_APP_NAME } és ${ CALENDAR_SHORT_APP_NAME }."
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "Prémium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } és ${ DRIVE_SHORT_APP_NAME }."
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Prémium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium early access": [
         "Prémium korai-hozzáférés"
@@ -4860,14 +4976,24 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } hónap",
+        "${ n } hónap"
+      ],
       "/ month": [
         "/ hó"
       ],
       "1 year": [
         "1 év"
       ],
+      "15 months": [
+        "15 hónap"
+      ],
       "2 years": [
         "2 év"
+      ],
+      "30 months": [
+        "30 hónap"
       ],
       "Billed at ${ amount } for 1 month": [
         "1 hónapra ${ amount } számlázva"
@@ -5218,6 +5344,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Prémium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Prémium ${ MAIL_SHORT_APP_NAME } és ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "Premium Password Manager": [
         "Prémium jelszókezelő"
       ]

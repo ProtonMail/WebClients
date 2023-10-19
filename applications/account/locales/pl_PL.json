@@ -1302,6 +1302,9 @@
         "${ n } miesiące",
         "${ n } miesięcy",
         "${ n } miesiąca"
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
+        "Odnawia się automatycznie za ${ renewPrice }, przez ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -3500,9 +3503,6 @@
       "Contact signature not verified": [
         "Podpis kontaktu nie został zweryfikowany"
       ],
-      "Could not save preference": [
-        "Nie można zapisać ustawień"
-      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Odznacz co najmniej ${ calendarsToFixCount } kalendarz",
         "Odznacz co najmniej ${ calendarsToFixCount } kalendarze",
@@ -4361,6 +4361,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } Premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } Premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } Premium"
+      ],
       "Up to 6 users": [
         "Do 6 użytkowników"
       ]
@@ -6173,9 +6182,6 @@
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "ZAPAMIĘTAJ to hasło. Jeśli je zapomnisz, nie będziesz mógł zalogować się ani odszyfrować wiadomości."
       ],
-      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Nie używaj danych logowania OpenVPN / IKEv2 w aplikacjach lub pulpicie ${ VPN_APP_NAME }. ${ learnMore }"
-      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Czy chcesz unieważnić wszystkie sesje oprócz obecnej?"
       ],
@@ -7061,6 +7067,15 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Wyślij środki na poniższy adres lub zeskanuj kod QR. Wpłata zostanie zaksięgowana na koncie po potwierdzeniu."
       ],
+      "Subscription auto-renews every 12 months.": [
+        "Subskrypcja odnowi się automatycznie co 12 miesięcy."
+      ],
+      "Subscription auto-renews every 24 months.": [
+        "Subskrypcja odnowi się automatycznie co 24 miesięce."
+      ],
+      "Subscription auto-renews every month.": [
+        "Subskrypcja odnowi się automatycznie co miesięc."
+      ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Subskrypcja wkrótce się zakończy. Reaktywuj ją do ${ byDate }, aby zachować bonusy planu ${ planName }. ${ reactivateLink }"
       ],
@@ -7637,9 +7652,6 @@
       "You cannot undo this action.": [
         "Tej akcji nie można cofnąć."
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Nie możesz używać danych logowania OpenVPN / IKEv2 w aplikacjach ${ VPN_APP_NAME } lub pulpicie ${ VPN_APP_NAME }. ${ learnMore }"
-      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Nie dodano metody odzyskiwania. Jeśli zapomnisz hasła, to nie odzyskasz już swojego konta. Czy chcesz przejść dalej bez dodawania metody odzyskiwania?"
       ],
@@ -7771,6 +7783,9 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Twoje dane logowania, po ukończeniu importu, zostaną usunięte."
+      ],
+      "Your next billing date is ${ renewalTime }.": [
+        "Twoja następna data rozliczeniowa to ${ renewalTime }."
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Hasło organizacji może być udostępnione innym użytkownikom, którym chcesz nadać uprawnienia administratora. Jest to również kod odzyskiwania awaryjnego, w przypadku utraty dostępu do głównego konta. Zapisz to hasło w bezpiecznym miejscu."
@@ -8455,9 +8470,6 @@
       "Conversation grouping": [
         "Grupowanie wątku"
       ],
-      "Conversations per page": [
-        "Liczba wątków na stronę"
-      ],
       "Copy": [
         "Kopiuj"
       ],
@@ -8746,9 +8758,6 @@
       "Message": [
         "Wiadomość"
       ],
-      "Messages per page": [
-        "Liczba wiadomości na stronę"
-      ],
       "Moderate NAT": [
         "Umiarkowany NAT"
       ],
@@ -8790,6 +8799,9 @@
       ],
       "New password": [
         "Nowe hasło"
+      ],
+      "New plan": [
+        "Nowy plan"
       ],
       "No filter": [
         "Brak filtrów"
@@ -9991,6 +10003,9 @@
       "99.95% SLA": [
         "Umowa SLA 99,95%"
       ],
+      "Ad-blocker and malware protection": [
+        "Blokada reklam i ochrona przed złośliwym oprogramowaniem"
+      ],
       "Admin console": [
         "Konsola administratora"
       ],
@@ -10257,6 +10272,12 @@
       ],
       "Vault and Item sharing (coming soon)": [
         "Udostępnianie sejfu i elementów (wkrótce)"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Udostępnianie sejfu (do ${ n } użytkownika)",
+        "Udostępnianie sejfu (do ${ n } użytkowników)",
+        "Udostępnianie sejfu (do ${ n } użytkowników)",
+        "Udostępnianie sejfu (do ${ n } użytkowników)"
       ]
     },
     "new_plans: feature info": {
@@ -11328,6 +11349,9 @@
       "Open-source and audited": [
         "Aplikacje z otwartym kodem źródłowym zweryfikowane przez audyt"
       ],
+      "per month": [
+        "na miesiąc"
+      ],
       "per month, billed annually": [
         "miesięcznie, płatne rocznie"
       ],
@@ -12263,6 +12287,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 użytkownik"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -12280,6 +12307,15 @@
       ],
       "Highest VPN speed": [
         "Najwyższa prędkość VPN"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } Premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i ${ DRIVE_SHORT_APP_NAME } Premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } Premium"
       ],
       "Premium early access": [
         "Wczesny dostęp premium"
@@ -12336,8 +12372,14 @@
       "1 year": [
         "1 rok"
       ],
+      "15 months": [
+        "15 miesięcy"
+      ],
       "2 years": [
         "2 lata"
+      ],
+      "30 months": [
+        "30 miesięcy"
       ],
       "Billed at ${ amount } for 1 month": [
         "Płatne ${ amount } za 1 miesiąc"
@@ -12499,6 +12541,12 @@
     "Subscription": {
       "Billed every 2 years": [
         "Płatne co 2 lata"
+      ],
+      "Billed for 15 months": [
+        "Płatne za 15 miesięcy"
+      ],
+      "Billed for 30 months": [
+        "Płatne za 30 miesięcy"
       ],
       "Billed monthly": [
         "Płatne miesięcznie"
@@ -12928,6 +12976,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } Premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } Premium"
+      ],
       "Premium Password Manager": [
         "Menedżer haseł w wersji Premium"
       ]
@@ -14512,8 +14566,14 @@
       "1-year": [
         "roczną"
       ],
+      "15-month": [
+        "na 15 miesięcy"
+      ],
       "2-year": [
         "dwuletnią"
+      ],
+      "30-month": [
+        "na 30 miesięcy"
       ],
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "Uzyskaj ${ discount } zniżki za subskrypcję ${ billingCycle }"

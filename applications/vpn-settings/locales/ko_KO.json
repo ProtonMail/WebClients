@@ -2009,6 +2009,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "최대 6명 사용자"
       ]
@@ -2762,9 +2771,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "이 비밀번호를 잊지 마세요. 잊어버릴 경우 로그인을 할 수 없거나 메시지를 읽을 수 없습니다."
-      ],
-      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "${ VPN_APP_NAME } 애플리케이션 또는 ${ VPN_APP_NAME } 대시보드에서 OpenVPN / IKEv2 자격 증명을 사용하지 마세요. ${ learnMore }"
       ],
       "Done": [
         "완료"
@@ -3555,9 +3561,6 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "다음 자격 증명을 사용하여 macOS의 Tunnelblick, GNU/Linux의 OpenVPN 등 오픈 소스 서드 파티 VPN 앱에서 ${ VPN_APP_NAME } 서버에 접속할 수 있습니다."
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "OpenVPN/IKEv2 자격 증명을 사용하여 ${ VPN_APP_NAME } 애플리케이션 또는 ${ VPN_APP_NAME } 대시보드에 로그인할 수 없어요. ${ learnMore }"
-      ],
       "You have ${ availableCount } dedicated servers available.": [
         "${ availableCount }개 전용 서버를 사용할 수 있습니다."
       ],
@@ -3644,6 +3647,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "유료 구독은 Mozilla에서 관리합니다. Mozilla 지원에 연락하세요."
+      ],
+      "Your subscription will auto-renew on ${ renewalTime }.": [
+        "사용자의 구독이 ${ renewalTime }에 자동으로 갱신됩니다."
       ]
     },
     "Info for cash payment method": {
@@ -3982,6 +3988,9 @@
       ],
       "New password": [
         "새 비밀번호"
+      ],
+      "New plan": [
+        "새 플랜"
       ],
       "No filter": [
         "필터 없음"
@@ -4482,6 +4491,9 @@
       "99.95% SLA": [
         "99.95% SLA"
       ],
+      "Ad-blocker and malware protection": [
+        "광고 차단기 및 멀웨어 보호"
+      ],
       "Admin console": [
         "관리자 콘솔"
       ],
@@ -4705,7 +4717,7 @@
         "무제한 라벨"
       ],
       "Unlimited logins and notes": [
-        "무제한 로그인 및 노트"
+        "무제한 로그인 및 메모"
       ],
       "Unlimited messages per day": [
         "하루에 무제한 메시지"
@@ -5769,6 +5781,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "사용자 1명"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -5786,6 +5801,15 @@
       ],
       "Highest VPN speed": [
         "가장 빠른 VPN 속도"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium early access": [
         "프리미엄 얼리 엑세스"
@@ -5831,14 +5855,23 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } months": [
+        "${ n }개월"
+      ],
       "/ month": [
         "/ 월"
       ],
       "1 year": [
         "1년"
       ],
+      "15 months": [
+        "15개월"
+      ],
       "2 years": [
         "2년"
+      ],
+      "30 months": [
+        "30개월"
       ],
       "Billed at ${ amount } for 1 month": [
         "1달에 ${ amount }씩 청구됨"
@@ -6244,6 +6277,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Premium Password Manager": [
         "프리미엄 암호 관리자"
       ]
@@ -7011,8 +7050,14 @@
       "1-year": [
         "1년"
       ],
+      "15-month": [
+        "15개월"
+      ],
       "2-year": [
         "2년"
+      ],
+      "30-month": [
+        "30개월"
       ],
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "${ billingCycle } 구독으로 ${ discount } 할인"

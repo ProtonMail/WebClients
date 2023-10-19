@@ -642,6 +642,9 @@
         "${ n } miesiące",
         "${ n } miesięcy",
         "${ n } miesiąca"
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
+        "Odnawia się automatycznie za ${ renewPrice }, przez ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -2027,6 +2030,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } Premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } Premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } Premium"
+      ],
       "Up to 6 users": [
         "Do 6 użytkowników"
       ]
@@ -2838,9 +2850,6 @@
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "ZAPAMIĘTAJ to hasło. Jeśli je zapomnisz, nie będziesz mógł zalogować się ani odszyfrować wiadomości."
       ],
-      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Nie używaj danych logowania OpenVPN / IKEv2 w aplikacjach lub pulpicie ${ VPN_APP_NAME }. ${ learnMore }"
-      ],
       "Done": [
         "Gotowe"
       ],
@@ -3309,6 +3318,15 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Wyślij środki na poniższy adres lub zeskanuj kod QR. Wpłata zostanie zaksięgowana na koncie po potwierdzeniu."
       ],
+      "Subscription auto-renews every 12 months.": [
+        "Subskrypcja odnowi się automatycznie co 12 miesięcy."
+      ],
+      "Subscription auto-renews every 24 months.": [
+        "Subskrypcja odnowi się automatycznie co 24 miesięce."
+      ],
+      "Subscription auto-renews every month.": [
+        "Subskrypcja odnowi się automatycznie co miesięc."
+      ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Subskrypcja wkrótce się zakończy. Reaktywuj ją do ${ byDate }, aby zachować bonusy planu ${ planName }. ${ reactivateLink }"
       ],
@@ -3666,9 +3684,6 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Możesz użyć następujących danych logowania do połączenia się z serwerem ${ VPN_APP_NAME }, używając alternatywnych aplikacji VPN, takich jak: Tunnelblick na macOS czy OpenVPN na GNU/Linuksie."
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Nie możesz używać danych logowania OpenVPN / IKEv2 w aplikacjach ${ VPN_APP_NAME } lub pulpicie ${ VPN_APP_NAME }. ${ learnMore }"
-      ],
       "You have ${ availableCount } dedicated server available.": [
         "Masz ${ availableCount } dostępny dedykowany serwer",
         "Masz ${ availableCount } dostępne dedykowane serwery",
@@ -3746,6 +3761,9 @@
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Twoje dane są u nas bezpieczne. Skontaktujemy się z Tobą tylko wtedy, gdy będzie to konieczne."
+      ],
+      "Your next billing date is ${ renewalTime }.": [
+        "Twoja następna data rozliczeniowa to ${ renewalTime }."
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Hasło organizacji może być udostępnione innym użytkownikom, którym chcesz nadać uprawnienia administratora. Jest to również kod odzyskiwania awaryjnego, w przypadku utraty dostępu do głównego konta. Zapisz to hasło w bezpiecznym miejscu."
@@ -4105,6 +4123,9 @@
       ],
       "New password": [
         "Nowe hasło"
+      ],
+      "New plan": [
+        "Nowy plan"
       ],
       "No filter": [
         "Brak filtrów"
@@ -4653,6 +4674,9 @@
       "99.95% SLA": [
         "Umowa SLA 99,95%"
       ],
+      "Ad-blocker and malware protection": [
+        "Blokada reklam i ochrona przed złośliwym oprogramowaniem"
+      ],
       "Admin console": [
         "Konsola administratora"
       ],
@@ -4919,6 +4943,12 @@
       ],
       "Vault and Item sharing (coming soon)": [
         "Udostępnianie sejfu i elementów (wkrótce)"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Udostępnianie sejfu (do ${ n } użytkownika)",
+        "Udostępnianie sejfu (do ${ n } użytkowników)",
+        "Udostępnianie sejfu (do ${ n } użytkowników)",
+        "Udostępnianie sejfu (do ${ n } użytkowników)"
       ]
     },
     "new_plans: feature info": {
@@ -6012,6 +6042,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 użytkownik"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -6029,6 +6062,15 @@
       ],
       "Highest VPN speed": [
         "Najwyższa prędkość VPN"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } Premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i ${ DRIVE_SHORT_APP_NAME } Premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } Premium"
       ],
       "Premium early access": [
         "Wczesny dostęp premium"
@@ -6080,8 +6122,14 @@
       "1 year": [
         "1 rok"
       ],
+      "15 months": [
+        "15 miesięcy"
+      ],
       "2 years": [
         "2 lata"
+      ],
+      "30 months": [
+        "30 miesięcy"
       ],
       "Billed at ${ amount } for 1 month": [
         "Płatne ${ amount } za 1 miesiąc"
@@ -6208,6 +6256,12 @@
     "Subscription": {
       "Billed every 2 years": [
         "Płatne co 2 lata"
+      ],
+      "Billed for 15 months": [
+        "Płatne za 15 miesięcy"
+      ],
+      "Billed for 30 months": [
+        "Płatne za 30 miesięcy"
       ],
       "Billed monthly": [
         "Płatne miesięcznie"
@@ -6529,6 +6583,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } Premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } Premium"
+      ],
       "Premium Password Manager": [
         "Menedżer haseł w wersji Premium"
       ]
@@ -7332,8 +7392,14 @@
       "1-year": [
         "roczną"
       ],
+      "15-month": [
+        "na 15 miesięcy"
+      ],
       "2-year": [
         "dwuletnią"
+      ],
+      "30-month": [
+        "na 30 miesięcy"
       ],
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "Uzyskaj ${ discount } zniżki za subskrypcję ${ billingCycle }"

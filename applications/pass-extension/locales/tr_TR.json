@@ -191,6 +191,15 @@
       "Lock extension": [
         "Eklentiyi kilitle"
       ],
+      "Make admin": [
+        "Yönetici yap"
+      ],
+      "Make editor": [
+        "Düzenleyici yap"
+      ],
+      "Make viewer": [
+        "Görüntüleyici yap"
+      ],
       "Manage access": [
         "Erişim yönetimi"
       ],
@@ -214,6 +223,9 @@
       ],
       "Not now": [
         "Şimdi değil"
+      ],
+      "Open in a window": [
+        "Bir pencerede aç"
       ],
       "Open navigation": [
         "Gezinmeyi aç"
@@ -449,12 +461,6 @@
       "Invitation could not be rejected": [
         "Davet reddedilemedi"
       ],
-      "Invite creation failed.": [
-        "Davet hazırlanamadı."
-      ],
-      "Invite successfully sent": [
-        "Davet gönderildi"
-      ],
       "Item content cannot exceed 40KB": [
         "Öge içeriği 40KB boyutundan büyük olamaz"
       ],
@@ -487,9 +493,6 @@
       ],
       "Restoring item failed": [
         "Öge geri yüklenemedi"
-      ],
-      "Setting \"${ payload.name }\" as primary vault failed": [
-        "\"${ payload.name }\" kasası birincil kasa olarak ayarlanamadı"
       ],
       "Settings update failed": [
         "Ayarlar güncellenemedi"
@@ -606,9 +609,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" güncellemesi yok sayıldı"
       ],
-      "\"${ payload.name }\" set as primary vault": [
-        "\"${ payload.name }\" birincil kasa olarak ayarlandı"
-      ],
       "${ count } item": [
         "${ count } öge",
         "${ count } öge"
@@ -718,6 +718,9 @@
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Var olan parolalarınızı kolayca ${ PASS_APP_NAME } içine aktarın."
+      ],
+      "Editor": [
+        "Düzenleyici"
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "${ BRAND_NAME } hesabınızı bağlayarak ${ PASS_APP_NAME } uygulamasını kullanıma alın"
@@ -989,6 +992,9 @@
       "Verification code": [
         "Doğrulama kodu"
       ],
+      "Viewer": [
+        "Görüntüleyici"
+      ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Verileri yerel depolamanızla eşitlerken sorun çıktı. ${ PASS_SHORT_APP_NAME } uygulamasının sorunsuz çalışması için lütfen yeterli boş disk alanınızın olduğundan emin olun."
       ],
@@ -1003,13 +1009,10 @@
         "Deneme sürenizin bitmesine ${ daysRemaining } gün kaldı."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
-        "Abonelik tarifenizin izin verdiği kasa sayısını aştınız. Yeni ögeler yalnızca ilk iki kasanıza taşınabilir. Ögeleri tüm kasalarınız arasında taşıyabilmek için aboneliğinizi yükseltin."
+        "Abonelik tarifenizin izin verdiği kasa sayısını aştınız. Yeni ögeler yalnızca ilk iki kasanıza taşınabilir. Ögeleri tüm kasalarınız arasında taşıyabilmek için abonelik tarifenizi yükseltin."
       ],
-      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
-        "Abonelik tarifenizin izin verdiği kasa sayısına ulaştınız. Ögeler yalnızca birincil kasanıza taşınabilir. Ögeleri tüm kasalarınız arasında taşıyabilmek için abonelik tarifenizi yükseltin."
-      ],
-      "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
-        "Abonelik tarifenizin izin verdiği kasa sayısına ulaştınız. Yeni ögeler yalnızca birincil kasanızda oluşturulabilir. Tüm kasalarınızda yeni ögeler oluşturabilmek için abonelik tarifenizi yükseltin."
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
+        "Abonelik tarifenizin izin verdiği kasa sayısına ulaştınız. Yeni ögeler yalnızca ilk iki kasanızda oluşturulabilir. Tüm kasalarınızda yeni ögeler oluşturabilmek için abonelik tarifenizi yükseltin."
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Oluşturabileceğiniz takma ad sayısı sınırına ulaştınız. Abonelik tarifenizi yükselterek sınırsız sayıda takma ad oluşturabilirsiniz."
@@ -1027,7 +1030,7 @@
         "Şunu oluşturmak üzeresiniz"
       ],
       "You're invited to a vault.": [
-        "Bir kasaya erişmeye davet edildiniz."
+        "Bir kasaya davet edildiniz."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "${ PASS_APP_NAME } oturumunuz kilitlendi"
@@ -1113,6 +1116,9 @@
       ],
       "Autosave": [
         "Otomatik kaydet"
+      ],
+      "Autosave vault": [
+        "Kasa otomatik kaydedilsin"
       ],
       "Autosuggest": [
         "Otomatik öneri"
@@ -1315,9 +1321,6 @@
       "Prefix": [
         "Ön ek"
       ],
-      "Primary vault": [
-        "Birincil kasa"
-      ],
       "Prompt for auto-save": [
         "Otomatik kaydetme uyarısı"
       ],
@@ -1343,7 +1346,7 @@
         "Bir e-posta adresi seçin"
       ],
       "Select preferred language": [
-        "Tercih edilen dili seçin"
+        "Kullanılacak dili seçin"
       ],
       "Select your password manager": [
         "Parola yöneticinizi seçin"
@@ -1610,7 +1613,7 @@
         "Verilerinizi koruyun"
       ],
       "Set access level": [
-        "Erişim seviyesini belirle"
+        "Erişim düzeyini ayarla"
       ],
       "Share with": [
         "Şununla paylaş"
@@ -1641,6 +1644,9 @@
       ],
       "Use my email": [
         "E-postamı kullan"
+      ],
+      "Vault shared with you": [
+        "Sizinle bir kasa paylaşıldı"
       ],
       "Welcome to ${ brandNameJSX }": [
         "${ brandNameJSX } uygulamasına hoş geldiniz"
@@ -1745,6 +1751,12 @@
       "Please log back in": [
         "Lütfen yeniden oturum açın"
       ],
+      "Please verify your email address in order to use email aliases": [
+        "Lütfen e-posta takma adlarını kullanabilmek için e-posta adresinizi doğrulayın"
+      ],
+      "Please verify your email address in order to use vault sharing": [
+        "Lütfen kasa paylaşımını kullanabilmek için e-posta adresinizi doğrulayın"
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."
       ],
@@ -1758,7 +1770,7 @@
         "Başlığın yazılması zorunludur"
       ],
       "Transfer ownership of this vault to ${ email }?": [
-        "Bu kasayı ${ email } adresine devretmek istediğinizden emin misiniz?"
+        "Bu kasanın sahipliğini ${ email } kişisine aktarmak istediğinize emin misiniz?"
       ],
       "Trash alias ?": [
         "Takma ad çöpe atılsın mı?"
@@ -1796,17 +1808,11 @@
       "Your plan only allows you to autofill from your first two vaults": [
         "Tarifeniz yalnızca ilk iki kasanızdan otomatik doldurmaya izin veriyor"
       ],
-      "Your plan only allows you to autofill from your primary vault": [
-        "Tarifeniz yalnızca birincil kasadan otomatik doldurmaya izin veriyor"
-      ],
       "Your session was locked due to inactivity": [
         "Bir süredir işlem yapmadığınızdan oturumunuz kilitlendi"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Abonelik tarifeniz birden fazla kasa oluşturmanıza izin vermiyor. Tüm ögeler ilk kasanıza aktarılacak. İçe aktarımda birden fazla kasa kullanabilmek için abonelik tarifenizi yükseltin."
-      ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
-        "Abonelik tarifeniz birden fazla kasa oluşturmanıza izin vermiyor. Tüm ögeler birincil kasanız içine aktarılacak. İçe aktarımda birden fazla kasa kullanabilmek için abonelik tarifenizi yükseltin."
       ]
     }
   }

@@ -4023,7 +4023,7 @@
         "Denne begivenhed er blevet opdateret. Arrangøren vil ikke blive underrettet om at du afslår invitationen, da du ikke kan sende e-mails fra den inviterede adresse. Vil du alligevel slette denne begivenhed?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Dette link fører til et websted, som måske forsøger at stjæle dine oplysninger, f.eks. adgangskoder og kreditkortoplysninger."
+        "Dette link fører til et websted, som måske forsøger at stjæle dine oplysninger, f.eks. adgangskoder og betalingskortoplysninger."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Dette link kan være et homografisk angreb og kan ikke åbnes af Edge browseren. Hvis du er sikker på, at linket er legitimt, så benyt en anden browser til at åbne det."
@@ -5831,6 +5831,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 bruger"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -5893,14 +5896,24 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } måned",
+        "${ n } måneder"
+      ],
       "/ month": [
         "/ måned"
       ],
       "1 year": [
         "1 år"
       ],
+      "15 months": [
+        "15 måneder"
+      ],
       "2 years": [
         "2 år"
+      ],
+      "30 months": [
+        "30 måneder"
       ],
       "Billed at ${ amount } for 1 month": [
         "Faktureret med ${ amount } for 1 måned"
@@ -6207,7 +6220,7 @@
     },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Opret sikre login-oplysninger på alle dine enheder. Inkludere ubegrænsede aliasser, 20 bokse, integreret 2FA, kreditkort-autofyld og meget mere."
+        "Opret sikre login-oplysninger på alle dine enheder. Inkludere ubegrænsede aliasser, 20 bokse, integreret 2FA, betalingskort-autofyld og meget mere."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Inkluderer 2950+ servere i 65+ lande, forbind op til 10 enheder, tilgå verdensomspændende streamingtjenester, malware- og ad-blocker og meget mere."
