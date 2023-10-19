@@ -1,5 +1,10 @@
 import browser from '@proton/pass/lib/globals/browser';
-import { selectHasRegisteredLock, selectPassPlan } from '@proton/pass/store/selectors';
+import {
+    selectFeatureFlag,
+    selectHasRegisteredLock,
+    selectPassPlan,
+    selectUserState,
+} from '@proton/pass/store/selectors';
 import type { MaybeNull, TabId } from '@proton/pass/types';
 import {
     type Maybe,
@@ -8,6 +13,7 @@ import {
     type OnboardingState,
     WorkerMessageType,
 } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { withPayloadLens } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
@@ -44,6 +50,16 @@ const createOnboardingRule = (options: OnboardingRule): OnboardingRule => ({
  * - define an optional predicate for when to show the message
  * - order is important: we will apply the first matched rule */
 const ONBOARDING_RULES: OnboardingRule[] = [
+    createOnboardingRule({
+        message: OnboardingMessage.PENDING_SHARE_ACCESS,
+        when: (previous) => {
+            if (previous) return false;
+            const state = store.getState();
+            const newUserSharingEnabled = selectFeatureFlag(PassFeature.PassSharingNewUsers)(state);
+            const { waitingNewUserInvites } = selectUserState(state);
+            return newUserSharingEnabled && (waitingNewUserInvites ?? 0) > 0;
+        },
+    }),
     createOnboardingRule({
         message: OnboardingMessage.PERMISSIONS_REQUIRED,
         when: withContext<OnboardingWhen>((ctx) => !ctx.service.activation.getPermissionsGranted()),

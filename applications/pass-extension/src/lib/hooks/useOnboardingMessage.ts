@@ -50,6 +50,13 @@ export const useOnboardingMessage = () => {
 
     const definitions = useMemo<{ [K in OnboardingMessage]: SpotlightMessageDefinition }>(
         () => ({
+            [OnboardingMessage.PENDING_SHARE_ACCESS]: {
+                id: 'welcome',
+                title: c('Title').t`Pending access to the shared data`,
+                message: c('Info').t`For security reasons, your access needs to be confirmed.`,
+                className: 'ui-teal',
+                icon: ShieldIcon,
+            },
             [OnboardingMessage.WELCOME]: {
                 id: 'welcome',
                 title: c('Title').t`Why ${PASS_APP_NAME}?`,
