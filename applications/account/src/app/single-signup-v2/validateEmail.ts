@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
-import { queryCheckEmailAvailability } from '@proton/shared/lib/api/user';
+import { queryCheckEmailAvailability, queryCheckUsernameAvailability } from '@proton/shared/lib/api/user';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getOwnershipVerificationHeaders, mergeHeaders } from '@proton/shared/lib/fetch/headers';
 import { Api } from '@proton/shared/lib/interfaces';
@@ -11,7 +11,7 @@ import debounce from '@proton/utils/debounce';
 import { BaseMeasure } from './interface';
 import { AvailableExternalEvents } from './measure';
 
-export enum EmailAsyncState {
+export enum AsyncValidationStateValue {
     Idle,
     Loading,
     Success,
@@ -19,14 +19,43 @@ export enum EmailAsyncState {
     Fatal,
 }
 
-const validateEmailAvailability = async (email: string, api: Api, abortController: AbortController) => {
+export const validateUsernameAvailability = async (username: string, api: Api, abortController: AbortController) => {
+    try {
+        await api({
+            ...mergeHeaders(queryCheckUsernameAvailability(username, true), getOwnershipVerificationHeaders('lax')),
+            signal: abortController.signal,
+        });
+
+        return { state: AsyncValidationStateValue.Success, message: '', value: username };
+    } catch (e) {
+        const { code, message } = getApiError(e);
+        if (
+            [
+                API_CUSTOM_ERROR_CODES.ALREADY_USED,
+                API_CUSTOM_ERROR_CODES.USERNAME_ALREADY_USED,
+                API_CUSTOM_ERROR_CODES.NOT_ALLOWED,
+            ].includes(code)
+        ) {
+            // eslint-disable-next-line @typescript-eslint/no-throw-literal
+            throw { state: AsyncValidationStateValue.Fatal, message, value: username };
+        }
+        // eslint-disable-next-line @typescript-eslint/no-throw-literal
+        throw {
+            state: AsyncValidationStateValue.Error,
+            message: message || c('Error').t`Try again later`,
+            value: username,
+        };
+    }
+};
+
+export const validateEmailAvailability = async (email: string, api: Api, abortController: AbortController) => {
     try {
         await api({
             ...mergeHeaders(queryCheckEmailAvailability(email), getOwnershipVerificationHeaders('lax')),
             signal: abortController.signal,
         });
 
-        return { state: EmailAsyncState.Success, message: '', email };
+        return { state: AsyncValidationStateValue.Success, message: '', value: email };
     } catch (e) {
         const { code, message } = getApiError(e);
         if (
@@ -37,45 +66,49 @@ const validateEmailAvailability = async (email: string, api: Api, abortControlle
             ].includes(code)
         ) {
             // eslint-disable-next-line @typescript-eslint/no-throw-literal
-            throw { state: EmailAsyncState.Fatal, message, email };
+            throw { state: AsyncValidationStateValue.Fatal, message, value: email };
         }
         // eslint-disable-next-line @typescript-eslint/no-throw-literal
-        throw { state: EmailAsyncState.Error, message: c('Error').t`Try again later`, email };
+        throw {
+            state: AsyncValidationStateValue.Error,
+            message: message || c('Error').t`Try again later`,
+            value: email,
+        };
     }
 };
 
-export interface EmailValidationState {
-    state: EmailAsyncState;
-    email: string;
+export interface AsyncValidationState {
+    state: AsyncValidationStateValue;
+    value: string;
     message: string;
 }
 
-export const createAsyncValidator = () => {
-    let lastEmail = '';
+export const createAsyncValidator = (validate: typeof validateEmailAvailability) => {
+    let lastValue = '';
     let abortController: AbortController;
-    type Setter = (data: EmailValidationState) => void;
+    type Setter = (data: AsyncValidationState) => void;
 
-    const cache: { [key: string]: EmailValidationState } = {};
+    const cache: { [key: string]: AsyncValidationState } = {};
 
     const validator = debounce(
         ({
-            email,
+            value,
             api,
             set,
             measure,
         }: {
-            email: string;
+            value: string;
             api: Api;
             set: Setter;
             measure: BaseMeasure<AvailableExternalEvents>;
         }) => {
             abortController?.abort();
 
-            if (lastEmail !== email) {
+            if (lastValue !== value) {
                 return;
             }
 
-            const cachedValue = cache[email];
+            const cachedValue = cache[value];
             if (cachedValue) {
                 set(cachedValue);
                 return;
@@ -83,10 +116,10 @@ export const createAsyncValidator = () => {
 
             abortController = new AbortController();
 
-            validateEmailAvailability(email, api, abortController)
+            validate(value, api, abortController)
                 .then((result) => {
-                    cache[email] = result;
-                    if (lastEmail === email) {
+                    cache[value] = result;
+                    if (lastValue === value) {
                         set(result);
 
                         measure({
@@ -95,20 +128,20 @@ export const createAsyncValidator = () => {
                         });
                     }
                 })
-                .catch((result: { state: EmailAsyncState; email: string; message: string }) => {
+                .catch((result: { state: AsyncValidationStateValue; value: string; message: string }) => {
                     if (result?.state === undefined) {
                         return;
                     }
                     // Only cache actual fatal errors
-                    if (result.state === EmailAsyncState.Fatal) {
-                        cache[email] = result;
+                    if (result.state === AsyncValidationStateValue.Fatal) {
+                        cache[value] = result;
 
                         measure({
                             event: TelemetryAccountSignupEvents.beAvailableExternal,
                             dimensions: { available: 'no' },
                         });
                     }
-                    if (lastEmail === email) {
+                    if (lastValue === value) {
                         set(result);
                     }
                 });
@@ -118,34 +151,34 @@ export const createAsyncValidator = () => {
     return {
         trigger: ({
             api,
-            email,
+            value,
             error,
             set,
             measure,
         }: {
             error: boolean;
-            email: string;
+            value: string;
             api: Api;
             set: Setter;
             measure: BaseMeasure<AvailableExternalEvents>;
         }) => {
-            lastEmail = email;
+            lastValue = value;
 
             if (error) {
-                set({ state: EmailAsyncState.Idle, email, message: '' });
+                set({ state: AsyncValidationStateValue.Idle, value, message: '' });
                 abortController?.abort();
                 validator.cancel();
                 return;
             }
 
-            set({ state: EmailAsyncState.Loading, email, message: '' });
-            validator({ email, api, set, measure });
+            set({ state: AsyncValidationStateValue.Loading, value, message: '' });
+            validator({ value, api, set, measure });
         },
     };
 };
 
-export const defaultEmailValidationState: EmailValidationState = {
-    state: EmailAsyncState.Idle,
-    email: '',
+export const defaultAsyncValidationState: AsyncValidationState = {
+    state: AsyncValidationStateValue.Idle,
+    value: '',
     message: '',
 };

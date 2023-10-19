@@ -212,6 +212,7 @@ const LoginContainer = ({
                                     </>
                                 ) : null}
                                 <LoginForm
+                                    modal={modal}
                                     signInText={showContinueTo ? `Continue to ${toAppName}` : undefined}
                                     paths={paths}
                                     defaultUsername={previousUsernameRef.current}

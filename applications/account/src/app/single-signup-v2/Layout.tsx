@@ -9,10 +9,12 @@ import clsx from '@proton/utils/clsx';
 import LayoutLogosV2 from '../public/LayoutLogosV2';
 import Box from './Box';
 import LayoutHeader from './LayoutHeader';
+import { SignupTheme } from './interface';
 
 import './Layout.scss';
 
 export interface Props {
+    theme: SignupTheme;
     logo: ReactNode;
     children: ReactNode;
     bottomRight?: ReactNode;
@@ -24,6 +26,7 @@ export interface Props {
 }
 
 const Layout = ({
+    theme,
     logo,
     children,
     hasDecoration,
@@ -36,12 +39,15 @@ const Layout = ({
     return (
         <div
             className={clsx(
-                'flex-no-min-children flex-nowrap flex-column h100 signup-v2-bg scroll-if-needed relative',
+                'flex-no-min-children flex-nowrap flex-column h100 scroll-if-needed relative',
+                theme.background === 'bf' ? 'signup-v2-bg--bf2023' : 'signup-v2-bg',
+                `signup-v2-bg--${theme.intent.replace('proton-', '')}`,
                 className
             )}
         >
             <PublicTopBanners />
             <LayoutHeader
+                isDarkBg={theme.background === 'bf'}
                 hasDecoration={hasDecoration}
                 className={headerClassName}
                 onBack={onBack}
