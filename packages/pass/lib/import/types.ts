@@ -14,6 +14,7 @@ export enum ImportProvider {
     DASHLANE = 'dashlane',
     SAFARI = 'safari',
     KEEPER = 'keeper',
+    ROBOFORM = 'roboform',
 }
 
 export const PROVIDER_INFO_MAP: Record<ImportProvider, { title: string; fileExtension: string; tutorialUrl: string }> =
@@ -77,6 +78,11 @@ export const PROVIDER_INFO_MAP: Record<ImportProvider, { title: string; fileExte
             title: 'Keeper',
             fileExtension: 'csv',
             tutorialUrl: 'https://proton.me/support/pass-import-keeper',
+        },
+        [ImportProvider.ROBOFORM]: {
+            title: 'Roboform',
+            fileExtension: 'csv',
+            tutorialUrl: '',
         },
     };
 
