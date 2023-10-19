@@ -1641,6 +1641,12 @@
       ],
       "You already tentatively accepted this invitation.": [
         "Deja ați acceptat această invitație în mod provizoriu."
+      ],
+      "You cannot respond to ${ BRAND_NAME } invites if you're not on the participants list at the moment.": [
+        "Nu puteți răspunde la invitații ${ BRAND_NAME } dacă nu sunteți pe lista de participanți."
+      ],
+      "Your email address is not in the original participants list.": [
+        "Adresa dvs. de e-mail nu se află în lista originală de participanți."
       ]
     },
     "Calendar widget banner": {
@@ -3173,9 +3179,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Căutarea în conținutul mesajelor nu poate fi activată în acest navigator. Închideți modul de navigare privat sau folosiți alt navigator."
       ],
-      "Could not save preference": [
-        "Preferințele nu s-au putut salva."
-      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Eroare decriptare: decriptarea conținutului criptat al acestui mesaj a eșuat."
       ],
@@ -3854,6 +3857,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } premium"
+      ],
       "Up to 6 users": [
         "Până la 6 utilizatori"
       ]
@@ -5056,6 +5068,9 @@
       "Copied to clipboard": [
         "Copiat în memorie"
       ],
+      "Copy the link to clipboard": [
+        "Copiați legătura în memorie"
+      ],
       "Country code": [
         "Cod țară"
       ],
@@ -5116,9 +5131,6 @@
       ],
       "Do you want to re-sign the contact details?": [
         "Doriți să reînregistrați datele contactului?"
-      ],
-      "Don't find what you are looking for? ${ displayAllMailButton }": [
-        "Nu găsiți ceea ce căutați? ${ displayAllMailButton }"
       ],
       "Don't forget to share the password with the recipient": [
         "Nu uitați să partajați parola cu destinatarul."
@@ -6520,9 +6532,6 @@
       "Contacts": [
         "Contacte"
       ],
-      "Conversations per page": [
-        "Conversații per pagină"
-      ],
       "Copy": [
         "Copiere"
       ],
@@ -6687,9 +6696,6 @@
       ],
       "Mark as": [
         "Marcare"
-      ],
-      "Messages per page": [
-        "Mesaje per pagină"
       ],
       "Move ${ sidebarElementName }": [
         "Mutare ${ sidebarElementName }"
@@ -7480,6 +7486,9 @@
       "Contact group updated": [
         "Grup de contacte actualizat"
       ],
+      "Link copied to clipboard": [
+        "Legătura a fost copiată în memorie."
+      ],
       "Password has been set successfully": [
         "Parola a fost setată cu succes."
       ],
@@ -8244,6 +8253,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "Un utilizator"
+      ],
       "3 TB": [
         "3 TiB"
       ],
@@ -8261,6 +8273,15 @@
       ],
       "Highest VPN speed": [
         "Viteză VPN maximă"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } și ${ DRIVE_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } premium"
       ],
       "Premium early access": [
         "Acces timpuriu premium"
@@ -8306,14 +8327,25 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } lună",
+        "${ n } luni",
+        "${ n } de luni"
+      ],
       "/ month": [
         "/ lună"
       ],
       "1 year": [
         "1 an"
       ],
+      "15 months": [
+        "15 luni"
+      ],
       "2 years": [
         "2 ani"
+      ],
+      "30 months": [
+        "30 de luni"
       ],
       "Billed at ${ amount } for 1 month": [
         "Facturat cu ${ amount } pentru o lună"
@@ -8766,6 +8798,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
+      ],
       "Premium Password Manager": [
         "Gestionare parole premium"
       ]
