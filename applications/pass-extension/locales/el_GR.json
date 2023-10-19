@@ -461,12 +461,6 @@
       "Invitation could not be rejected": [
         "Δεν ήταν δυνατή η απόρριψη της πρόσκλησης"
       ],
-      "Invite creation failed.": [
-        "Η δημιουργία πρόσκλησης απέτυχε."
-      ],
-      "Invite successfully sent": [
-        "Επιτυχής αποστολή πρόσκλησης"
-      ],
       "Item content cannot exceed 40KB": [
         "Το περιεχόμενο του στοιχείου δεν μπορεί να υπερβαίνει τα 40KB"
       ],
@@ -499,9 +493,6 @@
       ],
       "Restoring item failed": [
         "Η επαναφορά του στοιχείου απέτυχε"
-      ],
-      "Setting \"${ payload.name }\" as primary vault failed": [
-        "Η ρύθμιση του \"${ payload.name }\" ως κύριας κρύπτης απέτυχε"
       ],
       "Settings update failed": [
         "Η ενημέρωση των ρυθμίσεων απέτυχε"
@@ -617,9 +608,6 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Η ενημερωμένη έκδοση του \"${ payload.item.data.metadata.name }\" απορρίφθηκε"
-      ],
-      "\"${ payload.name }\" set as primary vault": [
-        "Το \"${ payload.name }\" ορίστηκε ως κύρια κρύπτη"
       ],
       "${ count } item": [
         "${ count } στοιχείο",
@@ -1023,14 +1011,8 @@
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Έχετε υπερβεί τον αριθμό των κρυπτών που περιλαμβάνονται στη συνδρομή σας. Τα στοιχεία μπορούν να μετακινηθούν μόνο στις πρώτες δύο κρύπτες σας. Για να μετακινήσετε στοιχεία μεταξύ όλων των κρυπτών, αναβαθμίστε τη συνδρομή σας."
       ],
-      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
-        "Έχετε υπερβεί τον αριθμό των κρυπτών που περιλαμβάνονται στη συνδρομή σας. Τα στοιχεία μπορούν να μετακινηθούν μόνο στην κύρια κρύπτη. Για να μετακινήσετε στοιχεία μεταξύ όλων των κρυπτών, αναβαθμίστε τη συνδρομή σας."
-      ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
         "Έχετε υπερβεί τον αριθμό των κρυπτών που περιλαμβάνονται στη συνδρομή σας. Νέα στοιχεία μπορούν να δημιουργηθούν μόνο στις πρώτες δύο κρύπτες σας. Για να δημιουργήσετε νέα στοιχεία σε όλες τις κρύπτες, αναβαθμίστε τη συνδρομή σας."
-      ],
-      "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
-        "Έχετε υπερβεί τον αριθμό των κρυπτών που περιλαμβάνονται στη συνδρομή σας. Νέα στοιχεία μπορούν να δημιουργηθούν μόνο στην κύρια κρύπτη. Για να δημιουργήσετε νέα στοιχεία σε όλες τις κρύπτες, αναβαθμίστε τη συνδρομή σας."
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Έχετε φτάσει στο όριο των ψευδωνύμων που μπορείτε να δημιουργήσετε. Δημιουργήστε ένα απεριόριστο αριθμό ψευδωνύμων κατά την αναβάθμιση της συνδρομής σας."
@@ -1339,9 +1321,6 @@
       "Prefix": [
         "Πρόθεμα"
       ],
-      "Primary vault": [
-        "Κύρια κρύπτη"
-      ],
       "Prompt for auto-save": [
         "Ερώτηση για αυτόματη αποθήκευση"
       ],
@@ -1446,9 +1425,6 @@
       ],
       "Vault": [
         "Κρύπτη"
-      ],
-      "Vaults": [
-        "Κρύπτες"
       ],
       "Verification number": [
         "Αριθμός επαλήθευσης"
@@ -1805,6 +1781,9 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Δεν είναι δυνατή η είσοδος στο ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
+      "Upgrade to a paid plan to invite more members to this vault.": [
+        "Κάντε αναβάθμιση σε πρόγραμμα επί πληρωμή για να προσκαλέσετε περισσότερα μέλη σε αυτή την κρύπτη."
+      ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You can not undo this action": [
         "Η κρύπτη \"${ vaultName }\" και όλα τα στοιχεία της θα διαγραφούν οριστικά. Δεν μπορείτε να αναιρέσετε αυτήν την ενέργεια"
       ],
@@ -1816,6 +1795,12 @@
       ],
       "You cannot create more vaults than your subscription allows.": [
         "Δεν μπορείτε να δημιουργήσετε περισσότερες κρύπτες από όσες επιτρέπει η συνδρομή σας."
+      ],
+      "You have reached the limit of members who can access this vault.": [
+        "Έχετε φτάσει το όριο των μελών που μπορούν να έχουν πρόσβαση σε αυτή την κρύπτη."
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "Έχετε φτάσει στο όριο των κρυπτών που μπορείτε να έχετε στο πλάνο σας."
       ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "Έχετε μην αποθηκευμένες αλλαγές, είστε σίγουροι πως θέλετε να τις απορρίψετε;"
@@ -1832,17 +1817,11 @@
       "Your plan only allows you to autofill from your first two vaults": [
         "Το πλάνο σας σάς επιτρέπει να συμπληρώνετε αυτόματα μόνο από τις πρώτες δύο κρύπτες σας"
       ],
-      "Your plan only allows you to autofill from your primary vault": [
-        "Το πρόγραμμά σας σάς επιτρέπει να συμπληρώνετε αυτόματα μόνο από την κύρια κρύπτη"
-      ],
       "Your session was locked due to inactivity": [
         "Η περίοδος λειτουργίας σας κλειδώθηκε λόγω αδράνειας"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Η συνδρομή σας δε σας επιτρέπει να δημιουργήσετε πολλαπλές κρύπτες. Όλα τα στοιχεία θα εισαχθούν στην πρώτη κρύπτη σας. Για να κάνετε εισαγωγή σε πολλαπλές κρύπτες, αναβαθμίστε τη συνδρομή σας."
-      ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
-        "Η συνδρομή σας δε σας επιτρέπει να δημιουργήσετε πολλαπλές κρύπτες. Όλα τα στοιχεία θα εισαχθούν στην κύρια κρύπτη. Για να κάνετε εισαγωγή σε πολλαπλές κρύπτες, αναβαθμίστε τη συνδρομή σας."
       ]
     }
   }

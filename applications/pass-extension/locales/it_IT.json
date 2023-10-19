@@ -365,7 +365,7 @@
         "Errore di autenticazione"
       ],
       "Auto-lock could not be activated": [
-        "Il blocco automatico non può essere attivato"
+        "Impossibile attivare il blocco automatico"
       ],
       "Auto-lock could not be disabled": [
         "Il blocco automatico non può essere disattivato"
@@ -461,12 +461,6 @@
       "Invitation could not be rejected": [
         "Impossibile rifiutare l'invito"
       ],
-      "Invite creation failed.": [
-        "Creazione dell'invito non riuscita"
-      ],
-      "Invite successfully sent": [
-        "Invito inviato con successo"
-      ],
       "Item content cannot exceed 40KB": [
         "Il contenuto dell'elemento non può superare i 40 Kb"
       ],
@@ -499,9 +493,6 @@
       ],
       "Restoring item failed": [
         "Ripristino dell'elemento non riuscito"
-      ],
-      "Setting \"${ payload.name }\" as primary vault failed": [
-        "Impostazione di \"${ payload.name }\" come cassaforte principale non riuscita"
       ],
       "Settings update failed": [
         "Aggiornamento impostazioni non riuscito"
@@ -617,9 +608,6 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "L'aggiornamento \"${ payload.item.data.metadata.name }\" è stato rimosso"
-      ],
-      "\"${ payload.name }\" set as primary vault": [
-        "${ payload.name } impostata come cassaforte primaria"
       ],
       "${ count } item": [
         "${ count } elemento",
@@ -1023,14 +1011,8 @@
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Hai superato il numero di casseforti incluse nel tuo abbonamento. Gli elementi possono essere spostati solamente nelle prime due casseforti. Per spostare elementi tra tutte le casseforti, effettua l'upgrade del tuo abbonamento."
       ],
-      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
-        "Hai raggiunto il numero massimo di casseforti incluse nel tuo abbonamento. Gli elementi possono essere spostati solo nella cassaforte principale. Per spostare gli elementi tra tutte le casseforti effettua l'upgrade del tuo abbonamento."
-      ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
         "Hai superato il numero di casseforti incluse nel tuo abbonamento. I nuovi elementi possono essere creati solamente nelle prime due casseforti. Per creare nuovi elementi in tutte le casseforti, effettua l'upgrade del tuo abbonamento."
-      ],
-      "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
-        "Hai raggiunto il numero massimo di casseforti incluse nel tuo abbonamento. I nuovi elementi potranno essere creati solo nella tua cassaforte principale. Crea un numero illimitato di casseforti effettuando l'aggiornamento del tuo piano di abbonamento."
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Hai raggiunto il numero massimo di alias che puoi creare. Crea un numero illimitato di alias effettuando l'aggiornamento del tuo piano di abbonamento."
@@ -1339,9 +1321,6 @@
       "Prefix": [
         "Prefisso"
       ],
-      "Primary vault": [
-        "Cassaforte primaria"
-      ],
       "Prompt for auto-save": [
         "Richiedi il salvataggio automatico"
       ],
@@ -1446,9 +1425,6 @@
       ],
       "Vault": [
         "Cassaforte"
-      ],
-      "Vaults": [
-        "Casseforti"
       ],
       "Verification number": [
         "Numero di verifica"
@@ -1832,17 +1808,11 @@
       "Your plan only allows you to autofill from your first two vaults": [
         "Il tuo piano ti consente la compilazione automatica solamente dalle prime due casseforti."
       ],
-      "Your plan only allows you to autofill from your primary vault": [
-        "Il tuo piano permette la compilazione automatica solo dalla tua cassaforte principale."
-      ],
       "Your session was locked due to inactivity": [
         "La tua sessione è stata bloccata per inattività"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Il tuo abbonamento non ti consente di creare più casseforti. Tutti gli elementi verranno importati nella tua prima cassaforte. Per importare in più casseforti, effettua l'upgrade del tuo abbonamento."
-      ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
-        "Il tuo abbonamento non consente di creare casseforti multiple. Tutti gli elementi saranno importati nella cassaforte principale. Puoi importare in casseforti multiple effettuando l'aggiornamento del tuo abbonamento."
       ]
     }
   }

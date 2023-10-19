@@ -461,12 +461,6 @@
       "Invitation could not be rejected": [
         "მოსაწვევის უარყოფა შეუძლებელია"
       ],
-      "Invite creation failed.": [
-        "ინვოისის შექმნა ჩავარდა."
-      ],
-      "Invite successfully sent": [
-        "მოსაწვევი წარმატებით გაიგზავნა"
-      ],
       "Item content cannot exceed 40KB": [
         "ელემენტის შემცველობა 40კბ-ზე მეტი ვერ იქნება"
       ],
@@ -499,9 +493,6 @@
       ],
       "Restoring item failed": [
         "ელემენტის აღდგენის შეცდომა"
-      ],
-      "Setting \"${ payload.name }\" as primary vault failed": [
-        "\"${ payload.name }\"-ის ძირითად საცავად დაყენების შეცდომა"
       ],
       "Settings update failed": [
         "პარამეტრების განახლების შეცდომა"
@@ -617,9 +608,6 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" განახლება წაიშალა"
-      ],
-      "\"${ payload.name }\" set as primary vault": [
-        "\"${ payload.name }\" ახლა ძირითადი საცავია"
       ],
       "${ count } item": [
         "${ count } ელემენტი",
@@ -1023,14 +1011,8 @@
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "თქვენ გადააცილეთ ტარიფისთვის დასაშვები საცავების რაოდენობას. ელემენტები, მხოლოდ, პირველ ორ საცავში შეგიძლიათ, გადაიტანოთ. საცავებს შორის ელემენტების გადასატანად ასწიეთ თქვენი სატარიფო გეგმა."
       ],
-      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
-        "თქვენ გადააცილეთ ტარიფისთვის დასაშვები საცავების რაოდენობას. ელემენტები, მხოლოდ, ძირითად საცავში შეგიძლიათ, გადაიტანოთ. საცავებს შორის ელემენტების გადასატანად ასწიეთ თქვენი სატარიფო გეგმა."
-      ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
         "თქვენ გადააცილეთ ტარიფისთვის დასაშვები საცავების რაოდენობას. ელემენტები, მხოლოდ, პირველ ორ საცავში შეგიძლიათ, შექმნათ. საცავებს შორის ელემენტების გადასატანად ასწიეთ თქვენი სატარიფო გეგმა."
-      ],
-      "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
-        "გადააცილეთ თქვენი ტარიფისთვის დასაშვები საცავების რაოდენობას. ელემენტები, მხოლოდ, ძირითად საცავში შეგიძლიათ, შექმნათ. ახალი ელემენტების ყველა საცავში შესაქმნელად ასწირეთ თქვენი სატარიფო გეგმა."
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "მიაღწიეთ შესაძლო ფსევდონიმების რაოდენობს ზღვარს. სატარიფო გეგმის აწევის შემთხვევაში ფსევდონიმების რაოდენობა უსაზღვროა."
@@ -1339,9 +1321,6 @@
       "Prefix": [
         "პრეფიქსი"
       ],
-      "Primary vault": [
-        "ძირითადი საცავი"
-      ],
       "Prompt for auto-save": [
         "კითხვა ავტომატური შენახვისას"
       ],
@@ -1446,9 +1425,6 @@
       ],
       "Vault": [
         "საცავი"
-      ],
-      "Vaults": [
-        "საცავები"
       ],
       "Verification number": [
         "გადამოწმების ნომერი"
@@ -1775,6 +1751,12 @@
       "Please log back in": [
         "თავიდან შედით"
       ],
+      "Please verify your email address in order to use email aliases": [
+        "ელფოსტის ფსევდონიმების გამოსაყენებლად საჭიროა თქვენი ანგარიშის გადამოწმება"
+      ],
+      "Please verify your email address in order to use vault sharing": [
+        "საცავის გასაზიარებლად საჭიროა თქვენი ანგარიშის გადამოწმება"
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "ანგარიშები გამჭოლად არაა დაშიფრული. ნუ გააგზავნით კონფიდენციალურ ინფორმაციას."
       ],
@@ -1826,17 +1808,11 @@
       "Your plan only allows you to autofill from your first two vaults": [
         "თქვენი ტარიფი ავტომატურად შევსებას, მხოლოდ, პირველი ორი საცავიდან შეიცავს"
       ],
-      "Your plan only allows you to autofill from your primary vault": [
-        "თქვენი ტარიფი ავტომატურად შევსებას, მხოლოდ, ძირითადი საცავიდან შეიცავს"
-      ],
       "Your session was locked due to inactivity": [
         "თქვენი სესია დაიბლოკა არააქტიურობის გამო"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "თქვენი სატარიფო გეგმა ერთზე მეტი საცავის შექმნის უფლებას არ გაძლევთ. ყველა ელემენტი პირველ საცავში იქნება შემოტანილი. ერთზე მეტი საცავში შემოსატანად ასწიეთ თქვენი სატარიფო გეგმა."
-      ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
-        "თქვენი სატარიფო გეგმა ერთზე მეტი საცავის შექმნის უფლებას არ გაძლევთ. ყველა ელემენტი მთავარ საცავში იქნება შემოტანილი. ერთზე მეტი საცავში შემოსატანად ასწიეთ თქვენი სატარიფო გეგმა."
       ]
     }
   }
