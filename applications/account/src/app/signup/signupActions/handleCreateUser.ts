@@ -1,3 +1,4 @@
+import type { HumanVerificationResult } from '@proton/components/containers/api/humanVerification/interface';
 import { isTokenPayment } from '@proton/components/payments/core';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { queryCreateUser, queryCreateUserExternal } from '@proton/shared/lib/api/user';
@@ -77,25 +78,34 @@ export const handleCreateUser = async ({
             }
         })();
         try {
-            const { User } = await srpVerify<{ User: User }>({
+            const response = await srpVerify<
+                Response & {
+                    humanVerificationResult?: HumanVerificationResult;
+                }
+            >({
                 api,
                 credentials: { password },
-                config: withVerificationHeaders(
-                    humanVerificationParameters?.token,
-                    humanVerificationParameters?.tokenType,
-                    queryCreateUser(
-                        {
-                            Type: clientType,
-                            Username: username,
-                            Payload: payload,
-                            ...getTokenPayment(paymentToken),
-                            ...getSignupTypeQuery(accountData),
-                            ...getReferralDataQuery(referralData),
-                        },
-                        productParam
-                    )
-                ),
+                config: {
+                    output: 'raw',
+                    ...withVerificationHeaders(
+                        humanVerificationParameters?.token,
+                        humanVerificationParameters?.tokenType,
+                        queryCreateUser(
+                            {
+                                Type: clientType,
+                                Username: username,
+                                Payload: payload,
+                                ...getTokenPayment(paymentToken),
+                                ...getSignupTypeQuery(accountData),
+                                ...getReferralDataQuery(referralData),
+                            },
+                            productParam
+                        )
+                    ),
+                },
             });
+            const humanVerificationResult = response.humanVerificationResult;
+            const { User } = await response.json();
             return {
                 to: SignupSteps.CreatingAccount,
                 cache: {
@@ -103,6 +113,7 @@ export const handleCreateUser = async ({
                     userData: {
                         User,
                     },
+                    ...(humanVerificationResult ? { humanVerificationResult } : undefined),
                 },
             };
         } catch (error) {
@@ -120,6 +131,9 @@ export const handleCreateUser = async ({
                     api,
                     mode,
                 });
+            }
+            if (mode === 'cro') {
+                throw error;
             }
             const humanVerificationData = hvHandler(error, HumanVerificationTrigger.UserCreation);
             return {

@@ -8,20 +8,35 @@ import {
     useRef,
     useState,
 } from 'react';
+import { flushSync } from 'react-dom';
 
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { Icon, InputFieldTwo, PasswordInputTwo } from '@proton/components/components';
+import {
+    DropdownSizeUnit,
+    Icon,
+    Info,
+    InlineLinkButton,
+    InputFieldTwo,
+    PasswordInputTwo,
+} from '@proton/components/components';
+import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { Challenge, ChallengeRef } from '@proton/components/containers';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
-import { PLANS } from '@proton/shared/lib/constants';
+import { BRAND_NAME, CALENDAR_APP_NAME, MAIL_APP_NAME, PLANS } from '@proton/shared/lib/constants';
 import {
     confirmPasswordValidator,
     emailValidator,
     getMinPasswordLengthMessage,
     passwordLengthValidator,
     requiredValidator,
+    usernameCharacterValidator,
+    usernameEndCharacterValidator,
+    usernameLengthValidator,
+    usernameStartCharacterValidator,
 } from '@proton/shared/lib/helpers/formValidators';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { Api } from '@proton/shared/lib/interfaces';
@@ -34,10 +49,12 @@ import { runAfterScroll } from './helper';
 import type { BaseMeasure, SignupModelV2 } from './interface';
 import type { AvailableExternalEvents, InteractCreateEvents, InteractFields, UserCheckoutEvents } from './measure';
 import {
-    EmailAsyncState,
-    EmailValidationState,
+    AsyncValidationState,
+    AsyncValidationStateValue,
     createAsyncValidator,
-    defaultEmailValidationState,
+    defaultAsyncValidationState,
+    validateEmailAvailability,
+    validateUsernameAvailability,
 } from './validateEmail';
 
 import '../signup/AccountStep.scss';
@@ -46,7 +63,8 @@ const first = <T,>(errors: T[]) => {
     return errors.find((x) => !!x);
 };
 
-const validator = createAsyncValidator();
+const emailAsyncValidator = createAsyncValidator(validateEmailAvailability);
+const usernameAsyncValidator = createAsyncValidator(validateUsernameAvailability);
 
 interface InputState {
     interactive: boolean;
@@ -54,30 +72,41 @@ interface InputState {
 }
 
 interface AccountDetailsInputState {
+    username: Partial<InputState>;
     email: Partial<InputState>;
     password: Partial<InputState>;
     passwordConfirm: Partial<InputState>;
 }
 
 interface AccountDetails {
+    username: string;
     email: string;
     password: string;
     passwordConfirm: string;
 }
 
 export interface ErrorDetails {
+    username: string | undefined;
     email: string | undefined;
     password: string | undefined;
     passwordConfirm: string | undefined;
 }
 
-const getDefaultInputs = ({ defaultEmail = '' }: { defaultEmail?: string } = {}) => ({
+const getDefaultInputs = ({
+    defaultUsername = '',
+    defaultEmail = '',
+}: {
+    defaultUsername?: string;
+    defaultEmail?: string;
+} = {}) => ({
+    username: defaultUsername,
     email: defaultEmail,
     password: '',
     passwordConfirm: '',
 });
 
-const getDefaultInputStates = ({ email, password, passwordConfirm }: AccountDetails) => ({
+const getDefaultInputStates = ({ username, email, password, passwordConfirm }: AccountDetails) => ({
+    username: !!username ? { interactive: true, focus: true } : {},
     email: !!email ? { interactive: true, focus: true } : {},
     password: !!password ? { interactive: true, focus: true } : {},
     passwordConfirm: !!passwordConfirm ? { interactive: true, focus: true } : {},
@@ -94,6 +123,9 @@ const getMeasurement = (diff: Partial<AccountDetailsInputState>) => {
         .map(([_key, value]) => {
             const key = _key as keyof typeof diff;
             const field: InteractFields | undefined = (() => {
+                if (key === 'username') {
+                    return 'username';
+                }
                 if (key === 'email') {
                     return 'email';
                 }
@@ -114,29 +146,59 @@ const getMeasurement = (diff: Partial<AccountDetailsInputState>) => {
         .filter(isTruthy);
 };
 
+const joinUsernameDomain = (username: string, domain: string) => {
+    return [username, '@', domain].join('');
+};
+
 const getErrorDetails = ({
+    signupType,
+    passwords,
     emailValidationState,
+    usernameValidationState,
+    domain = '',
+    username = '',
     email = '',
     password = '',
     passwordConfirm = '',
 }: {
-    emailValidationState?: EmailValidationState;
+    signupType: SignupType;
+    emailValidationState?: AsyncValidationState;
+    usernameValidationState?: AsyncValidationState;
+    domain?: string;
+    username?: string;
     email?: string;
+    passwords?: boolean;
     password?: string;
     passwordConfirm?: string;
 }): ErrorDetails => {
+    const trimmedUsername = username.trim();
     const trimmedEmail = email.trim();
     return {
-        email: first([
-            trimmedEmail === emailValidationState?.email ? emailValidationState?.message : '',
-            requiredValidator(trimmedEmail),
-            emailValidator(trimmedEmail),
-        ]),
-        password: first([requiredValidator(password), passwordLengthValidator(password)]),
-        passwordConfirm: first([
-            requiredValidator(passwordConfirm),
-            confirmPasswordValidator(passwordConfirm, password),
-        ]),
+        username:
+            signupType === SignupType.Username
+                ? first([
+                      joinUsernameDomain(trimmedUsername, domain) === usernameValidationState?.value
+                          ? usernameValidationState?.message
+                          : '',
+                      requiredValidator(trimmedUsername),
+                      usernameLengthValidator(trimmedUsername),
+                      usernameStartCharacterValidator(trimmedUsername),
+                      usernameEndCharacterValidator(trimmedUsername),
+                      usernameCharacterValidator(trimmedUsername),
+                  ])
+                : undefined,
+        email:
+            signupType === SignupType.Email
+                ? first([
+                      trimmedEmail === emailValidationState?.value ? emailValidationState?.message : '',
+                      requiredValidator(trimmedEmail),
+                      emailValidator(trimmedEmail),
+                  ])
+                : undefined,
+        password: passwords ? first([requiredValidator(password), passwordLengthValidator(password)]) : undefined,
+        passwordConfirm: passwords
+            ? first([requiredValidator(passwordConfirm), confirmPasswordValidator(passwordConfirm, password)])
+            : undefined,
     };
 };
 
@@ -153,9 +215,13 @@ interface Props {
     passwordFields: boolean;
     footer: (details: AccountDetails) => ReactNode;
     defaultEmail?: string;
+    signupTypes: SignupType[];
+    domains: string[];
 }
 
 const AccountStepDetails = ({
+    signupTypes,
+    domains,
     loading,
     accountStepDetailsRef,
     disableChange,
@@ -169,18 +235,30 @@ const AccountStepDetails = ({
     passwordFields,
     defaultEmail,
 }: Props) => {
+    const [, setRerender] = useState<any>();
+    const [signupType, setSignupType] = useState(signupTypes[0]);
+    const anchorRef = useRef<HTMLButtonElement | null>(null);
     const challengeRefEmail = useRef<ChallengeRef>();
     const formInputRef = useRef<HTMLFormElement>(null);
-    const inputValuesRef = useRef({ email: false });
+    const inputValuesRef = useRef({ email: false, username: false });
+    const domainOptions = domains.map((DomainName) => ({ text: DomainName, value: DomainName }));
+    const [maybeDomain, setDomain] = useState(domains?.[0] || ''); // This is set while domains are loading
+
+    const domain = maybeDomain || domains?.[0];
 
     const [details, setDetails] = useState<AccountDetails>(getDefaultInputs({ defaultEmail }));
     const [states, setStates] = useState<AccountDetailsInputState>(getDefaultInputStates(details));
 
     const trimmedEmail = details.email.trim();
+    const trimmedUsername = details.username.trim();
 
-    const [emailValidationState, setEmailValidationState] = useState<EmailValidationState>(defaultEmailValidationState);
+    const [emailAsyncValidationState, setEmailAsyncValidationState] =
+        useState<AsyncValidationState>(defaultAsyncValidationState);
+    const [usernameAsyncValidationState, setUsernameAsyncValidationState] =
+        useState<AsyncValidationState>(defaultAsyncValidationState);
 
     const emailRef = useRef<HTMLInputElement>(null);
+    const usernameRef = useRef<HTMLInputElement>(null);
     const passwordRef = useRef<HTMLInputElement>(null);
     const passwordConfirmRef = useRef<HTMLInputElement>(null);
 
@@ -225,8 +303,8 @@ const AccountStepDetails = ({
         });
     }, []);
 
-    const scrollInto = (target: 'email' | 'password' | 'passwordConfirm') => {
-        if (target === 'email') {
+    const scrollInto = (target: 'username' | 'email' | 'password' | 'passwordConfirm') => {
+        if (target === 'email' || target === 'username') {
             formInputRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
             const focusChallenge = (id: string) => {
@@ -242,6 +320,9 @@ const AccountStepDetails = ({
             };
             if (target === 'email') {
                 focusChallenge('#email');
+            }
+            if (target === 'username') {
+                focusChallenge('#username');
             }
             return;
         }
@@ -262,8 +343,13 @@ const AccountStepDetails = ({
     };
 
     const errorDetails = getErrorDetails({
-        emailValidationState,
+        signupType,
+        username: trimmedUsername,
+        domain,
+        emailValidationState: emailAsyncValidationState,
+        usernameValidationState: usernameAsyncValidationState,
         email: trimmedEmail,
+        passwords: passwordFields,
         password: details.password,
         passwordConfirm: details.passwordConfirm,
     });
@@ -271,14 +357,20 @@ const AccountStepDetails = ({
     const validateAccountDetails = () => {
         const fields = ((): (keyof AccountDetailsInputState)[] => {
             const hasValidAsyncEmailState =
-                emailValidationState.email === trimmedEmail && emailValidationState.state === EmailAsyncState.Success;
+                emailAsyncValidationState.value === trimmedEmail &&
+                emailAsyncValidationState.state === AsyncValidationStateValue.Success;
+            const hasValidAsyncUsernameState =
+                usernameAsyncValidationState.value === joinUsernameDomain(trimmedUsername, domain) &&
+                usernameAsyncValidationState.state === AsyncValidationStateValue.Success;
 
             return (
                 [
-                    !hasValidAsyncEmailState ? 'email' : undefined,
+                    signupType === SignupType.Email && !hasValidAsyncEmailState ? 'email' : undefined,
+                    signupType === SignupType.Username && !hasValidAsyncUsernameState ? 'username' : undefined,
+                    errorDetails.username ? 'username' : undefined,
                     errorDetails.email ? 'email' : undefined,
-                    passwordFields && errorDetails.password ? 'password' : undefined,
-                    passwordFields && errorDetails.passwordConfirm ? 'passwordConfirm' : undefined,
+                    errorDetails.password ? 'password' : undefined,
+                    errorDetails.passwordConfirm ? 'passwordConfirm' : undefined,
                 ] as const
             ).filter(isTruthy);
         })();
@@ -300,14 +392,14 @@ const AccountStepDetails = ({
         validate: () => {
             return validateAccountDetails();
         },
-        data: async () => {
+        data: async (): Promise<AccountData> => {
             return {
+                username: trimmedUsername,
                 email: trimmedEmail,
                 password: details.password,
-                signupType: SignupType.Email,
+                signupType,
                 payload: await challengeRefEmail.current?.getChallenge().catch(noop),
-                username: '',
-                domain: '',
+                domain,
             };
         },
         scrollInto,
@@ -317,7 +409,7 @@ const AccountStepDetails = ({
         const handleFocus = () => {
             // This a hack to get the email input state to be true since onBlur event isn't triggered.
             // Basically any time something else gets focus on the page and the email input has gotten values.
-            const keys = ['email'] as const;
+            const keys = ['email', 'username'] as const;
             keys.forEach((key) => {
                 if (inputValuesRef.current[key]) {
                     setInputsStateDiff({ [key]: { focus: true } });
@@ -335,11 +427,13 @@ const AccountStepDetails = ({
         };
     }, []);
 
+    const usernameError = states.username.interactive && states.username.focus ? errorDetails.username : undefined;
     const emailError = states.email.interactive && states.email.focus ? errorDetails.email : undefined;
     const passwordError = states.password.interactive && states.password.focus ? errorDetails.password : undefined;
     const passwordConfirmError =
         states.passwordConfirm.interactive && states.passwordConfirm.focus ? errorDetails.passwordConfirm : undefined;
-    const inputsWrapper = 'flex flex-column gap-1';
+    const inputsWrapper = 'flex flex-column';
+    const hasSwitchSignupType = signupTypes.includes(SignupType.Email) && signupTypes.length > 1;
     return (
         <>
             {loading && (
@@ -371,6 +465,17 @@ const AccountStepDetails = ({
                     }
                 }}
             >
+                {/*This is attempting to position at the same place as the select since it's in the challenge iframe*/}
+                <div className="relative">
+                    <div
+                        ref={anchorRef as any}
+                        className="absolute top-custom right-custom"
+                        style={{
+                            '--right-custom': '6px',
+                            '--top-custom': '53px', // Magic values where the select will be
+                        }}
+                    />
+                </div>
                 <div className={`${inputsWrapper} mb-4`}>
                     <Challenge
                         bodyClassName="color-norm bg-transparent px-2"
@@ -389,65 +494,250 @@ const AccountStepDetails = ({
                         }}
                     >
                         <div className={inputsWrapper}>
-                            <InputFieldTwo
-                                ref={emailRef}
-                                id="email"
-                                label={c('Signup label').t`Email address`}
-                                inputClassName="email-input-field"
-                                error={emailError}
-                                suffix={(() => {
-                                    if (emailError) {
-                                        return undefined;
-                                    }
-                                    if (emailValidationState.state === EmailAsyncState.Success) {
-                                        return (
-                                            <Icon
-                                                name="checkmark-circle"
-                                                className="color-success"
-                                                size={16}
-                                                data-testid="email-valid"
-                                            />
-                                        );
-                                    }
-                                    if (emailValidationState.state === EmailAsyncState.Loading) {
-                                        return <CircleLoader size="small" />;
-                                    }
-                                })()}
-                                disableChange={disableChange}
-                                dense={!emailError}
-                                rootClassName={!emailError ? 'pb-2' : undefined}
-                                value={details.email}
-                                onValue={(value: string) => {
-                                    inputValuesRef.current.email = true;
-                                    setInputsDiff({ email: value });
-                                    setInputsStateDiff({ email: { interactive: true } });
-                                    const email = value.trim();
-                                    const errors = getErrorDetails({
-                                        email,
-                                    });
-                                    validator.trigger({
-                                        api,
-                                        error: !!errors.email,
-                                        email,
-                                        set: setEmailValidationState,
-                                        measure,
-                                    });
-                                }}
-                                onBlur={() => {
-                                    // Doesn't work because it's in the challenge
-                                    setInputsStateDiff({ email: { focus: true } });
-                                }}
-                                onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => {
-                                    if (event.key === 'Enter') {
-                                        onSubmit?.();
-                                    }
-                                    if (event.key === 'Tab') {
+                            {signupType === SignupType.Email && (
+                                <InputFieldTwo
+                                    ref={emailRef}
+                                    id="email"
+                                    label={c('Signup label').t`Email address`}
+                                    inputClassName="email-input-field"
+                                    error={emailError}
+                                    suffix={(() => {
+                                        if (emailError) {
+                                            return undefined;
+                                        }
+                                        if (emailAsyncValidationState.state === AsyncValidationStateValue.Success) {
+                                            return (
+                                                <Icon
+                                                    name="checkmark-circle"
+                                                    className="color-success"
+                                                    size={16}
+                                                    data-testid="email-valid"
+                                                />
+                                            );
+                                        }
+                                        if (emailAsyncValidationState.state === AsyncValidationStateValue.Loading) {
+                                            return <CircleLoader size="small" />;
+                                        }
+                                    })()}
+                                    disableChange={disableChange}
+                                    dense={!passwordFields ? !emailError : undefined}
+                                    rootClassName={!passwordFields ? (!emailError ? 'pb-2' : undefined) : undefined}
+                                    value={details.email}
+                                    onValue={(value: string) => {
+                                        inputValuesRef.current.email = true;
+                                        setInputsDiff({ email: value });
+                                        setInputsStateDiff({ email: { interactive: true } });
+                                        const email = value.trim();
+                                        const errors = getErrorDetails({
+                                            signupType,
+                                            email,
+                                        });
+                                        emailAsyncValidator.trigger({
+                                            api,
+                                            error: !!errors.email,
+                                            value: email,
+                                            set: setEmailAsyncValidationState,
+                                            measure,
+                                        });
+                                    }}
+                                    onBlur={() => {
+                                        // Doesn't work because it's in the challenge
                                         setInputsStateDiff({ email: { focus: true } });
-                                    }
-                                }}
-                            />
+                                    }}
+                                    onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => {
+                                        if (event.key === 'Enter') {
+                                            onSubmit?.();
+                                        }
+                                        if (event.key === 'Tab') {
+                                            setInputsStateDiff({ email: { focus: true } });
+                                        }
+                                    }}
+                                />
+                            )}
+
+                            {signupType === SignupType.Username && (
+                                <InputFieldTwo
+                                    ref={usernameRef}
+                                    id="username"
+                                    label={c('Signup label').t`Username`}
+                                    error={usernameError}
+                                    autoFocus
+                                    inputClassName="email-input-field"
+                                    suffix={(() => {
+                                        const asyncState = (() => {
+                                            const wrap = (child: ReactNode) => {
+                                                return (
+                                                    <div
+                                                        className="w-custom text-center"
+                                                        style={{
+                                                            '--w-custom': '1.5rem',
+                                                        }}
+                                                    >
+                                                        {child}
+                                                    </div>
+                                                );
+                                            };
+                                            if (
+                                                [
+                                                    AsyncValidationStateValue.Error,
+                                                    AsyncValidationStateValue.Fatal,
+                                                ].includes(usernameAsyncValidationState.state) ||
+                                                usernameError
+                                            ) {
+                                                return wrap(
+                                                    <Tooltip
+                                                        /* Unfortunately doesn't work because it's in the challenge*/
+                                                        title={usernameAsyncValidationState.message || usernameError}
+                                                    >
+                                                        <Icon
+                                                            name="exclamation-circle-filled"
+                                                            className="color-danger"
+                                                            size={16}
+                                                            data-testid="email-invalid"
+                                                        />
+                                                    </Tooltip>
+                                                );
+                                            }
+                                            if (
+                                                usernameAsyncValidationState.state === AsyncValidationStateValue.Success
+                                            ) {
+                                                return wrap(
+                                                    <Icon
+                                                        name="checkmark-circle"
+                                                        className="color-success"
+                                                        size={16}
+                                                        data-testid="email-valid"
+                                                    />
+                                                );
+                                            }
+                                            if (
+                                                usernameAsyncValidationState.state === AsyncValidationStateValue.Loading
+                                            ) {
+                                                return wrap(<CircleLoader size="small" />);
+                                            }
+                                        })();
+
+                                        if (domains.length === 1) {
+                                            const value = `@${domain}`;
+                                            return (
+                                                <>
+                                                    <span className="text-ellipsis" title={value}>
+                                                        {value}
+                                                    </span>
+                                                    {asyncState}
+                                                </>
+                                            );
+                                        }
+                                        return (
+                                            <>
+                                                <SelectTwo
+                                                    id="select-domain"
+                                                    originalPlacement="bottom-end"
+                                                    anchorRef={anchorRef}
+                                                    size={{ width: DropdownSizeUnit.Static }}
+                                                    unstyled
+                                                    onOpen={() => setRerender({})}
+                                                    onClose={() => setRerender({})}
+                                                    value={domain}
+                                                    onChange={({ value }) => setDomain(value)}
+                                                >
+                                                    {domainOptions.map((option) => (
+                                                        <Option
+                                                            key={option.value}
+                                                            value={option.value}
+                                                            title={option.text}
+                                                        >
+                                                            @{option.text}
+                                                        </Option>
+                                                    ))}
+                                                </SelectTwo>
+                                                {asyncState}
+                                            </>
+                                        );
+                                    })()}
+                                    disableChange={disableChange}
+                                    dense={!passwordFields ? !emailError : undefined}
+                                    rootClassName={!passwordFields ? (!emailError ? 'pb-2' : undefined) : undefined}
+                                    value={details.username}
+                                    onValue={(value: string) => {
+                                        const sanitizedValue = value.replaceAll('@', '');
+
+                                        inputValuesRef.current.username = true;
+                                        setInputsStateDiff({ username: { interactive: true } });
+                                        setInputsDiff({ username: sanitizedValue });
+
+                                        // If sanitisation happens, force re-render the input with a new value so that the values get removed in the iframe
+                                        if (sanitizedValue !== value) {
+                                            flushSync(() => {
+                                                setInputsDiff({ username: `${value} ` });
+                                            });
+                                            setInputsDiff({ username: sanitizedValue });
+                                        }
+
+                                        const username = sanitizedValue.trim();
+                                        const errors = getErrorDetails({
+                                            signupType,
+                                            username,
+                                            domain,
+                                        });
+                                        usernameAsyncValidator.trigger({
+                                            api,
+                                            error: !!errors.username,
+                                            value: joinUsernameDomain(username, domain),
+                                            set: setUsernameAsyncValidationState,
+                                            measure,
+                                        });
+                                    }}
+                                    onBlur={() => {
+                                        // Doesn't work because it's in the challenge
+                                        setInputsStateDiff({ username: { focus: true } });
+                                    }}
+                                    onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => {
+                                        if (event.key === 'Enter') {
+                                            onSubmit?.();
+                                        }
+                                        if (event.key === 'Tab') {
+                                            setInputsStateDiff({ username: { focus: true } });
+                                        }
+                                    }}
+                                />
+                            )}
                         </div>
                     </Challenge>
+
+                    {hasSwitchSignupType ? (
+                        <div className={clsx('text-center', loading && 'hidden')}>
+                            <InlineLinkButton
+                                id="existing-email-button"
+                                onClick={() => {
+                                    setSignupType(
+                                        (() => {
+                                            if (signupType === SignupType.Username) {
+                                                return SignupType.Email;
+                                            }
+                                            return signupTypes.find((type) => type !== signupType) || signupType;
+                                        })()
+                                    );
+                                    setInputsDiff({ email: '', username: '' });
+                                }}
+                            >
+                                {signupType === SignupType.Email
+                                    ? c('Action').t`Get a new encrypted email address`
+                                    : c('Action').t`Use your current email instead`}
+                            </InlineLinkButton>
+                            <Info
+                                buttonTabIndex={-1}
+                                className="ml-2"
+                                title={
+                                    signupType === SignupType.Email
+                                        ? c('Info')
+                                              .t`With an encrypted ${BRAND_NAME} address, you can use all ${BRAND_NAME} services`
+                                        : c('Info')
+                                              .t`You will need a ${BRAND_NAME} address to use ${MAIL_APP_NAME} and ${CALENDAR_APP_NAME}`
+                                }
+                            />
+                        </div>
+                    ) : null}
 
                     {passwordFields && (
                         <>
@@ -459,7 +749,7 @@ const AccountStepDetails = ({
                                 label={c('Signup label').t`Password`}
                                 error={passwordError}
                                 dense={!passwordError}
-                                rootClassName={clsx('mt-4', !passwordError && 'pb-2')}
+                                rootClassName={clsx(hasSwitchSignupType ? 'mt-4' : 'mt-2', !passwordError && 'pb-2')}
                                 disableChange={disableChange}
                                 value={details.password}
                                 autoComplete="new-password"

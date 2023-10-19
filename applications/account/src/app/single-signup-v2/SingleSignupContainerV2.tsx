@@ -40,9 +40,9 @@ import {
     APP_NAMES,
     BRAND_NAME,
     CLIENT_TYPES,
+    COUPON_CODES,
     CYCLE,
     DEFAULT_CURRENCY,
-    PASS_APP_NAME,
     PASS_SHORT_APP_NAME,
     PLANS,
 } from '@proton/shared/lib/constants';
@@ -54,6 +54,7 @@ import { traceError } from '@proton/shared/lib/helpers/sentry';
 import { Audience, Cycle, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import { FREE_PLAN, getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
+import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 import { hasPaidPass } from '@proton/shared/lib/user/helpers';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -78,7 +79,8 @@ import {
     getSessionDataFromSignup,
     getUserInfo,
 } from './helper';
-import { SignupMode, SignupModelV2, Steps, UpsellTypes } from './interface';
+import { SignupMode, SignupModelV2, SignupTheme, Steps, UpsellTypes } from './interface';
+import { getMailConfiguration } from './mail/configuration';
 import {
     TelemetryMeasurementData,
     getPaymentMethodsAvailable,
@@ -172,6 +174,7 @@ const SingleSignupContainerV2 = ({
     paths,
     metaTags,
     fork,
+    toApp,
     activeSessions,
     loader,
     onLogin,
@@ -222,18 +225,30 @@ const SingleSignupContainerV2 = ({
         planCards,
         benefits,
         product,
-        shortAppName,
+        shortProductAppName,
         productAppName,
         preload,
+        signupTypes,
         setupImg,
         defaults,
         generateMnemonic,
         CustomStep,
-    } = getPassConfiguration({
-        isDesktop,
-        vpnServersCountData,
-        passVaultSharingEnabled,
-    });
+    } = (() => {
+        if (toApp === APPS.PROTONMAIL) {
+            return getMailConfiguration({
+                isDesktop,
+                vpnServersCountData,
+            });
+        }
+        if (toApp === APPS.PROTONPASS) {
+            return getPassConfiguration({
+                isDesktop,
+                vpnServersCountData,
+                passVaultSharingEnabled,
+            });
+        }
+        throw new Error('Unknown app');
+    })();
 
     useEffect(() => {
         const run = async () => {
@@ -278,13 +293,7 @@ const SingleSignupContainerV2 = ({
         const searchParams = new URLSearchParams(location.search);
         const result = getSignupSearchParams(location.pathname, searchParams, {
             cycle: defaults.cycle,
-            preSelectedPlan: defaults.plan,
         });
-
-        const validValues = ['free', ...planCards.map((planCard) => planCard.plan)];
-        if (result.preSelectedPlan && !validValues.includes(result.preSelectedPlan)) {
-            delete result.preSelectedPlan;
-        }
 
         const localID = Number(searchParams.get('u'));
         const mode = searchParams.get('mode') === SignupMode.Onboarding ? SignupMode.Onboarding : SignupMode.Default;
@@ -298,13 +307,25 @@ const SingleSignupContainerV2 = ({
 
     const measure = (data: TelemetryMeasurementData) => {
         const values = 'values' in data ? data.values : {};
+        const flow = (() => {
+            if (toApp === APPS.PROTONMAIL) {
+                return 'mail_signup';
+            }
+            if (toApp === APPS.PROTONPASS) {
+                if (signupParameters.mode === SignupMode.Onboarding) {
+                    return 'pass_web_first_onboard';
+                }
+                return 'pass_signup';
+            }
+            throw new Error('Unknown telemetry flow');
+        })();
         return sendTelemetryReport({
             api: unauthApi,
             measurementGroup: TelemetryMeasurementGroups.accountSignup,
             event: data.event,
             dimensions: {
                 ...data.dimensions,
-                flow: signupParameters.mode === SignupMode.Onboarding ? 'pass_web_first_onboard' : 'pass_signup',
+                flow,
             },
             values,
         }).catch(noop);
@@ -370,8 +391,9 @@ const SingleSignupContainerV2 = ({
                         : undefined
                 )
             ).then(({ Plans }) => Plans);
-            const prePlanIDs = getPlanIDsFromParams(plans, signupParameters);
+            const planParameters = getPlanIDsFromParams(plans, signupParameters, defaults);
             const currency = signupParameters.currency || plans?.[0]?.Currency || DEFAULT_CURRENCY;
+            const cycle = signupParameters.cycle || defaults.cycle;
 
             const plansMap = toMap(plans, 'Name') as PlansMap;
 
@@ -386,9 +408,9 @@ const SingleSignupContainerV2 = ({
                         plansMap,
                         upsellPlanCard,
                         options: {
-                            planIDs: prePlanIDs,
+                            planIDs: planParameters.planIDs,
                             currency,
-                            cycle: signupParameters.cycle,
+                            cycle,
                             minimumCycle: signupParameters.minimumCycle,
                             coupon: signupParameters.coupon,
                         },
@@ -413,6 +435,7 @@ const SingleSignupContainerV2 = ({
                 domains,
                 upsell,
                 plans,
+                planParameters,
                 plansMap,
                 paymentMethodStatus,
                 subscriptionData,
@@ -421,17 +444,21 @@ const SingleSignupContainerV2 = ({
 
             if (session?.user) {
                 setLoadingChallenge(false);
-                const onboardingMode = signupParameters.mode === SignupMode.Onboarding;
-                if (onboardingMode && hasPaidPass(session.user)) {
-                    const freeSubscriptionData = getFreeSubscriptionData(subscriptionData);
-                    const cache: UserCacheResult = {
-                        type: 'user',
-                        subscriptionData: freeSubscriptionData,
-                        session,
-                    };
-                    setModelDiff({ subscriptionData: cache.subscriptionData, cache, step: Steps.Loading });
-                } else {
-                    triggerModals(session, { ignoreUnlock: onboardingMode });
+
+                if (toApp === APPS.PROTONPASS) {
+                    const onboardingMode = signupParameters.mode === SignupMode.Onboarding;
+
+                    if (onboardingMode && hasPaidPass(session.user)) {
+                        const freeSubscriptionData = getFreeSubscriptionData(subscriptionData);
+                        const cache: UserCacheResult = {
+                            type: 'user',
+                            subscriptionData: freeSubscriptionData,
+                            session,
+                        };
+                        setModelDiff({ subscriptionData: cache.subscriptionData, cache, step: Steps.Loading });
+                    } else {
+                        triggerModals(session, { ignoreUnlock: onboardingMode });
+                    }
                 }
 
                 const planName = getPlanNameFromSession(session);
@@ -484,6 +511,9 @@ const SingleSignupContainerV2 = ({
 
             // Reset planIDs
             const planIDs = (() => {
+                if (model.planParameters?.defined) {
+                    return model.planParameters.planIDs;
+                }
                 const previousPlanIDs = model.subscriptionData.planIDs;
                 // We keep the previous plan IDs if no addon was added and if the selected plan is included in any of the offered plans.
                 if (
@@ -493,7 +523,7 @@ const SingleSignupContainerV2 = ({
                 ) {
                     return previousPlanIDs;
                 }
-                return getPlanIDsFromParams(model.plans, signupParameters);
+                return model.planParameters?.planIDs;
             })();
 
             const { subscriptionData, upsell } = await getUserInfo({
@@ -682,10 +712,21 @@ const SingleSignupContainerV2 = ({
 
         measure(getSignupTelemetryData(model.plansMap, cache));
 
-        silentApi(updateFeatureValue(FeatureCode.PassSignup, true)).catch(noop);
+        if (toApp === APPS.PROTONPASS) {
+            silentApi(updateFeatureValue(FeatureCode.PassSignup, true)).catch(noop);
+        }
 
         return result.cache;
     };
+
+    const theme = ((): SignupTheme => {
+        const blackFriday = signupParameters.coupon?.toUpperCase() === COUPON_CODES.BLACK_FRIDAY_2023;
+        return {
+            type: blackFriday ? ThemeTypes.Carbon : undefined,
+            background: blackFriday ? 'bf' : undefined,
+            intent: toApp,
+        };
+    })();
 
     return (
         <>
@@ -732,7 +773,7 @@ const SingleSignupContainerV2 = ({
                 <AccessModal
                     {...accessModalProps}
                     plan={model.upsell.plan?.Title || ''}
-                    appName={PASS_APP_NAME}
+                    appName={productAppName}
                     onSignOut={() => {
                         return handleSignOut(true);
                     }}
@@ -745,7 +786,7 @@ const SingleSignupContainerV2 = ({
                 <SubUserModal
                     {...subUserModalProps}
                     currentPlan={model.upsell.currentPlan}
-                    appName={PASS_SHORT_APP_NAME}
+                    appName={shortProductAppName}
                     plansMap={model.plansMap}
                     upsellPlan={model.upsell.plan}
                     unlockPlan={model.upsell.unlockPlan}
@@ -757,9 +798,11 @@ const SingleSignupContainerV2 = ({
                     }}
                 />
             )}
-            <UnAuthenticated>
+            <UnAuthenticated theme={theme.type}>
                 {model.step === Steps.Account && (
                     <Step1
+                        signupTypes={signupTypes}
+                        theme={theme}
                         relativePrice={relativePrice}
                         step1Ref={step1Ref}
                         className={loadingDependencies || loadingChallenge ? 'visibility-hidden' : undefined}
@@ -771,7 +814,7 @@ const SingleSignupContainerV2 = ({
                         benefits={benefits}
                         measure={measure}
                         app={product}
-                        shortAppName={shortAppName}
+                        shortAppName={shortProductAppName}
                         appName={productAppName}
                         selectedPlan={selectedPlan}
                         currentPlan={model.upsell.currentPlan}
@@ -869,7 +912,11 @@ const SingleSignupContainerV2 = ({
                                         cache: cacheWithOriginalSubscription,
                                     });
                                 } else {
-                                    const result = await handleCreateUser({ cache, api: silentApi, mode: 'cro' });
+                                    const result = await handleCreateUser({
+                                        cache,
+                                        api: silentApi,
+                                        mode: 'cro',
+                                    });
                                     setModelDiff({
                                         subscriptionData: result.cache.subscriptionData,
                                         cache: result.cache,
@@ -886,6 +933,7 @@ const SingleSignupContainerV2 = ({
                 )}
                 {model.step === Steps.Loading && (
                     <Step2
+                        theme={theme}
                         logo={logo}
                         steps={(() => {
                             const hasPlans = hasPlanIDs(model.subscriptionData.planIDs);
@@ -942,18 +990,15 @@ const SingleSignupContainerV2 = ({
                 )}
                 {model.step === Steps.Custom && (
                     <CustomStep
+                        theme={theme}
                         measure={measure}
                         fork={fork}
                         model={model}
+                        onChangeModel={setModelDiff}
                         productAppName={productAppName}
                         setupImg={setupImg}
                         logo={logo}
-                        onSetup={async () => {
-                            const cache = model.cache;
-                            if (!cache) {
-                                throw new Error('Missing cache');
-                            }
-
+                        onSetup={async (cache: SignupCacheResult | UserCacheResult) => {
                             if (cache.type === 'user') {
                                 try {
                                     await onLogin({

@@ -538,22 +538,26 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                         SSO_PATHS.DRIVE_SIGNUP,
                                                     ]}
                                                 >
-                                                    <UnAuthenticated>
-                                                        <SignupContainer
-                                                            metaTags={getSignupMeta(maybePreAppIntent)}
-                                                            loginUrl={paths.login}
-                                                            productParam={productParam}
-                                                            clientType={clientType}
-                                                            toApp={maybePreAppIntent}
-                                                            toAppName={toAppName}
-                                                            onLogin={handleLogin}
-                                                            onBack={
-                                                                hasBackToSwitch
-                                                                    ? () => history.push(paths.login)
-                                                                    : undefined
-                                                            }
-                                                        />
-                                                    </UnAuthenticated>
+                                                    {(() => {
+                                                        return (
+                                                            <UnAuthenticated>
+                                                                <SignupContainer
+                                                                    metaTags={getSignupMeta(maybePreAppIntent)}
+                                                                    loginUrl={paths.login}
+                                                                    productParam={productParam}
+                                                                    clientType={clientType}
+                                                                    toApp={maybePreAppIntent}
+                                                                    toAppName={toAppName}
+                                                                    onLogin={handleLogin}
+                                                                    onBack={
+                                                                        hasBackToSwitch
+                                                                            ? () => history.push(paths.login)
+                                                                            : undefined
+                                                                    }
+                                                                />
+                                                            </UnAuthenticated>
+                                                        );
+                                                    })()}
                                                 </Route>
                                                 <Route path={SSO_PATHS.PASS_SIGNUP}>
                                                     <SingleSignupContainerV2

@@ -1,11 +1,11 @@
-import { CSSProperties, ComponentPropsWithoutRef } from 'react';
+import { CSSProperties, ComponentPropsWithoutRef, Key } from 'react';
 
 import { Icon, IconName } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
 
 export interface BenefitItem {
     text: string;
-    key: string;
+    key: Key;
     icon: { name: IconName; style?: CSSProperties };
 }
 
