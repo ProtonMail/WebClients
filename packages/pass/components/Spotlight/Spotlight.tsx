@@ -33,7 +33,7 @@ export const Spotlight: VFC<Props> = (props) => {
 
     const inviteMessage = useMemo<MaybeNull<SpotlightMessageDefinition>>(
         () =>
-            latestInvite && sharingEnabled
+            sharingEnabled && latestInvite && !latestInvite.fromNewUser
                 ? {
                       id: latestInvite.token,
                       weak: true,
