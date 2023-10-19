@@ -218,7 +218,7 @@
         "Grup kontak"
       ],
       "Continue": [
-        "Lanjut"
+        "Lanjutkan"
       ],
       "Continue import": [
         "Lanjutkan impor"
@@ -421,8 +421,14 @@
       "Get verification code": [
         "Dapatkan kode verifikasi"
       ],
+      "Go to first page": [
+        "Tuju halaman pertama"
+      ],
       "Go to label": [
         "Tuju label"
+      ],
+      "Go to last page": [
+        "Tuju halaman terakhir"
       ],
       "Go to next page": [
         "Ke halaman selanjutnya"
@@ -692,7 +698,7 @@
         "Belum disimpan"
       ],
       "Ok": [
-        "Oke"
+        "OK"
       ],
       "OK": [
         "OK"
@@ -3154,9 +3160,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Pencarian konten tidak dapat dilangsungkan pada browser ini. Mohon keluar dari mode private browsing atau gunakan browser lain."
       ],
-      "Could not save preference": [
-        "Tidak dapat menyimpan preferensi"
-      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Kesalahan dekripsi: konten terenkripsi yang terdapat pada pesan ini gagal didekripsi."
       ],
@@ -3326,7 +3329,7 @@
         "Kunci publik tidak dapat dipercaya"
       ],
       "re-activate the previous key": [
-        "kembali mengaktifkan kunci dekripsi yang terdahulu"
+        "mengaktifkan kembali kunci terdahulu"
       ],
       "Removed duplicate recipients: ${ recipents }": [
         "Penerima duplikat dihapus: ${ recipents }"
@@ -3811,6 +3814,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } Premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME } Premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } Premium"
+      ],
       "Up to 6 users": [
         "Sampai 6 pengguna"
       ]
@@ -4370,7 +4382,7 @@
         "Berkas ini mengandung undangan acara:"
       ],
       "This file contains invitation responses:": [
-        "Berkas ini mengandung balasan atas undangan yang dikirim:"
+        "Berkas ini mengandung balasan undangan:"
       ],
       "This file contains some data that we cannot import:": [
         "Sebagian data yang terkandung dalam berkas ini tidak dapat kami impor:"
@@ -4451,10 +4463,10 @@
         "Permintaan baru terlalu banyak. Coba ulangi beberapa saat lagi."
       ],
       "Use your app password if:": [
-        "Gunakan kata sandi aplikasi Anda jika:"
+        "Gunakan kata sandi aplikasi Anda apabila:"
       ],
       "Use your app password instead of your regular password if:": [
-        "Gunakan kata sandi aplikasi Anda alih-alih kata sandi Anda biasanya jika:"
+        "Gunakan kata sandi aplikasi Anda alih-alih kata sandi biasa apabila:"
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Kata sandi aplikasi Anda benar. ${ boldNot } gunakan kata sandi biasa Anda."
@@ -4646,7 +4658,7 @@
         "${ fileName }: pratinjau resolusi rendah"
       ],
       "${ groupCounts } groups found": [
-        "ditemukan ${ groupCounts } grup"
+        "${ groupCounts } grup ditemukan"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } juga dapat digunakan untuk melindungi bisnis Anda."
@@ -4858,6 +4870,9 @@
       "Calendar side panel": [
         "Panel samping kalender"
       ],
+      "Can't find what you're looking for? ${ displayAllMailButton }": [
+        "Tidak menemukan apa yang Anda cari? ${ displayAllMailButton }"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Tidak dapat mengingat kata sandi Anda? Kami dapat membantu Anda untuk membersihkan data terenkripsi milik seluruh kontak yang dienkripsi dengan kunci ini terlepas dari peringatan yang ada."
       ],
@@ -4956,9 +4971,6 @@
       ],
       "Do you want to re-sign the contact details?": [
         "Anda ingin menandatangani ulang rincian kontak?"
-      ],
-      "Don't find what you are looking for? ${ displayAllMailButton }": [
-        "Tidak melihat apa yang Anda cari? ${ displayAllMailButton }"
       ],
       "Don't forget to share the password with the recipient": [
         "Jangan lupa untuk membagikan kata sandi Anda dengan penerima pesan"
@@ -5549,7 +5561,7 @@
         "Verifikasi ${ contactName } gagal: kontak tidak ditandatangani dengan benar.\nKesalahan ini kemungkinan disebabkan oleh pengaturan ulang kata sandi.\nAnda harus terlebih dahulu menandatangani ulang atau menyunting rincian kontak agar Anda dapat mengirim pesan ke ${ contactAddress }."
       ],
       "The verification of ${ contactNames } has failed: the contacts are not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contacts in order to send a message to ${ contactAddresses } or edit the contacts.": [
-        "Verifikasi ${ contactNames } gagal: kontak tidak ditandatangani dengan benar.\nKesalahan ini kemungkinan disebabkan oleh pengaturan ulang kata sandi.\nAnda harus terlebih dahulu menandatangani ulang atau menyunting rincian kontak agar Anda dapat mengirim pesan ke ${ contactAddresses }."
+        "Verifikasi ${ contactNames } gagal: kontak tidak ditandatangani dengan benar.\nHal ini kemungkinan disebabkan oleh pengaturan ulang kata sandi.\nAnda harus terlebih dahulu menandatangani ulang kontak agar Anda dapat mengirim pesan ke ${ contactAddresses } atau menyunting kontak yang bersangkutan."
       ],
       "Themes can give your inbox a new look.": [
         "Berbagai tema dapat menyegarkan tampilan kotak surat Anda."
@@ -6314,9 +6326,6 @@
       "Contacts": [
         "Kontak"
       ],
-      "Conversations per page": [
-        "Percakapan per halaman"
-      ],
       "Copy": [
         "Salin"
       ],
@@ -6482,9 +6491,6 @@
       "Mark as": [
         "Tandai sebagai"
       ],
-      "Messages per page": [
-        "Pesan per halaman"
-      ],
       "Move ${ sidebarElementName }": [
         "Pindahkan ${ sidebarElementName }"
       ],
@@ -6540,7 +6546,7 @@
         "Peserta"
       ],
       "Password": [
-        "Kata Sandi"
+        "Kata sandi"
       ],
       "Password hint": [
         "Petunjuk kata sandi"
@@ -6860,6 +6866,9 @@
       ],
       "Sent": [
         "Terkirim"
+      ],
+      "Set up email forwarding": [
+        "Atur penerusan email"
       ],
       "Sign up for free": [
         "Daftar gratis"
@@ -7262,7 +7271,7 @@
         "Tautan disalin ke papan klip"
       ],
       "Password has been set successfully": [
-        "Kata sandi telah berhasil ditentukan"
+        "Kata sandi berhasil ditentukan"
       ],
       "Sender ${ firstSenderAddress } blocked": [
         "Pengirim ${ firstSenderAddress } diblokir"
@@ -7752,7 +7761,7 @@
         "Pemulihan akun tidak tersedia untuk kunci alamat lawas"
       ],
       "Please generate keys before you try to change your password": [
-        "Harap buat kunci terlebih dahulu sebelum Anda mengubah kata sandi Anda"
+        "Silakan buat kunci terlebih dahulu sebelum Anda mencoba untuk mengubah kata sandi"
       ]
     },
     "session_recovery:available:info": {
@@ -7763,13 +7772,13 @@
         "${ timeRemaining.inHours } jam"
       ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } days to reset your password.": [
-        "Permintaan pengaturan ulang kata sandi disetujui (${ user.Email }). Anda masih punya ${ timeRemaining.inDays } hari untuk mengatur ulang kata sandi Anda."
+        "Permintaan pengaturan ulang kata sandi telah disetujui (${ user.Email }). Anda memiliki ${ timeRemaining.inDays } hari untuk mengatur ulang kata sandi Anda."
       ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hours to reset your password.": [
-        "Permintaan pengaturan ulang kata sandi disetujui (${ user.Email }). Anda masih punya ${ timeRemaining.inHours } jam untuk mengatur ulang kata sandi Anda."
+        "Permintaan pengaturan ulang kata sandi telah disetujui (${ user.Email }). Anda memiliki ${ timeRemaining.inHours } jam untuk mengatur ulang kata sandi Anda."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
-        "Silakan menuju ke perangkat yang sudah masuk (dalam sesi di mana permintaannya dibuat) untuk mengubah kata sandi Anda."
+        "Silakan tuju perangkat yang telah terhubung masuk (dalam sesi di mana permintaan ini diajukan) untuk mengubah kata sandi Anda."
       ],
       "This permission expires in ${ timeRemaining.inDays } days": [
         "Perizinan akan kedaluwarsa dalam ${ timeRemaining.inDays } hari"
@@ -7818,7 +7827,7 @@
     },
     "session_recovery:cancelled:info": {
       "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Permintaan pengaturan ulang kata sandi dibatalkan (${ user.Email }). Jika Anda tidak membuat permintaan ini, ${ changePasswordLink }."
+        "Permintaan pengaturan ulang kata sandi dibatalkan (${ user.Email }). Apabila Anda tidak membuat permintaan ini, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7845,10 +7854,10 @@
         "Apabila Anda tidak meminta untuk mengatur ulang kata sandi, batalkan permintaan ini sekarang juga."
       ],
       "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hours.": [
-        "Pengaturan ulang kata sandi diminta (${ user.Email }). Anda dapat mengubah kata sandi Anda dalam ${ hoursRemaining } jam."
+        "Pengaturan ulang kata sandi telah diminta (${ user.Email }). Anda dapat mengubah kata sandi Anda dalam ${ hoursRemaining } jam."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
-        "Untuk memastikan bahwa ini memang Anda yang sedang mencoba mengatur ulang kata sandi Anda, kami menunggu 72 jam sebelum menyetujui permintaan. Anda dapat mengubah kata sandi Anda dalam${ boldTimeLeft }. ${ viewRequest }"
+        "Untuk memastikan bahwa permintaan pengaturan ulang kata sandi ini benar-benar berasal dari Anda, kami menunggu 72 jam sebelum menyetujui permintaan yang masuk. Anda dapat mengubah kata sandi Anda pada ${ boldTimeLeft }. ${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "Kami telah menerima permintaan pengaturan ulang kata sandi untuk ${ boldEmail }."
@@ -7877,13 +7886,13 @@
         "${ gracePeriodHoursRemaining } jam"
       ],
       "${ passwordReset } is now available.": [
-        "${ passwordReset } sekarang tersedia."
+        "${ passwordReset } kini telah tersedia."
       ],
       "If you sign out before you reset your password, you could lose access to your account.": [
-        "Jika Anda keluar sebelum mengatur ulang kata sandi, Anda dapat kehilangan akses ke akun Anda."
+        "Apabila Anda keluar sebelum mengatur ulang kata sandi, Anda dapat kehilangan akses menuju akun Anda."
       ],
       "If you sign out without resetting your password, you could lose access to your account.": [
-        "Jika Anda keluar tanpa mengatur ulang kata sandi, Anda dapat kehilangan akses ke akun Anda."
+        "Apabila Anda keluar tanpa mengatur ulang kata sandi, Anda dapat kehilangan akses menuju akun Anda."
       ],
       "You will be able to reset your password in ${ boldTimeLeft }.": [
         "Anda akan dapat mengatur ulang kata sandi Anda dalam ${ boldTimeLeft }."
@@ -7896,7 +7905,7 @@
     },
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
-        "Keluar tanpa pengaturan ulang kata sandi?"
+        "Keluar tanpa mengatur ulang kata sandi?"
       ]
     },
     "Signature verification warning": {
@@ -7977,6 +7986,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 pengguna"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -7994,6 +8006,15 @@
       ],
       "Highest VPN speed": [
         "Kecepatan VPN tertinggi"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME } Premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, & ${ DRIVE_SHORT_APP_NAME } Premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } Premium"
       ],
       "Premium early access": [
         "Akses dini Premium"
@@ -8039,14 +8060,23 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } months": [
+        "${ n } bulan"
+      ],
       "/ month": [
         "/ bulan"
       ],
       "1 year": [
         "1 tahun"
       ],
+      "15 months": [
+        "15 bulan"
+      ],
       "2 years": [
         "2 tahun"
+      ],
+      "30 months": [
+        "30 bulan"
       ],
       "Billed at ${ amount } for 1 month": [
         "Tertagih dengan harga ${ amount } selama 1 bulan"
@@ -8170,6 +8200,9 @@
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Kami kini memuat gambar secara default dan memblokir pengirim untuk dapat melacak Anda. Hal ini dapat diubah di ${ settingsLink }."
+      ],
+      "You can now automatically forward your emails to anyone!": [
+        "Anda kini dapat meneruskan email Anda kepada siapa saja!"
       ],
       "You can now schedule your messages to be sent later": [
         "Kini Anda dapat menjadwalkan pengiriman pesan"
@@ -8408,7 +8441,7 @@
         "Preferensi disimpan"
       ],
       "Preferences saved": [
-        "Preferensi telah disimpan"
+        "Preferensi disimpan"
       ],
       "Public key trusted": [
         "Kunci publik berhasil dipercaya"
@@ -8448,6 +8481,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } Premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME } Premium"
+      ],
       "Premium Password Manager": [
         "Password Manager Premium"
       ]
@@ -8976,7 +9015,7 @@
         "Penerima"
       ],
       "Reconnect your account": [
-        "Hubungkan kembali akun Anda"
+        "Hubungkan ulang akun Anda"
       ],
       "Recover data": [
         "Pulihkan data"
@@ -9003,7 +9042,7 @@
         "Pilih tema"
       ],
       "Select action to take on contact group": [
-        "Pilih tindakan yang diambil di grup kontak"
+        "Pilih tindakan untuk diterapkan pada grup kontak"
       ],
       "Select contact group": [
         "Pilih grup kontak"
@@ -9027,7 +9066,7 @@
         "Pengirim"
       ],
       "Sender changed": [
-        "Nama pengirim diubah"
+        "Pengirim diubah"
       ],
       "Sending error": [
         "Kesalahan saat mengirim"

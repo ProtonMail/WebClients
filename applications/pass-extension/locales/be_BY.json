@@ -173,6 +173,9 @@
       "Importing": [
         "Імпартаванне"
       ],
+      "Invite others": [
+        "Запрасіць іншых"
+      ],
       "Join shared vault": [
         "Далучыцца да абагуленага сховішча"
       ],
@@ -187,6 +190,15 @@
       ],
       "Lock extension": [
         "Блакіраванне пашырэння"
+      ],
+      "Make admin": [
+        "Можа адміністраваць"
+      ],
+      "Make editor": [
+        "Можа рэдагаваць"
+      ],
+      "Make viewer": [
+        "Можа праглядаць"
       ],
       "Manage access": [
         "Кіраваць доступам"
@@ -211,6 +223,9 @@
       ],
       "Not now": [
         "Не зараз"
+      ],
+      "Open in a window": [
+        "Адкрыць у акне"
       ],
       "Open navigation": [
         "Адкрыць панэль навігацыі"
@@ -268,6 +283,9 @@
       ],
       "Share": [
         "Абагуліць"
+      ],
+      "Share vault": [
+        "Абагуліць сховішча"
       ],
       "Show": [
         "Паказаць"
@@ -445,12 +463,6 @@
       "Invitation could not be rejected": [
         "Не атрымалася адхіліць запрашэнне"
       ],
-      "Invite creation failed.": [
-        "Збой стварэння запрашэння."
-      ],
-      "Invite successfully sent": [
-        "Запрашэнне паспяхова адпраўлена"
-      ],
       "Item content cannot exceed 40KB": [
         "Змесціва элемента не можа перавышаць 40 КБ"
       ],
@@ -483,9 +495,6 @@
       ],
       "Restoring item failed": [
         "Збой аднаўлення элемента"
-      ],
-      "Setting \"${ payload.name }\" as primary vault failed": [
-        "Не ўдалося задаць \"${ payload.name }\" у якасці асноўнага сховішча"
       ],
       "Settings update failed": [
         "Збой абнаўлення налад"
@@ -612,9 +621,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Абнаўленне \"${ payload.item.data.metadata.name }\" было адхілена"
       ],
-      "\"${ payload.name }\" set as primary vault": [
-        "\"${ payload.name }\" зададзена ў якасці асноўнага сховішча"
-      ],
       "${ count } item": [
         "${ count } элемент",
         "${ count } элементы",
@@ -678,6 +684,9 @@
       "Access your passwords on the go with our mobile apps.": [
         "Атрымлівайце доступ да сваіх пароляў дзе б вы не знаходзіліся пры дапамозе нашых мабільных праграм."
       ],
+      "Admin": [
+        "Адміністратар"
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Псеўданім \"${ item.aliasEmail }\" перамешчаны ў сметніцу. Ён перастане перасылаць лісты ў вашу паштовую скрыню"
       ],
@@ -695,6 +704,9 @@
       ],
       "Autosaved on ${ submissionURL }": [
         "Аўтазахавана на ${ submissionURL }"
+      ],
+      "Can create, edit, delete, and export items in this vault.": [
+        "Можа ствараць, рэдагаваць, выдаляць і экспартаваць элементы ў гэтым сховішчы."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Можа даваць і адклікаць дазвол на доступ да гэтага сховішча, а таксама выдаляць яго."
@@ -734,6 +746,9 @@
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Без намаганняў імпартуйце вашы існуючыя паролі ў ${ PASS_APP_NAME }."
+      ],
+      "Editor": [
+        "Рэдактар​​"
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Уключыць ${ PASS_APP_NAME } падключыўшы свой уліковы запіс ${ BRAND_NAME }"
@@ -807,11 +822,17 @@
       "Internet connection lost": [
         "Падключэнне да інтэрнэту страчана"
       ],
+      "Invitation sent": [
+        "Запрашэнне адпраўлена"
+      ],
       "Invite successfully removed": [
         "Запрашэнне паспяхова выдалена"
       ],
       "Invite successfully resent": [
         "Запрашэнне адпраўлена паўторна"
+      ],
+      "invites you to access items in": [
+        "запрасіў вас атрымаць доступ да элементаў у"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Здаецца, што вы ўжо ўвайшлі ў ${ PASS_APP_NAME }. Калі вы спрабуеце ўвайсці з іншым уліковым запісам, спачатку выйдзіце з уліковага запісу ў пашырэнні."
@@ -1005,6 +1026,9 @@
       "Verification code": [
         "Праверачны код"
       ],
+      "Viewer": [
+        "Праглядальнік"
+      ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Узніклі праблемы сінхранізацыі даных з вашым лакальным сховішчам. Пераканайцеся, што ў вас дастаткова месца на дыску для бесперабойнай працы ${ PASS_SHORT_APP_NAME }."
       ],
@@ -1020,11 +1044,11 @@
         "У вас засталося ${ daysRemaining } дзён да канца выпрабавальнага перыяду",
         "У вас засталося ${ daysRemaining } дзён да канца выпрабавальнага перыяду"
       ],
-      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
-        "Вы перавысілі колькасць сховішчаў, якія ўключаны ў вашу падпіску. Элементы можна перамяшчаць толькі ў ваша асноўнае сховішча. Неабходна палепшыць падпіску, каб перамяшчаць элементы паміж усімі вашымі сховішчамі."
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
+        "Вы перавысілі колькасць сховішчаў, якія ўключаны ў вашу падпіску. Элементы можна перамяшчаць толькі ў першыя два вашы сховішчы. Неабходна палепшыць падпіску, каб перамяшчаць элементы паміж усімі вашымі сховішчамі."
       ],
-      "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
-        "Вы перавысілі колькасць сховішчаў, якія ўключаны ў вашу падпіску. Новыя элементы можна ствараць толькі ў вашым асноўным сховішчы. Неабходна палепшыць падпіску, каб ствараць новыя элементы ва ўсіх вашых сховішчах."
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
+        "Вы перавысілі колькасць сховішчаў, якія ўключаны ў вашу падпіску. Новыя элементы можна ствараць толькі ў першых двух вашых сховішчах. Неабходна палепшыць падпіску, каб ствараць новыя элементы ва ўсіх вашых сховішчах."
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Вы дасягнулі абмежавання па колькасці псеўданімаў, якія вы можаце стварыць. Неабмежаваная колькасць псеўданімаў стане даступна пасля паляпшэння вашай падпіскі."
@@ -1040,6 +1064,9 @@
       ],
       "You're about to create": [
         "Вы збіраецеся стварыць"
+      ],
+      "You're invited to a vault.": [
+        "Вас запрасілі ў сховішча."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Ваш сеанс ${ PASS_APP_NAME } заблакіраваны"
@@ -1129,6 +1156,9 @@
       ],
       "Autosave": [
         "Аўтазахаванне"
+      ],
+      "Autosave vault": [
+        "Аўтаматычнае захаванне сховішча"
       ],
       "Autosuggest": [
         "Аўтапрапанова"
@@ -1331,9 +1361,6 @@
       "Prefix": [
         "Прэфікс"
       ],
-      "Primary vault": [
-        "Асноўнае сховішча"
-      ],
       "Prompt for auto-save": [
         "Запыт на аўтазахаванне"
       ],
@@ -1357,6 +1384,9 @@
       ],
       "Select an email address": [
         "Выберыце адрас электроннай пошты"
+      ],
+      "Select preferred language": [
+        "Выберыце пажаданую мову"
       ],
       "Select your password manager": [
         "Выберыце менеджар пароляў"
@@ -1438,6 +1468,9 @@
       ],
       "Verification number": [
         "Праверачны нумар"
+      ],
+      "View details": [
+        "Паглядзець падрабязнасці"
       ],
       "View logs": [
         "Паглядзець журналы"
@@ -1619,6 +1652,9 @@
       "Secure your data": [
         "Бяспека вашых даных"
       ],
+      "Set access level": [
+        "Задаць узровень доступу"
+      ],
       "Share with": [
         "Абагуліць з"
       ],
@@ -1648,6 +1684,9 @@
       ],
       "Use my email": [
         "Выкарыстоўваць маю электронную пошту"
+      ],
+      "Vault shared with you": [
+        "Сховішча абагуленае з вамі"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Вітаем у ${ brandNameJSX }"
@@ -1752,6 +1791,12 @@
       "Please log back in": [
         "Увайдзіце паўторна"
       ],
+      "Please verify your email address in order to use email aliases": [
+        "Праверце свой адрас электроннай пошты, каб карыстацца псеўданімамі электроннай пошты."
+      ],
+      "Please verify your email address in order to use vault sharing": [
+        "Праверце свой адрас электроннай пошты, каб карыстацца абагуленым сховішчам."
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Справаздачы не шыфруюцца. Не адпраўляйце ў іх любую канфідэнцыяльную інфармацыю."
       ],
@@ -1763,6 +1808,9 @@
       ],
       "Title is required": [
         "Патрабуецца загаловак"
+      ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "Перадаць правы ўласнасці гэтага сховішча ${ email }?"
       ],
       "Trash alias ?": [
         "Перамясціць псеўданім у сметніцу?"
@@ -1797,14 +1845,14 @@
       "Your plan does not allow you to create more aliases": [
         "Вы дасягнулі максімальнай колькасці псеўданімаў для вашага тарыфнага плана."
       ],
-      "Your plan only allows you to autofill from your primary vault": [
-        "Ваш тарыфны план дазваляе аўтазапаўненне толькі з асноўнага сховішча"
+      "Your plan only allows you to autofill from your first two vaults": [
+        "Ваш тарыфны план дазваляе аўтазапаўненне толькі з першых двух сховішчаў"
       ],
       "Your session was locked due to inactivity": [
         "Ваш сеанс заблакіраваны па прычыне адсутнасці актыўнасці"
       ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
-        "Ваша падпіска не дазваляе ствараць некалькі сховішчаў. Усе элементы будуць імпартаваны ў ваша асноўнае сховішча. Палепшыце сваю падпіску, каб мець магчымасць імпартаваць у некалькі сховішчаў."
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "Ваша падпіска не дазваляе ствараць некалькі сховішчаў. Усе элементы будуць імпартаваны ў ваша першае сховішча. Палепшыце сваю падпіску, каб мець магчымасць імпартаваць у некалькі сховішчаў."
       ]
     }
   }

@@ -59,6 +59,9 @@
       "Confirm": [
         "Confirmar"
       ],
+      "Confirm access": [
+        "Confirmar acceso"
+      ],
       "Continue": [
         "Continuar"
       ],
@@ -376,6 +379,9 @@
       "Cannot send invitation to this address at the moment": [
         "No se puede enviar una invitación a esta dirección por el momento."
       ],
+      "Could not confirm this invite at the moment": [
+        "No se pudo confirmar esta invitación por el momento"
+      ],
       "Could not leave vault.": [
         "No se pudo dejar la bóveda."
       ],
@@ -461,12 +467,6 @@
       "Invitation could not be rejected": [
         "No se pudo rechazar la invitación"
       ],
-      "Invite creation failed.": [
-        "Error al crear la invitación."
-      ],
-      "Invite successfully sent": [
-        "Invitación enviada"
-      ],
       "Item content cannot exceed 40KB": [
         "El contenido del elemento no puede exceder de 40 KB"
       ],
@@ -499,9 +499,6 @@
       ],
       "Restoring item failed": [
         "Error al restaurar el elemento"
-      ],
-      "Setting \"${ payload.name }\" as primary vault failed": [
-        "Error al establecer \"${ payload.name }\" como bóveda principal"
       ],
       "Settings update failed": [
         "Error al actualizar los ajustes"
@@ -618,9 +615,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Actualización de \"${ payload.item.data.metadata.name }\" descartada"
       ],
-      "\"${ payload.name }\" set as primary vault": [
-        "\"${ payload.name }\" establecida como bóveda principal"
-      ],
       "${ count } item": [
         "${ count } elemento",
         "${ count } elementos"
@@ -661,6 +655,9 @@
       ],
       "Access ${ PASS_APP_NAME } via this icon": [
         "Acceda a ${ PASS_APP_NAME } mediante este ícono"
+      ],
+      "Access successfully confirmed": [
+        "Acceso confirmado con éxito"
       ],
       "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
         "El acceso a ${ PASS_APP_NAME } requerirá un código PIN para desbloquear su sesión"
@@ -812,6 +809,9 @@
       ],
       "Invite successfully resent": [
         "La invitación fue enviada."
+      ],
+      "Invite successfully sent": [
+        "Invitación enviada con éxito"
       ],
       "invites you to access items in": [
         "le invita a acceder a elementos de"
@@ -1023,14 +1023,8 @@
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Ha superado el número de bóvedas incluidas en su suscripción. Los elementos solo se pueden mover a sus primeras dos bóvedas. Para mover elementos entre todas las bóvedas, mejore su suscripción."
       ],
-      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
-        "Ha superado el número de bóvedas incluidas en su suscripción. Los elementos solo se pueden mover a su bóveda principal. Para mover elementos entre todas las bóvedas, actualice su suscripción."
-      ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
         "Ha superado el número de bóvedas incluidas en su suscripción. Los elementos nuevos solo se pueden crear en sus primeras dos bóvedas. Para crear elementos nuevos en todas las bóvedas, mejore su suscripción."
-      ],
-      "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
-        "Ha superado el número de bóvedas incluidas en su suscripción. Los elementos nuevos solo se pueden crear en su bóveda principal. Para crear elementos nuevos en todas las bóvedas, actualice su suscripción."
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Ha alcanzado el límite de alias que puede crear. Cree alias ilimitados al actualizar su suscripción."
@@ -1243,6 +1237,9 @@
       "Include numbers (0-9)": [
         "Incluir números (0-9)"
       ],
+      "Invitations": [
+        "Invitaciones"
+      ],
       "Label": [
         "Etiqueta"
       ],
@@ -1272,6 +1269,9 @@
       ],
       "Logins": [
         "Inicios de sesión"
+      ],
+      "Members": [
+        "Miembros"
       ],
       "Modified": [
         "Modificado"
@@ -1338,9 +1338,6 @@
       ],
       "Prefix": [
         "Prefijo"
-      ],
-      "Primary vault": [
-        "Bóveda principal"
       ],
       "Prompt for auto-save": [
         "Avisar para guardar automáticamente"
@@ -1446,9 +1443,6 @@
       ],
       "Vault": [
         "Bóveda"
-      ],
-      "Vaults": [
-        "Bóvedas"
       ],
       "Verification number": [
         "Número de verificación"
@@ -1805,6 +1799,9 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "No se puede iniciar sesión en ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
+      "Upgrade to a paid plan to invite more members to this vault.": [
+        "Mejore a un plan de pago para invitar más miembros a esta bóveda."
+      ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You can not undo this action": [
         "La bóveda \"${ vaultName }\" y todos sus elementos serán eliminados permanentemente. No puede deshacer esta acción."
       ],
@@ -1816,6 +1813,12 @@
       ],
       "You cannot create more vaults than your subscription allows.": [
         "No puede crear más bóvedas de las que permite su suscripción."
+      ],
+      "You have reached the limit of members who can access this vault.": [
+        "Ha alcanzado el límite de miembros que pueden acceder a esta bóveda."
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "Ha alcanzado el límite de bóvedas que puede puede tener en su plan."
       ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "Tiene cambios sin guardar. ¿Está seguro de que quiere descartarlos?"
@@ -1832,17 +1835,11 @@
       "Your plan only allows you to autofill from your first two vaults": [
         "Su plan solo le permite completar automáticamente desde sus primeras dos bóvedas"
       ],
-      "Your plan only allows you to autofill from your primary vault": [
-        "Su plan solo le permite completar automáticamente desde su bóveda principal"
-      ],
       "Your session was locked due to inactivity": [
         "Se bloqueó su sesión por inactividad"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Su suscripción no le permite crear varias bóvedas. Todos los elementos serán importados a su primera bóveda. Para importar a varias bóvedas mejore su suscripción."
-      ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
-        "Su suscripción no le permite crear varias bóvedas. Todos los elementos serán importados a su bóveda principal. Para importar a varias bóvedas actualice su suscripción."
       ]
     }
   }

@@ -3188,9 +3188,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Поиск содержимого невозможен в этом браузере. Пожалуйста, выйдите из режима приватного просмотра или используйте другой браузер."
       ],
-      "Could not save preference": [
-        "Не удалось сохранить предпочтение"
-      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Ошибка расшифровки: не удалось расшифровать зашифрованное содержимое сообщения."
       ],
@@ -5183,9 +5180,6 @@
       "Do you want to re-sign the contact details?": [
         "Вы хотите повторно подписать контакт?"
       ],
-      "Don't find what you are looking for? ${ displayAllMailButton }": [
-        "Не нашли то, что искали? ${ displayAllMailButton }"
-      ],
       "Don't forget to share the password with the recipient": [
         "Не забудьте сообщить свой пароль получателю"
       ],
@@ -6606,9 +6600,6 @@
       "Contacts": [
         "Контакты"
       ],
-      "Conversations per page": [
-        "Обсуждений на странице"
-      ],
       "Copy": [
         "Копировать"
       ],
@@ -6773,9 +6764,6 @@
       ],
       "Mark as": [
         "Отметить как"
-      ],
-      "Messages per page": [
-        "Сообщений на странице"
       ],
       "Move ${ sidebarElementName }": [
         "Переместить ${ sidebarElementName }"
@@ -7152,6 +7140,9 @@
       ],
       "Sent": [
         "Отправленные"
+      ],
+      "Set up email forwarding": [
+        "Настройка пересылки писем"
       ],
       "Sign up for free": [
         "Зарегистрируйтесь бесплатно"
@@ -8473,6 +8464,9 @@
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Теперь мы загружаем изображения по умолчанию и не даем отправителю отслеживать вас. Это можно изменить в ${ settingsLink }."
+      ],
+      "You can now automatically forward your emails to anyone!": [
+        "Теперь вы можете автоматически пересылать свои письма кому угодно!"
       ],
       "You can now schedule your messages to be sent later": [
         "Теперь вы можете запланировать отправку сообщений на более позднее время"

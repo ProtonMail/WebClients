@@ -2978,6 +2978,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } premium"
+      ],
       "Up to 6 users": [
         "Până la 6 utilizatori"
       ]
@@ -3716,6 +3725,9 @@
       ],
       "Contact unassigned to group ${ contactGroupName }": [
         "Contactul a fost eliminat din grupul ${ contactGroupName }."
+      ],
+      "Copy the link to clipboard": [
+        "Copiați legătura în memorie"
       ],
       "Country code": [
         "Cod țară"
@@ -5167,6 +5179,9 @@
       ],
       "Contact group updated": [
         "Grup de contacte actualizat"
+      ],
+      "Link copied to clipboard": [
+        "Legătura a fost copiată în memorie."
       ]
     },
     "Notification in holidays calendar modal": {
@@ -5944,6 +5959,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "Un utilizator"
+      ],
       "3 TB": [
         "3 TiB"
       ],
@@ -5961,6 +5979,15 @@
       ],
       "Highest VPN speed": [
         "Viteză VPN maximă"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } și ${ DRIVE_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } premium"
       ],
       "Premium early access": [
         "Acces timpuriu premium"
@@ -6006,14 +6033,25 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } lună",
+        "${ n } luni",
+        "${ n } de luni"
+      ],
       "/ month": [
         "/ lună"
       ],
       "1 year": [
         "1 an"
       ],
+      "15 months": [
+        "15 luni"
+      ],
       "2 years": [
         "2 ani"
+      ],
+      "30 months": [
+        "30 de luni"
       ],
       "Billed at ${ amount } for 1 month": [
         "Facturat cu ${ amount } pentru o lună"
@@ -6317,6 +6355,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
+      ],
       "Premium Password Manager": [
         "Gestionare parole premium"
       ]

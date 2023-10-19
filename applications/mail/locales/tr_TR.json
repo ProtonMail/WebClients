@@ -1635,6 +1635,12 @@
       ],
       "You already tentatively accepted this invitation.": [
         "Bu daveti zaten kesin olmamakla birlikte kabul etmişsiniz."
+      ],
+      "You cannot respond to ${ BRAND_NAME } invites if you're not on the participants list at the moment.": [
+        "Şu anda katılımcı listesinde değilseniz ${ BRAND_NAME } davetlerine yanıt veremezsiniz."
+      ],
+      "Your email address is not in the original participants list.": [
+        "E-posta adresiniz özgün katılımcılar listesinde değil."
       ]
     },
     "Calendar widget banner": {
@@ -3158,9 +3164,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Bu tarayıcıda içerik arama özelliği açılamıyor. Lütfen gizli/özel tarayıcı kipinden çıkın ya da farklı bir tarayıcı deneyin."
       ],
-      "Could not save preference": [
-        "Ayar kaydedilemedi"
-      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Şifre çözme sorunu: Bu iletinin şifrelenmiş içeriğinin şifresi çözülemedi."
       ],
@@ -3827,6 +3830,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Ücretli ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Ücretli ${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Ücretli ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "6 kullanıcıya kadar"
       ]
@@ -4971,6 +4983,9 @@
       "Copied to clipboard": [
         "Panoya kopyalandı"
       ],
+      "Copy the link to clipboard": [
+        "Bağlantıyı panoya kopyala"
+      ],
       "Country code": [
         "Ülke kodu"
       ],
@@ -5029,9 +5044,6 @@
       ],
       "Do you want to re-sign the contact details?": [
         "Kişi bilgilerini yeniden imzalamak istiyor musunuz?"
-      ],
-      "Don't find what you are looking for? ${ displayAllMailButton }": [
-        "Aradığınızı bulamadınız mı? ${ displayAllMailButton }"
       ],
       "Don't forget to share the password with the recipient": [
         "Parolayı alıcı ile paylaşmayı unutmayın"
@@ -6410,9 +6422,6 @@
       "Contacts": [
         "Kişiler"
       ],
-      "Conversations per page": [
-        "Bir sayfadaki yazışma sayısı"
-      ],
       "Copy": [
         "Kopyala"
       ],
@@ -6577,9 +6586,6 @@
       ],
       "Mark as": [
         "Şöyle işaretlensin"
-      ],
-      "Messages per page": [
-        "Bir sayfadaki ileti sayısı"
       ],
       "Move ${ sidebarElementName }": [
         "${ sidebarElementName } ögesini taşı"
@@ -7362,6 +7368,9 @@
       "Contact group updated": [
         "Kişi grubu güncellendi"
       ],
+      "Link copied to clipboard": [
+        "Bağlantı panoya kopyalandı"
+      ],
       "Password has been set successfully": [
         "Parola ayarlandı"
       ],
@@ -8102,6 +8111,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 kullanıcı"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -8119,6 +8131,15 @@
       ],
       "Highest VPN speed": [
         "En yüksek VPN hızı"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Ücretli ${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "Ücretli ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } ve ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Ücretli ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium early access": [
         "Öncelikli erken erişim"
@@ -8164,14 +8185,24 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } ay",
+        "${ n } ay"
+      ],
       "/ month": [
         "/ ay"
       ],
       "1 year": [
         "1 yıl"
       ],
+      "15 months": [
+        "15 ay"
+      ],
       "2 years": [
         "2 yıl"
+      ],
+      "30 months": [
+        "30 ay"
       ],
       "Billed at ${ amount } for 1 month": [
         "1 aylık ${ amount } olarak faturalanır"
@@ -8600,6 +8631,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Ücretli ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Ücretli ${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Premium Password Manager": [
         "Ücretli Parola Yöneticisi"
       ]

@@ -3337,9 +3337,6 @@
       "Contact signature not verified": [
         "Signatura del contacte no verificada"
       ],
-      "Could not save preference": [
-        "No s'ha pogut desar la preferència."
-      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Desmarqueu almenys ${ calendarsToFixCount } calendari.",
         "Desmarqueu almenys ${ calendarsToFixCount } calendaris."
@@ -5861,9 +5858,6 @@
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "NO oblideu aquesta contrasenya. Si l'oblideu, no podreu iniciar la sessió ni desxifrar els vostres missatges."
       ],
-      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "No utilitzeu les credencials OpenVPN / IKEv2 a les aplicacions de ${ VPN_APP_NAME } o al tauler de control de ${ VPN_APP_NAME }. ${ learnMore }"
-      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Voleu revocar totes les altres sessions i l’actual?"
       ],
@@ -7205,9 +7199,6 @@
       "You cannot undo this action.": [
         "No pots desfer aquesta acció."
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "No podeu utilitzar les credencials OpenVPN / IKEv2 per iniciar la sessió a les aplicacions ${ VPN_APP_NAME } o el tauler de control de ${ VPN_APP_NAME }. ${ learnMore }"
-      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "No heu establert un mètode de recuperació i per tant la recuperació del compte serà impossible si oblideu la vostra contrasenya. Voleu procedir sense mètode de recuperació?"
       ],
@@ -8004,9 +7995,6 @@
       "Conversation grouping": [
         "Agrupació de conversa"
       ],
-      "Conversations per page": [
-        "Conversacions per pàgina"
-      ],
       "Copy": [
         "Copia"
       ],
@@ -8288,9 +8276,6 @@
       ],
       "Message": [
         "Missatge"
-      ],
-      "Messages per page": [
-        "Missatges per pàgina"
       ],
       "Moderate NAT": [
         "NAT moderat"
@@ -11190,12 +11175,12 @@
         "${ timeRemaining.inHours } hores"
       ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teneu ${ timeRemaining.inDays } dia per restablir la vostra contrasenya.",
-        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teneu ${ timeRemaining.inDays } dies per restablir la vostra contrasenya."
+        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inDays } dia per restablir la vostra contrasenya.",
+        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inDays } dies per restablir la vostra contrasenya."
       ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teneu ${ timeRemaining.inHours } hora per restablir la vostra contrasenya.",
-        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teneu ${ timeRemaining.inHours } hores per restablir la vostra contrasenya."
+        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inHours } hora per restablir la vostra contrasenya.",
+        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inHours } hores per restablir la vostra contrasenya."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Aneu a l'aparell connectat (a la sessió on es va iniciar la sol·licitud) per canviar la vostra contrasenya."

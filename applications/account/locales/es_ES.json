@@ -1294,6 +1294,9 @@
       "${ n } month": [
         "${ n } mes",
         "${ n } meses"
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
+        "Se renueva automáticamente por ${ renewPrice } durante ${ renewalLength }."
       ]
     },
     "Billing cycle option": {
@@ -3209,7 +3212,7 @@
     },
     "email_forwarding_2023: Description": {
       "Unlock email forwarding to easily manage incoming information and more premium features when you upgrade.": [
-        "Desbloquea el reenvío de correos para gestionar fácilmente la información entrante y más funciones prémium cuando mejora."
+        "Desbloquea el reenvío de correos para gestionar fácilmente la información entrante y más funciones premium cuando mejora."
       ]
     },
     "email_forwarding_2023: Error": {
@@ -3475,9 +3478,6 @@
       ],
       "Contact signature not verified": [
         "Firma del contacto no verificada"
-      ],
-      "Could not save preference": [
-        "No se ha podido guardar la preferencia."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Anula la selección de al menos ${ calendarsToFixCount } calendario",
@@ -4323,6 +4323,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } premium"
+      ],
       "Up to 6 users": [
         "Hasta 6 usuarios"
       ]
@@ -4430,10 +4439,10 @@
         "Debes configurar un dominio personalizado antes de crear un nuevo usuario."
       ],
       "You will lose access to all premium features and storage space included with ${ BRAND_NAME } Family.": [
-        "Perderás el acceso a todas las funciones prémium y al espacio de almacenamiento que ofrece ${ BRAND_NAME } Family."
+        "Perderás el acceso a todas las funciones premium y al espacio de almacenamiento que ofrece ${ BRAND_NAME } Family."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Has recibido una invitación para que vincules tu cuenta de ${ BRAND_NAME } a este plan grupal y disfrutes así de todas las funciones prémium de ${ BRAND_NAME_TWO }."
+        "Has recibido una invitación para que vincules tu cuenta de ${ BRAND_NAME } a este plan grupal y disfrutes así de todas las funciones premium de ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Tu cuenta tiene más direcciones de correo electrónico que las que tienes disponibles en este plan. ${ addressSettingsLink }"
@@ -4514,7 +4523,7 @@
         "Se eliminarán todos los usuarios secundarios, cuentas y datos relacionados con tu organización de forma permanente."
       ],
       "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Los miembros de la familia perderán el acceso a las funciones prémium de ${ BRAND_NAME }."
+        "Los miembros de la familia perderán el acceso a las funciones premium de ${ BRAND_NAME }."
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -5737,6 +5746,15 @@
       "Admin account allocation": [
         "Asignación de cuenta de administrador"
       ],
+      "After this date, you'll be billed every 12 months at the normal yearly rate.": [
+        "Después de esta fecha, se te facturará cada 12 meses al precio anual normal."
+      ],
+      "After this date, you'll be billed every 24 months at the normal 2-year rate.": [
+        "Después de esta fecha, se te facturará cada 24 meses al precio anual normal de 2 años."
+      ],
+      "After this date, you'll be billed every month at the regular price.": [
+        "Después de esta fecha, se te facturará cada mes al precio normal."
+      ],
       "Align left": [
         "Alinear a la izquierda"
       ],
@@ -6048,9 +6066,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "NO olvides esta contraseña. Si la olvidas, no podrás iniciar sesión ni descifrar tus mensajes."
-      ],
-      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "No utilices las credenciales de OpenVPN/IKEv2 en las aplicaciones de ${ VPN_APP_NAME } ni en el panel de control de ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "¿Quieres revocar todas las demás sesiones y mantener la actual?"
@@ -6923,6 +6938,15 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envía un depósito utilizando la siguiente dirección o escanea el código QR. Tu depósito aparecerá en tu cuenta después de la confirmación."
       ],
+      "Subscription auto-renews every 12 months.": [
+        "La suscripción se renueva automáticamente cada 12 meses."
+      ],
+      "Subscription auto-renews every 24 months.": [
+        "La suscripción se renueva automáticamente cada 24 meses."
+      ],
+      "Subscription auto-renews every month.": [
+        "La suscripción se renueva automáticamente cada mes."
+      ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Tu suscripción terminará pronto: reactívala antes del ${ byDate } para mantener los beneficios del ${ planName }. ${ reactivateLink }"
       ],
@@ -7003,6 +7027,9 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Estas configuraciones son proporcionadas para funcionar con routers WireGuard y clientes oficiales."
+      ],
+      "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
+        "Estas credenciales no pueden utilizarse para iniciar sesión en nuestras aplicaciones oficiales de ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "They'll receive a free month of ${ planName }.": [
         "Recibirán un mes gratis de ${ planName }."
@@ -7212,7 +7239,7 @@
         "Actualizar frase de recuperación"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
-        "Pasa a un plan superior ahora para obtener funciones prémium, productos y almacenamiento a un precio especial."
+        "Pasa a un plan superior ahora para obtener funciones premium, productos y almacenamiento a un precio especial."
       ],
       "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Mejora al plan ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, o ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } para obtener ${ PROTON_SENTINEL_NAME }."
@@ -7479,9 +7506,6 @@
       "You cannot undo this action.": [
         "No puedes deshacer esta acción."
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "No puedes utilizar las credenciales de OpenVPN/IKEv2 para iniciar sesión en las aplicaciones de ${ VPN_APP_NAME } o en el panel de control de ${ VPN_APP_NAME }. ${ learnMore }"
-      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "No has establecido un método de recuperación por lo que la recuperación de cuentas es imposible si olvidas tu contraseña. ¿Quieres continuar sin método de recuperación?"
       ],
@@ -7576,6 +7600,9 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Tu cuenta tiene al menos una factura vencida. Tu cuenta está restringida. Las faltas de pago continuadas implicarán el bloqueo de tus correos y enlaces compartidos. ${ payInvoiceLink }"
       ],
+      "Your account has been successfully updated": [
+        "Tu cuenta ha sido actualizada."
+      ],
       "Your account recovery method is set": [
         "El método de recuperación de tu cuenta está configurado"
       ],
@@ -7610,6 +7637,9 @@
       "Your login information will not be saved after the import is completed.": [
         "La información de inicio de sesión no se guardará una vez finalizada la importación."
       ],
+      "Your next billing date is ${ renewalTime }.": [
+        "Tu próxima fecha de facturación es el ${ renewalTime }."
+      ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "La contraseña de tu organización puede compartirse con otros usuarios a los que desees otorgar privilegios administrativos. También es un código de recuperación de emergencia para tener acceso a tu organización en caso de que pierdas el acceso a tu cuenta. Guarda esta contraseña y mantenla segura."
       ],
@@ -7633,6 +7663,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Tu suscripción está gestionada por Mozilla. Contacta con el soporte de Mozilla."
+      ],
+      "Your subscription will auto-renew on ${ renewalTime }.": [
+        "Tu suscripción actual se renovará automáticamente el ${ renewalTime }."
       ]
     },
     "info": {
@@ -8285,9 +8318,6 @@
       "Conversation grouping": [
         "Agrupar conversaciones"
       ],
-      "Conversations per page": [
-        "Conversaciones por página"
-      ],
       "Copy": [
         "Copiar"
       ],
@@ -8576,9 +8606,6 @@
       "Message": [
         "Mensaje"
       ],
-      "Messages per page": [
-        "Mensajes por página"
-      ],
       "Moderate NAT": [
         "NAT moderada"
       ],
@@ -8620,6 +8647,9 @@
       ],
       "New password": [
         "Nueva contraseña"
+      ],
+      "New plan": [
+        "Nuevo plan"
       ],
       "No filter": [
         "Sin filtro"
@@ -9769,6 +9799,9 @@
       "99.95% SLA": [
         "SLA del 99,95 %"
       ],
+      "Ad-blocker and malware protection": [
+        "Bloqueador de anuncios y protección contra malware"
+      ],
       "Admin console": [
         "Consola de administración"
       ],
@@ -10058,7 +10091,7 @@
         "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para seguir utilizando ${ MAIL_APP_NAME } con las funciones prémium, suscríbete y elige el método de pago."
+        "Para seguir utilizando ${ MAIL_APP_NAME } con las funciones premium, suscríbete y elige el método de pago."
       ],
       "Your trial ends ${ formattedPeriodEndDate }": [
         "Tu periodo de pruebas acaba el ${ formattedPeriodEndDate }."
@@ -10117,7 +10150,7 @@
         "Popular"
       ],
       "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
-        "Conjunto de soluciones de privacidad y seguridad para empresas con todos los servicios prémium de ${ BRAND_NAME }."
+        "Conjunto de soluciones de privacidad y seguridad para empresas con todos los servicios premium de ${ BRAND_NAME }."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Protege la privacidad de tu familia con todos los servicios combinados de ${ BRAND_NAME }."
@@ -10226,10 +10259,22 @@
         "¿Cambiar de plan?"
       ],
       "Unlock premium features by upgrading": [
-        "Desbloquea funciones prémium al actualizar"
+        "Desbloquea funciones premium al actualizar"
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Protege tu calendario con cifrado de extremo a extremo. Incluye soporte para calendarios personalizados, calendarios compartidos y mucho más."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Protege tus archivos con el almacenamiento cifrado en la nube. Incluye historial de versiones, posibilidad de compartir archivos cifrados, etc."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: Protege tus correos con cifrado de extremo a extremo. Incluye soporte para dominios de correo personalizados, 15 direcciones de correo, alias hide-my-email ilimitados y mucho más."
+      ],
+      "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "${ VPN_APP_NAME }: Accede a contenidos bloqueados y navega de forma privada. Incluye ${ serversAndCountries }, las velocidades VPN más altas, acceso a servicios de streaming en todo el mundo, bloqueador de malware y publicidad, descargas rápidas de BitTorrent y más."
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Accede desde cualquier lugar al contenido de servicios de streaming como Netflix, Disney+ y Prime Video."
       ],
@@ -11078,6 +11123,9 @@
       "Open-source and audited": [
         "Código abierto y auditoría"
       ],
+      "per month": [
+        "por mes"
+      ],
       "per month, billed annually": [
         "al mes con facturación anual"
       ],
@@ -11124,7 +11172,7 @@
         "Funciona en todos los dispositivos"
       ],
       "You already have access to premium ${ appName } features — no need to purchase again.": [
-        "Dispones de acceso a las características prémium de ${ appName }— no es necesaria ninguna compra adicional."
+        "Dispones de acceso a las características premium de ${ appName }— no es necesaria ninguna compra adicional."
       ],
       "You currently have": [
         "Actualmente tienes"
@@ -11983,6 +12031,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 usuario"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -12000,6 +12051,15 @@
       ],
       "Highest VPN speed": [
         "VPN de máxima velocidad"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y ${ DRIVE_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } premium"
       ],
       "Premium early access": [
         "Acceso anticipado premium"
@@ -12050,14 +12110,24 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } meses"
+      ],
       "/ month": [
         "/ mes"
       ],
       "1 year": [
         "1 año"
       ],
+      "15 months": [
+        "15 meses"
+      ],
       "2 years": [
         "2 años"
+      ],
+      "30 months": [
+        "30 meses"
       ],
       "Billed at ${ amount } for 1 month": [
         "Al precio de ${ amount } durante 1 mes"
@@ -12116,7 +12186,7 @@
         "Oferta de final de año"
       ],
       "Get our premium bundle and save more": [
-        "Contrata nuestro paquete prémium y ahorra más dinero"
+        "Contrata nuestro paquete premium y ahorra más dinero"
       ],
       "Our discontinued Visionary plan is back for a limited time only": [
         "Nuestro económico plan Visionary está de nuevo disponible por tiempo limitado"
@@ -12219,6 +12289,12 @@
     "Subscription": {
       "Billed every 2 years": [
         "Facturado cada 2 años"
+      ],
+      "Billed for 15 months": [
+        "Facturación para 15 meses"
+      ],
+      "Billed for 30 months": [
+        "Facturación para 30 meses"
       ],
       "Billed monthly": [
         "Facturación mensual"
@@ -12620,6 +12696,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } premium"
+      ],
       "Premium Password Manager": [
         "Administrador de contraseñas premium"
       ]
@@ -14015,6 +14097,11 @@
         "Es posible que tu cuenta externa haya alcanzado el límite de ancho de banda de 24 horas. ${ BRAND_NAME } intentará reanudar la importación tan pronto como sea posible."
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Inicio de sesión seguro en todos tus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
+      ]
+    },
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
         "Esto añade automáticamente tu clave pública a cada mensaje que envíes. Los destinatarios pueden utilizar esto para verificar la autenticidad de tus mensajes y enviarte mensajes cifrados."
@@ -14166,8 +14253,14 @@
       "1-year": [
         "1 año"
       ],
+      "15-month": [
+        "15 meses"
+      ],
       "2-year": [
         "2 años"
+      ],
+      "30-month": [
+        "30 meses"
       ],
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "Obtén ${ discount } de descuento con una suscripción de ${ billingCycle }."

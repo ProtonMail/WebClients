@@ -1302,6 +1302,9 @@
         "${ n } měsíce",
         "${ n } měsíců",
         "${ n } měsíců"
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
+        "Automatické obnovení za ${ renewPrice }, na ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -3232,9 +3235,6 @@
       "Contact signature not verified": [
         "Podpis kontaktu nebyl ověřen"
       ],
-      "Could not save preference": [
-        "Nelze uložit předvolbu"
-      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Zrušte výběr nejméně ${ calendarsToFixCount } kalendáře",
         "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů",
@@ -4093,6 +4093,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Prémiové funkce ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Prémiové funkce ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Prémiové funkce ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "Až 6 uživatelů"
       ]
@@ -5581,6 +5590,15 @@
       "Admin account allocation": [
         "Přidělení účtu správce"
       ],
+      "After this date, you'll be billed every 12 months at the normal yearly rate.": [
+        "Po tomto datu vám bude každých 12 měsíců účtována běžná roční sazba."
+      ],
+      "After this date, you'll be billed every 24 months at the normal 2-year rate.": [
+        "Po tomto datu vám bude každých 24 měsíců účtována běžná dvouletá sazba."
+      ],
+      "After this date, you'll be billed every month at the regular price.": [
+        "Po tomto datu vám bude každý měsíc účtována běžná cena."
+      ],
       "Align left": [
         "Zarovnat doleva"
       ],
@@ -5794,6 +5812,9 @@
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Pokračováním se váš ${ BRAND_NAME } účet připojí k ${ name }."
       ],
+      "Copy the link to clipboard": [
+        "Kopírovat odkaz do schránky"
+      ],
       "Copy the suggested password to clipboard": [
         "Zkopírujte navržené heslo do schránky"
       ],
@@ -5901,9 +5922,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "Nezapomeňte toto heslo. V případě, že ho zapomenete, nebudete se moci přihlásit nebo dešifrovat své zprávy."
-      ],
-      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Nepoužívejte pověření OpenVPN / IKEv2 v aplikacích ${ VPN_APP_NAME } ani na ovládacím panelu ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Chcete zrušit všechny ostatní relace než tu stávající?"
@@ -6787,6 +6805,15 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Zálohu odešlete na následující adresu nebo naskenujte QR kód. Po potvrzení se vklad promítne na váš účet."
       ],
+      "Subscription auto-renews every 12 months.": [
+        "Předplatné se automaticky obnovuje každých 12 měsíců."
+      ],
+      "Subscription auto-renews every 24 months.": [
+        "Předplatné se automaticky obnovuje každých 24 měsíců."
+      ],
+      "Subscription auto-renews every month.": [
+        "Předplatné se automaticky obnovuje každý měsíc."
+      ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Předplatné vyprší: opětovně aktivujte dne ${ byDate } pro zachování vašich výhod tarifu ${ planName }. ${ reactivateLink }"
       ],
@@ -6873,6 +6900,9 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Tyto konfigurace jsou určeny pro práci s routery WireGuard a oficiálními klienty."
+      ],
+      "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
+        "Tyto přihlašovací údaje nelze použít k přihlášení do našich oficiálních aplikací ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "They'll receive a free month of ${ planName }.": [
         "Obdrží měsíc služby ${ planName } zdarma."
@@ -7363,9 +7393,6 @@
       "You cannot undo this action.": [
         "Nemůžete vrátit zpět tuto akci."
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Přihlašovací údaje OpenVPN / IKEv2 nelze použít pro přihlášení do aplikací ${ VPN_APP_NAME } nebo ovládacího panelu ${ VPN_APP_NAME }. ${ learnMore }"
-      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Nenastavili jste e-mail pro obnovení, takže v případě ztráty hesla nebude možné účet obnovit. Pokračovat bez sekundárního e-mailu?"
       ],
@@ -7462,6 +7489,9 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Váš účet má alespoň jednu fakturu po splatnosti. Váš účet je omezen. Pokračující neplacení zablokuje vaše e-maily a odkazy pro sdílení. ${ payInvoiceLink }"
       ],
+      "Your account has been successfully updated": [
+        "Váš účet byl úspěšně aktualizován"
+      ],
       "Your account recovery method is set": [
         "Vaše metoda obnovení účtu je nastavena"
       ],
@@ -7498,6 +7528,9 @@
       "Your login information will not be saved after the import is completed.": [
         "Po dokončení importu nebudou Vaše přihlašovací údaje uloženy."
       ],
+      "Your next billing date is ${ renewalTime }.": [
+        "Datum příštího vyúčtování je ${ renewalTime }."
+      ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Heslo organizace lze sdílet se všemi uživateli, kterým chcete přidělit oprávnění správce. Heslo slouží také jako nouzový kód pro obnovení přístupu do Vaší organizace v případě, že ztratíte přístup ke svému hlavnímu účtu. Heslo uložte a držte v bezpečí."
       ],
@@ -7521,6 +7554,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Váš předplatné je spravováno Mozillou. Kontaktujte prosím Mozilla podporu."
+      ],
+      "Your subscription will auto-renew on ${ renewalTime }.": [
+        "Vaše předplatné se automaticky obnoví ${ renewalTime }."
       ]
     },
     "info": {
@@ -8181,9 +8217,6 @@
       "Conversation grouping": [
         "Seskupování konverzací"
       ],
-      "Conversations per page": [
-        "Konverzace na stránku"
-      ],
       "Copy": [
         "Kopírovat"
       ],
@@ -8472,9 +8505,6 @@
       "Message": [
         "Zpráva"
       ],
-      "Messages per page": [
-        "Zprávy na stránku"
-      ],
       "Moderate NAT": [
         "Moderate NAT"
       ],
@@ -8516,6 +8546,9 @@
       ],
       "New password": [
         "Nové heslo"
+      ],
+      "New plan": [
+        "Nový tarif"
       ],
       "No filter": [
         "Žádný filtr"
@@ -9717,6 +9750,9 @@
       "99.95% SLA": [
         "99.95% SLA Dostupnost"
       ],
+      "Ad-blocker and malware protection": [
+        "Blokování reklam a ochrana před malwarem"
+      ],
       "Admin console": [
         "Konzole správce"
       ],
@@ -10186,6 +10222,18 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Zabezpečte svůj plán pomocí koncového šifrování. Obsahuje podporu vlastních kalendářů, sdílení kalendáře a další funkce."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Obsahuje historii verzí, šifrované sdílení souborů a další funkce."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: Zabezpečte své e-maily pomocí koncového šifrování. Obsahuje podporu vlastních e-mailových domén, 15 e-mailových adres, neomezený počet hide-my-email aliasů pro skrytí e-mailu a další."
+      ],
+      "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "${ VPN_APP_NAME }: Přístup k blokovanému obsahu a soukromé prohlížení. Obsahuje ${ serversAndCountries }, nejvyšší rychlosti VPN, přístup k celosvětovým streamovacím službám, blokátor malwaru a reklam, rychlé stahování BitTorrentu a další funkce."
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Získejte přístup k obsahu na streamovacích službách, včetně Netflix, Disney+, Prime Video, odkudkoliv"
       ],
@@ -10464,6 +10512,9 @@
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "Klíč s otiskem ${ fp } byl odstraněn."
+      ],
+      "Link copied to clipboard": [
+        "Odkaz zkopírován do schránky"
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 údaje byly obnoveny"
@@ -11050,6 +11101,9 @@
       ],
       "Open-source and audited": [
         "Open-source a auditováno"
+      ],
+      "per month": [
+        "měsíčním"
       ],
       "per month, billed annually": [
         "za měsíc, účtováno ročně"
@@ -11992,6 +12046,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 uživatel"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -12009,6 +12066,15 @@
       ],
       "Highest VPN speed": [
         "Nejvyšší rychlost VPN"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Prémiové funkce ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "Prémiové funkce ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } a ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Prémiové funkce ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium early access": [
         "Prémiový předběžný přístup"
@@ -12059,14 +12125,26 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } měsíc",
+        "${ n } měsíce",
+        "${ n } měsíců",
+        "${ n } měsíců"
+      ],
       "/ month": [
         "/ měsíc"
       ],
       "1 year": [
         "1 rok"
       ],
+      "15 months": [
+        "15 měsíců"
+      ],
       "2 years": [
         "2 roky"
+      ],
+      "30 months": [
+        "30 měsíců"
       ],
       "Billed at ${ amount } for 1 month": [
         "Účtováno ${ amount } za 1 měsíc"
@@ -12228,6 +12306,12 @@
     "Subscription": {
       "Billed every 2 years": [
         "Účtováno každé 2 roky"
+      ],
+      "Billed for 15 months": [
+        "Účtováno za 15 měsíců"
+      ],
+      "Billed for 30 months": [
+        "Účtováno za 30 měsíců"
       ],
       "Billed monthly": [
         "Účtováno měsíčně"
@@ -12657,6 +12741,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Prémiové funkce ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Prémiové funkce ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Premium Password Manager": [
         "Prémiový správce hesel"
       ]
@@ -14076,6 +14166,11 @@
         "Váš externí účet možná dosáhl 24-hodinového omezení datového přenosu. ${ BRAND_NAME } se pokusí pokračovat v importu co nejdříve."
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Zabezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
+      ]
+    },
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
         "Automaticky přidá veřejný klíč ke každé odeslané zprávě. Příjemci tak budou moci ověřit pravost vašich zpráv a odeslat zašifrovanou zprávu i Vám."
@@ -14241,8 +14336,14 @@
       "1-year": [
         "ročním"
       ],
+      "15-month": [
+        "15 měsíčním"
+      ],
       "2-year": [
         "dvouletým"
+      ],
+      "30-month": [
+        "30 měsíčním"
       ],
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "Získejte slevu ${ discount } s ${ billingCycle } předplatným"

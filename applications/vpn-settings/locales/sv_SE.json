@@ -630,55 +630,13 @@
         "Detta kommer att koppla från alla routrar och klienter som använder detta certifikat."
       ]
     },
-    "bf2023: Action": {
-      "Add ${ PASS_APP_NAME }": [
-        "Lägg till ${ PASS_APP_NAME }"
-      ],
-      "Add ${ plan } for ${ price } per month": [
-        "Lägg till ${ plan } för ${ price } per månad"
-      ],
-      "Remove": [
-        "Ta bort"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Ta bort ${ PASS_APP_NAME }"
-      ]
-    },
-    "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } lagringsutrymme"
-      ],
-      "1 user": [
-        "1 användare"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 användare"
-      ],
-      "Ad-blocker and malware protection": [
-        "Annonsblockerare och skydd mot skadlig kod"
-      ],
-      "Extended version history": [
-        "Utökad versionshistorik"
-      ],
-      "High speed streaming": [
-        "Höghastighetsstreaming"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "bf2023: Tooltip": {
-      "Store up to 200 versions of each file for up to 10 years.": [
-        "Lagra upp till 200 versioner av varje fil i upp till 10 år."
-      ]
-    },
     "Billing cycle": {
       "${ n } month": [
         "${ n } månad",
         "${ n } månader"
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
+        "Förnyas automatiskt för ${ renewPrice }, i ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -2060,6 +2018,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "Upp till 6 användare"
       ]
@@ -2690,6 +2657,15 @@
       "Admin account allocation": [
         "Allokering för administratörskonto"
       ],
+      "After this date, you'll be billed every 12 months at the normal yearly rate.": [
+        "Efter detta datum kommer du att faktureras var 12:e månad enligt vanlig årsavgift."
+      ],
+      "After this date, you'll be billed every 24 months at the normal 2-year rate.": [
+        "Efter detta datum kommer du att faktureras var 24:e månad enligt vanlig två-årsavgift."
+      ],
+      "After this date, you'll be billed every month at the regular price.": [
+        "Efter detta datum kommer du att faktureras varje månad till ordinarie pris."
+      ],
       "All your changes will be lost.": [
         "Alla dina ändringar kommer att gå förlorade."
       ],
@@ -2832,9 +2808,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "Glöm INTE detta lösenord. Om du glömmer det kommer du inte att kunna logga in eller dekryptera dina meddelanden."
-      ],
-      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Använd inte OpenVPN/IKEv2-uppgifterna i ${ VPN_APP_NAME }-applikationer eller på ${ VPN_APP_NAME }-adminpanelen. ${ learnMore }"
       ],
       "Done": [
         "Klar"
@@ -3298,6 +3271,15 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Skicka in en insättning med följande adress eller skanna QR-koden. Din insättning kommer att återspeglas på ditt konto efter bekräftelse."
       ],
+      "Subscription auto-renews every 12 months.": [
+        "Prenumeration förnyas automatiskt var 12:e månad."
+      ],
+      "Subscription auto-renews every 24 months.": [
+        "Prenumeration förnyas automatiskt var 24:e månad."
+      ],
+      "Subscription auto-renews every month.": [
+        "Prenumeration förnyas automatiskt varje månad."
+      ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Prenumeration slutar: Återaktivera senast ${ byDate } för att behålla dina ${ planName }-förmåner. ${ reactivateLink }"
       ],
@@ -3345,6 +3327,9 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Dessa konfigurationer tillhandahålls för att fungera med WireGuard-routrar och officiella klienter."
+      ],
+      "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
+        "Dessa inloggningsuppgifter kan inte användas för att logga in på våra officiella ${ VPN_APP_NAME }-appar. ${ learnMore }"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Detta konto har stängts av på grund av en potentiell policyöverträdelse."
@@ -3637,9 +3622,6 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Du kan använda följande inloggningsuppgifter för att ansluta till en ${ VPN_APP_NAME }-server med en tredje parts VPN-app med öppen källkod, såsom Tunnelblick för macOS eller OpenVPN för GNU/Linux."
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Du kan inte använda OpenVPN/IKEv2-uppgifterna för att logga in på ${ VPN_APP_NAME }-applikationer eller ${ VPN_APP_NAME }-adminpanelen. ${ learnMore }"
-      ],
       "You have ${ availableCount } dedicated server available.": [
         "Du har ${ availableCount } dedikerad server tillgänglig.",
         "Du har ${ availableCount } dedikerade servrar tillgängliga."
@@ -3717,7 +3699,7 @@
         "Din information är säker hos oss. Vi kommer endast kontakta dig när det krävs för att tillhandahålla våra tjänster."
       ],
       "Your next billing date is ${ renewalTime }.": [
-        "Ditt nästa faktureringsdatum är${ renewalTime }."
+        "Ditt nästa faktureringsdatum är ${ renewalTime }."
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Ditt organisationslösenord kan delas med andra användare som du vill ge administrativa privilegier. Det är också en nödåterställningskod för att få åtkomst till din organisation om du förlorar åtkomsten till ditt konto. Spara detta lösenord och förvara det säkert."
@@ -3730,6 +3712,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Din prenumeration hanteras av Mozilla. Kontakta Mozillas support."
+      ],
+      "Your subscription will auto-renew on ${ renewalTime }.": [
+        "Din prenumeration kommer förnyas automatiskt den ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -4853,6 +4838,10 @@
       ],
       "Vault and Item sharing (coming soon)": [
         "Valv och objektdelning (kommer snart)"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Valvdelning (upp till ${ n } person)",
+        "Valvdelning (upp till ${ n } personer)"
       ]
     },
     "new_plans: feature info": {
@@ -5006,6 +4995,18 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Säkra ditt schema med end-to-end-kryptering. Inkluderar stöd för anpassade kalendrar, kalenderdelning och mer."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Säkra dina filer med krypterad molnlagring. Inkluderar versionshistorik, krypterad fildelning och mer."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: Säkra din e-post med end-to-end-kryptering. Inkluderar stöd för anpassade e-postdomäner, 15 e-postadresser, obegränsat antal hide-my-email-alias och mer."
+      ],
+      "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "${ VPN_APP_NAME }: Få åtkomst till blockerat innehåll och surfa privat. Inkluderar ${ serversAndCountries }, högsta VPN-hastigheter, åtkomst till världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser, snabba BitTorrent-nedladdningar och mer."
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Få åtkomst till innehåll på streamingtjänster, inklusive Netflix, Disney+ och Prime Video, var som helst"
       ],
@@ -5111,6 +5112,9 @@
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Skydda din familj från skadliga webbplatser och få åtkomst till våra höghastighets VPN-servrar för att streama ditt favoritinnehåll"
+      ],
+      "Provides the highest level of account security protection and specialist support": [
+        "Tillhandahåller den högsta nivån av kontosäkerhet och support från specialister"
       ],
       "Quickly set up out-of-office messages": [
         "Ange smidigt frånvaromeddelanden"
@@ -5924,6 +5928,15 @@
       "Highest VPN speed": [
         "Högsta VPN-hastighet"
       ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
       "Premium early access": [
         "Premium förhandstillgång"
       ],
@@ -6112,6 +6125,12 @@
     "Subscription": {
       "Billed every 2 years": [
         "Faktureras vartannat år"
+      ],
+      "Billed for 15 months": [
+        "Fakturerad med för 15 månader"
+      ],
+      "Billed for 30 months": [
+        "Fakturerad för 30 månader"
       ],
       "Billed monthly": [
         "Faktureras månadsvis"
@@ -6405,6 +6424,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Premium Password Manager": [
         "Premium lösenordshanterare"
       ]
@@ -7104,6 +7129,11 @@
       ],
       "Verified email address": [
         "Verifierad e-postadress"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
       ]
     },
     "Tor out of date": {

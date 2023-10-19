@@ -60,7 +60,7 @@
         "Konfirmasi"
       ],
       "Continue": [
-        "Lanjut"
+        "Lanjutkan"
       ],
       "Continue without pinning": [
         "Lanjutkan tanpa pin"
@@ -147,7 +147,7 @@
         "Hasilkan alias"
       ],
       "Generate password": [
-        "Buat kata sandi"
+        "Hasilkan kata sandi"
       ],
       "Generated password": [
         "Kata sandi dibuat"
@@ -173,6 +173,9 @@
       "Importing": [
         "Mengimpor"
       ],
+      "Invite others": [
+        "Undang yang lain"
+      ],
       "Join shared vault": [
         "Bergabung ke brankas bersama"
       ],
@@ -187,6 +190,15 @@
       ],
       "Lock extension": [
         "Kunci ekstensi"
+      ],
+      "Make admin": [
+        "Jadikan admin"
+      ],
+      "Make editor": [
+        "Jadikan penyunting"
+      ],
+      "Make viewer": [
+        "Jadikan pengamat"
       ],
       "Manage access": [
         "Kelola akses"
@@ -212,6 +224,9 @@
       "Not now": [
         "Tidak sekarang"
       ],
+      "Open in a window": [
+        "Buka di jendela"
+      ],
       "Open navigation": [
         "Buka navigasi"
       ],
@@ -228,7 +243,7 @@
         "Muat ulang halaman"
       ],
       "Regenerate": [
-        "Buat ulang"
+        "Hasilkan ulang"
       ],
       "Reject invitation": [
         "Tolak undangan"
@@ -268,6 +283,9 @@
       ],
       "Share": [
         "Bagikan"
+      ],
+      "Share vault": [
+        "Bagikan brankas"
       ],
       "Show": [
         "Tampilkan"
@@ -442,12 +460,6 @@
       "Invitation could not be rejected": [
         "Undangan tidak dapat ditolak"
       ],
-      "Invite creation failed.": [
-        "Undangan gagal dibuat."
-      ],
-      "Invite successfully sent": [
-        "Undangan berhasil dikirm"
-      ],
       "Item content cannot exceed 40KB": [
         "Konten item tidak boleh melebihi 40KB"
       ],
@@ -480,9 +492,6 @@
       ],
       "Restoring item failed": [
         "Item gagal dipulihkan"
-      ],
-      "Setting \"${ payload.name }\" as primary vault failed": [
-        "\"${ payload.name }\" gagal ditetapkan sebagai brankas utama"
       ],
       "Settings update failed": [
         "Pengaturan gagal diperbarui"
@@ -594,9 +603,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Pembaruan \"${ payload.item.data.metadata.name }\" telah diabaikan"
       ],
-      "\"${ payload.name }\" set as primary vault": [
-        "Brankas \"${ payload.name }\" diatur sebagai brankas utama"
-      ],
       "${ count } items": [
         "${ count } item"
       ],
@@ -636,6 +642,9 @@
       "Access your passwords on the go with our mobile apps.": [
         "Akses kata sandi Anda di mana saja dengan aplikasi mobile kami."
       ],
+      "Admin": [
+        "Admin"
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" dipindahkan ke sampah - alamat ini tidak akan lagi meneruskan surel ke kotak surat Anda"
       ],
@@ -653,6 +662,9 @@
       ],
       "Autosaved on ${ submissionURL }": [
         "Tersimpan secara otomatis pada ${ submissionURL }"
+      ],
+      "Can create, edit, delete, and export items in this vault.": [
+        "Dapat membuat, menyunting, menghapus, dan mengekspor item dalam brankas ini."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Dapat memberikan dan mencabut izin akses ke brankas ini serta menghapus brankas."
@@ -692,6 +704,9 @@
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Impor kata sandi Anda secara mudah ke ${ PASS_APP_NAME }."
+      ],
+      "Editor": [
+        "Penyunting"
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Aktifkan ${ PASS_APP_NAME } dengan menghubungkan akun ${ BRAND_NAME } Anda"
@@ -762,11 +777,17 @@
       "Internet connection lost": [
         "Koneksi internet terputus"
       ],
+      "Invitation sent": [
+        "Undangan dikirim"
+      ],
       "Invite successfully removed": [
         "Undangan berhasil dihapus"
       ],
       "Invite successfully resent": [
         "Undangan berhasil dikirim ulang"
+      ],
+      "invites you to access items in": [
+        "mengundang Anda untuk mengakses item pada"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Sepertinya Anda sudah masuk ke ${ PASS_APP_NAME }. Jika Anda mencoba masuk dengan akun lain, mohon keluar dari ekstensi terlebih dahulu."
@@ -790,7 +811,7 @@
         "Item berhasil dipindahkan"
       ],
       "items": [
-        "items"
+        "item"
       ],
       "Let's get you started by creating your first item": [
         "Mulailah dengan membuat item pertama Anda"
@@ -838,7 +859,7 @@
         "Kata sandi yang berumur lebih dari 1 hari akan dihapus dari riwayat secara otomatis."
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "Sematkan ${ PASS_APP_NAME } ke toolbar Anda"
+        "Sematkan ${ PASS_APP_NAME } pada toolbar Anda"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Kode PIN berhasil didaftarkan. Gunakan kode PIN Anda untuk membuka kunci ${ PASS_APP_NAME }"
@@ -954,6 +975,9 @@
       "Verification code": [
         "Kode verifikasi"
       ],
+      "Viewer": [
+        "Pengamat"
+      ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Kami mengalami masalah menyinkronkan data ke penyimpanan lokal Anda. Pastikan Anda memiliki ruang penyimpanan yang cukup supaya ${ PASS_SHORT_APP_NAME } dapat bekerja."
       ],
@@ -966,11 +990,11 @@
       "You have ${ daysRemaining } days left in your trial period.": [
         "Anda memiliki ${ daysRemaining } hari tersisa pada masa uji coba Anda."
       ],
-      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
-        "Anda telah melebihi jumlah brankas yang termasuk dalam langganan Anda. Item hanya dapat dipindahkan ke brankas utama Anda. Untuk memindahkan item antara semua brankas, tingkatkan langganan Anda."
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
+        "Anda telah melebihi jumlah brankas yang tercakup dalam paket langganan Anda. Item yang Anda miliki hanya akan dapat dipindahkan ke dalam dua brankas pertama Anda. Untuk memindahkan item antar seluruh brankas, tingkatkan paket langganan Anda."
       ],
-      "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
-        "Anda telah melebihi jumlah brankas yang termasuk dalam langganan Anda. Item baru hanya dapat dibuat di brankas utama Anda. Untuk membuat item baru di semua brankas, tingkatkan langganan Anda."
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
+        "Anda telah melebihi jumlah brankas yang tercakup dalam paket langganan Anda. Item baru hanya akan dapat dibuat pada dua brankas pertama Anda. Untuk membuat item baru di seluruh brankas, tingkatkan paket langganan Anda."
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Anda telah mencapai batas jumlah alias yang dapat Anda buat. Dapatkan kemampuan untuk membuat berbagai macam alias tanpa batasan jumlah dengan meningkatkan paket langganan Anda."
@@ -986,6 +1010,9 @@
       ],
       "You're about to create": [
         "Anda akan membuat"
+      ],
+      "You're invited to a vault.": [
+        "Anda telah diundang ke brankas."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Sesi ${ PASS_APP_NAME } Anda terkunci"
@@ -1062,7 +1089,7 @@
         "Isi otomatis"
       ],
       "Autofill 2FA": [
-        "Pengisian 2FA otomatis"
+        "Isi 2FA otomatis"
       ],
       "Automatically open autofill when focusing login fields": [
         "Buka modul autofill secara otomatis pada saat kursor terfokus pada kolom login"
@@ -1254,7 +1281,7 @@
         "Frasa sandi"
       ],
       "Password": [
-        "Kata Sandi"
+        "Kata sandi"
       ],
       "Password history": [
         "Riwayat kata sandi"
@@ -1273,9 +1300,6 @@
       ],
       "Prefix": [
         "Awalan"
-      ],
-      "Primary vault": [
-        "Brankas utama"
       ],
       "Prompt for auto-save": [
         "Ajukan permintaan untuk setiap penyimpanan otomatis"
@@ -1314,7 +1338,7 @@
         "Penguncian sesi"
       ],
       "Set PIN code": [
-        "Tetapkan kode PIN"
+        "Atur kode PIN"
       ],
       "Settings": [
         "Pengaturan"
@@ -1380,9 +1404,6 @@
         "Nama pengguna (alias baru)"
       ],
       "Vault": [
-        "Brankas"
-      ],
-      "Vaults": [
         "Brankas"
       ],
       "Verification number": [
@@ -1512,7 +1533,7 @@
         "Pengaturan ${ PASS_APP_NAME }"
       ],
       "Auto-lock update": [
-        "Kunci pembaruan secara otomatis"
+        "Pembaruan kunci otomatis"
       ],
       "Confirm PIN code": [
         "Konfirmasikan kode PIN"
@@ -1710,6 +1731,12 @@
       "Please log back in": [
         "Silakan masuk kembali"
       ],
+      "Please verify your email address in order to use email aliases": [
+        "Silakan verifikasi alamat email Anda untuk dapat menggunakan fitur alias email"
+      ],
+      "Please verify your email address in order to use vault sharing": [
+        "Silakan verifikasi alamat email Anda untuk dapat menggunakan fitur berbagi berkas"
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Laporan tidak dienkripsi secara ujung ke ujung, mohon tidak mengirim informasi sensitif apa pun."
       ],
@@ -1734,6 +1761,9 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Tidak dapat masuk ke ${ PASS_APP_NAME }. ${ additionalMessage }."
       ],
+      "Upgrade to a paid plan to invite more members to this vault.": [
+        "Tingkatkan ke langganan berbayar untuk mengundang lebih banyak anggota dalam brankas."
+      ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You can not undo this action": [
         "Brankas \"${ vaultName }\" dan seluruh item di dalamnya akan dihapus secara permanen. Tindakan ini tidak dapat diurungkan"
       ],
@@ -1745,6 +1775,12 @@
       ],
       "You cannot create more vaults than your subscription allows.": [
         "Anda tidak dapat membuat lebih banyak brankas dari yang diizinkan oleh paket langganan Anda."
+      ],
+      "You have reached the limit of members who can access this vault.": [
+        "Anda melampaui batas anggota untuk akses brankas."
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "Anda melampaui batas brankas paket langganan Anda."
       ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "Anda memiliki perubahan yang belum disimpan. Apakah Anda yakin untuk membatalkan perubahan ini?"
@@ -1758,14 +1794,14 @@
       "Your plan does not allow you to create more aliases": [
         "Paket Anda tidak mengizinkan Anda untuk membuat lebih banyak alias"
       ],
-      "Your plan only allows you to autofill from your primary vault": [
-        "Paket Anda hanya mengizinkan pengisian otomatis dari brankas utama Anda"
+      "Your plan only allows you to autofill from your first two vaults": [
+        "Paket Anda hanya mengizinkan pengisian otomatis dari dua brankas pertama Anda"
       ],
       "Your session was locked due to inactivity": [
         "Sesi Anda dikunci karena tidak adanya aktivitas"
       ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
-        "Paket langganan Anda tidak mengizinkan Anda untuk membuat lebih dari satu brankas. Seluruh item akan diimpor ke brankas utama Anda. Untuk mengimpor ke lebih dari satu brankas, tingkatkan paket langganan Anda."
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "Paket langganan Anda tidak mengizinkan Anda untuk membuat lebih dari satu brankas. Seluruh item akan diimpor ke brankas pertama Anda. Untuk mengimpor ke lebih dari satu brankas, tingkatkan paket langganan Anda."
       ]
     }
   }

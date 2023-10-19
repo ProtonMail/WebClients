@@ -424,8 +424,14 @@
       "Get verification code": [
         "Få bekræftelseskode"
       ],
+      "Go to first page": [
+        "Gå til første side"
+      ],
       "Go to label": [
         "Gå til etikette"
+      ],
+      "Go to last page": [
+        "Gå til sidste side"
       ],
       "Go to next page": [
         "Gå til næste side"
@@ -3164,9 +3170,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Indholdssøgning kan ikke aktiveres i denne browser. Afslut privat browsing eller brug en anden browser."
       ],
-      "Could not save preference": [
-        "Kunne ikke gemme præferencer"
-      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Dekrypteringsfejl: Dekryptering af denne beskeds indhold mislykkedes."
       ],
@@ -4935,6 +4938,9 @@
       "Calendar side panel": [
         "Kalender-sidepanel"
       ],
+      "Can't find what you're looking for? ${ displayAllMailButton }": [
+        "Kan du ikke finde det, du leder efter? ${ displayAllMailButton }"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Kan du ikke huske din adgangskode? Vi kan hjælpe dig med at rydde de krypterede data for alle kontakter krypteret med denne nøgle og i processen afvise advarslen."
       ],
@@ -5035,9 +5041,6 @@
       ],
       "Do you want to re-sign the contact details?": [
         "Vil du gensignere kontaktdetaljerne?"
-      ],
-      "Don't find what you are looking for? ${ displayAllMailButton }": [
-        "Finder du ikke, hvad du leder efter? ${ displayAllMailButton }"
       ],
       "Don't forget to share the password with the recipient": [
         "Glem ikke at dele adgangskoden med modtageren"
@@ -5680,7 +5683,7 @@
         "Denne invitation er gemt i en deaktiveret kalender."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Dette link fører til et websted, som måske forsøger at stjæle dine oplysninger, f.eks. adgangskoder og kreditkortoplysninger."
+        "Dette link fører til et websted, som måske forsøger at stjæle dine oplysninger, f.eks. adgangskoder og betalingskortoplysninger."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Dette link kan være et homografisk angreb og kan ikke åbnes af Edge browseren. Hvis du er sikker på, at linket er legitimt, så benyt en anden browser til at åbne det."
@@ -6416,9 +6419,6 @@
       "Contacts": [
         "Kontakter"
       ],
-      "Conversations per page": [
-        "Samtaler pr. side"
-      ],
       "Copy": [
         "Kopiér"
       ],
@@ -6583,9 +6583,6 @@
       ],
       "Mark as": [
         "Markér som"
-      ],
-      "Messages per page": [
-        "Beskeder pr. side"
       ],
       "Move ${ sidebarElementName }": [
         "Flyt ${ sidebarElementName }"
@@ -6962,6 +6959,9 @@
       ],
       "Sent": [
         "Sendt"
+      ],
+      "Set up email forwarding": [
+        "Indstil videresendelse af e-mail"
       ],
       "Sign up for free": [
         "Tilmeld gratis"
@@ -8111,6 +8111,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 bruger"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -8173,14 +8176,24 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } måned",
+        "${ n } måneder"
+      ],
       "/ month": [
         "/ måned"
       ],
       "1 year": [
         "1 år"
       ],
+      "15 months": [
+        "15 måneder"
+      ],
       "2 years": [
         "2 år"
+      ],
+      "30 months": [
+        "30 måneder"
       ],
       "Billed at ${ amount } for 1 month": [
         "Faktureret med ${ amount } for 1 måned"
@@ -8304,6 +8317,9 @@
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Vi indlæser nu billeder som standard og blokerer afsendere fra at spore dig. Dette kan ændres i ${ settingsLink }."
+      ],
+      "You can now automatically forward your emails to anyone!": [
+        "Du kan nu automatisk videresende dine e-mails til hvem som helst!"
       ],
       "You can now schedule your messages to be sent later": [
         "Du kan nu planlægge dine beskeder til senere afsendelse"
@@ -8615,7 +8631,7 @@
     },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Opret sikre login-oplysninger på alle dine enheder. Inkludere ubegrænsede aliasser, 20 bokse, integreret 2FA, kreditkort-autofyld og meget mere."
+        "Opret sikre login-oplysninger på alle dine enheder. Inkludere ubegrænsede aliasser, 20 bokse, integreret 2FA, betalingskort-autofyld og meget mere."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Inkluderer 2950+ servere i 65+ lande, forbind op til 10 enheder, tilgå verdensomspændende streamingtjenester, malware- og ad-blocker og meget mere."

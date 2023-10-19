@@ -139,7 +139,7 @@
         "Grup kontak"
       ],
       "Continue": [
-        "Lanjut"
+        "Lanjutkan"
       ],
       "Continue import": [
         "Lanjutkan impor"
@@ -388,7 +388,7 @@
         "Tidak, terima kasih"
       ],
       "Ok": [
-        "Oke"
+        "OK"
       ],
       "OK": [
         "OK"
@@ -2922,6 +2922,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } Premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME } Premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } Premium"
+      ],
       "Up to 6 users": [
         "Sampai 6 pengguna"
       ]
@@ -3206,7 +3215,7 @@
         "Berkas ini mengandung undangan acara:"
       ],
       "This file contains invitation responses:": [
-        "Berkas ini mengandung balasan atas undangan yang dikirim:"
+        "Berkas ini mengandung balasan undangan:"
       ],
       "This file contains some data that we cannot import:": [
         "Sebagian data yang terkandung dalam berkas ini tidak dapat kami impor:"
@@ -3287,10 +3296,10 @@
         "Permintaan baru terlalu banyak. Coba ulangi beberapa saat lagi."
       ],
       "Use your app password if:": [
-        "Gunakan kata sandi aplikasi Anda jika:"
+        "Gunakan kata sandi aplikasi Anda apabila:"
       ],
       "Use your app password instead of your regular password if:": [
-        "Gunakan kata sandi aplikasi Anda alih-alih kata sandi Anda biasanya jika:"
+        "Gunakan kata sandi aplikasi Anda alih-alih kata sandi biasa apabila:"
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Kata sandi aplikasi Anda benar. ${ boldNot } gunakan kata sandi biasa Anda."
@@ -3459,7 +3468,7 @@
         "${ firstItems } dan ${ lastItem }"
       ],
       "${ groupCounts } groups found": [
-        "ditemukan ${ groupCounts } grup"
+        "${ groupCounts } grup ditemukan"
       ],
       "${ providerFoldersNumLocalized } folders found": [
         "${ providerFoldersNumLocalized } folder ditemukan"
@@ -4062,7 +4071,7 @@
         "Anda dapat mengaktifkan notifikasi untuk menerima pemberitahuan setiap kali terdapat surel baru yang masuk ke folder ini."
       ],
       "You cannot undo this action.": [
-        "Anda tidak bisa membatalkannya."
+        "Anda tidak dapat mengurungkan tindakan ini."
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Kunci Anda telah diaktivasi ulang. Acara yang tersambung ke kalender-kalender ini dapat didekripsi."
@@ -4143,7 +4152,7 @@
         "Nomor telepon Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
-        "Zona waktu sistem Anda sepertinya berubah menjadi ${ timezone }. Anda ingin memperbarui preferensi zona waktu?"
+        "Zona waktu sistem Anda sepertinya telah diubah menjadi ${ timezone }. Apakah Anda ingin memperbarui preferensi zona waktu Anda?"
       ]
     },
     "Info calendar search": {
@@ -4191,7 +4200,7 @@
     },
     "Info; reshare calendar modal; part 1": {
       "Calendar sharing was disabled following your recent password reset.": [
-        "Pembagian kalender dinonaktifkan seiring dengan pengaturan ulang kata sandi Anda."
+        "Pembagian kalender dinonaktifkan seiring dengan pengaturan ulang kata sandi Anda baru-baru ini."
       ]
     },
     "Info; reshare calendar modal; part 2": {
@@ -4505,7 +4514,7 @@
         "peserta"
       ],
       "Password": [
-        "Kata Sandi"
+        "Kata sandi"
       ],
       "PGP scheme": [
         "Skema PGP"
@@ -5473,7 +5482,7 @@
         "Pemulihan akun tidak tersedia untuk kunci alamat lawas"
       ],
       "Please generate keys before you try to change your password": [
-        "Harap buat kunci terlebih dahulu sebelum Anda mengubah kata sandi Anda"
+        "Silakan buat kunci terlebih dahulu sebelum Anda mencoba untuk mengubah kata sandi"
       ]
     },
     "session_recovery:available:info": {
@@ -5484,13 +5493,13 @@
         "${ timeRemaining.inHours } jam"
       ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } days to reset your password.": [
-        "Permintaan pengaturan ulang kata sandi disetujui (${ user.Email }). Anda masih punya ${ timeRemaining.inDays } hari untuk mengatur ulang kata sandi Anda."
+        "Permintaan pengaturan ulang kata sandi telah disetujui (${ user.Email }). Anda memiliki ${ timeRemaining.inDays } hari untuk mengatur ulang kata sandi Anda."
       ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hours to reset your password.": [
-        "Permintaan pengaturan ulang kata sandi disetujui (${ user.Email }). Anda masih punya ${ timeRemaining.inHours } jam untuk mengatur ulang kata sandi Anda."
+        "Permintaan pengaturan ulang kata sandi telah disetujui (${ user.Email }). Anda memiliki ${ timeRemaining.inHours } jam untuk mengatur ulang kata sandi Anda."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
-        "Silakan menuju ke perangkat yang sudah masuk (dalam sesi di mana permintaannya dibuat) untuk mengubah kata sandi Anda."
+        "Silakan tuju perangkat yang telah terhubung masuk (dalam sesi di mana permintaan ini diajukan) untuk mengubah kata sandi Anda."
       ],
       "This permission expires in ${ timeRemaining.inDays } days": [
         "Perizinan akan kedaluwarsa dalam ${ timeRemaining.inDays } hari"
@@ -5539,7 +5548,7 @@
     },
     "session_recovery:cancelled:info": {
       "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Permintaan pengaturan ulang kata sandi dibatalkan (${ user.Email }). Jika Anda tidak membuat permintaan ini, ${ changePasswordLink }."
+        "Permintaan pengaturan ulang kata sandi dibatalkan (${ user.Email }). Apabila Anda tidak membuat permintaan ini, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -5566,10 +5575,10 @@
         "Apabila Anda tidak meminta untuk mengatur ulang kata sandi, batalkan permintaan ini sekarang juga."
       ],
       "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hours.": [
-        "Pengaturan ulang kata sandi diminta (${ user.Email }). Anda dapat mengubah kata sandi Anda dalam ${ hoursRemaining } jam."
+        "Pengaturan ulang kata sandi telah diminta (${ user.Email }). Anda dapat mengubah kata sandi Anda dalam ${ hoursRemaining } jam."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
-        "Untuk memastikan bahwa ini memang Anda yang sedang mencoba mengatur ulang kata sandi Anda, kami menunggu 72 jam sebelum menyetujui permintaan. Anda dapat mengubah kata sandi Anda dalam${ boldTimeLeft }. ${ viewRequest }"
+        "Untuk memastikan bahwa permintaan pengaturan ulang kata sandi ini benar-benar berasal dari Anda, kami menunggu 72 jam sebelum menyetujui permintaan yang masuk. Anda dapat mengubah kata sandi Anda pada ${ boldTimeLeft }. ${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "Kami telah menerima permintaan pengaturan ulang kata sandi untuk ${ boldEmail }."
@@ -5598,13 +5607,13 @@
         "${ gracePeriodHoursRemaining } jam"
       ],
       "${ passwordReset } is now available.": [
-        "${ passwordReset } sekarang tersedia."
+        "${ passwordReset } kini telah tersedia."
       ],
       "If you sign out before you reset your password, you could lose access to your account.": [
-        "Jika Anda keluar sebelum mengatur ulang kata sandi, Anda dapat kehilangan akses ke akun Anda."
+        "Apabila Anda keluar sebelum mengatur ulang kata sandi, Anda dapat kehilangan akses menuju akun Anda."
       ],
       "If you sign out without resetting your password, you could lose access to your account.": [
-        "Jika Anda keluar tanpa mengatur ulang kata sandi, Anda dapat kehilangan akses ke akun Anda."
+        "Apabila Anda keluar tanpa mengatur ulang kata sandi, Anda dapat kehilangan akses menuju akun Anda."
       ],
       "You will be able to reset your password in ${ boldTimeLeft }.": [
         "Anda akan dapat mengatur ulang kata sandi Anda dalam ${ boldTimeLeft }."
@@ -5617,7 +5626,7 @@
     },
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
-        "Keluar tanpa pengaturan ulang kata sandi?"
+        "Keluar tanpa mengatur ulang kata sandi?"
       ]
     },
     "Settings update growler warning": {
@@ -5712,6 +5721,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 pengguna"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -5729,6 +5741,15 @@
       ],
       "Highest VPN speed": [
         "Kecepatan VPN tertinggi"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME } Premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, & ${ DRIVE_SHORT_APP_NAME } Premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } Premium"
       ],
       "Premium early access": [
         "Akses dini Premium"
@@ -5774,14 +5795,23 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } months": [
+        "${ n } bulan"
+      ],
       "/ month": [
         "/ bulan"
       ],
       "1 year": [
         "1 tahun"
       ],
+      "15 months": [
+        "15 bulan"
+      ],
       "2 years": [
         "2 tahun"
+      ],
+      "30 months": [
+        "30 bulan"
       ],
       "Billed at ${ amount } for 1 month": [
         "Tertagih dengan harga ${ amount } selama 1 bulan"
@@ -6053,7 +6083,7 @@
         "Preferensi disimpan"
       ],
       "Preferences saved": [
-        "Preferensi telah disimpan"
+        "Preferensi disimpan"
       ],
       "Undo in progress": [
         "Pengurungan sedang berlangsung"
@@ -6076,6 +6106,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } Premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME } Premium"
+      ],
       "Premium Password Manager": [
         "Password Manager Premium"
       ]
@@ -6433,7 +6469,7 @@
         "Aktifkan ulang kunci kalender"
       ],
       "Reconnect your account": [
-        "Hubungkan kembali akun Anda"
+        "Hubungkan ulang akun Anda"
       ],
       "Recover data": [
         "Pulihkan data"
@@ -6457,7 +6493,7 @@
         "Pilih hari dalam bulan"
       ],
       "Select action to take on contact group": [
-        "Pilih tindakan yang diambil di grup kontak"
+        "Pilih tindakan untuk diterapkan pada grup kontak"
       ],
       "Select contact group": [
         "Pilih grup kontak"
