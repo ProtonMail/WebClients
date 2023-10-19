@@ -173,6 +173,9 @@
       "Importing": [
         "Se importă"
       ],
+      "Invite others": [
+        "Invitare alții"
+      ],
       "Join shared vault": [
         "Alăturare la seif partajat"
       ],
@@ -187,6 +190,15 @@
       ],
       "Lock extension": [
         "Blocare extensie"
+      ],
+      "Make admin": [
+        "Stabilire administrator"
+      ],
+      "Make editor": [
+        "Stabilire editor"
+      ],
+      "Make viewer": [
+        "Stabilire cititor"
       ],
       "Manage access": [
         "Gestionare acces"
@@ -211,6 +223,9 @@
       ],
       "Not now": [
         "Nu acum"
+      ],
+      "Open in a window": [
+        "Deschidere într-o fereastră"
       ],
       "Open navigation": [
         "Deschidere navigare"
@@ -268,6 +283,9 @@
       ],
       "Share": [
         "Partajare"
+      ],
+      "Share vault": [
+        "Partajare seif"
       ],
       "Show": [
         "Afișare"
@@ -444,12 +462,6 @@
       "Invitation could not be rejected": [
         "Invitația nu a putut fi refuzată."
       ],
-      "Invite creation failed.": [
-        "Crearea invitației a eșuat."
-      ],
-      "Invite successfully sent": [
-        "Invitația a fost trimisă."
-      ],
       "Item content cannot exceed 40KB": [
         "Conținutul articolului nu poate depăși 40 KiB."
       ],
@@ -482,9 +494,6 @@
       ],
       "Restoring item failed": [
         "Restaurarea articolelor a eșuat."
-      ],
-      "Setting \"${ payload.name }\" as primary vault failed": [
-        "Setarea „${ payload.name }” ca seif primar a eșuat."
       ],
       "Settings update failed": [
         "Actualizarea setărilor a eșuat."
@@ -606,9 +615,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Actualizarea pentru „${ payload.item.data.metadata.name }” a fost respinsă."
       ],
-      "\"${ payload.name }\" set as primary vault": [
-        "Seiful „${ payload.name }” s-a setat ca principal."
-      ],
       "${ count } item": [
         "${ count } element",
         "${ count } elemente",
@@ -664,6 +670,9 @@
       "Access your passwords on the go with our mobile apps.": [
         "Accesați parolele din mers cu aplicațiile mobile."
       ],
+      "Admin": [
+        "Administrator"
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Aliasul „${ item.aliasEmail }” a fost mutat în gunoi - nu va mai redirecționa mesajele către adresa principală de e-mail."
       ],
@@ -681,6 +690,9 @@
       ],
       "Autosaved on ${ submissionURL }": [
         "Autosalvat la ${ submissionURL }"
+      ],
+      "Can create, edit, delete, and export items in this vault.": [
+        "Poate crea, edita, șterge și exporta articole din acest seif."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "Poate acorda și revoca accesul la acest seif și îl poate șterge."
@@ -720,6 +732,9 @@
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importați ușor parolele existente în ${ PASS_APP_NAME }."
+      ],
+      "Editor": [
+        "Editor"
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Activați ${ PASS_APP_NAME } conectându-vă contul ${ BRAND_NAME }"
@@ -792,11 +807,17 @@
       "Internet connection lost": [
         "Conexiunea la internet s-a întrerupt"
       ],
+      "Invitation sent": [
+        "Invitația a fost trimisă."
+      ],
       "Invite successfully removed": [
         "Invitația a fost eliminată."
       ],
       "Invite successfully resent": [
         "Invitația a fost retrimisă."
+      ],
+      "invites you to access items in": [
+        "vă invită să accesați articolele din"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Se pare că deja v-ați conectat la ${ PASS_APP_NAME }. Dacă încercați să vă autentificați cu un alt cont, deconectați-vă mai întâi de la extensie."
@@ -988,6 +1009,9 @@
       "Verification code": [
         "Cod de verificare"
       ],
+      "Viewer": [
+        "Cititor"
+      ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Există probleme la sincronizarea datelor cu stocarea locală. Asigurați-vă că aveți suficient spațiu pe disc pentru ca ${ PASS_SHORT_APP_NAME } să funcționeze fără probleme."
       ],
@@ -1002,11 +1026,11 @@
         "Perioada de încercare mai durează ${ daysRemaining } zile.",
         "Perioada de încercare mai durează ${ daysRemaining } de zile."
       ],
-      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
-        "Ați depășit numărul de seifuri incluse în abonament. Articolele pot fi mutate doar în seiful principal. Pentru a muta articolele între toate seifurile, modificați-vă abonamentul."
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
+        "Ați depășit numărul de seifuri incluse în abonament. Articolele pot fi mutate doar în primele două seifuri. Pentru a muta articolele între toate seifurile, modificați-vă abonamentul."
       ],
-      "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
-        "Ați depășit numărul de seifuri incluse în abonament. Articolele noi pot fi create doar în seiful principal. Pentru a crea articole în toate seifurile, modificați-vă abonamentul."
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
+        "Ați depășit numărul de seifuri incluse în abonament. Articolele noi pot fi create doar în primele două seifuri. Pentru a crea articole în toate seifurile, modificați-vă abonamentul."
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Ați atins limita aliasurilor pe care le puteți crea. Puteți creați un număr nelimitat de aliasuri dacă vă modificați abonamentul."
@@ -1022,6 +1046,9 @@
       ],
       "You're about to create": [
         "Sunteți pe cale să creați"
+      ],
+      "You're invited to a vault.": [
+        "Ați primit o invitație la un seif."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Sesiunea ${ PASS_APP_NAME } este blocată."
@@ -1109,6 +1136,9 @@
       ],
       "Autosave": [
         "Autosalvare"
+      ],
+      "Autosave vault": [
+        "Autosalvare seif"
       ],
       "Autosuggest": [
         "Sugestie automată"
@@ -1311,9 +1341,6 @@
       "Prefix": [
         "Prefix"
       ],
-      "Primary vault": [
-        "Seif principal"
-      ],
       "Prompt for auto-save": [
         "Solicitare autosalvare"
       ],
@@ -1337,6 +1364,9 @@
       ],
       "Select an email address": [
         "Selectați o adresă de e-mail"
+      ],
+      "Select preferred language": [
+        "Selectați limba preferată"
       ],
       "Select your password manager": [
         "Selectare manager de parole"
@@ -1418,6 +1448,9 @@
       ],
       "Verification number": [
         "Număr de verificare"
+      ],
+      "View details": [
+        "Detalii"
       ],
       "View logs": [
         "Afișare jurnale"
@@ -1599,6 +1632,9 @@
       "Secure your data": [
         "Securizați-vă datele"
       ],
+      "Set access level": [
+        "Setare nivel de acces"
+      ],
       "Share with": [
         "Partajare cu"
       ],
@@ -1628,6 +1664,9 @@
       ],
       "Use my email": [
         "Utilizare e-mail"
+      ],
+      "Vault shared with you": [
+        "Seif partajat cu dvs."
       ],
       "Welcome to ${ brandNameJSX }": [
         "Bun venit la ${ brandNameJSX }"
@@ -1732,6 +1771,12 @@
       "Please log back in": [
         "Reconectați-vă din nou."
       ],
+      "Please verify your email address in order to use email aliases": [
+        "Verificați-vă adresa de e-mail pentru a utiliza aliasurile de e-mail."
+      ],
+      "Please verify your email address in order to use vault sharing": [
+        "Verificați-vă adresa de e-mail pentru a utiliza partajarea seifului."
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapoartele nu sunt criptate în ambele părți. Nu trimiteți informații confidențiale."
       ],
@@ -1743,6 +1788,9 @@
       ],
       "Title is required": [
         "Titlul este obligatoriu."
+      ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "Transferați proprietatea acestui seif către ${ email }?"
       ],
       "Trash alias ?": [
         "Trimiteți la gunoi aliasul?"
@@ -1777,14 +1825,14 @@
       "Your plan does not allow you to create more aliases": [
         "Planul actual nu vă permite să creați mai multe aliasuri."
       ],
-      "Your plan only allows you to autofill from your primary vault": [
-        "Planul actual vă permite doar să descărcați din seiful principal."
+      "Your plan only allows you to autofill from your first two vaults": [
+        "Planul actual vă permite să descărcați doar din primele două seifuri."
       ],
       "Your session was locked due to inactivity": [
         "Sesiunea fost blocată datorită inactivității."
       ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
-        "Abonamentul nu vă permite să creați mai multe seifuri. Toate articolele vor fi importate în seiful principal. Pentru a importa în mai multe seifuri, modificați abonamentul."
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "Abonamentul nu vă permite să creați mai multe seifuri. Toate articolele vor fi importate în primul seif. Pentru a importa în mai multe seifuri, modificați-vă abonamentul."
       ]
     }
   }

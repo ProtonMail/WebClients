@@ -191,6 +191,15 @@
       "Lock extension": [
         "Bloquear extensão"
       ],
+      "Make admin": [
+        "Tornar administrador"
+      ],
+      "Make editor": [
+        "Tornar editor"
+      ],
+      "Make viewer": [
+        "Tornar visualizador"
+      ],
       "Manage access": [
         "Gerenciar acesso"
       ],
@@ -216,7 +225,7 @@
         "Agora não"
       ],
       "Open in a window": [
-        "Abrir em uma nova janela"
+        "Abrir em uma janela"
       ],
       "Open navigation": [
         "Abrir navegação"
@@ -364,6 +373,9 @@
       "Cannot create alias (${ error }).": [
         "Não é possível criar o alias (${ error })."
       ],
+      "Cannot send invitation to this address at the moment": [
+        "Não é possível enviar convite para este endereço no momento"
+      ],
       "Could not leave vault.": [
         "Não foi possível deixar o cofre."
       ],
@@ -375,6 +387,9 @@
       ],
       "Could not open updated vault": [
         "Não foi possível abrir o cofre atualizado"
+      ],
+      "Could not resolve share members": [
+        "Não é possível determinar os membros do compartilhamento"
       ],
       "Could not resume your session : ${ description }": [
         "Não foi possível retomar sua sessão: ${ description }"
@@ -422,6 +437,9 @@
       "Failed to remove user's access.": [
         "Falha ao remover o acesso do usuário."
       ],
+      "Failed to transfer this vault's ownership.": [
+        "Falha ao transferir a propriedade deste cofre."
+      ],
       "File could not be parsed": [
         "Não foi possível analisar o arquivo."
       ],
@@ -442,12 +460,6 @@
       ],
       "Invitation could not be rejected": [
         "Não é possível rejeitar o convite."
-      ],
-      "Invite creation failed.": [
-        "Erro na criação do convite."
-      ],
-      "Invite successfully sent": [
-        "Convite enviado"
       ],
       "Item content cannot exceed 40KB": [
         "O conteúdo do item não pode exceder 40KB"
@@ -481,9 +493,6 @@
       ],
       "Restoring item failed": [
         "Erro ao restaurar item"
-      ],
-      "Setting \"${ payload.name }\" as primary vault failed": [
-        "Erro ao definir \"${ payload.name }\" como cofre principal"
       ],
       "Settings update failed": [
         "Erro ao atualizar as configurações"
@@ -599,9 +608,6 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "A atualização \"${ payload.item.data.metadata.name } foi descartada"
-      ],
-      "\"${ payload.name }\" set as primary vault": [
-        "\"${ payload.name }\" foi definido como cofre principal"
       ],
       "${ count } item": [
         "${ count } item",
@@ -795,6 +801,9 @@
       "Invite successfully resent": [
         "Convite enviado com sucesso"
       ],
+      "invites you to access items in": [
+        "convida você a acessar itens em"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Parece que já iniciou sessão em ${ PASS_APP_NAME }. Se estiver tentando iniciar sessão com uma conta diferente, termine primeiro a sessão na extensão."
       ],
@@ -855,6 +864,9 @@
       ],
       "Owner": [
         "Proprietário"
+      ],
+      "Ownership successfully transfered. You are no long the owner of this vault.": [
+        "Propriedade transferida com sucesso. Você não possui mais a propriedade deste cofre."
       ],
       "Password copied": [
         "Senha copiada"
@@ -919,6 +931,9 @@
       "Successfully exported all your items": [
         "Todos os seus itens foram exportados"
       ],
+      "Successfully left the vault": [
+        "Saiu do cofre com sucesso"
+      ],
       "Successfully synced all vaults": [
         "Todos os cofres foram sincronizados"
       ],
@@ -941,6 +956,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Esta exportação não será criptografada e qualquer pessoa com acesso ao seu arquivo exportado poderá ver suas senhas. Por segurança, exclua-o após terminar de usá-lo."
       ],
+      "This vault is not currently shared with anyone. Invite people to share it with others.": [
+        "Este cofre não é mais compartilhado com ninguém. Convide outras pessoas para compartilha-lo."
+      ],
       "Unable to copy to clipboard": [
         "Não é possível copiar para a área de transferência"
       ],
@@ -952,6 +970,12 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Atualizar o ${ PASS_APP_NAME }"
+      ],
+      "User's access removed": [
+        "Acesso do usuário removido"
+      ],
+      "User's access sucessfuly updated": [
+        "Acesso do usuário atualizado com sucesso"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Cofre \"${ payload.content.name }\" excluído"
@@ -977,15 +1001,18 @@
       "You are about to create:": [
         "Você está prestes a criar:"
       ],
+      "You cannot change the mailboxes for this alias.": [
+        "Você não pode alterar as caixas de entrada para este alias."
+      ],
       "You have ${ daysRemaining } day left in your trial period.": [
         "Você tem ${ daysRemaining } dia restante em seu período de avaliação.",
         "Você possui ${ daysRemaining } dias restantes em seu período de avaliação."
       ],
-      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
-        "Você ultrapassou o número de cofres incluídos em sua assinatura..."
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
+        "Você excedeu o número de cofres incluídos na sua assinatura. Os itens só podem ser movidos para os dois primeiros cofres. Para mover itens entre todos os cofres, atualize sua assinatura."
       ],
-      "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
-        "Você ultrapassou o número de cofres incluídos em sua assinatura..."
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
+        "Você excedeu o número de cofres incluídos na sua assinatura. Novos itens só podem ser criados nos dois primeiros cofres. Para criar novos itens em todos os cofres, atualize sua assinatura."
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Você atingiu o limite de aliases que pode criar. Crie um número ilimitado de aliases ao fazer upgrade da sua assinatura."
@@ -1001,6 +1028,9 @@
       ],
       "You're about to create": [
         "Você está prestes a criar"
+      ],
+      "You're invited to a vault.": [
+        "Você recebeu um convite para ingressar em um cofre"
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Sua sessão no ${ PASS_APP_NAME } está bloqueada"
@@ -1291,9 +1321,6 @@
       "Prefix": [
         "Prefixo"
       ],
-      "Primary vault": [
-        "Cofre padrão"
-      ],
       "Prompt for auto-save": [
         "Solicitar salvamento automático"
       ],
@@ -1398,9 +1425,6 @@
       ],
       "Vault": [
         "Cofre"
-      ],
-      "Vaults": [
-        "Cofres"
       ],
       "Verification number": [
         "Número de verificação"
@@ -1727,6 +1751,12 @@
       "Please log back in": [
         "Inicie sessão novamente"
       ],
+      "Please verify your email address in order to use email aliases": [
+        "Por favor, verifique seu endereço de e-mail para usar os aliases de e-mail"
+      ],
+      "Please verify your email address in order to use vault sharing": [
+        "Por favor, verifique seu endereço de e-mail para utilizar o compartilhamento de cofre"
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são criptografados de ponta a ponta. Não envie nenhuma informação confidencial."
       ],
@@ -1738,6 +1768,9 @@
       ],
       "Title is required": [
         "O título é obrigatório"
+      ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "Transferir a propriedade deste cofre para ${ email }?"
       ],
       "Trash alias ?": [
         "Excluir alias ?"
@@ -1766,20 +1799,20 @@
       "You must select at least one mailbox": [
         "Você deve selecionar pelo menos uma caixa de correio"
       ],
+      "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
+        "Você não terá mais acesso a este cofre. Para participar novamente, você precisará de um novo convite."
+      ],
       "Your plan does not allow you to create more aliases": [
         "Seu plano não permite que você crie mais aliases"
       ],
-      "Your plan only allows you to autofill from your primary vault": [
-        "Seu plano só permite que você preencha automaticamente a partir do seu cofre principal"
+      "Your plan only allows you to autofill from your first two vaults": [
+        "Seu plano só permite o preenchimento automático dos dois primeiros cofres"
       ],
       "Your session was locked due to inactivity": [
         "Sua sessão foi bloqueada devido à inatividade"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "A sua assinatura não permite que você crie múltiplos cofres. Todos os itens serão importados para o seu primeiro cofre. Para importar em múltiplos cofres, atualize a sua assinatura."
-      ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
-        "A sua assinatura não permite que você crie múltiplos cofres. Todos os itens serão importados para o seu cofre principal. Para importar em múltiplos cofres, atualize a sua assinatura."
       ]
     }
   }
