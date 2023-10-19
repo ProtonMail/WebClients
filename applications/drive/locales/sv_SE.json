@@ -794,37 +794,6 @@
         "Händelse stöds inte"
       ]
     },
-    "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } lagringsutrymme"
-      ],
-      "1 user": [
-        "1 användare"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 användare"
-      ],
-      "Ad-blocker and malware protection": [
-        "Annonsblockerare och skydd mot skadlig kod"
-      ],
-      "Extended version history": [
-        "Utökad versionshistorik"
-      ],
-      "High speed streaming": [
-        "Höghastighetsstreaming"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "bf2023: Tooltip": {
-      "Store up to 200 versions of each file for up to 10 years.": [
-        "Lagra upp till 200 versioner av varje fil i upp till 10 år."
-      ]
-    },
     "Billing cycle option": {
       "Annually": [
         "Årligen"
@@ -2584,6 +2553,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "Upp till 6 användare"
       ]
@@ -5655,6 +5633,15 @@
       "Highest VPN speed": [
         "Högsta VPN-hastighet"
       ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
       "Premium early access": [
         "Premium förhandstillgång"
       ],
@@ -5917,6 +5904,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Premium Password Manager": [
         "Premium lösenordshanterare"
       ]
