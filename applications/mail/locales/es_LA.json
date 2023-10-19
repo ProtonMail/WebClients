@@ -424,8 +424,14 @@
       "Get verification code": [
         "Obtener código de verificación"
       ],
+      "Go to first page": [
+        "Ir a la primera página"
+      ],
       "Go to label": [
         "Ir a la etiqueta"
+      ],
+      "Go to last page": [
+        "Ir a la última página"
       ],
       "Go to next page": [
         "Ir a la página siguiente"
@@ -3169,9 +3175,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "La búsqueda de contenido no se puede habilitar en este navegador. Salga del modo de navegación privada o use otro navegador."
       ],
-      "Could not save preference": [
-        "No se ha pudo guardar la preferencia."
-      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Error de descifrado: no se pudo descifrar el contenido cifrado de este mensaje."
       ],
@@ -3838,6 +3841,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } premium"
+      ],
       "Up to 6 users": [
         "Hasta 6 usuarios"
       ]
@@ -4943,6 +4955,9 @@
       "Calendar side panel": [
         "Panel lateral de calendario"
       ],
+      "Can't find what you're looking for? ${ displayAllMailButton }": [
+        "¿No encuentra lo que busca? ${ displayAllMailButton }"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "¿No recuerda su contraseña? Podemos ayudarle a limpiar los datos cifrados de todos los contactos cifrados con esta clave y en el proceso descartar la alerta."
       ],
@@ -5043,9 +5058,6 @@
       ],
       "Do you want to re-sign the contact details?": [
         "¿Desea volver a firmar los datos del contacto?"
-      ],
-      "Don't find what you are looking for? ${ displayAllMailButton }": [
-        "¿No encuentra lo que busca? ${ displayAllMailButton }"
       ],
       "Don't forget to share the password with the recipient": [
         "No olvide compartir la contraseña con el destinatario"
@@ -6424,9 +6436,6 @@
       "Contacts": [
         "Contactos"
       ],
-      "Conversations per page": [
-        "Conversaciones por página"
-      ],
       "Copy": [
         "Copiar"
       ],
@@ -6591,9 +6600,6 @@
       ],
       "Mark as": [
         "Marcar como"
-      ],
-      "Messages per page": [
-        "Mensajes por página"
       ],
       "Move ${ sidebarElementName }": [
         "Mover ${ sidebarElementName }"
@@ -6970,6 +6976,9 @@
       ],
       "Sent": [
         "Enviados"
+      ],
+      "Set up email forwarding": [
+        "Configurar el reenvío de correo electrónico"
       ],
       "Sign up for free": [
         "Regístrese gratis"
@@ -8119,6 +8128,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 usuario"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -8136,6 +8148,15 @@
       ],
       "Highest VPN speed": [
         "Máxima velocidad de VPN"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y ${ DRIVE_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } premium"
       ],
       "Premium early access": [
         "Acceso anticipado premium"
@@ -8181,14 +8202,24 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } meses"
+      ],
       "/ month": [
         "/ mes"
       ],
       "1 year": [
         "1 año"
       ],
+      "15 months": [
+        "15 meses"
+      ],
       "2 years": [
         "2 años"
+      ],
+      "30 months": [
+        "30 meses"
       ],
       "Billed at ${ amount } for 1 month": [
         "Al precio de ${ amount } durante 1 mes"
@@ -8312,6 +8343,9 @@
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Ahora cargaremos las imágenes por defecto y bloquearemos los remitentes de rastrearle. Esto puede cambiarse en los ${ settingsLink }."
+      ],
+      "You can now automatically forward your emails to anyone!": [
+        "¡Ahora puede reenviar automáticamente sus correos a cualquiera!"
       ],
       "You can now schedule your messages to be sent later": [
         "Ya puede programar sus mensajes para ser enviados posteriormente"
@@ -8617,6 +8651,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } premium"
+      ],
       "Premium Password Manager": [
         "Administrador de contraseñas premium"
       ]
