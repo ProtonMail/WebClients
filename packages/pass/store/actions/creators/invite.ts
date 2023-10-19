@@ -26,11 +26,13 @@ export const inviteCreationIntent = createAction(
 
 export const inviteCreationSuccess = createAction(
     'invite::create::success',
-    withRequestSuccess((shareId: string) =>
-        withNotification({
-            type: 'info',
-            text: c('Info').t`Invite successfully sent`,
-        })({ payload: { shareId } })
+    withRequestSuccess(
+        (shareId: string) =>
+            withNotification({
+                type: 'info',
+                text: c('Info').t`Invite successfully sent`,
+            })({ payload: { shareId } }),
+        { data: (shareId) => ({ shareId }) }
     )
 );
 
