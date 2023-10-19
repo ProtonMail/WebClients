@@ -150,7 +150,9 @@ export const withOptimisticShares = withOptimistic<SharesState>(
         }
 
         if (inviteCreationSuccess.match(action)) {
-            return partialMerge(state, { [action.payload.shareId]: { shared: true } });
+            return action.payload.withVaultCreation
+                ? partialMerge(state, { [action.payload.shareId]: { ...action.payload.share, shared: true } })
+                : partialMerge(state, { [action.payload.shareId]: { shared: true } });
         }
 
         if (newUserInvitePromoteSuccess.match(action)) {
