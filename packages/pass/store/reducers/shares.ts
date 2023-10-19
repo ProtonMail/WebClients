@@ -43,6 +43,9 @@ export type ShareItem<T extends ShareType = ShareType> = Share<T> & {
     members?: ShareMember[];
 };
 
+export type WithItemCount<T> = T & { count: number };
+export type VaultShareItem = ShareItem<ShareType.Vault>;
+
 export type SharesState = { [shareId: string]: ShareItem };
 
 /**

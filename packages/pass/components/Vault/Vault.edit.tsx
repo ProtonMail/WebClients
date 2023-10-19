@@ -1,18 +1,18 @@
 import { type VFC, useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { FormikProvider, useFormik } from 'formik';
+import { Form, FormikProvider, useFormik } from 'formik';
 
 import { useRequestStatusEffect } from '@proton/pass/hooks/useRequestStatusEffect';
 import { validateVaultVaultsWithEffect } from '@proton/pass/lib/validation/vault';
 import { vaultEditIntent } from '@proton/pass/store/actions';
 import { vaultEdit } from '@proton/pass/store/actions/requests';
-import type { VaultShare } from '@proton/pass/types';
+import type { VaultShareItem } from '@proton/pass/store/reducers';
 import { VaultColor, VaultIcon } from '@proton/pass/types/protobuf/vault-v1';
 
 import { VaultForm, type VaultFormConsumerProps, type VaultFormValues } from './Vault.form';
 
-type Props = VaultFormConsumerProps & { vault: VaultShare };
+type Props = VaultFormConsumerProps & { vault: VaultShareItem };
 
 export const FORM_ID = 'vault-edit';
 
@@ -44,7 +44,9 @@ export const VaultEdit: VFC<Props> = ({ vault, onSubmit, onSuccess, onFailure, o
 
     return (
         <FormikProvider value={form}>
-            <VaultForm form={form} formId={FORM_ID} />
+            <Form id={FORM_ID} className="flex flex-column gap-y-4">
+                <VaultForm form={form} />
+            </Form>
         </FormikProvider>
     );
 };

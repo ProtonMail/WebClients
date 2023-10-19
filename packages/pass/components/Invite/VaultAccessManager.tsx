@@ -15,20 +15,21 @@ import { PendingExistingMember, PendingNewMember } from '@proton/pass/components
 import { SharedVaultItem } from '@proton/pass/components/Vault/SharedVaultItem';
 import { useShareAccessOptionsPolling } from '@proton/pass/hooks/useShareAccessOptionsPolling';
 import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
-import { selectOwnWritableVaults, selectPassPlan, selectVaultWithItemsCount } from '@proton/pass/store/selectors';
-import type { NewUserPendingInvite, PendingInvite } from '@proton/pass/types';
+import { selectOwnWritableVaults, selectPassPlan, selectShareOrThrow } from '@proton/pass/store/selectors';
+import type { NewUserPendingInvite, PendingInvite, ShareType } from '@proton/pass/types';
 import { type ShareMember as ShareMemberType } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 
 type Props = { shareId: string };
+
 type InviteListItem =
     | { key: string; type: 'existing'; invite: PendingInvite }
     | { key: string; type: 'new'; invite: NewUserPendingInvite };
 
 export const VaultAccessManager: FC<Props> = ({ shareId }) => {
     const { createInvite, close } = useInviteContext();
-    const vault = useSelector(selectVaultWithItemsCount(shareId));
+    const vault = useSelector(selectShareOrThrow<ShareType.Vault>(shareId));
     const plan = useSelector(selectPassPlan);
     const loading = useShareAccessOptionsPolling(shareId);
     const canManage = isShareManageable(vault);
@@ -85,7 +86,7 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
                                 key="modal-invite-button"
                                 color="norm"
                                 pill
-                                onClick={() => createInvite(shareId)}
+                                onClick={() => createInvite({ vault })}
                                 disabled={!canManage || memberLimitReached}
                             >
                                 {c('Action').t`Invite others`}
@@ -94,7 +95,13 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
                     />
                 }
             >
-                <SharedVaultItem vault={vault} className="mt-3 mb-6" />
+                <SharedVaultItem
+                    className="mt-3 mb-6"
+                    color={vault.content.display.color}
+                    icon={vault.content.display.icon}
+                    name={vault.content.name}
+                    shareId={vault.shareId}
+                />
 
                 {vault.shared ? (
                     <div className="flex flex-column gap-y-3">
@@ -107,7 +114,7 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
                                 case 'new':
                                     return (
                                         <PendingNewMember
-                                            shareId={shareId}
+                                            shareId={vault.shareId}
                                             key={item.key}
                                             email={item.invite.invitedEmail}
                                             newUserInviteId={item.invite.newUserInviteId}
@@ -119,7 +126,7 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
                                     return (
                                         <PendingExistingMember
                                             key={item.key}
-                                            shareId={shareId}
+                                            shareId={vault.shareId}
                                             email={item.invite.invitedEmail}
                                             inviteId={item.invite.inviteId}
                                             canManage={canManage}
@@ -134,7 +141,7 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
                             <ShareMember
                                 key={member.email}
                                 email={member.email}
-                                shareId={shareId}
+                                shareId={vault.shareId}
                                 userShareId={member.shareId}
                                 me={vault.shareId === member.shareId}
                                 owner={member.owner}
