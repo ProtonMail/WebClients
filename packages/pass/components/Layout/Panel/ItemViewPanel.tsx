@@ -11,8 +11,9 @@ import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Them
 import { VaultTag } from '@proton/pass/components/Vault/VaultTag';
 import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
+import type { VaultShareItem } from '@proton/pass/store/reducers';
 import { selectAllVaults, selectVaultLimits } from '@proton/pass/store/selectors';
-import { type ItemType, ShareRole, type VaultShare } from '@proton/pass/types';
+import { type ItemType, ShareRole } from '@proton/pass/types';
 
 import { Panel } from './Panel';
 import { PanelHeader } from './PanelHeader';
@@ -20,7 +21,7 @@ import { PanelHeader } from './PanelHeader';
 type Props = {
     type: ItemType;
     name: string;
-    vault: VaultShare;
+    vault: VaultShareItem;
     actions?: ReactElement[];
     quickActions?: ReactElement[];
 } & Omit<ItemViewProps, 'revision' | 'vault'>;

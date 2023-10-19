@@ -4,13 +4,12 @@ import { createSelector } from '@reduxjs/toolkit';
 import { isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import { isOwnVault, isSharedVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
-import type { VaultShare, WithItemCount } from '@proton/pass/types';
 import { type Maybe, type MaybeNull, type ShareType } from '@proton/pass/types';
 import { and, invert } from '@proton/pass/utils/fp/predicates';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 
 import { unwrapOptimisticState } from '../optimistic/utils/transformers';
-import { type ShareItem } from '../reducers';
+import type { ShareItem, VaultShareItem } from '../reducers';
 import type { State } from '../types';
 import { SelectorError } from './errors';
 import { selectItems } from './items';
@@ -36,7 +35,7 @@ export const selectWritableSharedVaults = createSelector([selectAllVaults], (vau
     vaults.filter(and(isWritableVault, isSharedVault))
 );
 
-const createVaultsWithItemsCountSelector = (vaultSelector: Selector<State, VaultShare[]>) =>
+const createVaultsWithItemsCountSelector = (vaultSelector: Selector<State, VaultShareItem[]>) =>
     createSelector([vaultSelector, selectItems], (shares, itemsByShareId) =>
         shares.map((share) => ({
             ...share,
@@ -83,12 +82,10 @@ export const selectShareOrThrow =
         return share;
     };
 
-export const selectVaultWithItemsCount = (shareId: string) =>
+export const selectVaultItemsCount = (shareId: MaybeNull<string>) =>
     createSelector(
-        selectShareOrThrow<ShareType.Vault>(shareId),
+        selectShare<ShareType.Vault>(shareId),
         selectItems,
-        (share, itemsByShareId): WithItemCount<ShareItem<ShareType.Vault>> => ({
-            ...share,
-            count: Object.values(itemsByShareId?.[share?.shareId] ?? {}).filter(invert(isTrashed)).length,
-        })
+        (share, itemsByShareId): MaybeNull<number> =>
+            share ? Object.values(itemsByShareId?.[share?.shareId] ?? {}).filter(invert(isTrashed)).length : null
     );

@@ -14,13 +14,12 @@ import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal'
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
-import type { ShareItem } from '@proton/pass/store/reducers';
+import type { VaultShareItem, WithItemCount } from '@proton/pass/store/reducers';
 import { selectVaultLimits } from '@proton/pass/store/selectors';
 import { NOOP_LIST_SELECTOR } from '@proton/pass/store/selectors/utils';
 import type { State } from '@proton/pass/store/types';
-import type { ShareType, WithItemCount } from '@proton/pass/types';
 
-type OptionsSelector = Selector<State, WithItemCount<ShareItem<ShareType.Vault>>[]>;
+type OptionsSelector = Selector<State, WithItemCount<VaultShareItem>[]>;
 
 export type Props = Omit<ModalProps, 'onSubmit'> & {
     downgradeMessage: string;

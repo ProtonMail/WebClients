@@ -13,8 +13,9 @@ import {
     Icon,
 } from '@proton/components';
 import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
+import type { VaultShareItem } from '@proton/pass/store/reducers';
 import { selectOwnVaults, selectShare, selectVaultsWithItemsCount } from '@proton/pass/store/selectors';
-import { type MaybeNull, type ShareType, type VaultShare } from '@proton/pass/types';
+import type { MaybeNull, ShareType } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 
 import { useFeatureFlag } from '../../../hooks/useFeatureFlag';
@@ -25,31 +26,31 @@ import type { VaultOption } from './VaultSubmenu.utils';
 import { getVaultOptionInfo } from './VaultSubmenu.utils';
 
 type Props = {
-    selectedShareId: MaybeNull<string>;
     inTrash: boolean;
-    handleVaultSelect: (shareId: MaybeNull<string>) => void;
-    handleVaultDelete: (vault: VaultShare) => void;
-    handleVaultEdit: (vault: VaultShare) => void;
-    handleVaultCreate: () => void;
-    handleVaultInvite: (vault: VaultShare) => void;
-    handleVaultManage: (vault: VaultShare) => void;
-    handleVaultLeave: (vault: VaultShare) => void;
-    handleTrashRestore: () => void;
+    selectedShareId: MaybeNull<string>;
     handleTrashEmpty: () => void;
+    handleTrashRestore: () => void;
+    handleVaultCreate: () => void;
+    handleVaultDelete: (vault: VaultShareItem) => void;
+    handleVaultEdit: (vault: VaultShareItem) => void;
+    handleVaultInvite: (vault: VaultShareItem) => void;
+    handleVaultLeave: (vault: VaultShareItem) => void;
+    handleVaultManage: (vault: VaultShareItem) => void;
+    handleVaultSelect: (shareId: MaybeNull<string>) => void;
 };
 
 export const VaultSubmenu: VFC<Props> = ({
-    selectedShareId,
     inTrash,
-    handleVaultSelect,
+    selectedShareId,
+    handleTrashEmpty,
+    handleTrashRestore,
+    handleVaultCreate,
     handleVaultDelete,
     handleVaultEdit,
-    handleVaultCreate,
     handleVaultInvite,
-    handleVaultManage,
     handleVaultLeave,
-    handleTrashRestore,
-    handleTrashEmpty,
+    handleVaultManage,
+    handleVaultSelect,
 }) => {
     const history = useHistory();
 

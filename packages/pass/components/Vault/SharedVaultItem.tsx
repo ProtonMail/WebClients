@@ -1,26 +1,42 @@
 import type { VFC } from 'react';
+import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
-import type { Maybe, VaultShare, WithItemCount } from '@proton/pass/types';
+import { selectVaultItemsCount } from '@proton/pass/store/selectors';
+import type { VaultColor, VaultIcon as VaultIconEnum } from '@proton/pass/types/protobuf/vault-v1';
 import clsx from '@proton/utils/clsx';
 
 import { VaultIcon } from './VaultIcon';
 
-export type SharedVaultItemProps = {
-    vault: Maybe<WithItemCount<VaultShare>>;
+type SharedVaultItemProps = {
     className?: string;
+    color?: VaultColor;
+    icon?: VaultIconEnum;
+    name: string;
+    shareId?: string;
 };
 
-export const SharedVaultItem: VFC<SharedVaultItemProps> = ({ vault, className }: SharedVaultItemProps) =>
-    vault ? (
+export const SharedVaultItem: VFC<SharedVaultItemProps> = ({
+    className,
+    color,
+    icon,
+    name,
+    shareId = '',
+}: SharedVaultItemProps) => {
+    const count = useSelector(selectVaultItemsCount(shareId));
+
+    return (
         <div className={clsx(['flex flex-align-items-center gap-3', className])}>
-            <VaultIcon color={vault.content.display.color} icon={vault.content.display.icon} size={20} background />
+            <VaultIcon color={color} icon={icon} size={20} background />
             <div className="flex-item-fluid">
-                <div className="text-xl text-bold text-ellipsis">{vault.content.name}</div>
-                <span className="color-weak">
-                    {c('Info').ngettext(msgid`${vault.count} item`, `${vault.count} items`, vault.count)}
-                </span>
+                <div className="text-xl text-bold text-ellipsis">{name}</div>
+                {count !== null && (
+                    <span className="color-weak">
+                        {c('Info').ngettext(msgid`${count} item`, `${count} items`, count)}
+                    </span>
+                )}
             </div>
         </div>
-    ) : null;
+    );
+};
