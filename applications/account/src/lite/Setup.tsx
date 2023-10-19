@@ -1,6 +1,8 @@
 import { ReactNode, useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 
+import { c } from 'ttag';
+
 import {
     EventManagerProvider,
     ModalsChildren,
@@ -10,7 +12,7 @@ import {
     useErrorHandler,
     useThemeQueryParameter,
 } from '@proton/components';
-import { pullForkSession, setCookies, setRefreshCookies } from '@proton/shared/lib/api/auth';
+import { authJwt, pullForkSession, setCookies, setRefreshCookies } from '@proton/shared/lib/api/auth';
 import { getLatestID } from '@proton/shared/lib/api/events';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { PullForkResponse, RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
@@ -66,10 +68,10 @@ const Setup = ({ onLogin, UID, children }: Props) => {
     useEffect(() => {
         const searchParams = new URLSearchParams(location.search);
 
-        const setupFork = async (selector: string) => {
-            const { UID, RefreshToken } = await silentApi<PullForkResponse>(pullForkSession(selector));
+        const setupCookies = async ({ UID, RefreshToken }: { UID: string; RefreshToken: string }) => {
             const { AccessToken: newAccessToken, RefreshToken: newRefreshToken } =
                 await silentApi<RefreshSessionResponse>(withUIDHeaders(UID, setRefreshCookies({ RefreshToken })));
+
             await silentApi(
                 withAuthHeaders(
                     UID,
@@ -82,6 +84,28 @@ const Setup = ({ onLogin, UID, children }: Props) => {
                     })
                 )
             );
+        };
+
+        const setupFork = async (selector: string) => {
+            const { UID, RefreshToken } = await silentApi<PullForkResponse>(pullForkSession(selector));
+
+            await setupCookies({ UID, RefreshToken });
+
+            return UID;
+        };
+
+        const setupJwt = async (jwt: string) => {
+            const { UID, RefreshToken } = await silentApi<{
+                UID: string;
+                AccessToken: string;
+                RefreshToken?: string;
+            }>(authJwt({ Token: jwt }));
+
+            if (!RefreshToken) {
+                throw new Error(c('Error').t`Invalid JWT token`);
+            }
+
+            await setupCookies({ UID, RefreshToken });
 
             return UID;
         };
@@ -131,32 +155,49 @@ const Setup = ({ onLogin, UID, children }: Props) => {
             broadcast({ type: MessageType.ERROR, payload: getGenericErrorPayload(error) });
             errorHandler(error);
             setError({
-                message: getApiErrorMessage(error),
+                message: getApiErrorMessage(error) || error?.message,
             });
         };
 
         const hashParams = new URLSearchParams(window.location.hash.slice(1));
         const selector = hashParams.get('selector');
-        hashParams.delete('selector');
-        window.location.hash = hashParams.toString();
 
         if (selector) {
+            window.location.hash = '';
+
             setupFork(selector)
                 .then((UID) => setupApp(UID))
                 .catch(handleSetupError);
-        } else if (UID) {
-            setupApp(UID).catch(handleSetupError);
-        } else {
-            // Old clients not supprting auto-sign in receive upgrade notifications to the lite app.
-            if (fallbackUrl) {
-                replaceUrl(fallbackUrl);
-                return;
-            }
-            setError({
-                message: 'No selector found',
-            });
-            broadcast({ type: MessageType.ERROR, payload: { message: 'No selector found' } });
+
+            return;
         }
+
+        const jwt = location.hash.substring(1);
+
+        if (jwt) {
+            window.location.hash = '';
+
+            setupJwt(jwt)
+                .then((UID) => setupApp(UID))
+                .catch(handleSetupError);
+
+            return;
+        }
+
+        if (UID) {
+            setupApp(UID).catch(handleSetupError);
+            return;
+        }
+
+        // Old clients not supporting auto-sign in receive upgrade notifications to the lite app.
+        if (fallbackUrl) {
+            replaceUrl(fallbackUrl);
+            return;
+        }
+        setError({
+            message: 'No selector or JWT token found',
+        });
+        broadcast({ type: MessageType.ERROR, payload: { message: 'No selector or JWT token found' } });
     }, []);
 
     if (error) {
