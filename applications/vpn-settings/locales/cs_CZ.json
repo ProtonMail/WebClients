@@ -642,6 +642,9 @@
         "${ n } měsíce",
         "${ n } měsíců",
         "${ n } měsíců"
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
+        "Automatické obnovení za ${ renewPrice }, na ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -2027,6 +2030,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Prémiové funkce ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Prémiové funkce ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Prémiové funkce ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "Až 6 uživatelů"
       ]
@@ -2691,6 +2703,15 @@
       "Admin account allocation": [
         "Přidělení účtu správce"
       ],
+      "After this date, you'll be billed every 12 months at the normal yearly rate.": [
+        "Po tomto datu vám bude každých 12 měsíců účtována běžná roční sazba."
+      ],
+      "After this date, you'll be billed every 24 months at the normal 2-year rate.": [
+        "Po tomto datu vám bude každých 24 měsíců účtována běžná dvouletá sazba."
+      ],
+      "After this date, you'll be billed every month at the regular price.": [
+        "Po tomto datu vám bude každý měsíc účtována běžná cena."
+      ],
       "All your changes will be lost.": [
         "Veškeré vaše změny budou ztraceny."
       ],
@@ -2837,9 +2858,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "Nezapomeňte toto heslo. V případě, že ho zapomenete, nebudete se moci přihlásit nebo dešifrovat své zprávy."
-      ],
-      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Nepoužívejte pověření OpenVPN / IKEv2 v aplikacích ${ VPN_APP_NAME } ani na ovládacím panelu ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "Done": [
         "Hotovo"
@@ -3309,6 +3327,15 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Zálohu odešlete na následující adresu nebo naskenujte QR kód. Po potvrzení se vklad promítne na váš účet."
       ],
+      "Subscription auto-renews every 12 months.": [
+        "Předplatné se automaticky obnovuje každých 12 měsíců."
+      ],
+      "Subscription auto-renews every 24 months.": [
+        "Předplatné se automaticky obnovuje každých 24 měsíců."
+      ],
+      "Subscription auto-renews every month.": [
+        "Předplatné se automaticky obnovuje každý měsíc."
+      ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Předplatné vyprší: opětovně aktivujte dne ${ byDate } pro zachování vašich výhod tarifu ${ planName }. ${ reactivateLink }"
       ],
@@ -3362,6 +3389,9 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Tyto konfigurace jsou určeny pro práci s routery WireGuard a oficiálními klienty."
+      ],
+      "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
+        "Tyto přihlašovací údaje nelze použít k přihlášení do našich oficiálních aplikací ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Tento účet byl zablokován kvůli možnému porušení pravidel."
@@ -3666,9 +3696,6 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Následující přihlašovací údaje můžete použít pro připojení k ${ VPN_APP_NAME } pomocí VPN aplikací třetích stran s otevřeným zdrojovým kódem, jako je Tunnelblick pro macOS nebo OpenVPN pro GNU/Linux."
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Přihlašovací údaje OpenVPN / IKEv2 nelze použít pro přihlášení do aplikací ${ VPN_APP_NAME } nebo ovládacího panelu ${ VPN_APP_NAME }. ${ learnMore }"
-      ],
       "You have ${ availableCount } dedicated server available.": [
         "Máte k dispozici ${ availableCount } dedikovaný server.",
         "Máte k dispozici ${ availableCount } dedikované servery.",
@@ -3747,6 +3774,9 @@
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Vaše informace jsou u nás v bezpečí. Budeme vás kontaktovat pouze v případě, že to bude nutné pro poskytování našich služeb."
       ],
+      "Your next billing date is ${ renewalTime }.": [
+        "Datum příštího vyúčtování je ${ renewalTime }."
+      ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Heslo organizace lze sdílet se všemi uživateli, kterým chcete přidělit oprávnění správce. Heslo slouží také jako nouzový kód pro obnovení přístupu do Vaší organizace v případě, že ztratíte přístup ke svému hlavnímu účtu. Heslo uložte a držte v bezpečí."
       ],
@@ -3758,6 +3788,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Váš předplatné je spravováno Mozillou. Kontaktujte prosím Mozilla podporu."
+      ],
+      "Your subscription will auto-renew on ${ renewalTime }.": [
+        "Vaše předplatné se automaticky obnoví ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -4105,6 +4138,9 @@
       ],
       "New password": [
         "Nové heslo"
+      ],
+      "New plan": [
+        "Nový tarif"
       ],
       "No filter": [
         "Žádný filtr"
@@ -4653,6 +4689,9 @@
       "99.95% SLA": [
         "99.95% SLA Dostupnost"
       ],
+      "Ad-blocker and malware protection": [
+        "Blokování reklam a ochrana před malwarem"
+      ],
       "Admin console": [
         "Konzole správce"
       ],
@@ -5074,6 +5113,18 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Zabezpečte svůj plán pomocí koncového šifrování. Obsahuje podporu vlastních kalendářů, sdílení kalendáře a další funkce."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Obsahuje historii verzí, šifrované sdílení souborů a další funkce."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: Zabezpečte své e-maily pomocí koncového šifrování. Obsahuje podporu vlastních e-mailových domén, 15 e-mailových adres, neomezený počet hide-my-email aliasů pro skrytí e-mailu a další."
+      ],
+      "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "${ VPN_APP_NAME }: Přístup k blokovanému obsahu a soukromé prohlížení. Obsahuje ${ serversAndCountries }, nejvyšší rychlosti VPN, přístup k celosvětovým streamovacím službám, blokátor malwaru a reklam, rychlé stahování BitTorrentu a další funkce."
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Získejte přístup k obsahu na streamovacích službách, včetně Netflix, Disney+, Prime Video, odkudkoliv"
       ],
@@ -6018,6 +6069,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 uživatel"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -6035,6 +6089,15 @@
       ],
       "Highest VPN speed": [
         "Nejvyšší rychlost VPN"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Prémiové funkce ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "Prémiové funkce ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } a ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Prémiové funkce ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium early access": [
         "Prémiový předběžný přístup"
@@ -6080,14 +6143,26 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } měsíc",
+        "${ n } měsíce",
+        "${ n } měsíců",
+        "${ n } měsíců"
+      ],
       "/ month": [
         "/ měsíc"
       ],
       "1 year": [
         "1 rok"
       ],
+      "15 months": [
+        "15 měsíců"
+      ],
       "2 years": [
         "2 roky"
+      ],
+      "30 months": [
+        "30 měsíců"
       ],
       "Billed at ${ amount } for 1 month": [
         "Účtováno ${ amount } za 1 měsíc"
@@ -6214,6 +6289,12 @@
     "Subscription": {
       "Billed every 2 years": [
         "Účtováno každé 2 roky"
+      ],
+      "Billed for 15 months": [
+        "Účtováno za 15 měsíců"
+      ],
+      "Billed for 30 months": [
+        "Účtováno za 30 měsíců"
       ],
       "Billed monthly": [
         "Účtováno měsíčně"
@@ -6535,6 +6616,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Prémiové funkce ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Prémiové funkce ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Premium Password Manager": [
         "Prémiový správce hesel"
       ]
@@ -7246,6 +7333,11 @@
         "Ověřená e-mailová adresa"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Zabezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "stabilní verze"
@@ -7338,8 +7430,14 @@
       "1-year": [
         "ročním"
       ],
+      "15-month": [
+        "15 měsíčním"
+      ],
       "2-year": [
         "dvouletým"
+      ],
+      "30-month": [
+        "30 měsíčním"
       ],
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "Získejte slevu ${ discount } s ${ billingCycle } předplatným"

@@ -533,7 +533,7 @@
     },
     "Action subscription": {
       "Reactivate": [
-        "Uudelleenaktivoi"
+        "Aktivoi uudelleen"
       ]
     },
     "Addon": {
@@ -634,6 +634,9 @@
       "${ n } month": [
         "${ n } kuukaudeksi",
         "${ n } kuukaudeksi"
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
+        "Uusiutuu automaattisesti ${ renewalLength } hintaan ${ renewPrice } ."
       ]
     },
     "Billing cycle option": {
@@ -1969,7 +1972,7 @@
     },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
-        "Yhteensä 3 Tt tallennustilaa"
+        "3 Tt kokonaistallennustila"
       ]
     },
     "familyOffer_2023: Get Proton Family": {
@@ -1979,7 +1982,7 @@
     },
     "familyOffer_2023: Tooltip": {
       "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Tallennustila on jaettu perheenjäsenten kesken ${ MAIL_APP_NAME }ille, ${ CALENDAR_APP_NAME }ille ja ${ DRIVE_APP_NAME }lle."
+        "Tallennustila jaetaan perheenjäsenille ja se kattaa ${ MAIL_APP_NAME }in, ${ CALENDAR_APP_NAME }in ja ${ DRIVE_APP_NAME }n."
       ]
     },
     "familyOffer_2023:Action": {
@@ -2015,8 +2018,17 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
-        "Enintään 6 käyttäjää"
+        "6 käyttäjälle"
       ]
     },
     "familyOffer_2023:Error": {
@@ -2227,13 +2239,13 @@
     },
     "familyOffer_2023:Tooltip": {
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Sisältää 2950+ palvelinta yli 65+ maassa, 10 samanaikaista laitetta, maailmanlaajuisen tuen suoratoistopalveluille, haittasisällön- ja mainoseston sekä paljon muuta."
+        "Sisältää 2950+ palvelinta yli 65+ maassa, 10 samanaikaista yhdistettyä laitetta, maailmanlaajuisen suoratoistotuen, haittasisällön- ja mainoseston sekä paljon muuta."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
         "Sisältää tuen kolmelle omalle sähköpostiverkkotunnukselle, 90 sähköpostiosoitteelle, rajattomasti Hide-my-email-aliaksia, kalenterijaon sekä paljon muuta."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää automaattisen synkronoinnin, salatun tiedostojen jakamisen ja paljon muuta."
+        "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää mm. automaattisen synkronoinnin ja salatun tiedostojen jakamisen."
       ]
     },
     "Feature": {
@@ -2645,6 +2657,15 @@
       "Admin account allocation": [
         "Ylläpitotilin varaus"
       ],
+      "After this date, you'll be billed every 12 months at the normal yearly rate.": [
+        "Tämän päivän jälkeen laskutus tapahtuu 12 kuukauden välein normaalilla vuosihinnalla."
+      ],
+      "After this date, you'll be billed every 24 months at the normal 2-year rate.": [
+        "Tämän päivän jälkeen laskutus tapahtuu 24 kuukauden välein normaalilla 2 vuoden hinnalla."
+      ],
+      "After this date, you'll be billed every month at the regular price.": [
+        "Tämän päivän jälkeen laskutus tapahtuu kuukausittain normaalihinnalla."
+      ],
       "All your changes will be lost.": [
         "Kaikki muutokset menetetään."
       ],
@@ -2787,9 +2808,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "ÄLÄ unohda tätä salasanaa. Jos unohdat sen, et voi kirjautua sisään tai purkaa viestiesi salausta."
-      ],
-      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Älä kirjaudu ${ VPN_APP_NAME } -sovelluksiin tai ${ VPN_APP_NAME } -hallintaan OpenVPN-/IKEv2-tunnistetiedoilla. ${ learnMore }"
       ],
       "Done": [
         "Valmis"
@@ -3253,6 +3271,15 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Suorota talletus seuraavalla osoitteella tai lukemalla QR-koodi. Talletuksesi huomioidaan tililläsi vahvistuksen jälkeen."
       ],
+      "Subscription auto-renews every 12 months.": [
+        "Tilaus uudistuu automaattisesti 12 kuukauden välein."
+      ],
+      "Subscription auto-renews every 24 months.": [
+        "Tilaus uudistuu automaattisesti 24 kuukauden välein."
+      ],
+      "Subscription auto-renews every month.": [
+        "Tilaus uudistuu automaattisesti joka kuukausi."
+      ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Tilaus päättyy pian: uudelleenaktivoi ${ byDate } mennessä säilyttääksesi ${ planName }-etusi. ${ reactivateLink }"
       ],
@@ -3300,6 +3327,9 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Nämä määritykset on tarkoitettu käytettäväksi WireGuard-reitittimissä ja virallisissa päätteissä."
+      ],
+      "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
+        "Näillä kirjautumistiedoilla ei ole mahdollista kirjautua virallisiin ${ VPN_APP_NAME } -sovelluksiin. ${ learnMore }"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Tili on jäädytetty mahdollisen käyttöehtorikkeen vuoksi."
@@ -3592,9 +3622,6 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Seuraavilla tunnistetiedoilla voit muodostaa yhteyden ${ VPN_APP_NAME } -palvelimiin muiden tahojen kehittämillä avoimen lähdekoodin VPN-sovelluksilla. Esimerkkejä: Tunnelblick macOS:lle ja OpenVPN GNU/Linuxille."
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Et voi kirjautua ${ VPN_APP_NAME } -sovelluksiin tai ${ VPN_APP_NAME } -hallintapaneeliin OpenVPN-/IKEv2-tunnistetiedoilla. ${ learnMore }"
-      ],
       "You have ${ availableCount } dedicated server available.": [
         "Käytettävissä on ${ availableCount } kohdistettu palvelin.",
         "Käytettävissä on ${ availableCount } kohdistettua palvelinta."
@@ -3671,6 +3698,9 @@
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Tietosi ovat turvassa meillä. Otamme sinuun yhteyttä vain, kun se on tarpeen palveluidemme tarjoamiseksi."
       ],
+      "Your next billing date is ${ renewalTime }.": [
+        "Seuraava eräpäivä on ${ renewalTime }."
+      ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Organisaatiosi salasana voidaan jakaa niille käyttäjille, joille haluat myöntää ylläpito-oikeudet. Se toimii myös hätäpalautuskoodina, jolla voit pääset käsiksi organisaatioosi vaikka menettäisit pääsyn omalle tilillesi. Tallenna salasana ja pidä se turvassa."
       ],
@@ -3682,6 +3712,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Tilaustasi hallinnoi Mozilla. Ota yhteyttä Mozillan tukeen."
+      ],
+      "Your subscription will auto-renew on ${ renewalTime }.": [
+        "Tilauksesi uudistuu automaattisesti ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -4023,6 +4056,9 @@
       ],
       "New password": [
         "Uusi salasana"
+      ],
+      "New plan": [
+        "Uusi tilaus"
       ],
       "No filter": [
         "Ei suodatusta"
@@ -4539,6 +4575,9 @@
       "99.95% SLA": [
         "99.95 % SLA"
       ],
+      "Ad-blocker and malware protection": [
+        "Mainos- ja haittaohjelmaesto"
+      ],
       "Admin console": [
         "Hallintapaneeli"
       ],
@@ -4952,6 +4991,18 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Suojaa aikataulusi päästä päähän -salauksella. Sisältää tuen mukautetuille kalentereille, kalenterin jakamiseen ja muuta."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää versiohistorian ja salatun tiedostojen jakamisen ja muuta."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: Suojaa viestisi päästä päähän -salauksella. Sisältää mm. tuen omille sähköpostiverkkotunnuksille, 15 sähköpostiosoitetta sekä rajattomasti Hide-my-email-aliaksia."
+      ],
+      "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "${ VPN_APP_NAME }: Käytä estettyä sisältöä ja selaa yksityisesti. Sisältää ${ serversAndCountries } suurimmat VPN-nopeudet, pääsyn maailmanlaajuisiin suoratoistopalveluihin, haittaohjelmat ja mainosten eston, nopeat BitTorrent-lataukset ja muuta."
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Käytä mm. Netflixin, Disney+:n ja Prime Videon kaltaisten suoratoistopalveluiden sisältöä mistä tahansa"
       ],
@@ -5852,6 +5903,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 käyttäjä"
+      ],
       "3 TB": [
         "3 Tt"
       ],
@@ -5869,6 +5923,15 @@
       ],
       "Highest VPN speed": [
         "Korkein VPN-nopeus"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } ja ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium early access": [
         "Premium-ennakkokäyttö"
@@ -5914,29 +5977,39 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } kuukausi",
+        "${ n } kuukautta"
+      ],
       "/ month": [
         "kuukaudessa"
       ],
       "1 year": [
         "1 vuosi"
       ],
+      "15 months": [
+        "15 kuukautta"
+      ],
       "2 years": [
         "2 vuotta"
       ],
+      "30 months": [
+        "30 kuukautta"
+      ],
       "Billed at ${ amount } for 1 month": [
-        "Laskutetaan ${ amount } 1 kuukauden ajan"
+        "Laskutetaan ${ amount } 1 kuukaudelta"
       ],
       "Billed at ${ amount } for 12 months": [
-        "Laskutetaan ${ amount } 12 kuukauden ajan"
+        "Laskutetaan ${ amount } 12 kuukaudelta"
       ],
       "Billed at ${ amount } for 15 months": [
-        "Laskutetaan ${ amount } 15 kuukauden ajan"
+        "Laskutetaan ${ amount } 15 kuukaudelta"
       ],
       "Billed at ${ amount } for 24 months": [
-        "Laskutetaan ${ amount } 24 kuukauden ajan"
+        "Laskutetaan ${ amount } 24 kuukaudelta"
       ],
       "Billed at ${ amount } for 30 months": [
-        "Laskutetaan ${ amount } 30 kuukauden ajan"
+        "Laskutetaan ${ amount } 30 kuukaudelta"
       ],
       "Get the deal": [
         "Hanki tarjous"
@@ -5951,19 +6024,19 @@
         "Säästä ${ discount } %"
       ],
       "Standard price ${ amount } for 1 month": [
-        "1 kuukauden normaali hinta on ${ amount }"
+        "Normaalihinta 1 kuukaudelta on ${ amount }"
       ],
       "Standard price ${ amount } for 12 months": [
-        "12 kuukauden normaali hinta on ${ amount }"
+        "Normaalihinta 12 kuukaudelta on ${ amount }"
       ],
       "Standard price ${ amount } for 15 months": [
-        "15 kuukauden normaali hinta on ${ amount }"
+        "Normaalihinta 15 kuukaudelta on ${ amount }"
       ],
       "Standard price ${ amount } for 24 months": [
-        "24 kuukauden normaali hinta on ${ amount }"
+        "Normaalihinta 24 kuukaudelta on ${ amount }"
       ],
       "Standard price ${ amount } for 30 months": [
-        "30 kuukauden normaali hinta on ${ amount }"
+        "Normaalihinta 30 kuukaudelta on ${ amount }"
       ]
     },
     "specialoffer: Title": {
@@ -6006,7 +6079,7 @@
         "Kaikki premium-palvelumme parhaimmillaan: 100 sähköpostiosoitetta, tuki 10 omalle verkkotunnukselle, rajattomasti Hide-my-email-aliaksia, kalenterijako, salattu pilvitallennus tiedostojen jaolla sekä paljon muuta."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Sisältää tuen kolmelle omalle sähköpostiverkkotunnukselle, 15 sähköpostiosoitteelle, rajattomasti Hide-my-email-aliaksia, kalenterijaon sekä paljon muuta."
+        "Sisältää mm. tuen 3 omalle sähköpostiverkkotunnukselle, 15 sähköpostiosoittetta, rajattomasti Hide-my-email-aliaksia sekä kalenterijaon."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Täydellinen perheille tai pienille ryhmille, joilla jokaisella voi olla oma postilaatikko ja alias. Vaatii oman verkkotunnuksen."
@@ -6015,7 +6088,7 @@
         "Saat ilmaiseksi maksulliset versiot kaikista uusista tietosuojapalveluista, jotka julkaisemme tulevaisuudessa, sekä pääsyn kaikkiin tuleviin ominaisuuksiin ja tuotteisiin."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää automaattisen synkronoinnin, salatun tiedostojen jakamisen ja paljon muuta."
+        "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää mm. automaattisen synkronoinnin ja salatun tiedostojen jakamisen."
       ]
     },
     "Spotlight": {
@@ -6048,6 +6121,12 @@
     "Subscription": {
       "Billed every 2 years": [
         "Laskutetaan 2 vuoden välein"
+      ],
+      "Billed for 15 months": [
+        "Laskutettu 15 kuukaudelta"
+      ],
+      "Billed for 30 months": [
+        "Laskutettu 30 kuukaudelta"
       ],
       "Billed monthly": [
         "Laskutetaan kuukausittain"
@@ -6341,6 +6420,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Premium Password Manager": [
         "Premium salasanahallinta"
       ]
@@ -6356,7 +6441,7 @@
         "Sisältää tuen yhdelle omalle sähköpostiverkkotunnukselle, 10 sähköpostiosoitteelle, 10 hide-my-email-aliakselle, kalenterijaolle sekä paljon muuta."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää versiohistorian, salatun tiedostojen jakamisen ja paljon muuta."
+        "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää mm. versiohistorian ja salatun tiedostojen jakamisen."
       ]
     },
     "summer2023:Footer": {
@@ -6388,7 +6473,7 @@
         "Perheille"
       ],
       "For individuals": [
-        "Yksityishenkilöille"
+        "Yksityisille"
       ]
     },
     "TableHeader": {
@@ -7042,6 +7127,11 @@
         "Vahvistettu sähköpostiosoite"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Suojaa kirjautumistietosi kaikilla laitteillasi. Sisältää rajoittamattoman määrän aliaksia, jakamisen, integroidun 2FA:n ja muuta."
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "vakaaseen versioon"
@@ -7122,8 +7212,14 @@
       "1-year": [
         "1 vuoden"
       ],
+      "15-month": [
+        "15 kuukauden"
+      ],
       "2-year": [
         "2 vuoden"
+      ],
+      "30-month": [
+        "30 kuukauden"
       ],
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "Hanki ${ discount } alennus ${ billingCycle } tilauksella"
