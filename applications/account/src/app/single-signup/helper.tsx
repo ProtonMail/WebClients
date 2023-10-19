@@ -12,7 +12,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import { getSubscriptionPrices } from '../signup/helper';
 import { PlanIDs, SubscriptionData } from '../signup/interfaces';
 import { SignupParameters, getPlanIDsFromParams } from '../signup/searchParams';
-import { SubscriptionDataCycleMapping } from '../single-signup-v2/interface';
+import { SignupDefaults, SubscriptionDataCycleMapping } from '../single-signup-v2/interface';
 
 export const getUpsellShortPlan = (plan: Plan | undefined, vpnServersCountData: VPNServersCountData) => {
     if (plan && plan?.Name === PLANS.VPN) {
@@ -58,7 +58,7 @@ export const getBillingCycleText = (cycle: CYCLE) => {
 export const getSubscriptionData = async ({
     api,
     couponCode,
-    prePlanIDs,
+    planIDs,
     cycle,
     currency,
     minimumCycle,
@@ -66,15 +66,15 @@ export const getSubscriptionData = async ({
     api: Api;
     currency: Currency;
     couponCode?: string;
-    prePlanIDs: PlanIDs;
+    planIDs: PlanIDs;
     cycle: Cycle;
     minimumCycle?: Cycle;
 }): Promise<SubscriptionData> => {
-    const { planIDs, checkResult } = await getSubscriptionPrices(api, prePlanIDs || {}, currency, cycle, couponCode)
+    const result = await getSubscriptionPrices(api, planIDs || {}, currency, cycle, couponCode)
         .then((checkResult) => {
             return {
                 checkResult,
-                planIDs: prePlanIDs,
+                planIDs,
             };
         })
         .catch(() => {
@@ -89,12 +89,12 @@ export const getSubscriptionData = async ({
             };
         });
     return {
-        cycle: checkResult.Cycle,
+        cycle: result.checkResult.Cycle,
         minimumCycle: minimumCycle,
-        currency: checkResult.Currency,
-        checkResult,
-        planIDs: planIDs || {},
-        skipUpsell: !!planIDs,
+        currency: result.checkResult.Currency,
+        checkResult: result.checkResult,
+        planIDs: result.planIDs || {},
+        skipUpsell: !!result.planIDs,
     };
 };
 
@@ -102,17 +102,20 @@ export const getInitialSubscriptionDataForAllCycles = async ({
     Plans,
     signupParameters,
     api,
+    defaults,
 }: {
     Plans: Plan[];
     api: Api;
     signupParameters: SignupParameters;
+    defaults: SignupDefaults;
 }) => {
-    const prePlanIDs = getPlanIDsFromParams(Plans, signupParameters) || {};
+    const planParameters = getPlanIDsFromParams(Plans, signupParameters, defaults) || {};
     const currency = signupParameters.currency || Plans?.[0]?.Currency || DEFAULT_CURRENCY;
     const couponCode = signupParameters.coupon;
+    const cycle = signupParameters.cycle || defaults.cycle;
 
     const hasExtraCycles =
-        couponCode === COUPON_CODES.BLACK_FRIDAY_2023 || [CYCLE.FIFTEEN, CYCLE.THIRTY].includes(signupParameters.cycle);
+        couponCode === COUPON_CODES.BLACK_FRIDAY_2023 || [CYCLE.FIFTEEN, CYCLE.THIRTY].includes(cycle);
 
     const getStandardMapping = async (): Promise<SubscriptionDataCycleMapping> => {
         const [
@@ -127,13 +130,21 @@ export const getInitialSubscriptionDataForAllCycles = async ({
                 CYCLE.YEARLY,
                 CYCLE.TWO_YEARS,
                 ...(hasExtraCycles ? [CYCLE.FIFTEEN, CYCLE.THIRTY] : []),
-            ].map((cycle) => getSubscriptionData({ api, currency, couponCode, prePlanIDs, cycle }))
+            ].map((cycle) =>
+                getSubscriptionData({
+                    api,
+                    currency,
+                    couponCode,
+                    planIDs: planParameters.planIDs,
+                    cycle,
+                })
+            )
         );
 
         const isBFOfferActive = subscriptionDataFifteen?.checkResult.Coupon?.Code === COUPON_CODES.BLACK_FRIDAY_2023;
 
         return {
-            planIDs: prePlanIDs,
+            planIDs: subscriptionDataMonthly.planIDs,
             mapping: {
                 [CYCLE.MONTHLY]: subscriptionDataMonthly,
                 [CYCLE.YEARLY]: subscriptionDataYearly,
@@ -146,18 +157,23 @@ export const getInitialSubscriptionDataForAllCycles = async ({
 
     const getBFMapping = async (): Promise<SubscriptionDataCycleMapping | undefined> => {
         if (couponCode !== COUPON_CODES.BLACK_FRIDAY_2023) {
-            return undefined;
+            return;
         }
-        const prePlanIDs = {
-            [PLANS.VPN_PASS_BUNDLE]: 1,
-        };
         const [subscriptionDataMonthly, subscriptionDataFifteen, subscriptionDataThirty] = await Promise.all(
             [CYCLE.MONTHLY, CYCLE.FIFTEEN, CYCLE.THIRTY].map((cycle) =>
-                getSubscriptionData({ api, currency, couponCode, prePlanIDs, cycle })
+                getSubscriptionData({
+                    api,
+                    currency,
+                    couponCode,
+                    planIDs: {
+                        [PLANS.VPN_PASS_BUNDLE]: 1,
+                    },
+                    cycle,
+                })
             )
         );
         return {
-            planIDs: prePlanIDs,
+            planIDs: subscriptionDataMonthly.planIDs,
             mapping: {
                 [CYCLE.MONTHLY]: subscriptionDataMonthly,
                 [CYCLE.YEARLY]: undefined,
@@ -171,7 +187,7 @@ export const getInitialSubscriptionDataForAllCycles = async ({
     const subscriptionDataCycleMapping = (await Promise.all([getStandardMapping(), getBFMapping()])).filter(isTruthy);
     const first = subscriptionDataCycleMapping[0];
 
-    let subscriptionData = first.mapping[signupParameters.cycle] ?? first.mapping[CYCLE.TWO_YEARS];
+    let subscriptionData = first.mapping[cycle] ?? first.mapping[CYCLE.TWO_YEARS];
     // BF setter
     if (
         first.mapping[CYCLE.THIRTY] &&

@@ -33,6 +33,7 @@ import {
     CLIENT_TYPES,
     CYCLE,
     DEFAULT_CURRENCY,
+    DEFAULT_CYCLE,
     MAIL_APP_NAME,
     PLANS,
     REFERRER_CODE_MAIL_TRIAL,
@@ -150,7 +151,9 @@ const SignupContainer = ({
         toAppName = MAIL_APP_NAME;
     }
     const [signupParameters] = useState(() => {
-        const params = getSignupSearchParams(location.pathname, new URLSearchParams(location.search));
+        const params = getSignupSearchParams(location.pathname, new URLSearchParams(location.search), {
+            cycle: DEFAULT_CYCLE,
+        });
         if (isMailTrial) {
             params.referrer = REFERRER_CODE_MAIL_TRIAL;
         }
@@ -225,19 +228,22 @@ const SignupContainer = ({
             plans: Plan[],
             signupParameters: SignupParameters
         ): Promise<SubscriptionData> => {
-            const prePlanIDs = getPlanIDsFromParams(plans, signupParameters);
+            const planParameters = getPlanIDsFromParams(plans, signupParameters, {
+                plan: PLANS.FREE,
+            });
             const currency = signupParameters.currency || plans?.[0]?.Currency || DEFAULT_CURRENCY;
+            const cycle = signupParameters.cycle || DEFAULT_CYCLE;
             const { planIDs, checkResult } = await getSubscriptionPrices(
                 api,
-                prePlanIDs || {},
+                planParameters.planIDs,
                 currency,
-                signupParameters.cycle,
+                cycle,
                 signupParameters.coupon
             )
                 .then((checkResult) => {
                     return {
                         checkResult,
-                        planIDs: prePlanIDs,
+                        planIDs: planParameters.planIDs,
                     };
                 })
                 .catch(() => {
@@ -246,7 +252,7 @@ const SignupContainer = ({
                         checkResult: getFreeCheckResult(
                             signupParameters.currency,
                             // "Reset" the cycle because the custom cycles are only valid with a coupon
-                            getNormalCycleFromCustomCycle(signupParameters.cycle)
+                            getNormalCycleFromCustomCycle(cycle)
                         ),
                         planIDs: undefined,
                     };
@@ -257,7 +263,7 @@ const SignupContainer = ({
                 currency: checkResult.Currency,
                 checkResult,
                 planIDs: planIDs || {},
-                skipUpsell: !!planIDs,
+                skipUpsell: planParameters.defined,
             };
         };
 
