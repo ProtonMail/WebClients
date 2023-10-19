@@ -768,52 +768,6 @@
         "Opcional"
       ]
     },
-    "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } de armazenamento"
-      ],
-      "1 user": [
-        "1 usuário"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 usuários"
-      ],
-      "Ad-blocker and malware protection": [
-        "Bloqueio de anuncios e proteção contra malware"
-      ],
-      "Extended version history": [
-        "Histórico de versões estendido"
-      ],
-      "Fast BitTorrent downloads": [
-        "Downloads rápidos de BitTorrent"
-      ],
-      "High speed streaming": [
-        "Streaming em alta velocidade"
-      ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } Premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium de ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } Premium"
-      ],
-      "Premium Password Manager": [
-        "Gerenciador de senhas premium"
-      ]
-    },
-    "bf2023: Tooltip": {
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Acesse conteúdo em serviços de streaming, inclusive Netflix, Disney+, Prime Video e muito mais de qualquer lugar."
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Especialmente projetado, o NetShield protege seus dispositivos e acelera sua navegação ao bloquear anúncios, rastreadores e malware."
-      ]
-    },
     "Billing cycle option": {
       "Annually": [
         "Anualmente"
@@ -3710,6 +3664,9 @@
       "Contact unassigned to group ${ contactGroupName }": [
         "Contato desassociado do grupo ${ contactGroupName }"
       ],
+      "Copy the link to clipboard": [
+        "Copiar link para a área de transferência"
+      ],
       "Country code": [
         "Código do país"
       ],
@@ -5146,6 +5103,9 @@
       ],
       "Contact group updated": [
         "O grupo de contatos foi atualizado"
+      ],
+      "Link copied to clipboard": [
+        "Link copiado para área de transferência"
       ]
     },
     "Notification in holidays calendar modal": {
@@ -5621,6 +5581,14 @@
         "Redefinir senha"
       ]
     },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "A recuperação de conta não está disponível para chaves de endereço herdadas"
+      ],
+      "Please generate keys before you try to change your password": [
+        "Por favor, gere chaves antes de tentar alterar sua senha"
+      ]
+    },
     "session_recovery:available:info": {
       "${ timeRemaining.inDays } day": [
         "${ timeRemaining.inDays } dia",
@@ -5629,6 +5597,14 @@
       "${ timeRemaining.inHours } hour": [
         "${ timeRemaining.inHours } hora",
         "${ timeRemaining.inHours } horas"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Solicitação de redefinição de senha aprovada (${ user.Email }). Você tem ${ timeRemaining.inDays } dia para alterar a senha.",
+        "Solicitação de redefinição de senha aprovada (${ user.Email }). Você tem ${ timeRemaining.inDays } dias para alterar a senha."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Solicitação de redefinição de senha aprovada (${ user.Email }). Você tem ${ timeRemaining.inHours } hora para alterar a senha.",
+        "Solicitação de redefinição de senha aprovada (${ user.Email }). Você tem ${ timeRemaining.inHours } horas para alterar a senha."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Vá ao dispositivo onde a solicitação (na sessão iniciada) para mudar a sua senha."
@@ -5640,6 +5616,9 @@
       "This permission expires in ${ timeRemaining.inHours } hour": [
         "Essa permissão expira em ${ timeRemaining.inHours } hora",
         "Essa permissão expira em ${ timeRemaining.inHours } horas"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Agora você pode alterar a senha da conta ${ boldEmail } gratuitamente por ${ boldDaysRemaining }."
       ]
     },
     "session_recovery:available:link": {
@@ -5662,6 +5641,11 @@
         "Cancelar redefinição de senha"
       ]
     },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Digite sua senha atual para cancelar o processo de redefinição de senha. Nenhuma outra alteração será salva."
+      ]
+    },
     "session_recovery:cancellation:notification": {
       "Password reset cancelled": [
         "A redefinição de senha foi cancelada"
@@ -5670,6 +5654,11 @@
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Cancelar redefinição de senha?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Solicitação de redefinição de senha cancelada (${ user.Email }). Se você não fez esta solicitação, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -5689,6 +5678,20 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } hora mais",
+        "${ gracePeriodHoursRemaining } horas mais"
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "Se você não pediu para alterar sua senha, cancele esta solicitação agora."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Solicitação de redefinição de senha (${ user.Email }). Você pode alterar sua senha em ${ hoursRemaining } horas.",
+        "Solicitação de redefinição de senha (${ user.Email }). Você pode alterar sua senha em ${ hoursRemaining } horas."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "Para ter certeza de que é realmente você quem está tentando redefinir sua senha, aguardamos 72 horas antes de aprovar as solicitações. Você poderá alterar a senha em ${ boldTimeLeft }. ${ viewRequest }"
+      ],
       "We received a password reset request for ${ boldEmail }.": [
         "Recebemos a solicitação de redefinição de senha para ${ boldEmail }."
       ]
@@ -5718,6 +5721,15 @@
       ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } está agora disponível"
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Se você sair antes de redefinir sua senha, você poderá perder o acesso à sua conta."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Se você sair sem redefinir sua senha, você poderá perder o acesso à sua conta."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Você poderá alterar sua senha em ${ boldTimeLeft }."
       ]
     },
     "session_recovery:sign_out:link": {
