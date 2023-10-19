@@ -20,7 +20,8 @@ import { useOpenSettingsTab } from './useOpenSettingsTab';
 export const useOnboardingMessage = () => {
     const { context: extensionContext } = useExtensionConnectContext();
     const webStoreURL = getWebStoreUrl(detectBrowser());
-    const [showTrial, setShowTrial] = useState<boolean>(false);
+    const [showTrial, setShowTrial] = useState(false);
+    const [pendingShareAccess, setShowPendingShareAccess] = useState(false);
     const [message, setMessage] = useState<MaybeNull<OnboardingMessage>>(null);
 
     useEffect(() => {
@@ -29,6 +30,7 @@ export const useOnboardingMessage = () => {
             async ({ message }) => {
                 await wait(200);
                 setMessage(message ?? null);
+                setShowPendingShareAccess(message === OnboardingMessage.PENDING_SHARE_ACCESS);
             }
         );
     }, []);
@@ -39,7 +41,12 @@ export const useOnboardingMessage = () => {
         (cb: Callback = noop) =>
             () => {
                 if (message) {
-                    void sendMessage(popupMessage({ type: WorkerMessageType.ONBOARDING_ACK, payload: { message } }));
+                    void sendMessage(
+                        popupMessage({
+                            type: WorkerMessageType.ONBOARDING_ACK,
+                            payload: { message },
+                        })
+                    );
                 }
 
                 cb();
@@ -53,9 +60,9 @@ export const useOnboardingMessage = () => {
             [OnboardingMessage.PENDING_SHARE_ACCESS]: {
                 id: 'welcome',
                 title: c('Title').t`Pending access to the shared data`,
-                message: c('Info').t`For security reasons, your access needs to be confirmed.`,
-                className: 'ui-teal',
-                icon: ShieldIcon,
+                message: c('Info').t`For security reasons, your access needs to be confirmed`,
+                weak: true,
+                onClose: withAcknowledgment(() => setShowPendingShareAccess(false)),
             },
             [OnboardingMessage.WELCOME]: {
                 id: 'welcome',
@@ -174,7 +181,8 @@ export const useOnboardingMessage = () => {
         () => ({
             message: message !== null ? definitions[message] : null,
             trial: showTrial,
+            pendingShareAccess,
         }),
-        [message, showTrial]
+        [message, showTrial, pendingShareAccess]
     );
 };
