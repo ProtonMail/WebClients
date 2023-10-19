@@ -34,7 +34,9 @@ type InviteContextState =
     | ({ view: 'invite-new' } & VaultInviteCreateValues<true>)
     | { view: 'manage'; shareId: string };
 
-export const InviteContextProvider: FC = ({ children }) => {
+type InviteContextProps = { onVaultCreated?: (shareId: string) => void };
+
+export const InviteContextProvider: FC<InviteContextProps> = ({ children, onVaultCreated }) => {
     const [state, setState] = useState<MaybeNull<InviteContextState>>(null);
     const [invite, setInvite] = useState<MaybeNull<Invite>>(null);
 
@@ -81,7 +83,7 @@ export const InviteContextProvider: FC = ({ children }) => {
                     case 'invite':
                         return <VaultInviteCreate withVaultCreation={false} {...state} />;
                     case 'invite-new':
-                        return <VaultInviteCreate withVaultCreation {...state} />;
+                        return <VaultInviteCreate withVaultCreation {...state} onVaultCreated={onVaultCreated} />;
                     case 'manage':
                         return <VaultAccessManager shareId={state.shareId} />;
                     default:
