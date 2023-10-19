@@ -1,11 +1,14 @@
 @import '~@proton/styles/scss/lib';
 
-.card {
+.card-plan {
+	--card-background: rgba(240 236 255 / 1); // can't use opacity because some issues with card borders
+
 	&-highlight {
 		inset-inline-start: 50%;
 		transform: translateX(-50%) translateY(-50%);
+
 		&#{&} {
-			background-color: rgba(240 236 255 / 1); // can't use opacity because some issues with card borders
+			background-color: var(--card-background);
 
 			&--selected {
 				background-color: var(--primary);
@@ -13,13 +16,19 @@
 		}
 	}
 
-	&-plan {
-		background-color: var(--background-norm);
+	background-color: var(--background-norm);
 
-		&[aria-pressed='true'] {
-			box-shadow: 0 0 7px 3px rgb(172 154 247 / 0.28), -5px -3px 6px 3px rgb(246 198 146 / 0.3),
-				6px 3px 7px 3px rgb(108 73 254 / 0.3), -4px 4px 5px 2px rgb(205 79 232 / 0.3);
-		}
+	--card-box-shadow-color1: rgb(172 154 247 / 0.28);
+	--card-box-shadow-color2: rgb(246 198 146 / 0.3);
+	--card-box-shadow-color3: rgb(108 73 254 / 0.3);
+	--card-box-shadow-color4: rgb(205 79 232 / 0.3);
+
+	&[aria-pressed='true'] {
+		box-shadow:
+			0 0 7px 3px var(--card-box-shadow-color1),
+			-5px -3px 6px 3px var(--card-box-shadow-color2),
+			6px 3px 7px 3px var(--card-box-shadow-color3),
+			-4px 4px 5px 2px var(--card-box-shadow-color4);
 	}
 }
 

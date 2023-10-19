@@ -135,8 +135,8 @@ const PlanCardView = ({
                 {headerText && (
                     <div
                         className={clsx(
-                            'text-center card-highlight text-sm text-semibold py-1 px-4 rounded-full absolute',
-                            selected ? 'card-highlight--selected color-invert' : 'color-primary'
+                            'text-center card-plan-highlight text-sm text-semibold py-1 px-4 rounded-full absolute',
+                            selected ? 'card-plan-highlight--selected color-invert' : 'color-primary'
                         )}
                     >
                         {headerText}

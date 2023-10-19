@@ -20,7 +20,6 @@ import { Clients, clients } from '@proton/shared/lib/pass/constants';
 import Content from '../../public/Content';
 import Header from '../../public/Header';
 import Main from '../../public/Main';
-import Layout from '../Layout';
 import { Measure } from '../interface';
 import { TelemetryExtensionPlatform, getTelemetryClientType } from '../measure';
 import appStore from './logos/app-store.svg';
@@ -266,12 +265,11 @@ export const getInfo = (
 };
 
 interface Props {
-    logo: ReactNode;
     onSkip: () => void;
     measure: Measure;
 }
 
-const InstallExtensionStep = ({ measure, logo }: Props) => {
+const InstallExtensionStep = ({ measure }: Props) => {
     const onceRef = useRef(false);
     /*
     const skip = (
@@ -299,15 +297,13 @@ const InstallExtensionStep = ({ measure, logo }: Props) => {
     }, []);
 
     return (
-        <Layout logo={logo} hasDecoration={false}>
-            <Main>
-                <Content>
-                    <Header center title={title} subTitle={subTitle} />
-                    {content}
-                    {cta}
-                </Content>
-            </Main>
-        </Layout>
+        <Main>
+            <Content>
+                <Header center title={title} subTitle={subTitle} />
+                {content}
+                {cta}
+            </Content>
+        </Main>
     );
 };
 

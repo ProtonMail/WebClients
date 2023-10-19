@@ -87,7 +87,7 @@ import noop from '@proton/utils/noop';
 
 import SignupSupportDropdown from '../signup/SignupSupportDropdown';
 import { getPlanFromPlanIDs, getSubscriptionPrices } from '../signup/helper';
-import { PlanIDs, SignupCacheResult, SubscriptionData } from '../signup/interfaces';
+import { PlanIDs, SignupCacheResult, SignupType, SubscriptionData } from '../signup/interfaces';
 import AccountStepDetails, { AccountStepDetailsRef } from '../single-signup-v2/AccountStepDetails';
 import FreeLogo from '../single-signup-v2/FreeLogo';
 import bundleVpnPass from '../single-signup-v2/bundle-vpn-pass.svg';
@@ -984,6 +984,8 @@ const Step1 = ({
                             <BoxContent>
                                 <div className="relative">
                                     <AccountStepDetails
+                                        domains={model.domains}
+                                        signupTypes={[SignupType.Email]}
                                         defaultEmail={defaultEmail}
                                         passwordFields={false}
                                         model={model}

@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -8,8 +8,9 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { isIos, isIpad } from '@proton/shared/lib/helpers/browser';
 import noop from '@proton/utils/noop';
 
+import Layout from '../Layout';
 import Step2 from '../Step2';
-import { Measure, SignupModelV2 } from '../interface';
+import { SignupCustomStepProps } from '../interface';
 import CopyRecoveryStep from './CopyRecoveryStep';
 import InstallExtensionStep from './InstallExtensionStep';
 import PDFRecoveryStep from './PDFRecoveryStep';
@@ -20,17 +21,16 @@ enum Step {
     Loading,
 }
 
-interface Props {
-    logo: ReactNode;
-    onSetup: () => Promise<void>;
-    model: SignupModelV2;
-    fork: boolean;
-    setupImg: ReactNode;
-    productAppName: string;
-    measure: Measure;
-}
-
-const CustomStep = ({ measure, setupImg, productAppName, fork, onSetup, logo, model }: Props) => {
+const CustomStep = ({
+    theme,
+    measure,
+    setupImg,
+    productAppName,
+    fork,
+    onSetup,
+    logo,
+    model,
+}: SignupCustomStepProps) => {
     const mnemonicData = model.cache?.setupData?.mnemonicData;
 
     useEffect(() => {
@@ -59,7 +59,25 @@ const CustomStep = ({ measure, setupImg, productAppName, fork, onSetup, logo, mo
                 (() => {
                     if (isBrokenBlobDownload) {
                         return (
-                            <CopyRecoveryStep
+                            <Layout theme={theme} logo={logo} hasDecoration={false}>
+                                <CopyRecoveryStep
+                                    onMeasureClick={(type) => {
+                                        measure({
+                                            event: TelemetryAccountSignupEvents.interactRecoveryKit,
+                                            dimensions: { click: type },
+                                        });
+                                    }}
+                                    mnemonic={mnemonicData!}
+                                    onContinue={async () => {
+                                        setStep(maybeTriggerExtension());
+                                    }}
+                                />
+                            </Layout>
+                        );
+                    }
+                    return (
+                        <Layout theme={theme} logo={logo} hasDecoration={false}>
+                            <PDFRecoveryStep
                                 onMeasureClick={(type) => {
                                     measure({
                                         event: TelemetryAccountSignupEvents.interactRecoveryKit,
@@ -67,40 +85,26 @@ const CustomStep = ({ measure, setupImg, productAppName, fork, onSetup, logo, mo
                                     });
                                 }}
                                 mnemonic={mnemonicData!}
-                                logo={logo}
                                 onContinue={async () => {
                                     setStep(maybeTriggerExtension());
                                 }}
                             />
-                        );
-                    }
-                    return (
-                        <PDFRecoveryStep
-                            onMeasureClick={(type) => {
-                                measure({
-                                    event: TelemetryAccountSignupEvents.interactRecoveryKit,
-                                    dimensions: { click: type },
-                                });
-                            }}
-                            mnemonic={mnemonicData!}
-                            logo={logo}
-                            onContinue={async () => {
-                                setStep(maybeTriggerExtension());
-                            }}
-                        />
+                        </Layout>
                     );
                 })()}
             {step === Step.Install && (
-                <InstallExtensionStep
-                    measure={measure}
-                    logo={logo}
-                    onSkip={() => {
-                        setStep(Step.Recovery);
-                    }}
-                />
+                <Layout theme={theme} logo={logo} hasDecoration={false}>
+                    <InstallExtensionStep
+                        measure={measure}
+                        onSkip={() => {
+                            setStep(Step.Recovery);
+                        }}
+                    />
+                </Layout>
             )}
             {step === Step.Loading && (
                 <Step2
+                    theme={theme}
                     img={setupImg}
                     product={productAppName}
                     steps={[
@@ -124,14 +128,17 @@ const CustomStep = ({ measure, setupImg, productAppName, fork, onSetup, logo, mo
                             dimensions: {},
                         });
 
-                        await Promise.all([
-                            fork
-                                ? onSetup()
-                                : sendExtensionMessage<{ type: 'pass-onboarding' }>(
-                                      { type: 'pass-onboarding' },
-                                      { extensionId: model.extension.ID, maxTimeout: 1000 }
-                                  ),
-                        ]).catch(noop);
+                        if (fork) {
+                            if (!model.cache) {
+                                throw new Error('Missing cache');
+                            }
+                            await onSetup(model.cache);
+                        }
+
+                        await sendExtensionMessage<{ type: 'pass-onboarding' }>(
+                            { type: 'pass-onboarding' },
+                            { extensionId: model.extension.ID, maxTimeout: 1000 }
+                        ).catch(noop);
                     }}
                 />
             )}
