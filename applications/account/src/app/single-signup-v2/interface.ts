@@ -89,11 +89,19 @@ export enum UpsellTypes {
     UPSELL,
 }
 
+export interface Options {
+    cycle: CYCLE;
+    currency: Currency;
+    coupon?: string;
+    planIDs: PlanIDs | undefined;
+}
+
 export interface Upsell {
     mode: UpsellTypes;
     plan: Plan | undefined;
     unlockPlan: Plan | undefined;
     currentPlan: Plan | undefined;
+    subscriptionOptions: Partial<Options>;
 }
 
 export enum SignupMode {
@@ -129,6 +137,10 @@ export interface SignupConfiguration {
     logo: ReactNode;
     title: ReactNode;
     signupTypes: SignupType[];
+    onboarding: {
+        user: boolean;
+        signup: boolean;
+    };
     features: { key: Key; left: ReactNode; text: ReactNode }[];
     benefits: ReactNode;
     planCards: PlanCard[];
