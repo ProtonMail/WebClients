@@ -223,7 +223,6 @@ export const MenuDropdown: VFC = () => {
                             label={c('Label').t`Settings`}
                             labelClassname="flex-item-fluid"
                             icon={'cog-wheel'}
-                            extra={<Icon name="arrow-out-square" className="ml-auto color-weak" />}
                         />
 
                         {canLock && (
