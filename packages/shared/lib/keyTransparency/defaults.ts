@@ -5,7 +5,7 @@ import { KTLocalStorageAPI, KeyTransparencyState } from '../interfaces';
  * Return the default set of functions to use local storage,
  * i.e. those of the currently running subdomain
  */
-export const getDefaultKTLS = (): KTLocalStorageAPI => {
+export const getDefaultKTLS = async (): Promise<KTLocalStorageAPI> => {
     return {
         getItem: async (key: string) => getItem(key),
         setItem: async (key: string, value: string) => setItem(key, value),
