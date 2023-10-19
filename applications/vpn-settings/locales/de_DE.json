@@ -630,76 +630,6 @@
         "Dadurch werden alle Router und Clients, die dieses Zertifikat verwenden, getrennt."
       ]
     },
-    "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } Speicherplatz"
-      ],
-      "1 user": [
-        "1 Benutzer"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "3,000+ servers across 65+ countries": [
-        "Mehr als 3.000 Server verteilt über 65 Länder"
-      ],
-      "6 users": [
-        "6 Benutzer"
-      ],
-      "Ad-blocker and malware protection": [
-        "Werbeblocker & Malware-Schutz"
-      ],
-      "Extended version history": [
-        "Erweiterter Versionsverlauf"
-      ],
-      "Fast BitTorrent downloads": [
-        "Schnelle BitTorrent-Downloads"
-      ],
-      "High speed streaming": [
-        "Hochgeschwindigkeits-Steaming"
-      ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium-${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium-${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium-${ VPN_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Premium Passwort-Manager"
-      ]
-    },
-    "bf2023: Tooltip": {
-      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "Greife auf blockierte Inhalte zu und surfe privat. Enthält über 3.000 Server verteilt über 65 Länder, höchste VPN-Geschwindigkeiten, weltweite Streaming-Dienste, Malware- und Werbeblocker, schnelle BitTorrent-Downloads und mehr."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Greife von überall aus auf Inhalte von Streaming-Diensten zu, darunter Netflix, Disney+, Prime Video und andere."
-      ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
-        "Beinhaltet Unterstützung für ${ domains } eigene E-Mail-Domains, ${ addresses } E-Mail-Adressen, ${ aliases } hide-my-email-Aliasse, Kalenderfreigabe und mehr."
-      ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Beinhaltet Unterstützung für ${ domains } eigene E-Mail-Domains, ${ addresses } E-Mail-Adressen, unbegrenzte hide-my-email-Aliasse, Kalenderfreigabe und mehr."
-      ],
-      "Secure logins on all your devices. Includes unlimited aliases, sharing, vaults, integrated 2FA and more.": [
-        "Sichere Anmeldungen auf all deinen Geräten. Mit unbegrenzten Aliassen, Freigaben, Tresoren, integrierter 2FA und mehr."
-      ],
-      "Secure your files, folders and photos with end-to-end and zero-access encryption. Includes version history, encrypted file sharing, and more.": [
-        "Sichere deine Dateien, Ordner und Fotos mit Ende-zu-Ende- und Zero-Access-Verschlüsselung. Enthält Versionsverläufe, verschlüsselte Dateifreigaben und mehr."
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Das speziell entwickelte NetShield schützt deine Geräte und beschleunigt das Surfen durch das Blockieren von Werbung, Trackern und Malware."
-      ],
-      "Storage space is shared across all ${ BRAND_NAME } apps.": [
-        "Der Speicherplatz wird von allen ${ BRAND_NAME }-Apps gemeinsam genutzt."
-      ],
-      "Store up to 200 versions of each file for up to 10 years.": [
-        "Speichere bis zu 200 Versionen jeder Datei für bis zu 10 Jahre."
-      ]
-    },
     "Billing cycle": {
       "${ n } month": [
         "${ n } Monat",
@@ -2858,9 +2788,6 @@
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "Vergiss dieses Passwort NICHT. Solltest du es vergessen, kannst du dich weder anmelden noch deine Nachrichten entschlüsseln."
       ],
-      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Verwende die OpenVPN / IKEv2 Zugangsdaten NICHT in ${ VPN_APP_NAME }-Anwendungen oder auf dem ${ VPN_APP_NAME }-Dashboard. ${ learnMore }"
-      ],
       "Done": [
         "Fertig"
       ],
@@ -3661,9 +3588,6 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Du kannst die folgenden Anmeldedaten verwenden, um dich mit einem ${ VPN_APP_NAME }-Server zu verbinden, indem du eine Open-Source-VPN-Anwendung eines Drittanbieters verwendest, wie Tunnelblick für macOS oder OpenVPN für GNU/Linux."
-      ],
-      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Du kannst keine OpenVPN/IKEv2-Zugangsdaten verwenden, um dich an ${ VPN_APP_NAME }-Anwendungen oder dem ${ VPN_APP_NAME }-Dashboard anzumelden. ${ learnMore }"
       ],
       "You have ${ availableCount } dedicated server available.": [
         "Dir steht ${ availableCount } dedizierter Server zur Verfügung.",
@@ -5128,6 +5052,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Schütze deine Familie vor schädlichen Websites und greife auf unsere Hochgeschwindigkeits-VPN-Server zu, um deine Lieblingsinhalte zu streamen."
       ],
+      "Provides the highest level of account security protection and specialist support": [
+        "Bietet ein Höchstmaß an Kontosicherheit und Support durch Experten"
+      ],
       "Quickly set up out-of-office messages": [
         "Richte Abwesenheitsnotizen im Handumdrehen ein."
       ],
@@ -5919,6 +5846,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 Benutzer"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -5991,8 +5921,14 @@
       "1 year": [
         "Ein Jahr"
       ],
+      "15 months": [
+        "15 Monate"
+      ],
       "2 years": [
         "Zwei Jahre"
+      ],
+      "30 months": [
+        "30 Monate"
       ],
       "Billed at ${ amount } for 1 month": [
         "Für 1 Monat mit ${ amount } abgerechnet"
