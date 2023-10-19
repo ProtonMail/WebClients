@@ -54,7 +54,7 @@ const ForwardSection = () => {
                 <SettingsParagraph>
                     <span>
                         {c('email_forwarding_2023: Info')
-                            .t`Forwarding to ${BRAND_NAME} addresses will keep your communication end-to-end encrypted. When forwarding externally, encryption might need to be removed.`}
+                            .t`Forwarding to ${BRAND_NAME} addresses will keep your communication end-to-end encrypted. When forwarding externally, end-to-end encryption for the forwarding address will be disabled.`}
                     </span>
                     <br />
                     <Href href={getKnowledgeBaseUrl('/email-forwarding')}>{c('email_forwarding_2023: Link')
