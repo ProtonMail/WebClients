@@ -1629,6 +1629,12 @@
       ],
       "You already tentatively accepted this invitation.": [
         "您已暫時接受此邀請。"
+      ],
+      "You cannot respond to ${ BRAND_NAME } invites if you're not on the participants list at the moment.": [
+        "若您目前不在參與者清單中，則無法回覆 ${ BRAND_NAME } 邀請。"
+      ],
+      "Your email address is not in the original participants list.": [
+        "您的電子郵件地址不在原始參與者清單中。"
       ]
     },
     "Calendar widget banner": {
@@ -3143,9 +3149,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "內容搜尋無法在此瀏覽器中啟用。請離開無痕模式或使用其它瀏覽器。"
       ],
-      "Could not save preference": [
-        "無法儲存偏好設定"
-      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "解密錯誤：此郵件的加密內容解密失敗。"
       ],
@@ -3800,6 +3803,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "進階 ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "進階 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "進階 ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "多達 6 位使用者"
       ]
@@ -4886,6 +4898,9 @@
       "Copied to clipboard": [
         "已複製到剪貼簿"
       ],
+      "Copy the link to clipboard": [
+        "複製連結到剪貼簿"
+      ],
       "Country code": [
         "國家代碼"
       ],
@@ -4942,9 +4957,6 @@
       ],
       "Do you want to re-sign the contact details?": [
         "您要重新簽署此聯絡人詳細資料嗎？"
-      ],
-      "Don't find what you are looking for? ${ displayAllMailButton }": [
-        "找不到你要的嗎?${ displayAllMailButton }"
       ],
       "Don't forget to share the password with the recipient": [
         "別忘記與您的收件者共享金鑰密碼"
@@ -6300,9 +6312,6 @@
       "Contacts": [
         "聯絡人"
       ],
-      "Conversations per page": [
-        "每頁的對話"
-      ],
       "Copy": [
         "複製"
       ],
@@ -6467,9 +6476,6 @@
       ],
       "Mark as": [
         "標記為"
-      ],
-      "Messages per page": [
-        "每頁訊息"
       ],
       "Move ${ sidebarElementName }": [
         "移動 ${ sidebarElementName }"
@@ -7244,6 +7250,9 @@
       "Contact group updated": [
         "聯絡人群組已更新"
       ],
+      "Link copied to clipboard": [
+        "連結已複製到剪貼簿"
+      ],
       "Password has been set successfully": [
         "密碼已設定成功"
       ],
@@ -7960,6 +7969,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 位使用者"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -7977,6 +7989,15 @@
       ],
       "Highest VPN speed": [
         "業界最高 VPN 速率"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "進階 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "進階 ${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 與 ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "進階 ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium early access": [
         "進階版搶先體驗"
@@ -8022,14 +8043,23 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } months": [
+        "${ n }個月"
+      ],
       "/ month": [
         "/ 月"
       ],
       "1 year": [
         "1 年"
       ],
+      "15 months": [
+        "15個月"
+      ],
       "2 years": [
         "2年"
+      ],
+      "30 months": [
+        "30個月"
       ],
       "Billed at ${ amount } for 1 month": [
         "為期 1 個月收費 ${ amount } "
@@ -8431,6 +8461,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "進階 ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "進階 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Premium Password Manager": [
         "付費版密碼管理器"
       ]
