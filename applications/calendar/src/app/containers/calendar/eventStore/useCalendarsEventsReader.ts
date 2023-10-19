@@ -34,8 +34,6 @@ const EVENTS_PER_BATCH_OLD = 5;
 const EVENTS_PER_BATCH = 200;
 const EVENTS_RACE_MS = 300;
 
-const GET_EVENT_ERROR_MESSAGE = 'Failed to get event';
-
 const getEventAndUpsert = async ({
     calendarID,
     eventID,
@@ -58,7 +56,7 @@ const getEventAndUpsert = async ({
 
         return Event;
     } catch (error: any) {
-        throw new Error(GET_EVENT_ERROR_MESSAGE);
+        throw new Error(c('Error').t`Failed to get event`);
     }
 };
 
