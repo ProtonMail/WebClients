@@ -34,6 +34,12 @@ export const Spotlight: VFC<Props> = (props) => {
     const latestInvite = useSelector(selectMostRecentInvite);
     const modalVisible = props.pendingShareAccess || props.trial;
 
+    useEffect(() => {
+        /* If the latest invite was promoted from a new user invite,
+         * auto prompt the "respond to invite" modal */
+        if (latestInvite?.fromNewUser) respondToInvite(latestInvite);
+    }, [latestInvite]);
+
     const inviteMessage = useMemo<MaybeNull<SpotlightMessageDefinition>>(
         () =>
             sharingEnabled && latestInvite && !latestInvite.fromNewUser
@@ -51,7 +57,7 @@ export const Spotlight: VFC<Props> = (props) => {
                       },
                   }
                 : null,
-        [latestInvite, respondToInvite]
+        [latestInvite]
     );
 
     useEffect(() => {
