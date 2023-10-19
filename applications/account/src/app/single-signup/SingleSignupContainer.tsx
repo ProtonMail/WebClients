@@ -21,7 +21,7 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { queryPaymentMethodStatus, queryPlans } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { ProductParam } from '@proton/shared/lib/apps/product';
-import { APP_NAMES, CLIENT_TYPES, COUPON_CODES, PLANS, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { APP_NAMES, CLIENT_TYPES, COUPON_CODES, CYCLE, PLANS, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
@@ -44,7 +44,7 @@ import {
 } from '../signup/signupActions';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
 import { defaultSignupModel } from '../single-signup-v2/SingleSignupContainerV2';
-import { SignupModelV2, Steps } from '../single-signup-v2/interface';
+import { SignupDefaults, SignupModelV2, Steps } from '../single-signup-v2/interface';
 import { getPaymentMethodsAvailable, getSignupTelemetryData } from '../single-signup-v2/measure';
 import useLocationWithoutLocale from '../useLocationWithoutLocale';
 import { MetaTags, useMetaTags } from '../useMetaTags';
@@ -83,11 +83,14 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
     const [loadingDependencies, withLoadingDependencies] = useLoading(true);
     const [loadingChallenge, setLoadingChallenge] = useState(true);
 
+    const defaults: SignupDefaults = {
+        plan: PLANS.VPN,
+        cycle: CYCLE.TWO_YEARS,
+    };
+
     const [signupParameters] = useState(() => {
         const searchParams = new URLSearchParams(location.search);
-        const result = getSignupSearchParams(location.pathname, searchParams, {
-            preSelectedPlan: PLANS.VPN,
-        });
+        const result = getSignupSearchParams(location.pathname, searchParams);
 
         const validValues = ['free', PLANS.BUNDLE, PLANS.VPN, PLANS.VPN_PRO, PLANS.VPN_BUSINESS];
         if (result.preSelectedPlan && !validValues.includes(result.preSelectedPlan)) {
@@ -158,6 +161,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                 api: silentApi,
                 signupParameters,
                 Plans,
+                defaults,
             });
             const plansMap = toMap(Plans, 'Name') as PlansMap;
 
@@ -298,7 +302,11 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                                     ktActivation,
                                 };
 
-                                const result = await handleCreateUser({ cache, api: silentApi, mode: 'cro' });
+                                const result = await handleCreateUser({
+                                    cache,
+                                    api: silentApi,
+                                    mode: 'cro',
+                                });
                                 setModelDiff({
                                     subscriptionData: result.cache.subscriptionData,
                                     cache: result.cache,

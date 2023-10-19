@@ -1,6 +1,7 @@
 import {
     Dispatch,
     Fragment,
+    Key,
     MutableRefObject,
     ReactNode,
     SetStateAction,
@@ -35,7 +36,7 @@ import noop from '@proton/utils/noop';
 
 import SignupSupportDropdown from '../signup/SignupSupportDropdown';
 import { getSubscriptionPrices } from '../signup/helper';
-import { SignupCacheResult, SubscriptionData } from '../signup/interfaces';
+import { SignupCacheResult, SignupType, SubscriptionData } from '../signup/interfaces';
 import { useFlowRef } from '../useFlowRef';
 import AccountStepDetails, { AccountStepDetailsRef } from './AccountStepDetails';
 import AccountStepPayment, { AccountStepPaymentRef } from './AccountStepPayment';
@@ -50,7 +51,15 @@ import { PlanCard, PlanCardSelector, UpsellCardSelector } from './PlanCardSelect
 import RightPlanSummary from './RightPlanSummary';
 import RightSummary from './RightSummary';
 import { getFreeSubscriptionData, getFreeTitle } from './helper';
-import { Measure, OnOpenLogin, OptimisticOptions, SignupMode, SignupModelV2, UpsellTypes } from './interface';
+import {
+    Measure,
+    OnOpenLogin,
+    OptimisticOptions,
+    SignupMode,
+    SignupModelV2,
+    SignupTheme,
+    UpsellTypes,
+} from './interface';
 import { getFreePassFeatures } from './pass/configuration';
 
 export interface Step1Rref {
@@ -59,6 +68,8 @@ export interface Step1Rref {
 }
 
 const Step1 = ({
+    signupTypes,
+    theme,
     relativePrice,
     logo,
     features,
@@ -84,13 +95,15 @@ const Step1 = ({
     measure,
     mode,
 }: {
+    signupTypes: SignupType[];
+    theme: SignupTheme;
     relativePrice: string;
     app: APP_NAMES;
     shortAppName: string;
     appName: string;
     logo: ReactNode;
     titles: { [SignupMode.Default]: ReactNode; [SignupMode.Onboarding]: ReactNode };
-    features: { text: string; left: ReactNode }[];
+    features: { key: Key; text: ReactNode; left: ReactNode }[];
     selectedPlan: Plan;
     planCards: PlanCard[];
     isDesktop: boolean;
@@ -259,7 +272,7 @@ const Step1 = ({
         if (!accountData) {
             throw new Error('Invalid data');
         }
-        await onComplete({ subscriptionData, accountData, type: type || 'signup' });
+        return onComplete({ subscriptionData, accountData, type: type || 'signup' });
     };
 
     const cycles = [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS].map((cycle) => ({
@@ -271,19 +284,30 @@ const Step1 = ({
     const hasSelectedFree = selectedPlanCard?.plan === PLANS.FREE;
     const isOnboardingMode = mode === SignupMode.Onboarding && !!model.session?.user;
 
+    const isDarkBg = theme.background === 'bf';
+
+    let step = 1;
+    const hasPlanSelector = !model.planParameters?.defined || model.upsell.mode === UpsellTypes.UPSELL;
+
     return (
-        <Layout logo={logo} hasDecoration bottomRight={<SignupSupportDropdown />} className={className}>
+        <Layout
+            theme={theme}
+            logo={logo}
+            hasDecoration
+            bottomRight={<SignupSupportDropdown isDarkBg={isDarkBg} />}
+            className={className}
+        >
             <div className="flex flex-align-items-center flex-column">
                 <div className="single-signup-header-v2 text-center mt-8 mb-4">
                     <h1 className="m-0 large-font lg:px-4 text-semibold">
                         {!isOnboardingMode ? titles[SignupMode.Default] : titles[SignupMode.Onboarding]}
                     </h1>
                 </div>
-                {!isOnboardingMode && (
+                {!isOnboardingMode && hasPlanSelector && (
                     <div className="flex flex-nowrap mb-4 gap-1 md:gap-8">
-                        {features.map(({ left, text }, i, arr) => {
+                        {features.map(({ key, left, text }, i, arr) => {
                             return (
-                                <Fragment key={text}>
+                                <Fragment key={key}>
                                     <FeatureItem left={left} text={text} />
                                     {i !== arr.length - 1 && (
                                         <Vr className="min-h-custom" style={{ '--min-h-custom': '2.25rem' }} />
@@ -294,9 +318,13 @@ const Step1 = ({
                     </div>
                 )}
                 {(() => {
+                    if (!hasPlanSelector) {
+                        return null;
+                    }
+
                     const bestPlanCard = planCards.find((planCard) => planCard.type === 'best');
                     const bestPlan = bestPlanCard?.plan && model.plansMap[bestPlanCard.plan];
-                    if (!bestPlanCard || !bestPlan || model.upsell.mode === UpsellTypes.UPSELL) {
+                    if (!bestPlanCard || !bestPlan) {
                         return null;
                     }
 
@@ -326,88 +354,94 @@ const Step1 = ({
                         </div>
                     );
                 })()}
-                <Box className="mt-8 w100">
-                    <BoxHeader
-                        step={1}
-                        title={
-                            model.upsell.mode === UpsellTypes.PLANS
-                                ? c('pass_signup_2023: Header').t`Select your plan`
-                                : c('pass_signup_2023: Header').t`Upgrade your plan`
-                        }
-                        right={
-                            <>
-                                {model.upsell.mode === UpsellTypes.PLANS && (
-                                    <CycleSelector
-                                        mode="buttons"
-                                        cycle={options.cycle}
-                                        options={cycles}
-                                        onSelect={(newCycle) => {
-                                            return withLoadingPaymentDetails(handleChangeCycle(newCycle)).catch(noop);
-                                        }}
-                                        size="small"
-                                        color="norm"
-                                        separators={false}
-                                        shape="ghost"
-                                        className="gap-1"
-                                        removeBackgroundColorOnGroup={true}
-                                    />
-                                )}
-                            </>
-                        }
-                    />
-                    <BoxContent>
-                        {model.upsell.mode === UpsellTypes.PLANS ? (
-                            <PlanCardSelector
-                                plansMap={model.plansMap}
-                                plan={options.plan.Name}
-                                cycle={options.cycle}
-                                currency={options.currency}
-                                planCards={planCards}
-                                onSelect={(planIDs, planName) => {
-                                    return withLoadingPaymentDetails(handleChangePlan(planIDs, planName)).catch(noop);
-                                }}
-                                onSelectedClick={() => {
-                                    accountDetailsRef.current?.scrollInto('email');
-                                }}
-                            />
-                        ) : (
-                            <UpsellCardSelector
-                                relativePrice={relativePrice}
-                                plansMap={model.plansMap}
-                                currentPlan={currentPlan}
-                                plan={options.plan}
-                                cycle={options.cycle}
-                                currency={options.currency}
-                                vpnServersCountData={vpnServersCountData}
-                                onSelect={() => {
-                                    accountStepPaymentRef.current?.scrollIntoView();
-                                }}
-                                onKeep={async () => {
-                                    await handleCompletion(getFreeSubscriptionData(model.subscriptionData));
-                                }}
-                            />
-                        )}
-                        {model.upsell.mode === UpsellTypes.PLANS && (
-                            <div className="flex flex-justify-end mt-1 on-tablet-flex-justify-center gap-4">
-                                <div className="color-primary">
-                                    <CurrencySelector
-                                        mode="select-two"
-                                        className="h100 px-3"
-                                        currency={options.currency}
-                                        onSelect={(currency) =>
-                                            withLoadingPaymentDetails(handleChangeCurrency(currency))
-                                        }
-                                        unstyled
-                                    />
+                {hasPlanSelector && (
+                    <Box className="mt-8 w-full">
+                        <BoxHeader
+                            step={step++}
+                            title={
+                                model.upsell.mode === UpsellTypes.PLANS
+                                    ? c('pass_signup_2023: Header').t`Select your plan`
+                                    : c('pass_signup_2023: Header').t`Upgrade your plan`
+                            }
+                            right={
+                                <>
+                                    {model.upsell.mode === UpsellTypes.PLANS && (
+                                        <CycleSelector
+                                            mode="buttons"
+                                            cycle={options.cycle}
+                                            options={cycles}
+                                            onSelect={(newCycle) => {
+                                                return withLoadingPaymentDetails(handleChangeCycle(newCycle)).catch(
+                                                    noop
+                                                );
+                                            }}
+                                            size="small"
+                                            color="norm"
+                                            separators={false}
+                                            shape="ghost"
+                                            className="gap-1"
+                                            removeBackgroundColorOnGroup={true}
+                                        />
+                                    )}
+                                </>
+                            }
+                        />
+                        <BoxContent>
+                            {model.upsell.mode === UpsellTypes.PLANS ? (
+                                <PlanCardSelector
+                                    plansMap={model.plansMap}
+                                    plan={options.plan.Name}
+                                    cycle={options.cycle}
+                                    currency={options.currency}
+                                    planCards={planCards}
+                                    onSelect={(planIDs, planName) => {
+                                        return withLoadingPaymentDetails(handleChangePlan(planIDs, planName)).catch(
+                                            noop
+                                        );
+                                    }}
+                                    onSelectedClick={() => {
+                                        accountDetailsRef.current?.scrollInto('email');
+                                    }}
+                                />
+                            ) : (
+                                <UpsellCardSelector
+                                    relativePrice={relativePrice}
+                                    plansMap={model.plansMap}
+                                    currentPlan={currentPlan}
+                                    plan={options.plan}
+                                    cycle={options.cycle}
+                                    currency={options.currency}
+                                    vpnServersCountData={vpnServersCountData}
+                                    onSelect={() => {
+                                        accountStepPaymentRef.current?.scrollIntoView();
+                                    }}
+                                    onKeep={async () => {
+                                        await handleCompletion(getFreeSubscriptionData(model.subscriptionData));
+                                    }}
+                                />
+                            )}
+                            {model.upsell.mode === UpsellTypes.PLANS && (
+                                <div className="flex flex-justify-end mt-1 on-tablet-flex-justify-center gap-4">
+                                    <div className="color-primary">
+                                        <CurrencySelector
+                                            mode="select-two"
+                                            className="h-full px-3"
+                                            currency={options.currency}
+                                            onSelect={(currency) =>
+                                                withLoadingPaymentDetails(handleChangeCurrency(currency))
+                                            }
+                                            unstyled
+                                        />
+                                    </div>
                                 </div>
-                            </div>
-                        )}
-                    </BoxContent>
-                </Box>
-                <Box className={clsx('mt-12 w100', isOnboardingMode && !hasSelectedFree && 'hidden')}>
+                            )}
+                        </BoxContent>
+                    </Box>
+                )}
+                <Box className={clsx('mt-12 w-full', isOnboardingMode && !hasSelectedFree && 'hidden')}>
                     {(() => {
                         const step2Summary = isOnboardingMode ? (
-                            <RightSummary className="mx-auto md:mx-0">
+                            <RightSummary gradient={isDarkBg} className="mx-auto md:mx-0 rounded-xl">
                                 <RightPlanSummary
                                     title={getFreeTitle(shortAppName)}
                                     price={getSimplePriceString(options.currency, 0, '')}
@@ -419,7 +453,10 @@ const Step1 = ({
                                 ></RightPlanSummary>
                             </RightSummary>
                         ) : (
-                            <RightSummary gradient className="p-6 no-mobile rounded-xl">
+                            <RightSummary
+                                gradient={!isDarkBg}
+                                className={clsx('p-6 no-mobile rounded-xl', isDarkBg && 'border border-weak')}
+                            >
                                 {benefits}
                             </RightSummary>
                         );
@@ -442,13 +479,13 @@ const Step1 = ({
                             return (
                                 <>
                                     <BoxHeader
-                                        step={2}
+                                        step={step++}
                                         title={c('pass_signup_2023: Header')
                                             .t`Continue with your ${BRAND_NAME} account`}
                                     />
                                     <BoxContent>
                                         <div className="flex flex-justify-space-between gap-14">
-                                            <div className="flex-item-fluid w0">
+                                            <div className="flex-item-fluid w-0">
                                                 <AccountSwitcherItem user={user} />
                                                 {hasSelectedFree && (
                                                     <Button
@@ -489,13 +526,15 @@ const Step1 = ({
                         return (
                             <>
                                 <BoxHeader
-                                    step={2}
+                                    step={step++}
                                     title={c('pass_signup_2023: Title').t`Create your ${BRAND_NAME} account`}
                                 />
                                 <BoxContent>
                                     <div className="flex flex-align-items-start flex-justify-space-between gap-14">
                                         <div className="flex-item-fluid w0 relative">
                                             <AccountStepDetails
+                                                domains={model.domains}
+                                                signupTypes={signupTypes}
                                                 passwordFields={true}
                                                 model={model}
                                                 measure={measure}
@@ -576,8 +615,8 @@ const Step1 = ({
                     })()}
                 </Box>
                 {!hasSelectedFree && (
-                    <Box className="mt-12 w100">
-                        <BoxHeader step={isOnboardingMode ? 2 : 3} title={c('pass_signup_2023: Header').t`Checkout`} />
+                    <Box className="mt-12 w-full">
+                        <BoxHeader step={step++} title={c('pass_signup_2023: Header').t`Checkout`} />
                         <BoxContent>
                             <AccountStepPayment
                                 measure={measure}
@@ -592,6 +631,7 @@ const Step1 = ({
                                 vpnServersCountData={vpnServersCountData}
                                 loadingSignup={loadingSignup}
                                 loadingPaymentDetails={loadingPaymentDetails || loadingSignout}
+                                isDarkBg={isDarkBg}
                                 onPay={async (payment, type) => {
                                     if (payment === 'signup-token') {
                                         await handleCompletion(model.subscriptionData, 'signup-token');
