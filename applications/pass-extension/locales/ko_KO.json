@@ -90,7 +90,7 @@
         "로그인 생성"
       ],
       "Create note": [
-        "노트 생성"
+        "메모 생성"
       ],
       "Create vault": [
         "금고 생성"
@@ -173,6 +173,9 @@
       "Importing": [
         "가져오는 중"
       ],
+      "Invite others": [
+        "다른 사용자 초대"
+      ],
       "Join shared vault": [
         "공유 금고 참가"
       ],
@@ -214,6 +217,9 @@
       ],
       "Not now": [
         "다음에"
+      ],
+      "Open in a window": [
+        "새 창에서 열기"
       ],
       "Open navigation": [
         "탐색 열기"
@@ -271,6 +277,9 @@
       ],
       "Share": [
         "공유"
+      ],
+      "Share vault": [
+        "금고 공유"
       ],
       "Show": [
         "보기"
@@ -445,12 +454,6 @@
       "Invitation could not be rejected": [
         "초대를 거절할 수 없습니다"
       ],
-      "Invite creation failed.": [
-        "초대 생성 실패."
-      ],
-      "Invite successfully sent": [
-        "초대장을 성공적으로 보냄"
-      ],
       "Item content cannot exceed 40KB": [
         "항목 콘텐츠가 40KB를 초과할 수 없습니다."
       ],
@@ -483,9 +486,6 @@
       ],
       "Restoring item failed": [
         "항목 복구 실패"
-      ],
-      "Setting \"${ payload.name }\" as primary vault failed": [
-        "\"${ payload.name }\" 을(를) 기본 금고로 지정하는데 실패했습니다."
       ],
       "Settings update failed": [
         "설정 업데이트 실패"
@@ -597,9 +597,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" 업데이트가 무시되었습니다."
       ],
-      "\"${ payload.name }\" set as primary vault": [
-        "\"${ payload.name }\" 을(를) 기본 금고로 설정했습니다."
-      ],
       "${ count } items": [
         "${ count }개 항목"
       ],
@@ -610,7 +607,7 @@
         "${ memberCount }명 회원"
       ],
       "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
-        "${ PASS_APP_NAME }은(는) 오직 로그인과 노트만 불러올 수 있습니다. 여권, 첨부 파일 등은 현재 지원되지 않습니다."
+        "${ PASS_APP_NAME }는 오직 로그인과 메모만 불러올 수 있습니다. 여권, 첨부 파일 등은 현재 지원되지 않습니다."
       ],
       "${ revisionNumber } times": [
         "${ revisionNumber } 번"
@@ -639,6 +636,9 @@
       "Access your passwords on the go with our mobile apps.": [
         "이동 중에 모바일 앱에서도 비밀번호에 쉽게 접근하세요."
       ],
+      "Admin": [
+        "관리자"
+      ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "별명 \"${ item.aliasEmail }\" 이(가) 휴지통으로 이동됨 - 사용자의 메일함에 대한 모든 포워딩이 중단됩니다."
       ],
@@ -656,6 +656,9 @@
       ],
       "Autosaved on ${ submissionURL }": [
         "${ submissionURL }에 저장됨"
+      ],
+      "Can create, edit, delete, and export items in this vault.": [
+        "이 금고에서 항목을 생성, 편집, 삭제 및 불러올 수 있습니다."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
         "이 금고의 접근을 허용 및 삭제할 수 있습니다."
@@ -695,6 +698,9 @@
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "기존 비밀번호를 ${ PASS_APP_NAME }로 쉽게 가져오세요."
+      ],
+      "Editor": [
+        "편집자"
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "${ BRAND_NAME } 계정에 연결해 ${ PASS_APP_NAME }를 활성화 하세요."
@@ -764,6 +770,9 @@
       ],
       "Internet connection lost": [
         "인터넷 연결 없음"
+      ],
+      "Invitation sent": [
+        "초대장을 보냈습니다"
       ],
       "Invite successfully removed": [
         "초대장을 성공적으로 삭제했습니다."
@@ -957,6 +966,9 @@
       "Verification code": [
         "인증 코드"
       ],
+      "Viewer": [
+        "보기"
+      ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "사용자의 로컬 스토리지로 데이터를 동기화 하는데 문제가 있습니다. ${ PASS_SHORT_APP_NAME }가 원활히 동기화할 수 있도록 저장 공간이 여유 있는지 확인하세요."
       ],
@@ -968,12 +980,6 @@
       ],
       "You have ${ daysRemaining } days left in your trial period.": [
         "무료 체험이 ${ daysRemaining }일 남았습니다."
-      ],
-      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
-        "구독에 포함된 최대 금고 수에 도달했습니다. 항목이 기본 금고로 이동됩니다. 모든 금고 간에 항목을 이동하려면 구독을 업그레이드하세요."
-      ],
-      "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
-        "구독에 포함된 최대 금고 수에 도달했습니다. 항목이 기본 금고에서 생성됩니다. 모든 금고 간에 항목을 생성하려면 구독을 업그레이드하세요."
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "사용자가 생성할 수 있는 최대 별명 수에 도달했습니다. 구독을 업그레이드하여 무제한 별명을 생성하세요."
@@ -989,6 +995,9 @@
       ],
       "You're about to create": [
         "생성하려고 하는 주소:"
+      ],
+      "You're invited to a vault.": [
+        "금고에 초대되었습니다"
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "${ PASS_APP_NAME } 세션이 잠겼습니다."
@@ -1107,7 +1116,7 @@
         "로그인 생성"
       ],
       "Create an encrypted note": [
-        "암호화된 노트 생성"
+        "암호화된 메모 생성"
       ],
       "Create new vault": [
         "새 금고 생성"
@@ -1277,9 +1286,6 @@
       "Prefix": [
         "접두어"
       ],
-      "Primary vault": [
-        "중요 금고"
-      ],
       "Prompt for auto-save": [
         "자동 저장할 때 묻기"
       ],
@@ -1385,9 +1391,6 @@
       "Vault": [
         "금고"
       ],
-      "Vaults": [
-        "금고"
-      ],
       "Verification number": [
         "인증 번호"
       ],
@@ -1424,7 +1427,7 @@
         "구두점"
       ],
       "Random Password": [
-        "랜덤 비밀번호"
+        "무작위 비밀번호"
       ],
       "Spaces": [
         "공백"
@@ -1593,7 +1596,7 @@
         "소유권 이전"
       ],
       "Trash empty": [
-        "휴지통이 비어 있습니다."
+        "휴지통이 비어있음"
       ],
       "Unlock ${ brandNameJSX }": [
         "${ brandNameJSX } 잠금 해제"
@@ -1623,7 +1626,7 @@
         "왜 ${ PASS_APP_NAME }인가?"
       ],
       "Your vault is empty": [
-        "금고가 비어있습니다."
+        "금고가 비어있음"
       ]
     },
     "Validation": {
@@ -1669,7 +1672,7 @@
         "\"${ vaultName }\" 금고를 생성할 수 없음"
       ],
       "Empty note": [
-        "빈 노트"
+        "빈 메모"
       ],
       "Expiration Date is incomplete": [
         "만료 일자 작성이 완료되지 않았습니다."
@@ -1770,17 +1773,11 @@
       "Your plan only allows you to autofill from your first two vaults": [
         "사용자의 플랜에서 처음 두개 금고에서만 자동 완성을 지원합니다."
       ],
-      "Your plan only allows you to autofill from your primary vault": [
-        "사용자의 플랜에서 기본 금고에서만 자동 완성을 지원합니다."
-      ],
       "Your session was locked due to inactivity": [
         "세션이 비활성화로 인해 잠겼습니다."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "현재 구독에서 다중 금고 생성을 지원하지 않습니다. 모든 항목이 처음 금고에 저장됩니다. 여러 개의 금고를 생성하려면 구독을 업그레이드 하세요."
-      ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
-        "현재 구독에서 다중 금고 생성을 지원하지 않습니다. 모든 항목이 기본 금고에 저장됩니다. 여러 개의 금고를 생성하려면 구독을 업그레이드 하세요."
       ]
     }
   }

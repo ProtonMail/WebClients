@@ -418,9 +418,6 @@
       "Restoring item failed": [
         "Не вдалося відновити елемент"
       ],
-      "Setting \"${ payload.name }\" as primary vault failed": [
-        "Не вдалося налаштувати \"${ payload.name }\" основним сховищем"
-      ],
       "Settings update failed": [
         "Не вдалося оновити налаштування"
       ],
@@ -542,9 +539,6 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Оновлення \"${ payload.item.data.metadata.name }\" було відхилено"
-      ],
-      "\"${ payload.name }\" set as primary vault": [
-        "\"${ payload.name }\" налаштовано основним сховищем"
       ],
       "${ count } item": [
         "${ count } елемент",
@@ -891,12 +885,6 @@
         "У вас залишилося ${ daysRemaining } днів до кінця пробного періоду.",
         "У вас залишилося ${ daysRemaining } днів до кінця пробного періоду."
       ],
-      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
-        "Ви перевищили кількість сховищ, доступних у вашому тарифному плані. Можна перемістити елементи тільки до основного сховища. Щоб переміщувати елементи між усіма сховищами, перейдіть на тарифний план вищого рівня."
-      ],
-      "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
-        "Ви перевищили кількість сховищ, доступних у вашому тарифному плані. Нові елементи можна створювати лише у вашому основному сховищі. Щоб створювати нові елементи в усіх сховищах, передплатіть тарифний план вищого рівня."
-      ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Ви досягли обмеження кількості псевдонімів. Створюйте скільки завгодно псевдонімів, передплативши тарифний план вищого рівня."
       ],
@@ -1201,9 +1189,6 @@
       ],
       "Prefix": [
         "Префікс"
-      ],
-      "Primary vault": [
-        "Основне сховище"
       ],
       "Prompt for auto-save": [
         "Запит на автозбереження"
@@ -1653,14 +1638,8 @@
       "Your plan does not allow you to create more aliases": [
         "Ваш план не дозволяє створювати більше псевдонімів"
       ],
-      "Your plan only allows you to autofill from your primary vault": [
-        "Ваш план дозволяє тільки автозаповнення з основного сховища"
-      ],
       "Your session was locked due to inactivity": [
         "Ваш сеанс був заблокований через бездіяльність"
-      ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
-        "Ваша підписка не дозволяє створювати кілька сховищ. Всі елементи будуть імпортовані до вашого основного сховища. Для імпорту в кілька сховищ покращте підписку."
       ]
     }
   }

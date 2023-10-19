@@ -461,12 +461,6 @@
       "Invitation could not be rejected": [
         "No es pot rebutjar la invitació."
       ],
-      "Invite creation failed.": [
-        "No s'ha pogut crear la invitació."
-      ],
-      "Invite successfully sent": [
-        "S'ha enviat la invitació."
-      ],
       "Item content cannot exceed 40KB": [
         "El contingut de l'element no pot excedir 40 Kb."
       ],
@@ -499,9 +493,6 @@
       ],
       "Restoring item failed": [
         "No s'ha pogut restaurar l'element"
-      ],
-      "Setting \"${ payload.name }\" as primary vault failed": [
-        "No s'ha pogut establir \"${ payload.name }\" com a caixa porta primària"
       ],
       "Settings update failed": [
         "No s'han pogut actualitzar les preferències."
@@ -617,9 +608,6 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "S'ha descartat l'actualització de \"${ payload.item.data.metadata.name }\""
-      ],
-      "\"${ payload.name }\" set as primary vault": [
-        "S'ha establert \"${ payload.name }\" com a caixa forta principal"
       ],
       "${ count } item": [
         "${ count } element",
@@ -1023,14 +1011,8 @@
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Heu excedit el nombre de caixes fortes incloses a la vostra subscripció. Els elements només es poden moure a les vostres dues primeres caixes fortes. Per moure elements entre totes les caixes fortes milloreu la vostra subscripció."
       ],
-      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
-        "Heu excedit el nombre de caixes fortes incloses a la vostra subscripció. Els elements només es poden moure a la vostra caixa forta principal. Per moure elements entre totes les caixes fortes milloreu la vostra subscripció."
-      ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
         "Heu excedit el nombre de caixes fortes incloses a la vostra subscripció. Només es poden crear elements nous a les vostres dues primeres caixes fortes. Per a crear elements nous a totes les caixes fortes, milloreu la vostra subscripció."
-      ],
-      "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
-        "Heu excedit el nombre de caixes fortes incloses a la vostra subscripció. Només es poden crear elements nous a la vostra caixa forta principal. Per a crear elements nous a totes les caixes fortes, milloreu la vostra subscripció."
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Heu assolit el límit d'àlies que podeu crear. Creeu un nombre il·limitat d'àlies quan milloreu la vostra subscripció."
@@ -1339,9 +1321,6 @@
       "Prefix": [
         "Prefix"
       ],
-      "Primary vault": [
-        "Caixa forta principal"
-      ],
       "Prompt for auto-save": [
         "Demana el desament automàtic"
       ],
@@ -1446,9 +1425,6 @@
       ],
       "Vault": [
         "Caixa forta"
-      ],
-      "Vaults": [
-        "Caixes fortes"
       ],
       "Verification number": [
         "Número de verificació"
@@ -1832,17 +1808,11 @@
       "Your plan only allows you to autofill from your first two vaults": [
         "El vostre pla només us permet emplenar automàticament des de les vostres dues primeres caixes fortes."
       ],
-      "Your plan only allows you to autofill from your primary vault": [
-        "El vostre pla només us permet emplenar automàticament des de la vostra caixa forta principal"
-      ],
       "Your session was locked due to inactivity": [
         "S'ha bloquejat la vostra sessió per inactivitat"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "La vostra subscripció no us permet crear diverses caixes fortes. Tots els elements s'importaran a la vostra primera caixa forta. Per a importar a diverses caixes fortes milloreu la vostra subscripció."
-      ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
-        "La vostra subscripció no us permet crear diverses caixes fortes. Tots els elements s'importaran a la vostra caixa forta principal. Per a importar a diverses caixes fortes milloreu la vostra subscripció."
       ]
     }
   }
