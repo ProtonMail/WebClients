@@ -58,19 +58,20 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
                       description: '',
                       color: VaultColor.COLOR1,
                       icon: VaultIcon.ICON1,
+                      item: props.item,
                   }
                 : { withVaultCreation: false, shareId: props.vault.shareId }),
         },
         validateOnChange: true,
         validate: validateShareInviteValues,
-        onSubmit: ({ step }, { setFieldValue }) => {
-            switch (step) {
+        onSubmit: (values, { setFieldValue }) => {
+            switch (values.step) {
                 case 'email':
                     return setFieldValue('step', 'permissions');
                 case 'vault':
                     return setFieldValue('step', 'email');
                 case 'permissions':
-                    // createInvite.dispatch({ email, role, shareId });
+                    createInvite.dispatch(values);
                     break;
             }
         },
