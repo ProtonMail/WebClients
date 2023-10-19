@@ -84,7 +84,7 @@
         "Hubungi kami"
       ],
       "Continue": [
-        "Lanjut"
+        "Lanjutkan"
       ],
       "Continue anyway": [
         "Tetap lanjut"
@@ -291,7 +291,7 @@
         "OK"
       ],
       "Ok": [
-        "Oke"
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Buka pengaturan ${ CALENDAR_APP_NAME }"
@@ -630,6 +630,9 @@
     "Billing cycle": {
       "${ n } months": [
         "${ n } bulan"
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
+        "Diperbarui secara otomatis seharga ${ renewPrice }, selama ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -2009,6 +2012,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } Premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME } Premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } Premium"
+      ],
       "Up to 6 users": [
         "Sampai 6 pengguna"
       ]
@@ -2289,7 +2301,7 @@
         "Izinkan kunci platform"
       ],
       "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Memungkinkan Anda untuk mendaftar kunci keamanan bawaan (seperti Windows Hello, Face ID, Touch ID, atau TPM internal)"
+        "Memungkinkan Anda untuk mendaftarkan kunci keamanan bawaan sistem (seperti Windows Hello, Face ID, Touch ID, atau TPM internal)"
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Apakah Anda yakin untuk menghapus kunci keamanan ${ name }?"
@@ -2622,6 +2634,15 @@
       "Admin account allocation": [
         "Alokasi akun admin"
       ],
+      "After this date, you'll be billed every 12 months at the normal yearly rate.": [
+        "Setelah tanggal ini, Anda akan ditagih setiap1 2 bulan dengan harga tahunan normal."
+      ],
+      "After this date, you'll be billed every 24 months at the normal 2-year rate.": [
+        "Setelah tanggal ini, Anda akan ditagih setiap 24 bulan dengan harga 2 tahunan normal."
+      ],
+      "After this date, you'll be billed every month at the regular price.": [
+        "Setelah tanggal ini, Anda akan ditagih per bulannya dengan harga normal."
+      ],
       "All your changes will be lost.": [
         "Seluruh perubahan yang belum Anda simpan akan hilang."
       ],
@@ -2677,7 +2698,7 @@
         "Dibutuhkan langganan Basic, Plus atau Visionary"
       ],
       "Be sure to copy your password and store it somewhere safe.": [
-        "Pastikan untuk menyalin kata sandi Anda dan simpan di tempat yang aman."
+        "Pastikan untuk menyalin kata sandi Anda dan menyimpan salinan ini di tempat yang aman."
       ],
       "Before creating this address you need to provide a password and create encryption keys for it.": [
         "Sebelum membuat alamat ini, Anda harus menentukan kata sandi dan membuat kunci enkripsi."
@@ -2762,9 +2783,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "JANGAN lupakan kata sandi ini. Apabila Anda sampai lupa, Anda tidak akan dapat masuk ke akun Anda atau mendekripsi isi pesan Anda."
-      ],
-      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Jangan gunakan informasi kredensial OpenVPN / IKEv2 pada aplikasi ${ VPN_APP_NAME } atau dasbor ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "Done": [
         "Selesai"
@@ -3010,7 +3028,7 @@
         "Belum ada Gateway"
       ],
       "No payment is required at this time.": [
-        "Tidak ada pembayaran yang diperlukan untuk saat ini."
+        "Tidak ada pembayaran yang dibutuhkan untuk saat ini."
       ],
       "No results found": [
         "Tidak ada hasil yang ditemukan"
@@ -3112,7 +3130,7 @@
         "Silakan coba lagi, gunakan metode pembayaran lainnya, atau hubungi PayPal untuk memperoleh bantuan."
       ],
       "Please verify payment at the new tab which was opened.": [
-        "Mohon verifikasi pembayaran di tab baru yang terbuka."
+        "Silakan verifikasi pembayaran pada tab baru yang terbuka."
       ],
       "Please wait till your changes are synced with the server.": [
         "Mohon tunggu hingga perubahan Anda disinkronkan dengan server."
@@ -3225,6 +3243,15 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Kirimkan deposit melalui alamat berikut atau pindai kode QR di bawah ini. Deposit Anda akan muncul pada akun setelah terkonfirmasi."
       ],
+      "Subscription auto-renews every 12 months.": [
+        "Langganan akan diperbarui secara otomatis setiap 12 bulan."
+      ],
+      "Subscription auto-renews every 24 months.": [
+        "Langganan akan diperbarui secara otomatis setiap 24 bulan."
+      ],
+      "Subscription auto-renews every month.": [
+        "Langganan akan diperbarui secara otomatis setiap bulannya."
+      ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Langganan akan segera berakhir: Aktifkan kembali paket Anda sebelum tanggal ${ byDate } untuk tetap memperoleh manfaat ${ planName } Anda. ${ reactivateLink }"
       ],
@@ -3269,6 +3296,9 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Konfigurasi berikut dapat digunakan dengan router WireGuard dan klien resmi."
+      ],
+      "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
+        "Kredensiala tidak dapat digunakan untuk masuk ke aplikasi ${ VPN_APP_NAME } resmi kami. ${ learnMore }"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Akun ini telah ditangguhkan karena ditenggarai telah melanggar ketentuan penggunaan yang berlaku."
@@ -3364,10 +3394,10 @@
         "Autentikasi dua faktor diaktifkan"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "Mode dua kata sandi mengharuskan Anda untuk mengatur dua kata sandi: satu untuk masuk ke akun Anda, dan satu untuk mendekripsi kotak surat Anda. (Fitur lanjutan)"
+        "Mode kata sandi ganda mengharuskan Anda untuk mengatur dua kata sandi: satu untuk masuk ke akun Anda, dan satu untuk mendekripsi isi kotak surat Anda. (Fitur lanjutan)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "Mode dua kata sandi menggunakan kata sandi terpisah untuk masuk akun dan dekripsi kotak pesan. Ini memberikan sedikit manfaat keamanan pada situasi tertentu, namun kami menyarankan mode satu kata sandi untuk sebagian besar pengguna. Untuk beralih ke mode dua kata sandi, atur dulu kata sandi masuk kemudian tentukan kata sandi kotak pesan."
+        "Mode kata sandi ganda menggunakan kata sandi yang terpisah untuk masuk ke akun dan mendekripsi isi kotak surat. Hal ini dapat memberikan lapisan keamanan tambahan pada situasi tertentu, namun kami tidak menyarankan fitur ini bagi sebagian besar pengguna. Untuk beralih ke mode kata sandi ganda, tentukan kata sandi akun dan tentukan kata sandi kotak pesan setelahnya."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Sayangnya, tidak ada metode pemulihan yang ditetapkan untuk akun ini."
@@ -3442,7 +3472,7 @@
         "Kami tidak dapat memproses pembayaran Anda."
       ],
       "We generated a strong password for you": [
-        "Kami telah membuat sebuah kata sandi yang kuat untuk Anda"
+        "Kami telah menghasilkan kata sandi yang kuat untuk Anda"
       ],
       "We need to authenticate your payment method with your bank.": [
         "Kami perlu untuk mengautentikasi metode pembayaran Anda dengan bank Anda."
@@ -3469,7 +3499,7 @@
         "Untuk menyelesaikan transaksi, kami akan mengarahkan Anda ke PayPal di tab baru. Nonaktifkan pemblokir pop-up terlebih dahulu sebelum melanjutkan."
       ],
       "We'll get back to you shortly.": [
-        "Kami akan segera kembali untuk Anda."
+        "Kami akan segera menghubungi Anda kembali."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Kami akan mengirimkan kode verifikasi baru ke ${ strong }"
@@ -3555,9 +3585,6 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Anda dapat menggunakan informasi kredensial berikut untuk terhubung ke server ${ VPN_APP_NAME } melalui aplikasi VPN open source milik pihak ketiga, seperti Tunnelblick untuk macOS atau OpenVPN untuk GNU/Linux."
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Anda tidak dapat menggunakan informasi kredensial OpenVPN / IKEv2 untuk masuk ke aplikasi ${ VPN_APP_NAME } atau dasbor ${ VPN_APP_NAME }. ${ learnMore }"
-      ],
       "You have ${ availableCount } dedicated servers available.": [
         "Anda memiliki ${ availableCount } server khusus yang tersedia."
       ],
@@ -3633,6 +3660,9 @@
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Informasi Anda aman di tangan kami. Kami hanya akan menghubungi Anda ketika tindak lanjut Anda dibutuhkan untuk menghadirkan layanan kami."
       ],
+      "Your next billing date is ${ renewalTime }.": [
+        "Tanggal tagihan Anda selanjutnya adalah ${ renewalTime }."
+      ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Kata sandi organisasi Anda dapat dibagikan dengan pengguna yang ingin Anda beri hak istimewa. Ini juga sebagai kode pemulihan darurat untuk mendapatkan akses ke organisasi ketika Anda kehilangan akses akun. Silakan simpan kata sandi ini di tempat yang aman."
       ],
@@ -3644,6 +3674,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Langganan Anda dikelola oleh Mozilla. Harap hubungi layanan dukungan Mozilla."
+      ],
+      "Your subscription will auto-renew on ${ renewalTime }.": [
+        "Langganan Anda akan diperbarui secara otomatis pada ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -3983,6 +4016,9 @@
       "New password": [
         "Kata sandi baru"
       ],
+      "New plan": [
+        "Paket baru"
+      ],
       "No filter": [
         "Tidak ada filter"
       ],
@@ -4017,7 +4053,7 @@
         "Jumlah lain"
       ],
       "Password": [
-        "Kata Sandi"
+        "Kata sandi"
       ],
       "Payer": [
         "Pembayar"
@@ -4086,7 +4122,7 @@
         "Informasi sistem"
       ],
       "Two-password mode": [
-        "Mode dua kata sandi"
+        "Mode kata sandi ganda"
       ],
       "User": [
         "Pengguna"
@@ -4482,6 +4518,9 @@
       "99.95% SLA": [
         "99.95% SLA"
       ],
+      "Ad-blocker and malware protection": [
+        "Pemblokiran iklan dan perlindungan malware"
+      ],
       "Admin console": [
         "Konsol admin"
       ],
@@ -4739,6 +4778,9 @@
       ],
       "Vault and Item sharing (coming soon)": [
         "Pembagian brankas dan item (segera hadir)"
+      ],
+      "Vault sharing (up to ${ n } people)": [
+        "Berbagi berkas (hingga ${ n } pengguna)"
       ]
     },
     "new_plans: feature info": {
@@ -4891,6 +4933,18 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Amankan jadwal Anda dengan enkripsi ujung ke ujung. Meliputi dukungan untuk kalender khusus, fitur berbagi kalender, dan masih banyak lagi."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Amankan berkas Anda dengan penyimpanan awan terenkripsi. Meliputi riwayat versi, berbagi berkas terenkripsi, dan masih banyak lagi."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: Amankan surel Anda dengan enkripsi ujung ke ujung. Meliputi dukungan domain surel kustom, 15 alamat surel, alias hide-my-email tak terbatas, dan masih banyak lagi."
+      ],
+      "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "${ VPN_APP_NAME }: Akses konten yang terblokir dan jelajahi secara privat. Meliputi ${ serversAndCountries }, kecepatan VPN tertinggi, akses layanan streaming di seluruh dunia, pemblokir malware dan iklan, unduhan BitTorrent yang cepat, dan masih banyak lagi."
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Akses berbagai konten streaming seperti Netflix, Disney+, dan Prime Video di mana pun Anda berada"
       ],
@@ -5487,7 +5541,7 @@
         "Pemulihan akun tidak tersedia untuk kunci alamat lawas"
       ],
       "Please generate keys before you try to change your password": [
-        "Harap buat kunci terlebih dahulu sebelum Anda mengubah kata sandi Anda"
+        "Silakan buat kunci terlebih dahulu sebelum Anda mencoba untuk mengubah kata sandi"
       ]
     },
     "session_recovery:available:info": {
@@ -5504,13 +5558,13 @@
         "Apabila Anda tidak meminta untuk mengatur ulang kata sandi, batalkan permintaan ini sekarang juga."
       ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } days to reset your password.": [
-        "Permintaan pengaturan ulang kata sandi disetujui (${ user.Email }). Anda masih punya ${ timeRemaining.inDays } hari untuk mengatur ulang kata sandi Anda."
+        "Permintaan pengaturan ulang kata sandi telah disetujui (${ user.Email }). Anda memiliki ${ timeRemaining.inDays } hari untuk mengatur ulang kata sandi Anda."
       ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hours to reset your password.": [
-        "Permintaan pengaturan ulang kata sandi disetujui (${ user.Email }). Anda masih punya ${ timeRemaining.inHours } jam untuk mengatur ulang kata sandi Anda."
+        "Permintaan pengaturan ulang kata sandi telah disetujui (${ user.Email }). Anda memiliki ${ timeRemaining.inHours } jam untuk mengatur ulang kata sandi Anda."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
-        "Silakan menuju ke perangkat yang sudah masuk (dalam sesi di mana permintaannya dibuat) untuk mengubah kata sandi Anda."
+        "Silakan tuju perangkat yang telah terhubung masuk (dalam sesi di mana permintaan ini diajukan) untuk mengubah kata sandi Anda."
       ],
       "This permission expires in ${ timeRemaining.inDays } days": [
         "Perizinan akan kedaluwarsa dalam ${ timeRemaining.inDays } hari"
@@ -5565,7 +5619,7 @@
     },
     "session_recovery:cancelled:info": {
       "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "Permintaan pengaturan ulang kata sandi dibatalkan (${ user.Email }). Jika Anda tidak membuat permintaan ini, ${ changePasswordLink }."
+        "Permintaan pengaturan ulang kata sandi dibatalkan (${ user.Email }). Apabila Anda tidak membuat permintaan ini, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -5604,10 +5658,10 @@
         "Pengaturan ulang kata sandi tersedia mulai dari ${ boldDate }. Hal ini akan memberikan Anda waktu untuk membatalkan permintaan yang tidak berasal dari Anda."
       ],
       "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hours.": [
-        "Pengaturan ulang kata sandi diminta (${ user.Email }). Anda dapat mengubah kata sandi Anda dalam ${ hoursRemaining } jam."
+        "Pengaturan ulang kata sandi telah diminta (${ user.Email }). Anda dapat mengubah kata sandi Anda dalam ${ hoursRemaining } jam."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
-        "Untuk memastikan bahwa ini memang Anda yang sedang mencoba mengatur ulang kata sandi Anda, kami menunggu 72 jam sebelum menyetujui permintaan. Anda dapat mengubah kata sandi Anda dalam${ boldTimeLeft }. ${ viewRequest }"
+        "Untuk memastikan bahwa permintaan pengaturan ulang kata sandi ini benar-benar berasal dari Anda, kami menunggu 72 jam sebelum menyetujui permintaan yang masuk. Anda dapat mengubah kata sandi Anda pada ${ boldTimeLeft }. ${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "Kami telah menerima permintaan pengaturan ulang kata sandi untuk ${ boldEmail }."
@@ -5682,13 +5736,13 @@
         "${ gracePeriodHoursRemaining } jam"
       ],
       "${ passwordReset } is now available.": [
-        "${ passwordReset } sekarang tersedia."
+        "${ passwordReset } kini telah tersedia."
       ],
       "If you sign out before you reset your password, you could lose access to your account.": [
-        "Jika Anda keluar sebelum mengatur ulang kata sandi, Anda dapat kehilangan akses ke akun Anda."
+        "Apabila Anda keluar sebelum mengatur ulang kata sandi, Anda dapat kehilangan akses menuju akun Anda."
       ],
       "If you sign out without resetting your password, you could lose access to your account.": [
-        "Jika Anda keluar tanpa mengatur ulang kata sandi, Anda dapat kehilangan akses ke akun Anda."
+        "Apabila Anda keluar tanpa mengatur ulang kata sandi, Anda dapat kehilangan akses menuju akun Anda."
       ],
       "You will be able to reset your password in ${ boldTimeLeft }.": [
         "Anda akan dapat mengatur ulang kata sandi Anda dalam ${ boldTimeLeft }."
@@ -5701,7 +5755,7 @@
     },
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
-        "Keluar tanpa pengaturan ulang kata sandi?"
+        "Keluar tanpa mengatur ulang kata sandi?"
       ]
     },
     "session_recovery:status:info": {
@@ -5769,6 +5823,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 pengguna"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -5786,6 +5843,15 @@
       ],
       "Highest VPN speed": [
         "Kecepatan VPN tertinggi"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME } Premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, & ${ DRIVE_SHORT_APP_NAME } Premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } Premium"
       ],
       "Premium early access": [
         "Akses dini Premium"
@@ -5831,14 +5897,23 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } months": [
+        "${ n } bulan"
+      ],
       "/ month": [
         "/ bulan"
       ],
       "1 year": [
         "1 tahun"
       ],
+      "15 months": [
+        "15 bulan"
+      ],
       "2 years": [
         "2 tahun"
+      ],
+      "30 months": [
+        "30 bulan"
       ],
       "Billed at ${ amount } for 1 month": [
         "Tertagih dengan harga ${ amount } selama 1 bulan"
@@ -5965,6 +6040,12 @@
     "Subscription": {
       "Billed every 2 years": [
         "Ditagihkan setiap 2 tahun"
+      ],
+      "Billed for 15 months": [
+        "Tertagih selama 15 bulan"
+      ],
+      "Billed for 30 months": [
+        "Tertagih selama 30 bulan"
       ],
       "Billed monthly": [
         "Ditagih bulanan"
@@ -6244,6 +6325,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } Premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME } Premium"
+      ],
       "Premium Password Manager": [
         "Password Manager Premium"
       ]
@@ -6804,7 +6891,7 @@
         "Beralih ke mode satu kata sandi"
       ],
       "Switch to two-password mode": [
-        "Beralih ke mode dua kata sandi"
+        "Beralih ke mode kata sandi ganda"
       ],
       "TV sign in": [
         "Masuk TV"
@@ -6940,6 +7027,11 @@
         "Alamat surel terverifikasi"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Masuk dengan aman di semua perangkat Anda. Meliputi alias tak terbatas, berbagi, 2FA terintegrasi, dan masih banyak lagi."
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "versi rilisan stabil"
@@ -7014,8 +7106,14 @@
       "1-year": [
         "1 tahun"
       ],
+      "15-month": [
+        "15 bulan"
+      ],
       "2-year": [
         "2 tahun"
+      ],
+      "30-month": [
+        "30 bulan"
       ],
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "Dapatkan diskon ${ discount } dengan langganan ${ billingCycle }"

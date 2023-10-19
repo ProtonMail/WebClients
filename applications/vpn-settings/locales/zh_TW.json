@@ -627,6 +627,14 @@
         "這將會把使用此憑證的所有路由器和客戶端都中斷連線。"
       ]
     },
+    "Billing cycle": {
+      "${ n } months": [
+        "${ n }個月"
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
+        "自動以 ${ renewPrice } 續訂，繳費長度為 ${ renewalLength }"
+      ]
+    },
     "Billing cycle option": {
       "1 month": [
         "1 個月"
@@ -2004,6 +2012,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "進階 ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "進階 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "進階 ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "多達 6 位使用者"
       ]
@@ -2617,6 +2634,15 @@
       "Admin account allocation": [
         "管理員帳號指派"
       ],
+      "After this date, you'll be billed every 12 months at the normal yearly rate.": [
+        "在此日期後，您將每12個月按照一般年繳費率價格付費。"
+      ],
+      "After this date, you'll be billed every 24 months at the normal 2-year rate.": [
+        "在此日期後，您將每24個月按照一般雙年繳費率價格付費。"
+      ],
+      "After this date, you'll be billed every month at the regular price.": [
+        "在此日期後，您將每月按正常價格付費。"
+      ],
       "All your changes will be lost.": [
         "一切您所作的變更將會消失。"
       ],
@@ -2757,9 +2783,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "千萬別忘記此密碼。否則，您將無法登入或解密您的郵件。"
-      ],
-      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "您無法使用 OpenVPN / IKEv2 認證以登入 ${ VPN_APP_NAME } 應用程式或 ${ VPN_APP_NAME } 儀表板。 ${ learnMore }"
       ],
       "Done": [
         "已完成"
@@ -3220,6 +3243,15 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "提交單筆存款時，可使用以下位址或者掃描 QR 代碼。該筆存入款項在確認後，就會顯示在您的帳號裡。"
       ],
+      "Subscription auto-renews every 12 months.": [
+        "每12個月自動續訂。"
+      ],
+      "Subscription auto-renews every 24 months.": [
+        "每24個月自動續訂。"
+      ],
+      "Subscription auto-renews every month.": [
+        "每月自動續訂"
+      ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "訂閱即將結束:於${ byDate }重新啟用以維持${ planName }的福利。${ reactivateLink }"
       ],
@@ -3264,6 +3296,9 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "這些設定檔提供 WireGuard routers 與官方用戶端使用。"
+      ],
+      "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
+        "這些認證無法用於登入我們的官方 ${ VPN_APP_NAME } 應用程式。${ learnMore }"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "此帳號可能因違反政策而遭停用。"
@@ -3526,6 +3561,9 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "您可以編輯這個一次以確保用於驗證的電子郵件位址正確。"
       ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
+        "您可以立刻解鎖上方的設定，只要在您的方案中新增 ${ specificCountryCount } 個 IP 地址，或聯絡我們以取得量身打造的解決方案。"
+      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "您可保留最多 ${ MAX_CALENDARS_FREE } 個行事曆。請先移除已分享的行事曆連結以及任何與其分享行事曆的 ${ BRAND_NAME } 使用者，然後才取消您的 ${ MAIL_SHORT_APP_NAME } 訂閱。"
       ],
@@ -3546,9 +3584,6 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "您可使用下列憑證，透過第三方或開放原始碼 VPN 程式（例如：macOS 版本適用的 Tunnelblick 或 GNU/Linux 適用的 OpenVPN），連線至 ${ VPN_APP_NAME } 伺服器。"
-      ],
-      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "您不能使用 OpenVPN / IKEv2 認證登入 ${ VPN_APP_NAME } 應用程式或 ${ VPN_APP_NAME } 儀表板。${ learnMore }"
       ],
       "You have ${ availableCount } dedicated servers available.": [
         "您有${ availableCount }台可用的獨立伺服器。"
@@ -3625,6 +3660,9 @@
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "您的各項資訊在我們安全保護下安全無虞，僅有提供服務前的身分驗證需求時，我們才會使用該資訊與您進行聯繫。"
       ],
+      "Your next billing date is ${ renewalTime }.": [
+        "您的下一個結算日期為${ renewalTime }。"
+      ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "您的組織密碼可分享予您欲給予系統管理員權限的其他使用者。萬一您失去您帳號的存取，這亦可憑此作為緊急復原代碼，以取得您組織的存取。請好好儲存並妥為保管此密碼。"
       ],
@@ -3636,6 +3674,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "您的訂閱是由 Mozilla 管理。請聯絡 Mozilla 支援。"
+      ],
+      "Your subscription will auto-renew on ${ renewalTime }.": [
+        "您的訂閱將於${ renewalTime }自動更新。"
       ]
     },
     "Info for cash payment method": {
@@ -3974,6 +4015,9 @@
       ],
       "New password": [
         "新密碼"
+      ],
+      "New plan": [
+        "新方案"
       ],
       "No filter": [
         "無篩選器"
@@ -4450,6 +4494,9 @@
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "包含無限數量 hide-my-email 別名的 ${ PASS_APP_NAME }"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } 計畫"
+      ],
       "${ size } attachment size": [
         "${ size } 的附件大小"
       ],
@@ -4470,6 +4517,9 @@
       ],
       "99.95% SLA": [
         "99.95% 服務層級協議"
+      ],
+      "Ad-blocker and malware protection": [
+        "廣告攔截與惡意程式保護"
       ],
       "Admin console": [
         "管理員主控台"
@@ -4880,6 +4930,18 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }：透過端對端加密保護您的行程安排。包括對自訂行事曆、行事曆共用等的支援。"
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }：透過加密的雲端儲存保護檔案。包含版本紀錄、加密的檔案共享、及更多。"
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }：透過端對端加密保護您的電子郵件。包含對自訂電子郵件網域、15 個電子郵件地址、無限的 hide-my-email 別名等的支援。"
+      ],
+      "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "${ VPN_APP_NAME }：存取被封鎖的內容並祕密瀏覽。包含 ${ serversAndCountries }、最高 VPN 速度、存取全球串流服務、惡意軟體與廣告攔截程式、快速 BitTorrent 下載等等。"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "在世界各地輕鬆存取影音串流內容，包括 Netflix、Disney+、Prime Video 等"
       ],
@@ -4984,6 +5046,9 @@
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "保護您的家人免受有害網站的侵害並存取我們的高速 VPN 伺服器以串流觀看您喜愛的內容"
+      ],
+      "Provides the highest level of account security protection and specialist support": [
+        "提供最高等級的帳號安全保護與專家支援"
       ],
       "Quickly set up out-of-office messages": [
         "快速設立容後再覆訊息"
@@ -5755,6 +5820,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 位使用者"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -5772,6 +5840,15 @@
       ],
       "Highest VPN speed": [
         "業界最高 VPN 速率"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "進階 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "進階 ${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 與 ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "進階 ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium early access": [
         "進階版搶先體驗"
@@ -5817,14 +5894,23 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } months": [
+        "${ n }個月"
+      ],
       "/ month": [
         "/ 月"
       ],
       "1 year": [
         "1 年"
       ],
+      "15 months": [
+        "15個月"
+      ],
       "2 years": [
         "2年"
+      ],
+      "30 months": [
+        "30個月"
       ],
       "Billed at ${ amount } for 1 month": [
         "為期 1 個月收費 ${ amount } "
@@ -5930,6 +6016,9 @@
       ]
     },
     "State": {
+      "Cancelling your subscription, please wait": [
+        "請稍後，正在取消您的訂閱"
+      ],
       "Downgrading your account, please wait": [
         "正在降級您的帳號，請稍候"
       ]
@@ -5948,6 +6037,12 @@
     "Subscription": {
       "Billed every 2 years": [
         "雙年繳制"
+      ],
+      "Billed for 15 months": [
+        "15個月的費用為"
+      ],
+      "Billed for 30 months": [
+        "30個月的費用為"
       ],
       "Billed monthly": [
         "月繳"
@@ -6227,6 +6322,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "進階 ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "進階 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Premium Password Manager": [
         "付費版密碼管理器"
       ]
@@ -6923,6 +7024,11 @@
         "已驗證的電子郵件位址"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }：在您的所有裝置上安全登入。包含無限別名、分享、整合 2FA 等。"
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "穩定版本"
@@ -6997,8 +7103,14 @@
       "1-year": [
         "1-年"
       ],
+      "15-month": [
+        "15個月"
+      ],
       "2-year": [
         "2-年"
+      ],
+      "30-month": [
+        "30個月"
       ],
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "於${ billingCycle }訂購授權取得${ discount }折扣"

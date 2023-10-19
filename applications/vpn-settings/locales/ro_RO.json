@@ -633,6 +633,16 @@
         "Aceasta va deconecta toate ruterele și clienții care folosesc acest certificat."
       ]
     },
+    "Billing cycle": {
+      "${ n } month": [
+        "${ n } lună",
+        "${ n } luni",
+        "${ n } de luni"
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
+        "Se reînnoiește automat cu ${ renewPrice }, pentru ${ renewalLength }."
+      ]
+    },
     "Billing cycle option": {
       "1 month": [
         "O lună"
@@ -2014,6 +2024,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } premium"
+      ],
       "Up to 6 users": [
         "Până la 6 utilizatori"
       ]
@@ -2661,6 +2680,15 @@
       "Admin account allocation": [
         "Alocare cont admin"
       ],
+      "After this date, you'll be billed every 12 months at the normal yearly rate.": [
+        "După această dată, se va factura la fiecare 12 luni la tariful anual normal."
+      ],
+      "After this date, you'll be billed every 24 months at the normal 2-year rate.": [
+        "După această dată, se va factura la fiecare 24 luni la tariful normal pentru doi ani."
+      ],
+      "After this date, you'll be billed every month at the regular price.": [
+        "După această dată, se va factura lunar la prețul standard."
+      ],
       "All your changes will be lost.": [
         "Toate modificările vor fi pierdute."
       ],
@@ -2805,9 +2833,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "NU uitați această parolă. Dacă o uitați, nu vă veți mai putea conecta sau decripta mesajele."
-      ],
-      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Nu utilizați acreditările OpenVPN / IKEv2 în aplicația ${ VPN_APP_NAME } sau în panoul general al ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "Done": [
         "Gata"
@@ -3274,6 +3299,15 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Faceți o depunere folosind adresa următoare sau scanați codul QR. Depunerea va apărea în cont după confirmare."
       ],
+      "Subscription auto-renews every 12 months.": [
+        "Abonamentul se autoreînnoiește la fiecare 12 luni."
+      ],
+      "Subscription auto-renews every 24 months.": [
+        "Abonamentul se autoreînnoiește la fiecare 24 de luni."
+      ],
+      "Subscription auto-renews every month.": [
+        "Abonamentul se reînnoiește automat în fiecare lună."
+      ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonamentul se încheie: reactivați-l până la ${ byDate } pentru a vă păstra beneficiile planului ${ planName }. ${ reactivateLink }"
       ],
@@ -3324,6 +3358,9 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Aceste configurații sunt furnizate să lucreze pentru ruterele WireGuard și clienții oficiali."
+      ],
+      "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
+        "Aceste acreditări nu pot fi utilizate pentru autentificarea în aplicațiile ${ VPN_APP_NAME } oficiale. ${ learnMore }"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Acest cont a fost suspendat din cauza unei posibile încălcări a politicii."
@@ -3590,6 +3627,9 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Puteți edita aceasta o dată pentru a vă asigura că este adresa de e-mail corectă pentru verificare."
       ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
+        "Puteți debloca imediat configurația de mai sus adăugând ${ specificCountryCount } la numărul de adrese IP din planul actual sau ne puteți contacta pentru soluții personalizate."
+      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
         "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
@@ -3618,9 +3658,6 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Puteți utiliza următoarele date pentru a vă conecta la un server ${ VPN_APP_NAME } folosind o terță parte, aplicație VPN cu sursă publică, cum ar fi Tunnelblick pentru macOS sau OpenVPN pentru GNU/Linux."
-      ],
-      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Nu puteți utiliza acreditările OpenVPN / IKEv2 pentru a vă conecta la aplicațiile ${ VPN_APP_NAME } sau la panoul general al ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "You have ${ availableCount } dedicated server available.": [
         "Aveți ${ availableCount } server dedicat disponibil.",
@@ -3699,6 +3736,9 @@
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Informațiile vă sunt în siguranță la noi. Vă vom contacta doar atunci când este necesar să vă furnizăm serviciile."
       ],
+      "Your next billing date is ${ renewalTime }.": [
+        "Data următoarei facturi este ${ renewalTime }."
+      ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Parola organizației poate fi partajată și altor utilizatori cărora doriți să le dați drepturi de administrator. Este de altfel și un cod de recuperare de urgență pentru a avea acces la organizație în cazul în care vă pierdeți accesul la cont. Salvați această parolă și păstrați-o în siguranță."
       ],
@@ -3710,6 +3750,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Abonamentul vă este gestionat de Mozilla. Contactați Mozilla pentru suport."
+      ],
+      "Your subscription will auto-renew on ${ renewalTime }.": [
+        "Abonamentul se va autoreînnoi la ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -4054,6 +4097,9 @@
       ],
       "New password": [
         "Parola nouă"
+      ],
+      "New plan": [
+        "Plan nou"
       ],
       "No filter": [
         "Fără filtru"
@@ -4562,6 +4608,9 @@
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } cu aliasuri hide-my-email nelimitate"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "Programul ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ size } attachment size": [
         "${ size } mărime atașament"
       ],
@@ -4582,6 +4631,9 @@
       ],
       "99.95% SLA": [
         "Disponibilitate minimă a serviciului 99,95%"
+      ],
+      "Ad-blocker and malware protection": [
+        "Protecție malware și antireclame"
       ],
       "Admin console": [
         "Consolă administrare"
@@ -5000,6 +5052,18 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Asigurați-vă programul cu criptare în ambele părți. Include suport pentru calendare personalizate, calendare partajate și multe altele."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Securizați-vă fișierele cu stocare criptată în cloud. Include istoricul versiunilor, partajarea fișierelor criptate și multe altele."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: Securizați-vă mesajele cu criptare în ambele părți. Include suport pentru domenii de e-mail personale, 15 adrese de e-mail, aliasuri „hide-my-email” nelimitate și multe altele."
+      ],
+      "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "${ VPN_APP_NAME }: Accesați conținutul blocat și navigați în mod privat. Include ${ serversAndCountries }, cele mai mari viteze VPN, acces la servicii de transmisie în flux la nivel mondial, antimalware și blocare reclame, descărcări rapide de tip BitTorrent și multe altele."
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Accesați de oriunde conținutul serviciilor de transmisii în flux, inclusiv Netflix, Disney + și Prime Video."
       ],
@@ -5106,6 +5170,9 @@
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Protejați-vă familia de site-urile web dăunătoare și accesați serverele noastre VPN de mare viteză pentru a vă transmite conținutul preferat"
+      ],
+      "Provides the highest level of account security protection and specialist support": [
+        "Oferă cel mai înalt nivel de protecție a securității contului și asistență specializată."
       ],
       "Quickly set up out-of-office messages": [
         "Configurați rapid mesaje de răspuns automat"
@@ -5919,6 +5986,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "Un utilizator"
+      ],
       "3 TB": [
         "3 TiB"
       ],
@@ -5936,6 +6006,15 @@
       ],
       "Highest VPN speed": [
         "Viteză VPN maximă"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } și ${ DRIVE_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } premium"
       ],
       "Premium early access": [
         "Acces timpuriu premium"
@@ -5981,14 +6060,25 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } lună",
+        "${ n } luni",
+        "${ n } de luni"
+      ],
       "/ month": [
         "/ lună"
       ],
       "1 year": [
         "1 an"
       ],
+      "15 months": [
+        "15 luni"
+      ],
       "2 years": [
         "2 ani"
+      ],
+      "30 months": [
+        "30 de luni"
       ],
       "Billed at ${ amount } for 1 month": [
         "Facturat cu ${ amount } pentru o lună"
@@ -6115,6 +6205,12 @@
     "Subscription": {
       "Billed every 2 years": [
         "Facturat la doi ani"
+      ],
+      "Billed for 15 months": [
+        "Facturat pentru 15 luni"
+      ],
+      "Billed for 30 months": [
+        "Facturat pentru 30 de luni"
       ],
       "Billed monthly": [
         "Facturat lunar"
@@ -6422,6 +6518,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
+      ],
       "Premium Password Manager": [
         "Gestionare parole premium"
       ]
@@ -7128,6 +7230,11 @@
         "Adresă de e-mail verificată."
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "versiune stabilă"
@@ -7214,8 +7321,14 @@
       "1-year": [
         "1 an"
       ],
+      "15-month": [
+        "15 luni"
+      ],
       "2-year": [
         "2 ani"
+      ],
+      "30-month": [
+        "30 de luni"
       ],
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "Obțineți ${ discount } reducere cu abonamentul pe ${ billingCycle }"

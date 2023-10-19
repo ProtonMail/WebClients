@@ -634,6 +634,9 @@
       "${ n } month": [
         "${ n } თვე",
         "${ n } თვე"
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
+        "განახლდება ${ renewPrice }-ით, ${ renewalLength } განმავლობაში"
       ]
     },
     "Billing cycle option": {
@@ -2015,6 +2018,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "6-მდე მომხმარებელი"
       ]
@@ -2645,6 +2657,15 @@
       "Admin account allocation": [
         "ადმინისტრატორის ანგარიშის გამოყოფა"
       ],
+      "After this date, you'll be billed every 12 months at the normal yearly rate.": [
+        "ამ თარიღის შემდეგ გადაიხდით ყოველ 12 თვეში, ნორმალურ წლიურ ფასს."
+      ],
+      "After this date, you'll be billed every 24 months at the normal 2-year rate.": [
+        "ამ თარიღის შემდეგ გადაიხდით ყოველ 24 თვეში, ნორმალურ 2-წლიურ ფასს."
+      ],
+      "After this date, you'll be billed every month at the regular price.": [
+        "ამ თარიღის შემდეგ გადაიხდით ყოველთვე, ჩვეულებრივ ფასს."
+      ],
       "All your changes will be lost.": [
         "ყველა თქვენი ცვლილება დაიკარგება."
       ],
@@ -2787,9 +2808,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "არ დაივიწყოთ ეს პაროლი. თუ დაგავიწყდათ, შესვლას ან თქვენი შეტყობინებების გაშიფვრას ვეღარ მოახერხებთ."
-      ],
-      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "არ გამოიყენოთ OpenVPN / IKEv2-ის მომხმარებელი და პაროლი ${ VPN_APP_NAME } აპლიკაციაში და ${ VPN_APP_NAME }-ის სამუშაო მაგიდაზე. ${ learnMore }"
       ],
       "Done": [
         "დასრულებული"
@@ -3253,6 +3271,15 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "გადმორიცხეთ დეპოზიტი შემდეგ მისამართზე ან დაასკანერეთ QR კოდი. თქვენი დეპოზიტი ანგარიშში დადასტურების შემდეგ აისახება."
       ],
+      "Subscription auto-renews every 12 months.": [
+        "გამოწერა ყოველ 12 თვეში განახლდება."
+      ],
+      "Subscription auto-renews every 24 months.": [
+        "გამოწერა ყოველ 24 თვეში განახლდება."
+      ],
+      "Subscription auto-renews every month.": [
+        "გამოწერა ყოველთვე განახლდება."
+      ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "გამოწერა სრულდება: გაააქტიურეთ ის ${ byDate }-მდე, რათა ${ planName }-ის ფუნქციები შეინარჩუნოთ. ${ reactivateLink }"
       ],
@@ -3300,6 +3327,9 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "ეს კონფიგურაციები განკუთვნილია WireGuard-ის რაუტერებზე და ოფიციალურ კლიენტებზე."
+      ],
+      "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
+        "ეს ავტორიზაციის დეტალები არ შეიძლება, გამოყენებული იქნეს ჩვენს ოფიციალურ ${ VPN_APP_NAME }-ის აპებზე შესასვლელად. ${ learnMore }"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "ანგარიში შეჩერებულია წესების დარღვევის დიდი შანსის გამო."
@@ -3592,9 +3622,6 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "${ VPN_APP_NAME }-ის სერვერთან მესამე პირების დაწერილი VPN აპებით, როგორიცაა Tunnelblick-ი macOS-სთვის ან OpenVPN-ი GNU/Linux-სთვის, გამოიყენეთ ეს მომხმარებელი და პაროლი."
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "OpenVPN / IKEv2-ის მომხმარებელი და პაროლის ${ VPN_APP_NAME } აპლიკაციაში და ${ VPN_APP_NAME }-ის სამუშაო მაგიდაზე გამოყენება არ შეგიძლიათ. ${ learnMore }"
-      ],
       "You have ${ availableCount } dedicated server available.": [
         "გაქვთ ${ availableCount } გამოყოფილი ხელმისაწვდომი სერვერი.",
         "გაქვთ ${ availableCount } გამოყოფილი ხელმისაწვდომი სერვერი."
@@ -3671,6 +3698,9 @@
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "ჩვენთან თქვენი ინფორმაცია დაცულია. ჩვენ, მხოლოდ, დაგიკავშირდებით, როცა ეს ჩვენი სერვისების მოსაწოდებლადაა საჭირო."
       ],
+      "Your next billing date is ${ renewalTime }.": [
+        "თქვენი შემდეგი გადახდის თარიღია ${ renewalTime }"
+      ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "თქვენი ორგანიზაციის პაროლი შეიძლება, გაუზიაროთ სხვა მომხმარებლებს, რომელთაც ადმინისტრაციული პრივილეგიების მიღება სურთ. ეს არის ასევე გადაუდებელი აღდგენის კოდი, იმისათვის, რომ მიიღოთ წვდომა თქვენს ორგანიზაციაზე იმ შემთხვევაში, თუ დაკარგავთ თქვენს ანგარიშზე წვდომას. გთხოვთ, უსაფრთხოდ შეინახოთ ეს პაროლი."
       ],
@@ -3682,6 +3712,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "თქვენი გამოწერა Mozilla-ს მიერ იმართება. დაუკავშირდით მათ მხარდაჭერის გუნდს."
+      ],
+      "Your subscription will auto-renew on ${ renewalTime }.": [
+        "თქვენი გამოწერის ავტომატური განახლების თარიღი: ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -4023,6 +4056,9 @@
       ],
       "New password": [
         "ახალი პაროლი"
+      ],
+      "New plan": [
+        "ახალი ტარიფი"
       ],
       "No filter": [
         "ფილტრის გარეშე"
@@ -4539,6 +4575,9 @@
       "99.95% SLA": [
         "99.95% SLA"
       ],
+      "Ad-blocker and malware protection": [
+        "რეკლამების ბლოკირება და არასასურველი პროგრამებისგან დაცვა"
+      ],
       "Admin console": [
         "ადმინისტრირების კონსოლი"
       ],
@@ -4952,6 +4991,18 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: დაიცავით თქვენი განრიგი გამჭოლი დაშიფვრით. შეიცავს მომხმარებლის კალენდრების მხარდაჭერას, კალენდრის გაზიარებას და ა.შ."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს შეიცავს ვერსიების ისტორიას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: დაიცავით თქვენი ელფოსტა გამჭოლი შიფრაციით. შეიცავს მომხმარებლის დომენების მხარდაჭერას, 15 ელფოსტის მისამართს, განუსაზღვრელ hide-my-email-ის ფსევდონიმს და სხვ."
+      ],
+      "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "${ VPN_APP_NAME }: იქონიეთ წვდომა დაბლოკილ შემცველობასთან და იმუშავეთ ინტერნეტში კონფიდენციალურად. შეიცავს ${ serversAndCountries }, ყველაზე სწრაფ VPN-ს, წვდომას ვიდეოსტრიმინგის სერვისებთან, მავნე პროგრამებისა და რეკლამის დაბლოკვას, სწრაფ BtTorrent-ს და სხვ."
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "იქონიეთ წვდომა სტრიმინგის სერვისებთან, Netflix, Display+ და Prime Video-ის ჩათვლით, ნებისმიერი ადგილიდან"
       ],
@@ -5852,6 +5903,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 მომხმარებელი"
+      ],
       "3 TB": [
         "3 ტბ"
       ],
@@ -5869,6 +5923,15 @@
       ],
       "Highest VPN speed": [
         "უსწრაფესი VPN"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium early access": [
         "ადრეული წვდომა ახალ ფუნქციებზე"
@@ -5914,14 +5977,24 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } თვე",
+        "${ n } თვე"
+      ],
       "/ month": [
         "/ თვეში"
       ],
       "1 year": [
         "1 წელი"
       ],
+      "15 months": [
+        "15 თვე"
+      ],
       "2 years": [
         "2 წელი"
+      ],
+      "30 months": [
+        "30 თვე"
       ],
       "Billed at ${ amount } for 1 month": [
         "გადაიხადეთ ${ amount } 1 თვის"
@@ -6048,6 +6121,12 @@
     "Subscription": {
       "Billed every 2 years": [
         "გადახდა 2 წელიწადში ერთხელ"
+      ],
+      "Billed for 15 months": [
+        "გადაიხადეთ 15 თვისთვის"
+      ],
+      "Billed for 30 months": [
+        "გადაიხადეთ 30 თვისთვის"
       ],
       "Billed monthly": [
         "გადაიხდით თვეში ერთხელ"
@@ -6341,6 +6420,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Premium Password Manager": [
         "პაროლების მმართველის ფასიანი ვერსია"
       ]
@@ -7042,6 +7127,11 @@
         "გადამოწმებული ელფოსტის მისამართი"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს და სხვ."
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "სტაბილური რელიზი"
@@ -7122,8 +7212,14 @@
       "1-year": [
         "1-წლიანი"
       ],
+      "15-month": [
+        "15 თვე"
+      ],
       "2-year": [
         "2-წლიანი"
+      ],
+      "30-month": [
+        "30 თვე"
       ],
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "მიღეთ ${ discount } ფასდაკლება ${ billingCycle } გამოწერისას"

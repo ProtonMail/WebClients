@@ -46,9 +46,17 @@
         "PayPal without credit card"
       ]
     },
+    "new_plans: feature": {
+      "Tor over VPN": [
+        "TOR over VPN"
+      ]
+    },
     "new_plans: tooltip": {
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
         "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Route your internet traffic through the TOR network with a single click"
       ]
     },
     "session_recovery:initiation:info": {
@@ -69,6 +77,11 @@
     "Success": {
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
         "You will receive your username via SMS within a minute if you entered a valid recovery phone number."
+      ]
+    },
+    "Tor out of date": {
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }"
       ]
     },
     "vpn_2step: tooltip": {
