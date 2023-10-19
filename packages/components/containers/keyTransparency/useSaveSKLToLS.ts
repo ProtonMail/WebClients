@@ -19,7 +19,7 @@ const generateID = async (userID: string, email: string) => {
 const useSaveSKLToLS = () => {
     const [{ ID: userID }] = useUser();
     const { APP_NAME: appName } = useConfig();
-    const ktLSAPI = getKTLocalStorage(appName);
+    const ktLSAPIPromise = getKTLocalStorage(appName);
     const getUserKeys = useGetUserKeys();
 
     const saveSKLToLS: SaveSKLToLS = async (
@@ -33,7 +33,7 @@ const useSaveSKLToLS = () => {
         // The fake address is generated just for matching purposes inside the stashedKeys
         // structure and to avoid writing the email in plaintext in localStorage
         const storedAddressID = addressID ?? (await generateID(userID, email));
-
+        const ktLSAPI = await ktLSAPIPromise;
         const ktBlobContent: KTBlobContent = {
             creationTimestamp: +serverTime(),
             email,
