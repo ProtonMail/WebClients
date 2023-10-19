@@ -477,18 +477,18 @@ export const passPlusUpsell = {
             hideInDowngrade: true,
         },
         {
-            text: '20 vaults',
-            tooltip:
-                'Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.',
-            included: true,
-            icon: 'vault',
-        },
-        {
             text: 'Unlimited hide-my-email aliases',
             tooltip:
                 'Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by Proton.',
             included: true,
             icon: 'eye-slash',
+        },
+        {
+            text: '20 vaults',
+            tooltip:
+                'Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.',
+            included: true,
+            icon: 'vault',
         },
         {
             text: 'Integrated 2FA authenticator',

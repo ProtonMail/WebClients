@@ -65,6 +65,7 @@ export interface SessionData {
         payable: boolean;
         admin: boolean;
         subscribed: boolean;
+        access: boolean;
     };
 }
 

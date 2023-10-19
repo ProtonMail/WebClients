@@ -336,7 +336,7 @@ export const getStandardPriceDescription = (cycle: CYCLE, amount: ReactElement):
     }
 };
 
-const getDealDurationText = (cycle: CYCLE | undefined) => {
+export const getDealDurationText = (cycle: CYCLE | undefined) => {
     const n = Number(cycle);
 
     if (n === 12) {
