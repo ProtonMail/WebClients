@@ -43,7 +43,9 @@ const withRequestStatus =
     <Type extends RequestType>(type: Type) =>
     <PA extends PrepareAction<any>, Data>(
         prepare: PA,
-        options?: Type extends 'success' | 'failure' ? { maxAge?: number; data?: Data } : never
+        options?: Type extends 'success' | 'failure'
+            ? { maxAge?: number; data?: (...args: Parameters<PA>) => Data }
+            : never
     ) =>
     <ID extends string>(requestId: ID, ...args: Parameters<PA>) =>
         withRequest(
@@ -52,7 +54,7 @@ const withRequestStatus =
                     case 'start':
                         return { type, id: requestId };
                     default:
-                        return { type, id: requestId, maxAge: options?.maxAge, data: options?.data };
+                        return { type, id: requestId, maxAge: options?.maxAge, data: options?.data?.(...args) };
                 }
             })()
         )(prepare(...args) as ReturnType<PA>) as WithRequest<ReturnType<PA>, Type, Data>;
