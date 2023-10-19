@@ -9,7 +9,7 @@ import { Clients } from '@proton/shared/lib/pass/constants';
 import { getPlanFromPlanIDs } from '../signup/helper';
 import { SessionData, SignupCacheResult } from '../signup/interfaces';
 
-export type InteractFields = 'email' | 'email_confirm' | 'pwd' | 'pwd_confirm';
+export type InteractFields = 'username' | 'email' | 'email_confirm' | 'pwd' | 'pwd_confirm';
 
 type TelemetryBoolean = 'yes' | 'no';
 type TelemetryPaymentMethods = {

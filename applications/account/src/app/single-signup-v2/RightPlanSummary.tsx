@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
+import clsx from '@proton/utils/clsx';
 
 import SaveLabel from './SaveLabel';
 
@@ -16,6 +17,7 @@ const RightPlanSummary = ({
     discount,
     features,
     free,
+    className,
 }: {
     title: string;
     price: ReactNode;
@@ -25,9 +27,10 @@ const RightPlanSummary = ({
     discount: number;
     features: PlanCardFeatureDefinition[];
     free?: boolean;
+    className?: string;
 }) => {
     return (
-        <div className="w100 border rounded-xl p-6">
+        <div className={clsx('w-full border rounded-xl p-6', className)}>
             <div className="text-rg text-bold mb-4">{c('Info').t`Summary`}</div>
             <div className="flex gap-2 flex-nowrap mb-2 flex-align-items-center">
                 <div className="border rounded-lg p-2" title={title}>
