@@ -2596,7 +2596,7 @@
         "Vous ne pouvez pas envoyer un message à plus de ${ maxContacts } destinataires."
       ],
       "You have reached the contacts limit for your account": [
-        "Vous avez atteint la limite de contacts pour vote compte."
+        "Vous avez atteint la limite du nombre de contacts pour votre compte."
       ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "Vous avez atteint le nombre maximum de calendriers. Certains calendriers n'ont pas pu être importés."
@@ -2950,6 +2950,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } version premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME } version premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } version premium"
+      ],
       "Up to 6 users": [
         "Jusqu'à 6 utilisateurs"
       ]
@@ -5831,6 +5840,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 utilisateur"
+      ],
       "3 TB": [
         "3 To"
       ],
@@ -5848,6 +5860,15 @@
       ],
       "Highest VPN speed": [
         "Vitesse VPN maximale"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME } version premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } et ${ DRIVE_SHORT_APP_NAME } version premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } version premium"
       ],
       "Premium early access": [
         "Accès premium en avant-première"
@@ -5893,14 +5914,24 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } mois",
+        "${ n } mois"
+      ],
       "/ month": [
         "/mois"
       ],
       "1 year": [
         "1 an"
       ],
+      "15 months": [
+        "15 mois"
+      ],
       "2 years": [
         "2 ans"
+      ],
+      "30 months": [
+        "30 mois"
       ],
       "Billed at ${ amount } for 1 month": [
         "Facturé ${ amount } pour 1 mois"
@@ -6201,6 +6232,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } version premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME } version premium"
+      ],
       "Premium Password Manager": [
         "Gestionnaire de mots de passe premium"
       ]
