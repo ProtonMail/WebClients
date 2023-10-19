@@ -2,7 +2,7 @@ import { type VFC, useCallback, useRef, useState } from 'react';
 
 import { Form, FormikProvider } from 'formik';
 import { SettingsPanel } from 'proton-pass-extension/lib/components/Settings/SettingsPanel';
-import { useExtensionContext } from 'proton-pass-extension/lib/hooks/useExtensionContext';
+import { useExtensionConnectContext } from 'proton-pass-extension/lib/hooks/useExtensionConnectContext';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
@@ -28,7 +28,7 @@ export const Import: VFC = () => {
     const beforeSubmitResolver = useRef<(value: UseImportFormBeforeSubmitValue) => void>();
     const reset = () => beforeSubmitResolver.current?.({ ok: false });
 
-    const { context } = useExtensionContext();
+    const { context } = useExtensionConnectContext();
 
     const beforeSubmit = useCallback<UseImportFormBeforeSubmit>(
         async (payload) =>
