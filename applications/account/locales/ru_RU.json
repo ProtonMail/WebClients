@@ -3038,9 +3038,6 @@
       "Contact signature not verified": [
         "Подпись контакта не подтверждена"
       ],
-      "Could not save preference": [
-        "Не удалось сохранить предпочтение"
-      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Отмените выбор по крайней мере ${ calendarsToFixCount } календаря",
         "Отмените выбор по крайней мере ${ calendarsToFixCount } календарей",
@@ -5583,9 +5580,6 @@
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "НЕ забудьте этот пароль. Если вы его забудете, то не сможете авторизоваться или расшифровать свои сообщения."
       ],
-      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Не используйте учётные данные OpenVPN / IKEv2 в приложениях ${ VPN_APP_NAME } или в панели управления ${ VPN_APP_NAME }.\n${ learnMore }"
-      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Вы хотите прервать все остальные сессии, кроме текущей?"
       ],
@@ -6915,9 +6909,6 @@
       "You cannot undo this action.": [
         "Это действие нельзя отменить."
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Вы не можете использовать учётные данные OpenVPN / IKEv2 для входа в приложения ${ VPN_APP_NAME } или панель управления ${ VPN_APP_NAME }. ${ learnMore }"
-      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Вы не задали способ восстановления доступа, поэтому, если вы забудете пароль, восстановление аккаунта будет невозможно. Продолжить без метода восстановления?"
       ],
@@ -7718,9 +7709,6 @@
       "Conversation grouping": [
         "Группировка сообщений в цепочки"
       ],
-      "Conversations per page": [
-        "Обсуждений на странице"
-      ],
       "Copy": [
         "Копировать"
       ],
@@ -7996,9 +7984,6 @@
       ],
       "Message": [
         "Сообщение"
-      ],
-      "Messages per page": [
-        "Сообщений на странице"
       ],
       "Moderate NAT": [
         "Умеренный NAT"
