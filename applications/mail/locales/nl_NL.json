@@ -1635,6 +1635,12 @@
       ],
       "You already tentatively accepted this invitation.": [
         "U hebt deze uitnodiging al voorlopig geaccepteerd."
+      ],
+      "You cannot respond to ${ BRAND_NAME } invites if you're not on the participants list at the moment.": [
+        "Op dit moment kan u niet reageren op ${ BRAND_NAME } uitnodigingen als u geen deelnemer bent."
+      ],
+      "Your email address is not in the original participants list.": [
+        "Het e-mailadres staat niet in de originele lijst met deelnemers."
       ]
     },
     "Calendar widget banner": {
@@ -3157,9 +3163,6 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Zoeken op inhoud kan niet worden ingeschakeld in deze browser. Gelieve de private browsing modus te verlaten of een andere browser te gebruiken."
-      ],
-      "Could not save preference": [
-        "Kon voorkeuren niet opslaan"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Ontsleutelingsfout: decodering van de gecodeerde inhoud van dit bericht is mislukt."
@@ -4971,6 +4974,9 @@
       "Copied to clipboard": [
         "Gekopieerd naar het klembord"
       ],
+      "Copy the link to clipboard": [
+        "Link kopiëren naar klembord"
+      ],
       "Country code": [
         "Landcode"
       ],
@@ -5029,9 +5035,6 @@
       ],
       "Do you want to re-sign the contact details?": [
         "Wilt u de contactgegevens opnieuw ondertekenen?"
-      ],
-      "Don't find what you are looking for? ${ displayAllMailButton }": [
-        "Vindt u niet wat u zoekt? ${ displayAllMailButton }"
       ],
       "Don't forget to share the password with the recipient": [
         "Vergeet het wachtwoord niet te delen met de ontvanger"
@@ -6410,9 +6413,6 @@
       "Contacts": [
         "Contacten"
       ],
-      "Conversations per page": [
-        "Gesprekken per pagina"
-      ],
       "Copy": [
         "Kopiëren"
       ],
@@ -6577,9 +6577,6 @@
       ],
       "Mark as": [
         "Markeren als"
-      ],
-      "Messages per page": [
-        "Berichten per pagina"
       ],
       "Move ${ sidebarElementName }": [
         "Verplaats ${ sidebarElementName }"
@@ -7361,6 +7358,9 @@
       ],
       "Contact group updated": [
         "Contactgroep bijgewerkt"
+      ],
+      "Link copied to clipboard": [
+        "Link gekopieerd naar klembord"
       ],
       "Password has been set successfully": [
         "Wachtwoord is succesvol ingesteld"

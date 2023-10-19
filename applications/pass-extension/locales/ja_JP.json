@@ -460,12 +460,6 @@
       "Invitation could not be rejected": [
         "招待は拒否できませんでした。"
       ],
-      "Invite creation failed.": [
-        "招待の作成に失敗しました。"
-      ],
-      "Invite successfully sent": [
-        "招待が正常に送信されました。"
-      ],
       "Item content cannot exceed 40KB": [
         "アイテムの内容が40KBを超えることはできません"
       ],
@@ -498,9 +492,6 @@
       ],
       "Restoring item failed": [
         "アイテムの復元に失敗しました"
-      ],
-      "Setting \"${ payload.name }\" as primary vault failed": [
-        "プライマリー保管庫としての “${ payload.name }” 設定に失敗しました"
       ],
       "Settings update failed": [
         "設定の更新に失敗しました"
@@ -611,9 +602,6 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "「${ payload.item.data.metadata.name }」更新が却下されました"
-      ],
-      "\"${ payload.name }\" set as primary vault": [
-        "「${ payload.name }」をプライマリー保管庫として設定"
       ],
       "${ count } items": [
         "${ count } 件のアイテム"
@@ -1005,14 +993,8 @@
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "あなたのサブスクリプションに含まれるフォルダーの最大数を超えています。アイテムは最初の2つのフォルダーにのみ移動できます。すべてのフォルダー間でアイテムを移動するには、サブスクリプションをアップグレードしてください。"
       ],
-      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
-        "サブスクリプションに含まれる保管庫の数を超えています。アイテムはプライマリ保管庫にのみ移動できます。すべての保管庫間でアイテムを移動するには、サブスクリプションをアップグレードしてください。"
-      ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
         "「あなたのサブスクリプションに含まれるフォルダーの最大数を超えています。新しいアイテムは最初の2つのフォルダーでのみ作成できます。すべてのフォルダーで新しいアイテムを作成するには、サブスクリプションをアップグレードしてください。"
-      ],
-      "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
-        "サブスクリプションに含まれるデータ保管庫の数を超えています。新しいアイテムは、プライマリ保管庫でのみ作成できます。すべてのデータ保管庫に新しいアイテムを作成するには、サブスクリプションをアップグレードしてください。"
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "作成できるエイリアスの制限に達しました。 サブスクリプションをアップグレードするときに、エイリアスを無制限に作成できます。"
@@ -1319,9 +1301,6 @@
       "Prefix": [
         "Prefix"
       ],
-      "Primary vault": [
-        "プライマリー保管庫"
-      ],
       "Prompt for auto-save": [
         "自動保存のプロンプト"
       ],
@@ -1426,9 +1405,6 @@
       ],
       "Vault": [
         "保管庫"
-      ],
-      "Vaults": [
-        "フォルダー"
       ],
       "Verification number": [
         "検証番号"
@@ -1812,17 +1788,11 @@
       "Your plan only allows you to autofill from your first two vaults": [
         "あなたのプランでは、最初の2つのフォルダーからのみ自動入力が許可されています。"
       ],
-      "Your plan only allows you to autofill from your primary vault": [
-        "あなたのプランではプライマリー保管庫からの自動入力のみが利用可能です。"
-      ],
       "Your session was locked due to inactivity": [
         "非アクティブのためセッションがロックされました"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "あなたのサブスクリプションでは、複数のフォルダーを作成することはできません。すべてのアイテムは最初のフォルダーにインポートされます。複数のフォルダーにインポートするには、サブスクリプションをアップグレードしてください。"
-      ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
-        "あなたのプランでは複数の保管庫を作成することはできません。すべてのアイテムはプライマリー保管庫にインポートされます。複数の保管庫にインポートするには、プランをアップグレードしてください。"
       ]
     }
   }

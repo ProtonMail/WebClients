@@ -56,8 +56,8 @@
         "Aplica"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
-        "El nombre màxim de contactes per grup de contactes és de ${ maxContacts }.",
-        "El nombre màxim de contactes per grup de contactes és de ${ maxContacts }."
+        "Es permet un màxim d'${ maxContacts } contacte per grup de contactes.",
+        "Es permet un màxim de ${ maxContacts } contactes per grup de contactes."
       ],
       "Attach screenshot(s)": [
         "Adjunta una o més captures de pantalla"
@@ -731,7 +731,7 @@
         "Mostra la factura"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "No podeu enviar fitxers vCard de més de ${ maxAttachments } contactes.",
+        "No podeu enviar fitxers vCard de més d'${ maxAttachments } contacte.",
         "No podeu enviar fitxers vCard de més de ${ maxAttachments } contactes."
       ],
       "Your 500 MB bonus": [
@@ -2240,7 +2240,7 @@
         "El nom d'usuari ha d'acabar amb una lletra o un dígit."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
-        "No podeu enviar un correu a més de ${ maxContacts } destinatari.",
+        "No podeu enviar un correu a més d'${ maxContacts } destinatari.",
         "No podeu enviar un correu a més de ${ maxContacts } destinataris."
       ],
       "You have reached the contacts limit for your account": [
@@ -3159,8 +3159,8 @@
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendaris"
       ],
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
-        "${ selectedContactsLength }/${ contactsLength } contacte seleccionat",
-        "${ selectedContactsLength }/${ contactsLength } contactes seleccionats"
+        "${ selectedContactsLength } contacte seleccionat de ${ contactsLength }",
+        "${ selectedContactsLength } contactes seleccionats de ${ contactsLength }"
       ],
       "${ selectedCount } selected": [
         "${ selectedCount } seleccionat"
@@ -3750,7 +3750,7 @@
         "Introduïu la contrasenya per a desxifrar i veure el contingut."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
-        "Tingueu en compte que les adreces assignades a aquests grups NO se suprimeixen."
+        "Teniu en compte que les adreces assignades a aquests grups NO se suprimiran."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Tingueu en compte que les adreces assignades a aquest grup NO se suprimiran."
@@ -5411,12 +5411,12 @@
         "${ timeRemaining.inHours } hores"
       ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teneu ${ timeRemaining.inDays } dia per restablir la vostra contrasenya.",
-        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teneu ${ timeRemaining.inDays } dies per restablir la vostra contrasenya."
+        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inDays } dia per restablir la vostra contrasenya.",
+        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inDays } dies per restablir la vostra contrasenya."
       ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teneu ${ timeRemaining.inHours } hora per restablir la vostra contrasenya.",
-        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teneu ${ timeRemaining.inHours } hores per restablir la vostra contrasenya."
+        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inHours } hora per restablir la vostra contrasenya.",
+        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inHours } hores per restablir la vostra contrasenya."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Aneu a l'aparell connectat (a la sessió on es va iniciar la sol·licitud) per canviar la vostra contrasenya."

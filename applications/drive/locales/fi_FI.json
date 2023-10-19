@@ -2522,7 +2522,7 @@
     },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
-        "Yhteensä 3 Tt tallennustilaa"
+        "3 Tt kokonaistallennustila"
       ]
     },
     "familyOffer_2023: Get Proton Family": {
@@ -2532,7 +2532,7 @@
     },
     "familyOffer_2023: Tooltip": {
       "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Tallennustila on jaettu perheenjäsenten kesken ${ MAIL_APP_NAME }ille, ${ CALENDAR_APP_NAME }ille ja ${ DRIVE_APP_NAME }lle."
+        "Tallennustila jaetaan perheenjäsenille ja se kattaa ${ MAIL_APP_NAME }in, ${ CALENDAR_APP_NAME }in ja ${ DRIVE_APP_NAME }n."
       ]
     },
     "familyOffer_2023:Action": {
@@ -2553,8 +2553,17 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
-        "Enintään 6 käyttäjää"
+        "6 käyttäjälle"
       ]
     },
     "familyOffer_2023:Family plan": {
@@ -2655,13 +2664,13 @@
     },
     "familyOffer_2023:Tooltip": {
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Sisältää 2950+ palvelinta yli 65+ maassa, 10 samanaikaista laitetta, maailmanlaajuisen tuen suoratoistopalveluille, haittasisällön- ja mainoseston sekä paljon muuta."
+        "Sisältää 2950+ palvelinta yli 65+ maassa, 10 samanaikaista yhdistettyä laitetta, maailmanlaajuisen suoratoistotuen, haittasisällön- ja mainoseston sekä paljon muuta."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
         "Sisältää tuen kolmelle omalle sähköpostiverkkotunnukselle, 90 sähköpostiosoitteelle, rajattomasti Hide-my-email-aliaksia, kalenterijaon sekä paljon muuta."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää automaattisen synkronoinnin, salatun tiedostojen jakamisen ja paljon muuta."
+        "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää mm. automaattisen synkronoinnin ja salatun tiedostojen jakamisen."
       ]
     },
     "Feedback Modal Title": {
@@ -3326,6 +3335,9 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Jatka ${ DRIVE_APP_NAME }n käyttämistä ja avaa levy myöhemmin"
+      ],
+      "Copy the link to clipboard": [
+        "Kopioi linkki leikepöydälle"
       ],
       "Country code": [
         "Maakoodi"
@@ -5061,6 +5073,9 @@
       "File or folder is missing a name": [
         "Tiedostolta tai kansiolta puuttuu nimi"
       ],
+      "Link copied to clipboard": [
+        "Linkki kopioitu leikepöydälle"
+      ],
       "Move ${ itemsToMoveCount } file": [
         "Siirrä ${ itemsToMoveCount } tiedosto",
         "Siirrä ${ itemsToMoveCount } tiedostoa"
@@ -5597,6 +5612,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 käyttäjä"
+      ],
       "3 TB": [
         "3 Tt"
       ],
@@ -5614,6 +5632,15 @@
       ],
       "Highest VPN speed": [
         "Korkein VPN-nopeus"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } ja ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium early access": [
         "Premium-ennakkokäyttö"
@@ -5659,29 +5686,39 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } kuukausi",
+        "${ n } kuukautta"
+      ],
       "/ month": [
         "kuukaudessa"
       ],
       "1 year": [
         "1 vuosi"
       ],
+      "15 months": [
+        "15 kuukautta"
+      ],
       "2 years": [
         "2 vuotta"
       ],
+      "30 months": [
+        "30 kuukautta"
+      ],
       "Billed at ${ amount } for 1 month": [
-        "Laskutetaan ${ amount } 1 kuukauden ajan"
+        "Laskutetaan ${ amount } 1 kuukaudelta"
       ],
       "Billed at ${ amount } for 12 months": [
-        "Laskutetaan ${ amount } 12 kuukauden ajan"
+        "Laskutetaan ${ amount } 12 kuukaudelta"
       ],
       "Billed at ${ amount } for 15 months": [
-        "Laskutetaan ${ amount } 15 kuukauden ajan"
+        "Laskutetaan ${ amount } 15 kuukaudelta"
       ],
       "Billed at ${ amount } for 24 months": [
-        "Laskutetaan ${ amount } 24 kuukauden ajan"
+        "Laskutetaan ${ amount } 24 kuukaudelta"
       ],
       "Billed at ${ amount } for 30 months": [
-        "Laskutetaan ${ amount } 30 kuukauden ajan"
+        "Laskutetaan ${ amount } 30 kuukaudelta"
       ],
       "Get the deal": [
         "Hanki tarjous"
@@ -5696,19 +5733,19 @@
         "Säästä ${ discount } %"
       ],
       "Standard price ${ amount } for 1 month": [
-        "1 kuukauden normaali hinta on ${ amount }"
+        "Normaalihinta 1 kuukaudelta on ${ amount }"
       ],
       "Standard price ${ amount } for 12 months": [
-        "12 kuukauden normaali hinta on ${ amount }"
+        "Normaalihinta 12 kuukaudelta on ${ amount }"
       ],
       "Standard price ${ amount } for 15 months": [
-        "15 kuukauden normaali hinta on ${ amount }"
+        "Normaalihinta 15 kuukaudelta on ${ amount }"
       ],
       "Standard price ${ amount } for 24 months": [
-        "24 kuukauden normaali hinta on ${ amount }"
+        "Normaalihinta 24 kuukaudelta on ${ amount }"
       ],
       "Standard price ${ amount } for 30 months": [
-        "30 kuukauden normaali hinta on ${ amount }"
+        "Normaalihinta 30 kuukaudelta on ${ amount }"
       ]
     },
     "specialoffer: Title": {
@@ -5751,7 +5788,7 @@
         "Kaikki premium-palvelumme parhaimmillaan: 100 sähköpostiosoitetta, tuki 10 omalle verkkotunnukselle, rajattomasti Hide-my-email-aliaksia, kalenterijako, salattu pilvitallennus tiedostojen jaolla sekä paljon muuta."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Sisältää tuen kolmelle omalle sähköpostiverkkotunnukselle, 15 sähköpostiosoitteelle, rajattomasti Hide-my-email-aliaksia, kalenterijaon sekä paljon muuta."
+        "Sisältää mm. tuen 3 omalle sähköpostiverkkotunnukselle, 15 sähköpostiosoittetta, rajattomasti Hide-my-email-aliaksia sekä kalenterijaon."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
         "Täydellinen perheille tai pienille ryhmille, joilla jokaisella voi olla oma postilaatikko ja alias. Vaatii oman verkkotunnuksen."
@@ -5760,7 +5797,7 @@
         "Saat ilmaiseksi maksulliset versiot kaikista uusista tietosuojapalveluista, jotka julkaisemme tulevaisuudessa, sekä pääsyn kaikkiin tuleviin ominaisuuksiin ja tuotteisiin."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää automaattisen synkronoinnin, salatun tiedostojen jakamisen ja paljon muuta."
+        "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää mm. automaattisen synkronoinnin ja salatun tiedostojen jakamisen."
       ]
     },
     "Spotlight": {
@@ -5778,6 +5815,9 @@
       ]
     },
     "Storage": {
+      "Get storage": [
+        "Hanki tallennustilaa"
+      ],
       "Release notes": [
         "Julkaisutiedot"
       ],
@@ -5864,6 +5904,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Premium Password Manager": [
         "Premium salasanahallinta"
       ]
@@ -5879,7 +5925,7 @@
         "Sisältää tuen yhdelle omalle sähköpostiverkkotunnukselle, 10 sähköpostiosoitteelle, 10 hide-my-email-aliakselle, kalenterijaolle sekä paljon muuta."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää versiohistorian, salatun tiedostojen jakamisen ja paljon muuta."
+        "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää mm. versiohistorian ja salatun tiedostojen jakamisen."
       ]
     },
     "summer2023:Footer": {

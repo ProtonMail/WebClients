@@ -3169,9 +3169,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "No puedes habilitar la búsqueda de contenido en este navegador. Sal del modo de navegación privada o utiliza otro navegador."
       ],
-      "Could not save preference": [
-        "No se ha podido guardar la preferencia."
-      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Error al descifrar: no se ha podido descifrar el contenido de este mensaje."
       ],
@@ -3838,6 +3835,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } premium"
+      ],
       "Up to 6 users": [
         "Hasta 6 usuarios"
       ]
@@ -3892,7 +3898,7 @@
         "Te has unido correctamente al plan familiar"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
-        "Has recibido una invitación para que vincules tu cuenta de ${ BRAND_NAME } a este plan grupal y disfrutes así de todas las funciones prémium de ${ BRAND_NAME_TWO }."
+        "Has recibido una invitación para que vincules tu cuenta de ${ BRAND_NAME } a este plan grupal y disfrutes así de todas las funciones premium de ${ BRAND_NAME_TWO }."
       ],
       "Your account has more email addresses than what's available to you in this plan. ${ addressSettingsLink }": [
         "Tu cuenta tiene más direcciones de correo electrónico que las que tienes disponibles en este plan. ${ addressSettingsLink }"
@@ -4943,6 +4949,9 @@
       "Calendar side panel": [
         "Panel lateral del calendario"
       ],
+      "Can't find what you're looking for? ${ displayAllMailButton }": [
+        "¿No encuentras lo que buscas? ${ displayAllMailButton }"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "¿No puedes recordar tu contraseña? Podemos ayudarte a eliminar los datos cifrados de todos los contactos cifrados con esta clave y desactivar la alerta al mismo tiempo."
       ],
@@ -5043,9 +5052,6 @@
       ],
       "Do you want to re-sign the contact details?": [
         "¿Quieres volver a firmar los datos del contacto?"
-      ],
-      "Don't find what you are looking for? ${ displayAllMailButton }": [
-        "¿No encuentras lo que buscas? ${ displayAllMailButton }"
       ],
       "Don't forget to share the password with the recipient": [
         "No olvides compartir la contraseña con el destinatario."
@@ -5806,7 +5812,7 @@
         "Actualizando búsqueda de contenido de mensaje..."
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
-        "Pasa a un plan superior ahora para obtener funciones prémium, productos y almacenamiento a un precio especial."
+        "Pasa a un plan superior ahora para obtener funciones premium, productos y almacenamiento a un precio especial."
       ],
       "Upgrade to add more addresses to your account.": [
         "Mejora tu plan para añadir más direcciones a tu cuenta."
@@ -6424,9 +6430,6 @@
       "Contacts": [
         "Contactos"
       ],
-      "Conversations per page": [
-        "Conversaciones por página"
-      ],
       "Copy": [
         "Copiar"
       ],
@@ -6591,9 +6594,6 @@
       ],
       "Mark as": [
         "Marcar como"
-      ],
-      "Messages per page": [
-        "Mensajes por página"
       ],
       "Move ${ sidebarElementName }": [
         "Mover ${ sidebarElementName }"
@@ -8119,6 +8119,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 usuario"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -8136,6 +8139,15 @@
       ],
       "Highest VPN speed": [
         "VPN de máxima velocidad"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y ${ DRIVE_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } premium"
       ],
       "Premium early access": [
         "Acceso anticipado premium"
@@ -8181,14 +8193,24 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } meses"
+      ],
       "/ month": [
         "/ mes"
       ],
       "1 year": [
         "1 año"
       ],
+      "15 months": [
+        "15 meses"
+      ],
       "2 years": [
         "2 años"
+      ],
+      "30 months": [
+        "30 meses"
       ],
       "Billed at ${ amount } for 1 month": [
         "Al precio de ${ amount } durante 1 mes"
@@ -8247,7 +8269,7 @@
         "Oferta de final de año"
       ],
       "Get our premium bundle and save more": [
-        "Contrata nuestro paquete prémium y ahorra más dinero"
+        "Contrata nuestro paquete premium y ahorra más dinero"
       ],
       "Our discontinued Visionary plan is back for a limited time only": [
         "Nuestro económico plan Visionary está de nuevo disponible por tiempo limitado"
@@ -8617,6 +8639,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } premium"
+      ],
       "Premium Password Manager": [
         "Administrador de contraseñas premium"
       ]

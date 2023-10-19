@@ -3331,9 +3331,6 @@
       "Contact signature not verified": [
         "연락처 서명이 인증되지 않았습니다."
       ],
-      "Could not save preference": [
-        "기본 설정을 저장할 수 없습니다."
-      ],
       "Deselect at least ${ calendarsToFixCount } calendars": [
         "최소${ calendarsToFixCount } 개 캘린더를 선택 해제하세요"
       ],
@@ -4171,6 +4168,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "최대 6명 사용자"
       ]
@@ -5315,7 +5321,7 @@
         "${ boldWarning } 이 작업을 계속하면 현재 계정에 저장된 모든 암호화된 데이터에 접근할 수 없습니다."
       ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
-        "${ BRAND_NAME }은(는) 당신이 신뢰할 수 있는 프라이버시 보호, 강력한 암호화 보장, 오픈 소스 코드, 스위스 법률로 보호됩니다. 우리는 아무도 당신의 데이터를 악용해서는 안 된다고 믿습니다. 우리 기술과 사업은 근본적으로 더 강력한 프라이버시 보호에 기초를 두고 있죠."
+        "${ BRAND_NAME }은 당신이 신뢰할 수 있는 프라이버시 보호, 강력한 암호화 보장, 오픈 소스 코드, 스위스 법률로 보호됩니다. 우리는 아무도 당신의 데이터를 악용해서는 안 된다고 믿습니다. 우리 기술과 사업은 근본적으로 더 강력한 프라이버시 보호에 기초를 두고 있죠."
       ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } 다른 이메일 공급자와의 접속이 끊겨 가져오기 작업이 잠시 중지되었습니다. 다시 연결해 주세요."
@@ -5345,7 +5351,7 @@
         "영구적으로 ${ discountPercentage }"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME }이 더 이상 사용자의 이전 버전의 파일을 보관하지 않습니다."
+        "${ DRIVE_APP_NAME }가 더 이상 사용자의 이전 버전의 파일을 보관하지 않습니다."
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } 이(가) 유효하지 않음"
@@ -5384,7 +5390,7 @@
         "${ plan.Title }이(가) 최소 1개 이상 지정 서버를 필요합니다 ${ serverPricePerMonth }"
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME }은(는) 보안 위협으로부터 사용자를 보호하기 위해 24시간 작동하는 정교한 AI 시스템과 보안계 전문가들로 이루워진 고급 계정 보호 프로그램입니다."
+        "${ PROTON_SENTINEL_NAME }은 보안 위협으로부터 사용자를 보호하기 위해 24시간 작동하는 정교한 AI 시스템과 보안계 전문가들로 이루워진 고급 계정 보호 프로그램입니다."
       ],
       "${ providerFoldersNumLocalized } folders found": [
         "${ providerFoldersNumLocalized }개 폴더 찾음"
@@ -5853,9 +5859,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "이 비밀번호를 잊지 마세요. 잊어버릴 경우 로그인을 할 수 없거나 메시지를 읽을 수 없습니다."
-      ],
-      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "${ VPN_APP_NAME } 애플리케이션 또는 ${ VPN_APP_NAME } 대시보드에서 OpenVPN / IKEv2 자격 증명을 사용하지 마세요. ${ learnMore }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "현재 세션이 아닌 다른 모든 세션을 취소하시겠습니까?"
@@ -7267,9 +7270,6 @@
       "You cannot undo this action.": [
         "이 동작은 실행취소할 수 없습니다."
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "OpenVPN/IKEv2 자격 증명을 사용하여 ${ VPN_APP_NAME } 애플리케이션 또는 ${ VPN_APP_NAME } 대시보드에 로그인할 수 없어요. ${ learnMore }"
-      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "복구 방법을 설정하지 않으면 비밀번호를 잊어버렸을 때 계정을 복구할 수 없습니다. 복구 방법을 설정하지 않고 진행하시겠습니까?"
       ],
@@ -7363,6 +7363,9 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "귀하의 계정에 적어도 하나의 연체된 결제가 있습니다. 귀하의 계정이 제한되어 있습니다. 지속적인 미지불이 이메일과 공유 링크를 차단시킬 수 있습니다. ${ payInvoiceLink }"
       ],
+      "Your account has been successfully updated": [
+        "계정이 정상적으로 수정되었습니다."
+      ],
       "Your account recovery method is set": [
         "계정 복구 방법이 설정되었습니다"
       ],
@@ -7419,6 +7422,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "유료 구독은 Mozilla에서 관리합니다. Mozilla 지원에 연락하세요."
+      ],
+      "Your subscription will auto-renew on ${ renewalTime }.": [
+        "사용자의 구독이 ${ renewalTime }에 자동으로 갱신됩니다."
       ]
     },
     "info": {
@@ -8067,9 +8073,6 @@
       "Conversation grouping": [
         "대화 그룹"
       ],
-      "Conversations per page": [
-        "페이지 당 대화"
-      ],
       "Copy": [
         "복사"
       ],
@@ -8358,9 +8361,6 @@
       "Message": [
         "메시지"
       ],
-      "Messages per page": [
-        "페이지 당 메시지"
-      ],
       "Moderate NAT": [
         "일반형 NAT"
       ],
@@ -8402,6 +8402,9 @@
       ],
       "New password": [
         "새 비밀번호"
+      ],
+      "New plan": [
+        "새 플랜"
       ],
       "No filter": [
         "필터 없음"
@@ -9525,6 +9528,9 @@
       "99.95% SLA": [
         "99.95% SLA"
       ],
+      "Ad-blocker and malware protection": [
+        "광고 차단기 및 멀웨어 보호"
+      ],
       "Admin console": [
         "관리자 콘솔"
       ],
@@ -9748,7 +9754,7 @@
         "무제한 라벨"
       ],
       "Unlimited logins and notes": [
-        "무제한 로그인 및 노트"
+        "무제한 로그인 및 메모"
       ],
       "Unlimited messages per day": [
         "하루에 무제한 메시지"
@@ -10740,7 +10746,7 @@
         "${ PASS_APP_NAME }가 엄격한 종단간 암호화로 비밀번호와 신원을 안전하게 유지합니다. ${ PASS_APP_NAME_2 } 프리미엄 기능을 현재 구독에 추가하려면, ${ upsellPlanName } 플랜으로 업그레이드 하는 것을 권장합니다."
       ],
       "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
-        "${ PASS_APP_NAME }은 엄격한 종단간 암호화로 비밀번호와 신원을 안전하게 유지합니다. 현재 플랜으로 ${ PASS_APP_NAME_2 } 프리미엄 기능을 사용할 수 있습니다 — 다시 구매할 필요 없습니다."
+        "${ PASS_APP_NAME }는 엄격한 종단간 암호화로 비밀번호와 신원을 안전하게 유지합니다. 현재 플랜으로 ${ PASS_APP_NAME_2 } 프리미엄 기능을 사용할 수 있습니다 — 다시 구매할 필요 없습니다."
       ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice }/월간"
@@ -10773,7 +10779,7 @@
         "당신의 신원도 보호하는 암호화된 비밀번호 관리자"
       ],
       "End-to-end encrypted notes": [
-        "종단간 암호화된 노트"
+        "종단간 암호화된 메모"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "**월간 ${ relativePrice }**에 모든 ${ BRAND_NAME } 프리미엄 서비스를 사용하실 수 있습니다!"
@@ -10819,6 +10825,9 @@
       ],
       "Open-source and audited": [
         "오픈소스 및 심사됨"
+      ],
+      "per month": [
+        "매월"
       ],
       "per month, billed annually": [
         "월 기준, 매년마다 납부됩"
@@ -11707,6 +11716,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "사용자 1명"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -11724,6 +11736,15 @@
       ],
       "Highest VPN speed": [
         "가장 빠른 VPN 속도"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium early access": [
         "프리미엄 얼리 엑세스"
@@ -11774,14 +11795,23 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } months": [
+        "${ n }개월"
+      ],
       "/ month": [
         "/ 월"
       ],
       "1 year": [
         "1년"
       ],
+      "15 months": [
+        "15개월"
+      ],
       "2 years": [
         "2년"
+      ],
+      "30 months": [
+        "30개월"
       ],
       "Billed at ${ amount } for 1 month": [
         "1달에 ${ amount }씩 청구됨"
@@ -12330,6 +12360,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Premium Password Manager": [
         "프리미엄 암호 관리자"
       ]
@@ -13854,8 +13890,14 @@
       "1-year": [
         "1년"
       ],
+      "15-month": [
+        "15개월"
+      ],
       "2-year": [
         "2년"
+      ],
+      "30-month": [
+        "30개월"
       ],
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "${ billingCycle } 구독으로 ${ discount } 할인"
