@@ -173,6 +173,9 @@
       "Importing": [
         "Import"
       ],
+      "Invite others": [
+        "Pozvat ostatní"
+      ],
       "Join shared vault": [
         "Připojit ke sdílenému trezoru"
       ],
@@ -268,6 +271,9 @@
       ],
       "Share": [
         "Sdílet"
+      ],
+      "Share vault": [
+        "Sdílet trezor"
       ],
       "Show": [
         "Zobrazit"
@@ -445,12 +451,6 @@
       "Invitation could not be rejected": [
         "Pozvánku nebylo možné odmítnout"
       ],
-      "Invite creation failed.": [
-        "Nepodařilo se vytvořit pozvánku"
-      ],
-      "Invite successfully sent": [
-        "Pozvánka byla úspěšně odeslána"
-      ],
       "Item content cannot exceed 40KB": [
         "Obsah položky nemůže přesáhnout 40KB"
       ],
@@ -483,9 +483,6 @@
       ],
       "Restoring item failed": [
         "Obnovení položky se nezdařilo"
-      ],
-      "Setting \"${ payload.name }\" as primary vault failed": [
-        "Nastavení trezoru \"${ payload.name }\" jako primárního selhalo"
       ],
       "Settings update failed": [
         "Aktualizace nastavení se nezdařila"
@@ -611,9 +608,6 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Aktualizace \"${ payload.item.data.metadata.name }\" byla odmítnuta"
-      ],
-      "\"${ payload.name }\" set as primary vault": [
-        "Trezor \"${ payload.name }\" nastaven jako primární"
       ],
       "${ count } item": [
         "${ count } položka",
@@ -806,6 +800,9 @@
       ],
       "Internet connection lost": [
         "Připojení k Internetu bylo ztraceno"
+      ],
+      "Invitation sent": [
+        "Pozvánka odeslána"
       ],
       "Invite successfully removed": [
         "Pozvánka byla úspěšně odebrána"
@@ -1019,12 +1016,6 @@
         "Do konce zkušební doby zbývají ${ daysRemaining } dny.",
         "Do konce zkušební doby zbývá ${ daysRemaining } dnů.",
         "Do konce zkušební doby zbývá ${ daysRemaining } dnů."
-      ],
-      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
-        "Překročili jste počet trezorů zahrnutých do vašeho předplatného. Položky lze přesunout pouze do primárního trezoru. Chcete-li přesouvat položky mezi všemi trezory, navyšte své předplatné"
-      ],
-      "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
-        "Překročili jste počet trezorů zahrnutých do vašeho předplatného. Nové položky lze vytvářet pouze v primárním trezoru. Chcete-li vytvořit nové položky ve všech trezorech, navyšte své předplatné."
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Dosáhli jste limitu aliasů, které můžete vytvořit. Při navýšení předplatného si můžete vytvořit neomezený počet aliasů."
@@ -1331,9 +1322,6 @@
       "Prefix": [
         "Předpona"
       ],
-      "Primary vault": [
-        "Primární trezor"
-      ],
       "Prompt for auto-save": [
         "Výzva automatického ukládání"
       ],
@@ -1438,6 +1426,9 @@
       ],
       "Verification number": [
         "Číslo pro ověření"
+      ],
+      "View details": [
+        "Zobrazit podrobnosti"
       ],
       "View logs": [
         "Zobrazit logy"
@@ -1619,6 +1610,9 @@
       "Secure your data": [
         "Zabezpečte svá data"
       ],
+      "Set access level": [
+        "Nastavit úroveň přístupu"
+      ],
       "Share with": [
         "Sdílet s"
       ],
@@ -1648,6 +1642,9 @@
       ],
       "Use my email": [
         "Použít můj e-mail"
+      ],
+      "Vault shared with you": [
+        "Trezor sdílený s vámi"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Vítejte v ${ brandNameJSX }"
@@ -1797,14 +1794,8 @@
       "Your plan does not allow you to create more aliases": [
         "Váš tarif vám neumožňuje vytvářet další aliasy."
       ],
-      "Your plan only allows you to autofill from your primary vault": [
-        "Váš tarif umožňuje automatické vyplňování pouze z vašeho primárního trezoru."
-      ],
       "Your session was locked due to inactivity": [
         "Vaše relace byla uzamčena z důvodu neaktivity"
-      ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
-        "Vaše předplatné neumožňuje vytvořit více trezorů. Všechny položky budou importovány do vašeho primárního trezoru. Chcete-li importovat do více trezorů, navyšte své předplatné."
       ]
     }
   }

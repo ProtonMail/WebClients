@@ -424,8 +424,14 @@
       "Get verification code": [
         "Skaffa verifieringskod"
       ],
+      "Go to first page": [
+        "Gå till första sidan"
+      ],
       "Go to label": [
         "Gå till etikett"
+      ],
+      "Go to last page": [
+        "Gå till sista sidan"
       ],
       "Go to next page": [
         "Gå till nästa sida"
@@ -1296,37 +1302,6 @@
       ],
       "Sender verification passed": [
         "Avsändarverifiering godkänd"
-      ]
-    },
-    "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } lagringsutrymme"
-      ],
-      "1 user": [
-        "1 användare"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 användare"
-      ],
-      "Ad-blocker and malware protection": [
-        "Annonsblockerare och skydd mot skadlig kod"
-      ],
-      "Extended version history": [
-        "Utökad versionshistorik"
-      ],
-      "High speed streaming": [
-        "Höghastighetsstreaming"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
-      ]
-    },
-    "bf2023: Tooltip": {
-      "Store up to 200 versions of each file for up to 10 years.": [
-        "Lagra upp till 200 versioner av varje fil i upp till 10 år."
       ]
     },
     "Billing cycle option": {
@@ -3200,9 +3175,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Innehållssökning kan inte aktiveras i denna webbläsare. Avsluta läget för privat surfning eller använd en annan webbläsare."
       ],
-      "Could not save preference": [
-        "Kunde inte spara preferens"
-      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Dekrypteringsfel: dekryptering av detta meddelandets krypterade innehåll misslyckades."
       ],
@@ -3869,6 +3841,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "Upp till 6 användare"
       ]
@@ -4974,6 +4955,9 @@
       "Calendar side panel": [
         "Kalenderns sidopanel"
       ],
+      "Can't find what you're looking for? ${ displayAllMailButton }": [
+        "Kan du inte hitta det du letar efter? ${ displayAllMailButton }"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Kommer du inte ihåg ditt lösenord? Vi kan hjälpa dig att rensa krypterad data från alla kontakter krypterade med denna nyckel och samtidigt avfärda varningen."
       ],
@@ -5074,9 +5058,6 @@
       ],
       "Do you want to re-sign the contact details?": [
         "Vill du signera dessa kontaktuppgifter igen?"
-      ],
-      "Don't find what you are looking for? ${ displayAllMailButton }": [
-        "Hittar du inte vad du letar efter? ${ displayAllMailButton }"
       ],
       "Don't forget to share the password with the recipient": [
         "Glöm inte att dela lösenordet med mottagaren"
@@ -6455,9 +6436,6 @@
       "Contacts": [
         "Kontakter"
       ],
-      "Conversations per page": [
-        "Konversationer per sida"
-      ],
       "Copy": [
         "Kopiera"
       ],
@@ -6622,9 +6600,6 @@
       ],
       "Mark as": [
         "Markera som"
-      ],
-      "Messages per page": [
-        "Meddelanden per sida"
       ],
       "Move ${ sidebarElementName }": [
         "Flytta ${ sidebarElementName }"
@@ -7001,6 +6976,9 @@
       ],
       "Sent": [
         "Skickat"
+      ],
+      "Set up email forwarding": [
+        "Ställ in vidarebefordran av e-post"
       ],
       "Sign up for free": [
         "Registrera gratis"
@@ -8171,6 +8149,15 @@
       "Highest VPN speed": [
         "Högsta VPN-hastighet"
       ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
       "Premium early access": [
         "Premium förhandstillgång"
       ],
@@ -8356,6 +8343,9 @@
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Vi laddar nu bilder som standard och blockerar avsändare från att spåra dig. Detta kan ändras i ${ settingsLink }."
+      ],
+      "You can now automatically forward your emails to anyone!": [
+        "Du kan nu automatiskt vidarebefordra din e-post till vem som helst!"
       ],
       "You can now schedule your messages to be sent later": [
         "Du kan nu schemalägga dina meddelanden för att skickas senare"
@@ -8661,6 +8651,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Premium Password Manager": [
         "Premium lösenordshanterare"
       ]

@@ -3149,9 +3149,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "콘텐츠 검색이 이 브라우저에서는 작동하지 않습니다. 시크릿 모드를 종료하거나 다른 브라우저를 이용해 주세요."
       ],
-      "Could not save preference": [
-        "기본 설정을 저장할 수 없습니다."
-      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "복호화 오류: 이 메시지의 암호화된 내용을 복호화할 수 없습니다."
       ],
@@ -3806,6 +3803,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "최대 6명 사용자"
       ]
@@ -4951,9 +4957,6 @@
       ],
       "Do you want to re-sign the contact details?": [
         "연락처 상세정보에 다시 서명 하시겠습니까?"
-      ],
-      "Don't find what you are looking for? ${ displayAllMailButton }": [
-        "원하시는 걸 찾지 못하셨나요? ${ displayAllMailButton }"
       ],
       "Don't forget to share the password with the recipient": [
         "받는 사람에게 비밀번호를 공유하는 것을 잊지 마세요"
@@ -6309,9 +6312,6 @@
       "Contacts": [
         "연락처"
       ],
-      "Conversations per page": [
-        "페이지 당 대화"
-      ],
       "Copy": [
         "복사"
       ],
@@ -6476,9 +6476,6 @@
       ],
       "Mark as": [
         "표시"
-      ],
-      "Messages per page": [
-        "페이지 당 메시지"
       ],
       "Move ${ sidebarElementName }": [
         "${ sidebarElementName } 이동"
@@ -7972,6 +7969,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "사용자 1명"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -7989,6 +7989,15 @@
       ],
       "Highest VPN speed": [
         "가장 빠른 VPN 속도"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium early access": [
         "프리미엄 얼리 엑세스"
@@ -8034,14 +8043,23 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } months": [
+        "${ n }개월"
+      ],
       "/ month": [
         "/ 월"
       ],
       "1 year": [
         "1년"
       ],
+      "15 months": [
+        "15개월"
+      ],
       "2 years": [
         "2년"
+      ],
+      "30 months": [
+        "30개월"
       ],
       "Billed at ${ amount } for 1 month": [
         "1달에 ${ amount }씩 청구됨"
@@ -8443,6 +8461,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Premium Password Manager": [
         "프리미엄 암호 관리자"
       ]

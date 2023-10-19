@@ -2922,6 +2922,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "進階 ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "進階 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "進階 ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "多達 6 位使用者"
       ]
@@ -3592,6 +3601,9 @@
       ],
       "Contact unassigned to group ${ contactGroupName }": [
         "取消指派通訊錄給群組 ${ contactGroupName }"
+      ],
+      "Copy the link to clipboard": [
+        "複製連結到剪貼簿"
       ],
       "Country code": [
         "國家代碼"
@@ -5015,6 +5027,9 @@
       ],
       "Contact group updated": [
         "聯絡人群組已更新"
+      ],
+      "Link copied to clipboard": [
+        "連結已複製到剪貼簿"
       ]
     },
     "Notification in holidays calendar modal": {
@@ -5706,6 +5721,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 位使用者"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -5723,6 +5741,15 @@
       ],
       "Highest VPN speed": [
         "業界最高 VPN 速率"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "進階 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "進階 ${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 與 ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "進階 ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium early access": [
         "進階版搶先體驗"
@@ -5768,14 +5795,23 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } months": [
+        "${ n }個月"
+      ],
       "/ month": [
         "/ 月"
       ],
       "1 year": [
         "1 年"
       ],
+      "15 months": [
+        "15個月"
+      ],
       "2 years": [
         "2年"
+      ],
+      "30 months": [
+        "30個月"
       ],
       "Billed at ${ amount } for 1 month": [
         "為期 1 個月收費 ${ amount } "
@@ -6070,6 +6106,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "進階 ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "進階 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Premium Password Manager": [
         "付費版密碼管理器"
       ]

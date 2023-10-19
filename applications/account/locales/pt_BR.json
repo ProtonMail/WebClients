@@ -1290,70 +1290,13 @@
         "${ mailPlus }: a solução de e-mail e calendário com foco em privacidade para toda a sua comunicação."
       ]
     },
-    "bf2023: Action": {
-      "Add ${ PASS_APP_NAME }": [
-        "Adicionar ${ PASS_APP_NAME }"
-      ],
-      "Get the deal": [
-        "Obtenha a oferta"
-      ],
-      "Remove": [
-        "Remover"
-      ],
-      "Remove ${ PASS_APP_NAME }": [
-        "Remover ${ PASS_APP_NAME }"
-      ]
-    },
-    "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } de armazenamento"
-      ],
-      "1 user": [
-        "1 usuário"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 usuários"
-      ],
-      "Ad-blocker and malware protection": [
-        "Bloqueio de anuncios e proteção contra malware"
-      ],
-      "Extended version history": [
-        "Histórico de versões estendido"
-      ],
-      "Fast BitTorrent downloads": [
-        "Downloads rápidos de BitTorrent"
-      ],
-      "High speed streaming": [
-        "Streaming em alta velocidade"
-      ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } Premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium de ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } Premium"
-      ],
-      "Premium Password Manager": [
-        "Gerenciador de senhas premium"
-      ]
-    },
-    "bf2023: Tooltip": {
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Acesse conteúdo em serviços de streaming, inclusive Netflix, Disney+, Prime Video e muito mais de qualquer lugar."
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Especialmente projetado, o NetShield protege seus dispositivos e acelera sua navegação ao bloquear anúncios, rastreadores e malware."
-      ]
-    },
     "Billing cycle": {
       "${ n } month": [
         "${ n } mês",
         "${ n } meses"
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
+        "Renovação automática por ${ renewPrice }, para ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -3497,9 +3440,6 @@
       "Contact signature not verified": [
         "Assinatura do contato não foi verificada"
       ],
-      "Could not save preference": [
-        "Não foi possível salvar as preferências"
-      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Desmarque pelo menos ${ calendarsToFixCount } calendário",
         "Desmarque pelo menos ${ calendarsToFixCount } calendários"
@@ -4670,6 +4610,9 @@
       "Allow platform keys": [
         "Permitir chaves de plataformas"
       ],
+      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
+        "Permite registrar chaves de segurança integradas (como Windows Hello, Face ID, Touch ID, ou TPMs internos)"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Você tem certeza que deseja excluir a chave de segurança ${ name }?"
       ],
@@ -5767,6 +5710,15 @@
       "Admin account allocation": [
         "Alocação da conta do administrador"
       ],
+      "After this date, you'll be billed every 12 months at the normal yearly rate.": [
+        "Após essa data, sua cobrança será a cada 12 meses pela taxa anual normal."
+      ],
+      "After this date, you'll be billed every 24 months at the normal 2-year rate.": [
+        "Após essa data, sua cobrança será a cada 24 meses pela taxa bienal normal."
+      ],
+      "After this date, you'll be billed every month at the regular price.": [
+        "Após essa data, sua cobrança mensal será pelo preço normal."
+      ],
       "Align left": [
         "Alinhar à esquerda"
       ],
@@ -5974,6 +5926,9 @@
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Continuar conectará sua conta da ${ BRAND_NAME } a ${ name }."
       ],
+      "Copy the link to clipboard": [
+        "Copiar link para a área de transferência"
+      ],
       "Copy the suggested password to clipboard": [
         "Copiar a senha sugerida para a área de transferência"
       ],
@@ -6075,9 +6030,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "NÃO esqueça esta senha. Se você esquecê-la, você não poderá acessar sua conta ou descriptografar suas mensagens."
-      ],
-      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Não use as credenciais do OpenVPN / IKEv2 nos aplicativos do ${ VPN_APP_NAME } ou no painel do ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Você deseja revogar todas as outras sessões deixando apenas a atual?"
@@ -6950,6 +6902,15 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envie um depósito usado o seguinte endereço ou digitalize o código QR. O seu depósito aparecerá na sua conta após confirmação."
       ],
+      "Subscription auto-renews every 12 months.": [
+        "A assinatura é renovada automaticamente a cada 12 meses."
+      ],
+      "Subscription auto-renews every 24 months.": [
+        "A assinatura é renovada automaticamente a cada 24 meses."
+      ],
+      "Subscription auto-renews every month.": [
+        "A assinatura é renovada automaticamente todos os meses."
+      ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Assinatura encerrada: Reative até ${ byDate } para manter os benefícios do seu ${ planName } ${ reactivateLink }"
       ],
@@ -7030,6 +6991,9 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Essas configurações são fornecidas para operar com roteadores e clientes oficiais WireGuard."
+      ],
+      "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
+        "Essas credenciais não podem ser usadas para fazer login em nossos aplicativos oficiais ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "They'll receive a free month of ${ planName }.": [
         "Eles receberão um mês grátis de ${ planName }."
@@ -7325,6 +7289,9 @@
       "We generated a strong password for you": [
         "Nós geramos senhas fortes para você"
       ],
+      "We just sent you a new link.": [
+        "Acabamos de te enviar um novo link."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Precisamos autenticar seu método de pagamento com seu banco."
       ],
@@ -7459,6 +7426,9 @@
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Você pode ativar o registro de autenticação para ver quando sua conta e de qual IP ela é acessada. Registramos o endereço IP que acessa a conta e a hora, bem como as tentativas sem êxito."
       ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
+        "Você pode desbloquear imediatamente a configuração acima adicionando ${ specificCountryCount } ao número de endereços IP do seu plano, ou entrar em contato conosco para obter soluções personalizadas."
+      ],
       "You can import one data type at a time.": [
         "Você pode importar uma categoria de dado por vez."
       ],
@@ -7502,9 +7472,6 @@
       ],
       "You cannot undo this action.": [
         "Você não pode desfazer está ação."
-      ],
-      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Não é possível usar as credenciais do OpenVPN/IKEv2 para iniciar sessão nos aplicativos do ${ VPN_APP_NAME } ou no painel do ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Você não definiu um método de recuperação, então a recuperação de conta não será possível se você esquecer sua senha. Continuar sem definir o método de recuperação?"
@@ -7600,6 +7567,9 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Sua conta tem pelo menos uma fatura vencida. Sua conta é restrita. O não pagamento contínuo bloqueará seus e-mails e links de compartilhamento. ${ payInvoiceLink }"
       ],
+      "Your account has been successfully updated": [
+        "Sua conta foi atualizada com sucesso"
+      ],
       "Your account recovery method is set": [
         "Seu método para recuperação de conta está definido"
       ],
@@ -7634,6 +7604,9 @@
       "Your login information will not be saved after the import is completed.": [
         "Suas informações de início de sessão não serão salvas após a importação ser concluída."
       ],
+      "Your next billing date is ${ renewalTime }.": [
+        "Sua próxima data de cobrança é ${ renewalTime }."
+      ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "A senha de sua organização pode ser compartilhada com outros usuários aos quais você deseja dar privilégios administrativos. É também um código de recuperação de emergência para obter acesso à sua organização caso você perca o acesso à sua conta. Salve esta senha e a mantenha segura."
       ],
@@ -7657,6 +7630,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Sua assinatura é gerenciada pela Mozilla. Entre em contato com o suporte da Mozilla."
+      ],
+      "Your subscription will auto-renew on ${ renewalTime }.": [
+        "Sua assinatura será renovada automaticamente em ${ renewalTime }."
       ]
     },
     "info": {
@@ -8309,9 +8285,6 @@
       "Conversation grouping": [
         "Agrupamento de conversas"
       ],
-      "Conversations per page": [
-        "Conversas por página"
-      ],
       "Copy": [
         "Copiar"
       ],
@@ -8463,7 +8436,7 @@
         "Notificações do evento"
       ],
       "Exclude Spam/Trash from All mail": [
-        "Excluir Spam/Lixeira do All Mail"
+        "Excluir Spam/Lixeira de Todos os e-mails"
       ],
       "Expiration (${ patternExpiration })": [
         "Expiração (${ patternExpiration })"
@@ -8599,9 +8572,6 @@
       ],
       "Message": [
         "Mensagem"
-      ],
-      "Messages per page": [
-        "Mensagens por página"
       ],
       "Moderate NAT": [
         "NAT moderado"
@@ -9772,6 +9742,9 @@
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } com alias de hide-my-email ilimitados"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "Programa ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ size } attachment size": [
         "Anexos de ${ size }"
       ],
@@ -9978,6 +9951,9 @@
       ],
       "SMTP submission": [
         "Submissão SMTP"
+      ],
+      "SMTP submission for select organizations": [
+        "Envio de SMTP para organizações selecionadas"
       ],
       "Split tunneling (Android and Windows)": [
         "Tunelamento dividido (Android e Windows)"
@@ -10254,6 +10230,18 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Proteja sua agenda com criptografia de ponta a ponta. Inclui suporte para calendários personalizados, compartilhamento de calendário e muito mais."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Proteja seus arquivos com armazenamento em nuvem criptografado. Inclui histórico de versões, compartilhamento de arquivo criptografado e muito mais."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: Proteja seus e-mails com criptografia de ponta a ponta. Inclui suporte para domínios de e-mail personalizados, 15 endereços de e-mail, aliases ilimitados hide-my-email e muito mais."
+      ],
+      "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "${ VPN_APP_NAME }: Acesse conteúdo bloqueado e navegue com privacidade. ${ serversAndCountries } inclui VPN de altíssima velocidade, acesso a serviços de streaming de todo o mundo, bloqueador de anúncios e malwares, downloads BitTorrent mais rápidos, e muito mais."
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Acesse conteúdo de serviços de streaming, incluindo Netflix, Disney+ e Prime Video, em qualquer lugar"
       ],
@@ -10360,6 +10348,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Proteja sua família de sites perigosos e acesse nossos servidores VPN de alta velocidade para assistir seus conteúdos favoritos"
       ],
+      "Provides the highest level of account security protection and specialist support": [
+        "Fornece o mais alto nível de proteção segurança de conta e suporte especializado"
+      ],
       "Quickly set up out-of-office messages": [
         "Configure rapidamente mensagens de ausência temporária"
       ],
@@ -10389,6 +10380,9 @@
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
         "Compartilhe seus arquivos ou pastas com qualquer pessoa usando links seguros e compartilháveis"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "O SMTP permite que serviços ou dispositivos de terceiros enviem e-mails através do ${ MAIL_APP_NAME }."
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Especialmente projetado, o NetShield protege seu dispositivo e acelera sua navegação ao bloquear anúncios, rastreadores e malware"
@@ -10431,6 +10425,9 @@
       ]
     },
     "new_plans: upgrade": {
+      "Included with ${ BRAND_NAME } for Business, ${ familyPlanName } and ${ mailProPlanName }.": [
+        "Incluído com ${ BRAND_NAME } para Organizações ${ familyPlanName } e ${ mailProPlanName }."
+      ],
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Incluso com ${ plus }, ${ bundle } e ${ BRAND_NAME } for Business."
       ],
@@ -10519,6 +10516,9 @@
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "Chave com impressão digital ${ fp } foi deletada."
+      ],
+      "Link copied to clipboard": [
+        "Link copiado para área de transferência"
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credenciais OpenVPN / IKEv2 regeneradas"
@@ -11557,6 +11557,14 @@
         "Redefinir senha"
       ]
     },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "A recuperação de conta não está disponível para chaves de endereço herdadas"
+      ],
+      "Please generate keys before you try to change your password": [
+        "Por favor, gere chaves antes de tentar alterar sua senha"
+      ]
+    },
     "session_recovery:available:info": {
       "${ timeRemaining.inDays } day": [
         "${ timeRemaining.inDays } dia",
@@ -11569,6 +11577,17 @@
       "Didn’t make this request?": [
         "Não fez essa solicitação?"
       ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Se você não pediu para redefinir sua senha, cancele a solicitação agora."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Solicitação de redefinição de senha aprovada (${ user.Email }). Você tem ${ timeRemaining.inDays } dia para alterar a senha.",
+        "Solicitação de redefinição de senha aprovada (${ user.Email }). Você tem ${ timeRemaining.inDays } dias para alterar a senha."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Solicitação de redefinição de senha aprovada (${ user.Email }). Você tem ${ timeRemaining.inHours } hora para alterar a senha.",
+        "Solicitação de redefinição de senha aprovada (${ user.Email }). Você tem ${ timeRemaining.inHours } horas para alterar a senha."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Vá ao dispositivo onde a solicitação (na sessão iniciada) para mudar a sua senha."
       ],
@@ -11579,6 +11598,9 @@
       "This permission expires in ${ timeRemaining.inHours } hour": [
         "Essa permissão expira em ${ timeRemaining.inHours } hora",
         "Essa permissão expira em ${ timeRemaining.inHours } horas"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Agora você pode alterar a senha da conta ${ boldEmail } gratuitamente por ${ boldDaysRemaining }."
       ],
       "You can now reset your password": [
         "Você pode agora redefinir sua senha"
@@ -11607,6 +11629,11 @@
         "Cancelar redefinição de senha"
       ]
     },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Digite sua senha atual para cancelar o processo de redefinição de senha. Nenhuma outra alteração será salva."
+      ]
+    },
     "session_recovery:cancellation:notification": {
       "Password reset cancelled": [
         "A redefinição de senha foi cancelada"
@@ -11617,6 +11644,11 @@
         "Cancelar redefinição de senha?"
       ]
     },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Solicitação de redefinição de senha cancelada (${ user.Email }). Se você não fez esta solicitação, ${ changePasswordLink }."
+      ]
+    },
     "session_recovery:cancelled:link": {
       "change your password now": [
         "altere sua senha agora"
@@ -11625,6 +11657,14 @@
     "session_recovery:disable:action": {
       "Disable password reset": [
         "Desativar redefinição de senha"
+      ]
+    },
+    "session_recovery:disable:info": {
+      "Make sure you have access to a recovery method.": [
+        "Certifique-se de ter acesso a um método de recuperação."
+      ],
+      "You will no longer be able to request a password reset from your account settings.": [
+        "Você não poderá mais solicitar uma redefinição de senha nas configurações da sua conta."
       ]
     },
     "session_recovery:disable:title": {
@@ -11647,8 +11687,28 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } hora mais",
+        "${ gracePeriodHoursRemaining } horas mais"
+      ],
       "Didn’t make this request?": [
         "Não fez essa solicitação?"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Se você não pediu para redefinir sua senha, cancele a solicitação agora."
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "Se você não pediu para alterar sua senha, cancele esta solicitação agora."
+      ],
+      "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
+        "A redefinição de senha estará disponível em ${ boldDate }. Isso te dará tempo para cancelar quaisquer solicitações fraudulentas."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Solicitação de redefinição de senha (${ user.Email }). Você pode alterar sua senha em ${ hoursRemaining } horas.",
+        "Solicitação de redefinição de senha (${ user.Email }). Você pode alterar sua senha em ${ hoursRemaining } horas."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "Para ter certeza de que é realmente você quem está tentando redefinir sua senha, aguardamos 72 horas antes de aprovar as solicitações. Você poderá alterar a senha em ${ boldTimeLeft }. ${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "Recebemos a solicitação de redefinição de senha para ${ boldEmail }."
@@ -11679,6 +11739,20 @@
         "Usar um método de recuperação"
       ]
     },
+    "session_recovery:initiation:info": {
+      "For security reasons, you’ll have to wait **72 hours** before you can change your password.": [
+        "Por razões de segurança, devemos aguardar **72 horas** antes que você possa redefinir a senha."
+      ],
+      "If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.": [
+        "Se você tem um **método de recuperação** configurado, tente a recuperação da conta. Este processo permitirá que você altere a senha imediatamente."
+      ],
+      "We will contact you again when the password reset is available.": [
+        "Nós entraremos em contato novamente quando a redefinição de senha estiver disponível."
+      ],
+      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
+        "Você pode acompanhar o status da sua solicitação a qualquer momento em ${ accountAndPasswordSectionLink } nas configurações."
+      ]
+    },
     "session_recovery:initiation:link": {
       "account and password section": [
         "sessão Conta e senha"
@@ -11702,6 +11776,9 @@
       "Allow password reset from settings": [
         "Permitir redefinição de senha através da configurações"
       ],
+      "Request a password reset from your Account settings. No recovery method needed.": [
+        "Solicite a redefinição de senha nas configurações da sua conta. Nenhum método de recuperação é necessário."
+      ],
       "Request password reset": [
         "Solicitar redefinição de senha"
       ],
@@ -11724,6 +11801,15 @@
       ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } está agora disponível"
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Se você sair antes de redefinir sua senha, você poderá perder o acesso à sua conta."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Se você sair sem redefinir sua senha, você poderá perder o acesso à sua conta."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Você poderá alterar sua senha em ${ boldTimeLeft }."
       ]
     },
     "session_recovery:sign_out:link": {
@@ -12179,6 +12265,12 @@
     "Subscription": {
       "Billed every 2 years": [
         "Cobrado a cada 2 anos"
+      ],
+      "Billed for 15 months": [
+        "Cobrança a cada 15 meses"
+      ],
+      "Billed for 30 months": [
+        "Cobrança a cada 30 meses"
       ],
       "Billed monthly": [
         "Cobrado mensalmente"
@@ -12891,6 +12983,9 @@
       "Auto-reply": [
         "Resposta automática"
       ],
+      "Auto-reply and forward": [
+        "Resposta automática e encaminhamento"
+      ],
       "Automatically sign outgoing messages?": [
         "Assinar automaticamente as mensagens enviadas?"
       ],
@@ -13220,6 +13315,9 @@
       ],
       "Folders and labels": [
         "Pastas e marcadores"
+      ],
+      "Forward emails": [
+        "Encaminhar e-mails"
       ],
       "Gateways": [
         "Gateways"
@@ -13935,6 +14033,9 @@
       "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
         "Esta chave é usada por ${ MAIL_APP_NAME } para criptografar os dados dos seus contatos"
       ],
+      "This key is used for email forwarding": [
+        "Esta chave é usada para encaminhamento de e-mail"
+      ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "Use as barras de rolagem padrão do seu navegador. Normalmente são maiores e mais fáceis de usar"
       ],
@@ -13970,6 +14071,11 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Sua conta externa pode ter atingido o seu limite de largura de banda de 24 horas. O ${ BRAND_NAME } tentará retomar a importação o mais rápido possível."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Logins seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
       ]
     },
     "Tooltip automatically attach public key": {
@@ -14123,8 +14229,14 @@
       "1-year": [
         "1 ano"
       ],
+      "15-month": [
+        "15 meses"
+      ],
       "2-year": [
         "2 anos"
+      ],
+      "30-month": [
+        "30 meses"
       ],
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "Economize ${ discount } com uma assinatura de ${ billingCycle }."

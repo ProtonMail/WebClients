@@ -1135,6 +1135,9 @@
       "Email": [
         "E-mail"
       ],
+      "Enter a display name or nickname": [
+        "Írja be a megejelnítendő nevét vagy becenevét"
+      ],
       "First name": [
         "Keresztnév"
       ],
@@ -2458,6 +2461,9 @@
         "Javítsa ki a megjelölt hibát a folytatáshoz.",
         "Javítsa ki a megjelölt hibákat a folytatáshoz."
       ],
+      "Please provide either a first name, a last name or a display name": [
+        "Kérlek, adj meg egy keresztnevet, egy vezetéknevet vagy egy felhasználónevet"
+      ],
       "Port is required": [
         "A port megadása szükséges"
       ],
@@ -2944,6 +2950,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Prémium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Prémium ${ MAIL_SHORT_APP_NAME } és ${ CALENDAR_SHORT_APP_NAME }."
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Prémium ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "Maximum 6 felhasználóig"
       ]
@@ -3645,6 +3660,9 @@
       ],
       "Contact unassigned to group ${ contactGroupName }": [
         "Névjegy a csoportból eltávolítva: ${ contactGroupName }"
+      ],
+      "Copy the link to clipboard": [
+        "Másold a hivatkozást a vágólapra."
       ],
       "Country code": [
         "Országkód"
@@ -5082,6 +5100,9 @@
       ],
       "Contact group updated": [
         "Névjegy csoport frissítve"
+      ],
+      "Link copied to clipboard": [
+        "Link kimásolva a vágólapra"
       ]
     },
     "Notification in holidays calendar modal": {
@@ -5582,6 +5603,9 @@
         "Jelszó újrabeállítás igénylés elfogadva (${ user.Email }). ${ timeRemaining.inHours } órája maradt jelszava megváltoztatására.",
         "Jelszó újrabeállítási igénylés elfogadva (${ user.Email }). ${ timeRemaining.inHours } órája maradt jelszava megváltoztatására."
       ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Kérlek, menj a bejelentkezett eszközre (abban a munkamenetben, ahol a kérés indult), hogy megváltoztasd a jelszavadat."
+      ],
       "This permission expires in ${ timeRemaining.inDays } day": [
         "Ez az engedély${ timeRemaining.inDays } órán belül lejár",
         "Ez az engedély ${ timeRemaining.inDays } órán belül lejár"
@@ -5589,6 +5613,9 @@
       "This permission expires in ${ timeRemaining.inHours } hour": [
         "Ez az engedély ${ timeRemaining.inHours } órán belül lejár",
         "Ez az engedély${ timeRemaining.inHours } órán belül lejár"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Most szabadon megváltoztathatod a jelszavadat a(z) ${ boldEmail } fiókhoz ${ boldDaysRemaining }-ig."
       ]
     },
     "session_recovery:available:link": {
@@ -5611,6 +5638,11 @@
         "Jelszó visszaállítás megszakítása"
       ]
     },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Írd be jelenlegi jelszavadat a jelszóvisszaállítási folyamat megszakításához. Más változás nem lép életbe."
+      ]
+    },
     "session_recovery:cancellation:notification": {
       "Password reset cancelled": [
         "Jelszó visszaállítás megszakítva"
@@ -5619,6 +5651,11 @@
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Jelszó visszaállítás megszakítása?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "A jelszóvisszaállítási kérés megszakadt (${ user.Email }). Ha te nem kezdeményezted ezt a kérést, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -5642,9 +5679,18 @@
         "${ gracePeriodHoursRemaining } óra maradt.",
         "${ gracePeriodHoursRemaining } óra maradt."
       ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "Ha nem te kérted a jelszóvisszaállítást, akkor most mond le ezt a kérelmet"
+      ],
       "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
         "Jelszó újrabeállítás igényelve (${ user.Email }). A jelszót ${ hoursRemaining } órán belül változtathatja meg.",
         "Jelszó újrabeállítás igényelve (${ user.Email }). A jelszót ${ hoursRemaining } órán belül változtathatja meg."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "Hogy biztosak lehessünk benne, hogy valóban te próbálod visszaállítani a jelszavad, 72 órát várunk a kérések jóváhagyásáig. A jelszavadat megváltoztathatod ${ boldTimeLeft } alatt. ${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "Megkaptuk a jelszóvisszaállítási kérést a következő e-mail címre: ${ boldEmail }."
       ]
     },
     "session_recovery:in_progress:link": {
@@ -5791,6 +5837,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 felhasználó"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -5808,6 +5857,15 @@
       ],
       "Highest VPN speed": [
         "Legnagyobb VPN sebesség"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Prémium ${ MAIL_SHORT_APP_NAME } és ${ CALENDAR_SHORT_APP_NAME }."
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "Prémium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } és ${ DRIVE_SHORT_APP_NAME }."
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Prémium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium early access": [
         "Prémium korai-hozzáférés"
@@ -5853,14 +5911,24 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } hónap",
+        "${ n } hónap"
+      ],
       "/ month": [
         "/ hó"
       ],
       "1 year": [
         "1 év"
       ],
+      "15 months": [
+        "15 hónap"
+      ],
       "2 years": [
         "2 év"
+      ],
+      "30 months": [
+        "30 hónap"
       ],
       "Billed at ${ amount } for 1 month": [
         "1 hónapra ${ amount } számlázva"
@@ -6161,6 +6229,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Prémium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Prémium ${ MAIL_SHORT_APP_NAME } és ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "Premium Password Manager": [
         "Prémium jelszókezelő"
       ]
@@ -6801,6 +6875,9 @@
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Biztos, hogy véglegesen töröl ${ count } névjegyet?",
         "Biztos, hogy véglegesen töröl ${ count } névjegyet?"
+      ],
+      "Are you sure you want to permanently delete these contact groups?": [
+        "Biztos, hogy véglegesen törli ezeket a névjegy csoportokat?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Biztos, hogy véglegesen törli ezt a névjegy csoportot?"
