@@ -2553,6 +2553,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Ücretli ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Ücretli ${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Ücretli ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "6 kullanıcıya kadar"
       ]
@@ -3326,6 +3335,9 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "${ DRIVE_APP_NAME } kullanmayı sürdür ve sürücünün kilidini daha sonra aç"
+      ],
+      "Copy the link to clipboard": [
+        "Bağlantıyı panoya kopyala"
       ],
       "Country code": [
         "Ülke kodu"
@@ -5061,6 +5073,9 @@
       "File or folder is missing a name": [
         "Dosya ya da klasörün adı eksik"
       ],
+      "Link copied to clipboard": [
+        "Bağlantı panoya kopyalandı"
+      ],
       "Move ${ itemsToMoveCount } file": [
         "${ itemsToMoveCount } dosyayı taşı",
         "${ itemsToMoveCount } dosyayı taşı"
@@ -5597,6 +5612,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 kullanıcı"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -5614,6 +5632,15 @@
       ],
       "Highest VPN speed": [
         "En yüksek VPN hızı"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Ücretli ${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "Ücretli ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } ve ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Ücretli ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium early access": [
         "Öncelikli erken erişim"
@@ -5659,14 +5686,24 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } ay",
+        "${ n } ay"
+      ],
       "/ month": [
         "/ ay"
       ],
       "1 year": [
         "1 yıl"
       ],
+      "15 months": [
+        "15 ay"
+      ],
       "2 years": [
         "2 yıl"
+      ],
+      "30 months": [
+        "30 ay"
       ],
       "Billed at ${ amount } for 1 month": [
         "1 aylık ${ amount } olarak faturalanır"
@@ -5778,6 +5815,9 @@
       ]
     },
     "Storage": {
+      "Get storage": [
+        "Depolama alanı al"
+      ],
       "Release notes": [
         "Sürüm notları"
       ],
@@ -5864,6 +5904,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Ücretli ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Ücretli ${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Premium Password Manager": [
         "Ücretli Parola Yöneticisi"
       ]
