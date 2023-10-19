@@ -76,8 +76,8 @@ export const VaultItem: VFC<Props> = ({
                                 size={12}
                                 className="absolute top-custom right-custom"
                                 style={{
-                                    '--top-custom': '4px',
-                                    '--right-custom': '-4px',
+                                    '--top-custom': '-1px',
+                                    '--right-custom': '-1px',
                                     color: 'var(--signal-danger)',
                                 }}
                             />

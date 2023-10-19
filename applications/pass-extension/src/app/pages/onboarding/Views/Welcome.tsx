@@ -1,16 +1,25 @@
-import type { VFC } from 'react';
+import { type VFC, useState } from 'react';
 
 import { ExtensionHead } from 'proton-pass-extension/lib/components/Extension/ExtensionHead';
+import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
+import { useWorkerStateEvents } from 'proton-pass-extension/lib/hooks/useWorkerStateEvents';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import { ButtonLike } from '@proton/atoms/Button';
+import accountSetupImg from '@proton/pass/assets/protonpass-account.svg';
 import passBrandText from '@proton/pass/assets/protonpass-brand.svg';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
+import '@proton/pass/components/Spotlight/Spotlight.scss';
+import { SpotlightContent } from '@proton/pass/components/Spotlight/SpotlightContent';
 import { ONBOARDING_LINK } from '@proton/pass/constants';
+import { pageMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { workerReady } from '@proton/pass/lib/worker';
+import { OnboardingMessage, WorkerMessageType } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import appStoreSvg from '@proton/styles/assets/img/illustrations/app-store.svg';
 import playStoreSvg from '@proton/styles/assets/img/illustrations/play-store.svg';
+import clsx from '@proton/utils/clsx';
 
 import './Welcome.scss';
 
@@ -19,6 +28,23 @@ const brandNameJSX = (
 );
 
 export const Welcome: VFC = () => {
+    const { tabId, endpoint } = ExtensionContext.get();
+    const [pendingAccess, setPendingAccess] = useState(false);
+
+    useWorkerStateEvents({
+        endpoint,
+        tabId,
+        messageFactory: pageMessage,
+        onWorkerStateChange: ({ status }) => {
+            if (workerReady(status)) {
+                void sendMessage.onSuccess(
+                    pageMessage({ type: WorkerMessageType.ONBOARDING_REQUEST }),
+                    async ({ message }) => setPendingAccess(message === OnboardingMessage.PENDING_SHARE_ACCESS)
+                );
+            }
+        },
+    });
+
     return (
         <>
             <ExtensionHead title={c('Title').t`Thank you for installing ${PASS_APP_NAME}`} />
@@ -36,6 +62,25 @@ export const Welcome: VFC = () => {
                                 />
                             }
                             <span>{brandNameJSX}</span>
+                        </div>
+
+                        <div className={clsx('pass-spotlight-panel', !pendingAccess && 'pass-spotlight-panel--hidden')}>
+                            {pendingAccess && (
+                                <SpotlightContent
+                                    className="mb-6"
+                                    id="pending"
+                                    icon={() => (
+                                        <img
+                                            className="h-custom"
+                                            style={{ '--h-custom': '4rem' }}
+                                            src={accountSetupImg}
+                                            alt=""
+                                        />
+                                    )}
+                                    message={c('Info').t`For security reason, your access needs to be confirmed`}
+                                    title={c('Info').t`Pending access to the shared data`}
+                                />
+                            )}
                         </div>
 
                         <div className="flex gap-14">
