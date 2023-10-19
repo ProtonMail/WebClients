@@ -14,11 +14,11 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
 import { promptForPermissions } from '../utils/permissions';
-import { useExtensionContext } from './useExtensionContext';
+import { useExtensionConnectContext } from './useExtensionConnectContext';
 import { useOpenSettingsTab } from './useOpenSettingsTab';
 
 export const useOnboardingMessage = () => {
-    const { context: extensionContext } = useExtensionContext();
+    const { context: extensionContext } = useExtensionConnectContext();
     const webStoreURL = getWebStoreUrl(detectBrowser());
     const [showTrial, setShowTrial] = useState<boolean>(false);
     const [message, setMessage] = useState<MaybeNull<OnboardingMessage>>(null);
