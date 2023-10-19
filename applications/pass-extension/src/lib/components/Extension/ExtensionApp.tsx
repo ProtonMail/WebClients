@@ -15,7 +15,6 @@ import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvide
 import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message';
 import type { WorkerMessage } from '@proton/pass/types';
 import { type ExtensionEndpoint, WorkerMessageType } from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
 import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
 import { loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
@@ -66,7 +65,7 @@ export const ExtensionApp: FC<{
                 return loadLocale(currentLocale, locales);
             })
             .then(() => setReady(true))
-            .catch(logger.warn);
+            .catch(console.warn);
     }, []);
 
     return (
