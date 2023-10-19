@@ -75,7 +75,7 @@
         "Tilføj betingelse"
       ],
       "Add credit / debit card": [
-        "Tilføj kredit / betalingskort"
+        "Tilføj kredit/debetkort"
       ],
       "Add credits": [
         "Tilføj kreditter"
@@ -3126,9 +3126,6 @@
       "Contact signature not verified": [
         "Kontaktsignatur ikke bekræftet"
       ],
-      "Could not save preference": [
-        "Kunne ikke gemme præferencer"
-      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Fravælg mindst ${ calendarsToFixCount } kalender",
         "Fravælg mindst ${ calendarsToFixCount } kalendere"
@@ -5154,7 +5151,7 @@
         "(Filtrer hvis NOGEN af følgende betingelser er opfyldt)"
       ],
       "* No credit card required.": [
-        "* Der kræves ikke kreditkort."
+        "* Intet betalingskort påkrævet."
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Få en ${ BRAND_NAME }-adresse** for at bruge alle ${ BRAND_NAME_TWO }-tjenester, herunder ${ MAIL_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }."
@@ -5580,9 +5577,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "Du må IKKE glemme denne adgangskode. Hvis du glemmer den, kan du ikke logge ind eller dekryptere dine beskeder."
-      ],
-      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Brug ikke OpenVPN / IKEv2 legitimationsoplysninger til at logge på ${ VPN_APP_NAME }-applikationer eller på ${ VPN_APP_NAME }-kontrolpanelet. ${ learnMore }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Vil du tilbagekalde alle andre sessioner end den nuværende?"
@@ -6056,7 +6050,7 @@
         "Ingen adresser findes"
       ],
       "No credit card required": [
-        "Der kræves ikke kreditkort"
+        "Intet betalingskort påkrævet"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Ingen metode til datagendannelse indstillet. Du risikerer at miste adgang til dine data"
@@ -6394,6 +6388,9 @@
       "Setting up your organization": [
         "Konfigurerer din organisation"
       ],
+      "Settings update failed": [
+        "Opdatering af indstillinger mislykkedes"
+      ],
       "Settings updated": [
         "Indstillinger opdateret"
       ],
@@ -6561,7 +6558,7 @@
         "Dette er den adgangskode, du brugte før adgangskodenulstillingen."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Dette link fører til et websted, som måske forsøger at stjæle dine oplysninger, f.eks. adgangskoder og kreditkortoplysninger."
+        "Dette link fører til et websted, som måske forsøger at stjæle dine oplysninger, f.eks. adgangskoder og betalingskortoplysninger."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Dette link kan være et homografisk angreb og kan ikke åbnes af Edge browseren. Hvis du er sikker på, at linket er legitimt, så benyt en anden browser til at åbne det."
@@ -7005,9 +7002,6 @@
       "You cannot undo this action.": [
         "Du kan ikke fortryde denne handling."
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Du kan ikke bruge OpenVPN / IKEv2 legitimationsoplysninger til at logge på ${ VPN_APP_NAME }-applikationer eller på ${ VPN_APP_NAME }-kontrolpanelet. ${ learnMore }"
-      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Du har ikke angivet en metode til gendannelse, derfor er kontogendannelse umulig, hvis du glemmer din adgangskode. Fortsæt uden en metode til gendannelse?"
       ],
@@ -7034,10 +7028,10 @@
         "Du skal deaktivere eller fjerne eventuelle yderligere ${ MAIL_APP_NAME }-brugere, adresser og brugerdomæner, før du kan nedgradere."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        "Du skal have et kreditkort eller en bankkonto tilknyttet din PayPal-konto for at tilføje den som en betalingsmetode."
+        "Du skal have et betalingskort eller en bankkonto tilknyttet din PayPal-konto for at tilføje den som en betalingsmetode."
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Du skal have et kreditkort eller en bankkonto tilknyttet din PayPal-konto. Har din PayPal-konto ikke det, så klik på knappen nedenfor."
+        "Du skal have et betalingskort eller en bankkonto tilknyttet din PayPal-konto. Har din PayPal-konto ikke det, så klik på knappen nedenfor."
       ],
       "You need to have an active personal calendar to import your events from ICS.": [
         "Du skal have en aktiv personlig kalender for at importere dine begivenheder fra ICS."
@@ -7805,9 +7799,6 @@
       "Conversation grouping": [
         "Samtalegruppering"
       ],
-      "Conversations per page": [
-        "Samtaler pr. side"
-      ],
       "Copy": [
         "Kopiér"
       ],
@@ -8092,9 +8083,6 @@
       ],
       "Message": [
         "Besked"
-      ],
-      "Messages per page": [
-        "Beskeder pr. side"
       ],
       "Moderate NAT": [
         "Moderat NAT"
@@ -8697,7 +8685,7 @@
         "Betal faktura"
       ],
       "Paypal without credit card": [
-        "Paypal uden kreditkort"
+        "Paypal uden betalingskort"
       ],
       "Privacy policy": [
         "Privatlivspolitik"
@@ -8870,6 +8858,9 @@
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Glemt dit brugernavn til ${ BRAND_NAME }-konto? Find den ved hjælp af din gendannelses-e-mail eller dit telefonnummer, og få adgang til din ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og mere."
+      ],
+      "Private and secure email, no credit card required": [
+        "Privat og sikker e-mail, intet betalingskort påkrævet"
       ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Nulstil adgangskoden til din ${ BRAND_NAME }-konto"
@@ -9269,7 +9260,7 @@
         "Autosvar"
       ],
       "Autofill credit cards (coming soon)": [
-        "Autofyld kreditkort (kommer snart)"
+        "Autofyld betalingskort (kommer snart)"
       ],
       "Available on all platforms": [
         "Tilgængelig på alle platforme"
@@ -9722,7 +9713,7 @@
         "Ligesom en mappe, er en boks et praktisk måde at organisere dine ting på. At dele bokse med venner og familie er på vej."
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
-        "Administrer dit abonnement, herunder tilpasning af dit abonnement. Accepterede betalingsmetoder er kreditkort, PayPal, kryptovaluta og bankoverførsel."
+        "Administrer dit abonnement, herunder tilpasning af dit abonnement. Accepterede betalingsmetoder er betalingskort, PayPal, kryptovaluta og bankoverførsel."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Mulighed for at se ikke-private brugerindbakker som brugeren ville, herunder fulde besked- og kontaktoplysninger"
@@ -10476,10 +10467,10 @@
     },
     "Payment method option": {
       "Credit/debit card": [
-        "Kredit / betalingskort"
+        "Kredit/debetkort"
       ],
       "New credit/debit card": [
-        "Nyt kredit / betalingskort"
+        "Nyt kredit/debetkort"
       ]
     },
     "Personal calendar section description": {
@@ -11207,6 +11198,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 bruger"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -11269,14 +11263,24 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } måned",
+        "${ n } måneder"
+      ],
       "/ month": [
         "/ måned"
       ],
       "1 year": [
         "1 år"
       ],
+      "15 months": [
+        "15 måneder"
+      ],
       "2 years": [
         "2 år"
+      ],
+      "30 months": [
+        "30 måneder"
       ],
       "Billed at ${ amount } for 1 month": [
         "Faktureret med ${ amount } for 1 måned"
@@ -11821,7 +11825,7 @@
     },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Opret sikre login-oplysninger på alle dine enheder. Inkludere ubegrænsede aliasser, 20 bokse, integreret 2FA, kreditkort-autofyld og meget mere."
+        "Opret sikre login-oplysninger på alle dine enheder. Inkludere ubegrænsede aliasser, 20 bokse, integreret 2FA, betalingskort-autofyld og meget mere."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Inkluderer 2950+ servere i 65+ lande, forbind op til 10 enheder, tilgå verdensomspændende streamingtjenester, malware- og ad-blocker og meget mere."
@@ -12043,7 +12047,7 @@
         "Tilføj kontaktgruppenavn"
       ],
       "Add credit/debit card": [
-        "Tilføj kredit / betalingskort"
+        "Tilføj kredit/debetkort"
       ],
       "Add credits": [
         "Tilføj kreditter"
@@ -12351,7 +12355,7 @@
         "Download ${ VPN_APP_NAME }"
       ],
       "Edit credit/debit card": [
-        "Redigér kredit / betalingskort"
+        "Redigér kredit/debetkort"
       ],
       "Edit display name": [
         "Redigér vist navn"
