@@ -65,6 +65,7 @@ interface Props {
         type: 'pp' | 'btc' | 'cc' | undefined
     ) => Promise<void>;
     onValidate: () => boolean;
+    isDarkBg?: boolean;
     withLoadingSignup: WithLoading;
     measure: Measure;
     defaultMethod: PAYMENT_METHOD_TYPES | undefined;
@@ -85,6 +86,7 @@ const AccountStepPayment = ({
     loadingPaymentDetails,
     loadingSignup,
     withLoadingSignup,
+    isDarkBg = false,
 }: Props) => {
     const formRef = useRef<HTMLFormElement>(null);
     const { APP_NAME } = useConfig();
@@ -365,8 +367,9 @@ const AccountStepPayment = ({
                 const showAmountDue = proration !== 0 || credits !== 0;
 
                 return (
-                    <RightSummary className="mx-auto md:mx-0">
+                    <RightSummary gradient={isDarkBg} className="mx-auto md:mx-0 rounded-xl">
                         <RightPlanSummary
+                            className={isDarkBg ? 'border-primary' : undefined}
                             title={summaryPlan.title}
                             price={getSimplePriceString(options.currency, currentCheckout.withDiscountPerMonth, '')}
                             regularPrice={getSimplePriceString(

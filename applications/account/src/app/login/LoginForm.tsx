@@ -30,6 +30,7 @@ import { defaultPersistentKey } from '../public/helper';
 import Loader from '../signup/Loader';
 
 interface Props {
+    modal?: boolean;
     onSubmit: (data: {
         username: string;
         password: string;
@@ -44,6 +45,7 @@ interface Props {
 }
 
 const LoginForm = ({
+    modal,
     onSubmit,
     defaultUsername = '',
     signInText = c('Action').t`Sign in`,
@@ -167,7 +169,6 @@ const LoginForm = ({
                     onValue={setPassword}
                     rootClassName="mt-2"
                 />
-
                 {hasRemember && (
                     <div className="flex flex-row flex-align-items-start">
                         <Checkbox
@@ -204,15 +205,20 @@ const LoginForm = ({
                         )}
                     </div>
                 )}
-
-                <Button size="large" color="norm" type="submit" fullWidth loading={submitting} className="mt-6">
+                <Button
+                    size="large"
+                    color="norm"
+                    type="submit"
+                    fullWidth
+                    loading={submitting}
+                    className={modal ? 'mt-4' : 'mt-6'}
+                >
                     {
                         // translator: when the "sign in" button is in loading state, it gets updated to "Signing in"
                         submitting ? c('Action').t`Signing in` : signInText
                     }
                 </Button>
-
-                {signUp && (
+                {signUp && !modal && (
                     <div className="text-center mt-4">
                         {
                             // translator: Full sentence "New to Proton? Create account"
@@ -220,30 +226,33 @@ const LoginForm = ({
                         }
                     </div>
                 )}
+                {!modal && (
+                    <>
+                        <hr className="my-4" />
 
-                <hr className="my-4" />
-
-                <div className="text-center">
-                    <SupportDropdown
-                        buttonClassName="mx-auto link link-focus"
-                        content={c('Link').t`Trouble signing in?`}
-                    >
-                        <Link
-                            to={paths.reset}
-                            className="dropdown-item-link w100 px-4 py-2 flex flex-align-items-center text-no-decoration text-left"
-                        >
-                            <Icon name="key" className="mr-2" />
-                            {c('Link').t`Reset password`}
-                        </Link>
-                        <Link
-                            to={paths.forgotUsername}
-                            className="dropdown-item-link w100 px-4 py-2 flex flex-align-items-center text-no-decoration text-left"
-                        >
-                            <Icon name="user-circle" className="mr-2" />
-                            {c('Link').t`Forgot username?`}
-                        </Link>
-                    </SupportDropdown>
-                </div>
+                        <div className="text-center">
+                            <SupportDropdown
+                                buttonClassName="mx-auto link link-focus"
+                                content={c('Link').t`Trouble signing in?`}
+                            >
+                                <Link
+                                    to={paths.reset}
+                                    className="dropdown-item-link w100 px-4 py-2 flex flex-align-items-center text-no-decoration text-left"
+                                >
+                                    <Icon name="key" className="mr-2" />
+                                    {c('Link').t`Reset password`}
+                                </Link>
+                                <Link
+                                    to={paths.forgotUsername}
+                                    className="dropdown-item-link w100 px-4 py-2 flex flex-align-items-center text-no-decoration text-left"
+                                >
+                                    <Icon name="user-circle" className="mr-2" />
+                                    {c('Link').t`Forgot username?`}
+                                </Link>
+                            </SupportDropdown>
+                        </div>
+                    </>
+                )}
             </form>
         </>
     );
