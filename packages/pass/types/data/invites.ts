@@ -2,6 +2,11 @@ import type { KeyRotationKeyPair } from '../api';
 import { type MaybeNull } from '../utils';
 import type { ShareRole, ShareType, VaultShareContent } from './shares';
 
+export enum NewUserInviteState {
+    WAITING = 1,
+    READY = 2,
+}
+
 export type InviteBase = {
     createTime: number;
     invitedEmail: string;
@@ -16,11 +21,6 @@ export type PendingInvite = InviteBase & {
     remindersSent: number;
 };
 
-export enum NewUserInviteState {
-    WAITING = 1,
-    READY = 2,
-}
-
 export type NewUserPendingInvite = InviteBase & {
     newUserInviteId: string;
     signature: string;
@@ -34,6 +34,7 @@ export type InviteVaultData = {
 };
 
 export type Invite = InviteBase & {
+    fromNewUser: boolean;
     invitedAddressId: string;
     keys: KeyRotationKeyPair[];
     remindersSent: number;
