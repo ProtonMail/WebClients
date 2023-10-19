@@ -1,12 +1,12 @@
 import { api } from '@proton/pass/lib/api/api';
-import type { Maybe, PublicKeysResponse } from '@proton/pass/types';
+import type { GetAllPublicKeysResponse, Maybe } from '@proton/pass/types';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { getPublicKeys } from '@proton/shared/lib/api/keys';
+import { getAllPublicKeys } from '@proton/shared/lib/api/keys';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 export const getPublicKeysForEmail = async (email: string): Promise<string[]> => {
-    const publicKeys = await api<PublicKeysResponse>(getPublicKeys({ Email: email }));
-    return publicKeys.Keys.map((key) => key.PublicKey);
+    const { Address } = await api<GetAllPublicKeysResponse>(getAllPublicKeys({ Email: email, InternalOnly: 1 }));
+    return Address.Keys.map((key) => key.PublicKey);
 };
 
 export const getPrimaryPublicKeyForEmail = async (email: string): Promise<Maybe<string>> => {
