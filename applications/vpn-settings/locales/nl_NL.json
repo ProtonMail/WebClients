@@ -2294,6 +2294,9 @@
       "Add a name to identify your security key with.": [
         "Voeg een naam to om uw beveiligingssleutel mee te identificeren."
       ],
+      "Allow platform keys": [
+        "Sta platformsleutels toe"
+      ],
       "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
         "Het toevoegen van beveiligingssleutels wordt toegestaan (bijv. Windows Hello, gezichts- of vingerafdrukherkenning, ingebouwde TPM's)"
       ],
@@ -2784,9 +2787,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "Vergeet dit wachtwoord NIET. Als u het vergeet, kunt u niet meer inloggen of uw berichten ontsleutelen."
-      ],
-      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Gebruik de OpenVPN / IKEv2 inloggegevens niet in ${ VPN_APP_NAME } applicaties of op het ${ VPN_APP_NAME } dashboard. ${ learnMore }"
       ],
       "Done": [
         "Klaar"
@@ -3588,9 +3588,6 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "U kunt de volgende inloggegevens gebruiken om met een ${ VPN_APP_NAME }-server te verbinden met een externe VPN-app, zoals Tunnelblick voor macOS of OpenVPN voor GNU/Linux."
-      ],
-      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Gebruik de OpenVPN / IKEv2 inloggegevens niet in de ${ VPN_APP_NAME }-applicaties of op het ${ VPN_APP_NAME }-dashboard. ${ learnMore }"
       ],
       "You have ${ availableCount } dedicated server available.": [
         "U heeft ${ availableCount } toegewijde server beschikbaar.",
@@ -5055,6 +5052,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Bescherm uw gezin tegen schadelijke websites en krijg toegang tot onze supersnelle VPN-servers om uw favoriete inhoud te streamen"
       ],
+      "Provides the highest level of account security protection and specialist support": [
+        "Voorziet het hoogste niveau van account beveiliging en gespecialiseerde ondersteuning"
+      ],
       "Quickly set up out-of-office messages": [
         "Stel snel afwezigheidsberichten in"
       ],
@@ -5084,6 +5084,9 @@
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
         "Deel uw bestanden of mappen via veilige, deelbare koppelingen"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTP staat diensten of apparaten van derde partijen toe om e-mail to versturen via ${ MAIL_APP_NAME }."
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Het speciaal ontworpen NetShield beschermt uw apparaat en versnelt uw browsen door advertenties, trackers en malware te blokkeren"
@@ -5530,6 +5533,9 @@
       ]
     },
     "session_recovery:available:action": {
+      "Cancel password reset": [
+        "Wachtwoord reset annuleren"
+      ],
       "Cancel reset": [
         "Reset annuleren"
       ],
@@ -5553,6 +5559,12 @@
       "${ timeRemaining.inHours } hour": [
         "${ timeRemaining.inHours } uur",
         "${ timeRemaining.inHours } uren"
+      ],
+      "Didn’t make this request?": [
+        "Heeft u deze aanvraag niet gemaakt?"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Indien u geen wachtwoord reset hebt aangevraagd, annuleer de aanvraag dan nu."
       ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
         "Wachtwoord reset aanvraag goedgekeurd (${ user.Email }). U heeft ${ timeRemaining.inDays } dag om uw wachtwoord te resetten.",
@@ -5578,6 +5590,9 @@
       ],
       "You can now reset your password": [
         "U kunt uw wachtwoord nu opnieuw instellen"
+      ],
+      "You can reset your password until ${ boldDate }.": [
+        "U kan uw wachtwoord resetten tot ${ boldDate }."
       ]
     },
     "session_recovery:available:link": {
@@ -5644,6 +5659,12 @@
         "${ gracePeriodHoursRemaining } uur",
         "${ gracePeriodHoursRemaining } uren"
       ],
+      "Didn’t make this request?": [
+        "Heeft u deze aanvraag niet gemaakt?"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Indien u geen wachtwoord reset hebt aangevraagd, annuleer de aanvraag dan nu."
+      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Indien u geen wachtwoord reset hebt aangevraagd, annuleer deze aanvraag dan nu."
       ],
@@ -5678,6 +5699,26 @@
     "session_recovery:initiation:action": {
       "Got it": [
         "Begrepen"
+      ],
+      "Request password reset": [
+        "Nieuw wachtwoord aanvragen"
+      ],
+      "Use recovery method": [
+        "Gebruik herstelmethode"
+      ]
+    },
+    "session_recovery:initiation:info": {
+      "For security reasons, you’ll have to wait **72 hours** before you can change your password.": [
+        "Voor veiligheidsredenen dient u **72 uur** te wachten voordat u uw wachtwoord kan veranderen."
+      ],
+      "If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.": [
+        "Indien u een **herstelmethode** heeft ingesteld, probeer account herstel in de plaats. Dit staat u toe om uw wachtwoord rechtstreeks te wijzigen."
+      ],
+      "We will contact you again when the password reset is available.": [
+        "We nemen opnieuw contact met u op wanneer wachtwoord reset beschikbaar is."
+      ],
+      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
+        "U kan de status van uw aanvraag op elke moment bekijken in ${ accountAndPasswordSectionLink } van uw instellingen."
       ]
     },
     "session_recovery:initiation:link": {
@@ -5685,7 +5726,15 @@
         "accountinstellingen"
       ]
     },
+    "session_recovery:initiation:notification": {
+      "Password reset confirmed": [
+        "Wachtwoord reset bevestigd"
+      ]
+    },
     "session_recovery:initiation:title": {
+      "Request password reset?": [
+        "Nieuw wachtwoord aanvragen?"
+      ],
       "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
         "U kan uw wachtwoord resetten in ${ gracePeriodHoursRemaining } uur",
         "U kan uw wachtwoord resetten in ${ gracePeriodHoursRemaining } uren"
@@ -5730,6 +5779,14 @@
     "session_recovery:status:info": {
       "Available": [
         "Beschikbaar"
+      ],
+      "Pending": [
+        "In behandeling"
+      ]
+    },
+    "session_recovery:status:title": {
+      "Password reset request": [
+        "Aanvraag wijziging wachtwoord"
       ]
     },
     "Shared calendar; Info about calendar owner": {

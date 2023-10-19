@@ -634,6 +634,9 @@
       "${ n } month": [
         "${ n } mois",
         "${ n } mois"
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
+        "Renouvellement automatique au prix de ${ renewPrice }, pour ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -2015,6 +2018,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } version premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME } version premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } version premium"
+      ],
       "Up to 6 users": [
         "Jusqu'à 6 utilisateurs"
       ]
@@ -2645,6 +2657,15 @@
       "Admin account allocation": [
         "Attribution de compte administrateur"
       ],
+      "After this date, you'll be billed every 12 months at the normal yearly rate.": [
+        "Après cette date, vous serez facturé tous les 12 mois au tarif annuel habituel."
+      ],
+      "After this date, you'll be billed every 24 months at the normal 2-year rate.": [
+        "Après cette date, vous serez facturé tous les 24 mois au tarif habituel pour 2 ans."
+      ],
+      "After this date, you'll be billed every month at the regular price.": [
+        "Après cette date, vous serez facturé chaque mois au prix habituel."
+      ],
       "All your changes will be lost.": [
         "Toutes vos modifications seront perdues."
       ],
@@ -2787,9 +2808,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "N'oubliez PAS ce mot de passe. Si vous l'oubliez, vous ne pourrez plus vous connecter ou déchiffrer vos messages."
-      ],
-      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "N'utilisez pas les identifiants OpenVPN/IKEv2 dans les applications ${ VPN_APP_NAME } ou sur le tableau de bord ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "Done": [
         "Terminé"
@@ -3253,6 +3271,15 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Faites un versement en utilisant l'adresse suivante ou scannez le code QR. Votre versement sera affiché sur votre compte après confirmation."
       ],
+      "Subscription auto-renews every 12 months.": [
+        "L'abonnement est renouvelé automatiquement tous les 12 mois."
+      ],
+      "Subscription auto-renews every 24 months.": [
+        "L'abonnement est renouvelé automatiquement tous les 24 mois."
+      ],
+      "Subscription auto-renews every month.": [
+        "L'abonnement est renouvelé automatiquement tous les mois."
+      ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "L'abonnement se termine : réactivez-le avant le ${ byDate } pour continuer à bénéficier des avantages de ${ planName }. ${ reactivateLink }"
       ],
@@ -3300,6 +3327,9 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Ces configurations sont fournies pour fonctionner avec les routeurs WireGuard et les clients officiels."
+      ],
+      "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
+        "Ces identifiants ne peuvent pas être utilisés pour se connecter aux applications ${ VPN_APP_NAME } officielles. ${ learnMore }"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Ce compte a été suspendu en raison d’une violation potentielle des règles d’utilisation."
@@ -3592,9 +3622,6 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Vous pouvez utiliser les identifiants suivants pour vous connecter à un serveur ${ VPN_APP_NAME } en utilisant une application VPN open source tierce, comme Tunnelblick pour macOS ou OpenVPN pour GNU/Linux."
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Vous ne pouvez pas utiliser les identifiants OpenVPN/IKEv2 pour vous connecter aux applications ${ VPN_APP_NAME } ou au tableau de bord ${ VPN_APP_NAME }. ${ learnMore }"
-      ],
       "You have ${ availableCount } dedicated server available.": [
         "${ availableCount } serveur dédié est disponible.",
         "${ availableCount } serveurs dédiés sont disponibles."
@@ -3671,6 +3698,9 @@
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Vos informations sont en sécurité avec nous. Nous ne vous contacterons que si cela est nécessaire pour fournir nos services."
       ],
+      "Your next billing date is ${ renewalTime }.": [
+        "Votre prochaine date de facturation est le ${ renewalTime }."
+      ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Le mot de passe de votre organisation peut être partagé avec d'autres utilisateurs à qui vous souhaitez donner des droits administrateur. Il s'agit aussi d'un code de récupération d'urgence pour accéder à votre organisation dans le cas où vous perdriez l'accès à votre compte. Nous vous invitons à enregistrer ce mot de passe et à le conserver en lieu sûr."
       ],
@@ -3682,6 +3712,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Votre abonnement est géré par Mozilla. Nous vous invitons à contacter le support Mozilla."
+      ],
+      "Your subscription will auto-renew on ${ renewalTime }.": [
+        "Votre abonnement sera renouvelé automatiquement le ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -4023,6 +4056,9 @@
       ],
       "New password": [
         "Nouveau mot de passe"
+      ],
+      "New plan": [
+        "Nouvel abonnement"
       ],
       "No filter": [
         "Aucun filtre"
@@ -4539,6 +4575,9 @@
       "99.95% SLA": [
         "SLA/uptime : 99,95 % de disponibilité du service"
       ],
+      "Ad-blocker and malware protection": [
+        "Bloqueur de publicités et protection contre les logiciels malveillants"
+      ],
       "Admin console": [
         "Console d'administration"
       ],
@@ -4799,6 +4838,10 @@
       ],
       "Vault and Item sharing (coming soon)": [
         "Partage de coffres-forts et d'éléments (prochainement)"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Partage du coffre-fort (${ n } personne)",
+        "Partage du coffre-fort (jusqu'à ${ n } personnes)"
       ]
     },
     "new_plans: feature info": {
@@ -4952,6 +4995,18 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME } : sécurisez votre calendrier avec le chiffrement de bout en bout. Comprend la prise en charge des calendriers personnalisés, du partage de calendrier et bien d'autres fonctionnalités."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME } : sécurisez vos fichiers avec un stockage cloud chiffré. Comprend l'historique des versions, le partage chiffré des fichiers et bien d'autres fonctionnalités."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME } : sécurisez vos messages grâce au chiffrement de bout en bout. Comprend la prise en charge des domaines de messagerie personnalisés, 15 adresses e-mail, un nombre illimité d'alias « hide-my-email » et bien d'autres fonctionnalités."
+      ],
+      "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "${ VPN_APP_NAME } : accédez aux contenus bloqués et naviguez de manière privée. Comprend ${ serversAndCountries }, les vitesses VPN les plus élevées, l'accès aux services de streaming du monde entier, une protection contre les logiciels malveillants, un bloqueur de publicités, des téléchargements BitTorrent rapides et bien d'autres fonctionnalités."
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Accédez aux contenus des services de streaming, dont Netflix, Amazon Prime Video, Canal+, Disney+, France.tv, TF1… où que vous soyez."
       ],
@@ -5852,6 +5907,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 utilisateur"
+      ],
       "3 TB": [
         "3 To"
       ],
@@ -5869,6 +5927,15 @@
       ],
       "Highest VPN speed": [
         "Vitesse VPN maximale"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME } version premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } et ${ DRIVE_SHORT_APP_NAME } version premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } version premium"
       ],
       "Premium early access": [
         "Accès premium en avant-première"
@@ -5914,14 +5981,24 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } mois",
+        "${ n } mois"
+      ],
       "/ month": [
         "/mois"
       ],
       "1 year": [
         "1 an"
       ],
+      "15 months": [
+        "15 mois"
+      ],
       "2 years": [
         "2 ans"
+      ],
+      "30 months": [
+        "30 mois"
       ],
       "Billed at ${ amount } for 1 month": [
         "Facturé ${ amount } pour 1 mois"
@@ -6048,6 +6125,12 @@
     "Subscription": {
       "Billed every 2 years": [
         "Facturé tous les 2 ans"
+      ],
+      "Billed for 15 months": [
+        "Facturé pour 15 mois"
+      ],
+      "Billed for 30 months": [
+        "Facturé pour 30 mois"
       ],
       "Billed monthly": [
         "Facturé mensuellement"
@@ -6341,6 +6424,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } version premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME } version premium"
+      ],
       "Premium Password Manager": [
         "Gestionnaire de mots de passe premium"
       ]
@@ -7042,6 +7131,11 @@
         "Adresse e-mail vérifiée"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } : sécurisez vos identifiants de connexion sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "version stable"
@@ -7122,11 +7216,17 @@
       "1-year": [
         "1 an"
       ],
+      "15-month": [
+        "15 mois"
+      ],
       "2-year": [
         "2 ans"
       ],
+      "30-month": [
+        "30 mois"
+      ],
       "Get ${ discount } off with a ${ billingCycle } subscription": [
-        "Obtenez une réduction de ${ discount } avec un abonnement ${ billingCycle }"
+        "-${ discount } avec un abonnement de ${ billingCycle }"
       ],
       "monthly": [
         "mensuel"
