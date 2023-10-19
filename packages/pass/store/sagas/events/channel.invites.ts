@@ -62,6 +62,7 @@ function* onInvitesEvent(event: EventManagerEvent<InvitesGetResponse>) {
                     invitedAddressId: invite.InvitedAddressID!,
                     invitedEmail: invite.InvitedEmail,
                     inviterEmail: invite.InviterEmail,
+                    fromNewUser: invite.FromNewUser,
                     keys: invite.Keys,
                     remindersSent: invite.RemindersSent,
                     targetId: invite.TargetID,
