@@ -68,11 +68,13 @@ export const VaultInviteFromItemModal: VFC<Props> = ({
                         />
                     </div>
                 </Button>
+
                 {hasWritableSharedVaults && (
                     <Button pill size="large" shape="solid" color="norm" onClick={handleMoveToSharedVaultClick}>
                         {c('Action').t`Move to a shared vault`}
                     </Button>
                 )}
+
                 {!vaultLimitReached && (
                     <Button
                         pill
