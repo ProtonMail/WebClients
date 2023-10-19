@@ -2,12 +2,12 @@ import { type FC, createContext, useContext, useEffect, useMemo, useState } from
 import { useSelector } from 'react-redux';
 
 import {
-    type ExtensionAppContextValue,
-    ExtensionContextProvider,
+    ExtensionConnect,
+    type ExtensionConnectContextValue,
     INITIAL_WORKER_STATE,
-} from 'proton-pass-extension/lib/components/Extension/ExtensionContext';
+} from 'proton-pass-extension/lib/components/Extension/ExtensionConnect';
 import { useExpanded } from 'proton-pass-extension/lib/hooks/useExpanded';
-import { useExtensionContext } from 'proton-pass-extension/lib/hooks/useExtensionContext';
+import { useExtensionConnectContext } from 'proton-pass-extension/lib/hooks/useExtensionConnectContext';
 import { enhanceNotification } from 'proton-pass-extension/lib/utils/enhance-notification';
 import { c } from 'ttag';
 
@@ -25,7 +25,7 @@ import type { ParsedUrl } from '@proton/pass/utils/url/parser';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 import noop from '@proton/utils/noop';
 
-export interface PopupContextValue extends ExtensionAppContextValue {
+export interface PopupContextValue extends ExtensionConnectContextValue {
     initialized: boolean /* retrieved popup initial state */;
     expanded: boolean /* is popup expanded into a separate window */;
     ready: boolean /* enable UI user actions */;
@@ -56,9 +56,9 @@ export const PopupContext = createContext<PopupContextValue>({
 
 /* this cannot be included directly in `PopupContextProvider` because
  * of the `useExtensionContext` call which requires this component to
- * be a descendant of `ExtensionContextProvider`  */
+ * be a descendant of `ExtensionConnect` */
 const PopupContextContainer: FC = ({ children }) => {
-    const extensionContext = useExtensionContext();
+    const extensionContext = useExtensionConnectContext();
     const { status } = extensionContext.state;
     const { url, tabId } = extensionContext.context!;
 
@@ -119,8 +119,8 @@ export const PopupContextProvider: FC = ({ children }) => {
     };
 
     return (
-        <ExtensionContextProvider endpoint="popup" messageFactory={popupMessage} onWorkerMessage={onWorkerMessage}>
+        <ExtensionConnect endpoint="popup" messageFactory={popupMessage} onWorkerMessage={onWorkerMessage}>
             <PopupContextContainer>{children}</PopupContextContainer>
-        </ExtensionContextProvider>
+        </ExtensionConnect>
     );
 };

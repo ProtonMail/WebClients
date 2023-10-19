@@ -3,8 +3,9 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
+import { PendingShareAccessModal } from '@proton/pass/components/Spotlight/PendingShareAccessModal';
 import { selectMostRecentInvite } from '@proton/pass/store/selectors/invites';
-import type { MaybeNull } from '@proton/pass/types';
+import { type MaybeNull } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import clsx from '@proton/utils/clsx';
 
@@ -20,6 +21,7 @@ import './Spotlight.scss';
 type SpotlightState = { open: boolean; message: MaybeNull<SpotlightMessageDefinition> };
 type Props = {
     message: MaybeNull<SpotlightMessageDefinition>;
+    pendingShareAccess: boolean;
     trial: boolean;
 };
 export const Spotlight: VFC<Props> = (props) => {
@@ -30,10 +32,17 @@ export const Spotlight: VFC<Props> = (props) => {
 
     const sharingEnabled = useFeatureFlag(PassFeature.PassSharingV1);
     const latestInvite = useSelector(selectMostRecentInvite);
+    const modalVisible = props.pendingShareAccess || props.trial;
+
+    useEffect(() => {
+        /* If the latest invite was promoted from a new user invite,
+         * auto prompt the "respond to invite" modal */
+        if (latestInvite?.fromNewUser) respondToInvite(latestInvite);
+    }, [latestInvite]);
 
     const inviteMessage = useMemo<MaybeNull<SpotlightMessageDefinition>>(
         () =>
-            latestInvite && sharingEnabled
+            sharingEnabled && latestInvite && !latestInvite.fromNewUser
                 ? {
                       id: latestInvite.token,
                       weak: true,
@@ -48,7 +57,7 @@ export const Spotlight: VFC<Props> = (props) => {
                       },
                   }
                 : null,
-        [latestInvite, respondToInvite]
+        [latestInvite]
     );
 
     useEffect(() => {
@@ -72,10 +81,16 @@ export const Spotlight: VFC<Props> = (props) => {
 
     return (
         <>
-            <div className={clsx('pass-spotlight-panel', !state.open && 'pass-spotlight-panel--hidden')}>
+            <div
+                className={clsx(
+                    'pass-spotlight-panel',
+                    (!state.open || modalVisible) && 'pass-spotlight-panel--hidden'
+                )}
+            >
                 {state.message && <SpotlightContent {...state.message} />}
             </div>
             <FreeTrialModal open={props.trial} onClose={() => props.message?.onClose?.()} />
+            <PendingShareAccessModal open={props.pendingShareAccess} onClose={() => props.message?.onClose?.()} />
         </>
     );
 };

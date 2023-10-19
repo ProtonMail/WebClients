@@ -5,13 +5,8 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import {
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    Progress,
-} from '@proton/components/components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Progress } from '@proton/components/components';
+import { ItemCard } from '@proton/pass/components/Item/ItemCard';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { useActionWithRequest } from '@proton/pass/hooks/useActionWithRequest';
 import { inviteAcceptIntent, inviteRejectIntent } from '@proton/pass/store/actions';
@@ -21,10 +16,9 @@ import type { Invite } from '@proton/pass/types/data/invites';
 
 import { useInviteContext } from './InviteContextProvider';
 import { UserVerificationMessage } from './UserVerificationMessage';
-import { ItemCard } from '@proton/pass/components/Item/ItemCard';
 
 export const VaultInviteRespond: VFC<Invite> = (invite) => {
-    const { inviterEmail, invitedAddressId, token, vault } = invite;
+    const { inviterEmail, invitedAddressId, token, vault, fromNewUser } = invite;
     const { itemCount, memberCount } = vault;
     const { vaultLimitReached } = useSelector(selectVaultLimits);
     const { onInviteResponse } = useInviteContext();
@@ -50,13 +44,15 @@ export const VaultInviteRespond: VFC<Invite> = (invite) => {
     return (
         <ModalTwo size="small" open onClose={onInviteResponse} enableCloseWhenClickOutside>
             <ModalTwoHeader
-                title={inviterEmail}
-                subline={
-                    // translator: full sentence is split into 3 components in our design. Example: {eric.norbert@proton.me} invites you to access items in {name of the vault}"
-                    c('Info').t`invites you to access items in`
-                }
                 className="text-center text-break-all"
                 hasClose={false}
+                {...(fromNewUser
+                    ? { title: c('Info').t`Congratulations, your access has been confirmed` }
+                    : {
+                          title: inviterEmail,
+                          // translator: full sentence is split into 3 components in our design. Example: {eric.norbert@proton.me} invites you to access items in {name of the vault}"
+                          subline: c('Info').t`invites you to access items in`,
+                      })}
             />
             <ModalTwoContent className="flex flex-column flex-align-items-center">
                 <VaultIcon
@@ -90,7 +86,10 @@ export const VaultInviteRespond: VFC<Invite> = (invite) => {
                     disabled={loading || !userVerified || vaultLimitReached}
                     loading={acceptInvite.loading}
                     onClick={handleAcceptInvite}
-                >{c('Action').t`Join shared vault`}</Button>
+                >
+                    {fromNewUser ? c('Action').t`Continue` : c('Action').t`Join shared vault`}
+                </Button>
+
                 <Button
                     size="large"
                     shape="solid"
@@ -98,7 +97,9 @@ export const VaultInviteRespond: VFC<Invite> = (invite) => {
                     disabled={loading || !userVerified}
                     loading={rejectInvite.loading}
                     onClick={handleRejectInvite}
-                >{c('Action').t`Reject invitation`}</Button>
+                >
+                    {fromNewUser ? c('Action').t`Reject` : c('Action').t`Reject invitation`}
+                </Button>
 
                 {acceptInvite.loading && (
                     <div className="ui-purple flex gap-x-2 flex-align-items-center">
