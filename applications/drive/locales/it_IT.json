@@ -326,7 +326,7 @@
         "Vai al principale"
       ],
       "Got it": [
-        "Capito"
+        "Ho capito"
       ],
       "Grid layout": [
         "Layout griglia"
@@ -792,93 +792,6 @@
       ],
       "Unsupported event": [
         "Evento non supportato"
-      ]
-    },
-    "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } di archiviazione"
-      ],
-      "1 user": [
-        "1 utente"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "3,000+ servers across 65+ countries": [
-        "Oltre 3,000 server in più di 65 Paesi"
-      ],
-      "6 users": [
-        "6 utenti"
-      ],
-      "Ad-blocker and malware protection": [
-        "Ad-blocker e protezione da malware"
-      ],
-      "Extended version history": [
-        "Cronologia delle versioni estesa"
-      ],
-      "Fast BitTorrent downloads": [
-        "Download BitTorrent veloci"
-      ],
-      "High speed streaming": [
-        "Streaming ad alta velocità"
-      ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME } premium"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } premium"
-      ],
-      "Premium Password Manager": [
-        "Password manager premium"
-      ]
-    },
-    "bf2023: Footer": {
-      "Discounts are based on standard monthly pricing.": [
-        "Gli sconti si basano sui prezzi mensili standard."
-      ],
-      "Learn more about our Black Friday offers": [
-        "Scopri di più sulle nostre offerte per il Black Friday"
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Alla fine del ciclo di fatturazione l'abbonamento si rinnoverà automaticamente con lo sconto e la durata standard."
-      ]
-    },
-    "bf2023: Tooltip": {
-      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "Accedi a contenuti bloccati e naviga in modalità privata. Include oltre 3,000 server in più di 65 Paesi, le più elevate velocità VPN, servizi di streaming in tutto il mondo, blocco di malware e annunci, download BitTorrent veloci e molto altro."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Accedi ai contenuti dei servizi di streaming, tra cui Netflix, Disney+, Prime Video e altri ancora, da qualsiasi luogo."
-      ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
-        "Include il supporto per ${ domains } domini email personalizzati, ${ addresses } indirizzi email, ${ aliases } alias hide-my-email, condivisione del calendario e molto altro."
-      ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Include il supporto per ${ domains } domini email personalizzati, ${ addresses } indirizzi email, alias hide-my-email illimitati, condivisione del calendario e molto altro."
-      ],
-      "Secure logins on all your devices. Includes unlimited aliases, sharing, vaults, integrated 2FA and more.": [
-        "Accesso sicuro a tutti i tuoi dispositivi. Include un numero illimitato di alias, condivisioni, casseforti, 2FA integrati e molto altro ancora."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Proteggi le tue email e i tuoi impegni con la crittografia end-to-end. Include il supporto per domini email personalizzati, 15 indirizzi email, alias hide-my-email illimitati, condivisione del calendario e altro ancora."
-      ],
-      "Secure your files, folders and photos with end-to-end and zero-access encryption. Includes version history, encrypted file sharing, and more.": [
-        "Proteggi i tuoi file, cartelle e foto con la crittografia end-to-end e ad accesso zero. Include la cronologia delle versioni, la condivisione criptata dei file e molto altro."
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield è progettato su misura per proteggere i dispositivi e accelerare la navigazione bloccando annunci, tracker e malware."
-      ],
-      "Storage space is shared across all ${ BRAND_NAME } apps.": [
-        "Lo spazio di archiviazione è condiviso tra tutte le app ${ BRAND_NAME }."
-      ],
-      "Store up to 200 versions of each file for up to 10 years.": [
-        "Archivia fino a 200 versioni di ogni file per un massimo di 10 anni."
-      ],
-      "Unlock peer-to-peer downloads and file sharing. Increase upload and download speeds and hide your IP address.": [
-        "Sblocca i download e la condivisione di file peer-to-peer. Aumenta la velocità di upload e download e nascondi il tuo indirizzo IP."
       ]
     },
     "Billing cycle option": {
@@ -2063,7 +1976,7 @@
         "Impossibile esportare questo contatto"
       ],
       "Contact could not be saved": [
-        "Il contatto non può essere salvato"
+        "Impossibile salvare il contatto"
       ],
       "Contact name is too long": [
         "Il nome del contatto è troppo lungo"
@@ -2231,7 +2144,7 @@
         "Verifica della firma non riuscita"
       ],
       "Some contacts could not be deleted": [
-        "Alcuni contatti non possono essere eliminati"
+        "Impossibile eliminare alcuni contatti"
       ],
       "Some groups could not be deleted": [
         "Impossibile eliminare alcuni gruppi"
@@ -2627,7 +2540,7 @@
         "Rifiuta l'invito"
       ],
       "Got it": [
-        "OK"
+        "Ho capito"
       ],
       "Switch plans": [
         "Cambia piano"
@@ -5526,7 +5439,7 @@
         "Questa autorizzazione scade tra ${ timeRemaining.inHours } ore"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
-        "Ora puoi modificare liberamente la tua password per l'account ${ boldEmail } per ${ boldDaysRemaining }."
+        "Ora puoi cambiare liberamente la password per il tuo account ${ boldEmail } per ${ boldDaysRemaining }."
       ]
     },
     "session_recovery:available:link": {
@@ -6610,7 +6523,7 @@
         "Le tue azioni di benvenuto"
       ],
       "You’ve got 1 GB of storage": [
-        "Tu hai 1 GB di memoria"
+        "Hai 1 GB di spazio archiviazione"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -6743,7 +6656,7 @@
         "Sei sicuro di voler eliminare definitivamente questo contatto?"
       ],
       "Contacts could not be merged": [
-        "I contatti non possono essere uniti"
+        "Impossibile unire i contatti"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Se non ricordi la password, è impossibile riattivare la chiave. Possiamo aiutarti a chiudere il banner di avviso, ma nel processo perderai definitivamente l'accesso a tutti i dati crittografati con quella chiave."
