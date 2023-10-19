@@ -461,12 +461,6 @@
       "Invitation could not be rejected": [
         "Invitation kunne ikke afvises"
       ],
-      "Invite creation failed.": [
-        "Oprettelse af invitation mislykkedes."
-      ],
-      "Invite successfully sent": [
-        "Invitation sendt"
-      ],
       "Item content cannot exceed 40KB": [
         "Element-indhold må ikke overstige 40 kB"
       ],
@@ -499,9 +493,6 @@
       ],
       "Restoring item failed": [
         "Genoprettelse af element mislykkedes"
-      ],
-      "Setting \"${ payload.name }\" as primary vault failed": [
-        "Det mislykkedes at indstille \"${ payload.name }\" som den primære boks"
       ],
       "Settings update failed": [
         "Ændring af indstillinger mislykkedes"
@@ -617,9 +608,6 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" opdatering blev afvist"
-      ],
-      "\"${ payload.name }\" set as primary vault": [
-        "\"${ payload.name }\" indstillet som primær boks"
       ],
       "${ count } item": [
         "${ count } element",
@@ -1023,14 +1011,8 @@
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Du har overskredet antallet af bokse, der er inkluderet i dit abonnement. Elementer kan kun flyttes til dine to første bokse. For at flytte elementer mellem alle bokse, skal du opgradere dit abonnement."
       ],
-      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
-        "Du har overskredet antallet af bokse, der er inkluderet i dit abonnement. Elementer kan kun flyttes til din primære boks. For at flytte elementer mellem alle bokse, skal du opgradere dit abonnement."
-      ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
         "Du har overskredet antallet af bokse, der er inkluderet i dit abonnement. Nye elementer kan kun oprettes i dine to første bokse. Hvis du vil oprette nye elementer i alle bokse, skal du opgradere dit abonnement."
-      ],
-      "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
-        "Du har overskredet antallet af bokse, der er inkluderet i dit abonnement. Nye elementer kan kun oprettes i din primære boks. For at oprette nye elementer i alle bokse, skal du opgradere dit abonnement."
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Du har nået grænsen for, hvor mange aliasser du kan oprette. Opret et ubegrænset antal aliasser, når du opgraderer dit abonnement."
@@ -1160,7 +1142,7 @@
         "Bekræft boks-navn"
       ],
       "Create a credit card": [
-        "Opret et kreditkort"
+        "Opret et betalingskort"
       ],
       "Create a hide-my-email alias": [
         "Opret et hide-my-email alias"
@@ -1178,7 +1160,7 @@
         "Oprettet"
       ],
       "Credit Card": [
-        "Kreditkort"
+        "Betalingskort"
       ],
       "Display": [
         "Visning"
@@ -1339,9 +1321,6 @@
       "Prefix": [
         "Præfiks"
       ],
-      "Primary vault": [
-        "Primær boks"
-      ],
       "Prompt for auto-save": [
         "Spørg om auto-gem"
       ],
@@ -1421,7 +1400,7 @@
         "Type"
       ],
       "Unnamed Credit Card": [
-        "Unavngivet kreditkort"
+        "Unavngivet betalingskort"
       ],
       "Unnamed item": [
         "Unavngivet element"
@@ -1446,9 +1425,6 @@
       ],
       "Vault": [
         "Boks"
-      ],
-      "Vaults": [
-        "Bokse"
       ],
       "Verification number": [
         "Verifikationsnummer"
@@ -1805,6 +1781,9 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Kunne ikke logge ind på ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
+      "Upgrade to a paid plan to invite more members to this vault.": [
+        "Opgrader til et betalt abonnement for at invitere flere medlemmer til denne boks."
+      ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You can not undo this action": [
         "Boksen \"${ vaultName }\" og alle dens elementer vil blive slettet permanent. Du kan ikke fortryde denne handling"
       ],
@@ -1816,6 +1795,12 @@
       ],
       "You cannot create more vaults than your subscription allows.": [
         "Du kan ikke oprette flere bokse, end dit abonnement tillader."
+      ],
+      "You have reached the limit of members who can access this vault.": [
+        "Du har nået grænsen for medlemmer, der kan få adgang til denne boks."
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "Du har nået grænsen for, hvor mange bokse du kan have med dit abonnement."
       ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "Du har ikke-gemte ændringer, er du sikker på, at du vil kassere dem?"
@@ -1832,17 +1817,11 @@
       "Your plan only allows you to autofill from your first two vaults": [
         "Dit abonnement tillader kun autofyld fra dine to første bokse."
       ],
-      "Your plan only allows you to autofill from your primary vault": [
-        "Dit abonnement tillader kun autofyld fra din primære boks."
-      ],
       "Your session was locked due to inactivity": [
         "Din session blev låst grundet inaktivitet"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Dit abonnement giver dig ikke mulighed for at oprette flere bokse. Alle elementer vil blive importeret til din første boks. For at importere til flere bokse skal du opgradere dit abonnement."
-      ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
-        "Dit abonnement giver dig ikke mulighed for at oprette flere bokse. Alle elementer vil blive importeret til din primære boks. For at importere til flere bokse skal du opgradere dit abonnement."
       ]
     }
   }
