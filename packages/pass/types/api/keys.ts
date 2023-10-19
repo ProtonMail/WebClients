@@ -1,4 +1,3 @@
-import type { MIME_TYPES, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
 import type { KEY_FLAG } from '@proton/shared/lib/constants';
 
 export type Key = {
@@ -17,13 +16,4 @@ export type SignedKeyList = {
     Revision: number;
 };
 
-export type PublicKeysResponse = {
-    Code: number;
-    RecipientType: RECIPIENT_TYPES;
-    IgnoreKT: number;
-    MIMEType: MIME_TYPES;
-    Keys: Key[];
-    SignedKeyList: SignedKeyList;
-    Warnings: string[];
-    IsProton: number;
-};
+export type GetAllPublicKeysResponse = { Address: { Keys: Key[] } };
