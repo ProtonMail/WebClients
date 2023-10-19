@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 interface Props {
     left: ReactNode;
-    text: string;
+    text: ReactNode;
 }
 
 const FeatureItem = ({ left, text }: Props) => {
