@@ -424,8 +424,14 @@
       "Get verification code": [
         "Απόκτηση κωδικού επαλήθευσης"
       ],
+      "Go to first page": [
+        "Μετάβαση στην πρώτη σελίδα"
+      ],
       "Go to label": [
         "Μετάβαση στην ετικέτα"
+      ],
+      "Go to last page": [
+        "Μετάβαση στην τελευταία σελίδα"
       ],
       "Go to next page": [
         "Μετάβαση στην επόμενη σελίδα"
@@ -1296,93 +1302,6 @@
       ],
       "Sender verification passed": [
         "Η επαλήθευση του αποστολέα ολοκληρώθηκε επιτυχώς"
-      ]
-    },
-    "bf2023: Deal details": {
-      "${ storageSize } storage": [
-        "${ storageSize } αποθηκευτικού χώρου"
-      ],
-      "1 user": [
-        "1 χρήστης"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "3,000+ servers across 65+ countries": [
-        "3,000+ διακομιστές σε 65+ χώρες"
-      ],
-      "6 users": [
-        "6 χρήστες"
-      ],
-      "Ad-blocker and malware protection": [
-        "Αποκλεισμός διαφημίσεων και προστασία από κακόβουλο λογισμικό"
-      ],
-      "Extended version history": [
-        "Εκτεταμένο ιστορικό εκδόσεων"
-      ],
-      "Fast BitTorrent downloads": [
-        "Γρήγορο κατέβασμα BitTorrent"
-      ],
-      "High speed streaming": [
-        "Ροή υψηλής ταχύτητας"
-      ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Premium Διαχειριστής Κωδικών Πρόσβασης"
-      ]
-    },
-    "bf2023: Footer": {
-      "Discounts are based on standard monthly pricing.": [
-        "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση."
-      ],
-      "Learn more about our Black Friday offers": [
-        "Μάθετε περισσότερα για τις προσφορές της Black Friday"
-      ],
-      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Η συνδρομή σας θα ανανεωθεί αυτόματα με την τυπική μειωμένη τιμή και διάρκεια στο τέλος του κύκλου χρέωσης."
-      ]
-    },
-    "bf2023: Tooltip": {
-      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "Αποκτήστε πρόσβαση σε αποκλεισμένο περιεχόμενο και περιηγηθείτε ιδιωτικά. Περιλαμβάνει 3.000+ διακομιστές σε 65+ χώρες, ύψιστες ταχύτητες VPN, παγκόσμιες υπηρεσίες ροής, αποκλεισμό κακόβουλου λογισμικού και προγράμματα διαφημίσεων, γρήγορες λήψεις BitTorrent και πολλά άλλα."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Αποκτήστε πρόσβαση σε περιεχόμενο σε υπηρεσίες ροής, συμπεριλαμβανομένων των Netflix, Disney+ και Prime Video, και άλλων, από οπουδήποτε."
-      ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
-        "Περιλαμβάνει υποστήριξη για ${ domains } προσαρμοσμένο τομέα email, ${ addresses } διευθύνσεις ηλεκτρονικού ταχυδρομείου, ${ aliases } hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και άλλα."
-      ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Περιλαμβάνει υποστήριξη για ${ domains } προσαρμοσμένο τομέα email, ${ addresses } διευθύνσεις ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και άλλα."
-      ],
-      "Secure logins on all your devices. Includes unlimited aliases, sharing, vaults, integrated 2FA and more.": [
-        "Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, κρύπτες, ενσωματωμένο 2FA και πολλά άλλα."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Ασφαλίστε τα email σας και προγραμματίστε με κρυπτογράφηση από άκρο σε άκρο. Περιλαμβάνει υποστήριξη για προσαρμοσμένους τομείς email, 15 διευθύνσεις ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και πολλά άλλα."
-      ],
-      "Secure your files, folders and photos with end-to-end and zero-access encryption. Includes version history, encrypted file sharing, and more.": [
-        "Ασφαλίστε τα αρχεία, τους φακέλους και τις φωτογραφίες σας με κρυπτογράφηση από άκρο σε άκρο και μηδενικής πρόσβασης. Περιλαμβάνει ιστορικό εκδόσεων, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Το ειδικά σχεδιασμένο NetShield προστατεύει τις συσκευές σας και επιταχύνει την περιήγησή σας εμποδίζοντας διαφημίσεις, ιχνηλάτες και κακόβουλο λογισμικό."
-      ],
-      "Storage space is shared across all ${ BRAND_NAME } apps.": [
-        "Ο αποθηκευτικός χώρος μοιράζεται μεταξύ όλων των ${ BRAND_NAME } εφαρμογών."
-      ],
-      "Store up to 200 versions of each file for up to 10 years.": [
-        "Αποθηκεύστε έως 200 εκδόσεις κάθε αρχείου για έως και 10 χρόνια."
-      ],
-      "Unlock peer-to-peer downloads and file sharing. Increase upload and download speeds and hide your IP address.": [
-        "Ξεκλειδώστε ομότιμες λήψεις και κοινή χρήση αρχείων. Αυξήστε τις ταχύτητες μεταφόρτωσης και λήψης και αποκρύψτε τη διεύθυνση IP σας."
       ]
     },
     "Billing cycle option": {
@@ -3256,9 +3175,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Η αναζήτηση περιεχομένου δεν γίνεται να ενεργοποιηθεί σε αυτόν τον περιηγητή. Παρακαλούμε τερματίστε τη λειτουργία ιδιωτικής περιήγησης ή χρησιμοποιήστε έναν άλλον περιηγητή."
       ],
-      "Could not save preference": [
-        "Δεν ήταν δυνατή η αποθήκευση της προτίμησης"
-      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Σφάλμα αποκρυπτογράφησης: η αποκρυπτογράφηση του κρυπτογραφημένου περιεχομένου αυτού του μηνύματος απέτυχε."
       ],
@@ -5039,6 +4955,9 @@
       "Calendar side panel": [
         "Πλαϊνό πλαίσιο ημερολογίου"
       ],
+      "Can't find what you're looking for? ${ displayAllMailButton }": [
+        "Δε βρίσκετε αυτό που ψάχνετε; ${ displayAllMailButton }"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Δεν μπορείτε να θυμηθείτε τον κωδικό σας; Μπορούμε να σας βοηθήσουμε να καθαρίσετε τα κρυπτογραφημένα δεδομένα όλων των επαφών που κρυπτογραφούνται με αυτό το κλειδί και στη διαδικασία να απορρίψετε την ειδοποίηση."
       ],
@@ -5139,9 +5058,6 @@
       ],
       "Do you want to re-sign the contact details?": [
         "Θέλετε να υπογράψετε ξανά τα στοιχεία της επαφής;"
-      ],
-      "Don't find what you are looking for? ${ displayAllMailButton }": [
-        "Δε βρίσκετε αυτό που ψάχνετε; ${ displayAllMailButton }"
       ],
       "Don't forget to share the password with the recipient": [
         "Μην ξεχάσετε να κοινοποιήσετε τον κωδικό πρόσβασης στον παραλήπτη"
@@ -6520,9 +6436,6 @@
       "Contacts": [
         "Επαφές"
       ],
-      "Conversations per page": [
-        "Συνομιλίες ανά σελίδα"
-      ],
       "Copy": [
         "Αντιγραφή"
       ],
@@ -6687,9 +6600,6 @@
       ],
       "Mark as": [
         "Σήμανση ως"
-      ],
-      "Messages per page": [
-        "Μηνύματα ανά σελίδα"
       ],
       "Move ${ sidebarElementName }": [
         "Μετακίνηση ${ sidebarElementName }"
@@ -7066,6 +6976,9 @@
       ],
       "Sent": [
         "Απεσταλμένα"
+      ],
+      "Set up email forwarding": [
+        "Ρύθμιση προώθησης μηνυμάτων ηλεκτρονικού ταχυδρομείου"
       ],
       "Sign up for free": [
         "Εγγραφείτε δωρεάν"
@@ -8430,6 +8343,9 @@
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Τώρα φορτώνουμε εικόνες από προεπιλογή και αποκλείουμε τους αποστολείς από την παρακολούθησή σας. Αυτό μπορεί να αλλάξει στις ${ settingsLink }."
+      ],
+      "You can now automatically forward your emails to anyone!": [
+        "Τώρα μπορείτε να προωθήσετε αυτόματα τα μηνύματα ηλεκτρονικού ταχυδρομείου σας σε οποιονδήποτε!"
       ],
       "You can now schedule your messages to be sent later": [
         "Τώρα μπορείτε να χρονοδιαγραφήσετε την αποστολή των μηνυμάτων σας αργότερα"

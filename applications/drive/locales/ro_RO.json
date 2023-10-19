@@ -2566,6 +2566,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } premium"
+      ],
       "Up to 6 users": [
         "Până la 6 utilizatori"
       ]
@@ -3382,6 +3391,9 @@
       ],
       "Continue using ${ DRIVE_APP_NAME } and unlock drive later": [
         "Continuare utilizare ${ DRIVE_APP_NAME } și deblocare unitate mai târziu"
+      ],
+      "Copy the link to clipboard": [
+        "Copiați legătura în memorie"
       ],
       "Country code": [
         "Cod țară"
@@ -5144,6 +5156,9 @@
       "File or folder is missing a name": [
         "Fișier sau folder fără nume."
       ],
+      "Link copied to clipboard": [
+        "Legătura a fost copiată în memorie."
+      ],
       "Move ${ itemsToMoveCount } file": [
         "Mutare un fișier.",
         "Mutare ${ itemsToMoveCount } fișiere.",
@@ -5704,6 +5719,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "Un utilizator"
+      ],
       "3 TB": [
         "3 TiB"
       ],
@@ -5721,6 +5739,15 @@
       ],
       "Highest VPN speed": [
         "Viteză VPN maximă"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } și ${ DRIVE_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } premium"
       ],
       "Premium early access": [
         "Acces timpuriu premium"
@@ -5766,14 +5793,25 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } lună",
+        "${ n } luni",
+        "${ n } de luni"
+      ],
       "/ month": [
         "/ lună"
       ],
       "1 year": [
         "1 an"
       ],
+      "15 months": [
+        "15 luni"
+      ],
       "2 years": [
         "2 ani"
+      ],
+      "30 months": [
+        "30 de luni"
       ],
       "Billed at ${ amount } for 1 month": [
         "Facturat cu ${ amount } pentru o lună"
@@ -5885,6 +5923,9 @@
       ]
     },
     "Storage": {
+      "Get storage": [
+        "Obțineți spațiu de stocare"
+      ],
       "Release notes": [
         "Note de lansare"
       ],
@@ -5974,6 +6015,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
+      ],
       "Premium Password Manager": [
         "Gestionare parole premium"
       ]

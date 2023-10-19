@@ -416,9 +416,6 @@
       "Restoring item failed": [
         "Falha ao restaurar o item"
       ],
-      "Setting \"${ payload.name }\" as primary vault failed": [
-        "A definição do cofre \"${ payload.name }\" como primário falhou."
-      ],
       "Settings update failed": [
         "Falha na actualização das definições"
       ],
@@ -530,9 +527,6 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "A atualização do \"${ payload.item.data.metadata.name }\" foi descartada."
-      ],
-      "\"${ payload.name }\" set as primary vault": [
-        "\"${ payload.name }\" definido como cofre primário"
       ],
       "${ count } item": [
         "${ count } item",
@@ -861,12 +855,6 @@
         "Resta-lhe ${ daysRemaining } dia no seu período experimental.",
         "Restam-lhe ${ daysRemaining } dias no seu período experimental."
       ],
-      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
-        "Excedeu o número de cofres incluídos na sua subscrição. Os itens só podem ser movidos para o seu cofre principal. Para mover itens entre todos os cofres, actualize a sua subscrição."
-      ],
-      "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
-        "Excedeu o número de cofres incluídos na sua assinatura. Novos itens só podem ser criados no seu cofre principal. Para criar novos itens em todos os cofres, actualize a sua assinatura."
-      ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Atingiu o limite de aliases que pode criar. Crie um número ilimitado de aliases quando actualizar a sua subscrição."
       ],
@@ -1167,9 +1155,6 @@
       ],
       "Prefix": [
         "Prefixo"
-      ],
-      "Primary vault": [
-        "Cofre principal"
       ],
       "Prompt for auto-save": [
         "Pedido de gravação automática"
@@ -1619,14 +1604,8 @@
       "Your plan does not allow you to create more aliases": [
         "O seu plano não lhe permite criar mais aliases"
       ],
-      "Your plan only allows you to autofill from your primary vault": [
-        "O seu plano só permite o preenchimento automático a partir do seu cofre principal"
-      ],
       "Your session was locked due to inactivity": [
         "A sua sessão foi bloqueada devido à inatividade."
-      ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
-        "A sua subscrição não lhe permite criar vários cofres. Todos os itens serão importados para o seu cofre principal. Para importar para vários cofres, atualize a sua subscrição."
       ]
     }
   }

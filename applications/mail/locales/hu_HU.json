@@ -1635,6 +1635,12 @@
       ],
       "You already tentatively accepted this invitation.": [
         "Már feltételesen elfogadta ezt meghívást."
+      ],
+      "You cannot respond to ${ BRAND_NAME } invites if you're not on the participants list at the moment.": [
+        "Jelenleg nem tudsz válaszolni ${ BRAND_NAME } meghívásáira hacsak nem vagy a résztvevők listáján."
+      ],
+      "Your email address is not in the original participants list.": [
+        "Az e-mail címed nincs az eredeti résztvevők listájában."
       ]
     },
     "Calendar widget banner": {
@@ -1958,6 +1964,9 @@
       ],
       "Email": [
         "E-mail"
+      ],
+      "Enter a display name or nickname": [
+        "Írja be a megejelnítendő nevét vagy becenevét"
       ],
       "First name": [
         "Keresztnév"
@@ -3314,6 +3323,9 @@
         "Javítsa ki a megjelölt hibát a folytatáshoz.",
         "Javítsa ki a megjelölt hibákat a folytatáshoz."
       ],
+      "Please provide either a first name, a last name or a display name": [
+        "Kérlek, adj meg egy keresztnevet, egy vezetéknevet vagy egy felhasználónevet"
+      ],
       "Port is required": [
         "A port megadása szükséges"
       ],
@@ -3818,6 +3830,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Prémium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Prémium ${ MAIL_SHORT_APP_NAME } és ${ CALENDAR_SHORT_APP_NAME }."
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Prémium ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "Maximum 6 felhasználóig"
       ]
@@ -4162,8 +4183,14 @@
       "Block unsavory senders": [
         "Blokkolja a kellemetlen feladókat"
       ],
+      "Bravo for making your email even more secure, convenient, and relevant! We've upped your free storage to a total of 1 GB.": [
+        "Gratulálunk, hogy még biztonságosabbá, kényelmesebbé és relevánsabbá tettük az e-mailjeinket! Ingyenes tárhelyét 1 GB-ra növeltük."
+      ],
       "Change ${ strongText } to your ${ BRAND_NAME } address": [
         "Változtassa ezt: ${ strongText } erre a címére: ${ BRAND_NAME }"
+      ],
+      "Changed accounts": [
+        "Új felhasználód van?"
       ],
       "Checklist complete": [
         "Az ellenőrző lista kész"
@@ -4219,6 +4246,9 @@
       "Open checklist": [
         "Ellenőrzőlista megnyitása"
       ],
+      "Open checklist and get free storage": [
+        "Nyisd meg a teendőlistát és szerezz ingyenes tárhelyet."
+      ],
       "Popular online services": [
         "Népszerű online szolgáltatások"
       ],
@@ -4236,6 +4266,12 @@
       ],
       "Sign in to the mobile app to complete this step": [
         "Jelentkezzen be a mobilalkalmazásba, hogy befejezze ezt a lépést"
+      ],
+      "Storage unlocked": [
+        "Tárhely feloldva"
+      ],
+      "This feature is currently unavailable": [
+        "Ez a funkció jelenleg nem elérhető."
       ],
       "Update your logins": [
         "Bejelentkezéseinek frissítése"
@@ -4905,6 +4941,9 @@
       "Calendar side panel": [
         "Naptár oldalsó panel"
       ],
+      "Can't find what you're looking for? ${ displayAllMailButton }": [
+        "Nem találtad, amit keresel? ${ displayAllMailButton }"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nem emlékszik a jelszóra? Lehetőség van arra, hogy az összes olyan névjegyadatot törölje, amelyet ezzel a kulccsal titkosított, így megszüntetheti ezt a figyelmeztetést."
       ],
@@ -4943,6 +4982,9 @@
       ],
       "Copied to clipboard": [
         "Vágólapra másolva"
+      ],
+      "Copy the link to clipboard": [
+        "Másold a hivatkozást a vágólapra."
       ],
       "Country code": [
         "Országkód"
@@ -5187,6 +5229,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Adatok importálása a(z) ${ importedEmailAddress } címről a(z) ${ toEmail } címre."
       ],
+      "Include Spam/Trash in your search results.": [
+        "Vegyél fel spamet/szemetet a keresési eredmények közé."
+      ],
       "Inherited from parent folder": [
         "Örökölve a tartalmazó mappáról"
       ],
@@ -5204,6 +5249,9 @@
       ],
       "Internet connection restored.": [
         "Internet kapcsolat helyreállt."
+      ],
+      "Join ${ PROTON_SENTINEL_NAME } program for the highest level of account security and support.": [
+        "Csatlakozz a ${ PROTON_SENTINEL_NAME } programhoz a legmagasabb szintű fiók biztonság és támogatás érdekében."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Hagyja jóvá a kiválasztást aztán elindul a folyamat."
@@ -5357,6 +5405,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Egy vagy több megbízható kulcsát a tulajdonosa \"kompromittáltként\" jelölt meg. Javasoljuk, hogy távolítsa el a kulcsok megbízhatóságát."
+      ],
+      "Open shortcut cheat sheet": [
+        "Nyisd meg a gyorsbillentyű csalás lapot."
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "A rendszerünk úgy érzékelte, hogy ez egy adathalász kísérlet. Kérjük ellenőrizze, hogy esetleg mégsem az."
@@ -6906,8 +6957,14 @@
       "Scheduled": [
         "Ütemezés"
       ],
+      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
+        "Zökkenőmentesen szinkronizálj fájlokat és mappákat a számítógéped és a ${ DRIVE_APP_NAME } között."
+      ],
       "Sent": [
         "Elküldött"
+      ],
+      "Set up email forwarding": [
+        "E-mail továbbítás beállítása"
       ],
       "Sign up for free": [
         "Regisztráljon ingyenesen"
@@ -7313,6 +7370,9 @@
       ],
       "Contact group updated": [
         "Névjegy csoport frissítve"
+      ],
+      "Link copied to clipboard": [
+        "Link kimásolva a vágólapra"
       ],
       "Password has been set successfully": [
         "A jelszó beállítása sikeres"
@@ -7835,6 +7895,9 @@
         "Jelszó újrabeállítás igénylés elfogadva (${ user.Email }). ${ timeRemaining.inHours } órája maradt jelszava megváltoztatására.",
         "Jelszó újrabeállítási igénylés elfogadva (${ user.Email }). ${ timeRemaining.inHours } órája maradt jelszava megváltoztatására."
       ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Kérlek, menj a bejelentkezett eszközre (abban a munkamenetben, ahol a kérés indult), hogy megváltoztasd a jelszavadat."
+      ],
       "This permission expires in ${ timeRemaining.inDays } day": [
         "Ez az engedély${ timeRemaining.inDays } órán belül lejár",
         "Ez az engedély ${ timeRemaining.inDays } órán belül lejár"
@@ -7842,6 +7905,9 @@
       "This permission expires in ${ timeRemaining.inHours } hour": [
         "Ez az engedély ${ timeRemaining.inHours } órán belül lejár",
         "Ez az engedély${ timeRemaining.inHours } órán belül lejár"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Most szabadon megváltoztathatod a jelszavadat a(z) ${ boldEmail } fiókhoz ${ boldDaysRemaining }-ig."
       ]
     },
     "session_recovery:available:link": {
@@ -7864,6 +7930,11 @@
         "Jelszó visszaállítás megszakítása"
       ]
     },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Írd be jelenlegi jelszavadat a jelszóvisszaállítási folyamat megszakításához. Más változás nem lép életbe."
+      ]
+    },
     "session_recovery:cancellation:notification": {
       "Password reset cancelled": [
         "Jelszó visszaállítás megszakítva"
@@ -7872,6 +7943,11 @@
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Jelszó visszaállítás megszakítása?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "A jelszóvisszaállítási kérés megszakadt (${ user.Email }). Ha te nem kezdeményezted ezt a kérést, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7895,9 +7971,18 @@
         "${ gracePeriodHoursRemaining } óra maradt.",
         "${ gracePeriodHoursRemaining } óra maradt."
       ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "Ha nem te kérted a jelszóvisszaállítást, akkor most mond le ezt a kérelmet"
+      ],
       "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
         "Jelszó újrabeállítás igényelve (${ user.Email }). A jelszót ${ hoursRemaining } órán belül változtathatja meg.",
         "Jelszó újrabeállítás igényelve (${ user.Email }). A jelszót ${ hoursRemaining } órán belül változtathatja meg."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "Hogy biztosak lehessünk benne, hogy valóban te próbálod visszaállítani a jelszavad, 72 órát várunk a kérések jóváhagyásáig. A jelszavadat megváltoztathatod ${ boldTimeLeft } alatt. ${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "Megkaptuk a jelszóvisszaállítási kérést a következő e-mail címre: ${ boldEmail }."
       ]
     },
     "session_recovery:in_progress:link": {
@@ -8029,6 +8114,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 felhasználó"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -8046,6 +8134,15 @@
       ],
       "Highest VPN speed": [
         "Legnagyobb VPN sebesség"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Prémium ${ MAIL_SHORT_APP_NAME } és ${ CALENDAR_SHORT_APP_NAME }."
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "Prémium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } és ${ DRIVE_SHORT_APP_NAME }."
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Prémium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium early access": [
         "Prémium korai-hozzáférés"
@@ -8091,14 +8188,24 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } hónap",
+        "${ n } hónap"
+      ],
       "/ month": [
         "/ hó"
       ],
       "1 year": [
         "1 év"
       ],
+      "15 months": [
+        "15 hónap"
+      ],
       "2 years": [
         "2 év"
+      ],
+      "30 months": [
+        "30 hónap"
       ],
       "Billed at ${ amount } for 1 month": [
         "1 hónapra ${ amount } számlázva"
@@ -8222,6 +8329,9 @@
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "A képek már alapértelmezetten betöltődnek, a feladók általi követés megakadályozásával. Ez megváltoztatható a ${ settingsLink }."
+      ],
+      "You can now automatically forward your emails to anyone!": [
+        "Mostantól automatikusan továbbíthatja az e-maileit bárkinek!"
       ],
       "You can now schedule your messages to be sent later": [
         "Most már ütemezheti is a leveleit későbbi elküldésre"
@@ -8527,6 +8637,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Prémium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Prémium ${ MAIL_SHORT_APP_NAME } és ${ CALENDAR_SHORT_APP_NAME }."
+      ],
       "Premium Password Manager": [
         "Prémium jelszókezelő"
       ]
@@ -9348,6 +9464,9 @@
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Biztos, hogy véglegesen töröl ${ count } névjegyet?",
         "Biztos, hogy véglegesen töröl ${ count } névjegyet?"
+      ],
+      "Are you sure you want to permanently delete these contact groups?": [
+        "Biztos, hogy véglegesen törli ezeket a névjegy csoportokat?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Biztos, hogy véglegesen törli ezt a névjegy csoportot?"

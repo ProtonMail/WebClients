@@ -18,7 +18,7 @@
         "Tilføj adresse"
       ],
       "Add credit / debit card": [
-        "Tilføj kredit / betalingskort"
+        "Tilføj kredit/debetkort"
       ],
       "Add credits": [
         "Tilføj kreditter"
@@ -2691,9 +2691,6 @@
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "Du må IKKE glemme denne adgangskode. Hvis du glemmer den, kan du ikke logge ind eller dekryptere dine beskeder."
       ],
-      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Brug ikke OpenVPN / IKEv2 legitimationsoplysninger til at logge på ${ VPN_APP_NAME }-applikationer eller på ${ VPN_APP_NAME }-kontrolpanelet. ${ learnMore }"
-      ],
       "Done": [
         "Udført"
       ],
@@ -3495,9 +3492,6 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Du kan bruge følgende legitimationsoplysninger til at oprette forbindelse til en ${ VPN_APP_NAME }-server ved hjælp af en tredjeparts, open source VPN-app, såsom Tunnelblick til macOS eller OpenVPN til GNU/Linux."
       ],
-      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "Du kan ikke bruge OpenVPN / IKEv2 legitimationsoplysninger til at logge på ${ VPN_APP_NAME }-applikationer eller på ${ VPN_APP_NAME }-kontrolpanelet. ${ learnMore }"
-      ],
       "You have ${ availableCount } dedicated server available.": [
         "Du har ${ availableCount } dedikeret server tilgængelig.",
         "Du har ${ availableCount } dedikerede servere tilgængelig."
@@ -3515,10 +3509,10 @@
         "Du skal deaktivere eller fjerne eventuelle yderligere ${ MAIL_APP_NAME }-brugere, adresser og brugerdomæner, før du kan nedgradere."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        "Du skal have et kreditkort eller en bankkonto tilknyttet din PayPal-konto for at tilføje den som en betalingsmetode."
+        "Du skal have et betalingskort eller en bankkonto tilknyttet din PayPal-konto for at tilføje den som en betalingsmetode."
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Du skal have et kreditkort eller en bankkonto tilknyttet din PayPal-konto. Har din PayPal-konto ikke det, så klik på knappen nedenfor."
+        "Du skal have et betalingskort eller en bankkonto tilknyttet din PayPal-konto. Har din PayPal-konto ikke det, så klik på knappen nedenfor."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Du har brugt ${ spaceDisplayed }% af din lagerkapacitet. ${ freeUpMessage } ${ upgradeLink }"
@@ -4162,7 +4156,7 @@
         "Betal faktura"
       ],
       "Paypal without credit card": [
-        "Paypal uden kreditkort"
+        "Paypal uden betalingskort"
       ],
       "Privacy policy": [
         "Privatlivspolitik"
@@ -4446,7 +4440,7 @@
         "Autosvar"
       ],
       "Autofill credit cards (coming soon)": [
-        "Autofyld kreditkort (kommer snart)"
+        "Autofyld betalingskort (kommer snart)"
       ],
       "Available on all platforms": [
         "Tilgængelig på alle platforme"
@@ -4860,7 +4854,7 @@
         "Ligesom en mappe, er en boks et praktisk måde at organisere dine ting på. At dele bokse med venner og familie er på vej."
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
-        "Administrer dit abonnement, herunder tilpasning af dit abonnement. Accepterede betalingsmetoder er kreditkort, PayPal, kryptovaluta og bankoverførsel."
+        "Administrer dit abonnement, herunder tilpasning af dit abonnement. Accepterede betalingsmetoder er betalingskort, PayPal, kryptovaluta og bankoverførsel."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Mulighed for at se ikke-private brugerindbakker som brugeren ville, herunder fulde besked- og kontaktoplysninger"
@@ -5065,10 +5059,10 @@
     },
     "Payment method option": {
       "Credit/debit card": [
-        "Kredit / betalingskort"
+        "Kredit/debetkort"
       ],
       "New credit/debit card": [
-        "Nyt kredit / betalingskort"
+        "Nyt kredit/debetkort"
       ]
     },
     "Placeholder": {
@@ -5497,6 +5491,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 bruger"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -5559,14 +5556,24 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } måned",
+        "${ n } måneder"
+      ],
       "/ month": [
         "/ måned"
       ],
       "1 year": [
         "1 år"
       ],
+      "15 months": [
+        "15 måneder"
+      ],
       "2 years": [
         "2 år"
+      ],
+      "30 months": [
+        "30 måneder"
       ],
       "Billed at ${ amount } for 1 month": [
         "Faktureret med ${ amount } for 1 måned"
@@ -5968,7 +5975,7 @@
     },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Opret sikre login-oplysninger på alle dine enheder. Inkludere ubegrænsede aliasser, 20 bokse, integreret 2FA, kreditkort-autofyld og meget mere."
+        "Opret sikre login-oplysninger på alle dine enheder. Inkludere ubegrænsede aliasser, 20 bokse, integreret 2FA, betalingskort-autofyld og meget mere."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Inkluderer 2950+ servere i 65+ lande, forbind op til 10 enheder, tilgå verdensomspændende streamingtjenester, malware- og ad-blocker og meget mere."
@@ -6105,7 +6112,7 @@
         "Tilføj adresse"
       ],
       "Add credit/debit card": [
-        "Tilføj kredit / betalingskort"
+        "Tilføj kredit/debetkort"
       ],
       "Add credits": [
         "Tilføj kreditter"
@@ -6278,7 +6285,7 @@
         "Downloads"
       ],
       "Edit credit/debit card": [
-        "Redigér kredit / betalingskort"
+        "Redigér kredit/debetkort"
       ],
       "Edit display name": [
         "Redigér vist navn"

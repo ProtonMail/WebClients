@@ -461,12 +461,6 @@
       "Invitation could not be rejected": [
         "No se pudo rechazar la invitación"
       ],
-      "Invite creation failed.": [
-        "Error al crear la invitación."
-      ],
-      "Invite successfully sent": [
-        "La Invitación ha sido enviada."
-      ],
       "Item content cannot exceed 40KB": [
         "El contenido del elemento no puede exceder de 40 KB"
       ],
@@ -499,9 +493,6 @@
       ],
       "Restoring item failed": [
         "Error al restaurar el elemento"
-      ],
-      "Setting \"${ payload.name }\" as primary vault failed": [
-        "Error al establecer \"${ payload.name }\" como bóveda principal"
       ],
       "Settings update failed": [
         "Error al actualizar los ajustes"
@@ -617,9 +608,6 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Actualización de \"${ payload.item.data.metadata.name }\" descartada"
-      ],
-      "\"${ payload.name }\" set as primary vault": [
-        "Se ha establecido \"${ payload.name }\" como bóveda principal."
       ],
       "${ count } item": [
         "${ count } elemento",
@@ -1023,14 +1011,8 @@
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Has superado el número de bóvedas incluidas en tu suscripción. Los elementos solo se pueden mover a tus primeras dos bóvedas. Para mover elementos entre todas las bóvedas, mejora tu suscripción."
       ],
-      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
-        "Has superado el número de bóvedas incluidas en tu suscripción. Los elementos solo pueden ser movidos a tu bóveda principal. Para mover elementos entre todas las bóvedas, actualiza tu suscripción."
-      ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
         "Has superado el número de bóvedas incluidas en tu suscripción. Los elementos nuevos solo se pueden crear en tus primeras dos bóvedas. Para crear elementos nuevos en todas las bóvedas, mejora tu suscripción."
-      ],
-      "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
-        "Has superado el número de bóvedas incluidas en tu suscripción. Los nuevos elementos solo pueden ser creados en tu bóveda principal. Para crear elementos nuevos en todas las bóvedas, actualiza tu suscripción."
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Has alcanzado el límite de alias que puedes crear. Crea alias ilimitados al actualizar tu suscripción."
@@ -1339,9 +1321,6 @@
       "Prefix": [
         "Prefijo"
       ],
-      "Primary vault": [
-        "Bóveda principal"
-      ],
       "Prompt for auto-save": [
         "Avisar para guardar automáticamente"
       ],
@@ -1446,9 +1425,6 @@
       ],
       "Vault": [
         "Bóveda"
-      ],
-      "Vaults": [
-        "Bóvedas"
       ],
       "Verification number": [
         "Número de verificación"
@@ -1832,17 +1808,11 @@
       "Your plan only allows you to autofill from your first two vaults": [
         "Tu plan solo le permite rellenar automáticamente desde tus primeras dos bóvedas."
       ],
-      "Your plan only allows you to autofill from your primary vault": [
-        "Tu plan solo permite el autorellenado desde tu bóveda principal."
-      ],
       "Your session was locked due to inactivity": [
         "Se ha bloqueado tu sesión por inactividad."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Tu suscripción no te permite crear varias bóvedas. Todos los elementos serán importados atsu primera bóveda. Para importar a varias bóvedas mejora tu suscripción."
-      ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
-        "Tu suscripción no te permite crear varias bóvedas. Todos los elementos serán importados a tu bóveda principal. Para importar a varias bóvedas actualiza tu suscripción."
       ]
     }
   }

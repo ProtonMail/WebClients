@@ -2950,6 +2950,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } premium"
+      ],
       "Up to 6 users": [
         "Hasta 6 usuarios"
       ]
@@ -5831,6 +5840,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 usuario"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -5848,6 +5860,15 @@
       ],
       "Highest VPN speed": [
         "Máxima velocidad de VPN"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y ${ DRIVE_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } premium"
       ],
       "Premium early access": [
         "Acceso anticipado premium"
@@ -5893,14 +5914,24 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } meses"
+      ],
       "/ month": [
         "/ mes"
       ],
       "1 year": [
         "1 año"
       ],
+      "15 months": [
+        "15 meses"
+      ],
       "2 years": [
         "2 años"
+      ],
+      "30 months": [
+        "30 meses"
       ],
       "Billed at ${ amount } for 1 month": [
         "Al precio de ${ amount } durante 1 mes"
@@ -6201,6 +6232,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } premium"
+      ],
       "Premium Password Manager": [
         "Administrador de contraseñas premium"
       ]

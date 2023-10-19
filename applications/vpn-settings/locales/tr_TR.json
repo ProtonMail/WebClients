@@ -634,6 +634,9 @@
       "${ n } month": [
         "${ n } ay",
         "${ n } ay"
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
+        "${ renewPrice } tutar ile ${ renewalLength } süre için faturalanır"
       ]
     },
     "Billing cycle option": {
@@ -2015,6 +2018,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Ücretli ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Ücretli ${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Ücretli ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "6 kullanıcıya kadar"
       ]
@@ -2645,6 +2657,15 @@
       "Admin account allocation": [
         "Yönetici hesabına ayrılan"
       ],
+      "After this date, you'll be billed every 12 months at the normal yearly rate.": [
+        "Bu tarihten sonra faturanız her 12 ayda bir normal yıllık ücret üzerinden hazırlanacak."
+      ],
+      "After this date, you'll be billed every 24 months at the normal 2-year rate.": [
+        "Bu tarihten sonra faturanız her 24 ayda bir normal iki yıllık ücret üzerinden hazırlanacak."
+      ],
+      "After this date, you'll be billed every month at the regular price.": [
+        "Bu tarihten sonra faturanız her ay normal fiyat üzerinden hazırlanacak."
+      ],
       "All your changes will be lost.": [
         "Yaptığınız tüm değişiklikler kaybolacak."
       ],
@@ -2787,9 +2808,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "Bu parolayı UNUTMAYIN. Unutursanız, oturum açamaz veya iletilerinizin şifresini çözemezsiniz."
-      ],
-      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "${ VPN_APP_NAME } uygulamalarında veya ${ VPN_APP_NAME } panosunda OpenVPN / IKEv2 kimlik doğrulama bilgilerini kullanmayın. ${ learnMore }"
       ],
       "Done": [
         "Tamamlandı"
@@ -3253,6 +3271,15 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Ödemeyi aşağıdaki adrese yapın ya da QR kodunu tarayın. Ön ödemeniz onaylandıktan sonra hesabınıza yansıtılacak."
       ],
+      "Subscription auto-renews every 12 months.": [
+        "Abonelik 12 ayda bir otomatik olarak yenilenir."
+      ],
+      "Subscription auto-renews every 24 months.": [
+        "Abonelik 24 ayda bir otomatik olarak yenilenir."
+      ],
+      "Subscription auto-renews every month.": [
+        "Abonelik her ay otomatik olarak yenilenir."
+      ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonelik sona eriyor: ${ planName } tarifesinin ek özelliklerini tutmak için ${ byDate } tarihine kadar yenileyin. ${ reactivateLink }"
       ],
@@ -3300,6 +3327,9 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Bu yapılandırmalar WireGuard yönelticileri ve resmi istemciler ile çalışmak üzere sunulmuştur."
+      ],
+      "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
+        "Bu kimlik doğrulama bilgileri resmi ${ VPN_APP_NAME } uygulamalarımızda oturum açmak için kullanılamaz. ${ learnMore }"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Bu hesap, ilkeye aykırı kullanım olasılığı nedeniyle askıya alınmış."
@@ -3564,6 +3594,9 @@
       "You can edit this once to ensure the correct email address for verification.": [
         "Bunu doğrulamada kullanılacak doğru e-posta adresini yazmak için bir kez düzenleyebilirsiniz."
       ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
+        "Tarifenizdeki IP adreslerini sayıya ${ specificCountryCount } ekleyerek ya da size özel çözümler için bize ulaşarak yukarıdaki kurulumu kullanmaya başlayabilirsiniz."
+      ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "${ MAX_CALENDARS_FREE } tane takvim tutabilirsiniz. ${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın.",
         "${ MAX_CALENDARS_FREE } tane takvim tutabilirsiniz. ${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın."
@@ -3588,9 +3621,6 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Bir ${ VPN_APP_NAME } sunucusuna macOS için Tunnelblick veya GNU/Linux için OpenVPN gibi üçüncü taraf, açık kaynaklı bir VPN uygulaması kullanarak bağlanmak için şu kimlik doğrulama bilgilerini kullanabilirsiniz."
-      ],
-      "You cannot use the OpenVPN / IKEv2 credentials to sign in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "${ VPN_APP_NAME } uygulamalarında ya da ${ VPN_APP_NAME } panosunda oturum açmak için OpenVPN / IKEv2 kimlik bilgilerini kullanamazsınız. ${ learnMore }"
       ],
       "You have ${ availableCount } dedicated server available.": [
         "Size ayrılmış ve kullanabileceğiniz ${ availableCount } sunucu var.",
@@ -3668,6 +3698,9 @@
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Bilgileriniz bizimle güvende olur. Sizinle yalnızca hizmetlerimizi sağlamak için gerekli olduğunda iletişim kuracağız."
       ],
+      "Your next billing date is ${ renewalTime }.": [
+        "Sonraki fatura zamanınız ${ renewalTime }."
+      ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Kuruluş parolanızı, yönetici yetkileri vermek istediğiniz diğer kullanıcılarla paylaşabilirsiniz. Ayrıca kuruluş parolanız, hesabınıza erişimi kaybetmeniz durumunda kuruluşunuza erişim sağlamak için kullanacağınız acil durum kurtarma kodudur. Lütfen bu parolayı kaydedip güvenli bir yerde saklayın."
       ],
@@ -3679,6 +3712,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Aboneliğiniz Mozilla tarafından yönetiliyor. Lütfen Mozilla destek ekibi ile görüşün."
+      ],
+      "Your subscription will auto-renew on ${ renewalTime }.": [
+        "Aboneliğiniz ${ renewalTime } zamanında otomatik olarak yenilenecek."
       ]
     },
     "Info for cash payment method": {
@@ -4020,6 +4056,9 @@
       ],
       "New password": [
         "Yeni parola"
+      ],
+      "New plan": [
+        "Yeni tarife"
       ],
       "No filter": [
         "Süzgeç yok"
@@ -4512,6 +4551,9 @@
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } sınırsız sayıda hide-my-email takma adı ile birlikte"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } programı"
+      ],
       "${ size } attachment size": [
         "${ size } ek dosya boyutu"
       ],
@@ -4532,6 +4574,9 @@
       ],
       "99.95% SLA": [
         "%99.95 hizmet sürekliliği"
+      ],
+      "Ad-blocker and malware protection": [
+        "Reklam engelleyici ve kötü amaçlı yazılım koruması"
       ],
       "Admin console": [
         "Yönetici panosu"
@@ -4946,6 +4991,18 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Takviminizi uçtan uca şifrelemeyle koruyun. Özel takvimler, takvim paylaşımı ve diğer özellikler."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Sürüm geçmişi, şifrelenmiş dosya paylaşımı ve diğer özellikler."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: E-postalarınızı uçtan uca şifrelemeyle koruyun. Özel e-posta etki alanları, 15 e-posta adresi, sınırsız hide-my-email takma adları ve diğer özellikler."
+      ],
+      "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "${ VPN_APP_NAME }: Engellenen içeriğe erişin ve gizliliğinizi koruyarak gezinin. ${ serversAndCountries }, en yüksek VPN hızları, tüm Dünya'daki yayın akışı hizmetlerine erişim, kötü amaçlı yazılım ve reklam engelleyici, hızlı BitTorrent indirmeleri ve daha fazlası."
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Netflix, Disney+ ve Prime Video gibi yayın akışı hizmetlerindeki içeriğe her yerden erişin"
       ],
@@ -5051,6 +5108,9 @@
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Ailenizi zararlı sitelerden koruyun ve en sevdiğiniz yayın akışlarını izlemek için yüksek hızlı VPN sunucularımıza erişin"
+      ],
+      "Provides the highest level of account security protection and specialist support": [
+        "En yüksek düzeyde hesap güvenliği koruması ve uzman desteği sağlar"
       ],
       "Quickly set up out-of-office messages": [
         "Ofis dışında iletilerini hızlıca ayarlayın"
@@ -5843,6 +5903,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 kullanıcı"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -5860,6 +5923,15 @@
       ],
       "Highest VPN speed": [
         "En yüksek VPN hızı"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Ücretli ${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "Ücretli ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } ve ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Ücretli ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium early access": [
         "Öncelikli erken erişim"
@@ -5905,14 +5977,24 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } ay",
+        "${ n } ay"
+      ],
       "/ month": [
         "/ ay"
       ],
       "1 year": [
         "1 yıl"
       ],
+      "15 months": [
+        "15 ay"
+      ],
       "2 years": [
         "2 yıl"
+      ],
+      "30 months": [
+        "30 ay"
       ],
       "Billed at ${ amount } for 1 month": [
         "1 aylık ${ amount } olarak faturalanır"
@@ -6039,6 +6121,12 @@
     "Subscription": {
       "Billed every 2 years": [
         "2 yılda bir faturalanır"
+      ],
+      "Billed for 15 months": [
+        "15 aylık olarak faturalanır"
+      ],
+      "Billed for 30 months": [
+        "30 aylık olarak faturalanır"
       ],
       "Billed monthly": [
         "Ayda bir faturalanır"
@@ -6332,6 +6420,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Ücretli ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Ücretli ${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Premium Password Manager": [
         "Ücretli Parola Yöneticisi"
       ]
@@ -7033,6 +7127,11 @@
         "E-posta adresi doğrulanmış"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve daha fazlası."
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "kararlı sürüm"
@@ -7113,8 +7212,14 @@
       "1-year": [
         "1 yıl"
       ],
+      "15-month": [
+        "15 ay"
+      ],
       "2-year": [
         "2 yıl"
+      ],
+      "30-month": [
+        "30 ay"
       ],
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "${ billingCycle } aboneliği ile ${ discount } indirim alın"

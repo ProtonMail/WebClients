@@ -224,6 +224,9 @@
       "Not now": [
         "Ei nyt"
       ],
+      "Open in a window": [
+        "Avaa uudessa ikkunassa"
+      ],
       "Open navigation": [
         "Avaa navigaatio"
       ],
@@ -458,12 +461,6 @@
       "Invitation could not be rejected": [
         "Kutsua ei voitu hylätä"
       ],
-      "Invite creation failed.": [
-        "Kutsun luonti epäonnistui."
-      ],
-      "Invite successfully sent": [
-        "Kutsu lähetettiin"
-      ],
       "Item content cannot exceed 40KB": [
         "Kohteen sisältö ei saa ylittää 40 kt"
       ],
@@ -496,9 +493,6 @@
       ],
       "Restoring item failed": [
         "Kohteen palautus epäonnistui"
-      ],
-      "Setting \"${ payload.name }\" as primary vault failed": [
-        "Holvin \"${ payload.name }\" asetus ensisijaiseksi holviksi epäonnistui"
       ],
       "Settings update failed": [
         "Asetusten tallennus epäonnistui"
@@ -614,9 +608,6 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Kohteen \"${ payload.item.data.metadata.name }\" päivitys hylättiin"
-      ],
-      "\"${ payload.name }\" set as primary vault": [
-        "\"${ payload.name }\" asetettiin ensisijaiseksi holviksi"
       ],
       "${ count } item": [
         "${ count } kohde",
@@ -1020,14 +1011,8 @@
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Olet ylittänyt tilaukseesi sisältyvän holvien enimmäismäärän. Kohteita voidaan siirtää vain kahteen ensimmäiseen holviisi. Jos haluat siirtää kohteita kaikkiin holveihisi, päivitä tilauksesi."
       ],
-      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your primary vault. To move items between all vaults upgrade your subscription.": [
-        "Olet ylittänyt tilaukseesi sisältyvän holvien enimmäismäärän. Kohteita voidaan siirtää vain ensisijaiseen holviin. Jos haluat siirtää kohteita kaikkien holvien välillä, päivitä tilauksesi."
-      ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
         "Olet ylittänyt tilaukseesi sisältyvän holvien enimmäismäärän. Uusia kohteita voidaan luoda vain kahteen ensimmäiseen holviisi. Jos haluat luoda kohteita kaikkiin holveihisi, päivitä tilauksesi."
-      ],
-      "You have exceeded the number of vaults included in your subscription. New items can only be created in your primary vault. To create new items in all vaults upgrade your subscription.": [
-        "Olet ylittänyt tilaukseesi sisältyvän holvien enimmäismäärän. Uusia kohteita voidaan luoda vain ensisijaiseen holviin. Jos haluat luoda kohteita kaikkiin holveihin, päivitä tilauksesi."
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Luotujen aliasten enimmäismäärä on saavutettu. Luo aliaksia rajattomasti päivittämällä tilauksesi."
@@ -1335,9 +1320,6 @@
       ],
       "Prefix": [
         "Etuliite"
-      ],
-      "Primary vault": [
-        "Ensisijainen holvi"
       ],
       "Prompt for auto-save": [
         "Tarjoa automaattitallennusta"
@@ -1769,6 +1751,12 @@
       "Please log back in": [
         "Kirjaudu takaisin sisään"
       ],
+      "Please verify your email address in order to use email aliases": [
+        "Vahvista sähköpostiosoitteesi käyttääksesi sähköpostialiaksia"
+      ],
+      "Please verify your email address in order to use vault sharing": [
+        "Vahvista sähköpostiosoitteesi käyttääksesi holvin jakamista"
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Raportit eivät ole päästä päähän -salattuja, joten älä sisällytä niihin arkaluonteisia tietoja."
       ],
@@ -1820,17 +1808,11 @@
       "Your plan only allows you to autofill from your first two vaults": [
         "Tilauksesi sallii automaattitäytön vain kahdesta ensimmäisestä holvistasi"
       ],
-      "Your plan only allows you to autofill from your primary vault": [
-        "Tilauksesi sallii automaattitäytön vain ensisijaisesta holvistasi"
-      ],
       "Your session was locked due to inactivity": [
         "Istuntosi lukittiin toimettomuuden seuraksena"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Tilauksesi ei salli useiden holvien luontia ja kaikki kohteet tuodaan ensisijaiseen holviisi. Jos haluat tuoda useisiin holveihin, päivitä tilauksesi."
-      ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your primary vault. To import into multiple vaults upgrade your subscription.": [
-        "Tilauksesi ei salli useiden holvien luontia ja kaikki kohteet tuodaan oletusarvoisesti ensisijaiseen holviisi. Jos haluat tuoda useisiin holveihin, päivitä tilauksesi."
       ]
     }
   }
