@@ -125,7 +125,7 @@ export const getCustomFields = (included: boolean = false): PlanCardFeatureDefin
     };
 };
 
-const getVaultSharingText = (n: number) => {
+export const getVaultSharingText = (n: number) => {
     return c('new_plans: feature').ngettext(
         msgid`Vault sharing (up to ${n} person)`,
         `Vault sharing (up to ${n} people)`,
