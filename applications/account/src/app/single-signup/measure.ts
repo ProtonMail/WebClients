@@ -2,7 +2,7 @@ import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { Currency } from '@proton/shared/lib/interfaces';
 
-export type InteractFields = 'email' | 'email_confirm' | 'pwd' | 'pwd_confirm';
+export type InteractFields = 'username' | 'email' | 'email_confirm' | 'pwd' | 'pwd_confirm';
 
 type TelemetryBoolean = 'yes' | 'no';
 type TelemetryPaymentMethods = {

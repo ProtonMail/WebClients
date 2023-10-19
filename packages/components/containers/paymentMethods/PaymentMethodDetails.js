@@ -53,7 +53,7 @@ const PaymentMethodDetails = ({ type, details = {} }) => {
                 <div className="ratio-container-5-1 text-center">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="inner-ratio-container fill-currentColor"
+                        className="inner-ratio-container fill-currentcolor"
                         viewBox={`0 0 ${textWidth} 50`}
                         xmlSpace="preserve"
                     >

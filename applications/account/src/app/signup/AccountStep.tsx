@@ -265,8 +265,6 @@ const AccountStep = ({
         </Link>
     );
 
-    const BRAND_NAME_TWO = BRAND_NAME;
-
     return (
         <Main>
             <Header
@@ -375,7 +373,7 @@ const AccountStep = ({
                                 title={
                                     signupType === SignupType.Email
                                         ? c('Info')
-                                              .t`With an encrypted ${BRAND_NAME} address, you can use all ${BRAND_NAME_TWO} services`
+                                              .t`With an encrypted ${BRAND_NAME} address, you can use all ${BRAND_NAME} services`
                                         : c('Info')
                                               .t`You will need a ${BRAND_NAME} address to use ${MAIL_APP_NAME} and ${CALENDAR_APP_NAME}`
                                 }

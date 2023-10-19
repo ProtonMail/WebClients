@@ -6,6 +6,7 @@ import { getPassAppFeature } from '@proton/components/containers/payments/featur
 import {
     getBundlePlan,
     getBundleProPlan,
+    getMailPlan,
     getPassPlan,
     getVPNPlan,
 } from '@proton/components/containers/payments/features/plan';
@@ -66,6 +67,19 @@ export const getSummaryPlan = (
                 getVPNAppFeature({ serversCount: vpnServersCountData }),
                 getPassAppFeature(),
             ],
+        };
+    }
+
+    if (plan && plan?.Name === PLANS.MAIL) {
+        const shortPlan = getMailPlan(plan);
+        return {
+            logo: (
+                <div>
+                    <img src={bundle} width={iconSize} height={iconSize} alt={shortPlan.title} />
+                </div>
+            ),
+            ...shortPlan,
+            plan,
         };
     }
 

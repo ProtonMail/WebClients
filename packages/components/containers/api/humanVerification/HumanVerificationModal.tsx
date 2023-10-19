@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useTheme } from '@proton/components/containers';
 import { useLoading } from '@proton/hooks';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
@@ -16,18 +17,18 @@ import {
 import { useNotifications } from '../../../hooks';
 import HumanVerificationForm from './HumanVerificationForm';
 import { isVerifyAddressOwnership } from './helper';
-import { HumanVerificationSteps } from './interface';
+import { type HumanVerificationResult, HumanVerificationSteps, type VerificationModel } from './interface';
 
-interface Props<T> extends ModalProps {
+interface Props<T extends { humanVerificationResult?: HumanVerificationResult }> extends ModalProps {
     title?: string;
     token: string;
     methods: HumanVerificationMethodType[];
-    onSuccess: (data: T) => void;
+    onSuccess: (data: T, verificationModel?: VerificationModel) => void;
     onVerify: (token: string, tokenType: HumanVerificationMethodType) => Promise<T>;
     onError: (error: any) => void;
 }
 
-const HumanVerificationModal = <T,>({
+const HumanVerificationModal = <T extends { humanVerificationResult?: HumanVerificationResult }>({
     title: maybeTitle,
     token,
     methods = [],
@@ -37,6 +38,7 @@ const HumanVerificationModal = <T,>({
     onClose = noop,
     ...rest
 }: Props<T>) => {
+    const theme = useTheme();
     const title = maybeTitle || c('Title').t`Human verification`;
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
@@ -44,13 +46,24 @@ const HumanVerificationModal = <T,>({
 
     const [isMandatory, setIsMandatory] = useState<boolean>(true);
 
-    const handleSubmit = async (token: string, tokenType: HumanVerificationMethodType) => {
+    const handleSubmit = async (
+        token: string,
+        tokenType: HumanVerificationMethodType,
+        verificationModel?: VerificationModel
+    ) => {
         if (loading) {
             return;
         }
         try {
             const result = await onVerify(token, tokenType);
             createNotification({ text: c('Success').t`Verification successful` });
+            if (result) {
+                result.humanVerificationResult = {
+                    token,
+                    tokenType,
+                    verificationModel,
+                };
+            }
             onSuccess(result);
             onClose();
         } catch (error: any) {
@@ -84,9 +97,12 @@ const HumanVerificationModal = <T,>({
             <ModalHeader title={title} hasClose={!isMandatory} />
             <ModalContent>
                 <HumanVerificationForm
+                    theme={theme.information.dark ? 'dark' : undefined}
                     step={step}
                     onChangeStep={setStep}
-                    onSubmit={(token, tokenType) => withLoading(handleSubmit(token, tokenType))}
+                    onSubmit={(token, tokenType, verificationModel) =>
+                        withLoading(handleSubmit(token, tokenType, verificationModel))
+                    }
                     onClose={onClose}
                     methods={methods}
                     token={token}
