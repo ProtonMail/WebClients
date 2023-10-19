@@ -11,6 +11,7 @@ import { readFirefoxData } from './providers/firefox.reader';
 import { readKeePassData } from './providers/keepass.reader';
 import { readKeeperData } from './providers/keeper.reader';
 import { readLastPassData } from './providers/lastpass.reader';
+import { readNordPassData } from './providers/nordpass.reader';
 import { readProtonPassData } from './providers/protonpass.reader';
 import { readRoboformData } from './providers/roboform.reader';
 import { readSafariData } from './providers/safari.reader';
@@ -92,6 +93,10 @@ export const fileReader = async (payload: ImportReaderPayload): Promise<ImportPa
 
         case ImportProvider.ROBOFORM: {
             return readRoboformData(await payload.file.text());
+        }
+
+        case ImportProvider.NORDPASS: {
+            return readNordPassData(await payload.file.text());
         }
 
         default:
