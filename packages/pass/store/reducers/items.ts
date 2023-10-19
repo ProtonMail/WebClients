@@ -248,6 +248,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
                             ...item,
                             shareId,
                             itemId: optimisticId,
+                            modifyTime: getEpoch(),
                         },
                     },
                 }
