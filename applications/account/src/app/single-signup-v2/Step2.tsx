@@ -9,14 +9,17 @@ import Header from '../public/Header';
 import Main from '../public/Main';
 import { LoadingTextStepper } from '../signup/LoadingStep';
 import Layout from './Layout';
+import { SignupTheme } from './interface';
 
 const Step2 = ({
+    theme,
     onSetup,
     steps,
     product,
     img,
     logo,
 }: {
+    theme: SignupTheme;
     steps: string[];
     onSetup: () => Promise<void>;
     product: string;
@@ -28,7 +31,7 @@ const Step2 = ({
     }, []);
 
     return (
-        <Layout logo={logo} hasDecoration={false}>
+        <Layout theme={theme} logo={logo} hasDecoration={false}>
             <Main>
                 <Content>
                     <Header center title={c('Info').t`Thank you`} subTitle={c('Info').t`for choosing ${product}`} />

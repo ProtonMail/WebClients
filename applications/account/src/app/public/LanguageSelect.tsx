@@ -31,7 +31,11 @@ const LanguageSelect = ({ className, style, locales = {}, outlined, globe, color
         const localeCode = getClosestLocaleCode(newLocale, locales);
         await Promise.all([loadLocale(localeCode, locales), loadDateLocale(localeCode, getBrowserLocale())]);
         forceRefresh();
-        history.push(`${getLocalePathPrefix(getLocaleMapping(localeCode) || '')}${location.pathname}`);
+        history.push(
+            `${getLocalePathPrefix(getLocaleMapping(localeCode) || '')}${location.pathname}${location.search}${
+                location.hash
+            }`
+        );
     };
 
     const menu = (

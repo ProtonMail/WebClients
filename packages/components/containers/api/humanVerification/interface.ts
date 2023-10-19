@@ -1,3 +1,5 @@
+import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
+
 type OwnershipChallengeType = 'external' | 'login' | 'verify_address';
 
 export interface OwnershipVerificationModel {
@@ -5,6 +7,12 @@ export interface OwnershipVerificationModel {
     method: `ownership-${'sms' | 'email'}`;
     type: OwnershipChallengeType;
     value: string;
+}
+
+export interface HumanVerificationResult {
+    tokenType: HumanVerificationMethodType;
+    token: string;
+    verificationModel?: VerificationModel;
 }
 
 export type VerificationModel =

@@ -2,8 +2,6 @@ import { OtherProductParam, ProductParam, otherProductParamValues } from '@proto
 import {
     ADDON_NAMES,
     APP_NAMES,
-    CYCLE,
-    DEFAULT_CYCLE,
     MAX_DOMAIN_PRO_ADDON,
     MAX_IPS_ADDON,
     MAX_MEMBER_ADDON,
@@ -16,6 +14,7 @@ import { getValidCycle } from '@proton/shared/lib/helpers/subscription';
 import { Currency, Plan, getPlanMaxIPs } from '@proton/shared/lib/interfaces';
 import clamp from '@proton/utils/clamp';
 
+import { PlanParameters, SignupDefaults } from '../single-signup-v2/interface';
 import { addonLimit } from '../single-signup/planCustomizer/PlanCustomizer';
 import { SERVICES } from './interfaces';
 
@@ -52,7 +51,7 @@ export const getProductParams = (pathname: string, searchParams: URLSearchParams
 export const getSignupSearchParams = (
     pathname: string,
     searchParams: URLSearchParams,
-    defaults?: { cycle?: CYCLE; preSelectedPlan?: PLANS }
+    defaults?: Partial<SignupDefaults>
 ) => {
     const maybeCurrency = searchParams.get('currency')?.toUpperCase() as Currency | undefined;
     const currency = maybeCurrency && ['EUR', 'CHF', 'USD'].includes(maybeCurrency) ? maybeCurrency : undefined;
@@ -89,9 +88,9 @@ export const getSignupSearchParams = (
         email,
         coupon,
         currency,
-        cycle: cycle || defaults?.cycle || DEFAULT_CYCLE,
+        cycle: cycle || defaults?.cycle,
         minimumCycle,
-        preSelectedPlan: preSelectedPlan || defaults?.preSelectedPlan,
+        preSelectedPlan: preSelectedPlan || defaults?.plan,
         product,
         users,
         domains,
@@ -105,21 +104,36 @@ export const getSignupSearchParams = (
 };
 export type SignupParameters = ReturnType<typeof getSignupSearchParams>;
 
-export const getPlanIDsFromParams = (plans: Plan[], signupParameters: SignupParameters) => {
+export const getPlanIDsFromParams = (
+    plans: Plan[],
+    signupParameters: {
+        preSelectedPlan?: string;
+        domains?: number;
+        ips?: number;
+        users?: number;
+    },
+    defaults: { plan: PLANS }
+): PlanParameters => {
+    const freePlanIDs = {};
+    const defaultResponse = {
+        planIDs: defaults.plan === PLANS.FREE ? freePlanIDs : { [defaults.plan]: 1 },
+        defined: false,
+    };
+
     if (!signupParameters.preSelectedPlan) {
-        return;
+        return defaultResponse;
     }
 
     if (signupParameters.preSelectedPlan === 'free') {
-        return {};
+        return { planIDs: freePlanIDs, defined: true };
     }
 
-    const plan = plans.find(({ Name, Type }) => {
-        return Name === signupParameters.preSelectedPlan && Type === PLAN_TYPES.PLAN;
+    const plan = plans.find((plan) => {
+        return plan.Name === signupParameters.preSelectedPlan && plan.Type === PLAN_TYPES.PLAN;
     });
 
     if (!plan) {
-        return;
+        return defaultResponse;
     }
 
     const planIDs = { [plan.Name]: 1 };
@@ -161,5 +175,5 @@ export const getPlanIDsFromParams = (plans: Plan[], signupParameters: SignupPara
         }
     }
 
-    return planIDs;
+    return { planIDs, defined: true };
 };
