@@ -1,17 +1,34 @@
 import { c } from 'ttag';
 
-import { PassLogo } from '@proton/components/components';
+import { IconName, PassLogo } from '@proton/components/components';
+import { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import {
     get2FAAuthenticator,
+    get2FAAuthenticatorText,
     getCreditCards,
     getDevices,
     getHideMyEmailAliases,
     getItems,
     getLoginsAndNotes,
     getVaultSharing,
+    getVaultSharingText,
 } from '@proton/components/containers/payments/features/pass';
+import {
+    getAdvancedVPNCustomizations,
+    getNetShield,
+    getProtectDevices,
+    getVPNSpeed,
+} from '@proton/components/containers/payments/features/vpn';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
-import { APPS, CYCLE, PASS_APP_NAME, PASS_SHORT_APP_NAME, PLANS } from '@proton/shared/lib/constants';
+import {
+    APPS,
+    CYCLE,
+    PASS_APP_NAME,
+    PASS_SHORT_APP_NAME,
+    PLANS,
+    VPN_APP_NAME,
+    VPN_CONNECTIONS,
+} from '@proton/shared/lib/constants';
 import { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -27,24 +44,43 @@ import { getInfo } from './InstallExtensionStep';
 import setupPass from './onboarding.svg';
 import recoveryKit from './recovery-kit.svg';
 
-export const getPassBenefits = (): BenefitItem[] => {
+export const getPassBenefits = (isPaidPass: boolean): BenefitItem[] => {
     return [
         {
             key: 1,
             text: c('pass_signup_2023: Info').t`Hide-my-email aliases protect your email from data breaches`,
             icon: {
-                name: 'alias',
+                name: 'alias' as const,
             },
         },
-        {
-            key: 2,
-            text: c('pass_signup_2023: Info').t`End-to-end encrypted notes`,
-            icon: {
-                name: 'lock',
-            },
-        },
+        ...(isPaidPass
+            ? [
+                  {
+                      key: 2,
+                      text: get2FAAuthenticatorText(),
+                      icon: {
+                          name: 'key' as const,
+                      },
+                  },
+                  {
+                      key: 3,
+                      text: getVaultSharingText(10),
+                      icon: {
+                          name: 'lock' as const,
+                      },
+                  },
+              ]
+            : [
+                  {
+                      key: 2,
+                      text: c('pass_signup_2023: Info').t`End-to-end encrypted notes`,
+                      icon: {
+                          name: 'lock' as const,
+                      },
+                  },
+              ]),
         ...getGenericBenefits(),
-    ];
+    ].filter(isTruthy);
 };
 
 export const getFreePassFeatures = () => {
@@ -69,12 +105,16 @@ export const getPassConfiguration = ({
     isDesktop,
     isPassWelcome,
     vpnServersCountData,
+    isPaidPass,
+    isPaidPassVPNBundle,
 }: {
     mode: SignupMode;
     hideFreePlan: boolean;
     isDesktop: boolean;
     isPassWelcome: boolean;
     vpnServersCountData: VPNServersCountData;
+    isPaidPass: boolean;
+    isPaidPassVPNBundle: boolean;
 }): SignupConfiguration => {
     const logo = <PassLogo />;
 
@@ -105,14 +145,55 @@ export const getPassConfiguration = ({
         },
     ].filter(isTruthy);
 
-    const benefitItems = getPassBenefits();
-    const benefits = benefitItems && (
-        <div>
-            <div className="text-lg text-semibold">{getBenefits(PASS_APP_NAME)}</div>
-            <Benefits className="mt-5 mb-5" features={benefitItems} />
-            <div>{getJoinString()}</div>
-        </div>
-    );
+    const benefits = (() => {
+        if (isPaidPassVPNBundle) {
+            const getBenefitItems = (items: PlanCardFeatureDefinition[]) => {
+                return items.map(
+                    (item, i): BenefitItem => ({
+                        ...item,
+                        key: i,
+                        icon: { name: item.icon as IconName },
+                    })
+                );
+            };
+            return (
+                <div>
+                    <div className="text-lg text-semibold">{getBenefits(PASS_APP_NAME)}</div>
+                    <Benefits
+                        className="mt-5 mb-5"
+                        features={getBenefitItems([
+                            getLoginsAndNotes(),
+                            getHideMyEmailAliases('unlimited'),
+                            get2FAAuthenticator(true),
+                            getVaultSharing(10),
+                        ])}
+                    />
+                    <div className="text-lg text-semibold">{getBenefits(VPN_APP_NAME)}</div>
+                    <Benefits
+                        className="mt-5 mb-5"
+                        features={getBenefitItems([
+                            getVPNSpeed('highest'),
+                            getProtectDevices(VPN_CONNECTIONS),
+                            getNetShield(true),
+                            getAdvancedVPNCustomizations(true),
+                        ])}
+                    />
+                    <div>{getJoinString()}</div>
+                </div>
+            );
+        }
+
+        const benefitItems = getPassBenefits(isPaidPass);
+        return (
+            benefitItems && (
+                <div>
+                    <div className="text-lg text-semibold">{getBenefits(PASS_APP_NAME)}</div>
+                    <Benefits className="mt-5 mb-5" features={benefitItems} />
+                    <div>{getJoinString()}</div>
+                </div>
+            )
+        );
+    })();
 
     return {
         logo,
@@ -130,10 +211,14 @@ export const getPassConfiguration = ({
             plan: mode === SignupMode.Invite ? PLANS.FREE : PLANS.PASS_PLUS,
             cycle: CYCLE.YEARLY,
         },
+        onboarding: {
+            user: true,
+            signup: true,
+        },
         product: APPS.PROTONPASS,
         shortProductAppName: PASS_SHORT_APP_NAME,
         productAppName: PASS_APP_NAME,
-        setupImg: <img src={setupPass} alt={c('pass_signup_2023: Onboarding').t`Welcome to ${PASS_APP_NAME}`} />,
+        setupImg: <img src={setupPass} alt="" />,
         preload: (
             <>
                 <link rel="prefetch" href={recoveryKit} as="image" />
