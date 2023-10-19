@@ -27,11 +27,11 @@ import { FORM_ID, VaultInviteForm } from './VaultInviteForm';
 
 export type VaultInviteCreateProps =
     | { withVaultCreation: false; vault: VaultShareItem }
-    | { withVaultCreation: true; item: SelectedItem };
+    | { withVaultCreation: true; item: SelectedItem; onVaultCreated?: (shareId: string) => void };
 
 export type VaultInviteCreateValues<T extends boolean = boolean> = Omit<
     Extract<VaultInviteCreateProps, { withVaultCreation: T }>,
-    'withVaultCreation'
+    'withVaultCreation' | 'onVaultCreated'
 >;
 
 export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
@@ -42,8 +42,11 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
 
     const createInvite = useActionWithRequest({
         action: inviteCreationIntent,
-        onSuccess: (req: RequestEntryFromAction<ReturnType<typeof inviteCreationSuccess>>) =>
-            manageAccess(req.data.shareId),
+        onSuccess: (req: RequestEntryFromAction<ReturnType<typeof inviteCreationSuccess>>) => {
+            const { shareId } = req.data;
+            if (props.withVaultCreation) props.onVaultCreated?.(shareId);
+            manageAccess(shareId);
+        },
     });
 
     const form = useFormik<InviteFormValues>({
