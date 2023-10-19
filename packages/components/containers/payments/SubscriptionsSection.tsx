@@ -4,7 +4,11 @@ import { DropdownActionProps } from '@proton/components/components/dropdown/Drop
 import { useLoading } from '@proton/hooks';
 import { changeRenewState } from '@proton/shared/lib/api/payments';
 import { COUPON_CODES, PLANS } from '@proton/shared/lib/constants';
-import { getCheckResultFromSubscription, getCheckout } from '@proton/shared/lib/helpers/checkout';
+import {
+    getCheckResultFromSubscription,
+    getCheckout,
+    getOptimisticCheckResult,
+} from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { getNormalCycleFromCustomCycle, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import { Renew } from '@proton/shared/lib/interfaces';
@@ -29,6 +33,8 @@ import { useApi, useEventManager, usePlans, useSubscription } from '../../hooks'
 import { SettingsSectionWide } from '../account';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import { subscriptionExpires } from './subscription/helpers';
+
+const getMonths = (n: number) => c('Billing cycle').ngettext(msgid`${n} month`, `${n} months`, n);
 
 const SubscriptionsSection = () => {
     const [plans, loadingPlans] = usePlans();
@@ -76,20 +82,43 @@ const SubscriptionsSection = () => {
     ].filter(isTruthy);
 
     const latestSubscription = upcoming ?? current;
-    const renewPrice = (
-        <Price key="renewal-price" currency={latestSubscription.Currency}>
-            {current.CouponCode === COUPON_CODES.BLACK_FRIDAY_2023 &&
-            // The API doesn't return the correct next cycle or RenewAmount for the VPN or VPN+Pass bundle plan since we don't have chargebee
-            // So we calculate it with the cycle discount here
-            (currentPlanIDs[PLANS.VPN] || currentPlanIDs[PLANS.VPN_PASS_BUNDLE])
-                ? currentCheckout.withDiscountPerCycle
-                : latestSubscription.RenewAmount}
-        </Price>
-    );
+    const { renewPrice, renewalLength } = (() => {
+        const latestPlanIDs = getPlanIDs(latestSubscription);
+        if (
+            latestSubscription.CouponCode === COUPON_CODES.BLACK_FRIDAY_2023 &&
+            (latestPlanIDs[PLANS.VPN] || latestPlanIDs[PLANS.VPN_PASS_BUNDLE])
+        ) {
+            const nextCycle = getNormalCycleFromCustomCycle(latestSubscription.Cycle);
+            const latestCheckout = getCheckout({
+                plansMap,
+                planIDs: latestPlanIDs,
+                checkResult: getOptimisticCheckResult({
+                    planIDs: latestPlanIDs,
+                    plansMap,
+                    cycle: nextCycle,
+                }),
+            });
+            return {
+                // The API doesn't return the correct next cycle or RenewAmount for the VPN or VPN+Pass bundle plan since we don't have chargebee
+                // So we calculate it with the cycle discount here
+                renewPrice: (
+                    <Price key="renewal-price" currency={latestSubscription.Currency}>
+                        {latestCheckout.withDiscountPerCycle}
+                    </Price>
+                ),
+                renewalLength: getMonths(nextCycle),
+            };
+        }
 
-    const n = getNormalCycleFromCustomCycle(latestSubscription.Cycle);
-    // translator: that's a part of the full sentence "Renews automatically at ${renewPrice}, for {renewalLength} Month(s)"
-    const renewalLength = c('Billing cycle').ngettext(msgid`${n} month`, `${n} months`, n);
+        return {
+            renewPrice: (
+                <Price key="renewal-price" currency={latestSubscription.Currency}>
+                    {latestSubscription.RenewAmount}
+                </Price>
+            ),
+            renewalLength: getMonths(latestSubscription.Cycle),
+        };
+    })();
 
     const renewalText = (
         <span data-testid="renewalNotice">{c('Billing cycle')
@@ -155,5 +184,4 @@ const SubscriptionsSection = () => {
         </SettingsSectionWide>
     );
 };
-
 export default SubscriptionsSection;
