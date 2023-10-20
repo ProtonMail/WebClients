@@ -1,3 +1,19 @@
+## Release 5.0.31 — Nov 8th, 2023
+
+### New features
+
+-   You can now reply to external calendar invitations that were forwarded to you
+
+### Improvements
+
+-   You can now add first and last names to your contacts in addition to the display name already available
+-   Added link copying functionality in the link confirmation modal
+
+### Fixes
+
+-   Fixed an issue where the composer could become unresponsive after drag and dropping particular attachment types
+-   Minor wording fixes
+
 ## Release 5.0.30 — Oct 18, 2023
 
 ### Improvements
