@@ -24,7 +24,7 @@ const MainContainer = ({ config, action, fullscreen, redirect, app, searchParams
     return (
         <>
             {action === SupportedActions.DeleteAccount && <DeleteAccount />}
-            {action === SupportedActions.SubscribeAccount && (
+            {(action === SupportedActions.SubscribeAccount || action === SupportedActions.SubscribeAccountLink) && (
                 <SubscriptionModalProvider app={app}>
                     <SubscribeAccount
                         app={app}

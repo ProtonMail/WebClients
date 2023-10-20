@@ -3,6 +3,7 @@ import { APPS } from '@proton/shared/lib/constants';
 export enum SupportedActions {
     DeleteAccount = 'delete-account',
     SubscribeAccount = 'subscribe-account',
+    SubscribeAccountLink = 'subscribe-account-link',
     VpnBlackFriday = 'vpn-black-friday',
 }
 
