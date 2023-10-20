@@ -323,7 +323,7 @@ const Step1 = ({
                     </div>
                 )}
                 {(() => {
-                    if (!hasPlanSelector) {
+                    if (!hasPlanSelector || model.upsell.mode === UpsellTypes.UPSELL) {
                         return null;
                     }
 
