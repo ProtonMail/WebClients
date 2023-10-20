@@ -8,6 +8,7 @@ import { Icon } from '@proton/components';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
+import { useSpotlightContext } from '@proton/pass/components/Spotlight/SpotlightContext';
 import { VaultTag } from '@proton/pass/components/Vault/VaultTag';
 import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
@@ -58,6 +59,7 @@ export const ItemViewPanel: FC<Props> = ({
     const showVaultTag = hasMultipleVaults || shared;
     const readOnly = shareRoleId === ShareRole.READ;
     const sharedReadOnly = shared && readOnly;
+    const spotlight = useSpotlightContext();
 
     return (
         <Panel
@@ -124,7 +126,7 @@ export const ItemViewPanel: FC<Props> = ({
 
                             ...actions,
 
-                            sharingEnabled && !vaultLimitReached && !shared && (
+                            sharingEnabled && !shared && (
                                 <Button
                                     key="share-item-button"
                                     icon
@@ -133,7 +135,12 @@ export const ItemViewPanel: FC<Props> = ({
                                     shape="solid"
                                     size="medium"
                                     title={c('Action').t`Share`}
-                                    onClick={handleInviteClick}
+                                    disabled={readOnly}
+                                    onClick={
+                                        vaultLimitReached
+                                            ? () => spotlight.setUpselling('pass-plus')
+                                            : handleInviteClick
+                                    }
                                 >
                                     <Icon name="users-plus" alt={c('Action').t`Share`} size={20} />
                                 </Button>
