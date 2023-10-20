@@ -636,6 +636,7 @@ const Step1 = ({
                         <BoxHeader step={step++} title={c('pass_signup_2023: Header').t`Checkout`} />
                         <BoxContent>
                             <AccountStepPayment
+                                isPassWelcome={isPassWelcome}
                                 takeNullCreditCard={isPassWelcome}
                                 measure={measure}
                                 cta={cta}
