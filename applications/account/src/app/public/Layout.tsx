@@ -85,7 +85,7 @@ const Layout = ({ children, stepper, hasDecoration, bottomRight, onBack, headerC
             {hasDecoration ? (
                 <>
                     <LayoutFooter app={APP_NAME} className="flex-item-noshrink text-center p-4" version={appVersion} />
-                    <div className="fixed m-0 lg:m-8 lg:mr-12 mb-4 lg:mb-12 bottom right on-tablet-text-center on-tablet-static on-tiny-mobile-text-sm">
+                    <div className="fixed m-0 lg:m-8 lg:mr-12 mb-4 lg:mb-12 bottom right text-center lg:text-right on-tablet-static on-tiny-mobile-text-sm">
                         {bottomRight}
                     </div>
                     <p
