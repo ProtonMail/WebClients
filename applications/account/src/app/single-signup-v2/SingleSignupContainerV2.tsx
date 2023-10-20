@@ -218,9 +218,19 @@ const SingleSignupContainerV2 = ({
     const [loadingDependencies, withLoadingDependencies] = useLoading(true);
     const [loadingChallenge, setLoadingChallenge] = useState(true);
 
-    const [isPassWelcome] = useState(() => {
+    const [signupParameters] = useState(() => {
         const searchParams = new URLSearchParams(location.search);
-        return searchParams.get('coupon')?.toUpperCase() === COUPON_CODES.PASS_WELCOME;
+        const result = getSignupSearchParams(location.pathname, searchParams);
+
+        const localID = Number(searchParams.get('u'));
+        const mode = searchParams.get('mode') === SignupMode.Onboarding ? SignupMode.Onboarding : SignupMode.Default;
+
+        return {
+            ...result,
+            localID: Number.isInteger(localID) ? localID : undefined,
+            mode,
+            isPassWelcome: result.coupon === COUPON_CODES.PASS_WELCOME,
+        };
     });
 
     const {
@@ -243,6 +253,7 @@ const SingleSignupContainerV2 = ({
             return getMailConfiguration({
                 isDesktop,
                 vpnServersCountData,
+                hideFreePlan: signupParameters.hideFreePlan,
             });
         }
         if (toApp === APPS.PROTONPASS) {
@@ -250,7 +261,8 @@ const SingleSignupContainerV2 = ({
                 isDesktop,
                 vpnServersCountData,
                 passVaultSharingEnabled,
-                isPassWelcome,
+                hideFreePlan: signupParameters.hideFreePlan,
+                isPassWelcome: signupParameters.isPassWelcome,
             });
         }
         throw new Error('Unknown app');
@@ -294,22 +306,6 @@ const SingleSignupContainerV2 = ({
                 });
         }, 0);
     }, [generateMnemonic]);
-
-    const [signupParameters] = useState(() => {
-        const searchParams = new URLSearchParams(location.search);
-        const result = getSignupSearchParams(location.pathname, searchParams, {
-            cycle: defaults.cycle,
-        });
-
-        const localID = Number(searchParams.get('u'));
-        const mode = searchParams.get('mode') === SignupMode.Onboarding ? SignupMode.Onboarding : SignupMode.Default;
-
-        return {
-            ...result,
-            localID: Number.isInteger(localID) ? localID : undefined,
-            mode,
-        };
-    });
 
     const measure = (data: TelemetryMeasurementData) => {
         const values = 'values' in data ? data.values : {};
@@ -936,7 +932,7 @@ const SingleSignupContainerV2 = ({
                         }}
                         hideFreePlan={signupParameters.hideFreePlan}
                         mode={signupParameters.mode}
-                        isPassWelcome={isPassWelcome}
+                        isPassWelcome={signupParameters.isPassWelcome}
                     />
                 )}
                 {model.step === Steps.Loading && (
