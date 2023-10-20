@@ -218,6 +218,11 @@ const SingleSignupContainerV2 = ({
     const [loadingDependencies, withLoadingDependencies] = useLoading(true);
     const [loadingChallenge, setLoadingChallenge] = useState(true);
 
+    const [isPassWelcome] = useState(() => {
+        const searchParams = new URLSearchParams(location.search);
+        return searchParams.get('coupon')?.toUpperCase() === COUPON_CODES.PASS_WELCOME;
+    });
+
     const {
         logo,
         features,
@@ -245,6 +250,7 @@ const SingleSignupContainerV2 = ({
                 isDesktop,
                 vpnServersCountData,
                 passVaultSharingEnabled,
+                isPassWelcome,
             });
         }
         throw new Error('Unknown app');
@@ -801,6 +807,7 @@ const SingleSignupContainerV2 = ({
             <UnAuthenticated theme={theme.type}>
                 {model.step === Steps.Account && (
                     <Step1
+                        signupParameters={signupParameters}
                         signupTypes={signupTypes}
                         theme={theme}
                         relativePrice={relativePrice}
@@ -929,6 +936,7 @@ const SingleSignupContainerV2 = ({
                         }}
                         hideFreePlan={signupParameters.hideFreePlan}
                         mode={signupParameters.mode}
+                        isPassWelcome={isPassWelcome}
                     />
                 )}
                 {model.step === Steps.Loading && (
