@@ -15,10 +15,16 @@ interface Props extends OfferProps {
 
 const Deal = forwardRef<HTMLDivElement, Props>(({ children, ...props }: Props, ref) => {
     const { popular } = props.deal;
+    const { mobileOrder } = props.deal;
     const discount = getDiscountWithCoupon(props.deal);
     const isMostPopular = popular === 1;
     const isSecondMostPopular = popular === 2;
     const isThirdMostPopular = popular === 3;
+
+    const isMostPopularOnMobile = mobileOrder === 1;
+    const isSecondMostPopularOnMobile = mobileOrder === 2;
+    const isThirdMostPopularOnMobile = mobileOrder === 3;
+    const isFourthMostPopularOnMobile = mobileOrder === 4;
 
     return (
         <DealProvider {...props}>
@@ -29,6 +35,10 @@ const Deal = forwardRef<HTMLDivElement, Props>(({ children, ...props }: Props, r
                     isMostPopular && 'offer-plan-container--mostPopular',
                     isSecondMostPopular && 'offer-plan-container--secondMostPopular',
                     isThirdMostPopular && 'offer-plan-container--thirdMostPopular',
+                    isMostPopularOnMobile && 'offer-plan-container--mostPopularOnMobile',
+                    isSecondMostPopularOnMobile && 'offer-plan-container--secondMostPopularOnMobile',
+                    isThirdMostPopularOnMobile && 'offer-plan-container--thirdMostPopularOnMobile',
+                    isFourthMostPopularOnMobile && 'offer-plan-container--fourthMostPopularOnMobile',
                 ])}
             >
                 {discount ? (
