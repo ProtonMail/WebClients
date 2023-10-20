@@ -69,9 +69,11 @@ interface Props {
     withLoadingSignup: WithLoading;
     measure: Measure;
     defaultMethod: PAYMENT_METHOD_TYPES | undefined;
+    takeNullCreditCard?: boolean;
 }
 
 const AccountStepPayment = ({
+    takeNullCreditCard,
     measure,
     cta,
     accountStepPaymentRef,
@@ -214,12 +216,16 @@ const AccountStepPayment = ({
                         };
 
                         const run = async () => {
-                            if (amountAndCurrency.Amount <= 0) {
+                            if (amountAndCurrency.Amount <= 0 && !takeNullCreditCard) {
                                 return onPay(undefined, undefined);
                             }
 
                             if (!paymentParameters) {
                                 throw new Error('Missing payment parameters');
+                            }
+
+                            if (amountAndCurrency.Amount <= 0 && takeNullCreditCard) {
+                                amountAndCurrency.Amount = null as any;
                             }
 
                             const data = await createPaymentToken(
@@ -233,7 +239,7 @@ const AccountStepPayment = ({
 
                         const type = amountAndCurrency.Amount <= 0 ? 'free' : 'pay_cc';
                         measurePaySubmit(type);
-                        if (onValidate() && handleCardSubmit() && validatePayment()) {
+                        if (onValidate() && handleCardSubmit(takeNullCreditCard) && validatePayment()) {
                             withLoadingSignup(run()).catch(() => {
                                 measurePayError(type);
                             });
@@ -241,8 +247,9 @@ const AccountStepPayment = ({
                     }}
                     method="post"
                 >
-                    {options.checkResult.AmountDue ? (
+                    {options.checkResult.AmountDue || takeNullCreditCard ? (
                         <PaymentComponent
+                            takeNullCreditCard={takeNullCreditCard}
                             isAuthenticated={!!maybeSession?.UID}
                             api={normalApi}
                             type="signup-pass"
@@ -344,7 +351,11 @@ const AccountStepPayment = ({
                                 </Button>
                                 {selectedPlanCard?.guarantee && (
                                     <div className="text-center color-success mt-4">
-                                        <Guarantee />
+                                        {subscriptionData.checkResult.AmountDue === 0 ? (
+                                            c('Info').t`Cancel anytime`
+                                        ) : (
+                                            <Guarantee />
+                                        )}
                                     </div>
                                 )}
                                 <div className="mt-4 text-sm color-weak text-center">
