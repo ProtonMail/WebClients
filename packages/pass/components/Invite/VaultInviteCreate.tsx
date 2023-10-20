@@ -59,8 +59,8 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
                       withVaultCreation: true,
                       name: c('Placeholder').t`Shared vault`,
                       description: '',
-                      color: VaultColor.COLOR1,
-                      icon: VaultIcon.ICON1,
+                      color: VaultColor.COLOR3,
+                      icon: VaultIcon.ICON9,
                       item: props.item,
                   }
                 : { withVaultCreation: false, shareId: props.vault.shareId }),
