@@ -1,7 +1,10 @@
 import type { VFC } from 'react';
 
 import { ItemEffects } from 'proton-pass-extension/lib/components/Context/Items/ItemEffects';
-import { ItemsFilteringContextProvider } from 'proton-pass-extension/lib/components/Context/Items/ItemsFilteringContext';
+import {
+    ItemsFilteringContext,
+    ItemsFilteringContextProvider,
+} from 'proton-pass-extension/lib/components/Context/Items/ItemsFilteringContext';
 import { NavigationContextProvider } from 'proton-pass-extension/lib/components/Context/Navigation/NavigationContext';
 import { usePopupContext } from 'proton-pass-extension/lib/hooks/usePopupContext';
 
@@ -20,12 +23,16 @@ export const App: VFC = () => {
     return state.loggedIn && initialized ? (
         <NavigationContextProvider>
             <ItemsFilteringContextProvider>
-                <InviteContextProvider>
-                    <ItemEffects />
-                    <PasswordContextProvider initial={state.initial.passwordOptions}>
-                        <Main />
-                    </PasswordContextProvider>
-                </InviteContextProvider>
+                <ItemsFilteringContext.Consumer>
+                    {({ setShareId }) => (
+                        <InviteContextProvider onVaultCreated={setShareId}>
+                            <ItemEffects />
+                            <PasswordContextProvider initial={state.initial.passwordOptions}>
+                                <Main />
+                            </PasswordContextProvider>
+                        </InviteContextProvider>
+                    )}
+                </ItemsFilteringContext.Consumer>
             </ItemsFilteringContextProvider>
         </NavigationContextProvider>
     ) : (
