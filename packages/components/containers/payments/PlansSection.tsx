@@ -129,6 +129,7 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
     return (
         <>
             <PlanSelection
+                app={app}
                 filter={app === APPS.PROTONPASS ? [Audience.B2C] : undefined}
                 mode="settings"
                 audience={audience}
