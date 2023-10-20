@@ -535,7 +535,7 @@ const SingleSignupContainerV2 = ({
             const { subscriptionData, upsell } = await getUserInfo({
                 api: silentApi,
                 options: {
-                    cycle: model.subscriptionData.cycle,
+                    cycle: signupParameters.cycle || model.subscriptionData.cycle,
                     currency: model.subscriptionData.currency,
                     planIDs,
                     minimumCycle: signupParameters.minimumCycle,
