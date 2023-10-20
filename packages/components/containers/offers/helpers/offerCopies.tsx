@@ -218,9 +218,9 @@ export const getVPNFeatures = () => [
             .t`Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.`,
     },
     {
-        name: c('bf2023: Deal details').t`Fast BitTorrent downloads`,
+        name: c('bf2023: Deal details').t`Access content worldwide`,
         tooltip: c('bf2023: Tooltip')
-            .t`Unlock peer-to-peer downloads and file sharing. Increase upload and download speeds and hide your IP address.`,
+            .t`Bypass local internet blocks and censorship with our global network of servers.`,
     },
 ];
 
