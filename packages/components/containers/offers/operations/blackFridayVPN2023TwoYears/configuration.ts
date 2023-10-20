@@ -15,6 +15,7 @@ const config: OfferConfig = {
         sideImage,
         sideImage2x,
     },
+    canBeDisabled: true,
     deals: [
         {
             ref: 'bf_23_vpn-2y-modal-u12',

@@ -16,6 +16,7 @@ const config: OfferConfig = {
         bannerImage2x,
     },
     darkBackground: true,
+    canBeDisabled: true,
     deals: [
         {
             ref: 'bf_23_drive_plus-modal-u12',

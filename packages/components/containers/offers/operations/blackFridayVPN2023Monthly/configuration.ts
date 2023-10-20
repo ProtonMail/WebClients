@@ -16,6 +16,7 @@ const config: OfferConfig = {
         bannerImage2x,
     },
     darkBackground: true,
+    canBeDisabled: true,
     deals: [
         {
             ref: 'bf_23_vpn-1m-modal-v15p',
