@@ -107,7 +107,7 @@ export const useSpotlightEffect = () => {
                 message: c('Info')
                     .t`Check out all the exclusive features that are available to you for a limited time.`,
                 className: 'ui-orange',
-                onClose: withAcknowledgment(() => spotlight.setUpselling(null)),
+                onClose: withAcknowledgment(noop),
                 action: {
                     label: c('Label').t`Learn more`,
                     type: 'link',
@@ -202,6 +202,7 @@ export const useSpotlightEffect = () => {
             async ({ message }) => {
                 await wait(200);
                 setMessage(message ?? null);
+                if (message === OnboardingMessage.PENDING_SHARE_ACCESS) spotlight.setPendingShareAccess(true);
             }
         );
 
