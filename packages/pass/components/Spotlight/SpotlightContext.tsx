@@ -53,8 +53,6 @@ export const SpotlightContextProvider: FC = ({ children }) => {
                                 ...prev,
                                 message: next,
                                 open: next !== null,
-                                upselling: null,
-                                pendingShareAccess: false,
                             })),
                         500
                     );
@@ -70,12 +68,23 @@ export const SpotlightContextProvider: FC = ({ children }) => {
     return (
         <SpotlightContext.Provider value={ctx}>
             {children}
+
             <UpsellingModal
                 open={state.upselling !== null}
                 type={state.upselling ?? 'free-trial'}
-                onClose={() => state.message?.onClose?.()}
+                onClose={() => {
+                    state.message?.onClose?.();
+                    setState((prev) => ({ ...prev, upselling: null }));
+                }}
             />
-            <PendingShareAccessModal open={state.pendingShareAccess} onClose={() => state.message?.onClose?.()} />
+
+            <PendingShareAccessModal
+                open={state.pendingShareAccess}
+                onClose={() => {
+                    state.message?.onClose?.();
+                    setState((prev) => ({ ...prev, pendingShareAccess: false }));
+                }}
+            />
         </SpotlightContext.Provider>
     );
 };
