@@ -60,7 +60,10 @@ export const handleCreateUser = async ({
         productParam,
     } = cache;
 
-    const paymentToken = isTokenPayment(subscriptionData.payment) ? subscriptionData.payment.Details.Token : undefined;
+    const paymentToken =
+        isTokenPayment(subscriptionData.payment) && subscriptionData.checkResult.AmountDue > 0
+            ? subscriptionData.payment.Details.Token
+            : undefined;
 
     if (signupType === SignupType.Username) {
         const humanVerificationParameters = (() => {
