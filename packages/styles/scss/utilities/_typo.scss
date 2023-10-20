@@ -100,17 +100,21 @@
 	@include vendor-prefix(hyphens, auto, webkit);
 }
 
-@include responsive-classes(text-left) {
-	text-align: start;
-}
+@include responsive-classes(
+	(
+		text-left: (
+			text-align: start,
+		),
 
-@include responsive-classes(text-center) {
-	text-align: center;
-}
+		text-center: (
+			text-align: center,
+		),
 
-@include responsive-classes(text-right) {
-	text-align: end;
-}
+		text-right: (
+			text-align: end,
+		),
+	)
+);
 
 @each $align in (baseline, sub, super, text-top, text-bottom, middle, top, bottom) {
 	.align-#{$align} {
