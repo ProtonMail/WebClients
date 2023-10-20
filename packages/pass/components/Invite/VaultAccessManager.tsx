@@ -1,10 +1,10 @@
-import { type FC, useMemo } from 'react';
+import { type FC, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Icon } from '@proton/components/components';
+import { Icon, Prompt } from '@proton/components/components';
 import { useInviteContext } from '@proton/pass/components/Invite/InviteContextProvider';
 import { ItemCard } from '@proton/pass/components/Item/ItemCard';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
@@ -34,6 +34,7 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
     const loading = useShareAccessOptionsPolling(shareId);
     const canManage = isShareManageable(vault);
     const hasMultipleOwnedWritableVaults = useSelector(selectOwnWritableVaults).length > 1;
+    const [limitModalOpen, setLimitModalOpen] = useState(false);
 
     const members = useMemo<ShareMemberType[]>(() => (vault.members ?? []).sort(sortOn('email', 'ASC')), [vault]);
     const invites = useMemo<InviteListItem[]>(
@@ -55,14 +56,7 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
 
     const totalCount = members.length + invites.length;
     const memberLimitReached = totalCount >= vault.targetMaxMembers;
-
-    const warning = (() => {
-        if (canManage && memberLimitReached) {
-            return plan === UserPassPlan.FREE
-                ? c('Warning').t`Upgrade to a paid plan to invite more members to this vault.`
-                : c('Warning').t`You have reached the limit of members who can access this vault.`;
-        }
-    })();
+    const memberLimitWarning = canManage && memberLimitReached && plan === UserPassPlan.FREE;
 
     return (
         <SidebarModal onClose={close} open>
@@ -86,8 +80,8 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
                                 key="modal-invite-button"
                                 color="norm"
                                 pill
-                                onClick={() => createInvite({ vault })}
-                                disabled={!canManage || memberLimitReached}
+                                onClick={() => (memberLimitReached ? setLimitModalOpen(true) : createInvite({ vault }))}
+                                disabled={!canManage || (plan === UserPassPlan.FREE && memberLimitReached)}
                             >
                                 {c('Action').t`Invite others`}
                             </Button>,
@@ -105,7 +99,10 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
 
                 {vault.shared ? (
                     <div className="flex flex-column gap-y-3">
-                        {warning && <ItemCard>{warning}</ItemCard>}
+                        {memberLimitWarning && (
+                            <ItemCard>{c('Warning')
+                                .t`Upgrade to a paid plan to invite more members to this vault.`}</ItemCard>
+                        )}
 
                         {invites.length > 0 && <span className="color-weak">{c('Label').t`Invitations`}</span>}
 
@@ -157,6 +154,35 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
                             .t`This vault is not currently shared with anyone. Invite people to share it with others.`}
                     </div>
                 )}
+
+                <Prompt
+                    buttons={
+                        <Button
+                            pill
+                            onClick={() => setLimitModalOpen(false)}
+                            className="w-full"
+                            shape="solid"
+                            color="weak"
+                        >
+                            {c('Action').t`OK`}
+                        </Button>
+                    }
+                    className="text-center"
+                    onClose={() => setLimitModalOpen(false)}
+                    open={limitModalOpen}
+                    title={c('Title').t`Member limit`}
+                >
+                    <p>
+                        {
+                            // translator: full message is "Vaults can’t contain more than 10 users.""
+                            c('Success').ngettext(
+                                msgid`Vaults can’t contain more than ${vault.targetMaxMembers} user.`,
+                                `Vaults can’t contain more than ${vault.targetMaxMembers} users.`,
+                                vault.targetMaxMembers
+                            )
+                        }
+                    </p>
+                </Prompt>
             </Panel>
         </SidebarModal>
     );
