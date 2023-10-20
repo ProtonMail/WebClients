@@ -37,6 +37,7 @@ import noop from '@proton/utils/noop';
 import SignupSupportDropdown from '../signup/SignupSupportDropdown';
 import { getSubscriptionPrices } from '../signup/helper';
 import { SignupCacheResult, SignupType, SubscriptionData } from '../signup/interfaces';
+import { SignupParameters } from '../signup/searchParams';
 import { useFlowRef } from '../useFlowRef';
 import AccountStepDetails, { AccountStepDetailsRef } from './AccountStepDetails';
 import AccountStepPayment, { AccountStepPaymentRef } from './AccountStepPayment';
@@ -68,7 +69,9 @@ export interface Step1Rref {
 }
 
 const Step1 = ({
+    isPassWelcome,
     signupTypes,
+    signupParameters,
     theme,
     relativePrice,
     logo,
@@ -95,6 +98,8 @@ const Step1 = ({
     measure,
     mode,
 }: {
+    signupParameters: SignupParameters;
+    isPassWelcome?: boolean;
     signupTypes: SignupType[];
     theme: SignupTheme;
     relativePrice: string;
@@ -201,7 +206,7 @@ const Step1 = ({
                 newPlanIDs,
                 newCurrency,
                 newCycle,
-                model.subscriptionData.checkResult.Coupon?.Code
+                model.subscriptionData.checkResult.Coupon?.Code || signupParameters.coupon
             );
 
             if (!validateFlow()) {
@@ -287,7 +292,7 @@ const Step1 = ({
     const isDarkBg = theme.background === 'bf';
 
     let step = 1;
-    const hasPlanSelector = !model.planParameters?.defined || model.upsell.mode === UpsellTypes.UPSELL;
+    const hasPlanSelector = !model.planParameters?.defined || model.upsell.mode === UpsellTypes.UPSELL || isPassWelcome;
 
     return (
         <Layout
@@ -322,6 +327,22 @@ const Step1 = ({
                         return null;
                     }
 
+                    const wrap = (textLaunchOffer: ReactNode) => {
+                        return (
+                            <div className="signup-v2-offer-banner py-2 px-4 rounded-lg color-primary text-lg inline-flex flex-nowrap mt-4">
+                                <Icon name="hourglass" size={14} className="flex-item-noshrink mt-1" />
+                                <span className="ml-2 flex-item-fluid">{textLaunchOffer}</span>
+                            </div>
+                        );
+                    };
+
+                    if (isPassWelcome) {
+                        const title = model.plansMap[PLANS.PASS_PLUS]?.Title;
+                        const textLaunchOffer = c('pass_signup_2023: Info')
+                            .jt`Limited time offer: Get ${title} for free for 1 year!`;
+                        return wrap(textLaunchOffer);
+                    }
+
                     const bestPlanCard = planCards.find((planCard) => planCard.type === 'best');
                     const bestPlan = bestPlanCard?.plan && model.plansMap[bestPlanCard.plan];
                     if (!bestPlanCard || !bestPlan) {
@@ -347,12 +368,7 @@ const Step1 = ({
                     // translator: full sentence is: Special launch offer: Get Pass Plus for ${options.currency} 1 /month forever!
                     const textLaunchOffer = c('pass_signup_2023: Info')
                         .jt`Special launch offer: Get ${title} for ${price} forever!`;
-                    return (
-                        <div className="signup-v2-offer-banner py-2 px-4 rounded-lg color-primary text-lg inline-flex flex-nowrap mt-4">
-                            <Icon name="hourglass" size={14} className="flex-item-noshrink mt-1" />
-                            <span className="ml-2 flex-item-fluid">{textLaunchOffer}</span>
-                        </div>
-                    );
+                    return wrap(textLaunchOffer);
                 })()}
                 {hasPlanSelector && (
                     <Box className="mt-8 w-full">
@@ -365,7 +381,7 @@ const Step1 = ({
                             }
                             right={
                                 <>
-                                    {model.upsell.mode === UpsellTypes.PLANS && (
+                                    {model.upsell.mode === UpsellTypes.PLANS && !isPassWelcome && (
                                         <CycleSelector
                                             mode="buttons"
                                             cycle={options.cycle}
@@ -389,6 +405,7 @@ const Step1 = ({
                         <BoxContent>
                             {model.upsell.mode === UpsellTypes.PLANS ? (
                                 <PlanCardSelector
+                                    isPassWelcome={isPassWelcome}
                                     plansMap={model.plansMap}
                                     plan={options.plan.Name}
                                     cycle={options.cycle}
@@ -619,6 +636,7 @@ const Step1 = ({
                         <BoxHeader step={step++} title={c('pass_signup_2023: Header').t`Checkout`} />
                         <BoxContent>
                             <AccountStepPayment
+                                takeNullCreditCard={isPassWelcome}
                                 measure={measure}
                                 cta={cta}
                                 key={model.session?.UID || 'free'}
