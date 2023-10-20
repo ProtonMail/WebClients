@@ -115,7 +115,7 @@ const getPremiumDriveFeature = () => ({
 });
 
 const getPremiumInboxFeature = (domains?: number, addresses?: number) => {
-    const name = c('bf2023: Deal details').t`${MAIL_SHORT_APP_NAME} Plus & ${CALENDAR_SHORT_APP_NAME}`;
+    const name = c('bf2023: Deal details').t`${MAIL_SHORT_APP_NAME} Plus and ${CALENDAR_SHORT_APP_NAME}`;
 
     if (domains && addresses) {
         if (addresses === 10) {
