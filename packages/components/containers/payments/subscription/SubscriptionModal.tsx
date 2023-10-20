@@ -693,6 +693,7 @@ const SubscriptionModal = ({
                     {model.step === SUBSCRIPTION_STEPS.NETWORK_ERROR && <GenericError />}
                     {model.step === SUBSCRIPTION_STEPS.PLAN_SELECTION && (
                         <PlanSelection
+                            app={app}
                             loading={loadingCheck}
                             plans={plans}
                             plansMap={plansMap}
