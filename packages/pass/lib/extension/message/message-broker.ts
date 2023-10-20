@@ -1,12 +1,11 @@
 import type { Runtime } from 'webextension-polyfill';
 
-import { backgroundMessage } from '@proton/pass/lib/extension/message';
+import { assertMessageVersion, backgroundMessage } from '@proton/pass/lib/extension/message';
 import browser from '@proton/pass/lib/globals/browser';
 import type {
     Maybe,
     MessageFailure,
     MessageSuccess,
-    PortFrameForwardingMessage,
     WorkerMessage,
     WorkerMessageResponse,
     WorkerMessageWithSender,
@@ -95,6 +94,8 @@ export const createMessageBroker = (options: {
                     return errorMessage('unauthorized');
                 }
 
+                if (isInternal) assertMessageVersion(message);
+
                 if (isInternal && options.strictOriginCheck.includes(message.type)) {
                     const origin = new URL((sender as any).origin ?? sender.url).origin;
                     if (origin !== extensionOrigin) {
@@ -125,7 +126,8 @@ export const createMessageBroker = (options: {
          * no reference of - reply with a `PORT_UNAUTHORIZED` message
          * on the source port. This can be used in injected frames to
          * detect they're not controlled by a content-script */
-        port.onMessage.addListener(async (message: Maybe<PortFrameForwardingMessage>, source) => {
+        port.onMessage.addListener(async (message: Maybe<WorkerMessageWithSender>, source) => {
+            if (message) assertMessageVersion(message);
             if (message && message.type === WorkerMessageType.PORT_FORWARDING_MESSAGE) {
                 if (ports.has(message.forwardTo)) {
                     ports.get(message.forwardTo)!.postMessage({ ...message.payload, forwarded: true });

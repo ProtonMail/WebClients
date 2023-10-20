@@ -11,6 +11,8 @@ import { logger } from '@proton/pass/utils/logger';
 import type { ParsedUrl } from '@proton/pass/utils/url/parser';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 
+import.meta.webpackHot?.decline();
+
 export type ExtensionContextType = {
     endpoint: ExtensionEndpoint;
     tabId: TabId;
