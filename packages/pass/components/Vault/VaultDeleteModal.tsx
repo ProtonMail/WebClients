@@ -10,16 +10,17 @@ import { ConfirmationModal } from '@proton/pass/components/Confirmation/Confirma
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { VaultSelectField } from '@proton/pass/components/Form/Field/VaultSelectField';
+import type { VaultShareItem } from '@proton/pass/store/reducers';
 import { selectShare } from '@proton/pass/store/selectors';
-import type { MaybeNull, ShareType, VaultShare } from '@proton/pass/types';
+import type { MaybeNull, ShareType } from '@proton/pass/types';
 import { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import clsx from '@proton/utils/clsx';
 
 type ConfirmDeleteValues = { name: string; destination: string };
 type Props = {
-    vault: MaybeNull<VaultShare>;
-    onSubmit: (vault: VaultShare, destinationShareId: MaybeNull<string>) => void;
+    vault: MaybeNull<VaultShareItem>;
+    onSubmit: (vault: VaultShareItem, destinationShareId: MaybeNull<string>) => void;
 } & Pick<ConfirmationModalProps, 'onClose'>;
 
 const FORM_ID = 'vault-confirm-delete';

@@ -6,10 +6,10 @@ import withCacheBlock from '@proton/pass/store/actions/with-cache-block';
 import withNotification from '@proton/pass/store/actions/with-notification';
 import { withRequestFailure, withRequestStart, withRequestSuccess } from '@proton/pass/store/actions/with-request';
 import type { InviteState } from '@proton/pass/store/reducers';
-import type { ItemRevision, Share, ShareType } from '@proton/pass/types';
+import type { InviteFormValues, ItemRevision, Share, ShareType } from '@proton/pass/types';
 import type {
     InviteAcceptIntent,
-    InviteCreateIntent,
+    InviteCreateSuccess,
     InviteRejectIntent,
     InviteRemoveIntent,
     InviteResendIntent,
@@ -21,16 +21,18 @@ export const syncInvites = createAction<InviteState>('invites::sync');
 
 export const inviteCreationIntent = createAction(
     'invite::create::intent',
-    withRequestStart((payload: InviteCreateIntent) => withCacheBlock({ payload }))
+    withRequestStart((payload: InviteFormValues) => withCacheBlock({ payload }))
 );
 
 export const inviteCreationSuccess = createAction(
     'invite::create::success',
-    withRequestSuccess((shareId: string) =>
-        withNotification({
-            type: 'info',
-            text: c('Info').t`Invite successfully sent`,
-        })({ payload: { shareId } })
+    withRequestSuccess(
+        (payload: InviteCreateSuccess) =>
+            withNotification({
+                type: 'info',
+                text: c('Info').t`Invite successfully sent`,
+            })({ payload }),
+        { data: ({ shareId }) => ({ shareId }) }
     )
 );
 
