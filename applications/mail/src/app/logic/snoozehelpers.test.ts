@@ -117,18 +117,21 @@ describe('snooze helpers - getSnoozeDate', () => {
     };
 
     it('Should return current date when no element', () => {
-        expect(getSnoozeDate(undefined)).toEqual(new Date());
+        expect(getSnoozeDate(undefined, '1')).toEqual(new Date());
     });
 
     it('Should return current date when element is not a conversation', () => {
-        expect(isSameTime(getSnoozeDate({} as Element), new Date()));
+        expect(isSameTime(getSnoozeDate({} as Element, '1'), new Date()));
     });
 
     it('Should return snooze date when element is a conversation and has a snooze label', () => {
         const now = new Date();
-        const date = getSnoozeDate({
-            Labels: [{ ID: MAILBOX_LABEL_IDS.SNOOZED, ContextSnoozeTime: getUnixTime(now) }],
-        } as Element);
+        const date = getSnoozeDate(
+            {
+                Labels: [{ ID: MAILBOX_LABEL_IDS.SNOOZED, ContextSnoozeTime: getUnixTime(now) }],
+            } as Element,
+            '1'
+        );
 
         expect(isSameTime(date, now));
     });

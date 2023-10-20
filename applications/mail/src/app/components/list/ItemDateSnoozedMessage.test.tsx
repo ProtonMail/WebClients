@@ -17,7 +17,7 @@ const snoozedMessage = {
 
 const remindedConversation = {
     ID: '1',
-    DisplaySnoozedReminder: true,
+    DisplaySnoozedReminder: 1,
 } as Conversation;
 
 describe('ItemDateSnoozedMessage', () => {
@@ -106,7 +106,7 @@ describe('ItemDateSnoozedMessage', () => {
         const { queryByText } = render(
             <ItemDateSnoozedMessage
                 snoozeTime={snoozedMessage.SnoozeTime}
-                element={{ ...remindedConversation, DisplaySnoozedReminder: false }}
+                element={{ ...remindedConversation, DisplaySnoozedReminder: 0 }}
                 labelID={MAILBOX_LABEL_IDS.INBOX}
                 useTooltip={false}
             />
