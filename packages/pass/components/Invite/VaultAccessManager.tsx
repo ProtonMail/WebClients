@@ -1,12 +1,13 @@
-import { type FC, useMemo } from 'react';
+import { type FC, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Icon } from '@proton/components/components';
+import { Icon, Prompt } from '@proton/components/components';
 import { useInviteContext } from '@proton/pass/components/Invite/InviteContextProvider';
 import { ItemCard } from '@proton/pass/components/Item/ItemCard';
+import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
@@ -15,6 +16,7 @@ import { PendingExistingMember, PendingNewMember } from '@proton/pass/components
 import { SharedVaultItem } from '@proton/pass/components/Vault/SharedVaultItem';
 import { useShareAccessOptionsPolling } from '@proton/pass/hooks/useShareAccessOptionsPolling';
 import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
+import { isVaultMemberLimitReached } from '@proton/pass/lib/vaults/vault.predicates';
 import { selectOwnWritableVaults, selectPassPlan, selectShareOrThrow } from '@proton/pass/store/selectors';
 import type { NewUserPendingInvite, PendingInvite, ShareType } from '@proton/pass/types';
 import { type ShareMember as ShareMemberType } from '@proton/pass/types';
@@ -34,6 +36,7 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
     const loading = useShareAccessOptionsPolling(shareId);
     const canManage = isShareManageable(vault);
     const hasMultipleOwnedWritableVaults = useSelector(selectOwnWritableVaults).length > 1;
+    const [limitModalOpen, setLimitModalOpen] = useState(false);
 
     const members = useMemo<ShareMemberType[]>(() => (vault.members ?? []).sort(sortOn('email', 'ASC')), [vault]);
     const invites = useMemo<InviteListItem[]>(
@@ -53,13 +56,13 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
         [vault]
     );
 
-    const totalCount = members.length + invites.length;
-    const memberLimitReached = totalCount >= vault.targetMaxMembers;
+    const memberLimitReached = isVaultMemberLimitReached(vault);
 
     const warning = (() => {
         if (canManage && memberLimitReached) {
+            const upgradeLink = <UpgradeButton inline label={c('Action').t`Upgrade now to share with more people`} />;
             return plan === UserPassPlan.FREE
-                ? c('Warning').t`Upgrade to a paid plan to invite more members to this vault.`
+                ? c('Warning').jt`You have reached the limit of users in this vault. ${upgradeLink}`
                 : c('Warning').t`You have reached the limit of members who can access this vault.`;
         }
     })();
@@ -86,8 +89,8 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
                                 key="modal-invite-button"
                                 color="norm"
                                 pill
-                                onClick={() => createInvite({ vault })}
-                                disabled={!canManage || memberLimitReached}
+                                onClick={() => (memberLimitReached ? setLimitModalOpen(true) : createInvite({ vault }))}
+                                disabled={!canManage || (plan === UserPassPlan.FREE && memberLimitReached)}
                             >
                                 {c('Action').t`Invite others`}
                             </Button>,
@@ -105,8 +108,6 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
 
                 {vault.shared ? (
                     <div className="flex flex-column gap-y-3">
-                        {warning && <ItemCard>{warning}</ItemCard>}
-
                         {invites.length > 0 && <span className="color-weak">{c('Label').t`Invitations`}</span>}
 
                         {invites.map((item) => {
@@ -150,6 +151,7 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
                                 canTransfer={vault.owner && hasMultipleOwnedWritableVaults}
                             />
                         ))}
+                        {warning && <ItemCard>{warning}</ItemCard>}
                     </div>
                 ) : (
                     <div className="absolute-center flex flex-column gap-y-3 text-center color-weak text-sm">
@@ -157,6 +159,35 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
                             .t`This vault is not currently shared with anyone. Invite people to share it with others.`}
                     </div>
                 )}
+
+                <Prompt
+                    buttons={
+                        <Button
+                            pill
+                            onClick={() => setLimitModalOpen(false)}
+                            className="w-full"
+                            shape="solid"
+                            color="weak"
+                        >
+                            {c('Action').t`OK`}
+                        </Button>
+                    }
+                    className="text-center"
+                    onClose={() => setLimitModalOpen(false)}
+                    open={limitModalOpen}
+                    title={c('Title').t`Member limit`}
+                >
+                    <p>
+                        {
+                            // translator: full message is "Vaults can’t contain more than 10 users.""
+                            c('Success').ngettext(
+                                msgid`Vaults can’t contain more than ${vault.targetMaxMembers} user.`,
+                                `Vaults can’t contain more than ${vault.targetMaxMembers} users.`,
+                                vault.targetMaxMembers
+                            )
+                        }
+                    </p>
+                </Prompt>
             </Panel>
         </SidebarModal>
     );
