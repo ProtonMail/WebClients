@@ -15,6 +15,7 @@ const config: OfferConfig = {
         sideImage,
         sideImage2x,
     },
+    canBeDisabled: true,
     deals: [
         {
             ref: 'bf_23_mail_unlimited-modal-f12',
