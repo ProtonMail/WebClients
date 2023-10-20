@@ -130,7 +130,7 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
                             const cells = [
                                 {
                                     label: c('Header').t`Time`,
-                                    className: 'on-tablet-text-left text-left',
+                                    className: 'text-left',
                                     content: (
                                         <Time key={key} format="PPp">
                                             {time}
@@ -169,9 +169,7 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
                                 isAuthLogAdvanced && {
                                     label: c('Header').t`Location`,
                                     className: `${isUnavailableClass()} ${
-                                        !isAuthLogAdvanced || !isProtonSentinelEnabled
-                                            ? 'on-tablet-text-left text-center'
-                                            : ''
+                                        !isAuthLogAdvanced || !isProtonSentinelEnabled ? 'text-left lg:text-center' : ''
                                     }`,
                                     colSpan: isProtonSentinelEnabled ? 1 : 4,
                                     content: (
@@ -271,12 +269,12 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
                             },
                             {
                                 label: c('Header').t`App version`,
-                                className: 'text-on-tablet-text-left text-right',
+                                className: 'text-left lg:text-right',
                                 content: <AppVersionCell appVersion={AppVersion} />,
                             },
                             {
                                 label: c('Header').t`Time`,
-                                className: 'text-on-tablet-text-left text-right',
+                                className: 'text-left lg:text-right',
                                 content: <Time format="PPp">{time}</Time>,
                             },
                         ].filter(isTruthy);

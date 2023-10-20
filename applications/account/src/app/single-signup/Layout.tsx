@@ -121,7 +121,7 @@ const Layout = ({
                                         <LayoutLogosV2 size={20} className="on-mobile-flex-justify-center" />
                                         <span
                                             className={clsx(
-                                                'text-sm sm:text-center mb-4 lg:mb-0',
+                                                'text-sm text-center mb-4 lg:mb-0',
                                                 isDarkBg && !isTinyMobile ? 'color-norm opacity-70' : 'color-weak'
                                             )}
                                         >

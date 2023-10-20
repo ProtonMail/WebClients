@@ -70,7 +70,7 @@ const Layout = ({
                                 <div className="w100 flex flex-justify-space-between on-mobile-flex-column">
                                     <div className="flex gap-1 flex-column">
                                         <LayoutLogosV2 size={20} className="on-mobile-flex-justify-center" />
-                                        <span className="text-sm color-weak on-mobile-text-center mb-4 lg:mb-0">
+                                        <span className="text-sm color-weak text-center mb-4 lg:mb-0">
                                             {
                                                 // translator: full sentence 'Proton. Privacy by default.'
                                                 c('Footer').t`${BRAND_NAME}. Privacy by default.`
