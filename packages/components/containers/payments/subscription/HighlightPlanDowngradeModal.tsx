@@ -78,6 +78,7 @@ const HighlightPlanDowngradeModal = ({ onConfirm, onClose, shortPlan, periodEnd,
                         onConfirm();
                         onClose?.();
                     }}
+                    data-testid="downgrade-to-free"
                 >
                     {downgradeButtonString}
                 </Button>
