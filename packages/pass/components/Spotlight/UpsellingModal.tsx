@@ -11,35 +11,50 @@ import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButt
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
+import { TRIAL_BLOG_URL } from '@proton/pass/constants';
 import { selectTrialDaysRemaining } from '@proton/pass/store/selectors';
 import clsx from '@proton/utils/clsx';
 
 export type Props = Omit<ModalProps, 'onSubmit'> & { type: UpsellingModalType };
 export type UpsellingModalType = 'free-trial' | 'pass-plus';
 
-const getFeatures = (): { className: string; icon: IconName; label: string }[] => [
-    {
-        className: 'ui-orange',
-        icon: 'pass-circles',
-        label: c('Info').t`Multiple vaults`,
-    },
-    {
-        className: 'ui-violet',
-        icon: 'lock',
-        label: c('Info').t`Integrated 2FA authenticator`,
-    },
-    {
-        className: 'ui-teal',
-        icon: 'list-bullets',
-        label: c('Info').t`Custom fields`,
-    },
+interface OfferFeatures {
+    className: string;
+    icon: IconName;
+    label: string;
+}
+
+interface UpsellModalContent {
+    title: string;
+    description?: string;
+    upgradeLabel: string;
+}
+
+const getFeatures = (): OfferFeatures[] => [
+    { className: 'ui-orange', icon: 'pass-circles', label: c('Info').t`Multiple vaults` },
+    { className: 'ui-teal', icon: 'alias', label: c('Info').t`Unlimited Aliases` },
+    { className: 'ui-lime', icon: 'list-bullets', label: c('Info').t`Custom fields` },
 ];
 
-const TRIAL_BLOG_URL = 'https://proton.me/support/pass-trial';
+const getContent = (type: UpsellingModalType): UpsellModalContent =>
+    ({
+        'free-trial': {
+            title: 'Enjoy your free trial',
+            description: undefined,
+            upgradeLabel: c('Action').t`Upgrade to keep these features`,
+        },
+        'pass-plus': {
+            title: 'Pass Plus',
+            description: c('Info')
+                .t`Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.`,
+            upgradeLabel: c('Action').t`Upgrade`,
+        },
+    })[type];
 
-export const UpsellingModal: VFC<Props> = ({ ...props }) => {
-    const features = getFeatures();
+export const UpsellingModal: VFC<Props> = ({ type, ...props }) => {
+    const { title, description, upgradeLabel } = getContent(type);
     const daysRemaining = useSelector(selectTrialDaysRemaining);
+    const features = getFeatures();
 
     return (
         <SidebarModal {...props}>
@@ -58,16 +73,15 @@ export const UpsellingModal: VFC<Props> = ({ ...props }) => {
                             >
                                 <Icon className="modal-close-icon" name="cross" alt={c('Action').t`Close`} />
                             </Button>,
-                            <UpgradeButton
-                                key="upgrade-button"
-                                label={c('Action').t`Upgrade to keep these features`}
-                            />,
+                            <UpgradeButton key="upgrade-button" label={upgradeLabel} />,
                         ]}
                     />
                 }
             >
                 <img src="/assets/onboarding.svg" className="mb-2 w-2/3" alt="user onboarding graphic" />
-                <h3 className="mb-4 text-bold">{c('Title').t`Enjoy your free trial`}</h3>
+                <h3 className="mb-4 text-bold ">{title}</h3>
+                {description && <p className="mb-6 text-rg">{description}</p>}
+
                 <Card
                     rounded
                     bordered={false}
@@ -97,9 +111,11 @@ export const UpsellingModal: VFC<Props> = ({ ...props }) => {
                         )}
                     </div>
                 )}
-                <InlineLinkButton className="text-sm" onClick={() => window.open(TRIAL_BLOG_URL, '_blank')}>
-                    {c('Action').t`Learn more`}
-                </InlineLinkButton>
+                {type === 'free-trial' && (
+                    <InlineLinkButton className="text-sm" onClick={() => window.open(TRIAL_BLOG_URL, '_blank')}>
+                        {c('Action').t`Learn more`}
+                    </InlineLinkButton>
+                )}
             </Panel>
         </SidebarModal>
     );
