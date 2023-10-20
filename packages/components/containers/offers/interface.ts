@@ -96,6 +96,7 @@ export interface Deal {
     mobileOrder?: number; // 1 = most popular, 2 = second most popular, etc. if using this, please specify it for all plans to avoid issues
     header?: () => string | ReactNode;
     star?: string;
+    isGuaranteed?: boolean;
 }
 
 export interface Prices {
