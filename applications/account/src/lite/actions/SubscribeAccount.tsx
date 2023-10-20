@@ -4,7 +4,6 @@ import { usePlans, useSubscription, useSubscriptionModal, useUser } from '@proto
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { APP_NAMES, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { PLANS } from '@proton/shared/lib/constants';
-import { DEFAULT_CYCLE } from '@proton/shared/lib/constants';
 import { CURRENCIES } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { getUpgradedPlan, getValidCycle } from '@proton/shared/lib/helpers/subscription';
@@ -71,7 +70,7 @@ const SubscribeAccount = ({ app, redirect, fullscreen, queryParams }: Props) => 
         const maybeType = queryParams.get('type');
 
         const cycleParam = parseInt(queryParams.get('cycle') as any, 10);
-        const parsedCycle = cycleParam && getValidCycle(cycleParam);
+        const parsedCycle = cycleParam ? getValidCycle(cycleParam) : undefined;
         const coupon = queryParams.get('coupon') || undefined;
 
         const currencyParam = queryParams.get('currency')?.toUpperCase();
@@ -109,7 +108,7 @@ const SubscribeAccount = ({ app, redirect, fullscreen, queryParams }: Props) => 
             step,
             plan,
             coupon,
-            cycle: parsedCycle || subscription?.Cycle || DEFAULT_CYCLE,
+            cycle: parsedCycle,
             currency: parsedCurrency,
             fullscreen,
             disableThanksStep: true,
