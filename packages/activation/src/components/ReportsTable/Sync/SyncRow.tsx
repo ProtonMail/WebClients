@@ -22,7 +22,7 @@ const SyncRow = ({ syncId }: Props) => {
         <TableRow data-testid="reportsTable:syncRow">
             <ReportsTableCell product={product} title={account} isSync />
             <TableCell>
-                <div className="on-mobile-text-center">
+                <div className="text-center md:text-left">
                     <SyncRowStatus state={state} />
                 </div>
             </TableCell>
