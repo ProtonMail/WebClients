@@ -27,6 +27,7 @@ const config: OfferConfig = {
             cycle: CYCLE.FIFTEEN,
             couponCode: COUPON_CODES.BLACK_FRIDAY_2023,
             features: getVPNFeatures,
+            isGuaranteed: true,
         },
         {
             ref: 'bf_23_vpn-1m-modal-v30p',
@@ -38,6 +39,7 @@ const config: OfferConfig = {
             couponCode: COUPON_CODES.BLACK_FRIDAY_2023,
             features: getVPNFeatures,
             popular: 1,
+            isGuaranteed: true,
         },
         {
             ref: 'bf_23_vpn-1m-modal-u12',
@@ -48,6 +50,7 @@ const config: OfferConfig = {
             cycle: CYCLE.YEARLY,
             couponCode: COUPON_CODES.BLACK_FRIDAY_2023,
             features: getUnlimitedVPNFeatures,
+            isGuaranteed: true,
         },
     ],
     layout: Layout,

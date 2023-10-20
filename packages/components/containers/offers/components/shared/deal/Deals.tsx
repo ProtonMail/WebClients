@@ -6,6 +6,7 @@ import { OfferProps } from '../../../interface';
 import Deal from './Deal';
 import DealCTA from './DealCTA';
 import DealFeatures from './DealFeatures';
+import DealGuarantee from './DealGuarantee';
 import DealMostPopular from './DealMostPopular';
 import DealPrice from './DealPrice';
 import DealPriceInfos from './DealPriceInfos';
@@ -34,6 +35,7 @@ const Deals = (props: OfferProps) => {
                     <DealTitle />
                     <DealPrice />
                     <DealCTA />
+                    <DealGuarantee />
                     <div className="offer-features flex-item-fluid-auto w100 mb-4">
                         <DealFeatures isExpanded={isExpanded} expand={() => setIsExpanded(true)} />
                     </div>
