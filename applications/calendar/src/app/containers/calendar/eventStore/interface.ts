@@ -2,7 +2,6 @@ import createIntervalTree from '@protontech/interval-tree';
 
 import { SHARED_SIGNED_FIELDS } from '@proton/shared/lib/calendar/constants';
 import { OccurrenceIterationCache } from '@proton/shared/lib/calendar/recurrence/recurring';
-import { pick } from '@proton/shared/lib/helpers/object';
 import { RequireSome } from '@proton/shared/lib/interfaces';
 import { CalendarEvent, CalendarEventSharedData, DecryptedVeventResult } from '@proton/shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
@@ -19,16 +18,14 @@ export interface RecurringCache {
 
 export type DecryptedEventTupleResult = [
     DecryptedVeventResult,
-    Pick<EventInternalProperties, 'Permissions' | 'IsProtonProtonInvite'>
+    Pick<EventInternalProperties, 'Permissions' | 'IsProtonProtonInvite'>,
 ];
 export type EventReadResult = {
     result?: DecryptedEventTupleResult;
     error?: Error;
 };
 
-// Just to get picked types
-const sharedPick = (x: VcalVeventComponent) => pick(x, [...SHARED_SIGNED_FIELDS, 'component']);
-export type SharedVcalVeventComponent = ReturnType<typeof sharedPick>;
+export type SharedVcalVeventComponent = Pick<VcalVeventComponent, (typeof SHARED_SIGNED_FIELDS)[number] | 'component'>;
 export type MetadataVcalVeventComponent = Pick<
     VcalVeventComponent,
     'uid' | 'dtstamp' | 'component' | 'dtstart' | 'dtend' | 'recurrence-id' | 'exdate' | 'rrule'
@@ -45,7 +42,7 @@ export interface CalendarEventStoreRecord {
     eventComponent: SharedVcalVeventComponent | MetadataVcalVeventComponent;
     eventReadResult?: EventReadResult;
     eventPromise?: Promise<EventReadResult | undefined>;
-    eventReadRetry?: () => Promise<void>;
+    eventReadRetry?: () => Promise<EventReadResult | undefined>;
 }
 
 export const getEventStoreRecordHasEventData = (
@@ -75,7 +72,7 @@ export interface CalendarsEventsCache {
     };
     getCachedEvent: (calendarID: string, eventID: string) => CalendarEvent | undefined;
     getCachedRecurringEvent: (calendarID: string, uid: string) => RecurringCache | undefined;
-    retryReadEvent: (calendarID: string, eventID: string) => Promise<void>;
+    retryReadEvent: (calendarID: string, eventID: string) => Promise<EventReadResult | undefined>;
     rerender?: () => void;
 }
 
