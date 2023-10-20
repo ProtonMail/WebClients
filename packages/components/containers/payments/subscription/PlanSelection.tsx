@@ -3,8 +3,7 @@ import { ReactElement } from 'react';
 import { useFlag } from '@unleash/proxy-client-react';
 import { c } from 'ttag';
 
-import { useConfig } from '@proton/components/hooks';
-import { ADDON_NAMES, APPS, CYCLE, PLANS, PLAN_TYPES, isFreeSubscription } from '@proton/shared/lib/constants';
+import { ADDON_NAMES, APPS, APP_NAMES, CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import { getIpPricePerMonth } from '@proton/shared/lib/helpers/subscription';
 import {
@@ -77,6 +76,7 @@ interface Tab {
 }
 
 interface Props {
+    app: APP_NAMES;
     planIDs: PlanIDs;
     currency: Currency;
     hasPlanSelectionComparison?: boolean;
@@ -149,6 +149,7 @@ const ActionLabel = ({ plan, currency, cycle }: { plan: Plan; currency: Currency
 };
 
 const PlanSelection = ({
+    app,
     mode,
     hasFreePlan = true,
     planIDs,
@@ -170,8 +171,7 @@ const PlanSelection = ({
     calendarSharingEnabled,
     filter,
 }: Props) => {
-    const { APP_NAME } = useConfig();
-    const isVpnSettingsApp = APP_NAME === APPS.PROTONVPN_SETTINGS;
+    const isVpnSettingsApp = app == APPS.PROTONVPN_SETTINGS;
     const currentPlan = subscription ? subscription.Plans?.find(({ Type }) => Type === PLAN_TYPES.PLAN) : null;
 
     const passVaultSharingEnabled = useFlag('PassVaultSharingDescription');
@@ -201,7 +201,7 @@ const PlanSelection = ({
      * The check for length of plans is needed for the case if the VPN B2B plans are not available.
      * Then we should fallback to the usual set of plans. It can happen if backend doesn't return the VPN B2B plans.
      */
-    const isVpnB2bPlans = isVpnSettingsApp && vpnB2BPlans.length !== 0 && isFreeSubscription(subscription);
+    const isVpnB2bPlans = isVpnSettingsApp && vpnB2BPlans.length !== 0;
 
     if (isVpnB2bPlans) {
         B2BPlans = vpnB2BPlans;
