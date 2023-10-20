@@ -48,6 +48,8 @@ const production = ENV === 'production';
 
 const nonAccessibleWebResource = (entry) => [entry, './src/lib/utils/web-accessible-resource.ts'];
 const disableBrowserTrap = (entry) => [entry, './src/lib/utils/disable-browser-trap.ts'];
+const manifest = `manifest-${BUILD_TARGET}.json`;
+const manifestPath = path.resolve(__dirname, manifest);
 
 module.exports = {
     ...(production
@@ -144,6 +146,10 @@ module.exports = {
             RESUME_FALLBACK: RESUME_FALLBACK,
             REDUX_DEVTOOLS_PORT: REDUX_DEVTOOLS_PORT,
             RUNTIME_RELOAD_PORT: RUNTIME_RELOAD_PORT,
+            VERSION: webpack.DefinePlugin.runtimeValue(
+                () => JSON.stringify(JSON.parse(fs.readFileSync(manifestPath, 'utf8')).version),
+                true
+            ),
         }),
         new ESLintPlugin({
             extensions: ['js', 'ts'],
@@ -156,7 +162,7 @@ module.exports = {
             patterns: [
                 { from: 'public' },
                 {
-                    from: `manifest-${BUILD_TARGET}.json`,
+                    from: manifest,
                     to: 'manifest.json',
                     transform(content) {
                         const data = content.toString('utf-8');
