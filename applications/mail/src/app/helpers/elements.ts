@@ -110,7 +110,7 @@ export const sort = (elements: Element[], sort: Sort, labelID: string) => {
     const getValue = {
         Time: (element: Element, labelID: string) => getDate(element, labelID).getTime(),
         Size: getSize,
-        SnoozeTime: (element: Element) => getSnoozeDate(element).getTime(),
+        SnoozeTime: (element: Element) => getSnoozeDate(element, labelID).getTime(),
     }[sort.sort] as any;
     const compare = (a: Element, b: Element) => {
         let valueA = getValue(a, labelID);
