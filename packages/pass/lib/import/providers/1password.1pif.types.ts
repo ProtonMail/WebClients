@@ -54,5 +54,6 @@ export type OnePassLegacyItem = {
         sections?: OnePassLegacySection[];
         fields?: OnePassLegacyField[];
         URLs?: OnePassLegacyURL[];
+        pin?: string;
     };
 };
