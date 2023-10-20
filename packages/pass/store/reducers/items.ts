@@ -7,6 +7,7 @@ import {
     emptyTrashIntent,
     emptyTrashSuccess,
     inviteAcceptSuccess,
+    inviteCreationSuccess,
     itemAutofillIntent,
     itemCreationDismiss,
     itemCreationFailure,
@@ -248,6 +249,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
                             ...item,
                             shareId,
                             itemId: optimisticId,
+                            modifyTime: getEpoch(),
                         },
                     },
                 }
@@ -259,6 +261,14 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return fullMerge(
                 { ...state, [shareId]: objectDelete(state[item.shareId], optimisticId) },
                 { [shareId]: { [item.itemId]: item } }
+            );
+        }
+
+        if (inviteCreationSuccess.match(action) && action.payload.withVaultCreation) {
+            const { item, shareId, movedItem } = action.payload;
+            return fullMerge(
+                { ...state, [item.shareId]: objectDelete(state[item.shareId], item.itemId) },
+                { [shareId]: { [movedItem.itemId]: movedItem } }
             );
         }
 

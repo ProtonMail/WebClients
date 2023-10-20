@@ -3,14 +3,13 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import { isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
-import { isOwnVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
-import type { VaultShare } from '@proton/pass/types';
+import { isOwnVault, isSharedVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { type Maybe, type MaybeNull, type ShareType } from '@proton/pass/types';
 import { and, invert } from '@proton/pass/utils/fp/predicates';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 
 import { unwrapOptimisticState } from '../optimistic/utils/transformers';
-import { type ShareItem } from '../reducers';
+import type { ShareItem, VaultShareItem } from '../reducers';
 import type { State } from '../types';
 import { SelectorError } from './errors';
 import { selectItems } from './items';
@@ -32,7 +31,11 @@ export const selectOwnWritableVaults = createSelector([selectAllVaults], (vaults
     vaults.filter(and(isWritableVault, isOwnVault))
 );
 
-const createVaultsWithItemsCountSelector = (vaultSelector: Selector<State, VaultShare[]>) =>
+export const selectWritableSharedVaults = createSelector([selectAllVaults], (vaults) =>
+    vaults.filter(and(isWritableVault, isSharedVault))
+);
+
+const createVaultsWithItemsCountSelector = (vaultSelector: Selector<State, VaultShareItem[]>) =>
     createSelector([vaultSelector, selectItems], (shares, itemsByShareId) =>
         shares.map((share) => ({
             ...share,
@@ -42,6 +45,7 @@ const createVaultsWithItemsCountSelector = (vaultSelector: Selector<State, Vault
 
 export const selectVaultsWithItemsCount = createVaultsWithItemsCountSelector(selectAllVaults);
 export const selectWritableVaultsWithItemsCount = createVaultsWithItemsCountSelector(selectWritableVaults);
+export const selectWritableSharedVaultsWithItemsCount = createVaultsWithItemsCountSelector(selectWritableSharedVaults);
 
 /* The default vault should be the oldest vault I own and can write to */
 export const selectDefaultVault = createSelector(
@@ -78,12 +82,10 @@ export const selectShareOrThrow =
         return share;
     };
 
-export const selectVaultWithItemsCount = (shareId: string) =>
+export const selectVaultItemsCount = (shareId: MaybeNull<string>) =>
     createSelector(
-        selectShareOrThrow<ShareType.Vault>(shareId),
+        selectShare<ShareType.Vault>(shareId),
         selectItems,
-        (share, itemsByShareId): ShareItem<ShareType.Vault> & { count: number } => ({
-            ...share,
-            count: Object.values(itemsByShareId?.[share?.shareId] ?? {}).filter(invert(isTrashed)).length,
-        })
+        (share, itemsByShareId): MaybeNull<number> =>
+            share ? Object.values(itemsByShareId?.[share?.shareId] ?? {}).filter(invert(isTrashed)).length : null
     );

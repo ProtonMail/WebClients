@@ -80,6 +80,7 @@ export const VaultInviteRespond: VFC<Invite> = (invite) => {
                     </ItemCard>
                 )}
                 <Button
+                    pill
                     size="large"
                     shape="solid"
                     color="norm"
@@ -91,6 +92,7 @@ export const VaultInviteRespond: VFC<Invite> = (invite) => {
                 </Button>
 
                 <Button
+                    pill
                     size="large"
                     shape="solid"
                     color="weak"

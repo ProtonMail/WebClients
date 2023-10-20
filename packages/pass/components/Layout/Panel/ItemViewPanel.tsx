@@ -11,8 +11,9 @@ import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Them
 import { VaultTag } from '@proton/pass/components/Vault/VaultTag';
 import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
-import { selectAllVaults } from '@proton/pass/store/selectors';
-import { type ItemType, ShareRole, type VaultShare } from '@proton/pass/types';
+import type { VaultShareItem } from '@proton/pass/store/reducers';
+import { selectAllVaults, selectVaultLimits } from '@proton/pass/store/selectors';
+import { type ItemType, ShareRole } from '@proton/pass/types';
 
 import { Panel } from './Panel';
 import { PanelHeader } from './PanelHeader';
@@ -20,7 +21,7 @@ import { PanelHeader } from './PanelHeader';
 type Props = {
     type: ItemType;
     name: string;
-    vault: VaultShare;
+    vault: VaultShareItem;
     actions?: ReactElement[];
     quickActions?: ReactElement[];
 } & Omit<ItemViewProps, 'revision' | 'vault'>;
@@ -42,10 +43,13 @@ export const ItemViewPanel: FC<Props> = ({
     handleMoveToVaultClick,
     handleRestoreClick,
     handleDeleteClick,
+    handleInviteClick,
+    handleManageClick,
 
     children,
 }) => {
     const vaults = useSelector(selectAllVaults);
+    const { vaultLimitReached } = useSelector(selectVaultLimits);
     const hasMultipleVaults = vaults.length > 1;
     const { shareRoleId, shared } = vault;
     const showVaultTag = hasMultipleVaults || shared;
@@ -116,6 +120,36 @@ export const ItemViewPanel: FC<Props> = ({
                             </Button>,
 
                             ...actions,
+
+                            !vaultLimitReached && !shared && (
+                                <Button
+                                    key="share-item-button"
+                                    icon
+                                    pill
+                                    color="weak"
+                                    shape="solid"
+                                    size="medium"
+                                    title={c('Action').t`Share`}
+                                    onClick={handleInviteClick}
+                                >
+                                    <Icon name="users-plus" alt={c('Action').t`Share`} size={20} />
+                                </Button>
+                            ),
+
+                            shared && (
+                                <Button
+                                    key="manage-item-button"
+                                    icon
+                                    pill
+                                    color="weak"
+                                    shape="solid"
+                                    size="medium"
+                                    title={c('Action').t`See members`}
+                                    onClick={handleManageClick}
+                                >
+                                    <Icon name="users-plus" alt={c('Action').t`See members`} size={20} />
+                                </Button>
+                            ),
 
                             <QuickActionsDropdown
                                 key="item-quick-actions-dropdown"
