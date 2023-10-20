@@ -115,13 +115,13 @@ const getPremiumDriveFeature = () => ({
 });
 
 const getPremiumInboxFeature = (domains?: number, addresses?: number) => {
-    const name = c('bf2023: Deal details').t`${MAIL_SHORT_APP_NAME} & ${CALENDAR_SHORT_APP_NAME} Plus`;
+    const name = c('bf2023: Deal details').t`${MAIL_SHORT_APP_NAME} Plus & ${CALENDAR_SHORT_APP_NAME}`;
 
     if (domains && addresses) {
         if (addresses === 10) {
             const aliases = 10;
             return {
-                name,
+                name: c('bf2023: Deal details').t`All paid ${MAIL_SHORT_APP_NAME} and ${CALENDAR_APP_NAME} features`,
                 tooltip: c('bf2023: Tooltip')
                     .t`Includes support for ${domains} custom email domain, ${addresses} email addresses, ${aliases} hide-my-email aliases, calendar sharing, and more.`,
             };
