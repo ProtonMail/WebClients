@@ -72,7 +72,9 @@ export const getPassConfiguration = ({
     isDesktop,
     vpnServersCountData,
     passVaultSharingEnabled,
+    isPassWelcome,
 }: {
+    isPassWelcome: boolean;
     isDesktop: boolean;
     vpnServersCountData: VPNServersCountData;
     passVaultSharingEnabled: boolean;
@@ -115,6 +117,10 @@ export const getPassConfiguration = ({
             guarantee: true,
         },
     ];
+
+    if (isPassWelcome) {
+        planCards.splice(2, 1);
+    }
 
     const benefitItems = getPassBenefits();
     const benefits = benefitItems && (

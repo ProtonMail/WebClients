@@ -33,6 +33,7 @@ import useBitcoin, { OnBitcoinTokenValidated } from './useBitcoin';
 import { CardFieldStatus } from './useCard';
 
 export interface Props {
+    takeNullCreditCard?: boolean;
     api: Api;
     children?: ReactNode;
     type: PaymentMethodFlows;
@@ -72,6 +73,7 @@ export interface NoApiProps extends Props {
 }
 
 export const PaymentsNoApi = ({
+    takeNullCreditCard,
     children,
     type,
     amount,
@@ -149,7 +151,7 @@ export const PaymentsNoApi = ({
         );
     }
 
-    if (amount <= 0) {
+    if (amount <= 0 && !takeNullCreditCard) {
         const price = (
             <Price key="price" currency={currency}>
                 {0}
