@@ -5,10 +5,10 @@ import { getDefaultKTLS } from '@proton/shared/lib/keyTransparency';
 
 const isCrossStorageAvailable = ((): (() => Promise<boolean>) => {
     let crossStorageAvailable: any = undefined;
-    const test = 'kttest';
     return async (): Promise<boolean> => {
         if (crossStorageAvailable === undefined) {
             try {
+                const test = 'kttest';
                 await instance.setLocalStorage(test, test);
                 await instance.removeLocalStorage(test);
                 crossStorageAvailable = true;
