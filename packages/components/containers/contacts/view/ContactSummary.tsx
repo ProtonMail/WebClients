@@ -65,7 +65,7 @@ const ContactSummary = ({ vCardContact, leftBlockWidth = 'w30' }: Props) => {
                 <div className="contactsummary-contact-name-container pl-0 md:pl-7 flex-column">
                     <h2
                         className={clsx(
-                            'contactsummary-contact-name on-mobile-text-center mb-4 md:mb-0 flex-item-fluid text-bold text-ellipsis-two-lines w100',
+                            'contactsummary-contact-name text-center md:text-right mb-4 md:mb-0 flex-item-fluid text-bold text-ellipsis-two-lines w100',
                             // Several email addresses are a single word but too long, for this case, we break at any char
                             nameIsEmail && 'text-break'
                         )}
