@@ -21,7 +21,7 @@ describe('Import Dashlane ZIP', () => {
 
     test('should correctly parse items', () => {
         const [vaultData] = payload.vaults;
-        expect(vaultData.items.length).toEqual(11);
+        expect(vaultData.items.length).toEqual(14);
 
         expect(payload.vaults.length).toEqual(1);
         expect(vaultData.name).not.toBeUndefined();
@@ -173,13 +173,53 @@ describe('Import Dashlane ZIP', () => {
         expect(noteItem3.metadata.note).toEqual('line 1 line 2 line 3');
         expect(noteItem3.trashed).toEqual(false);
         expect(noteItem3.extraFields).toEqual([]);
+
+        /* Credit card item */
+        const creditCardItem1 = deobfuscateItem(items[11] as any) as unknown as ItemImportIntent<'creditCard'>;
+        expect(creditCardItem1.type).toEqual('creditCard');
+        expect(creditCardItem1.metadata.itemUuid).not.toBeUndefined();
+        expect(creditCardItem1.metadata.name).toEqual('Unnamed Credit Card');
+        expect(creditCardItem1.metadata.note).toEqual('');
+        expect(creditCardItem1.content.cardholderName).toEqual('JOHN DOE');
+        expect(creditCardItem1.content.number).toEqual('11111111111111111');
+        expect(creditCardItem1.content.verificationNumber).toEqual('100');
+        expect(creditCardItem1.content.expirationDate).toEqual('032023');
+        expect(creditCardItem1.content.pin).toEqual('');
+        expect(creditCardItem1.trashed).toEqual(false);
+        expect(creditCardItem1.extraFields).toEqual([]);
+
+        /* Credit card item with all fields filled */
+        const creditCardItem2 = deobfuscateItem(items[12] as any) as unknown as ItemImportIntent<'creditCard'>;
+        expect(creditCardItem2.type).toEqual('creditCard');
+        expect(creditCardItem2.metadata.itemUuid).not.toBeUndefined();
+        expect(creditCardItem2.metadata.name).toEqual('my cc');
+        expect(creditCardItem2.metadata.note).toEqual('line1\nline2word1, line2word2');
+        expect(creditCardItem2.content.cardholderName).toEqual('john');
+        expect(creditCardItem2.content.number).toEqual('12345678901234567');
+        expect(creditCardItem2.content.verificationNumber).toEqual('123');
+        expect(creditCardItem2.content.expirationDate).toEqual('012024');
+        expect(creditCardItem1.content.pin).toEqual('');
+        expect(creditCardItem2.trashed).toEqual(false);
+        expect(creditCardItem2.extraFields).toEqual([]);
+
+        /* Credit card item with only 2 fields filled */
+        const creditCardItem3 = deobfuscateItem(items[13] as any) as unknown as ItemImportIntent<'creditCard'>;
+        expect(creditCardItem3.type).toEqual('creditCard');
+        expect(creditCardItem3.metadata.itemUuid).not.toBeUndefined();
+        expect(creditCardItem3.metadata.name).toEqual('Unnamed Credit Card');
+        expect(creditCardItem3.metadata.note).toEqual('');
+        expect(creditCardItem3.content.cardholderName).toEqual('');
+        expect(creditCardItem3.content.number).toEqual('1');
+        expect(creditCardItem3.content.verificationNumber).toEqual('1');
+        expect(creditCardItem3.content.expirationDate).toEqual('');
+        expect(creditCardItem3.content.pin).toEqual('');
+        expect(creditCardItem3.trashed).toEqual(false);
+        expect(creditCardItem3.extraFields).toEqual([]);
     });
 
     test('should correctly hydrate ignored and warnings arrays', () => {
-        expect(payload.ignored.length).toEqual(2);
+        expect(payload.ignored.length).toEqual(1);
         expect(payload.ignored[0]).toEqual('[Personal Info] Unnamed');
-        expect(payload.ignored[1]).toEqual('[Payment] JOHN DOE');
-
         expect(payload.warnings.length).toEqual(0);
     });
 });
