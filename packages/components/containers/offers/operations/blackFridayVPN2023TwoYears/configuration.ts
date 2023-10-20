@@ -26,6 +26,7 @@ const config: OfferConfig = {
             cycle: CYCLE.YEARLY,
             couponCode: COUPON_CODES.BLACK_FRIDAY_2023,
             features: getUnlimitedVPNFeatures,
+            isGuaranteed: true,
         },
     ],
     layout: Layout,
