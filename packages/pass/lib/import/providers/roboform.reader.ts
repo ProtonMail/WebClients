@@ -16,6 +16,15 @@ function formatOtpAuthUri(item: RoboformItem): Maybe<string> {
     return `otpauth://totp/${item.Name}:none?secret=${secret}`;
 }
 
+/*
+ * In Roboform exports, fields beginning with `@` or `'` have a single quote (`'`) prepended.
+ * To account for this, occurences of `'@` and `''` are replaced with their actual values,
+ * ie. `@` and `'` respectively.
+ */
+function unescapeFieldValue(value: string) {
+    return value.replace(/^'(?=@|')/, '');
+}
+
 export const readRoboformData = async (data: string): Promise<ImportPayload> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
@@ -28,10 +37,6 @@ export const readRoboformData = async (data: string): Promise<ImportPayload> => 
 
         /*
          * Skips the first row (headers) and maps results to an array of RoboformItem's.
-         *
-         * In Roboform exports, fields beginning with `@` or `'` have a single quote (`'`) prepended.
-         * To account for this, occurences of `'@` and `''` are replaced with their actual values,
-         * ie. `@` and `'` respectively.
          */
         const items: RoboformItem[] = result.items
             .slice(1)
@@ -39,8 +44,8 @@ export const readRoboformData = async (data: string): Promise<ImportPayload> => 
                 Name,
                 Url,
                 MatchUrl,
-                Login: Login.replace(/^'@/, '').replace(/^''/, ''),
-                Pwd: Pwd.replace(/^'@/, '').replace(/^''/, ''),
+                Login: unescapeFieldValue(Login),
+                Pwd: unescapeFieldValue(Pwd),
                 Note,
                 Folder: lastItem(Folder.split('/')),
                 RfFieldsV2,
