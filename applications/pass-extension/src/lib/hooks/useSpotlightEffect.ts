@@ -1,14 +1,20 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
+import { useInviteContext } from '@proton/pass/components/Invite/InviteContextProvider';
 import type { SpotlightMessageDefinition } from '@proton/pass/components/Spotlight/SpotlightContent';
-import { FiveStarIcon, ShieldIcon } from '@proton/pass/components/Spotlight/SpotlightIcon';
+import { useSpotlightContext } from '@proton/pass/components/Spotlight/SpotlightContext';
+import { FiveStarIcon, InviteIcon, ShieldIcon } from '@proton/pass/components/Spotlight/SpotlightIcon';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { popupMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { detectBrowser, getWebStoreUrl } from '@proton/pass/lib/extension/utils/browser';
 import browser from '@proton/pass/lib/globals/browser';
+import { selectMostRecentInvite } from '@proton/pass/store/selectors/invites';
 import type { Callback, MaybeNull, WorkerMessageWithSender } from '@proton/pass/types';
 import { OnboardingMessage, WorkerMessageType } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
@@ -17,25 +23,43 @@ import { promptForPermissions } from '../utils/permissions';
 import { useExtensionConnectContext } from './useExtensionConnectContext';
 import { useOpenSettingsTab } from './useOpenSettingsTab';
 
-export const useOnboardingMessage = () => {
+export const useSpotlightEffect = () => {
     const { context: extensionContext } = useExtensionConnectContext();
+    const invite = useInviteContext();
+    const spotlight = useSpotlightContext();
     const webStoreURL = getWebStoreUrl(detectBrowser());
-    const [showTrial, setShowTrial] = useState(false);
-    const [pendingShareAccess, setShowPendingShareAccess] = useState(false);
+
+    const sharingEnabled = useFeatureFlag(PassFeature.PassSharingV1);
+    const latestInvite = useSelector(selectMostRecentInvite);
     const [message, setMessage] = useState<MaybeNull<OnboardingMessage>>(null);
 
-    useEffect(() => {
-        void sendMessage.onSuccess(
-            popupMessage({ type: WorkerMessageType.ONBOARDING_REQUEST }),
-            async ({ message }) => {
-                await wait(200);
-                setMessage(message ?? null);
-                setShowPendingShareAccess(message === OnboardingMessage.PENDING_SHARE_ACCESS);
-            }
-        );
-    }, []);
-
     const openSettings = useOpenSettingsTab();
+
+    useEffect(() => {
+        /* If the latest invite was promoted from a new user invite,
+         * auto prompt the "respond to invite" modal */
+        if (latestInvite?.fromNewUser) invite.respondToInvite(latestInvite);
+    }, [latestInvite]);
+
+    const inviteMessage = useMemo<MaybeNull<SpotlightMessageDefinition>>(
+        () =>
+            sharingEnabled && latestInvite && !latestInvite.fromNewUser
+                ? {
+                      id: latestInvite.token,
+                      weak: true,
+                      dense: false,
+                      title: c('Title').t`Vault shared with you`,
+                      message: c('Info').t`You're invited to a vault.`,
+                      icon: InviteIcon,
+                      action: {
+                          label: c('Label').t`View details`,
+                          type: 'button',
+                          onClick: () => invite.respondToInvite(latestInvite),
+                      },
+                  }
+                : null,
+        [latestInvite]
+    );
 
     const withAcknowledgment = useCallback(
         (cb: Callback = noop) =>
@@ -62,7 +86,7 @@ export const useOnboardingMessage = () => {
                 title: c('Title').t`Pending access to the shared data`,
                 message: c('Info').t`For security reasons, your access needs to be confirmed`,
                 weak: true,
-                onClose: withAcknowledgment(() => setShowPendingShareAccess(false)),
+                onClose: withAcknowledgment(() => spotlight.setPendingShareAccess(false)),
             },
             [OnboardingMessage.WELCOME]: {
                 id: 'welcome',
@@ -83,11 +107,11 @@ export const useOnboardingMessage = () => {
                 message: c('Info')
                     .t`Check out all the exclusive features that are available to you for a limited time.`,
                 className: 'ui-orange',
-                onClose: withAcknowledgment(() => setShowTrial(false)),
+                onClose: withAcknowledgment(noop),
                 action: {
                     label: c('Label').t`Learn more`,
                     type: 'link',
-                    onClick: () => setShowTrial(true),
+                    onClick: () => spotlight.setUpselling('free-trial'),
                 },
             },
             [OnboardingMessage.SECURE_EXTENSION]: {
@@ -173,16 +197,21 @@ export const useOnboardingMessage = () => {
             }
         };
 
+        void sendMessage.onSuccess(
+            popupMessage({ type: WorkerMessageType.ONBOARDING_REQUEST }),
+            async ({ message }) => {
+                await wait(200);
+                setMessage(message ?? null);
+                if (message === OnboardingMessage.PENDING_SHARE_ACCESS) spotlight.setPendingShareAccess(true);
+            }
+        );
+
         extensionContext?.port.onMessage.addListener(handleMessage);
         return () => extensionContext?.port.onMessage.removeListener(handleMessage);
     }, [extensionContext]);
 
-    return useMemo(
-        () => ({
-            message: message !== null ? definitions[message] : null,
-            trial: showTrial,
-            pendingShareAccess,
-        }),
-        [message, showTrial, pendingShareAccess]
-    );
+    useEffect(() => {
+        const activeMessage = inviteMessage ?? (message !== null ? definitions[message] : null);
+        spotlight.setMessage(activeMessage);
+    }, [inviteMessage, message]);
 };

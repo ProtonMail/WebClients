@@ -8,12 +8,17 @@ import { Icon } from '@proton/components';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
+import { useSpotlightContext } from '@proton/pass/components/Spotlight/SpotlightContext';
 import { VaultTag } from '@proton/pass/components/Vault/VaultTag';
 import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
+import { isVaultMemberLimitReached } from '@proton/pass/lib/vaults/vault.predicates';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
-import { selectAllVaults, selectVaultLimits } from '@proton/pass/store/selectors';
+import { selectAllVaults, selectPassPlan, selectVaultLimits } from '@proton/pass/store/selectors';
 import { type ItemType, ShareRole } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
+import { UserPassPlan } from '@proton/pass/types/api/plan';
 
 import { Panel } from './Panel';
 import { PanelHeader } from './PanelHeader';
@@ -50,11 +55,14 @@ export const ItemViewPanel: FC<Props> = ({
 }) => {
     const vaults = useSelector(selectAllVaults);
     const { vaultLimitReached } = useSelector(selectVaultLimits);
+    const plan = useSelector(selectPassPlan);
+    const sharingEnabled = useFeatureFlag(PassFeature.PassSharingV1);
     const hasMultipleVaults = vaults.length > 1;
     const { shareRoleId, shared } = vault;
     const showVaultTag = hasMultipleVaults || shared;
     const readOnly = shareRoleId === ShareRole.READ;
     const sharedReadOnly = shared && readOnly;
+    const spotlight = useSpotlightContext();
 
     return (
         <Panel
@@ -121,7 +129,7 @@ export const ItemViewPanel: FC<Props> = ({
 
                             ...actions,
 
-                            !vaultLimitReached && !shared && (
+                            sharingEnabled && !shared && (
                                 <Button
                                     key="share-item-button"
                                     icon
@@ -130,7 +138,13 @@ export const ItemViewPanel: FC<Props> = ({
                                     shape="solid"
                                     size="medium"
                                     title={c('Action').t`Share`}
-                                    onClick={handleInviteClick}
+                                    disabled={readOnly}
+                                    onClick={
+                                        vaultLimitReached ||
+                                        (plan === UserPassPlan.FREE && isVaultMemberLimitReached(vault))
+                                            ? () => spotlight.setUpselling('pass-plus')
+                                            : handleInviteClick
+                                    }
                                 >
                                     <Icon name="users-plus" alt={c('Action').t`Share`} size={20} />
                                 </Button>
