@@ -6,7 +6,7 @@ import capitalize from '@proton/utils/capitalize';
 
 import { readCSV } from '../helpers/csv.reader';
 import { ImportProviderError } from '../helpers/error';
-import { getImportedVaultName, importLoginItem, importNoteItem } from '../helpers/transformers';
+import { getImportedVaultName, importCreditCardItem, importLoginItem, importNoteItem } from '../helpers/transformers';
 import type { ImportPayload, ImportVault } from '../types';
 import type {
     DashlaneIdItem,
@@ -29,6 +29,22 @@ const DASHLANE_LOGINS_EXPECTED_HEADERS: (keyof DashlaneLoginItem)[] = [
 
 const DASHLANE_NOTES_EXPECTED_HEADERS: (keyof DashlaneNoteItem)[] = ['title', 'note'];
 
+const DASHLANE_CREDIT_CARDS_EXPECTED_HEADERS: (keyof DashlanePaymentItem)[] = [
+    'type',
+    'account_name',
+    'account_holder',
+    'cc_number',
+    'code',
+    'expiration_month',
+    'expiration_year',
+    'routing_number',
+    'account_number',
+    'country',
+    'issuing_bank',
+    'note',
+    'name',
+];
+
 const processLoginItem = (item: DashlaneLoginItem): ItemImportIntent<'login'> =>
     importLoginItem({
         name: item.title,
@@ -48,6 +64,16 @@ const processNoteItem = (item: DashlaneNoteItem): ItemImportIntent<'note'> =>
     importNoteItem({
         name: item.title,
         note: item.note,
+    });
+
+const processCreditCardItem = (item: DashlanePaymentItem): ItemImportIntent<'creditCard'> =>
+    importCreditCardItem({
+        name: item.name,
+        note: item.note,
+        cardholderName: item.account_name,
+        number: item.cc_number,
+        verificationNumber: item.code,
+        expirationDate: `${item.expiration_month}${item.expiration_year}`,
     });
 
 const parseDashlaneCSV = async <T extends DashlaneItem>(options: {
@@ -91,19 +117,22 @@ export const readDashlaneData = async (data: ArrayBuffer): Promise<ImportPayload
             })
         ).map(processNoteItem);
 
+        /* credit cards */
+        const creditCards = (
+            await parseDashlaneCSV<DashlanePaymentItem>({
+                data: await zipFile.file('payments.csv')?.async('string'),
+                headers: DASHLANE_CREDIT_CARDS_EXPECTED_HEADERS,
+                warnings,
+            })
+        ).map(processCreditCardItem);
+
         /* unsupported ids */
         const ids = await parseDashlaneCSV<DashlaneIdItem>({
             data: await zipFile.file('ids.csv')?.async('string'),
             headers: ['type', 'number'],
         });
 
-        /* unsupported payments */
-        const payments = await parseDashlaneCSV<DashlanePaymentItem>({
-            data: await zipFile.file('payments.csv')?.async('string'),
-            headers: ['account_name'],
-        });
-
-        /* unsupported payments */
+        /* unsupported personal info */
         const personalInfos = await parseDashlaneCSV<DashlanePersonalInfoItem>({
             data: await zipFile.file('personalInfo.csv')?.async('string'),
             headers: ['title'],
@@ -111,15 +140,14 @@ export const readDashlaneData = async (data: ArrayBuffer): Promise<ImportPayload
 
         ignored.push(
             ...ids.map(({ type, name }) => `[${capitalize(type ?? 'ID')}] ${name || 'Unknown ID'}`),
-            ...personalInfos.map(({ title }) => `[${'Personal Info'}] ${title || 'Unnamed'}`),
-            ...payments.map(({ account_name }) => `[${'Payment'}] ${account_name || 'Unnamed payment'}`)
+            ...personalInfos.map(({ title }) => `[${'Personal Info'}] ${title || 'Unnamed'}`)
         );
 
         const vaults: ImportVault[] = [
             {
                 name: getImportedVaultName(),
                 shareId: null,
-                items: [...loginItems, ...noteItems],
+                items: [...loginItems, ...noteItems, ...creditCards],
             },
         ];
 
