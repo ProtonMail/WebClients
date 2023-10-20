@@ -22,7 +22,7 @@ const useCalendarsEvents = (
     requestedCalendars: VisualCalendar[],
     utcDateRange: [Date, Date],
     tzid: string,
-    cacheRef: MutableRefObject<CalendarsEventsCache>,
+    calendarsEventsCacheRef: MutableRefObject<CalendarsEventsCache>,
     getOpenedMailEvents: () => OpenedMailEvent[],
     initializeCacheOnlyCalendarsIDs: string[],
     onCacheInitialized: () => void
@@ -33,7 +33,7 @@ const useCalendarsEvents = (
         calendars: requestedCalendars,
         dateRange: utcDateRange,
         tzid,
-        calendarsEventsCache: cacheRef.current,
+        calendarsEventsCache: calendarsEventsCacheRef.current,
         getOpenedMailEvents,
         initializeCacheOnlyCalendarsIDs,
         onCacheInitialized,
@@ -42,13 +42,13 @@ const useCalendarsEvents = (
 
     useEffect(() => {
         let isActive = true;
-        cacheRef.current.rerender = () => {
+        calendarsEventsCacheRef.current.rerender = () => {
             if (isActive) {
                 setRerender({});
             }
         };
         return () => {
-            cacheRef.current.rerender = undefined;
+            calendarsEventsCacheRef.current.rerender = undefined;
             isActive = false;
         };
     }, []);
@@ -57,7 +57,7 @@ const useCalendarsEvents = (
         return requestedCalendars
             .map((calendar) => {
                 const isOwnedCalendar = getIsOwnedCalendar(calendar);
-                const calendarEventsCache = cacheRef.current?.calendars[calendar.ID];
+                const calendarEventsCache = calendarsEventsCacheRef.current?.calendars[calendar.ID];
                 if (!calendarEventsCache) {
                     return [];
                 }
@@ -184,7 +184,7 @@ const useCalendarsEvents = (
 
     useCalendarsEventsReader({
         calendarEvents: eventsResults,
-        calendarsEventsCacheRef: cacheRef,
+        calendarsEventsCacheRef,
         rerender: () => setRerender({}),
         getOpenedMailEvents,
         metadataOnly,
