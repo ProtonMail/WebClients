@@ -65,7 +65,7 @@ describe('Import Roboform csv', () => {
         expect(loginItem2.metadata.name).toEqual('Admin');
         expect(loginItem2.metadata.note).toEqual('');
         expect(loginItem2.content.username).toEqual('admin');
-        expect(loginItem2.content.password).toEqual('@proton123');
+        expect(loginItem2.content.password).toEqual("'@proton123");
         expect(loginItem2.content.urls[0]).toEqual('https://proton.me/');
 
         /* Bookmark - broken url */
@@ -92,7 +92,7 @@ describe('Import Roboform csv', () => {
         expect(loginItem5.metadata.name).toEqual('Fb');
         expect(loginItem5.metadata.note).toEqual('Facebook note\n');
         expect(loginItem5.content.username).toEqual('nobody');
-        expect(loginItem5.content.password).toEqual('proton123');
+        expect(loginItem5.content.password).toEqual('@proton123');
         expect(loginItem5.content.urls).toEqual(['https://fb.com/login']);
     });
 });
