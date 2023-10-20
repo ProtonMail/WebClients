@@ -16,6 +16,7 @@ import { PendingExistingMember, PendingNewMember } from '@proton/pass/components
 import { SharedVaultItem } from '@proton/pass/components/Vault/SharedVaultItem';
 import { useShareAccessOptionsPolling } from '@proton/pass/hooks/useShareAccessOptionsPolling';
 import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
+import { isVaultMemberLimitReached } from '@proton/pass/lib/vaults/vault.predicates';
 import { selectOwnWritableVaults, selectPassPlan, selectShareOrThrow } from '@proton/pass/store/selectors';
 import type { NewUserPendingInvite, PendingInvite, ShareType } from '@proton/pass/types';
 import { type ShareMember as ShareMemberType } from '@proton/pass/types';
@@ -55,8 +56,7 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
         [vault]
     );
 
-    const totalCount = members.length + invites.length;
-    const memberLimitReached = totalCount >= vault.targetMaxMembers;
+    const memberLimitReached = isVaultMemberLimitReached(vault);
 
     const warning = (() => {
         if (canManage && memberLimitReached) {

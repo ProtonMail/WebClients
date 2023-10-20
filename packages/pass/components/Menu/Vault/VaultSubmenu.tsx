@@ -105,7 +105,7 @@ export const VaultSubmenu: VFC<Props> = ({
                     return (
                         <VaultItem
                             key={vault.shareId}
-                            share={vault}
+                            vault={vault}
                             count={vault.count}
                             label={vault.content.name}
                             selected={!inTrash && selectedShareId === vault.shareId}
