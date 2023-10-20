@@ -9,6 +9,7 @@ import {
     PLANS,
     PLAN_TYPES,
 } from '@proton/shared/lib/constants';
+import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
 import { getValidCycle } from '@proton/shared/lib/helpers/subscription';
 import { Currency, Plan, getPlanMaxIPs } from '@proton/shared/lib/interfaces';
@@ -80,7 +81,8 @@ export const getSignupSearchParams = (
     const invite = searchParams.get('invite') || undefined;
     const coupon = searchParams.get('coupon')?.toUpperCase() || undefined;
     const type = searchParams.get('type') || undefined;
-    const hideFreePlan = searchParams.get('hfp') || undefined;
+    const maybeHfp = searchParams.get('hfp');
+    const hideFreePlan = ['true', '1'].includes(maybeHfp as any) || getCookie('offer') === 'bestdeal' || false;
     const email = searchParams.get('email') || undefined;
     const orgName = searchParams.get('orgName') || undefined;
 
@@ -98,7 +100,7 @@ export const getSignupSearchParams = (
         referrer,
         invite,
         type,
-        hideFreePlan: hideFreePlan === 'true',
+        hideFreePlan,
         orgName,
     };
 };
