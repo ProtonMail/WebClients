@@ -46,3 +46,8 @@
 		}
 	}
 }
+
+.navigation > .navigation-list:last-child,
+.navigation > div > .navigation-list:last-child {
+	padding-block-end: 0;
+}
