@@ -1,7 +1,7 @@
 import { type VFC, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { FormikProvider, useFormik } from 'formik';
+import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { ItemCard } from '@proton/pass/components/Item/ItemCard';
@@ -70,7 +70,9 @@ export const VaultNew: VFC<Props> = ({ onSubmit, onSuccess, onFailure, onFormVal
                 </ItemCard>
             )}
             <FormikProvider value={form}>
-                <VaultForm form={form} formId={FORM_ID} />
+                <Form id={FORM_ID} className="flex flex-column gap-y-4">
+                    <VaultForm form={form} />
+                </Form>
             </FormikProvider>
         </>
     );

@@ -1,11 +1,5 @@
-import type {
-    ItemCreateIntent,
-    ItemEditIntent,
-    ItemRevision,
-    ItemType,
-    MaybeNull,
-    VaultShare,
-} from '@proton/pass/types';
+import type { VaultShareItem } from '@proton/pass/store/reducers';
+import type { ItemCreateIntent, ItemEditIntent, ItemRevision, ItemType, MaybeNull } from '@proton/pass/types';
 import type { ParsedUrl } from '@proton/pass/utils/url/parser';
 
 export type ItemViewProps<T extends ItemType = ItemType> = {
@@ -13,7 +7,7 @@ export type ItemViewProps<T extends ItemType = ItemType> = {
     optimistic: boolean;
     revision: ItemRevision<T>;
     trashed: boolean;
-    vault: VaultShare;
+    vault: VaultShareItem;
     handleDeleteClick: () => void;
     handleDismissClick: () => void;
     handleEditClick: () => void;
@@ -21,12 +15,14 @@ export type ItemViewProps<T extends ItemType = ItemType> = {
     handleMoveToVaultClick: () => void;
     handleRestoreClick: () => void;
     handleRetryClick: () => void;
+    handleInviteClick: () => void;
+    handleManageClick: () => void;
 };
 
 export type ItemEditViewProps<T extends ItemType = ItemType> = {
     revision: ItemRevision<T>;
     url: MaybeNull<ParsedUrl>;
-    vault: VaultShare;
+    vault: VaultShareItem;
     onCancel: () => void;
     onSubmit: (item: ItemEditIntent<T>) => void;
 };

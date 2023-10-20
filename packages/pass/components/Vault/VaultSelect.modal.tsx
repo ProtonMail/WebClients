@@ -1,4 +1,5 @@
 import { type VFC, useMemo, useState } from 'react';
+import type { Selector } from 'react-redux';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -13,25 +14,25 @@ import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal'
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
-import {
-    selectVaultLimits,
-    selectWritableVaults,
-    selectWritableVaultsWithItemsCount,
-} from '@proton/pass/store/selectors';
-import { prop } from '@proton/pass/utils/fp/lens';
+import type { VaultShareItem, WithItemCount } from '@proton/pass/store/reducers';
+import { selectVaultLimits } from '@proton/pass/store/selectors';
+import { NOOP_LIST_SELECTOR } from '@proton/pass/store/selectors/utils';
+import type { State } from '@proton/pass/store/types';
+
+type OptionsSelector = Selector<State, WithItemCount<VaultShareItem>[]>;
 
 export type Props = Omit<ModalProps, 'onSubmit'> & {
     downgradeMessage: string;
-    onSubmit: (shareId: string) => void;
     shareId: string;
+    onSubmit: (shareId: string) => void;
+    optionsSelector: OptionsSelector;
 };
 
 /* if the user has downgraded : only allow him to select
  * his writable vaults as target. This rule applies when moving
  * an item to a vault or when selecting an item's vault */
-export const VaultSelectModal: VFC<Props> = ({ downgradeMessage, onSubmit, shareId, ...props }) => {
-    const vaultsWithItemCount = useSelector(selectWritableVaultsWithItemsCount);
-    const writableShareIds = useSelector(selectWritableVaults).map(prop('shareId'));
+export const VaultSelectModal: VFC<Props> = ({ downgradeMessage, shareId, onSubmit, optionsSelector, ...props }) => {
+    const vaults = useSelector(optionsSelector);
     const { didDowngrade } = useSelector(selectVaultLimits);
 
     return (
@@ -58,12 +59,8 @@ export const VaultSelectModal: VFC<Props> = ({ downgradeMessage, onSubmit, share
                 {didDowngrade && <ItemCard>{downgradeMessage}</ItemCard>}
 
                 <RadioButtonGroup name="vault-select" className="flex-columns" value={shareId} onChange={onSubmit}>
-                    {vaultsWithItemCount.map((vault) => (
-                        <RadioLabelledButton
-                            value={vault.shareId}
-                            key={vault.shareId}
-                            disabled={!writableShareIds.includes(vault.shareId)}
-                        >
+                    {vaults.map((vault) => (
+                        <RadioLabelledButton value={vault.shareId} key={vault.shareId}>
                             <VaultIcon
                                 size={20}
                                 background
@@ -85,14 +82,28 @@ export const VaultSelectModal: VFC<Props> = ({ downgradeMessage, onSubmit, share
 };
 
 export const useVaultSelectModalHandles = () => {
-    const [modalState, setModalState] = useState<Pick<Props, 'shareId' | 'open'>>({ open: false, shareId: '' });
+    const [modalState, setModalState] = useState<Pick<Props, 'shareId' | 'open' | 'optionsSelector'>>({
+        open: false,
+        shareId: '',
+        optionsSelector: NOOP_LIST_SELECTOR,
+    });
 
     return {
         modalState,
         ...useMemo(
             () => ({
-                closeVaultSelect: () => setModalState((state) => ({ ...state, open: false })),
-                openVaultSelect: (shareId: string) => setModalState({ shareId, open: true }),
+                closeVaultSelect: () =>
+                    setModalState((state) => ({
+                        ...state,
+                        open: false,
+                        optionsSelector: NOOP_LIST_SELECTOR,
+                    })),
+                openVaultSelect: (shareId: string, optionsSelector: OptionsSelector) =>
+                    setModalState({
+                        shareId,
+                        open: true,
+                        optionsSelector,
+                    }),
             }),
             []
         ),

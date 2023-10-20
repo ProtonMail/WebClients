@@ -43,6 +43,9 @@ export type ShareItem<T extends ShareType = ShareType> = Share<T> & {
     members?: ShareMember[];
 };
 
+export type WithItemCount<T> = T & { count: number };
+export type VaultShareItem = ShareItem<ShareType.Vault>;
+
 export type SharesState = { [shareId: string]: ShareItem };
 
 /**
@@ -147,7 +150,9 @@ export const withOptimisticShares = withOptimistic<SharesState>(
         }
 
         if (inviteCreationSuccess.match(action)) {
-            return partialMerge(state, { [action.payload.shareId]: { shared: true } });
+            return action.payload.withVaultCreation
+                ? partialMerge(state, { [action.payload.shareId]: { ...action.payload.share, shared: true } })
+                : partialMerge(state, { [action.payload.shareId]: { shared: true } });
         }
 
         if (newUserInvitePromoteSuccess.match(action)) {
