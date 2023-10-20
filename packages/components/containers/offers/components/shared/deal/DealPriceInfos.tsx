@@ -23,7 +23,7 @@ const DealPriceInfos = () => {
     // );
 
     return (
-        <div className="mb-2 w100">
+        <div className="w100">
             <small className="w100 color-weak text-left">
                 <span className="block">
                     {getDealBilledDescription(cycle, amountDue)} {star ? <sup>{star}</sup> : null}
