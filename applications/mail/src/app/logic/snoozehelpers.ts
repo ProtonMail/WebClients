@@ -4,7 +4,7 @@ import { c, msgid } from 'ttag';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { isConversation, isMessage } from 'proton-mail/helpers/elements';
+import { getDate, isConversation, isMessage } from 'proton-mail/helpers/elements';
 import { Conversation } from 'proton-mail/models/conversation';
 import { Element } from 'proton-mail/models/element';
 
@@ -63,12 +63,14 @@ export const getSnoozeTimeFromElement = (element?: Element) => {
     return snoozeLabel?.ContextSnoozeTime;
 };
 
-export const getSnoozeDate = (element: Element | undefined) => {
+export const getSnoozeDate = (element: Element | undefined, labelID: string) => {
     const time = getSnoozeTimeFromElement(element);
     if (time) {
         return new Date(time * 1000);
     }
-    return new Date();
+
+    // If the item don't have a snooze time we get the time of the element
+    return getDate(element, labelID);
 };
 
 export const isElementReminded = (element: Element | undefined) => {
