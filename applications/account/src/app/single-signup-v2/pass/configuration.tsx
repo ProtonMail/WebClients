@@ -73,7 +73,9 @@ export const getPassConfiguration = ({
     vpnServersCountData,
     passVaultSharingEnabled,
     isPassWelcome,
+    hideFreePlan,
 }: {
+    hideFreePlan: boolean;
     isPassWelcome: boolean;
     isDesktop: boolean;
     vpnServersCountData: VPNServersCountData;
@@ -88,7 +90,7 @@ export const getPassConfiguration = ({
     const features = getGenericFeatures(isDesktop);
 
     const planCards: PlanCard[] = [
-        {
+        !hideFreePlan && {
             plan: PLANS.FREE,
             subsection: (
                 <PlanCardFeatureList
@@ -96,7 +98,7 @@ export const getPassConfiguration = ({
                     features={getFreePassFeatures(passVaultSharingEnabled)}
                 />
             ),
-            type: 'standard',
+            type: 'standard' as const,
             guarantee: false,
         },
         {
@@ -107,20 +109,16 @@ export const getPassConfiguration = ({
                     features={getCustomPassFeatures(passVaultSharingEnabled)}
                 />
             ),
-            type: 'best',
+            type: 'best' as const,
             guarantee: true,
         },
-        {
+        !isPassWelcome && {
             plan: PLANS.BUNDLE,
             subsection: <BundlePlanSubSection vpnServersCountData={vpnServersCountData} />,
-            type: 'standard',
+            type: 'standard' as const,
             guarantee: true,
         },
-    ];
-
-    if (isPassWelcome) {
-        planCards.splice(2, 1);
-    }
+    ].filter(isTruthy);
 
     const benefitItems = getPassBenefits();
     const benefits = benefitItems && (

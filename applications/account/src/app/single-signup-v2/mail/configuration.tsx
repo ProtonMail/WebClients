@@ -19,6 +19,7 @@ import {
     PLANS,
 } from '@proton/shared/lib/constants';
 import { VPNServersCountData } from '@proton/shared/lib/interfaces';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { SignupType } from '../../signup/interfaces';
 import Benefits, { BenefitItem } from '../Benefits';
@@ -66,7 +67,9 @@ export const getCustomMailFeatures = () => {
 export const getMailConfiguration = ({
     isDesktop,
     vpnServersCountData,
+    hideFreePlan,
 }: {
+    hideFreePlan: boolean;
     isDesktop: boolean;
     vpnServersCountData: VPNServersCountData;
 }): SignupConfiguration => {
@@ -77,25 +80,25 @@ export const getMailConfiguration = ({
     const features = getGenericFeatures(isDesktop);
 
     const planCards: PlanCard[] = [
-        {
+        !hideFreePlan && {
             plan: PLANS.FREE,
             subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getFreeMailFeatures()} />,
-            type: 'standard',
+            type: 'standard' as const,
             guarantee: false,
         },
         {
             plan: PLANS.MAIL,
             subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getCustomMailFeatures()} />,
-            type: 'best',
+            type: 'best' as const,
             guarantee: true,
         },
         {
             plan: PLANS.BUNDLE,
             subsection: <BundlePlanSubSection vpnServersCountData={vpnServersCountData} />,
-            type: 'standard',
+            type: 'standard' as const,
             guarantee: true,
         },
-    ];
+    ].filter(isTruthy);
 
     const benefitItems = getMailBenefits();
     const benefits = benefitItems && (
