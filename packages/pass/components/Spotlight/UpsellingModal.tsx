@@ -14,7 +14,8 @@ import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { selectTrialDaysRemaining } from '@proton/pass/store/selectors';
 import clsx from '@proton/utils/clsx';
 
-export type Props = Omit<ModalProps, 'onSubmit'>;
+export type Props = Omit<ModalProps, 'onSubmit'> & { type: UpsellingModalType };
+export type UpsellingModalType = 'free-trial' | 'pass-plus';
 
 const getFeatures = (): { className: string; icon: IconName; label: string }[] => [
     {
@@ -36,7 +37,7 @@ const getFeatures = (): { className: string; icon: IconName; label: string }[] =
 
 const TRIAL_BLOG_URL = 'https://proton.me/support/pass-trial';
 
-export const FreeTrialModal: VFC<Props> = ({ ...props }) => {
+export const UpsellingModal: VFC<Props> = ({ ...props }) => {
     const features = getFeatures();
     const daysRemaining = useSelector(selectTrialDaysRemaining);
 
