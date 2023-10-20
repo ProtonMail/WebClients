@@ -29,6 +29,7 @@ import {
     SharedVcalVeventComponent,
     getEventStoreRecordHasEventData,
 } from './interface';
+import useCalendarsEventsRetry, { InitRetry } from './useCalendarsEventsRetry';
 
 const SLOW_EVENT_BYPASS = {};
 const EVENTS_PER_BATCH_OLD = 5;
@@ -139,6 +140,7 @@ const setEventRecordPromise = ({
     api,
     getOpenedMailEvents,
     forceDecryption,
+    initRetry,
 }: {
     eventRecord: RequireSome<CalendarEventStoreRecord, 'eventData'>;
     getCalendarEventRaw: GetCalendarEventRaw;
@@ -147,20 +149,28 @@ const setEventRecordPromise = ({
     api: Api;
     getOpenedMailEvents?: () => OpenedMailEvent[];
     forceDecryption?: boolean;
+    initRetry?: InitRetry;
 }): Promise<EventReadResult | undefined> => {
     const { eventData: calendarEvent, eventComponent } = eventRecord;
 
-    const onError = (error: any) => {
-        const errorMessage = error?.message || 'Unknown error';
-        if (!naiveGetIsDecryptionError(error)) {
-            /**
-             * (Temporarily) Log to Sentry any error not related to decryption
-             */
-            const { ID, CalendarID } = eventRecord.eventData || {};
-            captureMessage('Unexpected error reading calendar event', {
-                extra: { message: errorMessage, eventID: ID, calendarID: CalendarID },
-            });
-        }
+    const onError = async (error: any) => {
+        // trigger auto-retry, but don't wait for it to avoid blocking the UI with a blinking skeleton
+        void initRetry?.(calendarEvent.CalendarID, calendarEvent.ID).then((success) => {
+            if (success) {
+                return;
+            }
+            const errorMessage = error?.message || 'Unknown error';
+            if (!naiveGetIsDecryptionError(error)) {
+                /**
+                 * (Temporarily) Log to Sentry any error not related to decryption
+                 */
+                const { ID, CalendarID } = eventRecord.eventData || {};
+                captureMessage('Unexpected error reading calendar event', {
+                    extra: { message: errorMessage, eventID: ID, calendarID: CalendarID },
+                });
+            }
+        });
+
         eventRecord.eventReadResult = { error };
         eventRecord.eventPromise = undefined;
 
@@ -191,13 +201,15 @@ const setEventRecordPromise = ({
                         api,
                         getOpenedMailEvents,
                         forceDecryption: false,
+                        initRetry,
                     });
                 }
+
                 return undefined;
             })
             .catch(onError);
-        eventRecord.eventPromise = promise;
 
+        eventRecord.eventPromise = promise;
         return promise;
     }
 
@@ -224,6 +236,7 @@ const setEventRecordPromise = ({
             return { result };
         })
         .catch(onError);
+
     eventRecord.eventPromise = promise;
 
     return promise;
@@ -268,6 +281,8 @@ const useCalendarsEventsReader = ({
         };
     }, []);
 
+    const { initRetry } = useCalendarsEventsRetry({ calendarsEventsCacheRef });
+
     useEffect(() => {
         const signal = abortControllerRef.current?.signal;
         if (!signal) {
@@ -277,74 +292,83 @@ const useCalendarsEventsReader = ({
 
         const seen = new Set();
 
-        const calendarEventPromises = calendarEvents.reduce<Promise<void>[]>((acc, calendarViewEvent) => {
-            /**
-             * We're forced to proceed by batches below because, in the case metadataOnly = true, the first iteration
-             * through this reduce loop at app load will have to load event blob data for all events in view.
-             * Without batching that would imply launching N simultaneous requests if you have N events in view.
-             *
-             * It turns out that there's a bug in Chromium (see https://github.com/GoogleChrome/workbox/issues/2528 for
-             * multiple references to it) that causes an exhaustion of the browser resources when launching many simultaneous
-             * HTTP2 requests (not an issue for HTTP1 since in that case simultaneous requests are capped at 6), making
-             * requests over the quota fail with a net:ERR_INSUFFICIENT_RESOURCES error. Only Chromium-based browser have this bug.
-             * The number of max simultaneous requests allowed seems to be variable. There's probably not a hard cap on it,
-             * but rather a cap on the memory that the browser can use. In our tests we saw the error at around ~1000 requests.
-             */
-            const eventsPerBatch = metadataOnly ? EVENTS_PER_BATCH : EVENTS_PER_BATCH_OLD;
+        const calendarEventPromises = calendarEvents.reduce<Promise<EventReadResult | undefined>[]>(
+            (acc, calendarViewEvent) => {
+                /**
+                 * We're forced to proceed by batches below because, in the case metadataOnly = true, the first iteration
+                 * through this reduce loop at app load will have to load event blob data for all events in view.
+                 * Without batching that would imply launching N simultaneous requests if you have N events in view.
+                 *
+                 * It turns out that there's a bug in Chromium (see https://github.com/GoogleChrome/workbox/issues/2528 for
+                 * multiple references to it) that causes an exhaustion of the browser resources when launching many simultaneous
+                 * HTTP2 requests (not an issue for HTTP1 since in that case simultaneous requests are capped at 6), making
+                 * requests over the quota fail with a net:ERR_INSUFFICIENT_RESOURCES error. Only Chromium-based browser have this bug.
+                 * The number of max simultaneous requests allowed seems to be variable. There's probably not a hard cap on it,
+                 * but rather a cap on the memory that the browser can use. In our tests we saw the error at around ~1000 requests.
+                 */
+                const eventsPerBatch = metadataOnly ? EVENTS_PER_BATCH : EVENTS_PER_BATCH_OLD;
 
-            if (acc.length === eventsPerBatch) {
+                if (acc.length === eventsPerBatch) {
+                    return acc;
+                }
+
+                const { calendarData, eventData } = calendarViewEvent.data;
+                const calendarEventsCache = calendarsEventsCacheRef.current?.calendars[calendarData.ID];
+                const eventRecord = calendarEventsCache?.events.get(eventData?.ID || 'undefined');
+
+                if (eventRecord?.eventReadResult && eventData && onEventRead) {
+                    onEventRead(calendarData.ID, eventData.ID, {
+                        calendarViewEvent,
+                        eventReadResult: eventRecord.eventReadResult,
+                    });
+                }
+
+                if (!calendarEventsCache || !eventRecord || eventRecord.eventReadResult || seen.has(eventRecord)) {
+                    return acc;
+                }
+
+                // To ignore recurring events
+                seen.add(eventRecord);
+
+                if (!getEventStoreRecordHasEventData(eventRecord)) {
+                    eventRecord.eventReadResult = { error: new Error('Unknown process') };
+                    return acc;
+                }
+
+                const getPromise = (initRetry?: InitRetry) =>
+                    setEventRecordPromise({
+                        eventRecord,
+                        getCalendarEventRaw,
+                        calendarsEventsCacheRef,
+                        calendarEventsCache,
+                        api: apiWithAbort,
+                        getOpenedMailEvents,
+                        forceDecryption,
+                        initRetry,
+                    }).then((eventReadResult) => {
+                        if (eventReadResult && onEventRead) {
+                            const { eventData } = eventRecord;
+                            onEventRead(eventData.CalendarID, eventData.ID, { calendarViewEvent, eventReadResult });
+                        }
+                        return eventReadResult;
+                    });
+
+                if (!eventRecord.eventReadRetry) {
+                    eventRecord.eventReadRetry = () =>
+                        getPromise().then((result) => {
+                            rerender();
+                            return result;
+                        });
+                }
+
+                if (!eventRecord.eventPromise) {
+                    acc.push(getPromise(initRetry));
+                }
+
                 return acc;
-            }
-
-            const { calendarData, eventData } = calendarViewEvent.data;
-            const calendarEventsCache = calendarsEventsCacheRef.current?.calendars[calendarData.ID];
-            const eventRecord = calendarEventsCache?.events.get(eventData?.ID || 'undefined');
-
-            if (eventRecord?.eventReadResult && eventData && onEventRead) {
-                onEventRead(calendarData.ID, eventData.ID, {
-                    calendarViewEvent,
-                    eventReadResult: eventRecord.eventReadResult,
-                });
-            }
-
-            if (!calendarEventsCache || !eventRecord || eventRecord.eventReadResult || seen.has(eventRecord)) {
-                return acc;
-            }
-
-            // To ignore recurring events
-            seen.add(eventRecord);
-
-            if (!getEventStoreRecordHasEventData(eventRecord)) {
-                eventRecord.eventReadResult = { error: new Error('Unknown process') };
-                return acc;
-            }
-
-            const getPromise = () =>
-                setEventRecordPromise({
-                    eventRecord,
-                    getCalendarEventRaw,
-                    calendarsEventsCacheRef,
-                    calendarEventsCache,
-                    api: apiWithAbort,
-                    getOpenedMailEvents,
-                    forceDecryption,
-                }).then((eventReadResult) => {
-                    if (eventReadResult && onEventRead) {
-                        const { eventData } = eventRecord;
-                        onEventRead(eventData.CalendarID, eventData.ID, { calendarViewEvent, eventReadResult });
-                    }
-                });
-
-            if (!eventRecord.eventReadRetry) {
-                eventRecord.eventReadRetry = () => getPromise().then(rerender);
-            }
-
-            if (!eventRecord.eventPromise) {
-                acc.push(getPromise());
-            }
-
-            return acc;
-        }, []);
+            },
+            []
+        );
 
         if (calendarEventPromises.length === 0) {
             return setLoading(false);
