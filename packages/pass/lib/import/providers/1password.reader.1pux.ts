@@ -174,14 +174,16 @@ const processPasswordItem = (
 };
 
 const processCreditCardItem = (item: Extract<OnePassItem, { categoryUuid: OnePassCategory.CREDIT_CARD }>) => {
-    const { cardholder, ccnum, cvv, expiry } = ((): OnePassCreditCardFields => {
+    const { cardholder, ccnum, cvv, expiry, pin } = ((): OnePassCreditCardFields => {
         const { sections } = item.details;
         if (!sections || sections.length === 0) return {};
 
-        return sections[0].fields.reduce<OnePassCreditCardFields>((acc, field) => {
-            if (isCreditCardField(field)) acc[field.id] = field;
-            return acc;
-        }, {});
+        return sections
+            .flatMap((s) => s.fields)
+            .reduce<OnePassCreditCardFields>((acc, field) => {
+                if (isCreditCardField(field)) acc[field.id] = field;
+                return acc;
+            }, {});
     })();
 
     return importCreditCardItem({
@@ -194,6 +196,7 @@ const processCreditCardItem = (item: Extract<OnePassItem, { categoryUuid: OnePas
         number: ccnum?.value.creditCardNumber,
         verificationNumber: cvv?.value.concealed,
         expirationDate: formatMonthYear(expiry?.value.monthYear),
+        pin: pin?.value.concealed,
     });
 };
 
