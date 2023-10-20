@@ -13,3 +13,5 @@ export const ONBOARDING_LINK = {
     IOS: 'https://apps.apple.com/us/app/proton-pass-password-manager/id6443490629',
     YOUTUBE: 'https://www.youtube.com/embed/Nm4DCAjePOM?cc_load_policy=1',
 } as const;
+
+export const TRIAL_BLOG_URL = 'https://proton.me/support/pass-trial';

@@ -1,13 +1,17 @@
 import { type VFC } from 'react';
+import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
 import { Icon } from '@proton/components';
-import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
+import { useSpotlightContext } from '@proton/pass/components/Spotlight/SpotlightContext';
+import { isVaultMemberLimitReached, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { type ShareItem } from '@proton/pass/store/reducers';
+import { selectPassPlan } from '@proton/pass/store/selectors';
 import type { ShareType } from '@proton/pass/types';
 import { ShareRole } from '@proton/pass/types';
+import { UserPassPlan } from '@proton/pass/types/api/plan';
 
 import { CountLabel } from '../../Layout/Dropdown/CountLabel';
 import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
@@ -18,7 +22,7 @@ type Props = {
     label: string;
     selected: boolean;
     sharable?: boolean;
-    share?: ShareItem<ShareType.Vault>;
+    vault?: ShareItem<ShareType.Vault>;
     onDelete?: () => void;
     onEdit?: () => void;
     onInvite?: () => void;
@@ -38,7 +42,7 @@ export const VaultItem: VFC<Props> = ({
     label,
     selected,
     sharable = false,
-    share,
+    vault,
     onDelete,
     onEdit,
     onInvite,
@@ -47,9 +51,11 @@ export const VaultItem: VFC<Props> = ({
     onSelect,
 }) => {
     const withActions = onEdit || onDelete || onInvite || onManage || onLeave;
-    const allowSharing = sharable && share !== undefined;
-    const shared = share?.shared ?? false;
-    const notification = (share?.newUserInvitesReady ?? 0) > 0;
+    const allowSharing = sharable && vault !== undefined;
+    const shared = vault?.shared ?? false;
+    const notification = (vault?.newUserInvitesReady ?? 0) > 0;
+    const spotlight = useSpotlightContext();
+    const plan = useSelector(selectPassPlan);
 
     return (
         <DropdownMenuButton
@@ -90,8 +96,8 @@ export const VaultItem: VFC<Props> = ({
                 <VaultIcon
                     className="flex-item-noshrink"
                     size={16}
-                    color={share?.content.display.color}
-                    icon={share?.content.display.icon}
+                    color={vault?.content.display.color}
+                    icon={vault?.content.display.icon}
                 />
             }
             quickActions={
@@ -107,10 +113,9 @@ export const VaultItem: VFC<Props> = ({
                         {allowSharing && shared && (
                             <DropdownMenuButton
                                 className="flex flex-align-items-center py-2 px-4"
-                                disabled={!sharable}
                                 icon="users"
                                 label={
-                                    share.shareRoleId === ShareRole.ADMIN
+                                    vault.shareRoleId === ShareRole.ADMIN
                                         ? c('Action').t`Manage access`
                                         : c('Action').t`See members`
                                 }
@@ -121,14 +126,18 @@ export const VaultItem: VFC<Props> = ({
                         {allowSharing && !shared && (
                             <DropdownMenuButton
                                 className="flex flex-align-items-center py-2 px-4"
-                                disabled={!sharable || !isWritableVault(share)}
+                                disabled={!isWritableVault(vault)}
                                 icon="user-plus"
                                 label={c('Action').t`Share`}
-                                onClick={handleClickEvent(onInvite)}
+                                onClick={
+                                    plan === UserPassPlan.FREE && isVaultMemberLimitReached(vault)
+                                        ? () => spotlight.setUpselling('pass-plus')
+                                        : handleClickEvent(onInvite)
+                                }
                             />
                         )}
 
-                        {allowSharing && shared && !share.owner ? (
+                        {allowSharing && shared && !vault.owner ? (
                             <DropdownMenuButton
                                 className="flex flex-align-items-center py-2 px-4"
                                 onClick={handleClickEvent(onLeave)}

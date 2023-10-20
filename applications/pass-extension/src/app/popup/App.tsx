@@ -10,6 +10,7 @@ import { usePopupContext } from 'proton-pass-extension/lib/hooks/usePopupContext
 
 import { InviteContextProvider } from '@proton/pass/components/Invite/InviteContextProvider';
 import { PasswordContextProvider } from '@proton/pass/components/PasswordGenerator/PasswordContext';
+import { SpotlightContextProvider } from '@proton/pass/components/Spotlight/SpotlightContext';
 
 import { Lobby } from './Views/Lobby/Lobby';
 import { Main } from './Views/Main';
@@ -28,7 +29,9 @@ export const App: VFC = () => {
                         <InviteContextProvider onVaultCreated={setShareId}>
                             <ItemEffects />
                             <PasswordContextProvider initial={state.initial.passwordOptions}>
-                                <Main />
+                                <SpotlightContextProvider>
+                                    <Main />
+                                </SpotlightContextProvider>
                             </PasswordContextProvider>
                         </InviteContextProvider>
                     )}
