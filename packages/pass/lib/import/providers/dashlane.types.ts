@@ -40,6 +40,7 @@ export type DashlanePaymentItem = {
     country: Maybe<string>;
     issuing_bank: Maybe<string>;
     note: Maybe<string>;
+    name: Maybe<string>;
 };
 
 export type DashlanePersonalInfoItem = {
