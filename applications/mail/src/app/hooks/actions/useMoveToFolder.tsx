@@ -36,7 +36,8 @@ import { useOptimisticApplyLabels } from '../optimistic/useOptimisticApplyLabels
 import { useCreateFilters } from './useCreateFilters';
 import { useMoveAll } from './useMoveAll';
 
-const { TRASH } = MAILBOX_LABEL_IDS;
+const { TRASH, ARCHIVE } = MAILBOX_LABEL_IDS;
+const MOVE_ALL_FOLDERS = [TRASH, ARCHIVE];
 
 export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolean>>) => {
     const api = useApi();
@@ -183,11 +184,11 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
 
                 const suggestMoveAll =
                     elements.length === PAGE_SIZE &&
-                    folderID === TRASH &&
+                    MOVE_ALL_FOLDERS.includes(folderID as MAILBOX_LABEL_IDS) &&
                     !isCustomLabel(fromLabelID, labels) &&
                     !isSearch;
 
-                const handleMoveAll = suggestMoveAll ? () => moveAll(fromLabelID, TRASH) : undefined;
+                const handleMoveAll = suggestMoveAll ? () => moveAll(fromLabelID, folderID) : undefined;
 
                 const moveAllButton = handleMoveAll ? (
                     <MoveAllNotificationButton
