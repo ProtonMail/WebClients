@@ -7,6 +7,7 @@ import { Button } from '@proton/atoms/Button';
 import { Icon, Prompt } from '@proton/components/components';
 import { useInviteContext } from '@proton/pass/components/Invite/InviteContextProvider';
 import { ItemCard } from '@proton/pass/components/Item/ItemCard';
+import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
@@ -56,7 +57,15 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
 
     const totalCount = members.length + invites.length;
     const memberLimitReached = totalCount >= vault.targetMaxMembers;
-    const memberLimitWarning = canManage && memberLimitReached && plan === UserPassPlan.FREE;
+
+    const warning = (() => {
+        if (canManage && memberLimitReached) {
+            const upgradeLink = <UpgradeButton inline label={c('Action').t`Upgrade now to share with more people`} />;
+            return plan === UserPassPlan.FREE
+                ? c('Warning').jt`You have reached the limit of users in this vault. ${upgradeLink}`
+                : c('Warning').t`You have reached the limit of members who can access this vault.`;
+        }
+    })();
 
     return (
         <SidebarModal onClose={close} open>
@@ -99,11 +108,6 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
 
                 {vault.shared ? (
                     <div className="flex flex-column gap-y-3">
-                        {memberLimitWarning && (
-                            <ItemCard>{c('Warning')
-                                .t`Upgrade to a paid plan to invite more members to this vault.`}</ItemCard>
-                        )}
-
                         {invites.length > 0 && <span className="color-weak">{c('Label').t`Invitations`}</span>}
 
                         {invites.map((item) => {
@@ -147,6 +151,7 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
                                 canTransfer={vault.owner && hasMultipleOwnedWritableVaults}
                             />
                         ))}
+                        {warning && <ItemCard>{warning}</ItemCard>}
                     </div>
                 ) : (
                     <div className="absolute-center flex flex-column gap-y-3 text-center color-weak text-sm">
