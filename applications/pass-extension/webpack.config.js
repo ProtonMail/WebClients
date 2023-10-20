@@ -172,6 +172,17 @@ module.exports = {
                             };
                         }
 
+                        /* sanitize manifest when building for production */
+                        if (ENV === 'production') {
+                            switch (BUILD_TARGET) {
+                                case 'firefox':
+                                    manifest.content_scripts[1].matches = ['https://account.proton.me/*'];
+                                    break;
+                                case 'chrome':
+                                    manifest.externally_connectable.matches = ['https://account.proton.me/*'];
+                            }
+                        }
+
                         return Buffer.from(JSON.stringify(manifest, null, 2), 'utf-8');
                     },
                 },
