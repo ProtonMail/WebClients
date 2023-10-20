@@ -7,14 +7,16 @@ const isCrossStorageAvailable = ((): (() => Promise<boolean>) => {
     let crossStorageAvailable: any = undefined;
     return async (): Promise<boolean> => {
         if (crossStorageAvailable === undefined) {
-            try {
-                const test = 'kttest';
-                await instance.setLocalStorage(test, test);
-                await instance.removeLocalStorage(test);
-                crossStorageAvailable = true;
-            } catch (error: any) {
-                crossStorageAvailable = false;
-            }
+            crossStorageAvailable = (async () => {
+                try {
+                    const test = 'kttest';
+                    await instance.setLocalStorage(test, test);
+                    await instance.removeLocalStorage(test);
+                    return true;
+                } catch (error: any) {
+                    return false;
+                }
+            })();
         }
         return crossStorageAvailable;
     };
