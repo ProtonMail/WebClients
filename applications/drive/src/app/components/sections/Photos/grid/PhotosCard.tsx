@@ -1,4 +1,4 @@
-import React, { CSSProperties, FC, useEffect, useRef, useState } from 'react';
+import React, { CSSProperties, FC, useCallback, useEffect, useRef, useState } from 'react';
 
 import { formatDuration } from 'date-fns';
 import { c } from 'ttag';
@@ -75,7 +75,18 @@ export const PhotosCard: FC<Props> = ({
         }
     }, [thumbUrl]);
 
-    /*// TODO: Keyboard navigation*/
+    const onKeyDown = useCallback(
+        (e: React.KeyboardEvent<HTMLDivElement>) => {
+            if (e.key !== ' ') {
+                return;
+            }
+
+            e.preventDefault();
+
+            onClick();
+        },
+        [onClick]
+    );
 
     return (
         <ButtonLike
@@ -89,6 +100,8 @@ export const PhotosCard: FC<Props> = ({
                 selected && 'photos-card--selected'
             )}
             onClick={onClick}
+            onKeyDown={onKeyDown}
+            tabIndex={0}
         >
             <Checkbox
                 className="absolute top-0 left-0 ml-2 mt-2"
@@ -97,6 +110,7 @@ export const PhotosCard: FC<Props> = ({
                 onChange={() => {
                     onSelect(!selected);
                 }}
+                tabIndex={-1}
             />
 
             {!isThumbnailLoading && isActive ? (
