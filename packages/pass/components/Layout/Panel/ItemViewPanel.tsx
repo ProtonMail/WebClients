@@ -11,9 +11,11 @@ import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Them
 import { VaultTag } from '@proton/pass/components/Vault/VaultTag';
 import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
 import { selectAllVaults, selectVaultLimits } from '@proton/pass/store/selectors';
 import { type ItemType, ShareRole } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 
 import { Panel } from './Panel';
 import { PanelHeader } from './PanelHeader';
@@ -50,6 +52,7 @@ export const ItemViewPanel: FC<Props> = ({
 }) => {
     const vaults = useSelector(selectAllVaults);
     const { vaultLimitReached } = useSelector(selectVaultLimits);
+    const sharingEnabled = useFeatureFlag(PassFeature.PassSharingV1);
     const hasMultipleVaults = vaults.length > 1;
     const { shareRoleId, shared } = vault;
     const showVaultTag = hasMultipleVaults || shared;
@@ -121,7 +124,7 @@ export const ItemViewPanel: FC<Props> = ({
 
                             ...actions,
 
-                            !vaultLimitReached && !shared && (
+                            sharingEnabled && !vaultLimitReached && !shared && (
                                 <Button
                                     key="share-item-button"
                                     icon
