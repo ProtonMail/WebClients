@@ -82,12 +82,14 @@ const PlanCardView = ({
     totals,
     subsection,
     selected,
-    guarantee,
     onSelect,
     onSelectedClick,
     upsell,
     cta,
+    hasMaxWidth,
+    info,
 }: {
+    hasMaxWidth?: boolean;
     above?: ReactNode;
     cycle: CYCLE;
     currency: Currency;
@@ -98,7 +100,7 @@ const PlanCardView = ({
     totals: TotalPricing;
     subsection: ReactNode;
     selected: boolean;
-    guarantee: boolean;
+    info?: 'guarantee' | 'cancel';
     onSelect?: () => void;
     onSelectedClick?: () => void;
     upsell?: ReactNode;
@@ -109,8 +111,9 @@ const PlanCardView = ({
     return (
         <div
             className={clsx(
-                'flex-item-fluid pricing-box-content-cycle max-w24e mx-auto lg:mx-0',
-                highlightPrice && 'pricing-box-content-cycle--highlighted'
+                'flex-item-fluid pricing-box-content-cycle mx-auto lg:mx-0',
+                highlightPrice && 'pricing-box-content-cycle--highlighted',
+                hasMaxWidth && 'max-w24e'
             )}
         >
             {above}
@@ -187,13 +190,26 @@ const PlanCardView = ({
                             </div>
                         </div>
 
-                        <div>
-                            {guarantee && (
-                                <div className="text-sm mb-6 text-center" id={`${cycle}-guarantee`}>
-                                    <Guarantee />
-                                </div>
-                            )}
-                        </div>
+                        {(() => {
+                            if (info === 'guarantee') {
+                                return (
+                                    <div>
+                                        <div className="text-sm mb-6 text-center" id={`${cycle}-guarantee`}>
+                                            <Guarantee />
+                                        </div>
+                                    </div>
+                                );
+                            }
+                            if (info === 'cancel') {
+                                return (
+                                    <div>
+                                        <div className="text-sm mb-6 text-center" id={`${cycle}-cancel`}>
+                                            <span className="color-success">{c('Info').t`Cancel anytime`}</span>
+                                        </div>
+                                    </div>
+                                );
+                            }
+                        })()}
 
                         {subsection}
 
@@ -213,6 +229,7 @@ const PlanCardView = ({
 
 export const PlanCardSelector = ({
     cycle,
+    isPassWelcome,
     plansMap,
     onSelect,
     currency,
@@ -220,6 +237,7 @@ export const PlanCardSelector = ({
     onSelectedClick,
     planCards,
 }: {
+    isPassWelcome?: boolean;
     plansMap: PlansMap;
     cycle: CYCLE;
     currency: Currency;
@@ -235,7 +253,15 @@ export const PlanCardSelector = ({
                 const planIDs = isFreePlan ? {} : { [planCard.plan]: 1 };
                 const pricing = getPricingFromPlanIDs(planIDs, plansMap);
 
+                const isPassWelcomePlanCard = isPassWelcome && planCard.plan === PLANS.PASS_PLUS;
+                if (isPassWelcomePlanCard) {
+                    pricing.all[CYCLE.YEARLY] = 0;
+                }
+
                 const totals = getTotalFromPricing(pricing, cycle);
+                if (isPassWelcomePlanCard) {
+                    totals.totalNoDiscountPerMonth = 399;
+                }
 
                 const planFromCard = isFreePlan ? FREE_PLAN : plansMap[planCard.plan];
                 const billedText = isFreePlan ? c('pass_signup_2023: Info').t`Free forever` : getBilledText(cycle);
@@ -250,9 +276,10 @@ export const PlanCardSelector = ({
 
                 return (
                     <PlanCardView
+                        hasMaxWidth={planCards.length > 2}
                         cycle={cycle}
                         headerText={(() => {
-                            if (offer.valid) {
+                            if (offer.valid || isPassWelcomePlanCard) {
                                 return getLimitedTimeOfferText();
                             }
                             if (planCard.type === 'best') {
@@ -262,8 +289,8 @@ export const PlanCardSelector = ({
                         onSelect={() => {
                             onSelect(planIDs, planCard.plan);
                         }}
+                        info={isPassWelcomePlanCard ? 'cancel' : planCard.guarantee ? 'guarantee' : undefined}
                         onSelectedClick={onSelectedClick}
-                        guarantee={planCard.guarantee}
                         highlightPrice={highlight}
                         selected={selected}
                         text={planFromCard.Title}
@@ -346,7 +373,6 @@ export const UpsellCardSelector = ({
                             above={above(false)}
                             cycle={cycle}
                             headerText={undefined}
-                            guarantee={false}
                             highlightPrice={false}
                             selected={false}
                             text={currentPlan.Title || ''}
@@ -409,7 +435,7 @@ export const UpsellCardSelector = ({
                             above={above(true)}
                             cycle={cycle}
                             headerText={getRecommendedText()}
-                            guarantee={true}
+                            info="guarantee"
                             highlightPrice={true}
                             selected={true}
                             text={plan.Title || ''}
