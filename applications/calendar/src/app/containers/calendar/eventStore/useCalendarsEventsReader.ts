@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useApi, useGetCalendarEventRaw } from '@proton/components';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
+import useIsMounted from '@proton/hooks/useIsMounted';
 import { getEvent as getEventRoute } from '@proton/shared/lib/api/calendars';
 import { getApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
 import { naiveGetIsDecryptionError } from '@proton/shared/lib/calendar/helper';
@@ -252,6 +253,7 @@ const useCalendarsEventsReader = ({
     ) => void;
     forceDecryption?: boolean;
 }) => {
+    const isMounted = useIsMounted();
     const { contactEmailsMap } = useContactEmailsCache();
     const getCalendarEventRaw = useGetCalendarEventRaw(contactEmailsMap);
     const api = useApi();
@@ -348,10 +350,9 @@ const useCalendarsEventsReader = ({
             return setLoading(false);
         }
 
-        let isActive = true;
         setLoading(true);
         const done = () => {
-            if (isActive) {
+            if (isMounted()) {
                 setLoading(false);
                 rerender();
             }
@@ -375,10 +376,6 @@ const useCalendarsEventsReader = ({
         };
 
         run().catch(done);
-
-        return () => {
-            isActive = false;
-        };
     }, [calendarEvents]);
 
     return loading;
