@@ -23,14 +23,18 @@ import type { TabId } from './runtime';
 import type { PopupInitialState, WorkerState } from './state';
 
 type WithPayload<T extends WorkerMessageType, P extends {}> = { type: T; payload: P };
+export type ExtensionEndpoint = 'popup' | 'contentscript' | 'background' | 'page' | 'notification' | 'dropdown';
+
+export type WorkerMessageWithSender<T extends WorkerMessage = WorkerMessage> = T & {
+    sender: ExtensionEndpoint;
+    version: string;
+};
 
 export type PortFrameForwardingMessage<T = any> = {
     forwardTo: string;
     payload: T;
     type: WorkerMessageType.PORT_FORWARDING_MESSAGE;
 };
-
-export type ExtensionEndpoint = 'popup' | 'contentscript' | 'background' | 'page';
 
 export enum WorkerMessageType {
     ACCOUNT_EXTENSION = 'auth-ext',
@@ -186,7 +190,6 @@ export type WorkerMessage =
     | WorkerStatusMessage
     | WorkerWakeUpMessage;
 
-export type WorkerMessageWithSender<T extends WorkerMessage = WorkerMessage> = T & { sender: ExtensionEndpoint };
 export type MessageFailure = { type: 'error'; error: string; payload?: string };
 export type MessageSuccess<T> = T extends { [key: string]: any } ? T & { type: 'success' } : { type: 'success' };
 export type MaybeMessage<T> = MessageSuccess<T> | MessageFailure;

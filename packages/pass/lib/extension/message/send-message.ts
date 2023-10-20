@@ -8,6 +8,18 @@ import type {
     WorkerResponse,
 } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
+import { safeCall } from '@proton/pass/utils/fp/safe-call';
+
+/**
+ * This function is essential for maintaining consistent communication between
+ * extension components, ensuring they all use the correct app version. It
+ * prevents potential discrepancies that can occur during an extension update,
+ * where components like the service worker, popup, and content scripts may differ
+ * due to the unique way service workers are updated in MV3.
+ */
+export const assertMessageVersion = (message: WorkerMessageWithSender) => {
+    if (message.version !== VERSION) safeCall(() => browser.runtime.reload())();
+};
 
 /**
  * Wraps the untyped browser.runtime.sendMessage
@@ -52,41 +64,28 @@ sendMessage.onSuccess = async <T extends WorkerMessageWithSender>(
 
 export type MessageWithSenderFactory = <T extends WorkerMessage>(message: T) => WorkerMessageWithSender<T>;
 
-export const backgroundMessage: MessageWithSenderFactory = (message) => ({
-    ...message,
-    sender: 'background',
-});
+const messageCreator =
+    (sender: ExtensionEndpoint): MessageWithSenderFactory =>
+    (message) => ({
+        ...message,
+        sender,
+        version: VERSION,
+    });
 
-export const popupMessage: MessageWithSenderFactory = (message) => ({
-    ...message,
-    sender: 'popup',
-});
+export const backgroundMessage = messageCreator('background');
+export const popupMessage = messageCreator('popup');
+export const pageMessage = messageCreator('page');
+export const contentScriptMessage = messageCreator('contentscript');
 
-export const contentScriptMessage: MessageWithSenderFactory = (message) => ({
-    ...message,
-    sender: 'contentscript',
-});
-
-export const pageMessage: MessageWithSenderFactory = (message) => ({
-    ...message,
-    sender: 'page',
-});
-
-export const portForwardingMessage = <T extends any>(forwardTo: string, payload: T): PortFrameForwardingMessage => ({
-    type: WorkerMessageType.PORT_FORWARDING_MESSAGE,
-    payload,
+export const portForwardingMessage = <T extends { sender: ExtensionEndpoint }>(
+    forwardTo: string,
+    payload: T
+): WorkerMessageWithSender<PortFrameForwardingMessage> => ({
     forwardTo,
+    payload,
+    sender: payload.sender,
+    type: WorkerMessageType.PORT_FORWARDING_MESSAGE,
+    version: VERSION,
 });
 
-export const resolveMessageFactory = (endpoint: ExtensionEndpoint) => {
-    switch (endpoint) {
-        case 'background':
-            return backgroundMessage;
-        case 'popup':
-            return popupMessage;
-        case 'contentscript':
-            return contentScriptMessage;
-        case 'page':
-            return pageMessage;
-    }
-};
+export const resolveMessageFactory = messageCreator;
