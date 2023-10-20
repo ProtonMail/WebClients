@@ -3,6 +3,7 @@ import { format } from 'date-fns';
 import { createPreAuthKTVerifier } from '@proton/components/containers';
 import { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
 import { AppIntent } from '@proton/components/containers/login/interface';
+import { isTokenPayment } from '@proton/components/payments/core';
 import type { generatePDFKit } from '@proton/recovery-kit';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
 import { auth } from '@proton/shared/lib/api/auth';
@@ -10,7 +11,7 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
 import { getAllMembers, updateVPN } from '@proton/shared/lib/api/members';
 import { updateOrganizationKeysV2, updateOrganizationName } from '@proton/shared/lib/api/organization';
-import { subscribe } from '@proton/shared/lib/api/payments';
+import { setPaymentMethod, subscribe } from '@proton/shared/lib/api/payments';
 import { updateEmail, updateLocale, updatePhone } from '@proton/shared/lib/api/settings';
 import { reactivateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
 import {
@@ -342,6 +343,9 @@ export const handleSubscribeUser = async (
             productParam
         )
     );
+    if (subscriptionData.checkResult.AmountDue === 0 && isTokenPayment(subscriptionData.payment)) {
+        await api(setPaymentMethod(subscriptionData.payment));
+    }
 };
 
 interface SetupMnemonic {
