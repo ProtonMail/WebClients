@@ -140,7 +140,7 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
                     {form.values.step !== 'vault' && (
                         <FadeIn
                             className={clsx(
-                                'flex flex-justify-space-between flex-align-items-center mt-3 mb-6 gap-3',
+                                'flex flex-justify-space-between flex-align-items-center flex-nowrap mt-3 mb-6 gap-3',
                                 props.withVaultCreation && 'border rounded-xl p-3'
                             )}
                         >
