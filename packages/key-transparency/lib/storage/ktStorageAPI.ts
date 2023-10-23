@@ -5,7 +5,7 @@ import { getDefaultKTLS } from '@proton/shared/lib/keyTransparency';
 
 const isCrossStorageAvailable = ((): (() => Promise<boolean>) => {
     let crossStorageAvailable: any = undefined;
-    return async (): Promise<boolean> => {
+    return async () => {
         if (crossStorageAvailable === undefined) {
             crossStorageAvailable = (async () => {
                 try {
