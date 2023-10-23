@@ -25,7 +25,7 @@ const createPreAuthKTVerifier = (ktActivation: KeyTransparencyActivation, api: A
     }
     var createdSKLs: CreatedSKL[] = [];
 
-    const ktLSAPIPromise = getDefaultKTLS();
+    const ktLSAPI = getDefaultKTLS();
 
     const preAuthKTVerify: PreAuthKTVerify = (userKeys: DecryptedKey[]) => async (address, signedKeyList) => {
         if (ktActivation === KeyTransparencyActivation.DISABLED) {
@@ -50,7 +50,6 @@ const createPreAuthKTVerifier = (ktActivation: KeyTransparencyActivation, api: A
                 return;
             }
 
-            const ktLSAPI = await ktLSAPIPromise;
             for (const savedSKL of createdSKLs) {
                 const allSKLs = await fetchSignedKeyLists(api, savedSKL.revision ?? 0, savedSKL.address.Email);
                 const correspondingSKL = allSKLs.find((skl) => savedSKL.signedKeyList.Data == skl.Data);
