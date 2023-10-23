@@ -10,6 +10,10 @@
         {
             "groupName": "Playwright",
             "matchPackageNames": ["playwright", "@playwright/test", "mcr.microsoft.com/playwright"]
+        },
+        {
+            "groupName": "Unleash",
+            "matchPackageNames": ["@protontech/proxy-client-react", "unleash-proxy-client"]
         }
     ]
 }

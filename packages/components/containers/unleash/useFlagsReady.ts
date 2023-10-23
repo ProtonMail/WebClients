@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { useUnleashClient } from '@unleash/proxy-client-react';
+import { useUnleashClient } from '@protontech/proxy-client-react';
 
 import { createPromise } from '@proton/shared/lib/helpers/promise';
 
