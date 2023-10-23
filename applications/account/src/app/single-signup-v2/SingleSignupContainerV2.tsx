@@ -70,6 +70,7 @@ import { MetaTags, useMetaTags } from '../useMetaTags';
 import LoginModal from './LoginModal';
 import Step1, { Step1Rref } from './Step1';
 import Step2 from './Step2';
+import { getDriveConfiguration } from './drive/configuration';
 import {
     getFreeSubscriptionData,
     getFreeTitle,
@@ -249,8 +250,17 @@ const SingleSignupContainerV2 = ({
         generateMnemonic,
         CustomStep,
     } = (() => {
-        if (toApp === APPS.PROTONMAIL) {
+        if (toApp === APPS.PROTONDRIVE) {
+            return getDriveConfiguration({
+                plansMap: model.plansMap,
+                isDesktop,
+                vpnServersCountData,
+                hideFreePlan: signupParameters.hideFreePlan,
+            });
+        }
+        if (toApp === APPS.PROTONMAIL || toApp === APPS.PROTONCALENDAR) {
             return getMailConfiguration({
+                plansMap: model.plansMap,
                 isDesktop,
                 vpnServersCountData,
                 hideFreePlan: signupParameters.hideFreePlan,
@@ -310,6 +320,12 @@ const SingleSignupContainerV2 = ({
     const measure = (data: TelemetryMeasurementData) => {
         const values = 'values' in data ? data.values : {};
         const flow = (() => {
+            if (toApp === APPS.PROTONDRIVE) {
+                return 'drive_signup';
+            }
+            if (toApp === APPS.PROTONCALENDAR) {
+                return 'calendar_signup';
+            }
             if (toApp === APPS.PROTONMAIL) {
                 return 'mail_signup';
             }
