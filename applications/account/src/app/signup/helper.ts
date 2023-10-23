@@ -1,9 +1,9 @@
 import { Location } from 'history';
 
 import { checkSubscription } from '@proton/shared/lib/api/payments';
-import { APP_NAMES, PLAN_TYPES, SSO_PATHS } from '@proton/shared/lib/constants';
+import { APP_NAMES, SSO_PATHS } from '@proton/shared/lib/constants';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
-import { Api, Currency, Cycle, PlansMap, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import { Api, Currency, Cycle, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 
 import { PlanIDs } from './interfaces';
@@ -26,15 +26,6 @@ export const getSubscriptionPrices = async (
             CouponCode: couponCode,
         })
     );
-};
-
-export const getPlanFromPlanIDs = (plansMap: PlansMap, planIDs: PlanIDs = {}) => {
-    const planID = Object.keys(planIDs).find((planID): planID is keyof PlansMap => {
-        return plansMap[planID as keyof PlansMap]?.Type === PLAN_TYPES.PLAN;
-    });
-    if (planID) {
-        return plansMap[planID];
-    }
 };
 
 export const isMailTrialSignup = (location: Location) => {

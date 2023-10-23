@@ -20,12 +20,12 @@ export { default as PaymentInfo } from './PaymentInfo';
 export { default as PaymentSelector } from './PaymentSelector';
 export { default as PaymentVerificationModal } from './PaymentVerificationModal';
 export { default as PlansSection } from './PlansSection';
-export { default as RenewalNotice } from './RenewalNotice';
 export { default as StyledPayPalButton } from './StyledPayPalButton';
 export { default as SubscriptionsSection } from './SubscriptionsSection';
 export { default as getDefaultCard } from './getDefaultCard';
 export { default as toDetails } from './toDetails';
 export { default as useCard } from './useCard';
 export { default as usePayment } from './usePayment';
+export * from './RenewalNotice';
 
 export * from './subscription';

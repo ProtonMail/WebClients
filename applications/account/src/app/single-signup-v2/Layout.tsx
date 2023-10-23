@@ -23,10 +23,12 @@ export interface Props {
     languageSelect?: boolean;
     onBack?: () => void;
     className?: string;
+    footer?: ReactNode;
 }
 
 const Layout = ({
     theme,
+    footer,
     logo,
     children,
     hasDecoration,
@@ -54,17 +56,19 @@ const Layout = ({
                 languageSelect={languageSelect}
                 logo={logo}
             />
-            <div className="flex-item-fluid-auto flex flex-nowrap flex-column flex-justify-space-between md:mx-4 mx-2">
-                <div className="mx-4">
-                    {children}
-                    {hasDecoration && (
-                        <div className="flex flex-align-items-center flex-column">
-                            <Box
-                                className="h-custom pb-8 w100 flex flex-align-items-end"
-                                style={{ '--h-custom': '12rem' }}
+            <div className="flex-item-fluid-auto flex flex-nowrap flex-column flex-justify-space-between mx-6">
+                {children}
+                {hasDecoration && (
+                    <div className="flex flex-align-items-center flex-column">
+                        <Box className="w100">
+                            <footer
+                                className="w100 min-h-custom pb-8 flex flex-column flex-justify-space-between gap-4"
+                                style={{ '--min-h-custom': '12rem' }}
                             >
-                                <div className="flex flex-justify-space-between w100 on-mobile-flex-column">
-                                    <div className="flex gap-1 flex-column on-mobile-flex-column">
+                                <div className="mb-6"></div>
+                                {footer}
+                                <div className="w100 flex flex-justify-space-between on-mobile-flex-column">
+                                    <div className="flex gap-1 flex-column">
                                         <LayoutLogosV2 size={20} className="on-mobile-flex-justify-center" />
                                         <span className="text-sm color-weak on-mobile-text-center mb-4 lg:mb-0">
                                             {
@@ -75,10 +79,10 @@ const Layout = ({
                                     </div>
                                     {bottomRight}
                                 </div>
-                            </Box>
-                        </div>
-                    )}
-                </div>
+                            </footer>
+                        </Box>
+                    </div>
+                )}
             </div>
         </div>
     );
