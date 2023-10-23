@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import FlagProvider from '@unleash/proxy-client-react';
+import FlagProvider from '@protontech/proxy-client-react';
 import { IConfig } from 'unleash-proxy-client';
 
 import { Api } from '@proton/shared/lib/interfaces';
