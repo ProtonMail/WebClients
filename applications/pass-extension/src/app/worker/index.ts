@@ -91,7 +91,7 @@ if (BUILD_TARGET === 'firefox' && ENV === 'production') {
      * to tab information on chrome for `web_accessible_resources` */
     browser.tabs.onUpdated.addListener(async (tabId, _, { url, status }) => {
         try {
-            const BLOCKING = ['/dropdown.html', '/notification.html', '/popup.html'];
+            const BLOCKING = ['/dropdown.html', '/notification.html'];
             const regex = new RegExp(`^(${BLOCKING.map((path) => browser.runtime.getURL(path)).join('|')})`);
             return await (status === 'complete' && regex.test(url ?? '') && browser.tabs.remove(tabId));
         } catch (_) {}
