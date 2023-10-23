@@ -12,7 +12,7 @@ import {
     REFERRAL_PROGRAM_MAX_AMOUNT,
 } from '@proton/shared/lib/constants';
 import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
-import { getHasVpnB2BPlan, hasVPN } from '@proton/shared/lib/helpers/subscription';
+import { getHasVpnB2BPlan, hasVPN, hasVPNPassBundle } from '@proton/shared/lib/helpers/subscription';
 import { Organization, Renew, Subscription, UserModel, UserType } from '@proton/shared/lib/interfaces';
 import { isOrganizationFamily, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
 
@@ -58,7 +58,7 @@ export const getAccountAppRoutes = ({
     const isMemberProton = Type === UserType.PROTON;
 
     // that's different from user.hasPaidVpn. That's because hasPaidVpn is true even if user has the unlimited plan
-    const hasVpnPlan = hasVPN(subscription);
+    const hasVpnPlan = hasVPN(subscription) || hasVPNPassBundle(subscription);
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
 
     return <const>{
