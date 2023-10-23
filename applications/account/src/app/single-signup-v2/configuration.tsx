@@ -1,12 +1,14 @@
-import { PassLogo, VpnLogo } from '@proton/components/components';
+import { DriveLogo, MailLogo, PassLogo, VpnLogo } from '@proton/components/components';
 import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
-import { getDriveAppFeature } from '@proton/components/containers/payments/features/drive';
+import { getDriveAppFeature, getStorageFeature } from '@proton/components/containers/payments/features/drive';
 import { getMailAppFeature } from '@proton/components/containers/payments/features/mail';
 import { getPassAppFeature } from '@proton/components/containers/payments/features/pass';
 import {
     getBundlePlan,
     getBundleProPlan,
+    getDrivePlan,
     getMailPlan,
+    getNewVisionaryPlan,
     getPassPlan,
     getVPNPlan,
 } from '@proton/components/containers/payments/features/plan';
@@ -20,6 +22,7 @@ import { APPS, APP_NAMES, PLANS } from '@proton/shared/lib/constants';
 import { Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
 
 import { BenefitItem } from './Benefits';
+import bundleVpnPass from './bundle-vpn-pass.svg';
 import bundle from './bundle.svg';
 import { getCustomPassFeatures, getPassBenefits } from './pass/configuration';
 
@@ -70,8 +73,26 @@ export const getSummaryPlan = (
         };
     }
 
+    if (plan && plan?.Name === PLANS.DRIVE) {
+        const shortPlan = getDrivePlan(plan);
+        return {
+            logo: <DriveLogo variant="glyph-only" size={iconSize} />,
+            ...shortPlan,
+            plan,
+        };
+    }
+
     if (plan && plan?.Name === PLANS.MAIL) {
         const shortPlan = getMailPlan(plan);
+        return {
+            logo: <MailLogo variant="glyph-only" size={iconSize} />,
+            ...shortPlan,
+            plan,
+        };
+    }
+
+    if (plan && plan?.Name === PLANS.NEW_VISIONARY) {
+        const shortPlan = getNewVisionaryPlan(plan);
         return {
             logo: (
                 <div>
@@ -80,6 +101,27 @@ export const getSummaryPlan = (
             ),
             ...shortPlan,
             plan,
+            features: [
+                getStorageFeature(plan.MaxSpace, { visionary: true }),
+                getMailAppFeature(),
+                getCalendarAppFeature(),
+                getDriveAppFeature(),
+                getVPNAppFeature({ serversCount: vpnServersCountData }),
+                getPassAppFeature(),
+            ],
+        };
+    }
+
+    if (plan && plan?.Name === PLANS.VPN_PASS_BUNDLE) {
+        return {
+            logo: (
+                <div>
+                    <img src={bundleVpnPass} width={iconSize} height={iconSize} alt={plan.Title} />
+                </div>
+            ),
+            plan,
+            title: plan.Title,
+            features: [getVPNAppFeature({ serversCount: vpnServersCountData }), getPassAppFeature()],
         };
     }
 
