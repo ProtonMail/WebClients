@@ -4,10 +4,15 @@ import { c } from 'ttag';
 
 import { Icon, InlineLinkButton, useUser } from '@proton/components';
 import { sendSlowSearchReport } from '@proton/encrypted-search';
+import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../../../containers/EncryptedSearchProvider';
 
-const EsSlowBanner = () => {
+interface Props {
+    className?: string;
+}
+
+const EsSlowBanner = ({ className }: Props) => {
     const [{ ID: userID }] = useUser();
     const { openDropdown, setTemporaryToggleOff } = useEncryptedSearchContext();
 
@@ -33,7 +38,7 @@ const EsSlowBanner = () => {
     );
 
     return (
-        <div className="bg-weak rounded m-4 px-4 py-2 flex flex-nowrap">
+        <div className={clsx(['bg-weak rounded mx-2 px-4 py-2 flex flex-nowrap', className])}>
             <div className="flex-item-noshrink">
                 <Icon name="magnifier" className="mr-2" />
             </div>
