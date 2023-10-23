@@ -7,6 +7,7 @@ export const sizeUnits = {
     KB: BASE_SIZE,
     MB: BASE_SIZE * BASE_SIZE,
     GB: BASE_SIZE * BASE_SIZE * BASE_SIZE,
+    TB: BASE_SIZE * BASE_SIZE * BASE_SIZE * BASE_SIZE,
 };
 
 export type SizeUnits = keyof typeof sizeUnits;
@@ -24,6 +25,9 @@ export const getSizeFormat = (key: SizeUnits, n: number) => {
     if (key === 'GB') {
         return c('file size format').t`GB`;
     }
+    if (key === 'TB') {
+        return c('file size format').t`TB`;
+    }
     throw new Error('Unknown unit');
 };
 
@@ -39,6 +43,9 @@ export const getLongSizeFormat = (key: SizeUnits, n: number) => {
     }
     if (key === 'GB') {
         return c('file size format, long').ngettext(msgid`Gigabyte`, `Gigabytes`, n);
+    }
+    if (key === 'TB') {
+        return c('file size format, long').ngettext(msgid`Terabyte`, `Terabytes`, n);
     }
     throw new Error('Unknown unit');
 };
