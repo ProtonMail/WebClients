@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, Price, RenewalNotice, useConfig } from '@proton/components';
+import { Icon, Price, useConfig } from '@proton/components';
 import {
     Alert3ds,
     CurrencySelector,
@@ -12,6 +12,7 @@ import {
     StyledPayPalButton,
     SubscriptionCheckoutCycleItem,
     SubscriptionCycleSelector,
+    getRenewalNoticeText,
     usePayment,
     usePaymentToken,
 } from '@proton/components/containers/payments';
@@ -156,11 +157,8 @@ const PaymentStep = ({
                             planIDs={subscriptionData.planIDs}
                         />
                     )}
-                    <div className="text-sm">
-                        <RenewalNotice
-                            renewCycle={subscriptionData.cycle}
-                            coupon={subscriptionData.checkResult?.Coupon?.Code}
-                        />
+                    <div className="text-sm color-weak">
+                        {getRenewalNoticeText({ renewCycle: subscriptionData.cycle })}
                     </div>
                     <PlanCustomization
                         mode="signup"

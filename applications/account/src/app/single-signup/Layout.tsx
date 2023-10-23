@@ -33,6 +33,7 @@ export interface Props {
     className?: string;
     background?: Background;
     isB2bPlan?: boolean;
+    footer?: ReactNode;
 }
 
 const Layout = ({
@@ -45,6 +46,7 @@ const Layout = ({
     onBack,
     background,
     isB2bPlan,
+    footer,
 }: Props) => {
     const { APP_NAME } = useConfig();
     const { isTinyMobile } = useActiveBreakpoint();
@@ -104,20 +106,22 @@ const Layout = ({
                 isDarkBg={isDarkBg && !isTinyMobile}
             />
             <main className="flex-item-fluid-auto flex flex-nowrap flex-column flex-justify-space-between md:mx-12 mx-6">
-                <div>
-                    {children}
-                    {hasDecoration && (
-                        <div className="flex flex-align-items-center flex-column">
-                            <Box
-                                className="h-custom pb-8 w100 flex flex-align-items-end"
-                                style={{ '--h-custom': '12rem' }}
+                {children}
+                {hasDecoration && (
+                    <div className="flex flex-align-items-center flex-column">
+                        <Box className="w100">
+                            <footer
+                                className="w100 min-h-custom pb-8 flex flex-column flex-justify-space-between gap-4"
+                                style={{ '--min-h-custom': '12rem' }}
                             >
-                                <footer className="flex flex-justify-space-between w100 on-mobile-flex-column">
+                                <div className="mb-6"></div>
+                                {footer}
+                                <div className="w100 flex flex-justify-space-between on-mobile-flex-column">
                                     <div className="flex gap-1 flex-column on-mobile-flex-column">
                                         <LayoutLogosV2 size={20} className="on-mobile-flex-justify-center" />
                                         <span
                                             className={clsx(
-                                                'text-sm on-mobile-text-center mb-4 lg:mb-0',
+                                                'text-sm sm:text-center mb-4 lg:mb-0',
                                                 isDarkBg && !isTinyMobile ? 'color-norm opacity-70' : 'color-weak'
                                             )}
                                         >
@@ -128,11 +132,11 @@ const Layout = ({
                                         </span>
                                     </div>
                                     {bottomRight}
-                                </footer>
-                            </Box>
-                        </div>
-                    )}
-                </div>
+                                </div>
+                            </footer>
+                        </Box>
+                    </div>
+                )}
             </main>
         </div>
     );

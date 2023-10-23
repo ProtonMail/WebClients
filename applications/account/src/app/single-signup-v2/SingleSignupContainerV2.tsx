@@ -48,7 +48,7 @@ import {
 } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { getPlanFromPlanIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 import { Audience, Cycle, Plan, PlansMap } from '@proton/shared/lib/interfaces';
@@ -60,7 +60,6 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { Paths } from '../content/helper';
-import { getPlanFromPlanIDs } from '../signup/helper';
 import { SessionData, SignupCacheResult, SubscriptionData, UserCacheResult } from '../signup/interfaces';
 import { getPlanIDsFromParams, getSignupSearchParams } from '../signup/searchParams';
 import { handleDone, handleSetupMnemonic, handleSetupUser, handleSubscribeUser } from '../signup/signupActions';
