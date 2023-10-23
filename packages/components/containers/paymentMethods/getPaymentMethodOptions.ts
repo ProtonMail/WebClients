@@ -6,7 +6,7 @@ import {
     SavedPaymentMethod,
     isExpired as getIsExpired,
 } from '@proton/components/payments/core';
-import { BLACK_FRIDAY, MIN_BITCOIN_AMOUNT, MIN_PAYPAL_AMOUNT } from '@proton/shared/lib/constants';
+import { BLACK_FRIDAY, COUPON_CODES, MIN_BITCOIN_AMOUNT, MIN_PAYPAL_AMOUNT } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { IconName } from '../../components';
@@ -60,7 +60,10 @@ export const getPaymentMethodOptions = ({
     flow,
     paymentMethods = [],
     paymentMethodsStatus = {},
-}: Props): { usedMethods: PaymentMethodData[]; methods: PaymentMethodData[] } => {
+}: Props): {
+    usedMethods: PaymentMethodData[];
+    methods: PaymentMethodData[];
+} => {
     const isPaypalAmountValid = amount >= MIN_PAYPAL_AMOUNT;
     const isInvoice = flow === 'invoice';
     const isPassSignup = flow === 'signup-pass';
@@ -118,7 +121,7 @@ export const getPaymentMethodOptions = ({
             },
         !isSignup &&
             !isHumanVerification &&
-            coupon !== BLACK_FRIDAY.COUPON_CODE && {
+            ![COUPON_CODES.BLACK_FRIDAY_2023, BLACK_FRIDAY.COUPON_CODE].includes(coupon) && {
                 icon: 'money-bills' as const,
                 text: c('Label').t`Cash`,
                 value: PAYMENT_METHOD_TYPES.CASH,
