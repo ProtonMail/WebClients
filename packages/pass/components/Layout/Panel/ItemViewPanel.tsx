@@ -15,7 +15,7 @@ import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { isVaultMemberLimitReached } from '@proton/pass/lib/vaults/vault.predicates';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
-import { selectAllVaults, selectPassPlan, selectVaultLimits } from '@proton/pass/store/selectors';
+import { selectAllVaults, selectPassPlan } from '@proton/pass/store/selectors';
 import { type ItemType, ShareRole } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
@@ -54,7 +54,6 @@ export const ItemViewPanel: FC<Props> = ({
     children,
 }) => {
     const vaults = useSelector(selectAllVaults);
-    const { vaultLimitReached } = useSelector(selectVaultLimits);
     const plan = useSelector(selectPassPlan);
     const sharingEnabled = useFeatureFlag(PassFeature.PassSharingV1);
     const hasMultipleVaults = vaults.length > 1;
@@ -140,8 +139,7 @@ export const ItemViewPanel: FC<Props> = ({
                                     title={c('Action').t`Share`}
                                     disabled={readOnly}
                                     onClick={
-                                        vaultLimitReached ||
-                                        (plan === UserPassPlan.FREE && isVaultMemberLimitReached(vault))
+                                        plan === UserPassPlan.FREE && isVaultMemberLimitReached(vault)
                                             ? () => spotlight.setUpselling('pass-plus')
                                             : handleInviteClick
                                     }
