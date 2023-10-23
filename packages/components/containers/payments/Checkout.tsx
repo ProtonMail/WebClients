@@ -16,6 +16,7 @@ interface Props {
     hasPayments?: boolean;
     description?: ReactNode;
     renewNotice: ReactNode;
+    hiddenRenewNotice?: ReactNode;
 }
 
 const Checkout = ({
@@ -27,6 +28,7 @@ const Checkout = ({
     hasPayments = true,
     description,
     renewNotice,
+    hiddenRenewNotice,
 }: Props) => {
     return (
         <div className="p-6">
@@ -45,7 +47,14 @@ const Checkout = ({
 
             <div className={loading ? 'opacity-50 no-pointer-events-children' : ''}>{children}</div>
             <div className="text-sm lh-standard">
-                {hasPayments && renewNotice}
+                {hasPayments && !hiddenRenewNotice && renewNotice && (
+                    <div className="flex flex-nowrap color-weak">
+                        <span className="flex-item-noshrink mr-2">
+                            <Icon name="info-circle" size={16} />
+                        </span>
+                        <span className="flex-item-fluid">{renewNotice}</span>
+                    </div>
+                )}
                 {hasPayments ? (
                     <div className="flex flex-nowrap color-weak my-2">
                         <span className="flex-item-noshrink mr-2">
@@ -70,6 +79,12 @@ const Checkout = ({
                 )}
             </div>
             {description}
+            {hiddenRenewNotice && hasPayments && (
+                <div className="mt-4">
+                    <hr />
+                    <div className="text-sm lh-standard">{hiddenRenewNotice}</div>
+                </div>
+            )}
         </div>
     );
 };
