@@ -5203,6 +5203,7 @@ __metadata:
     "@proton/sieve": "workspace:packages/sieve"
     "@proton/styles": "workspace:packages/styles"
     "@proton/testing": "workspace:packages/testing"
+    "@protontech/proxy-client-react": ^4.0.4
     "@testing-library/jest-dom": ^6.1.3
     "@testing-library/react": ^12.1.5
     "@testing-library/react-hooks": ^8.0.1
@@ -5217,7 +5218,6 @@ __metadata:
     "@types/react-router": ^5.1.20
     "@types/react-router-dom": ^5.3.3
     "@types/react-virtualized": ^9.21.23
-    "@unleash/proxy-client-react": ^4.0.3
     babel-jest: ^29.7.0
     babel-plugin-transform-require-context: ^0.1.1
     card-validator: ^8.1.1
@@ -5733,6 +5733,15 @@ __metadata:
   version: 1.0.5
   resolution: "@protontech/mutex-browser@npm:1.0.5"
   checksum: 9d85448090a5463f9f71a9dd58588e97a2694b0f7bb8031a09281f47517cfdd23e0e11711ba1cf0530756c716b9c231541cb7413454d62653cabd55e50fad55f
+  languageName: node
+  linkType: hard
+
+"@protontech/proxy-client-react@npm:^4.0.4":
+  version: 4.0.4
+  resolution: "@protontech/proxy-client-react@npm:4.0.4"
+  peerDependencies:
+    unleash-proxy-client: ^3.0.0
+  checksum: 3a5e31a2d225bbbd2a82d2308f37a8e4cedb53396a590af0161d0044e2e52510ce004b47c26858a10961d151f66f8f761e86de58a34842188794d816f34fcb24
   languageName: node
   linkType: hard
 
@@ -9365,15 +9374,6 @@ __metadata:
     "@typescript-eslint/types": 6.7.5
     eslint-visitor-keys: ^3.4.1
   checksum: 2df996742f63d89fa339b0e8ff3a3a289d36b3f584f7538a7626bed3869e9ae27f8f56ab31748519d25a63de2ae22a43dd8413610b00436ff342b0a17eb85289
-  languageName: node
-  linkType: hard
-
-"@unleash/proxy-client-react@npm:^4.0.3":
-  version: 4.0.3
-  resolution: "@unleash/proxy-client-react@npm:4.0.3"
-  peerDependencies:
-    unleash-proxy-client: ^3.0.0
-  checksum: e101f80aed83126a1e28e423cfcb46f30551b79b559c4b1c9b74044b8879916afee16a795de55a2d6310e32bd037ede46e65c4caf978a8bef62c41ce246ec5d7
   languageName: node
   linkType: hard
 
