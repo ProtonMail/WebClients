@@ -16,6 +16,7 @@ export interface Props {
     suffixNextLine?: boolean;
     loading?: boolean;
     'data-testid'?: string;
+    star?: boolean;
 }
 
 const CheckoutRow = ({
@@ -26,6 +27,7 @@ const CheckoutRow = ({
     suffix,
     suffixNextLine = false,
     loading = false,
+    star,
     'data-testid': dataTestId,
 }: Props) => {
     if (amount === 0 && !currency) {
@@ -45,9 +47,12 @@ const CheckoutRow = ({
                 {loading ? (
                     <EllipsisLoader />
                 ) : (
-                    <Price currency={currency} suffix={suffixNextLine ? null : suffix} data-testid={dataTestId}>
-                        {amount}
-                    </Price>
+                    <span>
+                        <Price currency={currency} suffix={suffixNextLine ? null : suffix} data-testid={dataTestId}>
+                            {amount}
+                        </Price>
+                        {star ? '*' : null}
+                    </span>
                 )}
             </div>
             {suffixNextLine ? (
