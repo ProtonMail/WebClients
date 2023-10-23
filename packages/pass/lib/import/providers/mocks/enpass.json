@@ -1,0 +1,2740 @@
+{
+    "folders": [
+        {
+            "icon": "1008",
+            "parent_uuid": "",
+            "title": "tag1",
+            "updated_at": 1697729133,
+            "uuid": "3a71050b-830a-44d7-9345-84a29da66fb5"
+        },
+        {
+            "icon": "1025",
+            "parent_uuid": "",
+            "title": "tag whitespace",
+            "updated_at": 1697802838,
+            "uuid": "da3ef579-c1cb-4e69-9bcd-f7cf946ef868"
+        },
+        {
+            "icon": "1030",
+            "parent_uuid": "",
+            "title": "Social",
+            "updated_at": 1697802871,
+            "uuid": "4b0b9809-2368-466b-a5a9-e5a415cfdf2a"
+        }
+    ],
+    "items": [
+        {
+            "archived": 0,
+            "auto_submit": 1,
+            "category": "travel",
+            "createdAt": 1697729073,
+            "favorite": 0,
+            "fields": [
+                {
+                    "deleted": 0,
+                    "history": [
+                        {
+                            "encrypted": false,
+                            "updated_at": 1534490729,
+                            "value": "123456789"
+                        }
+                    ],
+                    "label": "Number",
+                    "order": 1,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 2,
+                    "updated_at": 1697729073,
+                    "value": "ENP123456789",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "history": [
+                        {
+                            "encrypted": false,
+                            "updated_at": 1534490729,
+                            "value": "Wendy Appleseed"
+                        },
+                        {
+                            "encrypted": false,
+                            "updated_at": 1535521835,
+                            "value": "Emma Apple Seed"
+                        },
+                        {
+                            "encrypted": false,
+                            "updated_at": 1535522105,
+                            "value": "Emily Seed"
+                        }
+                    ],
+                    "label": "Full name",
+                    "order": 2,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 0,
+                    "updated_at": 1697729073,
+                    "value": "Emily",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "history": [
+                        {
+                            "encrypted": false,
+                            "updated_at": 1534490729,
+                            "value": "Male"
+                        }
+                    ],
+                    "label": "Gender",
+                    "order": 3,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 14,
+                    "updated_at": 1697729073,
+                    "value": "Female",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "Type",
+                    "order": 4,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 1,
+                    "updated_at": 1697729073,
+                    "value": "Regular",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "Nationality",
+                    "order": 5,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 15,
+                    "updated_at": 1697729073,
+                    "value": "United States of America",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "history": [
+                        {
+                            "encrypted": false,
+                            "updated_at": 1534490729,
+                            "value": "Newyork"
+                        }
+                    ],
+                    "label": "Birth place",
+                    "order": 6,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 4,
+                    "updated_at": 1697729073,
+                    "value": "New York",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "history": [
+                        {
+                            "encrypted": false,
+                            "updated_at": 1534490729,
+                            "value": "01/01/2000"
+                        },
+                        {
+                            "encrypted": false,
+                            "updated_at": 1534490789,
+                            "value": "01/02/2000"
+                        }
+                    ],
+                    "label": "Birth date",
+                    "order": 7,
+                    "sensitive": 0,
+                    "type": "date",
+                    "uid": 5,
+                    "updated_at": 1697729073,
+                    "value": "01/01/1989",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "Issued at",
+                    "order": 8,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 6,
+                    "updated_at": 1697729073,
+                    "value": "",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "Issued on",
+                    "order": 9,
+                    "sensitive": 0,
+                    "type": "date",
+                    "uid": 7,
+                    "updated_at": 1697729073,
+                    "value": "",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "history": [
+                        {
+                            "encrypted": false,
+                            "updated_at": 1534490729,
+                            "value": "01/01/2027"
+                        }
+                    ],
+                    "label": "Expiry date",
+                    "order": 10,
+                    "sensitive": 0,
+                    "type": "date",
+                    "uid": 8,
+                    "updated_at": 1697729073,
+                    "value": "10/01/2027",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "Issuing country",
+                    "order": 11,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 9,
+                    "updated_at": 1697729073,
+                    "value": "",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "Authority",
+                    "order": 12,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 10,
+                    "updated_at": 1697729073,
+                    "value": "",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "Replacements",
+                    "order": 13,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 12,
+                    "updated_at": 1697729073,
+                    "value": "",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "If lost, call",
+                    "order": 14,
+                    "sensitive": 0,
+                    "type": "phone",
+                    "uid": 13,
+                    "updated_at": 1697729073,
+                    "value": "",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "LOGIN DETAILS",
+                    "order": 15,
+                    "sensitive": 0,
+                    "type": "section",
+                    "uid": 187,
+                    "updated_at": 1697729073,
+                    "value": "",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "Website",
+                    "order": 16,
+                    "sensitive": 0,
+                    "type": "url",
+                    "uid": 188,
+                    "updated_at": 1697729073,
+                    "value": "",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "Username",
+                    "order": 17,
+                    "sensitive": 0,
+                    "type": "username",
+                    "uid": 189,
+                    "updated_at": 1697729073,
+                    "value": "",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "Password",
+                    "order": 18,
+                    "sensitive": 1,
+                    "type": "password",
+                    "uid": 190,
+                    "updated_at": 1697729073,
+                    "value": "",
+                    "value_updated_at": 1697729073
+                }
+            ],
+            "icon": {
+                "fav": "",
+                "image": {
+                    "file": "misc/passport"
+                },
+                "type": 1,
+                "uuid": ""
+            },
+            "note": "",
+            "subtitle": "ENP123456789",
+            "template_type": "travel.passport",
+            "title": "Passport Sample",
+            "trashed": 0,
+            "updated_at": 1697729073,
+            "uuid": "6efcb7c7-5355-442b-9bd6-b5c6a7eccf58"
+        },
+        {
+            "archived": 0,
+            "auto_submit": 1,
+            "category": "login",
+            "createdAt": 1697729073,
+            "favorite": 0,
+            "fields": [
+                {
+                    "deleted": 0,
+                    "label": "Username",
+                    "order": 1,
+                    "sensitive": 0,
+                    "type": "username",
+                    "uid": 10,
+                    "updated_at": 1698057141,
+                    "value": "",
+                    "value_updated_at": 1698057141
+                },
+                {
+                    "deleted": 0,
+                    "history": [
+                        {
+                            "encrypted": false,
+                            "updated_at": 1534490049,
+                            "value": "wendyappleseed@enpass.io"
+                        },
+                        {
+                            "encrypted": false,
+                            "updated_at": 1535521734,
+                            "value": "emmaappleseed@enpass.io"
+                        },
+                        {
+                            "encrypted": false,
+                            "updated_at": 1535522120,
+                            "value": "emilyappleseed@enpass.io"
+                        }
+                    ],
+                    "label": "E-mail",
+                    "order": 2,
+                    "sensitive": 0,
+                    "type": "email",
+                    "uid": 12,
+                    "updated_at": 1697729073,
+                    "value": "emily@enpass.io",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "Password",
+                    "order": 3,
+                    "sensitive": 1,
+                    "type": "password",
+                    "uid": 11,
+                    "updated_at": 1697729073,
+                    "value": "herbert nadia banal slag broken violin somber modern cdc posing",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "history": [
+                        {
+                            "encrypted": false,
+                            "updated_at": 1534489965,
+                            "value": "https://www.facebook.com/login/"
+                        }
+                    ],
+                    "label": "Website",
+                    "order": 4,
+                    "sensitive": 0,
+                    "type": "url",
+                    "uid": 13,
+                    "updated_at": 1697729073,
+                    "value": "https://www.twitter.com/",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "ADDITIONAL DETAILS",
+                    "order": 5,
+                    "sensitive": 0,
+                    "type": "section",
+                    "uid": 101,
+                    "updated_at": 1697729073,
+                    "value": "",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "Phone number",
+                    "order": 6,
+                    "sensitive": 0,
+                    "type": "phone",
+                    "uid": 14,
+                    "updated_at": 1697729073,
+                    "value": "",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "One-time code",
+                    "order": 7,
+                    "sensitive": 0,
+                    "type": "totp",
+                    "uid": 102,
+                    "updated_at": 1697729073,
+                    "value": "qg4r pwyf 4t23 v62g 4ta3 ne43 74",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "Security question",
+                    "order": 8,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 15,
+                    "updated_at": 1698057029,
+                    "value": "Example extra field, predefined",
+                    "value_updated_at": 1698057029
+                },
+                {
+                    "deleted": 0,
+                    "label": "Security answer",
+                    "order": 9,
+                    "sensitive": 1,
+                    "type": "text",
+                    "uid": 16,
+                    "updated_at": 1697729073,
+                    "value": "",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "Custom field name",
+                    "order": 10,
+                    "sensitive": 1,
+                    "type": "text",
+                    "uid": 8418,
+                    "updated_at": 1698057029,
+                    "value": "Example extra field, user-defined",
+                    "value_updated_at": 1698057029
+                }
+            ],
+            "folders": ["4b0b9809-2368-466b-a5a9-e5a415cfdf2a"],
+            "icon": {
+                "fav": "www.twitter.com",
+                "image": {
+                    "file": "web/twitter.com"
+                },
+                "type": 2,
+                "uuid": ""
+            },
+            "note": "",
+            "subtitle": "emily@enpass.io",
+            "template_type": "login.default",
+            "title": "Twitter",
+            "trashed": 0,
+            "updated_at": 1698057141,
+            "uuid": "0ba11053-b4c9-48d8-92e3-fbb5f2a9c2ce"
+        },
+        {
+            "archived": 0,
+            "auto_submit": 1,
+            "category": "login",
+            "createdAt": 1698057167,
+            "favorite": 0,
+            "fields": [
+                {
+                    "deleted": 0,
+                    "label": "Username",
+                    "order": 1,
+                    "sensitive": 0,
+                    "type": "username",
+                    "uid": 10,
+                    "updated_at": 1698057167,
+                    "value": "customusername",
+                    "value_updated_at": 1698057167
+                },
+                {
+                    "deleted": 0,
+                    "label": "E-mail",
+                    "order": 2,
+                    "sensitive": 0,
+                    "type": "email",
+                    "uid": 12,
+                    "updated_at": 1698057167,
+                    "value": "yahoo@example.com",
+                    "value_updated_at": 1698057167
+                },
+                {
+                    "deleted": 0,
+                    "label": "Password",
+                    "order": 3,
+                    "sensitive": 1,
+                    "type": "password",
+                    "uid": 11,
+                    "updated_at": 1698057167,
+                    "value": "",
+                    "value_updated_at": 1698057167
+                },
+                {
+                    "deleted": 0,
+                    "label": "Website",
+                    "order": 4,
+                    "sensitive": 0,
+                    "type": "url",
+                    "uid": 13,
+                    "updated_at": 1698057167,
+                    "value": "https://login.yahoo.com/",
+                    "value_updated_at": 1698057167
+                },
+                {
+                    "deleted": 0,
+                    "label": "ADDITIONAL DETAILS",
+                    "order": 5,
+                    "sensitive": 0,
+                    "type": "section",
+                    "uid": 101,
+                    "updated_at": 1698057167,
+                    "value": "",
+                    "value_updated_at": 1698057167
+                },
+                {
+                    "deleted": 0,
+                    "label": "Phone number",
+                    "order": 6,
+                    "sensitive": 0,
+                    "type": "phone",
+                    "uid": 14,
+                    "updated_at": 1698057167,
+                    "value": "",
+                    "value_updated_at": 1698057167
+                },
+                {
+                    "deleted": 0,
+                    "label": "One-time code",
+                    "order": 7,
+                    "sensitive": 0,
+                    "type": "totp",
+                    "uid": 102,
+                    "updated_at": 1698057167,
+                    "value": "",
+                    "value_updated_at": 1698057167
+                },
+                {
+                    "deleted": 0,
+                    "label": "Security question",
+                    "order": 8,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 15,
+                    "updated_at": 1698057167,
+                    "value": "",
+                    "value_updated_at": 1698057167
+                },
+                {
+                    "deleted": 0,
+                    "label": "Security answer",
+                    "order": 9,
+                    "sensitive": 1,
+                    "type": "text",
+                    "uid": 16,
+                    "updated_at": 1698057167,
+                    "value": "",
+                    "value_updated_at": 1698057167
+                }
+            ],
+            "icon": {
+                "fav": "login.yahoo.com",
+                "image": {
+                    "file": "web/yahoo.com"
+                },
+                "type": 1,
+                "uuid": ""
+            },
+            "note": "example note",
+            "subtitle": "customusername",
+            "template_type": "login.default",
+            "title": "Yahoo!",
+            "trashed": 0,
+            "updated_at": 1698057203,
+            "uuid": "17877058-90a0-4b9f-bda6-e6a0590f9211"
+        },
+        {
+            "archived": 0,
+            "auto_submit": 1,
+            "category": "login",
+            "createdAt": 1697729354,
+            "favorite": 0,
+            "fields": [
+                {
+                    "deleted": 0,
+                    "label": "Username",
+                    "order": 1,
+                    "sensitive": 0,
+                    "type": "username",
+                    "uid": 10,
+                    "updated_at": 1697729354,
+                    "value": "username",
+                    "value_updated_at": 1697729354
+                },
+                {
+                    "deleted": 0,
+                    "label": "E-mail",
+                    "order": 2,
+                    "sensitive": 0,
+                    "type": "email",
+                    "uid": 12,
+                    "updated_at": 1697729354,
+                    "value": "email@example.com",
+                    "value_updated_at": 1697729354
+                },
+                {
+                    "deleted": 0,
+                    "label": "Password",
+                    "order": 3,
+                    "sensitive": 1,
+                    "type": "password",
+                    "uid": 11,
+                    "updated_at": 1697729354,
+                    "value": "password",
+                    "value_updated_at": 1697729354
+                },
+                {
+                    "deleted": 0,
+                    "label": "Website",
+                    "order": 4,
+                    "sensitive": 0,
+                    "type": "url",
+                    "uid": 13,
+                    "updated_at": 1697729354,
+                    "value": "https://example.com",
+                    "value_updated_at": 1697729354
+                },
+                {
+                    "deleted": 0,
+                    "label": "ADDITIONAL DETAILS",
+                    "order": 5,
+                    "sensitive": 0,
+                    "type": "section",
+                    "uid": 101,
+                    "updated_at": 1697729354,
+                    "value": "",
+                    "value_updated_at": 1697729354
+                },
+                {
+                    "deleted": 0,
+                    "label": "Phone number",
+                    "order": 6,
+                    "sensitive": 0,
+                    "type": "phone",
+                    "uid": 14,
+                    "updated_at": 1697729354,
+                    "value": "+19999999",
+                    "value_updated_at": 1697729354
+                },
+                {
+                    "deleted": 0,
+                    "label": "One-time code",
+                    "order": 7,
+                    "sensitive": 0,
+                    "type": "totp",
+                    "uid": 102,
+                    "updated_at": 1697729354,
+                    "value": "secretkey",
+                    "value_updated_at": 1697729354
+                },
+                {
+                    "deleted": 0,
+                    "label": "Security question",
+                    "order": 8,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 15,
+                    "updated_at": 1697729354,
+                    "value": "Dog's name?",
+                    "value_updated_at": 1697729354
+                },
+                {
+                    "deleted": 0,
+                    "label": "Security answer",
+                    "order": 9,
+                    "sensitive": 1,
+                    "type": "text",
+                    "uid": 16,
+                    "updated_at": 1697729354,
+                    "value": "Proton",
+                    "value_updated_at": 1697729354
+                }
+            ],
+            "icon": {
+                "fav": "example.com",
+                "image": {
+                    "file": "misc/login"
+                },
+                "type": 1,
+                "uuid": ""
+            },
+            "note": "Custom note",
+            "subtitle": "username",
+            "template_type": "login.default",
+            "title": "Trashed",
+            "trashed": 1,
+            "updated_at": 1697729399,
+            "uuid": "3caf61fe-ab14-4d35-b1ad-bf09b9dff136"
+        },
+        {
+            "archived": 1,
+            "auto_submit": 1,
+            "category": "login",
+            "createdAt": 1697729073,
+            "favorite": 0,
+            "fields": [
+                {
+                    "deleted": 0,
+                    "label": "Username",
+                    "order": 1,
+                    "sensitive": 0,
+                    "type": "username",
+                    "uid": 10,
+                    "updated_at": 1697729073,
+                    "value": "",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "E-mail",
+                    "order": 2,
+                    "sensitive": 0,
+                    "type": "email",
+                    "uid": 12,
+                    "updated_at": 1697729073,
+                    "value": "emily@enpass.io",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "Password",
+                    "order": 3,
+                    "sensitive": 1,
+                    "type": "password",
+                    "uid": 11,
+                    "updated_at": 1697729073,
+                    "value": "$&W:v@}4\\iRpUXVbjPdPKDGbD<xK>",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "Website",
+                    "order": 4,
+                    "sensitive": 0,
+                    "type": "url",
+                    "uid": 13,
+                    "updated_at": 1697729073,
+                    "value": "https://www.amazon.com",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "ADDITIONAL DETAILS",
+                    "order": 5,
+                    "sensitive": 0,
+                    "type": "section",
+                    "uid": 101,
+                    "updated_at": 1697729073,
+                    "value": "",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "Phone number",
+                    "order": 6,
+                    "sensitive": 0,
+                    "type": "phone",
+                    "uid": 14,
+                    "updated_at": 1697729073,
+                    "value": "",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "One-time code",
+                    "order": 7,
+                    "sensitive": 0,
+                    "type": "totp",
+                    "uid": 102,
+                    "updated_at": 1697729073,
+                    "value": "",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "Security question",
+                    "order": 8,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 15,
+                    "updated_at": 1697729073,
+                    "value": "",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "Security answer",
+                    "order": 9,
+                    "sensitive": 1,
+                    "type": "text",
+                    "uid": 16,
+                    "updated_at": 1697729073,
+                    "value": "",
+                    "value_updated_at": 1697729073
+                }
+            ],
+            "icon": {
+                "fav": "www.amazon.com",
+                "image": {
+                    "file": "web/amazon.com"
+                },
+                "type": 1,
+                "uuid": ""
+            },
+            "note": "",
+            "subtitle": "emily@enpass.io",
+            "template_type": "login.default",
+            "title": "Archived",
+            "trashed": 0,
+            "updated_at": 1697729411,
+            "uuid": "5b7f1d87-1016-4150-a769-38cb0baf6e99"
+        },
+        {
+            "archived": 0,
+            "auto_submit": 1,
+            "category": "note",
+            "createdAt": 1697729114,
+            "favorite": 0,
+            "folders": ["3a71050b-830a-44d7-9345-84a29da66fb5", "da3ef579-c1cb-4e69-9bcd-f7cf946ef868"],
+            "icon": {
+                "fav": "",
+                "image": {
+                    "file": "web/msn.com"
+                },
+                "type": 1,
+                "uuid": ""
+            },
+            "note": "Note text",
+            "subtitle": "Note text",
+            "template_type": "note.default",
+            "title": "Note",
+            "trashed": 0,
+            "updated_at": 1697802849,
+            "uuid": "e3279bb7-dc68-4d48-9732-d9fe933bdc84"
+        },
+        {
+            "archived": 0,
+            "auto_submit": 1,
+            "category": "creditcard",
+            "createdAt": 1697729073,
+            "favorite": 0,
+            "fields": [
+                {
+                    "deleted": 0,
+                    "history": [
+                        {
+                            "encrypted": false,
+                            "updated_at": 1534490234,
+                            "value": "Wendy Apple Seed"
+                        },
+                        {
+                            "encrypted": false,
+                            "updated_at": 1535521811,
+                            "value": "Emma"
+                        },
+                        {
+                            "encrypted": false,
+                            "updated_at": 1535522090,
+                            "value": "Emily"
+                        }
+                    ],
+                    "label": "Cardholder",
+                    "order": 1,
+                    "sensitive": 0,
+                    "type": "ccName",
+                    "uid": 0,
+                    "updated_at": 1697729073,
+                    "value": "Emily Sample",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "Type",
+                    "order": 2,
+                    "sensitive": 0,
+                    "type": "ccType",
+                    "uid": 17,
+                    "updated_at": 1697729073,
+                    "value": "American Express",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "history": [
+                        {
+                            "encrypted": false,
+                            "updated_at": 1534490234,
+                            "value": "1234 1234 5678 0000"
+                        }
+                    ],
+                    "label": "Number",
+                    "order": 3,
+                    "sensitive": 0,
+                    "type": "ccNumber",
+                    "uid": 1,
+                    "updated_at": 1697729073,
+                    "value": "1234 123456 00000",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "CVC",
+                    "order": 4,
+                    "sensitive": 1,
+                    "type": "ccCvc",
+                    "uid": 2,
+                    "updated_at": 1697729073,
+                    "value": "1234",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "PIN",
+                    "order": 5,
+                    "sensitive": 1,
+                    "type": "ccPin",
+                    "uid": 3,
+                    "updated_at": 1697729073,
+                    "value": "9874",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "history": [
+                        {
+                            "encrypted": false,
+                            "updated_at": 1697804290,
+                            "value": "03/27"
+                        },
+                        {
+                            "encrypted": false,
+                            "updated_at": 1697804302,
+                            "value": "03/27mhjkdhjk"
+                        }
+                    ],
+                    "label": "Expiry date",
+                    "order": 6,
+                    "sensitive": 0,
+                    "type": "ccExpiry",
+                    "uid": 4,
+                    "updated_at": 1697804302,
+                    "value": "03/27",
+                    "value_updated_at": 1697804302
+                },
+                {
+                    "deleted": 0,
+                    "label": "INTERNET BANKING",
+                    "order": 7,
+                    "sensitive": 0,
+                    "type": "section",
+                    "uid": 103,
+                    "updated_at": 1697729073,
+                    "value": "",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "history": [
+                        {
+                            "encrypted": false,
+                            "updated_at": 1534490234,
+                            "value": "WendySeed"
+                        },
+                        {
+                            "encrypted": false,
+                            "updated_at": 1535521811,
+                            "value": "Emma1"
+                        },
+                        {
+                            "encrypted": false,
+                            "updated_at": 1535522182,
+                            "value": "Emily1"
+                        }
+                    ],
+                    "label": "Username",
+                    "order": 8,
+                    "sensitive": 0,
+                    "type": "username",
+                    "uid": 15,
+                    "updated_at": 1697729073,
+                    "value": "Emily_ENP",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "Login password",
+                    "order": 9,
+                    "sensitive": 1,
+                    "type": "password",
+                    "uid": 16,
+                    "updated_at": 1697729073,
+                    "value": "nnn tug shoot selfish bon liars convent dusty minnow uncheck",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "Transaction password",
+                    "order": 10,
+                    "sensitive": 1,
+                    "type": "ccTxnpassword",
+                    "uid": 9,
+                    "updated_at": 1697729073,
+                    "value": "",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "Website",
+                    "order": 11,
+                    "sensitive": 0,
+                    "type": "url",
+                    "uid": 14,
+                    "updated_at": 1697729073,
+                    "value": "http://global.americanexpress.com/",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "ADDITIONAL DETAILS",
+                    "order": 12,
+                    "sensitive": 0,
+                    "type": "section",
+                    "uid": 104,
+                    "updated_at": 1697729073,
+                    "value": "",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "Issuing bank",
+                    "order": 13,
+                    "sensitive": 0,
+                    "type": "ccBankname",
+                    "uid": 6,
+                    "updated_at": 1697729073,
+                    "value": "American Express",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "Issued on",
+                    "order": 14,
+                    "sensitive": 0,
+                    "type": "date",
+                    "uid": 7,
+                    "updated_at": 1697729073,
+                    "value": "",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "Valid from",
+                    "order": 15,
+                    "sensitive": 0,
+                    "type": "ccValidfrom",
+                    "uid": 18,
+                    "updated_at": 1697729073,
+                    "value": "",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "Credit limit",
+                    "order": 16,
+                    "sensitive": 0,
+                    "type": "numeric",
+                    "uid": 10,
+                    "updated_at": 1697729073,
+                    "value": "100000",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "Withdrawal limit",
+                    "order": 17,
+                    "sensitive": 0,
+                    "type": "numeric",
+                    "uid": 11,
+                    "updated_at": 1697729073,
+                    "value": "50000",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "Interest rate",
+                    "order": 18,
+                    "sensitive": 0,
+                    "type": "numeric",
+                    "uid": 12,
+                    "updated_at": 1697729073,
+                    "value": "",
+                    "value_updated_at": 1697729073
+                },
+                {
+                    "deleted": 0,
+                    "label": "If lost, call",
+                    "order": 19,
+                    "sensitive": 0,
+                    "type": "phone",
+                    "uid": 8,
+                    "updated_at": 1697729073,
+                    "value": "",
+                    "value_updated_at": 1697729073
+                }
+            ],
+            "icon": {
+                "fav": "global.americanexpress.com",
+                "image": {
+                    "file": "cc/american_express"
+                },
+                "type": 2,
+                "uuid": ""
+            },
+            "note": "",
+            "subtitle": "***** 0000",
+            "template_type": "creditcard.default",
+            "title": "Credit Card",
+            "trashed": 0,
+            "updated_at": 1697729073,
+            "uuid": "d300cb1b-3ced-4f28-98f1-4982e099306c"
+        },
+        {
+            "archived": 0,
+            "auto_submit": 1,
+            "category": "password",
+            "createdAt": 1697729144,
+            "favorite": 0,
+            "fields": [
+                {
+                    "deleted": 0,
+                    "label": "Login",
+                    "order": 1,
+                    "sensitive": 0,
+                    "type": "username",
+                    "uid": 0,
+                    "updated_at": 1697729144,
+                    "value": "username",
+                    "value_updated_at": 1697729144
+                },
+                {
+                    "deleted": 0,
+                    "label": "Password",
+                    "order": 2,
+                    "sensitive": 1,
+                    "type": "password",
+                    "uid": 1,
+                    "updated_at": 1697729144,
+                    "value": "password",
+                    "value_updated_at": 1697729144
+                },
+                {
+                    "deleted": 0,
+                    "label": "Access",
+                    "order": 3,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 2,
+                    "updated_at": 1697729144,
+                    "value": "access",
+                    "value_updated_at": 1697729144
+                }
+            ],
+            "folders": ["3a71050b-830a-44d7-9345-84a29da66fb5"],
+            "icon": {
+                "fav": "",
+                "image": {
+                    "file": "misc/password_2"
+                },
+                "type": 1,
+                "uuid": ""
+            },
+            "note": "custom note",
+            "subtitle": "username",
+            "template_type": "password.default",
+            "title": "Password",
+            "trashed": 0,
+            "updated_at": 1697729144,
+            "uuid": "71ee36cc-08b4-4014-adfb-33cc3243343f"
+        },
+        {
+            "archived": 0,
+            "auto_submit": 1,
+            "category": "finance",
+            "createdAt": 1697729162,
+            "favorite": 0,
+            "fields": [
+                {
+                    "deleted": 0,
+                    "label": "Bank name",
+                    "order": 1,
+                    "sensitive": 0,
+                    "type": "ccBankname",
+                    "uid": 4,
+                    "updated_at": 1697729162,
+                    "value": "bank name",
+                    "value_updated_at": 1697729162
+                },
+                {
+                    "deleted": 0,
+                    "label": "Account holder",
+                    "order": 2,
+                    "sensitive": 0,
+                    "type": "ccName",
+                    "uid": 0,
+                    "updated_at": 1697729162,
+                    "value": "account 1",
+                    "value_updated_at": 1697729162
+                },
+                {
+                    "deleted": 0,
+                    "label": "Account type",
+                    "order": 3,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 1,
+                    "updated_at": 1697729162,
+                    "value": "debit",
+                    "value_updated_at": 1697729162
+                },
+                {
+                    "deleted": 0,
+                    "label": "Account number",
+                    "order": 4,
+                    "sensitive": 0,
+                    "type": "numeric",
+                    "uid": 2,
+                    "updated_at": 1697729162,
+                    "value": "999999",
+                    "value_updated_at": 1697729162
+                },
+                {
+                    "deleted": 0,
+                    "label": "Customer ID",
+                    "order": 5,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 16,
+                    "updated_at": 1697729162,
+                    "value": "999998",
+                    "value_updated_at": 1697729162
+                },
+                {
+                    "deleted": 0,
+                    "label": "Phone number",
+                    "order": 6,
+                    "sensitive": 0,
+                    "type": "phone",
+                    "uid": 106,
+                    "updated_at": 1697729162,
+                    "value": "",
+                    "value_updated_at": 1697729162
+                },
+                {
+                    "deleted": 0,
+                    "label": "IFSC code",
+                    "order": 7,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 169,
+                    "updated_at": 1697729162,
+                    "value": "ifsc",
+                    "value_updated_at": 1697729162
+                },
+                {
+                    "deleted": 0,
+                    "label": "Routing number",
+                    "order": 8,
+                    "sensitive": 0,
+                    "type": "numeric",
+                    "uid": 5,
+                    "updated_at": 1697729162,
+                    "value": "123456789",
+                    "value_updated_at": 1697729162
+                },
+                {
+                    "deleted": 0,
+                    "label": "SWIFT",
+                    "order": 9,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 8,
+                    "updated_at": 1697729162,
+                    "value": "swift",
+                    "value_updated_at": 1697729162
+                },
+                {
+                    "deleted": 0,
+                    "label": "IBAN",
+                    "order": 10,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 9,
+                    "updated_at": 1697729162,
+                    "value": "iban",
+                    "value_updated_at": 1697729162
+                },
+                {
+                    "deleted": 0,
+                    "label": "INTERNET BANKING",
+                    "order": 11,
+                    "sensitive": 0,
+                    "type": "section",
+                    "uid": 105,
+                    "updated_at": 1697729162,
+                    "value": "",
+                    "value_updated_at": 1697729162
+                },
+                {
+                    "deleted": 0,
+                    "label": "Website",
+                    "order": 12,
+                    "sensitive": 0,
+                    "type": "url",
+                    "uid": 17,
+                    "updated_at": 1697729162,
+                    "value": "https://example.com",
+                    "value_updated_at": 1697729162
+                },
+                {
+                    "deleted": 0,
+                    "label": "Username",
+                    "order": 13,
+                    "sensitive": 0,
+                    "type": "username",
+                    "uid": 18,
+                    "updated_at": 1697729162,
+                    "value": "example",
+                    "value_updated_at": 1697729162
+                },
+                {
+                    "deleted": 0,
+                    "label": "Login password",
+                    "order": 14,
+                    "sensitive": 1,
+                    "type": "password",
+                    "uid": 19,
+                    "updated_at": 1697729162,
+                    "value": "password",
+                    "value_updated_at": 1697729162
+                },
+                {
+                    "deleted": 0,
+                    "label": "Transaction password",
+                    "order": 15,
+                    "sensitive": 1,
+                    "type": "ccTxnpassword",
+                    "uid": 20,
+                    "updated_at": 1697729162,
+                    "value": "transaction",
+                    "value_updated_at": 1697729162
+                },
+                {
+                    "deleted": 0,
+                    "label": "BRANCH DETAILS",
+                    "order": 16,
+                    "sensitive": 0,
+                    "type": "section",
+                    "uid": 107,
+                    "updated_at": 1697729162,
+                    "value": "",
+                    "value_updated_at": 1697729162
+                },
+                {
+                    "deleted": 0,
+                    "label": "Branch name",
+                    "order": 17,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 6,
+                    "updated_at": 1697729894,
+                    "value": "branch name",
+                    "value_updated_at": 1697729894
+                },
+                {
+                    "deleted": 0,
+                    "label": "Branch code",
+                    "order": 18,
+                    "sensitive": 0,
+                    "type": "numeric",
+                    "uid": 7,
+                    "updated_at": 1697729894,
+                    "value": "branch code",
+                    "value_updated_at": 1697729894
+                },
+                {
+                    "deleted": 0,
+                    "label": "Branch address",
+                    "order": 19,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 24,
+                    "updated_at": 1697729894,
+                    "value": "branch address",
+                    "value_updated_at": 1697729894
+                },
+                {
+                    "deleted": 0,
+                    "label": "Branch phone",
+                    "order": 20,
+                    "sensitive": 0,
+                    "type": "phone",
+                    "uid": 25,
+                    "updated_at": 1697729894,
+                    "value": "branch phone",
+                    "value_updated_at": 1697729894
+                },
+                {
+                    "deleted": 0,
+                    "label": "LINKED CARD",
+                    "order": 21,
+                    "sensitive": 0,
+                    "type": "section",
+                    "uid": 108,
+                    "updated_at": 1697729162,
+                    "value": "",
+                    "value_updated_at": 1697729162
+                },
+                {
+                    "deleted": 0,
+                    "label": "Debit card number",
+                    "order": 22,
+                    "sensitive": 0,
+                    "type": "ccNumber",
+                    "uid": 11,
+                    "updated_at": 1697729894,
+                    "value": "4242424242424242",
+                    "value_updated_at": 1697729894
+                },
+                {
+                    "deleted": 0,
+                    "label": " Card type",
+                    "order": 23,
+                    "sensitive": 0,
+                    "type": "ccType",
+                    "uid": 26,
+                    "updated_at": 1697729894,
+                    "value": "Visa",
+                    "value_updated_at": 1697729894
+                },
+                {
+                    "deleted": 0,
+                    "label": "PIN",
+                    "order": 24,
+                    "sensitive": 1,
+                    "type": "ccPin",
+                    "uid": 12,
+                    "updated_at": 1697729894,
+                    "value": "1234",
+                    "value_updated_at": 1697729894
+                },
+                {
+                    "deleted": 0,
+                    "label": "CVV",
+                    "order": 25,
+                    "sensitive": 1,
+                    "type": "ccCvc",
+                    "uid": 14,
+                    "updated_at": 1697729894,
+                    "value": "123",
+                    "value_updated_at": 1697729894
+                },
+                {
+                    "deleted": 0,
+                    "label": "Expiry date",
+                    "order": 26,
+                    "sensitive": 0,
+                    "type": "ccExpiry",
+                    "uid": 13,
+                    "updated_at": 1697729894,
+                    "value": "202920",
+                    "value_updated_at": 1697729894
+                },
+                {
+                    "deleted": 0,
+                    "label": "ADDITIONAL DETAILS",
+                    "order": 27,
+                    "sensitive": 0,
+                    "type": "section",
+                    "uid": 109,
+                    "updated_at": 1697729162,
+                    "value": "",
+                    "value_updated_at": 1697729162
+                },
+                {
+                    "deleted": 0,
+                    "label": "Withdrawal limit",
+                    "order": 28,
+                    "sensitive": 0,
+                    "type": "numeric",
+                    "uid": 27,
+                    "updated_at": 1697729894,
+                    "value": "100000",
+                    "value_updated_at": 1697729894
+                },
+                {
+                    "deleted": 0,
+                    "label": "Helpline",
+                    "order": 29,
+                    "sensitive": 0,
+                    "type": "phone",
+                    "uid": 22,
+                    "updated_at": 1697729894,
+                    "value": "0909999999",
+                    "value_updated_at": 1697729894
+                },
+                {
+                    "deleted": 0,
+                    "label": "T-PIN",
+                    "order": 30,
+                    "sensitive": 1,
+                    "type": "pin",
+                    "uid": 23,
+                    "updated_at": 1697729894,
+                    "value": "1234",
+                    "value_updated_at": 1697729894
+                }
+            ],
+            "icon": {
+                "fav": "example.com",
+                "image": {
+                    "file": "misc/bank"
+                },
+                "type": 1,
+                "uuid": ""
+            },
+            "note": "my note",
+            "subtitle": "bank name",
+            "template_type": "finance.bankaccount",
+            "title": "Bank account ",
+            "trashed": 0,
+            "updated_at": 1697729894,
+            "uuid": "630880e6-236c-4dd6-bfc4-6280a906e3c5"
+        },
+        {
+            "archived": 0,
+            "auto_submit": 1,
+            "category": "license",
+            "createdAt": 1697729423,
+            "favorite": 0,
+            "fields": [
+                {
+                    "deleted": 0,
+                    "label": "Number",
+                    "order": 1,
+                    "sensitive": 0,
+                    "type": "numeric",
+                    "uid": 1,
+                    "updated_at": 1697729423,
+                    "value": "123456789",
+                    "value_updated_at": 1697729423
+                },
+                {
+                    "deleted": 0,
+                    "label": "Name",
+                    "order": 2,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 0,
+                    "updated_at": 1697729423,
+                    "value": "John Doe",
+                    "value_updated_at": 1697729423
+                },
+                {
+                    "deleted": 0,
+                    "label": "Gender",
+                    "order": 3,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 8,
+                    "updated_at": 1697729423,
+                    "value": "Male",
+                    "value_updated_at": 1697729423
+                },
+                {
+                    "deleted": 0,
+                    "label": "Birth date",
+                    "order": 4,
+                    "sensitive": 0,
+                    "type": "date",
+                    "uid": 9,
+                    "updated_at": 1697729423,
+                    "value": "1991",
+                    "value_updated_at": 1697729423
+                },
+                {
+                    "deleted": 0,
+                    "label": "Address",
+                    "order": 5,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 10,
+                    "updated_at": 1697729423,
+                    "value": "Address 1",
+                    "value_updated_at": 1697729423
+                },
+                {
+                    "deleted": 0,
+                    "label": "Height",
+                    "order": 6,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 11,
+                    "updated_at": 1697729423,
+                    "value": "Height",
+                    "value_updated_at": 1697729423
+                },
+                {
+                    "deleted": 0,
+                    "label": "Class",
+                    "order": 7,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 2,
+                    "updated_at": 1697729423,
+                    "value": "Class",
+                    "value_updated_at": 1697729423
+                },
+                {
+                    "deleted": 0,
+                    "label": "Restrictions",
+                    "order": 8,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 13,
+                    "updated_at": 1697729423,
+                    "value": "Restrictions",
+                    "value_updated_at": 1697729423
+                },
+                {
+                    "deleted": 0,
+                    "label": "State",
+                    "order": 9,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 3,
+                    "updated_at": 1697729423,
+                    "value": "State",
+                    "value_updated_at": 1697729423
+                },
+                {
+                    "deleted": 0,
+                    "label": "Country",
+                    "order": 10,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 4,
+                    "updated_at": 1697729423,
+                    "value": "Country",
+                    "value_updated_at": 1697729423
+                },
+                {
+                    "deleted": 0,
+                    "label": "Expiry date",
+                    "order": 11,
+                    "sensitive": 0,
+                    "type": "date",
+                    "uid": 5,
+                    "updated_at": 1697729423,
+                    "value": "Expiry",
+                    "value_updated_at": 1697729423
+                },
+                {
+                    "deleted": 0,
+                    "label": "Issued on",
+                    "order": 12,
+                    "sensitive": 0,
+                    "type": "date",
+                    "uid": 6,
+                    "updated_at": 1697729423,
+                    "value": "Issued",
+                    "value_updated_at": 1697729423
+                },
+                {
+                    "deleted": 0,
+                    "label": "If lost, call",
+                    "order": 13,
+                    "sensitive": 0,
+                    "type": "phone",
+                    "uid": 7,
+                    "updated_at": 1697729423,
+                    "value": "Houston",
+                    "value_updated_at": 1697729423
+                }
+            ],
+            "icon": {
+                "fav": "",
+                "image": {
+                    "file": "misc/driving_license_1"
+                },
+                "type": 1,
+                "uuid": ""
+            },
+            "note": "Note",
+            "subtitle": "123456789",
+            "template_type": "license.driving",
+            "title": "Driving license",
+            "trashed": 0,
+            "updated_at": 1697729423,
+            "uuid": "8d372daf-9e92-497b-8cad-e6718a57c073"
+        },
+        {
+            "archived": 0,
+            "auto_submit": 1,
+            "category": "computer",
+            "createdAt": 1697803354,
+            "favorite": 0,
+            "fields": [
+                {
+                    "deleted": 0,
+                    "label": "Username",
+                    "order": 1,
+                    "sensitive": 0,
+                    "type": "username",
+                    "uid": 0,
+                    "updated_at": 1697803530,
+                    "value": "username4isp",
+                    "value_updated_at": 1697803530
+                },
+                {
+                    "deleted": 0,
+                    "label": "Password",
+                    "order": 2,
+                    "sensitive": 1,
+                    "type": "password",
+                    "uid": 1,
+                    "updated_at": 1697803530,
+                    "value": "pwd4isp",
+                    "value_updated_at": 1697803530
+                },
+                {
+                    "deleted": 0,
+                    "label": "Website",
+                    "order": 3,
+                    "sensitive": 0,
+                    "type": "url",
+                    "uid": 18,
+                    "updated_at": 1697803530,
+                    "value": "isp.example.com",
+                    "value_updated_at": 1697803530
+                },
+                {
+                    "deleted": 0,
+                    "label": "Dialup phone",
+                    "order": 4,
+                    "sensitive": 0,
+                    "type": "phone",
+                    "uid": 3,
+                    "updated_at": 1697803354,
+                    "value": "",
+                    "value_updated_at": 1697803354
+                },
+                {
+                    "deleted": 0,
+                    "label": "ISP/System",
+                    "order": 5,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 4,
+                    "updated_at": 1697803354,
+                    "value": "",
+                    "value_updated_at": 1697803354
+                },
+                {
+                    "deleted": 0,
+                    "label": "IP address",
+                    "order": 6,
+                    "sensitive": 0,
+                    "type": "numeric",
+                    "uid": 5,
+                    "updated_at": 1697803354,
+                    "value": "",
+                    "value_updated_at": 1697803354
+                },
+                {
+                    "deleted": 0,
+                    "label": "Subnet mask",
+                    "order": 7,
+                    "sensitive": 0,
+                    "type": "numeric",
+                    "uid": 6,
+                    "updated_at": 1697803354,
+                    "value": "",
+                    "value_updated_at": 1697803354
+                },
+                {
+                    "deleted": 0,
+                    "label": "Gateway",
+                    "order": 8,
+                    "sensitive": 0,
+                    "type": "numeric",
+                    "uid": 20,
+                    "updated_at": 1697803354,
+                    "value": "",
+                    "value_updated_at": 1697803354
+                },
+                {
+                    "deleted": 0,
+                    "label": "Primary DNS",
+                    "order": 9,
+                    "sensitive": 0,
+                    "type": "numeric",
+                    "uid": 7,
+                    "updated_at": 1697803354,
+                    "value": "",
+                    "value_updated_at": 1697803354
+                },
+                {
+                    "deleted": 0,
+                    "label": "Secondary DNS",
+                    "order": 10,
+                    "sensitive": 0,
+                    "type": "numeric",
+                    "uid": 8,
+                    "updated_at": 1697803354,
+                    "value": "",
+                    "value_updated_at": 1697803354
+                },
+                {
+                    "deleted": 0,
+                    "label": "WINS",
+                    "order": 11,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 9,
+                    "updated_at": 1697803354,
+                    "value": "",
+                    "value_updated_at": 1697803354
+                },
+                {
+                    "deleted": 0,
+                    "label": "SMTP",
+                    "order": 12,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 11,
+                    "updated_at": 1697803354,
+                    "value": "",
+                    "value_updated_at": 1697803354
+                },
+                {
+                    "deleted": 0,
+                    "label": "POP3",
+                    "order": 13,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 12,
+                    "updated_at": 1697803354,
+                    "value": "",
+                    "value_updated_at": 1697803354
+                },
+                {
+                    "deleted": 0,
+                    "label": "NNTP",
+                    "order": 14,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 13,
+                    "updated_at": 1697803354,
+                    "value": "",
+                    "value_updated_at": 1697803354
+                },
+                {
+                    "deleted": 0,
+                    "label": "FTP",
+                    "order": 15,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 14,
+                    "updated_at": 1697803354,
+                    "value": "",
+                    "value_updated_at": 1697803354
+                },
+                {
+                    "deleted": 0,
+                    "label": "Telnet",
+                    "order": 16,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 15,
+                    "updated_at": 1697803354,
+                    "value": "",
+                    "value_updated_at": 1697803354
+                },
+                {
+                    "deleted": 0,
+                    "label": "Helpline",
+                    "order": 17,
+                    "sensitive": 0,
+                    "type": "phone",
+                    "uid": 17,
+                    "updated_at": 1697803354,
+                    "value": "",
+                    "value_updated_at": 1697803354
+                },
+                {
+                    "deleted": 0,
+                    "label": "Billing info",
+                    "order": 18,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 19,
+                    "updated_at": 1697803354,
+                    "value": "",
+                    "value_updated_at": 1697803354
+                }
+            ],
+            "icon": {
+                "fav": "isp.example.com",
+                "image": {
+                    "file": "misc/internet_provider"
+                },
+                "type": 1,
+                "uuid": ""
+            },
+            "note": "",
+            "subtitle": "username4isp",
+            "template_type": "computer.internetprovider",
+            "title": "Internet provider",
+            "trashed": 0,
+            "updated_at": 1697803530,
+            "uuid": "73eecd91-3f60-41a8-aa9d-7236ea87e560"
+        },
+        {
+            "archived": 0,
+            "auto_submit": 1,
+            "category": "misc",
+            "createdAt": 1697803386,
+            "favorite": 0,
+            "fields": [
+                {
+                    "deleted": 0,
+                    "label": "Registration number",
+                    "order": 1,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 3,
+                    "updated_at": 1697803386,
+                    "value": "PP-9999",
+                    "value_updated_at": 1697803386
+                },
+                {
+                    "deleted": 0,
+                    "label": "Owner",
+                    "order": 2,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 11,
+                    "updated_at": 1697803386,
+                    "value": "John Doe",
+                    "value_updated_at": 1697803386
+                },
+                {
+                    "deleted": 0,
+                    "label": "Model",
+                    "order": 3,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 0,
+                    "updated_at": 1697803386,
+                    "value": "ACME Corp",
+                    "value_updated_at": 1697803386
+                },
+                {
+                    "deleted": 0,
+                    "label": "Vehicle type",
+                    "order": 4,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 12,
+                    "updated_at": 1697803386,
+                    "value": "3-Series",
+                    "value_updated_at": 1697803386
+                },
+                {
+                    "deleted": 0,
+                    "label": "Purchase date",
+                    "order": 5,
+                    "sensitive": 0,
+                    "type": "date",
+                    "uid": 13,
+                    "updated_at": 1697803386,
+                    "value": "1 January 2023",
+                    "value_updated_at": 1697803386
+                },
+                {
+                    "deleted": 0,
+                    "label": "Make",
+                    "order": 6,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 1,
+                    "updated_at": 1697803386,
+                    "value": "Make",
+                    "value_updated_at": 1697803386
+                },
+                {
+                    "deleted": 0,
+                    "label": "Year",
+                    "order": 7,
+                    "sensitive": 0,
+                    "type": "numeric",
+                    "uid": 2,
+                    "updated_at": 1697803386,
+                    "value": "Year",
+                    "value_updated_at": 1697803386
+                },
+                {
+                    "deleted": 0,
+                    "label": "VIN",
+                    "order": 8,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 4,
+                    "updated_at": 1697803386,
+                    "value": "VIN",
+                    "value_updated_at": 1697803386
+                },
+                {
+                    "deleted": 0,
+                    "label": "INSURANCE DETAILS",
+                    "order": 9,
+                    "sensitive": 0,
+                    "type": "section",
+                    "uid": 118,
+                    "updated_at": 1697803386,
+                    "value": "",
+                    "value_updated_at": 1697803386
+                },
+                {
+                    "deleted": 0,
+                    "label": "Insurance provider",
+                    "order": 10,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 16,
+                    "updated_at": 1697803386,
+                    "value": "Insurance Co.",
+                    "value_updated_at": 1697803386
+                },
+                {
+                    "deleted": 0,
+                    "label": "Insurance amount",
+                    "order": 11,
+                    "sensitive": 0,
+                    "type": "numeric",
+                    "uid": 7,
+                    "updated_at": 1697803386,
+                    "value": "64000 euros",
+                    "value_updated_at": 1697803386
+                },
+                {
+                    "deleted": 0,
+                    "label": "Policy number",
+                    "order": 12,
+                    "sensitive": 0,
+                    "type": "numeric",
+                    "uid": 8,
+                    "updated_at": 1697803386,
+                    "value": "999-policy-999",
+                    "value_updated_at": 1697803386
+                },
+                {
+                    "deleted": 0,
+                    "label": "Expiry date",
+                    "order": 13,
+                    "sensitive": 0,
+                    "type": "date",
+                    "uid": 10,
+                    "updated_at": 1697803386,
+                    "value": "2024",
+                    "value_updated_at": 1697803386
+                },
+                {
+                    "deleted": 0,
+                    "label": "Phone number",
+                    "order": 14,
+                    "sensitive": 0,
+                    "type": "phone",
+                    "uid": 9,
+                    "updated_at": 1697803386,
+                    "value": "999 9999",
+                    "value_updated_at": 1697803386
+                },
+                {
+                    "deleted": 0,
+                    "label": "SELLER DETAILS",
+                    "order": 15,
+                    "sensitive": 0,
+                    "type": "section",
+                    "uid": 197,
+                    "updated_at": 1697803386,
+                    "value": "",
+                    "value_updated_at": 1697803386
+                },
+                {
+                    "deleted": 0,
+                    "label": "Purchased from",
+                    "order": 16,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 198,
+                    "updated_at": 1697803386,
+                    "value": "Seller Name",
+                    "value_updated_at": 1697803386
+                },
+                {
+                    "deleted": 0,
+                    "label": "Phone number",
+                    "order": 17,
+                    "sensitive": 0,
+                    "type": "phone",
+                    "uid": 199,
+                    "updated_at": 1697803386,
+                    "value": "Seller Phone Number",
+                    "value_updated_at": 1697803386
+                },
+                {
+                    "deleted": 0,
+                    "label": "Address",
+                    "order": 18,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 200,
+                    "updated_at": 1697803386,
+                    "value": "Seller Address",
+                    "value_updated_at": 1697803386
+                },
+                {
+                    "deleted": 0,
+                    "label": "ADDITIONAL DETAILS",
+                    "order": 19,
+                    "sensitive": 0,
+                    "type": "section",
+                    "uid": 201,
+                    "updated_at": 1697803386,
+                    "value": "",
+                    "value_updated_at": 1697803386
+                },
+                {
+                    "deleted": 0,
+                    "label": "Service phone",
+                    "order": 20,
+                    "sensitive": 0,
+                    "type": "phone",
+                    "uid": 5,
+                    "updated_at": 1697803386,
+                    "value": "Service phone",
+                    "value_updated_at": 1697803386
+                },
+                {
+                    "deleted": 0,
+                    "label": "On road helpline",
+                    "order": 21,
+                    "sensitive": 0,
+                    "type": "phone",
+                    "uid": 14,
+                    "updated_at": 1697803386,
+                    "value": "On road helpline",
+                    "value_updated_at": 1697803386
+                }
+            ],
+            "icon": {
+                "fav": "",
+                "image": {
+                    "file": "misc/vehicle"
+                },
+                "type": 1,
+                "uuid": ""
+            },
+            "note": "",
+            "subtitle": "PP-9999",
+            "template_type": "misc.vehicleinfo",
+            "title": "Vehicle info",
+            "trashed": 0,
+            "updated_at": 1697803386,
+            "uuid": "03c9830c-b71c-4a13-94ff-806c2affc1cb"
+        },
+        {
+            "archived": 0,
+            "auto_submit": 1,
+            "category": "identity",
+            "createdAt": 1697803540,
+            "favorite": 0,
+            "fields": [
+                {
+                    "deleted": 0,
+                    "label": "Initial",
+                    "order": 1,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 129,
+                    "updated_at": 1697803540,
+                    "value": "JD",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "First name",
+                    "order": 2,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 130,
+                    "updated_at": 1697803540,
+                    "value": "John",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "Middle name",
+                    "order": 3,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 131,
+                    "updated_at": 1697803540,
+                    "value": "Jay",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "Last name",
+                    "order": 4,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 132,
+                    "updated_at": 1697803540,
+                    "value": "Doe",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "Gender",
+                    "order": 5,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 133,
+                    "updated_at": 1697803540,
+                    "value": "N/A",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "Birth date",
+                    "order": 6,
+                    "sensitive": 0,
+                    "type": "date",
+                    "uid": 134,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "Social Security Number",
+                    "order": 7,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 212,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "HOME ADDRESS",
+                    "order": 8,
+                    "sensitive": 0,
+                    "type": "section",
+                    "uid": 141,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "Street",
+                    "order": 9,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 143,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "City",
+                    "order": 10,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 144,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "State",
+                    "order": 11,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 145,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "Country",
+                    "order": 12,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 146,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "ZIP",
+                    "order": 13,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 147,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "CONTACT DETAILS",
+                    "order": 14,
+                    "sensitive": 0,
+                    "type": "section",
+                    "uid": 148,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "Phone number",
+                    "order": 15,
+                    "sensitive": 0,
+                    "type": "phone",
+                    "uid": 149,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "Phone home",
+                    "order": 16,
+                    "sensitive": 0,
+                    "type": "phone",
+                    "uid": 151,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "Phone work",
+                    "order": 17,
+                    "sensitive": 0,
+                    "type": "phone",
+                    "uid": 140,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "WORK DETAILS",
+                    "order": 18,
+                    "sensitive": 0,
+                    "type": "section",
+                    "uid": 135,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "Occupation",
+                    "order": 19,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 136,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "Company",
+                    "order": 20,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 137,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "Department",
+                    "order": 21,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 138,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "Job title",
+                    "order": 22,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 139,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "Organization",
+                    "order": 23,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 213,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "WORK ADDRESS",
+                    "order": 24,
+                    "sensitive": 0,
+                    "type": "section",
+                    "uid": 220,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "Street",
+                    "order": 25,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 221,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "City",
+                    "order": 26,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 222,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "State",
+                    "order": 27,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 223,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "Country",
+                    "order": 28,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 224,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "ZIP",
+                    "order": 29,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 225,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "SOCIAL",
+                    "order": 30,
+                    "sensitive": 0,
+                    "type": "section",
+                    "uid": 152,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "Twitter",
+                    "order": 31,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 153,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "Facebook",
+                    "order": 32,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 154,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "LinkedIn",
+                    "order": 33,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 155,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "Skype",
+                    "order": 34,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 156,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "Instagram",
+                    "order": 35,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 157,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "Yahoo",
+                    "order": 36,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 158,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "MSN",
+                    "order": 37,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 159,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "ICQ",
+                    "order": 38,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 160,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "AIM",
+                    "order": 39,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 161,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "ADDITIONAL DETAILS",
+                    "order": 40,
+                    "sensitive": 0,
+                    "type": "section",
+                    "uid": 162,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "Website",
+                    "order": 41,
+                    "sensitive": 0,
+                    "type": "url",
+                    "uid": 163,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "Username",
+                    "order": 42,
+                    "sensitive": 0,
+                    "type": "username",
+                    "uid": 164,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "E-mail",
+                    "order": 43,
+                    "sensitive": 0,
+                    "type": "email",
+                    "uid": 165,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "Password",
+                    "order": 44,
+                    "sensitive": 1,
+                    "type": "password",
+                    "uid": 169,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "Secret question",
+                    "order": 45,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 166,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "Secret answer",
+                    "order": 46,
+                    "sensitive": 1,
+                    "type": "text",
+                    "uid": 167,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                },
+                {
+                    "deleted": 0,
+                    "label": "Signature",
+                    "order": 47,
+                    "sensitive": 0,
+                    "type": "text",
+                    "uid": 168,
+                    "updated_at": 1697803540,
+                    "value": "",
+                    "value_updated_at": 1697803540
+                }
+            ],
+            "icon": {
+                "fav": "",
+                "image": {
+                    "file": "misc/user"
+                },
+                "type": 1,
+                "uuid": ""
+            },
+            "note": "",
+            "subtitle": "John Doe",
+            "template_type": "identity.default",
+            "title": "Identity",
+            "trashed": 0,
+            "updated_at": 1697803540,
+            "uuid": "831b98fe-fda4-4af1-80bd-3f77dcea3a7f"
+        }
+    ]
+}
