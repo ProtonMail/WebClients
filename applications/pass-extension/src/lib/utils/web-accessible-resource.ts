@@ -5,7 +5,7 @@ import noop from '@proton/utils/noop';
  * accessed at their direct URL. If it is served as the top window
  * (and not injected in an iframe), prevent direct access by auto-
  * closing the tab */
-if (ENV === 'production') {
+if (BUILD_TARGET === 'chrome' && ENV === 'production') {
     if (window.self === window.top) {
         void browser.tabs
             .getCurrent()
