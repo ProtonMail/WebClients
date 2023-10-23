@@ -1,7 +1,6 @@
 import { ComponentPropsWithoutRef } from 'react';
 
 import { fireEvent, render } from '@testing-library/react';
-import { useFlag } from '@unleash/proxy-client-react';
 
 import {
     OrderableTable,
@@ -9,6 +8,7 @@ import {
     useAddressesKeys,
     useApi,
     useFeature,
+    useFlag,
     useKTVerifier,
     useNotifications,
     useUser,
@@ -46,6 +46,7 @@ const mockedUseKTVerifier = useKTVerifier as jest.MockedFunction<typeof useKTVer
 jest.mock('@proton/components/hooks/useFeature');
 const mockedUseFeature = useFeature as jest.MockedFunction<any>;
 
+jest.mock('@proton/components/containers/unleash/useFlag');
 const mockedUseFlag = useFlag as jest.MockedFunction<any>;
 
 describe('addresses with user', () => {
