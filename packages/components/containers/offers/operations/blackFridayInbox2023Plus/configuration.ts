@@ -15,6 +15,7 @@ const config: OfferConfig = {
         bannerImage,
         bannerImage2x,
     },
+    canBeDisabled: true,
     darkBackground: true,
     deals: [
         {
