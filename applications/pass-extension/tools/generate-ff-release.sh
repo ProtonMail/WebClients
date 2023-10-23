@@ -62,16 +62,6 @@ EXCLUDE=(
     .publishignore
     ACTIONS.md
     ci
-    utilities
-    tests
-    # applications/account
-    # applications/admin
-    # applications/calendar
-    # applications/drive
-    # applications/mail
-    # applications/storybook
-    # applications/verify
-    # applications/vpn-settings
     packages/config
     sonar-project.properties
 )
@@ -106,10 +96,6 @@ echo -e "${SUCCESS} ↳ Cloned to \"${TARGET_DIR}\"${NOCOLOR}"
 git checkout ${COMMIT} --quiet || exit 1
 echo -e "${SUCCESS} ↳ Checked out to \"${COMMIT}\"${NOCOLOR}"
 
-# install node_modules
-yarn install >/dev/null
-echo -e "${SUCCESS} ↳ Installed dependencies${NOCOLOR}"
-
 # Filter out repo for firefox reviewers
 # create a minimal working monorepo with
 # only the files required to build Pass
@@ -122,6 +108,10 @@ for ignore in "${EXCLUDE[@]}"; do
     fi
     echo -e "${SUCCESS} ↳ Removed \"${ignore}\"${NOCOLOR}"
 done
+
+# install node_modules
+yarn install >/dev/null
+echo -e "${SUCCESS} ↳ Installed dependencies${NOCOLOR}"
 
 echo -e "${INFO}🔍 Verifying build $BUILD_ID integrity...${NOCOLOR}"
 
@@ -146,7 +136,7 @@ if [ "$CHECKSUM_SOURCE" == "$CHECKSUM_TARGET" ]; then
     # zip final source files
     cd $TARGET_DIR
     rm -rf $(find . -type d -name node_modules) || true # remove all node_modules
-    rm -rf /applications/pass-extension/dist || true    # remove dist
+    rm -rf applications/pass-extension/dist || true     # remove dist
     cp applications/pass-extension/FIREFOX.md README.md || true
     zip -r $OUT_DIR/$BUILD_ID-sources.zip . \
         -x "*.DS_Store" \
