@@ -79,7 +79,7 @@ import {
     getSessionDataFromSignup,
     getUserInfo,
 } from './helper';
-import { SignupMode, SignupModelV2, SignupTheme, Steps, UpsellTypes } from './interface';
+import { SignupMode, SignupModelV2, SignupParameters2, SignupTheme, Steps, UpsellTypes } from './interface';
 import { getMailConfiguration } from './mail/configuration';
 import {
     TelemetryMeasurementData,
@@ -218,17 +218,31 @@ const SingleSignupContainerV2 = ({
     const [loadingDependencies, withLoadingDependencies] = useLoading(true);
     const [loadingChallenge, setLoadingChallenge] = useState(true);
 
-    const [signupParameters] = useState(() => {
+    const [signupParameters, setSignupParameters] = useState((): SignupParameters2 => {
         const searchParams = new URLSearchParams(location.search);
         const result = getSignupSearchParams(location.pathname, searchParams);
 
         const localID = Number(searchParams.get('u'));
-        const mode = searchParams.get('mode') === SignupMode.Onboarding ? SignupMode.Onboarding : SignupMode.Default;
+        let mode = searchParams.get('mode') === SignupMode.Onboarding ? SignupMode.Onboarding : SignupMode.Default;
+
+        // pass new user invite
+        const inviter = searchParams.get('inviter');
+        const invited = searchParams.get('invited');
+        let invite: SignupParameters2['invite'] = undefined;
+
+        if (invited && inviter) {
+            mode = SignupMode.Invite;
+            invite = {
+                type: 'pass',
+                data: { inviter, invited },
+            };
+        }
 
         return {
             ...result,
             localID: Number.isInteger(localID) ? localID : undefined,
             mode,
+            invite,
             isPassWelcome: result.coupon === COUPON_CODES.PASS_WELCOME,
         };
     });
@@ -236,7 +250,7 @@ const SingleSignupContainerV2 = ({
     const {
         logo,
         features,
-        titles,
+        title,
         planCards,
         benefits,
         product,
@@ -272,6 +286,7 @@ const SingleSignupContainerV2 = ({
                 passVaultSharingEnabled,
                 hideFreePlan: signupParameters.hideFreePlan,
                 isPassWelcome: signupParameters.isPassWelcome,
+                mode: signupParameters.mode,
             });
         }
         throw new Error('Unknown app');
@@ -379,7 +394,11 @@ const SingleSignupContainerV2 = ({
             await startUnAuthFlow().catch(noop);
 
             const maybeSession = (() => {
-                if (signupParameters.localID === -1 || !activeSessions?.length) {
+                if (
+                    signupParameters.localID === -1 ||
+                    !activeSessions?.length ||
+                    signupParameters.mode === SignupMode.Invite
+                ) {
                     return undefined;
                 }
                 return (
@@ -447,6 +466,12 @@ const SingleSignupContainerV2 = ({
                 };
             }
 
+            let mode = signupParameters.mode;
+            if (mode === SignupMode.Onboarding && !session?.user) {
+                mode = SignupMode.Default;
+                setSignupParameters((old) => ({ ...old, mode }));
+            }
+
             setModelDiff({
                 session,
                 domains,
@@ -463,7 +488,7 @@ const SingleSignupContainerV2 = ({
                 setLoadingChallenge(false);
 
                 if (toApp === APPS.PROTONPASS) {
-                    const onboardingMode = signupParameters.mode === SignupMode.Onboarding;
+                    const onboardingMode = mode === SignupMode.Onboarding;
 
                     if (onboardingMode && hasPaidPass(session.user)) {
                         const freeSubscriptionData = getFreeSubscriptionData(subscriptionData);
@@ -827,7 +852,7 @@ const SingleSignupContainerV2 = ({
                         features={features}
                         isDesktop={isDesktop}
                         logo={logo}
-                        titles={titles}
+                        title={title}
                         api={normalApi}
                         benefits={benefits}
                         measure={measure}
