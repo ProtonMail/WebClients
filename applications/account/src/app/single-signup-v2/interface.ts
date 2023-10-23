@@ -18,6 +18,7 @@ import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 
 import type { InviteData, ReferralData, SessionData, SubscriptionData, UserCacheResult } from '../signup/interfaces';
 import { SignupCacheResult, SignupType } from '../signup/interfaces';
+import { getSignupSearchParams } from '../signup/searchParams';
 import { PlanCard } from './PlanCardSelector';
 import { TelemetryMeasurementData } from './measure';
 
@@ -98,6 +99,7 @@ export interface Upsell {
 export enum SignupMode {
     Default = 'default',
     Onboarding = 'onboarding',
+    Invite = 'invite',
 }
 
 export interface SignupTheme {
@@ -125,10 +127,7 @@ export interface SignupCustomStepProps {
 
 export interface SignupConfiguration {
     logo: ReactNode;
-    titles: {
-        [SignupMode.Default]: ReactNode;
-        [SignupMode.Onboarding]: ReactNode;
-    };
+    title: ReactNode;
     signupTypes: SignupType[];
     features: { key: Key; left: ReactNode; text: ReactNode }[];
     benefits: ReactNode;
@@ -146,4 +145,11 @@ export interface SignupConfiguration {
 export interface PlanParameters {
     defined: boolean;
     planIDs: PlanIDs;
+}
+
+export interface SignupParameters2 extends Omit<ReturnType<typeof getSignupSearchParams>, 'invite'> {
+    localID: number | undefined;
+    mode: SignupMode;
+    invite: { type: 'pass'; data: { inviter: string; invited: string } } | undefined;
+    isPassWelcome: boolean;
 }
