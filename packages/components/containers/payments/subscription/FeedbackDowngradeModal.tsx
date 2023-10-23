@@ -227,7 +227,7 @@ const FeedbackDowngradeModal = ({
     };
 
     return (
-        <Modal as={Form} onClose={handleKeepSubscription} onSubmit={handleSubmit} {...rest}>
+        <Modal as={Form} onClose={handleKeepSubscription} onSubmit={handleSubmit} data-testid="help-improve" {...rest}>
             <ModalHeader title={c('Downgrade modal exit survey title').t`Help us improve!`} />
             <ModalContent>
                 <InputFieldTwo

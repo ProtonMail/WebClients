@@ -97,7 +97,7 @@ const InvoicesSection = () => {
                 <SettingsParagraph>{c('Info')
                     .t`You can customize and download your invoices for accounting purposes.`}</SettingsParagraph>
                 {hasUnpaid ? (
-                    <Alert className="mb-4" type="error">
+                    <Alert className="mb-4" type="error" data-testid="overdue-alert">
                         {c('Error')
                             .t`Your account or organization has an overdue invoice. Please pay all unpaid invoices.`}
                     </Alert>
