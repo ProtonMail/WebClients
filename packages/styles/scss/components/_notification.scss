@@ -71,8 +71,7 @@
 		.notification__button {
 			white-space: nowrap;
 			align-self: center;
-			margin-inline-start: em(8);
-			margin-inline-end: em(-6);
+			margin-inline: em(8) em(-6);
 			flex-shrink: 0;
 
 			// spacing between two buttons

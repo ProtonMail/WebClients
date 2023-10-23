@@ -12,14 +12,14 @@
         "test": "echo No tests yet"
     },
     "dependencies": {
-        "docx-preview": "^0.1.18"
+        "docx-preview": "^0.1.20"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "browserslist-to-esbuild": "^1.2.0",
         "cross-env": "^7.0.3",
-        "esbuild": "^0.19.4",
-        "eslint": "^8.51.0",
+        "esbuild": "^0.19.5",
+        "eslint": "^8.52.0",
         "prettier": "^3.0.3",
         "typescript": "^5.2.2"
     }
