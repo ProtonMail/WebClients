@@ -161,10 +161,13 @@ const Setup = ({ onLogin, UID, children }: Props) => {
 
         const hashParams = new URLSearchParams(window.location.hash.slice(1));
         const selector = hashParams.get('selector');
+        const jwtToken = hashParams.get('token');
+
+        hashParams.delete('selector');
+        hashParams.delete('token');
+        window.location.hash = hashParams.toString();
 
         if (selector) {
-            window.location.hash = '';
-
             setupFork(selector)
                 .then((UID) => setupApp(UID))
                 .catch(handleSetupError);
@@ -172,12 +175,8 @@ const Setup = ({ onLogin, UID, children }: Props) => {
             return;
         }
 
-        const jwt = location.hash.substring(1);
-
-        if (jwt) {
-            window.location.hash = '';
-
-            setupJwt(jwt)
+        if (jwtToken) {
+            setupJwt(jwtToken)
                 .then((UID) => setupApp(UID))
                 .catch(handleSetupError);
 
