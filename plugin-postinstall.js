@@ -5,7 +5,7 @@ module.exports = {
         return {
             hooks: {
                 afterAllInstalled: function () {
-                    shell.execute('yarn workspaces foreach --all run postinstall');
+                    shell.execute('yarn workspaces foreach --parallel --all run postinstall');
                 },
             },
         };
