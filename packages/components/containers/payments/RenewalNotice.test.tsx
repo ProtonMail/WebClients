@@ -1,6 +1,10 @@
 import { render } from '@testing-library/react';
 
-import RenewalNotice from './RenewalNotice';
+import { getRenewalNoticeText } from './RenewalNotice';
+
+const RenewalNotice = (...props: Parameters<typeof getRenewalNoticeText>) => {
+    return <div>{getRenewalNoticeText(...props)}</div>;
+};
 
 describe('<RenewalNotice />', () => {
     beforeEach(() => {
