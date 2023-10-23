@@ -24,7 +24,7 @@ import { ProductParam } from '@proton/shared/lib/apps/product';
 import { APP_NAMES, CLIENT_TYPES, COUPON_CODES, CYCLE, PLANS, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { getPlanFromPlanIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getIsVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
 import { Plan, PlansMap } from '@proton/shared/lib/interfaces';
@@ -32,7 +32,6 @@ import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
 import noop from '@proton/utils/noop';
 
-import { getPlanFromPlanIDs } from '../signup/helper';
 import { SignupCacheResult, SignupType } from '../signup/interfaces';
 import { getSignupSearchParams } from '../signup/searchParams';
 import {
