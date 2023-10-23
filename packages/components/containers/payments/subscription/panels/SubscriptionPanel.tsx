@@ -22,6 +22,7 @@ import {
     getVPNDedicatedIPs,
     hasPassPlus,
     hasVPN,
+    hasVPNPassBundle,
     hasVpnBusiness,
     isTrial,
 } from '@proton/shared/lib/helpers/subscription';
@@ -513,7 +514,7 @@ const SubscriptionPanel = ({
                 if (user.isFree && app === APPS.PROTONVPN_SETTINGS) {
                     return getVpnAppFree();
                 }
-                if (hasVPN(subscription)) {
+                if (hasVPN(subscription) || hasVPNPassBundle(subscription)) {
                     return getVpnPlus();
                 }
                 if (user.isFree && app === APPS.PROTONPASS) {
