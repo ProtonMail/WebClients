@@ -23,8 +23,7 @@ $sticky-title-height: rem(100) !default;
 	padding-inline: 2em;
 	inline-size: 100%;
 	max-inline-size: 120ch; // avoid too long lines
-	margin-inline-start: auto;
-	margin-inline-end: auto;
+	margin-inline: auto auto;
 
 	@include media('>xlarge') {
 		max-inline-size: 75vw;
