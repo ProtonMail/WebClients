@@ -1,12 +1,11 @@
 import { PAYMENT_METHOD_TYPES, PaymentMethodStatus } from '@proton/components/payments/core';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { CYCLE, PLANS } from '@proton/shared/lib/constants';
-import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { getPlanFromPlanIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
 import { Currency, PlansMap } from '@proton/shared/lib/interfaces';
 import { Clients } from '@proton/shared/lib/pass/constants';
 
-import { getPlanFromPlanIDs } from '../signup/helper';
 import { SessionData, SignupCacheResult } from '../signup/interfaces';
 
 export type InteractFields = 'username' | 'email' | 'email_confirm' | 'pwd' | 'pwd_confirm';

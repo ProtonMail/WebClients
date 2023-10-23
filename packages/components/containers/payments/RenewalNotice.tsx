@@ -1,19 +1,62 @@
 import { addMonths } from 'date-fns';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
-import { COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
+import { CYCLE } from '@proton/shared/lib/constants';
+import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
-import { Subscription } from '@proton/shared/lib/interfaces';
-import clsx from '@proton/utils/clsx';
+import { Currency, PlanIDs, PlansMap, Subscription } from '@proton/shared/lib/interfaces';
 
-import { Icon, Time } from '../../components';
+import Price from '../../components/price/Price';
+import Time from '../../components/time/Time';
+import { getMonths } from './SubscriptionsSection';
 
 export type RenewalNoticeProps = {
     renewCycle: number;
     isCustomBilling?: boolean;
     isScheduledSubscription?: boolean;
     subscription?: Subscription;
-    coupon?: string | null;
+};
+
+export const getBlackFridayRenewalNoticeText = ({
+    price,
+    cycle,
+    plansMap,
+    planIDs,
+    currency,
+}: {
+    price: number;
+    cycle: CYCLE;
+    plansMap: PlansMap;
+    planIDs: PlanIDs;
+    currency: Currency;
+}) => {
+    const nextCycle = getNormalCycleFromCustomCycle(cycle);
+    const plan = getPlanFromPlanIDs(plansMap, planIDs);
+    const discountedPrice = (
+        <Price key="a" currency={currency}>
+            {price}
+        </Price>
+    );
+    const nextPrice = plan ? (
+        <Price key="b" currency={currency}>
+            {plan?.Pricing[nextCycle] || 0}
+        </Price>
+    ) : null;
+
+    const discountedMonths = ((n: number) => {
+        if (n === CYCLE.MONTHLY) {
+            // translator: This string is a special case for 1 month billing cycle, together with the string "The specially discounted price of ... is valid for the first 'month' ..."
+            return c('bf2023: renew').t`the first month`;
+        }
+        // translator: The singular is not handled in this string. The month part of the string "The specially discounted price of EUR XX is valid for the first 30 months. Then it will automatically be renewed at the discounted price of EUR XX for 24 months. You can cancel at any time."
+        return c('bf2023: renew').ngettext(msgid`${n} month`, `the first ${n} months`, n);
+    })(cycle);
+
+    const nextMonths = getMonths(nextCycle);
+
+    // translator: The specially discounted price of EUR XX is valid for the first 30 months. Then it will automatically be renewed at the discounted price of EUR XX for 24 months. You can cancel at any time.
+    return c('bf2023: renew')
+        .jt`The specially discounted price of ${discountedPrice} is valid for ${discountedMonths}. Then it will automatically be renewed at the discounted price of ${nextPrice} for ${nextMonths}. You can cancel at any time.`;
 };
 
 export const getRenewalNoticeText = ({
@@ -21,7 +64,6 @@ export const getRenewalNoticeText = ({
     isCustomBilling,
     isScheduledSubscription,
     subscription,
-    coupon,
 }: RenewalNoticeProps) => {
     let unixRenewalTime: number = +addMonths(new Date(), renewCycle) / 1000;
     if (isCustomBilling && subscription) {
@@ -41,21 +83,6 @@ export const getRenewalNoticeText = ({
 
     const nextCycle = getNormalCycleFromCustomCycle(renewCycle);
 
-    if (coupon === COUPON_CODES.BLACK_FRIDAY_2023) {
-        const start = c('Info').jt`Your subscription will auto-renew on ${renewalTime}.`;
-        let end;
-        if (nextCycle === CYCLE.MONTHLY) {
-            end = c('Info').t`After this date, you'll be billed every month at the regular price.`;
-        }
-        if (nextCycle === CYCLE.YEARLY) {
-            end = c('Info').t`After this date, you'll be billed every 12 months at the normal yearly rate.`;
-        }
-        if (nextCycle === CYCLE.TWO_YEARS) {
-            end = c('Info').t`After this date, you'll be billed every 24 months at the normal 2-year rate.`;
-        }
-        return [start, ' ', end];
-    }
-
     let start;
     if (nextCycle === CYCLE.MONTHLY) {
         start = c('Info').t`Subscription auto-renews every month.`;
@@ -69,35 +96,3 @@ export const getRenewalNoticeText = ({
 
     return [start, ' ', c('Info').jt`Your next billing date is ${renewalTime}.`];
 };
-
-export interface Props extends RenewalNoticeProps {
-    className?: string;
-}
-
-const RenewalNotice = ({
-    renewCycle,
-    isCustomBilling,
-    isScheduledSubscription,
-    subscription,
-    className,
-    coupon,
-}: Props) => {
-    return (
-        <div className={clsx('flex flex-nowrap color-weak', className)}>
-            <span className="flex-item-noshrink mr-2">
-                <Icon name="info-circle" size={16} />
-            </span>
-            <span className="flex-item-fluid">
-                {getRenewalNoticeText({
-                    renewCycle,
-                    isCustomBilling,
-                    isScheduledSubscription,
-                    subscription,
-                    coupon,
-                })}
-            </span>
-        </div>
-    );
-};
-
-export default RenewalNotice;

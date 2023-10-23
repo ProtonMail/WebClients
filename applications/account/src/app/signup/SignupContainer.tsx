@@ -41,7 +41,7 @@ import {
 } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { getPlanFromPlanIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
 import { Api, Currency, Cycle, HumanVerificationMethodType, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import { getLocalPart } from '@proton/shared/lib/keys/setupAddress';
@@ -67,13 +67,7 @@ import SignupSupportDropdown from './SignupSupportDropdown';
 import UpsellStep from './UpsellStep';
 import VerificationStep from './VerificationStep';
 import { DEFAULT_SIGNUP_MODEL } from './constants';
-import {
-    getPlanFromPlanIDs,
-    getSignupApplication,
-    getSubscriptionPrices,
-    isMailReferAFriendSignup,
-    isMailTrialSignup,
-} from './helper';
+import { getSignupApplication, getSubscriptionPrices, isMailReferAFriendSignup, isMailTrialSignup } from './helper';
 import {
     InviteData,
     PlanIDs,

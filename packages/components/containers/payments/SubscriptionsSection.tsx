@@ -34,7 +34,7 @@ import { SettingsSectionWide } from '../account';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import { subscriptionExpires } from './subscription/helpers';
 
-const getMonths = (n: number) => c('Billing cycle').ngettext(msgid`${n} month`, `${n} months`, n);
+export const getMonths = (n: number) => c('Billing cycle').ngettext(msgid`${n} month`, `${n} months`, n);
 
 const SubscriptionsSection = () => {
     const [plans, loadingPlans] = usePlans();
