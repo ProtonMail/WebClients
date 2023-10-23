@@ -153,7 +153,7 @@ const BACK: Partial<{ [key in SUBSCRIPTION_STEPS]: SUBSCRIPTION_STEPS }> = {
 
 const getCodes = ({ gift, coupon }: Model): string[] => [gift, coupon].filter(isTruthy);
 
-const UserInfo = ({ className, app }: { className?: string; app: APP_NAMES }) => {
+const UserInfo = ({ className, app, avatar }: { className?: string; app: APP_NAMES; avatar?: boolean }) => {
     const [user] = useUser();
 
     const [subscription] = useSubscription();
@@ -167,18 +167,20 @@ const UserInfo = ({ className, app }: { className?: string; app: APP_NAMES }) =>
     const name = Email ? Email : nameToDisplay;
 
     return (
-        <div className={clsx('flex flex-nowrap flex-align-items-center', className)}>
-            <span
-                className="my-auto rounded bg-weak p-1 inline-block relative flex flex-item-noshrink min-w-custom min-h-custom"
-                aria-hidden="true"
-                style={{
-                    '--min-w-custom': '2rem',
-                    '--min-h-custom': '2rem',
-                }}
-            >
-                <span className="m-auto">{initials}</span>
-            </span>
-            <div className="ml-3 flex gap-2">
+        <div className={clsx('flex flex-nowrap flex-align-items-center gap-3', className)}>
+            {avatar && (
+                <span
+                    className="my-auto rounded bg-weak p-1 inline-block relative flex flex-item-noshrink min-w-custom min-h-custom"
+                    aria-hidden="true"
+                    style={{
+                        '--min-w-custom': '2rem',
+                        '--min-h-custom': '2rem',
+                    }}
+                >
+                    <span className="m-auto">{initials}</span>
+                </span>
+            )}
+            <div className="flex gap-2">
                 <span className="text-ellipsis" title={name}>
                     {name}
                 </span>
