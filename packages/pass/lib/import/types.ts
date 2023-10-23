@@ -16,6 +16,7 @@ export enum ImportProvider {
     KEEPER = 'keeper',
     ROBOFORM = 'roboform',
     NORDPASS = 'nordpass',
+    ENPASS = 'enpass',
 }
 
 export const PROVIDER_INFO_MAP: Record<ImportProvider, { title: string; fileExtension: string; tutorialUrl: string }> =
@@ -88,6 +89,11 @@ export const PROVIDER_INFO_MAP: Record<ImportProvider, { title: string; fileExte
         [ImportProvider.NORDPASS]: {
             title: 'NordPass',
             fileExtension: 'csv',
+            tutorialUrl: '',
+        },
+        [ImportProvider.ENPASS]: {
+            title: 'Enpass',
+            fileExtension: 'json',
             tutorialUrl: '',
         },
     };
