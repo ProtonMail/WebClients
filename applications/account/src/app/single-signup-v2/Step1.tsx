@@ -14,7 +14,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Vr } from '@proton/atoms/Vr';
-import { Icon, InlineLinkButton } from '@proton/components/components';
+import { Icon, IconName, InlineLinkButton } from '@proton/components/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { CurrencySelector, CycleSelector, useFlag } from '@proton/components/containers';
 import {
@@ -25,7 +25,7 @@ import { getShortBillingText } from '@proton/components/containers/payments/help
 import { useLoading } from '@proton/hooks';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
-import { APP_NAMES, BRAND_NAME, COUPON_CODES, CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { APP_NAMES, BRAND_NAME, COUPON_CODES, CYCLE, PASS_APP_NAME, PLANS } from '@proton/shared/lib/constants';
 import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
@@ -41,7 +41,6 @@ import noop from '@proton/utils/noop';
 import SignupSupportDropdown from '../signup/SignupSupportDropdown';
 import { getSubscriptionPrices } from '../signup/helper';
 import { SignupCacheResult, SignupType, SubscriptionData } from '../signup/interfaces';
-import { SignupParameters } from '../signup/searchParams';
 import { useFlowRef } from '../useFlowRef';
 import AccountStepDetails, { AccountStepDetailsRef } from './AccountStepDetails';
 import AccountStepPayment, { AccountStepPaymentRef } from './AccountStepPayment';
@@ -62,6 +61,7 @@ import {
     OptimisticOptions,
     SignupMode,
     SignupModelV2,
+    SignupParameters2,
     SignupTheme,
     UpsellTypes,
 } from './interface';
@@ -83,7 +83,7 @@ const Step1 = ({
     app,
     shortAppName,
     appName,
-    titles,
+    title,
     selectedPlan,
     currentPlan,
     benefits,
@@ -102,7 +102,7 @@ const Step1 = ({
     measure,
     mode,
 }: {
-    signupParameters: SignupParameters;
+    signupParameters: SignupParameters2;
     isPassWelcome?: boolean;
     signupTypes: SignupType[];
     theme: SignupTheme;
@@ -111,7 +111,7 @@ const Step1 = ({
     shortAppName: string;
     appName: string;
     logo: ReactNode;
-    titles: { [SignupMode.Default]: ReactNode; [SignupMode.Onboarding]: ReactNode };
+    title: ReactNode;
     features: { key: Key; text: ReactNode; left: ReactNode }[];
     selectedPlan: Plan;
     planCards: PlanCard[];
@@ -291,12 +291,15 @@ const Step1 = ({
 
     const cta = c('pass_signup_2023: Action').t`Start using ${appName} now`;
     const hasSelectedFree = selectedPlanCard?.plan === PLANS.FREE;
-    const isOnboardingMode = mode === SignupMode.Onboarding && !!model.session?.user;
+    const isOnboardingMode = mode === SignupMode.Onboarding;
 
     const isDarkBg = theme.background === 'bf';
 
     let step = 1;
-    const hasPlanSelector = !model.planParameters?.defined || model.upsell.mode === UpsellTypes.UPSELL || isPassWelcome;
+
+    const hasPlanSelector =
+        (!model.planParameters?.defined || model.upsell.mode === UpsellTypes.UPSELL || isPassWelcome) &&
+        [SignupMode.Default, SignupMode.Onboarding].includes(mode);
 
     const renewalNotice = !hasSelectedFree && (
         <div className="w100 text-sm color-norm opacity-70">
@@ -325,10 +328,13 @@ const Step1 = ({
             className={className}
         >
             <div className="flex flex-align-items-center flex-column">
-                <div className="single-signup-header-v2 text-center mt-8 mb-4">
-                    <h1 className="m-0 large-font lg:px-4 text-semibold">
-                        {!isOnboardingMode ? titles[SignupMode.Default] : titles[SignupMode.Onboarding]}
-                    </h1>
+                <div
+                    className={clsx(
+                        'single-signup-header-v2 text-center mt-8 mb-4',
+                        signupParameters.mode == SignupMode.Invite && 'max-w-full'
+                    )}
+                >
+                    <h1 className="m-0 large-font lg:px-4 text-semibold">{title}</h1>
                 </div>
                 {!isOnboardingMode && hasPlanSelector && (
                     <div className="flex flex-nowrap mb-4 gap-1 md:gap-8">
@@ -345,24 +351,38 @@ const Step1 = ({
                     </div>
                 )}
                 {(() => {
-                    if (!hasPlanSelector || model.upsell.mode === UpsellTypes.UPSELL) {
-                        return null;
-                    }
-
-                    const wrap = (textLaunchOffer: ReactNode) => {
+                    const wrap = (iconName: IconName, textLaunchOffer: ReactNode) => {
                         return (
-                            <div className="signup-v2-offer-banner py-2 px-4 rounded-lg color-primary text-lg inline-flex flex-nowrap mt-4">
-                                <Icon name="hourglass" size={14} className="flex-item-noshrink mt-1" />
+                            <div className="signup-v2-offer-banner py-2 px-4 rounded-lg color-primary md:text-lg inline-flex flex-nowrap mt-4">
+                                <Icon name={iconName} size={14} className="flex-item-noshrink mt-1" />
                                 <span className="ml-2 flex-item-fluid">{textLaunchOffer}</span>
                             </div>
                         );
                     };
 
+                    if (signupParameters.invite?.type === 'pass') {
+                        const inviterEmailJSX = <strong key="invite">{signupParameters.invite.data.inviter}</strong>;
+                        return wrap(
+                            'user',
+                            <>
+                                <span className="block">
+                                    {c('Info').jt`${inviterEmailJSX} wants to share data with you in ${PASS_APP_NAME}`}
+                                </span>
+                                {c('Info')
+                                    .t`Get access by creating a ${BRAND_NAME} account and accepting the invitation.`}
+                            </>
+                        );
+                    }
+
+                    if (!hasPlanSelector || model.upsell.mode === UpsellTypes.UPSELL) {
+                        return null;
+                    }
+
                     if (isPassWelcome) {
                         const title = model.plansMap[PLANS.PASS_PLUS]?.Title;
                         const textLaunchOffer = c('pass_signup_2023: Info')
                             .jt`Limited time offer: Get ${title} for free for 1 year!`;
-                        return wrap(textLaunchOffer);
+                        return wrap('hourglass', textLaunchOffer);
                     }
 
                     const bestPlanCard = planCards.find((planCard) => planCard.type === 'best');
@@ -390,7 +410,7 @@ const Step1 = ({
                     // translator: full sentence is: Special launch offer: Get Pass Plus for ${options.currency} 1 /month forever!
                     const textLaunchOffer = c('pass_signup_2023: Info')
                         .jt`Special launch offer: Get ${title} for ${price} forever!`;
-                    return wrap(textLaunchOffer);
+                    return wrap('hourglass', textLaunchOffer);
                 })()}
                 {hasPlanSelector && (
                     <Box className="mt-8 w-full">
@@ -514,6 +534,10 @@ const Step1 = ({
 
                         const user = model?.session?.user;
 
+                        if (isOnboardingMode && !hasSelectedFree) {
+                            return null;
+                        }
+
                         if (user && !loadingSignout) {
                             return (
                                 <>
@@ -565,13 +589,25 @@ const Step1 = ({
                         return (
                             <>
                                 <BoxHeader
-                                    step={step++}
-                                    title={c('pass_signup_2023: Title').t`Create your ${BRAND_NAME} account`}
+                                    {...(signupParameters.invite?.type === 'pass'
+                                        ? {
+                                              title: c('pass_signup_2023: Title').t`Create a ${PASS_APP_NAME} account`,
+                                          }
+                                        : {
+                                              title: c('pass_signup_2023: Title').t`Create your ${BRAND_NAME} account`,
+                                              step: step++,
+                                          })}
                                 />
                                 <BoxContent>
                                     <div className="flex flex-align-items-start flex-justify-space-between gap-14">
                                         <div className="flex-item-fluid w0 relative">
                                             <AccountStepDetails
+                                                {...(signupParameters.invite?.type === 'pass'
+                                                    ? {
+                                                          defaultEmail: signupParameters.invite.data.invited,
+                                                          disableEmail: true,
+                                                      }
+                                                    : undefined)}
                                                 domains={model.domains}
                                                 signupTypes={signupTypes}
                                                 passwordFields={true}
@@ -632,15 +668,17 @@ const Step1 = ({
                                                                     </Button>
                                                                 </div>
                                                             )}
-                                                            <div className="text-center">
-                                                                <span>
-                                                                    {
-                                                                        // translator: Full sentence "Already have an account? Sign in"
-                                                                        c('Go to sign in')
-                                                                            .jt`Already have an account? ${signIn}`
-                                                                    }
-                                                                </span>
-                                                            </div>
+                                                            {signupParameters.mode !== SignupMode.Invite && (
+                                                                <div className="text-center">
+                                                                    <span>
+                                                                        {
+                                                                            // translator: Full sentence "Already have an account? Sign in"
+                                                                            c('Go to sign in')
+                                                                                .jt`Already have an account? ${signIn}`
+                                                                        }
+                                                                    </span>
+                                                                </div>
+                                                            )}
                                                         </>
                                                     );
                                                 }}

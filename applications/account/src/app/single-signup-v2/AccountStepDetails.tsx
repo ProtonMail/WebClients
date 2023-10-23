@@ -205,6 +205,7 @@ const getErrorDetails = ({
 interface Props {
     accountStepDetailsRef: MutableRefObject<AccountStepDetailsRef | undefined>;
     disableChange: boolean;
+    disableEmail?: boolean;
     onSubmit?: () => void;
     api: Api;
     model: SignupModelV2;
@@ -225,6 +226,7 @@ const AccountStepDetails = ({
     loading,
     accountStepDetailsRef,
     disableChange,
+    disableEmail,
     footer,
     api,
     model,
@@ -374,6 +376,7 @@ const AccountStepDetails = ({
                 ] as const
             ).filter(isTruthy);
         })();
+
         const field = fields[0];
         if (field) {
             const value = { interactive: true, focus: true };
@@ -386,6 +389,24 @@ const AccountStepDetails = ({
             return false;
         }
         return true;
+    };
+
+    const onEmailValue = (value: string) => {
+        inputValuesRef.current.email = true;
+        setInputsDiff({ email: value });
+        setInputsStateDiff({ email: { interactive: true } });
+        const email = value.trim();
+        const errors = getErrorDetails({
+            signupType,
+            email,
+        });
+        emailAsyncValidator.trigger({
+            api,
+            error: !!errors.email,
+            value: email,
+            set: setEmailAsyncValidationState,
+            measure,
+        });
     };
 
     useImperativeHandle(accountStepDetailsRef, () => ({
@@ -426,6 +447,12 @@ const AccountStepDetails = ({
             window.removeEventListener('focus', handleFocus, true);
         };
     }, []);
+
+    useEffect(() => {
+        if (disableEmail && defaultEmail) {
+            onEmailValue(defaultEmail);
+        }
+    }, [disableEmail, defaultEmail]);
 
     const usernameError = states.username.interactive && states.username.focus ? errorDetails.username : undefined;
     const emailError = states.email.interactive && states.email.focus ? errorDetails.email : undefined;
@@ -520,26 +547,11 @@ const AccountStepDetails = ({
                                         }
                                     })()}
                                     disableChange={disableChange}
+                                    disabled={disableEmail}
                                     dense={!passwordFields ? !emailError : undefined}
                                     rootClassName={!passwordFields ? (!emailError ? 'pb-2' : undefined) : undefined}
                                     value={details.email}
-                                    onValue={(value: string) => {
-                                        inputValuesRef.current.email = true;
-                                        setInputsDiff({ email: value });
-                                        setInputsStateDiff({ email: { interactive: true } });
-                                        const email = value.trim();
-                                        const errors = getErrorDetails({
-                                            signupType,
-                                            email,
-                                        });
-                                        emailAsyncValidator.trigger({
-                                            api,
-                                            error: !!errors.email,
-                                            value: email,
-                                            set: setEmailAsyncValidationState,
-                                            measure,
-                                        });
-                                    }}
+                                    onValue={onEmailValue}
                                     onBlur={() => {
                                         // Doesn't work because it's in the challenge
                                         setInputsStateDiff({ email: { focus: true } });

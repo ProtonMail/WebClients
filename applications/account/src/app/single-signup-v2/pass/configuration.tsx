@@ -69,22 +69,24 @@ export const getCustomPassFeatures = (passVaultSharingEnabled: boolean) => {
 };
 
 export const getPassConfiguration = ({
-    isDesktop,
-    vpnServersCountData,
-    passVaultSharingEnabled,
-    isPassWelcome,
+    mode,
     hideFreePlan,
+    isDesktop,
+    isPassWelcome,
+    passVaultSharingEnabled,
+    vpnServersCountData,
 }: {
+    mode: SignupMode;
     hideFreePlan: boolean;
-    isPassWelcome: boolean;
     isDesktop: boolean;
-    vpnServersCountData: VPNServersCountData;
+    isPassWelcome: boolean;
     passVaultSharingEnabled: boolean;
+    vpnServersCountData: VPNServersCountData;
 }): SignupConfiguration => {
     const logo = <PassLogo />;
 
-    const title = <>{c('pass_signup_2023: Info').t`Encrypted password manager that also protects your identity`}</>;
-
+    const title = c('pass_signup_2023: Info').t`Encrypted password manager that also protects your identity`;
+    const inviteTitle = c('pass_signup_2023: Info').t`You have been invited to join ${PASS_APP_NAME}`;
     const onboardingTitle = c('pass_signup_2023: Info').t`Unlock ${PASS_APP_NAME} premium features by upgrading`;
 
     const features = getGenericFeatures(isDesktop);
@@ -131,17 +133,18 @@ export const getPassConfiguration = ({
 
     return {
         logo,
-        titles: {
+        title: {
             [SignupMode.Default]: title,
             [SignupMode.Onboarding]: onboardingTitle,
-        },
+            [SignupMode.Invite]: inviteTitle,
+        }[mode],
         features,
         benefits,
         planCards,
         signupTypes: [SignupType.Email],
         generateMnemonic: true,
         defaults: {
-            plan: PLANS.PASS_PLUS,
+            plan: mode === SignupMode.Invite ? PLANS.FREE : PLANS.PASS_PLUS,
             cycle: CYCLE.YEARLY,
         },
         product: APPS.PROTONPASS,
