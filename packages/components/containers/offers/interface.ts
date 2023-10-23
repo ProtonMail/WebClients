@@ -72,8 +72,8 @@ export interface OfferConfig {
     getCTAContent?: () => string;
     shapeButton?: ButtonLikeShape;
     images?: OfferImages;
-    darkBackground?: boolean; //Will use a light close button if true (ghost button with white text)
-    enableCycleSelector?: boolean; //Allow the selection of cycles if true in the checkout process
+    darkBackground?: boolean; // Will use a light close button if true (ghost button with white text)
+    enableCycleSelector?: boolean; // Allow the selection of cycles if true in the checkout process
 }
 
 interface Feature {
@@ -93,8 +93,10 @@ export interface Deal {
     planIDs: PlanIDs; // planIDs used to subscribe
     planName: PLANS; // plan display in the deal
     popular?: number; // 1 = most popular, 2 = second most popular, etc.
+    mobileOrder?: number; // 1 = most popular, 2 = second most popular, etc. if using this, please specify it for all plans to avoid issues
     header?: () => string | ReactNode;
     star?: string;
+    isGuaranteed?: boolean;
 }
 
 export interface Prices {

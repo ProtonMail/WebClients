@@ -11,6 +11,8 @@ import {
     DRIVE_SHORT_APP_NAME,
     MAIL_APP_NAME,
     MAIL_SHORT_APP_NAME,
+    PLANS,
+    PLAN_NAMES,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
@@ -95,31 +97,31 @@ export const getUnlimitedDealFeatures = () => {
 };
 
 const getPremiumVPNFeature = () => ({
-    name: c('bf2023: Deal details').t`Premium ${VPN_SHORT_APP_NAME}`,
+    name: PLAN_NAMES[PLANS.VPN],
     tooltip: c('bf2023: Tooltip')
-        .t`Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.`,
+        .t`Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.`,
 });
 
 const getPremiumPasswordManagerFeature = () => ({
-    name: c('bf2023: Deal details').t`Premium Password Manager`,
+    name: PLAN_NAMES[PLANS.PASS_PLUS],
     tooltip: c('bf2023: Tooltip')
-        .t`Secure logins on all your devices. Includes unlimited aliases, sharing, vaults, integrated 2FA and more.`,
+        .t`Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.`,
 });
 
 const getPremiumDriveFeature = () => ({
-    name: c('bf2023: Deal details').t`Premium ${DRIVE_SHORT_APP_NAME}`,
+    name: PLAN_NAMES[PLANS.DRIVE],
     tooltip: c('bf2023: Tooltip')
-        .t`Secure your files, folders and photos with end-to-end and zero-access encryption. Includes version history, encrypted file sharing, and more.`,
+        .t`Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.`,
 });
 
 const getPremiumInboxFeature = (domains?: number, addresses?: number) => {
-    const name = c('bf2023: Deal details').t`Premium ${MAIL_SHORT_APP_NAME} & ${CALENDAR_SHORT_APP_NAME}`;
+    const name = c('bf2023: Deal details').t`${MAIL_SHORT_APP_NAME} Plus and ${CALENDAR_SHORT_APP_NAME}`;
 
     if (domains && addresses) {
         if (addresses === 10) {
             const aliases = 10;
             return {
-                name,
+                name: c('bf2023: Deal details').t`All paid ${MAIL_SHORT_APP_NAME} and ${CALENDAR_APP_NAME} features`,
                 tooltip: c('bf2023: Tooltip')
                     .t`Includes support for ${domains} custom email domain, ${addresses} email addresses, ${aliases} hide-my-email aliases, calendar sharing, and more.`,
             };
@@ -218,9 +220,9 @@ export const getVPNFeatures = () => [
             .t`Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.`,
     },
     {
-        name: c('bf2023: Deal details').t`Fast BitTorrent downloads`,
+        name: c('bf2023: Deal details').t`Access content worldwide`,
         tooltip: c('bf2023: Tooltip')
-            .t`Unlock peer-to-peer downloads and file sharing. Increase upload and download speeds and hide your IP address.`,
+            .t`Bypass local internet blocks and censorship with our global network of servers.`,
     },
 ];
 
