@@ -23,12 +23,12 @@
         "@protontech/mutex-browser": "^1.0.5",
         "@protontech/tidy-url": "^1.6.17",
         "@protontech/timezone-support": "^3.0.0",
-        "@sentry/browser": "^7.73.0",
-        "@types/dompurify": "^3.0.3",
-        "@types/node": "^18.18.4",
-        "@types/papaparse": "^5.3.9",
-        "@types/ua-parser-js": "^0.7.37",
-        "@types/webpack-env": "^1.18.2",
+        "@sentry/browser": "^7.74.1",
+        "@types/dompurify": "^3.0.4",
+        "@types/node": "^18.18.6",
+        "@types/papaparse": "^5.3.10",
+        "@types/ua-parser-js": "^0.7.38",
+        "@types/webpack-env": "^1.18.3",
         "date-fns": "^2.30.0",
         "dompurify": "^3.0.6",
         "file-saver": "^2.0.5",
@@ -43,11 +43,11 @@
         "web-streams-polyfill": "^3.2.1"
     },
     "devDependencies": {
-        "@babel/plugin-transform-runtime": "^7.22.15",
+        "@babel/plugin-transform-runtime": "^7.23.2",
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/i18n": "workspace:packages/i18n",
-        "@types/jasmine": "^5.1.0",
-        "eslint": "^8.51.0",
+        "@types/jasmine": "^5.1.1",
+        "eslint": "^8.52.0",
         "jasmine": "^5.1.0",
         "jasmine-core": "^5.1.1",
         "karma": "^6.4.2",
@@ -60,7 +60,7 @@
         "ts-loader": "^9.5.0",
         "ttag": "^1.7.25",
         "typescript": "^5.2.2",
-        "webpack": "^5.88.2"
+        "webpack": "^5.89.0"
     },
     "peerDependencies": {
         "@proton/styles": "*",
