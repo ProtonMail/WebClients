@@ -20,6 +20,7 @@ const {
     RUNTIME_RELOAD_PORT,
     REDUX_DEVTOOLS_PORT,
     WEBPACK_DEV_PORT,
+    CLEAN_MANIFEST,
 } = require('./tools/env');
 
 const SUPPORTED_TARGETS = ['chrome', 'firefox'];
@@ -32,13 +33,14 @@ const config = fs.readFileSync('./src/app/config.ts', 'utf-8').replaceAll(/(expo
 
 console.log(`ENV = ${ENV}`);
 console.log(`BUILD_TARGET = ${BUILD_TARGET}`);
+console.log(`CLEAN_MANIFEST = ${CLEAN_MANIFEST}`);
 
 if (ENV !== 'production') {
-    console.log(`RESUME_FALLBACK = ${RESUME_FALLBACK}`);
     console.log(`HOT_MANIFEST_UPDATE = ${HOT_MANIFEST_UPDATE}`);
+    console.log(`REDUX_DEVTOOLS_PORT = ${REDUX_DEVTOOLS_PORT}`);
+    console.log(`RESUME_FALLBACK = ${RESUME_FALLBACK}`);
     console.log(`RUNTIME_RELOAD = ${RUNTIME_RELOAD}`);
     console.log(`RUNTIME_RELOAD_PORT = ${RUNTIME_RELOAD_PORT}`);
-    console.log(`REDUX_DEVTOOLS_PORT = ${REDUX_DEVTOOLS_PORT}`);
     console.log(`WEBPACK_DEV_PORT = ${WEBPACK_DEV_PORT}`);
 }
 
@@ -180,7 +182,7 @@ module.exports = {
                         }
 
                         /* sanitize manifest when building for production */
-                        if (ENV === 'production') {
+                        if (CLEAN_MANIFEST) {
                             switch (BUILD_TARGET) {
                                 case 'firefox':
                                     manifest.content_scripts[1].matches = ['https://account.proton.me/*'];
