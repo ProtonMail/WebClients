@@ -86,7 +86,7 @@ const encryptionConfig = ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519];
 
 const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
     const isEditing = !!forward;
-    const [addresses] = useAddresses();
+    const [addresses = []] = useAddresses();
     const api = useApi();
     const getUser = useGetUser();
     const silentApi = <T,>(config: any) => api<T>({ ...config, silence: true });
