@@ -5,10 +5,15 @@ import { c } from 'ttag';
 import { Icon, InlineLinkButton } from '@proton/components/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { changeSearchParams } from '@proton/shared/lib/helpers/url';
+import clsx from '@proton/utils/clsx';
 
 import { getHumanLabelID } from 'proton-mail/helpers/labels';
 
-const AlmostAllMailBanner = () => {
+interface Props {
+    className?: string;
+}
+
+const AlmostAllMailBanner = ({ className }: Props) => {
     const history = useHistory();
     const { push, location } = history;
 
@@ -22,7 +27,7 @@ const AlmostAllMailBanner = () => {
     );
 
     return (
-        <div className="bg-weak rounded m-4 px-4 py-2 flex flex-nowrap">
+        <div className={clsx(['bg-weak rounded mx-2 px-4 py-2 flex flex-nowrap', className])}>
             <div className="flex-item-noshrink">
                 <Icon name="magnifier" className="mr-2" />
             </div>
