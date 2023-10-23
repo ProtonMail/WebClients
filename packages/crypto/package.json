@@ -17,12 +17,12 @@
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
-        "@types/chai": "^4.3.6",
-        "@types/chai-as-promised": "^7.1.6",
-        "@types/mocha": "^10.0.2",
+        "@types/chai": "^4.3.9",
+        "@types/chai-as-promised": "^7.1.7",
+        "@types/mocha": "^10.0.3",
         "chai": "^4.3.10",
         "chai-as-promised": "^7.1.1",
-        "eslint": "^8.51.0",
+        "eslint": "^8.52.0",
         "eslint-plugin-chai-friendly": "^0.7.2",
         "karma": "^6.4.2",
         "karma-chrome-launcher": "^3.2.0",
@@ -35,7 +35,7 @@
         "prettier": "^3.0.3",
         "ts-loader": "^9.5.0",
         "typescript": "^5.2.2",
-        "webpack": "^5.88.2",
+        "webpack": "^5.89.0",
         "webpack-cli": "^5.1.4"
     }
 }
