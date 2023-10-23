@@ -14,7 +14,6 @@ import {
     useFlag,
     usePayment,
 } from '@proton/components/containers';
-import { getRenewalNoticeText } from '@proton/components/containers/payments/RenewalNotice';
 import { getTotalBillingText } from '@proton/components/containers/payments/helper';
 import { getDefaultVerifyPayment } from '@proton/components/containers/payments/usePaymentToken';
 import { useConfig } from '@proton/components/hooks';
@@ -452,9 +451,12 @@ const AccountStepPayment = ({
                                                                 return null;
                                                             }
                                                             return (
-                                                                <Price currency={subscriptionData.currency}>
-                                                                    {right}
-                                                                </Price>
+                                                                <>
+                                                                    <Price currency={subscriptionData.currency}>
+                                                                        {right}
+                                                                    </Price>
+                                                                    {!showAmountDue && '*'}
+                                                                </>
                                                             );
                                                         })()}
                                                     </span>
@@ -472,22 +474,17 @@ const AccountStepPayment = ({
                                                 {loadingPaymentDetails ? (
                                                     <CircleLoader />
                                                 ) : (
-                                                    <Price currency={subscriptionData.currency}>
-                                                        {options.checkResult.AmountDue}
-                                                    </Price>
+                                                    <>
+                                                        <Price currency={subscriptionData.currency}>
+                                                            {options.checkResult.AmountDue}
+                                                        </Price>
+                                                        *
+                                                    </>
                                                 )}
                                             </span>
                                         </div>
                                     </>
                                 )}
-                                <div className="text-sm color-weak">
-                                    <span>
-                                        {getRenewalNoticeText({
-                                            renewCycle: options.cycle,
-                                            coupon: options.checkResult.Coupon?.Code,
-                                        })}
-                                    </span>
-                                </div>
                             </div>
                         </RightPlanSummary>
                     </RightSummary>

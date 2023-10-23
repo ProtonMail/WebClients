@@ -14,10 +14,11 @@ import {
     PayPalButton,
     Payment as PaymentComponent,
     StyledPayPalButton,
+    getBlackFridayRenewalNoticeText,
+    getRenewalNoticeText,
     usePayment,
 } from '@proton/components/containers';
 import Alert3ds from '@proton/components/containers/payments/Alert3ds';
-import { getRenewalNoticeText } from '@proton/components/containers/payments/RenewalNotice';
 import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
 import { getDriveAppFeature } from '@proton/components/containers/payments/features/drive';
 import { getMailAppFeature } from '@proton/components/containers/payments/features/mail';
@@ -75,6 +76,7 @@ import {
 import { canUpsellToVPNPassBundle } from '@proton/shared/lib/helpers/blackfriday';
 import { SubscriptionCheckoutData, getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/subscription';
 import { getTermsURL, stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import { Currency, Cycle, CycleMapping, Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
@@ -86,7 +88,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import SignupSupportDropdown from '../signup/SignupSupportDropdown';
-import { getPlanFromPlanIDs, getSubscriptionPrices } from '../signup/helper';
+import { getSubscriptionPrices } from '../signup/helper';
 import { PlanIDs, SignupCacheResult, SignupType, SubscriptionData } from '../signup/interfaces';
 import AccountStepDetails, { AccountStepDetailsRef } from '../single-signup-v2/AccountStepDetails';
 import FreeLogo from '../single-signup-v2/FreeLogo';
@@ -877,9 +879,29 @@ const Step1 = ({
         }
     };
 
+    const renewalNotice = !hasSelectedFree && (
+        <div className="w100 text-sm color-norm opacity-70 text-center">
+            <div className="mx-auto w70 on-mobile-w100">
+                *
+                {options.checkResult.Coupon?.Code === COUPON_CODES.BLACK_FRIDAY_2023
+                    ? getBlackFridayRenewalNoticeText({
+                          price: options.checkResult.AmountDue,
+                          cycle: options.cycle,
+                          plansMap: model.plansMap,
+                          planIDs: options.planIDs,
+                          currency: options.currency,
+                      })
+                    : getRenewalNoticeText({
+                          renewCycle: options.cycle,
+                      })}
+            </div>
+        </div>
+    );
+
     return (
         <Layout
             hasDecoration
+            footer={renewalNotice}
             className={className}
             bottomRight={
                 <SignupSupportDropdown isDarkBg={['dark', 'bf2023'].includes(background as any) && !isTinyMobile} />
@@ -1643,18 +1665,13 @@ const Step1 = ({
                                                         {loadingPaymentDetails ? (
                                                             <CircleLoader />
                                                         ) : (
-                                                            <Price currency={options.currency}>
-                                                                {options.checkResult.AmountDue}
-                                                            </Price>
+                                                            <>
+                                                                <Price currency={options.currency}>
+                                                                    {options.checkResult.AmountDue}
+                                                                </Price>
+                                                                *
+                                                            </>
                                                         )}
-                                                    </span>
-                                                </div>
-                                                <div className="text-sm color-weak">
-                                                    <span>
-                                                        {getRenewalNoticeText({
-                                                            renewCycle: options.cycle,
-                                                            coupon: options.checkResult.Coupon?.Code,
-                                                        })}
                                                     </span>
                                                 </div>
                                             </div>

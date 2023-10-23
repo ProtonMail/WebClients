@@ -205,3 +205,12 @@ export const supportAddons = (planIDs: PlanIDs) => {
     const supportedAddons = getSupportedAddons(planIDs);
     return !!Object.keys(supportedAddons).length;
 };
+
+export const getPlanFromPlanIDs = (plansMap: PlansMap, planIDs: PlanIDs = {}) => {
+    const planID = Object.keys(planIDs).find((planID): planID is keyof PlansMap => {
+        return plansMap[planID as keyof PlansMap]?.Type === PLAN_TYPES.PLAN;
+    });
+    if (planID) {
+        return plansMap[planID];
+    }
+};
