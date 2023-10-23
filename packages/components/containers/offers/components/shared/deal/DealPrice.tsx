@@ -9,7 +9,7 @@ const DealPrice = () => {
         deal: { prices, cycle },
         currency,
     } = useDealContext();
-    const { withCoupon = 0 } = prices || {};
+    const { withCoupon = 0, withoutCouponMonthly = 0 } = prices || {};
 
     return (
         <div className="my-4 text-center">
@@ -21,13 +21,13 @@ const DealPrice = () => {
             >
                 {withCoupon / cycle}
             </Price>
-            {/* <Price
+            <Price
                 className="text-strike color-weak offer-regular-price relative"
                 currency={currency}
                 suffix={c('specialoffer: Offers').t`/ month`}
             >
                 {withoutCouponMonthly}
-            </Price> */}
+            </Price>
         </div>
     );
 };
