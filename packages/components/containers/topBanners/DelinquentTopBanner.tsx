@@ -29,7 +29,7 @@ const DelinquentTopBanner = () => {
 
         if (user.Delinquent === UNPAID_STATE.NO_RECEIVE) {
             return (
-                <TopBanner className="bg-danger">
+                <TopBanner className="bg-danger" data-testid="pay-invoice-alert">
                     {c('Info')
                         .jt`Your account has at least one overdue invoice. Your account is restricted, and all services are now blocked until payment. ${payInvoiceLink}`}
                 </TopBanner>
