@@ -17,11 +17,15 @@ import { Vr } from '@proton/atoms/Vr';
 import { Icon, InlineLinkButton } from '@proton/components/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { CurrencySelector, CycleSelector, useFlag } from '@proton/components/containers';
+import {
+    getBlackFridayRenewalNoticeText,
+    getRenewalNoticeText,
+} from '@proton/components/containers/payments/RenewalNotice';
 import { getShortBillingText } from '@proton/components/containers/payments/helper';
 import { useLoading } from '@proton/hooks';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
-import { APP_NAMES, BRAND_NAME, CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { APP_NAMES, BRAND_NAME, COUPON_CODES, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
@@ -294,10 +298,28 @@ const Step1 = ({
     let step = 1;
     const hasPlanSelector = !model.planParameters?.defined || model.upsell.mode === UpsellTypes.UPSELL || isPassWelcome;
 
+    const renewalNotice = !hasSelectedFree && (
+        <div className="w100 text-sm color-norm opacity-70">
+            *
+            {options.checkResult.Coupon?.Code === COUPON_CODES.BLACK_FRIDAY_2023
+                ? getBlackFridayRenewalNoticeText({
+                      price: options.checkResult.AmountDue,
+                      cycle: options.cycle,
+                      plansMap: model.plansMap,
+                      planIDs: options.planIDs,
+                      currency: options.currency,
+                  })
+                : getRenewalNoticeText({
+                      renewCycle: options.cycle,
+                  })}
+        </div>
+    );
+
     return (
         <Layout
             theme={theme}
             logo={logo}
+            footer={renewalNotice}
             hasDecoration
             bottomRight={<SignupSupportDropdown isDarkBg={isDarkBg} />}
             className={className}
