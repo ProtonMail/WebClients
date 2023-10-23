@@ -160,8 +160,7 @@ $modal-tiny-width: em(288) !default;
 .modal--height-auto {
 	block-size: auto;
 	max-block-size: $modal-full-dimension;
-	margin-block-start: 1%;
-	margin-block-end: 1%;
+	margin-block: 1% 1%;
 }
 
 .modal--no-outline {
@@ -239,8 +238,7 @@ $modal-tiny-width: em(288) !default;
 
 .modal-content-inner {
 	position: relative;
-	overflow-x: hidden;
-	overflow-y: auto;
+	overflow: hidden auto;
 	flex: 1 1 auto;
 	padding-block: 0;
 	padding-inline: rem(30);
@@ -283,8 +281,7 @@ $label-shorter-width: 10em !default;
 	}
 
 	.modal-header {
-		padding-block-start: rem(10);
-		padding-block-end: rem(5);
+		padding-block: rem(10) rem(5);
 	}
 }
 
