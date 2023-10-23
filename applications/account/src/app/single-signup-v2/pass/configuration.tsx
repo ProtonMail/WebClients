@@ -30,14 +30,14 @@ import recoveryKit from './recovery-kit.svg';
 export const getPassBenefits = (): BenefitItem[] => {
     return [
         {
-            key: 'a',
+            key: 1,
             text: c('pass_signup_2023: Info').t`Hide-my-email aliases protect your email from data breaches`,
             icon: {
                 name: 'alias',
             },
         },
         {
-            key: 'b',
+            key: 2,
             text: c('pass_signup_2023: Info').t`End-to-end encrypted notes`,
             icon: {
                 name: 'lock',

@@ -1,14 +1,18 @@
 import { c } from 'ttag';
 
 import { CALENDAR_APP_NAME, DRIVE_APP_NAME, MAIL_APP_NAME, PLANS } from '@proton/shared/lib/constants';
-import humanSize from '@proton/shared/lib/helpers/humanSize';
+import humanSize, { getSizeFormat } from '@proton/shared/lib/helpers/humanSize';
 import { Audience, PlansMap } from '@proton/shared/lib/interfaces';
 
 import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
+const getTb = (n: number) => {
+    return `${n} ${getSizeFormat('TB', n)}`;
+};
+
 export const getStorageFeature = (
     bytes: number,
-    options: { highlight?: boolean; boldStorageSize?: boolean; family?: boolean } = {}
+    options: { highlight?: boolean; boldStorageSize?: boolean; family?: boolean; visionary?: boolean } = {}
 ): PlanCardFeatureDefinition => {
     const { highlight = false, boldStorageSize = false } = options;
     if (bytes === -1) {
@@ -23,8 +27,11 @@ export const getStorageFeature = (
         };
     }
 
-    const humanReadableSize = options.family
-        ? c('specialoffer: Deal details').t`3 TB` // humanSize doesn't support TB and we don't want to add it yet because of "nice numbers" rounding issues.
+    // humanSize doesn't support TB and we don't want to add it yet because of "nice numbers" rounding issues.
+    const humanReadableSize = options.visionary
+        ? getTb(6)
+        : options.family
+        ? getTb(3)
         : humanSize(bytes, undefined, undefined, 0);
 
     const size = boldStorageSize ? <b key="bold-storage-size">{humanReadableSize}</b> : humanReadableSize;
