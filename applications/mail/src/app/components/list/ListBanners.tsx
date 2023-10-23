@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { DENSITY, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { UserSettings } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 
 import { isAllowedAutoDeleteLabelID } from 'proton-mail/helpers/autoDelete';
 
@@ -61,12 +62,22 @@ const ListBanners = ({
     const banners: Banner[] = [
         {
             id: 'es-slow',
-            banner: () => <EsSlowBanner key="es-slow" />,
+            banner: () => (
+                <EsSlowBanner
+                    key="es-slow"
+                    className={clsx([columnLayout ? 'mt-2' : 'my-3', isCompactView && 'mb-2'])}
+                />
+            ),
             condition: () => canDisplayESSlowToolbar,
         },
         {
             id: 'almost-all-mail',
-            banner: () => <AlmostAllMailBanner key="almost-all-mail" />,
+            banner: () => (
+                <AlmostAllMailBanner
+                    key="almost-all-mail"
+                    className={clsx([columnLayout ? 'mt-2' : 'my-3', isCompactView && 'mb-2'])}
+                />
+            ),
             condition: () => !isESLoading && isSearch && labelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
         },
         {
@@ -83,7 +94,16 @@ const ListBanners = ({
         },
         {
             id: 'task-running',
-            banner: () => <TaskRunningBanner key="task-running" className={canDisplayESSlowToolbar ? '' : 'mt-4'} />,
+            banner: () => (
+                <TaskRunningBanner
+                    key="task-running"
+                    className={clsx([
+                        !canDisplayESSlowToolbar && 'mt-3',
+                        columnLayout ? 'mb-0' : 'my-3',
+                        isCompactView && 'mb-3',
+                    ])}
+                />
+            ),
             condition: () => canDisplayTaskRunningBanner,
             canWith: ['es-slow'],
         },
