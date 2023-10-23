@@ -1,6 +1,5 @@
 import { ReactElement } from 'react';
 
-import { useFlag } from '@unleash/proxy-client-react';
 import { c } from 'ttag';
 
 import { ADDON_NAMES, APPS, APP_NAMES, CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
@@ -32,6 +31,7 @@ import {
     Tabs,
     VpnLogo,
 } from '../../../components';
+import { useFlag } from '../../unleash';
 import CurrencySelector from '../CurrencySelector';
 import CycleSelector from '../CycleSelector';
 import { getAllFeatures } from '../features';
