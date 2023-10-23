@@ -26,8 +26,7 @@
 		max-inline-size: rem(800);
 		padding: 2rem;
 		margin-inline: auto;
-		margin-block-start: var(--space-1); // So the highlight in case of textarea is fully visible on the top too.
-		margin-block-end: var(--space-8);
+		margin-block: var(--space-1) var(--space-8); // So the highlight in case of textarea is fully visible on the top too.
 		background-color: whitesmoke;
 		color: black;
 		flex: 1 1 auto;
