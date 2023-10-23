@@ -24,12 +24,14 @@ const DowngradeModal = ({ hasMail, hasVpn, onConfirm, onClose, ...rest }: Props)
                         onClose?.();
                     }}
                     color="norm"
+                    data-testid="confirm-downgrade-btn"
                 >
                     {c('Action').t`Downgrade`}
                 </Button>,
                 <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
             ]}
             onClose={onClose}
+            data-testid="confirm-downgrade-modal"
             {...rest}
         >
             <Alert className="mb-4" type="error">
