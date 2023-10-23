@@ -1,8 +1,6 @@
 import { ReactNode, useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 
-import { c } from 'ttag';
-
 import {
     EventManagerProvider,
     ModalsChildren,
@@ -102,7 +100,7 @@ const Setup = ({ onLogin, UID, children }: Props) => {
             }>(authJwt({ Token: jwt }));
 
             if (!RefreshToken) {
-                throw new Error(c('Error').t`Invalid JWT token`);
+                throw new Error('Invalid JWT token');
             }
 
             await setupCookies({ UID, RefreshToken });
