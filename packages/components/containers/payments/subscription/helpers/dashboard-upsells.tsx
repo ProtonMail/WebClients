@@ -451,7 +451,7 @@ export const resolveUpsellsToDisplay = ({
         const upsellsPayload = {
             app,
             plansMap: toMap(plans, 'Name'),
-            hasVPN: hasVPN(subscription),
+            hasVPN: hasVPN(subscription) || hasVPNPassBundle(subscription),
             serversCount,
             ...rest,
         };

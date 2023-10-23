@@ -39,7 +39,13 @@ import { hasBonuses } from '@proton/shared/lib/helpers/organization';
 import { getPlanFromCheckout, hasPlanIDs, supportAddons } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getInitials } from '@proton/shared/lib/helpers/string';
-import { getPrimaryPlan, hasMigrationDiscount, hasNewVisionary, hasVPN } from '@proton/shared/lib/helpers/subscription';
+import {
+    getPrimaryPlan,
+    hasMigrationDiscount,
+    hasNewVisionary,
+    hasVPN,
+    hasVPNPassBundle,
+} from '@proton/shared/lib/helpers/subscription';
 import {
     Audience,
     Currency,
@@ -298,7 +304,7 @@ const SubscriptionModal = ({
     const abortControllerRef = useRef<AbortController>();
 
     const handleUnsubscribe = async () => {
-        if (hasVPN(subscription)) {
+        if (hasVPN(subscription) || hasVPNPassBundle(subscription)) {
             if (subscription.Renew === Renew.Disabled) {
                 onClose?.();
                 return;
