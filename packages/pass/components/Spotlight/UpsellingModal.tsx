@@ -33,7 +33,8 @@ interface UpsellModalContent {
 const getFeatures = (): OfferFeatures[] => [
     { className: 'ui-orange', icon: 'pass-circles', label: c('Info').t`Multiple vaults` },
     { className: 'ui-teal', icon: 'alias', label: c('Info').t`Unlimited Aliases` },
-    { className: 'ui-lime', icon: 'list-bullets', label: c('Info').t`Custom fields` },
+    { className: 'ui-red', icon: 'users-plus', label: c('Info').t`Share with 10 others` },
+    { className: 'ui-lime', icon: 'list-bullets', label: c('Info').t`Credit cards, Custom fields` },
 ];
 
 const getContent = (type: UpsellingModalType): UpsellModalContent =>
