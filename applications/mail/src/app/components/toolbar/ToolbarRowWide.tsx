@@ -24,7 +24,7 @@ const BREAKPOINTS = {
     extratiny: 0,
     tiny: 100,
     small: 400,
-    medium: 740,
+    medium: 800,
     large: 1100,
 };
 
@@ -70,7 +70,7 @@ const ToolbarRowWide = ({
                 aria-label={c('Label').t`Toolbar`}
                 ref={toolbarRef}
             >
-                <div className="flex flex-align-items-center toolbar-inner gap-2">
+                <div className="flex flex-align-items-center flex-nowrap toolbar-inner gap-2">
                     {selectAll}
                     <LabelName selectedIDs={selectedIDs} labelName={labelName} />
 
