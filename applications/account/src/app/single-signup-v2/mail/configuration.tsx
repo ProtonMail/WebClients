@@ -27,7 +27,7 @@ import Benefits, { BenefitItem } from '../Benefits';
 import BundlePlanSubSection from '../BundlePlanSubSection';
 import { PlanCard, planCardFeatureProps } from '../PlanCardSelector';
 import { getBenefits, getGenericBenefits, getGenericFeatures, getJoinString } from '../configuration/helper';
-import { SignupConfiguration, SignupMode } from '../interface';
+import { SignupConfiguration } from '../interface';
 import CustomStep from './CustomStep';
 
 export const getMailBenefits = (): BenefitItem[] => {
@@ -128,10 +128,7 @@ export const getMailConfiguration = ({
 
     return {
         logo,
-        titles: {
-            [SignupMode.Default]: title,
-            [SignupMode.Onboarding]: title,
-        },
+        title,
         features,
         benefits,
         planCards,
