@@ -1,24 +1,14 @@
 import { c } from 'ttag';
 
-import { MailLogo } from '@proton/components/components';
-import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
+import { DriveLogo } from '@proton/components/components';
+import { getNCalendarsFeature } from '@proton/components/containers/payments/features/calendar';
 import { getStorageFeature } from '@proton/components/containers/payments/features/drive';
 import { getSupport } from '@proton/components/containers/payments/features/highlights';
-import {
-    getFoldersAndLabelsFeature,
-    getNAddressesFeature,
-    getNDomainsFeature,
-    getNMessagesFeature,
-} from '@proton/components/containers/payments/features/mail';
+import { getNAddressesFeature } from '@proton/components/containers/payments/features/mail';
+import { getVPNConnections } from '@proton/components/containers/payments/features/vpn';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
-import {
-    APPS,
-    CALENDAR_APP_NAME,
-    CYCLE,
-    MAIL_APP_NAME,
-    MAIL_SHORT_APP_NAME,
-    PLANS,
-} from '@proton/shared/lib/constants';
+import { MAX_CALENDARS_FREE } from '@proton/shared/lib/calendar/constants';
+import { APPS, CYCLE, DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME, PLANS } from '@proton/shared/lib/constants';
 import { Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -28,82 +18,75 @@ import BundlePlanSubSection from '../BundlePlanSubSection';
 import { PlanCard, planCardFeatureProps } from '../PlanCardSelector';
 import { getBenefits, getGenericBenefits, getGenericFeatures, getJoinString } from '../configuration/helper';
 import { SignupConfiguration, SignupMode } from '../interface';
-import CustomStep from './CustomStep';
+import CustomStep from '../mail/CustomStep';
 
-export const getMailBenefits = (): BenefitItem[] => {
+export const getDriveBenefits = (): BenefitItem[] => {
     return [
         {
             key: 1,
-            text: c('pass_signup_2023: Info').t`End-to-end encryption`,
+            text: c('drive_signup_2023: Info').t`Encrypted cloud storage for all your files`,
             icon: {
                 name: 'lock',
             },
         },
-        ...getGenericBenefits(),
         {
             key: 2,
-            text: CALENDAR_APP_NAME,
+            text: c('drive_signup_2023: Info').t`Advanced sharing security`,
             icon: {
-                name: 'brand-proton-calendar',
+                name: 'arrow-up-from-square',
             },
         },
+        ...getGenericBenefits(),
     ];
 };
 
-export const getFreeMailFeatures = () => {
-    return [
-        getStorageFeature(-1),
-        getNAddressesFeature({ n: 1 }),
-        getFoldersAndLabelsFeature(3),
-        getNMessagesFeature(150),
-    ];
+export const getFreeDriveFeatures = () => {
+    return [getStorageFeature(-1)];
 };
 
-export const getCustomMailFeatures = (plan: Plan | undefined) => {
+export const getCustomDriveFeatures = (plan: Plan | undefined) => {
     if (!plan) {
         return [];
     }
     return [
-        getStorageFeature(plan.MaxSpace),
-        getNAddressesFeature({ n: plan.MaxAddresses }),
-        getFoldersAndLabelsFeature('unlimited'),
-        getNMessagesFeature('unlimited'),
-        getNDomainsFeature({ n: plan.MaxDomains }),
+        getStorageFeature(plan.MaxSpace, { boldStorageSize: false }),
+        getNAddressesFeature({ n: plan.MaxAddresses || 1 }),
+        getNCalendarsFeature(plan.MaxCalendars || MAX_CALENDARS_FREE),
+        getVPNConnections(1),
         getSupport('priority'),
-        getCalendarAppFeature(),
     ];
 };
 
-export const getMailConfiguration = ({
+export const getDriveConfiguration = ({
     isDesktop,
+    plansMap,
     vpnServersCountData,
     hideFreePlan,
-    plansMap,
 }: {
     hideFreePlan: boolean;
+    plansMap?: PlansMap;
     isDesktop: boolean;
     vpnServersCountData: VPNServersCountData;
-    plansMap?: PlansMap;
 }): SignupConfiguration => {
-    const logo = <MailLogo />;
+    const logo = <DriveLogo />;
 
-    const title = <>{c('mail_signup_2023: Info').t`Secure email that protects your privacy`}</>;
+    const title = <>{c('drive_signup_2023: Info').t`Secure cloud storage and file sharing that protects your data`}</>;
 
     const features = getGenericFeatures(isDesktop);
 
     const planCards: PlanCard[] = [
         !hideFreePlan && {
             plan: PLANS.FREE,
-            subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getFreeMailFeatures()} />,
+            subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getFreeDriveFeatures()} />,
             type: 'standard' as const,
             guarantee: false,
         },
         {
-            plan: PLANS.MAIL,
+            plan: PLANS.DRIVE,
             subsection: (
                 <PlanCardFeatureList
                     {...planCardFeatureProps}
-                    features={getCustomMailFeatures(plansMap?.[PLANS.MAIL])}
+                    features={getCustomDriveFeatures(plansMap?.[PLANS.DRIVE])}
                 />
             ),
             type: 'best' as const,
@@ -117,10 +100,10 @@ export const getMailConfiguration = ({
         },
     ].filter(isTruthy);
 
-    const benefitItems = getMailBenefits();
+    const benefitItems = getDriveBenefits();
     const benefits = benefitItems && (
         <div>
-            <div className="text-lg text-semibold">{getBenefits(MAIL_APP_NAME)}</div>
+            <div className="text-lg text-semibold">{getBenefits(DRIVE_APP_NAME)}</div>
             <Benefits className="mt-5 mb-5" features={benefitItems} />
             <div>{getJoinString()}</div>
         </div>
@@ -135,15 +118,15 @@ export const getMailConfiguration = ({
         features,
         benefits,
         planCards,
-        signupTypes: [SignupType.Username],
+        signupTypes: [SignupType.Email, SignupType.Username],
         generateMnemonic: false,
         defaults: {
-            plan: PLANS.MAIL,
+            plan: PLANS.DRIVE,
             cycle: CYCLE.YEARLY,
         },
-        product: APPS.PROTONMAIL,
-        shortProductAppName: MAIL_SHORT_APP_NAME,
-        productAppName: MAIL_APP_NAME,
+        product: APPS.PROTONDRIVE,
+        shortProductAppName: DRIVE_APP_NAME,
+        productAppName: DRIVE_SHORT_APP_NAME,
         setupImg: <></>,
         preload: <></>,
         CustomStep,
