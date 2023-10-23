@@ -2,7 +2,7 @@ import { ReactNode, useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { APPS, CYCLE, MEMBER_ADDON_PREFIX, PLANS } from '@proton/shared/lib/constants';
+import { APPS, COUPON_CODES, CYCLE, MEMBER_ADDON_PREFIX, PLANS } from '@proton/shared/lib/constants';
 import {
     AddonDescription,
     Included,
@@ -27,7 +27,7 @@ import {
 } from '../../../../components';
 import { useConfig } from '../../../../hooks';
 import Checkout from '../../Checkout';
-import RenewalNotice from '../../RenewalNotice';
+import { getBlackFridayRenewalNoticeText, getRenewalNoticeText } from '../../RenewalNotice';
 import StartDateCheckoutRow from '../../StartDateCheckoutRow';
 import { getTotalBillingText } from '../../helper';
 import { CheckoutModifiers } from '../useCheckoutModifiers';
@@ -207,6 +207,8 @@ const SubscriptionCheckout = ({
         return withDiscountPerMonth;
     })();
 
+    const hasBFDiscount = checkResult.Coupon?.Code === COUPON_CODES.BLACK_FRIDAY_2023;
+
     return (
         <Checkout
             currency={currency}
@@ -215,15 +217,26 @@ const SubscriptionCheckout = ({
             hasGuarantee={hasGuarantee}
             hasPayments={!isOptimistic}
             description={showPlanDescription ? <PlanDescription list={list} /> : null}
-            renewNotice={
-                <RenewalNotice
-                    renewCycle={cycle}
-                    isCustomBilling={isCustomBilling}
-                    isScheduledSubscription={isScheduledSubscription}
-                    subscription={subscription}
-                    coupon={checkResult.Coupon?.Code}
-                />
+            hiddenRenewNotice={
+                hasBFDiscount && (
+                    <div className="color-weak">
+                        *{' '}
+                        {getBlackFridayRenewalNoticeText({
+                            price: amountDue,
+                            cycle,
+                            plansMap,
+                            planIDs,
+                            currency,
+                        })}
+                    </div>
+                )
             }
+            renewNotice={getRenewalNoticeText({
+                renewCycle: cycle,
+                isCustomBilling,
+                isScheduledSubscription,
+                subscription,
+            })}
         >
             <div className="mb-4 flex flex-column">
                 <strong className="mb-1">{planTitle}</strong>
@@ -325,6 +338,7 @@ const SubscriptionCheckout = ({
                         <hr />
                     </div>
                     <CheckoutRow
+                        star={hasBFDiscount}
                         title={c('Title').t`Amount due`}
                         amount={amountDue}
                         currency={currency}

@@ -23,6 +23,7 @@ import { getShouldCalendarPreventSubscripitionChange, willHavePaidMail } from '@
 import {
     APPS,
     APP_NAMES,
+    COUPON_CODES,
     CYCLE,
     DEFAULT_CURRENCY,
     DEFAULT_CYCLE,
@@ -955,16 +956,18 @@ const SubscriptionModal = ({
                                                             </Tooltip>
                                                         </div>
                                                     )}
-                                                    <PaymentGiftCode
-                                                        giftCodeRef={giftCodeRef}
-                                                        key={
-                                                            /* Reset the toggle state when a coupon code gets applied */
-                                                            couponCode
-                                                        }
-                                                        giftCode={model.gift}
-                                                        onApply={handleGift}
-                                                        loading={loadingGift}
-                                                    />
+                                                    {couponCode !== COUPON_CODES.BLACK_FRIDAY_2023 && (
+                                                        <PaymentGiftCode
+                                                            giftCodeRef={giftCodeRef}
+                                                            key={
+                                                                /* Reset the toggle state when a coupon code gets applied */
+                                                                couponCode
+                                                            }
+                                                            giftCode={model.gift}
+                                                            onApply={handleGift}
+                                                            loading={loadingGift}
+                                                        />
+                                                    )}
                                                 </>
                                             }
                                             onChangeCurrency={handleChangeCurrency}
@@ -1093,16 +1096,18 @@ const SubscriptionModal = ({
                                                         </Tooltip>
                                                     </div>
                                                 )}
-                                                <PaymentGiftCode
-                                                    giftCodeRef={giftCodeRef}
-                                                    key={
-                                                        /* Reset the toggle state when a coupon code gets applied */
-                                                        couponCode
-                                                    }
-                                                    giftCode={model.gift}
-                                                    onApply={handleGift}
-                                                    loading={loadingGift}
-                                                />
+                                                {couponCode !== COUPON_CODES.BLACK_FRIDAY_2023 && (
+                                                    <PaymentGiftCode
+                                                        giftCodeRef={giftCodeRef}
+                                                        key={
+                                                            /* Reset the toggle state when a coupon code gets applied */
+                                                            couponCode
+                                                        }
+                                                        giftCode={model.gift}
+                                                        onApply={handleGift}
+                                                        loading={loadingGift}
+                                                    />
+                                                )}
                                             </>
                                         }
                                         onChangeCurrency={handleChangeCurrency}

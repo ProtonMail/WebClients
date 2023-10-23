@@ -1,11 +1,11 @@
 import { useRef, useState } from 'react';
 
 import { useErrorHandler, useMyCountry } from '@proton/components/hooks';
+import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getLocalPart } from '@proton/shared/lib/keys';
 
 import CongratulationsStep from '../../signup/CongratulationsStep';
 import RecoveryStep from '../../signup/RecoveryStep';
-import { getPlanFromPlanIDs } from '../../signup/helper';
 import { SignupCacheResult, SignupType } from '../../signup/interfaces';
 import { handleDisplayName, handleSaveRecovery } from '../../signup/signupActions';
 import { useFlowRef } from '../../useFlowRef';
