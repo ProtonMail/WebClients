@@ -50,7 +50,11 @@ const UsersOnboardingChecklistHeader = ({ smallVariant }: Props) => {
                     className="flex-item-noshrink"
                     onClick={() => changeChecklistDisplay(CHECKLIST_DISPLAY_TYPE.HIDDEN)}
                 >
-                    <Icon data-testid="onboarding-checklist-header-hide-button" name="cross" />
+                    <Icon
+                        data-testid="onboarding-checklist-header-hide-button"
+                        name="cross"
+                        alt={c('Action').t`Close the checklist`}
+                    />
                 </Button>
             </Tooltip>
         </div>
