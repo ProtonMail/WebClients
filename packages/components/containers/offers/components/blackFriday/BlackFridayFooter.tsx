@@ -1,16 +1,12 @@
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/Href';
 import { Price } from '@proton/components/components';
-import { useConfig } from '@proton/components/hooks';
-import { getBlackFriday2023URL } from '@proton/shared/lib/helpers/url';
 
 import { getDiscount } from '../../helpers/dealPrices';
 import { getRenewDescription } from '../../helpers/offerCopies';
 import { OfferProps } from '../../interface';
 
 const BlackFridayFooter = ({ offer, currency }: OfferProps) => {
-    const { APP_NAME } = useConfig();
     return (
         <div className="mb-4">
             {offer.deals.map((deal) => {
@@ -46,10 +42,6 @@ const BlackFridayFooter = ({ offer, currency }: OfferProps) => {
                 <div>{c('bf2023: Footer').t`Discounts are based on standard monthly pricing.`}</div>
                 <div>{c('bf2023: Footer')
                     .t`Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.`}</div>
-                <div>
-                    <Href href={getBlackFriday2023URL(APP_NAME)}>{c('bf2023: Footer')
-                        .t`Learn more about our Black Friday offers`}</Href>
-                </div>
             </p>
         </div>
     );

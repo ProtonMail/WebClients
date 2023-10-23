@@ -15,6 +15,7 @@ const config: OfferConfig = {
         sideImage,
         sideImage2x,
     },
+    canBeDisabled: true,
     deals: [
         {
             ref: 'bf_23_vpn-2y-modal-u12',
@@ -25,6 +26,7 @@ const config: OfferConfig = {
             cycle: CYCLE.YEARLY,
             couponCode: COUPON_CODES.BLACK_FRIDAY_2023,
             features: getUnlimitedVPNFeatures,
+            isGuaranteed: true,
         },
     ],
     layout: Layout,
