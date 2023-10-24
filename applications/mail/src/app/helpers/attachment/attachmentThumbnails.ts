@@ -2,6 +2,7 @@ import { MAILBOX_LABEL_IDS, MIME_TYPES } from '@proton/shared/lib/constants';
 import { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { hasIcalExtension } from 'proton-mail/helpers/calendar/invite';
 import { hasLabel } from 'proton-mail/helpers/elements';
 import { Element } from 'proton-mail/models/element';
 
@@ -37,6 +38,8 @@ export const getOtherAttachmentsTitle = (attachmentsMetadata: AttachmentsMetadat
 
 export const filterAttachmentToPreview = (attachmentsMetadata: AttachmentsMetadata[]) => {
     return attachmentsMetadata.filter(
-        (attachmentMetadata) => !ATTACHMENT_THUMBNAILS_BLOCK_LIST.includes(attachmentMetadata.MIMEType)
+        (attachmentMetadata) =>
+            !ATTACHMENT_THUMBNAILS_BLOCK_LIST.includes(attachmentMetadata.MIMEType) &&
+            !hasIcalExtension(attachmentMetadata.Name)
     );
 };
