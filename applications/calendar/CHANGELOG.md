@@ -1,3 +1,17 @@
+## Release 5.0.16 — Nov 1st, 2023
+
+### New features
+
+-   You can now reply to external invitations that were forwarded to you
+
+### Improvements
+
+-   Implement a mechanism to auto-reload events that we fail to load when there are network issues
+
+### Fixes
+
+-   Stability fixes for some rare conditions that would cause events to not be rendered properly
+
 ## Release 5.0.15 — Sep 26, 2023
 
 ### New features
