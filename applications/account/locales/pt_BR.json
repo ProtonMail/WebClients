@@ -1290,6 +1290,115 @@
         "${ mailPlus }: a solução de e-mail e calendário com foco em privacidade para toda a sua comunicação."
       ]
     },
+    "bf2023: Action": {
+      "**Add our encrypted password manager** for only ${ price }": [
+        "**Adicione nosso gerenciador de senhas criptografadas** por apenas ${ price }"
+      ],
+      "Add ${ PASS_APP_NAME }": [
+        "Adicionar ${ PASS_APP_NAME }"
+      ],
+      "Add ${ plan } for ${ price } per month": [
+        "Adicione ${ plan } por ${ price } por mês"
+      ],
+      "Add ${ plan } to your plan by subscribing to 15 months": [
+        "Adicione ${ plan } ao seu plano assinando 15 meses"
+      ],
+      "Get the deal": [
+        "Obtenha a oferta"
+      ],
+      "Remove": [
+        "Remover"
+      ],
+      "Remove ${ PASS_APP_NAME }": [
+        "Remover ${ PASS_APP_NAME }"
+      ],
+      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
+        "Assine por 15 meses e obtenha nosso **gerenciador de senhas criptografadas** por apenas ${ priceNoSuffix } extra por mês!"
+      ]
+    },
+    "bf2023: Deal details": {
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus e ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } armazenamento"
+      ],
+      "1 user": [
+        "1 usuário"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "3,000+ servers across 65+ countries": [
+        "Mais de 3.000 servidores em mais de 65 países"
+      ],
+      "6 users": [
+        "6 usuários"
+      ],
+      "Ad-blocker and malware protection": [
+        "Bloqueador de anúncios e proteção contra malware"
+      ],
+      "Extended version history": [
+        "Histórico de versão estendido"
+      ],
+      "High speed streaming": [
+        "Streaming de alta velocidade"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Gerenciador de senha premium"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Os descontos são baseados no preço mensal padrão."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Sua assinatura será renovada automaticamente, com desconto da taxa e da duração padrão, ao final do seu ciclo de faturamento."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "Garantia de devolução do seu dinheiro por até 30 dias"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Acesse conteúdo de serviços de streaming, como Netflix, Disney+, Prime Video e mais, de qualquer lugar."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
+        "Inclui suporte para ${ domains } domínios de e-mail personalizados, ${ addresses } endereços de e-mail, ${ aliases } aliases ilimitados do hide-my-email, compartilhamento de calendário e muito mais."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Inclui suporte para ${ domains } domínios de e-mail personalizados, ${ addresses } endereços de e-mail, aliases ilimitados do hide-my-email, compartilhamento de calendário e muito mais."
+      ],
+      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "Logins seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Proteja seus e-mails e sua agenda com criptografia de ponta a ponta. Inclui compatibilidade para domínios de e-mail personalizados, 15 endereços de e-mail, aliases ilimitados do hide-my-email, compartilhamento de calendário e muito mais."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Proteja seus arquivos com armazenamento em nuvem criptografado. Inclui histórico de versões, compartilhamento de arquivo criptografado e muito mais."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Especialmente projetado, o NetShield protege os dispositivos e acelera sua navegação ao bloquear anúncios, rastreadores e malware."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "O espaço de armazenamento é compartilhado entre todos os apps ${ BRAND_NAME }."
+      ],
+      "Store up to 200 versions of each file for up to 10 years.": [
+        "Armazene até 200 versões de cada arquivo por até 10 anos."
+      ]
+    },
     "Billing cycle": {
       "${ n } month": [
         "${ n } mês",
@@ -3010,6 +3119,14 @@
         "Ajude-nos a melhorar!"
       ]
     },
+    "drive_signup_2023: Info": {
+      "Advanced sharing security": [
+        "Segurança avançada de compartilhamento"
+      ],
+      "Encrypted cloud storage for all your files": [
+        "Armazenamento na nuvem criptografado para todos os seus arquivos"
+      ]
+    },
     "Duration": {
       "120 minutes": [
         "120 minutos"
@@ -4685,6 +4802,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -4703,6 +4823,10 @@
       "Megabyte": [
         "Megabyte",
         "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Filter Actions": {
@@ -5710,15 +5834,6 @@
       "Admin account allocation": [
         "Alocação da conta do administrador"
       ],
-      "After this date, you'll be billed every 12 months at the normal yearly rate.": [
-        "Após essa data, sua cobrança será a cada 12 meses pela taxa anual normal."
-      ],
-      "After this date, you'll be billed every 24 months at the normal 2-year rate.": [
-        "Após essa data, sua cobrança será a cada 24 meses pela taxa bienal normal."
-      ],
-      "After this date, you'll be billed every month at the regular price.": [
-        "Após essa data, sua cobrança mensal será pelo preço normal."
-      ],
       "Align left": [
         "Alinhar à esquerda"
       ],
@@ -5907,6 +6022,9 @@
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Ao compartilhar todas as informações do evento deste calendário, você aceita conceder a ${ BRAND_NAME } o acesso a estas informações criptografadas do calendário."
+      ],
+      "Cancel anytime": [
+        "Cancele a qualquer momento"
       ],
       "Center": [
         "Centralizar"
@@ -7373,9 +7491,6 @@
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Com um plano Business ou Enterprise, você pode comprar ${ boldDedicatedServers } para sua organização e configurar ${ boldGateways } para controlar quais usuários podem acessá-los."
       ],
-      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
-        "Com um endereço da ${ BRAND_NAME } criptografado, você pode usar todos os serviços da ${ BRAND_NAME_TWO }"
-      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Com o seu plano atual, você pode apenas receber mensagens através do seu endereço @pm.me. Faça upgrade de plano para enviar mensagens e criar endereços adicionais usando @pm.me"
       ],
@@ -7630,9 +7745,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Sua assinatura é gerenciada pela Mozilla. Entre em contato com o suporte da Mozilla."
-      ],
-      "Your subscription will auto-renew on ${ renewalTime }.": [
-        "Sua assinatura será renovada automaticamente em ${ renewalTime }."
       ]
     },
     "info": {
@@ -9285,6 +9397,11 @@
         "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } marcadores e marcá-las como"
       ]
     },
+    "mail_signup_2023: Info": {
+      "Secure email that protects your privacy": [
+        "E-mail seguro que protege sua privacidade"
+      ]
+    },
     "Maintenance mode": {
       "Please check back in a few minutes.": [
         "Verifique novamente em alguns minutos."
@@ -10029,6 +10146,10 @@
       ],
       "Vault and Item sharing (coming soon)": [
         "Cofre e compartilhamento de itens (em breve)"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Compartilhar do cofre (até ${ n } pessoa)",
+        "Compartilhar cofre (até ${ n } pessoa)"
       ]
     },
     "new_plans: feature info": {
@@ -10051,17 +10172,6 @@
       ],
       "Team management": [
         "Gerenciamento de equipes"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Sua avaliação termina em ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -10151,6 +10261,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Sua avaliação termina em ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10426,7 +10547,7 @@
     },
     "new_plans: upgrade": {
       "Included with ${ BRAND_NAME } for Business, ${ familyPlanName } and ${ mailProPlanName }.": [
-        "Incluído com ${ BRAND_NAME } para Organizações ${ familyPlanName } e ${ mailProPlanName }."
+        "Incluído com a ${ BRAND_NAME } for Business, ${ familyPlanName } e ${ mailProPlanName }."
       ],
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Incluso com ${ plus }, ${ bundle } e ${ BRAND_NAME } for Business."
@@ -11053,6 +11174,9 @@
       ],
       "End-to-end encrypted notes": [
         "Notas com criptografia de ponta a ponta"
+      ],
+      "End-to-end encryption": [
+        "Criptografia de ponta a ponta"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Por apenas **${ relativePrice } adicionais por mês**, você tem acesso a todos os serviços premium da ${ BRAND_NAME }"
@@ -13317,7 +13441,7 @@
         "Pastas e marcadores"
       ],
       "Forward emails": [
-        "Encaminhar e-mails"
+        "Encaminhamento de e-mails"
       ],
       "Gateways": [
         "Gateways"
