@@ -1290,10 +1290,122 @@
         "${ mailPlus }: die datenschutzfreundliche E-Mail- und Kalenderlösung für deine täglichen Kommunikationsbedürfnisse."
       ]
     },
+    "bf2023: Action": {
+      "**Add our encrypted password manager** for only ${ price }": [
+        "**Füge unseren verschlüsselten Passwortmanager** für nur ${ price } hinzu"
+      ],
+      "Add ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } hinzufügen"
+      ],
+      "Add ${ plan } for ${ price } per month": [
+        "Füge ${ plan } für ${ price } pro Monat hinzu"
+      ],
+      "Add ${ plan } to your plan by subscribing to 15 months": [
+        "Füge ${ plan } zu deinem Abonnement hinzu, indem du 15 Monate abonnierst"
+      ],
+      "Get the deal": [
+        "Angebot nutzen"
+      ],
+      "Remove": [
+        "Entfernen"
+      ],
+      "Remove ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } entfernen"
+      ],
+      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
+        "Für 15 Monate abonnieren und unseren **verschlüsselten Passwortmanager** für nur ${ priceNoSuffix } extra pro Monat erhalten!"
+      ]
+    },
+    "bf2023: Deal details": {
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus und ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } Speicherplatz"
+      ],
+      "1 user": [
+        "1 Benutzer"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "3,000+ servers across 65+ countries": [
+        "Mehr als 3.000 Server in über 65 Ländern"
+      ],
+      "6 users": [
+        "6 Benutzer"
+      ],
+      "Ad-blocker and malware protection": [
+        "Werbeblocker & Malware-Schutz"
+      ],
+      "Extended version history": [
+        "Erweiterter Versionsverlauf"
+      ],
+      "High speed streaming": [
+        "Hochgeschwindigkeits-Streaming"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium-${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium-${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium-${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Premium-Passwortmanager"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Rabatte werden auf Grundlage des monatlichen Standardpreises berechnet."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Dein Abonnement verlängert sich am Ende deines Abrechnungszeitraums automatisch zum Standard-Rabattpreis und für die Standarddauer."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "30 Tage Geld-zurück-Garantie"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Greife von überall aus auf Inhalte von Streaming-Diensten zu, darunter Netflix, Disney+, Prime Video und andere."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
+        "Beinhaltet Unterstützung für ${ domains } benutzerdefinierte E-Mail-Domain, ${ addresses } E-Mail-Adressen, ${ aliases } „hide-my-email“-Aliasse, Kalenderfreigabe und mehr."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Beinhaltet Unterstützung für ${ domains } benutzerdefinierte E-Mail-Domain, ${ addresses } E-Mail-Adressen, unbegrenzte „hide-my-email“-Aliasse, Kalenderfreigabe und mehr."
+      ],
+      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Schütze deine E-Mails und plane mit Ende-zu-Ende-Verschlüsselung. Beinhaltet Unterstützung für benutzerdefinierte E-Mail-Domains, 15 E-Mail-Adressen, unbegrenzte „hide-my-email“-Aliasse, Kalenderfreigabe und mehr."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Sichere deine Dateien mit verschlüsseltem Cloud-Speicher. Beinhaltet Versionsverlauf, verschlüsselte Dateifreigabe und mehr."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Das speziell entwickelte NetShield schützt deine Geräte und beschleunigt das Surfen durch das Blockieren von Werbung, Trackern und Malware."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "Der Speicherplatz wird von allen ${ BRAND_NAME }-Apps gemeinsam genutzt."
+      ],
+      "Store up to 200 versions of each file for up to 10 years.": [
+        "Speichere bis zu 200 Versionen jeder Datei für einen Zeitraum von bis zu 10 Jahren."
+      ]
+    },
     "Billing cycle": {
       "${ n } month": [
         "${ n } Monat",
         "${ n } Monate"
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
+        "Wird automatisch für ${ renewPrice } um ${ renewalLength } verlängert."
       ]
     },
     "Billing cycle option": {
@@ -3007,6 +3119,14 @@
         "Hilf uns, besser zu werden!"
       ]
     },
+    "drive_signup_2023: Info": {
+      "Advanced sharing security": [
+        "Erweiterte Sicherheit beim Teilen"
+      ],
+      "Encrypted cloud storage for all your files": [
+        "Verschlüsselter Cloud-Speicher für alle deine Dateien"
+      ]
+    },
     "Duration": {
       "120 minutes": [
         "120 Minuten"
@@ -3256,11 +3376,17 @@
       "A new encryption key will be generated for ${ boldForwarderEmail }.": [
         "Ein neuer Verschlüsselungsschlüssel wird für ${ boldForwarderEmail } generiert."
       ],
+      "Forwardee is invited and needs to accept/reject the invitation or update": [
+        "Der Empfänger der Weiterleitung ist eingeladen und muss die Einladung annehmen/ablehnen oder aktualisieren."
+      ],
       "Forwarding is active": [
         "Weiterleitung ist aktiv"
       ],
-      "Forwarding to ${ BRAND_NAME } addresses will keep your communication end-to-end encrypted. When forwarding externally, encryption might need to be removed.": [
-        "Bei der Weiterleitung an ${ BRAND_NAME }-Adressen bleibt deine Kommunikation Ende-zu-Ende-verschlüsselt. Bei der Weiterleitung an externe Adressen muss die Verschlüsselung möglicherweise entfernt werden."
+      "Forwarding to ${ BRAND_NAME } addresses will keep your communication end-to-end encrypted. When forwarding externally, end-to-end encryption for the forwarding address will be disabled.": [
+        "Bei der Weiterleitung an ${ BRAND_NAME }-Adressen bleibt deine Kommunikation Ende-zu-Ende verschlüsselt. Bei der Weiterleitung nach außen wird die Ende-zu-Ende-Verschlüsselung für die Weiterleitungsadresse deaktiviert."
+      ],
+      "Forwarding to an address without end-to-end encryption requires disabling end-to-end encryption for your ${ boldForwarderEmail } email address. ": [
+        "Die Weiterleitung an eine Adresse ohne Ende-zu-Ende-Verschlüsselung erfordert die Deaktivierung der Ende-zu-Ende-Verschlüsselung für deine ${ boldForwarderEmail } E-Mail-Adresse. "
       ],
       "Forwarding to this address will become active once the recipient accepts the forwarding.": [
         "Die Weiterleitung an diese Adresse wird aktiviert, sobald der Empfänger sie akzeptiert."
@@ -4314,6 +4440,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium-${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium-${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium-${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "Bis zu 6 Benutzer"
       ]
@@ -4706,6 +4841,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -4724,6 +4862,10 @@
       "Megabyte": [
         "Megabyte",
         "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Filter Actions": {
@@ -5917,6 +6059,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Indem du die vollständigen Termindetails dieses Kalenders freigibst, erklärst du dich damit einverstanden, ${ BRAND_NAME } Zugriff auf diese verschlüsselten Informationen des Kalenders zu gewähren."
       ],
+      "Cancel anytime": [
+        "Jederzeit kündbar"
+      ],
       "Center": [
         "Zentriert"
       ],
@@ -6183,7 +6328,7 @@
         "Filter wirken auf alle E-Mails, sowohl auf eingehende als auch auf gesendete Nachrichten. Jeder Filter muss mindestens einen Namen, eine Bedingung und eine Aktion enthalten."
       ],
       "for choosing ${ product }": [
-        ", dass du dich für ${ product } entschieden hast."
+        "dass du dich für ${ product } entschieden hast."
       ],
       "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Bei Visa, MasterCard und Discover: die 3 Ziffern auf der Rückseite deiner Karte. Bei American Express die 4 Ziffern auf der Vorderseite deiner Karte."
@@ -6868,6 +7013,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Da du ein treuer Benutzer bist, wurden deinem Konto zusätzliche Funktionen hinzugefügt."
       ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "Die SMTP-Übermittlung ermöglicht es Drittanbieterdiensten oder Geräten, E-Mails über ${ MAIL_APP_NAME } für deine benutzerdefinierten Domains zu senden. Diese Funktion steht nur ${ BRAND_NAME }-Geschäftskunden mit benutzerdefinierten Domains zur Verfügung."
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Die SMTP-Übermittlung ermöglicht es Diensten oder Geräten von Drittanbietern, E-Mails über ${ MAIL_APP_NAME } für deine eigenen Domainadressen zu versenden. Um Zugang zu beantragen, ${ createTicket } und beschreibe bitte deine Anwendungsfälle, die eigenen Domains, die du verwenden möchtest und das erwartete stündliche und tägliche E-Mail-Volumen."
       ],
@@ -6907,6 +7055,15 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Tätige eine Einzahlung über die folgende Adresse oder scanne den QR-Code. Die Einzahlung wird nach der Bestätigung auf deinem Konto gutgeschrieben."
+      ],
+      "Subscription auto-renews every 12 months.": [
+        "Abonnement wird automatisch alle 12 Monate verlängert."
+      ],
+      "Subscription auto-renews every 24 months.": [
+        "Abonnement wird automatisch alle 24 Monate verlängert."
+      ],
+      "Subscription auto-renews every month.": [
+        "Abonnement wird automatisch jeden Monat verlängert."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Dein Abonnement endet bald: Reaktiviere es bis zum ${ byDate }, um deine ${ planName }-Vorteile zu behalten. ${ reactivateLink }"
@@ -6988,6 +7145,9 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Diese Konfigurationen sind für den Einsatz mit WireGuard-Routern und offiziellen Clients vorgesehen."
+      ],
+      "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
+        "Diese Anmeldedaten können nicht zur Anmeldung in unseren offiziellen ${ VPN_APP_NAME }-Apps verwendet werden. ${ learnMore }"
       ],
       "They'll receive a free month of ${ planName }.": [
         "Sie erhalten einen kostenlosen Monat ${ planName }."
@@ -7364,8 +7524,8 @@
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Mit einem Business- oder Enterprise-Abonnement kannst du ${ boldDedicatedServers } für dein Unternehmen kaufen und ${ boldGateways } einrichten, um zu kontrollieren, welche Benutzer darauf zugreifen können."
       ],
-      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
-        "Mit einer verschlüsselten ${ BRAND_NAME }-Adresse kannst du alle ${ BRAND_NAME_TWO }-Dienste nutzen."
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Mit einer verschlüsselten ${ BRAND_NAME }-Adresse kannst du alle ${ BRAND_NAME }-Dienste nutzen."
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Mit deinem aktuellen Abonnement kannst du mit deiner @pm.me-Adresse nur Nachrichten empfangen. Führe ein Upgrade durch, um Nachrichten senden und weitere @pm.me-Adressen hinzufügen zu können."
@@ -7558,6 +7718,9 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Dein Konto hat mindestens eine überfällige Rechnung. Dein Konto ist eingeschränkt. Bei anhaltender Nichtbezahlung werden deine E-Mails und Freigabelinks gesperrt. ${ payInvoiceLink }"
       ],
+      "Your account has been successfully updated": [
+        "Dein Konto wurde erfolgreich aktualisiert."
+      ],
       "Your account recovery method is set": [
         "Deine Kontowiederherstellungsmethode wurde festgelegt"
       ],
@@ -7591,6 +7754,9 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Deine Anmeldeinformationen werden nach Abschluss des Importvorgangs nicht gespeichert."
+      ],
+      "Your next billing date is ${ renewalTime }.": [
+        "Dein nächstes Abrechnungsdatum ist der ${ renewalTime }."
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Dein Organisationspasswort kann mit anderen Benutzern geteilt werden, wenn du diesen Administrationsberechtigungen erteilen möchtest. Es ist auch ein Notfall-Wiederherstellungscode, um Zugriff auf deine Organisation zu erhalten, wenn du den Zugriff auf dein Konto verlierst. Bitte speichere dieses Passwort sicher ab."
@@ -8597,6 +8763,9 @@
       "New password": [
         "Neues Passwort"
       ],
+      "New plan": [
+        "Neues Abonnement"
+      ],
       "No filter": [
         "Kein Filter"
       ],
@@ -9264,6 +9433,11 @@
         "Alle Nachrichten aus ${ selectedItemsToImportCount } von ${ itemsToImportCount } Kategorien importieren und hinzufügen zur Kategorie"
       ]
     },
+    "mail_signup_2023: Info": {
+      "Secure email that protects your privacy": [
+        "Sichere E-Mail, die deine Privatsphäre schützt"
+      ]
+    },
     "Maintenance mode": {
       "Please check back in a few minutes.": [
         "Bitte versuche es in ein paar Minuten erneut."
@@ -9745,6 +9919,9 @@
       "99.95% SLA": [
         "Dienstleistungsvereinbarung über 99,95 % Verfügbarkeit"
       ],
+      "Ad-blocker and malware protection": [
+        "Werbeblocker & Malware-Schutz"
+      ],
       "Admin console": [
         "Adminkonsole"
       ],
@@ -10005,6 +10182,10 @@
       ],
       "Vault and Item sharing (coming soon)": [
         "Teilen von Tresoren und Einträgen (Demnächst verfügbar)"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Tresor teilen (bis zu ${ n } Person)",
+        "Tresor teilen (bis zu ${ n } Personen)"
       ]
     },
     "new_plans: feature info": {
@@ -10027,17 +10208,6 @@
       ],
       "Team management": [
         "Teamverwaltung"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Um ${ MAIL_APP_NAME } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Deine Testversion endet am ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -10129,6 +10299,17 @@
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto downgradest, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Um ${ MAIL_APP_NAME } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Deine Testversion endet am ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } von ${ humanMaxSpace }"
@@ -10206,6 +10387,18 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Sichern Sie Ihren Kalender mit Ende-zu-Ende-Verschlüsselung. Beinhaltet Unterstützung für benutzerdefinierte Kalender, Kalenderfreigabe und mehr."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Sichern Sie Ihre Dateien mit verschlüsseltem Cloud-Speicher. Inklusive Versionsverlauf, verschlüsselter Dateifreigabe und mehr."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: Sichern Sie Ihre E-Mails mit Ende-zu-Ende-Verschlüsselung. Enthält Unterstützung für benutzerdefinierte E-Mail-Domains, 15 E-Mail-Adressen, unbegrenzte hide-my-email-Aliase und mehr."
+      ],
+      "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "${ VPN_APP_NAME }: Zugriff auf gesperrte Inhalte und privates Surfen. Enthält ${ serversAndCountries }, höchste VPN-Geschwindigkeiten, Zugang zu weltweiten Streaming-Diensten, Malware- und Ad-Blocker, schnelle BitTorrent-Downloads und mehr."
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Greife von überall aus auf Inhalte von Streaming-Diensten zu, darunter Netflix, Disney+ und Prime Video."
       ],
@@ -11009,6 +11202,9 @@
       "End-to-end encrypted notes": [
         "Ende-zu-Ende verschlüsselte Notizen"
       ],
+      "End-to-end encryption": [
+        "Ende-zu-Ende-Verschlüsselung"
+      ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Für nur **${ relativePrice } mehr pro Monat** erhältst du Zugang zu allen ${ BRAND_NAME }-Premiumdiensten!"
       ],
@@ -11048,11 +11244,17 @@
       "Launching ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } wird gestartet"
       ],
+      "Limited time offer: Get ${ title } for free for 1 year!": [
+        "Zeitlich begrenztes Angebot: Erhalte ${ title } für ein Jahr kostenlos!"
+      ],
       "One easy subscription.": [
         "Ein einfaches Abonnement."
       ],
       "Open-source and audited": [
         "Quelloffen und unabhängig geprüft"
+      ],
+      "per month": [
+        "pro Monat"
       ],
       "per month, billed annually": [
         "pro Monat, jährliche Abrechnung"
@@ -11980,6 +12182,15 @@
       "Highest VPN speed": [
         "Höchste VPN-Geschwindigkeit"
       ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium-${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium-${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium-${ VPN_SHORT_APP_NAME }"
+      ],
       "Premium early access": [
         "Premium-frühzeitiger Zugang"
       ],
@@ -12208,6 +12419,12 @@
     "Subscription": {
       "Billed every 2 years": [
         "Wird alle 2 Jahre abgerechnet"
+      ],
+      "Billed for 15 months": [
+        "Bezahlt für 15 Monate"
+      ],
+      "Billed for 30 months": [
+        "Bezahlt für 30 Monate"
       ],
       "Billed monthly": [
         "Wird monatlich abgerechnet"
@@ -12609,6 +12826,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium-${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium-${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Premium Password Manager": [
         "Premium-Passwortmanager"
       ]
@@ -14004,6 +14227,11 @@
         "Dein externes Konto könnte sein 24-Stunden-Bandbreitenlimit erreicht haben. ${ BRAND_NAME } wird versuchen, den Import so bald wie möglich fortzusetzen."
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
+      ]
+    },
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
         "Dadurch wird jeder gesendeten Nachricht automatisch dein öffentlicher Schlüssel hinzugefügt. Empfänger können damit die Authentizität deiner Nachrichten überprüfen und verschlüsselte Nachrichten an dich senden."
@@ -14155,8 +14383,14 @@
       "1-year": [
         "1-Jahres"
       ],
+      "15-month": [
+        "15 Monate"
+      ],
       "2-year": [
         "2-Jahres"
+      ],
+      "30-month": [
+        "30 Monate"
       ],
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "Hol dir ${ discount } Rabatt mit einem ${ billingCycle }-Abonnement"

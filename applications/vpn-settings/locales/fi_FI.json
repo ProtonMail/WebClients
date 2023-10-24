@@ -221,6 +221,9 @@
       "Get ${ vpnPlus }": [
         "Hanki ${ vpnPlus }"
       ],
+      "Get a new encrypted email address": [
+        "Hanki uusi salattu sähköpostiosoite"
+      ],
       "Get in touch": [
         "Ota yhteyttä"
       ],
@@ -493,6 +496,9 @@
       ],
       "Use recovery code": [
         "Käytä palautuskoodia"
+      ],
+      "Use your current email instead": [
+        "Käytä sen sijaan nykyistä sähköpostiosoitettasi"
       ],
       "User": [
         "Käyttäjä"
@@ -2657,15 +2663,6 @@
       "Admin account allocation": [
         "Ylläpitotilin varaus"
       ],
-      "After this date, you'll be billed every 12 months at the normal yearly rate.": [
-        "Tämän päivän jälkeen laskutus tapahtuu 12 kuukauden välein normaalilla vuosihinnalla."
-      ],
-      "After this date, you'll be billed every 24 months at the normal 2-year rate.": [
-        "Tämän päivän jälkeen laskutus tapahtuu 24 kuukauden välein normaalilla 2 vuoden hinnalla."
-      ],
-      "After this date, you'll be billed every month at the regular price.": [
-        "Tämän päivän jälkeen laskutus tapahtuu kuukausittain normaalihinnalla."
-      ],
       "All your changes will be lost.": [
         "Kaikki muutokset menetetään."
       ],
@@ -2688,7 +2685,7 @@
         "Summa on vähimmäismäärää pienempi (${ amount })."
       ],
       "Amount due": [
-        "Verloitettava summa"
+        "Veloitettava summa"
       ],
       "Any ${ twoFa } method on your account will be disabled.": [
         "Kaikki tilillesi määritetyt ${ twoFa } poistetaan käytöstä."
@@ -2751,7 +2748,7 @@
         "Paina \"Pyydä uusi koodi\" saadaksesi uuden vahvistuskoodin numeroon ${ strong }. Jos numero on väärin, korjaa se painamalla \"Muokkaa\"."
       ],
       "Continue with ${ freeName }": [
-        "Jatka käyttämällä ${ freeName }"
+        "Jatka ${ freeName }-tilauksella"
       ],
       "Copy the suggested password to clipboard": [
         "Kopioi ehdotettu salasana leikepöydälle"
@@ -3562,6 +3559,9 @@
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Business- tai Eterprise-tilaajana voit ostaa organisaatiollesi ${ boldDedicatedServers } ja määrittää ${ boldGateways } hallitaksesi millä käyttäjillä on niiden käyttöoikeus."
       ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Salatulla ${ BRAND_NAME }-osoitteella voit käyttää kaikkia ${ BRAND_NAME }-palveluita"
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Ilman aktivointia et voi luoda uusia käyttäjiä, lisätä osoitteita olemassa oleville käyttäjille, etkä käyttää muita kuin yksityisiä käyttäjätilejä."
       ],
@@ -3656,6 +3656,9 @@
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Menetät pääsyn ${ vpnPlanNameShort } -palvelimiin ja -ominaisuuksiin tänä päivänä."
       ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Tarvitset ${ BRAND_NAME }-osoitteen käyttääksesi ${ MAIL_APP_NAME } ja ${ CALENDAR_APP_NAME } -palveluita"
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Sinut ohjataan pian PayPaliin maksun vahvistamiseksi."
       ],
@@ -3712,9 +3715,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Tilaustasi hallinnoi Mozilla. Ota yhteyttä Mozillan tukeen."
-      ],
-      "Your subscription will auto-renew on ${ renewalTime }.": [
-        "Tilauksesi uudistuu automaattisesti ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -4570,7 +4570,7 @@
         "1 käyttäjä"
       ],
       "24/7 support": [
-        "24/7 tuki"
+        "24/7-asiakaspalvelu"
       ],
       "99.95% SLA": [
         "99.95 % SLA"
@@ -4609,7 +4609,7 @@
         "Keskitetty laskutus"
       ],
       "Centralized settings and billings": [
-        "Kohdistetut asetukset ja laskutukset"
+        "Keskitetyt asetukset ja laskutus"
       ],
       "Contact groups": [
         "Yhteystietoryhmät"
@@ -4771,7 +4771,7 @@
         "Aloita organisaatiosi suojaaminen"
       ],
       "Start protecting yourself online in 2 easy steps": [
-        "Suojaa itsesi verkossa kahdella helpolla askeleella"
+        "Aloita itsesi suojaaminen kahdella helpolla vaiheella"
       ],
       "Strict no-logs policy": [
         "Tiukka lokivastainen käytäntö"
@@ -4838,6 +4838,10 @@
       ],
       "Vault and Item sharing (coming soon)": [
         "Holvin ja kohteiden jako (tulossa pian)"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Holvin jakaminen (enintään ${ n } henkilö)",
+        "Holvin jakaminen (enintään ${ n } henkilöä)"
       ]
     },
     "new_plans: feature info": {
@@ -4965,14 +4969,6 @@
         "käyttöehtomme"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }-kokeilu"
-      ],
-      "Your account's usage": [
-        "Tilisi käyttö"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Poistetaanko tili?"
@@ -4988,6 +4984,14 @@
       ],
       "Switch plans?": [
         "Vaihdetaanko tilaus?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-kokeilu"
+      ],
+      "Your account's usage": [
+        "Tilisi käyttö"
       ]
     },
     "new_plans: tooltip": {
@@ -5192,7 +5196,7 @@
     },
     "new_plans: Upsell attribute": {
       "24/7 support": [
-        "24/7 tuki"
+        "24/7-asiakaspalvelu"
       ],
       "Access advanced VPN features": [
         "Käyttöoikeus edistyneisiin VPN-ominaisuuksiin"
@@ -5860,6 +5864,9 @@
       ],
       "Password": [
         "Salasana"
+      ],
+      "Username": [
+        "Käyttäjätunnus"
       ]
     },
     "specialoffer: Action": {
@@ -6123,10 +6130,10 @@
         "Laskutetaan 2 vuoden välein"
       ],
       "Billed for 15 months": [
-        "Laskutettu 15 kuukaudelta"
+        "Laskutetaan 15 kuukauden välein"
       ],
       "Billed for 30 months": [
-        "Laskutettu 30 kuukaudelta"
+        "Laskutetaan 30 kuukauden välein"
       ],
       "Billed monthly": [
         "Laskutetaan kuukausittain"
@@ -6599,7 +6606,7 @@
         "Summa"
       ],
       "Amount due": [
-        "Verloitettava summa"
+        "Veloitettava summa"
       ],
       "Apply gift code": [
         "Käytä lahjakoodia"
@@ -7249,7 +7256,7 @@
         "Kokeile ${ upsellPlanName } -tilausta riskittömästi"
       ],
       "Your ${ selected } plan": [
-        "Sinun ${ selected } tilauksesi"
+        "${ selected } -tilauksesi"
       ]
     },
     "vpn_2step: tooltip": {

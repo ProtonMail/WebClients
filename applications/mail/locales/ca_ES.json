@@ -424,8 +424,14 @@
       "Get verification code": [
         "Obtenir codi de verificació"
       ],
+      "Go to first page": [
+        "Aneu a la primera pàgina"
+      ],
       "Go to label": [
         "Ves a l'etiqueta"
+      ],
+      "Go to last page": [
+        "Aneu a l'última pàgina"
       ],
       "Go to next page": [
         "Ves a la pàgina següent"
@@ -3830,6 +3836,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } prèmium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } prèmium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } prèmium"
+      ],
       "Up to 6 users": [
         "Fins a 6 usuaris"
       ]
@@ -4934,6 +4949,9 @@
       ],
       "Calendar side panel": [
         "Panell lateral del calendari"
+      ],
+      "Can't find what you're looking for? ${ displayAllMailButton }": [
+        "No podeu trobar el que esteu buscant? ${ displayAllMailButton }"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "No podeu recordar la vostra contrasenya? Us podem ajudar a netejar les dades xifrades de tots els contactes xifrats amb aquesta clau i en el procés desactivar l'alerta."
@@ -6954,6 +6972,9 @@
       "Sent": [
         "Enviats"
       ],
+      "Set up email forwarding": [
+        "Configura el reenviament de correu electrònic"
+      ],
       "Sign up for free": [
         "Registreu-vos gratuïtament"
       ],
@@ -8102,6 +8123,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 usuari"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -8119,6 +8143,15 @@
       ],
       "Highest VPN speed": [
         "La velocitat VPN més alta"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } prèmium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i ${ DRIVE_SHORT_APP_NAME } prèmium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } prèmium"
       ],
       "Premium early access": [
         "Accés anticipat prèmium"
@@ -8164,14 +8197,24 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } mesos"
+      ],
       "/ month": [
         "/ mes"
       ],
       "1 year": [
         "1 any"
       ],
+      "15 months": [
+        "15 mesos"
+      ],
       "2 years": [
         "2 anys"
+      ],
+      "30 months": [
+        "30 mesos"
       ],
       "Billed at ${ amount } for 1 month": [
         "Facturat a ${ amount } durant 1 mes"
@@ -8600,6 +8643,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } prèmium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } prèmium"
+      ],
       "Premium Password Manager": [
         "Gestor de Contrasenyes prèmium"
       ]

@@ -221,6 +221,9 @@
       "Get ${ vpnPlus }": [
         "Få ${ vpnPlus }"
       ],
+      "Get a new encrypted email address": [
+        "Få en ny krypteret e-mailadresse"
+      ],
       "Get in touch": [
         "Kontakt os"
       ],
@@ -493,6 +496,9 @@
       ],
       "Use recovery code": [
         "Brug gendannelseskode"
+      ],
+      "Use your current email instead": [
+        "Brug din nuværende e-mail i stedet"
       ],
       "User": [
         "Bruger"
@@ -2003,6 +2009,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "Op til 6 brugere"
       ]
@@ -3153,6 +3168,15 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Indsend et depositum ved hjælp af følgende adresse eller scan QR-koden. Din indbetaling vil blive afspejlet på din konto efter bekræftelse."
       ],
+      "Subscription auto-renews every 12 months.": [
+        "Abonnementet auto-fornyer hver 12. måned."
+      ],
+      "Subscription auto-renews every 24 months.": [
+        "Abonnementet auto-fornyer hver 24. måned."
+      ],
+      "Subscription auto-renews every month.": [
+        "Abonnementet auto-fornyer hver måned."
+      ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonnement er ved at udløbe: Genaktiver inden ${ byDate } for at beholde dine ${ planName }-fordele. ${ reactivateLink }"
       ],
@@ -3200,6 +3224,9 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Disse konfigurationer er beregnet til at fungere med WireGuard-routere og officielle klienter."
+      ],
+      "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
+        "Disse legitimationsoplysninger kan ikke bruges til at logge ind på vores officielle ${ VPN_APP_NAME } apps. ${ learnMore }"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
@@ -3432,6 +3459,9 @@
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Med et Business- eller Enterprise-abonnement kan du købe ${ boldDedicatedServers } til din organisation og opsætte ${ boldGateways } for at kontrollere, hvilke brugere der har adgang til dem."
       ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Med en krypteret ${ BRAND_NAME }-adresse kan du bruge alle ${ BRAND_NAME }-tjenester"
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Uden aktivering kan du ikke oprette nye brugere, føje adresser til eksisterende brugere eller få adgang til ikke-private brugerkonti."
       ],
@@ -3526,6 +3556,9 @@
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Du vil miste adgang til ${ vpnPlanNameShort }-servere og funktioner på denne dato."
       ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Du skal bruge en ${ BRAND_NAME }-adresse for at bruge ${ MAIL_APP_NAME } og ${ CALENDAR_APP_NAME }"
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du omdirigeres snart til PayPal for at bekræfte din betaling."
       ],
@@ -3567,6 +3600,9 @@
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Din information er sikker hos os. Vi kontakter dig kun når det er nødvendigt for at levere vores tjenester."
+      ],
+      "Your next billing date is ${ renewalTime }.": [
+        "Din næste faktureringsdato er ${ renewalTime }."
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Dit organisationsadgangskode kan deles med andre brugere, som du ønsker at give administrative privilegier. Det er også en nød-gendannelseskode til at få adgang til din organisation, såfremt du mister adgangen til din konto. Gem og opbevar denne adgangskode sikkert."
@@ -3920,6 +3956,9 @@
       ],
       "New password": [
         "Ny adgangskode"
+      ],
+      "New plan": [
+        "Nyt abonnement"
       ],
       "No filter": [
         "Intet filter"
@@ -4406,6 +4445,9 @@
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } med ubegrænsede hide-my-email aliasser"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME }-program"
+      ],
       "${ size } attachment size": [
         "${ size } vedhæftningsstørrelse"
       ],
@@ -4423,6 +4465,12 @@
       ],
       "24/7 support": [
         "24/7 support"
+      ],
+      "99.95% SLA": [
+        "99.95% SLA"
+      ],
+      "Ad-blocker and malware protection": [
+        "Annonceblokering og beskyttelse mod malware"
       ],
       "Admin console": [
         "Administrationskonsol"
@@ -4508,6 +4556,9 @@
       "Fast P2P/BitTorrent downloads": [
         "Hurtige P2P/BitTorrent-downloads"
       ],
+      "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
+        "Gratis funktioner fra ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Free VPN on a single device": [
         "Gratis VPN på en enkelt enhed"
       ],
@@ -4535,6 +4586,9 @@
       ],
       "Integrated 2FA authenticator": [
         "Integreret 2FA-godkendelse"
+      ],
+      "Kill switch/always-on VPN": [
+        "Kill switch/always-on VPN"
       ],
       "Limited support": [
         "Begrænset support"
@@ -4597,6 +4651,9 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android og Windows)"
+      ],
+      "Start protecting your organization": [
+        "Begynd at beskytte din organisation"
       ],
       "Start protecting yourself online in 2 easy steps": [
         "Begynd at beskytte dig selv online i 2 nemme trin"
@@ -4666,6 +4723,10 @@
       ],
       "Vault and Item sharing (coming soon)": [
         "Boks og element-deling (kommer snart)"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Deling af boks (op til ${ n } person)",
+        "Deling af boks (op til ${ n } person)"
       ]
     },
     "new_plans: feature info": {
@@ -4790,14 +4851,6 @@
         "vilkår og betingelser"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Prøveversion"
-      ],
-      "Your account's usage": [
-        "Din kontos forbrug"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Slet konto?"
@@ -4813,6 +4866,14 @@
       ],
       "Switch plans?": [
         "Skift abonnement?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Prøveversion"
+      ],
+      "Your account's usage": [
+        "Din kontos forbrug"
       ]
     },
     "new_plans: tooltip": {
@@ -5264,6 +5325,9 @@
       ]
     },
     "session_recovery:available:action": {
+      "Cancel password reset": [
+        "Annuller nulstilling af adgangskode"
+      ],
       "Cancel reset": [
         "Annuller nulstilling"
       ],
@@ -5288,6 +5352,12 @@
         "${ timeRemaining.inHours } time",
         "${ timeRemaining.inHours } timer"
       ],
+      "Didn’t make this request?": [
+        "Har du ikke foretaget denne anmodning?"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Hvis du ikke har bedt om at nulstille din adgangskode, skal du annullere denne anmodning nu."
+      ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
         "Anmodning om nulstilling af adgangskode godkendt (${ user.Email }). Du har ${ timeRemaining.inDays } dag til at nulstille din adgangskode.",
         "Anmodning om nulstilling af adgangskode godkendt (${ user.Email }). Du har ${ timeRemaining.inDays } dage til at nulstille din adgangskode."
@@ -5309,6 +5379,12 @@
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Du kan nu frit ændre din adgangskode til kontoen ${ boldEmail } i ${ boldDaysRemaining }."
+      ],
+      "You can now reset your password": [
+        "Du kan nu nulstille din adgangskode"
+      ],
+      "You can reset your password until ${ boldDate }.": [
+        "Du kan nulstille din adgangskode indtil ${ boldDate }."
       ]
     },
     "session_recovery:available:link": {
@@ -5375,8 +5451,17 @@
         "${ gracePeriodHoursRemaining } time mere",
         "${ gracePeriodHoursRemaining } timer mere"
       ],
+      "Didn’t make this request?": [
+        "Har du ikke foretaget denne anmodning?"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Hvis du ikke har bedt om at nulstille din adgangskode, skal du annullere denne anmodning nu."
+      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Hvis du ikke har bedt om at nulstille din adgangskode, skal du annullere denne anmodning nu."
+      ],
+      "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
+        "Nulstilling af adgangskode tilgængelig fra ${ boldDate }. Dette giver dig tid til at annullere eventuelle svigagtige anmodninger."
       ],
       "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
         "Der er anmodet om nulstilling af adgangskode (${ user.Email }). Du kan ændre din adgangskode om ${ hoursRemaining } time.",
@@ -5450,6 +5535,11 @@
         "Delt af ${ ownerName }"
       ]
     },
+    "Signup label": {
+      "Username": [
+        "Brugernavn"
+      ]
+    },
     "specialoffer: Action": {
       "Close": [
         "Luk"
@@ -5511,6 +5601,15 @@
       ],
       "Highest VPN speed": [
         "Højeste VPN-hastighed"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium early access": [
         "Premium tidlig adgang"
@@ -5701,6 +5800,12 @@
       "Billed every 2 years": [
         "Faktureres hvert 2. år"
       ],
+      "Billed for 15 months": [
+        "Faktureret for 15 måneder"
+      ],
+      "Billed for 30 months": [
+        "Faktureret for 30 måneder"
+      ],
       "Billed monthly": [
         "Faktureres månedligt"
       ],
@@ -5782,11 +5887,23 @@
       "Got it": [
         "Forstået"
       ],
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "Log ind på din Apple App Store-konto, og tryk på ${ subscriptions }."
+      ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "Log ind på din Play Store-konto, og tryk på ${ subscriptions }."
+      ],
       "Manage your subscription on ${ subscriptionManager }": [
         "Administrer dit abonnement på ${ subscriptionManager }"
       ],
       "Subscriptions": [
         "Abonnementer"
+      ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "Dit abonnement blev købt via en Android app. For at lave ændringer i dit abonnement eller opdatere dine betalingsoplysninger, skal du gå til Google Play Store."
+      ],
+      "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
+        "Dit abonnement blev købt via en iOS app. For at lave ændringer i dit abonnement eller opdatere dine betalingsoplysninger, skal du gå til Apple App Store."
       ]
     },
     "Subscription price": {
@@ -5806,6 +5923,9 @@
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
         "Vores system vil ikke længere automatisk opkræve dig ved hjælp af denne betalingsmetode, men dit abonnement vil stadig blive fornyet ved slutningen af faktureringsperioden. Hvis du ønsker at nedgradere eller ændre dit abonnement, skal du stadig selv gøre det inden udgangen af faktureringsperioden. Hvis du glemmer at foretage en manuel betaling, og automatisk betaling er deaktiveret for alle betalingsmetoder, kan vi desuden automatisk nedgradere din konto, hvilket vil føre til tabet af mange funktioner."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Vores system vil ikke længere automatisk opkræve dig ved hjælp af denne betalingsmetode, men dit abonnement vil stadig blive fornyet ved slutningen af faktureringsperioden. Hvis du ønsker at nedgradere eller ændre dit abonnement, skal du stadig selv gøre det inden slutningen af faktureringsperioden. Vi kan ikke automatisk nedgradere dig, for hvis du har overskredet lagerpladsen for det gratis abonnement eller bruger andre betalte funktioner, kan vi ikke automatisk slette filer, e-mails eller andre data for dig. Hvis du deaktiverer automatisk betaling, skal du huske at betale din næste abonnementsfakture inden forfaldsdatoen for at forhindre suspendering af kontoen."
       ]
     },
     "Subscription saving": {
@@ -5969,13 +6089,19 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Premium Password Manager": [
         "Premium Adgangskodeadministrator"
       ]
     },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Opret sikre login-oplysninger på alle dine enheder. Inkludere ubegrænsede aliasser, 20 bokse, integreret 2FA, betalingskort-autofyld og meget mere."
+        "Opret sikre login-oplysninger på alle dine enheder. Inkluderer ubegrænsede aliasser, 20 bokse, integreret 2FA, betalingskort-autofyld og meget mere."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "Inkluderer 2950+ servere i 65+ lande, forbind op til 10 enheder, tilgå verdensomspændende streamingtjenester, malware- og ad-blocker og meget mere."

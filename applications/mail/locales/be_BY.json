@@ -430,8 +430,14 @@
       "Get verification code": [
         "Атрымаць праверачны код"
       ],
+      "Go to first page": [
+        "Перайсці на першую старонку"
+      ],
       "Go to label": [
         "Перайсці да меткі"
+      ],
+      "Go to last page": [
+        "Перайсці на апошнюю старонку"
       ],
       "Go to next page": [
         "Перайсці на наступную старонку"
@@ -1649,7 +1655,7 @@
         "Вы ўжо ўмоўна прынялі гэта запрашэнне."
       ],
       "You cannot respond to ${ BRAND_NAME } invites if you're not on the participants list at the moment.": [
-        "Вы не зможаце адказаць на запрашэнне ${ BRAND_NAME }, калі ў дадзены момант вы адсутнічае ў спісе ўдзельнікаў."
+        "Вы не зможаце адказаць на запрашэнне ${ BRAND_NAME }, калі ў дадзены момант вы адсутнічаеце ў спісе ўдзельнікаў."
       ],
       "Your email address is not in the original participants list.": [
         "Ваш адрас электроннай пошты не знаходзіцца ў першапачатковым спісе ўдзельнікаў."
@@ -7191,6 +7197,9 @@
       "Sent": [
         "Адпраўленыя"
       ],
+      "Set up email forwarding": [
+        "Наладзіць перасылку лістоў"
+      ],
       "Sign up for free": [
         "Зарэгіструйцеся бясплатна"
       ],
@@ -8620,6 +8629,9 @@
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Цяпер мы прадвызначана загрузілі відарысы і заблакіравалі адпраўнікоў ад сачэння за вамі. Гэта можна змяніць у ${ settingsLink }."
+      ],
+      "You can now automatically forward your emails to anyone!": [
+        "Цяпер вы можаце аўтаматычна перасылаць свае лісты каму заўгодна!"
       ],
       "You can now schedule your messages to be sent later": [
         "Цяпер вы можаце запланаваць адпраўку паведамленняў на больш позні час"

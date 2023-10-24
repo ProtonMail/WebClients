@@ -98,6 +98,9 @@
       "Creating vault": [
         "新建保管庫"
       ],
+      "Customize": [
+        "自訂"
+      ],
       "Delete": [
         "刪除"
       ],
@@ -173,6 +176,9 @@
       "Importing": [
         "正在匯入"
       ],
+      "Invite others": [
+        "邀請他人"
+      ],
       "Join shared vault": [
         "加入共享的保管庫"
       ],
@@ -187,6 +193,15 @@
       ],
       "Lock extension": [
         "鎖定擴充"
+      ],
+      "Make admin": [
+        "設為管理員"
+      ],
+      "Make editor": [
+        "設為編輯者"
+      ],
+      "Make viewer": [
+        "設為檢視者"
       ],
       "Manage access": [
         "管理存取權限"
@@ -211,6 +226,12 @@
       ],
       "Not now": [
         "稍後再說"
+      ],
+      "OK": [
+        "好"
+      ],
+      "Open in a window": [
+        "在新視窗開啟"
       ],
       "Open navigation": [
         "開啟導覽"
@@ -268,6 +289,9 @@
       ],
       "Share": [
         "分享"
+      ],
+      "Share vault": [
+        "分享保險庫"
       ],
       "Show": [
         "顯示"
@@ -364,6 +388,9 @@
       "Could not open created vault": [
         "無法開啟被新增的保管庫"
       ],
+      "Could not open invited vault": [
+        "無法開啟邀請的保管庫"
+      ],
       "Could not open updated vault": [
         "無法開啟已更新的保管庫"
       ],
@@ -400,8 +427,20 @@
       "Error reporting problem": [
         "回報錯誤問題"
       ],
+      "Failed removing the invite.": [
+        "移除邀請失敗。"
+      ],
       "Failed resending invite.": [
         "重新發送邀請時失敗。"
+      ],
+      "Failed to edit user's access.": [
+        "失敗編輯使用者存取權。"
+      ],
+      "Failed to remove user's access.": [
+        "失敗移除使用者存取權。"
+      ],
+      "Failed to transfer this vault's ownership.": [
+        "轉移保管庫所有權失敗。"
       ],
       "File could not be parsed": [
         "檔案無法剖析"
@@ -496,6 +535,9 @@
       "Unknown error": [
         "未知錯誤"
       ],
+      "Unknown invite": [
+        "未知邀請"
+      ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "不支援${ PASS_APP_NAME }檔案格式"
       ],
@@ -588,9 +630,6 @@
       "${ trialDaysLeft } days left": [
         "剩下${ trialDaysLeft }天"
       ],
-      "${ vault.count } items": [
-        "${ vault.count }項目"
-      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "有${ PASS_APP_NAME }可用更新。更新可使用最新的功能及錯誤修復。"
       ],
@@ -602,6 +641,9 @@
       ],
       "Access your passwords on the go with our mobile apps.": [
         "於移動裝置的應用程式存取密碼"
+      ],
+      "Admin": [
+        "管理員"
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "別名${ item.aliasEmail }移至垃圾桶 - 將會停止轉寄電子郵件到信箱"
@@ -621,8 +663,17 @@
       "Autosaved on ${ submissionURL }": [
         "於${ submissionURL }自動存取"
       ],
+      "Can create, edit, delete, and export items in this vault.": [
+        "可於此保管庫新增、編輯、刪除與匯出項目。"
+      ],
       "Can grant and revoke access to this vault, and delete it.": [
         "可取得及撤銷此保管庫，及刪除。"
+      ],
+      "Can grant and revoke access to this vault.": [
+        "可取得及撤銷此保管庫的權限。"
+      ],
+      "Can view items in this vault.": [
+        "可查看保管庫的項目。"
       ],
       "Check out all the exclusive features that are available to you for a limited time.": [
         "查看限時提供給您的獨家功能"
@@ -632,9 +683,6 @@
       ],
       "Creating alias...": [
         "生成別名..."
-      ],
-      "Custom fields": [
-        "自訂欄位"
       ],
       "Decrypting your data": [
         "解密您的檔案"
@@ -653,6 +701,9 @@
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "容易地將密碼匯入${ PASS_APP_NAME }"
+      ],
+      "Editor": [
+        "編輯器"
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "透過連接${ BRAND_NAME }您的帳號啟用${ PASS_APP_NAME }"
@@ -717,11 +768,20 @@
       "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
         "為了從密其他碼管理器移至您的資料到 ${ PASS_APP_NAME }，透過以下形式匯出及匯入檔案。當您的項目成功匯入，刪除之前的匯出的檔案。"
       ],
-      "Integrated 2FA authenticator": [
-        "整合式雙重驗證"
-      ],
       "Internet connection lost": [
         "網際網路連線中斷"
+      ],
+      "Invitation sent": [
+        "邀請函已寄送"
+      ],
+      "Invite successfully removed": [
+        "邀請已成功移除"
+      ],
+      "Invite successfully resent": [
+        "邀請已成功重新傳送"
+      ],
+      "invites you to access items in": [
+        "邀請您存取項目於"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "您似乎已經登入 ${ PASS_APP_NAME }。若您嘗試使用其他帳號登入，請先從擴充套件登出。"
@@ -846,6 +906,9 @@
       "Successfully exported all your items": [
         "成功匯出您全部的項目"
       ],
+      "Successfully left the vault": [
+        "成功退出保管庫"
+      ],
       "Successfully synced all vaults": [
         "成功同步保管庫"
       ],
@@ -860,6 +923,9 @@
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "您貼上的字已達${ maxLength }字元上限"
+      ],
+      "The user did not accept the invitation yet.": [
+        "此使用者尚未允許邀請函。"
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "此匯出將會解密，所有能存取匯出檔案者皆可以看到密碼。為了安全請與使用後刪除。"
@@ -876,6 +942,12 @@
       "Upgrade ${ PASS_APP_NAME }": [
         "升級 ${ PASS_APP_NAME }"
       ],
+      "User's access removed": [
+        "使用者存取權已撤銷"
+      ],
+      "User's access sucessfuly updated": [
+        "使用者權限已成功更新"
+      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "保管庫${ payload.content.name }已成功刪除"
       ],
@@ -890,6 +962,9 @@
       ],
       "Verification code": [
         "驗證碼"
+      ],
+      "Viewer": [
+        "檢視者"
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "我們在同步資料到您的本機儲存空間時遇到了一些問題。請確保您有足夠的磁碟空間可以讓 ${ PASS_SHORT_APP_NAME } 運作順暢。"
@@ -914,6 +989,9 @@
       ],
       "You're about to create": [
         "您將要創建"
+      ],
+      "You're invited to a vault.": [
+        "您已被邀請至保管庫。"
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "您的${ PASS_APP_NAME }作業階段以鎖定"
@@ -997,6 +1075,9 @@
       ],
       "Autosave": [
         "自動儲存"
+      ],
+      "Autosave vault": [
+        "自動處存保管庫"
       ],
       "Autosuggest": [
         "自動建議"
@@ -1223,6 +1304,9 @@
       "Select an email address": [
         "選取電子郵件地址"
       ],
+      "Select preferred language": [
+        "選擇顯示語言"
+      ],
       "Select your password manager": [
         "選擇您的密碼管理器"
       ],
@@ -1303,6 +1387,9 @@
       ],
       "Verification number": [
         "驗證碼"
+      ],
+      "View details": [
+        "查看詳情資料"
       ],
       "View logs": [
         "檢視記錄檔"
@@ -1420,6 +1507,11 @@
         "新增備註"
       ]
     },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } users.": [
+        "保管庫不能包含超過 ${ vault.targetMaxMembers } 位使用者。"
+      ]
+    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME }設定"
@@ -1469,6 +1561,9 @@
       "Import to vault(s)": [
         "匯入至(多個)保管庫"
       ],
+      "Leave vault ?": [
+        "離開保管庫 ?"
+      ],
       "Low disk space": [
         "磁碟空間過低"
       ],
@@ -1481,6 +1576,12 @@
       "Secure your data": [
         "安全您的資料"
       ],
+      "Set access level": [
+        "設定存取層級"
+      ],
+      "Share with": [
+        "與分享"
+      ],
       "Switching to ${ PASS_APP_NAME }?": [
         "切換至 ${ PASS_APP_NAME }?"
       ],
@@ -1489,6 +1590,9 @@
       ],
       "The extension is now ready to use.": [
         "擴充功能已可使用"
+      ],
+      "Transfer ownership": [
+        "轉移所有權"
       ],
       "Trash empty": [
         "垃圾桶已清空"
@@ -1504,6 +1608,9 @@
       ],
       "Use my email": [
         "使用我的電子郵件"
+      ],
+      "Vault shared with you": [
+        "與您分享的保管庫"
       ],
       "Welcome to ${ brandNameJSX }": [
         "歡迎使用 ${ brandNameJSX }"
@@ -1608,6 +1715,12 @@
       "Please log back in": [
         "請重新登入"
       ],
+      "Please verify your email address in order to use email aliases": [
+        "請驗證您的電子郵件位址以啟用電子郵件別名"
+      ],
+      "Please verify your email address in order to use vault sharing": [
+        "請驗證您的電子郵件位址以啟用保管庫的分享功能"
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "回報未使用端到端加密，請不要傳送任何敏感資訊。"
       ],
@@ -1619,6 +1732,9 @@
       ],
       "Title is required": [
         "需要標題"
+      ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "轉移此保管庫擁有權給 ${ email }？"
       ],
       "Trash alias ?": [
         "刪除別名?"
@@ -1641,6 +1757,12 @@
       "You cannot create more vaults than your subscription allows.": [
         "您無法創建多於訂閱方案的保管庫。"
       ],
+      "You have reached the limit of members who can access this vault.": [
+        "此保管庫的存取者數量已達上限。"
+      ],
+      "You have reached the limit of users in this vault. ${ upgradeLink }": [
+        "您已達到此保管庫的使用者數向上限。 ${ upgradeLink }"
+      ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "你有未儲存的修改。你確定要捨棄它嗎？"
       ],
@@ -1652,6 +1774,9 @@
       ],
       "Your plan does not allow you to create more aliases": [
         "您的訂閱無法創建更多的別名"
+      ],
+      "Your plan only allows you to autofill from your first two vaults": [
+        "您的方案只允許從主要和次要保自動填入"
       ],
       "Your session was locked due to inactivity": [
         "您的作業階段因為使用而鎖定"

@@ -111,7 +111,7 @@
         "공휴일 추가"
       ],
       "Add sieve filter": [
-        "시브필터 추가"
+        "Sieve 필터 추가"
       ],
       "Add user": [
         "사용자 추가"
@@ -882,7 +882,7 @@
         "미리보기 표시"
       ],
       "Sign in": [
-        "가입하기"
+        "로그인"
       ],
       "Sign out": [
         "로그아웃"
@@ -987,7 +987,7 @@
         "Business로 업그레이드"
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
-        "${ PROTON_SENTINEL_NAME }을 활성화 하려면 업그레이드"
+        "${ PROTON_SENTINEL_NAME }을 활성화하려면 업그레이드"
       ],
       "Upgrade your plan": [
         "요금제 업그레이드"
@@ -1290,6 +1290,9 @@
     "Billing cycle": {
       "${ n } months": [
         "${ n }개월"
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
+        "${ renewalLength }동안 ${ renewPrice }(으)로 갱신됩니다."
       ]
     },
     "Billing cycle option": {
@@ -3117,7 +3120,7 @@
         "이메일 구독"
       ],
       "Which emails do you want to receive from ${ BRAND_NAME }?": [
-        "${ BRAND_NAME } 에서 어떤 이메일을 받고 싶으세요?"
+        "${ BRAND_NAME }에서 어떤 이메일을 받고 싶으세요?"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "${ categoriesJsx } 이메일을 재구독 했습니다."
@@ -3203,6 +3206,9 @@
       ],
       "A new encryption key will be generated for ${ boldForwarderEmail }.": [
         "새 암호화된 키가 ${ boldForwarderEmail }에 생성됩니다."
+      ],
+      "Forwarding to ${ BRAND_NAME } addresses will keep your communication end-to-end encrypted. When forwarding externally, end-to-end encryption for the forwarding address will be disabled.": [
+        "${ BRAND_NAME } 주소로 가져오면 종단 간 암호화로 커뮤니케이션을 보호할 수 잇습니다. 외부에서 가져오면, 주소 포워딩에 대한 종단 간 암호화는 비활성화 됩니다."
       ],
       "Forwarding to this address will become active once the recipient accepts the forwarding.": [
         "수신자가 전달을 수락하면 이 주소로의 전달이 활성화됩니다."
@@ -3434,7 +3440,7 @@
         "유효하지 않은 개인 키 파일"
       ],
       "Invalid Sieve code": [
-        "유효하지 않은 시브 코드"
+        "유효하지 않은 Sieve 코드"
       ],
       "Invalid verification code": [
         "잘못된 검증 코드"
@@ -3581,7 +3587,7 @@
         "가능하지 않은 폴더 이름들이 존재합니다. 해당 폴더의 이름들을 수정하기 위해 불러온 내역을 설정해 주세요."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "일부 폴더가 ${ MAIL_APP_NAME } 의 최대 글자 수를 초과합니다. 해당되는 이름을 수정해 주세요."
+        "일부 폴더가 ${ MAIL_APP_NAME }의 최대 글자 수를 초과합니다. 해당되는 이름을 수정해 주세요."
       ],
       "Some of your label names are reserved. Please customize the import to edit these names.": [
         "라벨 중 일부가 예약된 상태입니다. 이름을 변경하기 위해 불러올 항목을 선택해 주세요."
@@ -3590,7 +3596,7 @@
         "사용할 수 없는 라벨 이름이 있습니다. 해당하는 이름을 수정해 주세요."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "${ MAIL_APP_NAME } 의 최대 글자 수 제한을 초과하는 라벨 이름이 있습니다. 해당하는 이름을 수정해 주세요."
+        "${ MAIL_APP_NAME }의 최대 글자 수 제한을 초과하는 라벨 이름이 있습니다. 해당하는 이름을 수정해 주세요."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "문제가 발생했습니다. 진행하려면 ${ refresh } 해주세요. 그래도 이 오류가 지속될 경우 ${ supportTeam } 으로 문의해 주세요."
@@ -4547,7 +4553,7 @@
         "사용자의 보안 키 추가"
       ],
       "Registered security keys": [
-        "보안 키 추가됨"
+        "등록된 보안 키"
       ],
       "Security key registered": [
         "보안 키 등록됨"
@@ -4800,7 +4806,7 @@
     },
     "Go to sign up": {
       "New to ${ BRAND_NAME }? ${ signUp }": [
-        "${ BRAND_NAME } 이(가) 처음이신가요? ${ signUp }"
+        "${ BRAND_NAME }이 처음이신가요? ${ signUp }"
       ]
     },
     "Group": {
@@ -4970,7 +4976,7 @@
     },
     "Heading in trial plan": {
       "Try the best of ${ MAIL_APP_NAME } for free": [
-        "최고의 ${ MAIL_APP_NAME } 을 무료 체험 해보세요"
+        "최고의 ${ MAIL_APP_NAME }을 무료 체험 해보세요"
       ]
     },
     "Hint": {
@@ -5160,7 +5166,7 @@
         "3개의 점 (...) 을 클릭하여 드롭다운 메뉴를 확장하세요."
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
-        "${ boldAppPassword } 을(를) 설정하고 ${ BRAND_NAME } 에서 표시되었던 기존 비밀번호를 입력하십시오."
+        "${ boldAppPassword }를 설정하고 ${ BRAND_NAME }에 표시되었던 기존 비밀번호를 입력하십시오."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "${ yahooMailLink } 의 프로필에서 ${ boldAccountInfo } 로 이동하세요."
@@ -5187,7 +5193,7 @@
         "연락처를 ${ BRAND_NAME } 으로 가져오려면 ${ knowledgeBaseLink } 이(가) 필요합니다. 가져오기를 시작하기 전에 이것을 다운로드 하세요."
       ],
       "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "${ BRAND_NAME } 에서 이메일을 불러오려면, Yahoo에서 ${ appPasswordLink } 이(가) 필요합니다. 다음을 통해 다운로드 하세요:"
+        "${ BRAND_NAME }에서 이메일을 불러오려면, Yahoo에서 ${ appPasswordLink }가 필요합니다. 다음을 통해 다운로드하세요:"
       ]
     },
     "Import instructions emphasis": {
@@ -5579,10 +5585,10 @@
         "할당 됨"
       ],
       "Allow recovery by email": [
-        "이메일에 의한 복구 허용"
+        "이메일을 통한 복구 허용"
       ],
       "Allow recovery by phone": [
-        "스마트폰에 의한 복구 허용"
+        "스마트폰을 통한 복구 허용"
       ],
       "Already allocated": [
         "이미 할당 됨"
@@ -5740,6 +5746,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "이 캘린더의 구체적인 일정 내용을 공유하면서 ${ BRAND_NAME } 이 달력의 암호화된 정보를 접근할 수 있는 권한을 제공하는 것을 허용합니다."
       ],
+      "Cancel anytime": [
+        "언제든지 취소하세요"
+      ],
       "Center": [
         "가운데 정렬"
       ],
@@ -5786,7 +5795,7 @@
         "커스텀 도메인에 부계정을 만들거나 관리하고, 계정 주소를 추가하세요."
       ],
       "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "다른 사람들을 위해 이메일 주소를 생성하고, 비즈니스, 학교 혹은 그룹에 쓰일 ${ MAIL_APP_NAME } 을 관리하세요. 조직 이름과 사용자 지정 도메인을 추가할 준비를 시작하세요. (예 @yourcompany.com). "
+        "다른 사람들을 위해 이메일 주소를 생성하고, 비즈니스, 학교 혹은 그룹에 쓰일 ${ MAIL_APP_NAME }을 관리하세요. 조직 이름과 사용자 지정 도메인을 추가할 준비를 시작하세요. (예 @yourcompany.com). "
       ],
       "Create in": [
         "만들기"
@@ -5843,7 +5852,7 @@
         "전용 IP 주소가 있는 전용 서버를 개인 게이트웨이에 추가하여 미세 조정된 접근 제어가 가능합니다."
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
-        "${ MAIL_APP_NAME } 이 가장 낮은 숫자인지 확인하거나 아니면 다른 MX 기록을 삭제하세요."
+        "${ MAIL_APP_NAME }이 가장 낮은 숫자인지 확인하거나 아니면 다른 MX 기록을 삭제하세요."
       ],
       "Delete link?": [
         "링크를 삭제할까요?"
@@ -6071,7 +6080,7 @@
         "받은 편지함에 이메일이 없으면 스팸 폴더를 확인하세요."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
-        "${ MAIL_APP_NAME } 에 사용자 지정 도메인이 있다면, 해당 도메인으로 전송되었지만 잘못된 이메일 주소(예: 오타 때문에)로 전송된 메시지를 수신하도록 catch-all을 설정할 수 있습니다."
+        "${ MAIL_APP_NAME }에 사용자 지정 도메인이 있다면, 해당 도메인으로 전송되었지만 잘못된 이메일 주소(예: 오타 때문에)로 전송된 메시지를 수신하도록 catch-all을 설정할 수 있습니다."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "기프트 코드가 있을 경우 아래에 입력해 할인을 적용하십시오."
@@ -6086,7 +6095,7 @@
         "로그인 비밀번호를 잃어버리거나 계정 초기화가 필요할시, ${ boldImperative } ${ boldAccountRecovery } 가 있습니다."
       ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "${ boldImperative }와 ${ boldAccountAndRecovery }의 비밀번호를 잃어버렸거나 계정을 재설정해야 하는 경우 이메일, 연락처, 파일에 접근하지 못할 수 있습니다."
+        "로그인 정보를 분실하여 계정을 재설정해야 하는 경우, 이메일, 연락처 또는 파일에 액세스하지 못할 수 있으므로 ${ boldAccountAndRecovery }을 모두 마련하는 것이 ${ boldImperative }입니다."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "2단계 인증 기기를 분실한 경우, 6자리 인증코드 대신 이 코드들을 사용하여 계정에 로그인 할 수 있습니다. 각 코드는 한번씩만 사용이 가능합니다."
@@ -6194,7 +6203,7 @@
         "일부 데이터가 암호화되어 잠겨있어요."
       ],
       "it’s imperative": [
-        "필수사항이에요"
+        "필수적"
       ],
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "저는 @ProtonMail 을 사용해왔고 귀하가 좋아할 거라고 생각합니다. Proton Mail은 당신의 사생활을 보호하는 안전한 이메일 서비스입니다. 1개월의 프리미엄 기능을 무료로 사용하려면 이 링크에 접속하세요: ${ referrerLink }"
@@ -6230,7 +6239,7 @@
         "더 알아보기"
       ],
       "learn more about Sieve programming language": [
-        "시브 프로그래밍 언어에 대해 알아보세요"
+        "Sieve 프로그래밍 언어에 대해 알아보세요"
       ],
       "Left to Right": [
         "왼쪽에서 오른쪽으로"
@@ -6260,7 +6269,7 @@
         "로딩 중"
       ],
       "Loading ${ appName }": [
-        "로딩 중 ${ appName }"
+        "${ appName } 로딩 중"
       ],
       "Loading preview": [
         "미리보기 불러오는 중"
@@ -6365,7 +6374,7 @@
         "아직 Android 모바일 앱에서 지원하지 않습니다."
       ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "내 기기가 아닌가요? 개인정보 보호 브라우징 창을 사용하여 로그인하고 완료되었을때 닫으세요. ${ learnMore }"
+        "내 기기가 아닌가요? 시크릿 브라우징 창을 사용하여 로그인하고 완료되었을 때 닫으세요. ${ learnMore }"
       ],
       "Number of dedicated servers in the organization": [
         "조직의 전용 서버 수"
@@ -6425,7 +6434,7 @@
         "오래된 복구 키; 데이터에 액세스할 수 있도록 업데이트"
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
-        "1억 명이 넘는 사용자와 비즈니스가 ${ BRAND_NAME } 을(를) 가입했습니다."
+        "1억 명이 넘는 사용자와 비즈니스가 ${ BRAND_NAME }에 가입했습니다."
       ],
       "Paid for a ${ rewardMonths } months plan": [
         "${ rewardMonths } 개월 플랜 결제"
@@ -6641,7 +6650,7 @@
         "회원들이 2FA로 계정을 보호하도록 이메일을 보내세요."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "<a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> 으로 안전하게 전송되었습니다."
+        "<a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> 로 안전하게 전송되었습니다."
       ],
       "Server is currently down": [
         "서버가 일시적으로 비활성화 상태에요"
@@ -6674,7 +6683,7 @@
         "처음 메세지 보기"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
-        "주소를 활성화 하려면 ${ MAIL_APP_NAME }에 로그인 하십시오"
+        "주소를 활성화 하려면 ${ MAIL_APP_NAME }에 로그인하십시오"
       ],
       "Signed up": [
         "가입했습니다"
@@ -6698,7 +6707,7 @@
         "사용 가능한 서버 중 일부는 최근 제거로 인해 특정 국가에서만 사용할 수 있습니다."
       ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF는 도메인에 이메일을 보낼 수 있는 사람을 지정하는 데 사용되므로 SPF 기록에 ${ MAIL_APP_NAME } 을 추가하는 것을 추천합니다. 다음 TXT 레코드를 DNS에 추가하세요. 일반적으로는 도메인 이름 등록 기관의 제어판에서도 이 작업을 수행할 수 있습니다."
+        "SPF는 도메인에 이메일을 보낼 수 있는 사람을 지정하는 데 사용되므로 SPF 기록에 ${ MAIL_APP_NAME }을 추가하는 것을 추천합니다. 다음 TXT 레코드를 DNS에 추가하세요. 일반적으로는 도메인 이름 등록 기관의 제어판에서도 이 작업을 수행할 수 있습니다."
       ],
       "Step ${ step }": [
         "${ step } 단계"
@@ -6723,6 +6732,15 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "다음 주소를 사용하여 보증금을 제출하거나 QR 코드를 스캔하세요. 보증금은 확인 후 사용자의 계좌에 반영될 예정입니다."
+      ],
+      "Subscription auto-renews every 12 months.": [
+        "구독이 12개월 마다 갱신됩니다."
+      ],
+      "Subscription auto-renews every 24 months.": [
+        "구독이 24개월 마다 갱신됩니다."
+      ],
+      "Subscription auto-renews every month.": [
+        "구독이 매달 갱신됩니다."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "구독 종료 예정: ${ planName }의 혜택을 유지하려면 ${ byDate }까지 재 활성화해주세요. ${ reactivateLink }"
@@ -6782,7 +6800,7 @@
         "CSV 파일의 포맷이 올바르지 않습니다."
       ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
-        "가져오기-내보내기 앱을 사용하면 로컬 백업에 대한 메시지를 내보내고 이전 백업을 계정으로 복원할 수 있어요."
+        "Import-Export 앱을 사용하면 로컬 백업에 대한 메시지를 내보내고 이전 백업을 계정으로 복원할 수 있어요."
       ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "${ BRAND_NAME } 계정을 설정하지 않았다고 보고하는 링크가 만료되었습니다. 이 문제를 해결하기 위해 저희 지원팀에 연락해 주세요."
@@ -6801,6 +6819,9 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "이러한 구성은 WireGuard 라우터 및 공식 클라이언트와 함께 작동하도록 제공되요."
+      ],
+      "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
+        "이 자격증명을 공식 ${ VPN_APP_NAME } 앱에 로그인 할 때 사용하지 못할 수 있습니다. ${ learnMore }"
       ],
       "They'll receive a free month of ${ planName }.": [
         "초대를 받은 사람은 한 달간 무료로 ${ planName }(을)를 이용할 수 있습니다."
@@ -6911,7 +6932,7 @@
         "암호 재설정 후 잠긴 데이터를 해독하고 보려면 복구 방법을 선택하세요."
       ],
       "To ensure continuous access to your account, set an account recovery method": [
-        "계정에 지속적으로 액세스하려면 계정 복구 방법을 설정하세요."
+        "계정에 지속적으로 액세스하려면 계정 복구 방법을 설정하세요"
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "중요한 데이터가 손실되지 않도록 하기 위해, ${ DRIVE_APP_NAME }이(가) 사용자와 공동 작업자가 파일을 변경할 때 이전 버전의 파일을 저장합니다. ${ BRAND_NAME }이(가) 이전 버전을 얼마나 오래 유지해야 하는지 선택하세요."
@@ -6938,7 +6959,7 @@
         "${ toAppName } 을(를) 사용하려면, ${ MAIL_APP_NAME } 주소가 필요합니다."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
-        "제대로 작동하려면, 각 필터는 적어도 이름과 유효한 체 스크립트를 포함해야 합니다. ${ link } 할 수 있습니다."
+        "제대로 작동하려면, 각 필터는 적어도 이름과 유효한 채 스크립트를 포함해야 합니다. ${ link }."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "새 요금제에 가입하거나 현재 요금제를 갱신하는 데 사용할 수 있는 크레딧으로 계정을 충전하세요. 사용한 ${ i18nCurrency } 당 한개의 크레딧을 받습니다."
@@ -7177,8 +7198,8 @@
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Business 및 Enterprise 요금제에서는 조직을 위한 ${ boldDedicatedServers }를 구매 및 ${ boldGateways } 설정으로 조직의 사용자가 접근을 관리하도록 할 수 있습니다."
       ],
-      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
-        "암호화된 ${ BRAND_NAME } 주소로, 모든 ${ BRAND_NAME_TWO } 서비스를 사용할 수 있어요."
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "암호화된 ${ BRAND_NAME } 주소로, 모든 ${ BRAND_NAME } 서비스를 사용할 수 있어요."
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "현재 요금제에서는, 오직 @pm.me 주소로만 메시지를 받으실 수 있습니다. 업그레이드 하여 @pm.me를 사용하는 추가적인 주소를 만들어 메시지를 전송하세요."
@@ -7256,7 +7277,7 @@
         "만약 이 폴더에 새로운 이메일 메시지가 도착한다면 알림을 켜서 알 수 있습니다."
       ],
       "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "Outlook, Apple Mail, Thunderbird를 포함하여 IMAP/SMTP를 지원하는 모든 데스크톱 이메일 클라이언트에서 ${ MAIL_APP_NAME } 을 사용할 수 있어요."
+        "Outlook, Apple Mail, Thunderbird를 포함하여 IMAP/SMTP를 지원하는 모든 데스크톱 이메일 클라이언트에서 ${ MAIL_APP_NAME }을 사용할 수 있어요."
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "다음 자격 증명을 사용하여 macOS의 Tunnelblick, GNU/Linux의 OpenVPN 등 오픈 소스 서드 파티 VPN 앱에서 ${ VPN_APP_NAME } 서버에 접속할 수 있습니다."
@@ -7399,6 +7420,9 @@
       "Your login information will not be saved after the import is completed.": [
         "로그인 정보는 가져오기 작업이 끝나면 삭제됩니다."
       ],
+      "Your next billing date is ${ renewalTime }.": [
+        "다음 결제일은 ${ renewalTime } 입니다."
+      ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "조직의 비밀번호는 관리자 권한을 부여하고 싶은 다른 사용자에게 공유할 수 있습니다. 또한 비밀번호는 계정에 대한 액세스 권한을 잃었을 경우 긴급 복구 코드로 사용될 수도 있으니, 비밀번호를 저장하고 안전하게 보관하세요."
       ],
@@ -7422,9 +7446,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "유료 구독은 Mozilla에서 관리합니다. Mozilla 지원에 연락하세요."
-      ],
-      "Your subscription will auto-renew on ${ renewalTime }.": [
-        "사용자의 구독이 ${ renewalTime }에 자동으로 갱신됩니다."
       ]
     },
     "info": {
@@ -7894,10 +7915,10 @@
         "이메일로 알림 허용"
       ],
       "Allow recovery by email": [
-        "이메일에 의한 복구 허용"
+        "이메일을 통한 복구 허용"
       ],
       "Allow recovery by phone": [
-        "스마트폰에 의한 복구 허용"
+        "스마트폰을 통한 복구 허용"
       ],
       "Allow recovery by recovery phrase": [
         "복구 문구로 복구 허용"
@@ -7969,7 +7990,7 @@
         "차단"
       ],
       "Block email tracking": [
-        "차단 이메일 추적 중"
+        "이메일 추적 차단"
       ],
       "Block malware only": [
         "멀웨어만 차단"
@@ -8986,7 +9007,7 @@
         "이메일 주소 설정"
       ],
       "Sign in": [
-        "가입하기"
+        "로그인"
       ],
       "Terms": [
         "조건"
@@ -9067,6 +9088,11 @@
         "${ selectedItemsToImportCount } 중 ${ itemsToImportCount } 개 라벨에서 메시지를 불러오고 메시지들을 이로 라벨"
       ]
     },
+    "mail_signup_2023: Info": {
+      "Secure email that protects your privacy": [
+        "프라이버시를 지켜주는 이메일로 보호하세요."
+      ]
+    },
     "Maintenance mode": {
       "Please check back in a few minutes.": [
         "잠시 후 다시 시도해 주세요."
@@ -9102,7 +9128,7 @@
         "세션 비활성화"
       ],
       "Sign in": [
-        "가입하기"
+        "로그인"
       ]
     },
     "Message": {
@@ -9110,7 +9136,7 @@
         "모든 필터 작업은 ${ MAIL_APP_NAME } 계정의 모든 메시지에 적용됩니다. 자동 회신 이메일은 전송되지 않습니다."
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
-        "커스텀 이메일 주소 (예: you@yourcompany.com)을 설정하려면 ${ BRAND_NAME } 에 사용자의 지정 도메인을 연결하세요. 마법사가 이 과정을 가이드해 줄 것입니다."
+        "커스텀 이메일 주소 (예: you@yourcompany.com)을 설정하려면 ${ BRAND_NAME }에 사용자의 지정 도메인을 연결하세요. 마법사가 이 과정을 가이드해 줄 것입니다."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "무료 체험이 종료되었습니다. 계정 접근이 곧 비활성화 됩니다. ${ action }"
@@ -9402,7 +9428,7 @@
         "${ BRAND_NAME } 의 모든 플랜 살펴보기"
       ],
       "From ${ price }": [
-        "보낸 사람: ${ price }"
+        "시작 가격: ${ price }"
       ],
       "Keep my ${ currentPlanName } account": [
         "나의 ${ currentPlanName } 계정 유지"
@@ -9788,6 +9814,9 @@
       ],
       "Vault and Item sharing (coming soon)": [
         "금고 및 항목 공유 (곧 찾아옵니다)"
+      ],
+      "Vault sharing (up to ${ n } people)": [
+        "금고 공유 (최대 ${ n }명)"
       ]
     },
     "new_plans: feature info": {
@@ -9810,17 +9839,6 @@
       ],
       "Team management": [
         "팀 관리"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "그렇지 않으면 귀하의 계정에 접근하는 것이 제한될 것이며, 귀하의 계정은 결국 비활성화됩니다."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } 의 프리미엄 기능을 계속 사용하려면, 구독 및 결제 옵션을 선택하세요."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "무료 체험이 ${ formattedPeriodEndDate }에 종료됩니다."
       ]
     },
     "new_plans: info": {
@@ -9912,6 +9930,17 @@
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "그렇지 않으면 귀하의 계정에 접근하는 것이 제한될 것이며, 귀하의 계정은 결국 비활성화됩니다."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } 의 프리미엄 기능을 계속 사용하려면, 구독 및 결제 옵션을 선택하세요."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "무료 체험이 ${ formattedPeriodEndDate }에 종료됩니다."
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } 의 ${ humanMaxSpace }"
@@ -9988,6 +10017,18 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: 커스텀 캘린더, 캘린더 공유 등의 기능을 포함하는 종단 간 암호화로 보호되는 캘린더를 사용해 보세요."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: 버전 기록, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: 사용자 지정 이메일 도메인, 15개 이메일 주소, 무제한 hide-my-email 별명 등 기능을 포함하는 이메일로 보호하세요."
+      ],
+      "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "${ VPN_APP_NAME }: ${ serversAndCountries }, 빠른 VPN 속도, 전세계적 스트리밍 서비스 접근, 멀웨어 및 광고 제저, 빠른 BitTorrent 다운로드 등을 지원하는 VPN으로 비공개로 차단된 컨텐츠에 접근하세요."
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "어디서든지 스트리밍 서비스에서 콘텐츠를 접근하세요, Netflix, Disney+, Prime Video가 포함됩니다"
       ],
@@ -10781,6 +10822,9 @@
       "End-to-end encrypted notes": [
         "종단간 암호화된 메모"
       ],
+      "End-to-end encryption": [
+        "종단간 암호화"
+      ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "**월간 ${ relativePrice }**에 모든 ${ BRAND_NAME } 프리미엄 서비스를 사용하실 수 있습니다!"
       ],
@@ -10819,6 +10863,9 @@
       ],
       "Launching ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 실행 중"
+      ],
+      "Limited time offer: Get ${ title } for free for 1 year!": [
+        "기간 한정: 1년 동안 ${ title } 제품을 무료로 사용해 보세요!"
       ],
       "One easy subscription.": [
         "한 번의 쉬운 구독"
@@ -11913,7 +11960,7 @@
         "최대 ${ credits }의 크레딧 받기"
       ],
       "Invite friends to ${ BRAND_NAME }": [
-        "친구를 ${ BRAND_NAME } 에 초대하세요."
+        "친구를 ${ BRAND_NAME }에 초대하세요."
       ]
     },
     "State": {
@@ -11973,6 +12020,12 @@
     "Subscription": {
       "Billed every 2 years": [
         "2년마다 청구"
+      ],
+      "Billed for 15 months": [
+        "15개월 마다 결제됨"
+      ],
+      "Billed for 30 months": [
+        "30개월 마다 청구됨"
       ],
       "Billed monthly": [
         "매달 청구"
@@ -12415,7 +12468,7 @@
         "비즈니스용"
       ],
       "For families": [
-        "가족을 위한"
+        "가족용"
       ],
       "For individuals": [
         "개인용"
@@ -13059,10 +13112,10 @@
         "대화 가져오기"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        "${ PRODUCT_NAMES.EASY_SWITCH } 를 통해 불러오기"
+        "${ PRODUCT_NAMES.EASY_SWITCH }로 불러오기"
       ],
       "Import-Export app": [
-        "가져오기-내보내기 앱"
+        "Import-Export 앱"
       ],
       "Increase your privacy with more addresses": [
         "더 많은 주소로 프라이버시를 한 층 향상시키세요"
@@ -13311,7 +13364,7 @@
         "짧은 도메인 (@pm.me)"
       ],
       "Sign in": [
-        "가입하기"
+        "로그인"
       ],
       "Sign in and grant access": [
         "로그인 및 엑세스 권한 부여"
@@ -13746,6 +13799,11 @@
         "사용자의 외부 계정이 24시간 대역폭 제한에 도달했습니다. ${ BRAND_NAME }이 불러오기를 계속하도록 시도할 것입니다."
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: 무제한 별명, 공유, 통합된 2FA 등을 포함하는 비밀번호 관리자로 모든 기기에서 로그인을 보호하세요."
+      ]
+    },
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
         "이는 당신이 보내는 각 메시지에 공개 키를 자동으로 추가합니다. 수신자는 이것을 사용하여 메시지의 진위를 확인하고 암호화된 메시지를 보낼 수 있습니다."
@@ -13983,7 +14041,7 @@
         "날짜 및 시간 설정은 기기 동기화 범위에 벗어납니다. ${ learnMore }"
       ],
       "The device or service using this token will no longer be able to send email through ${ MAIL_APP_NAME }.": [
-        "이 토큰을 사용 중인 기기 및 서비스가 더 이상 ${ MAIL_APP_NAME } 을 통해 이메일을 전송할 수 없게 됩니다."
+        "이 토큰을 사용 중인 기기 및 서비스가 더 이상 ${ MAIL_APP_NAME }을 통해 이메일을 전송할 수 없게 됩니다."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "이 불러오기가 현재 ${ BRAND_NAME } 계정에서의 저장 공간을 초과할 수 있습니다. 불러올 파일들을 선별하는 것을 고려해 보세요."
