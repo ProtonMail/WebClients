@@ -28,7 +28,7 @@ import useKTActivation from './useKTActivation';
  */
 const useKTVerifier = (api: Api, getUser: () => Promise<UserModel>) => {
     const { APP_NAME } = useConfig();
-    const ktLSAPI = getKTLocalStorage(APP_NAME);
+    const ktLSAPIPromise = getKTLocalStorage(APP_NAME);
     const ktActivation = useKTActivation();
 
     interface CreatedSKL {
@@ -66,6 +66,7 @@ const useKTVerifier = (api: Api, getUser: () => Promise<UserModel>) => {
 
             const privateKeys = userKeys.map(({ privateKey }) => privateKey);
 
+            const ktLSAPI = await ktLSAPIPromise;
             for (const savedSKL of createdSKLs.current) {
                 const allSKLs = await fetchSignedKeyLists(api, savedSKL?.revision ?? 0, savedSKL.address.Email);
                 const correspondingSKL = allSKLs.find((skl) => savedSKL.signedKeyList.Data == skl.Data);
