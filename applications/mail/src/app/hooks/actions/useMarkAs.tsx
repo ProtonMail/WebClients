@@ -7,7 +7,7 @@ import { markConversationsAsRead, markConversationsAsUnread } from '@proton/shar
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import { markMessageAsRead, markMessageAsUnread } from '@proton/shared/lib/api/messages';
 
-import { getIsElementReminded } from 'proton-mail/logic/snoozehelpers';
+import { isElementReminded } from 'proton-mail/logic/snoozehelpers';
 
 import UndoActionNotification from '../../components/notifications/UndoActionNotification';
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../../constants';
@@ -78,7 +78,7 @@ export const useMarkAs = () => {
         const markAsReadAction = isMessage ? markMessageAsRead : markConversationsAsRead;
         const markAsUnreadAction = isMessage ? markMessageAsUnread : markConversationsAsUnread;
         const action = status === MARK_AS_STATUS.READ ? markAsReadAction : markAsUnreadAction;
-        const displaySnoozedReminder = status === MARK_AS_STATUS.READ ? false : getIsElementReminded(elements[0]);
+        const displaySnoozedReminder = status === MARK_AS_STATUS.READ ? false : isElementReminded(elements[0]);
 
         let rollback: (() => void) | undefined = () => {};
 

@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { Tooltip } from '@proton/components';
 
 import { params } from 'proton-mail/logic/elements/elementsSelectors';
-import { getIsElementReminded, getSnoozeTimeFromElement, isElementSnoozed } from 'proton-mail/logic/snoozehelpers';
+import { getSnoozeTimeFromElement, isElementReminded, isElementSnoozed } from 'proton-mail/logic/snoozehelpers';
 
 import { formatDistanceToNow, formatFullDate, formatSimpleDate } from '../../helpers/date';
 import { getDate } from '../../helpers/elements';
@@ -65,7 +65,7 @@ const ItemDate = ({ element, labelID, className, mode = 'simple', useTooltip = f
     // Displays the orange date when the element has a snooze label
     // Displays the orange "Reminded" text when the element has DisplaySnoozedReminder
     const snoozeTime = getSnoozeTimeFromElement(element);
-    const isReminded = getIsElementReminded(element);
+    const isReminded = isElementReminded(element);
     const isSnoozed = isElementSnoozed(element, conversationMode);
 
     if (isInListView && (isReminded || (isSnoozed && snoozeTime))) {
