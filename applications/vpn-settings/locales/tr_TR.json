@@ -221,6 +221,9 @@
       "Get ${ vpnPlus }": [
         "${ vpnPlus } alın"
       ],
+      "Get a new encrypted email address": [
+        "Yeni bir şifrelenmiş e-posta adresi alın"
+      ],
       "Get in touch": [
         "Bizimle görüşün"
       ],
@@ -494,6 +497,9 @@
       "Use recovery code": [
         "Kurtarma kodunu kullan"
       ],
+      "Use your current email instead": [
+        "Bunun yerine var olan e-posta adresinizi kullanın"
+      ],
       "User": [
         "Kullanıcı"
       ],
@@ -628,6 +634,127 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Bu işlem bu sertifikayı kullanan tüm yöneltici ve istemcilerin bağlantısını kesecek."
+      ]
+    },
+    "bf2023: Action": {
+      "**Add our encrypted password manager** for only ${ price }": [
+        "Sadece ${ price } ile **şifrelenmiş parola yönetimizi ekleyin**"
+      ],
+      "Add ${ PASS_APP_NAME }": [
+        "Ekle: ${ PASS_APP_NAME }"
+      ],
+      "Add ${ plan } for ${ price } per month": [
+        "${ plan } tarifesini aylık ${ price } ile ekle"
+      ],
+      "Add ${ plan } to your plan by subscribing to 15 months": [
+        "15 ay abone olarak tarifenize ek ${ plan } ekleyin"
+      ],
+      "Get the deal": [
+        "Tekliften yararlanın"
+      ],
+      "Remove": [
+        "Kaldır"
+      ],
+      "Remove ${ PASS_APP_NAME }": [
+        "Sil: ${ PASS_APP_NAME }"
+      ],
+      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
+        "15 aylık abone olarak **şifrelenmiş parola yöneticimizi** ayda tarifenize ek sadece ${ priceNoSuffix } ile edinin!"
+      ]
+    },
+    "bf2023: Deal details": {
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus ve ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } depolama alanı"
+      ],
+      "1 user": [
+        "1 kullanıcı"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "3,000+ servers across 65+ countries": [
+        "65'ten fazla ülkede 3,000'den fazla sunucu"
+      ],
+      "6 users": [
+        "6 kullanıcı"
+      ],
+      "Access content worldwide": [
+        "Dünyadaki her içeriğe erişin"
+      ],
+      "Ad-blocker and malware protection": [
+        "Reklam engelleyici ve kötü amaçlı yazılım koruması"
+      ],
+      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Tüm ücretli ${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_APP_NAME } özellikleri"
+      ],
+      "Extended version history": [
+        "Genişletilmiş sürüm geçmişi"
+      ],
+      "High speed streaming": [
+        "Yüksek hızda yayın akışı"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Ücretli ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Ücretli ${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Ücretli ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Ücretli Parola Yöneticisi"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "İndirimler aylık standart ücretlendirmeye göredir."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Aboneliğiniz, faturalama döneminizin sonunda otomatik olarak standart tarife ve süre üzerinden yenilenir."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "30 gün içinde ücret iade garantisi"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "Yasaklı içeriklere erişin ve gizlice gezinin. 65'ten fazla ülkede 3,000 üzerinde sunucu, en yüksek VPN hızlarını, dünya çapındaki yayın hizmetlerine erişim, kötü amaçlı yazılım ve reklam engelleyici, hızlı BitTorrent indirmelerini ve daha fazlasını içerir."
+      ],
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Netflix, Disney+, Prime Video ve daha fazla yayın hizmetlerindeki içeriklere herhangi bir yerden erişin."
+      ],
+      "Bypass local internet blocks and censorship with our global network of servers.": [
+        "Yerel internet engellemelerini ve sansürü küresel sunucu ağlarımız ile aşın."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
+        "${ domains } özel e-posta etki alanı, ${ addresses } e-posta adresi, ${ aliases } hide-my-email takma adı, takvim paylaşımı ve daha fazlasını içerir."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "${ domains } özel e-posta etki alanı, ${ addresses } e-posta adresi, sınırsız hide-my-email takma adı, takvim paylaşımı ve daha fazlasını içerir."
+      ],
+      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve daha fazlası."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "E-postalarınızı ve takviminizi uçtan uca şifreleme ile güvene alın. özel e-posta etki alanı, 15 e-posta adresi, sınırsız hide-my-email takma adı, takvim paylaşımı ve daha fazlasını içerir."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Sürüm geçmişi, şifrelenmiş dosya paylaşımı ve diğer özellikler."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Özel olarak tasarlanmış NetShield cihazlarınızı korur ve reklamları, etkinlik izleyicileri, kötü amaçlı yazılımları engelleyerek internette gezinme hızınızı artırır."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "Depolama alanı tüm ${ BRAND_NAME } uygulamaları arasında paylaşılır."
+      ],
+      "Store up to 200 versions of each file for up to 10 years.": [
+        "Her dosyanın 200'e kadar sürümünü 10 yıla kadar tutun."
       ]
     },
     "Billing cycle": {
@@ -2657,15 +2784,6 @@
       "Admin account allocation": [
         "Yönetici hesabına ayrılan"
       ],
-      "After this date, you'll be billed every 12 months at the normal yearly rate.": [
-        "Bu tarihten sonra faturanız her 12 ayda bir normal yıllık ücret üzerinden hazırlanacak."
-      ],
-      "After this date, you'll be billed every 24 months at the normal 2-year rate.": [
-        "Bu tarihten sonra faturanız her 24 ayda bir normal iki yıllık ücret üzerinden hazırlanacak."
-      ],
-      "After this date, you'll be billed every month at the regular price.": [
-        "Bu tarihten sonra faturanız her ay normal fiyat üzerinden hazırlanacak."
-      ],
       "All your changes will be lost.": [
         "Yaptığınız tüm değişiklikler kaybolacak."
       ],
@@ -3562,6 +3680,9 @@
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Bir Business ya da Enterprise tarifesi ile kuruluşunuz için ${ boldDedicatedServers } satın alabilir ve bunlara hangi kullanıcıların erişebileceğini kontrol etmek için ${ boldGateways } ayarlayabilirsiniz."
       ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Şifrelenmiş bir ${ BRAND_NAME } adresi ile tüm ${ BRAND_NAME } hizmetlerini kullanabilirsiniz"
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Kullanıma almadan yeni kullanıcılar eklenemez. Var olan kullanıcılara adres ekleyemez veya korunmayan kullanıcı hesaplarına erişemezsiniz."
       ],
@@ -3656,6 +3777,9 @@
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Bu tarihte ${ vpnPlanNameShort } sunucularına ve özelliklerine erişiminizi kaybedeceksiniz."
       ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } ve ${ CALENDAR_APP_NAME } kullanmak için bir ${ BRAND_NAME } adresiniz olmalıdır"
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Birazdan ödemenizi doğrulamak için PayPal sitesine yönlendirileceksiniz."
       ],
@@ -3712,9 +3836,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Aboneliğiniz Mozilla tarafından yönetiliyor. Lütfen Mozilla destek ekibi ile görüşün."
-      ],
-      "Your subscription will auto-renew on ${ renewalTime }.": [
-        "Aboneliğiniz ${ renewalTime } zamanında otomatik olarak yenilenecek."
       ]
     },
     "Info for cash payment method": {
@@ -4838,6 +4959,10 @@
       ],
       "Vault and Item sharing (coming soon)": [
         "Kasa ve öge paylaşımı (yakında)"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Kasa paylaşma (${ n } kişiye kadar)",
+        "Kasa paylaşma (${ n } kişiye kadar)"
       ]
     },
     "new_plans: feature info": {
@@ -4965,14 +5090,6 @@
         "hüküm ve koşullar"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } deneme"
-      ],
-      "Your account's usage": [
-        "Hesap kullanımınız"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Hesap silinsin mi?"
@@ -4988,6 +5105,14 @@
       ],
       "Switch plans?": [
         "Tarifeler değiştirilsin mi?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } deneme"
+      ],
+      "Your account's usage": [
+        "Hesap kullanımınız"
       ]
     },
     "new_plans: tooltip": {
@@ -5860,6 +5985,9 @@
       ],
       "Password": [
         "Parola"
+      ],
+      "Username": [
+        "Kullanıcı adı"
       ]
     },
     "specialoffer: Action": {
