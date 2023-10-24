@@ -14,7 +14,6 @@ import { Actions } from '../interfaces';
 
 interface Props {
     labels: Label[];
-    isNarrow: boolean;
     actions: Actions;
     handleUpdateActions: (onUpdateActions: Partial<Actions>) => void;
 }
@@ -24,7 +23,7 @@ type ChangePayload = {
     isOpen: boolean;
 };
 
-const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, labels }: Props) => {
+const FilterActionsFormLabelsRow = ({ actions, handleUpdateActions, labels }: Props) => {
     const [user] = useUser();
     const { labelAs } = actions;
     const { isOpen } = labelAs;
@@ -95,18 +94,14 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
 
     return (
         <div
-            className="border-bottom flex-no-min-children flex-column md:flex-row align-items-center py-4"
+            className="border-bottom flex flex-column md:flex-row flex-nowrap align-items-center py-4 gap-4"
             data-testid="filter-modal:label-row"
         >
-            <button
-                type="button"
-                className={clsx(['w-full md:w-1/5 text-left', isNarrow && 'mb-4'])}
-                onClick={toggleSection}
-            >
+            <button type="button" className="w-full md:w-1/4 text-left" onClick={toggleSection}>
                 <Icon name="chevron-down" className={clsx([isOpen && 'rotateX-180'])} />
                 <span className={clsx(['ml-2', actions.error && 'color-danger'])}>{c('Label').t`Label as`}</span>
             </button>
-            <div className={clsx(['flex-item-fluid', !isNarrow && 'ml-4'])}>
+            <div className="w-full">
                 {isOpen ? (
                     <>
                         <div className="w-full">

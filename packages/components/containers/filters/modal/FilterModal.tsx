@@ -20,7 +20,6 @@ import {
 } from '../../../components';
 import { generateUID } from '../../../helpers';
 import {
-    useActiveBreakpoint,
     useApiWithoutResult,
     useEventManager,
     useFilters,
@@ -111,7 +110,6 @@ const modelHasChanged = (a: SimpleFilterModalModel, b: SimpleFilterModalModel): 
 };
 
 const FilterModal = ({ filter, onCloseCustomAction, ...rest }: Props) => {
-    const { isNarrow } = useActiveBreakpoint();
     const [filters = []] = useFilters();
     const [labels = [], loadingLabels] = useLabels();
     const [folders = [], loadingFolders] = useFolders();
@@ -292,7 +290,6 @@ const FilterModal = ({ filter, onCloseCustomAction, ...rest }: Props) => {
             case Step.NAME:
                 return (
                     <FilterNameForm
-                        isNarrow={isNarrow}
                         model={model}
                         onChange={(newModel) => setModel(newModel as SimpleFilterModalModel)}
                         errors={errors}
@@ -300,20 +297,19 @@ const FilterModal = ({ filter, onCloseCustomAction, ...rest }: Props) => {
                     />
                 );
             case Step.CONDITIONS:
-                return <FilterConditionsForm isEdit={isEdit} isNarrow={isNarrow} model={model} onChange={setModel} />;
+                return <FilterConditionsForm isEdit={isEdit} model={model} onChange={setModel} />;
             case Step.ACTIONS:
                 return (
                     <FilterActionsForm
                         labels={labels}
                         folders={folders}
-                        isNarrow={isNarrow}
                         model={model}
                         onChange={setModel}
                         isEdit={isEdit}
                     />
                 );
             case Step.PREVIEW:
-                return <FilterPreview labels={labels} folders={folders} isNarrow={isNarrow} model={model} />;
+                return <FilterPreview labels={labels} folders={folders} model={model} />;
             default:
                 return null;
         }
