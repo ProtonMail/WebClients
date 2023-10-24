@@ -964,7 +964,7 @@ const SingleSignupContainerV2 = ({
                                     const result = await handleCreateUser({
                                         cache,
                                         api: silentApi,
-                                        mode: 'cro',
+                                        mode: signupParameters.invite?.type !== 'pass' ? 'cro' : undefined,
                                     });
                                     setModelDiff({
                                         subscriptionData: result.cache.subscriptionData,
