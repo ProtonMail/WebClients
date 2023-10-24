@@ -2343,6 +2343,9 @@
       "Event not found": [
         "No s'ha trobat l'esdeveniment."
       ],
+      "Failed to get event": [
+        "No s'ha pogut obtenir l'esdeveniment."
+      ],
       "Failed to get original occurrence in series": [
         "No s'ha pogut obtenir l'ocurrència d'origen de la sèrie."
       ],
@@ -2950,6 +2953,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } prèmium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } prèmium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } prèmium"
+      ],
       "Up to 6 users": [
         "Fins a 6 usuaris"
       ]
@@ -5831,6 +5843,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 usuari"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -5848,6 +5863,15 @@
       ],
       "Highest VPN speed": [
         "La velocitat VPN més alta"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } prèmium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i ${ DRIVE_SHORT_APP_NAME } prèmium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } prèmium"
       ],
       "Premium early access": [
         "Accés anticipat prèmium"
@@ -5893,14 +5917,24 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } mesos"
+      ],
       "/ month": [
         "/ mes"
       ],
       "1 year": [
         "1 any"
       ],
+      "15 months": [
+        "15 mesos"
+      ],
       "2 years": [
         "2 anys"
+      ],
+      "30 months": [
+        "30 mesos"
       ],
       "Billed at ${ amount } for 1 month": [
         "Facturat a ${ amount } durant 1 mes"
@@ -6201,6 +6235,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } prèmium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } prèmium"
+      ],
       "Premium Password Manager": [
         "Gestor de Contrasenyes prèmium"
       ]
