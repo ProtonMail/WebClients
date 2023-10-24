@@ -59,6 +59,9 @@
       "Confirm": [
         "Konfirmasi"
       ],
+      "Confirm access": [
+        "Konfirmasi akses"
+      ],
       "Continue": [
         "Lanjutkan"
       ],
@@ -80,6 +83,9 @@
       "Create a ${ BRAND_NAME } account": [
         "Buat akun ${ BRAND_NAME }"
       ],
+      "Create a new vault to share": [
+        "Buat brankas baru untuk dibagikan"
+      ],
       "Create alias": [
         "Buat alias"
       ],
@@ -97,6 +103,9 @@
       ],
       "Creating vault": [
         "Membuat brankas"
+      ],
+      "Customize": [
+        "Atur"
       ],
       "Delete": [
         "Hapus"
@@ -212,6 +221,9 @@
       "More options": [
         "Opsi lainnya"
       ],
+      "Move to a shared vault": [
+        "Pindahkan ke brankas bersama"
+      ],
       "Move to another vault": [
         "Pindahkan ke brankas lainnya"
       ],
@@ -223,6 +235,9 @@
       ],
       "Not now": [
         "Tidak sekarang"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open in a window": [
         "Buka di jendela"
@@ -244,6 +259,9 @@
       ],
       "Regenerate": [
         "Hasilkan ulang"
+      ],
+      "Reject": [
+        "Tolak"
       ],
       "Reject invitation": [
         "Tolak undangan"
@@ -284,6 +302,9 @@
       "Share": [
         "Bagikan"
       ],
+      "Share this vault": [
+        "Bagikan brankas ini"
+      ],
       "Share vault": [
         "Bagikan brankas"
       ],
@@ -320,11 +341,17 @@
       "Update": [
         "Perbarui"
       ],
+      "Update vault": [
+        "Perbarui brankas"
+      ],
       "Updating": [
         "Memperbarui"
       ],
       "Upgrade": [
         "Tingkatkan"
+      ],
+      "Upgrade now to share with more people": [
+        "Tingkatkan sekarang untuk berbagi dengan lebih banyak orang."
       ],
       "Upgrade to keep these features": [
         "Tingkatkan paket Anda untuk tetap menikmati berbagai fitur berikut"
@@ -375,6 +402,9 @@
       ],
       "Cannot send invitation to this address at the moment": [
         "Tidak dapat mengirimkan undangan dan alamat untuk saat ini"
+      ],
+      "Could not confirm this invite at the moment": [
+        "Undangan ini tidak dapat dikonfirmasi untuk saat ini"
       ],
       "Could not leave vault.": [
         "Brankas tidak dapat ditinggalkan."
@@ -627,14 +657,14 @@
       "${ trialDaysLeft } days left": [
         "${ trialDaysLeft } hari tersisa"
       ],
-      "${ vault.count } items": [
-        "${ vault.count } item"
-      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Versi terbaru dari ${ PASS_APP_NAME } tersedia. Perbarui aplikasinya untuk menikmati fitur terbaru dan perbaikan bug."
       ],
       "Access ${ PASS_APP_NAME } via this icon": [
         "Akses ${ PASS_APP_NAME } melalui ikon ini"
+      ],
+      "Access successfully confirmed": [
+        "Akses berhasil dikonfirmasi"
       ],
       "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
         "Akses ke ${ PASS_APP_NAME } akan memerlukan kode PIN untuk membuka sesi Anda"
@@ -678,14 +708,14 @@
       "Check out all the exclusive features that are available to you for a limited time.": [
         "Lihat semua fitur eksklusif yang tersedia untuk Anda hanya untuk waktu terbatas."
       ],
+      "Congratulations, your access has been confirmed": [
+        "Selamat, akses Anda telah dikonfirmasi"
+      ],
       "Copied to clipboard": [
         "Disalin ke papan klip"
       ],
       "Creating alias...": [
         "Membuat alias..."
-      ],
-      "Custom fields": [
-        "Kolom khusus"
       ],
       "Decrypting your data": [
         "Mendekripsi data Anda"
@@ -726,6 +756,12 @@
       "Follow these simple steps to get the best experience:": [
         "Ikuti langkah-langkah sederhana ini untuk mendapatkan pengalaman terbaik:"
       ],
+      "For security reason, your access needs to be confirmed": [
+        "Demi alasan keamanan, akses Anda perlu untuk dikonfirmasi"
+      ],
+      "For security reasons, your access needs to be confirmed": [
+        "Demi alasan keamanan, akses Anda perlu untuk dikonfirmasi"
+      ],
       "Free Trial": [
         "Uji Coba Gratis"
       ],
@@ -734,6 +770,9 @@
       ],
       "Generating alias...": [
         "Menghasilkan alias..."
+      ],
+      "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
+        "Dapatkan alias tak terbatas, nikmati fitur eksklusif, dan dukung kami dengan berlangganan Pass Plus."
       ],
       "Here you will find all the necessary information to get you started.": [
         "Di sini Anda akan menemukan semua informasi yang diperlukan untuk memulai."
@@ -771,9 +810,6 @@
       "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
         "Untuk memindahkan data Anda ke ${ PASS_APP_NAME } dari pengelola kata sandi lainnya, ekspor kata sandi Anda dan impor dengan menggunakan formulir di bawah ini. Setelah seluruh item Anda diimpor, hapus berkas yang diekspor sebelumnya."
       ],
-      "Integrated 2FA authenticator": [
-        "Autentikator 2FA terintegrasi"
-      ],
       "Internet connection lost": [
         "Koneksi internet terputus"
       ],
@@ -785,6 +821,9 @@
       ],
       "Invite successfully resent": [
         "Undangan berhasil dikirim ulang"
+      ],
+      "Invite successfully sent": [
+        "Undangan berhasil dikirim"
       ],
       "invites you to access items in": [
         "mengundang Anda untuk mengakses item pada"
@@ -857,6 +896,9 @@
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Kata sandi yang berumur lebih dari 1 hari akan dihapus dari riwayat secara otomatis."
+      ],
+      "Pending access to the shared data": [
+        "Menunggu akses ke data yang dibagikan"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Sematkan ${ PASS_APP_NAME } pada toolbar Anda"
@@ -945,6 +987,9 @@
       "Unable to copy to clipboard": [
         "Tidak dapat menyalin ke papan klip"
       ],
+      "Unlimited Aliases": [
+        "Alias tak terbatas"
+      ],
       "Unlock it with your PIN to access the settings": [
         "Buka kunci ini dengan PIN Anda untuk mengakses pengaturan"
       ],
@@ -953,6 +998,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Tingkatkan ${ PASS_APP_NAME }"
+      ],
+      "Use vaults to share this item with others.": [
+        "Gunakan brankas untuk membagikan item ini dengan yang lainnya."
       ],
       "User's access removed": [
         "Akses pengguna dihapus"
@@ -1205,6 +1253,9 @@
       "Include numbers (0-9)": [
         "Sertakan angka (0-9)"
       ],
+      "Invitations": [
+        "Undangan"
+      ],
       "Label": [
         "Label"
       ],
@@ -1234,6 +1285,9 @@
       ],
       "Logins": [
         "Login"
+      ],
+      "Members": [
+        "Anggota"
       ],
       "Modified": [
         "Dimodifikasi"
@@ -1515,6 +1569,9 @@
       "Select a suffix": [
         "Pilih akhiran"
       ],
+      "Shared vault": [
+        "Brankas bersama"
+      ],
       "Unknown origin": [
         "Asal tidak diketahui"
       ],
@@ -1526,6 +1583,11 @@
       ],
       "Write your note": [
         "Tulis catatan Anda"
+      ]
+    },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } users.": [
+        "Brankas tidak dapat berisi lebih dari ${ vault.targetMaxMembers } pengguna."
       ]
     },
     "Title": {
@@ -1582,6 +1644,12 @@
       ],
       "Low disk space": [
         "Penyimpanan diska rendah"
+      ],
+      "Member limit": [
+        "Batas anggota"
+      ],
+      "Pending access to the shared data": [
+        "Menunggu akses ke data yang dibagikan"
       ],
       "Permanently remove all items ?": [
         "Hapus seluruh item secara permanen ?"
@@ -1761,9 +1829,6 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Tidak dapat masuk ke ${ PASS_APP_NAME }. ${ additionalMessage }."
       ],
-      "Upgrade to a paid plan to invite more members to this vault.": [
-        "Tingkatkan ke langganan berbayar untuk mengundang lebih banyak anggota dalam brankas."
-      ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You can not undo this action": [
         "Brankas \"${ vaultName }\" dan seluruh item di dalamnya akan dihapus secara permanen. Tindakan ini tidak dapat diurungkan"
       ],
@@ -1778,6 +1843,9 @@
       ],
       "You have reached the limit of members who can access this vault.": [
         "Anda melampaui batas anggota untuk akses brankas."
+      ],
+      "You have reached the limit of users in this vault. ${ upgradeLink }": [
+        "Anda telah mencapai batas pengguna brankas ini. ${ upgradeLink }"
       ],
       "You have reached the limit of vaults you can have in your plan.": [
         "Anda melampaui batas brankas paket langganan Anda."

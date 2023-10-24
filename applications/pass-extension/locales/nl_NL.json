@@ -59,6 +59,9 @@
       "Confirm": [
         "Bevestigen"
       ],
+      "Confirm access": [
+        "Bevestig toegang"
+      ],
       "Continue": [
         "Doorgaan"
       ],
@@ -80,6 +83,9 @@
       "Create a ${ BRAND_NAME } account": [
         "Maak een ${ BRAND_NAME }-account aan"
       ],
+      "Create a new vault to share": [
+        "Maak een nieuwe kluis aan om te delen"
+      ],
       "Create alias": [
         "Alias aanmaken"
       ],
@@ -97,6 +103,9 @@
       ],
       "Creating vault": [
         "Kluis aanmaken"
+      ],
+      "Customize": [
+        "Personaliseer"
       ],
       "Delete": [
         "Verwijderen"
@@ -194,6 +203,12 @@
       "Make admin": [
         "Tot beheerder benoemen"
       ],
+      "Make editor": [
+        "Maak de persoon een bewerker"
+      ],
+      "Make viewer": [
+        "Maak de persoon een kijker"
+      ],
       "Manage access": [
         "Beheer toegang"
       ],
@@ -206,6 +221,9 @@
       "More options": [
         "Meer opties"
       ],
+      "Move to a shared vault": [
+        "Verplaatsen naar een gedeelde kluis"
+      ],
       "Move to another vault": [
         "Verplaatsen naar andere kluis"
       ],
@@ -217,6 +235,9 @@
       ],
       "Not now": [
         "Niet nu"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open in a window": [
         "In een venster openen"
@@ -238,6 +259,9 @@
       ],
       "Regenerate": [
         "Opnieuw genereren"
+      ],
+      "Reject": [
+        "Afwijzen"
       ],
       "Reject invitation": [
         "Uitnodiging afwijzen"
@@ -278,6 +302,9 @@
       "Share": [
         "Delen"
       ],
+      "Share this vault": [
+        "Deel deze kluis"
+      ],
       "Share vault": [
         "Kluis delen"
       ],
@@ -314,11 +341,17 @@
       "Update": [
         "Updaten"
       ],
+      "Update vault": [
+        "Kluis bijwerken"
+      ],
       "Updating": [
         "Bijwerken"
       ],
       "Upgrade": [
         "Upgraden"
+      ],
+      "Upgrade now to share with more people": [
+        "Upgrade nu om met meer mensen te delen"
       ],
       "Upgrade to keep these features": [
         "Upgraden om deze functies te behouden"
@@ -367,8 +400,20 @@
       "Cannot create alias (${ error }).": [
         "Kan alias niet aanmaken (${ error })."
       ],
+      "Cannot send invitation to this address at the moment": [
+        "Kan op dit moment geen uitnodiging sturen naar dit adres"
+      ],
+      "Could not confirm this invite at the moment": [
+        "Kon de uitnodiging niet bevestigen op dit moment"
+      ],
+      "Could not leave vault.": [
+        "Kon de kluis niet verlaten."
+      ],
       "Could not open created vault": [
         "Kon aangemaakte kluis niet openen"
+      ],
+      "Could not open invited vault": [
+        "Kon uitnodiging kluis niet openen"
       ],
       "Could not open updated vault": [
         "Kon bijgewerkte kluis niet openen"
@@ -407,6 +452,21 @@
       "Error reporting problem": [
         "Fout bij melden van het probleem"
       ],
+      "Failed removing the invite.": [
+        "Het verwijderen van de uitnodiging mislukte."
+      ],
+      "Failed resending invite.": [
+        "Het opnieuw versturen van de uitnodiging mislukte."
+      ],
+      "Failed to edit user's access.": [
+        "Het is niet gelukt om de toegang van de gebruiker aan te passen."
+      ],
+      "Failed to remove user's access.": [
+        "Het is niet gelukt om de toegang van de gebruiker te verwijderen."
+      ],
+      "Failed to transfer this vault's ownership.": [
+        "Overzetten van eigendom van deze kluis is mislukt."
+      ],
       "File could not be parsed": [
         "Bestand kon niet verwerkt worden"
       ],
@@ -421,6 +481,12 @@
       ],
       "Invalid url": [
         "Ongeldige url"
+      ],
+      "Invitation could not be accepted": [
+        "Uitnodiging kon niet worden geaccepteerd"
+      ],
+      "Invitation could not be rejected": [
+        "Uitnodiging kon niet worden afgewezen"
       ],
       "Item content cannot exceed 40KB": [
         "Item mag niet groter zijn dan 40KB"
@@ -493,6 +559,9 @@
       ],
       "Unknown error": [
         "Onbekende fout"
+      ],
+      "Unknown invite": [
+        "Onbekende uitnodiging"
       ],
       "Unsupported ${ PASS_APP_NAME } file format": [
         "Niet-ondersteund ${ PASS_APP_NAME }-bestandsformaat"
@@ -571,6 +640,14 @@
         "${ count } item",
         "${ count } items"
       ],
+      "${ itemCount } item": [
+        "${ itemCount } item",
+        "${ itemCount } items"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } lid",
+        "${ memberCount } leden"
+      ],
       "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
         "${ PASS_APP_NAME } zal enkel logins en notities importeren. Paspoorten, bijlagen, enz. worden niet ondersteund op dit moment."
       ],
@@ -595,6 +672,9 @@
       ],
       "Access ${ PASS_APP_NAME } via this icon": [
         "Toegang tot ${ PASS_APP_NAME } via dit pictogram"
+      ],
+      "Access successfully confirmed": [
+        "Toegang succesvol bevestigd"
       ],
       "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
         "Voor toegang tot ${ PASS_APP_NAME } is een pincode vereist om uw sessie te ontgrendelen"
@@ -627,7 +707,7 @@
         "Kan items aanmaken, bewerken, verwijderen en exporteren in deze kluis."
       ],
       "Can grant and revoke access to this vault, and delete it.": [
-        "Kan toegang tot deze kluis verlenen en intrekken, en verwijderen."
+        "Kan toegang tot deze kluis verlenen en intrekken en verwijderen."
       ],
       "Can grant and revoke access to this vault.": [
         "Kan toegang tot deze kluis verlenen en intrekken."
@@ -638,14 +718,14 @@
       "Check out all the exclusive features that are available to you for a limited time.": [
         "Bekijk alle exclusieve functies die voor een beperkte tijd voor u beschikbaar zijn."
       ],
+      "Congratulations, your access has been confirmed": [
+        "Gefeliciteerd, uw toegang werd bevestigd"
+      ],
       "Copied to clipboard": [
         "Gekopieerd naar het klembord"
       ],
       "Creating alias...": [
         "Alias aanmaken..."
-      ],
-      "Custom fields": [
-        "Aangepaste velden"
       ],
       "Decrypting your data": [
         "Uw data ontsleutelen"
@@ -686,6 +766,12 @@
       "Follow these simple steps to get the best experience:": [
         "Volg deze eenvoudige stappen om de beste ervaring te krijgen:"
       ],
+      "For security reason, your access needs to be confirmed": [
+        "Voor veiligheidsredenen dient uw toegang bevestigd te worden"
+      ],
+      "For security reasons, your access needs to be confirmed": [
+        "Voor veiligheidsredenen dient uw toegang bevestigd te worden"
+      ],
       "Free Trial": [
         "Gratis proefversie"
       ],
@@ -694,6 +780,9 @@
       ],
       "Generating alias...": [
         "Alias genereren..."
+      ],
+      "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
+        "Krijg ongelimiteerde aliassen, geniet van exclusieve functies, en ondersteun ons door te abonneren op Pass Plus."
       ],
       "Here you will find all the necessary information to get you started.": [
         "Hier vindt u alle nodige informatie om aan de slag te gaan."
@@ -732,9 +821,6 @@
       "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
         "Om uw data van een andere wachtwoordbeheerder naar ${ PASS_APP_NAME } te migreren, exporteer uw wachtwoorden en gebruik onderstaand formulier om ze te importeren. Eens geïmporteerd, verwijder dan het eerder geëxporteerd bestand."
       ],
-      "Integrated 2FA authenticator": [
-        "Geïntegreerde 2FA-authenticator"
-      ],
       "Internet connection lost": [
         "Internetverbinding verbroken"
       ],
@@ -747,8 +833,11 @@
       "Invite successfully resent": [
         "Uitnodiging succesvol herverzonden"
       ],
+      "Invite successfully sent": [
+        "Uitnodiging succesvol verzonden"
+      ],
       "invites you to access items in": [
-        "nodigt je uit met toegang tot items in"
+        "nodigt u uit met toegang tot items in"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Het lijkt erop dat u al bent aangemeld bij ${ PASS_APP_NAME }. Als u probeert in te loggen met een ander account, log dan eerst uit bij de extensie."
@@ -811,11 +900,17 @@
       "Owner": [
         "Eigenaar"
       ],
+      "Ownership successfully transfered. You are no long the owner of this vault.": [
+        "Eigendom succesvol overgedragen. U bent niet langer de eigenaar van deze kluis."
+      ],
       "Password copied": [
         "Wachtwoord gekopieerd"
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Wachtwoorden ouder dan een dag worden automatisch gewist uit geschiedenis."
+      ],
+      "Pending access to the shared data": [
+        "Toegang tot gedeelde data hangende"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Zet ${ PASS_APP_NAME } vast op uw werkbalk"
@@ -875,7 +970,7 @@
         "Alle items succesvol geëxporteerd"
       ],
       "Successfully left the vault": [
-        "Sucesvol de kluit verlaten"
+        "Succesvol de kluis verlaten"
       ],
       "Successfully synced all vaults": [
         "Alle kluizen succesvol gesynchroniseerd"
@@ -894,7 +989,7 @@
         "De tekst die u probeert te plakken is langer dan de maximaal toegelaten lengte van ${ maxLength } tekens."
       ],
       "The user did not accept the invitation yet.": [
-        "The gebruiker heeft de uitnodiging nog niet geaccepteerd."
+        "De gebruiker heeft de uitnodiging nog niet geaccepteerd."
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Deze export wordt niet versleuteld en iedereen met toegang tot uw geëxporteerde bestand kan uw wachtwoorden zien. Verwijder het voor de veiligheid nadat u klaar bent met het gebruik ervan."
@@ -905,6 +1000,9 @@
       "Unable to copy to clipboard": [
         "Kan niet kopiëren naar Klembord"
       ],
+      "Unlimited Aliases": [
+        "Onbeperkte Aliassen"
+      ],
       "Unlock it with your PIN to access the settings": [
         "Ontgrendel het met uw pincode om toegang te krijgen tot de instellingen"
       ],
@@ -913,6 +1011,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Upgrade ${ PASS_APP_NAME }"
+      ],
+      "Use vaults to share this item with others.": [
+        "Gebruik kluizen om dit item met anderen te delen."
       ],
       "User's access removed": [
         "Toegang van verbruiker verwijderd"
@@ -950,6 +1051,12 @@
       "You have ${ daysRemaining } day left in your trial period.": [
         "U heeft nog ${ daysRemaining } dag over van uw proefperiode.",
         "U heeft nog ${ daysRemaining } dagen over van uw proefperiode."
+      ],
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
+        "U heeft het aantal kluizen in uw abonnement overschreden. Items kunnen alleen naar uw twee eerste kluis worden verplaatst. Upgrade uw abonnement om items tussen alle kluizen te verplaatsen."
+      ],
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
+        "U heeft het aantal kluizen in uw abonnement overschreden. Nieuwe items kunnen alleen in uw twee eerste kluizen worden gemaakt. Upgrade uw abonnement om nieuwe items in alle kluizen te maken."
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "U heeft de limiet bereikt van aliassen die u kunt maken. Maak een onbeperkt aantal aliassen aan wanneer u uw abonnement upgradet."
@@ -1053,6 +1160,9 @@
       ],
       "Autosave": [
         "Automatisch opslaan"
+      ],
+      "Autosave vault": [
+        "Automatisch opslaan in kluis"
       ],
       "Autosuggest": [
         "Automatische suggestie"
@@ -1159,6 +1269,9 @@
       "Include numbers (0-9)": [
         "Nummers toevoegen (0-9)"
       ],
+      "Invitations": [
+        "Uitnodigingen"
+      ],
       "Label": [
         "Label"
       ],
@@ -1188,6 +1301,9 @@
       ],
       "Logins": [
         "Logins"
+      ],
+      "Members": [
+        "Leden"
       ],
       "Modified": [
         "Gewijzigd"
@@ -1279,6 +1395,9 @@
       "Select an email address": [
         "Selecteer een e-mailadres"
       ],
+      "Select preferred language": [
+        "Kies voorkeurstaal"
+      ],
       "Select your password manager": [
         "Selecteer uw wachtwoordbeheerder"
       ],
@@ -1359,6 +1478,9 @@
       ],
       "Verification number": [
         "Verificatienummer"
+      ],
+      "View details": [
+        "Details weergeven"
       ],
       "View logs": [
         "Logboeken bekijken"
@@ -1463,6 +1585,9 @@
       "Select a suffix": [
         "Selecteer een achtervoegsel"
       ],
+      "Shared vault": [
+        "Geelde kluis"
+      ],
       "Unknown origin": [
         "Onbekende oorsprong"
       ],
@@ -1474,6 +1599,12 @@
       ],
       "Write your note": [
         "Schrijf uw notitie"
+      ]
+    },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Kluizen kunnen niet meer dan ${ vault.targetMaxMembers } gebruiker bevatten.",
+        "Kluizen kunnen niet meer dan ${ vault.targetMaxMembers } gebruikers bevatten."
       ]
     },
     "Title": {
@@ -1525,8 +1656,17 @@
       "Import to vault(s)": [
         "Importeren naar kluis/kluizen"
       ],
+      "Leave vault ?": [
+        "Verlaat kluis ?"
+      ],
       "Low disk space": [
         "Weinig schijfruimte"
+      ],
+      "Member limit": [
+        "Limiet aantal leden"
+      ],
+      "Pending access to the shared data": [
+        "Toegang tot gedeelde data hangende"
       ],
       "Permanently remove all items ?": [
         "Alle items permanent verwijderen?"
@@ -1537,6 +1677,12 @@
       "Secure your data": [
         "Beveilig uw gegevens"
       ],
+      "Set access level": [
+        "Stel toegangsniveau in"
+      ],
+      "Share with": [
+        "Deel met"
+      ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Stapt u over naar ${ PASS_APP_NAME }?"
       ],
@@ -1545,6 +1691,9 @@
       ],
       "The extension is now ready to use.": [
         "De extensie is nu klaar voor gebruik."
+      ],
+      "Transfer ownership": [
+        "Eigendom overdragen"
       ],
       "Trash empty": [
         "Prullenbak leeg"
@@ -1560,6 +1709,9 @@
       ],
       "Use my email": [
         "Gebruik mijn e-mail"
+      ],
+      "Vault shared with you": [
+        "Kluis gedeeld met u"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Welkom bij ${ brandNameJSX }"
@@ -1658,8 +1810,17 @@
       "PGP encrypted export file requires passphrase": [
         "PGP-versleuteld exportbestand vereist wachtzin"
       ],
+      "Please enter a valid email address": [
+        "Voer een geldig e-mailadres in"
+      ],
       "Please log back in": [
         "Log opnieuw in"
+      ],
+      "Please verify your email address in order to use email aliases": [
+        "Verifieer alstublieft uw e-mailadressen om uw e-mailaliassen te kunnen gebruiken"
+      ],
+      "Please verify your email address in order to use vault sharing": [
+        "Verifieer alstublieft uw e-mailadressen om Kluis Delen te kunnen gebruiken"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
@@ -1672,6 +1833,9 @@
       ],
       "Title is required": [
         "Titel is vereist"
+      ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "Eigendom van deze kluis overdragen aan ${ email }?"
       ],
       "Trash alias ?": [
         "Prullenbak alias?"
@@ -1694,17 +1858,35 @@
       "You cannot create more vaults than your subscription allows.": [
         "U kunt niet meer kluizen maken dan uw abonnement toestaat."
       ],
+      "You have reached the limit of members who can access this vault.": [
+        "U heeft de limiet voor gebruikers die toegang hebben tot deze kluis bereikt."
+      ],
+      "You have reached the limit of users in this vault. ${ upgradeLink }": [
+        "U heeft de limiet voor gebruikers van deze kluis bereikt. ${ upgradeLink }"
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "U heeft de limiet van het aantal kluizen in uw plan bereikt."
+      ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "U heeft niet-opgeslagen wijzigingen. Weet u zeker dat u deze wilt verwijderen?"
       ],
       "You must select at least one mailbox": [
         "U moet ten minste één mailbox selecteren"
       ],
+      "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
+        "U zult geen toegang meer hebben tot deze kluis. Om opnieuw deel te nemen, heeft u een nieuwe uitnodiging nodig."
+      ],
       "Your plan does not allow you to create more aliases": [
         "Met uw abonnement kunt u niet meer aliassen maken"
       ],
+      "Your plan only allows you to autofill from your first two vaults": [
+        "Met uw abonnement kunt u alleen automatisch aanvullen vanuit uw eerste twee kluizen"
+      ],
       "Your session was locked due to inactivity": [
         "Uw sessie werd vergrendeld wegens inactiviteit"
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "Met uw abonnement kunt u niet meerdere kluizen maken. Alle items worden geïmporteerd in uw eerste kluis. Upgrade uw abonnement om in meerdere kluizen te importeren."
       ]
     }
   }

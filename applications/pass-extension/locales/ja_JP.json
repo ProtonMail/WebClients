@@ -98,6 +98,9 @@
       "Creating vault": [
         "保管庫を作成中"
       ],
+      "Customize": [
+        "カスタマイズ"
+      ],
       "Delete": [
         "削除"
       ],
@@ -223,6 +226,9 @@
       ],
       "Not now": [
         "今ではない"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open in a window": [
         "ウィンドウで開く"
@@ -627,9 +633,6 @@
       "${ trialDaysLeft } days left": [
         "残り ${ trialDaysLeft } 日"
       ],
-      "${ vault.count } items": [
-        "${ vault.count }個のアイテム"
-      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "${ PASS_APP_NAME } の新しいバージョンが利用可能です。 最新の機能やバグ修正をお楽しみいただくには、更新してください。"
       ],
@@ -683,9 +686,6 @@
       ],
       "Creating alias...": [
         "エイリアスを作成中..."
-      ],
-      "Custom fields": [
-        "カスタムフィールド"
       ],
       "Decrypting your data": [
         "データの暗号化解除"
@@ -770,9 +770,6 @@
       ],
       "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
         "別のパスワード マネージャーから ${ PASS_APP_NAME } にデータを移行するには、以下のフォームを使用してパスワードをエクスポートし、インポートします。 すべてのアイテムがインポートされたら、以前にエクスポートしたファイルを削除します。"
-      ],
-      "Integrated 2FA authenticator": [
-        "統合された2FA認証機能"
       ],
       "Internet connection lost": [
         "インターネット接続が切断されました"
