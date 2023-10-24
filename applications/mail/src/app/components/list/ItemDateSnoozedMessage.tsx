@@ -9,7 +9,7 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
 import { formatFullDate, formatScheduledTimeString } from 'proton-mail/helpers/date';
-import { getIsElementReminded } from 'proton-mail/logic/snoozehelpers';
+import { isElementReminded } from 'proton-mail/logic/snoozehelpers';
 import { Element } from 'proton-mail/models/element';
 
 interface Props {
@@ -89,7 +89,7 @@ const ItemDateSnoozeMessage = ({
         return null;
     }
 
-    const isReminded = getIsElementReminded(element);
+    const isReminded = isElementReminded(element);
     if (snoozeTime && labelID !== MAILBOX_LABEL_IDS.INBOX && !isReminded) {
         return <SnoozedDate snoozeTime={snoozeTime} className={className} useTooltip={useTooltip} />;
     } else if (isReminded) {
