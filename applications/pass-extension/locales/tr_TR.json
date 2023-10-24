@@ -59,6 +59,9 @@
       "Confirm": [
         "Onayla"
       ],
+      "Confirm access": [
+        "Erişimi onayla"
+      ],
       "Continue": [
         "İlerle"
       ],
@@ -80,6 +83,9 @@
       "Create a ${ BRAND_NAME } account": [
         "Bir ${ BRAND_NAME } hesabı açın"
       ],
+      "Create a new vault to share": [
+        "Paylaşılacak yeni bir kasa oluştur"
+      ],
       "Create alias": [
         "Takma ad oluştur"
       ],
@@ -97,6 +103,9 @@
       ],
       "Creating vault": [
         "Kasa oluşturuluyor"
+      ],
+      "Customize": [
+        "Özelleştir"
       ],
       "Delete": [
         "Sil"
@@ -212,6 +221,9 @@
       "More options": [
         "Diğer seçenekler"
       ],
+      "Move to a shared vault": [
+        "Paylaşılan bir kasaya taşı"
+      ],
       "Move to another vault": [
         "Başka bir kasaya taşı"
       ],
@@ -223,6 +235,9 @@
       ],
       "Not now": [
         "Şimdi değil"
+      ],
+      "OK": [
+        "Tamam"
       ],
       "Open in a window": [
         "Bir pencerede aç"
@@ -244,6 +259,9 @@
       ],
       "Regenerate": [
         "Yeniden üret"
+      ],
+      "Reject": [
+        "Reddet"
       ],
       "Reject invitation": [
         "Daveti reddet"
@@ -284,6 +302,9 @@
       "Share": [
         "Paylaş"
       ],
+      "Share this vault": [
+        "Bu kasayı paylaş"
+      ],
       "Share vault": [
         "Kasayı paylaş"
       ],
@@ -320,11 +341,17 @@
       "Update": [
         "Güncelle"
       ],
+      "Update vault": [
+        "Kasayı güncelle"
+      ],
       "Updating": [
         "Güncelleniyor"
       ],
       "Upgrade": [
         "Yükselt"
+      ],
+      "Upgrade now to share with more people": [
+        "Daha fazla kişiyle paylaşmak için tarifenizi yükseltin"
       ],
       "Upgrade to keep these features": [
         "Bu özelliği tutmak için tarifenizi yükseltin"
@@ -375,6 +402,9 @@
       ],
       "Cannot send invitation to this address at the moment": [
         "Şu anda bu adrese davetiye gönderilemiyor"
+      ],
+      "Could not confirm this invite at the moment": [
+        "Bu davet şu anda onaylanamıyor"
       ],
       "Could not leave vault.": [
         "Kasa bırakılamadı."
@@ -640,15 +670,14 @@
         "${ trialDaysLeft } gün kaldı",
         "${ trialDaysLeft } gün kaldı"
       ],
-      "${ vault.count } item": [
-        "${ vault.count } öge",
-        "${ vault.count } öge"
-      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Yeni bir ${ PASS_APP_NAME } sürümü yayınlanmış. Son özellikler ile hata düzeltmelerini almak için güncelleyin."
       ],
       "Access ${ PASS_APP_NAME } via this icon": [
         "${ PASS_APP_NAME } uygulamasına bu simge ile erişin"
+      ],
+      "Access successfully confirmed": [
+        "Erişim onaylandı"
       ],
       "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
         "${ PASS_APP_NAME } uygulamasına erişerek oturumunuzun kilidini açmak için PIN kodunuz istenecek"
@@ -692,14 +721,14 @@
       "Check out all the exclusive features that are available to you for a limited time.": [
         "Tüm ücretli özellikleri sınırlı bir süre için deneyimleyebilirsiniz."
       ],
+      "Congratulations, your access has been confirmed": [
+        "Tebrikler erişiminiz onaylandı"
+      ],
       "Copied to clipboard": [
         "Panoya kopyalandı"
       ],
       "Creating alias...": [
         "Takma ad oluşturuluyor..."
-      ],
-      "Custom fields": [
-        "Özel alanlar"
       ],
       "Decrypting your data": [
         "Verilerinizin şifresi çözülüyor"
@@ -740,6 +769,12 @@
       "Follow these simple steps to get the best experience:": [
         "En iyi deneyimi elde etmek için şu basit adımları izleyin:"
       ],
+      "For security reason, your access needs to be confirmed": [
+        "Güvenlik nedeniyle erişiminizin onaylanması gerekiyor"
+      ],
+      "For security reasons, your access needs to be confirmed": [
+        "Güvenlik nedeniyle erişiminizin onaylanması gerekiyor"
+      ],
       "Free Trial": [
         "Ücretsiz deneme"
       ],
@@ -748,6 +783,9 @@
       ],
       "Generating alias...": [
         "Takma ad üretiliyor..."
+      ],
+      "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
+        "Sınırsız sayıda takma ad edinin, ücretli özelliklerin keyfini sürün ve Pass Plus tarifesine abone olarak bizi destekleyin."
       ],
       "Here you will find all the necessary information to get you started.": [
         "Başlamak için gereken tüm bilgileri burada bulabilirsiniz."
@@ -786,9 +824,6 @@
       "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
         "Başka bir parola yöneticisindeki verilerinizi ${ PASS_APP_NAME } üzerine aktarmak için, parolalarınızı dışa aktarın ve aşağıdaki formu kullanarak içe aktarın. Tüm ögeleriniz içe aktarıldığında dışa aktarma dosyasını silin."
       ],
-      "Integrated 2FA authenticator": [
-        "Bütünleşik iki adımlı doğrulayıcı"
-      ],
       "Internet connection lost": [
         "İnternet bağlantısı kesildi"
       ],
@@ -800,6 +835,9 @@
       ],
       "Invite successfully resent": [
         "Davet yeniden gönderildi"
+      ],
+      "Invite successfully sent": [
+        "Davet gönderildi"
       ],
       "invites you to access items in": [
         "sizi şu kasadaki ögelere erişmeye davet ediyor:"
@@ -873,6 +911,9 @@
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "1 günden eski parolalar geçmişten otomatik olarak silinir."
+      ],
+      "Pending access to the shared data": [
+        "Paylaşılmış verilere erişilmesi bekleniyor"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "${ PASS_APP_NAME } uygulamasını araç çubuğuna sabitleyin"
@@ -962,6 +1003,9 @@
       "Unable to copy to clipboard": [
         "Panoya kopyalanamadı"
       ],
+      "Unlimited Aliases": [
+        "Sınırsız sayıda takma ad"
+      ],
       "Unlock it with your PIN to access the settings": [
         "Bu ayarlara erişebilmek için PIN kodunuz ile kilidi açın"
       ],
@@ -970,6 +1014,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } uygulamasını yükselt"
+      ],
+      "Use vaults to share this item with others.": [
+        "Bu ögeyi başkaları ile paylaşmak için kasaları kullanın."
       ],
       "User's access removed": [
         "Kullanıcının erişimi kaldırıldı"
@@ -1225,6 +1272,9 @@
       "Include numbers (0-9)": [
         "Sayılar katılsın (0-9)"
       ],
+      "Invitations": [
+        "Davetler"
+      ],
       "Label": [
         "Etiket"
       ],
@@ -1254,6 +1304,9 @@
       ],
       "Logins": [
         "Oturum açma kayıtları"
+      ],
+      "Members": [
+        "Üyeler"
       ],
       "Modified": [
         "Değiştirilme"
@@ -1535,6 +1588,9 @@
       "Select a suffix": [
         "Bir son ek yazın"
       ],
+      "Shared vault": [
+        "Paylaşılan kasa"
+      ],
       "Unknown origin": [
         "Kaynak bilinmiyor"
       ],
@@ -1546,6 +1602,12 @@
       ],
       "Write your note": [
         "Notunuzu yazın"
+      ]
+    },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Kasalarda ${ vault.targetMaxMembers } kullanıcıdan fazlası olamaz.",
+        "Kasalarda ${ vault.targetMaxMembers } kullanıcıdan fazlası olamaz."
       ]
     },
     "Title": {
@@ -1602,6 +1664,12 @@
       ],
       "Low disk space": [
         "Boş disk alanı azaldı"
+      ],
+      "Member limit": [
+        "Üye sayısı sınırı"
+      ],
+      "Pending access to the shared data": [
+        "Paylaşılmış verilere erişilmesi bekleniyor"
       ],
       "Permanently remove all items ?": [
         "Tüm ögeler kalıcı olarak silinsin mi?"
@@ -1792,6 +1860,15 @@
       ],
       "You cannot create more vaults than your subscription allows.": [
         "Abonelik tarifenizde sunulan kasa sayısından daha fazla kasa oluşturamazsınız."
+      ],
+      "You have reached the limit of members who can access this vault.": [
+        "Bu kasaya erişebilecek en fazla üye sayısı sınırına ulaştınız."
+      ],
+      "You have reached the limit of users in this vault. ${ upgradeLink }": [
+        "Bu kasada olabilecek en fazla kullanıcı sayısı sınırına ulaştınız. ${ upgradeLink }"
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "Tarifenizle oluşturabileceğiniz en fazla kasa sayısı sınırına ulaştınız."
       ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "Kaydedilmemiş değişiklikleriniz var, bunları silmek istediğinize emin misiniz?"

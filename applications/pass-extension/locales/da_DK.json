@@ -59,6 +59,9 @@
       "Confirm": [
         "Bekræft"
       ],
+      "Confirm access": [
+        "Bekræft adgang"
+      ],
       "Continue": [
         "Fortsæt"
       ],
@@ -80,6 +83,9 @@
       "Create a ${ BRAND_NAME } account": [
         "Opret en ${ BRAND_NAME }-konto"
       ],
+      "Create a new vault to share": [
+        "Opret en ny boks til deling"
+      ],
       "Create alias": [
         "Opret alias"
       ],
@@ -97,6 +103,9 @@
       ],
       "Creating vault": [
         "Opretter boks"
+      ],
+      "Customize": [
+        "Tilpas"
       ],
       "Delete": [
         "Slet"
@@ -212,6 +221,9 @@
       "More options": [
         "Flere muligheder"
       ],
+      "Move to a shared vault": [
+        "Flyt til en delt boks"
+      ],
       "Move to another vault": [
         "Flyt til en anden boks"
       ],
@@ -223,6 +235,9 @@
       ],
       "Not now": [
         "Ikke nu"
+      ],
+      "OK": [
+        "Ok"
       ],
       "Open in a window": [
         "Åbn i et vindue"
@@ -244,6 +259,9 @@
       ],
       "Regenerate": [
         "Regenerér"
+      ],
+      "Reject": [
+        "Afvis"
       ],
       "Reject invitation": [
         "Afvis invitation"
@@ -284,6 +302,9 @@
       "Share": [
         "Del"
       ],
+      "Share this vault": [
+        "Del denne boks"
+      ],
       "Share vault": [
         "Del boks"
       ],
@@ -320,11 +341,17 @@
       "Update": [
         "Opdatér"
       ],
+      "Update vault": [
+        "Opdatér boks"
+      ],
       "Updating": [
         "Opdaterer"
       ],
       "Upgrade": [
         "Opgradér"
+      ],
+      "Upgrade now to share with more people": [
+        "Opgradér nu for at dele med flere"
       ],
       "Upgrade to keep these features": [
         "Opgradér for at beholde disse funktioner"
@@ -375,6 +402,9 @@
       ],
       "Cannot send invitation to this address at the moment": [
         "Kan ikke sende invitation til denne adresse i øjeblikket"
+      ],
+      "Could not confirm this invite at the moment": [
+        "Kunne ikke bekræfte denne invitation i øjeblikket"
       ],
       "Could not leave vault.": [
         "Kunne ikke forlade boks."
@@ -640,15 +670,14 @@
         "${ trialDaysLeft } dag tilbage",
         "${ trialDaysLeft } dage tilbage"
       ],
-      "${ vault.count } item": [
-        "${ vault.count } element",
-        "${ vault.count } elementer"
-      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "En ny version af ${ PASS_APP_NAME } er tilgængelig. Opdater den for at nyde de seneste funktioner og fejlrettelser."
       ],
       "Access ${ PASS_APP_NAME } via this icon": [
         "Tilgå ${ PASS_APP_NAME } via dette ikon"
+      ],
+      "Access successfully confirmed": [
+        "Adgang bekræftet"
       ],
       "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
         "Adgang til ${ PASS_APP_NAME } vil kræve en pinkode for at låse din session op."
@@ -692,14 +721,14 @@
       "Check out all the exclusive features that are available to you for a limited time.": [
         "Se alle de eksklusive funktioner, der er tilgængelige for dig i en begrænset periode."
       ],
+      "Congratulations, your access has been confirmed": [
+        "Tillykke, din adgang er blevet bekræftet"
+      ],
       "Copied to clipboard": [
         "Kopieret til udklipsholder"
       ],
       "Creating alias...": [
         "Opretter alias..."
-      ],
-      "Custom fields": [
-        "Brugerdefinerede felter"
       ],
       "Decrypting your data": [
         "Dekrypterer dine data"
@@ -740,6 +769,12 @@
       "Follow these simple steps to get the best experience:": [
         "Følg disse enkle trin for at få den bedste oplevelse:"
       ],
+      "For security reason, your access needs to be confirmed": [
+        "Af en sikkerhedsmæssig årsag skal din adgang bekræftes."
+      ],
+      "For security reasons, your access needs to be confirmed": [
+        "Af sikkerhedsmæssige årsager skal din adgang bekræftes."
+      ],
       "Free Trial": [
         "Gratis prøveperiode"
       ],
@@ -748,6 +783,9 @@
       ],
       "Generating alias...": [
         "Genererer alias..."
+      ],
+      "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
+        "Få ubegrænsede aliasser, eksklusive funktioner, og støt os ved at abonnere på Pass Plus."
       ],
       "Here you will find all the necessary information to get you started.": [
         "Her finder du alle de nødvendige oplysninger, for at du kan komme i gang."
@@ -786,9 +824,6 @@
       "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
         "For at migrere dine data til ${ PASS_APP_NAME } fra en anden adgangskodeadministrator skal du eksportere dine adgangskoder og importere dem ved hjælp af nedenstående formular. Når alle dine elementer er blevet importeret, skal du slette den tidligere eksporterede fil."
       ],
-      "Integrated 2FA authenticator": [
-        "Integreret 2FA-godkendelse"
-      ],
       "Internet connection lost": [
         "Internetforbindelse mistet"
       ],
@@ -800,6 +835,9 @@
       ],
       "Invite successfully resent": [
         "Invitation sendt igen"
+      ],
+      "Invite successfully sent": [
+        "Invitation sendt"
       ],
       "invites you to access items in": [
         "inviterer dig til at tilgå elementer i"
@@ -873,6 +911,9 @@
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Adgangskoder, der er ældre end 1 dag, slettes automatisk fra historikken."
+      ],
+      "Pending access to the shared data": [
+        "Afventer adgang til de delte data"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Fastgør ${ PASS_APP_NAME } til din værktøjslinje"
@@ -962,6 +1003,9 @@
       "Unable to copy to clipboard": [
         "Kunne ikke kopiere til udklipsholder"
       ],
+      "Unlimited Aliases": [
+        "Ubegrænsede aliasser"
+      ],
       "Unlock it with your PIN to access the settings": [
         "Lås den op med din pinkode for at få adgang til indstillingerne."
       ],
@@ -970,6 +1014,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Opgrader ${ PASS_APP_NAME }"
+      ],
+      "Use vaults to share this item with others.": [
+        "Brug bokse til at dele dette element med andre."
       ],
       "User's access removed": [
         "Brugers adgang fjernet"
@@ -1225,6 +1272,9 @@
       "Include numbers (0-9)": [
         "Inkluder tal (0-9)"
       ],
+      "Invitations": [
+        "Invitationer"
+      ],
       "Label": [
         "Etikette"
       ],
@@ -1254,6 +1304,9 @@
       ],
       "Logins": [
         "Logins"
+      ],
+      "Members": [
+        "Medlemmer"
       ],
       "Modified": [
         "Ændret"
@@ -1535,6 +1588,9 @@
       "Select a suffix": [
         "Vælg et suffiks"
       ],
+      "Shared vault": [
+        "Delt boks"
+      ],
       "Unknown origin": [
         "Ukendt oprindelse"
       ],
@@ -1546,6 +1602,12 @@
       ],
       "Write your note": [
         "Skriv din note"
+      ]
+    },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Bokse kan ikke indeholde mere end ${ vault.targetMaxMembers } bruger.",
+        "Bokse kan ikke indeholde mere end ${ vault.targetMaxMembers } brugere."
       ]
     },
     "Title": {
@@ -1602,6 +1664,12 @@
       ],
       "Low disk space": [
         "Kun lidt diskplads"
+      ],
+      "Member limit": [
+        "Medlemsgrænse"
+      ],
+      "Pending access to the shared data": [
+        "Afventer adgang til de delte data"
       ],
       "Permanently remove all items ?": [
         "Fjern alle elementer permanent?"
@@ -1781,9 +1849,6 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Kunne ikke logge ind på ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
-      "Upgrade to a paid plan to invite more members to this vault.": [
-        "Opgrader til et betalt abonnement for at invitere flere medlemmer til denne boks."
-      ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You can not undo this action": [
         "Boksen \"${ vaultName }\" og alle dens elementer vil blive slettet permanent. Du kan ikke fortryde denne handling"
       ],
@@ -1798,6 +1863,9 @@
       ],
       "You have reached the limit of members who can access this vault.": [
         "Du har nået grænsen for medlemmer, der kan få adgang til denne boks."
+      ],
+      "You have reached the limit of users in this vault. ${ upgradeLink }": [
+        "Du har nået grænsen for brugere i denne boks. ${ upgradeLink }"
       ],
       "You have reached the limit of vaults you can have in your plan.": [
         "Du har nået grænsen for, hvor mange bokse du kan have med dit abonnement."
