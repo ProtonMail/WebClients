@@ -221,6 +221,9 @@
       "Get ${ vpnPlus }": [
         "選購 ${ vpnPlus }"
       ],
+      "Get a new encrypted email address": [
+        "獲取新的加密電郵位址"
+      ],
       "Get in touch": [
         "保持聯絡"
       ],
@@ -493,6 +496,9 @@
       ],
       "Use recovery code": [
         "使用復原代碼"
+      ],
+      "Use your current email instead": [
+        "沿用您目前的電郵位址"
       ],
       "User": [
         "使用者"
@@ -2634,15 +2640,6 @@
       "Admin account allocation": [
         "管理員帳號指派"
       ],
-      "After this date, you'll be billed every 12 months at the normal yearly rate.": [
-        "在此日期後，您將每12個月按照一般年繳費率價格付費。"
-      ],
-      "After this date, you'll be billed every 24 months at the normal 2-year rate.": [
-        "在此日期後，您將每24個月按照一般雙年繳費率價格付費。"
-      ],
-      "After this date, you'll be billed every month at the regular price.": [
-        "在此日期後，您將每月按正常價格付費。"
-      ],
       "All your changes will be lost.": [
         "一切您所作的變更將會消失。"
       ],
@@ -3531,6 +3528,9 @@
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "使用商業或企業方案，您可以為您的組織購買${ boldDedicatedServers }，並設定${ boldGateways }來控制哪些使用者可以存取它們。"
       ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "透過已加密的 ${ BRAND_NAME } 地址，您可以使用全部的 ${ BRAND_NAME } 服務"
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "如果沒有啟用，您將無法建立新使用者、為現有使用者加入電郵位址，又或存取非私有使用者的帳號。"
       ],
@@ -3618,6 +3618,9 @@
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "您將於此日失去存取${ vpnPlanNameShort }伺服器及功能"
       ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "您將需要一個 ${ BRAND_NAME } 電子郵件位址，方可使用 ${ MAIL_APP_NAME } 和 ${ CALENDAR_APP_NAME }"
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "即將重新導向到 PayPal 驗證您的付款。"
       ],
@@ -3674,9 +3677,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "您的訂閱是由 Mozilla 管理。請聯絡 Mozilla 支援。"
-      ],
-      "Your subscription will auto-renew on ${ renewalTime }.": [
-        "您的訂閱將於${ renewalTime }自動更新。"
       ]
     },
     "Info for cash payment method": {
@@ -4778,6 +4778,9 @@
       ],
       "Vault and Item sharing (coming soon)": [
         "保險櫃與項目分享（即將到來）"
+      ],
+      "Vault sharing (up to ${ n } people)": [
+        "保管共享(每人至多${ n })"
       ]
     },
     "new_plans: feature info": {
@@ -4904,14 +4907,6 @@
         "條款及細則"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }試用"
-      ],
-      "Your account's usage": [
-        "您帳號的使用情況"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "要刪除帳號？"
@@ -4927,6 +4922,14 @@
       ],
       "Switch plans?": [
         "切換方案？"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }試用"
+      ],
+      "Your account's usage": [
+        "您帳號的使用情況"
       ]
     },
     "new_plans: tooltip": {
@@ -5782,6 +5785,9 @@
       ],
       "Password": [
         "密碼"
+      ],
+      "Username": [
+        "使用者名稱"
       ]
     },
     "specialoffer: Action": {

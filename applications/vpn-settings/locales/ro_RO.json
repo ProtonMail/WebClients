@@ -18,7 +18,7 @@
         "Adăugare adresă"
       ],
       "Add credit / debit card": [
-        "Adăugare card de credit/debit"
+        "Adăugare card de credit / debit"
       ],
       "Add credits": [
         "Adăugare credite"
@@ -220,6 +220,9 @@
       ],
       "Get ${ vpnPlus }": [
         "Obțineți ${ vpnPlus }"
+      ],
+      "Get a new encrypted email address": [
+        "Obțineți o adresă nouă de e-mail criptată"
       ],
       "Get in touch": [
         "Contactați-ne"
@@ -493,6 +496,9 @@
       ],
       "Use recovery code": [
         "Folosire cod de recuperare"
+      ],
+      "Use your current email instead": [
+        "Folosire adresă de e-mail actuală"
       ],
       "User": [
         "Utilizator"
@@ -2680,15 +2686,6 @@
       "Admin account allocation": [
         "Alocare cont admin"
       ],
-      "After this date, you'll be billed every 12 months at the normal yearly rate.": [
-        "După această dată, se va factura la fiecare 12 luni la tariful anual normal."
-      ],
-      "After this date, you'll be billed every 24 months at the normal 2-year rate.": [
-        "După această dată, se va factura la fiecare 24 luni la tariful normal pentru doi ani."
-      ],
-      "After this date, you'll be billed every month at the regular price.": [
-        "După această dată, se va factura lunar la prețul standard."
-      ],
       "All your changes will be lost.": [
         "Toate modificările vor fi pierdute."
       ],
@@ -3593,6 +3590,9 @@
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Cu un plan Business sau Enterprise, puteți achiziționa ${ boldDedicatedServers } pentru organizația proprie și puteți configura ${ boldGateways } pentru a controla ce utilizatori le pot accesa."
       ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Cu o adresă criptată ${ BRAND_NAME }, puteți utiliza toate serviciile ${ BRAND_NAME }."
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Fără activare nu veți putea crea noi utilizatori, adăuga adrese la utilizatorii existenți sau accesa conturile utilizatorilor non-privați."
       ],
@@ -3694,6 +3694,9 @@
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Veți pierde accesul la serverele ${ vpnPlanNameShort } și la funcții la această dată."
       ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Veți avea nevoie de o adresă ${ BRAND_NAME } pentru a utiliza ${ MAIL_APP_NAME } și ${ CALENDAR_APP_NAME }"
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pentru verificarea plății se va deschide o filă către PayPal."
       ],
@@ -3750,9 +3753,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Abonamentul vă este gestionat de Mozilla. Contactați Mozilla pentru suport."
-      ],
-      "Your subscription will auto-renew on ${ renewalTime }.": [
-        "Abonamentul se va autoreînnoi la ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -4898,6 +4898,11 @@
       ],
       "Vault and Item sharing (coming soon)": [
         "Partajarea seifurilor și a datelor (în curând)"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Partajare seif (maxim ${ n } persoană)",
+        "Partajare seif (maxim ${ n } persoane)",
+        "Partajare seif (maxim ${ n } de persoane)"
       ]
     },
     "new_plans: feature info": {
@@ -5026,14 +5031,6 @@
         "termenii și condițiile"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Probare ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilizare cont"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
@@ -5049,6 +5046,14 @@
       ],
       "Switch plans?": [
         "Schimbare planuri?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Probare ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilizare cont"
       ]
     },
     "new_plans: tooltip": {
@@ -5443,10 +5448,10 @@
     },
     "Payment method option": {
       "Credit/debit card": [
-        "Card de credit/debit"
+        "Card de credit / debit"
       ],
       "New credit/debit card": [
-        "Card nou de credit/debit"
+        "Card nou de credit / debit"
       ]
     },
     "Placeholder": {
@@ -5938,6 +5943,9 @@
       ],
       "Password": [
         "Parola"
+      ],
+      "Username": [
+        "Utilizator"
       ]
     },
     "specialoffer: Action": {
@@ -6667,7 +6675,7 @@
         "Adăugare adresă"
       ],
       "Add credit/debit card": [
-        "Adăugare card de credit/debit"
+        "Adăugare card de credit / debit"
       ],
       "Add credits": [
         "Adăugare credite"
@@ -6842,7 +6850,7 @@
         "Descărcări"
       ],
       "Edit credit/debit card": [
-        "Editare card de credit/debit"
+        "Editare card de credit / debit"
       ],
       "Edit display name": [
         "Editare nume afișat"
