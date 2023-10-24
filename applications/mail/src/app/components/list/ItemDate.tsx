@@ -1,8 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import { Tooltip } from '@proton/components';
 
-import { getSnoozeTimeFromElement, isElementReminded } from 'proton-mail/logic/snoozehelpers';
+import { params } from 'proton-mail/logic/elements/elementsSelectors';
+import { getIsElementReminded, getSnoozeTimeFromElement, isElementSnoozed } from 'proton-mail/logic/snoozehelpers';
 
 import { formatDistanceToNow, formatFullDate, formatSimpleDate } from '../../helpers/date';
 import { getDate } from '../../helpers/elements';
@@ -31,6 +33,8 @@ interface Props {
 const ItemDate = ({ element, labelID, className, mode = 'simple', useTooltip = false, isInListView }: Props) => {
     const formatter = FORMATTERS[mode];
 
+    const { conversationMode } = useSelector(params);
+
     const [formattedDate, setFormattedDate] = useState(() => {
         const date = getDate(element, labelID);
         return date.getTime() === 0 ? '' : formatter(date);
@@ -58,10 +62,13 @@ const ItemDate = ({ element, labelID, className, mode = 'simple', useTooltip = f
         }
     }, [element, mode, labelID]);
 
-    // Handles the snooze cases. A message can be snoozed or reminded and the ItemDateSnoozedMessage handle both cases.
+    // Displays the orange date when the element has a snooze label
+    // Displays the orange "Reminded" text when the element has DisplaySnoozedReminder
     const snoozeTime = getSnoozeTimeFromElement(element);
-    const isReminded = isElementReminded(element);
-    if (isInListView && (snoozeTime || isReminded)) {
+    const isReminded = getIsElementReminded(element);
+    const isSnoozed = isElementSnoozed(element, conversationMode);
+
+    if (isInListView && (isReminded || (isSnoozed && snoozeTime))) {
         return (
             <ItemDateSnoozedMessage
                 element={element}
