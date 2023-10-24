@@ -466,11 +466,17 @@ const SingleSignupContainerV2 = ({
                 };
             }
 
-            let mode = signupParameters.mode;
-            if (mode === SignupMode.Onboarding && !session?.user) {
-                mode = SignupMode.Default;
-                setSignupParameters((old) => ({ ...old, mode }));
+            const signupParametersDiff: Partial<SignupParameters2> = {};
+            if (signupParameters.mode === SignupMode.Onboarding && !session?.user) {
+                signupParametersDiff.mode = SignupMode.Default;
             }
+            if (signupParameters.mode === SignupMode.Invite && signupParameters.hideFreePlan) {
+                signupParametersDiff.hideFreePlan = false;
+            }
+            if (Object.keys(signupParametersDiff).length > 0) {
+                setSignupParameters((old) => ({ ...old, ...signupParametersDiff }));
+            }
+            const mode = signupParametersDiff.mode || signupParameters.mode;
 
             setModelDiff({
                 session,
@@ -970,7 +976,6 @@ const SingleSignupContainerV2 = ({
                                 handleError(error);
                             }
                         }}
-                        hideFreePlan={signupParameters.hideFreePlan}
                         mode={signupParameters.mode}
                         isPassWelcome={signupParameters.isPassWelcome}
                     />

@@ -136,7 +136,6 @@ const Step1 = ({
     model: SignupModelV2;
     setModel: Dispatch<SetStateAction<SignupModelV2>>;
     currentPlan: Plan | undefined;
-    hideFreePlan: boolean;
     mode: SignupMode;
     benefits: ReactNode;
     api: Api;
