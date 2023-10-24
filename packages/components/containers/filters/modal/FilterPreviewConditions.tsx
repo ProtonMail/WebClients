@@ -9,13 +9,12 @@ import { getComparatorLabels, getConditionTypeLabels } from '../constants';
 import { ConditionComparator, ConditionType, FilterStatement, SimpleFilterModalModel } from '../interfaces';
 
 interface Props {
-    isNarrow: boolean;
     model: SimpleFilterModalModel;
     toggleOpen: () => void;
     isOpen: boolean;
 }
 
-const FilterPreviewConditions = ({ isOpen, isNarrow, toggleOpen, model }: Props) => {
+const FilterPreviewConditions = ({ isOpen, toggleOpen, model }: Props) => {
     const { conditions } = model;
 
     const conditionsRenderer = useMemo(() => {
@@ -124,18 +123,12 @@ const FilterPreviewConditions = ({ isOpen, isNarrow, toggleOpen, model }: Props)
 
     return (
         <div className="border-bottom">
-            <div className="flex-no-min-children flex-nowrap flex-column md:flex-row align-items-center py-4">
-                <button
-                    type="button"
-                    className={clsx(['w-full md:w-1/5 text-left', isNarrow && 'mb-4'])}
-                    onClick={toggleOpen}
-                >
+            <div className="flex flex-nowrap flex-column md:flex-row align-items-center py-4 gap-4">
+                <button type="button" className="w-full md:w-1/4 text-left" onClick={toggleOpen}>
                     <Icon name="chevron-down" className={clsx([isOpen && 'rotateX-180'])} />
                     <span className="ml-2">{c('Label').t`Conditions`}</span>
                 </button>
-                <div className={clsx(['flex flex-column flex-item-fluid', !isNarrow && 'ml-4'])}>
-                    {conditionsRenderer}
-                </div>
+                <div className="flex flex-column w-full">{conditionsRenderer}</div>
             </div>
         </div>
     );

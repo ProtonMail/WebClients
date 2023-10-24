@@ -15,7 +15,6 @@ import { Actions } from '../interfaces';
 
 interface Props {
     folders: Folder[];
-    isNarrow: boolean;
     actions: Actions;
     handleUpdateActions: (onUpdateActions: Partial<Actions>) => void;
 }
@@ -49,7 +48,7 @@ const reducer = (acc: SelectOption[] = [], folder: FolderWithSubFolders, level =
     return acc;
 };
 
-const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateActions }: Props) => {
+const FilterActionsFormFolderRow = ({ folders, actions, handleUpdateActions }: Props) => {
     const [user] = useUser();
     const treeview = buildTreeview(folders);
 
@@ -146,18 +145,14 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
 
     return (
         <div
-            className="border-bottom flex-no-min-children flex-column md:flex-row align-items-center py-4"
+            className="border-bottom flex flex-column md:flex-row flex-nowrap align-items-center py-4 gap-4"
             data-testid="filter-modal:folder-row"
         >
-            <button
-                type="button"
-                className={clsx(['w-full md:w-1/5 text-left', isNarrow && 'mb-4'])}
-                onClick={toggleSection}
-            >
+            <button type="button" className="w-full md:w-1/4 text-left" onClick={toggleSection}>
                 <Icon name="chevron-down" className={clsx([isOpen && 'rotateX-180'])} />
                 <span className={clsx(['ml-2', actions.error && 'color-danger'])}>{c('Label').t`Move to`}</span>
             </button>
-            <div className={clsx(['flex flex-column flex-item-fluid', !isNarrow && 'ml-4'])}>
+            <div className="flex flex-column flex-nowrap w-full">
                 {isOpen ? (
                     <div className="w-full">
                         <InputFieldTwo

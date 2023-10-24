@@ -14,7 +14,6 @@ import './FilterConditionsFormRow.scss';
 const { SELECT, SUBJECT, SENDER, RECIPIENT } = ConditionType;
 
 interface Props {
-    isNarrow: boolean;
     conditionIndex: number;
     statement: FilterStatement;
     condition: Condition;
@@ -25,7 +24,6 @@ interface Props {
 }
 
 const FilterConditionsFormRow = ({
-    isNarrow,
     conditionIndex,
     statement,
     condition,
@@ -228,14 +226,14 @@ const FilterConditionsFormRow = ({
     return (
         <div className="border-bottom">
             <div
-                className="flex-no-min-children flex-column md:flex-row align-items-center py-4"
+                className="flex flex-nowrap flex-column md:flex-row align-items-center gap-4 py-4"
                 data-testid={`filter-modal:condition-${conditionIndex}`}
             >
-                <button type="button" className={clsx(['w-1/5 text-left', isNarrow && 'mb-4'])} onClick={toggleSection}>
+                <button type="button" className={clsx(['w-1/4 text-left'])} onClick={toggleSection}>
                     <Icon name="chevron-down" className={clsx([isOpen && 'rotateX-180'])} />
                     <span className={clsx(['ml-2', condition.error && 'color-danger'])}>{label}</span>
                 </button>
-                <div className={clsx(['flex flex-column flex-item-fluid', !isNarrow && 'ml-4'])}>
+                <div className={clsx(['flex flex-column w-full'])}>
                     {isOpen ? (
                         <div className="flex">
                             <span className="w-1/2 pr-4">
@@ -286,13 +284,9 @@ const FilterConditionsFormRow = ({
                     )}
                 </div>
                 {displayDelete && (
-                    <div>
+                    <div className="flex-item-noshrink">
                         <Tooltip title={c('Action').t`Delete`}>
-                            <Button
-                                onClick={() => handleDelete(conditionIndex)}
-                                className={clsx([isNarrow ? 'mt-4' : 'ml-4'])}
-                                icon
-                            >
+                            <Button onClick={() => handleDelete(conditionIndex)} icon>
                                 <Icon name="trash" alt={c('Action').t`Delete`} />
                             </Button>
                         </Tooltip>
