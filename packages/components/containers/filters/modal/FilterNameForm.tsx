@@ -13,7 +13,6 @@ interface Errors {
 }
 
 interface Props {
-    isNarrow: boolean;
     model: SimpleFilterModalModel | AdvancedSimpleFilterModalModel;
     errors: Errors;
     onChange: (newModel: SimpleFilterModalModel | AdvancedSimpleFilterModalModel) => void;
@@ -21,7 +20,7 @@ interface Props {
     loading: boolean;
 }
 
-const FilterNameForm = ({ isSieveFilter = false, isNarrow, model, errors, onChange, loading }: Props) => {
+const FilterNameForm = ({ isSieveFilter = false, model, errors, onChange, loading }: Props) => {
     const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter' && !loading && !errors.name) {
             e.preventDefault();
@@ -49,11 +48,11 @@ const FilterNameForm = ({ isSieveFilter = false, isNarrow, model, errors, onChan
                         .t`Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.`}
                 </div>
             )}
-            <div className="flex flex-nowrap on-mobile-flex-column align-items-center py-4">
-                <label htmlFor="name" className={clsx(['w20 pt-2', isNarrow && 'mb-4'])}>
+            <div className="flex flex-nowrap flex-column md:flex-row align-items-center py-4 gap-4">
+                <label htmlFor="name" className={clsx(['w-1/5 pt-2'])}>
                     {c('Label').t`Filter Name`}
                 </label>
-                <Field className={clsx([!isNarrow && 'ml-4'])}>
+                <Field>
                     <Input
                         id="name"
                         placeholder={c('Placeholder').t`Name`}

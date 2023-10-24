@@ -18,7 +18,6 @@ import {
     useModalState,
 } from '../../../../components';
 import {
-    useActiveBreakpoint,
     useApi,
     useApiWithoutResult,
     useEventManager,
@@ -64,7 +63,6 @@ const checkSieveErrors = (sieve: string, issuesLength: number): string => {
 
 const AdvancedFilterModal = ({ filter, ...rest }: Props) => {
     const api = useApi();
-    const { isNarrow } = useActiveBreakpoint();
     const [loading, withLoading] = useLoading();
     const [filters = []] = useFilters();
     const [userSettings] = useUserSettings();
@@ -189,7 +187,6 @@ const AdvancedFilterModal = ({ filter, ...rest }: Props) => {
                     <FilterNameForm
                         model={model}
                         onChange={(newModel) => setModel(newModel as AdvancedSimpleFilterModalModel)}
-                        isNarrow={isNarrow}
                         errors={errors}
                         loading={loading}
                         isSieveFilter
