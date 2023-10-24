@@ -1011,6 +1011,9 @@
       ]
     },
     "Calendar view selector": {
+      "Change time range": [
+        "更改时间范围"
+      ],
       "Change time range to": [
         "将时间范围改为"
       ]
@@ -2115,6 +2118,11 @@
         "此为已停用日历中的事件"
       ]
     },
+    "Don't ask to update timezone checkbox label": {
+      "Don't ask again": [
+        "不再询问"
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "添加日历"
@@ -2771,6 +2779,14 @@
     "Error notification when score is missing in user feedback form modal": {
       "Score is required": [
         "请给出评价"
+      ]
+    },
+    "esCalendar": {
+      "No result": [
+        "无结果"
+      ],
+      "Results": [
+        "结果"
       ]
     },
     "Event canceled status badge": {
@@ -4109,6 +4125,16 @@
         "您的系统时区似乎已更改为 ${ timezone }。您想要更新您的时区偏好吗？"
       ]
     },
+    "Info calendar search": {
+      "You can either update your search query or close search to go back to calendar views": [
+        "您可以更新搜索查询或关闭搜索，返回日历视图"
+      ]
+    },
+    "Info message": {
+      "No results found": [
+        "未找到结果"
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "点击查看详情"
@@ -4117,6 +4143,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "仅查看"
+      ]
+    },
+    "Info; calendar sharing pop-up": {
+      "Invite others with a ${ BRAND_NAME } account to view or edit events in your calendar.": [
+        "邀请拥有 ${ BRAND_NAME } 账户的其他人查看或编辑日历中的事件。"
       ]
     },
     "Info; reset calendar keys modal; part 1": {
@@ -4511,6 +4542,9 @@
       ],
       "Theme": [
         "配色"
+      ],
+      "Time zone": [
+        "时区"
       ],
       "To: ${ to }": [
         "收件人：${ to }"
@@ -6518,6 +6552,11 @@
         "选择一个数字"
       ]
     },
+    "Title; calendar sharing pop-up": {
+      "Planning just got easier!": [
+        "规划变得更容易了！"
+      ]
+    },
     "Title; create calendar modal": {
       "Create calendar": [
         "创建日历"
@@ -6623,6 +6662,9 @@
       ]
     },
     "View event button tooltip": {
+      "Navigate to event": [
+        "浏览至事件"
+      ],
       "Open in a new tab": [
         "在新标签页中打开"
       ]
