@@ -8,6 +8,7 @@ import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/
 import { STATUS } from '@proton/shared/lib/models/cache';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
+import { getIsElementReminded } from 'proton-mail/logic/snoozehelpers';
 
 import { updateCountersForMarkAs } from '../../helpers/counter';
 import { isUnread, isMessage as testIsMessage } from '../../helpers/elements';
@@ -27,10 +28,11 @@ import { MARK_AS_STATUS } from '../actions/useMarkAs';
 import { useGetConversation } from '../conversation/useConversation';
 import { useGetElementByID } from '../mailbox/useElements';
 
-export type MarkAsChanges = { status: MARK_AS_STATUS };
+export type MarkAsChanges = { status: MARK_AS_STATUS; displaySnoozedReminder: boolean };
 
 const computeRollbackMarkAsChanges = (element: Element, labelID: string, changes: MarkAsChanges) => {
     const isElementUnread = isUnread(element, labelID);
+    const displaySnoozedReminder = getIsElementReminded(element);
     const { status } = changes;
 
     // If same status nothing changes
@@ -40,6 +42,7 @@ const computeRollbackMarkAsChanges = (element: Element, labelID: string, changes
 
     return {
         status: isElementUnread ? MARK_AS_STATUS.UNREAD : MARK_AS_STATUS.READ,
+        displaySnoozedReminder,
     };
 };
 
@@ -74,7 +77,7 @@ export const applyMarkAsChangesOnConversation = (
 const applyMarkAsChangesOnConversationWithMessages = (
     conversation: Conversation,
     labelID: string,
-    { status }: MarkAsChanges
+    { status, displaySnoozedReminder }: MarkAsChanges
 ) => {
     const { NumUnread = 0, Labels = [] } = conversation;
     const { ContextNumUnread = 0 } = Labels.find(({ ID }) => ID === labelID) || {};
@@ -92,6 +95,7 @@ const applyMarkAsChangesOnConversationWithMessages = (
 
     return {
         ...conversation,
+        DisplaySnoozedReminder: displaySnoozedReminder,
         NumUnread: updatedNumUnread,
         ContextNumUnread: updatedContextNumUnread,
         Labels: updatedLabels,
