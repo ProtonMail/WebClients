@@ -59,6 +59,9 @@
       "Confirm": [
         "Пацвердзіць"
       ],
+      "Confirm access": [
+        "Пацвердзіць доступ"
+      ],
       "Continue": [
         "Працягнуць"
       ],
@@ -80,6 +83,9 @@
       "Create a ${ BRAND_NAME } account": [
         "Стварыць уліковы запіс ${ BRAND_NAME }"
       ],
+      "Create a new vault to share": [
+        "Стварыць новае сховішча для абагулення"
+      ],
       "Create alias": [
         "Стварыць псеўданім"
       ],
@@ -97,6 +103,9 @@
       ],
       "Creating vault": [
         "Стварэнне сховішча"
+      ],
+      "Customize": [
+        "Наладзіць"
       ],
       "Delete": [
         "Выдаліць"
@@ -212,6 +221,9 @@
       "More options": [
         "Дадатковыя параметры"
       ],
+      "Move to a shared vault": [
+        "Перамясціць абагуленае сховішча"
+      ],
       "Move to another vault": [
         "Перамясціць у іншае сховішча"
       ],
@@ -223,6 +235,9 @@
       ],
       "Not now": [
         "Не зараз"
+      ],
+      "OK": [
+        "Добра"
       ],
       "Open in a window": [
         "Адкрыць у акне"
@@ -244,6 +259,9 @@
       ],
       "Regenerate": [
         "Згенерыраваць яшчэ раз"
+      ],
+      "Reject": [
+        "Адхіліць"
       ],
       "Reject invitation": [
         "Адхіліць запрашэнне"
@@ -284,6 +302,9 @@
       "Share": [
         "Абагуліць"
       ],
+      "Share this vault": [
+        "Абагуліць гэта сховішча"
+      ],
       "Share vault": [
         "Абагуліць сховішча"
       ],
@@ -320,11 +341,17 @@
       "Update": [
         "Абнавіць"
       ],
+      "Update vault": [
+        "Абнавіць сховішча"
+      ],
       "Updating": [
         "Абнаўленне"
       ],
       "Upgrade": [
         "Палепшыць"
+      ],
+      "Upgrade now to share with more people": [
+        "Палепшыце, каб абагуляць з большай колькасцю людзей"
       ],
       "Upgrade to keep these features": [
         "Палепшыць, каб пакінуць гэтыя функцыі"
@@ -375,6 +402,9 @@
       ],
       "Cannot send invitation to this address at the moment": [
         "У дадзены момант немагчыма адправіць запрашэнне на гэты адрас"
+      ],
+      "Could not confirm this invite at the moment": [
+        "У дадзены момант немагчыма пацвердзіць запрашэнне"
       ],
       "Could not leave vault.": [
         "Не атрымалася выйсці са сховішча."
@@ -666,17 +696,14 @@
         "Засталося ${ trialDaysLeft } дзён",
         "Засталося ${ trialDaysLeft } дзён"
       ],
-      "${ vault.count } item": [
-        "${ vault.count } элемент",
-        "${ vault.count } элементы",
-        "${ vault.count } элементаў",
-        "${ vault.count } элементаў"
-      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Даступна новая версія ${ PASS_APP_NAME }. Абнавіце праграму да апошняй версіі, каб паспрабаваць новыя функцыі і выпраўленыя памылкі."
       ],
       "Access ${ PASS_APP_NAME } via this icon": [
         "Доступ да ${ PASS_APP_NAME } з дапамогай гэтага значка"
+      ],
+      "Access successfully confirmed": [
+        "Доступ паспяхова пацверджаны"
       ],
       "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
         "Для доступу да ${ PASS_APP_NAME } вам спатрэбіцца PIN-код, каб разблакіраваць сеанс"
@@ -720,14 +747,14 @@
       "Check out all the exclusive features that are available to you for a limited time.": [
         "Даведайцеся пра ўсе эксклюзіўныя функцыі, якія будуць даступны вам на працягу абмежаванага часу."
       ],
+      "Congratulations, your access has been confirmed": [
+        "Віншуем! Вы паспяхова пацвердзілі свой доступ"
+      ],
       "Copied to clipboard": [
         "Скапіявана ў буфер абмену"
       ],
       "Creating alias...": [
         "Стварэнне псеўданіма..."
-      ],
-      "Custom fields": [
-        "Карыстальніцкія палі"
       ],
       "Decrypting your data": [
         "Расшыфроўка вашых даных"
@@ -768,6 +795,12 @@
       "Follow these simple steps to get the best experience:": [
         "Прытрымлівайцеся гэтых простых крокаў, каб атрымаць лепшы досвед:"
       ],
+      "For security reason, your access needs to be confirmed": [
+        "У мэтах бяспекі, вам неабходна пацвердзіць свой доступ"
+      ],
+      "For security reasons, your access needs to be confirmed": [
+        "У мэтах бяспекі, вам неабходна пацвердзіць свой доступ"
+      ],
       "Free Trial": [
         "Бясплатная пробная версія"
       ],
@@ -776,6 +809,9 @@
       ],
       "Generating alias...": [
         "Генерацыя псеўданіма..."
+      ],
+      "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
+        "Атрымайце неабмежаваную колькасць псеўданімаў, цешце сябе эксклюзіўнымі функцыямі і падтрымлівайце нас падпісаўшыся на Pass Plus."
       ],
       "Here you will find all the necessary information to get you started.": [
         "Тут вы знойдзеце ўсю неабходную інфармацыю, каб пачаць працу з праграмай."
@@ -816,9 +852,6 @@
       "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
         "Каб ажыццявіць перанос вашых даных у ${ PASS_APP_NAME } з іншага менеджара пароляў, вам дастаткова экспартаваць і імпартаваць іх з дапамогай формы ніжэй. Пасля таго, як імпартаванне будзе завершана, выдаліце раней экспартаваны файл у мэтах бяспекі."
       ],
-      "Integrated 2FA authenticator": [
-        "Інтэграваная аўтэнтыфікацыя 2ФА"
-      ],
       "Internet connection lost": [
         "Падключэнне да інтэрнэту страчана"
       ],
@@ -831,8 +864,11 @@
       "Invite successfully resent": [
         "Запрашэнне адпраўлена паўторна"
       ],
+      "Invite successfully sent": [
+        "Запрашэнне паспяхова адпраўлена"
+      ],
       "invites you to access items in": [
-        "запрасіў вас атрымаць доступ да элементаў у"
+        "запрасіў(-ла) вас атрымаць доступ да элементаў у"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Здаецца, што вы ўжо ўвайшлі ў ${ PASS_APP_NAME }. Калі вы спрабуеце ўвайсці з іншым уліковым запісам, спачатку выйдзіце з уліковага запісу ў пашырэнні."
@@ -905,6 +941,9 @@
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Паролі старэйшыя за 1 дзень аўтаматычна выдаляюцца з гісторыі."
+      ],
+      "Pending access to the shared data": [
+        "Чаканне доступу да абагуленых даных"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Замацаваць ${ PASS_APP_NAME } на панэлі інструментаў"
@@ -996,6 +1035,9 @@
       "Unable to copy to clipboard": [
         "Немагчыма скапіяваць у буфер абмену"
       ],
+      "Unlimited Aliases": [
+        "Неабмежаваная колькасць псеўданімаў"
+      ],
       "Unlock it with your PIN to access the settings": [
         "Разблакіруйце яго з дапамогай PIN, каб атрымаць доступ да налад"
       ],
@@ -1004,6 +1046,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Палепшыць ${ PASS_APP_NAME }"
+      ],
+      "Use vaults to share this item with others.": [
+        "Выкарыстанне сховішча для абагулення элементаў з іншымі."
       ],
       "User's access removed": [
         "Доступ карыстальніка выдалены"
@@ -1265,6 +1310,9 @@
       "Include numbers (0-9)": [
         "Уключаць лічбы (0-9)"
       ],
+      "Invitations": [
+        "Запрашэнні"
+      ],
       "Label": [
         "Метка"
       ],
@@ -1294,6 +1342,9 @@
       ],
       "Logins": [
         "Запісы ўваходу"
+      ],
+      "Members": [
+        "Удзельнікі"
       ],
       "Modified": [
         "Зменена"
@@ -1575,6 +1626,9 @@
       "Select a suffix": [
         "Выберыце суфікс"
       ],
+      "Shared vault": [
+        "Абагуленыя сховішчы"
+      ],
       "Unknown origin": [
         "Невядомае паходжанне"
       ],
@@ -1586,6 +1640,14 @@
       ],
       "Write your note": [
         "Напішыце сваю нататку"
+      ]
+    },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Сховішчы не могуць змяшчаць больш чым ${ vault.targetMaxMembers } карыстальніка.",
+        "Сховішчы не могуць змяшчаць больш чым ${ vault.targetMaxMembers } карыстальнікі.",
+        "Сховішчы не могуць змяшчаць больш чым ${ vault.targetMaxMembers } карыстальнікаў.",
+        "Сховішчы не могуць змяшчаць больш чым ${ vault.targetMaxMembers } карыстальнікаў."
       ]
     },
     "Title": {
@@ -1642,6 +1704,12 @@
       ],
       "Low disk space": [
         "Недастаткова месца на дыску"
+      ],
+      "Member limit": [
+        "Абмежаванне ўдзельніка"
+      ],
+      "Pending access to the shared data": [
+        "Чаканне доступу да абагуленых даных"
       ],
       "Permanently remove all items ?": [
         "Незваротна выдаліць элементы?"
@@ -1792,7 +1860,7 @@
         "Увайдзіце паўторна"
       ],
       "Please verify your email address in order to use email aliases": [
-        "Праверце свой адрас электроннай пошты, каб карыстацца псеўданімамі электроннай пошты."
+        "Праверце свой адрас электроннай пошты, каб карыстацца псеўданімамі."
       ],
       "Please verify your email address in order to use vault sharing": [
         "Праверце свой адрас электроннай пошты, каб карыстацца абагуленым сховішчам."
@@ -1832,6 +1900,15 @@
       ],
       "You cannot create more vaults than your subscription allows.": [
         "Ваша падпіска не дазваляе ствараць яшчэ больш сховішчаў."
+      ],
+      "You have reached the limit of members who can access this vault.": [
+        "Вы дасягнулі абмежавання па колькасці ўдзельнікаў, якія могуць атрымаць доступ да гэтага сховішча."
+      ],
+      "You have reached the limit of users in this vault. ${ upgradeLink }": [
+        "Вы дасягнулі максімальнай колькасці карыстальнікаў у сховішчы. ${ upgradeLink }"
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "Вы дасягнулі абмежавання па колькасці сховішчаў, якія прадугледжаны на вашым тарыфным плане."
       ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "У вас ёсць незахаваныя змены. Вы сапраўды хочаце адхіліць іх?"

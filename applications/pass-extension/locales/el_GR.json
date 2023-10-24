@@ -59,6 +59,9 @@
       "Confirm": [
         "Επιβεβαίωση"
       ],
+      "Confirm access": [
+        "Επιβεβαιώστε την πρόσβαση"
+      ],
       "Continue": [
         "Συνέχεια"
       ],
@@ -80,6 +83,9 @@
       "Create a ${ BRAND_NAME } account": [
         "Δημιουργία ενός ${ BRAND_NAME } λογαριασμού"
       ],
+      "Create a new vault to share": [
+        "Δημιουργία νέας κρύπτης για κοινή χρήση"
+      ],
       "Create alias": [
         "Δημιουργία ψευδώνυμου"
       ],
@@ -97,6 +103,9 @@
       ],
       "Creating vault": [
         "Δημιουργία κρύπτης"
+      ],
+      "Customize": [
+        "Προσαρμογή"
       ],
       "Delete": [
         "Διαγραφή"
@@ -212,6 +221,9 @@
       "More options": [
         "Περισσότερες επιλογές"
       ],
+      "Move to a shared vault": [
+        "Μετακίνηση σε κοινόχρηστη κρύπτη"
+      ],
       "Move to another vault": [
         "Μετακίνηση σε άλλη κρύπτη"
       ],
@@ -223,6 +235,9 @@
       ],
       "Not now": [
         "Όχι τώρα"
+      ],
+      "OK": [
+        "ΟΚ"
       ],
       "Open in a window": [
         "Άνοιγμα σε παράθυρο"
@@ -244,6 +259,9 @@
       ],
       "Regenerate": [
         "Αναπαραγωγή"
+      ],
+      "Reject": [
+        "Απόρριψη"
       ],
       "Reject invitation": [
         "Απόρριψη πρόσκλησης"
@@ -284,6 +302,9 @@
       "Share": [
         "Κοινοποίηση"
       ],
+      "Share this vault": [
+        "Κοινή χρήση αυτής της κρύπτης"
+      ],
       "Share vault": [
         "Κοινή χρήση κρύπτης"
       ],
@@ -320,11 +341,17 @@
       "Update": [
         "Ενημέρωση"
       ],
+      "Update vault": [
+        "Ενημέρωση κρύπτης"
+      ],
       "Updating": [
         "Γίνεται ενημέρωση"
       ],
       "Upgrade": [
         "Αναβάθμιση"
+      ],
+      "Upgrade now to share with more people": [
+        "Κάντε αναβάθμιση τώρα για κοινή χρήση με περισσότερα άτομα"
       ],
       "Upgrade to keep these features": [
         "Αναβάθμιση για να διατηρήσετε αυτές τις δυνατότητες"
@@ -375,6 +402,9 @@
       ],
       "Cannot send invitation to this address at the moment": [
         "Δεν είναι δυνατή η αποστολή πρόσκλησης σε αυτήν τη διεύθυνση αυτήν τη στιγμή"
+      ],
+      "Could not confirm this invite at the moment": [
+        "Δεν ήταν δυνατή η επιβεβαίωση αυτής της πρόσκλησης αυτή τη στιγμή"
       ],
       "Could not leave vault.": [
         "Δεν ήταν δυνατή η αποχώρηση από την κρύπτη."
@@ -579,6 +609,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -597,6 +630,10 @@
       "Megabyte": [
         "Megabyte",
         "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Info": {
@@ -640,15 +677,14 @@
         "${ trialDaysLeft } ημέρα απομένει",
         "${ trialDaysLeft } ημέρες απομένουν"
       ],
-      "${ vault.count } item": [
-        "${ vault.count } στοιχείο",
-        "${ vault.count } στοιχεία"
-      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Μια νέα έκδοση του ${ PASS_APP_NAME } είναι διαθέσιμη. Ενημερώστε το για να απολαύσετε τις πιο πρόσφατες δυνατότητες και διορθώσεις σφαλμάτων."
       ],
       "Access ${ PASS_APP_NAME } via this icon": [
         "Πρόσβαση στο ${ PASS_APP_NAME } μέσω αυτού του εικονιδίου"
+      ],
+      "Access successfully confirmed": [
+        "Η πρόσβαση επιβεβαιώθηκε με επιτυχία"
       ],
       "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
         "Η πρόσβαση στο ${ PASS_APP_NAME } θα απαιτήσει έναν κωδικό PIN για να ξεκλειδώσετε τη συνεδρία σας"
@@ -692,14 +728,14 @@
       "Check out all the exclusive features that are available to you for a limited time.": [
         "Δείτε όλες τις αποκλειστικές λειτουργίες που είναι διαθέσιμες σε εσάς για περιορισμένο χρονικό διάστημα."
       ],
+      "Congratulations, your access has been confirmed": [
+        "Συγχαρητήρια, η πρόσβασή σας επιβεβαιώθηκε"
+      ],
       "Copied to clipboard": [
         "Αντιγράφηκε στο πρόχειρο"
       ],
       "Creating alias...": [
         "Δημιουργία ψευδώνυμου..."
-      ],
-      "Custom fields": [
-        "Προσαρμοσμένα πεδία"
       ],
       "Decrypting your data": [
         "Γίνεται αποκρυπτογράφηση των δεδομένων σας"
@@ -740,6 +776,12 @@
       "Follow these simple steps to get the best experience:": [
         "Για την καλύτερη εμπειρία, ακολουθήστε τα εξής απλά βήματα:"
       ],
+      "For security reason, your access needs to be confirmed": [
+        "Για λόγους ασφαλείας, η πρόσβασή σας πρέπει να επιβεβαιωθεί"
+      ],
+      "For security reasons, your access needs to be confirmed": [
+        "Για λόγους ασφαλείας, η πρόσβασή σας πρέπει να επιβεβαιωθεί"
+      ],
       "Free Trial": [
         "Δωρεάν δοκιμαστική έκδοση"
       ],
@@ -748,6 +790,9 @@
       ],
       "Generating alias...": [
         "Δημιουργία ψευδωνύμου..."
+      ],
+      "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
+        "Λάβετε απεριόριστα ψευδώνυμα, απολαύστε αποκλειστικές λειτουργίες και υποστηρίξτε μας με την εγγραφή σας στο Pass Plus."
       ],
       "Here you will find all the necessary information to get you started.": [
         "Εδώ θα βρείτε όλες τις απαραίτητες πληροφορίες για να ξεκινήσετε."
@@ -786,9 +831,6 @@
       "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
         "Για να μεταφέρετε τα δεδομένα σας στο ${ PASS_APP_NAME } από έναν άλλο διαχειριστή κωδικών πρόσβασης, εξαγάγετε τους κωδικούς πρόσβασής σας και εισαγάγετε τους χρησιμοποιώντας την παρακάτω φόρμα. Μόλις εισαχθούν όλα τα στοιχεία σας, διαγράψτε το αρχείο που είχε εξαχθεί προηγουμένως."
       ],
-      "Integrated 2FA authenticator": [
-        "Ενσωματωμένος ελεγκτής 2FA"
-      ],
       "Internet connection lost": [
         "Απώλεια σύνδεσης στο διαδίκτυο"
       ],
@@ -800,6 +842,9 @@
       ],
       "Invite successfully resent": [
         "Επιτυχής αποστολή πρόσκλησης εκ νέου"
+      ],
+      "Invite successfully sent": [
+        "Επιτυχής αποστολή πρόσκλησης"
       ],
       "invites you to access items in": [
         "σας προσκαλεί να αποκτήσετε πρόσβαση σε στοιχεία στη"
@@ -873,6 +918,9 @@
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Οι κωδικοί πρόσβασης που είναι παλαιότεροι από 1 ημέρα διαγράφονται αυτόματα από το ιστορικό."
+      ],
+      "Pending access to the shared data": [
+        "Εκκρεμής πρόσβαση στα κοινόχρηστα δεδομένα"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Καρφίτσωμα ${ PASS_APP_NAME } στη γραμμή εργαλείων σας"
@@ -962,6 +1010,9 @@
       "Unable to copy to clipboard": [
         "Αδυναμία αντιγραφής στο πρόχειρο"
       ],
+      "Unlimited Aliases": [
+        "Απεριόριστα Ψευδώνυμα"
+      ],
       "Unlock it with your PIN to access the settings": [
         "Ξεκλειδώστε το με το PIN σας για πρόσβαση στις ρυθμίσεις"
       ],
@@ -970,6 +1021,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Αναβάθμιση ${ PASS_APP_NAME }"
+      ],
+      "Use vaults to share this item with others.": [
+        "Χρησιμοποιήστε κρύπτες για να μοιραστείτε αυτό το στοιχείο με άλλους."
       ],
       "User's access removed": [
         "Η πρόσβαση του χρήστη καταργήθηκε"
@@ -1225,6 +1279,9 @@
       "Include numbers (0-9)": [
         "Συμπερίληψη αριθμών (0-9)"
       ],
+      "Invitations": [
+        "Προσκλήσεις"
+      ],
       "Label": [
         "Ετικέτα"
       ],
@@ -1254,6 +1311,9 @@
       ],
       "Logins": [
         "Συνδέσεις"
+      ],
+      "Members": [
+        "Μέλη"
       ],
       "Modified": [
         "Τροποποιήθηκε"
@@ -1535,6 +1595,9 @@
       "Select a suffix": [
         "Επιλογή επιθήματος"
       ],
+      "Shared vault": [
+        "Κοινόχρηστη κρύπτη"
+      ],
       "Unknown origin": [
         "Άγνωστη προέλευση"
       ],
@@ -1546,6 +1609,12 @@
       ],
       "Write your note": [
         "Γράψτε τη σημείωσή σας"
+      ]
+    },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Οι κρύπτες δεν μπορούν να περιέχουν παραπάνω από ${ vault.targetMaxMembers } χρήστη.",
+        "Οι κρύπτες δεν μπορούν να περιέχουν παραπάνω από ${ vault.targetMaxMembers } χρήστες."
       ]
     },
     "Title": {
@@ -1602,6 +1671,12 @@
       ],
       "Low disk space": [
         "Περιορισμένος χώρος στο δίσκο"
+      ],
+      "Member limit": [
+        "Όριο μελών"
+      ],
+      "Pending access to the shared data": [
+        "Εκκρεμής πρόσβαση στα κοινόχρηστα δεδομένα"
       ],
       "Permanently remove all items ?": [
         "Οριστική αφαίρεση όλων των στοιχείων;"
@@ -1781,9 +1856,6 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Δεν είναι δυνατή η είσοδος στο ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
-      "Upgrade to a paid plan to invite more members to this vault.": [
-        "Κάντε αναβάθμιση σε πρόγραμμα επί πληρωμή για να προσκαλέσετε περισσότερα μέλη σε αυτή την κρύπτη."
-      ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You can not undo this action": [
         "Η κρύπτη \"${ vaultName }\" και όλα τα στοιχεία της θα διαγραφούν οριστικά. Δεν μπορείτε να αναιρέσετε αυτήν την ενέργεια"
       ],
@@ -1798,6 +1870,9 @@
       ],
       "You have reached the limit of members who can access this vault.": [
         "Έχετε φτάσει το όριο των μελών που μπορούν να έχουν πρόσβαση σε αυτή την κρύπτη."
+      ],
+      "You have reached the limit of users in this vault. ${ upgradeLink }": [
+        "Έχετε φτάσει το όριο των χρηστών σε αυτή την κρύπτη. ${ upgradeLink }"
       ],
       "You have reached the limit of vaults you can have in your plan.": [
         "Έχετε φτάσει στο όριο των κρυπτών που μπορείτε να έχετε στο πλάνο σας."

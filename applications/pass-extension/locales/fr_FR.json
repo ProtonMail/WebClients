@@ -59,6 +59,9 @@
       "Confirm": [
         "Confirmer"
       ],
+      "Confirm access": [
+        "Confirmer l'accès"
+      ],
       "Continue": [
         "Continuer"
       ],
@@ -80,6 +83,9 @@
       "Create a ${ BRAND_NAME } account": [
         "Créer un compte ${ BRAND_NAME }"
       ],
+      "Create a new vault to share": [
+        "Créer un nouveau coffre-fort à partager"
+      ],
       "Create alias": [
         "Créer un alias"
       ],
@@ -97,6 +103,9 @@
       ],
       "Creating vault": [
         "Créer un coffre-fort"
+      ],
+      "Customize": [
+        "Personnaliser"
       ],
       "Delete": [
         "Supprimer"
@@ -212,6 +221,9 @@
       "More options": [
         "Plus d'options"
       ],
+      "Move to a shared vault": [
+        "Déplacer vers un coffre-fort partagé"
+      ],
       "Move to another vault": [
         "Déplacer vers un autre coffre-fort"
       ],
@@ -223,6 +235,9 @@
       ],
       "Not now": [
         "Plus tard"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open in a window": [
         "Ouvrir dans une nouvelle fenêtre"
@@ -244,6 +259,9 @@
       ],
       "Regenerate": [
         "Générer à nouveau"
+      ],
+      "Reject": [
+        "Refuser"
       ],
       "Reject invitation": [
         "Refuser l'invitation"
@@ -284,6 +302,9 @@
       "Share": [
         "Partager"
       ],
+      "Share this vault": [
+        "Partager ce coffre-fort"
+      ],
       "Share vault": [
         "Partager le coffre-fort"
       ],
@@ -320,11 +341,17 @@
       "Update": [
         "Mettre à jour"
       ],
+      "Update vault": [
+        "Mettre à jour le coffre-fort"
+      ],
       "Updating": [
         "Mettre à jour"
       ],
       "Upgrade": [
         "Changer d'abonnement"
+      ],
+      "Upgrade now to share with more people": [
+        "Changez d'abonnement maintenant pour partager avec plus de personnes."
       ],
       "Upgrade to keep these features": [
         "Changer d'abonnement pour garder ces fonctionnalités"
@@ -375,6 +402,9 @@
       ],
       "Cannot send invitation to this address at the moment": [
         "Vous ne pouvez pas envoyer d'invitation à cette adresse pour le moment."
+      ],
+      "Could not confirm this invite at the moment": [
+        "Cette invitation n'a pu être confirmée pour le moment."
       ],
       "Could not leave vault.": [
         "Impossible de quitter le coffre-fort."
@@ -579,6 +609,9 @@
       ],
       "MB": [
         "Mo"
+      ],
+      "TB": [
+        "To"
       ]
     },
     "file size format, long": {
@@ -597,6 +630,10 @@
       "Megabyte": [
         "Megaoctet",
         "Megaoctets"
+      ],
+      "Terabyte": [
+        "Téraoctet",
+        "Téraoctets"
       ]
     },
     "Info": {
@@ -640,15 +677,14 @@
         "Il reste ${ trialDaysLeft } jour.",
         "Il reste ${ trialDaysLeft } jours."
       ],
-      "${ vault.count } item": [
-        "${ vault.count } élément",
-        "${ vault.count } éléments"
-      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Une nouvelle version de ${ PASS_APP_NAME } est disponible. Faites la mise à jour pour profiter des dernières fonctionnalités et corrections de bugs."
       ],
       "Access ${ PASS_APP_NAME } via this icon": [
         "Accédez à ${ PASS_APP_NAME } depuis cette icône."
+      ],
+      "Access successfully confirmed": [
+        "L'accès a été confirmé."
       ],
       "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
         "Pour accéder à ${ PASS_APP_NAME }, vous devez déverrouiller votre session à l'aide d'un code PIN."
@@ -692,14 +728,17 @@
       "Check out all the exclusive features that are available to you for a limited time.": [
         "Découvrez toutes les fonctionnalités exclusives qui vous sont proposées pour une durée limitée."
       ],
+      "Congratulations, your access has been confirmed": [
+        "Votre accès a été confirmé."
+      ],
       "Copied to clipboard": [
         "Copié dans le presse-papiers"
       ],
       "Creating alias...": [
         "Création de l'alias en cours"
       ],
-      "Custom fields": [
-        "Champs personnalisés"
+      "Credit cards, Custom fields": [
+        "Cartes de paiement, champs personnalisés"
       ],
       "Decrypting your data": [
         "Déchiffrement de vos données en cours"
@@ -740,6 +779,12 @@
       "Follow these simple steps to get the best experience:": [
         "Voici quelques étapes simples qui vous permettront de profiter de la meilleure expérience possible :"
       ],
+      "For security reason, your access needs to be confirmed": [
+        "Pour des raisons de sécurité, votre accès doit être confirmé."
+      ],
+      "For security reasons, your access needs to be confirmed": [
+        "Pour des raisons de sécurité, votre accès doit être confirmé."
+      ],
       "Free Trial": [
         "Essai gratuit"
       ],
@@ -748,6 +793,9 @@
       ],
       "Generating alias...": [
         "Génération de l'alias en cours"
+      ],
+      "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
+        "Obtenez un nombre illimité d'alias, profitez de fonctionnalités exceptionnelles et soutenez-nous en vous abonnant à Pass Plus."
       ],
       "Here you will find all the necessary information to get you started.": [
         "Vous trouverez ici toutes les informations nécessaires pour bien démarrer."
@@ -786,9 +834,6 @@
       "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
         "Pour transférer vos données depuis un autre gestionnaire de mots de passe vers ${ PASS_APP_NAME }, exportez vos mots de passe et importez-les en utilisant le formulaire ci-dessous. Une fois tous vos éléments importés, supprimez le fichier que vous avez exporté pour le transfert."
       ],
-      "Integrated 2FA authenticator": [
-        "Authentification à deux facteurs (A2F) intégrée"
-      ],
       "Internet connection lost": [
         "La connexion internet est perdue."
       ],
@@ -800,6 +845,9 @@
       ],
       "Invite successfully resent": [
         "L'invitation a été renvoyée."
+      ],
+      "Invite successfully sent": [
+        "L'invitation a été envoyée."
       ],
       "invites you to access items in": [
         "vous invite à accéder à des éléments dans"
@@ -874,6 +922,9 @@
       "Passwords older than 1 day are automatically deleted from history.": [
         "Les mots de passe datant de plus d'un jour sont automatiquement supprimés de l'historique."
       ],
+      "Pending access to the shared data": [
+        "En attente d'accès aux données partagées"
+      ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Épinglez ${ PASS_APP_NAME } à votre barre d'outils."
       ],
@@ -919,6 +970,9 @@
       "Settings successfully updated": [
         "Les paramètres ont été mis à jour."
       ],
+      "Share with 10 others": [
+        "Partage avec 10 autres personnes"
+      ],
       "Sign in or create an account to continue.": [
         "Connectez-vous ou créez un compte pour continuer."
       ],
@@ -962,6 +1016,9 @@
       "Unable to copy to clipboard": [
         "Impossible de copier dans le presse-papiers"
       ],
+      "Unlimited Aliases": [
+        "Nombre illimité d'alias"
+      ],
       "Unlock it with your PIN to access the settings": [
         "Déverrouillez-la avec votre code PIN pour accéder aux paramètres."
       ],
@@ -970,6 +1027,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Mettre à jour ${ PASS_APP_NAME }"
+      ],
+      "Use vaults to share this item with others.": [
+        "Utilisez les coffres-forts pour partager cet élément avec d'autres personnes."
       ],
       "User's access removed": [
         "L'accès de l'utilisateur a été supprimé."
@@ -1225,6 +1285,9 @@
       "Include numbers (0-9)": [
         "Ajouter des chiffres (0-9)"
       ],
+      "Invitations": [
+        "Invitations"
+      ],
       "Label": [
         "Label"
       ],
@@ -1254,6 +1317,9 @@
       ],
       "Logins": [
         "Identifiants"
+      ],
+      "Members": [
+        "Membres"
       ],
       "Modified": [
         "Modifié"
@@ -1535,6 +1601,9 @@
       "Select a suffix": [
         "Sélectionner un suffixe"
       ],
+      "Shared vault": [
+        "Coffre-fort partagé"
+      ],
       "Unknown origin": [
         "Origine inconnue"
       ],
@@ -1546,6 +1615,12 @@
       ],
       "Write your note": [
         "Rédigez votre note"
+      ]
+    },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Les coffres-forts contiennent plus d'${ vault.targetMaxMembers } utilisateur.",
+        "Les coffres-forts contiennent plus de ${ vault.targetMaxMembers } utilisateurs."
       ]
     },
     "Title": {
@@ -1602,6 +1677,12 @@
       ],
       "Low disk space": [
         "Il y a peu d'espace disque."
+      ],
+      "Member limit": [
+        "Limite du nombre de membres"
+      ],
+      "Pending access to the shared data": [
+        "En attente d'accès aux données partagées"
       ],
       "Permanently remove all items ?": [
         "Voulez-vous définitivement supprimer tous les éléments ?"
@@ -1792,6 +1873,15 @@
       ],
       "You cannot create more vaults than your subscription allows.": [
         "Vous ne pouvez pas créer plus de coffres-forts que votre abonnement ne le permet."
+      ],
+      "You have reached the limit of members who can access this vault.": [
+        "Vous avez atteint le nombre limite de membres qui peuvent accéder à ce coffre-fort."
+      ],
+      "You have reached the limit of users in this vault. ${ upgradeLink }": [
+        "Vous avez atteint le nombre maximal d'utilisateurs dans ce coffre-fort. ${ upgradeLink }"
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "Vous avez atteint le nombre limite de coffres-forts de votre abonnement."
       ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "Des modifications n'ont pas été enregistrées. Voulez-vous vraiment les abandonner ?"

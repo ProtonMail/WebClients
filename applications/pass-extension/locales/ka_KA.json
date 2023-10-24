@@ -98,6 +98,9 @@
       "Creating vault": [
         "საცავის შექმნა"
       ],
+      "Customize": [
+        "მორგება"
+      ],
       "Delete": [
         "წაშლა"
       ],
@@ -223,6 +226,9 @@
       ],
       "Not now": [
         "არა ახლა"
+      ],
+      "OK": [
+        "დიახ"
       ],
       "Open in a window": [
         "ფანჯარაში გახსნა"
@@ -640,10 +646,6 @@
         "დარჩენილია ${ trialDaysLeft } დღე",
         "დარჩენილია ${ trialDaysLeft } დღე"
       ],
-      "${ vault.count } item": [
-        "${ vault.count } ელემენტი",
-        "${ vault.count } ელემენტი"
-      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "ხელმისაწვდომია ${ PASS_APP_NAME }-ის ახალი ვერსია. განაახლეთ ის და მიიღეთ უახლესი ფუნქციები და შეცდომის გამართვები."
       ],
@@ -697,9 +699,6 @@
       ],
       "Creating alias...": [
         "ფსევდონიმის შექმნა..."
-      ],
-      "Custom fields": [
-        "მორგებადი ველები"
       ],
       "Decrypting your data": [
         "თქვენი მონაცემების გაშიფვრა"
@@ -785,9 +784,6 @@
       ],
       "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
         "მონაცემების ${ PASS_APP_NAME }-ში სხვა პაროლების მმართველიდან მიგრაციისთვის, გამოიტანეთ ისინი და აქ ქვედა ფორმით შემოიტანეთ. როცა ყველა ჩანაწერი მზად გექნებათ, გამოტანილი ფაილები წაშალეთ."
-      ],
-      "Integrated 2FA authenticator": [
-        "ჩაშენებული 2FA ავთენტიკატორი"
       ],
       "Internet connection lost": [
         "ინტერნეტკავშირი დაკარგულია"
