@@ -221,6 +221,9 @@
       "Get ${ vpnPlus }": [
         "Wybierz plan ${ vpnPlus }"
       ],
+      "Get a new encrypted email address": [
+        "Uzyskaj nowy szyfrowany adres e-mail"
+      ],
       "Get in touch": [
         "Skontaktuj się z nami"
       ],
@@ -494,6 +497,9 @@
       "Use recovery code": [
         "Użyj kodu odzyskiwania"
       ],
+      "Use your current email instead": [
+        "Użyj swojego obecnego adresu e-mail"
+      ],
       "User": [
         "Użytkownik"
       ],
@@ -636,6 +642,115 @@
         "Spowoduje to rozłączenie wszystkich routerów i klientów używających tego certyfikatu."
       ]
     },
+    "bf2023: Action": {
+      "**Add our encrypted password manager** for only ${ price }": [
+        "**Dodaj nasz menedżer haseł szyfrowanych** za jedyne ${ price }"
+      ],
+      "Add ${ PASS_APP_NAME }": [
+        "Dodaj ${ PASS_APP_NAME }"
+      ],
+      "Add ${ plan } for ${ price } per month": [
+        "Dodaj ${ plan } za ${ price } miesięcznie"
+      ],
+      "Add ${ plan } to your plan by subscribing to 15 months": [
+        "Dodaj ${ plan } do swojego planu, subskrybując na 15 miesięcy"
+      ],
+      "Get the deal": [
+        "Skorzystaj z oferty"
+      ],
+      "Remove": [
+        "Usuń"
+      ],
+      "Remove ${ PASS_APP_NAME }": [
+        "Usuń ${ PASS_APP_NAME }"
+      ],
+      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
+        "Subskrybuj na 15 miesięcy i uzyskaj **menedżer haseł szyfrowanych** za jedyne ${ priceNoSuffix } dodatkowo miesięcznie!"
+      ]
+    },
+    "bf2023: Deal details": {
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } przestrzeni dyskowej"
+      ],
+      "1 user": [
+        "1 użytkownik"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "3,000+ servers across 65+ countries": [
+        "Ponad 3000 serwerów w ponad 65 krajach"
+      ],
+      "6 users": [
+        "6 użytkowników"
+      ],
+      "Ad-blocker and malware protection": [
+        "Blokada reklam i ochrona przed złośliwym oprogramowaniem"
+      ],
+      "Extended version history": [
+        "Rozszerzona historia wersji"
+      ],
+      "High speed streaming": [
+        "Szybki streaming"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } w wersji premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } w wersji premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } w wersji premium"
+      ],
+      "Premium Password Manager": [
+        "Menedżer haseł w wersji premium"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Rabaty są obliczane na podstawie standardowych cen miesięcznych."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Na koniec cyklu rozliczeniowego Twoja subskrypcja zostanie automatycznie odnowiona w obniżonej cenie i na standardowy okres."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "30-dniowa gwarancja zwrotu pieniędzy"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Uzyskaj dostęp z dowolnego miejsca do treści w usługach streamingowych, takich jak Netflix, Disney+, Prime Video i nie tylko."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
+        "Obejmuje obsługę ${ domains } niestandardowej domeny e-mail, ${ addresses } adresów e-mail, ${ aliases } aliasów hide-my-email, udostępniania kalendarza i nie tylko."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Obejmuje obsługę ${ domains } niestandardowej domeny e-mail, ${ addresses } adresów e-mail, nieograniczonej liczby aliasów hide-my-email, udostępniania kalendarza i nie tylko."
+      ],
+      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Zabezpiecz swoje e-maile i harmonogram dzięki szyfrowaniu end-to-end. Obejmuje obsługę niestandardowych domen e-mail, 15 adresów e-mail, nieograniczonej liczby aliasów hide-my-email, udostępniania kalendarza i wiele więcej."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Zabezpiecz pliki dzięki szyfrowanej przestrzeni dyskowej w chmurze. Zawiera historię wersji, szyfrowane udostępnianie plików i wiele więcej."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Specjalnie zaprojektowana funkcja NetShield chroni Twoje urządzenia oraz przyśpiesza przeglądanie Internetu poprzez blokowanie reklam, elementów śledzących i złośliwego oprogramowania."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "Przestrzeń dyskowa jest dzielona pomiędzy wszystkimi aplikacjami ${ BRAND_NAME }."
+      ],
+      "Store up to 200 versions of each file for up to 10 years.": [
+        "Przechowuj do 200 wersji każdego pliku przez okres aż do 10 lat."
+      ]
+    },
     "Billing cycle": {
       "${ n } month": [
         "${ n } miesiąc",
@@ -644,7 +759,7 @@
         "${ n } miesiąca"
       ],
       "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
-        "Odnawia się automatycznie za ${ renewPrice }, przez ${ renewalLength }"
+        "Automatyczne odnowienie za ${ renewalLength } w kwocie ${ renewPrice }"
       ]
     },
     "Billing cycle option": {
@@ -2031,13 +2146,13 @@
     },
     "familyOffer_2023:Deal details": {
       "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } Premium"
+        "${ DRIVE_SHORT_APP_NAME } w wersji premium"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } Premium"
+        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } w wersji premium"
       ],
       "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } Premium"
+        "${ VPN_SHORT_APP_NAME } w wersji premium"
       ],
       "Up to 6 users": [
         "Do 6 użytkowników"
@@ -2404,6 +2519,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -2430,6 +2548,12 @@
         "megabajty",
         "megabajtów",
         "megabajtów"
+      ],
+      "Terabyte": [
+        "terabajt",
+        "terabajty",
+        "terabajtów",
+        "terabajtów"
       ]
     },
     "Font face option": {
@@ -3381,6 +3505,9 @@
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Te konfiguracje są przeznaczone do pracy z routerami WireGuard i oficjalnymi klientami."
       ],
+      "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
+        "Te poświadczenia nie mogą być używane do logowania się do naszych oficjalnych aplikacji ${ VPN_APP_NAME }. ${ learnMore }"
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Konto zostało zawieszone z powodu potencjalnego naruszenia regulaminu."
       ],
@@ -3612,6 +3739,9 @@
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "W planach Business i Enterprise możesz kupić ${ boldDedicatedServers } dla organizacji oraz skonfigurować ${ boldGateways }, aby kontrolować dostęp użytkowników."
       ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Dzięki szyfrowanemu adresowi ${ BRAND_NAME } możesz używać wszystkich usług ${ BRAND_NAME }"
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Bez aktywacji nie będziesz w stanie tworzyć nowych użytkowników, dodawać adresów do istniejących użytkowników ani uzyskać dostępu do służbowych kont użytkowników."
       ],
@@ -3719,6 +3849,9 @@
       ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "W tym dniu stracisz dostęp do serwerów planu ${ vpnPlanNameShort } i ich funkcji."
+      ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Będziesz potrzebować adresu ${ BRAND_NAME }, aby używać poczty ${ MAIL_APP_NAME } i usługi ${ CALENDAR_APP_NAME }"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "W celu zweryfikowania płatności wkrótce zostaniesz przekierowany na stronę firmy PayPal."
@@ -5078,14 +5211,6 @@
         "regulamin"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Wersja próbna planu ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Użycie konta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Usunąć konto?"
@@ -5103,7 +5228,27 @@
         "Zmienić plany?"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Wersja próbna planu ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Użycie konta"
+      ]
+    },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Zabezpiecz swój harmonogram dzięki szyfrowaniu end-to-end. Zawiera obsługę niestandardowych kalendarzy, udostępnianie kalendarzy i wiele więcej."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Zabezpiecz pliki dzięki zaszyfrowanej przestrzeni dyskowej w chmurze. Zawiera historię wersji, szyfrowane udostępnianie plików i wiele więcej."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: Zabezpiecz pocztę e-mail za pomocą szyfrowania end-to-end. Zawiera obsługę niestandardowych domen, 15 adresów e-mail, nieograniczoną liczbę aliasów hide-my-email i wiele więcej."
+      ],
+      "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "${ VPN_APP_NAME }: Uzyskaj dostęp do zablokowanych treści i przeglądaj prywatnie Internet. Zawiera ${ serversAndCountries }, najwyższe prędkości VPN, usługi streamingu na całym świecie, blokowanie reklam i złośliwego oprogramowania, szybkie pobieranie BitTorrent oraz wiele więcej."
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Uzyskaj dostęp do usług streamingu, takich jak Netflix, Disney+ i Prime Video, gdziekolwiek jesteś"
       ],
@@ -5741,16 +5886,16 @@
         "Jeśli żądanie zmiany hasła nie zostało wysłane przez Ciebie, anuluj je."
       ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Pozostał ${ timeRemaining.inDays } dzień na zresetowanie hasła.",
-        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Pozostały ${ timeRemaining.inDays } dni na zresetowanie hasła.",
-        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Pozostało ${ timeRemaining.inDays } dni na zresetowanie hasła.",
-        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Pozostało ${ timeRemaining.inDays } dnia na zresetowanie hasła."
+        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Masz ${ timeRemaining.inDays } dzień na zresetowanie hasła.",
+        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Masz ${ timeRemaining.inDays } dni na zresetowanie hasła.",
+        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Masz ${ timeRemaining.inDays } dni na zresetowanie hasła.",
+        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Masz ${ timeRemaining.inDays } dnia na zresetowanie hasła."
       ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Pozostała ${ timeRemaining.inHours } godzina na zresetowanie hasła.",
-        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Pozostały ${ timeRemaining.inHours } godziny na zresetowanie hasła.",
-        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Pozostało ${ timeRemaining.inHours } godzin na zresetowanie hasła.",
-        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Pozostało ${ timeRemaining.inHours } godziny na zresetowanie hasła."
+        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Masz ${ timeRemaining.inHours } godzinę na zresetowanie hasła.",
+        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Masz ${ timeRemaining.inHours } godziny na zresetowanie hasła.",
+        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Masz ${ timeRemaining.inHours } godzin na zresetowanie hasła.",
+        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Masz ${ timeRemaining.inHours } godziny na zresetowanie hasła."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Przejdź do zalogowanego urządzenia, na którym zainicjowano żądanie zmiany hasła."
@@ -5868,10 +6013,10 @@
         "Otrzymaliśmy żądanie zresetowanie hasła konta ${ boldEmail }."
       ],
       "You can change your password in ${ gracePeriodHoursRemaining } hour": [
-        "Możesz zmienić hasło za ${ gracePeriodHoursRemaining } godzinę",
-        "Możesz zmienić hasło za ${ gracePeriodHoursRemaining } godziny",
-        "Możesz zmienić hasło za ${ gracePeriodHoursRemaining } godzin",
-        "Możesz zmienić hasło za ${ gracePeriodHoursRemaining } godziny"
+        "Hasło możesz zmienić za ${ gracePeriodHoursRemaining } godzinę",
+        "Hasło możesz zmienić za ${ gracePeriodHoursRemaining } godziny",
+        "Hasło możesz zmienić za ${ gracePeriodHoursRemaining } godzin",
+        "Hasło możesz zmienić za ${ gracePeriodHoursRemaining } godziny"
       ]
     },
     "session_recovery:in_progress:link": {
@@ -5939,6 +6084,12 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } godzinę",
+        "${ gracePeriodHoursRemaining } godziny",
+        "${ gracePeriodHoursRemaining } godzin",
+        "${ gracePeriodHoursRemaining } godziny"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } jest dostępne."
       ],
@@ -5989,6 +6140,9 @@
       ],
       "Password": [
         "Hasło"
+      ],
+      "Username": [
+        "Nazwa użytkownika"
       ]
     },
     "specialoffer: Action": {
@@ -6064,13 +6218,13 @@
         "Najwyższa prędkość VPN"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } Premium"
+        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } w wersji premium"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i ${ DRIVE_SHORT_APP_NAME } Premium"
+        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i ${ DRIVE_SHORT_APP_NAME } w wersji premium"
       ],
       "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } Premium"
+        "${ VPN_SHORT_APP_NAME } w wersji premium"
       ],
       "Premium early access": [
         "Wczesny dostęp premium"
@@ -6116,6 +6270,12 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } miesiąc",
+        "${ n } miesiące",
+        "${ n } miesięcy",
+        "${ n } miesiąca"
+      ],
       "/ month": [
         "/ miesiąc"
       ],
@@ -6202,10 +6362,10 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Uzyskaj dostęp do blokowanych treści i przeglądaj Internet z zachowaniem prywatności. Obsługuje 1700 serwerów w ponad 60 krajach, najwyższe prędkości VPN, 10 połączeń VPN na użytkownika, usługi streamowania na całym świecie, blokowanie reklam i złośliwego oprogramowania i inne."
+        "Uzyskaj dostęp do zablokowanych treści i przeglądaj prywatnie Internet. Zawiera 1700 serwerów w ponad 60 krajach, najwyższe prędkości VPN, 10 połączeń VPN na użytkownika, usługi streamingu na całym świecie, blokowanie reklam i złośliwego oprogramowania i wiele więcej."
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Uzyskaj dostęp do blokowanych treści i przeglądaj Internet z zachowaniem prywatności. Obsługuje 1700 serwerów w ponad 60 krajach, najwyższe prędkości VPN, 10 połączeń VPN, usługi streamowania na całym świecie, blokowanie reklam i złośliwego oprogramowania i inne."
+        "Uzyskaj dostęp do zablokowanych treści i przeglądaj prywatnie Internet. Zawiera 1700 serwerów w ponad 60 krajach, najwyższe prędkości VPN, 10 połączeń VPN, usługi streamingu na całym świecie, blokowanie reklam i złośliwego oprogramowania i wiele więcej."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Uzyskaj dostęp z dowolnego miejsca do treści w usługach streamingowych, takich jak Netflix, Disney+ i Prime Video."
@@ -6584,10 +6744,10 @@
     },
     "summer2023: Deal details": {
       "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } Premium"
+        "${ DRIVE_SHORT_APP_NAME } w wersji premium"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } Premium"
+        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } w wersji premium"
       ],
       "Premium Password Manager": [
         "Menedżer haseł w wersji Premium"
@@ -7298,6 +7458,11 @@
       ],
       "Verified email address": [
         "Adres e-mail został zweryfikowany"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
       ]
     },
     "Tor out of date": {
