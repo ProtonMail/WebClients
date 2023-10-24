@@ -59,6 +59,9 @@
       "Confirm": [
         "Potwierdź"
       ],
+      "Confirm access": [
+        "Potwierdź dostęp"
+      ],
       "Continue": [
         "Kontynuuj"
       ],
@@ -80,6 +83,9 @@
       "Create a ${ BRAND_NAME } account": [
         "Utwórz konto ${ BRAND_NAME }"
       ],
+      "Create a new vault to share": [
+        "Utwórz nowy sejf do udostępnienia"
+      ],
       "Create alias": [
         "Utwórz alias"
       ],
@@ -97,6 +103,9 @@
       ],
       "Creating vault": [
         "Tworzenie sejfu"
+      ],
+      "Customize": [
+        "Dostosuj"
       ],
       "Delete": [
         "Usuń"
@@ -212,6 +221,9 @@
       "More options": [
         "Więcej opcji"
       ],
+      "Move to a shared vault": [
+        "Przenieś do udostępnionego sejfu"
+      ],
       "Move to another vault": [
         "Przenieś do innego sejfu"
       ],
@@ -223,6 +235,9 @@
       ],
       "Not now": [
         "Nie teraz"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open in a window": [
         "Otwórz w oknie"
@@ -244,6 +259,9 @@
       ],
       "Regenerate": [
         "Wygeneruj ponownie"
+      ],
+      "Reject": [
+        "Odrzuć"
       ],
       "Reject invitation": [
         "Odrzuć zaproszenie"
@@ -284,6 +302,9 @@
       "Share": [
         "Udostępnij"
       ],
+      "Share this vault": [
+        "Udostępnij sejf"
+      ],
       "Share vault": [
         "Udostępnij sejf"
       ],
@@ -320,11 +341,17 @@
       "Update": [
         "Zaktualizuj"
       ],
+      "Update vault": [
+        "Zaktualizuj sejf"
+      ],
       "Updating": [
         "Aktualizowanie"
       ],
       "Upgrade": [
         "Ulepsz"
+      ],
+      "Upgrade now to share with more people": [
+        "Ulepsz konto, aby udostępnić elementy użytkownikom"
       ],
       "Upgrade to keep these features": [
         "Ulepsz konto, aby zachować te funkcje"
@@ -375,6 +402,9 @@
       ],
       "Cannot send invitation to this address at the moment": [
         "Nie można obecnie wysłać zaproszenia na ten adres"
+      ],
+      "Could not confirm this invite at the moment": [
+        "Zaproszenie nie może zostać potwierdzone"
       ],
       "Could not leave vault.": [
         "Nie można opuścić sejfu."
@@ -583,6 +613,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -609,6 +642,12 @@
         "megabajty",
         "megabajtów",
         "megabajtów"
+      ],
+      "Terabyte": [
+        "terabajt",
+        "terabajty",
+        "terabajtów",
+        "terabajtów"
       ]
     },
     "Info": {
@@ -666,17 +705,14 @@
         "Pozostało ${ trialDaysLeft } dni",
         "Pozostało ${ trialDaysLeft } dnia"
       ],
-      "${ vault.count } item": [
-        "${ vault.count } element",
-        "${ vault.count } elementy",
-        "${ vault.count } elementów",
-        "${ vault.count } elementów"
-      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Dostępna jest nowa wersja rozszerzenia ${ PASS_APP_NAME }. Zaktualizuj je, aby cieszyć się najnowszymi funkcjami i poprawkami błędów."
       ],
       "Access ${ PASS_APP_NAME } via this icon": [
         "Dostęp do ${ PASS_APP_NAME } przez ikonę"
+      ],
+      "Access successfully confirmed": [
+        "Dostęp został potwierdzony"
       ],
       "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
         "Dostęp do ${ PASS_APP_NAME } wymaga kodu PIN, aby odblokować sesję"
@@ -720,14 +756,17 @@
       "Check out all the exclusive features that are available to you for a limited time.": [
         "Sprawdź wszystkie dodatkowe funkcje, które możesz przetestować przez ograniczony czas."
       ],
+      "Congratulations, your access has been confirmed": [
+        "Gratulacje. Dostęp został potwierdzony"
+      ],
       "Copied to clipboard": [
         "Skopiowano do schowka"
       ],
       "Creating alias...": [
         "Tworzenie aliasu..."
       ],
-      "Custom fields": [
-        "Pola niestandardowe"
+      "Credit cards, Custom fields": [
+        "Karty płatnicze, pola niestandardowe"
       ],
       "Decrypting your data": [
         "Odszyfrowywanie danych"
@@ -768,6 +807,12 @@
       "Follow these simple steps to get the best experience:": [
         "Wykonaj proste kroki, aby uzyskać najlepsze wrażenia:"
       ],
+      "For security reason, your access needs to be confirmed": [
+        "Ze względów bezpieczeństwa dostęp musi zostać potwierdzony"
+      ],
+      "For security reasons, your access needs to be confirmed": [
+        "Ze względów bezpieczeństwa dostęp musi zostać potwierdzony"
+      ],
       "Free Trial": [
         "Darmowa wersja próbna"
       ],
@@ -776,6 +821,9 @@
       ],
       "Generating alias...": [
         "Generowanie aliasu..."
+      ],
+      "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
+        "Ulepsz plan do wersji Pass Plus, aby uzyskać nieograniczoną liczbę aliasów, dodatkowe funkcje i wesprzeć nas."
       ],
       "Here you will find all the necessary information to get you started.": [
         "Tutaj znajdują się wszystkie informacje niezbędne na początek."
@@ -816,9 +864,6 @@
       "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
         "Aby przenieść dane do ${ PASS_APP_NAME } z innego menedżera haseł, wyeksportuj swoje hasła i zaimportuj je za pomocą poniższego formularza. Po zaimportowaniu wszystkich elementów usuń wcześniej wyeksportowany plik."
       ],
-      "Integrated 2FA authenticator": [
-        "Zintegrowana aplikacja uwierzytelniająca"
-      ],
       "Internet connection lost": [
         "Połączenie z Internetem zostało utracone"
       ],
@@ -829,6 +874,9 @@
         "Zaproszenie zostało usunięte"
       ],
       "Invite successfully resent": [
+        "Zaproszenie zostało wysłane"
+      ],
+      "Invite successfully sent": [
         "Zaproszenie zostało wysłane"
       ],
       "invites you to access items in": [
@@ -906,6 +954,9 @@
       "Passwords older than 1 day are automatically deleted from history.": [
         "Hasła starsze niż dzień zostaną automatycznie usunięte z historii."
       ],
+      "Pending access to the shared data": [
+        "Oczekujący dostęp do udostępnionych danych"
+      ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Przypomnij ${ PASS_APP_NAME } do paska narzędzi"
       ],
@@ -950,6 +1001,9 @@
       ],
       "Settings successfully updated": [
         "Ustawienia zostały zaktualizowane"
+      ],
+      "Share with 10 others": [
+        "Udostępnij 10 użytkownikom"
       ],
       "Sign in or create an account to continue.": [
         "Zaloguj się lub utwórz konto, aby kontynuować."
@@ -996,6 +1050,9 @@
       "Unable to copy to clipboard": [
         "Nie można skopiować do schowka"
       ],
+      "Unlimited Aliases": [
+        "Nieograniczona liczba aliasów"
+      ],
       "Unlock it with your PIN to access the settings": [
         "Odblokuj dostęp do ustawień za pomocą kodu PIN"
       ],
@@ -1004,6 +1061,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Ulepsz ${ PASS_APP_NAME }"
+      ],
+      "Use vaults to share this item with others.": [
+        "Aby udostępnić element, udostępnij cały sejf."
       ],
       "User's access removed": [
         "Uprawienia użytkownika zostały usunięte"
@@ -1265,6 +1325,9 @@
       "Include numbers (0-9)": [
         "Cyfry (0-9)"
       ],
+      "Invitations": [
+        "Zaproszenia"
+      ],
       "Label": [
         "Etykieta"
       ],
@@ -1294,6 +1357,9 @@
       ],
       "Logins": [
         "Dane logowania"
+      ],
+      "Members": [
+        "Użytkownicy"
       ],
       "Modified": [
         "Zmodyfikowano"
@@ -1572,6 +1638,9 @@
       "Select a suffix": [
         "Wybierz przyrostek"
       ],
+      "Shared vault": [
+        "Udostępniony sejf"
+      ],
       "Unknown origin": [
         "Nieznana strona"
       ],
@@ -1583,6 +1652,14 @@
       ],
       "Write your note": [
         "Napisz notatkę"
+      ]
+    },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Sejfy nie mogą zawierać więcej niż ${ vault.targetMaxMembers } użytkownika.",
+        "Sejfy nie mogą zawierać więcej niż ${ vault.targetMaxMembers } użytkowników.",
+        "Sejfy nie mogą zawierać więcej niż ${ vault.targetMaxMembers } użytkowników.",
+        "Sejfy nie mogą zawierać więcej niż ${ vault.targetMaxMembers } użytkowników."
       ]
     },
     "Title": {
@@ -1639,6 +1716,12 @@
       ],
       "Low disk space": [
         "Mało miejsca na dysku"
+      ],
+      "Member limit": [
+        "Limit użytkowników"
+      ],
+      "Pending access to the shared data": [
+        "Oczekujący dostęp do udostępnionych danych"
       ],
       "Permanently remove all items ?": [
         "Usunąć trwale wszystkie elementy?"
@@ -1818,9 +1901,6 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Nie można zalogować się do ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
-      "Upgrade to a paid plan to invite more members to this vault.": [
-        "Ulepsz do płatnego planu, aby zapraszać więcej użytkowników do sejfu."
-      ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You can not undo this action": [
         "Sejf \"${ vaultName }\" i wszystkie jego elementy zostaną trwale usunięte. Tej akcji nie można cofnąć"
       ],
@@ -1832,6 +1912,15 @@
       ],
       "You cannot create more vaults than your subscription allows.": [
         "Nie możesz utworzyć więcej sejfów w swojej subskrypcji."
+      ],
+      "You have reached the limit of members who can access this vault.": [
+        "Osiągnięto maksymalną liczbę użytkowników sejfu."
+      ],
+      "You have reached the limit of users in this vault. ${ upgradeLink }": [
+        "Osiągnięto maksymalną liczbę użytkowników w sejfie. ${ upgradeLink }"
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "Osiągnięto maksymalną liczbę sejfów w obecnym planie."
       ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "Masz niezapisane zmiany. Czy chcesz je odrzucić?"
