@@ -203,6 +203,9 @@
       "Get ${ vpnPlus }": [
         "${ vpnPlus } választása"
       ],
+      "Get a new encrypted email address": [
+        "Szerezzen egy új, titkosított email címet"
+      ],
       "Get in touch": [
         "Lépjen velünk kapcsolatba"
       ],
@@ -469,6 +472,9 @@
       ],
       "Use recovery code": [
         "Helyreállító kód használata"
+      ],
+      "Use your current email instead": [
+        "Inkább a jelenlegi e-mail cím használata"
       ],
       "User": [
         "Felhasználó"
@@ -2275,6 +2281,9 @@
         "${ number } kiszolgáló",
         "${ number } kiszolgálók"
       ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } legalább 1 dedikált szervert igényel ${ serverPricePerMonth } havonta."
+      ],
       "${ storage } storage": [
         "${ storage } tárhely"
       ],
@@ -2287,6 +2296,9 @@
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "${ vpnPlus } csomag szükséges a Secure Core szolgáltatáshoz."
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice } /hónap)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bónusz tárterület"
@@ -2347,6 +2359,9 @@
       "Already used": [
         "Már használatban"
       ],
+      "American Express SafeKey logo": [
+        "American Express SafeKey logó."
+      ],
       "Amount above maximum (${ amount }).": [
         "Az összeg (${ amount }) a maximum fölött van."
       ],
@@ -2370,6 +2385,9 @@
       ],
       "Attention required": [
         "Figyelem szükséges"
+      ],
+      "Awaiting transaction": [
+        "Tranzakcióra várakozás."
       ],
       "Balance from your previous subscription": [
         "Egyenlege az előző előfizetéséből"
@@ -2430,6 +2448,9 @@
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikált szervereket, dedikált IP-címekkel, lehet hozzáadni a privát átjárókhoz, a finomhangolt hozzáférés-irányítás lehetővé tételéhez."
+      ],
+      "Discover ProtectBuy logo": [
+        "Fedezd fel a ProtectBuy logót."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Semmiképp NE felejtse el ezt a jelszót. Ha elfelejti, nem lesz képes menedzselni a szervezetét."
@@ -2881,6 +2902,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Jelenleg ez a felhasználó felelős a szervezet szolgáltatásainak kifizetéséért. Ha lefokozza, az ön feladatává válik a kifizetés."
       ],
+      "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
+        "Ezzel megszakítod jelenlegi fizetős előfizetésedet, és elveszíted az eddigi hűségbónuszaidat."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Ezzel megszünteti jelenlegi előfizetését és elveszít minden felhalmozott hűség bónuszt. A fennmaradó egyenlege elszámolásra kerül a fiókjában, mint felhasználható egyenleg."
       ],
@@ -2901,6 +2925,9 @@
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Ezzel a funkcióval bekapcsolhatja a kétlépcsős hitelesítést a ${ BRAND_NAME } fiókjában. A kétlépcsős hitelesítés biztonságosabbá teszi a ${ BRAND_NAME_TWO } fiókját, ezért javasolt engedélyezni."
+      ],
+      "To cancel your subscription, please reach out to us.": [
+        "A feliratkozás lemondásához kérjük, lépj kapcsolatba velünk."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "A jóváhagyáshoz írja be a törölni kívánt felhasználó nevét."
@@ -3028,6 +3055,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "A tranzakció befejezéséhez átirányítjuk a PayPalhoz egy új böngészőfülön. Kérjük engedélyezze a felugró ablakokat."
       ],
+      "We'll get back to you shortly.": [
+        "Hamarosan válaszolunk neked."
+      ],
       "We'll send a new verification code to ${ strong }": [
         "Küldünk egy új ellenőrzési kódot ide: ${ strong }"
       ],
@@ -3131,6 +3161,12 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Át lesz irányítva ide: ${ destination } bejelentkezés után."
+      ],
+      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
+        "Ezen a dátumon elveszíted a hozzáférést a ${ vpnPlanNameShort } szerverekhez és funkciókhoz."
+      ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Szüksége lesz egy ${ BRAND_NAME } címre, hogy használni tudja a ${ MAIL_APP_NAME } és ${ CALENDAR_APP_NAME } szolgáltatásokat"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "A kifizetés ellenőrzéséhez hamarosan átirányítunk a PayPal oldalára."
@@ -4135,6 +4171,10 @@
       ],
       "User session management": [
         "Felhasználói munkafolyamatok kezelése"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Archívum megosztás (${ n } személyig).",
+        "Archívum megosztás (${ n } személyig)."
       ]
     },
     "new_plans: feature info": {
@@ -4241,11 +4281,6 @@
         "felhasználási feltételek"
       ]
     },
-    "new_plans: Title": {
-      "Your account's usage": [
-        "A fiókja kihasználtsága"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Fiók törlése?"
@@ -4261,6 +4296,11 @@
       ],
       "Switch plans?": [
         "Csomag váltása?"
+      ]
+    },
+    "new_plans: Title": {
+      "Your account's usage": [
+        "A fiókja kihasználtsága"
       ]
     },
     "new_plans: tooltip": {
@@ -4859,6 +4899,11 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "${ ownerName } által megosztva"
+      ]
+    },
+    "Signup label": {
+      "Username": [
+        "Felhasználónév"
       ]
     },
     "specialoffer: Action": {

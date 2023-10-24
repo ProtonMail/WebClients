@@ -59,6 +59,9 @@
       "Confirm": [
         "Confirmar"
       ],
+      "Confirm access": [
+        "Confirmar acesso"
+      ],
       "Continue": [
         "Continuar"
       ],
@@ -80,6 +83,9 @@
       "Create a ${ BRAND_NAME } account": [
         "Criar uma conta no ${ BRAND_NAME }"
       ],
+      "Create a new vault to share": [
+        "Criar um cofre para compartilhar"
+      ],
       "Create alias": [
         "Criar alias"
       ],
@@ -97,6 +103,9 @@
       ],
       "Creating vault": [
         "Criando cofre"
+      ],
+      "Customize": [
+        "Personalizar"
       ],
       "Delete": [
         "Excluir"
@@ -212,6 +221,9 @@
       "More options": [
         "Mais opções"
       ],
+      "Move to a shared vault": [
+        "Mover para cofre compartilhado"
+      ],
       "Move to another vault": [
         "Mover para outro cofre"
       ],
@@ -223,6 +235,9 @@
       ],
       "Not now": [
         "Agora não"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open in a window": [
         "Abrir em uma janela"
@@ -244,6 +259,9 @@
       ],
       "Regenerate": [
         "Gerar novamente"
+      ],
+      "Reject": [
+        "Rejeitar"
       ],
       "Reject invitation": [
         "Recusar convite"
@@ -284,6 +302,9 @@
       "Share": [
         "Compartilhar"
       ],
+      "Share this vault": [
+        "Compartilhar esse cofre"
+      ],
       "Share vault": [
         "Compartilhar cofre"
       ],
@@ -319,6 +340,9 @@
       ],
       "Update": [
         "Atualizar"
+      ],
+      "Update vault": [
+        "Atualizar cofre"
       ],
       "Updating": [
         "Atualizando"
@@ -579,6 +603,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -597,6 +624,10 @@
       "Megabyte": [
         "Megabyte",
         "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Info": {
@@ -640,15 +671,14 @@
         "${ trialDaysLeft } dia restante",
         "${ trialDaysLeft } dias restantes"
       ],
-      "${ vault.count } item": [
-        "${ vault.count } item",
-        "${ vault.count } itens"
-      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Uma nova versão do ${ PASS_APP_NAME } está disponível. Atualize para desfrutar dos recursos e correções de bugs mais recentes."
       ],
       "Access ${ PASS_APP_NAME } via this icon": [
         "Acesse o ${ PASS_APP_NAME } por meio deste ícone"
+      ],
+      "Access successfully confirmed": [
+        "Acesso confirmado com sucesso"
       ],
       "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
         "O acesso ao ${ PASS_APP_NAME } exigirá um código PIN para desbloquear sua sessão"
@@ -698,9 +728,6 @@
       "Creating alias...": [
         "Criando alias..."
       ],
-      "Custom fields": [
-        "Campos personalizados"
-      ],
       "Decrypting your data": [
         "Descriptografando seus dados"
       ],
@@ -739,6 +766,9 @@
       ],
       "Follow these simple steps to get the best experience:": [
         "Siga estas simples etapas para obter a melhor experiência:"
+      ],
+      "For security reasons, your access needs to be confirmed": [
+        "Por motivos de segurança, é necessário confirmar seu acesso"
       ],
       "Free Trial": [
         "Avaliação gratuita"
@@ -786,9 +816,6 @@
       "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
         "Para migrar seus dados para o ${ PASS_APP_NAME } de outro gerenciador de senhas, exporte suas senhas e importe-as usando o formulário abaixo. Depois que todos os seus itens tiverem sido importados, exclua o arquivo exportado anteriormente."
       ],
-      "Integrated 2FA authenticator": [
-        "Autenticador 2FA integrado"
-      ],
       "Internet connection lost": [
         "Perda de conexão com a internet"
       ],
@@ -800,6 +827,9 @@
       ],
       "Invite successfully resent": [
         "Convite enviado com sucesso"
+      ],
+      "Invite successfully sent": [
+        "Convite enviado"
       ],
       "invites you to access items in": [
         "convida você a acessar itens em"
@@ -961,6 +991,9 @@
       ],
       "Unable to copy to clipboard": [
         "Não é possível copiar para a área de transferência"
+      ],
+      "Unlimited Aliases": [
+        "Aliases ilimitados"
       ],
       "Unlock it with your PIN to access the settings": [
         "Desbloqueie com seu código PIN para acessar as configurações"
@@ -1225,6 +1258,9 @@
       "Include numbers (0-9)": [
         "Incluir números (0–9)"
       ],
+      "Invitations": [
+        "Convites"
+      ],
       "Label": [
         "Marcador"
       ],
@@ -1254,6 +1290,9 @@
       ],
       "Logins": [
         "Inícios de sessão"
+      ],
+      "Members": [
+        "Membros"
       ],
       "Modified": [
         "Modificado"
@@ -1535,6 +1574,9 @@
       "Select a suffix": [
         "Selecionar um sufixo"
       ],
+      "Shared vault": [
+        "Cofre compartilhado"
+      ],
       "Unknown origin": [
         "Origem desconhecida"
       ],
@@ -1602,6 +1644,12 @@
       ],
       "Low disk space": [
         "Pouco espaço no disco"
+      ],
+      "Member limit": [
+        "Limite de membros"
+      ],
+      "Pending access to the shared data": [
+        "Acesso pendente para compartilhar os dados."
       ],
       "Permanently remove all items ?": [
         "Remover permanentemente todos os itens ?"
@@ -1752,10 +1800,10 @@
         "Inicie sessão novamente"
       ],
       "Please verify your email address in order to use email aliases": [
-        "Por favor, verifique seu endereço de e-mail para usar os aliases de e-mail"
+        "Verifique seu endereço de e-mail para usar os aliases de e-mail"
       ],
       "Please verify your email address in order to use vault sharing": [
-        "Por favor, verifique seu endereço de e-mail para utilizar o compartilhamento de cofre"
+        "Verifique seu endereço de e-mail para utilizar o compartilhamento de cofre"
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são criptografados de ponta a ponta. Não envie nenhuma informação confidencial."
@@ -1770,7 +1818,7 @@
         "O título é obrigatório"
       ],
       "Transfer ownership of this vault to ${ email }?": [
-        "Transferir a propriedade deste cofre para ${ email }?"
+        "Transferir propriedade deste cofre para ${ email }?"
       ],
       "Trash alias ?": [
         "Excluir alias ?"
@@ -1792,6 +1840,9 @@
       ],
       "You cannot create more vaults than your subscription allows.": [
         "Sua assinatura não permite a criação de múltiplos cofres."
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "Você atingiu o limite de cofres que pode ter em seu plano."
       ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "Você tem alterações não salvas. Tem certeza de que deseja descartá-las?"

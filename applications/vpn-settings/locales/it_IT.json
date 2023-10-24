@@ -195,7 +195,7 @@
         "Modifica server"
       ],
       "Edit sign-in details": [
-        "Modifica dettagli di accesso"
+        "Modifica i dettagli di accesso"
       ],
       "Edit subscription": [
         "Modifica abbonamento"
@@ -210,7 +210,7 @@
         "Abilita il supporto multi-utente"
       ],
       "Explore other ${ BRAND_NAME } plans": [
-        "Esplora altri piani ${ BRAND_NAME }"
+        "Esplora gli altri piani di ${ BRAND_NAME }"
       ],
       "Extend": [
         "Estesa"
@@ -220,6 +220,9 @@
       ],
       "Get ${ vpnPlus }": [
         "Ottieni ${ vpnPlus }"
+      ],
+      "Get a new encrypted email address": [
+        "Ottieni un nuovo indirizzo email crittografato"
       ],
       "Get in touch": [
         "Mettiti in contatto"
@@ -483,7 +486,7 @@
         "Usa il tema ${ label }"
       ],
       "Use a different card": [
-        "Utilizza una carta diversa"
+        "Usa una carta differente"
       ],
       "Use a different payment method": [
         "Usa un metodo di pagamento differente"
@@ -492,7 +495,10 @@
         "Usa il codice di autenticazione"
       ],
       "Use recovery code": [
-        "Utilizza un codice di recupero"
+        "Usa un codice di recupero"
+      ],
+      "Use your current email instead": [
+        "Usa invece il tuo indirizzo email attuale"
       ],
       "User": [
         "Utente"
@@ -628,6 +634,115 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Questo disconnetterà tutti i router e client che utilizzano questo certificato."
+      ]
+    },
+    "bf2023: Action": {
+      "**Add our encrypted password manager** for only ${ price }": [
+        "**Aggiungi il nostro password manager crittografato** ad appena ${ price }"
+      ],
+      "Add ${ PASS_APP_NAME }": [
+        "Aggiungi ${ PASS_APP_NAME }"
+      ],
+      "Add ${ plan } for ${ price } per month": [
+        "Aggiungi ${ plan } al costo di ${ price } al mese"
+      ],
+      "Add ${ plan } to your plan by subscribing to 15 months": [
+        "Aggiungi ${ plan } al tuo piano abbonandoti per 15 mesi"
+      ],
+      "Get the deal": [
+        "Scegli"
+      ],
+      "Remove": [
+        "Rimuovi"
+      ],
+      "Remove ${ PASS_APP_NAME }": [
+        "Rimuovi ${ PASS_APP_NAME }"
+      ],
+      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
+        "Abbonati per 15 mesi e avrai il nostro **password manager crittografato**: il costo aggiuntivo è di solo ${ priceNoSuffix } al mese!"
+      ]
+    },
+    "bf2023: Deal details": {
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus e ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } di archiviazione"
+      ],
+      "1 user": [
+        "1 utente"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "3,000+ servers across 65+ countries": [
+        "Oltre 3.000 server in più di 65 Paesi"
+      ],
+      "6 users": [
+        "6 utenti"
+      ],
+      "Ad-blocker and malware protection": [
+        "Ad-blocker e anti-malware"
+      ],
+      "Extended version history": [
+        "Cronologia estesa della versione"
+      ],
+      "High speed streaming": [
+        "Streaming ad alta velocità"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Password manager premium"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Gli sconti si basano sui prezzi mensili standard."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Alla fine del ciclo di fatturazione l'abbonamento si rinnoverà automaticamente con lo sconto e la durata standard."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "Garanzia 30 giorni soddisfatti o rimborsati"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Accedi ai contenuti di servizi di streaming come Netflix, Disney+, Prime Video e altro ancora, ovunque ti trovi."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
+        "Sono inclusi: supporto per ${ domains } dominio email personalizzato, ${ addresses } indirizzi email, ${ aliases } alias hide-my-email, condivisione del calendario e altro ancora."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Sono inclusi: supporto per ${ domains } dominio email personalizzato, ${ addresses } indirizzi email, alias hide-my-email illimitati, condivisione del calendario e altro ancora."
+      ],
+      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "Login sicuri su tutti i tuoi dispositivi. Include alias illimitati, condivisione, 2FA integrato e molto altro."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Proteggi le tue email e il tuo calendario con la crittografia end-to-end. Sono inclusi: supporto per domini email personalizzati, 15 indirizzi email, alias hide-my-email illimitati, condivisione del calendario e altro ancora."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Proteggi i tuoi file con l'archiviazione in cloud crittografata. Sono incluse la cronologia delle versioni, la sincronizzazione automatica, la condivisione di file crittografati e altre funzioni ancora."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield è progettato su misura per proteggere i dispositivi e accelerare la navigazione bloccando annunci, tracker e malware."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "Lo spazio di archiviazione è condiviso tra tutte le app ${ BRAND_NAME }."
+      ],
+      "Store up to 200 versions of each file for up to 10 years.": [
+        "Archivia oltre 200 versioni di ciascun file per un massimo di 10 anni."
       ]
     },
     "Billing cycle": {
@@ -1830,7 +1945,7 @@
         "Per favore genera le chiavi prima di provare a cambiare la tua password"
       ],
       "Please set a recovery email first": [
-        "Per favore imposta prima un'email di recupero"
+        "Imposta prima un indirizzo email di recupero"
       ],
       "Please set a recovery phone number first": [
         "Imposta prima un numero di telefono di recupero"
@@ -2384,6 +2499,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -2402,6 +2520,10 @@
       "Megabyte": [
         "Megabyte",
         "Megabyte"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabyte"
       ]
     },
     "Font face option": {
@@ -2657,15 +2779,6 @@
       "Admin account allocation": [
         "Allocazione dell'account amministratore"
       ],
-      "After this date, you'll be billed every 12 months at the normal yearly rate.": [
-        "Dopo questa data, sarai addebitato ogni 12 mesi alla normale rata annuale."
-      ],
-      "After this date, you'll be billed every 24 months at the normal 2-year rate.": [
-        "Dopo questa data, sarai addebitato ogni 24 mesi alla normale rata biennale."
-      ],
-      "After this date, you'll be billed every month at the regular price.": [
-        "Dopo questa data, sarai addebitato ogni mese al prezzo normale."
-      ],
       "All your changes will be lost.": [
         "Tutte le modifiche andranno perse."
       ],
@@ -2697,7 +2810,7 @@
         "Sei sicuro di voler eliminare questo indirizzo?"
       ],
       "Are you sure you want to disable two-factor authentication?": [
-        "Sei sicuro di voler disattivare l'autenticazione a due fattori?"
+        "Sei sicuro di voler disabilitare l'autenticazione a due fattori?"
       ],
       "Are you sure you want to discard your changes?": [
         "Vuoi davvero ignorare le modifiche?"
@@ -2785,7 +2898,7 @@
         "Domini email personalizzati"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Personalizza l'aspetto delle applicazioni ${ BRAND_NAME }"
+        "Personalizza l'aspetto delle applicazioni di ${ BRAND_NAME }"
       ],
       "Dedicated servers": [
         "Server dedicati"
@@ -3347,10 +3460,10 @@
         "Questo utente è attualmente responsabile dei pagamenti per l'organizzazione. Abbassando il livello di questo membro, si diventa responsabile per pagamenti dell'organizzazione."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Questo annullerà il tuo attuale abbonamento e perderai tutti i benefici accumulati finora."
+        "Questo annullerà il tuo attuale abbonamento a pagamento e perderai i benefici di fedeltà che hai accumulato."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Questo annullerà il tuo attuale abbonamento a pagamento e perderai i benefici di fedeltà che hai accumulato. Il saldo residuo dell'abbonamento verrà restituito come credito dell'account."
+        "Questo annullerà il tuo attuale abbonamento a pagamento e perderai i benefici di fedeltà che hai accumulato. Il saldo residuo dell'abbonamento verrà restituito come crediti dell'account."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Questo abiliterà l'uso di PayPal per pagare il tuo abbonamento ${ BRAND_NAME }. Ti reindirizzeremo a PayPal in una nuova scheda del browser. Se usi un qualsiasi blocco pop-up, disabilitalo per continuare."
@@ -3551,7 +3664,7 @@
         "Quando imposti l'autenticazione a due fattori, forniamo codici di ripristino che puoi utilizzare per accedere se perdi l'accesso alla tua app di autenticazione."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
-        "Quando il tuo abbonamento si rinnova, applicheremo tutti i crediti disponibili prima di addebitare il metodo di pagamento sopra riportato."
+        "Quando il tuo abbonamento si rinnova, applicheremo tutti i crediti disponibili prima di addebitare il metodo di pagamento indicato qui sopra."
       ],
       "Whole organization": [
         "Tutta l'organizzazione"
@@ -3561,6 +3674,9 @@
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Con un piano Business o Enterprise, puoi acquistare ${ boldDedicatedServers } per la tua organizzazione e configurare ${ boldGateways } per controllare quali utenti possono accedervi."
+      ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Con un indirizzo ${ BRAND_NAME } crittografato, puoi utilizzare tutti i servizi di ${ BRAND_NAME }"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Senza attivazione non sarà possibile creare nuovi utenti, aggiungere indirizzi per gli utenti esistenti o accedere agli account non privati."
@@ -3656,6 +3772,9 @@
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Perderai l'accesso ai server e le funzionalità del piano ${ vpnPlanNameShort } a partire da questa data."
       ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Avrai bisogno di un indirizzo ${ BRAND_NAME } per utilizzare ${ MAIL_APP_NAME } e ${ CALENDAR_APP_NAME }"
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Sarai presto reindirizzato a PayPal per verificare il pagamento."
       ],
@@ -3712,9 +3831,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "La tua sottoscrizione è gestita da Mozilla. Per favore, contatta il supporto di Mozilla."
-      ],
-      "Your subscription will auto-renew on ${ renewalTime }.": [
-        "Il tuo abbonamento si rinnoverà automaticamente il ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -4154,7 +4270,7 @@
         "Data d'inizio"
       ],
       "Subscription options": [
-        "Opzioni dell'abbonamento"
+        "Opzioni di abbonamento"
       ],
       "Synchronize with system": [
         "Sincronizza con il sistema"
@@ -4220,16 +4336,16 @@
         "Comunicazioni ${ BRAND_NAME } sulle versioni beta"
       ],
       "${ BRAND_NAME } for Business newsletter": [
-        "Newsletter ${ BRAND_NAME } for Business"
+        "Newsletter di ${ BRAND_NAME } for Business"
       ],
       "${ BRAND_NAME } important announcements": [
-        "${ BRAND_NAME } annunci importanti"
+        "Annunci importanti di ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } newsletter": [
-        "${ BRAND_NAME } newsletter"
+        "Newsletter di ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } offers and promotions": [
-        "offerte e promozioni ${ BRAND_NAME }"
+        "Offerte e promozioni di ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } product announcements": [
         "Comunicazioni sui servizi ${ BRAND_NAME }"
@@ -4838,6 +4954,10 @@
       ],
       "Vault and Item sharing (coming soon)": [
         "Condivisione di casseforti ed elementi (in arrivo)"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Condivisione delle casseforti (fino a ${ n } persona)",
+        "Condivisione delle casseforti (fino a ${ n } persone)"
       ]
     },
     "new_plans: feature info": {
@@ -4848,7 +4968,7 @@
         "Ottieni un numero illimitato di alias con SimpleLogin di ${ BRAND_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, e ${ DRIVE_APP_NAME }"
+        "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }"
       ],
       "Use your own custom email domain address, e.g., you@yourname.com": [
         "Usa l'indirizzo del tuo dominio email personalizzato, per esempio tu@tuonome.com"
@@ -4965,17 +5085,6 @@
         "termini e condizioni"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Prova"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "L'utilizzo del tuo account"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Eliminare l'account?"
@@ -4991,6 +5100,17 @@
       ],
       "Switch plans?": [
         "Cambiare piani?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Prova"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "L'utilizzo del tuo account"
       ]
     },
     "new_plans: tooltip": {
@@ -5028,8 +5148,8 @@
         "Crea più indirizzi email per le tue identità online, ad es. JohnShopper@${ domain } per i profili di shopping, JohnNews@${ domain } per gli abbonamenti alle notizie"
       ],
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Crea fino a ${ n } calendario o aggiungi calendari di amici, familiari, colleghi e organizzazioni",
-        "Crea fino a ${ n } calendari o aggiungi calendari di amici, familiari, colleghi e organizzazioni"
+        "Crea fino a ${ n } calendario o aggiungi calendari di amici, famigliari, colleghi e organizzazioni",
+        "Crea fino a ${ n } calendari o aggiungi calendari di amici, famigliari, colleghi e organizzazioni"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Crea fino a ${ n } indirizzi email/alias che puoi assegnare ai membri della famiglia. Utilizzali per le identità online, ad esempio JohnShopper@${ domain } per gli account di acquisto."
@@ -5044,10 +5164,10 @@
         "Difenditi dalle minacce alla privacy VPN inviando il traffico Internet attraverso più server."
       ],
       "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "Condividi facilmente i tuoi calendari con colleghi, familiari e amici tramite un link"
+        "Condividi facilmente i tuoi calendari con colleghi, famigliari e amici tramite un link"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
-        "Condividi facilmente i tuoi calendari con familiari, amici o colleghi"
+        "Condividi facilmente i tuoi calendari con famigliari, amici o colleghi"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Ti assicura la ricezione di tutte le email inviate al tuo dominio, anche se l'indirizzo email non esiste, non esiste più o ha un errore di battitura"
@@ -5068,7 +5188,7 @@
         "Le etichette sono semplici tag che puoi aggiungere ai messaggi per renderli più facili da trovare o per applicare filtri"
       ],
       "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "Come una cartella, una cassaforte è un modo conveniente per organizzare i tuoi elementi. La condivisione delle casseforti con amici e familiari è in fase di realizzazione."
+        "Come una cartella, una cassaforte è un modo conveniente per organizzare i tuoi elementi. La condivisione delle casseforti con amici e famigliari è in fase di realizzazione."
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Proteggi le risorse della tua azienda dalla rete Internet pubblica e rendile accessibili solo tramite i tuoi gateway privati"
@@ -5152,16 +5272,16 @@
         "NetShield, appositamente progettato, protegge il dispositivo e velocizza la navigazione bloccando annunci, tracker e malware"
       ],
       "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Inizia con ${ freeStorageSize } e sblocca più spazio di archiviazione lungo il percorso. Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, e ${ DRIVE_APP_NAME }."
+        "Inizia con ${ freeStorageSize } e sblocca via via più spazio di archiviazione. Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, e ${ DRIVE_APP_NAME }"
+        "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
-        "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, e ${ DRIVE_APP_NAME }. Gli amministratori possono assegnare diverse quantità di spazio di archiviazione agli utenti nella loro organizzazione"
+        "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }. Gli amministratori possono assegnare quantità di spazio di archiviazione differenti agli utenti nella loro organizzazione"
       ],
       "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, e ${ DRIVE_APP_NAME }"
+        "Lo spazio di archiviazione è condiviso tra gli utenti su ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, e ${ DRIVE_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Supporto per protocolli di condivisione dei file come BitTorrent"
@@ -5170,7 +5290,7 @@
         "Indirizzi email unici che proteggono la tua identità online al volo e ti permettono di controllare cosa raggiunge la tua posta in arrivo. Da SimpleLogin di ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        "Usa gli indirizzi del tuo dominio email personalizzato, es., tu@tuonome.com"
+        "Usa gli indirizzi del tuo dominio email personalizzato, ad esempio tu@il-tuo-nome.it"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
         "Non conserviamo alcun log di utilizzo delle sessioni di ciò che fai online, e non registriamo metadati che possono compromettere la tua privacy"
@@ -5863,6 +5983,9 @@
       ],
       "Password": [
         "Password"
+      ],
+      "Username": [
+        "Nome utente"
       ]
     },
     "specialoffer: Action": {
@@ -6578,7 +6701,7 @@
         "Aggiungi credito"
       ],
       "Add invoice details": [
-        "Aggiungi dettagli fattura"
+        "Aggiungi dettagli alle fatture"
       ],
       "Add new user": [
         "Aggiungi nuovo utente"
@@ -6733,7 +6856,7 @@
         "Disattiva ${ email }"
       ],
       "Disable two-factor authentication": [
-        "Disabilita l'autenticazione in due fattori"
+        "Disabilita l'autenticazione a due fattori"
       ],
       "Downgrade account": [
         "Effettua il downgrade dell'account"
@@ -6896,7 +7019,7 @@
         "Elaborazione..."
       ],
       "Recommended": [
-        "Raccomandato"
+        "Consigliato"
       ],
       "Recovery": [
         "Recupero"
@@ -7109,7 +7232,7 @@
         "Gli amministratori possono apportare modifiche all'abbonamento, gestire account utente e password e concedere privilegi di amministratore ad altri utenti."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
-        "Passi automaticamente tra i tuoi temi preferiti per il giorno e per la notte in sincronia con le modalità di giorno e di notte del tuo sistema."
+        "Passa automaticamente tra i tuoi temi preferiti per il giorno e per la notte sincronizzandoli con le modalità di giorno e di notte del tuo sistema."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Se hai acquistato un codice regalo o ne hai ricevuto uno dal nostro team di supporto, puoi inserirlo qui."

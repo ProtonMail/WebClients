@@ -167,6 +167,9 @@
       "Get ${ vpnPlus }": [
         "دریافت ${ vpnPlus }"
       ],
+      "Get a new encrypted email address": [
+        "دریافت یک آدرس ایمیل رمزگذاری شده جدید"
+      ],
       "Get verification code": [
         "دریافت کد تایید"
       ],
@@ -364,6 +367,9 @@
       ],
       "Use recovery code": [
         "از کد بازیابی استفاده کنید"
+      ],
+      "Use your current email instead": [
+        "در عوض از ایمیل فعلی خود استفاده کنید"
       ],
       "User": [
         "کاربر"
@@ -3311,11 +3317,6 @@
         "شرایط و ضوابط"
       ]
     },
-    "new_plans: Title": {
-      "Your account's usage": [
-        "رکورد استفاده حساب شما"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "حذف کردن حساب؟"
@@ -3331,6 +3332,11 @@
       ],
       "Switch plans?": [
         "تغییر دادن طرح؟"
+      ]
+    },
+    "new_plans: Title": {
+      "Your account's usage": [
+        "رکورد استفاده حساب شما"
       ]
     },
     "new_plans: tooltip": {
@@ -3682,6 +3688,11 @@
       ],
       "Reading emails of non-private users": [
         "در حال خواندن ایمیل های کابران غیر خصوصی"
+      ]
+    },
+    "Signup label": {
+      "Username": [
+        "نام کاربری"
       ]
     },
     "State": {

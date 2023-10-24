@@ -218,6 +218,9 @@
       "Get ${ vpnPlus }": [
         "Obtenir ${ vpnPlus }"
       ],
+      "Get a new encrypted email address": [
+        "Obteniu una nova adreça de correu xifrada"
+      ],
       "Get in touch": [
         "Contacta amb nosaltres"
       ],
@@ -490,6 +493,9 @@
       ],
       "Use recovery code": [
         "Utilitza un codi de recuperació"
+      ],
+      "Use your current email instead": [
+        "Utilitzeu el vostre correu electrònic actual."
       ],
       "User": [
         "Usuari"
@@ -2000,6 +2006,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } prèmium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } prèmium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } prèmium"
+      ],
       "Up to 6 users": [
         "Fins a 6 usuaris"
       ]
@@ -2231,6 +2246,10 @@
       ],
       "Add": [
         "Afegeix"
+      ],
+      "Add (${ numberOfAddedServers })": [
+        "Afegeix (${ numberOfAddedServers })",
+        "Afegeix (${ numberOfAddedServers })"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Connexió per fins a ${ plusVpnConnections } dispositiu",
@@ -3414,6 +3433,9 @@
       "Why?": [
         "Per què?"
       ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Amb una adreça de correu xifrada de ${ BRAND_NAME }, podeu utilitzar tots els serveis de ${ BRAND_NAME }"
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sense activació no podreu crear nous usuaris, afegir adreces a usuaris existents o accedir a comptes d'usuaris no privats."
       ],
@@ -3486,6 +3508,9 @@
       ],
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Perdreu accés a servidors i funcions de ${ vpnPlanNameShort } en aquesta data."
+      ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Necessitareu una adreça de ${ BRAND_NAME } per a utilitzar ${ MAIL_APP_NAME } i ${ CALENDAR_APP_NAME }"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Ben aviat sereu redirigits a PayPal per verificar el pagament."
@@ -3881,6 +3906,9 @@
       ],
       "New password": [
         "Contrasenya nova"
+      ],
+      "New plan": [
+        "Nou pla"
       ],
       "No filter": [
         "Sense filtre"
@@ -4391,8 +4419,14 @@
       "99.95% SLA": [
         "SLA del 99,5%"
       ],
+      "Ad-blocker and malware protection": [
+        "Bloquejador d'anuncis i publicitat, i protecció contra programari maliciós"
+      ],
       "Admin console": [
         "Consola d'administració"
+      ],
+      "Advanced network security": [
+        "Seguretat de xarxa avançada"
       ],
       "Advanced sharing security": [
         "Seguretat avançada en la compartició"
@@ -4757,14 +4791,6 @@
         "termes i condicions"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prova de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Ús del vostre compte"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Voleu eliminar el compte?"
@@ -4780,6 +4806,14 @@
       ],
       "Switch plans?": [
         "Voleu canviar de pla?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prova de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Ús del vostre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -5015,6 +5049,9 @@
       ],
       "Invalid code": [
         "El codi no és correcte."
+      ],
+      "IP Address copied to clipboard": [
+        "S'ha copiat l'adreça IP al porta-retalls."
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credencials OpenVPN / IKEv2 regenerades"
@@ -5565,6 +5602,9 @@
       ],
       "Password": [
         "Contrasenya"
+      ],
+      "Username": [
+        "Nom d'usuari"
       ]
     },
     "specialoffer: Action": {
@@ -5608,6 +5648,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 usuari"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -5625,6 +5668,15 @@
       ],
       "Highest VPN speed": [
         "La velocitat VPN més alta"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } prèmium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i ${ DRIVE_SHORT_APP_NAME } prèmium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } prèmium"
       ],
       "Premium early access": [
         "Accés anticipat prèmium"
@@ -5670,14 +5722,24 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } mesos"
+      ],
       "/ month": [
         "/ mes"
       ],
       "1 year": [
         "1 any"
       ],
+      "15 months": [
+        "15 mesos"
+      ],
       "2 years": [
         "2 anys"
+      ],
+      "30 months": [
+        "30 mesos"
       ],
       "Billed at ${ amount } for 1 month": [
         "Facturat a ${ amount } durant 1 mes"
@@ -5801,6 +5863,12 @@
     "Subscription": {
       "Billed every 2 years": [
         "Facturació cada 2 anys"
+      ],
+      "Billed for 15 months": [
+        "Facturació per 15 mesos"
+      ],
+      "Billed for 30 months": [
+        "Facturació per 30 mesos"
       ],
       "Billed monthly": [
         "Facturació mensual"
@@ -6094,6 +6162,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } prèmium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } prèmium"
+      ],
       "Premium Password Manager": [
         "Gestor de Contrasenyes prèmium"
       ]
@@ -6835,8 +6909,14 @@
       "1-year": [
         "1 any"
       ],
+      "15-month": [
+        "15 mesos"
+      ],
       "2-year": [
         "2 any"
+      ],
+      "30-month": [
+        "30 mesos"
       ],
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "Obteniu un descompte dec ${ discount } amb una subscripció a ${ billingCycle }"

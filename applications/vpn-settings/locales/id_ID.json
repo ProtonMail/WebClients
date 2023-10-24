@@ -221,6 +221,9 @@
       "Get ${ vpnPlus }": [
         "Dapatkan ${ vpnPlus }"
       ],
+      "Get a new encrypted email address": [
+        "Dapatkan alamat surel terenkripsi baru"
+      ],
       "Get in touch": [
         "Hubungi kami"
       ],
@@ -493,6 +496,9 @@
       ],
       "Use recovery code": [
         "Gunakan kode pemulihan"
+      ],
+      "Use your current email instead": [
+        "Gunakan alamat surel Anda saat ini"
       ],
       "User": [
         "Pengguna"
@@ -1731,7 +1737,7 @@
         "Galat"
       ],
       "Error connecting to the Bitcoin API.": [
-        "Terdapat kesalahan dalam menyambungkan ke API Bitcoin."
+        "Terdapat kesalahan dalam menghubungkan ke API Bitcoin."
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Apabila waktu yang tertera pada TV Anda telah habis, klik Muat Ulang pada TV Anda dan masukkan kode Anda kembali."
@@ -1821,7 +1827,7 @@
         "Harap aktifkan dukungan multi-pengguna sebelum menambahkan pengguna ke organisasi Anda."
       ],
       "Please generate keys before you try to change your password": [
-        "Harap buat kunci terlebih dahulu sebelum Anda mengubah kata sandi Anda"
+        "Silakan buat kunci terlebih dahulu sebelum Anda mengubah kata sandi Anda"
       ],
       "Please set a recovery email first": [
         "Harap tentukan alamat surel pemulihan terlebih dahulu"
@@ -1863,7 +1869,7 @@
         "Jumlah saldo minimal yang dapat ditambahkan adalah ${ price }"
       ],
       "The minimum amount that can be donated is ${ price }": [
-        "Sumbangan minimal ${ price }"
+        "Nominal sumbangan minimal yang dapat diberikan adalah ${ price }"
       ],
       "The minimum payment we accept is ${ price }": [
         "Nominal pembayaran minimal yang kami terima adalah ${ price }"
@@ -2634,15 +2640,6 @@
       "Admin account allocation": [
         "Alokasi akun admin"
       ],
-      "After this date, you'll be billed every 12 months at the normal yearly rate.": [
-        "Setelah tanggal ini, Anda akan ditagih setiap1 2 bulan dengan harga tahunan normal."
-      ],
-      "After this date, you'll be billed every 24 months at the normal 2-year rate.": [
-        "Setelah tanggal ini, Anda akan ditagih setiap 24 bulan dengan harga 2 tahunan normal."
-      ],
-      "After this date, you'll be billed every month at the regular price.": [
-        "Setelah tanggal ini, Anda akan ditagih per bulannya dengan harga normal."
-      ],
       "All your changes will be lost.": [
         "Seluruh perubahan yang belum Anda simpan akan hilang."
       ],
@@ -2716,7 +2713,7 @@
         "Siklus tagihan: ${ text }"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
-        "Dengan beralih ke paket Free, Anda akan kehilangan berbagai manfaat berikut secara permanen bahkan apabila Anda kembali meningkatkan jenis akun Anda di kemudian hari."
+        "Dengan menurunkan ke paket Free, Anda akan kehilangan berbagai manfaat berikut secara permanen, bahkan apabila Anda kembali meningkatkan jenis akun Anda di kemudian hari."
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat menikmati berbagai keutamaan berikut. Apakah Anda yakin untuk menurunkan jenis akun Anda?"
@@ -3157,7 +3154,7 @@
         "baca panduan autentikasi dua faktor kami terlebih dahulu"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
-        "Direkomendasikan pada perangkat yang Anda percaya. ${ keepMeSignedInLearnMoreLink }"
+        "Direkomendasikan pada perangkat yang Anda percayai. ${ keepMeSignedInLearnMoreLink }"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informasi pemulihan akan tetap terdapat pada perangkat ini kecuali Anda memilih untuk menghapusnya."
@@ -3310,7 +3307,7 @@
         "Proses ini dapat memerlukan waktu beberapa detik atau menit tergantung kemampuan perangkat Anda"
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
-        "Proses ini dapat memakan waktu hingga beberapa menit. Mohon untuk tidak menutup halaman ini atau memutuskan koneksi internet Anda."
+        "Proses ini dapat memakan waktu sejenak. Mohon untuk tidak menutup halaman ini atau memutuskan koneksi internet Anda."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Pengguna ini saat ini bertanggung jawab atas pembayaran untuk organisasi Anda. Dengan menurunkan anggota ini, Anda akan bertanggung jawab atas pembayaran untuk organisasi Anda."
@@ -3439,7 +3436,7 @@
         "Proses verifikasi dapat memakan waktu hingga beberapa menit."
       ],
       "Verification may take a few minutes.": [
-        "Proses verifikasi dapat memakan waktu hingga beberapa menit."
+        "Proses verifikasi dapat memakan waktu sejenak."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Proses verifikasi akan berlangsung pada tab baru. Mohon nonaktifkan pemblokir popup yang Anda miliki. Proses ini tidak dipungut biaya. Apabila Anda diminta untuk mengeluarkan sejumlah uang, jumlah tersebut akan langsung dikembalikan."
@@ -3531,6 +3528,9 @@
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Dengan paket Business atau Enterprise, Anda dapat membeli ${ boldDedicatedServers } untuk organisasi Anda dan mengelola siapa-siapa saja yang dapat mengakses server tertentu dengan ${ boldGateways }."
       ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Dengan alamat ${ BRAND_NAME } yang terenkripsi, Anda dapat menggunakan seluruh layanan ${ BRAND_NAME }"
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Tanpa aktivasi, Anda tidak dapat membuat pengguna baru, menambahkan alamat ke pengguna yang ada, atau mengakses akun pengguna non-pribadi."
       ],
@@ -3618,6 +3618,9 @@
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Anda akan kehilangan akses ke server dan fitur ${ vpnPlanNameShort } pada tanggal ini."
       ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Anda akan butuh alamat ${ BRAND_NAME } untuk dapat menggunakan ${ MAIL_APP_NAME } dan ${ CALENDAR_APP_NAME }"
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Anda akan segera dialihkan menuju PayPal untuk memverifikasi pembayaran anda."
       ],
@@ -3673,10 +3676,7 @@
         "Nomor telepon Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
-        "Langganan Anda dikelola oleh Mozilla. Harap hubungi layanan dukungan Mozilla."
-      ],
-      "Your subscription will auto-renew on ${ renewalTime }.": [
-        "Langganan Anda akan diperbarui secara otomatis pada ${ renewalTime }."
+        "Langganan Anda dikelola oleh Mozilla. Silakan hubungi layanan dukungan Mozilla."
       ]
     },
     "Info for cash payment method": {
@@ -4137,7 +4137,7 @@
         "Kode verifikasi"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Kami sedih dengan kepergian Anda. Mohon jelaskan alasan kepergian Anda agar kami dapat menjadi lebih baik ke depannya."
+        "Kami menyayangkan kepergian Anda dari layanan kami. Mohon jelaskan alasan kepergian Anda untuk membantu kami berkembang."
       ],
       "What happened?": [
         "Apa yang terjadi?"
@@ -4907,14 +4907,6 @@
         "syarat dan ketentuan"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Uji Coba ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Penggunaan akun Anda"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Hapus akun?"
@@ -4930,6 +4922,14 @@
       ],
       "Switch plans?": [
         "Ganti paket?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Uji Coba ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Penggunaan akun Anda"
       ]
     },
     "new_plans: tooltip": {
@@ -5785,6 +5785,9 @@
       ],
       "Password": [
         "Kata sandi"
+      ],
+      "Username": [
+        "Nama pengguna"
       ]
     },
     "specialoffer: Action": {
@@ -6486,7 +6489,7 @@
         "Tambah pengguna baru"
       ],
       "Add PayPal payment method": [
-        "Tambahkan metode pembayaran PayPal"
+        "Tambah metode pembayaran PayPal"
       ],
       "Add servers": [
         "Tambah server"
@@ -6552,7 +6555,7 @@
         "Konfirmasi alamat"
       ],
       "Confirm downgrade": [
-        "Konfirmasi penurunan jenis akun"
+        "Konfirmasi penurunan akun"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Konfirmasi hilangnya bonus ${ BRAND_NAME }"
@@ -6564,7 +6567,7 @@
         "Hubungi kami"
       ],
       "Couldn’t create accounts": [
-        "Tidak dapat membuat akun"
+        "Akun tidak dapat dibuat"
       ],
       "Create ${ selectedUserIds.length } users": [
         "Buat ${ selectedUserIds.length } pengguna"
@@ -6846,7 +6849,7 @@
         "Atur kata sandi organisasi"
       ],
       "Set up two-factor authentication": [
-        "Aktifkan autentikasi dua faktor"
+        "Atur autentikasi dua faktor"
       ],
       "Set your password": [
         "Tetapkan kata sandi Anda"
