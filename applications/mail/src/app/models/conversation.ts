@@ -23,7 +23,7 @@ export interface Conversation {
     ContextExpirationTime?: number;
     AttachmentInfo?: { [key in MIME_TYPES]?: AttachmentInfo };
     AttachmentsMetadata?: AttachmentsMetadata[];
-    DisplaySnoozedReminder?: number;
+    DisplaySnoozedReminder?: boolean;
 }
 
 export interface ConversationLabel {

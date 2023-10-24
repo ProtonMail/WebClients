@@ -16,15 +16,18 @@ import { FeatureCode, useFeature, useKeyTransparencyContext } from '@proton/comp
 import createScrollIntoView from '@proton/components/helpers/createScrollIntoView';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Label } from '@proton/shared/lib/interfaces/Label';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { hasAttachments, isDraft, isOutbox, isScheduled, isSent } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
+import { MARK_AS_STATUS, useMarkAs } from 'proton-mail/hooks/actions/useMarkAs';
+import { Element } from 'proton-mail/models/element';
+
 import { LOAD_RETRY_COUNT } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
-import { isUnread } from '../../helpers/elements';
+import { isMessage as isMessageTest, isUnread } from '../../helpers/elements';
 import { MessageViewIcons, getReceivedStatusIcon, getSentStatusIconInfo } from '../../helpers/message/icon';
-import { MARK_AS_STATUS, useMarkAs } from '../../hooks/actions/useMarkAs';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { useQuickReplyFocus } from '../../hooks/composer/useQuickReplyFocus';
 import { useInitializeMessage } from '../../hooks/message/useInitializeMessage';
@@ -35,7 +38,6 @@ import { useMessageHotkeys } from '../../hooks/message/useMessageHotkeys';
 import { useResignContact } from '../../hooks/message/useResignContact';
 import { useVerifyMessage } from '../../hooks/message/useVerifyMessage';
 import { MessageWithOptionalBody } from '../../logic/messages/messagesTypes';
-import { Element } from '../../models/element';
 import { Breakpoints } from '../../models/utils';
 import QuickReplyContainer from '../composer/quickReply/QuickReplyContainer';
 import MessageBody from './MessageBody';
@@ -282,10 +284,21 @@ const MessageView = (
         }
     }, [expanded]);
 
-    // Mark as read a message already loaded (when user marked as unread)
+    /**
+     * Two cases here,
+     *     If the message is undead: mark as read a message already loaded (when user marked as unread)
+     *     If the message is read: mark message or conversation as read again if DisplaySnoozedReminder present (snooze feature)
+     */
     useEffect(() => {
+        const element = message.data as Element;
         if (expanded && unread && bodyLoaded) {
-            markAs([message.data as Element], labelID, MARK_AS_STATUS.READ);
+            markAs([element], labelID, MARK_AS_STATUS.READ);
+        }
+
+        // Mark the message as read again when DisplaySnoozedReminder is true (snooze feature)
+        const isMessage = isMessageTest(element);
+        if (!unread && isMessage && (element as Message).DisplaySnoozedReminder) {
+            markAs([element], labelID, MARK_AS_STATUS.READ);
         }
     }, [expanded, unread, bodyLoaded]);
 

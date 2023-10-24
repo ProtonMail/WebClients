@@ -100,8 +100,9 @@ export const getMessageHasData = (message: MessageState): message is MessageStat
 
 export const applyMarkAsChangesOnMessage = <T>(
     message: MessageWithOptionalBody & T,
-    { status }: MarkAsChanges
+    { status, displaySnoozedReminder }: MarkAsChanges
 ): MessageWithOptionalBody & T => ({
     ...message,
+    DisplaySnoozedReminder: displaySnoozedReminder,
     Unread: status === MARK_AS_STATUS.UNREAD ? 1 : 0,
 });
