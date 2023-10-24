@@ -2312,6 +2312,9 @@
       "Event not found": [
         "Acara tidak ditemukan"
       ],
+      "Failed to get event": [
+        "Acara gagal diperoleh"
+      ],
       "Failed to get original occurrence in series": [
         "Gagal mendapatkan rangkaian kejadian asli"
       ],
@@ -3837,7 +3840,7 @@
         "Satu atau lebih kunci terpercaya Anda telah ditandai sebagai \"bocor\" oleh pemiliknya. Kami menyarankan Anda untuk tidak lagi \"memercayai\" kunci tersebut."
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
-        "Enkripsi PGP/Inline hanya kompatibel dengan format Plain Text."
+        "Enkripsi PGP/Inline hanya kompatibel dengan format teks polos."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "Enkripsi PGP/MIME akan secara otomatis mengirim pesan dengan mode komposer yang saat ini digunakan."
@@ -4755,7 +4758,7 @@
         "Otomatis"
       ],
       "Plain text": [
-        "Teks biasa"
+        "Teks polos"
       ]
     },
     "Modal action": {
@@ -6673,7 +6676,7 @@
         "Sembunyikan panel samping"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "Pilih skema PGP untuk menandatangani atau mengenkripsi pesan. PGP/Inline mewajibkan penggunaan pesan teks polos"
+        "Pilih skema PGP yang akan digunakan untuk menandatangani atau mengenkripsi pesan kepada pengguna. Mohon diperhatikan bahwa PGP/Inline mewajibkan penggunaan pesan teks polos"
       ],
       "Show side panel": [
         "Tampilkan panel samping"
