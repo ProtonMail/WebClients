@@ -455,7 +455,7 @@ const AccountStepPayment = ({
                                                                     <Price currency={subscriptionData.currency}>
                                                                         {right}
                                                                     </Price>
-                                                                    {!showAmountDue && '*'}
+                                                                    {id === 'amount' && '*'}
                                                                 </>
                                                             );
                                                         })()}
@@ -474,12 +474,9 @@ const AccountStepPayment = ({
                                                 {loadingPaymentDetails ? (
                                                     <CircleLoader />
                                                 ) : (
-                                                    <>
-                                                        <Price currency={subscriptionData.currency}>
-                                                            {options.checkResult.AmountDue}
-                                                        </Price>
-                                                        *
-                                                    </>
+                                                    <Price currency={subscriptionData.currency}>
+                                                        {options.checkResult.AmountDue}
+                                                    </Price>
                                                 )}
                                             </span>
                                         </div>
