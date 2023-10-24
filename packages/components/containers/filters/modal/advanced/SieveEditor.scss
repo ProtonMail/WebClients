@@ -1,7 +1,9 @@
 @import '~@proton/styles/scss/lib';
 
 .CodeMirror-lint-tooltip {
-	z-index: 1000;
+	&#{&} {
+		z-index: $layer-tooltips;
+	}
 }
 
 .react-codemirror2 {
