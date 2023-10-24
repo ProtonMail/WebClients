@@ -8,7 +8,7 @@ import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/
 import { STATUS } from '@proton/shared/lib/models/cache';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
-import { getIsElementReminded } from 'proton-mail/logic/snoozehelpers';
+import { isElementReminded } from 'proton-mail/logic/snoozehelpers';
 
 import { updateCountersForMarkAs } from '../../helpers/counter';
 import { isUnread, isMessage as testIsMessage } from '../../helpers/elements';
@@ -32,7 +32,7 @@ export type MarkAsChanges = { status: MARK_AS_STATUS; displaySnoozedReminder: bo
 
 const computeRollbackMarkAsChanges = (element: Element, labelID: string, changes: MarkAsChanges) => {
     const isElementUnread = isUnread(element, labelID);
-    const displaySnoozedReminder = getIsElementReminded(element);
+    const displaySnoozedReminder = isElementReminded(element);
     const { status } = changes;
 
     // If same status nothing changes
