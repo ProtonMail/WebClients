@@ -222,9 +222,9 @@ const getDeleteEventActions = async ({
             !oldEditEventData.veventComponent ||
             isCalendarDisabled ||
             actualEventRecurrence.isSingleOccurrence ||
-            isCancelInvitation ||
             (isDeleteInvitation && !isSingleEdit),
         canOnlyDeleteThis: isDeleteInvitation && isSingleEdit,
+        cannotDeleteThisAndFuture: isCancelInvitation,
         onDeleteConfirmation,
         recurrences,
         recurrence: actualEventRecurrence,
