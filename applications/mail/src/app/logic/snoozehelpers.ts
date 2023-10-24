@@ -59,8 +59,10 @@ export const getSnoozeTimeFromElement = (element?: Element) => {
         return (element as Message).SnoozeTime;
     }
 
-    const snoozeLabel = (element as Conversation).Labels?.find(({ ID }) => ID === MAILBOX_LABEL_IDS.SNOOZED);
-    return snoozeLabel?.ContextSnoozeTime;
+    const contextSnoozeTime = (element as Conversation).Labels?.find(({ ID }) => {
+        return ID === MAILBOX_LABEL_IDS.INBOX || ID === MAILBOX_LABEL_IDS.SNOOZED;
+    })?.ContextSnoozeTime;
+    return contextSnoozeTime;
 };
 
 export const getSnoozeDate = (element: Element | undefined, labelID: string) => {
@@ -73,12 +75,32 @@ export const getSnoozeDate = (element: Element | undefined, labelID: string) => 
     return getDate(element, labelID);
 };
 
-export const isElementReminded = (element: Element | undefined) => {
-    if (isMessage(element)) {
-        return (element as Message)?.DisplaySnoozedReminder;
-    } else if (isConversation(element)) {
-        return (element as Conversation).DisplaySnoozedReminder;
+export const getIsElementReminded = (element: Element | undefined): boolean => {
+    const isElementOrConversation = isMessage(element) || isConversation(element);
+    return element && isElementOrConversation
+        ? (element as Message | Conversation).DisplaySnoozedReminder ?? false
+        : false;
+};
+
+export const isConversationElementSnoozed = (element: Element | undefined, conversationMode: boolean) => {
+    if (!conversationMode) {
+        return false;
     }
 
-    return false;
+    return (element as Conversation)?.Labels?.some(({ ID }) => ID === MAILBOX_LABEL_IDS.SNOOZED);
+};
+
+export const isMessageElementSnoozed = (element: Element | undefined, conversationMode: boolean) => {
+    if (conversationMode) {
+        return false;
+    }
+
+    const message = element as Message;
+    return message?.SnoozeTime && message?.LabelIDs.includes(MAILBOX_LABEL_IDS.SNOOZED);
+};
+
+export const isElementSnoozed = (element: Element | undefined, conversationMode: boolean) => {
+    return (
+        isConversationElementSnoozed(element, conversationMode) || isMessageElementSnoozed(element, conversationMode)
+    );
 };
