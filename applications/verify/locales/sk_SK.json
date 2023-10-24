@@ -1,92 +1,92 @@
 {
   "headers": {
-    "plural-forms": "nplurals=2; plural=(n != 1);",
-    "language": "pt_PT"
+    "plural-forms": "nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;",
+    "language": "sk_SK"
   },
   "contexts": {
     "Action": {
       "Authenticate": [
-        "Autenticar"
+        "Overiť"
       ],
       "Back": [
-        "Recuar"
+        "Späť"
       ],
       "Cancel": [
-        "Cancelar"
+        "Zrušiť"
       ],
       "Close": [
-        "Fechar"
+        "Zatvoriť"
       ],
       "Continue": [
-        "Continuar"
+        "Pokračovať"
       ],
       "Don't know your password?": [
-        "Não sabe a sua palavra-passe?"
+        "Neviete svoje heslo?"
       ],
       "Edit email address": [
-        "Editar o endereço de e-mail "
+        "Upraviť emailovú adresu"
       ],
       "Edit phone number": [
-        "Editar o número de telefone"
+        "Upraviť telefónne číslo"
       ],
       "Edit sign-in details": [
-        "Editar detalhes do início de sessão"
+        "Upraviť prihlasovacie údaje"
       ],
       "Get verification code": [
-        "Obter código de verificação"
+        "Odoslať overovací kód"
       ],
       "More info: ${ safeTitle }": [
-        "Mais informações: ${ safeTitle }"
+        "Viac informácií: ${ safeTitle }"
       ],
       "Refresh the page": [
-        "Actualizar a página"
+        "Obnoviť stránku"
       ],
       "Request new code": [
-        "Pedir novo código"
+        "Vyžiadajte si nový kód"
       ],
       "Resend code": [
-        "Reenviar código"
+        "Znovu odoslať kód"
       ],
       "Search countries": [
-        "Pesquisar países"
+        "Vyhľadať krajiny"
       ],
       "Submit": [
-        "Submeter"
+        "Potvrdiť"
       ],
       "Try another method": [
-        "Tentar outro método"
+        "Skúsiť inú metódu"
       ],
       "Use authentication code": [
-        "Usar código de autenticação"
+        "Použiť overovací kód"
       ],
       "Use recovery code": [
-        "Usar código de recuperação"
+        "Použiť kód pre obnovenie"
       ],
       "Verify": [
-        "Verificar"
+        "Overiť"
       ],
       "Verify account": [
-        "Verificar conta"
+        "Overiť účet"
       ],
       "View invoice": [
-        "Ver fatura"
+        "Zobraziť faktúru"
       ]
     },
     "Country name": {
       "Abkhazia": [
-        "Abecásia"
+        "Abcházsko"
       ],
       "Afghanistan": [
-        "Afeganistão"
+        "Afganistan"
       ],
       "Albania": [
-        "Albânia"
+        "Albánsko"
       ],
       "Algeria": [
-        "Algéria"
+        "Alžírsko"
       ],
       "American Samoa": [
-        "Samoa Americana"
+        "Americká Samoa"
       ],
       "Andorra": [
         "Andorra"
@@ -98,256 +98,256 @@
         "Anguilla"
       ],
       "Antarctica": [
-        "Antártica"
+        "Antarktída"
       ],
       "Antigua and Barbuda": [
-        "Antígua e Barbuda"
+        "Antigua a Barbuda"
       ],
       "Argentina": [
-        "Argentina"
+        "Argentína"
       ],
       "Armenia": [
-        "Arménia"
+        "Arménsko"
       ],
       "Aruba": [
         "Aruba"
       ],
       "Ascension Island": [
-        "Ilha de Ascensão"
+        "Ostrov Ascension"
       ],
       "Australia": [
         "Austrália"
       ],
       "Austria": [
-        "Áustria"
+        "Rakúsko"
       ],
       "Azerbaijan": [
-        "Azerbaijão"
+        "Azerbajdžan"
       ],
       "Bahamas": [
-        "Baamas"
+        "Bahamy"
       ],
       "Bahrain": [
-        "Barém"
+        "Bahrajn"
       ],
       "Bangladesh": [
-        "Bangladesh"
+        "Bangladéš"
       ],
       "Barbados": [
         "Barbados"
       ],
       "Belarus": [
-        "Bielorrússia"
+        "Bielorusko"
       ],
       "Belgium": [
-        "Bélgica"
+        "Belgicko"
       ],
       "Belize": [
         "Belize"
       ],
       "Benin": [
-        "Benim"
+        "Benin"
       ],
       "Bermuda": [
-        "Bermuda"
+        "Bermudy"
       ],
       "Bhutan": [
-        "Butão"
+        "Bhután"
       ],
       "Bolivia": [
         "Bolívia"
       ],
       "Bonaire, Sint Eustatius and Saba": [
-        "Bonaire, Santo Eustáquio e Saba"
+        "Bonaire, Svätý Eustach a Saba"
       ],
       "Bosnia and Herzegovina": [
-        "Bósnia e Herzegovina"
+        "Bosna a Hercegovina"
       ],
       "Botswana": [
-        "Botsuana"
+        "Botswana"
       ],
       "Bouvet Island": [
-        "Ilha Bouvet"
+        "Bouvetov ostrov"
       ],
       "Brazil": [
-        "Brasil"
+        "Brazília"
       ],
       "British Indian Ocean Territory": [
-        "Território Britânico no Oceano Índico"
+        "Britské indické oceánske územie"
       ],
       "Brunei Darussalam": [
-        "Brunei Darussalam"
+        "Brunej Darussalam"
       ],
       "Bulgaria": [
-        "Bulgária"
+        "Bulharsko"
       ],
       "Burkina Faso": [
-        "Burquina Faso"
+        "Burkina Faso"
       ],
       "Burundi": [
         "Burundi"
       ],
       "Cambodia": [
-        "Cambodja"
+        "Kambodža"
       ],
       "Cameroon": [
-        "Camarões"
+        "Kamerun"
       ],
       "Canada": [
-        "Canadá"
+        "Kanada"
       ],
       "Cape Verde": [
-        "Cabo Verde"
+        "Kapverdy"
       ],
       "Cayman Islands": [
-        "Ilhas Cayman"
+        "Kajmanské ostrovy"
       ],
       "Central African Republic": [
-        "República Central Africana"
+        "Stredoafrická republika"
       ],
       "Chad": [
-        "Chade"
+        "Čad"
       ],
       "Chile": [
-        "Chile"
+        "Čile"
       ],
       "China": [
-        "China"
+        "Čína"
       ],
       "Christmas Island": [
-        "Ilha Natal"
+        "Vianočný ostrov"
       ],
       "Cocos (Keeling) Islands": [
-        "Ilhas Cocos (Keeling)"
+        "Kokosové (Keelingove) ostrovy"
       ],
       "Colombia": [
-        "Colômbia"
+        "Kolumbia"
       ],
       "Comoros": [
-        "Comores"
+        "Komory"
       ],
       "Congo": [
-        "Congo"
+        "Kongo"
       ],
       "Congo, Democratic Republic of the": [
-        "Congo (República Democrática)"
+        "Kongo, Demokratická republika"
       ],
       "Cook Islands": [
-        "Ilhas Cook"
+        "Cookove ostrovy"
       ],
       "Costa Rica": [
-        "Costa Rica"
+        "Kostarika"
       ],
       "Croatia": [
-        "Croácia"
+        "Chorvátsko"
       ],
       "Cuba": [
-        "Cuba"
+        "Kuba"
       ],
       "Curaçao": [
         "Curaçao"
       ],
       "Cyprus": [
-        "Chipre"
+        "Cyprus"
       ],
       "Czech Republic": [
-        "República Checa"
+        "Česká republika"
       ],
       "Côte d'Ivoire": [
-        "Costa do Marfim"
+        "Pobrežie Slonoviny"
       ],
       "Denmark": [
-        "Dinamarca"
+        "Dánsko"
       ],
       "Djibouti": [
-        "Djibuti"
+        "Džibutsko"
       ],
       "Dominica": [
-        "Dominica"
+        "Dominika"
       ],
       "Dominican Republic": [
-        "República Dominicana"
+        "Dominikánská republika"
       ],
       "Ecuador": [
-        "Equador"
+        "Ekvádor"
       ],
       "Egypt": [
-        "Egipto"
+        "Egypt"
       ],
       "El Salvador": [
-        "El Salvador"
+        "Salvádor"
       ],
       "Equatorial Guinea": [
-        "Guiné Equatorial"
+        "Rovníková Guinea"
       ],
       "Eritrea": [
-        "Eritreia"
+        "Eritrea"
       ],
       "Estonia": [
-        "Estónia"
+        "Estónsko"
       ],
       "Eswatini": [
-        "Suazilândia"
+        "Svazijsko"
       ],
       "Ethiopia": [
         "Etiópia"
       ],
       "Falkland Islands": [
-        "Ilhas Falkland"
+        "Falklandské ostrovy"
       ],
       "Faroe Islands": [
-        "Ilhas Faroé"
+        "Faerské ostrovy"
       ],
       "Federated States of Micronesia": [
-        "Estados Federados da Micronésia"
+        "Federatívne štáty Mikronézie"
       ],
       "Fiji": [
-        "Ilhas Fiji"
+        "Fidži"
       ],
       "Finland": [
-        "Finlândia"
+        "Fínsko"
       ],
       "France": [
-        "França"
+        "Francúzsko"
       ],
       "French Guiana": [
-        "Guiana Francesa"
+        "Francúzska Guyana"
       ],
       "French Polynesia": [
-        "Polinésia Francesa"
+        "Francúzska Polynézia"
       ],
       "French Southern Territories": [
-        "Territórios franceses do Sul"
+        "Francúzske južné územia"
       ],
       "Gabon": [
-        "Gabão"
+        "Gabon"
       ],
       "Gambia": [
-        "Gâmbia"
+        "Gambia"
       ],
       "Georgia": [
-        "Geórgia"
+        "Gruzínsko"
       ],
       "Germany": [
-        "Alemanha"
+        "Nemecko"
       ],
       "Ghana": [
-        "Gana"
+        "Ghana"
       ],
       "Gibraltar": [
-        "Gibraltar"
+        "Gibraltár"
       ],
       "Greece": [
-        "Grécia"
+        "Grécko"
       ],
       "Greenland": [
-        "Gronelândia"
+        "Grónsko"
       ],
       "Grenada": [
         "Grenada"
       ],
       "Guadeloupe": [
-        "Guadalupe"
+        "Guadeloupe"
       ],
       "Guam": [
         "Guam"
@@ -359,133 +359,133 @@
         "Guernsey"
       ],
       "Guinea": [
-        "Guiné"
+        "Guinea"
       ],
       "Guinea-Bissau": [
-        "Guiné-Bissau"
+        "Guinea Bissau"
       ],
       "Guyana": [
-        "Guiana"
+        "Guyana"
       ],
       "Haiti": [
         "Haiti"
       ],
       "Heard Island and McDonald Islands": [
-        "Ilha Heard e Ilhas McDonald"
+        "Heardov ostrov a McDonaldove ostrovy"
       ],
       "Holy See (Vatican City State)": [
-        "Santa Sé (Estado da Cidade do Vaticano)"
+        "Svätá stolica (Vatikánsky mestský štát)"
       ],
       "Honduras": [
         "Honduras"
       ],
       "Hong Kong": [
-        "Hong Kong"
+        "Hongkong"
       ],
       "Hungary": [
-        "Hungria"
+        "Maďarsko"
       ],
       "Iceland": [
-        "Islândia"
+        "Island"
       ],
       "India": [
-        "Índia"
+        "India"
       ],
       "Indonesia": [
-        "Indonésia"
+        "Indonézia"
       ],
       "International": [
-        "Internacional"
+        "Medzinárodný"
       ],
       "Iran": [
-        "Irão"
+        "Irán"
       ],
       "Iraq": [
-        "Iraque"
+        "Irak"
       ],
       "Ireland": [
-        "Irlanda"
+        "Írsko"
       ],
       "Isle of Man": [
-        "Ilha de Man"
+        "Ostrov Man"
       ],
       "Israel": [
-        "Israel"
+        "Izrael"
       ],
       "Italy": [
-        "Itália"
+        "Taliansko"
       ],
       "Jamaica": [
-        "Jamaica"
+        "Jamajka"
       ],
       "Japan": [
-        "Japão"
+        "Japonsko"
       ],
       "Jersey": [
         "Jersey"
       ],
       "Jordan": [
-        "Jordânia"
+        "Jordánsko"
       ],
       "Kazakhstan": [
-        "Cazaquistão"
+        "Kazachstan"
       ],
       "Kenya": [
-        "Quénia"
+        "Keňa"
       ],
       "Kiribati": [
-        "Quiribati"
+        "Kiribati"
       ],
       "Kosovo": [
         "Kosovo"
       ],
       "Kuwait": [
-        "Kuwait"
+        "Kuvajt"
       ],
       "Kyrgyzstan": [
-        "Quirguistão"
+        "Kirgizsko"
       ],
       "Laos": [
         "Laos"
       ],
       "Latvia": [
-        "Látvia"
+        "Lotyšsko"
       ],
       "Lebanon": [
-        "Líbano"
+        "Libanon"
       ],
       "Lesotho": [
-        "Lesoto"
+        "Lesotho"
       ],
       "Liberia": [
         "Libéria"
       ],
       "Libya": [
-        "Líbia"
+        "Líbya"
       ],
       "Liechtenstein": [
-        "Liechtenstein"
+        "Lichtenštajnsko"
       ],
       "Lithuania": [
-        "Lituânia"
+        "Litva"
       ],
       "Luxembourg": [
-        "Luxemburgo"
+        "Luxembursko"
       ],
       "Macao": [
-        "Macau"
+        "Macao"
       ],
       "Madagascar": [
-        "Madagáscar"
+        "Madagaskar"
       ],
       "Malawi": [
-        "Malauí"
+        "Malawi"
       ],
       "Malaysia": [
-        "Malásia"
+        "Malajzia"
       ],
       "Maldives": [
-        "Maldivas"
+        "Maledivy"
       ],
       "Mali": [
         "Mali"
@@ -494,46 +494,46 @@
         "Malta"
       ],
       "Marshall Islands": [
-        "Ilhas Marshall"
+        "Maršalove ostrovy"
       ],
       "Martinique": [
-        "Martinica"
+        "Martinik"
       ],
       "Mauritania": [
-        "Mauritânia"
+        "Mauretánia"
       ],
       "Mauritius": [
-        "Maurícia"
+        "Maurícius"
       ],
       "Mayotte": [
-        "Maiote"
+        "Mayotte"
       ],
       "Mexico": [
-        "México"
+        "Mexiko"
       ],
       "Moldova": [
-        "Moldávia"
+        "Moldavsko"
       ],
       "Monaco": [
-        "Mónaco"
+        "Monako"
       ],
       "Mongolia": [
-        "Mongólia"
+        "Mongolsko"
       ],
       "Montenegro": [
-        "Montenegro"
+        "Čierna Hora"
       ],
       "Montserrat": [
-        "Monserrate"
+        "Montserrat"
       ],
       "Morocco": [
-        "Marrocos"
+        "Maroko"
       ],
       "Mozambique": [
-        "Moçambique"
+        "Mozambik"
       ],
       "Myanmar": [
-        "Mianmar"
+        "Mjanmarsko"
       ],
       "Namibia": [
         "Namíbia"
@@ -542,22 +542,22 @@
         "Nauru"
       ],
       "Nepal": [
-        "Nepal"
+        "Nepál"
       ],
       "Netherlands": [
-        "Países Baixos"
+        "Holandsko"
       ],
       "New Caledonia": [
-        "Nova Caledónia"
+        "Nová Kaledónia"
       ],
       "New Zealand": [
-        "Nova Zelândia"
+        "Nový Zéland"
       ],
       "Nicaragua": [
-        "Nicarágua"
+        "Nikaragua"
       ],
       "Niger": [
-        "Níger"
+        "Niger"
       ],
       "Nigeria": [
         "Nigéria"
@@ -566,217 +566,217 @@
         "Niue"
       ],
       "Norfolk Island": [
-        "Ilha Norfolk"
+        "Ostrov Norfolk"
       ],
       "North Korea": [
-        "Coreia do Norte"
+        "Severná Kórea"
       ],
       "North Macedonia": [
-        "Macedónia do Norte"
+        "Severná Macedónia"
       ],
       "Northern Mariana Islands": [
-        "Ilhas Marianas do Norte"
+        "Severné Mariány"
       ],
       "Norway": [
-        "Noruega"
+        "Nórsko"
       ],
       "Oman": [
-        "Omã"
+        "Omán"
       ],
       "Pakistan": [
-        "Paquistão"
+        "Pakistan"
       ],
       "Palau": [
         "Palau"
       ],
       "Palestine": [
-        "Palestina"
+        "Palestína"
       ],
       "Panama": [
-        "Panamá"
+        "Panama"
       ],
       "Papua New Guinea": [
-        "Papua Nova Guiné"
+        "Papua-Nová Guinea"
       ],
       "Paraguay": [
-        "Paraguai"
+        "Paraguaj"
       ],
       "Peru": [
         "Peru"
       ],
       "Philippines": [
-        "Filipinas"
+        "Filipíny"
       ],
       "Pitcairn": [
         "Pitcairn"
       ],
       "Poland": [
-        "Polónia"
+        "Poľsko"
       ],
       "Portugal": [
-        "Portugal"
+        "Portugalsko"
       ],
       "Puerto Rico": [
-        "Porto Rico"
+        "Portoriko"
       ],
       "Qatar": [
-        "Qatar"
+        "Katar"
       ],
       "Reunion": [
-        "Reunião"
+        "Reunion"
       ],
       "Romania": [
-        "Roménia"
+        "Rumunsko"
       ],
       "Russia": [
-        "Rússia"
+        "Rusko"
       ],
       "Rwanda": [
-        "Ruanda"
+        "Rwanda"
       ],
       "Saint Barthélemy": [
-        "São Bartolomeu"
+        "Svätý Bartolomej"
       ],
       "Saint Helena": [
-        "Santa Helena"
+        "Svätá Helena"
       ],
       "Saint Kitts and Nevis": [
-        "Saint Kitts e Nevis"
+        "Svätý Krištof a Nevis"
       ],
       "Saint Lucia": [
-        "Santa Lúcia"
+        "Svätá Lucia"
       ],
       "Saint Martin (French Part)": [
-        "Saint Martin (parte francesa)"
+        "Svätý Martin (francúzska časť)"
       ],
       "Saint Pierre and Miquelon": [
-        "São Pedro e Miquelão"
+        "Svätý Pierre a Miquelon"
       ],
       "Saint Vincent and the Grenadines": [
-        "Saint Vincent e Grenadines"
+        "Svätý Vincent a Grenadíny"
       ],
       "Samoa": [
         "Samoa"
       ],
       "San Marino": [
-        "São Marino"
+        "San Maríno"
       ],
       "Sao Tome and Principe": [
-        "São Tomé e Príncipe"
+        "Svätý Tomáš a Princov ostrov"
       ],
       "Saudi Arabia": [
-        "Arábia Saudita"
+        "Saudská Arábia"
       ],
       "Senegal": [
         "Senegal"
       ],
       "Serbia": [
-        "Sérvia"
+        "Srbsko"
       ],
       "Seychelles": [
-        "Seicheles"
+        "Seychely"
       ],
       "Sierra Leone": [
-        "Serra Leoa"
+        "Sierra Leone"
       ],
       "Singapore": [
-        "Singapura"
+        "Singapur"
       ],
       "Sint Maarten": [
-        "São Martinho (Países Baixos)"
+        "Svätý Martin"
       ],
       "Slovakia": [
-        "Eslováquia"
+        "Slovensko"
       ],
       "Slovenia": [
-        "Eslovénia"
+        "Slovinsko"
       ],
       "Solomon Islands": [
-        "Ilhas Salomão"
+        "Šalamúnove ostrovy"
       ],
       "Somalia": [
-        "Somália"
+        "Somálsko"
       ],
       "South Africa": [
-        "África do Sul"
+        "Južná Afrika"
       ],
       "South Georgia and the South Sandwich Islands": [
-        "Geórgia do Sul e Ilhas Sandwich do Sul"
+        "Južná Georgia a Južné Sandwichove ostrovy"
       ],
       "South Korea": [
-        "Coreia do Sul"
+        "Južná Kórea"
       ],
       "South Ossetia": [
-        "Ossétia do Sul"
+        "Južné Osetsko"
       ],
       "South Sudan": [
-        "Sudão Sul"
+        "Južný Sudán"
       ],
       "Spain": [
-        "Espanha"
+        "Španielsko"
       ],
       "Sri Lanka": [
-        "Sri Lanka"
+        "Srí Lanka"
       ],
       "Sudan": [
-        "Sudão"
+        "Sudán"
       ],
       "Suriname": [
-        "Suriname"
+        "Surinam"
       ],
       "Svalbard and Jan Mayen": [
-        "Svalbard e Jan Mayen"
+        "Špicbergy a Jan Mayen"
       ],
       "Sweden": [
-        "Suécia"
+        "Švédsko"
       ],
       "Switzerland": [
-        "Suíça"
+        "Švajčiarsko"
       ],
       "Syria": [
-        "Síria"
+        "Sýria"
       ],
       "Taiwan": [
         "Taiwan"
       ],
       "Tajikistan": [
-        "Tajiquistão"
+        "Tadžikistan"
       ],
       "Tanzania": [
-        "Tanzânia"
+        "Tanzánia"
       ],
       "Thailand": [
-        "Tailândia"
+        "Thajsko"
       ],
       "Timor-Leste": [
-        "Timor-Leste"
+        "Východný Timor"
       ],
       "Togo": [
         "Togo"
       ],
       "Tokelau": [
-        "Toquelau"
+        "Tokelau"
       ],
       "Tonga": [
         "Tonga"
       ],
       "Trinidad and Tobago": [
-        "Trinidad e Tobago"
+        "Trinidad a Tobago"
       ],
       "Tristan da Cunha": [
-        "Tristão da Cunha"
+        "Tristan da Cunha"
       ],
       "Tunisia": [
-        "Tunísia"
+        "Tunisko"
       ],
       "Turkey": [
-        "Turquia"
+        "Turecko"
       ],
       "Turkmenistan": [
-        "Turquemenistão"
+        "Turkménsko"
       ],
       "Turks and Caicos Islands": [
-        "Ilhas Turcas e Caicos"
+        "Ostrovy Turks a Caicos"
       ],
       "Tuvalu": [
         "Tuvalu"
@@ -785,25 +785,25 @@
         "Uganda"
       ],
       "Ukraine": [
-        "Ucrânia"
+        "Ukrajina"
       ],
       "United Arab Emirates": [
-        "Emirados Árabes Unidos"
+        "Spojené Arabské Emiráty"
       ],
       "United Kingdom": [
-        "Reino Unido"
+        "Veľká Británia"
       ],
       "United States": [
-        "Estados Unidos"
+        "Spojené štáty"
       ],
       "United States Minor Outlying Islands": [
-        "Ilhas Menores Distantes dos Estados Unidos"
+        "Menšie odľahlé ostrovy Spojených štátov amerických"
       ],
       "Uruguay": [
-        "Uruguai"
+        "Uruguaj"
       ],
       "Uzbekistan": [
-        "Uzbequistão"
+        "Uzbekistan"
       ],
       "Vanuatu": [
         "Vanuatu"
@@ -812,314 +812,315 @@
         "Venezuela"
       ],
       "Vietnam": [
-        "Vietname"
+        "Vietnam"
       ],
       "Virgin Islands, British": [
-        "Ilhas Virgens, Inglesas"
+        "Panenské ostrovy, Británia"
       ],
       "Virgin Islands, U.S.": [
-        "Ilhas Virgens, Americanas"
+        "Americké Panenské ostrovy"
       ],
       "Wallis and Futuna": [
-        "Wallis e Futuna"
+        "Wallis a Futuna"
       ],
       "Western Sahara": [
-        "Saará Ocidental"
+        "Západná Sahara"
       ],
       "Yemen": [
-        "Iémen"
+        "Jemen"
       ],
       "Zambia": [
-        "Zâmbia"
+        "Zambia"
       ],
       "Zimbabwe": [
-        "Zimbabué"
+        "Zimbabwe"
       ],
       "Åland Islands": [
-        "Ilhas Åland"
+        "Alandské ostrovy"
       ]
     },
     "Delinquent modal title": {
       "Overdue invoice": [
-        "Fatura em dívida"
+        "Faktúra po splatnosti"
       ]
     },
     "Error": {
       "Email is not valid": [
-        "O e-mail não é válido."
+        "Emailová adresa nie je platná"
       ],
       "Enter 6 digits": [
-        "Introduza 6 algarismos"
+        "Zadajte 6 číslic"
       ],
       "Incorrect username": [
-        "Nome de utilizador incorreto"
+        "Nesprávne používateľské meno"
       ],
       "Invalid verification code": [
-        "O código de verificação não é válido."
+        "Nesprávny overovací kód"
       ],
       "Not a valid number": [
-        "O número não é válido."
+        "Neplatné číslo"
       ],
       "Passwords do not match": [
-        "As palavras-passe não correspondem."
+        "Heslá sa nezhodujú"
       ],
       "Request timed out": [
-        "O pedido expirou"
+        "Požiadavka časovo omeškaná"
       ],
       "The email addresses do not match": [
-        "Os endereços de e-mail não correspondem."
+        "Emailové adresy sa nezhodujú"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
-        "Este campo excede o máximo de ${ maximumLength } caracteres."
+        "Toto pole presahuje maximálny počet znakov ${ maximumLength }."
       ],
       "This field is required": [
-        "Este campo é obrigatório"
+        "Povinné pole"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "Este campo requer um mínimo de ${ minimumLength } carateres."
+        "Toto pole musí obsahovať minimálne ${ minimumLength } znakov."
       ],
       "Try using only letters, numerals, and _.-": [
-        "Tente utilizar apenas letras, números e _.-"
+        "Skúste používať iba písmená, číslice a _.-"
       ],
       "Unknown error": [
-        "Erro desconhecido"
+        "Neznáma chyba"
       ],
       "Username must begin with a letter or digit": [
-        "O nome de utilizador deve começar com uma letra ou um algarismo"
+        "Používateľské meno musí začínať písmenom alebo číslom"
       ],
       "Username must end with a letter or digit": [
-        "O nome de utilizador deve acabar com uma letra ou algarismo"
+        "Používateľské meno musí končiť písmenom alebo číslom"
       ]
     },
     "Error message": {
       "Error: ${ errorMessage }": [
-        "Erro: ${ errorMessage }"
+        "Chyba: ${ errorMessage }"
       ],
       "Please refresh the page or try again later.": [
-        "Por favor, actualize a página ou tente novamente mais tarde."
+        "Obnovte stránku, prosím, alebo skúste znovu neskôr."
       ],
       "Something went wrong": [
-        "Ocorreu um erro"
+        "Niečo sa pokazilo"
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "Não é possível carregar esta página. Por favor, actualize a página ou verifique a sua ligação à Internet."
+        "Túto stránku sa nepodarilo načítať. Obnovte stránku, prosím, alebo skontrolujte svoje internetové pripojenie."
       ]
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Algo correu mal ao autenticar com a sua chave de segurança. Por favor, tente novamente."
+        "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Prosím skúste znova."
       ]
     },
     "fido2: Info": {
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
-        "Introduza uma chave de segurança associada à sua conta ${ BRAND_NAME }."
+        "Vložte bezpečnostný kľúč prepojený s vaším účtom ${ BRAND_NAME }."
       ],
       "Security key": [
-        "Chave de segurança"
+        "Bezpečnostný kľúč"
       ]
     },
     "fido2: Label": {
       "Security key": [
-        "Chave de segurança"
+        "Bezpečnostný kľúč"
       ]
     },
     "Font face option": {
       "System default": [
-        "Predefinição do sistema"
+        "Podľa systému"
       ],
       "Theme font": [
-        "Letra de tema"
+        "Písmo motívu"
       ]
     },
     "Font size option": {
       "Large": [
-        "Grande"
+        "Veľká"
       ],
       "Medium (recommended)": [
-        "Médio (recomendado)"
+        "Stredná (odporúčané)"
       ],
       "Small": [
-        "Pequeno"
+        "Malý"
       ],
       "Very large": [
-        "Muito grande"
+        "Veľmi veľká"
       ],
       "Very small": [
-        "Muito pequeno"
+        "Veľmi malý"
       ]
     },
     "Human verification method": {
       "Email": [
-        "E-mail"
+        "Email"
       ],
       "Manual": [
-        "Manual"
+        "Ručne"
       ],
       "No verification method available": [
-        "Nenhum método de verificação disponível"
-      ],
-      "SMS": [
-        "SMS"
+        "Nie sú k dispozícii žiadne metódy overovania"
       ]
     },
     "Info": {
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
-        "Um número de telemóvel pode ser utilizado para verificar apenas uma conta ${ BRAND_NAME }"
+        "Telefónne číslo možno použiť iba na overenie jedného účtu ${ BRAND_NAME }"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Antes de pedir um novo código de verificação, verifique a sua pasta de spam e verifique que ${ strong } é o endereço correto."
+        "Pred vyžiadaním nového overovacieho kódu skontrolujte priečinok spam a skontrolujte, či je adresa ${ strong } správna."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Clique em \"Pedir novo código\" para receber um novo código de verificação em ${ strong }. Se o telefone estiver incorreto, clique em \"Editar\" para o corrigir."
+        "Kliknite na \"Požiadať o nový kód\" pre zaslanie nového overovacieho kódu na ${ strong }. Ak je toto telefónne číslo nesprávne, kliknite na tlačidlo \"Upraviť\" pre jeho opravu."
       ],
       "Country code": [
-        "Código de país"
+        "Kód krajiny"
       ],
       "Each code can only be used once": [
-        "Cada código só pode ser utilizado uma vez"
+        "Každý kód je možné použiť iba raz"
       ],
       "Edit email address": [
-        "Editar endereço de e-mail"
+        "Upraviť emailovú adresu"
       ],
       "Enter the code from your authenticator app": [
-        "Introduza o código da sua aplicação de autenticação."
+        "Zadajte kód z vašej overovacej aplikácie"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "Introduza o código de verificação que foi enviado para ${ destinationText }."
+        "Zadajte overovací kód, ktorý bol odoslaný na ${ destinationText }."
       ],
       "Enter verification code. Digit ${ digit }.": [
-        "Introduzir o código de verificação. Digite ${ digit }."
+        "Zadajte overovací kód. Číslice ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
-        "Introduza a sua palavra-passe (como administrador da organização)."
+        "Zadajte vlastné heslo (ako správca organizácie)."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Se tiver problemas ao criar a conta, solicite um convite e responderemos dentro de um dia útil."
+        "Ak máte problémy s vytvorením účtu, požiadajte prosím o pozvánku a my odpovieme do jedného pracovného dňa."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Se não encontrar o e-mail na sua caixa de entrada, verifique a pasta de spam."
+        "Ak email v priečinku doručenej pošty nenájdete, skontrolujte priečinok so spamom, prosím."
       ],
       "Internet connection lost": [
-        "Ligação à Internet perdida"
+        "Strata internetového pripojenia"
       ],
       "Learn more": [
-        "Saiba mais"
+        "Zistiť viac"
       ],
       "Loading": [
-        "A carregar"
+        "Načítavanie"
       ],
       "No results found": [
-        "Nenhum resultado"
+        "Nenájdené žiadne výsledky"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Os servidores estão inacessíveis.Tente novamente dentro de alguns minutos."
+        "Servery sú nedostupné. Skúste to prosím o pár minút"
       ],
       "Session timed out": [
-        "A sessão expirou."
+        "Relácia vypršala"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Para combater o spam e abusos, confirme que é um ser humano."
+        "Aby ste zamedzili spamu a obťažovaniu, potvrďte, že ste človek."
       ],
       "We'll send a new verification code to ${ strong }": [
-        "Enviaremos um novo código de verificação para ${ strong }"
+        "Na adresu ${ strong } pošleme nový overovací kód"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Após a configuração da autenticação de dois factores, serão fornecidos códigos de recuperação que poderá usar para se autenticar, no caso de perder o acesso à aplicação de autenticação."
+        "Pri nastavení dvojfázového overovania poskytujeme kódy pre obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k overovacej aplikácii."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Deseja receber um novo código de verificação ou usar um método de verificação alternativo?"
+        "Chcete získať nový overovací kód alebo použiť alternatívnu metódu overovania?"
       ],
       "Would you like to receive a new verification code?": [
-        "Gostaria de receber um novo código de verificação?"
+        "Chcete získať nový overovací kód?"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "A sua conta ${ BRAND_NAME } de momento está suspensa. Após 28 dias, os e-mails deixarão de ser entregues na sua caixa de entrada, as suas ligações de partilha de disco serão bloqueadas, e não poderá carregar novos ficheiros. Para retomar o serviço normal, pague quaisquer faturas em atraso."
+        "Váš účet ${ BRAND_NAME } je momentálne pozastavený. Po 28 dňoch vám už nebudú do schránky doručované emaily, odkazy na zdieľanie na Disku budú zablokované a nebudete môcť nahrávať nové súbory. Ak chcete obnoviť normálnu prevádzku, uhraďte všetky faktúry po splatnosti."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
-        "A sua conta ${ BRAND_NAME } está suspensa de momento. Não receberá e-mails na sua caixa de entrada. As suas ligações de partilha do Drive estão inativas e não pode carregar novos ficheiros. Para continuar a utilizar a sua conta, por favor efetue o pagamento das faturas vencidas."
+        "Váš účet ${ BRAND_NAME } je momentálne pozastavený. Emaily už nie sú doručované do vašej schránky. Vaše odkazy na zdieľanie na Disku už nie sú aktívne a nemôžete nahrávať nové súbory. Ak chcete svoj účet naďalej používať, uhraďte všetky faktúry po splatnosti."
       ],
       "Your email will only be used for this one-time verification.": [
-        "O seu e-mail só será utilizado para esta verificação única."
+        "Váš email bude použitý iba pre toto jednorazové overenie."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "O seu telefone só será utilizado para esta verificação única."
+        "Vaše telefónne číslo bude použité iba pre toto jednorazové overenie."
       ]
     },
     "Label": {
       "Authenticator app": [
-        "Aplicação de autenticação"
+        "Overovacie aplikácie"
       ],
       "Code is 6 digits without spaces": [
-        "O código tem 6 dígitos sem espaços"
+        "Kód je 6 čísiel bez medzier"
       ],
       "Email address": [
-        "Endereço de e-mail"
+        "Emailová adresa"
       ],
       "Hide password": [
-        "Ocultar a palavra-passe"
+        "Skryť heslo"
       ],
       "Password": [
-        "Palavra-passe"
+        "Heslo"
       ],
       "Phone number": [
-        "Número de telefone"
+        "Telefónne číslo"
       ],
       "Reveal password": [
-        "Mostrar a palavra-passe"
+        "Odkryť heslo"
       ],
       "Verification code": [
-        "Código de verificação"
+        "Overovací kód"
       ],
       "Your password (admin)": [
-        "A sua palavra-passe (admin)"
+        "Vaše heslo (admin)"
       ]
     },
     "Link": {
       "Learn more": [
-        "Saiba mais"
+        "Zistiť viac"
       ],
       "Request an invite": [
-        "Pedir um convite"
+        "Požiadať o pozvánku"
       ]
     },
     "Placeholder": {
       "Password": [
-        "Palavra-passe"
+        "Heslo"
       ]
     },
     "Success": {
       "Code sent to ${ methodTo }": [
-        "Código enviado para ${ methodTo }"
+        "Kód zaslaný na ${ methodTo }"
       ],
       "Verification successful": [
-        "A verificação é terminada."
+        "Overenie prebehlo úspešne"
       ]
     },
     "Title": {
       "Enter your password": [
-        "Introduza a sua palavra-passe"
+        "Zadajte Vaše heslo"
       ],
       "Human verification": [
-        "Verificação humana"
+        "Overenie, že nie ste robot"
       ],
       "Invalid verification code": [
-        "O código de verificação não é válido."
+        "Nesprávny overovací kód"
       ],
       "Request new code": [
-        "Pedir novo código"
+        "Vyžiadať nový kód"
       ],
       "Sign in with 2FA": [
-        "Autenticação com 2FA"
+        "Prihlásiť sa cez 2FA"
       ]
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "A palavra-passe deve conter pelo menos ${ length } caráter.",
-        "A palavra-passe deve conter pelo menos ${ length } carateres."
+        "Heslo musí obsahovať aspoň ${ length } znak",
+        "Heslo musí obsahovať aspoň ${ length } znaky",
+        "Heslo musí obsahovať aspoň ${ length } znakov",
+        "Heslo musí obsahovať aspoň ${ length } znakov"
       ],
       "Try a shorter username (${ n } character max)": [
-        "Tente um nome de utilizador mais pequeno (máximo de ${ n } caráter)",
-        "Tente um nome de utilizador mais pequeno (máximo de carateres ${ n })"
+        "Skúste kratšie používateľské meno (max. ${ n } znak)",
+        "Skúste kratšie používateľské meno (max. ${ n } znaky)",
+        "Skúste kratšie používateľské meno (max. ${ n } znakov)",
+        "Skúste kratšie používateľské meno (max. ${ n } znakov)"
       ]
     }
   }
