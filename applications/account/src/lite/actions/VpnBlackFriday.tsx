@@ -91,9 +91,9 @@ const VpnBlackFriday = ({ redirect, fullscreen }: { redirect?: string; fullscree
                         handleNotify(SubscribeType.Closed);
                     };
 
-                    const handleSuccess = () => {
-                        handleNotify(SubscribeType.Subscribed);
-                    };
+                    // const handleSuccess = () => {
+                    //     handleNotify(SubscribeType.Subscribed);
+                    // };
 
                     setIsOfferOpen(false);
 
@@ -107,7 +107,7 @@ const VpnBlackFriday = ({ redirect, fullscreen }: { redirect?: string; fullscree
                         currency,
                         disableThanksStep: true,
                         disableCycleSelector: true,
-                        onSuccess: handleSuccess,
+                        // onSuccess: handleSuccess,
                         onClose: handleClose,
                         fullscreen,
                         metrics: {
