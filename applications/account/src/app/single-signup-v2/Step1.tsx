@@ -305,7 +305,7 @@ const Step1 = ({
             *
             {options.checkResult.Coupon?.Code === COUPON_CODES.BLACK_FRIDAY_2023
                 ? getBlackFridayRenewalNoticeText({
-                      price: options.checkResult.AmountDue,
+                      price: options.checkResult.Amount + (options.checkResult.CouponDiscount || 0),
                       cycle: options.cycle,
                       plansMap: model.plansMap,
                       planIDs: options.planIDs,
