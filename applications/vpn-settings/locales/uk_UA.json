@@ -221,6 +221,9 @@
       "Get ${ vpnPlus }": [
         "Отримати ${ vpnPlus }"
       ],
+      "Get a new encrypted email address": [
+        "Отримайте нову зашифровану адресу електронної пошти"
+      ],
       "Get in touch": [
         "Зв'язатися з нами"
       ],
@@ -493,6 +496,9 @@
       ],
       "Use recovery code": [
         "Використати код відновлення"
+      ],
+      "Use your current email instead": [
+        "Використати натомість вашу поточну адресу е-пошти"
       ],
       "User": [
         "Користувач"
@@ -3693,6 +3699,9 @@
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Ви втратите доступ до серверів і функцій ${ vpnPlanNameShort } після цієї дати."
       ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Для користування ${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME } потрібна адреса ${ BRAND_NAME }"
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Вас невдовзі буде перенаправлено до PayPal для підтвердження платежу."
       ],
@@ -5027,14 +5036,6 @@
         "умови та положення"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Пробна версія ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Використання вашого облікового запису"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Видалити обліковий запис?"
@@ -5050,6 +5051,14 @@
       ],
       "Switch plans?": [
         "Змінити тарифний план?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Пробна версія ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Використання вашого облікового запису"
       ]
     },
     "new_plans: tooltip": {
@@ -5693,6 +5702,9 @@
       ],
       "Password": [
         "Пароль"
+      ],
+      "Username": [
+        "Ім'я користувача"
       ]
     },
     "specialoffer: Action": {

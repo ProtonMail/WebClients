@@ -221,6 +221,9 @@
       "Get ${ vpnPlus }": [
         "Атрымаць ${ vpnPlus }"
       ],
+      "Get a new encrypted email address": [
+        "Атрымаць новы зашыфраваны адрас электроннай пошты"
+      ],
       "Get in touch": [
         "Звязацца з намі"
       ],
@@ -493,6 +496,9 @@
       ],
       "Use recovery code": [
         "Выкарыстоўваць код аднаўлення"
+      ],
+      "Use your current email instead": [
+        "Выкарыстоўваць бягучы адрас электроннай пошты"
       ],
       "User": [
         "Карыстальнік"
@@ -2703,15 +2709,6 @@
       "Admin account allocation": [
         "Вылучэнне ўліковага запісу адміністратара"
       ],
-      "After this date, you'll be billed every 12 months at the normal yearly rate.": [
-        "З вас кожныя 12 месяцаў будзе спаганяцца звычайны кошт за год пасля гэтай даты."
-      ],
-      "After this date, you'll be billed every 24 months at the normal 2-year rate.": [
-        "З вас кожныя 24 месяцы будзе спаганяцца звычайны кошт за 2 гады пасля гэтай даты."
-      ],
-      "After this date, you'll be billed every month at the regular price.": [
-        "З вас кожны месяц будзе спаганяцца звычайны кошт пасля гэтай даты."
-      ],
       "All your changes will be lost.": [
         "Усе вашы змены будуць страчаны."
       ],
@@ -3624,6 +3621,9 @@
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "З тарыфнымі планамі Business або Enterprise, вы можаце купіць ${ boldDedicatedServers } для вашай арганізацыі і наладзіць ${ boldGateways } правы доступу карыстальнікаў да яго."
       ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "З зашыфраваным адрасам ${ BRAND_NAME }, вы можаце выкарыстоўваць усе сэрвісы ${ BRAND_NAME }"
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Без актывацыі вы не зможаце ствараць новых карыстальнікаў, дадаваць адрасы для існуючых карыстальнікаў або атрымаць доступ да непрыватных уліковых запісаў."
       ],
@@ -3732,6 +3732,9 @@
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Вы страціце доступ да сервераў ${ vpnPlanNameShort } і функцыі пасля наступлення гэтай даты."
       ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Вам будзе неабходны адрас ${ BRAND_NAME } для выкарыстання ${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME }"
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для праверкі плацяжу."
       ],
@@ -3788,9 +3791,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша падпіска кіруецца Mozilla. Звяжыцеся са службай падтрымкі Mozilla."
-      ],
-      "Your subscription will auto-renew on ${ renewalTime }.": [
-        "Ваша падпіска будзе аўтаматычна падоўжана ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -4958,6 +4958,12 @@
       ],
       "Vault and Item sharing (coming soon)": [
         "Сховішча і абагульванне элементаў (неўзабаве з'явіцца)"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Абагуленне сховішча (да ${ n } асобы)",
+        "Абагуленне сховішча (да ${ n } асоб)",
+        "Абагуленне сховішча (да ${ n } асоб)",
+        "Абагуленне сховішча (да ${ n } асоб)"
       ]
     },
     "new_plans: feature info": {
@@ -5087,14 +5093,6 @@
         "ўмовамі выкарыстання"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Выпрабавальны перыяд ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Выкарыстанне вашага ўліковага запісу"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Выдаліць уліковы запіс?"
@@ -5112,12 +5110,20 @@
         "Змяніць тарыфны план?"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Выпрабавальны перыяд ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Выкарыстанне вашага ўліковага запісу"
+      ]
+    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Абараняйце свой расклад з дапамогай скразнога шыфравання. Уключае падтрымку для карыстальніцкіх календароў, абагуленых календароў і іншыя функцыі."
       ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Абараняйце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае гісторыю версій для файлаў, абагуленне зашыфраваных файла і іншыя функцыі."
+        "${ DRIVE_APP_NAME }: Абараняйце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае гісторыю версій для файлаў, абагуленне зашыфраваных файлаў і іншыя функцыі."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Абараняйце свае лісты з дапамогай скразнога шыфравання. Уключае падтрымку карыстальніцкіх даменаў электроннай пошты, 15 адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і іншыя функцыі."
@@ -6016,6 +6022,9 @@
       ],
       "Password": [
         "Пароль"
+      ],
+      "Username": [
+        "Імя карыстальніка"
       ]
     },
     "specialoffer: Action": {

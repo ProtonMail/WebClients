@@ -221,6 +221,9 @@
       "Get ${ vpnPlus }": [
         "Skaffa ${ vpnPlus }"
       ],
+      "Get a new encrypted email address": [
+        "Skaffa en ny krypterad e-postadress"
+      ],
       "Get in touch": [
         "Kontakta oss"
       ],
@@ -493,6 +496,9 @@
       ],
       "Use recovery code": [
         "Använd återställningskod"
+      ],
+      "Use your current email instead": [
+        "Använd din nuvarande e-post istället"
       ],
       "User": [
         "Användare"
@@ -2384,6 +2390,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -2402,6 +2411,10 @@
       "Megabyte": [
         "Kilobyte",
         "Megabyte"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabyte"
       ]
     },
     "Font face option": {
@@ -2656,15 +2669,6 @@
       ],
       "Admin account allocation": [
         "Allokering för administratörskonto"
-      ],
-      "After this date, you'll be billed every 12 months at the normal yearly rate.": [
-        "Efter detta datum kommer du att faktureras var 12:e månad enligt vanlig årsavgift."
-      ],
-      "After this date, you'll be billed every 24 months at the normal 2-year rate.": [
-        "Efter detta datum kommer du att faktureras var 24:e månad enligt vanlig två-årsavgift."
-      ],
-      "After this date, you'll be billed every month at the regular price.": [
-        "Efter detta datum kommer du att faktureras varje månad till ordinarie pris."
       ],
       "All your changes will be lost.": [
         "Alla dina ändringar kommer att gå förlorade."
@@ -3562,6 +3566,9 @@
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Med ett Business- eller Enterprise-paket kan du köpa ${ boldDedicatedServers } för din organisation och ställa in ${ boldGateways } för att kontrollera vilka användare som kan komma åt dem."
       ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Med en krypterad ${ BRAND_NAME }-adress kan du använda alla ${ BRAND_NAME }-tjänster"
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Utan aktivering kommer du inte att kunna skapa nya användare, lägga till adresser till befintliga användare eller komma åt icke-privata användarkonton."
       ],
@@ -3656,6 +3663,9 @@
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Du kommer förlora åtkomst till ${ vpnPlanNameShort }-servrar och funktionerna på detta datum."
       ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Du behöver en ${ BRAND_NAME }-adress för att använda ${ MAIL_APP_NAME } och ${ CALENDAR_APP_NAME }"
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du kommer snart att omdirigeras till PayPal för att verifiera din betalning."
       ],
@@ -3712,9 +3722,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Din prenumeration hanteras av Mozilla. Kontakta Mozillas support."
-      ],
-      "Your subscription will auto-renew on ${ renewalTime }.": [
-        "Din prenumeration kommer förnyas automatiskt den ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -4895,7 +4902,7 @@
         "Om du byter till ett annat paket förlorar du alla ${ visionary }-paketets förmåner och kommer inte att kunna byta tillbaka till ${ visionary }."
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "Vårt ${ visionary }-paket är inte längre tillgänglig för nya prenumeranter eftersom det är ett specialpaket för ursprungliga ${ BRAND_NAME }-användare med. specialfunktioner och fördelar."
+        "Vårt ${ visionary }-paket är inte längre tillgänglig för nya prenumeranter eftersom det är ett specialpaket för ursprungliga ${ BRAND_NAME }-användare med specialfunktioner och fördelar."
       ],
       "Popular": [
         "Populär"
@@ -4969,14 +4976,6 @@
         "användarvillkor"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } provperiod"
-      ],
-      "Your account's usage": [
-        "Ditt kontos användning"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -4992,6 +4991,14 @@
       ],
       "Switch plans?": [
         "Byt paket?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } provperiod"
+      ],
+      "Your account's usage": [
+        "Ditt kontos användning"
       ]
     },
     "new_plans: tooltip": {
@@ -5864,6 +5871,9 @@
       ],
       "Password": [
         "Lösenord"
+      ],
+      "Username": [
+        "Användarnamn"
       ]
     },
     "specialoffer: Action": {
