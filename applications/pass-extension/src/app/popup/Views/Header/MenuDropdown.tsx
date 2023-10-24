@@ -145,7 +145,7 @@ export const MenuDropdown: VFC = () => {
     const advancedLinks: SubmenuLinkItem[] = [
         {
             icon: 'key-history',
-            label: c('Action').t`Generated password`,
+            label: c('Action').t`Generated passwords`,
             actionTab: withClose(openPasswordHistory),
         },
         {
