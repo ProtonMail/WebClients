@@ -14,13 +14,12 @@ import { SimpleFilterModalModel } from '../interfaces';
 interface Props {
     labels: Label[];
     folders: Folder[];
-    isNarrow: boolean;
     model: SimpleFilterModalModel;
     toggleOpen: () => void;
     isOpen: boolean;
 }
 
-const FilterPreviewActions = ({ isOpen, isNarrow, toggleOpen, labels, folders, model }: Props) => {
+const FilterPreviewActions = ({ isOpen, toggleOpen, labels, folders, model }: Props) => {
     const LABELS_ACTION = {
         labelAs: c('Action').t`label emails as`,
         moveTo: c('Action').t`move emails to`,
@@ -187,16 +186,12 @@ const FilterPreviewActions = ({ isOpen, isNarrow, toggleOpen, labels, folders, m
 
     return (
         <div className="border-bottom mb-8">
-            <div className="flex-no-min-children flex-nowrap flex-column md:flex-row align-items-center py-4">
-                <button
-                    type="button"
-                    className={clsx(['w-full md:w-1/5 text-left', isNarrow && 'mb-4'])}
-                    onClick={toggleOpen}
-                >
+            <div className="flex flex-nowrap flex-column md:flex-row align-items-center py-4 gap-4">
+                <button type="button" className="w-full md:w-1/4 text-left" onClick={toggleOpen}>
                     <Icon name="chevron-down" className={clsx([isOpen && 'rotateX-180'])} />
                     <span className="ml-2">{c('Label').t`Actions`}</span>
                 </button>
-                <div className={clsx(['flex flex-column flex-item-fluid', !isNarrow && 'ml-4'])}>{actionsRenderer}</div>
+                <div className="flex flex-column w-full">{actionsRenderer}</div>
             </div>
         </div>
     );
