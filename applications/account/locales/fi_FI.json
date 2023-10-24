@@ -3265,8 +3265,8 @@
       "Forwarding is active": [
         "Ohjaus on käytössä"
       ],
-      "Forwarding to ${ BRAND_NAME } addresses will keep your communication end-to-end encrypted. When forwarding externally, encryption might need to be removed.": [
-        "Ohjaus ${ BRAND_NAME }-osoitteisiin pitää viestintäsi päästä päähän -salattuna. Ulkoisiin palveluihin ohjattaessa salaus täytyy mahdollisesti poistaa."
+      "Forwarding to ${ BRAND_NAME } addresses will keep your communication end-to-end encrypted. When forwarding externally, end-to-end encryption for the forwarding address will be disabled.": [
+        "Uudellenohjaus ${ BRAND_NAME }-osoitteisiin pitää viestintäsi päästä päähän -salattuna. Ulkoisiin palveluihin Uudellenohjattaessa salaus täytyy mahdollisesti poistaa."
       ],
       "Forwarding to an address without end-to-end encryption requires disabling end-to-end encryption for your ${ boldForwarderEmail } email address. ": [
         "Ohjaus päästä päähän -salaamattomaan osoitteeseen vaatii salauksen käytöstä poiston ohjaavalta ${ boldForwarderEmail }-osoitteeltasi."
@@ -5746,15 +5746,6 @@
       "Admin account allocation": [
         "Ylläpitotilin varaus"
       ],
-      "After this date, you'll be billed every 12 months at the normal yearly rate.": [
-        "Tämän päivän jälkeen laskutus tapahtuu 12 kuukauden välein normaalilla vuosihinnalla."
-      ],
-      "After this date, you'll be billed every 24 months at the normal 2-year rate.": [
-        "Tämän päivän jälkeen laskutus tapahtuu 24 kuukauden välein normaalilla 2 vuoden hinnalla."
-      ],
-      "After this date, you'll be billed every month at the regular price.": [
-        "Tämän päivän jälkeen laskutus tapahtuu kuukausittain normaalihinnalla."
-      ],
       "Align left": [
         "Tasaa vasemmalle"
       ],
@@ -5804,7 +5795,7 @@
         "Summa on vähimmäismäärää pienempi (${ amount })."
       ],
       "Amount due": [
-        "Verloitettava summa"
+        "Veloitettava summa"
       ],
       "An error occurred while communicating with the extension": [
         "Virhe viestittäessä laajennuksen kanssa"
@@ -5944,6 +5935,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Jakamalla tämän kalenterin täydet tapahtumatiedot, myönnät ${ BRAND_NAME }ille sen salattujen tietojen käyttöoikeuden."
       ],
+      "Cancel anytime": [
+        "Peru milloin tahansa"
+      ],
       "Center": [
         "Keskitä"
       ],
@@ -5957,7 +5951,7 @@
         "Poistu sulkemalla tämä ruutu."
       ],
       "Continue with ${ freeName }": [
-        "Jatka käyttämällä ${ freeName }"
+        "Jatka ${ freeName }-tilauksella"
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Jatkamalla ${ BRAND_NAME }-tilisi yhdistetään palveluun ${ name }."
@@ -6638,8 +6632,8 @@
         "Yli 100 miljoonaa ihmistä ja yritystä on rekisteröitynyt ${ BRAND_NAME }-palveluun."
       ],
       "Paid for a ${ rewardMonths } month plan": [
-        "Maksettiin ${ rewardMonths } kuukauden tilaus",
-        "Maksettiin ${ rewardMonths } kuukauden tilaus"
+        "Kustansi ${ rewardMonths } kuukauden tilauksen",
+        "Kustansi ${ rewardMonths } kuukauden tilauksen"
       ],
       "Paid for a monthly plan": [
         "Maksettu kuukausittainen tilaus"
@@ -7406,8 +7400,8 @@
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Business- tai Eterprise-tilaajana voit ostaa organisaatiollesi ${ boldDedicatedServers } ja määrittää ${ boldGateways } hallitaksesi millä käyttäjillä on niiden käyttöoikeus."
       ],
-      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
-        "Salatulla ${ BRAND_NAME }-osoitteella voit käyttää kaikkia ${ BRAND_NAME_TWO }-palveluita"
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Salatulla ${ BRAND_NAME }-osoitteella voit käyttää kaikkia ${ BRAND_NAME }-palveluita"
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Nykyisellä tilauksellasi voit vain vastaanottaa viestejä @pm.me-osoitteellasi. Päivittämällä tilauksesi voit myös lähettää @pm.me-osoitteesta ja luoda niitä lisää."
@@ -7663,9 +7657,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Tilaustasi hallinnoi Mozilla. Ota yhteyttä Mozillan tukeen."
-      ],
-      "Your subscription will auto-renew on ${ renewalTime }.": [
-        "Tilauksesi uudistuu automaattisesti ${ renewalTime }."
       ]
     },
     "info": {
@@ -9318,6 +9309,11 @@
         "Tuo kaikki ${ selectedItemsToImportCount }/${ itemsToImportCount } tunnisteen viestit ja merkitse ne tunnisteella"
       ]
     },
+    "mail_signup_2023: Info": {
+      "Secure email that protects your privacy": [
+        "Turvallinen sähköposti, joka suojaa yksityisyyttäsi"
+      ]
+    },
     "Maintenance mode": {
       "Please check back in a few minutes.": [
         "Yritä muutaman minuutin kuluttua uudelleen."
@@ -9794,7 +9790,7 @@
         "1 käyttäjä"
       ],
       "24/7 support": [
-        "24/7 tuki"
+        "24/7-asiakaspalvelu"
       ],
       "99.95% SLA": [
         "99.95 % SLA"
@@ -9833,7 +9829,7 @@
         "Keskitetty laskutus"
       ],
       "Centralized settings and billings": [
-        "Kohdistetut asetukset ja laskutukset"
+        "Keskitetyt asetukset ja laskutus"
       ],
       "Contact groups": [
         "Yhteystietoryhmät"
@@ -9995,7 +9991,7 @@
         "Aloita organisaatiosi suojaaminen"
       ],
       "Start protecting yourself online in 2 easy steps": [
-        "Suojaa itsesi verkossa kahdella helpolla askeleella"
+        "Aloita itsesi suojaaminen kahdella helpolla vaiheella"
       ],
       "Strict no-logs policy": [
         "Tiukka lokivastainen käytäntö"
@@ -10062,6 +10058,10 @@
       ],
       "Vault and Item sharing (coming soon)": [
         "Holvin ja kohteiden jako (tulossa pian)"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Holvin jakaminen (enintään ${ n } henkilö)",
+        "Holvin jakaminen (enintään ${ n } henkilöä)"
       ]
     },
     "new_plans: feature info": {
@@ -10084,17 +10084,6 @@
       ],
       "Team management": [
         "Tiimin hallinta"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Muutoin pääsyä tililesi rajoitetaan ja aikanaan tilisi poistetaan käytöstä."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Jatkaaksesi ${ MAIL_APP_NAME }n käyttämistä premium-ominaisuuksilla, valitse tilaus ja maksutapa."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Kokeilujaksosi päättyy ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -10184,6 +10173,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Nykyisellä tilauksellasi nautit alennetusta etuhinnasta. Jos alennat tilisi, menetät etuhinnan, eikä se ole enää käytettävissä, jos joskus palaat tilaajaksi."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Muutoin pääsyä tililesi rajoitetaan ja aikanaan tilisi poistetaan käytöstä."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Jatkaaksesi ${ MAIL_APP_NAME }n käyttämistä premium-ominaisuuksilla, valitse tilaus ja maksutapa."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Kokeilujaksosi päättyy ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10470,7 +10470,7 @@
     },
     "new_plans: Upsell attribute": {
       "24/7 support": [
-        "24/7 tuki"
+        "24/7-asiakaspalvelu"
       ],
       "Access advanced VPN features": [
         "Käyttöoikeus edistyneisiin VPN-ominaisuuksiin"
@@ -11078,6 +11078,9 @@
       "End-to-end encrypted notes": [
         "Päästä päähän -salatut muistiinpanot"
       ],
+      "End-to-end encryption": [
+        "Päästä päähän -salaus"
+      ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Saat kaikki ${ BRAND_NAME } premium-palvelut käyttöösi vain **${ relativePrice } kuukausikorotuksella**!"
       ],
@@ -11116,6 +11119,9 @@
       ],
       "Launching ${ PASS_APP_NAME }": [
         "Käynnistetään ${ PASS_APP_NAME }"
+      ],
+      "Limited time offer: Get ${ title } for free for 1 year!": [
+        "Rajoitettu tarjous: Hanki ${ title } ilmaiseksi 1 vuodeksi!"
       ],
       "One easy subscription.": [
         "Yksi helppo tilaus."
@@ -12291,10 +12297,10 @@
         "Laskutetaan 2 vuoden välein"
       ],
       "Billed for 15 months": [
-        "Laskutettu 15 kuukaudelta"
+        "Laskutetaan 15 kuukauden välein"
       ],
       "Billed for 30 months": [
-        "Laskutettu 30 kuukaudelta"
+        "Laskutetaan 30 kuukauden välein"
       ],
       "Billed monthly": [
         "Laskutetaan kuukausittain"
@@ -12981,7 +12987,7 @@
         "Summa"
       ],
       "Amount due": [
-        "Verloitettava summa"
+        "Veloitettava summa"
       ],
       "App": [
         "Sovellus"
@@ -14290,7 +14296,7 @@
         "Kokeile ${ upsellPlanName } -tilausta riskittömästi"
       ],
       "Your ${ selected } plan": [
-        "Sinun ${ selected } tilauksesi"
+        "${ selected } -tilauksesi"
       ]
     },
     "vpn_2step: tooltip": {

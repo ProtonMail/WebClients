@@ -2343,6 +2343,9 @@
       "Event not found": [
         "Händelse hittades inte"
       ],
+      "Failed to get event": [
+        "Misslyckades att hämta händelse"
+      ],
       "Failed to get original occurrence in series": [
         "Misslyckades att hämta den ursprungliga förekomsten i serien"
       ],
@@ -3106,6 +3109,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -3124,6 +3130,10 @@
       "Megabyte": [
         "Kilobyte",
         "Megabyte"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabyte"
       ]
     },
     "Filter notification": {

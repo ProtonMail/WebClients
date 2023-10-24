@@ -98,6 +98,9 @@
       "Creating vault": [
         "Сохранение хранилища"
       ],
+      "Customize": [
+        "Настроить"
+      ],
       "Delete": [
         "Удалить"
       ],
@@ -202,6 +205,9 @@
       ],
       "Not now": [
         "Не сейчас"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open navigation": [
         "Открыть панель навигации"
@@ -613,12 +619,6 @@
         "Осталось ${ trialDaysLeft } дней",
         "Осталось ${ trialDaysLeft } дня"
       ],
-      "${ vault.count } item": [
-        "${ vault.count } элемент",
-        "${ vault.count } элемента",
-        "${ vault.count } элементов",
-        "${ vault.count } элемента"
-      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Доступна новая версия ${ PASS_APP_NAME }. Обновите ее, чтобы насладиться последними функциями и исправлениями ошибок."
       ],
@@ -666,9 +666,6 @@
       ],
       "Creating alias...": [
         "Создание псевдонима..."
-      ],
-      "Custom fields": [
-        "Настраиваемые поля"
       ],
       "Decrypting your data": [
         "Расшифровка ваших данных"
@@ -753,9 +750,6 @@
       ],
       "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
         "Для переноса ваших данных в ${ PASS_APP_NAME } из другого менеджера паролей, экспортируйте свои пароли и импортируйте их с помощью формы ниже. После того как все ваши элементы будут импортированы, удалите ранее экспортированный файл."
-      ],
-      "Integrated 2FA authenticator": [
-        "Встроенный двухфакторный аутентификатор"
       ],
       "Internet connection lost": [
         "Подключение к Интернету потеряно"
