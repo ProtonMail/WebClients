@@ -3010,6 +3010,17 @@
         "Hjälp oss att förbättra!"
       ]
     },
+    "drive_signup_2023: Info": {
+      "Advanced sharing security": [
+        "Avancerad delningssäkerhet"
+      ],
+      "Encrypted cloud storage for all your files": [
+        "Krypterad molnlagring för alla dina filer"
+      ],
+      "Secure cloud storage and file sharing that protects your data": [
+        "Säker molnlagring och fildelning som skyddar din data"
+      ]
+    },
     "Duration": {
       "120 minutes": [
         "120 minuter"
@@ -3265,8 +3276,8 @@
       "Forwarding is active": [
         "Vidarebefordran är aktiv"
       ],
-      "Forwarding to ${ BRAND_NAME } addresses will keep your communication end-to-end encrypted. When forwarding externally, encryption might need to be removed.": [
-        "Vidarebefordran till ${ BRAND_NAME }-adresser kommer att behålla din kommunikation end-to-end krypterad. Vid extern vidarebefordran kan kryptering behöva tas bort."
+      "Forwarding to ${ BRAND_NAME } addresses will keep your communication end-to-end encrypted. When forwarding externally, end-to-end encryption for the forwarding address will be disabled.": [
+        "Vidarebefordran till ${ BRAND_NAME }-adresser kommer att behålla din kommunikation end-to-end krypterad. Vid extern vidarebefordran kommer end-to-end-kryptering för den vidarebefordrade adressen att inaktiveras."
       ],
       "Forwarding to an address without end-to-end encryption requires disabling end-to-end encryption for your ${ boldForwarderEmail } email address. ": [
         "Vidarebefordran till en adress utan end-to-end-kryptering kräver att du inaktiverar end-to-end-kryptering för din e-postadress ${ boldForwarderEmail }. "
@@ -4724,6 +4735,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -4742,6 +4756,10 @@
       "Megabyte": [
         "Kilobyte",
         "Megabyte"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabyte"
       ]
     },
     "Filter Actions": {
@@ -5746,15 +5764,6 @@
       "Admin account allocation": [
         "Allokering för administratörskonto"
       ],
-      "After this date, you'll be billed every 12 months at the normal yearly rate.": [
-        "Efter detta datum kommer du att faktureras var 12:e månad enligt vanlig årsavgift."
-      ],
-      "After this date, you'll be billed every 24 months at the normal 2-year rate.": [
-        "Efter detta datum kommer du att faktureras var 24:e månad enligt vanlig två-årsavgift."
-      ],
-      "After this date, you'll be billed every month at the regular price.": [
-        "Efter detta datum kommer du att faktureras varje månad till ordinarie pris."
-      ],
       "Align left": [
         "Vänsterjustera"
       ],
@@ -5943,6 +5952,9 @@
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Genom att dela all information om händelser i denna kalender, accepterar du att ge ${ BRAND_NAME } åtkomst till denna kalenders krypterade information."
+      ],
+      "Cancel anytime": [
+        "Avbryt när som helst"
       ],
       "Center": [
         "Centrera"
@@ -7406,8 +7418,8 @@
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Med ett Business- eller Enterprise-paket kan du köpa ${ boldDedicatedServers } för din organisation och ställa in ${ boldGateways } för att kontrollera vilka användare som kan komma åt dem."
       ],
-      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
-        "Med en krypterad ${ BRAND_NAME }-adress kan du använda alla ${ BRAND_NAME_TWO }-tjänster"
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Med en krypterad ${ BRAND_NAME }-adress kan du använda alla ${ BRAND_NAME }-tjänster"
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Med ditt nuvarande paket kan du endast ta emot meddelanden med din adress @pm.me. Uppgradera för att skicka meddelanden och skapa ytterligare adresser med @pm.me."
@@ -7663,9 +7675,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Din prenumeration hanteras av Mozilla. Kontakta Mozillas support."
-      ],
-      "Your subscription will auto-renew on ${ renewalTime }.": [
-        "Din prenumeration kommer förnyas automatiskt den ${ renewalTime }."
       ]
     },
     "info": {
@@ -9318,6 +9327,11 @@
         "Importera alla meddelanden från ${ selectedItemsToImportCount } av ${ itemsToImportCount } etiketter och märk dem som"
       ]
     },
+    "mail_signup_2023: Info": {
+      "Secure email that protects your privacy": [
+        "Säker e-post som skyddar din integritet"
+      ]
+    },
     "Maintenance mode": {
       "Please check back in a few minutes.": [
         "Kom tillbaka om några minuter."
@@ -10090,17 +10104,6 @@
         "Teamhantering"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "För att fortsätta använda ${ MAIL_APP_NAME } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Din provperiod slutar den ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutar med ${ last4 }"
@@ -10148,7 +10151,7 @@
         "Mest populär"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "Vårt ${ visionary }-paket är inte längre tillgänglig för nya prenumeranter eftersom det är ett specialpaket för ursprungliga ${ BRAND_NAME }-användare med. specialfunktioner och fördelar."
+        "Vårt ${ visionary }-paket är inte längre tillgänglig för nya prenumeranter eftersom det är ett specialpaket för ursprungliga ${ BRAND_NAME }-användare med specialfunktioner och fördelar."
       ],
       "Popular": [
         "Populär"
@@ -10188,6 +10191,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du har ett kampanjpris på ditt nuvarande paket. Om du nedgraderar ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du försöker prenumerera igen."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "För att fortsätta använda ${ MAIL_APP_NAME } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Din provperiod slutar den ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10895,7 +10909,7 @@
     },
     "Option protection mode": {
       "Load content via proxy (recommended)": [
-        "Ladda innehåll via Proxy (rekommenderas)"
+        "Ladda innehåll via proxy (rekommenderas)"
       ],
       "Load content via proxy and store as attachments": [
         "Ladda innehåll via proxy och lagra som bilagor"
@@ -10998,7 +11012,7 @@
     },
     "pass_signup_2023: Feature": {
       "End-to-end encrypted": [
-        "End-to-end-krypterad"
+        "End-to-end-krypterat"
       ],
       "Open source": [
         "Öppen källkod"
@@ -11082,6 +11096,9 @@
       "End-to-end encrypted notes": [
         "End-to-end-krypterade anteckningar"
       ],
+      "End-to-end encryption": [
+        "End-to-end-kryptering"
+      ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "För endast **${ relativePrice } per månad** mer får du åtkomst till alla premiumtjänster för ${ BRAND_NAME }!"
       ],
@@ -11120,6 +11137,9 @@
       ],
       "Launching ${ PASS_APP_NAME }": [
         "Lanserar ${ PASS_APP_NAME }"
+      ],
+      "Limited time offer: Get ${ title } for free for 1 year!": [
+        "Tidsbegränsat erbjudande: Få ${ title } gratis i 1 år!"
       ],
       "One easy subscription.": [
         "En enkel prenumeration."
