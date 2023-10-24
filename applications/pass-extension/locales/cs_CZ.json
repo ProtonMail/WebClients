@@ -98,6 +98,9 @@
       "Creating vault": [
         "Vytvářím trezor"
       ],
+      "Customize": [
+        "Přizpůsobit"
+      ],
       "Delete": [
         "Smazat"
       ],
@@ -214,6 +217,9 @@
       ],
       "Not now": [
         "Nyní ne"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open navigation": [
         "Otevřít menu"
@@ -363,6 +369,9 @@
       ],
       "Cannot send invitation to this address at the moment": [
         "Na tuto adresu momentálně nelze zaslat pozvánku"
+      ],
+      "Could not confirm this invite at the moment": [
+        "V současné době nelze tuto pozvánku potvrdit"
       ],
       "Could not leave vault.": [
         "Nepodařilo se opustit trezor."
@@ -654,17 +663,14 @@
         "Zbývá ${ trialDaysLeft } dnů",
         "Zbývá ${ trialDaysLeft } dnů"
       ],
-      "${ vault.count } item": [
-        "${ vault.count } položka",
-        "${ vault.count } položky",
-        "${ vault.count } položek",
-        "${ vault.count } položek"
-      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Je dostupná nová verze aplikace ${ PASS_APP_NAME }. Aktualizací získáte nejnovější funkce a opravy chyb."
       ],
       "Access ${ PASS_APP_NAME } via this icon": [
         "Přistupte k ${ PASS_APP_NAME } pomocí této ikony"
+      ],
+      "Access successfully confirmed": [
+        "Přístup úspěšně potvrzen"
       ],
       "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
         "Přístup do ${ PASS_APP_NAME } bude vyžadovat PIN kód pro odemčení vaší relace."
@@ -708,9 +714,6 @@
       "Creating alias...": [
         "Vytváření aliasu..."
       ],
-      "Custom fields": [
-        "Vlastní pole"
-      ],
       "Decrypting your data": [
         "Dešifrování vašich dat"
       ],
@@ -747,6 +750,9 @@
       "Follow these simple steps to get the best experience:": [
         "Postupujte podle následujících jednoduchých kroků, abyste měli co nejlepší zážitek:"
       ],
+      "For security reasons, your access needs to be confirmed": [
+        "Z bezpečnostních důvodů musí být váš přístup potvrzen"
+      ],
       "Free Trial": [
         "Bezplatná zkušební verze"
       ],
@@ -755,6 +761,9 @@
       ],
       "Generating alias...": [
         "Generování aliasu..."
+      ],
+      "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
+        "Získejte neomezený počet aliasů, využívejte exkluzivní funkce a podpořte nás předplacením Proton Pass Plus."
       ],
       "Here you will find all the necessary information to get you started.": [
         "Zde najdete všechny potřebné informace, které vám pomohou začít."
@@ -795,9 +804,6 @@
       "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
         "Chcete-li do aplikace ${ PASS_APP_NAME } přenést data z jiného správce hesel, exportujte hesla a importujte je pomocí níže uvedeného formuláře. Po importu všech položek odstraňte dříve exportovaný soubor."
       ],
-      "Integrated 2FA authenticator": [
-        "Integrovaný ověřovací modul 2FA"
-      ],
       "Internet connection lost": [
         "Připojení k Internetu bylo ztraceno"
       ],
@@ -808,6 +814,9 @@
         "Pozvánka byla úspěšně odebrána"
       ],
       "Invite successfully resent": [
+        "Pozvánka byla úspěšně odeslána"
+      ],
+      "Invite successfully sent": [
         "Pozvánka byla úspěšně odeslána"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
@@ -971,6 +980,9 @@
       ],
       "Unable to copy to clipboard": [
         "Nelze kopírovat do schránky"
+      ],
+      "Unlimited Aliases": [
+        "Neomezený počet aliasů"
       ],
       "Unlock it with your PIN to access the settings": [
         "Odemkněte ji pomocí PIN kódu pro přístup k nastavením"
@@ -1226,6 +1238,9 @@
       "Include numbers (0-9)": [
         "Včetně číslic (0-9)"
       ],
+      "Invitations": [
+        "Pozvánky"
+      ],
       "Label": [
         "Štítek"
       ],
@@ -1255,6 +1270,9 @@
       ],
       "Logins": [
         "Přihlášení"
+      ],
+      "Members": [
+        "Členové"
       ],
       "Modified": [
         "Upraveno"
@@ -1345,6 +1363,9 @@
       ],
       "Select an email address": [
         "Zvolit e-mailovou adresu"
+      ],
+      "Select preferred language": [
+        "Vyberte preferovaný jazyk"
       ],
       "Select your password manager": [
         "Zvolte si svého správce hesel"
@@ -1546,6 +1567,14 @@
         "Napište svoji poznámku"
       ]
     },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Trezory nemohou obsahovat více než ${ vault.targetMaxMembers } uživatele.",
+        "Trezory nemohou obsahovat více než ${ vault.targetMaxMembers } uživatele.",
+        "Trezory nemohou obsahovat více než ${ vault.targetMaxMembers } uživatelů.",
+        "Trezory nemohou obsahovat více než ${ vault.targetMaxMembers } uživatelů."
+      ]
+    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "Nastavení ${ PASS_APP_NAME }"
@@ -1600,6 +1629,9 @@
       ],
       "Low disk space": [
         "Málo místa na disku"
+      ],
+      "Pending access to the shared data": [
+        "Čekání na přístup ke sdíleným datům"
       ],
       "Permanently remove all items ?": [
         "Trvale smazat všechny položky?"
@@ -1749,6 +1781,12 @@
       "Please log back in": [
         "Přihlaste se prosím znovu"
       ],
+      "Please verify your email address in order to use email aliases": [
+        "Ověřte prosím svou e-mailovou adresu, abyste mohli používat e-mailové aliasy"
+      ],
+      "Please verify your email address in order to use vault sharing": [
+        "Ověřte prosím svou e-mailovou adresu, abyste mohli používat sdílení trezoru"
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Hlášení nejsou zabezpečena koncovým šifrováním, neposílejte žádné citlivé informace."
       ],
@@ -1760,6 +1798,9 @@
       ],
       "Title is required": [
         "Název je povinný"
+      ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "Převést vlastnictví tohoto trezoru na ${ email }?"
       ],
       "Trash alias ?": [
         "Smazat alias?"
@@ -1782,6 +1823,15 @@
       "You cannot create more vaults than your subscription allows.": [
         "Nemůžete vytvořit více trezorů, než umožňuje vaše předplatné."
       ],
+      "You have reached the limit of members who can access this vault.": [
+        "Dosáhli jste limitu členů, kteří mají přístup k tomuto trezoru."
+      ],
+      "You have reached the limit of users in this vault. ${ upgradeLink }": [
+        "Dosáhli jste limitu uživatelů v tomto trezoru. ${ upgradeLink }"
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "Dosáhli jste limitu trezorů, které můžete mít ve svém tarifu."
+      ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "Máte neuložené změny, určitě je chcete zahodit?"
       ],
@@ -1794,8 +1844,14 @@
       "Your plan does not allow you to create more aliases": [
         "Váš tarif vám neumožňuje vytvářet další aliasy."
       ],
+      "Your plan only allows you to autofill from your first two vaults": [
+        "Váš tarif umožňuje automatické vyplňování pouze z prvních dvou trezorů"
+      ],
       "Your session was locked due to inactivity": [
         "Vaše relace byla uzamčena z důvodu neaktivity"
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "Vaše předplatné neumožňuje vytvořit více trezorů. Všechny položky budou importovány do vašeho prvního trezoru. Chcete-li importovat do více trezorů, navyšte své předplatné."
       ]
     }
   }

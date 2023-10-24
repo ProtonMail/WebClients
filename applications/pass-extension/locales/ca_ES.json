@@ -59,6 +59,9 @@
       "Confirm": [
         "Confirma"
       ],
+      "Confirm access": [
+        "Confirma l'accés"
+      ],
       "Continue": [
         "Continua"
       ],
@@ -97,6 +100,9 @@
       ],
       "Creating vault": [
         "Creant la caixa forta"
+      ],
+      "Customize": [
+        "Personalitza"
       ],
       "Delete": [
         "Elimina"
@@ -224,6 +230,9 @@
       "Not now": [
         "Ara no"
       ],
+      "OK": [
+        "D'acord"
+      ],
       "Open in a window": [
         "Obre en una finestra nova"
       ],
@@ -244,6 +253,9 @@
       ],
       "Regenerate": [
         "Regenera"
+      ],
+      "Reject": [
+        "Rebutja"
       ],
       "Reject invitation": [
         "Rebutja la invitació"
@@ -284,6 +296,9 @@
       "Share": [
         "Compartir"
       ],
+      "Share this vault": [
+        "Comparteix aquesta caixa forta"
+      ],
       "Share vault": [
         "Comparteix la caixa forta"
       ],
@@ -319,6 +334,9 @@
       ],
       "Update": [
         "Actualitza"
+      ],
+      "Update vault": [
+        "Actualitza la caixa forta"
       ],
       "Updating": [
         "S'està actualitzant"
@@ -640,10 +658,6 @@
         "Queda ${ trialDaysLeft } dia",
         "Queden ${ trialDaysLeft } dies"
       ],
-      "${ vault.count } item": [
-        "${ vault.count } element",
-        "${ vault.count } elements"
-      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Hi ha disponible una nova versió de ${ PASS_APP_NAME }. Actualitzeu-lo per gaudir de les últimes característiques i correccions d'errors."
       ],
@@ -697,9 +711,6 @@
       ],
       "Creating alias...": [
         "S'està creant un àlies..."
-      ],
-      "Custom fields": [
-        "Camps personalitzats"
       ],
       "Decrypting your data": [
         "S'estan desxifrant les dades"
@@ -785,9 +796,6 @@
       ],
       "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
         "Per a migrar les vostres dades a ${ PASS_APP_NAME } des d'un altre gestor de contrasenyes, exporteu les contrasenyes i importeu-les utilitzant el formulari següent. Un cop s'hagin importat tots els vostres elements, elimineu el fitxer exportat anteriorment."
-      ],
-      "Integrated 2FA authenticator": [
-        "Autenticador A2F integrat"
       ],
       "Internet connection lost": [
         "S'ha perdut la connexió a Internet"
@@ -961,6 +969,9 @@
       ],
       "Unable to copy to clipboard": [
         "No s'ha pogut copiar al porta-retalls"
+      ],
+      "Unlimited Aliases": [
+        "Àlies il·limitats"
       ],
       "Unlock it with your PIN to access the settings": [
         "Desbloqueja-ho amb el PIN per accedir a les preferències"
@@ -1225,6 +1236,9 @@
       "Include numbers (0-9)": [
         "Incloeu números (0-9)"
       ],
+      "Invitations": [
+        "Invitacions"
+      ],
       "Label": [
         "Etiqueta"
       ],
@@ -1254,6 +1268,9 @@
       ],
       "Logins": [
         "Inicis de sessió"
+      ],
+      "Members": [
+        "Membres"
       ],
       "Modified": [
         "Modificació"
@@ -1535,6 +1552,9 @@
       "Select a suffix": [
         "Seleccioneu un sufix"
       ],
+      "Shared vault": [
+        "Caixa forta compartida"
+      ],
       "Unknown origin": [
         "Origen desconegut"
       ],
@@ -1602,6 +1622,9 @@
       ],
       "Low disk space": [
         "Poc espai al disc"
+      ],
+      "Member limit": [
+        "Límit de nombre de membres"
       ],
       "Permanently remove all items ?": [
         "Voleu eliminar els elements de manera permanent?"

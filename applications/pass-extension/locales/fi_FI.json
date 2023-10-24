@@ -59,6 +59,9 @@
       "Confirm": [
         "Vahvista"
       ],
+      "Confirm access": [
+        "Vahvista pääsy"
+      ],
       "Continue": [
         "Jatka"
       ],
@@ -80,6 +83,9 @@
       "Create a ${ BRAND_NAME } account": [
         "Luo ${ BRAND_NAME }-tili"
       ],
+      "Create a new vault to share": [
+        "Luo uusi jaettava holvi"
+      ],
       "Create alias": [
         "Luo alias"
       ],
@@ -97,6 +103,9 @@
       ],
       "Creating vault": [
         "Luodaan holvia"
+      ],
+      "Customize": [
+        "Mukauta"
       ],
       "Delete": [
         "Poista"
@@ -212,6 +221,9 @@
       "More options": [
         "Lisää asetuksia"
       ],
+      "Move to a shared vault": [
+        "Siirrä jaettuun holviin"
+      ],
       "Move to another vault": [
         "Siirrä toiseen holviin"
       ],
@@ -223,6 +235,9 @@
       ],
       "Not now": [
         "Ei nyt"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open in a window": [
         "Avaa uudessa ikkunassa"
@@ -244,6 +259,9 @@
       ],
       "Regenerate": [
         "Luo uusi"
+      ],
+      "Reject": [
+        "Hylkää"
       ],
       "Reject invitation": [
         "Hylkää kutsu"
@@ -284,6 +302,9 @@
       "Share": [
         "Jaa"
       ],
+      "Share this vault": [
+        "Jaa tämä holvi"
+      ],
       "Share vault": [
         "Jaa holvi"
       ],
@@ -320,11 +341,17 @@
       "Update": [
         "Päivitä"
       ],
+      "Update vault": [
+        "Päivitä holvi"
+      ],
       "Updating": [
         "Päivitetään"
       ],
       "Upgrade": [
         "Päivitä"
+      ],
+      "Upgrade now to share with more people": [
+        "Päivitä nyt jaa useampien ihmisten kanssa"
       ],
       "Upgrade to keep these features": [
         "Säilytä ominaisuudet päivittämällä tilauksesi"
@@ -375,6 +402,9 @@
       ],
       "Cannot send invitation to this address at the moment": [
         "Kutsua ei tällä hetkellä ole mahdollista lähettää tähän osoitteeseen"
+      ],
+      "Could not confirm this invite at the moment": [
+        "Tätä kutsua ei voitu vahvistaa tällä hetkellä"
       ],
       "Could not leave vault.": [
         "Holvista ei voitu poistua."
@@ -640,15 +670,14 @@
         "${ trialDaysLeft } päivä jäljellä",
         "${ trialDaysLeft } päivää jäljellä"
       ],
-      "${ vault.count } item": [
-        "${ vault.count } kohde",
-        "${ vault.count } kohdetta"
-      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "${ PASS_APP_NAME } -sovelluksesta on saatavilla uusi versio. Nauti uusista ominaisuuksista ja vikakorjauksista päivittämällä se."
       ],
       "Access ${ PASS_APP_NAME } via this icon": [
         "Käytä ${ PASS_APP_NAME }ia tästä kuvakkeesta"
+      ],
+      "Access successfully confirmed": [
+        "Pääsyn vahvistus onnistui"
       ],
       "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
         "${ PASS_APP_NAME } -istunnon lukituksen avaus vaatii PIN-koodin"
@@ -692,14 +721,14 @@
       "Check out all the exclusive features that are available to you for a limited time.": [
         "Tutustu kaikkiin ainutlaatuisiin ominaisuuksiin, jotka ovat käytettävissäsi rajoitetun ajan."
       ],
+      "Congratulations, your access has been confirmed": [
+        "Onnittelut, pääsysi on vahvistettu"
+      ],
       "Copied to clipboard": [
         "Kopioitiin leikepöydälle"
       ],
       "Creating alias...": [
         "Luodaan aliasta.."
-      ],
-      "Custom fields": [
-        "Omat kentät"
       ],
       "Decrypting your data": [
         "Tietojesi salausta puretaan"
@@ -740,6 +769,12 @@
       "Follow these simple steps to get the best experience:": [
         "Noudata näitä yksinkertaisia ohjeita parasta kokemusta varten:"
       ],
+      "For security reason, your access needs to be confirmed": [
+        "Turvallisuussyistä pääsysi on vahvistettava"
+      ],
+      "For security reasons, your access needs to be confirmed": [
+        "Turvallisuussyistä pääsysi on vahvistettava"
+      ],
       "Free Trial": [
         "Ilmainen kokeilu"
       ],
@@ -748,6 +783,9 @@
       ],
       "Generating alias...": [
         "Luodaan aliasta.."
+      ],
+      "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
+        "Tilaa Pass Plus ja saat rajattomasti aliaksia, nautit ainutlaatuisista ominaisuuksista ja tuet meitä."
       ],
       "Here you will find all the necessary information to get you started.": [
         "Tästä saat kaikki tarvittavat tiedot, jotta pääset alkuun."
@@ -786,9 +824,6 @@
       "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
         "Siirrä tietosi tietosi muista salasanahallinnoista tallentamalla ne niiden tarjoamilla vientivalinnoilla ja tuo ne ${ PASS_APP_NAME }iin alla olevalla lomakkeella. Kun kaikki kohteet on tuotu, poista aiemmin tallentamasi vientitiedosto."
       ],
-      "Integrated 2FA authenticator": [
-        "Sisäänrakennettu kaksivaiheinen todentaja"
-      ],
       "Internet connection lost": [
         "Internet-yhteys katkesi"
       ],
@@ -800,6 +835,9 @@
       ],
       "Invite successfully resent": [
         "Kutsun uudelleenlähetys onnistui"
+      ],
+      "Invite successfully sent": [
+        "Kutsun lähetys onnistui"
       ],
       "invites you to access items in": [
         "kutsui sinut käyttämään kohteita holvista"
@@ -873,6 +911,9 @@
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Päivää vanhemmat salasanat poistetaan historiasta automaattisesti."
+      ],
+      "Pending access to the shared data": [
+        "Odotetaan pääsyä jaettuihin tietoihin"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Kiinnitä ${ PASS_APP_NAME } työkalupalkkiisi"
@@ -962,6 +1003,9 @@
       "Unable to copy to clipboard": [
         "Leikepöydälle kopiointi epäonnistui"
       ],
+      "Unlimited Aliases": [
+        "Rajattomasti aliaksia"
+      ],
       "Unlock it with your PIN to access the settings": [
         "Avaa lukitus PIN-koodillasi päästäksesi asetuksiin."
       ],
@@ -970,6 +1014,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Päivitä ${ PASS_APP_NAME }"
+      ],
+      "Use vaults to share this item with others.": [
+        "Jaa tämä kohde muiden kanssa holvien avulla."
       ],
       "User's access removed": [
         "Käyttäjän käyttöoikeus poistettiin"
@@ -1225,6 +1272,9 @@
       "Include numbers (0-9)": [
         "Sisällytä numerot (0-9)"
       ],
+      "Invitations": [
+        "Kutsut"
+      ],
       "Label": [
         "Tunniste"
       ],
@@ -1254,6 +1304,9 @@
       ],
       "Logins": [
         "Kirjautumistiedot"
+      ],
+      "Members": [
+        "Jäsenet"
       ],
       "Modified": [
         "Muokattu"
@@ -1535,6 +1588,9 @@
       "Select a suffix": [
         "Valitse jälkiliite"
       ],
+      "Shared vault": [
+        "Jaettu holvi"
+      ],
       "Unknown origin": [
         "Tuntematon alkuperä"
       ],
@@ -1546,6 +1602,12 @@
       ],
       "Write your note": [
         "Kirjoita muistiinpanosi"
+      ]
+    },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Holvi voi sisältää enintään ${ vault.targetMaxMembers } jäsenen.",
+        "Holvi voi sisältää enintään ${ vault.targetMaxMembers } jäsentä."
       ]
     },
     "Title": {
@@ -1602,6 +1664,12 @@
       ],
       "Low disk space": [
         "Tallennustila on vähissä"
+      ],
+      "Member limit": [
+        "Jäsenraja"
+      ],
+      "Pending access to the shared data": [
+        "Odotetaan pääsyä jaettuihin tietoihin"
       ],
       "Permanently remove all items ?": [
         "Poistetaanko kaikki kohteet pysyvästi?"
@@ -1792,6 +1860,15 @@
       ],
       "You cannot create more vaults than your subscription allows.": [
         "Et voi luoda enempää holveja kuin tilauksesi sallii."
+      ],
+      "You have reached the limit of members who can access this vault.": [
+        "Tähän holviin pääsevien jäsenten enimmäismäärä on saavutettu."
+      ],
+      "You have reached the limit of users in this vault. ${ upgradeLink }": [
+        "Olet saavuttanut tässä holvissa olevien käyttäjien enimmäismäärän. ${ upgradeLink }"
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "Tilauksessasi olevien holvien enimmäismäärä on saavutettu."
       ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "Sinulla on tallentamattomia muutoksia. Haluatko varmasti hylätä ne?"
