@@ -532,7 +532,7 @@
         "시간대 보이기"
       ],
       "Sign in": [
-        "가입하기"
+        "로그인"
       ],
       "Sign out": [
         "로그아웃"
@@ -2481,7 +2481,7 @@
         "가능하지 않은 폴더 이름들이 존재합니다. 해당 폴더의 이름들을 수정하기 위해 불러온 내역을 설정해 주세요."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "일부 폴더가 ${ MAIL_APP_NAME } 의 최대 글자 수를 초과합니다. 해당되는 이름을 수정해 주세요."
+        "일부 폴더가 ${ MAIL_APP_NAME }의 최대 글자 수를 초과합니다. 해당되는 이름을 수정해 주세요."
       ],
       "Some of your label names are reserved. Please customize the import to edit these names.": [
         "라벨 중 일부가 예약된 상태입니다. 이름을 변경하기 위해 불러올 항목을 선택해 주세요."
@@ -2490,7 +2490,7 @@
         "사용할 수 없는 라벨 이름이 있습니다. 해당하는 이름을 수정해 주세요."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "${ MAIL_APP_NAME } 의 최대 글자 수 제한을 초과하는 라벨 이름이 있습니다. 해당하는 이름을 수정해 주세요."
+        "${ MAIL_APP_NAME }의 최대 글자 수 제한을 초과하는 라벨 이름이 있습니다. 해당하는 이름을 수정해 주세요."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "문제가 발생했습니다. 진행하려면 ${ refresh } 해주세요. 그래도 이 오류가 지속될 경우 ${ supportTeam } 으로 문의해 주세요."
@@ -3333,7 +3333,7 @@
         "3개의 점 (...) 을 클릭하여 드롭다운 메뉴를 확장하세요."
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
-        "${ boldAppPassword } 을(를) 설정하고 ${ BRAND_NAME } 에서 표시되었던 기존 비밀번호를 입력하십시오."
+        "${ boldAppPassword }를 설정하고 ${ BRAND_NAME }에 표시되었던 기존 비밀번호를 입력하십시오."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "${ yahooMailLink } 의 프로필에서 ${ boldAccountInfo } 로 이동하세요."
@@ -3360,7 +3360,7 @@
         "연락처를 ${ BRAND_NAME } 으로 가져오려면 ${ knowledgeBaseLink } 이(가) 필요합니다. 가져오기를 시작하기 전에 이것을 다운로드 하세요."
       ],
       "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "${ BRAND_NAME } 에서 이메일을 불러오려면, Yahoo에서 ${ appPasswordLink } 이(가) 필요합니다. 다음을 통해 다운로드 하세요:"
+        "${ BRAND_NAME }에서 이메일을 불러오려면, Yahoo에서 ${ appPasswordLink }가 필요합니다. 다음을 통해 다운로드하세요:"
       ]
     },
     "Import instructions emphasis": {
@@ -3783,7 +3783,7 @@
         "로딩 중"
       ],
       "Loading ${ appName }": [
-        "로딩 중 ${ appName }"
+        "${ appName } 로딩 중"
       ],
       "Loading event": [
         "이벤트를 불러오는 중"
@@ -5919,7 +5919,7 @@
         "최대 ${ credits }의 크레딧 받기"
       ],
       "Invite friends to ${ BRAND_NAME }": [
-        "친구를 ${ BRAND_NAME } 에 초대하세요."
+        "친구를 ${ BRAND_NAME }에 초대하세요."
       ],
       "Public holidays are here!": [
         "공휴일이 여기 있습니다!"
