@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Icon } from '@proton/components/components';
+import { Icon, Tooltip } from '@proton/components/components';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 
 import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
@@ -40,15 +40,23 @@ const UsersOnboardingChecklistHeader = ({ smallVariant }: Props) => {
                     ? c('Get started checklist instructions').t`Congratulation, you finished!`
                     : c('Get started checklist instructions').t`Continue setting up your email`}
             </p>
-            <Button
-                icon
-                shape="ghost"
-                size="small"
-                className="flex-item-noshrink"
-                onClick={() => changeChecklistDisplay(CHECKLIST_DISPLAY_TYPE.HIDDEN)}
+            <Tooltip
+                title={c('Get started checklist instructions').t`Closing this means giving up the free storage bonus.`}
             >
-                <Icon data-testid="onboarding-checklist-header-hide-button" name="cross" />
-            </Button>
+                <Button
+                    icon
+                    shape="ghost"
+                    size="small"
+                    className="flex-item-noshrink"
+                    onClick={() => changeChecklistDisplay(CHECKLIST_DISPLAY_TYPE.HIDDEN)}
+                >
+                    <Icon
+                        data-testid="onboarding-checklist-header-hide-button"
+                        name="cross"
+                        alt={c('Action').t`Close the checklist`}
+                    />
+                </Button>
+            </Tooltip>
         </div>
     ) : (
         <div className="text-center">
