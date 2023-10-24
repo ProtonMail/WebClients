@@ -77,7 +77,7 @@ const getBabelLoader = ({ browserslist, isProduction = false, hasReactRefresh = 
 
 const getJsLoader = (options) => {
     return {
-        test: /\.js$|\.tsx?$/,
+        test: /\.js$|\.tsx?$|\.mjs$/,
         exclude: createRegex(
             excludeNodeModulesExcept(BABEL_INCLUDE_NODE_MODULES),
             excludeFiles([...BABEL_EXCLUDE_FILES, 'pre.ts', 'unsupported.ts'])
