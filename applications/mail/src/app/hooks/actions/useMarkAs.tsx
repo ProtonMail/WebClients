@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -6,6 +6,8 @@ import { useApi, useEventManager, useNotifications } from '@proton/components';
 import { markConversationsAsRead, markConversationsAsUnread } from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import { markMessageAsRead, markMessageAsUnread } from '@proton/shared/lib/api/messages';
+
+import { getIsElementReminded } from 'proton-mail/logic/snoozehelpers';
 
 import UndoActionNotification from '../../components/notifications/UndoActionNotification';
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../../constants';
@@ -76,6 +78,7 @@ export const useMarkAs = () => {
         const markAsReadAction = isMessage ? markMessageAsRead : markConversationsAsRead;
         const markAsUnreadAction = isMessage ? markMessageAsUnread : markConversationsAsUnread;
         const action = status === MARK_AS_STATUS.READ ? markAsReadAction : markAsUnreadAction;
+        const displaySnoozedReminder = status === MARK_AS_STATUS.READ ? false : getIsElementReminded(elements[0]);
 
         let rollback: (() => void) | undefined = () => {};
 
@@ -85,7 +88,10 @@ export const useMarkAs = () => {
                 // Stop the event manager to prevent race conditions
                 stop();
                 dispatch(backendActionStarted());
-                rollback = optimisticMarkAs(elements, labelID, { status });
+                rollback = optimisticMarkAs(elements, labelID, {
+                    status,
+                    displaySnoozedReminder,
+                });
                 const { UndoToken } = await api(
                     action(
                         elements.map((element) => element.ID),
