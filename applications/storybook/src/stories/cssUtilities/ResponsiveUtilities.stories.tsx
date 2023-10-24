@@ -13,7 +13,7 @@ const demoItemClasses = 'flex flex-align-items-center flex-justify-center bg-pri
 
 export const Responsive = () => {
     return (
-        <div className="border rounded overflow-hidden w100 relative flex text-2xs">
+        <div className="border rounded overflow-hidden w-full relative flex text-2xs">
             <div className="bg-primary rounded-sm">
                 <div
                     className={`${demoItemClasses} pl-4 sm:pl-8 md:pl-10 lg:pl-12 xl:pl-14`}
