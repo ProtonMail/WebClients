@@ -8,13 +8,12 @@ import FilterConditionsFormRow from './FilterConditionsFormRow';
 import useFilterConditions from './useFilterConditions';
 
 interface Props {
-    isNarrow: boolean;
     model: SimpleFilterModalModel;
     onChange: (newModel: SimpleFilterModalModel) => void;
     isEdit: boolean;
 }
 
-const FilterConditionsForm = ({ isEdit, isNarrow, model, onChange }: Props) => {
+const FilterConditionsForm = ({ isEdit, model, onChange }: Props) => {
     const { conditions, onDeleteCondition, onUpdateCondition, onAddCondition } = useFilterConditions(
         model.conditions.length ? model.conditions : undefined,
         (conditions) => onChange({ ...model, conditions })
@@ -22,9 +21,9 @@ const FilterConditionsForm = ({ isEdit, isNarrow, model, onChange }: Props) => {
 
     return (
         <>
-            <div className="flex-no-min-children flex-nowrap flex-column md:flex-row mb-0 border-bottom">
-                <div className={clsx(['w-full md:w-1/5', isNarrow && 'mb-4'])}>{c('Label').t`Statement`}</div>
-                <div className={clsx(['inline-flex flex-item-fluid', !isNarrow && 'ml-4'])}>
+            <div className="flex flex-nowrap flex-column md:flex-row mb-0 border-bottom gap-4">
+                <div className={clsx(['w-full md:w-1/4'])}>{c('Label').t`Statement`}</div>
+                <div className={clsx(['inline-flex w-full'])}>
                     <Radio
                         id="statement-all"
                         name="filterConditionStatement"
@@ -62,7 +61,6 @@ const FilterConditionsForm = ({ isEdit, isNarrow, model, onChange }: Props) => {
                     <FilterConditionsFormRow
                         isEdit={isEdit}
                         key={condition.id}
-                        isNarrow={isNarrow}
                         condition={condition}
                         conditionIndex={i}
                         handleDelete={onDeleteCondition}

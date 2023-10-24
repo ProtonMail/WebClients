@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
-import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { Editor, EditorActions, Toggle, Tooltip } from '../../../components';
@@ -11,13 +10,12 @@ import { useUser } from '../../../hooks';
 import { Actions } from '../interfaces';
 
 interface Props {
-    isNarrow: boolean;
     actions: Actions;
     handleUpdateActions: (onUpdateActions: Partial<Actions>) => void;
     isEdit: boolean;
 }
 
-const FilterActionsFormAutoReplyRow = ({ isEdit, isNarrow, actions, handleUpdateActions }: Props) => {
+const FilterActionsFormAutoReplyRow = ({ isEdit, actions, handleUpdateActions }: Props) => {
     const [user] = useUser();
     const { autoReply } = actions;
     const [editorVisible, setEditorVisible] = useState(!!autoReply);
@@ -42,15 +40,15 @@ const FilterActionsFormAutoReplyRow = ({ isEdit, isNarrow, actions, handleUpdate
     return (
         <>
             <div
-                className="flex-no-min-children flex-nowrap flex-column md:flex-row  align-items-center pt-4"
+                className="flex flex-nowrap flex-column md:flex-row align-items-center pt-4 gap-4"
                 data-testid="filter-modal:auto-reply-row"
             >
                 {user.hasPaidMail ? (
                     <>
-                        <label htmlFor="autoReply" className="w-full md:w-1/5 pt-2">
+                        <label htmlFor="autoReply" className="w-full md:w-1/4 pt-2">
                             <span>{c('Label').t`Send auto-reply`}</span>
                         </label>
-                        <div className={clsx(['flex flex-column flex-item-fluid pt-2', !isNarrow && 'ml-4'])}>
+                        <div className="flex flex-column w-full pt-2">
                             <Toggle
                                 id="autoReply"
                                 checked={editorVisible}
@@ -62,7 +60,7 @@ const FilterActionsFormAutoReplyRow = ({ isEdit, isNarrow, actions, handleUpdate
                     </>
                 ) : (
                     <>
-                        <div className={clsx(['w-full md:w-1/5 mr-4 pt-2', isNarrow && 'mb-4'])}>
+                        <div className="w-full md:w-1/4 pt-2">
                             <span className="mx-2">{c('Label').t`Send auto-reply`}</span>
                         </div>
                         <Tooltip title={c('Tooltip').t`This feature is only available for paid users`}>
