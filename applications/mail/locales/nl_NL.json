@@ -1298,6 +1298,77 @@
         "Verificatie afzender doorgegeven"
       ]
     },
+    "bf2023: Deal details": {
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus en ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } opslagruimte"
+      ],
+      "1 user": [
+        "1 gebruiker"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "3,000+ servers across 65+ countries": [
+        "Meer dan 3.000 servers in meer dan 65 landen"
+      ],
+      "6 users": [
+        "6 gebruikers"
+      ],
+      "Ad-blocker and malware protection": [
+        "Advertentieblokkering en bescherming tegen malware"
+      ],
+      "Extended version history": [
+        "Uitgebreide versiegeschiedenis bekijken"
+      ],
+      "High speed streaming": [
+        "Streamen met hoge snelheid"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Kortingen zijn gebaseerd op standaardprijzen per maand."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Uw abonnement wordt aan het einde van uw factureringscyclus automatisch verlengd tegen het standaard aanbiedingstarief met bijbehorende tijdsduur."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "30 dagen geld-terug-garantie"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Bekijk content van streamingdiensten, waaronder Netflix, Disney+, Prime Video en meer, waar u maar wilt."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
+        "Ondersteuning voor ${ domains } aangepaste e-maildomeinen, ${ addresses } e-mailadressen, ${ aliases } hide-my-email-aliassen, gedeelde agenda's en meer."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Ondersteuning voor ${ domains } aangepaste e-maildomeinen, ${ addresses } e-mailadressen, een ongelimiteerd aantal hide-my-email-aliassen, gedeelde agenda's en meer."
+      ],
+      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Beveilig uw e-mails en plan met end-to-end versleuteling. Inclusief ondersteuning voor aangepaste e-maildomeinen, 15 e-mailadressen, een onbeperkt aantal hide-my-email-aliassen, agenda delen en meer."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief versiegeschiedenis, versleuteld bestanden delen en meer."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Het speciaal ontworpen NetShield beschermt uw apparaten en versnelt uw browsen door advertenties, trackers en malware te blokkeren."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "Opslagruimte wordt gedeeld binnen alle ${ BRAND_NAME }-apps."
+      ],
+      "Store up to 200 versions of each file for up to 10 years.": [
+        "Bewaar tot 200 versies van elk bestand tot wel 10 jaar."
+      ]
+    },
     "Billing cycle option": {
       "Annually": [
         "Jaarlijks"
@@ -3830,6 +3901,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "Tot 6 gebruikers"
       ]
@@ -8102,6 +8182,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 gebruiker"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -8119,6 +8202,15 @@
       ],
       "Highest VPN speed": [
         "Hoogste VPN-snelheid"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium early access": [
         "Premium vroege toegang"
@@ -8164,14 +8256,24 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
+      ],
       "/ month": [
         "/ maand"
       ],
       "1 year": [
         "1 jaar"
       ],
+      "15 months": [
+        "15 maanden"
+      ],
       "2 years": [
         "2 jaar"
+      ],
+      "30 months": [
+        "30 maanden"
       ],
       "Billed at ${ amount } for 1 month": [
         "U betaalt ${ amount } voor 1 maand"
@@ -8600,6 +8702,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Premium Password Manager": [
         "Premium wachtwoordmanager"
       ]
