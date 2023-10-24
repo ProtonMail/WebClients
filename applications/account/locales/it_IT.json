@@ -366,7 +366,7 @@
         "Scarica il nostro modello CSV"
       ],
       "Download recovery file": [
-        "Scarica il file di ripristino"
+        "Scarica il file di recupero"
       ],
       "Download the Import-Export app": [
         "Scarica l'app Import-Export"
@@ -405,7 +405,7 @@
         "Modifica sieve"
       ],
       "Edit sign-in details": [
-        "Modifica dettagli di accesso"
+        "Modifica i dettagli di accesso"
       ],
       "Edit subscription": [
         "Modifica abbonamento"
@@ -426,7 +426,7 @@
         "Crittografa ed esporta"
       ],
       "Explore other ${ BRAND_NAME } plans": [
-        "Esplora altri piani ${ BRAND_NAME }"
+        "Esplora gli altri piani di ${ BRAND_NAME }"
       ],
       "Export": [
         "Esporta"
@@ -456,7 +456,7 @@
         "Genera chiave"
       ],
       "Generate new recovery phrase": [
-        "Generare nuova frase di recupero"
+        "Genera una nuova frase di recupero"
       ],
       "Generate recovery phrase": [
         "Genera frase di recupero"
@@ -972,7 +972,7 @@
         "Aggiorna"
       ],
       "Update recovery file": [
-        "Aggiorna il file di ripristino"
+        "Aggiorna il file di recupero"
       ],
       "Update recovery phrase": [
         "Aggiorna frase di recupero"
@@ -999,7 +999,7 @@
         "Usa il tema ${ label }"
       ],
       "Use a different card": [
-        "Utilizza una carta diversa"
+        "Usa una carta differente"
       ],
       "Use a different payment method": [
         "Usa un metodo di pagamento differente"
@@ -1008,7 +1008,7 @@
         "Usa il codice di autenticazione"
       ],
       "Use recovery code": [
-        "Utilizza un codice di recupero"
+        "Usa un codice di recupero"
       ],
       "Use your current email instead": [
         "Usa invece il tuo indirizzo email attuale"
@@ -1038,10 +1038,10 @@
         "Nullo"
       ],
       "Void all recovery files": [
-        "Annullare tutti i file di ripristino"
+        "Invalida tutti i file di recupero"
       ],
       "Void all recovery files?": [
-        "Annullare tutti i file di ripristino?"
+        "Invalidare tutti i file di recupero?"
       ],
       "What do I get?": [
         "Cosa ottengo?"
@@ -1288,6 +1288,115 @@
     "Baseline in trial plan": {
       "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "${ mailPlus }: la soluzione di posta e calendario incentrata sulla privacy per le tue esigenze di comunicazione quotidiane."
+      ]
+    },
+    "bf2023: Action": {
+      "**Add our encrypted password manager** for only ${ price }": [
+        "**Aggiungi il nostro password manager crittografato** ad appena ${ price }"
+      ],
+      "Add ${ PASS_APP_NAME }": [
+        "Aggiungi ${ PASS_APP_NAME }"
+      ],
+      "Add ${ plan } for ${ price } per month": [
+        "Aggiungi ${ plan } al costo di ${ price } al mese"
+      ],
+      "Add ${ plan } to your plan by subscribing to 15 months": [
+        "Aggiungi ${ plan } al tuo piano abbonandoti per 15 mesi"
+      ],
+      "Get the deal": [
+        "Scegli"
+      ],
+      "Remove": [
+        "Rimuovi"
+      ],
+      "Remove ${ PASS_APP_NAME }": [
+        "Rimuovi ${ PASS_APP_NAME }"
+      ],
+      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
+        "Abbonati per 15 mesi e avrai il nostro **password manager crittografato**: il costo aggiuntivo è di solo ${ priceNoSuffix } al mese!"
+      ]
+    },
+    "bf2023: Deal details": {
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus e ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } di archiviazione"
+      ],
+      "1 user": [
+        "1 utente"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "3,000+ servers across 65+ countries": [
+        "Oltre 3.000 server in più di 65 Paesi"
+      ],
+      "6 users": [
+        "6 utenti"
+      ],
+      "Ad-blocker and malware protection": [
+        "Ad-blocker e anti-malware"
+      ],
+      "Extended version history": [
+        "Cronologia estesa della versione"
+      ],
+      "High speed streaming": [
+        "Streaming ad alta velocità"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Password manager premium"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Gli sconti si basano sui prezzi mensili standard."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Alla fine del ciclo di fatturazione l'abbonamento si rinnoverà automaticamente con lo sconto e la durata standard."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "Garanzia 30 giorni soddisfatti o rimborsati"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Accedi ai contenuti di servizi di streaming come Netflix, Disney+, Prime Video e altro ancora, ovunque ti trovi."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
+        "Sono inclusi: supporto per ${ domains } dominio email personalizzato, ${ addresses } indirizzi email, ${ aliases } alias hide-my-email, condivisione del calendario e altro ancora."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Sono inclusi: supporto per ${ domains } dominio email personalizzato, ${ addresses } indirizzi email, alias hide-my-email illimitati, condivisione del calendario e altro ancora."
+      ],
+      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "Login sicuri su tutti i tuoi dispositivi. Include alias illimitati, condivisione, 2FA integrato e molto altro."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Proteggi le tue email e il tuo calendario con la crittografia end-to-end. Sono inclusi: supporto per domini email personalizzati, 15 indirizzi email, alias hide-my-email illimitati, condivisione del calendario e altro ancora."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Proteggi i tuoi file con l'archiviazione in cloud crittografata. Sono incluse la cronologia delle versioni, la sincronizzazione automatica, la condivisione di file crittografati e altre funzioni ancora."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield è progettato su misura per proteggere i dispositivi e accelerare la navigazione bloccando annunci, tracker e malware."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "Lo spazio di archiviazione è condiviso tra tutte le app ${ BRAND_NAME }."
+      ],
+      "Store up to 200 versions of each file for up to 10 years.": [
+        "Archivia oltre 200 versioni di ciascun file per un massimo di 10 anni."
       ]
     },
     "Billing cycle": {
@@ -3010,6 +3119,17 @@
         "Aiutaci a migliorare!"
       ]
     },
+    "drive_signup_2023: Info": {
+      "Advanced sharing security": [
+        "Sicurezza di condivisione avanzata"
+      ],
+      "Encrypted cloud storage for all your files": [
+        "Archiviazione su cloud crittografata per tutti i tuoi file"
+      ],
+      "Secure cloud storage and file sharing that protects your data": [
+        "Archiviazione su cloud crittografata e condivisione dei file che protegge i tuoi dati"
+      ]
+    },
     "Duration": {
       "120 minutes": [
         "120 minuti"
@@ -3189,7 +3309,7 @@
         "Abilita di nuovo"
       ],
       "Re-send confirmation email": [
-        "Reinvia email di conferma"
+        "Invia di nuovo l'email di conferma"
       ],
       "Remove “${ value }”": [
         "Rimuovi “${ value }”"
@@ -3265,8 +3385,8 @@
       "Forwarding is active": [
         "L'inoltro è attivo"
       ],
-      "Forwarding to ${ BRAND_NAME } addresses will keep your communication end-to-end encrypted. When forwarding externally, encryption might need to be removed.": [
-        "L'inoltro a indirizzi ${ BRAND_NAME } manterrà la comunicazione crittografata end-to-end. Quando l'inoltro è esterno, potrebbe essere necessario rimuovere la crittografia."
+      "Forwarding to ${ BRAND_NAME } addresses will keep your communication end-to-end encrypted. When forwarding externally, end-to-end encryption for the forwarding address will be disabled.": [
+        "L'inoltro a indirizzi ${ BRAND_NAME } manterrà la comunicazione crittografata end-to-end. Quando l'inoltro è esterno, la crittografia end-to-end per l'indirizzo di inoltro verrà disabilitata."
       ],
       "Forwarding to an address without end-to-end encryption requires disabling end-to-end encryption for your ${ boldForwarderEmail } email address. ": [
         "L'inoltro a un indirizzo senza la crittografia end-to-end richiede la disabilitazione della crittografia end-to-end per il tuo indirizzo email ${ boldForwarderEmail }. "
@@ -3402,7 +3522,7 @@
         "Eliminare l'inoltro?"
       ],
       "Email forwarding deactivated": [
-        "Inoltro delle email disattivato"
+        "Inoltro disattivato"
       ],
       "Forwarding activated": [
         "Inoltro delle email attivato"
@@ -3679,13 +3799,13 @@
         "Per favore genera le chiavi prima di provare a cambiare la tua password"
       ],
       "Please set a recovery email first": [
-        "Per favore imposta prima un'email di recupero"
+        "Imposta prima un indirizzo email di recupero"
       ],
       "Please set a recovery phone number first": [
         "Imposta prima un numero di telefono di recupero"
       ],
       "Please set a recovery/notification email first": [
-        "Per favore imposta prima un'email di recupero/notifica"
+        "Imposta prima un'email di recupero/notifica"
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Effettua l'upgrade a un piano aziendale con più di 1 utente per ottenere il supporto multi-utente"
@@ -4724,6 +4844,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -4742,6 +4865,10 @@
       "Megabyte": [
         "Megabyte",
         "Megabyte"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabyte"
       ]
     },
     "Filter Actions": {
@@ -5538,6 +5665,9 @@
       "${ firstRemainingCalendarName } will be set as default calendar.": [
         "${ firstRemainingCalendarName } verrà impostato come calendario predefinito."
       ],
+      "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
+        "${ inviterEmailJSX } vuole condividere dei dati con te su ${ PASS_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } può anche essere usato con una sola password, la quale sostituisce sia la password d'accesso che quella della casella di posta. Per passare alla modalità ad una password, inserisci la password desiderata e fai clic su Salva."
       ],
@@ -5668,7 +5798,7 @@
         "Un numero di telefono può essere utilizzato solo per verificare un account ${ BRAND_NAME }"
       ],
       "A recovery file lets you unlock and view your data after an account reset": [
-        "Un file di ripristino ti consente di sbloccare e visualizzare i tuoi dati dopo il ripristino dell'account"
+        "Un file di recupero ti consente di sbloccare e visualizzare i tuoi dati dopo il recupero dell'account"
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
         "Una frase di recupero ti consente di accedere al tuo account e recuperare i tuoi messaggi crittografati se dimentichi la password"
@@ -5695,7 +5825,7 @@
         "Account aggiornato con successo"
       ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
-        "Attiva almeno un metodo di ripristino dati per essere sicuro di poter continuare ad accedere ai contenuti del tuo account ${ BRAND_NAME }, se dovessi perdere la tua password."
+        "Attiva almeno un metodo di recupero dei dati per essere sicuro di poter continuare ad accedere ai contenuti del tuo account ${ BRAND_NAME } se dovessi perdere la tua password."
       ],
       "active": [
         "attivo"
@@ -5745,15 +5875,6 @@
       ],
       "Admin account allocation": [
         "Allocazione dell'account amministratore"
-      ],
-      "After this date, you'll be billed every 12 months at the normal yearly rate.": [
-        "Dopo questa data, sarai addebitato ogni 12 mesi alla normale rata annuale."
-      ],
-      "After this date, you'll be billed every 24 months at the normal 2-year rate.": [
-        "Dopo questa data, sarai addebitato ogni 24 mesi alla normale rata biennale."
-      ],
-      "After this date, you'll be billed every month at the regular price.": [
-        "Dopo questa data, sarai addebitato ogni mese al prezzo normale."
       ],
       "Align left": [
         "Allinea a sinistra"
@@ -5852,7 +5973,7 @@
         "Sei sicuro di voler eliminare quest'etichetta?"
       ],
       "Are you sure you want to disable two-factor authentication?": [
-        "Sei sicuro di voler disattivare l'autenticazione a due fattori?"
+        "Sei sicuro di voler disabilitare l'autenticazione a due fattori?"
       ],
       "Are you sure you want to discard your changes?": [
         "Vuoi davvero ignorare le modifiche?"
@@ -5944,6 +6065,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Condividendo i dettagli dell'evento completi di questo calendario, accetti di concedere a ${ BRAND_NAME } l'accesso a queste informazioni crittografate del calendario."
       ],
+      "Cancel anytime": [
+        "Annulla in qualsiasi momento"
+      ],
       "Center": [
         "Centra"
       ],
@@ -6031,7 +6155,7 @@
         "Personalizzato annuale"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Personalizza l'aspetto delle applicazioni ${ BRAND_NAME }"
+        "Personalizza l'aspetto delle applicazioni di ${ BRAND_NAME }"
       ],
       "Daily": [
         "Giornalmente"
@@ -6090,7 +6214,7 @@
         "Scarica il nostro modello CSV, compila i dettagli utente e poi carica il file CSV completo per creare più account per questi utenti."
       ],
       "Download recovery file": [
-        "Scarica il file di ripristino"
+        "Scarica il file di recupero"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Scarica oggi stesso la tua app preferita e porta la privacy con te ovunque tu vada."
@@ -6239,6 +6363,9 @@
       "Get ${ upsellPlanName }": [
         "Scegli ${ upsellPlanName }"
       ],
+      "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
+        "Ottieni l'accesso creando un account ${ BRAND_NAME } e accettando l'invito."
+      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Assegna al token un nome descrittivo, ad esempio il servizio con cui prevedi di utilizzarlo, e seleziona uno dei tuoi indirizzi di dominio personalizzati attivi. Solo questo indirizzo potrà inviare email con questo token."
       ],
@@ -6309,7 +6436,7 @@
         "Se procedi con il downgrade, perderai l'accesso alle funzionalità a pagamento di ${ VPN_APP_NAME }."
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "Se di recente hai reimpostato la tua password, puoi usare un metodo di recupero dati per sbloccare i tuoi dati"
+        "Se hai recentemente reimpostato la tua password, puoi usare un metodo di recupero dei dati per sbloccare i tuoi dati"
       ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
         "Se vuoi mantenere un record SPF già esistente, ti basta aggiungere ${ spf } a questo dopo il ${ spfValue }. Non creare multipli record SPF."
@@ -6542,7 +6669,7 @@
         "Nessuna carta di credito richiesta"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
-        "Nessun metodo di recupero dati impostato; rischi di perdere l'accesso ai tuoi dati"
+        "Nessun metodo di recupero dei dati impostato; rischi di perdere l'accesso ai tuoi dati"
       ],
       "No folder selected": [
         "Nessuna cartella selezionata"
@@ -6626,7 +6753,7 @@
         "Esistono altri amministratori nella tua organizzazione, sei responsabile di comunicare loro la nuova password."
       ],
       "Outdated recovery file; update to ensure access to your data": [
-        "File di ripristino obsoleto; aggiornare per garantire l'accesso ai tuoi dati"
+        "File di recupero obsoleto; aggiornare per garantire l'accesso ai tuoi dati"
       ],
       "Outdated recovery methods; update to ensure access to your data": [
         "Metodi di recupero obsoleti; aggiornare per garantire l'accesso ai tuoi dati"
@@ -6770,7 +6897,7 @@
         "File di recupero scaricato"
       ],
       "Recovery files have been voided": [
-        "I file di ripristino sono stati annullati"
+        "I file di recupero sono stati invalidati"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Le informazioni di ripristino rimarranno su questo dispositivo a meno che tu non decida di eliminarle."
@@ -6927,7 +7054,7 @@
         "Spazio per gli utenti"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, e ${ DRIVE_APP_NAME }."
+        "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
       ],
       "Storage used by this user": [
         "Memoria utilizzata da questo utente"
@@ -7050,7 +7177,7 @@
         "Questa è una frase di 12 parole che ti è stato chiesto di impostare."
       ],
       "This is a recovery file or encryption key you may have previously saved.": [
-        "Questo è un file di ripristino o una chiave di crittografia che potresti aver salvato in precedenza."
+        "Questo è un file di recupero o una chiave di crittografia che potresti aver salvato in precedenza."
       ],
       "This is an encryption key you may have previously saved.": [
         "Questa è una chiave di crittografia che potresti aver salvato in precedenza."
@@ -7077,10 +7204,10 @@
         "Questo utente è attualmente responsabile dei pagamenti per l'organizzazione. Abbassando il livello di questo membro, si diventa responsabile per pagamenti dell'organizzazione."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Questo annullerà il tuo attuale abbonamento e perderai tutti i benefici accumulati finora."
+        "Questo annullerà il tuo attuale abbonamento a pagamento e perderai i benefici di fedeltà che hai accumulato."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Questo annullerà il tuo attuale abbonamento a pagamento e perderai i benefici di fedeltà che hai accumulato. Il saldo residuo dell'abbonamento verrà restituito come credito dell'account."
+        "Questo annullerà il tuo attuale abbonamento a pagamento e perderai i benefici di fedeltà che hai accumulato. Il saldo residuo dell'abbonamento verrà restituito come crediti dell'account."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
         "Questo eliminerà tutte le versioni precedenti dei tuoi file più vecchie di ${ rententionLabel }."
@@ -7089,7 +7216,7 @@
         "Questo eliminerà tutte le versioni precedenti dei tuoi file."
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
-        "Questo disabiliterà la tua frase di recupero corrente. Non potrai utilizzarla per accedere al tuo account o decriptare i tuoi dati."
+        "Questo disabiliterà la tua frase di recupero attuale. Non potrai usarla per accedere al tuo account o decriptare i tuoi dati."
       ],
       "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
         "Questo scaricherà un file contenente la tua chiave privata. Proteggi questo file crittografandolo con una password."
@@ -7140,7 +7267,7 @@
         "Per decrittografare e visualizzare i dati bloccati dopo la reimpostazione della password, seleziona un metodo di ripristino."
       ],
       "To ensure continuous access to your account, set an account recovery method": [
-        "Per assicurare l'accesso continuo al tuo profilo, imposta un metodo di recupero del profilo"
+        "Per assicurare l'accesso continuo al tuo account, imposta un metodo di recupero dell'account"
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Per garantire che tu non perda dati importanti, ${ DRIVE_APP_NAME } salva vecchie versioni dei tuoi file mentre tu e i tuoi collaboratori effettuate modifiche. Seleziona per quanto tempo ${ BRAND_NAME } deve mantenere versioni precedenti."
@@ -7233,7 +7360,7 @@
         "Fino a ${ FAMILY_MAX_USERS } utenti"
       ],
       "Update recovery file": [
-        "Aggiorna il file di ripristino"
+        "Aggiorna il file di recupero"
       ],
       "Update recovery phrase": [
         "Aggiorna frase di recupero"
@@ -7272,7 +7399,7 @@
         "Usa le seguenti credenziali quando ti connetti ai server ${ VPN_APP_NAME } senza applicazione. Esempi di utilizzo includono: Tunnelblick su macOS, OpenVPN su GNU/Linux."
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
-        "Utilizza l'indirizzo email selezionato come nome utente SMTP nel servizio esterno e il token generato come password SMTP."
+        "Usa l'indirizzo email selezionato come nome utente SMTP nel servizio esterno e il token generato come password SMTP."
       ],
       "Users": [
         "Utenti"
@@ -7395,7 +7522,7 @@
         "Quando imposti l'autenticazione a due fattori, forniamo codici di ripristino che puoi utilizzare per accedere se perdi l'accesso alla tua app di autenticazione."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
-        "Quando il tuo abbonamento si rinnova, applicheremo tutti i crediti disponibili prima di addebitare il metodo di pagamento sopra riportato."
+        "Quando il tuo abbonamento si rinnova, applicheremo tutti i crediti disponibili prima di addebitare il metodo di pagamento indicato qui sopra."
       ],
       "Whole organization": [
         "Tutta l'organizzazione"
@@ -7406,8 +7533,8 @@
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Con un piano Business o Enterprise, puoi acquistare ${ boldDedicatedServers } per la tua organizzazione e configurare ${ boldGateways } per controllare quali utenti possono accedervi."
       ],
-      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
-        "Con un indirizzo ${ BRAND_NAME } crittografato puoi utilizzare tutti i servizi di ${ BRAND_NAME_TWO }."
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Con un indirizzo ${ BRAND_NAME } crittografato, puoi utilizzare tutti i servizi di ${ BRAND_NAME }"
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Con il tuo piano attuale, puoi solo ricevere messaggi con il tuo indirizzo @pm.me. Effettua l'upgrade per inviare messaggi e creare indirizzi aggiuntivi utilizzando @pm.me."
@@ -7568,10 +7695,10 @@
         "Sarai presto reindirizzato a PayPal per verificare il pagamento."
       ],
       "You won’t be able to recover locked data using your downloaded recovery files.": [
-        "Non sarai in grado di recuperare i dati crittografati utilizzando i tuoi file di ripristino scaricati."
+        "Non potrai recuperare i dati crittografati usando i tuoi file di recupero scaricati."
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
-        "Non sarai in grado di recuperare i dati bloccati utilizzando i file di ripristino scaricati. Ciò annullerà anche le informazioni attendibili sul ripristino del dispositivo."
+        "Non potrai recuperare i dati bloccati usando i file di recupero scaricati. Questo invaliderà anche le informazioni di recupero sul tuo dispositivo affidabile."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Rimarrai connesso anche dopo aver chiuso il browser."
@@ -7613,7 +7740,7 @@
         "I tuoi dati sono pronti per essere importati da ${ importedEmailAddressStrong } al tuo account ${ BRAND_NAME }."
       ],
       "Your data recovery method is set": [
-        "Il tuo metodo di recupero dati è impostato"
+        "Il tuo metodo di recupero dei dati è impostato"
       ],
       "Your email will only be used for this one-time verification.": [
         "La tua email sarà utilizzata solo per questa verifica una tantum."
@@ -7663,9 +7790,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "La tua sottoscrizione è gestita da Mozilla. Per favore, contatta il supporto di Mozilla."
-      ],
-      "Your subscription will auto-renew on ${ renewalTime }.": [
-        "Il tuo abbonamento si rinnoverà automaticamente il ${ renewalTime }."
       ]
     },
     "info": {
@@ -8145,7 +8269,7 @@
         "Consenti il recupero via telefono"
       ],
       "Allow recovery by recovery phrase": [
-        "Consenti il ​​ripristino tramite frase di recupero"
+        "Consenti il ​​recupero tramite frase di recupero"
       ],
       "Allow recovery using a trusted device": [
         "Consenti il ​​ripristino utilizzando un dispositivo affidabile"
@@ -8397,7 +8521,7 @@
         "Numeri"
       ],
       "Disable animations": [
-        "Disabilita animazioni"
+        "Disabilita le animazioni"
       ],
       "Display name": [
         "Nome visualizzato"
@@ -8766,7 +8890,7 @@
         "Indirizzo email di recupero"
       ],
       "Recovery file": [
-        "File di ripristino"
+        "File di recupero"
       ],
       "Recovery phone number": [
         "Numero di telefono di recupero"
@@ -8862,7 +8986,7 @@
         "Etichette adesive"
       ],
       "Subscription options": [
-        "Opzioni dell'abbonamento"
+        "Opzioni di abbonamento"
       ],
       "Synchronize with system": [
         "Sincronizza con il sistema"
@@ -8910,7 +9034,7 @@
         "Carica 1 o più chiavi di crittografia"
       ],
       "Upload 1 or more recovery files or encryption keys": [
-        "Carica 1 o più file di ripristino o chiavi di crittografia"
+        "Carica 1 o più file di recupero o chiavi di crittografia"
       ],
       "URL": [
         "URL"
@@ -9035,16 +9159,16 @@
         "Comunicazioni ${ BRAND_NAME } sulle versioni beta"
       ],
       "${ BRAND_NAME } for Business newsletter": [
-        "Newsletter ${ BRAND_NAME } for Business"
+        "Newsletter di ${ BRAND_NAME } for Business"
       ],
       "${ BRAND_NAME } important announcements": [
-        "${ BRAND_NAME } annunci importanti"
+        "Annunci importanti di ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } newsletter": [
-        "${ BRAND_NAME } newsletter"
+        "Newsletter di ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } offers and promotions": [
-        "offerte e promozioni ${ BRAND_NAME }"
+        "Offerte e promozioni di ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } product announcements": [
         "Comunicazioni sui servizi ${ BRAND_NAME }"
@@ -9316,6 +9440,11 @@
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "Importa tutti i messaggi da ${ selectedItemsToImportCount } etichetta su ${ itemsToImportCount } ed etichettali come",
         "Importa tutti i messaggi da ${ selectedItemsToImportCount } etichette su ${ itemsToImportCount } ed etichettali come"
+      ]
+    },
+    "mail_signup_2023: Info": {
+      "Secure email that protects your privacy": [
+        "Un'email sicura che protegge la tua privacy"
       ]
     },
     "Maintenance mode": {
@@ -10062,6 +10191,10 @@
       ],
       "Vault and Item sharing (coming soon)": [
         "Condivisione di casseforti ed elementi (in arrivo)"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Condivisione delle casseforti (fino a ${ n } persona)",
+        "Condivisione delle casseforti (fino a ${ n } persone)"
       ]
     },
     "new_plans: feature info": {
@@ -10072,7 +10205,7 @@
         "Ottieni un numero illimitato di alias con SimpleLogin di ${ BRAND_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, e ${ DRIVE_APP_NAME }"
+        "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }"
       ],
       "Use your own custom email domain address, e.g., you@yourname.com": [
         "Usa l'indirizzo del tuo dominio email personalizzato, per esempio tu@tuonome.com"
@@ -10084,17 +10217,6 @@
       ],
       "Team management": [
         "Gestione del team"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "La tua prova termina ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -10184,6 +10306,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Stai godendo di un prezzo promozionale sul tuo piano attuale. Se esegui il downgrade del tuo account, perderai la possibilità di usufruire di questa promozione e non sarà più disponibile se provi ad abbonarti di nuovo."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "La tua prova termina ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10300,8 +10433,8 @@
         "Crea più indirizzi email per le tue identità online, ad es. JohnShopper@${ domain } per i profili di shopping, JohnNews@${ domain } per gli abbonamenti alle notizie"
       ],
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Crea fino a ${ n } calendario o aggiungi calendari di amici, familiari, colleghi e organizzazioni",
-        "Crea fino a ${ n } calendari o aggiungi calendari di amici, familiari, colleghi e organizzazioni"
+        "Crea fino a ${ n } calendario o aggiungi calendari di amici, famigliari, colleghi e organizzazioni",
+        "Crea fino a ${ n } calendari o aggiungi calendari di amici, famigliari, colleghi e organizzazioni"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Crea fino a ${ n } indirizzi email/alias che puoi assegnare ai membri della famiglia. Utilizzali per le identità online, ad esempio JohnShopper@${ domain } per gli account di acquisto."
@@ -10316,10 +10449,10 @@
         "Difenditi dalle minacce alla privacy VPN inviando il traffico Internet attraverso più server."
       ],
       "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "Condividi facilmente i tuoi calendari con colleghi, familiari e amici tramite un link"
+        "Condividi facilmente i tuoi calendari con colleghi, famigliari e amici tramite un link"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
-        "Condividi facilmente i tuoi calendari con familiari, amici o colleghi"
+        "Condividi facilmente i tuoi calendari con famigliari, amici o colleghi"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Ti assicura la ricezione di tutte le email inviate al tuo dominio, anche se l'indirizzo email non esiste, non esiste più o ha un errore di battitura"
@@ -10340,7 +10473,7 @@
         "Le etichette sono semplici tag che puoi aggiungere ai messaggi per renderli più facili da trovare o per applicare filtri"
       ],
       "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "Come una cartella, una cassaforte è un modo conveniente per organizzare i tuoi elementi. La condivisione delle casseforti con amici e familiari è in fase di realizzazione."
+        "Come una cartella, una cassaforte è un modo conveniente per organizzare i tuoi elementi. La condivisione delle casseforti con amici e famigliari è in fase di realizzazione."
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Proteggi le risorse della tua azienda dalla rete Internet pubblica e rendile accessibili solo tramite i tuoi gateway privati"
@@ -10424,16 +10557,16 @@
         "NetShield, appositamente progettato, protegge il dispositivo e velocizza la navigazione bloccando annunci, tracker e malware"
       ],
       "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Inizia con ${ freeStorageSize } e sblocca più spazio di archiviazione lungo il percorso. Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, e ${ DRIVE_APP_NAME }."
+        "Inizia con ${ freeStorageSize } e sblocca via via più spazio di archiviazione. Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, e ${ DRIVE_APP_NAME }"
+        "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
-        "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, e ${ DRIVE_APP_NAME }. Gli amministratori possono assegnare diverse quantità di spazio di archiviazione agli utenti nella loro organizzazione"
+        "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }. Gli amministratori possono assegnare quantità di spazio di archiviazione differenti agli utenti nella loro organizzazione"
       ],
       "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, e ${ DRIVE_APP_NAME }"
+        "Lo spazio di archiviazione è condiviso tra gli utenti su ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, e ${ DRIVE_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Supporto per protocolli di condivisione dei file come BitTorrent"
@@ -10442,7 +10575,7 @@
         "Indirizzi email unici che proteggono la tua identità online al volo e ti permettono di controllare cosa raggiunge la tua posta in arrivo. Da SimpleLogin di ${ BRAND_NAME }."
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        "Usa gli indirizzi del tuo dominio email personalizzato, es., tu@tuonome.com"
+        "Usa gli indirizzi del tuo dominio email personalizzato, ad esempio tu@il-tuo-nome.it"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
         "Non conserviamo alcun log di utilizzo delle sessioni di ciò che fai online, e non registriamo metadati che possono compromettere la tua privacy"
@@ -11020,7 +11153,7 @@
         "Offerta a tempo limitato"
       ],
       "Recommended": [
-        "Raccomandato"
+        "Consigliato"
       ],
       "Select your plan": [
         "Seleziona il tuo piano"
@@ -11081,6 +11214,9 @@
       "End-to-end encrypted notes": [
         "Note con crittografia end-to-end"
       ],
+      "End-to-end encryption": [
+        "Crittografia end-to-end"
+      ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Per soli **${ relativePrice } al mese** in più, puoi accedere a tutti i servizi premium di ${ BRAND_NAME }!"
       ],
@@ -11119,6 +11255,9 @@
       ],
       "Launching ${ PASS_APP_NAME }": [
         "Lanciando ${ PASS_APP_NAME }"
+      ],
+      "Limited time offer: Get ${ title } for free for 1 year!": [
+        "Offerta a tempo limitato: Ottieni ${ title } gratis per 1 anno!"
       ],
       "One easy subscription.": [
         "Un semplice abbonamento."
@@ -11180,6 +11319,9 @@
       "You currently have": [
         "Al momento hai"
       ],
+      "You have been invited to join ${ PASS_APP_NAME }": [
+        "Sei stato invitato a unirti a ${ PASS_APP_NAME }"
+      ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "La tua organizzazione ha accesso a ${ free }. Se desideri accedere alle funzionalità premium di ${ appName }, chiedi all'amministratore della tua organizzazione di eseguire l'upgrade."
       ]
@@ -11195,6 +11337,9 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Tutti i servizi Plus di ${ BRAND_NAME }.${ br }Un semplice abbonamento."
+      ],
+      "Create a ${ PASS_APP_NAME } account": [
+        "Crea un account ${ PASS_APP_NAME }"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Crea il tuo account ${ BRAND_NAME }"
@@ -12945,7 +13090,7 @@
         "Aggiungi filtro"
       ],
       "Add invoice details": [
-        "Aggiungi dettagli fattura"
+        "Aggiungi dettagli alle fatture"
       ],
       "Add new user": [
         "Aggiungi nuovo utente"
@@ -13171,7 +13316,7 @@
         "Dati bloccati"
       ],
       "Data recovery": [
-        "Recupero dati"
+        "Recupero dei dati"
       ],
       "Date": [
         "Data"
@@ -13229,7 +13374,7 @@
         "Disattiva ${ email }"
       ],
       "Disable two-factor authentication": [
-        "Disabilita l'autenticazione in due fattori"
+        "Disabilita l'autenticazione a due fattori"
       ],
       "Display name and signature": [
         "Nome visualizzato e firma"
@@ -13356,7 +13501,7 @@
         "Genera chiavi mancanti"
       ],
       "Generate new recovery phrase?": [
-        "Generare nuova frase di recupero?"
+        "Generare una nuova frase di recupero?"
       ],
       "Generate SMTP token": [
         "Genera token SMTP"
@@ -13546,7 +13691,7 @@
         "Elaborazione..."
       ],
       "Recommended": [
-        "Raccomandato"
+        "Consigliato"
       ],
       "Reconnect your account": [
         "Riconnetti il tuo account"
@@ -13558,7 +13703,7 @@
         "Recupero"
       ],
       "Recovery file": [
-        "File di ripristino"
+        "File di recupero"
       ],
       "Refer a friend": [
         "Segnala un amico"
@@ -13633,7 +13778,7 @@
         "Inviare promemoria email?"
       ],
       "Session management": [
-        "Gestione sessione"
+        "Gestione delle sessioni"
       ],
       "Set new password": [
         "Imposta nuova password"
@@ -13953,7 +14098,7 @@
         "Qualsiasi protezione applicata alle attività sospette"
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
-        "Passi automaticamente tra i tuoi temi preferiti per il giorno e per la notte in sincronia con le modalità di giorno e di notte del tuo sistema."
+        "Passa automaticamente tra i tuoi temi preferiti per il giorno e per la notte sincronizzandoli con le modalità di giorno e di notte del tuo sistema."
       ],
       "Customize import to reduce the number of folders": [
         "Personalizza l'importazione per ridurre il numero di cartelle"
@@ -14381,7 +14526,7 @@
         "La tua prova gratuita termina il ${ textDate }. ${ action }"
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
-        "Il tuo file di ripristino è obsoleto. Non può recuperare nuovi dati se ripristini nuovamente il tuo account."
+        "Il tuo file di recupero è obsoleto. Non può recuperare nuovi dati se recuperi nuovamente il tuo account."
       ],
       "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
         "La tua frase di recupero è obsoleta. Non può recuperare nuovi dati se ripristini nuovamente il tuo account."
