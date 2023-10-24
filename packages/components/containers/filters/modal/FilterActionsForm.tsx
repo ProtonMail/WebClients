@@ -10,13 +10,12 @@ import FilterActionsFormMarkAsRow from './FilterActionsFormMarkAsRow';
 interface Props {
     labels: Label[];
     folders: Folder[];
-    isNarrow: boolean;
     model: SimpleFilterModalModel;
     onChange: (newModel: SimpleFilterModalModel) => void;
     isEdit: boolean;
 }
 
-const FilterActionsForm = ({ isNarrow, labels, folders, model, onChange, isEdit }: Props) => {
+const FilterActionsForm = ({ labels, folders, model, onChange, isEdit }: Props) => {
     const onUpdateActions = (payload: Partial<Actions>) => {
         onChange({
             ...model,
@@ -29,28 +28,17 @@ const FilterActionsForm = ({ isNarrow, labels, folders, model, onChange, isEdit 
 
     return (
         <>
-            <FilterActionsFormLabelsRow
-                actions={model.actions}
-                handleUpdateActions={onUpdateActions}
-                labels={labels}
-                isNarrow={isNarrow}
-            />
+            <FilterActionsFormLabelsRow actions={model.actions} handleUpdateActions={onUpdateActions} labels={labels} />
             <FilterActionsFormFoldersRow
                 actions={model.actions}
                 handleUpdateActions={onUpdateActions}
                 folders={folders}
-                isNarrow={isNarrow}
             />
-            <FilterActionsFormMarkAsRow
-                actions={model.actions}
-                handleUpdateActions={onUpdateActions}
-                isNarrow={isNarrow}
-            />
+            <FilterActionsFormMarkAsRow actions={model.actions} handleUpdateActions={onUpdateActions} />
 
             <FilterActionsFormAutoReplyRow
                 actions={model.actions}
                 handleUpdateActions={onUpdateActions}
-                isNarrow={isNarrow}
                 isEdit={isEdit}
             />
         </>
