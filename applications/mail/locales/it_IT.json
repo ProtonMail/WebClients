@@ -359,7 +359,7 @@
         "Modifica il numero di telefono"
       ],
       "Edit sign-in details": [
-        "Modifica dettagli di accesso"
+        "Modifica i dettagli di accesso"
       ],
       "Email settings": [
         "Impostazioni email"
@@ -1087,7 +1087,7 @@
         "Aggiorna"
       ],
       "Update recovery file": [
-        "Aggiorna il file di ripristino"
+        "Aggiorna il file di recupero"
       ],
       "Update recovery phrase": [
         "Aggiorna frase di recupero"
@@ -1111,7 +1111,7 @@
         "Usa per inviare"
       ],
       "Use recovery code": [
-        "Utilizza un codice di recupero"
+        "Usa un codice di recupero"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
         "Usa il mouse per ridimensionare la vista. Se stai utilizzando la tastiera, puoi utilizzare i tasti freccia sinistra e destra per ridimensionare."
@@ -1302,6 +1302,77 @@
       ],
       "Sender verification passed": [
         "Verifica del mittente avvenuta con successo"
+      ]
+    },
+    "bf2023: Deal details": {
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus e ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } di archiviazione"
+      ],
+      "1 user": [
+        "1 utente"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "3,000+ servers across 65+ countries": [
+        "Oltre 3.000 server in più di 65 Paesi"
+      ],
+      "6 users": [
+        "6 utenti"
+      ],
+      "Ad-blocker and malware protection": [
+        "Ad-blocker e anti-malware"
+      ],
+      "Extended version history": [
+        "Cronologia estesa della versione"
+      ],
+      "High speed streaming": [
+        "Streaming ad alta velocità"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Gli sconti si basano sui prezzi mensili standard."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Alla fine del ciclo di fatturazione l'abbonamento si rinnoverà automaticamente con lo sconto e la durata standard."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "Garanzia 30 giorni soddisfatti o rimborsati"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Accedi ai contenuti di servizi di streaming come Netflix, Disney+, Prime Video e altro ancora, ovunque ti trovi."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
+        "Sono inclusi: supporto per ${ domains } dominio email personalizzato, ${ addresses } indirizzi email, ${ aliases } alias hide-my-email, condivisione del calendario e altro ancora."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Sono inclusi: supporto per ${ domains } dominio email personalizzato, ${ addresses } indirizzi email, alias hide-my-email illimitati, condivisione del calendario e altro ancora."
+      ],
+      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "Login sicuri su tutti i tuoi dispositivi. Include alias illimitati, condivisione, 2FA integrato e molto altro."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Proteggi le tue email e il tuo calendario con la crittografia end-to-end. Sono inclusi: supporto per domini email personalizzati, 15 indirizzi email, alias hide-my-email illimitati, condivisione del calendario e altro ancora."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Proteggi i tuoi file con l'archiviazione in cloud crittografata. Sono incluse la cronologia delle versioni, la sincronizzazione automatica, la condivisione di file crittografati e altre funzioni ancora."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield è progettato su misura per proteggere i dispositivi e accelerare la navigazione bloccando annunci, tracker e malware."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "Lo spazio di archiviazione è condiviso tra tutte le app ${ BRAND_NAME }."
+      ],
+      "Store up to 200 versions of each file for up to 10 years.": [
+        "Archivia oltre 200 versioni di ciascun file per un massimo di 10 anni."
       ]
     },
     "Billing cycle option": {
@@ -2957,7 +3028,7 @@
         "Sblocca cartelle illimitate, etichette e altre funzionalità premium quando effettui l'upgrade."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
-        "Utilizza il Trascina e Rilascia per classificare la priorità di unione tra i contatti. Deseleziona i contatti che non vuoi unire."
+        "Usa il Trascina e Rilascia per classificare la priorità di unione tra i contatti. Deseleziona i contatti che non vuoi unire."
       ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Non abbiamo trovato alcun tracker o URL di tracciamento noto in questa email."
@@ -3997,6 +4068,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -4015,6 +4089,10 @@
       "Megabyte": [
         "Megabyte",
         "Megabyte"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabyte"
       ]
     },
     "Filter": {
@@ -4288,7 +4366,7 @@
         "Aggiorna i tuoi login"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
-        "Utilizzando il tuo dispositivo mobile, scansiona questo codice QR o visita lo store iOS o Android."
+        "Con il tuo dispositivo mobile, scansiona questo codice QR o visita lo store iOS o Android."
       ],
       "We stop advertisers and data collectors from profiling you.": [
         "Impediamo agli inserzionisti e ai raccoglitori di dati di profilarti."
@@ -5038,7 +5116,7 @@
         "Personalizzato annuale"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
-        "Personalizza l'aspetto delle applicazioni ${ BRAND_NAME }"
+        "Personalizza l'aspetto delle applicazioni di ${ BRAND_NAME }"
       ],
       "Daily": [
         "Giornalmente"
@@ -7356,7 +7434,7 @@
         "Ottieni un numero illimitato di alias con SimpleLogin di ${ BRAND_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, e ${ DRIVE_APP_NAME }"
+        "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }"
       ],
       "Use your own custom email domain address, e.g., you@yourname.com": [
         "Usa l'indirizzo del tuo dominio email personalizzato, per esempio tu@tuonome.com"
@@ -7446,7 +7524,7 @@
         "Configura la tua organizzazione"
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
-        "Utilizza il raccoglitore delle app in alto a sinistra per accedere a tutti i servizi ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e ${ DRIVE_SHORT_APP_NAME }."
+        "Usa il raccoglitore delle app in alto a sinistra per accedere a tutti i servizi di ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e ${ DRIVE_SHORT_APP_NAME }."
       ]
     },
     "Online accounts": {
@@ -9362,7 +9440,7 @@
         "Automatico indica che il formato nel compositore è usato per inviare a questo utente. Testo semplice indica che il messaggio sarà sempre convertito in testo semplice all'invio."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
-        "Passi automaticamente tra i tuoi temi preferiti per il giorno e per la notte in sincronia con le modalità di giorno e di notte del tuo sistema."
+        "Passa automaticamente tra i tuoi temi preferiti per il giorno e per la notte sincronizzandoli con le modalità di giorno e di notte del tuo sistema."
       ],
       "Customize import to reduce the number of folders": [
         "Personalizza l'importazione per ridurre il numero di cartelle"

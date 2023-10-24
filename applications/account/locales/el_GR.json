@@ -3010,6 +3010,17 @@
         "Βοηθήστε μας να βελτιωθούμε!"
       ]
     },
+    "drive_signup_2023: Info": {
+      "Advanced sharing security": [
+        "Προχωρημένη διασφάλιση κοινοποίησης"
+      ],
+      "Encrypted cloud storage for all your files": [
+        "Κρυπτογραφημένος χώρος αποθήκευσης στο cloud για όλα τα αρχεία σας"
+      ],
+      "Secure cloud storage and file sharing that protects your data": [
+        "Ασφαλής αποθήκευση στο cloud και κοινή χρήση αρχείων που προστατεύει τα δεδομένα σας"
+      ]
+    },
     "Duration": {
       "120 minutes": [
         "120 λεπτά"
@@ -3265,8 +3276,8 @@
       "Forwarding is active": [
         "Η προώθηση είναι ενεργοποιημένη"
       ],
-      "Forwarding to ${ BRAND_NAME } addresses will keep your communication end-to-end encrypted. When forwarding externally, encryption might need to be removed.": [
-        "Η προώθηση σε διευθύνσεις ${ BRAND_NAME } θα διατηρήσει κρυπτογραφημένη την επικοινωνία σας από άκρο σε άκρο. Κατά την εξωτερική προώθηση, η κρυπτογράφηση ενδέχεται να πρέπει να καταργηθεί."
+      "Forwarding to ${ BRAND_NAME } addresses will keep your communication end-to-end encrypted. When forwarding externally, end-to-end encryption for the forwarding address will be disabled.": [
+        "Η προώθηση σε διευθύνσεις ${ BRAND_NAME } θα διατηρήσει κρυπτογραφημένη την επικοινωνία σας από άκρο σε άκρο. Κατά την εξωτερική προώθηση, η κρυπτογράφηση από άκρο σε άκρο θα καταργηθεί."
       ],
       "Forwarding to an address without end-to-end encryption requires disabling end-to-end encryption for your ${ boldForwarderEmail } email address. ": [
         "Η προώθηση σε μια διεύθυνση χωρίς κρυπτογράφηση από άκρο σε άκρο απαιτεί απενεργοποίηση της κρυπτογράφησης από άκρο σε άκρο για τη ${ boldForwarderEmail } \n διεύθυνση email σας. "
@@ -4724,6 +4735,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -4742,6 +4756,10 @@
       "Megabyte": [
         "Megabyte",
         "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Filter Actions": {
@@ -5746,15 +5764,6 @@
       "Admin account allocation": [
         "Κατανομή στον λογαριασμό του διαχειριστή"
       ],
-      "After this date, you'll be billed every 12 months at the normal yearly rate.": [
-        "Μετά από αυτήν την ημερομηνία, θα χρεώνεστε κάθε 12 μήνες με την κανονική ετήσια τιμή."
-      ],
-      "After this date, you'll be billed every 24 months at the normal 2-year rate.": [
-        "Μετά από αυτήν την ημερομηνία, θα χρεώνεστε κάθε 24 μήνες με την κανονική τιμή 2 ετών."
-      ],
-      "After this date, you'll be billed every month at the regular price.": [
-        "Μετά από αυτήν την ημερομηνία, θα χρεώνεστε κάθε μήνα στην κανονική τιμή."
-      ],
       "Align left": [
         "Στοίχιση αριστερά"
       ],
@@ -5943,6 +5952,9 @@
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Κοινοποιώντας όλες τις λεπτομέρειες των εκδηλώσεων αυτού του ημερολογίου, αποδέχεστε να παραχωρήσετε στη ${ BRAND_NAME } πρόσβαση στις κρυπτογραφημένες πληροφορίες του ημερολογίου."
+      ],
+      "Cancel anytime": [
+        "Ακύρωσε οποιαδήποτε στιγμή"
       ],
       "Center": [
         "Κέντρο"
@@ -7406,8 +7418,8 @@
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Με ένα Business ή Enterprise πλάνο, μπορείτε να αγοράσετε ${ boldDedicatedServers } για τον οργανισμό σας και να ρυθμίσετε τις ${ boldGateways } για να ελέγχετε ποιοι χρήστες μπορούν να έχουν πρόσβαση σε αυτές."
       ],
-      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
-        "Με κρυπτογραφημένη διεύθυνση ${ BRAND_NAME }, μπορείτε να χρησιμοποιήσετε όλες τις ${ BRAND_NAME_TWO } υπηρεσίες"
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Με κρυπτογραφημένη διεύθυνση ${ BRAND_NAME }, μπορείτε να χρησιμοποιήσετε όλες τις ${ BRAND_NAME } υπηρεσίες"
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Με το τρέχον πρόγραμμά σας, μπορείτε να λαμβάνετε μηνύματα μόνο με τη διεύθυνση @pm.me σας. Κάντε αναβάθμιση για να στείλετε μηνύματα και να δημιουργήσετε πρόσθετες διευθύνσεις χρησιμοποιώντας @pm.me."
@@ -7663,9 +7675,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Η συνδρομή σας διαχειρίζεται απο το Mozilla. Επικοινωνήστε με την υποστήριξη του Mozilla."
-      ],
-      "Your subscription will auto-renew on ${ renewalTime }.": [
-        "Η συνδρομή σας θα ανανεωθεί αυτόματα στις ${ renewalTime }."
       ]
     },
     "info": {
@@ -9318,6 +9327,11 @@
         "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } ετικέτες και επισημάνετε τα ως"
       ]
     },
+    "mail_signup_2023: Info": {
+      "Secure email that protects your privacy": [
+        "Ασφαλές ηλεκτρονικό ταχυδρομείο που προστατεύει το απόρρητό σας"
+      ]
+    },
     "Maintenance mode": {
       "Please check back in a few minutes.": [
         "Παρακαλούμε επανελέγξτε σε λίγα λεπτά."
@@ -10090,17 +10104,6 @@
         "Διαχείριση ομάδας"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Ειδάλλως η πρόσβαση στον λογαριασμό σας θα περιοριστεί, και εν τέλη ο λογαριασμός σας θα απενεργοποιηθεί."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προηγμένα χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } που λήγει σε ${ last4 }"
@@ -10188,6 +10191,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Απολαμβάνετε μια τιμή προσφοράς στο τρέχον πλάνο σας. Εάν υποβαθμίσετε τον λογαριασμό σας, θα χάσετε την τιμή προσφοράς και δε θα είναι διαθέσιμη εάν προσπαθήσετε να εγγραφείτε ξανά."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Ειδάλλως η πρόσβαση στον λογαριασμό σας θα περιοριστεί, και εν τέλη ο λογαριασμός σας θα απενεργοποιηθεί."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προηγμένα χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11082,6 +11096,9 @@
       "End-to-end encrypted notes": [
         "Διατερματικά κρυπτογραφημένες σημειώσεις"
       ],
+      "End-to-end encryption": [
+        "Διατερματική κρυπτογράφηση"
+      ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Με μόνο **${ relativePrice } ανά μήνα** παραπάνω, θα έχετε πρόσβαση σε όλες τις premium υπηρεσίες του ${ BRAND_NAME }!"
       ],
@@ -11120,6 +11137,9 @@
       ],
       "Launching ${ PASS_APP_NAME }": [
         "Εκκίνηση του ${ PASS_APP_NAME }"
+      ],
+      "Limited time offer: Get ${ title } for free for 1 year!": [
+        "Προσφορά περιορισμένου χρόνου: Αποκτήστε ${ title } δωρεάν για 1 χρόνο!"
       ],
       "One easy subscription.": [
         "Μία εύκολη συνδρομή."

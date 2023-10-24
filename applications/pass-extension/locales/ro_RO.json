@@ -59,6 +59,9 @@
       "Confirm": [
         "Confirmare"
       ],
+      "Confirm access": [
+        "Confirmare acces"
+      ],
       "Continue": [
         "Continuare"
       ],
@@ -80,6 +83,9 @@
       "Create a ${ BRAND_NAME } account": [
         "Creare cont ${ BRAND_NAME }"
       ],
+      "Create a new vault to share": [
+        "Creați un seif nou pentru partajare"
+      ],
       "Create alias": [
         "Creare alias"
       ],
@@ -97,6 +103,9 @@
       ],
       "Creating vault": [
         "Se creează seiful"
+      ],
+      "Customize": [
+        "Personalizare"
       ],
       "Delete": [
         "Ștergere"
@@ -212,6 +221,9 @@
       "More options": [
         "Mai multe opțiuni"
       ],
+      "Move to a shared vault": [
+        "Mutare într-un seif partajat"
+      ],
       "Move to another vault": [
         "Mutare în alt seif"
       ],
@@ -223,6 +235,9 @@
       ],
       "Not now": [
         "Nu acum"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open in a window": [
         "Deschidere într-o fereastră"
@@ -244,6 +259,9 @@
       ],
       "Regenerate": [
         "Regenerare"
+      ],
+      "Reject": [
+        "Respingere"
       ],
       "Reject invitation": [
         "Refuzare invitație"
@@ -284,6 +302,9 @@
       "Share": [
         "Partajare"
       ],
+      "Share this vault": [
+        "Partajare acest seif"
+      ],
       "Share vault": [
         "Partajare seif"
       ],
@@ -320,11 +341,17 @@
       "Update": [
         "Actualizare"
       ],
+      "Update vault": [
+        "Actualizare seif"
+      ],
       "Updating": [
         "Se actualizează"
       ],
       "Upgrade": [
         "Modificare"
+      ],
+      "Upgrade now to share with more people": [
+        "Schimbați planul acum pentru a partaja cu mai mulți oameni"
       ],
       "Upgrade to keep these features": [
         "Modificați planul pentru a păstra aceste parole"
@@ -375,6 +402,9 @@
       ],
       "Cannot send invitation to this address at the moment": [
         "Momentan nu se poate trimite invitația la această adresă."
+      ],
+      "Could not confirm this invite at the moment": [
+        "Nu s-a putut confirma această invitație momentan."
       ],
       "Could not leave vault.": [
         "Nu s-a putut părăsi seiful."
@@ -653,16 +683,14 @@
         "Au mai rămas ${ trialDaysLeft } zile",
         "Au mai rămas ${ trialDaysLeft } de zile"
       ],
-      "${ vault.count } item": [
-        "${ vault.count } articol",
-        "${ vault.count } articole",
-        "${ vault.count } de articole"
-      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Este disponibilă o versiune nouă ${ PASS_APP_NAME }. Actualizați-o pentru a vă bucura de cele mai recente caracteristici și remedieri de erori."
       ],
       "Access ${ PASS_APP_NAME } via this icon": [
         "Accesați ${ PASS_APP_NAME } cu această pictogramă"
+      ],
+      "Access successfully confirmed": [
+        "Acces confirmat."
       ],
       "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
         "Accesul la ${ PASS_APP_NAME } va necesita un cod PIN pentru a vă debloca sesiunea."
@@ -706,14 +734,14 @@
       "Check out all the exclusive features that are available to you for a limited time.": [
         "Încercați toate funcțiile exclusive care vă sunt disponibile pentru o perioadă limitată de timp."
       ],
+      "Congratulations, your access has been confirmed": [
+        "Accesul v-a fost confirmat."
+      ],
       "Copied to clipboard": [
         "Copiat în memorie"
       ],
       "Creating alias...": [
         "Se creează aliasul…"
-      ],
-      "Custom fields": [
-        "Câmpuri personale"
       ],
       "Decrypting your data": [
         "Se decriptează datele"
@@ -754,6 +782,12 @@
       "Follow these simple steps to get the best experience:": [
         "Urmați acești pași simpli pentru a obține cea mai bună experiență:"
       ],
+      "For security reason, your access needs to be confirmed": [
+        "Din motive de securitate, accesul trebuie să vă fie confirmat."
+      ],
+      "For security reasons, your access needs to be confirmed": [
+        "Din motive de securitate, accesul trebuie să vă fie confirmat."
+      ],
       "Free Trial": [
         "Evaluare gratuită"
       ],
@@ -762,6 +796,9 @@
       ],
       "Generating alias...": [
         "Se generează aliasul…"
+      ],
+      "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
+        "Obțineți pseudonime nelimitate, bucurați-vă de funcții exclusive și sprijiniți-ne abonându-vă la Pass Plus."
       ],
       "Here you will find all the necessary information to get you started.": [
         "Aici veți găsi toate informațiile necesare pentru a începe."
@@ -801,9 +838,6 @@
       "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
         "Pentru a vă migra datele către ${ PASS_APP_NAME } de la un alt manager de parole, exportați parolele și importați-le folosind formularul de mai jos. După ce toate articolele au fost importate, ștergeți fișierul exportat anterior."
       ],
-      "Integrated 2FA authenticator": [
-        "Autentificare cu doi factori integrată"
-      ],
       "Internet connection lost": [
         "Conexiunea la internet s-a întrerupt"
       ],
@@ -815,6 +849,9 @@
       ],
       "Invite successfully resent": [
         "Invitația a fost retrimisă."
+      ],
+      "Invite successfully sent": [
+        "Invitația a fost trimisă."
       ],
       "invites you to access items in": [
         "vă invită să accesați articolele din"
@@ -889,6 +926,9 @@
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Parolele mai vechi de o zi sunt șterse automat din istoric."
+      ],
+      "Pending access to the shared data": [
+        "În așteptarea accesului la datele partajate."
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Fixați ${ PASS_APP_NAME } pe bara de unelte"
@@ -979,6 +1019,9 @@
       "Unable to copy to clipboard": [
         "Nu se poate copia în memorie."
       ],
+      "Unlimited Aliases": [
+        "Aliasuri nelimitate"
+      ],
       "Unlock it with your PIN to access the settings": [
         "Deblocați-o cu codul PIN pentru a accesa setările."
       ],
@@ -987,6 +1030,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Actualizare ${ PASS_APP_NAME }"
+      ],
+      "Use vaults to share this item with others.": [
+        "Folosiți seifurile pentru a partaja acest articol cu alții."
       ],
       "User's access removed": [
         "Accesul utilizatorului a fot eliminat."
@@ -1245,6 +1291,9 @@
       "Include numbers (0-9)": [
         "Includere cifre (0-9)"
       ],
+      "Invitations": [
+        "Invitații"
+      ],
       "Label": [
         "Eticheta"
       ],
@@ -1274,6 +1323,9 @@
       ],
       "Logins": [
         "Conectări"
+      ],
+      "Members": [
+        "Membri"
       ],
       "Modified": [
         "Modificat"
@@ -1555,6 +1607,9 @@
       "Select a suffix": [
         "Selectați un sufix"
       ],
+      "Shared vault": [
+        "Seif partajat"
+      ],
       "Unknown origin": [
         "Origine necunoscută"
       ],
@@ -1566,6 +1621,13 @@
       ],
       "Write your note": [
         "Scrieți-vă nota"
+      ]
+    },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Seifurile nu pot conține mai mult de ${ vault.targetMaxMembers } utilizator.",
+        "Seifurile nu pot conține mai mult de ${ vault.targetMaxMembers } utilizatori.",
+        "Seifurile nu pot conține mai mult de ${ vault.targetMaxMembers } de utilizatori."
       ]
     },
     "Title": {
@@ -1622,6 +1684,12 @@
       ],
       "Low disk space": [
         "Spațiu pe disc redus"
+      ],
+      "Member limit": [
+        "Limită membri"
+      ],
+      "Pending access to the shared data": [
+        "În așteptarea accesului la datele partajate"
       ],
       "Permanently remove all items ?": [
         "Ștergeți definitiv toate articolele?"
@@ -1812,6 +1880,15 @@
       ],
       "You cannot create more vaults than your subscription allows.": [
         "Abonamentul actual nu vă permite să creați mai multe seifuri."
+      ],
+      "You have reached the limit of members who can access this vault.": [
+        "Ați atins limita de membri care pot accesa acest seif."
+      ],
+      "You have reached the limit of users in this vault. ${ upgradeLink }": [
+        "Ați atins limita de utilizatori pentru acest seif. ${ upgradeLink }"
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "Ați atins limita de seifuri pe care le puteți avea în plan."
       ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "Aveți modificări nesalvate, sigur doriți să nu le salvați?"

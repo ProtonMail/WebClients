@@ -768,6 +768,77 @@
         "Opcional"
       ]
     },
+    "bf2023: Deal details": {
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus e ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } armazenamento"
+      ],
+      "1 user": [
+        "1 usuário"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "3,000+ servers across 65+ countries": [
+        "Mais de 3.000 servidores em mais de 65 países"
+      ],
+      "6 users": [
+        "6 usuários"
+      ],
+      "Ad-blocker and malware protection": [
+        "Bloqueador de anúncios e proteção contra malware"
+      ],
+      "Extended version history": [
+        "Histórico de versão estendido"
+      ],
+      "High speed streaming": [
+        "Streaming de alta velocidade"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Os descontos são baseados no preço mensal padrão."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Sua assinatura será renovada automaticamente, com desconto da taxa e da duração padrão, ao final do seu ciclo de faturamento."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "Garantia de devolução do seu dinheiro por até 30 dias"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Acesse conteúdo de serviços de streaming, como Netflix, Disney+, Prime Video e mais, de qualquer lugar."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
+        "Inclui suporte para ${ domains } domínios de e-mail personalizados, ${ addresses } endereços de e-mail, ${ aliases } aliases ilimitados do hide-my-email, compartilhamento de calendário e muito mais."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Inclui suporte para ${ domains } domínios de e-mail personalizados, ${ addresses } endereços de e-mail, aliases ilimitados do hide-my-email, compartilhamento de calendário e muito mais."
+      ],
+      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "Logins seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Proteja seus e-mails e sua agenda com criptografia de ponta a ponta. Inclui compatibilidade para domínios de e-mail personalizados, 15 endereços de e-mail, aliases ilimitados do hide-my-email, compartilhamento de calendário e muito mais."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Proteja seus arquivos com armazenamento em nuvem criptografado. Inclui histórico de versões, compartilhamento de arquivo criptografado e muito mais."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Especialmente projetado, o NetShield protege os dispositivos e acelera sua navegação ao bloquear anúncios, rastreadores e malware."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "O espaço de armazenamento é compartilhado entre todos os apps ${ BRAND_NAME }."
+      ],
+      "Store up to 200 versions of each file for up to 10 years.": [
+        "Armazene até 200 versões de cada arquivo por até 10 anos."
+      ]
+    },
     "Billing cycle option": {
       "Annually": [
         "Anualmente"
@@ -2343,6 +2414,9 @@
       "Event not found": [
         "Evento não encontrado"
       ],
+      "Failed to get event": [
+        "Falha ao obter o evento"
+      ],
       "Failed to get original occurrence in series": [
         "Não foi possível obter a ocorrência original em série."
       ],
@@ -3106,6 +3180,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -3124,6 +3201,10 @@
       "Megabyte": [
         "Megabyte",
         "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Filter notification": {

@@ -59,6 +59,9 @@
       "Confirm": [
         "Conferma"
       ],
+      "Confirm access": [
+        "Conferma l'accesso"
+      ],
       "Continue": [
         "Continua"
       ],
@@ -80,6 +83,9 @@
       "Create a ${ BRAND_NAME } account": [
         "Crea un account ${ BRAND_NAME }"
       ],
+      "Create a new vault to share": [
+        "Crea una nuova cassaforte per condividere"
+      ],
       "Create alias": [
         "Crea alias"
       ],
@@ -97,6 +103,9 @@
       ],
       "Creating vault": [
         "Creazione cassaforte"
+      ],
+      "Customize": [
+        "Personalizza"
       ],
       "Delete": [
         "Elimina"
@@ -212,6 +221,9 @@
       "More options": [
         "Più opzioni"
       ],
+      "Move to a shared vault": [
+        "Sposta in una cassaforte condivisa"
+      ],
       "Move to another vault": [
         "Sposta in un'altra cassaforte"
       ],
@@ -223,6 +235,9 @@
       ],
       "Not now": [
         "Non ora"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open in a window": [
         "Apri in una finestra"
@@ -244,6 +259,9 @@
       ],
       "Regenerate": [
         "Ripristina"
+      ],
+      "Reject": [
+        "Rifiuta"
       ],
       "Reject invitation": [
         "Rifiuta l'invito"
@@ -284,6 +302,9 @@
       "Share": [
         "Condividi"
       ],
+      "Share this vault": [
+        "Condividi questa cassaforte"
+      ],
       "Share vault": [
         "Condividi cassaforte"
       ],
@@ -320,11 +341,17 @@
       "Update": [
         "Aggiorna"
       ],
+      "Update vault": [
+        "Aggiorna la cassaforte"
+      ],
       "Updating": [
         "Aggiornamento"
       ],
       "Upgrade": [
         "Effettua l'upgrade"
+      ],
+      "Upgrade now to share with more people": [
+        "Effettua l’upgrade ora per condividere con più persone"
       ],
       "Upgrade to keep these features": [
         "Esegui l'upgrade per mantenere queste funzionalità"
@@ -375,6 +402,9 @@
       ],
       "Cannot send invitation to this address at the moment": [
         "Al momento non è possibile inviare un invito a questo indirizzo"
+      ],
+      "Could not confirm this invite at the moment": [
+        "Impossibile confermare questo invito al momento"
       ],
       "Could not leave vault.": [
         "Impossibile abbandonare la cassaforte."
@@ -579,6 +609,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -597,6 +630,10 @@
       "Megabyte": [
         "Megabyte",
         "Megabyte"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabyte"
       ]
     },
     "Info": {
@@ -640,15 +677,14 @@
         "${ trialDaysLeft } giorno rimasto",
         "${ trialDaysLeft } giorni rimasti"
       ],
-      "${ vault.count } item": [
-        "${ vault.count } elemento",
-        "${ vault.count } elementi"
-      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "È disponibile una nuova versione di ${ PASS_APP_NAME }. Aggiornala per scoprire le nuove funzionalità e correzioni."
       ],
       "Access ${ PASS_APP_NAME } via this icon": [
         "Accedi a ${ PASS_APP_NAME } tramite questa icona"
+      ],
+      "Access successfully confirmed": [
+        "Accesso confermato con successo"
       ],
       "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
         "L'accesso a ${ PASS_APP_NAME } richiederà un codice pin per sbloccare la tua sessione"
@@ -692,14 +728,17 @@
       "Check out all the exclusive features that are available to you for a limited time.": [
         "Scopri tutte le funzionalità esclusive che sono disponibili per te per un periodo di tempo limitato."
       ],
+      "Congratulations, your access has been confirmed": [
+        "Congratulazioni, il tuo accesso è stato confermato"
+      ],
       "Copied to clipboard": [
         "Copiato negli appunti"
       ],
       "Creating alias...": [
         "Creazione alias..."
       ],
-      "Custom fields": [
-        "Campi personalizzati"
+      "Credit cards, Custom fields": [
+        "Carte di credito, Campi personalizzati"
       ],
       "Decrypting your data": [
         "Decriptazione dei tuoi dati in corso..."
@@ -740,6 +779,12 @@
       "Follow these simple steps to get the best experience:": [
         "Segui questi semplici passaggi per ottenere la migliore esperienza:"
       ],
+      "For security reason, your access needs to be confirmed": [
+        "Per motivi di sicurezza, il tuo accesso deve essere confermato"
+      ],
+      "For security reasons, your access needs to be confirmed": [
+        "Per motivi di sicurezza, il tuo accesso deve essere confermato"
+      ],
       "Free Trial": [
         "Prova gratuita"
       ],
@@ -748,6 +793,9 @@
       ],
       "Generating alias...": [
         "Generazione alias..."
+      ],
+      "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
+        "Ottieni alias illimitati, goditi funzionalità esclusive e supportaci abbonandoti a Pass Plus."
       ],
       "Here you will find all the necessary information to get you started.": [
         "Qui troverai tutte le informazioni necessarie per cominciare."
@@ -786,9 +834,6 @@
       "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
         "Per poter migrare i tuoi dati da un altro gestore di password a ${ PASS_APP_NAME } esporta le tue password e importale utilizzando il modulo qui sotto. Una volta che tutti gli elementi sono stati importati ricordati di eliminare il file esportato precedentemente."
       ],
-      "Integrated 2FA authenticator": [
-        "Autenticazione 2FA integrata"
-      ],
       "Internet connection lost": [
         "Connessione ad Internet interrotta"
       ],
@@ -800,6 +845,9 @@
       ],
       "Invite successfully resent": [
         "Invito reinviato con successo"
+      ],
+      "Invite successfully sent": [
+        "Invito spedito con successo"
       ],
       "invites you to access items in": [
         "ti invita ad accedere agli elementi in"
@@ -874,6 +922,9 @@
       "Passwords older than 1 day are automatically deleted from history.": [
         "Le password più vecchie di 1 giorno vengono eliminate automaticamente dalla cronologia."
       ],
+      "Pending access to the shared data": [
+        "Accesso ai dati condivisi in attesa"
+      ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Fissa ${ PASS_APP_NAME } sulla barra degli strumenti"
       ],
@@ -919,6 +970,9 @@
       "Settings successfully updated": [
         "Impostazioni aggiornate correttamente"
       ],
+      "Share with 10 others": [
+        "Condividi con altri 10"
+      ],
       "Sign in or create an account to continue.": [
         "Accedi o crea un account per continuare."
       ],
@@ -962,6 +1016,9 @@
       "Unable to copy to clipboard": [
         "Impossibile copiare negli appunti"
       ],
+      "Unlimited Aliases": [
+        "Alias illimitati"
+      ],
       "Unlock it with your PIN to access the settings": [
         "Sbloccalo con il tuo PIN per accedere alle impostazioni"
       ],
@@ -970,6 +1027,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Effettua l'upgrade a ${ PASS_APP_NAME }"
+      ],
+      "Use vaults to share this item with others.": [
+        "Usa le casseforti per poter condividere questo elemento con altri."
       ],
       "User's access removed": [
         "Accesso dell'utente rimosso"
@@ -1225,6 +1285,9 @@
       "Include numbers (0-9)": [
         "Include numeri (0-9)"
       ],
+      "Invitations": [
+        "Inviti"
+      ],
       "Label": [
         "Etichetta"
       ],
@@ -1254,6 +1317,9 @@
       ],
       "Logins": [
         "Login"
+      ],
+      "Members": [
+        "Membri"
       ],
       "Modified": [
         "Modificato"
@@ -1535,6 +1601,9 @@
       "Select a suffix": [
         "Seleziona un suffisso"
       ],
+      "Shared vault": [
+        "Cassaforte condivisa"
+      ],
       "Unknown origin": [
         "Origine sconosciuta"
       ],
@@ -1546,6 +1615,12 @@
       ],
       "Write your note": [
         "Scrivi una nota"
+      ]
+    },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Le casseforti non possono contenere più di ${ vault.targetMaxMembers } utente.",
+        "Le casseforti non possono contenere più di ${ vault.targetMaxMembers } utenti."
       ]
     },
     "Title": {
@@ -1602,6 +1677,12 @@
       ],
       "Low disk space": [
         "Spazio su disco insufficiente"
+      ],
+      "Member limit": [
+        "Limite di membri"
+      ],
+      "Pending access to the shared data": [
+        "Accesso ai dati condivisi in attesa"
       ],
       "Permanently remove all items ?": [
         "Rimuovere definitivamente tutti gli elementi?"
@@ -1792,6 +1873,15 @@
       ],
       "You cannot create more vaults than your subscription allows.": [
         "Non puoi creare più casseforti di quelle consentite dal tuo abbonamento."
+      ],
+      "You have reached the limit of members who can access this vault.": [
+        "Hai raggiunto il limite di membri che possono accedere a questa cassaforte."
+      ],
+      "You have reached the limit of users in this vault. ${ upgradeLink }": [
+        "Hai raggiunto il limite di utenti in questa cassaforte. ${ upgradeLink }"
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "Hai raggiunto il limite di casseforti che puoi avere nel tuo piano."
       ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "Sono presenti modifiche non salvate. Vuoi davvero scartarle?"

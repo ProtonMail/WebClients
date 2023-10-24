@@ -33,6 +33,9 @@
       "Add address": [
         "Adicionar um endereço"
       ],
+      "Add birthday": [
+        "Adicionar data de nascimento"
+      ],
       "Add contact": [
         "Adicionar contacto"
       ],
@@ -48,6 +51,9 @@
       "Add new group": [
         "Adicionar novo grupo"
       ],
+      "Add note": [
+        "Adicionar uma nota"
+      ],
       "Add notification": [
         "Adicionar notificação"
       ],
@@ -62,6 +68,10 @@
       ],
       "Apply": [
         "Aplicar"
+      ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "É permitido no máximo ${ maxContacts } contacto por grupo de contactos",
+        "São permitidos no máximo ${ maxContacts } contactos por grupo de contactos"
       ],
       "Attach screenshot(s)": [
         "Anexar captura(s) de ecrã"
@@ -199,6 +209,9 @@
       ],
       "Discard": [
         "Descartar"
+      ],
+      "Don't know your password?": [
+        "Não sabe a sua palavra-passe?"
       ],
       "Done": [
         "Concluído"
@@ -377,6 +390,9 @@
       "No, thanks": [
         "Não, obrigado"
       ],
+      "Ok": [
+        "Ok"
+      ],
       "OK": [
         "Aceitar"
       ],
@@ -463,6 +479,9 @@
       ],
       "Search countries": [
         "Pesquisar países"
+      ],
+      "See how": [
+        "Ver como"
       ],
       "See plan features": [
         "Veja as funcionalidades do plano"
@@ -619,6 +638,10 @@
       ],
       "Yes, I'll attend": [
         "Sim, estarei presente"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Não pode enviar ficheiros vCard de mais de ${ maxAttachments } contacto.",
+        "Não pode enviar ficheiros vCard de mais de ${ maxAttachments } contactos."
       ]
     },
     "Action subline": {
@@ -1106,8 +1129,17 @@
       "Birthday": [
         "Data de nascimento"
       ],
+      "Display name": [
+        "Nome exibido"
+      ],
       "Email": [
         "E-mail"
+      ],
+      "Enter a display name or nickname": [
+        "Introduza um nome de exibição ou uma alcunha"
+      ],
+      "First name": [
+        "Primeiro nome"
       ],
       "Gender": [
         "Sexo"
@@ -1117,6 +1149,9 @@
       ],
       "Language": [
         "Idioma"
+      ],
+      "Last name": [
+        "Último nome"
       ],
       "Logo": [
         "Logótipo"
@@ -2311,6 +2346,9 @@
       "Failed to get original occurrence in series": [
         "Erro ao obter a ocorrência original na série"
       ],
+      "First name is too long": [
+        "O primeiro nome é demasiado longo"
+      ],
       "Folder name cannot be empty.": [
         "O nome da pasta não pode estar vazio."
       ],
@@ -2325,6 +2363,9 @@
       ],
       "Incorrect mailbox password. Please try again.": [
         "Palavra-passe da caixa de correio incorreta. Tente novamente."
+      ],
+      "Incorrect username": [
+        "Nome de utilizador incorreto"
       ],
       "Interval cannot be empty": [
         "O intervalo não pode estar vazio"
@@ -2355,6 +2396,9 @@
       ],
       "Label name cannot be empty.": [
         "O nome da etiqueta não pode estar vazio."
+      ],
+      "Last name is too long": [
+        "O último nome é demasiado longo."
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Combine pelo menos ${ calendarsToFixCount } calendário com um calendário ${ BRAND_NAME } existente.",
@@ -2416,6 +2460,9 @@
       "Please fix the highlighted conflict to proceed.": [
         "Por favor, corrija o conflito selecionado para proceder.",
         "Por favor, corrija os conflitos selecionados para proceder."
+      ],
+      "Please provide either a first name, a last name or a display name": [
+        "Por favor, forneça um primeiro nome, um último nome ou um nome de exibição"
       ],
       "Port is required": [
         "A porta é obrigatória."
@@ -2543,6 +2590,10 @@
       ],
       "You already added this holidays calendar": [
         "Já adicionou este calendário de férias."
+      ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Não pode enviar um e-mail para mais de ${ maxContacts } destinatário.",
+        "Não pode enviar um e-mail para mais de ${ maxContacts } destinatários."
       ],
       "You have reached the contacts limit for your account": [
         "Atingiu o limite de contactos da sua conta."
@@ -2899,6 +2950,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "Até 6 utilizadores"
       ]
@@ -3604,6 +3664,9 @@
       "Contact unassigned to group ${ contactGroupName }": [
         "Contacto não atribuído ao grupo ${ contactGroupName }"
       ],
+      "Copy the link to clipboard": [
+        "Copiar o \"link\" para a área de transferência"
+      ],
       "Country code": [
         "Código de país"
       ],
@@ -3843,6 +3906,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME envia automaticamente a mensagem usando o modo de composição actual."
+      ],
+      "Please note that addresses assigned to these groups will NOT be deleted.": [
+        "Por favor, note que os endereços atribuídos a estes grupos NÃO serão eliminados."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Note que os endereços atribuídos a este grupo NÃO serão eliminados."
@@ -5033,6 +5099,9 @@
       ],
       "Contact group updated": [
         "Grupo de contactos actualizado"
+      ],
+      "Link copied to clipboard": [
+        "Ligação copiada para a área de transferência"
       ]
     },
     "Notification in holidays calendar modal": {
@@ -5363,6 +5432,9 @@
       "Filter groups": [
         "Filtrar grupos"
       ],
+      "First name": [
+        "Primeiro nome"
+      ],
       "Group name": [
         "Nome do grupo"
       ],
@@ -5371,6 +5443,9 @@
       ],
       "Indexing...": [
         "A indexar..."
+      ],
+      "Last name": [
+        "Último nome"
       ],
       "Name": [
         "Nome"
@@ -5494,6 +5569,175 @@
         "Nenhum resultado encontrado"
       ]
     },
+    "session_recovery:available:action": {
+      "Cancel reset": [
+        "Cancelar reposição"
+      ],
+      "Reset password": [
+        "Repor a palavra-passe"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Account recovery not available for legacy address keys": [
+        "Recuperação de conta indisponível para chaves de endereços antigos"
+      ],
+      "Please generate keys before you try to change your password": [
+        "Por favor, crie chaves antes de tentar alterar a sua palavra-passe."
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } dia",
+        "${ timeRemaining.inDays } dias"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } hora",
+        "${ timeRemaining.inHours } horas"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Pedido de reposição de palavra-passe aprovado (${ user.Email }). Tem ${ timeRemaining.inDays } dia para repor a sua palavra-passe.",
+        "Pedido de reposição de palavra-passe aprovado (${ user.Email }). Tem ${ timeRemaining.inDays } dias para repor a sua palavra-passe."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Pedido de reposição de palavra-passe aprovado (${ user.Email }). Tem ${ timeRemaining.inHours } hora para repor a sua palavra-passe.",
+        "Pedido de reposição de palavra-passe aprovado (${ user.Email }). Tem ${ timeRemaining.inHours } horas para repor a sua palavra-passe."
+      ],
+      "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
+        "Por favor, vá ao dispositivo com sessão iniciada (na sessão onde o pedido foi iniciado) para mudar a sua palavra-passe."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Esta permissão expira em ${ timeRemaining.inDays } dia",
+        "Esta permissão expira em ${ timeRemaining.inDays } dias"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Esta permissão expira em ${ timeRemaining.inHours } hora",
+        "Esta permissão expira em ${ timeRemaining.inHours } horas"
+      ],
+      "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
+        "Agora pode mudar a sua palavra-passe para a conta ${ boldEmail } gratuitamente por ${ boldDaysRemaining }."
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Ver como"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Palavra-passe guardada"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Repor a sua palavra-passe"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Cancelar a reposição da palavra-passe"
+      ]
+    },
+    "session_recovery:cancellation:info": {
+      "Enter your current password to cancel the password reset process. No other changes will take effect.": [
+        "Introduza a sua palavra-passe atual para cancelar o processo de reposição de palavra-passe. Nenhuma outra mudança terá efeito."
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "Reposição de palavra-passe cancelada"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Cancelar a reposição da palavra-passe?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Pedido de reposição de palavra-passe cancelado (${ user.Email }). Se não fez este pedido, ${ changePasswordLink }."
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "altere a sua palavra-passe agora"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "Cancelar pedido"
+      ],
+      "Got it": [
+        "Entendi"
+      ],
+      "Learn more": [
+        "Saiba mais"
+      ]
+    },
+    "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } hora restante",
+        "${ gracePeriodHoursRemaining } horas restantes"
+      ],
+      "If you didn’t ask to reset your password, cancel this request now.": [
+        "Se não pediu para repor a sua palavra-passe, cancele este pedido agora."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Reposição de palavra-passe pedida (${ user.Email }). Pode mudar a sua palavra-passe em ${ hoursRemaining } hora.",
+        "Reposição de palavra-passe pedida (${ user.Email }). Pode mudar a sua palavra-passe em ${ hoursRemaining } horas."
+      ],
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "Para ter a certeza que é realmente você a tentar repor a sua palavra-passe, vamos esperar 72 horas antes de aprovar pedidos. Pode repor a sua palavra-passe em ${ boldTimeLeft }. ${ viewRequest }"
+      ],
+      "We received a password reset request for ${ boldEmail }.": [
+        "Recebemos um pedido de reposição de palavra-passe para ${ boldEmail }."
+      ]
+    },
+    "session_recovery:in_progress:link": {
+      "View request": [
+        "Ver pedido"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "Reposição da palavra-passe pedida"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Terminar sessão"
+      ],
+      "Stay signed in": [
+        "Manter sessão iniciada"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } hora",
+        "${ gracePeriodHoursRemaining } horas"
+      ],
+      "${ passwordReset } is now available.": [
+        "${ passwordReset } está agora disponível."
+      ],
+      "If you sign out before you reset your password, you could lose access to your account.": [
+        "Se terminar sessão antes de repor a sua palavra-passe, poderá perder acesso à sua conta."
+      ],
+      "If you sign out without resetting your password, you could lose access to your account.": [
+        "Se terminar sessão sem repor a sua palavra-passe, poderá perder acesso à sua conta."
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "Poderá repor a sua palavra-passe em ${ boldTimeLeft }."
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Repor a palavra-passe"
+      ]
+    },
+    "session_recovery:sign_out:title": {
+      "Sign out without password reset?": [
+        "Terminar sessão sem repor a palavra-passe?"
+      ]
+    },
     "Settings update growler warning": {
       "Failed to update settings": [
         "Falha na atualização de definições"
@@ -5592,6 +5836,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 utilizador"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -5609,6 +5856,15 @@
       ],
       "Highest VPN speed": [
         "Velocidade VPN mais elevada"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium early access": [
         "Acesso antecipado premium"
@@ -5654,14 +5910,24 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } mês",
+        "${ n } meses"
+      ],
       "/ month": [
         "/ mês"
       ],
       "1 year": [
         "1 ano"
       ],
+      "15 months": [
+        "15 meses"
+      ],
       "2 years": [
         "2 anos"
+      ],
+      "30 months": [
+        "30 meses"
       ],
       "Billed at ${ amount } for 1 month": [
         "Faturado a ${ amount } durante 1 mês"
@@ -5962,6 +6228,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Premium Password Manager": [
         "Versão premium do gestor de palavras-passe"
       ]
@@ -6043,8 +6315,14 @@
       "Display name": [
         "Nome a mostrar"
       ],
+      "First name": [
+        "Primeiro nome"
+      ],
       "Import": [
         "Importar"
+      ],
+      "Last name": [
+        "Último nome"
       ],
       "Values": [
         "Valores"
@@ -6127,6 +6405,9 @@
       ],
       "Billing cycle": [
         "Ciclo de faturação"
+      ],
+      "Birthday": [
+        "Data de nascimento"
       ],
       "Calendar": [
         "Calendário"
@@ -6289,6 +6570,9 @@
       ],
       "Night theme": [
         "Tema noturno"
+      ],
+      "Notes": [
+        "Notas"
       ],
       "Open actions dropdown": [
         "Abrir lista de acções"
@@ -6590,6 +6874,9 @@
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Tem certeza de que deseja eliminar permanentemente ${ count } contacto?",
         "Tem certeza de que deseja eliminar permanentemente ${ count } contactos?"
+      ],
+      "Are you sure you want to permanently delete these contact groups?": [
+        "Tem a certeza que deseja eliminar permanentemente estes grupos de contactos?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Tem a certeza de que deseja eliminar permanentemente este grupo de contactos?"

@@ -221,6 +221,9 @@
       "Get ${ vpnPlus }": [
         "${ vpnPlus } 사용하기"
       ],
+      "Get a new encrypted email address": [
+        "새로운 암호화된 이메일 주소를 얻으세요"
+      ],
       "Get in touch": [
         "연락하기"
       ],
@@ -426,7 +429,7 @@
         "미리보기 표시"
       ],
       "Sign in": [
-        "가입하기"
+        "로그인"
       ],
       "Sign out": [
         "로그아웃"
@@ -493,6 +496,9 @@
       ],
       "Use recovery code": [
         "복구코드 사용"
+      ],
+      "Use your current email instead": [
+        "대신 현재 이메일 주소 사용하기"
       ],
       "User": [
         "사용자"
@@ -630,6 +636,9 @@
     "Billing cycle": {
       "${ n } months": [
         "${ n }개월"
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
+        "${ renewalLength }동안 ${ renewPrice }(으)로 갱신됩니다."
       ]
     },
     "Billing cycle option": {
@@ -2353,7 +2362,7 @@
         "사용자의 보안 키 추가"
       ],
       "Registered security keys": [
-        "보안 키 추가됨"
+        "등록된 보안 키"
       ],
       "Security key registered": [
         "보안 키 등록됨"
@@ -2439,7 +2448,7 @@
     },
     "Go to sign up": {
       "New to ${ BRAND_NAME }? ${ signUp }": [
-        "${ BRAND_NAME } 이(가) 처음이신가요? ${ signUp }"
+        "${ BRAND_NAME }이 처음이신가요? ${ signUp }"
       ]
     },
     "Group": {
@@ -2731,7 +2740,7 @@
         "커스텀 도메인에 부계정을 만들거나 관리하고, 계정 주소를 추가하세요."
       ],
       "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "다른 사람들을 위해 이메일 주소를 생성하고, 비즈니스, 학교 혹은 그룹에 쓰일 ${ MAIL_APP_NAME } 을 관리하세요. 조직 이름과 사용자 지정 도메인을 추가할 준비를 시작하세요. (예 @yourcompany.com). "
+        "다른 사람들을 위해 이메일 주소를 생성하고, 비즈니스, 학교 혹은 그룹에 쓰일 ${ MAIL_APP_NAME }을 관리하세요. 조직 이름과 사용자 지정 도메인을 추가할 준비를 시작하세요. (예 @yourcompany.com). "
       ],
       "Create your first Gateway": [
         "첫 게이트웨이를 생성하세요"
@@ -2965,7 +2974,7 @@
         "로딩 중"
       ],
       "Loading ${ appName }": [
-        "로딩 중 ${ appName }"
+        "${ appName } 로딩 중"
       ],
       "Loading preview": [
         "미리보기 불러오는 중"
@@ -3022,7 +3031,7 @@
         "결과를 찾을 수 없음"
       ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "내 기기가 아닌가요? 개인정보 보호 브라우징 창을 사용하여 로그인하고 완료되었을때 닫으세요. ${ learnMore }"
+        "내 기기가 아닌가요? 시크릿 브라우징 창을 사용하여 로그인하고 완료되었을 때 닫으세요. ${ learnMore }"
       ],
       "Number of dedicated servers in the organization": [
         "조직의 전용 서버 수"
@@ -3205,7 +3214,7 @@
         "조직을 설정하세요"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
-        "주소를 활성화 하려면 ${ MAIL_APP_NAME }에 로그인 하십시오"
+        "주소를 활성화 하려면 ${ MAIL_APP_NAME }에 로그인하십시오"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "로얄 사용자시기에, 계정에 추가적인 기능이 활성화 되었습니다."
@@ -3230,6 +3239,15 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "다음 주소를 사용하여 보증금을 제출하거나 QR 코드를 스캔하세요. 보증금은 확인 후 사용자의 계좌에 반영될 예정입니다."
+      ],
+      "Subscription auto-renews every 12 months.": [
+        "구독이 12개월 마다 갱신됩니다."
+      ],
+      "Subscription auto-renews every 24 months.": [
+        "구독이 24개월 마다 갱신됩니다."
+      ],
+      "Subscription auto-renews every month.": [
+        "구독이 매달 갱신됩니다."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "구독 종료 예정: ${ planName }의 혜택을 유지하려면 ${ byDate }까지 재 활성화해주세요. ${ reactivateLink }"
@@ -3275,6 +3293,9 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "이러한 구성은 WireGuard 라우터 및 공식 클라이언트와 함께 작동하도록 제공되요."
+      ],
+      "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
+        "이 자격증명을 공식 ${ VPN_APP_NAME } 앱에 로그인 할 때 사용하지 못할 수 있습니다. ${ learnMore }"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "이 계정은 규정 위반이 의심되어 정지되었습니다."
@@ -3507,6 +3528,9 @@
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Business 및 Enterprise 요금제에서는 조직을 위한 ${ boldDedicatedServers }를 구매 및 ${ boldGateways } 설정으로 조직의 사용자가 접근을 관리하도록 할 수 있습니다."
       ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "암호화된 ${ BRAND_NAME } 주소로, 모든 ${ BRAND_NAME } 서비스를 사용할 수 있어요."
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "활성화하지 않으면 새 사용자를 만들거나 기존 사용자에게 주소를 추가하거나 개인이 아닌 사용자 계정에 액세스할 수 없습니다."
       ],
@@ -3594,6 +3618,9 @@
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "${ vpnPlanNameShort } 서버와 기능을 잃게 됩니다."
       ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } 및 ${ CALENDAR_APP_NAME } 을(를) 사용하려면 ${ BRAND_NAME } 주소가 필요합니다."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "결제를 인증하기 위해 곧 PayPal로 이동됩니다."
       ],
@@ -3636,6 +3663,9 @@
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "당신의 정보가 Proton에 의해 안전합니다. 서비스 제공에 필요할 때만 연락해드립니다."
       ],
+      "Your next billing date is ${ renewalTime }.": [
+        "다음 결제일은 ${ renewalTime } 입니다."
+      ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "조직의 비밀번호는 관리자 권한을 부여하고 싶은 다른 사용자에게 공유할 수 있습니다. 또한 비밀번호는 계정에 대한 액세스 권한을 잃었을 경우 긴급 복구 코드로 사용될 수도 있으니, 비밀번호를 저장하고 안전하게 보관하세요."
       ],
@@ -3647,9 +3677,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "유료 구독은 Mozilla에서 관리합니다. Mozilla 지원에 연락하세요."
-      ],
-      "Your subscription will auto-renew on ${ renewalTime }.": [
-        "사용자의 구독이 ${ renewalTime }에 자동으로 갱신됩니다."
       ]
     },
     "Info for cash payment method": {
@@ -3768,10 +3795,10 @@
         "주소"
       ],
       "Allow recovery by email": [
-        "이메일에 의한 복구 허용"
+        "이메일을 통한 복구 허용"
       ],
       "Allow recovery by phone": [
-        "스마트폰에 의한 복구 허용"
+        "스마트폰을 통한 복구 허용"
       ],
       "Amount": [
         "양"
@@ -4245,7 +4272,7 @@
         "비밀번호 재설정"
       ],
       "Sign in": [
-        "가입하기"
+        "로그인"
       ],
       "Terms": [
         "조건"
@@ -4308,7 +4335,7 @@
         "세션 비활성화"
       ],
       "Sign in": [
-        "가입하기"
+        "로그인"
       ]
     },
     "Message": {
@@ -4377,7 +4404,7 @@
         "${ BRAND_NAME } 의 모든 플랜 살펴보기"
       ],
       "From ${ price }": [
-        "보낸 사람: ${ price }"
+        "시작 가격: ${ price }"
       ],
       "Keep my ${ currentPlanName } account": [
         "나의 ${ currentPlanName } 계정 유지"
@@ -4751,6 +4778,9 @@
       ],
       "Vault and Item sharing (coming soon)": [
         "금고 및 항목 공유 (곧 찾아옵니다)"
+      ],
+      "Vault sharing (up to ${ n } people)": [
+        "금고 공유 (최대 ${ n }명)"
       ]
     },
     "new_plans: feature info": {
@@ -4877,14 +4907,6 @@
         "이용 약관"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } 체험"
-      ],
-      "Your account's usage": [
-        "계정 사용량"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "계정을 삭제할까요?"
@@ -4902,7 +4924,27 @@
         "요금제를 변경할까요?"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } 체험"
+      ],
+      "Your account's usage": [
+        "계정 사용량"
+      ]
+    },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: 커스텀 캘린더, 캘린더 공유 등의 기능을 포함하는 종단 간 암호화로 보호되는 캘린더를 사용해 보세요."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: 버전 기록, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: 사용자 지정 이메일 도메인, 15개 이메일 주소, 무제한 hide-my-email 별명 등 기능을 포함하는 이메일로 보호하세요."
+      ],
+      "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "${ VPN_APP_NAME }: ${ serversAndCountries }, 빠른 VPN 속도, 전세계적 스트리밍 서비스 접근, 멀웨어 및 광고 제저, 빠른 BitTorrent 다운로드 등을 지원하는 VPN으로 비공개로 차단된 컨텐츠에 접근하세요."
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "어디서든지 스트리밍 서비스에서 콘텐츠를 접근하세요, Netflix, Disney+, Prime Video가 포함됩니다"
       ],
@@ -5743,6 +5785,9 @@
       ],
       "Password": [
         "비밀번호"
+      ],
+      "Username": [
+        "사용자 이름"
       ]
     },
     "specialoffer: Action": {
@@ -5973,7 +6018,7 @@
         "최대 ${ credits }의 크레딧 받기"
       ],
       "Invite friends to ${ BRAND_NAME }": [
-        "친구를 ${ BRAND_NAME } 에 초대하세요."
+        "친구를 ${ BRAND_NAME }에 초대하세요."
       ]
     },
     "State": {
@@ -5998,6 +6043,12 @@
     "Subscription": {
       "Billed every 2 years": [
         "2년마다 청구"
+      ],
+      "Billed for 15 months": [
+        "15개월 마다 결제됨"
+      ],
+      "Billed for 30 months": [
+        "30개월 마다 청구됨"
       ],
       "Billed monthly": [
         "매달 청구"
@@ -6327,7 +6378,7 @@
         "비즈니스용"
       ],
       "For families": [
-        "가족을 위한"
+        "가족용"
       ],
       "For individuals": [
         "개인용"
@@ -6807,7 +6858,7 @@
         "Business로 업그레이드하여 전용 서버를 설정하십시오."
       ],
       "Sign in": [
-        "가입하기"
+        "로그인"
       ],
       "Sign in to join the Beta program": [
         "베타 프로그램에 참여하려면 로그인"
@@ -6974,6 +7025,11 @@
       ],
       "Verified email address": [
         "인증된 이메일 주소"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: 무제한 별명, 공유, 통합된 2FA 등을 포함하는 비밀번호 관리자로 모든 기기에서 로그인을 보호하세요."
       ]
     },
     "Tor out of date": {

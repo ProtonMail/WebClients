@@ -1290,10 +1290,122 @@
         "${ mailPlus }: de e-mail- en agendaoplossing met privacy voorop voor uw dagelijkse communicatiebehoeften."
       ]
     },
+    "bf2023: Action": {
+      "**Add our encrypted password manager** for only ${ price }": [
+        "**Voeg onze versleutelde wachtwoordmanager toe** voor slechts ${ price }"
+      ],
+      "Add ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } toevoeen"
+      ],
+      "Add ${ plan } for ${ price } per month": [
+        "Voeg ${ plan } toe voor ${ price } per maand"
+      ],
+      "Add ${ plan } to your plan by subscribing to 15 months": [
+        "Voeg ${ plan } aan je abonnement toe door te kiezen voor 15 maanden"
+      ],
+      "Get the deal": [
+        "Kies deze deal"
+      ],
+      "Remove": [
+        "Verwijderen"
+      ],
+      "Remove ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } verwijderen"
+      ],
+      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
+        "Kies voor een abonnement van 15 maanden en krijg onze **versleutelde wachtwoordmanager** voor slechts ${ priceNoSuffix } extra per maand!"
+      ]
+    },
+    "bf2023: Deal details": {
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus en ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } opslagruimte"
+      ],
+      "1 user": [
+        "1 gebruiker"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "3,000+ servers across 65+ countries": [
+        "Meer dan 3.000 servers in meer dan 65 landen"
+      ],
+      "6 users": [
+        "6 gebruikers"
+      ],
+      "Ad-blocker and malware protection": [
+        "Advertentieblokkering en bescherming tegen malware"
+      ],
+      "Extended version history": [
+        "Uitgebreide versiegeschiedenis bekijken"
+      ],
+      "High speed streaming": [
+        "Streamen met hoge snelheid"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Premium wachtwoordmanager"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Kortingen zijn gebaseerd op standaardprijzen per maand."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Uw abonnement wordt aan het einde van uw factureringscyclus automatisch verlengd tegen het standaard aanbiedingstarief met bijbehorende tijdsduur."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "30 dagen geld-terug-garantie"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Bekijk content van streamingdiensten, waaronder Netflix, Disney+, Prime Video en meer, waar u maar wilt."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
+        "Ondersteuning voor ${ domains } aangepaste e-maildomeinen, ${ addresses } e-mailadressen, ${ aliases } hide-my-email-aliassen, gedeelde agenda's en meer."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Ondersteuning voor ${ domains } aangepaste e-maildomeinen, ${ addresses } e-mailadressen, een ongelimiteerd aantal hide-my-email-aliassen, gedeelde agenda's en meer."
+      ],
+      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Beveilig uw e-mails en plan met end-to-end versleuteling. Inclusief ondersteuning voor aangepaste e-maildomeinen, 15 e-mailadressen, een onbeperkt aantal hide-my-email-aliassen, agenda delen en meer."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief versiegeschiedenis, versleuteld bestanden delen en meer."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Het speciaal ontworpen NetShield beschermt uw apparaten en versnelt uw browsen door advertenties, trackers en malware te blokkeren."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "Opslagruimte wordt gedeeld binnen alle ${ BRAND_NAME }-apps."
+      ],
+      "Store up to 200 versions of each file for up to 10 years.": [
+        "Bewaar tot 200 versies van elk bestand tot wel 10 jaar."
+      ]
+    },
     "Billing cycle": {
       "${ n } month": [
         "${ n } maand",
         "${ n } maanden"
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
+        "Hernieuwd automatisch aan ${ renewPrice }, voor ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -1501,6 +1613,12 @@
       ],
       "Share with anyone": [
         "Delen met iemand"
+      ]
+    },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "Toon ${ remainingItems } meer",
+        "Toon ${ remainingItems } meer"
       ]
     },
     "Calendar share permission label": {
@@ -3142,6 +3260,11 @@
         "Verificatiemail verzonden naar ${ address }"
       ]
     },
+    "email_forwarding_2023: Info": {
+      "Forwarding to ${ BRAND_NAME } addresses will keep your communication end-to-end encrypted. When forwarding externally, end-to-end encryption for the forwarding address will be disabled.": [
+        "Doorsturen naar ${ BRAND_NAME }-adressen houdt uw communicatie end-to-end versleuteld. Bij doorsturen naar externe adressen wordt de end-to-end-versleuteling voor het doorgestuurde adres uitgeschakeld."
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "2FA"
@@ -4046,6 +4169,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "Tot 6 gebruikers"
       ]
@@ -5649,6 +5781,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Door de volledige agendadetails van deze agenda te delen, gaat u akkoord om ${ BRAND_NAME } toegang te verlenen tot versleutelde informatie van deze agenda."
       ],
+      "Cancel anytime": [
+        "Op elk moment opzeggen"
+      ],
       "Center": [
         "Centreren"
       ],
@@ -6640,6 +6775,15 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Dien een storting in via het volgende adres of scan de QR-code. Uw aanbetaling wordt na bevestiging weerspiegeld in uw account."
       ],
+      "Subscription auto-renews every 12 months.": [
+        "Abonnement vernieuwd automatisch elke 12 maanden."
+      ],
+      "Subscription auto-renews every 24 months.": [
+        "Abonnement vernieuwd automatisch elke 24 maanden."
+      ],
+      "Subscription auto-renews every month.": [
+        "Abonnement vernieuwd automatisch elke maand."
+      ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Het abonnement loopt af: Heractiveer het voor ${ byDate } om de voordelen van uw ${ planName } te behouden. ${ reactivateLink }"
       ],
@@ -6720,6 +6864,9 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Deze configuraties worden verstrekt om te werken met WireGuard-routers en officiële clients."
+      ],
+      "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
+        "Deze inloggegevens kunnen niet gebruikt worden om in te loggen op onze officiële ${ VPN_APP_NAME } apps. ${ learnMore }"
       ],
       "They'll receive a free month of ${ planName }.": [
         "Ze zullen een gratis maand ${ planName } ontvangen."
@@ -7096,8 +7243,8 @@
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Met een Business- of Enterprise-abonnement kan u ${ boldDedicatedServers } kopen voor uw organisatie en ${ boldGateways } instellen om te beheren welke gebruikers er toegang tot hebben."
       ],
-      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
-        "Met een versleuteld ${ BRAND_NAME }-adres, kunt u gebruik maken van alle ${ BRAND_NAME_TWO }-diensten"
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Met een versleuteld ${ BRAND_NAME }-adres, kan je gebruik maken van alle ${ BRAND_NAME }-diensten"
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Met je huidige abonnement kun je alleen berichten ontvangen met je @pm.me-adres. Upgrade om berichten te verzenden en extra adressen aan te maken met @pm.me."
@@ -7290,6 +7437,9 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Uw account heeft minstens één achterstallige factuur. Uw account is beperkt. Verdere niet-betaling zal leiden tot het blokkeren van uw e-mails een deel-links. ${ payInvoiceLink }"
       ],
+      "Your account has been successfully updated": [
+        "Uw account is succesvol bijgewerkt"
+      ],
       "Your account recovery method is set": [
         "Uw account herstel methode is ingesteld"
       ],
@@ -7323,6 +7473,9 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Uw inloginformatie zal niet worden opgeslagen nadat de import is voltooid."
+      ],
+      "Your next billing date is ${ renewalTime }.": [
+        "Uw volgende facturatiedatum is ${ renewalTime }."
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Het wachtwoord van uw organisatie kan worden gedeeld met andere gebruikers die uw beheerdersbevoegdheden wilt geven. Het is ook een noodherstel code om toegang te krijgen tot uw organisatie in het geval dat u uw toegang tot uw account verliest. Sla dit wachtwoord alstublieft op en houd het geheim."
@@ -8329,6 +8482,9 @@
       "New password": [
         "Nieuw wachtwoord"
       ],
+      "New plan": [
+        "Nieuw plan"
+      ],
       "No filter": [
         "Geen filter"
       ],
@@ -8752,7 +8908,7 @@
     },
     "Label to  inform a feature is only available on Beta": {
       "Beta": [
-        "Beta"
+        "Bèta"
       ]
     },
     "Label to change composer mode": {
@@ -8994,6 +9150,11 @@
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } labels importeren en labelen als",
         "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } labels importeren en labelen als"
+      ]
+    },
+    "mail_signup_2023: Info": {
+      "Secure email that protects your privacy": [
+        "Beveiligde e-mail die uw privacy beschermt"
       ]
     },
     "Maintenance mode": {
@@ -9477,6 +9638,9 @@
       "99.95% SLA": [
         "99,95% SLA"
       ],
+      "Ad-blocker and malware protection": [
+        "Advertentieblokkering en bescherming tegen malware"
+      ],
       "Admin console": [
         "Beheerdersconsole"
       ],
@@ -9737,6 +9901,10 @@
       ],
       "Vault and Item sharing (coming soon)": [
         "Kluis en delen van items (binnenkort beschikbaar)"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Kluis delen (tot ${ n } persoon)",
+        "Kluis delen (tot ${ n } personen)"
       ]
     },
     "new_plans: feature info": {
@@ -9759,17 +9927,6 @@
       ],
       "Team management": [
         "Teambeheer"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Uw proefperiode eindigt op ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -9861,6 +10018,17 @@
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Uw proefperiode eindigt op ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } van ${ humanMaxSpace }"
@@ -9938,6 +10106,18 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Beveilig uw agenda met end-to-end versleuteling. Dit is inclusief ondersteuning voor aangepaste agenda's, agenda-delen en meer."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Beveilig uw bestanden met versleutelde cloudopslag. Inclusief versiegeschiedenis, versleuteld bestandsdeling en meer."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: Beveilig uw e-mails met end-to-end versleuteling. Dit is inclusief ondersteuning voor eigen e-mail domeinen, 15 e-mailadressen, ongelimiteerde hide-my-email aliassen en meer."
+      ],
+      "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "${ VPN_APP_NAME }: Krijg toegang tot geblokkeerde inhoud en browse privé. Dit is inclusief ${ serversAndCountries }, hoogste VPN-snelheden, toegang tot wereldwijde streaming services, malware en advertentie-blokkers, snelle BitTorrent downloads en meer."
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Bekijk content van streamingdiensten, waaronder Netflix, Disney+ en Prime Video, waar u maar wilt"
       ],
@@ -10741,6 +10921,9 @@
       "End-to-end encrypted notes": [
         "End-to-end versleutelde notities"
       ],
+      "End-to-end encryption": [
+        "End-to-end versleuteling"
+      ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Voor slechts **${ relativePrice } per maand** extra, krijgt u toegang tot alle premium ${ BRAND_NAME }-diensten!"
       ],
@@ -10780,11 +10963,17 @@
       "Launching ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } opstarten"
       ],
+      "Limited time offer: Get ${ title } for free for 1 year!": [
+        "Gelimiteerd aanbod: krijg ${ title } gratis voor 1 jaar!"
+      ],
       "One easy subscription.": [
         "Eén eenvoudig abonnement."
       ],
       "Open-source and audited": [
         "Open source en gecontroleerd"
+      ],
+      "per month": [
+        "maandelijks"
       ],
       "per month, billed annually": [
         "per maand, jaarlijks gefactureerd"
@@ -11340,7 +11529,7 @@
     },
     "session_recovery:disable:action": {
       "Disable password reset": [
-        "Wachtwoord reset uitschakelen"
+        "Wachtwoordherstel uitschakelen"
       ]
     },
     "session_recovery:disable:info": {
@@ -11348,12 +11537,12 @@
         "Zorg ervoor dat u toegang heeft tot een herstelmethode."
       ],
       "You will no longer be able to request a password reset from your account settings.": [
-        "U zult niet langer een wachtwoord reset kunnen aanvragen vanuit uw accountinstellingen"
+        "U zult niet langer een wachtwoord reset kunnen aanvragen vanuit uw accountinstellingen."
       ]
     },
     "session_recovery:disable:title": {
       "Disable password reset?": [
-        "Wachtwoord reset uitschakelen?"
+        "Wachtwoordherstel uitschakelen?"
       ]
     },
     "session_recovery:in_progress:action": {
@@ -11398,8 +11587,8 @@
         "We ontvingen een wachtwoord reset aanvraag voor ${ boldEmail }."
       ],
       "You can change your password in ${ gracePeriodHoursRemaining } hour": [
-        "U kan uw wachtwoord wijzigen in ${ gracePeriodHoursRemaining } uren",
-        "U kan uw wachtwoord wijzigen in ${ gracePeriodHoursRemaining } uur"
+        "U kan uw wachtwoord wijzigen in ${ gracePeriodHoursRemaining } uur",
+        "U kan uw wachtwoord wijzigen in ${ gracePeriodHoursRemaining } uren"
       ]
     },
     "session_recovery:in_progress:link": {
@@ -11458,16 +11647,16 @@
     },
     "session_recovery:settings:action": {
       "Allow password reset from settings": [
-        "Sta wachtwoord reset toe vanuit instellingen"
+        "Sta wachtwoordherstel toe vanuit instellingen"
       ],
       "Request a password reset from your Account settings. No recovery method needed.": [
-        "Vraag een wachtwoord reset aan vanuit uw accountinstellingen. Geen herstelmethode vereist."
+        "Vraag een wachtwoordherstel aan vanuit uw Accountinstellingen. Er is geen herstelmethode vereist."
       ],
       "Request password reset": [
         "Nieuw wachtwoord aanvragen"
       ],
       "To disallow password reset, you must have a recovery method set up.": [
-        "Om wachtwoord reset uit te schakelen, moet u een herstelmethode ingesteld hebben."
+        "Om het wachtwoordherstel uit te schakelen, moet u een herstelmethode ingesteld hebben."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -11691,6 +11880,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 gebruiker"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -11708,6 +11900,15 @@
       ],
       "Highest VPN speed": [
         "Hoogste VPN-snelheid"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium early access": [
         "Premium vroege toegang"
@@ -11758,14 +11959,24 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
+      ],
       "/ month": [
         "/ maand"
       ],
       "1 year": [
         "1 jaar"
       ],
+      "15 months": [
+        "15 maanden"
+      ],
       "2 years": [
         "2 jaar"
+      ],
+      "30 months": [
+        "30 maanden"
       ],
       "Billed at ${ amount } for 1 month": [
         "U betaalt ${ amount } voor 1 maand"
@@ -11927,6 +12138,12 @@
     "Subscription": {
       "Billed every 2 years": [
         "Wordt om de 2 jaar gefactureerd"
+      ],
+      "Billed for 15 months": [
+        "U betaalt voor 15 maanden"
+      ],
+      "Billed for 30 months": [
+        "Gefactureerd voor 30 maanden"
       ],
       "Billed monthly": [
         "Maandelijks gefactureerd"
@@ -12328,6 +12545,12 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Premium Password Manager": [
         "Premium wachtwoordmanager"
       ]
@@ -13672,7 +13895,7 @@
         "Deze functionaliteit is alleen beschikbaar voor betalende gebruikers"
       ],
       "This feature is only available on Beta": [
-        "Deze functionaliteit is alleen beschikbaar in Beta"
+        "Deze functionaliteit is alleen beschikbaar in Bèta"
       ],
       "This key cannot be used for encryption": [
         "Deze sleutel kan niet worden gebruikt voor versleuteling"
@@ -13721,6 +13944,11 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Uw externe account heeft mogelijk 24-uurs bandbreedtelimiet bereikt. ${ BRAND_NAME } zal proberen de import zo snel mogelijk te hervatten."
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
       ]
     },
     "Tooltip automatically attach public key": {
@@ -13874,8 +14102,14 @@
       "1-year": [
         "1-jarig"
       ],
+      "15-month": [
+        "15 maand"
+      ],
       "2-year": [
         "2-jarig"
+      ],
+      "30-month": [
+        "30 maand"
       ],
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "Krijg ${ discount } korting met een ${ billingCycle } abonnement"

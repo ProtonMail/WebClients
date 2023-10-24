@@ -3289,8 +3289,8 @@
       "Forwarding is active": [
         "Перасылка актыўная"
       ],
-      "Forwarding to ${ BRAND_NAME } addresses will keep your communication end-to-end encrypted. When forwarding externally, encryption might need to be removed.": [
-        "Перасылка на адрас ${ BRAND_NAME } дазволіць захаваць вашу камунікацыю зашыфраванай скразным метадам. Магчыма, што пры перасылцы лістоў па-за сістэмай Proton спатрэбіцца выдаліць шыфраванне."
+      "Forwarding to ${ BRAND_NAME } addresses will keep your communication end-to-end encrypted. When forwarding externally, end-to-end encryption for the forwarding address will be disabled.": [
+        "Перасылка на адрасы ${ BRAND_NAME } дазволіць захаваць вашу камунікацыю зашыфраванай скразным метадам. Пры перасылцы лістоў па-за межы сэрвісу шыфраванне прымяняцца не будзе."
       ],
       "Forwarding to an address without end-to-end encryption requires disabling end-to-end encryption for your ${ boldForwarderEmail } email address. ": [
         "Перасылка на адрас, якія не падтрымлівае скразнога шыфравання патрабуе адключэння скразнога шыфравання на вашым адрасе электроннай пошты ${ boldForwarderEmail }. "
@@ -3328,7 +3328,7 @@
         "Пераслана ад"
       ],
       "Forward to": [
-        "Пераслаць на"
+        "Пераслаць"
       ],
       "or": [
         "або"
@@ -5858,15 +5858,6 @@
       "Admin account allocation": [
         "Вылучэнне ўліковага запісу адміністратара"
       ],
-      "After this date, you'll be billed every 12 months at the normal yearly rate.": [
-        "З вас кожныя 12 месяцаў будзе спаганяцца звычайны кошт за год пасля гэтай даты."
-      ],
-      "After this date, you'll be billed every 24 months at the normal 2-year rate.": [
-        "З вас кожныя 24 месяцы будзе спаганяцца звычайны кошт за 2 гады пасля гэтай даты."
-      ],
-      "After this date, you'll be billed every month at the regular price.": [
-        "З вас кожны месяц будзе спаганяцца звычайны кошт пасля гэтай даты."
-      ],
       "Align left": [
         "Выраўнаваць па левым краі"
       ],
@@ -6061,6 +6052,9 @@
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Каб падзяліцца ўсімі падрабязнасцямі падзей у гэтым календары, вы згаджаецеся даць доступ ${ BRAND_NAME } да гэтай зашыфраванай інфармацыі."
+      ],
+      "Cancel anytime": [
+        "Скасаваць можна ў любы час"
       ],
       "Center": [
         "Па цэнтры"
@@ -7032,7 +7026,7 @@
         "Паколькі вы з'яўляецеся пастаянным карыстальнікам, мы дадалі ў ваш уліковы запіс дадатковыя функцыі."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "Адпраўка па SMTP дазваляе староннім сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME } для карыстальніцкага дамена адраса. Функцыя даступна для карыстальнікаў ${ BRAND_NAME } for Business з карыстальніцкім даменам."
+        "Адпраўка па SMTP дазваляе староннім сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME } для карыстальніцкага дамена адраса. Функцыя даступна для карыстальнікаў ${ BRAND_NAME } для бізнесу з карыстальніцкім даменам."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Адпраўка праз SMTP дазваляе староннім сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME } для адрасоў вашых карыстальніцкіх даменаў. Каб запытаць доступ, ${ createTicket } з апісаннем вашых варыянтаў выкарыстання, якія карыстальніцкія дамены вы б хацелі выкарыстоўваць, а таксама чаканыя штогадзінныя і штодзённыя аб'ёмы лістоў"
@@ -7550,8 +7544,8 @@
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "З тарыфнымі планамі Business або Enterprise, вы можаце купіць ${ boldDedicatedServers } для вашай арганізацыі і наладзіць ${ boldGateways } правы доступу карыстальнікаў да яго."
       ],
-      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
-        "З зашыфраваным адрасам ${ BRAND_NAME }, вы можаце выкарыстоўваць усе сэрвісы ${ BRAND_NAME_TWO }"
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "З зашыфраваным адрасам ${ BRAND_NAME }, вы можаце выкарыстоўваць усе сэрвісы ${ BRAND_NAME }"
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "На вашым бягучым тарыфным плане даступна толькі атрыманне лістоў з адраса @pm.me. Палепшыце яго, каб адпраўляць лісты і ствараць дадатковыя адрасы з выкарыстаннем @pm.me."
@@ -7825,9 +7819,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша падпіска кіруецца Mozilla. Звяжыцеся са службай падтрымкі Mozilla."
-      ],
-      "Your subscription will auto-renew on ${ renewalTime }.": [
-        "Ваша падпіска будзе аўтаматычна падоўжана ${ renewalTime }."
       ]
     },
     "info": {
@@ -9500,6 +9491,11 @@
         "Імпартаваць усе паведамленні з ${ selectedItemsToImportCount } метак з ${ itemsToImportCount } і пазначыць іх як"
       ]
     },
+    "mail_signup_2023: Info": {
+      "Secure email that protects your privacy": [
+        "Бяспечная электронная пошта, якая абараняе вашу прыватнасць"
+      ]
+    },
     "Maintenance mode": {
       "Please check back in a few minutes.": [
         "Паспрабуйце пераправерыць праз некалькі хвілін."
@@ -10290,6 +10286,12 @@
       ],
       "Vault and Item sharing (coming soon)": [
         "Сховішча і абагульванне элементаў (неўзабаве з'явіцца)"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Абагуленне сховішча (да ${ n } асобы)",
+        "Абагуленне сховішча (да ${ n } асоб)",
+        "Абагуленне сховішча (да ${ n } асоб)",
+        "Абагуленне сховішча (да ${ n } асоб)"
       ]
     },
     "new_plans: feature info": {
@@ -10312,17 +10314,6 @@
       ],
       "Team management": [
         "Кіраванне камандамі"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Калі гэта не зрабіць, доступ да вашага ўліковага запісу будзе абмежаваны, а потым цалкам адключаны."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Для працягу выкарыстання ${ MAIL_APP_NAME } з прэміяльнымі функцыямі, выберыце вашу падпіску і спосаб аплаты."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Ваш выпрабавальны перыяд завершыцца ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -10414,6 +10405,17 @@
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Калі гэта не зрабіць, доступ да вашага ўліковага запісу будзе абмежаваны, а потым цалкам адключаны."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Для працягу выкарыстання ${ MAIL_APP_NAME } з прэміяльнымі функцыямі, выберыце вашу падпіску і спосаб аплаты."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Ваш выпрабавальны перыяд завершыцца ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } з ${ humanMaxSpace }"
@@ -10497,7 +10499,7 @@
         "${ CALENDAR_APP_NAME }: Абараняйце свой расклад з дапамогай скразнога шыфравання. Уключае падтрымку для карыстальніцкіх календароў, абагуленых календароў і іншыя функцыі."
       ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Абараняйце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае гісторыю версій для файлаў, абагуленне зашыфраваных файла і іншыя функцыі."
+        "${ DRIVE_APP_NAME }: Абараняйце свае файлы з дапамогай зашыфраванага воблачнага сховішча. Уключае гісторыю версій для файлаў, абагуленне зашыфраваных файлаў і іншыя функцыі."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Абараняйце свае лісты з дапамогай скразнога шыфравання. Уключае падтрымку карыстальніцкіх даменаў электроннай пошты, 15 адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і іншыя функцыі."
@@ -11328,6 +11330,9 @@
       "End-to-end encrypted notes": [
         "Нататкі са скразным шыфраваннем"
       ],
+      "End-to-end encryption": [
+        "Скразное шыфраванне"
+      ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Усяго за **${ relativePrice } у месяц** вы атрымаеце доступ да ўсіх прэміяльных сэрвісаў ${ BRAND_NAME }!"
       ],
@@ -11366,6 +11371,9 @@
       ],
       "Launching ${ PASS_APP_NAME }": [
         "Запуск ${ PASS_APP_NAME }"
+      ],
+      "Limited time offer: Get ${ title } for free for 1 year!": [
+        "Прапанова абмежавана па часе: Атрымайце ${ title } бясплатна на 1 год!"
       ],
       "One easy subscription.": [
         "Адна нескладаная падпіска."
