@@ -222,7 +222,7 @@ const SubscriptionCheckout = ({
                     <div className="color-weak">
                         *{' '}
                         {getBlackFridayRenewalNoticeText({
-                            price: amountDue,
+                            price: withDiscountPerCycle,
                             cycle,
                             plansMap,
                             planIDs,
@@ -300,6 +300,7 @@ const SubscriptionCheckout = ({
                         currency={currency}
                         loading={loading}
                         data-testid="price"
+                        star={hasBFDiscount}
                     />
                 </>
             )}
@@ -338,7 +339,6 @@ const SubscriptionCheckout = ({
                         <hr />
                     </div>
                     <CheckoutRow
-                        star={hasBFDiscount}
                         title={c('Title').t`Amount due`}
                         amount={amountDue}
                         currency={currency}
