@@ -221,6 +221,9 @@
       "Get ${ vpnPlus }": [
         "Obtener ${ vpnPlus }"
       ],
+      "Get a new encrypted email address": [
+        "Obtener una dirección de correo cifrado nueva"
+      ],
       "Get in touch": [
         "Contáctenos"
       ],
@@ -494,6 +497,9 @@
       "Use recovery code": [
         "Usar código de recuperación"
       ],
+      "Use your current email instead": [
+        "Use su correo electrónico actual en su lugar"
+      ],
       "User": [
         "Usuario"
       ],
@@ -628,6 +634,115 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Esto desconectará todos los routers y clientes que usen este certificado."
+      ]
+    },
+    "bf2023: Action": {
+      "**Add our encrypted password manager** for only ${ price }": [
+        "**Agregue nuestro administrador de contraseñas cifradas** solo por ${ price }"
+      ],
+      "Add ${ PASS_APP_NAME }": [
+        "Agregue ${ PASS_APP_NAME }"
+      ],
+      "Add ${ plan } for ${ price } per month": [
+        "Agregue ${ plan } por ${ price } al mes"
+      ],
+      "Add ${ plan } to your plan by subscribing to 15 months": [
+        "Agregue ${ plan } a su plan suscribiéndose por 15 meses"
+      ],
+      "Get the deal": [
+        "Obtener la oferta"
+      ],
+      "Remove": [
+        "Eliminar"
+      ],
+      "Remove ${ PASS_APP_NAME }": [
+        "Eliminar ${ PASS_APP_NAME }"
+      ],
+      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
+        "Suscríbase durante 15 meses y obtenga nuestro **administrador de contraseñas cifradas** por solo ${ priceNoSuffix } adicionales cada mes."
+      ]
+    },
+    "bf2023: Deal details": {
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus y ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } de almacenamiento"
+      ],
+      "1 user": [
+        "1 usuario"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "3,000+ servers across 65+ countries": [
+        "Más de 3000 servidores en más de 65 países"
+      ],
+      "6 users": [
+        "6 usuarios"
+      ],
+      "Ad-blocker and malware protection": [
+        "Bloqueador de anuncios y protección contra malware"
+      ],
+      "Extended version history": [
+        "Historial de versiones extendido"
+      ],
+      "High speed streaming": [
+        "Transmisión de alta velocidad"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } Premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } Premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } Premium"
+      ],
+      "Premium Password Manager": [
+        "Administrador de contraseñas premium"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Los descuentos se basan en la cuota estándar mensual."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Su suscripción se renovará automáticamente con el mismo precio reducido y duración al término del ciclo de facturación."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "Garantía de reembolso durante 30 días"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Acceda desde cualquier lugar al contenido de servicios de transmisión como Netflix, Disney+ o Prime Video, entre otros."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
+        "Incluye compatibilidad con ${ domains } dominios de correo electrónico personalizados, ${ addresses } direcciones de correo electrónico, ${ aliases } alias de hide-my-email, posibilidad de compartir calendarios y más."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Incluye compatibilidad con ${ domains } dominios de correo electrónico personalizados, ${ addresses } direcciones de correo electrónico, alias ilimitados de hide-my-email, posibilidad de compartir calendarios y más."
+      ],
+      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "Inicios de sesión seguros en todos sus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Proteja sus correos electrónicos y su agenda con cifrado de extremo a extremo. Incluye compatibilidad con dominios personalizados de correo electrónico, 15 direcciones de correo electrónico, alias ilimitados de hide-my-email, la posibilidad de compartir calendarios y más."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Asegure sus archivos con almacenamiento en la nube cifrado. Se incluyen el historial de versiones, el intercambio de archivos cifrado y más."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "La tecnología NetShield tiene como fin proteger sus dispositivos y que pueda navegar mucho más rápido bloqueando anuncios, rastreadores y malware."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "El espacio de almacenamiento se distribuye entre todas las apps de ${ BRAND_NAME }."
+      ],
+      "Store up to 200 versions of each file for up to 10 years.": [
+        "Almacene hasta 200 versiones de cada archivo durante 10 años como máximo."
       ]
     },
     "Billing cycle": {
@@ -2384,6 +2499,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -2402,6 +2520,10 @@
       "Megabyte": [
         "Megabyte",
         "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Font face option": {
@@ -2656,15 +2778,6 @@
       ],
       "Admin account allocation": [
         "Cuenta administrador de asignación"
-      ],
-      "After this date, you'll be billed every 12 months at the normal yearly rate.": [
-        "Después de esta fecha, se le facturará cada 12 meses al precio anual normal."
-      ],
-      "After this date, you'll be billed every 24 months at the normal 2-year rate.": [
-        "Después de esta fecha, se le facturará cada 24 meses al precio anual normal de 2 años."
-      ],
-      "After this date, you'll be billed every month at the regular price.": [
-        "Después de esta fecha, se le facturará cada mes al precio normal."
       ],
       "All your changes will be lost.": [
         "Todos sus cambios se perderán."
@@ -3562,6 +3675,9 @@
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Con un plan Business o Enterprise, puede comprar ${ boldDedicatedServers } para su organización y configurar ${ boldGateways } para controlar cuáles usuarios pueden acceder a ellas."
       ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Con una dirección cifrada de ${ BRAND_NAME }, puede usar todos los servicios de ${ BRAND_NAME }"
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sin activación, no podrá crear usuarios nuevos, añadir direcciones a usuarios existentes o acceder a cuentas de usuario no privadas."
       ],
@@ -3656,6 +3772,9 @@
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Perderá el acceso a los servidores y funciones de ${ vpnPlanNameShort } en esta fecha."
       ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Necesitará una dirección de ${ BRAND_NAME } para usar ${ MAIL_APP_NAME } y ${ CALENDAR_APP_NAME }"
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pronto será redirigido a PayPal para verificar su pago."
       ],
@@ -3712,9 +3831,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Su suscripción es gestionada por Mozilla. Contacte con el soporte de Mozilla."
-      ],
-      "Your subscription will auto-renew on ${ renewalTime }.": [
-        "Su suscripción se renovará automáticamente en ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -4969,14 +5085,6 @@
         "términos y condiciones"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prueba de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Uso de la cuenta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "¿Eliminar cuenta?"
@@ -4992,6 +5100,14 @@
       ],
       "Switch plans?": [
         "¿Desea cambiar de plan?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prueba de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Uso de la cuenta"
       ]
     },
     "new_plans: tooltip": {
@@ -5864,6 +5980,9 @@
       ],
       "Password": [
         "Contraseña"
+      ],
+      "Username": [
+        "Nombre de usuario"
       ]
     },
     "specialoffer: Action": {
@@ -6127,10 +6246,10 @@
         "Facturación cada 2 años"
       ],
       "Billed for 15 months": [
-        "Facturación cada 15 meses"
+        "Facturación por 15 meses"
       ],
       "Billed for 30 months": [
-        "Facturación cada 30 meses"
+        "Facturación por 30 meses"
       ],
       "Billed monthly": [
         "Facturación mensual"

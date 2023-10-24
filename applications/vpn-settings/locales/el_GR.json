@@ -221,6 +221,9 @@
       "Get ${ vpnPlus }": [
         "Λήψη ${ vpnPlus }"
       ],
+      "Get a new encrypted email address": [
+        "Λάβετε μια νέα κρυπτογραφημένη διεύθυνση ηλεκτρονικού ταχυδρομείου"
+      ],
       "Get in touch": [
         "Επικοινωνήστε"
       ],
@@ -493,6 +496,9 @@
       ],
       "Use recovery code": [
         "Χρησιμοποιήστε κωδικό ανάκτησης"
+      ],
+      "Use your current email instead": [
+        "Χρησιμοποιήστε την τρέχουσα διεύθυνση email σας"
       ],
       "User": [
         "Χρήστης"
@@ -2384,6 +2390,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -2402,6 +2411,10 @@
       "Megabyte": [
         "Megabyte",
         "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Font face option": {
@@ -2656,15 +2669,6 @@
       ],
       "Admin account allocation": [
         "Κατανομή στον λογαριασμό του διαχειριστή"
-      ],
-      "After this date, you'll be billed every 12 months at the normal yearly rate.": [
-        "Μετά από αυτήν την ημερομηνία, θα χρεώνεστε κάθε 12 μήνες με την κανονική ετήσια τιμή."
-      ],
-      "After this date, you'll be billed every 24 months at the normal 2-year rate.": [
-        "Μετά από αυτήν την ημερομηνία, θα χρεώνεστε κάθε 24 μήνες με την κανονική τιμή 2 ετών."
-      ],
-      "After this date, you'll be billed every month at the regular price.": [
-        "Μετά από αυτήν την ημερομηνία, θα χρεώνεστε κάθε μήνα στην κανονική τιμή."
       ],
       "All your changes will be lost.": [
         "Όλες οι αλλαγές σας θα χαθούν."
@@ -3562,6 +3566,9 @@
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Με ένα Business ή Enterprise πλάνο, μπορείτε να αγοράσετε ${ boldDedicatedServers } για τον οργανισμό σας και να ρυθμίσετε τις ${ boldGateways } για να ελέγχετε ποιοι χρήστες μπορούν να έχουν πρόσβαση σε αυτές."
       ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Με κρυπτογραφημένη διεύθυνση ${ BRAND_NAME }, μπορείτε να χρησιμοποιήσετε όλες τις ${ BRAND_NAME } υπηρεσίες"
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Χωρίς ενεργοποίηση, δεν θα μπορείτε να δημιουργήσετε νέους χρήστες, να προσθέσετε διευθύνσεις σε υπάρχοντες χρήστες ή να αποκτήσετε πρόσβαση σε μη ιδιωτικούς λογαριασμούς χρηστών."
       ],
@@ -3656,6 +3663,9 @@
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "Θα χάσετε την πρόσβαση στους διακομιστές και λειτουργίες του ${ vpnPlanNameShort } αυτήν την ημέρα."
       ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "Θα χρειαστείτε μια διεύθυνση ${ BRAND_NAME } για να χρησιμοποιήσετε ${ MAIL_APP_NAME } και ${ CALENDAR_APP_NAME }"
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Θα ανακατευθυνθείτε σύντομα στο Paypal, για να επαληθεύσετε την πληρωμή σας."
       ],
@@ -3712,9 +3722,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Η συνδρομή σας διαχειρίζεται απο το Mozilla. Επικοινωνήστε με την υποστήριξη του Mozilla."
-      ],
-      "Your subscription will auto-renew on ${ renewalTime }.": [
-        "Η συνδρομή σας θα ανανεωθεί αυτόματα στις ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -4969,14 +4976,6 @@
         "όροι και προϋποθέσεις"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Δοκιμή ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Η κατανάλωση του λογαριασμού σας"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Διαγραφή λογαριασμού;"
@@ -4992,6 +4991,14 @@
       ],
       "Switch plans?": [
         "Αλλαγή προγράμματος;"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Δοκιμή ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Η κατανάλωση του λογαριασμού σας"
       ]
     },
     "new_plans: tooltip": {
@@ -5864,6 +5871,9 @@
       ],
       "Password": [
         "Κωδικός πρόσβασης"
+      ],
+      "Username": [
+        "Όνομα χρήστη"
       ]
     },
     "specialoffer: Action": {

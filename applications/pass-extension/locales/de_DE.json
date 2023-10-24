@@ -59,6 +59,9 @@
       "Confirm": [
         "Bestätigen"
       ],
+      "Confirm access": [
+        "Zugriff bestätigen"
+      ],
       "Continue": [
         "Weiter"
       ],
@@ -80,6 +83,9 @@
       "Create a ${ BRAND_NAME } account": [
         "${ BRAND_NAME }-Konto erstellen"
       ],
+      "Create a new vault to share": [
+        "Erstelle einen neuen geteilten Tresor"
+      ],
       "Create alias": [
         "Alias erstellen"
       ],
@@ -97,6 +103,9 @@
       ],
       "Creating vault": [
         "Tresor wird erstellt"
+      ],
+      "Customize": [
+        "Anpassen"
       ],
       "Delete": [
         "Löschen"
@@ -212,6 +221,9 @@
       "More options": [
         "Weitere Optionen"
       ],
+      "Move to a shared vault": [
+        "In einen geteilten Tresor verschieben"
+      ],
       "Move to another vault": [
         "In einen anderen Tresor verschieben"
       ],
@@ -223,6 +235,9 @@
       ],
       "Not now": [
         "Nicht jetzt"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open in a window": [
         "In einem neuen Fenster öffnen"
@@ -244,6 +259,9 @@
       ],
       "Regenerate": [
         "Neu generieren"
+      ],
+      "Reject": [
+        "Ablehnen"
       ],
       "Reject invitation": [
         "Einladung ablehnen"
@@ -284,6 +302,9 @@
       "Share": [
         "Teilen"
       ],
+      "Share this vault": [
+        "Diesen Tresor teilen"
+      ],
       "Share vault": [
         "Tresor teilen"
       ],
@@ -312,7 +333,7 @@
         "Bericht wird übermittelt…"
       ],
       "Transfer ownership": [
-        "Besitzer ändern"
+        "Inhaberschaft übertragen"
       ],
       "Try again": [
         "Erneut versuchen"
@@ -320,11 +341,17 @@
       "Update": [
         "Aktualisieren"
       ],
+      "Update vault": [
+        "Tresor aktualisieren"
+      ],
       "Updating": [
         "Wird aktualisiert"
       ],
       "Upgrade": [
         "Wechseln"
+      ],
+      "Upgrade now to share with more people": [
+        "Jetzt upgraden, um mit weiteren Personen zu teilen"
       ],
       "Upgrade to keep these features": [
         "Upgrade, um diese Funktionen zu behalten"
@@ -376,6 +403,9 @@
       "Cannot send invitation to this address at the moment": [
         "Fehler beim Senden der Einladung an diese Adresse."
       ],
+      "Could not confirm this invite at the moment": [
+        "Fehler beim Bestätigen der Einladung."
+      ],
       "Could not leave vault.": [
         "Fehler beim Verlassen des Tresors."
       ],
@@ -383,13 +413,13 @@
         "Erstellter Tresor konnte nicht geöffnet werden."
       ],
       "Could not open invited vault": [
-        "Der Tresor, für den Sie eine Einladung erhalten haben, konnte nicht geöffnet werden."
+        "Der Tresor, für den du eine Einladung erhalten hast, konnte nicht geöffnet werden."
       ],
       "Could not open updated vault": [
         "Aktualisierter Tresor konnte nicht geöffnet werden."
       ],
       "Could not resolve share members": [
-        "Konnte Mitglieder nicht auflösen"
+        "Mitglieder der Freigabe können nicht festgelegt werden"
       ],
       "Could not resume your session : ${ description }": [
         "Deine Sitzung konnte nicht fortgesetzt werden: ${ description }"
@@ -579,6 +609,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -597,6 +630,10 @@
       "Megabyte": [
         "Megabyte",
         "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Info": {
@@ -640,15 +677,14 @@
         "${ trialDaysLeft } verbleibender Tag",
         "${ trialDaysLeft } verbleibende Tage"
       ],
-      "${ vault.count } item": [
-        "${ vault.count } Eintrag",
-        "${ vault.count } Einträge"
-      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Eine neue Version von ${ PASS_APP_NAME } ist verfügbar. Aktualisiere sie, um die neuesten Funktionen und Fehlerbehebungen zu genießen."
       ],
       "Access ${ PASS_APP_NAME } via this icon": [
         "Greife über dieses Symbol auf ${ PASS_APP_NAME } zu"
+      ],
+      "Access successfully confirmed": [
+        "Zugriff erfolgreich bestätigt"
       ],
       "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
         "Der Zugang zu ${ PASS_APP_NAME } erfordert einen PIN-Code, um deine Sitzung zu entsperren."
@@ -692,14 +728,17 @@
       "Check out all the exclusive features that are available to you for a limited time.": [
         "Sieh dir all die exklusiven Funktionen an, die dir für eine begrenzte Zeit zur Verfügung stehen."
       ],
+      "Congratulations, your access has been confirmed": [
+        "Gratulation, dein Zugriff wurde bestätigt"
+      ],
       "Copied to clipboard": [
         "In die Zwischenablage kopiert"
       ],
       "Creating alias...": [
         "Alias wird erstellt..."
       ],
-      "Custom fields": [
-        "Benutzerdefinierte Felder"
+      "Credit cards, Custom fields": [
+        "Kreditkarten, benutzerdefinierte Felder"
       ],
       "Decrypting your data": [
         "Deine Daten werden entschlüsselt"
@@ -740,6 +779,12 @@
       "Follow these simple steps to get the best experience:": [
         "Befolge diese einfachen Schritte, um das bestmögliche Erlebnis zu erhalten:"
       ],
+      "For security reason, your access needs to be confirmed": [
+        "Aus Sicherheitsgründen muss dein Zugriff bestätigt werden"
+      ],
+      "For security reasons, your access needs to be confirmed": [
+        "Aus Sicherheitsgründen muss dein Zugriff bestätigt werden"
+      ],
       "Free Trial": [
         "Kostenlose Testversion"
       ],
@@ -748,6 +793,9 @@
       ],
       "Generating alias...": [
         "Alias wird generiert..."
+      ],
+      "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
+        "Erhalte eine unbegrenzte Anzahl von Aliasen, genieße exklusive Funktionen und unterstütze uns, indem du Pass Plus abonnierst."
       ],
       "Here you will find all the necessary information to get you started.": [
         "Nachfolgend findest du alle notwendigen Informationen für den Einstieg."
@@ -786,9 +834,6 @@
       "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
         "Um deine Daten von einem anderen Passwort-Manager zu ${ PASS_APP_NAME } zu migrieren, exportiere deine Passwörter und importiere sie mit dem unten stehenden Formular. Sobald alle deine Daten importiert wurden, lösche die zuvor exportierte Datei."
       ],
-      "Integrated 2FA authenticator": [
-        "Integrierter 2FA-Authentifikator"
-      ],
       "Internet connection lost": [
         "Internetverbindung unterbrochen"
       ],
@@ -800,6 +845,9 @@
       ],
       "Invite successfully resent": [
         "Einladung erfolgreich erneut versendet."
+      ],
+      "Invite successfully sent": [
+        "Einladung erfolgreich versendet"
       ],
       "invites you to access items in": [
         "lädt Sie zum Zugriff auf Elemente in"
@@ -842,7 +890,7 @@
         "Wird geladen..."
       ],
       "me": [
-        "mich"
+        "Ich"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } ist mehr als nur ein Passwort-Manager: Er schützt dein Passwort und deine persönliche E-Mail-Adresse über E-Mail-Aliasse. Dank der gleichen Technologie wie bei ${ MAIL_APP_NAME } sind deine Daten durchgängig verschlüsselt und nur für dich zugänglich."
@@ -866,13 +914,16 @@
         "Besitzer"
       ],
       "Ownership successfully transfered. You are no long the owner of this vault.": [
-        "Das Eigentumsrecht wurde erfolgreich übertragen. Sie sind nicht mehr der Eigentümer dieses Tresors."
+        "Das Eigentumsrecht wurde erfolgreich übertragen. Du bist nicht mehr der Eigentümer dieses Tresors."
       ],
       "Password copied": [
         "Passwort kopiert"
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Passwörter, die älter als 1 Tag sind, werden automatisch aus dem Verlauf gelöscht."
+      ],
+      "Pending access to the shared data": [
+        "Ausstehender Zugriff auf die geteilten Daten"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Hefte ${ PASS_APP_NAME } an deine Symbolleiste an"
@@ -919,6 +970,9 @@
       "Settings successfully updated": [
         "Einstellungen erfolgreich aktualisiert."
       ],
+      "Share with 10 others": [
+        "Mit 10 anderen teilen"
+      ],
       "Sign in or create an account to continue.": [
         "Melde dich an oder erstelle ein Konto, um fortzufahren."
       ],
@@ -962,6 +1016,9 @@
       "Unable to copy to clipboard": [
         "Kopieren in die Zwischenablage nicht möglich"
       ],
+      "Unlimited Aliases": [
+        "Unbegrenzte Aliasse"
+      ],
       "Unlock it with your PIN to access the settings": [
         "Entsperre sie mit deiner PIN, um auf die Einstellungen zuzugreifen."
       ],
@@ -970,6 +1027,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } upgraden"
+      ],
+      "Use vaults to share this item with others.": [
+        "Verwende Tresore, um dieses Element mit anderen zu teilen."
       ],
       "User's access removed": [
         "Benutzerzugriff entfernt"
@@ -1225,6 +1285,9 @@
       "Include numbers (0-9)": [
         "Zahlen (0-9) einschließen"
       ],
+      "Invitations": [
+        "Einladungen"
+      ],
       "Label": [
         "Bezeichnung"
       ],
@@ -1254,6 +1317,9 @@
       ],
       "Logins": [
         "Zugangsdaten"
+      ],
+      "Members": [
+        "Mitglieder"
       ],
       "Modified": [
         "Geändert"
@@ -1535,6 +1601,9 @@
       "Select a suffix": [
         "Suffix auswählen"
       ],
+      "Shared vault": [
+        "Geteilter Tresor"
+      ],
       "Unknown origin": [
         "Ursprung unbekannt"
       ],
@@ -1546,6 +1615,12 @@
       ],
       "Write your note": [
         "Schreibe deine Notiz"
+      ]
+    },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Tresore können nicht mehr als ${ vault.targetMaxMembers } Benutzer beinhalten.",
+        "Tresore können nicht mehr als ${ vault.targetMaxMembers } Benutzer beinhalten."
       ]
     },
     "Title": {
@@ -1603,6 +1678,12 @@
       "Low disk space": [
         "Wenig Speicherplatz auf der Festplatte"
       ],
+      "Member limit": [
+        "Mitgliederlimit"
+      ],
+      "Pending access to the shared data": [
+        "Zugriff auf die gemeinsamen Daten ist ausstehend"
+      ],
       "Permanently remove all items ?": [
         "Alle Einträge dauerhaft löschen?"
       ],
@@ -1628,7 +1709,7 @@
         "Die Erweiterung ist nun einsatzbereit."
       ],
       "Transfer ownership": [
-        "Besitzer ändern"
+        "Inhaberschaft übertragen"
       ],
       "Trash empty": [
         "Papierkorb leer"
@@ -1793,6 +1874,15 @@
       "You cannot create more vaults than your subscription allows.": [
         "Du kannst nicht mehr Tresore erstellen, als dein Abonnement zulässt."
       ],
+      "You have reached the limit of members who can access this vault.": [
+        "Du hast die Benutzerlimite für den Zugriff auf diesen Tresor erreicht."
+      ],
+      "You have reached the limit of users in this vault. ${ upgradeLink }": [
+        "Du hast das Limit an zulässigen Benutzern in diesem Tresor erreicht. ${ upgradeLink }"
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "Du hast die maximale Anzahl an Tresoren in deinem Abonnement erreicht."
+      ],
       "You have unsaved changes, are you sure you want to discard them?": [
         "Du hast ungespeicherte Änderungen. Bist du dir sicher, dass du diese verwerfen möchtest?"
       ],
@@ -1800,7 +1890,7 @@
         "Du musst mindestens ein Postfach auswählen."
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
-        "Sie haben dann keinen Zugang mehr zu diesem Tresor. Um ihm wieder beizutreten, benötigen Sie eine neue Einladung."
+        "Du hast dann keinen Zugang mehr zu diesem Tresor. Um ihm wieder beizutreten, benötigst du eine neue Einladung."
       ],
       "Your plan does not allow you to create more aliases": [
         "Dein Abonnement erlaubt es dir nicht, weitere Aliasse zu erstellen."

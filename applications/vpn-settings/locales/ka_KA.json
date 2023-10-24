@@ -221,6 +221,9 @@
       "Get ${ vpnPlus }": [
         "${ vpnPlus }-ის მიღება"
       ],
+      "Get a new encrypted email address": [
+        "მიიღეთ ახალი დაშიფრული ელფოსტის მისამართი"
+      ],
       "Get in touch": [
         "დაგვიკავშირდით"
       ],
@@ -493,6 +496,9 @@
       ],
       "Use recovery code": [
         "აღდგენის კოდის გამოყენება"
+      ],
+      "Use your current email instead": [
+        "გამოიყენეთ თქვენი მიმდინარე ელ-ფოსტის მისამართი"
       ],
       "User": [
         "მომხმარებელი"
@@ -2657,15 +2663,6 @@
       "Admin account allocation": [
         "ადმინისტრატორის ანგარიშის გამოყოფა"
       ],
-      "After this date, you'll be billed every 12 months at the normal yearly rate.": [
-        "ამ თარიღის შემდეგ გადაიხდით ყოველ 12 თვეში, ნორმალურ წლიურ ფასს."
-      ],
-      "After this date, you'll be billed every 24 months at the normal 2-year rate.": [
-        "ამ თარიღის შემდეგ გადაიხდით ყოველ 24 თვეში, ნორმალურ 2-წლიურ ფასს."
-      ],
-      "After this date, you'll be billed every month at the regular price.": [
-        "ამ თარიღის შემდეგ გადაიხდით ყოველთვე, ჩვეულებრივ ფასს."
-      ],
       "All your changes will be lost.": [
         "ყველა თქვენი ცვლილება დაიკარგება."
       ],
@@ -3656,6 +3653,9 @@
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "ამ თარიღის მოსვლისას ${ vpnPlanNameShort }-ის სერვერებთან და მის ფუნქციებთან წვდომას დაკარგავთ."
       ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME }-ის და ${ CALENDAR_APP_NAME }-ის გამოსაყენებლად ${ BRAND_NAME }-ის მისამართი დაგჭირდებათ"
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "გადახდის დასასრულებლად PayPal-ის ვებგვერდზე გადამისამართდებით."
       ],
@@ -3712,9 +3712,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "თქვენი გამოწერა Mozilla-ს მიერ იმართება. დაუკავშირდით მათ მხარდაჭერის გუნდს."
-      ],
-      "Your subscription will auto-renew on ${ renewalTime }.": [
-        "თქვენი გამოწერის ავტომატური განახლების თარიღი: ${ renewalTime }."
       ]
     },
     "Info for cash payment method": {
@@ -4838,6 +4835,10 @@
       ],
       "Vault and Item sharing (coming soon)": [
         "საცავისა და ელემენტების გაზიარება (მალე)"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "საცავის გაზიარება (${ n }-მდე პიროვნებასთან)",
+        "საცავის გაზიარება (${ n }-მდე პიროვნებასთან)"
       ]
     },
     "new_plans: feature info": {
@@ -4965,14 +4966,6 @@
         "პირობები და წესები"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } საცდელი"
-      ],
-      "Your account's usage": [
-        "თქვენი ანგარიშის გამოყენება"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "წავშალო ანგარიში?"
@@ -4988,6 +4981,14 @@
       ],
       "Switch plans?": [
         "გადავრთო სატარიფო გეგმა?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } საცდელი"
+      ],
+      "Your account's usage": [
+        "თქვენი ანგარიშის გამოყენება"
       ]
     },
     "new_plans: tooltip": {
@@ -5860,6 +5861,9 @@
       ],
       "Password": [
         "პაროლი"
+      ],
+      "Username": [
+        "მომხმარებლის სახელი"
       ]
     },
     "specialoffer: Action": {

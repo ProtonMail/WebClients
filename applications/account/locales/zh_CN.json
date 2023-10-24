@@ -278,6 +278,9 @@
       "Delete": [
         "删除"
       ],
+      "Delete and confirm": [
+        "删除并确认"
+      ],
       "Delete link": [
         "删除链接"
       ],
@@ -746,6 +749,9 @@
       "Save address": [
         "保存地址"
       ],
+      "Save changes": [
+        "保存更改"
+      ],
       "Save ICS file": [
         "保存 ICS 文件"
       ],
@@ -1194,6 +1200,11 @@
     "Badge for user sessions table": {
       "Current session": [
         "当前登录"
+      ]
+    },
+    "Billing cycle": {
+      "${ n } months": [
+        "${ n } 个月"
       ]
     },
     "Billing cycle option": {
@@ -4761,6 +4772,9 @@
       "${ discountPercentage } forever": [
         "终身享受 ${ discountPercentage } 折扣"
       ],
+      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
+        "${ DRIVE_APP_NAME } 将不再保留文件的旧版本。"
+      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } 无效"
       ],
@@ -5126,6 +5140,9 @@
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "分享此日历的全部事件详情，即表示您同意授权 ${ BRAND_NAME } 访问此日历的加密信息。"
+      ],
+      "Cancel anytime": [
+        "随时取消"
       ],
       "Center": [
         "居中"
@@ -5604,6 +5621,9 @@
       "Link deleted": [
         "链接已删除"
       ],
+      "Link expired": [
+        "链接已过期"
+      ],
       "Link type": [
         "链接类型"
       ],
@@ -5994,6 +6014,12 @@
       "Setting up your organization": [
         "设置您的组织"
       ],
+      "Settings update failed": [
+        "设置更新失败"
+      ],
+      "Settings updated": [
+        "设置已更新"
+      ],
       "Show original message": [
         "显示原始邮件"
       ],
@@ -6041,6 +6067,15 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "使用以下地址提交存款或扫描二维码。您的存款将在确认后反映在您的账户中。"
+      ],
+      "Subscription auto-renews every 12 months.": [
+        "订阅将每12个月自动续期。"
+      ],
+      "Subscription auto-renews every 24 months.": [
+        "订阅将每24个月自动续期。"
+      ],
+      "Subscription auto-renews every month.": [
+        "订阅将每月自动续期。"
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "您的账户等级即将失效：${ byDate } 前重新激活即可继续享受 ${ planName } 权益。${ reactivateLink }"
@@ -6120,6 +6155,9 @@
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "这些配置可用于 WireGuard 路由器和官方客户端。"
       ],
+      "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
+        "这些凭据不能被用来登录我们的官方${ VPN_APP_NAME }应用。${ learnMore }"
+      ],
       "They'll receive a free month of ${ planName }.": [
         "2. 好友可免费体验 ${ planName } 一个月。"
       ],
@@ -6170,6 +6208,12 @@
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "此操作将退订现有的付费服务，您将失去当前已累积的所有特权，付费账户的剩余时长将折算为余额返还。"
+      ],
+      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
+        "这将删除所有早于 ${ rententionLabel } 的旧版本文件。"
+      ],
+      "This will delete all previous versions of your files.": [
+        "这将删除文件的所有旧版本。"
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "这将禁用您当前的恢复密语，您将无法使用它来访问账户或解密数据。"
@@ -6330,6 +6374,9 @@
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "升级账户即可增设一个简短的 @pm.me 邮箱地址，这个域名可以代表 ${ MAIL_APP_NAME } me 或者 Private Message me。"
       ],
+      "Upgrade to unlock": [
+        "升级以解锁"
+      ],
       "Upload picture": [
         "上传图片"
       ],
@@ -6378,6 +6425,9 @@
       "Version ${ version }": [
         "版本 ${ version }"
       ],
+      "Version history": [
+        "版本历史"
+      ],
       "Visa Secure logo": [
         "Visa Secure 图标"
       ],
@@ -6395,6 +6445,9 @@
       ],
       "We generated a strong password for you": [
         "我们为您生成了一个强密码"
+      ],
+      "We just sent you a new link.": [
+        "我们刚向您发送新的链接"
       ],
       "We need to authenticate your payment method with your bank.": [
         "我们需要向您的发卡银行核实支付方式是否有效。"
@@ -6468,8 +6521,8 @@
       "Why?": [
         "为什么？"
       ],
-      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
-        "通过加密的 ${ BRAND_NAME } 地址，您可以使用所有 ${ BRAND_NAME_TWO } 服务"
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "使用加密的 ${ BRAND_NAME } 地址，您可以使用所有 ${ BRAND_NAME } 服务"
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "根据您当前的计划，您只能接收带有 @pm.me 地址的消息。升级后可使用@pm.me 发送消息并创建其他地址。"
@@ -6515,6 +6568,9 @@
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "您可以开启登录记录功能查看每次登录的时间和 IP 地址，登录失败也会被记录下来。"
+      ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
+        "您可以通过将 ${ specificCountryCount } 添加到您计划中的IP地址数量来立即解锁上述设置，或者联系我们获取量身定制的解决方案。"
       ],
       "You can import one data type at a time.": [
         "您一次可以导入一种数据类型。"
@@ -6645,6 +6701,9 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "您的账户有逾期未支付的账单，因此功能已受限。欠费时间过长将导致无法收取邮件，网盘分享链接也将失效。${ payInvoiceLink }"
       ],
+      "Your account has been successfully updated": [
+        "您的账户已成功更新"
+      ],
       "Your account recovery method is set": [
         "账户恢复方式已设置"
       ],
@@ -6677,6 +6736,9 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "导入完成后我们不会留存您的账号和密码。"
+      ],
+      "Your next billing date is ${ renewalTime }.": [
+        "您的下一个结算日期是${ renewalTime }。"
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "若您希望给予他人管理员权限，可以告诉他们这个机构密码。假如您无法登录自己的账户，这个密码也能起到取回机构账户控制权的作用。请妥善保管此密码。"
@@ -7116,6 +7178,12 @@
       "${ n } months": [
         "${ n } 个月"
       ],
+      "${ nbDay } days": [
+        "${ nbDay } 天"
+      ],
+      "${ nbYear } years": [
+        "${ nbYear } 年"
+      ],
       "${ UsedAddresses } of ${ MaxAddresses } email addresses": [
         "邮箱地址数量：${ UsedAddresses } / ${ MaxAddresses }"
       ],
@@ -7218,6 +7286,9 @@
       "Awarded": [
         "已奖励"
       ],
+      "Billing address": [
+        "账单地址"
+      ],
       "Billing cycle": [
         "计费周期"
       ],
@@ -7239,11 +7310,20 @@
       "Browser version": [
         "浏览器版本"
       ],
+      "BTC address": [
+        "比特币地址"
+      ],
+      "BTC amount": [
+        "比特币金额"
+      ],
       "Calendar": [
         "日历"
       ],
       "Calendars": [
         "日历"
+      ],
+      "Card details": [
+        "卡详情"
       ],
       "Card holder": [
         "持卡人"
@@ -7292,6 +7372,9 @@
       ],
       "Config to connect to ${ serverName }": [
         "用于连接 ${ serverName } 的配置信息"
+      ],
+      "Confirm email": [
+        "确认邮箱"
       ],
       "Confirm link URLs": [
         "确认打开链接"
@@ -7343,6 +7426,9 @@
       ],
       "Current display name": [
         "当前称呼"
+      ],
+      "Current email": [
+        "当前邮箱"
       ],
       "Customize invoices": [
         "自定义账单"
@@ -7410,6 +7496,9 @@
       "Don't ask again": [
         "不再询问"
       ],
+      "Don't keep versions": [
+        "不要保留版本"
+      ],
       "Duration": [
         "时间"
       ],
@@ -7460,6 +7549,12 @@
       ],
       "Event notifications": [
         "事件通知"
+      ],
+      "Exclude Spam/Trash from All mail": [
+        "从所有邮件中排除垃圾邮件/垃圾信息"
+      ],
+      "Expiration (${ patternExpiration })": [
+        "到期 (${ patternExpiration })"
       ],
       "Expiration date": [
         "有效期至"
@@ -7617,6 +7712,9 @@
       "New display name": [
         "新称呼"
       ],
+      "New email": [
+        "新邮箱"
+      ],
       "New login password": [
         "新登录密码"
       ],
@@ -7628,6 +7726,9 @@
       ],
       "New password": [
         "新密码"
+      ],
+      "New plan": [
+        "新套餐"
       ],
       "No filter": [
         "无过滤规则"
@@ -7674,6 +7775,9 @@
       "Organization password": [
         "组织密码"
       ],
+      "Organization size": [
+        "组织规模"
+      ],
       "Other amount": [
         "其他金额"
       ],
@@ -7713,6 +7817,9 @@
       "Please select files to upload": [
         "请选择要上传的文件"
       ],
+      "Please share any feedback to help us improve.": [
+        "请分享任何反馈意见，以帮助我们改进工作。"
+      ],
       "Port": [
         "端口"
       ],
@@ -7749,14 +7856,26 @@
       "Repeat password": [
         "重复密码"
       ],
+      "Require 2FA for administrators": [
+        "要求管理员使用双重身份认证"
+      ],
+      "Require 2FA for everyone": [
+        "要求所有人使用双重身份认证"
+      ],
       "Reveal password": [
         "显示密码"
       ],
       "Security code": [
         "安全码"
       ],
+      "Security code (${ codeName })": [
+        "安全码 (${ codeName })"
+      ],
       "Select your country": [
         "选择国家"
+      ],
+      "Select your plan": [
+        "选择您的套餐"
       ],
       "Send auto-reply": [
         "自动回复"
@@ -7848,6 +7967,9 @@
       "Time format": [
         "时间格式"
       ],
+      "Time zone": [
+        "时区"
+      ],
       "To: ${ to }": [
         "收件人：${ to }"
       ],
@@ -7893,6 +8015,9 @@
       "Verification code": [
         "验证码"
       ],
+      "Verify keys with Key Transparency": [
+        "使用Key Transparency验证密钥"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "我们对您的离去深表遗憾。请告诉我们您为什么要删除账户，帮助我们加以改进："
       ],
@@ -7907,6 +8032,9 @@
       ],
       "What is the main reason you are deleting your account?": [
         "您删除账户的主要原因是？"
+      ],
+      "Why would you like to cancel?": [
+        "您为什么想要取消？"
       ],
       "With attachment": [
         "含有附件"
@@ -8623,6 +8751,9 @@
       "1 free VPN connection in total": [
         "仅 1 台设备可免费接入 VPN"
       ],
+      "1 user": [
+        "1名用户"
+      ],
       "99.95% SLA": [
         "保障 99.95% 正常运行时间"
       ],
@@ -8638,6 +8769,9 @@
       "Auto-reply": [
         "自动回复"
       ],
+      "Calendar sharing": [
+        "共享日历"
+      ],
       "Catch-all": [
         "通配邮箱"
       ],
@@ -8649,6 +8783,9 @@
       ],
       "Contact groups management": [
         "联系人群组管理"
+      ],
+      "Custom domains for email aliases": [
+        "用于电子邮件别名的自定义域名"
       ],
       "Custom email domains": [
         "自有域名"
@@ -8734,6 +8871,9 @@
       "Secure Core servers": [
         "Secure Core 服务器"
       ],
+      "Send & receive invitations": [
+        "发送和接收邀请"
+      ],
       "Servers in ${ vpnServersCountData.paid.countries }+ countries": [
         "${ vpnServersCountData.paid.countries } 个国家/地区的服务器"
       ],
@@ -8745,6 +8885,12 @@
       ],
       "Sign in as user": [
         "代替用户登录"
+      ],
+      "SMTP submission": [
+        "提交 SMTP"
+      ],
+      "SMTP submission for select organizations": [
+        "为特定组织提交 SMTP"
       ],
       "Split tunneling (Android and Windows)": [
         "线路分离（支持 Android 与 Windows）"
@@ -8776,11 +8922,20 @@
       "Unlimited labels": [
         "标签数量不限"
       ],
+      "Unlimited logins and notes": [
+        "无限制登录和备注"
+      ],
       "Unlimited messages per day": [
         "每日发送邮件不限量"
       ],
       "Unlimited volume/bandwidth": [
         "流量与带宽不限"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "最多 ${ FAMILY_MAX_USERS } 名用户"
+      ],
+      "Up to ${ n } users": [
+        "最多 ${ n } 名用户"
       ],
       "Up to ${ totalStorageSize } storage": [
         "升级容量至 ${ totalStorageSize }"
@@ -8796,6 +8951,9 @@
       ],
       "User session management": [
         "用户登录管理"
+      ],
+      "Vault sharing (up to ${ n } people)": [
+        "密码分享（最多${ n }个人）"
       ]
     },
     "new_plans: feature info": {
@@ -8818,14 +8976,6 @@
       ],
       "Team management": [
         "团队管理"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否则，您的账户功能将受到限制，直至最后被停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
       ]
     },
     "new_plans: info": {
@@ -8900,6 +9050,14 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "您正在享受当前套餐的促销价格。 降级账号后，您将失去优惠价格，如果再次尝试订阅，优惠价格将不可用。"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否则，您的账户功能将受到限制，直至最后被停用。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
       ]
     },
     "new_plans: Label": {
@@ -9659,11 +9817,17 @@
       "Please select a country": [
         "请选择国家"
       ],
+      "Please select the main reason": [
+        "请选择主要原因"
+      ],
       "Printer": [
         "打印机"
       ],
       "Search": [
         "搜索"
+      ],
+      "Search for a user or address": [
+        "搜索用户或地址"
       ],
       "Search users": [
         "搜索用户"
@@ -10563,6 +10727,9 @@
       "${ server.Domain } copied to your clipboard": [
         "${ server.Domain } 已复制到剪贴板"
       ],
+      "Account deleted. Signing out...": [
+        "账户已删除。登出中..."
+      ],
       "Address added": [
         "地址已添加"
       ],
@@ -10620,6 +10787,9 @@
       "Email address copied to clipboard": [
         "邮箱地址已复制到剪贴板"
       ],
+      "Email address updated": [
+        "电子邮件地址已更新"
+      ],
       "Email updated": [
         "邮箱已更改"
       ],
@@ -10634,6 +10804,9 @@
       ],
       "Import record deleted": [
         "导入记录已删除"
+      ],
+      "Invitation sent": [
+        "已发出邀请"
       ],
       "Invoice customized": [
         "账单信息已更改"
@@ -10715,6 +10888,9 @@
       ],
       "Verification successful": [
         "验证成功"
+      ],
+      "You have successfully cancelled your subscription.": [
+        "您已成功取消订阅。"
       ],
       "You have successfully unsubscribed": [
         "您已退订成功"
@@ -11078,6 +11254,9 @@
       "Auto-reply": [
         "自动回复"
       ],
+      "Auto-reply and forward": [
+        "自动回复与转发"
+      ],
       "Automatically sign outgoing messages?": [
         "自动对向外发送的邮件予以数字签名？"
       ],
@@ -11270,6 +11449,9 @@
       "Delete user?": [
         "删除用户?"
       ],
+      "Delete version history?": [
+        "删除版本历史记录？"
+      ],
       "Disable ${ email }": [
         "停用 ${ email }"
       ],
@@ -11330,6 +11512,9 @@
       "Encryption and keys": [
         "加密与密钥"
       ],
+      "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
+        "输入您的 ${ BRAND_NAME } 账户详情以加入 ${ app } Beta 计划"
+      ],
       "Enter your password": [
         "输入密码"
       ],
@@ -11365,6 +11550,9 @@
       ],
       "Folders and labels": [
         "标签与文件夹"
+      ],
+      "Forward emails": [
+        "转发电子邮件"
       ],
       "General": [
         "常规"
@@ -11663,6 +11851,9 @@
       "Set up two-factor authentication": [
         "设置双重验证"
       ],
+      "Set your password": [
+        "设置您的密码"
+      ],
       "Settings": [
         "设置"
       ],
@@ -11674,6 +11865,9 @@
       ],
       "Sign in and grant access": [
         "登录并授予权限"
+      ],
+      "Sign in to join the Beta program": [
+        "登录以加入测试版计划"
       ],
       "Sign in with 2FA": [
         "通过双重验证登录"
@@ -11740,6 +11934,12 @@
       ],
       "Two-factor authentication": [
         "双重验证"
+      ],
+      "Two-factor authentication enforcement": [
+        "执行双重身份验证"
+      ],
+      "Two-factor authentication reminders": [
+        "双重身份验证提醒"
       ],
       "Type": [
         "类型"

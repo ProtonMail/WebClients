@@ -221,6 +221,9 @@
       "Get ${ vpnPlus }": [
         "${ vpnPlus } を入手"
       ],
+      "Get a new encrypted email address": [
+        "新しい暗号化メールアドレスを取得する"
+      ],
       "Get in touch": [
         "連絡する"
       ],
@@ -493,6 +496,9 @@
       ],
       "Use recovery code": [
         "回復用コードを使用"
+      ],
+      "Use your current email instead": [
+        "代わりに現在のメールアドレスを使用"
       ],
       "User": [
         "ユーザー"
@@ -3585,6 +3591,9 @@
       "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
         "この日付になると、${ vpnPlanNameShort } のサーバーと機能へのアクセス権が失われます。"
       ],
+      "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
+        "${ MAIL_APP_NAME } と ${ CALENDAR_APP_NAME } を使うには ${ BRAND_NAME } アドレスが必要です"
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "支払いの検証のため、まもなく PayPal のサイトへリダイレクトされます。"
       ],
@@ -3976,6 +3985,9 @@
       ],
       "New password": [
         "新しいパスワード"
+      ],
+      "New plan": [
+        "新しいプラン"
       ],
       "No filter": [
         "フィルターなし"
@@ -4476,6 +4488,9 @@
       "99.95% SLA": [
         "SLA 99.95%"
       ],
+      "Ad-blocker and malware protection": [
+        "広告ブロッカーとマルウェア防止"
+      ],
       "Admin console": [
         "管理者コンソール"
       ],
@@ -4859,14 +4874,6 @@
         "利用規約"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }トライアル"
-      ],
-      "Your account's usage": [
-        "アカウントの使用率"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "アカウントの削除しますか?"
@@ -4882,6 +4889,14 @@
       ],
       "Switch plans?": [
         "プランを変更しますか?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }トライアル"
+      ],
+      "Your account's usage": [
+        "アカウントの使用率"
       ]
     },
     "new_plans: tooltip": {
@@ -5725,6 +5740,9 @@
       ],
       "Password": [
         "パスワード"
+      ],
+      "Username": [
+        "ユーザー名"
       ]
     },
     "specialoffer: Action": {
@@ -5831,8 +5849,14 @@
       "1 year": [
         "1 年"
       ],
+      "15 months": [
+        "15 か月"
+      ],
       "2 years": [
         "2 年"
+      ],
+      "30 months": [
+        "30 か月"
       ],
       "Billed at ${ amount } for 1 month": [
         "1 か月毎に ${ amount } の支払い"
@@ -7008,8 +7032,14 @@
       "1-year": [
         "1年"
       ],
+      "15-month": [
+        "15 か月"
+      ],
       "2-year": [
         "2年"
+      ],
+      "30-month": [
+        "30 か月"
       ],
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "${ billingCycle } サブスクリプションで ${ discount } 割引をゲット"

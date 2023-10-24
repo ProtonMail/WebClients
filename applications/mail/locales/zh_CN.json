@@ -4668,6 +4668,9 @@
       "(No Recipient)": [
         "(无收件人)"
       ],
+      "**${ elementsFoundCount }** results found in ${ labelName }": [
+        "在 ${ labelName } 中找到了 **${ elementsFoundCount }** 个结果"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "每个手机号只能用于验证一个 ${ BRAND_NAME } 账户"
       ],

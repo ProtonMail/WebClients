@@ -1880,7 +1880,7 @@
         "End-to-end-krypterat"
       ],
       "End-to-end encrypted to verified recipient": [
-        "End-to-end-krypterad till verifierad mottagare"
+        "End-to-end-krypterat till verifierad mottagare"
       ],
       "End-to-end encrypted. ${ warningsText }": [
         "End-to-end-krypterat. ${ warningsText }"
@@ -3997,6 +3997,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -4015,6 +4018,10 @@
       "Megabyte": [
         "Kilobyte",
         "Megabyte"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabyte"
       ]
     },
     "Filter": {
@@ -7844,16 +7851,16 @@
         "Krypterad av ${ MAIL_APP_NAME } till verifierad mottagare"
       ],
       "End-to-end encrypted": [
-        "End-to-end krypterad"
+        "End-to-end-krypterat"
       ],
       "End-to-end encrypted to PGP recipient": [
-        "End-to-end-krypterad till verifierad PGP-mottagare"
+        "End-to-end-krypterat till verifierad PGP-mottagare"
       ],
       "End-to-end encrypted to verified PGP recipient": [
-        "End-to-end-krypterad till verifierad PGP-mottagare"
+        "End-to-end-krypterat till verifierad PGP-mottagare"
       ],
       "End-to-end encrypted to verified recipient": [
-        "End-to-end krypterad till verifierad mottagare"
+        "End-to-end-krypterat till verifierad mottagare"
       ],
       "PGP-signed": [
         "PGP-signerad"
