@@ -1290,6 +1290,101 @@
         "${ mailPlus } : la solution de messagerie et de calendrier respectueuse de la vie privée pour vos besoins de communication quotidiens."
       ]
     },
+    "bf2023: Action": {
+      "**Add our encrypted password manager** for only ${ price }": [
+        "**Ajoutez notre gestionnaire de mots de passe chiffré** pour seulement ${ price }."
+      ],
+      "Add ${ PASS_APP_NAME }": [
+        "Ajouter ${ PASS_APP_NAME }"
+      ],
+      "Add ${ plan } for ${ price } per month": [
+        "Ajouter ${ plan } pour ${ price } par mois"
+      ],
+      "Add ${ plan } to your plan by subscribing to 15 months": [
+        "Ajoutez ${ plan } à votre abonnement en souscrivant pour 15 mois."
+      ],
+      "Get the deal": [
+        "J'en profite"
+      ],
+      "Remove": [
+        "Supprimer"
+      ],
+      "Remove ${ PASS_APP_NAME }": [
+        "Supprimer ${ PASS_APP_NAME }"
+      ],
+      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
+        "Abonnez-vous pour 15 mois et profitez de notre **gestionnaire de mots de passe chiffré** pour seulement ${ priceNoSuffix } de plus par mois."
+      ]
+    },
+    "bf2023: Deal details": {
+      "${ storageSize } storage": [
+        "${ storageSize } d'espace de stockage"
+      ],
+      "1 user": [
+        "1 utilisateur"
+      ],
+      "3 TB": [
+        "3 To"
+      ],
+      "3,000+ servers across 65+ countries": [
+        "Plus de 3 000 serveurs répartis dans plus de 65 pays"
+      ],
+      "6 users": [
+        "6 utilisateurs"
+      ],
+      "Ad-blocker and malware protection": [
+        "Bloqueur de publicité et protection contre les logiciels malveillants"
+      ],
+      "Extended version history": [
+        "Historique des versions plus détaillé"
+      ],
+      "High speed streaming": [
+        "Streaming ultra rapide"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } version premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME } version premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } version premium"
+      ],
+      "Premium Password Manager": [
+        "Gestionnaire de mots de passe version premium"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Les réductions sont calculées sur les prix mensuels habituels."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Votre abonnement sera automatiquement renouvelé au tarif réduit habituel et pour une durée standard à la fin de votre cycle de facturation."
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Accédez aux contenus des services de streaming, dont Netflix, Amazon Prime Video, Canal+, Disney+, France.tv, TF1, Eurosport France… où que vous soyez."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
+        "Comprend la prise en charge de ${ domains } domaine de messagerie personnalisé, ${ addresses } adresses e-mail, ${ aliases } alias « hide-my-email », le partage de calendrier et bien d'autres fonctionnalités."
+      ],
+      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Comprend la prise en charge de ${ domains } domaine de messagerie personnalisé, ${ addresses } adresses e-mail, un nombre illimité d'alias « hide-my-email », le partage de calendrier et bien d'autres fonctionnalités."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Sécurisez votre messagerie et votre agenda grâce au chiffrement de bout en bout. Comprend la prise en charge de domaines de messagerie personnalisés, 15 adresses e-mail, un nombre illimité d'alias « hide-my-email », le partage de calendriers et bien d'autres fonctionnalités."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "La fonctionnalité NetShield est spécialement conçue pour protéger vos appareils et accélérer votre navigation en bloquant les publicités, les traqueurs et les logiciels malveillants."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "L'espace de stockage est partagé entre toutes les applications ${ BRAND_NAME }."
+      ],
+      "Store up to 200 versions of each file for up to 10 years.": [
+        "Conservez jusqu'à 200 versions de chaque fichier pendant 10 ans."
+      ]
+    },
     "Billing cycle": {
       "${ n } month": [
         "${ n } mois",
@@ -3010,6 +3105,17 @@
         "Aidez-nous à nous améliorer."
       ]
     },
+    "drive_signup_2023: Info": {
+      "Advanced sharing security": [
+        "Sécurité avancée pour le partage"
+      ],
+      "Encrypted cloud storage for all your files": [
+        "Le stockage cloud chiffré pour tous vos fichiers"
+      ],
+      "Secure cloud storage and file sharing that protects your data": [
+        "Stockage cloud et partage de fichiers sécurisés qui protègent vos données"
+      ]
+    },
     "Duration": {
       "120 minutes": [
         "120 minutes"
@@ -3265,8 +3371,8 @@
       "Forwarding is active": [
         "Le transfert est actif."
       ],
-      "Forwarding to ${ BRAND_NAME } addresses will keep your communication end-to-end encrypted. When forwarding externally, encryption might need to be removed.": [
-        "Le transfert vers les adresses ${ BRAND_NAME } maintiendra votre communication chiffrée de bout en bout. En cas de transfert à des adresses autres que Proton Mail, le chiffrement pourrait être supprimé."
+      "Forwarding to ${ BRAND_NAME } addresses will keep your communication end-to-end encrypted. When forwarding externally, end-to-end encryption for the forwarding address will be disabled.": [
+        "Le transfert vers les adresses ${ BRAND_NAME } maintient le chiffrement de bout en bout de vos communications. En cas de transfert vers des adresses autres que Proton Mail, le chiffrement de bout en bout pour l'adresse de transfert sera désactivé."
       ],
       "Forwarding to an address without end-to-end encryption requires disabling end-to-end encryption for your ${ boldForwarderEmail } email address. ": [
         "Le transfert vers une adresse sans chiffrement de bout en bout nécessite de désactiver le chiffrement de bout en bout pour votre adresse e-mail ${ boldForwarderEmail }. "
@@ -4724,6 +4830,9 @@
       ],
       "MB": [
         "Mo"
+      ],
+      "TB": [
+        "To"
       ]
     },
     "file size format, long": {
@@ -4742,6 +4851,10 @@
       "Megabyte": [
         "Megaoctet",
         "Megaoctets"
+      ],
+      "Terabyte": [
+        "Téraoctet",
+        "Téraoctets"
       ]
     },
     "Filter Actions": {
@@ -5746,15 +5859,6 @@
       "Admin account allocation": [
         "Attribution de compte administrateur"
       ],
-      "After this date, you'll be billed every 12 months at the normal yearly rate.": [
-        "Après cette date, vous serez facturé tous les 12 mois au tarif annuel habituel."
-      ],
-      "After this date, you'll be billed every 24 months at the normal 2-year rate.": [
-        "Après cette date, vous serez facturé tous les 24 mois au tarif habituel pour 2 ans."
-      ],
-      "After this date, you'll be billed every month at the regular price.": [
-        "Après cette date, vous serez facturé chaque mois au prix habituel."
-      ],
       "Align left": [
         "Aligner à gauche"
       ],
@@ -5943,6 +6047,9 @@
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "En partageant toutes les informations des événements de ce calendrier, vous acceptez d'accorder à ${ BRAND_NAME } l'accès aux informations chiffrées de ce calendrier."
+      ],
+      "Cancel anytime": [
+        "Annulez quand vous le voulez"
       ],
       "Center": [
         "Centrer"
@@ -7406,8 +7513,8 @@
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Avec l'abonnement Business ou Enterprise, vous pouvez acheter des ${ boldDedicatedServers } pour votre organisation et configurer des ${ boldGateways } pour contrôler les utilisateurs y ayant accès."
       ],
-      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
-        "Avec une adresse chiffrée ${ BRAND_NAME }, vous pouvez utiliser tous les services ${ BRAND_NAME_TWO }."
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Avec une adresse chiffrée ${ BRAND_NAME }, vous pouvez utiliser tous les services ${ BRAND_NAME }."
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Avec votre abonnement actuel, vous pouvez uniquement recevoir des messages avec votre adresse @pm.me. Changez d'abonnement pour envoyer des messages et créer des adresses supplémentaires en utilisant @pm.me."
@@ -7663,9 +7770,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Votre abonnement est géré par Mozilla. Nous vous invitons à contacter le support Mozilla."
-      ],
-      "Your subscription will auto-renew on ${ renewalTime }.": [
-        "Votre abonnement sera renouvelé automatiquement le ${ renewalTime }."
       ]
     },
     "info": {
@@ -9318,6 +9422,11 @@
         "Importer tous les messages de ${ selectedItemsToImportCount } labels sur ${ itemsToImportCount } et leur appliquer le label"
       ]
     },
+    "mail_signup_2023: Info": {
+      "Secure email that protects your privacy": [
+        "Messagerie sécurisée qui protège votre vie privée."
+      ]
+    },
     "Maintenance mode": {
       "Please check back in a few minutes.": [
         "Nous vous invitons à vérifier quelques minutes."
@@ -10090,17 +10199,6 @@
         "Gestion de l'équipe"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Autrement, l'accès à votre compte sera limité, puis votre compte sera désactivé."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pour continuer à utiliser ${ MAIL_APP_NAME } avec les fonctionnalités premium, choisissez votre abonnement et votre moyen de paiement."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Votre essai se termine le ${ formattedPeriodEndDate }."
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } se terminant par ${ last4 }"
@@ -10188,6 +10286,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vous bénéficiez d'un tarif promotionnel sur votre abonnement actuel. En choisissant un compte avec moins de fonctionnalités, vous perdrez ce tarif et il ne sera plus disponible si vous voulez vous réabonner."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Autrement, l'accès à votre compte sera limité, puis votre compte sera désactivé."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pour continuer à utiliser ${ MAIL_APP_NAME } avec les fonctionnalités premium, choisissez votre abonnement et votre moyen de paiement."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Votre essai se termine le ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -11082,6 +11191,9 @@
       "End-to-end encrypted notes": [
         "Notes chiffrées de bout en bout"
       ],
+      "End-to-end encryption": [
+        "Chiffrement de bout en bout"
+      ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Pour seulement **${ relativePrice } par mois** de plus, vous bénéficiez de tous les services premium de ${ BRAND_NAME } !"
       ],
@@ -11120,6 +11232,9 @@
       ],
       "Launching ${ PASS_APP_NAME }": [
         "Lancement de ${ PASS_APP_NAME }"
+      ],
+      "Limited time offer: Get ${ title } for free for 1 year!": [
+        "Offre à durée limitée : profitez gratuitement de ${ title } pendant un an !"
       ],
       "One easy subscription.": [
         "Un seul abonnement."

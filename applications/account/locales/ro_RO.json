@@ -81,7 +81,7 @@
         "Adăugare condiție"
       ],
       "Add credit / debit card": [
-        "Adăugare card de credit/debit"
+        "Adăugare card de credit / debit"
       ],
       "Add credits": [
         "Adăugare credite"
@@ -3163,6 +3163,11 @@
         "Mesajul de verificare a fost trimis la ${ address }"
       ]
     },
+    "email_forwarding_2023: Info": {
+      "Forwarding to ${ BRAND_NAME } addresses will keep your communication end-to-end encrypted. When forwarding externally, end-to-end encryption for the forwarding address will be disabled.": [
+        "Redirecționarea către adresele ${ BRAND_NAME } vă va menține criptate comunicațiile în ambele părți. La redirecționarea externă, criptarea în ambele părți pentru adresa de redirecționare va fi dezactivată."
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "A2F"
@@ -5534,15 +5539,6 @@
       "Admin account allocation": [
         "Alocare cont admin"
       ],
-      "After this date, you'll be billed every 12 months at the normal yearly rate.": [
-        "După această dată, se va factura la fiecare 12 luni la tariful anual normal."
-      ],
-      "After this date, you'll be billed every 24 months at the normal 2-year rate.": [
-        "După această dată, se va factura la fiecare 24 luni la tariful normal pentru doi ani."
-      ],
-      "After this date, you'll be billed every month at the regular price.": [
-        "După această dată, se va factura lunar la prețul standard."
-      ],
       "Align left": [
         "Aliniere la stânga"
       ],
@@ -5734,6 +5730,9 @@
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Partajând toate detaliile evenimentului din acest calendar, sunteți de acord să permiteți accesul ${ BRAND_NAME } la aceste informații criptate din calendar."
+      ],
+      "Cancel anytime": [
+        "Anulați oricând"
       ],
       "Center": [
         "Centrare"
@@ -7207,8 +7206,8 @@
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Cu un plan Business sau Enterprise, puteți achiziționa ${ boldDedicatedServers } pentru organizația proprie și puteți configura ${ boldGateways } pentru a controla ce utilizatori le pot accesa."
       ],
-      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME_TWO } services": [
-        "Cu o adresă criptată ${ BRAND_NAME }, puteți utiliza toate serviciile ${ BRAND_NAME_TWO }"
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Cu o adresă criptată ${ BRAND_NAME }, puteți utiliza toate serviciile ${ BRAND_NAME }."
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Cu planul actual, puteți primi doar mesaje cu adresa @pm.me. Modernizați contul pentru a putea și trimite mesaje și a crea adrese suplimentare folosind @pm.me."
@@ -7473,9 +7472,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Abonamentul vă este gestionat de Mozilla. Contactați Mozilla pentru suport."
-      ],
-      "Your subscription will auto-renew on ${ renewalTime }.": [
-        "Abonamentul se va autoreînnoi la ${ renewalTime }."
       ]
     },
     "info": {
@@ -9138,6 +9134,11 @@
         "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } de etichete și etichetare cu"
       ]
     },
+    "mail_signup_2023: Info": {
+      "Secure email that protects your privacy": [
+        "E-mail securizat care vă protejează confidențialitatea"
+      ]
+    },
     "Maintenance mode": {
       "Please check back in a few minutes.": [
         "Reveniți peste câteva minute."
@@ -9905,6 +9906,11 @@
       ],
       "Vault and Item sharing (coming soon)": [
         "Partajarea seifurilor și a datelor (în curând)"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Partajare seif (maxim ${ n } persoană)",
+        "Partajare seif (maxim ${ n } persoane)",
+        "Partajare seif (maxim ${ n } de persoane)"
       ]
     },
     "new_plans: feature info": {
@@ -9927,17 +9933,6 @@
       ],
       "Team management": [
         "Gestionare echipă"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Perioada de probare se termină ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -10027,6 +10022,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Perioada de probare se termină ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10932,6 +10938,9 @@
       "End-to-end encrypted notes": [
         "Note criptate în ambele sensuri"
       ],
+      "End-to-end encryption": [
+        "Criptare în ambele părți"
+      ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Pentru doar încă **${ relativePrice } pe lună**, veți avea acces la toate serviciile premium ${ BRAND_NAME }!"
       ],
@@ -10970,6 +10979,9 @@
       ],
       "Launching ${ PASS_APP_NAME }": [
         "Se lansează ${ PASS_APP_NAME }"
+      ],
+      "Limited time offer: Get ${ title } for free for 1 year!": [
+        "Ofertă limitată: Luați ${ title } gratuit pentru un an!"
       ],
       "One easy subscription.": [
         "Un singur abonament."
@@ -11059,10 +11071,10 @@
     },
     "Payment method option": {
       "Credit/debit card": [
-        "Card de credit/debit"
+        "Card de credit / debit"
       ],
       "New credit/debit card": [
-        "Card nou de credit/debit"
+        "Card nou de credit / debit"
       ]
     },
     "Personal calendar section description": {
@@ -12823,7 +12835,7 @@
         "Adăugare nume grup contacte"
       ],
       "Add credit/debit card": [
-        "Adăugare card de credit/debit"
+        "Adăugare card de credit / debit"
       ],
       "Add credits": [
         "Adăugare credite"
@@ -13139,7 +13151,7 @@
         "Descărcare ${ VPN_APP_NAME }"
       ],
       "Edit credit/debit card": [
-        "Editare card de credit/debit"
+        "Editare card de credit / debit"
       ],
       "Edit display name": [
         "Editare nume afișat"
