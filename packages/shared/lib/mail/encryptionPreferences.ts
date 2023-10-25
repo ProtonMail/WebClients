@@ -333,7 +333,9 @@ const extractEncryptionPreferencesExternalWithoutWKDKeys = (publicKeyModel: Publ
         disabledEncryptionFingerprints,
     } = publicKeyModel;
     const hasPinnedKeys = !!pinnedKeys.length;
-    const encryptionDisabled = apiKeys.every((key) => disabledEncryptionFingerprints.has(key.getFingerprint()));
+    const encryptionDisabled = apiKeys.length
+        ? apiKeys.every((key) => disabledEncryptionFingerprints.has(key.getFingerprint()))
+        : false;
     const result = {
         encrypt,
         sign,
