@@ -75,13 +75,6 @@ export const getSnoozeDate = (element: Element | undefined, labelID: string) => 
     return getDate(element, labelID);
 };
 
-export const isElementReminded = (element: Element | undefined) => {
-    const isElementOrConversation = isMessage(element) || isConversation(element);
-    return element && isElementOrConversation
-        ? (element as Message | Conversation).DisplaySnoozedReminder ?? false
-        : false;
-};
-
 export const isConversationElementSnoozed = (element: Element | undefined, conversationMode: boolean) => {
     if (!conversationMode) {
         return false;
@@ -103,4 +96,11 @@ export const isElementSnoozed = (element: Element | undefined, conversationMode:
     return (
         isConversationElementSnoozed(element, conversationMode) || isMessageElementSnoozed(element, conversationMode)
     );
+};
+
+export const isElementReminded = (element: Element | undefined) => {
+    const isElementOrConversation = isMessage(element) || isConversation(element);
+    return element && isElementOrConversation
+        ? (element as Message | Conversation).DisplaySnoozedReminder ?? false
+        : false;
 };
