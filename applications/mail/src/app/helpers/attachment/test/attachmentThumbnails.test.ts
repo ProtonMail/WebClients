@@ -89,6 +89,11 @@ describe('attachmentThumbnails', () => {
                 { MIMEType: MIME_TYPES.ICS } as AttachmentsMetadata,
                 { MIMEType: MIME_TYPES.APPLICATION_ICS } as AttachmentsMetadata,
                 { MIMEType: MIME_TYPES.PGP_KEYS } as AttachmentsMetadata,
+                { MIMEType: 'whatever', Name: 'attachment.ics' } as AttachmentsMetadata,
+                { MIMEType: 'whatever', Name: 'attachment.ical' } as AttachmentsMetadata,
+                { MIMEType: 'whatever', Name: 'attachment.ifb' } as AttachmentsMetadata,
+                { MIMEType: 'whatever', Name: 'attachment.icalendar' } as AttachmentsMetadata,
+                { MIMEType: 'whatever', Name: 'attachment.asc' } as AttachmentsMetadata,
                 pdfAttachment,
                 imageAttachment,
             ];
