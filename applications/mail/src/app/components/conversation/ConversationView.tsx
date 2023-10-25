@@ -10,6 +10,9 @@ import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
+import { MARK_AS_STATUS, useMarkAs } from 'proton-mail/hooks/actions/useMarkAs';
+import { isElementReminded } from 'proton-mail/logic/snoozehelpers';
+
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { hasLabel } from '../../helpers/elements';
 import { findMessageToExpand } from '../../helpers/message/messageExpandable';
@@ -109,6 +112,7 @@ const ConversationView = ({
     const loading = loadingConversation || loadingMessages;
     const showConversationError = !loading && conversationState?.Conversation?.Subject === undefined;
     const showMessagesError = !loading && !showConversationError && !conversationState?.Messages;
+    const markAs = useMarkAs();
 
     const { focusIndex, handleFocus, handleScrollToMessage, handleBlur, getFocusedId } =
         useConversationFocus(messagesWithoutQuickReplies);
@@ -149,6 +153,14 @@ const ConversationView = ({
         // When the user is switching conversation we need to remove potential quick replies draft flags
         dispatch(removeAllQuickReplyFlags());
     }, [conversationID]);
+
+    // Mark conversation as read when opened and reminded (snooze feature)
+    useEffect(() => {
+        const isReminded = isElementReminded(conversation);
+        if (isReminded && conversation) {
+            markAs([conversation], labelID, MARK_AS_STATUS.READ);
+        }
+    }, [conversation]);
 
     const handleOpenQuickReply = (messageIndex?: number) => {
         handleScrollToMessage(messageIndex, 'end');

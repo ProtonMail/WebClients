@@ -49,7 +49,7 @@ const computeRollbackMarkAsChanges = (element: Element, labelID: string, changes
 export const applyMarkAsChangesOnConversation = (
     conversation: Conversation,
     labelID: string,
-    { status }: MarkAsChanges
+    { status, displaySnoozedReminder }: MarkAsChanges
 ) => {
     const { NumUnread = 0, Labels = [] } = conversation;
     const { ContextNumUnread = 0 } = Labels.find(({ ID }) => ID === labelID) || {};
@@ -67,6 +67,7 @@ export const applyMarkAsChangesOnConversation = (
 
     return {
         ...conversation,
+        DisplaySnoozedReminder: displaySnoozedReminder,
         NumUnread: updatedNumUnread,
         ContextNumUnread: updatedContextNumUnread,
         Labels: updatedLabels,
