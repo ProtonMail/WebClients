@@ -115,6 +115,12 @@ export const reactivateUserKeys = async ({
                     ...addressReactivationPayload,
                 })
             );
+            // Only once the SKLs have been successfully posted we add it to the KT commit state.
+            await Promise.all(
+                reactivatedAddressKeysResult.map(({ onSKLPublishSuccess }) =>
+                    onSKLPublishSuccess ? onSKLPublishSuccess() : Promise.resolve()
+                )
+            );
 
             mutableActiveKeys = updatedActiveKeys;
 
