@@ -296,6 +296,12 @@ export const unlimitedUpsell = {
             icon: 'globe',
         },
         {
+            text: 'Proton Sentinel program',
+            tooltip: `Provides the highest level of account security protection and specialist support`,
+            included: true,
+            icon: 'shield',
+        },
+        {
             text: 'Unlimited folders, labels, and filters',
             included: true,
             icon: 'tag',

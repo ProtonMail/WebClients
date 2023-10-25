@@ -254,7 +254,7 @@ const getSMTP = (included: boolean): PlanCardFeatureDefinition => {
     };
 };
 
-const getSMTPToken = (included: boolean): PlanCardFeatureDefinition => {
+export const getSMTPToken = (included: boolean): PlanCardFeatureDefinition => {
     return {
         text: included
             ? c('new_plans: feature').t`SMTP submission for select organizations`
@@ -263,6 +263,7 @@ const getSMTPToken = (included: boolean): PlanCardFeatureDefinition => {
             .t`SMTP allows 3rd-party services or devices to send email through ${MAIL_APP_NAME}.`,
         included,
         iconUrl: getKnowledgeBaseUrl('/smtp-submission'),
+        icon: 'envelopes',
     };
 };
 
