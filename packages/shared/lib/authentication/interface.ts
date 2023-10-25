@@ -75,6 +75,10 @@ export interface InfoResponse {
     SRPSession: string;
 }
 
+export interface SSOInfoResponse {
+    SSOChallengeToken: string;
+}
+
 export interface InfoAuthedResponse extends InfoResponse {
     '2FA': TwoFaResponse;
 }
