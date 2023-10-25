@@ -9,21 +9,19 @@ import { getImportedVaultName, importLoginItem, importNoteItem } from '../helper
 import type { ImportPayload, ImportVault } from '../types';
 import type { RoboformItem, RoboformVariadicItem } from './roboform.types';
 
-function formatOtpAuthUri(item: RoboformItem): Maybe<string> {
-    const totpDefinition = item.RfFieldsV2?.find((e) => e.startsWith('TOTP KEY$'));
-    if (!totpDefinition) return;
-    const secret = lastItem(totpDefinition.split(','));
-    return `otpauth://totp/${item.Name}:none?secret=${secret}`;
-}
-
 /*
  * In Roboform exports, fields beginning with `@` or `'` have a single quote (`'`) prepended.
  * To account for this, occurences of `'@` and `''` are replaced with their actual values,
  * ie. `@` and `'` respectively.
  */
-function unescapeFieldValue(value: string) {
-    return value.replace(/^'(?=@|')/, '');
-}
+const unescapeFieldValue = (value: string) => value.replace(/^'(?=@|')/, '');
+
+const formatOtpAuthUri = (item: RoboformItem): Maybe<string> => {
+    const totpDefinition = item.RfFieldsV2?.find((e) => e.startsWith('TOTP KEY$'));
+    if (!totpDefinition) return;
+    const secret = lastItem(totpDefinition.split(','));
+    return `otpauth://totp/${item.Name}:none?secret=${secret}`;
+};
 
 export const readRoboformData = async (data: string): Promise<ImportPayload> => {
     const ignored: string[] = [];
