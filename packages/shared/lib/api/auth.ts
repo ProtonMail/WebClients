@@ -6,10 +6,14 @@ import { AuthenticationCredentialsPayload } from '../webauthn/interface';
 export const PASSWORD_WRONG_ERROR = 8002;
 
 export const auth = (
-    data: {
-        Username: string;
-        Payload?: ChallengePayload;
-    },
+    data:
+        | {
+              Username: string;
+              Payload?: ChallengePayload;
+          }
+        | {
+              SSOResponseToken: string;
+          },
     persistent: boolean
 ) => ({
     method: 'post',
@@ -125,10 +129,10 @@ export const getLocalSessions = () => ({
     url: `auth/v4/sessions/local`,
 });
 
-export const getInfo = (Username?: string) => ({
+export const getInfo = (Username?: string, intent: 'Proton' | 'Auto' | 'SSO' = 'Proton') => ({
     method: 'post',
     url: 'core/v4/auth/info',
-    data: Username ? { Username } : undefined,
+    data: { ...(Username ? { Username } : undefined), Intent: intent },
 });
 
 export const getModulus = () => ({
