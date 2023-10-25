@@ -77,7 +77,7 @@ const SnoozeDropdown = ({ elements, size }: Props) => {
 
     return (
         <>
-            <Tooltip title={c('Action').t`Snooze the message`} tooltipClassName="no-pointer-events">
+            <Tooltip title={c('Action').t`Snooze`} tooltipClassName="no-pointer-events">
                 <DropdownButton
                     ref={anchorRef}
                     isOpen={isOpen}
@@ -87,7 +87,7 @@ const SnoozeDropdown = ({ elements, size }: Props) => {
                     size={size}
                     icon
                 >
-                    <Icon name="clock" alt={c('Action').t`Snooze the message`} />
+                    <Icon name="clock" alt={c('Action').t`Snooze`} />
                 </DropdownButton>
             </Tooltip>
             <Dropdown isOpen={isOpen && snoozeState === 'snooze-selection'} anchorRef={anchorRef} onClose={onClose}>
