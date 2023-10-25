@@ -13,6 +13,8 @@ import { isElementReminded } from '../../logic/snoozehelpers';
 import { Element } from '../../models/element';
 import ItemDateRender from './ItemDateRender';
 
+import './ItemDateSnoozedMessage.scss';
+
 interface Props {
     snoozeTime: number;
     className?: string;
@@ -40,7 +42,7 @@ const SnoozedDate = ({ snoozeTime, className, useTooltip = false }: Props) => {
 
     return (
         <ItemDateRender
-            className={clsx(className, 'color-warning')}
+            className={clsx(className, 'item-date-snoozed')}
             useTooltip={useTooltip}
             fullDate={fullDate}
             formattedDate={snoozeShortDate}
@@ -51,7 +53,7 @@ const SnoozedDate = ({ snoozeTime, className, useTooltip = false }: Props) => {
 
 const RemindedConversation = ({ className }: { className?: string }) => {
     return (
-        <span className={clsx(className, 'color-warning flex flex-align-items-center')}>
+        <span className={clsx(className, 'item-date-snoozed flex flex-align-items-center')}>
             <Icon name="bell" className="mr-1" />
             <span className="">{c('Snooze').t`Reminded`}</span>
         </span>
