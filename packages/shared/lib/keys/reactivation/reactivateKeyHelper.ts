@@ -12,7 +12,7 @@ import {
 } from '../../interfaces';
 import { getActiveKeys, getNormalizedActiveKeys, getReactivatedKeyFlag } from '../getActiveKeys';
 import { getDecryptedAddressKeysHelper } from '../getDecryptedAddressKeys';
-import { getSignedKeyList } from '../signedKeyList';
+import { OnSKLPublishSuccess, getSignedKeyListWithDeferredPublish } from '../signedKeyList';
 
 interface GetReactivatedAddressKeys {
     address: tsAddress;
@@ -28,11 +28,13 @@ type GetReactivateAddressKeysReturnValue =
           address: tsAddress;
           reactivatedKeys?: undefined;
           signedKeyList?: undefined;
+          onSKLPublishSuccess?: undefined;
       }
     | {
           address: tsAddress;
           reactivatedKeys: DecryptedKey[];
           signedKeyList: SignedKeyList;
+          onSKLPublishSuccess: OnSKLPublishSuccess;
       };
 
 export const getReactivatedAddressKeys = async ({
@@ -88,11 +90,16 @@ export const getReactivatedAddressKeys = async ({
             };
         })
     );
-
+    const [signedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
+        newActiveKeysFormatted,
+        address,
+        keyTransparencyVerify
+    );
     return {
         address,
         reactivatedKeys,
-        signedKeyList: await getSignedKeyList(newActiveKeysFormatted, address, keyTransparencyVerify),
+        signedKeyList: signedKeyList,
+        onSKLPublishSuccess: onSKLPublishSuccess,
     };
 };
 
