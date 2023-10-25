@@ -1,14 +1,13 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { Tooltip } from '@proton/components';
-
 import { params } from 'proton-mail/logic/elements/elementsSelectors';
 import { getSnoozeTimeFromElement, isElementReminded, isElementSnoozed } from 'proton-mail/logic/snoozehelpers';
 
 import { formatDistanceToNow, formatFullDate, formatSimpleDate } from '../../helpers/date';
 import { getDate } from '../../helpers/elements';
 import { Element } from '../../models/element';
+import ItemDateRender from './ItemDateRender';
 import ItemDateSnoozedMessage from './ItemDateSnoozedMessage';
 
 const REFRESH_DATE_INTERVAL = 60 * 1000;
@@ -80,29 +79,15 @@ const ItemDate = ({ element, labelID, className, mode = 'simple', useTooltip = f
         );
     }
 
-    const itemDate = (
-        <>
-            <span
-                className={className}
-                title={useTooltip ? undefined : fullDate}
-                aria-hidden="true"
-                data-testid={`item-date-${mode}`}
-            >
-                {formattedDate}
-            </span>
-            <span className="sr-only">{fullDate}</span>
-        </>
+    return (
+        <ItemDateRender
+            className={className}
+            useTooltip={useTooltip}
+            formattedDate={formattedDate}
+            fullDate={fullDate}
+            dataTestId={`item-date-${mode}`}
+        />
     );
-
-    if (useTooltip) {
-        return (
-            <Tooltip title={fullDate}>
-                <span>{itemDate}</span>
-            </Tooltip>
-        );
-    }
-
-    return <>{itemDate}</>;
 };
 
 export default ItemDate;
