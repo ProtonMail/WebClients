@@ -16,6 +16,7 @@ interface FormatDataArguments {
     sharedSignedPart?: SignPartResult;
     sharedEncryptedPart?: EncryptPartResult;
     sharedSessionKey?: Uint8Array;
+    cancelledOccurrenceSignedPart?: SignPartResult;
     calendarSignedPart?: SignPartResult;
     calendarEncryptedPart?: EncryptPartResult;
     calendarSessionKey?: Uint8Array;
@@ -30,6 +31,7 @@ export const formatData = ({
     sharedSignedPart,
     sharedEncryptedPart,
     sharedSessionKey,
+    cancelledOccurrenceSignedPart,
     calendarSignedPart,
     calendarEncryptedPart,
     calendarSessionKey,
@@ -60,6 +62,16 @@ export const formatData = ({
                 Type: ENCRYPTED_AND_SIGNED,
                 Data: uint8ArrayToBase64String(sharedEncryptedPart.dataPacket),
                 Signature: sharedEncryptedPart.signature,
+            },
+        ];
+    }
+
+    if (cancelledOccurrenceSignedPart) {
+        result.CancelledOccurrenceContent = [
+            {
+                Type: SIGNED,
+                Data: cancelledOccurrenceSignedPart.data,
+                Signature: cancelledOccurrenceSignedPart.signature,
             },
         ];
     }
