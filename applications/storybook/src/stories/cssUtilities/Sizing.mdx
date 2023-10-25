@@ -20,6 +20,8 @@ Here all the fractions sizing utilities we have:
 
 <Story id="css-utilities-sizing--fractions" />
 
+<Story id="css-utilities-sizing--fractions-table" />
+
 ### Example
 
 ```html
@@ -38,7 +40,7 @@ Here all the fractions sizing utilities we have:
 
 In addition of the fraction utilities, we have a small sizing framework with the most common values:
 
-<div className="flex">
+<div className="flex flex-align-items-start">
     <Table className="color-norm w-1/2">
         <TableHeader>
             <TableRow>
@@ -131,6 +133,12 @@ In addition of the fraction utilities, we have a small sizing framework with the
                 <TableCell>auto</TableCell>
                 <TableCell>
                     <code>auto</code>
+                </TableCell>
+            </TableRow>
+            <TableRow>
+                <TableCell>none</TableCell>
+                <TableCell>
+                    <code>none</code>
                 </TableCell>
             </TableRow>
         </TableBody>
@@ -255,6 +263,7 @@ Every custom sizing utilities exist with responsive prefixes, as well as their d
 Where responsive prefixes are separated by colons (:) in a class name, they are separated by a dash (-) in the name of a dedicated variable.
 
 <!--- prettier-ignore-start --->
+
 ```html
 <div
     className="
@@ -283,4 +292,5 @@ Where responsive prefixes are separated by colons (:) in a class name, they are 
     }}
 />
 ```
+
 <!--- prettier-ignore-end --->
