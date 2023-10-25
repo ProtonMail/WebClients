@@ -186,7 +186,14 @@ const Spams = ({ isOrganization }: Props) => {
                         <TableBody>
                             {list.map((item) => (
                                 <TableRow key={item.id}>
-                                    <TableCell>{'domain' in item ? item.domain : item.email}</TableCell>
+                                    <TableCell>
+                                        <span
+                                            className="text-ellipsis inline-block max-w-full align-bottom"
+                                            title={'domain' in item ? item.domain : item.email}
+                                        >
+                                            {'domain' in item ? item.domain : item.email}
+                                        </span>
+                                    </TableCell>
                                     <TableCell label={c('TableHeader').t`Marked as`}>
                                         <LabelStack labels={[getLabelByLocation(item.location)]} />
                                     </TableCell>
