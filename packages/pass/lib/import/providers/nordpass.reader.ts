@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import type { ItemImportIntent } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
@@ -93,7 +95,7 @@ export const readNordPassData = async (data: string): Promise<ImportPayload> => 
                                 case NordPassType.NOTE:
                                     return processNoteItem(item);
                                 default:
-                                    ignored.push(`[${item.type}] ${item.name ?? ''}`);
+                                    ignored.push(`[${item.type ?? c('Placeholder').t`Other`}] ${item.name ?? ''}`);
                             }
                         })
                         .filter(truthy),
