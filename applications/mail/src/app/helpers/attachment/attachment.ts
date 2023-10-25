@@ -1,3 +1,6 @@
+import { ICAL_EXTENSIONS } from '@proton/shared/lib/calendar/constants';
+import { KEY_EXTENSION } from '@proton/shared/lib/constants';
+import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { extractContentValue } from '@proton/shared/lib/mail/send/helpers';
@@ -35,3 +38,7 @@ export const getPureAttachments = (attachments: Attachment[], isNumAttachmentsWi
         return true;
     });
 };
+
+export const hasIcalExtension = (attachmentName: string) => ICAL_EXTENSIONS.includes(splitExtension(attachmentName)[1]);
+
+export const hasKeyExtension = (attachmentName: string) => splitExtension(attachmentName)[1] === KEY_EXTENSION;
