@@ -8,6 +8,7 @@ import type { SpotlightMessageDefinition } from '@proton/pass/components/Spotlig
 import { useSpotlightContext } from '@proton/pass/components/Spotlight/SpotlightContext';
 import { FiveStarIcon, InviteIcon, ShieldIcon } from '@proton/pass/components/Spotlight/SpotlightIcon';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
+import usePassConfig from '@proton/pass/hooks/usePassConfig';
 import { popupMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { detectBrowser, getWebStoreUrl } from '@proton/pass/lib/extension/utils/browser';
 import browser from '@proton/pass/lib/globals/browser';
@@ -28,6 +29,7 @@ export const useSpotlightEffect = () => {
     const invite = useInviteContext();
     const spotlight = useSpotlightContext();
     const webStoreURL = getWebStoreUrl(detectBrowser());
+    const { SSO_URL } = usePassConfig();
 
     const sharingEnabled = useFeatureFlag(PassFeature.PassSharingV1);
     const latestInvite = useSelector(selectMostRecentInvite);
@@ -177,6 +179,20 @@ export const useSpotlightEffect = () => {
                     label: c('Label').t`Need help ?`,
                     type: 'button',
                     onClick: withAcknowledgment(() => openSettings('support')),
+                },
+            },
+            [OnboardingMessage.BLACK_FRIDAY_OFFER]: {
+                id: 'black-friday',
+                title: c('bf2023: Title').t`Black Friday offer`,
+                message: c('bf2023: Info').t`Save Smart. Get a year of Pass Plus for only $1.99 per month.`,
+                className: 'ui-orange',
+                onClose: withAcknowledgment(noop),
+                action: {
+                    label: c('bf2023: Label').t`Get the deal`,
+                    type: 'button',
+                    onClick: withAcknowledgment(() =>
+                        window.open(`${SSO_URL}/pass/dashboard?plan=pass2023&coupon=BF2023&cycle=12`, '_blank')
+                    ),
                 },
             },
         }),
