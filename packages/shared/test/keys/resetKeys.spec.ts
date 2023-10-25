@@ -15,6 +15,7 @@ describe('reset keys v2', () => {
         expect(result).toEqual({
             userKeyPayload: undefined,
             addressKeysPayload: undefined,
+            onSKLPublishSuccess: undefined,
         });
     });
 

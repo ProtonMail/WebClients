@@ -3,7 +3,7 @@ import { Address, AddressKeyPayloadV2, EncryptionConfig, PreAuthKTVerify } from 
 import { generateAddressKey, generateAddressKeyTokens } from './addressKeys';
 import { getActiveKeyObject, getNormalizedActiveKeys } from './getActiveKeys';
 import { getDefaultKeyFlags } from './keyFlags';
-import { getSignedKeyList } from './signedKeyList';
+import { OnSKLPublishSuccess, getSignedKeyListWithDeferredPublish } from './signedKeyList';
 import { generateUserKey } from './userKeys';
 
 export const getResetAddressesKeysV2 = async ({
@@ -17,11 +17,11 @@ export const getResetAddressesKeysV2 = async ({
     encryptionConfig?: EncryptionConfig;
     preAuthKTVerify: PreAuthKTVerify;
 }): Promise<
-    | { userKeyPayload: string; addressKeysPayload: AddressKeyPayloadV2[] }
-    | { userKeyPayload: undefined; addressKeysPayload: undefined }
+    | { userKeyPayload: string; addressKeysPayload: AddressKeyPayloadV2[]; onSKLPublishSuccess: OnSKLPublishSuccess }
+    | { userKeyPayload: undefined; addressKeysPayload: undefined; onSKLPublishSuccess: undefined }
 > => {
     if (!addresses.length) {
-        return { userKeyPayload: undefined, addressKeysPayload: undefined };
+        return { userKeyPayload: undefined, addressKeysPayload: undefined, onSKLPublishSuccess: undefined };
     }
     const { privateKey: userKey, privateKeyArmored: userKeyPayload } = await generateUserKey({
         passphrase,
@@ -32,7 +32,7 @@ export const getResetAddressesKeysV2 = async ({
         { ID: userKey.getKeyID(), privateKey: userKey, publicKey: userKey },
     ]);
 
-    const addressKeysPayload = await Promise.all(
+    const addressKeysPayloadWithOnSKLPublish = await Promise.all(
         addresses.map(async (address) => {
             const { ID: AddressID, Email } = address;
 
@@ -50,20 +50,26 @@ export const getResetAddressesKeysV2 = async ({
                 flags: getDefaultKeyFlags(address),
             });
 
-            const signedKeyList = await getSignedKeyList(
+            const [signedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
                 getNormalizedActiveKeys(address, [newPrimaryKey]),
                 address,
                 keyTransparencyVerify
             );
             return {
-                AddressID,
-                PrivateKey: privateKeyArmored,
-                SignedKeyList: signedKeyList,
-                Token: encryptedToken,
-                Signature: signature,
+                addressKeyPayload: {
+                    AddressID,
+                    PrivateKey: privateKeyArmored,
+                    SignedKeyList: signedKeyList,
+                    Token: encryptedToken,
+                    Signature: signature,
+                },
+                onSKLPublishSuccess,
             };
         })
     );
-
-    return { userKeyPayload, addressKeysPayload };
+    const addressKeysPayload = addressKeysPayloadWithOnSKLPublish.map(({ addressKeyPayload }) => addressKeyPayload);
+    const onSKLPublishSuccessAll = async () => {
+        await Promise.all(addressKeysPayloadWithOnSKLPublish.map(({ onSKLPublishSuccess }) => onSKLPublishSuccess()));
+    };
+    return { userKeyPayload, addressKeysPayload, onSKLPublishSuccess: onSKLPublishSuccessAll };
 };
