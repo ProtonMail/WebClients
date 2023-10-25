@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import usePassConfig from '@proton/pass/hooks/usePassConfig';
+import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import browser from '@proton/pass/lib/globals/browser';
 import noop from '@proton/utils/noop';
 
