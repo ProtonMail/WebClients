@@ -40,7 +40,7 @@ import getChangePartstatActions from './getChangePartstatActions';
 import { UpdateAllPossibilities } from './getRecurringUpdateAllPossibilities';
 import { getUpdatePersonalPartActions } from './getUpdatePersonalPartActions';
 import { getAddedAttendeesPublicKeysMap } from './inviteActions';
-import { getCurrentEvent, getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
+import { getCurrentVevent, getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
 import { withIncrementedSequence, withUpdatedDtstampAndSequence, withVeventSequence } from './sequence';
 
 interface SaveRecurringArguments {
@@ -170,7 +170,7 @@ const getSaveRecurringEventActions = async ({
             };
             const oldVeventWithSequence = oldVeventComponent.sequence
                 ? oldVeventWithSafeSequence
-                : withVeventSequence(oldVeventComponent, getCurrentEvent(originalVeventWithSequence, recurrence));
+                : withVeventSequence(oldVeventComponent, getCurrentVevent(originalVeventWithSequence, recurrence));
             const newVeventWithSequence = withUpdatedDtstampAndSequence(
                 updateSingleRecurrence(newVeventComponent),
                 oldVeventWithSequence
@@ -197,7 +197,7 @@ const getSaveRecurringEventActions = async ({
             };
         }
 
-        const oldRecurrenceVeventComponent = getCurrentEvent(originalVeventWithSequence, recurrence);
+        const oldRecurrenceVeventComponent = getCurrentVevent(originalVeventWithSequence, recurrence);
         const newRecurrenceVeventComponent = createSingleRecurrence(
             newVeventComponent,
             originalVeventComponent,
@@ -260,7 +260,7 @@ const getSaveRecurringEventActions = async ({
             hasDefaultNotifications,
         });
 
-        const oldRecurrenceVeventComponent = getCurrentEvent(originalVeventWithSequence, recurrence);
+        const oldRecurrenceVeventComponent = getCurrentVevent(originalVeventWithSequence, recurrence);
         const hasStartChanged = getHasStartChanged(newVeventWithSequence, oldRecurrenceVeventComponent);
 
         return {
