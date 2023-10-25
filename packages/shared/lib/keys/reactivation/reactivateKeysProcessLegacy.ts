@@ -4,7 +4,7 @@ import { getDefaultKeyFlags } from '@proton/shared/lib/keys';
 import { reactivateKeyRoute } from '../../api/keys';
 import { Address, Api, DecryptedKey, Key, KeyTransparencyVerify } from '../../interfaces';
 import { getActiveKeyObject, getActiveKeys, getNormalizedActiveKeys, getPrimaryFlag } from '../getActiveKeys';
-import { getSignedKeyList } from '../signedKeyList';
+import { getSignedKeyListWithDeferredPublish } from '../signedKeyList';
 import { KeyReactivationData, KeyReactivationRecord, OnKeyReactivationCallback } from './interface';
 import { resetUserId } from './reactivateKeyHelper';
 
@@ -53,10 +53,9 @@ export const reactivateKeysProcess = async ({
                 flags: getDefaultKeyFlags(address),
             });
             const updatedActiveKeys = getNormalizedActiveKeys(address, [...mutableActiveKeys, newActiveKey]);
-            const SignedKeyList = address
-                ? await getSignedKeyList(updatedActiveKeys, address, keyTransparencyVerify)
-                : undefined;
-
+            const [SignedKeyList, onSKLPublishSuccess] = address
+                ? await getSignedKeyListWithDeferredPublish(updatedActiveKeys, address, keyTransparencyVerify)
+                : [undefined, undefined];
             await api(
                 reactivateKeyRoute({
                     ID,
@@ -64,6 +63,9 @@ export const reactivateKeysProcess = async ({
                     SignedKeyList,
                 })
             );
+            if (onSKLPublishSuccess) {
+                await onSKLPublishSuccess();
+            }
 
             mutableActiveKeys = updatedActiveKeys;
 

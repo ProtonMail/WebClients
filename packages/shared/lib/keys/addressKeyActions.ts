@@ -1,7 +1,7 @@
 import { removeKeyRoute, setKeyFlagsRoute, setKeyPrimaryRoute } from '../api/keys';
 import { Address, Api, DecryptedKey, KeyTransparencyVerify } from '../interfaces';
 import { getActiveKeys, getNormalizedActiveKeys } from './getActiveKeys';
-import { getSignedKeyList } from './signedKeyList';
+import { getSignedKeyListWithDeferredPublish } from './signedKeyList';
 
 export const setPrimaryAddressKey = async (
     api: Api,
@@ -26,8 +26,13 @@ export const setPrimaryAddressKey = async (
             })
             .sort((a, b) => b.primary - a.primary)
     );
-    const signedKeyList = await getSignedKeyList(updatedActiveKeys, address, keyTransparencyVerify);
+    const [signedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
+        updatedActiveKeys,
+        address,
+        keyTransparencyVerify
+    );
     await api(setKeyPrimaryRoute({ ID, SignedKeyList: signedKeyList }));
+    await onSKLPublishSuccess();
     const newActivePrimaryKey = updatedActiveKeys.find((activeKey) => activeKey.ID === ID)!!;
     return [newActivePrimaryKey, updatedActiveKeys] as const;
 };
@@ -48,8 +53,13 @@ export const deleteAddressKey = async (
         address,
         activeKeys.filter(({ ID: otherID }) => ID !== otherID)
     );
-    const signedKeyList = await getSignedKeyList(updatedActiveKeys, address, keyTransparencyVerify);
+    const [signedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
+        updatedActiveKeys,
+        address,
+        keyTransparencyVerify
+    );
     await api(removeKeyRoute({ ID, SignedKeyList: signedKeyList }));
+    await onSKLPublishSuccess();
 };
 
 export const setAddressKeyFlags = async (
@@ -73,6 +83,11 @@ export const setAddressKeyFlags = async (
             return activeKey;
         })
     );
-    const signedKeyList = await getSignedKeyList(updatedActiveKeys, address, keyTransparencyVerify);
+    const [signedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
+        updatedActiveKeys,
+        address,
+        keyTransparencyVerify
+    );
     await api(setKeyFlagsRoute({ ID, Flags: flags, SignedKeyList: signedKeyList }));
+    await onSKLPublishSuccess();
 };
