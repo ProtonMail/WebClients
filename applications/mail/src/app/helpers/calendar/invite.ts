@@ -3,7 +3,7 @@ import { getUnixTime } from 'date-fns';
 import { serverTime } from '@proton/crypto';
 import { generateAttendeeToken, getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { getDoesCalendarNeedUserAction, getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
-import { ICAL_EXTENSIONS, ICAL_METHOD, ICAL_METHODS_ATTENDEE } from '@proton/shared/lib/calendar/constants';
+import { ICAL_METHOD, ICAL_METHODS_ATTENDEE } from '@proton/shared/lib/calendar/constants';
 import { getSelfAddressData } from '@proton/shared/lib/calendar/deserialize';
 import { generateVeventHashUID, getIsProtonUID } from '@proton/shared/lib/calendar/helper';
 import {
@@ -50,7 +50,6 @@ import { SECOND } from '@proton/shared/lib/constants';
 import { getSupportedTimezone } from '@proton/shared/lib/date/timezone';
 import { getIsAddressActive, getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
 import { canonicalizeEmailByGuess, canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { Address } from '@proton/shared/lib/interfaces';
 import {
@@ -73,6 +72,8 @@ import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { RequireSome, Unwrap } from '@proton/shared/lib/interfaces/utils';
 import { getOriginalTo } from '@proton/shared/lib/mail/messages';
 import unary from '@proton/utils/unary';
+
+import { hasIcalExtension } from 'proton-mail/helpers/attachment/attachment';
 
 import { MessageStateWithData, MessageWithOptionalBody } from '../../logic/messages/messagesTypes';
 import { FetchAllEventsByUID } from './inviteApi';
@@ -152,19 +153,19 @@ export const getHasInvitationApi = (model: InvitationModel): model is RequireSom
 };
 
 export const getInvitationHasMethod = (
-    invitation: EventInvitation,
+    invitation: EventInvitation
 ): invitation is RequireSome<EventInvitation, 'method'> => {
     return invitation.method !== undefined;
 };
 
 export const getInvitationHasEventID = (
-    invitation: EventInvitation,
+    invitation: EventInvitation
 ): invitation is RequireSome<EventInvitation, 'calendarEvent'> => {
     return invitation.calendarEvent?.ID !== undefined;
 };
 
 export const getInvitationHasAttendee = (
-    invitation: EventInvitation,
+    invitation: EventInvitation
 ): invitation is RequireSome<EventInvitation, 'attendee'> => {
     return invitation.attendee !== undefined;
 };
@@ -182,7 +183,7 @@ export const getHasFullCalendarData = (data?: CalendarWidgetData): data is Requi
 };
 
 export const filterAttachmentsForEvents = (attachments: Attachment[]): Attachment[] =>
-    attachments.filter(({ Name = '' }) => ICAL_EXTENSIONS.includes(splitExtension(Name)[1]));
+    attachments.filter(({ Name = '' }) => hasIcalExtension(Name));
 
 // Some external providers include UID and SEQUENCE outside the VEVENT component
 export const withOutsideUIDAndSequence = (vevent: VcalVeventComponent, vcal: NonRFCCompliantVcalendar) => {
@@ -337,7 +338,7 @@ export const getIsReinvite = ({
 export const getIsNonSoughtEvent = (
     event: CalendarEvent,
     vevent: VcalVeventComponent,
-    supportedRecurrenceId?: VcalDateOrDateTimeProperty,
+    supportedRecurrenceId?: VcalDateOrDateTimeProperty
 ) => {
     if (!event.RecurrenceID) {
         return false;
@@ -406,7 +407,7 @@ export const processEventInvitation = <T>(
     invitation: EventInvitation & T,
     message: MessageStateWithData,
     contactEmails: ContactEmail[],
-    ownAddresses: Address[],
+    ownAddresses: Address[]
 ): ProcessedInvitation<T> => {
     const { vevent, calendarEvent, method, originalIcsHasNoOrganizer } = invitation;
     const isImport = method === ICAL_METHOD.PUBLISH;
@@ -437,7 +438,7 @@ export const processEventInvitation = <T>(
                 selfAddress,
                 selfAttendee,
                 emailTo: originalTo,
-            }),
+            })
         );
     }
     if (organizer) {
@@ -557,7 +558,7 @@ export const getInitialInvitationModel = ({
         invitationOrError,
         message,
         contactEmails,
-        ownAddresses,
+        ownAddresses
     );
     if (invitation.method === ICAL_METHOD.REPLY && !invitation.attendee) {
         // If we couldn't find the attendee in the REPLY ics, something is wrong in the ics
@@ -668,7 +669,7 @@ export const getSupportedEventInvitation = async ({
     }
     const completeVevent = withOutsideUIDAndSequence(
         withSupportedDtstamp(vevent, message.Time * SECOND),
-        vcalComponent,
+        vcalComponent
     );
     const hasMultipleVevents = getHasMultipleVevents(vcalComponent);
     const isImport = supportedMethod === ICAL_METHOD.PUBLISH;
@@ -787,7 +788,7 @@ export const getParticipantsList = (attendees?: Participant[], organizer?: Parti
         // we remove the organizer from the list of participants in case it's duplicated there
         const canonicalOrganizerEmail = canonicalizeEmailByGuess(organizer.emailAddress);
         const organizerIndex = list.findIndex(
-            ({ emailAddress }) => canonicalizeEmailByGuess(emailAddress) === canonicalOrganizerEmail,
+            ({ emailAddress }) => canonicalizeEmailByGuess(emailAddress) === canonicalOrganizerEmail
         );
         if (organizerIndex !== -1) {
             list.splice(organizerIndex, 1);
@@ -819,7 +820,7 @@ export const getIsPartyCrasher = async ({
             // Assuming the sender is a potential attendee, we can resort to checking attendee tokens in this case, since those are clear text
             const senderToken = await generateAttendeeToken(
                 canonicalizeEmailByGuess(message.data.Sender.Address),
-                calendarEvent.UID,
+                calendarEvent.UID
             );
             return !calendarEvent.Attendees.some(({ Token }) => Token === senderToken);
         }
