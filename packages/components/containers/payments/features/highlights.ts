@@ -60,12 +60,13 @@ const getEasySwitch = (): PlanCardFeatureDefinition => {
     };
 };
 
-const getSentinel = (included: boolean = true): PlanCardFeatureDefinition => {
+export const getSentinel = (included: boolean = true): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`${PROTON_SENTINEL_NAME} program`,
         tooltip: c('new_plans: tooltip')
             .t`Provides the highest level of account security protection and specialist support`,
         included: included,
+        icon: 'shield',
     };
 };
 
