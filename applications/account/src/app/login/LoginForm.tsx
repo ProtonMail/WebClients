@@ -12,6 +12,7 @@ import {
     Checkbox,
     Icon,
     Info,
+    InlineLinkButton,
     InputFieldTwo,
     Label,
     PasswordInputTwo,
@@ -38,19 +39,25 @@ interface Props {
         payload: ChallengeResult;
     }) => Promise<void>;
     signInText?: string;
+    externalSSO?: boolean;
     defaultUsername?: string;
     hasRemember?: boolean;
     trustedDeviceRecoveryFeature?: { loading?: boolean; feature: { Value: boolean } | undefined };
     paths: Paths;
+    authType: 'srp' | 'external-sso';
+    onChangeAuthType: (authType: 'srp' | 'external-sso') => void;
 }
 
 const LoginForm = ({
     modal,
+    authType,
+    onChangeAuthType,
     onSubmit,
     defaultUsername = '',
     signInText = c('Action').t`Sign in`,
     hasRemember,
     trustedDeviceRecoveryFeature,
+    externalSSO,
     paths,
 }: Props) => {
     const [submitting, withSubmitting] = useLoading();
@@ -149,7 +156,7 @@ const LoginForm = ({
                 <InputFieldTwo
                     id="username"
                     bigger
-                    label={c('Label').t`Email or username`}
+                    label={authType === 'external-sso' ? c('Label').t`Email` : c('Label').t`Email or username`}
                     error={validator([requiredValidator(username)])}
                     disableChange={submitting}
                     autoComplete="username"
@@ -157,19 +164,22 @@ const LoginForm = ({
                     onValue={setUsername}
                     ref={usernameRef}
                 />
-                <InputFieldTwo
-                    id="password"
-                    bigger
-                    label={c('Label').t`Password`}
-                    error={validator([requiredValidator(password)])}
-                    as={PasswordInputTwo}
-                    disableChange={submitting}
-                    autoComplete="current-password"
-                    value={password}
-                    onValue={setPassword}
-                    rootClassName="mt-2"
-                />
-                {hasRemember && (
+                {authType === 'external-sso' ? null : (
+                    <InputFieldTwo
+                        id="password"
+                        bigger
+                        label={c('Label').t`Password`}
+                        error={validator([requiredValidator(password)])}
+                        as={PasswordInputTwo}
+                        disableChange={submitting}
+                        autoComplete="current-password"
+                        value={password}
+                        onValue={setPassword}
+                        rootClassName="mt-2"
+                    />
+                )}
+
+                {hasRemember && authType !== 'external-sso' && (
                     <div className="flex flex-row flex-align-items-start">
                         <Checkbox
                             id="staySignedIn"
@@ -218,41 +228,83 @@ const LoginForm = ({
                         submitting ? c('Action').t`Signing in` : signInText
                     }
                 </Button>
-                {signUp && !modal && (
-                    <div className="text-center mt-4">
-                        {
-                            // translator: Full sentence "New to Proton? Create account"
-                            c('Go to sign up').jt`New to ${BRAND_NAME}? ${signUp}`
-                        }
-                    </div>
-                )}
-                {!modal && (
-                    <>
-                        <hr className="my-4" />
 
-                        <div className="text-center">
-                            <SupportDropdown
-                                buttonClassName="mx-auto link link-focus"
-                                content={c('Link').t`Trouble signing in?`}
-                            >
-                                <Link
-                                    to={paths.reset}
-                                    className="dropdown-item-link w100 px-4 py-2 flex flex-align-items-center text-no-decoration text-left"
+                {(() => {
+                    if (authType === 'external-sso') {
+                        return (
+                            <div className="text-center mt-4">
+                                <InlineLinkButton
+                                    type="button"
+                                    color="norm"
+                                    disabled={submitting}
+                                    onClick={() => {
+                                        onChangeAuthType('srp');
+                                    }}
                                 >
-                                    <Icon name="key" className="mr-2" />
-                                    {c('Link').t`Reset password`}
-                                </Link>
-                                <Link
-                                    to={paths.forgotUsername}
-                                    className="dropdown-item-link w100 px-4 py-2 flex flex-align-items-center text-no-decoration text-left"
+                                    {c('Action').t`Sign in with password`}
+                                </InlineLinkButton>
+                            </div>
+                        );
+                    }
+
+                    return (
+                        <>
+                            {externalSSO && (
+                                <Button
+                                    size="large"
+                                    type="button"
+                                    shape="ghost"
+                                    color="norm"
+                                    fullWidth
+                                    disabled={submitting}
+                                    className="mt-2"
+                                    onClick={() => {
+                                        onChangeAuthType('external-sso');
+                                    }}
                                 >
-                                    <Icon name="user-circle" className="mr-2" />
-                                    {c('Link').t`Forgot username?`}
-                                </Link>
-                            </SupportDropdown>
-                        </div>
-                    </>
-                )}
+                                    {c('Action').t`Sign in with SSO`}
+                                </Button>
+                            )}
+
+                            {signUp && !modal && (
+                                <div className="text-center mt-4">
+                                    {
+                                        // translator: Full sentence "New to Proton? Create account"
+                                        c('Go to sign up').jt`New to ${BRAND_NAME}? ${signUp}`
+                                    }
+                                </div>
+                            )}
+
+                            {!modal && (
+                                <>
+                                    <hr className="my-4" />
+
+                                    <div className="text-center">
+                                        <SupportDropdown
+                                            buttonClassName="mx-auto link link-focus"
+                                            content={c('Link').t`Trouble signing in?`}
+                                        >
+                                            <Link
+                                                to={paths.reset}
+                                                className="dropdown-item-link w100 px-4 py-2 flex flex-align-items-center text-no-decoration text-left"
+                                            >
+                                                <Icon name="key" className="mr-2" />
+                                                {c('Link').t`Reset password`}
+                                            </Link>
+                                            <Link
+                                                to={paths.forgotUsername}
+                                                className="dropdown-item-link w100 px-4 py-2 flex flex-align-items-center text-no-decoration text-left"
+                                            >
+                                                <Icon name="user-circle" className="mr-2" />
+                                                {c('Link').t`Forgot username?`}
+                                            </Link>
+                                        </SupportDropdown>
+                                    </div>
+                                </>
+                            )}
+                        </>
+                    );
+                })()}
             </form>
         </>
     );
