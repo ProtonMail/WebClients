@@ -1,11 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { params } from 'proton-mail/logic/elements/elementsSelectors';
-import { getSnoozeTimeFromElement, isElementReminded, isElementSnoozed } from 'proton-mail/logic/snoozehelpers';
-
 import { formatDistanceToNow, formatFullDate, formatSimpleDate } from '../../helpers/date';
 import { getDate } from '../../helpers/elements';
+import { params } from '../../logic/elements/elementsSelectors';
+import { getSnoozeTimeFromElement, isElementReminded, isElementSnoozed } from '../../logic/snoozehelpers';
 import { Element } from '../../models/element';
 import ItemDateRender from './ItemDateRender';
 import ItemDateSnoozedMessage from './ItemDateSnoozedMessage';

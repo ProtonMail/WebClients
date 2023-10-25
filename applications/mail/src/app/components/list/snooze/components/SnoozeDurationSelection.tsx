@@ -19,7 +19,7 @@ interface Props {
 }
 
 interface ButtonProps {
-    duration?: SNOOZE_DURATION | 'unsnooze';
+    duration?: SNOOZE_DURATION;
     onClick: (event: MouseEvent, duration?: SNOOZE_DURATION) => void;
     leftText: string;
     rightText?: string;
@@ -32,7 +32,7 @@ const SnoozeButton = ({ onClick, duration, leftText, rightText, showUpsellButton
         shape="ghost"
         data-testid={`snooze-duration-${duration}`}
         className={clsx('flex rounded-none', showUpsellButton ? 'gap-2' : 'flex-justify-space-between md:gap-10 ')}
-        onClick={(e) => onClick(e, duration as SNOOZE_DURATION)}
+        onClick={(e) => onClick(e, duration)}
     >
         <span>{leftText}</span>
         {rightText && <span className="color-weak">{rightText}</span>}
@@ -121,12 +121,16 @@ const SnoozeDurationSelection = ({ canUnsnooze, handleUnsnoozeClick, handleSnooz
                 <>
                     <hr className="my-2" />
                     <div className="mb-2">
-                        <SnoozeButton
+                        <Button
                             key="unsnooze"
-                            duration="unsnooze"
-                            leftText={c('Action').t`Unsnooze`}
+                            fullWidth
+                            shape="ghost"
+                            data-testid="snooze-duration-unsnooze"
+                            className="flex rounded-none flex-justify-space-between md:gap-10"
                             onClick={handleUnsnoozeClick}
-                        />
+                        >
+                            {c('Action').t`Unsnooze`}
+                        </Button>
                     </div>
                 </>
             )}

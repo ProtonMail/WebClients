@@ -4,11 +4,10 @@ import { DropdownMenu, DropdownMenuButton, Icon, useModalState } from '@proton/c
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
-import useSnooze from 'proton-mail/hooks/actions/useSnooze';
-
 import { canMoveAll, labelIncludes } from '../../helpers/labels';
 import { useEmptyLabel } from '../../hooks/actions/useEmptyLabel';
 import { useMoveAll } from '../../hooks/actions/useMoveAll';
+import useSnooze from '../../hooks/actions/useSnooze';
 import { useLabelActions } from '../../hooks/useLabelActions';
 import { Breakpoints } from '../../models/utils';
 import LabelDropdown, { labelDropdownContentProps } from '../dropdown/LabelDropdown';
@@ -74,8 +73,8 @@ const MoreDropdown = ({
     elementIDs,
     selectedIDs,
     isSearch,
-    isExtraTiny,
     isTiny,
+    isExtraTiny,
     onMove,
     onDelete,
     breakpoints,

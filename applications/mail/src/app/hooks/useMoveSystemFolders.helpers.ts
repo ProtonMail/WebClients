@@ -231,7 +231,7 @@ export const getDefaultSystemFolders = (
         text: c('Link').t`Sent`,
         shortcutText: '[G] [E]',
         visible: !(showMoved & SHOW_MOVED.SENT),
-        order: 6,
+        order: 7,
         display: SYSTEM_FOLDER_SECTION.MAIN,
     },
     {
@@ -241,7 +241,7 @@ export const getDefaultSystemFolders = (
         shortcutText: '[G] [*]',
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.STARRED],
         visible: true,
-        order: 7,
+        order: 8,
         display: SYSTEM_FOLDER_SECTION.MAIN,
     },
     {
@@ -251,7 +251,7 @@ export const getDefaultSystemFolders = (
         shortcutText: '[G] [A]',
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ARCHIVE],
         visible: true,
-        order: 8,
+        order: 9,
         display: SYSTEM_FOLDER_SECTION.MORE,
     },
     {
@@ -261,7 +261,7 @@ export const getDefaultSystemFolders = (
         shortcutText: '[G] [S]',
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SPAM],
         visible: true,
-        order: 9,
+        order: 10,
         display: SYSTEM_FOLDER_SECTION.MORE,
     },
     {
@@ -271,7 +271,7 @@ export const getDefaultSystemFolders = (
         shortcutText: '[G] [T]',
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.TRASH],
         visible: true,
-        order: 10,
+        order: 11,
         display: SYSTEM_FOLDER_SECTION.MORE,
     },
     {
@@ -281,7 +281,7 @@ export const getDefaultSystemFolders = (
         shortcutText: '[G] [M]',
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALL_MAIL],
         visible: !showAlmostAllMail,
-        order: 11,
+        order: 12,
         display: SYSTEM_FOLDER_SECTION.MORE,
     },
     {
@@ -290,7 +290,7 @@ export const getDefaultSystemFolders = (
         icon: 'arrow-right',
         text: c('Link').t`Outbox`,
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.OUTBOX],
-        order: 12,
+        order: 13,
         visible: false,
         display: SYSTEM_FOLDER_SECTION.MORE,
     },
@@ -301,7 +301,7 @@ export const getDefaultSystemFolders = (
         shortcutText: '[G] [M]',
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL],
         visible: !!showAlmostAllMail,
-        order: 13,
+        order: 14,
         display: SYSTEM_FOLDER_SECTION.MORE,
     },
 ];

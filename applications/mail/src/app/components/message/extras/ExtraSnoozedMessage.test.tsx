@@ -4,20 +4,19 @@ import { addHours } from 'date-fns';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 
-import useSnooze from 'proton-mail/hooks/actions/useSnooze';
-
 import { formatDateToHuman } from '../../../helpers/date';
 import { clearAll } from '../../../helpers/test/helper';
 import { render } from '../../../helpers/test/render';
+import useSnooze from '../../../hooks/actions/useSnooze';
 import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
 import ExtraSnoozedMessage from './ExtraSnoozedMessage';
 
 const mockUseGetElementsFromIDs = jest.fn();
-jest.mock('proton-mail/hooks/mailbox/useElements', () => ({
+jest.mock('../../../hooks/mailbox/useElements', () => ({
     useGetElementsFromIDs: () => mockUseGetElementsFromIDs,
 }));
 
-jest.mock('proton-mail/hooks/actions/useSnooze', () => ({
+jest.mock('../../../hooks/actions/useSnooze', () => ({
     __esModule: true,
     default: jest.fn().mockReturnValue({
         canSnooze: true,

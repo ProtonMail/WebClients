@@ -6,8 +6,7 @@ import { Icon, ToolbarButton } from '@proton/components/components';
 import { useActiveBreakpoint, useElementBreakpoints } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 
-import { getToolbarResponsiveSizes } from 'proton-mail/helpers/toolbar/getToolbarResponsiveSizes';
-
+import { getToolbarResponsiveSizes } from '../../helpers/toolbar/getToolbarResponsiveSizes';
 import SnoozeToolbarDropdown from '../list/snooze/containers/SnoozeToolbarDropdown';
 import LabelsAndFolders from './LabelsAndFolders';
 import MoreActions from './MoreActions';

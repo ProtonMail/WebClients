@@ -3,10 +3,9 @@ import { nextMonday } from 'date-fns';
 
 import { useUser } from '@proton/components/hooks';
 
-import useSnooze from 'proton-mail/hooks/actions/useSnooze';
-import { useAppDispatch } from 'proton-mail/logic/store';
-import { Element } from 'proton-mail/models/element';
-
+import useSnooze from '../../../../hooks/actions/useSnooze';
+import { useAppDispatch } from '../../../../logic/store';
+import { Element } from '../../../../models/element';
 import SnoozeDropdown from './SnoozeDropdown';
 
 jest.mock('@proton/components/hooks/useUser');
