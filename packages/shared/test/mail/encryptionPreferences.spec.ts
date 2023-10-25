@@ -604,7 +604,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             contactSignatureTimestamp: new Date(0),
             emailAddressWarnings: undefined,
             ktVerificationResult,
-            encryptionDisabled: true,
+            encryptionDisabled: false,
         });
     });
 
@@ -635,7 +635,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             contactSignatureTimestamp: undefined,
             emailAddressWarnings: undefined,
             ktVerificationResult,
-            encryptionDisabled: true,
+            encryptionDisabled: false,
         });
     });
 
@@ -658,7 +658,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             contactSignatureTimestamp: new Date(0),
             emailAddressWarnings: undefined,
             ktVerificationResult,
-            encryptionDisabled: true,
+            encryptionDisabled: false,
         });
     });
 
@@ -695,7 +695,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             contactSignatureTimestamp: new Date(0),
             emailAddressWarnings: undefined,
             ktVerificationResult,
-            encryptionDisabled: true,
+            encryptionDisabled: false,
         });
     });
 
