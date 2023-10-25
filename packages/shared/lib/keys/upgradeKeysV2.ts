@@ -223,7 +223,7 @@ export const upgradeV2KeysV2 = async ({
                 },
                 [[], []]
             );
-            const signedKeyList = await createSignedKeyListForMigration(
+            const [signedKeyList, onSKLPublishSuccess] = await createSignedKeyListForMigration(
                 address,
                 decryptedKeys,
                 keyTransparencyVerify,
@@ -233,6 +233,7 @@ export const upgradeV2KeysV2 = async ({
                 address,
                 addressKeys,
                 signedKeyList: signedKeyList,
+                onSKLPublishSuccess: onSKLPublishSuccess,
             };
         })
     );
@@ -255,6 +256,12 @@ export const upgradeV2KeysV2 = async ({
         OrganizationKey: reformattedOrganizationKey?.privateKeyArmored,
         SignedKeyLists,
     });
+
+    await Promise.all(
+        reformattedAddressesKeys.map(({ onSKLPublishSuccess }) =>
+            onSKLPublishSuccess ? onSKLPublishSuccess() : Promise.resolve()
+        )
+    );
 
     if (isOnePasswordMode) {
         await srpVerify({
