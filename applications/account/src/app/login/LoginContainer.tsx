@@ -11,11 +11,13 @@ import {
     useConfig,
     useErrorHandler,
     useFeature,
+    useFlag,
 } from '@proton/components';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import { AuthActionResponse, AuthCacheResult, AuthStep } from '@proton/components/containers/login/interface';
 import {
+    handleExternalSSOLogin,
     handleFido2,
     handleLogin,
     handleSetupPassword,
@@ -92,6 +94,9 @@ const LoginContainer = ({
 }: Props) => {
     const { state } = useLocation<{ username?: string } | undefined>();
     const { APP_NAME } = useConfig();
+    const [authType, setAuthType] = useState<'srp' | 'external-sso'>('srp');
+
+    const externalSSOFlag = useFlag('ExternalSSOWeb');
 
     useMetaTags(metaTags);
 
@@ -180,10 +185,15 @@ const LoginContainer = ({
                 subTitle: c('Title').t`Enter your ${BRAND_NAME} Account details to join the ${app} Beta program`,
             };
         }
+        const continueTo = toAppName ? c('Info').t`to continue to ${toAppName}` : '';
+        if (authType === 'external-sso') {
+            return {
+                title: c('Title').t`Sign in to your organization`,
+                subTitle: continueTo,
+            };
+        }
         const title = c('Title').t`Sign in`;
-        const subTitle = toAppName
-            ? c('Info').t`to continue to ${toAppName}`
-            : c('Info').t`Enter your ${BRAND_NAME} Account details.`;
+        const subTitle = continueTo || c('Info').t`Enter your ${BRAND_NAME} Account details.`;
         return {
             title,
             subTitle,
@@ -213,30 +223,43 @@ const LoginContainer = ({
                                 ) : null}
                                 <LoginForm
                                     modal={modal}
+                                    externalSSO={
+                                        APP_NAME === APPS.PROTONACCOUNT &&
+                                        externalSSOFlag &&
+                                        toApp === APPS.PROTONVPN_SETTINGS
+                                    }
                                     signInText={showContinueTo ? `Continue to ${toAppName}` : undefined}
                                     paths={paths}
                                     defaultUsername={previousUsernameRef.current}
                                     hasRemember={hasRemember}
                                     trustedDeviceRecoveryFeature={trustedDeviceRecoveryFeature}
+                                    authType={authType}
+                                    onChangeAuthType={(authType) => {
+                                        setAuthType(authType);
+                                    }}
                                     onSubmit={async ({ username, password, payload, persistent }) => {
                                         try {
-                                            const validateFlow = createFlow();
                                             await startUnAuthFlow();
-                                            const result = await handleLogin({
-                                                username,
-                                                password,
-                                                persistent,
-                                                api: silentApi,
-                                                hasTrustedDeviceRecovery,
-                                                appName: APP_NAME,
-                                                toApp,
-                                                ignoreUnlock: false,
-                                                payload,
-                                                setupVPN,
-                                                ktActivation,
-                                            });
-                                            if (validateFlow()) {
-                                                return await handleResult(result);
+                                            if (authType === 'external-sso') {
+                                                await handleExternalSSOLogin({ api: silentApi, username });
+                                            } else {
+                                                const validateFlow = createFlow();
+                                                const result = await handleLogin({
+                                                    username,
+                                                    password,
+                                                    persistent,
+                                                    api: silentApi,
+                                                    hasTrustedDeviceRecovery,
+                                                    appName: APP_NAME,
+                                                    toApp,
+                                                    ignoreUnlock: false,
+                                                    payload,
+                                                    setupVPN,
+                                                    ktActivation,
+                                                });
+                                                if (validateFlow()) {
+                                                    return await handleResult(result);
+                                                }
                                             }
                                         } catch (e) {
                                             handleError(e);

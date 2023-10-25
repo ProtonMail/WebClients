@@ -3,6 +3,7 @@
  * Format should be FeatureFlagName = 'FeatureFlagName'
  */
 enum MailFeatureFlag {
+    ExternalSSOWeb = 'ExternalSSOWeb',
     AttachmentThumbnails = 'AttachmentThumbnails',
     WebMailPageSizeSetting = 'WebMailPageSizeSetting',
     EmailForwarding = 'EmailForwarding',
