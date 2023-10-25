@@ -1,0 +1,7 @@
+.item-date-snoozed {
+	color: var(--signal-warning-major-2);
+
+	.item-is-selected & {
+		color: inherit;
+	}
+}
