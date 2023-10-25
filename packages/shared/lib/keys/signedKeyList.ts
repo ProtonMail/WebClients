@@ -27,7 +27,7 @@ export const getSignedKeyListSignature = async (data: string, signingKey: Privat
     return signature;
 };
 
-type OnSKLPublishSuccess = () => Promise<void>;
+export type OnSKLPublishSuccess = () => Promise<void>;
 
 /**
  * Generate the signed key list data and verify it for later commit to Key Transparency.
