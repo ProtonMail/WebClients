@@ -37,7 +37,7 @@ import noop from '@proton/utils/noop';
 
 import { getNCalendarsFeature } from '../../features/calendar';
 import { getStorageBoostFeatureB2B, getStorageFeature } from '../../features/drive';
-import { getUsersFeature } from '../../features/highlights';
+import { getSentinel, getUsersFeature } from '../../features/highlights';
 import { PlanCardFeatureDefinition } from '../../features/interface';
 import {
     getB2BNDomainsFeature,
@@ -272,6 +272,7 @@ const getBundleUpsell = ({
         getStorageFeature(bundlePlan?.MaxSpace ?? 500),
         getNAddressesFeature({ n: 15 }),
         getNDomainsFeature({ n: 3 }),
+        getSentinel(),
         getFoldersAndLabelsFeature('unlimited'),
         hasPaidMail ? undefined : getNCalendarsFeature(MAX_CALENDARS_PAID),
         hasVPN ? undefined : getHighSpeedVPNConnectionsFeature(),
