@@ -26,11 +26,7 @@ import bundleVpnPass from './bundle-vpn-pass.svg';
 import bundle from './bundle.svg';
 import { getCustomPassFeatures, getPassBenefits } from './pass/configuration';
 
-export const getSummaryPlan = (
-    plan: Plan | undefined,
-    vpnServersCountData: VPNServersCountData,
-    passVaultSharingEnabled: boolean
-) => {
+export const getSummaryPlan = (plan: Plan | undefined, vpnServersCountData: VPNServersCountData) => {
     const iconSize = 24;
 
     if (plan && plan?.Name === PLANS.VPN) {
@@ -49,7 +45,7 @@ export const getSummaryPlan = (
             logo: <PassLogo variant="glyph-only" size={iconSize} />,
             ...shortPlan,
             plan,
-            features: getCustomPassFeatures(passVaultSharingEnabled),
+            features: getCustomPassFeatures(),
         };
     }
 

@@ -31,7 +31,6 @@ import {
     Tabs,
     VpnLogo,
 } from '../../../components';
-import { useFlag } from '../../unleash';
 import CurrencySelector from '../CurrencySelector';
 import CycleSelector from '../CycleSelector';
 import { getAllFeatures } from '../features';
@@ -174,8 +173,6 @@ const PlanSelection = ({
     const isVpnSettingsApp = app == APPS.PROTONVPN_SETTINGS;
     const currentPlan = subscription ? subscription.Plans?.find(({ Type }) => Type === PLAN_TYPES.PLAN) : null;
 
-    const passVaultSharingEnabled = useFlag('PassVaultSharingDescription');
-
     const enabledProductB2CPlans = [PLANS.MAIL, PLANS.VPN, PLANS.DRIVE, PLANS.PASS_PLUS].filter(isTruthy);
     const enabledProductB2BPlans = [PLANS.MAIL_PRO /*, PLANS.DRIVE_PRO*/];
 
@@ -219,7 +216,6 @@ const PlanSelection = ({
         plansMap,
         serversCount: vpnServers,
         calendarSharingEnabled,
-        passVaultSharingEnabled,
     });
 
     const plansListB2C = getPlansList(enabledProductB2CPlans, plansMap);

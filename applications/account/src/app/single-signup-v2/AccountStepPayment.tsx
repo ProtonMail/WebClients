@@ -11,7 +11,6 @@ import {
     PayPalButton,
     Payment as PaymentComponent,
     StyledPayPalButton,
-    useFlag,
     usePayment,
 } from '@proton/components/containers';
 import { getTotalBillingText } from '@proton/components/containers/payments/helper';
@@ -94,7 +93,6 @@ const AccountStepPayment = ({
     const formRef = useRef<HTMLFormElement>(null);
     const { APP_NAME } = useConfig();
     const { createModal } = useModals();
-    const passVaultSharingEnabled = useFlag('PassVaultSharingDescription');
 
     const measurePay = (
         type: TelemetryPayType,
@@ -183,7 +181,7 @@ const AccountStepPayment = ({
         </Href>
     );
 
-    const summaryPlan = getSummaryPlan(options.plan, vpnServersCountData, passVaultSharingEnabled);
+    const summaryPlan = getSummaryPlan(options.plan, vpnServersCountData);
 
     const currentCheckout = getCheckout({
         planIDs: options.planIDs,
