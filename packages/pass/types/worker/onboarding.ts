@@ -7,6 +7,7 @@ export enum OnboardingMessage {
     USER_RATING /* ask user for a rating */,
     STORAGE_ISSUE /* low disk space */,
     PENDING_SHARE_ACCESS /* new user waiting for admin confirm */,
+    BLACK_FRIDAY_OFFER,
 }
 
 export type OnboardingAcknowledgment = {
