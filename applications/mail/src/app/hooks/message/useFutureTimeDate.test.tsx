@@ -3,8 +3,7 @@ import { addDays, addHours, format, isSameDay, isSameHour, set, startOfTomorrow,
 
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-import { getMinScheduleTime } from 'proton-mail/helpers/schedule';
-
+import { getMinScheduleTime } from '../../helpers/schedule';
 import useFutureTimeDate from './useFutureTimeDate';
 
 describe('useFutureTimeDate', () => {

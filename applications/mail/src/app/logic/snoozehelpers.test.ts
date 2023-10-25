@@ -2,8 +2,7 @@ import { format, getUnixTime, nextMonday, nextSaturday, set } from 'date-fns';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { Element } from 'proton-mail/models/element';
-
+import { Element } from '../models/element';
 import { getSnoozeDate, getSnoozeNotificationText, getSnoozeTimeFromElement, getSnoozeUnixTime } from './snoozehelpers';
 
 describe('snooze helpers - getSnoozeUnixTime', () => {
