@@ -72,6 +72,7 @@ import SingleSignupContainer from '../single-signup/SingleSignupContainer';
 import useLocationWithoutLocale from '../useLocationWithoutLocale';
 import AccountLoaderPage from './AccountLoaderPage';
 import AccountPublicApp from './AccountPublicApp';
+import ExternalSSOConsumer from './ExternalSSOConsumer';
 import { getPaths } from './helper';
 
 export const getSearchParams = (location: Location) => {
@@ -514,6 +515,11 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                         </UnAuthenticated>
                                                     </Route>
                                                 )}
+                                                <Route path={SSO_PATHS.EXTERNAL_SSO_LOGIN}>
+                                                    <UnAuthenticated>
+                                                        <ExternalSSOConsumer loader={loader} onLogin={handleLogin} />
+                                                    </UnAuthenticated>
+                                                </Route>
                                                 <Route path={SSO_PATHS.SWITCH}>
                                                     <UnAuthenticated>
                                                         <SwitchAccountContainer

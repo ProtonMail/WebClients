@@ -8,7 +8,7 @@ import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelpe
 import { getKeySalts } from '@proton/shared/lib/api/keys';
 import { getSettings, upgradePassword } from '@proton/shared/lib/api/settings';
 import { getUser } from '@proton/shared/lib/api/user';
-import { Fido2Data, InfoResponse } from '@proton/shared/lib/authentication/interface';
+import { Fido2Data, InfoResponse, SSOInfoResponse } from '@proton/shared/lib/authentication/interface';
 import loginWithFallback from '@proton/shared/lib/authentication/loginWithFallback';
 import { maybeResumeSessionByUser, persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
@@ -467,4 +467,12 @@ export const handleLogin = async ({
     };
 
     return next({ cache, from: AuthStep.LOGIN });
+};
+
+export const handleExternalSSOLogin = async ({ api, username }: { api: Api; username: string }) => {
+    const info = await api<SSOInfoResponse>(getInfo(username, 'SSO'));
+    if (!info.SSOChallengeToken) {
+        throw new Error('Unexpected response');
+    }
+    document.location.assign(`${window.location.origin}/api/auth/sso/${info.SSOChallengeToken}`);
 };
