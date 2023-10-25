@@ -82,6 +82,16 @@ describe('snooze helpers - getSnoozeTimeFromElement', () => {
         ).toEqual(snoozeTime);
     });
 
+    it('Should return snooze time when element is a conversation and has a inbox label', () => {
+        const snoozeTime = new Date().getTime();
+
+        expect(
+            getSnoozeTimeFromElement({
+                Labels: [{ ID: MAILBOX_LABEL_IDS.INBOX, ContextSnoozeTime: snoozeTime }],
+            } as Element)
+        ).toEqual(snoozeTime);
+    });
+
     it('Should return undefined when element is a conversation and has no snooze label', () => {
         expect(
             getSnoozeTimeFromElement({
