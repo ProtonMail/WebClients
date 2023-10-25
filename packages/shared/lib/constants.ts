@@ -210,6 +210,7 @@ export type APP_CLIENT_IDS =
     | (typeof APPS_CONFIGURATION)[keyof typeof APPS_CONFIGURATION]['clientID']
     | 'android_tv-vpn';
 export const SSO_PATHS = {
+    EXTERNAL_SSO_LOGIN: '/sso/login',
     OAUTH_AUTHORIZE: '/oauth/authorize',
     OAUTH_CONFIRM_FORK: '/oauth/confirm',
     AUTHORIZE: '/authorize',
