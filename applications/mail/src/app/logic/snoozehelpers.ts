@@ -4,11 +4,10 @@ import { c, msgid } from 'ttag';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { getDate, isConversation, isMessage } from 'proton-mail/helpers/elements';
-import { Conversation } from 'proton-mail/models/conversation';
-import { Element } from 'proton-mail/models/element';
-
+import { getDate, isConversation, isMessage } from '../helpers/elements';
 import { SNOOZE_DURATION } from '../hooks/actions/useSnooze';
+import { Conversation } from '../models/conversation';
+import { Element } from '../models/element';
 
 export const getSnoozeUnixTime = (duration: SNOOZE_DURATION, snoozeTime?: Date) => {
     const today = new Date();

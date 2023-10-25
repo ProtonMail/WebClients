@@ -10,12 +10,10 @@ import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
-import { MARK_AS_STATUS, useMarkAs } from 'proton-mail/hooks/actions/useMarkAs';
-import { isElementReminded } from 'proton-mail/logic/snoozehelpers';
-
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { hasLabel } from '../../helpers/elements';
 import { findMessageToExpand } from '../../helpers/message/messageExpandable';
+import { MARK_AS_STATUS, useMarkAs } from '../../hooks/actions/useMarkAs';
 import { useConversation } from '../../hooks/conversation/useConversation';
 import { useConversationFocus } from '../../hooks/conversation/useConversationFocus';
 import { useConversationHotkeys } from '../../hooks/conversation/useConversationHotkeys';
@@ -23,6 +21,7 @@ import { useGetMessage } from '../../hooks/message/useMessage';
 import { usePlaceholders } from '../../hooks/usePlaceholders';
 import useShouldMoveOut from '../../hooks/useShouldMoveOut';
 import { removeAllQuickReplyFlags } from '../../logic/messages/draft/messagesDraftActions';
+import { isElementReminded } from '../../logic/snoozehelpers';
 import { Breakpoints } from '../../models/utils';
 import MessageView, { MessageViewRef } from '../message/MessageView';
 import ConversationErrorBanner from './ConversationErrorBanner';

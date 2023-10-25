@@ -8,10 +8,9 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
-import { formatFullDate, formatScheduledTimeString } from 'proton-mail/helpers/date';
-import { isElementReminded } from 'proton-mail/logic/snoozehelpers';
-import { Element } from 'proton-mail/models/element';
-
+import { formatFullDate, formatScheduledTimeString } from '../../helpers/date';
+import { isElementReminded } from '../../logic/snoozehelpers';
+import { Element } from '../../models/element';
 import ItemDateRender from './ItemDateRender';
 
 interface Props {

@@ -20,14 +20,11 @@ import { hasAttachments, isDraft, isOutbox, isScheduled, isSent } from '@proton/
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { MARK_AS_STATUS, useMarkAs } from 'proton-mail/hooks/actions/useMarkAs';
-import { isElementReminded } from 'proton-mail/logic/snoozehelpers';
-import { Element } from 'proton-mail/models/element';
-
 import { LOAD_RETRY_COUNT } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { isUnread } from '../../helpers/elements';
 import { MessageViewIcons, getReceivedStatusIcon, getSentStatusIconInfo } from '../../helpers/message/icon';
+import { MARK_AS_STATUS, useMarkAs } from '../../hooks/actions/useMarkAs';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { useQuickReplyFocus } from '../../hooks/composer/useQuickReplyFocus';
 import { useInitializeMessage } from '../../hooks/message/useInitializeMessage';
@@ -38,6 +35,8 @@ import { useMessageHotkeys } from '../../hooks/message/useMessageHotkeys';
 import { useResignContact } from '../../hooks/message/useResignContact';
 import { useVerifyMessage } from '../../hooks/message/useVerifyMessage';
 import { MessageWithOptionalBody } from '../../logic/messages/messagesTypes';
+import { isElementReminded } from '../../logic/snoozehelpers';
+import { Element } from '../../models/element';
 import { Breakpoints } from '../../models/utils';
 import QuickReplyContainer from '../composer/quickReply/QuickReplyContainer';
 import MessageBody from './MessageBody';

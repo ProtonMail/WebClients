@@ -8,13 +8,12 @@ import { Icon } from '@proton/components';
 import { isSnoozed } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
-import useSnooze from 'proton-mail/hooks/actions/useSnooze';
-import { useGetElementsFromIDs } from 'proton-mail/hooks/mailbox/useElements';
-import { MessageStateWithData } from 'proton-mail/logic/messages/messagesTypes';
-import { getSnoozeTimeFromElement } from 'proton-mail/logic/snoozehelpers';
-
 import { PREVENT_CANCEL_SEND_INTERVAL } from '../../../constants';
 import { formatDateToHuman } from '../../../helpers/date';
+import useSnooze from '../../../hooks/actions/useSnooze';
+import { useGetElementsFromIDs } from '../../../hooks/mailbox/useElements';
+import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
+import { getSnoozeTimeFromElement } from '../../../logic/snoozehelpers';
 
 interface Props {
     message: MessageStateWithData;

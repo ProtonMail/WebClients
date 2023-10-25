@@ -4,9 +4,8 @@ import { addDays, addYears, getUnixTime } from 'date-fns';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { formatFullDate, formatScheduledTimeString } from 'proton-mail/helpers/date';
-import { Conversation } from 'proton-mail/models/conversation';
-
+import { formatFullDate, formatScheduledTimeString } from '../../helpers/date';
+import { Conversation } from '../../models/conversation';
 import ItemDateSnoozedMessage from './ItemDateSnoozedMessage';
 
 const snoozedMessage = {

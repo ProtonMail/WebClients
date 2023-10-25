@@ -9,9 +9,8 @@ import { generateUID } from '@proton/components/helpers';
 import { useUserSettings } from '@proton/components/hooks';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
-import { SNOOZE_DURATION } from 'proton-mail/hooks/actions/useSnooze';
-
 import { getMinScheduleTime } from '../../../../helpers/schedule';
+import { SNOOZE_DURATION } from '../../../../hooks/actions/useSnooze';
 import useFutureTimeDate from '../../../../hooks/message/useFutureTimeDate';
 import SnoozeHeader from './SnoozeHeader';
 
