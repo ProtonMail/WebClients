@@ -1,7 +1,7 @@
 import { useFolders, useLabels } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { isCustomFolder, isCustomLabel } from 'proton-mail/helpers/labels';
+import { isCustomFolder, isCustomLabel } from '../helpers/labels';
 
 const {
     TRASH,

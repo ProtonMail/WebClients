@@ -7,19 +7,18 @@ import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
 import { STATUS } from '@proton/shared/lib/models/cache';
 
-import useMailModel from 'proton-mail/hooks/useMailModel';
-import { isElementReminded } from 'proton-mail/logic/snoozehelpers';
-
 import { updateCountersForMarkAs } from '../../helpers/counter';
 import { isUnread, isMessage as testIsMessage } from '../../helpers/elements';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { applyMarkAsChangesOnMessage } from '../../helpers/message/messages';
+import useMailModel from '../../hooks/useMailModel';
 import {
     optimisticMarkAsConversation,
     optimisticMarkAsConversationMessages,
 } from '../../logic/conversations/conversationsActions';
 import { optimisticMarkAs as optimisticMarkAsElementAction } from '../../logic/elements/elementsActions';
 import { optimisticMarkAs as optimisticMarkAsMessageAction } from '../../logic/messages/optimistic/messagesOptimisticActions';
+import { isElementReminded } from '../../logic/snoozehelpers';
 import { useAppDispatch } from '../../logic/store';
 import { Conversation } from '../../models/conversation';
 import { Element } from '../../models/element';

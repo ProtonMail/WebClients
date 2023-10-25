@@ -1,8 +1,7 @@
 import { isReceived, isScheduled, isSnoozed } from '@proton/shared/lib/mail/messages';
 
-import useMailModel from 'proton-mail/hooks/useMailModel';
-
 import { getMessageHasData } from '../../../helpers/message/messages';
+import useMailModel from '../../../hooks/useMailModel';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import useScheduleSendFeature from '../../composer/actions/scheduleSend/useScheduleSendFeature';
 import ExtraAskResign from '../extras/ExtraAskResign';
