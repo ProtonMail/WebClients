@@ -19,6 +19,13 @@ const getTexts = (types: RECURRING_TYPES[], inviteActions: InviteActions) => {
     };
 
     if (types.length !== 1) {
+        if (inviteType === INVITE_ACTION_TYPES.CANCEL_INVITATION) {
+            return {
+                ...defaultTexts,
+                alertText: c('Info')
+                    .t`All participants will get a cancellation email. Which event would you like to delete?`,
+            };
+        }
         return defaultTexts;
     }
     if (types[0] === RECURRING_TYPES.SINGLE) {

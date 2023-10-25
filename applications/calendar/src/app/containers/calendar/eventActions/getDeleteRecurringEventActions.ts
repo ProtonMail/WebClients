@@ -21,10 +21,11 @@ import {
     getDeleteSyncOperation,
     getUpdateSyncOperation,
 } from '../getSyncMultipleEventsPayload';
+import createSingleCancelledRecurrence from '../recurrence/createSingleCancelledRecurrence';
 import deleteFutureRecurrence from '../recurrence/deleteFutureRecurrence';
 import deleteSingleRecurrence from '../recurrence/deleteSingleRecurrence';
 import { getUpdatePartstatOperation } from './getChangePartstatActions';
-import { getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
+import { getCurrentVevent, getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
 
 interface DeleteRecurringArguments {
     type: RECURRING_TYPES;
@@ -68,11 +69,14 @@ export const getDeleteRecurringEventActions = async ({
     let updatedInviteActions = inviteActions;
 
     if (type === RECURRING_TYPES.SINGLE) {
-        if (!originalVeventComponent) {
-            throw new Error('Can not delete single occurrence without original event');
+        if (!originalVeventComponent || !oldVeventComponent) {
+            throw new Error('Cannot delete single occurrence without original or old events');
         }
 
         const isSingleEdit = oldEvent.ID !== originalEvent.ID;
+        const isCancelInvitation = inviteType === INVITE_ACTION_TYPES.CANCEL_INVITATION;
+        let cancelledOccurrenceVevent: VcalVeventComponent | undefined;
+
         if (isSingleEdit && isDeclineInvitation) {
             const { inviteActions: cleanInviteActions } = await sendIcs({
                 inviteActions,
@@ -80,6 +84,19 @@ export const getDeleteRecurringEventActions = async ({
             });
             updatedInviteActions = cleanInviteActions;
         }
+
+        // TODO: what happens with CANCEL_DISABLED?
+        if (isCancelInvitation) {
+            cancelledOccurrenceVevent = createSingleCancelledRecurrence(
+                getCurrentVevent(oldVeventComponent, recurrence)
+            );
+            const { inviteActions: cleanInviteActions } = await sendIcs({
+                inviteActions,
+                cancelVevent: cancelledOccurrenceVevent,
+            });
+            updatedInviteActions = cleanInviteActions;
+        }
+
         const updatedVeventComponent = deleteSingleRecurrence(originalVeventComponent, recurrence.localStart);
 
         const singleDeleteOperation = isSingleEdit ? getDeleteSyncOperation(oldEvent) : undefined;
@@ -89,6 +106,7 @@ export const getDeleteRecurringEventActions = async ({
             calendarEvent: originalEvent,
             hasDefaultNotifications: getHasDefaultNotifications(originalEvent),
             isAttendee,
+            cancelledOccurrenceVevent,
         });
 
         return {
@@ -169,7 +187,7 @@ export const getDeleteRecurringEventActions = async ({
                 }
             }
         }
-        // For invitations we do not delete single edits (unless explicitly told so), but reset partstat if necessary
+        // For invitations, we do not delete single edits (unless explicitly told so), but reset partstat if necessary
         const singleEditRecurrences = getRecurrenceEvents(recurrences, originalEvent);
         const eventsToDelete =
             isAttendee && !deleteSingleEdits
