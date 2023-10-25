@@ -3,7 +3,7 @@ import { getUnixTime } from 'date-fns';
 import { serverTime } from '@proton/crypto';
 import { generateAttendeeToken, getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { getDoesCalendarNeedUserAction, getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
-import { ICAL_EXTENSIONS, ICAL_METHOD, ICAL_METHODS_ATTENDEE } from '@proton/shared/lib/calendar/constants';
+import { ICAL_METHOD, ICAL_METHODS_ATTENDEE } from '@proton/shared/lib/calendar/constants';
 import { getSelfAddressData } from '@proton/shared/lib/calendar/deserialize';
 import { generateVeventHashUID, getIsProtonUID } from '@proton/shared/lib/calendar/helper';
 import {
@@ -50,7 +50,6 @@ import { SECOND } from '@proton/shared/lib/constants';
 import { getSupportedTimezone } from '@proton/shared/lib/date/timezone';
 import { getIsAddressActive, getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
 import { canonicalizeEmailByGuess, canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { Address } from '@proton/shared/lib/interfaces';
 import {
@@ -73,6 +72,8 @@ import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { RequireSome, Unwrap } from '@proton/shared/lib/interfaces/utils';
 import { getOriginalTo } from '@proton/shared/lib/mail/messages';
 import unary from '@proton/utils/unary';
+
+import { hasIcalExtension } from 'proton-mail/helpers/attachment/attachment';
 
 import { MessageStateWithData, MessageWithOptionalBody } from '../../logic/messages/messagesTypes';
 import { FetchAllEventsByUID } from './inviteApi';
@@ -180,8 +181,6 @@ export const getHasFullCalendarData = (data?: CalendarWidgetData): data is Requi
     const { memberID, addressKeys, calendarKeys, calendarSettings } = data || {};
     return !!(memberID && addressKeys && calendarKeys && calendarSettings);
 };
-
-export const hasIcalExtension = (attachmentName: string) => ICAL_EXTENSIONS.includes(splitExtension(attachmentName)[1]);
 
 export const filterAttachmentsForEvents = (attachments: Attachment[]): Attachment[] =>
     attachments.filter(({ Name = '' }) => hasIcalExtension(Name));

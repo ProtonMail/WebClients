@@ -2,7 +2,7 @@ import { MAILBOX_LABEL_IDS, MIME_TYPES } from '@proton/shared/lib/constants';
 import { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { hasIcalExtension } from 'proton-mail/helpers/calendar/invite';
+import { hasIcalExtension, hasKeyExtension } from 'proton-mail/helpers/attachment/attachment';
 import { hasLabel } from 'proton-mail/helpers/elements';
 import { Element } from 'proton-mail/models/element';
 
@@ -37,9 +37,12 @@ export const getOtherAttachmentsTitle = (attachmentsMetadata: AttachmentsMetadat
 };
 
 export const filterAttachmentToPreview = (attachmentsMetadata: AttachmentsMetadata[]) => {
+    // Check file MimeType to filter attachments
+    // It's possible that the file has not the MimeType we want to exclude, so we make an additional check on the extension
     return attachmentsMetadata.filter(
         (attachmentMetadata) =>
             !ATTACHMENT_THUMBNAILS_BLOCK_LIST.includes(attachmentMetadata.MIMEType) &&
-            !hasIcalExtension(attachmentMetadata.Name)
+            !hasIcalExtension(attachmentMetadata.Name) &&
+            !hasKeyExtension(attachmentMetadata.Name)
     );
 };

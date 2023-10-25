@@ -798,7 +798,8 @@ export enum COUPON_CODES {
 
 export const GIFT_CODE_LENGTH = 16;
 
-export const KEY_FILE_EXTENSION = '.asc';
+export const KEY_EXTENSION = 'asc';
+export const KEY_FILE_EXTENSION = `.${KEY_EXTENSION}`;
 
 export enum ENCRYPTION_TYPES {
     CURVE25519 = 'CURVE25519',

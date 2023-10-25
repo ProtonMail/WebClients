@@ -93,6 +93,7 @@ describe('attachmentThumbnails', () => {
                 { MIMEType: 'whatever', Name: 'attachment.ical' } as AttachmentsMetadata,
                 { MIMEType: 'whatever', Name: 'attachment.ifb' } as AttachmentsMetadata,
                 { MIMEType: 'whatever', Name: 'attachment.icalendar' } as AttachmentsMetadata,
+                { MIMEType: 'whatever', Name: 'attachment.asc' } as AttachmentsMetadata,
                 pdfAttachment,
                 imageAttachment,
             ];
