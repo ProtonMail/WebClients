@@ -18,26 +18,22 @@ const knownFieldTypes = {
     ignored: ['section'],
 } as const;
 
-function isTrashedItem(item: EnpassItem<any>) {
-    return item.archived !== 0 || item.trashed !== 0;
-}
+const isTrashedItem = (item: EnpassItem<any>) => item.archived !== 0 || item.trashed !== 0;
 
-function extractFromFieldTypes<K extends string>(keys: readonly K[]) {
+const extractFromFieldTypes = <K extends string>(keys: readonly K[]) => {
     const isSupportedKey = (type: any): type is K => keys.includes(type);
 
     return (fields: EnpassField[]) =>
         fields.reduce(
             (acc: { extracted: { [key in K]?: string }; remaining: RemainingField[] }, field) => {
-                if (!field.value) {
-                    return acc;
-                }
+                if (!field.value) return acc;
 
                 if (isSupportedKey(field.type) && !acc.extracted[field.type]) {
                     acc.extracted[field.type] = field.value;
                     return acc;
                 }
 
-                if (!knownFieldTypes.ignored.includes(field.type as any)) {
+                if (!(<readonly string[]>knownFieldTypes.ignored).includes(field.type)) {
                     acc.remaining.push(field);
                     return acc;
                 }
@@ -46,19 +42,16 @@ function extractFromFieldTypes<K extends string>(keys: readonly K[]) {
             },
             { extracted: {}, remaining: [] }
         );
-}
+};
 
 const extractLoginFields = extractFromFieldTypes(knownFieldTypes.login);
-
 const extractCCFields = extractFromFieldTypes(knownFieldTypes.creditCard);
 
-function mapToExtraField(f: RemainingField): UnsafeItemExtraField {
-    return {
-        data: { content: f.value },
-        fieldName: f.label,
-        type: f.sensitive ? 'hidden' : 'text',
-    };
-}
+const mapToExtraField = ({ value, label, sensitive }: RemainingField): UnsafeItemExtraField => ({
+    data: { content: value },
+    fieldName: label,
+    type: sensitive ? 'hidden' : 'text',
+});
 
 const processLoginItem = (
     item: EnpassItem<EnpassCategory.LOGIN> | EnpassItem<EnpassCategory.PASSWORD>
@@ -71,7 +64,6 @@ const processLoginItem = (
         trashed: isTrashedItem(item),
         createTime: item.createdAt,
         modifyTime: item.updated_at,
-
         extraFields: remaining.map(mapToExtraField),
         username: extracted.username || extracted.email,
         password: extracted.password,
@@ -80,19 +72,16 @@ const processLoginItem = (
     });
 };
 
-function processNoteItem(item: EnpassItem<EnpassCategory.NOTE>): ItemImportIntent<'note'> {
-    return importNoteItem({
+const processNoteItem = (item: EnpassItem<EnpassCategory.NOTE>): ItemImportIntent<'note'> =>
+    importNoteItem({
         name: item.title,
         note: item.note,
         trashed: item.archived !== 0 || item.trashed !== 0,
         createTime: item.createdAt,
         modifyTime: item.updated_at,
     });
-}
 
-function processCreditCardItem(
-    item: EnpassItem<EnpassCategory.CREDIT_CARD>
-): ItemImportIntent<'creditCard'> | ItemImportIntent[] {
+const processCreditCardItem = (item: EnpassItem<EnpassCategory.CREDIT_CARD>): ItemImportIntent[] => {
     const { extracted: extractedCCData, remaining } = extractCCFields(item.fields);
 
     const ccItem = importCreditCardItem({
@@ -101,7 +90,6 @@ function processCreditCardItem(
         trashed: isTrashedItem(item),
         createTime: item.createdAt,
         modifyTime: item.updated_at,
-
         cardholderName: extractedCCData.ccName,
         pin: extractedCCData.ccPin,
         expirationDate: extractedCCData.ccExpiry,
@@ -109,7 +97,9 @@ function processCreditCardItem(
         verificationNumber: extractedCCData.ccCvc,
     });
 
-    if (remaining.some((f) => knownFieldTypes.login.includes(f.type as any))) {
+    const hasLoginFields = remaining.some(({ type }) => (<readonly string[]>knownFieldTypes.login).includes(type));
+
+    if (hasLoginFields) {
         const enpassLoginItem: EnpassItem<EnpassCategory.LOGIN> = {
             ...item,
             category: EnpassCategory.LOGIN,
@@ -117,19 +107,16 @@ function processCreditCardItem(
         };
 
         const loginItem = processLoginItem(enpassLoginItem);
-
         return [ccItem, loginItem];
     }
 
-    return ccItem;
-}
+    return [ccItem];
+};
 
 export const readEnpassData = (data: string): ImportPayload => {
     try {
         const result = JSON.parse(data) as EnpassData;
-
         const items = result.items.map((i) => i);
-
         const ignored: string[] = [];
 
         const vaults: ImportVault[] = [
