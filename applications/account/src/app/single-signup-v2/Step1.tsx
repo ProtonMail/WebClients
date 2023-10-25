@@ -16,7 +16,7 @@ import { Button } from '@proton/atoms/Button';
 import { Vr } from '@proton/atoms/Vr';
 import { Icon, IconName, InlineLinkButton } from '@proton/components/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import { CurrencySelector, CycleSelector, useFlag } from '@proton/components/containers';
+import { CurrencySelector, CycleSelector } from '@proton/components/containers';
 import {
     getBlackFridayRenewalNoticeText,
     getRenewalNoticeText,
@@ -150,8 +150,6 @@ const Step1 = ({
     const [loadingPaymentDetails, withLoadingPaymentDetails] = useLoading();
     const accountDetailsRef = useRef<AccountStepDetailsRef>();
     const accountStepPaymentRef = useRef<AccountStepPaymentRef>();
-
-    const passVaultSharingEnabled = useFlag('PassVaultSharingDescription');
 
     const createFlow = useFlowRef();
 
@@ -507,7 +505,7 @@ const Step1 = ({
                                     logo={<FreeLogo app={app} />}
                                     discount={0}
                                     free
-                                    features={getFreePassFeatures(passVaultSharingEnabled)}
+                                    features={getFreePassFeatures()}
                                 ></RightPlanSummary>
                             </RightSummary>
                         ) : (
