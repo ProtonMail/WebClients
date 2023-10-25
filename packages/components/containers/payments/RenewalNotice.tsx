@@ -43,6 +43,12 @@ export const getBlackFridayRenewalNoticeText = ({
         </Price>
     ) : null;
 
+    if (nextCycle === CYCLE.MONTHLY) {
+        // translator: The specially discounted price of $8.99 is valid for the first month. Then it will automatically be renewed at $9.99 every month. You can cancel at any time.
+        return c('bf2023: renew')
+            .jt`The specially discounted price of ${discountedPrice} is valid for the first month. Then it will automatically be renewed at ${nextPrice} every month. You can cancel at any time.`;
+    }
+
     const discountedMonths = ((n: number) => {
         if (n === CYCLE.MONTHLY) {
             // translator: This string is a special case for 1 month billing cycle, together with the string "The specially discounted price of ... is valid for the first 'month' ..."
