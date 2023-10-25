@@ -11,7 +11,6 @@ import {
     useApi,
     useConfig,
     useErrorHandler,
-    useFlag,
     useModalState,
     useVPNServersCount,
 } from '@proton/components';
@@ -185,8 +184,6 @@ const SingleSignupContainerV2 = ({
     const ktActivation = useKTActivation();
     const { APP_NAME } = useConfig();
 
-    const passVaultSharingEnabled = useFlag('PassVaultSharingDescription');
-
     useMetaTags(metaTags);
 
     const [model, setModel] = useState<SignupModelV2>(defaultSignupModel);
@@ -283,7 +280,6 @@ const SingleSignupContainerV2 = ({
             return getPassConfiguration({
                 isDesktop,
                 vpnServersCountData,
-                passVaultSharingEnabled,
                 hideFreePlan: signupParameters.hideFreePlan,
                 isPassWelcome: signupParameters.isPassWelcome,
                 mode: signupParameters.mode,
