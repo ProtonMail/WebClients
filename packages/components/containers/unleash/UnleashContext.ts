@@ -12,6 +12,7 @@ enum MailFeatureFlag {
 enum AccountFlag {
     MaintenanceImporter = 'MaintenanceImporter',
     SignedInAccountRecovery = 'SignedInAccountRecovery',
+    BF2023IsExpired = 'BF2023IsExpired',
 }
 
 export type FeatureFlag = `${MailFeatureFlag}` | `${AccountFlag}`;
