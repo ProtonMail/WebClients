@@ -23,7 +23,7 @@ const SnoozeDropdown = ({ elements, size }: Props) => {
     const [{ hasPaidMail }] = useUser();
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
-    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
+    const { anchorRef, isOpen, toggle, close: dropdownClose } = usePopperAnchor<HTMLButtonElement>();
     const { canSnooze, canUnsnooze, isSnoozeEnabled, snooze, unsnooze, handleClose, handleCustomClick, snoozeState } =
         useSnooze();
 
@@ -34,7 +34,7 @@ const SnoozeDropdown = ({ elements, size }: Props) => {
     const onClose = () => {
         dispatch(snoozeActions.resetSnoozeDropdown());
         handleClose();
-        close();
+        dropdownClose();
     };
 
     const handleSnooze = (event: MouseEvent, duration: SNOOZE_DURATION, snoozeTime?: Date) => {

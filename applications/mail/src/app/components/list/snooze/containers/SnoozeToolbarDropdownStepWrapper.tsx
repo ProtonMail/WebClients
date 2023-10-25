@@ -2,9 +2,8 @@ import { MouseEvent, useMemo } from 'react';
 
 import { useUser } from '@proton/components/hooks';
 
-import { useGetElementsFromIDs } from 'proton-mail/hooks/mailbox/useElements';
-
 import useSnooze, { SNOOZE_DURATION } from '../../../../hooks/actions/useSnooze';
+import { useGetElementsFromIDs } from '../../../../hooks/mailbox/useElements';
 import SnoozeCustomTime from '../components/SnoozeCustomTime';
 import SnoozeDurationSelection from '../components/SnoozeDurationSelection';
 

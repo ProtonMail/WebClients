@@ -4,7 +4,7 @@ import { Vr } from '@proton/atoms/Vr';
 import { Icon, useModalState } from '@proton/components/components';
 
 import useSnooze from '../../../../hooks/actions/useSnooze';
-import ToolbarDropdown from '../../../toolbar/ToolbarDropdown';
+import ToolbarDropdown, { DropdownRenderProps } from '../../../toolbar/ToolbarDropdown';
 import SnoozeUpsellModal from '../components/SnoozeUpsellModal';
 import SnoozeToolbarDropdownStepWrapper from './SnoozeToolbarDropdownStepWrapper';
 
@@ -33,7 +33,7 @@ const SnoozeToolbarDropdown = ({ selectedIDs }: Props) => {
                 autoClose={false}
             >
                 {{
-                    render: ({ onClose, onLock }: any) => (
+                    render: ({ onClose, onLock }: DropdownRenderProps) => (
                         <>
                             <SnoozeToolbarDropdownStepWrapper
                                 onClose={onClose}

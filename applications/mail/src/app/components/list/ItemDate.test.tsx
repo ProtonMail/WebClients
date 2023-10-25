@@ -1,7 +1,6 @@
-import { render } from 'proton-mail/helpers/test/render';
-import { Conversation } from 'proton-mail/models/conversation';
-import { Element } from 'proton-mail/models/element';
-
+import { render } from '../../helpers/test/render';
+import { Conversation } from '../../models/conversation';
+import { Element } from '../../models/element';
 import ItemDate from './ItemDate';
 
 const element = {

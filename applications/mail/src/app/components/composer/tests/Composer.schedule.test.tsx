@@ -15,8 +15,7 @@ import { addDays, addMinutes } from '@proton/shared/lib/date-fns-utc';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
-import { getMinScheduleTime } from 'proton-mail/helpers/schedule';
-
+import { getMinScheduleTime } from '../../../helpers/schedule';
 import { addApiMock, setFeatureFlags } from '../../../helpers/test/api';
 import { addToCache, minimalCache } from '../../../helpers/test/cache';
 import { addApiKeys, clearAll, getDropdown } from '../../../helpers/test/helper';

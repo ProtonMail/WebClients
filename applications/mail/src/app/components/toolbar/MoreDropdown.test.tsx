@@ -1,12 +1,11 @@
 import { fireEvent, render } from '@testing-library/react';
 
-import useSnooze from 'proton-mail/hooks/actions/useSnooze';
-import { useLabelActions } from 'proton-mail/hooks/useLabelActions';
-
+import useSnooze from '../../hooks/actions/useSnooze';
+import { useLabelActions } from '../../hooks/useLabelActions';
 import MoreDropdown from './MoreDropdown';
 
 jest.mock('../../hooks/useLabelActions');
-jest.mock('proton-mail/hooks/actions/useSnooze');
+jest.mock('../../hooks/actions/useSnooze');
 jest.mock('../../hooks/actions/useEmptyLabel', () => ({
     useEmptyLabel: () => ({ emptyLabel: '', modal: null }),
 }));

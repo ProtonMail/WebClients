@@ -11,9 +11,8 @@ import { getSender, hasAttachments as messageHasAttachments } from '@proton/shar
 import diff from '@proton/utils/diff';
 import unique from '@proton/utils/unique';
 
-import { getSnoozeDate } from 'proton-mail/logic/snoozehelpers';
-
 import { ELEMENT_TYPES } from '../constants';
+import { getSnoozeDate } from '../logic/snoozehelpers';
 import { Conversation } from '../models/conversation';
 import { Element } from '../models/element';
 import { LabelIDsChanges } from '../models/event';

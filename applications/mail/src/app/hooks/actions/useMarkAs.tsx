@@ -7,12 +7,11 @@ import { markConversationsAsRead, markConversationsAsUnread } from '@proton/shar
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import { markMessageAsRead, markMessageAsUnread } from '@proton/shared/lib/api/messages';
 
-import { isElementReminded } from 'proton-mail/logic/snoozehelpers';
-
 import UndoActionNotification from '../../components/notifications/UndoActionNotification';
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../../constants';
 import { isMessage as testIsMessage } from '../../helpers/elements';
 import { backendActionFinished, backendActionStarted } from '../../logic/elements/elementsActions';
+import { isElementReminded } from '../../logic/snoozehelpers';
 import { useAppDispatch } from '../../logic/store';
 import { Element } from '../../models/element';
 import { useOptimisticMarkAs } from '../optimistic/useOptimisticMarkAs';
