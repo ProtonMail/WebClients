@@ -16,17 +16,17 @@ import { FeatureCode, useFeature, useKeyTransparencyContext } from '@proton/comp
 import createScrollIntoView from '@proton/components/helpers/createScrollIntoView';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Label } from '@proton/shared/lib/interfaces/Label';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { hasAttachments, isDraft, isOutbox, isScheduled, isSent } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { MARK_AS_STATUS, useMarkAs } from 'proton-mail/hooks/actions/useMarkAs';
+import { isElementReminded } from 'proton-mail/logic/snoozehelpers';
 import { Element } from 'proton-mail/models/element';
 
 import { LOAD_RETRY_COUNT } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
-import { isMessage as isMessageTest, isUnread } from '../../helpers/elements';
+import { isUnread } from '../../helpers/elements';
 import { MessageViewIcons, getReceivedStatusIcon, getSentStatusIconInfo } from '../../helpers/message/icon';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { useQuickReplyFocus } from '../../hooks/composer/useQuickReplyFocus';
@@ -296,8 +296,8 @@ const MessageView = (
         }
 
         // Mark the message as read again when DisplaySnoozedReminder is true (snooze feature)
-        const isMessage = isMessageTest(element);
-        if (!unread && isMessage && (element as Message).DisplaySnoozedReminder) {
+        const isReminded = isElementReminded(element);
+        if (!unread && isReminded && !conversationMode) {
             markAs([element], labelID, MARK_AS_STATUS.READ);
         }
     }, [expanded, unread, bodyLoaded]);

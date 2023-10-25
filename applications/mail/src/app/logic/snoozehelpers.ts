@@ -75,7 +75,7 @@ export const getSnoozeDate = (element: Element | undefined, labelID: string) => 
     return getDate(element, labelID);
 };
 
-export const isElementReminded = (element: Element | undefined): boolean => {
+export const isElementReminded = (element: Element | undefined) => {
     const isElementOrConversation = isMessage(element) || isConversation(element);
     return element && isElementOrConversation
         ? (element as Message | Conversation).DisplaySnoozedReminder ?? false

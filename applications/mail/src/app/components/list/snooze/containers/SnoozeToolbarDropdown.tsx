@@ -27,7 +27,7 @@ const SnoozeToolbarDropdown = ({ selectedIDs }: Props) => {
             <ToolbarDropdown
                 disabled={!selectedIDs || !selectedIDs.length}
                 content={<Icon className="toolbar-icon" name="clock" />}
-                title={c('Title').t`Snooze the message`}
+                title={c('Title').t`Snooze`}
                 data-testid="toolbar:snooze"
                 hasCaret={false}
                 autoClose={false}
