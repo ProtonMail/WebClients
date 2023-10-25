@@ -1,3 +1,4 @@
+import { PASS_BF_2023_DATES } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
 import browser from '@proton/pass/lib/globals/browser';
 import {
@@ -88,7 +89,16 @@ const ONBOARDING_RULES: OnboardingRule[] = [
             return availableVersion !== null && shouldPrompt;
         }),
     }),
-    createOnboardingRule({ message: OnboardingMessage.WELCOME, when: () => false }),
+    createOnboardingRule({
+        message: OnboardingMessage.BLACK_FRIDAY_OFFER,
+        when: (previous) => {
+            const passPlan = selectPassPlan(store.getState());
+            if (passPlan === UserPassPlan.PLUS) return false;
+
+            const now = api.getStatus().serverTime?.getTime() ?? Date.now();
+            return !previous && now > PASS_BF_2023_DATES[0] && now < PASS_BF_2023_DATES[1];
+        },
+    }),
     createOnboardingRule({
         message: OnboardingMessage.TRIAL,
         when: (previous) => {
@@ -115,15 +125,6 @@ const ONBOARDING_RULES: OnboardingRule[] = [
             const PROMPT_ITEM_COUNT = 10;
             const { createdItemsCount } = store.getState().settings;
             return !previous && createdItemsCount >= PROMPT_ITEM_COUNT;
-        },
-    }),
-    createOnboardingRule({
-        message: OnboardingMessage.BLACK_FRIDAY_OFFER,
-        when: (previous) => {
-            const currentTime = api.getStatus().serverTime?.getTime() ?? Date.now();
-            const START_DATE = new Date('2023-10-31T06:00:00').getTime();
-            const END_DATE = new Date('2023-12-04T00:00:00').getTime();
-            return !previous && currentTime > START_DATE && currentTime < END_DATE;
         },
     }),
 ];
