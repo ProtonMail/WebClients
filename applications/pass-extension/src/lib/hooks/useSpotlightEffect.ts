@@ -3,15 +3,18 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
+import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { useInviteContext } from '@proton/pass/components/Invite/InviteContextProvider';
 import type { SpotlightMessageDefinition } from '@proton/pass/components/Spotlight/SpotlightContent';
 import { useSpotlightContext } from '@proton/pass/components/Spotlight/SpotlightContext';
 import { FiveStarIcon, InviteIcon, ShieldIcon } from '@proton/pass/components/Spotlight/SpotlightIcon';
+import { PASS_BF_MONTHLY_PRICE } from '@proton/pass/constants';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
-import usePassConfig from '@proton/pass/hooks/usePassConfig';
+import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { popupMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { detectBrowser, getWebStoreUrl } from '@proton/pass/lib/extension/utils/browser';
 import browser from '@proton/pass/lib/globals/browser';
+import { selectUser } from '@proton/pass/store/selectors';
 import { selectMostRecentInvite } from '@proton/pass/store/selectors/invites';
 import type { Callback, MaybeNull, WorkerMessageWithSender } from '@proton/pass/types';
 import { OnboardingMessage, WorkerMessageType } from '@proton/pass/types';
@@ -34,6 +37,7 @@ export const useSpotlightEffect = () => {
     const sharingEnabled = useFeatureFlag(PassFeature.PassSharingV1);
     const latestInvite = useSelector(selectMostRecentInvite);
     const [message, setMessage] = useState<MaybeNull<OnboardingMessage>>(null);
+    const user = useSelector(selectUser);
 
     const openSettings = useOpenSettingsTab();
 
@@ -184,7 +188,11 @@ export const useSpotlightEffect = () => {
             [OnboardingMessage.BLACK_FRIDAY_OFFER]: {
                 id: 'black-friday',
                 title: c('bf2023: Title').t`Black Friday offer`,
-                message: c('bf2023: Info').t`Save Smart. Get a year of Pass Plus for only $1.99 per month.`,
+                message: (() => {
+                    const relativePrice = getSimplePriceString(user!.Currency, PASS_BF_MONTHLY_PRICE, '');
+                    return c('bf2023: Info')
+                        .t`Save Smart. Get a year of Pass Plus for only ${relativePrice} per month.`;
+                })(),
                 className: 'ui-orange',
                 onClose: withAcknowledgment(noop),
                 action: {
