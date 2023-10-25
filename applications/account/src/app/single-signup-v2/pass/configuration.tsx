@@ -47,16 +47,11 @@ export const getPassBenefits = (): BenefitItem[] => {
     ];
 };
 
-export const getFreePassFeatures = (passVaultSharingEnabled: boolean) => {
-    return [
-        getLoginsAndNotes(),
-        getDevices(),
-        getHideMyEmailAliases(10),
-        passVaultSharingEnabled && getVaultSharing(3),
-    ].filter(isTruthy);
+export const getFreePassFeatures = () => {
+    return [getLoginsAndNotes(), getDevices(), getHideMyEmailAliases(10), getVaultSharing(3)];
 };
 
-export const getCustomPassFeatures = (passVaultSharingEnabled: boolean) => {
+export const getCustomPassFeatures = () => {
     return [
         getLoginsAndNotes(),
         getDevices(),
@@ -64,8 +59,8 @@ export const getCustomPassFeatures = (passVaultSharingEnabled: boolean) => {
         get2FAAuthenticator(true),
         getItems(),
         getCreditCards(),
-        passVaultSharingEnabled && getVaultSharing(10),
-    ].filter(isTruthy);
+        getVaultSharing(10),
+    ];
 };
 
 export const getPassConfiguration = ({
@@ -73,14 +68,12 @@ export const getPassConfiguration = ({
     hideFreePlan,
     isDesktop,
     isPassWelcome,
-    passVaultSharingEnabled,
     vpnServersCountData,
 }: {
     mode: SignupMode;
     hideFreePlan: boolean;
     isDesktop: boolean;
     isPassWelcome: boolean;
-    passVaultSharingEnabled: boolean;
     vpnServersCountData: VPNServersCountData;
 }): SignupConfiguration => {
     const logo = <PassLogo />;
@@ -94,23 +87,13 @@ export const getPassConfiguration = ({
     const planCards: PlanCard[] = [
         !hideFreePlan && {
             plan: PLANS.FREE,
-            subsection: (
-                <PlanCardFeatureList
-                    {...planCardFeatureProps}
-                    features={getFreePassFeatures(passVaultSharingEnabled)}
-                />
-            ),
+            subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getFreePassFeatures()} />,
             type: 'standard' as const,
             guarantee: false,
         },
         {
             plan: PLANS.PASS_PLUS,
-            subsection: (
-                <PlanCardFeatureList
-                    {...planCardFeatureProps}
-                    features={getCustomPassFeatures(passVaultSharingEnabled)}
-                />
-            ),
+            subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getCustomPassFeatures()} />,
             type: 'best' as const,
             guarantee: true,
         },
