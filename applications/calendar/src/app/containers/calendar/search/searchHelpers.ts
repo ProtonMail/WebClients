@@ -26,7 +26,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import { getEventKey } from '../../../helpers/encryptedSearch/esUtils';
 import { generateEventUniqueId } from '../../../helpers/event';
 import { ESCalendarContent, ESCalendarMetadata } from '../../../interfaces/encryptedSearch';
-import { getCurrentEvent } from '../eventActions/recurringHelper';
+import { getCurrentVevent } from '../eventActions/recurringHelper';
 import getComponentFromCalendarEventWithoutBlob from '../eventStore/cache/getComponentFromCalendarEventWithoutBlob';
 import { CalendarsEventsCache } from '../eventStore/interface';
 import { CalendarViewEvent } from '../interface';
@@ -156,7 +156,7 @@ export const expandSearchItem = ({
         const isSingleOccurrence = occurrences.length === 1;
 
         return occurrences.map((recurrence) => {
-            const { dtstart, dtend } = getCurrentEvent(component, recurrence);
+            const { dtstart, dtend } = getCurrentVevent(component, recurrence);
 
             const { localStart, localEnd, occurrenceNumber } = recurrence;
             const startTime = getUnixTime(propertyToUTCDate(dtstart));

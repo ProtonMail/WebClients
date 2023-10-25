@@ -1,10 +1,10 @@
-import {getIsAllDay, getRecurrenceId} from '@proton/shared/lib/calendar/veventHelper';
 import { addDays } from 'date-fns';
 
 import { toExdate } from '@proton/shared/lib/calendar/exdate';
 import { getOccurrences } from '@proton/shared/lib/calendar/recurrence/recurring';
 import { getDtendProperty } from '@proton/shared/lib/calendar/vcalConverter';
 import { getPropertyTzid } from '@proton/shared/lib/calendar/vcalHelper';
+import { getIsAllDay, getRecurrenceId } from '@proton/shared/lib/calendar/veventHelper';
 import { fromUTCDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 import { VcalDateOrDateTimeProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
@@ -23,7 +23,7 @@ export const getOriginalEvent = (recurrences: CalendarEvent[]) => {
     });
 };
 
-export const getCurrentEvent = (
+export const getCurrentVevent = (
     originalComponent: VcalVeventComponent,
     recurrence: Pick<CalendarEventRecurring, 'localStart' | 'localEnd'>
 ) => {

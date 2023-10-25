@@ -37,6 +37,7 @@ export interface CreateEventActionOperation {
     data: {
         veventComponent: VcalVeventComponent;
         hasDefaultNotifications: boolean;
+        isCancellingSingleOccurrence?: boolean;
         addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
         color?: string;
     };
@@ -46,6 +47,7 @@ export interface UpdateEventActionOperation {
     data: {
         calendarEvent: CalendarEvent;
         veventComponent: VcalVeventComponent;
+        cancelledOccurrenceVevent?: VcalVeventComponent;
         hasDefaultNotifications: boolean;
         isAttendee: boolean;
         removedAttendeesEmails?: string[];
@@ -96,6 +98,7 @@ export const getCreateSyncOperation = (data: {
 });
 export const getUpdateSyncOperation = (data: {
     veventComponent: VcalVeventComponent;
+    cancelledOccurrenceVevent?: VcalVeventComponent;
     calendarEvent: CalendarEvent;
     hasDefaultNotifications: boolean;
     isAttendee: boolean;
@@ -107,6 +110,7 @@ export const getUpdateSyncOperation = (data: {
         ...data,
         veventComponent: withoutRedundantDtEnd(data.veventComponent),
         color: getVeventColorValue(data.veventComponent),
+        cancelledOccurrenceVevent: data.cancelledOccurrenceVevent ?  withoutRedundantDtEnd(data.cancelledOccurrenceVevent) : undefined
     },
 });
 
@@ -220,6 +224,7 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
                     isAttendee,
                     removedAttendeesEmails,
                     addedAttendeesPublicKeysMap,
+                    cancelledOccurrenceVevent,
                 } = operation.data;
                 const {
                     CalendarID: oldCalendarID,
@@ -234,6 +239,7 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
 
                 const data = await createCalendarEvent({
                     eventComponent: veventComponent,
+                    cancelledOccurrenceVevent,
                     removedAttendeesEmails,
                     addedAttendeesPublicKeysMap,
                     isCreateEvent: false,
