@@ -103,7 +103,11 @@ const useSendIcs = () => {
                         sendPrefsMap[email] = existingSendPreferences;
                         return;
                     }
-                    const encryptionPreferences = await getEncryptionPreferences(email, 0, contactEmailsMap);
+                    const encryptionPreferences = await getEncryptionPreferences({
+                        email,
+                        lifetime: 0,
+                        contactEmailsMap,
+                    });
                     const sendPreferences = getSendPreferences(encryptionPreferences, directMessage);
                     sendPrefsMap[email] = sendPreferences;
                 })
