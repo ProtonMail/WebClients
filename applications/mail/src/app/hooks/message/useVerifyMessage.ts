@@ -11,8 +11,8 @@ import { updateAttachment } from '../../logic/attachments/attachmentsActions';
 import { MessageErrors, MessageStateWithDataFull } from '../../logic/messages/messagesTypes';
 import { verificationComplete } from '../../logic/messages/read/messagesReadActions';
 import { useAppDispatch } from '../../logic/store';
-import { useContactsMap } from '../contact/useContacts';
 import { useGetAttachment } from '../attachments/useAttachment';
+import { useContactsMap } from '../contact/useContacts';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { useGetMessage } from './useMessage';
 
@@ -45,7 +45,11 @@ export const useVerifyMessage = (localID: string) => {
             try {
                 const senderAddress = getData().Sender.Address;
 
-                verificationPreferences = await getVerificationPreferences(senderAddress, 0, contactsMap);
+                verificationPreferences = await getVerificationPreferences({
+                    email: senderAddress,
+                    lifetime: 0,
+                    contactEmailsMap: contactsMap,
+                });
 
                 const messageKeys = await getMessageKeys(getData());
 

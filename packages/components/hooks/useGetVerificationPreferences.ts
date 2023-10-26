@@ -38,9 +38,9 @@ const useGetVerificationPreferences = () => {
     const getMailSettings = useGetMailSettings();
 
     const getVerificationPreferences = useCallback<GetVerificationPreferences>(
-        async (emailAddress, lifetime, contactEmailsMap) => {
+        async ({ email, lifetime, contactEmailsMap }) => {
             const addresses = await getAddresses();
-            const canonicalEmail = canonicalizeInternalEmail(emailAddress);
+            const canonicalEmail = canonicalizeInternalEmail(email);
             const selfAddress = addresses.find(({ Email }) => canonicalizeInternalEmail(Email) === canonicalEmail);
             if (selfAddress) {
                 const selfAddressKeys = await getAddressKeys(selfAddress.ID);
@@ -71,12 +71,12 @@ const useGetVerificationPreferences = () => {
                 publicKeys: apiKeys,
                 ktVerificationResult,
                 Errors,
-            }: ApiKeysConfig = await getPublicKeys(emailAddress, lifetime);
+            }: ApiKeysConfig = await getPublicKeys({ email, lifetime });
             const isInternal = RecipientType === RECIPIENT_TYPES.TYPE_INTERNAL;
             const { publicKeys } = splitKeys(await getUserKeys());
             const { pinnedKeys, isContactSignatureVerified: pinnedKeysVerified } = await getPublicKeysVcardHelper(
                 api,
-                emailAddress,
+                email,
                 publicKeys,
                 isInternal,
                 contactEmailsMap
@@ -110,7 +110,7 @@ const useGetVerificationPreferences = () => {
     );
 
     return useCallback<GetVerificationPreferences>(
-        (email, lifetime = DEFAULT_LIFETIME, contactEmailsMap) => {
+        ({ email, lifetime = DEFAULT_LIFETIME, contactEmailsMap }) => {
             if (!cache.has(CACHE_KEY)) {
                 cache.set(CACHE_KEY, new Map());
             }
@@ -119,7 +119,7 @@ const useGetVerificationPreferences = () => {
             // For 2 addresses identical but for the cases.
             // If a provider does different one day, this would have to evolve.
             const canonicalEmail = canonicalizeEmail(email);
-            const miss = () => getVerificationPreferences(canonicalEmail, lifetime, contactEmailsMap);
+            const miss = () => getVerificationPreferences({ email: canonicalEmail, lifetime, contactEmailsMap });
             return getPromiseValue(subCache, canonicalEmail, miss, lifetime);
         },
         [cache, getVerificationPreferences]

@@ -137,8 +137,8 @@ jest.mock('@proton/components', () => {
     const componentsMock = jest.requireActual('@proton/components');
 
     const useGetEncryptionPreferences = () => {
-        const getEncryptionPreferences: (emailAddress: string) => EncryptionPreferences = (emailAddress) =>
-            mockEncryptionPreferences[emailAddress];
+        const getEncryptionPreferences: ({ email }: { email: string }) => EncryptionPreferences = ({ email }) =>
+            mockEncryptionPreferences[email];
         return getEncryptionPreferences;
     };
 

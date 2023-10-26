@@ -73,7 +73,7 @@ export const acceptCalendarShareInvitation = async ({
 
     // verify passphrase signature
     if (!skipSignatureVerification) {
-        const { verifyingPinnedKeys } = await getEncryptionPreferences(senderEmail);
+        const { verifyingPinnedKeys } = await getEncryptionPreferences({ email: senderEmail });
         if (verifyingPinnedKeys.length) {
             const { verified: sessionKeyVerified, errors } = await CryptoProxy.verifyMessage({
                 armoredSignature,
