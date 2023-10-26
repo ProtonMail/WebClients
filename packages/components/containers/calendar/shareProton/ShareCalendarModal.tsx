@@ -123,11 +123,12 @@ const loadRecipient = async ({
     }));
 
     try {
-        const { sendKey, isSendKeyPinned, error, isInternal } = await getEncryptionPreferences(
+        const { sendKey, isSendKeyPinned, error, isInternal } = await getEncryptionPreferences({
             email,
-            0,
-            contactEmailsMap
-        );
+            intendedForEmail: false,
+            lifetime: 0,
+            contactEmailsMap,
+        });
 
         if (error) {
             setRecipientsMap((map) => ({

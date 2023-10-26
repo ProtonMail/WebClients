@@ -859,7 +859,11 @@ const InteractiveCalendarView = ({
         const emails = extractInviteEmails({ inviteActions, vevent, cancelVevent });
         await Promise.all(
             emails.map(async (email) => {
-                const encryptionPreferences = await getEncryptionPreferences(email, 0, contactEmailsMap);
+                const encryptionPreferences = await getEncryptionPreferences({
+                    email,
+                    lifetime: 0,
+                    contactEmailsMap,
+                });
                 const sendPreferences = getSendPreferences(encryptionPreferences, getIcsMessageWithPreferences(Sign));
                 sendPreferencesMap[email] = sendPreferences;
             })

@@ -259,9 +259,9 @@ export const acceptIncomingForwarding = async ({
 
     const { addressKeys: forwarderAddressKeys } = await getAndVerifyApiKeys({
         api,
-        Email: forward.ForwarderEmail,
+        email: forward.ForwarderEmail,
         verifyOutboundPublicKeys,
-        keysIntendedForEmail: false,
+        internalKeysOnly: true,
     });
 
     const publicKeys = await Promise.all(
