@@ -10,6 +10,7 @@ import {
     SignedKeyListItem,
 } from '@proton/shared/lib/interfaces';
 import { getParsedSignedKeyList } from '@proton/shared/lib/keys';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { KT_SKL_VERIFICATION_CONTEXT } from '../constants';
 import { NO_KT_DOMAINS } from '../constants/domains';
@@ -106,14 +107,23 @@ interface KeyWithFlags {
 }
 /**
  * Check that the given keys mirror what's inside the given SKL Data
+ * Ignores keys related to forwarding.
  */
 export const checkKeysInSKL = async (email: string, apiKeys: KeyWithFlags[], sklData: string) => {
+    const apiKeysWithoutForwarding = (
+        await Promise.all(
+            apiKeys.map(async (apiKey) => {
+                const result = await CryptoProxy.isE2EEForwardingKey({ key: apiKey.key });
+                return result ? false : apiKey;
+            })
+        )
+    ).filter(isTruthy);
     const parsedSKL = getParsedSignedKeyList(sklData);
     if (!parsedSKL) {
         return throwKTError('SignedKeyList data parsing failed', { sklData });
     }
 
-    const keyListInfo = await parseKeyList(apiKeys);
+    const keyListInfo = await parseKeyList(apiKeysWithoutForwarding);
     return verifyKeyList(email, keyListInfo, parsedSKL);
 };
 
