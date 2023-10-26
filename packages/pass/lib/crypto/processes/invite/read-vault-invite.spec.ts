@@ -1,4 +1,4 @@
-import { encryptData } from '@proton/pass/lib/crypto/utils';
+import { encryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import {
     createRandomKey,
     createRandomVaultKey,

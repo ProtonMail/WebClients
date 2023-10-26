@@ -1,7 +1,7 @@
 import { put, takeEvery } from 'redux-saga/effects';
 
+import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import { updateItemLastUseTime } from '@proton/pass/lib/items/item.requests';
-import { parseItemRevision } from '@proton/pass/lib/items/item.utils';
 import { itemEditSync, itemUsed } from '@proton/pass/store/actions';
 import type { ItemRevision, ItemRevisionContentsResponse } from '@proton/pass/types';
 import { logId, logger } from '@proton/pass/utils/logger';

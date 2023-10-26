@@ -10,7 +10,7 @@ import {
 import { type ShareMember } from '@proton/pass/types/data/invites';
 import type { ShareEditMemberAccessIntent, ShareRemoveMemberAccessIntent } from '@proton/pass/types/data/shares.dto';
 
-import { parseShareResponse } from './share.utils';
+import { parseShareResponse } from './share.parser';
 
 /* ⚠️ This endpoint is not paginated yet back-end side. */
 export const getAllShareKeys = async (shareId: string): Promise<ShareKeyResponse[]> => {
