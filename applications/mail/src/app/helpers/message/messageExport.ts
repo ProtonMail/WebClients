@@ -74,6 +74,8 @@ export const encryptAttachmentKeyPackets = async (
     previousAddressPrivateKeys: PrivateKeyReference[] = [],
     newAddressPublicKeys: PublicKeyReference[] = []
 ) => {
+    // Only need the first key for encryption (the primary key)
+    const [primaryEncryptionKey] = newAddressPublicKeys;
     return Object.fromEntries(
         await Promise.all(
             attachments
@@ -83,7 +85,7 @@ export const encryptAttachmentKeyPackets = async (
                     const encryptedSessionKey = await CryptoProxy.encryptSessionKey({
                         data: sessionKey.data,
                         algorithm: sessionKey.algorithm,
-                        encryptionKeys: newAddressPublicKeys,
+                        encryptionKeys: primaryEncryptionKey,
                         format: 'binary',
                     });
                     return [attachment.ID || '', encodeBase64(arrayToBinaryString(encryptedSessionKey))];
