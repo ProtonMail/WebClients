@@ -46,16 +46,28 @@ describe('formatSimpleDate', () => {
         expect(formatSimpleDate(inTheWeek)).toEqual(expected);
     });
 
-    it('should return a normal date correctly formatted', () => {
+    it('should return a normal date in the current year correctly formatted', () => {
         // Sunday 1 2023
         const fakeNow = new Date(2023, 0, 1, 10, 0, 0);
         // Tuesday 10 2023
         const inTheWeek = new Date(2023, 0, 10, 10, 0, 0);
         jest.useFakeTimers().setSystemTime(fakeNow.getTime());
 
-        const expected = 'Jan 10, 2023';
+        const expected = 'Jan 10';
 
         expect(formatSimpleDate(inTheWeek)).toEqual(expected);
+    });
+
+    it('should return a normal date in the past year correctly formatted', () => {
+        // Sunday 1 2023
+        const fakeNow = new Date(2023, 0, 1, 10, 0, 0);
+        // Tuesday 10 2023
+        const inPastYear = new Date(2022, 0, 10, 10, 0, 0);
+        jest.useFakeTimers().setSystemTime(fakeNow.getTime());
+
+        const expected = 'Jan 10, 2022';
+
+        expect(formatSimpleDate(inPastYear)).toEqual(expected);
     });
 });
 

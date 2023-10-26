@@ -73,7 +73,7 @@ const ContactGroupRow = ({
             style={style}
             onClick={() => onClick(ID)}
             className={clsx([
-                'item-container item-contact flex cursor-pointer bg-global-white',
+                'contact-item-container item-contact flex cursor-pointer bg-global-white',
                 hasFocus && 'item-is-focused',
                 isDrawer && 'item-in-drawer',
             ])}
@@ -108,7 +108,7 @@ const ContactGroupRow = ({
                 </div>
 
                 {onCompose && addressCount > 0 && (
-                    <div className="item-hover-action-buttons">
+                    <div className="contact-item-hover-action-buttons">
                         <Tooltip title={c('Action').t`Compose`}>
                             <Button color="weak" shape="ghost" icon onClick={handleCompose}>
                                 <Icon name="pen-square" alt={c('Action').t`Compose`} />

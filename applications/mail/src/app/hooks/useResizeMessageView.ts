@@ -128,7 +128,9 @@ export const useResizeMessageView = (
     const scrollBarListener = useHandler(
         () => {
             const listRect = listRef.current?.getBoundingClientRect();
-            const innerRect = listRef.current?.querySelector('.items-column-list-inner')?.getBoundingClientRect();
+            const innerRect = listRef.current
+                ?.querySelector('[data-shortcut-target="items-column-list-inner"]')
+                ?.getBoundingClientRect();
             setScrollBarWidth((listRect?.width || 0) - (innerRect?.width || 0));
         },
         { debounce: 100 }
