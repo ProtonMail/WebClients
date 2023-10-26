@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 
 import { DecryptedLink, useLinksActions, useLinksListing } from '../_links';
-import { Share, ShareWithKey, useShareActions } from '../_shares';
+import { Share, ShareWithKey } from '../_shares';
 import { waitFor } from '../_utils';
 import { usePhotos } from './PhotosProvider';
 
@@ -23,10 +23,9 @@ export type RECOVERY_STATE =
 const RECOVERY_STATE_CACHE_KEY = 'photos-recovery-state';
 
 export const usePhotosRecovery = () => {
-    const { shareId, linkId, restoredShares } = usePhotos();
+    const { shareId, linkId, restoredShares, deletePhotosShare } = usePhotos();
     const { getCachedChildren, loadChildren } = useLinksListing();
     const { moveLinks } = useLinksActions();
-    const { deleteShare } = useShareActions();
     const [countOfUnrecoveredLinksLeft, setCountOfUnrecoveredLinksLeft] = useState<number>(0);
     const [countOfFailedLinks, setCountOfFailedLinks] = useState<number>(0);
     const [state, setState] = useState<RECOVERY_STATE>('READY');
@@ -81,11 +80,11 @@ export const usePhotosRecovery = () => {
             for (const share of shares) {
                 const { links } = getCachedChildren(abortSignal, share.shareId, share.rootLinkId);
                 if (!links.length) {
-                    await deleteShare(share.shareId);
+                    await deletePhotosShare(share.volumeId, share.shareId);
                 }
             }
         },
-        [deleteShare, getCachedChildren]
+        [deletePhotosShare, getCachedChildren]
     );
 
     const handleMoveLinks = useCallback(
