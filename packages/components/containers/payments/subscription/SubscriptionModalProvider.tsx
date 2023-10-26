@@ -33,6 +33,8 @@ interface OpenCallbackProps
     onClose?: () => void;
     disableCloseOnEscape?: boolean;
     fullscreen?: boolean;
+    onSubscribed?: () => void;
+    onUnsubscribed?: () => void;
 }
 
 export type OpenSubscriptionModalCallback = (props: OpenCallbackProps) => void;
@@ -73,6 +75,8 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                 onClose: subscriptionPropsOnClose,
                 disableCloseOnEscape,
                 fullscreen,
+                onSubscribed,
+                onUnsubscribed,
                 ...rest
             } = subscriptionProps.current;
             const handleClose = () => {
@@ -87,8 +91,14 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                     subscription={subscription}
                     plans={plans}
                     organization={organization}
-                    onSubscribed={handleClose}
-                    onUnsubscribed={handleClose}
+                    onSubscribed={() => {
+                        handleClose();
+                        onSubscribed?.();
+                    }}
+                    onUnsubscribed={() => {
+                        handleClose();
+                        onUnsubscribed?.();
+                    }}
                     onCancel={handleClose}
                     {...rest}
                     render={({ onSubmit, title, content, footer, step }) => {
