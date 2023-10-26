@@ -103,7 +103,7 @@ const DriveSidebar = ({ logo, primary, isHeaderExpanded, toggleHeaderExpanded }:
                         )}
                     >
                         <Icon name="cloud" />
-                        {c('Storage').t`Get storage`}
+                        {c('Storage').t`Get more storage`}
                     </ButtonLike>
                 )
             }
