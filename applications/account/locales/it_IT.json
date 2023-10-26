@@ -804,7 +804,7 @@
         "Scopri come"
       ],
       "See plan features": [
-        "Visualizzare le funzionalità del piano"
+        "Visualizza le caratteristiche del piano"
       ],
       "Select ${ planTitle }": [
         "Seleziona ${ planTitle }"
@@ -883,6 +883,12 @@
       ],
       "Sign in": [
         "Accedi"
+      ],
+      "Sign in with password": [
+        "Accedi con la password"
+      ],
+      "Sign in with SSO": [
+        "Accedi con SSO"
       ],
       "Sign out": [
         "Disconnetti"
@@ -1228,7 +1234,7 @@
         "Email ricevuta"
       ],
       "Encrypted": [
-        "Crittografato"
+        "Crittografata"
       ],
       "New email": [
         "Nuova email"
@@ -1335,8 +1341,14 @@
       "6 users": [
         "6 utenti"
       ],
+      "Access content worldwide": [
+        "Accedi ai contenuti in tutto il mondo"
+      ],
       "Ad-blocker and malware protection": [
         "Ad-blocker e anti-malware"
+      ],
+      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Tutte le funzioni a pagamento di ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Cronologia estesa della versione"
@@ -1370,9 +1382,30 @@
         "Garanzia 30 giorni soddisfatti o rimborsati"
       ]
     },
+    "bf2023: renew": {
+      "${ n } month": [
+        "${ n } mese",
+        "i primi ${ n } mesi"
+      ],
+      "the first month": [
+        "il primo mese"
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
+        "La tariffa scontata, con prezzo speciale di ${ discountedPrice }, è valida per ${ discountedMonths }. Il piano si rinnoverà poi automaticamente al prezzo agevolato di ${ nextPrice } per ${ nextMonths }. Puoi disdire quando vuoi."
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
+        "La tariffa scontata, con prezzo speciale di ${ discountedPrice } è valida per il primo mese. Il piano si rinnoverà poi automaticamente al prezzo di ${ nextPrice } per mese. Puoi disdire quando vuoi."
+      ]
+    },
     "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "Accedi ai contenuti bloccati e naviga in modalità privata. Sono inclusi: più di 3.000 server in oltre 65 Paesi, VPN ad altissima velocità, accesso ai servizi di streaming in tutto il mondo, anti-malware, ad-blocker, download BitTorrent veloci e altro ancora."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Accedi ai contenuti di servizi di streaming come Netflix, Disney+, Prime Video e altro ancora, ovunque ti trovi."
+      ],
+      "Bypass local internet blocks and censorship with our global network of servers.": [
+        "Aggira i blocchi e la censura a internet imposti dai singoli Paesi grazie alla nostra rete globale di server."
       ],
       "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
         "Sono inclusi: supporto per ${ domains } dominio email personalizzato, ${ addresses } indirizzi email, ${ aliases } alias hide-my-email, condivisione del calendario e altro ancora."
@@ -3093,7 +3126,7 @@
         "Bug o problemi di qualità"
       ],
       "I use a different ${ BRAND_NAME } account": [
-        "Utilizzo un altro account ${ BRAND_NAME }"
+        "Utilizzo un account ${ BRAND_NAME } differente"
       ],
       "Missing feature(s)": [
         "Funzionalità mancante(i)"
@@ -4986,7 +5019,7 @@
         "Predefinito di sistema"
       ],
       "Theme font": [
-        "Tipo di carattere"
+        "Carattere del tema"
       ]
     },
     "Font Size Default": {
@@ -5063,7 +5096,7 @@
         "funzionalità per la privacy"
       ],
       "Set up ${ strongText } from Gmail": [
-        "Configurare ${ strongText } da Gmail"
+        "Configura l'${ strongText } da Gmail"
       ],
       "This feature is currently unavailable": [
         "Questa funzionalità non è attualmente disponibile"
@@ -5813,7 +5846,7 @@
         "A causa di fatture non pagate, l'accesso all'account è stato limitato. Per favore, contatta il tuo amministratore."
       ],
       "account recovery and data recovery method": [
-        "recupero dell'account e metodo di recupero dei dati"
+        "un metodo di recupero dell'account e un metodo di recupero dei dati"
       ],
       "account recovery method": [
         "metodo di recupero dell'account"
@@ -5925,7 +5958,7 @@
         "Importo inferiore al minimo (${ amount })."
       ],
       "Amount due": [
-        "Importo dovuto"
+        "Importo da pagare"
       ],
       "An error occurred while communicating with the extension": [
         "Si è verificato un errore durante la connessione all'estensione"
@@ -6400,7 +6433,7 @@
         "Se credi che questo sia un errore, contattaci ${ contactLink }."
       ],
       "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "Se cancelli, il tuo abbonamento ${ vpnPlanName } non verrà rinnovato quando scadrà il ${ expiryDate }."
+        "Se annulli, il tuo abbonamento ${ vpnPlanName } non verrà rinnovato quando scadrà il ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se non trovi l'email nella tua casella di posta, controlla la cartella spam."
@@ -6418,10 +6451,10 @@
         "Se hai impostato sia SPF che DKIM, DMARC ti permette di specificare come gli altri servizi email dovrebbero consegnare le email per il tuo dominio nel caso falliscano sia i controlli SPF che DKIM. Questo può rendere più difficile agli spammer fingere di essere te, ma potrebbe creare problemi di consegna se non è fatto correttamente."
       ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "Se perdila tua password e hai bisogno di reimpostare il tuo account, ${ boldImperative } che tu abbia un ${ boldAccountRecovery } impostato."
+        "Se perdi la tua password e hai bisogno di recuperare il tuo account, ${ boldImperative } che tu abbia impostato un ${ boldAccountRecovery }."
       ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Se perdi la tua password e hai bisogno di reimpostare il tuo account, ${ boldImperative } che tu abbia entrambi i ${ boldAccountAndRecovery } impostati, altrimenti potresti non essere in grado di accedere a nessuna delle tue email, contatti o file."
+        "Se perdi la tua password e hai bisogno di recuperare il tuo account, ${ boldImperative } che tu abbia impostato ${ boldAccountAndRecovery }, altrimenti potresti non riuscire ad accedere alle tue email, contatti o file."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Se perdi il tuo dispositivo abilitato a due fattori, questi codici possono essere utilizzati al posto del codice di autenticazione a due fattori a 6 cifre per accedere al tuo account. Ogni codice può essere utilizzato una sola volta."
@@ -6531,7 +6564,7 @@
         "Sembra che alcuni dei tuoi dati siano crittografati e bloccati."
       ],
       "it’s imperative": [
-        "è obbligatorio"
+        "è fondamentale"
       ],
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
         "Sto usando @ProtonMail e ho pensato che ti potrebbe piacere. È un servizio di posta elettronica sicuro che protegge la tua privacy. Registrati con il mio link di riferimento per ottenere 1 mese di funzionalità premium gratuitamente: ${ referrerLink }"
@@ -6876,7 +6909,7 @@
         "Protezione dalle leggi svizzere sulla privacy"
       ],
       "Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${ PROTON_SENTINEL_NAME }.": [
-        "Personaggi pubblici, giornalisti, personale dirigenziale e altre figure che possono essere i principali bersagli degli attacchi informatici sono invitati ad attivare ${ PROTON_SENTINEL_NAME }."
+        "Personaggi pubblici, giornalisti, dirigenti e altre figure che possono essere i principali bersagli degli attacchi informatici sono fortemente invitati ad abilitare ${ PROTON_SENTINEL_NAME }."
       ],
       "Public link invite": [
         "Link di invito pubblico"
@@ -7279,7 +7312,7 @@
         "Per importare eventi, devi prima creare un calendario su ${ CALENDAR_APP_NAME }. È dove appariranno gli eventi dopo l'importazione."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
-        "Per rimanere informato degli ultimi aggiornamenti dei prodotti ${ BRAND_NAME }, puoi iscriverti alle nostre liste email e ${ blogLink } di tanto in tanto."
+        "Per rimanere informato sugli ultimi aggiornamenti dei prodotti ${ BRAND_NAME }, puoi iscriverti alle nostre mailing list e ${ blogLink } occasionalmente."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Per procedere, seleziona un metodo di recupero dell'account in modo da poter verificare la richiesta."
@@ -7578,7 +7611,7 @@
         "Puoi controllare lo stato di avanzamento ${ importProgressLink }."
       ],
       "You can customize and download your invoices for accounting purposes.": [
-        "Puoi personalizzare e scaricare le tue fatture per scopi contabili."
+        "Puoi personalizzare e scaricare le tue fatture per scopi di contabilità."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Puoi modificarlo una volta per garantire l'indirizzo email corretto per la verifica."
@@ -8278,7 +8311,7 @@
         "Importo"
       ],
       "Amount due": [
-        "Importo dovuto"
+        "Importo da pagare"
       ],
       "AND": [
         "E"
@@ -8926,7 +8959,7 @@
         "Invia risposta automatica"
       ],
       "Send crash reports": [
-        "Invia rapporti sugli arresti anomali"
+        "Invia segnalazioni sugli arresti anomali"
       ],
       "Send in": [
         "Invio in"
@@ -9373,7 +9406,7 @@
         "Visualizza guida"
       ],
       "visit our blog": [
-        "visita il nostro blog"
+        "visitare il nostro blog"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Quale è la differenza tra i protocolli UDP e TCP?"
@@ -9418,10 +9451,10 @@
         "Abilita ${ PROTON_SENTINEL_NAME }"
       ],
       "Enable advanced logs": [
-        "Abilita log avanzati"
+        "Abilita i log avanzati"
       ],
       "Enable authentication logs": [
-        "Abilita log di autenticazione"
+        "Abilita i log di autenticazione"
       ]
     },
     "Mail import summary": {
@@ -9522,7 +9555,7 @@
       "Create a new ${ appName } account": [
         "Crea un nuovo account ${ appName }"
       ],
-      "Find ${ BRAND_NAME } Account username": [
+      "Find your ${ BRAND_NAME } Account username": [
         "Trova il nome utente del tuo account ${ BRAND_NAME }"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
@@ -10186,12 +10219,6 @@
       "User session management": [
         "Gestione della sessione utente"
       ],
-      "Vault and Item sharing": [
-        "Condivisione di casseforti ed elementi"
-      ],
-      "Vault and Item sharing (coming soon)": [
-        "Condivisione di casseforti ed elementi (in arrivo)"
-      ],
       "Vault sharing (up to ${ n } person)": [
         "Condivisione delle casseforti (fino a ${ n } persona)",
         "Condivisione delle casseforti (fino a ${ n } persone)"
@@ -10217,6 +10244,17 @@
       ],
       "Team management": [
         "Gestione del team"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "La tua prova termina ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -10306,17 +10344,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Stai godendo di un prezzo promozionale sul tuo piano attuale. Se esegui il downgrade del tuo account, perderai la possibilità di usufruire di questa promozione e non sarà più disponibile se provi ad abbonarti di nuovo."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "La tua prova termina ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10929,7 +10956,7 @@
         "Ho trovato un altro servizio che mi piace di più"
       ],
       "I use a different ${ BRAND_NAME } account": [
-        "Utilizzo un altro account ${ BRAND_NAME }"
+        "Utilizzo un account ${ BRAND_NAME } differente"
       ],
       "Ignore group": [
         "Ignora gruppo"
@@ -11233,7 +11260,7 @@
         "Gli alias Hide-my-email proteggono la tua email dalle violazioni dei dati"
       ],
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
-        "Qualora non riuscissi più ad accedere al tuo account ${ BRAND_NAME }, il **kit di recupero** consente di accedere e recuperare i dati."
+        "Se non riesci più ad accedere al tuo account ${ BRAND_NAME }, il **kit di recupero** ti consente di accedere e recuperare i dati."
       ],
       "Includes basic ${ appName } features:": [
         "Include le funzionalità di base di ${ appName }:"
@@ -11461,7 +11488,7 @@
         "Testo"
       ],
       "Type text or keyword": [
-        "Digita testo o parola chiave"
+        "Inserisci testo o parola chiave"
       ],
       "yourdomain.com": [
         "tuodominio.com"
@@ -12662,10 +12689,10 @@
         "Codice regalo applicato"
       ],
       "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Se hai inserito un'email di recupero valida ti invieremo un'email con i tuoi nomi utente entro il prossimo minuto."
+        "Riceverai il tuo nome utente tramite email entro un minuto se l'indirizzo email di recupero che hai inserito è valido."
       ],
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "Se hai inserito un telefono di recupero valido ti invieremo un SMS con i tuoi nomi utente entro il prossimo minuto."
+        "Riceverai il tuo nome utente tramite SMS entro un minuto se il numero di telefono di recupero che hai inserito è valido."
       ],
       "Import record deleted": [
         "Record dell'importazione eliminato"
@@ -13129,7 +13156,7 @@
         "Importo"
       ],
       "Amount due": [
-        "Importo dovuto"
+        "Importo da pagare"
       ],
       "App": [
         "Applicazione"
@@ -13516,7 +13543,7 @@
         "Codice regalo"
       ],
       "History": [
-        "Storia"
+        "Cronologia"
       ],
       "How does it work?": [
         "Come funziona?"
@@ -13815,6 +13842,9 @@
       ],
       "Sign in to join the Beta program": [
         "Accedi per partecipare al programma Beta"
+      ],
+      "Sign in to your organization": [
+        "Accedi alla tua organizzazione"
       ],
       "Sign in with 2FA": [
         "Accedi con autenticazione a 2 fattori"
@@ -14125,7 +14155,7 @@
         "Attiva/disattiva le notifiche desktop e mobile"
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
-        "Abilitando i log avanzati registrerai l'indirizzo IP di ogni evento nei log di sicurezza."
+        "L'abilitazione dei log avanzati registra l'indirizzo IP per ogni evento nei log di sicurezza."
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail automaticamente sposta alcune email nelle proprie categorie, come Social o Promozioni. Puoi selezionare dove importare queste email."
@@ -14209,7 +14239,7 @@
         "Questa chiave è usata per l'inoltro delle email"
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
-        "Usa le barre di scorrimento predefinite del tuo browser. Sono di solito più grandi e più facili da vedere"
+        "Usa le barre di scorrimento predefinite del tuo browser. Queste sono solitamente più grandi e più facili da usare"
       ],
       "Verified email address": [
         "Indirizzo email verificato"

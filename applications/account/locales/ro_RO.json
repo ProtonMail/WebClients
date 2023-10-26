@@ -75,13 +75,13 @@
         "Adăugare adresă sau domeniu"
       ],
       "Add calendar from URL": [
-        "Adăugare calendar din legătură"
+        "Adăugare calendar din URL"
       ],
       "Add condition": [
         "Adăugare condiție"
       ],
       "Add credit / debit card": [
-        "Adăugare card de credit / debit"
+        "Adăugare card de credit/debit"
       ],
       "Add credits": [
         "Adăugare credite"
@@ -108,7 +108,7 @@
         "Adăugare PayPal"
       ],
       "Add public holidays": [
-        "Adăugare sărbătoare publică"
+        "Adăugare sărbători publice"
       ],
       "Add sieve filter": [
         "Adăugare filtru Sieve"
@@ -884,6 +884,12 @@
       "Sign in": [
         "Autentificare"
       ],
+      "Sign in with password": [
+        "Autentificare cu parolă"
+      ],
+      "Sign in with SSO": [
+        "Autentificare cu SSO"
+      ],
       "Sign out": [
         "Deconectare"
       ],
@@ -1545,7 +1551,7 @@
     },
     "Calendar status": {
       "Active": [
-        "Activă"
+        "Activ"
       ],
       "Default": [
         "Implicită"
@@ -3020,6 +3026,17 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Ajutaţi-ne să ne îmbunătățim!"
+      ]
+    },
+    "drive_signup_2023: Info": {
+      "Advanced sharing security": [
+        "Securitate avansată pentru partajări"
+      ],
+      "Encrypted cloud storage for all your files": [
+        "Stocare în cloud criptată pentru toate fișierele personale"
+      ],
+      "Secure cloud storage and file sharing that protects your data": [
+        "Stocare securizată în cloud și partajare de fișiere care vă protejează datele"
       ]
     },
     "Duration": {
@@ -4864,7 +4881,7 @@
         "Valoare/Date"
       ],
       "Value / Data / Points to": [
-        "Valoare / Date / Direcționat spre"
+        "Valoare/Date/Direcționat spre"
       ]
     },
     "Header for table": {
@@ -5312,6 +5329,9 @@
       "${ firstRemainingCalendarName } will be set as default calendar.": [
         "Calendarul ${ firstRemainingCalendarName } va fi setat ca implicit."
       ],
+      "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
+        "${ inviterEmailJSX } dorește să vă partajeze date în ${ PASS_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } poate fi utilizat și cu o singură parolă care va înlocui atât parola contului cât și parola mesajelor. Pentru a comuta la modul cu parolă unică, introduceți parola dorită și apăsați pe «Salvare»."
       ],
@@ -5410,7 +5430,7 @@
         "(${ memberCount } de membri)"
       ],
       "(${ serverPrice } /month)": [
-        "(${ serverPrice } / lună)"
+        "(${ serverPrice }/lună)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtrare dacă TOATE condițiile următoare sunt îndeplinite)"
@@ -5524,9 +5544,9 @@
         "Se adaugă ${ addedServerCount } de servere poartă de acces"
       ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
-        "Se adaugă serverul poartă de acces: ${ serverNumber } / ${ total }",
-        "Se adaugă serverele poartă de acces: ${ serverNumber } / ${ total }",
-        "Se adaugă serverele poartă de acces: ${ serverNumber } / ${ total }"
+        "Se adaugă serverul poartă de acces: ${ serverNumber }/${ total }",
+        "Se adaugă serverele poartă de acces: ${ serverNumber }/${ total }",
+        "Se adaugă serverele poartă de acces: ${ serverNumber }/${ total }"
       ],
       "Additional options": [
         "Opțiuni adiționale"
@@ -5791,9 +5811,9 @@
         "Creați prima poartă de acces"
       ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
-        "Creare server poartă de acces: ${ serverNumber } / ${ total }",
-        "Creare server poartă de acces: ${ serverNumber } / ${ total }",
-        "Creare server poartă de acces: ${ serverNumber } / ${ total }"
+        "Creare server poartă de acces: ${ serverNumber }/${ total }",
+        "Creare server poartă de acces: ${ serverNumber }/${ total }",
+        "Creare server poartă de acces: ${ serverNumber }/${ total }"
       ],
       "Creating your account": [
         "Creare cont"
@@ -6032,6 +6052,9 @@
       ],
       "Get ${ upsellPlanName }": [
         "Luați ${ upsellPlanName }"
+      ],
+      "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
+        "Obțineți acces creând un cont ${ BRAND_NAME } și acceptând invitația."
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Dați unu nume descriptiv jetonului (codului de acces), cum ar fi serviciul pe care urmați să-l folosiți și selectați una din adresele de domeniu personale active. Numai această adresă va putea trimite mesaje cu acest cod de acces."
@@ -7729,7 +7752,7 @@
         "Marcare ca necitit"
       ],
       "Minimize / maximize composer": [
-        "Micșorare / mărire panou editare"
+        "Micșorare/mărire panou editare"
       ],
       "Move down": [
         "Mutare în jos"
@@ -8279,7 +8302,7 @@
         "Notificări eveniment"
       ],
       "Exclude Spam/Trash from All mail": [
-        "Excludere mesaje nedorite / gunoi din toate mesajele"
+        "Excludere mesaje nedorite/gunoi din toate mesajele"
       ],
       "Expiration (${ patternExpiration })": [
         "Expirare (${ patternExpiration })"
@@ -9005,7 +9028,7 @@
         "Cum se deblochează datele"
       ],
       "Import/export": [
-        "Importare / Exportare"
+        "Importare/Exportare"
       ],
       "Learn more": [
         "Detalii"
@@ -9216,8 +9239,8 @@
       "Create a new ${ appName } account": [
         "Creare cont ${ appName }"
       ],
-      "Find ${ BRAND_NAME } Account username": [
-        "Găsiți numele de utilizator al contului ${ BRAND_NAME }"
+      "Find your ${ BRAND_NAME } Account username": [
+        "Găsiți-vă numele de utilizator al contului ${ BRAND_NAME }"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "V-ați uitat parola contului ${ BRAND_NAME }? Resetați-o aici folosind un cod de recuperare, e-mail sau SMS și redobândiți accesul la ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } și multe altele."
@@ -9243,7 +9266,7 @@
     },
     "Modal title": {
       "Add public holidays": [
-        "Adăugare sărbătoare publică"
+        "Adăugare sărbători publice"
       ],
       "Edit calendar": [
         "Editare calendar"
@@ -9555,8 +9578,8 @@
       ],
       "${ n } email address": [
         "O adresă de e-mail",
-        "${ n } adrese de e-mail / aliasuri",
-        "${ n } de adrese de e-mail / aliasuri"
+        "${ n } adrese de e-mail/aliasuri",
+        "${ n } de adrese de e-mail/aliasuri"
       ],
       "${ n } email address per user": [
         "O adresă per utilizator",
@@ -9713,7 +9736,7 @@
         "Asistent de importare Easy Switch"
       ],
       "Email client support (via IMAP/SMTP)": [
-        "Suport client de e-mail (prin IMAP / SMTP)"
+        "Suport client de e-mail (prin IMAP/SMTP)"
       ],
       "Enables HIPAA compliance": [
         "Se conformează regulilor HIPAA"
@@ -9763,7 +9786,7 @@
         "Autentificator A2F integrat"
       ],
       "Kill switch/always-on VPN": [
-        "Întrerupător de urgență / VPN permanent"
+        "Întrerupător de urgență/VPN permanent"
       ],
       "Limited support": [
         "Asistență limitată"
@@ -9901,12 +9924,6 @@
       "User session management": [
         "Gestionare sesiuni utilizator"
       ],
-      "Vault and Item sharing": [
-        "Partajarea seifurilor și a datelor"
-      ],
-      "Vault and Item sharing (coming soon)": [
-        "Partajarea seifurilor și a datelor (în curând)"
-      ],
       "Vault sharing (up to ${ n } person)": [
         "Partajare seif (maxim ${ n } persoană)",
         "Partajare seif (maxim ${ n } persoane)",
@@ -9933,6 +9950,17 @@
       ],
       "Team management": [
         "Gestionare echipă"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Perioada de probare se termină ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -10022,17 +10050,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Perioada de probare se termină ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10152,7 +10169,7 @@
         "Creați până la ${ n } de calendare sau adăugați calendare de la prieteni, familie, colegi și organizații"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
-        "Creați până la ${ n } adrese / aliasuri ce pot fi atribuite membrilor familiei. Folosiți-le pentru autentificările online, de exemplu ioncumparaturi@${ domain } pentru conturi de cumpărături."
+        "Creați până la ${ n } adrese/aliasuri ce pot fi atribuite membrilor familiei. Folosiți-le pentru autentificările online, de exemplu ioncumparaturi@${ domain } pentru conturi de cumpărături."
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului"
@@ -10260,7 +10277,7 @@
         "Trimiteți e-mailuri către grupuri mari rapid și ușor prin crearea a cât mai multe grupuri de contact de care aveți nevoie (până la 100 de contacte per grup)."
       ],
       "Set up filters to automatically reply to, sort, and/or label your emails": [
-        "Configurați filtre pentru a răspunde automat, sorta și / sau eticheta e-mailurile."
+        "Configurați filtre pentru a răspunde automat, sorta și/sau eticheta e-mailurile."
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
         "Partajați fișierele sau folderele cu oricine utilizând legături sigure și partajabile."
@@ -10296,7 +10313,7 @@
         "Nu păstrăm jurnale ale activității online și nu înregistrăm metadate care vă pot compromite confidențialitatea."
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
-        "Ne-am angajat să ajutăm clienții supuși reglementărilor HIPAA / HITECH să asigure informațiile de sănătate protejate (PHI). BAA-urile semnate sunt disponibile pentru toți clienții ${ BRAND_NAME } pentru afaceri."
+        "Ne-am angajat să ajutăm clienții supuși reglementărilor HIPAA/HITECH să asigure informațiile de sănătate protejate (PHI). BAA-urile semnate sunt disponibile pentru toți clienții ${ BRAND_NAME } pentru afaceri."
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "Când conexiunea trece prin VPN-ul nostru, DNS face interogări prin tunelul VPN criptat, adăugând asta la confidențialitatea și securitatea online."
@@ -11043,6 +11060,9 @@
       "You currently have": [
         "În prezent aveți"
       ],
+      "You have been invited to join ${ PASS_APP_NAME }": [
+        "Ați primit invitația să vă alăturați la ${ PASS_APP_NAME }"
+      ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Organizația are acces la ${ free }. Dacă doriți să accesați funcțiile premium ale ${ appName }, vă rugăm să solicitați administratorului organizației să modifice contul."
       ]
@@ -11059,6 +11079,9 @@
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Toate serviciile ${ BRAND_NAME } Plus.${ br } Un singur abonament."
       ],
+      "Create a ${ PASS_APP_NAME } account": [
+        "Creați un cont ${ PASS_APP_NAME }"
+      ],
       "Create your ${ BRAND_NAME } account": [
         "Creați-vă contul ${ BRAND_NAME }"
       ],
@@ -11071,10 +11094,10 @@
     },
     "Payment method option": {
       "Credit/debit card": [
-        "Card de credit / debit"
+        "Card de credit/debit"
       ],
       "New credit/debit card": [
-        "Card nou de credit / debit"
+        "Card nou de credit/debit"
       ]
     },
     "Personal calendar section description": {
@@ -12835,7 +12858,7 @@
         "Adăugare nume grup contacte"
       ],
       "Add credit/debit card": [
-        "Adăugare card de credit / debit"
+        "Adăugare card de credit/debit"
       ],
       "Add credits": [
         "Adăugare credite"
@@ -13151,7 +13174,7 @@
         "Descărcare ${ VPN_APP_NAME }"
       ],
       "Edit credit/debit card": [
-        "Editare card de credit / debit"
+        "Editare card de credit/debit"
       ],
       "Edit display name": [
         "Editare nume afișat"
@@ -13577,6 +13600,9 @@
       "Sign in to join the Beta program": [
         "Autentificați-vă pentru a vă alătura programului beta"
       ],
+      "Sign in to your organization": [
+        "Autentificare la organizație"
+      ],
       "Sign in with 2FA": [
         "Autentificare A2F"
       ],
@@ -13870,7 +13896,7 @@
         "Modificare opțiuni de importare pentru a reduce numărul de etichete."
       ],
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
-        "Ștergeți mesajele din gunoi și nedorite după 30 de zile. Activând ștergerea automată, mesajele aflate deja în folderul «Gunoi» / «Nedorite» vor avea o dată de ștergere în funcție de data mutării lor acolo."
+        "Ștergeți mesajele din gunoi și nedorite după 30 de zile. Activând ștergerea automată, mesajele aflate deja în folderul «Gunoi»/«Nedorite» vor avea o dată de ștergere în funcție de data mutării lor acolo."
       ],
       "Device information such as operating system": [
         "Informații despre dispozitiv cum ar fi sistemul de operare."
@@ -14215,7 +14241,7 @@
     },
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Accesa la servere Secure Core, descărcări rapide P2P / BitTorrent, Tor prin VPN și altele."
+        "Accesa la servere Secure Core, descărcări rapide P2P/BitTorrent, Tor prin VPN și altele."
       ]
     },
     "Warning": {

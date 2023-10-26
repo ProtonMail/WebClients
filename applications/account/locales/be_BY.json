@@ -884,6 +884,12 @@
       "Sign in": [
         "Увайсці"
       ],
+      "Sign in with password": [
+        "Увайсці з паролем"
+      ],
+      "Sign in with SSO": [
+        "Увайсці з SSO"
+      ],
       "Sign out": [
         "Выйсці з уліковага запісу"
       ],
@@ -3034,6 +3040,17 @@
         "Дапамажыце нам палепшыць наш сэрвіс!"
       ]
     },
+    "drive_signup_2023: Info": {
+      "Advanced sharing security": [
+        "Дадатковая бяспека пры абагульванні"
+      ],
+      "Encrypted cloud storage for all your files": [
+        "Зашыфраванае воблачнае сховішча для ўсіх вашых файлаў"
+      ],
+      "Secure cloud storage and file sharing that protects your data": [
+        "Бяспечнае воблачнае сховішча і абмен файламі для абароны вашых даных"
+      ]
+    },
     "Duration": {
       "120 minutes": [
         "120 хвілін"
@@ -3278,7 +3295,7 @@
     },
     "email_forwarding_2023: Info": {
       "A confirmation email will be sent to ${ boldForwardeeEmail }": [
-        "Ліст з пацвярджэннем адпраўлены на ${ boldForwardeeEmail }"
+        "Паведамленне з пацвярджэннем будзе адпраўлена на ${ boldForwardeeEmail }"
       ],
       "A new encryption key will be generated for ${ boldForwarderEmail }.": [
         "Новы ключ будзе згенерыраваны для ${ boldForwarderEmail }"
@@ -3293,7 +3310,7 @@
         "Перасылка на адрасы ${ BRAND_NAME } дазволіць захаваць вашу камунікацыю зашыфраванай скразным метадам. Пры перасылцы лістоў па-за межы сэрвісу шыфраванне прымяняцца не будзе."
       ],
       "Forwarding to an address without end-to-end encryption requires disabling end-to-end encryption for your ${ boldForwarderEmail } email address. ": [
-        "Перасылка на адрас, якія не падтрымлівае скразнога шыфравання патрабуе адключэння скразнога шыфравання на вашым адрасе электроннай пошты ${ boldForwarderEmail }. "
+        "Перасылка на адрасы, якія не падтрымліваюць скразнога шыфравання, патрабуе адключэння скразнога шыфравання на вашым адрасе электроннай пошты ${ boldForwarderEmail }. "
       ],
       "Forwarding to this address will become active once the recipient accepts the forwarding.": [
         "Перасылка на гэты адрас стане актыўнай пасля таго, як атрымальнік прыме перасылку."
@@ -3415,24 +3432,24 @@
         "Перасылка прыпынена"
       ],
       "Forwarding resumed": [
-        "Перасылка узноўлена"
+        "Перасылка ўзноўлена"
       ]
     },
     "email_forwarding_2023: Title": {
       "Automatically forward emails to other accounts": [
-        "Аўтаматычна перасылаць лісты на іншы ўліковы запіс"
+        "Аўтаматычна перасылаць лісты на іншыя ўліковыя запісы"
       ],
       "Delete forwarding?": [
         "Выдаліць перасылку?"
       ],
       "Email forwarding deactivated": [
-        "Перасылка дэзактывавана"
+        "Перасылка пошты дэзактывавана"
       ],
       "Forwarding activated": [
         "Перасылка актывавана"
       ],
       "Request confirmation": [
-        "Запытваць пацвярджэнне"
+        "Запытаць пацвярджэнне"
       ],
       "Set up forwarding": [
         "Наладзіць перасылку"
@@ -4770,6 +4787,9 @@
       ],
       "MB": [
         "МБ"
+      ],
+      "TB": [
+        "ТБ"
       ]
     },
     "file size format, long": {
@@ -4796,6 +4816,12 @@
         "Мегабайты",
         "Мегабайтаў",
         "Мегабайты"
+      ],
+      "Terabyte": [
+        "тэрабайт",
+        "тэрабайты",
+        "тэрабайтаў",
+        "тэрабайтаў"
       ]
     },
     "Filter Actions": {
@@ -5612,6 +5638,9 @@
       "${ firstRemainingCalendarName } will be set as default calendar.": [
         "${ firstRemainingCalendarName } будзе прызначаны прадвызначаным календаром."
       ],
+      "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
+        "${ inviterEmailJSX } хоча абагуліць даныя з вамі ў ${ PASS_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "Вы таксама можаце выкарыстоўваць ${ MAIL_APP_NAME } у рэжыме адзінага пароля, які замяняе сабой пароль ад уваходу і паштовай скрыні. Для пераключэння ў рэжым адзінага пароля ўвядзіце пароль, які вы хочаце выкарыстоўваць, а потым націсніце \"Захаваць\"."
       ],
@@ -6358,6 +6387,9 @@
       ],
       "Get ${ upsellPlanName }": [
         "Атрымаць тарыфны план ${ upsellPlanName }"
+      ],
+      "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
+        "Атрымаць доступ стварыўшы ўліковы запіс ${ BRAND_NAME } і прыняць запрашэнне."
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Дайце токену апісальную назву. Гэта можа быць назва паслугі, з якой вы плануеце яго выкарыстоўваць, і выберыце адзін з вашых актыўных адрасоў карыстальніцкіх даменаў. Толькі гэты адрас зможа адпраўляць лісты з гэтым токенам."
@@ -9575,8 +9607,8 @@
       "Create a new ${ appName } account": [
         "Стварыць новы ўліковы запіс ${ appName }"
       ],
-      "Find ${ BRAND_NAME } Account username": [
-        "Знайдзіце імя карыстальніка ўліковага запісу ${ BRAND_NAME }"
+      "Find your ${ BRAND_NAME } Account username": [
+        "Знайдзіце ваш ${ BRAND_NAME } імя карыстальніка"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Забылі пароль ад свайго ўліковага запісу ${ BRAND_NAME }? Скіньце яго выкарыстоўваючы код аднаўлення, электронную пошту або SMS і аднавіце доступ да вашых сэрвісаў ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і іншых."
@@ -10281,12 +10313,6 @@
       "User session management": [
         "Кіраванне сеансамі карыстальнікаў"
       ],
-      "Vault and Item sharing": [
-        "Сховішча і абагульванне элементаў"
-      ],
-      "Vault and Item sharing (coming soon)": [
-        "Сховішча і абагульванне элементаў (неўзабаве з'явіцца)"
-      ],
       "Vault sharing (up to ${ n } person)": [
         "Абагуленне сховішча (да ${ n } асобы)",
         "Абагуленне сховішча (да ${ n } асоб)",
@@ -10314,6 +10340,17 @@
       ],
       "Team management": [
         "Кіраванне камандамі"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Калі гэта не зрабіць, доступ да вашага ўліковага запісу будзе абмежаваны, а потым цалкам адключаны."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Для працягу выкарыстання ${ MAIL_APP_NAME } з прэміяльнымі функцыямі, выберыце вашу падпіску і спосаб аплаты."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Ваш выпрабавальны перыяд завершыцца ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -10403,17 +10440,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Калі гэта не зрабіць, доступ да вашага ўліковага запісу будзе абмежаваны, а потым цалкам адключаны."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Для працягу выкарыстання ${ MAIL_APP_NAME } з прэміяльнымі функцыямі, выберыце вашу падпіску і спосаб аплаты."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Ваш выпрабавальны перыяд завершыцца ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11435,6 +11461,9 @@
       "You currently have": [
         "Зараз у вас ёсць"
       ],
+      "You have been invited to join ${ PASS_APP_NAME }": [
+        "Вас запрасілі далучыцца да ${ PASS_APP_NAME }"
+      ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "У вашай арганізацыі ёсць доступ да ${ free }. Калі вы хочаце атрымаць прэміяльныя функцыі ${ appName }, папрасіце адміністратара сваёй арганізацыі абнавіць тарыфны план."
       ]
@@ -11450,6 +11479,9 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Усе сэрвісы ${ BRAND_NAME } Plus.${ br }Адна нескладаная падпіска."
+      ],
+      "Create a ${ PASS_APP_NAME } account": [
+        "Стварыць уліковы запіс ${ PASS_APP_NAME }"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Стварыць уліковы запіс ${ BRAND_NAME }"
@@ -14011,6 +14043,9 @@
       ],
       "Sign in to join the Beta program": [
         "Увайдзіце, каб далучыцца да бэта-праграмы"
+      ],
+      "Sign in to your organization": [
+        "Увайсці ў сваю арганізацыю"
       ],
       "Sign in with 2FA": [
         "Увайсці з 2ФА"

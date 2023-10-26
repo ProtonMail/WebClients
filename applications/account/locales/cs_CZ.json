@@ -9309,9 +9309,6 @@
       "Create a new ${ appName } account": [
         "Vytvořit nový účet ${ appName }"
       ],
-      "Find ${ BRAND_NAME } Account username": [
-        "Najít uživatelské jméno účtu ${ BRAND_NAME }"
-      ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Zapomněli jste heslo ke svému ${ BRAND_NAME } účtu? Resetujte ho zde pomocí kódu pro obnovení, e-mailu nebo SMS a získejte zpět přístup k ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } a dalším aplikacím."
       ],
@@ -10015,12 +10012,6 @@
       "User session management": [
         "Správa uživatelských relací"
       ],
-      "Vault and Item sharing": [
-        "Sdílení trezoru a položek"
-      ],
-      "Vault and Item sharing (coming soon)": [
-        "Sdílení trezoru a položek (již brzy)"
-      ],
       "Vault sharing (up to ${ n } person)": [
         "Sdílení trezoru (až ${ n } osoba)",
         "Sdílení trezoru (až ${ n } osoby)",
@@ -10048,6 +10039,17 @@
       ],
       "Team management": [
         "Řízení týmu"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Zkušební verze končí ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -10137,17 +10139,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Zkušební verze končí ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
