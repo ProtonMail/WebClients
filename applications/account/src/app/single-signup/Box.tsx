@@ -8,7 +8,7 @@ const Box = ({ children, className }: { children: ReactNode; className?: string 
     return (
         <div
             className={clsx(
-                'pricing-box ui-standard relative shadow-lifted shadow-color-primary on-tiny-mobile-no-box-shadow rounded-xl',
+                'pricing-box ui-standard relative sm:shadow-lifted shadow-color-primary rounded-xl',
                 className
             )}
         >
