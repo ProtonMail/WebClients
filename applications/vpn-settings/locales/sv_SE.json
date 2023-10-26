@@ -431,6 +431,12 @@
       "Sign in": [
         "Logga in"
       ],
+      "Sign in with password": [
+        "Logga in med lösenord"
+      ],
+      "Sign in with SSO": [
+        "Logga in med SSO"
+      ],
       "Sign out": [
         "Logga ut"
       ],
@@ -4407,8 +4413,8 @@
       "Create a new ${ appName } account": [
         "Skapa ett nytt ${ appName }-konto"
       ],
-      "Find ${ BRAND_NAME } Account username": [
-        "Hitta användarnamn för ${ BRAND_NAME }-konto"
+      "Find your ${ BRAND_NAME } Account username": [
+        "Hitta användarnamnet för ditt ${ BRAND_NAME }-konto"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Har du glömt lösenordet till ditt ${ BRAND_NAME }-konto? Återställ det här med en återställningskod, e-post eller sms och återfå åtkomst till dina ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } och fler."
@@ -4839,12 +4845,6 @@
       ],
       "User session management": [
         "Hantering av användarsession"
-      ],
-      "Vault and Item sharing": [
-        "Valv och objektdelning"
-      ],
-      "Vault and Item sharing (coming soon)": [
-        "Valv och objektdelning (kommer snart)"
       ],
       "Vault sharing (up to ${ n } person)": [
         "Valvdelning (upp till ${ n } person)",
@@ -6974,6 +6974,9 @@
       ],
       "Sign in to join the Beta program": [
         "Logga in för att ansluta till Beta-programmet"
+      ],
+      "Sign in to your organization": [
+        "Logga in på din organisation"
       ],
       "Sign in with 2FA": [
         "Logga in med 2FA"

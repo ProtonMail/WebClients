@@ -431,6 +431,12 @@
       "Sign in": [
         "Увайсці"
       ],
+      "Sign in with password": [
+        "Увайсці з паролем"
+      ],
+      "Sign in with SSO": [
+        "Увайсці з SSO"
+      ],
       "Sign out": [
         "Выйсці з уліковага запісу"
       ],
@@ -2410,6 +2416,9 @@
       ],
       "MB": [
         "МБ"
+      ],
+      "TB": [
+        "ТБ"
       ]
     },
     "file size format, long": {
@@ -2436,6 +2445,12 @@
         "Мегабайты",
         "Мегабайтаў",
         "Мегабайты"
+      ],
+      "Terabyte": [
+        "тэрабайт",
+        "тэрабайты",
+        "тэрабайтаў",
+        "тэрабайтаў"
       ]
     },
     "Font face option": {
@@ -4484,8 +4499,8 @@
       "Create a new ${ appName } account": [
         "Стварыць новы ўліковы запіс ${ appName }"
       ],
-      "Find ${ BRAND_NAME } Account username": [
-        "Знайдзіце імя карыстальніка ўліковага запісу ${ BRAND_NAME }"
+      "Find your ${ BRAND_NAME } Account username": [
+        "Знайдзіце ваш ${ BRAND_NAME } імя карыстальніка"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Забылі пароль ад свайго ўліковага запісу ${ BRAND_NAME }? Скіньце яго выкарыстоўваючы код аднаўлення, электронную пошту або SMS і аднавіце доступ да вашых сэрвісаў ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і іншых."
@@ -4952,12 +4967,6 @@
       ],
       "User session management": [
         "Кіраванне сеансамі карыстальнікаў"
-      ],
-      "Vault and Item sharing": [
-        "Сховішча і абагульванне элементаў"
-      ],
-      "Vault and Item sharing (coming soon)": [
-        "Сховішча і абагульванне элементаў (неўзабаве з'явіцца)"
       ],
       "Vault sharing (up to ${ n } person)": [
         "Абагуленне сховішча (да ${ n } асобы)",
@@ -7171,6 +7180,9 @@
       ],
       "Sign in to join the Beta program": [
         "Увайдзіце, каб далучыцца да бэта-праграмы"
+      ],
+      "Sign in to your organization": [
+        "Увайсці ў сваю арганізацыю"
       ],
       "Sign in with 2FA": [
         "Увайсці з 2ФА"

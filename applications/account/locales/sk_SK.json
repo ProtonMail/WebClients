@@ -3034,6 +3034,17 @@
         "Pomôžte nám sa zlepšiť!"
       ]
     },
+    "drive_signup_2023: Info": {
+      "Advanced sharing security": [
+        "Pokročilá bezpečnosť zdieľania"
+      ],
+      "Encrypted cloud storage for all your files": [
+        "Šifrované cloudové úložisko pre všetky vaše súbory"
+      ],
+      "Secure cloud storage and file sharing that protects your data": [
+        "Bezpečné cloudové úložisko a zdieľanie súborov, ktoré chráni vaše údaje"
+      ]
+    },
     "Duration": {
       "120 minutes": [
         "120 minút"
@@ -4770,6 +4781,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -4796,6 +4810,12 @@
         "Megabajty",
         "Megabajtov",
         "Megabajtov"
+      ],
+      "Terabyte": [
+        "terabajt",
+        "terabajty",
+        "terabajtov",
+        "terabajtov"
       ]
     },
     "Filter Actions": {
@@ -5612,6 +5632,9 @@
       "${ firstRemainingCalendarName } will be set as default calendar.": [
         "${ firstRemainingCalendarName } bude nastavený ako predvolený kalendár."
       ],
+      "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
+        "${ inviterEmailJSX } s vami chce zdieľať údaje v ${ PASS_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } je možné používať aj s jedným heslom, ktoré nahrádza prihlasovacie heslo aj heslo k poštovej schránke. Na prepnutie do režimu jedného hesla prosím zadajte jedno spoločné heslo, ktoré chcete použiť, a kliknite Uložiť."
       ],
@@ -5649,7 +5672,7 @@
         "${ plan.Title } vyžaduje aspoň 1 dedikovaný server ${ serverPricePerMonth }"
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME } je pokročilý program na ochranu účtu poháňaný sofistikovanými systémami umelej inteligencie (AI) a špecialistami, ktorí nepretržite pracujú, aby vás chránili pred nechcenými útočníkmi a bezpečnostnými hrozbami."
+        "${ PROTON_SENTINEL_NAME } je pokročilý program na ochranu účtu založený sofistikovanými systémami umelej inteligencie (AI) a špecialistami, ktorí nepretržite pracujú na vašej ochrane pred nechcenými útočníkmi a bezpečnostnými hrozbami."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } nájdená zložka",
@@ -6359,6 +6382,9 @@
       "Get ${ upsellPlanName }": [
         "Získať ${ upsellPlanName }"
       ],
+      "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
+        "Získajte prístup vytvorením účtu v ${ BRAND_NAME } a prijatím pozvánky."
+      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Dajte tokenu popisný názov, napríklad službu, s ktorou ho plánujete používať a vyberte jednu z vašich aktívnych adries vlastnej domény. Iba táto adresa bude môcť odosielať emaily s týmto tokenom."
       ],
@@ -6678,7 +6704,7 @@
         "Zatiaľ žiadne brány"
       ],
       "No imports or forwarding history.": [
-        "Bez histórie importov alebo preposielania."
+        "Žiadny import alebo história preposielania."
       ],
       "No label selected": [
         "Nie je vybratý žiadny štítok"
@@ -6699,7 +6725,7 @@
         "Zatiaľ nedostupné v našej mobilnej aplikácií Android."
       ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Nie je toto vaše zariadenie? K prihláseniu použite okno súkromného prehliadania a po dokončení ho zatvorte. ${ learnMore }"
+        "Nie je to vaše zariadenie? K prihláseniu použite okno súkromného prehliadania a po dokončení ho zatvorte. ${ learnMore }"
       ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverov v organizácii"
@@ -6768,7 +6794,7 @@
         "Zaplatené za ${ rewardMonths } mesačných plánov"
       ],
       "Paid for a monthly plan": [
-        "Platený za mesačný plán"
+        "Zaplatené za mesačný plán"
       ],
       "Password copied to clipboard": [
         "Heslo bolo skopírované do schránky"
@@ -6825,7 +6851,7 @@
         "Prosíme vyplňte toto pole."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Uložte si ho na bezpečnom mieste. V prípade obnovenia hesla ho budete potrebovať pre prístup k vašemu účtu a k dešifrovaniu vašich dát."
+        "Uložte si ho na bezpečnom mieste. V prípade obnovenia hesla ho budete potrebovať pre prístup k vášmu účtu a k dešifrovaniu vašich údajov."
       ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "Berte prosím na vedomie, že ak odstránite túto adresu, nebudete už môcť odosielať, ani prijímať emaily pomocou tejto adresy."
@@ -7227,7 +7253,7 @@
         "Týmto sa odstránia všetky predchádzajúce verzie vašich súborov."
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
-        "Týmto sa deaktivuje vaša súčasná obnovovacia fráza. Nebudete ju môcť použiť k prístupu k vašemu účtu, alebo k dešifrovaniu dát."
+        "Týmto sa deaktivuje vaša súčasná obnovovacia fráza. Nebudete ju môcť použiť k prístupu k vášmu účtu, alebo k dešifrovaniu údajov."
       ],
       "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
         "Týmto sa stiahne súbor obsahujúci váš súkromný kľúč. Ochráňte tento súbor zašifrovaním pomocou hesla."
@@ -7245,7 +7271,7 @@
         "Týmto sa nahradí vaše dočasné heslo. V budúcnosti ho použite pre prístup k vášmu účtu ${ BRAND_NAME }."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
-        "Toto vás odhlási zo všetkých aktívnych relácií a vypne 2-faktorovú autorizáciu."
+        "Toto vás odhlási zo všetkých aktívnych relácií a vypne dvojstupňové overenie."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Tento sprievodca povolí na vašom účte ${ BRAND_NAME } dvojstupňové overenie (2FA). Dvojstupňové overenie zvýši bezpečnosť vášho účtu ${ BRAND_NAME_TWO }, preto vám ho odporúčame povoliť."
@@ -7293,13 +7319,13 @@
         "Ak chcete mať prehľad o najnovšom vývoji produktov ${ BRAND_NAME }, môžete sa prihlásiť na odber rôznych emailov a pozrieť sa z času na čas na ${ blogLink }."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
-        "Ak chcete pokračovať, z dôvodu kontroly požiadavky vyberte metódu obnoenia účtu."
+        "Ak chcete pokračovať, z dôvodu kontroly požiadavky vyberte metódu obnovenia účtu."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Ak chcete zabezpečiť svoje internetové pripojenie, stiahnite a nainštalujte si aplikáciu ${ VPN_APP_NAME } pre svoje zariadenie a pripojte sa k serveru."
       ],
       "to use ${ toAppName } and all ${ BRAND_NAME } services": [
-        "používať ${ toAppName } a všetky služby ${ BRAND_NAME }"
+        "pre používanie ${ toAppName } a všetkých služieb ${ BRAND_NAME }"
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Aby ste mohli použiť ${ toAppName }, potrebujete ${ MAIL_APP_NAME } adresu."
@@ -7344,7 +7370,7 @@
         "Bohužiaľ pre tento účet neexistuje žiadny spôsob obnovenia."
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
-        "Dokiaľ sa neodhlásite z vašeho účtu alebo nezmeníte heslo, vaša relácia zostane aktívna. Relácia vyprší po 60 dňoch nečinnosti."
+        "Dokiaľ sa neodhlásite z vášho účtu alebo nezmeníte heslo, vaša relácia zostane aktívna. Relácia vyprší po 60 dňoch nečinnosti."
       ],
       "Unlimited folders, labels, and filters": [
         "Neobmedzený počet priečinkov, štítkov a filtrov"
@@ -7476,7 +7502,7 @@
         "Odporúčame mať viacero serverov na rôznych miestach, aby sa zabezpečila redundancia."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
-        "Odporúčame upozorniť členov organizácie a požiadať ich, aby si pred vynútením používania 2FA ho na svojich účtoch najskôr nastavili."
+        "Odporúčame upozorniť členov organizácie a požiadať ich, aby si nastavili 2FA pre svoje kontá skôr, ako začne vynútené používanie 2FA."
       ],
       "We recommend using your recovery phrase instead.": [
         "Namieto toho doporučujeme použiť obnovovaciu frázu."
@@ -7512,7 +7538,7 @@
         "Vitajte"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
-        "Pošleme resetovací kód na emailovú adresu, ktorú si poskytli pre obnovenie účtu."
+        "Pošleme resetovací kód na emailovú adresu, ktorú ste poskytli pre obnovenie účtu."
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Na telefónne číslo, ktoré ste uviedli v prípade obnovenia účtu odošleme kód pre obnovenie."
@@ -7599,7 +7625,7 @@
         "Pre zaistenie správnej emailovej adresy pre overenie môžete tento údaj jedenkrát upraviť."
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "Môžete povoliť overovanie prihlásenia, aby ste videli, kedy sa pristupuje k vášmu účtu a z ktorej IP adresy. Zaznamenáme IP adresu, ktorá pristupuje k účtu a čas, ako aj neúspešné pokusy."
+        "Môžete zapnúť overovanie prihlásenia, aby ste videli, kedy sa pristupuje k vášmu účtu a z ktorej IP adresy. Zaznamenáme IP adresu, ktorá pristupuje k účtu a čas, ako aj neúspešné pokusy."
       ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
         "Vyššie uvedené nastavenie môžete okamžite odblokovať pridaním ${ specificCountryCount } k počtu IP adries vo vašom pláne alebo nás oslovte pre riešenie na mieru."
@@ -7659,7 +7685,7 @@
         "Túto akciu nie je možné vrátiť späť."
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
-        "Nenastavili ste metódu pre obnovenie, preto v prípade straty hesla nebude možné účet obnoviť. Pokračovať bez metódy obnovenia?"
+        "Nenastavili ste metódu obnovenia, takže obnovenie konta nebude možné, ak zabudnete heslo. Pokračovať bez metódy obnovy?"
       ],
       "You have ${ availableCount } dedicated server available.": [
         "Máte dostupný ${ availableCount } dedikovaný server.",
@@ -7680,7 +7706,7 @@
         "Rozšírenie teraz môžete začať používať"
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
-        "Musíte aktivovať súkromný kľúč organizácie pomocou hesla kľúča organizácie pre zálohovánie, ktoré vám poskytne správca."
+        "Súkromný kľúč organizácie musíte aktivovať pomocou hesla záložného kľúča organizácie, ktoré vám poskytol správca organizácie."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Pred znížením predplatného musíte zakázať alebo odstrániť všetkých ďalších ${ MAIL_APP_NAME } používateľov, adresy a vlastné domény."
@@ -7728,7 +7754,7 @@
         "Uzamknuté údaje nebudete môcť obnoviť pomocou stiahnutých súborov na obnovenie. Tým sa tiež zrušia dôveryhodné informácie na obnovenie zariadenia."
       ],
       "You'll stay signed in even after you close the browser.": [
-        "Prihlásený zostanete aj po zatvorení prehliadača."
+        "Prihlásení zostanete aj po zatvorení prehliadača."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Váš účet ${ BRAND_NAME } je spojený s ${ externalEmailAddress }."
@@ -7797,7 +7823,7 @@
         "Váš ďalší dátum fakturácie je ${ renewalTime }"
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "Heslo organizácie je možné zdieľať so všetkými užívateľmi, ktorým chcete prideliť oprávnenia správcu. Heslo slúži tiež ako núdzový kód na obnovenie prístupu do Vašej organizácie v prípade, že stratíte prístup k svojmu hlavnému účtu. Heslo uložte a držte v bezpečí."
+        "Heslo organizácie je možné zdieľať so všetkými používateľmi, ktorým chcete prideliť oprávnenia správcu. Heslo slúži tiež ako núdzový kód na obnovenie prístupu do vašej organizácie v prípade, že stratíte prístup k svojmu hlavnému účtu. Heslo uložte a držte v bezpečí."
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Emaily vašej organizácie sú chránené end-to-end šifrovaním pomocou kľúča organizácie. Tento odtlačok prstu je možné použiť k overeniu, či majú všetci správcovia účtu rovnaký kľúč."
@@ -9575,8 +9601,8 @@
       "Create a new ${ appName } account": [
         "Vytvoriť nový ${ appName } účet"
       ],
-      "Find ${ BRAND_NAME } Account username": [
-        "Nájsť používateľské meno účtu v ${ BRAND_NAME }"
+      "Find your ${ BRAND_NAME } Account username": [
+        "Zistite vaše používateľské meno v ${ BRAND_NAME }"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Zabudli ste heslo k vášmu ${ BRAND_NAME } účtu? Resetujte ho pomocou kódu na obnovenie, emailu alebo SMS a získajte opätovnjý prístup k ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } a ďalším."
@@ -10281,12 +10307,6 @@
       "User session management": [
         "Správa relácií používateľov"
       ],
-      "Vault and Item sharing": [
-        "Zdieľanie trezoru a položiek"
-      ],
-      "Vault and Item sharing (coming soon)": [
-        "Trezor a zdieľanie položiek (už čoskoro)"
-      ],
       "Vault sharing (up to ${ n } person)": [
         "Zdieľanie trezora (s ${ n } osobou)",
         "Zdieľanie trezora (s ${ n } osobami)",
@@ -10314,6 +10334,17 @@
       ],
       "Team management": [
         "Tímový manažment"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "V opačnom prípade bude prístup k vášmu účtu obmedzený a váš účet bude nakoniec deaktivovaný."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Ak chcete naďalej používať ${ MAIL_APP_NAME } s prémiovými funkciami, vyberte si predplatné a možnosti platby."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Skúšobná verzia končí ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -10403,17 +10434,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Využívate propagačnú cenu vášho aktuálneho plánu. Ak prejdete na nižšiu verziu účtu, prídete o propagačnú cenu a ak sa znova pokúsite o predplatné, nebude už k dispozícii."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "V opačnom prípade bude prístup k vášmu účtu obmedzený a váš účet bude nakoniec deaktivovaný."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Ak chcete naďalej používať ${ MAIL_APP_NAME } s prémiovými funkciami, vyberte si predplatné a možnosti platby."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Skúšobná verzia končí ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11435,6 +11455,9 @@
       "You currently have": [
         "Aktuálne máte"
       ],
+      "You have been invited to join ${ PASS_APP_NAME }": [
+        "Dostali ste pozvanie pripojiť sa do ${ PASS_APP_NAME }"
+      ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Vaša organizácia má prístup k ${ free }. Ak chcete získať prístup k prémiovým funkciám ${ appName }, požiadajte správcu vašej organizácie o upgrade."
       ]
@@ -11450,6 +11473,9 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Všetky ${ BRAND_NAME } Plus služby.${ br }Jedno jednoduché predplatné."
+      ],
+      "Create a ${ PASS_APP_NAME } account": [
+        "Vytvoriť účet ${ PASS_APP_NAME }"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Vytvorte svoj ${ BRAND_NAME } účet"
