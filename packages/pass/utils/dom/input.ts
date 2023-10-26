@@ -9,7 +9,7 @@ const containsTextNode = (el: HTMLElement) =>
  * bounding element - adapt as needed */
 const BOUNDING_ELEMENT_OFFSET: RectOffset = { x: 10, y: 0 };
 const BOUNDING_ELEMENT_MAX_WIDTH_RATIO = 1.2;
-const INVALID_BOUNDING_TAGS = ['TD', 'TR'];
+const INVALID_BOUNDING_TAGS = ['TD', 'TR', 'FORM'];
 
 /* Recursively get the top-most "bounding" element
  * for an input element : each parent must only
@@ -65,14 +65,16 @@ export const findBoundingInputElement = (
      * necessary style information that does not introduce any
      * unwanted offsets that could affect the injected icon's
      * positioning */
+    const currStyles = getComputedStyle(curr);
+
     if (!isInput) {
-        const pb = pixelParser(getComputedStyle(curr).paddingBottom);
-        const pt = pixelParser(getComputedStyle(curr).paddingTop);
+        const pb = pixelParser(currStyles.paddingBottom);
+        const pt = pixelParser(currStyles.paddingTop);
         if (pb > 1 || pt > 1) return curr;
     }
 
-    const mb = pixelParser(getComputedStyle(curr).marginBottom);
-    const mt = pixelParser(getComputedStyle(curr).marginTop);
+    const mb = pixelParser(currStyles.marginBottom);
+    const mt = pixelParser(currStyles.marginTop);
     if (mb > 1 || mt > 1) return curr;
 
     const parent = curr.parentElement!;
