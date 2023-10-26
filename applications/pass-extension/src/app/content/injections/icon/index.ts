@@ -169,6 +169,17 @@ export const cleanupInjectionStyles = ({ control, input }: Pick<InjectionElement
 const applyIconInjectionStyles = (elements: InjectionElements, shared: SharedInjectionOptions) => {
     const { icon, input } = elements;
     const styles = computeIconInjectionStyles(elements, shared);
+
+    /* Handle a specific scenario where input has transitions or
+     * animations set, which could affect width change detection
+     * and repositioning triggers. To avoid unwanted side-effects
+     * when applying the injection style, temporarily disable these
+     * properties */
+    const { transition, animation } = input.style;
+    input.style.setProperty('transition', 'none');
+    input.style.setProperty('animation', 'none');
+
+    /* Get the width of the input element before applying the injection styles */
     const widthBefore = input.getBoundingClientRect().width;
 
     icon.style.top = styles.icon.top;
@@ -178,20 +189,27 @@ const applyIconInjectionStyles = (elements: InjectionElements, shared: SharedInj
     icon.style.setProperty(`--control-lineheight`, styles.icon.size);
     icon.style.setProperty(`--control-fontsize`, pixelEncoder(styles.icon.fontSize));
 
-    /* Content-script may be destroyed and re-injected
-     * on extension update or on code hot-reload. Keep
-     * track of the previous input styles for clean-up */
+    /* Store the original input styles to handle potential clean-up
+     * on extension updates or code hot-reload. */
     input.setAttribute(INPUT_BASE_STYLES_ATTR, JSON.stringify({ 'padding-right': input.style.paddingRight }));
+
     input.style.setProperty('padding-right', styles.input.paddingRight, 'important');
     const widthAfter = input.getBoundingClientRect().width;
 
-    /* when dealing with `content-box` box-sized elements or certain
-     * flexbox edge-cases : adapting the padding may lead to input width
-     * growing - if we detect this: remove the padding override. */
+    /* If the input width has increased due to padding, remove the override
+     * and set it back to its original value (This can hapen on `content-box
+     * box-sized elements or certain flexbox edge-cases ) */
     if (widthAfter !== widthBefore) {
         input.style.removeProperty('padding-right');
         input.style.setProperty('padding-right', input.style.paddingRight);
     }
+
+    /* Restore transition and animation properties in the next rendering frame
+     * to ensure they work as expected. */
+    requestAnimationFrame(() => {
+        input.style.setProperty('transition', transition);
+        input.style.setProperty('animation', animation);
+    });
 };
 
 /* The injection styles application is a two pass process :
