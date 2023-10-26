@@ -2,7 +2,7 @@ import type { VaultKey } from '@proton/pass/types';
 import { ShareType } from '@proton/pass/types';
 
 import { createShareManager } from './share-manager';
-import { generateKey, getSymmetricKey } from './utils';
+import { generateKey, getSymmetricKey } from './utils/crypto-helpers';
 import { PassCryptoShareError, PassCryptoVaultError } from './utils/errors';
 import { TEST_USER_KEY_ID, createRandomShare } from './utils/testing';
 
