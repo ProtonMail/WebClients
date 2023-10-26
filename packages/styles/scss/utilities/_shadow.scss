@@ -5,12 +5,25 @@
 		--shadow-#{$type}: var(--shadow-#{$type}-offset)
 			rgb(var(--shadow-color, var(--shadow-default-color)) / var(--shadow-#{$type}-opacity));
 	}
-
-	@include responsive-classes(shadow-#{$type}) {
-		box-shadow: var(--shadow-#{$type}-offset)
-			rgb(var(--shadow-color, var(--shadow-default-color)) / var(--shadow-#{$type}-opacity));
-	}
 }
+
+@include responsive-classes(
+	(
+		shadow-norm: (
+			box-shadow: var(--shadow-norm-offset)
+				rgb(var(--shadow-color, var(--shadow-default-color)) / var(--shadow-norm-opacity)),
+		),
+
+		shadow-lifted: (
+			box-shadow: var(--shadow-lifted-offset)
+				rgb(var(--shadow-color, var(--shadow-default-color)) / var(--shadow-lifted-opacity)),
+		),
+
+		shadow-none: (
+			box-shadow: none,
+		),
+	)
+);
 
 .shadow-color-norm {
 	--shadow-color: var(--shadow-default-color);
@@ -18,8 +31,4 @@
 
 .shadow-color-primary {
 	--shadow-color: var(--shadow-primary-color);
-}
-
-@include responsive-classes(shadow-none) {
-	box-shadow: none;
 }
