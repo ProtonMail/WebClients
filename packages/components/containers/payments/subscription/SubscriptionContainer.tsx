@@ -29,7 +29,6 @@ import {
     DEFAULT_CYCLE,
     PASS_APP_NAME,
     PLANS,
-    PLAN_NAMES,
     PLAN_TYPES,
     isFreeSubscription,
 } from '@proton/shared/lib/constants';
@@ -40,14 +39,12 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasBonuses } from '@proton/shared/lib/helpers/organization';
 import { getPlanFromCheckout, hasPlanIDs, supportAddons, switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { getInitials } from '@proton/shared/lib/helpers/string';
 import {
     getHasB2BPlan,
     getHasVpnB2BPlan,
     getIsB2BPlan,
     getNormalCycleFromCustomCycle,
     getPlanIDs,
-    getPrimaryPlan,
     hasMigrationDiscount,
     hasNewVisionary,
     hasVPN,
@@ -65,9 +62,8 @@ import {
     SubscriptionModel,
 } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
-import { FREE_PLAN, getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
+import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
-import clsx from '@proton/utils/clsx';
 import debounce from '@proton/utils/debounce';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -80,7 +76,6 @@ import {
     useGetCalendars,
     useModals,
     useNotifications,
-    useSubscription,
     useUser,
     useVPNServersCount,
 } from '../../../hooks';
@@ -130,43 +125,6 @@ const BACK: Partial<{ [key in SUBSCRIPTION_STEPS]: SUBSCRIPTION_STEPS }> = {
 
 const getCodes = ({ gift, coupon }: Model): string[] => [gift, coupon].filter(isTruthy);
 
-const UserInfo = ({ className, app, avatar }: { className?: string; app: APP_NAMES; avatar?: boolean }) => {
-    const [user] = useUser();
-
-    const [subscription] = useSubscription();
-    const primaryPlan = getPrimaryPlan(subscription, app);
-    const planTitle = primaryPlan?.Title || PLAN_NAMES[FREE_PLAN.Name as PLANS];
-
-    const { Email, DisplayName, Name } = user;
-    const nameToDisplay = DisplayName || Name;
-    const initials = getInitials(nameToDisplay || Email || '');
-
-    const name = Email ? Email : nameToDisplay;
-
-    return (
-        <div className={clsx('flex flex-nowrap flex-align-items-center gap-3', className)}>
-            {avatar && (
-                <span
-                    className="my-auto rounded bg-weak p-1 inline-block relative flex flex-item-noshrink min-w-custom min-h-custom"
-                    aria-hidden="true"
-                    style={{
-                        '--min-w-custom': '2rem',
-                        '--min-h-custom': '2rem',
-                    }}
-                >
-                    <span className="m-auto">{initials}</span>
-                </span>
-            )}
-            <div className="flex gap-2">
-                <span className="text-ellipsis" title={name}>
-                    {name}
-                </span>
-                <span className="color-weak">({planTitle})</span>
-            </div>
-        </div>
-    );
-};
-
 interface RenderProps {
     title: string;
     content: ReactNode;
@@ -188,7 +146,6 @@ export interface SubscriptionContainerProps {
     disableThanksStep?: boolean;
     defaultAudience?: Audience;
     disableCycleSelector?: boolean;
-    showUserInfo?: boolean;
     defaultSelectedProductPlans?: SelectedProductPlans;
     onSubscribed?: () => void;
     onUnsubscribed?: () => void;
@@ -216,7 +173,6 @@ const SubscriptionContainer = ({
     onCancel,
     disablePlanSelection,
     disableCycleSelector: maybeDisableCycleSelector,
-    showUserInfo = false,
     disableThanksStep,
     defaultAudience = Audience.B2C,
     defaultSelectedProductPlans,
@@ -846,8 +802,6 @@ const SubscriptionContainer = ({
             )}
             {model.step === SUBSCRIPTION_STEPS.CHECKOUT && (
                 <>
-                    {showUserInfo && <UserInfo app={app} className="mb-4 mt-2" />}
-
                     <div className="subscriptionCheckout-top-container">
                         <div className="flex-item-fluid on-mobile-w100 pr-4 md:pr-0 lg:pr-6 pt-6">
                             <div className="mx-auto max-w37e subscriptionCheckout-options ">
