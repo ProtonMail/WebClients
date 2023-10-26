@@ -2765,9 +2765,6 @@
       "Please refresh the page or try again later.": [
         "ページを再読み込みするか、後でもう一度お試しください。"
       ],
-      "Something went wrong": [
-        "不具合が発生しました"
-      ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "このページをロードできません。ページを再読み込みするかインターネットの接続状況を確認してください。"
       ],
@@ -2801,11 +2798,6 @@
     "Event canceled status badge": {
       "canceled": [
         "中止"
-      ]
-    },
-    "Event form": {
-      "${ numberOfAttendees } participants": [
-        "${ numberOfAttendees }人の参加者"
       ]
     },
     "Event info in search view; event duration": {
@@ -3721,9 +3713,6 @@
       ],
       "Import mailbox": [
         "メールボックスのインポート"
-      ],
-      "Importing your data from ${ fromEmail } to ${ toEmail }.": [
-        "データを ${ fromEmail } から ${ toEmail } にインポートしています。"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "データを ${ importedEmailAddress } から ${ toEmail } にインポートしています。"
@@ -4777,9 +4766,6 @@
       "Add public holidays": [
         "祝日を追加"
       ],
-      "Cannot add more calendars": [
-        "カレンダーをこれ以上追加できません"
-      ],
       "Edit calendar": [
         "カレンダーの編集"
       ],
@@ -5623,11 +5609,6 @@
     "Settings update growler warning": {
       "Failed to update settings": [
         "設定の更新に失敗しました"
-      ]
-    },
-    "Share calendar assistive text": {
-      "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
-        "非 ${ BRAND_NAME } ユーザーを招待するには、リンクでカレンダーを共有します."
       ]
     },
     "Share calendar max shares reached error": {
