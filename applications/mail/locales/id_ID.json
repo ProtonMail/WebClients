@@ -196,6 +196,9 @@
       "Close navigation": [
         "Tutup navigasi"
       ],
+      "Close the checklist": [
+        "Tutup daftar centang"
+      ],
       "Close this banner": [
         "Tutup spanduk ini"
       ],
@@ -3969,6 +3972,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -3983,6 +3989,9 @@
       ],
       "Megabytes": [
         "Megabyte"
+      ],
+      "Terabytes": [
+        "Terabyte"
       ]
     },
     "Filter": {
@@ -4169,16 +4178,19 @@
         "Ubah ${ strongText } ke alamat ${ BRAND_NAME } Anda"
       ],
       "Changed accounts": [
-        "Berubah akun"
+        "Akun yang diubah"
       ],
       "Checklist complete": [
-        "Daftar ceklis selesai"
+        "Daftar centang selesai"
       ],
       "Close": [
         "Tutup"
       ],
+      "Closing this means giving up the free storage bonus.": [
+        "Dengan menutup daftar ini, Anda tidak akan lagi dapat memperoleh bonus kuota cuma-cuma yang ditawarkan."
+      ],
       "Congratulation, you completed all the steps!": [
-        "Selamat, Anda menyelesaikan semua tahap!"
+        "Selamat, Anda telah menyelesaikan seluruh tahapan!"
       ],
       "Congratulation, you finished!": [
         "Selamat, Anda sudah selesai!"
@@ -4214,7 +4226,7 @@
         "Terus gunakan ${ MAIL_APP_NAME } untuk menemukan lebih banyak cara ${ BRAND_NAME } melindungi privasi Anda dan menyederhanakan pengiriman surel."
       ],
       "Learn more": [
-        "Lebih lanjut"
+        "Pelajari lebih lanjut"
       ],
       "Maybe later": [
         "Mungkin nanti"
@@ -4223,10 +4235,10 @@
         "Bagus! Anda telah memperbarui seluruh layanan pada kategori ini."
       ],
       "Open checklist": [
-        "Buka daftar ceklis"
+        "Buka daftar centang"
       ],
       "Open checklist and get free storage": [
-        "Buka daftar centang dan dapatkan penyimpanan gratis"
+        "Buka daftar centang dan dapatkan kuota penyimpanan gratis"
       ],
       "Popular online services": [
         "Layanan online populer"
@@ -7353,7 +7365,7 @@
         "Makanan dan minuman"
       ],
       "Gaming": [
-        "Bermain Game"
+        "Permainan"
       ],
       "Most popular": [
         "Terpopuler"
