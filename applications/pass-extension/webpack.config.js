@@ -104,6 +104,7 @@ module.exports = {
         ...getOptimizations({ isProduction: production }),
         runtimeChunk: false,
         splitChunks: undefined,
+        usedExports: true,
     },
     resolve: {
         extensions: ['.js', '.tsx', '.ts'],
