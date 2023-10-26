@@ -3,7 +3,7 @@ import { MouseEvent } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, Tooltip } from '@proton/components';
+import { Icon, Tooltip, useFlag } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
@@ -91,11 +91,14 @@ const ItemHoverButtons = ({
 
     const buttonTxt = isMessage(element) ? c('Alt').t`Star message` : c('Alt').t`Star conversation`;
 
+    const isDelightMailListEnabled = useFlag('DelightMailList');
+
     return (
         <>
             <div
                 className={clsx(
-                    'hidden md:flex flex-nowrap justify-space-between relative item-hover-action-buttons',
+                    'hidden flex-nowrap justify-space-between relative',
+                    isDelightMailListEnabled ? 'delight-item-hover-action-buttons gap-1' : 'item-hover-action-buttons',
                     snoozeDropdownState && snoozedElement?.ID === element.ID
                         ? 'item-hover-action-buttons--dropdown-open'
                         : '',

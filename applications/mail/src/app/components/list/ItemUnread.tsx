@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Icon, Tooltip } from '@proton/components';
+import clsx from '@proton/utils/clsx';
 
 import { isUnread } from '../../helpers/elements';
 import { Element } from '../../models/element';
@@ -21,7 +22,7 @@ const ItemUnread = ({ element, labelID, className, isSelected }: Props) => {
 
     return (
         <Tooltip title={c('Alt').t`Unread email`}>
-            <span className={className}>
+            <span className={clsx('flex items-center shrink-0 z-index-1', className)}>
                 <Icon
                     name="circle-filled"
                     size={12}

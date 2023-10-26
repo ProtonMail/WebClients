@@ -47,7 +47,7 @@ const LabelStack = ({
     return (
         <ul
             className={clsx([
-                'label-stack unstyled m-0 inline-flex items-center stop-propagation rounded-full',
+                'label-stack unstyled m-0 inline-flex items-center stop-propagation rounded-sm',
                 isStacked ? `is-stacked ${leftToRight ? 'flex-row-reverse' : 'flex-row'}` : 'flex-row',
                 className,
             ])}

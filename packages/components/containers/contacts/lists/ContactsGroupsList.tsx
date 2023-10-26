@@ -5,7 +5,6 @@ import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import clsx from '@proton/utils/clsx';
 
 import { useContactFocus } from '../../../hooks/useContactFocus';
 import { useContactHotkeys } from '../../../hooks/useContactHotkeys';
@@ -26,7 +25,6 @@ const ContactsGroupsList = ({
     groups,
     groupsEmailsMap,
     onCheckOne,
-    isLargeViewport = true,
     checkedIDs,
     onClick,
     isDrawer = false,
@@ -61,8 +59,8 @@ const ContactsGroupsList = ({
     );
 
     return (
-        <div ref={elementRef} className={clsx(isLargeViewport ? 'items-column-list' : 'items-column-list--mobile')}>
-            <div ref={listContainerRef} className="items-column-list-inner items-column-list-inner--border-none">
+        <div ref={elementRef} className="h-full">
+            <div ref={listContainerRef} className="min-h-full">
                 <AutoSizer>
                     {({ height, width }) => (
                         <List

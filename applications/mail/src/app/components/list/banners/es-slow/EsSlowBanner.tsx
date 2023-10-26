@@ -2,7 +2,7 @@ import { memo, useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon, InlineLinkButton, useUser } from '@proton/components';
+import { Icon, InlineLinkButton, useFlag, useUser } from '@proton/components';
 import { sendSlowSearchReport } from '@proton/encrypted-search';
 import clsx from '@proton/utils/clsx';
 
@@ -15,6 +15,8 @@ interface Props {
 const EsSlowBanner = ({ className }: Props) => {
     const [{ ID: userID }] = useUser();
     const { openDropdown, setTemporaryToggleOff } = useEncryptedSearchContext();
+
+    const isDelightMailListEnabled = useFlag('DelightMailList');
 
     useMemo(() => {
         void sendSlowSearchReport(userID);
@@ -38,7 +40,13 @@ const EsSlowBanner = ({ className }: Props) => {
     );
 
     return (
-        <div className={clsx(['bg-weak rounded mx-2 px-4 py-2 flex flex-nowrap', className])}>
+        <div
+            className={clsx([
+                'rounded mx-2 px-4 py-2 flex flex-nowrap',
+                !isDelightMailListEnabled && 'bg-weak',
+                className,
+            ])}
+        >
             <div className="shrink-0">
                 <Icon name="magnifier" className="mr-2" />
             </div>
