@@ -884,6 +884,12 @@
       "Sign in": [
         "Oturum aç"
       ],
+      "Sign in with password": [
+        "Parola ile oturum açın"
+      ],
+      "Sign in with SSO": [
+        "Tek oturum açma ile oturum açın"
+      ],
       "Sign out": [
         "Oturumu kapat"
       ],
@@ -1374,6 +1380,21 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 gün içinde ücret iade garantisi"
+      ]
+    },
+    "bf2023: renew": {
+      "${ n } month": [
+        "${ n } ay",
+        "ilk ${ n } ay"
+      ],
+      "the first month": [
+        "ilk ay"
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
+        "Özel olarak indirimli fiyat olan ${ discountedPrice } ${ discountedMonths } için geçerlidir. Daha sonra indirimli fiyat olan ${ nextPrice } üzerinden ${ nextMonths } için otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
+        "Özel olarak indirimli fiyat olan ${ discountedPrice } ilk ay için geçerlidir. Daha sonra aylık ${ nextPrice } üzerinden otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ]
     },
     "bf2023: Tooltip": {
@@ -3129,6 +3150,17 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Kendimizi geliştirmemize yardımcı olun!"
+      ]
+    },
+    "drive_signup_2023: Info": {
+      "Advanced sharing security": [
+        "Gelişmiş paylaşım güvenliği"
+      ],
+      "Encrypted cloud storage for all your files": [
+        "Tüm dosyalarınız için şifrelenmiş bulut depolama alanı"
+      ],
+      "Secure cloud storage and file sharing that protects your data": [
+        "Verilerinizi koruyan güvenli bulut depolama alanı ve dosya paylaşımı"
       ]
     },
     "Duration": {
@@ -5401,6 +5433,9 @@
       "${ firstRemainingCalendarName } will be set as default calendar.": [
         "${ firstRemainingCalendarName } varsayılan takvim olarak ayarlanacak."
       ],
+      "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
+        "${ inviterEmailJSX } sizinle ${ PASS_APP_NAME } verilerini paylaşmak istiyor"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME }, oturum açmak ve posta kutusu şifresini çözmek için tek bir parola kullanabilir. Tek parola kipine geçmek için kullanmak istediğiniz tek parolayı yazın ve Kaydet üzerine tıklayın."
       ],
@@ -6095,6 +6130,9 @@
       ],
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } tarifesini edinin"
+      ],
+      "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
+        "Bir ${ BRAND_NAME } hesabı açarak ve daveti kabul ederek verilere erişebilirsiniz."
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Kod için, kullanmayı düşündüğünüz hizmet gibi açıklayıcı bir ad yazın ve etkin özel etki alanı adreslerinizden birini seçin. Bu kod ile yalnızca bu adres e-posta gönderebilir."
@@ -9249,8 +9287,8 @@
       "Create a new ${ appName } account": [
         "Yeni bir ${ appName } hesabı açın"
       ],
-      "Find ${ BRAND_NAME } Account username": [
-        "${ BRAND_NAME } hesabı kullanıcı adınızı bulun"
+      "Find your ${ BRAND_NAME } Account username": [
+        "${ BRAND_NAME } hesabınızın kullanıcı adını bulun"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "${ BRAND_NAME } hesabınızın parolasını unuttunuz mu? Kurtarma kodu, e-posta ya da SMS ile sıfırlayarak ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } gibi hizmetlere yeniden erişin."
@@ -9913,12 +9951,6 @@
       "User session management": [
         "Kullanıcı oturumları yönetimi"
       ],
-      "Vault and Item sharing": [
-        "Kasa ve öge paylaşımı"
-      ],
-      "Vault and Item sharing (coming soon)": [
-        "Kasa ve öge paylaşımı (yakında)"
-      ],
       "Vault sharing (up to ${ n } person)": [
         "Kasa paylaşma (${ n } kişiye kadar)",
         "Kasa paylaşma (${ n } kişiye kadar)"
@@ -9944,6 +9976,17 @@
       ],
       "Team management": [
         "Ekip yönetimi"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanımdan kaldırılacak."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Deneme süreniz ${ formattedPeriodEndDate } tarihinde sona eriyor"
       ]
     },
     "new_plans: info": {
@@ -10033,17 +10076,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat ücretinizi kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanımdan kaldırılacak."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Deneme süreniz ${ formattedPeriodEndDate } tarihinde sona eriyor"
       ]
     },
     "new_plans: Label": {
@@ -11043,6 +11075,9 @@
       "You currently have": [
         "Şu anda kullanabilecekleriniz"
       ],
+      "You have been invited to join ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } ailesine davet edildiniz"
+      ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Kuruluşunuzun ${ free } erişimi var. Ücretli ${ appName } özelliklerine erişmek istiyorsanız, lütfen kuruluşunuzun yöneticisinden tarifeyi yükseltmesini isteyin."
       ]
@@ -11058,6 +11093,9 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Tüm ${ BRAND_NAME } Plus hizmetleri.${ br }Tek bir kolay abonelik."
+      ],
+      "Create a ${ PASS_APP_NAME } account": [
+        "Bir ${ PASS_APP_NAME } hesabı açın"
       ],
       "Create your ${ BRAND_NAME } account": [
         "${ BRAND_NAME } hesabınızı açın"
@@ -13533,6 +13571,9 @@
       ],
       "Sign in to join the Beta program": [
         "Beta programına katılmak için oturum açın"
+      ],
+      "Sign in to your organization": [
+        "Kuruluşunuzda oturum açın"
       ],
       "Sign in with 2FA": [
         "2 adımlı doğrulama ile oturum a"

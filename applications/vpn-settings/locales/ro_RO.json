@@ -18,7 +18,7 @@
         "Adăugare adresă"
       ],
       "Add credit / debit card": [
-        "Adăugare card de credit / debit"
+        "Adăugare card de credit/debit"
       ],
       "Add credits": [
         "Adăugare credite"
@@ -430,6 +430,12 @@
       ],
       "Sign in": [
         "Autentificare"
+      ],
+      "Sign in with password": [
+        "Autentificare cu parolă"
+      ],
+      "Sign in with SSO": [
+        "Autentificare cu SSO"
       ],
       "Sign out": [
         "Deconectare"
@@ -2614,7 +2620,7 @@
         "Trebuie ${ vpnPlus } pentru opțiunea Secure Core."
       ],
       "(${ serverPrice } /month)": [
-        "(${ serverPrice } / lună)"
+        "(${ serverPrice }/lună)"
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Obțineți o adresă ${ BRAND_NAME }** pentru a utiliza toate serviciile ${ BRAND_NAME_TWO }, inclusiv ${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }."
@@ -2671,9 +2677,9 @@
         "Se adaugă ${ addedServerCount } de servere poartă de acces"
       ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
-        "Se adaugă serverul poartă de acces: ${ serverNumber } / ${ total }",
-        "Se adaugă serverele poartă de acces: ${ serverNumber } / ${ total }",
-        "Se adaugă serverele poartă de acces: ${ serverNumber } / ${ total }"
+        "Se adaugă serverul poartă de acces: ${ serverNumber }/${ total }",
+        "Se adaugă serverele poartă de acces: ${ serverNumber }/${ total }",
+        "Se adaugă serverele poartă de acces: ${ serverNumber }/${ total }"
       ],
       "Additional options": [
         "Opțiuni adiționale"
@@ -2792,9 +2798,9 @@
         "Creați prima poartă de acces"
       ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
-        "Creare server poartă de acces: ${ serverNumber } / ${ total }",
-        "Creare server poartă de acces: ${ serverNumber } / ${ total }",
-        "Creare server poartă de acces: ${ serverNumber } / ${ total }"
+        "Creare server poartă de acces: ${ serverNumber }/${ total }",
+        "Creare server poartă de acces: ${ serverNumber }/${ total }",
+        "Creare server poartă de acces: ${ serverNumber }/${ total }"
       ],
       "Creating your account": [
         "Creare cont"
@@ -4442,8 +4448,8 @@
       "Create a new ${ appName } account": [
         "Creare cont ${ appName }"
       ],
-      "Find ${ BRAND_NAME } Account username": [
-        "Găsiți numele de utilizator al contului ${ BRAND_NAME }"
+      "Find your ${ BRAND_NAME } Account username": [
+        "Găsiți-vă numele de utilizator al contului ${ BRAND_NAME }"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "V-ați uitat parola contului ${ BRAND_NAME }? Resetați-o aici folosind un cod de recuperare, e-mail sau SMS și redobândiți accesul la ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } și multe altele."
@@ -4547,8 +4553,8 @@
       ],
       "${ n } email address": [
         "O adresă de e-mail",
-        "${ n } adrese de e-mail / aliasuri",
-        "${ n } de adrese de e-mail / aliasuri"
+        "${ n } adrese de e-mail/aliasuri",
+        "${ n } de adrese de e-mail/aliasuri"
       ],
       "${ n } email address per user": [
         "O adresă per utilizator",
@@ -4705,7 +4711,7 @@
         "Asistent de importare Easy Switch"
       ],
       "Email client support (via IMAP/SMTP)": [
-        "Suport client de e-mail (prin IMAP / SMTP)"
+        "Suport client de e-mail (prin IMAP/SMTP)"
       ],
       "Enables HIPAA compliance": [
         "Se conformează regulilor HIPAA"
@@ -4755,7 +4761,7 @@
         "Autentificator A2F integrat"
       ],
       "Kill switch/always-on VPN": [
-        "Întrerupător de urgență / VPN permanent"
+        "Întrerupător de urgență/VPN permanent"
       ],
       "Limited support": [
         "Asistență limitată"
@@ -4892,12 +4898,6 @@
       ],
       "User session management": [
         "Gestionare sesiuni utilizator"
-      ],
-      "Vault and Item sharing": [
-        "Partajarea seifurilor și a datelor"
-      ],
-      "Vault and Item sharing (coming soon)": [
-        "Partajarea seifurilor și a datelor (în curând)"
       ],
       "Vault sharing (up to ${ n } person)": [
         "Partajare seif (maxim ${ n } persoană)",
@@ -5096,7 +5096,7 @@
         "Creați până la ${ n } de calendare sau adăugați calendare de la prieteni, familie, colegi și organizații"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
-        "Creați până la ${ n } adrese / aliasuri ce pot fi atribuite membrilor familiei. Folosiți-le pentru autentificările online, de exemplu ioncumparaturi@${ domain } pentru conturi de cumpărături."
+        "Creați până la ${ n } adrese/aliasuri ce pot fi atribuite membrilor familiei. Folosiți-le pentru autentificările online, de exemplu ioncumparaturi@${ domain } pentru conturi de cumpărături."
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului"
@@ -5204,7 +5204,7 @@
         "Trimiteți e-mailuri către grupuri mari rapid și ușor prin crearea a cât mai multe grupuri de contact de care aveți nevoie (până la 100 de contacte per grup)."
       ],
       "Set up filters to automatically reply to, sort, and/or label your emails": [
-        "Configurați filtre pentru a răspunde automat, sorta și / sau eticheta e-mailurile."
+        "Configurați filtre pentru a răspunde automat, sorta și/sau eticheta e-mailurile."
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
         "Partajați fișierele sau folderele cu oricine utilizând legături sigure și partajabile."
@@ -5240,7 +5240,7 @@
         "Nu păstrăm jurnale ale activității online și nu înregistrăm metadate care vă pot compromite confidențialitatea."
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
-        "Ne-am angajat să ajutăm clienții supuși reglementărilor HIPAA / HITECH să asigure informațiile de sănătate protejate (PHI). BAA-urile semnate sunt disponibile pentru toți clienții ${ BRAND_NAME } pentru afaceri."
+        "Ne-am angajat să ajutăm clienții supuși reglementărilor HIPAA/HITECH să asigure informațiile de sănătate protejate (PHI). BAA-urile semnate sunt disponibile pentru toți clienții ${ BRAND_NAME } pentru afaceri."
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "Când conexiunea trece prin VPN-ul nostru, DNS face interogări prin tunelul VPN criptat, adăugând asta la confidențialitatea și securitatea online."
@@ -5448,10 +5448,10 @@
     },
     "Payment method option": {
       "Credit/debit card": [
-        "Card de credit / debit"
+        "Card de credit/debit"
       ],
       "New credit/debit card": [
-        "Card nou de credit / debit"
+        "Card nou de credit/debit"
       ]
     },
     "Placeholder": {
@@ -6675,7 +6675,7 @@
         "Adăugare adresă"
       ],
       "Add credit/debit card": [
-        "Adăugare card de credit / debit"
+        "Adăugare card de credit/debit"
       ],
       "Add credits": [
         "Adăugare credite"
@@ -6850,7 +6850,7 @@
         "Descărcări"
       ],
       "Edit credit/debit card": [
-        "Editare card de credit / debit"
+        "Editare card de credit/debit"
       ],
       "Edit display name": [
         "Editare nume afișat"
@@ -7069,6 +7069,9 @@
       ],
       "Sign in to join the Beta program": [
         "Autentificați-vă pentru a vă alătura programului beta"
+      ],
+      "Sign in to your organization": [
+        "Autentificare la organizație"
       ],
       "Sign in with 2FA": [
         "Autentificare A2F"
@@ -7373,7 +7376,7 @@
     },
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Accesa la servere Secure Core, descărcări rapide P2P / BitTorrent, Tor prin VPN și altele."
+        "Accesa la servere Secure Core, descărcări rapide P2P/BitTorrent, Tor prin VPN și altele."
       ]
     },
     "Warning": {

@@ -431,6 +431,12 @@
       "Sign in": [
         "Masuk"
       ],
+      "Sign in with password": [
+        "Masuk dengan kata sandi"
+      ],
+      "Sign in with SSO": [
+        "Masuk dengan SSO"
+      ],
       "Sign out": [
         "Keluar"
       ],
@@ -2380,6 +2386,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -2394,6 +2403,9 @@
       ],
       "Megabytes": [
         "Megabyte"
+      ],
+      "Terabytes": [
+        "Terabyte"
       ]
     },
     "Font face option": {
@@ -4358,8 +4370,8 @@
       "Create a new ${ appName } account": [
         "Buat akun ${ appName } baru"
       ],
-      "Find ${ BRAND_NAME } Account username": [
-        "Temukan nama pengguna Akun ${ BRAND_NAME }"
+      "Find your ${ BRAND_NAME } Account username": [
+        "Temukan nama pengguna Akun ${ BRAND_NAME } Anda"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Lupakan kata sandi Akun ${ BRAND_NAME } Anda? Atur ulang kata sandi Anda di sini dengan menggunakan kode, surel, atau SMS pemulihan untuk kembali mengakses ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, dan masih banyak lagi."
@@ -4772,12 +4784,6 @@
       ],
       "User session management": [
         "Pengelolaan sesi pengguna"
-      ],
-      "Vault and Item sharing": [
-        "Pembagian brankas dan item"
-      ],
-      "Vault and Item sharing (coming soon)": [
-        "Pembagian brankas dan item (segera hadir)"
       ],
       "Vault sharing (up to ${ n } people)": [
         "Berbagi berkas (hingga ${ n } pengguna)"
@@ -6865,6 +6871,9 @@
       ],
       "Sign in to join the Beta program": [
         "Silakan masuk untuk bergabung ke program Beta"
+      ],
+      "Sign in to your organization": [
+        "Masuk ke organisasi Anda"
       ],
       "Sign in with 2FA": [
         "Masuk dengan 2FA"

@@ -80,9 +80,6 @@
       "Contact support": [
         "Kontakt support"
       ],
-      "Contact us": [
-        "Kontakt os"
-      ],
       "Continue": [
         "Fortsæt"
       ],
@@ -1645,9 +1642,6 @@
       ]
     },
     "Description": {
-      "ProtonMail logo and a plus sign": [
-        "ProtonMail-logo og et plustegn"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Adskil forskellige aspekter af dit liv, med flere e-mailadresser, og lås op for flere premium-funktioner, når du opgraderer."
       ]
@@ -2157,6 +2151,18 @@
       ]
     },
     "familyOffer_2023:Title": {
+      "Add a user to your ${ PLAN_NAMES.visionary2022 } account": [
+        "Tilføj en bruger til din ${ PLAN_NAMES.visionary2022 } konto"
+      ],
+      "Delete family group?": [
+        "Slet familiegruppe?"
+      ],
+      "Delete organization?": [
+        "Slet organisation?"
+      ],
+      "Family name": [
+        "Familienavn"
+      ],
       "Introducing ${ planName }": [
         "Introducerer ${ planName }"
       ],
@@ -2296,6 +2302,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -2314,6 +2323,10 @@
       "Megabyte": [
         "Megabyte",
         "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabyte"
       ]
     },
     "Font face option": {
@@ -4143,11 +4156,6 @@
         "Udløbet"
       ]
     },
-    "Label, credit card": {
-      "ZIP code": [
-        "Postnummer"
-      ]
-    },
     "Link": {
       "Add a gift code": [
         "Tilføj en gavekode"
@@ -4294,9 +4302,6 @@
       "Create a new ${ appName } account": [
         "Opret en ny ${ appName }-konto"
       ],
-      "Find ${ BRAND_NAME } Account username": [
-        "Find brugernavn til ${ BRAND_NAME }-konto"
-      ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Glemt adgangskoden til din ${ BRAND_NAME }-konto? Nulstil den her ved hjælp af en gendannelseskode, e-mail eller SMS, og få adgang til din ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og mere."
       ],
@@ -4387,8 +4392,7 @@
         "${ n } kalendere"
       ],
       "${ n } calendar per user": [
-        "${ n } kalender pr. bruger",
-        "${ n } kalendere pr. bruger"
+        "${ n } kalender pr. bruger"
       ],
       "${ n } custom email domain": [
         "${ n } brugerdefineret e-maildomæne",
@@ -4718,12 +4722,6 @@
       "User session management": [
         "Administration af brugersessioner"
       ],
-      "Vault and Item sharing": [
-        "Boks- og elementdeling"
-      ],
-      "Vault and Item sharing (coming soon)": [
-        "Boks og element-deling (kommer snart)"
-      ],
       "Vault sharing (up to ${ n } person)": [
         "Deling af boks (op til ${ n } person)",
         "Deling af boks (op til ${ n } person)"
@@ -4744,9 +4742,6 @@
       ]
     },
     "new_plans: heading": {
-      "Support": [
-        "Støtte"
-      ],
       "Team management": [
         "Brugeradministration"
       ]
@@ -5884,9 +5879,6 @@
       ]
     },
     "Subscription change warning": {
-      "Got it": [
-        "Forstået"
-      ],
       "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
         "Log ind på din Apple App Store-konto, og tryk på ${ subscriptions }."
       ],
@@ -5914,9 +5906,6 @@
     "Subscription renewal state": {
       "Are you sure?": [
         "Er du sikker?"
-      ],
-      "Disable": [
-        "Deaktivér"
       ],
       "Keep auto-pay": [
         "Behold automatisk betaling"
@@ -6534,9 +6523,6 @@
       "Pay invoice": [
         "Betal faktura"
       ],
-      "Payment failed": [
-        "Betaling mislykkedes"
-      ],
       "Payment methods": [
         "Betalingsmetoder"
       ],
@@ -6697,9 +6683,6 @@
       ],
       "Verifying your card...": [
         "Verificerer dit kort..."
-      ],
-      "Verifying your payment...": [
-        "Verificerer din betaling..."
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
         "Vi sender en e-mail til din nye adresse med instruktioner om, hvordan du gennemfører ændringen."
@@ -6885,9 +6868,6 @@
     "Warning": {
       "Are you sure you want to delete the phone number?": [
         "Er du sikker på, at du vil slette telefonnummeret?"
-      ],
-      "Are you sure you want to delete this address?": [
-        "Er du sikker på, at du vil slette denne adresse?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Ved at slette denne adresse vil du ikke længere kunne modtage daglige e-mailnotifikationer."
