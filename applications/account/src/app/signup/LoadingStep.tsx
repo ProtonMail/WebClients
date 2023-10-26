@@ -48,7 +48,7 @@ export const LoadingTextStepper = ({ steps }: { steps: string[] }) => {
                                     <Icon size={24} className="color-success" name="checkmark" />
                                 )}
                             </div>
-                            <div className="flex-item-fluid p-2 on-tiny-mobile-text-left">{step}</div>
+                            <div className="flex-item-fluid p-2 text-left">{step}</div>
                         </div>
                     </div>
                 );
