@@ -197,6 +197,9 @@
       "Close navigation": [
         "Fermer la navigation"
       ],
+      "Close the checklist": [
+        "Fermer la checklist"
+      ],
       "Close this banner": [
         "Fermer cette bannière"
       ],
@@ -1305,6 +1308,9 @@
       ]
     },
     "bf2023: Deal details": {
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus et ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "${ storageSize } storage": [
         "${ storageSize } d'espace de stockage"
       ],
@@ -1320,8 +1326,14 @@
       "6 users": [
         "6 utilisateurs"
       ],
+      "Access content worldwide": [
+        "Accès aux contenus dans le monde entier"
+      ],
       "Ad-blocker and malware protection": [
         "Bloqueur de publicité et protection contre les logiciels malveillants"
+      ],
+      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Toutes les fonctionnalités payantes de ${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Historique des versions plus détaillé"
@@ -1338,9 +1350,20 @@
         "Votre abonnement sera automatiquement renouvelé au tarif réduit habituel et pour une durée standard à la fin de votre cycle de facturation."
       ]
     },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "Garantie satisfait ou remboursé pendant 30 jours"
+      ]
+    },
     "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "Accédez aux contenus bloqués et naviguez de manière privée. Comprend plus de 3 000 serveurs répartis dans plus de 65 pays, les vitesses VPN les plus élevées, l'accès aux services de streaming dans le monde entier, un bloqueur de publicité, la protection contre les logiciels malveillants, des téléchargements BitTorrent rapides et bien d'autres fonctionnalités."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Accédez aux contenus des services de streaming, dont Netflix, Amazon Prime Video, Canal+, Disney+, France.tv, TF1, Eurosport France… où que vous soyez."
+      ],
+      "Bypass local internet blocks and censorship with our global network of servers.": [
+        "Contournez les blocages et la censure locale sur internet grâce à notre réseau mondial de serveurs."
       ],
       "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
         "Comprend la prise en charge de ${ domains } domaine de messagerie personnalisé, ${ addresses } adresses e-mail, ${ aliases } alias « hide-my-email », le partage de calendrier et bien d'autres fonctionnalités."
@@ -1348,8 +1371,14 @@
       "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Comprend la prise en charge de ${ domains } domaine de messagerie personnalisé, ${ addresses } adresses e-mail, un nombre illimité d'alias « hide-my-email », le partage de calendrier et bien d'autres fonctionnalités."
       ],
+      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "Sécurisez vos connexions sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Sécurisez votre messagerie et votre agenda grâce au chiffrement de bout en bout. Comprend la prise en charge de domaines de messagerie personnalisés, 15 adresses e-mail, un nombre illimité d'alias « hide-my-email », le partage de calendriers et bien d'autres fonctionnalités."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Sécurisez vos fichiers grâce au stockage cloud chiffré. Comprend l'historique des versions, le partage de fichiers chiffrés et de bien d'autres fonctionnalités."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "La fonctionnalité NetShield est spécialement conçue pour protéger vos appareils et accélérer votre navigation en bloquant les publicités, les traqueurs et les logiciels malveillants."
@@ -4272,6 +4301,9 @@
       ],
       "Close": [
         "Fermer"
+      ],
+      "Closing this means giving up the free storage bonus.": [
+        "En fermant, vous renoncez au bonus d'espace de stockage gratuit."
       ],
       "Congratulation, you completed all the steps!": [
         "Félicitations, vous avez effectué toutes les actions !"
