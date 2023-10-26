@@ -5,7 +5,6 @@
     "sideEffects": [
         "./src/lib/api/api.ts",
         "./src/lib/auth/authentication.ts",
-        "./src/lib/crypto/pass-crypto.ts",
         "./src/lib/globals/browser.ts"
     ],
     "scripts": {

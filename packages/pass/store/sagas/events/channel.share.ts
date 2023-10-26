@@ -4,9 +4,9 @@ import { all, call, fork, put, select, take } from 'redux-saga/effects';
 
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import type { EventManagerEvent } from '@proton/pass/lib/events/manager';
-import { parseItemRevision } from '@proton/pass/lib/items/item.utils';
+import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
+import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { getShareLatestEventId } from '@proton/pass/lib/shares/share.requests';
-import { parseShareResponse } from '@proton/pass/lib/shares/share.utils';
 import {
     itemDeleteSync,
     itemEditSync,
