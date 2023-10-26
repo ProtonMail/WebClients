@@ -36,7 +36,7 @@ export function useDragToScroll(ref: RefObject<HTMLElement>, { defaultCursor } =
 
     const handleMouseUp = () => {
         if (ref.current) {
-            ref.current.style.cursor = defaultCursor;
+            ref.current.style.cursor = isScrollable ? 'grab' : defaultCursor;
         }
 
         document.removeEventListener('mousemove', handleMouseMove);
