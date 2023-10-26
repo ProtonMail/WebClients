@@ -787,8 +787,14 @@
       "6 users": [
         "6 usuarios"
       ],
+      "Access content worldwide": [
+        "Acceda a contenido en todo el mundo"
+      ],
       "Ad-blocker and malware protection": [
         "Bloqueador de anuncios y protección contra malware"
+      ],
+      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Todas las funciones de pago de ${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Historial de versiones extendido"
@@ -811,8 +817,14 @@
       ]
     },
     "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "Acceda a contenido bloqueado y navegue en privado. Tendrá a su disposición más de 3000 servidores en más de 65 países, VPN de máxima velocidad, acceso a servicios de transmisión de todo el mundo, bloqueadores de malware y de anuncios, descargas rápidas de BitTorrent y mucho más."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Acceda desde cualquier lugar al contenido de servicios de transmisión como Netflix, Disney+ o Prime Video, entre otros."
+      ],
+      "Bypass local internet blocks and censorship with our global network of servers.": [
+        "Evite la censura y los bloqueos locales de Internet con nuestra red global de servidores."
       ],
       "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
         "Incluye compatibilidad con ${ domains } dominios de correo electrónico personalizados, ${ addresses } direcciones de correo electrónico, ${ aliases } alias de hide-my-email, posibilidad de compartir calendarios y más."
@@ -2176,13 +2188,13 @@
         "Esto puede tomar unos minutos. Mientras tanto puede continuar usando el calendario."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
-        "Use arrastrar y soltar para clasificar la prioridad entre contactos. Desmarque los contactos que no desea combinar."
+        "Use arrastrar y soltar para clasificar la prioridad entre contactos. Desmarque los contactos que no quiere combinar."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puede importar eventos en formato iCal (archivos ICS). El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener hasta ${ MAX_IMPORT_EVENTS_STRING } eventos.\nSi su archivo es más grande, debe dividirlo en archivos más pequeños."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
-        "Puede marcar para eliminar los contactos que no desea ni combinar ni mantener. La eliminación sólo tendrá lugar después de que el botón de combinar sea pulsado."
+        "Puede marcar para eliminar los contactos que no quiere ni combinar ni mantener. La eliminación sólo tendrá lugar después de que el botón de combinar sea pulsado."
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2190,7 +2202,7 @@
         "Además, hemos emparejado automáticamente los campos CSV con los campos vCard. Puede verificar y cambiar este emparejamiento manualmente."
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "Hemos detectado los siguientes campos en el archivo CSV que ha subido. Verifique los que desea importar."
+        "Hemos detectado los siguientes campos en el archivo CSV que ha subido. Verifique los que quiere importar."
       ]
     },
     "Disabled calendar": {
@@ -3523,7 +3535,7 @@
         "Vaya a ${ calendarViewLink } en Yahoo."
       ],
       "Mouse over the calendar you want to import and open the dropdown menu.": [
-        "Pase el cursor sobre el calendario que desea importar y abra el menú desplegable."
+        "Pase el cursor sobre el calendario que quiere importar y abra el menú desplegable."
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Seleccione ${ boldExport } para exportar el calendario como un archivo ICS."
@@ -3644,10 +3656,10 @@
         "Se enviará un correo de cancelación a los participantes eliminados."
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
-        "Se enviará un correo electrónico de cancelación a los participantes del evento. ¿Desea eliminar todos los eventos de esta serie?"
+        "Se enviará un correo electrónico de cancelación a los participantes del evento. ¿Quiere eliminar todos los eventos de esta serie?"
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
-        "Se enviará un correo electrónico de cancelación a los participantes del evento. ¿Desea eliminar este evento?"
+        "Se enviará un correo electrónico de cancelación a los participantes del evento. ¿Quiere eliminar este evento?"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }"
@@ -3813,7 +3825,7 @@
         "Ingrese el código de su app de autenticación"
       ],
       "Enter the credentials of the email account you want to import from.": [
-        "Ingrese las credenciales de la cuenta de correo electrónico desde la que desea importar."
+        "Ingrese las credenciales de la cuenta de correo electrónico desde la que quiere importar."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Ingrese el código de verificación que fue enviado a ${ destinationText }."
@@ -3947,7 +3959,7 @@
         "Mensual los ${ onDayString }"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "Nombre su carpeta nueva y seleccione la carpeta padre en la que desea colocarla. Si no selecciona una carpeta padre, esta carpeta nueva se creará como una carpeta de nivel superior."
+        "Nombre su carpeta nueva y seleccione la carpeta padre en la que quiere colocarla. Si no selecciona una carpeta padre, esta carpeta nueva se creará como una carpeta de nivel superior."
       ],
       "New": [
         "Nuevo"
@@ -4004,7 +4016,7 @@
         "Elimine los duplicados y vuelva a intentarlo."
       ],
       "Please select the folders you would like to import:": [
-        "Seleccione las carpetas que desea importar:"
+        "Seleccione las carpetas que quiere importar:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Seleccione qué dirección o direcciones de correo añadir al grupo ${ groupCount }.",
@@ -4035,13 +4047,13 @@
         "Se notificarán a los participantes eliminados."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Seleccione el formato de correo que desea usar por defecto al enviar un correo a esta dirección."
+        "Seleccione el formato de correo que quiere usar por defecto al enviar un correo a esta dirección."
       ],
       "Select what you want to import.": [
-        "Seleccione lo que desea importar."
+        "Seleccione lo que quiere importar."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
-        "Seleccione los calendarios que desea importar. Se creará un calendario nuevo para cada calendario importado de acuerdo con el número de calendarios disponibles en su plan."
+        "Seleccione los calendarios que quiere importar. Se creará un calendario nuevo para cada calendario importado de acuerdo con el número de calendarios disponibles en su plan."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "No hay conexión con los servidores. Intente de nuevo en unos minutos."
@@ -4074,7 +4086,7 @@
         "El organizador no puede ser notificado de que usted rechaza la invitación:"
       ],
       "The organizer cannot be notified that you want to change your answer:": [
-        "El organizador no puede ser notificado de que usted desea cambiar su respuesta:"
+        "El organizador no puede ser notificado de que usted quiere cambiar su respuesta:"
       ],
       "The organizer could not be notified that you changed your answer:": [
         "El organizador no puede ser notificado de que usted cambió su respuesta:"
@@ -4083,16 +4095,16 @@
         "El organizador ha actualizado algunos de los eventos de esta serie. Todavía no se admite cambiar el calendario para este tipo de eventos recurrentes."
       ],
       "The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?": [
-        "El organizador de este evento será notificado de que usted rechaza la invitación. ¿Desea eliminar este evento?"
+        "El organizador de este evento será notificado de que usted rechaza la invitación. ¿Quiere eliminar este evento?"
       ],
       "The organizer of this event will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
-        "El organizador de este evento no será notificado de que rechaza la invitación ya que no puede enviar correos electrónicos desde la dirección invitada. ¿Desea eliminar este evento de todos modos?"
+        "El organizador de este evento no será notificado de que rechaza la invitación ya que no puede enviar correos electrónicos desde la dirección invitada. ¿Quiere eliminar este evento de todos modos?"
       ],
       "The organizer of this series of events will be notified that you decline the invitation. Would you like to delete all the events in this series?": [
-        "Se notificará al organizador de esta serie de eventos de que rechaza la invitación. ¿Desea eliminar todos los eventos de la serie?"
+        "Se notificará al organizador de esta serie de eventos de que rechaza la invitación. ¿Quiere eliminar todos los eventos de la serie?"
       ],
       "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
-        "El organizador de esta serie de eventos no será notificado de que rechaza la invitación ya que no puede enviar correos electrónicos desde la dirección invitada. ¿Desea eliminar todos los eventos de esta serie de todos modos?"
+        "El organizador de esta serie de eventos no será notificado de que rechaza la invitación ya que no puede enviar correos electrónicos desde la dirección invitada. ¿Quiere eliminar todos los eventos de esta serie de todos modos?"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Esta cuenta ha sido suspendida por una posible violación de la política."
@@ -4101,16 +4113,16 @@
         "Esta dirección está deshabilitada. Para poder enviar a esta dirección, el dueño debe primero habilitar la dirección."
       ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
-        "Este evento ha sido actualizado por el organizador. ¿Desea cambiar su respuesta sólo para este evento en la serie?"
+        "Este evento ha sido actualizado por el organizador. ¿Quiere cambiar su respuesta sólo para este evento en la serie?"
       ],
       "This event has been updated by the organizer. Would you like to delete this event?": [
-        "Este evento ha sido actualizado por el organizador. ¿Desea eliminar este evento?"
+        "Este evento ha sido actualizado por el organizador. ¿Quiere eliminar este evento?"
       ],
       "This event has been updated. The organizer will be notified that you decline the invitation. Would you like to delete this event?": [
-        "Este evento ha sido actualizado. Se notificará al organizador de que rechaza la invitación. ¿Desea eliminar este evento?"
+        "Este evento ha sido actualizado. Se notificará al organizador de que rechaza la invitación. ¿Quiere eliminar este evento?"
       ],
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
-        "Este evento ha sido actualizado. El organizador no será notificado de que rechaza la invitación ya que no puede enviar correos electrónicos desde la dirección invitada. ¿Desea eliminar este evento de todos modos?"
+        "Este evento ha sido actualizado. El organizador no será notificado de que rechaza la invitación ya que no puede enviar correos electrónicos desde la dirección invitada. ¿Quiere eliminar este evento de todos modos?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Este enlace conduce a un sitio web que podría estar intentando robar su información, como contraseñas y datos de tarjetas de crédito."
@@ -4119,7 +4131,7 @@
         "Este enlace puede ser un ataque homógrafo y el navegador Edge no puede abrirlo. Si cree que el enlace es legítimo, use un navegador diferente para abrirlo."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Este enlace puede ser un ataque homogéneo. Verifique que este es el enlace que desea visitar o no lo abra."
+        "Este enlace puede ser un ataque homogéneo. Verifique que este es el enlace que quiere visitar o no lo abra."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifique que es humano."
@@ -4134,7 +4146,7 @@
         "Para recuperar sus datos, debe volver a reactivar la clave de la cuenta usada en el momento en que se crearon los datos. Esto requerirá que recuerde la contraseña usada cuando se generó la clave."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Para usar Verificación de Dirección, debe confiar una o más claves públicas disponibles, incluyendo la clave que desea usar para enviar. Esto impedirá que las claves de cifrado sean falsificadas."
+        "Para usar Verificación de Dirección, debe confiar una o más claves públicas disponibles, incluyendo la clave que quiere usar para enviar. Esto impedirá que las claves de cifrado sean falsificadas."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Pruebe las nuevas funciones, actualizaciones y productos de ${ BRAND_NAME } antes de que se lancen al público. Esto recargará la aplicación."
@@ -4161,37 +4173,37 @@
         "Cuando configura la autenticación de dos factores, nosotros proporcionamos códigos de recuperación que podrá usar para iniciar sesión si llega a perder acceso a su app de autenticación."
       ],
       "Which event would you like to delete?": [
-        "¿Cuál evento desea eliminar?"
+        "¿Cuál evento quiere eliminar?"
       ],
       "Which event would you like to update?": [
-        "¿Cuál evento desea actualizar?"
+        "¿Cuál evento quiere actualizar?"
       ],
       "Would you like to change your answer for all the events in this series?": [
-        "¿Desea cambiar su respuesta para todos los eventos de la serie?"
+        "¿Quiere cambiar su respuesta para todos los eventos de la serie?"
       ],
       "Would you like to continue anyway?": [
-        "¿Desea continuar de todos modos?"
+        "¿Quiere continuar de todos modos?"
       ],
       "Would you like to delete all the events in this series?": [
-        "¿Desea eliminar todos los eventos de la serie?"
+        "¿Quiere eliminar todos los eventos de la serie?"
       ],
       "Would you like to delete the event anyway?": [
-        "¿Desea eliminar el evento de todos modos?"
+        "¿Quiere eliminar el evento de todos modos?"
       ],
       "Would you like to delete this event?": [
-        "¿Desea eliminar este evento?"
+        "¿Quiere eliminar este evento?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "¿Desea recibir un código de verificación nuevo o usar un método de verificación alternativo?"
+        "¿Quiere recibir un código de verificación nuevo o usar un método de verificación alternativo?"
       ],
       "Would you like to receive a new verification code?": [
         "¿Desearía recibir un código de verificación nuevo?"
       ],
       "Would you like to update all events in this series?": [
-        "¿Desea actualizar todos los eventos de esta serie?"
+        "¿Quiere actualizar todos los eventos de esta serie?"
       ],
       "Would you like to update this event?": [
-        "¿Desea actualizar este evento?"
+        "¿Quiere actualizar este evento?"
       ],
       "Yearly": [
         "Anual"
@@ -4275,10 +4287,10 @@
         "Su cuenta tiene al menos una factura pendiente. Su cuenta está restringida. El no pago continuo bloqueará sus correos y enlaces compartidos. ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
-        "Su dirección está deshabilitada. No se puede enviar un correo electrónico de cancelación a los participantes del evento. ¿Desea eliminar todos los eventos de esta serie de todos modos?"
+        "Su dirección está deshabilitada. No se puede enviar un correo electrónico de cancelación a los participantes del evento. ¿Quiere eliminar todos los eventos de esta serie de todos modos?"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
-        "Su dirección está deshabilitada. No se puede enviar un correo electrónico de cancelación a los participantes del evento. ¿Desea eliminar este evento de todos modos?"
+        "Su dirección está deshabilitada. No se puede enviar un correo electrónico de cancelación a los participantes del evento. ¿Quiere eliminar este evento de todos modos?"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Sus datos están listos para importarse desde ${ importedEmailAddressStrong } a su cuenta de ${ BRAND_NAME }."
@@ -4299,7 +4311,7 @@
         "Su número de teléfono sólo se usará para esta verificación única."
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
-        "La zona horaria del sistema parece haber cambiado a ${ timezone }. ¿Desea actualizar su preferencia de zona horaria?"
+        "La zona horaria del sistema parece haber cambiado a ${ timezone }. ¿Quiere actualizar su preferencia de zona horaria?"
       ]
     },
     "Info calendar search": {
@@ -5820,7 +5832,7 @@
     },
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
-        "¿Desea cerrar la sesión sin restablecer la contraseña?"
+        "¿Quiere cerrar la sesión sin restablecer la contraseña?"
       ]
     },
     "Settings update growler warning": {
@@ -5841,7 +5853,7 @@
     },
     "Share calendar modal description": {
       "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
-        "Añada las cuentas de ${ BRAND_NAME } con quien desea compartir ${ calendarName }. Les enviaremos una invitación."
+        "Añada las cuentas de ${ BRAND_NAME } con quien quiere compartir ${ calendarName }. Les enviaremos una invitación."
       ]
     },
     "Share calendar modal input placeholder": {
@@ -6753,7 +6765,7 @@
         "Seleccione cuándo dejará de ocurrir este evento"
       ],
       "Select when you want this notification to be sent": [
-        "Seleccione cuándo desea que se envíe esta notificación"
+        "Seleccione cuándo quiere que se envíe esta notificación"
       ],
       "Select which calendar to add this event to": [
         "Seleccione a cuál calendario añadir este evento"
@@ -6810,7 +6822,7 @@
         "Hemos bloqueado sus calendarios para proteger sus datos"
       ],
       "What would you like to import?": [
-        "¿Qué desea importar?"
+        "¿Qué quiere importar?"
       ],
       "What's new": [
         "Novedades"
