@@ -26,7 +26,6 @@ interface OpenCallbackProps
         | 'disableThanksStep'
         | 'defaultAudience'
         | 'disableCycleSelector'
-        | 'showUserInfo'
         | 'defaultSelectedProductPlans'
         | 'metrics'
     > {
