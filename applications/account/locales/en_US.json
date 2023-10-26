@@ -39,11 +39,20 @@
       "(${ serverPrice } /month)": [
         "(${ serverPrice }/month)"
       ],
+      "A recovery file lets you unlock and view your data after an account reset": [
+        "A recovery file lets you unlock and view your data after account recovery"
+      ],
       "Ask your organisation admin to setup Gateways.": [
         "Ask your organization admin to set up Gateways."
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control."
+      ],
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
+        "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place."
+      ],
+      "If you lose your password and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
+        "If you lose your password and need to recover your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files."
       ],
       "Invite successfully sent": [
         "Invite sent",
@@ -60,6 +69,9 @@
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts."
+      ],
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
+        "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device recovery information."
       ]
     },
     "Label": {
@@ -131,6 +143,14 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
         "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more."
+      ]
+    },
+    "Warning": {
+      "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
+        "Your recovery file is outdated. It can't recover new data if you reset your password again."
+      ],
+      "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
+        "Your recovery phrase is outdated. It can't recover new data if you reset your password again."
       ]
     }
   }

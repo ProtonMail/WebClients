@@ -884,6 +884,12 @@
       "Sign in": [
         "Se connecter"
       ],
+      "Sign in with password": [
+        "Se connecter avec le mot de passe"
+      ],
+      "Sign in with SSO": [
+        "Se connecter avec l'authentification unique (SSO)"
+      ],
       "Sign out": [
         "Se déconnecter"
       ],
@@ -1317,6 +1323,9 @@
       ]
     },
     "bf2023: Deal details": {
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus et ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "${ storageSize } storage": [
         "${ storageSize } d'espace de stockage"
       ],
@@ -1332,8 +1341,14 @@
       "6 users": [
         "6 utilisateurs"
       ],
+      "Access content worldwide": [
+        "Accès aux contenus dans le monde entier"
+      ],
       "Ad-blocker and malware protection": [
         "Bloqueur de publicité et protection contre les logiciels malveillants"
+      ],
+      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Toutes les fonctionnalités payantes de ${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Historique des versions plus détaillé"
@@ -1362,9 +1377,32 @@
         "Votre abonnement sera automatiquement renouvelé au tarif réduit habituel et pour une durée standard à la fin de votre cycle de facturation."
       ]
     },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "Garantie satisfait ou remboursé pendant 30 jours"
+      ]
+    },
+    "bf2023: renew": {
+      "${ n } month": [
+        "${ n } mois",
+        "les ${ n } premiers mois"
+      ],
+      "the first month": [
+        "le premier mois"
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
+        "Le tarif réduit de ${ discountedPrice } est valable pendant ${ discountedMonths }. Ensuite, il sera automatiquement renouvelé au prix réduit de ${ nextPrice } pour ${ nextMonths }. Vous pouvez annuler quand vous le voulez."
+      ]
+    },
     "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "Accédez aux contenus bloqués et naviguez de manière privée. Comprend plus de 3 000 serveurs répartis dans plus de 65 pays, les vitesses VPN les plus élevées, l'accès aux services de streaming dans le monde entier, un bloqueur de publicité, la protection contre les logiciels malveillants, des téléchargements BitTorrent rapides et bien d'autres fonctionnalités."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Accédez aux contenus des services de streaming, dont Netflix, Amazon Prime Video, Canal+, Disney+, France.tv, TF1, Eurosport France… où que vous soyez."
+      ],
+      "Bypass local internet blocks and censorship with our global network of servers.": [
+        "Contournez les blocages et la censure locale sur internet grâce à notre réseau mondial de serveurs."
       ],
       "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
         "Comprend la prise en charge de ${ domains } domaine de messagerie personnalisé, ${ addresses } adresses e-mail, ${ aliases } alias « hide-my-email », le partage de calendrier et bien d'autres fonctionnalités."
@@ -1372,8 +1410,14 @@
       "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Comprend la prise en charge de ${ domains } domaine de messagerie personnalisé, ${ addresses } adresses e-mail, un nombre illimité d'alias « hide-my-email », le partage de calendrier et bien d'autres fonctionnalités."
       ],
+      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "Sécurisez vos connexions sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Sécurisez votre messagerie et votre agenda grâce au chiffrement de bout en bout. Comprend la prise en charge de domaines de messagerie personnalisés, 15 adresses e-mail, un nombre illimité d'alias « hide-my-email », le partage de calendriers et bien d'autres fonctionnalités."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Sécurisez vos fichiers grâce au stockage cloud chiffré. Comprend l'historique des versions, le partage de fichiers chiffrés et de bien d'autres fonctionnalités."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "La fonctionnalité NetShield est spécialement conçue pour protéger vos appareils et accélérer votre navigation en bloquant les publicités, les traqueurs et les logiciels malveillants."
@@ -3110,7 +3154,7 @@
         "Sécurité avancée pour le partage"
       ],
       "Encrypted cloud storage for all your files": [
-        "Le stockage cloud chiffré pour tous vos fichiers"
+        "Stockage cloud chiffré pour tous vos fichiers"
       ],
       "Secure cloud storage and file sharing that protects your data": [
         "Stockage cloud et partage de fichiers sécurisés qui protègent vos données"
@@ -5651,6 +5695,9 @@
       "${ firstRemainingCalendarName } will be set as default calendar.": [
         "${ firstRemainingCalendarName } sera défini comme calendrier par défaut."
       ],
+      "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
+        "${ inviterEmailJSX } veut partager des données avec vous dans ${ PASS_APP_NAME }."
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } peut également être utilisé avec un mot de passe unique qui remplace le mot de passe de connexion et celui de la boite de réception. Pour basculer vers le mode à mot de passe simple, saisissez le mot de passe unique que vous souhaitez utiliser et cliquez sur Enregistrer."
       ],
@@ -6345,6 +6392,9 @@
       ],
       "Get ${ upsellPlanName }": [
         "Obtenir ${ upsellPlanName }"
+      ],
+      "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
+        "Pour y accéder, créez un compte ${ BRAND_NAME } et acceptez l'invitation."
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Donnez un nom descriptif au jeton, comme le service avec lequel vous prévoyez de l'utiliser, et sélectionnez une de vos adresses de domaine personnalisées actives. Seule cette adresse pourra envoyer des messages avec ce jeton."
@@ -9502,8 +9552,8 @@
       "Create a new ${ appName } account": [
         "Créer un nouveau compte ${ appName }"
       ],
-      "Find ${ BRAND_NAME } Account username": [
-        "Trouver le nom d'utilisateur du compte ${ BRAND_NAME }"
+      "Find your ${ BRAND_NAME } Account username": [
+        "Trouvez le nom d'utilisateur de votre compte ${ BRAND_NAME }"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Vous avez oublié le mot de passe de votre compte ${ BRAND_NAME } ? Réinitialisez-le ici à l'aide d'un code de récupération, d'un e-mail ou d'un SMS et accédez à nouveau à vos comptes ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }…"
@@ -10166,12 +10216,6 @@
       "User session management": [
         "Gestion des sessions des utilisateurs"
       ],
-      "Vault and Item sharing": [
-        "Partage de coffres-forts et d'éléments"
-      ],
-      "Vault and Item sharing (coming soon)": [
-        "Partage de coffres-forts et d'éléments (prochainement)"
-      ],
       "Vault sharing (up to ${ n } person)": [
         "Partage du coffre-fort (${ n } personne)",
         "Partage du coffre-fort (jusqu'à ${ n } personnes)"
@@ -10197,6 +10241,17 @@
       ],
       "Team management": [
         "Gestion de l'équipe"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Autrement, l'accès à votre compte sera limité, puis votre compte sera désactivé."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pour continuer à utiliser ${ MAIL_APP_NAME } avec les fonctionnalités premium, choisissez votre abonnement et votre moyen de paiement."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Votre essai se termine le ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: info": {
@@ -10286,17 +10341,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vous bénéficiez d'un tarif promotionnel sur votre abonnement actuel. En choisissant un compte avec moins de fonctionnalités, vous perdrez ce tarif et il ne sera plus disponible si vous voulez vous réabonner."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Autrement, l'accès à votre compte sera limité, puis votre compte sera désactivé."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pour continuer à utiliser ${ MAIL_APP_NAME } avec les fonctionnalités premium, choisissez votre abonnement et votre moyen de paiement."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Votre essai se termine le ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -11296,6 +11340,9 @@
       "You currently have": [
         "Votre abonnement actuel"
       ],
+      "You have been invited to join ${ PASS_APP_NAME }": [
+        "Vous avez une invitation à rejoindre ${ PASS_APP_NAME }."
+      ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Votre organisation a accès à ${ free }. Pour profiter des fonctionnalités premium de ${ appName }, demandez à l'administrateur de votre organisation de changer d'abonnement."
       ]
@@ -11311,6 +11358,9 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Tous les services premium de ${ BRAND_NAME }.${ br }Un seul abonnement."
+      ],
+      "Create a ${ PASS_APP_NAME } account": [
+        "Créer un compte ${ PASS_APP_NAME }"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Créez votre compte ${ BRAND_NAME }"
@@ -13127,7 +13177,7 @@
         "Réponse automatique"
       ],
       "Auto-reply and forward": [
-        "Réponse automatique et transfert"
+        "Réponse auto. et transfert"
       ],
       "Automatically sign outgoing messages?": [
         "Signer automatiquement les messages sortants ?"
@@ -13786,6 +13836,9 @@
       ],
       "Sign in to join the Beta program": [
         "Connectez-vous pour rejoindre le programme bêta"
+      ],
+      "Sign in to your organization": [
+        "Connectez-vous à votre organisation"
       ],
       "Sign in with 2FA": [
         "Se connecter avec l'authentification à deux facteurs (A2F)"

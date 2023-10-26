@@ -1335,8 +1335,14 @@
       "6 users": [
         "6 usuarios"
       ],
+      "Access content worldwide": [
+        "Accede a contenido en todo el mundo"
+      ],
       "Ad-blocker and malware protection": [
         "Bloqueador de anuncios y protección contra malware"
+      ],
+      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Todas las funciones de pago de ${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Historial de versiones extendido"
@@ -1370,9 +1376,30 @@
         "Garantía de reembolso durante 30 días"
       ]
     },
+    "bf2023: renew": {
+      "${ n } month": [
+        "${ n } mes",
+        "los primeros ${ n } meses"
+      ],
+      "the first month": [
+        "el primer mes"
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
+        "La oferta especial de ${ discountedPrice } es válida durante ${ discountedMonths }. Una vez transcurrido ese plazo, se renovará automáticamente al precio rebajado de ${ nextPrice } durante ${ nextMonths }. Puedes cancelarla en cualquier momento."
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
+        "La oferta especial de ${ discountedPrice } es válida durante el primer mes. Una vez transcurrido ese plazo, se renovará automáticamente al precio de ${ nextPrice } cada mes. Puedes cancelarla en cualquier momento."
+      ]
+    },
     "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "Accede a contenido bloqueado y navega en privado. Tendrás a tu disposición más de 3000 servidores en más de 65 países, VPN de máxima velocidad, acceso a servicios de transmisión de todo el mundo, bloqueadores de malware y de anuncios, descargas rápidas de BitTorrent y mucho más."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Accede desde cualquier lugar al contenido de servicios de transmisión como Netflix, Disney+ o Prime Video, entre otros."
+      ],
+      "Bypass local internet blocks and censorship with our global network of servers.": [
+        "Sortea la censura y bloqueos locales de Internet con nuestra red global de servidores."
       ],
       "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
         "Incluye compatibilidad con ${ domains } dominios de correo electrónico personalizado, ${ addresses } direcciones de correo electrónico, ${ aliases } alias de hide-my-email, la posibilidad de compartir calendarios y mucho más."
@@ -5665,6 +5692,9 @@
       "${ firstRemainingCalendarName } will be set as default calendar.": [
         "${ firstRemainingCalendarName } se definirá como calendario por defecto."
       ],
+      "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
+        "${ inviterEmailJSX } quiere compartir información contigo en ${ PASS_APP_NAME }."
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "Se puede también utilizar ${ MAIL_APP_NAME } con una contraseña única que reemplaza tanto a la contraseña de inicio de sesión como a la contraseña del buzón. Para cambiar al modo de contraseña única, introduce la contraseña única que quieres utilizar y haz clic en Guardar."
       ],
@@ -6360,6 +6390,9 @@
       "Get ${ upsellPlanName }": [
         "Obtener ${ upsellPlanName }"
       ],
+      "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
+        "Obtén acceso al crear una cuenta de ${ BRAND_NAME } y aceptar la invitación."
+      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Pon un nombre descriptivo al token, como el servicio con el que planeas utilizarlo, y selecciona una de tus direcciones de dominio personalizado activas. Solo esta dirección podrá enviar correos electrónicos con este token."
       ],
@@ -6969,7 +7002,7 @@
         "Selecciona lo que quieres importar."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
-        "Selecciona los calendarios que deseas importar. Se creará un calendario para cada calendario importado de acuerdo con el número de calendarios disponibles en tu plan."
+        "Selecciona los calendarios que quieres importar. Se creará un calendario para cada calendario importado de acuerdo con el número de calendarios disponibles en tu plan."
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Envia correos electrónicos para animar tus miembros a proteger sus cuentas con doble autenticación."
@@ -9073,7 +9106,7 @@
         "¿Cuál es el motivo principal por el que eliminas tu cuenta?"
       ],
       "Why would you like to cancel?": [
-        "¿Por qué deseas cancelar?"
+        "¿Por qué quieres cancelar?"
       ],
       "With attachment": [
         "Con archivo adjunto"
@@ -9516,8 +9549,8 @@
       "Create a new ${ appName } account": [
         "Cree una cuenta de ${ appName }"
       ],
-      "Find ${ BRAND_NAME } Account username": [
-        "Encontrar el nombre de usuario de ${ BRAND_NAME }"
+      "Find your ${ BRAND_NAME } Account username": [
+        "Encontrar tu nombre de usuario de ${ BRAND_NAME }"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "¿Has olvidado la contraseña de tu cuenta de ${ BRAND_NAME }? Restablécela aquí con un código de recuperación, un correo o SMS y retoma el acceso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y más."
@@ -9880,8 +9913,8 @@
         "${ n } mensajes al día"
       ],
       "${ n } vault": [
-        "${ n } bóveda",
-        "${ n } bóvedas"
+        "${ n } caja fuerte",
+        "${ n } cajas fuertes"
       ],
       "${ n } VPN connection": [
         "${ n } conexión VPN",
@@ -10056,7 +10089,7 @@
         "Política de cero registros"
       ],
       "Organize items with multiple vaults": [
-        "Organizar elementos en bóvedas múltiples"
+        "Organizar elementos en cajas fuertes múltiples"
       ],
       "Password-protected Emails": [
         "Correos electrónicos protegidos con contraseña"
@@ -10180,15 +10213,9 @@
       "User session management": [
         "Administración de sesiones de usuario"
       ],
-      "Vault and Item sharing": [
-        "Uso compartido de bóvedas y elementos"
-      ],
-      "Vault and Item sharing (coming soon)": [
-        "Uso compartido de bóvedas y elementos (próximamente)"
-      ],
       "Vault sharing (up to ${ n } person)": [
-        "Compartir la bóveda (hasta ${ n } persona)",
-        "Compartir la bóveda (hasta ${ n } personas)"
+        "Compartir la caja fuerte (hasta ${ n } persona)",
+        "Compartir la caja fuerte (hasta ${ n } personas)"
       ]
     },
     "new_plans: feature info": {
@@ -10211,6 +10238,17 @@
       ],
       "Team management": [
         "Gestión de equipos"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para seguir utilizando ${ MAIL_APP_NAME } con las funciones premium, suscríbete y elige el método de pago."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Tu periodo de pruebas acaba el ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: info": {
@@ -10300,17 +10338,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ahora mismo pagas un precio especial por tu plan. Si te pasas a un plan inferior, perderás esta ventaja y no la recuperarás suscribiéndote de nuevo."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para seguir utilizando ${ MAIL_APP_NAME } con las funciones premium, suscríbete y elige el método de pago."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Tu periodo de pruebas acaba el ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -10464,7 +10491,7 @@
         "Las etiquetas son muy fáciles de añadir a los mensajes y te permiten encontrarlos fácilmente o aplicar filtros."
       ],
       "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "Como una carpeta, una bóveda es una manera práctica de organizar tus archivos. El poder compartir bóvedas con amistades y familiares es un trabajo que está en desarrollo."
+        "Como una carpeta, una caja fuerte es una manera práctica de organizar tus archivos. El poder compartir cajas fuertes con amistades y familiares es un trabajo que está en desarrollo."
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Bloquea los recursos de su empresa del internet público y hazlos accesibles solo con tus puertas de enlace privadas."
@@ -11310,8 +11337,11 @@
       "You currently have": [
         "Actualmente tienes"
       ],
+      "You have been invited to join ${ PASS_APP_NAME }": [
+        "Has recibido una invitación para unirte a ${ PASS_APP_NAME }."
+      ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
-        "Tu organización tiene acceso a ${ free }. Si deseas acceder a las características premium de ${ appName }, solicita al administrador de tu organización que actualice la versión."
+        "Tu organización tiene acceso a ${ free }. Si quieres acceder a las características premium de ${ appName }, solicita al administrador de tu organización que actualice la versión."
       ]
     },
     "pass_signup_2023: Onboarding": {
@@ -11325,6 +11355,9 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Todos los servicios Plus de ${ BRAND_NAME }.${ br }Suscripción sencilla."
+      ],
+      "Create a ${ PASS_APP_NAME } account": [
+        "Crear una cuenta de ${ PASS_APP_NAME }"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Crea tu cuenta de ${ BRAND_NAME }"
@@ -12554,10 +12587,10 @@
         "Mantener pago automático"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
-        "Nuestro sistema ya no te cobrará automáticamente con este método de pago, pero tu suscripción aún se renovará al final del ciclo de facturación. Si deseas pasar a una versión con menos funciones o cambiar tu suscripción, debes hacerlo ti mismo antes del final del periodo de facturación. Además, si olvidas realizar un pago manual y el pago automático está deshabilitado para todos los métodos de pago, es posible que pasemos a una versión con menos funciones automáticamente para tu cuenta, lo que provocará la pérdida de muchas funciones."
+        "Nuestro sistema ya no te cobrará automáticamente con este método de pago, pero tu suscripción aún se renovará al final del ciclo de facturación. Si quieres pasar a una versión con menos funciones o cambiar tu suscripción, debes hacerlo ti mismo antes del final del periodo de facturación. Además, si olvidas realizar un pago manual y el pago automático está deshabilitado para todos los métodos de pago, es posible que pasemos a una versión con menos funciones automáticamente para tu cuenta, lo que provocará la pérdida de muchas funciones."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "Nuestro sistema ya no te cobrará automáticamente con este método de pago, pero tu suscripción aún se renovará al final del ciclo de facturación. Si deseas pasar a una versión con menos funciones o cambiar tu suscripción, debes hacerlo tú mismo antes de finalizar el periodo de facturación. No podemos pasarte a una versión con menos funciones automáticamente porque si superas la cuota de almacenamiento del plan gratuito o si utilizas otras funciones de pago, no podemos eliminar automáticamente archivos, correos electrónicos u otros datos por ti. Si deshabilitas el pago automático, recuerda pagar tu próxima factura de suscripción antes de la fecha de vencimiento para evitar la suspensión de la cuenta."
+        "Nuestro sistema ya no te cobrará automáticamente con este método de pago, pero tu suscripción aún se renovará al final del ciclo de facturación. Si quieres pasar a una versión con menos funciones o cambiar tu suscripción, debes hacerlo tú mismo antes de finalizar el periodo de facturación. No podemos pasarte a una versión con menos funciones automáticamente porque si superas la cuota de almacenamiento del plan gratuito o si utilizas otras funciones de pago, no podemos eliminar automáticamente archivos, correos electrónicos u otros datos por ti. Si deshabilitas el pago automático, recuerda pagar tu próxima factura de suscripción antes de la fecha de vencimiento para evitar la suspensión de la cuenta."
       ]
     },
     "Subscription saving": {
