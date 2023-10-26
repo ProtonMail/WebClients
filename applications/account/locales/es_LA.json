@@ -884,6 +884,12 @@
       "Sign in": [
         "Iniciar sesión"
       ],
+      "Sign in with password": [
+        "Iniciar sesión con contraseña"
+      ],
+      "Sign in with SSO": [
+        "Iniciar sesión con SSO"
+      ],
       "Sign out": [
         "Cerrar sesión"
       ],
@@ -1335,8 +1341,14 @@
       "6 users": [
         "6 usuarios"
       ],
+      "Access content worldwide": [
+        "Acceda a contenido en todo el mundo"
+      ],
       "Ad-blocker and malware protection": [
         "Bloqueador de anuncios y protección contra malware"
+      ],
+      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Todas las funciones de pago de ${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Historial de versiones extendido"
@@ -1370,9 +1382,30 @@
         "Garantía de reembolso durante 30 días"
       ]
     },
+    "bf2023: renew": {
+      "${ n } month": [
+        "${ n } mes",
+        "los primeros ${ n } meses"
+      ],
+      "the first month": [
+        "el primer mes"
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
+        "La oferta especial de ${ discountedPrice } es válida durante ${ discountedMonths }. Una vez transcurrido ese plazo, se renovará automáticamente al precio rebajado de ${ nextPrice } durante ${ nextMonths }. Podrá cancelarla en cualquier momento."
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
+        "La oferta especial de ${ discountedPrice } es válida durante el primer mes. Una vez transcurrido ese plazo, se renovará automáticamente al precio de ${ nextPrice } cada mes. Puedes cancelarla en cualquier momento."
+      ]
+    },
     "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "Acceda a contenido bloqueado y navegue en privado. Tendrá a su disposición más de 3000 servidores en más de 65 países, VPN de máxima velocidad, acceso a servicios de transmisión de todo el mundo, bloqueadores de malware y de anuncios, descargas rápidas de BitTorrent y mucho más."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Acceda desde cualquier lugar al contenido de servicios de transmisión como Netflix, Disney+ o Prime Video, entre otros."
+      ],
+      "Bypass local internet blocks and censorship with our global network of servers.": [
+        "Evite la censura y los bloqueos locales de Internet con nuestra red global de servidores."
       ],
       "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
         "Incluye compatibilidad con ${ domains } dominios de correo electrónico personalizados, ${ addresses } direcciones de correo electrónico, ${ aliases } alias de hide-my-email, posibilidad de compartir calendarios y más."
@@ -3020,7 +3053,7 @@
         "Además, hemos emparejado automáticamente los campos CSV con los campos vCard. Puede verificar y cambiar este emparejamiento manualmente."
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "Hemos detectado los siguientes campos en el archivo CSV que ha subido. Verifique los que desea importar."
+        "Hemos detectado los siguientes campos en el archivo CSV que ha subido. Verifique los que quiere importar."
       ]
     },
     "Disable account": {
@@ -3056,7 +3089,7 @@
     },
     "Domain modal": {
       "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
-        "Los subdominios 'www' no se usan para correo electrónico. ¿Está seguro que desea usar este valor de dominio?"
+        "Los subdominios &#039;www&#039; no se usan para correo electrónico. ¿Está seguro que quiere usar este valor de dominio?"
       ]
     },
     "Domain spam notification": {
@@ -3252,7 +3285,7 @@
         "Suscripciones de correo"
       ],
       "Which emails do you want to receive from ${ BRAND_NAME }?": [
-        "¿Cuáles correos electrónicos desea recibir de ${ BRAND_NAME }?"
+        "¿Cuáles correos electrónicos quiere recibir de ${ BRAND_NAME }?"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "Ha vuelto a suscribirse a los correos de ${ categoriesJsx }."
@@ -5526,7 +5559,7 @@
         "Vaya a ${ calendarViewLink } en Yahoo."
       ],
       "Mouse over the calendar you want to import and open the dropdown menu.": [
-        "Pase el cursor sobre el calendario que desea importar y abra el menú desplegable."
+        "Pase el cursor sobre el calendario que quiere importar y abra el menú desplegable."
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Seleccione ${ boldExport } para exportar el calendario como un archivo ICS."
@@ -5534,7 +5567,7 @@
     },
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
-        "¿Está seguro de que quiere importar una clave privada? Importar una clave privada generada de manera insegura o filtrada puede dañar la seguridad de sus correos.\n\nTenga en cuenta también que la clave pública correspondiente a esta clave privada estará disponible públicamente en nuestro servidor de claves. Si la clave contiene datos personales (como su nombre completo) que no desea publicar, edite la clave antes de importarla."
+        "¿Está seguro de que quiere importar una clave privada? Importar una clave privada generada de manera insegura o filtrada puede dañar la seguridad de sus correos.\n\nTenga en cuenta también que la clave pública correspondiente a esta clave privada estará disponible públicamente en nuestro servidor de claves. Si la clave contiene datos personales (como su nombre completo) que no quiere publicar, edite la clave antes de importarla."
       ]
     },
     "Import provider": {
@@ -5666,10 +5699,10 @@
         "${ firstRemainingCalendarName } se establecerá como calendario por defecto."
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
-        "${ inviterEmailJSX } desea compartir información con usted en ${ PASS_APP_NAME }"
+        "${ inviterEmailJSX } quiere compartir información con usted en ${ PASS_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } puede también usarse con una sola contraseña que reemplaza tanto a la contraseña de inicio de sesión como a la del buzón. Para cambiar al modo de una sola contraseña, ingrese la única contraseña que desea usar y haga clic en guardar."
+        "${ MAIL_APP_NAME } puede también usarse con una sola contraseña que reemplaza tanto a la contraseña de inicio de sesión como a la del buzón. Para cambiar al modo de una sola contraseña, ingrese la única contraseña que quiere usar y haga clic en guardar."
       ],
       "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
         "${ MAIL_APP_NAME } soporta DKIM para dominios personalizados. Para usar la autenticación DKIM, añada el siguiente registro CNAME en los ajustes DNS para este dominio. Esto puede hacerse generalmente en el panel de control de su registrador de nombres de dominio."
@@ -5943,13 +5976,13 @@
         "Cualquier persona con este enlace puede ver si usted está libre u ocupado en su calendario. No pueden ver detalles de eventos, como título, ubicación o participantes."
       ],
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "Cualquier persona con este enlace no podrá sincronizar ni obtener actualizaciones futuras para su calendario. Si desea darles acceso de nuevo, tendrá que crear un enlace nuevo."
+        "Cualquier persona con este enlace no podrá sincronizar ni obtener actualizaciones futuras para su calendario. Si quiere darles acceso de nuevo, tendrá que crear un enlace nuevo."
       ],
       "Are you sure you want to delete this address?": [
-        "¿Está seguro que desea eliminar esta dirección?"
+        "¿Está seguro que quiere eliminar esta dirección?"
       ],
       "Are you sure you want to delete this calendar?": [
-        "¿Seguro que desea eliminar este calendario?"
+        "¿Seguro que quiere eliminar este calendario?"
       ],
       "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
         "¿Está seguro de que quiere eliminar este calendario? Todas las direcciones a las que compartió este calendario perderán acceso a él."
@@ -5973,10 +6006,10 @@
         "¿Está seguro de que quiere eliminar esta etiqueta?"
       ],
       "Are you sure you want to disable two-factor authentication?": [
-        "¿Está seguro que desea deshabilitar la autenticación de dos factores?"
+        "¿Está seguro que quiere deshabilitar la autenticación de dos factores?"
       ],
       "Are you sure you want to discard your changes?": [
-        "¿Está seguro que desea descartar los cambios?"
+        "¿Está seguro que quiere descartar los cambios?"
       ],
       "Are you sure you want to discard your import?": [
         "¿Está seguro de que quiere descartar su importación?"
@@ -6192,7 +6225,7 @@
         "NO olvide esta contraseña. Si la olvida, no podrá iniciar sesión ni descifrar sus mensajes."
       ],
       "Do you want to revoke all other sessions than the current one?": [
-        "¿Desea revocar todas las demás sesiones y mantener la actual?"
+        "¿Quiere revocar todas las demás sesiones y mantener la actual?"
       ],
       "domain used": [
         "dominio usado",
@@ -6289,7 +6322,7 @@
         "Ingrese el código que fue enviado a ${ email }. Si no encuentra el mensaje en su bandeja de entrada, revise su carpeta de correo no deseado."
       ],
       "Enter the credentials of the email account you want to import from.": [
-        "Ingrese las credenciales de la cuenta de correo electrónico desde la que desea importar."
+        "Ingrese las credenciales de la cuenta de correo electrónico desde la que quiere importar."
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "Ingrese la contraseña de la organización para restablecer los privilegios de administrador. ${ learnMore }"
@@ -6439,10 +6472,10 @@
         "Si restableció su contraseña recientemente, puede usar un método de recuperación para desbloquear sus datos"
       ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "Si desea mantener un registro SPF existente, solo añada ${ spf } a él después de ${ spfValue }. No cree múltiples registros SPF."
+        "Si quiere mantener un registro SPF existente, solo añada ${ spf } a él después de ${ spfValue }. No cree múltiples registros SPF."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
-        "Si desea combinar esta cuenta con otra, NO la elimine."
+        "Si quiere combinar esta cuenta con otra, NO la elimine."
       ],
       "Image description": [
         "Descripción de la imagen"
@@ -6648,7 +6681,7 @@
         "Debe comenzar con una letra."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "Nombre su carpeta nueva y seleccione la carpeta padre en la que desea colocarla. Si no selecciona una carpeta padre, esta carpeta nueva se creará como una carpeta de nivel superior."
+        "Nombre su carpeta nueva y seleccione la carpeta padre en la que quiere colocarla. Si no selecciona una carpeta padre, esta carpeta nueva se creará como una carpeta de nivel superior."
       ],
       "New": [
         "Nuevo"
@@ -6840,10 +6873,10 @@
         "Indique una dirección de correo en caso de que necesitemos contactarle."
       ],
       "Please select the folders you would like to import:": [
-        "Seleccione las carpetas que desea importar:"
+        "Seleccione las carpetas que quiere importar:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
-        "Seleccione el tipo de enlace que desea insertar y complete todos los campos."
+        "Seleccione el tipo de enlace que quiere insertar y complete todos los campos."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Intente de nuevo usando un método de pago diferente o contacte con su banco."
@@ -6972,10 +7005,10 @@
         "Seleccione un proveedor de servicios para comenzar"
       ],
       "Select what you want to import.": [
-        "Seleccione lo que desea importar."
+        "Seleccione lo que quiere importar."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
-        "Seleccione los calendarios que desea importar. Se creará un calendario nuevo para cada calendario importado de acuerdo con el número de calendarios disponibles en su plan."
+        "Seleccione los calendarios que quiere importar. Se creará un calendario nuevo para cada calendario importado de acuerdo con el número de calendarios disponibles en su plan."
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
         "Envíe correos electrónicos para animar sus miembros a proteger sus cuentas con 2FA."
@@ -7192,7 +7225,7 @@
         "Este enlace puede ser un ataque homógrafo y el navegador Edge no puede abrirlo. Si cree que el enlace es legítimo, use un navegador diferente para abrirlo."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Este enlace puede ser un ataque homogéneo. Verifique que este es el enlace que desea visitar o no lo abra."
+        "Este enlace puede ser un ataque homogéneo. Verifique que este es el enlace que quiere visitar o no lo abra."
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Este token no estará disponible tras cerrar esta ventana y no debería compartirlo."
@@ -7252,7 +7285,7 @@
         "Para completar su pago, envíe ${ btcAmountBold } a la dirección de abajo."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
-        "Para confirmar, ingrese el nombre del usuario que desea eliminar."
+        "Para confirmar, ingrese el nombre del usuario que quiere eliminar."
       ],
       "to continue to ${ product }": [
         "para continuar a ${ product }"
@@ -7432,7 +7465,7 @@
         "Logo de Visa Secure"
       ],
       "Want servers in other countries?": [
-        "¿Desea servidores en otros países?"
+        "¿Quiere servidores en otros países?"
       ],
       "Warning:": [
         "Advertencia:"
@@ -7543,7 +7576,7 @@
         "Sin activación, no podrá crear usuarios nuevos, añadir direcciones a usuarios existentes o acceder a cuentas de usuario no privadas."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "¿Desea recibir un código de verificación nuevo o usar un método de verificación alternativo?"
+        "¿Quiere recibir un código de verificación nuevo o usar un método de verificación alternativo?"
       ],
       "Would you like to receive a new verification code?": [
         "¿Desearía recibir un código de verificación nuevo?"
@@ -9079,7 +9112,7 @@
         "¿Cuál es el motivo principal por el que elimina su cuenta?"
       ],
       "Why would you like to cancel?": [
-        "¿Por qué desea cancelar?"
+        "¿Por qué quiere cancelar?"
       ],
       "With attachment": [
         "Con archivo adjunto"
@@ -9522,8 +9555,8 @@
       "Create a new ${ appName } account": [
         "Cree una cuenta de ${ appName }"
       ],
-      "Find ${ BRAND_NAME } Account username": [
-        "Encontrar nombre de usuario de ${ BRAND_NAME }"
+      "Find your ${ BRAND_NAME } Account username": [
+        "Encontrar su nombre de usuario de ${ BRAND_NAME }"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "¿Olvidó la contraseña de su cuenta de ${ BRAND_NAME }? Restablézcala aquí usando un código de recuperación, un correo o SMS y retome el acceso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y más."
@@ -10186,12 +10219,6 @@
       "User session management": [
         "Gestión de sesiones de usuario"
       ],
-      "Vault and Item sharing": [
-        "Uso compartido de bóvedas y elementos"
-      ],
-      "Vault and Item sharing (coming soon)": [
-        "Uso compartido de bóvedas y elementos (próximamente)"
-      ],
       "Vault sharing (up to ${ n } person)": [
         "Compartir bóveda (hasta ${ n } persona)",
         "Compartir bóveda (hasta ${ n } personas)"
@@ -10217,6 +10244,17 @@
       ],
       "Team management": [
         "Gestión de equipos"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente deshabilitada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando ${ MAIL_APP_NAME } con funciones premium, elija su suscripción y opciones de pago."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Su prueba termina el ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -10308,17 +10346,6 @@
         "Está disfrutando de un precio promocional en su plan actual. Si pasa a un plan inferior, perderá el precio promocional y no estará disponible si crea una cuenta nueva."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente deshabilitada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando ${ MAIL_APP_NAME } con funciones premium, elija su suscripción y opciones de pago."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Su prueba termina el ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } de ${ humanMaxSpace }"
@@ -10389,7 +10416,7 @@
         "Comience a explorar el universo de ${ BRAND_NAME }"
       ],
       "Switch plans?": [
-        "¿Desea cambiar de plan?"
+        "¿Quiere cambiar de plan?"
       ],
       "Unlock premium features by upgrading": [
         "Desbloquee funciones premium al actualizar"
@@ -11320,7 +11347,7 @@
         "Recibió una invitación para unirse a ${ PASS_APP_NAME }"
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
-        "Su organización tiene acceso a ${ free }. Si desea acceder a las funciones premium de ${ appName }, solicite al administrador de su organización que actualice la versión."
+        "Su organización tiene acceso a ${ free }. Si quiere acceder a las funciones premium de ${ appName }, solicite al administrador de su organización que actualice la versión."
       ]
     },
     "pass_signup_2023: Onboarding": {
@@ -11988,7 +12015,7 @@
     },
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
-        "¿Desea cerrar la sesión sin restablecer la contraseña?"
+        "¿Quiere cerrar la sesión sin restablecer la contraseña?"
       ]
     },
     "session_recovery:status:info": {
@@ -12073,7 +12100,7 @@
     },
     "Share calendar modal description": {
       "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
-        "Añada las cuentas de ${ BRAND_NAME } con quien desea compartir ${ calendarName }. Les enviaremos una invitación."
+        "Añada las cuentas de ${ BRAND_NAME } con quien quiere compartir ${ calendarName }. Les enviaremos una invitación."
       ]
     },
     "Share calendar modal input placeholder": {
@@ -12566,10 +12593,10 @@
         "Mantener pago automático"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
-        "Nuestro sistema ya no le cobrará automáticamente con este método de pago, pero su suscripción aún se renovará al final del ciclo de facturación. Si desea pasar a un plan inferior o cambiar su suscripción, debe hacerlo usted mismo antes del final del periodo de facturación. Además, si olvida realizar un pago manual y el pago automático está deshabilitado para todos los métodos de pago, es posible que pasaremos automáticamente su cuenta a un plan inferior, lo que provocará la pérdida de muchas funciones."
+        "Nuestro sistema ya no le cobrará automáticamente con este método de pago, pero su suscripción aún se renovará al final del ciclo de facturación. Si quiere pasar a un plan inferior o cambiar su suscripción, debe hacerlo usted mismo antes del final del periodo de facturación. Además, si olvida realizar un pago manual y el pago automático está deshabilitado para todos los métodos de pago, es posible que pasaremos automáticamente su cuenta a un plan inferior, lo que provocará la pérdida de muchas funciones."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "Nuestro sistema ya no le cobrará automáticamente con este método de pago, pero su suscripción aún se renovará al final del ciclo de facturación. Si desea pasar a un plan inferior o cambiar su suscripción, debe hacerlo usted mismo antes del final del periodo de facturación. No podemos pasar automáticamente su cuenta a un plan inferior porque si supera la cuota de almacenamiento del plan gratuito o si usa otras funciones de pago, no podemos eliminar automáticamente archivos, correos electrónicos u otros datos por usted. Si deshabilita el pago automático, recuerde pagar su próxima factura de suscripción antes de la fecha de vencimiento para evitar la suspensión de la cuenta."
+        "Nuestro sistema ya no le cobrará automáticamente con este método de pago, pero su suscripción aún se renovará al final del ciclo de facturación. Si quiere pasar a un plan inferior o cambiar su suscripción, debe hacerlo usted mismo antes del final del periodo de facturación. No podemos pasar automáticamente su cuenta a un plan inferior porque si supera la cuota de almacenamiento del plan gratuito o si usa otras funciones de pago, no podemos eliminar automáticamente archivos, correos electrónicos u otros datos por usted. Si deshabilita el pago automático, recuerde pagar su próxima factura de suscripción antes de la fecha de vencimiento para evitar la suspensión de la cuenta."
       ]
     },
     "Subscription saving": {
@@ -13769,7 +13796,7 @@
         "Seleccione la forma de envío de esta notificación"
       ],
       "Select when you want this notification to be sent": [
-        "Seleccione cuándo desea que se envíe esta notificación"
+        "Seleccione cuándo quiere que se envíe esta notificación"
       ],
       "Send email reminders?": [
         "¿Enviar recordatorios por correo electrónico?"
@@ -13812,6 +13839,9 @@
       ],
       "Sign in to join the Beta program": [
         "Iniciar sesión para unirse al programa Beta"
+      ],
+      "Sign in to your organization": [
+        "Iniciar sesión en su organización"
       ],
       "Sign in with 2FA": [
         "Iniciar sesión 2FA"
@@ -13939,7 +13969,7 @@
         "Enviaremos un correo a su dirección nueva con instrucciones para completar el cambio."
       ],
       "What would you like to import?": [
-        "¿Qué desea importar?"
+        "¿Qué quiere importar?"
       ],
       "What's new": [
         "Novedades"
@@ -14259,7 +14289,7 @@
     },
     "Tooltip prompt to trust keys": {
       "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "Cuando reciba un correo de otro usuario de ${ MAIL_APP_NAME } que no tenga claves de confianza en sus contactos, un aviso le preguntará si desea habilitar las claves de confianza."
+        "Cuando reciba un correo de otro usuario de ${ MAIL_APP_NAME } que no tenga claves de confianza en sus contactos, un aviso le preguntará si quiere habilitar las claves de confianza."
       ]
     },
     "Tooltip sign external messages": {

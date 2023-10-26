@@ -431,6 +431,12 @@
       "Sign in": [
         "Iniciar sessão"
       ],
+      "Sign in with password": [
+        "Iniciar sessão com sua senha"
+      ],
+      "Sign in with SSO": [
+        "Iniciar sessão com SSO"
+      ],
       "Sign out": [
         "Encerrar sessão"
       ],
@@ -681,8 +687,14 @@
       "6 users": [
         "6 usuários"
       ],
+      "Access content worldwide": [
+        "Acesse conteúdo em todo o mundo"
+      ],
       "Ad-blocker and malware protection": [
         "Bloqueador de anúncios e proteção contra malware"
+      ],
+      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Todos os recursos ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_APP_NAME } pagos"
       ],
       "Extended version history": [
         "Histórico de versão estendido"
@@ -716,9 +728,30 @@
         "Garantia de devolução do seu dinheiro por até 30 dias"
       ]
     },
+    "bf2023: renew": {
+      "${ n } month": [
+        "${ n } mês",
+        "os primeiros ${ n } meses"
+      ],
+      "the first month": [
+        "o primeiro mês"
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
+        "O preço com desconto especial de ${ discountedPrice } é válido por ${ discountedMonths }. Em seguida, ele será renovado automaticamente pelo preço com desconto de ${ nextPrice } por ${ nextMonths }. Você pode cancelar a qualquer momento."
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
+        "O preço com desconto especial de ${ discountedPrice } é válido no primeiro mês. Em seguida, ele será renovado automaticamente pelo preço de ${ nextPrice } todo mês. Você pode cancelar a qualquer momento."
+      ]
+    },
     "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "Acesse conteúdo bloqueado e navegue com privacidade. Inclui mais de 3.000 servidores em mais de 65 países, velocidades VPN mais altas, acesso a serviços de streaming em todo o mundo, malware e bloqueador de anúncios, downloads rápidos de BitTorrent e muito mais."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Acesse conteúdo de serviços de streaming, como Netflix, Disney+, Prime Video e mais, de qualquer lugar."
+      ],
+      "Bypass local internet blocks and censorship with our global network of servers.": [
+        "Ignore os bloqueios locais da Internet e a censura com nossa rede global de servidores."
       ],
       "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
         "Inclui suporte para ${ domains } domínios de e-mail personalizados, ${ addresses } endereços de e-mail, ${ aliases } aliases ilimitados do hide-my-email, compartilhamento de calendário e muito mais."
@@ -3681,6 +3714,9 @@
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Com um plano Business ou Enterprise, você pode comprar ${ boldDedicatedServers } para sua organização e configurar ${ boldGateways } para controlar quais usuários podem acessá-los."
       ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Com um endereço criptografado da ${ BRAND_NAME }, você pode usar todos os serviços da ${ BRAND_NAME }."
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sem a ativação, você não poderá criar novos usuários, adicionar endereços a usuários existentes ou acessar as contas de usuário que não são privadas."
       ],
@@ -4519,8 +4555,8 @@
       "Create a new ${ appName } account": [
         "Criar uma conta no ${ appName }"
       ],
-      "Find ${ BRAND_NAME } Account username": [
-        "Encontre o nome de usuário da conta ${ BRAND_NAME }"
+      "Find your ${ BRAND_NAME } Account username": [
+        "Encontre seu nome de usuário ${ BRAND_NAME }."
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Esqueceu sua senha da conta ${ BRAND_NAME }? Redefina-a aqui usando um código de recuperação, e-mail ou SMS e recupere seu acesso aos serviços ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, e muito mais."
@@ -4951,12 +4987,6 @@
       ],
       "User session management": [
         "Gerenciamento de sessões de usuário"
-      ],
-      "Vault and Item sharing": [
-        "Compartilhamento de itens e cofre"
-      ],
-      "Vault and Item sharing (coming soon)": [
-        "Cofre e compartilhamento de itens (em breve)"
       ],
       "Vault sharing (up to ${ n } person)": [
         "Compartilhar do cofre (até ${ n } pessoa)",
@@ -7095,6 +7125,9 @@
       ],
       "Sign in to join the Beta program": [
         "Inicie sessão para participar do programa Beta"
+      ],
+      "Sign in to your organization": [
+        "Inicie sessão na sua organização."
       ],
       "Sign in with 2FA": [
         "Iniciar sessão com A2F"
