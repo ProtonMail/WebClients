@@ -12,9 +12,10 @@ import {
 } from '@proton/components';
 import { authJwt, pullForkSession, setCookies, setRefreshCookies } from '@proton/shared/lib/api/auth';
 import { getLatestID } from '@proton/shared/lib/api/events';
-import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { PullForkResponse, RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
 import { getGenericErrorPayload } from '@proton/shared/lib/broadcast';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
 import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
@@ -28,6 +29,7 @@ import { loadModels } from '@proton/shared/lib/models/helper';
 import getRandomString from '@proton/utils/getRandomString';
 
 import broadcast, { MessageType } from './broadcast';
+import ExpiredLink from './components/ExpiredLink';
 import LiteLayout from './components/LiteLayout';
 import LiteLoaderPage from './components/LiteLoaderPage';
 
@@ -57,6 +59,7 @@ const Setup = ({ onLogin, UID, children }: Props) => {
 
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<{ message?: string } | null>(null);
+    const [expiredLinkError, setExpiredLinkError] = useState<boolean>(false);
 
     const eventManagerRef = useRef<ReturnType<typeof createEventManager>>();
     const cache = useCache();
@@ -150,11 +153,18 @@ const Setup = ({ onLogin, UID, children }: Props) => {
                 replaceUrl(fallbackUrl);
                 return;
             }
+
             broadcast({ type: MessageType.ERROR, payload: getGenericErrorPayload(error) });
-            errorHandler(error);
-            setError({
-                message: getApiErrorMessage(error) || error?.message,
-            });
+
+            const { code } = getApiError(error);
+            if (code === API_CUSTOM_ERROR_CODES.JWT_EXPIRED) {
+                setExpiredLinkError(true);
+            } else {
+                errorHandler(error);
+                setError({
+                    message: getApiErrorMessage(error) || error?.message,
+                });
+            }
         };
 
         const hashParams = new URLSearchParams(window.location.hash.slice(1));
@@ -196,6 +206,10 @@ const Setup = ({ onLogin, UID, children }: Props) => {
         });
         broadcast({ type: MessageType.ERROR, payload: { message: 'No selector or JWT token found' } });
     }, []);
+
+    if (expiredLinkError) {
+        return <ExpiredLink />;
+    }
 
     if (error) {
         return <StandardLoadErrorPage errorMessage={error.message} />;
