@@ -298,6 +298,7 @@ $height-for-mobile: 8em !default;
 	background: var(--background-norm);
 }
 
+// delight: Remove during feature flag removal
 .main-area--row-mode .items-column-list {
 	inline-size: 100%;
 	min-inline-size: initial;
