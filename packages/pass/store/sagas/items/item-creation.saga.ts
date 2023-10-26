@@ -1,8 +1,8 @@
 import type { AnyAction } from 'redux';
 import { all, put, takeEvery } from 'redux-saga/effects';
 
+import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import { createAlias, createItem, createItemWithAlias } from '@proton/pass/lib/items/item.requests';
-import { parseItemRevision } from '@proton/pass/lib/items/item.utils';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import {
     invalidateRequest,
