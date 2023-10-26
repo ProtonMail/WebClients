@@ -1,3 +1,5 @@
+import { SafeErrorObject, getSafeErrorObject } from '@proton/utils/getSafeErrorObject';
+
 import supportedPreviews from './previews';
 
 export type OutgoingMessage = OutgoingErrorMessage;
@@ -8,7 +10,7 @@ export const postMessage = (message: OutgoingMessage) => {
 
 type OutgoingErrorMessage = {
     type: 'error';
-    error: Error;
+    error: SafeErrorObject;
 };
 
 export const postError = (error: Error) => {
@@ -20,7 +22,7 @@ export const postError = (error: Error) => {
 
     postMessage({
         type: 'error',
-        error,
+        error: getSafeErrorObject(error),
     });
 };
 
