@@ -393,7 +393,7 @@
         "Scopri come"
       ],
       "See plan features": [
-        "Visualizzare le funzionalità del piano"
+        "Visualizza le caratteristiche del piano"
       ],
       "Select ${ planTitle }": [
         "Seleziona ${ planTitle }"
@@ -430,6 +430,12 @@
       ],
       "Sign in": [
         "Accedi"
+      ],
+      "Sign in with password": [
+        "Accedi con la password"
+      ],
+      "Sign in with SSO": [
+        "Accedi con SSO"
       ],
       "Sign out": [
         "Disconnetti"
@@ -681,8 +687,14 @@
       "6 users": [
         "6 utenti"
       ],
+      "Access content worldwide": [
+        "Accedi ai contenuti in tutto il mondo"
+      ],
       "Ad-blocker and malware protection": [
         "Ad-blocker e anti-malware"
+      ],
+      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Tutte le funzioni a pagamento di ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Cronologia estesa della versione"
@@ -716,9 +728,30 @@
         "Garanzia 30 giorni soddisfatti o rimborsati"
       ]
     },
+    "bf2023: renew": {
+      "${ n } month": [
+        "${ n } mese",
+        "i primi ${ n } mesi"
+      ],
+      "the first month": [
+        "il primo mese"
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
+        "La tariffa scontata, con prezzo speciale di ${ discountedPrice }, è valida per ${ discountedMonths }. Il piano si rinnoverà poi automaticamente al prezzo agevolato di ${ nextPrice } per ${ nextMonths }. Puoi disdire quando vuoi."
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
+        "La tariffa scontata, con prezzo speciale di ${ discountedPrice } è valida per il primo mese. Il piano si rinnoverà poi automaticamente al prezzo di ${ nextPrice } per mese. Puoi disdire quando vuoi."
+      ]
+    },
     "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "Accedi ai contenuti bloccati e naviga in modalità privata. Sono inclusi: più di 3.000 server in oltre 65 Paesi, VPN ad altissima velocità, accesso ai servizi di streaming in tutto il mondo, anti-malware, ad-blocker, download BitTorrent veloci e altro ancora."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Accedi ai contenuti di servizi di streaming come Netflix, Disney+, Prime Video e altro ancora, ovunque ti trovi."
+      ],
+      "Bypass local internet blocks and censorship with our global network of servers.": [
+        "Aggira i blocchi e la censura a internet imposti dai singoli Paesi grazie alla nostra rete globale di server."
       ],
       "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
         "Sono inclusi: supporto per ${ domains } dominio email personalizzato, ${ addresses } indirizzi email, ${ aliases } alias hide-my-email, condivisione del calendario e altro ancora."
@@ -1778,7 +1811,7 @@
         "Bug o problemi di qualità"
       ],
       "I use a different ${ BRAND_NAME } account": [
-        "Utilizzo un altro account ${ BRAND_NAME }"
+        "Utilizzo un account ${ BRAND_NAME } differente"
       ],
       "Missing feature(s)": [
         "Funzionalità mancante(i)"
@@ -2531,7 +2564,7 @@
         "Predefinito di sistema"
       ],
       "Theme font": [
-        "Tipo di carattere"
+        "Carattere del tema"
       ]
     },
     "Font size option": {
@@ -2801,7 +2834,7 @@
         "Importo inferiore al minimo (${ amount })."
       ],
       "Amount due": [
-        "Importo dovuto"
+        "Importo da pagare"
       ],
       "Any ${ twoFa } method on your account will be disabled.": [
         "Qualsiasi metodo di ${ twoFa } sul tuo account verrà disattivato."
@@ -3040,7 +3073,7 @@
         "Se credi che questo sia un errore, contattaci ${ contactLink }."
       ],
       "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "Se cancelli, il tuo abbonamento ${ vpnPlanName } non verrà rinnovato quando scadrà il ${ expiryDate }."
+        "Se annulli, il tuo abbonamento ${ vpnPlanName } non verrà rinnovato quando scadrà il ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se non trovi l'email nella tua casella di posta, controlla la cartella spam."
@@ -3505,7 +3538,7 @@
         "Per contrastare spam e abusi, verifica di essere umano."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
-        "Per rimanere informato degli ultimi aggiornamenti dei prodotti ${ BRAND_NAME }, puoi iscriverti alle nostre liste email e ${ blogLink } di tanto in tanto."
+        "Per rimanere informato sugli ultimi aggiornamenti dei prodotti ${ BRAND_NAME }, puoi iscriverti alle nostre mailing list e ${ blogLink } occasionalmente."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Per procedere, seleziona un metodo di recupero dell'account in modo da poter verificare la richiesta."
@@ -3705,7 +3738,7 @@
         "Sei registrato con l'account ${ memberAddress }."
       ],
       "You can customize and download your invoices for accounting purposes.": [
-        "Puoi personalizzare e scaricare le tue fatture per scopi contabili."
+        "Puoi personalizzare e scaricare le tue fatture per scopi di contabilità."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Puoi modificarlo una volta per garantire l'indirizzo email corretto per la verifica."
@@ -3961,7 +3994,7 @@
         "Importo"
       ],
       "Amount due": [
-        "Importo dovuto"
+        "Importo da pagare"
       ],
       "Attach screenshot(s)": [
         "Allega screenshot"
@@ -4447,7 +4480,7 @@
         "Visualizza guida"
       ],
       "visit our blog": [
-        "visita il nostro blog"
+        "visitare il nostro blog"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Quale è la differenza tra i protocolli UDP e TCP?"
@@ -4516,7 +4549,7 @@
       "Create a new ${ appName } account": [
         "Crea un nuovo account ${ appName }"
       ],
-      "Find ${ BRAND_NAME } Account username": [
+      "Find your ${ BRAND_NAME } Account username": [
         "Trova il nome utente del tuo account ${ BRAND_NAME }"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
@@ -4948,12 +4981,6 @@
       ],
       "User session management": [
         "Gestione della sessione utente"
-      ],
-      "Vault and Item sharing": [
-        "Condivisione di casseforti ed elementi"
-      ],
-      "Vault and Item sharing (coming soon)": [
-        "Condivisione di casseforti ed elementi (in arrivo)"
       ],
       "Vault sharing (up to ${ n } person)": [
         "Condivisione delle casseforti (fino a ${ n } persona)",
@@ -5418,7 +5445,7 @@
         "Ho trovato un altro servizio che mi piace di più"
       ],
       "I use a different ${ BRAND_NAME } account": [
-        "Utilizzo un altro account ${ BRAND_NAME }"
+        "Utilizzo un account ${ BRAND_NAME } differente"
       ],
       "It's missing a key feature that I need": [
         "Manca una caratteristica chiave di cui ho bisogno"
@@ -6433,10 +6460,10 @@
         "Codice regalo applicato"
       ],
       "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "Se hai inserito un'email di recupero valida ti invieremo un'email con i tuoi nomi utente entro il prossimo minuto."
+        "Riceverai il tuo nome utente tramite email entro un minuto se l'indirizzo email di recupero che hai inserito è valido."
       ],
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "Se hai inserito un telefono di recupero valido ti invieremo un SMS con i tuoi nomi utente entro il prossimo minuto."
+        "Riceverai il tuo nome utente tramite SMS entro un minuto se il numero di telefono di recupero che hai inserito è valido."
       ],
       "Invitation sent": [
         "Invito inviato"
@@ -6725,7 +6752,7 @@
         "Importo"
       ],
       "Amount due": [
-        "Importo dovuto"
+        "Importo da pagare"
       ],
       "Apply gift code": [
         "Applica codice regalo"
@@ -7086,6 +7113,9 @@
       ],
       "Sign in to join the Beta program": [
         "Accedi per partecipare al programma Beta"
+      ],
+      "Sign in to your organization": [
+        "Accedi alla tua organizzazione"
       ],
       "Sign in with 2FA": [
         "Accedi con autenticazione a 2 fattori"
