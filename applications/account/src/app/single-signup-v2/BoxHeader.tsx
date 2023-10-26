@@ -13,7 +13,7 @@ const BoxHeader = ({ step, title, right }: { step?: number; title: string; right
                 )}
                 <h2 className="text-bold text-4xl">{title}</h2>
             </div>
-            {right && <div className="flex-item-noshrink on-mobile-text-center mt-4 md:mt-0">{right}</div>}
+            {right && <div className="flex-item-noshrink text-center mt-4 md:mt-0">{right}</div>}
         </div>
     );
 };
