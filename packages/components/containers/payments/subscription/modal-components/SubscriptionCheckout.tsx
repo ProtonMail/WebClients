@@ -231,12 +231,15 @@ const SubscriptionCheckout = ({
                     </div>
                 )
             }
-            renewNotice={getRenewalNoticeText({
-                renewCycle: cycle,
-                isCustomBilling,
-                isScheduledSubscription,
-                subscription,
-            })}
+            renewNotice={
+                !isFreePlanSelected &&
+                getRenewalNoticeText({
+                    renewCycle: cycle,
+                    isCustomBilling,
+                    isScheduledSubscription,
+                    subscription,
+                })
+            }
         >
             <div className="mb-4 flex flex-column">
                 <strong className="mb-1">{planTitle}</strong>
