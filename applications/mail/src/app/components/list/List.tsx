@@ -170,7 +170,7 @@ const List = (
     }, [conversationMode, labelID, conversationCounts, messageCounts]);
 
     return (
-        <div className={clsx(['relative items-column-list relative', !show && 'hidden'])}>
+        <div className={clsx(['relative items-column-list', !show && 'hidden'])}>
             <div ref={ref} className={clsx(['h100', isCompactView && 'list-compact'])}>
                 <h1 className="sr-only">
                     {conversationMode ? c('Title').t`Conversation list` : c('Title').t`Message list`}{' '}
