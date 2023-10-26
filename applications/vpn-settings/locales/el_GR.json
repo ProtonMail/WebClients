@@ -431,6 +431,12 @@
       "Sign in": [
         "Είσοδος"
       ],
+      "Sign in with password": [
+        "Σύνδεση με κωδικό"
+      ],
+      "Sign in with SSO": [
+        "Συνδεθείτε με SSO"
+      ],
       "Sign out": [
         "Αποσύνδεση"
       ],
@@ -4407,8 +4413,8 @@
       "Create a new ${ appName } account": [
         "Δημιουργήστε ένα νέο ${ appName } λογαριασμό"
       ],
-      "Find ${ BRAND_NAME } Account username": [
-        "Εύρεση Ονόματος χρήστη του ${ BRAND_NAME } λογαριασμού"
+      "Find your ${ BRAND_NAME } Account username": [
+        "Βρείτε το όνομα χρήστη του ${ BRAND_NAME } λογαριασμού σας"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Ξεχάσατε τον κωδικό πρόσβασης του ${ BRAND_NAME } λογαριασμού σας; Επαναφέρετε το εδώ χρησιμοποιώντας έναν κωδικό ανάκτησης, email ή SMS και αποκτήστε ξανά πρόσβαση στα ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } σας και παραπάνω."
@@ -4839,12 +4845,6 @@
       ],
       "User session management": [
         "Διαχείριση συνεδριών χρηστών"
-      ],
-      "Vault and Item sharing": [
-        "Κοινή χρήση Κρύπτης και Στοιχείων"
-      ],
-      "Vault and Item sharing (coming soon)": [
-        "Κοινή χρήση Κρύπτης και Στοιχείων (σύντομα διαθέσιμη)"
       ],
       "Vault sharing (up to ${ n } person)": [
         "Κοινή χρήση κρύπτης (έως ${ n } άτομο)",
@@ -6971,6 +6971,9 @@
       ],
       "Sign in to join the Beta program": [
         "Συνδεθείτε για να συμμετάσχετε στο πρόγραμμα Beta"
+      ],
+      "Sign in to your organization": [
+        "Συνδεθήτε στον οργανισμό σας"
       ],
       "Sign in with 2FA": [
         "Είσοδος με Ταυτοποίηση 2 Παραγόντων"
