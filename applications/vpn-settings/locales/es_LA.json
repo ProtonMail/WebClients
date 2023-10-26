@@ -431,6 +431,12 @@
       "Sign in": [
         "Iniciar sesión"
       ],
+      "Sign in with password": [
+        "Iniciar sesión con contraseña"
+      ],
+      "Sign in with SSO": [
+        "Iniciar sesión con SSO"
+      ],
       "Sign out": [
         "Cerrar sesión"
       ],
@@ -681,8 +687,14 @@
       "6 users": [
         "6 usuarios"
       ],
+      "Access content worldwide": [
+        "Acceda a contenido en todo el mundo"
+      ],
       "Ad-blocker and malware protection": [
         "Bloqueador de anuncios y protección contra malware"
+      ],
+      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Todas las funciones de pago de ${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Historial de versiones extendido"
@@ -716,9 +728,30 @@
         "Garantía de reembolso durante 30 días"
       ]
     },
+    "bf2023: renew": {
+      "${ n } month": [
+        "${ n } mes",
+        "los primeros ${ n } meses"
+      ],
+      "the first month": [
+        "el primer mes"
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
+        "La oferta especial de ${ discountedPrice } es válida durante ${ discountedMonths }. Una vez transcurrido ese plazo, se renovará automáticamente al precio rebajado de ${ nextPrice } durante ${ nextMonths }. Podrá cancelarla en cualquier momento."
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
+        "La oferta especial de ${ discountedPrice } es válida durante el primer mes. Una vez transcurrido ese plazo, se renovará automáticamente al precio de ${ nextPrice } cada mes. Puedes cancelarla en cualquier momento."
+      ]
+    },
     "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "Acceda a contenido bloqueado y navegue en privado. Tendrá a su disposición más de 3000 servidores en más de 65 países, VPN de máxima velocidad, acceso a servicios de transmisión de todo el mundo, bloqueadores de malware y de anuncios, descargas rápidas de BitTorrent y mucho más."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Acceda desde cualquier lugar al contenido de servicios de transmisión como Netflix, Disney+ o Prime Video, entre otros."
+      ],
+      "Bypass local internet blocks and censorship with our global network of servers.": [
+        "Evite la censura y los bloqueos locales de Internet con nuestra red global de servidores."
       ],
       "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
         "Incluye compatibilidad con ${ domains } dominios de correo electrónico personalizados, ${ addresses } direcciones de correo electrónico, ${ aliases } alias de hide-my-email, posibilidad de compartir calendarios y más."
@@ -2681,7 +2714,7 @@
         "${ fileName }: vista previa de baja resolución"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } puede también usarse con una sola contraseña que reemplaza tanto a la contraseña de inicio de sesión como a la del buzón. Para cambiar al modo de una sola contraseña, ingrese la única contraseña que desea usar y haga clic en guardar."
+        "${ MAIL_APP_NAME } puede también usarse con una sola contraseña que reemplaza tanto a la contraseña de inicio de sesión como a la del buzón. Para cambiar al modo de una sola contraseña, ingrese la única contraseña que quiere usar y haga clic en guardar."
       ],
       "${ number } city": [
         "${ number } ciudad",
@@ -2807,13 +2840,13 @@
         "Se deshabilitará cualquier método de ${ twoFa } de su cuenta."
       ],
       "Are you sure you want to delete this address?": [
-        "¿Está seguro que desea eliminar esta dirección?"
+        "¿Está seguro que quiere eliminar esta dirección?"
       ],
       "Are you sure you want to disable two-factor authentication?": [
-        "¿Está seguro que desea deshabilitar la autenticación de dos factores?"
+        "¿Está seguro que quiere deshabilitar la autenticación de dos factores?"
       ],
       "Are you sure you want to discard your changes?": [
-        "¿Está seguro que desea descartar los cambios?"
+        "¿Está seguro que quiere descartar los cambios?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "¿Está seguro de que quiere eliminar los privilegios administrativos de este usuario?"
@@ -3064,7 +3097,7 @@
         "Si procede con darse de baja, perderá el acceso a las funciones de pago de ${ VPN_APP_NAME }."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
-        "Si desea combinar esta cuenta con otra, NO la elimine."
+        "Si quiere combinar esta cuenta con otra, NO la elimine."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Importante: asegúrese de guardar los códigos de recuperación, de lo contrario, puede perder permanentemente el acceso a su cuenta si pierde su dispositivo de autenticación de dos factores."
@@ -3493,7 +3526,7 @@
         "Para completar su pago, envíe ${ btcAmountBold } a la dirección de abajo."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
-        "Para confirmar, ingrese el nombre del usuario que desea eliminar."
+        "Para confirmar, ingrese el nombre del usuario que quiere eliminar."
       ],
       "to continue to ${ product }": [
         "para continuar a ${ product }"
@@ -3601,7 +3634,7 @@
         "Logo de Visa Secure"
       ],
       "Want servers in other countries?": [
-        "¿Desea servidores en otros países?"
+        "¿Quiere servidores en otros países?"
       ],
       "Warning:": [
         "Advertencia:"
@@ -3682,7 +3715,7 @@
         "Sin activación, no podrá crear usuarios nuevos, añadir direcciones a usuarios existentes o acceder a cuentas de usuario no privadas."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "¿Desea recibir un código de verificación nuevo o usar un método de verificación alternativo?"
+        "¿Quiere recibir un código de verificación nuevo o usar un método de verificación alternativo?"
       ],
       "Would you like to receive a new verification code?": [
         "¿Desearía recibir un código de verificación nuevo?"
@@ -4306,7 +4339,7 @@
         "¿Cuál es el motivo principal por el que elimina su cuenta?"
       ],
       "Why would you like to cancel?": [
-        "¿Por qué desea cancelar?"
+        "¿Por qué quiere cancelar?"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Sí, quiero eliminar permanentemente esta cuenta y todos sus datos."
@@ -4516,8 +4549,8 @@
       "Create a new ${ appName } account": [
         "Cree una cuenta de ${ appName }"
       ],
-      "Find ${ BRAND_NAME } Account username": [
-        "Encontrar nombre de usuario de ${ BRAND_NAME }"
+      "Find your ${ BRAND_NAME } Account username": [
+        "Encontrar su nombre de usuario de ${ BRAND_NAME }"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "¿Olvidó la contraseña de su cuenta de ${ BRAND_NAME }? Restablézcala aquí usando un código de recuperación, un correo o SMS y retome el acceso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y más."
@@ -4949,12 +4982,6 @@
       "User session management": [
         "Gestión de sesiones de usuario"
       ],
-      "Vault and Item sharing": [
-        "Uso compartido de bóvedas y elementos"
-      ],
-      "Vault and Item sharing (coming soon)": [
-        "Uso compartido de bóvedas y elementos (próximamente)"
-      ],
       "Vault sharing (up to ${ n } person)": [
         "Compartir bóveda (hasta ${ n } persona)",
         "Compartir bóveda (hasta ${ n } personas)"
@@ -5099,7 +5126,7 @@
         "Revisar suscripción y pagar"
       ],
       "Switch plans?": [
-        "¿Desea cambiar de plan?"
+        "¿Quiere cambiar de plan?"
       ]
     },
     "new_plans: Title": {
@@ -5950,7 +5977,7 @@
     },
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
-        "¿Desea cerrar la sesión sin restablecer la contraseña?"
+        "¿Quiere cerrar la sesión sin restablecer la contraseña?"
       ]
     },
     "session_recovery:status:info": {
@@ -6376,10 +6403,10 @@
         "Mantener pago automático"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
-        "Nuestro sistema ya no le cobrará automáticamente con este método de pago, pero su suscripción aún se renovará al final del ciclo de facturación. Si desea pasar a un plan inferior o cambiar su suscripción, debe hacerlo usted mismo antes del final del periodo de facturación. Además, si olvida realizar un pago manual y el pago automático está deshabilitado para todos los métodos de pago, es posible que pasaremos automáticamente su cuenta a un plan inferior, lo que provocará la pérdida de muchas funciones."
+        "Nuestro sistema ya no le cobrará automáticamente con este método de pago, pero su suscripción aún se renovará al final del ciclo de facturación. Si quiere pasar a un plan inferior o cambiar su suscripción, debe hacerlo usted mismo antes del final del periodo de facturación. Además, si olvida realizar un pago manual y el pago automático está deshabilitado para todos los métodos de pago, es posible que pasaremos automáticamente su cuenta a un plan inferior, lo que provocará la pérdida de muchas funciones."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "Nuestro sistema ya no le cobrará automáticamente con este método de pago, pero su suscripción aún se renovará al final del ciclo de facturación. Si desea pasar a un plan inferior o cambiar su suscripción, debe hacerlo usted mismo antes del final del periodo de facturación. No podemos pasar automáticamente su cuenta a un plan inferior porque si supera la cuota de almacenamiento del plan gratuito o si usa otras funciones de pago, no podemos eliminar automáticamente archivos, correos electrónicos u otros datos por usted. Si deshabilita el pago automático, recuerde pagar su próxima factura de suscripción antes de la fecha de vencimiento para evitar la suspensión de la cuenta."
+        "Nuestro sistema ya no le cobrará automáticamente con este método de pago, pero su suscripción aún se renovará al final del ciclo de facturación. Si quiere pasar a un plan inferior o cambiar su suscripción, debe hacerlo usted mismo antes del final del periodo de facturación. No podemos pasar automáticamente su cuenta a un plan inferior porque si supera la cuota de almacenamiento del plan gratuito o si usa otras funciones de pago, no podemos eliminar automáticamente archivos, correos electrónicos u otros datos por usted. Si deshabilita el pago automático, recuerde pagar su próxima factura de suscripción antes de la fecha de vencimiento para evitar la suspensión de la cuenta."
       ]
     },
     "Subscription saving": {
@@ -7083,6 +7110,9 @@
       ],
       "Sign in to join the Beta program": [
         "Iniciar sesión para unirse al programa Beta"
+      ],
+      "Sign in to your organization": [
+        "Iniciar sesión en su organización"
       ],
       "Sign in with 2FA": [
         "Iniciar sesión 2FA"

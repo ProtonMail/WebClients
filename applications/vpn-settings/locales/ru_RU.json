@@ -612,8 +612,14 @@
       "6 users": [
         "6 пользователей"
       ],
+      "Access content worldwide": [
+        "Доступ к контенту по всему миру"
+      ],
       "Ad-blocker and malware protection": [
         "Блокировщик рекламы и защита от вредоносных программ"
+      ],
+      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Все платные функции ${ MAIL_SHORT_APP_NAME } и ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Подробная история версий"
@@ -647,9 +653,32 @@
         "Гарантия возврата средств в течение 30 дней"
       ]
     },
+    "bf2023: renew": {
+      "${ n } month": [
+        "первый ${ n } месяц",
+        "первые ${ n } месяца",
+        "первые ${ n } месяцев",
+        "первые ${ n } месяца"
+      ],
+      "the first month": [
+        "первый месяц"
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
+        "Специальная цена в ${ discountedPrice } действует ${ discountedMonths }. Затем будет выполнено автоматическое продление по сниженной цене в ${ nextPrice } на ${ nextMonths }. Отменить подписку можно в любой момент."
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
+        "Специальная цена в ${ discountedPrice } действует за первый месяц. Затем будет выполнено автоматическое продление по сниженной цене в ${ nextPrice } каждый месяц. Отменить подписку можно в любой момент."
+      ]
+    },
     "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "Сохраняйте конфиденциальность в Интернете и получайте доступ к заблокированному контенту. Мы предлагаем свыше 3000 серверов более чем в 65 странах, высокую скорость VPN-подключения, доступ к стриминговым платформам со всего мира, защиту от вирусов, блокировщик рекламы, быстрое скачивание через BitTorrent и многое другое."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Получайте доступ к стриминговым сервисам, включая Netflix, Disney+, Prime Video и другие, из любой точки мира."
+      ],
+      "Bypass local internet blocks and censorship with our global network of servers.": [
+        "Обходите локальные блокировки Интернета и цензуру с помощью нашей глобальной сети серверов."
       ],
       "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
         "Включает поддержку собственных доменов (${ domains } шт.),  адресов электронной почты (${ addresses } шт.), псевдонимов hide-my-email (${ aliases } шт.), совместный доступ к календарю и другие преимущества."
@@ -4232,9 +4261,6 @@
       "Create a new ${ appName } account": [
         "Создать новый аккаунт ${ appName }"
       ],
-      "Find ${ BRAND_NAME } Account username": [
-        "Найти имя пользователя аккаунта ${ BRAND_NAME }"
-      ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Забыли пароль от аккаунта ${ BRAND_NAME }? Восстановите его здесь с помощью кода восстановления, электронной почты или СМС и верните доступ к ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } и другим сервисам."
       ],
@@ -4658,12 +4684,6 @@
       ],
       "User session management": [
         "Управление сеансом пользователя"
-      ],
-      "Vault and Item sharing": [
-        "Совместный доступ к хранилищам и элементам"
-      ],
-      "Vault and Item sharing (coming soon)": [
-        "Совместный доступ к хранилищам и элементам (скоро появится)"
       ]
     },
     "new_plans: feature info": {
