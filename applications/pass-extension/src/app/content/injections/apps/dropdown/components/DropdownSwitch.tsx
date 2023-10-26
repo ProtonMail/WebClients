@@ -80,7 +80,14 @@ const DropdownSwitchRender: ForwardRefRenderFunction<HTMLDivElement, Props> = (
                         );
 
                     case DropdownAction.AUTOSUGGEST_PASSWORD:
-                        return <PasswordAutoSuggest onMessage={onMessage} onClose={onClose} visible={visible} />;
+                        return (
+                            <PasswordAutoSuggest
+                                passwordOptions={state.options}
+                                onMessage={onMessage}
+                                onClose={onClose}
+                                visible={visible}
+                            />
+                        );
 
                     case DropdownAction.AUTOSUGGEST_ALIAS:
                         return (

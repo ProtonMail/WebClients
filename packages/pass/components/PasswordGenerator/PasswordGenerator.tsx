@@ -155,7 +155,6 @@ export const PasswordGenerator: VFC<UsePasswordGeneratorResult> = ({
                     </div>
                     {showAdvanced && (
                         <>
-                            {' '}
                             <hr className="m-0" />
                             <div className="flex flex-align-items-center gap-x-2">
                                 <label
