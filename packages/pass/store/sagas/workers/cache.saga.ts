@@ -3,7 +3,8 @@ import type { Task } from 'redux-saga';
 import { cancel, fork, select, take, takeLatest } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
-import { CACHE_SALT_LENGTH, encryptData, getCacheEncryptionKey } from '@proton/pass/lib/crypto/utils';
+import { CACHE_SALT_LENGTH, getCacheEncryptionKey } from '@proton/pass/lib/crypto/utils/cache.encrypt';
+import { encryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { workerReady } from '@proton/pass/lib/worker';
 import { signout, stateLock } from '@proton/pass/store/actions';
 import { isCacheTriggeringAction } from '@proton/pass/store/actions/with-cache-block';
