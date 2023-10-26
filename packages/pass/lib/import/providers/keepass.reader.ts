@@ -115,7 +115,7 @@ const extractVaults = (group: KeePassGroup, vaults: ImportVault[] = []): ImportV
 
 export const readKeePassData = (data: string): ImportPayload => {
     try {
-        const x2js = new X2JS();
+        const x2js = new X2JS({ stripWhitespaces: false });
         const importXml: KeePassFile = x2js.xml2js(data);
         const vaults = extractVaults(importXml.KeePassFile.Root as KeePassGroup);
 
