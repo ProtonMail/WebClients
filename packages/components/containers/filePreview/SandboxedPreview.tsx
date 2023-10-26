@@ -28,7 +28,7 @@ export const SandboxedPreview: FC<Props> = ({ contents, mimeType, onDownload }) 
             return;
         }
 
-        const handleError = (e: Error) => {
+        const handleError = (e: any) => {
             traceError(e);
             setError(true);
         };
