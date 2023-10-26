@@ -7,7 +7,7 @@ import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features'
 
 import { getCalendarAppFeature, getNCalendarsFeature } from './calendar';
 import { getDriveAppFeature, getStorageFeature, getStorageFeatureB2B } from './drive';
-import { getSupport, getUsersFeature } from './highlights';
+import { getSentinel, getSupport, getUsersFeature } from './highlights';
 import { ShortPlan, ShortPlanLike } from './interface';
 import {
     getContactGroupsManagement,
@@ -16,6 +16,7 @@ import {
     getNAddressesFeatureB2B,
     getNDomainsFeature,
     getNMessagesFeature,
+    getSMTPToken,
 } from './mail';
 import {
     FREE_PASS_ALIASES,
@@ -93,6 +94,7 @@ export const getBundlePlan = (plan: Plan, vpnServersCountData: VPNServersCountDa
             getFoldersAndLabelsFeature('unlimited'),
             getNMessagesFeature('unlimited'),
             getNDomainsFeature({ n: plan.MaxDomains }),
+            getSentinel(),
             getSupport('priority'),
             getCalendarAppFeature(),
             getDriveAppFeature(),
@@ -232,6 +234,7 @@ export const getMailProPlan = (plan: Plan): ShortPlan => {
             getFoldersAndLabelsFeature('unlimited'),
             getContactGroupsManagement(),
             getCalendarAppFeature(),
+            getSMTPToken(true),
         ],
     };
 };
@@ -248,6 +251,7 @@ export const getBundleProPlan = (plan: Plan): ShortPlan => {
             getStorageFeatureB2B(plan.MaxSpace),
             getNAddressesFeatureB2B({ n: plan.MaxAddresses }),
             getNDomainsFeature({ n: plan.MaxDomains }),
+            getSentinel(),
             getFoldersAndLabelsFeature('unlimited'),
             getContactGroupsManagement(),
             getCalendarAppFeature(),
@@ -256,6 +260,7 @@ export const getBundleProPlan = (plan: Plan): ShortPlan => {
             getB2BHighSpeedVPNConnections(),
             getNetShield(true),
             getSecureCore(true),
+            getSMTPToken(true),
         ],
     };
 };
@@ -297,6 +302,7 @@ export const getFamilyPlan = (plan: Plan, serversCount: VPNServersCountData): Sh
             getFoldersAndLabelsFeature(Number.POSITIVE_INFINITY),
             getNMessagesFeature(Number.POSITIVE_INFINITY),
             getNDomainsFeature({ n: plan.MaxDomains }),
+            getSentinel(),
             getCalendarAppFeature({ family: true }),
             getDriveAppFeature({ family: true }),
             getVPNAppFeature({
@@ -305,6 +311,7 @@ export const getFamilyPlan = (plan: Plan, serversCount: VPNServersCountData): Sh
             }),
             getPassAppFeature(),
             getSupport('priority'),
+            getSMTPToken(true),
         ],
     };
 };
