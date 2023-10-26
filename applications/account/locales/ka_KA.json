@@ -884,6 +884,12 @@
       "Sign in": [
         "შესვლა"
       ],
+      "Sign in with password": [
+        "პაროლით შესვლა"
+      ],
+      "Sign in with SSO": [
+        "SSO-ით შესვლა"
+      ],
       "Sign out": [
         "გასვლა"
       ],
@@ -3008,6 +3014,14 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "დაგვეხმარეთ გავუმჯობესდეთ!"
+      ]
+    },
+    "drive_signup_2023: Info": {
+      "Advanced sharing security": [
+        "გაზიარების გაუმჯობესებული უსაფრთხოება"
+      ],
+      "Encrypted cloud storage for all your files": [
+        "დაშიფრული ღრუბლოვანი საცავი ყველა თქვენი ფაილისთვის"
       ]
     },
     "Duration": {
@@ -5932,6 +5946,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "ამ კალენდრის მოვლენის სრული დეტალების გაზიარებით თქვენ ეთანხმებით იმას, რომ ${ BRAND_NAME }-ს მის დაშიფრულ შიგთავსთან წვდომა ეძლევა."
       ],
+      "Cancel anytime": [
+        "გააუქმეთ ნებისმიერ დროს"
+      ],
       "Center": [
         "ცენტრი"
       ],
@@ -7393,6 +7410,9 @@
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Business ან Enterprise ტარიფით შეგიძლიათ, თქვენი ორგანიზაციისთვის ${ boldDedicatedServers } შეიძინოთ და ააწყოთ ${ boldGateways }, რათა აკონტროლოთ, რომელ მომხმარებელს აქვს წვდომა."
+      ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "${ BRAND_NAME }-ის დაშიფრული მისამართით თქვენ ${ BRAND_NAME }-ის ყველა სერვისის გამოყენება შეგიძლიათ"
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "თქვენი მიმდინარე ტარიფით @pm.me დომენის თქვენი მომხმარებლით ელფოსტის, მხოლოდ, მიღება შეგიძლიათ. @pm.me დომენზე დამატებითი მისამართების დასამატებლად და მათით ელფოსტის გასაგზავნად, ასწიეთ სატარიფო გეგმა."
@@ -9380,8 +9400,8 @@
       "Create a new ${ appName } account": [
         "შექმენით ახალი ${ appName }-ის ანგარიში"
       ],
-      "Find ${ BRAND_NAME } Account username": [
-        "იპოვეთ ${ BRAND_NAME }-ის ანგარიშის მომხმარებლის სახელი"
+      "Find your ${ BRAND_NAME } Account username": [
+        "იპოვეთ თქვენი ${ BRAND_NAME }-ის ანგარიშის მომხმარებლის სახელი"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "დაგავიწყდათ თქვენი ${ BRAND_NAME }-ის ანგარიშის პაროლი? შეცვალეთ ის თქვენი აღდგენის კოდის, ელფოსტის ან SMS-ის საშუალებით და დაიბრუნეთ წვდომა ${ MAIL_APP_NAME }-სთან, ${ DRIVE_SHORT_APP_NAME }-სთან, ${ CALENDAR_SHORT_APP_NAME }-სთან და სხვ."
@@ -10044,12 +10064,6 @@
       "User session management": [
         "მომხმარებლის სესიის მართვა"
       ],
-      "Vault and Item sharing": [
-        "საცავის და ელემენტის გაზიარება"
-      ],
-      "Vault and Item sharing (coming soon)": [
-        "საცავისა და ელემენტების გაზიარება (მალე)"
-      ],
       "Vault sharing (up to ${ n } person)": [
         "საცავის გაზიარება (${ n }-მდე პიროვნებასთან)",
         "საცავის გაზიარება (${ n }-მდე პიროვნებასთან)"
@@ -10075,6 +10089,17 @@
       ],
       "Team management": [
         "ჯგუფის მართვა"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "სხვაგვარად თქვენს ანგარიშთან წვდომა შეზღუდული გექნებათ და ცოტა ხანში საერთოდ გაგეთიშებათ."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME }-ის ფასიანი თვისებებით გამოყენების გასაგრძელებლად აირჩიეთ თქვენი გამოწერის ტარიფი და გადახდის ვარიანტი."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "სატესტო პერიოდის დასრულების თარიღია ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -10164,17 +10189,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "თქვენს მიმდინარე გეგმაში სარეკლამო ფასით სარგებლობთ. ანგარიშის ტარიფის ჩამოწევის შემთხვევაში თქვენ დაკარგავთ სარეკლამო ფასს და თუ გამოწერას კვლავ შეეცდებით, ის ხელმისაწვდომი აღარ იქნება."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "სხვაგვარად თქვენს ანგარიშთან წვდომა შეზღუდული გექნებათ და ცოტა ხანში საერთოდ გაგეთიშებათ."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME }-ის ფასიანი თვისებებით გამოყენების გასაგრძელებლად აირჩიეთ თქვენი გამოწერის ტარიფი და გადახდის ვარიანტი."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "სატესტო პერიოდის დასრულების თარიღია ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11171,6 +11185,9 @@
       "You currently have": [
         "ამჟამად გაქვთ"
       ],
+      "You have been invited to join ${ PASS_APP_NAME }": [
+        "გაქვთ მოსაწვევი, ${ PASS_APP_NAME }-ს შეუერთდეთ"
+      ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "თქვენს ორგანიზაციას აქვს წვდომა ${ free }-სთან. თუ გნებავთ ${ appName }-ის ფასიან ფუნქციებთან წვდომაც, ტარიფის ასაწევად ორგანიზაციის ადმინისტრატორს დაუკავშირდით."
       ]
@@ -11186,6 +11203,9 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "ყველა ${ BRAND_NAME } Plus-ის სერვისი. ${ br }ერთი იოლი გამოწერა."
+      ],
+      "Create a ${ PASS_APP_NAME } account": [
+        "შექმენით ${ PASS_APP_NAME }-ის ანგარიში"
       ],
       "Create your ${ BRAND_NAME } account": [
         "შექმენით თქვენი ${ BRAND_NAME }-ის ანგარიში"
@@ -13661,6 +13681,9 @@
       ],
       "Sign in to join the Beta program": [
         "შედით სისტემაში ბეტა პროგრამაში დასარეგისტრირებლად"
+      ],
+      "Sign in to your organization": [
+        "შედით თქვენს ორგანიზაციაში"
       ],
       "Sign in with 2FA": [
         "2FA-ით შეცვლა"

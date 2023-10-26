@@ -360,7 +360,7 @@
         "更改计费方式"
       ],
       "Edit display name": [
-        "编辑显示名称"
+        "更改称呼"
       ],
       "Edit email address": [
         "更改邮箱地址"
@@ -6240,7 +6240,7 @@
         "此向导将为您的 ${ BRAND_NAME } 账户启用双重认证 (2FA)。双重认证将使您的 ${ BRAND_NAME_TWO } 账户更加安全，因此我们建议启用它。"
       ],
       "to ${ product } Business": [
-        "至 ${ product } 业务"
+        "使用 ${ product } Business"
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "为避免丢失数据，删除密钥前请确认您了解执行该操作的后果，并确保此密钥已妥善备份。"
@@ -6339,7 +6339,7 @@
         "无限的文件夹、标签和过滤器"
       ],
       "Unlimited messages": [
-        "无限邮件"
+        "无限量发送邮件"
       ],
       "Unsaved changes": [
         "更改未保存"
@@ -7551,7 +7551,7 @@
         "事件通知"
       ],
       "Exclude Spam/Trash from All mail": [
-        "从所有邮件中排除垃圾邮件/垃圾信息"
+        "所有邮件中不显示垃圾邮件和废件箱中的邮件"
       ],
       "Expiration (${ patternExpiration })": [
         "到期 (${ patternExpiration })"
@@ -8978,6 +8978,14 @@
         "团队管理"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否则，您的账户功能将受到限制，直至最后被停用。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } 在${ last4 } 结束"
@@ -9050,14 +9058,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "您正在享受当前套餐的促销价格。 降级账号后，您将失去优惠价格，如果再次尝试订阅，优惠价格将不可用。"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否则，您的账户功能将受到限制，直至最后被停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
       ]
     },
     "new_plans: Label": {
@@ -11441,7 +11441,7 @@
         "删除日志"
       ],
       "Delete the server (you will still be able to recover it for ${ days } days)": [
-        "删除服务器（您仍然可以在 ${ days } 天后恢复它）"
+        "删除服务器（${ days } 天内仍可恢复）"
       ],
       "Delete user": [
         "删除用户"

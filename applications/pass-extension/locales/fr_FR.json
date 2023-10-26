@@ -1619,8 +1619,8 @@
     },
     "Success": {
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "Les coffres-forts contiennent plus d'${ vault.targetMaxMembers } utilisateur.",
-        "Les coffres-forts contiennent plus de ${ vault.targetMaxMembers } utilisateurs."
+        "Les coffres-forts ne peuvent pas compter plus de ${ vault.targetMaxMembers } utilisateur.",
+        "Les coffres-forts ne peuvent pas compter plus de ${ vault.targetMaxMembers } utilisateurs."
       ]
     },
     "Title": {
@@ -1878,7 +1878,7 @@
         "Vous avez atteint le nombre limite de membres qui peuvent accéder à ce coffre-fort."
       ],
       "You have reached the limit of users in this vault. ${ upgradeLink }": [
-        "Vous avez atteint le nombre maximal d'utilisateurs dans ce coffre-fort. ${ upgradeLink }"
+        "Vous avez atteint le nombre maximum d'utilisateurs dans ce coffre-fort. ${ upgradeLink }"
       ],
       "You have reached the limit of vaults you can have in your plan.": [
         "Vous avez atteint le nombre limite de coffres-forts de votre abonnement."
