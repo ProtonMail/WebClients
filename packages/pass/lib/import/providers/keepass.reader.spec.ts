@@ -97,7 +97,7 @@ describe('Import KeePass xml', () => {
         expect(loginItem.trashed).toEqual(false);
     });
 
-    it('should extract items from `Group C`', () => {
+    it('should extract items from `Group C and not trim spaces`', () => {
         const groupC = payload.vaults[2];
         expect(groupC.items.length).toEqual(1);
 
@@ -107,7 +107,7 @@ describe('Import KeePass xml', () => {
         expect(loginItem.metadata.note).toEqual('');
         expect(loginItem.metadata.itemUuid).not.toBeUndefined();
         expect(loginItem.content.username).toEqual('nobody@proton.me');
-        expect(loginItem.content.password).toEqual('proton123');
+        expect(loginItem.content.password).toEqual('a bbbb c ');
         expect(loginItem.content.urls).toEqual([]);
         expect(loginItem.content.totpUri).toEqual('');
         expect(loginItem.extraFields).toEqual([]);
