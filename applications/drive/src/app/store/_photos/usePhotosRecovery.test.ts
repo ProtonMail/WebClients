@@ -4,7 +4,7 @@ import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 
 import { DecryptedLink, useLinksActions, useLinksListing } from '../_links';
-import { useShareActions } from '../_shares';
+import { usePhotos } from './PhotosProvider';
 import { RECOVERY_STATE, usePhotosRecovery } from './usePhotosRecovery';
 
 function generateDecryptedLink(linkId = 'linkId'): DecryptedLink {
@@ -34,32 +34,9 @@ jest.mock('../_links', () => {
     return { useLinksActions, useLinksListing };
 });
 
-jest.mock('../_shares', () => {
-    const useShareActions = jest.fn();
-    return { useShareActions };
-});
-
 jest.mock('./PhotosProvider', () => {
-    const usePhotos = () => ({
-        shareId: 'shareId',
-        linkId: 'linkId',
-        restoredShares: [
-            {
-                shareId: 'shareId',
-                rootLinkId: 'rootLinkId',
-                volumeId: 'volumeId',
-                creator: 'creator',
-                isLocked: false,
-                isDefault: false,
-                isVolumeSoftDeleted: false,
-                possibleKeyPackets: ['dsad'],
-                type: 4,
-                state: 1,
-            },
-        ],
-    });
     return {
-        usePhotos,
+        usePhotos: jest.fn(),
     };
 });
 
@@ -97,21 +74,37 @@ const getAllResultState = (
 };
 describe('usePhotosRecovery', () => {
     const links = [generateDecryptedLink('linkId1'), generateDecryptedLink('linkId2')];
-    const mockedUseShareActions = jest.mocked(useShareActions);
-    const mockedDeleteShare = jest.fn();
+    const mockedUsePhotos = jest.mocked(usePhotos);
     const mockedUseLinksListing = jest.mocked(useLinksListing);
     const mockedUseLinksActions = jest.mocked(useLinksActions);
     const mockedGetCachedChildren = jest.fn();
     const mockedLoadChildren = jest.fn();
     const mockedMoveLinks = jest.fn();
+    const mockedDeletePhotosShare = jest.fn();
     // @ts-ignore
     mockedUseLinksListing.mockReturnValue({
         loadChildren: mockedLoadChildren,
         getCachedChildren: mockedGetCachedChildren,
     });
     // @ts-ignore
-    mockedUseShareActions.mockReturnValue({
-        deleteShare: mockedDeleteShare,
+    mockedUsePhotos.mockReturnValue({
+        shareId: 'shareId',
+        linkId: 'linkId',
+        restoredShares: [
+            {
+                shareId: 'shareId',
+                rootLinkId: 'rootLinkId',
+                volumeId: 'volumeId',
+                creator: 'creator',
+                isLocked: false,
+                isDefault: false,
+                isVolumeSoftDeleted: false,
+                possibleKeyPackets: ['dsad'],
+                type: 4,
+                state: 1,
+            },
+        ],
+        deletePhotosShare: mockedDeletePhotosShare,
     });
     // @ts-ignore
     mockedUseLinksActions.mockReturnValue({
@@ -120,7 +113,7 @@ describe('usePhotosRecovery', () => {
 
     beforeEach(() => {
         jest.clearAllMocks();
-        mockedDeleteShare.mockResolvedValue(undefined);
+        mockedDeletePhotosShare.mockResolvedValue(undefined);
         mockedLoadChildren.mockResolvedValue(undefined);
 
         mockedMoveLinks.mockImplementation(
@@ -144,7 +137,7 @@ describe('usePhotosRecovery', () => {
         expect(mockedGetCachedChildren).toHaveBeenCalledTimes(3);
         expect(mockedMoveLinks).toHaveBeenCalledTimes(1);
         expect(mockedLoadChildren).toHaveBeenCalledTimes(1);
-        expect(mockedDeleteShare).toHaveBeenCalledTimes(1);
+        expect(mockedDeletePhotosShare).toHaveBeenCalledTimes(1);
         expect(result.current.countOfUnrecoveredLinksLeft).toEqual(0);
         expect(getAllResultState(result.all)).toStrictEqual([
             'READY',
@@ -194,7 +187,7 @@ describe('usePhotosRecovery', () => {
         expect(result.current.countOfFailedLinks).toEqual(1);
         expect(result.current.countOfUnrecoveredLinksLeft).toEqual(0);
         expect(result.current.state).toEqual('FAILED');
-        expect(mockedDeleteShare).toHaveBeenCalledTimes(0);
+        expect(mockedDeletePhotosShare).toHaveBeenCalledTimes(0);
         expect(getAllResultState(result.all)).toStrictEqual([
             'READY',
             'READY',
@@ -220,14 +213,14 @@ describe('usePhotosRecovery', () => {
         mockedGetCachedChildren.mockReturnValueOnce({ links, isDecrypting: false }); // Decrypting step
         mockedGetCachedChildren.mockReturnValueOnce({ links, isDecrypting: false }); // Preparing step
         mockedGetCachedChildren.mockReturnValueOnce({ links: [], isDecrypting: false }); // Deleting step
-        mockedDeleteShare.mockRejectedValue(undefined);
+        mockedDeletePhotosShare.mockRejectedValue(undefined);
         const { result, waitFor } = renderHook(() => usePhotosRecovery());
         act(() => {
             result.current.start();
         });
 
         await waitFor(() => expect(result.current.state).toEqual('FAILED'));
-        expect(mockedDeleteShare).toHaveBeenCalledTimes(1);
+        expect(mockedDeletePhotosShare).toHaveBeenCalledTimes(1);
 
         expect(getAllResultState(result.all)).toStrictEqual([
             'READY',
@@ -261,7 +254,7 @@ describe('usePhotosRecovery', () => {
         });
 
         await waitFor(() => expect(result.current.state).toEqual('FAILED'));
-        expect(mockedDeleteShare).toHaveBeenCalledTimes(0);
+        expect(mockedDeletePhotosShare).toHaveBeenCalledTimes(0);
         expect(mockedGetCachedChildren).toHaveBeenCalledTimes(0);
 
         expect(getAllResultState(result.all)).toStrictEqual(['READY', 'READY', 'STARTED', 'DECRYPTING', 'FAILED']);
@@ -282,7 +275,7 @@ describe('usePhotosRecovery', () => {
         });
 
         await waitFor(() => expect(result.current.state).toEqual('FAILED'));
-        expect(mockedDeleteShare).toHaveBeenCalledTimes(0);
+        expect(mockedDeletePhotosShare).toHaveBeenCalledTimes(0);
         expect(mockedMoveLinks).toHaveBeenCalledTimes(1);
         expect(mockedGetCachedChildren).toHaveBeenCalledTimes(2);
         expect(getAllResultState(result.all)).toStrictEqual([
