@@ -2410,6 +2410,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -2436,6 +2439,12 @@
         "Megabajty",
         "Megabajtov",
         "Megabajtov"
+      ],
+      "Terabyte": [
+        "terabajt",
+        "terabajty",
+        "terabajtov",
+        "terabajtov"
       ]
     },
     "Font face option": {
@@ -3106,7 +3115,7 @@
         "Nenájdené žiadne výsledky"
       ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Nie je toto vaše zariadenie? K prihláseniu použite okno súkromného prehliadania a po dokončení ho zatvorte. ${ learnMore }"
+        "Nie je to vaše zariadenie? K prihláseniu použite okno súkromného prehliadania a po dokončení ho zatvorte. ${ learnMore }"
       ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverov v organizácii"
@@ -3424,7 +3433,7 @@
         "Týmto sa nahradí vaše dočasné heslo. V budúcnosti ho použite pre prístup k vášmu účtu ${ BRAND_NAME }."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
-        "Toto vás odhlási zo všetkých aktívnych relácií a vypne 2-faktorovú autorizáciu."
+        "Toto vás odhlási zo všetkých aktívnych relácií a vypne dvojstupňové overenie."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Tento sprievodca povolí na vašom účte ${ BRAND_NAME } dvojstupňové overenie (2FA). Dvojstupňové overenie zvýši bezpečnosť vášho účtu ${ BRAND_NAME_TWO }, preto vám ho odporúčame povoliť."
@@ -3454,7 +3463,7 @@
         "Ak chcete mať prehľad o najnovšom vývoji produktov ${ BRAND_NAME }, môžete sa prihlásiť na odber rôznych emailov a pozrieť sa z času na čas na ${ blogLink }."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
-        "Ak chcete pokračovať, z dôvodu kontroly požiadavky vyberte metódu obnoenia účtu."
+        "Ak chcete pokračovať, z dôvodu kontroly požiadavky vyberte metódu obnovenia účtu."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Ak chcete zabezpečiť svoje internetové pripojenie, stiahnite a nainštalujte si aplikáciu ${ VPN_APP_NAME } pre svoje zariadenie a pripojte sa k serveru."
@@ -3577,7 +3586,7 @@
         "Odporúčame mať viacero serverov na rôznych miestach, aby sa zabezpečila redundancia."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
-        "Odporúčame upozorniť členov organizácie a požiadať ich, aby si pred vynútením používania 2FA ho na svojich účtoch najskôr nastavili."
+        "Odporúčame upozorniť členov organizácie a požiadať ich, aby si nastavili 2FA pre svoje kontá skôr, ako začne vynútené používanie 2FA."
       ],
       "We recommend using your recovery phrase instead.": [
         "Namieto toho doporučujeme použiť obnovovaciu frázu."
@@ -3598,7 +3607,7 @@
         "Vitajte"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
-        "Pošleme resetovací kód na emailovú adresu, ktorú si poskytli pre obnovenie účtu."
+        "Pošleme resetovací kód na emailovú adresu, ktorú ste poskytli pre obnovenie účtu."
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Na telefónne číslo, ktoré ste uviedli v prípade obnovenia účtu odošleme kód pre obnovenie."
@@ -3709,7 +3718,7 @@
         "Môžete byť presmerovaní na webovú stránku vašej banky."
       ],
       "You must activate your organization private key with the backup organization key password provided to you by your organization administrator.": [
-        "Musíte aktivovať súkromný kľúč organizácie pomocou hesla kľúča organizácie pre zálohovánie, ktoré vám poskytne správca."
+        "Súkromný kľúč organizácie musíte aktivovať pomocou hesla záložného kľúča organizácie, ktoré vám poskytol správca organizácie."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Pred znížením predplatného musíte zakázať alebo odstrániť všetkých ďalších ${ MAIL_APP_NAME } používateľov, adresy a vlastné domény."
@@ -3739,7 +3748,7 @@
         "Za účelom overenia platby budete presmerovaný na PayPal."
       ],
       "You'll stay signed in even after you close the browser.": [
-        "Prihlásený zostanete aj po zatvorení prehliadača."
+        "Prihlásení zostanete aj po zatvorení prehliadača."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Váš účet ${ BRAND_NAME } je momentálne pozastavený. Po 28 dňoch vám už nebudú do schránky doručované emaily, odkazy na zdieľanie na Disku budú zablokované a nebudete môcť nahrávať nové súbory. Ak chcete obnoviť normálnu prevádzku, uhraďte všetky faktúry po splatnosti."
@@ -3781,7 +3790,7 @@
         "Váš ďalší dátum fakturácie je ${ renewalTime }"
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "Heslo organizácie je možné zdieľať so všetkými užívateľmi, ktorým chcete prideliť oprávnenia správcu. Heslo slúži tiež ako núdzový kód na obnovenie prístupu do Vašej organizácie v prípade, že stratíte prístup k svojmu hlavnému účtu. Heslo uložte a držte v bezpečí."
+        "Heslo organizácie je možné zdieľať so všetkými používateľmi, ktorým chcete prideliť oprávnenia správcu. Heslo slúži tiež ako núdzový kód na obnovenie prístupu do vašej organizácie v prípade, že stratíte prístup k svojmu hlavnému účtu. Heslo uložte a držte v bezpečí."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Vaše platobné údaje sú chránené TLS šifrovaním a švajčiarskymi zákonmi o ochrane súkromia."
@@ -4484,8 +4493,8 @@
       "Create a new ${ appName } account": [
         "Vytvoriť nový ${ appName } účet"
       ],
-      "Find ${ BRAND_NAME } Account username": [
-        "Nájsť používateľské meno účtu v ${ BRAND_NAME }"
+      "Find your ${ BRAND_NAME } Account username": [
+        "Zistite vaše používateľské meno v ${ BRAND_NAME }"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Zabudli ste heslo k vášmu ${ BRAND_NAME } účtu? Resetujte ho pomocou kódu na obnovenie, emailu alebo SMS a získajte opätovnjý prístup k ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } a ďalším."
@@ -4952,12 +4961,6 @@
       ],
       "User session management": [
         "Správa relácií používateľov"
-      ],
-      "Vault and Item sharing": [
-        "Zdieľanie trezoru a položiek"
-      ],
-      "Vault and Item sharing (coming soon)": [
-        "Trezor a zdieľanie položiek (už čoskoro)"
       ],
       "Vault sharing (up to ${ n } person)": [
         "Zdieľanie trezora (s ${ n } osobou)",

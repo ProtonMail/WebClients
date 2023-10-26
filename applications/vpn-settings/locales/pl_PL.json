@@ -431,6 +431,12 @@
       "Sign in": [
         "Zaloguj się"
       ],
+      "Sign in with password": [
+        "Zaloguj się za pomocą hasła"
+      ],
+      "Sign in with SSO": [
+        "Zaloguj się przez SSO"
+      ],
       "Sign out": [
         "Wyloguj"
       ],
@@ -4602,7 +4608,7 @@
       "Create a new ${ appName } account": [
         "Utwórz nowe konto ${ appName }"
       ],
-      "Find ${ BRAND_NAME } Account username": [
+      "Find your ${ BRAND_NAME } Account username": [
         "Znajdź konto ${ BRAND_NAME }"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
@@ -5070,12 +5076,6 @@
       ],
       "User session management": [
         "Zarządzanie sesją użytkownika"
-      ],
-      "Vault and Item sharing": [
-        "Udostępnianie sejfu i elementów"
-      ],
-      "Vault and Item sharing (coming soon)": [
-        "Udostępnianie sejfu i elementów (wkrótce)"
       ],
       "Vault sharing (up to ${ n } person)": [
         "Udostępnianie sejfu (do ${ n } użytkownika)",
@@ -7289,6 +7289,9 @@
       ],
       "Sign in to join the Beta program": [
         "Zaloguj się, aby dołączyć do wersji beta"
+      ],
+      "Sign in to your organization": [
+        "Zaloguj się do organizacji"
       ],
       "Sign in with 2FA": [
         "Zaloguj się z uwierzytelnianiem dwustopniowym"

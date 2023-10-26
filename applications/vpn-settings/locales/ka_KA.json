@@ -431,6 +431,12 @@
       "Sign in": [
         "შესვლა"
       ],
+      "Sign in with password": [
+        "პაროლით შესვლა"
+      ],
+      "Sign in with SSO": [
+        "SSO-ით შესვლა"
+      ],
       "Sign out": [
         "გასვლა"
       ],
@@ -3559,6 +3565,9 @@
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Business ან Enterprise ტარიფით შეგიძლიათ, თქვენი ორგანიზაციისთვის ${ boldDedicatedServers } შეიძინოთ და ააწყოთ ${ boldGateways }, რათა აკონტროლოთ, რომელ მომხმარებელს აქვს წვდომა."
       ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "${ BRAND_NAME }-ის დაშიფრული მისამართით თქვენ ${ BRAND_NAME }-ის ყველა სერვისის გამოყენება შეგიძლიათ"
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "აქტივაციის გარეშე ვერ შეძლებთ ახალი მომხმარებლების შექმნას, არსებულ მომხმარებლებზე მისამართების დამატებას და არ გექნებათ არა-პირადი მომხმარებლების ანგარიშებთან წვდომა."
       ],
@@ -4397,8 +4406,8 @@
       "Create a new ${ appName } account": [
         "შექმენით ახალი ${ appName }-ის ანგარიში"
       ],
-      "Find ${ BRAND_NAME } Account username": [
-        "იპოვეთ ${ BRAND_NAME }-ის ანგარიშის მომხმარებლის სახელი"
+      "Find your ${ BRAND_NAME } Account username": [
+        "იპოვეთ თქვენი ${ BRAND_NAME }-ის ანგარიშის მომხმარებლის სახელი"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "დაგავიწყდათ თქვენი ${ BRAND_NAME }-ის ანგარიშის პაროლი? შეცვალეთ ის თქვენი აღდგენის კოდის, ელფოსტის ან SMS-ის საშუალებით და დაიბრუნეთ წვდომა ${ MAIL_APP_NAME }-სთან, ${ DRIVE_SHORT_APP_NAME }-სთან, ${ CALENDAR_SHORT_APP_NAME }-სთან და სხვ."
@@ -4829,12 +4838,6 @@
       ],
       "User session management": [
         "მომხმარებლის სესიის მართვა"
-      ],
-      "Vault and Item sharing": [
-        "საცავის და ელემენტის გაზიარება"
-      ],
-      "Vault and Item sharing (coming soon)": [
-        "საცავისა და ელემენტების გაზიარება (მალე)"
       ],
       "Vault sharing (up to ${ n } person)": [
         "საცავის გაზიარება (${ n }-მდე პიროვნებასთან)",
@@ -6964,6 +6967,9 @@
       ],
       "Sign in to join the Beta program": [
         "შედით სისტემაში ბეტა პროგრამაში დასარეგისტრირებლად"
+      ],
+      "Sign in to your organization": [
+        "შედით თქვენს ორგანიზაციაში"
       ],
       "Sign in with 2FA": [
         "2FA-ით შეცვლა"
