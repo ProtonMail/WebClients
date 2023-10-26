@@ -884,6 +884,12 @@
       "Sign in": [
         "Iniciar sessão"
       ],
+      "Sign in with password": [
+        "Iniciar sessão com sua senha"
+      ],
+      "Sign in with SSO": [
+        "Iniciar sessão com SSO"
+      ],
       "Sign out": [
         "Encerrar sessão"
       ],
@@ -1335,8 +1341,14 @@
       "6 users": [
         "6 usuários"
       ],
+      "Access content worldwide": [
+        "Acesse conteúdo em todo o mundo"
+      ],
       "Ad-blocker and malware protection": [
         "Bloqueador de anúncios e proteção contra malware"
+      ],
+      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Todos os recursos ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_APP_NAME } pagos"
       ],
       "Extended version history": [
         "Histórico de versão estendido"
@@ -1370,9 +1382,30 @@
         "Garantia de devolução do seu dinheiro por até 30 dias"
       ]
     },
+    "bf2023: renew": {
+      "${ n } month": [
+        "${ n } mês",
+        "os primeiros ${ n } meses"
+      ],
+      "the first month": [
+        "o primeiro mês"
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
+        "O preço com desconto especial de ${ discountedPrice } é válido por ${ discountedMonths }. Em seguida, ele será renovado automaticamente pelo preço com desconto de ${ nextPrice } por ${ nextMonths }. Você pode cancelar a qualquer momento."
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
+        "O preço com desconto especial de ${ discountedPrice } é válido no primeiro mês. Em seguida, ele será renovado automaticamente pelo preço de ${ nextPrice } todo mês. Você pode cancelar a qualquer momento."
+      ]
+    },
     "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "Acesse conteúdo bloqueado e navegue com privacidade. Inclui mais de 3.000 servidores em mais de 65 países, velocidades VPN mais altas, acesso a serviços de streaming em todo o mundo, malware e bloqueador de anúncios, downloads rápidos de BitTorrent e muito mais."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Acesse conteúdo de serviços de streaming, como Netflix, Disney+, Prime Video e mais, de qualquer lugar."
+      ],
+      "Bypass local internet blocks and censorship with our global network of servers.": [
+        "Ignore os bloqueios locais da Internet e a censura com nossa rede global de servidores."
       ],
       "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
         "Inclui suporte para ${ domains } domínios de e-mail personalizados, ${ addresses } endereços de e-mail, ${ aliases } aliases ilimitados do hide-my-email, compartilhamento de calendário e muito mais."
@@ -3125,6 +3158,9 @@
       ],
       "Encrypted cloud storage for all your files": [
         "Armazenamento na nuvem criptografado para todos os seus arquivos"
+      ],
+      "Secure cloud storage and file sharing that protects your data": [
+        "Armazenamento seguro na nuvem e compartilhamento de arquivos que protege seus dados"
       ]
     },
     "Duration": {
@@ -3365,6 +3401,9 @@
       ],
       "Forwarding is active": [
         "Encaminhamento está ativo"
+      ],
+      "Forwarding to ${ BRAND_NAME } addresses will keep your communication end-to-end encrypted. When forwarding externally, end-to-end encryption for the forwarding address will be disabled.": [
+        "Encaminhar para endereços ${ BRAND_NAME } manterá a sua comunicação criptografada de ponta a ponta. Ao encaminhar externamente, a criptografia de ponta a ponta para o endereço de encaminhamento será desativada."
       ],
       "No incoming forwarding rules": [
         "Nenhuma regra de encaminhamento de entrada."
@@ -5626,6 +5665,9 @@
       "${ firstRemainingCalendarName } will be set as default calendar.": [
         "${ firstRemainingCalendarName } será definido como calendário padrão."
       ],
+      "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
+        "${ inviterEmailJSX } quer compartilhar dados com você em ${ PASS_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "O ${ MAIL_APP_NAME } também pode ser usado com uma senha única que substitui as senhas de início de sessão e de acesso à caixa de e-mail. Para habilitar o modo de senha única, digite a senha única que deseja usar e clique em Salvar."
       ],
@@ -6320,6 +6362,9 @@
       ],
       "Get ${ upsellPlanName }": [
         "Obter ${ upsellPlanName }"
+      ],
+      "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
+        "Obtenha acesso criando uma conta ${ BRAND_NAME } e aceitando o convite."
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Dê um nome descritivo ao token, como o do serviço com o qual você planeja usá-lo, e selecione um dos domínios personalizados ativos. Apenas esse endereço poderá enviar e-mails com este token."
@@ -7490,6 +7535,9 @@
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Com um plano Business ou Enterprise, você pode comprar ${ boldDedicatedServers } para sua organização e configurar ${ boldGateways } para controlar quais usuários podem acessá-los."
+      ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Com um endereço criptografado da ${ BRAND_NAME }, você pode usar todos os serviços da ${ BRAND_NAME }."
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Com o seu plano atual, você pode apenas receber mensagens através do seu endereço @pm.me. Faça upgrade de plano para enviar mensagens e criar endereços adicionais usando @pm.me"
@@ -9477,8 +9525,8 @@
       "Create a new ${ appName } account": [
         "Criar uma conta no ${ appName }"
       ],
-      "Find ${ BRAND_NAME } Account username": [
-        "Encontre o nome de usuário da conta ${ BRAND_NAME }"
+      "Find your ${ BRAND_NAME } Account username": [
+        "Encontre seu nome de usuário ${ BRAND_NAME }."
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Esqueceu sua senha da conta ${ BRAND_NAME }? Redefina-a aqui usando um código de recuperação, e-mail ou SMS e recupere seu acesso aos serviços ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, e muito mais."
@@ -10141,12 +10189,6 @@
       "User session management": [
         "Gerenciamento de sessões de usuário"
       ],
-      "Vault and Item sharing": [
-        "Compartilhamento de itens e cofre"
-      ],
-      "Vault and Item sharing (coming soon)": [
-        "Cofre e compartilhamento de itens (em breve)"
-      ],
       "Vault sharing (up to ${ n } person)": [
         "Compartilhar do cofre (até ${ n } pessoa)",
         "Compartilhar cofre (até ${ n } pessoa)"
@@ -10172,6 +10214,17 @@
       ],
       "Team management": [
         "Gerenciamento de equipes"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Sua avaliação termina em ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -10261,17 +10314,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Sua avaliação termina em ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11217,6 +11259,9 @@
       "Launching ${ PASS_APP_NAME }": [
         "Iniciando o ${ PASS_APP_NAME }"
       ],
+      "Limited time offer: Get ${ title } for free for 1 year!": [
+        "Oferta por tempo limitado: Obtenha ${ title } gratuitamente por 1 ano!"
+      ],
       "One easy subscription.": [
         "Uma assinatura fácil."
       ],
@@ -11277,6 +11322,9 @@
       "You currently have": [
         "Você tem atualmente"
       ],
+      "You have been invited to join ${ PASS_APP_NAME }": [
+        "Você foi convidado a participar de ${ PASS_APP_NAME }."
+      ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Sua organização tem acesso a ${ free }. Se você deseja acesso a recursos premium do ${ appName }, solicite a atualização ao administrador da sua organização."
       ]
@@ -11292,6 +11340,9 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Todos os serviços Plus da ${ BRAND_NAME }.${ br }assinatura facilitada."
+      ],
+      "Create a ${ PASS_APP_NAME } account": [
+        "Criar uma conta no ${ PASS_APP_NAME }"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Crie sua conta do ${ BRAND_NAME }"
@@ -13767,6 +13818,9 @@
       ],
       "Sign in to join the Beta program": [
         "Inicie sessão para participar do programa Beta"
+      ],
+      "Sign in to your organization": [
+        "Inicie sessão na sua organização."
       ],
       "Sign in with 2FA": [
         "Iniciar sessão com A2F"

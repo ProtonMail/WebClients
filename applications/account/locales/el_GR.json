@@ -884,6 +884,12 @@
       "Sign in": [
         "Είσοδος"
       ],
+      "Sign in with password": [
+        "Σύνδεση με κωδικό"
+      ],
+      "Sign in with SSO": [
+        "Συνδεθείτε με SSO"
+      ],
       "Sign out": [
         "Αποσύνδεση"
       ],
@@ -5556,6 +5562,9 @@
       "${ firstRemainingCalendarName } will be set as default calendar.": [
         "Το ${ firstRemainingCalendarName } θα οριστεί ως προεπιλεγμένο ημερολόγιο."
       ],
+      "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
+        "${ inviterEmailJSX } θέλει να μοιραστεί δεδομένα μαζί σας στο ${ PASS_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "Το ${ MAIL_APP_NAME } μπορεί επίσης να χρησιμοποιηθεί με έναν μόνο κωδικό πρόσβασης, ο οποίος αντικαθιστά τόσο τον κωδικό εισόδου όσο και τον κωδικό πρόσβασης θυρίδας. Για μετάβαση σε λειτουργία μονού κωδικού πρόσβασης, πληκτρολογήστε αυτόν που θέλετε και πατήστε Αποθήκευση."
       ],
@@ -6250,6 +6259,9 @@
       ],
       "Get ${ upsellPlanName }": [
         "Απόκτηση ${ upsellPlanName }"
+      ],
+      "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
+        "Αποκτήστε πρόσβαση με τη δημιουργία ενός λογαριασμού ${ BRAND_NAME } και αποδοχή της πρόσκλησης."
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Δώστε στο διακριτικό ένα περιγραφικό όνομα, όπως την υπηρεσία με την οποία σκοπεύετε να το χρησιμοποιήσετε και επιλέξτε μία από τις ενεργές προσαρμοσμένες διευθύνσεις τομέα σας. Μόνο αυτή η διεύθυνση θα μπορεί να στέλνει μηνύματα ηλεκτρονικού ταχυδρομείου με αυτό το διακριτικό."
@@ -9407,8 +9419,8 @@
       "Create a new ${ appName } account": [
         "Δημιουργήστε ένα νέο ${ appName } λογαριασμό"
       ],
-      "Find ${ BRAND_NAME } Account username": [
-        "Εύρεση Ονόματος χρήστη του ${ BRAND_NAME } λογαριασμού"
+      "Find your ${ BRAND_NAME } Account username": [
+        "Βρείτε το όνομα χρήστη του ${ BRAND_NAME } λογαριασμού σας"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Ξεχάσατε τον κωδικό πρόσβασης του ${ BRAND_NAME } λογαριασμού σας; Επαναφέρετε το εδώ χρησιμοποιώντας έναν κωδικό ανάκτησης, email ή SMS και αποκτήστε ξανά πρόσβαση στα ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } σας και παραπάνω."
@@ -10071,12 +10083,6 @@
       "User session management": [
         "Διαχείριση συνεδριών χρηστών"
       ],
-      "Vault and Item sharing": [
-        "Κοινή χρήση Κρύπτης και Στοιχείων"
-      ],
-      "Vault and Item sharing (coming soon)": [
-        "Κοινή χρήση Κρύπτης και Στοιχείων (σύντομα διαθέσιμη)"
-      ],
       "Vault sharing (up to ${ n } person)": [
         "Κοινή χρήση κρύπτης (έως ${ n } άτομο)",
         "Κοινή χρήση κρύπτης (έως ${ n } άτομα)"
@@ -10102,6 +10108,17 @@
       ],
       "Team management": [
         "Διαχείριση ομάδας"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Ειδάλλως η πρόσβαση στον λογαριασμό σας θα περιοριστεί, και εν τέλη ο λογαριασμός σας θα απενεργοποιηθεί."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προηγμένα χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -10191,17 +10208,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Απολαμβάνετε μια τιμή προσφοράς στο τρέχον πλάνο σας. Εάν υποβαθμίσετε τον λογαριασμό σας, θα χάσετε την τιμή προσφοράς και δε θα είναι διαθέσιμη εάν προσπαθήσετε να εγγραφείτε ξανά."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Ειδάλλως η πρόσβαση στον λογαριασμό σας θα περιοριστεί, και εν τέλη ο λογαριασμός σας θα απενεργοποιηθεί."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προηγμένα χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11201,6 +11207,9 @@
       "You currently have": [
         "Προς το παρόν έχετε"
       ],
+      "You have been invited to join ${ PASS_APP_NAME }": [
+        "Έχετε προσκληθεί να εγγραφείτε στο ${ PASS_APP_NAME }"
+      ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Ο οργανισμός σας έχει πρόσβαση στο ${ free }. Εάν θέλετε να αποκτήσετε πρόσβαση σε premium δυνατότητες του ${ appName }, ζητήστε από τον διαχειριστή του οργανισμού σας να κάνει αναβάθμιση."
       ]
@@ -11216,6 +11225,9 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Όλες οι ${ BRAND_NAME } Plus λειτουργείες.${ br }Μία εύκολη συνδρομή."
+      ],
+      "Create a ${ PASS_APP_NAME } account": [
+        "Δημιουργία ενός ${ PASS_APP_NAME } λογαριασμού"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Δημιουργήστε το ${ BRAND_NAME } λογαριασμό σας"
@@ -13688,6 +13700,9 @@
       ],
       "Sign in to join the Beta program": [
         "Συνδεθείτε για να συμμετάσχετε στο πρόγραμμα Beta"
+      ],
+      "Sign in to your organization": [
+        "Συνδεθήτε στον οργανισμό σας"
       ],
       "Sign in with 2FA": [
         "Είσοδος με Ταυτοποίηση 2 Παραγόντων"
