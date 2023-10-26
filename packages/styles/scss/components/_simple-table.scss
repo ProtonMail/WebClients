@@ -89,20 +89,14 @@
 	// END
 
 	th:not(#{&}-row-th) {
-		@extend .text-left;
+		text-align: start;
 
 		&.text-center {
-			@extend .text-center;
+			text-align: center;
 		}
 
 		&.text-right {
-			@extend .text-right;
-		}
-
-		@include media('<=small') {
-			&.on-mobile-text-center {
-				@extend .on-mobile-text-center;
-			}
+			text-align: end;
 		}
 	}
 
