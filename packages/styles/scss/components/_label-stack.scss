@@ -5,7 +5,7 @@
 	--item-narrow: 1.5em;
 	--item-scale: #{math.div(2, 3)}; // 0.666…
 
-	font-size: em(12);
+	font-size: rem(11);
 	font-weight: var(--font-weight-semibold); // Overrides when unread email context
 
 	&.max-w-full {
@@ -14,25 +14,25 @@
 
 	&-item,
 	&-overflow-count {
-		border-radius: 1em;
-		line-height: 1.5;
+		border-radius: var(--border-radius-sm);
+		line-height: 1.64;
 	}
 
 	&-item {
 		min-inline-size: var(--item-narrow);
 		max-inline-size: var(--item-wide);
-		margin: 0.125em;
+		margin: 0.125rem;
 		overflow: hidden;
 		background-color: var(--label-bg, var(--background-strong));
 		color: white;
 
 		&-inner {
-			padding-inline: em(8, 12);
+			padding-inline: rem(6);
 			border-radius: inherit;
 			text-align: start;
 
 			&.with-delete {
-				padding-inline-end: em(4, 12);
+				padding-inline-end: em(6, 12);
 			}
 		}
 
@@ -72,7 +72,7 @@
 		& > * {
 			display: block;
 			padding-inline: 0.25em 0.375em;
-			color: var(--text-norm);
+			color: var(--text-weak);
 		}
 	}
 
@@ -88,7 +88,9 @@
 		.label-stack-item {
 			overflow: hidden;
 			margin: 0;
-			transition: transform 0.1s 0.2s easing(ease-out-quart), max-inline-size 0.2s 0s easing(ease-out-quart);
+			transition:
+				transform 0.1s 0.2s easing(ease-out-quart),
+				max-inline-size 0.2s 0s easing(ease-out-quart);
 
 			&:hover,
 			&:focus-within,

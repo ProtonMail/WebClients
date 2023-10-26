@@ -78,9 +78,7 @@ const PromotionBanner = ({
                     <>
                         {icon && <div className="shrink-0 mr-2">{icon}</div>}
                         {description && (
-                            <div className={clsx('bg-promotion-text', !contentCentered && 'flex-1')}>
-                                {description}
-                            </div>
+                            <div className={clsx('bg-promotion-text', !contentCentered && 'flex-1')}>{description}</div>
                         )}
                         {cta && <div className="shrink-0 ml-2 max-w-1/2 text-right">{cta}</div>}
                     </>
@@ -93,7 +91,7 @@ const PromotionBanner = ({
                     size="small"
                     color="weak"
                     shape="ghost"
-                    className="ml-2 mr-1 my-auto"
+                    className="shrink-0 ml-2 mr-1 my-auto"
                     title={c('Action').t`Close`}
                 >
                     <Icon name="cross" alt={c('Action').t`Close`} />

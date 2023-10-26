@@ -1,6 +1,6 @@
 import { ChangeEvent, DragEvent, MouseEvent, memo, useMemo, useRef } from 'react';
 
-import { Breakpoints, ItemCheckbox, useLabels } from '@proton/components';
+import { Breakpoints, ItemCheckbox, useFlag, useLabels } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
@@ -22,6 +22,8 @@ import { ESMessage } from '../../models/encryptedSearch';
 import ItemColumnLayout from './ItemColumnLayout';
 import ItemRowLayout from './ItemRowLayout';
 import ItemSenders from './ItemSenders';
+
+import './delight/DelightItem.scss';
 
 const { SENT, ALL_SENT, ALL_MAIL, ALMOST_ALL_MAIL, STARRED, DRAFTS, ALL_DRAFTS, SCHEDULED } = MAILBOX_LABEL_IDS;
 
@@ -139,12 +141,15 @@ const Item = ({
         />
     );
 
+    const isDelightMailListEnabled = useFlag('DelightMailList');
+
     return (
         <div
             className={clsx(
                 'item-container-wrapper relative',
-                (isCompactView || !columnLayout) && 'border-bottom border-weak'
+                !isDelightMailListEnabled && (isCompactView || !columnLayout) && 'border-bottom border-weak'
             )}
+            data-shortcut-target="item-container-wrapper"
         >
             <div
                 onContextMenu={(event) => onContextMenu(event, element)}
@@ -153,8 +158,17 @@ const Item = ({
                 onDragStart={(event) => onDragStart(event, element)}
                 onDragEnd={onDragEnd}
                 className={clsx([
-                    'flex-1 flex flex-nowrap cursor-pointer',
-                    columnLayout ? 'item-container item-container-column' : 'item-container-row',
+                    ...(isDelightMailListEnabled
+                        ? [
+                              'relative flex-1 flex flex-nowrap cursor-pointer border-bottom border-top border-weak outline-none--at-all',
+                              columnLayout
+                                  ? 'delight-item-container delight-item-container--column'
+                                  : 'delight-item-container delight-item-container--row',
+                          ]
+                        : [
+                              'flex-1 flex flex-nowrap cursor-pointer',
+                              columnLayout ? 'item-container item-container-column' : 'item-container-row',
+                          ]),
                     isSelected && 'item-is-selected',
                     !unread && 'read',
                     unread && 'unread',
@@ -181,7 +195,10 @@ const Item = ({
                     checked={checked}
                     onChange={handleCheck}
                     compactClassName="mr-3 stop-propagation"
-                    normalClassName={clsx(['ml-0.5', columnLayout ? 'mr-2 mt-0.5' : 'mr-2'])}
+                    normalClassName={
+                        isDelightMailListEnabled ? 'mr-3' : clsx(['ml-0.5', columnLayout ? 'mr-2 mt-0.5' : 'mr-2'])
+                    }
+                    variant={isDelightMailListEnabled ? 'small' : undefined}
                 />
                 <ItemLayout
                     isCompactView={isCompactView}
