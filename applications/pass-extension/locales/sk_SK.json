@@ -12,7 +12,7 @@
         "Pridať aktuálnu URL"
       ],
       "Add domain to pause list": [
-        "Pridať doménu na zoznam na pozastavených"
+        "Pridať doménu na zoznam pozastavených"
       ],
       "Add more": [
         "Pridať ďalšie"
@@ -548,7 +548,7 @@
         "URL je na zozname"
       ],
       "Too many failed attempts. Please sign in again.": [
-        "Priveľa neúspešných pokusov. Skúste sa prihlásiť znova, prosím."
+        "Priveľa neúspešných pokusov. Prihláste sa, prosím znova."
       ],
       "Trashing item failed": [
         "Presun do koša zlyhal"
@@ -613,6 +613,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -639,11 +642,17 @@
         "Megabajty",
         "Megabajtov",
         "Megabajtov"
+      ],
+      "Terabyte": [
+        "terabajt",
+        "terabajty",
+        "terabajtov",
+        "terabajtov"
       ]
     },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
-        " Pre vytvorenie viacerých trezorov, prejdite na platený plán."
+        " Pre vytvorenie viacerých trezorov prejdite na platený plán."
       ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Položka \"${ payload.item.data.metadata.name }\" bola zamietnutá"
@@ -756,6 +765,9 @@
       "Creating alias...": [
         "Vytváram alias..."
       ],
+      "Credit cards, Custom fields": [
+        "Platobné karty, Vlastné polia"
+      ],
       "Decrypting your data": [
         "Dešifrujeme vaše údaje"
       ],
@@ -856,7 +868,7 @@
         "Strata internetového pripojenia"
       ],
       "Invitation sent": [
-        "Pozvánka bol odoslaná"
+        "Pozvánka odoslaná"
       ],
       "Invite successfully removed": [
         "Pozvánka bola úspešne odstránená."
@@ -952,7 +964,7 @@
         "PIN kód bol úspešne zaregistrovaný. Použite ho na odomknutie ${ PASS_APP_NAME }"
       ],
       "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
-        "Potvrďte svoj PIN kód pre zrušenie registrácie aktuálneho zámku.\n${ PASS_APP_NAME } sa potom už nebude zamykať."
+        "Potvrďte svoj PIN kód pre zrušenie registrácie aktuálneho zámku.\n${ PASS_APP_NAME } sa už potom nebude zamykať."
       ],
       "Please confirm your PIN code to edit this setting.": [
         "Potvrďte váš PIN kód na úpravu tohto nastavenia"
@@ -989,6 +1001,9 @@
       ],
       "Settings successfully updated": [
         "Nastavenia boli úspešne aktualizované"
+      ],
+      "Share with 10 others": [
+        "Zdieľajte s 10 ďalšími osobami"
       ],
       "Sign in or create an account to continue.": [
         "Pre pokračovanie sa prihláste alebo si vytvorte účet."
@@ -1030,7 +1045,7 @@
         "Tento export bude nezašifrovaný a ktokoľvek s prístupom k vášmu exportovanému súboru uvidí vaše heslá. Z bezpečnostných dôvodov ho po skončení používania vymažte."
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
-        "Tento trezor zatiaľ nie je zdieľaný s nikým. Pozvite ľudí, s ktorými ho chcete zdieľať."
+        "Tento trezor zatiaľ nie je s nikým zdieľaný. Pozvite ľudí, s ktorými ho chcete zdieľať."
       ],
       "Unable to copy to clipboard": [
         "Nedá sa kopírovať do schránky"
@@ -1039,7 +1054,7 @@
         "Neobmedzený počet aliasov"
       ],
       "Unlock it with your PIN to access the settings": [
-        "Odomknite PIN kódom na získanie prístupu k nastaveniam"
+        "Ak chcete získať prístup k nastaveniam, odomknite ho pomocou PIN kódu"
       ],
       "Update login": [
         "Aktualizovať prihlásenie"
@@ -1269,7 +1284,7 @@
         "Vyprázdniť kôš"
       ],
       "Encrypt your ${ PASS_APP_NAME } data export file": [
-        "Zašifrujte svoj exportovaný dátovú súboru ${ PASS_APP_NAME }"
+        "Zašifrujte svoj exportovaný dátový súbor ${ PASS_APP_NAME }"
       ],
       "Expires on": [
         "Exspiruje"
@@ -1278,7 +1293,7 @@
         "Export"
       ],
       "Forwards to": [
-        "Preposiela na"
+        "Preposielať na"
       ],
       "General": [
         "Všeobecné"
@@ -1559,7 +1574,7 @@
         "Medzery"
       ],
       "Underscores": [
-        "Podčiarkovník"
+        "Podčiarkovníky"
       ]
     },
     "Placeholder": {
@@ -1854,7 +1869,7 @@
         "Exportovaný súbor zašifrovaný pomocou PGP vyžaduje heslo"
       ],
       "Please enter a valid email address": [
-        "Zadajte platnú e-mailovú adresu, prosím"
+        "Zadajte platnú emailovú adresu, prosím"
       ],
       "Please log back in": [
         "Prihláste sa znova, prosím"
@@ -1929,7 +1944,7 @@
         "Vaša relácia bola uzamknutá kvôli nečinnosti"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
-        "Vaše predplatné vám neumožňuje vytvoriť viacero trezorov. Všetky položky budú importované do vášho prvého trezoru. Pre importovanie do viacerých trezorov, navýšte vaše predplatné."
+        "Vaše predplatné vám neumožňuje vytvoriť viacero trezorov. Všetky položky budú importované do vášho prvého trezoru. Pre importovanie do viacerých trezorov si navýšte vaše predplatné."
       ]
     }
   }

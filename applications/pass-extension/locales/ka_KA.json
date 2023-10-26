@@ -59,6 +59,9 @@
       "Confirm": [
         "დასტური"
       ],
+      "Confirm access": [
+        "წვდომის დადასტურება"
+      ],
       "Continue": [
         "გაგრძელება"
       ],
@@ -79,6 +82,9 @@
       ],
       "Create a ${ BRAND_NAME } account": [
         "შექმენით ${ BRAND_NAME }-ის ანგარიში"
+      ],
+      "Create a new vault to share": [
+        "შექმენით ახალი საცავი გასაზიარებლად"
       ],
       "Create alias": [
         "ფსევდონიმის შექმნა"
@@ -215,6 +221,9 @@
       "More options": [
         "მეტი პარამეტრი"
       ],
+      "Move to a shared vault": [
+        "გადატანა გაზიარებულ საცავში"
+      ],
       "Move to another vault": [
         "სხვა საცავში გადატანა"
       ],
@@ -250,6 +259,9 @@
       ],
       "Regenerate": [
         "თავიდან რეგენერაცია"
+      ],
+      "Reject": [
+        "უარყოფა"
       ],
       "Reject invitation": [
         "მოსაწვევის უარყოფა"
@@ -290,6 +302,9 @@
       "Share": [
         "გაზიარება"
       ],
+      "Share this vault": [
+        "ამ საცავის გაზიარება"
+      ],
       "Share vault": [
         "საცავის გაზიარება"
       ],
@@ -326,11 +341,17 @@
       "Update": [
         "განახლება"
       ],
+      "Update vault": [
+        "საცავის განახლება"
+      ],
       "Updating": [
         "განახლება"
       ],
       "Upgrade": [
         "ტარიფის აწევა"
+      ],
+      "Upgrade now to share with more people": [
+        "ასწიეთ ტარიფი ახლა და გაუზიარეთ მეტ ხალხს"
       ],
       "Upgrade to keep these features": [
         "აწიეთ ტარიფი ამ თვისებების შესანარჩუნებლად"
@@ -381,6 +402,9 @@
       ],
       "Cannot send invitation to this address at the moment": [
         "ამ მისამართზე ამჟამად მოსაწვევს ვერ გავაგზავნი"
+      ],
+      "Could not confirm this invite at the moment": [
+        "ამჯამად ამ მოსაწვევის დადასტურება შეუძლებელია"
       ],
       "Could not leave vault.": [
         "საცავის დატოვების შეცდომა."
@@ -652,6 +676,9 @@
       "Access ${ PASS_APP_NAME } via this icon": [
         "წვდომა ${ PASS_APP_NAME }-თან ამ ღილაკით"
       ],
+      "Access successfully confirmed": [
+        "წვდომა წარმატებით დადასტურდა"
+      ],
       "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
         "${ PASS_APP_NAME }-სთან წვდომას თქვენი სესიის განბლოკვისთვის PIN-კოდი დასჭირდება"
       ],
@@ -694,11 +721,17 @@
       "Check out all the exclusive features that are available to you for a limited time.": [
         "შეამოწმეთ ყველა ექსკლუზიური შემოთავაზება, რომელიც, მხოლოდ, შეზღუდული დროითაა თქვენთვის შემოთავაზებული."
       ],
+      "Congratulations, your access has been confirmed": [
+        "გილოცავთ, თქვენი წვდომა დადასტურებულია"
+      ],
       "Copied to clipboard": [
         "დაკოპირდა გაცვლის ბაფერში"
       ],
       "Creating alias...": [
         "ფსევდონიმის შექმნა..."
+      ],
+      "Credit cards, Custom fields": [
+        "საკრედიტო ბარათები, მომხმარებლის ველები"
       ],
       "Decrypting your data": [
         "თქვენი მონაცემების გაშიფვრა"
@@ -797,6 +830,9 @@
       "Invite successfully resent": [
         "მოსაწვევი წარმატებით გაიგზავნა თავიდან"
       ],
+      "Invite successfully sent": [
+        "მოსაწვევი წარმატებით გაიგზავნა"
+      ],
       "invites you to access items in": [
         "გიწვევთ ელემენტებზე წვდომსთვის"
       ],
@@ -870,6 +906,9 @@
       "Passwords older than 1 day are automatically deleted from history.": [
         "1 დღეზე ძველი პაროლები ისტორიიდან ავტომატურად იშლება."
       ],
+      "Pending access to the shared data": [
+        "გაზიარებულ მონაცემებთან წვდომის მოლოდინი"
+      ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "${ PASS_APP_NAME }-ის მიმაგრება თქვენს ხელსაწყოების ზოლში"
       ],
@@ -915,6 +954,9 @@
       "Settings successfully updated": [
         "პარამეტრი წარმატებით განახლდა"
       ],
+      "Share with 10 others": [
+        "გაუზიარეთ 10 პირს"
+      ],
       "Sign in or create an account to continue.": [
         "გასაგრძელებლად შედით ან შექმენით ანგარიში."
       ],
@@ -958,6 +1000,9 @@
       "Unable to copy to clipboard": [
         "ბუფერში დაკოპირება შეუძლებელია"
       ],
+      "Unlimited Aliases": [
+        "ფსევდონიმების განუსაზღვრელი რაოდენობა"
+      ],
       "Unlock it with your PIN to access the settings": [
         "პარამეტრებთან წვდომისთვის საჭიროა მისი განბლოკვა PIN კოდით"
       ],
@@ -966,6 +1011,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ის აწევა"
+      ],
+      "Use vaults to share this item with others.": [
+        "ამ ელემენტის სხვებთან გასაზიარებლად, საცავები გამოიყენეთ."
       ],
       "User's access removed": [
         "მომხმარებლის წვდომა წაიშალა"
@@ -1221,6 +1269,9 @@
       "Include numbers (0-9)": [
         "რიცხვების ჩათვლით (0-9)"
       ],
+      "Invitations": [
+        "მოწვევები"
+      ],
       "Label": [
         "ჭდე"
       ],
@@ -1250,6 +1301,9 @@
       ],
       "Logins": [
         "შესვლები"
+      ],
+      "Members": [
+        "წევრები"
       ],
       "Modified": [
         "შეცვლილია"
@@ -1531,6 +1585,9 @@
       "Select a suffix": [
         "აირჩიეთ სუფიქსი"
       ],
+      "Shared vault": [
+        "გაზიარებული საცავი"
+      ],
       "Unknown origin": [
         "უცნობი წყარო"
       ],
@@ -1598,6 +1655,12 @@
       ],
       "Low disk space": [
         "დისკზე ადგილი ცოტაღაა"
+      ],
+      "Member limit": [
+        "წევრების ზღვარი"
+      ],
+      "Pending access to the shared data": [
+        "გაზიარებულ მონაცემებთან წვდომის მოლოდინი"
       ],
       "Permanently remove all items ?": [
         "წავშალო სამუდამოდ ყველა ელემენტი?"
