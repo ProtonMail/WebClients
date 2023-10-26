@@ -40,9 +40,9 @@ const useGetEncryptionPreferences = () => {
     const getMailSettings = useGetMailSettings();
 
     const getEncryptionPreferences = useCallback<GetEncryptionPreferences>(
-        async (emailAddress, lifetime, contactEmailsMap) => {
+        async ({ email, lifetime, contactEmailsMap }) => {
             const [addresses, mailSettings] = await Promise.all([getAddresses(), getMailSettings()]);
-            const canonicalEmail = canonicalizeInternalEmail(emailAddress);
+            const canonicalEmail = canonicalizeInternalEmail(email);
             const selfAddress = getSelfSendAddresses(addresses).find(
                 ({ Email }) => canonicalizeInternalEmail(Email) === canonicalEmail
             );
@@ -69,18 +69,16 @@ const useGetEncryptionPreferences = () => {
                 pinnedKeysConfig = { pinnedKeys: [], isContact: false };
             } else {
                 const { publicKeys } = splitKeys(await getUserKeys());
-                apiKeysConfig = await getPublicKeys(emailAddress, lifetime, !lifetime);
+                apiKeysConfig = await getPublicKeys({
+                    email,
+                    lifetime,
+                    noCache: !lifetime,
+                });
                 const isInternal = apiKeysConfig.RecipientType === RECIPIENT_TYPES.TYPE_INTERNAL;
-                pinnedKeysConfig = await getPublicKeysVcardHelper(
-                    api,
-                    emailAddress,
-                    publicKeys,
-                    isInternal,
-                    contactEmailsMap
-                );
+                pinnedKeysConfig = await getPublicKeysVcardHelper(api, email, publicKeys, isInternal, contactEmailsMap);
             }
             const publicKeyModel = await getContactPublicKeyModel({
-                emailAddress,
+                emailAddress: email,
                 apiKeysConfig,
                 pinnedKeysConfig,
             });
@@ -90,16 +88,21 @@ const useGetEncryptionPreferences = () => {
     );
 
     return useCallback<GetEncryptionPreferences>(
-        (email, lifetime = DEFAULT_LIFETIME, contactEmailsMap) => {
+        ({ email, lifetime = DEFAULT_LIFETIME, contactEmailsMap }) => {
             if (!cache.has(CACHE_KEY)) {
                 cache.set(CACHE_KEY, new Map());
             }
             const subCache = cache.get(CACHE_KEY);
-            // By normalizing email here, we consider that it could not exists different encryption preferences
+            // By normalizing email here, we consider that it could not exist different encryption preferences
             // For 2 addresses identical but for the cases.
             // If a provider does different one day, this would have to evolve.
             const canonicalEmail = canonicalizeEmail(email);
-            const miss = () => getEncryptionPreferences(canonicalEmail, lifetime, contactEmailsMap);
+            const miss = () =>
+                getEncryptionPreferences({
+                    email: canonicalEmail,
+                    lifetime,
+                    contactEmailsMap,
+                });
             return getPromiseValue(subCache, canonicalEmail, miss, lifetime);
         },
         [cache, getEncryptionPreferences]
