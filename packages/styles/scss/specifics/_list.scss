@@ -158,24 +158,6 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 		}
 	}
 
-	.item-unread-dot {
-		display: flex;
-		align-items: center;
-		flex-shrink: 0;
-	}
-
-	// Styling for contact items inside contact dropdown
-	&.item-contact {
-		background-color: var(--email-item-unread-background-color);
-		color: var(--email-item-unread-text-color);
-
-		.item-icon,
-		.item-icon-compact:hover {
-			background-color: var(--email-item-unread-icon-background-color);
-			color: var(--email-item-unread-icon-text-color);
-		}
-	}
-
 	// Encrypted search shows a preview of the body in the item,
 	// which therefore has to be bigger
 	&.es-three-rows {
@@ -193,6 +175,37 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 
 	@include media('<=small') {
 		margin-inline: em(2);
+	}
+
+	/* Compact view */
+	.item-icon-compact {
+		inline-size: rem($conversation-icon-size);
+		block-size: rem($conversation-icon-size);
+		border-radius: 50%;
+		font-size: rem(12);
+		transition: background-color 0.25s ease-out;
+		margin-block-start: em(-5); // to align with first line
+
+		// for allowing hovering larger than fake circle
+		&::after {
+			content: '';
+			position: absolute;
+			inset-block: rem(-2);
+			inset-inline: rem(-6);
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			inset-block: em(-6);
+			inset-inline: em(-6) em(-12);
+			z-index: 1;
+		}
+
+		.checkbox-fakecheck {
+			margin: auto;
+			background: var(--background-norm);
+		}
 	}
 }
 
@@ -324,7 +337,7 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 
 /* Comfortable view */
 
-.is-comfortable {
+.is-comfortable .items-column-list {
 	.auto-delete-banner-enabled.auto-delete-banner-enabled--column:not(.auto-delete-banner-enabled--compact) {
 		@include media('>small') {
 			margin-block-end: em(-12);
@@ -363,37 +376,6 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 		inset-block-start: em(15);
 		inset-inline-start: em(5);
 		z-index: 1;
-	}
-}
-
-/* Compact view */
-.item-icon-compact {
-	inline-size: rem($conversation-icon-size);
-	block-size: rem($conversation-icon-size);
-	border-radius: 50%;
-	font-size: rem(12);
-	transition: background-color 0.25s ease-out;
-	margin-block-start: em(-5); // to align with first line
-
-	// for allowing hovering larger than fake circle
-	&::after {
-		content: '';
-		position: absolute;
-		inset-block: rem(-2);
-		inset-inline: rem(-6);
-	}
-
-	&::before {
-		content: '';
-		position: absolute;
-		inset-block: em(-6);
-		inset-inline: em(-6) em(-12);
-		z-index: 1;
-	}
-
-	.checkbox-fakecheck {
-		margin: auto;
-		background: var(--background-norm);
 	}
 }
 
@@ -543,70 +525,6 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 	.item-subject {
 		&::before {
 			inline-size: 60%;
-		}
-	}
-}
-
-.item-checkbox {
-	& + .item-icon {
-		border: 0;
-	}
-
-	// hidden fake check by default
-	& + .item-icon > .item-icon-fakecheck {
-		display: none;
-	}
-
-	@supports not selector(:focus-visible) {
-		&:focus + .item-icon {
-			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
-		}
-	}
-
-	@supports selector(:focus-visible) {
-		&:focus-visible + .item-icon {
-			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
-		}
-	}
-
-	// hover state of checkbox
-	&:hover + .item-icon,
-	& + .item-icon:hover {
-		& > .item-abbr {
-			display: none;
-		}
-
-		& > .item-icon-fakecheck {
-			display: flex;
-			transform: scale(1);
-		}
-	}
-
-	// checked state
-	&:checked + .item-icon {
-		background-color: var(--interaction-norm);
-
-		& > .item-abbr {
-			display: none;
-		}
-
-		& > .item-icon-fakecheck {
-			display: flex;
-			animation: anime-conversation-icon-in easing(ease-out-quint) 0.15s;
-		}
-
-		@keyframes anime-conversation-icon-in {
-			0% {
-				transform: scale(0);
-			}
-
-			100% {
-				transform: scale(1);
-			}
-		}
-
-		.item-icon-fakecheck-icon {
-			fill: var(--interaction-norm-contrast);
 		}
 	}
 }

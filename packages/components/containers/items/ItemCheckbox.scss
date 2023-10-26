@@ -1,0 +1,77 @@
+@import '~@proton/styles/scss/lib';
+
+:root {
+	--item-checkbox-background-color: var(--background-strong);
+	--item-checkbox-icon-text-color: inherit;
+}
+
+.item-checkbox {
+	& + .item-icon {
+		border: 0;
+	}
+
+	// hidden fake check by default
+	& + .item-icon > .item-icon-fakecheck {
+		display: none;
+	}
+
+	@supports not selector(:focus-visible) {
+		&:focus + .item-icon {
+			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+		}
+	}
+
+	@supports selector(:focus-visible) {
+		&:focus-visible + .item-icon {
+			box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+		}
+	}
+
+	&-label {
+		.item-icon {
+			background-color: var(--item-checkbox-background-color);
+			color: var(--item-checkbox-icon-text-color);
+		}
+	}
+
+	// hover state of checkbox
+	&:hover + .item-icon,
+	& + .item-icon:hover {
+		& > .item-abbr {
+			display: none;
+		}
+
+		& > .item-icon-fakecheck {
+			display: flex;
+			transform: scale(1);
+		}
+	}
+
+	// checked state
+	&:checked + .item-icon {
+		background-color: var(--interaction-norm);
+
+		& > .item-abbr {
+			display: none;
+		}
+
+		& > .item-icon-fakecheck {
+			display: flex;
+			animation: anime-conversation-icon-in easing(ease-out-quint) 0.15s;
+		}
+
+		@keyframes anime-conversation-icon-in {
+			0% {
+				transform: scale(0);
+			}
+
+			100% {
+				transform: scale(1);
+			}
+		}
+
+		.item-icon-fakecheck-icon {
+			fill: var(--interaction-norm-contrast);
+		}
+	}
+}

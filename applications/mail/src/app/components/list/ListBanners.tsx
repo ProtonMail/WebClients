@@ -123,17 +123,22 @@ const ListBanners = ({
 
     return (
         <>
-            {banners
-                .reduce((displayedBanners: Banner[], current) => {
-                    // to be displayed, a banner condition must be fulfilled,
-                    // and if other banners more prioritized are already displayed,
-                    // it must have them whitelisted
-                    const canDisplayBanner =
-                        current.condition() && displayedBanners.every(({ id }) => current.canWith?.includes(id));
+            {banners.some((current) => current.condition()) && (
+                <div className="shrink-0 flex flex-column">
+                    {banners
+                        .reduce((displayedBanners: Banner[], current) => {
+                            // to be displayed, a banner condition must be fulfilled,
+                            // and if other banners more prioritized are already displayed,
+                            // it must have them whitelisted
+                            const canDisplayBanner =
+                                current.condition() &&
+                                displayedBanners.every(({ id }) => current.canWith?.includes(id));
 
-                    return canDisplayBanner ? [...displayedBanners, current] : displayedBanners;
-                }, [])
-                .map(({ banner }) => banner())}
+                            return canDisplayBanner ? [...displayedBanners, current] : displayedBanners;
+                        }, [])
+                        .map(({ banner }) => banner())}
+                </div>
+            )}
         </>
     );
 };

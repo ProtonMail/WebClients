@@ -118,3 +118,7 @@ $breakpoint-2-columns: 1180 !default;
 .no-pointer-events-children * {
 	pointer-events: none;
 }
+
+.z-index-1 {
+	z-index: 1;
+}

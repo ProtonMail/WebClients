@@ -7,6 +7,8 @@ import { Checkbox, Icon, IconName } from '../../components';
 import { useUserSettings } from '../../hooks';
 import { ContactImage } from '../contacts';
 
+import './ItemCheckbox.scss';
+
 interface Props {
     ID?: string;
     name?: string;
@@ -18,6 +20,7 @@ interface Props {
     bimiSelector?: string;
     displaySenderImage?: boolean;
     checked: boolean;
+    variant?: 'default' | 'small';
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -32,6 +35,7 @@ const ItemCheckbox = ({
     checked,
     bimiSelector,
     displaySenderImage,
+    variant = 'default',
     onChange = () => {},
 }: Props) => {
     const [userSettings] = useUserSettings();
@@ -70,7 +74,10 @@ const ItemCheckbox = ({
                 data-testid="item-checkbox"
             />
             <span
-                className="item-icon shrink-0 relative rounded inline-flex"
+                className={clsx(
+                    'item-icon shrink-0 relative rounded inline-flex',
+                    variant === 'small' && 'item-icon--small'
+                )}
                 style={{
                     backgroundColor: color ?? '',
                 }}

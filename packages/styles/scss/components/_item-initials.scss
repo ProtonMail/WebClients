@@ -3,9 +3,14 @@
 	block-size: rem($conversation-icon-size);
 	font-size: rem(12);
 	background-color: var(--background-strong);
+
+	&--small {
+		inline-size: rem($conversation-icon-size-small);
+		block-size: rem($conversation-icon-size-small);
+	}
 }
 
 .item-sender-image {
 	background-color: white; // background color forced to display sender image logo
-	transform: scale(1.0); // crazy fix for bleeding bg color on radius.
+	transform: scale(1); // crazy fix for bleeding bg color on radius.
 }
