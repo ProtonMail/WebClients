@@ -1,5 +1,6 @@
 import type { ReactNode, VFC } from 'react';
 
+import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/hooks/usePasswordGenerator';
 import type { SafeLoginItem } from '@proton/pass/types';
 import { WorkerStatus } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
@@ -113,7 +114,7 @@ export const DropdownDebug: VFC = () => {
                     <DropdownSwitch
                         loggedIn
                         status={WorkerStatus.READY}
-                        state={{ action: DropdownAction.AUTOSUGGEST_PASSWORD }}
+                        state={{ action: DropdownAction.AUTOSUGGEST_PASSWORD, options: DEFAULT_RANDOM_PW_OPTIONS }}
                     />
                 </MockIFrameContainer>
 
