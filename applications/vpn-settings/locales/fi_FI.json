@@ -431,6 +431,12 @@
       "Sign in": [
         "Kirjaudu sisään"
       ],
+      "Sign in with password": [
+        "Kirjaudu salasanalla"
+      ],
+      "Sign in with SSO": [
+        "Kertakirjautuminen"
+      ],
       "Sign out": [
         "Kirjaudu ulos"
       ],
@@ -4400,9 +4406,6 @@
       "Create a new ${ appName } account": [
         "Luo uusi ${ appName } -tili"
       ],
-      "Find ${ BRAND_NAME } Account username": [
-        "Etsi ${ BRAND_NAME }-tilin käyttäjätunnus"
-      ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Unohditko ${ BRAND_NAME }-tilisi salasanan? Nollaa se täältä palautuskoodilla, sähköpostitse tai tekstiviestitse ja jatka ${ MAIL_APP_NAME }in, ${ DRIVE_SHORT_APP_NAME }n, ${ CALENDAR_SHORT_APP_NAME }in ja muiden palveluiden käyttämistä."
       ],
@@ -4832,12 +4835,6 @@
       ],
       "User session management": [
         "Käyttäjäistuntojen hallinta"
-      ],
-      "Vault and Item sharing": [
-        "Holvin ja kohteiden jako"
-      ],
-      "Vault and Item sharing (coming soon)": [
-        "Holvin ja kohteiden jako (tulossa pian)"
       ],
       "Vault sharing (up to ${ n } person)": [
         "Holvin jakaminen (enintään ${ n } henkilö)",
@@ -6967,6 +6964,9 @@
       ],
       "Sign in to join the Beta program": [
         "Liity Beta-ohjelmaan kirjautumalla"
+      ],
+      "Sign in to your organization": [
+        "Kirjaudu organisaatioosi"
       ],
       "Sign in with 2FA": [
         "Kirjaudu kaksivaiheisella todennuksella"
