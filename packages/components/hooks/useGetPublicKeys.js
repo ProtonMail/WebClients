@@ -17,13 +17,21 @@ export const useGetPublicKeys = () => {
     const api = useApi();
     const { verifyOutboundPublicKeys, ktActivation } = useKeyTransparencyContext();
     return useCallback(
-        (email, lifetime = DEFAULT_LIFETIME, noCache = false) => {
+        ({ email, lifetime = DEFAULT_LIFETIME, noCache = false, internalKeysOnly }) => {
             if (!cache.has(CACHE_KEY)) {
                 cache.set(CACHE_KEY, new Map());
             }
             const subCache = cache.get(CACHE_KEY);
             const miss = () =>
-                getPublicKeysEmailHelper(api, ktActivation, email, verifyOutboundPublicKeys, true, noCache);
+                getPublicKeysEmailHelper({
+                    email,
+                    internalKeysOnly,
+                    api,
+                    ktActivation,
+                    verifyOutboundPublicKeys,
+                    silence: true,
+                    noCache,
+                });
             return getPromiseValue(subCache, email, miss, lifetime);
         },
         [api, cache, ktActivation]

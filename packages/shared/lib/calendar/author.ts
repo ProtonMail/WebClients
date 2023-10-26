@@ -75,7 +75,7 @@ export const getAuthorPublicKeysMap = async ({
                 .map((key) => key.publicKey);
         } else {
             try {
-                const { verifyingKeys } = await getVerificationPreferences(author, undefined, contactEmailsMap);
+                const { verifyingKeys } = await getVerificationPreferences({ email: author, contactEmailsMap });
                 publicKeysMap[author] = verifyingKeys;
             } catch (error: any) {
                 // We're seeing too many unexpected offline errors in the GET /keys route.
