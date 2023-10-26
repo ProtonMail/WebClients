@@ -4,6 +4,7 @@ import store from 'proton-pass-extension/app/worker/store';
 import { setPopupIconBadge } from 'proton-pass-extension/lib/utils/popup-icon';
 import { isContentScriptPort } from 'proton-pass-extension/lib/utils/port';
 
+import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/hooks/usePasswordGenerator';
 import browser from '@proton/pass/lib/globals/browser';
 import type { SelectAutofillCandidatesOptions } from '@proton/pass/lib/search/types';
 import { workerReady } from '@proton/pass/lib/worker';
@@ -11,6 +12,7 @@ import { itemAutofillIntent, itemUsed } from '@proton/pass/store/actions';
 import {
     selectAutofillCandidates,
     selectItemByShareIdAndId,
+    selectPopupPasswordOptions,
     selectVaultLimits,
     selectWritableVaults,
 } from '@proton/pass/store/selectors';
@@ -120,6 +122,10 @@ export const createAutoFillService = () => {
             return { items: tabId !== undefined && items.length > 0 ? items : [], needsUpgrade: didDowngrade };
         })
     );
+
+    WorkerMessageBroker.registerMessage(WorkerMessageType.AUTOFILL_PASSWORD_OPTIONS, () => {
+        return { options: selectPopupPasswordOptions(store.getState()) ?? DEFAULT_RANDOM_PW_OPTIONS };
+    });
 
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.AUTOFILL_SELECT,
