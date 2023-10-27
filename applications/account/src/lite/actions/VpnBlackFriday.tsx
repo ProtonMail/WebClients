@@ -107,7 +107,8 @@ const VpnBlackFriday = ({ redirect, fullscreen }: { redirect?: string; fullscree
                         currency,
                         disableThanksStep: true,
                         disableCycleSelector: true,
-                        onSuccess: handleSuccess,
+                        onSubscribed: handleSuccess,
+                        onUnsubscribed: handleSuccess,
                         onClose: handleClose,
                         fullscreen,
                         metrics: {

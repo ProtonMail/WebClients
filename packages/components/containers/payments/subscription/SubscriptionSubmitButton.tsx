@@ -12,7 +12,7 @@ interface Props {
     className?: string;
     currency: Currency;
     step: SUBSCRIPTION_STEPS;
-    onClose?: () => void;
+    onDone?: () => void;
     checkResult?: SubscriptionCheckResponse;
     loading?: boolean;
     method?: PaymentMethodType;
@@ -29,7 +29,7 @@ const SubscriptionSubmitButton = ({
     method,
     checkResult,
     disabled,
-    onClose,
+    onDone,
 }: Props) => {
     const amountDue = checkResult?.AmountDue || 0;
 
@@ -67,7 +67,7 @@ const SubscriptionSubmitButton = ({
 
     if (!loading && method === PAYMENT_METHOD_TYPES.CASH) {
         return (
-            <PrimaryButton className={className} disabled={disabled} loading={loading} onClick={onClose}>
+            <PrimaryButton className={className} disabled={disabled} loading={loading} onClick={onDone}>
                 {c('Action').t`Done`}
             </PrimaryButton>
         );
