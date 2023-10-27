@@ -194,4 +194,8 @@ export default class UploadWorkerBuffer {
         ];
         return mergeUint8Arrays(hashes);
     }
+
+    get uploadedBlockCount(): number {
+        return this.blockHashes.length + this.thumbnailBlockHashes.length;
+    }
 }
