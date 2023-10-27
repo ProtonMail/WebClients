@@ -22,6 +22,7 @@ $spacings: (
 	'11': 44,
 	'12': 48,
 	'14': 56,
+	'16': 64,
 	'auto': 'auto',
 );
 
@@ -59,13 +60,27 @@ $placements: (
 			@if not($property == 'padding' and $spacingname == 'auto') {
 				$classname: dash-join($propertyname + if($placementname == 'default', '', $placementname), $spacingname);
 				$value: pixel-to-rem($size);
-				$dummy-map: map.merge($dummy-map, ($classname: (#{$cssproperty}: #{$value})));
+				$dummy-map: map.merge(
+					$dummy-map,
+					(
+						$classname: (
+							#{$cssproperty}: #{$value},
+						),
+					)
+				);
 			}
 		}
 
 		$classname: dash-join($propertyname + if($placementname == 'default', '', $placementname), 'custom');
 		$value: var(--#{'[BPN]' + $classname});
-		$dummy-map: map.merge($dummy-map, ($classname: (#{$cssproperty}: #{$value})));
+		$dummy-map: map.merge(
+			$dummy-map,
+			(
+				$classname: (
+					#{$cssproperty}: #{$value},
+				),
+			)
+		);
 	}
 }
 
@@ -83,13 +98,27 @@ $placements: (
 		@if not($spacingname == 'auto') {
 			$classname: dash-join('gap', if($placementname == 'default', '', $placementname), $spacingname);
 			$value: pixel-to-rem($size);
-			$dummy-map: map.merge($dummy-map, ($classname: (#{$cssproperty}: #{$value})));
+			$dummy-map: map.merge(
+				$dummy-map,
+				(
+					$classname: (
+						#{$cssproperty}: #{$value},
+					),
+				)
+			);
 		}
 	}
 
 	$classname: dash-join('gap', if($placementname == 'default', '', $placementname), 'custom');
 	$value: var(--#{'[BPN]' + $classname});
-	$dummy-map: map.merge($dummy-map, ($classname: (#{$cssproperty}: #{$value})));
+	$dummy-map: map.merge(
+		$dummy-map,
+		(
+			$classname: (
+				#{$cssproperty}: #{$value},
+			),
+		)
+	);
 }
 
 // We serialize here to factorize media queries
