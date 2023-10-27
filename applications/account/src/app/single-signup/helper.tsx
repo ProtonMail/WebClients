@@ -5,7 +5,7 @@ import { getVPNPlan } from '@proton/components/containers/payments/features/plan
 import { getAllPlatforms, getFreeFeatures, getRefundable } from '@proton/components/containers/payments/features/vpn';
 import { COUPON_CODES, CYCLE, DEFAULT_CURRENCY, PLANS } from '@proton/shared/lib/constants';
 import { getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
-import { Api, Currency, Cycle, Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { Api, Currency, Cycle, CycleMapping, Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -15,7 +15,7 @@ import { SignupParameters, getPlanIDsFromParams } from '../signup/searchParams';
 import { SignupDefaults, SubscriptionDataCycleMapping } from '../single-signup-v2/interface';
 
 export const getUpsellShortPlan = (plan: Plan | undefined, vpnServersCountData: VPNServersCountData) => {
-    if (plan && plan?.Name === PLANS.VPN) {
+    if (plan && plan.Name === PLANS.VPN) {
         const vpnPlan = getVPNPlan(plan, vpnServersCountData);
         return {
             logo: <VpnLogo variant="with-wordmark" />,
@@ -114,44 +114,58 @@ export const getInitialSubscriptionDataForAllCycles = async ({
     const couponCode = signupParameters.coupon;
     const cycle = signupParameters.cycle || defaults.cycle;
 
-    const hasExtraCycles =
-        couponCode === COUPON_CODES.BLACK_FRIDAY_2023 || [CYCLE.FIFTEEN, CYCLE.THIRTY].includes(cycle);
-
-    const getStandardMapping = async (): Promise<SubscriptionDataCycleMapping> => {
-        const [
-            subscriptionDataMonthly,
-            subscriptionDataYearly,
-            subscriptionDataTwoYears,
-            subscriptionDataFifteen,
-            subscriptionDataThirty,
-        ] = await Promise.all(
-            [
-                CYCLE.MONTHLY,
-                CYCLE.YEARLY,
-                CYCLE.TWO_YEARS,
-                ...(hasExtraCycles ? [CYCLE.FIFTEEN, CYCLE.THIRTY] : []),
-            ].map((cycle) =>
-                getSubscriptionData({
+    const getMapping = async (
+        planIDs: PlanIDs,
+        cycles: CycleMapping<boolean>
+    ): Promise<CycleMapping<SubscriptionData>> => {
+        return Promise.all(
+            Object.entries(cycles).map(([key, run]) => {
+                if (!run) {
+                    return [];
+                }
+                const cycle = Number(key) as CYCLE;
+                return getSubscriptionData({
                     api,
                     currency,
                     couponCode,
-                    planIDs: planParameters.planIDs,
+                    planIDs,
                     cycle,
-                })
-            )
-        );
+                }).then((result) => [cycle, result]);
+            })
+        ).then(Object.fromEntries);
+    };
 
-        const isBFOfferActive = subscriptionDataFifteen?.checkResult.Coupon?.Code === COUPON_CODES.BLACK_FRIDAY_2023;
+    const getStandardMapping = async (): Promise<SubscriptionDataCycleMapping | undefined> => {
+        const planIDs = planParameters.planIDs;
+
+        const hasCustomCycles =
+            ((planIDs[PLANS.VPN] || planIDs[PLANS.VPN_PASS_BUNDLE]) && couponCode === COUPON_CODES.BLACK_FRIDAY_2023) ||
+            [CYCLE.FIFTEEN, CYCLE.THIRTY].includes(cycle);
+
+        const mapping = await getMapping(planIDs, {
+            [CYCLE.MONTHLY]: true,
+            [CYCLE.YEARLY]: !hasCustomCycles,
+            [CYCLE.TWO_YEARS]: !hasCustomCycles,
+            [CYCLE.FIFTEEN]: hasCustomCycles,
+            [CYCLE.THIRTY]: hasCustomCycles,
+        });
+
+        const isBFOfferActive = mapping[CYCLE.FIFTEEN]?.checkResult.Coupon?.Code === COUPON_CODES.BLACK_FRIDAY_2023;
+
+        if (hasCustomCycles && !isBFOfferActive) {
+            delete mapping[CYCLE.FIFTEEN];
+            delete mapping[CYCLE.THIRTY];
+            const normalMapping = await getMapping(planIDs, {
+                [CYCLE.YEARLY]: true,
+                [CYCLE.TWO_YEARS]: true,
+            });
+            mapping[CYCLE.YEARLY] = normalMapping[CYCLE.YEARLY];
+            mapping[CYCLE.TWO_YEARS] = normalMapping[CYCLE.TWO_YEARS];
+        }
 
         return {
-            planIDs: subscriptionDataMonthly.planIDs,
-            mapping: {
-                [CYCLE.MONTHLY]: subscriptionDataMonthly,
-                [CYCLE.YEARLY]: subscriptionDataYearly,
-                [CYCLE.TWO_YEARS]: subscriptionDataTwoYears,
-                [CYCLE.FIFTEEN]: isBFOfferActive ? subscriptionDataFifteen : undefined,
-                [CYCLE.THIRTY]: isBFOfferActive ? subscriptionDataThirty : undefined,
-            },
+            planIDs,
+            mapping,
         };
     };
 
@@ -159,32 +173,38 @@ export const getInitialSubscriptionDataForAllCycles = async ({
         if (couponCode !== COUPON_CODES.BLACK_FRIDAY_2023) {
             return;
         }
-        const [subscriptionDataMonthly, subscriptionDataFifteen, subscriptionDataThirty] = await Promise.all(
-            [CYCLE.MONTHLY, CYCLE.FIFTEEN, CYCLE.THIRTY].map((cycle) =>
-                getSubscriptionData({
-                    api,
-                    currency,
-                    couponCode,
-                    planIDs: {
-                        [PLANS.VPN_PASS_BUNDLE]: 1,
-                    },
-                    cycle,
-                })
-            )
-        );
+        const planIDs = {
+            [PLANS.VPN_PASS_BUNDLE]: 1,
+        };
+        const mapping = await getMapping(planIDs, {
+            [CYCLE.FIFTEEN]: true,
+            [CYCLE.THIRTY]: true,
+        });
         return {
-            planIDs: subscriptionDataMonthly.planIDs,
-            mapping: {
-                [CYCLE.MONTHLY]: subscriptionDataMonthly,
-                [CYCLE.YEARLY]: undefined,
-                [CYCLE.TWO_YEARS]: undefined,
-                [CYCLE.FIFTEEN]: subscriptionDataFifteen,
-                [CYCLE.THIRTY]: subscriptionDataThirty,
-            },
+            planIDs,
+            mapping,
         };
     };
 
-    const subscriptionDataCycleMapping = (await Promise.all([getStandardMapping(), getBFMapping()])).filter(isTruthy);
+    const getBundleMapping = async () => {
+        if (couponCode !== COUPON_CODES.BLACK_FRIDAY_2023 || planParameters.defined) {
+            return;
+        }
+        const planIDs = {
+            [PLANS.BUNDLE]: 1,
+        };
+        const mapping = await getMapping(planIDs, {
+            [CYCLE.YEARLY]: true,
+        });
+        return {
+            planIDs,
+            mapping,
+        };
+    };
+
+    const subscriptionDataCycleMapping = (
+        await Promise.all([getStandardMapping(), getBFMapping(), getBundleMapping()])
+    ).filter(isTruthy);
     const first = subscriptionDataCycleMapping[0];
 
     let subscriptionData = first.mapping[cycle] ?? first.mapping[CYCLE.TWO_YEARS];
