@@ -1,6 +1,6 @@
 import type { Maybe } from '@proton/pass/types';
+import { groupByKey } from '@proton/pass/utils/array/group-by-key';
 import { logger } from '@proton/pass/utils/logger';
-import groupWith from '@proton/utils/groupWith';
 import lastItem from '@proton/utils/lastItem';
 
 import { readCSV } from '../helpers/csv.reader';
@@ -49,7 +49,7 @@ export const readRoboformData = async (data: string): Promise<ImportPayload> => 
                 RfFieldsV2,
             }));
 
-        const groupedByVault = groupWith<RoboformItem>((a, b) => a.Folder === b.Folder, items);
+        const groupedByVault = groupByKey(items, 'Folder');
 
         const vaults: ImportVault[] = groupedByVault.map((roboformItems) => {
             const vaultName = roboformItems[0].Folder;
