@@ -349,6 +349,7 @@ export const createNewDraft = (
             originalTo,
             originalFrom,
             originalAddressID,
+            originalMessageFlags: referenceMessage?.data?.Flags,
             initialAttachments,
             isQuickReply,
         },
