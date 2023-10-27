@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import type { ItemImportIntent, Maybe, UnsafeItemExtraField } from '@proton/pass/types';
+import { groupByKey } from '@proton/pass/utils/array/group-by-key';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
-import groupWith from '@proton/utils/groupWith';
 import lastItem from '@proton/utils/lastItem';
 
 import { readCSV } from '../helpers/csv.reader';
@@ -65,9 +65,11 @@ export const readKeeperData = async (data: string): Promise<ImportPayload> => {
             onError: (error) => warnings.push(error),
         });
 
-        const groupedByVault = groupWith<KeeperItem>(
-            (a, b) => a[0] === b[0],
-            result.items.map(([folderName, ...rest]) => [lastItem(folderName?.split('\\')) ?? '', ...rest])
+        const groupedByVault = groupByKey(
+            result.items.map(
+                ([folderName, ...rest]) => [lastItem(folderName?.split('\\')) ?? '', ...rest] as KeeperItem
+            ),
+            0
         );
 
         const vaults: ImportVault[] = groupedByVault
