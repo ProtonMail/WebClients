@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useCombinedRefs } from '@proton/hooks';
 import { useLoading } from '@proton/hooks';
 import busy from '@proton/shared/lib/busy';
+import { isMinimumSafariVersion, isSafari } from '@proton/shared/lib/helpers/browser';
 import {
     isAudio,
     isPDF,
@@ -148,6 +149,13 @@ export const FilePreviewContent = ({
             return <PDFPreview contents={contents} filename={fileName} />;
         }
         if (isWordDocument(mimeType)) {
+            if (isSafari() && !isMinimumSafariVersion(16)) {
+                return (
+                    <div className="file-preview-container">
+                        <UnsupportedPreview onDownload={onDownload} browser />
+                    </div>
+                );
+            }
             return <SandboxedPreview contents={contents} mimeType={mimeType} onDownload={onDownload} />;
         }
     };
