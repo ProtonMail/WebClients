@@ -90,6 +90,7 @@ export const PhotosCard: FC<Props> = ({
     );
 
     const showCheckbox = hasSelection;
+    const isLoaded = !isThumbnailLoading && isActive;
 
     return (
         <ButtonLike
@@ -105,6 +106,7 @@ export const PhotosCard: FC<Props> = ({
             onClick={onClick}
             onKeyDown={onKeyDown}
             tabIndex={0}
+            aria-busy={!isLoaded}
         >
             <Checkbox
                 className="absolute top-0 left-0 ml-2 mt-2"
@@ -119,7 +121,7 @@ export const PhotosCard: FC<Props> = ({
                 tabIndex={hasSelection ? -1 : 0}
             />
 
-            {!isThumbnailLoading && isActive ? (
+            {isLoaded ? (
                 <div className="w-full h-full relative">
                     {!photo.hasThumbnail ? (
                         <div className="flex flex-align-items-center flex-justify-center w-full h-full photos-card-thumbnail photos-card-thumbnail--empty">
