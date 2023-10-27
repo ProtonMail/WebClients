@@ -119,7 +119,11 @@ export const PhotosCard: FC<Props> = ({
                 // If we are in select mode, then we don't need to focus the checkbox
                 // as the main card action is already bound to select
                 tabIndex={hasSelection ? -1 : 0}
-            />
+                aria-label={
+                    // translator: This string is used by screen readers to inform the user of a selection action
+                    c('Info').t`Select item`
+                }
+            ></Checkbox>
 
             {isLoaded ? (
                 <div className="w-full h-full relative">
