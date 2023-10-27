@@ -17,5 +17,6 @@ enum AccountFlag {
 
 enum DriveFeatureFlag {
     DrivePhotos = 'DrivePhotos',
+    DrivePhotosUploadDisabled = 'DrivePhotosUploadDisabled',
 }
 export type FeatureFlag = `${MailFeatureFlag}` | `${AccountFlag}` | `${DriveFeatureFlag}`;
