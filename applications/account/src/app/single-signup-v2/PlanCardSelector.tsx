@@ -234,7 +234,6 @@ const PlanCardView = ({
 
 export const PlanCardSelector = ({
     cycle,
-    isPassWelcome,
     plansMap,
     onSelect,
     currency,
@@ -242,7 +241,6 @@ export const PlanCardSelector = ({
     onSelectedClick,
     planCards,
 }: {
-    isPassWelcome?: boolean;
     plansMap: PlansMap;
     cycle: CYCLE;
     currency: Currency;
@@ -258,15 +256,7 @@ export const PlanCardSelector = ({
                 const planIDs = isFreePlan ? {} : { [planCard.plan]: 1 };
                 const pricing = getPricingFromPlanIDs(planIDs, plansMap);
 
-                const isPassWelcomePlanCard = isPassWelcome && planCard.plan === PLANS.PASS_PLUS;
-                if (isPassWelcomePlanCard) {
-                    pricing.all[CYCLE.YEARLY] = 0;
-                }
-
                 const totals = getTotalFromPricing(pricing, cycle);
-                if (isPassWelcomePlanCard) {
-                    totals.totalNoDiscountPerMonth = 399;
-                }
 
                 const planFromCard = isFreePlan ? FREE_PLAN : plansMap[planCard.plan];
                 const billedText = isFreePlan ? c('pass_signup_2023: Info').t`Free forever` : getBilledText(cycle);
@@ -284,7 +274,7 @@ export const PlanCardSelector = ({
                         hasMaxWidth={planCards.length > 2}
                         cycle={cycle}
                         headerText={(() => {
-                            if (offer.valid || isPassWelcomePlanCard) {
+                            if (offer.valid) {
                                 return getLimitedTimeOfferText();
                             }
                             if (planCard.type === 'best') {
