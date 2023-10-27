@@ -1,4 +1,15 @@
-import { Dispatch, Fragment, ReactElement, ReactNode, SetStateAction, useEffect, useRef, useState } from 'react';
+import {
+    CSSProperties,
+    Dispatch,
+    Fragment,
+    ReactElement,
+    ReactNode,
+    Ref,
+    SetStateAction,
+    useEffect,
+    useRef,
+    useState,
+} from 'react';
 import { Link } from 'react-router-dom';
 
 import { c, msgid } from 'ttag';
@@ -46,7 +57,7 @@ import {
 import { getTotalBillingText } from '@proton/components/containers/payments/helper';
 import VPNPassPromotionButton from '@proton/components/containers/payments/subscription/VPNPassPromotionButton';
 import usePaymentToken from '@proton/components/containers/payments/usePaymentToken';
-import { useActiveBreakpoint, useApi, useConfig } from '@proton/components/hooks';
+import { useActiveBreakpoint, useApi, useConfig, useElementRect, useNotifications } from '@proton/components/hooks';
 import {
     AmountAndCurrency,
     CardPayment,
@@ -67,6 +78,7 @@ import {
     BRAND_NAME,
     COUPON_CODES,
     CYCLE,
+    DEFAULT_CYCLE,
     PASS_APP_NAME,
     PLANS,
     VPN_APP_NAME,
@@ -116,6 +128,49 @@ import { Measure } from './interface';
 import { TelemetryPayType } from './measure';
 import PlanCustomizer from './planCustomizer/PlanCustomizer';
 import getAddonsPricing from './planCustomizer/getAddonsPricing';
+
+const PlanCard = ({
+    title,
+    description,
+    logo,
+    style,
+    children,
+    className,
+    cycleProps,
+    textProps,
+}: {
+    title: ReactNode;
+    description: ReactNode;
+    children: ReactNode;
+    logo: ReactNode;
+    style?: CSSProperties;
+    cycleProps?: {
+        style?: CSSProperties;
+        ref?: Ref<HTMLDivElement>;
+        className?: string;
+    };
+    textProps?: {
+        style?: CSSProperties;
+        ref?: Ref<HTMLDivElement>;
+        className?: string;
+    };
+    className?: string;
+}) => {
+    return (
+        <div className={clsx(className, 'flex flex-column gap-4')} style={style}>
+            <div>
+                <div className="inline-block border rounded-lg p-2">{logo}</div>
+            </div>
+            <div {...textProps} className={clsx(textProps?.className)}>
+                <div className="text-bold">{title}</div>
+                <div className="color-weak">{description}</div>
+            </div>
+            <div {...cycleProps} className={clsx('p-4 rounded-lg w-full flex-item-fluid-auto', cycleProps?.className)}>
+                {children}
+            </div>
+        </div>
+    );
+};
 
 const getPlanInformation = (
     selectedPlan: Plan,
@@ -290,7 +345,7 @@ const FeatureItem = ({ left, text }: { left: ReactNode; text: string }) => {
     return (
         <div className="flex flex-align-items-center text-center on-mobile-flex-column flex-justify-center">
             <div className="md:mr-4 text-center">{left}</div>
-            <div className="color-weak">{text}</div>
+            <div>{text}</div>
         </div>
     );
 };
@@ -371,6 +426,9 @@ const Step1 = ({
     const createPaymentToken = usePaymentToken();
     const accountDetailsRef = useRef<AccountStepDetailsRef>();
     const [couponCode, setCouponCode] = useState(model.subscriptionData.checkResult.Coupon?.Code);
+    const textRef = useRef<HTMLDivElement>(null);
+    const textRect = useElementRect(textRef);
+    const { createNotification } = useNotifications();
 
     const createFlow = useFlowRef();
 
@@ -428,14 +486,7 @@ const Step1 = ({
         }));
     };
 
-    const getCouponForCurrentCycle = (planIDs: PlanIDs, cycle: Cycle) => {
-        const subscriptionMapping = model.subscriptionDataCycleMapping.find((cycleMapping) =>
-            isDeepEqual(planIDs, cycleMapping.planIDs)
-        );
-        return couponCode ?? subscriptionMapping?.mapping[cycle]?.checkResult.Coupon?.Code;
-    };
-
-    const showLifetimeDeal = !isB2bPlan && !getCouponForCurrentCycle(options.planIDs, options.cycle);
+    const showLifetimeDeal = !isB2bPlan && !options.checkResult.Coupon?.Code;
 
     const handleOptimistic = async (optimistic: Partial<OptimisticOptions>) => {
         const newCurrency = optimistic.currency || options.currency;
@@ -468,7 +519,10 @@ const Step1 = ({
 
             setOptimisticDiff(newOptimistic);
 
-            const coupon = getCouponForCurrentCycle(newPlanIDs, newCycle);
+            const coupon =
+                couponCode ||
+                options.checkResult.Coupon?.Code ||
+                subscriptionMapping?.mapping[newCycle]?.checkResult.Coupon?.Code;
             const checkResult = await getSubscriptionPrices(silentApi, newPlanIDs, newCurrency, newCycle, coupon);
 
             if (!validateFlow()) {
@@ -707,13 +761,14 @@ const Step1 = ({
             return;
         }
         return getCheckout({
-            planIDs: options.planIDs,
+            planIDs: subscriptionMapping.planIDs,
             plansMap,
             checkResult,
         });
     };
 
-    const checkoutMapping = ((): CycleMapping<SubscriptionCheckoutData> | undefined => {
+    const checkoutMappingPlanIDs = ((): CycleMapping<SubscriptionCheckoutData> | undefined => {
+        // Want to show prices for VPN and VPNBIZ
         const subscriptionMapping = getSubscriptionMapping(options.planIDs);
         if (!subscriptionMapping) {
             return;
@@ -727,6 +782,32 @@ const Step1 = ({
         };
     })();
 
+    const checkoutMappingVPN = ((): CycleMapping<SubscriptionCheckoutData> | undefined => {
+        // Only want to show prices for VPN
+        const subscriptionMapping = getSubscriptionMapping({ [PLANS.VPN]: 1 });
+        if (!subscriptionMapping) {
+            return;
+        }
+        return {
+            [CYCLE.MONTHLY]: getCheckoutForCycle(subscriptionMapping, CYCLE.MONTHLY),
+            [CYCLE.YEARLY]: getCheckoutForCycle(subscriptionMapping, CYCLE.YEARLY),
+            [CYCLE.TWO_YEARS]: getCheckoutForCycle(subscriptionMapping, CYCLE.TWO_YEARS),
+            [CYCLE.FIFTEEN]: getCheckoutForCycle(subscriptionMapping, CYCLE.FIFTEEN),
+            [CYCLE.THIRTY]: getCheckoutForCycle(subscriptionMapping, CYCLE.THIRTY),
+        };
+    })();
+
+    const checkoutMappingBundle = ((): CycleMapping<SubscriptionCheckoutData> | undefined => {
+        // Only want to show prices for VPN
+        const subscriptionMapping = getSubscriptionMapping({ [PLANS.BUNDLE]: 1 });
+        if (!subscriptionMapping) {
+            return;
+        }
+        return {
+            [CYCLE.YEARLY]: getCheckoutForCycle(subscriptionMapping, CYCLE.YEARLY),
+        };
+    })();
+
     const actualCheckout = getCheckout({
         planIDs: options.planIDs,
         plansMap,
@@ -735,13 +816,11 @@ const Step1 = ({
 
     const { cycles, upsellCycle } = (() => {
         const hasFifteen = model.subscriptionDataCycleMapping.find((subscriptionMapping) => {
-            return !!subscriptionMapping.mapping[CYCLE.FIFTEEN];
+            return subscriptionMapping.planIDs[PLANS.VPN] && !!subscriptionMapping.mapping[CYCLE.FIFTEEN];
         });
         if (hasFifteen) {
             return {
-                cycles: isDesktop
-                    ? [CYCLE.MONTHLY, CYCLE.THIRTY, CYCLE.FIFTEEN]
-                    : [CYCLE.THIRTY, CYCLE.FIFTEEN, CYCLE.MONTHLY],
+                cycles: [CYCLE.THIRTY, CYCLE.FIFTEEN, CYCLE.MONTHLY],
                 upsellCycle: CYCLE.THIRTY,
             };
         }
@@ -753,13 +832,14 @@ const Step1 = ({
         };
     })();
 
+    const iconColorClassName = background === 'bf2023' ? 'color-norm' : 'color-primary';
     const features = [
         {
-            left: <Icon size={24} className="color-primary" name="code" />,
+            left: <Icon size={24} className={iconColorClassName} name="code" />,
             text: c('Info').t`Open source`,
         },
         {
-            left: <Icon size={24} className="color-primary" name="eye-slash" />,
+            left: <Icon size={24} className={iconColorClassName} name="eye-slash" />,
             text: c('new_plans: feature').t`No-logs policy`,
         },
         {
@@ -768,18 +848,13 @@ const Step1 = ({
         },
         isDesktop &&
             [PLANS.VPN, PLANS.BUNDLE].includes(selectedPlan.Name as any) && {
-                left: <Icon size={24} className="color-primary" name="servers" />,
+                left: <Icon size={24} className={iconColorClassName} name="servers" />,
                 text: getVpnServers(vpnServersCountData.paid.servers),
             },
     ].filter(isTruthy);
 
     const freeName = `${VPN_SHORT_APP_NAME} Free`;
     const appName = VPN_APP_NAME;
-
-    const handleCloseUpsellModal = () => {
-        handleUpdate('plan');
-        upsellModalProps.onClose();
-    };
 
     const hasSelectedFree = selectedPlan.Name === PLANS.FREE;
 
@@ -806,6 +881,21 @@ const Step1 = ({
             return CYCLE.THIRTY;
         }
     })();
+
+    const handleCloseUpsellModal = () => {
+        handleUpdate('plan');
+        if (!(options.planIDs[PLANS.VPN] || options.planIDs[PLANS.VPN_PASS_BUNDLE])) {
+            withLoadingPaymentDetails(
+                handleOptimistic({
+                    planIDs: {
+                        [PLANS.VPN]: 1,
+                    },
+                    cycle: cycles[0] || DEFAULT_CYCLE,
+                })
+            ).catch(noop);
+        }
+        upsellModalProps.onClose();
+    };
 
     const upsellToVPNPassBundle = canUpsellToVPNPassBundle(
         options.planIDs,
@@ -879,11 +969,13 @@ const Step1 = ({
         }
     };
 
+    const isBlackFriday = options.checkResult.Coupon?.Code === COUPON_CODES.BLACK_FRIDAY_2023;
+
     const renewalNotice = !hasSelectedFree && (
         <div className="w100 text-sm color-norm opacity-70 text-center">
             <div className="mx-auto w70 on-mobile-w100">
                 *
-                {options.checkResult.Coupon?.Code === COUPON_CODES.BLACK_FRIDAY_2023
+                {isBlackFriday
                     ? getBlackFridayRenewalNoticeText({
                           price: options.checkResult.Amount + (options.checkResult.CouponDiscount || 0),
                           cycle: options.cycle,
@@ -917,6 +1009,10 @@ const Step1 = ({
                                 return c('new_plans: feature').t`Start protecting your organization`;
                             }
 
+                            if (isBlackFriday) {
+                                return c('bf2023: header').t`Save with Black Friday deals on a high-speed Swiss VPN`;
+                            }
+
                             if (mode === 'pricing') {
                                 return c('new_plans: feature').t`High-speed Swiss VPN that protects your privacy`;
                             }
@@ -925,8 +1021,13 @@ const Step1 = ({
                         })()}
                     </h1>
                 </div>
-                {mode === 'pricing' && !isB2bPlan && background !== 'bf2023' && (
-                    <div className="flex flex-nowrap md:gap-8 gap-3">
+                {mode === 'pricing' && !isB2bPlan && (
+                    <div
+                        className={clsx(
+                            'flex flex-nowrap md:gap-8 gap-3',
+                            background === 'bf2023' ? 'color-norm' : 'color-weak'
+                        )}
+                    >
                         {features.map(({ left, text }, i, arr) => {
                             return (
                                 <Fragment key={text}>
@@ -939,11 +1040,15 @@ const Step1 = ({
                         })}
                     </div>
                 )}
-                {!hasSelectedFree && mode === 'pricing' && checkoutMapping && (
+                {!hasSelectedFree && mode === 'pricing' && (checkoutMappingVPN || checkoutMappingPlanIDs) && (
                     <Box className={`mt-8 w100 ${padding}`}>
                         <BoxHeader
                             step={showStepLabel ? step++ : undefined}
-                            title={c('Header').t`Select your pricing plan`}
+                            title={
+                                isBlackFriday
+                                    ? c('bf2023: header').t`Select your Black Friday offer`
+                                    : c('Header').t`Select your pricing plan`
+                            }
                             right={
                                 <CurrencySelector
                                     mode="select-two"
@@ -955,42 +1060,176 @@ const Step1 = ({
                             }
                         />
                         <BoxContent>
-                            <div className="flex flex-justify-space-between gap-4 on-tablet-flex-column">
-                                <CycleSelector
-                                    onGetTheDeal={(cycle) => {
-                                        handleUpdate('plan');
-                                        setToggleUpsell(undefined);
-                                        withLoadingPaymentDetails(handleChangeCycle(cycle)).catch(noop);
-                                        accountDetailsRef.current?.scrollInto('email');
-                                    }}
-                                    upsellCycle={upsellCycle}
-                                    cycle={options.cycle}
-                                    currency={options.currency}
-                                    cycles={cycles}
-                                    onChangeCycle={(cycle, upsellFrom) => {
-                                        handleUpdate('plan');
-                                        setToggleUpsell(undefined);
-                                        return withLoadingPaymentDetails(
-                                            handleChangeCycle(cycle, upsellFrom !== undefined ? 'upsell' : undefined)
-                                        ).catch(noop);
-                                    }}
-                                    checkoutMapping={checkoutMapping}
-                                />
-                            </div>
-                            <div className="flex flex-justify-end mt-10 on-tablet-flex-justify-center">
-                                {!hideFreePlan && options.plan.Name === PLANS.VPN && (
-                                    <InlineLinkButton
-                                        className="color-weak"
-                                        onClick={() => {
-                                            void measure({
-                                                event: TelemetryAccountSignupEvents.planSelect,
-                                                dimensions: { plan: PLANS.FREE },
-                                            });
-                                            setUpsellModal(true);
-                                        }}
-                                    >
-                                        {c('Action').t`Sign up for free`}
-                                    </InlineLinkButton>
+                            {isBlackFriday && checkoutMappingBundle && checkoutMappingVPN
+                                ? (() => {
+                                      const bundlePlanIDs = {
+                                          [PLANS.BUNDLE]: 1,
+                                      };
+                                      const vpnPlan = plansMap[PLANS.VPN];
+                                      const bundlePlan = plansMap[PLANS.BUNDLE];
+                                      const passPlan = plansMap[PLANS.PASS_PLUS];
+
+                                      const handleSelectVPNCycle = (cycle: CYCLE) => {
+                                          handleUpdate('plan');
+                                          setToggleUpsell(undefined);
+                                          if (options.planIDs[PLANS.VPN_PASS_BUNDLE] && cycle === CYCLE.MONTHLY) {
+                                              const plan = passPlan?.Title || '';
+                                              createNotification({
+                                                  text: c('Info')
+                                                      .t`${plan} removed. Bundle deal not available on a 1-month plan.`,
+                                              });
+                                          }
+                                          withLoadingPaymentDetails(
+                                              handleOptimistic({
+                                                  planIDs: {
+                                                      [options.planIDs[PLANS.VPN_PASS_BUNDLE] && cycle !== CYCLE.MONTHLY
+                                                          ? PLANS.VPN_PASS_BUNDLE
+                                                          : PLANS.VPN]: 1,
+                                                  },
+                                                  cycle,
+                                              })
+                                          ).catch(noop);
+                                      };
+
+                                      const handleSelectBundleCycle = (cycle: CYCLE) => {
+                                          handleUpdate('plan');
+                                          setToggleUpsell(undefined);
+                                          withLoadingPaymentDetails(
+                                              handleOptimistic({
+                                                  planIDs: bundlePlanIDs,
+                                                  cycle,
+                                              })
+                                          ).catch(noop);
+                                      };
+
+                                      return (
+                                          <div className="flex gap-6 flex-column lg:flex-row lg:gap-3 ">
+                                              <PlanCard
+                                                  className="lg:flex-item-fluid"
+                                                  title={vpnPlan?.Title}
+                                                  description={c('bf2023: info')
+                                                      .t`Secure browsing and premium VPN features.`}
+                                                  logo={<VpnLogo variant="glyph-only" size={24} />}
+                                                  textProps={{
+                                                      className: 'lg:min-h-custom',
+                                                      style: textRect?.height
+                                                          ? { '--lg-min-h-custom': `${textRect.height}px` }
+                                                          : undefined,
+                                                  }}
+                                                  cycleProps={{
+                                                      style: {
+                                                          background: '#1DA5830F',
+                                                      },
+                                                  }}
+                                              >
+                                                  <div className="flex flex-justify-space-between gap-4 flex-column lg:flex-row">
+                                                      <CycleSelector
+                                                          bg
+                                                          onGetTheDeal={(cycle) => {
+                                                              handleSelectVPNCycle(cycle);
+                                                              accountDetailsRef.current?.scrollInto('email');
+                                                          }}
+                                                          upsellCycle={upsellCycle}
+                                                          cycle={options.cycle}
+                                                          currency={options.currency}
+                                                          cycles={cycles}
+                                                          onChangeCycle={handleSelectVPNCycle}
+                                                          checkoutMapping={checkoutMappingVPN}
+                                                      />
+                                                  </div>
+                                              </PlanCard>
+                                              <PlanCard
+                                                  textProps={{
+                                                      ref: textRef,
+                                                  }}
+                                                  className="lg:max-w-custom"
+                                                  style={{ '--lg-max-w-custom': '16em' }}
+                                                  title={bundlePlan?.Title}
+                                                  description={c('bf2023: info')
+                                                      .t`All premium ${BRAND_NAME} services. One easy subscription.`}
+                                                  logo={
+                                                      <div>
+                                                          <img
+                                                              src={bundle}
+                                                              width={24}
+                                                              height={24}
+                                                              alt={bundlePlan?.Title}
+                                                          />
+                                                      </div>
+                                                  }
+                                                  cycleProps={{
+                                                      style: {
+                                                          background: '#DB60D60F',
+                                                      },
+                                                  }}
+                                              >
+                                                  <div className="flex flex-justify-space-between gap-4 flex-column lg:flex-row">
+                                                      <CycleSelector
+                                                          bg
+                                                          onGetTheDeal={(cycle) => {
+                                                              handleSelectBundleCycle(cycle);
+                                                              accountDetailsRef.current?.scrollInto('email');
+                                                          }}
+                                                          cycle={options.cycle}
+                                                          currency={options.currency}
+                                                          cycles={[CYCLE.YEARLY]}
+                                                          onChangeCycle={(cycle) => {
+                                                              handleSelectBundleCycle(cycle);
+                                                          }}
+                                                          checkoutMapping={checkoutMappingBundle}
+                                                      />
+                                                  </div>
+                                              </PlanCard>
+                                          </div>
+                                      );
+                                  })()
+                                : checkoutMappingPlanIDs && (
+                                      <div className="flex flex-justify-space-between gap-4 on-tablet-flex-column">
+                                          <CycleSelector
+                                              onGetTheDeal={(cycle) => {
+                                                  handleUpdate('plan');
+                                                  setToggleUpsell(undefined);
+                                                  withLoadingPaymentDetails(handleChangeCycle(cycle)).catch(noop);
+                                                  accountDetailsRef.current?.scrollInto('email');
+                                              }}
+                                              upsellCycle={upsellCycle}
+                                              cycle={options.cycle}
+                                              currency={options.currency}
+                                              cycles={cycles}
+                                              onChangeCycle={(cycle, upsellFrom) => {
+                                                  handleUpdate('plan');
+                                                  setToggleUpsell(undefined);
+                                                  return withLoadingPaymentDetails(
+                                                      handleChangeCycle(
+                                                          cycle,
+                                                          upsellFrom !== undefined ? 'upsell' : undefined
+                                                      )
+                                                  ).catch(noop);
+                                              }}
+                                              checkoutMapping={checkoutMappingPlanIDs}
+                                          />
+                                      </div>
+                                  )}
+                            <div className="flex flex-column flex-align-items-center gap-1 lg:flex-row lg:flex-justify-space-between mt-10">
+                                <span className="text-sm">
+                                    <Guarantee />
+                                </span>
+                                {!hideFreePlan && (
+                                    <div className="color-weak">
+                                        {c('Action').t`Or`}{' '}
+                                        <InlineLinkButton
+                                            className="color-weak"
+                                            onClick={() => {
+                                                void measure({
+                                                    event: TelemetryAccountSignupEvents.planSelect,
+                                                    dimensions: { plan: PLANS.FREE },
+                                                });
+                                                setUpsellModal(true);
+                                            }}
+                                        >
+                                            {c('Action').t`sign up for free`}
+                                        </InlineLinkButton>
+                                    </div>
                                 )}
                             </div>
                         </BoxContent>
@@ -1478,10 +1717,11 @@ const Step1 = ({
                                                                         </span>
                                                                         {actualCheckout.discountPercent > 0 && (
                                                                             <SaveLabel2
-                                                                                className="inline-block"
-                                                                                highlightPrice={true}
-                                                                                percent={actualCheckout.discountPercent}
-                                                                            />
+                                                                                className="text-sm inline-block"
+                                                                                highlightPrice
+                                                                            >
+                                                                                {`− ${actualCheckout.discountPercent}%`}
+                                                                            </SaveLabel2>
                                                                         )}
                                                                     </div>
 
@@ -1720,7 +1960,6 @@ const Step1 = ({
                         </>
                     }
                     {...upsellModalProps}
-                    onClose={handleCloseUpsellModal}
                 />
             )}
         </Layout>

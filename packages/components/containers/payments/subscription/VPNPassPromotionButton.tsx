@@ -21,6 +21,7 @@ const VPNPassPromotionButton = ({ onClick, currency, cycle }: VPNPassPromotionBu
     return (
         <PromotionBanner
             mode="banner"
+            className="pr-4"
             rounded
             contentCentered={false}
             description={
@@ -33,7 +34,7 @@ const VPNPassPromotionButton = ({ onClick, currency, cycle }: VPNPassPromotionBu
                         : getBoldFormattedText(
                               c('bf2023: Action').t`**Add our encrypted password manager** for only ${price}`
                           )}
-                    <div className="mt-4 mr-2">
+                    <div className="mt-4">
                         <Button
                             onClick={onClick}
                             className="flex flex-nowrap flex-align-items-center flex-justify-center"

@@ -141,7 +141,7 @@ export const getAdvancedVPNCustomizations = (included: boolean, highlight?: bool
     return {
         text: c('vpn_2step: feature').t`Advanced VPN customizations`,
         tooltip: c('vpn_2step: tooltip')
-            .t`Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.`,
+            .t`Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.`,
         included,
         highlight,
         icon: 'arrows-switch',
