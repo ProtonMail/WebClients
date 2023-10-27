@@ -1,9 +1,11 @@
+import JSBI from 'jsbi';
+
 import { useModalTwo } from '@proton/components/components';
 import { useApi, useGetVerificationPreferences } from '@proton/components/hooks';
 import { WorkerDecryptionResult } from '@proton/crypto';
 import { getAttachment as getAttachmentRequest, getAttachmentsMetadata } from '@proton/shared/lib/api/attachments';
 import { AttachmentFullMetadata, AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
-import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { MESSAGE_FLAGS, VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getSessionKey } from '@proton/shared/lib/mail/send/attachments';
 
 import ConfirmDownloadAttachments from 'proton-mail/components/attachment/modals/ConfirmDownloadAttachments';
@@ -73,7 +75,12 @@ export const useAttachmentThumbnailDownload = () => {
                 }
 
                 const messageKeys = await getMessageKeys({ AddressID });
-                const sessionKey = await getSessionKey({ KeyPackets }, messageKeys.privateKeys);
+                // TODO: this is a temporary hack.
+                // The BE needs to add the message flags to the AttachmentMetadata route, so that we
+                // know which attachments were autoforwarded.
+                // In the meantime, we temporarily allow using forwading keys on all attachments.
+                const messageFlags = JSBI.toNumber(MESSAGE_FLAGS.FLAG_AUTO_FORWARDEE);
+                const sessionKey = await getSessionKey({ KeyPackets }, messageKeys.privateKeys, messageFlags);
 
                 // Verify API keys and get pinned keys if there are some
                 const verificationPreferences = await getVerificationPreferences(Sender.Address, 0, contactsMap);
