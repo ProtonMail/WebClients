@@ -91,7 +91,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
         const searchParams = new URLSearchParams(location.search);
         const result = getSignupSearchParams(location.pathname, searchParams);
 
-        const validValues = ['free', PLANS.BUNDLE, PLANS.VPN, PLANS.VPN_PRO, PLANS.VPN_BUSINESS];
+        const validValues = ['free', PLANS.BUNDLE, PLANS.VPN, PLANS.VPN_PRO, PLANS.VPN_PASS_BUNDLE, PLANS.VPN_BUSINESS];
         if (result.preSelectedPlan && !validValues.includes(result.preSelectedPlan)) {
             delete result.preSelectedPlan;
         }
@@ -129,7 +129,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
     };
 
     const selectedPlan = getPlanFromPlanIDs(model.plansMap, model.subscriptionData.planIDs) || FREE_PLAN;
-    const upsellShortPlan = getUpsellShortPlan(selectedPlan, vpnServersCountData);
+    const upsellShortPlan = getUpsellShortPlan(model.plansMap[PLANS.VPN], vpnServersCountData);
 
     const isB2bPlan = getIsVpnB2BPlan(selectedPlan?.Name as PLANS);
     const background = isB2bPlan
