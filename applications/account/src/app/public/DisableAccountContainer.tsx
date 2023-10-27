@@ -3,14 +3,13 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button, CircleLoader, Href } from '@proton/atoms';
+import { Button, CircleLoader } from '@proton/atoms';
 import { GenericError, useApi, useErrorHandler } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { disableUser } from '@proton/shared/lib/api/user';
 import { BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
 import PublicFooter from '../components/PublicFooter';
 import PublicLayout from '../components/PublicLayout';
@@ -18,21 +17,7 @@ import ExpiredError from './ExpiredError';
 import accountIllustration from './account-illustration.svg';
 
 const Footer = () => {
-    return (
-        <PublicFooter center={false}>
-            <div className="color-weak">
-                {c('Info')
-                    .t`${BRAND_NAME} is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.`}
-            </div>
-            <br />
-            <div className="mb-6 color-weak">
-                {c('Info').t`Over 100 million people and businesses have signed up for ${BRAND_NAME}.`}{' '}
-                <Href className="color-weak" href={getStaticURL('')}>
-                    {c('Link').t`Learn more`}
-                </Href>
-            </div>
-        </PublicFooter>
-    );
+    return <PublicFooter center={false} includeDescription />;
 };
 
 enum ErrorType {
