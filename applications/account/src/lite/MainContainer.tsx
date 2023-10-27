@@ -26,12 +26,7 @@ const MainContainer = ({ config, action, fullscreen, redirect, app, searchParams
             {action === SupportedActions.DeleteAccount && <DeleteAccount />}
             {(action === SupportedActions.SubscribeAccount || action === SupportedActions.SubscribeAccountLink) && (
                 <SubscriptionModalProvider app={app}>
-                    <SubscribeAccount
-                        app={app}
-                        redirect={redirect}
-                        fullscreen={fullscreen}
-                        queryParams={searchParams}
-                    />
+                    <SubscribeAccount app={app} redirect={redirect} queryParams={searchParams} />
                 </SubscriptionModalProvider>
             )}
             {action === SupportedActions.VpnBlackFriday && (
