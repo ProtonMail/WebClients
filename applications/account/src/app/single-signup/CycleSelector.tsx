@@ -11,9 +11,14 @@ import { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
 import { Currency, CycleMapping } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import Guarantee from './Guarantee';
 import SaveLabel2 from './SaveLabel2';
 import { getBillingCycleText, getOffText } from './helper';
+
+import './CycleSelector.scss';
+
+export const getBilledAtText = (price: string): string | null => {
+    return c('Info').t`Billed at ${price}`;
+};
 
 export const getBilledText = (cycle: CYCLE): string | null => {
     switch (cycle) {
@@ -32,6 +37,8 @@ export const getBilledText = (cycle: CYCLE): string | null => {
     }
 };
 
+const getSaveLabel = (percentage: string) => c('Info').t`Save ${percentage}`;
+
 const CycleItemView = ({
     cycle,
     currency,
@@ -43,10 +50,10 @@ const CycleItemView = ({
     highlightPrice,
     discountPercentage,
     selected,
-    guarantee,
     onSelect,
     upsell,
     cta,
+    bg,
 }: {
     cycle: CYCLE;
     currency: Currency;
@@ -58,97 +65,83 @@ const CycleItemView = ({
     totalWithoutPerMonth: number;
     discountPercentage: number;
     selected: boolean;
-    guarantee: boolean;
     onSelect: () => void;
     upsell: ReactNode;
     cta: ReactNode;
+    bg?: boolean;
 }) => {
     return (
-        <div
-            className={clsx(
-                'flex-item-fluid pricing-box-content-cycle max-w30e mx-auto lg:mx-0',
-                !headerText && 'lg:mt-6'
-            )}
-        >
+        <div className="lg:flex-item-fluid w-full pricing-box-content-cycle max-w30e mx-auto lg:mx-0">
             {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
             <div
                 className={clsx(
-                    'rounded border overflow-hidden',
-                    selected ? 'border-primary border-2' : 'cursor-pointer'
+                    'rounded-lg relative border',
+                    selected ? 'border-primary' : 'cursor-pointer',
+                    bg ? 'ui-standard border-2' : 'border',
+                    selected && !bg && 'border-2'
                 )}
                 onClick={!selected ? onSelect : undefined}
+                style={!selected && bg ? { 'border-color': 'transparent' } : undefined}
             >
                 {headerText && (
                     <div
                         className={clsx(
-                            'text-uppercase text-center text-sm text-semibold py-1',
-                            selected ? 'color-primary bg-norm-weak' : 'color-weak bg-weak'
+                            'rounded-full text-center text-sm text-semibold py-1 px-4 absolute cycle-selector-label text-nowrap',
+                            selected ? 'color-primary color-invert bg-primary' : 'color-primary bg-norm-weak'
                         )}
                     >
                         {headerText}
                     </div>
                 )}
-                <div className="p-4" data-testid={`plan-${cycle}`}>
+                <div className="p-4 pt-6" data-testid={`plan-${cycle}`}>
                     <div>
-                        <div className="flex flex-justify-space-between gap-1 flex-nowrap">
-                            <div className="flex flex-align-items-center flex-nowrap">
-                                <div className="mr-3">
-                                    <Radio
-                                        id={`${cycle}`}
-                                        aria-labelledby={`${cycle}-text ${cycle}-save ${cycle}-price ${cycle}-billed ${cycle}-guarantee `}
-                                        name="billing"
-                                        checked={selected}
-                                        readOnly
-                                    />
-                                </div>
-                                <strong className="text-lg" id={`${cycle}-text`}>
-                                    {text}
-                                </strong>
-                            </div>
+                        <div className="flex flex-align-items-center flex-nowrap gap-3">
+                            <Radio
+                                id={`${cycle}`}
+                                aria-labelledby={`${cycle}-text ${cycle}-save ${cycle}-price ${cycle}-billed ${cycle}-guarantee `}
+                                name="billing"
+                                checked={selected}
+                                readOnly
+                            />
+                            <strong className="text-lg" id={`${cycle}-text`}>
+                                {text}
+                            </strong>
                         </div>
 
-                        <div id={`${cycle}-price`} className={clsx('flex flex-align-items-center flex-nowrap gap-2')}>
-                            <span
-                                className={clsx(
-                                    'flex-item-noshrink',
-                                    highlightPrice && 'color-primary',
-                                    'text-bold h2'
-                                )}
-                            >
-                                {getSimplePriceString(currency, totalPerMonth, '')}
-                            </span>
+                        <div className="pt-4">
                             {discountPercentage > 0 && (
-                                <div className="flex flex-column flex-justify-center text-left">
-                                    <div>
-                                        <SaveLabel2 highlightPrice percent={discountPercentage} id={`${cycle}-save`} />
-                                    </div>
-                                    <span className="text-strike color-weak">
+                                <div className="flex gap-1">
+                                    <span className="text-strike color-hint">
                                         {getSimplePriceString(currency, totalWithoutPerMonth, '')}
                                     </span>
+                                    <SaveLabel2
+                                        highlightPrice
+                                        id={`${cycle}-save`}
+                                        className={clsx('text-bold text-uppercase')}
+                                    >
+                                        {getSaveLabel(`${discountPercentage}%`)}
+                                    </SaveLabel2>
                                 </div>
                             )}
-                        </div>
 
-                        <div className="text-sm">
-                            <div className="color-weak" id={`${cycle}-billed`}>
-                                {billedText}
+                            <div id={`${cycle}-price`}>
+                                <span className={clsx(highlightPrice && 'color-primary', 'text-bold h2')}>
+                                    {getSimplePriceString(currency, totalPerMonth, '')}
+                                </span>
+                            </div>
+
+                            <div className="text-sm">
+                                <div className="color-weak" id={`${cycle}-billed`}>
+                                    {billedText}
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    {selected && (
-                        <div>
-                            {cta && <div className="mt-4">{cta}</div>}
-                            {guarantee && (
-                                <div className="text-sm mt-4 text-center" id={`${cycle}-guarantee`}>
-                                    <Guarantee />
-                                </div>
-                            )}
-                        </div>
-                    )}
+                    {cta && selected && <div className="mt-4">{cta}</div>}
                 </div>
             </div>
-            {selected && upsell && <div className="mt-2">{upsell}</div>}
+            {selected && upsell && !bg && <div className="mt-2">{upsell}</div>}
         </div>
     );
 };
@@ -160,7 +153,8 @@ const CycleSelector = ({
     currency,
     onGetTheDeal,
     checkoutMapping,
-    upsellCycle = CYCLE.TWO_YEARS,
+    upsellCycle,
+    bg,
 }: {
     onGetTheDeal: (cycle: CYCLE) => void;
     cycle: CYCLE;
@@ -169,43 +163,55 @@ const CycleSelector = ({
     upsellCycle?: CYCLE;
     onChangeCycle: (cycle: CYCLE, upsellFrom?: CYCLE) => void;
     checkoutMapping: CycleMapping<SubscriptionCheckoutData>;
+    bg?: boolean;
 }) => {
+    const upsellMapping = upsellCycle ? checkoutMapping[upsellCycle] : undefined;
+    if (!upsellMapping && upsellCycle) {
+        return null;
+    }
+    const discount24months = upsellMapping?.discountPercent;
+    const discountPercentage = `${discount24months}%`;
+    const offText = upsellCycle ? getOffText(discountPercentage, getBillingCycleText(upsellCycle) || '') : '';
     return (
         <>
             {cycles.map((cycleItem) => {
-                const upsellMapping = checkoutMapping[upsellCycle];
                 const cycleMapping = checkoutMapping[cycleItem];
-                if (!upsellMapping || !cycleMapping) {
+                if (!cycleMapping) {
                     return null;
                 }
-                const discount24months = upsellMapping.discountPercent;
-                const discountPercentage = `${discount24months}%`;
-                const offText = getOffText(discountPercentage, getBillingCycleText(upsellCycle) || '');
                 const currentCheckout = cycleMapping;
                 return (
                     <CycleItemView
+                        bg={bg}
                         cycle={cycleItem}
                         headerText={cycleItem === upsellCycle ? c('Header').t`Best deal` : undefined}
                         onSelect={() => {
                             onChangeCycle(cycleItem);
                         }}
-                        guarantee={true}
                         highlightPrice={cycleItem === upsellCycle}
                         selected={cycle === cycleItem}
                         text={getShortBillingText(cycleItem)}
-                        billedText={getBilledText(cycleItem)}
+                        billedText={
+                            cycleMapping.couponDiscount
+                                ? getBilledAtText(
+                                      getSimplePriceString(currency, currentCheckout.withDiscountPerCycle, '')
+                                  )
+                                : getBilledText(cycleItem)
+                        }
                         key={cycleItem}
                         currency={currency}
                         totalPerMonth={currentCheckout.withDiscountPerMonth}
                         totalWithoutPerMonth={currentCheckout.withoutDiscountPerMonth}
                         discountPercentage={currentCheckout.discountPercent}
                         upsell={
-                            cycleItem !== upsellCycle && (
+                            cycleItem !== upsellCycle &&
+                            upsellCycle &&
+                            offText && (
                                 <button
                                     onClick={() => {
                                         onChangeCycle(upsellCycle, cycleItem);
                                     }}
-                                    className="color-primary bg-norm-weak text-center rounded w100 py-2 px-4"
+                                    className="color-primary bg-norm-weak text-center rounded w-full py-2 px-4"
                                 >
                                     {offText}
                                 </button>
@@ -213,7 +219,9 @@ const CycleSelector = ({
                         }
                         cta={
                             <Button color="norm" fullWidth onClick={() => onGetTheDeal(cycleItem)}>
-                                {cycle === CYCLE.MONTHLY ? c('Action').t`Continue` : c('Action').t`Get the deal`}
+                                {!currentCheckout.discountPercent
+                                    ? c('Action').t`Continue`
+                                    : c('Action').t`Get the deal`}
                             </Button>
                         }
                     />
