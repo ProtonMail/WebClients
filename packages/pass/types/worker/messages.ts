@@ -3,6 +3,7 @@ import type { Tabs } from 'webextension-polyfill';
 
 import type { ExtensionSession } from '@proton/pass/lib/auth/session';
 import type { ExportRequestPayload } from '@proton/pass/lib/export/types';
+import type { GeneratePasswordOptions } from '@proton/pass/lib/password/generator';
 import type { Notification } from '@proton/pass/store/actions/with-notification';
 import type { AliasOptions, FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
@@ -45,6 +46,7 @@ export enum WorkerMessageType {
     ALIAS_CREATE = 'ALIAS_CREATE',
     ALIAS_OPTIONS = 'ALIAS_OPTIONS',
     AUTOFILL_OTP_CHECK = 'AUTOFILL_OTP_CHECK',
+    AUTOFILL_PASSWORD_OPTIONS = 'AUTOFILL_PASSWORD_OPTIONS',
     AUTOFILL_QUERY = 'AUTOFILL_QUERY',
     AUTOFILL_SELECT = 'AUTOFILL_SELECT',
     AUTOFILL_SYNC = 'AUTOFILL_SYNC',
@@ -98,6 +100,7 @@ export type ActivityProbeMessage = { type: WorkerMessageType.ACTIVITY_PROBE };
 export type AliasCreateMessage = WithPayload<WorkerMessageType.ALIAS_CREATE, { url: string; alias: AliasCreationDTO }>;
 export type AliasOptionsMessage = { type: WorkerMessageType.ALIAS_OPTIONS };
 export type AutofillOTPCheckMessage = { type: WorkerMessageType.AUTOFILL_OTP_CHECK };
+export type AutofillPasswordOptionsMessage = { type: WorkerMessageType.AUTOFILL_PASSWORD_OPTIONS };
 export type AutofillQueryMessage = { type: WorkerMessageType.AUTOFILL_QUERY };
 export type AutofillSelectMessage = WithPayload<WorkerMessageType.AUTOFILL_SELECT, SelectedItem>;
 export type AutofillSyncMessage = WithPayload<WorkerMessageType.AUTOFILL_SYNC, AutofillResult>;
@@ -148,6 +151,7 @@ export type WorkerMessage =
     | AliasCreateMessage
     | AliasOptionsMessage
     | AutofillOTPCheckMessage
+    | AutofillPasswordOptionsMessage
     | AutofillQueryMessage
     | AutofillSelectMessage
     | AutofillSyncMessage
@@ -200,6 +204,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.ALIAS_CREATE]: Outcome;
     [WorkerMessageType.ALIAS_OPTIONS]: Outcome<{ options: AliasOptions; needsUpgrade: boolean }>;
     [WorkerMessageType.AUTOFILL_OTP_CHECK]: { shouldPrompt: false } | ({ shouldPrompt: true } & SelectedItem);
+    [WorkerMessageType.AUTOFILL_PASSWORD_OPTIONS]: { options: GeneratePasswordOptions };
     [WorkerMessageType.AUTOFILL_QUERY]: AutofillResult;
     [WorkerMessageType.AUTOFILL_SELECT]: { username: string; password: string };
     [WorkerMessageType.EXPORT_DECRYPT]: { data: string };

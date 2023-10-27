@@ -32,7 +32,7 @@ export const CreditCardView: VFC<ItemViewProps<'creditCard'>> = ({ vault, revisi
     return (
         <ItemViewPanel type="creditCard" name={name} vault={vault} {...itemViewProps}>
             <FieldsetCluster mode="read" as="div">
-                <ValueControl clickToCopy icon="user" label={c('Label').t`Cardholder name`} value={cardholderName} />
+                <ValueControl clickToCopy icon="user" label={c('Label').t`Name on card`} value={cardholderName} />
                 {isFreePlan ? (
                     <UpgradeControl icon="credit-card" label={c('Label').t`Card number`} />
                 ) : (
@@ -49,7 +49,7 @@ export const CreditCardView: VFC<ItemViewProps<'creditCard'>> = ({ vault, revisi
                 <MaskedValueControl
                     clickToCopy
                     icon="calendar-today"
-                    label={c('Label').t`Expires on`}
+                    label={c('Label').t`Expiration date`}
                     mask={expDateMask}
                     value={expirationDate}
                 />
@@ -58,7 +58,7 @@ export const CreditCardView: VFC<ItemViewProps<'creditCard'>> = ({ vault, revisi
                     hidden
                     hiddenValue="••••"
                     icon="shield"
-                    label={c('Label').t`Verification number`}
+                    label={c('Label').t`Security code`}
                     value={verificationNumber}
                 />
                 <ValueControl hidden hiddenValue="••••" icon="grid-3" label={c('Label').t`PIN`} value={pin} />

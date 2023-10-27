@@ -3,7 +3,7 @@ import { createDevReloader } from 'proton-pass-extension/lib/utils/dev-reload';
 
 import { exposeApi } from '@proton/pass/lib/api/api';
 import { createApi } from '@proton/pass/lib/api/create-api';
-import { generateKey } from '@proton/pass/lib/crypto/utils';
+import { generateKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
 import browser from '@proton/pass/lib/globals/browser';
 import { WorkerMessageType, WorkerStatus } from '@proton/pass/types';

@@ -14,7 +14,7 @@ const validateTotpUri = (values: LoginItemFormValues) => {
     if (!isEmptyString(values.totpUri)) {
         const normalized = parseOTPValue(values.totpUri);
         if (!normalized) {
-            return { totpUri: c('Validation').t`OTP Secret or URI is invalid` };
+            return { totpUri: c('Validation').t`OTP secret or URI is invalid` };
         }
         return {};
     }

@@ -111,7 +111,7 @@ export const CreditCardNew: VFC<ItemNewViewProps<'creditCard'>> = ({ shareId, on
                                 name="cardholderName"
                                 component={TextField}
                                 icon="user"
-                                label={c('Label').t`Cardholder name`}
+                                label={c('Label').t`Name on card`}
                                 placeholder={c('Placeholder').t`Full Name`}
                             />
                             <Field
@@ -128,7 +128,7 @@ export const CreditCardNew: VFC<ItemNewViewProps<'creditCard'>> = ({ shareId, on
                                 name="expirationDate"
                                 component={MaskedTextField}
                                 icon="calendar-today"
-                                label={c('Label').t`Expires on`}
+                                label={c('Label').t`Expiration date`}
                                 mask={expDateMask}
                                 placeholder={c('Placeholder').t`MM/YYYY`}
                             />
@@ -138,7 +138,7 @@ export const CreditCardNew: VFC<ItemNewViewProps<'creditCard'>> = ({ shareId, on
                                 component={MaskedTextField}
                                 hiddenValue="••••"
                                 icon="credit-card"
-                                label={c('Label').t`Verification number`}
+                                label={c('Label').t`Security code`}
                                 mask={{ mask: '0000' }}
                                 placeholder="123"
                             />

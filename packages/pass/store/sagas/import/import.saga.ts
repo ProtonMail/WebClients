@@ -2,8 +2,8 @@ import { call, put, takeLeading } from 'redux-saga/effects';
 import { c } from 'ttag';
 
 import { MAX_BATCH_ITEMS_PER_REQUEST } from '@proton/pass/constants';
+import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import { importItemsBatch } from '@proton/pass/lib/items/item.requests';
-import { parseItemRevision } from '@proton/pass/lib/items/item.utils';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import {
     importItemsFailure,
