@@ -118,6 +118,7 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
+            couponDiscount: undefined,
             planTitle: 'VPN',
             planName: PLANS.VPN,
             usersTitle: '1 user',
@@ -168,6 +169,7 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
+            couponDiscount: undefined,
             planTitle: 'VPN',
             planName: PLANS.VPN,
             usersTitle: '1 user',
@@ -220,6 +222,7 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
+            couponDiscount: undefined,
             planTitle: 'VPN',
             planName: PLANS.VPN,
             usersTitle: '1 user',
@@ -256,6 +259,7 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
+            couponDiscount: -4776,
             planTitle: 'VIS',
             planName: PLANS.NEW_VISIONARY,
             usersTitle: '6 users',
@@ -292,6 +296,7 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
+            couponDiscount: -17994,
             planTitle: 'VPN',
             planName: PLANS.VPN,
             usersTitle: '1 user',
@@ -329,6 +334,7 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
+            couponDiscount: 0,
             planTitle: 'BUS',
             planName: PLANS.BUNDLE_PRO,
             usersTitle: '3 users',
@@ -381,6 +387,7 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
+            couponDiscount: 0,
             planTitle: 'VPN Essentials',
             planName: PLANS.VPN_PRO,
             usersTitle: '4 users',
@@ -423,6 +430,7 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
+            couponDiscount: 0,
             planTitle: 'VPN Business',
             planName: PLANS.VPN_BUSINESS,
             usersTitle: '3 users',
@@ -466,6 +474,7 @@ describe('should get checkout result', () => {
                 },
             })
         ).toEqual({
+            couponDiscount: -47976,
             planTitle: 'VIS',
             planName: PLANS.NEW_VISIONARY,
             usersTitle: '6 users',
