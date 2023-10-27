@@ -5,7 +5,8 @@ import { Toolbar } from '@proton/components';
 
 import { DecryptedLink, PhotoLink } from '../../../../store';
 import { MoveToTrashButton } from '../../Drive/ToolbarButtons';
-import { DetailsButton, DownloadButton, ShareLinkButton } from '../../ToolbarButtons';
+import { DetailsButton, ShareLinkButton } from '../../ToolbarButtons';
+import { PhotosDownloadButton } from './PhotosDownloadButton';
 import { PhotosPreviewButton } from './PhotosPreviewButton';
 import { PhotosUploadButton } from './PhotosUploadButton';
 
@@ -14,9 +15,10 @@ interface Props {
     linkId: string;
     selectedItems: PhotoLink[];
     onPreview: () => void;
+    requestDownload: (linkIds: string[]) => Promise<void>;
 }
 
-export const PhotosToolbar: FC<Props> = ({ shareId, linkId, selectedItems, onPreview }) => {
+export const PhotosToolbar: FC<Props> = ({ shareId, linkId, selectedItems, onPreview, requestDownload }) => {
     const hasSelection = selectedItems.length > 0;
     const hasMultipleSelected = selectedItems.length > 1;
 
@@ -30,7 +32,7 @@ export const PhotosToolbar: FC<Props> = ({ shareId, linkId, selectedItems, onPre
                     <>
                         <Vr />
                         {!hasMultipleSelected && <PhotosPreviewButton onClick={onPreview} />}
-                        <DownloadButton selectedLinks={links} />
+                        <PhotosDownloadButton requestDownload={requestDownload} selectedLinks={selectedItems} />
                         <ShareLinkButton selectedLinks={links} />
                         <Vr />
                         <DetailsButton selectedLinks={links} />
