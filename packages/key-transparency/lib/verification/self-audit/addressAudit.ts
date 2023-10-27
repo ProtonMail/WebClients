@@ -1,4 +1,4 @@
-import { PrivateKeyReference } from '@proton/crypto';
+import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import {
@@ -12,6 +12,7 @@ import {
     UploadMissingSKL,
 } from '@proton/shared/lib/interfaces';
 import { getSignedKeyListSignature } from '@proton/shared/lib/keys';
+import isTruthy from '@proton/utils/isTruthy';
 
 import {
     fetchProof,
@@ -323,11 +324,16 @@ const auditAddressImplementation = async (
         await saveSKLToLS(email, inputSKL.Data, inputSKL.Revision, expectedMinEpochID, address.ID);
     }
 
-    await checkKeysInSKL(
-        email,
-        addressKeys.map(({ Flags, privateKey, Primary }) => ({ flags: Flags, key: privateKey, primary: Primary })),
-        inputSKL.Data
-    );
+    const addressKeysWithoutForwarding = (
+        await Promise.all(
+            addressKeys.map(async ({ Flags, privateKey, Primary }) => {
+                const result = await CryptoProxy.isE2EEForwardingKey({ key: privateKey });
+                return result ? false : { flags: Flags, key: privateKey, primary: Primary };
+            })
+        )
+    ).filter(isTruthy);
+
+    await checkKeysInSKL(email, addressKeysWithoutForwarding, inputSKL.Data);
 
     await uploadNewVerifiedEpoch(sklAudits, epoch, address, userPrimaryKey, api);
 
