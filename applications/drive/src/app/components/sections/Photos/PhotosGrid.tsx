@@ -174,7 +174,7 @@ export const PhotosGrid: FC<Props> = ({
                                     Math.round(((i % animationOffset) / (animationOffset / 2)) * 10) / 10
                                 }s`,
                             }}
-                            showCheckbox={hasSelection}
+                            hasSelection={hasSelection}
                         />
                     );
                 }
