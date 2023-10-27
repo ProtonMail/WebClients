@@ -2,8 +2,10 @@ import React, { useEffect, useMemo } from 'react';
 
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 
+import { LinkDownload, useDownloadProvider } from '../_downloads';
 import { DriveEvents, useDriveEventManager } from '../_events';
 import { useLinksListing, useLinksQueue } from '../_links';
+import useLinksState from '../_links/useLinksState';
 import { isPhotoGroup, sortWithCategories, usePhotos } from '../_photos';
 import type { PhotoLink } from '../_photos';
 import { useAbortSignal, useMemoArrayNoMatterTheOrder } from './utils';
@@ -30,9 +32,11 @@ export function updateByEvents(
 
 export const usePhotosView = () => {
     const events = useDriveEventManager();
-    const { getCachedChildren } = useLinksListing();
+    const { getCachedChildren, loadLinksMeta } = useLinksListing();
+    const linksState = useLinksState();
     const { shareId, linkId, isLoading, volumeId, photos, loadPhotos, removePhotosFromCache } = usePhotos();
     const { addToQueue } = useLinksQueue();
+    const { download } = useDownloadProvider();
 
     const abortSignal = useAbortSignal([volumeId]);
     const cache = shareId && linkId ? getCachedChildren(abortSignal, shareId, linkId) : undefined;
@@ -116,6 +120,34 @@ export const usePhotosView = () => {
         addToQueue(shareId, linkId, domRef);
     };
 
+    const requestDownload = async (linkIds: string[]) => {
+        if (!shareId) {
+            return;
+        }
+
+        const ac = new AbortController();
+
+        const cache = true;
+        await loadLinksMeta(ac.signal, 'photos-toolbar', shareId, linkIds, cache);
+
+        const links: LinkDownload[] = [];
+
+        for (let linkId of linkIds) {
+            const decrypted = linksState.getLink(shareId, linkId)?.decrypted;
+
+            if (!decrypted) {
+                throw new Error('Failed to load links for download');
+            }
+
+            links.push({
+                ...decrypted,
+                shareId: decrypted.rootShareId,
+            });
+        }
+
+        await download(links);
+    };
+
     return {
         shareId,
         linkId,
@@ -124,6 +156,7 @@ export const usePhotosView = () => {
         photoLinkIds,
         removePhotosFromCache,
         loadPhotoLink,
+        requestDownload,
         isLoading,
         isLoadingMore: isLoading && !!photos.length,
     };

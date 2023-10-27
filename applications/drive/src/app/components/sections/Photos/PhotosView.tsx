@@ -20,8 +20,18 @@ import { PhotosToolbar } from './toolbar';
 export const PhotosView: FC<void> = () => {
     useAppTitle(c('Title').t`Photos`);
 
-    const { shareId, linkId, photos, isLoading, isLoadingMore, loadPhotoLink, photoLinkIdToIndexMap, photoLinkIds } =
-        usePhotosView();
+    const {
+        shareId,
+        linkId,
+        photos,
+        isLoading,
+        isLoadingMore,
+        loadPhotoLink,
+        photoLinkIdToIndexMap,
+        photoLinkIds,
+        requestDownload,
+    } = usePhotosView();
+
     const { selectedItems, clearSelection, isGroupSelected, isItemSelected, handleSelection } = usePhotosSelection(
         photos,
         photoLinkIdToIndexMap
@@ -140,6 +150,7 @@ export const PhotosView: FC<void> = () => {
                             linkId={linkId}
                             selectedItems={selectedItems}
                             onPreview={handleToolbarPreview}
+                            requestDownload={requestDownload}
                         />
                     }
                 />

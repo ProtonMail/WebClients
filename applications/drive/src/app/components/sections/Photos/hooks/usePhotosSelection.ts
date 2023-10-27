@@ -80,7 +80,6 @@ export const usePhotosSelection = <T extends SelectionItem>(
             }, []),
         [selection, data, photoLinkIdToIndexMap]
     );
-    const hasSelection = selectedItems.length > 0;
 
     const isGroupSelected = useCallback(
         (groupIndex: number) => {
@@ -101,7 +100,7 @@ export const usePhotosSelection = <T extends SelectionItem>(
 
             return selectedCount === linkIds.length || 'some';
         },
-        [data, hasSelection, selection]
+        [data, selection]
     );
 
     const isItemSelected = useCallback((linkId: string) => !!selection[linkId], [selection]);
