@@ -72,7 +72,8 @@ export const prepareAndEncryptBody = async (message: MessageState, messageKeys: 
 export const encryptAttachmentKeyPackets = async (
     attachments: Attachment[],
     previousAddressPrivateKeys: PrivateKeyReference[] = [],
-    newAddressPublicKeys: PublicKeyReference[] = []
+    newAddressPublicKeys: PublicKeyReference[] = [],
+    messageFlags?: number
 ) => {
     // Only need the first key for encryption (the primary key)
     const [primaryEncryptionKey] = newAddressPublicKeys;
@@ -81,7 +82,7 @@ export const encryptAttachmentKeyPackets = async (
             attachments
                 .filter(({ ID = '' }) => ID.indexOf('PGPAttachment'))
                 .map(async (attachment) => {
-                    const sessionKey = await getSessionKey(attachment, previousAddressPrivateKeys);
+                    const sessionKey = await getSessionKey(attachment, previousAddressPrivateKeys, messageFlags);
                     const encryptedSessionKey = await CryptoProxy.encryptSessionKey({
                         data: sessionKey.data,
                         algorithm: sessionKey.algorithm,
@@ -111,7 +112,8 @@ export const createMessage = async (
         AttachmentKeyPackets = await encryptAttachmentKeyPackets(
             attachments,
             originalMessageKeys.privateKeys,
-            messageKeys.publicKeys
+            messageKeys.publicKeys,
+            message.draftFlags?.originalMessageFlags
         );
     }
 
