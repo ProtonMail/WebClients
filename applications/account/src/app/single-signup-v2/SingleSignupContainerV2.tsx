@@ -250,7 +250,6 @@ const SingleSignupContainerV2 = ({
             localID: Number.isInteger(localID) ? localID : undefined,
             mode,
             invite,
-            isPassWelcome: result.coupon === COUPON_CODES.PASS_WELCOME,
         };
     });
 
@@ -293,7 +292,6 @@ const SingleSignupContainerV2 = ({
                 isDesktop,
                 vpnServersCountData,
                 hideFreePlan: signupParameters.hideFreePlan,
-                isPassWelcome: signupParameters.isPassWelcome,
                 mode: signupParameters.mode,
                 isPaidPassVPNBundle: !!planIDs[PLANS.VPN_PASS_BUNDLE],
                 isPaidPass: [
@@ -1039,7 +1037,6 @@ const SingleSignupContainerV2 = ({
                             }
                         }}
                         mode={signupParameters.mode}
-                        isPassWelcome={signupParameters.isPassWelcome}
                     />
                 )}
                 {model.step === Steps.Loading && (

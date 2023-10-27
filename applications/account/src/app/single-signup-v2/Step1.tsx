@@ -73,7 +73,6 @@ export interface Step1Rref {
 }
 
 const Step1 = ({
-    isPassWelcome,
     signupTypes,
     signupParameters,
     theme,
@@ -103,7 +102,6 @@ const Step1 = ({
     mode,
 }: {
     signupParameters: SignupParameters2;
-    isPassWelcome?: boolean;
     signupTypes: SignupType[];
     theme: SignupTheme;
     relativePrice: string;
@@ -294,7 +292,7 @@ const Step1 = ({
 
     const hasUpsellSection = model.upsell.mode === UpsellTypes.UPSELL;
     const hasPlanSelector =
-        (!model.planParameters?.defined || hasUpsellSection || isPassWelcome) &&
+        (!model.planParameters?.defined || hasUpsellSection) &&
         [SignupMode.Default, SignupMode.Onboarding].includes(mode) &&
         // Don't want to show an incomplete plan selector when the user has access to have a nicer UI
         !model.session?.state.access;
@@ -382,13 +380,6 @@ const Step1 = ({
                         return null;
                     }
 
-                    if (isPassWelcome) {
-                        const title = model.plansMap[PLANS.PASS_PLUS]?.Title;
-                        const textLaunchOffer = c('pass_signup_2023: Info')
-                            .jt`Limited time offer: Get ${title} for free for 1 year!`;
-                        return wrap('hourglass', textLaunchOffer);
-                    }
-
                     const bestPlanCard = planCards.find((planCard) => planCard.type === 'best');
                     const bestPlan = bestPlanCard?.plan && model.plansMap[bestPlanCard.plan];
                     if (!bestPlanCard || !bestPlan) {
@@ -427,7 +418,7 @@ const Step1 = ({
                             }
                             right={
                                 <>
-                                    {model.upsell.mode === UpsellTypes.PLANS && !isPassWelcome && (
+                                    {model.upsell.mode === UpsellTypes.PLANS && (
                                         <CycleSelector
                                             mode="buttons"
                                             cycle={options.cycle}
@@ -451,7 +442,6 @@ const Step1 = ({
                         <BoxContent>
                             {model.upsell.mode === UpsellTypes.PLANS ? (
                                 <PlanCardSelector
-                                    isPassWelcome={isPassWelcome}
                                     plansMap={model.plansMap}
                                     plan={options.plan.Name}
                                     cycle={options.cycle}
@@ -703,8 +693,7 @@ const Step1 = ({
                         <BoxHeader step={step++} title={c('pass_signup_2023: Header').t`Checkout`} />
                         <BoxContent>
                             <AccountStepPayment
-                                isPassWelcome={isPassWelcome}
-                                takeNullCreditCard={isPassWelcome}
+                                takeNullCreditCard={false}
                                 measure={measure}
                                 cta={cta}
                                 key={model.session?.UID || 'free'}
