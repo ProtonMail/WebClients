@@ -11,6 +11,7 @@ import playCircleFilledIcon from '@proton/styles/assets/img/drive/play-circle-fi
 import clsx from '@proton/utils/clsx';
 
 import type { PhotoLink } from '../../../../store/';
+import { stopPropagation } from '../../../../utils/stopPropagation';
 import SignatureIcon from '../../../SignatureIcon';
 import { getMimeTypeDescription } from '../../helpers';
 import { formatVideoDuration } from './formatVideoDuration';
@@ -25,7 +26,7 @@ type Props = {
     style: CSSProperties;
     onClick: () => void;
     onSelect: (isSelected: boolean) => void;
-    showCheckbox: boolean;
+    hasSelection: boolean;
 };
 
 const getAltText = ({ mimeType, name }: PhotoLink) =>
@@ -39,7 +40,7 @@ export const PhotosCard: FC<Props> = ({
     onClick,
     onSelect,
     selected,
-    showCheckbox,
+    hasSelection,
 }) => {
     const [imageReady, setImageReady] = useState(false);
     const ref = useRef(null);
@@ -88,6 +89,8 @@ export const PhotosCard: FC<Props> = ({
         [onClick]
     );
 
+    const showCheckbox = hasSelection;
+
     return (
         <ButtonLike
             as="div"
@@ -106,11 +109,14 @@ export const PhotosCard: FC<Props> = ({
             <Checkbox
                 className="absolute top-0 left-0 ml-2 mt-2"
                 checked={selected}
-                onClick={(e) => e.stopPropagation()}
+                onClick={stopPropagation}
+                onKeyDown={stopPropagation}
                 onChange={() => {
                     onSelect(!selected);
                 }}
-                tabIndex={-1}
+                // If we are in select mode, then we don't need to focus the checkbox
+                // as the main card action is already bound to select
+                tabIndex={hasSelection ? -1 : 0}
             />
 
             {!isThumbnailLoading && isActive ? (
