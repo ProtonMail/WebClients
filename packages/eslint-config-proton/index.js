@@ -209,6 +209,7 @@ module.exports = {
             alias: {
                 map: [
                     ['proton-mail', path.resolve(__dirname, '../../applications/mail/src/app')],
+                    ['tests', path.resolve(__dirname, '../../tests')],
                     ['proton-pass-extension', path.resolve(__dirname, '../../applications/pass-extension/src')],
                 ],
                 extensions: ['.ts', '.tsx'],
