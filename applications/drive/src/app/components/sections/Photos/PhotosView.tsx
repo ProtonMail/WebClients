@@ -2,7 +2,7 @@ import React, { FC, useCallback, useMemo, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { NavigationControl, useAppTitle } from '@proton/components';
+import { NavigationControl, TopBanner, useAppTitle, useFlag } from '@proton/components';
 import { Loader } from '@proton/components/components';
 
 import { PhotoLink, usePhotosView, useThumbnailsDownload } from '../../../store';
@@ -20,6 +20,7 @@ import { PhotosToolbar } from './toolbar';
 export const PhotosView: FC<void> = () => {
     useAppTitle(c('Title').t`Photos`);
 
+    const isUploadDisabled = useFlag('DrivePhotosUploadDisabled');
     const {
         shareId,
         linkId,
@@ -31,7 +32,6 @@ export const PhotosView: FC<void> = () => {
         photoLinkIds,
         requestDownload,
     } = usePhotosView();
-
     const { selectedItems, clearSelection, isGroupSelected, isItemSelected, handleSelection } = usePhotosSelection(
         photos,
         photoLinkIdToIndexMap
@@ -91,6 +91,10 @@ export const PhotosView: FC<void> = () => {
         <>
             {detailsModal}
             {linkSharingModal}
+            {isUploadDisabled && (
+                <TopBanner className="bg-warning">{c('Info')
+                    .t`We are experiencing technical issues. Uploading new photos is temporarily disabled.`}</TopBanner>
+            )}
             {previewItem && (
                 <PortalPreview
                     ref={previewRef}
@@ -126,6 +130,7 @@ export const PhotosView: FC<void> = () => {
             )}
 
             <UploadDragDrop
+                disabled={isUploadDisabled}
                 isForPhotos
                 shareId={shareId}
                 linkId={linkId}
@@ -158,6 +163,7 @@ export const PhotosView: FC<void> = () => {
                             selectedItems={selectedItems}
                             onPreview={handleToolbarPreview}
                             requestDownload={requestDownload}
+                            uploadDisabled={isUploadDisabled}
                         />
                     }
                 />

@@ -16,9 +16,17 @@ interface Props {
     selectedItems: PhotoLink[];
     onPreview: () => void;
     requestDownload: (linkIds: string[]) => Promise<void>;
+    uploadDisabled: boolean;
 }
 
-export const PhotosToolbar: FC<Props> = ({ shareId, linkId, selectedItems, onPreview, requestDownload }) => {
+export const PhotosToolbar: FC<Props> = ({
+    shareId,
+    linkId,
+    selectedItems,
+    onPreview,
+    requestDownload,
+    uploadDisabled,
+}) => {
     const hasSelection = selectedItems.length > 0;
     const hasMultipleSelected = selectedItems.length > 1;
 
@@ -27,10 +35,10 @@ export const PhotosToolbar: FC<Props> = ({ shareId, linkId, selectedItems, onPre
     return (
         <Toolbar className="py-1 px-2 toolbar--heavy toolbar--in-container">
             <div className="gap-2 flex">
-                <PhotosUploadButton shareId={shareId} linkId={linkId} />
+                {!uploadDisabled && <PhotosUploadButton shareId={shareId} linkId={linkId} />}
                 {hasSelection && (
                     <>
-                        <Vr />
+                        {!uploadDisabled && <Vr />}
                         {!hasMultipleSelected && <PhotosPreviewButton onClick={onPreview} />}
                         <PhotosDownloadButton requestDownload={requestDownload} selectedLinks={selectedItems} />
                         <ShareLinkButton selectedLinks={links} />
