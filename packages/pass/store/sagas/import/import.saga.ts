@@ -2,6 +2,7 @@ import { call, put, takeLeading } from 'redux-saga/effects';
 import { c } from 'ttag';
 
 import { MAX_BATCH_ITEMS_PER_REQUEST } from '@proton/pass/constants';
+import { type ImportVault } from '@proton/pass/lib/import/types';
 import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import { importItemsBatch } from '@proton/pass/lib/items/item.requests';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
@@ -20,13 +21,14 @@ import type { WithSenderAction } from '@proton/pass/store/actions/with-receiver'
 import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
 import type { ItemRevision, ItemRevisionContentsResponse, Maybe } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+import { groupByKey } from '@proton/pass/utils/array/group-by-key';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import capitalize from '@proton/utils/capitalize';
 import chunk from '@proton/utils/chunk';
-import groupWith from '@proton/utils/groupWith';
 
 /**
  * When creating vaults from the import saga
@@ -66,10 +68,13 @@ function* importWorker(
 
     let totalItems: number = 0;
     const ignored: string[] = data.ignored;
-    const importVaults = groupWith((a, b) => a.shareId === b.shareId, data.vaults).map((group) => ({
-        ...group[0],
-        items: group.flatMap(({ items }) => items),
-    }));
+
+    const importVaults = groupByKey(data.vaults, 'shareId', { splitEmpty: true }).map(
+        ([vault, ...vaults]): ImportVault => ({
+            ...vault,
+            items: vault.items.concat(...vaults.map(prop('items'))),
+        })
+    );
 
     try {
         /* we want to apply these request sequentially to avoid
