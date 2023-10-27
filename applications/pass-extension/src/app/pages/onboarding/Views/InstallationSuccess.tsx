@@ -30,7 +30,7 @@ const getSteps = () => [
     {
         key: 'access',
         icon: '/assets/protonpass-icon.svg',
-        description: c('Info').t`Access ${PASS_APP_NAME} via this icon`,
+        description: c('Info').t`Click the icon to open it anytime.`,
     },
 ];
 
@@ -89,7 +89,7 @@ export const InstallationSuccess: VFC = () => {
                                 <span>{brandNameJSX}</span>
                             </div>
                             <h1 className="pass-onboarding--white-text mt-4 mb-8 text-semibold">{c('Title')
-                                .jt`Welcome!`}</h1>
+                                .jt`Welcome to your new password manager!`}</h1>
                         </div>
 
                         <div className="flex flex-align-items-center gap-2 mb-4">
@@ -105,7 +105,7 @@ export const InstallationSuccess: VFC = () => {
                                             {c('Title').jt`Pin the extension`}
                                         </h2>
                                         <h2 className="text-xl mb-5">
-                                            {c('Info').t`Follow these simple steps to get the best experience:`}
+                                            {c('Info').t`For easy access to your passwords and more.`}
                                         </h2>
 
                                         <div className="mb-1">
@@ -173,7 +173,7 @@ export const InstallationSuccess: VFC = () => {
                                 <>
                                     <div className={`${SubTheme.VIOLET} flex flex-nowrap flex-column`}>
                                         <h2 className="text-3xl pass-onboarding--white-text mb-4 text-bold">
-                                            {c('Title').jt`Connect your ${BRAND_NAME} account`}
+                                            {c('Title').jt`Connect your ${BRAND_NAME} Account`}
                                         </h2>
                                         <h2 className="text-xl mb-5">
                                             {c('Info').t`Sign in or create an account to continue.`}
@@ -188,7 +188,7 @@ export const InstallationSuccess: VFC = () => {
                                             aria-label={c('Action').t`Sign in`}
                                         >
                                             <span className="flex flex-justify-center px-4">
-                                                {c('Action').t`Sign in with ${BRAND_NAME}`}
+                                                {c('Action').t`Connect your ${BRAND_NAME} Account`}
                                             </span>
                                         </Button>
                                         <Button
@@ -200,7 +200,7 @@ export const InstallationSuccess: VFC = () => {
                                             aria-label={c('Action').t`Create an account`}
                                         >
                                             <span className="flex flex-justify-center px-4">
-                                                {c('Action').t`Create a ${BRAND_NAME} account`}
+                                                {c('Action').t`Create a ${BRAND_NAME} Account`}
                                             </span>
                                         </Button>
                                     </div>

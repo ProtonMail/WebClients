@@ -30,6 +30,9 @@ export const selectOwnVaults = createSelector([selectAllVaults], (vaults) => vau
 export const selectOwnWritableVaults = createSelector([selectAllVaults], (vaults) =>
     vaults.filter(and(isWritableVault, isOwnVault))
 );
+export const selectOwnReadOnlyVaults = createSelector([selectAllVaults], (vaults) =>
+    vaults.filter(and(invert(isWritableVault), isOwnVault))
+);
 
 export const selectWritableSharedVaults = createSelector([selectAllVaults], (vaults) =>
     vaults.filter(and(isWritableVault, isSharedVault))

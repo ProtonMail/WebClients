@@ -17,7 +17,7 @@ export type FormHandlesProps = { zIndex: number };
 export const createFormHandles = (options: DetectedForm): FormHandle => {
     const { form, formType, fields: detectedFields } = options;
     const listeners = createListenerStore();
-    const zIndex = getMaxZIndex(form) + 1;
+    const zIndex = getMaxZIndex(form) + 5;
 
     const formHandle: FormHandle = {
         id: uniqueId(),

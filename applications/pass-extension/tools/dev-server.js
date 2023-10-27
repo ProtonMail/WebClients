@@ -20,7 +20,7 @@ const {
 } = require('./env');
 
 const EXCLUDED_WEBPACK_ENTRIES = [
-    'authFallback',
+    'account',
     'background',
     'client',
     'dropdown',

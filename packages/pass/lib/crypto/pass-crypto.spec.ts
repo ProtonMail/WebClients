@@ -7,7 +7,7 @@ import type { Address, DecryptedKey, Key, User } from '@proton/shared/lib/interf
 
 import { PassCrypto } from './pass-crypto';
 import * as processes from './processes';
-import { decryptData } from './utils';
+import { decryptData } from './utils/crypto-helpers';
 import { PassCryptoHydrationError, PassCryptoNotHydratedError, PassCryptoShareError } from './utils/errors';
 import {
     TEST_KEY_PASSWORD,

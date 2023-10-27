@@ -1,26 +1,9 @@
 import { c } from 'ttag';
 
-import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
-import type {
-    ItemRevision,
-    ItemRevisionContentsResponse,
-    ItemSortFilter,
-    ItemType,
-    MaybeNull,
-} from '@proton/pass/types';
+import type { ItemRevision, ItemSortFilter, ItemType, MaybeNull } from '@proton/pass/types';
 import { arrayInterpolate } from '@proton/pass/utils/array/interpolate';
 import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
-
-import { parseOpenedItem } from './item-proto.transformer';
-
-export const parseItemRevision = async (
-    shareId: string,
-    encryptedItem: ItemRevisionContentsResponse
-): Promise<ItemRevision> => {
-    const openedItem = await PassCrypto.openItem({ shareId, encryptedItem });
-    return parseOpenedItem({ openedItem, shareId });
-};
 
 export const getItemKey = ({ shareId, itemId, revision }: ItemRevision) => `${shareId}-${itemId}-${revision}`;
 
