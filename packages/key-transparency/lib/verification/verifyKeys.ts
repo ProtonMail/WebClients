@@ -113,8 +113,12 @@ export const checkKeysInSKL = async (email: string, apiKeys: KeyWithFlags[], skl
     const apiKeysWithoutForwarding = (
         await Promise.all(
             apiKeys.map(async (apiKey) => {
-                const result = await CryptoProxy.isE2EEForwardingKey({ key: apiKey.key });
-                return result ? false : apiKey;
+                try {
+                    const result = await CryptoProxy.isE2EEForwardingKey({ key: apiKey.key });
+                    return result ? false : apiKey;
+                } catch (error) {
+                    return apiKey;
+                }
             })
         )
     ).filter(isTruthy);
