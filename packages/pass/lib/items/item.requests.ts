@@ -16,17 +16,17 @@ import type {
     ItemType,
     Maybe,
 } from '@proton/pass/types';
+import { groupByKey } from '@proton/pass/utils/array/group-by-key';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import chunk from '@proton/utils/chunk';
-import groupWith from '@proton/utils/groupWith';
 
 import { serializeItemContent } from './item-proto.transformer';
 import { parseItemRevision } from './item.parser';
 
 const batchRevisionsByShareId = (items: ItemRevision[]) =>
-    groupWith((a, b) => a.shareId === b.shareId, items).flatMap((shareTrashedItems) => {
+    groupByKey(items, 'shareId').flatMap((shareTrashedItems) => {
         const batches = chunk(shareTrashedItems, MAX_BATCH_ITEMS_PER_REQUEST);
         return batches.map((batch) => ({
             shareId: batch[0].shareId,
@@ -153,7 +153,7 @@ export const moveItem = async (
 };
 
 export const moveItems = async (items: ItemRevision[], destinationShareId: string): Promise<ItemRevision[]> => {
-    const groupedByShareId = groupWith((a, b) => a.shareId === b.shareId, items).flatMap((shareItems) => {
+    const groupedByShareId = groupByKey(items, 'shareId').flatMap((shareItems) => {
         const batches = chunk(shareItems, MAX_BATCH_ITEMS_PER_REQUEST);
         return batches.map((batch) => ({
             shareId: batch[0].shareId,

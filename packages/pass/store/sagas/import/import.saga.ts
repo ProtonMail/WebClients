@@ -21,6 +21,8 @@ import type { WithSenderAction } from '@proton/pass/store/actions/with-receiver'
 import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
 import type { ItemRevision, ItemRevisionContentsResponse, Maybe } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+import { groupByKey } from '@proton/pass/utils/array/group-by-key';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
@@ -67,22 +69,12 @@ function* importWorker(
     let totalItems: number = 0;
     const ignored: string[] = data.ignored;
 
-    const groupedByVault = data.vaults.reduce((acc: Record<string | symbol, ImportVault>, vault) => {
-        if (!vault.shareId) {
-            acc[Symbol()] = vault;
-            return acc;
-        }
-
-        if (!acc[vault.shareId]) {
-            acc[vault.shareId] = vault;
-            return acc;
-        }
-
-        acc[vault.shareId].items.push(...vault.items);
-        return acc;
-    }, {});
-
-    const importVaults = Reflect.ownKeys(groupedByVault).map((group) => groupedByVault[group]);
+    const importVaults = groupByKey(data.vaults, 'shareId', { splitEmpty: true }).map(
+        ([vault, ...vaults]): ImportVault => ({
+            ...vault,
+            items: vault.items.concat(...vaults.map(prop('items'))),
+        })
+    );
 
     try {
         /* we want to apply these request sequentially to avoid
