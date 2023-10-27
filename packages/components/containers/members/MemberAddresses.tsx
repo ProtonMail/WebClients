@@ -23,8 +23,6 @@ const MemberAddresses = ({ addresses = [] }: MemberAddressesProps) => {
 
     const amountOfAddresses = addresses.length;
 
-    const addressesPluralized = `${c('Info').ngettext(msgid`address`, `addresses`, amountOfAddresses)}`;
-
     const renderListItem = ({ ID, Email }: PartialMemberAddress, index: number) => {
         /*
          * By default, the addresses list shows 3 addresses as well as
@@ -61,8 +59,17 @@ const MemberAddresses = ({ addresses = [] }: MemberAddressesProps) => {
         if (amountOfAddresses === 0) {
             return (
                 <li className="py-2">
-                    {amountOfAddresses}
-                    <span className="no-mobile"> {addressesPluralized}</span>
+                    <span className="md:hidden">{amountOfAddresses}</span>
+                    <span className="hidden md:inline">
+                        {
+                            // translator: addresses mean "email addresses" in this context
+                            c('Info').ngettext(
+                                msgid`${amountOfAddresses} address`,
+                                `${amountOfAddresses} addresses`,
+                                amountOfAddresses
+                            )
+                        }
+                    </span>
                 </li>
             );
         }
@@ -81,9 +88,26 @@ const MemberAddresses = ({ addresses = [] }: MemberAddressesProps) => {
                         size="small"
                         className="flex flex-align-items-center"
                     >
-                        {remainingAddresses.length} {c('Info').t`more`}
-                        {' '}
-                        <span className="no-mobile">{addressesPluralized}</span>
+                        <span className="md:hidden">
+                            {
+                                // translator: we speak about email addresses in this context
+                                c('Info').ngettext(
+                                    msgid`${remainingAddresses.length} more`,
+                                    `${remainingAddresses.length} more`,
+                                    remainingAddresses.length
+                                )
+                            }
+                        </span>
+                        <span className="hidden md:inline">
+                            {
+                                // translator: addresses mean email addresses in this context
+                                c('Info').ngettext(
+                                    msgid`${remainingAddresses.length} more address`,
+                                    `${remainingAddresses.length} more addresses`,
+                                    remainingAddresses.length
+                                )
+                            }
+                        </span>
                         <Icon size={12} className="ml-1" name="chevron-down" />
                     </Button>
                 </li>
