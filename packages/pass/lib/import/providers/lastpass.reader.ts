@@ -3,10 +3,10 @@ import getYear from 'date-fns/getYear';
 import { c } from 'ttag';
 
 import type { ItemImportIntent } from '@proton/pass/types';
+import { groupByKey } from '@proton/pass/utils/array/group-by-key';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import capitalize from '@proton/utils/capitalize';
-import groupWith from '@proton/utils/groupWith';
 import lastItem from '@proton/utils/lastItem';
 
 import { readCSV } from '../helpers/csv.reader';
@@ -86,12 +86,12 @@ export const readLastPassData = async (data: string): Promise<ImportPayload> => 
                 ),
         });
 
-        const groupedByVault = groupWith<LastPassItem>(
-            (a, b) => a.grouping === b.grouping,
+        const groupedByVault = groupByKey(
             result.items.map((item) => ({
                 ...item,
-                grouping: item.grouping ? lastItem(item.grouping?.split('\\')) : undefined,
-            }))
+                grouping: item.grouping ? lastItem(item.grouping?.split('\\')) : '',
+            })),
+            'grouping'
         );
 
         const vaults: ImportVault[] = groupedByVault
