@@ -10,16 +10,16 @@ import { getVpnConnections, getVpnServers } from '@proton/shared/lib/vpn/feature
 
 import {
     ADDON_NAMES,
+    CALENDAR_SHORT_APP_NAME,
     CYCLE,
     DEFAULT_CYCLE,
+    DRIVE_SHORT_APP_NAME,
     FAMILY_MAX_USERS,
+    MAIL_SHORT_APP_NAME,
     MEMBER_ADDON_PREFIX,
     PLANS,
     PLAN_TYPES,
-    MAIL_SHORT_APP_NAME,
-    CALENDAR_SHORT_APP_NAME,
     VPN_SHORT_APP_NAME,
-    DRIVE_SHORT_APP_NAME,
 } from '../constants';
 import {
     Plan,
@@ -82,6 +82,7 @@ export interface AddonDescription {
 }
 
 export interface SubscriptionCheckoutData {
+    couponDiscount: number | undefined;
     planName: PLANS | null;
     planTitle: string;
     usersTitle: string;
@@ -224,6 +225,7 @@ export const getCheckout = ({
         membersPerCycle !== null ? (membersPerCycle / cycle) * usersAndAddons.users : amount / cycle - addonsPerMonth;
 
     return {
+        couponDiscount: checkResult?.CouponDiscount,
         planName: usersAndAddons.planName,
         planTitle: usersAndAddons.planTitle,
         addons: usersAndAddons.addons,

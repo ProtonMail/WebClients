@@ -1,7 +1,7 @@
 @import '~@proton/styles/scss/lib';
 
 .bg-norm-weak {
-	background-color: rgba(109 74 255 / 0.1);
+	background-color: #efecfd;
 }
 
 .signup-v1-bg {
@@ -62,7 +62,7 @@
 }
 
 .signup-v1-header {
-	max-inline-size: rem(850);
+	max-inline-size: rem(960);
 
 	.large-font {
 		font-size: rem(32);
