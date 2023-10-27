@@ -10,9 +10,10 @@ import { useActiveBreakpoint } from '../../hooks';
 interface Props {
     type?: 'file' | 'image' | 'video' | 'audio';
     onDownload?: () => void;
+    browser?: boolean;
 }
 
-const UnsupportedPreview = ({ onDownload, type = 'file' }: Props) => {
+const UnsupportedPreview = ({ onDownload, type = 'file', browser = false }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
 
     return (
@@ -29,8 +30,11 @@ const UnsupportedPreview = ({ onDownload, type = 'file' }: Props) => {
                 className={clsx(['p-1 text-bold', isNarrow && 'h3'])}
                 data-testid="file-preview:unsupported-preview-text"
             >
-                {c('Info').t`Preview for this file type is not supported`}
+                {browser
+                    ? c('Info').t`Preview for this file type is currently not supported on this browser.`
+                    : c('Info').t`Preview for this file type is not supported`}
             </h2>
+            {browser && <h3 className="pb-1">{c('Info').t`Please use another browser or download the file.`}</h3>}
 
             {onDownload && (
                 <PrimaryButton size={!isNarrow ? 'large' : undefined} className="text-bold" onClick={onDownload}>{c(
