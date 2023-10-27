@@ -15,7 +15,7 @@ import { apiMock, mockCache } from '@proton/testing';
 import ApiContext from '../../api/apiContext';
 import { CacheProvider } from '../../cache';
 import EventManagerContext from '../../eventManager/context';
-import SubscriptionModal from './SubscriptionModal';
+import SubscriptionContainer from './SubscriptionContainer';
 import SubscriptionModalProvider, {
     OpenSubscriptionModalCallback,
     useSubscriptionModal,
@@ -23,7 +23,7 @@ import SubscriptionModalProvider, {
 
 jest.mock('@proton/components/hooks/useModals');
 jest.mock('@proton/components/components/portal/Portal');
-jest.mock('@proton/components/containers/payments/subscription/SubscriptionModal');
+jest.mock('@proton/components/containers/payments/subscription/SubscriptionContainer');
 jest.mock('@proton/components/hooks/useFeature', () => () => ({}));
 
 beforeEach(() => {
@@ -91,7 +91,7 @@ it('should render <SubscriptionModalDisabled> if there are legacy plans', async 
     expect(container).toHaveTextContent('We’re upgrading your current plan to an improved plan');
 });
 
-it('should render <SubscriptionModal> if there is no legacy plans', async () => {
+it('should render <SubscriptionContainer> if there is no legacy plans', async () => {
     let openSubscriptionModal!: OpenSubscriptionModalCallback;
     const ContextReaderComponent = () => {
         const modal = useSubscriptionModal();
@@ -113,10 +113,10 @@ it('should render <SubscriptionModal> if there is no legacy plans', async () => 
     });
     openSubscriptionModal({} as any);
 
-    expect(container).toHaveTextContent('SubscriptionModal');
+    expect(container).toHaveTextContent('SubscriptionContainer');
 });
 
-it('should render <SubscriptionModal> with B2B default audience if it was selected in the callback', async () => {
+it('should render <SubscriptionContainer> with B2B default audience if it was selected in the callback', async () => {
     let openSubscriptionModal!: OpenSubscriptionModalCallback;
     const ContextReaderComponent = () => {
         const modal = useSubscriptionModal();
@@ -139,17 +139,17 @@ it('should render <SubscriptionModal> with B2B default audience if it was select
 
     openSubscriptionModal({ defaultAudience: Audience.B2B } as any);
 
-    expect(SubscriptionModal).toHaveBeenCalledWith(
+    expect(SubscriptionContainer).toHaveBeenCalledWith(
         expect.objectContaining({
             defaultAudience: Audience.B2B,
         }),
         {}
     );
 
-    expect(container).toHaveTextContent('SubscriptionModal');
+    expect(container).toHaveTextContent('SubscriptionContainer');
 });
 
-it('should render <SubscriptionModal> with B2B default audience if plan is a B2B plan', async () => {
+it('should render <SubscriptionContainer> with B2B default audience if plan is a B2B plan', async () => {
     let openSubscriptionModal!: OpenSubscriptionModalCallback;
     const ContextReaderComponent = () => {
         const modal = useSubscriptionModal();
@@ -172,17 +172,17 @@ it('should render <SubscriptionModal> with B2B default audience if plan is a B2B
 
     openSubscriptionModal({ plan: PLANS.BUNDLE_PRO } as any);
 
-    expect(SubscriptionModal).toHaveBeenCalledWith(
+    expect(SubscriptionContainer).toHaveBeenCalledWith(
         expect.objectContaining({
             defaultAudience: Audience.B2B,
         }),
         {}
     );
 
-    expect(container).toHaveTextContent('SubscriptionModal');
+    expect(container).toHaveTextContent('SubscriptionContainer');
 });
 
-it('should render <SubscriptionModal> with B2B default audience if subscription has a B2B plan', async () => {
+it('should render <SubscriptionContainer> with B2B default audience if subscription has a B2B plan', async () => {
     const subscription = cloneDeep(subscriptionDefaultResponse);
     subscription.Subscription.Plans = [
         {
@@ -213,50 +213,17 @@ it('should render <SubscriptionModal> with B2B default audience if subscription 
 
     openSubscriptionModal({} as any);
 
-    expect(SubscriptionModal).toHaveBeenCalledWith(
+    expect(SubscriptionContainer).toHaveBeenCalledWith(
         expect.objectContaining({
             defaultAudience: Audience.B2B,
         }),
         {}
     );
 
-    expect(container).toHaveTextContent('SubscriptionModal');
+    expect(container).toHaveTextContent('SubscriptionContainer');
 });
 
-it('should render <SubscriptionModal> with B2C default audience if deafultAudience is not set', async () => {
-    let openSubscriptionModal!: OpenSubscriptionModalCallback;
-    const ContextReaderComponent = () => {
-        const modal = useSubscriptionModal();
-        openSubscriptionModal = modal[0];
-
-        return null;
-    };
-
-    const { container } = render(
-        <Providers>
-            <SubscriptionModalProvider app="proton-account">
-                <ContextReaderComponent />
-            </SubscriptionModalProvider>
-        </Providers>
-    );
-
-    await waitFor(() => {
-        expect(openSubscriptionModal).toBeDefined();
-    });
-
-    openSubscriptionModal({} as any);
-
-    expect(SubscriptionModal).toHaveBeenCalledWith(
-        expect.objectContaining({
-            defaultAudience: Audience.B2C,
-        }),
-        {}
-    );
-
-    expect(container).toHaveTextContent('SubscriptionModal');
-});
-
-it('should render <SubscriptionModal> with FAMILY default audience if it is selected', async () => {
+it('should render <SubscriptionContainer> with FAMILY default audience if it is selected', async () => {
     let openSubscriptionModal!: OpenSubscriptionModalCallback;
     const ContextReaderComponent = () => {
         const modal = useSubscriptionModal();
@@ -279,14 +246,14 @@ it('should render <SubscriptionModal> with FAMILY default audience if it is sele
 
     openSubscriptionModal({ defaultAudience: Audience.FAMILY } as any);
 
-    expect(SubscriptionModal).toHaveBeenCalledWith(
+    expect(SubscriptionContainer).toHaveBeenCalledWith(
         expect.objectContaining({
             defaultAudience: Audience.FAMILY,
         }),
         {}
     );
 
-    expect(container).toHaveTextContent('SubscriptionModal');
+    expect(container).toHaveTextContent('SubscriptionContainer');
 });
 
 it('should render <InAppPurchaseModal> if subscription is managed externally', async () => {
