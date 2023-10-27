@@ -4,7 +4,7 @@ import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import { PlansMap, SubscriptionCheckResponse, SubscriptionModel } from '@proton/shared/lib/interfaces';
 
-import { Model } from './SubscriptionModal';
+import { Model } from './SubscriptionContainer';
 
 export interface CheckoutModifiers {
     isProration: boolean;

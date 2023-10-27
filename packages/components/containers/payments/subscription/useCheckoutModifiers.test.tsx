@@ -3,7 +3,7 @@ import { renderHook } from '@testing-library/react-hooks';
 import { CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { PlansMap, Renew, SubscriptionCheckResponse, SubscriptionModel } from '@proton/shared/lib/interfaces';
 
-import { Model } from './SubscriptionModal';
+import { Model } from './SubscriptionContainer';
 import { SUBSCRIPTION_STEPS } from './constants';
 import { useCheckoutModifiers } from './useCheckoutModifiers';
 
