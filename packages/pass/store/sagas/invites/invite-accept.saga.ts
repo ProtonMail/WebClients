@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { acceptInvite } from '@proton/pass/lib/invites/invite.requests';
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
-import { parseShareResponse } from '@proton/pass/lib/shares/share.utils';
+import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import {
     inviteAcceptFailure,
     inviteAcceptIntent,

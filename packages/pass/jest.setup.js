@@ -4,6 +4,7 @@ import { TextDecoder, TextEncoder } from 'util';
 // Getting ReferenceError: TextDecoder is not defined without
 global.TextEncoder = TextEncoder;
 global.TextDecoder = TextDecoder;
+global.ENV = 'test';
 
 // Do not start crypto worker pool, let the single tests setup/mock the CryptoProxy as needed
 jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
