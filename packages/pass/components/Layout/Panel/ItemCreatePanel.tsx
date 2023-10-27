@@ -27,6 +27,8 @@ function getItemTypeSubmitButtonLabel(type: ItemType) {
             return c('Action').t`Create alias`;
         case 'note':
             return c('Action').t`Create note`;
+        case 'creditCard':
+            return c('Action').t`Create card`;
         default:
             return c('Action').t`Create`;
     }

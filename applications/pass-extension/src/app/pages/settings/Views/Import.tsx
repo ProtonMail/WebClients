@@ -67,7 +67,7 @@ export const Import: VFC = () => {
             <SettingsPanel
                 title={c('Label').t`Import`}
                 subTitle={c('Info')
-                    .t`In order to migrate your data to ${PASS_APP_NAME} from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.`}
+                    .t`To migrate data from another password manager, go to the password manager, export your data, then upload it to ${PASS_APP_NAME}. Once your data has been imported, delete the exported file.`}
             >
                 <FormikProvider value={form}>
                     <Form className="modal-two-dialog-container">
@@ -157,6 +157,10 @@ export const Import: VFC = () => {
                                 </div>
                             </div>
                         )}
+
+                        <div className="mt-2">
+                            {c('Info').t`To review your imported data, click on the Pass icon in your browser toolbar.`}
+                        </div>
                     </div>
                 </SettingsPanel>
             )}

@@ -3,14 +3,14 @@ import { put } from 'redux-saga/effects';
 import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import { loadShare, requestShares } from '@proton/pass/lib/shares/share.requests';
-import { isActiveVault, isOwnVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
+import { isOwnVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { createVault } from '@proton/pass/lib/vaults/vault.requests';
 import { notification } from '@proton/pass/store/actions';
 import type { FeatureFlagState, ItemsByShareId, SharesState } from '@proton/pass/store/reducers';
 import { selectAllShares, selectItems } from '@proton/pass/store/selectors';
 import type { State, WorkerRootSagaOptions } from '@proton/pass/store/types';
-import type { Maybe, MaybeNull, ShareType } from '@proton/pass/types';
-import { type Share, type ShareGetResponse } from '@proton/pass/types';
+import type { Maybe, MaybeNull } from '@proton/pass/types';
+import { type Share, type ShareGetResponse, ShareType } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { partition } from '@proton/pass/utils/array/partition';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -32,6 +32,9 @@ export enum SyncType {
     FULL = 'full' /* fetches all items */,
     PARTIAL = 'partial' /* fetches only diff */,
 }
+
+const isActiveVault = <T extends Share>({ targetType, shareId }: T) =>
+    targetType === ShareType.Vault && PassCrypto.canOpenShare(shareId);
 
 export function* synchronize(
     state: State,

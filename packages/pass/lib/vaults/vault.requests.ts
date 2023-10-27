@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import { api } from '@proton/pass/lib/api/api';
 import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
+import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { getAllShareKeys } from '@proton/pass/lib/shares/share.requests';
-import { parseShareResponse } from '@proton/pass/lib/shares/share.utils';
 import { encodeVaultContent } from '@proton/pass/lib/vaults/vault-proto.transformer';
 import type { VaultTransferOwnerIntent } from '@proton/pass/types';
 import { type Share, type ShareContent, type ShareType, type VaultCreateRequest } from '@proton/pass/types';

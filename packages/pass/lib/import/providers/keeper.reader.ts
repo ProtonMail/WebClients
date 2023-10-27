@@ -97,7 +97,7 @@ export const readKeeperData = async (data: string): Promise<ImportPayload> => {
                                 });
                             }
 
-                            ignored.push(`[Unsupported] ${item[1]}`);
+                            ignored.push(`[${c('Placeholder').t`Other`}] ${item[1]}`);
                             return;
                         })
                         .filter(truthy),

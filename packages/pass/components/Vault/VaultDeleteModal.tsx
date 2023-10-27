@@ -99,7 +99,7 @@ export const VaultDeleteModal: VFC<Props> = ({ vault, onClose, onSubmit }) => {
                     <span className={clsx(deleteItems ? 'color-danger' : 'color-weak', 'block mt-3 px-5')}>
                         {deleteItems
                             ? c('Warning')
-                                  .t`Vault "${vaultName}" and all its items will be permanently deleted. You can not undo this action`
+                                  .t`Vault "${vaultName}" and all its items will be permanently deleted. You cannot undo this action.`
                             : c('Warning')
                                   .t`Vault "${vaultName}" will be permanently deleted and all its items moved to "${destinationVaultName}"`}
                     </span>

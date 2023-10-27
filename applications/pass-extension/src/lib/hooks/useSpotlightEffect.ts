@@ -3,19 +3,23 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
+import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { useInviteContext } from '@proton/pass/components/Invite/InviteContextProvider';
 import type { SpotlightMessageDefinition } from '@proton/pass/components/Spotlight/SpotlightContent';
 import { useSpotlightContext } from '@proton/pass/components/Spotlight/SpotlightContext';
 import { FiveStarIcon, InviteIcon, ShieldIcon } from '@proton/pass/components/Spotlight/SpotlightIcon';
+import { PASS_BF_MONTHLY_PRICE } from '@proton/pass/constants';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
+import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { popupMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { detectBrowser, getWebStoreUrl } from '@proton/pass/lib/extension/utils/browser';
 import browser from '@proton/pass/lib/globals/browser';
+import { selectUser } from '@proton/pass/store/selectors';
 import { selectMostRecentInvite } from '@proton/pass/store/selectors/invites';
 import type { Callback, MaybeNull, WorkerMessageWithSender } from '@proton/pass/types';
 import { OnboardingMessage, WorkerMessageType } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
-import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
@@ -28,10 +32,12 @@ export const useSpotlightEffect = () => {
     const invite = useInviteContext();
     const spotlight = useSpotlightContext();
     const webStoreURL = getWebStoreUrl(detectBrowser());
+    const { SSO_URL } = usePassConfig();
 
     const sharingEnabled = useFeatureFlag(PassFeature.PassSharingV1);
     const latestInvite = useSelector(selectMostRecentInvite);
     const [message, setMessage] = useState<MaybeNull<OnboardingMessage>>(null);
+    const user = useSelector(selectUser);
 
     const openSettings = useOpenSettingsTab();
 
@@ -103,9 +109,9 @@ export const useSpotlightEffect = () => {
             },
             [OnboardingMessage.TRIAL]: {
                 id: 'trial',
-                title: c('Title').t`Enjoy your free trial`,
+                title: c('Title').t`Our welcome gift to you`,
                 message: c('Info')
-                    .t`Check out all the exclusive features that are available to you for a limited time.`,
+                    .t`7 days to try premium features for free. Only during your first week of ${BRAND_NAME}.`,
                 className: 'ui-orange',
                 onClose: withAcknowledgment(noop),
                 action: {
@@ -177,6 +183,24 @@ export const useSpotlightEffect = () => {
                     label: c('Label').t`Need help ?`,
                     type: 'button',
                     onClick: withAcknowledgment(() => openSettings('support')),
+                },
+            },
+            [OnboardingMessage.BLACK_FRIDAY_OFFER]: {
+                id: 'black-friday',
+                title: c('bf2023: Title').t`Black Friday offer`,
+                message: (() => {
+                    const relativePrice = getSimplePriceString(user!.Currency, PASS_BF_MONTHLY_PRICE, '');
+                    return c('bf2023: Info')
+                        .t`Save Smart. Get a year of Pass Plus for only ${relativePrice} per month.`;
+                })(),
+                className: 'ui-orange',
+                onClose: withAcknowledgment(noop),
+                action: {
+                    label: c('bf2023: Label').t`Get the deal`,
+                    type: 'button',
+                    onClick: withAcknowledgment(() =>
+                        window.open(`${SSO_URL}/pass/dashboard?plan=pass2023&coupon=BF2023&cycle=12`, '_blank')
+                    ),
                 },
             },
         }),

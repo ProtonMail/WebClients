@@ -36,7 +36,7 @@ export const selectPassPlan = ({ user: { plan } }: State): UserPassPlan => {
 export const selectPlanDisplayName = createSelector([selectUserPlan, selectPassPlan], (userPlan, passPlan) => {
     switch (passPlan) {
         case UserPassPlan.TRIAL:
-            return c('Info').t`Free Trial`;
+            return c('Info').t`Pass Plus trial`;
         case UserPassPlan.FREE:
         case UserPassPlan.PLUS:
             return userPlan?.DisplayName;

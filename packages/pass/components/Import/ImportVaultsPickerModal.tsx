@@ -79,7 +79,7 @@ export const ImportVaultsPickerModal: VFC<ImportVaultsPickerProps> = ({ payload,
                 <FormikProvider value={form}>
                     <Form id={FORM_ID}>
                         <Card rounded className="mb-4 text-sm">
-                            {c('Info').t`Select the destination vault for each imported vault.`}
+                            {c('Info').t`Select where you want your imported vault(s) to be saved.`}
 
                             {vaultsRemaining <= 0 && (
                                 <>
@@ -145,7 +145,7 @@ export const ImportVaultsPickerModal: VFC<ImportVaultsPickerProps> = ({ payload,
                     {c('Action').t`Cancel`}
                 </Button>
                 <Button type="submit" color="norm" disabled={vaultsRemaining < 0} form={FORM_ID}>{c('Action')
-                    .t`Proceed`}</Button>
+                    .t`Confirm`}</Button>
             </ModalTwoFooter>
         </ModalTwo>
     );

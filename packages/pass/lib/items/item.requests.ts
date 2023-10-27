@@ -23,7 +23,7 @@ import chunk from '@proton/utils/chunk';
 import groupWith from '@proton/utils/groupWith';
 
 import { serializeItemContent } from './item-proto.transformer';
-import { parseItemRevision } from './item.utils';
+import { parseItemRevision } from './item.parser';
 
 const batchRevisionsByShareId = (items: ItemRevision[]) =>
     groupWith((a, b) => a.shareId === b.shareId, items).flatMap((shareTrashedItems) => {

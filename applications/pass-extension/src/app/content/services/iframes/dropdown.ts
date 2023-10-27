@@ -10,8 +10,10 @@ import type {
 } from 'proton-pass-extension/app/content/types';
 import { DropdownAction, IFrameMessageType } from 'proton-pass-extension/app/content/types';
 
+import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/hooks/usePasswordGenerator';
+import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { deriveAliasPrefix } from '@proton/pass/lib/validation/alias';
-import { type MaybeNull } from '@proton/pass/types';
+import { type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { createStyleCompute, getComputedHeight } from '@proton/pass/utils/dom/computed-styles';
 import { animatePositionChange } from '@proton/pass/utils/dom/position';
 import { pipe } from '@proton/pass/utils/fp/pipe';
@@ -81,7 +83,11 @@ export const createDropdown = (): InjectedDropdown => {
                     return { action, domain: subdomain ?? domain!, prefix: deriveAliasPrefix(displayName!) };
                 }
                 case DropdownAction.AUTOSUGGEST_PASSWORD: {
-                    return { action };
+                    const options = await sendMessage.on(
+                        contentScriptMessage({ type: WorkerMessageType.AUTOFILL_PASSWORD_OPTIONS }),
+                        (res) => (res.type === 'success' ? res.options : DEFAULT_RANDOM_PW_OPTIONS)
+                    );
+                    return { action, options };
                 }
             }
         }

@@ -1,8 +1,8 @@
 import { call, put, select, takeEvery } from 'redux-saga/effects';
 
 import { api } from '@proton/pass/lib/api/api';
+import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import { editItem } from '@proton/pass/lib/items/item.requests';
-import { parseItemRevision } from '@proton/pass/lib/items/item.utils';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { aliasDetailsSync, itemEditFailure, itemEditIntent, itemEditSuccess } from '@proton/pass/store/actions';
 import type { AliasState } from '@proton/pass/store/reducers';
