@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import type { ItemImportIntent } from '@proton/pass/types';
+import { groupByKey } from '@proton/pass/utils/array/group-by-key';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
-import groupWith from '@proton/utils/groupWith';
 
 import { readCSV } from '../helpers/csv.reader';
 import { ImportProviderError } from '../helpers/error';
@@ -77,7 +77,7 @@ export const readNordPassData = async (data: string): Promise<ImportPayload> => 
             onError: (error) => warnings.push(error),
         });
 
-        const groupedByVault = groupWith<NordPassItem>((a, b) => a.folder === b.folder, result.items);
+        const groupedByVault = groupByKey(result.items, 'folder');
 
         const vaults: ImportVault[] = groupedByVault
             .filter(({ length }) => length > 0)
