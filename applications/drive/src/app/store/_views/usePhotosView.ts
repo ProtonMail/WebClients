@@ -120,6 +120,12 @@ export const usePhotosView = () => {
         addToQueue(shareId, linkId, domRef);
     };
 
+    /**
+     * A `PhotoLink` may not be fully loaded, so we need to preload all links in the cache
+     * first to request a download.
+     *
+     * @param linkIds List of Link IDs to preload
+     */
     const requestDownload = async (linkIds: string[]) => {
         if (!shareId) {
             return;
