@@ -17,12 +17,11 @@ protonpass-root {
 protonpass-control {
 	@include reset;
 
-	grid-row: none;
-	grid-column: none;
 	pointer-events: none;
-	position: relative !important;
+	position: absolute !important;
+
+	/* force reset element */
 	margin: 0 !important;
-	flex: 0 0 0;
 	opacity: 1;
 	z-index: unset !important;
 	order: 0 !important;
@@ -31,6 +30,13 @@ protonpass-control {
 	/* stylelint-disable-next-line */
 	float: left !important;
 	animation: none !important;
+
+	/* if parent display: flex */
+	flex: 0 0 0;
+
+	/* if parent display: grid */
+	grid-row: auto / span 1 !important;
+	grid-column: auto / span 1 !important;
 
 	> input {
 		pointer-events: all;

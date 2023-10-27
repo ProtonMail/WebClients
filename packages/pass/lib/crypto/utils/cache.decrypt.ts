@@ -1,4 +1,3 @@
-import { decryptData, getCacheEncryptionKey } from '@proton/pass/lib/crypto/utils';
 import { deobfuscateItem, obfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import type { ItemsByShareId } from '@proton/pass/store/reducers';
 import type { State } from '@proton/pass/store/types';
@@ -6,6 +5,9 @@ import type { Maybe, PassCryptoSnapshot, SerializedCryptoContext } from '@proton
 import { PassEncryptionTag } from '@proton/pass/types';
 import type { EncryptedExtensionCache, ExtensionCache } from '@proton/pass/types/worker/cache';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
+
+import { getCacheEncryptionKey } from './cache.encrypt';
+import { decryptData } from './crypto-helpers';
 
 const decrypt = async <T extends object>(options: {
     data: string | null;

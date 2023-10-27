@@ -108,7 +108,9 @@ export const readBitwardenData = (data: string): ImportPayload => {
                                     expirationDate: formatCCExpirationDate(item),
                                 });
                             default:
-                                ignored.push(`[${BitwardenTypeMap[item.type] ?? 'Other'}] ${item.name}`);
+                                ignored.push(
+                                    `[${BitwardenTypeMap[item.type] ?? c('Placeholder').t`Other`}] ${item.name}`
+                                );
                                 return;
                         }
                     })

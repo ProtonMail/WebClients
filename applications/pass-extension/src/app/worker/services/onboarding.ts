@@ -1,3 +1,5 @@
+import { PASS_BF_2023_DATES } from '@proton/pass/constants';
+import { api } from '@proton/pass/lib/api/api';
 import browser from '@proton/pass/lib/globals/browser';
 import {
     selectFeatureFlag,
@@ -87,7 +89,16 @@ const ONBOARDING_RULES: OnboardingRule[] = [
             return availableVersion !== null && shouldPrompt;
         }),
     }),
-    createOnboardingRule({ message: OnboardingMessage.WELCOME, when: () => false }),
+    createOnboardingRule({
+        message: OnboardingMessage.BLACK_FRIDAY_OFFER,
+        when: (previous) => {
+            const passPlan = selectPassPlan(store.getState());
+            if (passPlan === UserPassPlan.PLUS) return false;
+
+            const now = api.getStatus().serverTime?.getTime() ?? Date.now();
+            return !previous && now > PASS_BF_2023_DATES[0] && now < PASS_BF_2023_DATES[1];
+        },
+    }),
     createOnboardingRule({
         message: OnboardingMessage.TRIAL,
         when: (previous) => {
