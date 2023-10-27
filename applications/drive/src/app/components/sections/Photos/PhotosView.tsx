@@ -137,7 +137,10 @@ export const PhotosView: FC<void> = () => {
                             {selectedCount > 0 ? (
                                 <div className="flex gap-2">
                                     <PhotosClearSelectionButton onClick={clearSelection} />
-                                    {c('Info').jt`${selectedCount} selected`}
+                                    {/* aria-live & aria-atomic ensure the count gets revocalized when it changes */}
+                                    <span aria-live="polite" aria-atomic="true">
+                                        {c('Info').jt`${selectedCount} selected`}
+                                    </span>
                                 </div>
                             ) : (
                                 c('Title').t`Photos`
