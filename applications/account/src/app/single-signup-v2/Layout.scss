@@ -2,15 +2,10 @@
 
 :root {
 	--border-radius-4xl: calc(4 * var(--border-radius) * var(--1px));
-	--color-norm-weak: rgba(109 74 255 / 0.1);
 }
 
 .bg-transparent {
 	background-color: transparent;
-}
-
-.bg-norm-weak {
-	background-color: var(--color-norm-weak);
 }
 
 .rounded-4xl {
