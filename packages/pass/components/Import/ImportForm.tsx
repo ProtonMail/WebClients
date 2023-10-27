@@ -135,7 +135,7 @@ export const ImportForm: VFC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ f
                     {providerHasUnsupportedItemTypes(form.values.provider) && (
                         <em className="block text-sm color-weak mb-2">
                             {c('Info')
-                                .t`${PASS_APP_NAME} will only import logins and notes. Passports, attached files, etc. are not supported at the moment.`}
+                                .t`${PASS_APP_NAME} will only import logins, notes and credit cards. Passports, attached files, etc. are not supported at the moment.`}
                         </em>
                     )}
                 </>
