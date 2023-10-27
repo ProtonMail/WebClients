@@ -39,7 +39,7 @@ export const PhotosGroup: FC<Props> = ({ style, text, showSeparatorLine, onSelec
             >
                 {text}
             </Checkbox>
-            {showSeparatorLine && <hr className="w100 m-0 ml-3 h0 border-bottom border-weak" />}
+            {showSeparatorLine && <hr className="w-full m-0 ml-3 h-0 border-bottom border-weak" />}
         </div>
     );
 };
