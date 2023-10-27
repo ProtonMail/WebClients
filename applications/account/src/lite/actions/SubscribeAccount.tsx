@@ -13,6 +13,7 @@ import {
     ProtonLogo,
     Tooltip,
     VpnLogo,
+    useFlag,
     useOrganization,
     usePlans,
     useSubscription,
@@ -35,7 +36,7 @@ import {
 import { PLANS } from '@proton/shared/lib/constants';
 import { CURRENCIES } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
-import { getUpgradedPlan, getValidCycle } from '@proton/shared/lib/helpers/subscription';
+import { getHasCoupon, getUpgradedPlan, getValidCycle } from '@proton/shared/lib/helpers/subscription';
 import { Currency } from '@proton/shared/lib/interfaces';
 import { canPay } from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';
@@ -43,6 +44,8 @@ import clsx from '@proton/utils/clsx';
 import broadcast, { MessageType } from '../broadcast';
 import LiteBox from '../components/LiteBox';
 import LiteLoaderPage from '../components/LiteLoaderPage';
+import PromotionAlreadyApplied from '../components/PromotionAlreadyApplied';
+import PromotionExpired from '../components/PromotionExpired';
 import SubscribeAccountDone from '../components/SubscribeAccountDone';
 import { SubscribeType } from '../types/SubscribeType';
 
@@ -68,6 +71,8 @@ const SubscribeAccount = ({ app, redirect, queryParams }: Props) => {
     const [subscription, loadingSubscription] = useSubscription();
     const [plans = [], loadingPlans] = usePlans();
     const [organization, loadingOrganization] = useOrganization();
+
+    const bf2023IsExpiredFlag = useFlag('BF2023IsExpired');
 
     const canEdit = canPay(user);
 
@@ -161,6 +166,16 @@ const SubscribeAccount = ({ app, redirect, queryParams }: Props) => {
     const handleSuccess = () => {
         handleNotify(SubscribeType.Subscribed);
     };
+
+
+    const bf2023IsExpired = bf2023IsExpiredFlag && coupon?.toLocaleUpperCase() === COUPON_CODES.BLACK_FRIDAY_2023;
+    if (bf2023IsExpired) {
+        return <PromotionExpired />;
+    }
+
+    if (getHasCoupon(subscription, COUPON_CODES.BLACK_FRIDAY_2023)) {
+        return <PromotionAlreadyApplied />;
+    }
 
     return (
         <div className={clsx(bgClassName, 'h-full overflow-auto')}>
