@@ -195,7 +195,7 @@ export const PhotosGrid: FC<Props> = ({
     }, [data, isItemSelected, isGroupSelected, dimensions, scrollPosition]);
 
     return (
-        <div className="p-4 overflow-auto" ref={containerRef} onScroll={handleScroll}>
+        <div className="p-4 overflow-auto outline-none--at-all" ref={containerRef} onScroll={handleScroll}>
             <div className="relative w-full" style={innerStyle}>
                 {gridItems}
             </div>
