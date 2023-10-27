@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { CSSProperties, FC } from 'react';
 
+import { c } from 'ttag';
+
 import { Checkbox } from '@proton/components/components';
 
 type Props = {
@@ -29,8 +31,14 @@ export const PhotosGroup: FC<Props> = ({ style, text, showSeparatorLine, onSelec
                         onSelect(!selected);
                     }
                 }}
-            />
-            {text}
+                // Note: browsers combine aria-label and the actual label, the translation string is correct
+                aria-label={
+                    // translator: Used by screen readers to provide context for Photos groups (e.g. Select all items for September)
+                    c('Info').t`Select all items for`
+                }
+            >
+                {text}
+            </Checkbox>
             {showSeparatorLine && <hr className="w100 m-0 ml-3 h0 border-bottom border-weak" />}
         </div>
     );
