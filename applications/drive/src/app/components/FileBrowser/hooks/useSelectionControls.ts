@@ -27,8 +27,9 @@ export function useSelectionControls({ itemIds }: { itemIds: BrowserItemId[] }) 
         // If selected items were removed from children, remove them from selected as well
         if (selectedItemIds.length !== selected.length) {
             setSelectedItems(selected);
+            setMultiSelectStartId(undefined);
         }
-    }, [itemIds]);
+    }, [itemIds, selectedItemIds]);
 
     const toggleSelectItem = useCallback((id: BrowserItemId) => {
         setSelectedItems((selectedItemIds) => {
@@ -63,6 +64,7 @@ export function useSelectionControls({ itemIds }: { itemIds: BrowserItemId[] }) 
             const selected: BrowserItemId[] = [];
             let i = 0;
             let matchConditions = [multiSelectStartId, selectedBrowserItemId];
+
             while (matchConditions.length) {
                 const id = itemIds[i];
                 if (matchConditions.includes(id)) {
