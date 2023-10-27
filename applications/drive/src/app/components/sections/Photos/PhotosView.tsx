@@ -1,6 +1,6 @@
 import React, { FC, useCallback, useMemo, useRef, useState } from 'react';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { NavigationControl, useAppTitle } from '@proton/components';
 import { Loader } from '@proton/components/components';
@@ -139,7 +139,11 @@ export const PhotosView: FC<void> = () => {
                                     <PhotosClearSelectionButton onClick={clearSelection} />
                                     {/* aria-live & aria-atomic ensure the count gets revocalized when it changes */}
                                     <span aria-live="polite" aria-atomic="true">
-                                        {c('Info').jt`${selectedCount} selected`}
+                                        {c('Info').ngettext(
+                                            msgid`${selectedCount} selected`,
+                                            `${selectedCount} selected`,
+                                            selectedCount
+                                        )}
                                     </span>
                                 </div>
                             ) : (
