@@ -5,6 +5,7 @@ import { join } from "path";
 import { MACOS_PARTITION } from "./constants";
 import { getBasePath } from "./helpers";
 
+//TODO remove this once better solution for macOS is found
 export const macosStartup = () => {
     const macosPartition = getMacOSPartition();
 

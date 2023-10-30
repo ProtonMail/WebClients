@@ -1,7 +1,7 @@
-import { BrowserWindow, app, screen } from "electron";
+import { BrowserWindow, app } from "electron";
 import { join } from "path";
 import { getConfig } from "./config";
-import { DEFAULT_WINDOW_HEIGHT, DEFAULT_WINDOW_WIDTH } from "./constants";
+import { setWindowState } from "./windowsStore";
 
 export const isMac = process.platform === "darwin";
 
@@ -42,17 +42,6 @@ export const isHostAllowed = (host: string, isPackaged: boolean) => {
         });
 };
 
-export const getWindowSize = () => {
-    const { width, height } = screen.getPrimaryDisplay().workAreaSize;
-    const windowWidth = Math.round(width * 0.95);
-    const windowHeight = Math.round(height * 0.9);
-
-    return {
-        height: DEFAULT_WINDOW_HEIGHT > height ? windowHeight : DEFAULT_WINDOW_HEIGHT,
-        width: DEFAULT_WINDOW_WIDTH > width ? windowWidth : DEFAULT_WINDOW_WIDTH,
-    };
-};
-
 export const getWindow = () => {
     return BrowserWindow.getFocusedWindow() ?? BrowserWindow.getAllWindows()[0];
 };
@@ -78,7 +67,18 @@ export const clearStorage = (restart: boolean, timeout?: number) => {
 
 export const quitApplication = () => {
     BrowserWindow.getAllWindows().forEach((window) => {
+        // Save window size when closing the application
+        if (window.isVisible()) {
+            const url = window.webContents.getURL();
+            if (isHostCalendar(url)) {
+                setWindowState(window.getBounds(), "CALENDAR");
+            } else if (isHostMail(url)) {
+                setWindowState(window.getBounds(), "MAIL");
+            }
+        }
+
         window.destroy();
     });
+
     app.quit();
 };
