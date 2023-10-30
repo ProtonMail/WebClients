@@ -43,6 +43,7 @@ import clsx from '@proton/utils/clsx';
 
 import broadcast, { MessageType } from '../broadcast';
 import LiteBox from '../components/LiteBox';
+import LiteLayout from '../components/LiteLayout';
 import LiteLoaderPage from '../components/LiteLoaderPage';
 import PromotionAlreadyApplied from '../components/PromotionAlreadyApplied';
 import PromotionExpired from '../components/PromotionExpired';
@@ -54,11 +55,11 @@ import './SubscribeAccount.scss';
 interface Props {
     redirect?: string | undefined;
     fullscreen?: boolean;
-    queryParams: URLSearchParams;
+    searchParams: URLSearchParams;
     app: APP_NAMES;
 }
 
-const SubscribeAccount = ({ app, redirect, queryParams }: Props) => {
+const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
     const onceCloseRef = useRef(false);
     const topRef = useRef<HTMLDivElement>(null);
     const [user] = useUser();
@@ -77,7 +78,11 @@ const SubscribeAccount = ({ app, redirect, queryParams }: Props) => {
     const canEdit = canPay(user);
 
     if (loadingSubscription || loadingPlans || loadingOrganization) {
-        return <LiteLoaderPage />;
+        return (
+            <LiteLayout searchParams={searchParams}>
+                <LiteLoaderPage />
+            </LiteLayout>
+        );
     }
 
     // Error in usage (this action is not meant to be shown if it cannot be triggered, so untranslated.
@@ -85,18 +90,18 @@ const SubscribeAccount = ({ app, redirect, queryParams }: Props) => {
         return <LiteBox>Please contact the administrator of the organization to manage the subscription</LiteBox>;
     }
 
-    const maybeStart = queryParams.get('start');
-    const maybeType = queryParams.get('type');
+    const maybeStart = searchParams.get('start');
+    const maybeType = searchParams.get('type');
 
-    const cycleParam = parseInt(queryParams.get('cycle') as any, 10);
+    const cycleParam = parseInt(searchParams.get('cycle') as any, 10);
     const parsedCycle = cycleParam ? getValidCycle(cycleParam) : undefined;
-    const coupon = queryParams.get('coupon') || undefined;
+    const coupon = searchParams.get('coupon') || undefined;
 
-    const currencyParam = queryParams.get('currency')?.toUpperCase();
+    const currencyParam = searchParams.get('currency')?.toUpperCase();
     const parsedCurrency =
         currencyParam && CURRENCIES.includes(currencyParam as any) ? (currencyParam as Currency) : undefined;
 
-    const maybePlanName = queryParams.get('plan') || '';
+    const maybePlanName = searchParams.get('plan') || '';
     const plan =
         maybeType === 'upgrade'
             ? getUpgradedPlan(subscription, app)
@@ -142,9 +147,9 @@ const SubscribeAccount = ({ app, redirect, queryParams }: Props) => {
         return user.isFree ? SUBSCRIPTION_STEPS.PLAN_SELECTION : SUBSCRIPTION_STEPS.CUSTOMIZATION;
     })();
 
-    const disableCycleSelectorParam = queryParams.get('disableCycleSelector');
-    const disablePlanSelectionParam = queryParams.get('disablePlanSelection');
-    const hideClose = Boolean(queryParams.get('hideClose'));
+    const disableCycleSelectorParam = searchParams.get('disableCycleSelector');
+    const disablePlanSelectionParam = searchParams.get('disablePlanSelection');
+    const hideClose = Boolean(searchParams.get('hideClose'));
 
     const handleNotify = (type: SubscribeType) => {
         if (onceCloseRef.current) {
@@ -166,7 +171,6 @@ const SubscribeAccount = ({ app, redirect, queryParams }: Props) => {
     const handleSuccess = () => {
         handleNotify(SubscribeType.Subscribed);
     };
-
 
     const bf2023IsExpired = bf2023IsExpiredFlag && coupon?.toLocaleUpperCase() === COUPON_CODES.BLACK_FRIDAY_2023;
     if (bf2023IsExpired) {
