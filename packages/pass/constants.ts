@@ -19,6 +19,6 @@ export const TRIAL_BLOG_URL = 'https://proton.me/support/pass-trial';
 export const PASS_BF_MONTHLY_PRICE = 199;
 
 export const PASS_BF_2023_DATES = [
-    ENV === 'development' ? Date.now() - 1 : +new Date('2023-10-31T06:00:00'),
+    ENV === 'development' ? Date.now() - 1 : +new Date('2023-11-01T06:00:00'),
     +new Date('2023-12-04T00:00:00'),
 ] as const;
