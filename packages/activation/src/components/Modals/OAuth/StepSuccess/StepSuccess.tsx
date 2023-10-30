@@ -28,17 +28,19 @@ const StepSuccessFooterAction = ({ handleModalDisplay, isCurrentLocationImportPa
 
     const settingsLink = useSettingsLink();
 
+    const handleClose = (redirect?: boolean) => {
+        dispatch(resetOauthDraft());
+        handleModalDisplay(false);
+
+        if (redirect) {
+            settingsLink(`/easy-switch`);
+        }
+    };
+
     if (isCurrentLocationImportPage) {
         return (
             <ModalFooter className="flex-justify-end">
-                <Button
-                    data-testid="StepSuccess:CloseButton"
-                    shape="outline"
-                    onClick={() => {
-                        dispatch(resetOauthDraft());
-                        handleModalDisplay(false);
-                    }}
-                >
+                <Button data-testid="StepSuccess:CloseButton" shape="outline" onClick={() => handleClose(false)}>
                     {c('Action').t`Close`}
                 </Button>
             </ModalFooter>
@@ -46,20 +48,10 @@ const StepSuccessFooterAction = ({ handleModalDisplay, isCurrentLocationImportPa
     }
     return (
         <ModalFooter data-testid="StepSuccess:RedirectFooter">
-            <Button
-                shape="outline"
-                onClick={() => handleModalDisplay(false)}
-                data-testid="StepSuccess:RedirectFooterSubmit"
-            >
+            <Button shape="outline" onClick={() => handleClose(false)} data-testid="StepSuccess:RedirectFooterSubmit">
                 {c('Action').t`Close`}
             </Button>
-            <PrimaryButton
-                onClick={() => {
-                    dispatch(resetOauthDraft());
-                    handleModalDisplay(false);
-                    settingsLink(`/easy-switch`);
-                }}
-            >{c('Action').t`Check import progress`}</PrimaryButton>
+            <PrimaryButton onClick={() => handleClose(true)}>{c('Action').t`Check import progress`}</PrimaryButton>
         </ModalFooter>
     );
 };
