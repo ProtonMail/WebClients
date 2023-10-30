@@ -26,7 +26,7 @@ import { useLoading } from '@proton/hooks';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { APP_NAMES, BRAND_NAME, COUPON_CODES, CYCLE, PASS_APP_NAME, PLANS } from '@proton/shared/lib/constants';
-import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
+import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
     getPlanIDs,
@@ -161,8 +161,6 @@ const Step1 = ({
         checkResult: model.optimistic.checkResult || model.subscriptionData.checkResult,
     };
 
-    const selectedPlanCard = planCards.find((planCard) => planCard.plan === options.plan.Name);
-
     const setOptimisticDiff = (diff: Partial<OptimisticOptions>) => {
         setModel((old) => ({
             ...old,
@@ -287,16 +285,19 @@ const Step1 = ({
     }));
 
     const cta = c('pass_signup_2023: Action').t`Start using ${appName} now`;
-    const hasSelectedFree = selectedPlanCard?.plan === PLANS.FREE;
+    const hasSelectedFree = options.plan.Name === PLANS.FREE;
     const isOnboardingMode = mode === SignupMode.Onboarding;
 
     const isDarkBg = theme.background === 'bf';
 
     let step = 1;
 
+    const hasUpsellSection = model.upsell.mode === UpsellTypes.UPSELL;
     const hasPlanSelector =
-        (!model.planParameters?.defined || model.upsell.mode === UpsellTypes.UPSELL || isPassWelcome) &&
-        [SignupMode.Default, SignupMode.Onboarding].includes(mode);
+        (!model.planParameters?.defined || hasUpsellSection || isPassWelcome) &&
+        [SignupMode.Default, SignupMode.Onboarding].includes(mode) &&
+        // Don't want to show an incomplete plan selector when the user has access to have a nicer UI
+        !model.session?.state.access;
 
     const renewalNotice = !hasSelectedFree && (
         <div className="w100 text-sm color-norm opacity-70">
@@ -314,6 +315,12 @@ const Step1 = ({
                   })}
         </div>
     );
+
+    const checkout = getCheckout({
+        planIDs: options.planIDs,
+        plansMap: model.plansMap,
+        checkResult: options.checkResult,
+    });
 
     return (
         <Layout
@@ -333,7 +340,7 @@ const Step1 = ({
                 >
                     <h1 className="m-0 large-font lg:px-4 text-semibold">{title}</h1>
                 </div>
-                {!isOnboardingMode && hasPlanSelector && (
+                {!isOnboardingMode && hasPlanSelector && model.upsell.mode !== UpsellTypes.UPSELL && (
                     <div className="flex flex-nowrap mb-4 gap-1 md:gap-8">
                         {features.map(({ key, left, text }, i, arr) => {
                             return (
@@ -464,9 +471,12 @@ const Step1 = ({
                                     relativePrice={relativePrice}
                                     plansMap={model.plansMap}
                                     currentPlan={currentPlan}
+                                    subscription={model.session?.subscription}
+                                    checkout={checkout}
                                     plan={options.plan}
                                     cycle={options.cycle}
                                     currency={options.currency}
+                                    coupon={options.checkResult?.Coupon?.Code}
                                     vpnServersCountData={vpnServersCountData}
                                     onSelect={() => {
                                         accountStepPaymentRef.current?.scrollIntoView();
@@ -700,7 +710,6 @@ const Step1 = ({
                                 key={model.session?.UID || 'free'}
                                 defaultMethod={model.session?.defaultPaymentMethod}
                                 accountStepPaymentRef={accountStepPaymentRef}
-                                selectedPlanCard={selectedPlanCard}
                                 api={normalApi}
                                 model={model}
                                 options={options}

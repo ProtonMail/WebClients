@@ -36,7 +36,6 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import Guarantee from './Guarantee';
-import { PlanCard } from './PlanCardSelector';
 import RightPlanSummary from './RightPlanSummary';
 import RightSummary from './RightSummary';
 import { getSummaryPlan } from './configuration';
@@ -55,7 +54,6 @@ interface Props {
     model: SignupModelV2;
     options: OptimisticOptions;
     vpnServersCountData: VPNServersCountData;
-    selectedPlanCard?: PlanCard;
     loadingPaymentDetails: boolean;
     loadingSignup: boolean;
     onPay: (
@@ -84,7 +82,6 @@ const AccountStepPayment = ({
     model,
     options,
     vpnServersCountData,
-    selectedPlanCard,
     loadingPaymentDetails,
     loadingSignup,
     withLoadingSignup,
@@ -348,19 +345,19 @@ const AccountStepPayment = ({
                                 >
                                     {cta}
                                 </Button>
-                                {selectedPlanCard?.guarantee && (
-                                    <div className="text-center color-success mt-4">
-                                        {subscriptionData.checkResult.AmountDue === 0 ? (
-                                            c('Info').t`Cancel anytime`
-                                        ) : (
-                                            <Guarantee />
-                                        )}
+                                <div className="text-center color-success mt-4">
+                                    {subscriptionData.checkResult.AmountDue === 0 ? (
+                                        c('Info').t`Cancel anytime`
+                                    ) : (
+                                        <Guarantee />
+                                    )}
+                                </div>
+                                {!isAuthenticated && (
+                                    <div className="mt-4 text-sm color-weak text-center">
+                                        {c('pass_signup_2023: Info')
+                                            .jt`By continuing, you agree to our ${termsAndConditions}`}
                                     </div>
                                 )}
-                                <div className="mt-4 text-sm color-weak text-center">
-                                    {c('pass_signup_2023: Info')
-                                        .jt`By continuing, you agree to our ${termsAndConditions}`}
-                                </div>
                             </>
                         );
                     })()}
@@ -379,6 +376,7 @@ const AccountStepPayment = ({
                 return (
                     <RightSummary gradient={isDarkBg} className="mx-auto md:mx-0 rounded-xl">
                         <RightPlanSummary
+                            cycle={options.cycle}
                             className={isDarkBg ? 'border-primary' : undefined}
                             title={summaryPlan.title}
                             price={getSimplePriceString(options.currency, currentCheckout.withDiscountPerMonth, '')}

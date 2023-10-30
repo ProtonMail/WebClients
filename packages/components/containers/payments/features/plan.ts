@@ -28,6 +28,7 @@ import {
     getHideMyEmailAliases,
     getLoginsAndNotes,
     getPassAppFeature,
+    getProtonPassFeature,
     getVaults,
 } from './pass';
 import {
@@ -132,8 +133,8 @@ export const getPassPlan = (plan: Plan): ShortPlan => {
         features: [
             getLoginsAndNotes(),
             getDevices(),
-            getVaults(PASS_PLUS_VAULTS),
             getHideMyEmailAliases('unlimited'),
+            getVaults(PASS_PLUS_VAULTS),
             get2FAAuthenticator(true),
             getCustomFields(true),
             getSupport('priority'),
@@ -210,6 +211,29 @@ export const getVPNPlan = (plan: Plan, serversCount: VPNServersCountData): Short
             getCountries(plusServers),
             getVPNSpeed('highest'),
             getProtectDevices(VPN_CONNECTIONS),
+            getStreaming(true),
+            getP2P(true),
+            getDoubleHop(true),
+            getNetShield(true),
+            getTor(true),
+            getPrioritySupport(),
+        ],
+    };
+};
+
+export const getVPNPassPlan = (plan: Plan, serversCount: VPNServersCountData): ShortPlan => {
+    const plusServers = getPlusServers(serversCount.paid.servers, serversCount.paid.countries);
+    return {
+        plan: PLANS.VPN,
+        title: plan.Title,
+        label: '',
+        description: c('new_plans: info')
+            .t`The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.`,
+        cta: getCTA(plan.Title),
+        features: [
+            getCountries(plusServers),
+            getVPNSpeed('highest'),
+            getProtonPassFeature(),
             getStreaming(true),
             getP2P(true),
             getDoubleHop(true),
@@ -424,6 +448,8 @@ export const getShortPlan = (
             return getMailPlan(planData);
         case PLANS.VPN:
             return getVPNPlan(planData, vpnServers);
+        case PLANS.VPN_PASS_BUNDLE:
+            return getVPNPassPlan(planData, vpnServers);
         case PLANS.DRIVE:
             return getDrivePlan(planData, boldStorageSize);
         case PLANS.PASS_PLUS:

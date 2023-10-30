@@ -1,7 +1,6 @@
 import { useCallback, useMemo, useRef, useState } from 'react';
 import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 
-import type { Location } from 'history';
 import * as H from 'history';
 
 import {
@@ -34,6 +33,8 @@ import { produceExtensionFork, produceFork, produceOAuthFork } from '@proton/sha
 import {
     APPS,
     CLIENT_TYPES,
+    COUPON_CODES,
+    PLANS,
     SETUP_ADDRESS_PATH,
     SSO_PATHS,
     UNPAID_STATE,
@@ -46,6 +47,7 @@ import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string'
 import { getPathFromLocation, joinPaths } from '@proton/shared/lib/helpers/url';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { getEncryptedSetupBlob, getRequiresAddressSetup } from '@proton/shared/lib/keys';
+import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 import noop from '@proton/utils/noop';
 
 import forgotUsernamePage from '../../pages/forgot-username';
@@ -75,8 +77,7 @@ import AccountPublicApp from './AccountPublicApp';
 import ExternalSSOConsumer from './ExternalSSOConsumer';
 import { getPaths } from './helper';
 
-export const getSearchParams = (location: Location) => {
-    const searchParams = new URLSearchParams(location.search);
+export const getSearchParams = (searchParams: URLSearchParams) => {
     const { product, productParam } = getProductParams(location.pathname, searchParams);
     return { product, productParam };
 };
@@ -150,8 +151,10 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     const ignoreAutoRef = useRef(false);
     const [hasBackToSwitch, setHasBackToSwitch] = useState(false);
 
+    const searchParams = new URLSearchParams(location.search);
+
     const { product: maybeQueryAppIntent, productParam } = useMemo(() => {
-        return getSearchParams(location);
+        return getSearchParams(searchParams);
     }, []);
 
     const [maybeLocalRedirect] = useState(() => {
@@ -418,7 +421,15 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     })();
     const setupVPN = true; /* True until apps have been deployed to support key-less accounts*/
 
-    const loader = <AccountLoaderPage />;
+    const hasBFCoupon = searchParams.get('coupon')?.toUpperCase() === COUPON_CODES.BLACK_FRIDAY_2023;
+    const loader =
+        hasBFCoupon && location.pathname.includes('signup') ? (
+            <UnAuthenticated theme={ThemeTypes.Carbon}>
+                <AccountLoaderPage />
+            </UnAuthenticated>
+        ) : (
+            <AccountLoaderPage />
+        );
 
     return (
         <>
@@ -545,6 +556,35 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                     ]}
                                                 >
                                                     {(() => {
+                                                        if (
+                                                            (hasBFCoupon ||
+                                                                searchParams.get('plan') === PLANS.NEW_VISIONARY) &&
+                                                            [
+                                                                APPS.PROTONMAIL,
+                                                                APPS.PROTONCALENDAR,
+                                                                APPS.PROTONDRIVE,
+                                                            ].includes(maybePreAppIntent as any)
+                                                        ) {
+                                                            return (
+                                                                <SingleSignupContainerV2
+                                                                    paths={paths}
+                                                                    metaTags={getSignupMeta(maybePreAppIntent)}
+                                                                    activeSessions={activeSessions}
+                                                                    loader={loader}
+                                                                    productParam={maybePreAppIntent}
+                                                                    clientType={clientType}
+                                                                    toApp={maybePreAppIntent}
+                                                                    toAppName={toAppName}
+                                                                    onLogin={handleLogin}
+                                                                    fork={!!forkState}
+                                                                    onBack={
+                                                                        hasBackToSwitch
+                                                                            ? () => history.push(paths.login)
+                                                                            : undefined
+                                                                    }
+                                                                />
+                                                            );
+                                                        }
                                                         return (
                                                             <UnAuthenticated>
                                                                 <SignupContainer
