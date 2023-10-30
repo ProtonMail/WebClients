@@ -82,7 +82,7 @@ SLACK_POST_BODY=$(echo "{
                 \"type\": \"section\",
                 \"text\": {
                 \"type\":\"mrkdwn\",
-                \"text\":\"Download the *_unpacked extension_* <https://gitlab.protontech.ch/web/clients/-/jobs/$CI_JOB_ID/artifacts/download|here> (expires in 1 week)\"
+                \"text\":\"Download all *_build artefacts_* <https://gitlab.protontech.ch/web/clients/-/jobs/$CI_JOB_ID/artifacts/download|here> (expires in 1 week)\"
                 }
             }
             $JIRA_SECTION
