@@ -21,7 +21,6 @@ import {
     ThemeProvider,
     UnleashFlagProvider,
     getSessionTrackingEnabled,
-    useActiveBreakpoint,
 } from '@proton/components';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import authentication from '@proton/shared/lib/authentication/authentication';
@@ -37,7 +36,7 @@ import locales from '../app/locales';
 import MainContainer from './MainContainer';
 import Setup from './Setup';
 import broadcast, { MessageType } from './broadcast';
-import { FullscreenOption, SupportedActions, getApp, getFullscreenOption } from './helper';
+import { SupportedActions, getApp } from './helper';
 
 setTtagLocales(locales);
 
@@ -54,8 +53,6 @@ const App = () => {
     const [UID, setUID] = useState<string | undefined>(() => authentication.getUID());
     const [isLogout, setLogout] = useState(false);
 
-    const { isNarrow } = useActiveBreakpoint();
-
     const searchParams = new URLSearchParams(window.location.search);
     const action = searchParams.get('action') as SupportedActions | null;
     const client = searchParams.get('client');
@@ -64,21 +61,11 @@ const App = () => {
         {
             macOS: {
                 redirect: 'protonvpn://refresh',
-                fullscreen: 'off',
             },
         }[client || ''] || {};
 
     const redirect = getRedirect(searchParams.get('redirect') || defaultValues.redirect || undefined);
-    const fullscreenOption = getFullscreenOption(
-        searchParams.get('fullscreen') || defaultValues.fullscreen || undefined
-    );
     const app = getApp(searchParams.get('app'), redirect);
-    const fullscreen = (() => {
-        if (fullscreenOption === FullscreenOption.Auto) {
-            return isNarrow;
-        }
-        return fullscreenOption !== FullscreenOption.Off;
-    })();
 
     const handleLogin = (UID: string) => {
         authentication.setUID(UID);
@@ -144,9 +131,7 @@ const App = () => {
                                                                             {isLogout ? null : (
                                                                                 <Setup UID={UID} onLogin={handleLogin}>
                                                                                     <MainContainer
-                                                                                        config={enhancedConfig}
                                                                                         action={action}
-                                                                                        fullscreen={fullscreen}
                                                                                         redirect={redirect}
                                                                                         app={app}
                                                                                         searchParams={searchParams}
