@@ -208,6 +208,15 @@ export interface MessageDraftFlags {
     originalAddressID?: string;
 
     /**
+     * Original "Flags" of the referring message.
+     * Needed to know e.g. whether the draft was created (when repling/forwarding) from an autoforwarded message.
+     * This is relevant for attachment decryption as part of initial draft creation, since with E2EE forwardings
+     * the attachments key packets need to be decrypted using the forwardee key. And using such a key for decryption
+     * is generally disallowed.
+     */
+    originalMessageFlags?: number;
+
+    /**
      * Action flags for draft messages
      */
     action?: MESSAGE_ACTIONS;
