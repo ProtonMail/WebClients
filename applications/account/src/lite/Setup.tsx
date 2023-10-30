@@ -66,9 +66,9 @@ const Setup = ({ onLogin, UID, children }: Props) => {
 
     useThemeQueryParameter();
 
-    useEffect(() => {
-        const searchParams = new URLSearchParams(location.search);
+    const searchParams = new URLSearchParams(location.search);
 
+    useEffect(() => {
         const setupCookies = async ({ UID, RefreshToken }: { UID: string; RefreshToken: string }) => {
             const { AccessToken: newAccessToken, RefreshToken: newRefreshToken } =
                 await silentApi<RefreshSessionResponse>(withUIDHeaders(UID, setRefreshCookies({ RefreshToken })));
@@ -217,7 +217,7 @@ const Setup = ({ onLogin, UID, children }: Props) => {
 
     if (loading || !eventManagerRef.current) {
         return (
-            <LiteLayout>
+            <LiteLayout searchParams={searchParams}>
                 <LiteLoaderPage />
             </LiteLayout>
         );
@@ -226,7 +226,7 @@ const Setup = ({ onLogin, UID, children }: Props) => {
     return (
         <EventManagerProvider eventManager={eventManagerRef.current}>
             <ModalsChildren />
-            <LiteLayout>{children}</LiteLayout>
+            {children}
         </EventManagerProvider>
     );
 };
