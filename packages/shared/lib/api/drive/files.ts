@@ -1,5 +1,5 @@
 import { UPLOAD_TIMEOUT } from '../../drive/constants';
-import { CreateDriveFile, UpdateFileRevision } from '../../interfaces/drive/file';
+import { CreateDriveFile, Thumbnail, UpdateFileRevision } from '../../interfaces/drive/file';
 
 export const queryCreateFile = (shareId: string, data: CreateDriveFile) => {
     return {
@@ -40,10 +40,15 @@ export const queryFileRevision = (
     return query;
 };
 
-export const queryFileRevisionThumbnail = (shareId: string, linkId: string, revisionId: string) => {
+export const queryFileRevisionThumbnail = (
+    shareId: string,
+    linkId: string,
+    revisionId: string,
+    thumbnailType: 1 | 2 | 3 = 1
+) => {
     return {
         method: 'get',
-        url: `drive/shares/${shareId}/files/${linkId}/revisions/${revisionId}/thumbnail`,
+        url: `drive/shares/${shareId}/files/${linkId}/revisions/${revisionId}/thumbnail?Type=${thumbnailType}`,
         silence: true,
     };
 };
@@ -70,6 +75,7 @@ export const queryRequestUpload = (data: {
             Token: string;
         };
     }[];
+    ThumbnailList?: Thumbnail[];
     AddressID: string;
     ShareID: string;
     LinkID: string;

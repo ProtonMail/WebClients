@@ -1,5 +1,7 @@
 import { VERIFICATION_STATUS } from '@proton/crypto';
 
+import type { Photo } from '../_photos';
+
 /**
  * Link should not be used directly. It is general set of attributes
  * commont for both EncryptedLink and DecryptedLink.
@@ -54,6 +56,7 @@ interface Link {
             bareUrl: string;
             token: string;
         };
+        photo?: Photo;
     };
     signatureAddress?: string; // Addresss used for key signatures.
     nameSignatureAddress?: string; // Address used for name signature.
@@ -129,6 +132,8 @@ export interface DecryptedLink extends Link {
     digests?: {
         sha1: string;
     };
+
+    duration?: number;
 
     // corruptedLink is set when a link failed to be decrypted.
     // In this case we still want to show it to the user so he can delete it.

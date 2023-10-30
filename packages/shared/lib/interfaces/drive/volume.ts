@@ -36,6 +36,11 @@ export interface RestoreDriveVolume {
         ShareKeyPacket: string;
         PassphraseSignature: string;
     }[];
+    PhotoShares?: {
+        LockedShareID: string;
+        ShareKeyPacket: string;
+        PassphraseSignature: string;
+    }[];
 }
 
 export interface ListDriveVolumeTrashPayload {

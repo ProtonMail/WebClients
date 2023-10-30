@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useState } from 'react';
 
-import { LockedVolumeForRestore, Share, ShareType, ShareWithKey } from './interface';
+import { LockedVolumeForRestore, Share, ShareState, ShareType, ShareWithKey } from './interface';
 
 type SharesState = {
     [shareId: string]: Share | ShareWithKey;
@@ -47,6 +47,7 @@ export function useSharesStateProvider() {
     const getLockedShares = useCallback((): {
         defaultShare: Share | ShareWithKey;
         devices: (Share | ShareWithKey)[];
+        photos: (Share | ShareWithKey)[];
     }[] => {
         return Object.values(state)
             .filter((share) => share.isLocked && share.isDefault && !share.isVolumeSoftDeleted)
@@ -56,11 +57,21 @@ export function useSharesStateProvider() {
                     (share) =>
                         share.isLocked && share.type === ShareType.device && share.volumeId === defaultShare.volumeId
                 ),
+                photos: Object.values(state).filter(
+                    (share) =>
+                        share.isLocked && share.type === ShareType.photos && share.volumeId === defaultShare.volumeId
+                ),
             }));
     }, [state]);
 
     const getDefaultShareId = useCallback((): string | undefined => {
         return findDefaultShareId(Object.entries(state).map(([, share]) => share));
+    }, [state]);
+
+    const getActivePhotosShare = useCallback((): Share | ShareWithKey | undefined => {
+        return Object.values(state).find(
+            (share) => share.state === ShareState.active && !share.isLocked && share.type === ShareType.photos
+        );
     }, [state]);
 
     return {
@@ -69,6 +80,7 @@ export function useSharesStateProvider() {
         getShare,
         getLockedShares,
         getDefaultShareId,
+        getActivePhotosShare,
         setLockedVolumesForRestore,
         lockedVolumesForRestore,
     };

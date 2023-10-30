@@ -1,12 +1,18 @@
+import { c } from 'ttag';
 import { ReadableStream } from 'web-streams-polyfill';
 
-import { queryFileRevision } from '@proton/shared/lib/api/drive/files';
-import { DriveFileBlock, DriveFileRevisionResult } from '@proton/shared/lib/interfaces/drive/file';
+import { queryFileRevision, queryFileRevisionThumbnail } from '@proton/shared/lib/api/drive/files';
+import {
+    DriveFileBlock,
+    DriveFileRevisionResult,
+    DriveFileRevisionThumbnailResult,
+} from '@proton/shared/lib/interfaces/drive/file';
 
 import { streamToBuffer } from '../../utils/stream';
 import { useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
 import { DecryptedLink, SignatureIssues, useLink, useLinksListing } from '../_links';
+import { ThumbnailType } from '../_uploads/media';
 import initDownloadPure, { initDownloadStream } from './download/download';
 import initDownloadLinkFile from './download/downloadLinkFile';
 import downloadThumbnailPure from './download/downloadThumbnail';
@@ -43,7 +49,7 @@ export default function useDownload() {
         linkId: string,
         pagination: Pagination,
         revisionId?: string
-    ): Promise<{ blocks: DriveFileBlock[]; thumbnailHash: string; manifestSignature: string }> => {
+    ): Promise<{ blocks: DriveFileBlock[]; thumbnailHashes: string[]; manifestSignature: string }> => {
         let link = await getLink(abortSignal, shareId, linkId);
         revisionId ||= link.activeRevision?.id;
         if (!revisionId) {
@@ -56,7 +62,8 @@ export default function useDownload() {
         );
         return {
             blocks: Revision.Blocks,
-            thumbnailHash: Revision.ThumbnailHash,
+            // We sort hashes to have the Type 1 always at first place. This is necessary for signature verification.
+            thumbnailHashes: Revision.Thumbnails.sort((a, b) => a.Type - b.Type).map((Thumbnail) => Thumbnail.Hash),
             manifestSignature: Revision.ManifestSignature,
         };
     };
@@ -202,10 +209,51 @@ export default function useDownload() {
         });
     };
 
+    const getThumbnailFromBlobUrl = async (thumbnailUrl: string) => {
+        return fetch(thumbnailUrl)
+            .then((r) => r.blob())
+            .then((blob) => blob.stream() as ReadableStream<Uint8Array>)
+            .then((buffer) => streamToBuffer(buffer));
+    };
+
+    const getPreviewThumbnail = async (abortSignal: AbortSignal, shareId: string, linkId: string) => {
+        const { activeRevision, cachedThumbnailUrl } = await getLink(abortSignal, shareId, linkId);
+        if (!activeRevision?.id) {
+            throw new Error(c('Error').t`The original file has missing active revision`);
+        }
+
+        const res = (await debouncedRequest(
+            queryFileRevisionThumbnail(shareId, linkId, activeRevision.id, ThumbnailType.HD_PREVIEW),
+            abortSignal
+        ).catch((err) => {
+            if (err.data.Code === 2501) {
+                if (cachedThumbnailUrl) {
+                    return;
+                }
+                return debouncedRequest(
+                    queryFileRevisionThumbnail(shareId, linkId, activeRevision.id, ThumbnailType.PREVIEW)
+                );
+            }
+            return err;
+        })) as DriveFileRevisionThumbnailResult;
+        if (!res && cachedThumbnailUrl) {
+            return getThumbnailFromBlobUrl(cachedThumbnailUrl);
+        }
+        const thumbnail = await downloadThumbnail(
+            abortSignal,
+            shareId,
+            linkId,
+            res.ThumbnailBareURL,
+            res.ThumbnailToken
+        );
+        return thumbnail.contents;
+    };
+
     return {
         initDownload,
         downloadStream,
         downloadThumbnail,
+        getPreviewThumbnail,
         checkFirstBlockSignature,
     };
 }

@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
 
 import { useLoading } from '@proton/hooks';
+import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
+import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { isIgnoredError } from '../../utils/errorHandling';
@@ -16,16 +18,17 @@ import { SortParams } from './utils/useSorting';
  * useFileView provides data for file preview.
  */
 export default function useFileView(shareId: string, linkId: string, useNavigation = false, revisionId?: string) {
-    const { downloadStream } = useDownload();
-    const { isLinkLoading, isContentLoading, error, link, contents, downloadFile } = useFileViewBase(
+    const { downloadStream, getPreviewThumbnail } = useDownload();
+    const { isLinkLoading, isContentLoading, error, link, contents, contentsMimeType, downloadFile } = useFileViewBase(
         shareId,
         linkId,
         downloadStream,
-        revisionId
+        revisionId,
+        getPreviewThumbnail
     );
     const navigation = useFileViewNavigation(useNavigation, shareId, link?.parentLinkId, linkId);
 
-    return { navigation, isLinkLoading, isContentLoading, error, link, contents, downloadFile };
+    return { navigation, isLinkLoading, isContentLoading, error, link, contents, contentsMimeType, downloadFile };
 }
 
 export function usePublicFileView(
@@ -35,36 +38,44 @@ export function usePublicFileView(
     sortParams: SortParams = DEFAULT_SORT
 ) {
     const { downloadStream } = usePublicDownload();
-    const { isLinkLoading, isContentLoading, error, link, contents, downloadFile } = useFileViewBase(
+    const { isLinkLoading, isContentLoading, error, link, contents, contentsMimeType, downloadFile } = useFileViewBase(
         shareId,
         linkId,
         downloadStream
     );
     const navigation = usePublicFileViewNavigation(useNavigation, shareId, sortParams, link?.parentLinkId, linkId);
 
-    return { navigation, isLinkLoading, isContentLoading, error, link, contents, downloadFile };
+    return { navigation, isLinkLoading, isContentLoading, error, link, contents, contentsMimeType, downloadFile };
 }
 
 function useFileViewBase(
     shareId: string,
     linkId: string,
     downloadStream: ReturnType<typeof usePublicDownload>['downloadStream'],
-    revisionId?: string
+    revisionId?: string,
+    getPreviewThumbnail?: ReturnType<typeof useDownload>['getPreviewThumbnail']
 ) {
     const { getLink } = useLink();
     const { download } = useDownloadProvider();
-
     const [isContentLoading, withContentLoading] = useLoading(true);
 
     const [error, setError] = useState<any>();
     const [link, setLink] = useState<DecryptedLink>();
     const [contents, setContents] = useState<Uint8Array[]>();
+    const [contentsMimeType, setContentsMimeType] = useState<string>();
+    const [isFallbackContents, setIsFallbackContents] = useState<boolean>(false);
 
     const preloadFile = async (abortSignal: AbortSignal) => {
         const link = await getLink(abortSignal, shareId, linkId);
 
-        if (link && isPreviewAvailable(link.mimeType, link.size)) {
-            setLink(link);
+        if (!link) {
+            setContents(undefined);
+            return;
+        }
+
+        setLink(link);
+        if (isPreviewAvailable(link.mimeType, link.size)) {
+            setContentsMimeType(link.mimeType);
             const { stream, controls } = downloadStream([
                 {
                     ...link,
@@ -77,15 +88,24 @@ function useFileViewBase(
             });
 
             setContents(await streamToBuffer(stream));
-            // After file content download is finished we have complete information
-            // about signatures
-            setLink(await getLink(abortSignal, shareId, linkId));
+            // Fallback is only available for photos in private context
+        } else if (!!link.activeRevision?.photo && getPreviewThumbnail && !isVideo(link.mimeType)) {
+            // We force jpg type as thumbnails are always jpg for photos
+            setContentsMimeType(SupportedMimeTypes.jpg);
+            setIsFallbackContents(true);
+            try {
+                const previewThumbnail = await getPreviewThumbnail(abortSignal, shareId, linkId);
+                setContents(previewThumbnail);
+            } catch {
+                setContents(undefined);
+            }
         } else {
             setContents(undefined);
-            if (link) {
-                setLink(link);
-            }
+            return;
         }
+        // After file content download is finished we have complete information
+        // about signatures
+        setLink(await getLink(abortSignal, shareId, linkId));
     };
 
     useEffect(() => {
@@ -112,10 +132,10 @@ function useFileViewBase(
             {
                 ...link,
                 shareId,
-                buffer: contents,
+                buffer: isFallbackContents ? undefined : contents,
             },
         ]);
-    }, [shareId, link, contents]);
+    }, [shareId, link, contents, isFallbackContents]);
 
     return {
         isLinkLoading: !link && !error,
@@ -123,6 +143,7 @@ function useFileViewBase(
         error,
         link,
         contents,
+        contentsMimeType,
         downloadFile,
     };
 }

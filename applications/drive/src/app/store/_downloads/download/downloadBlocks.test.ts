@@ -32,7 +32,7 @@ const createGetBlocksResponse = (blocks: DriveFileBlock[], manifestSignature = '
     return {
         blocks,
         manifestSignature,
-        thumbnailHash: '',
+        thumbnailHashes: [''],
     };
 };
 

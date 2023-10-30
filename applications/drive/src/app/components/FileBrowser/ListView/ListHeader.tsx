@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { Checkbox, Icon, Loader, TableHeaderCell, TableRowSticky, Tooltip } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
@@ -60,8 +60,14 @@ const HeaderCell = <T,>({
                         }
                         data-testid="checkbox-select-all"
                     >
-                        {selection?.selectionState !== SelectionState.NONE ? (
-                            <span className="ml-2">{c('Info').jt`${selectedCount} selected`}</span>
+                        {selectedCount && selection?.selectionState !== SelectionState.NONE ? (
+                            <span className="ml-2">
+                                {c('Info').ngettext(
+                                    msgid`${selectedCount} selected`,
+                                    `${selectedCount} selected`,
+                                    selectedCount
+                                )}
+                            </span>
                         ) : null}
                     </Checkbox>
                     {selection?.selectionState !== SelectionState.NONE && isLoading ? (
