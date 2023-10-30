@@ -21,7 +21,7 @@ const MainContainer = ({ action, redirect, app, searchParams }: Props) => {
         <>
             {action === SupportedActions.DeleteAccount && <DeleteAccount />}
             {(action === SupportedActions.SubscribeAccount || action === SupportedActions.SubscribeAccountLink) && (
-                <SubscribeAccount app={app} redirect={redirect} queryParams={searchParams} />
+                <SubscribeAccount app={app} redirect={redirect} searchParams={searchParams} />
             )}
         </>
     );

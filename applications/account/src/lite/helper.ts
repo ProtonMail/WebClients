@@ -1,4 +1,4 @@
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, COUPON_CODES } from '@proton/shared/lib/constants';
 
 export enum SupportedActions {
     DeleteAccount = 'delete-account',
@@ -29,3 +29,13 @@ export const getApp = (appQueryParam: string | null, redirect: string | undefine
     }
     return APPS.PROTONVPN_SETTINGS;
 };
+
+const getIsDarkLayout = (searchParams: URLSearchParams) => {
+    const coupon = searchParams.get('coupon') || undefined;
+
+    const dark = coupon?.toLocaleUpperCase() === COUPON_CODES.BLACK_FRIDAY_2023;
+
+    return dark;
+};
+
+export default getIsDarkLayout;
