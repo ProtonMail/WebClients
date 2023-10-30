@@ -43,6 +43,7 @@ import clsx from '@proton/utils/clsx';
 
 import broadcast, { MessageType } from '../broadcast';
 import LiteBox from '../components/LiteBox';
+import LiteLayout from '../components/LiteLayout';
 import LiteLoaderPage from '../components/LiteLoaderPage';
 import PromotionAlreadyApplied from '../components/PromotionAlreadyApplied';
 import PromotionExpired from '../components/PromotionExpired';
@@ -54,11 +55,11 @@ import './SubscribeAccount.scss';
 interface Props {
     redirect?: string | undefined;
     fullscreen?: boolean;
-    queryParams: URLSearchParams;
+    searchParams: URLSearchParams;
     app: APP_NAMES;
 }
 
-const SubscribeAccount = ({ app, redirect, queryParams }: Props) => {
+const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
     const onceCloseRef = useRef(false);
     const topRef = useRef<HTMLDivElement>(null);
     const [user] = useUser();
@@ -77,26 +78,34 @@ const SubscribeAccount = ({ app, redirect, queryParams }: Props) => {
     const canEdit = canPay(user);
 
     if (loadingSubscription || loadingPlans || loadingOrganization) {
-        return <LiteLoaderPage />;
+        return (
+            <LiteLayout searchParams={searchParams}>
+                <LiteLoaderPage />
+            </LiteLayout>
+        );
     }
 
     // Error in usage (this action is not meant to be shown if it cannot be triggered, so untranslated.
     if (!canEdit) {
-        return <LiteBox>Please contact the administrator of the organization to manage the subscription</LiteBox>;
+        return (
+            <LiteLayout searchParams={searchParams} className="flex flex-justify-center flex-align-items-center">
+                <LiteBox>Please contact the administrator of the organization to manage the subscription</LiteBox>
+            </LiteLayout>
+        );
     }
 
-    const maybeStart = queryParams.get('start');
-    const maybeType = queryParams.get('type');
+    const maybeStart = searchParams.get('start');
+    const maybeType = searchParams.get('type');
 
-    const cycleParam = parseInt(queryParams.get('cycle') as any, 10);
+    const cycleParam = parseInt(searchParams.get('cycle') as any, 10);
     const parsedCycle = cycleParam ? getValidCycle(cycleParam) : undefined;
-    const coupon = queryParams.get('coupon') || undefined;
+    const coupon = searchParams.get('coupon') || undefined;
 
-    const currencyParam = queryParams.get('currency')?.toUpperCase();
+    const currencyParam = searchParams.get('currency')?.toUpperCase();
     const parsedCurrency =
         currencyParam && CURRENCIES.includes(currencyParam as any) ? (currencyParam as Currency) : undefined;
 
-    const maybePlanName = queryParams.get('plan') || '';
+    const maybePlanName = searchParams.get('plan') || '';
     const plan =
         maybeType === 'upgrade'
             ? getUpgradedPlan(subscription, app)
@@ -104,13 +113,7 @@ const SubscribeAccount = ({ app, redirect, queryParams }: Props) => {
                   | PLANS
                   | undefined);
 
-    const dark = coupon?.toLocaleUpperCase() === COUPON_CODES.BLACK_FRIDAY_2023;
-
     const { bgClassName, logo } = (() => {
-        if (!dark) {
-            return { bgClassName: '', logo: undefined };
-        }
-
         if (plan === PLANS.VPN) {
             return { bgClassName: 'subscribe-account--vpn-bg', logo: <Logo appName={APPS.PROTONVPN_SETTINGS} /> };
         }
@@ -126,7 +129,16 @@ const SubscribeAccount = ({ app, redirect, queryParams }: Props) => {
         if (plan === PLANS.MAIL || plan === PLANS.MAIL_PRO) {
             return { bgClassName: 'subscribe-account--mail-bg', logo: <Logo appName={APPS.PROTONMAIL} /> };
         }
-        return { bgClassName: 'subscribe-account--mail-bg', logo: <ProtonLogo color="invert" /> };
+
+        return {
+            bgClassName: 'subscribe-account--mail-bg',
+            logo: (
+                <>
+                    <ProtonLogo color="brand" className="block sm:hidden" />
+                    <ProtonLogo color="invert" className="hidden sm:block" />
+                </>
+            ),
+        };
     })();
 
     const step = (() => {
@@ -142,9 +154,9 @@ const SubscribeAccount = ({ app, redirect, queryParams }: Props) => {
         return user.isFree ? SUBSCRIPTION_STEPS.PLAN_SELECTION : SUBSCRIPTION_STEPS.CUSTOMIZATION;
     })();
 
-    const disableCycleSelectorParam = queryParams.get('disableCycleSelector');
-    const disablePlanSelectionParam = queryParams.get('disablePlanSelection');
-    const hideClose = Boolean(queryParams.get('hideClose'));
+    const disableCycleSelectorParam = searchParams.get('disableCycleSelector');
+    const disablePlanSelectionParam = searchParams.get('disablePlanSelection');
+    const hideClose = Boolean(searchParams.get('hideClose'));
 
     const handleNotify = (type: SubscribeType) => {
         if (onceCloseRef.current) {
@@ -167,7 +179,6 @@ const SubscribeAccount = ({ app, redirect, queryParams }: Props) => {
         handleNotify(SubscribeType.Subscribed);
     };
 
-
     const bf2023IsExpired = bf2023IsExpiredFlag && coupon?.toLocaleUpperCase() === COUPON_CODES.BLACK_FRIDAY_2023;
     if (bf2023IsExpired) {
         return <PromotionExpired />;
@@ -179,89 +190,84 @@ const SubscribeAccount = ({ app, redirect, queryParams }: Props) => {
 
     return (
         <div className={clsx(bgClassName, 'h-full overflow-auto')}>
-            {logo ? (
-                <div
-                    className={clsx('mb-0 sm:mb-4 p-5 m-auto max-w-custom')}
-                    style={{ '--max-w-custom': '74rem' }}
-                    ref={topRef}
-                >
-                    {logo}
-                </div>
-            ) : (
-                <div ref={topRef} />
-            )}
-            {type === SubscribeType.Subscribed || type === SubscribeType.Closed ? (
-                <LiteBox center={!logo}>
-                    <SubscribeAccountDone type={type} />
-                </LiteBox>
-            ) : (
-                <SubscriptionContainer
-                    topRef={topRef}
-                    app={app}
-                    subscription={subscription}
-                    plans={plans}
-                    organization={organization}
-                    step={step}
-                    cycle={parsedCycle}
-                    currency={parsedCurrency}
-                    plan={plan}
-                    coupon={coupon}
-                    disablePlanSelection={coupon ? true : Boolean(disablePlanSelectionParam)}
-                    disableCycleSelector={coupon ? true : Boolean(disableCycleSelectorParam)}
-                    disableThanksStep
-                    onSubscribed={handleSuccess}
-                    onUnsubscribed={handleSuccess}
-                    onCancel={handleClose}
-                    metrics={{
-                        source: 'lite-subscribe',
-                    }}
-                    render={({ onSubmit, title, content, footer, step }) => {
-                        return (
-                            <LiteBox
-                                center={false}
-                                maxWidth={step === SUBSCRIPTION_STEPS.PLAN_SELECTION ? 72 : undefined}
-                            >
-                                <div className="flex flex-nowrap flex-item-noshrink flex-align-items-start flex-justify-space-between">
-                                    <div>
-                                        {title && (
-                                            <>
-                                                <h1 className={'text-bold text-4xl'}>{title}</h1>
-                                                <div className="color-weak text-break">{nameToDisplay}</div>
-                                            </>
-                                        )}
-                                    </div>
-                                    {!hideClose && (
-                                        <Tooltip title={c('Action').t`Close`}>
-                                            <Button
-                                                className="flex-item-noshrink"
-                                                icon
-                                                shape="ghost"
-                                                onClick={handleClose}
-                                            >
-                                                <Icon
-                                                    className="modal-close-icon"
-                                                    name="cross-big"
-                                                    alt={c('Action').t`Close`}
-                                                />
-                                            </Button>
-                                        </Tooltip>
-                                    )}
-                                </div>
-                                <form className="overflow-auto" onSubmit={onSubmit}>
-                                    <div>{content}</div>
-                                    {footer && <div className="mt-8">{footer}</div>}
-                                </form>
-                            </LiteBox>
-                        );
-                    }}
-                />
-            )}
-            {dark && (
-                <div className="my-8">
+            <div className="min-h-custom flex flex-column flex-nowrap" style={{ '--min-h-custom': '100vh' }}>
+                <div className="flex-item-fluid-auto">
                     <div
-                        className="px-2 pt-12 pb-4 m-auto max-w-custom"
-                        style={{ '--max-w-custom': step === SUBSCRIPTION_STEPS.PLAN_SELECTION ? '72rem' : '52rem' }}
+                        className={clsx('mb-0 sm:mb-4 pb-0 p-4 sm:pb-6 sm:p-6 m-auto max-w-custom')}
+                        style={{ '--max-w-custom': '74rem' }}
+                        ref={topRef}
                     >
+                        {logo}
+                    </div>
+                    <div className="flex flex-justify-center">
+                        {type === SubscribeType.Subscribed || type === SubscribeType.Closed ? (
+                            <LiteBox>
+                                <SubscribeAccountDone type={type} />
+                            </LiteBox>
+                        ) : (
+                            <SubscriptionContainer
+                                topRef={topRef}
+                                app={app}
+                                subscription={subscription}
+                                plans={plans}
+                                organization={organization}
+                                step={step}
+                                cycle={parsedCycle}
+                                currency={parsedCurrency}
+                                plan={plan}
+                                coupon={coupon}
+                                disablePlanSelection={coupon ? true : Boolean(disablePlanSelectionParam)}
+                                disableCycleSelector={coupon ? true : Boolean(disableCycleSelectorParam)}
+                                disableThanksStep
+                                onSubscribed={handleSuccess}
+                                onUnsubscribed={handleSuccess}
+                                onCancel={handleClose}
+                                metrics={{
+                                    source: 'lite-subscribe',
+                                }}
+                                render={({ onSubmit, title, content, footer, step }) => {
+                                    return (
+                                        <LiteBox maxWidth={step === SUBSCRIPTION_STEPS.PLAN_SELECTION ? 72 : undefined}>
+                                            <div className="flex flex-nowrap flex-item-noshrink flex-align-items-start flex-justify-space-between">
+                                                <div>
+                                                    {title && (
+                                                        <>
+                                                            <h1 className={'text-bold text-4xl'}>{title}</h1>
+                                                            <div className="color-weak text-break">{nameToDisplay}</div>
+                                                        </>
+                                                    )}
+                                                </div>
+                                                {!hideClose && (
+                                                    <Tooltip title={c('Action').t`Close`}>
+                                                        <Button
+                                                            className="flex-item-noshrink"
+                                                            icon
+                                                            shape="ghost"
+                                                            onClick={handleClose}
+                                                        >
+                                                            <Icon
+                                                                className="modal-close-icon"
+                                                                name="cross-big"
+                                                                alt={c('Action').t`Close`}
+                                                            />
+                                                        </Button>
+                                                    </Tooltip>
+                                                )}
+                                            </div>
+                                            <form className="overflow-auto" onSubmit={onSubmit}>
+                                                <div>{content}</div>
+                                                {footer && <div className="mt-8">{footer}</div>}
+                                            </form>
+                                        </LiteBox>
+                                    );
+                                }}
+                            />
+                        )}
+                    </div>
+                </div>
+
+                <div className="my-8 hidden sm:block">
+                    <div className="px-4 pt-4 sm:pt-12 pb-4 m-auto max-w-custom" style={{ '--max-w-custom': '52rem' }}>
                         <footer className="text-sm">
                             <div className="mb-1">
                                 <div className="flex gap-1">
@@ -304,7 +310,7 @@ const SubscribeAccount = ({ app, redirect, queryParams }: Props) => {
                         </footer>
                     </div>
                 </div>
-            )}
+            </div>
         </div>
     );
 };
