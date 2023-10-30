@@ -41,7 +41,7 @@ export function useLinksStateProvider() {
     const [state, setState] = useState<LinksState>({});
 
     useEffect(() => {
-        const callbackId = events.eventHandlers.register((volumeId, events) =>
+        const callbackId = events.eventHandlers.register((_volumeId, events) =>
             setState((state) => updateByEvents(state, events))
         );
         return () => {
@@ -450,6 +450,7 @@ function getNewDecryptedLink(original: Link, newLink: Link): DecryptedLink | und
             encryptedName: original.decrypted.encryptedName,
             name: original.decrypted.name,
             fileModifyTime: original.decrypted.fileModifyTime,
+            duration: original.decrypted.duration,
             corruptedLink: original.decrypted.corruptedLink,
             ...getDecryptedLinkComputedData(
                 original.decrypted,

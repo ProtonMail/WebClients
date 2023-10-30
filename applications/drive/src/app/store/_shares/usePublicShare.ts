@@ -8,7 +8,9 @@ import { computeKeyPassword } from '@proton/srp';
 import { usePublicSession } from '../_api';
 import { useLink } from '../_links';
 import useLinksState from '../_links/useLinksState';
+import { ShareState, ShareType } from './interface';
 import useSharesKeys from './useSharesKeys';
+import useSharesState from './useSharesState';
 
 /**
  * usePublicShare loads shared share with link to the store and decrypts them.
@@ -18,6 +20,7 @@ export default function usePublicShare() {
     const { request, getSessionInfo } = usePublicSession();
     const sharesKeys = useSharesKeys();
     const { setLinks } = useLinksState();
+    const { setShares } = useSharesState();
     const { getLink, getLinkPassphraseAndSessionKey } = useLink();
 
     const loadPublicShare = async (abortSignal: AbortSignal) => {
@@ -97,6 +100,30 @@ export default function usePublicShare() {
                 },
             },
         ]);
+
+        // We need to set the share in cache as `getLink` will attempt
+        // to fetch the share to determine it's type.
+        // This isn't used in the public context.
+
+        setShares([
+            {
+                shareId: sessionInfo.token,
+                type: ShareType.standard,
+                passphrase: Token.SharePassphrase,
+                key: Token.ShareKey,
+                passphraseSignature: '',
+                creator: '',
+                addressId: '',
+                rootLinkId: '',
+                volumeId: '',
+                isLocked: false,
+                isDefault: false,
+                isVolumeSoftDeleted: false,
+                possibleKeyPackets: [],
+                state: ShareState.active,
+            },
+        ]);
+
         const link = await getLink(abortSignal, sessionInfo.token, Token.LinkID);
 
         return {

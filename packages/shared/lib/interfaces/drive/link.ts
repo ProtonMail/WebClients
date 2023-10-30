@@ -1,5 +1,6 @@
-import { SORT_DIRECTION } from '../../constants';
-import { FileRevisionState } from './file';
+import type { SORT_DIRECTION } from '../../constants';
+import type { FileRevisionState } from './file';
+import type { Photo } from './photos';
 
 export enum LinkType {
     FOLDER = 1,
@@ -30,6 +31,7 @@ interface FileProperties {
             Token: string;
             URL: string;
         };
+        Photo: Photo | null;
     } | null;
 }
 

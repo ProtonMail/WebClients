@@ -45,10 +45,10 @@ interface Props {
     onClose?: () => void;
     onDownload?: () => void;
     onSave?: (content: Uint8Array[]) => Promise<void>;
-    onDetail?: () => void;
+    onDetails?: () => void;
     onShare?: () => void;
     onRestore?: () => void; // revision's specific
-    date?: number | Date;
+    date?: Date | string | number;
 
     colorUi?: 'standard' | 'prominent';
 
@@ -173,7 +173,7 @@ const FilePreview = (
         onClose,
         onDownload,
         onSave,
-        onDetail,
+        onDetails,
         onShare,
         onRestore,
         date,
@@ -262,7 +262,7 @@ const FilePreview = (
                 onClose={handleClose}
                 onDownload={onDownload}
                 onSave={handleSave}
-                onDetail={onDetail}
+                onDetails={onDetails}
                 onShare={onShare}
                 onRestore={onRestore}
                 date={date}

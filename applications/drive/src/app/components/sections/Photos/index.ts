@@ -1,0 +1,1 @@
+export { PhotosView } from './PhotosView';

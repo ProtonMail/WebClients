@@ -127,3 +127,4 @@ export { default as useSearchParamsEffect } from './useSearchParamsEffect';
 export * from './drawer';
 export { default as useDynamicFavicon } from './useDynamicFavicon';
 export * from './useDriveWindowsGASpotlight';
+export { useDragToScroll } from './useDragToScroll';
