@@ -118,19 +118,21 @@ const getPremiumInboxFeature = (domains?: number, addresses?: number) => {
     const name = c('bf2023: Deal details').t`${MAIL_SHORT_APP_NAME} Plus and ${CALENDAR_SHORT_APP_NAME}`;
 
     if (domains && addresses) {
-        if (addresses === 10) {
-            const aliases = 10;
+        if (domains === 1) {
             return {
                 name: c('bf2023: Deal details').t`All paid ${MAIL_SHORT_APP_NAME} and ${CALENDAR_APP_NAME} features`,
                 tooltip: c('bf2023: Tooltip')
-                    .t`Includes support for ${domains} custom email domain, ${addresses} email addresses, ${aliases} hide-my-email aliases, calendar sharing, and more.`,
+                    .t`Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.`,
             };
         }
 
         return {
             name,
-            tooltip: c('bf2023: Tooltip')
-                .t`Includes support for ${domains} custom email domain, ${addresses} email addresses, unlimited hide-my-email aliases, calendar sharing, and more.`,
+            tooltip: c('bf2023: Tooltip').ngettext(
+                msgid`Includes support for 3 custom email domains, ${addresses} email address, unlimited hide-my-email aliases, calendar sharing, and more.`,
+                `Includes support for 3 custom email domains, ${addresses} email addresses, unlimited hide-my-email aliases, calendar sharing, and more.`,
+                addresses
+            ),
         };
     }
 
