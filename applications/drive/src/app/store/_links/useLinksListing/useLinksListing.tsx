@@ -190,7 +190,7 @@ export function useLinksListingProvider() {
         query: string,
         shareId: string,
         linkIds: string[],
-        cache: boolean = true
+        cache: boolean = false
     ): Promise<{
         links: EncryptedLink[];
         parents: EncryptedLink[];

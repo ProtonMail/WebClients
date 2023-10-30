@@ -117,11 +117,11 @@ const SharedLinks = ({ shareId, sharedLinksView }: Props) => {
         [navigateToLink, shareId, browserItems]
     );
 
-    const handleItemRender = useCallback((item: SharedLinkItem) => {
+    const handleItemRender = (item: SharedLinkItem) => {
         if (item.hasThumbnail && item.activeRevision && !item.cachedThumbnailUrl) {
-            thumbnails.addToDownloadQueue(shareId, item.id, item.activeRevision.id);
+            thumbnails.addToDownloadQueue(item.rootShareId, item.id, item.activeRevision.id);
         }
-    }, []);
+    };
 
     /* eslint-disable react/display-name */
     const GridHeaderComponent = useMemo(

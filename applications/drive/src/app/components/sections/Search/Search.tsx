@@ -105,11 +105,11 @@ export const Search = ({ shareId, searchView }: Props) => {
         [sortParams.sortField, sortParams.sortOrder, isLoading]
     );
 
-    const handleItemRender = useCallback((item: SearchItem) => {
+    const handleItemRender = (item: SearchItem) => {
         if (item.hasThumbnail && item.activeRevision && !item.cachedThumbnailUrl) {
-            thumbnails.addToDownloadQueue(shareId, item.id, item.activeRevision.id);
+            thumbnails.addToDownloadQueue(item.rootShareId, item.id, item.activeRevision.id);
         }
-    }, []);
+    };
 
     const handleClick = useCallback(
         (id: BrowserItemId) => {

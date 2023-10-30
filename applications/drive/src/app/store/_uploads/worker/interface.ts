@@ -1,4 +1,4 @@
-import { EncryptedBlock, EncryptedThumbnailBlock } from '../interface';
+import { EncryptedBlock, ThumbnailEncryptedBlock } from '../interface';
 
 export type BlockHash = {
     index: number;
@@ -6,10 +6,11 @@ export type BlockHash = {
 };
 
 export type UploadingBlock = {
-    block: EncryptedBlock | EncryptedThumbnailBlock;
+    block: EncryptedBlock | ThumbnailEncryptedBlock;
     uploadLink: string;
     uploadToken: string;
     isTokenExpired: () => boolean;
+    isThumbnail?: boolean;
 };
 
 export type UploadingBlockControl = {

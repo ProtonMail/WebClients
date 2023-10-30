@@ -32,6 +32,7 @@ import { initUploadFileWorker } from '../initUploadFileWorker';
 import {
     FileKeys,
     FileRequestBlock,
+    PhotoUpload,
     ThumbnailRequestBlock,
     TransferConflictStrategy,
     UploadFileControls,
@@ -69,7 +70,8 @@ export default function useUploadFile() {
         shareId: string,
         parentId: string,
         file: File,
-        getFileConflictStrategy: ConflictStrategyHandler
+        getFileConflictStrategy: ConflictStrategyHandler,
+        isForPhotos: boolean = false
     ): UploadFileControls => {
         let shareKeysCache: Awaited<ReturnType<typeof getShareCreatorKeys>>;
         const getShareKeys = async (abortSignal: AbortSignal) => {
@@ -235,6 +237,15 @@ export default function useUploadFile() {
         const createFileRevision = queuedFunction(
             'create_file_revision',
             async (abortSignal: AbortSignal, mimeType: string, keys: FileKeys): Promise<FileRevision> => {
+                if (isForPhotos) {
+                    const parentHashKey = await getLinkHashKey(abortSignal, shareId, parentId);
+                    if (!parentHashKey) {
+                        throw Error('Missing hash key on folder link');
+                    }
+                    const hash = await generateLookupHash(file.name, parentHashKey);
+
+                    return createFile(abortSignal, file.name, mimeType, hash, keys);
+                }
                 const {
                     filename: newName,
                     hash,
@@ -253,7 +264,9 @@ export default function useUploadFile() {
                     // with new upload - it needs to be A (2), not just A.
                     return replaceDraft(abortSignal, newName, mimeType, hash, keys, draftLinkId, clientUid);
                 }
-                if (file.name === newName) {
+
+                // TODO: Remove isForPhotos when we will implement Photos conflict check
+                if (file.name === newName || isForPhotos) {
                     return createFile(abortSignal, file.name, mimeType, hash, keys);
                 }
                 const link = await getLinkByName(abortSignal, shareId, parentId, file.name);
@@ -292,7 +305,7 @@ export default function useUploadFile() {
         // with created file or revision to do proper clean-up.
         let createdFileRevisionPromise: Promise<FileRevision>;
 
-        return initUploadFileWorker(file, {
+        return initUploadFileWorker(file, isForPhotos, {
             initialize: async (abortSignal: AbortSignal) => {
                 const [addressKeyInfo, parentPrivateKey] = await Promise.all([
                     getShareKeys(abortSignal),
@@ -305,14 +318,18 @@ export default function useUploadFile() {
             },
             createFileRevision: async (abortSignal: AbortSignal, mimeType: string, keys: FileKeys) => {
                 createdFileRevisionPromise = createFileRevision(abortSignal, mimeType, keys);
-                const createdFileRevision = await createdFileRevisionPromise;
-                const addressKeyInfo = await getShareKeys(abortSignal);
+                const [createdFileRevision, addressKeyInfo, parentHashKey] = await Promise.all([
+                    createdFileRevisionPromise,
+                    getShareKeys(abortSignal),
+                    getLinkHashKey(abortSignal, shareId, parentId),
+                ]);
                 checkSignal(abortSignal, createdFileRevision.filename);
 
                 return {
                     fileName: createdFileRevision.filename,
                     privateKey: createdFileRevision.privateKey,
                     sessionKey: createdFileRevision.sessionKey,
+                    parentHashKey,
                     address: {
                         privateKey: addressKeyInfo.privateKey,
                         email: addressKeyInfo.address.Email,
@@ -353,21 +370,14 @@ export default function useUploadFile() {
             createBlockLinks: async (
                 abortSignal: AbortSignal,
                 fileBlocks: FileRequestBlock[],
-                thumbnailBlock?: ThumbnailRequestBlock
+                thumbnailBlocks?: ThumbnailRequestBlock[]
             ) => {
                 const createdFileRevision = await createdFileRevisionPromise;
                 if (!createdFileRevision) {
                     throw new Error(`Draft for "${file.name}" hasn't been created prior to uploading`);
                 }
                 const addressKeyInfo = await getShareKeys(abortSignal);
-                const thumbnailParams = thumbnailBlock
-                    ? {
-                          Thumbnail: 1,
-                          ThumbnailHash: uint8ArrayToBase64String(thumbnailBlock.hash),
-                          ThumbnailSize: thumbnailBlock.size,
-                      }
-                    : {};
-                const { UploadLinks, ThumbnailLink } = await debouncedRequest<RequestUploadResult>(
+                const { UploadLinks, ThumbnailLinks } = await debouncedRequest<RequestUploadResult>(
                     queryRequestUpload({
                         BlockList: fileBlocks.map((block) => ({
                             Index: block.index,
@@ -382,29 +392,30 @@ export default function useUploadFile() {
                         LinkID: createdFileRevision.fileID,
                         RevisionID: createdFileRevision.revisionID,
                         ShareID: shareId,
-                        ...thumbnailParams,
+                        ThumbnailList: thumbnailBlocks?.map((block) => ({
+                            Hash: uint8ArrayToBase64String(block.hash),
+                            Size: block.size,
+                            Type: block.type,
+                        })),
                     }),
                     abortSignal
                 );
-
                 return {
                     fileLinks: UploadLinks.map((link, index) => ({
                         index: fileBlocks[index].index,
                         token: link.Token,
                         url: link.BareURL,
                     })),
-                    thumbnailLink: ThumbnailLink
-                        ? {
-                              index: 0,
-                              token: ThumbnailLink.Token,
-                              url: ThumbnailLink.BareURL,
-                          }
-                        : undefined,
+                    thumbnailLinks: ThumbnailLinks?.map((link, index) => ({
+                        index,
+                        token: link.Token,
+                        url: link.BareURL,
+                    })),
                 };
             },
             finalize: queuedFunction(
                 'upload_finalize',
-                async (signature: string, signatureAddress: string, xattr: string) => {
+                async (signature: string, signatureAddress: string, xattr: string, photo?: PhotoUpload) => {
                     const createdFileRevision = await createdFileRevisionPromise;
                     if (!createdFileRevision) {
                         throw new Error(`Draft for "${file.name}" hasn't been created prior to uploading`);
@@ -420,6 +431,14 @@ export default function useUploadFile() {
                             ManifestSignature: signature,
                             SignatureAddress: signatureAddress,
                             XAttr: xattr,
+                            Photo: photo
+                                ? {
+                                      MainPhotoLinkID: null, // This is for live photos
+                                      CaptureTime: photo.captureTime,
+                                      Exif: photo.encryptedExif,
+                                      ContentHash: photo.contentHash,
+                                  }
+                                : undefined,
                         })
                     );
 

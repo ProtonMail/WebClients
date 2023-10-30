@@ -1,16 +1,28 @@
 import { Sha1 } from '@openpgp/asmcrypto.js/dist_es8/hash/sha1/sha1';
+import { getUnixTime } from 'date-fns';
 
 import { PrivateKeyReference, SessionKey } from '@proton/crypto';
 import { arrayToHexString } from '@proton/crypto/lib/utils';
-import { generateContentKeys, generateNodeKeys, sign as signMessage } from '@proton/shared/lib/keys/driveKeys';
+import {
+    generateContentKeys,
+    generateLookupHash,
+    generateNodeKeys,
+    sign as signMessage,
+} from '@proton/shared/lib/keys/driveKeys';
 
 import { encryptFileExtendedAttributes } from '../../_links';
-import { EncryptedBlock, EncryptedThumbnailBlock, Link, VerificationData } from '../interface';
-import { ThumbnailData } from '../thumbnail';
+import {
+    getCaptureDateTime,
+    getExifInfo,
+    getPhotoDimensions,
+    getPhotoExtendedAttributes,
+} from '../../_photos/exifInfo';
+import { EncryptedBlock, Link, ThumbnailEncryptedBlock, VerificationData } from '../interface';
+import { Media, ThumbnailInfo } from '../media';
 import { getErrorString } from '../utils';
 import { UploadWorker } from '../workerController';
 import UploadWorkerBuffer from './buffer';
-import generateEncryptedBlocks from './encryption';
+import { generateEncryptedBlocks, generateThumbnailEncryptedBlocks } from './encryption';
 import { Pauser } from './pauser';
 import startUploadJobs from './upload';
 import { createVerifier } from './verifier';
@@ -66,11 +78,22 @@ async function generateKeys(addressPrivateKey: PrivateKeyReference, parentPrivat
  */
 async function start(
     file: File,
-    thumbnailData: ThumbnailData | undefined,
+    {
+        mimeType,
+        isForPhotos,
+        media,
+        thumbnails,
+    }: {
+        mimeType: string;
+        isForPhotos: boolean;
+        media?: Media;
+        thumbnails?: ThumbnailInfo[];
+    },
     addressPrivateKey: PrivateKeyReference,
     addressEmail: string,
     privateKey: PrivateKeyReference,
     sessionKey: SessionKey,
+    parentHashKey: Uint8Array,
     verificationData: VerificationData
 ) {
     const hashInstance = new Sha1();
@@ -80,19 +103,19 @@ async function start(
         .feedEncryptedBlocks(
             generateEncryptedBlocks(
                 file,
-                thumbnailData?.thumbnailData,
                 addressPrivateKey,
                 privateKey,
                 sessionKey,
                 uploadWorker.postNotifySentry,
                 hashInstance,
                 verifier
-            )
+            ),
+            thumbnails && generateThumbnailEncryptedBlocks(thumbnails, addressPrivateKey, sessionKey)
         )
         .catch((err) => uploadWorker.postError(getErrorString(err)));
 
-    buffer.runBlockLinksCreation((blocks: EncryptedBlock[], thumbnailBlock?: EncryptedThumbnailBlock) => {
-        uploadWorker.postCreateBlocks(blocks, thumbnailBlock);
+    buffer.runBlockLinksCreation((blocks: EncryptedBlock[], thumbnailBlocks?: ThumbnailEncryptedBlock[]) => {
+        uploadWorker.postCreateBlocks(blocks, thumbnailBlocks);
     });
 
     const uploadingBlocksGenerator = buffer.generateUploadingBlocks();
@@ -100,29 +123,55 @@ async function start(
         const fileHash = buffer.hash;
         const sha1Digest = hashInstance.finish().result;
 
-        const [signature, xattr] = await Promise.all([
+        const [signature, exifInfo] = await Promise.all([
             signMessage(fileHash, [addressPrivateKey]),
+            isForPhotos ? getExifInfo(file, mimeType) : undefined,
+        ]);
+        const photoDimensions = exifInfo ? getPhotoDimensions(exifInfo) : {};
+
+        const { width, height, duration } = {
+            width: media?.width || photoDimensions.width,
+            height: media?.height || photoDimensions.height,
+            duration: media?.duration,
+        };
+
+        const sha1 = sha1Digest ? arrayToHexString(sha1Digest) : undefined;
+
+        const [xattr] = await Promise.all([
             encryptFileExtendedAttributes(
                 {
                     file,
                     media:
-                        thumbnailData?.originalWidth && thumbnailData?.originalHeight
+                        width && height
                             ? {
-                                  width: thumbnailData.originalWidth,
-                                  height: thumbnailData.originalHeight,
+                                  width,
+                                  height,
+                                  duration,
                               }
                             : undefined,
-                    digests: sha1Digest
+                    digests: sha1
                         ? {
-                              sha1: arrayToHexString(sha1Digest),
+                              sha1,
                           }
                         : undefined,
+                    ...(exifInfo ? getPhotoExtendedAttributes(exifInfo) : {}),
                 },
                 privateKey,
                 addressPrivateKey
             ),
         ]);
-        uploadWorker.postDone(signature, addressEmail, xattr);
+
+        uploadWorker.postDone(
+            signature,
+            addressEmail,
+            xattr,
+            isForPhotos
+                ? {
+                      captureTime: getUnixTime(getCaptureDateTime(file, exifInfo?.exif)),
+                      contentHash: sha1 ? await generateLookupHash(sha1, parentHashKey) : undefined,
+                  }
+                : undefined
+        );
     };
     startUploadJobs(
         pauser,
@@ -137,9 +186,12 @@ async function start(
 /**
  * createdBlocks is called as a result to postCreateBlocks.
  */
-function createdBlocks(fileLinks: Link[], thumbnailLink?: Link) {
-    const links = thumbnailLink ? [thumbnailLink, ...fileLinks] : fileLinks;
-    buffer.setBlockLinks(links);
+function createdBlocks(fileLinks: Link[], thumbnailLinks?: Link[]) {
+    buffer.setFileBlockLinks(fileLinks);
+    if (thumbnailLinks) {
+        buffer.setThumbnailBlockLinks(thumbnailLinks);
+    }
+    buffer.requestingBlockLinks = false;
 }
 
 function pause() {

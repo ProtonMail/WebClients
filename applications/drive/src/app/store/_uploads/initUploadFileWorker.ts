@@ -1,21 +1,23 @@
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { TransferCancel } from '../../components/TransferManager/transfer';
-import {
+import type {
     FileKeys,
     FileRequestBlock,
+    PhotoUpload,
     ThumbnailRequestBlock,
     UploadCallbacks,
     UploadFileControls,
     UploadFileProgressCallbacks,
 } from './interface';
+import { getMediaInfo } from './media';
 import { mimeTypeFromFile } from './mimeTypeParser/mimeTypeParser';
-import { makeThumbnail } from './thumbnail';
 import { UploadWorkerController } from './workerController';
 
 export function initUploadFileWorker(
     file: File,
-    { initialize, createFileRevision, getVerificationData, createBlockLinks, finalize, onError }: UploadCallbacks
+    isForPhotos: boolean,
+    { initialize, createFileRevision, createBlockLinks, getVerificationData, finalize, onError }: UploadCallbacks
 ): UploadFileControls {
     const abortController = new AbortController();
     let workerApi: UploadWorkerController;
@@ -28,12 +30,7 @@ export function initUploadFileWorker(
     const start = async ({ onInit, onProgress, onNetworkError, onFinalize }: UploadFileProgressCallbacks = {}) => {
         // Worker has a slight overhead about 40 ms. Let's start generating
         // thumbnail a bit sooner.
-        const thumbnailDataPromise = mimeTypePromise.then(async (mimeType) =>
-            makeThumbnail(mimeType, file).catch((err) => {
-                traceError(err);
-                return undefined;
-            })
-        );
+        const mediaInfoPromise = getMediaInfo(mimeTypePromise, file, isForPhotos);
 
         return new Promise<void>((resolve, reject) => {
             const worker = new Worker(
@@ -52,16 +49,26 @@ export function initUploadFileWorker(
                                     onInit?.(mimeType, fileRevision.fileName);
 
                                     return Promise.all([
-                                        thumbnailDataPromise,
+                                        mediaInfoPromise,
                                         getVerificationData(abortController.signal),
-                                    ]).then(async ([thumbnailData, verificationData]) => {
+                                    ]).then(async ([mediaInfo, verificationData]) => {
                                         await workerApi.postStart(
                                             file,
-                                            thumbnailData,
+                                            {
+                                                mimeType,
+                                                isForPhotos,
+                                                media: {
+                                                    width: mediaInfo?.width,
+                                                    height: mediaInfo?.height,
+                                                    duration: mediaInfo?.duration,
+                                                },
+                                                thumbnails: mediaInfo?.thumbnails,
+                                            },
                                             fileRevision.address.privateKey,
                                             fileRevision.address.email,
                                             fileRevision.privateKey,
                                             fileRevision.sessionKey,
+                                            fileRevision.parentHashKey,
                                             verificationData
                                         );
                                     });
@@ -70,17 +77,17 @@ export function initUploadFileWorker(
                         })
                         .catch(reject);
                 },
-                createBlocks: (fileBlocks: FileRequestBlock[], thumbnailBlock?: ThumbnailRequestBlock) => {
-                    createBlockLinks(abortController.signal, fileBlocks, thumbnailBlock)
-                        .then(({ fileLinks, thumbnailLink }) => workerApi.postCreatedBlocks(fileLinks, thumbnailLink))
+                createBlocks: (fileBlocks: FileRequestBlock[], thumbnailBlocks?: ThumbnailRequestBlock[]) => {
+                    createBlockLinks(abortController.signal, fileBlocks, thumbnailBlocks)
+                        .then(({ fileLinks, thumbnailLinks }) => workerApi.postCreatedBlocks(fileLinks, thumbnailLinks))
                         .catch(reject);
                 },
                 onProgress: (increment: number) => {
                     onProgress?.(increment);
                 },
-                finalize: (signature: string, signatureAddress: string, xattr: string) => {
+                finalize: (signature: string, signatureAddress: string, xattr: string, photo?: PhotoUpload) => {
                     onFinalize?.();
-                    finalize(signature, signatureAddress, xattr).then(resolve).catch(reject);
+                    finalize(signature, signatureAddress, xattr, photo).then(resolve).catch(reject);
                 },
                 onNetworkError: (error: string) => {
                     onNetworkError?.(error);
