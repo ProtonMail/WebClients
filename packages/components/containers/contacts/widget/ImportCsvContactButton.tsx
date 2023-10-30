@@ -1,7 +1,12 @@
 import { c } from 'ttag';
 
 import { EasySwitchOauthImportButton } from '@proton/activation';
-import { EASY_SWITCH_SOURCE, EasySwitchFeatureFlag, ImportType } from '@proton/activation/src/interface';
+import {
+    EASY_SWITCH_SOURCE,
+    EasySwitchFeatureFlag,
+    ImportProvider,
+    ImportType,
+} from '@proton/activation/src/interface';
 
 import { Loader, PrimaryButton } from '../../../components';
 import { useFeature, useUser } from '../../../hooks';
@@ -26,20 +31,37 @@ const ImportCsvContactButton = ({ easySwitchSource, onImport, onClose }: Props) 
     const disabled = !user.hasNonDelinquentScope;
 
     return (
-        <>
+        <div className="w-5/6">
             {!isImporterInMaintenance && (
-                <EasySwitchOauthImportButton
-                    className="mr-4 mb-2"
-                    defaultCheckedTypes={[ImportType.CONTACTS]}
-                    displayOn="GoogleContacts"
-                    source={easySwitchSource}
-                    onClick={onClose}
-                />
+                <>
+                    <EasySwitchOauthImportButton
+                        className="mr-4 mb-2 w-full"
+                        defaultCheckedTypes={[ImportType.CONTACTS]}
+                        displayOn="GoogleContacts"
+                        source={easySwitchSource}
+                        onClick={onClose}
+                        provider={ImportProvider.GOOGLE}
+                    />
+                    <EasySwitchOauthImportButton
+                        className="mr-4 mb-2 w-full"
+                        defaultCheckedTypes={[ImportType.CONTACTS]}
+                        displayOn="OutlookContacts"
+                        source={easySwitchSource}
+                        onClick={onClose}
+                        provider={ImportProvider.OUTLOOK}
+                    />
+                </>
             )}
-            <PrimaryButton className="mb-2" id="import-contacts-button" disabled={disabled} onClick={onImport}>
+            <PrimaryButton
+                fullWidth
+                className="mb-2"
+                id="import-contacts-button"
+                disabled={disabled}
+                onClick={onImport}
+            >
                 {c('Action').t`Import from .csv or vCard`}
             </PrimaryButton>
-        </>
+        </div>
     );
 };
 
