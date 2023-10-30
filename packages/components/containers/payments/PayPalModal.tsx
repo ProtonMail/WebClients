@@ -46,25 +46,32 @@ const PayPalModal = ({ onClose, ...rest }: ModalProps) => {
     }, []);
 
     const handleSubmit = async (data: PaymentTokenResult) => {
-        abortRef.current = new AbortController();
-        await ensureTokenChargeable({
-            Token: data.Token,
-            api,
-            ApprovalURL: data.ApprovalURL,
-            ReturnHost: data.ReturnHost,
-            signal: abortRef.current.signal,
-        });
-        await api(
-            setPaymentMethod({
-                Type: PAYMENT_METHOD_TYPES.TOKEN,
-                Details: {
-                    Token: data.Token,
-                },
-            })
-        );
-        await call();
-        onClose?.();
-        createNotification({ text: c('Success').t`Payment method added` });
+        try {
+            abortRef.current = new AbortController();
+            await ensureTokenChargeable({
+                Token: data.Token,
+                api,
+                ApprovalURL: data.ApprovalURL,
+                ReturnHost: data.ReturnHost,
+                signal: abortRef.current.signal,
+            });
+            await api(
+                setPaymentMethod({
+                    Type: PAYMENT_METHOD_TYPES.TOKEN,
+                    Details: {
+                        Token: data.Token,
+                    },
+                })
+            );
+            await call();
+            onClose?.();
+            createNotification({ text: c('Success').t`Payment method added` });
+        } catch (error: any) {
+            // if not coming from API error
+            if (error && error.message && !error.config) {
+                createNotification({ text: error.message, type: 'error' });
+            }
+        }
     };
 
     return (
