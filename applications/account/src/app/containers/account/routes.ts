@@ -12,7 +12,7 @@ import {
     REFERRAL_PROGRAM_MAX_AMOUNT,
 } from '@proton/shared/lib/constants';
 import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
-import { getHasVpnB2BPlan, hasVPN, hasVPNPassBundle } from '@proton/shared/lib/helpers/subscription';
+import { getHasVpnB2BPlan, hasCancellablePlan } from '@proton/shared/lib/helpers/subscription';
 import { Organization, Renew, Subscription, UserModel, UserType } from '@proton/shared/lib/interfaces';
 import { isOrganizationFamily, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
 
@@ -57,9 +57,9 @@ export const getAccountAppRoutes = ({
     const isVisionaryPlan = !!organization && isOrganizationVisionary(organization);
     const isMemberProton = Type === UserType.PROTON;
 
-    // that's different from user.hasPaidVpn. That's because hasPaidVpn is true even if user has the unlimited plan
-    const hasVpnPlan = hasVPN(subscription) || hasVPNPassBundle(subscription);
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
+
+    const cancellablePlan = hasCancellablePlan(subscription);
 
     return <const>{
         header: c('Settings section title').t`Account`,
@@ -107,17 +107,18 @@ export const getAccountAppRoutes = ({
                     {
                         text: c('Title').t`Cancel subscription`,
                         id: 'cancel-subscription',
-                        available: isPaid && canPay && hasVpnPlan && subscription?.Renew === Renew.Enabled,
+                        available: isPaid && canPay && cancellablePlan && subscription?.Renew === Renew.Enabled,
                     },
                     {
                         text: c('Title').t`Cancel subscription`,
                         id: 'cancel-b2b-subscription',
-                        available: isPaid && canPay && !hasVpnPlan && hasVpnB2BPlan,
+                        // B2B cancellation has a different flow, so we don't consider it a classic cancellable plan
+                        available: isPaid && canPay && !cancellablePlan && hasVpnB2BPlan,
                     },
                     {
                         text: c('Title').t`Downgrade account`,
                         id: 'downgrade-account',
-                        available: isPaid && canPay && !hasVpnPlan && !hasVpnB2BPlan,
+                        available: isPaid && canPay && !cancellablePlan && !hasVpnB2BPlan,
                     },
                 ],
             },
