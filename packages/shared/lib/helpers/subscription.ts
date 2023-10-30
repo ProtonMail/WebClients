@@ -60,6 +60,11 @@ export const getPlanName = (subscription: Subscription | undefined, service: PLA
     return plan?.Name;
 };
 
+export const getPlanTitle = (subscription: Subscription | undefined) => {
+    const plan = getPlan(subscription);
+    return plan?.Title;
+};
+
 export const hasSomePlan = (subscription: Subscription | FreeSubscription | undefined, planName: PLANS) => {
     if (isFreeSubscription(subscription)) {
         return false;
@@ -545,5 +550,5 @@ export const getHasCoupon = (subscription: SubscriptionModel | undefined, coupon
  * we don't consider B2B subscriptions cancellable for the purpose of this function.
  */
 export const hasCancellablePlan = (subscription: Subscription | undefined) => {
-    return hasVPN(subscription);
+    return hasVPN(subscription) || hasPassPlus(subscription) || hasVPNPassBundle(subscription);
 };
