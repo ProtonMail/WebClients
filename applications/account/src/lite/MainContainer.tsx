@@ -1,4 +1,4 @@
-import { StandardErrorPage, SubscriptionModalProvider } from '@proton/components';
+import { StandardErrorPage } from '@proton/components';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 
 import DeleteAccount from './actions/DeleteAccount';
@@ -21,9 +21,7 @@ const MainContainer = ({ action, redirect, app, searchParams }: Props) => {
         <>
             {action === SupportedActions.DeleteAccount && <DeleteAccount />}
             {(action === SupportedActions.SubscribeAccount || action === SupportedActions.SubscribeAccountLink) && (
-                <SubscriptionModalProvider app={app}>
-                    <SubscribeAccount app={app} redirect={redirect} queryParams={searchParams} />
-                </SubscriptionModalProvider>
+                <SubscribeAccount app={app} redirect={redirect} queryParams={searchParams} />
             )}
         </>
     );
