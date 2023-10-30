@@ -1,4 +1,4 @@
-import { APPS, COUPON_CODES } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 
 export enum SupportedActions {
     DeleteAccount = 'delete-account',
@@ -31,9 +31,9 @@ export const getApp = (appQueryParam: string | null, redirect: string | undefine
 };
 
 const getIsDarkLayout = (searchParams: URLSearchParams) => {
-    const coupon = searchParams.get('coupon') || undefined;
+    const action = searchParams.get('action') || undefined;
 
-    const dark = coupon?.toLocaleUpperCase() === COUPON_CODES.BLACK_FRIDAY_2023;
+    const dark = action === SupportedActions.SubscribeAccount || action === SupportedActions.SubscribeAccountLink;
 
     return dark;
 };
