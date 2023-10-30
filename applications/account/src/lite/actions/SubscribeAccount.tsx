@@ -109,13 +109,7 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
                   | PLANS
                   | undefined);
 
-    const dark = coupon?.toLocaleUpperCase() === COUPON_CODES.BLACK_FRIDAY_2023;
-
     const { bgClassName, logo } = (() => {
-        if (!dark) {
-            return { bgClassName: '', logo: undefined };
-        }
-
         if (plan === PLANS.VPN) {
             return { bgClassName: 'subscribe-account--vpn-bg', logo: <Logo appName={APPS.PROTONVPN_SETTINGS} /> };
         }
@@ -131,7 +125,16 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
         if (plan === PLANS.MAIL || plan === PLANS.MAIL_PRO) {
             return { bgClassName: 'subscribe-account--mail-bg', logo: <Logo appName={APPS.PROTONMAIL} /> };
         }
-        return { bgClassName: 'subscribe-account--mail-bg', logo: <ProtonLogo color="invert" /> };
+
+        return {
+            bgClassName: 'subscribe-account--mail-bg',
+            logo: (
+                <>
+                    <ProtonLogo color="brand" className="block sm:hidden" />
+                    <ProtonLogo color="invert" className="hidden sm:block" />
+                </>
+            ),
+        };
     })();
 
     const step = (() => {
@@ -183,17 +186,13 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
 
     return (
         <div className={clsx(bgClassName, 'h-full overflow-auto')}>
-            {logo ? (
-                <div
-                    className={clsx('mb-0 sm:mb-4 p-5 m-auto max-w-custom')}
-                    style={{ '--max-w-custom': '74rem' }}
-                    ref={topRef}
-                >
-                    {logo}
-                </div>
-            ) : (
-                <div ref={topRef} />
-            )}
+            <div
+                className={clsx('mb-0 sm:mb-4 pb-0 p-4 sm:pb-6 sm:p-6 m-auto max-w-custom')}
+                style={{ '--max-w-custom': '74rem' }}
+                ref={topRef}
+            >
+                {logo}
+            </div>
             {type === SubscribeType.Subscribed || type === SubscribeType.Closed ? (
                 <LiteBox center={!logo}>
                     <SubscribeAccountDone type={type} />
@@ -260,55 +259,53 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
                     }}
                 />
             )}
-            {dark && (
-                <div className="my-8">
-                    <div
-                        className="px-2 pt-12 pb-4 m-auto max-w-custom"
-                        style={{ '--max-w-custom': step === SUBSCRIPTION_STEPS.PLAN_SELECTION ? '72rem' : '52rem' }}
-                    >
-                        <footer className="text-sm">
-                            <div className="mb-1">
-                                <div className="flex gap-1">
-                                    {[
-                                        {
-                                            title: MAIL_APP_NAME,
-                                            logo: <MailLogo variant="glyph-only" size={20} />,
-                                        },
-                                        {
-                                            title: CALENDAR_APP_NAME,
-                                            logo: <CalendarLogo variant="glyph-only" size={20} />,
-                                        },
-                                        {
-                                            title: DRIVE_APP_NAME,
-                                            logo: <DriveLogo variant="glyph-only" size={20} />,
-                                        },
-                                        {
-                                            title: VPN_APP_NAME,
-                                            logo: <VpnLogo variant="glyph-only" size={20} />,
-                                        },
-                                        {
-                                            title: PASS_APP_NAME,
-                                            logo: <PassLogo variant="glyph-only" size={20} />,
-                                        },
-                                    ].map(({ title, logo }) => {
-                                        return (
-                                            <div key={title} className="" title={title}>
-                                                {logo}
-                                            </div>
-                                        );
-                                    })}
-                                </div>
+            <div className="my-8 hidden sm:block">
+                <div
+                    className="px-4 pt-4 sm:pt-12 pb-4 m-auto max-w-custom"
+                    style={{ '--max-w-custom': step === SUBSCRIPTION_STEPS.PLAN_SELECTION ? '72rem' : '52rem' }}
+                >
+                    <footer className="text-sm">
+                        <div className="mb-1">
+                            <div className="flex gap-1">
+                                {[
+                                    {
+                                        title: MAIL_APP_NAME,
+                                        logo: <MailLogo variant="glyph-only" size={20} />,
+                                    },
+                                    {
+                                        title: CALENDAR_APP_NAME,
+                                        logo: <CalendarLogo variant="glyph-only" size={20} />,
+                                    },
+                                    {
+                                        title: DRIVE_APP_NAME,
+                                        logo: <DriveLogo variant="glyph-only" size={20} />,
+                                    },
+                                    {
+                                        title: VPN_APP_NAME,
+                                        logo: <VpnLogo variant="glyph-only" size={20} />,
+                                    },
+                                    {
+                                        title: PASS_APP_NAME,
+                                        logo: <PassLogo variant="glyph-only" size={20} />,
+                                    },
+                                ].map(({ title, logo }) => {
+                                    return (
+                                        <div key={title} className="" title={title}>
+                                            {logo}
+                                        </div>
+                                    );
+                                })}
                             </div>
-                            <div className="mb-6 color-invert opacity-70">
-                                {
-                                    // translator: full sentence 'Proton. Privacy by default.'
-                                    c('Footer').t`${BRAND_NAME}. Privacy by default.`
-                                }
-                            </div>
-                        </footer>
-                    </div>
+                        </div>
+                        <div className="mb-6 color-invert opacity-70">
+                            {
+                                // translator: full sentence 'Proton. Privacy by default.'
+                                c('Footer').t`${BRAND_NAME}. Privacy by default.`
+                            }
+                        </div>
+                    </footer>
                 </div>
-            )}
+            </div>
         </div>
     );
 };
