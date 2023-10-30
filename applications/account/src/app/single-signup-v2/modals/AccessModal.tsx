@@ -3,24 +3,48 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter } from '@proton/components/components';
 import { useLoading } from '@proton/hooks';
+import {
+    APPS,
+    APP_NAMES,
+    DRIVE_APP_NAME,
+    DRIVE_SHORT_APP_NAME,
+    MAIL_APP_NAME,
+    MAIL_SHORT_APP_NAME,
+    PASS_APP_NAME,
+    PASS_SHORT_APP_NAME,
+} from '@proton/shared/lib/constants';
 
-import access from '../pass/access.svg';
+import driveAccess from '../drive/access.svg';
+import mailAccess from '../mail/access.svg';
+import passAccess from '../pass/access.svg';
 
 interface Props extends ModalProps {
-    plan: string;
-    appName: string;
     onContinue: () => void;
     onSignOut: () => Promise<void>;
+    app: APP_NAMES;
 }
 
-const AccessModal = ({ plan, appName, onClose, onContinue, onSignOut, ...rest }: Props) => {
+const AccessModal = ({ app, onClose, onContinue, onSignOut, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
+    const { svg, appName, shortName } = (() => {
+        if (app === APPS.PROTONPASS) {
+            return { svg: passAccess, appName: PASS_APP_NAME, shortName: PASS_SHORT_APP_NAME };
+        }
+        if (app === APPS.PROTONMAIL || app === APPS.PROTONCALENDAR) {
+            return { svg: mailAccess, appName: MAIL_APP_NAME, shortName: MAIL_SHORT_APP_NAME };
+        }
+        if (app === APPS.PROTONDRIVE) {
+            return { svg: driveAccess, appName: DRIVE_APP_NAME, shortName: DRIVE_SHORT_APP_NAME };
+        }
+        throw new Error('unknown app');
+    })();
     return (
         <ModalTwo {...rest} disableCloseOnEscape={true} size="small">
             <ModalTwoContent>
                 <div className="text-center">
-                    <img src={access} alt="" className="mb-4 mt-4" />
-                    <div className="mb-4 text-bold h3">{c('pass_signup_2023: Info').t`Welcome to ${plan}`}</div>
+                    <img src={svg} alt="" className="mb-4 mt-4" />
+                    <div className="mb-4 text-bold h3">{c('pass_signup_2023: Info')
+                        .t`Welcome to ${shortName} Plus`}</div>
                     <div className="mb-6 color-weak">
                         {c('pass_signup_2023: Info')
                             .t`You already have access to premium ${appName} features — no need to purchase again.`}

@@ -5,44 +5,59 @@ import { PAYMENT_METHOD_TYPES, SavedPaymentMethod } from '@proton/components/pay
 import { updateFeatureValue } from '@proton/shared/lib/api/features';
 import { getOrganization } from '@proton/shared/lib/api/organization';
 import { getSubscription, queryPaymentMethods } from '@proton/shared/lib/api/payments';
-import { ADDON_NAMES, CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/shared/lib/constants';
-import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
+import {
+    ADDON_NAMES,
+    APPS,
+    APP_NAMES,
+    COUPON_CODES,
+    CYCLE,
+    FREE_SUBSCRIPTION,
+    PLANS,
+} from '@proton/shared/lib/constants';
+import { getPlanFromPlanIDs, switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
     getNormalCycleFromCustomCycle,
     getPlan,
     getPlanIDs,
     getPricingFromPlanIDs,
 } from '@proton/shared/lib/helpers/subscription';
-import { Api, Currency, Organization, Plan, PlansMap, Subscription, User } from '@proton/shared/lib/interfaces';
+import {
+    Api,
+    Organization,
+    Plan,
+    PlansMap,
+    Subscription,
+    SubscriptionCheckResponse,
+    User,
+} from '@proton/shared/lib/interfaces';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
-import { canPay as getCanPay, isAdmin as getIsAdmin, hasPaidPass } from '@proton/shared/lib/user/helpers';
+import {
+    canPay as getCanPay,
+    isAdmin as getIsAdmin,
+    hasPaidDrive,
+    hasPaidMail,
+    hasPaidPass,
+} from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
 
 import { getSubscriptionPrices } from '../signup/helper';
-import type { PlanIDs, SessionData, SignupCacheResult, SubscriptionData } from '../signup/interfaces';
+import type { SessionData, SignupCacheResult, SubscriptionData } from '../signup/interfaces';
 import type { PlanCard } from './PlanCardSelector';
-import { Upsell, UpsellTypes } from './interface';
+import { Options, PlanParameters, Upsell, UpsellTypes } from './interface';
 
 export const getFreeTitle = (appName: string) => {
     return c('Title').t`${appName} Free`;
 };
 
-interface Options {
-    cycle: CYCLE;
-    currency: Currency;
-    minimumCycle?: CYCLE;
-    coupon?: string;
-    planIDs: PlanIDs | undefined;
-}
-
 export const getHasBusinessUpsell = (subscribedPlan: PLANS | ADDON_NAMES | undefined) => {
-    const proPlansWithoutPass = [PLANS.MAIL_PRO, PLANS.DRIVE_PRO];
+    const proPlansWithoutPass = [PLANS.MAIL_PRO, PLANS.DRIVE_PRO, PLANS.VPN_PRO];
     return proPlansWithoutPass.some((plan) => plan === subscribedPlan);
 };
 
-export const getHasUnlimitedUpsell = (subscribedPlan: PLANS | ADDON_NAMES | undefined) => {
-    const plusPlansWithoutPass = [PLANS.MAIL, PLANS.DRIVE, PLANS.VPN];
-    return plusPlansWithoutPass.some((plan) => plan === subscribedPlan);
+export const getHasAnyPlusPlan = (subscribedPlan: PLANS | ADDON_NAMES | undefined) => {
+    return [PLANS.MAIL, PLANS.DRIVE, PLANS.VPN, PLANS.PASS_PLUS, PLANS.VPN_PASS_BUNDLE].some(
+        (plan) => plan === subscribedPlan
+    );
 };
 
 export const getFreeSubscriptionData = (
@@ -87,7 +102,6 @@ const getSubscriptionData = async (api: Api, options: Options): Promise<Subscrip
         });
     return {
         cycle: checkResult.Cycle,
-        minimumCycle: options.minimumCycle,
         currency: checkResult.Currency,
         checkResult,
         planIDs: planIDs || {},
@@ -95,42 +109,205 @@ const getSubscriptionData = async (api: Api, options: Options): Promise<Subscrip
     };
 };
 
+const hasSelectedPlan = (plan: Plan | undefined, plans: (PLANS | ADDON_NAMES)[]): plan is Plan => {
+    return plans.some((planName) => plan?.Name === planName);
+};
+
+const getUnlockPlanName = (toApp: APP_NAMES) => {
+    if (toApp === APPS.PROTONPASS) {
+        return PLANS.PASS_PLUS;
+    }
+    if (toApp === APPS.PROTONMAIL || toApp === APPS.PROTONCALENDAR) {
+        return PLANS.MAIL;
+    }
+    if (toApp === APPS.PROTONDRIVE) {
+        return PLANS.DRIVE;
+    }
+    throw new Error('Unknown unlock plan name');
+};
+
+const getSafePlan = (plansMap: PlansMap, planName: PLANS | ADDON_NAMES) => {
+    const plan = plansMap[planName];
+    if (!plan) {
+        throw new Error('Missing plan');
+    }
+    return plan;
+};
+
 const getUpsell = ({
     currentPlan,
-    upsellPlanCard,
+    subscription,
     plansMap,
+    options,
+    planParameters,
+    toApp,
 }: {
     currentPlan?: Plan | undefined;
     upsellPlanCard?: PlanCard;
+    subscription?: Subscription;
     plansMap: PlansMap;
+    options: Options;
+    planParameters: PlanParameters;
+    toApp: APP_NAMES;
 }): Upsell => {
-    const unlockPlanName = PLANS.PASS_PLUS;
-    let plan = plansMap[upsellPlanCard?.plan || unlockPlanName];
-    let mode = UpsellTypes.PLANS;
+    const hasMonthlyCycle = subscription?.Cycle === CYCLE.MONTHLY;
+    const planFromPlanParameters = getPlanFromPlanIDs(plansMap, planParameters.planIDs);
+
+    const defaultValue = {
+        plan: undefined,
+        unlockPlan: plansMap[getUnlockPlanName(toApp)],
+        currentPlan,
+        mode: UpsellTypes.PLANS,
+        subscriptionOptions: {},
+    };
 
     if (currentPlan) {
-        if (getHasUnlimitedUpsell(currentPlan.Name)) {
-            plan = plansMap[PLANS.BUNDLE];
-            mode = UpsellTypes.UPSELL;
-        }
+        if (options.coupon === COUPON_CODES.BLACK_FRIDAY_2023) {
+            if (getHasAnyPlusPlan(currentPlan.Name)) {
+                // If the user is on a plus plan, and selects bundle, visionary, or family -> let it pass through
+                if (
+                    options.cycle === CYCLE.YEARLY &&
+                    (hasSelectedPlan(planFromPlanParameters, [PLANS.BUNDLE, PLANS.NEW_VISIONARY, PLANS.FAMILY]) ||
+                        (hasMonthlyCycle && hasSelectedPlan(planFromPlanParameters, [currentPlan.Name])))
+                ) {
+                    return {
+                        ...defaultValue,
+                        plan: planFromPlanParameters,
+                        subscriptionOptions: {
+                            planIDs: planParameters.planIDs,
+                            cycle: options.cycle,
+                            coupon: COUPON_CODES.BLACK_FRIDAY_2023,
+                        },
+                        mode: UpsellTypes.UPSELL,
+                    };
+                }
 
-        if (getHasBusinessUpsell(currentPlan.Name)) {
-            plan = plansMap[PLANS.BUNDLE_PRO];
-            mode = UpsellTypes.UPSELL;
+                // Any other selected plan will give bundle
+                const plan = getSafePlan(plansMap, PLANS.BUNDLE);
+                return {
+                    ...defaultValue,
+                    plan,
+                    subscriptionOptions: {
+                        planIDs: {
+                            [plan.Name]: 1,
+                        },
+                        cycle: CYCLE.YEARLY,
+                        coupon: COUPON_CODES.BLACK_FRIDAY_2023,
+                    },
+                    mode: UpsellTypes.UPSELL,
+                };
+            }
+
+            if (currentPlan.Name === PLANS.BUNDLE) {
+                if (
+                    options.cycle === CYCLE.YEARLY &&
+                    (hasSelectedPlan(planFromPlanParameters, [PLANS.NEW_VISIONARY, PLANS.FAMILY]) ||
+                        (hasMonthlyCycle && hasSelectedPlan(planFromPlanParameters, [currentPlan.Name])))
+                ) {
+                    return {
+                        ...defaultValue,
+                        plan: planFromPlanParameters,
+                        subscriptionOptions: {
+                            planIDs: planParameters.planIDs,
+                            cycle: options.cycle,
+                            coupon: COUPON_CODES.BLACK_FRIDAY_2023,
+                        },
+                        mode: UpsellTypes.UPSELL,
+                    };
+                }
+
+                const plan = hasMonthlyCycle
+                    ? getSafePlan(plansMap, currentPlan.Name)
+                    : getSafePlan(plansMap, PLANS.NEW_VISIONARY);
+                return {
+                    ...defaultValue,
+                    plan,
+                    subscriptionOptions: {
+                        planIDs: {
+                            [plan.Name]: 1,
+                        },
+                        cycle: CYCLE.YEARLY,
+                        coupon: COUPON_CODES.BLACK_FRIDAY_2023,
+                    },
+                    mode: UpsellTypes.UPSELL,
+                };
+            }
+
+            if (currentPlan.Name === PLANS.FAMILY) {
+                if (options.cycle === CYCLE.YEARLY && hasSelectedPlan(planFromPlanParameters, [PLANS.NEW_VISIONARY])) {
+                    return {
+                        ...defaultValue,
+                        plan: planFromPlanParameters,
+                        subscriptionOptions: {
+                            planIDs: planParameters.planIDs,
+                            cycle: options.cycle,
+                            coupon: COUPON_CODES.BLACK_FRIDAY_2023,
+                        },
+                        mode: UpsellTypes.UPSELL,
+                    };
+                }
+
+                const plan = hasMonthlyCycle
+                    ? getSafePlan(plansMap, currentPlan.Name)
+                    : getSafePlan(plansMap, PLANS.NEW_VISIONARY);
+                return {
+                    ...defaultValue,
+                    plan,
+                    subscriptionOptions: {
+                        planIDs: {
+                            [plan.Name]: 1,
+                        },
+                        cycle: CYCLE.YEARLY,
+                        coupon: COUPON_CODES.BLACK_FRIDAY_2023,
+                    },
+                    mode: UpsellTypes.UPSELL,
+                };
+            }
+
+            if (getHasBusinessUpsell(currentPlan.Name)) {
+                return {
+                    ...defaultValue,
+                    plan: plansMap[PLANS.BUNDLE_PRO],
+                    mode: UpsellTypes.UPSELL,
+                };
+            }
+        } else {
+            if (getHasAnyPlusPlan(currentPlan.Name)) {
+                return {
+                    ...defaultValue,
+                    plan: plansMap[PLANS.BUNDLE],
+                    mode: UpsellTypes.UPSELL,
+                };
+            }
+
+            if (getHasBusinessUpsell(currentPlan.Name)) {
+                return {
+                    ...defaultValue,
+                    plan: plansMap[PLANS.BUNDLE_PRO],
+                    mode: UpsellTypes.UPSELL,
+                };
+            }
         }
     }
 
-    return {
-        unlockPlan: plansMap[unlockPlanName],
-        currentPlan,
-        plan,
-        mode,
-    };
+    return defaultValue;
 };
 
-export const getRelativeUpsellPrice = (upsell: Upsell, plansMap: PlansMap, cycle: CYCLE) => {
+export const getRelativeUpsellPrice = (
+    upsell: Upsell,
+    plansMap: PlansMap,
+    checkResult: SubscriptionCheckResponse | undefined,
+    subscription: Subscription | undefined,
+    cycle: CYCLE
+) => {
     if (!upsell.currentPlan || !upsell.plan) {
         return 0;
+    }
+
+    if (subscription && checkResult) {
+        return (
+            (checkResult.Amount + (checkResult?.CouponDiscount || 0)) / cycle - subscription.Amount / subscription.Cycle
+        );
     }
 
     const pricingCurrentPlan = getPricingFromPlanIDs({ [upsell.currentPlan.Name]: 1 }, plansMap);
@@ -139,13 +316,28 @@ export const getRelativeUpsellPrice = (upsell: Upsell, plansMap: PlansMap, cycle
     return pricingUpsell.plans[cycle] / cycle - pricingCurrentPlan.plans[cycle] / cycle;
 };
 
+const hasAccess = (toApp: APP_NAMES, user: User) => {
+    if (toApp === APPS.PROTONPASS) {
+        return hasPaidPass(user);
+    }
+    if ([APPS.PROTONMAIL, APPS.PROTONCALENDAR].includes(toApp as any)) {
+        return hasPaidMail(user);
+    }
+    if (toApp === APPS.PROTONDRIVE) {
+        return hasPaidDrive(user);
+    }
+    return false;
+};
+
 export const getUserInfo = async ({
     api,
     user,
     options,
     plansMap,
     plans,
+    planParameters,
     upsellPlanCard,
+    toApp,
 }: {
     api: Api;
     user?: User | undefined;
@@ -153,16 +345,14 @@ export const getUserInfo = async ({
     plansMap: PlansMap;
     plans: Plan[];
     upsellPlanCard?: PlanCard;
+    planParameters: PlanParameters;
+    toApp: APP_NAMES;
 }): Promise<{
     paymentMethods: SavedPaymentMethod[];
     subscription: Subscription | undefined;
     subscriptionData: SubscriptionData;
     organization: Organization | undefined;
-    state: {
-        payable: boolean;
-        subscribed: boolean;
-        admin: boolean;
-    };
+    state: SessionData['state'];
     upsell: Upsell;
     defaultPaymentMethod: PAYMENT_METHOD_TYPES | undefined;
 }> => {
@@ -177,8 +367,9 @@ export const getUserInfo = async ({
                 payable: true,
                 subscribed: false,
                 admin: false,
+                access: false,
             },
-            upsell: getUpsell({ plansMap, upsellPlanCard }),
+            upsell: getUpsell({ plansMap, upsellPlanCard, options, planParameters, toApp }),
         };
     }
 
@@ -186,7 +377,8 @@ export const getUserInfo = async ({
         payable: getCanPay(user),
         admin: getIsAdmin(user),
         subscribed: Boolean(user.Subscribed),
-    } as const;
+        access: false,
+    };
 
     const [paymentMethods, subscription, organization] = await Promise.all([
         state.payable
@@ -197,7 +389,10 @@ export const getUserInfo = async ({
         state.payable && state.admin && state.subscribed
             ? api<{
                   Subscription: Subscription;
-              }>(getSubscription()).then(({ Subscription }) => Subscription)
+                  UpcomingSubscription?: Subscription;
+              }>(getSubscription()).then(
+                  ({ Subscription, UpcomingSubscription }) => UpcomingSubscription ?? Subscription
+              )
             : (FREE_SUBSCRIPTION as unknown as Subscription),
         state.subscribed
             ? api<{
@@ -216,7 +411,7 @@ export const getUserInfo = async ({
         }
     })();
 
-    const upsell = getUpsell({ currentPlan, upsellPlanCard, plansMap });
+    const upsell = getUpsell({ currentPlan, subscription, upsellPlanCard, plansMap, options, planParameters, toApp });
 
     const subscriptionData = await (() => {
         const optionsWithSubscriptionDefaults = {
@@ -230,17 +425,10 @@ export const getUserInfo = async ({
             return getFreeSubscriptionData(optionsWithSubscriptionDefaults);
         }
 
-        // This is just to set the currently selected plan better
-        if (hasPaidPass(user)) {
-            return getSubscriptionData(api, {
-                ...optionsWithSubscriptionDefaults,
-                planIDs: getPlanIDs(subscription),
-            });
-        }
-
         if (upsell.plan) {
             return getSubscriptionData(api, {
                 ...optionsWithSubscriptionDefaults,
+                ...upsell.subscriptionOptions,
                 planIDs: switchPlan({
                     planIDs: getPlanIDs(subscription),
                     planID: upsell.plan.Name,
@@ -254,6 +442,19 @@ export const getUserInfo = async ({
     })();
 
     await api(updateFeatureValue(FeatureCode.PassSignup, true)).catch(noop);
+
+    if (
+        (user && hasAccess(toApp, user) && options.coupon !== COUPON_CODES.BLACK_FRIDAY_2023) ||
+        [
+            PLANS.NEW_VISIONARY,
+            PLANS.BUNDLE_PRO,
+            PLANS.ENTERPRISE,
+            PLANS.VPN_PRO,
+            PLANS.VPN_BUSINESS /* VPN technically doesn't but in lack of better handling*/,
+        ].includes(currentPlan?.Name as any)
+    ) {
+        state.access = true;
+    }
 
     return {
         paymentMethods,
@@ -286,6 +487,7 @@ export const getSessionDataFromSignup = (cache: SignupCacheResult): SessionData 
             payable: true,
             admin: false,
             subscribed: false,
+            access: false,
         },
     };
 };
