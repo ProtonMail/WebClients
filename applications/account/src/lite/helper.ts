@@ -4,7 +4,6 @@ export enum SupportedActions {
     DeleteAccount = 'delete-account',
     SubscribeAccount = 'subscribe-account',
     SubscribeAccountLink = 'subscribe-account-link',
-    VpnBlackFriday = 'vpn-black-friday',
 }
 
 export const getApp = (appQueryParam: string | null, redirect: string | undefined) => {
@@ -29,20 +28,4 @@ export const getApp = (appQueryParam: string | null, redirect: string | undefine
         }
     }
     return APPS.PROTONVPN_SETTINGS;
-};
-
-export enum FullscreenOption {
-    On,
-    Off,
-    Auto,
-}
-
-export const getFullscreenOption = (value: string | null | undefined) => {
-    if (value === 'off' || value === 'false') {
-        return FullscreenOption.Off;
-    }
-    if (value === 'auto') {
-        return FullscreenOption.Auto;
-    }
-    return FullscreenOption.On;
 };
