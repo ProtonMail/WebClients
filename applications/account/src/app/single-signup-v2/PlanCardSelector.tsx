@@ -4,29 +4,30 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import {
-    getDevices,
-    getHideMyEmailAliases,
-    getLoginsAndNotes,
-} from '@proton/components/containers/payments/features/pass';
+import { getShortPlan } from '@proton/components/containers/payments/features/plan';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { ADDON_NAMES, BRAND_NAME, CYCLE, PASS_SHORT_APP_NAME, PLANS } from '@proton/shared/lib/constants';
+import { ADDON_NAMES, BRAND_NAME, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import {
-    TotalPricing,
+    SubscriptionCheckoutData,
+    getCheckResultFromSubscription,
+    getCheckout,
+} from '@proton/shared/lib/helpers/checkout';
+import {
+    getPlanIDs,
     getPlanOffer,
     getPricingFromPlanIDs,
     getTotalFromPricing,
 } from '@proton/shared/lib/helpers/subscription';
-import { Currency, Plan, PlanIDs, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { Currency, Plan, PlanIDs, PlansMap, Subscription, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import clsx from '@proton/utils/clsx';
 
+import ArrowImage from './ArrowImage';
 import BundlePlanSubSection from './BundlePlanSubSection';
 import Guarantee from './Guarantee';
 import SaveLabel from './SaveLabel';
-import arrow from './arrow.svg';
-import { getFreeTitle } from './helper';
+import { getHasAnyPlusPlan } from './helper';
 
 import './PlanCardSelector.scss';
 
@@ -52,6 +53,10 @@ const getLimitedTimeOfferText = () => {
 
 const getRecommendedText = () => {
     return c('pass_signup_2023: Header').t`Recommended`;
+};
+
+const getPerMonth = () => {
+    return c('pass_signup_2023: Info').t`per month`;
 };
 
 export const getBilledText = (cycle: CYCLE): string | null => {
@@ -97,7 +102,7 @@ const PlanCardView = ({
     billedText: string | null;
     headerText: ReactNode;
     highlightPrice: boolean;
-    totals: TotalPricing;
+    totals: { discount: number; standardMonthlyPrice: number; monthlyPrice: number };
     subsection: ReactNode;
     selected: boolean;
     info?: 'guarantee' | 'cancel';
@@ -157,26 +162,26 @@ const PlanCardView = ({
                             <div
                                 id={`${cycle}-price`}
                                 className={clsx(
-                                    totals.discountPercentage > 0 ? '' : 'flex-align-items-baseline',
+                                    totals.discount > 0 ? '' : 'flex-align-items-baseline',
                                     'flex gap-1 flex-align-items-center flex-justify-center'
                                 )}
                             >
                                 <span className={clsx(highlightPrice && 'color-primary', 'text-bold h1')}>
-                                    {getSimplePriceString(currency, totals.totalPerMonth, '')}
+                                    {getSimplePriceString(currency, totals.monthlyPrice, '')}
                                 </span>
                                 <div
                                     className={clsx(
-                                        totals.discountPercentage > 0 && 'flex flex-column flex-justify-center',
+                                        totals.discount > 0 && 'flex flex-column flex-justify-center',
                                         'text-left'
                                     )}
                                 >
-                                    {totals.discountPercentage > 0 && (
+                                    {totals.discount > 0 && (
                                         <>
                                             <span>
-                                                <SaveLabel highlightPrice={true} percent={totals.discountPercentage} />
+                                                <SaveLabel percent={totals.discount} />
                                             </span>
                                             <span className="text-strike text-sm color-weak">
-                                                {getSimplePriceString(currency, totals.totalNoDiscountPerMonth, '')}
+                                                {getSimplePriceString(currency, totals.standardMonthlyPrice, '')}
                                             </span>
                                         </>
                                     )}
@@ -289,7 +294,7 @@ export const PlanCardSelector = ({
                         onSelect={() => {
                             onSelect(planIDs, planCard.plan);
                         }}
-                        info={isPassWelcomePlanCard ? 'cancel' : planCard.guarantee ? 'guarantee' : undefined}
+                        info={isFreePlan ? undefined : totals.totalPerMonth === 0 ? 'cancel' : 'guarantee'}
                         onSelectedClick={onSelectedClick}
                         highlightPrice={highlight}
                         selected={selected}
@@ -297,7 +302,11 @@ export const PlanCardSelector = ({
                         billedText={billedText}
                         key={planCard.plan}
                         currency={currency}
-                        totals={totals}
+                        totals={{
+                            discount: totals.discountPercentage,
+                            standardMonthlyPrice: totals.totalNoDiscountPerMonth,
+                            monthlyPrice: totals.totalPerMonth,
+                        }}
                         subsection={planCard.subsection}
                     />
                 );
@@ -307,22 +316,28 @@ export const PlanCardSelector = ({
 };
 
 export const UpsellCardSelector = ({
+    checkout,
     relativePrice,
     currentPlan,
+    subscription,
     plan,
     plansMap,
     cycle,
+    coupon,
     currency,
     onSelect,
     onKeep,
     vpnServersCountData,
 }: {
+    checkout: SubscriptionCheckoutData;
     relativePrice: string;
     plan: Plan | undefined;
     currentPlan: Plan | undefined;
+    subscription: Subscription | undefined;
     plansMap: PlansMap;
     cycle: CYCLE;
     currency: Currency;
+    coupon?: string;
     onSelect: () => void;
     onKeep: () => void;
     vpnServersCountData: VPNServersCountData;
@@ -345,10 +360,12 @@ export const UpsellCardSelector = ({
     return (
         <>
             <div className="mb-6">
-                {getBoldFormattedText(
-                    c('pass_signup_2023: Info')
-                        .t`For just **${relativePrice} per month** more, you get access to all of the premium ${BRAND_NAME} services!`
-                )}
+                {!relativePrice.includes('-') &&
+                    getHasAnyPlusPlan(currentPlan.Name) &&
+                    getBoldFormattedText(
+                        c('pass_signup_2023: Info')
+                            .t`For just **${relativePrice} per month** more, you get access to all of the premium ${BRAND_NAME} services!`
+                    )}
             </div>
             <div className="flex flex-justify-space-between gap-4 on-tablet-flex-column">
                 {(() => {
@@ -356,17 +373,19 @@ export const UpsellCardSelector = ({
                         return null;
                     }
 
-                    const planIDs = { [currentPlan.Name]: 1 };
-                    const pricing = getPricingFromPlanIDs(planIDs, plansMap);
-                    const actualTotals = getTotalFromPricing(pricing, cycle);
-                    const totals = {
-                        ...actualTotals,
-                        discountPercentage: 0,
-                        discount: 0,
-                    };
-                    const billedText = getBilledText(cycle);
+                    const currentPlanIDs = getPlanIDs(subscription);
+                    const currentCheckout = getCheckout({
+                        plansMap,
+                        planIDs: currentPlanIDs,
+                        checkResult: getCheckResultFromSubscription(subscription),
+                    });
+                    const billedText = subscription?.CouponCode
+                        ? getPerMonth()
+                        : getBilledText(subscription?.Cycle || cycle);
 
-                    const appName = getFreeTitle(PASS_SHORT_APP_NAME);
+                    const shortPlan = currentPlan
+                        ? getShortPlan(currentPlan.Name as any, plansMap, { vpnServers: vpnServersCountData })
+                        : undefined;
 
                     return (
                         <PlanCardView
@@ -378,23 +397,29 @@ export const UpsellCardSelector = ({
                             text={currentPlan.Title || ''}
                             billedText={billedText}
                             currency={currency}
-                            totals={totals}
+                            totals={{
+                                discount: currentCheckout.discountPercent,
+                                standardMonthlyPrice: currentCheckout.withoutDiscountPerMonth,
+                                monthlyPrice: currentCheckout.withDiscountPerMonth,
+                            }}
                             subsection={
-                                <>
-                                    <div>
-                                        <div className="color-weak text-semibold text-sm mb-1">
-                                            {c('pass_signup_2023: Info').t`Includes basic ${appName} features:`}
+                                shortPlan && (
+                                    <>
+                                        <div>
+                                            <div className="color-weak text-semibold text-sm mb-1">
+                                                {c('pass_signup_2023: Info').t`Includes:`}
+                                            </div>
+                                            <PlanCardFeatureList
+                                                {...planCardFeatureProps}
+                                                features={shortPlan.features.slice(0, 3)}
+                                            />
                                         </div>
-                                        <PlanCardFeatureList
-                                            {...planCardFeatureProps}
-                                            features={[getLoginsAndNotes(), getDevices(), getHideMyEmailAliases(10)]}
-                                        />
-                                    </div>
 
-                                    <Button color="norm" shape="ghost" fullWidth onClick={onKeep} className="mt-6">
-                                        {c('pass_signup_2023: Action').t`Keep this plan and use ${appName}`}
-                                    </Button>
-                                </>
+                                        <Button color="norm" shape="ghost" fullWidth onClick={onKeep} className="mt-6">
+                                            {c('pass_signup_2023: Action').t`Keep this plan`}
+                                        </Button>
+                                    </>
+                                )
                             }
                         />
                     );
@@ -411,10 +436,13 @@ export const UpsellCardSelector = ({
                                 className="mx-6 mt-14 no-tablet no-mobile flex flex-column gap-4 w-custom"
                                 style={{ '--w-custom': '5rem' }}
                             >
-                                <img src={arrow} alt="" />
-                                <div className="text-sm color-primary">
-                                    {c('pass_signup_2023: Info').t`+ ${relativePrice} per month`}
-                                </div>
+                                <ArrowImage />
+
+                                {!relativePrice.includes('-') && (
+                                    <div className="text-sm color-primary">
+                                        {c('pass_signup_2023: Info').t`+ ${relativePrice} per month`}
+                                    </div>
+                                )}
                             </div>
                         </div>
                     );
@@ -425,10 +453,7 @@ export const UpsellCardSelector = ({
                         return null;
                     }
 
-                    const planIDs = { [plan.Name]: 1 };
-                    const pricing = getPricingFromPlanIDs(planIDs, plansMap);
-                    const totals = getTotalFromPricing(pricing, cycle);
-                    const billedText = getBilledText(cycle);
+                    const billedText = coupon ? getPerMonth() : getBilledText(cycle);
 
                     return (
                         <PlanCardView
@@ -441,10 +466,16 @@ export const UpsellCardSelector = ({
                             text={plan.Title || ''}
                             billedText={billedText}
                             currency={currency}
-                            totals={totals}
+                            totals={{
+                                discount: checkout.discountPercent,
+                                monthlyPrice: checkout.withDiscountPerMonth,
+                                standardMonthlyPrice: checkout.withoutDiscountPerMonth,
+                            }}
                             subsection={
                                 <>
-                                    {[PLANS.BUNDLE, PLANS.BUNDLE_PRO].includes(plan.Name as any) && (
+                                    {[PLANS.BUNDLE, PLANS.BUNDLE_PRO, PLANS.NEW_VISIONARY, PLANS.FAMILY].includes(
+                                        plan.Name as any
+                                    ) && (
                                         <BundlePlanSubSection
                                             className="mb-4"
                                             vpnServersCountData={vpnServersCountData}

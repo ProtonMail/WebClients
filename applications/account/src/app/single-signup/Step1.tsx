@@ -36,9 +36,9 @@ import { getMailAppFeature } from '@proton/components/containers/payments/featur
 import {
     get2FAAuthenticator,
     getHideMyEmailAliases,
-    getItems,
     getLoginsAndNotes,
     getPassAppFeature,
+    getVaultSharing,
 } from '@proton/components/containers/payments/features/pass';
 import {
     getAdvancedVPNCustomizations,
@@ -251,7 +251,7 @@ const getPlanInformation = (
                         getLoginsAndNotes(),
                         getHideMyEmailAliases('unlimited'),
                         get2FAAuthenticator(true),
-                        getItems(),
+                        getVaultSharing(10),
                     ],
                 },
             ],

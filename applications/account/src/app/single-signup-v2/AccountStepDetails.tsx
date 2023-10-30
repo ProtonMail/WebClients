@@ -214,7 +214,7 @@ interface Props {
     loading: boolean;
     measure: BaseMeasure<InteractCreateEvents | UserCheckoutEvents | AvailableExternalEvents>;
     passwordFields: boolean;
-    footer: (details: AccountDetails) => ReactNode;
+    footer: ({ details, email }: { details: AccountDetails; email: string }) => ReactNode;
     defaultEmail?: string;
     signupTypes: SignupType[];
     domains: string[];
@@ -651,7 +651,17 @@ const AccountStepDetails = ({
                                                     onOpen={() => setRerender({})}
                                                     onClose={() => setRerender({})}
                                                     value={domain}
-                                                    onChange={({ value }) => setDomain(value)}
+                                                    onChange={({ value }) => {
+                                                        setDomain(value);
+
+                                                        usernameAsyncValidator.trigger({
+                                                            api,
+                                                            error: !!errorDetails.username,
+                                                            value: joinUsernameDomain(trimmedUsername, value),
+                                                            set: setUsernameAsyncValidationState,
+                                                            measure,
+                                                        });
+                                                    }}
                                                 >
                                                     {domainOptions.map((option) => (
                                                         <Option
@@ -797,7 +807,18 @@ const AccountStepDetails = ({
                         </>
                     )}
                 </div>
-                {footer(details)}
+                {footer({
+                    details,
+                    email: (() => {
+                        if (signupType === SignupType.Username) {
+                            if (details.username.trim()) {
+                                return joinUsernameDomain(details.username, domain);
+                            }
+                            return '';
+                        }
+                        return details.email;
+                    })(),
+                })}
             </form>
         </>
     );
