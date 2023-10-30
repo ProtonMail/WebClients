@@ -6,6 +6,7 @@ const {
     DRIVE,
     PASS_PLUS,
     VPN,
+    VPN_PASS_BUNDLE,
     FAMILY,
     NEW_VISIONARY,
     ENTERPRISE,
@@ -15,7 +16,6 @@ const {
     DRIVE_PRO,
     VPN_PRO,
     VPN_BUSINESS,
-    VPN_PASS_BUNDLE,
 } = PLANS;
 const NEW_PLANS = [
     MAIL,
