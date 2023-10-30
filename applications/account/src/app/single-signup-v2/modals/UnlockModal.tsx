@@ -15,8 +15,8 @@ interface Props extends Omit<ModalProps, 'title'> {
     currentPlan: Plan | undefined;
     upsellPlan: Plan | undefined;
     unlockPlan: Plan | undefined;
-    relativePrice: string;
-    free: string;
+    relativePrice: string | undefined;
+    appName: string;
     plansMap: PlansMap;
     onUpgrade: () => void;
     onFree: () => void;
@@ -28,7 +28,7 @@ const UnlockModal = ({
     unlockPlan,
     upsellPlan,
     relativePrice,
-    free,
+    appName,
     plansMap,
     onUpgrade,
     onFree,
@@ -46,10 +46,15 @@ const UnlockModal = ({
                         .t`The offer you selected is not available for ${currentPlanTitle} subscribers.`}
                 </div>
                 <div className="mb-4 color-weak">
-                    {getBoldFormattedText(
-                        c('pass_signup_2023: Info')
-                            .t`But you can unlock **${unlockPlanTitle}** and all premium ${BRAND_NAME} services by upgrading to **${upsellPlanTitle}** — it’s just ${relativePrice} extra per month.`
-                    )}
+                    {relativePrice
+                        ? getBoldFormattedText(
+                              c('pass_signup_2023: Info')
+                                  .t`But you can unlock **${unlockPlanTitle}** and all premium ${BRAND_NAME} services by upgrading to **${upsellPlanTitle}** — it’s just ${relativePrice} extra per month.`
+                          )
+                        : getBoldFormattedText(
+                              c('pass_signup_2023: Info')
+                                  .t`But you can unlock **${unlockPlanTitle}** and all premium ${BRAND_NAME} services by upgrading to **${upsellPlanTitle}**.`
+                          )}
                 </div>
                 <PlanComparison
                     currentPlan={currentPlan}
@@ -58,10 +63,10 @@ const UnlockModal = ({
                     plansMap={plansMap}
                 >
                     <Button color="norm" fullWidth className="mb-1" onClick={onUpgrade}>
-                        {c('pass_signup_2023: Action').t`Upgrade for only ${relativePrice} extra per month`}
+                        {c('pass_signup_2023: Action').t`Upgrade`}
                     </Button>
                     <Button shape="ghost" color="norm" fullWidth onClick={onFree}>
-                        {c('pass_signup_2023: Action').t`Use ${free} instead`}
+                        {c('pass_signup_2023: Action').t`Continue to ${appName} without upgrading`}
                     </Button>
                 </PlanComparison>
             </ModalTwoContent>

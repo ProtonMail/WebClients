@@ -6,7 +6,7 @@ import { ADDON_NAMES, PASS_APP_NAME, PLANS, PLAN_NAMES } from '@proton/shared/li
 import { UserModel } from '@proton/shared/lib/interfaces';
 import { hasPaidPass } from '@proton/shared/lib/user/helpers';
 
-import { getHasBusinessUpsell, getHasUnlimitedUpsell } from '../single-signup-v2/helper';
+import { getHasAnyPlusPlan, getHasBusinessUpsell } from '../single-signup-v2/helper';
 import PassOnboardingVideo from './PassOnboardingVideo';
 
 interface Props extends ModalProps {
@@ -41,7 +41,7 @@ const PassOnboardingModal = ({ user, plan, ...rest }: Props) => {
                                     .t`${PASS_APP_NAME} keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${PASS_APP_NAME_2} features — no need to purchase again.`;
                             }
 
-                            const unlimitedUpsell = getHasUnlimitedUpsell(plan);
+                            const unlimitedUpsell = getHasAnyPlusPlan(plan);
                             const businessUpsell = getHasBusinessUpsell(plan);
                             if (unlimitedUpsell || businessUpsell) {
                                 const upsellPlanName = unlimitedUpsell

@@ -14,7 +14,6 @@ import {
     useModalState,
     useVPNServersCount,
 } from '@proton/components';
-import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import { AuthSession } from '@proton/components/containers/login/interface';
@@ -42,9 +41,9 @@ import {
     COUPON_CODES,
     CYCLE,
     DEFAULT_CURRENCY,
-    PASS_SHORT_APP_NAME,
     PLANS,
 } from '@proton/shared/lib/constants';
+import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { getPlanFromPlanIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
@@ -71,14 +70,12 @@ import Step2 from './Step2';
 import { getDriveConfiguration } from './drive/configuration';
 import {
     getFreeSubscriptionData,
-    getFreeTitle,
     getHasBusinessUpsell,
-    getHasUnlimitedUpsell,
     getRelativeUpsellPrice,
     getSessionDataFromSignup,
     getUserInfo,
 } from './helper';
-import { SignupMode, SignupModelV2, SignupParameters2, SignupTheme, Steps, UpsellTypes } from './interface';
+import { SignupMode, SignupModelV2, SignupParameters2, SignupTheme, Steps, Upsell, UpsellTypes } from './interface';
 import { getMailConfiguration } from './mail/configuration';
 import {
     TelemetryMeasurementData,
@@ -89,6 +86,7 @@ import {
 import AccessModal from './modals/AccessModal';
 import SubUserModal from './modals/SubUserModal';
 import UnlockModal from './modals/UnlockModal';
+import VisionaryUpsellModal from './modals/VisionaryUpsellModal';
 import { getPassConfiguration } from './pass/configuration';
 
 const getRecoveryKit = async () => {
@@ -119,6 +117,22 @@ const subscriptionDataCycleMapping = [
     },
 ];
 
+const getSignupTheme = (toApp: APP_NAMES, signupParameters: SignupParameters2): SignupTheme => {
+    const blackFriday = signupParameters.coupon === COUPON_CODES.BLACK_FRIDAY_2023;
+    return {
+        type: blackFriday ? ThemeTypes.Carbon : undefined,
+        background: blackFriday ? 'bf' : undefined,
+        intent: toApp,
+    };
+};
+
+export const defaultUpsell: Upsell = {
+    mode: UpsellTypes.PLANS,
+    currentPlan: undefined,
+    unlockPlan: undefined,
+    plan: undefined,
+    subscriptionOptions: {},
+};
 export const defaultSignupModel: SignupModelV2 = {
     session: undefined,
     domains: [],
@@ -138,12 +152,7 @@ export const defaultSignupModel: SignupModelV2 = {
         [Audience.B2B]: PLANS.MAIL_PRO,
         [Audience.FAMILY]: PLANS.FAMILY,
     },
-    upsell: {
-        mode: UpsellTypes.PLANS,
-        currentPlan: undefined,
-        unlockPlan: undefined,
-        plan: undefined,
-    },
+    upsell: defaultUpsell,
     inviteData: undefined,
     plans: [],
     plansMap: {},
@@ -209,6 +218,7 @@ const SingleSignupContainerV2 = ({
     const { isDesktop } = useActiveBreakpoint();
 
     const [unlockModalProps, setUnlockModal, renderUnlockModal] = useModalState();
+    const [visionaryModalProps, setVisionaryModal, renderVisionaryModal] = useModalState();
     const [subUserModalProps, setSubUserModal, renderSubUserModal] = useModalState();
     const [accessModalProps, setHasAccessModal, renderAccessModal] = useModalState();
 
@@ -255,6 +265,7 @@ const SingleSignupContainerV2 = ({
         productAppName,
         preload,
         signupTypes,
+        onboarding,
         setupImg,
         defaults,
         generateMnemonic,
@@ -277,12 +288,22 @@ const SingleSignupContainerV2 = ({
             });
         }
         if (toApp === APPS.PROTONPASS) {
+            const planIDs = model.optimistic.planIDs || model.subscriptionData.planIDs;
             return getPassConfiguration({
                 isDesktop,
                 vpnServersCountData,
                 hideFreePlan: signupParameters.hideFreePlan,
                 isPassWelcome: signupParameters.isPassWelcome,
                 mode: signupParameters.mode,
+                isPaidPassVPNBundle: !!planIDs[PLANS.VPN_PASS_BUNDLE],
+                isPaidPass: [
+                    PLANS.NEW_VISIONARY,
+                    PLANS.FAMILY,
+                    PLANS.BUNDLE,
+                    PLANS.BUNDLE_PRO,
+                    PLANS.VPN_PASS_BUNDLE,
+                    PLANS.PASS_PLUS,
+                ].some((plan) => planIDs[plan]),
             });
         }
         throw new Error('Unknown app');
@@ -362,10 +383,17 @@ const SingleSignupContainerV2 = ({
     const selectedPlan = getPlanFromPlanIDs(model.plansMap, model.subscriptionData.planIDs) || FREE_PLAN;
     const upsellPlanCard = planCards.find((planCard) => planCard.type === 'best');
 
-    const triggerModals = (session: SessionData, options?: { ignoreUnlock: boolean }) => {
+    const triggerModals = (
+        session: SessionData,
+        upsell: Upsell,
+        subscriptionData: SubscriptionData,
+        options?: {
+            ignoreUnlock: boolean;
+        }
+    ) => {
         const planName = getPlanNameFromSession(session);
 
-        if (session.user && hasPaidPass(session.user)) {
+        if (session.state.access) {
             setHasAccessModal(true);
             return;
         }
@@ -377,9 +405,19 @@ const SingleSignupContainerV2 = ({
             }
         }
 
-        if (session.subscription && options?.ignoreUnlock !== true) {
-            if (getHasUnlimitedUpsell(planName) || getHasBusinessUpsell(planName)) {
+        if (session.subscription && options?.ignoreUnlock !== true && upsell.plan?.Name) {
+            const hasCheckResult = subscriptionData.planIDs[upsell.plan.Name];
+            // If this plan was not selected through a query parameter, e.g. that we overrode it to something else, because it fits
+            // the copy of the unlock modal better.
+            if (signupParameters.preSelectedPlan === upsell.plan.Name || !hasCheckResult) {
+                return;
+            }
+            if ([PLANS.BUNDLE, PLANS.BUNDLE_PRO].includes(upsell.plan.Name as any)) {
                 setUnlockModal(true);
+                return;
+            }
+            if (PLANS.NEW_VISIONARY === upsell.plan.Name) {
+                setVisionaryModal(true);
                 return;
             }
         }
@@ -439,13 +477,14 @@ const SingleSignupContainerV2 = ({
                         plans,
                         plansMap,
                         upsellPlanCard,
+                        planParameters,
                         options: {
                             planIDs: planParameters.planIDs,
                             currency,
                             cycle,
-                            minimumCycle: signupParameters.minimumCycle,
                             coupon: signupParameters.coupon,
                         },
+                        toApp,
                     }),
                 ]);
 
@@ -501,8 +540,10 @@ const SingleSignupContainerV2 = ({
                         };
                         setModelDiff({ subscriptionData: cache.subscriptionData, cache, step: Steps.Loading });
                     } else {
-                        triggerModals(session, { ignoreUnlock: onboardingMode });
+                        triggerModals(session, upsell, subscriptionData, { ignoreUnlock: onboardingMode });
                     }
+                } else {
+                    triggerModals(session, upsell, subscriptionData, { ignoreUnlock: false });
                 }
 
                 const planName = getPlanNameFromSession(session);
@@ -576,12 +617,13 @@ const SingleSignupContainerV2 = ({
                     cycle: signupParameters.cycle || model.subscriptionData.cycle,
                     currency: model.subscriptionData.currency,
                     planIDs,
-                    minimumCycle: signupParameters.minimumCycle,
                     coupon: signupParameters.coupon,
                 },
+                planParameters: model.planParameters!,
                 plans: model.plans,
                 plansMap: model.plansMap,
                 upsellPlanCard,
+                toApp,
             });
 
             measure({ event: TelemetryAccountSignupEvents.beSignOutSuccess, dimensions: {} });
@@ -616,13 +658,14 @@ const SingleSignupContainerV2 = ({
             plans: model.plans,
             plansMap: model.plansMap,
             upsellPlanCard,
+            planParameters: model.planParameters!,
             options: {
                 cycle: model.subscriptionData.cycle,
                 currency: model.subscriptionData.currency,
                 planIDs: model.subscriptionData.planIDs,
-                minimumCycle: signupParameters.minimumCycle,
                 coupon: model.subscriptionData.checkResult?.Coupon?.Code,
             },
+            toApp,
         });
 
         const session: SessionData = {
@@ -643,7 +686,7 @@ const SingleSignupContainerV2 = ({
             upsell,
         });
 
-        triggerModals(session);
+        triggerModals(session, upsell, subscriptionData);
         measure({
             event: TelemetryAccountSignupEvents.beSignInSuccess,
             dimensions: { plan: getPlanNameFromSession(session) },
@@ -665,6 +708,22 @@ const SingleSignupContainerV2 = ({
 
     const br = <br key="br" />;
 
+    const handleLoginUser = async (cache: UserCacheResult) => {
+        try {
+            await onLogin({
+                UID: cache.session.UID,
+                keyPassword: cache.session.keyPassword,
+                flow: 'login',
+                LocalID: cache.session.localID,
+                User: cache.session.user,
+                trusted: cache.session.trusted,
+                persistent: cache.session.persistent,
+            });
+        } catch (error) {
+            handleError(error);
+        }
+    };
+
     const handleStartUserOnboarding = async (subscriptionData: SubscriptionData) => {
         if (!model.session) {
             throw new Error('Missing user session');
@@ -674,18 +733,23 @@ const SingleSignupContainerV2 = ({
             subscriptionData,
             session: model.session,
         };
-        setModelDiff({ subscriptionData: cache.subscriptionData, cache, step: Steps.Loading });
+        if (onboarding.user) {
+            setModelDiff({ subscriptionData: cache.subscriptionData, cache, step: Steps.Loading });
+        } else {
+            await handleLoginUser(cache);
+        }
     };
 
     const relativePricePerMonth = getRelativeUpsellPrice(
         model.upsell,
         model.plansMap,
+        model.subscriptionData.checkResult,
+        model.session?.subscription,
         model.optimistic.cycle || model.subscriptionData.cycle
     );
-    const relativePrice = getSimplePriceString(
-        model.optimistic.currency || model.subscriptionData.currency,
+    const relativePrice = humanPriceWithCurrency(
         relativePricePerMonth,
-        ''
+        model.optimistic.currency || model.subscriptionData.currency
     );
 
     const getMnemonicSetup = async () => {
@@ -763,14 +827,7 @@ const SingleSignupContainerV2 = ({
         return result.cache;
     };
 
-    const theme = ((): SignupTheme => {
-        const blackFriday = signupParameters.coupon?.toUpperCase() === COUPON_CODES.BLACK_FRIDAY_2023;
-        return {
-            type: blackFriday ? ThemeTypes.Carbon : undefined,
-            background: blackFriday ? 'bf' : undefined,
-            intent: toApp,
-        };
-    })();
+    const theme = getSignupTheme(toApp, signupParameters);
 
     return (
         <>
@@ -787,37 +844,45 @@ const SingleSignupContainerV2 = ({
                 />
             )}
             {(loadingDependencies || loadingChallenge) && <>{loader}</>}
-            {(() => {
-                if (!renderUnlockModal) {
-                    return null;
-                }
-                return (
-                    <UnlockModal
-                        {...unlockModalProps}
-                        title={c('pass_signup_2023: Title')
-                            .jt`All ${BRAND_NAME} Plus services.${br}One easy subscription.`}
-                        currentPlan={model.upsell.currentPlan}
-                        upsellPlan={model.upsell.plan}
-                        unlockPlan={model.upsell.unlockPlan}
-                        relativePrice={relativePrice}
-                        free={getFreeTitle(PASS_SHORT_APP_NAME)}
-                        plansMap={model.plansMap}
-                        onUpgrade={() => {
-                            unlockModalProps.onClose();
-                            step1Ref.current?.scrollIntoPayment();
-                        }}
-                        onFree={async () => {
-                            unlockModalProps.onClose();
-                            await handleStartUserOnboarding(getFreeSubscriptionData(model.subscriptionData));
-                        }}
-                    />
-                );
-            })()}
+            {renderUnlockModal && (
+                <UnlockModal
+                    {...unlockModalProps}
+                    title={c('pass_signup_2023: Title').jt`All ${BRAND_NAME} Plus services.${br}One easy subscription.`}
+                    currentPlan={model.upsell.currentPlan}
+                    appName={shortProductAppName}
+                    upsellPlan={model.upsell.plan}
+                    unlockPlan={model.upsell.unlockPlan}
+                    relativePrice={relativePrice.includes('-') ? undefined : relativePrice}
+                    plansMap={model.plansMap}
+                    onUpgrade={() => {
+                        unlockModalProps.onClose();
+                        step1Ref.current?.scrollIntoPayment();
+                    }}
+                    onFree={async () => {
+                        unlockModalProps.onClose();
+                        await handleStartUserOnboarding(getFreeSubscriptionData(model.subscriptionData));
+                    }}
+                />
+            )}
+            {renderVisionaryModal && (
+                <VisionaryUpsellModal
+                    {...visionaryModalProps}
+                    plan={model.plansMap[PLANS.NEW_VISIONARY]?.Title || ''}
+                    appName={productAppName}
+                    onUpgrade={async () => {
+                        visionaryModalProps.onClose();
+                        step1Ref.current?.scrollIntoPayment();
+                    }}
+                    onContinue={async () => {
+                        visionaryModalProps.onClose();
+                        await handleStartUserOnboarding(getFreeSubscriptionData(model.subscriptionData));
+                    }}
+                />
+            )}
             {renderAccessModal && (
                 <AccessModal
                     {...accessModalProps}
-                    plan={model.upsell.plan?.Title || ''}
-                    appName={productAppName}
+                    app={toApp}
                     onSignOut={() => {
                         return handleSignOut(true);
                     }}
@@ -1010,17 +1075,25 @@ const SingleSignupContainerV2 = ({
                             try {
                                 if (cache.type === 'user') {
                                     const result = await handleSetupExistingUser(cache);
-                                    setModelDiff({
-                                        cache: result,
-                                        step: Steps.Custom,
-                                    });
+                                    if (onboarding.user) {
+                                        setModelDiff({
+                                            cache: result,
+                                            step: Steps.Custom,
+                                        });
+                                    } else {
+                                        await handleLoginUser(result);
+                                    }
                                 }
                                 if (cache.type === 'signup') {
                                     const result = await handleSetupNewUser(cache);
-                                    setModelDiff({
-                                        cache: result,
-                                        step: Steps.Custom,
-                                    });
+                                    if (onboarding.signup) {
+                                        setModelDiff({
+                                            cache: result,
+                                            step: Steps.Custom,
+                                        });
+                                    } else {
+                                        throw new Error('Not implemented');
+                                    }
                                 }
                             } catch (error) {
                                 await startUnAuthFlow().catch(noop);
@@ -1045,19 +1118,7 @@ const SingleSignupContainerV2 = ({
                         logo={logo}
                         onSetup={async (cache: SignupCacheResult | UserCacheResult) => {
                             if (cache.type === 'user') {
-                                try {
-                                    await onLogin({
-                                        UID: cache.session.UID,
-                                        keyPassword: cache.session.keyPassword,
-                                        flow: 'login',
-                                        LocalID: cache.session.localID,
-                                        User: cache.session.user,
-                                        trusted: cache.session.trusted,
-                                        persistent: cache.session.persistent,
-                                    });
-                                } catch (error) {
-                                    handleError(error);
-                                }
+                                return handleLoginUser(cache);
                             }
 
                             if (cache.type === 'signup') {

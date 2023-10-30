@@ -29,6 +29,7 @@ import { PlanCard, planCardFeatureProps } from '../PlanCardSelector';
 import { getBenefits, getGenericBenefits, getGenericFeatures, getJoinString } from '../configuration/helper';
 import { SignupConfiguration } from '../interface';
 import CustomStep from './CustomStep';
+import setupAccount from './account-setup.svg';
 
 export const getMailBenefits = (): BenefitItem[] => {
     return [
@@ -133,6 +134,10 @@ export const getMailConfiguration = ({
         benefits,
         planCards,
         signupTypes: [SignupType.Username],
+        onboarding: {
+            user: false,
+            signup: true,
+        },
         generateMnemonic: false,
         defaults: {
             plan: PLANS.MAIL,
@@ -141,8 +146,12 @@ export const getMailConfiguration = ({
         product: APPS.PROTONMAIL,
         shortProductAppName: MAIL_SHORT_APP_NAME,
         productAppName: MAIL_APP_NAME,
-        setupImg: <></>,
-        preload: <></>,
+        setupImg: <img src={setupAccount} alt="" />,
+        preload: (
+            <>
+                <link rel="prefetch" href={setupAccount} as="image" />
+            </>
+        ),
         CustomStep,
     };
 };
