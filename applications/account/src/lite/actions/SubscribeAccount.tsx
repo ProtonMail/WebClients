@@ -87,7 +87,11 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
 
     // Error in usage (this action is not meant to be shown if it cannot be triggered, so untranslated.
     if (!canEdit) {
-        return <LiteBox>Please contact the administrator of the organization to manage the subscription</LiteBox>;
+        return (
+            <LiteLayout searchParams={searchParams} className="flex flex-justify-center flex-align-items-center">
+                <LiteBox>Please contact the administrator of the organization to manage the subscription</LiteBox>
+            </LiteLayout>
+        );
     }
 
     const maybeStart = searchParams.get('start');
@@ -186,124 +190,125 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
 
     return (
         <div className={clsx(bgClassName, 'h-full overflow-auto')}>
-            <div
-                className={clsx('mb-0 sm:mb-4 pb-0 p-4 sm:pb-6 sm:p-6 m-auto max-w-custom')}
-                style={{ '--max-w-custom': '74rem' }}
-                ref={topRef}
-            >
-                {logo}
-            </div>
-            {type === SubscribeType.Subscribed || type === SubscribeType.Closed ? (
-                <LiteBox center={!logo}>
-                    <SubscribeAccountDone type={type} />
-                </LiteBox>
-            ) : (
-                <SubscriptionContainer
-                    topRef={topRef}
-                    app={app}
-                    subscription={subscription}
-                    plans={plans}
-                    organization={organization}
-                    step={step}
-                    cycle={parsedCycle}
-                    currency={parsedCurrency}
-                    plan={plan}
-                    coupon={coupon}
-                    disablePlanSelection={coupon ? true : Boolean(disablePlanSelectionParam)}
-                    disableCycleSelector={coupon ? true : Boolean(disableCycleSelectorParam)}
-                    disableThanksStep
-                    onSubscribed={handleSuccess}
-                    onUnsubscribed={handleSuccess}
-                    onCancel={handleClose}
-                    metrics={{
-                        source: 'lite-subscribe',
-                    }}
-                    render={({ onSubmit, title, content, footer, step }) => {
-                        return (
-                            <LiteBox
-                                center={false}
-                                maxWidth={step === SUBSCRIPTION_STEPS.PLAN_SELECTION ? 72 : undefined}
-                            >
-                                <div className="flex flex-nowrap flex-item-noshrink flex-align-items-start flex-justify-space-between">
-                                    <div>
-                                        {title && (
-                                            <>
-                                                <h1 className={'text-bold text-4xl'}>{title}</h1>
-                                                <div className="color-weak text-break">{nameToDisplay}</div>
-                                            </>
-                                        )}
-                                    </div>
-                                    {!hideClose && (
-                                        <Tooltip title={c('Action').t`Close`}>
-                                            <Button
-                                                className="flex-item-noshrink"
-                                                icon
-                                                shape="ghost"
-                                                onClick={handleClose}
-                                            >
-                                                <Icon
-                                                    className="modal-close-icon"
-                                                    name="cross-big"
-                                                    alt={c('Action').t`Close`}
-                                                />
-                                            </Button>
-                                        </Tooltip>
-                                    )}
-                                </div>
-                                <form className="overflow-auto" onSubmit={onSubmit}>
-                                    <div>{content}</div>
-                                    {footer && <div className="mt-8">{footer}</div>}
-                                </form>
+            <div className="min-h-custom flex flex-column flex-nowrap" style={{ '--min-h-custom': '100vh' }}>
+                <div className="flex-item-fluid-auto">
+                    <div
+                        className={clsx('mb-0 sm:mb-4 pb-0 p-4 sm:pb-6 sm:p-6 m-auto max-w-custom')}
+                        style={{ '--max-w-custom': '74rem' }}
+                        ref={topRef}
+                    >
+                        {logo}
+                    </div>
+                    <div className="flex flex-justify-center">
+                        {type === SubscribeType.Subscribed || type === SubscribeType.Closed ? (
+                            <LiteBox>
+                                <SubscribeAccountDone type={type} />
                             </LiteBox>
-                        );
-                    }}
-                />
-            )}
-            <div className="my-8 hidden sm:block">
-                <div
-                    className="px-4 pt-4 sm:pt-12 pb-4 m-auto max-w-custom"
-                    style={{ '--max-w-custom': step === SUBSCRIPTION_STEPS.PLAN_SELECTION ? '72rem' : '52rem' }}
-                >
-                    <footer className="text-sm">
-                        <div className="mb-1">
-                            <div className="flex gap-1">
-                                {[
-                                    {
-                                        title: MAIL_APP_NAME,
-                                        logo: <MailLogo variant="glyph-only" size={20} />,
-                                    },
-                                    {
-                                        title: CALENDAR_APP_NAME,
-                                        logo: <CalendarLogo variant="glyph-only" size={20} />,
-                                    },
-                                    {
-                                        title: DRIVE_APP_NAME,
-                                        logo: <DriveLogo variant="glyph-only" size={20} />,
-                                    },
-                                    {
-                                        title: VPN_APP_NAME,
-                                        logo: <VpnLogo variant="glyph-only" size={20} />,
-                                    },
-                                    {
-                                        title: PASS_APP_NAME,
-                                        logo: <PassLogo variant="glyph-only" size={20} />,
-                                    },
-                                ].map(({ title, logo }) => {
+                        ) : (
+                            <SubscriptionContainer
+                                topRef={topRef}
+                                app={app}
+                                subscription={subscription}
+                                plans={plans}
+                                organization={organization}
+                                step={step}
+                                cycle={parsedCycle}
+                                currency={parsedCurrency}
+                                plan={plan}
+                                coupon={coupon}
+                                disablePlanSelection={coupon ? true : Boolean(disablePlanSelectionParam)}
+                                disableCycleSelector={coupon ? true : Boolean(disableCycleSelectorParam)}
+                                disableThanksStep
+                                onSubscribed={handleSuccess}
+                                onUnsubscribed={handleSuccess}
+                                onCancel={handleClose}
+                                metrics={{
+                                    source: 'lite-subscribe',
+                                }}
+                                render={({ onSubmit, title, content, footer, step }) => {
                                     return (
-                                        <div key={title} className="" title={title}>
-                                            {logo}
-                                        </div>
+                                        <LiteBox maxWidth={step === SUBSCRIPTION_STEPS.PLAN_SELECTION ? 72 : undefined}>
+                                            <div className="flex flex-nowrap flex-item-noshrink flex-align-items-start flex-justify-space-between">
+                                                <div>
+                                                    {title && (
+                                                        <>
+                                                            <h1 className={'text-bold text-4xl'}>{title}</h1>
+                                                            <div className="color-weak text-break">{nameToDisplay}</div>
+                                                        </>
+                                                    )}
+                                                </div>
+                                                {!hideClose && (
+                                                    <Tooltip title={c('Action').t`Close`}>
+                                                        <Button
+                                                            className="flex-item-noshrink"
+                                                            icon
+                                                            shape="ghost"
+                                                            onClick={handleClose}
+                                                        >
+                                                            <Icon
+                                                                className="modal-close-icon"
+                                                                name="cross-big"
+                                                                alt={c('Action').t`Close`}
+                                                            />
+                                                        </Button>
+                                                    </Tooltip>
+                                                )}
+                                            </div>
+                                            <form className="overflow-auto" onSubmit={onSubmit}>
+                                                <div>{content}</div>
+                                                {footer && <div className="mt-8">{footer}</div>}
+                                            </form>
+                                        </LiteBox>
                                     );
-                                })}
+                                }}
+                            />
+                        )}
+                    </div>
+                </div>
+
+                <div className="my-8 hidden sm:block">
+                    <div className="px-4 pt-4 sm:pt-12 pb-4 m-auto max-w-custom" style={{ '--max-w-custom': '52rem' }}>
+                        <footer className="text-sm">
+                            <div className="mb-1">
+                                <div className="flex gap-1">
+                                    {[
+                                        {
+                                            title: MAIL_APP_NAME,
+                                            logo: <MailLogo variant="glyph-only" size={20} />,
+                                        },
+                                        {
+                                            title: CALENDAR_APP_NAME,
+                                            logo: <CalendarLogo variant="glyph-only" size={20} />,
+                                        },
+                                        {
+                                            title: DRIVE_APP_NAME,
+                                            logo: <DriveLogo variant="glyph-only" size={20} />,
+                                        },
+                                        {
+                                            title: VPN_APP_NAME,
+                                            logo: <VpnLogo variant="glyph-only" size={20} />,
+                                        },
+                                        {
+                                            title: PASS_APP_NAME,
+                                            logo: <PassLogo variant="glyph-only" size={20} />,
+                                        },
+                                    ].map(({ title, logo }) => {
+                                        return (
+                                            <div key={title} className="" title={title}>
+                                                {logo}
+                                            </div>
+                                        );
+                                    })}
+                                </div>
                             </div>
-                        </div>
-                        <div className="mb-6 color-invert opacity-70">
-                            {
-                                // translator: full sentence 'Proton. Privacy by default.'
-                                c('Footer').t`${BRAND_NAME}. Privacy by default.`
-                            }
-                        </div>
-                    </footer>
+                            <div className="mb-6 color-invert opacity-70">
+                                {
+                                    // translator: full sentence 'Proton. Privacy by default.'
+                                    c('Footer').t`${BRAND_NAME}. Privacy by default.`
+                                }
+                            </div>
+                        </footer>
+                    </div>
                 </div>
             </div>
         </div>
