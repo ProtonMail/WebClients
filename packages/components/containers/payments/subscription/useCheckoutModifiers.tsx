@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
-import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
+import { getPlanIDs, isTrial } from '@proton/shared/lib/helpers/subscription';
 import { PlansMap, SubscriptionCheckResponse, SubscriptionModel } from '@proton/shared/lib/interfaces';
 
 import { Model } from './SubscriptionContainer';
@@ -30,10 +30,21 @@ export const useCheckoutModifiers = (
 
         const userBuysTheSamePlan = selectedPlans.includes(activePlan);
 
-        if (!checkResult || !userBuysTheSamePlan || checkResult.Proration === undefined) {
+        // That's a catch-all scenario. Essentially, if user doesn't really have Proration, nor custom billings,
+        // nor scheduled subscription, then we still claim that it's Proration. From the rendering perspective,
+        // it's a convernient assumption, because then we pretend that it's Proration case with Proration === 0.
+        // Essentially it means that we will render no additional UI specific to any of the three cases.
+        //
+        // Absence of checkResult means that it's not loaded yet.
+        // If user doesn't buy the same plan, then custom billing and scheduled subscription are not applicable.
+        // If Prorartion is undefined, then that's not a full checkResult.
+        // If user has trial, then we just need to show the Proration UI with Proration === 0.
+        if (!checkResult || !userBuysTheSamePlan || checkResult.Proration === undefined || isTrial(subscription)) {
             return true;
         }
 
+        // The main indicator for the proration is non-zero Proration value.
+        // However we must also ensure that it's not custom billings by checking that UnusedCredit is 0 or undefined.
         return (
             checkResult.Proration !== 0 && (checkResult.UnusedCredit === 0 || checkResult.UnusedCredit === undefined)
         );
