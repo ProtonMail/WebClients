@@ -1,7 +1,6 @@
 import { app, BrowserWindow, globalShortcut, session, shell } from "electron";
 import { ALLOWED_PERMISSIONS, PARTITION } from "./utils/constants";
 import { isHostAllowed, isHostCalendar, isHostMail, isMac, quitApplication } from "./utils/helpers";
-import { macosStartup } from "./utils/macos";
 import { handleCalendarWindow, handleMailWindow, initialWindowCreation } from "./utils/windowManagement";
 
 if (require("electron-squirrel-startup")) {
@@ -15,17 +14,13 @@ app.enableSandbox();
 // app.commandLine.appendSwitch("no-sandbox");
 
 app.whenReady().then(() => {
-    let partition = PARTITION;
-    if (isMac) {
-        partition = macosStartup();
-    }
-
-    const secureSession = session.fromPartition(partition, {
+    const secureSession = session.fromPartition(PARTITION, {
         cache: false,
     });
 
-    // TODO check how this works on windows
-    globalShortcut.register("Command+Q", quitApplication);
+    if (isMac) {
+        globalShortcut.register("Command+Q", quitApplication);
+    }
 
     initialWindowCreation({ session: secureSession, mailVisible: true, calendarVisible: false });
 
@@ -84,8 +79,7 @@ app.on("web-contents-created", (_ev, contents) => {
     });
 
     contents.setWindowOpenHandler((details) => {
-        const { url, disposition } = details;
-        console.log({ details });
+        const { url } = details;
 
         if (isHostCalendar(url)) {
             handleCalendarWindow(contents);

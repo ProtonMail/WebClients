@@ -1,7 +1,8 @@
-import { BrowserWindow, Session, WebContents, app } from "electron";
+import { BrowserWindow, Rectangle, Session, WebContents, app } from "electron";
 import { getConfig } from "./config";
-import { getWindowSize } from "./helpers";
+import { APP } from "./constants";
 import { setApplicationMenu } from "./menu";
+import { getWindowState, setWindowState } from "./windowsStore";
 
 interface WindowCreationProps {
     session: Session;
@@ -10,16 +11,13 @@ interface WindowCreationProps {
 }
 
 const config = getConfig(app.isPackaged);
-export const windowMap = new Map<string, BrowserWindow>();
+export const windowMap = new Map<APP, BrowserWindow>();
 
-const createWindow = (session: Session, url: string, visible: boolean): BrowserWindow => {
-    const { width, height } = getWindowSize();
-
+const createWindow = (session: Session, url: string, visible: boolean, windowConfig: Rectangle): BrowserWindow => {
     const window = new BrowserWindow({
         title: config.appTitle,
         icon: "../../assets/icons/icon.png",
-        height,
-        width,
+        ...windowConfig, // handles windows size and position
         webPreferences: {
             devTools: config.devTools,
             // Security additions
@@ -38,8 +36,8 @@ const createWindow = (session: Session, url: string, visible: boolean): BrowserW
     return window;
 };
 
-const createGenericWindow = (session: Session, url: string, mapKey: string, visible: boolean) => {
-    const window = createWindow(session, url, visible);
+const createGenericWindow = (session: Session, url: string, mapKey: APP, visible: boolean, windowConfig: Rectangle) => {
+    const window = createWindow(session, url, visible, windowConfig);
     window.on("close", (ev) => {
         ev.preventDefault();
         window.hide();
@@ -50,10 +48,21 @@ const createGenericWindow = (session: Session, url: string, mapKey: string, visi
 };
 
 export const createMailWindow = (session: Session, visible = true) => {
-    return createGenericWindow(session, config.url.mail, "mail", visible);
+    const state = getWindowState("MAIL");
+    const window = createGenericWindow(session, config.url.mail, "MAIL", visible, state);
+    window.on("close", () => {
+        setWindowState(window.getBounds(), "MAIL");
+    });
+
+    return window;
 };
 export const createCalendarWindow = (session: Session, visible = true) => {
-    return createGenericWindow(session, config.url.calendar, "calendar", visible);
+    const state = getWindowState("CALENDAR");
+    const window = createGenericWindow(session, config.url.calendar, "CALENDAR", visible, state);
+    window.on("close", () => {
+        setWindowState(window.getBounds(), "CALENDAR");
+    });
+    return window;
 };
 
 export const initialWindowCreation = ({ session, mailVisible, calendarVisible }: WindowCreationProps) => {
@@ -64,7 +73,7 @@ export const initialWindowCreation = ({ session, mailVisible, calendarVisible }:
     });
 };
 
-const handleWindowVisibility = (contents: WebContents, mapKey: string, creationMethod: (session: Session) => void) => {
+const handleWindowVisibility = (contents: WebContents, mapKey: APP, creationMethod: (session: Session) => void) => {
     const window = windowMap.get(mapKey);
     if (window) {
         window.isVisible() ? window.focus() : window.show();
@@ -74,9 +83,9 @@ const handleWindowVisibility = (contents: WebContents, mapKey: string, creationM
 };
 
 export const handleMailWindow = (contents: WebContents) => {
-    handleWindowVisibility(contents, "mail", createMailWindow);
+    handleWindowVisibility(contents, "MAIL", createMailWindow);
 };
 
 export const handleCalendarWindow = (contents: WebContents) => {
-    handleWindowVisibility(contents, "calendar", createCalendarWindow);
+    handleWindowVisibility(contents, "CALENDAR", createCalendarWindow);
 };
