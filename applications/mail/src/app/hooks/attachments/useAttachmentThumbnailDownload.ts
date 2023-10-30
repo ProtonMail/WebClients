@@ -10,7 +10,7 @@ import { getSessionKey } from '@proton/shared/lib/mail/send/attachments';
 
 import ConfirmDownloadAttachments from 'proton-mail/components/attachment/modals/ConfirmDownloadAttachments';
 import { Download, generateDownload } from 'proton-mail/helpers/attachment/attachmentDownloader';
-import { decryptAndVerify } from 'proton-mail/helpers/attachment/attachmentLoader';
+import { decryptAndVerify, getVerificationStatusFromKeys } from 'proton-mail/helpers/attachment/attachmentLoader';
 import { useGetAttachment } from 'proton-mail/hooks/attachments/useAttachment';
 import { useContactsMap } from 'proton-mail/hooks/contact/useContacts';
 import { useGetMessageKeys } from 'proton-mail/hooks/message/useGetMessageKeys';
@@ -97,14 +97,10 @@ export const useAttachmentThumbnailDownload = () => {
                     // EncSignature TODO uncomment when fixed
                 );
 
-                // We need to check the attachment verified state on preview/download
-                // However, if we download the attachment to preview it, on the next click,
-                // we will use Redux state to avoid an additional download.
-                // It means that we also need to update the attachment verified state
-                const verified =
-                    verificationPreferences.verifyingKeys.length > 0
-                        ? decryptedAttachment.verified
-                        : VERIFICATION_STATUS.NOT_VERIFIED;
+                const verified = getVerificationStatusFromKeys(
+                    decryptedAttachment,
+                    verificationPreferences.verifyingKeys
+                );
 
                 // Set verified state in the attachment to keep track of it in Redux
                 attachment = {
