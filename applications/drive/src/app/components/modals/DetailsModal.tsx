@@ -289,6 +289,12 @@ export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }
                         {link.digests.sha1}
                     </span>
                 )}
+                {link.activeRevision?.photo?.contentHash && (
+                    // This should not be visible in the UI, but needed for e2e
+                    <span data-testid="drive:photo-contentHash" className="hidden" aria-hidden="true">
+                        {link.activeRevision.photo.contentHash}
+                    </span>
+                )}
             </ModalTwoContent>
         );
     };

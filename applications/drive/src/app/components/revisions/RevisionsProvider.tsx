@@ -6,12 +6,15 @@ import { c } from 'ttag';
 import { useConfirmActionModal, useNotifications } from '@proton/components';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { DriveFileRevision } from '@proton/shared/lib/interfaces/drive/file';
+import { DriveFileRevision, FileRevisionState } from '@proton/shared/lib/interfaces/drive/file';
+import clsx from '@proton/utils/clsx';
 
 import { DecryptedLink, useDownload, useRevisionsView } from '../../store';
+import { usePortalPreview } from '../PortalPreview/PortalPreview';
 import { useRevisionDetailsModal } from '../modals/DetailsModal';
-import { useRevisionPreview } from './RevisionPreview';
 import { CategorizedRevisions, getCategorizedRevisions } from './getCategorizedRevisions';
+
+import './RevisionPreview.scss';
 
 export interface RevisionsProviderState {
     hasPreviewAvailable: boolean;
@@ -41,7 +44,7 @@ export const RevisionsProvider = ({
         deleteRevision,
         restoreRevision,
     } = useRevisionsView(link.rootShareId, link.linkId);
-    const [revisionPreview, showRevisionPreview] = useRevisionPreview();
+    const [portalPreview, showPortalPreview] = usePortalPreview();
     const categorizedRevisions = useMemo(() => getCategorizedRevisions(olderRevisions), [olderRevisions]);
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
     const [revisionDetailsModal, showRevisionDetailsModal] = useRevisionDetailsModal();
@@ -58,13 +61,6 @@ export const RevisionsProvider = ({
             shareId: link.rootShareId,
             linkId: link.linkId,
             name: link.name,
-        });
-    };
-    const openRevisionPreview = (revision: DriveFileRevision) => {
-        void showRevisionPreview({
-            revision,
-            shareId: link.rootShareId,
-            linkId: link.linkId,
         });
     };
 
@@ -140,6 +136,21 @@ export const RevisionsProvider = ({
         });
     };
 
+    const openRevisionPreview = (revision: DriveFileRevision) => {
+        void showPortalPreview({
+            revisionId: revision.ID,
+            shareId: link.rootShareId,
+            linkId: link.linkId,
+            date: revision.CreateTime,
+            className: 'revision-preview',
+            onDetails: () => openRevisionDetails(revision),
+            onRestore: () =>
+                revision.State !== FileRevisionState.Active
+                    ? () => handleRevisionRestore(new AbortController().signal, revision)
+                    : undefined,
+        });
+    };
+
     return (
         <RevisionsContext.Provider
             value={{
@@ -155,12 +166,12 @@ export const RevisionsProvider = ({
             }}
         >
             {children}
-            {revisionPreview
-                ? cloneElement(revisionPreview, {
-                      className:
-                          (confirmModal?.props.open || revisionDetailsModal?.props.open) && 'revisions-preview--behind',
+            {/* We need to update portal preview props after it was opened to have the backdrop working*/}
+            {portalPreview && (confirmModal?.props.open || revisionDetailsModal?.props.open)
+                ? cloneElement(portalPreview, {
+                      className: clsx(portalPreview.props.className, 'revision-preview--behind'),
                   })
-                : null}
+                : portalPreview}
             {revisionDetailsModal}
             {confirmModal}
         </RevisionsContext.Provider>

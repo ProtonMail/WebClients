@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useMemo, useRef } from 'react';
+import React, { createContext, useContext, useEffect, useMemo, useRef } from 'react';
 
 import { VERIFICATION_STATUS } from '@proton/crypto';
 import { MAX_THREADS_PER_DOWNLOAD } from '@proton/shared/lib/drive/constants';
@@ -9,7 +9,19 @@ import { createAsyncQueue } from '../../utils/parallelRunners';
 import { useLink } from '../_links';
 
 interface DownloadProviderState {
-    addToDownloadQueue: (shareId: string, linkId: string, activeRevisionId?: string) => void;
+    /**
+     * Adds a thumbnail to the download queue.
+     *
+     * @param domRef If provided, will cancel the query if `ref.current` is null
+     *               when the queue processes the thumbnail. This is useful to
+     *               avoid processing items which are no longer visible.
+     */
+    addToDownloadQueue: (
+        shareId: string,
+        linkId: string,
+        activeRevisionId?: string,
+        domRef?: React.MutableRefObject<unknown>
+    ) => void;
 }
 
 const ThumbnailsDownloadContext = createContext<DownloadProviderState | null>(null);
@@ -90,18 +102,30 @@ export const ThumbnailsDownloadProvider = ({
             });
     };
 
-    const addToDownloadQueue = async (shareId: string, linkId: string, activeRevisionId?: string) => {
+    // See JSDoc comment in the interface on top of this file.
+    const addToDownloadQueue = (
+        shareId: string,
+        linkId: string,
+        activeRevisionId?: string,
+        domRef?: React.MutableRefObject<unknown>
+    ) => {
         const downloadIdString = getDownloadIdString({
             shareId,
             linkId,
             activeRevisionId,
         });
 
-        if (queueLinkCache.current.has(downloadIdString)) {
+        if (queueLinkCache.current.has(downloadIdString) || (domRef && !domRef.current)) {
             return;
         }
         queueLinkCache.current.add(downloadIdString);
+
         asyncQueue.addToQueue(() => {
+            if (domRef && !domRef.current) {
+                // No download was initiated, so removed it from the cache
+                queueLinkCache.current.delete(downloadIdString);
+                return Promise.resolve();
+            }
             return handleThumbnailDownload(shareId, linkId, downloadIdString);
         });
     };

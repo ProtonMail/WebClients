@@ -11,6 +11,7 @@ export default function useAbortSignal(dependencies?: any[]) {
             abortController.current.abort();
             abortController.current = new AbortController();
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, dependencies);
 
     return abortController.current.signal;

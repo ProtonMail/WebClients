@@ -1,16 +1,18 @@
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import { isMainShare } from '@proton/shared/lib/drive/utils/share';
-import { DevicePayload } from '@proton/shared/lib/interfaces/drive/device';
-import { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
+import type { DevicePayload } from '@proton/shared/lib/interfaces/drive/device';
+import type { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
 import { LinkMeta, LinkType, SharedUrlInfo } from '@proton/shared/lib/interfaces/drive/link';
-import { ShareMeta, ShareMetaShort } from '@proton/shared/lib/interfaces/drive/share';
+import type { Photo as PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
+import type { ShareMeta, ShareMetaShort } from '@proton/shared/lib/interfaces/drive/share';
 import type { ShareURL as ShareURLPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
-import { Device } from '../_devices';
-import { DriveEvents } from '../_events/interface';
-import { EncryptedLink } from '../_links/interface';
+import type { Device } from '../_devices';
+import type { DriveEvents } from '../_events';
+import type { EncryptedLink } from '../_links';
+import type { Photo } from '../_photos';
 import { hasCustomPassword, hasGeneratedPasswordIncluded } from '../_shares';
-import type { Share, ShareURL, ShareWithKey } from '../_shares/interface';
+import type { Share, ShareURL, ShareWithKey } from '../_shares';
 
 // LinkMetaWithShareURL is used when loading shared links.
 // We need this to load information about number of accesses.
@@ -43,6 +45,15 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: str
                       ? {
                             bareUrl: link.FileProperties.ActiveRevision.ThumbnailURLInfo.BareURL,
                             token: link.FileProperties.ActiveRevision.ThumbnailURLInfo.Token,
+                        }
+                      : undefined,
+                  photo: link.FileProperties.ActiveRevision.Photo
+                      ? {
+                            linkId: link.FileProperties.ActiveRevision.Photo.LinkID,
+                            captureTime: link.FileProperties.ActiveRevision.Photo.CaptureTime,
+                            contentHash: link.FileProperties.ActiveRevision.Photo.ContentHash ?? undefined,
+                            mainPhotoLinkId: link.FileProperties.ActiveRevision.Photo.MainPhotoLinkID ?? undefined,
+                            hash: link.FileProperties.ActiveRevision.Photo.Hash ?? undefined,
                         }
                       : undefined,
               }
@@ -87,6 +98,7 @@ export function shareMetaShortToShare(share: ShareMetaShort): Share {
         isVolumeSoftDeleted: share.VolumeSoftDeleted,
         possibleKeyPackets: (share.PossibleKeyPackets || []).map(({ KeyPacket }) => KeyPacket),
         type: share.Type,
+        state: share.State,
     };
 }
 
@@ -155,5 +167,15 @@ export const shareUrlPayloadToShareUrl = (shareUrl: ShareURLPayload): ShareURL =
         srpModulusID: shareUrl.SRPModulusID,
         maxAccesses: shareUrl.MaxAccesses,
         permissions: shareUrl.Permissions,
+    };
+};
+
+export const photoPayloadToPhotos = (photo: PhotoPayload): Photo => {
+    return {
+        linkId: photo.LinkID,
+        captureTime: photo.CaptureTime,
+        mainPhotoLinkId: photo.MainPhotoLinkID ?? undefined,
+        hash: photo.Hash ?? undefined,
+        contentHash: photo.ContentHash ?? undefined,
     };
 };

@@ -18,7 +18,7 @@ import { useDriveCrypto } from '../../_crypto';
 import { useLink } from '../../_links';
 import { GLOBAL_FORBIDDEN_CHARACTERS } from '../../_links/link';
 import { useDebouncedFunction } from '../../_utils';
-import { LockedDeviceForRestore, LockedVolumeForRestore, ShareWithKey } from './../interface';
+import { LockedDeviceForRestore, LockedPhotosForRestore, LockedVolumeForRestore, ShareWithKey } from './../interface';
 import useDefaultShare from './../useDefaultShare';
 import useShare from './../useShare';
 import useSharesState from './../useSharesState';
@@ -27,6 +27,7 @@ import { getPossibleAddressPrivateKeys, prepareVolumeForRestore } from './utils'
 type LockedShares = {
     defaultShare: ShareWithKey;
     devices: ShareWithKey[];
+    photos: ShareWithKey[];
 }[];
 
 /**
@@ -75,12 +76,13 @@ export function useLockedVolumeInner({
     const getLoadedLockedShares = useCallback(
         async (abortSignal: AbortSignal): Promise<LockedShares> => {
             return Promise.all(
-                sharesState.getLockedShares().map(async ({ defaultShare, devices }) => {
+                sharesState.getLockedShares().map(async ({ defaultShare, devices, photos }) => {
                     return {
                         defaultShare: await getShareWithKey(abortSignal, defaultShare.shareId),
                         devices: await Promise.all(
                             devices.map((device) => getShareWithKey(abortSignal, device.shareId))
                         ),
+                        photos: await Promise.all(photos.map((photo) => getShareWithKey(abortSignal, photo.shareId))),
                     };
                 })
             );
@@ -100,9 +102,9 @@ export function useLockedVolumeInner({
     const getPreparedVolumes = useCallback(
         async (lockedUnpreparedShares: LockedShares, addressPrivateKeys: PrivateKeyReference[]) => {
             const preparedVolumes = await Promise.all(
-                lockedUnpreparedShares.map(({ defaultShare, devices }) => {
+                lockedUnpreparedShares.map(({ defaultShare, devices, photos }) => {
                     return debouncedFunction(
-                        async () => prepareVolumeForRestore(defaultShare, devices, addressPrivateKeys),
+                        async () => prepareVolumeForRestore(defaultShare, devices, photos, addressPrivateKeys),
                         ['prepareVolumeForRestore', defaultShare.volumeId]
                     );
                 })
@@ -153,7 +155,8 @@ export function useLockedVolumeInner({
         address: Address,
         lockedVolumeId: string,
         lockedShareLinkPassphraseRaw: string,
-        lockedDevices: LockedDeviceForRestore[]
+        lockedDevices: LockedDeviceForRestore[],
+        lockedPhotos: LockedPhotosForRestore[]
     ) => {
         if (!hashKey) {
             throw new Error('Missing hash key on folder link');
@@ -166,32 +169,57 @@ export function useLockedVolumeInner({
         // translator: The date is in locale of user's preference. It's used for folder name and translating the beginning of the string is enough.
         const restoreFolderName = c('Info').t`Restored files ${formattedDate}`;
 
-        const [Hash, { NodePassphrase, NodePassphraseSignature }, { message: encryptedName }, devicePassphrases] =
-            await Promise.all([
-                generateLookupHash(restoreFolderName, hashKey),
-                encryptPassphrase(privateKey, addressKey, lockedShareLinkPassphraseRaw),
-                CryptoProxy.encryptMessage({
-                    textData: restoreFolderName,
-                    stripTrailingSpaces: true,
-                    encryptionKeys: privateKey,
-                    signingKeys: addressKey,
-                }),
-                Promise.all(
-                    lockedDevices.map(async (device) => {
-                        const [sharePassphraseSignature, shareKeyPacket] = await Promise.all([
-                            sign(device.shareDecryptedPassphrase, addressKey),
-                            getEncryptedSessionKey(device.shareSessionKey, addressKey).then(uint8ArrayToBase64String),
-                        ]);
-                        return {
-                            sharePassphraseSignature,
-                            shareKeyPacket,
-                        };
-                    })
-                ),
-            ]);
+        const [
+            Hash,
+            { NodePassphrase, NodePassphraseSignature },
+            { message: encryptedName },
+            devicePassphrases,
+            photosPassphrases,
+        ] = await Promise.all([
+            generateLookupHash(restoreFolderName, hashKey),
+            encryptPassphrase(privateKey, addressKey, lockedShareLinkPassphraseRaw),
+            CryptoProxy.encryptMessage({
+                textData: restoreFolderName,
+                stripTrailingSpaces: true,
+                encryptionKeys: privateKey,
+                signingKeys: addressKey,
+            }),
+            Promise.all(
+                lockedDevices.map(async (device) => {
+                    const [sharePassphraseSignature, shareKeyPacket] = await Promise.all([
+                        sign(device.shareDecryptedPassphrase, addressKey),
+                        getEncryptedSessionKey(device.shareSessionKey, addressKey).then(uint8ArrayToBase64String),
+                    ]);
+                    return {
+                        sharePassphraseSignature,
+                        shareKeyPacket,
+                    };
+                })
+            ),
+            Promise.all(
+                lockedPhotos.map(async (photo) => {
+                    const [sharePassphraseSignature, shareKeyPacket] = await Promise.all([
+                        sign(photo.shareDecryptedPassphrase, addressKey),
+                        getEncryptedSessionKey(photo.shareSessionKey, addressKey).then(uint8ArrayToBase64String),
+                    ]);
+                    return {
+                        sharePassphraseSignature,
+                        shareKeyPacket,
+                    };
+                })
+            ),
+        ]);
 
         const devicesPayload = lockedDevices.map(({ shareId }, idx) => {
             const { shareKeyPacket, sharePassphraseSignature } = devicePassphrases[idx];
+            return {
+                LockedShareID: shareId,
+                ShareKeyPacket: shareKeyPacket,
+                PassphraseSignature: sharePassphraseSignature,
+            };
+        });
+        const photosPayload = lockedPhotos.map(({ shareId }, idx) => {
+            const { shareKeyPacket, sharePassphraseSignature } = photosPassphrases[idx];
             return {
                 LockedShareID: shareId,
                 ShareKeyPacket: shareKeyPacket,
@@ -208,6 +236,7 @@ export function useLockedVolumeInner({
                 NodePassphraseSignature,
                 TargetVolumeID: parentVolumeID,
                 Devices: devicesPayload,
+                PhotoShares: photosPayload,
             })
         );
     };
@@ -237,11 +266,13 @@ export function useLockedVolumeInner({
                 address,
                 lockedVolume.lockedVolumeId,
                 lockedVolume.defaultShare.linkDecryptedPassphrase,
-                lockedVolume.devices
+                lockedVolume.devices,
+                lockedVolume.photos
             );
             sharesState.removeShares([
                 lockedVolume.defaultShare.shareId,
                 ...lockedVolume.devices.map(({ shareId }) => shareId),
+                ...lockedVolume.photos.map(({ shareId }) => shareId),
             ]);
         });
         await preventLeave(Promise.all(restorePromiseList));

@@ -8,6 +8,22 @@ export interface CreateDriveShare {
     PassphraseKeyPacket: string;
     NameKeyPacket: string;
 }
+export interface CreateDrivePhotosShare {
+    Share: {
+        Name: string;
+        AddressID: string;
+        Key: string;
+        Passphrase: string;
+        PassphraseSignature: string;
+    };
+    Link: {
+        NodeKey: string;
+        NodePassphrase: string;
+        NodePassphraseSignature: string;
+        NodeHashKey: string;
+        Name: string;
+    };
+}
 
 export interface UserShareResult {
     Shares: ShareMetaShort[];
@@ -23,6 +39,7 @@ export interface ShareMetaShort {
     Flags: number;
     PossibleKeyPackets?: { KeyPacket: string }[];
     VolumeSoftDeleted: boolean;
+    State: number;
 }
 
 export interface ShareMeta extends ShareMetaShort {

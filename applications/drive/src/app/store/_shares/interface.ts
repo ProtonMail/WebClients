@@ -9,6 +9,13 @@ export enum ShareType {
     default = 1,
     standard,
     device,
+    photos,
+}
+
+export enum ShareState {
+    active = 1,
+    deleted,
+    restored,
 }
 
 export interface Share {
@@ -21,6 +28,7 @@ export interface Share {
     isVolumeSoftDeleted: boolean;
     possibleKeyPackets: string[];
     type: ShareType;
+    state: ShareState;
 }
 
 export interface ShareWithKey extends Share {
@@ -64,6 +72,7 @@ export interface LockedVolumeForRestore {
     lockedVolumeId: string;
     defaultShare: LockedShareForRestore;
     devices: LockedDeviceForRestore[];
+    photos: LockedDeviceForRestore[];
 }
 
 export interface LockedShareForRestore {
@@ -72,6 +81,10 @@ export interface LockedShareForRestore {
 }
 
 export interface LockedDeviceForRestore extends LockedShareForRestore {
+    shareDecryptedPassphrase: string;
+    shareSessionKey: SessionKey;
+}
+export interface LockedPhotosForRestore extends LockedShareForRestore {
     shareDecryptedPassphrase: string;
     shareSessionKey: SessionKey;
 }
