@@ -4,12 +4,12 @@ import DOMPurify from 'dompurify';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { useDragToScroll, useElementRect } from '@proton/components/hooks';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import { isSVG } from '@proton/shared/lib/helpers/mimetype';
 import clsx from '@proton/utils/clsx';
 
-import useElementRect from '../../hooks/useElementRect';
 import UnsupportedPreview from './UnsupportedPreview';
 import ZoomControl from './ZoomControl';
 
@@ -111,6 +111,8 @@ const ImagePreview = ({
 
     const handleZoomIn = () => setImageScale((zoom) => (zoom ? zoom * 1.1 : 1));
 
+    const { onMouseDown } = useDragToScroll(containerRef);
+
     useEffect(() => {
         if (!fullImageDimensions) {
             return;
@@ -193,7 +195,7 @@ const ImagePreview = ({
 
     return (
         <>
-            <div ref={containerRef} className="file-preview-container">
+            <div ref={containerRef} className={'file-preview-container'} onMouseDown={onMouseDown}>
                 {error ? (
                     <UnsupportedPreview onDownload={onDownload} type="image" />
                 ) : (
@@ -206,7 +208,7 @@ const ImagePreview = ({
                     >
                         {!isLoading && (
                             <div
-                                className={clsx(['file-preview-image file-preview-image-full-size'])}
+                                className={clsx('file-preview-image file-preview-image-full-size')}
                                 style={{
                                     ...imageStyles,
                                     background: 'repeating-conic-gradient(#606060 0% 25%, transparent 0% 50%)',

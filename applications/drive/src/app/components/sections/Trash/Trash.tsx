@@ -104,11 +104,11 @@ function Trash({ trashView }: Props) {
         [navigateToLink, browserItems]
     );
 
-    const handleItemRender = useCallback((item: TrashItem) => {
+    const handleItemRender = (item: TrashItem) => {
         if (item.hasThumbnail && item.activeRevision && !item.cachedThumbnailUrl) {
             thumbnails.addToDownloadQueue(item.rootShareId, item.id, item.activeRevision.id);
         }
-    }, []);
+    };
 
     /* eslint-disable react/display-name */
     const GridHeaderComponent = useMemo(

@@ -1,13 +1,21 @@
 import noop from '@proton/utils/noop';
 
 import { MAX_ENCRYPTED_BLOCKS, MAX_UPLOADING_BLOCKS, MAX_UPLOAD_JOBS } from '../constants';
-import { EncryptedBlock, EncryptedThumbnailBlock } from '../interface';
+import { EncryptedBlock } from '../interface';
+import { ThumbnailType } from '../media';
 import UploadWorkerBuffer from './buffer';
-import { createBlock, createLink, createUploadingBlock, waitFor } from './testHelpers';
+import {
+    createBlock,
+    createLink,
+    createThumbnailBlock,
+    createThumbnailUploadingBlock,
+    createUploadingBlock,
+    waitFor,
+} from './testHelpers';
 
 function mockGenerator(start: number, end: number) {
     let position = 0;
-    async function* generator(): AsyncGenerator<EncryptedBlock | EncryptedThumbnailBlock> {
+    async function* generator(): AsyncGenerator<EncryptedBlock> {
         for (let idx = start; idx <= end; idx++) {
             position = idx;
             yield createBlock(idx);
@@ -39,6 +47,7 @@ describe('upload worker buffer', () => {
         buffer.encryptionFinished = true;
         buffer.uploadingFinished = true;
         buffer.encryptedBlocks.clear();
+        buffer.thumbnailsEncryptedBlocks.clear();
         // To stop wait in generateUploadingBlocks.
         buffer.uploadingBlocks = [createUploadingBlock(1)];
     });
@@ -91,23 +100,22 @@ describe('upload worker buffer', () => {
         buffer.encryptedBlocks.set(1, createBlock(1));
         buffer.runBlockLinksCreation(mockRequestBlockCreation);
 
-        expect(mockRequestBlockCreation.mock.calls).toMatchObject([[[createBlock(1)], undefined]]);
+        expect(mockRequestBlockCreation.mock.calls).toMatchObject([[[createBlock(1)], []]]);
     });
 
-    it('does not create block link with thumbnail block only', async () => {
-        buffer.encryptedBlocks.set(0, createBlock(0)); // Thumbnail has index = 0.
-        buffer.runBlockLinksCreation(mockRequestBlockCreation);
-
-        expect(mockRequestBlockCreation.mock.calls.length).toBe(0);
-    });
-
-    it('creates thumbnail and block links', async () => {
-        buffer.encryptedBlocks.set(0, createBlock(0)); // Thumbnail has index = 0.
+    it('creates thumbnails and block links', async () => {
+        buffer.thumbnailsEncryptedBlocks.set(0, createThumbnailBlock(0, ThumbnailType.PREVIEW));
+        buffer.thumbnailsEncryptedBlocks.set(1, createThumbnailBlock(1, ThumbnailType.HD_PREVIEW));
         buffer.encryptedBlocks.set(1, createBlock(1));
         buffer.encryptedBlocks.set(2, createBlock(2));
         buffer.runBlockLinksCreation(mockRequestBlockCreation);
 
-        expect(mockRequestBlockCreation.mock.calls).toMatchObject([[[createBlock(1), createBlock(2)], createBlock(0)]]);
+        expect(mockRequestBlockCreation.mock.calls).toMatchObject([
+            [
+                [createBlock(1), createBlock(2)],
+                [createThumbnailBlock(0, ThumbnailType.PREVIEW), createThumbnailBlock(1, ThumbnailType.HD_PREVIEW)],
+            ],
+        ]);
     });
 
     it('creates block links when upload buffer is low', async () => {
@@ -130,19 +138,24 @@ describe('upload worker buffer', () => {
         }
         buffer.runBlockLinksCreation(mockRequestBlockCreation);
 
-        expect(mockRequestBlockCreation.mock.calls).toMatchObject([[expectedBlocks, undefined]]);
+        expect(mockRequestBlockCreation.mock.calls).toMatchObject([[expectedBlocks, []]]);
     });
 
     it('moves block from encrypted buffer to uploading buffer once link is created', async () => {
-        buffer.encryptedBlocks.set(0, createBlock(0)); // Thumbnail has index = 0.
+        buffer.thumbnailsEncryptedBlocks.set(0, createThumbnailBlock(0, ThumbnailType.PREVIEW));
+        buffer.thumbnailsEncryptedBlocks.set(1, createThumbnailBlock(1, ThumbnailType.HD_PREVIEW));
         buffer.encryptedBlocks.set(1, createBlock(1));
         buffer.encryptedBlocks.set(2, createBlock(2));
 
-        buffer.setBlockLinks([createLink(0), createLink(1)]);
+        buffer.setThumbnailBlockLinks([createLink(0)]);
+        buffer.setFileBlockLinks([createLink(1)]);
 
+        buffer.requestingBlockLinks = false;
+
+        expect(Array.from(buffer.thumbnailsEncryptedBlocks.keys())).toMatchObject([1]);
         expect(Array.from(buffer.encryptedBlocks.keys())).toMatchObject([2]);
         expect(buffer.uploadingBlocks).toMatchObject([
-            createUploadingBlock(0, buffer.uploadingBlocks[0].isTokenExpired),
+            createThumbnailUploadingBlock(0, buffer.uploadingBlocks[0].isTokenExpired, ThumbnailType.PREVIEW),
             createUploadingBlock(1, buffer.uploadingBlocks[1].isTokenExpired),
         ]);
     });

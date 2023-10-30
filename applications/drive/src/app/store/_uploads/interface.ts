@@ -2,6 +2,8 @@ import React from 'react';
 
 import { PrivateKeyReference, SessionKey } from '@proton/crypto';
 
+import { ThumbnailType } from './media';
+
 export type UploadConflictModal = React.FunctionComponent<UploadConflictModalProps>;
 
 export interface UploadConflictModalProps {
@@ -42,9 +44,9 @@ export interface UploadCallbacks {
     createBlockLinks: (
         abortSignal: AbortSignal,
         fileBlocks: FileRequestBlock[],
-        thumbnailBlock?: ThumbnailRequestBlock
-    ) => Promise<{ fileLinks: Link[]; thumbnailLink?: Link }>;
-    finalize: (signature: string, signatureAddress: string, xattr: string) => Promise<void>;
+        thumbnailBlocks?: ThumbnailRequestBlock[]
+    ) => Promise<{ fileLinks: Link[]; thumbnailLinks?: Link[] }>;
+    finalize: (signature: string, signatureAddress: string, xattr: string, photo?: PhotoUpload) => Promise<void>;
     onError?: (error: Error) => void;
 }
 
@@ -66,6 +68,7 @@ export type InitializedFileMeta = {
     fileName: string;
     privateKey: PrivateKeyReference;
     sessionKey: SessionKey;
+    parentHashKey: Uint8Array;
     address: {
         privateKey: PrivateKeyReference;
         email: string;
@@ -79,13 +82,19 @@ export type EncryptedBlock = {
     hash: Uint8Array;
     signature: string;
     verificationToken: Uint8Array;
+
+    // Thumbnails specific properties
+    thumbnailType?: never;
 };
 
-export type EncryptedThumbnailBlock = {
+export type ThumbnailEncryptedBlock = {
     index: number;
     originalSize: number;
     encryptedData: Uint8Array;
     hash: Uint8Array;
+
+    // Thumbnails specific properties
+    thumbnailType: ThumbnailType;
 };
 
 export type FileRequestBlock = {
@@ -99,6 +108,7 @@ export type FileRequestBlock = {
 export type ThumbnailRequestBlock = {
     size: number;
     hash: Uint8Array;
+    type: ThumbnailType;
 };
 
 export type VerificationData = {
@@ -121,6 +131,12 @@ export type BlockTokenHash = {
 export type BlockToken = {
     index: number;
     token: string;
+};
+
+export type PhotoUpload = {
+    encryptedExif?: string;
+    captureTime: number;
+    contentHash?: string;
 };
 
 export enum TransferConflictStrategy {

@@ -30,6 +30,12 @@ export interface UpdateFileRevision {
     ManifestSignature: string;
     SignatureAddress: string;
     XAttr?: string;
+    Photo?: {
+        MainPhotoLinkID: string | null;
+        CaptureTime: number;
+        Exif?: string;
+        ContentHash?: string;
+    };
 }
 
 export interface CreateFileResult {
@@ -52,7 +58,7 @@ export interface UploadLink {
 
 export interface RequestUploadResult {
     UploadLinks: UploadLink[];
-    ThumbnailLink?: UploadLink;
+    ThumbnailLinks?: UploadLink[];
 }
 
 export interface DriveFileBlock {
@@ -63,6 +69,8 @@ export interface DriveFileBlock {
     Hash: string;
 }
 
+export type Thumbnail = { Size: number; Type: number; Hash: string };
+
 export interface DriveFileRevision {
     ID: string;
     CreateTime: number;
@@ -72,7 +80,7 @@ export interface DriveFileRevision {
     SignatureAddress: string;
     SignatureEmail: string;
     Blocks: DriveFileBlock[];
-    ThumbnailHash: string;
+    Thumbnails: Thumbnail[];
     XAttr?: string;
 }
 

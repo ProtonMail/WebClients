@@ -13,9 +13,25 @@ export interface ExtendedAttributes {
             SHA1: string;
         };
     };
+    Location?: {
+        Latitude: number;
+        Longitude: number;
+    };
+    Camera?: {
+        CaptureTime?: string;
+        Device?: string;
+        Orientation?: number;
+        SubjectCoordinates?: {
+            Top: number;
+            Left: number;
+            Bottom: number;
+            Right: number;
+        };
+    };
     Media?: {
         Width: number;
         Height: number;
+        Duration?: number;
     };
 }
 
@@ -28,9 +44,25 @@ export interface ParsedExtendedAttributes {
             SHA1: string;
         };
     };
+    Location?: {
+        Latitude: number;
+        Longitude: number;
+    };
+    Camera?: {
+        CaptureTime?: string;
+        Device?: string;
+        Orientation?: number;
+        SubjectCoordinates?: {
+            Top: number;
+            Left: number;
+            Bottom: number;
+            Right: number;
+        };
+    };
     Media?: {
         Width: number;
         Height: number;
+        Duration?: number;
     };
 }
 
@@ -58,9 +90,25 @@ export type XAttrCreateParams = {
     media?: {
         width: number;
         height: number;
+        duration?: number;
     };
     digests?: {
         sha1: string;
+    };
+    location?: {
+        latitude: number;
+        longitude: number;
+    };
+    camera?: {
+        captureTime?: string;
+        device?: string;
+        orientation?: number;
+        subjectCoordinates?: {
+            top: number;
+            left: number;
+            bottom: number;
+            right: number;
+        };
     };
 };
 
@@ -73,7 +121,13 @@ export async function encryptFileExtendedAttributes(
     return encryptExtendedAttributes(xattr, nodePrivateKey, addressPrivateKey);
 }
 
-export function createFileExtendedAttributes({ file, digests, media }: XAttrCreateParams): ExtendedAttributes {
+export function createFileExtendedAttributes({
+    file,
+    digests,
+    media,
+    camera,
+    location,
+}: XAttrCreateParams): ExtendedAttributes {
     const blockSizes = new Array(Math.floor(file.size / FILE_CHUNK_SIZE));
     blockSizes.fill(FILE_CHUNK_SIZE);
     blockSizes.push(file.size % FILE_CHUNK_SIZE);
@@ -93,6 +147,28 @@ export function createFileExtendedAttributes({ file, digests, media }: XAttrCrea
             ? {
                   Width: media.width,
                   Height: media.height,
+                  Duration: media.duration,
+              }
+            : undefined,
+        Location: location
+            ? {
+                  Latitude: location.latitude,
+                  Longitude: location.longitude,
+              }
+            : undefined,
+        Camera: camera
+            ? {
+                  CaptureTime: camera.captureTime,
+                  Device: camera.device,
+                  Orientation: camera.orientation,
+                  SubjectCoordinates: camera.subjectCoordinates
+                      ? {
+                            Top: camera.subjectCoordinates.top,
+                            Left: camera.subjectCoordinates.left,
+                            Bottom: camera.subjectCoordinates.bottom,
+                            Right: camera.subjectCoordinates.right,
+                        }
+                      : undefined,
               }
             : undefined,
     };
@@ -217,7 +293,7 @@ function parseBlockSizes(xattr: MaybeExtendedAttributes): number[] | undefined {
     return blockSizes as number[];
 }
 
-function parseMedia(xattr: MaybeExtendedAttributes): { Width: number; Height: number } | undefined {
+function parseMedia(xattr: MaybeExtendedAttributes): { Width: number; Height: number; Duration?: number } | undefined {
     const media = xattr?.Media;
     if (media === undefined || media.Width === undefined || media.Height === undefined) {
         return undefined;
@@ -232,9 +308,15 @@ function parseMedia(xattr: MaybeExtendedAttributes): { Width: number; Height: nu
         console.warn(`XAttr media height "${height}" is not valid`);
         return undefined;
     }
+    const duration = media.Duration;
+    if (duration !== undefined && typeof duration !== 'number') {
+        console.warn(`XAttr media duration "${duration}" is not valid`);
+        return undefined;
+    }
     return {
         Width: width,
         Height: height,
+        Duration: duration,
     };
 }
 

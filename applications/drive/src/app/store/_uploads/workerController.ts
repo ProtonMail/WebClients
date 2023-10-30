@@ -1,16 +1,17 @@
 import { CryptoProxy, PrivateKeyReference, SessionKey, serverTime, updateServerTime } from '@proton/crypto';
 import { SafeErrorObject, getSafeErrorObject } from '@proton/utils/getSafeErrorObject';
 
-import {
+import type {
     EncryptedBlock,
-    EncryptedThumbnailBlock,
     FileKeys,
     FileRequestBlock,
     Link,
+    PhotoUpload,
+    ThumbnailEncryptedBlock,
     ThumbnailRequestBlock,
     VerificationData,
 } from './interface';
-import { ThumbnailData } from './thumbnail';
+import type { Media, ThumbnailInfo } from './media';
 import { getErrorString } from './utils';
 
 type GenerateKeysMessage = {
@@ -23,18 +24,22 @@ type GenerateKeysMessage = {
 type StartMessage = {
     command: 'start';
     file: File;
-    thumbnailData?: ThumbnailData;
+    mimeType: string;
+    isForPhotos: boolean;
+    thumbnails?: ThumbnailInfo[];
+    media?: Media;
     addressPrivateKey: Uint8Array;
     addressEmail: string;
     privateKey: Uint8Array;
     sessionKey: SessionKey;
+    parentHashKey: Uint8Array;
     verificationData: VerificationData;
 };
 
 type CreatedBlocksMessage = {
     command: 'created_blocks';
     fileLinks: Link[];
-    thumbnailLink?: Link;
+    thumbnailLinks?: Link[];
 };
 
 type PauseMessage = {
@@ -65,14 +70,25 @@ interface WorkerHandlers {
     generateKeys: (addressPrivateKey: PrivateKeyReference, parentPrivateKey: PrivateKeyReference) => void;
     start: (
         file: File,
-        thumbnailData: ThumbnailData | undefined,
+        {
+            mimeType,
+            isForPhotos,
+            media,
+            thumbnails,
+        }: {
+            mimeType: string;
+            isForPhotos: boolean;
+            thumbnails?: ThumbnailInfo[];
+            media?: Media;
+        },
         addressPrivateKey: PrivateKeyReference,
         addressEmail: string,
         privateKey: PrivateKeyReference,
         sessionKey: SessionKey,
+        parentHashKey: Uint8Array,
         verificationData: VerificationData
     ) => void;
-    createdBlocks: (fileLinks: Link[], thumbnailLink?: Link) => void;
+    createdBlocks: (fileLinks: Link[], thumbnailLinks?: Link[]) => void;
     pause: () => void;
     resume: () => void;
 }
@@ -91,7 +107,7 @@ type KeysGeneratedMessage = {
 type CreateBlockMessage = {
     command: 'create_blocks';
     fileBlocks: FileRequestBlock[];
-    thumbnailBlock?: ThumbnailRequestBlock;
+    thumbnailBlocks?: ThumbnailRequestBlock[];
 };
 
 type ProgressMessage = {
@@ -104,6 +120,7 @@ type DoneMessage = {
     signature: string;
     signatureAddress: string;
     xattr: string;
+    photo?: PhotoUpload;
 };
 
 type NetworkErrorMessage = {
@@ -143,9 +160,9 @@ type WorkerEvent = {
  */
 interface WorkerControllerHandlers {
     keysGenerated: (keys: FileKeys) => void;
-    createBlocks: (fileBlocks: FileRequestBlock[], thumbnailBlock?: ThumbnailRequestBlock) => void;
+    createBlocks: (fileBlocks: FileRequestBlock[], thumbnailBlocks?: ThumbnailRequestBlock[]) => void;
     onProgress: (increment: number) => void;
-    finalize: (signature: string, signatureAddress: string, xattr: string) => void;
+    finalize: (signature: string, signatureAddress: string, xattr: string, photo?: PhotoUpload) => void;
     onNetworkError: (error: string) => void;
     onError: (error: string) => void;
     onCancel: () => void;
@@ -162,7 +179,7 @@ export class UploadWorker {
 
     constructor(worker: Worker, { generateKeys, start, createdBlocks, pause, resume }: WorkerHandlers) {
         // Before the worker termination, we want to release securely crypto
-        // proxy. That might need a bit of time and we allow up to few seconds
+        // proxy. That might need a bit of time, and we allow up to few seconds
         // before we terminate the worker. During the releasing time, crypto
         // might be failing, so any error should be ignored.
         let closing = false;
@@ -206,11 +223,17 @@ export class UploadWorker {
                         });
                         start(
                             data.file,
-                            data.thumbnailData,
+                            {
+                                mimeType: data.mimeType,
+                                isForPhotos: data.isForPhotos,
+                                thumbnails: data.thumbnails,
+                                media: data.media,
+                            },
                             addressPrivateKey,
                             data.addressEmail,
                             privateKey,
                             data.sessionKey,
+                            data.parentHashKey,
                             data.verificationData
                         );
                     })(data).catch((err) => {
@@ -218,7 +241,7 @@ export class UploadWorker {
                     });
                     break;
                 case 'created_blocks':
-                    createdBlocks(data.fileLinks, data.thumbnailLink);
+                    createdBlocks(data.fileLinks, data.thumbnailLinks);
                     break;
                 case 'pause':
                     pause();
@@ -263,7 +286,7 @@ export class UploadWorker {
         } as KeysGeneratedMessage);
     }
 
-    postCreateBlocks(fileBlocks: EncryptedBlock[], encryptedThumbnailBlock?: EncryptedThumbnailBlock) {
+    postCreateBlocks(fileBlocks: EncryptedBlock[], encryptedThumbnailBlocks?: ThumbnailEncryptedBlock[]) {
         this.worker.postMessage({
             command: 'create_blocks',
             fileBlocks: fileBlocks.map<FileRequestBlock>((block) => ({
@@ -273,12 +296,11 @@ export class UploadWorker {
                 hash: block.hash,
                 verificationToken: block.verificationToken,
             })),
-            thumbnailBlock: !encryptedThumbnailBlock
-                ? undefined
-                : {
-                      size: encryptedThumbnailBlock.encryptedData.byteLength,
-                      hash: encryptedThumbnailBlock.hash,
-                  },
+            thumbnailBlocks: encryptedThumbnailBlocks?.map((thumbnailBlock) => ({
+                size: thumbnailBlock.encryptedData.byteLength,
+                hash: thumbnailBlock.hash,
+                type: thumbnailBlock.thumbnailType,
+            })),
         } as CreateBlockMessage);
     }
 
@@ -289,12 +311,13 @@ export class UploadWorker {
         } as ProgressMessage);
     }
 
-    postDone(signature: string, signatureAddress: string, xattr: string) {
+    postDone(signature: string, signatureAddress: string, xattr: string, photo?: PhotoUpload) {
         this.worker.postMessage({
             command: 'done',
             signature,
             signatureAddress,
             xattr,
+            photo,
         } as DoneMessage);
     }
 
@@ -367,13 +390,13 @@ export class UploadWorkerController {
                     });
                     break;
                 case 'create_blocks':
-                    createBlocks(data.fileBlocks, data.thumbnailBlock);
+                    createBlocks(data.fileBlocks, data.thumbnailBlocks);
                     break;
                 case 'progress':
                     onProgress(data.increment);
                     break;
                 case 'done':
-                    finalize(data.signature, data.signatureAddress, data.xattr);
+                    finalize(data.signature, data.signatureAddress, data.xattr, data.photo);
                     break;
                 case 'network_error':
                     onNetworkError(data.error);
@@ -421,17 +444,31 @@ export class UploadWorkerController {
 
     async postStart(
         file: File,
-        thumbnailData: ThumbnailData | undefined,
+        {
+            mimeType,
+            isForPhotos,
+            thumbnails,
+            media,
+        }: {
+            mimeType: string;
+            isForPhotos: boolean;
+            thumbnails?: ThumbnailInfo[];
+            media?: Media;
+        },
         addressPrivateKey: PrivateKeyReference,
         addressEmail: string,
         privateKey: PrivateKeyReference,
         sessionKey: SessionKey,
+        parentHashKey: Uint8Array,
         verificationData: VerificationData
     ) {
         this.worker.postMessage({
             command: 'start',
             file,
-            thumbnailData,
+            mimeType,
+            isForPhotos: isForPhotos,
+            thumbnails,
+            media,
             addressPrivateKey: await CryptoProxy.exportPrivateKey({
                 privateKey: addressPrivateKey,
                 passphrase: null,
@@ -444,15 +481,16 @@ export class UploadWorkerController {
                 format: 'binary',
             }),
             sessionKey,
+            parentHashKey,
             verificationData,
         } satisfies StartMessage);
     }
 
-    postCreatedBlocks(fileLinks: Link[], thumbnailLink?: Link) {
+    postCreatedBlocks(fileLinks: Link[], thumbnailLinks?: Link[]) {
         this.worker.postMessage({
             command: 'created_blocks',
             fileLinks,
-            thumbnailLink,
+            thumbnailLinks,
         } as CreatedBlocksMessage);
     }
 

@@ -15,4 +15,8 @@ enum AccountFlag {
     BF2023IsExpired = 'BF2023IsExpired',
 }
 
-export type FeatureFlag = `${MailFeatureFlag}` | `${AccountFlag}`;
+enum DriveFeatureFlag {
+    DrivePhotos = 'DrivePhotos',
+    DrivePhotosUploadDisabled = 'DrivePhotosUploadDisabled',
+}
+export type FeatureFlag = `${MailFeatureFlag}` | `${AccountFlag}` | `${DriveFeatureFlag}`;
