@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import {
     EASY_SWITCH_SOURCE,
     EasySwitchFeatureFlag,
@@ -10,16 +12,19 @@ import { FeatureCode } from '@proton/components/containers/features';
 import { useFeature, useUser } from '@proton/components/hooks';
 
 import GoogleButton from './GoogleButton';
+import OutlookButton from './OutlookButton';
 
+type AllowedImporter = ImportProvider.GOOGLE | ImportProvider.OUTLOOK;
 interface Props {
     className?: string;
     source: EASY_SWITCH_SOURCE;
     defaultCheckedTypes: ImportType[];
     displayOn: keyof EasySwitchFeatureFlag;
     onClick?: () => void;
+    provider: AllowedImporter;
 }
 
-const OAuthImportButton = ({ className, defaultCheckedTypes, displayOn, onClick }: Props) => {
+const OAuthImportButton = ({ className, provider, defaultCheckedTypes, displayOn, onClick }: Props) => {
     const [user, userLoading] = useUser();
     const isDelinquent = !user.hasNonDelinquentScope;
 
@@ -31,22 +36,39 @@ const OAuthImportButton = ({ className, defaultCheckedTypes, displayOn, onClick 
 
     const disabled = easySwitchFeatureLoading || userLoading || isDelinquent || !easySwitchFeatureValue?.[displayOn];
 
-    return (
-        <GoogleButton
-            disabled={disabled}
-            className={className}
-            onClick={() => {
-                dispatch(
-                    startOauthDraft({
-                        // Defaults to google but can be updated later
-                        provider: ImportProvider.GOOGLE,
-                        products: defaultCheckedTypes,
-                    })
-                );
-                onClick?.();
-            }}
-        />
-    );
+    const handleClick = () => {
+        dispatch(
+            startOauthDraft({
+                provider,
+                products: defaultCheckedTypes,
+            })
+        );
+        onClick?.();
+    };
+
+    if (provider === ImportProvider.GOOGLE) {
+        return (
+            <GoogleButton
+                disabled={disabled}
+                className={className}
+                onClick={handleClick}
+                label={c('Action').t`Import from Google`}
+            />
+        );
+    }
+
+    if (provider === ImportProvider.OUTLOOK) {
+        return (
+            <OutlookButton
+                disabled={disabled}
+                className={className}
+                onClick={handleClick}
+                label={c('Action').t`Import from Outlook`}
+            />
+        );
+    }
+
+    return null;
 };
 
 export default OAuthImportButton;
