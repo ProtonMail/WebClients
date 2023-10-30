@@ -33,8 +33,7 @@ const LinkConfirmationModalLink = ({ link, isPunnyCoded, value, onToggle, isOuts
             {`${c('Info').t`You are about to open another browser tab and visit:`} `}
             <span className="text-bold text-break">{link}</span>
             <Copy
-                className="ml-3"
-                shape="ghost"
+                className="ml-2"
                 size="small"
                 tooltipText={c('Info').t`Copy the link to clipboard`}
                 value={link}
