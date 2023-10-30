@@ -1282,6 +1282,8 @@ const Step1 = ({
                                                         cycle: `${options.cycle}`,
                                                         currency: options.currency,
                                                         coupon: options.checkResult.Coupon?.Code,
+                                                        type: 'offer',
+                                                        ref: 'signup',
                                                     },
                                                     '?'
                                                 )}`,
