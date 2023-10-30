@@ -127,7 +127,7 @@ export const ensureTokenChargeable = (
             }
 
             reset();
-            tab?.close();
+            tab?.close?.();
 
             const { cancel } = event.data;
 
@@ -140,7 +140,7 @@ export const ensureTokenChargeable = (
 
         const abort = () => {
             reset();
-            tab?.close();
+            tab?.close?.();
             reject(new Error(translations.processAbortedError));
         };
 
