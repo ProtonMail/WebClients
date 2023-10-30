@@ -7,6 +7,7 @@ import { read1Password1PuxData } from './providers/1password.reader.1pux';
 import { readBitwardenData } from './providers/bitwarden.reader';
 import { readChromiumData } from './providers/chromium.reader';
 import { readDashlaneData } from './providers/dashlane.reader';
+import { readEnpassData } from './providers/enpass.reader';
 import { readFirefoxData } from './providers/firefox.reader';
 import { readKeePassData } from './providers/keepass.reader';
 import { readKeeperData } from './providers/keeper.reader';
@@ -97,6 +98,10 @@ export const fileReader = async (payload: ImportReaderPayload): Promise<ImportPa
 
         case ImportProvider.NORDPASS: {
             return readNordPassData(await payload.file.text());
+        }
+
+        case ImportProvider.ENPASS: {
+            return readEnpassData(await payload.file.text());
         }
 
         default:
