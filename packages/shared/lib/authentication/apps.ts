@@ -75,6 +75,11 @@ export const getToApp = (toApp: APP_NAMES | undefined, user: User) => {
             return APPS.PROTONPASS;
         }
 
+        // VPN and Pass bundle
+        if (Subscribed === (PRODUCT_BIT.VPN | PRODUCT_BIT.PASS)) {
+            return APPS.PROTONVPN_SETTINGS;
+        }
+
         return APPS.PROTONDRIVE;
     }
     return DEFAULT_APP;

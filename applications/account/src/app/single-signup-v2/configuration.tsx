@@ -1,12 +1,14 @@
 import { DriveLogo, MailLogo, PassLogo, VpnLogo } from '@proton/components/components';
 import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
 import { getDriveAppFeature, getStorageFeature } from '@proton/components/containers/payments/features/drive';
+import { getUsersFeature } from '@proton/components/containers/payments/features/highlights';
 import { getMailAppFeature } from '@proton/components/containers/payments/features/mail';
 import { getPassAppFeature } from '@proton/components/containers/payments/features/pass';
 import {
     getBundlePlan,
     getBundleProPlan,
     getDrivePlan,
+    getFamilyPlan,
     getMailPlan,
     getNewVisionaryPlan,
     getPassPlan,
@@ -18,13 +20,12 @@ import {
     getRefundable,
     getVPNAppFeature,
 } from '@proton/components/containers/payments/features/vpn';
-import { APPS, APP_NAMES, PLANS } from '@proton/shared/lib/constants';
+import { FAMILY_MAX_USERS, PLANS } from '@proton/shared/lib/constants';
 import { Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
 
-import { BenefitItem } from './Benefits';
 import bundleVpnPass from './bundle-vpn-pass.svg';
 import bundle from './bundle.svg';
-import { getCustomPassFeatures, getPassBenefits } from './pass/configuration';
+import { getCustomPassFeatures } from './pass/configuration';
 
 export const getSummaryPlan = (plan: Plan | undefined, vpnServersCountData: VPNServersCountData) => {
     const iconSize = 24;
@@ -60,6 +61,7 @@ export const getSummaryPlan = (plan: Plan | undefined, vpnServersCountData: VPNS
             ...shortPlan,
             plan,
             features: [
+                getStorageFeature(plan.MaxSpace),
                 getMailAppFeature(),
                 getCalendarAppFeature(),
                 getDriveAppFeature(),
@@ -84,6 +86,31 @@ export const getSummaryPlan = (plan: Plan | undefined, vpnServersCountData: VPNS
             logo: <MailLogo variant="glyph-only" size={iconSize} />,
             ...shortPlan,
             plan,
+        };
+    }
+
+    if (plan && plan?.Name === PLANS.FAMILY) {
+        const shortPlan = getFamilyPlan(plan, vpnServersCountData);
+        return {
+            logo: (
+                <div>
+                    <img src={bundle} width={iconSize} height={iconSize} alt={shortPlan.title} />
+                </div>
+            ),
+            ...shortPlan,
+            plan,
+            features: [
+                getUsersFeature(FAMILY_MAX_USERS),
+                getStorageFeature(plan.MaxSpace, { family: true }),
+                getMailAppFeature(),
+                getCalendarAppFeature({ family: true }),
+                getDriveAppFeature({ family: true }),
+                getVPNAppFeature({
+                    family: true,
+                    serversCount: vpnServersCountData,
+                }),
+                getPassAppFeature(),
+            ],
         };
     }
 
@@ -117,7 +144,7 @@ export const getSummaryPlan = (plan: Plan | undefined, vpnServersCountData: VPNS
             ),
             plan,
             title: plan.Title,
-            features: [getVPNAppFeature({ serversCount: vpnServersCountData }), getPassAppFeature()],
+            features: [getPassAppFeature(), getVPNAppFeature({ serversCount: vpnServersCountData })],
         };
     }
 
@@ -139,11 +166,5 @@ export const getSummaryPlan = (plan: Plan | undefined, vpnServersCountData: VPNS
                 getPassAppFeature(),
             ],
         };
-    }
-};
-
-export const getBenefitItems = (app: APP_NAMES): BenefitItem[] | undefined => {
-    if (app === APPS.PROTONPASS) {
-        return getPassBenefits();
     }
 };

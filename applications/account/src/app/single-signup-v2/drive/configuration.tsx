@@ -19,6 +19,7 @@ import { PlanCard, planCardFeatureProps } from '../PlanCardSelector';
 import { getBenefits, getGenericBenefits, getGenericFeatures, getJoinString } from '../configuration/helper';
 import { SignupConfiguration } from '../interface';
 import CustomStep from '../mail/CustomStep';
+import setupAccount from '../mail/account-setup.svg';
 
 export const getDriveBenefits = (): BenefitItem[] => {
     return [
@@ -117,15 +118,23 @@ export const getDriveConfiguration = ({
         planCards,
         signupTypes: [SignupType.Email, SignupType.Username],
         generateMnemonic: false,
+        onboarding: {
+            user: false,
+            signup: true,
+        },
         defaults: {
             plan: PLANS.DRIVE,
             cycle: CYCLE.YEARLY,
         },
         product: APPS.PROTONDRIVE,
-        shortProductAppName: DRIVE_APP_NAME,
-        productAppName: DRIVE_SHORT_APP_NAME,
-        setupImg: <></>,
-        preload: <></>,
+        shortProductAppName: DRIVE_SHORT_APP_NAME,
+        productAppName: DRIVE_APP_NAME,
+        setupImg: <img src={setupAccount} alt="" />,
+        preload: (
+            <>
+                <link rel="prefetch" href={setupAccount} as="image" />
+            </>
+        ),
         CustomStep,
     };
 };
