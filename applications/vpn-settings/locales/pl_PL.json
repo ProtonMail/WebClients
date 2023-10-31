@@ -302,6 +302,9 @@
       "Open navigation": [
         "Otwórz nawigację"
       ],
+      "Or": [
+        "lub"
+      ],
       "Organization": [
         "Organizacja"
       ],
@@ -440,8 +443,8 @@
       "Sign out": [
         "Wyloguj"
       ],
-      "Sign up for free": [
-        "Załóż darmowe konto"
+      "sign up for free": [
+        "załóż darmowe konto"
       ],
       "Signing in": [
         "Logowanie"
@@ -693,8 +696,14 @@
       "6 users": [
         "6 użytkowników"
       ],
+      "Access content worldwide": [
+        "Dostęp do treści na całym świecie"
+      ],
       "Ad-blocker and malware protection": [
         "Blokada reklam i ochrona przed złośliwym oprogramowaniem"
+      ],
+      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Wszystkie płatne funkcje ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Rozszerzona historia wersji"
@@ -723,29 +732,71 @@
         "Na koniec cyklu rozliczeniowego Twoja subskrypcja zostanie automatycznie odnowiona w obniżonej cenie i na standardowy okres."
       ]
     },
+    "bf2023: header": {
+      "Save with Black Friday deals on a high-speed Swiss VPN": [
+        "Oszczędź na szybkich, szwajcarskich usługach VPN z okazji Czarnego Piątku"
+      ],
+      "Select your Black Friday offer": [
+        "Wybierz ofertę na Czarny Piątek"
+      ]
+    },
+    "bf2023: info": {
+      "All premium ${ BRAND_NAME } services. One easy subscription.": [
+        "Wszystkie usługi ${ BRAND_NAME } w wersji premium. Jedna prosta subskrypcja."
+      ],
+      "Secure browsing and premium VPN features.": [
+        "Bezpieczne przeglądanie i funkcje VPN premium."
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30-dniowa gwarancja zwrotu pieniędzy"
       ]
     },
+    "bf2023: renew": {
+      "${ n } month": [
+        "${ n } miesiąc",
+        "${ n } miesiące",
+        "${ n } miesięcy",
+        "pierwszych ${ n } miesięcy"
+      ],
+      "the first month": [
+        "pierwszy miesiąc"
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
+        "Specjalnie obniżona cena wynosząca ${ discountedPrice } obowiązuje przez ${ discountedMonths }. Następnie będzie miało miejsce automatyczne odnowienie i cena wyniesie ${ nextPrice } przez ${ nextMonths }. Można anulować w dowolnym momencie."
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
+        "Specjalnie obniżona cena wynosząca ${ discountedPrice } obowiązuje przez pierwszy miesiąc. Następnie będzie miało miejsce automatyczne odnowienie i cena wyniesie ${ nextPrice } w każdym miesiącu. Można anulować w dowolnym momencie."
+      ]
+    },
     "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "Uzyskaj dostęp do zablokowanych treści i ciesz się prywatnym przeglądaniem. Obejmuje więcej niż 3000 serwerów w ponad 65 krajach, najwyższe szybkości VPN, dostęp do usług streamingowych na całym świecie, ochronę przed złośliwym oprogramowaniem i blokady reklam, a także szybkie pobieranie BitTorrent oraz inne funkcje."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Uzyskaj dostęp z dowolnego miejsca do treści w usługach streamingowych, takich jak Netflix, Disney+, Prime Video i nie tylko."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
-        "Obejmuje obsługę ${ domains } niestandardowej domeny e-mail, ${ addresses } adresów e-mail, ${ aliases } aliasów hide-my-email, udostępniania kalendarza i nie tylko."
+      "Bypass local internet blocks and censorship with our global network of servers.": [
+        "Omijaj lokalne blokady internetowe i cenzurę dzięki naszej globalnej sieci serwerów."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Obejmuje obsługę ${ domains } niestandardowej domeny e-mail, ${ addresses } adresów e-mail, nieograniczonej liczby aliasów hide-my-email, udostępniania kalendarza i nie tylko."
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Zawiera obsługę 1 niestandardowej domeny, 10 adresów e-mail, 10 aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
+      ],
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Zawiera obsługę 3 niestandardowych domen, ${ addresses } adres e-mail, nieograniczoną liczbę aliasów hide-my-email, udostępnianie kalendarza i wiele więcej.",
+        "Zawiera obsługę 3 niestandardowych domen, ${ addresses } adresy e-mail, nieograniczoną liczbę aliasów hide-my-email, udostępnianie kalendarza i wiele więcej.",
+        "Zawiera obsługę 3 niestandardowych domen, ${ addresses } adresów e-mail, nieograniczoną liczbę aliasów hide-my-email, udostępnianie kalendarza i wiele więcej.",
+        "Zawiera obsługę 3 niestandardowych domen, ${ addresses } adresów e-mail, nieograniczoną liczbę aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
+        "Loguj się bezpiecznie na wszystkich urządzeniach. Obejmuje nieograniczoną liczbę aliasów, udostępnianie, zintegrowane uwierzytelnianie dwustopniowe i nie tylko."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Zabezpiecz swoje e-maile i harmonogram dzięki szyfrowaniu end-to-end. Obejmuje obsługę niestandardowych domen e-mail, 15 adresów e-mail, nieograniczonej liczby aliasów hide-my-email, udostępniania kalendarza i wiele więcej."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Zabezpiecz pliki dzięki szyfrowanej przestrzeni dyskowej w chmurze. Zawiera historię wersji, szyfrowane udostępnianie plików i wiele więcej."
+        "Zabezpiecz pliki dzięki zaszyfrowanej przestrzeni dyskowej w chmurze. Obejmuje historię wersji, zaszyfrowane udostępnianie plików i nie tylko."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Specjalnie zaprojektowana funkcja NetShield chroni Twoje urządzenia oraz przyśpiesza przeglądanie Internetu poprzez blokowanie reklam, elementów śledzących i złośliwego oprogramowania."
@@ -2698,6 +2749,12 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } adres",
+        "${ amountOfAddresses } adresy",
+        "${ amountOfAddresses } adresów",
+        "${ amountOfAddresses } adresów"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikacja ${ appName } potrzebuje Twojej zgody, aby ${ enableDesktopNotifications }."
       ],
@@ -2731,6 +2788,9 @@
         "${ number } serwerów",
         "${ number } serwerów"
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "Plan ${ plan } został usunięty. Pakiet oferty nie jest dostępny w planie miesięcznym."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "Plan ${ plan.Title } wymaga co najmniej 1 dedykowanego serwera ${ serverPricePerMonth }"
       ],
@@ -2739,6 +2799,18 @@
         "Trwa konfiguracja ${ provisioningCounter } serwerów. Zazwyczaj trwa to około ${ provisioningDuration }.",
         "Trwa konfiguracja ${ provisioningCounter } serwerów. Zazwyczaj trwa to około ${ provisioningDuration }.",
         "Trwa konfiguracja ${ provisioningCounter } serwerów. Zazwyczaj trwa to około ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } więcej",
+        "${ remainingAddresses.length } więcej",
+        "${ remainingAddresses.length } więcej",
+        "${ remainingAddresses.length } więcej"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length } adres więcej",
+        "${ remainingAddresses.length } adresy więcej",
+        "${ remainingAddresses.length } adresów więcej",
+        "${ remainingAddresses.length } adresów więcej"
       ],
       "${ storage } storage": [
         "${ storage } przestrzeni dyskowej"
@@ -2824,12 +2896,6 @@
       "Additional options": [
         "Dodatkowe opcje"
       ],
-      "address": [
-        "adres",
-        "adresy",
-        "adresów",
-        "adresów"
-      ],
       "Admin account allocation": [
         "Przestrzeń dyskowa administratora"
       ],
@@ -2901,6 +2967,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Zanim zaczniesz wysyłać i odbierać wiadomości e-mail z nowych adresów, musisz utworzyć dla nich klucze szyfrowania."
+      ],
+      "Billed at ${ price }": [
+        "Płatne ${ price }"
       ],
       "Billing cycle: ${ text }": [
         "Cykl rozliczeniowy: ${ text }"
@@ -3196,9 +3265,6 @@
       "MM/YY": [
         "MM/RR"
       ],
-      "more": [
-        "więcej"
-      ],
       "Multi-user support not enabled.": [
         "Obsługa wielu użytkowników jest wyłączona."
       ],
@@ -3378,6 +3444,9 @@
       ],
       "Revoke certificate ${ name }": [
         "Unieważnij certyfikat ${ name }"
+      ],
+      "Save ${ percentage }": [
+        "Zaoszczędź ${ percentage }"
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Zapisz hasło w bezpiecznym miejscu. Kliknij na ikonę, aby potwierdzić, że poprawnie wpisano hasło."
@@ -7605,8 +7674,8 @@
       ]
     },
     "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Dostęp do serwerów Secure Core, szybkie pobieranie P2P / BitTorrent, Tor przez VPN, Double hop i wiele więcej."
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Dostęp do serwerów Secure Core, szybkiego pobierania P2P / BitTorrent, Tor przez VPN i wiele więcej."
       ]
     },
     "Warning": {

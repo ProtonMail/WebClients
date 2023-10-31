@@ -225,7 +225,7 @@
         "Отримайте нову зашифровану адресу електронної пошти"
       ],
       "Get in touch": [
-        "Зв'язатися з нами"
+        "Зв'яжіться з нами"
       ],
       "Get more": [
         "Отримати більше"
@@ -255,7 +255,7 @@
         "Сховати"
       ],
       "Hide plan features": [
-        "Приховати особливості плану"
+        "Приховати функції плану"
       ],
       "Increase": [
         "Збільшити"
@@ -434,9 +434,6 @@
       "Sign out": [
         "Вийти"
       ],
-      "Sign up for free": [
-        "Зареєструватися безплатно"
-      ],
       "Signing in": [
         "Виконується вхід"
       ],
@@ -562,11 +559,11 @@
         "${ price } за домен"
       ],
       "${ price } per user": [
-        "${ price } на користувача"
+        "${ price } за користувача"
       ],
       "${ users } user": [
         "${ users } користувач",
-        "${ users } користувача",
+        "${ users } користувачі",
         "${ users } користувачів",
         "${ users } користувачів"
       ]
@@ -585,7 +582,7 @@
         "Заборонити непідписані листи"
       ],
       "Edit": [
-        "Змінити"
+        "Редагувати"
       ],
       "Edit address": [
         "Редагувати адресу"
@@ -594,7 +591,7 @@
         "Увімкнути"
       ],
       "Enable E2EE mail": [
-        "Ввімкнути E2EE пошти"
+        "Увімкнути E2EE пошти"
       ],
       "Generate missing keys": [
         "Генерувати відсутні ключі"
@@ -645,7 +642,7 @@
     "Billing cycle": {
       "${ n } month": [
         "${ n } місяць",
-        "${ n } місяців",
+        "${ n } місяці",
         "${ n } місяців",
         "${ n } місяців"
       ]
@@ -1740,7 +1737,7 @@
         "Домен недоступний, повторіть спробу пізніше"
       ],
       "Email address is invalid": [
-        "Недійсна адреса пошти"
+        "Недійсна адреса е-пошти"
       ],
       "Email is not valid": [
         "Е-пошта недійсна"
@@ -1905,7 +1902,7 @@
         "В цьому полі повинно бути не менше ${ minimumLength } символів."
       ],
       "Try again later": [
-        "Повторити спробу пізніше"
+        "Повторіть спробу пізніше"
       ],
       "Try using only letters, numerals, and _.-": [
         "Спробуйте використовувати лише літери, цифри та символи _.-"
@@ -2593,7 +2590,7 @@
         "${ number } серверів"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
-        "${ plan.Title } вимагає щонайменше 1 виділений сервер ${ serverPricePerMonth }"
+        "${ plan.Title } вимагає щонайменше 1 виділений сервер вартістю ${ serverPricePerMonth }"
       ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } сервер все ще налаштовується. Зазвичай це триває приблизно ${ provisioningDuration }.",
@@ -2685,12 +2682,6 @@
       "Additional options": [
         "Додаткові опції"
       ],
-      "address": [
-        "адреса",
-        "адреси",
-        "адрес",
-        "адрес"
-      ],
       "Admin account allocation": [
         "Розподілення для облікового запису адміністратора"
       ],
@@ -2740,7 +2731,7 @@
         "Потребує уваги"
       ],
       "Awaiting transaction": [
-        "Очікує на транзакцію"
+        "Очікування транзакції"
       ],
       "Balance from your previous subscription": [
         "Баланс після вашої попередньої передплати"
@@ -2824,7 +2815,7 @@
         "виділені сервери"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
-        "Виділені сервери з виділеними IP-адресами можуть бути додані до приватних шлюзів для забезпечення точного контролю доступу."
+        "Щоб мати можливість якісного контролю доступу, до приватних мережевих шлюзів можна додати виділені сервери з виділеними IP-адресами."
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Видалення ${ deletedServerCount } шлюзового сервера",
@@ -2989,7 +2980,7 @@
         "Важливо: Впевніться, що ви зберегли коди відновлення. Інакше ви можете назавжди втратити доступ до свого облікового запису в разі втрати пристрою двоетапної перевірки."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
-        "Наступним кроком ви зможете внести депозит за допомогою Bitcoin-адреси."
+        "Наступним кроком ви зможете внести депозит за допомогою адреси Bitcoin."
       ],
       "inactive": [
         "неактивний"
@@ -3056,9 +3047,6 @@
       ],
       "MM/YY": [
         "ММ/РР"
-      ],
-      "more": [
-        "більше"
       ],
       "Multi-user support not enabled.": [
         "Підтримка декількох користувачів не увімкнена."
@@ -3229,7 +3217,7 @@
         "Оновлення сторінки чи ${ link } автоматично розв'яже більшість проблем."
       ],
       "Remember to share the user's sign in details with them.": [
-        "Не забудьте повідомити дані для входу користувача."
+        "Повідомте користувачам їхні дані для входу."
       ],
       "Resend verification email": [
         "Повторно надіслати лист з підтвердженням"
@@ -3253,7 +3241,7 @@
         "Скануйте цей код своїм пристроєм двоетапної перевірки, щоб налаштувати обліковий запис. ${ switchButton }."
       ],
       "Secure your ${ BRAND_NAME } Account": [
-        "Захистіть обліковий запис ${ BRAND_NAME }"
+        "Захистіть свій обліковий запис ${ BRAND_NAME }"
       ],
       "Securing your account": [
         "Захист вашого облікового запису"
@@ -3277,7 +3265,7 @@
         "Налаштування Drive"
       ],
       "Setting up your organization": [
-        "Створення вашої організації"
+        "Налаштування вашої організації"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Увійдіть до ${ MAIL_APP_NAME }, щоб активувати свою адресу"
@@ -3307,7 +3295,7 @@
         "Сховище, використане цим користувачем"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
-        "Надішліть депозит за наступною адресою або проскануйте QR-код. Ваш депозит буде показаний на вашому рахунку після підтвердження."
+        "Відправте депозит за вказаною адресою або скануйте QR-код. Після підтвердження ваш депозит буде врахований у вашому рахунку."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Передплата закінчується: повторно активуйте її до ${ byDate }, щоб зберегти переваги ${ planName }. ${ reactivateLink }"
@@ -3379,7 +3367,7 @@
         "Цей користувач зараз уповноважений здійснювати платежі для вашої організації. Понизивши його роль, повноваження для платежів перейдуть до вас."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
-        "Це скасує вашу поточну платну підписку, і ви втратите всі накопичені привілеї лояльності."
+        "Це скасує вашу поточну передплату, і ви втратите всі накопичені привілеї лояльності."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Це скасує вашу поточну передплату і ви втратите будь-які накопичені переваги лояльності. Залишковий баланс вашої передплати буде повернено як кредити облікового запису."
@@ -3406,7 +3394,7 @@
         "у ${ product } Business"
       ],
       "To cancel your subscription, please reach out to us.": [
-        "Для скасування підписки, будь ласка, зв'яжіться з нами."
+        "Щоб скасувати передплату, зв'яжіться з нами."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Щоб завершити платіж, надішліть ${ btcAmountBold } на вказану нижче адресу."
@@ -3415,7 +3403,7 @@
         "Щоб підтвердити, введіть ім'я користувача, якого ви хочете видалити."
       ],
       "to continue to ${ product }": [
-        "щоб продовжити ${ product }"
+        "щоб продовжити в ${ product }"
       ],
       "to continue to ${ toAppName }": [
         "для переходу до ${ toAppName }"
@@ -3424,7 +3412,7 @@
         "З метою протидії спаму та зловживанням, будь ласка, підтвердьте, що ви людина."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
-        "Щоб бути в курсі останніх розробок продуктів ${ BRAND_NAME }, якщо підпишетесь на неї, час від часу ви можете отримувати нашу розсилку ${ blogLink }."
+        "Щоб бути в курсі найновіших розробок продуктів ${ BRAND_NAME }, підпишіться на наші розсилки електронною поштою та час від часу відвідуйте ${ blogLink }."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Для продовження виберіть спосіб відновлення облікового запису, щоб ми могли засвідчити запит."
@@ -3472,7 +3460,7 @@
         "Непідтримуваний файл"
       ],
       "Unverified": [
-        "Непідтверджений"
+        "Не підтверджено"
       ],
       "Unverified email address.": [
         "Непідтверджена адреса електронної пошти."
@@ -3484,7 +3472,7 @@
         "Передплатіть зараз, щоб отримати преміумфункції, продукти та сховище за спеціальною ціною"
       ],
       "Upload your completed CSV file to create accounts": [
-        "Завантажте заповнений файл CSV для створення облікових записів"
+        "Вивантажте заповнений файл CSV для створення облікових записів"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Використовуйте найкращий сервер відповідно до поточного навантаження та розташування: ${ formattedBestServerName }"
@@ -3544,7 +3532,7 @@
         "Потрібно підтвердити оплату у вашому банку."
       ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
-        "Ми рекомендуємо мати 2 сервери, щоб мати резерв."
+        "Ми рекомендуємо принаймні 2 сервери для забезпечення безперебійної роботи."
       ],
       "We recommend having multiple servers in different locations to provide redundancy.": [
         "Ми рекомендуємо мати кілька серверів у різних місцях для забезпечення надійності."
@@ -3951,7 +3939,7 @@
         "Конфігурація для з'єднання з ${ serverName }"
       ],
       "Confirm email": [
-        "Підтвердьте е-пошту"
+        "Підтвердьте електронну пошту"
       ],
       "Confirm login password": [
         "Підтвердити пароль входу"
@@ -4089,7 +4077,7 @@
         "Нове ім'я"
       ],
       "New email": [
-        "Нова адреса е-пошти"
+        "Нова адреса електронної пошти"
       ],
       "New login password": [
         "Новий пароль входу"
@@ -4155,7 +4143,7 @@
         "Фраза складається з 12 унікальних слів у певному порядку"
       ],
       "Please share any feedback to help us improve.": [
-        "Будь ласка, діліться будь-якими відгуками, щоб допомогти нам вдосконалюватися."
+        "Поділіться своїм відгуком, щоб допомогти нам вдосконалюватися."
       ],
       "Postal code": [
         "Поштовий індекс"
@@ -4341,7 +4329,7 @@
         "Сплатити рахунок"
       ],
       "Paypal without credit card": [
-        "Paypal без кредитної картки"
+        "PayPal без банківської картки"
       ],
       "Privacy policy": [
         "Політика приватності"
@@ -4494,7 +4482,7 @@
         "Залишити мою передплату ${ currentPlanName }"
       ],
       "Upgrade": [
-        "Поліпшити"
+        "Покращити"
       ],
       "Upgrade now": [
         "Покращити"
@@ -4615,10 +4603,10 @@
         "${ n } VPN-з'єднань на користувача"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
-        "${ PASS_APP_NAME } з ${ n } hide-my-email псевдонімом",
-        "${ PASS_APP_NAME } з ${ n } hide-my-email псевдонімами",
-        "${ PASS_APP_NAME } з ${ n } hide-my-email псевдонімами",
-        "${ PASS_APP_NAME } з ${ n } hide-my-email псевдонімами"
+        "${ PASS_APP_NAME } з ${ n } псевдонімом hide-my-email",
+        "${ PASS_APP_NAME } з ${ n } псевдонімами hide-my-email",
+        "${ PASS_APP_NAME } з ${ n } псевдонімами hide-my-email",
+        "${ PASS_APP_NAME } з ${ n } псевдонімами hide-my-email"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } з необмеженою кількістю псевдонімів hide-my-email"
@@ -4660,7 +4648,7 @@
         "Автовідповідь"
       ],
       "Autofill credit cards (coming soon)": [
-        "Автозаповнення кредитних карток (незабаром)"
+        "Автозаповнення банківських карток (незабаром)"
       ],
       "Available on all platforms": [
         "Доступність на всіх платформах"
@@ -4777,7 +4765,7 @@
         "Політика без журналювання"
       ],
       "Organize items with multiple vaults": [
-        "Упорядкування елементів з декількома сховищами"
+        "Упорядкування елементів за допомогою різних сховищ"
       ],
       "Password-protected Emails": [
         "Електронні листи, захищені паролем"
@@ -4816,10 +4804,10 @@
         "Надсилайте й отримуйте запрошення"
       ],
       "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "Серверів в ${ vpnServersCountData.paid.countries } країні",
-        "Серверів в ${ vpnServersCountData.paid.countries }+ країнах",
-        "Серверів в ${ vpnServersCountData.paid.countries }+ країнах",
-        "Серверів в ${ vpnServersCountData.paid.countries }+ країнах"
+        "Сервери в ${ vpnServersCountData.paid.countries }+ країні",
+        "Сервери в ${ vpnServersCountData.paid.countries }+ країнах",
+        "Сервери в ${ vpnServersCountData.paid.countries }+ країнах",
+        "Сервери в ${ vpnServersCountData.paid.countries }+ країнах"
       ],
       "Share calendar via link": [
         "Діліться календарем за посиланням"
@@ -4834,10 +4822,10 @@
         "Розділене тунелювання (Android і Windows)"
       ],
       "Start protecting your organization": [
-        "Start protecting your organization"
+        "Почніть захищати свою організацію"
       ],
       "Start protecting yourself online in 2 easy steps": [
-        "Захистіть себе в мережі у 2 простих кроки"
+        "Захистіть себе в мережі, виконавши 2 прості кроки"
       ],
       "Strict no-logs policy": [
         "Суворе дотримання політики без журналювання"
@@ -4975,7 +4963,7 @@
         "Захищена електронна пошта з розширеними можливостями для щоденного спілкування."
       ],
       "Tailor-made solutions for larger organizations with specific security needs": [
-        "Індивідуальні рішення для великих організацій зі специфічними потребами у сфері безпеки"
+        "Індивідуальні рішення для великих організацій з особливими вимогами до безпеки"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Спеціалізоване VPN рішення, що забезпечує надійний, необмежений, високошвидкісний доступ до інтернету."
@@ -5084,7 +5072,7 @@
         "Створіть до ${ n } адрес електронної пошти/псевдонімів, які можна призначити членам сім'ї. Використовуйте їх для ідентифікації в інтернеті, наприклад, JohnShopper@${ domain } для облікових записів покупок."
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Виділені сервери з виділеними IP-адресами можуть бути додані до приватних шлюзів для забезпечення точного контролю доступу"
+        "Щоб мати можливість якісного контролю доступу, до приватних мережевих шлюзів можна додати виділені сервери з виділеними IP-адресами"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Захист від загроз приватності VPN завдяки спрямуванню інтернет-трафіку через кілька серверів"
@@ -5120,7 +5108,7 @@
         "Як і теки, сховище – це зручний спосіб впорядковувати ваші дані. Ми працюємо над тим, щоб невдовзі ви могли ділитися сховищами з друзями та родиною."
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
-        "Заблокуйте ресурси компанії для публічного доступу та зробіть їх доступними лише через ваші приватні шлюзи"
+        "Заблокуйте ресурси компанії від загального доступу в інтернеті та зробіть їх доступними лише через ваші приватні мережеві шлюзи"
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Керуйте своєю передплатою, включно з налаштуванням тарифного плану. Підтримувані способи оплати – кредитні картки, PayPal, криптовалюта і банківські перекази."
@@ -5144,7 +5132,7 @@
         "Жорсткі диски наших серверів цілком зашифровані з багаторівневим парольним захистом, тому ваші дані залишатимуться в безпеці навіть у випадку несанкціонованого доступу"
       ],
       "Password management and identity protection": [
-        "Управління паролями та захист особистих даних"
+        "Керування паролями та захист особистих даних"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Налаштуйте свій підпис з використанням логотипів, зображень, піктограм соціальних мереж, посилань на свої контакти та інших можливостей"
@@ -5233,7 +5221,7 @@
     },
     "new_plans: upgrade": {
       "Included with multiple users ${ BRAND_NAME } for Business plans.": [
-        "Включено з декількома користувачами ${ BRAND_NAME } для бізнес-планів."
+        "Включено до тарифних планів ${ BRAND_NAME } for Business із декількома користувачами."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -5247,13 +5235,13 @@
         "Розширте свої можливості з 15 адресами електронної пошти та підтримкою 3 власних доменів"
       ],
       "AES 256-bit VPN encryption": [
-        "256-бітне VPN-шифрування AES"
+        "Шифрування VPN – AES 256 бітів"
       ],
       "Auto-connect": [
         "Автоматичне з'єднання"
       ],
       "Boost your storage space to ${ bundleStorage } per user": [
-        "Збільште обсяг сховища до ${ bundleStorage } на користувача"
+        "Розширте обсяг свого сховища до ${ bundleStorage } на користувача"
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Розширте загальний обсяг свого сховища до ${ bundleStorage }"
@@ -5277,7 +5265,7 @@
         "Створіть до ${ n } календарів"
       ],
       "Dedicated Account manager": [
-        "Виділений менеджер по роботі з клієнтами"
+        "Призначений менеджер облікового запису"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
         "Розташування виділених серверів у ${ numberOfCountries }+ країнах"
@@ -5286,10 +5274,10 @@
         "Розташування виділених серверів у Північній Америці та Європі"
       ],
       "Multi-platform support": [
-        "Багатоплатформова підтримка"
+        "Підтримка різних платформ"
       ],
       "Private gateways": [
-        "Приватні шлюзи"
+        "Приватні мережеві шлюзи"
       ],
       "Require 2FA": [
         "Потрібна 2FA"
@@ -5421,12 +5409,12 @@
         "Оновлення облікового запису"
       ],
       "Verifying your payment": [
-        "Перевірка оплати"
+        "Триває перевірка платежу"
       ]
     },
     "pass_signup_2023: Title": {
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
-        "Всі сервіси ${ BRAND_NAME } Plus. ${ br } Одна проста підписка."
+        "Всі сервіси ${ BRAND_NAME } Plus.${ br }Одна проста передплата."
       ]
     },
     "Payment method option": {
@@ -5500,7 +5488,7 @@
     },
     "plan customizer, ips": {
       "Select the number of IPs to include in your plan. Each additional IP costs ${ price }. Should you need more than ${ maxIPs } IPs, please ${ contactHref } our Sales team.": [
-        "Виберіть кількість IP-адрес, які ви хочете включити у свій тарифний план. Кожна додаткова IP-адреса коштує ${ price }. Якщо вам потрібно більше ${ maxIPs } IP-адрес, будь ласка, ${ contactHref } з нашим відділом продажів."
+        "Виберіть кількість IP-адрес, які ви хочете включити у свій тарифний план. Кожна додаткова IP-адреса коштує ${ price }. Якщо вам потрібно більше ${ maxIPs } IP-адрес, ${ contactHref } з нашим відділом продажів."
       ]
     },
     "plan customizer, users": {
@@ -5639,7 +5627,7 @@
         "неактивний"
       ],
       "pending": [
-        "на розгляді"
+        "у черзі"
       ],
       "to be created": [
         "буде створено"
@@ -5681,7 +5669,7 @@
     },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
-        "Спільне використання ${ ownerName }"
+        "Надано спільний доступ від ${ ownerName }"
       ]
     },
     "Signup label": {
@@ -6333,7 +6321,7 @@
         "Е-пошта"
       ],
       "Email address": [
-        "Адреса пошти"
+        "Адреса електронної пошти"
       ],
       "Email addresses": [
         "Адреси е-пошти"
@@ -6496,7 +6484,7 @@
         "Підтвердьте номер телефону"
       ],
       "Contact us": [
-        "Зв'язатися з нами"
+        "Зв'яжіться з нами"
       ],
       "Couldn’t create accounts": [
         "Не вдалося створити облікові записи"
@@ -6592,7 +6580,7 @@
         "Редагувати ім'я"
       ],
       "Edit email address": [
-        "Змінити адресу електронної пошти"
+        "Змінити адресу е-пошти"
       ],
       "Edit Gateway ${ currentName }": [
         "Редагувати мережевий шлюз ${ currentName }"
@@ -6619,7 +6607,7 @@
         "Підписки електронної пошти"
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
-        "Введіть дані свого облікового запису ${ BRAND_NAME }, щоб приєднатися до бета-програми ${ app }"
+        "Введіть дані свого облікового запису ${ BRAND_NAME }, щоб приєднатися до програми бета-тестування ${ app }"
       ],
       "Enter your password": [
         "Введіть свій пароль"
@@ -6805,7 +6793,7 @@
         "Увійти"
       ],
       "Sign in to join the Beta program": [
-        "Увійдіть, щоб приєднатися до бета-версії програми"
+        "Увійдіть, щоб приєднатися до програми бета-тестування"
       ],
       "Sign in with 2FA": [
         "Увійти з двоетапною перевіркою"
@@ -6883,7 +6871,7 @@
         "Триває перевірка платежу..."
       ],
       "We'll send an email to your new address with instructions on completing the change.": [
-        "Ми відправили лист на вашу нову адресу з інструкцією для завершення зміни."
+        "Ми надішлемо лист на вашу нову адресу з інструкцією для завершення зміни."
       ],
       "What's new": [
         "Що нового"
@@ -6928,7 +6916,7 @@
         "Адреси"
       ],
       "Email": [
-        "Пошта"
+        "Е-пошта"
       ],
       "Features": [
         "Функції"
@@ -6953,7 +6941,7 @@
     },
     "Tooltip": {
       "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
-        "Адміністратори можуть вносити зміни до вашої підписки, керувати обліковими записами та паролями користувачів, а також надавати права адміністратора іншим користувачам."
+        "Адміністратори можуть змінювати ваш тарифний план, керувати обліковими записами та паролями користувачів, а також надавати адміністраторські повноваження іншим користувачам."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Автоматичне перемикання між вашими улюбленими темами дня і ночі синхронізовано з денним і нічним режимами вашої системи"
@@ -7017,10 +7005,10 @@
     },
     "VPN B2B cancellation reason": {
       "I found another service that I like better": [
-        "Я знайшов інший сервіс, який мені подобається більше"
+        "Я використовую інший сервіс, який мені більше подобається"
       ],
       "It’s missing a key feature": [
-        "У ньому відсутня ключова особливість"
+        "Відсутня важлива функція"
       ],
       "It’s too expensive": [
         "Занадто дорого"
@@ -7073,7 +7061,7 @@
         "2 роки"
       ],
       "Get ${ discount } off with a ${ billingCycle } subscription": [
-        "Отримайте знижку ${ discount } з підпискою ${ billingCycle }"
+        "Отримайте знижку ${ discount } з передплатою ${ billingCycle }"
       ],
       "monthly": [
         "щомісяця"
@@ -7104,12 +7092,7 @@
         "Спробуйте ${ upsellPlanName } без ризику"
       ],
       "Your ${ selected } plan": [
-        "Ваш ${ selected } тарифний план"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Доступ до захищених основних серверів, швидке завантаження P2P/BitTorrent, Tor через VPN, Double hop та багато іншого."
+        "Ваш тарифний план ${ selected }"
       ]
     },
     "Warning": {
