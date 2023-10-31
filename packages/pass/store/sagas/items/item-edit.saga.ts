@@ -62,6 +62,15 @@ function* itemEditWorker(
         yield put(itemEditSuccessAction);
 
         void telemetry?.pushEvent(createTelemetryEvent(TelemetryEventName.ItemUpdate, {}, { type: item.data.type }));
+
+        if (item.data.type === 'login' && editIntent.type === 'login') {
+            const prevTotp = editIntent.content.totpUri;
+            const nextTotp = item.data.content.totpUri;
+            if (nextTotp && prevTotp !== nextTotp) {
+                void telemetry?.pushEvent(createTelemetryEvent(TelemetryEventName.TwoFAUpdate, {}, {}));
+            }
+        }
+
         onItemEditIntentProcessed?.(itemEditSuccessAction);
         onItemsChange?.();
     } catch (e) {
