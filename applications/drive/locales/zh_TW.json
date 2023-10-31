@@ -160,6 +160,9 @@
       "Continue with Google": [
         "繼續以 Google 帳號登入"
       ],
+      "Continue with Outlook": [
+        "使用 Outlook 繼續"
+      ],
       "Copy address": [
         "複製郵件位址"
       ],
@@ -363,6 +366,12 @@
       ],
       "Import from .csv or vCard": [
         "從 .csv 或 vCard 匯入"
+      ],
+      "Import from Google": [
+        "從 Google 匯入"
+      ],
+      "Import from Outlook": [
+        "從 Outlook 匯入"
       ],
       "Learn more": [
         "瞭解詳情"
@@ -1858,8 +1867,8 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "透過一次寄送電子郵件或邀請函給所有人，付費功能版的其中之一。立即升級。"
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
-        "檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_CONTACTS_STRING } 個聯絡人。若您的檔案超出此限，請將其分割為較小的檔案。"
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "從 Google 或 Outlook, ${ easySwitchLink } 來匯入你的聯絡人"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖動以調整聯絡人合併的優先次序。未勾選的聯絡人將不會被合併。"
@@ -2695,6 +2704,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -2709,6 +2721,9 @@
       ],
       "Megabytes": [
         "百萬位元組"
+      ],
+      "Terabytes": [
+        "TB"
       ]
     },
     "Filter notification": {
@@ -3123,9 +3138,6 @@
       ],
       "${ selectedContactsLength }/${ contactsLength } contacts selected": [
         "${ contactsLength }中的${ selectedContactsLength }項目已選取"
-      ],
-      "${ selectedCount } selected": [
-        "已選取 ${ selectedCount } 個"
       ],
       "${ selectedFoldersCount } folders selected": [
         "已選取 ${ selectedFoldersCount } 個資料夾"
@@ -5707,8 +5719,8 @@
       ]
     },
     "Storage": {
-      "Get storage": [
-        "取得儲存空間"
+      "Get more storage": [
+        "取得更多儲存空間"
       ],
       "Release notes": [
         "版本資訊"

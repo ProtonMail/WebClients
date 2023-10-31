@@ -198,6 +198,9 @@
       "Close navigation": [
         "Închidere navigare"
       ],
+      "Close the checklist": [
+        "Închidere listă de sarcini"
+      ],
       "Close this banner": [
         "Închidere norificare"
       ],
@@ -427,8 +430,14 @@
       "Get verification code": [
         "Obținere cod de verificare"
       ],
+      "Go to first page": [
+        "Prima pagină"
+      ],
       "Go to label": [
         "Accesare etichetă"
+      ],
+      "Go to last page": [
+        "Ultima pagină"
       ],
       "Go to next page": [
         "Pagina următoare"
@@ -2945,11 +2954,6 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Economisiți timp trimițând mesaje sau invitații simultan tuturor, o funcție premium printre multe altele. Modernizați contul acum."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă un contact. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
-        "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
-        "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } de contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
-      ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Activați protecția împotriva monitorizării prin e-mail pentru a împiedica agenții de publicitate și alții să vă urmărească locul și activitatea online."
       ],
@@ -4014,6 +4018,9 @@
       ],
       "MB": [
         "MiB"
+      ],
+      "TB": [
+        "TiB"
       ]
     },
     "file size format, long": {
@@ -4036,6 +4043,11 @@
         "Megabait",
         "Megabaiți",
         "Megabaiți"
+      ],
+      "Terabyte": [
+        "Terabait",
+        "Terabaiți",
+        "Terabaiți"
       ]
     },
     "Filter": {
@@ -4229,6 +4241,9 @@
       ],
       "Close": [
         "Închidere"
+      ],
+      "Closing this means giving up the free storage bonus.": [
+        "Dacă o închideți renunțați la bonusul de stocare gratuită."
       ],
       "Congratulation, you completed all the steps!": [
         "Felicitări, ați completat toți pașii!"
@@ -5028,6 +5043,9 @@
       ],
       "Calendar side panel": [
         "Panou lateral calendar"
+      ],
+      "Can't find what you're looking for? ${ displayAllMailButton }": [
+        "Nu găsiți ceea ce căutați? ${ displayAllMailButton }"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nu vă puteți aminti parola? Vă putem ajuta să ștergeți datele criptate ale tuturor contactelor criptate cu această cheie și pe parcursul procesului să eliminați alerta."
@@ -7073,6 +7091,9 @@
       "Sent": [
         "Trimise"
       ],
+      "Set up email forwarding": [
+        "Setare redirecționare mesaje"
+      ],
       "Sign up for free": [
         "Înscriere gratuită"
       ],
@@ -8469,6 +8490,9 @@
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Imaginile sunt încărcate implicit și expeditorii sunt blocați să vă urmărească. Aceasta se poate modifica în ${ settingsLink }."
+      ],
+      "You can now automatically forward your emails to anyone!": [
+        "Acum vă puteți redirecționa automat mesajele către oricine!"
       ],
       "You can now schedule your messages to be sent later": [
         "Acum puteți să vă programați mesajele pentru a fi trimise mai târziu."

@@ -890,9 +890,6 @@
       "Sign out of all accounts": [
         "すべてのアカウントからサインアウト"
       ],
-      "Sign up for free": [
-        "無料でサインアップ"
-      ],
       "Signing in": [
         "サインイン中"
       ],
@@ -2850,9 +2847,6 @@
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "アップグレードすると、複数のメールアドレスを生活のシーンによって使い分け、より多くのプレミアム機能が利用できるようになります。"
-      ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
-        "最大 ${ MAX_IMPORT_FILE_SIZE_STRING } のファイルサイズ、最大 ${ MAX_IMPORT_CONTACTS_STRING } 件の連絡先に対応しています。それより大きなファイルは、分割してください。"
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "${ MAIL_APP_NAME }フッターを削除するには、アップグレードしてさらなるプレミアム機能をアンロックしましょう。"
@@ -5645,9 +5639,6 @@
       "Additional options": [
         "追加のオプション"
       ],
-      "addresses": [
-        "アドレス"
-      ],
       "Admin account allocation": [
         "管理者アカウント割り当て"
       ],
@@ -6385,9 +6376,6 @@
       ],
       "Monthly ${ onDayString }": [
         "毎月 ${ onDayString }"
-      ],
-      "more": [
-        "詳細"
       ],
       "Multi-user support not enabled.": [
         "複数ユーザー対応が有効になっていません。"
@@ -10012,14 +10000,6 @@
         "選択中のプラン: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }トライアル"
-      ],
-      "Your account's usage": [
-        "アカウントの使用率"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "アカウントの削除しますか?"
@@ -10041,6 +10021,14 @@
       ],
       "Unlock premium features by upgrading": [
         "アップグレードしてプレミアム機能の制限を解除"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }トライアル"
+      ],
+      "Your account's usage": [
+        "アカウントの使用率"
       ]
     },
     "new_plans: tooltip": {
@@ -10729,9 +10717,6 @@
       "Download to continue ${ size }": [
         "ダウンロードして続行 ${ size }"
       ],
-      "Keep this plan and use ${ appName }": [
-        "このプランを維持し、${ appName } を使用してください"
-      ],
       "Or ${ createANewAccount }": [
         "または ${ createANewAccount }"
       ],
@@ -10741,14 +10726,8 @@
       "Start using ${ appName } now": [
         "今すぐ ${ appName } の使用を開始してください"
       ],
-      "Upgrade for only ${ relativePrice } extra per month": [
-        "月額わずか ${ relativePrice } の追加料金でアップグレードできます"
-      ],
       "Upgrade my plan": [
         "プランのアップグレード"
-      ],
-      "Use ${ free } instead": [
-        "代わりに ${ free } を使用してください"
       ]
     },
     "pass_signup_2023: Feature": {
@@ -10855,9 +10834,6 @@
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "${ BRAND_NAME } アカウントからロックアウトされた場合でも、**回復キット**を使用してログインしてデータを回復できます。"
       ],
-      "Includes basic ${ appName } features:": [
-        "基本的な ${ appName } 機能が含まれています。"
-      ],
       "Install ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } をインストールします"
       ],
@@ -10921,9 +10897,6 @@
       "Verifying your payment": [
         "お支払いの確認"
       ],
-      "Welcome to ${ plan }": [
-        "${ plan } へようこそ"
-      ],
       "Works on all devices": [
         "すべてのデバイスで動作します"
       ],
@@ -10935,11 +10908,6 @@
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "あなたの組織は ${ free } にアクセスできます。 ${ appName } のプレミアム機能にアクセスしたい場合は、組織の管理者にアップグレードを依頼してください。"
-      ]
-    },
-    "pass_signup_2023: Onboarding": {
-      "Welcome to ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } へようこそ"
       ]
     },
     "pass_signup_2023: Title": {
@@ -11798,11 +11766,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "サブスクリプションはキャンセルされるまで2年ごとに同じ割引率で自動更新されます。"
-      ]
-    },
-    "specialoffer: Info": {
-      "No available offers found.": [
-        "利用可能なオファーは見つかりませんでした。"
       ]
     },
     "specialoffer: Label": {
@@ -12685,9 +12648,6 @@
       ],
       "Auto-reply": [
         "自動返信"
-      ],
-      "Auto-reply and forward": [
-        "自動返信と転送"
       ],
       "Automatically sign outgoing messages?": [
         "送信メッセージに自動で署名しますか?"
@@ -13947,11 +13907,6 @@
       ],
       "Your ${ selected } plan": [
         "あなたの ${ selected } プラン"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "セキュアなコアサーバーへのアクセス、高速 P2P/BitTorrent ダウンロード、Tor over VPN、ダブルホップなど。"
       ]
     },
     "Warning": {

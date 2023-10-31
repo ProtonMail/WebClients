@@ -29,9 +29,6 @@
       "Back": [
         "Zurück"
       ],
-      "Can't find your password manager? Please let us know!": [
-        "Du kannst deinen Passwort-Manager nicht finden? Bitte informiere uns!"
-      ],
       "Cancel": [
         "Abbrechen"
       ],
@@ -91,6 +88,9 @@
       ],
       "Create an account": [
         "Konto erstellen"
+      ],
+      "Create card": [
+        "Karte anlegen"
       ],
       "Create login": [
         "Login erstellen"
@@ -157,9 +157,6 @@
       ],
       "Generate password": [
         "Passwort generieren"
-      ],
-      "Generated password": [
-        "Passwort generiert"
       ],
       "Get mobile apps": [
         "Mobile Apps holen"
@@ -250,9 +247,6 @@
       ],
       "Pass for iOS": [
         "Pass für iOS"
-      ],
-      "Proceed": [
-        "Fortfahren"
       ],
       "Refresh the page": [
         "Seite aktualisieren"
@@ -350,17 +344,35 @@
       "Upgrade": [
         "Wechseln"
       ],
+      "Upgrade now": [
+        "Jetzt upgraden"
+      ],
       "Upgrade now to share with more people": [
         "Jetzt upgraden, um mit weiteren Personen zu teilen"
-      ],
-      "Upgrade to keep these features": [
-        "Upgrade, um diese Funktionen zu behalten"
       ],
       "Write us on Reddit": [
         "Schreibe uns auf Reddit"
       ],
       "Write us on Twitter": [
         "Schreibe uns auf Twitter"
+      ],
+      "Your password manager not here? Request it.": [
+        "Ist dein Passwort-Manager nicht dabei? Fordere ihn an."
+      ]
+    },
+    "bf2023: Info": {
+      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
+        "Spare clever! Hol dir ein Jahr Pass Plus für nur ${ relativePrice } pro Monat."
+      ]
+    },
+    "bf2023: Label": {
+      "Get the deal": [
+        "Sichere dir das Angebot"
+      ]
+    },
+    "bf2023: Title": {
+      "Black Friday offer": [
+        "Black Friday-Angebot"
       ]
     },
     "Button": {
@@ -633,7 +645,7 @@
       ],
       "Terabyte": [
         "Terabyte",
-        "Terabytes"
+        "Terabyte"
       ]
     },
     "Info": {
@@ -658,8 +670,8 @@
         "${ memberCount } Mitglied",
         "${ memberCount } Mitglieder"
       ],
-      "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
-        "${ PASS_APP_NAME } unterstützt nur den Import von Zugangsdaten und Notizen. Kreditkarten, Pässe, angehängte Dateien usw. werden derzeit nicht unterstützt."
+      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
+        "${ PASS_APP_NAME } importiert nur Logins, Notizen und Kreditkarten."
       ],
       "${ revisionNumber } time": [
         "${ revisionNumber } Mal",
@@ -679,9 +691,6 @@
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Eine neue Version von ${ PASS_APP_NAME } ist verfügbar. Aktualisiere sie, um die neuesten Funktionen und Fehlerbehebungen zu genießen."
-      ],
-      "Access ${ PASS_APP_NAME } via this icon": [
-        "Greife über dieses Symbol auf ${ PASS_APP_NAME } zu"
       ],
       "Access successfully confirmed": [
         "Zugriff erfolgreich bestätigt"
@@ -725,11 +734,8 @@
       "Can view items in this vault.": [
         "Darf Einträge in diesem Tresor anzeigen."
       ],
-      "Check out all the exclusive features that are available to you for a limited time.": [
-        "Sieh dir all die exklusiven Funktionen an, die dir für eine begrenzte Zeit zur Verfügung stehen."
-      ],
       "Congratulations, your access has been confirmed": [
-        "Gratulation, dein Zugriff wurde bestätigt"
+        "Gratulation, dein Zugriff wurde bestätigt."
       ],
       "Copied to clipboard": [
         "In die Zwischenablage kopiert"
@@ -776,17 +782,11 @@
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "Der Export wird mit PGP verschlüsselt und erfordert eine starke Passphrase."
       ],
-      "Follow these simple steps to get the best experience:": [
-        "Befolge diese einfachen Schritte, um das bestmögliche Erlebnis zu erhalten:"
-      ],
       "For security reason, your access needs to be confirmed": [
-        "Aus Sicherheitsgründen muss dein Zugriff bestätigt werden"
+        "Aus Sicherheitsgründen muss dein Zugriff bestätigt werden."
       ],
       "For security reasons, your access needs to be confirmed": [
-        "Aus Sicherheitsgründen muss dein Zugriff bestätigt werden"
-      ],
-      "Free Trial": [
-        "Kostenlose Testversion"
+        "Aus Sicherheitsgründen muss dein Zugriff bestätigt werden."
       ],
       "Generated passwords will be stored for a period of one day.": [
         "Generierte Passwörter werden für einen Zeitraum von einem Tag gespeichert."
@@ -795,7 +795,7 @@
         "Alias wird generiert..."
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
-        "Erhalte eine unbegrenzte Anzahl von Aliasen, genieße exklusive Funktionen und unterstütze uns, indem du Pass Plus abonnierst."
+        "Erhalte unbegrenzte Aliasse, genieße exklusive Funktionen und unterstütze uns, indem du Pass Plus abonnierst."
       ],
       "Here you will find all the necessary information to get you started.": [
         "Nachfolgend findest du alle notwendigen Informationen für den Einstieg."
@@ -818,9 +818,6 @@
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Wenn diese Funktion aktiviert ist, kannst du deine Anmeldeinformationen schnell ausfüllen, indem du auf das ${ PASS_APP_NAME }-Symbol klickst."
       ],
-      "Import in progress :": [
-        "Import läuft:"
-      ],
       "Imported ${ payload.total } item": [
         "${ payload.total } Eintrag importiert",
         "${ payload.total } Einträge importiert"
@@ -830,9 +827,6 @@
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Um ${ PASS_APP_NAME } optimal nutzen zu können, erteile bitte die notwendigen Erweiterungsrechte."
-      ],
-      "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
-        "Um deine Daten von einem anderen Passwort-Manager zu ${ PASS_APP_NAME } zu migrieren, exportiere deine Passwörter und importiere sie mit dem unten stehenden Formular. Sobald alle deine Daten importiert wurden, lösche die zuvor exportierte Datei."
       ],
       "Internet connection lost": [
         "Internetverbindung unterbrochen"
@@ -923,7 +917,7 @@
         "Passwörter, die älter als 1 Tag sind, werden automatisch aus dem Verlauf gelöscht."
       ],
       "Pending access to the shared data": [
-        "Ausstehender Zugriff auf die geteilten Daten"
+        "Zugriff auf die geteilten Daten ist ausstehend"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Hefte ${ PASS_APP_NAME } an deine Symbolleiste an"
@@ -954,9 +948,6 @@
       ],
       "Save login": [
         "Anmeldedaten speichern"
-      ],
-      "Select the destination vault for each imported vault.": [
-        "Wähle den Zieltresor für jeden importierten Tresor."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Die Server sind unerreichbar. Bitte versuche es in ein paar Minuten erneut"
@@ -1029,7 +1020,7 @@
         "${ PASS_APP_NAME } upgraden"
       ],
       "Use vaults to share this item with others.": [
-        "Verwende Tresore, um dieses Element mit anderen zu teilen."
+        "Verwende Tresore, um diesen Eintrag mit anderen zu teilen."
       ],
       "User's access removed": [
         "Benutzerzugriff entfernt"
@@ -1064,9 +1055,9 @@
       "You cannot change the mailboxes for this alias.": [
         "Du kannst die Postfächer für diesen Alias nicht ändern."
       ],
-      "You have ${ daysRemaining } day left in your trial period.": [
-        "Du hast noch ${ daysRemaining } Tag in deinem Testzeitraum übrig.",
-        "Du hast noch ${ daysRemaining } Tage in deinem Testzeitraum übrig."
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Du hast noch ${ daysRemaining } Tag, um diese und andere Premium-Funktionen auszuprobieren.",
+        "Du hast noch ${ daysRemaining } Tage, um diese und andere Premium-Funktionen auszuprobieren."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Du hast die Anzahl der in deinem Abonnement enthaltenen Tresore überschritten. Einträge können nur in deine ersten zwei Tresore verschoben werden. Um Einträge zwischen allen Tresoren zu verschieben, upgrade dein Abonnement."
@@ -1189,11 +1180,11 @@
       "Capitalise": [
         "Großschreiben"
       ],
+      "Card": [
+        "Karte"
+      ],
       "Card number": [
         "Kartennummer"
-      ],
-      "Cardholder name": [
-        "Name des Karteninhabers"
       ],
       "Cards": [
         "Karten"
@@ -1219,9 +1210,6 @@
       "Created": [
         "Erstellt"
       ],
-      "Credit Card": [
-        "Kreditkarte"
-      ],
       "Display": [
         "Darstellung"
       ],
@@ -1246,11 +1234,14 @@
       "Encrypt your ${ PASS_APP_NAME } data export file": [
         "Verschlüssle deine ${ PASS_APP_NAME } Datenexportdatei."
       ],
-      "Expires on": [
-        "Verfällt am"
+      "Expiration date": [
+        "Ablaufdatum"
       ],
       "Export": [
         "Exportieren"
+      ],
+      "Field name": [
+        "Feldname"
       ],
       "Forwards to": [
         "Leitet weiter an"
@@ -1287,9 +1278,6 @@
       ],
       "Invitations": [
         "Einladungen"
-      ],
-      "Label": [
-        "Bezeichnung"
       ],
       "Language": [
         "Sprache"
@@ -1332,6 +1320,9 @@
       ],
       "Name": [
         "Name"
+      ],
+      "Name on card": [
+        "Karteninhaber"
       ],
       "Need help ?": [
         "Benötigst du Hilfe?"
@@ -1407,6 +1398,9 @@
       ],
       "Security": [
         "Sicherheit"
+      ],
+      "Security code": [
+        "Sicherheitscode"
       ],
       "Select an email address": [
         "E-Mail-Adresse auswählen"
@@ -1492,9 +1486,6 @@
       "Vault": [
         "Tresor"
       ],
-      "Verification number": [
-        "Kartenprüfnummer"
-      ],
       "View details": [
         "Details anzeigen"
       ],
@@ -1574,6 +1565,9 @@
       "Move items to another vault (optional)": [
         "Einträge in einen anderen Tresor verschieben (optional)"
       ],
+      "Other": [
+        "Weitere"
+      ],
       "Pick a vault": [
         "Wähle einen Tresor"
       ],
@@ -1633,7 +1627,7 @@
       "Confirm PIN code": [
         "PIN-Code bestätigen"
       ],
-      "Connect your ${ BRAND_NAME } account": [
+      "Connect your ${ BRAND_NAME } Account": [
         "${ BRAND_NAME }-Konto verbinden"
       ],
       "Create PIN code": [
@@ -1642,11 +1636,8 @@
       "Delete vault \"${ vaultName }\" ?": [
         "Tresor \"${ vaultName }\" löschen?"
       ],
-      "Discard changes ?": [
+      "Discard changes?": [
         "Änderungen verwerfen?"
-      ],
-      "Enjoy your free trial": [
-        "Genieße deine kostenlose Testversion"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Gefällt dir ${ PASS_APP_NAME }?"
@@ -1681,8 +1672,11 @@
       "Member limit": [
         "Mitgliederlimit"
       ],
+      "Our welcome gift to you": [
+        "Unser Willkommensgeschenk an dich"
+      ],
       "Pending access to the shared data": [
-        "Zugriff auf die gemeinsamen Daten ist ausstehend"
+        "Zugriff auf die geteilten Daten ist ausstehend"
       ],
       "Permanently remove all items ?": [
         "Alle Einträge dauerhaft löschen?"
@@ -1735,8 +1729,8 @@
       "Welcome to ${ PASS_APP_NAME }": [
         "Willkommen bei ${ PASS_APP_NAME }"
       ],
-      "Welcome!": [
-        "Willkommen!"
+      "Welcome to your new password manager!": [
+        "Willkommen bei deinem neuen Passwort-Manager!"
       ],
       "Why ${ PASS_APP_NAME }?": [
         "Warum ${ PASS_APP_NAME }?"
@@ -1749,14 +1743,14 @@
       "Duplicated url": [
         "Duplizierte URL"
       ],
-      "Label is required": [
-        "Bezeichnung ist erforderlich"
+      "Field name is required": [
+        "Feldname ist erforderlich."
       ],
-      "OTP Secret or URI is invalid": [
-        "OTP-Geheimnis oder URI ungültig"
+      "OTP secret or URI is invalid": [
+        "OTP-Geheimnis oder URI ungültig."
       ],
-      "OTP Secret or URI required": [
-        "OTP-Geheimnis oder URI erforderlich"
+      "OTP secret or URI required": [
+        "OTP-Geheimnis oder URI erforderlich."
       ],
       "Url already exists": [
         "URL existiert bereits"
@@ -1775,8 +1769,8 @@
       "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
         "Der Alias \"${ name }\" wird derzeit im Zugangsdaten-Eintrag \"${ relatedLoginName }\" verwendet. Du wirst auch keine E-Mails mehr erhalten, die an \"${ aliasEmail }\" gesendet werden."
       ],
-      "All your trashed items will be permanently deleted. You can not undo this action.": [
-        "Alle deine gelöschten Einträge werden dauerhaft gelöscht. Du kannst diese Aktion nicht rückgängig machen."
+      "All your trashed items will be permanently deleted. You cannot undo this action.": [
+        "Alle deine im Papierkorb befindlichen Einträge werden dauerhaft gelöscht. Du kannst diese Aktion nicht rückgängig machen."
       ],
       "An error occured while exporting your data": [
         "Beim Exportieren deiner Daten ist ein Fehler aufgetreten."
@@ -1862,7 +1856,7 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Anmeldung bei ${ PASS_APP_NAME } nicht möglich. ${ additionalMessage }"
       ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You can not undo this action": [
+      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
         "Der Tresor \"${ vaultName }\" und alle seine Einträge werden dauerhaft gelöscht. Du kannst diese Aktion nicht rückgängig machen."
       ],
       "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
@@ -1883,8 +1877,8 @@
       "You have reached the limit of vaults you can have in your plan.": [
         "Du hast die maximale Anzahl an Tresoren in deinem Abonnement erreicht."
       ],
-      "You have unsaved changes, are you sure you want to discard them?": [
-        "Du hast ungespeicherte Änderungen. Bist du dir sicher, dass du diese verwerfen möchtest?"
+      "You have unsaved changes.": [
+        "Du hast nicht gespeicherte Änderungen."
       ],
       "You must select at least one mailbox": [
         "Du musst mindestens ein Postfach auswählen."

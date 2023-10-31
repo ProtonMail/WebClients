@@ -151,6 +151,9 @@
       "Continue with Google": [
         "Continuar con Google"
       ],
+      "Continue with Outlook": [
+        "Continuar con Outlook"
+      ],
       "Copy address": [
         "Copiar dirección"
       ],
@@ -238,7 +241,7 @@
         "Ajustes del correo"
       ],
       "enable desktop notifications": [
-        "habilitar las notificaciones de escritorio"
+        "activar las notificaciones de escritorio"
       ],
       "Export": [
         "Exportar"
@@ -311,6 +314,12 @@
       ],
       "Import from .csv or vCard": [
         "Importar desde .csv o vCard"
+      ],
+      "Import from Google": [
+        "Importar desde Google"
+      ],
+      "Import from Outlook": [
+        "Importar desde Outlook"
       ],
       "Join calendar": [
         "Unirse al calendario"
@@ -826,11 +835,12 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Evite la censura y los bloqueos locales de Internet con nuestra red global de servidores."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
-        "Incluye compatibilidad con ${ domains } dominios de correo electrónico personalizados, ${ addresses } direcciones de correo electrónico, ${ aliases } alias de hide-my-email, posibilidad de compartir calendarios y más."
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 seudónimos de hide-my-email, posibilidad de compartir calendario, etc."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Incluye compatibilidad con ${ domains } dominios de correo electrónico personalizados, ${ addresses } direcciones de correo electrónico, alias ilimitados de hide-my-email, posibilidad de compartir calendarios y más."
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, ${ addresses } dirección de correo electrónico, seudónimos ilimitados de hide-my-email, posibilidad de compartir calendario, etc.",
+        "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, ${ addresses } direcciones de correo electrónico, seudónimos ilimitados de hide-my-email, posibilidad de compartir calendario, etc."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Inicios de sesión seguros en todos sus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
@@ -2168,6 +2178,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Cifrando e importando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, puede cerrar esta ventana."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Para importar mediante CSV y VCF, asegúrese que el archivo no exceda de ${ MAX_IMPORT_FILE_SIZE_STRING } o de ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si el archivo es grande, divídalo en archivos pequeños. ${ learnMoreLink }."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que la lista de contactos que está importando contiene algunos grupos. Revise cómo deben importarse estos grupos."
       ],
@@ -2180,12 +2193,11 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Ahorre tiempo enviando correos electrónicos o invitaciones a todos a la vez, una función premium entre muchas otras. Actualice hoy mismo."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener ${ MAX_IMPORT_CONTACTS_STRING } contacto. Si su archivo es más grande, divídalo en archivos más pequeños.",
-        "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si su archivo es más grande, divídalo en archivos más pequeños."
-      ],
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "Esto puede tomar unos minutos. Mientras tanto puede continuar usando el calendario."
+      ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Para importar sus contactos desde Google o Outlook, ${ easySwitchLink }."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Use arrastrar y soltar para clasificar la prioridad entre contactos. Desmarque los contactos que no quiere combinar."
@@ -2195,6 +2207,11 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Puede marcar para eliminar los contactos que no quiere ni combinar ni mantener. La eliminación sólo tendrá lugar después de que el botón de combinar sea pulsado."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "use el asistente de importación Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2207,17 +2224,17 @@
     },
     "Disabled calendar": {
       "Disabled": [
-        "Deshabilitado"
+        "Desactivado"
       ]
     },
     "Disabled calendar name suffix": {
       "Disabled": [
-        "Deshabilitado"
+        "Desactivado"
       ]
     },
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
-        "El evento pertenece a un calendario deshabilitado."
+        "El evento pertenece a un calendario desactivado."
       ]
     },
     "Don't ask to update timezone checkbox label": {
@@ -2383,7 +2400,7 @@
         "Firma del contacto no verificada"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "La búsqueda de contenido no se puede habilitar en este navegador. Salga del modo de navegación privada o use otro navegador."
+        "La búsqueda de contenido no se puede activar en este navegador. Salga del modo de navegación privada o use otro navegador."
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Error de descifrado: no se pudo descifrar el contenido de este evento."
@@ -2400,7 +2417,7 @@
         "Dominio no disponible, inténtelo más tarde"
       ],
       "Email address disabled": [
-        "Dirección de correo deshabilitada"
+        "Dirección de correo desactivada"
       ],
       "Email address is required": [
         "Dirección de correo requerida"
@@ -2538,7 +2555,7 @@
         "Las contraseñas no coinciden"
       ],
       "Please activate your search again": [
-        "Habilite de nuevo su búsqueda"
+        "Active de nuevo su búsqueda"
       ],
       "Please create an address first.": [
         "Primero cree una dirección."
@@ -3414,16 +3431,16 @@
         "${ BRAND_NAME } no puede conectarse a su cuenta de Yahoo. Asegúrese de que:"
       ],
       "2-step verification is enabled in your external account.": [
-        "La verificación en dos pasos está habilitada en su cuenta externa."
+        "La verificación en dos pasos está activada en su cuenta externa."
       ],
       "2-step verification is enabled in your external email account.": [
-        "La verificación en dos pasos está habilitada en su cuenta de correo externa."
+        "La verificación en dos pasos está activada en su cuenta de correo externa."
       ],
       "IMAP access is enabled in your external account.": [
-        "El acceso IMAP está habilitado en su cuenta externa."
+        "El acceso IMAP está activado en su cuenta externa."
       ],
       "IMAP access is enabled in your Yahoo account.": [
-        "El acceso IMAP está habilitado en su cuenta de Yahoo Mail."
+        "El acceso IMAP está activado en su cuenta de Yahoo Mail."
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Demasiadas solicitudes recientes. Inténtelo de nuevo en unos momentos."
@@ -3518,7 +3535,7 @@
         "contraseña de la app"
       ],
       "app password or enable IMAP": [
-        "contraseña de la app o habilitar IMAP"
+        "contraseña de la app o activar IMAP"
       ],
       "CSV or a VCF (vCard) file": [
         "CSV o un archivo VCF (vCard)"
@@ -3674,7 +3691,7 @@
         "Se notificarán a los participantes añadidos y eliminados."
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "La verificación de dirección con claves de confianza está habilitada para esta dirección. Para poder enviar a esta dirección, primero confíe en las claves públicas que se pueden usar para enviar."
+        "La verificación de dirección con claves de confianza está activada para esta dirección. Para poder enviar a esta dirección, primero confíe en las claves públicas que se pueden usar para enviar."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Todo (${ totalFoldersCount } carpeta)",
@@ -4110,7 +4127,7 @@
         "Esta cuenta ha sido suspendida por una posible violación de la política."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Esta dirección está deshabilitada. Para poder enviar a esta dirección, el dueño debe primero habilitar la dirección."
+        "Esta dirección está desactivada. Para poder enviar a esta dirección, el dueño debe primero activar la dirección."
       ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
         "Este evento ha sido actualizado por el organizador. ¿Quiere cambiar su respuesta sólo para este evento en la serie?"
@@ -4287,10 +4304,10 @@
         "Su cuenta tiene al menos una factura pendiente. Su cuenta está restringida. El no pago continuo bloqueará sus correos y enlaces compartidos. ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
-        "Su dirección está deshabilitada. No se puede enviar un correo electrónico de cancelación a los participantes del evento. ¿Quiere eliminar todos los eventos de esta serie de todos modos?"
+        "Su dirección está desactivada. No se puede enviar un correo electrónico de cancelación a los participantes del evento. ¿Quiere eliminar todos los eventos de esta serie de todos modos?"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
-        "Su dirección está deshabilitada. No se puede enviar un correo electrónico de cancelación a los participantes del evento. ¿Quiere eliminar este evento de todos modos?"
+        "Su dirección está desactivada. No se puede enviar un correo electrónico de cancelación a los participantes del evento. ¿Quiere eliminar este evento de todos modos?"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Sus datos están listos para importarse desde ${ importedEmailAddressStrong } a su cuenta de ${ BRAND_NAME }."
@@ -4359,7 +4376,7 @@
     },
     "Info; reshare calendar modal; part 1": {
       "Calendar sharing was disabled following your recent password reset.": [
-        "Se inhabilitó el uso compartido del calendario luego de que restableciera su contraseña recientemente."
+        "Se inactivó el uso compartido del calendario luego de que restableciera su contraseña recientemente."
       ]
     },
     "Info; reshare calendar modal; part 2": {
@@ -4908,7 +4925,7 @@
         "Re:"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        "Su prueba gratuita ha terminado. El acceso a su cuenta pronto será deshabilitado. ${ action }"
+        "Su prueba gratuita ha terminado. El acceso a su cuenta pronto será desactivado. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -5881,7 +5898,7 @@
         "Error al verificar la firma"
       ],
       "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
-        "Ha habilitado la verificación de dirección para ${ boldSenderEmail }. No hemos podido verificar la autenticidad de la invitación de este calendario. Esto puede ser debido a cambios en las claves de cifrado de este contacto. Revise los ajustes PGP avanzados o pida a ${ boldSenderEmail } una invitación nueva."
+        "Ha activado la verificación de dirección para ${ boldSenderEmail }. No hemos podido verificar la autenticidad de la invitación de este calendario. Esto puede ser debido a cambios en las claves de cifrado de este contacto. Revise los ajustes PGP avanzados o pida a ${ boldSenderEmail } una invitación nueva."
       ]
     },
     "Signing preference for emails": {
@@ -7032,10 +7049,10 @@
     },
     "Warning in modal to accept calendar invitation; Description": {
       "To access this shared calendar, enable this address, or ask ${ boldCalendarOwnerEmail } to send an invite to an active address.": [
-        "Para acceder a este calendario compartido, habilite esta dirección, o pregunte a ${ boldCalendarOwnerEmail } para enviarle una invitación a una dirección activa."
+        "Para acceder a este calendario compartido, active esta dirección, o pregunte a ${ boldCalendarOwnerEmail } para enviarle una invitación a una dirección activa."
       ],
       "You cannot join this calendar because your invited email address (${ boldInvitedAddress }) is disabled.": [
-        "No puede unirse a este calendario porque su dirección de correo invitada (${ boldInvitedAddress }) está deshabilitada."
+        "No puede unirse a este calendario porque su dirección de correo invitada (${ boldInvitedAddress }) está desactivada."
       ]
     },
     "Weekly recurring event, frequency": {

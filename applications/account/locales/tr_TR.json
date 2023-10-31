@@ -899,9 +899,6 @@
       "Sign out of all accounts": [
         "Tüm hesapların oturumunu kapat"
       ],
-      "Sign up for free": [
-        "Ücretsiz hesap açın"
-      ],
       "Signing in": [
         "Oturum açılıyor"
       ],
@@ -1377,6 +1374,22 @@
         "Aboneliğiniz, faturalama döneminizin sonunda otomatik olarak standart tarife ve süre üzerinden yenilenir."
       ]
     },
+    "bf2023: header": {
+      "Save with Black Friday deals on a high-speed Swiss VPN": [
+        "Yüksek hızlı İsviçre VPN hizmetinde Muhteşem Cuma fırsatlarıyla indirim alın"
+      ],
+      "Select your Black Friday offer": [
+        "Muhteşem Cuma teklifinizi seçin"
+      ]
+    },
+    "bf2023: info": {
+      "All premium ${ BRAND_NAME } services. One easy subscription.": [
+        "Tüm ücretli ${ BRAND_NAME } hizmetleri. Tek bir abonelik."
+      ],
+      "Secure browsing and premium VPN features.": [
+        "İnternette güvenli gezinin ve ücretli VPN özelliklerine erişin."
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 gün içinde ücret iade garantisi"
@@ -1407,11 +1420,12 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Yerel internet engellemelerini ve sansürü küresel sunucu ağlarımız ile aşın."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
-        "${ domains } özel e-posta etki alanı, ${ addresses } e-posta adresi, ${ aliases } hide-my-email takma adı, takvim paylaşımı ve daha fazlasını içerir."
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "1 özel e-posta etki alanı, 10 e-posta adresi, 10 hide-my-email takma adı, takvim paylaşma ve daha fazlası için destek içerir."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "${ domains } özel e-posta etki alanı, ${ addresses } e-posta adresi, sınırsız hide-my-email takma adı, takvim paylaşımı ve daha fazlasını içerir."
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "3 özel e-posta etki alanı, ${ addresses } e-posta adresi, sınırsız hide-my-email takma adı, takvim paylaşımı ve daha fazlasını içerir.",
+        "3 özel e-posta etki alanı, ${ addresses } e-posta adresi, sınırsız hide-my-email takma adı, takvim paylaşımı ve daha fazlasını içerir."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve daha fazlası."
@@ -3019,10 +3033,6 @@
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Birkaç e-posta adresi kullanarak hayatınızın farklı yönlerini ayırın ve tarifenizi yükselterek daha fazla ücretli özelliğe erişin."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün.",
-        "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün."
-      ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "${ MAIL_APP_NAME } alt bilgisini kaldırmak için tarifenizi yükseltin ve diğer ücretli özelliklere de erişin."
       ],
@@ -4619,6 +4629,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -4637,6 +4650,10 @@
       "Megabyte": [
         "Megabayt",
         "Megabayt"
+      ],
+      "Terabyte": [
+        "Terabayt",
+        "Terabayt"
       ]
     },
     "Filter Actions": {
@@ -5637,10 +5654,6 @@
       "Additional options": [
         "Ek seçenekler"
       ],
-      "address": [
-        "adres",
-        "adres"
-      ],
       "Admin account allocation": [
         "Yönetici hesabına ayrılan"
       ],
@@ -6396,9 +6409,6 @@
       ],
       "Monthly ${ onDayString }": [
         "Ayda bir ${ onDayString }"
-      ],
-      "more": [
-        "diğer"
       ],
       "Multi-user support not enabled.": [
         "Çok kullanıcı desteği açılmamış."
@@ -10123,14 +10133,6 @@
         "Seçtiğiniz tarife: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } deneme"
-      ],
-      "Your account's usage": [
-        "Hesap kullanımınız"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Hesap silinsin mi?"
@@ -10152,6 +10154,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Tarifenizi yükselterek ücretli özelliklere erişin"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } deneme"
+      ],
+      "Your account's usage": [
+        "Hesap kullanımınız"
       ]
     },
     "new_plans: tooltip": {
@@ -10862,9 +10872,6 @@
       "Download to continue ${ size }": [
         "İlerlemek için ${ size } indirin"
       ],
-      "Keep this plan and use ${ appName }": [
-        "Bu tarifeyi koruyun ve ${ appName } kullanın"
-      ],
       "Or ${ createANewAccount }": [
         "Ya da ${ createANewAccount }un"
       ],
@@ -10874,14 +10881,8 @@
       "Start using ${ appName } now": [
         "${ appName } kullanmaya başlayın"
       ],
-      "Upgrade for only ${ relativePrice } extra per month": [
-        "Ayda yalnızca ek ${ relativePrice } karşılığında yükseltin"
-      ],
       "Upgrade my plan": [
         "Tarifemi yükselt"
-      ],
-      "Use ${ free } instead": [
-        "Bunun yerine ${ free } kullanın"
       ]
     },
     "pass_signup_2023: Feature": {
@@ -10991,9 +10992,6 @@
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "${ BRAND_NAME } hesabınıza erişiminizi kaybederseniz, **kurtarma paketiniz** oturum açmanızı ve verilerinizi kurtarmanızı sağlar."
       ],
-      "Includes basic ${ appName } features:": [
-        "Temel ${ appName } özellikleri bulunur:"
-      ],
       "Install ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } uygulamasını kurun"
       ],
@@ -11063,9 +11061,6 @@
       "Verifying your payment": [
         "Ödemeniz doğrulanıyor"
       ],
-      "Welcome to ${ plan }": [
-        "${ plan } tarifesine hoş geldiniz"
-      ],
       "Works on all devices": [
         "Tüm aygıtlarda çalışır"
       ],
@@ -11080,11 +11075,6 @@
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Kuruluşunuzun ${ free } erişimi var. Ücretli ${ appName } özelliklerine erişmek istiyorsanız, lütfen kuruluşunuzun yöneticisinden tarifeyi yükseltmesini isteyin."
-      ]
-    },
-    "pass_signup_2023: Onboarding": {
-      "Welcome to ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } uygulamasına hoş geldiniz"
       ]
     },
     "pass_signup_2023: Title": {
@@ -11981,11 +11971,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Bu abonelik, iptal edilene kadar 2 yılda bir aynı tutarla otomatik olarak yenilenir."
-      ]
-    },
-    "specialoffer: Info": {
-      "No available offers found.": [
-        "Kullanılabilecek bir teklif yok."
       ]
     },
     "specialoffer: Label": {
@@ -12910,9 +12895,6 @@
       ],
       "Auto-reply": [
         "Otomatik yanıt"
-      ],
-      "Auto-reply and forward": [
-        "Otomatik yanıtla ve ilet"
       ],
       "Automatically sign outgoing messages?": [
         "Giden iletiler otomatik olarak imzalansın mı?"
@@ -14198,11 +14180,6 @@
       ],
       "Your ${ selected } plan": [
         "${ selected } tarifeniz"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Secure Core sunucularına erişim, hızlı P2P/BitTorrent indirmeleri, VPN üzerinden Tor, Double Hop ve diğer özellikler"
       ]
     },
     "Warning": {

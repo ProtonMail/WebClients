@@ -2965,12 +2965,6 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Ušetrite čas posielaním e-mailov alebo pozvánok všetkým naraz, čo je prémiová funkcia medzi mnohými ďalšími. Inovujte ešte dnes."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Súbor by mal mať maximálnu veľkosť ${ MAX_IMPORT_FILE_SIZE_STRING } a mal by mať ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Ak je váš súbor väčší, rozdeľte ho na menšie súbory.",
-        "Súbor by mal mať maximálnu veľkosť ${ MAX_IMPORT_FILE_SIZE_STRING } a mal by obsahovať maximálne ${ MAX_IMPORT_CONTACTS_STRING } kontakty. Ak je váš súbor väčší, rozdeľte ho na menšie súbory.",
-        "Súbor by mal mať maximálnu veľkosť ${ MAX_IMPORT_FILE_SIZE_STRING } a mal by obsahovať maximálne ${ MAX_IMPORT_CONTACTS_STRING } kontaktov. Ak je váš súbor väčší, rozdeľte ho na menšie súbory.",
-        "Súbor by mal mať maximálnu veľkosť ${ MAX_IMPORT_FILE_SIZE_STRING } a mal by obsahovať maximálne ${ MAX_IMPORT_CONTACTS_STRING } kontaktov. Ak je váš súbor väčší, rozdeľte ho na menšie súbory."
-      ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Zapnite ochranu sledovania emailov, aby ste zabránili inzerentom a ostatným v sledovaní vašej polohy a online aktivity."
       ],
@@ -4216,19 +4210,19 @@
     },
     "Font size option": {
       "Large": [
-        "Veľká"
+        "Veľké"
       ],
       "Medium (recommended)": [
-        "Stredná (odporúčané)"
+        "Stredné (odporúčané)"
       ],
       "Small": [
-        "Malý"
+        "Malé"
       ],
       "Very large": [
         "Veľmi veľká"
       ],
       "Very small": [
-        "Veľmi malý"
+        "Veľmi malé"
       ]
     },
     "forwardmessage": {
@@ -4286,7 +4280,7 @@
         "Zatvoriť"
       ],
       "Closing this means giving up the free storage bonus.": [
-        "Zatvorením sa vzdáte bonusu na bezplatné úložisko."
+        "Zatvorením sa vzdáte bezplatného bonusového úložiska."
       ],
       "Congratulation, you completed all the steps!": [
         "Gratulujeme, dokončili ste všetky kroky!"
@@ -6606,7 +6600,7 @@
         "Priložiť snímok(ky) obrazovky"
       ],
       "Authenticator app": [
-        "Overovacie aplikácie"
+        "Aplikácia 2FA"
       ],
       "Automatically save contacts": [
         "Automaticky ukladať kontakty"
@@ -7213,7 +7207,7 @@
         "Odoslané"
       ],
       "Set up email forwarding": [
-        "Nastaviť preposielanie"
+        "Nastaviť preposielanie emailov"
       ],
       "Sign up for free": [
         "Zaregistrujte sa zadarmo"
@@ -7578,7 +7572,7 @@
         "Automaticky mazať správy v spame a koši"
       ],
       "Custom email domains": [
-        "Vlastné e-mailové domény"
+        "Vlastné emailové domény"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email aliasy"
@@ -7593,7 +7587,7 @@
         "Neobmedzené množstvo priečinkov, štítkov a filtrov"
       ],
       "Up to 15 email addresses": [
-        "Až do 15 e-mailových adries"
+        "Až 15 emailových adries"
       ],
       "Up to 3 TB of storage": [
         "Až do 3 TB úložiska"

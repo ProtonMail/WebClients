@@ -302,6 +302,9 @@
       "Open navigation": [
         "탐색 열기"
       ],
+      "Or": [
+        "또는"
+      ],
       "Organization": [
         "조직"
       ],
@@ -431,11 +434,17 @@
       "Sign in": [
         "로그인"
       ],
+      "Sign in with password": [
+        "비밀번호로 로그인"
+      ],
+      "Sign in with SSO": [
+        "SSO로 로그인"
+      ],
       "Sign out": [
         "로그아웃"
       ],
-      "Sign up for free": [
-        "무료 가입"
+      "sign up for free": [
+        "무료로 가입하세요"
       ],
       "Signing in": [
         "로그인 중"
@@ -2380,6 +2389,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -2394,6 +2406,9 @@
       ],
       "Megabytes": [
         "메가바이트"
+      ],
+      "Terabytes": [
+        "테라바이트"
       ]
     },
     "Font face option": {
@@ -2532,6 +2547,9 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } addresses": [
+        "${ amountOfAddresses } 주소들"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 이 ${ enableDesktopNotifications } 하려면 권한이 필요합니다."
       ],
@@ -2559,11 +2577,20 @@
       "${ number } servers": [
         "${ number }개 서버"
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "${ plan } 제거되었습니다. 1개월 요금제에는 묶음 상품이 제공되지 않습니다."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }이(가) 최소 1개 이상 지정 서버를 필요합니다 ${ serverPricePerMonth }"
       ],
       "${ provisioningCounter } servers are still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } 서버는 아직 설정 중입니다. ${ provisioningDuration } 정도 소요됩니다."
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } 더"
+      ],
+      "${ remainingAddresses.length } more addresses": [
+        "${ remainingAddresses.length } 더 많은 주소들"
       ],
       "${ storage } storage": [
         "${ storage } 저장공간"
@@ -2633,9 +2660,6 @@
       ],
       "Additional options": [
         "추가적인 옵션"
-      ],
-      "addresses": [
-        "주소"
       ],
       "Admin account allocation": [
         "관리자 계정 할당 됨"
@@ -2708,6 +2732,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "새 주소에서 이메일을 주고 받기 전에 암호화 키를 만들어야 합니다."
+      ],
+      "Billed at ${ price }": [
+        "가격 ${ price }"
       ],
       "Billing cycle: ${ text }": [
         "청구 주기: ${ text }"
@@ -2997,9 +3024,6 @@
       "MM/YY": [
         "MM/YY"
       ],
-      "more": [
-        "더보기"
-      ],
       "Multi-user support not enabled.": [
         "멀티 유저 지원이 활성화되지 않았습니다."
       ],
@@ -3173,6 +3197,9 @@
       ],
       "Revoke certificate ${ name }": [
         "${ name } 인증서 취소"
+      ],
+      "Save ${ percentage }": [
+        "${ percentage } 할인"
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "안전한 곳에 비밀번호를 저장하세요. 아이콘을 클릭하여 비밀번호를 올바르게 입력했는지 확인해주세요."
@@ -4357,6 +4384,9 @@
       ],
       "Create a new ${ appName } account": [
         "새 ${ appName } 계정 생성"
+      ],
+      "Find your ${ BRAND_NAME } Account username": [
+        "${ BRAND_NAME } 사용자 이름 찾기"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "${ BRAND_NAME } 계정 비밀번호를 잊어버리셨나요? 여기서 복구 코드, 이메일 및 SMS를 사용하여 재설정하신 뒤 ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } 등에 접근해 보세요."
@@ -6854,6 +6884,9 @@
       "Sign in to join the Beta program": [
         "베타 프로그램에 참여하려면 로그인"
       ],
+      "Sign in to your organization": [
+        "조직에 로그인"
+      ],
       "Sign in with 2FA": [
         "2FA로 로그인"
       ],
@@ -7136,8 +7169,8 @@
       ]
     },
     "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Secure Core 서버에 접근, 빠른 P2P 및 BitTorrent 다운로드, Tor를 통한 VPN, Double hop 등 제공"
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Secure core 서버, 빠른 P2P/BitTorrent 다운로드, VPN을 통한 Tor 등에 접근하세요."
       ]
     },
     "Warning": {

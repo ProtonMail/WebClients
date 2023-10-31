@@ -2085,9 +2085,6 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "一度に全員にメールや招待状を送信することで時間を節約できます。今すぐアップグレード"
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
-        "最大 ${ MAX_IMPORT_FILE_SIZE_STRING } のファイルサイズ、最大 ${ MAX_IMPORT_CONTACTS_STRING } 件の連絡先に対応しています。それより大きなファイルは、分割してください。"
-      ],
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "これには数分かかります。その間は、通常通りカレンダーをお使いいただけます。"
       ],
@@ -2311,6 +2308,9 @@
       ],
       "Event not found": [
         "イベントが見つかりません"
+      ],
+      "Failed to get event": [
+        "イベントの取得に失敗しました"
       ],
       "Failed to get original occurrence in series": [
         "元の行事の取得に失敗しました"

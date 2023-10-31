@@ -141,7 +141,7 @@
         "¿No recibió el código?"
       ],
       "Disable": [
-        "Deshabilitar"
+        "Desactivar"
       ],
       "Discard": [
         "Descartar"
@@ -204,10 +204,10 @@
         "Editar usuarios"
       ],
       "enable desktop notifications": [
-        "habilitar las notificaciones de escritorio"
+        "activar las notificaciones de escritorio"
       ],
       "Enable multi-user support": [
-        "Habilitar soporte multi usuario"
+        "Activar soporte multi usuario"
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Explorar otros planes de ${ BRAND_NAME }"
@@ -301,6 +301,9 @@
       ],
       "Open navigation": [
         "Abrir navegación"
+      ],
+      "Or": [
+        "O"
       ],
       "Organization": [
         "Organización"
@@ -440,8 +443,8 @@
       "Sign out": [
         "Cerrar sesión"
       ],
-      "Sign up for free": [
-        "Regístrese gratis"
+      "sign up for free": [
+        "regístrese gratis"
       ],
       "Signing in": [
         "Iniciando sesión"
@@ -576,10 +579,10 @@
         "Eliminar"
       ],
       "Disable": [
-        "Deshabilitar"
+        "Desactivar"
       ],
       "Disable E2EE mail": [
-        "Deshabilitar correo E2EE"
+        "Desactivar correo E2EE"
       ],
       "Disallow unsigned mail": [
         "No permitir correos sin firma"
@@ -591,10 +594,10 @@
         "Editar dirección"
       ],
       "Enable": [
-        "Habilitar"
+        "Activar"
       ],
       "Enable E2EE mail": [
-        "Habilitar correo E2EE"
+        "Activar correo E2EE"
       ],
       "Generate missing keys": [
         "Generar claves faltantes"
@@ -617,7 +620,7 @@
         "Por defecto"
       ],
       "Disabled": [
-        "Deshabilitada"
+        "Desactivada"
       ],
       "External": [
         "Externa"
@@ -723,6 +726,22 @@
         "Su suscripción se renovará automáticamente con el mismo precio reducido y duración al término del ciclo de facturación."
       ]
     },
+    "bf2023: header": {
+      "Save with Black Friday deals on a high-speed Swiss VPN": [
+        "Aproveche el Black Friday para contratar una VPN suiza de alta velocidad al mejor precio"
+      ],
+      "Select your Black Friday offer": [
+        "Seleccione su oferta Black Friday"
+      ]
+    },
+    "bf2023: info": {
+      "All premium ${ BRAND_NAME } services. One easy subscription.": [
+        "Todos los servicios premium de ${ BRAND_NAME } en una sola y sencilla suscripción."
+      ],
+      "Secure browsing and premium VPN features.": [
+        "Navegación segura y funciones VPN premium."
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "Garantía de reembolso durante 30 días"
@@ -740,7 +759,7 @@
         "La oferta especial de ${ discountedPrice } es válida durante ${ discountedMonths }. Una vez transcurrido ese plazo, se renovará automáticamente al precio rebajado de ${ nextPrice } durante ${ nextMonths }. Podrá cancelarla en cualquier momento."
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
-        "La oferta especial de ${ discountedPrice } es válida durante el primer mes. Una vez transcurrido ese plazo, se renovará automáticamente al precio de ${ nextPrice } cada mes. Puedes cancelarla en cualquier momento."
+        "La oferta especial de ${ discountedPrice } es válida durante el primer mes. Una vez transcurrido ese plazo, se renovará automáticamente al precio de ${ nextPrice } cada mes. Puede cancelarla en cualquier momento."
       ]
     },
     "bf2023: Tooltip": {
@@ -753,11 +772,12 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Evite la censura y los bloqueos locales de Internet con nuestra red global de servidores."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
-        "Incluye compatibilidad con ${ domains } dominios de correo electrónico personalizados, ${ addresses } direcciones de correo electrónico, ${ aliases } alias de hide-my-email, posibilidad de compartir calendarios y más."
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 seudónimos de hide-my-email, posibilidad de compartir calendario, etc."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Incluye compatibilidad con ${ domains } dominios de correo electrónico personalizados, ${ addresses } direcciones de correo electrónico, alias ilimitados de hide-my-email, posibilidad de compartir calendarios y más."
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, ${ addresses } dirección de correo electrónico, seudónimos ilimitados de hide-my-email, posibilidad de compartir calendario, etc.",
+        "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, ${ addresses } direcciones de correo electrónico, seudónimos ilimitados de hide-my-email, posibilidad de compartir calendario, etc."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Inicios de sesión seguros en todos sus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
@@ -1972,7 +1992,7 @@
         "Configure un dominio personalizado antes de añadir usuarios a su organización."
       ],
       "Please enable multi-user support before adding users to your organization.": [
-        "Habilite el soporte multi usuario antes de añadir usuarios a su organización."
+        "Active el soporte multi usuario antes de añadir usuarios a su organización."
       ],
       "Please generate keys before you try to change your password": [
         "Genere claves antes de intentar cambiar su contraseña"
@@ -2438,7 +2458,7 @@
     },
     "fido2: Error": {
       "Please disable 2FA via security key before disabling TOTP": [
-        "Deshabilite 2FA con la llave de seguridad antes de desactivar TOTP"
+        "Desactive 2FA con la llave de seguridad antes de desactivar TOTP"
       ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Hubo un problema al autenticar con su clave de seguridad. Intente de nuevo."
@@ -2482,7 +2502,7 @@
         "Esto eliminará todas las llaves de seguridad vinculadas a su cuenta."
       ],
       "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
-        "Habilite 2FA con una llave de seguridad, para esto necesitará activar 2FA con una aplicación de autenticación"
+        "Active 2FA con una llave de seguridad, para esto necesitará activar 2FA con una aplicación de autenticación"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Verifique su identidad con una llave de seguridad U2F o FIDO2"
@@ -2504,7 +2524,7 @@
         "¿Eliminar la llave de seguridad?"
       ],
       "Disable 2FA via security key?": [
-        "¿Deshabilitar 2FA mediante llave de seguridad?"
+        "¿Desactivar 2FA mediante llave de seguridad?"
       ],
       "Name your security key": [
         "Nombre su llave de seguridad"
@@ -2695,6 +2715,10 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } dirección",
+        "${ amountOfAddresses } direcciones"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita permiso para ${ enableDesktopNotifications }."
       ],
@@ -2724,12 +2748,23 @@
         "${ number } servidor",
         "${ number } servidores"
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "${ plan } fue eliminado. La oferta de paquete no está disponible en el plan de 1 mes."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requiere al menos 1 servidor dedicado ${ serverPricePerMonth }"
       ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "Todavía se está configurando ${ provisioningCounter } servidor. Esto usualmente toma ${ provisioningDuration }.",
         "Todavía se están configurando ${ provisioningCounter } servidores. Esto usualmente toma ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } más",
+        "${ remainingAddresses.length } más"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length } dirección más",
+        "${ remainingAddresses.length } direcciones más"
       ],
       "${ storage } storage": [
         "${ storage } de almacenamiento"
@@ -2805,10 +2840,6 @@
       "Additional options": [
         "Opciones adicionales"
       ],
-      "address": [
-        "dirección",
-        "dirección"
-      ],
       "Admin account allocation": [
         "Cuenta administrador de asignación"
       ],
@@ -2837,13 +2868,13 @@
         "Monto adeudado"
       ],
       "Any ${ twoFa } method on your account will be disabled.": [
-        "Se deshabilitará cualquier método de ${ twoFa } de su cuenta."
+        "Se desactivará cualquier método de ${ twoFa } de su cuenta."
       ],
       "Are you sure you want to delete this address?": [
         "¿Está seguro que quiere eliminar esta dirección?"
       ],
       "Are you sure you want to disable two-factor authentication?": [
-        "¿Está seguro que quiere deshabilitar la autenticación de dos factores?"
+        "¿Está seguro que quiere desactivar la autenticación de dos factores?"
       ],
       "Are you sure you want to discard your changes?": [
         "¿Está seguro que quiere descartar los cambios?"
@@ -2873,13 +2904,16 @@
         "Antes de crear esta dirección, necesita proporcionar una contraseña y crear claves de cifrado para ella."
       ],
       "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
-        "Antes de habilitar esta cuenta, necesita proporcionar una contraseña y crear claves de cifrado para las direcciones nuevas."
+        "Antes de activar esta cuenta, necesita proporcionar una contraseña y crear claves de cifrado para las direcciones nuevas."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de solicitar un código de verificación nuevo, revise su carpeta de spam y verifique que ${ strong } sea la dirección correcta."
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Antes de que pueda enviar y recibir mensajes desde sus direcciones nuevas, necesita crear las claves de cifrado para ellas."
+      ],
+      "Billed at ${ price }": [
+        "Al precio de ${ price }"
       ],
       "Billing cycle: ${ text }": [
         "Ciclo de facturación: ${ text }"
@@ -2940,7 +2974,7 @@
         "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
-        "Los servidores dedicados con direcciones IP dedicadas pueden añadirse a puertas de enlace privadas para habilitar un control de acceso más preciso."
+        "Los servidores dedicados con direcciones IP dedicadas pueden añadirse a puertas de enlace privadas para activar un control de acceso más preciso."
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Eliminando ${ deletedServerCount } servidor de puerta de enlace",
@@ -2962,7 +2996,7 @@
         "¡Listo! Le enviamos un código a ${ destination }."
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
-        "¿No aparece nada? No olvide deshabilitar los bloqueadores de ventanas emergentes."
+        "¿No aparece nada? No olvide desactivar los bloqueadores de ventanas emergentes."
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Al darse de baja finalizará cualquier conexión a servidores de pago de ${ VPN_APP_NAME }."
@@ -3085,7 +3119,7 @@
         "Si nunca ha usado la autenticación de dos factores anteriormente, le recomendamos encarecidamente ${ guideButton }."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
-        "Si pierde su dispositivo habilitado para dos factores, estos códigos pueden usarse en lugar del código de autenticación de dos factores de 6 dígitos para iniciar sesión en su cuenta. Cada código solo se puede usar una vez."
+        "Si pierde su dispositivo activado para dos factores, estos códigos pueden usarse en lugar del código de autenticación de dos factores de 6 dígitos para iniciar sesión en su cuenta. Cada código solo se puede usar una vez."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Si procede con darse de baja, perderá el acceso a las funciones de pago de ${ MAIL_APP_NAME } y ${ VPN_APP_NAME }."
@@ -3171,11 +3205,8 @@
       "MM/YY": [
         "MM/AA"
       ],
-      "more": [
-        "más"
-      ],
       "Multi-user support not enabled.": [
-        "Soporte multi usuario no habilitado."
+        "Soporte multi usuario no activado."
       ],
       "Must be between 3 and 20 characters long.": [
         "Debe tener entre 3 y 20 caracteres."
@@ -3350,6 +3381,9 @@
       "Revoke certificate ${ name }": [
         "Revocar certificado ${ name }"
       ],
+      "Save ${ percentage }": [
+        "Ahorre ${ percentage }"
+      ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Guarde su contraseña en algún lugar seguro. Haga clic en el ícono para confirmar que ha escrito su contraseña correctamente."
       ],
@@ -3393,7 +3427,7 @@
         "Inicie sesión en ${ MAIL_APP_NAME } para activar su dirección"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
-        "Como es un usuario leal, su cuenta tiene habilitadas funciones adicionales."
+        "Como es un usuario leal, su cuenta tiene activadas funciones adicionales."
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Algunos de sus servidores disponibles solo pueden usarse en países específicos debido a eliminaciones recientes"
@@ -3454,7 +3488,7 @@
         "Las siguientes direcciones no fueron creadas."
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
-        "Los siguientes miembros recibirán un correo electrónico pidiéndoles que habiliten la autenticación de dos factores tan pronto como sea posible."
+        "Los siguientes miembros recibirán un correo electrónico pidiéndoles que activen la autenticación de dos factores tan pronto como sea posible."
       ],
       "The format of your CSV file is incorrect.": [
         "El formato de su archivo CSV es incorrecto."
@@ -3466,7 +3500,7 @@
         "La manera más segura de navegar, transmitir y estar en línea."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
-        "El proceso de verificación abrirá una pestaña nueva en el navegador. Deshabilite cualquier bloqueador de ventanas emergentes activo."
+        "El proceso de verificación abrirá una pestaña nueva en el navegador. Desactive cualquier bloqueador de ventanas emergentes activo."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Estos archivos de configuración le permiten elegir a qué servidor de ${ VPN_APP_NAME } se conecta cuando usa una aplicación VPN de terceros o configura una conexión VPN en un enrutador."
@@ -3511,10 +3545,10 @@
         "Esto reemplazará su contraseña temporal. La usará para acceder a su cuenta de ${ BRAND_NAME } en el futuro."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
-        "Esto cerrará la sesión de cualquier sesión activa y deshabilitará la autenticación de dos factores."
+        "Esto cerrará la sesión de cualquier sesión activa y desactivará la autenticación de dos factores."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Este asistente habilitará la autenticación de dos factores (2FA) en su cuenta de ${ BRAND_NAME }. La autenticación de dos factores hará que su cuenta de ${ BRAND_NAME_TWO } sea más segura por lo que le recomendamos habilitarla."
+        "Este asistente activará la autenticación de dos factores (2FA) en su cuenta de ${ BRAND_NAME }. La autenticación de dos factores hará que su cuenta de ${ BRAND_NAME_TWO } sea más segura por lo que le recomendamos activarla."
       ],
       "to ${ product } Business": [
         "a ${ product } Business"
@@ -3565,10 +3599,10 @@
         "autenticación de dos factores (2FA)"
       ],
       "Two-factor authentication disabled": [
-        "Autenticación de dos factores deshabilitada"
+        "Autenticación de dos factores desactivada"
       ],
       "Two-factor authentication enabled": [
-        "Autenticación de dos factores habilitada"
+        "Autenticación de dos factores activada"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
         "El modo de dos contraseñas requiere dos contraseñas: una para iniciar sesión y otra para descifrar el buzón. (Avanzado)"
@@ -3619,7 +3653,7 @@
         "La verificación puede tomar unos minutos."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "La verificación abrirá una pestaña nueva, deshabilite cualquier bloqueador de ventanas emergentes. No se le cobrará este proceso. Cualquier monto usado para verificar la tarjeta le será reembolsado inmediatamente."
+        "La verificación abrirá una pestaña nueva, desactive cualquier bloqueador de ventanas emergentes. No se le cobrará este proceso. Cualquier monto usado para verificar la tarjeta le será reembolsado inmediatamente."
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Verifique su identidad con una clave de uso único basada en tiempo desde la aplicación de autenticación"
@@ -3785,7 +3819,7 @@
         "Debe activar la clave privada de su organización con la copia de seguridad suministrada por el administrador de la organización."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Debe deshabilitar o eliminar usuarios, direcciones y dominios personalizados adicionales de ${ MAIL_APP_NAME } antes de poder darse de baja."
+        "Debe desactivar o eliminar usuarios, direcciones y dominios personalizados adicionales de ${ MAIL_APP_NAME } antes de poder darse de baja."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Debe tener una tarjeta de crédito o una cuenta bancaria vinculada con su cuenta de PayPal para añadirla como método de pago."
@@ -4531,7 +4565,7 @@
     },
     "Message": {
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        "Su prueba gratuita ha terminado. El acceso a su cuenta pronto será deshabilitado. ${ action }"
+        "Su prueba gratuita ha terminado. El acceso a su cuenta pronto será desactivado. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -5079,7 +5113,7 @@
     },
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente deshabilitada."
+        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente desactivada."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Para continuar usando ${ MAIL_APP_NAME } con funciones premium, elija su suscripción y opciones de pago."
@@ -5179,7 +5213,7 @@
         "Cree hasta ${ n } direcciones de correo/alias que puede asignar a sus familiares. Úselas para las identidades en línea, p.ej., JuanCompras@${ domain } para cuentas de compras."
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
-        "Los servidores dedicados con direcciones IP dedicadas pueden añadirse a puertas de enlace privadas para habilitar un control de acceso más preciso"
+        "Los servidores dedicados con direcciones IP dedicadas pueden añadirse a puertas de enlace privadas para activar un control de acceso más preciso"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Defiende de ataques que amenazan la privacidad de la VPN dirigiendo el tráfico de Internet por varios servidores"
@@ -5396,7 +5430,7 @@
     },
     "Notification": {
       "A disabled address cannot be default": [
-        "Una dirección deshabilitada no puede ser principal"
+        "Una dirección desactivada no puede ser principal"
       ],
       "An external address cannot be default": [
         "Una dirección externa no puede ser principal"
@@ -6388,25 +6422,25 @@
         "¿Está seguro?"
       ],
       "Auto-pay is disabled": [
-        "Pago automático deshabilitado"
+        "Pago automático desactivado"
       ],
       "Auto-pay is enabled": [
-        "Pago automático habilitado"
+        "Pago automático activado"
       ],
       "Disable": [
-        "Deshabilitar"
+        "Desactivar"
       ],
       "Enable auto-pay support": [
-        "Habilitar soporte de pago automático"
+        "Activar soporte de pago automático"
       ],
       "Keep auto-pay": [
         "Mantener pago automático"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
-        "Nuestro sistema ya no le cobrará automáticamente con este método de pago, pero su suscripción aún se renovará al final del ciclo de facturación. Si quiere pasar a un plan inferior o cambiar su suscripción, debe hacerlo usted mismo antes del final del periodo de facturación. Además, si olvida realizar un pago manual y el pago automático está deshabilitado para todos los métodos de pago, es posible que pasaremos automáticamente su cuenta a un plan inferior, lo que provocará la pérdida de muchas funciones."
+        "Nuestro sistema ya no le cobrará automáticamente con este método de pago, pero su suscripción aún se renovará al final del ciclo de facturación. Si quiere pasar a un plan inferior o cambiar su suscripción, debe hacerlo usted mismo antes del final del periodo de facturación. Además, si olvida realizar un pago manual y el pago automático está desactivado para todos los métodos de pago, es posible que pasaremos automáticamente su cuenta a un plan inferior, lo que provocará la pérdida de muchas funciones."
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
-        "Nuestro sistema ya no le cobrará automáticamente con este método de pago, pero su suscripción aún se renovará al final del ciclo de facturación. Si quiere pasar a un plan inferior o cambiar su suscripción, debe hacerlo usted mismo antes del final del periodo de facturación. No podemos pasar automáticamente su cuenta a un plan inferior porque si supera la cuota de almacenamiento del plan gratuito o si usa otras funciones de pago, no podemos eliminar automáticamente archivos, correos electrónicos u otros datos por usted. Si deshabilita el pago automático, recuerde pagar su próxima factura de suscripción antes de la fecha de vencimiento para evitar la suspensión de la cuenta."
+        "Nuestro sistema ya no le cobrará automáticamente con este método de pago, pero su suscripción aún se renovará al final del ciclo de facturación. Si quiere pasar a un plan inferior o cambiar su suscripción, debe hacerlo usted mismo antes del final del periodo de facturación. No podemos pasar automáticamente su cuenta a un plan inferior porque si supera la cuota de almacenamiento del plan gratuito o si usa otras funciones de pago, no podemos eliminar automáticamente archivos, correos electrónicos u otros datos por usted. Si desactiva el pago automático, recuerde pagar su próxima factura de suscripción antes de la fecha de vencimiento para evitar la suspensión de la cuenta."
       ]
     },
     "Subscription saving": {
@@ -6527,10 +6561,10 @@
         "Dirección eliminada"
       ],
       "Address disabled": [
-        "Dirección deshabilitada"
+        "Dirección desactivada"
       ],
       "Address enabled": [
-        "Dirección habilitada"
+        "Dirección activada"
       ],
       "Certificate ${ name } revoked": [
         "Certificado ${ name } revocado"
@@ -6877,10 +6911,10 @@
         "¡Dispositivo conectado!"
       ],
       "Disable ${ email }": [
-        "Deshabilitar ${ email }"
+        "Desactivar ${ email }"
       ],
       "Disable two-factor authentication": [
-        "Deshabilitar autenticación de dos factores"
+        "Desactivar autenticación de dos factores"
       ],
       "Downgrade account": [
         "Pasar a un plan inferior"
@@ -7265,7 +7299,7 @@
         "Si compó un código de regalo o recibió uno de nuestro equipo de soporte, puede ingresarlo aquí."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
-        "Los miembros que no usan 2FA recibirán un correo electrónico pidiéndoles que la habiliten tan pronto como sea posible."
+        "Los miembros que no usan 2FA recibirán un correo electrónico pidiéndoles que la activen tan pronto como sea posible."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "El nuevo ciclo de suscripción comienza el ${ formattedTime }"
@@ -7406,8 +7440,8 @@
       ]
     },
     "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Acceso a servidores Secure Core, descargas rápidas P2P/BitTorrent, Tor sobre VPN, Double hop y más."
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Acceso a servidores Secure Core, descargas rápidas P2P/BitTorrent, Tor sobre VPN y más."
       ]
     },
     "Warning": {
@@ -7430,7 +7464,7 @@
         "Al eliminar este número de teléfono, ya no podrá recuperar su cuenta."
       ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
-        "Al deshabilitar esta dirección, no podrá enviar o recibir correos usando esta dirección y todos los productos de ${ BRAND_NAME } enlazados también se deshabilitarán. ¿Está seguro de que quiere deshabilitar la dirección?"
+        "Al desactivar esta dirección, no podrá enviar o recibir correos usando esta dirección y todos los productos de ${ BRAND_NAME } enlazados también se desactivarán. ¿Está seguro de que quiere desactivar la dirección?"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Tome en cuenta que al elegir este método de pago su cuenta no será mejorada inmediatamente. Actualizaremos su cuenta una vez que el pago se haya completado."

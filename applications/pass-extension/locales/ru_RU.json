@@ -29,9 +29,6 @@
       "Back": [
         "Назад"
       ],
-      "Can't find your password manager? Please let us know!": [
-        "Не можете найти свой менеджер паролей? Пожалуйста, сообщите нам!"
-      ],
       "Cancel": [
         "Отменить"
       ],
@@ -152,9 +149,6 @@
       "Generate password": [
         "Создать пароль"
       ],
-      "Generated password": [
-        "Сгенерированный пароль"
-      ],
       "Get mobile apps": [
         "Получить мобильные приложения"
       ],
@@ -217,9 +211,6 @@
       ],
       "Pass for iOS": [
         "Pass для iOS"
-      ],
-      "Proceed": [
-        "Продолжить"
       ],
       "Refresh the page": [
         "Обновить страницу"
@@ -287,8 +278,8 @@
       "Upgrade": [
         "Улучшить"
       ],
-      "Upgrade to keep these features": [
-        "Улучшите, чтобы сохранить эти функции"
+      "Upgrade now": [
+        "Улучшить сейчас"
       ],
       "Write us on Reddit": [
         "Написать нам в Reddit"
@@ -592,9 +583,6 @@
         "${ memberCount } членов",
         "${ memberCount } член"
       ],
-      "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
-        "${ PASS_APP_NAME } импортирует только имена и заметки. Паспорта, прикрепленные файлы и т. д. в данный момент не поддерживаются."
-      ],
       "${ revisionNumber } time": [
         "${ revisionNumber } раз",
         "${ revisionNumber } раза",
@@ -621,9 +609,6 @@
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Доступна новая версия ${ PASS_APP_NAME }. Обновите ее, чтобы насладиться последними функциями и исправлениями ошибок."
-      ],
-      "Access ${ PASS_APP_NAME } via this icon": [
-        "Доступ к ${ PASS_APP_NAME } можно получить с помощью этой иконки"
       ],
       "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
         "Для доступа к ${ PASS_APP_NAME } потребуется PIN-код для разблокировки вашей сессии"
@@ -657,9 +642,6 @@
       ],
       "Can view items in this vault.": [
         "Может просматривать элементы в этом хранилище."
-      ],
-      "Check out all the exclusive features that are available to you for a limited time.": [
-        "Познакомьтесь со всеми эксклюзивными функциями, которые доступны вам ограниченное время."
       ],
       "Copied to clipboard": [
         "Скопировано в буфер обмена"
@@ -700,12 +682,6 @@
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "Экспорт зашифрован с помощью PGP и требует надежной кодовой фразы."
       ],
-      "Follow these simple steps to get the best experience:": [
-        "Следуйте этим простым шагам, чтобы получить лучший опыт:"
-      ],
-      "Free Trial": [
-        "Бесплатный пробный период"
-      ],
       "Generated passwords will be stored for a period of one day.": [
         "Сгенерированные пароли сохранятся в течение одного дня."
       ],
@@ -733,9 +709,6 @@
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Если включено, вы можете быстро заполнять свои учетные данные, щелкнув по иконке ${ PASS_APP_NAME }."
       ],
-      "Import in progress :": [
-        "Выполняется импорт :"
-      ],
       "Imported ${ payload.total } item": [
         "Импортирован ${ payload.total } элемент",
         "Импортировано ${ payload.total } элемента",
@@ -747,9 +720,6 @@
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Для того чтобы получить лучший опыт использования ${ PASS_APP_NAME }, пожалуйста, предоставьте необходимые разрешения расширению."
-      ],
-      "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
-        "Для переноса ваших данных в ${ PASS_APP_NAME } из другого менеджера паролей, экспортируйте свои пароли и импортируйте их с помощью формы ниже. После того как все ваши элементы будут импортированы, удалите ранее экспортированный файл."
       ],
       "Internet connection lost": [
         "Подключение к Интернету потеряно"
@@ -862,9 +832,6 @@
       "Save login": [
         "Сохранить логин"
       ],
-      "Select the destination vault for each imported vault.": [
-        "Выберите хранилище для сохранения каждого импортированного хранилища."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недоступны. Попробуйте снова через несколько минут"
       ],
@@ -957,12 +924,6 @@
       ],
       "You are about to create:": [
         "Вы собираетесь создать:"
-      ],
-      "You have ${ daysRemaining } day left in your trial period.": [
-        "У вас остался ${ daysRemaining } день пробного периода.",
-        "У вас осталось ${ daysRemaining } дня пробного периода.",
-        "У вас осталось ${ daysRemaining } дней пробного периода.",
-        "У вас осталось ${ daysRemaining } дня пробного периода."
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Вы достигли лимита на количество псевдонимов, которые можно создать. Создавайте неограниченное количество псевдонимов, улучшив свою подписку."
@@ -1080,9 +1041,6 @@
       "Card number": [
         "Номер карты"
       ],
-      "Cardholder name": [
-        "Имя владельца карты"
-      ],
       "Cards": [
         "Карты"
       ],
@@ -1106,9 +1064,6 @@
       ],
       "Created": [
         "Создано"
-      ],
-      "Credit Card": [
-        "Кредитная карта"
       ],
       "Display": [
         "Показать"
@@ -1134,8 +1089,8 @@
       "Encrypt your ${ PASS_APP_NAME } data export file": [
         "Зашифруйте файл экспорта данных ${ PASS_APP_NAME }"
       ],
-      "Expires on": [
-        "Истекает"
+      "Expiration date": [
+        "Срок действия"
       ],
       "Export": [
         "Экспорт"
@@ -1172,9 +1127,6 @@
       ],
       "Include numbers (0-9)": [
         "Включить числа (0-9)"
-      ],
-      "Label": [
-        "Ярлык"
       ],
       "Language": [
         "Язык"
@@ -1214,6 +1166,9 @@
       ],
       "Name": [
         "Имя"
+      ],
+      "Name on card": [
+        "Имя на карте"
       ],
       "Need help ?": [
         "Нужна помощь ?"
@@ -1289,6 +1244,9 @@
       ],
       "Security": [
         "Безопасность"
+      ],
+      "Security code": [
+        "Код безопасности"
       ],
       "Select an email address": [
         "Выберите адрес электронной почты"
@@ -1374,9 +1332,6 @@
       "Vault": [
         "Хранилище"
       ],
-      "Verification number": [
-        "Проверочный номер"
-      ],
       "View logs": [
         "Просмотр журналов"
       ],
@@ -1453,6 +1408,9 @@
       "Move items to another vault (optional)": [
         "Переместить элементы в другое хранилище (по желанию)"
       ],
+      "Other": [
+        "Другое"
+      ],
       "Pick a vault": [
         "Выберите хранилище"
       ],
@@ -1487,6 +1445,14 @@
         "Напишите свою заметку"
       ]
     },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "В хранилище может быть не больше ${ vault.targetMaxMembers } пользователя.",
+        "В хранилище может быть не больше ${ vault.targetMaxMembers } пользователей.",
+        "В хранилище может быть не больше ${ vault.targetMaxMembers } пользователей.",
+        "В хранилище может быть не больше ${ vault.targetMaxMembers } пользователей."
+      ]
+    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "Настройки ${ PASS_APP_NAME }"
@@ -1497,20 +1463,14 @@
       "Confirm PIN code": [
         "Подтвердите ПИН-код"
       ],
-      "Connect your ${ BRAND_NAME } account": [
-        "Подключить ваш аккаунт ${ BRAND_NAME }"
-      ],
       "Create PIN code": [
         "Создать PIN-код"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "Удалить хранилище \"${ vaultName }\"?"
       ],
-      "Discard changes ?": [
-        "Сбросить изменения ?"
-      ],
-      "Enjoy your free trial": [
-        "Наслаждайтесь своей бесплатной пробной версией"
+      "Discard changes?": [
+        "Сбросить изменения?"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Наслаждаетесь ${ PASS_APP_NAME }?"
@@ -1578,9 +1538,6 @@
       "Welcome to ${ PASS_APP_NAME }": [
         "Добро пожаловать в ${ PASS_APP_NAME }"
       ],
-      "Welcome!": [
-        "Добро пожаловать"
-      ],
       "Why ${ PASS_APP_NAME }?": [
         "Почему ${ PASS_APP_NAME }?"
       ],
@@ -1591,15 +1548,6 @@
     "Validation": {
       "Duplicated url": [
         "Повторяющийся url"
-      ],
-      "Label is required": [
-        "Метка обязательна"
-      ],
-      "OTP Secret or URI is invalid": [
-        "Секрет OTP либо URI недействительны"
-      ],
-      "OTP Secret or URI required": [
-        "Требуется секрет OTP либо URI"
       ],
       "Url already exists": [
         "Url уже существует"
@@ -1617,9 +1565,6 @@
       ],
       "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
         "Псевдоним \"${ name }\" в настоящее время используется в элементе входа \"${ relatedLoginName }\". Вы также перестанете получать электронные письма, отправленные на \"${ aliasEmail }\"."
-      ],
-      "All your trashed items will be permanently deleted. You can not undo this action.": [
-        "Все ваши удаленные элементы будут безвозвратно удалены. Вы не сможете отменить это действие."
       ],
       "An error occured while exporting your data": [
         "При экспорте ваших данных произошла ошибка"
@@ -1696,9 +1641,6 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Не могу войти в ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You can not undo this action": [
-        "Хранилище \"${ vaultName }\" и все его элементы будут полностью удалены. Вы не сможете отменить это действие"
-      ],
       "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
         "Хранилище \"${ vaultName }\" будет окончательно удалено, и все его элементы будут перемещены в \"${ destinationVaultName }\""
       ],
@@ -1707,9 +1649,6 @@
       ],
       "You cannot create more vaults than your subscription allows.": [
         "Вы не можете создавать больше хранилищ, чем разрешает ваша подписка."
-      ],
-      "You have unsaved changes, are you sure you want to discard them?": [
-        "У вас есть несохраненные изменения. Вы уверены, что хотите отменить их?"
       ],
       "You must select at least one mailbox": [
         "Вы должны выбрать хотя бы один почтовый ящик"

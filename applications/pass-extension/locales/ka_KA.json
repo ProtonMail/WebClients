@@ -29,9 +29,6 @@
       "Back": [
         "უკან"
       ],
-      "Can't find your password manager? Please let us know!": [
-        "ვერ იპოვეთ თქვენი პაროლების მმართველი? შეგვატყობინეთ!"
-      ],
       "Cancel": [
         "გაუქმება"
       ],
@@ -62,6 +59,9 @@
       "Confirm access": [
         "წვდომის დადასტურება"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "შემოიერთეთ თქვენი ${ BRAND_NAME }-ის ანგარიში"
+      ],
       "Continue": [
         "გაგრძელება"
       ],
@@ -80,6 +80,9 @@
       "Create": [
         "შექმნა"
       ],
+      "Create a ${ BRAND_NAME } Account": [
+        "შექმენით ${ BRAND_NAME }-ის ანგარიში"
+      ],
       "Create a ${ BRAND_NAME } account": [
         "შექმენით ${ BRAND_NAME }-ის ანგარიში"
       ],
@@ -91,6 +94,9 @@
       ],
       "Create an account": [
         "ანგარიშის შექმნა"
+      ],
+      "Create card": [
+        "ბარათის შექმნა"
       ],
       "Create login": [
         "შესვლის ჩანაწერის შექმნა"
@@ -158,8 +164,8 @@
       "Generate password": [
         "პაროლის გენერირება"
       ],
-      "Generated password": [
-        "პაროლის გენერირება"
+      "Generated passwords": [
+        "გენერირებული პაროლები"
       ],
       "Get mobile apps": [
         "მობილური აპების დაყენება"
@@ -250,9 +256,6 @@
       ],
       "Pass for iOS": [
         "Pass-ი iOS-ისთვის"
-      ],
-      "Proceed": [
-        "გაგრძელება"
       ],
       "Refresh the page": [
         "გვერდის განახლება"
@@ -350,17 +353,20 @@
       "Upgrade": [
         "ტარიფის აწევა"
       ],
+      "Upgrade now": [
+        "ტარიფის განახლება"
+      ],
       "Upgrade now to share with more people": [
         "ასწიეთ ტარიფი ახლა და გაუზიარეთ მეტ ხალხს"
-      ],
-      "Upgrade to keep these features": [
-        "აწიეთ ტარიფი ამ თვისებების შესანარჩუნებლად"
       ],
       "Write us on Reddit": [
         "მოგვწერეთ Reddit-ზე"
       ],
       "Write us on Twitter": [
         "მოგვწერეთ ტვიტერზე"
+      ],
+      "Your password manager not here? Request it.": [
+        "თქვენი პაროლების მმართველი აქ არაა? მოითხოვეთ ის."
       ]
     },
     "Button": {
@@ -609,6 +615,9 @@
       ],
       "MB": [
         "მბ"
+      ],
+      "TB": [
+        "ტბ"
       ]
     },
     "file size format, long": {
@@ -627,6 +636,10 @@
       "Megabyte": [
         "მეგაბაიტი",
         "მეგაბაიტი"
+      ],
+      "Terabyte": [
+        "ტერაბაიტი",
+        "ტერაბაიტი"
       ]
     },
     "Info": {
@@ -651,9 +664,6 @@
         "${ memberCount } წევრი",
         "${ memberCount } წევრი"
       ],
-      "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
-        "${ PASS_APP_NAME }, მხოლოდ, შენიშვნებს და მომხმარებლის დეტალებს შემოიტანს. პასპორტები, მიმაგრებული ფაილები, და ა.შ. ამჟამად მხარდაჭერილი არაა."
-      ],
       "${ revisionNumber } time": [
         "${ revisionNumber }-ჯერ",
         "${ revisionNumber } ჯერ"
@@ -672,9 +682,6 @@
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "ხელმისაწვდომია ${ PASS_APP_NAME }-ის ახალი ვერსია. განაახლეთ ის და მიიღეთ უახლესი ფუნქციები და შეცდომის გამართვები."
-      ],
-      "Access ${ PASS_APP_NAME } via this icon": [
-        "წვდომა ${ PASS_APP_NAME }-თან ამ ღილაკით"
       ],
       "Access successfully confirmed": [
         "წვდომა წარმატებით დადასტურდა"
@@ -718,8 +725,8 @@
       "Can view items in this vault.": [
         "შეუძლია ამ საცავის ელემენტების დათვალიერება."
       ],
-      "Check out all the exclusive features that are available to you for a limited time.": [
-        "შეამოწმეთ ყველა ექსკლუზიური შემოთავაზება, რომელიც, მხოლოდ, შეზღუდული დროითაა თქვენთვის შემოთავაზებული."
+      "Click the icon to open it anytime.": [
+        "მის გასახსნელად ნებისმიერ დროს შეგიძლიათ, ხატულაზე დააწკაპუნოთ."
       ],
       "Congratulations, your access has been confirmed": [
         "გილოცავთ, თქვენი წვდომა დადასტურებულია"
@@ -769,17 +776,23 @@
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "გატანა დაშიფრულია PGP-ის გამოყენებით და რთულ საკვანძო ფრაზას მითხოვს."
       ],
-      "Follow these simple steps to get the best experience:": [
-        "საუკეთესო გამოცდილების მისაღებად ამ მარტივ ნაბიჯებს გაჰყევით:"
+      "For easy access to your passwords and more.": [
+        "თქვენს პაროლებთან იოლი წვდომისთვის და ა.შ."
       ],
-      "Free Trial": [
-        "უფასო საცდელი პერიოდი"
+      "For security reason, your access needs to be confirmed": [
+        "უსაფრთხოებისთვის თქვენს წვდომას დადასტურება სჭირდება"
+      ],
+      "For security reasons, your access needs to be confirmed": [
+        "უსაფრთხოებისთვის თქვენს წვდომას დადასტურება სჭირდება"
       ],
       "Generated passwords will be stored for a period of one day.": [
         "გენერირებული პაროლები ერთი დღით ინახება"
       ],
       "Generating alias...": [
         "ფსევდონიმის გენერაცია..."
+      ],
+      "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
+        "მიიღეთ უსაზღვრო რაოდენობის ფსევდონიმები, ისიამოვნეთ ექსკლუზიური ფუნქციებით და დაგვიჭირეთ მხარი, Pass Plus-ზე გადართვით."
       ],
       "Here you will find all the necessary information to get you started.": [
         "აქ დასაწყებად საკმარის ინფორმაციას იპოვით."
@@ -802,8 +815,8 @@
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "თუ ჩართულია, შეგიძლიათ, თქვენი ავტორიზაციის დეტალები ავტომატურად შეავსოთ, ${ PASS_APP_NAME }-ის ხატულაზე დაწკაპუნებით."
       ],
-      "Import in progress :": [
-        "მიმდინარეობს შემოტანა :"
+      "Import in progress:": [
+        "მიმდინარეობს შემოტანა:"
       ],
       "Imported ${ payload.total } item": [
         "შემოტანილია ${ payload.total } ელემენტი",
@@ -814,9 +827,6 @@
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "იმისათვის, რომ ${ PASS_APP_NAME }-სგან სრული სიამოვნება მიიღოთ, გაფართოებას საჭირო წვდომები მიეცით"
-      ],
-      "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
-        "მონაცემების ${ PASS_APP_NAME }-ში სხვა პაროლების მმართველიდან მიგრაციისთვის, გამოიტანეთ ისინი და აქ ქვედა ფორმით შემოიტანეთ. როცა ყველა ჩანაწერი მზად გექნებათ, გამოტანილი ფაილები წაშალეთ."
       ],
       "Internet connection lost": [
         "ინტერნეტკავშირი დაკარგულია"
@@ -900,6 +910,9 @@
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "მფლობელობის გადაცემა წარმატებით დასრულდა. ამ საცავის მფლობელი აღარ ბრძანდებით."
       ],
+      "Pass Plus trial": [
+        "Pass Plus-ის საცდელი"
+      ],
       "Password copied": [
         "პაროლი დაკოპირდა"
       ],
@@ -939,9 +952,6 @@
       "Save login": [
         "შესვლის დეტალების დამახსოვრება"
       ],
-      "Select the destination vault for each imported vault.": [
-        "თითოეული შემოტანილი საცავისთვის სამიზნე საცავი აირჩიეთ."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "სერვერი მიუწვდომელია. ცოტა ხანში სცადეთ"
       ],
@@ -974,6 +984,9 @@
       ],
       "Successfully synced all vaults": [
         "ყელა საცავის სინქრონიზაცია წარმატებულია"
+      ],
+      "Switch to another vault or create an item in this vault": [
+        "ამ საცავში ელემენტის შესაქმნელად სხვა საცავზე გადაერთეთ"
       ],
       "Syncing your vaults…": [
         "თქვენი საცავების სინქრონიზაცია…"
@@ -1047,10 +1060,6 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "ამ ფსევდონიმისთვის საფოსტო ყუთებს ვერ შეცვლით."
-      ],
-      "You have ${ daysRemaining } day left in your trial period.": [
-        "თქვენი სატესტო პერიოდიდან დარჩენილია ${ daysRemaining } დღე.",
-        "თქვენი სატესტო პერიოდიდან დარჩენილია ${ daysRemaining } დღე."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "თქვენ გადააცილეთ ტარიფისთვის დასაშვები საცავების რაოდენობას. ელემენტები, მხოლოდ, პირველ ორ საცავში შეგიძლიათ, გადაიტანოთ. საცავებს შორის ელემენტების გადასატანად ასწიეთ თქვენი სატარიფო გეგმა."
@@ -1173,11 +1182,11 @@
       "Capitalise": [
         "ზედა რეგისტრში გადაყვანა"
       ],
+      "Card": [
+        "ბარათი"
+      ],
       "Card number": [
         "ბარათის ნომერი"
-      ],
-      "Cardholder name": [
-        "ბარათის მფლობლის სახელი"
       ],
       "Cards": [
         "ბარათები"
@@ -1203,9 +1212,6 @@
       "Created": [
         "შექმნილია"
       ],
-      "Credit Card": [
-        "საკრედიტო ბარათი"
-      ],
       "Display": [
         "ჩვენება"
       ],
@@ -1230,11 +1236,14 @@
       "Encrypt your ${ PASS_APP_NAME } data export file": [
         "დაშიფრეთ თქვენი ${ PASS_APP_NAME }-ის მონაცემების გატანის ფაილი"
       ],
-      "Expires on": [
-        "ვადა იწურება"
+      "Expiration date": [
+        "ვადა"
       ],
       "Export": [
         "გატანა"
+      ],
+      "Field name": [
+        "ველის სახელწოდება"
       ],
       "Forwards to": [
         "გადაგზავნა"
@@ -1271,9 +1280,6 @@
       ],
       "Invitations": [
         "მოწვევები"
-      ],
-      "Label": [
-        "ჭდე"
       ],
       "Language": [
         "ენა"
@@ -1316,6 +1322,9 @@
       ],
       "Name": [
         "სახელი"
+      ],
+      "Name on card": [
+        "სახელი ბარათზე"
       ],
       "Need help ?": [
         "დახმარება გჭირდებათ ?"
@@ -1391,6 +1400,9 @@
       ],
       "Security": [
         "უსაფრთხოება"
+      ],
+      "Security code": [
+        "უსაფრთხოების კოდი"
       ],
       "Select an email address": [
         "აირჩიეთ ელფოსტის მისამართი"
@@ -1476,9 +1488,6 @@
       "Vault": [
         "საცავი"
       ],
-      "Verification number": [
-        "გადამოწმების ნომერი"
-      ],
       "View details": [
         "დეტალების ხილვა"
       ],
@@ -1558,6 +1567,9 @@
       "Move items to another vault (optional)": [
         "ელემენტების სხვა საცავში გადატანა (არასავალდებულო)"
       ],
+      "Other": [
+        "სხვა"
+      ],
       "Pick a vault": [
         "აირჩიეთ საცავი"
       ],
@@ -1601,6 +1613,12 @@
         "დაწერეთ თქვენი შენიშვნა"
       ]
     },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "საცავი, არ შეიძლება, ${ vault.targetMaxMembers }-ზე მეტ მომხმარებელს შეიცავდეს.",
+        "საცავი, არ შეიძლება, ${ vault.targetMaxMembers }-ზე მეტ მომხმარებელს შეიცავდეს."
+      ]
+    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME }-ის მორგება"
@@ -1611,7 +1629,7 @@
       "Confirm PIN code": [
         "დაადასტურეთ PIN–კოდი"
       ],
-      "Connect your ${ BRAND_NAME } account": [
+      "Connect your ${ BRAND_NAME } Account": [
         "შემოიერთეთ თქვენი ${ BRAND_NAME }-ის ანგარიში"
       ],
       "Create PIN code": [
@@ -1620,11 +1638,8 @@
       "Delete vault \"${ vaultName }\" ?": [
         "წავშალო საცავი \"${ vaultName }\" ?"
       ],
-      "Discard changes ?": [
-        "გავაუქმო ცვლილებები ?"
-      ],
-      "Enjoy your free trial": [
-        "ისიამოვნეთ თქვენი უფასო სატესტო ვერსიით"
+      "Discard changes?": [
+        "ცვლილებების გაუქმება?"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "მოგწონთ${ PASS_APP_NAME }?"
@@ -1658,6 +1673,9 @@
       ],
       "Member limit": [
         "წევრების ზღვარი"
+      ],
+      "Our welcome gift to you": [
+        "ჩვენი მისალმების საჩუქარი"
       ],
       "Pending access to the shared data": [
         "გაზიარებულ მონაცემებთან წვდომის მოლოდინი"
@@ -1713,8 +1731,8 @@
       "Welcome to ${ PASS_APP_NAME }": [
         "კეთილი იყოს თქვენი მობრძანება ${ PASS_APP_NAME }-ში"
       ],
-      "Welcome!": [
-        "მოგესალმებით!"
+      "Welcome to your new password manager!": [
+        "მოგესალმებით თქვენს ახალ პაროლების მმართველში!"
       ],
       "Why ${ PASS_APP_NAME }?": [
         "რატომ ${ PASS_APP_NAME }?"
@@ -1727,13 +1745,13 @@
       "Duplicated url": [
         "დუბლრებული URL"
       ],
-      "Label is required": [
-        "ჭდე აუცილებელია"
+      "Field name is required": [
+        "ველის სახელი აუცილებელია"
       ],
-      "OTP Secret or URI is invalid": [
+      "OTP secret or URI is invalid": [
         "OTP საიდუმლო ან URI არასწორია"
       ],
-      "OTP Secret or URI required": [
+      "OTP secret or URI required": [
         "აუცილებელია OTP საიდუმლო ან URI"
       ],
       "Url already exists": [
@@ -1752,9 +1770,6 @@
       ],
       "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
         "ფსევდონიმი '${ name }' ამჟამად გამოიყენება შესვლის დეტალის ჩანაწერში '${ relatedLoginName }'. ასევე აღარ მიიღებთ ელფოსტებს, რომლებიც '${ aliasEmail }'-ზე მოვა"
-      ],
-      "All your trashed items will be permanently deleted. You can not undo this action.": [
-        "ყველა თქვენი ნაგვის ყუთში გადაყრილი ელემენტი სამუდამოდ წაიშლება. ეს ქმედება შეუქცევადია."
       ],
       "An error occured while exporting your data": [
         "შეცდომა თქვენი მონაცემების გატანისას"
@@ -1840,9 +1855,6 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "${ PASS_APP_NAME }-ში შესვლა შეუძლებელია. ${ additionalMessage }"
       ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You can not undo this action": [
-        "წაიშლება საცავი '${ vaultName }' და ყველა მისი ჩანაწერი. ეს ქმედება შეუქცევადია"
-      ],
       "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
         "'${ vaultName }' სამუდამოდ წაიშლება და მისი ყველა ჩანაწერი გადატანილი იქნება საცავში '${ destinationVaultName }'"
       ],
@@ -1852,8 +1864,17 @@
       "You cannot create more vaults than your subscription allows.": [
         "ტარიფის მიერ დაშვებული საცავეების რაოდენობას ვერ გადააჭარბებთ."
       ],
-      "You have unsaved changes, are you sure you want to discard them?": [
-        "გაქვთ შეუნახავი ცვლილებები. დარწმუნებული ბრძანდებით, რომ გნებავთ, მოაცილოთ ისინი?"
+      "You have reached the limit of members who can access this vault.": [
+        "მიაღწიეთ მომხმარებლების რაოდენობის ზღვარს, რომლებსაც ამ საცავთან წვდომა შეიძლება, ჰქონდეთ."
+      ],
+      "You have reached the limit of users in this vault. ${ upgradeLink }": [
+        "მიაღწიეთ მომხმარებლების ზღვარს ამ საცავში. ${ upgradeLink }"
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "მიაღწიეთ საცავების რაოდენობის ლიმიტს, რომელიც თქვენი ტარიფით შეგიძლიათ, გქონდეთ."
+      ],
+      "You have unsaved changes.": [
+        "გაქვთ შეუნახავი ცვლილებები."
       ],
       "You must select at least one mailbox": [
         "უნდა მიუთითოთ ერთი საფოსტო ყუთი მაინც"

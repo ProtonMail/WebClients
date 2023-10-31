@@ -197,6 +197,9 @@
       "Close navigation": [
         "Gezinmeyi kapat"
       ],
+      "Close the checklist": [
+        "Kontrol listesini kapat"
+      ],
       "Close this banner": [
         "Bu uyarıyı kapat"
       ],
@@ -424,8 +427,14 @@
       "Get verification code": [
         "Doğrulama kodu alın"
       ],
+      "Go to first page": [
+        "İlk sayfaya git"
+      ],
       "Go to label": [
         "Etikete git"
+      ],
+      "Go to last page": [
+        "Son sayfaya git"
       ],
       "Go to next page": [
         "Sonraki sayfaya git"
@@ -1356,11 +1365,12 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Yerel internet engellemelerini ve sansürü küresel sunucu ağlarımız ile aşın."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
-        "${ domains } özel e-posta etki alanı, ${ addresses } e-posta adresi, ${ aliases } hide-my-email takma adı, takvim paylaşımı ve daha fazlasını içerir."
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "1 özel e-posta etki alanı, 10 e-posta adresi, 10 hide-my-email takma adı, takvim paylaşma ve daha fazlası için destek içerir."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "${ domains } özel e-posta etki alanı, ${ addresses } e-posta adresi, sınırsız hide-my-email takma adı, takvim paylaşımı ve daha fazlasını içerir."
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "3 özel e-posta etki alanı, ${ addresses } e-posta adresi, sınırsız hide-my-email takma adı, takvim paylaşımı ve daha fazlasını içerir.",
+        "3 özel e-posta etki alanı, ${ addresses } e-posta adresi, sınırsız hide-my-email takma adı, takvim paylaşımı ve daha fazlasını içerir."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve daha fazlası."
@@ -3017,10 +3027,6 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Herkese aynı anda e-posta veya davetiye göndererek zaman kazanın. Bu ücretli tarifelerdeki birçok özellikten biridir. Tarifenizi şimdi yükseltin."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün.",
-        "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün."
-      ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Reklam verenlerin ve diğer kişilerin konumunuzu ve çevrim içi etkinliğinizi izlemesini önlemek için e-posta izleyici korumasını açın."
       ],
@@ -4069,6 +4075,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -4087,6 +4096,10 @@
       "Megabyte": [
         "Megabayt",
         "Megabayt"
+      ],
+      "Terabyte": [
+        "Terabayt",
+        "Terabayt"
       ]
     },
     "Filter": {
@@ -4280,6 +4293,9 @@
       ],
       "Close": [
         "Kapat"
+      ],
+      "Closing this means giving up the free storage bonus.": [
+        "Bunu kapatırsanız ücretsiz depolama alanı hediyenizden vazgeçmiş olursunuz."
       ],
       "Congratulation, you completed all the steps!": [
         "Tebrikler, tüm adımları tamamladınız!"
@@ -5026,6 +5042,9 @@
       ],
       "Calendar side panel": [
         "Takvim yan panosu"
+      ],
+      "Can't find what you're looking for? ${ displayAllMailButton }": [
+        "Aradığınızı bulamadınız mı? ${ displayAllMailButton }"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Parolanızı hatırlayamıyor musunuz? Uyarıyı kaldırmak için bu anahtarla şifrelenmiş tüm kişilerin şifrelenmiş verilerini silmenize yardımcı olabiliriz."
@@ -7046,6 +7065,9 @@
       "Sent": [
         "Gönderilmiş"
       ],
+      "Set up email forwarding": [
+        "E-posta iletici kurun"
+      ],
       "Sign up for free": [
         "Ücretsiz hesap açın"
       ],
@@ -8409,6 +8431,9 @@
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Artık varsayılan olarak görseller yüklenecek ve göndericilerin sizi izlemesi engellenecek. Bu davranışları daha sonra ${ settingsLink } bölümünden değiştirebilirsiniz."
+      ],
+      "You can now automatically forward your emails to anyone!": [
+        "Artık e-postalarınızı otomatik olarak herkese iletebilirsiniz!"
       ],
       "You can now schedule your messages to be sent later": [
         "Artık iletileri daha sonra gönderilmek üzere zamanlayabilirsiniz"

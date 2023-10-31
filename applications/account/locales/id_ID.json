@@ -635,6 +635,9 @@
       "Open navigation": [
         "Buka navigasi"
       ],
+      "Or": [
+        "Atau"
+      ],
       "Ordered list": [
         "Daftar berurut"
       ],
@@ -899,8 +902,8 @@
       "Sign out of all accounts": [
         "Keluar dari seluruh akun"
       ],
-      "Sign up for free": [
-        "Daftar gratis"
+      "sign up for free": [
+        "daftar gratis"
       ],
       "Signing in": [
         "Masuk"
@@ -2871,9 +2874,6 @@
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Pisahkan berbagai aspek kehidupan Anda dengan alamat surelnya masing-masing dan dapatkan lebih banyak fitur premium pada saat Anda meningkatkan akun."
-      ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
-        "Berkas hanya dapat berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan mengandung hingga ${ MAX_IMPORT_CONTACTS_STRING } kontak. Apabila berkas Anda lebih besar, silakan bagi dan pisahkan ke dalam beberapa berkas yang lebih kecil."
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Untuk mengirim pesan tanpa footer ${ MAIL_APP_NAME }, tingkatkan akun Anda dan nikmati berbagai fitur premium lainnya."
@@ -5234,7 +5234,7 @@
     },
     "Import contact. Contact identifier": {
       "unknown": [
-        "tidak dikenal"
+        "tidak diketahui"
       ]
     },
     "Import contacts warning": {
@@ -5473,6 +5473,9 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } addresses": [
+        "${ amountOfAddresses } alamat"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
       ],
@@ -5548,6 +5551,9 @@
       "${ numberOfNonPrivateKeys } uploaded files are not valid private keys. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } berkas yang diunggah bukan merupakan kunci privat yang valid. Mohon verifikasi keabsahan kunci ini dan coba lagi."
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "Paket ${ plan } dihapus. Penawaran terbundel tidak tersedia dengan paket berdurasi 1 bulan."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } memerlukan setidaknya 1 server khusus ${ serverPricePerMonth }"
       ],
@@ -5562,6 +5568,12 @@
       ],
       "${ provisioningCounter } servers are still being set up. This usually takes around ${ provisioningDuration }.": [
         "Server ${ provisioningCounter } masih dipersiapkan. Proses ini pada umumnya akan memakan waktu sekitar ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } lainnya"
+      ],
+      "${ remainingAddresses.length } more addresses": [
+        "${ remainingAddresses.length } alamat lainnya"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ selectedCalendarsTotal } dari ${ providerCalendars.length } kalender"
@@ -5709,9 +5721,6 @@
       ],
       "Additional options": [
         "Pengaturan tambahan"
-      ],
-      "addresses": [
-        "alamat"
       ],
       "Admin account allocation": [
         "Alokasi akun admin"
@@ -5883,6 +5892,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Sebelum Anda dapat mulai mengirim dan menerima surel dari alamat baru Anda, Anda perlu membuat kunci enkripsi untuk alamat tersebut."
+      ],
+      "Billed at ${ price }": [
+        "Tertagih dengan harga ${ price }"
       ],
       "Billing cycle: ${ text }": [
         "Siklus tagihan: ${ text }"
@@ -6460,9 +6472,6 @@
       "Monthly ${ onDayString }": [
         "Bulanan ${ onDayString }"
       ],
-      "more": [
-        "lebih"
-      ],
       "Multi-user support not enabled.": [
         "Dukungan multi-pengguna tidak diaktifkan."
       ],
@@ -6700,6 +6709,9 @@
       "Priority support": [
         "Dukungan prioritas"
       ],
+      "Promotion expired": [
+        "Promosi berakhir"
+      ],
       "Protected by Swiss privacy laws": [
         "Dilindungi oleh hukum privasi Swiss"
       ],
@@ -6774,6 +6786,9 @@
       ],
       "Right to Left": [
         "Kanan ke Kiri"
+      ],
+      "Save ${ percentage }": [
+        "Hemat ${ percentage }"
       ],
       "Save your password somewhere safe.": [
         "Simpan kata sandi Anda di tempat yang aman."
@@ -6868,6 +6883,9 @@
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "Berhubung SPF digunakan untuk menentukan siapa-siapa saja yang dapat mengirim surel pada domain ini, kami sangat menyarankan Anda untuk menyertakan ${ MAIL_APP_NAME } dalam data SPF Anda. Mohon tambahkan informasi TXT berikut ke dalam DNS Anda. Hal ini pada umumnya dapat dilakukan melalui panel kontrol registrar nama domain Anda."
       ],
+      "Stay tuned for future promotions.": [
+        "Jangan lewatkan promosi lainnya yang akan datang."
+      ],
       "Step ${ step }": [
         "Langkah ${ step }"
       ],
@@ -6930,6 +6948,9 @@
       ],
       "Thank you": [
         "Terima kasih"
+      ],
+      "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
+        "Terima kasih karena telah mendukung misi kami untuk mewujudkan internet yang mengutamakan privasi dan kebebasan."
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Pesan ${ boldDataLocked } tidak akan lagi muncul, namun Anda akan tetap dapat membuka kunci data Anda melalui ${ encryptionAndKeysLink }."
@@ -7017,6 +7038,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Tautan ini mungkin serangan homograf. Mohon verifikasi tautan yang ingin Anda kunjungi, atau jangan kunjungi sama sekali."
+      ],
+      "This promotion link has expired.": [
+        "Tautan promosi ini telah kedaluwarsa"
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Token ini tidak akan tersedia setelah Anda menutup jendela ini, dan Anda disarankan untuk tidak membagikan token ini dengan siapa pun."
@@ -7548,6 +7572,9 @@
       ],
       "Your account recovery method is set": [
         "Metode pemulihan akun Anda telah ditentukan"
+      ],
+      "Your account was successfully updated with this promotion": [
+        "Akun Anda berhasil diperbarui dengan promosi ini"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Akun Anda akan diperbarui setelah pembayaran Anda diterima."
@@ -10138,14 +10165,6 @@
         "Paket yang Anda pilih: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Uji Coba ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Penggunaan akun Anda"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Hapus akun?"
@@ -10167,6 +10186,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Nikmati berbagai fitur premium dengan meningkatkan jenis akun"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Uji Coba ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Penggunaan akun Anda"
       ]
     },
     "new_plans: tooltip": {
@@ -10867,9 +10894,6 @@
       "Download to continue ${ size }": [
         "Unduh untuk melanjutkan ${ size }"
       ],
-      "Keep this plan and use ${ appName }": [
-        "Pertahankan paket ini dan gunakan ${ appName }"
-      ],
       "Or ${ createANewAccount }": [
         "Atau ${ createANewAccount }"
       ],
@@ -10879,14 +10903,8 @@
       "Start using ${ appName } now": [
         "Mulai gunakan ${ appName } sekarang"
       ],
-      "Upgrade for only ${ relativePrice } extra per month": [
-        "Tingkatkan dengan tambahan harga hanya ${ relativePrice } per bulannya"
-      ],
       "Upgrade my plan": [
         "Tingkatkan paket saya"
-      ],
-      "Use ${ free } instead": [
-        "Gunakan ${ free }"
       ]
     },
     "pass_signup_2023: Feature": {
@@ -10996,9 +11014,6 @@
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "Apabila Anda terkunci dari akun ${ BRAND_NAME } Anda, **kit pemulihan** Anda akan memungkinkan Anda untuk masuk dan memulihkan data Anda."
       ],
-      "Includes basic ${ appName } features:": [
-        "Meliputi berbagai fitur dasar ${ appName }:"
-      ],
       "Install ${ PASS_APP_NAME }": [
         "Instal ${ PASS_APP_NAME }"
       ],
@@ -11068,9 +11083,6 @@
       "Verifying your payment": [
         "Memverifikasi pembayaran Anda"
       ],
-      "Welcome to ${ plan }": [
-        "Selamat datang di ${ plan }"
-      ],
       "Works on all devices": [
         "Dapat digunakan pada seluruh perangkat"
       ],
@@ -11085,11 +11097,6 @@
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Organisasi Anda memiliki akses ke ${ free }. Apabila Anda ingin mengakses berbagai fitur premium ${ appName }, silakan minta administrator organisasi Anda untuk meningkatkan paket langganan."
-      ]
-    },
-    "pass_signup_2023: Onboarding": {
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Selamat datang di ${ PASS_APP_NAME }"
       ]
     },
     "pass_signup_2023: Title": {
@@ -11968,11 +11975,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Langganan ini akan otomatis diperbarui setiap 2 tahun dengan tarif yang sama hingga dibatalkan."
-      ]
-    },
-    "specialoffer: Info": {
-      "No available offers found.": [
-        "Tidak ada penawaran tersedia yang ditemukan."
       ]
     },
     "specialoffer: Label": {
@@ -12877,9 +12879,6 @@
       "Auto-reply": [
         "Pesan balasan otomatis"
       ],
-      "Auto-reply and forward": [
-        "Balas secara otomatis dan teruskan"
-      ],
       "Automatically sign outgoing messages?": [
         "Tanda tangani pesan yang dikirim secara otomatis?"
       ],
@@ -13206,6 +13205,9 @@
       ],
       "Folders and labels": [
         "Folder dan label"
+      ],
+      "Forward and auto-reply": [
+        "Teruskan dan balas otomatis"
       ],
       "Forward emails": [
         "Teruskan surel"
@@ -14152,8 +14154,8 @@
       ]
     },
     "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Akses ke server Secure Core, unduhan P2P/BitTorrent cepat, Tor melalui VPN, dan lainnya."
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Akses ke server Secure Core, unduhan P2P/BitTorrent yang cepat, akses Tor via VPN, dan masih banyak lagi."
       ]
     },
     "Warning": {
