@@ -216,9 +216,7 @@ const getUpsell = ({
                     };
                 }
 
-                const plan = hasMonthlyCycle
-                    ? getSafePlan(plansMap, currentPlan.Name)
-                    : getSafePlan(plansMap, PLANS.NEW_VISIONARY);
+                const plan = getSafePlan(plansMap, PLANS.NEW_VISIONARY);
                 return {
                     ...defaultValue,
                     plan,
