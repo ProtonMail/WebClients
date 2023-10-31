@@ -299,6 +299,9 @@
       "Open navigation": [
         "Obre la navegació"
       ],
+      "Or": [
+        "O"
+      ],
       "Organization": [
         "Organització"
       ],
@@ -428,11 +431,11 @@
       "Sign in": [
         "Inicia la sessió"
       ],
+      "Sign in with password": [
+        "Inicieu la sessió amb una contrasenya"
+      ],
       "Sign out": [
         "Tanca la sessió"
-      ],
-      "Sign up for free": [
-        "Creeu un compte gratuïtament"
       ],
       "Signing in": [
         "Iniciant sessió"
@@ -2369,6 +2372,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -2525,6 +2531,10 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } adreça",
+        "${ amountOfAddresses } adreces"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
       ],
@@ -2615,10 +2625,6 @@
       ],
       "Additional options": [
         "Opcions addicionals"
-      ],
-      "address": [
-        "adreça",
-        "adreces"
       ],
       "Admin account allocation": [
         "Assignació del compte d'administrador"
@@ -2958,9 +2964,6 @@
       ],
       "MM/YY": [
         "MM/AA"
-      ],
-      "more": [
-        "més"
       ],
       "Multi-user support not enabled.": [
         "Suport multi-usuari no activat."
@@ -6938,11 +6941,6 @@
       ],
       "Your ${ selected } plan": [
         "El vostre pla ${ selected }"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Accés a servidors Secure Core, descàrregues ràpides P2P/BitTorrent, Tor sobre VPN, Double Hop i moltes més funcions."
       ]
     },
     "Warning": {
