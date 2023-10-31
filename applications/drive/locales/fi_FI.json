@@ -1862,10 +1862,6 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Säästä aikaa lähettämällä viestit tai kutsut saman tien koko porukalle. Yksi premium-ominaisuus monien muiden joukossa. Päivitä tilauksesi tänään."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Tiedosto voi olla enintään ${ MAX_IMPORT_FILE_SIZE_STRING } kokoinen ja sisältää ${ MAX_IMPORT_CONTACTS_STRING } yhteystiedon. Jos tiedosto on suurempi, jaa se pienempiin tiedostoihin.",
-        "Tiedosto voi olla enintään ${ MAX_IMPORT_FILE_SIZE_STRING } kokoinen ja sisältää enintään ${ MAX_IMPORT_CONTACTS_STRING } yhteystietoa. Jos tiedosto on suurempi, jaa se pienempiin tiedostoihin."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Määritä yhdistettävien yhteystietojen painotusjärjestys vetämällä ja pudottamalla. Poista niiden valinta, joita et halua yhdistää."
       ],
@@ -2709,6 +2705,9 @@
       ],
       "MB": [
         "Mt"
+      ],
+      "TB": [
+        "Tt"
       ]
     },
     "file size format, long": {
@@ -2727,6 +2726,10 @@
       "Megabyte": [
         "Megatavu",
         "Megatavua"
+      ],
+      "Terabyte": [
+        "Teratavu",
+        "Teratavua"
       ]
     },
     "Filter notification": {
@@ -3170,9 +3173,6 @@
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
         "${ selectedContactsLength }/${ contactsLength } yhteystieto valittu",
         "${ selectedContactsLength }/${ contactsLength } yhteystietoa valittu"
-      ],
-      "${ selectedCount } selected": [
-        "${ selectedCount } valittu"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } kansio valittu",
@@ -5815,8 +5815,8 @@
       ]
     },
     "Storage": {
-      "Get storage": [
-        "Hanki tallennustilaa"
+      "Get more storage": [
+        "Hanki lisää tallennustilaa"
       ],
       "Release notes": [
         "Julkaisutiedot"

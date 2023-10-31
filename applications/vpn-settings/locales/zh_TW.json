@@ -431,11 +431,14 @@
       "Sign in": [
         "登入"
       ],
+      "Sign in with password": [
+        "使用密碼登入"
+      ],
+      "Sign in with SSO": [
+        "使用 SSO 登入"
+      ],
       "Sign out": [
         "登出"
-      ],
-      "Sign up for free": [
-        "免費註冊"
       ],
       "Signing in": [
         "登入"
@@ -2380,6 +2383,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -2394,6 +2400,9 @@
       ],
       "Megabytes": [
         "百萬位元組"
+      ],
+      "Terabytes": [
+        "TB"
       ]
     },
     "Font face option": {
@@ -2633,9 +2642,6 @@
       ],
       "Additional options": [
         "額外設定"
-      ],
-      "addresses": [
-        "個電郵位址"
       ],
       "Admin account allocation": [
         "管理員帳號指派"
@@ -2996,9 +3002,6 @@
       ],
       "MM/YY": [
         "月月/年年"
-      ],
-      "more": [
-        "更多"
       ],
       "Multi-user support not enabled.": [
         "多使用者支援尚未啟用。"
@@ -4357,6 +4360,9 @@
       ],
       "Create a new ${ appName } account": [
         "建立新的 ${ appName } 帳號"
+      ],
+      "Find your ${ BRAND_NAME } Account username": [
+        "尋找您的 ${ BRAND_NAME } 帳號使用者名稱"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "忘記您的 ${ BRAND_NAME } 帳號密碼？使用您的備用碼、電子郵件或簡訊找到它，並重新取得對 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等的存取權。"
@@ -6857,6 +6863,9 @@
       "Sign in to join the Beta program": [
         "登入以加入體驗版計畫"
       ],
+      "Sign in to your organization": [
+        "登入您的組織"
+      ],
       "Sign in with 2FA": [
         "使用 2FA 登入"
       ],
@@ -7136,11 +7145,6 @@
       ],
       "Your ${ selected } plan": [
         "您專屬的 ${ selected } 方案"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "直達 Secure Core 伺服器、極速 P2P/BitTorrent 下載、匿名連接 VPN、多躍點路由以及其它更多功能。"
       ]
     },
     "Warning": {

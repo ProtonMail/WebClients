@@ -1036,7 +1036,7 @@
     },
     "Calendar view selector": {
       "Change time range": [
-        "Діапазон зміни часу"
+        "Змінити проміжок часу"
       ],
       "Change time range to": [
         "Змінити проміжок часу на"
@@ -2121,14 +2121,8 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Заощаджуйте час, надсилаючи листи або запрошення одразу всім адресатам – одна з багатьох преміумфункцій, доступних у передплачених тарифних планах."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити ${ MAX_IMPORT_CONTACTS_STRING } контакт. Якщо ваш файл більший, розділіть його на менші файли.",
-        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли.",
-        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли.",
-        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли."
-      ],
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
-        "Це може зайняти декілька хвилин. Тим часом можете продовжувати користуватися Proton Calendar."
+        "Це може тривати декілька хвилин. Тим часом можете користуватися Proton Calendar."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Використовуйте перетягування для пріоритету об'єднання між контактами. Приберіть позначку з тих контактів, які ви не хочете об'єднувати."
@@ -4343,7 +4337,7 @@
     },
     "Info calendar search": {
       "You can either update your search query or close search to go back to calendar views": [
-        "Ви можете або оновити ваш пошуковий запит, або закрити пошук та перейти назад до перегляду календаря."
+        "Ви можете оновити пошуковий запит або закрити пошук та повернутися до перегляду календаря."
       ]
     },
     "Info message": {
@@ -4742,10 +4736,10 @@
         "Показати пароль"
       ],
       "Secondary": [
-        "Другий"
+        "Додатковий"
       ],
       "Secondary time zone": [
-        "Другий часовий пояс"
+        "Додатковий часовий пояс"
       ],
       "Show week numbers": [
         "Показати номери тижня"
@@ -5835,7 +5829,7 @@
     },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
-        "Спільне використання ${ ownerName }"
+        "Надано спільний доступ від ${ ownerName }"
       ]
     },
     "Sidebar calendar edit tooltip": {

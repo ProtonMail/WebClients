@@ -499,7 +499,7 @@
         "Vybrať zobrazenie kalendára"
       ],
       "Select time zone": [
-        "Vybrať časové pásmo"
+        "Vyberte časové pásmo"
       ],
       "Send": [
         "Odoslať"
@@ -687,52 +687,52 @@
     },
     "Alarm notification": {
       "${ title } started at ${ formattedHour }": [
-        "${ title } začalo v ${ formattedHour }"
+        "Udalosť ${ title } začala o ${ formattedHour }"
       ],
       "${ title } started on ${ formattedDate }": [
         "Udalosť ${ title } začala ${ formattedDate }"
       ],
       "${ title } started on ${ formattedDate } at ${ formattedHour }": [
-        "${ title } začalo ${ formattedDate } v ${ formattedHour }"
+        "Udalosť ${ title } začala ${ formattedDate } o ${ formattedHour }"
       ],
       "${ title } started on ${ formattedDateWithoutTime }": [
-        "${ title } začalo ${ formattedDateWithoutTime }"
+        "Udalosť ${ title } začala ${ formattedDateWithoutTime }"
       ],
       "${ title } started on ${ formattedDateWithTime }": [
-        "${ title } začala ${ formattedDateWithTime }"
+        "Udalosť ${ title } začala ${ formattedDateWithTime }"
       ],
       "${ title } started yesterday": [
-        "${ title } začalo včera"
+        "Udalosť ${ title } začala včera"
       ],
       "${ title } started yesterday at ${ formattedHour }": [
-        "${ title } začalo včera v ${ formattedHour }"
+        "Udalosť ${ title } začala včera o ${ formattedHour }"
       ],
       "${ title } starts at ${ formattedHour }": [
-        "${ title } začína v(vo) ${ formattedHour }"
+        "Udalosť ${ title } začína o ${ formattedHour }"
       ],
       "${ title } starts now": [
         "${ title } začína práve teraz"
       ],
       "${ title } starts on ${ formattedDate }": [
-        "${ title } začína ${ formattedDate }"
+        "Udalosť ${ title } začína ${ formattedDate }"
       ],
       "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
-        "${ title } začína ${ formattedDate } v ${ formattedHour }"
+        "Udalosť ${ title } začína ${ formattedDate } o ${ formattedHour }"
       ],
       "${ title } starts on ${ formattedDateWithoutTime }": [
-        "${ title } začína ${ formattedDateWithoutTime }"
+        "Udalosť ${ title } začína ${ formattedDateWithoutTime }"
       ],
       "${ title } starts on ${ formattedDateWithTime }": [
-        "${ title } začína ${ formattedDateWithTime }"
+        "Udalosť ${ title } začína ${ formattedDateWithTime }"
       ],
       "${ title } starts today": [
         "${ title } začína dnes"
       ],
       "${ title } starts tomorrow": [
-        "${ title } začne zajtra"
+        "Udalosť ${ title } začne zajtra"
       ],
       "${ title } starts tomorrow at ${ formattedHour }": [
-        "${ title } začína zajtra v(vo) ${ formattedHour }"
+        "Udalosť ${ title } začína zajtra o ${ formattedHour }"
       ]
     },
     "Alert": {
@@ -896,18 +896,18 @@
         "Prijali ste pozvanie"
       ],
       "You declined the invitation": [
-        "Odmietol(a) ste pozvánku"
+        "Pozvánku ste odmietli"
       ],
       "You haven't answered the invitation yet": [
-        "Doposiaľ ste neodpovedali(a) na pozvánku"
+        "Doposiaľ ste neodpovedali na pozvánku"
       ],
       "You tentatively accepted the invitation": [
-        "Nezáväzne ste prijal(a) pozvanie"
+        "Nezáväzne ste prijali pozvanie"
       ]
     },
     "Calendar link sharing label input assistive text": {
       "Only you can see the label": [
-        "Iba vy môžete vidieť štítok"
+        "Štítky môžete vidieť len vy"
       ]
     },
     "Calendar permissions hint": {
@@ -974,7 +974,7 @@
     },
     "Calendar status": {
       "Not synced": [
-        "Nie je synchronizované"
+        "Nesynchronizované"
       ],
       "Syncing": [
         "Synchronizácia"
@@ -2091,7 +2091,7 @@
     },
     "Delete event button tooltip": {
       "Delete event": [
-        "Zmazať udalosť"
+        "Vymazať udalosť"
       ]
     },
     "Delinquent modal title": {
@@ -2120,12 +2120,6 @@
       ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Ušetrite čas posielaním e-mailov alebo pozvánok všetkým naraz, čo je prémiová funkcia medzi mnohými ďalšími. Inovujte ešte dnes."
-      ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Súbor by mal mať maximálnu veľkosť ${ MAX_IMPORT_FILE_SIZE_STRING } a mal by mať ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Ak je váš súbor väčší, rozdeľte ho na menšie súbory.",
-        "Súbor by mal mať maximálnu veľkosť ${ MAX_IMPORT_FILE_SIZE_STRING } a mal by obsahovať maximálne ${ MAX_IMPORT_CONTACTS_STRING } kontakty. Ak je váš súbor väčší, rozdeľte ho na menšie súbory.",
-        "Súbor by mal mať maximálnu veľkosť ${ MAX_IMPORT_FILE_SIZE_STRING } a mal by obsahovať maximálne ${ MAX_IMPORT_CONTACTS_STRING } kontaktov. Ak je váš súbor väčší, rozdeľte ho na menšie súbory.",
-        "Súbor by mal mať maximálnu veľkosť ${ MAX_IMPORT_FILE_SIZE_STRING } a mal by obsahovať maximálne ${ MAX_IMPORT_CONTACTS_STRING } kontaktov. Ak je váš súbor väčší, rozdeľte ho na menšie súbory."
       ],
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "Môže to trvať niekoľko minút. Medzitým môžete Calendar používať ako zvyčajne."
@@ -2454,7 +2448,7 @@
         "Chýbajúci podpis"
       ],
       "Name required": [
-        "Názov povinný"
+        "Názov je povinný"
       ],
       "No calendars found to import": [
         "Neboli nájdené žiadne kalendáre na import"
@@ -2889,7 +2883,7 @@
         "${ numberOfAttendees } účastník",
         "${ numberOfAttendees } účastníci",
         "${ numberOfAttendees } účastníkov",
-        "${ numberOfAttendees } účastníka"
+        "${ numberOfAttendees } účastníkov"
       ]
     },
     "Event info in search view; event duration": {
@@ -3219,19 +3213,19 @@
     },
     "Font size option": {
       "Large": [
-        "Veľká"
+        "Veľké"
       ],
       "Medium (recommended)": [
-        "Stredná (odporúčané)"
+        "Stredné (odporúčané)"
       ],
       "Small": [
-        "Malý"
+        "Malé"
       ],
       "Very large": [
         "Veľmi veľká"
       ],
       "Very small": [
-        "Veľmi malý"
+        "Veľmi malé"
       ]
     },
     "Group": {
@@ -3735,7 +3729,7 @@
         "Pridaným účastníkom bude zaslaná pozvánka."
       ],
       "An invitation will be sent to the event participants.": [
-        "Účastníkom události bude zaslaná pozvánka."
+        "Účastníkom udalosti bude zaslaná pozvánka."
       ],
       "and": [
         "a"
@@ -3981,7 +3975,7 @@
         "Zistiť viac"
       ],
       "Link copied to clipboard": [
-        "Odkaz skopírovaný na nástenku"
+        "Odkaz bol skopírovaný do schránky"
       ],
       "Link created": [
         "Odkaz vytvorený"
@@ -3999,7 +3993,7 @@
         "Nahrávam udalosti"
       ],
       "Manage your calendars": [
-        "Spravuj svoje kalendáre"
+        "Spravovať vaše kalendáre"
       ],
       "Merged": [
         "Zlúčený"
@@ -4062,7 +4056,7 @@
         "Na vytvorenie skupiny zadajte meno a emailovú adresu, prosím."
       ],
       "Please remove the duplicates and try again.": [
-        "Prosím odstráňte duplikáty a skúste znova."
+        "Odstráňte duplikáty a skúste znova, prosím."
       ],
       "Please select the folders you would like to import:": [
         "Vyberte priečinky, ktoré chcete importovať:"
@@ -4134,13 +4128,13 @@
         "Nasledujúci účastníci nemôžu byť o vašich zmenách informovaní:"
       ],
       "The organizer cannot be notified that you decline the invitation:": [
-        "Organizátor nemôže byť oboznámený že ste odmietli pozvánku:"
+        "Organizátor nemôže byť oboznámený, že ste odmietli pozvánku:"
       ],
       "The organizer cannot be notified that you want to change your answer:": [
-        "Organizátor nebude oboznámený že chcete zmeniť vašu odpoveď:"
+        "Organizátor nebude oboznámený, že chcete zmeniť vašu odpoveď:"
       ],
       "The organizer could not be notified that you changed your answer:": [
-        "Organizátor nemôže byť oboznámený že ste zmenili vašu odpoveď:"
+        "Organizátor nemôže byť oboznámený, že ste zmenili vašu odpoveď:"
       ],
       "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
         "Organizátor aktualizoval niektoré události v tejto sérii. Zmena kalendára pre tento typ opakujúcej sa události nie je podporovaný."
@@ -4239,7 +4233,7 @@
         "Chcete zmazať všetky udalosti v tomto rade?"
       ],
       "Would you like to delete the event anyway?": [
-        "Ste presvedčený že chcete zmazať udalosť?"
+        "Skutočne chcete udalosť vymazať?"
       ],
       "Would you like to delete this event?": [
         "Prajete si zmazať túto udalosť?"
@@ -4260,7 +4254,7 @@
         "Ročne"
       ],
       "You already joined this calendar": [
-        "Už ste sa pripojili k tomuto kalendáru"
+        "K tomuto kalendáru ste sa už pripojili"
       ],
       "You are about to open another browser tab and visit:": [
         "Chystáte sa otvoriť stránku v inom prehliadači:"
@@ -4400,7 +4394,7 @@
     },
     "Info; reset calendar keys modal; part 2": {
       "This is because your password was recently reset without using a recovery method.": [
-        "To je preto, že bolo vaše heslo nedávno resetované bez použitia spôsobu obnovenia."
+        "Je to preto, že bolo vaše heslo nedávno resetované bez použitia spôsobu obnovenia."
       ]
     },
     "Info; reset calendar keys modal; part 3": {
@@ -4496,7 +4490,7 @@
         "Priložiť snímok(ky) obrazovky"
       ],
       "Authenticator app": [
-        "Overovacie aplikácie"
+        "Aplikácia 2FA"
       ],
       "Automatically save contacts": [
         "Automaticky ukladať kontakty"
@@ -5216,7 +5210,7 @@
         "Automaticky mazať správy v spame a koši"
       ],
       "Custom email domains": [
-        "Vlastné e-mailové domény"
+        "Vlastné emailové domény"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email aliasy"
@@ -5231,7 +5225,7 @@
         "Neobmedzené množstvo priečinkov, štítkov a filtrov"
       ],
       "Up to 15 email addresses": [
-        "Až do 15 e-mailových adries"
+        "Až 15 emailových adries"
       ],
       "Up to 3 TB of storage": [
         "Až do 3 TB úložiska"
@@ -5344,7 +5338,7 @@
       ],
       "week before": [
         "týždeň vopred",
-        "týždne pred",
+        "týždne vopred",
         "týždňov pred",
         "týždňov pred"
       ]
@@ -5363,10 +5357,10 @@
         "${ value } dní po ${ time }"
       ],
       "${ value } day before": [
-        "${ value } deň pred",
-        "${ value } dni pred",
-        "${ value } dní pred",
-        "${ value } dní pred"
+        "${ value } deň vopred",
+        "${ value } dni vopred",
+        "${ value } dní vopred",
+        "${ value } dní vopred"
       ],
       "${ value } day before at ${ time }": [
         "${ value } deň pred ${ time }",
@@ -5387,10 +5381,10 @@
         "${ value } hodín po ${ time }"
       ],
       "${ value } hour before": [
-        "${ value } hodina pred",
-        "${ value } hodiny pred",
-        "${ value } hodin pred",
-        "${ value } hodin pred"
+        "${ value } hodinu vopred",
+        "${ value } hodiny vopred",
+        "${ value } hodín vopred",
+        "${ value } hodín vopred"
       ],
       "${ value } hour before at ${ time }": [
         "${ value } hodina pred ${ time }",
@@ -5411,10 +5405,10 @@
         "${ value } minút po ${ time }"
       ],
       "${ value } minute before": [
-        "${ value } minúta pred",
-        "${ value } minúty pred",
-        "${ value } minút pred",
-        "${ value } minút pred"
+        "${ value } minútu vopred",
+        "${ value } minúty vopred",
+        "${ value } minút vopred",
+        "${ value } minút vopred"
       ],
       "${ value } minute before at ${ time }": [
         "${ value } minúta pred ${ time }",
@@ -5435,10 +5429,10 @@
         "${ value } týždňov po ${ time }"
       ],
       "${ value } week before": [
-        "${ value } týždeň pred",
-        "${ value } týždne pred",
-        "${ value } týždňov pred",
-        "${ value } týždňov pred"
+        "${ value } týždeň vopred",
+        "${ value } týždne vopred",
+        "${ value } týždňov vopred",
+        "${ value } týždňov vopred"
       ],
       "${ value } week before at ${ time }": [
         "${ value } týždeň pred ${ time }",
@@ -5450,7 +5444,7 @@
         "V čase udalosti"
       ],
       "On the same day at ${ time }": [
-        "Ten istý deň v ${ time }"
+        "V ten istý deň o ${ time }"
       ],
       "Unknown": [
         "Neznáme"
@@ -5518,7 +5512,7 @@
         "Automaticky"
       ],
       "Automatic (${ defaultDay })": [
-        "Automatické (${ defaultDay })"
+        "Automaticky (${ defaultDay })"
       ],
       "Create new group": [
         "Vytvoriť novú skupinu"
@@ -5790,7 +5784,7 @@
         "Skontrolujte svoj pravopis alebo vyberte krajinu zo zoznamu."
       ],
       "No results found": [
-        "Nenájdené žiadne výsledky"
+        "Neboli nájdené žiadne výsledky"
       ]
     },
     "session_recovery:available:action": {
@@ -6015,7 +6009,7 @@
     },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
-        "Zdieľané ${ ownerName }"
+        "Zdieľané vlastníkom ${ ownerName }"
       ]
     },
     "Sidebar calendar edit tooltip": {
@@ -6321,7 +6315,7 @@
     },
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
-        "Zistite, ako získať odkaz na súkromný kalendár."
+        "Zistiť, ako získať odkaz na súkromný kalendár."
       ]
     },
     "Success": {
@@ -6350,7 +6344,7 @@
         "Odpoveď bola odoslaná a všetky udalosti zmazané"
       ],
       "Answer sent and event deleted": [
-        "Odpoveď bola odoslaná a udalosť zmazaná"
+        "Odpoveď bola odoslaná a udalosť bola vymazaná"
       ],
       "Bug reported": [
         "Chyba nahlásená"
@@ -6374,7 +6368,7 @@
         "Zrušenie odoslané a všetky udalosti zmazané"
       ],
       "Cancellation sent and event deleted": [
-        "Oznámenie o zrušení bolo odoslané a udalosť zmazaná"
+        "Oznámenie o zrušení bolo odoslané a udalosť bola vymazaná"
       ],
       "Cancellation sent and participants removed": [
         "Zrušenie odoslané a účastníci odstránení"
@@ -6410,10 +6404,10 @@
         "Udalosť bola vytvorená"
       ],
       "Event deleted": [
-        "Udalosť zmazaná"
+        "Udalosť bola vymazaná"
       ],
       "Event updated": [
-        "Udalosť aktualizovaná"
+        "Udalosť bola aktualizovaná"
       ],
       "Events created": [
         "Udalosti vytvorené"
@@ -6661,7 +6655,7 @@
         "Pridať názov udalosti"
       ],
       "Add more information related to this event": [
-        "Pridať ďalšie informácie týkajúce sa tejto udalosti"
+        "Pridajte ďalšie informácie týkajúce sa tejto udalosti"
       ],
       "Add participants": [
         "Pridať účastníkov"
@@ -6763,10 +6757,10 @@
         "Odstrániť ${ Name }"
       ],
       "Delete event": [
-        "Zmazať udalosť"
+        "Vymazať udalosť"
       ],
       "Delete recurring event": [
-        "Zmazať opakujúcu sa udalosť"
+        "Vymazať opakujúcu sa udalosť"
       ],
       "Deleting contacts": [
         "Mazanie kontaktov"
@@ -6817,7 +6811,7 @@
         "Skupiny"
       ],
       "Hide time zones for event start and end times": [
-        "Skrytie časových pásiem pre časy začiatku a konca udalosti"
+        "Skryť časové pásma pre časy začiatku a konca udalosti"
       ],
       "Human verification": [
         "Overenie, že nie ste robot"
@@ -7000,7 +6994,7 @@
         "Varovanie: podozrenie na falošnú webovú stránku"
       ],
       "We're setting up Calendar search": [
-        "Nastavujeme Calendar vyhľadávanie"
+        "Nastavujeme vyhľadávanie v kalendári"
       ],
       "We've locked some calendars to protect your data": [
         "Zamkli sme niektoré kalendáre, aby sme ochránili vaše dáta"

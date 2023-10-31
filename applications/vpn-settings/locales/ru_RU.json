@@ -389,9 +389,6 @@
       "Sign out": [
         "Выйти"
       ],
-      "Sign up for free": [
-        "Зарегистрироваться бесплатно"
-      ],
       "Signing in": [
         "Выполняется вход"
       ],
@@ -648,6 +645,22 @@
         "Подписка автоматически продлится на обычный срок по стандартной цене с учетом скидки в конце платёжного цикла."
       ]
     },
+    "bf2023: header": {
+      "Save with Black Friday deals on a high-speed Swiss VPN": [
+        "Скидки в Чёрную пятницу на высокоскоростной швейцарский VPN"
+      ],
+      "Select your Black Friday offer": [
+        "Выберите предложение Черной пятницы"
+      ]
+    },
+    "bf2023: info": {
+      "All premium ${ BRAND_NAME } services. One easy subscription.": [
+        "Все премиальные сервисы ${ BRAND_NAME }. Или одна лёгкая подписка."
+      ],
+      "Secure browsing and premium VPN features.": [
+        "Безопасный просмотр веб-страниц и платные функции VPN."
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "Гарантия возврата средств в течение 30 дней"
@@ -680,11 +693,14 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Обходите локальные блокировки Интернета и цензуру с помощью нашей глобальной сети серверов."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
-        "Включает поддержку собственных доменов (${ domains } шт.),  адресов электронной почты (${ addresses } шт.), псевдонимов hide-my-email (${ aliases } шт.), совместный доступ к календарю и другие преимущества."
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Включает поддержку 1 пользовательского домена, 10 адресов электронной почты, 10 алиасов hide-my-email, совместный доступ к календарю и другие преимущества."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Включает поддержку собственных доменов (${ domains } шт.),  адресов электронной почты (${ addresses } шт.), неограниченное количество псевдонимов hide-my-email, совместный доступ к календарю и другие преимущества."
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Включает поддержку трех пользовательских доменов, ${ addresses } адрес электронной почты, неограниченного числа алиасов hide-my-email, совместный доступ к календарю и другие преимущества.",
+        "Включает поддержку трех пользовательских доменов, ${ addresses } адреса электронной почты, неограниченного числа алиасов hide-my-email, совместный доступ к календарю и другие преимущества.",
+        "Включает поддержку трех пользовательских доменов, ${ addresses } адресов электронной почты, неограниченного числа алиасов hide-my-email, совместный доступ к календарю и другие преимущества.",
+        "Включает поддержку трех пользовательских доменов, ${ addresses } адресов электронной почты, неограниченного числа алиасов hide-my-email, совместный доступ к календарю и другие преимущества."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Защитите свои материалы при помощи зашифрованного облачного хранилища. Вам будут доступны история версий, зашифрованный обмен файлами и многое другое."
@@ -2663,12 +2679,6 @@
       "Additional options": [
         "Дополнительные параметры"
       ],
-      "address": [
-        "адрес",
-        "адреса",
-        "адресов",
-        "адресов"
-      ],
       "Admin account allocation": [
         "Распределение аккаунтов администраторов"
       ],
@@ -2998,9 +3008,6 @@
       ],
       "MM/YY": [
         "ММ/ГГ"
-      ],
-      "more": [
-        "еще"
       ],
       "Multi-user support not enabled.": [
         "Многопользовательский режим не включён."
@@ -6789,11 +6796,6 @@
       ],
       "Your ${ selected } plan": [
         "Ваш тариф ${ selected }"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Доступ к серверам Secure Core, высокая скорость скачивания через P2P-сети и BitTorrent, VPN с Tor и многое другое."
       ]
     },
     "Warning": {

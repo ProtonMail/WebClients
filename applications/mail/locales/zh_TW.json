@@ -196,6 +196,9 @@
       "Close navigation": [
         "關閉導覽"
       ],
+      "Close the checklist": [
+        "關閉清單"
+      ],
       "Close this banner": [
         "關閉此橫幅"
       ],
@@ -225,6 +228,9 @@
       ],
       "Continue with Google": [
         "繼續以 Google 帳號登入"
+      ],
+      "Continue with Outlook": [
+        "使用 Outlook 繼續"
       ],
       "Contract composer": [
         "縮小撰寫工具"
@@ -421,8 +427,14 @@
       "Get verification code": [
         "取得驗證碼"
       ],
+      "Go to first page": [
+        "前往第一頁"
+      ],
       "Go to label": [
         "跳至標籤"
+      ],
+      "Go to last page": [
+        "前往最後一頁"
       ],
       "Go to next page": [
         "前往下一頁"
@@ -495,6 +507,12 @@
       ],
       "Import from .csv or vCard": [
         "從 .csv 或 vCard 匯入"
+      ],
+      "Import from Google": [
+        "從 Google 匯入"
+      ],
+      "Import from Outlook": [
+        "從 Outlook 匯入"
       ],
       "In the morning": [
         "早上"
@@ -2923,8 +2941,8 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "透過一次寄送電子郵件或邀請函給所有人，付費功能版的其中之一。立即升級。"
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
-        "檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_CONTACTS_STRING } 個聯絡人。若您的檔案超出此限，請將其分割為較小的檔案。"
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "從 Google 或 Outlook, ${ easySwitchLink } 來匯入你的聯絡人"
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "開啟電郵追蹤程式保護以避免廣告商或其他人追踪您的地點或網上活動。"
@@ -3958,6 +3976,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -3972,6 +3993,9 @@
       ],
       "Megabytes": [
         "百萬位元組"
+      ],
+      "Terabytes": [
+        "TB"
       ]
     },
     "Filter": {
@@ -4165,6 +4189,9 @@
       ],
       "Close": [
         "關閉"
+      ],
+      "Closing this means giving up the free storage bonus.": [
+        "關閉此視同放棄免費的額外儲存空間。"
       ],
       "Congratulation, you completed all the steps!": [
         "恭喜，您已完成全部的步驟"
@@ -4858,6 +4885,9 @@
       ],
       "Calendar side panel": [
         "行事曆側面板"
+      ],
+      "Can't find what you're looking for? ${ displayAllMailButton }": [
+        "找不到你要找的嗎?${ displayAllMailButton }"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "忘記密碼？我們可說明您清除所有聯絡人中以此金鑰加密的資料，從而關閉此提示。"
@@ -6853,6 +6883,9 @@
       "Sent": [
         "寄件備份"
       ],
+      "Set up email forwarding": [
+        "設置電子郵件轉發"
+      ],
       "Sign up for free": [
         "免費註冊"
       ],
@@ -8183,6 +8216,9 @@
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "我們將預設載入所有圖像，並且攔截寄件者進行追蹤。此功能可在 ${ settingsLink } 進行變更。"
+      ],
+      "You can now automatically forward your emails to anyone!": [
+        "您可以自動轉寄您的電子郵件給任何人!"
       ],
       "You can now schedule your messages to be sent later": [
         "您現在可以安排稍後傳送訊息"

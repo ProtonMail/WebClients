@@ -275,7 +275,7 @@
         "Vaciar papelera"
       ],
       "enable desktop notifications": [
-        "habilitar las notificaciones de escritorio"
+        "activar las notificaciones de escritorio"
       ],
       "Enable drive search": [
         "Activar la búsqueda en almacenamiento"
@@ -852,11 +852,12 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Sortea la censura y bloqueos locales de Internet con nuestra red global de servidores."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
-        "Incluye compatibilidad con ${ domains } dominios de correo electrónico personalizado, ${ addresses } direcciones de correo electrónico, ${ aliases } alias de hide-my-email, la posibilidad de compartir calendarios y mucho más."
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 alias de hide-my-email, posibilidad de compartir calendario, etc."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Incluye compatibilidad con ${ domains } dominios de correo electrónico personalizado, ${ addresses } direcciones de correo electrónico, alias ilimitados de hide-my-email, la posibilidad de compartir calendarios y mucho más."
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, ${ addresses } dirección de correo electrónico, alias ilimitados de hide-my-email, posibilidad de compartir calendario, etc.",
+        "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, ${ addresses } direcciones de correo electrónico, alias ilimitados de hide-my-email, posibilidad de compartir calendario, etc."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Inicio de sesión seguro en todos tus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
@@ -1945,10 +1946,6 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Ahorra tiempo enviando correos electrónicos o invitaciones a todos a la vez, una función premium entre muchas otras. Actualiza hoy mismo."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contacto. Si tu archivo es más grande, divídelo en archivos más pequeños.",
-        "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si tu archivo es más grande, divídelo en archivos más pequeños."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arrastra y suelta los contactos para clasificarlos por prioridad. Desmarca los contactos que no quieres combinar."
       ],
@@ -2068,7 +2065,7 @@
         "Firma del contacto no verificada"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "No puedes habilitar la búsqueda de contenido en este navegador. Sal del modo de navegación privada o utiliza otro navegador."
+        "No puedes activar la búsqueda de contenido en este navegador. Sal del modo de navegación privada o utiliza otro navegador."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Anula la selección de al menos ${ calendarsToFixCount } calendario",
@@ -3008,16 +3005,16 @@
         "${ BRAND_NAME } no ha podido conectarse a tu cuenta de Yahoo. Asegúrate de que:"
       ],
       "2-step verification is enabled in your external account.": [
-        "La verificación en dos pasos está habilitada en tu cuenta externa."
+        "La verificación en dos pasos está activada en tu cuenta externa."
       ],
       "2-step verification is enabled in your external email account.": [
-        "La verificación en dos pasos está habilitada en tu cuenta de correo externa."
+        "La verificación en dos pasos está activada en tu cuenta de correo externa."
       ],
       "IMAP access is enabled in your external account.": [
-        "El acceso IMAP está habilitado en tu cuenta externa."
+        "El acceso IMAP está activado en tu cuenta externa."
       ],
       "IMAP access is enabled in your Yahoo account.": [
-        "El acceso IMAP está habilitado en tu cuenta de Yahoo Mail."
+        "El acceso IMAP está activado en tu cuenta de Yahoo Mail."
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Demasiadas solicitudes recientes. Inténtalo de nuevo en unos momentos."
@@ -3112,7 +3109,7 @@
         "contraseña de la aplicación"
       ],
       "app password or enable IMAP": [
-        "contraseña de la aplicación o habilitar IMAP"
+        "contraseña de la aplicación o activar IMAP"
       ],
       "CSV or a VCF (vCard) file": [
         "CSV o un archivo VCF (vCard)"
@@ -3261,9 +3258,6 @@
         "${ selectedContactsLength }/${ contactsLength } contacto seleccionado",
         "${ selectedContactsLength }/${ contactsLength } contactos seleccionados"
       ],
-      "${ selectedCount } selected": [
-        "${ selectedCount } seleccionados"
-      ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } carpeta seleccionada",
         "${ selectedFoldersCount } carpetas seleccionadas"
@@ -3307,7 +3301,7 @@
         "El acceso a la cuenta ha sido restringido debido a facturas impagadas. Contacta con tu administrador."
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "La verificación de dirección con claves de confianza está habilitada para esta dirección. Para poder enviar a esta dirección, primero verifica las claves públicas que se pueden utilizar para enviar."
+        "La verificación de dirección con claves de confianza está activada para esta dirección. Para poder enviar a esta dirección, primero verifica las claves públicas que se pueden utilizar para enviar."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Todo (${ totalFoldersCount } carpeta)",
@@ -3901,7 +3895,7 @@
         "Principal"
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        "Búsqueda privada habilitada. Puedes cerrar esta ventana y buscar archivos y carpetas."
+        "Búsqueda privada activada. Puedes cerrar esta ventana y buscar archivos y carpetas."
       ],
       "Queued": [
         "En espera"
@@ -3931,10 +3925,10 @@
         "Archivos restaurados ${ formattedDate }"
       ],
       "Search cannot be enabled in this browser": [
-        "No se puede habilitar la búsqueda en este navegador."
+        "No se puede activar la búsqueda en este navegador."
       ],
       "Search Enabled": [
-        "Búsqueda habilitada"
+        "Búsqueda activada"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Selecciona una carpeta o archivo que has cargado para crear un enlace."
@@ -4030,7 +4024,7 @@
         "Esta cuenta ha sido suspendida debido a una posible violación de los términos y condiciones."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Esta dirección está deshabilitada. Para enviar correos esta dirección, el propietario debe en primer lugar habilitar la dirección."
+        "Esta dirección está desactivada. Para enviar correos esta dirección, el propietario debe en primer lugar activar la dirección."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Este navegador no admite la previsualización de documentos PDF. Descarga el archivo."
@@ -4054,7 +4048,7 @@
         "Este enlace se desactivará permanentemente. Nadie con este enlace podrá acceder a tu archivo. Para volver a compartir el archivo, necesitas un nuevo enlace."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Se deshabilitará este enlace de forma permanente. Nadie con este enlace tendrá acceso a tu carpeta. Necesitas un enlace nuevo para volver a compartir la carpeta."
+        "Se desactivará este enlace de forma permanente. Nadie con este enlace tendrá acceso a tu carpeta. Necesitas un enlace nuevo para volver a compartir la carpeta."
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Esta acción eliminará el enlace e impedirá el acceso al archivo a cualquier persona que lo tuviese.",
@@ -4076,7 +4070,7 @@
         "Esto cargará una nueva versión de la carpeta."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        "Para habilitar una búsqueda realmente privada, ${ DRIVE_APP_NAME } necesita indexar tus archivos localmente."
+        "Para activar una búsqueda realmente privada, ${ DRIVE_APP_NAME } necesita indexar tus archivos localmente."
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Para permitir una búsqueda verdaderamente privada, se debe indexar tus archivos localmente. Puedes seguir utilizando ${ DRIVE_APP_NAME } normalmente y te avisaremos cuando la indexación haya terminado."
@@ -4925,7 +4919,7 @@
     },
     "Message": {
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        "Tu periodo de prueba gratuito ha terminado. El acceso a tu cuenta será deshabilitado pronto. ${ action }"
+        "Tu periodo de prueba gratuito ha terminado. El acceso a tu cuenta será desactivado pronto. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -5905,8 +5899,8 @@
       ]
     },
     "Storage": {
-      "Get storage": [
-        "Obtener almacenamiento"
+      "Get more storage": [
+        "Obtener más almacenamiento"
       ],
       "Release notes": [
         "Notas de la versión"

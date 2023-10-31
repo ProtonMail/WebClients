@@ -230,6 +230,9 @@
       "Continue with Google": [
         "Fortsätt med Google"
       ],
+      "Continue with Outlook": [
+        "Fortsätt med Outlook"
+      ],
       "Contract composer": [
         "Krymp redigeringsfönstret"
       ],
@@ -507,6 +510,12 @@
       ],
       "Import from .csv or vCard": [
         "Importera från .csv eller vCard"
+      ],
+      "Import from Google": [
+        "Importera från Google"
+      ],
+      "Import from Outlook": [
+        "Importera från Outlook"
       ],
       "In the morning": [
         "På morgonen"
@@ -1717,7 +1726,7 @@
         "maskros"
       ],
       "dark cerulean": [
-        "mörk azurblå"
+        "mörk cerulean"
       ],
       "dark midnight blue": [
         "mörk midnattsblå"
@@ -2918,6 +2927,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterar och importerar kontakter... Detta kan ta några minuter. När processen är slutförd kan du stänga detta fönster."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "För import via CSV- och VCF-fil, se till att filen inte överstiger ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Om din fil är större, dela upp den i mindre filer. ${ learnMoreLink }."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det verkar som kontaktlistan du importerar innehåller några grupper. Granska hur dessa grupper ska importeras."
       ],
@@ -2943,9 +2955,8 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Spara tid genom att skicka e-post eller inbjudningar till alla samtidigt, en premiumfunktion bland många andra. Uppgradera idag."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Filen ska ha en maximal storlek på ${ MAX_IMPORT_FILE_SIZE_STRING } och ha upp till ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Om din fil är större, dela upp den i mindre filer.",
-        "Filen ska ha en maximal storlek på ${ MAX_IMPORT_FILE_SIZE_STRING } och ha upp till ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Om din fil är större, dela upp den i mindre filer."
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "För att importera dina kontakter från Google eller Outlook, ${ easySwitchLink }."
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Slå på skydd för e-postspårning för att förhindra annonsörer och andra från att spåra din plats och onlineaktivitet."
@@ -2973,6 +2984,11 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Du kan markera för att radera de kontakter som du varken slå ihop eller behålla. Radering kommer endast att ske efter att du klickat på sammanslagningsknappen"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "använd importassistenten Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5801,7 +5817,7 @@
         "För att avsluta prenumeration från denna e-postlista kommer du att tas till följande URL där instruktioner kommer att ges av avsändaren av nyhetsbrevet:"
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "För att använda adressverifikation, måste lita på en eller flera tillgängliga offentliga nycklar, inklusive den du vill använda för att skicka. Detta förhindrar förfalskade krypteringsnycklar."
+        "För att använda adressverifiering måste du lita på en eller flera tillgängliga offentliga nycklar, inklusive den du vill använda för att skicka. Detta förhindrar krypteringsnycklarna att förfalskas."
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Många meddelanden väntar på att skickas. Vänta tills ett annat meddelande har skickats för att schemalägga detta."
@@ -7750,10 +7766,10 @@
         "PGP-signerat meddelande. Avsändarverifieringen misslyckades"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
-        "Skickat med ${ MAIL_APP_NAME } med noll-åtkomstkryptering"
+        "Skickat med ${ MAIL_APP_NAME } med kryptering med noll åtkomst"
       ],
       "Stored with zero-access encryption": [
-        "Lagras med nollåtkomst-kryptering"
+        "Lagrad med kryptering med noll åtkomst"
       ]
     },
     "Remaining days before the message expire": {
@@ -7875,8 +7891,8 @@
         "Skickat med ${ MAIL_APP_NAME } med noll-åtkomstkryptering"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
-        "Skickat med ${ MAIL_APP_NAME } med noll-åtkomstkryptering till verifierad mottagare",
-        "Skickat med ${ MAIL_APP_NAME } med noll-åtkomstkryptering till verifierade mottagare"
+        "Skickat med ${ MAIL_APP_NAME } med kryptering med noll åtkomst till verifierad mottagare",
+        "Skickat med ${ MAIL_APP_NAME } med kryptering med noll åtkomst till verifierade mottagare"
       ],
       "Sent by you with end-to-end encryption": [
         "Skickat av dig med end-to-end-kryptering"
@@ -7886,7 +7902,7 @@
         "Skickat av dig med end-to-end-kryptering till verifierade mottagare"
       ],
       "Stored with zero-access encryption": [
-        "Lagras med nollåtkomst-kryptering"
+        "Lagrad med kryptering med noll åtkomst"
       ]
     },
     "session_recovery:available:action": {

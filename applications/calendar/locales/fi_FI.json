@@ -2097,10 +2097,6 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Säästä aikaa lähettämällä viestit tai kutsut saman tien koko porukalle. Yksi premium-ominaisuus monien muiden joukossa. Päivitä tilauksesi tänään."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Tiedosto voi olla enintään ${ MAX_IMPORT_FILE_SIZE_STRING } kokoinen ja sisältää ${ MAX_IMPORT_CONTACTS_STRING } yhteystiedon. Jos tiedosto on suurempi, jaa se pienempiin tiedostoihin.",
-        "Tiedosto voi olla enintään ${ MAX_IMPORT_FILE_SIZE_STRING } kokoinen ja sisältää enintään ${ MAX_IMPORT_CONTACTS_STRING } yhteystietoa. Jos tiedosto on suurempi, jaa se pienempiin tiedostoihin."
-      ],
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "Tämä voi kestää muutamia minuutteja. Voit käyttää Calendaria odottaessasi normaalisti."
       ],
@@ -2342,6 +2338,9 @@
       ],
       "Event not found": [
         "Tapahtumaa ei löydy"
+      ],
+      "Failed to get event": [
+        "Tapahtuman lataus epäonnistui"
       ],
       "Failed to get original occurrence in series": [
         "Ketjun alkuperäisen tapahtuman nouto epäonnistui"
@@ -3106,6 +3105,9 @@
       ],
       "MB": [
         "Mt"
+      ],
+      "TB": [
+        "Tt"
       ]
     },
     "file size format, long": {
@@ -3124,6 +3126,10 @@
       "Megabyte": [
         "Megatavu",
         "Megatavua"
+      ],
+      "Terabyte": [
+        "Teratavu",
+        "Teratavua"
       ]
     },
     "Filter notification": {

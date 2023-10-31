@@ -302,6 +302,9 @@
       "Open navigation": [
         "Адкрыць панэль навігацыі"
       ],
+      "Or": [
+        "Або"
+      ],
       "Organization": [
         "Арганізацыя"
       ],
@@ -440,8 +443,8 @@
       "Sign out": [
         "Выйсці з уліковага запісу"
       ],
-      "Sign up for free": [
-        "Зарэгіструйцеся бясплатна"
+      "sign up for free": [
+        "зарэгіструйцеся бясплатна"
       ],
       "Signing in": [
         "Адбываецца ўваход"
@@ -2589,6 +2592,12 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } адрас",
+        "${ amountOfAddresses } адрасы",
+        "${ amountOfAddresses } адрасоў",
+        "${ amountOfAddresses } адрасоў"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
       ],
@@ -2622,6 +2631,9 @@
         "${ number } сервераў",
         "${ number } серверы"
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "Тарыфны план ${ plan } выдалены. Прапанова камплекту недаступна ў тарыфным плане на 1 месяц."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } патрабуе прынамсі 1 вылучаны сервер ${ serverPricePerMonth }"
       ],
@@ -2630,6 +2642,18 @@
         "Адбываецца наладжванне ${ provisioningCounter } сервераў. Звычайна гэта займае каля ${ provisioningDuration }.",
         "Адбываецца наладжванне ${ provisioningCounter } сервераў. Звычайна гэта займае каля ${ provisioningDuration }.",
         "Адбываецца наладжванне ${ provisioningCounter } сервераў. Звычайна гэта займае каля ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "яшчэ ${ remainingAddresses.length }",
+        "яшчэ ${ remainingAddresses.length }",
+        "яшчэ ${ remainingAddresses.length }",
+        "яшчэ ${ remainingAddresses.length }"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "Яшчэ ${ remainingAddresses.length } адрас",
+        "Яшчэ ${ remainingAddresses.length } адрасы",
+        "Яшчэ ${ remainingAddresses.length } адрасоў",
+        "Яшчэ ${ remainingAddresses.length } адрасоў"
       ],
       "${ storage } storage": [
         "${ storage } сховішча"
@@ -2715,12 +2739,6 @@
       "Additional options": [
         "Дадатковы параметры"
       ],
-      "address": [
-        "адрас",
-        "адрасы",
-        "адрасоў",
-        "адрасоў"
-      ],
       "Admin account allocation": [
         "Вылучэнне ўліковага запісу адміністратара"
       ],
@@ -2792,6 +2810,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Перад тым, як пачаць адпраўляць і атрымліваць электронную пошту з вашых новых адрасоў, вам неабходна стварыць ключы шыфравання для іх."
+      ],
+      "Billed at ${ price }": [
+        "Аплачваецца ${ price }"
       ],
       "Billing cycle: ${ text }": [
         "Перыяд аплаты: ${ text }"
@@ -3087,9 +3108,6 @@
       "MM/YY": [
         "ММ/ГГ"
       ],
-      "more": [
-        "больш"
-      ],
       "Multi-user support not enabled.": [
         "Падтрымка шматкарыстальніцкага рэжыму не ўключана."
       ],
@@ -3269,6 +3287,9 @@
       ],
       "Revoke certificate ${ name }": [
         "Адклікаць сертыфікат ${ name }"
+      ],
+      "Save ${ percentage }": [
+        "Эканомія ${ percentage }"
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Захавайце ваш пароль у надзейным месцы. Націсніце на значок, каб праверыць правільнасць уводу пароля."
@@ -4500,7 +4521,7 @@
         "Стварыць новы ўліковы запіс ${ appName }"
       ],
       "Find your ${ BRAND_NAME } Account username": [
-        "Знайдзіце ваш ${ BRAND_NAME } імя карыстальніка"
+        "Знайдзіце сваё імя карыстальніка ўліковага запісу ${ BRAND_NAME }"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Забылі пароль ад свайго ўліковага запісу ${ BRAND_NAME }? Скіньце яго выкарыстоўваючы код аднаўлення, электронную пошту або SMS і аднавіце доступ да вашых сэрвісаў ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і іншых."
@@ -7496,8 +7517,8 @@
       ]
     },
     "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Доступ да сервераў Secure Core, хуткія спампоўванні P2P/BitTorrent, Tor праз VPN, Double Hop і іншыя функцыі."
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Доступ да сервераў Secure Core, хуткія спампоўванні P2P/BitTorrent, Tor праз VPN і іншыя функцыі."
       ]
     },
     "Warning": {

@@ -1870,12 +1870,6 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Заощаджуйте час, надсилаючи листи або запрошення одразу всім адресатам – одна з багатьох преміумфункцій, доступних у передплачених тарифних планах."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити ${ MAX_IMPORT_CONTACTS_STRING } контакт. Якщо ваш файл більший, розділіть його на менші файли.",
-        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли.",
-        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли.",
-        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Використовуйте перетягування для пріоритету об'єднання між контактами. Приберіть позначку з тих контактів, які ви не хочете об'єднувати."
       ],
@@ -2025,7 +2019,7 @@
         "Введіть 6 цифр"
       ],
       "Error decrypting a computer": [
-        "Помилка при розшифруванні пристрою"
+        "Помилка розшифрування комп'ютера"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Не вдалося вивантажити файл \"${ item.name }\" через помилку \"${ error }\""
@@ -3256,9 +3250,6 @@
         "Вибрано ${ selectedContactsLength } контактів з ${ contactsLength }",
         "Вибрано ${ selectedContactsLength } контактів з ${ contactsLength }"
       ],
-      "${ selectedCount } selected": [
-        "${ selectedCount } вибрано"
-      ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } вибрана тека",
         "${ selectedFoldersCount } вибрані теки",
@@ -3563,7 +3554,7 @@
         "Введіть облікові дані облікового запису електронної пошти, з якої ви хочете імпортувати."
       ],
       "Enter the device name to confirm removal.": [
-        "Введіть назву пристрою, щоб підтвердити видалення."
+        "Введіть назву пристрою, щоб підтвердити вилучення."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введіть код перевірки, який був надісланий на ${ destinationText }."
@@ -4085,7 +4076,7 @@
         "Це видалить посилання та вилучить доступ до ваших тек для всіх, хто має посилання."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
-        "Це призведе до видалення синхронізованого пристрою ${ deviceName } з ${ DRIVE_APP_NAME } і зупинить синхронізацію тек, які ви додали до \"Мої комп'ютери\"."
+        "Це призведе до вилучення синхронізованого пристрою ${ deviceName } з ${ DRIVE_APP_NAME } і зупинить синхронізацію тек, які ви додали до розділу \"Мої комп'ютери\"."
       ],
       "This will replace the existing file with the folder": [
         "Це призведе до заміни наявного файлу текою"
@@ -4145,7 +4136,7 @@
         "Спробуйте пошук за назвою, датою або типом файлу."
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
-        "На жаль, виявляється, що файл або деякі з його даних неможливо розшифрувати."
+        "На жаль, схоже що неможливо розшифрувати файл або його вміст."
       ],
       "Unknown error": [
         "Невідома помилка"
@@ -5839,9 +5830,6 @@
       ]
     },
     "Storage": {
-      "Get storage": [
-        "Отримати сховище"
-      ],
       "Release notes": [
         "Примітки до випуску"
       ],
