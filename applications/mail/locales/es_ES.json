@@ -371,10 +371,10 @@
         "Emoji"
       ],
       "Enable": [
-        "Habilitar"
+        "Activar"
       ],
       "enable desktop notifications": [
-        "habilitar las notificaciones de escritorio"
+        "activar las notificaciones de escritorio"
       ],
       "Encryption": [
         "Cifrado"
@@ -1365,11 +1365,12 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Sortea la censura y bloqueos locales de Internet con nuestra red global de servidores."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
-        "Incluye compatibilidad con ${ domains } dominios de correo electrónico personalizado, ${ addresses } direcciones de correo electrónico, ${ aliases } alias de hide-my-email, la posibilidad de compartir calendarios y mucho más."
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 alias de hide-my-email, posibilidad de compartir calendario, etc."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Incluye compatibilidad con ${ domains } dominios de correo electrónico personalizado, ${ addresses } direcciones de correo electrónico, alias ilimitados de hide-my-email, la posibilidad de compartir calendarios y mucho más."
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, ${ addresses } dirección de correo electrónico, alias ilimitados de hide-my-email, posibilidad de compartir calendario, etc.",
+        "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, ${ addresses } direcciones de correo electrónico, alias ilimitados de hide-my-email, posibilidad de compartir calendario, etc."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Inicio de sesión seguro en todos tus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
@@ -3026,10 +3027,6 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Ahorra tiempo enviando correos electrónicos o invitaciones a todos a la vez, una función premium entre muchas otras. Actualiza hoy mismo."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contacto. Si tu archivo es más grande, divídelo en archivos más pequeños.",
-        "El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener\nhasta ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si tu archivo es más grande, divídelo en archivos más pequeños."
-      ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Activa la protección de rastreo de correo para evitar que los anunciantes y otros rastreen tu ubicación y actividad en línea."
       ],
@@ -3182,7 +3179,7 @@
     },
     "email_forwarding_2023: Composer email icon": {
       "Zero-access encrypted. Recipient has disabled end-to-end encryption on their account.": [
-        "Acceso cero cifrado. El destinatario ha deshabilitado el cifrado de extremo a extremo en su cuenta."
+        "Acceso cero cifrado. El destinatario ha desactivado el cifrado de extremo a extremo en su cuenta."
       ]
     },
     "empty messages: success": {
@@ -3200,7 +3197,7 @@
     },
     "Error": {
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
-        "${ error.message } para <${ email }>. Puedes añadir otra clave o deshabilitar el cifrado para este contacto para resolver el problema."
+        "${ error.message } para &lt;${ email }&gt;. Puedes añadir otra clave o desactivar el cifrado para este contacto para resolver el problema."
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. También puedes comprobar nuestra ${ statusPageLink }"
@@ -3259,7 +3256,7 @@
         "Contacta con el administrador de tu organización para resolver esto."
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "No puedes habilitar la búsqueda de contenido en este navegador. Sal del modo de navegación privada o utiliza otro navegador."
+        "No puedes activar la búsqueda de contenido en este navegador. Sal del modo de navegación privada o utiliza otro navegador."
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Error al descifrar: no se ha podido descifrar el contenido de este mensaje."
@@ -3279,7 +3276,7 @@
         "No se ha podido guardar el borrador. Inténtalo de nuevo."
       ],
       "Email address disabled": [
-        "Dirección de correo electrónico deshabilitada"
+        "Dirección de correo electrónico desactivada"
       ],
       "Email address is required": [
         "Dirección de correo electrónico requerida"
@@ -4584,16 +4581,16 @@
         "${ BRAND_NAME } no ha podido conectarse a tu cuenta de Yahoo. Asegúrate de que:"
       ],
       "2-step verification is enabled in your external account.": [
-        "La verificación en dos pasos está habilitada en tu cuenta externa."
+        "La verificación en dos pasos está activada en tu cuenta externa."
       ],
       "2-step verification is enabled in your external email account.": [
-        "La verificación en dos pasos está habilitada en tu cuenta de correo externa."
+        "La verificación en dos pasos está activada en tu cuenta de correo externa."
       ],
       "IMAP access is enabled in your external account.": [
-        "El acceso IMAP está habilitado en tu cuenta externa."
+        "El acceso IMAP está activado en tu cuenta externa."
       ],
       "IMAP access is enabled in your Yahoo account.": [
-        "El acceso IMAP está habilitado en tu cuenta de Yahoo Mail."
+        "El acceso IMAP está activado en tu cuenta de Yahoo Mail."
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Demasiadas solicitudes recientes. Inténtalo de nuevo en unos momentos."
@@ -4696,7 +4693,7 @@
         "contraseña de la aplicación"
       ],
       "app password or enable IMAP": [
-        "contraseña de la aplicación o habilitar IMAP"
+        "contraseña de la aplicación o activar IMAP"
       ],
       "CSV or a VCF (vCard) file": [
         "CSV o un archivo VCF (vCard)"
@@ -4941,7 +4938,7 @@
         "Añadir URL de la imagen"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "La verificación de dirección con claves de confianza está habilitada para esta dirección. Para poder enviar a esta dirección, primero verifica las claves públicas que se pueden utilizar para enviar."
+        "La verificación de dirección con claves de confianza está activada para esta dirección. Para poder enviar a esta dirección, primero verifica las claves públicas que se pueden utilizar para enviar."
       ],
       "Align left": [
         "Alinear a la izquierda"
@@ -4964,7 +4961,7 @@
         "Todos los mensajes guardados con esta etiqueta se eliminarán permanentemente."
       ],
       "All your calendars are disabled.": [
-        "Todos tus calendarios están deshabilitados."
+        "Todos tus calendarios están desactivados."
       ],
       "All your changes will be lost.": [
         "Todos los cambios se perderán."
@@ -5037,7 +5034,7 @@
         "Color de fondo"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "La navegación básica y las acciones siguen estando disponibles independientemente de que los atajos de teclado estén habilitados o no en la configuración."
+        "La navegación básica y las acciones siguen estando disponibles independientemente de que los atajos de teclado estén activados o no en la configuración."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de solicitar un nuevo código de verificación, verifica tu carpeta de spam y verifica que ${ strong } la dirección es correcta."
@@ -5201,7 +5198,7 @@
         "El correo electrónico se reenvía a tu bandeja de entrada mientras que tu dirección de correo se mantiene oculta."
       ],
       "Email tracker protection is disabled": [
-        "Protección contra rastreo para el correo electrónico deshabilitada"
+        "Protección contra rastreo para el correo electrónico desactivada"
       ],
       "Emails are automatically signed": [
         "Los correos electrónicos son firmados automáticamente."
@@ -5768,7 +5765,7 @@
         "Esta cuenta ha sido suspendida debido a una posible violación de los términos y condiciones."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Esta dirección está deshabilitada. Para enviar correos esta dirección, el propietario debe en primer lugar habilitar la dirección."
+        "Esta dirección está desactivada. Para enviar correos esta dirección, el propietario debe en primer lugar activar la dirección."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Este navegador no admite la previsualización de documentos PDF. Descarga el archivo."
@@ -5793,7 +5790,7 @@
         "Este correo no ha superado los requisitos de autenticación de su dominio. Puede ser una suplantación de identidad o un reenvío incorrecto."
       ],
       "This invitation is saved in a disabled calendar.": [
-        "Esta invitación está guardada en un calendario deshabilitado."
+        "Esta invitación está guardada en un calendario desactivado."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Este enlace conduce a un sitio web que podría estar intentando robar tus datos, como contraseñas y datos de tarjetas de crédito."
@@ -6010,7 +6007,7 @@
         "Cuando des tu correo electrónico, utiliza un alias de Hide-my-email único y desechable en vez de tu dirección de correo real."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
-        "Cuando has habilitado las claves de confianza para ${ senderName }, las claves públicas se han añadido a los datos del contacto."
+        "Cuando has activado las claves de confianza para ${ senderName }, las claves públicas se han añadido a los datos del contacto."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Cuando configuras la autenticación de doble factor, te proporcionamos códigos de recuperación que puedes utilizar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
@@ -6212,8 +6209,8 @@
         "¿Quieres confiar en las claves públicas principales con la siguientes huellas digitales?"
       ],
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
-        "Has habilitado la verificación de dirección con claves de confianza para esta dirección de correo,\npero no se han confiado claves de cifrado activas.\nDebes confiar en una clave válida para poder enviar mensajes a esta dirección.",
-        "Has habilitado la verificación de dirección con claves de confianza para estas direcciones de correo,\npero no se han confiado claves de cifrado activas.\nDebes confiar en las claves válidas para poder enviar mensajes a estas direcciones."
+        "Has activado la verificación de dirección con claves de confianza para esta dirección de correo,\npero no se han confiado claves de cifrado activas.\nDebes confiar en una clave válida para poder enviar mensajes a esta dirección.",
+        "Has activado la verificación de dirección con claves de confianza para estas direcciones de correo,\npero no se han confiado claves de cifrado activas.\nDebes confiar en las claves válidas para poder enviar mensajes a estas direcciones."
       ]
     },
     "Key validation warning": {
@@ -6981,7 +6978,7 @@
         "limpiando la memoria caché de tu navegador"
       ],
       "Create a calendar linked to an active email address.": [
-        "Crear un calendario vinculado a una dirección de correo electrónico habilitada."
+        "Crear un calendario vinculado a una dirección de correo electrónico activada."
       ],
       "Create a new calendar to add this event": [
         "Crea un calendario para añadir este evento."
@@ -6996,19 +6993,19 @@
         "Borradores"
       ],
       "Enable an email address linked to one of your calendars.": [
-        "Habilitar una dirección de correo electrónico vinculada a uno de tus calendarios."
+        "Activar una dirección de correo electrónico vinculada a uno de tus calendarios."
       ],
       "Enable the email address linked to the disabled calendar to cancel the event.": [
-        "Habilita la dirección de correo electrónico vinculada al calendario deshabilitado para cancelar el evento."
+        "Activa la dirección de correo electrónico vinculada al calendario desactivado para cancelar el evento."
       ],
       "Enable the email address linked to the disabled calendar to modify your answer.": [
-        "Habilita la dirección de correo electrónico vinculada al calendario deshabilitado para modificar tu respuesta."
+        "Activa la dirección de correo electrónico vinculada al calendario desactivado para modificar tu respuesta."
       ],
       "Enable your address again to modify your answer.": [
-        "Habilita tu dirección de nuevo para modificar tu respuesta."
+        "Activa tu dirección de nuevo para modificar tu respuesta."
       ],
       "Enable your address to answer this invitation.": [
-        "Habilita tu dirección para responder a esta invitación."
+        "Activa tu dirección para responder a esta invitación."
       ],
       "Folders": [
         "Carpetas"
@@ -7041,7 +7038,7 @@
         "Abrir evento actualizado en ${ CALENDAR_APP_NAME }"
       ],
       "Or you can delete one of your calendars and create a new one linked to an active email address.": [
-        "Puedes también eliminar uno de tus calendarios y crear uno vinculado a una dirección de correo electrónico habilitada."
+        "Puedes también eliminar uno de tus calendarios y crear uno vinculado a una dirección de correo electrónico activada."
       ],
       "Outbox": [
         "Bandeja de salida"
@@ -7053,10 +7050,10 @@
         "Política de privacidad"
       ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
-        "Rehabilita la dirección vinculada a este calendario para gestionar tu invitación."
+        "Reactiva la dirección vinculada a este calendario para gestionar tu invitación."
       ],
       "Re-enable the address linked to this calendar to update your invitation.": [
-        "Rehabilita la dirección vinculada a este calendario para actualizar tu invitación."
+        "Reactiva la dirección vinculada a este calendario para actualizar tu invitación."
       ],
       "Reactivate now": [
         "Reactivar"
@@ -7104,7 +7101,7 @@
         "Necesitas activar las claves del calendario para añadir este evento."
       ],
       "You need to activate your calendar keys to answer this invitation": [
-        "Necesitas habilitar las claves del calendario para responder a esta invitación."
+        "Necesitas activar las claves del calendario para responder a esta invitación."
       ],
       "You need to activate your calendar keys to manage this invitation": [
         "Necesitas activar tus claves del calendario para gestionar esta invitación."
@@ -7113,7 +7110,7 @@
         "Necesitas activar las claves del calendario para ver el evento actualizado."
       ],
       "You need to activate your calendar keys to see the updated invitation": [
-        "Necesitas habilitar las claves del calendario para ver la invitación actualizada."
+        "Necesitas activar las claves del calendario para ver la invitación actualizada."
       ],
       "You need to reactivate your keys to manage this invitation": [
         "Necesitas reactivar tus claves para gestionar esta invitación."
@@ -7211,7 +7208,7 @@
         "Re:"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        "Tu periodo de prueba gratuito ha terminado. El acceso a tu cuenta será deshabilitado pronto. ${ action }"
+        "Tu periodo de prueba gratuito ha terminado. El acceso a tu cuenta será desactivado pronto. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -8648,7 +8645,7 @@
         "Mensaje añadido a ${ labelName }."
       ],
       "Message content search enabled": [
-        "Búsqueda de contenido de mensajes habilitada"
+        "Búsqueda de contenido de mensajes activada"
       ],
       "Message deleted": [
         "Mensaje eliminado"
@@ -9097,7 +9094,7 @@
         "Ajustes del correo"
       ],
       "Enable message content search": [
-        "Habilitar la búsqueda de contenido de mensajes"
+        "Activar la búsqueda de contenido de mensajes"
       ],
       "Enter your password": [
         "Introduce tu contraseña."

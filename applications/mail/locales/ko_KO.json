@@ -196,6 +196,9 @@
       "Close navigation": [
         "탐색 종료"
       ],
+      "Close the checklist": [
+        "체크리스트 닫기"
+      ],
       "Close this banner": [
         "이 배너 닫기"
       ],
@@ -421,8 +424,14 @@
       "Get verification code": [
         "인증코드 전송"
       ],
+      "Go to first page": [
+        "첫 페이지로 이동"
+      ],
       "Go to label": [
         "라벨로 이동"
+      ],
+      "Go to last page": [
+        "마지막 페이지로 이동"
       ],
       "Go to next page": [
         "다음 페이지로 이동"
@@ -2923,9 +2932,6 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "다른 많은 것들 중에서 프리미엄 기능인 모든 사람에게 이메일이나 초대장을 한 번에 보내 시간을 절약하세요. 오늘 업그레이드하세요."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
-        "파일 크기가 최대 ${ MAX_IMPORT_FILE_SIZE_STRING } 이어야 합니다. 최대 ${ MAX_IMPORT_CONTACTS_STRING } 연락처를 가지고 있습니다. 만약 파일이 너무 크다면, 작은 파일들로 분할해 주세요."
-      ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "위치와 온라인 활동을 추적하는 광고주와 기타 사람들로부터의 추적을 방지하기 위해 이메일 추적기 보호 기능을 활성화하세요."
       ],
@@ -3958,6 +3964,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -3972,6 +3981,9 @@
       ],
       "Megabytes": [
         "메가바이트"
+      ],
+      "Terabytes": [
+        "테라바이트"
       ]
     },
     "Filter": {
@@ -4165,6 +4177,9 @@
       ],
       "Close": [
         "닫기"
+      ],
+      "Closing this means giving up the free storage bonus.": [
+        "닫으면 무료 스토리지 보너스를 잃게 됩니다."
       ],
       "Congratulation, you completed all the steps!": [
         "축하합니다, 모든 단계를 완료했습니다!"
@@ -4858,6 +4873,9 @@
       ],
       "Calendar side panel": [
         "캘린더 사이드 패널"
+      ],
+      "Can't find what you're looking for? ${ displayAllMailButton }": [
+        "원하시는 걸 찾지 못하셨나요? ${ displayAllMailButton }"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "비밀번호를 잊어버리셨나요? 이 키로 암호화된 모든 연락처의 암호화된 데이터를 지우고 그 과정에서 경고를 해제하는 데 도움을 줄 수 있습니다."
@@ -6853,6 +6871,9 @@
       "Sent": [
         "보낸 편지함"
       ],
+      "Set up email forwarding": [
+        "이메일 가져오기 설정"
+      ],
       "Sign up for free": [
         "무료 가입"
       ],
@@ -8183,6 +8204,9 @@
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "이제 일반적으로 이미지를 로드하며 전송자가 당신을 트래킹하지 못하도록 차단할 수 있습니다. ${ settingsLink }에서 언제든지 변경할 수 있습니다."
+      ],
+      "You can now automatically forward your emails to anyone!": [
+        "이제 모든 사람으로 이메일을 자동으로 가져올 수 있습니다!"
       ],
       "You can now schedule your messages to be sent later": [
         "이제 메시지를 예약하여 나중에 전송할 수 있습니다"
