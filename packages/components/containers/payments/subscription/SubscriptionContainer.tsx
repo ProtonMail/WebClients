@@ -47,6 +47,7 @@ import {
     getPlanIDs,
     hasMigrationDiscount,
     hasNewVisionary,
+    hasPassPlus,
     hasVPN,
     hasVPNPassBundle,
 } from '@proton/shared/lib/helpers/subscription';
@@ -849,20 +850,21 @@ const SubscriptionContainer = ({
                                                             cycle={model.cycle}
                                                         />
                                                     )}
-                                                    {model.planIDs[PLANS.VPN_PASS_BUNDLE] && (
-                                                        <Button
-                                                            className="flex flex-nowrap flex-align-items-center flex-justify-center"
-                                                            fullWidth
-                                                            color="weak"
-                                                            shape="outline"
-                                                            onClick={handleUpsellVPNPassBundle}
-                                                        >
-                                                            <Icon name="trash" size={14} />
-                                                            <span className="ml-2">
-                                                                {c('bf2023: Action').t`Remove ${PASS_APP_NAME}`}
-                                                            </span>
-                                                        </Button>
-                                                    )}
+                                                    {model.planIDs[PLANS.VPN_PASS_BUNDLE] &&
+                                                        !hasPassPlus(subscription) && (
+                                                            <Button
+                                                                className="flex flex-nowrap flex-align-items-center flex-justify-center"
+                                                                fullWidth
+                                                                color="weak"
+                                                                shape="outline"
+                                                                onClick={handleUpsellVPNPassBundle}
+                                                            >
+                                                                <Icon name="trash" size={14} />
+                                                                <span className="ml-2">
+                                                                    {c('bf2023: Action').t`Remove ${PASS_APP_NAME}`}
+                                                                </span>
+                                                            </Button>
+                                                        )}
                                                 </div>
                                             </>
                                         );
