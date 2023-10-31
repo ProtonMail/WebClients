@@ -135,6 +135,12 @@ const HolidaysCalendarModalWithDirectory = ({
     const { createNotification } = useNotifications();
     const readCalendarBootstrap = useReadCalendarBootstrap();
 
+    const memoizedHolidaysCalendars = useMemo(() => {
+        // Prevent the list of user holidays calendars from changing (via event loop) once the modal opened.
+        // This avoids possible UI jumps and glitches
+        return holidaysCalendars;
+    }, []);
+
     const visibleDirectory = useMemo(() => {
         const inputHolidaysCalendarID = inputHolidaysCalendar?.ID;
 
@@ -164,7 +170,7 @@ const HolidaysCalendarModalWithDirectory = ({
     // Check if the user has already joined the default holidays directory calendar.
     // If so, we don't want to pre-select that default calendar
     const hasAlreadyJoinedSuggestedCalendar = getHasAlreadyJoinedCalendar(
-        holidaysCalendars,
+        memoizedHolidaysCalendars,
         suggestedCalendar,
         inputHolidaysCalendar
     );
@@ -192,7 +198,7 @@ const HolidaysCalendarModalWithDirectory = ({
     // Check if currently selected holidays calendar has already been joined by the user
     // If already joined, we don't want the user to be able to "save" again, or he will get an error
     const hasAlreadyJoinedSelectedCalendar = getHasAlreadyJoinedCalendar(
-        holidaysCalendars,
+        memoizedHolidaysCalendars,
         computedCalendar,
         inputHolidaysCalendar
     );
