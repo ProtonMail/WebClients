@@ -5,6 +5,10 @@ interface Props {
 }
 
 const AppVersionCell = ({ appVersion }: Props) => {
+    if (appVersion === null) {
+        return <span className="flex-item-fluid">-</span>;
+    }
+
     const appVersionList = appVersion.split('@', 2);
     if (appVersionList.length > 1) {
         return (
