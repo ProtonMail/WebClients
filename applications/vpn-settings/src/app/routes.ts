@@ -3,14 +3,18 @@ import { c } from 'ttag';
 import { SectionConfig } from '@proton/components';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
-import { getHasVpnB2BPlan, getIsVpnB2BPlan, hasVPN, hasVpnBusiness } from '@proton/shared/lib/helpers/subscription';
+import {
+    getHasVpnB2BPlan,
+    getIsVpnB2BPlan,
+    hasCancellablePlan,
+    hasVpnBusiness,
+} from '@proton/shared/lib/helpers/subscription';
 import { Organization, Renew, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 export const getRoutes = (user: UserModel, subscription?: Subscription, organization?: Organization) => {
-    // that's different from user.hasPaidVpn. That's because hasPaidVpn is true even if user has the unlimited plan
-    const hasVpnPlan = hasVPN(subscription);
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
     const hasVpnBusinessPlan = hasVpnBusiness(subscription);
+    const cancellablePlan = hasCancellablePlan(subscription);
     const vpnB2BOrgMember = !!organization && getIsVpnB2BPlan(organization.PlanName);
 
     const isAdmin = user.isAdmin && !user.isSubUser;
@@ -66,7 +70,7 @@ export const getRoutes = (user: UserModel, subscription?: Subscription, organiza
                 {
                     text: c('Title').t`Cancel subscription`,
                     id: 'cancel-subscription',
-                    available: user.hasPaidVpn && hasVpnPlan && subscription?.Renew === Renew.Enabled,
+                    available: user.hasPaidVpn && cancellablePlan && subscription?.Renew === Renew.Enabled,
                 },
                 {
                     text: c('Title').t`Downgrade account`,
@@ -75,12 +79,13 @@ export const getRoutes = (user: UserModel, subscription?: Subscription, organiza
                     // that depend on subscription are correctly computed before the first rendering.
                     // Otherwise the component will be mounted and immediately unmounted which can cause memory leaks due
                     // to async calls that started in a rendering cycle.
-                    available: !!subscription && user.isPaid && !hasVpnPlan && !hasVpnB2BPlan,
+                    available: !!subscription && user.isPaid && !cancellablePlan && !hasVpnB2BPlan,
                 },
                 {
                     text: c('Title').t`Cancel subscription`,
                     id: 'cancel-b2b-subscription',
-                    available: user.isPaid && !hasVpnPlan && hasVpnB2BPlan,
+                    // B2B cancellation has a different flow, so we don't consider it a classic cancellable plan
+                    available: user.isPaid && !cancellablePlan && hasVpnB2BPlan,
                 },
             ],
         },
