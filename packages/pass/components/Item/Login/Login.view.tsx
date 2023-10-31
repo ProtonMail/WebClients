@@ -46,7 +46,7 @@ export const LoginView: VFC<ItemViewProps<'login'>> = ({ vault, revision, ...ite
                     label={c('Label').t`Password`}
                     value={password}
                     ellipsis={false}
-                    valueClassName="text-monospace"
+                    valueClassName="text-monospace text-break-all"
                 >
                     {password.length ? getCharsGroupedByColor(password) : undefined}
                 </ValueControl>
