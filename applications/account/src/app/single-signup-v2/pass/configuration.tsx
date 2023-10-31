@@ -103,7 +103,6 @@ export const getPassConfiguration = ({
     mode,
     hideFreePlan,
     isDesktop,
-    isPassWelcome,
     vpnServersCountData,
     isPaidPass,
     isPaidPassVPNBundle,
@@ -111,7 +110,6 @@ export const getPassConfiguration = ({
     mode: SignupMode;
     hideFreePlan: boolean;
     isDesktop: boolean;
-    isPassWelcome: boolean;
     vpnServersCountData: VPNServersCountData;
     isPaidPass: boolean;
     isPaidPassVPNBundle: boolean;
@@ -137,7 +135,7 @@ export const getPassConfiguration = ({
             type: 'best' as const,
             guarantee: true,
         },
-        !isPassWelcome && {
+        {
             plan: PLANS.BUNDLE,
             subsection: <BundlePlanSubSection vpnServersCountData={vpnServersCountData} />,
             type: 'standard' as const,
