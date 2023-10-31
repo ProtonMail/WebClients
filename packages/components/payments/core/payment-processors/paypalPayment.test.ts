@@ -1,4 +1,4 @@
-import { MAX_CREDIT_AMOUNT, MIN_CREDIT_AMOUNT } from '@proton/shared/lib/constants';
+import { MAX_CREDIT_AMOUNT, MIN_PAYPAL_AMOUNT } from '@proton/shared/lib/constants';
 import { MOCK_TOKEN_RESPONSE, addTokensResolver, addTokensResponse, apiMock } from '@proton/testing';
 
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '../constants';
@@ -196,19 +196,19 @@ describe('PaypalPaymentProcessor', () => {
         expect(paymentProcessor.disabled).toBe(false);
 
         paymentProcessor.setAmountAndCurrency({
-            Amount: MIN_CREDIT_AMOUNT - 1,
+            Amount: MIN_PAYPAL_AMOUNT - 1,
             Currency: 'USD',
         });
         expect(paymentProcessor.disabled).toBe(true);
 
         paymentProcessor.setAmountAndCurrency({
-            Amount: MIN_CREDIT_AMOUNT,
+            Amount: MIN_PAYPAL_AMOUNT,
             Currency: 'USD',
         });
         expect(paymentProcessor.disabled).toBe(false);
 
         paymentProcessor.setAmountAndCurrency({
-            Amount: (MAX_CREDIT_AMOUNT + MIN_CREDIT_AMOUNT) / 2,
+            Amount: (MAX_CREDIT_AMOUNT + MIN_PAYPAL_AMOUNT) / 2,
             Currency: 'EUR',
         });
         expect(paymentProcessor.disabled).toBe(false);
@@ -228,7 +228,7 @@ describe('PaypalPaymentProcessor', () => {
 
     it('should throw when amount is not in range', async () => {
         paymentProcessor.setAmountAndCurrency({
-            Amount: MIN_CREDIT_AMOUNT - 1,
+            Amount: MIN_PAYPAL_AMOUNT - 1,
             Currency: 'USD',
         });
 
@@ -244,7 +244,7 @@ describe('PaypalPaymentProcessor', () => {
 
         resetPaymentProcessor();
         paymentProcessor.setAmountAndCurrency({
-            Amount: MIN_CREDIT_AMOUNT,
+            Amount: MIN_PAYPAL_AMOUNT,
             Currency: 'USD',
         });
 
@@ -254,7 +254,7 @@ describe('PaypalPaymentProcessor', () => {
 
     it('should throw when amount is not in range (no resets)', async () => {
         paymentProcessor.setAmountAndCurrency({
-            Amount: MIN_CREDIT_AMOUNT - 1,
+            Amount: MIN_PAYPAL_AMOUNT - 1,
             Currency: 'USD',
         });
 
@@ -268,7 +268,7 @@ describe('PaypalPaymentProcessor', () => {
         await expect(() => paymentProcessor.fetchPaymentToken()).rejects.toThrowError(PaypalWrongAmountError);
 
         paymentProcessor.setAmountAndCurrency({
-            Amount: MIN_CREDIT_AMOUNT,
+            Amount: MIN_PAYPAL_AMOUNT,
             Currency: 'USD',
         });
 
