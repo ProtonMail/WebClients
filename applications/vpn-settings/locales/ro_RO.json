@@ -440,9 +440,6 @@
       "Sign out": [
         "Deconectare"
       ],
-      "Sign up for free": [
-        "Înscriere gratuită"
-      ],
       "Signing in": [
         "Conectare"
       ],
@@ -2406,6 +2403,9 @@
       ],
       "MB": [
         "MiB"
+      ],
+      "TB": [
+        "TiB"
       ]
     },
     "file size format, long": {
@@ -2428,6 +2428,11 @@
         "Megabait",
         "Megabaiți",
         "Megabaiți"
+      ],
+      "Terabyte": [
+        "Terabait",
+        "Terabaiți",
+        "Terabaiți"
       ]
     },
     "Font face option": {
@@ -2683,11 +2688,6 @@
       ],
       "Additional options": [
         "Opțiuni adiționale"
-      ],
-      "address": [
-        "adresă",
-        "adrese",
-        "de adrese"
       ],
       "Admin account allocation": [
         "Alocare cont admin"
@@ -3052,9 +3052,6 @@
       ],
       "MM/YY": [
         "LL/AA"
-      ],
-      "more": [
-        "mai mult"
       ],
       "Multi-user support not enabled.": [
         "Suportul pentru utilizatori multipli nu e activat."
@@ -7372,11 +7369,6 @@
       ],
       "Your ${ selected } plan": [
         "Planul dvs. ${ selected }"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Accesa la servere Secure Core, descărcări rapide P2P/BitTorrent, Tor prin VPN și altele."
       ]
     },
     "Warning": {

@@ -200,7 +200,7 @@
         "Закрыць панэль навігацыі"
       ],
       "Close the checklist": [
-        "Закрыць чэкліст"
+        "Закрыць кантрольны спіс"
       ],
       "Close this banner": [
         "Закрыць гэты банер"
@@ -231,6 +231,9 @@
       ],
       "Continue with Google": [
         "Працягнуць з Google"
+      ],
+      "Continue with Outlook": [
+        "Працягнуць з Outlook"
       ],
       "Contract composer": [
         "Сціснуць рэдактар"
@@ -513,6 +516,12 @@
       ],
       "Import from .csv or vCard": [
         "Імпартаванне з .csv або vCard"
+      ],
+      "Import from Google": [
+        "Імпартаваць з Google"
+      ],
+      "Import from Outlook": [
+        "Імпартаваць з Outlook"
       ],
       "In the morning": [
         "Раніцай"
@@ -2938,6 +2947,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шыфраванне і імпартаванне кантактаў... Гэта можа заняць некалькі хвілін. Калі працэс будзе завершаны, вы зможаце закрыць гэта акно."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Пераканайцеся, што файл не перавышае аб'ем у ${ MAX_IMPORT_FILE_SIZE_STRING } або ${ MAX_IMPORT_CONTACTS_STRING } кантакты для імпартавання праз файл CSV і VCF. Раздзяліце яго на меншыя часткі, калі файл перавышае максімальны аб'ём. ${ learnMoreLink }"
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Здаецца, што спіс кантактаў, які вы імпартуеце, змяшчае групы. Паглядзіце, як неабходна імпартаваць такія групы."
       ],
@@ -2965,11 +2977,8 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Ашчаджайце час адпраўляючы лісты або запрашэнні ўсім адрасатам адначасова. Адна з прэміяльных функцый сярод многіх іншых. Палепшыце свой тарыфны план, каб скарыстацца ёй."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Максімальны памер файла не павінен перавышаць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець ${ MAX_IMPORT_CONTACTS_STRING } кантакт. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі.",
-        "Максімальны памер файла не павінен перавышаць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець ${ MAX_IMPORT_CONTACTS_STRING } кантакты. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі.",
-        "Максімальны памер файла не павінен перавышаць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець ${ MAX_IMPORT_CONTACTS_STRING } кантактаў. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі.",
-        "Максімальны памер файла не павінен перавышаць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець ${ MAX_IMPORT_CONTACTS_STRING } кантакты. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі."
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Для імпартавання вашых кантактаў з Google або Outlook, ${ easySwitchLink }"
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Уключыце абарону ад праграм сачэння электроннай пошты, каб прадухіліць рэкламу і іншыя спосабы вызначэння вашага месцазнаходжання і актыўнасці ў інтэрнэце."
@@ -2997,6 +3006,11 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Вы можаце пазначыць тыя кантакты, якія вы не хочаце аб'яднаць і пакідаць. Выдаленне адбываецца толькі пасля націску кнопкі аб'яднання"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "скарыстайцеся памочнікам імпартавання Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4286,7 +4300,7 @@
         "Закрыць"
       ],
       "Closing this means giving up the free storage bonus.": [
-        "Закрыццё гэтага будзе значыць адмову ад бонусу бясплатнага сховішча."
+        "Закрыццё будзе азначаць адмову ад бонусу ў выглядзе бясплатнага сховішча."
       ],
       "Congratulation, you completed all the steps!": [
         "Віншуем, вы выканалі ўсе крокі!"

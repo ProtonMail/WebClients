@@ -302,6 +302,9 @@
       "Open navigation": [
         "Navigation öffnen"
       ],
+      "Or": [
+        "Oder"
+      ],
       "Organization": [
         "Organisation"
       ],
@@ -440,8 +443,8 @@
       "Sign out": [
         "Abmelden"
       ],
-      "Sign up for free": [
-        "Kostenlos registrieren"
+      "sign up for free": [
+        "kostenlos registrieren"
       ],
       "Signing in": [
         "Anmeldung erfolgt"
@@ -723,6 +726,22 @@
         "Dein Abonnement verlängert sich am Ende deines Abrechnungszeitraums automatisch zum Standard-Rabattpreis und für die Standarddauer."
       ]
     },
+    "bf2023: header": {
+      "Save with Black Friday deals on a high-speed Swiss VPN": [
+        "Spare mit Black-Friday-Angeboten für das Hochgeschwindigkeits-VPN aus der Schweiz"
+      ],
+      "Select your Black Friday offer": [
+        "Wähle dein Black Friday-Angebot"
+      ]
+    },
+    "bf2023: info": {
+      "All premium ${ BRAND_NAME } services. One easy subscription.": [
+        "Alle Premium-Dienste von ${ BRAND_NAME }. Ein einfaches Abonnement."
+      ],
+      "Secure browsing and premium VPN features.": [
+        "Sicheres Surfen und Premium-VPN-Funktionen."
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 Tage Geld-zurück-Garantie"
@@ -753,11 +772,12 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Umgehe lokale Internetsperren und Zensuren mit unserem globalen Servernetz."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
-        "Beinhaltet Unterstützung für ${ domains } benutzerdefinierte E-Mail-Domain, ${ addresses } E-Mail-Adressen, ${ aliases } „hide-my-email“-Aliasse, Kalenderfreigabe und mehr."
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Beinhaltet Unterstützung für eine eigene E-Mail-Domain, 10 E-Mail-Adressen, 10 „hide-my-email“-Aliasse, Kalenderfreigabe und mehr."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Beinhaltet Unterstützung für ${ domains } benutzerdefinierte E-Mail-Domain, ${ addresses } E-Mail-Adressen, unbegrenzte „hide-my-email“-Aliasse, Kalenderfreigabe und mehr."
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Beinhaltet Unterstützung für 3 benutzerdefinierte E-Mail-Domänen, ${ addresses } E-Mail-Adresse, unbegrenzte „hide-my-email“-Aliase, Kalenderfreigabe und mehr.",
+        "Beinhaltet Unterstützung für 3 benutzerdefinierte E-Mail-Domänen, ${ addresses } E-Mail-Adressen, unbegrenzte „hide-my-email“-Aliase, Kalenderfreigabe und mehr."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
@@ -2556,7 +2576,7 @@
       ],
       "Terabyte": [
         "Terabyte",
-        "Terabytes"
+        "Terabyte"
       ]
     },
     "Font face option": {
@@ -2695,6 +2715,10 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } Adresse",
+        "${ amountOfAddresses } Adressen"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } benötigt deine Erlaubnis, um ${ enableDesktopNotifications }."
       ],
@@ -2724,12 +2748,23 @@
         "${ number } Server",
         "${ number } Server"
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "${ plan } entfernt. Bundle-Angebot für 1-Monats-Abonnement nicht verfügbar."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } erfordert mindestens einen dedizierten Server ${ serverPricePerMonth }"
       ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } Server wird noch eingerichtet. Das dauert normalerweise etwa ${ provisioningDuration }.",
         "${ provisioningCounter } Server werden noch eingerichtet. Das dauert normalerweise etwa ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } weitere",
+        "${ remainingAddresses.length } weitere"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length } weitere Adresse",
+        "${ remainingAddresses.length } weitere Adressen"
       ],
       "${ storage } storage": [
         "${ storage } Speicherplatz"
@@ -2805,10 +2840,6 @@
       "Additional options": [
         "Zusätzliche Optionen"
       ],
-      "address": [
-        "Adresse",
-        "Adressen"
-      ],
       "Admin account allocation": [
         "Admin-Konto-Zuweisung"
       ],
@@ -2880,6 +2911,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Bevor du mit dem Senden und Empfangen von Nachrichten von deinen neuen E-Mail-Adressen beginnen kannst, müssen die dazugehörigen Verschlüsselungscodes erstellt werden."
+      ],
+      "Billed at ${ price }": [
+        "Abgerechnet zum Preis von ${ price }"
       ],
       "Billing cycle: ${ text }": [
         "Abrechnungszeitraum: ${ text }"
@@ -3171,9 +3205,6 @@
       "MM/YY": [
         "MM/JJ"
       ],
-      "more": [
-        "mehr"
-      ],
       "Multi-user support not enabled.": [
         "Mehrbenutzerunterstützung nicht aktiviert."
       ],
@@ -3349,6 +3380,9 @@
       ],
       "Revoke certificate ${ name }": [
         "Zertifikat ${ name } widerrufen"
+      ],
+      "Save ${ percentage }": [
+        "Spare ${ percentage }"
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Speichere dein Passwort an einem sicheren Ort. Klicke auf das Symbol, um zu bestätigen, dass du dein Passwort korrekt eingegeben hast."
@@ -7406,8 +7440,8 @@
       ]
     },
     "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Zugang zu Secure Core-Servern, schnelle P2P/BitTorrent-Downloads, Tor über VPN, Double Hop und mehr."
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Zugang zu Secure Core-Servern, schnelle P2P/BitTorrent-Downloads, Tor über VPN und mehr."
       ]
     },
     "Warning": {

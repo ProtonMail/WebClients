@@ -881,9 +881,6 @@
       "Sign out of all accounts": [
         "Log ud alle konti"
       ],
-      "Sign up for free": [
-        "Tilmeld gratis"
-      ],
       "Signing in": [
         "Logger ind"
       ],
@@ -2838,10 +2835,6 @@
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Adskil forskellige aspekter af dit liv, med flere e-mailadresser, og lås op for flere premium-funktioner, når du opgraderer."
-      ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Hvis din fil er større, bedes du opdele den i mindre filer.",
-        "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis din fil er større, bedes du opdele den i mindre filer."
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "For at fjerne ${ MAIL_APP_NAME } sidefoden, opgrader og lås op for endnu flere premium-funktioner."
@@ -5294,10 +5287,6 @@
       "Additional options": [
         "Yderligere indstillinger"
       ],
-      "address": [
-        "adresse",
-        "adresser"
-      ],
       "Admin account allocation": [
         "Admin-konto tildeling"
       ],
@@ -6054,9 +6043,6 @@
       "Monthly ${ onDayString }": [
         "Månedlig ${ onDayString }"
       ],
-      "more": [
-        "mere"
-      ],
       "Multi-user support not enabled.": [
         "Understøttelse af flere brugere ikke aktiveret."
       ],
@@ -6297,6 +6283,9 @@
       "Priority support": [
         "Prioriteret support"
       ],
+      "Promotion expired": [
+        "Kampagnen er udløbet"
+      ],
       "Protected by Swiss privacy laws": [
         "Beskyttet af schweizisk lovgivning om privatlivsbeskyttelse"
       ],
@@ -6528,6 +6517,9 @@
       ],
       "Thank you": [
         "Tak"
+      ],
+      "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
+        "Tak, fordi du støtter vores mission om at opbygge et bedre internet, hvor privatliv og frihed kommer i første række."
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Den ${ boldDataLocked } besked vil ikke længere blive vist, men du kan stadig låse dine data op under ${ encryptionAndKeysLink }."
@@ -9721,14 +9713,6 @@
         "Dit valgte abonnement: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Prøveversion"
-      ],
-      "Your account's usage": [
-        "Din kontos forbrug"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Slet konto?"
@@ -9750,6 +9734,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås op for premium-funktioner ved at opgradere"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Prøveversion"
+      ],
+      "Your account's usage": [
+        "Din kontos forbrug"
       ]
     },
     "new_plans: tooltip": {
@@ -9796,6 +9788,9 @@
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Mulighed for at se ikke-private brugerindbakker som brugeren ville, herunder fulde besked- og kontaktoplysninger"
       ],
+      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
+        "Organisationsstyringsværktøj, der lader administratorer tilføje og fjerne brugere, tildele lagerplads, konfigurere domæner og udføre andre opgaver"
+      ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Vores robuste infrastruktur sikrer, at du kan få adgang til din konto, når du har brug for det"
       ],
@@ -9819,6 +9814,9 @@
       ],
       "Requires a code sent to a mobile phone to sign in. This ensures even if a password is compromised, the account stays secure.": [
         "Kræver en kode sendt til en mobiltelefon for at logge ind. Dette sikrer at kontoen forbliver sikker, selvom en adgangskode er kompromitteret."
+      ],
+      "Reset user passwords and reset two-factor authentication on users": [
+        "Nulstil brugeradgangskoder og nulstil to-faktor-godkendelse på brugere"
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Send din internettrafik gennem Tor-netværket med ét enkelt tryk"
@@ -10316,9 +10314,6 @@
       "Download to continue ${ size }": [
         "Download for at fortsætte ${ size }"
       ],
-      "Keep this plan and use ${ appName }": [
-        "Behold dette abonnement og brug ${ appName }"
-      ],
       "Or ${ createANewAccount }": [
         "Eller ${ createANewAccount }"
       ],
@@ -10328,14 +10323,8 @@
       "Start using ${ appName } now": [
         "Begynd at bruge ${ appName } nu"
       ],
-      "Upgrade for only ${ relativePrice } extra per month": [
-        "Opgradér for kun ${ relativePrice } ekstra om måneden"
-      ],
       "Upgrade my plan": [
         "Opgradér mit abonnement"
-      ],
-      "Use ${ free } instead": [
-        "Brug ${ free } i stedet for"
       ]
     },
     "pass_signup_2023: Feature": {
@@ -10439,9 +10428,6 @@
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "Hvis du bliver låst ude af din ${ BRAND_NAME }-konto, vil dit **gendannelseskit** give dig mulighed for at logge ind og gendanne dine data."
       ],
-      "Includes basic ${ appName } features:": [
-        "Indeholder grundlæggende ${ appName }-funktioner:"
-      ],
       "Install ${ PASS_APP_NAME }": [
         "Installér ${ PASS_APP_NAME }"
       ],
@@ -10505,9 +10491,6 @@
       "Verifying your payment": [
         "Verificerer din betaling"
       ],
-      "Welcome to ${ plan }": [
-        "Velkommen til ${ plan }"
-      ],
       "Works on all devices": [
         "Virker på alle enheder"
       ],
@@ -10519,11 +10502,6 @@
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Din organisation har adgang til ${ free }. Hvis du vil have adgang til premium ${ appName }-funktioner, skal du bede din organisations administrator om at opgradere."
-      ]
-    },
-    "pass_signup_2023: Onboarding": {
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Velkommen til ${ PASS_APP_NAME }"
       ]
     },
     "pass_signup_2023: Title": {
@@ -12255,9 +12233,6 @@
       ],
       "Auto-reply": [
         "Autosvar"
-      ],
-      "Auto-reply and forward": [
-        "Autosvar og videresend"
       ],
       "Automatically sign outgoing messages?": [
         "Auto-signér udgående beskeder?"

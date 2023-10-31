@@ -434,9 +434,6 @@
       "Sign out": [
         "Terminar sessão"
       ],
-      "Sign up for free": [
-        "Registe-se gratuitamente"
-      ],
       "Signing in": [
         "A iniciar sessão"
       ],
@@ -573,7 +570,7 @@
         "Desativar"
       ],
       "Disable E2EE mail": [
-        "Desativar o e-mail E2E"
+        "Desativar o e-mail E2EE"
       ],
       "Disallow unsigned mail": [
         "Não permitir e-mails sem assinatura"
@@ -591,7 +588,7 @@
         "Gerar chaves em falta"
       ],
       "Saving": [
-        "Guardando"
+        "A guardar"
       ],
       "Set as default": [
         "Predefinir"
@@ -617,7 +614,7 @@
         "Chaves em falta"
       ],
       "No E2EE mail": [
-        "Correio eletrónico sem E2EE"
+        "E-mail sem E2EE"
       ],
       "Orphan": [
         "Órfão"
@@ -1625,10 +1622,10 @@
         "Erro na linha ${ erroredRowsString }."
       ],
       "It looks like your file is missing the '${ options.fieldName }' header.": [
-        "Parece que o seu arquivo não tem o cabeçalho '${ options.fieldName }'."
+        "Parece que o seu ficheiro não tem o cabeçalho '${ options.fieldName }'."
       ],
       "We detected errors in multiple rows during import, please review your CSV file.": [
-        "Detectámos erros em várias linhas durante a importação. Verifique o seu arquivo CSV."
+        "Detetámos erros em várias linhas durante a importação. Verifique o seu arquivo CSV."
       ]
     },
     "Cycle": {
@@ -2199,7 +2196,7 @@
         "Ocorreu um erro. Tente de novo."
       ],
       "Member updated": [
-        "O membro foi actualizado."
+        "O membro foi atualizado."
       ]
     },
     "familyOffer_2023:Title": {
@@ -2638,10 +2635,6 @@
       "Additional options": [
         "Opções adicionais"
       ],
-      "address": [
-        "endereço",
-        "endereços"
-      ],
       "Admin account allocation": [
         "Alocação da conta do administrador"
       ],
@@ -3003,9 +2996,6 @@
       ],
       "MM/YY": [
         "MM/AA"
-      ],
-      "more": [
-        "mais"
       ],
       "Multi-user support not enabled.": [
         "Suporte a multi-utilizador não ativado."
@@ -5112,7 +5102,7 @@
     },
     "new_plans: upgrade": {
       "Included with multiple users ${ BRAND_NAME } for Business plans.": [
-        "Incluído com vários utilizadores ${ BRAND_NAME } para planos empresariais."
+        "Incluído com vários utilizadores ${ BRAND_NAME } para planos Business."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -5258,16 +5248,16 @@
     },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
-        "${ upgradeLink } para adicionar mais utilizadores ou remover algumas contas de utilizador para libertar espaço."
+        "${ upgradeLink } para adicionar mais utilizadores ou remova algumas contas de utilizador para libertar espaço."
       ],
       "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
         "${ upgradeLink } para obter mais contas ou remover o acesso VPN de alguns utilizadores."
       ],
       "${ upgradeLink } to get more addresses, or remove some addresses to free up space.": [
-        "${ upgradeLink } para obter mais endereços, ou remover alguns endereços para libertar espaço."
+        "${ upgradeLink } para obter mais endereços, ou remova alguns endereços para libertar espaço."
       ],
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
-        "${ upgradeLink } para obter mais armazenamento, ou remover algum armazenamento para libertar espaço."
+        "${ upgradeLink } para obter mais armazenamento, ou remova algum armazenamento para libertar espaço."
       ],
       "Your plan includes a maximum of ${ availableAddresses } more address.": [
         "O seu plano inclui um máximo de mais ${ availableAddresses } endereço.",
@@ -5484,10 +5474,10 @@
         "Alterar a palavra-passe da organização"
       ],
       "Creating new users": [
-        "A criar usuários"
+        "A criar utilizadores"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
-        "Devido a uma alteração de palavra-passe, os privilégios de administrador da sua organização foram restringidos. As seguintes acções já não são permitidas:"
+        "Devido a uma alteração de palavra-passe, os privilégios de administrador da sua organização foram restringidos. As seguintes ações já não são permitidas:"
       ],
       "Reading emails of non-private users": [
         "Ler e-mails de utilizadores não privados"
@@ -7092,11 +7082,6 @@
       ],
       "Your ${ selected } plan": [
         "O seu plano ${ selected }"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Acesso a servidores Secure Core, transferências P2P/BitTorrent rápidas, Tor sobre VPN, Double hop, e mais."
       ]
     },
     "VPNClient": {

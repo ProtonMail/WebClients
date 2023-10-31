@@ -440,9 +440,6 @@
       "Sign out": [
         "Oturumu kapat"
       ],
-      "Sign up for free": [
-        "Ücretsiz hesap açın"
-      ],
       "Signing in": [
         "Oturum açılıyor"
       ],
@@ -723,6 +720,22 @@
         "Aboneliğiniz, faturalama döneminizin sonunda otomatik olarak standart tarife ve süre üzerinden yenilenir."
       ]
     },
+    "bf2023: header": {
+      "Save with Black Friday deals on a high-speed Swiss VPN": [
+        "Yüksek hızlı İsviçre VPN hizmetinde Muhteşem Cuma fırsatlarıyla indirim alın"
+      ],
+      "Select your Black Friday offer": [
+        "Muhteşem Cuma teklifinizi seçin"
+      ]
+    },
+    "bf2023: info": {
+      "All premium ${ BRAND_NAME } services. One easy subscription.": [
+        "Tüm ücretli ${ BRAND_NAME } hizmetleri. Tek bir abonelik."
+      ],
+      "Secure browsing and premium VPN features.": [
+        "İnternette güvenli gezinin ve ücretli VPN özelliklerine erişin."
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 gün içinde ücret iade garantisi"
@@ -753,11 +766,12 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Yerel internet engellemelerini ve sansürü küresel sunucu ağlarımız ile aşın."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
-        "${ domains } özel e-posta etki alanı, ${ addresses } e-posta adresi, ${ aliases } hide-my-email takma adı, takvim paylaşımı ve daha fazlasını içerir."
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "1 özel e-posta etki alanı, 10 e-posta adresi, 10 hide-my-email takma adı, takvim paylaşma ve daha fazlası için destek içerir."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "${ domains } özel e-posta etki alanı, ${ addresses } e-posta adresi, sınırsız hide-my-email takma adı, takvim paylaşımı ve daha fazlasını içerir."
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "3 özel e-posta etki alanı, ${ addresses } e-posta adresi, sınırsız hide-my-email takma adı, takvim paylaşımı ve daha fazlasını içerir.",
+        "3 özel e-posta etki alanı, ${ addresses } e-posta adresi, sınırsız hide-my-email takma adı, takvim paylaşımı ve daha fazlasını içerir."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve daha fazlası."
@@ -2532,6 +2546,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -2550,6 +2567,10 @@
       "Megabyte": [
         "Megabayt",
         "Megabayt"
+      ],
+      "Terabyte": [
+        "Terabayt",
+        "Terabayt"
       ]
     },
     "Font face option": {
@@ -2797,10 +2818,6 @@
       ],
       "Additional options": [
         "Ek seçenekler"
-      ],
-      "address": [
-        "adres",
-        "adres"
       ],
       "Admin account allocation": [
         "Yönetici hesabına ayrılan"
@@ -3163,9 +3180,6 @@
       ],
       "MM/YY": [
         "AA/YY"
-      ],
-      "more": [
-        "diğer"
       ],
       "Multi-user support not enabled.": [
         "Çok kullanıcı desteği açılmamış."
@@ -7396,11 +7410,6 @@
       ],
       "Your ${ selected } plan": [
         "${ selected } tarifeniz"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Secure Core sunucularına erişim, hızlı P2P/BitTorrent indirmeleri, VPN üzerinden Tor, Double Hop ve diğer özellikler"
       ]
     },
     "Warning": {

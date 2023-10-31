@@ -1870,12 +1870,6 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Ušetrite čas posielaním e-mailov alebo pozvánok všetkým naraz, čo je prémiová funkcia medzi mnohými ďalšími. Inovujte ešte dnes."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Súbor by mal mať maximálnu veľkosť ${ MAX_IMPORT_FILE_SIZE_STRING } a mal by mať ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Ak je váš súbor väčší, rozdeľte ho na menšie súbory.",
-        "Súbor by mal mať maximálnu veľkosť ${ MAX_IMPORT_FILE_SIZE_STRING } a mal by obsahovať maximálne ${ MAX_IMPORT_CONTACTS_STRING } kontakty. Ak je váš súbor väčší, rozdeľte ho na menšie súbory.",
-        "Súbor by mal mať maximálnu veľkosť ${ MAX_IMPORT_FILE_SIZE_STRING } a mal by obsahovať maximálne ${ MAX_IMPORT_CONTACTS_STRING } kontaktov. Ak je váš súbor väčší, rozdeľte ho na menšie súbory.",
-        "Súbor by mal mať maximálnu veľkosť ${ MAX_IMPORT_FILE_SIZE_STRING } a mal by obsahovať maximálne ${ MAX_IMPORT_CONTACTS_STRING } kontaktov. Ak je váš súbor väčší, rozdeľte ho na menšie súbory."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Pomocou myši ťahajte a pustite pre zmenu priority spojenie kontaktov. Odškrtnite kontakty, ktoré nechcete zlúčiť."
       ],
@@ -2208,7 +2202,7 @@
         "Názov štítku je príliš dlhý. Zvoľte prosím iný názov."
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
-        "Nová kontrola originálneho súboru ešte nie je nahratá, skúste to znova neskôr prosím"
+        "Nová kontrola originálneho súboru ešte nie je nahratá, skúste to znova neskôr, prosím"
       ],
       "The original file has missing active revision": [
         "Pôvodnému súboru chýbajú aktívne revízie"
@@ -2220,7 +2214,7 @@
         "Pôvodnému súboru chýba kľúč relácie"
       ],
       "The original file is not uploaded yet, please try again later": [
-        "Pôvodný súbor ešte nie je nahratý, skúste to znova neskôr prosím"
+        "Pôvodný súbor ešte nie je nahratý, skúste to znova neskôr, prosím"
       ],
       "The original folder not found": [
         "Pôvodný priečinok nebol nájdený"
@@ -2789,19 +2783,19 @@
     },
     "Font size option": {
       "Large": [
-        "Veľká"
+        "Veľké"
       ],
       "Medium (recommended)": [
-        "Stredná (odporúčané)"
+        "Stredné (odporúčané)"
       ],
       "Small": [
-        "Malý"
+        "Malé"
       ],
       "Very large": [
         "Veľmi veľká"
       ],
       "Very small": [
-        "Veľmi malý"
+        "Veľmi malé"
       ]
     },
     "Group": {
@@ -3209,7 +3203,7 @@
         "${ contactsLength } kontaktov"
       ],
       "${ doneCount } finished": [
-        "${ doneCount } dokončené",
+        "${ doneCount } dokončený",
         "${ doneCount } dokončené",
         "${ doneCount } dokončených",
         "${ doneCount } dokončených"
@@ -3273,9 +3267,6 @@
         "${ selectedContactsLength }/${ contactsLength } vybrané kontakty",
         "${ selectedContactsLength }/${ contactsLength } vybraných kontaktov",
         "${ selectedContactsLength }/${ contactsLength } vybraných kontaktov"
-      ],
-      "${ selectedCount } selected": [
-        "Vybrané: ${ selectedCount }"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } vybratá zložka",
@@ -3767,7 +3758,7 @@
         "Zistiť viac"
       ],
       "Link copied to clipboard": [
-        "Odkaz skopírovaný na nástenku"
+        "Odkaz bol skopírovaný do schránky"
       ],
       "Link owner has the password": [
         "Heslo má vlastník súboru"
@@ -4100,10 +4091,10 @@
         "Tento odkaz bude navždy deaktivovaný. Nikto s týmto odkazom nebude mať prístup k vášmu priečinku. Na opätovné zdieľanie tohto priečinka budete potrebovať nový odkaz."
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Týmto sa odstráni odkaz a odoberie prístup komukoľvek s odkazom k vášmu súboru alebo priečinku.",
+        "Týmto sa vymaže odkaz a odoberie prístup komukoľvek s odkazom k vášmu súboru alebo priečinku.",
         "Týmto sa odstránia odkazy a odoberie prístup komukoľvek s odkazom k vašim súborom alebo priečinkom.",
-        "Týmto sa odstráni odkaz a odoberie prístup komukoľvek s odkazom k vášmu súboru alebo priečinku.",
-        "Týmto sa odstráni odkaz a odoberie prístup komukoľvek s odkazom k vášmu súboru alebo priečinku."
+        "Týmto sa odstránia odkazy a odoberie prístup komukoľvek s odkazom k vašim súborom alebo priečinkom.",
+        "Týmto sa odstránia odkazy a odoberie prístup komukoľvek s odkazom k vašim súborom alebo priečinkom."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
         "Toto odstráni synchronizované zariadenie ${ deviceName } z ${ DRIVE_APP_NAME } a zastaví synchronizáciu priečinkov, ktoré ste pridali do Mojich Počítačov."
@@ -4444,7 +4435,7 @@
         "Zvukový súbor"
       ],
       "Authenticator app": [
-        "Overovacie aplikácie"
+        "Aplikácia 2FA"
       ],
       "Automatically save contacts": [
         "Automaticky ukladať kontakty"
@@ -5043,7 +5034,7 @@
         "Automaticky mazať správy v spame a koši"
       ],
       "Custom email domains": [
-        "Vlastné e-mailové domény"
+        "Vlastné emailové domény"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email aliasy"
@@ -5058,7 +5049,7 @@
         "Neobmedzené množstvo priečinkov, štítkov a filtrov"
       ],
       "Up to 15 email addresses": [
-        "Až do 15 e-mailových adries"
+        "Až 15 emailových adries"
       ],
       "Up to 3 TB of storage": [
         "Až do 3 TB úložiska"
@@ -5255,37 +5246,37 @@
         "Presunúť ${ itemsToMoveCount } súbor",
         "Presunúť ${ itemsToMoveCount } súbory",
         "Presunúť ${ itemsToMoveCount } súborov",
-        "Presunúť ${ itemsToMoveCount } súboru"
+        "Presunúť ${ itemsToMoveCount } súborov"
       ],
       "Move ${ itemsToMoveCount } folder": [
         "Presunúť ${ itemsToMoveCount } priečinok",
         "Presunúť ${ itemsToMoveCount } priečinky",
         "Presunúť ${ itemsToMoveCount } priečinkov",
-        "Presunúť ${ itemsToMoveCount } priečinka"
+        "Presunúť ${ itemsToMoveCount } priečinkov"
       ],
       "Move ${ itemsToMoveCount } item": [
         "Presunúť ${ itemsToMoveCount } položku",
         "Presunúť ${ itemsToMoveCount } položky",
         "Presunúť ${ itemsToMoveCount } položiek",
-        "Presunúť ${ itemsToMoveCount } položky"
+        "Presunúť ${ itemsToMoveCount } položiek"
       ],
       "Move ${ movingCount } file": [
         "Presunúť ${ movingCount } súbor",
         "Presunúť ${ movingCount } súbory",
         "Presunúť ${ movingCount } súborov",
-        "Presunúť ${ movingCount } súboru"
+        "Presunúť ${ movingCount } súborov"
       ],
       "Move ${ movingCount } folder": [
         "Presunúť ${ movingCount } priečinok",
         "Presunúť ${ movingCount } priečinky",
         "Presunúť ${ movingCount } priečinkov",
-        "Presunúť ${ movingCount } priečinka"
+        "Presunúť ${ movingCount } priečinkov"
       ],
       "Move ${ movingCount } item": [
         "Presunúť ${ movingCount } položku",
         "Presunúť ${ movingCount } položky",
         "Presunúť ${ movingCount } položiek",
-        "Presunúť ${ movingCount } položky"
+        "Presunúť ${ movingCount } položiek"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Nedostatok miesta na nahratie ${ formattedTotal }"
@@ -6035,8 +6026,8 @@
       ]
     },
     "Storage": {
-      "Get storage": [
-        "Získajte viac úložného priestoru"
+      "Get more storage": [
+        "Získať viac úložného priestoru"
       ],
       "Release notes": [
         "Zoznam zmien"
@@ -6877,7 +6868,7 @@
         "Meno môže obsahovať maximálne ${ MAX_NAME_LENGTH } znak",
         "Meno môže obsahovať maximálne ${ MAX_NAME_LENGTH } znaky",
         "Meno môže obsahovať maximálne ${ MAX_NAME_LENGTH } znakov",
-        "Meno môže obsahovať maximálne ${ MAX_NAME_LENGTH } znaku"
+        "Meno môže obsahovať maximálne ${ MAX_NAME_LENGTH } znakov"
       ],
       "Name must not be empty": [
         "Názov nemôže byť prázdny"
