@@ -28,7 +28,7 @@ import {
 import { WithLoading } from '@proton/hooks/useLoading';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
-import { APPS, PLANS } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { getKnowledgeBaseUrl, getTermsURL } from '@proton/shared/lib/helpers/url';
 import { Api, VPNServersCountData } from '@proton/shared/lib/interfaces';
@@ -66,11 +66,9 @@ interface Props {
     measure: Measure;
     defaultMethod: PAYMENT_METHOD_TYPES | undefined;
     takeNullCreditCard?: boolean;
-    isPassWelcome?: boolean;
 }
 
 const AccountStepPayment = ({
-    isPassWelcome,
     takeNullCreditCard,
     measure,
     cta,
@@ -382,9 +380,7 @@ const AccountStepPayment = ({
                             price={getSimplePriceString(options.currency, currentCheckout.withDiscountPerMonth, '')}
                             regularPrice={getSimplePriceString(
                                 options.currency,
-                                isPassWelcome && subscriptionData.planIDs[PLANS.PASS_PLUS]
-                                    ? 399
-                                    : currentCheckout.withoutDiscountPerMonth,
+                                currentCheckout.withoutDiscountPerMonth,
                                 ''
                             )}
                             logo={summaryPlan.logo}
