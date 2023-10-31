@@ -431,11 +431,14 @@
       "Sign in": [
         "Přihlásit se"
       ],
+      "Sign in with password": [
+        "Přihlásit se pomocí hesla"
+      ],
+      "Sign in with SSO": [
+        "Přihlásit se pomocí SSO"
+      ],
       "Sign out": [
         "Odhlásit se"
-      ],
-      "Sign up for free": [
-        "Zaregistrujte se zdarma"
       ],
       "Signing in": [
         "Přihlašování"
@@ -2410,6 +2413,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -2436,6 +2442,12 @@
         "Megabajty",
         "Megabajtů",
         "Megabajtů"
+      ],
+      "Terabyte": [
+        "Terabajt",
+        "Terabajty",
+        "Terabajtů",
+        "Terabajtů"
       ]
     },
     "Font face option": {
@@ -2699,12 +2711,6 @@
       ],
       "Additional options": [
         "Další možnosti"
-      ],
-      "address": [
-        "adresa",
-        "adresy",
-        "adres",
-        "adresy"
       ],
       "Admin account allocation": [
         "Přidělení účtu správce"
@@ -3071,9 +3077,6 @@
       ],
       "MM/YY": [
         "MM/RR"
-      ],
-      "more": [
-        "více"
       ],
       "Multi-user support not enabled.": [
         "Podpora více uživatelů není povolena."
@@ -4484,6 +4487,9 @@
       "Create a new ${ appName } account": [
         "Vytvořit nový účet ${ appName }"
       ],
+      "Find your ${ BRAND_NAME } Account username": [
+        "Zjistěte své uživatelské jméno ${ BRAND_NAME }"
+      ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Zapomněli jste heslo ke svému ${ BRAND_NAME } účtu? Resetujte ho zde pomocí kódu pro obnovení, e-mailu nebo SMS a získejte zpět přístup k ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } a dalším aplikacím."
       ],
@@ -5111,16 +5117,16 @@
     },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
-        "${ CALENDAR_APP_NAME }: Zabezpečte svůj plán pomocí koncového šifrování. Obsahuje podporu vlastních kalendářů, sdílení kalendáře a další funkce."
+        "${ CALENDAR_APP_NAME }: Zabezpečte svůj tarif pomocí koncového šifrování. Obsahuje podporu vlastních kalendářů, sdílení kalendáře a další funkce."
       ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Obsahuje historii verzí, šifrované sdílení souborů a další funkce."
+        "${ DRIVE_APP_NAME }: Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Obsahuje historii verzí souborů, šifrované sdílení souborů a další funkce."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Zabezpečte své e-maily pomocí koncového šifrování. Obsahuje podporu vlastních e-mailových domén, 15 e-mailových adres, neomezený počet hide-my-email aliasů pro skrytí e-mailu a další."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "${ VPN_APP_NAME }: Přístup k blokovanému obsahu a soukromé prohlížení. Obsahuje ${ serversAndCountries }, nejvyšší rychlosti VPN, přístup k celosvětovým streamovacím službám, blokátor malwaru a reklam, rychlé stahování BitTorrentu a další funkce."
+        "${ VPN_APP_NAME }: Přístup k blokovanému obsahu a soukromé prohlížení. Obsahuje ${ serversAndCountries }, nejvyšší rychlosti VPN, přístup k celosvětovým streamovacím službám, blokování malwaru a reklam, rychlé stahování BitTorrentu a další funkce."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Získejte přístup k obsahu na streamovacích službách, včetně Netflix, Disney+, Prime Video, odkudkoliv"
@@ -5856,10 +5862,10 @@
     },
     "session_recovery:in_progress:info": {
       "${ gracePeriodHoursRemaining } more hour": [
-        "Zbývá ${ gracePeriodHoursRemaining } hodina",
-        "Zbývají ${ gracePeriodHoursRemaining } hodiny",
-        "Zbývá ${ gracePeriodHoursRemaining } hodin",
-        "Zbývá ${ gracePeriodHoursRemaining } hodin"
+        "${ gracePeriodHoursRemaining } další hodina",
+        "${ gracePeriodHoursRemaining } další hodiny",
+        "${ gracePeriodHoursRemaining } dalších hodin",
+        "${ gracePeriodHoursRemaining } dalších hodin"
       ],
       "Didn’t make this request?": [
         "Toto není vaše žádost?"
@@ -7163,6 +7169,9 @@
       "Sign in to join the Beta program": [
         "Přihlaste se do programu Beta"
       ],
+      "Sign in to your organization": [
+        "Přihlaste se ke své organizaci"
+      ],
       "Sign in with 2FA": [
         "Přihlásit se pomocí 2FA"
       ],
@@ -7335,7 +7344,7 @@
     },
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Zabezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
+        "${ PASS_APP_NAME }: Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
       ]
     },
     "Tor out of date": {
@@ -7472,11 +7481,6 @@
       ],
       "Your ${ selected } plan": [
         "Váš tarif ${ selected }"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Přístup k serverům Secure Core, rychlé stahování P2P/BitTorrent, Tor skrze VPN, Double hop a další."
       ]
     },
     "Warning": {

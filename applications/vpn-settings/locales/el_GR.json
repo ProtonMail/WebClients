@@ -302,6 +302,9 @@
       "Open navigation": [
         "Άνοιγμα μενού πλοήγησης"
       ],
+      "Or": [
+        "Ή"
+      ],
       "Organization": [
         "Οργανισμός"
       ],
@@ -440,8 +443,8 @@
       "Sign out": [
         "Αποσύνδεση"
       ],
-      "Sign up for free": [
-        "Εγγραφείτε δωρεάν"
+      "sign up for free": [
+        "εγγραφείτε δωρεάν"
       ],
       "Signing in": [
         "Γίνεται είσοδος"
@@ -2559,6 +2562,10 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } διεύθυνση",
+        "${ amountOfAddresses } διευθύνσεις"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Το ${ appName } χρειάζεται την άδειά σας για την ${ enableDesktopNotifications }."
       ],
@@ -2588,12 +2595,23 @@
         "${ number } διακομιστής",
         "${ number } διακομιστές"
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "${ plan } καταργήθηκε. Η προσφορά πακέτου δεν είναι διαθέσιμη σε πρόγραμμα 1 μηνός."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } απαιτεί τουλάχιστον 1 αποκλειστικό διακομιστή ${ serverPricePerMonth }"
       ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "Ο διακομιστής ${ provisioningCounter } εξακολουθεί να ρυθμίζεται. Αυτό συνήθως διαρκεί περίπου ${ provisioningDuration }.",
         "Οι διακομιστές ${ provisioningCounter } εξακολουθούν να ρυθμίζονται. Αυτό συνήθως διαρκεί περίπου ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } επιπλέον",
+        "${ remainingAddresses.length } επιπλέον"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length } επιπλέον διεύθυνση",
+        "${ remainingAddresses.length } επιπλέον διευθύνσεις"
       ],
       "${ storage } storage": [
         "${ storage } αποθηκευτικού χώρου"
@@ -2669,10 +2687,6 @@
       "Additional options": [
         "Πρόσθετες επιλογές"
       ],
-      "address": [
-        "διεύθυνση",
-        "διευθύνσεις"
-      ],
       "Admin account allocation": [
         "Κατανομή στον λογαριασμό του διαχειριστή"
       ],
@@ -2744,6 +2758,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Προτού αρχίσετε να στέλνετε και να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου από τις νέες διευθύνσεις σας, πρέπει πρώτα να δημιουργήσετε κλειδιά κρυπτογράφησης για αυτά."
+      ],
+      "Billed at ${ price }": [
+        "Χρεώνεται σε τιμή ${ price }"
       ],
       "Billing cycle: ${ text }": [
         "Κύκλος χρέωσης: ${ text }"
@@ -3035,9 +3052,6 @@
       "MM/YY": [
         "ΜΜ/ΧΧ"
       ],
-      "more": [
-        "περισσότερα"
-      ],
       "Multi-user support not enabled.": [
         "Η υποστήριξη πολλαπλών χρηστών δεν είναι ενεργοποιημένη."
       ],
@@ -3213,6 +3227,9 @@
       ],
       "Revoke certificate ${ name }": [
         "Ανάκληση πιστοποιητικού ${ name }"
+      ],
+      "Save ${ percentage }": [
+        "Εξοικονομήστε ${ percentage }"
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Φυλάξτε τον κωδικό πρόσβασής σας σε ασφαλές μέρος. Κάντε κλικ στο εικονίδιο για επιβεβαίωση της ορθής πληκτρολόγησης του κωδικού σας."
@@ -7267,8 +7284,8 @@
       ]
     },
     "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Πρόσβαση σε Secure core διακομιστές, γρήγορες λήψεις P2P/BitTorrent, Tor over VPN, Double hop και πολλά άλλα."
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Πρόσβαση σε Secure core διακομιστές, γρήγορες λήψεις P2P/BitTorrent, Tor over VPN, και πολλά άλλα."
       ]
     },
     "Warning": {
