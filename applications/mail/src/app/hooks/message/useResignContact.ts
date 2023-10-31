@@ -21,7 +21,7 @@ export const useResignContact = (localID: string) => {
         if (!address || !messageFromState.verification) {
             return;
         }
-        const { isContactSignatureVerified } = await getEncryptionPreferences(address);
+        const { isContactSignatureVerified } = await getEncryptionPreferences({ email: address });
         dispatch(resign({ ID: localID, isContactSignatureVerified }));
     }, [localID]);
 };

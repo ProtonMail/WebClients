@@ -89,13 +89,13 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
      * Initialize the key model for the modal
      */
     const prepare = async () => {
-        const apiKeysConfig = await getPublicKeysEmailHelper(
+        const apiKeysConfig = await getPublicKeysEmailHelper({
+            email: emailAddress,
             api,
             ktActivation,
-            emailAddress,
             verifyOutboundPublicKeys,
-            true
-        );
+            silence: true,
+        });
         const pinnedKeysConfig = await getKeyInfoFromProperties(vCardContact, emailGroup || '');
         const publicKeyModel = await getContactPublicKeyModel({
             emailAddress,

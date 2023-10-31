@@ -94,7 +94,11 @@ const useAddAttendees = () => {
                 const sendPreferencesMap: SimpleMap<SendPreferences> = {};
                 await Promise.all(
                     formattedAddedAttendees.map(async ({ email }) => {
-                        const encryptionPreferences = await getEncryptionPreferences(email, 0, contactEmailsMap);
+                        const encryptionPreferences = await getEncryptionPreferences({
+                            email,
+                            lifetime: 0,
+                            contactEmailsMap,
+                        });
                         const sendPreferences = getSendPreferences(
                             encryptionPreferences,
                             getIcsMessageWithPreferences(Sign)

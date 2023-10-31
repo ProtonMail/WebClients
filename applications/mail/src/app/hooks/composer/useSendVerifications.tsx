@@ -149,7 +149,11 @@ export const useSendVerifications = (
                     // However, at this point the server could provide malicious encryption information, and the user cannot visually check
                     // whether something is off through the send status icons.
                     // Hence, we must compare the newly fetched data with the cached one, which the user could verify before hitting Send.
-                    const lastMinuteEncryptionPrefs = await getEncryptionPreferences(email, 0, contactsMap);
+                    const lastMinuteEncryptionPrefs = await getEncryptionPreferences({
+                        email,
+                        lifetime: 0,
+                        contactEmailsMap: contactsMap,
+                    });
                     if (lastMinuteEncryptionPrefs.emailAddressWarnings?.length) {
                         emailWarnings[email] = lastMinuteEncryptionPrefs.emailAddressWarnings as string[];
                     }

@@ -83,7 +83,11 @@ export const useAttachmentThumbnailDownload = () => {
                 const sessionKey = await getSessionKey({ KeyPackets }, messageKeys.privateKeys, messageFlags);
 
                 // Verify API keys and get pinned keys if there are some
-                const verificationPreferences = await getVerificationPreferences(Sender.Address, 0, contactsMap);
+                const verificationPreferences = await getVerificationPreferences({
+                    email: Sender.Address,
+                    lifetime: 0,
+                    contactEmailsMap: contactsMap,
+                });
 
                 const decryptedAttachment = await decryptAndVerify(
                     apiEncryptedBinary,
