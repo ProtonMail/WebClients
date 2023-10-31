@@ -199,6 +199,9 @@
       "Close navigation": [
         "Zavřít menu"
       ],
+      "Close the checklist": [
+        "Uzavření kontrolního seznamu"
+      ],
       "Close this banner": [
         "Zavřít tento banner"
       ],
@@ -430,8 +433,14 @@
       "Get verification code": [
         "Odeslat ověřovací kód"
       ],
+      "Go to first page": [
+        "Jít na první stránku"
+      ],
       "Go to label": [
         "Přejít na štítek"
+      ],
+      "Go to last page": [
+        "Jít na poslední stránku"
       ],
       "Go to next page": [
         "Jít na další stránku"
@@ -2956,12 +2965,6 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Šetřete čas odesláním e-mailů nebo pozvánek všem najednou, což je mimo jiné prémiová funkce. Navyšte tarif ještě dnes."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Pokud je váš soubor větší, rozdělte jej na menší soubory.",
-        "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontakty. Pokud je váš soubor větší, rozdělte jej do menších souborů.",
-        "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej do menších souborů.",
-        "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej do menších souborů."
-      ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Zapnutím ochrany proti sledování e-mailů zabráníte inzerentům a dalším subjektům sledovat vaši polohu a online aktivity."
       ],
@@ -4042,6 +4045,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -4068,6 +4074,12 @@
         "Megabajty",
         "Megabajtů",
         "Megabajtů"
+      ],
+      "Terabyte": [
+        "Terabajt",
+        "Terabajty",
+        "Terabajtů",
+        "Terabajtů"
       ]
     },
     "Filter": {
@@ -4261,6 +4273,9 @@
       ],
       "Close": [
         "Zavřít"
+      ],
+      "Closing this means giving up the free storage bonus.": [
+        "Uzavřením tohoto, se vzdáte bezplatného bonusu úložiště."
       ],
       "Congratulation, you completed all the steps!": [
         "Gratulujeme, dokončili jste všechny kroky!"
@@ -5113,6 +5128,9 @@
       ],
       "Calendar side panel": [
         "Postranní panel kalendáře"
+      ],
+      "Can't find what you're looking for? ${ displayAllMailButton }": [
+        "Nemůžete najít to, co hledáte? ${ displayAllMailButton }"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nemůžete si vzpomenout na heslo? Můžeme vám pomoci smazat šifrovaná data všech kontaktů, která jsou šifrována tímto klíčem a zbavit se upozornění."
@@ -7183,6 +7201,9 @@
       "Sent": [
         "Odeslané"
       ],
+      "Set up email forwarding": [
+        "Nastavení přeposílání e-mailů"
+      ],
       "Sign up for free": [
         "Zaregistrujte se zdarma"
       ],
@@ -8233,10 +8254,10 @@
     },
     "session_recovery:in_progress:info": {
       "${ gracePeriodHoursRemaining } more hour": [
-        "Zbývá ${ gracePeriodHoursRemaining } hodina",
-        "Zbývají ${ gracePeriodHoursRemaining } hodiny",
-        "Zbývá ${ gracePeriodHoursRemaining } hodin",
-        "Zbývá ${ gracePeriodHoursRemaining } hodin"
+        "${ gracePeriodHoursRemaining } další hodina",
+        "${ gracePeriodHoursRemaining } další hodiny",
+        "${ gracePeriodHoursRemaining } dalších hodin",
+        "${ gracePeriodHoursRemaining } dalších hodin"
       ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Pokud jste o obnovení hesla nepožádali, ihned zrušte tento požadavek."
@@ -8612,6 +8633,9 @@
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Nyní ve výchozím nastavení načítáme obrázky a znemožňujeme odesílatelům, aby vás sledovali. Toto můžete změnit v ${ settingsLink }."
+      ],
+      "You can now automatically forward your emails to anyone!": [
+        "Nyní můžete automaticky přeposílat e-maily komukoli!"
       ],
       "You can now schedule your messages to be sent later": [
         "Nyní můžete naplánovat odesílání zpráv na později"

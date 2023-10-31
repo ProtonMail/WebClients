@@ -197,6 +197,9 @@
       "Close navigation": [
         "Sulje navigaatio"
       ],
+      "Close the checklist": [
+        "Sulje tarkistuslista"
+      ],
       "Close this banner": [
         "Sulje tämä ilmoituspalkki"
       ],
@@ -424,8 +427,14 @@
       "Get verification code": [
         "Hanki vahvistuskoodi"
       ],
+      "Go to first page": [
+        "Siirry ensimmäiselle sivulle"
+      ],
       "Go to label": [
         "Siirry tunnisteeseen"
+      ],
+      "Go to last page": [
+        "Siirry viimeiselle sivulle"
       ],
       "Go to next page": [
         "Siirry seuraavalle sivulle"
@@ -2934,10 +2943,6 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Säästä aikaa lähettämällä viestit tai kutsut saman tien koko porukalle. Yksi premium-ominaisuus monien muiden joukossa. Päivitä tilauksesi tänään."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Tiedosto voi olla enintään ${ MAX_IMPORT_FILE_SIZE_STRING } kokoinen ja sisältää ${ MAX_IMPORT_CONTACTS_STRING } yhteystiedon. Jos tiedosto on suurempi, jaa se pienempiin tiedostoihin.",
-        "Tiedosto voi olla enintään ${ MAX_IMPORT_FILE_SIZE_STRING } kokoinen ja sisältää enintään ${ MAX_IMPORT_CONTACTS_STRING } yhteystietoa. Jos tiedosto on suurempi, jaa se pienempiin tiedostoihin."
-      ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Ota sähköpostin seurantasuojaus käyttöön, jotta mainostajat ja muut tahot eivät voi jäljittää sijaintiasi ja valvoa verkkotoimintaasi."
       ],
@@ -3991,6 +3996,9 @@
       ],
       "MB": [
         "Mt"
+      ],
+      "TB": [
+        "Tt"
       ]
     },
     "file size format, long": {
@@ -4009,6 +4017,10 @@
       "Megabyte": [
         "Megatavu",
         "Megatavua"
+      ],
+      "Terabyte": [
+        "Teratavu",
+        "Teratavua"
       ]
     },
     "Filter": {
@@ -4202,6 +4214,9 @@
       ],
       "Close": [
         "Sulje"
+      ],
+      "Closing this means giving up the free storage bonus.": [
+        "Menetät ilmaisen tallennustilabonuksen jos suljet tämän."
       ],
       "Congratulation, you completed all the steps!": [
         "Onnittelut, olet suorittanut kaikki vaiheet!"
@@ -4948,6 +4963,9 @@
       ],
       "Calendar side panel": [
         "Calendar-sivupaneeli"
+      ],
+      "Can't find what you're looking for? ${ displayAllMailButton }": [
+        "Etkö löydä etsimääsi? ${ displayAllMailButton }"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Etkö muista salasanaasi? Voimme auttaa kaikkien tällä avaimella salattujen yhteystietojen salattujen tietojen tyhjennyksessä, jolloin myös hälytys kuittaantuu."
@@ -6968,6 +6986,9 @@
       "Sent": [
         "Lähetetyt"
       ],
+      "Set up email forwarding": [
+        "Määritä sähköpostin ohjaus"
+      ],
       "Sign up for free": [
         "Rekisteröidy ilmaiseksi"
       ],
@@ -8331,6 +8352,9 @@
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Nyt kuvat ladataan oletusarvoisesti ja lähettäjiä estetään seuraamasta sinua. Tätä voidaan muuttaa ${ settingsLink }."
+      ],
+      "You can now automatically forward your emails to anyone!": [
+        "Voit nyt välittää sähköpostisi automaattisesti kenelle tahansa!"
       ],
       "You can now schedule your messages to be sent later": [
         "Voit nyt ajoittaa viestiesi lähetyksen myöhempään ajankohtaan"
