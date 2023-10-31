@@ -1,6 +1,7 @@
 import { BrowserWindow, Rectangle, Session, WebContents, app } from "electron";
 import { getConfig } from "./config";
 import { APP } from "./constants";
+import { isMac } from "./helpers";
 import { setApplicationMenu } from "./menu";
 import { getWindowState, setWindowState } from "./windowsStore";
 
@@ -18,6 +19,9 @@ const createWindow = (session: Session, url: string, visible: boolean, windowCon
         title: config.appTitle,
         icon: "../../assets/icons/icon.png",
         ...windowConfig, // handles windows size and position
+        // We only hide the frame and the title bar on macOS
+        titleBarStyle: isMac ? "hidden" : "default",
+        frame: !isMac,
         webPreferences: {
             devTools: config.devTools,
             // Security additions
