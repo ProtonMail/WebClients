@@ -105,8 +105,8 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
      * if no target ports are opened. Assume that if no
      * target is specified then notification is for popup */
     onNotification: (notification) => {
-        const { receiver } = notification;
-        const reg = new RegExp(`^${receiver ?? 'popup'}`);
+        const { endpoint } = notification;
+        const reg = new RegExp(`^${endpoint ?? 'popup'}`);
         const ports = WorkerMessageBroker.ports.query((key) => reg.test(key));
         const canConsume = ports.length > 0;
 
