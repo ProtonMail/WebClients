@@ -104,7 +104,7 @@ const Step1 = ({
     signupParameters: SignupParameters2;
     signupTypes: SignupType[];
     theme: SignupTheme;
-    relativePrice: string;
+    relativePrice: string | undefined;
     app: APP_NAMES;
     shortAppName: string;
     appName: string;
@@ -502,7 +502,7 @@ const Step1 = ({
                                     title={getFreeTitle(shortAppName)}
                                     price={getSimplePriceString(options.currency, 0, '')}
                                     regularPrice={getSimplePriceString(options.currency, 0, '')}
-                                    logo={<FreeLogo app={app} />}
+                                    logo={<FreeLogo app={app} dark={theme.background === 'bf'} />}
                                     discount={0}
                                     free
                                     features={getFreePassFeatures()}
