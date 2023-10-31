@@ -112,7 +112,7 @@ const FilterPreviewConditions = ({ isOpen, toggleOpen, model }: Props) => {
             <div className="max-w-full text-ellipsis" title={title}>
                 {conditionsRows.map((cond, i) => (
                     <span key={`preview-condition-${i}`}>
-                        {i === 0 ? ifLabel : operator.toLowerCase()}
+                        {i === 0 ? ifLabel : <span className="ml-1">{operator.toLowerCase()}</span>}
                         {` `}
                         {cond.element}
                     </span>
