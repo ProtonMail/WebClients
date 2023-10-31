@@ -15,6 +15,7 @@ export const BLOCKQUOTE_SELECTORS = [
     '.skiff_quote', // Skiff Mail
     'blockquote[data-skiff-mail]', // Skiff Mail
     '#divRplyFwdMsg', // Outlook Mail
+    'div[id="mail-editor-reference-message-container"]', // Outlook
     'div[id="3D\\"divRplyFwdMsg\\""]', // Office365
     'hr[id=replySplit]',
     '.moz-cite-prefix',
