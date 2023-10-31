@@ -35,7 +35,7 @@ const EOUnlock = ({ setSessionStorage }: Props) => {
     }
 
     return (
-        <main className="ui-standard shadow-lifted shadow-color-primary on-tiny-mobile-no-box-shadow relative no-scroll w100 max-w100 mx-auto eo-layout mw30r">
+        <main className="ui-standard sm:shadow-lifted shadow-color-primary relative no-scroll w100 max-w100 mx-auto eo-layout mw30r">
             <div className="eo-layout-header">
                 {isError && <h1 className="eo-layout-title mt-4" data-testid="eo:error">{c('Title').t`Error`}</h1>}
             </div>
@@ -47,9 +47,8 @@ const EOUnlock = ({ setSessionStorage }: Props) => {
                 )}
             </div>
             <div className="flex p-4 ml-auto mb-8">
-                <Href className="mx-auto" href={getKnowledgeBaseUrl('/open-password-protected-emails')}>{c(
-                    'Action'
-                ).t`Need help?`}</Href>
+                <Href className="mx-auto" href={getKnowledgeBaseUrl('/open-password-protected-emails')}>{c('Action')
+                    .t`Need help?`}</Href>
             </div>
         </main>
     );
