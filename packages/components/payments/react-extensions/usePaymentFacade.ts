@@ -1,7 +1,8 @@
 import { useMemo } from 'react';
 
-import { buyCredit, payInvoice } from '@proton/shared/lib/api/payments';
-import { Api, Currency } from '@proton/shared/lib/interfaces';
+import { buyCredit, payInvoice, subscribe } from '@proton/shared/lib/api/payments';
+import { ProductParam } from '@proton/shared/lib/apps/product';
+import { Api, Currency, Cycle, PlanIDs } from '@proton/shared/lib/interfaces';
 
 import {
     AmountAndCurrency,
@@ -20,6 +21,7 @@ import { useSavedMethod } from './useSavedMethod';
 export interface Operations {
     buyCredit: () => Promise<unknown>;
     payInvoice: (invoiceId: string) => Promise<unknown>;
+    subscribe: (data: { Plans: PlanIDs; Cycle: Cycle; Codes?: string[]; product: ProductParam }) => Promise<unknown>;
 }
 
 function getOperations(api: Api, params: ChargeablePaymentParameters): Operations {
@@ -29,6 +31,25 @@ function getOperations(api: Api, params: ChargeablePaymentParameters): Operation
         },
         payInvoice: async (invoiceId: string) => {
             return api(payInvoice(invoiceId, params));
+        },
+        subscribe: async (subscriptionData: {
+            Plans: PlanIDs;
+            Cycle: Cycle;
+            Codes?: string[];
+            product: ProductParam;
+        }) => {
+            const { product, ...data } = subscriptionData;
+
+            return api({
+                ...subscribe(
+                    {
+                        ...params,
+                        ...data,
+                    },
+                    product
+                ),
+                timeout: 60000 * 2,
+            });
         },
     };
 }

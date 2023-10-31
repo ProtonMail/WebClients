@@ -7,7 +7,13 @@ import { MAX_BITCOIN_AMOUNT, MIN_BITCOIN_AMOUNT } from '@proton/shared/lib/const
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Api } from '@proton/shared/lib/interfaces';
 
-import { AmountAndCurrency, PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS, TokenPaymentMethod } from '../../payments/core';
+import {
+    AmountAndCurrency,
+    PAYMENT_METHOD_TYPES,
+    PAYMENT_TOKEN_STATUS,
+    TokenPaymentMethod,
+    isTokenPaymentMethod,
+} from '../../payments/core';
 
 export const BITCOIN_POLLING_INTERVAL = 60000;
 
@@ -102,6 +108,14 @@ export interface BitcoinTokenModel {
 export interface ValidatedBitcoinToken extends TokenPaymentMethod {
     cryptoAmount: number;
     cryptoAddress: string;
+}
+
+export function isValidatedBitcoinToken(paymentMethod: any): paymentMethod is ValidatedBitcoinToken {
+    return (
+        isTokenPaymentMethod(paymentMethod) &&
+        typeof (paymentMethod as any).cryptoAmount === 'number' &&
+        typeof (paymentMethod as any).cryptoAddress === 'string'
+    );
 }
 
 export type OnBitcoinTokenValidated = (data: ValidatedBitcoinToken) => void;
