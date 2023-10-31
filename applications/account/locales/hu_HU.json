@@ -860,9 +860,6 @@
       "Sign out of all accounts": [
         "Minden fiók kiléptetése"
       ],
-      "Sign up for free": [
-        "Regisztráljon ingyenesen"
-      ],
       "Signing in": [
         "Bejelentkezés"
       ],
@@ -2728,10 +2725,6 @@
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Válassza külön élete különböző részeit több email címmel és oldjon fel még több prémium funkciót csomag frissítéssel"
-      ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "A fájl mérete maximum ${ MAX_IMPORT_FILE_SIZE_STRING } lehet és legfeljebb ${ MAX_IMPORT_CONTACTS_STRING } névjegyet tartalmazhat. Ha nagyobb a fájl, vágja több kisebb darabra.",
-        "A fájl mérete maximum ${ MAX_IMPORT_FILE_SIZE_STRING } lehet és legfeljebb ${ MAX_IMPORT_CONTACTS_STRING } névjegyet tartalmazhat. Ha nagyobb a fájl, vágja több kisebb darabra."
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "A ${ MAIL_APP_NAME } lábléc eltávolításához, frissítsen csomagot és oldjon fel még több prémium funkciót."
@@ -4916,10 +4909,6 @@
       "Additional options": [
         "További lehetőségek"
       ],
-      "address": [
-        "cím",
-        "cím"
-      ],
       "Admin account allocation": [
         "Tárhely admin fiók számára"
       ],
@@ -5604,9 +5593,6 @@
       ],
       "Monthly ${ onDayString }": [
         "Havonta: ${ onDayString }"
-      ],
-      "more": [
-        "több"
       ],
       "Multi-user support not enabled.": [
         "Többfelhasználós mód nem engedélyezett."
@@ -8979,11 +8965,6 @@
         "A választott csomagja: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "Your account's usage": [
-        "A fiókja kihasználtsága"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Fiók törlése?"
@@ -9005,6 +8986,11 @@
       ],
       "Unlock premium features by upgrading": [
         "Váltson nagyobb csomagra a prémium funkciók eléréshez"
+      ]
+    },
+    "new_plans: Title": {
+      "Your account's usage": [
+        "A fiókja kihasználtsága"
       ]
     },
     "new_plans: tooltip": {
@@ -11065,9 +11051,6 @@
       ],
       "Auto-reply": [
         "Automatikus válasz"
-      ],
-      "Auto-reply and forward": [
-        "Automatikus válasz és továbbítás"
       ],
       "Automatically sign outgoing messages?": [
         "Automatikusan aláírja a kimenő üzeneteket?"

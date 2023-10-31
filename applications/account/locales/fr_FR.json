@@ -635,6 +635,9 @@
       "Open navigation": [
         "Ouvrir la navigation"
       ],
+      "Or": [
+        "Ou"
+      ],
       "Ordered list": [
         "Liste numérotée"
       ],
@@ -899,8 +902,8 @@
       "Sign out of all accounts": [
         "Se déconnecter de tous les comptes"
       ],
-      "Sign up for free": [
-        "Inscrivez-vous gratuitement"
+      "sign up for free": [
+        "inscrivez-vous gratuitement"
       ],
       "Signing in": [
         "Connexion en cours"
@@ -1377,6 +1380,22 @@
         "Votre abonnement sera automatiquement renouvelé au tarif réduit habituel et pour une durée standard à la fin de votre cycle de facturation."
       ]
     },
+    "bf2023: header": {
+      "Save with Black Friday deals on a high-speed Swiss VPN": [
+        "Faites des économies sur le VPN suisse ultra rapide grâce aux offres Black Friday"
+      ],
+      "Select your Black Friday offer": [
+        "Sélectionnez votre offre Black Friday"
+      ]
+    },
+    "bf2023: info": {
+      "All premium ${ BRAND_NAME } services. One easy subscription.": [
+        "Tous les services premium de ${ BRAND_NAME } avec un seul abonnement."
+      ],
+      "Secure browsing and premium VPN features.": [
+        "Navigation sécurisée et fonctionnalités premium du VPN."
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "Garantie satisfait ou remboursé pendant 30 jours"
@@ -1392,6 +1411,9 @@
       ],
       "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
         "Le tarif réduit de ${ discountedPrice } est valable pendant ${ discountedMonths }. Ensuite, il sera automatiquement renouvelé au prix réduit de ${ nextPrice } pour ${ nextMonths }. Vous pouvez annuler quand vous le voulez."
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
+        "Le tarif exceptionnellement réduit de ${ discountedPrice } est valable le premier mois. Il sera ensuite automatiquement renouvelé à ${ nextPrice } chaque mois. Vous pouvez annuler quand vous le voulez."
       ]
     },
     "bf2023: Tooltip": {
@@ -1404,11 +1426,12 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Contournez les blocages et la censure locale sur internet grâce à notre réseau mondial de serveurs."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
-        "Comprend la prise en charge de ${ domains } domaine de messagerie personnalisé, ${ addresses } adresses e-mail, ${ aliases } alias « hide-my-email », le partage de calendrier et bien d'autres fonctionnalités."
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Comprend la prise en charge de 1 domaine de messagerie personnalisé, de 10 adresses e-mail, d'un nombre illimité d'alias « hide-my-email », du partage de calendriers et bien d'autres fonctionnalités."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Comprend la prise en charge de ${ domains } domaine de messagerie personnalisé, ${ addresses } adresses e-mail, un nombre illimité d'alias « hide-my-email », le partage de calendrier et bien d'autres fonctionnalités."
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Cela comprend la prise en charge de 3 domaines de messagerie personnalisés, de ${ addresses } adresse e-mail, d'un nombre illimité d'alias « hide-my-email », du partage de calendriers et bien d'autres fonctionnalités.",
+        "Cela comprend la prise en charge de 3 domaines de messagerie personnalisés, de ${ addresses } adresses e-mail, d'un nombre illimité d'alias « hide-my-email », du partage de calendriers et bien d'autres fonctionnalités."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Sécurisez vos connexions sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
@@ -3016,10 +3039,6 @@
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "En passant à un abonnement supérieur, vous disposez de plusieurs adresses e-mail qui vous permettent de mieux gérer vos différentes activités et vous bénéficiez de fonctionnalités premium."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et avoir ${ MAX_IMPORT_CONTACTS_STRING } contact. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits.",
-        "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et jusqu'à ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits."
-      ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Pour supprimer le pied de page ${ MAIL_APP_NAME }, changez d'abonnement et débloquez encore plus de fonctionnalité premium."
       ],
@@ -3399,7 +3418,7 @@
     },
     "email_forwarding_2023: Incoming forwarding tab name": {
       "From me": [
-        "De moi"
+        "De ma part"
       ]
     },
     "email_forwarding_2023: Info": {
@@ -3476,7 +3495,7 @@
     },
     "email_forwarding_2023: Outgoing forwarding tab name": {
       "To me": [
-        "Pour moi"
+        "À mon attention"
       ]
     },
     "email_forwarding_2023: Placeholder": {
@@ -5642,6 +5661,10 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } adresse",
+        "${ amountOfAddresses } adresses"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } a besoin de votre autorisation pour ${ enableDesktopNotifications }."
       ],
@@ -5723,6 +5746,9 @@
         "${ numberOfNonPrivateKeys } fichier chargé n'est pas une clé privée valide. Nous vous invitons à vérifier et à réessayer.",
         "${ numberOfNonPrivateKeys } fichiers chargés ne sont pas des clés privées valides. Nous vous invitons à vérifier et à réessayer."
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "L'abonnement ${ plan } a été supprimé. L'offre groupée n'est pas disponible pour un abonnement d'un mois."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } nécessite au moins un serveur dédié ${ serverPricePerMonth }."
       ],
@@ -5740,6 +5766,14 @@
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "Configuration en cours pour ${ provisioningCounter } serveur. Cela prend généralement environ ${ provisioningDuration }.",
         "Configuration en cours pour ${ provisioningCounter } serveurs. Cela prend généralement environ ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } de plus",
+        "${ remainingAddresses.length } de plus"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length } adresse de plus",
+        "${ remainingAddresses.length } adresses de plus"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } calendrier sur ${ providerCalendars.length }",
@@ -5898,10 +5932,6 @@
       ],
       "Additional options": [
         "Options supplémentaires"
-      ],
-      "address": [
-        "adresse",
-        "adresses"
       ],
       "Admin account allocation": [
         "Attribution de compte administrateur"
@@ -6076,6 +6106,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Avant de pouvoir envoyer et recevoir des messages avec vos nouvelles adresses, vous devez leur créer des clés de chiffrement."
+      ],
+      "Billed at ${ price }": [
+        "Facturé ${ price }"
       ],
       "Billing cycle: ${ text }": [
         "Cycle de facturation : ${ text }"
@@ -6659,9 +6692,6 @@
       "Monthly ${ onDayString }": [
         "Chaque mois, ${ onDayString }"
       ],
-      "more": [
-        "plus"
-      ],
       "Multi-user support not enabled.": [
         "La prise en charge du multi-utilisateur n'est pas activée."
       ],
@@ -6902,6 +6932,9 @@
       "Priority support": [
         "Assistance prioritaire"
       ],
+      "Promotion expired": [
+        "La promotion est expirée."
+      ],
       "Protected by Swiss privacy laws": [
         "Protégé par les lois suisses sur la vie privée"
       ],
@@ -6976,6 +7009,9 @@
       ],
       "Right to Left": [
         "De droite à gauche"
+      ],
+      "Save ${ percentage }": [
+        "Économisez ${ percentage }"
       ],
       "Save your password somewhere safe.": [
         "Enregistrez votre mot de passe en lieu sûr."
@@ -7070,6 +7106,9 @@
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF est utilisé pour spécifier qui est autorisé à envoyer des messages depuis ce domaine et nous vous recommandons vivement d'inclure ${ MAIL_APP_NAME }. Pour cela, ajoutez l'enregistrement TXT suivant dans votre configuration DNS. Cela se fait généralement dans le panneau de contrôle de votre registraire de nom de domaine."
       ],
+      "Stay tuned for future promotions.": [
+        "Ne manquez pas les prochaines promotions."
+      ],
       "Step ${ step }": [
         "Étape ${ step }",
         "Étape ${ step }"
@@ -7133,6 +7172,9 @@
       ],
       "Thank you": [
         "Merci"
+      ],
+      "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
+        "Merci de soutenir notre mission : créer un meilleur internet fondé sur la protection de la vie privée et la liberté."
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Le message ${ boldDataLocked } n'apparaîtra plus, mais vous pouvez toujours déverrouiller vos données sous ${ encryptionAndKeysLink }."
@@ -7223,6 +7265,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ce lien pourrait être une attaque homographique. Assurez-vous qu'il s'agit bien du lien que vous souhaitez visiter, ou ne l'ouvrez pas."
+      ],
+      "This promotion link has expired.": [
+        "Le lien de cette promotion est expiré."
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Ce jeton ne sera plus disponible une fois que vous aurez fermé cette fenêtre, et vous ne devez le partager avec personne."
@@ -7762,6 +7807,9 @@
       ],
       "Your account recovery method is set": [
         "Votre méthode de récupération de compte est définie."
+      ],
+      "Your account was successfully updated with this promotion": [
+        "La promotion a été prise en compte et votre compte a été mis à jour."
       ],
       "Your account will be updated once the payment is cleared.": [
         "Votre compte sera mis à jour une fois le paiement effectué."
@@ -9474,7 +9522,7 @@
     },
     "mail_signup_2023: Info": {
       "Secure email that protects your privacy": [
-        "Messagerie sécurisée qui protège votre vie privée."
+        "La messagerie sécurisée qui protège votre vie privée"
       ]
     },
     "Maintenance mode": {
@@ -10388,14 +10436,6 @@
         "L'abonnement que vous avez sélectionné : ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Essai de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilisation de votre compte"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Supprimer le compte ?"
@@ -10417,6 +10457,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Accédez à des fonctionnalités premium en changeant d'abonnement."
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Essai de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilisation de votre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -11127,9 +11175,6 @@
       "Download to continue ${ size }": [
         "Télécharger pour continuer ${ size }"
       ],
-      "Keep this plan and use ${ appName }": [
-        "Garder cet abonnement et utiliser ${ appName }"
-      ],
       "Or ${ createANewAccount }": [
         "Ou ${ createANewAccount }"
       ],
@@ -11139,14 +11184,8 @@
       "Start using ${ appName } now": [
         "Commencer à utiliser ${ appName }"
       ],
-      "Upgrade for only ${ relativePrice } extra per month": [
-        "Passer à la version supérieure pour seulement ${ relativePrice } de plus par mois"
-      ],
       "Upgrade my plan": [
         "Changer d'abonnement"
-      ],
-      "Use ${ free } instead": [
-        "Utiliser plutôt ${ free }"
       ]
     },
     "pass_signup_2023: Feature": {
@@ -11256,9 +11295,6 @@
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "Si vous ne pouvez pas accéder à votre compte ${ BRAND_NAME }, votre **kit de récupération** vous permettra de vous connecter et de récupérer vos données."
       ],
-      "Includes basic ${ appName } features:": [
-        "Avec les fonctionnalités de base de ${ appName } :"
-      ],
       "Install ${ PASS_APP_NAME }": [
         "Installez ${ PASS_APP_NAME }"
       ],
@@ -11328,9 +11364,6 @@
       "Verifying your payment": [
         "Vérification de votre paiement"
       ],
-      "Welcome to ${ plan }": [
-        "Bienvenue dans ${ plan }"
-      ],
       "Works on all devices": [
         "Fonctionne sur tous les appareils"
       ],
@@ -11345,11 +11378,6 @@
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Votre organisation a accès à ${ free }. Pour profiter des fonctionnalités premium de ${ appName }, demandez à l'administrateur de votre organisation de changer d'abonnement."
-      ]
-    },
-    "pass_signup_2023: Onboarding": {
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Bienvenue dans ${ PASS_APP_NAME }"
       ]
     },
     "pass_signup_2023: Title": {
@@ -12246,11 +12274,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Cet abonnement se renouvellera automatiquement tous les 2 ans au même prix jusqu'à ce qu'il soit annulé."
-      ]
-    },
-    "specialoffer: Info": {
-      "No available offers found.": [
-        "Aucune offre n'a été trouvée."
       ]
     },
     "specialoffer: Label": {
@@ -13176,9 +13199,6 @@
       "Auto-reply": [
         "Réponse automatique"
       ],
-      "Auto-reply and forward": [
-        "Réponse auto. et transfert"
-      ],
       "Automatically sign outgoing messages?": [
         "Signer automatiquement les messages sortants ?"
       ],
@@ -13508,6 +13528,9 @@
       ],
       "Folders and labels": [
         "Dossiers et labels"
+      ],
+      "Forward and auto-reply": [
+        "Transfert et réponse automatique"
       ],
       "Forward emails": [
         "Transfert automatique des messages"
@@ -14466,8 +14489,8 @@
       ]
     },
     "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Accès aux serveurs Secure Core, téléchargements P2P/BitTorrent rapides, Tor via VPN, Double Hop et bien d'autres fonctionnalités."
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Accès aux serveurs Secure Core, téléchargements P2P/BitTorrent rapides, Tor via VPN et bien d'autres fonctionnalités."
       ]
     },
     "Warning": {

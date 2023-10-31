@@ -893,9 +893,6 @@
       "Sign out of all accounts": [
         "Alle accounts uitloggen"
       ],
-      "Sign up for free": [
-        "Gratis inschrijven"
-      ],
       "Signing in": [
         "Aanmelden"
       ],
@@ -1371,6 +1368,22 @@
         "Uw abonnement wordt aan het einde van uw factureringscyclus automatisch verlengd tegen het standaard aanbiedingstarief met bijbehorende tijdsduur."
       ]
     },
+    "bf2023: header": {
+      "Save with Black Friday deals on a high-speed Swiss VPN": [
+        "Bespaar met Black Friday-deals op supersnel Swiss VPN"
+      ],
+      "Select your Black Friday offer": [
+        "Selecteer uw Black Friday-aanbieding"
+      ]
+    },
+    "bf2023: info": {
+      "All premium ${ BRAND_NAME } services. One easy subscription.": [
+        "Alle premium ${ BRAND_NAME }-services. Eén simpel abonnement."
+      ],
+      "Secure browsing and premium VPN features.": [
+        "Veilig browsen en premium VPN-functies in."
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 dagen geld-terug-garantie"
@@ -1401,11 +1414,12 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Omzeil plaatselijke internetblokkades en censuur met ons wereldwijde serversnetwerk."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
-        "Ondersteuning voor ${ domains } aangepaste e-maildomeinen, ${ addresses } e-mailadressen, ${ aliases } hide-my-email-aliassen, gedeelde agenda's en meer."
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Ondersteuning voor 1 aangepast e-maildomein, 10 e-mailadressen, 10 hide-my-email-aliassen, gedeelde agenda's en meer."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Ondersteuning voor ${ domains } aangepaste e-maildomeinen, ${ addresses } e-mailadressen, een ongelimiteerd aantal hide-my-email-aliassen, gedeelde agenda's en meer."
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Ondersteuning voor 3 aangepaste e-maildomeinen, ${ addresses } e-mailadres, onbeperkt hide-my-email-aliassen, gedeelde agenda's en meer.",
+        "Ondersteuning voor 3 aangepaste e-maildomeinen, ${ addresses } e-mailadressen, onbeperkt hide-my-email-aliassen, gedeelde agenda's en meer."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
@@ -3012,10 +3026,6 @@
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Scheid verschillende aspecten van uw leven met meerdere e-mailadressen en ontgrendel meer premiumfuncties wanneer u upgradet."
-      ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en ${ MAX_IMPORT_CONTACTS_STRING } contact hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden.",
-        "Het bestand mag een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en tot ${ MAX_IMPORT_CONTACTS_STRING } contacten hebben. Als uw bestand groter is, splits het dan op in kleinere bestanden."
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Upgrade om de ${ MAIL_APP_NAME }-voet te verwijderen en ontgrendel nog meer premium functies."
@@ -5612,10 +5622,6 @@
       "Additional options": [
         "Aanvullende opties"
       ],
-      "address": [
-        "adres",
-        "adressen"
-      ],
       "Admin account allocation": [
         "Toewijzing beheerdersaccount"
       ],
@@ -6368,9 +6374,6 @@
       ],
       "Monthly ${ onDayString }": [
         "Maandelijks ${ onDayString }"
-      ],
-      "more": [
-        "meer"
       ],
       "Multi-user support not enabled.": [
         "Ondersteuning voor meerdere gebruikers niet ingeschakeld."
@@ -10092,14 +10095,6 @@
         "Uw geselecteerde abonnement: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Proefversie"
-      ],
-      "Your account's usage": [
-        "Verbruik van uw account"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Account verwijderen?"
@@ -10121,6 +10116,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Ontgrendel premium functies door te upgraden"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Proefversie"
+      ],
+      "Your account's usage": [
+        "Verbruik van uw account"
       ]
     },
     "new_plans: tooltip": {
@@ -10831,9 +10834,6 @@
       "Download to continue ${ size }": [
         "Downloaden om verder te gaan ${ size }"
       ],
-      "Keep this plan and use ${ appName }": [
-        "Behoud dit abonnement en gebruik ${ appName }"
-      ],
       "Or ${ createANewAccount }": [
         "Of ${ createANewAccount }"
       ],
@@ -10843,14 +10843,8 @@
       "Start using ${ appName } now": [
         "Begin ${ appName } nu te gebruiken"
       ],
-      "Upgrade for only ${ relativePrice } extra per month": [
-        "Upgraden voor slechts ${ relativePrice } extra per maand"
-      ],
       "Upgrade my plan": [
         "Mijn abonnement upgraden"
-      ],
-      "Use ${ free } instead": [
-        "Gebruik in plaats daarvan ${ free }"
       ]
     },
     "pass_signup_2023: Feature": {
@@ -10960,9 +10954,6 @@
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "Als u buitengesloten raakt uit uw ${ BRAND_NAME }-account, zal uw **herstelkit** u toelaten om in te liggen en uw data te herstellen."
       ],
-      "Includes basic ${ appName } features:": [
-        "Basis ${ appName }-functies inbegrepen:"
-      ],
       "Install ${ PASS_APP_NAME }": [
         "Installeer ${ PASS_APP_NAME }"
       ],
@@ -11032,9 +11023,6 @@
       "Verifying your payment": [
         "Verifiëren van uw betaling"
       ],
-      "Welcome to ${ plan }": [
-        "Welkom bij ${ plan }"
-      ],
       "Works on all devices": [
         "Werkt op alle apparaten"
       ],
@@ -11046,11 +11034,6 @@
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Uw organisatie heeft toegang tot ${ free }. Neem contact op met uw organisatiebeheerder om te upgraden als u premium toegang wil tot ${ appName }-functies."
-      ]
-    },
-    "pass_signup_2023: Onboarding": {
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Welkom bij ${ PASS_APP_NAME }"
       ]
     },
     "pass_signup_2023: Title": {
@@ -11944,11 +11927,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Dit abonnement wordt na 2 jaar automatisch verlengd tegen dezelfde prijs totdat het wordt opgezegd."
-      ]
-    },
-    "specialoffer: Info": {
-      "No available offers found.": [
-        "Geen aanbiedingen gevonden."
       ]
     },
     "specialoffer: Label": {
@@ -12873,9 +12851,6 @@
       ],
       "Auto-reply": [
         "Automatisch antwoord"
-      ],
-      "Auto-reply and forward": [
-        "Automatisch beantwoorden en doorsturen"
       ],
       "Automatically sign outgoing messages?": [
         "Automatisch uitgaande berichten ondertekenen?"
@@ -14158,11 +14133,6 @@
       ],
       "Your ${ selected } plan": [
         "Je ${ selected }-abonnement"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Toegang tot Secure Core-servers, snelle P2P/BitTorrent-downloads, Tor over VPN, en meer."
       ]
     },
     "Warning": {

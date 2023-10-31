@@ -860,9 +860,6 @@
       "Sign out of all accounts": [
         "退出所有账户"
       ],
-      "Sign up for free": [
-        "免费注册"
-      ],
       "Signing in": [
         "正在登录"
       ],
@@ -2756,9 +2753,6 @@
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "使用多个电子邮件地址分隔您生活的不同方面，并在升级时解锁更多高级功能。"
-      ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
-        "文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且联系人总数上限为 ${ MAX_IMPORT_CONTACTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "要删除 ${ MAIL_APP_NAME } 页脚，请升级并解锁更多高级功能。"
@@ -4955,9 +4949,6 @@
       "Additional options": [
         "其他选项"
       ],
-      "addresses": [
-        "地址"
-      ],
       "Admin account allocation": [
         "分配管理员账户"
       ],
@@ -5665,9 +5656,6 @@
       ],
       "Monthly ${ onDayString }": [
         "每月 ${ onDayString }"
-      ],
-      "more": [
-        "更多"
       ],
       "Multi-user support not enabled.": [
         "未开启多用户功能。"
@@ -9101,11 +9089,6 @@
         "您所选的账户等级：${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "Your account's usage": [
-        "您的账户使用情况"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "删除账户？"
@@ -9127,6 +9110,11 @@
       ],
       "Unlock premium features by upgrading": [
         "升级账户即可解锁更多高级功能"
+      ]
+    },
+    "new_plans: Title": {
+      "Your account's usage": [
+        "您的账户使用情况"
       ]
     },
     "new_plans: tooltip": {
@@ -11253,9 +11241,6 @@
       ],
       "Auto-reply": [
         "自动回复"
-      ],
-      "Auto-reply and forward": [
-        "自动回复与转发"
       ],
       "Automatically sign outgoing messages?": [
         "自动对向外发送的邮件予以数字签名？"
