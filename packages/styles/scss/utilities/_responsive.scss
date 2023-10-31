@@ -46,10 +46,6 @@
 	}
 
 	.on-tablet {
-		&-static {
-			position: static;
-		}
-
 		&-text-left {
 			text-align: start;
 		}
@@ -270,10 +266,6 @@
 
 		&-border-none {
 			border: 0;
-		}
-
-		&-static {
-			position: static;
 		}
 
 		@for $i from 2 through 5 {
