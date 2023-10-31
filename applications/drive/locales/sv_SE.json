@@ -116,6 +116,9 @@
       "Clear query": [
         "Rensa fråga"
       ],
+      "Clear selection": [
+        "Rensa valen"
+      ],
       "Click here.": [
         "Klicka här."
       ],
@@ -160,6 +163,9 @@
       ],
       "Continue with Google": [
         "Fortsätt med Google"
+      ],
+      "Continue with Outlook": [
+        "Fortsätt med Outlook"
       ],
       "Copy address": [
         "Kopiera adress"
@@ -366,6 +372,12 @@
       ],
       "Import from .csv or vCard": [
         "Importera från .csv eller vCard"
+      ],
+      "Import from Google": [
+        "Importera från Google"
+      ],
+      "Import from Outlook": [
+        "Importera från Outlook"
       ],
       "Learn more": [
         "Lär dig mer"
@@ -702,6 +714,9 @@
       ],
       "Upload folder": [
         "Ladda upp mapp"
+      ],
+      "Upload photos": [
+        "Ladda upp ett foton"
       ],
       "Upload picture": [
         "Ladda upp bild"
@@ -1850,6 +1865,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterar och importerar kontakter... Detta kan ta några minuter. När processen är slutförd kan du stänga detta fönster."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "För import via CSV- och VCF-fil, se till att filen inte överstiger ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Om din fil är större, dela upp den i mindre filer. ${ learnMoreLink }."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det verkar som kontaktlistan du importerar innehåller några grupper. Granska hur dessa grupper ska importeras."
       ],
@@ -1862,9 +1880,8 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Spara tid genom att skicka e-post eller inbjudningar till alla samtidigt, en premiumfunktion bland många andra. Uppgradera idag."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Filen ska ha en maximal storlek på ${ MAX_IMPORT_FILE_SIZE_STRING } och ha upp till ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Om din fil är större, dela upp den i mindre filer.",
-        "Filen ska ha en maximal storlek på ${ MAX_IMPORT_FILE_SIZE_STRING } och ha upp till ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Om din fil är större, dela upp den i mindre filer."
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "För att importera dina kontakter från Google eller Outlook, ${ easySwitchLink }."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Använd dra och släpp för att ange prioritet vid sammanslagning av kontakter. Avmarkera kontakterna du inte vill sammanfoga."
@@ -1874,6 +1891,11 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Du kan markera för att radera de kontakter som du varken slå ihop eller behålla. Radering kommer endast att ske efter att du klickat på sammanslagningsknappen"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "använd importassistenten Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2145,6 +2167,9 @@
       ],
       "Some contacts could not be deleted": [
         "Några kontakter kunde inte tas bort"
+      ],
+      "Some files were ignored because they are not supported in Photos": [
+        "Några filer ignorerades eftersom de inte stöds i foton"
       ],
       "Some groups could not be deleted": [
         "Några grupper kunde inte tas bort"
@@ -3179,6 +3204,7 @@
         "${ selectedContactsLength }/${ contactsLength } kontakter valda"
       ],
       "${ selectedCount } selected": [
+        "${ selectedCount } vald",
         "${ selectedCount } valda"
       ],
       "${ selectedFoldersCount } folder selected": [
@@ -3276,6 +3302,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Är du säker på att du vill ta bort markerade objekt permanent från papperskorgen?"
+      ],
+      "As soon as you have photos or videos on your device, they will appear here.": [
+        "Så fort du har foton eller videoklipp på din enhet kommer de att visas här."
       ],
       "Attention required": [
         "Uppmärksamhet krävs"
@@ -3710,6 +3739,9 @@
       "No group found": [
         "Ingen grupp hittades"
       ],
+      "No photos yet": [
+        "Inga foton än"
+      ],
       "No results found": [
         "Inga resultat hittades"
       ],
@@ -3853,8 +3885,14 @@
       "Search Enabled": [
         "Sökning aktiverad"
       ],
+      "Select all items for": [
+        "Välj alla objekt för"
+      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Välj en uppladdad fil eller mapp och skapa en länk till den."
+      ],
+      "Select item": [
+        "Välj objekt"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Välj det e-postformat du vill använda som standard när du skickar ett e-postmeddelande till den här e-postadressen."
@@ -3973,6 +4011,9 @@
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
         "Denna länk kommer att inaktiveras permanent. Ingen med denna länk kommer att kunna komma åt din mapp. För att dela mappen igen behöver du en ny länk."
       ],
+      "This month": [
+        "Denna månad"
+      ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Detta kommer att ta bort länken och ta bort åtkomst till din fil eller mapp för alla med länken.",
         "Detta kommer att ta bort länkarna och ta bort åtkomst till dina filer eller mappar för alla med länkarna."
@@ -4011,7 +4052,7 @@
         "För att återställa dina data måste du återaktivera kontonyckeln som användes vid den tidpunkt då data skapades. Detta kräver att du kommer ihåg lösenordet som användes när nyckeln skapades."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "För att använda adressverifikation, måste lita på en eller flera tillgängliga offentliga nycklar, inklusive den du vill använda för att skicka. Detta förhindrar förfalskade krypteringsnycklar."
+        "För att använda adressverifiering måste du lita på en eller flera tillgängliga offentliga nycklar, inklusive den du vill använda för att skicka. Detta förhindrar krypteringsnycklarna att förfalskas."
       ],
       "Today": [
         "Idag"
@@ -4078,6 +4119,9 @@
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "Stanna kvar, du har just dubblerat ditt gratis lagringsutrymme!"
+      ],
+      "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
+        "Vi har tekniska problem. Uppladdning av nya foton är tillfälligt inaktiverad."
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Fil saknar signatur. Vi kunde inte verifiera att ${ emailAddress } laddade upp ${ fileName }."
@@ -4594,6 +4638,9 @@
       "Phone number": [
         "Telefonnummer"
       ],
+      "Photo": [
+        "Foto"
+      ],
       "Please provide full details to help us take appropriate action": [
         "Ge oss fullständig information för att hjälpa oss att vidta lämpliga åtgärder"
       ],
@@ -4778,6 +4825,9 @@
       ],
       "Pay invoice": [
         "Betala faktura"
+      ],
+      "Photos": [
+        "Foton"
       ],
       "Reactivate now": [
         "Återaktivera nu"
@@ -5822,8 +5872,8 @@
       ]
     },
     "Storage": {
-      "Get storage": [
-        "Skaffa lagringsutrymme"
+      "Get more storage": [
+        "Skaffa mer lagringsutrymme"
       ],
       "Release notes": [
         "Utgivningsnoteringar"
@@ -6351,6 +6401,9 @@
       ],
       "Phone numbers": [
         "Telefonnummer"
+      ],
+      "Photos": [
+        "Foton"
       ],
       "Preview": [
         "Förhandsgranska"
