@@ -97,8 +97,14 @@ export const usePaymentFacade = ({
         run().catch(noop);
     }, [hook.methods.isNewPaypal, amount, currency]);
 
+    const helpers = {
+        selectedMethodValue: methods.selectedMethod?.value,
+        selectedMethodType: methods.selectedMethod?.type,
+    };
+
     return {
         ...hook,
+        ...helpers,
         methods,
         api,
         userCanTrigger,

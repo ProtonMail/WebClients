@@ -1,23 +1,24 @@
 import { c } from 'ttag';
 
-import { PAYMENT_METHOD_TYPES, PaymentMethodType } from '@proton/components/payments/core';
+import { PAYMENT_METHOD_TYPES, PlainPaymentMethodType } from '@proton/components/payments/core';
 import { Currency } from '@proton/shared/lib/interfaces';
 
 import { Field, Row } from '../../components';
 import PaymentSelector from './PaymentSelector';
 
 interface Props {
-    method?: PaymentMethodType;
+    paymentMethodType?: PlainPaymentMethodType;
     amount: number;
     onChangeAmount: (value: number) => void;
     currency?: Currency;
     onChangeCurrency: (currency: Currency) => void;
 }
 
-const AmountRow = ({ method, amount, onChangeAmount, currency, onChangeCurrency }: Props) => {
-    if (method === PAYMENT_METHOD_TYPES.CASH) {
+const AmountRow = ({ paymentMethodType, amount, onChangeAmount, currency, onChangeCurrency }: Props) => {
+    if (paymentMethodType === PAYMENT_METHOD_TYPES.CASH) {
         return null;
     }
+
     return (
         <Row>
             <span className="label" id="id_desc_amount">{c('Label').t`Amount`}</span>
