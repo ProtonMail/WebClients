@@ -29,9 +29,6 @@
       "Back": [
         "Précédent"
       ],
-      "Can't find your password manager? Please let us know!": [
-        "Vous ne trouvez pas votre gestionnaire de mots de passe ? Faites-le nous savoir."
-      ],
       "Cancel": [
         "Annuler"
       ],
@@ -62,6 +59,9 @@
       "Confirm access": [
         "Confirmer l'accès"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "Connectez-vous à votre compte ${ BRAND_NAME }"
+      ],
       "Continue": [
         "Continuer"
       ],
@@ -80,6 +80,9 @@
       "Create": [
         "Créer"
       ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Créer un compte ${ BRAND_NAME }"
+      ],
       "Create a ${ BRAND_NAME } account": [
         "Créer un compte ${ BRAND_NAME }"
       ],
@@ -91,6 +94,9 @@
       ],
       "Create an account": [
         "Créer un compte"
+      ],
+      "Create card": [
+        "Créer une carte"
       ],
       "Create login": [
         "Créer un identifiant"
@@ -158,8 +164,8 @@
       "Generate password": [
         "Générer un mot de passe"
       ],
-      "Generated password": [
-        "Mot de passe généré"
+      "Generated passwords": [
+        "Générer des mots de passe"
       ],
       "Get mobile apps": [
         "Télécharger les applications mobiles"
@@ -250,9 +256,6 @@
       ],
       "Pass for iOS": [
         "Pass pour iOS"
-      ],
-      "Proceed": [
-        "Continuer"
       ],
       "Refresh the page": [
         "Actualiser la page"
@@ -350,17 +353,35 @@
       "Upgrade": [
         "Changer d'abonnement"
       ],
+      "Upgrade now": [
+        "Changer d'abonnement"
+      ],
       "Upgrade now to share with more people": [
         "Changez d'abonnement maintenant pour partager avec plus de personnes."
-      ],
-      "Upgrade to keep these features": [
-        "Changer d'abonnement pour garder ces fonctionnalités"
       ],
       "Write us on Reddit": [
         "Écrivez-nous sur Reddit"
       ],
       "Write us on Twitter": [
         "Écrivez-nous sur Twitter"
+      ],
+      "Your password manager not here? Request it.": [
+        "Vous ne trouvez pas votre gestionnaire de mots de passe ici ? Demandez-le."
+      ]
+    },
+    "bf2023: Info": {
+      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
+        "Petit prix, grande protection : profitez de Proton Pass Plus pendant un an pour seulement ${ relativePrice } par mois."
+      ]
+    },
+    "bf2023: Label": {
+      "Get the deal": [
+        "J'en profite"
+      ]
+    },
+    "bf2023: Title": {
+      "Black Friday offer": [
+        "Offre Black Friday"
       ]
     },
     "Button": {
@@ -658,9 +679,6 @@
         "${ memberCount } membre",
         "${ memberCount } membres"
       ],
-      "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
-        "${ PASS_APP_NAME } importera uniquement les identifiants et les notes. Les passeports, les pièces jointes… ne sont pas encore pris en charge."
-      ],
       "${ revisionNumber } time": [
         "${ revisionNumber } fois",
         "${ revisionNumber } fois"
@@ -677,11 +695,11 @@
         "Il reste ${ trialDaysLeft } jour.",
         "Il reste ${ trialDaysLeft } jours."
       ],
+      "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
+        "7 jours pour essayer gratuitement les fonctionnalités premium, lors de votre première semaine d'utilisation de ${ BRAND_NAME }."
+      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Une nouvelle version de ${ PASS_APP_NAME } est disponible. Faites la mise à jour pour profiter des dernières fonctionnalités et corrections de bugs."
-      ],
-      "Access ${ PASS_APP_NAME } via this icon": [
-        "Accédez à ${ PASS_APP_NAME } depuis cette icône."
       ],
       "Access successfully confirmed": [
         "L'accès a été confirmé."
@@ -725,8 +743,8 @@
       "Can view items in this vault.": [
         "Permet de consulter les éléments de ce coffre-fort."
       ],
-      "Check out all the exclusive features that are available to you for a limited time.": [
-        "Découvrez toutes les fonctionnalités exclusives qui vous sont proposées pour une durée limitée."
+      "Click the icon to open it anytime.": [
+        "Quand vous voulez l'ouvrir, cliquez sur l'icône."
       ],
       "Congratulations, your access has been confirmed": [
         "Votre accès a été confirmé."
@@ -776,17 +794,14 @@
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "L'exportation est chiffrée en PGP et nécessite une phrase secrète forte."
       ],
-      "Follow these simple steps to get the best experience:": [
-        "Voici quelques étapes simples qui vous permettront de profiter de la meilleure expérience possible :"
+      "For easy access to your passwords and more.": [
+        "Pour un accès facile à vos mots de passe et à d'autres informations sensibles."
       ],
       "For security reason, your access needs to be confirmed": [
         "Pour des raisons de sécurité, votre accès doit être confirmé."
       ],
       "For security reasons, your access needs to be confirmed": [
         "Pour des raisons de sécurité, votre accès doit être confirmé."
-      ],
-      "Free Trial": [
-        "Essai gratuit"
       ],
       "Generated passwords will be stored for a period of one day.": [
         "Les mots de passe générés seront conservés pendant un jour."
@@ -818,7 +833,7 @@
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Quand cette option est activée, vous pouvez rapidement remplir automatiquement vos informations d'identification en cliquant sur l'icône ${ PASS_APP_NAME }."
       ],
-      "Import in progress :": [
+      "Import in progress:": [
         "L'importation est en cours :"
       ],
       "Imported ${ payload.total } item": [
@@ -830,9 +845,6 @@
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Pour utiliser ${ PASS_APP_NAME } dans les meilleures conditions, accordez les autorisations nécessaires à l'extension."
-      ],
-      "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
-        "Pour transférer vos données depuis un autre gestionnaire de mots de passe vers ${ PASS_APP_NAME }, exportez vos mots de passe et importez-les en utilisant le formulaire ci-dessous. Une fois tous vos éléments importés, supprimez le fichier que vous avez exporté pour le transfert."
       ],
       "Internet connection lost": [
         "La connexion internet est perdue."
@@ -916,6 +928,9 @@
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "La propriété a été transférée. Vous n'êtes plus propriétaire de ce coffre-fort."
       ],
+      "Pass Plus trial": [
+        "Version d'essai de Proton Pass Plus"
+      ],
       "Password copied": [
         "Le mot de passe a été copié."
       ],
@@ -955,8 +970,8 @@
       "Save login": [
         "Sauvegarder l'identifiant"
       ],
-      "Select the destination vault for each imported vault.": [
-        "Sélectionnez le coffre-fort de destination pour chaque coffre-fort importé."
+      "Select where you want your imported vault(s) to be saved.": [
+        "Sélectionnez l'endroit où vous voulez que vos coffres-forts importés soient enregistrés."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Les serveurs sont inaccessibles, nous vous invitons à réessayer dans quelques minutes."
@@ -991,6 +1006,9 @@
       "Successfully synced all vaults": [
         "Tous les coffres-forts ont été synchronisés."
       ],
+      "Switch to another vault or create an item in this vault": [
+        "Changez de coffre-fort ou créez un élément dans ce coffre-fort."
+      ],
       "Syncing your vaults…": [
         "Synchronisation de vos coffres-forts en cours"
       ],
@@ -1012,6 +1030,12 @@
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Ce coffre-fort n'est partagé avec personne pour le moment. Pour le partager avec d'autres personnes, invitez-les."
+      ],
+      "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
+        "Pour transférer des données depuis un autre gestionnaire de mots de passe, rendez-vous dans ce gestionnaire, exportez vos données, puis importez-les dans ${ PASS_APP_NAME }. Une fois vos données importées, supprimez le fichier qui a servi pour le transfert."
+      ],
+      "To review your imported data, click on the Pass icon in your browser toolbar.": [
+        "Pour consulter les données importées, cliquez sur l'icône Proton Pass dans la barre d'outils de votre navigateur."
       ],
       "Unable to copy to clipboard": [
         "Impossible de copier dans le presse-papiers"
@@ -1064,9 +1088,9 @@
       "You cannot change the mailboxes for this alias.": [
         "Vous ne pouvez pas modifier la véritable adresse e-mail associée à cet alias."
       ],
-      "You have ${ daysRemaining } day left in your trial period.": [
-        "Votre période d'essai se termine dans ${ daysRemaining } jour.",
-        "Votre période d'essai se termine dans ${ daysRemaining } jours."
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Il vous reste ${ daysRemaining } jour pour essayer ces fonctionnalités et d'autres de la version premium.",
+        "Il vous reste ${ daysRemaining } jours pour essayer ces fonctionnalités et d'autres de la version premium."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Vous avez dépassé le nombre de coffres-forts prévus dans votre abonnement. Les éléments peuvent uniquement être déplacés dans vos deux premiers coffres-forts. Changez d'abonnement pour pouvoir déplacer les éléments entre tous les coffres-forts."
@@ -1189,11 +1213,11 @@
       "Capitalise": [
         "Majuscules"
       ],
+      "Card": [
+        "Carte"
+      ],
       "Card number": [
         "Numéro de la carte"
-      ],
-      "Cardholder name": [
-        "Nom du titulaire de la carte"
       ],
       "Cards": [
         "Cartes"
@@ -1219,9 +1243,6 @@
       "Created": [
         "Créé"
       ],
-      "Credit Card": [
-        "Carte de paiement"
-      ],
       "Display": [
         "Affichage"
       ],
@@ -1246,11 +1267,14 @@
       "Encrypt your ${ PASS_APP_NAME } data export file": [
         "Chiffrez votre fichier d'exportation de données ${ PASS_APP_NAME }"
       ],
-      "Expires on": [
-        "Expire le"
+      "Expiration date": [
+        "Date d’expiration"
       ],
       "Export": [
         "Exportation"
+      ],
+      "Field name": [
+        "Nom du champ"
       ],
       "Forwards to": [
         "Transfert vers"
@@ -1287,9 +1311,6 @@
       ],
       "Invitations": [
         "Invitations"
-      ],
-      "Label": [
-        "Label"
       ],
       "Language": [
         "Langue"
@@ -1332,6 +1353,9 @@
       ],
       "Name": [
         "Nom"
+      ],
+      "Name on card": [
+        "Nom sur la carte"
       ],
       "Need help ?": [
         "Besoin d'aide  ?"
@@ -1407,6 +1431,9 @@
       ],
       "Security": [
         "Sécurité"
+      ],
+      "Security code": [
+        "Code de sécurité"
       ],
       "Select an email address": [
         "Sélectionnez une adresse e-mail"
@@ -1492,9 +1519,6 @@
       "Vault": [
         "Coffre-fort"
       ],
-      "Verification number": [
-        "Numéro de vérification"
-      ],
       "View details": [
         "Afficher les informations"
       ],
@@ -1574,6 +1598,9 @@
       "Move items to another vault (optional)": [
         "Déplacez les éléments vers un autre coffre-fort (facultatif)"
       ],
+      "Other": [
+        "Autre"
+      ],
       "Pick a vault": [
         "Sélectionnez un coffre-fort"
       ],
@@ -1633,7 +1660,7 @@
       "Confirm PIN code": [
         "Confirmez le code PIN"
       ],
-      "Connect your ${ BRAND_NAME } account": [
+      "Connect your ${ BRAND_NAME } Account": [
         "Connectez-vous à votre compte ${ BRAND_NAME }"
       ],
       "Create PIN code": [
@@ -1642,11 +1669,8 @@
       "Delete vault \"${ vaultName }\" ?": [
         "Supprimer le coffre-fort « ${ vaultName } » ?"
       ],
-      "Discard changes ?": [
+      "Discard changes?": [
         "Abandonner les modifications ?"
-      ],
-      "Enjoy your free trial": [
-        "Profitez de votre essai gratuit."
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Vous appréciez ${ PASS_APP_NAME } ?"
@@ -1680,6 +1704,9 @@
       ],
       "Member limit": [
         "Limite du nombre de membres"
+      ],
+      "Our welcome gift to you": [
+        "Notre cadeau de bienvenue"
       ],
       "Pending access to the shared data": [
         "En attente d'accès aux données partagées"
@@ -1735,8 +1762,8 @@
       "Welcome to ${ PASS_APP_NAME }": [
         "Bienvenue dans ${ PASS_APP_NAME }"
       ],
-      "Welcome!": [
-        "Bienvenue !"
+      "Welcome to your new password manager!": [
+        "Bienvenue dans votre nouveau gestionnaire de mots de passe !"
       ],
       "Why ${ PASS_APP_NAME }?": [
         "Pourquoi choisir ${ PASS_APP_NAME } ?"
@@ -1749,14 +1776,14 @@
       "Duplicated url": [
         "URL dupliquée"
       ],
-      "Label is required": [
-        "Le label est nécessaire."
+      "Field name is required": [
+        "Le nom du champ est nécessaire."
       ],
-      "OTP Secret or URI is invalid": [
-        "La clé secrète du mot de passe à usage unique (OTP) ou l'URL n'est pas valide."
+      "OTP secret or URI is invalid": [
+        "La clé secrète du mot de passe à usage unique (OTP) ou l'URI (Uniform Resource Identifier) n'est pas valide."
       ],
-      "OTP Secret or URI required": [
-        "La clé secrète du mot de passe à usage unique (OTP) ou l'URL est nécessaire."
+      "OTP secret or URI required": [
+        "La clé secrète du mot de passe à usage unique (OTP) ou l'URI (Uniform Resource Identifier) est nécessaire."
       ],
       "Url already exists": [
         "L'URL existe déjà."
@@ -1775,7 +1802,7 @@
       "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
         "L'alias « ${ name } » est actuellement utilisé pour l'identifiant « ${ relatedLoginName } ». Vous ne recevrez plus les messages envoyés à « ${ aliasEmail } »."
       ],
-      "All your trashed items will be permanently deleted. You can not undo this action.": [
+      "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Tous les éléments dans la corbeille seront définitivement supprimés. Vous ne pouvez pas annuler cette action."
       ],
       "An error occured while exporting your data": [
@@ -1862,7 +1889,7 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Impossible de se connecter à ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You can not undo this action": [
+      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
         "Le coffre-fort « ${ vaultName } » et tous ses éléments seront définitivement supprimés. Vous ne pouvez pas annuler cette action."
       ],
       "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
@@ -1883,8 +1910,8 @@
       "You have reached the limit of vaults you can have in your plan.": [
         "Vous avez atteint le nombre limite de coffres-forts de votre abonnement."
       ],
-      "You have unsaved changes, are you sure you want to discard them?": [
-        "Des modifications n'ont pas été enregistrées. Voulez-vous vraiment les abandonner ?"
+      "You have unsaved changes.": [
+        "Des modifications n'ont pas été enregistrées."
       ],
       "You must select at least one mailbox": [
         "Vous devez sélectionner au moins une messagerie."

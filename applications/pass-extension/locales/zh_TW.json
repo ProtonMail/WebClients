@@ -29,9 +29,6 @@
       "Back": [
         "返回"
       ],
-      "Can't find your password manager? Please let us know!": [
-        "無法找到密碼管理器?請讓我們知道"
-      ],
       "Cancel": [
         "取消"
       ],
@@ -152,9 +149,6 @@
       "Generate password": [
         "生成密碼"
       ],
-      "Generated password": [
-        "已生成密碼"
-      ],
       "Get mobile apps": [
         "取得手機應用程式"
       ],
@@ -241,9 +235,6 @@
       ],
       "Pass for iOS": [
         "Proton Pass 的 iOS 版本"
-      ],
-      "Proceed": [
-        "繼續"
       ],
       "Refresh the page": [
         "重新整理此頁面"
@@ -332,8 +323,8 @@
       "Upgrade": [
         "升級"
       ],
-      "Upgrade to keep these features": [
-        "升級以保留這些功能"
+      "Upgrade now": [
+        "立即升級"
       ],
       "Write us on Reddit": [
         "在 Reddit 上寫上我們"
@@ -580,6 +571,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -594,6 +588,9 @@
       ],
       "Megabytes": [
         "百萬位元組"
+      ],
+      "Terabytes": [
+        "TB"
       ]
     },
     "Info": {
@@ -615,9 +612,6 @@
       "${ memberCount } members": [
         "${ memberCount } 位成員"
       ],
-      "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
-        "${ PASS_APP_NAME } 只會匯入登入和附註。目前不支援護照、附件與其他。"
-      ],
       "${ revisionNumber } times": [
         "${ revisionNumber }次數"
       ],
@@ -632,9 +626,6 @@
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "有${ PASS_APP_NAME }可用更新。更新可使用最新的功能及錯誤修復。"
-      ],
-      "Access ${ PASS_APP_NAME } via this icon": [
-        "透過圖示存取${ PASS_APP_NAME }"
       ],
       "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
         "存取${ PASS_APP_NAME }需要個人識別數字代碼解鎖作業階段"
@@ -674,9 +665,6 @@
       ],
       "Can view items in this vault.": [
         "可查看保管庫的項目。"
-      ],
-      "Check out all the exclusive features that are available to you for a limited time.": [
-        "查看限時提供給您的獨家功能"
       ],
       "Copied to clipboard": [
         "已複製到剪貼簿"
@@ -720,12 +708,6 @@
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "匯出檔案以使用PGP金鑰加密且需要強的密碼片語"
       ],
-      "Follow these simple steps to get the best experience:": [
-        "透過這些步驟獲得最佳地體驗:"
-      ],
-      "Free Trial": [
-        "免費試用期"
-      ],
       "Generated passwords will be stored for a period of one day.": [
         "生成密將處存一天的時間。"
       ],
@@ -753,9 +735,6 @@
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "若啟用，您能透過${ PASS_APP_NAME }圖示自動填入資料。"
       ],
-      "Import in progress :": [
-        "正在匯入:"
-      ],
       "Imported ${ payload.total } items": [
         "匯入${ payload.total }項目"
       ],
@@ -764,9 +743,6 @@
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "給予擴充功能需要的權限，以獲得${ PASS_APP_NAME }最佳的使用體驗"
-      ],
-      "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
-        "為了從密其他碼管理器移至您的資料到 ${ PASS_APP_NAME }，透過以下形式匯出及匯入檔案。當您的項目成功匯入，刪除之前的匯出的檔案。"
       ],
       "Internet connection lost": [
         "網際網路連線中斷"
@@ -879,9 +855,6 @@
       "Save login": [
         "儲存登入資料"
       ],
-      "Select the destination vault for each imported vault.": [
-        "選取目標保管庫給每個匯入的保管庫。"
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "無法連線至伺服器。請過幾分鐘後再試"
       ],
@@ -971,9 +944,6 @@
       ],
       "You are about to create:": [
         "您將要創建:"
-      ],
-      "You have ${ daysRemaining } days left in your trial period.": [
-        "還剩 ${ daysRemaining } 天免費試用"
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "你以達到新增別名。升級訂閱以新增無限別名"
@@ -1091,9 +1061,6 @@
       "Card number": [
         "卡號"
       ],
-      "Cardholder name": [
-        "持卡人姓名"
-      ],
       "Cards": [
         "卡片"
       ],
@@ -1117,9 +1084,6 @@
       ],
       "Created": [
         "已建立"
-      ],
-      "Credit Card": [
-        "信用卡"
       ],
       "Display": [
         "顯示"
@@ -1145,8 +1109,8 @@
       "Encrypt your ${ PASS_APP_NAME } data export file": [
         "加密你的${ PASS_APP_NAME }匯出資料檔案"
       ],
-      "Expires on": [
-        "到期日"
+      "Expiration date": [
+        "有效期限"
       ],
       "Export": [
         "匯出"
@@ -1183,9 +1147,6 @@
       ],
       "Include numbers (0-9)": [
         "包含數字(0~9)"
-      ],
-      "Label": [
-        "標籤"
       ],
       "Language": [
         "語言"
@@ -1225,6 +1186,9 @@
       ],
       "Name": [
         "名稱"
+      ],
+      "Name on card": [
+        "持卡人姓名"
       ],
       "Need help ?": [
         "需要協助嗎？"
@@ -1300,6 +1264,9 @@
       ],
       "Security": [
         "安全"
+      ],
+      "Security code": [
+        "安全碼"
       ],
       "Select an email address": [
         "選取電子郵件地址"
@@ -1385,9 +1352,6 @@
       "Vault": [
         "保管庫"
       ],
-      "Verification number": [
-        "驗證碼"
-      ],
       "View details": [
         "查看詳情資料"
       ],
@@ -1467,6 +1431,9 @@
       "Move items to another vault (optional)": [
         "將項目移至其它保管庫(可選擇)"
       ],
+      "Other": [
+        "其它"
+      ],
       "Pick a vault": [
         "選擇保管庫"
       ],
@@ -1522,20 +1489,14 @@
       "Confirm PIN code": [
         "確認個人識別數字代碼"
       ],
-      "Connect your ${ BRAND_NAME } account": [
-        "連接您的${ BRAND_NAME }帳號"
-      ],
       "Create PIN code": [
         "創建個人識別數字代碼"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "刪除保管庫${ vaultName }?"
       ],
-      "Discard changes ?": [
-        "捨棄變更 ?"
-      ],
-      "Enjoy your free trial": [
-        "享受您的免費試用"
+      "Discard changes?": [
+        "捨棄變更？"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "享受 ${ PASS_APP_NAME }?"
@@ -1618,9 +1579,6 @@
       "Welcome to ${ PASS_APP_NAME }": [
         "歡迎使用 ${ PASS_APP_NAME }"
       ],
-      "Welcome!": [
-        "歡迎!"
-      ],
       "Why ${ PASS_APP_NAME }?": [
         "為甚麼 ${ PASS_APP_NAME }?"
       ],
@@ -1631,15 +1589,6 @@
     "Validation": {
       "Duplicated url": [
         "複製網址"
-      ],
-      "Label is required": [
-        "需要標簽"
-      ],
-      "OTP Secret or URI is invalid": [
-        "一次性安全碼或網址錯誤"
-      ],
-      "OTP Secret or URI required": [
-        "需要一次性代碼或網址"
       ],
       "Url already exists": [
         "網址已存在"
@@ -1657,9 +1606,6 @@
       ],
       "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
         "別名${ name }目前使用於登入項目${ relatedLoginName }。您將停止收到寄至${ aliasEmail }的電子郵件"
-      ],
-      "All your trashed items will be permanently deleted. You can not undo this action.": [
-        "您將永久刪除垃圾項目。您無法復原"
       ],
       "An error occured while exporting your data": [
         "匯出資料時發生錯誤"
@@ -1745,9 +1691,6 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "無法登入至${ PASS_APP_NAME }。${ additionalMessage }"
       ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You can not undo this action": [
-        "保管庫${ vaultName }和全部項目將被永久刪除。無法還原。"
-      ],
       "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
         "保管庫${ vaultName }將永久刪除，內容物將移至${ destinationVaultName }"
       ],
@@ -1762,9 +1705,6 @@
       ],
       "You have reached the limit of users in this vault. ${ upgradeLink }": [
         "您已達到此保管庫的使用者數向上限。 ${ upgradeLink }"
-      ],
-      "You have unsaved changes, are you sure you want to discard them?": [
-        "你有未儲存的修改。你確定要捨棄它嗎？"
       ],
       "You must select at least one mailbox": [
         "你必須至少選擇一個收件夾"
