@@ -1,4 +1,4 @@
-import { type VFC } from 'react';
+import { type VFC, useEffect } from 'react';
 
 import type { IFrameCloseOptions, IFrameMessage } from 'proton-pass-extension/app/content/types';
 import { IFrameMessageType } from 'proton-pass-extension/app/content/types';
@@ -8,7 +8,10 @@ import { Button } from '@proton/atoms/Button';
 import { OTPDonut } from '@proton/pass/components/Otp/OTPDonut';
 import { OTPValue } from '@proton/pass/components/Otp/OTPValue';
 import { usePeriodicOtpCode } from '@proton/pass/hooks/usePeriodicOtpCode';
-import type { SelectedItem } from '@proton/pass/types';
+import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
+import { type SelectedItem, WorkerMessageType } from '@proton/pass/types';
+import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 
 import { NotificationHeader } from './NotificationHeader';
 
@@ -20,6 +23,17 @@ type Props = {
 
 export const AutofillOTP: VFC<Props> = ({ item, onMessage, onClose }) => {
     const [otp, percent] = usePeriodicOtpCode({ ...item, type: 'item' });
+
+    useEffect(() => {
+        void sendMessage(
+            contentScriptMessage({
+                type: WorkerMessageType.TELEMETRY_EVENT,
+                payload: {
+                    event: createTelemetryEvent(TelemetryEventName.TwoFADisplay, {}, {}),
+                },
+            })
+        );
+    }, []);
 
     return (
         <div className="flex flex-column flex-nowrap flex-justify-space-between h-full">
