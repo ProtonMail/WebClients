@@ -1819,9 +1819,6 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "群发日程邀请与邮件，省时又省力，还有更多高级功能，升级账户即可体验。"
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
-        "文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且联系人总数上限为 ${ MAX_IMPORT_CONTACTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖动可调整联系人合并优先级，未勾选的联系人不会被合并。"
       ],
@@ -3072,9 +3069,6 @@
       ],
       "${ selectedContactsLength }/${ contactsLength } contacts selected": [
         "已选择 ${ selectedContactsLength }/${ contactsLength } 位联系人"
-      ],
-      "${ selectedCount } selected": [
-        "已选择 ${ selectedCount } 项"
       ],
       "${ selectedFoldersCount } folders selected": [
         "已选择 ${ selectedFoldersCount } 个文件夹"
@@ -5459,9 +5453,6 @@
       ]
     },
     "Storage": {
-      "Get storage": [
-        "获取存储空间"
-      ],
       "Release notes": [
         "版本说明"
       ],

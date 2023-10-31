@@ -1862,10 +1862,6 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Takarítson meg időt azzal, hogy mindenkinek egyszerre elküldi az e-mailt vagy meghívókat. Ez egy prémium lehetőség, sok másikkal együtt. Váltson nagyobb csomagra."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "A fájl mérete maximum ${ MAX_IMPORT_FILE_SIZE_STRING } lehet és legfeljebb ${ MAX_IMPORT_CONTACTS_STRING } névjegyet tartalmazhat. Ha nagyobb a fájl, vágja több kisebb darabra.",
-        "A fájl mérete maximum ${ MAX_IMPORT_FILE_SIZE_STRING } lehet és legfeljebb ${ MAX_IMPORT_CONTACTS_STRING } névjegyet tartalmazhat. Ha nagyobb a fájl, vágja több kisebb darabra."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Húzással határozza meg az egyesítés prioritását. Szüntesse meg a kijelölést azoknál, amelyeket nem szeretne egyesíteni."
       ],
@@ -3170,9 +3166,6 @@
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
         "${ selectedContactsLength }/${ contactsLength } névjegy kiválasztva",
         "${ selectedContactsLength }/${ contactsLength } névjegy kiválasztva"
-      ],
-      "${ selectedCount } selected": [
-        "${ selectedCount } kijelöltve"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } mappa kiválasztva",
@@ -5812,8 +5805,8 @@
       ]
     },
     "Storage": {
-      "Get storage": [
-        "Tárhely vásárlása"
+      "Get more storage": [
+        "További tárhely igénylése"
       ],
       "Release notes": [
         "Kiadási megjegyzések"
