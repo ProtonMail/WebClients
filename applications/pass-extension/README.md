@@ -89,3 +89,16 @@ https://localhost:9090 {
 and run `caddy` from the directory where the file is. Caddy should generate automatically a cert and export https via port 9090. Requests sent there will be forwarded to the web account client.
 
 Now you should be able to use the extension with your local backend installation.
+
+## Firefox reviewer quickstart
+
+This section covers everything a Firefox reviewer needs to know to build the extension.
+
+Start by installing the CLI tools listed in the [Getting Started]([#prerequisites](https://github.com/dotproto/WebClients/blob/patch-1/README.md#getting-started)) section of the root README file. Once complete, CD into this directory and execute the following commands:
+
+```bash
+yarn install
+yarn build:ff
+```
+
+The build output will be written to the `dist` subdirectory.
