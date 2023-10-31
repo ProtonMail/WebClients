@@ -849,6 +849,7 @@ const SingleSignupContainerV2 = ({
                 <UnlockModal
                     {...unlockModalProps}
                     title={c('pass_signup_2023: Title').jt`All ${BRAND_NAME} Plus services.${br}One easy subscription.`}
+                    dark={theme.background === 'bf'}
                     currentPlan={model.upsell.currentPlan}
                     appName={shortProductAppName}
                     subscriptionData={model.subscriptionData}
@@ -896,6 +897,7 @@ const SingleSignupContainerV2 = ({
             {renderSubUserModal && (
                 <SubUserModal
                     {...subUserModalProps}
+                    dark={theme.background === 'bf'}
                     currentPlan={model.upsell.currentPlan}
                     appName={shortProductAppName}
                     plansMap={model.plansMap}
