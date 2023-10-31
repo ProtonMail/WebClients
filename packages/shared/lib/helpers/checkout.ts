@@ -251,6 +251,11 @@ export type Included =
           text: string;
           value: string | number;
       };
+
+export const getPremiumPasswordManagerText = () => {
+    return c('bf2023: Deal details').t`Premium Password Manager`;
+};
+
 export const getWhatsIncluded = ({
     planIDs,
     plansMap,
@@ -269,7 +274,7 @@ export const getWhatsIncluded = ({
             },
             {
                 type: 'text',
-                text: c('bf2023: Deal details').t`Premium Password Manager`,
+                text: getPremiumPasswordManagerText(),
             },
         ];
     }
@@ -296,7 +301,7 @@ export const getWhatsIncluded = ({
             },
             {
                 type: 'text',
-                text: c('bf2023: Deal details').t`Premium Password Manager`,
+                text: getPremiumPasswordManagerText(),
             },
         ];
     }
@@ -387,7 +392,7 @@ export const getWhatsIncluded = ({
             },
             {
                 type: 'text',
-                text: c('bf2023: Deal details').t`Premium Password Manager`,
+                text: getPremiumPasswordManagerText(),
             },
         ];
     }
