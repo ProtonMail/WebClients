@@ -29,9 +29,6 @@
       "Back": [
         "戻る"
       ],
-      "Can't find your password manager? Please let us know!": [
-        "パスワードマネージャーが見つかりませんか？お知らせください！"
-      ],
       "Cancel": [
         "キャンセル"
       ],
@@ -152,9 +149,6 @@
       "Generate password": [
         "パスワードを生成"
       ],
-      "Generated password": [
-        "生成されたパスワード"
-      ],
       "Get mobile apps": [
         "モバイルアプリを入手する"
       ],
@@ -241,9 +235,6 @@
       ],
       "Pass for iOS": [
         "iOS 版 Pass"
-      ],
-      "Proceed": [
-        "進む"
       ],
       "Refresh the page": [
         "ページを更新"
@@ -332,8 +323,8 @@
       "Upgrade": [
         "アップグレード"
       ],
-      "Upgrade to keep these features": [
-        "これらの機能を維持するためにアップグレードする"
+      "Upgrade now": [
+        "今すぐアップグレード"
       ],
       "Write us on Reddit": [
         "Redditに書き込む"
@@ -615,9 +606,6 @@
       "${ memberCount } members": [
         "${ memberCount }人のメンバー"
       ],
-      "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
-        "${ PASS_APP_NAME } はログインとメモのみをインポートします。 パスポートや添付ファイル等には現時点では対応していません。"
-      ],
       "${ revisionNumber } times": [
         "${ revisionNumber } 回"
       ],
@@ -632,9 +620,6 @@
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "${ PASS_APP_NAME } の新しいバージョンが利用可能です。 最新の機能やバグ修正をお楽しみいただくには、更新してください。"
-      ],
-      "Access ${ PASS_APP_NAME } via this icon": [
-        "このアイコンから ${ PASS_APP_NAME } にアクセスします"
       ],
       "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
         "${ PASS_APP_NAME } にアクセスするには、セッションのロックを解除するための PIN コードが必要です"
@@ -674,9 +659,6 @@
       ],
       "Can view items in this vault.": [
         "このフォルダー内のアイテムを閲覧できます。"
-      ],
-      "Check out all the exclusive features that are available to you for a limited time.": [
-        "期間限定で利用できるすべての限定機能をチェックしよう。"
       ],
       "Copied to clipboard": [
         "クリップボードにコピーされました"
@@ -720,12 +702,6 @@
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "エクスポートはPGPを使用して暗号化され、強力なパスフレーズが必要です。"
       ],
-      "Follow these simple steps to get the best experience:": [
-        "以下の簡単な手順に従って、最高の体験を手に入れてください："
-      ],
-      "Free Trial": [
-        "無料トライアル"
-      ],
       "Generated passwords will be stored for a period of one day.": [
         "生成されたパスワードは1日間保存されます。"
       ],
@@ -753,9 +729,6 @@
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "有効にすると、${ PASS_APP_NAME } アイコンをクリックして資格情報をすばやく自動入力できます。"
       ],
-      "Import in progress :": [
-        "インポートが進行中 :"
-      ],
       "Imported ${ payload.total } items": [
         "${ payload.total } 件のアイテムをインポートしました"
       ],
@@ -764,9 +737,6 @@
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "${ PASS_APP_NAME } を最大限に活用するには、必要な拡張機能の権限を付与してください"
-      ],
-      "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
-        "別のパスワード マネージャーから ${ PASS_APP_NAME } にデータを移行するには、以下のフォームを使用してパスワードをエクスポートし、インポートします。 すべてのアイテムがインポートされたら、以前にエクスポートしたファイルを削除します。"
       ],
       "Internet connection lost": [
         "インターネット接続が切断されました"
@@ -882,9 +852,6 @@
       "Save login": [
         "ログインを保存"
       ],
-      "Select the destination vault for each imported vault.": [
-        "インポートされた各コンテナーの宛先コンテナーを選択します。"
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "サーバーに接続できません。数分後にもう一度お試しください"
       ],
@@ -980,9 +947,6 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "このエイリアスのメールボックスを変更することはできません。"
-      ],
-      "You have ${ daysRemaining } days left in your trial period.": [
-        "あなたのトライアル期限は、残り ${ daysRemaining } 日です。"
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "あなたのサブスクリプションに含まれるフォルダーの最大数を超えています。アイテムは最初の2つのフォルダーにのみ移動できます。すべてのフォルダー間でアイテムを移動するには、サブスクリプションをアップグレードしてください。"
@@ -1106,9 +1070,6 @@
       "Card number": [
         "カード番号"
       ],
-      "Cardholder name": [
-        "カード所有者名"
-      ],
       "Cards": [
         "カード"
       ],
@@ -1132,9 +1093,6 @@
       ],
       "Created": [
         "作成日時"
-      ],
-      "Credit Card": [
-        "クレジットカード"
       ],
       "Display": [
         "表示"
@@ -1160,7 +1118,7 @@
       "Encrypt your ${ PASS_APP_NAME } data export file": [
         "${ PASS_APP_NAME } データ エクスポート ファイルを暗号化する"
       ],
-      "Expires on": [
+      "Expiration date": [
         "有効期限"
       ],
       "Export": [
@@ -1198,9 +1156,6 @@
       ],
       "Include numbers (0-9)": [
         "数字を含める (0 〜 9)"
-      ],
-      "Label": [
-        "ラベル"
       ],
       "Language": [
         "言語"
@@ -1240,6 +1195,9 @@
       ],
       "Name": [
         "名前"
+      ],
+      "Name on card": [
+        "カード名義人"
       ],
       "Need help ?": [
         "お困りですか ?"
@@ -1315,6 +1273,9 @@
       ],
       "Security": [
         "セキュリティ"
+      ],
+      "Security code": [
+        "セキュリティコード"
       ],
       "Select an email address": [
         "メールアドレスを選択"
@@ -1400,9 +1361,6 @@
       "Vault": [
         "保管庫"
       ],
-      "Verification number": [
-        "検証番号"
-      ],
       "View details": [
         "詳細の表示"
       ],
@@ -1482,6 +1440,9 @@
       "Move items to another vault (optional)": [
         "アイテムを別の保管庫に移動(オプション)"
       ],
+      "Other": [
+        "その他"
+      ],
       "Pick a vault": [
         "保管庫を選択"
       ],
@@ -1532,20 +1493,14 @@
       "Confirm PIN code": [
         "PINコードの確認"
       ],
-      "Connect your ${ BRAND_NAME } account": [
-        "${ BRAND_NAME } アカウントを接続します"
-      ],
       "Create PIN code": [
         "PINコードの作成"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "保管庫「${ vaultName }」を削除しますか？"
       ],
-      "Discard changes ?": [
-        "変更を破棄しますか？"
-      ],
-      "Enjoy your free trial": [
-        "無料トライアルをお楽しみください"
+      "Discard changes?": [
+        "変更を破棄しますか?"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME } をお楽しみですか?"
@@ -1628,9 +1583,6 @@
       "Welcome to ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } へようこそ"
       ],
-      "Welcome!": [
-        "ようこそ！"
-      ],
       "Why ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME } を使用する理由"
       ],
@@ -1641,15 +1593,6 @@
     "Validation": {
       "Duplicated url": [
         "重複したURL"
-      ],
-      "Label is required": [
-        "ラベルは必須です"
-      ],
-      "OTP Secret or URI is invalid": [
-        "OTP シークレットまたは URI が無効です"
-      ],
-      "OTP Secret or URI required": [
-        "OTP シークレットまたは URI が必要です"
       ],
       "Url already exists": [
         "Url は既に存在します"
@@ -1667,9 +1610,6 @@
       ],
       "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
         "エイリアス「${ name }」は現在、ログイン項目「${ relatedLoginName }」で使用されています。 また、「${ aliasEmail }」に送信されたメールの受信も停止されます。"
-      ],
-      "All your trashed items will be permanently deleted. You can not undo this action.": [
-        "ゴミ箱に入れたアイテムはすべて永久に削除されます。この操作を元に戻すことはできません。"
       ],
       "An error occured while exporting your data": [
         "データのエクスポート中にエラーが発生しました"
@@ -1755,9 +1695,6 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "${ PASS_APP_NAME } にサインインできません。 ${ additionalMessage }"
       ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You can not undo this action": [
-        "保管庫「${ vaultName }」とそのすべてのアイテムは完全に削除されます。 この操作を元に戻すことはできません"
-      ],
       "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
         "保管庫「${ vaultName }」は完全に削除され、そのすべてのアイテムは「${ destinationVaultName }」に移動されます"
       ],
@@ -1766,9 +1703,6 @@
       ],
       "You cannot create more vaults than your subscription allows.": [
         "サブスクリプションで許可されている以上の保管庫を作成することはできません。"
-      ],
-      "You have unsaved changes, are you sure you want to discard them?": [
-        "未保存の変更があります。それらを破棄してもよろしいですか?"
       ],
       "You must select at least one mailbox": [
         "少なくとも1つのメールボックスを選択する必要があります。"

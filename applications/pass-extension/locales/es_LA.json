@@ -29,9 +29,6 @@
       "Back": [
         "Atrás"
       ],
-      "Can't find your password manager? Please let us know!": [
-        "¿No encuentra su gestor de contraseñas? ¡Háganoslo saber!"
-      ],
       "Cancel": [
         "Cancelar"
       ],
@@ -62,6 +59,9 @@
       "Confirm access": [
         "Confirmar acceso"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "Conecte su cuenta de ${ BRAND_NAME }"
+      ],
       "Continue": [
         "Continuar"
       ],
@@ -80,6 +80,9 @@
       "Create": [
         "Crear"
       ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Crear una cuenta de ${ BRAND_NAME }"
+      ],
       "Create a ${ BRAND_NAME } account": [
         "Crear una cuenta de ${ BRAND_NAME }"
       ],
@@ -91,6 +94,9 @@
       ],
       "Create an account": [
         "Crear una cuenta"
+      ],
+      "Create card": [
+        "Crear una tarjeta"
       ],
       "Create login": [
         "Crear inicio de sesión"
@@ -158,8 +164,8 @@
       "Generate password": [
         "Generar contraseña"
       ],
-      "Generated password": [
-        "Contraseña generada"
+      "Generated passwords": [
+        "Contraseñas generadas"
       ],
       "Get mobile apps": [
         "Descargar apps móviles"
@@ -250,9 +256,6 @@
       ],
       "Pass for iOS": [
         "Pass para iOS"
-      ],
-      "Proceed": [
-        "Proceder"
       ],
       "Refresh the page": [
         "Refrescar la página"
@@ -350,17 +353,20 @@
       "Upgrade": [
         "Actualizar"
       ],
+      "Upgrade now": [
+        "Actualizar ahora"
+      ],
       "Upgrade now to share with more people": [
         "Mejore ahora para compartir con más personas."
-      ],
-      "Upgrade to keep these features": [
-        "Actualice para mantener estas funciones"
       ],
       "Write us on Reddit": [
         "Escríbanos en Reddit"
       ],
       "Write us on Twitter": [
         "Escríbanos en Twitter"
+      ],
+      "Your password manager not here? Request it.": [
+        "¿No aparece su gestor de contraseñas? Solicítelo."
       ]
     },
     "Button": {
@@ -419,7 +425,7 @@
         "No se pudo abrir la bóveda actualizada"
       ],
       "Could not resolve share members": [
-        "No se pudo determinar los destinatarios del recurso compartido"
+        "No se pudieron determinar los destinatarios del recurso compartido"
       ],
       "Could not resume your session : ${ description }": [
         "No se pudo reanudar su sesión: ${ description }"
@@ -658,8 +664,8 @@
         "${ memberCount } miembro",
         "${ memberCount } miembros"
       ],
-      "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
-        "${ PASS_APP_NAME } importará solo los inicios de sesión y notas. Por el momento no se admiten pasaportes, archivos adjuntos, etc."
+      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
+        "${ PASS_APP_NAME } solo importará inicios de sesión, notas y tarjetas de crédito."
       ],
       "${ revisionNumber } time": [
         "${ revisionNumber } vez",
@@ -677,11 +683,11 @@
         "${ trialDaysLeft } día restante",
         "${ trialDaysLeft } días restantes"
       ],
+      "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
+        "Pruebe gratis las funciones premium durante 7 días, solo durante su primera semana en ${ BRAND_NAME }."
+      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Hay una versión nueva disponible de ${ PASS_APP_NAME }. Actualícela para disfrutar de las últimas funciones y errores corregidos."
-      ],
-      "Access ${ PASS_APP_NAME } via this icon": [
-        "Acceda a ${ PASS_APP_NAME } mediante este ícono"
       ],
       "Access successfully confirmed": [
         "El acceso fue confirmado."
@@ -705,10 +711,10 @@
         "Todos los elementos restaurados con éxito"
       ],
       "An item previously shared with you was disabled": [
-        "Se deshabilitó un elemento previamente compartido con usted"
+        "Se desactivó un elemento previamente compartido con usted"
       ],
       "Auto-lock successfully disabled": [
-        "Bloqueo automático deshabilitado con éxito"
+        "Bloqueo automático desactivado con éxito"
       ],
       "Autosaved on ${ submissionURL }": [
         "Guardado automáticamente el ${ submissionURL }"
@@ -725,8 +731,8 @@
       "Can view items in this vault.": [
         "Permite ver los elementos en esta bóveda."
       ],
-      "Check out all the exclusive features that are available to you for a limited time.": [
-        "Eche un vistazo a todas las funciones exclusivas que están disponibles para usted por tiempo limitado."
+      "Click the icon to open it anytime.": [
+        "Pulse el ícono para abrirlo en cualquier momento."
       ],
       "Congratulations, your access has been confirmed": [
         "Felicitaciones, se ha confirmado su acceso"
@@ -762,7 +768,7 @@
         "Editor"
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
-        "Habilite ${ PASS_APP_NAME } al conectar su cuenta de ${ BRAND_NAME }"
+        "Active ${ PASS_APP_NAME } al conectar su cuenta de ${ BRAND_NAME }"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Ingrese el código de verificación. Digite ${ digit }."
@@ -776,17 +782,14 @@
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "La exportación está cifrada mediante PGP y requiere una frase de contraseña segura."
       ],
-      "Follow these simple steps to get the best experience:": [
-        "Siga estos pasos para obtener la mejor experiencia:"
+      "For easy access to your passwords and more.": [
+        "Para acceder fácilmente a sus contraseñas y más."
       ],
       "For security reason, your access needs to be confirmed": [
         "Por razones de seguridad, es necesario confirmar su acceso"
       ],
       "For security reasons, your access needs to be confirmed": [
         "Por razones de seguridad, es necesario confirmar su acceso"
-      ],
-      "Free Trial": [
-        "Prueba gratuita"
       ],
       "Generated passwords will be stored for a period of one day.": [
         "Las contraseñas generadas se guardarán durante un día."
@@ -801,25 +804,25 @@
         "Aquí encontrará la información necesaria para comenzar."
       ],
       "If disabled, ${ PASS_APP_NAME } will not display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "Si se deshabilita, ${ PASS_APP_NAME } no mostrará el favicono del elemento a través del proxy de imagen anónimo de ${ BRAND_NAME }."
+        "Si se desactiva, ${ PASS_APP_NAME } no mostrará el favicono del elemento a través del proxy de imagen anónimo de ${ BRAND_NAME }."
       ],
       "If disabled, ${ PASS_APP_NAME } will not prompt you to save or update credentials.": [
-        "Si está deshabilitado, ${ PASS_APP_NAME } no le avisará de guardar o actualizar las credenciales."
+        "Si está desactivado, ${ PASS_APP_NAME } no le avisará de guardar o actualizar las credenciales."
       ],
       "If disabled, ${ PASS_APP_NAME } will not suggest creating an email alias on sign-up forms.": [
-        "Si se deshabilita, ${ PASS_APP_NAME } no sugerirá crear un alias de correo en formularios de registro."
+        "Si se desactiva, ${ PASS_APP_NAME } no sugerirá crear un alias de correo en formularios de registro."
       ],
       "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
-        "Si se deshabilita, ${ PASS_APP_NAME } no sugerirá crear contraseñas fuertes en formularios de registro."
+        "Si se desactiva, ${ PASS_APP_NAME } no sugerirá crear contraseñas fuertes en formularios de registro."
       ],
       "If enabled, the autofill dropdown will automatically open on field focus.": [
-        "Si está habilitado, el menú desplegable de autocompletar se abrirá automáticamente en el campo enfocado."
+        "Si está activado, el menú desplegable de autocompletar se abrirá automáticamente en el campo enfocado."
       ],
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Si está habilitado, puede completar automáticamente y rápidamente sus credenciales al pulsar el ícono de ${ PASS_APP_NAME }."
+        "Si está activado, puede completar automáticamente y rápidamente sus credenciales al pulsar el ícono de ${ PASS_APP_NAME }."
       ],
-      "Import in progress :": [
-        "Importación en curso:"
+      "Import in progress:": [
+        "Importación en progreso:"
       ],
       "Imported ${ payload.total } item": [
         "${ payload.total } elemento importado",
@@ -830,9 +833,6 @@
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Para obtener la mejor experiencia de ${ PASS_APP_NAME }, conceda los permisos necesarios de la extensión"
-      ],
-      "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
-        "Para migrar sus datos a ${ PASS_APP_NAME } desde otro gestor de contraseñas, exporte sus contraseñas e impórtelas usando el formulario a continuación. Una vez importados todos sus elementos, elimine el archivo exportado previamente."
       ],
       "Internet connection lost": [
         "Sin conexión a Internet"
@@ -916,6 +916,9 @@
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "La propiedad fue transferida. Ya no tiene la propiedad de esta bóveda."
       ],
+      "Pass Plus trial": [
+        "Prueba de Proton Pass Plus"
+      ],
       "Password copied": [
         "Contraseña copiada"
       ],
@@ -955,8 +958,8 @@
       "Save login": [
         "Guardar inicio de sesión"
       ],
-      "Select the destination vault for each imported vault.": [
-        "Seleccione la bóveda de destino para cada bóveda importada."
+      "Select where you want your imported vault(s) to be saved.": [
+        "Seleccione dónde quiere guardar sus bóvedas importadas."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "No hay conexión con los servidores. Intente de nuevo en unos minutos."
@@ -991,6 +994,9 @@
       "Successfully synced all vaults": [
         "Todas las bóvedas sincronizadas con éxito"
       ],
+      "Switch to another vault or create an item in this vault": [
+        "Cambie a otra bóveda o cree un elemento en esta bóveda"
+      ],
       "Syncing your vaults…": [
         "Sincronizando sus bóvedas…"
       ],
@@ -1012,6 +1018,12 @@
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Esta bóveda ya no se comparte con nadie. Invite a personas para compartirla con otros."
+      ],
+      "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
+        "Para migrar los datos desde otro gestor de contraseñas, vaya al gestor, exporte sus datos y luego cárguelos en ${ PASS_APP_NAME }. Una vez que los datos se han importado, elimine el archivo exportado."
+      ],
+      "To review your imported data, click on the Pass icon in your browser toolbar.": [
+        "Para verificar sus datos importados, pulse el ícono de Proton Pass en la barra de herramientas del navegador."
       ],
       "Unable to copy to clipboard": [
         "No se puede copiar al portapapeles"
@@ -1047,7 +1059,7 @@
         "Bóveda \"${ payload.share.content.name }\" actualizada con éxito"
       ],
       "Vault \"${ share.content.name }\" was disabled": [
-        "La bóveda \"${ share.content.name }\" fue deshabilitada"
+        "La bóveda \"${ share.content.name }\" fue desactivada"
       ],
       "Verification code": [
         "Código de verificación"
@@ -1064,9 +1076,9 @@
       "You cannot change the mailboxes for this alias.": [
         "No puede cambiar los buzones para este alias."
       ],
-      "You have ${ daysRemaining } day left in your trial period.": [
-        "Tiene ${ daysRemaining } día restante de su periodo de prueba.",
-        "Tiene ${ daysRemaining } días restantes de su periodo de prueba."
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Tiene ${ daysRemaining } día restante para probar esta y otras funciones premium.",
+        "Tiene ${ daysRemaining } días restantes para probar esta y otras funciones premium."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Ha superado el número de bóvedas incluidas en su suscripción. Los elementos solo se pueden mover a sus primeras dos bóvedas. Para mover elementos entre todas las bóvedas, mejore su suscripción."
@@ -1189,11 +1201,11 @@
       "Capitalise": [
         "Mayúsculas"
       ],
+      "Card": [
+        "Tarjeta"
+      ],
       "Card number": [
         "Número de tarjeta"
-      ],
-      "Cardholder name": [
-        "Nombre del titular de la tarjeta"
       ],
       "Cards": [
         "Tarjetas"
@@ -1219,9 +1231,6 @@
       "Created": [
         "Creado"
       ],
-      "Credit Card": [
-        "Tarjeta de crédito"
-      ],
       "Display": [
         "Mostrar"
       ],
@@ -1246,11 +1255,14 @@
       "Encrypt your ${ PASS_APP_NAME } data export file": [
         "Cifre su archivo de exportación de datos de ${ PASS_APP_NAME }"
       ],
-      "Expires on": [
-        "Expira el"
+      "Expiration date": [
+        "Fecha de expiración"
       ],
       "Export": [
         "Exportar"
+      ],
+      "Field name": [
+        "Nombre del campo"
       ],
       "Forwards to": [
         "Reenvía a"
@@ -1287,9 +1299,6 @@
       ],
       "Invitations": [
         "Invitaciones"
-      ],
-      "Label": [
-        "Etiqueta"
       ],
       "Language": [
         "Idioma"
@@ -1332,6 +1341,9 @@
       ],
       "Name": [
         "Nombre"
+      ],
+      "Name on card": [
+        "Titular de la tarjeta"
       ],
       "Need help ?": [
         "¿Necesita ayuda?"
@@ -1407,6 +1419,9 @@
       ],
       "Security": [
         "Seguridad"
+      ],
+      "Security code": [
+        "Código de seguridad"
       ],
       "Select an email address": [
         "Seleccionar una dirección de correo"
@@ -1492,9 +1507,6 @@
       "Vault": [
         "Bóveda"
       ],
-      "Verification number": [
-        "Número de verificación"
-      ],
       "View details": [
         "Mostrar detalles"
       ],
@@ -1574,6 +1586,9 @@
       "Move items to another vault (optional)": [
         "Mover elementos a otra bóveda (opcional)"
       ],
+      "Other": [
+        "Otro"
+      ],
       "Pick a vault": [
         "Elegir una bóveda"
       ],
@@ -1633,7 +1648,7 @@
       "Confirm PIN code": [
         "Confirmar código PIN"
       ],
-      "Connect your ${ BRAND_NAME } account": [
+      "Connect your ${ BRAND_NAME } Account": [
         "Conecte su cuenta de ${ BRAND_NAME }"
       ],
       "Create PIN code": [
@@ -1642,11 +1657,8 @@
       "Delete vault \"${ vaultName }\" ?": [
         "¿Eliminar la bóveda \"${ vaultName }\"?"
       ],
-      "Discard changes ?": [
+      "Discard changes?": [
         "¿Descartar cambios?"
-      ],
-      "Enjoy your free trial": [
-        "Disfrute de su prueba gratuita"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "¿Disfrutando ${ PASS_APP_NAME }?"
@@ -1680,6 +1692,9 @@
       ],
       "Member limit": [
         "Límite de miembros"
+      ],
+      "Our welcome gift to you": [
+        "Nuestro regalo de bienvenida para usted"
       ],
       "Pending access to the shared data": [
         "Acceso pendiente a los datos compartidos"
@@ -1735,8 +1750,8 @@
       "Welcome to ${ PASS_APP_NAME }": [
         "Le damos la bienvenida a ${ PASS_APP_NAME }"
       ],
-      "Welcome!": [
-        "¡Le damos la bienvenida!"
+      "Welcome to your new password manager!": [
+        "¡Le damos la bienvenida a su nuevo gestor de contraseñas!"
       ],
       "Why ${ PASS_APP_NAME }?": [
         "¿Por qué elegir ${ PASS_APP_NAME }?"
@@ -1749,13 +1764,13 @@
       "Duplicated url": [
         "URL duplicada"
       ],
-      "Label is required": [
-        "La etiqueta es requerida"
+      "Field name is required": [
+        "El nombre del campo es obligatorio."
       ],
-      "OTP Secret or URI is invalid": [
+      "OTP secret or URI is invalid": [
         "Clave secreta OTP o URL inválida"
       ],
-      "OTP Secret or URI required": [
+      "OTP secret or URI required": [
         "Se requiere una clave secreta OTP o una URL."
       ],
       "Url already exists": [
@@ -1775,7 +1790,7 @@
       "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
         "El alias \"${ name }\" actualmente se usa en \"${ relatedLoginName }\". También dejará de recibir correos enviados a \"${ aliasEmail }\""
       ],
-      "All your trashed items will be permanently deleted. You can not undo this action.": [
+      "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Todos sus elementos en papelera serán eliminados permanentemente. No puede deshacer esta acción."
       ],
       "An error occured while exporting your data": [
@@ -1862,7 +1877,7 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "No se puede iniciar sesión en ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You can not undo this action": [
+      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
         "La bóveda \"${ vaultName }\" y todos sus elementos serán eliminados permanentemente. No puede deshacer esta acción."
       ],
       "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
@@ -1883,8 +1898,8 @@
       "You have reached the limit of vaults you can have in your plan.": [
         "Ha alcanzado el límite de bóvedas que puede tener en su plan."
       ],
-      "You have unsaved changes, are you sure you want to discard them?": [
-        "Tiene cambios sin guardar. ¿Está seguro de que quiere descartarlos?"
+      "You have unsaved changes.": [
+        "Tiene cambios sin guardar."
       ],
       "You must select at least one mailbox": [
         "Debe seleccionar al menos un buzón"
