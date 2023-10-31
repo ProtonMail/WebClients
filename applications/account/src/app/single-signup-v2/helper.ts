@@ -164,11 +164,34 @@ const getUpsell = ({
     if (currentPlan) {
         if (options.coupon === COUPON_CODES.BLACK_FRIDAY_2023) {
             if (getHasAnyPlusPlan(currentPlan.Name)) {
+                const hasSelectedPassBundle =
+                    hasSelectedPlan(planFromPlanParameters, [PLANS.VPN_PASS_BUNDLE]) &&
+                    [CYCLE.FIFTEEN, CYCLE.THIRTY].includes(options.cycle);
+
+                const isValidPassBundleFromPass =
+                    currentPlan.Name === PLANS.PASS_PLUS &&
+                    hasSelectedPassBundle &&
+                    !(options.cycle === CYCLE.FIFTEEN && subscription?.Cycle === CYCLE.TWO_YEARS);
+
+                const isValidPassBundleFromVPN1 =
+                    currentPlan.Name === PLANS.VPN &&
+                    [CYCLE.MONTHLY].includes(subscription?.Cycle as any) &&
+                    hasSelectedPassBundle;
+
+                const isValidPassBundleFromVPN12 =
+                    currentPlan.Name === PLANS.VPN &&
+                    [CYCLE.YEARLY, CYCLE.FIFTEEN].includes(subscription?.Cycle as any) &&
+                    hasSelectedPassBundle &&
+                    options.cycle === CYCLE.THIRTY;
+
                 // If the user is on a plus plan, and selects bundle, visionary, or family -> let it pass through
                 if (
-                    options.cycle === CYCLE.YEARLY &&
-                    (hasSelectedPlan(planFromPlanParameters, [PLANS.BUNDLE, PLANS.NEW_VISIONARY, PLANS.FAMILY]) ||
-                        (hasMonthlyCycle && hasSelectedPlan(planFromPlanParameters, [currentPlan.Name])))
+                    (options.cycle === CYCLE.YEARLY &&
+                        (hasSelectedPlan(planFromPlanParameters, [PLANS.BUNDLE, PLANS.NEW_VISIONARY, PLANS.FAMILY]) ||
+                            (hasMonthlyCycle && hasSelectedPlan(planFromPlanParameters, [currentPlan.Name])))) ||
+                    isValidPassBundleFromPass ||
+                    isValidPassBundleFromVPN1 ||
+                    isValidPassBundleFromVPN12
                 ) {
                     return {
                         ...defaultValue,
