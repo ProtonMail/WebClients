@@ -1866,11 +1866,6 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Economisiți timp trimițând mesaje sau invitații simultan tuturor, o funcție premium printre multe altele. Modernizați contul acum."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă un contact. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
-        "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
-        "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } de contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Trageți și plasați prioritatea de îmbinare dintre contacte. Debifați contactele pe care nu doriți să le îmbinați."
       ],
@@ -2723,6 +2718,9 @@
       ],
       "MB": [
         "MiB"
+      ],
+      "TB": [
+        "TiB"
       ]
     },
     "file size format, long": {
@@ -2745,6 +2743,11 @@
         "Megabait",
         "Megabaiți",
         "Megabaiți"
+      ],
+      "Terabyte": [
+        "Terabait",
+        "Terabaiți",
+        "Terabaiți"
       ]
     },
     "Filter notification": {
@@ -3217,9 +3220,6 @@
         "${ selectedContactsLength }/${ contactsLength } contact selectat",
         "${ selectedContactsLength }/${ contactsLength } contacte selectate",
         "${ selectedContactsLength }/${ contactsLength } de contacte selectate"
-      ],
-      "${ selectedCount } selected": [
-        "Selectate: ${ selectedCount }"
       ],
       "${ selectedFoldersCount } folder selected": [
         "S-a selectat un folder",
@@ -5923,8 +5923,8 @@
       ]
     },
     "Storage": {
-      "Get storage": [
-        "Obțineți spațiu de stocare"
+      "Get more storage": [
+        "Obțineți mai mult spațiu de stocare"
       ],
       "Release notes": [
         "Note de lansare"
