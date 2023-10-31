@@ -71,7 +71,7 @@ export enum ProtectionType {
 }
 
 export interface AuthLog {
-    AppVersion: string;
+    AppVersion: string | null;
     Description: string;
     Device: string;
     Event: AUTH_LOG_EVENTS;
