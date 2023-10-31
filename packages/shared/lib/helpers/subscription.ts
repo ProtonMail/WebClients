@@ -60,6 +60,11 @@ export const getPlanName = (subscription: Subscription | undefined, service: PLA
     return plan?.Name;
 };
 
+export const getPlanTitle = (subscription: Subscription | undefined) => {
+    const plan = getPlan(subscription);
+    return plan?.Title;
+};
+
 export const hasSomePlan = (subscription: Subscription | FreeSubscription | undefined, planName: PLANS) => {
     if (isFreeSubscription(subscription)) {
         return false;
@@ -536,4 +541,14 @@ export const getVPNDedicatedIPs = (subscription: Subscription | undefined) => {
 
 export const getHasCoupon = (subscription: SubscriptionModel | undefined, coupon: string) => {
     return [subscription?.CouponCode, subscription?.UpcomingSubscription?.CouponCode].includes(coupon);
+};
+
+/**
+ * Checks if subscription can be cancelled by a user. Cancellation means that the user will be downgraded at the end
+ * of the current billing cycle. In contrast, "Downgrade subscription" button means that the user will be downgraded
+ * immediately. Note that B2B subscriptions also have "Cancel subscription" button, but it behaves differently, so
+ * we don't consider B2B subscriptions cancellable for the purpose of this function.
+ */
+export const hasCancellablePlan = (subscription: Subscription | undefined) => {
+    return hasVPN(subscription) || hasPassPlus(subscription) || hasVPNPassBundle(subscription);
 };
