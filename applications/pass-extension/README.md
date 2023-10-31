@@ -36,7 +36,7 @@ BUILD_TARGET=firefox yarn start:prod
 
 <details>
 <summary>To run an extension on Firefox</summary>
-<p>
+
 1. Open firefox and navigate to `about:debugging`
 2. Click on "_This Firefox_"
 3. Click on "_Load Temporary Add-On_" and chose the `dist/manifest.json`
@@ -45,9 +45,9 @@ BUILD_TARGET=firefox yarn start:prod
 6. Go back to `about:debugging` and click on "_Reload_" <sup>2</sup>
 7. You may sign in and start using Pass
 
-> <sup>1</sup> <small>Firefox does not prompt for permissions when launching a temporary add-on </small><br /><sup>2</sup> <small>FF might not pick-up the permission changes needed for content-script communication</small>
+<sup>1</sup> <small>Firefox does not prompt for permissions when launching a temporary add-on </small><br /><sup>2</sup> <small>FF might not pick-up the permission changes needed for content-script communication</small>
 
-</p>
+</details>
 
 ## How to run the extension against localhost BE
 
