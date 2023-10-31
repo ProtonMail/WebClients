@@ -18,6 +18,7 @@ You'll need to have the following environment to work with this project
 -   Node.js LTS
 -   Yarn 3
 -   git
+-   [jq](https://jqlang.github.io/jq/)
 
 You can find more detailed version-constrains for Node.js and yarn in `package.json`.
 
