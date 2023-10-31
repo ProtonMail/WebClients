@@ -11,6 +11,7 @@ import PlanComparison from './PlanComparison';
 interface Props extends ModalProps {
     appName: string;
     plansMap: PlansMap;
+    dark: boolean;
     currentPlan: Plan | undefined;
     upsellPlan: Plan | undefined;
     unlockPlan: Plan | undefined;
@@ -20,6 +21,7 @@ interface Props extends ModalProps {
 
 const SubUserModal = ({
     appName,
+    dark,
     currentPlan,
     unlockPlan,
     plansMap,
@@ -44,6 +46,7 @@ const SubUserModal = ({
                         .t`Your organization has access to ${free}. If you want to access premium ${appName} features, please ask your organization's administrator to upgrade.`}
                 </div>
                 <PlanComparison
+                    dark={dark}
                     plansMap={plansMap}
                     upsellPlan={upsellPlan}
                     currentPlan={currentPlan}
