@@ -745,10 +745,13 @@ const SingleSignupContainerV2 = ({
         model.session?.subscription,
         model.optimistic.cycle || model.subscriptionData.cycle
     );
-    const relativePrice = humanPriceWithCurrency(
-        relativePricePerMonth,
-        model.optimistic.currency || model.subscriptionData.currency
-    );
+    const relativePrice =
+        relativePricePerMonth > 0
+            ? humanPriceWithCurrency(
+                  relativePricePerMonth,
+                  model.optimistic.currency || model.subscriptionData.currency
+              )
+            : undefined;
 
     const getMnemonicSetup = async () => {
         const recoveryKitGeneration = canGenerateMnemonic
@@ -846,12 +849,13 @@ const SingleSignupContainerV2 = ({
                 <UnlockModal
                     {...unlockModalProps}
                     title={c('pass_signup_2023: Title').jt`All ${BRAND_NAME} Plus services.${br}One easy subscription.`}
+                    dark={theme.background === 'bf'}
                     currentPlan={model.upsell.currentPlan}
                     appName={shortProductAppName}
                     subscriptionData={model.subscriptionData}
                     upsellPlan={model.upsell.plan}
                     unlockPlan={model.upsell.unlockPlan}
-                    relativePrice={relativePrice.includes('-') ? undefined : relativePrice}
+                    relativePrice={relativePrice}
                     plansMap={model.plansMap}
                     onUpgrade={() => {
                         unlockModalProps.onClose();
@@ -893,6 +897,7 @@ const SingleSignupContainerV2 = ({
             {renderSubUserModal && (
                 <SubUserModal
                     {...subUserModalProps}
+                    dark={theme.background === 'bf'}
                     currentPlan={model.upsell.currentPlan}
                     appName={shortProductAppName}
                     plansMap={model.plansMap}
