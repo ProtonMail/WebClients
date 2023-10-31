@@ -303,14 +303,18 @@ export interface AggregatedPricing {
     plans: PricingForCycles;
 }
 
+function isMultiUserPersonalPlan(plan: Plan) {
+    // even though Family and Visionary plans can have up to 6 users in the org,
+    // for the price displaying purposes we count it as 1 member.
+    return plan.Name === PLANS.FAMILY || plan.Name === PLANS.VISIONARY || plan.Name === PLANS.NEW_VISIONARY;
+}
+
 function getPlanMembers(plan: Plan, quantity: number): number {
     const hasMembers =
         plan.Type === PLAN_TYPES.PLAN || (plan.Type === PLAN_TYPES.ADDON && plan.Name.startsWith(MEMBER_ADDON_PREFIX));
 
     let membersNumberInPlan = 0;
-    // even though Family plan can have up to 6 users in the org, for the price displaying purposes we count it as
-    // 1 member.
-    if (plan.Name === PLANS.FAMILY) {
+    if (isMultiUserPersonalPlan(plan)) {
         membersNumberInPlan = 1;
     } else if (hasMembers) {
         membersNumberInPlan = plan.MaxMembers || 1;
@@ -355,8 +359,7 @@ export function getPricePerMember(plan: Plan, cycle: CYCLE): number {
         return (totalPrice - IP_PRICE) / (plan.MaxMembers || 1);
     }
 
-    // Family plan has 6 members by default. We keep the price as is intentionally for price displaying purposes.
-    if (plan.Name === PLANS.FAMILY) {
+    if (isMultiUserPersonalPlan(plan)) {
         return totalPrice;
     }
 
