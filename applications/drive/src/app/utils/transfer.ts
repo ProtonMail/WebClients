@@ -49,6 +49,7 @@ export const isTransferOngoing = ({ state }: { state: TransferState }) => {
 };
 
 export const isTransferCancelError = (error: Error) => error.name === 'TransferCancel' || error.name === 'AbortError';
+export const isTransferRetry = (error: Error) => error.name === 'TransferRetry';
 
 export const getProgressBarStatus = (transferState: TransferState): ProgressBarStatus => {
     return (
