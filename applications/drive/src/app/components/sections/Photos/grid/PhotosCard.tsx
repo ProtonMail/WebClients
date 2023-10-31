@@ -98,6 +98,7 @@ export const PhotosCard: FC<Props> = ({
             ref={ref}
             style={style}
             className={clsx(
+                'button-for-icon', // `aria-busy` buttons get extra padding, this avoids that
                 'relative photos-card p-0 border-none rounded-none',
                 isThumbnailLoading && 'photos-card--loading',
                 !showCheckbox && 'photos-card--hide-checkbox',
