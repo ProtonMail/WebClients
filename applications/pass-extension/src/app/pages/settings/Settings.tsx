@@ -171,7 +171,7 @@ const SettingsApp: VFC = () => {
     const { createNotification } = useNotifications();
 
     const handleWorkerMessage = useCallback((message: WorkerMessageWithSender) => {
-        if (message.type === WorkerMessageType.NOTIFICATION && message.payload.notification.receiver === 'page') {
+        if (message.type === WorkerMessageType.NOTIFICATION && message.payload.notification.endpoint === 'page') {
             createNotification(message.payload.notification);
         }
     }, []);
