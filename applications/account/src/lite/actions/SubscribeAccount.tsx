@@ -254,7 +254,7 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
                                                     </Tooltip>
                                                 )}
                                             </div>
-                                            <form className="overflow-auto" onSubmit={onSubmit}>
+                                            <form onSubmit={onSubmit}>
                                                 <div>{content}</div>
                                                 {footer && <div className="mt-8">{footer}</div>}
                                             </form>
