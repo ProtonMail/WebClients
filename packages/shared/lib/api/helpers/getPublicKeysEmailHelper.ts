@@ -19,20 +19,36 @@ export const KEY_VERIFICATION_ERROR_MESSAGE = c('loc_nightly: Key verification e
  * Ask the API for public keys for a given email address. The response will contain keys both
  * for internal users and for external users with WKD keys
  */
-const getPublicKeysEmailHelper = async (
-    api: Api,
-    ktActivation: KeyTransparencyActivation,
-    Email: string,
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys,
-    silence = false,
-    noCache = false
-): Promise<ApiKeysConfig> => {
+const getPublicKeysEmailHelper = async ({
+    email,
+    internalKeysOnly = false,
+    api,
+    ktActivation,
+    verifyOutboundPublicKeys,
+    silence,
+    noCache,
+}: {
+    email: string;
+    internalKeysOnly?: boolean;
+    api: Api;
+    ktActivation: KeyTransparencyActivation;
+    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
+    silence?: boolean;
+    noCache?: boolean;
+}): Promise<ApiKeysConfig> => {
     if (ktActivation === KeyTransparencyActivation.DISABLED) {
-        return getPublicKeysEmailHelperLegacy(api, Email, silence, noCache);
+        return getPublicKeysEmailHelperLegacy(api, email, silence, noCache);
     }
-    const result = await getPublicKeysEmailHelperWithKT(api, Email, verifyOutboundPublicKeys, silence, noCache);
+    const result = await getPublicKeysEmailHelperWithKT({
+        email,
+        internalKeysOnly,
+        api,
+        verifyOutboundPublicKeys,
+        silence,
+        noCache,
+    });
     if (result.ktVerificationResult?.status === KT_VERIFICATION_STATUS.VERIFICATION_FAILED) {
-        ktSentryReport('Key verification error', { email: Email });
+        ktSentryReport('Key verification error', { email });
         if (ktActivation === KeyTransparencyActivation.SHOW_UI) {
             return {
                 publicKeys: [],

@@ -76,11 +76,11 @@ const ContactResignModal = ({
             const fingerprintsByEmail: { [key: string]: string[] | undefined } = {};
 
             await Promise.all(
-                ContactEmails.map(async ({ Email }: ContactEmail) => {
-                    const { pinnedKeys } = await getEncryptionPreferences(Email);
+                ContactEmails.map(async ({ Email: email }: ContactEmail) => {
+                    const { pinnedKeys } = await getEncryptionPreferences({ email });
                     const fingerprints = pinnedKeys.map((key) => key.getFingerprint());
                     if (fingerprints.length) {
-                        fingerprintsByEmail[Email] = fingerprints;
+                        fingerprintsByEmail[email] = fingerprints;
                     }
                 })
             );

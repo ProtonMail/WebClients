@@ -47,20 +47,20 @@ const importKeys = (keys: ApiAddressKey[]): Promise<ProcessedApiAddressKey[]> =>
 
 export const getAndVerifyApiKeys = async ({
     api,
-    Email,
-    keysIntendedForEmail,
+    email,
+    internalKeysOnly,
     verifyOutboundPublicKeys,
     silence = false,
     noCache = false,
 }: {
     api: Api;
-    Email: string;
-    keysIntendedForEmail: boolean;
+    email: string;
+    internalKeysOnly: boolean;
     verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
     silence?: boolean;
     noCache?: boolean;
 }): Promise<ApiKeysWithKTStatus> => {
-    const config: any = { ...getAllPublicKeys({ Email, InternalOnly: keysIntendedForEmail ? 0 : 1 }), silence };
+    const config: any = { ...getAllPublicKeys({ Email: email, InternalOnly: internalKeysOnly ? 1 : 0 }), silence };
     if (noCache) {
         config.cache = 'no-cache';
     }
@@ -85,8 +85,8 @@ export const getAndVerifyApiKeys = async ({
     const catchAllKeys = CatchAll ? await importKeys(CatchAll.Keys) : undefined;
     const ktResult = verifyOutboundPublicKeys
         ? await verifyOutboundPublicKeys(
-              Email,
-              keysIntendedForEmail,
+              email,
+              internalKeysOnly,
               { keyList: addressKeys, signedKeyList: Address.SignedKeyList },
               CatchAll ? { keyList: catchAllKeys!, signedKeyList: CatchAll.SignedKeyList } : undefined
           )

@@ -113,7 +113,11 @@ export const useUpdateRecipientSendInfo = (
                     emailValidation,
                 },
             }));
-            const encryptionPreferences = await getEncryptionPreferences(emailAddress, 0, contactsMap);
+            const encryptionPreferences = await getEncryptionPreferences({
+                email: emailAddress,
+                lifetime: 0,
+                contactEmailsMap: contactsMap,
+            });
             const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
 
             if (sendPreferences.error?.type === CONTACT_SIGNATURE_NOT_VERIFIED) {
@@ -254,7 +258,11 @@ export const useUpdateGroupSendInfo = (
                     };
                 });
             }
-            const encryptionPreferences = await getEncryptionPreferences(emailAddress, 0, contactsMap);
+            const encryptionPreferences = await getEncryptionPreferences({
+                email: emailAddress,
+                lifetime: 0,
+                contactEmailsMap: contactsMap,
+            });
             const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
             const sendIcon = getSendStatusIcon(sendPreferences, ktActivation);
             const contactSignatureInfo = {
@@ -368,7 +376,11 @@ const getUpdatedSendInfo = async (
     ktActivation: KeyTransparencyActivation,
     contactsMap: ContactsMap
 ) => {
-    const encryptionPreferences = await getEncryptionPreferences(emailAddress, 0, contactsMap);
+    const encryptionPreferences = await getEncryptionPreferences({
+        email: emailAddress,
+        lifetime: 0,
+        contactEmailsMap: contactsMap,
+    });
     const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
     const sendIcon = getSendStatusIcon(sendPreferences, ktActivation);
     const contactSignatureInfo = {
