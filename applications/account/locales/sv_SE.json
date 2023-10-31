@@ -230,6 +230,9 @@
       "Continue with Google": [
         "Fortsätt med Google"
       ],
+      "Continue with Outlook": [
+        "Fortsätt med Outlook"
+      ],
       "Continue with this password": [
         "Fortsätt med detta lösenord"
       ],
@@ -533,8 +536,14 @@
       "Import emails": [
         "Importera e-post"
       ],
+      "Import from Google": [
+        "Importera från Google"
+      ],
       "Import from ICS": [
         "Importera från ICS"
+      ],
+      "Import from Outlook": [
+        "Importera från Outlook"
       ],
       "Import key": [
         "Importera nyckel"
@@ -634,6 +643,9 @@
       ],
       "Open navigation": [
         "Öppna navigering"
+      ],
+      "Or": [
+        "Eller"
       ],
       "Ordered list": [
         "Sorterad lista"
@@ -899,8 +911,8 @@
       "Sign out of all accounts": [
         "Logga ut från alla konton"
       ],
-      "Sign up for free": [
-        "Registrera dig gratis"
+      "sign up for free": [
+        "registrera dig gratis"
       ],
       "Signing in": [
         "Loggar in"
@@ -1687,7 +1699,7 @@
         "maskros"
       ],
       "dark cerulean": [
-        "mörk azurblå"
+        "mörk cerulean"
       ],
       "dark midnight blue": [
         "mörk midnattsblå"
@@ -2871,6 +2883,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterar och importerar kontakter... Detta kan ta några minuter. När processen är slutförd kan du stänga detta fönster."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "För import via CSV- och VCF-fil, se till att filen inte överstiger ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Om din fil är större, dela upp den i mindre filer. ${ learnMoreLink }."
+      ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Få upp till ${ credits } i krediter genom att bjuda in vänner till ${ BRAND_NAME }."
       ],
@@ -2883,9 +2898,8 @@
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separera olika aspekter av ditt liv med flera e-postadresser och lås upp fler premiumfunktioner när du uppgraderar."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Filen ska ha en maximal storlek på ${ MAX_IMPORT_FILE_SIZE_STRING } och ha upp till ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Om din fil är större, dela upp den i mindre filer.",
-        "Filen ska ha en maximal storlek på ${ MAX_IMPORT_FILE_SIZE_STRING } och ha upp till ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Om din fil är större, dela upp den i mindre filer."
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "För att importera dina kontakter från Google eller Outlook, ${ easySwitchLink }."
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "För att ta bort ${ MAIL_APP_NAME } i sidfoten, uppgradera och lås upp ännu fler premiumfunktioner."
@@ -2910,6 +2924,11 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importera händelser i iCal-format (ICS-fil). Filen bör ha en maximal storlek på ${ MAX_IMPORT_FILE_SIZE_STRING } och ha upp till ${ MAX_IMPORT_EVENTS_STRING } händelser. Om din fil är större, dela upp den i mindre filer."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "använd importassistenten Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3155,7 +3174,7 @@
         "Du började prenumerera på e-post från kategorin ${ categoriesJsx } igen."
       ],
       "You unsubscribed from ${ categoriesJsx } emails.": [
-        "Du slutade prenumerera på e-post från kategorin ${ categoriesJsx }."
+        "Du slutade prenumerera på e-post från ${ categoriesJsx }."
       ]
     },
     "Email Unsubscribe Categories": {
@@ -5509,6 +5528,10 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } adress",
+        "${ amountOfAddresses } adresser"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } behöver din tillåtelse till ${ enableDesktopNotifications }."
       ],
@@ -5589,6 +5612,9 @@
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } uppladdad fil är inte en giltig privat nyckel. Verifiera och försök igen.",
         "${ numberOfNonPrivateKeys } uppladdade filer är inte giltiga privata nycklar. Verifiera och försök igen."
+      ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "${ plan } borttaget. Paketerbjudande är inte tillgängligt på ett 1-månadspaket."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kräver minst 1 dedikerad server ${ serverPricePerMonth }"
@@ -5765,10 +5791,6 @@
       ],
       "Additional options": [
         "Ytterligare alternativ"
-      ],
-      "address": [
-        "adress",
-        "adresser"
       ],
       "Admin account allocation": [
         "Allokering för administratörskonto"
@@ -6526,9 +6548,6 @@
       "Monthly ${ onDayString }": [
         "En gång i månaden ${ onDayString }"
       ],
-      "more": [
-        "mer"
-      ],
       "Multi-user support not enabled.": [
         "Stöd för flera användare är inte aktiverat."
       ],
@@ -6731,7 +6750,7 @@
         "Observera att om du tar bort detta filter stoppas alla automatiserade åtgärder det utlöser."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Observera att när du klickar på Bekräfta-knappen kommer ditt konto att ha ${ creditsRemaining } krediter kvar."
+        "Observera att när du klickar på knappen ”Bekräfta” kommer ditt konto att ha ${ creditsRemaining } krediter kvar."
       ],
       "Please provide an email address in case we need to contact you.": [
         "Ange en e-postadress om vi behöver kontakta dig."
@@ -6768,6 +6787,9 @@
       ],
       "Priority support": [
         "Prioriterad support"
+      ],
+      "Promotion expired": [
+        "Kampanj löpt ut"
       ],
       "Protected by Swiss privacy laws": [
         "Skyddad av schweiziska integritetslagar"
@@ -6843,6 +6865,9 @@
       ],
       "Right to Left": [
         "Höger till vänster"
+      ],
+      "Save ${ percentage }": [
+        "Spara ${ percentage }"
       ],
       "Save your password somewhere safe.": [
         "Spara ditt lösenord på någon säker plats."
@@ -6937,6 +6962,9 @@
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF används för att ange vem som får skicka e-post för domänen så vi rekommenderar starkt att du lägger till ${ MAIL_APP_NAME } till din SPF-post. Lägg till följande TXT-post i din DNS. Detta kan oftast göras i Kontrollpanelen hos din domännamnsregistrator."
       ],
+      "Stay tuned for future promotions.": [
+        "Håll ögonen öppna för framtida kampanjer."
+      ],
       "Step ${ step }": [
         "Steg ${ step }",
         "Steg ${ step }"
@@ -7000,6 +7028,9 @@
       ],
       "Thank you": [
         "Tack"
+      ],
+      "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
+        "Tack för att du stödjer vårt uppdrag att bygga ett bättre internet där integritet och frihet kommer först."
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Meddelandet ${ boldDataLocked } kommer inte längre att visas, men du kan fortfarande låsa upp dina data under ${ encryptionAndKeysLink }."
@@ -7090,6 +7121,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Denna länk kan vara en homografisk attack. Kontrollera att det är denna länk du vill besöka, eller öppna den inte."
+      ],
+      "This promotion link has expired.": [
+        "Denna kampanjlänk har löpt ut."
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Denna token kommer inte vara tillgänglig efter att du stänger detta fönster och du bör inte dela den med någon."
@@ -7629,6 +7663,9 @@
       ],
       "Your account recovery method is set": [
         "Din kontoåterställningsmetod är inställd"
+      ],
+      "Your account was successfully updated with this promotion": [
+        "Ditt konto har uppdaterats med denna kampanj"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Ditt konto kommer att uppdateras när betalningen är klargjord."
@@ -10255,14 +10292,6 @@
         "Ditt valda paket: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } provperiod"
-      ],
-      "Your account's usage": [
-        "Ditt kontos användning"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -10286,6 +10315,14 @@
         "Lås upp premiumfunktioner genom att uppgradera"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } provperiod"
+      ],
+      "Your account's usage": [
+        "Ditt kontos användning"
+      ]
+    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Säkra ditt schema med end-to-end-kryptering. Inkluderar stöd för anpassade kalendrar, kalenderdelning och mer."
@@ -10303,7 +10340,7 @@
         "Få åtkomst till innehåll på streamingtjänster, inklusive Netflix, Disney+ och Prime Video, var som helst"
       ],
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
-        "E-postadresser har full sändnings- och mottagningsförmåga. En användare kan ha flera adresser tilldelade dem; dock kan en enda adress inte tilldelas flera användare."
+        "Adresser har full sändnings- och mottagningsförmåga. En användare kan ha flera adresser tilldelade till dem. En enda adress kan dock inte tilldelas till flera användare."
       ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
         "Ger dig åtkomst till mer än ett nätverk samtidigt, t.ex. streama en film från ett annat land samtidigt som du får lokala sökresultat"
@@ -10994,9 +11031,6 @@
       "Download to continue ${ size }": [
         "Ladda ner för att fortsätta ${ size }"
       ],
-      "Keep this plan and use ${ appName }": [
-        "Behåll detta paket och använd ${ appName }"
-      ],
       "Or ${ createANewAccount }": [
         "Eller ${ createANewAccount }"
       ],
@@ -11006,14 +11040,8 @@
       "Start using ${ appName } now": [
         "Börja använda ${ appName } nu"
       ],
-      "Upgrade for only ${ relativePrice } extra per month": [
-        "Uppgradera för endast ${ relativePrice } extra per månad"
-      ],
       "Upgrade my plan": [
         "Uppgradera mitt paket"
-      ],
-      "Use ${ free } instead": [
-        "Använd ${ free } istället"
       ]
     },
     "pass_signup_2023: Feature": {
@@ -11123,9 +11151,6 @@
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "Om du blir utelåst från ditt ${ BRAND_NAME }-konto kommer ditt **återställningskit** att låta dig logga in och återställa dina data."
       ],
-      "Includes basic ${ appName } features:": [
-        "Inkluderar grundläggande ${ appName }-funktioner:"
-      ],
       "Install ${ PASS_APP_NAME }": [
         "Installera ${ PASS_APP_NAME }"
       ],
@@ -11195,9 +11220,6 @@
       "Verifying your payment": [
         "Verifierar din betalning"
       ],
-      "Welcome to ${ plan }": [
-        "Välkommen till ${ plan }"
-      ],
       "Works on all devices": [
         "Fungerar på alla enheter"
       ],
@@ -11212,11 +11234,6 @@
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Din organisation har åtkomst till ${ free }. Om du vill komma åt premiumfunktioner för ${ appName }, be din organisations administratör att uppgradera."
-      ]
-    },
-    "pass_signup_2023: Onboarding": {
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Välkommen till ${ PASS_APP_NAME }"
       ]
     },
     "pass_signup_2023: Title": {
@@ -12113,11 +12130,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Denna prenumeration kommer automatiskt att förnyas vartannat år med samma taxa tills den avbryts."
-      ]
-    },
-    "specialoffer: Info": {
-      "No available offers found.": [
-        "Inga tillgängliga erbjudande hittades."
       ]
     },
     "specialoffer: Label": {
@@ -13043,9 +13055,6 @@
       "Auto-reply": [
         "Automatiskt svar"
       ],
-      "Auto-reply and forward": [
-        "Svara automatiskt och vidarebefordra"
-      ],
       "Automatically sign outgoing messages?": [
         "Signera automatiskt utgående meddelanden?"
       ],
@@ -13375,6 +13384,9 @@
       ],
       "Folders and labels": [
         "Mappar och etiketter"
+      ],
+      "Forward and auto-reply": [
+        "Vidarebefordran och autosvar"
       ],
       "Forward emails": [
         "Vidarebefordra e-post"
@@ -14143,7 +14155,7 @@
     },
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
-        "Detta lägger automatiskt till din publika nyckel till varje skickat meddelande. Mottagare kan använda denna för att verifiera äktheten på dina meddelanden och skicka krypterade meddelanden till dig."
+        "Detta lägger automatiskt till din offentliga nyckel till varje meddelande du skickar. Mottagare kan använda detta för att verifiera äktheten av dina meddelanden och skicka krypterade meddelanden till dig."
       ]
     },
     "Tooltip default pgp scheme": {
@@ -14333,8 +14345,8 @@
       ]
     },
     "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Åtkomst till Secure Core-servrar, snabba P2P/BitTorrent-nedladdningar, Tor över VPN, Double Hop och mer."
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Åtkomst till Secure Core-servrar, snabba P2P/BitTorrent-nedladdningar, Tor över VPN och mer."
       ]
     },
     "Warning": {

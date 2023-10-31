@@ -230,6 +230,9 @@
       "Continue with Google": [
         "Συνεχίστε με Google"
       ],
+      "Continue with Outlook": [
+        "Συνεχίστε με Outlook"
+      ],
       "Continue with this password": [
         "Συνεχίστε με αυτόν τον κωδικό πρόσβασης"
       ],
@@ -533,8 +536,14 @@
       "Import emails": [
         "Εισαγωγή email"
       ],
+      "Import from Google": [
+        "Εισαγωγή από Google"
+      ],
       "Import from ICS": [
         "Εισαγωγή από ICS"
+      ],
+      "Import from Outlook": [
+        "Εισαγωγή από Outlook"
       ],
       "Import key": [
         "Εισαγωγή κλειδιού"
@@ -634,6 +643,9 @@
       ],
       "Open navigation": [
         "Άνοιγμα μενού πλοήγησης"
+      ],
+      "Or": [
+        "Ή"
       ],
       "Ordered list": [
         "Ταξινομημένη λίστα"
@@ -899,8 +911,8 @@
       "Sign out of all accounts": [
         "Έξοδος από όλους τους λογαριασμούς"
       ],
-      "Sign up for free": [
-        "Εγγραφείτε δωρεάν"
+      "sign up for free": [
+        "εγγραφείτε δωρεάν"
       ],
       "Signing in": [
         "Γίνεται είσοδος"
@@ -2871,6 +2883,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Γίνεται κρυπτογράφηση και εισαγωγή επαφών... Αυτή η διαδικασία ίσως πάρει μερικά λεπτά. Όταν ολοκληρωθεί, μπορείτε να κλείσετε αυτό το παράθυρο."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Για εισαγωγή μέσω αρχείου CSV και VCF, βεβαιωθείτε ότι το αρχείο δεν υπερβαίνει ${ MAX_IMPORT_FILE_SIZE_STRING } ή τις ${ MAX_IMPORT_CONTACTS_STRING } επαφές. Εάν το αρχείο σας είναι μεγαλύτερο, παρακαλούμε χωρίστε το σε μικρότερα αρχεία. ${ learnMoreLink }."
+      ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Λάβετε έως και ${ credits } σε πιστώσεις προσκαλώντας φίλους στο ${ BRAND_NAME }."
       ],
@@ -2883,9 +2898,8 @@
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Διαχωρίστε διαφορετικές πτυχές της ζωής σας με πολλές διευθύνσεις email και ξεκλειδώστε περισσότερες premium λειτουργίες όταν αναβαθμίσετε."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Το αρχείο πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει μέχρι και ${ MAX_IMPORT_CONTACTS_STRING } επαφή. Εάν το αρχείο σας είναι μεγαλύτερο, διαχωρίστε το σε μικρότερα αρχεία.",
-        "Το αρχείο πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει\nμέχρι και ${ MAX_IMPORT_CONTACTS_STRING } επαφές. Εάν το αρχείο σας είναι μεγαλύτερο, διαχωρίστε το σε μικρότερα αρχεία."
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Για να εισαγάγετε τις επαφές σας από την Google ή το Outlook, ${ easySwitchLink }."
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Για να καταργήσετε το υποσέλιδο ${ MAIL_APP_NAME }, αναβαθμίστε και ξεκλειδώστε ακόμη περισσότερες premium λειτουργίες."
@@ -2910,6 +2924,11 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Μπορείτε να εισάγετε εκδηλώσεις σε μορφή iCal (ICS αρχείο).\nΤο αρχείο θα πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει μέχρι και ${ MAX_IMPORT_EVENTS_STRING } εκδηλώσεις.\nΑν το αρχείο σας είναι μεγαλύτερο, παρακαλούμε να το χωρίσετε σε μικρότερα αρχεία."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "χρησιμοποιήστε το βοηθό εισαγωγής Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5509,6 +5528,10 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } διεύθυνση",
+        "${ amountOfAddresses } διευθύνσεις"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Το ${ appName } χρειάζεται την άδειά σας για την ${ enableDesktopNotifications }."
       ],
@@ -5590,6 +5613,9 @@
         "${ numberOfNonPrivateKeys } ανεβασμένο αρχείο δεν είναι έγκυρο ιδιωτικό κλειδί. Παρακαλούμε επαληθεύστε και δοκιμάστε ξανά.",
         "${ numberOfNonPrivateKeys } ανεβασμένα αρχεία δεν είναι έγκυρα ιδιωτικά κλειδιά. Παρακαλούμε επαληθεύστε και δοκιμάστε ξανά."
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "${ plan } καταργήθηκε. Η προσφορά πακέτου δεν είναι διαθέσιμη σε πρόγραμμα 1 μηνός."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } απαιτεί τουλάχιστον 1 αποκλειστικό διακομιστή ${ serverPricePerMonth }"
       ],
@@ -5607,6 +5633,14 @@
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "Ο διακομιστής ${ provisioningCounter } εξακολουθεί να ρυθμίζεται. Αυτό συνήθως διαρκεί περίπου ${ provisioningDuration }.",
         "Οι διακομιστές ${ provisioningCounter } εξακολουθούν να ρυθμίζονται. Αυτό συνήθως διαρκεί περίπου ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } επιπλέον",
+        "${ remainingAddresses.length } επιπλέον"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length } επιπλέον διεύθυνση",
+        "${ remainingAddresses.length } επιπλέον διευθύνσεις"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγιο",
@@ -5765,10 +5799,6 @@
       ],
       "Additional options": [
         "Πρόσθετες επιλογές"
-      ],
-      "address": [
-        "διεύθυνση",
-        "διευθύνσεις"
       ],
       "Admin account allocation": [
         "Κατανομή στον λογαριασμό του διαχειριστή"
@@ -5943,6 +5973,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Προτού αρχίσετε να στέλνετε και να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου από τις νέες διευθύνσεις σας, πρέπει πρώτα να δημιουργήσετε κλειδιά κρυπτογράφησης για αυτά."
+      ],
+      "Billed at ${ price }": [
+        "Χρεώνεται σε τιμή ${ price }"
       ],
       "Billing cycle: ${ text }": [
         "Κύκλος χρέωσης: ${ text }"
@@ -6526,9 +6559,6 @@
       "Monthly ${ onDayString }": [
         "Μηνιαίως ${ onDayString }"
       ],
-      "more": [
-        "περισσότερα"
-      ],
       "Multi-user support not enabled.": [
         "Η υποστήριξη πολλαπλών χρηστών δεν είναι ενεργοποιημένη."
       ],
@@ -6769,6 +6799,9 @@
       "Priority support": [
         "Υποστήριξη κατά προτεραιότητα"
       ],
+      "Promotion expired": [
+        "Η προσφορά έληξε"
+      ],
       "Protected by Swiss privacy laws": [
         "Προστατεύεται από τους Ελβετικούς νόμους περί απορρήτου"
       ],
@@ -6843,6 +6876,9 @@
       ],
       "Right to Left": [
         "Δεξιά προς τα αριστερά"
+      ],
+      "Save ${ percentage }": [
+        "Εξοικονομήστε ${ percentage }"
       ],
       "Save your password somewhere safe.": [
         "Αποθηκεύστε τον κωδικό πρόσβασής σας σε ασφαλές μέρος."
@@ -6937,6 +6973,9 @@
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "Το SPF χρησιμοποιείται για να καθορίσει ποιος επιτρέπεται να στείλει μηνύματα για τον τομέα, για αυτό συνιστούμε έντονα να συμπεριλάβετε το ${ MAIL_APP_NAME } στην εγγραφή σας SPF. Παρακαλούμε προσθέστε την ακόλουθη εγγραφή TXT στον DNS σας, κατά κανόνα στον πίνακα ελέγχου του καταχωρητή σας ονομάτων τομέων."
       ],
+      "Stay tuned for future promotions.": [
+        "Μείνετε συντονισμένοι για μελλοντικές προσφορές."
+      ],
       "Step ${ step }": [
         "Βήμα ${ step }",
         "Βήματα ${ step }"
@@ -7000,6 +7039,9 @@
       ],
       "Thank you": [
         "Ευχαριστούμε"
+      ],
+      "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
+        "Ευχαριστούμε που υποστηρίζετε την αποστολή μας να οικοδομήσουμε ένα καλύτερο διαδίκτυο όπου η ιδιωτικότητα και η ελευθερία έρχονται πρώτες."
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Το μήνυμα ${ boldDataLocked } δεν θα εμφανίζεται πλέον, ωστόσο μπορείτε να ξεκλειδώσετε τα δεδομένα σας στο ${ encryptionAndKeysLink }."
@@ -7090,6 +7132,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Αυτός ο σύνδεσμος μπορεί να είναι επίθεση ομογραφίας. Βεβαιωθείτε ότι πρόκειται για το σύνδεσμο που θέλετε να επισκεφθείτε, ή μην το ανοίξετε."
+      ],
+      "This promotion link has expired.": [
+        "Αυτός ο σύνδεσμος προσφοράς έχει λήξει."
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Αυτό το διακριτικό δε θα είναι διαθέσιμο αφού κλείσετε αυτό το παράθυρο και δε θα πρέπει να το μοιραστείτε με κανέναν."
@@ -7629,6 +7674,9 @@
       ],
       "Your account recovery method is set": [
         "Η μέθοδος ανάκτησης του λογαριασμού σας έχει οριστεί"
+      ],
+      "Your account was successfully updated with this promotion": [
+        "Ο λογαριασμός σας ενημερώθηκε με επιτυχία με αυτήν την προσφορά"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Ο λογαριασμός σας θα ενημερωθεί μόλις γίνει εκκαθάριση της πληρωμής."
@@ -10255,14 +10303,6 @@
         "Το επιλεγμένο σας πρόγραμμα: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Δοκιμή ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Η κατανάλωση του λογαριασμού σας"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Διαγραφή λογαριασμού;"
@@ -10284,6 +10324,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Ξεκλειδώστε premium χαρακτηριστικά με αναβάθμιση"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Δοκιμή ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Η κατανάλωση του λογαριασμού σας"
       ]
     },
     "new_plans: tooltip": {
@@ -10994,9 +11042,6 @@
       "Download to continue ${ size }": [
         "Λήψη για συνέχεια ${ size }"
       ],
-      "Keep this plan and use ${ appName }": [
-        "Διατηρήστε αυτό το πλάνο και χρησιμοποιήστε το ${ appName }"
-      ],
       "Or ${ createANewAccount }": [
         "Ή ${ createANewAccount }"
       ],
@@ -11006,14 +11051,8 @@
       "Start using ${ appName } now": [
         "Ξεκινήστε να χρησιμοποιείτε το ${ appName } τώρα"
       ],
-      "Upgrade for only ${ relativePrice } extra per month": [
-        "Αναβάθμιση για μόνο ${ relativePrice } επιπλέον ανά μήνα"
-      ],
       "Upgrade my plan": [
         "Αναβαθμίστε το πλάνο μου"
-      ],
-      "Use ${ free } instead": [
-        "Χρησιμοποιήστε το ${ free } αντί για αυτό"
       ]
     },
     "pass_signup_2023: Feature": {
@@ -11123,9 +11162,6 @@
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "Εάν κλειδωθείτε έξω από τον ${ BRAND_NAME } λογαριασμό σας, το **κιτ ανάκτησης** θα σας επιτρέψει να συνδεθείτε και να ανακτήσετε τα δεδομένα σας."
       ],
-      "Includes basic ${ appName } features:": [
-        "Περιλαμβάνει τις βασικές δυνατότητες του ${ appName }:"
-      ],
       "Install ${ PASS_APP_NAME }": [
         "Εγκατάσταση ${ PASS_APP_NAME }"
       ],
@@ -11195,9 +11231,6 @@
       "Verifying your payment": [
         "Γίνεται επαλήθευση της πληρωμής σας"
       ],
-      "Welcome to ${ plan }": [
-        "Καλώς ήρθατε στο ${ plan }"
-      ],
       "Works on all devices": [
         "Λειτουργεί σε όλες τις συσκευές"
       ],
@@ -11212,11 +11245,6 @@
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Ο οργανισμός σας έχει πρόσβαση στο ${ free }. Εάν θέλετε να αποκτήσετε πρόσβαση σε premium δυνατότητες του ${ appName }, ζητήστε από τον διαχειριστή του οργανισμού σας να κάνει αναβάθμιση."
-      ]
-    },
-    "pass_signup_2023: Onboarding": {
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Καλώς ήρθατε στο${ PASS_APP_NAME }"
       ]
     },
     "pass_signup_2023: Title": {
@@ -12113,11 +12141,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Αυτή η συνδρομή θα ανανεώνεται αυτόματα κάθε 2 χρόνια με την ίδια τιμή μέχρι να ακυρωθεί."
-      ]
-    },
-    "specialoffer: Info": {
-      "No available offers found.": [
-        "Δεν βρέθηκαν διαθέσιμες προσφορές."
       ]
     },
     "specialoffer: Label": {
@@ -13040,9 +13063,6 @@
       "Auto-reply": [
         "Αυτόματη απάντηση"
       ],
-      "Auto-reply and forward": [
-        "Αυτόματη απάντηση και προώθηση"
-      ],
       "Automatically sign outgoing messages?": [
         "Αυτόματη υπογραφή εξερχόμενων μηνυμάτων;"
       ],
@@ -13372,6 +13392,9 @@
       ],
       "Folders and labels": [
         "Φάκελοι και ετικέτες"
+      ],
+      "Forward and auto-reply": [
+        "Προώθηση και αυτόματη απάντηση"
       ],
       "Forward emails": [
         "Προώθηση μηνυμάτων ηλεκτρονικού ταχυδρομείου"
@@ -14330,8 +14353,8 @@
       ]
     },
     "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Πρόσβαση σε Secure core διακομιστές, γρήγορες λήψεις P2P/BitTorrent, Tor over VPN, Double hop και πολλά άλλα."
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Πρόσβαση σε Secure core διακομιστές, γρήγορες λήψεις P2P/BitTorrent, Tor over VPN, και πολλά άλλα."
       ]
     },
     "Warning": {

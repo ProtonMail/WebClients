@@ -842,9 +842,6 @@
       "Sign out of all accounts": [
         "Выйти из всех учётных записей"
       ],
-      "Sign up for free": [
-        "Зарегистрироваться бесплатно"
-      ],
       "Signing in": [
         "Выполняется вход"
       ],
@@ -1279,6 +1276,22 @@
         "Подписка автоматически продлится на обычный срок по стандартной цене с учетом скидки в конце платёжного цикла."
       ]
     },
+    "bf2023: header": {
+      "Save with Black Friday deals on a high-speed Swiss VPN": [
+        "Скидки в Чёрную пятницу на высокоскоростной швейцарский VPN"
+      ],
+      "Select your Black Friday offer": [
+        "Выберите предложение Черной пятницы"
+      ]
+    },
+    "bf2023: info": {
+      "All premium ${ BRAND_NAME } services. One easy subscription.": [
+        "Все премиальные сервисы ${ BRAND_NAME }. Или одна лёгкая подписка."
+      ],
+      "Secure browsing and premium VPN features.": [
+        "Безопасный просмотр веб-страниц и платные функции VPN."
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "Гарантия возврата средств в течение 30 дней"
@@ -1311,11 +1324,14 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Обходите локальные блокировки Интернета и цензуру с помощью нашей глобальной сети серверов."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
-        "Включает поддержку собственных доменов (${ domains } шт.),  адресов электронной почты (${ addresses } шт.), псевдонимов hide-my-email (${ aliases } шт.), совместный доступ к календарю и другие преимущества."
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Включает поддержку 1 пользовательского домена, 10 адресов электронной почты, 10 алиасов hide-my-email, совместный доступ к календарю и другие преимущества."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Включает поддержку собственных доменов (${ domains } шт.),  адресов электронной почты (${ addresses } шт.), неограниченное количество псевдонимов hide-my-email, совместный доступ к календарю и другие преимущества."
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Включает поддержку трех пользовательских доменов, ${ addresses } адрес электронной почты, неограниченного числа алиасов hide-my-email, совместный доступ к календарю и другие преимущества.",
+        "Включает поддержку трех пользовательских доменов, ${ addresses } адреса электронной почты, неограниченного числа алиасов hide-my-email, совместный доступ к календарю и другие преимущества.",
+        "Включает поддержку трех пользовательских доменов, ${ addresses } адресов электронной почты, неограниченного числа алиасов hide-my-email, совместный доступ к календарю и другие преимущества.",
+        "Включает поддержку трех пользовательских доменов, ${ addresses } адресов электронной почты, неограниченного числа алиасов hide-my-email, совместный доступ к календарю и другие преимущества."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Защитите свои материалы при помощи зашифрованного облачного хранилища. Вам будут доступны история версий, зашифрованный обмен файлами и многое другое."
@@ -2902,12 +2918,6 @@
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Выделите различные аспекты своей жизни с помощью нескольких адресов электронной почты и получите доступ к дополнительным функциям при обновлении тарифа."
-      ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Файла должен быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и содержать не более ${ MAX_IMPORT_CONTACTS_STRING } контакта. Если ваш файл больше, то, пожалуйста, разбейте его на меньшие файлы.",
-        "Файла должен быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и содержать не более ${ MAX_IMPORT_CONTACTS_STRING } контактов. Если ваш файл больше, то, пожалуйста, разбейте его на меньшие файлы.",
-        "Файла должен быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и содержать не более ${ MAX_IMPORT_CONTACTS_STRING } контактов. Если ваш файл больше, то, пожалуйста, разбейте его на меньшие файлы.",
-        "Файла должен быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и содержать не более ${ MAX_IMPORT_CONTACTS_STRING } контактов. Если ваш файл больше, то, пожалуйста, разбейте его на меньшие файлы."
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Для удаления нижнего колонтитула ${ MAIL_APP_NAME } обновите тариф и разблокируйте ещё больше премиум-функций."
@@ -5417,12 +5427,6 @@
       "Additional options": [
         "Дополнительные параметры"
       ],
-      "address": [
-        "адрес",
-        "адреса",
-        "адресов",
-        "адресов"
-      ],
       "Admin account allocation": [
         "Распределение аккаунтов администраторов"
       ],
@@ -6148,9 +6152,6 @@
       ],
       "Monthly ${ onDayString }": [
         "Ежемесячно ${ onDayString }"
-      ],
-      "more": [
-        "еще"
       ],
       "Multi-user support not enabled.": [
         "Многопользовательский режим не включён."
@@ -9691,14 +9692,6 @@
         "Вы выбрали тариф: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Пробная версия ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Использование вашего аккаунта"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
@@ -9720,6 +9713,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Улучшите тариф и разблокируйте платные функции"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Пробная версия ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Использование вашего аккаунта"
       ]
     },
     "new_plans: tooltip": {
@@ -10363,9 +10364,6 @@
       "Download to continue ${ size }": [
         "Скачать для продолжения ${ size }"
       ],
-      "Keep this plan and use ${ appName }": [
-        "Сохраните этот план и используйте ${ appName }"
-      ],
       "Or ${ createANewAccount }": [
         "Или ${ createANewAccount }"
       ],
@@ -10375,14 +10373,8 @@
       "Start using ${ appName } now": [
         "Начать использовать ${ appName } сейчас"
       ],
-      "Upgrade for only ${ relativePrice } extra per month": [
-        "Улучшите всего за ${ relativePrice } в месяц дополнительно"
-      ],
       "Upgrade my plan": [
         "Улучшить мой план"
-      ],
-      "Use ${ free } instead": [
-        "Вместо этого использовать ${ free }"
       ]
     },
     "pass_signup_2023: Feature": {
@@ -10486,9 +10478,6 @@
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "Если вы потеряете доступ в свою учетную запись ${ BRAND_NAME }, ваш **набор для восстановления** позволит вам войти и восстановить свои данные."
       ],
-      "Includes basic ${ appName } features:": [
-        "Включает базовые функции ${ appName }:"
-      ],
       "Install ${ PASS_APP_NAME }": [
         "Установить ${ PASS_APP_NAME }"
       ],
@@ -10552,9 +10541,6 @@
       "Verifying your payment": [
         "Подтверждение вашего платежа"
       ],
-      "Welcome to ${ plan }": [
-        "Добро пожаловать в ${ plan }"
-      ],
       "Works on all devices": [
         "Работает на всех устройствах"
       ],
@@ -10566,11 +10552,6 @@
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "У вашей организации есть доступ к ${ free }. Если вы хотите получить доступ к премиальным функциям ${ appName }, пожалуйста, попросите администратора вашей организации улучшить тариф."
-      ]
-    },
-    "pass_signup_2023: Onboarding": {
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Добро пожаловать в ${ PASS_APP_NAME }"
       ]
     },
     "pass_signup_2023: Title": {
@@ -11273,11 +11254,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Подписка будет автоматически продлеваться каждые 2 года по той же цене до тех пор, пока вы ее не отмените."
-      ]
-    },
-    "specialoffer: Info": {
-      "No available offers found.": [
-        "Специальные предложения не найдены."
       ]
     },
     "specialoffer: Label": {
@@ -13393,11 +13369,6 @@
       ],
       "Your ${ selected } plan": [
         "Ваш тариф ${ selected }"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Доступ к серверам Secure Core, высокая скорость скачивания через P2P-сети и BitTorrent, VPN с Tor и многое другое."
       ]
     },
     "Warning": {

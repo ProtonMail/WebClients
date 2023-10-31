@@ -230,6 +230,9 @@
       "Continue with Google": [
         "繼續以 Google 帳號登入"
       ],
+      "Continue with Outlook": [
+        "使用 Outlook 繼續"
+      ],
       "Continue with this password": [
         "繼續使用此密碼"
       ],
@@ -533,8 +536,14 @@
       "Import emails": [
         "匯入電郵"
       ],
+      "Import from Google": [
+        "從 Google 匯入"
+      ],
       "Import from ICS": [
         "從 ICS 匯入"
+      ],
+      "Import from Outlook": [
+        "從 Outlook 匯入"
       ],
       "Import key": [
         "匯入金鑰"
@@ -884,6 +893,12 @@
       "Sign in": [
         "登入"
       ],
+      "Sign in with password": [
+        "使用密碼登入"
+      ],
+      "Sign in with SSO": [
+        "使用 SSO 登入"
+      ],
       "Sign out": [
         "登出"
       ],
@@ -892,9 +907,6 @@
       ],
       "Sign out of all accounts": [
         "登出所有帳號"
-      ],
-      "Sign up for free": [
-        "免費註冊"
       ],
       "Signing in": [
         "登入"
@@ -2866,8 +2878,8 @@
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "使用多個電子郵件地址分隔生活的不同方面，並在升級時解鎖更多進階功能。"
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
-        "檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_CONTACTS_STRING } 個聯絡人。若您的檔案超出此限，請將其分割為較小的檔案。"
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "從 Google 或 Outlook, ${ easySwitchLink } 來匯入你的聯絡人"
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "移除${ MAIL_APP_NAME }頁尾，升級以解鎖付費版功能"
@@ -2996,6 +3008,17 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "協助我們改善！"
+      ]
+    },
+    "drive_signup_2023: Info": {
+      "Advanced sharing security": [
+        "進階的共享安全性"
+      ],
+      "Encrypted cloud storage for all your files": [
+        "加密的雲端儲存您的檔案"
+      ],
+      "Secure cloud storage and file sharing that protects your data": [
+        "安全雲端儲存和檔案共享保護您的資料"
       ]
     },
     "Duration": {
@@ -4433,6 +4456,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -4447,6 +4473,9 @@
       ],
       "Megabytes": [
         "百萬位元組"
+      ],
+      "Terabytes": [
+        "TB"
       ]
     },
     "Filter Actions": {
@@ -5233,6 +5262,9 @@
       "${ firstRemainingCalendarName } will be set as default calendar.": [
         "${ firstRemainingCalendarName } 將會是預設的行事曆。"
       ],
+      "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
+        "${ inviterEmailJSX }希望與您使用${ PASS_APP_NAME }共享檔案"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } 也可使用單一密碼取代登入密碼和郵箱密碼。如要切換為單一密碼模式，請輸入您想使用的單一密碼，然後按一下「儲存」。"
       ],
@@ -5415,9 +5447,6 @@
       ],
       "Additional options": [
         "額外設定"
-      ],
-      "addresses": [
-        "個電郵位址"
       ],
       "Admin account allocation": [
         "管理員帳號指派"
@@ -5607,6 +5636,9 @@
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "為分享此行事曆的完整事件細節，您允許 ${ BRAND_NAME } 存取此加密行事曆的資料。"
+      ],
+      "Cancel anytime": [
+        "隨時取消"
       ],
       "Center": [
         "置中"
@@ -6159,9 +6191,6 @@
       ],
       "Monthly ${ onDayString }": [
         "每月 ${ onDayString } 日"
-      ],
-      "more": [
-        "更多"
       ],
       "Multi-user support not enabled.": [
         "多使用者支援尚未啟用。"
@@ -9022,6 +9051,9 @@
       "Create a new ${ appName } account": [
         "建立新的 ${ appName } 帳號"
       ],
+      "Find your ${ BRAND_NAME } Account username": [
+        "尋找您的 ${ BRAND_NAME } 帳號使用者名稱"
+      ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "忘記您的 ${ BRAND_NAME } 帳號密碼？使用您的備用碼、電子郵件或簡訊找到它，並重新取得對 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等的存取權。"
       ],
@@ -9832,14 +9864,6 @@
         "您選擇的方案：${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }試用"
-      ],
-      "Your account's usage": [
-        "您帳號的使用情況"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "要刪除帳號？"
@@ -9861,6 +9885,14 @@
       ],
       "Unlock premium features by upgrading": [
         "透過升級來解鎖高級功能"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }試用"
+      ],
+      "Your account's usage": [
+        "您帳號的使用情況"
       ]
     },
     "new_plans: tooltip": {
@@ -10561,9 +10593,6 @@
       "Download to continue ${ size }": [
         "下載已繼續${ size }"
       ],
-      "Keep this plan and use ${ appName }": [
-        "保持此方案及使用${ appName }"
-      ],
       "Or ${ createANewAccount }": [
         "或${ createANewAccount }"
       ],
@@ -10573,14 +10602,8 @@
       "Start using ${ appName } now": [
         "現在開始使用 ${ appName }"
       ],
-      "Upgrade for only ${ relativePrice } extra per month": [
-        "升級只要每月${ relativePrice }"
-      ],
       "Upgrade my plan": [
         "升級我的方案"
-      ],
-      "Use ${ free } instead": [
-        "使用${ free }取代"
       ]
     },
     "pass_signup_2023: Feature": {
@@ -10690,9 +10713,6 @@
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "若您無法解鎖${ BRAND_NAME }帳號，您的**復原包**將允許您登入及復原您的資料。"
       ],
-      "Includes basic ${ appName } features:": [
-        "包含基礎${ appName }功能:"
-      ],
       "Install ${ PASS_APP_NAME }": [
         "安裝${ PASS_APP_NAME }"
       ],
@@ -10759,9 +10779,6 @@
       "Verifying your payment": [
         "驗證您的付帳款"
       ],
-      "Welcome to ${ plan }": [
-        "歡迎使用 ${ plan }"
-      ],
       "Works on all devices": [
         "於所有裝置皆可使用"
       ],
@@ -10775,17 +10792,15 @@
         "貴機構已可存取${ free }。若需使用進階版${ appName }功能，請洽詢組織管理員升級。"
       ]
     },
-    "pass_signup_2023: Onboarding": {
-      "Welcome to ${ PASS_APP_NAME }": [
-        "歡迎來到 ${ PASS_APP_NAME }"
-      ]
-    },
     "pass_signup_2023: Title": {
       "${ upsellPlanTitle } plan": [
         "${ upsellPlanTitle }方案"
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "全部${ BRAND_NAME }升級服務。${ br }一個簡單的訂閱。"
+      ],
+      "Create a ${ PASS_APP_NAME } account": [
+        "建立一個${ PASS_APP_NAME } 帳號"
       ],
       "Create your ${ BRAND_NAME } account": [
         "創建您的 ${ BRAND_NAME } 帳號"
@@ -11653,11 +11668,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "此訂閱將每 2 年自動以相同的費用續訂，直到被取消為止。"
-      ]
-    },
-    "specialoffer: Info": {
-      "No available offers found.": [
-        "找不到可用優惠。"
       ]
     },
     "specialoffer: Label": {
@@ -12562,9 +12572,6 @@
       "Auto-reply": [
         "自動回覆"
       ],
-      "Auto-reply and forward": [
-        "自動回覆並轉寄"
-      ],
       "Automatically sign outgoing messages?": [
         "自動簽署寄出的訊息？"
       ],
@@ -13219,6 +13226,9 @@
       "Sign in to join the Beta program": [
         "登入以加入體驗版計畫"
       ],
+      "Sign in to your organization": [
+        "登入您的組織"
+      ],
       "Sign in with 2FA": [
         "使用 2FA 登入"
       ],
@@ -13831,11 +13841,6 @@
       ],
       "Your ${ selected } plan": [
         "您專屬的 ${ selected } 方案"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "直達 Secure Core 伺服器、極速 P2P/BitTorrent 下載、匿名連接 VPN、多躍點路由以及其它更多功能。"
       ]
     },
     "Warning": {
