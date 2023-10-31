@@ -80,3 +80,17 @@ export const MAX_TOO_MANY_REQUESTS_WAIT = 60 * 60; // Seconds.
  * entirely. The main utility is to mitigate bitflip issues.
  */
 export const MAX_BLOCK_VERIFICATION_RETRIES = 1;
+
+/**
+ * Amount of time between heartbeats. These are used to ensure the worker
+ * is still alive, and not stuck in a bad state.
+ */
+export const HEARTBEAT_INTERVAL = 30 * 1000; // ms
+
+/**
+ * Amount of time to wait for a new heartbeat. If no heartbeat is received
+ * during this interval, we cancel and restart the worker.
+ *
+ * This should be greater than HEARTBEAT_INTERVAL;
+ */
+export const HEARTBEAT_WAIT_TIME = HEARTBEAT_INTERVAL * 2; // ms
