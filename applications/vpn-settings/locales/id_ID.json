@@ -302,6 +302,9 @@
       "Open navigation": [
         "Buka navigasi"
       ],
+      "Or": [
+        "Atau"
+      ],
       "Organization": [
         "Organisasi"
       ],
@@ -440,8 +443,8 @@
       "Sign out": [
         "Keluar"
       ],
-      "Sign up for free": [
-        "Daftar gratis"
+      "sign up for free": [
+        "daftar gratis"
       ],
       "Signing in": [
         "Masuk"
@@ -2544,6 +2547,9 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } addresses": [
+        "${ amountOfAddresses } alamat"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
       ],
@@ -2571,11 +2577,20 @@
       "${ number } servers": [
         "${ number } server"
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "Paket ${ plan } dihapus. Penawaran terbundel tidak tersedia dengan paket berdurasi 1 bulan."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } memerlukan setidaknya 1 server khusus ${ serverPricePerMonth }"
       ],
       "${ provisioningCounter } servers are still being set up. This usually takes around ${ provisioningDuration }.": [
         "Server ${ provisioningCounter } masih dipersiapkan. Proses ini pada umumnya akan memakan waktu sekitar ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } lainnya"
+      ],
+      "${ remainingAddresses.length } more addresses": [
+        "${ remainingAddresses.length } alamat lainnya"
       ],
       "${ storage } storage": [
         "Kuota penyimpanan ${ storage }"
@@ -2645,9 +2660,6 @@
       ],
       "Additional options": [
         "Pengaturan tambahan"
-      ],
-      "addresses": [
-        "alamat"
       ],
       "Admin account allocation": [
         "Alokasi akun admin"
@@ -2720,6 +2732,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Sebelum Anda dapat mulai mengirim dan menerima surel dari alamat baru Anda, Anda perlu membuat kunci enkripsi untuk alamat tersebut."
+      ],
+      "Billed at ${ price }": [
+        "Tertagih dengan harga ${ price }"
       ],
       "Billing cycle: ${ text }": [
         "Siklus tagihan: ${ text }"
@@ -3009,9 +3024,6 @@
       "MM/YY": [
         "BB/TT"
       ],
-      "more": [
-        "lebih"
-      ],
       "Multi-user support not enabled.": [
         "Dukungan multi-pengguna tidak diaktifkan."
       ],
@@ -3185,6 +3197,9 @@
       ],
       "Revoke certificate ${ name }": [
         "Cabut sertifikat ${ name }"
+      ],
+      "Save ${ percentage }": [
+        "Hemat ${ percentage }"
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Simpan kata sandi Anda di tempat yang aman. Klik ikon berikut untuk mengonfirmasi bahwa Anda telah mengetik kata sandi Anda dengan benar."
@@ -7157,8 +7172,8 @@
       ]
     },
     "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Akses ke server Secure Core, unduhan P2P/BitTorrent cepat, Tor melalui VPN, dan lainnya."
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Akses ke server Secure Core, unduhan P2P/BitTorrent yang cepat, akses Tor via VPN, dan masih banyak lagi."
       ]
     },
     "Warning": {
