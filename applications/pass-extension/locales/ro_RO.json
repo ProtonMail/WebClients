@@ -29,9 +29,6 @@
       "Back": [
         "Înapoi"
       ],
-      "Can't find your password manager? Please let us know!": [
-        "Nu vă găsiți managerul de parole? Anunțați-ne!"
-      ],
       "Cancel": [
         "Anulare"
       ],
@@ -62,6 +59,9 @@
       "Confirm access": [
         "Confirmare acces"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "Conectați-vă la contul ${ BRAND_NAME }"
+      ],
       "Continue": [
         "Continuare"
       ],
@@ -80,6 +80,9 @@
       "Create": [
         "Creare"
       ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Creare cont ${ BRAND_NAME }"
+      ],
       "Create a ${ BRAND_NAME } account": [
         "Creare cont ${ BRAND_NAME }"
       ],
@@ -91,6 +94,9 @@
       ],
       "Create an account": [
         "Creare cont"
+      ],
+      "Create card": [
+        "Creare card"
       ],
       "Create login": [
         "Creare autentificare"
@@ -158,8 +164,8 @@
       "Generate password": [
         "Generare parolă"
       ],
-      "Generated password": [
-        "Parole generată"
+      "Generated passwords": [
+        "Parola generate"
       ],
       "Get mobile apps": [
         "Obținere aplicați mobil"
@@ -250,9 +256,6 @@
       ],
       "Pass for iOS": [
         "Proton Pass pentru iOS"
-      ],
-      "Proceed": [
-        "Începere"
       ],
       "Refresh the page": [
         "Împrospătare pagină"
@@ -350,17 +353,20 @@
       "Upgrade": [
         "Modificare"
       ],
+      "Upgrade now": [
+        "Modificare"
+      ],
       "Upgrade now to share with more people": [
         "Schimbați planul acum pentru a partaja cu mai mulți oameni"
-      ],
-      "Upgrade to keep these features": [
-        "Modificați planul pentru a păstra aceste parole"
       ],
       "Write us on Reddit": [
         "Scrieți-ne pe Reddit"
       ],
       "Write us on Twitter": [
         "Scrieți-ne pe Twitter"
+      ],
+      "Your password manager not here? Request it.": [
+        "Managerul de parole pe care îl folosiți nu apare aici? Solicitați-l."
       ]
     },
     "Button": {
@@ -611,6 +617,9 @@
       ],
       "MB": [
         "MiB"
+      ],
+      "TB": [
+        "TiB"
       ]
     },
     "file size format, long": {
@@ -633,6 +642,11 @@
         "Megabait",
         "Megabaiți",
         "Megabaiți"
+      ],
+      "Terabyte": [
+        "Terabait",
+        "Terabaiți",
+        "Terabaiți"
       ]
     },
     "Info": {
@@ -660,9 +674,6 @@
         "${ memberCount } membri",
         "${ memberCount } de membri"
       ],
-      "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
-        "${ PASS_APP_NAME } va importa numai autentificări și note. Pașapoartele, fișierele atașate etc. nu sunt acceptate în acest moment."
-      ],
       "${ revisionNumber } time": [
         "${ revisionNumber } dată",
         "de ${ revisionNumber } ori",
@@ -683,11 +694,11 @@
         "Au mai rămas ${ trialDaysLeft } zile",
         "Au mai rămas ${ trialDaysLeft } de zile"
       ],
+      "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
+        "Aveți 7 zile de încercare gratuită a funcțiilor premium. Valabil doar pentru prima săptămână de utilizare a ${ BRAND_NAME }."
+      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Este disponibilă o versiune nouă ${ PASS_APP_NAME }. Actualizați-o pentru a vă bucura de cele mai recente caracteristici și remedieri de erori."
-      ],
-      "Access ${ PASS_APP_NAME } via this icon": [
-        "Accesați ${ PASS_APP_NAME } cu această pictogramă"
       ],
       "Access successfully confirmed": [
         "Acces confirmat."
@@ -731,8 +742,8 @@
       "Can view items in this vault.": [
         "Poate vizualiza articolele din acest seif."
       ],
-      "Check out all the exclusive features that are available to you for a limited time.": [
-        "Încercați toate funcțiile exclusive care vă sunt disponibile pentru o perioadă limitată de timp."
+      "Click the icon to open it anytime.": [
+        "Faceți clic pe pictogramă pentru a-l deschide."
       ],
       "Congratulations, your access has been confirmed": [
         "Accesul v-a fost confirmat."
@@ -782,17 +793,14 @@
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "Exportarea este criptată folosind PGP și necesită o frază complexă."
       ],
-      "Follow these simple steps to get the best experience:": [
-        "Urmați acești pași simpli pentru a obține cea mai bună experiență:"
+      "For easy access to your passwords and more.": [
+        "Pentru acces ușor la parole și alte informații."
       ],
       "For security reason, your access needs to be confirmed": [
         "Din motive de securitate, accesul trebuie să vă fie confirmat."
       ],
       "For security reasons, your access needs to be confirmed": [
         "Din motive de securitate, accesul trebuie să vă fie confirmat."
-      ],
-      "Free Trial": [
-        "Evaluare gratuită"
       ],
       "Generated passwords will be stored for a period of one day.": [
         "Parolele generate vor fi stocate pentru o perioadă de o zi."
@@ -824,8 +832,8 @@
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Dacă e activată, puteți completa automat rapid acreditările apăsând pe pictograma ${ PASS_APP_NAME }."
       ],
-      "Import in progress :": [
-        "Importare în derulare :"
+      "Import in progress:": [
+        "Importare în derulare:"
       ],
       "Imported ${ payload.total } item": [
         "S-a importat ${ payload.total } element.",
@@ -837,9 +845,6 @@
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Pentru a obține cea mai bună experiență cu ${ PASS_APP_NAME }, acordați permisiunile de extensie necesare."
-      ],
-      "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
-        "Pentru a vă migra datele către ${ PASS_APP_NAME } de la un alt manager de parole, exportați parolele și importați-le folosind formularul de mai jos. După ce toate articolele au fost importate, ștergeți fișierul exportat anterior."
       ],
       "Internet connection lost": [
         "Conexiunea la internet s-a întrerupt"
@@ -924,6 +929,9 @@
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "Dreptul de proprietatea a fost transferat cu succes. Nu mai sunteți proprietarul acestui seif."
       ],
+      "Pass Plus trial": [
+        "Încercare Proton Pass Plus"
+      ],
       "Password copied": [
         "Parola s-a copiat"
       ],
@@ -963,8 +971,8 @@
       "Save login": [
         "Salvare autentificare"
       ],
-      "Select the destination vault for each imported vault.": [
-        "Selectați seiful de destinație pentru fiecare seif importat."
+      "Select where you want your imported vault(s) to be saved.": [
+        "Selectați unde doriți să fie salvate seifurile importate."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Serverele nu sunt accesibile. Mai reîncercați peste câteva minute."
@@ -999,6 +1007,9 @@
       "Successfully synced all vaults": [
         "Toate seifurile au fost actualizate."
       ],
+      "Switch to another vault or create an item in this vault": [
+        "Comutare la alt seif sau creare alt articol în acest seif."
+      ],
       "Syncing your vaults…": [
         "Se sincronizează seifurile…"
       ],
@@ -1021,6 +1032,12 @@
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Acest seif nu este partajat momentan cu nimeni. Invitați oameni pentru a-l partaja cu ei."
+      ],
+      "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
+        "Pentru a migra datele dintr-un alt manager de parole, accesați managerul de parole, exportați datele, apoi încărcați-le în ${ PASS_APP_NAME }. După ce datele v-au fost importate, puteți șterge fișierul exportat."
+      ],
+      "To review your imported data, click on the Pass icon in your browser toolbar.": [
+        "Pentru a revizui datele importate, faceți clic pe pictograma Proton Pass din bara de utilitare a navigatorului."
       ],
       "Unable to copy to clipboard": [
         "Nu se poate copia în memorie."
@@ -1073,10 +1090,10 @@
       "You cannot change the mailboxes for this alias.": [
         "Nu se poate modifica adresa reală pentru acest alias."
       ],
-      "You have ${ daysRemaining } day left in your trial period.": [
-        "Perioada de încercare mai durează ${ daysRemaining } zi.",
-        "Perioada de încercare mai durează ${ daysRemaining } zile.",
-        "Perioada de încercare mai durează ${ daysRemaining } de zile."
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Mai aveți ${ daysRemaining } zi rămasă pentru a încerca aceste funcții premium.",
+        "Mai aveți ${ daysRemaining } zile rămase pentru a încerca aceste funcții premium.",
+        "Mai aveți ${ daysRemaining } de zile rămase pentru a încerca aceste funcții premium."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Ați depășit numărul de seifuri incluse în abonament. Articolele pot fi mutate doar în primele două seifuri. Pentru a muta articolele între toate seifurile, modificați-vă abonamentul."
@@ -1201,11 +1218,11 @@
       "Capitalise": [
         "Scriere cu majuscule"
       ],
+      "Card": [
+        "Card"
+      ],
       "Card number": [
         "Număr card"
-      ],
-      "Cardholder name": [
-        "Nume titular card"
       ],
       "Cards": [
         "Carduri"
@@ -1231,9 +1248,6 @@
       "Created": [
         "Creat la"
       ],
-      "Credit Card": [
-        "Card de credit"
-      ],
       "Display": [
         "Afișare"
       ],
@@ -1258,11 +1272,14 @@
       "Encrypt your ${ PASS_APP_NAME } data export file": [
         "Criptare fișier exportat cu date ${ PASS_APP_NAME }"
       ],
-      "Expires on": [
-        "Expiră la"
+      "Expiration date": [
+        "Dată expirare"
       ],
       "Export": [
         "Exportare"
+      ],
+      "Field name": [
+        "Nume câmp"
       ],
       "Forwards to": [
         "Redirecționare către"
@@ -1299,9 +1316,6 @@
       ],
       "Invitations": [
         "Invitații"
-      ],
-      "Label": [
-        "Eticheta"
       ],
       "Language": [
         "Limba"
@@ -1344,6 +1358,9 @@
       ],
       "Name": [
         "Nume"
+      ],
+      "Name on card": [
+        "Titular card"
       ],
       "Need help ?": [
         "Doriți ajutor ?"
@@ -1419,6 +1436,9 @@
       ],
       "Security": [
         "Securitate"
+      ],
+      "Security code": [
+        "Cod de securitate"
       ],
       "Select an email address": [
         "Selectați o adresă de e-mail"
@@ -1504,9 +1524,6 @@
       "Vault": [
         "Seif"
       ],
-      "Verification number": [
-        "Număr de verificare"
-      ],
       "View details": [
         "Detalii"
       ],
@@ -1586,6 +1603,9 @@
       "Move items to another vault (optional)": [
         "Mutare articole în alt seif (opțional)"
       ],
+      "Other": [
+        "Altele"
+      ],
       "Pick a vault": [
         "Alegeți un seif"
       ],
@@ -1646,8 +1666,8 @@
       "Confirm PIN code": [
         "Confirmare cod PIN"
       ],
-      "Connect your ${ BRAND_NAME } account": [
-        "Conectați-vă contul ${ BRAND_NAME }"
+      "Connect your ${ BRAND_NAME } Account": [
+        "Conectați-vă la contul ${ BRAND_NAME }"
       ],
       "Create PIN code": [
         "Creare cod PIN"
@@ -1655,11 +1675,8 @@
       "Delete vault \"${ vaultName }\" ?": [
         "Ștergeți seiful „${ vaultName }”?"
       ],
-      "Discard changes ?": [
-        "Renunțați la modificări?"
-      ],
-      "Enjoy your free trial": [
-        "Bucurați-vă de versiunea de încercare"
+      "Discard changes?": [
+        "Anulare modificări?"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Vă bucurați de ${ PASS_APP_NAME }?"
@@ -1693,6 +1710,9 @@
       ],
       "Member limit": [
         "Limită membri"
+      ],
+      "Our welcome gift to you": [
+        "Cadoul nostru de bun venit"
       ],
       "Pending access to the shared data": [
         "În așteptarea accesului la datele partajate"
@@ -1748,8 +1768,8 @@
       "Welcome to ${ PASS_APP_NAME }": [
         "Bun venit la ${ PASS_APP_NAME }"
       ],
-      "Welcome!": [
-        "Bun venit!"
+      "Welcome to your new password manager!": [
+        "Bun venit la noul manager de parole!"
       ],
       "Why ${ PASS_APP_NAME }?": [
         "De ce ${ PASS_APP_NAME }?"
@@ -1762,13 +1782,13 @@
       "Duplicated url": [
         "URL duplicat."
       ],
-      "Label is required": [
-        "Eticheta este obligatorie."
+      "Field name is required": [
+        "Numele câmpului este obligatoriu."
       ],
-      "OTP Secret or URI is invalid": [
+      "OTP secret or URI is invalid": [
         "Secretul OTP sau URI nu este valid."
       ],
-      "OTP Secret or URI required": [
+      "OTP secret or URI required": [
         "Este necesar secretul OTP sau URI."
       ],
       "Url already exists": [
@@ -1788,7 +1808,7 @@
       "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
         "Aliasul „${ name }” este utilizat în prezent în articolul de conectare „${ relatedLoginName }”. De asemenea, nu veți primi mesaje trimise la „${ aliasEmail }”"
       ],
-      "All your trashed items will be permanently deleted. You can not undo this action.": [
+      "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Toate articolele trimise în gunoi vor fi șterse definitiv. Nu puteți anula această acțiune."
       ],
       "An error occured while exporting your data": [
@@ -1875,7 +1895,7 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Nu se poate conecta la ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You can not undo this action": [
+      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
         "Seiful „${ vaultName }” și toate articolele sale vor fi șterse definitiv. Nu puteți anula această acțiune."
       ],
       "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
@@ -1896,8 +1916,8 @@
       "You have reached the limit of vaults you can have in your plan.": [
         "Ați atins limita de seifuri pe care le puteți avea în plan."
       ],
-      "You have unsaved changes, are you sure you want to discard them?": [
-        "Aveți modificări nesalvate, sigur doriți să nu le salvați?"
+      "You have unsaved changes.": [
+        "Aveți modificări nesalvate."
       ],
       "You must select at least one mailbox": [
         "Trebuie să selectați cel puțin o adresă de e-mail."
