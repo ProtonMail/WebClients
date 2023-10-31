@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
-import { PAYMENT_METHOD_TYPES, PaymentMethodType } from '@proton/components/payments/core';
+import { PAYMENT_METHOD_TYPES, PlainPaymentMethodType } from '@proton/components/payments/core';
+import { PaypalProcessorHook } from '@proton/components/payments/react-extensions/usePaypal';
 import { Currency, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
 import { Price, PrimaryButton } from '../../../components';
 import StyledPayPalButton from '../StyledPayPalButton';
-import { PayPalHook } from '../usePayPal';
 import { SUBSCRIPTION_STEPS } from './constants';
 
 interface Props {
@@ -15,8 +15,8 @@ interface Props {
     onDone?: () => void;
     checkResult?: SubscriptionCheckResponse;
     loading?: boolean;
-    method?: PaymentMethodType;
-    paypal: PayPalHook;
+    paymentMethodType?: PlainPaymentMethodType;
+    paypal: PaypalProcessorHook;
     disabled?: boolean;
 }
 
@@ -26,7 +26,7 @@ const SubscriptionSubmitButton = ({
     currency,
     step,
     loading,
-    method,
+    paymentMethodType,
     checkResult,
     disabled,
     onDone,
@@ -61,11 +61,11 @@ const SubscriptionSubmitButton = ({
         );
     }
 
-    if (method === PAYMENT_METHOD_TYPES.PAYPAL) {
-        return <StyledPayPalButton flow="subscription" paypal={paypal} className={className} amount={amountDue} />;
+    if (paymentMethodType === PAYMENT_METHOD_TYPES.PAYPAL) {
+        return <StyledPayPalButton paypal={paypal} className={className} amount={amountDue} currency={currency} />;
     }
 
-    if (!loading && method === PAYMENT_METHOD_TYPES.CASH) {
+    if (!loading && paymentMethodType === PAYMENT_METHOD_TYPES.CASH) {
         return (
             <PrimaryButton className={className} disabled={disabled} loading={loading} onClick={onDone}>
                 {c('Action').t`Done`}
@@ -73,7 +73,7 @@ const SubscriptionSubmitButton = ({
         );
     }
 
-    if (method === PAYMENT_METHOD_TYPES.BITCOIN) {
+    if (paymentMethodType === PAYMENT_METHOD_TYPES.BITCOIN) {
         return (
             <PrimaryButton className={className} disabled={true} loading={loading}>
                 {c('Info').t`Awaiting transaction`}
