@@ -15,6 +15,7 @@ import PlanComparison from './PlanComparison';
 
 interface Props extends Omit<ModalProps, 'title'> {
     title: ReactNode;
+    dark: boolean;
     currentPlan: Plan | undefined;
     upsellPlan: Plan | undefined;
     unlockPlan: Plan | undefined;
@@ -28,6 +29,7 @@ interface Props extends Omit<ModalProps, 'title'> {
 
 const UnlockModal = ({
     title,
+    dark,
     currentPlan,
     unlockPlan,
     upsellPlan,
@@ -90,6 +92,7 @@ const UnlockModal = ({
                     );
                 })()}
                 <PlanComparison
+                    dark={dark}
                     currentPlan={currentPlan}
                     upsellPlan={upsellPlan}
                     unlockPlan={unlockPlan}

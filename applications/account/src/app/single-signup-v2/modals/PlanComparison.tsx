@@ -104,9 +104,10 @@ interface Props {
     upsellPlan: Plan | undefined;
     currentPlan: Plan | undefined;
     unlockPlan: Plan | undefined;
+    dark: boolean;
 }
 
-const PlanComparison = ({ currentPlan, upsellPlan, unlockPlan, children, plansMap }: Props) => {
+const PlanComparison = ({ dark, currentPlan, upsellPlan, unlockPlan, children, plansMap }: Props) => {
     const paidMap = getPaidMap(plansMap);
     const upsellPlanTitle = upsellPlan?.Title || '';
 
@@ -116,7 +117,7 @@ const PlanComparison = ({ currentPlan, upsellPlan, unlockPlan, children, plansMa
             ? {
                   plan: PLANS.MAIL_PRO,
                   title: getFreeTitle(MAIL_SHORT_APP_NAME),
-                  icon: <FreeLogo app={APPS.PROTONMAIL} size={freeSize} />,
+                  icon: <FreeLogo app={APPS.PROTONMAIL} size={freeSize} dark={dark} />,
                   selected: false,
                   bold: false,
                   service: PLAN_SERVICES.MAIL,
@@ -124,7 +125,7 @@ const PlanComparison = ({ currentPlan, upsellPlan, unlockPlan, children, plansMa
             : {
                   plan: PLANS.MAIL,
                   title: getFreeTitle(MAIL_SHORT_APP_NAME),
-                  icon: <FreeLogo app={APPS.PROTONMAIL} size={freeSize} />,
+                  icon: <FreeLogo app={APPS.PROTONMAIL} size={freeSize} dark={dark} />,
                   selected: false,
                   bold: false,
                   service: PLAN_SERVICES.MAIL,
@@ -132,7 +133,7 @@ const PlanComparison = ({ currentPlan, upsellPlan, unlockPlan, children, plansMa
         {
             plan: PLANS.PASS_PLUS,
             title: getFreeTitle(PASS_SHORT_APP_NAME),
-            icon: <FreeLogo app={APPS.PROTONPASS} size={freeSize} />,
+            icon: <FreeLogo app={APPS.PROTONPASS} size={freeSize} dark={dark} />,
             selected: false,
             bold: false,
             service: PLAN_SERVICES.PASS,
@@ -140,7 +141,7 @@ const PlanComparison = ({ currentPlan, upsellPlan, unlockPlan, children, plansMa
         {
             plan: PLANS.DRIVE,
             title: getFreeTitle(DRIVE_SHORT_APP_NAME),
-            icon: <FreeLogo app={APPS.PROTONDRIVE} size={freeSize} />,
+            icon: <FreeLogo app={APPS.PROTONDRIVE} size={freeSize} dark={dark} />,
             selected: false,
             bold: false,
             service: PLAN_SERVICES.DRIVE,
@@ -148,7 +149,7 @@ const PlanComparison = ({ currentPlan, upsellPlan, unlockPlan, children, plansMa
         {
             plan: PLANS.VPN,
             title: getFreeTitle(VPN_SHORT_APP_NAME),
-            icon: <FreeLogo app={APPS.PROTONVPN_SETTINGS} size={freeSize} />,
+            icon: <FreeLogo app={APPS.PROTONVPN_SETTINGS} size={freeSize} dark={dark} />,
             selected: false,
             bold: false,
             service: PLAN_SERVICES.VPN,
