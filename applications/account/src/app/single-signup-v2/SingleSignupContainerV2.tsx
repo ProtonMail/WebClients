@@ -745,10 +745,13 @@ const SingleSignupContainerV2 = ({
         model.session?.subscription,
         model.optimistic.cycle || model.subscriptionData.cycle
     );
-    const relativePrice = humanPriceWithCurrency(
-        relativePricePerMonth,
-        model.optimistic.currency || model.subscriptionData.currency
-    );
+    const relativePrice =
+        relativePricePerMonth > 0
+            ? humanPriceWithCurrency(
+                  relativePricePerMonth,
+                  model.optimistic.currency || model.subscriptionData.currency
+              )
+            : undefined;
 
     const getMnemonicSetup = async () => {
         const recoveryKitGeneration = canGenerateMnemonic
@@ -851,7 +854,7 @@ const SingleSignupContainerV2 = ({
                     subscriptionData={model.subscriptionData}
                     upsellPlan={model.upsell.plan}
                     unlockPlan={model.upsell.unlockPlan}
-                    relativePrice={relativePrice.includes('-') ? undefined : relativePrice}
+                    relativePrice={relativePrice}
                     plansMap={model.plansMap}
                     onUpgrade={() => {
                         unlockModalProps.onClose();
