@@ -850,6 +850,7 @@ const SingleSignupContainerV2 = ({
                     title={c('pass_signup_2023: Title').jt`All ${BRAND_NAME} Plus services.${br}One easy subscription.`}
                     currentPlan={model.upsell.currentPlan}
                     appName={shortProductAppName}
+                    subscriptionData={model.subscriptionData}
                     upsellPlan={model.upsell.plan}
                     unlockPlan={model.upsell.unlockPlan}
                     relativePrice={relativePrice.includes('-') ? undefined : relativePrice}
