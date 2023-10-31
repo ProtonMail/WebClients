@@ -834,11 +834,14 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Обходите локальные блокировки Интернета и цензуру с помощью нашей глобальной сети серверов."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
-        "Включает поддержку собственных доменов (${ domains } шт.),  адресов электронной почты (${ addresses } шт.), псевдонимов hide-my-email (${ aliases } шт.), совместный доступ к календарю и другие преимущества."
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Включает поддержку 1 пользовательского домена, 10 адресов электронной почты, 10 алиасов hide-my-email, совместный доступ к календарю и другие преимущества."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Включает поддержку собственных доменов (${ domains } шт.),  адресов электронной почты (${ addresses } шт.), неограниченное количество псевдонимов hide-my-email, совместный доступ к календарю и другие преимущества."
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Включает поддержку трех пользовательских доменов, ${ addresses } адрес электронной почты, неограниченного числа алиасов hide-my-email, совместный доступ к календарю и другие преимущества.",
+        "Включает поддержку трех пользовательских доменов, ${ addresses } адреса электронной почты, неограниченного числа алиасов hide-my-email, совместный доступ к календарю и другие преимущества.",
+        "Включает поддержку трех пользовательских доменов, ${ addresses } адресов электронной почты, неограниченного числа алиасов hide-my-email, совместный доступ к календарю и другие преимущества.",
+        "Включает поддержку трех пользовательских доменов, ${ addresses } адресов электронной почты, неограниченного числа алиасов hide-my-email, совместный доступ к календарю и другие преимущества."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Защитите свои материалы при помощи зашифрованного облачного хранилища. Вам будут доступны история версий, зашифрованный обмен файлами и многое другое."
@@ -2203,12 +2206,6 @@
       ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Экономьте время, отправляя электронные письма или приглашения всем сразу, это одна из многих функций премиум-подписки. Купите её уже сегодня."
-      ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Файла должен быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и содержать не более ${ MAX_IMPORT_CONTACTS_STRING } контакта. Если ваш файл больше, то, пожалуйста, разбейте его на меньшие файлы.",
-        "Файла должен быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и содержать не более ${ MAX_IMPORT_CONTACTS_STRING } контактов. Если ваш файл больше, то, пожалуйста, разбейте его на меньшие файлы.",
-        "Файла должен быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и содержать не более ${ MAX_IMPORT_CONTACTS_STRING } контактов. Если ваш файл больше, то, пожалуйста, разбейте его на меньшие файлы.",
-        "Файла должен быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и содержать не более ${ MAX_IMPORT_CONTACTS_STRING } контактов. Если ваш файл больше, то, пожалуйста, разбейте его на меньшие файлы."
       ],
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "Это может занять несколько минут. Тем временем вы можете продолжать использовать календарь как обычно."
