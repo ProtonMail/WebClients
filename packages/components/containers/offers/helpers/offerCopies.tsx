@@ -15,6 +15,7 @@ import {
     PLAN_NAMES,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
+import { getPremiumPasswordManagerText } from '@proton/shared/lib/helpers/checkout';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 export const getMonthFreeText = (n: number) => {
@@ -89,7 +90,7 @@ export const getUnlimitedDealFeatures = () => {
                 .t`Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.`,
         },
         {
-            name: c('summer2023: Deal details').t`Premium Password Manager`,
+            name: getPremiumPasswordManagerText(),
             tooltip: c('summer2023: Tooltip')
                 .t`Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.`,
         },
@@ -282,7 +283,7 @@ export const getFamilyFeatures = () => [
             .t`Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.`,
     },
     {
-        name: c('summer2023: Deal details').t`Premium Password Manager`,
+        name: getPremiumPasswordManagerText(),
         tooltip: c('summer2023: Tooltip')
             .t`Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.`,
     },
