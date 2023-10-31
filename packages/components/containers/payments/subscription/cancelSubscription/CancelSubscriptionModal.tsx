@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { getPlanTitle, hasVPN, hasVPNPassBundle } from '@proton/shared/lib/helpers/subscription';
 import { SubscriptionModel } from '@proton/shared/lib/interfaces';
 
 import { ModalProps, Prompt, Time } from '../../../../components';
@@ -28,8 +28,8 @@ export const CancelSubscriptionModal = ({
         onResolve({ status: 'cancelled' });
     };
 
-    const vpnPlanName = PLAN_NAMES[PLANS.VPN];
-    const vpnPlanNameShort = 'Plus';
+    const planTitle = getPlanTitle(subscription) ?? '';
+    const isVpn = hasVPN(subscription) || hasVPNPassBundle(subscription);
 
     const latestSubscription = subscription.UpcomingSubscription ?? subscription;
     const expiryDate = (
@@ -46,14 +46,15 @@ export const CancelSubscriptionModal = ({
                     {c('Action').t`Cancel subscription`}
                 </Button>,
                 <Button onClick={handleKeepSubscription} data-testid="keepSubscription">{c('Action')
-                    .t`Keep my ${vpnPlanNameShort} subscription`}</Button>,
+                    .t`Keep my Plus subscription`}</Button>,
             ]}
             onClose={handleKeepSubscription}
             {...rest}
         >
             <p>{c('Info')
-                .jt`If you cancel, your ${vpnPlanName} subscription will not be renewed when it expires on ${expiryDate}.`}</p>
-            <p>{c('Info').t`You will lose access to ${vpnPlanNameShort} servers and features on this date.`}</p>
+                .jt`If you cancel, your ${planTitle} subscription will not be renewed when it expires on ${expiryDate}.`}</p>
+            {isVpn && <p>{c('Info').t`You will lose access to Plus servers and features on this date.`}</p>}
+            {!isVpn && <p>{c('Info').t`You will lose access to Plus features on this date.`}</p>}
         </Prompt>
     );
 };
