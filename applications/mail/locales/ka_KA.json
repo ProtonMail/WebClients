@@ -197,6 +197,9 @@
       "Close navigation": [
         "ნავიგაციის დახურვა"
       ],
+      "Close the checklist": [
+        "საკონტროლო სიის დახურვა"
+      ],
       "Close this banner": [
         "ამ ბანერის დახურვა"
       ],
@@ -424,8 +427,14 @@
       "Get verification code": [
         "შემოწმების კოდის მიღება"
       ],
+      "Go to first page": [
+        "პირველ გვერდზე გადასვლა"
+      ],
       "Go to label": [
         "ჭდეზე გადასვლა"
+      ],
+      "Go to last page": [
+        "ბოლო გვერდზე გადასვლა"
       ],
       "Go to next page": [
         "შემდეგ გვერდზე გადასვლა"
@@ -2934,10 +2943,6 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "დაზოგეთ დრო მოსაწვევი ელფოსტების ბევრისთვის ერთდროულად დაგზავნით, ფასიანი თვისებით, ერთ-ერთით, მრავალთა შორის. ასწიეთ სატარიფო გეგმა დღესვე."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "ფაილის მაქსიმალური ზომაა ${ MAX_IMPORT_FILE_SIZE_STRING } და შეიძლება, ${ MAX_IMPORT_CONTACTS_STRING }-მდე კონტაქტს შეიცავდეს. თუ თქვენი ფაილი უფრო დიდია, სცადეთ, ის უფრო პატარა ფაილებად დახლიჩოთ.",
-        "ფაილის მაქსიმალური ზომაა ${ MAX_IMPORT_FILE_SIZE_STRING } და შეიძლება, შეიცავდეს ${ MAX_IMPORT_CONTACTS_STRING }-მდე კონტაქტს. თუ თქვენი ფაილი უფრო დიდია, სცადეთ, ის უფრო პატარა ფაილებად დახლიჩოთ."
-      ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "ჩართეთ ელფოსტის ტრეკრებისგან დაცვა, რათა თავიდან აიცილოთ რეკლამისა და სხვების მიერ თქვენი მდებარეობის და ონლაინ აქტივობების ტრეკინგი."
       ],
@@ -3991,6 +3996,9 @@
       ],
       "MB": [
         "მბ"
+      ],
+      "TB": [
+        "ტბ"
       ]
     },
     "file size format, long": {
@@ -4009,6 +4017,10 @@
       "Megabyte": [
         "მეგაბაიტი",
         "მეგაბაიტი"
+      ],
+      "Terabyte": [
+        "ტერაბაიტი",
+        "ტერაბაიტი"
       ]
     },
     "Filter": {
@@ -4202,6 +4214,9 @@
       ],
       "Close": [
         "დახურვა"
+      ],
+      "Closing this means giving up the free storage bonus.": [
+        "ამის დახურვით უფასო საცავზე უარს იძახით."
       ],
       "Congratulation, you completed all the steps!": [
         "გილოცავთ! თქვენ ყველა ნაბიჯი დაასრულეთ!"
@@ -6971,6 +6986,9 @@
       "Sent": [
         "გაგზავნილები"
       ],
+      "Set up email forwarding": [
+        "ელფოსტის გადაგზავნის მორგება"
+      ],
       "Sign up for free": [
         "უფასო რეგისტრაცია"
       ],
@@ -8334,6 +8352,9 @@
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "ახლა გამოსახულებებს ნაგულისხმევად ჩავტვირთავთ და დავბლოკავთ გამომგზავნებს თქვენი ტრეკინგისგან. შეცვლა შეგიძლიათ აქ ${ settingsLink }."
+      ],
+      "You can now automatically forward your emails to anyone!": [
+        "ახლა შეგძლიათ თქვენი ელფოსტა ავტომატურად გადაუგზავნოთ, ვისაც გსურთ!"
       ],
       "You can now schedule your messages to be sent later": [
         "ახლა შეგიძლიათ, შექმნათ შეტყობინებების განრიგი, რომელიც დანიშნულ დროს აგზავნის ელფოსტას"

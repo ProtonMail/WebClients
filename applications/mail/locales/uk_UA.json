@@ -2953,12 +2953,6 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Заощаджуйте час, надсилаючи листи або запрошення одразу всім адресатам – одна з багатьох преміумфункцій, доступних у передплачених тарифних планах."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити ${ MAX_IMPORT_CONTACTS_STRING } контакт. Якщо ваш файл більший, розділіть його на менші файли.",
-        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли.",
-        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли.",
-        "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контактів. Якщо ваш файл більший, розділіть його на менші файли."
-      ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Увімкніть захист від стеження для електронної пошти, щоб рекламодавці та сторонні служби не відстежували ваше розташування й активність в інтернеті."
       ],
@@ -4221,7 +4215,7 @@
         "${ MAIL_APP_NAME } у Play Маркеті"
       ],
       "account logins": [
-        "облікові записи"
+        "імена користувачів"
       ],
       "Auto-forward Gmail": [
         "Автопересилання Gmail"
@@ -4239,7 +4233,7 @@
         "Браво! Ви зробили свою електронну пошту ще безпечнішою, зручнішою та актуальнішою! Ми збільшили безплатний обсяг вашого сховища до 1 ГБ."
       ],
       "Change ${ strongText } to your ${ BRAND_NAME } address": [
-        "Змініть ${ strongText } на адресу ${ BRAND_NAME }"
+        "Змініть ${ strongText } на свою адресу ${ BRAND_NAME }"
       ],
       "Changed accounts": [
         "Змінено обліковий запис"
@@ -4260,7 +4254,7 @@
         "Продовжити налаштування електронної пошти"
       ],
       "Discover how our ${ strongText } protect you": [
-        "Дізнайтеся, як наш ${ strongText } захищає вас"
+        "Дізнайтеся, як наші ${ strongText } захищають вас"
       ],
       "Discover privacy features": [
         "Відкрийте для себе функції приватності"
@@ -4314,7 +4308,7 @@
         "Захист від стеження"
       ],
       "Set up ${ strongText } from Gmail": [
-        "Налаштуйте ${ strongText } із Gmail"
+        "Налаштуйте ${ strongText } з Gmail"
       ],
       "Sign in to the mobile app to complete this step": [
         "Виконайте вхід у програмі для мобільного пристрою, щоб завершити цей крок"
