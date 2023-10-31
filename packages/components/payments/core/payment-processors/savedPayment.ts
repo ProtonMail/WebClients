@@ -40,7 +40,11 @@ export class SavedPaymentProcessor extends PaymentProcessor<SavedPaymentState> {
         );
     }
 
-    async fetchPaymentToken(): Promise<ChargeablePaymentToken | NonChargeablePaymentToken> {
+    async fetchPaymentToken(): Promise<ChargeablePaymentToken | NonChargeablePaymentToken | null> {
+        if (this.amountAndCurrency.Amount === 0) {
+            return null;
+        }
+
         this.fetchedPaymentToken = await createPaymentTokenForExistingPayment(
             this.state.method.paymentMethodId,
             this.state.method.type,

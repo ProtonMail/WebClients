@@ -125,11 +125,13 @@ export const usePaymentFacade = (
         }
     );
 
+    const paypalIgnoreAmountCheck = flow === 'invoice';
     const paypal = usePaypal(
         {
             amountAndCurrency,
             isCredit: false,
             onChargeable: (params) => onChargeable(getOperations(api, params), params, PAYMENT_METHOD_TYPES.PAYPAL),
+            ignoreAmountCheck: paypalIgnoreAmountCheck,
         },
         {
             api,
@@ -143,6 +145,7 @@ export const usePaymentFacade = (
             isCredit: true,
             onChargeable: (params) =>
                 onChargeable(getOperations(api, params), params, PAYMENT_METHOD_TYPES.PAYPAL_CREDIT),
+            ignoreAmountCheck: paypalIgnoreAmountCheck,
         },
         {
             api,

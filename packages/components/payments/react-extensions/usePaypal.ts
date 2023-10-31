@@ -12,6 +12,7 @@ interface Props {
     amountAndCurrency: AmountAndCurrency;
     isCredit: boolean;
     onChargeable?: (data: ChargeablePaymentParameters) => Promise<unknown>;
+    ignoreAmountCheck?: boolean;
 }
 
 interface Dependencies {
@@ -35,11 +36,11 @@ export function isPaypalProcessorHook(hook: any): hook is PaypalProcessorHook {
 }
 
 export const usePaypal = (
-    { amountAndCurrency, isCredit, onChargeable }: Props,
+    { amountAndCurrency, isCredit, onChargeable, ignoreAmountCheck }: Props,
     { api, verifyPayment }: Dependencies
 ): PaypalProcessorHook => {
     const paymentProcessorRef = useRef(
-        new PaypalPaymentProcessor(verifyPayment, api, amountAndCurrency, isCredit, onChargeable)
+        new PaypalPaymentProcessor(verifyPayment, api, amountAndCurrency, isCredit, onChargeable, ignoreAmountCheck)
     );
     const [fetchingToken, withFetchingToken] = useLoading();
     const [verifyingToken, withVerifyingToken] = useLoading();

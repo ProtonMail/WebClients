@@ -51,7 +51,11 @@ export class CardPaymentProcessor extends PaymentProcessor<CardPaymentProcessorS
         );
     }
 
-    async fetchPaymentToken(): Promise<ChargeablePaymentToken | NonChargeablePaymentToken> {
+    async fetchPaymentToken(): Promise<ChargeablePaymentToken | NonChargeablePaymentToken | null> {
+        if (this.amountAndCurrency.Amount === 0) {
+            return null;
+        }
+
         if (!this.handleCardSubmit()) {
             throw new InvalidCardDataError();
         }
