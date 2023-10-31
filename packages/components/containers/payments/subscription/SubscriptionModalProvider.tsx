@@ -13,7 +13,7 @@ import SubscriptionContainer, { SubscriptionContainerProps } from './Subscriptio
 import SubscriptionModalDisabled from './SubscriptionModalDisabled';
 import { SUBSCRIPTION_STEPS, subscriptionModalClassName } from './constants';
 
-interface OpenCallbackProps
+export interface OpenCallbackProps
     extends Pick<
         SubscriptionContainerProps,
         | 'step'
