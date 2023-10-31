@@ -116,6 +116,9 @@
       "Clear query": [
         "Cancella query"
       ],
+      "Clear selection": [
+        "Annulla selezione"
+      ],
       "Click here.": [
         "Clicca qui."
       ],
@@ -160,6 +163,9 @@
       ],
       "Continue with Google": [
         "Continua con Google"
+      ],
+      "Continue with Outlook": [
+        "Continua con Outlook"
       ],
       "Copy address": [
         "Copia indirizzo"
@@ -224,7 +230,7 @@
         "Dettagli"
       ],
       "Discard": [
-        "Elimina"
+        "Annulla"
       ],
       "Don't know your password?": [
         "Non sai la password?"
@@ -344,7 +350,7 @@
         "Nascondi etichette"
       ],
       "Image could not be loaded with tracker protection.": [
-        "Impossibile caricare l'immagine con la protezione da tracker attiva."
+        "Impossibile caricare l'immagine con la protezione dai tracker attiva."
       ],
       "Image will be loaded without a proxy": [
         "L'immagine verrà caricata senza proxy."
@@ -366,6 +372,12 @@
       ],
       "Import from .csv or vCard": [
         "Importa da .csv o vCard"
+      ],
+      "Import from Google": [
+        "Importa da Google"
+      ],
+      "Import from Outlook": [
+        "Importa da Outlook"
       ],
       "Learn more": [
         "Scopri di più"
@@ -563,7 +575,7 @@
         "Visualizza le caratteristiche del piano"
       ],
       "See version history": [
-        "Visualizza cronologia delle versioni"
+        "Visualizza la cronologia delle versioni"
       ],
       "Select all": [
         "Seleziona tutti"
@@ -656,7 +668,7 @@
         "Cambia le impostazioni"
       ],
       "Trust": [
-        "Attendibile"
+        "Considera attendibile"
       ],
       "Try another method": [
         "Prova un altro metodo"
@@ -677,7 +689,7 @@
         "Deseleziona per l'eliminazione"
       ],
       "Untrust": [
-        "Non ritenere attendibile"
+        "Non considerare attendibile"
       ],
       "Update recovery file": [
         "Aggiorna il file di recupero"
@@ -702,6 +714,9 @@
       ],
       "Upload folder": [
         "Carica cartella"
+      ],
+      "Upload photos": [
+        "Carica foto"
       ],
       "Upload picture": [
         "Carica immagine"
@@ -852,11 +867,12 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Aggira i blocchi e la censura a internet imposti dai singoli Paesi grazie alla nostra rete globale di server."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
-        "Sono inclusi: supporto per ${ domains } dominio email personalizzato, ${ addresses } indirizzi email, ${ aliases } alias hide-my-email, condivisione del calendario e altro ancora."
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Include il supporto per 1 dominio email personalizzato, 10 indirizzi email, 10 alias hide-my-email, condivisione del calendario e altro ancora."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Sono inclusi: supporto per ${ domains } dominio email personalizzato, ${ addresses } indirizzi email, alias hide-my-email illimitati, condivisione del calendario e altro ancora."
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Include il supporto per 3 domini email personalizzati, ${ addresses } indirizzo email, alias hide-my-email illimitati, condivisione del calendario e altro ancora.",
+        "Include il supporto per 3 domini email personalizzati, ${ addresses } indirizzi email, alias hide-my-email illimitati, condivisione del calendario e altro ancora."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Login sicuri su tutti i tuoi dispositivi. Include alias illimitati, condivisione, 2FA integrato e molto altro."
@@ -893,7 +909,7 @@
         "Problema con l'applicazione"
       ],
       "Bridge problem": [
-        "Problema con il Bridge"
+        "Problema con Bridge"
       ],
       "Calendar problem": [
         "Problema con il calendario"
@@ -902,13 +918,13 @@
         "Problema di connessione"
       ],
       "Contacts problem": [
-        "Problemi ai Contatti"
+        "Problema con i contatti"
       ],
       "Custom domain problem": [
-        "Problema del dominio personalizzato"
+        "Problema con un dominio personalizzato"
       ],
       "Drive problem": [
-        "Problema di memoria"
+        "Problema con Drive"
       ],
       "Feature request": [
         "Richiedi Funzionalità"
@@ -920,7 +936,7 @@
         "Problema d'installazione"
       ],
       "Mail problem": [
-        "Problema con la posta"
+        "Problema con Mail"
       ],
       "Manual setup problem": [
         "Problema di configurazione manuale"
@@ -929,10 +945,10 @@
         "Altro"
       ],
       "Pass problem": [
-        "Problema con Proton Pass"
+        "Problema con Pass"
       ],
       "Payments problem": [
-        "Problemi coi pagamenti"
+        "Problema con i pagamenti"
       ],
       "Sign in problem": [
         "Problema di accesso"
@@ -956,7 +972,7 @@
         "Problema con l'aggiornamento"
       ],
       "VPN problem": [
-        "Problema con il VPN"
+        "Problema con VPN"
       ],
       "Website access problem": [
         "Problema di accesso al sito web"
@@ -1933,6 +1949,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Crittografia e importazione dei contatti... L'operazione potrebbe richiedere alcuni minuti. Quando il processo sarà completato, potrai chiudere questa finestra."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Per l'importazione tramite file CSV e VCF, assicurati che il file non superi i contatti ${ MAX_IMPORT_FILE_SIZE_STRING } o ${ MAX_IMPORT_CONTACTS_STRING }. Se il tuo file è più grande, dividilo in file più piccoli. ${ learnMoreLink }."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sembra che l'elenco dei contatti che stai importando contenga alcuni gruppi. Verifica come devono essere importati questi gruppi."
       ],
@@ -1945,18 +1964,22 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Risparmia tempo inviando email o inviti a tutti contemporaneamente, una tra le molte funzioni premium. Effettua l'upgrade oggi."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Il file dovrebbe avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } e avere ${ MAX_IMPORT_CONTACTS_STRING } contatto. Se il tuo file è più grande dividilo in file più piccoli.",
-        "Il file dovrebbe avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } e avere fino a ${ MAX_IMPORT_CONTACTS_STRING } contatti. Se il tuo file è più grande dividilo in file più piccoli."
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Per importare i tuoi contatti da Google o Outlook, ${ easySwitchLink }."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Usa il Trascina e Rilascia per classificare la priorità di unione tra i contatti. Deseleziona i contatti che non vuoi unire."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        "È possibile importare eventi con il formato iCal (file ICS). Il file dovrebbe avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } e avere fino a ${ MAX_IMPORT_EVENTS_STRING } eventi. Se il file è più grande, dividilo in file più piccoli."
+        "Puoi importare eventi con il formato iCal (file ICS). Il file deve avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } o fino a ${ MAX_IMPORT_EVENTS_STRING } eventi. Se il tuo file è più grande, dividilo in file più piccoli."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Puoi selezionare i contatti che non vuoi unire né mantenere per l'eliminazione.\nLa cancellazione avverrà solo dopo aver fatto clic sul pulsante Unisci"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilizza l'assistente di importazione Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2068,7 +2091,7 @@
         "Firma del contatto non verificata"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "La ricerca del contenuto non può essere abilitata in questo browser. Per favore esci dalla modalità in incognito o usa un altro browser."
+        "Impossibile abilitare la ricerca nel contenuto in questo browser. Esci dalla modalità in incognito o usa un altro browser."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Deseleziona almeno ${ calendarsToFixCount } calendario",
@@ -2228,6 +2251,9 @@
       ],
       "Some contacts could not be deleted": [
         "Impossibile eliminare alcuni contatti"
+      ],
+      "Some files were ignored because they are not supported in Photos": [
+        "Alcuni file sono stati ignorati perché non supportati da Foto."
       ],
       "Some groups could not be deleted": [
         "Impossibile eliminare alcuni gruppi"
@@ -3054,7 +3080,7 @@
     },
     "Import instructions": {
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
-        "A seconda del tuo provider di servizi email, potresti aver bisogno di generare una ${ knowledgeBaseLink } prima di poter importare su ${ BRAND_NAME }."
+        "A seconda del tuo fornitore di servizi email, potresti aver bisogno di generare una ${ knowledgeBaseLink } prima di poter importare su ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Espandi il menu a tendina cliccando sui 3 puntini (...)."
@@ -3075,10 +3101,10 @@
         "Seleziona ${ boldExportCSV }."
       ],
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        "Per importare un calendario su ${ BRAND_NAME }, necessiti del ${ knowledgeBaseLink }. Scaricala da Yahoo in 3 semplici passaggi:"
+        "Per importare un calendario su ${ BRAND_NAME }, hai bisogno del ${ knowledgeBaseLink }. Scaricalo da Yahoo in 3 semplici passaggi:"
       ],
       "To import a calendar to ${ BRAND_NAME }, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        "Per importare un calendario su ${ BRAND_NAME }, necessiti del ${ knowledgeBaseLink }. Scaricalo prima dell'inizio del processo di importazione."
+        "Per importare un calendario su ${ BRAND_NAME }, hai bisogno del ${ knowledgeBaseLink }. Scaricalo prima dell'inizio del processo di importazione."
       ],
       "To import contacts to ${ BRAND_NAME }, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Per importare i contatti su ${ BRAND_NAME }, hai bisogno di un ${ knowledgeBaseLink }. Scaricalo da Yahoo in 3 semplici passaggi:"
@@ -3262,6 +3288,7 @@
         "${ selectedContactsLength }/${ contactsLength } contatti selezionati"
       ],
       "${ selectedCount } selected": [
+        "${ selectedCount } selezionato",
         "${ selectedCount } selezionati"
       ],
       "${ selectedFoldersCount } folder selected": [
@@ -3307,7 +3334,7 @@
         "A causa di fatture non pagate, l'accesso all'account è stato limitato. Per favore, contatta il tuo amministratore."
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "Per questo indirizzo è attivata la verifica tramite chiavi affidabili. Per poter spedire a questo indirizzo prima rendi attendibili le chiavi pubbliche che possono essere usate per l'invio."
+        "La verifica dell’indirizzo con le chiavi attendibili è abilitata per questo indirizzo. Per poter inviare a questo indirizzo, prima considera attendibili le chiavi pubbliche che possono essere usate per l'invio."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Tutti (${ totalFoldersCount } cartella)",
@@ -3343,10 +3370,10 @@
         "Chiunque abbia questo link può accedere alla tua cartella."
       ],
       "Are you sure you want to discard your changes?": [
-        "Vuoi davvero ignorare le modifiche?"
+        "Sei sicuro di voler annullare le modifiche?"
       ],
       "Are you sure you want to discard your import?": [
-        "Vuoi davvero ignorare la tua importazione?"
+        "Sei sicuro di voler annullare la tua importazione?"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Sei sicuro di voler svuotare il cestino ed eliminare definitivamente tutti gli elementi?"
@@ -3359,6 +3386,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Sei sicuro di voler eliminare definitivamente gli elementi selezionati dal cestino?"
+      ],
+      "As soon as you have photos or videos on your device, they will appear here.": [
+        "Appena avrai foto o video sul tuo dispositivo, queste appariranno qui."
       ],
       "Attention required": [
         "Attenzione"
@@ -3519,10 +3549,10 @@
         "Chiave duplicata aggiornata"
       ],
       "Each code can only be used once": [
-        "Ogni codice può essere utilizzato una sola volta"
+        "Ogni codice può essere usato una sola volta"
       ],
       "Edit email address": [
-        "Modifica indirizzo email"
+        "Modifica l'indirizzo email"
       ],
       "Emails are automatically signed": [
         "Le email sono firmate in automatico"
@@ -3793,6 +3823,9 @@
       "No group found": [
         "Nessun gruppo trovato"
       ],
+      "No photos yet": [
+        "Ancora nessuna foto"
+      ],
       "No results found": [
         "Nessun risultato trovato"
       ],
@@ -3821,7 +3854,7 @@
         "Una delle tue unità crittografate è bloccata. Ciò è probabilmente dovuto a una recente reimpostazione della password."
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        "Una o più chiavi fidate sono state contrassegnate come \"compromesse\" dal proprietario. Si consiglia di \"non fidarsi\" di queste chiavi."
+        "Una o più chiavi attendibili sono state contrassegnate come \"compromesse\" dal loro proprietario. Ti consigliamo di \"non considerare attendibili\" queste chiavi."
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
         "È consentito solo ${ MAX_CUSTOM_PASSWORD_LENGTH } carattere",
@@ -3840,10 +3873,10 @@
         "Elimina definitivamente tutti i file nello spazio bloccato"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
-        "PGP/Inline è compatibile solo con il formato Testo."
+        "PGP/Inline è compatibile solo con il formato Testo semplice."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
-        "PGP/MIME invia automaticamente il messaggio utilizzando la modalità attuale di composizione."
+        "PGP/MIME invia automaticamente il messaggio usando l'attuale modalità di composizione."
       ],
       "Please enter the password to decrypt and view content.": [
         "Prego immettere la password per decrittare e vedere il contenuto."
@@ -3916,7 +3949,7 @@
         "Il processo di recupero potrebbe richiedere del tempo."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Aggiornando la pagina o ${ link } si risolveranno automaticamente la maggior parte dei problemi."
+        "Aggiornare la pagina o ${ link } risolverà automaticamente la maggior parte dei problemi."
       ],
       "Report has been sent": [
         "La segnalazione è stata inviata"
@@ -3936,8 +3969,14 @@
       "Search Enabled": [
         "Ricerca Abilitata"
       ],
+      "Select all items for": [
+        "Seleziona tutti gli elementi per"
+      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Seleziona un file o una cartella caricati e crea un link."
+      ],
+      "Select item": [
+        "Seleziona elemento"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleziona il formato email che desideri utilizzare per impostazione predefinita quando invii un'email a questo indirizzo email."
@@ -4056,6 +4095,9 @@
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
         "Questo link verrà disabilitato definitivamente. Nessuno con questo link potrà accedere alla tua cartella. Per condividere nuovamente la cartella, avrai bisogno di un nuovo link."
       ],
+      "This month": [
+        "Questo mese"
+      ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Questo eliminerà il link e rimuoverà l'accesso al file o alla cartella per chiunque abbia il link.",
         "Questo eliminerà i link e rimuoverà l'accesso ai file o alle cartelle per chiunque abbia i link."
@@ -4094,7 +4136,7 @@
         "Per recuperare tuoi i dati, devi riattivare la chiave di crittografia utilizzata al momento della creazione dei dati. Dovrai dunque ricordare la password utilizzata quando è stata generata la chiave."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Per utilizzare la Verifica dell'indirizzo, devi contrassegnare attendibile una o più chiavi pubbliche disponibili, compresa quella che vuoi utilizzare per l'invio. In questo modo si evita che le chiavi di crittografia vengano falsificate."
+        "Per usare la verifica dell'indirizzo, devi considerare attendibile una o più chiavi pubbliche disponibili, compresa quella che vuoi usare per l'invio. In questo modo si evita che le chiavi di crittografia vengano falsificate."
       ],
       "Today": [
         "Oggi"
@@ -4162,6 +4204,9 @@
       "Way to go, you’ve just doubled your free storage!": [
         "Ce n'è di strada da percorrere, hai appena raddoppiato il tuo spazio di archiviazione gratuito!"
       ],
+      "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
+        "Stiamo riscontrando problemi tecnici. Il caricamento di nuove foto è temporaneamente disabilitato."
+      ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Non è stato possibile verificare che ${ emailAddress } abbia caricato ${ fileName }."
       ],
@@ -4184,7 +4229,7 @@
         "Cosa ti piacerebbe fare?"
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quando imposti l'autenticazione a due fattori, forniamo codici di ripristino che puoi utilizzare per accedere se perdi l'accesso alla tua app di autenticazione."
+        "Quando configuri l'autenticazione a due fattori, forniamo dei codici di recupero che puoi usare per accedere se perdi l'accesso alla tua app di autenticazione."
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "verrà ripristinato alla versione del ${ formattedRevisionDate }. Tutte le altre versioni saranno salvate."
@@ -4677,6 +4722,9 @@
       "Phone number": [
         "Numero di telefono"
       ],
+      "Photo": [
+        "Foto"
+      ],
       "Please provide full details to help us take appropriate action": [
         "Fornisci tutti i dettagli per aiutarci a intervenire nel modo più appropriato."
       ],
@@ -4854,13 +4902,16 @@
     },
     "Link": {
       "clearing your browser cache": [
-        "cancellando la cache del browser"
+        "cancellare la cache del browser"
       ],
       "Learn more": [
         "Scopri di più"
       ],
       "Pay invoice": [
         "Pagamento della fattura"
+      ],
+      "Photos": [
+        "Foto"
       ],
       "Reactivate now": [
         "Riattiva"
@@ -4938,7 +4989,7 @@
         "Automatico"
       ],
       "Plain text": [
-        "Testo normale"
+        "Testo semplice"
       ]
     },
     "Modal title": {
@@ -4979,7 +5030,7 @@
     },
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
-        "Cancella automaticamente messaggi indesiderati e cestinati"
+        "Cancella automaticamente i messaggi indesiderati e cestinati"
       ],
       "Custom email domains": [
         "Domini email personalizzati"
@@ -4991,7 +5042,7 @@
         "Programma i messaggi per qualsiasi momento"
       ],
       "Search message content": [
-        "Cerca il contenuto del messaggio"
+        "Cerca nel contenuto dei messaggi"
       ],
       "Unlimited folders, labels, and filters": [
         "Cartelle, etichette e filtri illimitati"
@@ -5005,7 +5056,7 @@
     },
     "new_plans: feature info": {
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "Crea più indirizzi email per le tue identità online, ad esempio GiovanniShopping@${ domain } per i profili di shopping, GiovanniNotizie@${ domain2 } per gli abbonamenti alle notizie."
+        "Crea più indirizzi email per le tue identità online, ad esempio LuigiShopping@${ domain } per gli account di shopping, LuigiNotizie@${ domain2 } per gli abbonamenti alle notizie."
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Ottieni un numero illimitato di alias con SimpleLogin di ${ BRAND_NAME }"
@@ -5014,7 +5065,7 @@
         "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }"
       ],
       "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Usa l'indirizzo del tuo dominio email personalizzato, per esempio tu@tuonome.com"
+        "Usa l'indirizzo del tuo dominio email personalizzato, ad esempio tu@il-tuo-nome.it"
       ]
     },
     "new_plans: label": {
@@ -5236,7 +5287,7 @@
     },
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
-        "Selezionare quale ${ BRAND_NAME } può accedere: visualizzare i tuoi messaggi email e le impostazioni, vedere e scaricare i tuoi contatti, vedere e scaricare tutte le agende con cui fai accesso da Google Agenda."
+        "Seleziona ciò a cui ${ BRAND_NAME } può accedere: visualizzare i tuoi messaggi email e le impostazioni, vedere e scaricare i tuoi contatti, vedere e scaricare tutte le agende a cui accedi da Google Agenda."
       ]
     },
     "Onboarding Action": {
@@ -5336,7 +5387,7 @@
         "${ emailAddress } ha contrassegnato questa chiave come obsoleta. Questa chiave può essere utilizzata solo per la verifica della firma."
       ],
       "We recommend that you \"untrust\" this key.": [
-        "Si consiglia di \"non fidarsi\" di questa chiave."
+        "Ti consigliamo di \"non considerare attendibile\" questa chiave."
       ]
     },
     "PGP key warning": {
@@ -5391,7 +5442,7 @@
         "Password"
       ],
       "Please describe the problem and include any error messages": [
-        "Per favore descrivi il problema e includi eventuali messaggi di errore"
+        "Descrivi il problema e includi eventuali messaggi di errore"
       ],
       "Search for group name": [
         "Cerca per nome gruppo"
@@ -5872,7 +5923,7 @@
         "Accedi a contenuti bloccati e naviga in modalità privata. Include 1700 server in più di 60 Paesi, le più elevate velocità VPN, 10 connessioni VPN, servizi di streaming in tutto il mondo, blocco di malware e annunci, e molto altro."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "Accedi ai contenuti dei servizi di streaming, tra cui Netflix, Disney+ e Prime Video, da qualsiasi luogo."
+        "Accedi ai contenuti dei servizi di streaming, tra cui Netflix, Disney+ e Prime Video, ovunque."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Tutti i nostri servizi premium con il massimo dei limiti: 100 indirizzi email, supporto per 10 domini personalizzati, alias Hide-my-email illimitati, condivisione dei calendari, archiviazione sul cloud e condivisione dei file crittografati, e molto altro."
@@ -5887,7 +5938,7 @@
         "Ricevi senza costi aggiuntivi le versioni a pagamento di tutti i nuovi servizi dedicati alla privacy che lanceremo in futuro, oltre all'accesso anticipato a nuovi prodotti e funzioni."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Proteggi i tuoi file con l'archiviazione cloud crittografata. Include la sincronizzazione automatica, la condivisione crittografata dei file e molto altro."
+        "Proteggi i tuoi file con l'archiviazione su cloud crittografata. Include la sincronizzazione automatica, la condivisione crittografata dei file e molto altro."
       ]
     },
     "Spotlight": {
@@ -5905,8 +5956,8 @@
       ]
     },
     "Storage": {
-      "Get storage": [
-        "Ottieni altro spazio di archiviazione"
+      "Get more storage": [
+        "Ottieni più spazio di archiviazione"
       ],
       "Release notes": [
         "Note di rilascio"
@@ -6435,6 +6486,9 @@
       "Phone numbers": [
         "Numeri di telefono"
       ],
+      "Photos": [
+        "Foto"
+      ],
       "Preview": [
         "Anteprima"
       ],
@@ -6577,7 +6631,7 @@
         "Dettagli versione"
       ],
       "Version history": [
-        "Cronologia versioni"
+        "Cronologia delle versioni"
       ],
       "Warning": [
         "Attenzione"
@@ -6662,7 +6716,7 @@
         "Nascondi pannello laterale"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "Seleziona lo schema PGP da usare quando firmi o usi la crittografia con un utente. Nota che PGP/Inline forza i messaggi in testo normale"
+        "Seleziona lo schema PGP da usare quando firmi o usi la crittografia con un utente. Nota che PGP/Inline forza i messaggi in testo semplice"
       ],
       "Show side panel": [
         "Mostra pannello laterale"

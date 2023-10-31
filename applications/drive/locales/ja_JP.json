@@ -1858,9 +1858,6 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "一度に全員にメールや招待状を送信することで時間を節約できます。今すぐアップグレード"
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
-        "最大 ${ MAX_IMPORT_FILE_SIZE_STRING } のファイルサイズ、最大 ${ MAX_IMPORT_CONTACTS_STRING } 件の連絡先に対応しています。それより大きなファイルは、分割してください。"
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "ドラッグアンドドロップを使って連絡先の優先順位を決めてください。チェックを解除するとこの連絡先は結合されません。"
       ],
@@ -3111,9 +3108,6 @@
       ],
       "${ selectedContactsLength }/${ contactsLength } contacts selected": [
         "${ selectedContactsLength } / ${ contactsLength } 件の連絡先が選択されました"
-      ],
-      "${ selectedCount } selected": [
-        "${ selectedCount } 件選択済み"
       ],
       "${ selectedFoldersCount } folders selected": [
         "${ selectedFoldersCount } 件のフォルダーを選択済み"
@@ -5674,8 +5668,8 @@
       ]
     },
     "Storage": {
-      "Get storage": [
-        "ストレージを取得"
+      "Get more storage": [
+        "ストレージを増やす"
       ],
       "Release notes": [
         "更新情報"

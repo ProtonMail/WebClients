@@ -163,6 +163,9 @@
       "Continue with Google": [
         "Kontynuuj z Google"
       ],
+      "Continue with Outlook": [
+        "Kontynuuj z Outlook"
+      ],
       "Copy address": [
         "Kopiuj adres"
       ],
@@ -372,6 +375,12 @@
       ],
       "Import from .csv or vCard": [
         "Importuj z pliku CSV lub vCard"
+      ],
+      "Import from Google": [
+        "Importuj z konta Google"
+      ],
+      "Import from Outlook": [
+        "Importuj z konta Outlook"
       ],
       "Learn more": [
         "Dowiedz się więcej"
@@ -709,6 +718,9 @@
       "Upload folder": [
         "Prześlij folder"
       ],
+      "Upload photos": [
+        "Prześlij zdjęcia"
+      ],
       "Upload picture": [
         "Prześlij zdjęcie"
       ],
@@ -821,8 +833,14 @@
       "6 users": [
         "6 użytkowników"
       ],
+      "Access content worldwide": [
+        "Dostęp do treści na całym świecie"
+      ],
       "Ad-blocker and malware protection": [
         "Blokada reklam i ochrona przed złośliwym oprogramowaniem"
+      ],
+      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Wszystkie płatne funkcje ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Rozszerzona historia wersji"
@@ -845,23 +863,32 @@
       ]
     },
     "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "Uzyskaj dostęp do zablokowanych treści i ciesz się prywatnym przeglądaniem. Obejmuje więcej niż 3000 serwerów w ponad 65 krajach, najwyższe szybkości VPN, dostęp do usług streamingowych na całym świecie, ochronę przed złośliwym oprogramowaniem i blokady reklam, a także szybkie pobieranie BitTorrent oraz inne funkcje."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Uzyskaj dostęp z dowolnego miejsca do treści w usługach streamingowych, takich jak Netflix, Disney+, Prime Video i nie tylko."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
-        "Obejmuje obsługę ${ domains } niestandardowej domeny e-mail, ${ addresses } adresów e-mail, ${ aliases } aliasów hide-my-email, udostępniania kalendarza i nie tylko."
+      "Bypass local internet blocks and censorship with our global network of servers.": [
+        "Omijaj lokalne blokady internetowe i cenzurę dzięki naszej globalnej sieci serwerów."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Obejmuje obsługę ${ domains } niestandardowej domeny e-mail, ${ addresses } adresów e-mail, nieograniczonej liczby aliasów hide-my-email, udostępniania kalendarza i nie tylko."
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Zawiera obsługę 1 niestandardowej domeny, 10 adresów e-mail, 10 aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
+      ],
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Zawiera obsługę 3 niestandardowych domen, ${ addresses } adres e-mail, nieograniczoną liczbę aliasów hide-my-email, udostępnianie kalendarza i wiele więcej.",
+        "Zawiera obsługę 3 niestandardowych domen, ${ addresses } adresy e-mail, nieograniczoną liczbę aliasów hide-my-email, udostępnianie kalendarza i wiele więcej.",
+        "Zawiera obsługę 3 niestandardowych domen, ${ addresses } adresów e-mail, nieograniczoną liczbę aliasów hide-my-email, udostępnianie kalendarza i wiele więcej.",
+        "Zawiera obsługę 3 niestandardowych domen, ${ addresses } adresów e-mail, nieograniczoną liczbę aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
+        "Loguj się bezpiecznie na wszystkich urządzeniach. Obejmuje nieograniczoną liczbę aliasów, udostępnianie, zintegrowane uwierzytelnianie dwustopniowe i nie tylko."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Zabezpiecz swoje e-maile i harmonogram dzięki szyfrowaniu end-to-end. Obejmuje obsługę niestandardowych domen e-mail, 15 adresów e-mail, nieograniczonej liczby aliasów hide-my-email, udostępniania kalendarza i wiele więcej."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Zabezpiecz pliki dzięki szyfrowanej przestrzeni dyskowej w chmurze. Zawiera historię wersji, szyfrowane udostępnianie plików i wiele więcej."
+        "Zabezpiecz pliki dzięki zaszyfrowanej przestrzeni dyskowej w chmurze. Obejmuje historię wersji, zaszyfrowane udostępnianie plików i nie tylko."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Specjalnie zaprojektowana funkcja NetShield chroni Twoje urządzenia oraz przyśpiesza przeglądanie Internetu poprzez blokowanie reklam, elementów śledzących i złośliwego oprogramowania."
@@ -1941,11 +1968,8 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Zaoszczędź czas, wysyłając wiadomości lub zaproszenia do wszystkich naraz. To jedna z wielu funkcji premium. Ulepsz konto."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
-        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontakty. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
-        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontaktów. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
-        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontaktów. Podziel swój plik na mniejsze, jeśli jest zbyt duży."
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "${ easySwitchLink }, aby zaimportować kontakty z konta Google lub Outlook."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Przeciągnij i upuść, aby ustalić priorytet scalania kontaktów. Odznacz kontakty, których nie chcesz scalić."
@@ -1955,6 +1979,11 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Możesz oznaczyć do usunięcia te kontakty, których nie chcesz scalić ani zachować. Usunięcie nastąpi dopiero po kliknięciu przycisku Scal"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Użyj asystenta importu Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2238,6 +2267,9 @@
       ],
       "Some contacts could not be deleted": [
         "Niektóre kontakty nie mogły zostać usunięte"
+      ],
+      "Some files were ignored because they are not supported in Photos": [
+        "Niektóre pliki zostały zignorowane, ponieważ nie są obsługiwane jako zdjęcia"
       ],
       "Some groups could not be deleted": [
         "Niektóre grupy nie mogły zostać usunięte"
@@ -3345,9 +3377,6 @@
         "Zaznaczone kontakty: ${ selectedContactsLength }/${ contactsLength }",
         "Zaznaczone kontakty: ${ selectedContactsLength }/${ contactsLength }"
       ],
-      "${ selectedCount } selected": [
-        "Zaznaczone: ${ selectedCount }"
-      ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } zaznaczony folder",
         "${ selectedFoldersCount } zaznaczone foldery",
@@ -3461,6 +3490,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Czy na pewno chcesz trwale usunąć zaznaczone elementy?"
+      ],
+      "As soon as you have photos or videos on your device, they will appear here.": [
+        "Zdjęcia i filmy pojawią się tutaj."
       ],
       "Attention required": [
         "Wymagana uwaga"
@@ -3903,6 +3935,9 @@
       "No group found": [
         "Nie znaleziono grupy"
       ],
+      "No photos yet": [
+        "Brak zdjęć"
+      ],
       "No results found": [
         "Nie znaleziono żadnych wyników"
       ],
@@ -4053,6 +4088,9 @@
       "Select an uploaded file or folder and create a link to it.": [
         "Wybierz przesłany plik lub folder i utwórz do niego link."
       ],
+      "Select item": [
+        "Wybierz element"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Wybierz domyślny format wiadomości, który ma zostać użyty podczas wysyłania wiadomości na ten adres e-mail."
       ],
@@ -4170,6 +4208,9 @@
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
         "Link zostanie wyłączony. Nikt, kto posiada link, nie będzie mógł uzyskać dostępu do folderu. Jeśli chcesz ponownie udostępnić folder, musisz utworzyć nowy link."
       ],
+      "This month": [
+        "Ten miesiąc"
+      ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Spowoduje to usunięcie linku i dostępu do folderu dla każdego, kto posiada link.",
         "Spowoduje to usunięcie linków i dostępu do folderów dla każdego, kto posiada link.",
@@ -4277,6 +4318,9 @@
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "Przestrzeń dyskowa została podwojona!"
+      ],
+      "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
+        "Mamy problemy techniczne. Przesyłanie nowych zdjęć jest tymczasowo wyłączone."
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Nie możemy zweryfikować, czy adres ${ emailAddress } przesłał plik ${ fileName }."
@@ -4799,6 +4843,9 @@
       "Phone number": [
         "Numer telefonu"
       ],
+      "Photo": [
+        "Zdjęcie"
+      ],
       "Please provide full details to help us take appropriate action": [
         "Wpisz szczegóły, abyśmy mogli podjąć odpowiednie działania"
       ],
@@ -4983,6 +5030,9 @@
       ],
       "Pay invoice": [
         "Zapłać fakturę"
+      ],
+      "Photos": [
+        "Zdjęcia"
       ],
       "Reactivate now": [
         "Reaktywuj"
@@ -6111,8 +6161,8 @@
       ]
     },
     "Storage": {
-      "Get storage": [
-        "Uzyskaj przestrzeń dyskową"
+      "Get more storage": [
+        "Uzyskaj więcej przestrzeni dyskowej"
       ],
       "Release notes": [
         "Lista zmian"
@@ -6676,6 +6726,9 @@
       ],
       "Phone numbers": [
         "Numery telefonów"
+      ],
+      "Photos": [
+        "Zdjęcia"
       ],
       "Preview": [
         "Podgląd"

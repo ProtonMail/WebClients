@@ -852,11 +852,12 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Yerel internet engellemelerini ve sansürü küresel sunucu ağlarımız ile aşın."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
-        "${ domains } özel e-posta etki alanı, ${ addresses } e-posta adresi, ${ aliases } hide-my-email takma adı, takvim paylaşımı ve daha fazlasını içerir."
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "1 özel e-posta etki alanı, 10 e-posta adresi, 10 hide-my-email takma adı, takvim paylaşma ve daha fazlası için destek içerir."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "${ domains } özel e-posta etki alanı, ${ addresses } e-posta adresi, sınırsız hide-my-email takma adı, takvim paylaşımı ve daha fazlasını içerir."
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "3 özel e-posta etki alanı, ${ addresses } e-posta adresi, sınırsız hide-my-email takma adı, takvim paylaşımı ve daha fazlasını içerir.",
+        "3 özel e-posta etki alanı, ${ addresses } e-posta adresi, sınırsız hide-my-email takma adı, takvim paylaşımı ve daha fazlasını içerir."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve daha fazlası."
@@ -1945,10 +1946,6 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Herkese aynı anda e-posta veya davetiye göndererek zaman kazanın. Bu ücretli tarifelerdeki birçok özellikten biridir. Tarifenizi şimdi yükseltin."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün.",
-        "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Sürükleyip bırakarak kişiler arasında birleştirme önceliğini sıralayın. Birleştirmek istemediğiniz kişilerin işaretini kaldırın."
       ],
@@ -2792,6 +2789,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -2810,6 +2810,10 @@
       "Megabyte": [
         "Megabayt",
         "Megabayt"
+      ],
+      "Terabyte": [
+        "Terabayt",
+        "Terabayt"
       ]
     },
     "Filter notification": {
@@ -3253,9 +3257,6 @@
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
         "${ selectedContactsLength }/${ contactsLength } kişi seçildi",
         "${ selectedContactsLength }/${ contactsLength } kişi seçildi"
-      ],
-      "${ selectedCount } selected": [
-        "${ selectedCount } seçilmiş"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } klasör seçildi",
@@ -5898,8 +5899,8 @@
       ]
     },
     "Storage": {
-      "Get storage": [
-        "Depolama alanı al"
+      "Get more storage": [
+        "Daha fazla depolama alanı edinin"
       ],
       "Release notes": [
         "Sürüm notları"
