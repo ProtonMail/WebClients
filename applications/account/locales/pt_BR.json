@@ -230,6 +230,9 @@
       "Continue with Google": [
         "Continuar com o Google"
       ],
+      "Continue with Outlook": [
+        "Continuar com Outlook"
+      ],
       "Continue with this password": [
         "Continuar com essa senha"
       ],
@@ -533,8 +536,14 @@
       "Import emails": [
         "Importar e-mails"
       ],
+      "Import from Google": [
+        "Importar do Google"
+      ],
       "Import from ICS": [
         "Importar de ICS"
+      ],
+      "Import from Outlook": [
+        "Importar do Outlook"
       ],
       "Import key": [
         "Importar chave"
@@ -634,6 +643,9 @@
       ],
       "Open navigation": [
         "Abrir navegação"
+      ],
+      "Or": [
+        "Ou"
       ],
       "Ordered list": [
         "Lista ordenada"
@@ -899,8 +911,8 @@
       "Sign out of all accounts": [
         "Encerrar sessão de todas as contas"
       ],
-      "Sign up for free": [
-        "Cadastre-se gratuitamente"
+      "sign up for free": [
+        "cadastre-se gratuitamente"
       ],
       "Signing in": [
         "Iniciando sessão"
@@ -1377,6 +1389,22 @@
         "Sua assinatura será renovada automaticamente, com desconto da taxa e da duração padrão, ao final do seu ciclo de faturamento."
       ]
     },
+    "bf2023: header": {
+      "Save with Black Friday deals on a high-speed Swiss VPN": [
+        "Economize em VPN suíça de alta velocidade com as ofertas de Black Friday"
+      ],
+      "Select your Black Friday offer": [
+        "Selecione sua oferta de Black Friday"
+      ]
+    },
+    "bf2023: info": {
+      "All premium ${ BRAND_NAME } services. One easy subscription.": [
+        "Todos os serviços premium da ${ BRAND_NAME } com uma assinatura fácil."
+      ],
+      "Secure browsing and premium VPN features.": [
+        "Navegação segura e recursos de VPN premium."
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "Garantia de devolução do seu dinheiro por até 30 dias"
@@ -1407,11 +1435,12 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Ignore os bloqueios locais da Internet e a censura com nossa rede global de servidores."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
-        "Inclui suporte para ${ domains } domínios de e-mail personalizados, ${ addresses } endereços de e-mail, ${ aliases } aliases ilimitados do hide-my-email, compartilhamento de calendário e muito mais."
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Inclui suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases do hide-my-email, compartilhamento de calendário e muito mais."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Inclui suporte para ${ domains } domínios de e-mail personalizados, ${ addresses } endereços de e-mail, aliases ilimitados do hide-my-email, compartilhamento de calendário e muito mais."
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Inclui suporte para 3 domínios de e-mail personalizados, ${ addresses } endereço de e-mail, aliases ilimitados do hide-my-email, compartilhamento de calendário e muito mais.",
+        "Inclui suporte para 3 domínios de e-mail personalizados, ${ addresses } endereços de e-mail, aliases ilimitados do hide-my-email, compartilhamento de calendário e muito mais."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Logins seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
@@ -3019,10 +3048,6 @@
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separe diferentes aspectos da sua vida com vários endereços de e-mail e desbloqueie mais recursos premium ao atualizar."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "O arquivo deve ter um tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter ${ MAX_IMPORT_CONTACTS_STRING } contato. Se o seu arquivo for maior, divida-o em arquivos menores.",
-        "O arquivo deve ter um tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_CONTACTS_STRING } contatos. Se o seu arquivo for maior, divida-o em arquivos menores."
-      ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Para remover o ${ MAIL_APP_NAME } rodapé, faça o upgrade do seu plano para conseguir ainda mais funcionalidades premium"
       ],
@@ -3046,6 +3071,11 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Você pode importar eventos no formato iCal (arquivo ICS). O arquivo deve ter o tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_EVENTS_STRING } eventos. Se o seu arquivo for maior, divida-o em arquivos menores."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "use o assistente de importação Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3403,7 +3433,7 @@
         "Encaminhamento está ativo"
       ],
       "Forwarding to ${ BRAND_NAME } addresses will keep your communication end-to-end encrypted. When forwarding externally, end-to-end encryption for the forwarding address will be disabled.": [
-        "Encaminhar para endereços ${ BRAND_NAME } manterá a sua comunicação criptografada de ponta a ponta. Ao encaminhar externamente, a criptografia de ponta a ponta para o endereço de encaminhamento será desativada."
+        "Encaminhar para endereços da ${ BRAND_NAME } manterá a sua comunicação criptografada de ponta a ponta. Ao encaminhar externamente, a criptografia de ponta a ponta para o endereço de encaminhamento será desativada."
       ],
       "No incoming forwarding rules": [
         "Nenhuma regra de encaminhamento de entrada."
@@ -5612,6 +5642,10 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } endereço",
+        "${ amountOfAddresses } endereços"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
@@ -5710,6 +5744,10 @@
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } servidor ainda está sendo configurado. Isso geralmente leva cerca de ${ provisioningDuration }.",
         "${ provisioningCounter } servidores ainda estão sendo configurados. Isso geralmente leva cerca de ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } a mais",
+        "${ remainingAddresses.length } a mais"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendário",
@@ -5868,10 +5906,6 @@
       ],
       "Additional options": [
         "Opções adicionais"
-      ],
-      "address": [
-        "endereço",
-        "endereços"
       ],
       "Admin account allocation": [
         "Alocação da conta do administrador"
@@ -6364,7 +6398,7 @@
         "Obter ${ upsellPlanName }"
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
-        "Obtenha acesso criando uma conta ${ BRAND_NAME } e aceitando o convite."
+        "Obtenha acesso criando uma conta da ${ BRAND_NAME } e aceitando o convite."
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Dê um nome descritivo ao token, como o do serviço com o qual você planeja usá-lo, e selecione um dos domínios personalizados ativos. Apenas esse endereço poderá enviar e-mails com este token."
@@ -6629,9 +6663,6 @@
       "Monthly ${ onDayString }": [
         "Mensal ${ onDayString }"
       ],
-      "more": [
-        "mais"
-      ],
       "Multi-user support not enabled.": [
         "Suporte a múltiplos usuários desativado."
       ],
@@ -6875,6 +6906,9 @@
       "Priority support": [
         "Suporte prioritário"
       ],
+      "Promotion expired": [
+        "Promoção expirada"
+      ],
       "Protected by Swiss privacy laws": [
         "Protegido pelas leis de privacidade suíças"
       ],
@@ -6949,6 +6983,9 @@
       ],
       "Right to Left": [
         "Direita para esquerda"
+      ],
+      "Save ${ percentage }": [
+        "Economize ${ percentage }"
       ],
       "Save your password somewhere safe.": [
         "Salve sua senha em um lugar seguro."
@@ -7104,6 +7141,9 @@
       "Thank you": [
         "Obrigado"
       ],
+      "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
+        "Obrigado por apoiar nossa missão em construir uma internet melhor onde a privacidade e a liberdade em primeiro lugar."
+      ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "A mensagem ${ boldDataLocked } não será mais exibida, mas você ainda poderá desbloquear seus dados em ${ encryptionAndKeysLink }."
       ],
@@ -7193,6 +7233,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este link pode ser um ataque homográfico. Verifique se este é o link que você deseja visitar, caso contrário, não abra."
+      ],
+      "This promotion link has expired.": [
+        "O link da promoção expirou"
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Este token não estará disponível após você fechar esta janela e você não deve compartilhá-lo com ninguém."
@@ -7735,6 +7778,9 @@
       ],
       "Your account recovery method is set": [
         "Seu método para recuperação de conta está definido"
+      ],
+      "Your account was successfully updated with this promotion": [
+        "Sua conta foi atualizada com essa promoção."
       ],
       "Your account will be updated once the payment is cleared.": [
         "A sua conta será atualizada assim que o pagamento for aprovado."
@@ -9526,7 +9572,7 @@
         "Criar uma conta no ${ appName }"
       ],
       "Find your ${ BRAND_NAME } Account username": [
-        "Encontre seu nome de usuário ${ BRAND_NAME }."
+        "Encontrar seu nome de usuário da ${ BRAND_NAME }."
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Esqueceu sua senha da conta ${ BRAND_NAME }? Redefina-a aqui usando um código de recuperação, e-mail ou SMS e recupere seu acesso aos serviços ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, e muito mais."
@@ -10361,14 +10407,6 @@
         "Seu plano selecionado: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Uso da sua conta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Excluir conta?"
@@ -10390,6 +10428,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Faça o upgrade para desbloquear recursos premium"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Uso da sua conta"
       ]
     },
     "new_plans: tooltip": {
@@ -11109,9 +11155,6 @@
       "Download to continue ${ size }": [
         "Baixar para continuar ${ size }"
       ],
-      "Keep this plan and use ${ appName }": [
-        "Mantenha este plano e use ${ appName }"
-      ],
       "Or ${ createANewAccount }": [
         "Ou ${ createANewAccount }"
       ],
@@ -11121,14 +11164,8 @@
       "Start using ${ appName } now": [
         "Começar a usar o ${ appName }"
       ],
-      "Upgrade for only ${ relativePrice } extra per month": [
-        "Faça upgrade por apenas ${ relativePrice } extra por mês"
-      ],
       "Upgrade my plan": [
         "Fazer upgrade do meu plano"
-      ],
-      "Use ${ free } instead": [
-        "Usar ${ free } em vez disso"
       ]
     },
     "pass_signup_2023: Feature": {
@@ -11238,9 +11275,6 @@
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "Se você não conseguir entrar na sua conta da ${ BRAND_NAME }, o seu **kit de recuperação** permitirá que você faça login e recupere seus dados."
       ],
-      "Includes basic ${ appName } features:": [
-        "Inclui recursos básicos do ${ appName }:"
-      ],
       "Install ${ PASS_APP_NAME }": [
         "Instale o ${ PASS_APP_NAME }"
       ],
@@ -11310,9 +11344,6 @@
       "Verifying your payment": [
         "Verificando seu pagamento"
       ],
-      "Welcome to ${ plan }": [
-        "Boas-vindas ao ${ plan }"
-      ],
       "Works on all devices": [
         "Funciona em todos os dispositivos"
       ],
@@ -11327,11 +11358,6 @@
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Sua organização tem acesso a ${ free }. Se você deseja acesso a recursos premium do ${ appName }, solicite a atualização ao administrador da sua organização."
-      ]
-    },
-    "pass_signup_2023: Onboarding": {
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Boas-vindas ao ${ PASS_APP_NAME }"
       ]
     },
     "pass_signup_2023: Title": {
@@ -12228,11 +12254,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Esta assinatura será renovada automaticamente a cada dois anos pela mesma taxa até ser cancelada."
-      ]
-    },
-    "specialoffer: Info": {
-      "No available offers found.": [
-        "Não há ofertas disponíveis."
       ]
     },
     "specialoffer: Label": {
@@ -13158,9 +13179,6 @@
       "Auto-reply": [
         "Resposta automática"
       ],
-      "Auto-reply and forward": [
-        "Resposta automática e encaminhamento"
-      ],
       "Automatically sign outgoing messages?": [
         "Assinar automaticamente as mensagens enviadas?"
       ],
@@ -13491,6 +13509,9 @@
       "Folders and labels": [
         "Pastas e marcadores"
       ],
+      "Forward and auto-reply": [
+        "Encaminhamento e resposta automática"
+      ],
       "Forward emails": [
         "Encaminhamento de e-mails"
       ],
@@ -13820,7 +13841,7 @@
         "Inicie sessão para participar do programa Beta"
       ],
       "Sign in to your organization": [
-        "Inicie sessão na sua organização."
+        "Iniciar sessão na sua organização."
       ],
       "Sign in with 2FA": [
         "Iniciar sessão com A2F"
@@ -14253,7 +14274,7 @@
     },
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Logins seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
+        "${ PASS_APP_NAME }: Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
       ]
     },
     "Tooltip automatically attach public key": {
@@ -14448,8 +14469,8 @@
       ]
     },
     "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Acesso a servidores Secure Core, downloads rápidos P2P/BitTorrent, Tor over VPN, Double hop, e mais."
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Acesso a servidores Secure Core, downloads rápidos P2P/BitTorrent, Tor over VPN, e mais."
       ]
     },
     "VPNClient": {
