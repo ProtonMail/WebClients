@@ -270,7 +270,7 @@ describe('should get checkout result', () => {
             withoutDiscountPerMonth: 2999,
             discountPerCycle: 28776,
             discountPercent: 40,
-            membersPerMonth: 1999,
+            membersPerMonth: 11994,
             addonsPerMonth: 0,
         });
     });
@@ -485,7 +485,7 @@ describe('should get checkout result', () => {
             withoutDiscountPerMonth: 2999,
             discountPerCycle: 71976,
             discountPercent: 100,
-            membersPerMonth: 1999,
+            membersPerMonth: 11994,
             addonsPerMonth: 0,
         });
     });
