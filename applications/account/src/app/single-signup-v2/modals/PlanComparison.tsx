@@ -9,8 +9,10 @@ import {
     MAIL_SHORT_APP_NAME,
     PASS_SHORT_APP_NAME,
     PLANS,
+    PLAN_SERVICES,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
@@ -117,6 +119,7 @@ const PlanComparison = ({ currentPlan, upsellPlan, unlockPlan, children, plansMa
                   icon: <FreeLogo app={APPS.PROTONMAIL} size={freeSize} />,
                   selected: false,
                   bold: false,
+                  service: PLAN_SERVICES.MAIL,
               }
             : {
                   plan: PLANS.MAIL,
@@ -124,6 +127,7 @@ const PlanComparison = ({ currentPlan, upsellPlan, unlockPlan, children, plansMa
                   icon: <FreeLogo app={APPS.PROTONMAIL} size={freeSize} />,
                   selected: false,
                   bold: false,
+                  service: PLAN_SERVICES.MAIL,
               },
         {
             plan: PLANS.PASS_PLUS,
@@ -131,6 +135,7 @@ const PlanComparison = ({ currentPlan, upsellPlan, unlockPlan, children, plansMa
             icon: <FreeLogo app={APPS.PROTONPASS} size={freeSize} />,
             selected: false,
             bold: false,
+            service: PLAN_SERVICES.PASS,
         },
         {
             plan: PLANS.DRIVE,
@@ -138,6 +143,7 @@ const PlanComparison = ({ currentPlan, upsellPlan, unlockPlan, children, plansMa
             icon: <FreeLogo app={APPS.PROTONDRIVE} size={freeSize} />,
             selected: false,
             bold: false,
+            service: PLAN_SERVICES.DRIVE,
         },
         {
             plan: PLANS.VPN,
@@ -145,10 +151,11 @@ const PlanComparison = ({ currentPlan, upsellPlan, unlockPlan, children, plansMa
             icon: <FreeLogo app={APPS.PROTONVPN_SETTINGS} size={freeSize} />,
             selected: false,
             bold: false,
+            service: PLAN_SERVICES.VPN,
         },
     ]
         .map((item) => {
-            if (item.plan === currentPlan?.Name) {
+            if (hasBit(currentPlan?.Services as any, item.service)) {
                 return {
                     ...item,
                     ...paidMap[item.plan],
