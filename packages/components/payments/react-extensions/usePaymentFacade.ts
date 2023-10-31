@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { buyCredit } from '@proton/shared/lib/api/payments';
+import { buyCredit, payInvoice } from '@proton/shared/lib/api/payments';
 import { Api, Currency } from '@proton/shared/lib/interfaces';
 
 import {
@@ -19,12 +19,16 @@ import { useSavedMethod } from './useSavedMethod';
 
 export interface Operations {
     buyCredit: () => Promise<unknown>;
+    payInvoice: (invoiceId: string) => Promise<unknown>;
 }
 
 function getOperations(api: Api, params: ChargeablePaymentParameters): Operations {
     return {
         buyCredit: async () => {
             return api(buyCredit(params));
+        },
+        payInvoice: async (invoiceId: string) => {
+            return api(payInvoice(invoiceId, params));
         },
     };
 }

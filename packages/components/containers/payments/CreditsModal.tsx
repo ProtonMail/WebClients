@@ -84,8 +84,7 @@ const CreditsModal = (props: ModalProps) => {
         await call();
     };
 
-    const selectedMethodType = paymentFacade.methods.selectedMethod?.type;
-    const method = paymentFacade.methods.selectedMethod?.value;
+    const method = paymentFacade.selectedMethodValue;
 
     const submit = (() => {
         const bitcoinAmountInRange = debouncedAmount >= MIN_BITCOIN_AMOUNT && debouncedAmount <= MAX_BITCOIN_AMOUNT;
@@ -153,7 +152,7 @@ const CreditsModal = (props: ModalProps) => {
         >
             <ModalTwoHeader title={c('Title').t`Add credits`} />
             <ModalTwoContent>
-                <PaymentInfo method={selectedMethodType} />
+                <PaymentInfo paymentMethodType={paymentFacade.selectedMethodType} />
                 <div className="mb-4">
                     <div>
                         {c('Info')
@@ -170,7 +169,7 @@ const CreditsModal = (props: ModalProps) => {
                     </Href>
                 </div>
                 <AmountRow
-                    method={selectedMethodType}
+                    paymentMethodType={paymentFacade.selectedMethodType}
                     amount={amount}
                     onChangeAmount={setAmount}
                     currency={currency}
