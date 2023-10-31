@@ -24,7 +24,7 @@ export const importItemsIntent = createAction(
 
 export const importItemsSuccess = createAction(
     'import items success',
-    (payload: ImportEntry, receiver?: ExtensionEndpoint) =>
+    (payload: ImportEntry, endpoint?: ExtensionEndpoint) =>
         pipe(
             withCacheBlock,
             withRequest({
@@ -33,7 +33,7 @@ export const importItemsSuccess = createAction(
             }),
             withNotification({
                 type: 'info',
-                receiver,
+                endpoint,
                 text: c('Info').ngettext(
                     // translator: ${payload.total} is a number
                     msgid`Imported ${payload.total} item`,
@@ -44,7 +44,7 @@ export const importItemsSuccess = createAction(
         )({ payload })
 );
 
-export const importItemsFailure = createAction('import items failure', (error: unknown, receiver?: ExtensionEndpoint) =>
+export const importItemsFailure = createAction('import items failure', (error: unknown, endpoint?: ExtensionEndpoint) =>
     pipe(
         withCacheBlock,
         withRequest({
@@ -53,7 +53,7 @@ export const importItemsFailure = createAction('import items failure', (error: u
         }),
         withNotification({
             type: 'error',
-            receiver,
+            endpoint,
             expiration: -1,
             text: c('Error').t`Importing items failed`,
             error,
