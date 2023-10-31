@@ -106,7 +106,7 @@ function* importWorker(
 
                         yield put(
                             notification({
-                                receiver: meta.sender?.endpoint,
+                                endpoint: meta.sender?.endpoint,
                                 key: meta.request.id,
                                 type: 'error',
                                 text: c('Error').t`Import failed for vault "${vaultData.name}" : ${description}`,
@@ -119,7 +119,7 @@ function* importWorker(
                 yield put(
                     notification({
                         key: meta.request.id,
-                        receiver: meta.sender?.endpoint,
+                        endpoint: meta.sender?.endpoint,
                         type: 'error',
                         text: c('Error').t`Vault "${vaultData.name}" could not be created`,
                     })
