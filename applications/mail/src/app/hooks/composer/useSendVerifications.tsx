@@ -11,7 +11,7 @@ import { languageCode, localeCode } from '@proton/shared/lib/i18n';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { EncryptionPreferencesError } from '@proton/shared/lib/mail/encryptionPreferences';
-import { getRecipients, getRecipientsAddresses } from '@proton/shared/lib/mail/messages';
+import { getRecipients, getRecipientsAddresses, isPlainText } from '@proton/shared/lib/mail/messages';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 import unique from '@proton/utils/unique';
 
@@ -81,26 +81,28 @@ export const useSendVerifications = (
             }
         }
 
-        const [contentBeforeBlockquote] = locateBlockquote(message.messageDocument?.document);
-        const normalized = normalize(`${message.data.Subject} ${contentBeforeBlockquote || ''}`);
+        if (!isPlainText(message.data)) {
+            const [contentBeforeBlockquote] = locateBlockquote(message.messageDocument?.document);
+            const normalized = normalize(`${message.data.Subject} ${contentBeforeBlockquote || ''}`);
 
-        const [keyword] =
-            (languageCode === 'en' && normalized.match(EN_REGEX)) ||
-            (languageCode === 'fr' && normalized.match(FR_REGEX)) ||
-            (languageCode === 'de' && normalized.match(DE_REGEX)) ||
-            (languageCode === 'es' && normalized.match(ES_REGEX)) ||
-            (languageCode === 'ru' && normalized.match(RU_REGEX)) ||
-            (languageCode === 'it' && normalized.match(IT_REGEX)) ||
-            (languageCode === 'pt' && normalized.match(PT_PT_REGEX)) ||
-            (languageCode === 'pt' && localeCode === 'pt_BR' && normalized.match(PT_BR_REGEX)) ||
-            (languageCode === 'nl' && normalized.match(NL_REGEX)) ||
-            (languageCode === 'pl' && normalized.match(PL_REGEX)) ||
-            [];
+            const [keyword] =
+                (languageCode === 'en' && normalized.match(EN_REGEX)) ||
+                (languageCode === 'fr' && normalized.match(FR_REGEX)) ||
+                (languageCode === 'de' && normalized.match(DE_REGEX)) ||
+                (languageCode === 'es' && normalized.match(ES_REGEX)) ||
+                (languageCode === 'ru' && normalized.match(RU_REGEX)) ||
+                (languageCode === 'it' && normalized.match(IT_REGEX)) ||
+                (languageCode === 'pt' && normalized.match(PT_PT_REGEX)) ||
+                (languageCode === 'pt' && localeCode === 'pt_BR' && normalized.match(PT_BR_REGEX)) ||
+                (languageCode === 'nl' && normalized.match(NL_REGEX)) ||
+                (languageCode === 'pl' && normalized.match(PL_REGEX)) ||
+                [];
 
-        // Attachment word without attachments
-        if (keyword && !message.data.Attachments.length) {
-            if (handleNoAttachments) {
-                await handleNoAttachments(keyword);
+            // Attachment word without attachments
+            if (keyword && !message.data.Attachments.length) {
+                if (handleNoAttachments) {
+                    await handleNoAttachments(keyword);
+                }
             }
         }
     }, []);
