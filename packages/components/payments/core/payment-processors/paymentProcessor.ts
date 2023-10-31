@@ -20,9 +20,12 @@ export abstract class PaymentProcessor<T = any> {
         handler: UpdateHandler<T>;
     }[] = [];
 
-    constructor(protected state: T, public amountAndCurrency: AmountAndCurrency) {}
+    constructor(
+        protected state: T,
+        public amountAndCurrency: AmountAndCurrency
+    ) {}
 
-    abstract fetchPaymentToken(): Promise<ChargeablePaymentToken | NonChargeablePaymentToken>;
+    abstract fetchPaymentToken(): Promise<ChargeablePaymentToken | NonChargeablePaymentToken | null>;
 
     abstract verifyPaymentToken(): Promise<ChargeablePaymentParameters>;
 
