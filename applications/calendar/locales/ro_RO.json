@@ -2109,11 +2109,6 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Economisiți timp trimițând mesaje sau invitații simultan tuturor, o funcție premium printre multe altele. Modernizați contul acum."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă un contact. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
-        "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
-        "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } de contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
-      ],
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "Aceasta ar putea dura câteva minute. Între timp puteți continua să folosiți calendarul."
       ],
@@ -2361,6 +2356,9 @@
       ],
       "Event not found": [
         "Evenimentul nu a fost găsit."
+      ],
+      "Failed to get event": [
+        "Nu s-a putut obține evenimentul"
       ],
       "Failed to get original occurrence in series": [
         "Nu s-a putut obține apariția inițială în serie."
@@ -3135,6 +3133,9 @@
       ],
       "MB": [
         "MiB"
+      ],
+      "TB": [
+        "TiB"
       ]
     },
     "file size format, long": {
@@ -3157,6 +3158,11 @@
         "Megabait",
         "Megabaiți",
         "Megabaiți"
+      ],
+      "Terabyte": [
+        "Terabait",
+        "Terabaiți",
+        "Terabaiți"
       ]
     },
     "Filter notification": {
