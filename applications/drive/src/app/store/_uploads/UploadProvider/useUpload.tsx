@@ -15,6 +15,7 @@ import {
     isTransferOngoing,
     isTransferPausedByConnection,
     isTransferProgress,
+    isTransferRetry,
 } from '../../../utils/transfer';
 import { MAX_UPLOAD_BLOCKS_LOAD, MAX_UPLOAD_FOLDER_LOAD } from '../constants';
 import { UploadFileItem, UploadFileList } from '../interface';
@@ -230,6 +231,10 @@ export default function useUpload(): [UploadProviderState, UploadModalContainer]
                 .catch((error) => {
                     if (isTransferCancelError(error)) {
                         queue.updateState(nextFileUpload.id, TransferState.Canceled);
+                    } else if (isTransferRetry(error)) {
+                        queue.updateState(nextFileUpload.id, ({ parentId }) =>
+                            parentId ? TransferState.Pending : TransferState.Initializing
+                        );
                     } else {
                         queue.updateWithData(nextFileUpload.id, TransferState.Error, { error });
                         sendErrorReport(error);
