@@ -884,6 +884,12 @@
       "Sign in": [
         "Přihlásit se"
       ],
+      "Sign in with password": [
+        "Přihlásit se pomocí hesla"
+      ],
+      "Sign in with SSO": [
+        "Přihlásit se pomocí SSO"
+      ],
       "Sign out": [
         "Odhlásit se"
       ],
@@ -892,9 +898,6 @@
       ],
       "Sign out of all accounts": [
         "Odhlásit se ze všech účtů"
-      ],
-      "Sign up for free": [
-        "Zaregistrujte se zdarma"
       ],
       "Signing in": [
         "Přihlašování"
@@ -2899,12 +2902,6 @@
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Oddělte různé aspekty svého života pomocí více e-mailových adres a po navýšení tarifu odemkněte další prémiové funkce."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Pokud je váš soubor větší, rozdělte jej na menší soubory.",
-        "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontakty. Pokud je váš soubor větší, rozdělte jej do menších souborů.",
-        "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej do menších souborů.",
-        "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej do menších souborů."
-      ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "K odstranění zápatí ${ MAIL_APP_NAME } navyšte tarif a odemkněte ještě více prémiových funkcí."
       ],
@@ -3032,6 +3029,17 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Pomozte nám se zlepšit!"
+      ]
+    },
+    "drive_signup_2023: Info": {
+      "Advanced sharing security": [
+        "Pokročilé zabezpečení sdílení"
+      ],
+      "Encrypted cloud storage for all your files": [
+        "Šifrované cloudové úložiště pro všechny vaše soubory"
+      ],
+      "Secure cloud storage and file sharing that protects your data": [
+        "Bezpečné cloudové úložiště a sdílení souborů, které chrání vaše údaje"
       ]
     },
     "Duration": {
@@ -4507,6 +4515,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -4533,6 +4544,12 @@
         "Megabajty",
         "Megabajtů",
         "Megabajtů"
+      ],
+      "Terabyte": [
+        "Terabajt",
+        "Terabajty",
+        "Terabajtů",
+        "Terabajtů"
       ]
     },
     "Filter Actions": {
@@ -5349,6 +5366,9 @@
       "${ firstRemainingCalendarName } will be set as default calendar.": [
         "${ firstRemainingCalendarName } bude nastaven jako výchozí kalendář."
       ],
+      "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
+        "${ inviterEmailJSX } chce s vámi sdílet data v ${ PASS_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } lze také použít s jedním heslem, což nahrazuje heslo pro přihlášení a poštovní schránku. Pro přechod do režimu jedno hesla, prosím zadejte Vaše \"jednotné heslo\", které chcete použít a klikněte Uložit."
       ],
@@ -5586,12 +5606,6 @@
       "Additional options": [
         "Další možnosti"
       ],
-      "address": [
-        "adresa",
-        "adresy",
-        "adres",
-        "adresy"
-      ],
       "Admin account allocation": [
         "Přidělení účtu správce"
       ],
@@ -5791,7 +5805,7 @@
         "Sdílením úplných údajů o události tohoto kalendáře souhlasíte s udělením přístupu ${ BRAND_NAME } k šifrovaným informacím tohoto kalendáře."
       ],
       "Cancel anytime": [
-        "Zrušit kdykoliv"
+        "Možnost zrušit kdykoli"
       ],
       "Center": [
         "Zarovnat na střed"
@@ -6096,6 +6110,9 @@
       "Get ${ upsellPlanName }": [
         "Získat ${ upsellPlanName }"
       ],
+      "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
+        "Získejte přístup vytvořením účtu ${ BRAND_NAME } a přijetím pozvánky."
+      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Pojmenujte token např. názvem služby, se kterou jej plánujete používat a vyberte jednu ze svých aktivních doménových adres. Pouze tato adresa bude moci odesílat e-maily tímto tokenem."
       ],
@@ -6362,9 +6379,6 @@
       ],
       "Monthly ${ onDayString }": [
         "Měsíčně ${ onDayString }"
-      ],
-      "more": [
-        "více"
       ],
       "Multi-user support not enabled.": [
         "Podpora více uživatelů není povolena."
@@ -9066,7 +9080,7 @@
         "Kontaktujte nás"
       ],
       "create a ticket": [
-        "vytvořte případ"
+        "vytvořte požadavek na podporu"
       ],
       "Create account": [
         "Vytvořit účet"
@@ -9308,6 +9322,9 @@
       ],
       "Create a new ${ appName } account": [
         "Vytvořit nový účet ${ appName }"
+      ],
+      "Find your ${ BRAND_NAME } Account username": [
+        "Zjistěte své uživatelské jméno ${ BRAND_NAME }"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Zapomněli jste heslo ke svému ${ BRAND_NAME } účtu? Resetujte ho zde pomocí kódu pro obnovení, e-mailu nebo SMS a získejte zpět přístup k ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } a dalším aplikacím."
@@ -10188,14 +10205,6 @@
         "Váš vybraný tarif: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Zkušební verze ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Využití vašeho účtu"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Smazat účet?"
@@ -10219,18 +10228,26 @@
         "Odemknout prémiové funkce navýšením účtu"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Zkušební verze ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Využití vašeho účtu"
+      ]
+    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
-        "${ CALENDAR_APP_NAME }: Zabezpečte svůj plán pomocí koncového šifrování. Obsahuje podporu vlastních kalendářů, sdílení kalendáře a další funkce."
+        "${ CALENDAR_APP_NAME }: Zabezpečte svůj tarif pomocí koncového šifrování. Obsahuje podporu vlastních kalendářů, sdílení kalendáře a další funkce."
       ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Obsahuje historii verzí, šifrované sdílení souborů a další funkce."
+        "${ DRIVE_APP_NAME }: Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Obsahuje historii verzí souborů, šifrované sdílení souborů a další funkce."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Zabezpečte své e-maily pomocí koncového šifrování. Obsahuje podporu vlastních e-mailových domén, 15 e-mailových adres, neomezený počet hide-my-email aliasů pro skrytí e-mailu a další."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "${ VPN_APP_NAME }: Přístup k blokovanému obsahu a soukromé prohlížení. Obsahuje ${ serversAndCountries }, nejvyšší rychlosti VPN, přístup k celosvětovým streamovacím službám, blokátor malwaru a reklam, rychlé stahování BitTorrentu a další funkce."
+        "${ VPN_APP_NAME }: Přístup k blokovanému obsahu a soukromé prohlížení. Obsahuje ${ serversAndCountries }, nejvyšší rychlosti VPN, přístup k celosvětovým streamovacím službám, blokování malwaru a reklam, rychlé stahování BitTorrentu a další funkce."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Získejte přístup k obsahu na streamovacích službách, včetně Netflix, Disney+, Prime Video, odkudkoliv"
@@ -10947,9 +10964,6 @@
       "Download to continue ${ size }": [
         "Pokračujte stažením ${ size }"
       ],
-      "Keep this plan and use ${ appName }": [
-        "Ponechat tento tarif a používat ${ appName }"
-      ],
       "Or ${ createANewAccount }": [
         "Nebo ${ createANewAccount }"
       ],
@@ -10959,14 +10973,8 @@
       "Start using ${ appName } now": [
         "Začněte nyní používat ${ appName }"
       ],
-      "Upgrade for only ${ relativePrice } extra per month": [
-        "Navýšit jen za ${ relativePrice } navíc měsíčně"
-      ],
       "Upgrade my plan": [
         "Přejít na vyšší tarif"
-      ],
-      "Use ${ free } instead": [
-        "Namísto toho použít ${ free }"
       ]
     },
     "pass_signup_2023: Feature": {
@@ -11076,9 +11084,6 @@
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "Pokud dojde k zablokování vašeho účtu ${ BRAND_NAME }, vaše **sada pro obnovení** vám umožní přihlásit se a obnovit vaše data."
       ],
-      "Includes basic ${ appName } features:": [
-        "Obsahuje základní funkce ${ appName }:"
-      ],
       "Install ${ PASS_APP_NAME }": [
         "Instalovat ${ PASS_APP_NAME }"
       ],
@@ -11148,9 +11153,6 @@
       "Verifying your payment": [
         "Ověřování vaší platby"
       ],
-      "Welcome to ${ plan }": [
-        "Vítejte v ${ plan }"
-      ],
       "Works on all devices": [
         "Funguje na všech zařízeních"
       ],
@@ -11160,13 +11162,11 @@
       "You currently have": [
         "Momentálně máte"
       ],
+      "You have been invited to join ${ PASS_APP_NAME }": [
+        "Byli jste pozváni do ${ PASS_APP_NAME }"
+      ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Vaše organizace má přístup k ${ free }. Pokud chcete mít přístup k prémiovým funkcím ${ appName }, požádejte správce své organizace o navýšení."
-      ]
-    },
-    "pass_signup_2023: Onboarding": {
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Vítejte v ${ PASS_APP_NAME }"
       ]
     },
     "pass_signup_2023: Title": {
@@ -11175,6 +11175,9 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Všechny služby ${ BRAND_NAME } Plus.${ br }Jedno jednoduché předplatné."
+      ],
+      "Create a ${ PASS_APP_NAME } account": [
+        "Vytvořit účet ${ PASS_APP_NAME }"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Vytvořit účet ${ BRAND_NAME }"
@@ -11709,10 +11712,10 @@
     },
     "session_recovery:in_progress:info": {
       "${ gracePeriodHoursRemaining } more hour": [
-        "Zbývá ${ gracePeriodHoursRemaining } hodina",
-        "Zbývají ${ gracePeriodHoursRemaining } hodiny",
-        "Zbývá ${ gracePeriodHoursRemaining } hodin",
-        "Zbývá ${ gracePeriodHoursRemaining } hodin"
+        "${ gracePeriodHoursRemaining } další hodina",
+        "${ gracePeriodHoursRemaining } další hodiny",
+        "${ gracePeriodHoursRemaining } dalších hodin",
+        "${ gracePeriodHoursRemaining } dalších hodin"
       ],
       "Didn’t make this request?": [
         "Toto není vaše žádost?"
@@ -12096,11 +12099,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Předplatné se bude každé dva roky automaticky obnovovat se stejnou cenou, dokud nebude zrušeno."
-      ]
-    },
-    "specialoffer: Info": {
-      "No available offers found.": [
-        "Nebyly nalezeny žádné nabídky."
       ]
     },
     "specialoffer: Label": {
@@ -13068,9 +13066,6 @@
       "Auto-reply": [
         "Automatická odpověď"
       ],
-      "Auto-reply and forward": [
-        "Automatická odpověď a přeposlání"
-      ],
       "Automatically sign outgoing messages?": [
         "Automaticky podepisovat odchozí zprávy?"
       ],
@@ -13737,6 +13732,9 @@
       "Sign in to join the Beta program": [
         "Přihlaste se do programu Beta"
       ],
+      "Sign in to your organization": [
+        "Přihlaste se ke své organizaci"
+      ],
       "Sign in with 2FA": [
         "Přihlásit se pomocí 2FA"
       ],
@@ -14172,7 +14170,7 @@
     },
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Zabezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
+        "${ PASS_APP_NAME }: Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
       ]
     },
     "Tooltip automatically attach public key": {
@@ -14382,11 +14380,6 @@
       ],
       "Your ${ selected } plan": [
         "Váš tarif ${ selected }"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Přístup k serverům Secure Core, rychlé stahování P2P/BitTorrent, Tor skrze VPN, Double hop a další."
       ]
     },
     "Warning": {

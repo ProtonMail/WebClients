@@ -29,9 +29,6 @@
       "Back": [
         "Назад"
       ],
-      "Can't find your password manager? Please let us know!": [
-        "Не можете знайти менеджер паролів? Будь ласка, дайте нам знати!"
-      ],
       "Cancel": [
         "Скасувати"
       ],
@@ -152,9 +149,6 @@
       "Generate password": [
         "Згенерувати пароль"
       ],
-      "Generated password": [
-        "Згенерований пароль"
-      ],
       "Get mobile apps": [
         "Отримати програму для мобільного пристрою"
       ],
@@ -238,9 +232,6 @@
       ],
       "Pass for iOS": [
         "Pass для iOS"
-      ],
-      "Proceed": [
-        "Продовжити"
       ],
       "Refresh the page": [
         "Оновити сторінку"
@@ -329,8 +320,8 @@
       "Upgrade": [
         "Покращити"
       ],
-      "Upgrade to keep these features": [
-        "Щоб і надалі користуватися цими функціями, передплатіть тарифний план"
+      "Upgrade now": [
+        "Покращити"
       ],
       "Write us on Reddit": [
         "Напишіть нам на Reddit"
@@ -627,9 +618,6 @@
         "${ memberCount } учасників",
         "${ memberCount } учасників"
       ],
-      "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
-        "${ PASS_APP_NAME } імпортуватиме лише логіни та нотатки. Паспорти, вкладені файли, тощо зараз не підтримуються."
-      ],
       "${ revisionNumber } time": [
         "${ revisionNumber } раз",
         "${ revisionNumber } рази",
@@ -656,9 +644,6 @@
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Доступна нова версія ${ PASS_APP_NAME }. Оновіть його, щоб отримати найновіші функції та виправлення помилок."
-      ],
-      "Access ${ PASS_APP_NAME } via this icon": [
-        "Переходьте до ${ PASS_APP_NAME } за допомогою цієї піктограми"
       ],
       "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
         "Щоб отримати доступ до ${ PASS_APP_NAME }, вимагатиметься PIN-код для розблокування сеансу"
@@ -698,9 +683,6 @@
       ],
       "Can view items in this vault.": [
         "Може переглядати елементи в цьому сховищі."
-      ],
-      "Check out all the exclusive features that are available to you for a limited time.": [
-        "Ознайомтеся з усіма ексклюзивними функціями, які доступні вам протягом обмеженого часу."
       ],
       "Copied to clipboard": [
         "Скопійовано до буфера обміну"
@@ -744,12 +726,6 @@
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "Експорт зашифрований за допомогою PGP і вимагає надійної парольної фрази."
       ],
-      "Follow these simple steps to get the best experience:": [
-        "Для найкращої роботи виконайте ці прості кроки:"
-      ],
-      "Free Trial": [
-        "Безплатна пробна версія"
-      ],
       "Generated passwords will be stored for a period of one day.": [
         "Згенеровані паролі зберігатимуться протягом одного дня."
       ],
@@ -777,9 +753,6 @@
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Якщо ввімкнено, ви можете швидко автоматично заповнити свої облікові дані, натиснувши піктограму ${ PASS_APP_NAME }."
       ],
-      "Import in progress :": [
-        "Виконується імпорт :"
-      ],
       "Imported ${ payload.total } item": [
         "Імпортовано ${ payload.total } елемент",
         "Імпортовано ${ payload.total } елементи",
@@ -791,9 +764,6 @@
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Щоб робота з ${ PASS_APP_NAME } була найзручнішою надайте розширенню необхідні дозволи"
-      ],
-      "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
-        "Щоб перенести ваші дані до ${ PASS_APP_NAME }, спершу експортуйте їх з іншого менеджера паролів, а потім імпортуйте за допомогою форми нижче. Після імпортування всіх елементів видаліть експортований файл."
       ],
       "Internet connection lost": [
         "Втрачено інтернет-з'єднання"
@@ -909,9 +879,6 @@
       "Save login": [
         "Зберегти дані для входу"
       ],
-      "Select the destination vault for each imported vault.": [
-        "Виберіть цільове сховище для кожного імпортованого сховища."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Сервери недоступні. Спробуйте знову за кілька хвилин"
       ],
@@ -998,12 +965,6 @@
       ],
       "You are about to create:": [
         "Ви збираєтеся створити:"
-      ],
-      "You have ${ daysRemaining } day left in your trial period.": [
-        "У вас залишився ${ daysRemaining } день до кінця пробного періоду.",
-        "У вас залишилося ${ daysRemaining } дні до кінця пробного періоду.",
-        "У вас залишилося ${ daysRemaining } днів до кінця пробного періоду.",
-        "У вас залишилося ${ daysRemaining } днів до кінця пробного періоду."
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Ви досягли обмеження кількості псевдонімів. Створюйте скільки завгодно псевдонімів, передплативши тарифний план вищого рівня."
@@ -1124,9 +1085,6 @@
       "Card number": [
         "Номер картки"
       ],
-      "Cardholder name": [
-        "Ім'я власника картки"
-      ],
       "Cards": [
         "Картки"
       ],
@@ -1150,9 +1108,6 @@
       ],
       "Created": [
         "Створено"
-      ],
-      "Credit Card": [
-        "Кредитна картка"
       ],
       "Display": [
         "Показувати"
@@ -1178,8 +1133,8 @@
       "Encrypt your ${ PASS_APP_NAME } data export file": [
         "Зашифрувати файл експорту даних ${ PASS_APP_NAME }"
       ],
-      "Expires on": [
-        "Діє до"
+      "Expiration date": [
+        "Термін дії"
       ],
       "Export": [
         "Експорт"
@@ -1216,9 +1171,6 @@
       ],
       "Include numbers (0-9)": [
         "Додати цифри (0-9)"
-      ],
-      "Label": [
-        "Мітка"
       ],
       "Language": [
         "Мова"
@@ -1258,6 +1210,9 @@
       ],
       "Name": [
         "Назва"
+      ],
+      "Name on card": [
+        "Ім'я на картці"
       ],
       "Need help ?": [
         "Потрібна допомога ?"
@@ -1333,6 +1288,9 @@
       ],
       "Security": [
         "Безпека"
+      ],
+      "Security code": [
+        "Код безпеки"
       ],
       "Select an email address": [
         "Виберіть адресу електронної пошти"
@@ -1418,9 +1376,6 @@
       "Vault": [
         "Сховище"
       ],
-      "Verification number": [
-        "Номер підтвердження"
-      ],
       "View details": [
         "Переглянути подробиці"
       ],
@@ -1500,6 +1455,9 @@
       "Move items to another vault (optional)": [
         "Перемістити елементи в інше сховище (необов'язково)"
       ],
+      "Other": [
+        "Інше"
+      ],
       "Pick a vault": [
         "Виберіть сховище"
       ],
@@ -1550,20 +1508,14 @@
       "Confirm PIN code": [
         "Підтвердьте PIN-код"
       ],
-      "Connect your ${ BRAND_NAME } account": [
-        "Під'єднати обліковий запис ${ BRAND_NAME }"
-      ],
       "Create PIN code": [
         "Створіть PIN-код"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "Видалити сховище \"${ vaultName }\" ?"
       ],
-      "Discard changes ?": [
-        "Відкинути зміни ?"
-      ],
-      "Enjoy your free trial": [
-        "Насолоджуйтесь безплатною пробною версією"
+      "Discard changes?": [
+        "Відхилити зміни?"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Вам подобається ${ PASS_APP_NAME }?"
@@ -1646,9 +1598,6 @@
       "Welcome to ${ PASS_APP_NAME }": [
         "Ласкаво просимо до ${ PASS_APP_NAME }"
       ],
-      "Welcome!": [
-        "Вітаємо!"
-      ],
       "Why ${ PASS_APP_NAME }?": [
         "Чому ${ PASS_APP_NAME }?"
       ],
@@ -1659,15 +1608,6 @@
     "Validation": {
       "Duplicated url": [
         "Дублювати url"
-      ],
-      "Label is required": [
-        "Мітка обов'язкова"
-      ],
-      "OTP Secret or URI is invalid": [
-        "Секретний ключ OTP або URI неправильний"
-      ],
-      "OTP Secret or URI required": [
-        "Потрібен секретний ключ OTP або URI"
       ],
       "Url already exists": [
         "Url вже існує"
@@ -1685,9 +1625,6 @@
       ],
       "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
         "Псевдонім \"${ name }\" зараз використовується в елементі входу \"${ relatedLoginName }\". Ви також припините отримувати електронні листи, надіслані \"${ aliasEmail }\""
-      ],
-      "All your trashed items will be permanently deleted. You can not undo this action.": [
-        "Усі ваші елементи в смітнику буде остаточно видалено. Ви не можете скасувати цю дію."
       ],
       "An error occured while exporting your data": [
         "Під час експортування даних сталася помилка"
@@ -1767,9 +1704,6 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Неможливо увійти в ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You can not undo this action": [
-        "Vault \"${ vaultName }\" і всі його елементи будуть остаточно видалені. Ви не зможете скасувати цю дію"
-      ],
       "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
         "Сховище \"${ vaultName }\" буде остаточно видалено, а всі його елементи переміщено до \"${ destinationVaultName }\""
       ],
@@ -1778,9 +1712,6 @@
       ],
       "You cannot create more vaults than your subscription allows.": [
         "Ви не можете створити більше сховищ, ніж дозволяє ваша підписка."
-      ],
-      "You have unsaved changes, are you sure you want to discard them?": [
-        "У вас є незбережені зміни. Ви впевнені, що хочете відхилити їх?"
       ],
       "You must select at least one mailbox": [
         "Виберіть принаймні одну поштову скриньку"

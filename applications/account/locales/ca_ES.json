@@ -632,6 +632,9 @@
       "Open navigation": [
         "Obre la navegació"
       ],
+      "Or": [
+        "O"
+      ],
       "Ordered list": [
         "Llista ordenada"
       ],
@@ -881,6 +884,9 @@
       "Sign in": [
         "Inicia la sessió"
       ],
+      "Sign in with password": [
+        "Inicieu la sessió amb una contrasenya"
+      ],
       "Sign out": [
         "Tanca la sessió"
       ],
@@ -889,9 +895,6 @@
       ],
       "Sign out of all accounts": [
         "Tanca tots els comptes"
-      ],
-      "Sign up for free": [
-        "Creeu un compte gratuïtament"
       ],
       "Signing in": [
         "Iniciant sessió"
@@ -2850,10 +2853,6 @@
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separeu diferents aspectes de la vostra vida amb diverses adreces de correu electrònic i desbloquegeu més característiques prèmium quan milloreu el vostre pla."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "El fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir ${ MAX_IMPORT_CONTACTS_STRING } contacte. Si el fitxer és més gran, dividiu-lo en fitxers més petits.",
-        "El fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir ${ MAX_IMPORT_CONTACTS_STRING } contactes. Si el fitxer és més gran, dividiu-lo en fitxers més petits."
-      ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Per eliminar el peu de pàgina ${ MAIL_APP_NAME }, milloreu i desbloquegeu encara més característiques prèmium."
       ],
@@ -2972,6 +2971,11 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Ajudeu-nos a millorar!"
+      ]
+    },
+    "drive_signup_2023: Info": {
+      "Advanced sharing security": [
+        "Seguretat avançada per la compartició"
       ]
     },
     "Duration": {
@@ -3276,6 +3280,9 @@
       ],
       "Forwarding activated": [
         "S'ha activat el reenviament."
+      ],
+      "Request confirmation": [
+        "Sol·licita una confirmació"
       ],
       "Set up forwarding": [
         "Configura el reenviament"
@@ -4579,6 +4586,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -5340,6 +5350,10 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } adreça",
+        "${ amountOfAddresses } adreces"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
       ],
@@ -5574,10 +5588,6 @@
       ],
       "Additional options": [
         "Opcions addicionals"
-      ],
-      "address": [
-        "adreça",
-        "adreces"
       ],
       "Admin account allocation": [
         "Assignació del compte d'administrador"
@@ -6308,9 +6318,6 @@
       ],
       "Monthly ${ onDayString }": [
         "Mensual ${ onDayString }"
-      ],
-      "more": [
-        "més"
       ],
       "Multi-user support not enabled.": [
         "Suport multi-usuari no activat."
@@ -9891,14 +9898,6 @@
         "El teu pla seleccionat: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prova de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Ús del vostre compte"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Voleu eliminar el compte?"
@@ -9920,6 +9919,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Milloreu el pla i desbloquegeu funcions prèmium"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prova de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Ús del vostre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -10588,9 +10595,6 @@
       "Download to continue ${ size }": [
         "Descarregueu per continuar ${ size }"
       ],
-      "Keep this plan and use ${ appName }": [
-        "Mantingueu aquest pla i utilitzeu ${ appName }"
-      ],
       "Or ${ createANewAccount }": [
         "O ${ createANewAccount }"
       ],
@@ -10600,14 +10604,8 @@
       "Start using ${ appName } now": [
         "Comenceu a utilitzar ${ appName }"
       ],
-      "Upgrade for only ${ relativePrice } extra per month": [
-        "Milloreu el pla per només ${ relativePrice } extra al mes."
-      ],
       "Upgrade my plan": [
         "Millora el meu pla"
-      ],
-      "Use ${ free } instead": [
-        "Utilitzeu ${ free } en el seu lloc"
       ]
     },
     "pass_signup_2023: Feature": {
@@ -10696,6 +10694,9 @@
       "End-to-end encrypted notes": [
         "Notes xifrades d'extrem a extrem"
       ],
+      "End-to-end encryption": [
+        "Xifratge d'extrem a extrem"
+      ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Per només **${ relativePrice } més al mes**, obteniu accés a tots els serveis prèmium de ${ BRAND_NAME }!"
       ],
@@ -10713,9 +10714,6 @@
       ],
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "Si no podeu accedir al vostre compte de ${ BRAND_NAME }, el vostre **kit de recuperació** us permetrà iniciar sessió i recuperar les vostres dades."
-      ],
-      "Includes basic ${ appName } features:": [
-        "Inclou les característiques bàsiques de ${ appName }:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "Instal·leu ${ PASS_APP_NAME }"
@@ -10783,9 +10781,6 @@
       "Verifying your payment": [
         "S'està verificant el pagament"
       ],
-      "Welcome to ${ plan }": [
-        "Us donem la benvinguda a ${ plan }"
-      ],
       "Works on all devices": [
         "Funciona en tots els dispositius"
       ],
@@ -10797,11 +10792,6 @@
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "La vostra organització té accés a ${ free }. Si voleu accedir a les característiques prèmium de ${ appName }, demaneu a l'administrador de la vostra organització que ho millori."
-      ]
-    },
-    "pass_signup_2023: Onboarding": {
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Us donem la benvinguda a ${ PASS_APP_NAME }"
       ]
     },
     "pass_signup_2023: Title": {
@@ -11633,11 +11623,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Aquesta subscripció es renovarà automàticament cada 2 anys al mateix preu fins que es cancel·li."
-      ]
-    },
-    "specialoffer: Info": {
-      "No available offers found.": [
-        "No s'han trobat ofertes disponibles."
       ]
     },
     "specialoffer: Label": {
@@ -12556,9 +12541,6 @@
       ],
       "Auto-reply": [
         "Resposta automàtica"
-      ],
-      "Auto-reply and forward": [
-        "Resposta automàtica i reenviament"
       ],
       "Automatically sign outgoing messages?": [
         "Signar automàticament els missatges de sortida?"
@@ -13776,11 +13758,6 @@
       ],
       "Your ${ selected } plan": [
         "El vostre pla ${ selected }"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Accés a servidors Secure Core, descàrregues ràpides P2P/BitTorrent, Tor sobre VPN, Double Hop i moltes més funcions."
       ]
     },
     "Warning": {

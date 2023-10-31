@@ -29,9 +29,6 @@
       "Back": [
         "Recuar"
       ],
-      "Can't find your password manager? Please let us know!": [
-        "Não consegue encontrar o seu gestor de palavras-passe? Informe-nos"
-      ],
       "Cancel": [
         "Cancelar"
       ],
@@ -152,9 +149,6 @@
       "Generate password": [
         "Gerar uma palavra-passe"
       ],
-      "Generated password": [
-        "Palavra-passe gerada"
-      ],
       "Get mobile apps": [
         "Descarregue as aplicações móveis"
       ],
@@ -217,9 +211,6 @@
       ],
       "Pass for iOS": [
         "Pass para iOS"
-      ],
-      "Proceed": [
-        "Prosseguir"
       ],
       "Refresh the page": [
         "Actualizar a página"
@@ -287,8 +278,8 @@
       "Upgrade": [
         "Actualizar"
       ],
-      "Upgrade to keep these features": [
-        "Atualize para manter estas funcionalidades"
+      "Upgrade now": [
+        "Actualizar agora"
       ],
       "Write us on Reddit": [
         "Escreva-nos no Reddit"
@@ -538,9 +529,6 @@
         "${ count } item",
         "${ count } itens"
       ],
-      "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
-        "${ PASS_APP_NAME } apenas irá importar inícios de sessão e notas. Passaportes, ficheiros anexados, etc. não são suportados de momento."
-      ],
       "${ revisionNumber } time": [
         "${ revisionNumber } vez.",
         "${ revisionNumber } vezes."
@@ -559,9 +547,6 @@
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Uma nova versão do ${ PASS_APP_NAME } está disponível. Actualize para desfrutar das funcionalidades e correções de erros mais recentes."
-      ],
-      "Access ${ PASS_APP_NAME } via this icon": [
-        "Aceda a ${ PASS_APP_NAME } através deste ícone"
       ],
       "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
         "O acesso a ${ PASS_APP_NAME } exigirá um código PIN para desbloquear a sua sessão"
@@ -586,9 +571,6 @@
       ],
       "Autosaved on ${ submissionURL }": [
         "Guardado automaticamente em ${ submissionURL }"
-      ],
-      "Check out all the exclusive features that are available to you for a limited time.": [
-        "Descubra todas as funcionalidades exclusivas que estão à sua disposição por um período limitado."
       ],
       "Copied to clipboard": [
         "Copiado para a área de transferência"
@@ -629,12 +611,6 @@
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "A exportação é encriptada com PGP e requer uma frase-chave forte."
       ],
-      "Follow these simple steps to get the best experience:": [
-        "Siga estes passos simples para obter a melhor experiência:"
-      ],
-      "Free Trial": [
-        "Teste grátis"
-      ],
       "Generated passwords will be stored for a period of one day.": [
         "As palavras-passe geradas são armazenadas por um dia."
       ],
@@ -662,9 +638,6 @@
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Se estiver ativado, pode preencher automaticamente as suas credenciais clicando no ícone ${ PASS_APP_NAME }."
       ],
-      "Import in progress :": [
-        "Importação em curso:"
-      ],
       "Imported ${ payload.total } item": [
         "${ payload.total } item importado",
         "${ payload.total } itens importados"
@@ -674,9 +647,6 @@
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Para obter a melhor experiência com ${ PASS_APP_NAME }, por favor conceda as permissões necessárias para a extensão."
-      ],
-      "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
-        "Para migrar os seus dados para ${ PASS_APP_NAME } a partir de outro gestor de palavras-passe, exporte as suas palavras-passe e importe-as utilizando o formulário abaixo. Quando todos os itens tiverem sido importados, elimine o ficheiro exportado anteriormente."
       ],
       "Internet connection lost": [
         "Ligação à Internet perdida"
@@ -772,9 +742,6 @@
       "Save login": [
         "Guardar login"
       ],
-      "Select the destination vault for each imported vault.": [
-        "Seleccione o cofre de destino para cada cofre importado."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Os servidores estão inacessíveis.Tente novamente dentro de alguns minutos."
       ],
@@ -850,10 +817,6 @@
       ],
       "You are about to create:": [
         "Está prestes a criar:"
-      ],
-      "You have ${ daysRemaining } day left in your trial period.": [
-        "Resta-lhe ${ daysRemaining } dia no seu período experimental.",
-        "Restam-lhe ${ daysRemaining } dias no seu período experimental."
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Atingiu o limite de aliases que pode criar. Crie um número ilimitado de aliases quando actualizar a sua subscrição."
@@ -967,9 +930,6 @@
       "Card number": [
         "Número do cartão"
       ],
-      "Cardholder name": [
-        "Nome do titular do cartão"
-      ],
       "Cards": [
         "Cartões"
       ],
@@ -993,9 +953,6 @@
       ],
       "Created": [
         "Criada"
-      ],
-      "Credit Card": [
-        "Cartão de crédito"
       ],
       "Display": [
         "Visualização"
@@ -1021,8 +978,8 @@
       "Encrypt your ${ PASS_APP_NAME } data export file": [
         "Encripte o ficheiro de exportação de dados do ${ PASS_APP_NAME }."
       ],
-      "Expires on": [
-        "Expira em"
+      "Expiration date": [
+        "Data de validade"
       ],
       "Export": [
         "Exportar"
@@ -1059,9 +1016,6 @@
       ],
       "Include numbers (0-9)": [
         "Incluir números (0-9)"
-      ],
-      "Label": [
-        "Etiqueta"
       ],
       "Language": [
         "Idioma"
@@ -1101,6 +1055,9 @@
       ],
       "Name": [
         "Nome"
+      ],
+      "Name on card": [
+        "Nome no cartão"
       ],
       "Need help ?": [
         "Precisa de ajuda?"
@@ -1176,6 +1133,9 @@
       ],
       "Security": [
         "Segurança"
+      ],
+      "Security code": [
+        "Código de segurança"
       ],
       "Select an email address": [
         "Selecione um endereço de e-mail"
@@ -1258,9 +1218,6 @@
       "Vault": [
         "Cofre"
       ],
-      "Verification number": [
-        "Número de verificação"
-      ],
       "View logs": [
         "Ver os registos"
       ],
@@ -1337,6 +1294,9 @@
       "Move items to another vault (optional)": [
         "Mover os itens para outro cofre (opcional)"
       ],
+      "Other": [
+        "Outro"
+      ],
       "Pick a vault": [
         "Escolher um cofre"
       ],
@@ -1387,20 +1347,14 @@
       "Confirm PIN code": [
         "Confirma o seu PIN"
       ],
-      "Connect your ${ BRAND_NAME } account": [
-        "Conecte a sua conta da ${ BRAND_NAME }."
-      ],
       "Create PIN code": [
         "Criar o PIN"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "Eliminar o cofre \"${ vaultName }\"?"
       ],
-      "Discard changes ?": [
-        "Descartar as alterações?"
-      ],
-      "Enjoy your free trial": [
-        "Aproveite o seu período de teste gratuito"
+      "Discard changes?": [
+        "Descartar alterações?"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Está a gostar do ${ PASS_APP_NAME }?"
@@ -1468,9 +1422,6 @@
       "Welcome to ${ PASS_APP_NAME }": [
         "Boas-vindas ao ${ PASS_APP_NAME }"
       ],
-      "Welcome!": [
-        "Boas-vindas!"
-      ],
       "Why ${ PASS_APP_NAME }?": [
         "Por que escolher o ${ PASS_APP_NAME }?"
       ],
@@ -1481,15 +1432,6 @@
     "Validation": {
       "Duplicated url": [
         "URL duplicado"
-      ],
-      "Label is required": [
-        "A etiqueta é necessária."
-      ],
-      "OTP Secret or URI is invalid": [
-        "A chave secreta OTP ou o URL não funciona."
-      ],
-      "OTP Secret or URI required": [
-        "É necessário introduzir uma chave secreta OTP ou um URL."
       ],
       "Url already exists": [
         "O URL já existe."
@@ -1507,9 +1449,6 @@
       ],
       "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
         "O alias \"${ name }\" é actualmente utilizado no item de início de sessão \"${ relatedLoginName }\". Também deixará de receber e-mails enviados para \"${ aliasEmail }."
-      ],
-      "All your trashed items will be permanently deleted. You can not undo this action.": [
-        "Todos os seus itens do lixo serão permanentemente eliminados. Não é possível anular esta acção."
       ],
       "An error occured while exporting your data": [
         "Ocorreu um erro ao exportar os seus dados"
@@ -1583,9 +1522,6 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Não é possível iniciar sessão no ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You can not undo this action": [
-        "O cofre \"${ vaultName }\" e todos os seus itens serão eliminados permanentemente. Não é possível anular esta ação."
-      ],
       "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
         "O cofre \"${ vaultName }\" será eliminado permanentemente, e todos os seus itens serão movidos para \"${ destinationVaultName }\"."
       ],
@@ -1594,9 +1530,6 @@
       ],
       "You cannot create more vaults than your subscription allows.": [
         "A sua subscrição não permite a criação de vários cofres."
-      ],
-      "You have unsaved changes, are you sure you want to discard them?": [
-        "Tem alterações não guardadas. Tem certeza de que deseja descartá-las?"
       ],
       "You must select at least one mailbox": [
         "É necessário selecionar pelo menos uma caixa de correio"

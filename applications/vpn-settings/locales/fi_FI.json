@@ -440,9 +440,6 @@
       "Sign out": [
         "Kirjaudu ulos"
       ],
-      "Sign up for free": [
-        "Rekisteröidy ilmaiseksi"
-      ],
       "Signing in": [
         "Kirjaudutaan"
       ],
@@ -2396,6 +2393,9 @@
       ],
       "MB": [
         "Mt"
+      ],
+      "TB": [
+        "Tt"
       ]
     },
     "file size format, long": {
@@ -2414,6 +2414,10 @@
       "Megabyte": [
         "Megatavu",
         "Megatavua"
+      ],
+      "Terabyte": [
+        "Teratavu",
+        "Teratavua"
       ]
     },
     "Font face option": {
@@ -2662,10 +2666,6 @@
       "Additional options": [
         "Lisävalinnat"
       ],
-      "address": [
-        "osoite",
-        "osoitetta"
-      ],
       "Admin account allocation": [
         "Ylläpitotilin varaus"
       ],
@@ -2754,7 +2754,7 @@
         "Paina \"Pyydä uusi koodi\" saadaksesi uuden vahvistuskoodin numeroon ${ strong }. Jos numero on väärin, korjaa se painamalla \"Muokkaa\"."
       ],
       "Continue with ${ freeName }": [
-        "Jatka ${ freeName }-tilauksella"
+        "Jatka ${ freeName } -tilauksella"
       ],
       "Copy the suggested password to clipboard": [
         "Kopioi ehdotettu salasana leikepöydälle"
@@ -3027,9 +3027,6 @@
       ],
       "MM/YY": [
         "KK/VV"
-      ],
-      "more": [
-        "lisää"
       ],
       "Multi-user support not enabled.": [
         "Usean käyttäjän tuki ei ole käytössä."
@@ -4405,6 +4402,9 @@
       ],
       "Create a new ${ appName } account": [
         "Luo uusi ${ appName } -tili"
+      ],
+      "Find your ${ BRAND_NAME } Account username": [
+        "Löydä ${ BRAND_NAME }-tilisi käyttäjätunnus"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Unohditko ${ BRAND_NAME }-tilisi salasanan? Nollaa se täältä palautuskoodilla, sähköpostitse tai tekstiviestitse ja jatka ${ MAIL_APP_NAME }in, ${ DRIVE_SHORT_APP_NAME }n, ${ CALENDAR_SHORT_APP_NAME }in ja muiden palveluiden käyttämistä."
@@ -7257,11 +7257,6 @@
       ],
       "Your ${ selected } plan": [
         "${ selected } -tilauksesi"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Mm. Secure Core -palvelimien käyttöoikeus, nopeat P2P/BitTorrent-lataukset, Tor + VPN ja Double hop."
       ]
     },
     "Warning": {

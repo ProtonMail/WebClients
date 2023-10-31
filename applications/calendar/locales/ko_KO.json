@@ -2085,9 +2085,6 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "다른 많은 것들 중에서 프리미엄 기능인 모든 사람에게 이메일이나 초대장을 한 번에 보내 시간을 절약하세요. 오늘 업그레이드하세요."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
-        "파일 크기가 최대 ${ MAX_IMPORT_FILE_SIZE_STRING } 이어야 합니다. 최대 ${ MAX_IMPORT_CONTACTS_STRING } 연락처를 가지고 있습니다. 만약 파일이 너무 크다면, 작은 파일들로 분할해 주세요."
-      ],
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "약간의 시간이 걸릴 수 있습니다. 진행되고 있는 동안에도 지금처럼 캘린더를 사용할 수 있습니다."
       ],
@@ -2311,6 +2308,9 @@
       ],
       "Event not found": [
         "이벤트를 찾을 수 없음"
+      ],
+      "Failed to get event": [
+        "이벤트 게시 실패"
       ],
       "Failed to get original occurrence in series": [
         "시리즈에서 원래 발생을 얻지 못했습니다."
@@ -3077,6 +3077,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -3091,6 +3094,9 @@
       ],
       "Megabytes": [
         "메가바이트"
+      ],
+      "Terabytes": [
+        "테라바이트"
       ]
     },
     "Filter notification": {

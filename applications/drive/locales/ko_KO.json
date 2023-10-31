@@ -1858,9 +1858,6 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "다른 많은 것들 중에서 프리미엄 기능인 모든 사람에게 이메일이나 초대장을 한 번에 보내 시간을 절약하세요. 오늘 업그레이드하세요."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files.": [
-        "파일 크기가 최대 ${ MAX_IMPORT_FILE_SIZE_STRING } 이어야 합니다. 최대 ${ MAX_IMPORT_CONTACTS_STRING } 연락처를 가지고 있습니다. 만약 파일이 너무 크다면, 작은 파일들로 분할해 주세요."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "드래그 앤 드롭을 사용하여 연락처 간의 병합 우선 순위를 매기세요. 병합하고 싶지 않은 연락처는 선택 취소하세요."
       ],
@@ -2695,6 +2692,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -2709,6 +2709,9 @@
       ],
       "Megabytes": [
         "메가바이트"
+      ],
+      "Terabytes": [
+        "테라바이트"
       ]
     },
     "Filter notification": {
@@ -3123,9 +3126,6 @@
       ],
       "${ selectedContactsLength }/${ contactsLength } contacts selected": [
         "${ selectedContactsLength }/${ contactsLength } 연락처 선택됨"
-      ],
-      "${ selectedCount } selected": [
-        "${ selectedCount } 선택됨"
       ],
       "${ selectedFoldersCount } folders selected": [
         "${ selectedFoldersCount }개 폴더 선택함"
@@ -5702,8 +5702,8 @@
       ]
     },
     "Storage": {
-      "Get storage": [
-        "저장소 얻기"
+      "Get more storage": [
+        "더 많은 스토리지 얻기"
       ],
       "Release notes": [
         "릴리즈 노트"

@@ -440,9 +440,6 @@
       "Sign out": [
         "გასვლა"
       ],
-      "Sign up for free": [
-        "უფასო რეგისტრაცია"
-      ],
       "Signing in": [
         "შესვლა"
       ],
@@ -2396,6 +2393,9 @@
       ],
       "MB": [
         "მბ"
+      ],
+      "TB": [
+        "ტბ"
       ]
     },
     "file size format, long": {
@@ -2414,6 +2414,10 @@
       "Megabyte": [
         "მეგაბაიტი",
         "მეგაბაიტი"
+      ],
+      "Terabyte": [
+        "ტერაბაიტი",
+        "ტერაბაიტი"
       ]
     },
     "Font face option": {
@@ -2661,10 +2665,6 @@
       ],
       "Additional options": [
         "დამატებითი პარამეტრები"
-      ],
-      "address": [
-        "მისამართი",
-        "მისამართები"
       ],
       "Admin account allocation": [
         "ადმინისტრატორის ანგარიშის გამოყოფა"
@@ -3027,9 +3027,6 @@
       ],
       "MM/YY": [
         "თთ/წწ"
-      ],
-      "more": [
-        "მეტი"
       ],
       "Multi-user support not enabled.": [
         "მრავალმომხმარებლიანობის მხარდაჭერა ჩართული არაა."
@@ -7260,11 +7257,6 @@
       ],
       "Your ${ selected } plan": [
         "თქვენი ტარიფი ${ selected }"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "წვდომა Secure core-ის სერვერებზე, სწრაფ P2P/BitTorrent-ით გადმოწერებზე და Tor-VPN-ის-ზემოდან, ორმაგი ჰოპი და სხვ."
       ]
     },
     "Warning": {

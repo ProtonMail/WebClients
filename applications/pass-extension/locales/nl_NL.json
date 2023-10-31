@@ -29,9 +29,6 @@
       "Back": [
         "Terug"
       ],
-      "Can't find your password manager? Please let us know!": [
-        "Ziet u uw wachtwoordbeheerder niet? Laat het ons weten!"
-      ],
       "Cancel": [
         "Annuleren"
       ],
@@ -158,9 +155,6 @@
       "Generate password": [
         "Wachtwoord genereren"
       ],
-      "Generated password": [
-        "Gegenereerd wachtwoord"
-      ],
       "Get mobile apps": [
         "Download mobiele apps"
       ],
@@ -250,9 +244,6 @@
       ],
       "Pass for iOS": [
         "Proton Pass voor iOS"
-      ],
-      "Proceed": [
-        "Doorgaan"
       ],
       "Refresh the page": [
         "Pagina vernieuwen"
@@ -350,17 +341,27 @@
       "Upgrade": [
         "Upgraden"
       ],
+      "Upgrade now": [
+        "Nu upgraden"
+      ],
       "Upgrade now to share with more people": [
         "Upgrade nu om met meer mensen te delen"
-      ],
-      "Upgrade to keep these features": [
-        "Upgraden om deze functies te behouden"
       ],
       "Write us on Reddit": [
         "Schrijf ons op Reddit"
       ],
       "Write us on Twitter": [
         "Schrijf ons op Twitter"
+      ]
+    },
+    "bf2023: Label": {
+      "Get the deal": [
+        "Kies deze deal"
+      ]
+    },
+    "bf2023: Title": {
+      "Black Friday offer": [
+        "Black Friday-aanbieding"
       ]
     },
     "Button": {
@@ -651,9 +652,6 @@
         "${ memberCount } lid",
         "${ memberCount } leden"
       ],
-      "${ PASS_APP_NAME } will only import logins and notes. Passports, attached files, etc. are not supported at the moment.": [
-        "${ PASS_APP_NAME } zal enkel logins en notities importeren. Paspoorten, bijlagen, enz. worden niet ondersteund op dit moment."
-      ],
       "${ revisionNumber } time": [
         "${ revisionNumber } keer",
         "${ revisionNumber } keer"
@@ -672,9 +670,6 @@
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Een nieuwe versie van ${ PASS_APP_NAME } is beschikbaar. Update het om te genieten van de laatste functies en bugfixes."
-      ],
-      "Access ${ PASS_APP_NAME } via this icon": [
-        "Toegang tot ${ PASS_APP_NAME } via dit pictogram"
       ],
       "Access successfully confirmed": [
         "Toegang succesvol bevestigd"
@@ -717,9 +712,6 @@
       ],
       "Can view items in this vault.": [
         "Kan items bekijken in deze kluis."
-      ],
-      "Check out all the exclusive features that are available to you for a limited time.": [
-        "Bekijk alle exclusieve functies die voor een beperkte tijd voor u beschikbaar zijn."
       ],
       "Congratulations, your access has been confirmed": [
         "Gefeliciteerd, uw toegang werd bevestigd"
@@ -769,17 +761,11 @@
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "Exporteren is versleuteld met PGP en vereist een sterk wachtwoord."
       ],
-      "Follow these simple steps to get the best experience:": [
-        "Volg deze eenvoudige stappen om de beste ervaring te krijgen:"
-      ],
       "For security reason, your access needs to be confirmed": [
         "Voor veiligheidsredenen dient uw toegang bevestigd te worden"
       ],
       "For security reasons, your access needs to be confirmed": [
         "Voor veiligheidsredenen dient uw toegang bevestigd te worden"
-      ],
-      "Free Trial": [
-        "Gratis proefversie"
       ],
       "Generated passwords will be stored for a period of one day.": [
         "Gegenereerde wachtwoorden zullen voor een dag bewaard worden."
@@ -811,9 +797,6 @@
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Indien ingeschakeld, kunt u uw inloggegevens snel automatisch invullen door op het pictogram ${ PASS_APP_NAME } te klikken."
       ],
-      "Import in progress :": [
-        "Bezig met importeren:"
-      ],
       "Imported ${ payload.total } item": [
         "${ payload.total } item geïmporteerd",
         "${ payload.total } items geïmporteerd"
@@ -823,9 +806,6 @@
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "Geef de benodigde extensierechten om de beste ervaring uit ${ PASS_APP_NAME } te halen"
-      ],
-      "In order to migrate your data to ${ PASS_APP_NAME } from another password manager, export your passwords and import them using the form below. Once all your items have been imported, delete the previously exported file.": [
-        "Om uw data van een andere wachtwoordbeheerder naar ${ PASS_APP_NAME } te migreren, exporteer uw wachtwoorden en gebruik onderstaand formulier om ze te importeren. Eens geïmporteerd, verwijder dan het eerder geëxporteerd bestand."
       ],
       "Internet connection lost": [
         "Internetverbinding verbroken"
@@ -948,9 +928,6 @@
       "Save login": [
         "Bewaar login"
       ],
-      "Select the destination vault for each imported vault.": [
-        "Selecteer de bestemmingskluis voor elke geïmporteerde kluis."
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "De servers zijn onbereikbaar, probeer het over enkele minuten opnieuw"
       ],
@@ -1056,10 +1033,6 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "U kan het postvak IN voor deze alias niet veranderen."
-      ],
-      "You have ${ daysRemaining } day left in your trial period.": [
-        "U heeft nog ${ daysRemaining } dag over van uw proefperiode.",
-        "U heeft nog ${ daysRemaining } dagen over van uw proefperiode."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "U heeft het aantal kluizen in uw abonnement overschreden. Items kunnen alleen naar uw twee eerste kluis worden verplaatst. Upgrade uw abonnement om items tussen alle kluizen te verplaatsen."
@@ -1185,9 +1158,6 @@
       "Card number": [
         "Kaartnummer"
       ],
-      "Cardholder name": [
-        "Naam kaarthouder"
-      ],
       "Cards": [
         "Kaarten"
       ],
@@ -1211,9 +1181,6 @@
       ],
       "Created": [
         "Aangemaakt"
-      ],
-      "Credit Card": [
-        "Kredietkaart"
       ],
       "Display": [
         "Weergeven"
@@ -1239,8 +1206,8 @@
       "Encrypt your ${ PASS_APP_NAME } data export file": [
         "Versleutel uw ${ PASS_APP_NAME }-data exportbestand"
       ],
-      "Expires on": [
-        "Vervalt op"
+      "Expiration date": [
+        "Vervaldatum"
       ],
       "Export": [
         "Exporteren"
@@ -1280,9 +1247,6 @@
       ],
       "Invitations": [
         "Uitnodigingen"
-      ],
-      "Label": [
-        "Label"
       ],
       "Language": [
         "Taal"
@@ -1325,6 +1289,9 @@
       ],
       "Name": [
         "Naam"
+      ],
+      "Name on card": [
+        "Naam op de kaart"
       ],
       "Need help ?": [
         "Heeft u hulp nodig?"
@@ -1400,6 +1367,9 @@
       ],
       "Security": [
         "Beveiliging"
+      ],
+      "Security code": [
+        "Beveiligingscode"
       ],
       "Select an email address": [
         "Selecteer een e-mailadres"
@@ -1485,9 +1455,6 @@
       "Vault": [
         "Kluis"
       ],
-      "Verification number": [
-        "Verificatienummer"
-      ],
       "View details": [
         "Details weergeven"
       ],
@@ -1567,6 +1534,9 @@
       "Move items to another vault (optional)": [
         "Verplaats items naar een andere kluis (optioneel)"
       ],
+      "Other": [
+        "Anders"
+      ],
       "Pick a vault": [
         "Kies een kluis"
       ],
@@ -1626,20 +1596,14 @@
       "Confirm PIN code": [
         "Pincode bevestigen"
       ],
-      "Connect your ${ BRAND_NAME } account": [
-        "Koppel uw ${ BRAND_NAME }-account"
-      ],
       "Create PIN code": [
         "Pincode aanmaken"
       ],
       "Delete vault \"${ vaultName }\" ?": [
         "Kluis \"${ vaultName }\" verwijderen?"
       ],
-      "Discard changes ?": [
-        "Wijzigingen weggooien?"
-      ],
-      "Enjoy your free trial": [
-        "Geniet van uw gratis proefperiode."
+      "Discard changes?": [
+        "Wijzigingen annuleren?"
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Tevreden met ${ PASS_APP_NAME }?"
@@ -1728,9 +1692,6 @@
       "Welcome to ${ PASS_APP_NAME }": [
         "Welkom bij ${ PASS_APP_NAME }"
       ],
-      "Welcome!": [
-        "Welkom!"
-      ],
       "Why ${ PASS_APP_NAME }?": [
         "Waarom ${ PASS_APP_NAME }?"
       ],
@@ -1741,15 +1702,6 @@
     "Validation": {
       "Duplicated url": [
         "Dubbele url"
-      ],
-      "Label is required": [
-        "Label is vereist"
-      ],
-      "OTP Secret or URI is invalid": [
-        "OTP-geheim of URI is ongeldig"
-      ],
-      "OTP Secret or URI required": [
-        "OTP-geheim of URI vereist"
       ],
       "Url already exists": [
         "Url bestaat al"
@@ -1767,9 +1719,6 @@
       ],
       "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
         "Alias \"${ name }\" wordt momenteel gebruikt in login-item \"${ relatedLoginName }\". U ontvangt ook geen e-mails meer die zijn verzonden naar \"${ aliasEmail }\""
-      ],
-      "All your trashed items will be permanently deleted. You can not undo this action.": [
-        "Al uw weggegooide items worden permanent verwijderd. U kunt deze actie niet ongedaan maken."
       ],
       "An error occured while exporting your data": [
         "Er is een fout opgetreden bij het exporteren van uw gegevens"
@@ -1855,9 +1804,6 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Kan niet inloggen bij ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You can not undo this action": [
-        "Vault \"${ vaultName }\" en alle bijbehorende items worden permanent verwijderd. U kunt deze actie niet ongedaan maken"
-      ],
       "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
         "Kluis \"${ vaultName }\" wordt permanent verwijderd en alle items worden verplaatst naar \"${ destinationVaultName }\""
       ],
@@ -1875,9 +1821,6 @@
       ],
       "You have reached the limit of vaults you can have in your plan.": [
         "U heeft de limiet van het aantal kluizen in uw plan bereikt."
-      ],
-      "You have unsaved changes, are you sure you want to discard them?": [
-        "U heeft niet-opgeslagen wijzigingen. Weet u zeker dat u deze wilt verwijderen?"
       ],
       "You must select at least one mailbox": [
         "U moet ten minste één mailbox selecteren"
