@@ -899,9 +899,6 @@
       "Sign out of all accounts": [
         "Deconectare din toate conturile"
       ],
-      "Sign up for free": [
-        "Înscriere gratuită"
-      ],
       "Signing in": [
         "Conectare"
       ],
@@ -2894,11 +2891,6 @@
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Modernizați-vă contul pentru a vă separa diferitele aspecte ale vieții personale cu mai multe adrese de e-mail și a debloca mai multe funcții premium."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă un contact. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
-        "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
-        "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_CONTACTS_STRING } de contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
-      ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Pentru a elimina subsolul mesajelor din ${ MAIL_APP_NAME }, modernizați contul și deblocați și mai multe funcții premium."
       ],
@@ -4501,6 +4493,9 @@
       ],
       "MB": [
         "MiB"
+      ],
+      "TB": [
+        "TiB"
       ]
     },
     "file size format, long": {
@@ -4523,6 +4518,11 @@
         "Megabait",
         "Megabaiți",
         "Megabaiți"
+      ],
+      "Terabyte": [
+        "Terabait",
+        "Terabaiți",
+        "Terabaiți"
       ]
     },
     "Filter Actions": {
@@ -5551,11 +5551,6 @@
       "Additional options": [
         "Opțiuni adiționale"
       ],
-      "address": [
-        "adresă",
-        "adrese",
-        "de adrese"
-      ],
       "Admin account allocation": [
         "Alocare cont admin"
       ],
@@ -6320,9 +6315,6 @@
       ],
       "Monthly ${ onDayString }": [
         "Lunar, ${ onDayString }"
-      ],
-      "more": [
-        "mai mult"
       ],
       "Multi-user support not enabled.": [
         "Suportul pentru utilizatori multipli nu e activat."
@@ -10098,14 +10090,6 @@
         "Planul selectat: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Probare ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilizare cont"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
@@ -10127,6 +10111,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Deblocați funcțiile premium modificând contul"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Probare ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilizare cont"
       ]
     },
     "new_plans: tooltip": {
@@ -10847,9 +10839,6 @@
       "Download to continue ${ size }": [
         "Descărcare pentru a continua ${ size }"
       ],
-      "Keep this plan and use ${ appName }": [
-        "Păstrez acest plan și utilizez ${ appName }"
-      ],
       "Or ${ createANewAccount }": [
         "Sau ${ createANewAccount }"
       ],
@@ -10859,14 +10848,8 @@
       "Start using ${ appName } now": [
         "Începeți să utilizați ${ appName } acum"
       ],
-      "Upgrade for only ${ relativePrice } extra per month": [
-        "Modernizați contul cu doar ${ relativePrice } în plus pe lună"
-      ],
       "Upgrade my plan": [
         "Modificare plan"
-      ],
-      "Use ${ free } instead": [
-        "Folosesc ${ free }"
       ]
     },
     "pass_signup_2023: Feature": {
@@ -10976,9 +10959,6 @@
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "Dacă sunteți blocat din contul ${ BRAND_NAME }, **pachetul de recuperare** vă va permite să vă conectați și să recuperați datele."
       ],
-      "Includes basic ${ appName } features:": [
-        "Include funcții de bază ${ appName }:"
-      ],
       "Install ${ PASS_APP_NAME }": [
         "Instalați ${ PASS_APP_NAME }"
       ],
@@ -11048,9 +11028,6 @@
       "Verifying your payment": [
         "Verificare plată"
       ],
-      "Welcome to ${ plan }": [
-        "Bun venit la ${ plan }"
-      ],
       "Works on all devices": [
         "Funcționează pe orice dispozitiv"
       ],
@@ -11065,11 +11042,6 @@
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Organizația are acces la ${ free }. Dacă doriți să accesați funcțiile premium ale ${ appName }, vă rugăm să solicitați administratorului organizației să modifice contul."
-      ]
-    },
-    "pass_signup_2023: Onboarding": {
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Bun venit la ${ PASS_APP_NAME }"
       ]
     },
     "pass_signup_2023: Title": {
@@ -11984,11 +11956,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Abonamentul se va reînnoi în mod automat peste 2 ani, la același preț, până când este anulat."
-      ]
-    },
-    "specialoffer: Info": {
-      "No available offers found.": [
-        "Nu s-au găsit oferte disponibile."
       ]
     },
     "specialoffer: Label": {
@@ -12934,9 +12901,6 @@
       ],
       "Auto-reply": [
         "Autorăspuns"
-      ],
-      "Auto-reply and forward": [
-        "Autorăspuns și redirecționare"
       ],
       "Automatically sign outgoing messages?": [
         "Semnare automată mesaje trimise?"
@@ -14237,11 +14201,6 @@
       ],
       "Your ${ selected } plan": [
         "Planul dvs. ${ selected }"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Accesa la servere Secure Core, descărcări rapide P2P/BitTorrent, Tor prin VPN și altele."
       ]
     },
     "Warning": {

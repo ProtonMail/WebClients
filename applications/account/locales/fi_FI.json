@@ -899,9 +899,6 @@
       "Sign out of all accounts": [
         "Kirjaa kaikki tilit ulos"
       ],
-      "Sign up for free": [
-        "Rekisteröidy ilmaiseksi"
-      ],
       "Signing in": [
         "Kirjaudutaan"
       ],
@@ -2883,10 +2880,6 @@
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Erota elämäsi eri alueet useilla sähköpostiosoitteilla päivittämällä tilauksesi ja avaa samalla myös muita premium-ominaisuuksia."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Tiedosto voi olla enintään ${ MAX_IMPORT_FILE_SIZE_STRING } kokoinen ja sisältää ${ MAX_IMPORT_CONTACTS_STRING } yhteystiedon. Jos tiedosto on suurempi, jaa se pienempiin tiedostoihin.",
-        "Tiedosto voi olla enintään ${ MAX_IMPORT_FILE_SIZE_STRING } kokoinen ja sisältää enintään ${ MAX_IMPORT_CONTACTS_STRING } yhteystietoa. Jos tiedosto on suurempi, jaa se pienempiin tiedostoihin."
-      ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Poista ${ MAIL_APP_NAME } -alatunniste päivittämällä tilauksesi ja avaa samalla myös muita premium-ominaisuuksia."
       ],
@@ -3022,6 +3015,9 @@
       ],
       "Encrypted cloud storage for all your files": [
         "Salattu pilvitallennus kaikille tiedostoillesi"
+      ],
+      "Secure cloud storage and file sharing that protects your data": [
+        "Turvallinen pilvitallennus ja tietojasi suojaava tiedostojen jakaminen"
       ]
     },
     "Duration": {
@@ -4738,6 +4734,9 @@
       ],
       "MB": [
         "Mt"
+      ],
+      "TB": [
+        "Tt"
       ]
     },
     "file size format, long": {
@@ -4756,6 +4755,10 @@
       "Megabyte": [
         "Megatavu",
         "Megatavua"
+      ],
+      "Terabyte": [
+        "Teratavu",
+        "Teratavua"
       ]
     },
     "Filter Actions": {
@@ -5552,6 +5555,9 @@
       "${ firstRemainingCalendarName } will be set as default calendar.": [
         "${ firstRemainingCalendarName } asetetaan oletuskalenteriksi."
       ],
+      "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
+        "${ inviterEmailJSX } haluaa jakaa dataa kanssasi sovelluksessa ${ PASS_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME }ia voidaan käyttää myös yhdellä salasanalla, joka korvaa sekä kirjautumisen, että postilaatikon salasanan. Vaihda yhden salasanan tilaan syöttämällä haluamasi yksittäinen salasana ja painamalla Tallenna."
       ],
@@ -5752,10 +5758,6 @@
       ],
       "Additional options": [
         "Lisävalinnat"
-      ],
-      "address": [
-        "osoite",
-        "osoitetta"
       ],
       "Admin account allocation": [
         "Ylläpitotilin varaus"
@@ -5965,7 +5967,7 @@
         "Poistu sulkemalla tämä ruutu."
       ],
       "Continue with ${ freeName }": [
-        "Jatka ${ freeName }-tilauksella"
+        "Jatka ${ freeName } -tilauksella"
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Jatkamalla ${ BRAND_NAME }-tilisi yhdistetään palveluun ${ name }."
@@ -6512,9 +6514,6 @@
       ],
       "Monthly ${ onDayString }": [
         "Kuukausittain ${ onDayString }"
-      ],
-      "more": [
-        "lisää"
       ],
       "Multi-user support not enabled.": [
         "Usean käyttäjän tuki ei ole käytössä."
@@ -9406,6 +9405,9 @@
       "Create a new ${ appName } account": [
         "Luo uusi ${ appName } -tili"
       ],
+      "Find your ${ BRAND_NAME } Account username": [
+        "Löydä ${ BRAND_NAME }-tilisi käyttäjätunnus"
+      ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Unohditko ${ BRAND_NAME }-tilisi salasanan? Nollaa se täältä palautuskoodilla, sähköpostitse tai tekstiviestitse ja jatka ${ MAIL_APP_NAME }in, ${ DRIVE_SHORT_APP_NAME }n, ${ CALENDAR_SHORT_APP_NAME }in ja muiden palveluiden käyttämistä."
       ],
@@ -10239,14 +10241,6 @@
         "Valitsemasi tilaus: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }-kokeilu"
-      ],
-      "Your account's usage": [
-        "Tilisi käyttö"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Poistetaanko tili?"
@@ -10268,6 +10262,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Avaa premium-ominaisuudet päivittämällä"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-kokeilu"
+      ],
+      "Your account's usage": [
+        "Tilisi käyttö"
       ]
     },
     "new_plans: tooltip": {
@@ -10978,9 +10980,6 @@
       "Download to continue ${ size }": [
         "Lataa jatkaaksesi ${ size }"
       ],
-      "Keep this plan and use ${ appName }": [
-        "Pidä tämä tilaus ja käytä ${ appName }"
-      ],
       "Or ${ createANewAccount }": [
         "Tai ${ createANewAccount }"
       ],
@@ -10990,14 +10989,8 @@
       "Start using ${ appName } now": [
         "Aloita ${ appName } -sovelluksen käyttö nyt"
       ],
-      "Upgrade for only ${ relativePrice } extra per month": [
-        "Päivitä vain ${ relativePrice } kuukausikorotuksella."
-      ],
       "Upgrade my plan": [
         "Päivitä tilaukseni"
-      ],
-      "Use ${ free } instead": [
-        "Käytä sen sijaan ${ free }"
       ]
     },
     "pass_signup_2023: Feature": {
@@ -11107,9 +11100,6 @@
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "Jos sinut lukitaan ulos ${ BRAND_NAME }-tililtäsi, voit kirjautua sisään ja palauttaa tietosi **palautuspaketin** avulla."
       ],
-      "Includes basic ${ appName } features:": [
-        "Sisältää ${ appName } -perusominaisuudet:"
-      ],
       "Install ${ PASS_APP_NAME }": [
         "Asenna ${ PASS_APP_NAME }"
       ],
@@ -11179,9 +11169,6 @@
       "Verifying your payment": [
         "Maksuasi vahvistetaan"
       ],
-      "Welcome to ${ plan }": [
-        "Tervetuloa ${ plan } -tilaukseen"
-      ],
       "Works on all devices": [
         "Toimii kaikilla laitteilla"
       ],
@@ -11196,11 +11183,6 @@
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Organisaatiollasi on ${ free }-palvelu. Jos haluat käyttää ${ appName } -premium-ominaisuuksia, pyydä organisaatiosi ylläpitoa päivittämään tilaus."
-      ]
-    },
-    "pass_signup_2023: Onboarding": {
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Tervetuloa ${ PASS_APP_NAME }iin"
       ]
     },
     "pass_signup_2023: Title": {
@@ -12097,11 +12079,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Tilaus uudistuu automaattisesti kahden vuoden välein samalla hinnalla kunnes se perutaan."
-      ]
-    },
-    "specialoffer: Info": {
-      "No available offers found.": [
-        "Tarjouksia ei löytynyt."
       ]
     },
     "specialoffer: Label": {
@@ -13026,9 +13003,6 @@
       ],
       "Auto-reply": [
         "Automaattivastaus"
-      ],
-      "Auto-reply and forward": [
-        "Automaattivastaa ja välitä"
       ],
       "Automatically sign outgoing messages?": [
         "Allekirjoitetaanko lähtevät viestit automaattisesti?"
@@ -14314,11 +14288,6 @@
       ],
       "Your ${ selected } plan": [
         "${ selected } -tilauksesi"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Mm. Secure Core -palvelimien käyttöoikeus, nopeat P2P/BitTorrent-lataukset, Tor + VPN ja Double hop."
       ]
     },
     "Warning": {

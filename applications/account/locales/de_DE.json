@@ -230,6 +230,9 @@
       "Continue with Google": [
         "Mit Google anmelden"
       ],
+      "Continue with Outlook": [
+        "Mit Outlook fortfahren"
+      ],
       "Continue with this password": [
         "Mit diesem Passwort fortfahren"
       ],
@@ -533,8 +536,14 @@
       "Import emails": [
         "E-Mails importieren"
       ],
+      "Import from Google": [
+        "Von Google importieren"
+      ],
       "Import from ICS": [
         "Aus ICS-Datei importieren"
+      ],
+      "Import from Outlook": [
+        "Von Outlook importieren"
       ],
       "Import key": [
         "Schlüssel import."
@@ -634,6 +643,9 @@
       ],
       "Open navigation": [
         "Navigation öffnen"
+      ],
+      "Or": [
+        "Oder"
       ],
       "Ordered list": [
         "Sortierte Liste"
@@ -899,8 +911,8 @@
       "Sign out of all accounts": [
         "Von allen Konten abmelden"
       ],
-      "Sign up for free": [
-        "Kostenlos registrieren"
+      "sign up for free": [
+        "kostenlos registrieren"
       ],
       "Signing in": [
         "Anmeldung erfolgt"
@@ -1377,6 +1389,22 @@
         "Dein Abonnement verlängert sich am Ende deines Abrechnungszeitraums automatisch zum Standard-Rabattpreis und für die Standarddauer."
       ]
     },
+    "bf2023: header": {
+      "Save with Black Friday deals on a high-speed Swiss VPN": [
+        "Spare mit Black-Friday-Angeboten für das Hochgeschwindigkeits-VPN aus der Schweiz"
+      ],
+      "Select your Black Friday offer": [
+        "Wähle dein Black Friday-Angebot"
+      ]
+    },
+    "bf2023: info": {
+      "All premium ${ BRAND_NAME } services. One easy subscription.": [
+        "Alle Premium-Dienste von ${ BRAND_NAME }. Ein einfaches Abonnement."
+      ],
+      "Secure browsing and premium VPN features.": [
+        "Sicheres Surfen und Premium-VPN-Funktionen."
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 Tage Geld-zurück-Garantie"
@@ -1407,11 +1435,12 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Umgehe lokale Internetsperren und Zensuren mit unserem globalen Servernetz."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
-        "Beinhaltet Unterstützung für ${ domains } benutzerdefinierte E-Mail-Domain, ${ addresses } E-Mail-Adressen, ${ aliases } „hide-my-email“-Aliasse, Kalenderfreigabe und mehr."
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Beinhaltet Unterstützung für eine eigene E-Mail-Domain, 10 E-Mail-Adressen, 10 „hide-my-email“-Aliasse, Kalenderfreigabe und mehr."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Beinhaltet Unterstützung für ${ domains } benutzerdefinierte E-Mail-Domain, ${ addresses } E-Mail-Adressen, unbegrenzte „hide-my-email“-Aliasse, Kalenderfreigabe und mehr."
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Beinhaltet Unterstützung für 3 benutzerdefinierte E-Mail-Domänen, ${ addresses } E-Mail-Adresse, unbegrenzte „hide-my-email“-Aliase, Kalenderfreigabe und mehr.",
+        "Beinhaltet Unterstützung für 3 benutzerdefinierte E-Mail-Domänen, ${ addresses } E-Mail-Adressen, unbegrenzte „hide-my-email“-Aliase, Kalenderfreigabe und mehr."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
@@ -3007,6 +3036,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kontakte werden verschlüsselt und importiert… Dies kann einige Minuten dauern. Wenn der Vorgang abgeschlossen ist, kannst du diese Meldung schließen."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Achte beim Import von CSV- und VCF-Dateien darauf, dass die Datei nicht größer ist als ${ MAX_IMPORT_FILE_SIZE_STRING } oder mehr als ${ MAX_IMPORT_CONTACTS_STRING } Kontakte enthält. Falls deine Datei größer ist, teile sie bitte in kleinere Dateien auf. ${ learnMoreLink }."
+      ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Erhalte bis zu ${ credits } als Guthaben, indem du Freunde zu ${ BRAND_NAME } einlädst."
       ],
@@ -3019,9 +3051,8 @@
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Trenne verschiedene Aspekte deines Lebens mit mehreren E-Mail-Adressen und schalte weitere Premium-Funktionen frei, wenn du ein Upgrade durchführst."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Die Datei sollte eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } haben und ${ MAX_IMPORT_CONTACTS_STRING } Kontakt enthalten. Wenn deine Datei größer ist, teile sie bitte in kleinere Dateien auf.",
-        "Die Datei sollte eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } haben und ${ MAX_IMPORT_CONTACTS_STRING } Kontakte enthalten. Wenn deine Datei größer ist, teile sie bitte in kleinere Dateien auf."
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Verwende zum Importieren deiner Kontakte von Google oder Outlook ${ easySwitchLink }."
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Führe ein Upgrade durch, um die ${ MAIL_APP_NAME }-Fußzeile zu entfernen und weitere Premiumfunktionen freizuschalten."
@@ -3048,6 +3079,11 @@
         "Du kannst Termine im iCal-Format (ICS-Datei) importieren. Die Datei darf die max. Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und bis zu ${ MAX_IMPORT_EVENTS_STRING } Termine enthalten. Sollte deine Datei größer sein, teile sie bitte in kleinere Dateien auf."
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "den Easy Switch-Importassistenten"
+      ]
+    },
     "Description of the purpose of the import CSV modal": {
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
         "Außerdem wurden die CSV-Felder automatisch mit den vCard-Feldern abgeglichen. Du kannst diese Zuordnung manuell überprüfen und ändern."
@@ -3067,7 +3103,7 @@
         "Ich habe dieses Konto nicht erstellt"
       ],
       "sign in": [
-        "Anmeldung"
+        "Anmelden"
       ],
       "Thanks for letting us know": [
         "Vielen Dank für deine Nachricht."
@@ -3160,7 +3196,7 @@
         "Verschlüsselter Cloud-Speicher für alle deine Dateien"
       ],
       "Secure cloud storage and file sharing that protects your data": [
-        "Sichere Cloud-Speicherung und Dateifreigabe zum Schutz Ihrer Daten"
+        "Sichere Cloud-Speicherung und Dateifreigabe zum Schutz deiner Daten"
       ]
     },
     "Duration": {
@@ -4901,7 +4937,7 @@
       ],
       "Terabyte": [
         "Terabyte",
-        "Terabytes"
+        "Terabyte"
       ]
     },
     "Filter Actions": {
@@ -5645,6 +5681,10 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } Adresse",
+        "${ amountOfAddresses } Adressen"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } benötigt deine Erlaubnis, um ${ enableDesktopNotifications }."
       ],
@@ -5699,7 +5739,7 @@
         "${ firstRemainingCalendarName } wird als Standardkalender festgelegt."
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
-        "${ inviterEmailJSX } möchte Daten in ${ PASS_APP_NAME } mit dir teilen"
+        "${ inviterEmailJSX } möchte Daten in ${ PASS_APP_NAME } mit dir teilen."
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } kann auch mit einem einzigen Passwort verwendet werden, das sowohl das Anmelde- als auch das Mailbox-Passwort ersetzt. Um in den Einzelpasswortmodus zu wechseln, gib das gewünschte Einzelpasswort ein und klicke auf Speichern."
@@ -5726,6 +5766,9 @@
         "${ numberOfNonPrivateKeys } hochgeladene Datei ist kein gültiger privater Schlüssel. Bitte überprüfe die Datei und versuche es erneut.",
         "${ numberOfNonPrivateKeys } hochgeladene Dateien sind keine gültige privaten Schlüssel. Bitte überprüfe die Dateien und versuche es erneut."
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "${ plan } entfernt. Bundle-Angebot für 1-Monats-Abonnement nicht verfügbar."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } erfordert mindestens einen dedizierten Server ${ serverPricePerMonth }"
       ],
@@ -5743,6 +5786,14 @@
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } Server wird noch eingerichtet. Das dauert normalerweise etwa ${ provisioningDuration }.",
         "${ provisioningCounter } Server werden noch eingerichtet. Das dauert normalerweise etwa ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } weitere",
+        "${ remainingAddresses.length } weitere"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length } weitere Adresse",
+        "${ remainingAddresses.length } weitere Adressen"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal }/${ providerCalendars.length } Kalender",
@@ -5901,10 +5952,6 @@
       ],
       "Additional options": [
         "Zusätzliche Optionen"
-      ],
-      "address": [
-        "Adresse",
-        "Adressen"
       ],
       "Admin account allocation": [
         "Admin-Konto-Zuweisung"
@@ -6079,6 +6126,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Bevor du mit dem Senden und Empfangen von Nachrichten von deinen neuen E-Mail-Adressen beginnen kannst, müssen die dazugehörigen Verschlüsselungscodes erstellt werden."
+      ],
+      "Billed at ${ price }": [
+        "Abgerechnet zum Preis von ${ price }"
       ],
       "Billing cycle: ${ text }": [
         "Abrechnungszeitraum: ${ text }"
@@ -6662,9 +6712,6 @@
       "Monthly ${ onDayString }": [
         "Monatlich ${ onDayString }"
       ],
-      "more": [
-        "mehr"
-      ],
       "Multi-user support not enabled.": [
         "Mehrbenutzerunterstützung nicht aktiviert."
       ],
@@ -6905,6 +6952,9 @@
       "Priority support": [
         "Vorrangiger Support"
       ],
+      "Promotion expired": [
+        "Werbeaktion abgelaufen"
+      ],
       "Protected by Swiss privacy laws": [
         "Geschützt durch Schweizer Datenschutzgesetze"
       ],
@@ -6979,6 +7029,9 @@
       ],
       "Right to Left": [
         "Von rechts nach links"
+      ],
+      "Save ${ percentage }": [
+        "Spare ${ percentage }"
       ],
       "Save your password somewhere safe.": [
         "Bewahre dein Passwort an einem sicheren Ort auf."
@@ -7073,6 +7126,9 @@
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF wird benutzt um anzugeben, wem es erlaubt ist E-Mails von einer Domain zu versenden. Wir empfehlen dringend, ${ MAIL_APP_NAME } deinem SPF-Eintrag hinzuzufügen. Bitte füge den folgenden TXT-Eintrag deiner DNS-Zone hinzu. Dies kann üblicherweise im Verwaltungsportal deines Domain-Registrars vorgenommen werden."
       ],
+      "Stay tuned for future promotions.": [
+        "Bleibe auf dem Laufenden für zukünftige Werbeaktionen."
+      ],
       "Step ${ step }": [
         "Schritt ${ step }",
         "Schritt ${ step }"
@@ -7136,6 +7192,9 @@
       ],
       "Thank you": [
         "Vielen Dank"
+      ],
+      "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
+        "Vielen Dank für die Unterstützung unserer Mission, ein besseres Internet zu schaffen, in dem Privatsphäre und Freiheit an erster Stelle stehen."
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Die Meldung ${ boldDataLocked } wird nicht mehr angezeigt, aber du kannst deine Daten weiterhin unter ${ encryptionAndKeysLink } entsperren."
@@ -7226,6 +7285,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Dieser Link könnte ein homographischer Angriff (Vortäuschung einer falschen Identität) sein. Bitte überprüfe, ob dies der Link ist, den du besuchen möchtest, oder öffne ihn nicht."
+      ],
+      "This promotion link has expired.": [
+        "Diese Werbeaktion ist abgelaufen."
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Dieses Token wird nach dem Schließen dieses Fensters nicht mehr verfügbar sein und du solltest es niemals mit jemandem teilen."
@@ -7765,6 +7827,9 @@
       ],
       "Your account recovery method is set": [
         "Deine Kontowiederherstellungsmethode wurde festgelegt"
+      ],
+      "Your account was successfully updated with this promotion": [
+        "Dein Konto wurde erfolgreich durch diese Werbeaktion aktualisiert"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Dein Konto wird aktualisiert, sobald die Zahlung abgeschlossen ist."
@@ -9477,7 +9542,7 @@
     },
     "mail_signup_2023: Info": {
       "Secure email that protects your privacy": [
-        "Sichere E-Mail, die deine Privatsphäre schützt"
+        "Sichere E-Mails, die deine Privatsphäre schützen"
       ]
     },
     "Maintenance mode": {
@@ -10391,14 +10456,6 @@
         "Das von dir ausgewählte Abonnement: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }-Testversion"
-      ],
-      "Your account's usage": [
-        "Verbrauch deines Kontos"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Konto löschen?"
@@ -10420,6 +10477,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Schalte die Premium-Funktionen durch ein Upgrade frei"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-Testversion"
+      ],
+      "Your account's usage": [
+        "Verbrauch deines Kontos"
       ]
     },
     "new_plans: tooltip": {
@@ -11130,9 +11195,6 @@
       "Download to continue ${ size }": [
         "Herunterladen zum Fortfahren ${ size }"
       ],
-      "Keep this plan and use ${ appName }": [
-        "Dieses Abonnement behalten und ${ appName } nutzen"
-      ],
       "Or ${ createANewAccount }": [
         "Oder ${ createANewAccount }"
       ],
@@ -11142,14 +11204,8 @@
       "Start using ${ appName } now": [
         "Beginne, ${ appName } jetzt zu verwenden"
       ],
-      "Upgrade for only ${ relativePrice } extra per month": [
-        "Upgrade für nur ${ relativePrice } zusätzlich pro Monat"
-      ],
       "Upgrade my plan": [
         "Abonnement upgraden"
-      ],
-      "Use ${ free } instead": [
-        "Stattdessen ${ free } nutzen"
       ]
     },
     "pass_signup_2023: Feature": {
@@ -11259,9 +11315,6 @@
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "Wenn du aus deinem ${ BRAND_NAME }-Konto ausgesperrt wirst, kannst du dich mit deinem **Wiederherstellungs-Kit** anmelden und deine Daten wiederherstellen."
       ],
-      "Includes basic ${ appName } features:": [
-        "Enthält grundlegende Funktionen von ${ appName }:"
-      ],
       "Install ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } installieren"
       ],
@@ -11331,9 +11384,6 @@
       "Verifying your payment": [
         "Deine Zahlung wird verifiziert"
       ],
-      "Welcome to ${ plan }": [
-        "Willkommen bei ${ plan }"
-      ],
       "Works on all devices": [
         "Funktioniert auf allen Geräten"
       ],
@@ -11344,15 +11394,10 @@
         "Du hast aktuell"
       ],
       "You have been invited to join ${ PASS_APP_NAME }": [
-        "Du wurdest eingeladen, ${ PASS_APP_NAME } beizutreten"
+        "Du wurdest eingeladen, ${ PASS_APP_NAME } beizutreten."
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Deine Organisation hat Zugang zu ${ free }. Wenn du auf die Premiumfunktionen von ${ appName } zugreifen möchtest, bitte den Administrator deiner Organisation um ein Upgrade."
-      ]
-    },
-    "pass_signup_2023: Onboarding": {
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Willkommen bei ${ PASS_APP_NAME }"
       ]
     },
     "pass_signup_2023: Title": {
@@ -11857,10 +11902,10 @@
     },
     "session_recovery:disable:info": {
       "Make sure you have access to a recovery method.": [
-        "Stellen Sie sicher, dass Sie Zugriff auf eine Wiederherstellungsmethode haben."
+        "Stelle sicher, dass du Zugriff auf eine Wiederherstellungsmethode hast."
       ],
       "You will no longer be able to request a password reset from your account settings.": [
-        "Sie werden in Ihren Kontoeinstellungen nicht mehr die Möglichkeit haben, ein neues Passwort anzufordern."
+        "Du wirst in deinen Kontoeinstellungen nicht mehr die Möglichkeit haben, ein neues Passwort anzufordern."
       ]
     },
     "session_recovery:disable:title": {
@@ -11970,16 +12015,16 @@
     },
     "session_recovery:settings:action": {
       "Allow password reset from settings": [
-        "Erlauben Sie das Zurücksetzen des Passworts über die Einstellungen"
+        "Erlaube das Zurücksetzen des Passworts über die Einstellungen"
       ],
       "Request a password reset from your Account settings. No recovery method needed.": [
-        "Beantragen Sie die Zurücksetzung Ihres Passworts über Ihre Kontoeinstellungen. Keine Wiederherstellungsmethode erforderlich."
+        "Beantrage die Zurücksetzung deines Passworts über deine Kontoeinstellungen. Keine Wiederherstellungsmethode erforderlich."
       ],
       "Request password reset": [
         "Passwortzurücksetzung anfordern"
       ],
       "To disallow password reset, you must have a recovery method set up.": [
-        "Um das Zurücksetzen des Passworts zu verbieten, müssen Sie eine Wiederherstellungsmethode einrichten."
+        "Um das Zurücksetzen des Passworts zu verbieten, musst du eine Wiederherstellungsmethode einrichten."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -12249,11 +12294,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Dieses Abonnement verlängert sich alle zwei Jahre automatisch, bis es gekündigt wird."
-      ]
-    },
-    "specialoffer: Info": {
-      "No available offers found.": [
-        "Keine verfügbaren Angebote gefunden."
       ]
     },
     "specialoffer: Label": {
@@ -13179,9 +13219,6 @@
       "Auto-reply": [
         "Automatische Antworten"
       ],
-      "Auto-reply and forward": [
-        "Automatisch antworten und weiterleiten"
-      ],
       "Automatically sign outgoing messages?": [
         "Ausgehende Nachrichten automatisch signieren?"
       ],
@@ -13512,6 +13549,9 @@
       "Folders and labels": [
         "Ordner und Kategorien"
       ],
+      "Forward and auto-reply": [
+        "Weiterleiten und automatisch antworten"
+      ],
       "Forward emails": [
         "E-Mails weiterleiten"
       ],
@@ -13679,7 +13719,7 @@
         "Passwort und Schlüssel"
       ],
       "Password reset": [
-        "Passwort zurückgesetzt"
+        "Passwort zurücksetzen"
       ],
       "Pay invoice": [
         "Rechnung bezahlen"
@@ -14469,8 +14509,8 @@
       ]
     },
     "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Zugang zu Secure Core-Servern, schnelle P2P/BitTorrent-Downloads, Tor über VPN, Double Hop und mehr."
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Zugang zu Secure Core-Servern, schnelle P2P/BitTorrent-Downloads, Tor über VPN und mehr."
       ]
     },
     "Warning": {

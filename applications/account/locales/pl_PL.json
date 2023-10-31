@@ -230,6 +230,9 @@
       "Continue with Google": [
         "Kontynuuj z Google"
       ],
+      "Continue with Outlook": [
+        "Kontynuuj z Outlook"
+      ],
       "Continue with this password": [
         "Kontynuuj z tym hasłem"
       ],
@@ -533,8 +536,14 @@
       "Import emails": [
         "Importuj wiadomości"
       ],
+      "Import from Google": [
+        "Importuj z konta Google"
+      ],
       "Import from ICS": [
         "Importuj plik ICS"
+      ],
+      "Import from Outlook": [
+        "Importuj z konta Outlook"
       ],
       "Import key": [
         "Importuj klucz"
@@ -634,6 +643,9 @@
       ],
       "Open navigation": [
         "Otwórz nawigację"
+      ],
+      "Or": [
+        "lub"
       ],
       "Ordered list": [
         "Lista numerowana"
@@ -899,8 +911,8 @@
       "Sign out of all accounts": [
         "Wyloguj się ze wszystkich kont"
       ],
-      "Sign up for free": [
-        "Załóż darmowe konto"
+      "sign up for free": [
+        "załóż darmowe konto"
       ],
       "Signing in": [
         "Logowanie"
@@ -1347,8 +1359,14 @@
       "6 users": [
         "6 użytkowników"
       ],
+      "Access content worldwide": [
+        "Dostęp do treści na całym świecie"
+      ],
       "Ad-blocker and malware protection": [
         "Blokada reklam i ochrona przed złośliwym oprogramowaniem"
+      ],
+      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Wszystkie płatne funkcje ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Rozszerzona historia wersji"
@@ -1377,29 +1395,71 @@
         "Na koniec cyklu rozliczeniowego Twoja subskrypcja zostanie automatycznie odnowiona w obniżonej cenie i na standardowy okres."
       ]
     },
+    "bf2023: header": {
+      "Save with Black Friday deals on a high-speed Swiss VPN": [
+        "Oszczędź na szybkich, szwajcarskich usługach VPN z okazji Czarnego Piątku"
+      ],
+      "Select your Black Friday offer": [
+        "Wybierz ofertę na Czarny Piątek"
+      ]
+    },
+    "bf2023: info": {
+      "All premium ${ BRAND_NAME } services. One easy subscription.": [
+        "Wszystkie usługi ${ BRAND_NAME } w wersji premium. Jedna prosta subskrypcja."
+      ],
+      "Secure browsing and premium VPN features.": [
+        "Bezpieczne przeglądanie i funkcje VPN premium."
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30-dniowa gwarancja zwrotu pieniędzy"
       ]
     },
+    "bf2023: renew": {
+      "${ n } month": [
+        "${ n } miesiąc",
+        "${ n } miesiące",
+        "${ n } miesięcy",
+        "pierwszych ${ n } miesięcy"
+      ],
+      "the first month": [
+        "pierwszy miesiąc"
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
+        "Specjalnie obniżona cena wynosząca ${ discountedPrice } obowiązuje przez ${ discountedMonths }. Następnie będzie miało miejsce automatyczne odnowienie i cena wyniesie ${ nextPrice } przez ${ nextMonths }. Można anulować w dowolnym momencie."
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
+        "Specjalnie obniżona cena wynosząca ${ discountedPrice } obowiązuje przez pierwszy miesiąc. Następnie będzie miało miejsce automatyczne odnowienie i cena wyniesie ${ nextPrice } w każdym miesiącu. Można anulować w dowolnym momencie."
+      ]
+    },
     "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "Uzyskaj dostęp do zablokowanych treści i ciesz się prywatnym przeglądaniem. Obejmuje więcej niż 3000 serwerów w ponad 65 krajach, najwyższe szybkości VPN, dostęp do usług streamingowych na całym świecie, ochronę przed złośliwym oprogramowaniem i blokady reklam, a także szybkie pobieranie BitTorrent oraz inne funkcje."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Uzyskaj dostęp z dowolnego miejsca do treści w usługach streamingowych, takich jak Netflix, Disney+, Prime Video i nie tylko."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
-        "Obejmuje obsługę ${ domains } niestandardowej domeny e-mail, ${ addresses } adresów e-mail, ${ aliases } aliasów hide-my-email, udostępniania kalendarza i nie tylko."
+      "Bypass local internet blocks and censorship with our global network of servers.": [
+        "Omijaj lokalne blokady internetowe i cenzurę dzięki naszej globalnej sieci serwerów."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Obejmuje obsługę ${ domains } niestandardowej domeny e-mail, ${ addresses } adresów e-mail, nieograniczonej liczby aliasów hide-my-email, udostępniania kalendarza i nie tylko."
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Zawiera obsługę 1 niestandardowej domeny, 10 adresów e-mail, 10 aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
+      ],
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Zawiera obsługę 3 niestandardowych domen, ${ addresses } adres e-mail, nieograniczoną liczbę aliasów hide-my-email, udostępnianie kalendarza i wiele więcej.",
+        "Zawiera obsługę 3 niestandardowych domen, ${ addresses } adresy e-mail, nieograniczoną liczbę aliasów hide-my-email, udostępnianie kalendarza i wiele więcej.",
+        "Zawiera obsługę 3 niestandardowych domen, ${ addresses } adresów e-mail, nieograniczoną liczbę aliasów hide-my-email, udostępnianie kalendarza i wiele więcej.",
+        "Zawiera obsługę 3 niestandardowych domen, ${ addresses } adresów e-mail, nieograniczoną liczbę aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "Bezpieczne logowanie na wszystkich urządzeniach. Zawiera nieograniczoną liczbę aliasów, udostępnianie, zintegrowaną aplikację uwierzytelniającą i wiele więcej."
+        "Loguj się bezpiecznie na wszystkich urządzeniach. Obejmuje nieograniczoną liczbę aliasów, udostępnianie, zintegrowane uwierzytelnianie dwustopniowe i nie tylko."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Zabezpiecz swoje e-maile i harmonogram dzięki szyfrowaniu end-to-end. Obejmuje obsługę niestandardowych domen e-mail, 15 adresów e-mail, nieograniczonej liczby aliasów hide-my-email, udostępniania kalendarza i wiele więcej."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Zabezpiecz pliki dzięki szyfrowanej przestrzeni dyskowej w chmurze. Zawiera historię wersji, szyfrowane udostępnianie plików i wiele więcej."
+        "Zabezpiecz pliki dzięki zaszyfrowanej przestrzeni dyskowej w chmurze. Obejmuje historię wersji, zaszyfrowane udostępnianie plików i nie tylko."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Specjalnie zaprojektowana funkcja NetShield chroni Twoje urządzenia oraz przyśpiesza przeglądanie Internetu poprzez blokowanie reklam, elementów śledzących i złośliwego oprogramowania."
@@ -3014,11 +3074,8 @@
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Oddziel różne aspekty swojego życia dzięki wielu adresom e-mail i odblokuj więcej funkcji premium po ulepszeniu konta."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
-        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontakty. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
-        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontaktów. Podziel swój plik na mniejsze, jeśli jest zbyt duży.",
-        "Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_CONTACTS_STRING } kontaktów. Podziel swój plik na mniejsze, jeśli jest zbyt duży."
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "${ easySwitchLink }, aby zaimportować kontakty z konta Google lub Outlook."
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Aby usunąć stopkę ${ MAIL_APP_NAME }, ulepsz konto i odblokuj więcej funkcji premium."
@@ -3043,6 +3100,11 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Możesz importować wydarzenia w formacie iCal (plik ICS). Maksymalny dopuszczalny rozmiar pliku to ${ MAX_IMPORT_FILE_SIZE_STRING } i nie może zawierać więcej niż ${ MAX_IMPORT_EVENTS_STRING } wydarzeń. Podziel swój plik na mniejsze, jeśli jest zbyt duży."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Użyj asystenta importu Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -5690,6 +5752,12 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } adres",
+        "${ amountOfAddresses } adresy",
+        "${ amountOfAddresses } adresów",
+        "${ amountOfAddresses } adresów"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikacja ${ appName } potrzebuje Twojej zgody, aby ${ enableDesktopNotifications }."
       ],
@@ -5783,6 +5851,9 @@
         "${ numberOfNonPrivateKeys } przesłanych plików nie są prawidłowymi kluczami prywatnymi. Zweryfikuj pliki i spróbuj ponownie.",
         "${ numberOfNonPrivateKeys } przesłanych plików nie są prawidłowymi kluczami prywatnymi. Zweryfikuj pliki i spróbuj ponownie."
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "Plan ${ plan } został usunięty. Pakiet oferty nie jest dostępny w planie miesięcznym."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "Plan ${ plan.Title } wymaga co najmniej 1 dedykowanego serwera ${ serverPricePerMonth }"
       ],
@@ -5806,6 +5877,18 @@
         "Trwa konfiguracja ${ provisioningCounter } serwerów. Zazwyczaj trwa to około ${ provisioningDuration }.",
         "Trwa konfiguracja ${ provisioningCounter } serwerów. Zazwyczaj trwa to około ${ provisioningDuration }.",
         "Trwa konfiguracja ${ provisioningCounter } serwerów. Zazwyczaj trwa to około ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } więcej",
+        "${ remainingAddresses.length } więcej",
+        "${ remainingAddresses.length } więcej",
+        "${ remainingAddresses.length } więcej"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length } adres więcej",
+        "${ remainingAddresses.length } adresy więcej",
+        "${ remainingAddresses.length } adresów więcej",
+        "${ remainingAddresses.length } adresów więcej"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } na ${ providerCalendars.length } kalendarz",
@@ -5987,12 +6070,6 @@
       "Additional options": [
         "Dodatkowe opcje"
       ],
-      "address": [
-        "adres",
-        "adresy",
-        "adresów",
-        "adresów"
-      ],
       "Admin account allocation": [
         "Przestrzeń dyskowa administratora"
       ],
@@ -6172,6 +6249,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Zanim zaczniesz wysyłać i odbierać wiadomości e-mail z nowych adresów, musisz utworzyć dla nich klucze szyfrowania."
+      ],
+      "Billed at ${ price }": [
+        "Płatne ${ price }"
       ],
       "Billing cycle: ${ text }": [
         "Cykl rozliczeniowy: ${ text }"
@@ -6767,9 +6847,6 @@
       "Monthly ${ onDayString }": [
         "Co miesiąc ${ onDayString }"
       ],
-      "more": [
-        "więcej"
-      ],
       "Multi-user support not enabled.": [
         "Obsługa wielu użytkowników jest wyłączona."
       ],
@@ -7016,6 +7093,9 @@
       "Priority support": [
         "Priorytetowe wsparcie"
       ],
+      "Promotion expired": [
+        "Promocja wygasła"
+      ],
       "Protected by Swiss privacy laws": [
         "Chroniony przez szwajcarskie prawa ochrony danych osobowych"
       ],
@@ -7090,6 +7170,9 @@
       ],
       "Right to Left": [
         "Od prawej do lewej"
+      ],
+      "Save ${ percentage }": [
+        "Zaoszczędź ${ percentage }"
       ],
       "Save your password somewhere safe.": [
         "Zapisz hasło w bezpiecznym miejscu."
@@ -7184,6 +7267,9 @@
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "Rekord SPF jest używany do określenia dozwolonych nadawców wiadomości dla domeny. Dodanie serwerów ${ MAIL_APP_NAME } jest zalecane. Dodaj następujący rekord TXT do ustawień DNS domeny. Zazwyczaj możesz to zrobić w panelu sterowania u rejestratora domeny."
       ],
+      "Stay tuned for future promotions.": [
+        "Bądź na bieżąco z przyszłymi promocjami."
+      ],
       "Step ${ step }": [
         "Krok ${ step }",
         "Krok ${ step }",
@@ -7249,6 +7335,9 @@
       ],
       "Thank you": [
         "Dziękujemy"
+      ],
+      "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
+        "Dziękujemy za wsparcie naszej misji budowania lepszego Internetu, w którym prywatność i wolność są na pierwszym miejscu."
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Wiadomość \"${ boldDataLocked }\" nie będzie pokazywana, ale możesz nadal odblokować dane w sekcji ${ encryptionAndKeysLink }."
@@ -7345,6 +7434,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ten link może być atakiem homograficznym. Sprawdź, czy jest to link, który chcesz odwiedzić lub nie otwieraj go."
+      ],
+      "This promotion link has expired.": [
+        "Link promocji wygasł."
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Token nie będzie dostępny po zamknięciu okna. Nie udostępniaj go nikomu."
@@ -7900,6 +7992,9 @@
       ],
       "Your account recovery method is set": [
         "Metoda odzyskiwania konta jest włączona"
+      ],
+      "Your account was successfully updated with this promotion": [
+        "Konto zostało zaktualizowane z użyciem promocji"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Konto zostanie zaktualizowane po zaksięgowaniu płatności."
@@ -10598,14 +10693,6 @@
         "Wybrany plan: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Wersja próbna planu ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Użycie konta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Usunąć konto?"
@@ -10627,6 +10714,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Odblokuj funkcje premium poprzez ulepszenie"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Wersja próbna planu ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Użycie konta"
       ]
     },
     "new_plans: tooltip": {
@@ -11357,9 +11452,6 @@
       "Download to continue ${ size }": [
         "Pobierz, aby kontynuować ${ size }"
       ],
-      "Keep this plan and use ${ appName }": [
-        "Zachowaj plan, aby korzystać z ${ appName }"
-      ],
       "Or ${ createANewAccount }": [
         "Lub ${ createANewAccount }"
       ],
@@ -11369,14 +11461,11 @@
       "Start using ${ appName } now": [
         "Zacznij korzystać z ${ appName }"
       ],
-      "Upgrade for only ${ relativePrice } extra per month": [
-        "Ulepsz konto za ${ relativePrice } miesięcznie więcej"
+      "Upgrade": [
+        "Ulepsz"
       ],
       "Upgrade my plan": [
         "Ulepsz plan"
-      ],
-      "Use ${ free } instead": [
-        "Wybierz plan ${ free }"
       ]
     },
     "pass_signup_2023: Feature": {
@@ -11486,8 +11575,8 @@
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "Jeśli konto ${ BRAND_NAME } zostanie zablokowane, **zestaw odzyskiwania** umożliwi zalogowanie się i odzyskanie danych."
       ],
-      "Includes basic ${ appName } features:": [
-        "Zawiera podstawowe funkcje ${ appName }:"
+      "Includes:": [
+        "Zawiera:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "Zainstaluj ${ PASS_APP_NAME }"
@@ -11558,8 +11647,8 @@
       "Verifying your payment": [
         "Weryfikowanie płatności"
       ],
-      "Welcome to ${ plan }": [
-        "Witaj w planie ${ plan }"
+      "Welcome to ${ shortName } Plus": [
+        "Witaj w planie ${ shortName } Plus"
       ],
       "Works on all devices": [
         "Działa na wszystkich urządzeniach"
@@ -11575,11 +11664,6 @@
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Twoja organizacja ma dostęp do planu ${ free }. Jeśli chcesz uzyskać dostęp do funkcji premium ${ appName }, poproś administratora o ulepszenie konta."
-      ]
-    },
-    "pass_signup_2023: Onboarding": {
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Witaj w ${ PASS_APP_NAME }"
       ]
     },
     "pass_signup_2023: Title": {
@@ -12512,11 +12596,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Subskrypcja będzie odnawiana automatycznie co 2 lata za tę samą cenę aż do momentu anulowania jej."
-      ]
-    },
-    "specialoffer: Info": {
-      "No available offers found.": [
-        "Nie znaleziono dostępnych ofert"
       ]
     },
     "specialoffer: Label": {
@@ -13484,9 +13563,6 @@
       "Auto-reply": [
         "Autoresponder"
       ],
-      "Auto-reply and forward": [
-        "Autoresponder i przekierowanie"
-      ],
       "Automatically sign outgoing messages?": [
         "Czy chcesz podpisywać automatycznie wiadomości wychodzące?"
       ],
@@ -13822,6 +13898,9 @@
       ],
       "Folders and labels": [
         "Foldery i etykiety"
+      ],
+      "Forward and auto-reply": [
+        "Przekierowanie i autoresponder"
       ],
       "Forward emails": [
         "Przekieruj wiadomości"
@@ -14804,8 +14883,8 @@
       ]
     },
     "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Dostęp do serwerów Secure Core, szybkie pobieranie P2P / BitTorrent, Tor przez VPN, Double hop i wiele więcej."
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Dostęp do serwerów Secure Core, szybkiego pobierania P2P / BitTorrent, Tor przez VPN i wiele więcej."
       ]
     },
     "Warning": {

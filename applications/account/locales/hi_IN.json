@@ -794,9 +794,6 @@
       "Sign out of all accounts": [
         "सारे खातो से साइनआउट करें"
       ],
-      "Sign up for free": [
-        "मुफ्त में साइनअप करें"
-      ],
       "Signing in": [
         "साइनिंग इन"
       ],
@@ -2636,10 +2633,6 @@
       ],
       "ProtonMail logo and a plus sign": [
         "Proton Mail लोगो और एक प्लस साइन"
-      ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "फाइल ज़्यादा-से-ज़्यादा ${ MAX_IMPORT_FILE_SIZE_STRING } साइज़ का और ${ MAX_IMPORT_CONTACTS_STRING } संपर्क के साथ हो सकता है। अगर आपका फाइल ज़्यादा बड़ा है, तो कृपया उसे छोटे फाइलों में तोड़ दे।",
-        "फाइल ज़्यादा-से-ज़्यादा ${ MAX_IMPORT_FILE_SIZE_STRING } साइज़ का और ${ MAX_IMPORT_CONTACTS_STRING } संपर्क के साथ हो सकता है। अगर आपका फाइल ज़्यादा बड़ा है, तो कृपया उसे छोटे फाइलों में तोड़ दे।"
       ],
       "Track the status and activity of your referrals.": [
         "अपने रेफरल के स्थिति ट्रैक करें।"
@@ -4762,10 +4755,6 @@
       "Additional options": [
         "अतिरिक्त विकल्प"
       ],
-      "address": [
-        "पता",
-        "पतें"
-      ],
       "Admin account allocation": [
         "एडमिन खाता बंटवारा"
       ],
@@ -5416,9 +5405,6 @@
       ],
       "Monthly ${ onDayString }": [
         "मासिक ${ onDayString }"
-      ],
-      "more": [
-        "और"
       ],
       "Multi-user support not enabled.": [
         "बहु-उपयोगकर्ता समर्थन सक्षम नहीं है।"
@@ -8564,11 +8550,6 @@
         "आपका चुना गया प्लान: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "Your account's usage": [
-        "आपका खाते का इस्तेमाल"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "खाता मिटाएं?"
@@ -8590,6 +8571,11 @@
       ],
       "Unlock premium features by upgrading": [
         "प्रीमियम सुविधाओं इस्तेमाल करे अपग्रेड करके"
+      ]
+    },
+    "new_plans: Title": {
+      "Your account's usage": [
+        "आपका खाते का इस्तेमाल"
       ]
     },
     "new_plans: tooltip": {
@@ -9642,11 +9628,6 @@
       ],
       "Support online privacy": [
         "ऑनलाइन निजता को बढ़ावा दें"
-      ]
-    },
-    "specialoffer: Info": {
-      "No available offers found.": [
-        "कोई ऑफर नहीं मिला।"
       ]
     },
     "specialoffer: Label": {
