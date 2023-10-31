@@ -104,7 +104,7 @@ const Step1 = ({
     signupParameters: SignupParameters2;
     signupTypes: SignupType[];
     theme: SignupTheme;
-    relativePrice: string;
+    relativePrice: string | undefined;
     app: APP_NAMES;
     shortAppName: string;
     appName: string;
