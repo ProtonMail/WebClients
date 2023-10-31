@@ -320,7 +320,7 @@ export const UpsellCardSelector = ({
     vpnServersCountData,
 }: {
     checkout: SubscriptionCheckoutData;
-    relativePrice: string;
+    relativePrice: string | undefined;
     plan: Plan | undefined;
     currentPlan: Plan | undefined;
     subscription: Subscription | undefined;
@@ -350,7 +350,7 @@ export const UpsellCardSelector = ({
     return (
         <>
             <div className="mb-6">
-                {!relativePrice.includes('-') &&
+                {relativePrice &&
                     getHasAnyPlusPlan(currentPlan.Name) &&
                     getBoldFormattedText(
                         c('pass_signup_2023: Info')
@@ -428,7 +428,7 @@ export const UpsellCardSelector = ({
                             >
                                 <ArrowImage />
 
-                                {!relativePrice.includes('-') && (
+                                {relativePrice && (
                                     <div className="text-sm color-primary">
                                         {c('pass_signup_2023: Info').t`+ ${relativePrice} per month`}
                                     </div>
