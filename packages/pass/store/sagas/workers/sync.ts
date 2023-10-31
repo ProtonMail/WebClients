@@ -80,7 +80,7 @@ export function* synchronize(
     if (totalInactiveShares > 0) {
         yield put(
             notification({
-                receiver: 'popup',
+                endpoint: 'popup',
                 type: 'error',
                 expiration: -1,
                 key: NotificationKey.INACTIVE_SHARES,
