@@ -899,9 +899,6 @@
       "Sign out of all accounts": [
         "ყველა ანგარიშიდან გამოსვლა"
       ],
-      "Sign up for free": [
-        "უფასო რეგისტრაცია"
-      ],
       "Signing in": [
         "შესვლა"
       ],
@@ -2883,10 +2880,6 @@
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "ასწიეთ სატარიფო გეგმა და გამოყავით თქვენი ცხოვრების სხვადასხვა ასპექტები სხვადასხვა ელფოსტის მისამართებით და მიიღეთ კიდევ ბევრი სხვა ფასიანი ფუნქცია."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "ფაილის მაქსიმალური ზომაა ${ MAX_IMPORT_FILE_SIZE_STRING } და შეიძლება, ${ MAX_IMPORT_CONTACTS_STRING }-მდე კონტაქტს შეიცავდეს. თუ თქვენი ფაილი უფრო დიდია, სცადეთ, ის უფრო პატარა ფაილებად დახლიჩოთ.",
-        "ფაილის მაქსიმალური ზომაა ${ MAX_IMPORT_FILE_SIZE_STRING } და შეიძლება, შეიცავდეს ${ MAX_IMPORT_CONTACTS_STRING }-მდე კონტაქტს. თუ თქვენი ფაილი უფრო დიდია, სცადეთ, ის უფრო პატარა ფაილებად დახლიჩოთ."
-      ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "${ MAIL_APP_NAME }-ის ქვედა კოლონტიტულის მოსაცილებლად ასწიეთ სატარიფო გეგმა და მიიღეთ კიდევ უფრო მეტი ფასიანი ფუნქცია."
       ],
@@ -3022,6 +3015,9 @@
       ],
       "Encrypted cloud storage for all your files": [
         "დაშიფრული ღრუბლოვანი საცავი ყველა თქვენი ფაილისთვის"
+      ],
+      "Secure cloud storage and file sharing that protects your data": [
+        "დაცული ღრუბლოვანი საცავი და ფაილების გაზიარება, რომელიც თქვენს მონაცემებს იცავს"
       ]
     },
     "Duration": {
@@ -3278,6 +3274,9 @@
       ],
       "Forwarding is active": [
         "გადაგზავნა გააქტიურდა"
+      ],
+      "Forwarding to ${ BRAND_NAME } addresses will keep your communication end-to-end encrypted. When forwarding externally, end-to-end encryption for the forwarding address will be disabled.": [
+        "გადაგზავნა ${ BRAND_NAME }-ის მისამართებზე უზრუნველყოფს, რომ თქვენი მიმოწერა გამჭოლი დაშიფვრით იქნება დაცული. როცა გადაგაზვნა გარე მისამართებზე ხდება, ამ მისამართებისთვის გამჭოლი შიფრაცია გაითიშება."
       ],
       "Forwarding to an address without end-to-end encryption requires disabling end-to-end encryption for your ${ boldForwarderEmail } email address. ": [
         "გადაგზავნა გამჭოლი შიფრაციის არმქონე მისამართზე თქვენი ${ boldForwarderEmail } ელფოსტის მისამართისთვის გამჭოლი დაშიფვრის გამორთვას მოითხოვს. "
@@ -4735,6 +4734,9 @@
       ],
       "MB": [
         "მბ"
+      ],
+      "TB": [
+        "ტბ"
       ]
     },
     "file size format, long": {
@@ -4753,6 +4755,10 @@
       "Megabyte": [
         "მეგაბაიტი",
         "მეგაბაიტი"
+      ],
+      "Terabyte": [
+        "ტერაბაიტი",
+        "ტერაბაიტი"
       ]
     },
     "Filter Actions": {
@@ -5549,6 +5555,9 @@
       "${ firstRemainingCalendarName } will be set as default calendar.": [
         "${ firstRemainingCalendarName } გამოყენებული იქნება, როგორც ნაგულისხმები კალენდარი."
       ],
+      "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
+        "${ inviterEmailJSX }-ს უნდა, მონაცემები გაგიზიაროთ ${ PASS_APP_NAME }-ში"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } ერთი პაროლითაც შეგიძლიათ, გამოიყენოთ, რომელიც ორივე, შესვლის და საფოსტო ყუთის პაროლებს შეცვლის. ერთპაროლიან რეჟიმში გადასართავად შეიყვანეთ პაროლი და შენახვას დააჭირეთ."
       ],
@@ -5749,10 +5758,6 @@
       ],
       "Additional options": [
         "დამატებითი პარამეტრები"
-      ],
-      "address": [
-        "მისამართი",
-        "მისამართები"
       ],
       "Admin account allocation": [
         "ადმინისტრატორის ანგარიშის გამოყოფა"
@@ -6244,6 +6249,9 @@
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName }-ის მიღება"
       ],
+      "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
+        "მიიღწეთ წვდომა ${ BRAND_NAME }-ის ანგარიშის შექმნით და მოსაწვევის დათანხმებით."
+      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "კოდს გასაგები აღწერა მიანიჭეთ. მაგალითად, სერვსის სახელი, სადაც მის გამოყენებას აპირებთ და აირჩიეთ თქვენი აქტიური მორგებული დომენური მისამართი. ამ კოდით ელფოსტის გაგზავნას, მხოლოდ, ის მისამართი შეძლებს."
       ],
@@ -6506,9 +6514,6 @@
       ],
       "Monthly ${ onDayString }": [
         "ყოველ თვე, ${ onDayString }"
-      ],
-      "more": [
-        "მეტი"
       ],
       "Multi-user support not enabled.": [
         "მრავალმომხმარებლიანობის მხარდაჭერა ჩართული არაა."
@@ -10236,14 +10241,6 @@
         "გადახდის არჩეული ტარიფი: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } საცდელი"
-      ],
-      "Your account's usage": [
-        "თქვენი ანგარიშის გამოყენება"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "წავშალო ანგარიში?"
@@ -10265,6 +10262,14 @@
       ],
       "Unlock premium features by upgrading": [
         "განბლოკეთ პრემიუმ თვისებები ტარიფის აწევით"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } საცდელი"
+      ],
+      "Your account's usage": [
+        "თქვენი ანგარიშის გამოყენება"
       ]
     },
     "new_plans: tooltip": {
@@ -10975,9 +10980,6 @@
       "Download to continue ${ size }": [
         "გასაგრძელებლად დარჩენილია ${ size }"
       ],
-      "Keep this plan and use ${ appName }": [
-        "ამ ტარიფის შენარჩუნება და ${ appName }-ის გამოყენება"
-      ],
       "Or ${ createANewAccount }": [
         "ან ${ createANewAccount }"
       ],
@@ -10987,14 +10989,8 @@
       "Start using ${ appName } now": [
         "${ appName }-ის გამოყენების დაწყება"
       ],
-      "Upgrade for only ${ relativePrice } extra per month": [
-        "აწიეთ ტარიფი თვეში სულ რაღაც ${ relativePrice } დამატებით"
-      ],
       "Upgrade my plan": [
         "ტარიფის გაუმჯობესება"
-      ],
-      "Use ${ free } instead": [
-        "${ free }-ის გამოყენება"
       ]
     },
     "pass_signup_2023: Feature": {
@@ -11104,9 +11100,6 @@
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "თუ თქვენი ${ BRAND_NAME }-ის ანგარიში დაგებლოკათ, თქვენი **აღდგენის დოკუმენტი** შესვლაში და თქვენი მონაცემების აღდგენაში დაგეხმარებათ."
       ],
-      "Includes basic ${ appName } features:": [
-        "შეიცავს ${ appName }-ის ძირითად ფუნქციებს:"
-      ],
       "Install ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ის დაყენება"
       ],
@@ -11124,6 +11117,9 @@
       ],
       "Launching ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ის გაშვება"
+      ],
+      "Limited time offer: Get ${ title } for free for 1 year!": [
+        "შეთავაზება შეზღუდული დროით: მიიღეთ ${ title }, უფასოდ 1 წლით!"
       ],
       "One easy subscription.": [
         "ერთი ადვილი გამოწერა"
@@ -11173,9 +11169,6 @@
       "Verifying your payment": [
         "თქვენი გადახდის შემოწმება"
       ],
-      "Welcome to ${ plan }": [
-        "კეთილი იყოს თქვენი მობრძანება ${ plan }-ში"
-      ],
       "Works on all devices": [
         "მუშაობს ყველა მოწყობილობაზე"
       ],
@@ -11190,11 +11183,6 @@
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "თქვენს ორგანიზაციას აქვს წვდომა ${ free }-სთან. თუ გნებავთ ${ appName }-ის ფასიან ფუნქციებთან წვდომაც, ტარიფის ასაწევად ორგანიზაციის ადმინისტრატორს დაუკავშირდით."
-      ]
-    },
-    "pass_signup_2023: Onboarding": {
-      "Welcome to ${ PASS_APP_NAME }": [
-        "კეთილი იყოს თქვენი მობრძანება ${ PASS_APP_NAME }-ში"
       ]
     },
     "pass_signup_2023: Title": {
@@ -12091,11 +12079,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "ეს გამოწერა მანამდე გაუქმდება ყოველ 2 წელიწადში ერთხელ იმავე სიხშირით, სანამ გააუქმებთ."
-      ]
-    },
-    "specialoffer: Info": {
-      "No available offers found.": [
-        "ხელმისაწვდომი შეთავაზების გარეშე."
       ]
     },
     "specialoffer: Label": {
@@ -13020,9 +13003,6 @@
       ],
       "Auto-reply": [
         "თვითმოპასუხე"
-      ],
-      "Auto-reply and forward": [
-        "ავტომატური პასუხი და გადამისამართება"
       ],
       "Automatically sign outgoing messages?": [
         "მოვაწერო ავტომატურად ხელი გამავალ შეტყობინებებზე?"
@@ -14308,11 +14288,6 @@
       ],
       "Your ${ selected } plan": [
         "თქვენი ტარიფი ${ selected }"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "წვდომა Secure core-ის სერვერებზე, სწრაფ P2P/BitTorrent-ით გადმოწერებზე და Tor-VPN-ის-ზემოდან, ორმაგი ჰოპი და სხვ."
       ]
     },
     "Warning": {

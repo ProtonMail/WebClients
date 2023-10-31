@@ -434,9 +434,6 @@
       "Sign out": [
         "Uitloggen"
       ],
-      "Sign up for free": [
-        "Gratis inschrijven"
-      ],
       "Signing in": [
         "Aanmelden"
       ],
@@ -717,6 +714,22 @@
         "Uw abonnement wordt aan het einde van uw factureringscyclus automatisch verlengd tegen het standaard aanbiedingstarief met bijbehorende tijdsduur."
       ]
     },
+    "bf2023: header": {
+      "Save with Black Friday deals on a high-speed Swiss VPN": [
+        "Bespaar met Black Friday-deals op supersnel Swiss VPN"
+      ],
+      "Select your Black Friday offer": [
+        "Selecteer uw Black Friday-aanbieding"
+      ]
+    },
+    "bf2023: info": {
+      "All premium ${ BRAND_NAME } services. One easy subscription.": [
+        "Alle premium ${ BRAND_NAME }-services. Eén simpel abonnement."
+      ],
+      "Secure browsing and premium VPN features.": [
+        "Veilig browsen en premium VPN-functies in."
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 dagen geld-terug-garantie"
@@ -747,11 +760,12 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Omzeil plaatselijke internetblokkades en censuur met ons wereldwijde serversnetwerk."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
-        "Ondersteuning voor ${ domains } aangepaste e-maildomeinen, ${ addresses } e-mailadressen, ${ aliases } hide-my-email-aliassen, gedeelde agenda's en meer."
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Ondersteuning voor 1 aangepast e-maildomein, 10 e-mailadressen, 10 hide-my-email-aliassen, gedeelde agenda's en meer."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Ondersteuning voor ${ domains } aangepaste e-maildomeinen, ${ addresses } e-mailadressen, een ongelimiteerd aantal hide-my-email-aliassen, gedeelde agenda's en meer."
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Ondersteuning voor 3 aangepaste e-maildomeinen, ${ addresses } e-mailadres, onbeperkt hide-my-email-aliassen, gedeelde agenda's en meer.",
+        "Ondersteuning voor 3 aangepaste e-maildomeinen, ${ addresses } e-mailadressen, onbeperkt hide-my-email-aliassen, gedeelde agenda's en meer."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
@@ -2792,10 +2806,6 @@
       "Additional options": [
         "Aanvullende opties"
       ],
-      "address": [
-        "adres",
-        "adressen"
-      ],
       "Admin account allocation": [
         "Toewijzing beheerdersaccount"
       ],
@@ -3157,9 +3167,6 @@
       ],
       "MM/YY": [
         "MM/JJ"
-      ],
-      "more": [
-        "meer"
       ],
       "Multi-user support not enabled.": [
         "Ondersteuning voor meerdere gebruikers niet ingeschakeld."
@@ -7384,11 +7391,6 @@
       ],
       "Your ${ selected } plan": [
         "Je ${ selected }-abonnement"
-      ]
-    },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Toegang tot Secure Core-servers, snelle P2P/BitTorrent-downloads, Tor over VPN, en meer."
       ]
     },
     "Warning": {

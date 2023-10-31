@@ -887,9 +887,6 @@
       "Sign out of all accounts": [
         "Sair de todas as contas"
       ],
-      "Sign up for free": [
-        "Registe-se gratuitamente"
-      ],
       "Signing in": [
         "A iniciar sessão"
       ],
@@ -1123,7 +1120,7 @@
         "Desativar"
       ],
       "Disable E2EE mail": [
-        "Desativar o e-mail E2E"
+        "Desativar o e-mail E2EE"
       ],
       "Disallow unsigned mail": [
         "Não permitir e-mails sem assinatura"
@@ -1141,7 +1138,7 @@
         "Gerar chaves em falta"
       ],
       "Saving": [
-        "Guardando"
+        "A guardar"
       ],
       "Set as default": [
         "Predefinir"
@@ -1167,7 +1164,7 @@
         "Chaves em falta"
       ],
       "No E2EE mail": [
-        "Correio eletrónico sem E2EE"
+        "E-mail sem E2EE"
       ],
       "Orphan": [
         "Órfão"
@@ -1188,16 +1185,16 @@
     },
     "Alias promotion": {
       "Get 10 aliases for free!": [
-        "Obtenha 10 pseudónimos grátis!"
+        "Obtenha 10 aliases grátis!"
       ],
       "Get unlimited aliases!": [
-        "Obtenha pseudónimos ilimitados!"
+        "Obtenha aliases ilimitados!"
       ],
       "Try ${ PASS_APP_NAME }": [
         "Experimente o ${ PASS_APP_NAME }"
       ],
       "With ${ PASS_APP_NAME } you can generate unique aliases to hide your identity and forward emails to your main inbox.": [
-        "Com ${ PASS_APP_NAME } pode gerar pseudónimos únicos para esconder a sua identidade e reencaminhar e-mails para a sua caixa de correio."
+        "Com ${ PASS_APP_NAME } pode gerar aliases únicos para esconder a sua identidade e reencaminhar e-mails para a sua caixa de correio."
       ]
     },
     "Alter": {
@@ -1273,7 +1270,7 @@
     },
     "Badge for user sessions table": {
       "Current session": [
-        "Sessão actual"
+        "Sessão atual"
       ]
     },
     "Baseline in trial plan": {
@@ -2727,10 +2724,10 @@
         "Erro na linha ${ erroredRowsString }."
       ],
       "It looks like your file is missing the '${ options.fieldName }' header.": [
-        "Parece que o seu arquivo não tem o cabeçalho '${ options.fieldName }'."
+        "Parece que o seu ficheiro não tem o cabeçalho '${ options.fieldName }'."
       ],
       "We detected errors in multiple rows during import, please review your CSV file.": [
-        "Detectámos erros em várias linhas durante a importação. Verifique o seu arquivo CSV."
+        "Detetámos erros em várias linhas durante a importação. Verifique o seu arquivo CSV."
       ]
     },
     "Cycle": {
@@ -2847,10 +2844,6 @@
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separe diferentes aspetos da sua vida com vários endereços de e-mail e desbloqueie mais recursos premium ao atualizar."
-      ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "O ficheiro deverá ter um tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter ${ MAX_IMPORT_CONTACTS_STRING } contacto. Se o seu ficheiro é maior, divida-o em ficheiros mais pequenos.",
-        "O ficheiro deverá ter um tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter ${ MAX_IMPORT_CONTACTS_STRING } contactos. Se o seu ficheiro é maior, divida-o em ficheiros mais pequenos."
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Para remover o ${ MAIL_APP_NAME } rodapé, atualize o seu plano para conseguir ainda mais funcionalidades premium."
@@ -3829,7 +3822,7 @@
         "Contacte ${ BRAND_NAME }"
       ],
       "Please ${ signIn } to resend a recovery email verification request.": [
-        "${ signIn } para reenviar um pedido de verificação de e-mail  de recuperação."
+        "${ signIn } para reenviar um pedido de verificação de e-mail de recuperação."
       ],
       "sign in": [
         "iniciar sessão"
@@ -3846,7 +3839,7 @@
     },
     "Error message, unsubscribe": {
       "Please ${ signIn } to update your email subscription preferences.": [
-        "${ signIn } para actualizar as preferências de subscrição por e-mail."
+        "${ signIn } para atualizar as preferências de subscrição por e-mail."
       ],
       "sign in": [
         "iniciar sessão"
@@ -4242,7 +4235,7 @@
         "Ocorreu um erro. Tente de novo."
       ],
       "Member updated": [
-        "O membro foi actualizado."
+        "O membro foi atualizado."
       ]
     },
     "familyOffer_2023:Title": {
@@ -5134,7 +5127,7 @@
         "Cancelada"
       ],
       "Canceling": [
-        "Cancelamento"
+        "A cancelar"
       ],
       "Completed": [
         "Concluída"
@@ -5435,10 +5428,6 @@
       ],
       "Additional options": [
         "Opções adicionais"
-      ],
-      "address": [
-        "endereço",
-        "endereços"
       ],
       "Admin account allocation": [
         "Alocação da conta do administrador"
@@ -6186,9 +6175,6 @@
       ],
       "Monthly ${ onDayString }": [
         "Mensalmente ${ onDayString }"
-      ],
-      "more": [
-        "mais"
       ],
       "Multi-user support not enabled.": [
         "Suporte a multi-utilizador não ativado."
@@ -8925,10 +8911,10 @@
         "Ativar ${ PROTON_SENTINEL_NAME }"
       ],
       "Enable advanced logs": [
-        "Ativar os diários avançados"
+        "Ativar os registos avançados"
       ],
       "Enable authentication logs": [
-        "Ativar os diários de autenticação"
+        "Ativar os registos de autenticação"
       ]
     },
     "Mail import summary": {
@@ -9838,14 +9824,6 @@
         "O seu plano selecionado: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilização da sua conta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Eliminar conta?"
@@ -9867,6 +9845,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Aceda a funcionalidades premium alterando a sua subscrição."
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilização da sua conta"
       ]
     },
     "new_plans: tooltip": {
@@ -10051,7 +10037,7 @@
         "Incluído com ${ plus }, ${ bundle } e ${ BRAND_NAME } for Business."
       ],
       "Included with multiple users ${ BRAND_NAME } for Business plans.": [
-        "Incluído com vários utilizadores ${ BRAND_NAME } para planos empresariais."
+        "Incluído com vários utilizadores ${ BRAND_NAME } para planos Business."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -10494,16 +10480,16 @@
     },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
-        "${ upgradeLink } para adicionar mais utilizadores ou remover algumas contas de utilizador para libertar espaço."
+        "${ upgradeLink } para adicionar mais utilizadores ou remova algumas contas de utilizador para libertar espaço."
       ],
       "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
         "${ upgradeLink } para obter mais contas ou remover o acesso VPN de alguns utilizadores."
       ],
       "${ upgradeLink } to get more addresses, or remove some addresses to free up space.": [
-        "${ upgradeLink } para obter mais endereços, ou remover alguns endereços para libertar espaço."
+        "${ upgradeLink } para obter mais endereços, ou remova alguns endereços para libertar espaço."
       ],
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
-        "${ upgradeLink } para obter mais armazenamento, ou remover algum armazenamento para libertar espaço."
+        "${ upgradeLink } para obter mais armazenamento, ou remova algum armazenamento para libertar espaço."
       ],
       "Your plan includes a maximum of ${ availableAddresses } more address.": [
         "O seu plano inclui um máximo de mais ${ availableAddresses } endereço.",
@@ -10565,9 +10551,6 @@
       "Download to continue ${ size }": [
         "Descarregar para continuar ${ size }"
       ],
-      "Keep this plan and use ${ appName }": [
-        "Mantenha este plano e utilize ${ appName }"
-      ],
       "Or ${ createANewAccount }": [
         "Ou ${ createANewAccount }"
       ],
@@ -10577,14 +10560,8 @@
       "Start using ${ appName } now": [
         "Começar a utilizar o ${ appName }"
       ],
-      "Upgrade for only ${ relativePrice } extra per month": [
-        "Melhore o seu plano por apenas ${ relativePrice } extra por mês."
-      ],
       "Upgrade my plan": [
         "Actualizar o meu plano"
-      ],
-      "Use ${ free } instead": [
-        "Utilizar ${ free } em vez disso"
       ]
     },
     "pass_signup_2023: Feature": {
@@ -10629,13 +10606,13 @@
         "O ${ PASS_APP_NAME } está disponível como uma extensão do Chrome Web Store."
       ],
       "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption.": [
-        "O ${ PASS_APP_NAME } mantém as suas palavras-passe e sua identidade seguras com rigorosa encriptação de ponta-a-ponta."
+        "O ${ PASS_APP_NAME } mantém as suas palavras-passe e a sua identidade seguras com rigorosa encriptação de ponta-a-ponta."
       ],
       "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
-        "O ${ PASS_APP_NAME } mantém as suas palavras-passe e a sua identidade seguras com rigorosa encriptação de ponta a ponta. Para adicionar funcionalidades premium do ${ PASS_APP_NAME_2 } à sua assinatura actual, nós sugerimos actualizar para o plano ${ upsellPlanName }."
+        "O ${ PASS_APP_NAME } mantém as suas palavras-passe e a sua identidade seguras com rigorosa encriptação de ponta a ponta. Para adicionar funcionalidades premium do ${ PASS_APP_NAME_2 } à sua assinatura atual, nós sugerimos atualizar para o plano ${ upsellPlanName }."
       ],
       "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
-        "O ${ PASS_APP_NAME } mantém as suas palavras-passe e a sua identidade seguras com rigorosa encriptação de ponta a ponta. O seu plano actual já dá acesso premium às funcionalidades do ${ PASS_APP_NAME_2 } — não é necessária uma nova compra."
+        "O ${ PASS_APP_NAME } mantém as suas palavras-passe e a sua identidade seguras com rigorosa encriptação de ponta a ponta. O seu plano atual já dá acesso premium às funcionalidades do ${ PASS_APP_NAME_2 } — não é necessária uma nova compra."
       ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } por mês"
@@ -10653,7 +10630,7 @@
         "Criação da sua conta"
       ],
       "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
-        "Descubre o ${ PASS_APP_NAME },${ br }: o nosso novo gestor de palavras-passe encriptadas"
+        "Descubra ${ PASS_APP_NAME },${ br }o nosso novo gestor de palavras-passe encriptadas"
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
         "Descarregue e instale as aplicações relevantes e as suas extensões para começar a utilizar o ${ PASS_APP_NAME }"
@@ -10688,9 +10665,6 @@
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "Se não conseguir entrar na sua conta da ${ BRAND_NAME }, o seu **kit de recuperação** permitirá que inicia sessão e recupere os seus dados."
       ],
-      "Includes basic ${ appName } features:": [
-        "Inclui as funcionalidades básicas do ${ appName }:"
-      ],
       "Install ${ PASS_APP_NAME }": [
         "Instalar o ${ PASS_APP_NAME }"
       ],
@@ -10716,13 +10690,13 @@
         "Código aberto e auditado"
       ],
       "per month, billed annually": [
-        "por mês, pago anualmente"
+        "por mês, faturado anualmente"
       ],
       "per month, billed every month": [
-        "por mês, pago a cada mês"
+        "por mês, faturado a cada mês"
       ],
       "per month, billed every two years": [
-        "por mês com faturação a cada dois anos"
+        "por mês, faturado a cada dois anos"
       ],
       "Preparing your Recovery Kit": [
         "Preparação do kit de recuperação"
@@ -10754,9 +10728,6 @@
       "Verifying your payment": [
         "Verificação do seu pagamento"
       ],
-      "Welcome to ${ plan }": [
-        "Boas-vindas ao ${ plan }"
-      ],
       "Works on all devices": [
         "Funciona em todos os dispositivos"
       ],
@@ -10764,15 +10735,10 @@
         "Já tem acesso a funcionalidades premium do ${ appName } - não precisa de comprar novamente."
       ],
       "You currently have": [
-        "Tem actualmente"
+        "Tem atualmente"
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "A sua organização tem acesso a ${ free }. Se deseja acesso a funcionalidades premium do ${ appName }, solicite a atualização ao administrador da sua organização."
-      ]
-    },
-    "pass_signup_2023: Onboarding": {
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Boas-vindas ao ${ PASS_APP_NAME }"
       ]
     },
     "pass_signup_2023: Title": {
@@ -11101,10 +11067,10 @@
         "Alterar a palavra-passe da organização"
       ],
       "Creating new users": [
-        "A criar usuários"
+        "A criar utilizadores"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
-        "Devido a uma alteração de palavra-passe, os privilégios de administrador da sua organização foram restringidos. As seguintes acções já não são permitidas:"
+        "Devido a uma alteração de palavra-passe, os privilégios de administrador da sua organização foram restringidos. As seguintes ações já não são permitidas:"
       ],
       "Reading emails of non-private users": [
         "Ler e-mails de utilizadores não privados"
@@ -11359,7 +11325,7 @@
         "Conclua a transição para a privacidade com as nossas ferramentas de importação seguras."
       ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
-        "Mantenha a sua caixa de entrada organizada com pastas e tiquetas. ${ learnMoreLink }"
+        "Mantenha a sua caixa de entrada organizada com pastas e etiquetas. ${ learnMoreLink }"
       ]
     },
     "Settings section title": {
@@ -11569,11 +11535,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Esta subscrição será renovada automaticamente a cada 2 anos ao mesmo preço até ser cancelada."
-      ]
-    },
-    "specialoffer: Info": {
-      "No available offers found.": [
-        "Não há ofertas disponíveis."
       ]
     },
     "specialoffer: Label": {
@@ -13572,7 +13533,7 @@
     },
     "Tooltip prompt to trust keys": {
       "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "Ao receber e-mail  de utilizadores do ${ MAIL_APP_NAME } sem chaves confiadas em seus contactos, terá de confirmar que pretende ativar as chaves confiadas."
+        "Ao receber e-mail de utilizadores do ${ MAIL_APP_NAME } sem chaves confiadas nos seus contactos, terá de confirmar que pretende ativar as chaves confiadas."
       ]
     },
     "Tooltip sign external messages": {
@@ -13609,7 +13570,7 @@
     },
     "Upgrade": {
       "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "Actualize para ${ passPlusPlanName } para obter aliases Hide-my-email ilimitados."
+        "Atualize para ${ passPlusPlanName } para obter aliases Hide-my-email ilimitados."
       ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Actualize para ${ planName } para puder ligar até ${ n } dispositivo à VPN ao mesmo tempo.",
@@ -13745,11 +13706,6 @@
         "O seu plano ${ selected }"
       ]
     },
-    "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Acesso a servidores Secure Core, transferências P2P/BitTorrent rápidas, Tor sobre VPN, Double hop, e mais."
-      ]
-    },
     "VPNClient": {
       "iOS": [
         "iOS"
@@ -13846,7 +13802,7 @@
         "Após uma verificação bem sucedida, não remova o registo TXT, uma vez que ele é necessário para confirmar que continua a deter o domínio."
       ],
       "It can take up to a day for DNS changes to update.": [
-        "Pode demorar até um dia para que as alterações de DNS sejam actualizadas."
+        "Pode demorar até um dia para que as alterações de DNS sejam atualizadas."
       ]
     },
     "Weak personal key warning": {

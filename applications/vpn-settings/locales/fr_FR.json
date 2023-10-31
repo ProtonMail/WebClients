@@ -302,6 +302,9 @@
       "Open navigation": [
         "Ouvrir la navigation"
       ],
+      "Or": [
+        "Ou"
+      ],
       "Organization": [
         "Organisation"
       ],
@@ -440,8 +443,8 @@
       "Sign out": [
         "Se déconnecter"
       ],
-      "Sign up for free": [
-        "Inscrivez-vous gratuitement"
+      "sign up for free": [
+        "inscrivez-vous gratuitement"
       ],
       "Signing in": [
         "Connexion en cours"
@@ -723,6 +726,22 @@
         "Votre abonnement sera automatiquement renouvelé au tarif réduit habituel et pour une durée standard à la fin de votre cycle de facturation."
       ]
     },
+    "bf2023: header": {
+      "Save with Black Friday deals on a high-speed Swiss VPN": [
+        "Faites des économies sur le VPN suisse ultra rapide grâce aux offres Black Friday"
+      ],
+      "Select your Black Friday offer": [
+        "Sélectionnez votre offre Black Friday"
+      ]
+    },
+    "bf2023: info": {
+      "All premium ${ BRAND_NAME } services. One easy subscription.": [
+        "Tous les services premium de ${ BRAND_NAME } avec un seul abonnement."
+      ],
+      "Secure browsing and premium VPN features.": [
+        "Navigation sécurisée et fonctionnalités premium du VPN."
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "Garantie satisfait ou remboursé pendant 30 jours"
@@ -738,6 +757,9 @@
       ],
       "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
         "Le tarif réduit de ${ discountedPrice } est valable pendant ${ discountedMonths }. Ensuite, il sera automatiquement renouvelé au prix réduit de ${ nextPrice } pour ${ nextMonths }. Vous pouvez annuler quand vous le voulez."
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
+        "Le tarif exceptionnellement réduit de ${ discountedPrice } est valable le premier mois. Il sera ensuite automatiquement renouvelé à ${ nextPrice } chaque mois. Vous pouvez annuler quand vous le voulez."
       ]
     },
     "bf2023: Tooltip": {
@@ -750,11 +772,12 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Contournez les blocages et la censure locale sur internet grâce à notre réseau mondial de serveurs."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
-        "Comprend la prise en charge de ${ domains } domaine de messagerie personnalisé, ${ addresses } adresses e-mail, ${ aliases } alias « hide-my-email », le partage de calendrier et bien d'autres fonctionnalités."
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Comprend la prise en charge de 1 domaine de messagerie personnalisé, de 10 adresses e-mail, d'un nombre illimité d'alias « hide-my-email », du partage de calendriers et bien d'autres fonctionnalités."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Comprend la prise en charge de ${ domains } domaine de messagerie personnalisé, ${ addresses } adresses e-mail, un nombre illimité d'alias « hide-my-email », le partage de calendrier et bien d'autres fonctionnalités."
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Cela comprend la prise en charge de 3 domaines de messagerie personnalisés, de ${ addresses } adresse e-mail, d'un nombre illimité d'alias « hide-my-email », du partage de calendriers et bien d'autres fonctionnalités.",
+        "Cela comprend la prise en charge de 3 domaines de messagerie personnalisés, de ${ addresses } adresses e-mail, d'un nombre illimité d'alias « hide-my-email », du partage de calendriers et bien d'autres fonctionnalités."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Sécurisez vos connexions sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
@@ -2692,6 +2715,10 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } adresse",
+        "${ amountOfAddresses } adresses"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } a besoin de votre autorisation pour ${ enableDesktopNotifications }."
       ],
@@ -2721,12 +2748,23 @@
         "${ number } serveur",
         "${ number } serveurs"
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "L'abonnement ${ plan } a été supprimé. L'offre groupée n'est pas disponible pour un abonnement d'un mois."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } nécessite au moins un serveur dédié ${ serverPricePerMonth }."
       ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "Configuration en cours pour ${ provisioningCounter } serveur. Cela prend généralement environ ${ provisioningDuration }.",
         "Configuration en cours pour ${ provisioningCounter } serveurs. Cela prend généralement environ ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } de plus",
+        "${ remainingAddresses.length } de plus"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length } adresse de plus",
+        "${ remainingAddresses.length } adresses de plus"
       ],
       "${ storage } storage": [
         "${ storage } d'espace de stockage"
@@ -2802,10 +2840,6 @@
       "Additional options": [
         "Options supplémentaires"
       ],
-      "address": [
-        "adresse",
-        "adresses"
-      ],
       "Admin account allocation": [
         "Attribution de compte administrateur"
       ],
@@ -2877,6 +2911,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Avant de pouvoir envoyer et recevoir des messages avec vos nouvelles adresses, vous devez leur créer des clés de chiffrement."
+      ],
+      "Billed at ${ price }": [
+        "Facturé ${ price }"
       ],
       "Billing cycle: ${ text }": [
         "Cycle de facturation : ${ text }"
@@ -3168,9 +3205,6 @@
       "MM/YY": [
         "MM/AA"
       ],
-      "more": [
-        "plus"
-      ],
       "Multi-user support not enabled.": [
         "La prise en charge du multi-utilisateur n'est pas activée."
       ],
@@ -3346,6 +3380,9 @@
       ],
       "Revoke certificate ${ name }": [
         "Révoquer le certificat ${ name }"
+      ],
+      "Save ${ percentage }": [
+        "Économisez ${ percentage }"
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Enregistrez votre mot de passe en lieu sûr. Cliquez sur l'icône pour confirmer que vous avez correctement tapé votre mot de passe."
@@ -7403,8 +7440,8 @@
       ]
     },
     "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Accès aux serveurs Secure Core, téléchargements P2P/BitTorrent rapides, Tor via VPN, Double Hop et bien d'autres fonctionnalités."
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Accès aux serveurs Secure Core, téléchargements P2P/BitTorrent rapides, Tor via VPN et bien d'autres fonctionnalités."
       ]
     },
     "Warning": {

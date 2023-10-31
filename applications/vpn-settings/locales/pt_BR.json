@@ -302,6 +302,9 @@
       "Open navigation": [
         "Abrir navegação"
       ],
+      "Or": [
+        "Ou"
+      ],
       "Organization": [
         "Organização"
       ],
@@ -440,8 +443,8 @@
       "Sign out": [
         "Encerrar sessão"
       ],
-      "Sign up for free": [
-        "Cadastre-se gratuitamente"
+      "sign up for free": [
+        "cadastre-se gratuitamente"
       ],
       "Signing in": [
         "Iniciando sessão"
@@ -723,6 +726,22 @@
         "Sua assinatura será renovada automaticamente, com desconto da taxa e da duração padrão, ao final do seu ciclo de faturamento."
       ]
     },
+    "bf2023: header": {
+      "Save with Black Friday deals on a high-speed Swiss VPN": [
+        "Economize em VPN suíça de alta velocidade com as ofertas de Black Friday"
+      ],
+      "Select your Black Friday offer": [
+        "Selecione sua oferta de Black Friday"
+      ]
+    },
+    "bf2023: info": {
+      "All premium ${ BRAND_NAME } services. One easy subscription.": [
+        "Todos os serviços premium da ${ BRAND_NAME } com uma assinatura fácil."
+      ],
+      "Secure browsing and premium VPN features.": [
+        "Navegação segura e recursos de VPN premium."
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "Garantia de devolução do seu dinheiro por até 30 dias"
@@ -753,11 +772,12 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Ignore os bloqueios locais da Internet e a censura com nossa rede global de servidores."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
-        "Inclui suporte para ${ domains } domínios de e-mail personalizados, ${ addresses } endereços de e-mail, ${ aliases } aliases ilimitados do hide-my-email, compartilhamento de calendário e muito mais."
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Inclui suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases do hide-my-email, compartilhamento de calendário e muito mais."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Inclui suporte para ${ domains } domínios de e-mail personalizados, ${ addresses } endereços de e-mail, aliases ilimitados do hide-my-email, compartilhamento de calendário e muito mais."
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Inclui suporte para 3 domínios de e-mail personalizados, ${ addresses } endereço de e-mail, aliases ilimitados do hide-my-email, compartilhamento de calendário e muito mais.",
+        "Inclui suporte para 3 domínios de e-mail personalizados, ${ addresses } endereços de e-mail, aliases ilimitados do hide-my-email, compartilhamento de calendário e muito mais."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Logins seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
@@ -2695,6 +2715,10 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } endereço",
+        "${ amountOfAddresses } endereços"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
@@ -2730,6 +2754,10 @@
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } servidor ainda está sendo configurado. Isso geralmente leva cerca de ${ provisioningDuration }.",
         "${ provisioningCounter } servidores ainda estão sendo configurados. Isso geralmente leva cerca de ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } a mais",
+        "${ remainingAddresses.length } a mais"
       ],
       "${ storage } storage": [
         "${ storage } de armazenamento"
@@ -2804,10 +2832,6 @@
       ],
       "Additional options": [
         "Opções adicionais"
-      ],
-      "address": [
-        "endereço",
-        "endereços"
       ],
       "Admin account allocation": [
         "Alocação da conta do administrador"
@@ -3171,9 +3195,6 @@
       "MM/YY": [
         "MM/AA"
       ],
-      "more": [
-        "mais"
-      ],
       "Multi-user support not enabled.": [
         "Suporte a múltiplos usuários desativado."
       ],
@@ -3352,6 +3373,9 @@
       ],
       "Revoke certificate ${ name }": [
         "Revogar certificado ${ name }"
+      ],
+      "Save ${ percentage }": [
+        "Economize ${ percentage }"
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Guarde sua senha em um lugar seguro. Clique no ícone para confirmar que digitou sua senha corretamente."
@@ -4556,7 +4580,7 @@
         "Criar uma conta no ${ appName }"
       ],
       "Find your ${ BRAND_NAME } Account username": [
-        "Encontre seu nome de usuário ${ BRAND_NAME }."
+        "Encontrar seu nome de usuário da ${ BRAND_NAME }."
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Esqueceu sua senha da conta ${ BRAND_NAME }? Redefina-a aqui usando um código de recuperação, e-mail ou SMS e recupere seu acesso aos serviços ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, e muito mais."
@@ -7127,7 +7151,7 @@
         "Inicie sessão para participar do programa Beta"
       ],
       "Sign in to your organization": [
-        "Inicie sessão na sua organização."
+        "Iniciar sessão na sua organização."
       ],
       "Sign in with 2FA": [
         "Iniciar sessão com A2F"
@@ -7297,7 +7321,7 @@
     },
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
-        "${ PASS_APP_NAME }: Logins seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
+        "${ PASS_APP_NAME }: Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
       ]
     },
     "Tor out of date": {
@@ -7421,8 +7445,8 @@
       ]
     },
     "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Acesso a servidores Secure Core, downloads rápidos P2P/BitTorrent, Tor over VPN, Double hop, e mais."
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Acesso a servidores Secure Core, downloads rápidos P2P/BitTorrent, Tor over VPN, e mais."
       ]
     },
     "VPNClient": {

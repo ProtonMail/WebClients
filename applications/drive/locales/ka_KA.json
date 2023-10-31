@@ -1862,10 +1862,6 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "დაზოგეთ დრო მოსაწვევი ელფოსტების ბევრისთვის ერთდროულად დაგზავნით, ფასიანი თვისებით, ერთ-ერთით, მრავალთა შორის. ასწიეთ სატარიფო გეგმა დღესვე."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "ფაილის მაქსიმალური ზომაა ${ MAX_IMPORT_FILE_SIZE_STRING } და შეიძლება, ${ MAX_IMPORT_CONTACTS_STRING }-მდე კონტაქტს შეიცავდეს. თუ თქვენი ფაილი უფრო დიდია, სცადეთ, ის უფრო პატარა ფაილებად დახლიჩოთ.",
-        "ფაილის მაქსიმალური ზომაა ${ MAX_IMPORT_FILE_SIZE_STRING } და შეიძლება, შეიცავდეს ${ MAX_IMPORT_CONTACTS_STRING }-მდე კონტაქტს. თუ თქვენი ფაილი უფრო დიდია, სცადეთ, ის უფრო პატარა ფაილებად დახლიჩოთ."
-      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "გადაათრიეთ და ისე დაალაგეთ პრიორიტეტები კონტაქტებს შორის. ნუ შემოიტანთ კონტაქტებს, რომლის შერწყმაც არ გსურთ."
       ],
@@ -2709,6 +2705,9 @@
       ],
       "MB": [
         "მბ"
+      ],
+      "TB": [
+        "ტბ"
       ]
     },
     "file size format, long": {
@@ -2727,6 +2726,10 @@
       "Megabyte": [
         "მეგაბაიტი",
         "მეგაბაიტი"
+      ],
+      "Terabyte": [
+        "ტერაბაიტი",
+        "ტერაბაიტი"
       ]
     },
     "Filter notification": {
@@ -3170,9 +3173,6 @@
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
         "მონიშნულია ${ selectedContactsLength }/${ contactsLength } კონტაქტი",
         "მონიშნულია ${ selectedContactsLength }/${ contactsLength } კონტაქტი"
-      ],
-      "${ selectedCount } selected": [
-        "მონიშნულია ${ selectedCount }"
       ],
       "${ selectedFoldersCount } folder selected": [
         "მონიშნულია ${ selectedFoldersCount } საქაღალდე",
@@ -5815,8 +5815,8 @@
       ]
     },
     "Storage": {
-      "Get storage": [
-        "მიიღეთ მეტი ადგილი"
+      "Get more storage": [
+        "მიიღეთ მეტი საცავი"
       ],
       "Release notes": [
         "რელიზის შენიშვნები"

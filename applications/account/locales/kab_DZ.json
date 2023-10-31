@@ -866,9 +866,6 @@
       "Sign out of all accounts": [
         "Ffeɣ seg meṛṛa imiḍanen"
       ],
-      "Sign up for free": [
-        "Jerred baṭel"
-      ],
       "Signing in": [
         "Tuqqna"
       ],
@@ -2620,10 +2617,6 @@
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Akka d-yettban tabdart n yinermisen i d-tketreḍ deg-s kra n yigrawen. Ttxil-k·m senqed amek i ilaq ad d-ttwaktaren yigrawen-a."
-      ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Afaylu ilaq ad yesɛu deg teɣzi taddayt ${ MAX_IMPORT_FILE_SIZE_STRING } yerna ad yesɛu ugar n ${ MAX_IMPORT_CONTACTS_STRING } n unermis. Ma yella afaylu-inek·inem meqqar aṭas, ttxil-k·m bḍu-t ɣef yifuyla imeẓẓyanen.",
-        "Afaylu ilaq ad yesɛu deg teɣzi taddayt ${ MAX_IMPORT_FILE_SIZE_STRING } yerna ad yesɛu ugar n ${ MAX_IMPORT_CONTACTS_STRING } yinermisen. Ma yella afaylu-inek·inem meqqar aṭas, ttxil-k·m bḍu-t ɣef yifuyla imeẓẓyanen."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Tzemreḍ ad d-tketreḍ tidyanin s umasal (afaylu ICS).\nAfaylu ilaq ad yesɛu teɣzi tafellayt n ${ MAX_IMPORT_FILE_SIZE_STRING } rnu ad yili deg-s alamma ${ MAX_IMPORT_EVENTS_STRING } n tedyanin.\nMa yella afaylu-inek·inem meqqar aṭas, ttxil-k·m bḍu-t d ifuyla meẓẓiyen."
@@ -4683,10 +4676,6 @@
       "Additional options": [
         "Tixtiṛiyin-nniḍen"
       ],
-      "address": [
-        "tansa",
-        "tansiwin"
-      ],
       "Align left": [
         "Reyyec s azelmad"
       ],
@@ -5254,9 +5243,6 @@
       ],
       "Monthly ${ onDayString }": [
         "Yal ayyur ${ onDayString }"
-      ],
-      "more": [
-        "ugar"
       ],
       "Multi-user support not enabled.": [
         "Tallelt n ddeqs n yiseqdacen ur termid ara."
@@ -8120,14 +8106,6 @@
         "Tferneḍ aɣawas-a: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Aneɛruḍ n ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Aseqdac-ik n umiḍan"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Kkes amiḍan?"
@@ -8137,6 +8115,14 @@
       ],
       "Switch plans?": [
         "Beddel iɣawasen?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Aneɛruḍ n ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Aseqdac-ik n umiḍan"
       ]
     },
     "new_plans: tooltip": {
@@ -8571,9 +8557,6 @@
       "Download to continue ${ size }": [
         "Sader i wakken ad tkemmleḍ ${ size }"
       ],
-      "Keep this plan and use ${ appName }": [
-        "Ṭṭef deg uɣawas-a syen seqdec ${ appName }"
-      ],
       "Or ${ createANewAccount }": [
         "Neɣ ${ createANewAccount }"
       ],
@@ -8585,9 +8568,6 @@
       ],
       "Upgrade my plan": [
         "Leqqem aɣawas-iw"
-      ],
-      "Use ${ free } instead": [
-        "Seqdec ${ free } deg ubdil"
       ]
     },
     "pass_signup_2023: Feature": {
@@ -8682,19 +8662,11 @@
       "Verifying your payment": [
         "Asefqed n lexlaṣ-ik•im"
       ],
-      "Welcome to ${ plan }": [
-        "Ansuf ɣer ${ plan }"
-      ],
       "Works on all devices": [
         "Iteddu ɣef meṛṛa ibenkan"
       ],
       "You currently have": [
         "Amultaɣ-ik tura"
-      ]
-    },
-    "pass_signup_2023: Onboarding": {
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Ansuf ɣer ${ PASS_APP_NAME }"
       ]
     },
     "pass_signup_2023: Title": {
@@ -9211,11 +9183,6 @@
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
         "Anezdi-a ad yettwales s yimek awurman seg-a yal sin n yiseggasen yernu s yiwen n watig arma d asmi ara yettwasemmet."
-      ]
-    },
-    "specialoffer: Info": {
-      "No available offers found.": [
-        "Ulac ayen i d-yettwamudden."
       ]
     },
     "specialoffer: Label": {

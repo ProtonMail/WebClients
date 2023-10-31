@@ -2097,10 +2097,6 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "დაზოგეთ დრო მოსაწვევი ელფოსტების ბევრისთვის ერთდროულად დაგზავნით, ფასიანი თვისებით, ერთ-ერთით, მრავალთა შორის. ასწიეთ სატარიფო გეგმა დღესვე."
       ],
-      "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "ფაილის მაქსიმალური ზომაა ${ MAX_IMPORT_FILE_SIZE_STRING } და შეიძლება, ${ MAX_IMPORT_CONTACTS_STRING }-მდე კონტაქტს შეიცავდეს. თუ თქვენი ფაილი უფრო დიდია, სცადეთ, ის უფრო პატარა ფაილებად დახლიჩოთ.",
-        "ფაილის მაქსიმალური ზომაა ${ MAX_IMPORT_FILE_SIZE_STRING } და შეიძლება, შეიცავდეს ${ MAX_IMPORT_CONTACTS_STRING }-მდე კონტაქტს. თუ თქვენი ფაილი უფრო დიდია, სცადეთ, ის უფრო პატარა ფაილებად დახლიჩოთ."
-      ],
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "ამას რამდენიმე წუთი შეიძლება, დასჭირდეს. კალენდრით სარგებლობა ჩვეულებრივ შეგიძლიათ."
       ],
@@ -2342,6 +2338,9 @@
       ],
       "Event not found": [
         "მოვლენა ნაპოვნი არაა"
+      ],
+      "Failed to get event": [
+        "მოვლენის მიღება ჩავარდა"
       ],
       "Failed to get original occurrence in series": [
         "საწყისი მოხდენის სერიებად მიღების შეცდომა"
@@ -3106,6 +3105,9 @@
       ],
       "MB": [
         "მბ"
+      ],
+      "TB": [
+        "ტბ"
       ]
     },
     "file size format, long": {
@@ -3124,6 +3126,10 @@
       "Megabyte": [
         "მეგაბაიტი",
         "მეგაბაიტი"
+      ],
+      "Terabyte": [
+        "ტერაბაიტი",
+        "ტერაბაიტი"
       ]
     },
     "Filter notification": {

@@ -144,7 +144,7 @@
         "Disabilita"
       ],
       "Discard": [
-        "Elimina"
+        "Annulla"
       ],
       "Don't know your password?": [
         "Non sai la password?"
@@ -213,7 +213,7 @@
         "Esplora gli altri piani di ${ BRAND_NAME }"
       ],
       "Extend": [
-        "Estesa"
+        "Estendi"
       ],
       "Fit to window": [
         "Adatta alla finestra"
@@ -301,6 +301,9 @@
       ],
       "Open navigation": [
         "Apri navigazione"
+      ],
+      "Or": [
+        "O"
       ],
       "Organization": [
         "Organizzazione"
@@ -432,7 +435,7 @@
         "Accedi"
       ],
       "Sign in with password": [
-        "Accedi con la password"
+        "Accedi con password"
       ],
       "Sign in with SSO": [
         "Accedi con SSO"
@@ -440,8 +443,8 @@
       "Sign out": [
         "Disconnetti"
       ],
-      "Sign up for free": [
-        "Registrati gratuitamente"
+      "sign up for free": [
+        "registrati gratuitamente"
       ],
       "Signing in": [
         "Accesso"
@@ -723,6 +726,22 @@
         "Alla fine del ciclo di fatturazione l'abbonamento si rinnoverà automaticamente con lo sconto e la durata standard."
       ]
     },
+    "bf2023: header": {
+      "Save with Black Friday deals on a high-speed Swiss VPN": [
+        "Per il Black Friday hai una VPN svizzera ad alta velocità a prezzo scontato"
+      ],
+      "Select your Black Friday offer": [
+        "Seleziona l'offerta del Black Friday"
+      ]
+    },
+    "bf2023: info": {
+      "All premium ${ BRAND_NAME } services. One easy subscription.": [
+        "Tutti i servizi premium di ${ BRAND_NAME }. Un semplice abbonamento."
+      ],
+      "Secure browsing and premium VPN features.": [
+        "Navigazione sicura e funzionalità VPN premium."
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "Garanzia 30 giorni soddisfatti o rimborsati"
@@ -753,11 +772,12 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Aggira i blocchi e la censura a internet imposti dai singoli Paesi grazie alla nostra rete globale di server."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, ${ aliases } hide-my-email aliases, calendar sharing, and more.": [
-        "Sono inclusi: supporto per ${ domains } dominio email personalizzato, ${ addresses } indirizzi email, ${ aliases } alias hide-my-email, condivisione del calendario e altro ancora."
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Include il supporto per 1 dominio email personalizzato, 10 indirizzi email, 10 alias hide-my-email, condivisione del calendario e altro ancora."
       ],
-      "Includes support for ${ domains } custom email domain, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Sono inclusi: supporto per ${ domains } dominio email personalizzato, ${ addresses } indirizzi email, alias hide-my-email illimitati, condivisione del calendario e altro ancora."
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Include il supporto per 3 domini email personalizzati, ${ addresses } indirizzo email, alias hide-my-email illimitati, condivisione del calendario e altro ancora.",
+        "Include il supporto per 3 domini email personalizzati, ${ addresses } indirizzi email, alias hide-my-email illimitati, condivisione del calendario e altro ancora."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Login sicuri su tutti i tuoi dispositivi. Include alias illimitati, condivisione, 2FA integrato e molto altro."
@@ -812,7 +832,7 @@
         "Problema con l'applicazione"
       ],
       "Bridge problem": [
-        "Problema con il Bridge"
+        "Problema con Bridge"
       ],
       "Calendar problem": [
         "Problema con il calendario"
@@ -821,13 +841,13 @@
         "Problema di connessione"
       ],
       "Contacts problem": [
-        "Problemi ai Contatti"
+        "Problema con i contatti"
       ],
       "Custom domain problem": [
-        "Problema del dominio personalizzato"
+        "Problema con un dominio personalizzato"
       ],
       "Drive problem": [
-        "Problema di memoria"
+        "Problema con Drive"
       ],
       "Feature request": [
         "Richiedi Funzionalità"
@@ -839,7 +859,7 @@
         "Problema d'installazione"
       ],
       "Mail problem": [
-        "Problema con la posta"
+        "Problema con Mail"
       ],
       "Manual setup problem": [
         "Problema di configurazione manuale"
@@ -848,10 +868,10 @@
         "Altro"
       ],
       "Pass problem": [
-        "Problema con Proton Pass"
+        "Problema con Pass"
       ],
       "Payments problem": [
-        "Problemi coi pagamenti"
+        "Problema con i pagamenti"
       ],
       "Sign in problem": [
         "Problema di accesso"
@@ -875,7 +895,7 @@
         "Problema con l'aggiornamento"
       ],
       "VPN problem": [
-        "Problema con il VPN"
+        "Problema con VPN"
       ],
       "Website access problem": [
         "Problema di accesso al sito web"
@@ -2261,7 +2281,7 @@
         "Hai aderito al piano Family"
       ],
       "You need to configure a custom domain before creating a new user.": [
-        "Per creare un nuovo utente devi prima configurare un dominio personalizzato."
+        "Devi configurare un dominio personalizzato prima di creare un nuovo utente."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Hai ricevuto un invito a collegare il tuo account ${ BRAND_NAME } a questo piano collettivo, per beneficiare insieme di tutte le funzioni premium di ${ BRAND_NAME_TWO }."
@@ -2412,8 +2432,8 @@
         "Aggiungi (${ numberOfAddedServers })"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
-        "Connessione fino a ${ plusVpnConnections } dispositivo",
-        "Connessione fino a ${ plusVpnConnections } dispositivi"
+        "Connessione per ${ plusVpnConnections } dispositivo",
+        "Connessione per ${ plusVpnConnections } dispositivi"
       ],
       "Fastest VPN servers": [
         "Server VPN più veloci"
@@ -2695,6 +2715,10 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } indirizzo",
+        "${ amountOfAddresses } indirizzi"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } ha bisogno della tua autorizzazione per ${ enableDesktopNotifications }."
       ],
@@ -2714,7 +2738,7 @@
         "${ fileName }: anteprima a bassa risoluzione"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } può anche essere usato con una sola password, la quale sostituisce sia la password d'accesso che quella della casella di posta. Per passare alla modalità ad una password, inserisci la password desiderata e fai clic su Salva."
+        "${ MAIL_APP_NAME } può anche essere usato con una singola password, la quale sostituisce sia la password di accesso sia quella della casella di posta. Per passare alla modalità a singola password, inserisci la password che desideri e clicca su Salva."
       ],
       "${ number } city": [
         "${ number } città",
@@ -2724,12 +2748,23 @@
         "${ number } server",
         "${ number } server"
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "${ plan } rimosso. Pacchetto offerta non disponibile su un piano di 1 mese."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } richiede almeno 1 server dedicato ${ serverPricePerMonth }"
       ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } server è ancora in fase di configurazione. Questa operazione richiede solitamente circa ${ provisioningDuration }.",
         "${ provisioningCounter } server sono ancora in fase di configurazione. Questa operazione richiede solitamente circa ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } altro",
+        "altri ${ remainingAddresses.length }"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length } altro indirizzo",
+        "altri ${ remainingAddresses.length } indirizzi"
       ],
       "${ storage } storage": [
         "${ storage } di archiviazione"
@@ -2764,7 +2799,7 @@
         "Garanzia di rimborso entro 30 giorni"
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
-        "Un nome che aiuti a ricordarne l'utilizzo, in modo da facilitare la revoca o l'estensione in un secondo momento."
+        "Un nome che ti aiuta a identificare dove viene usato, in modo che potrai revocarlo o estenderlo in futuro."
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un numero di telefono può essere utilizzato solo per verificare un account ${ BRAND_NAME }"
@@ -2805,10 +2840,6 @@
       "Additional options": [
         "Opzioni aggiuntive"
       ],
-      "address": [
-        "indirizzo",
-        "indirizzi"
-      ],
       "Admin account allocation": [
         "Allocazione dell'account amministratore"
       ],
@@ -2846,7 +2877,7 @@
         "Sei sicuro di voler disabilitare l'autenticazione a due fattori?"
       ],
       "Are you sure you want to discard your changes?": [
-        "Vuoi davvero ignorare le modifiche?"
+        "Sei sicuro di voler annullare le modifiche?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Sei sicuro di voler rimuovere i privilegi amministrativi a questo utente?"
@@ -2864,7 +2895,7 @@
         "Saldo del tuo abbonamento precedente"
       ],
       "Basic, Plus or Visionary subscription required": [
-        "Abbonamento Base, Plus o Visionary richiesto"
+        "Abbonamento Basic, Plus o Visionary richiesto"
       ],
       "Be sure to copy your password and store it somewhere safe.": [
         "Assicurati di copiare la tua password e di conservarla in un luogo sicuro."
@@ -2880,6 +2911,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Prima di iniziare a inviare e ricevere email dai tuoi nuovi indirizzi devi creare le loro chiavi di crittografia."
+      ],
+      "Billed at ${ price }": [
+        "Addebitato a ${ price }"
       ],
       "Billing cycle: ${ text }": [
         "Ciclo di fatturazione: ${ text }"
@@ -2971,10 +3005,10 @@
         "Scarica oggi stesso la tua app preferita e porta la privacy con te ovunque tu vada."
       ],
       "Each code can only be used once": [
-        "Ogni codice può essere utilizzato una sola volta"
+        "Ogni codice può essere usato una sola volta"
       ],
       "Edit email address": [
-        "Modifica indirizzo email"
+        "Modifica l'indirizzo email"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "L'hosting di posta elettronica per 10 nomi di dominio di posta elettronica personalizzati è incluso gratuitamente. È possibile aggiungere ulteriori domini per ${ price }."
@@ -3085,7 +3119,7 @@
         "Se non hai mai usato l'autenticazione a 2 fattori prima, ti raccomandiamo fortemente ${ guideButton }."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
-        "Se perdi il tuo dispositivo abilitato a due fattori, questi codici possono essere utilizzati al posto del codice di autenticazione a due fattori a 6 cifre per accedere al tuo account. Ogni codice può essere utilizzato una sola volta."
+        "Se perdi il tuo dispositivo abilitato al secondo fattore, questi codici possono essere usati al posto del codice di 6 cifre dell'autenticazione a due fattori per accedere al tuo account. Ogni codice può essere usato una sola volta."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Se procedi con il downgrade, perderai l'accesso alle funzionalità a pagamento di ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
@@ -3112,16 +3146,16 @@
         "Aumenta la sicurezza del tuo account verificando il tuo indirizzo email."
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
-        "Installa un file di configurazione del Paese per connetterti a un server casuale nel paese di tua scelta."
+        "Installa un file di configurazione di un paese per connetterti a un server casuale nel paese di tua scelta."
       ],
       "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
-        "Installa un file di configurazione del server gratuito per connetterti ad un server specifico in una delle tre posizioni gratuite."
+        "Installa un file di configurazione di un server gratuito per connetterti ad un server specifico in una delle tre località gratuite."
       ],
       "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
-        "Installa un file di configurazione del Secure Core per beneficiare di una protezione aggiuntiva contro la compromissione degli endpoint VPN."
+        "Installa un file di configurazione di un Secure Core per approfittare di una protezione aggiuntiva contro la compromissione degli endpoint VPN."
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
-        "Installa un file di configurazione del Server per connetterti a un server specifico nel paese di tua scelta."
+        "Installa un file di configurazione di un server per connetterti a un server specifico nel paese di tua scelta."
       ],
       "Internet connection lost": [
         "Connessione ad Internet interrotta"
@@ -3170,9 +3204,6 @@
       ],
       "MM/YY": [
         "MM/AA"
-      ],
-      "more": [
-        "altro"
       ],
       "Multi-user support not enabled.": [
         "Supporto multi-utente non abilitato."
@@ -3336,7 +3367,7 @@
         "Le informazioni di ripristino rimarranno su questo dispositivo a meno che tu non decida di eliminarle."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "Aggiornando la pagina o ${ link } si risolveranno automaticamente la maggior parte dei problemi."
+        "Aggiornare la pagina o ${ link } risolverà automaticamente la maggior parte dei problemi."
       ],
       "Remember to share the user's sign in details with them.": [
         "Ricordati di condividere con loro i dettagli di accesso dell'utente."
@@ -3348,7 +3379,10 @@
         "Ripristina"
       ],
       "Revoke certificate ${ name }": [
-        "Revoca certificato ${ name }"
+        "Revoca il certificato ${ name }"
+      ],
+      "Save ${ percentage }": [
+        "Risparmia il ${ percentage }"
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Salva la password in un posto sicuro. Fai clic sull'icona per confermare di aver digitato correttamente la password."
@@ -3601,10 +3635,10 @@
         "Carica il tuo file CSV completato per creare gli account"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
-        "Usa il miglior server in base al carico corrente e alla posizione: ${ formattedBestServerName }"
+        "Usa il miglior server in base al carico attuale e alla posizione: ${ formattedBestServerName }"
       ],
       "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Usa i diversi tipi d'indirizzi email e alias offerti da ${ BRAND_NAME }."
+        "Usa i diversi tipi di indirizzi email e alias offerti da ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Usa le seguenti credenziali quando ti connetti ai server ${ VPN_APP_NAME } senza applicazione. Esempi di utilizzo includono: Tunnelblick su macOS, OpenVPN su GNU/Linux."
@@ -3643,7 +3677,7 @@
         "Attenzione: l'eliminazione è permanente. Questo rimuove anche l'accesso a tutti i servizi connessi ed elimina tutti i tuoi contatti."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
-        "Ti consigliamo di utilizzare le applicazioni ufficiali ${ VPN_APP_NAME }, quando possibile."
+        "Ti consigliamo di usare le applicazioni ufficiali di ${ VPN_APP_NAME } quando possibile."
       ],
       "We couldn’t process your payment.": [
         "Il pagamento non può essere completato."
@@ -3658,7 +3692,7 @@
         "Abbiamo bisogno di verificare il tuo pagamento con la tua banca."
       ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
-        "Si consiglia di disporre di almeno 2 server per garantire la ridondanza."
+        "Ti consigliamo di disporre di almeno 2 server per garantire la ridondanza."
       ],
       "We recommend having multiple servers in different locations to provide redundancy.": [
         "Si consiglia di disporre di più server in posizioni diverse per fornire ridondanza."
@@ -3694,7 +3728,7 @@
         "Stiamo aggiornando il tuo piano attuale a un piano migliorato che offre di più allo stesso prezzo. Durante l'aggiornamento dei nostri sistemi, non potrai cambiarlo. Ti invieremo un'email non appena verrà terminato."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quando imposti l'autenticazione a due fattori, forniamo codici di ripristino che puoi utilizzare per accedere se perdi l'accesso alla tua app di autenticazione."
+        "Quando configuri l'autenticazione a due fattori, forniamo dei codici di recupero che puoi usare per accedere se perdi l'accesso alla tua app di autenticazione."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Quando il tuo abbonamento si rinnova, applicheremo tutti i crediti disponibili prima di addebitare il metodo di pagamento indicato qui sopra."
@@ -3769,7 +3803,7 @@
         "Puoi avere solo un'istanza di chat aperta alla volta. Chiudi le conversazioni precedenti prima di avviarne una nuova."
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "È possibile utilizzare le seguenti credenziali per connettersi a un server ${ VPN_APP_NAME } utilizzando un'app VPN open source di terze parti, come Tunnelblick per macOS o OpenVPN per GNU/Linux."
+        "Puoi usare le seguenti credenziali per connetterti a un server ${ VPN_APP_NAME } usando un'app VPN open source di terze parti, come Tunnelblick per macOS o OpenVPN per GNU/Linux."
       ],
       "You have ${ availableCount } dedicated server available.": [
         "Hai ${ availableCount } server dedicato disponibile.",
@@ -3854,7 +3888,7 @@
         "La tua prossima data di fatturazione è ${ renewalTime }."
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "La password dell'organizzazione può essere condivisa con altri utenti a cui si desidera concedere i privilegi di amministrazione. È anche un codice di recupero di emergenza per ottenere l'accesso alla tua organizzazione nel caso in cui perdi l'accesso al tuo account. Salva questa password e tienila al sicuro."
+        "La password dell'organizzazione può essere condivisa con altri utenti a cui desideri concedere i privilegi di amministrazione. È anche un codice di recupero di emergenza per ottenere l'accesso alla tua organizzazione nel caso in cui perdi l'accesso al tuo account. Salva questa password e tienila al sicuro."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "I tuoi dati di pagamento sono protetti dalla crittografia TLS e dalle leggi svizzere sulla privacy."
@@ -4033,7 +4067,7 @@
         "Titolare carta"
       ],
       "Card number": [
-        "Numero carta"
+        "Numero della carta"
       ],
       "Cash": [
         "Contanti"
@@ -4042,7 +4076,7 @@
         "Categoria"
       ],
       "Choose a name for the generated certificate file": [
-        "Scegli un nome per il file del certificato generato"
+        "Scegli un nome per il file"
       ],
       "Code": [
         "Codice"
@@ -4183,7 +4217,7 @@
         "Nome sulla carta"
       ],
       "NAT-PMP (Port Forwarding)": [
-        "NAT-PMP (Reindirizzamento)"
+        "NAT-PMP (Port forwarding)"
       ],
       "Navigation": [
         "Navigazione"
@@ -4408,7 +4442,7 @@
         "Aggiungi codice regalo"
       ],
       "clearing your browser cache": [
-        "cancellando la cache del browser"
+        "cancellare la cache del browser"
       ],
       "click here": [
         "clicca qui"
@@ -4500,7 +4534,7 @@
         "Aggiorna abbonamento"
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
-        "Esegui l'upgrade per sbloccare il supporto via chat e altre funzionalità premium oppure utilizza il nostro modulo di supporto gratuito per segnalare il tuo problema."
+        "Effettua l'upgrade per sbloccare il supporto via chat e altre funzionalità premium oppure usa il nostro modulo di supporto gratuito per segnalare il tuo problema."
       ]
     },
     "Loading info": {
@@ -4737,7 +4771,7 @@
         "Sicurezza di condivisione avanzata"
       ],
       "Auto-delete spam and trashed messages": [
-        "Cancella automaticamente messaggi indesiderati e cestinati"
+        "Cancella automaticamente i messaggi indesiderati e cestinati"
       ],
       "Auto-reply": [
         "Risposta automatica"
@@ -4886,7 +4920,7 @@
         "Programma i messaggi per qualsiasi momento"
       ],
       "Search message content": [
-        "Cerca il contenuto del messaggio"
+        "Cerca nel contenuto dei messaggi"
       ],
       "Secure Core servers": [
         "Server Secure Core"
@@ -4989,7 +5023,7 @@
     },
     "new_plans: feature info": {
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "Crea più indirizzi email per le tue identità online, ad esempio GiovanniShopping@${ domain } per i profili di shopping, GiovanniNotizie@${ domain2 } per gli abbonamenti alle notizie."
+        "Crea più indirizzi email per le tue identità online, ad esempio LuigiShopping@${ domain } per gli account di shopping, LuigiNotizie@${ domain2 } per gli abbonamenti alle notizie."
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Ottieni un numero illimitato di alias con SimpleLogin di ${ BRAND_NAME }"
@@ -4998,7 +5032,7 @@
         "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }"
       ],
       "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Usa l'indirizzo del tuo dominio email personalizzato, per esempio tu@tuonome.com"
+        "Usa l'indirizzo del tuo dominio email personalizzato, ad esempio tu@il-tuo-nome.it"
       ]
     },
     "new_plans: heading": {
@@ -5026,7 +5060,7 @@
         "Privacy e sicurezza complete con tutti i servizi ${ BRAND_NAME }."
       ],
       "For next-level password management and identity protection.": [
-        "Per una gestione password e protezione dell'identità di livello superiore."
+        "Per una gestione delle password e protezione dell'identità di livello superiore."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Se elimini il tuo account, perdi tutti i vantaggi del piano ${ visionary } e non sarà più disponibile se crei un nuovo account."
@@ -5154,7 +5188,7 @@
         "${ VPN_APP_NAME }: Accedi a contenuti bloccati e naviga privatamente. Include ${ serversAndCountries }, le più elevate velocità VPN, accesso a servizi di streaming in tutto il mondo, blocco di malware e annunci, download BitTorrent veloci e molto altro."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
-        "Accedi ai contenuti dei servizi di streaming, tra cui Netflix, Disney+ e Prime Video, da qualsiasi luogo"
+        "Accedi ai contenuti dei servizi di streaming, tra cui Netflix, Disney+ e Prime Video, ovunque"
       ],
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
         "Gli indirizzi hanno piena capacità di invio e ricezione. Un utente può avere più indirizzi assegnati; tuttavia, un singolo indirizzo non può essere assegnato a più utenti."
@@ -5172,14 +5206,14 @@
         "Controlla l’accesso ai file condivisi aggiungendo una protezione con password e date di scadenza dei link"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
-        "Crea più indirizzi email per le tue identità online, ad es. JohnShopper@${ domain } per i profili di shopping, JohnNews@${ domain } per gli abbonamenti alle notizie"
+        "Crea più indirizzi email per le tue identità online, ad esempio LuigiShopping@${ domain } per gli account di shopping, LuigiNotizie@${ domain } per gli abbonamenti alle notizie"
       ],
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
         "Crea fino a ${ n } calendario o aggiungi calendari di amici, famigliari, colleghi e organizzazioni",
         "Crea fino a ${ n } calendari o aggiungi calendari di amici, famigliari, colleghi e organizzazioni"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
-        "Crea fino a ${ n } indirizzi email/alias che puoi assegnare ai membri della famiglia. Utilizzali per le identità online, ad esempio JohnShopper@${ domain } per gli account di acquisto."
+        "Crea fino a ${ n } indirizzi email/alias che puoi assegnare ai membri della famiglia. Utilizzali per le identità online, ad esempio LuigiShopping@${ domain } per gli account di shopping."
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
         "È possibile aggiungere server dedicati con indirizzi IP dedicati a gateway privati ​​per abilitare un controllo preciso degli accessi"
@@ -5242,7 +5276,7 @@
         "Gli hard disk dei nostri server sono completamente crittografati con più livelli di password, in tal modo i tuoi dati rimarrebbero protetti anche se il nostro hardware dovesse essere compromesso"
       ],
       "Password management and identity protection": [
-        "Gestione password e protezione dell'identità"
+        "Gestione delle password e protezione dell'identità"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalizza la tua firma email con loghi, immagini, icone di social media, link ai tuoi dettagli di contatto e molto altro"
@@ -5439,7 +5473,7 @@
         "Configurazioni dei paesi"
       ],
       "Free server configs": [
-        "Configurazioni del server gratuite"
+        "Configurazioni dei server gratuiti"
       ],
       "I found another service that I like better": [
         "Ho trovato un altro servizio che mi piace di più"
@@ -5460,13 +5494,13 @@
         "Router"
       ],
       "Secure Core configs": [
-        "Configurazioni del Secure Core"
+        "Configurazioni dei Secure Core"
       ],
       "Select who can access...": [
         "Seleziona chi può accedere..."
       ],
       "Standard server configs": [
-        "Configurazioni server standard"
+        "Configurazioni dei server standard"
       ],
       "The whole organization": [
         "Tutta l'organizzazione"
@@ -5568,7 +5602,7 @@
         "Password"
       ],
       "Please describe the problem and include any error messages": [
-        "Per favore descrivi il problema e includi eventuali messaggi di errore"
+        "Descrivi il problema e includi eventuali messaggi di errore"
       ],
       "Please select the main reason": [
         "Seleziona il motivo principale"
@@ -5911,7 +5945,7 @@
         "Richiedi reimpostazione della password"
       ],
       "Use recovery method": [
-        "Usa il metodo di recupero"
+        "Usa un metodo di recupero"
       ]
     },
     "session_recovery:initiation:info": {
@@ -6226,7 +6260,7 @@
         "Accedi a contenuti bloccati e naviga in modalità privata. Include 1700 server in più di 60 Paesi, le più elevate velocità VPN, 10 connessioni VPN, servizi di streaming in tutto il mondo, blocco di malware e annunci, e molto altro."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
-        "Accedi ai contenuti dei servizi di streaming, tra cui Netflix, Disney+ e Prime Video, da qualsiasi luogo."
+        "Accedi ai contenuti dei servizi di streaming, tra cui Netflix, Disney+ e Prime Video, ovunque."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Tutti i nostri servizi premium con il massimo dei limiti: 100 indirizzi email, supporto per 10 domini personalizzati, alias Hide-my-email illimitati, condivisione dei calendari, archiviazione sul cloud e condivisione dei file crittografati, e molto altro."
@@ -6241,7 +6275,7 @@
         "Ricevi senza costi aggiuntivi le versioni a pagamento di tutti i nuovi servizi dedicati alla privacy che lanceremo in futuro, oltre all'accesso anticipato a nuovi prodotti e funzioni."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Proteggi i tuoi file con l'archiviazione cloud crittografata. Include la sincronizzazione automatica, la condivisione crittografata dei file e molto altro."
+        "Proteggi i tuoi file con l'archiviazione su cloud crittografata. Include la sincronizzazione automatica, la condivisione crittografata dei file e molto altro."
       ]
     },
     "Spotlight": {
@@ -6257,7 +6291,7 @@
         "Annullamento dell'abbonamento. Per favore attendi"
       ],
       "Downgrading your account, please wait": [
-        "Downgrade del tuo account, attendere"
+        "Downgrade del tuo account in corso. Attendi"
       ]
     },
     "Storage": {
@@ -6542,7 +6576,7 @@
         "Certificato esteso fino a ${ formattedExpirationDate }"
       ],
       "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
-        "Config \"${ name }\" creata, nota che la chiave privata non è memorizzata e non verrà mostrata di nuovo, dovresti copiare o scaricare questa configurazione."
+        "Configurazione \"${ name }\" creata, nota che la chiave privata non viene memorizzata e non verrà mostrata nuovamente, dovresti copiare o scaricare questa configurazione."
       ],
       "Creating config file for ${ serverName }": [
         "Creazione del file di configurazione per ${ serverName }"
@@ -6683,25 +6717,25 @@
         "(attivo)"
       ],
       "1. Give a name to the config to be generated": [
-        "1. Dai un nome alla configurazione da generare"
+        "1. Dai un nome alla configurazione"
       ],
       "1. Select platform": [
-        "1. Seleziona piattaforma"
+        "1. Seleziona la piattaforma"
       ],
       "2. Select platform": [
         "2. Seleziona una piattaforma"
       ],
       "2. Select protocol": [
-        "2. Seleziona protocollo"
+        "2. Seleziona il protocollo"
       ],
       "3. Select config file and download": [
-        "3. Seleziona file di configurazione e scarica"
+        "3. Seleziona il file di configurazione e scaricalo"
       ],
       "3. Select VPN options": [
-        "3. Seleziona opzioni VPN"
+        "3. Seleziona le opzioni VPN"
       ],
       "4. Select a server to connect to": [
-        "4. Seleziona un server a cui connettersi"
+        "4. Seleziona un server a cui connetterti"
       ],
       "Account": [
         "Account"
@@ -6901,7 +6935,7 @@
         "Modifica nome visualizzato"
       ],
       "Edit email address": [
-        "Modifica indirizzo email"
+        "Modifica l'indirizzo email"
       ],
       "Edit Gateway ${ currentName }": [
         "Modifica Gateway ${ currentName }"
@@ -7195,7 +7229,7 @@
         "Cosa c'è di nuovo"
       ],
       "WireGuard configuration": [
-        "Configurazione WireGuard"
+        "Configurazione di WireGuard"
       ],
       "Your changes are not synced yet": [
         "Le tue modifiche non sono ancora sincronizzate"
@@ -7338,7 +7372,7 @@
     },
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
-        "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now e altro."
+        "Netflix, Amazon Prime Video, Disney+, Mediaset Infinity, RaiPlay, NOW e altri."
       ]
     },
     "VPN Plan Feature": {
@@ -7409,8 +7443,8 @@
       ]
     },
     "vpn_2step: tooltip": {
-      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, Double hop, and more.": [
-        "Accesso a server Secure Core, download P2P/BitTorrent veloci, Tor su VPN, e molto altro."
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Accesso a server Secure Core, download P2P/BitTorrent veloci, Tor su VPN e molto altro."
       ]
     },
     "Warning": {
