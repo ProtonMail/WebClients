@@ -708,6 +708,7 @@ export enum PLAN_SERVICES {
     MAIL = 1,
     DRIVE = 2,
     VPN = 4,
+    PASS = 8,
 }
 
 // You don't need more, use `user.isPaid`
