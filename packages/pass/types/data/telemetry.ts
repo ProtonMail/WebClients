@@ -18,6 +18,10 @@ export enum TelemetryEventName {
     AutofillTriggered = 'autofill.triggered',
     SearchTriggered = 'search.triggered',
     SearchClick = 'search.click',
+    TwoFAAutofill = '2fa.autofill',
+    TwoFADisplay = '2fa.display',
+    TwoFACreation = '2fa.creation',
+    TwoFAUpdate = '2fa.update',
 }
 
 type BaseTelemetryEvent<T extends TelemetryEventName, V = {}, D = {}> = {
@@ -47,6 +51,10 @@ export type TelemetryEvent<T extends TelemetryEventName = TelemetryEventName> = 
             { item_count: number; vaults: number },
             { source: ImportProvider }
         >;
+        [TelemetryEventName.TwoFAAutofill]: BaseTelemetryEvent<T>;
+        [TelemetryEventName.TwoFADisplay]: BaseTelemetryEvent<T>;
+        [TelemetryEventName.TwoFACreation]: BaseTelemetryEvent<T>;
+        [TelemetryEventName.TwoFAUpdate]: BaseTelemetryEvent<T>;
     }[T],
     T
 >;

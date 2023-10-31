@@ -67,7 +67,7 @@ export const createAutofillService = () => {
         })
     );
 
-    const autofillTelemetry = () => {
+    const autofillTelemetry = ({ is2FA = false }: { is2FA?: boolean }) => {
         void sendMessage(
             contentScriptMessage({
                 type: WorkerMessageType.TELEMETRY_EVENT,
@@ -76,6 +76,17 @@ export const createAutofillService = () => {
                 },
             })
         );
+
+        if (is2FA) {
+            void sendMessage(
+                contentScriptMessage({
+                    type: WorkerMessageType.TELEMETRY_EVENT,
+                    payload: {
+                        event: createTelemetryEvent(TelemetryEventName.TwoFAAutofill, {}, {}),
+                    },
+                })
+            );
+        }
     };
 
     const autofillLogin = (form: FormHandle, data: { username: string; password: string }) => {
@@ -83,7 +94,7 @@ export const createAutofillService = () => {
         first(form.getFieldsFor(FieldType.EMAIL) ?? [])?.autofill(data.username);
         form.getFieldsFor(FieldType.PASSWORD_CURRENT).forEach((field) => field.autofill(data.password));
 
-        autofillTelemetry();
+        autofillTelemetry({});
     };
 
     const autofillGeneratedPassword = withContext<(form: FormHandle, password: string) => void>(
@@ -125,7 +136,7 @@ export const createAutofillService = () => {
             });
         }
 
-        autofillTelemetry();
+        autofillTelemetry({ is2FA: true });
     };
 
     /* The `AUTOFILL_OTP_CHECK` message handler will take care of parsing
