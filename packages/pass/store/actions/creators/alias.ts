@@ -6,21 +6,24 @@ import withCacheBlock from '@proton/pass/store/actions/with-cache-block';
 import type { ActionCallback } from '@proton/pass/store/actions/with-callback';
 import withCallback from '@proton/pass/store/actions/with-callback';
 import withNotification from '@proton/pass/store/actions/with-notification';
-import { withRequestFailure, withRequestStart, withRequestSuccess } from '@proton/pass/store/actions/with-request';
+import withRequest, { withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/with-request';
 import type { AliasOptions } from '@proton/pass/store/reducers';
 import type { AliasMailbox } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
+import { aliasDetailsRequest, aliasOptionsRequest } from '../requests';
+
 export const getAliasOptionsIntent = createAction(
     'alias::options::get::intent',
-    withRequestStart(
-        (
-            payload: { shareId: string },
-            callback?: ActionCallback<
-                ReturnType<typeof getAliasOptionsSuccess> | ReturnType<typeof getAliasOptionsFailure>
-            >
-        ) => pipe(withCacheBlock, withCallback(callback))({ payload })
-    )
+    (
+        payload: { shareId: string },
+        callback?: ActionCallback<ReturnType<typeof getAliasOptionsSuccess> | ReturnType<typeof getAliasOptionsFailure>>
+    ) =>
+        pipe(
+            withRequest({ type: 'start', id: aliasOptionsRequest(payload.shareId) }),
+            withCacheBlock,
+            withCallback(callback)
+        )({ payload })
 );
 
 export const getAliasOptionsSuccess = createAction(
@@ -40,7 +43,8 @@ export const getAliasOptionsFailure = createAction(
 
 export const getAliasDetailsIntent = createAction(
     'alias::details::get::intent',
-    withRequestStart((payload: { shareId: string; itemId: string; aliasEmail: string }) => withCacheBlock({ payload }))
+    (payload: { shareId: string; itemId: string; aliasEmail: string }) =>
+        pipe(withRequest({ type: 'start', id: aliasDetailsRequest(payload.shareId) }), withCacheBlock)({ payload })
 );
 
 export const getAliasDetailsSuccess = createAction(

@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import withCacheBlock from '@proton/pass/store/actions/with-cache-block';
 import withNotification from '@proton/pass/store/actions/with-notification';
-import { withRequestFailure, withRequestStart, withRequestSuccess } from '@proton/pass/store/actions/with-request';
+import withRequest, { withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/with-request';
 import type { SynchronizationResult } from '@proton/pass/store/sagas/workers/sync';
 import type { Share, ShareAccessKeys, ShareRole } from '@proton/pass/types';
 import type {
@@ -13,6 +13,13 @@ import type {
     ShareRemoveMemberAccessIntent,
 } from '@proton/pass/types/data/shares.dto';
 import { pipe } from '@proton/pass/utils/fp/pipe';
+
+import {
+    shareAccessOptionsRequest,
+    shareEditMemberRoleRequest,
+    shareLeaveRequest,
+    shareRemoveMemberRequest,
+} from '../requests';
 
 export const shareEditSync = createAction('share::edit:sync', (payload: { id: string; share: Share }) => ({ payload }));
 
@@ -29,7 +36,11 @@ export const sharesSync = createAction('shares::sync', (payload: Synchronization
 
 export const shareRemoveMemberAccessIntent = createAction(
     'share::member::remove-access::intent',
-    withRequestStart((payload: ShareRemoveMemberAccessIntent) => withCacheBlock({ payload }))
+    (payload: ShareRemoveMemberAccessIntent) =>
+        pipe(
+            withRequest({ type: 'start', id: shareRemoveMemberRequest(payload.userShareId) }),
+            withCacheBlock
+        )({ payload })
 );
 
 export const shareRemoveMemberAccessSuccess = createAction(
@@ -58,7 +69,11 @@ export const shareRemoveMemberAccessFailure = createAction(
 
 export const shareEditMemberAccessIntent = createAction(
     'share::member::edit-access::intent',
-    withRequestStart((payload: ShareEditMemberAccessIntent) => withCacheBlock({ payload }))
+    (payload: ShareEditMemberAccessIntent) =>
+        pipe(
+            withRequest({ type: 'start', id: shareEditMemberRoleRequest(payload.userShareId) }),
+            withCacheBlock
+        )({ payload })
 );
 
 export const shareEditMemberAccessSuccess = createAction(
@@ -85,9 +100,8 @@ export const shareEditMemberAccessFailure = createAction(
     )
 );
 
-export const shareLeaveIntent = createAction(
-    'share::leave::intent',
-    withRequestStart((payload: { shareId: string }) => withCacheBlock({ payload }))
+export const shareLeaveIntent = createAction('share::leave::intent', (payload: { shareId: string }) =>
+    pipe(withRequest({ type: 'start', id: shareLeaveRequest(payload.shareId) }), withCacheBlock)({ payload })
 );
 
 export const shareLeaveSuccess = createAction(
@@ -117,9 +131,11 @@ export const shareLeaveFailure = createAction(
     )
 );
 
-export const getShareAccessOptionsIntent = createAction(
-    'share::access-options::intent',
-    withRequestStart((shareId: string) => withCacheBlock({ payload: { shareId } }))
+export const getShareAccessOptionsIntent = createAction('share::access-options::intent', (shareId: string) =>
+    pipe(
+        withRequest({ type: 'start', id: shareAccessOptionsRequest(shareId) }),
+        withCacheBlock
+    )({ payload: { shareId } })
 );
 
 export const getShareAccessOptionsSuccess = createAction(

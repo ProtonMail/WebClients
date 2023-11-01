@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import type { InviteData } from '@proton/pass/lib/invites/invite.requests';
 import withCacheBlock from '@proton/pass/store/actions/with-cache-block';
 import withNotification from '@proton/pass/store/actions/with-notification';
-import { withRequestFailure, withRequestStart, withRequestSuccess } from '@proton/pass/store/actions/with-request';
+import withRequest, { withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/with-request';
 import type { InviteState } from '@proton/pass/store/reducers';
 import type { InviteFormValues, ItemRevision, Share, ShareType } from '@proton/pass/types';
 import type {
@@ -16,12 +16,22 @@ import type {
     NewUserInvitePromoteIntent,
 } from '@proton/pass/types/data/invites.dto';
 import { pipe } from '@proton/pass/utils/fp/pipe';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
+
+import {
+    inviteAcceptRequest,
+    inviteCreateRequest,
+    inviteRejectRequest,
+    inviteRemoveRequest,
+    inviteResendRequest,
+    newUserInvitePromoteRequest,
+    newUserInviteRemoveRequest,
+} from '../requests';
 
 export const syncInvites = createAction<InviteState>('invites::sync');
 
-export const inviteCreationIntent = createAction(
-    'invite::create::intent',
-    withRequestStart((payload: InviteFormValues) => withCacheBlock({ payload }))
+export const inviteCreationIntent = createAction('invite::create::intent', (payload: InviteFormValues) =>
+    pipe(withRequest({ type: 'start', id: inviteCreateRequest(uniqueId()) }), withCacheBlock)({ payload })
 );
 
 export const inviteCreationSuccess = createAction(
@@ -52,7 +62,11 @@ export const inviteCreationFailure = createAction(
 
 export const newUserInvitePromoteIntent = createAction(
     'new-user-invite::promote::intent',
-    withRequestStart((payload: NewUserInvitePromoteIntent) => withCacheBlock({ payload }))
+    (payload: NewUserInvitePromoteIntent) =>
+        pipe(
+            withRequest({ type: 'start', id: newUserInvitePromoteRequest(payload.newUserInviteId) }),
+            withCacheBlock
+        )({ payload })
 );
 
 export const newUserInvitePromoteSuccess = createAction(
@@ -81,7 +95,8 @@ export const newUserInvitePromoteFailure = createAction(
 
 export const inviteAcceptIntent = createAction(
     'invite::accept::intent',
-    withRequestStart((payload: Omit<InviteAcceptIntent, 'inviteKeys'>) => withCacheBlock({ payload }))
+    (payload: Omit<InviteAcceptIntent, 'inviteKeys'>) =>
+        pipe(withRequest({ type: 'start', id: inviteAcceptRequest(payload.inviteToken) }), withCacheBlock)({ payload })
 );
 
 export const inviteAcceptSuccess = createAction(
@@ -105,9 +120,8 @@ export const inviteAcceptFailure = createAction(
     )
 );
 
-export const inviteRejectIntent = createAction(
-    'invite::reject::intent',
-    withRequestStart((payload: InviteRejectIntent) => withCacheBlock({ payload }))
+export const inviteRejectIntent = createAction('invite::reject::intent', (payload: InviteRejectIntent) =>
+    pipe(withRequest({ type: 'start', id: inviteRejectRequest(payload.inviteToken) }), withCacheBlock)({ payload })
 );
 
 export const inviteRejectSuccess = createAction(
@@ -129,9 +143,8 @@ export const inviteRejectFailure = createAction(
     )
 );
 
-export const inviteResendIntent = createAction(
-    'invite::resend::intent',
-    withRequestStart((payload: InviteResendIntent) => withCacheBlock({ payload }))
+export const inviteResendIntent = createAction('invite::resend::intent', (payload: InviteResendIntent) =>
+    pipe(withRequest({ type: 'start', id: inviteResendRequest(payload.inviteId) }), withCacheBlock)({ payload })
 );
 
 export const inviteResendSuccess = createAction(
@@ -158,9 +171,8 @@ export const inviteResendFailure = createAction(
     )
 );
 
-export const inviteRemoveIntent = createAction(
-    'invite::remove::intent',
-    withRequestStart((payload: InviteRemoveIntent) => withCacheBlock({ payload }))
+export const inviteRemoveIntent = createAction('invite::remove::intent', (payload: InviteRemoveIntent) =>
+    pipe(withRequest({ type: 'start', id: inviteRemoveRequest(payload.inviteId) }), withCacheBlock)({ payload })
 );
 
 export const inviteRemoveSuccess = createAction(
@@ -189,7 +201,11 @@ export const inviteRemoveFailure = createAction(
 
 export const newUserInviteRemoveIntent = createAction(
     'new-user-invite::remove::intent',
-    withRequestStart((payload: NewUserInvitePromoteIntent) => withCacheBlock({ payload }))
+    (payload: NewUserInvitePromoteIntent) =>
+        pipe(
+            withRequest({ type: 'start', id: newUserInviteRemoveRequest(payload.newUserInviteId) }),
+            withCacheBlock
+        )({ payload })
 );
 
 export const newUserInviteRemoveSuccess = createAction(

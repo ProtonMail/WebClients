@@ -25,13 +25,10 @@ import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import capitalize from '@proton/utils/capitalize';
 import chunk from '@proton/utils/chunk';
-
-import { vaultCreateRequest } from '../../actions/requests';
 
 /**
  * When creating vaults from the import saga
@@ -45,11 +42,9 @@ function* createVaultForImport(vaultName: string) {
     const date = new Date().toLocaleDateString();
     let resolver: (shareId: Maybe<string>) => void;
     const creationResult = new Promise<Maybe<string>>((res) => (resolver = res));
-    const optimisticId = uniqueId();
 
     yield put(
         vaultCreationIntent(
-            vaultCreateRequest(optimisticId),
             { content: { name: vaultName, description: c('Info').t`Imported on ${date}`, display: {} } },
             (action) => resolver(vaultCreationSuccess.match(action) ? action.payload.share.shareId : undefined)
         )
