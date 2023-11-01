@@ -116,6 +116,9 @@
       "Clear query": [
         "Limpiar consulta"
       ],
+      "Clear selection": [
+        "Borrar la selección"
+      ],
       "Click here.": [
         "Haz clic aquí."
       ],
@@ -160,6 +163,9 @@
       ],
       "Continue with Google": [
         "Continuar con Google"
+      ],
+      "Continue with Outlook": [
+        "Continuar con Outlook"
       ],
       "Copy address": [
         "Copiar dirección"
@@ -366,6 +372,12 @@
       ],
       "Import from .csv or vCard": [
         "Importar desde .csv o vCard"
+      ],
+      "Import from Google": [
+        "Importar desde Google"
+      ],
+      "Import from Outlook": [
+        "Importar desde Outlook"
       ],
       "Learn more": [
         "Más información"
@@ -703,6 +715,9 @@
       "Upload folder": [
         "Cargar carpeta"
       ],
+      "Upload photos": [
+        "Cargar fotos"
+      ],
       "Upload picture": [
         "Cargar imagen"
       ],
@@ -759,6 +774,20 @@
       ],
       "You don't have any groups.": [
         "No tienes ningún grupo."
+      ]
+    },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } dominio personalizado",
+        "${ domains } dominios personalizados"
+      ],
+      "${ ips } server": [
+        "${ ips } servidor",
+        "${ ips } servidores"
+      ],
+      "${ users } user": [
+        "${ users } usuario",
+        "${ users } usuarios"
       ]
     },
     "Alert": {
@@ -827,6 +856,18 @@
       ],
       "High speed streaming": [
         "Transmisión de alta velocidad"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } premium"
+      ],
+      "Premium Password Manager": [
+        "Administrador de contraseñas premium"
       ]
     },
     "bf2023: Footer": {
@@ -966,6 +1007,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuar utilizando ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } usuario",
+        "${ users } usuarios"
       ]
     },
     "Collapsible tooltip": {
@@ -1934,6 +1981,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Cifrando e importando contactos... Esto puede tardar unos minutos. Cuando se finaliza el proceso, puedes cerrar esta ventana."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Para importar mediante CSV y VCF, asegúrate que el archivo no exceda de ${ MAX_IMPORT_FILE_SIZE_STRING } o de ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si el archivo es grande, divídelo en archivos pequeños. ${ learnMoreLink }."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que la lista de contactos que estás importando contiene algunos grupos. Verifica cómo deben importarse estos grupos."
       ],
@@ -1946,6 +1996,9 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Ahorra tiempo enviando correos electrónicos o invitaciones a todos a la vez, una función premium entre muchas otras. Actualiza hoy mismo."
       ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Para importar tus contactos desde Google u Outlook, ${ easySwitchLink }."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arrastra y suelta los contactos para clasificarlos por prioridad. Desmarca los contactos que no quieres combinar."
       ],
@@ -1954,6 +2007,11 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Puedes marcar los contactos que no quieres ni combinar ni mantener para eliminarlos. Se eliminarán solo después de que pulses el botón."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utiliza el asistente de importación Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2225,6 +2283,9 @@
       ],
       "Some contacts could not be deleted": [
         "No se han podido eliminar algunos contactos."
+      ],
+      "Some files were ignored because they are not supported in Photos": [
+        "Algunos archivos fueron ignorados porque no son admitidos en Fotos."
       ],
       "Some groups could not be deleted": [
         "No se han podido eliminar algunos grupos."
@@ -3258,6 +3319,10 @@
         "${ selectedContactsLength }/${ contactsLength } contacto seleccionado",
         "${ selectedContactsLength }/${ contactsLength } contactos seleccionados"
       ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } seleccionado",
+        "${ selectedCount } seleccionados"
+      ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } carpeta seleccionada",
         "${ selectedFoldersCount } carpetas seleccionadas"
@@ -3276,6 +3341,9 @@
       ],
       "${ speed }/s": [
         "${ speed }/s"
+      ],
+      "${ storage } storage": [
+        "${ storage } de almacenamiento"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } contacto actualizado.",
@@ -3353,6 +3421,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "¿Estás seguro de que quieres eliminar permanentemente los elementos seleccionados de la papelera?"
+      ],
+      "As soon as you have photos or videos on your device, they will appear here.": [
+        "En cuanto tengas fotos o vídeos en tu dispositivo, aparecerán aquí."
       ],
       "Attention required": [
         "Atención requerida"
@@ -3787,6 +3858,9 @@
       "No group found": [
         "No se ha encontrado ningún grupo."
       ],
+      "No photos yet": [
+        "Aún no hay fotos."
+      ],
       "No results found": [
         "No se han encontrado resultados."
       ],
@@ -3891,6 +3965,9 @@
       "Previous versions are not saved": [
         "Las versiones anteriores no están guardadas."
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "El precio incluye todos los descuentos aplicables según el ciclo de facturación y cupones sin expirar guardados en tu cuenta."
+      ],
       "Primary": [
         "Principal"
       ],
@@ -3930,8 +4007,14 @@
       "Search Enabled": [
         "Búsqueda activada"
       ],
+      "Select all items for": [
+        "Seleccionar todos los elementos para"
+      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Selecciona una carpeta o archivo que has cargado para crear un enlace."
+      ],
+      "Select item": [
+        "Seleccionar el elemento"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecciona el formato de correo electrónico que quieres utilizar por defecto al enviar un correo electrónico a esta dirección."
@@ -4050,6 +4133,9 @@
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
         "Se desactivará este enlace de forma permanente. Nadie con este enlace tendrá acceso a tu carpeta. Necesitas un enlace nuevo para volver a compartir la carpeta."
       ],
+      "This month": [
+        "Este mes"
+      ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Esta acción eliminará el enlace e impedirá el acceso al archivo a cualquier persona que lo tuviese.",
         "Esta acción eliminará los enlaces e impedirá el acceso a los archivos a cualquier persona que los tuviese."
@@ -4093,6 +4179,18 @@
       "Today": [
         "Hoy"
       ],
+      "Total email addresses": [
+        "Direcciones de correo electrónico totales"
+      ],
+      "Total storage": [
+        "Almacenamiento total"
+      ],
+      "Total supported domains": [
+        "Total de dominios compatibles"
+      ],
+      "Total VPN connections": [
+        "Conexiones VPN totales"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "Se ha cancelado la transferencia del archivo \"${ name }\"."
       ],
@@ -4129,6 +4227,9 @@
       "Unsupported file": [
         "Archivo no admitido"
       ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Hasta ${ FAMILY_MAX_USERS } usuarios"
+      ],
       "Updating drive search...": [
         "Actualizando la búsqueda en la unidad..."
       ],
@@ -4155,6 +4256,9 @@
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "¡Felicidades! Acabas de doblar tu almacenamiento gratuito."
+      ],
+      "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
+        "Estamos experimentando problemas técnicos. La carga de imágenes nuevas no está disponible temporalmente."
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "No se ha podido verificar que ${ emailAddress } haya cargado ${ fileName }."
@@ -4671,6 +4775,9 @@
       "Phone number": [
         "Número de teléfono"
       ],
+      "Photo": [
+        "Foto"
+      ],
       "Please provide full details to help us take appropriate action": [
         "Indica todos los detalles para ayudarnos a actuar de forma apropiada."
       ],
@@ -4855,6 +4962,9 @@
       ],
       "Pay invoice": [
         "Pagar factura"
+      ],
+      "Photos": [
+        "Fotos"
       ],
       "Reactivate now": [
         "Reactivar"
@@ -5993,9 +6103,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } premium"
-      ],
-      "Premium Password Manager": [
-        "Administrador de contraseñas premium"
       ]
     },
     "summer2023: Tooltip": {
@@ -6428,6 +6535,9 @@
       ],
       "Phone numbers": [
         "Números de teléfono"
+      ],
+      "Photos": [
+        "Fotos"
       ],
       "Preview": [
         "Vista previa"

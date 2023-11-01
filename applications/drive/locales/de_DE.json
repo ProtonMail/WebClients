@@ -116,6 +116,9 @@
       "Clear query": [
         "Anfrage löschen"
       ],
+      "Clear selection": [
+        "Auswahl löschen"
+      ],
       "Click here.": [
         "Hier klicken."
       ],
@@ -712,6 +715,9 @@
       "Upload folder": [
         "Ordner hochladen"
       ],
+      "Upload photos": [
+        "Fotos hochladen"
+      ],
       "Upload picture": [
         "Bild hochladen"
       ],
@@ -768,6 +774,20 @@
       ],
       "You don't have any groups.": [
         "Es wurden noch keine Gruppen angelegt."
+      ]
+    },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } eigene Domain",
+        "${ domains } eigene Domains"
+      ],
+      "${ ips } server": [
+        "${ ips } Server",
+        "${ ips } Server"
+      ],
+      "${ users } user": [
+        "${ users } Benutzer",
+        "${ users } Benutzer"
       ]
     },
     "Alert": {
@@ -836,6 +856,18 @@
       ],
       "High speed streaming": [
         "Hochgeschwindigkeits-Streaming"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium-${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium-${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium-${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Premium-Passwortmanager"
       ]
     },
     "bf2023: Footer": {
@@ -975,6 +1007,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } weiterhin verwenden."
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } Benutzer",
+        "${ users } Benutzer"
       ]
     },
     "Collapsible tooltip": {
@@ -2246,6 +2284,9 @@
       "Some contacts could not be deleted": [
         "Einige Kontakte konnten nicht gelöscht werden"
       ],
+      "Some files were ignored because they are not supported in Photos": [
+        "Einige Dateien wurden ignoriert, da diese in Photos nicht unterstützt werden."
+      ],
       "Some groups could not be deleted": [
         "Einige Gruppen konnten nicht gelöscht werden"
       ],
@@ -3297,6 +3338,9 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
+      "${ storage } storage": [
+        "${ storage } Speicherplatz"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } Kontakt erfolgreich aktualisiert.",
         "${ updated } Kontakte erfolgreich aktualisiert."
@@ -3373,6 +3417,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Bist du sicher, dass die ausgewählten Elemente dauerhaft aus dem Papierkorb gelöscht werden sollen?"
+      ],
+      "As soon as you have photos or videos on your device, they will appear here.": [
+        "Sobald du Fotos oder Videos auf deinem Gerät hast, werden sie hier angezeigt."
       ],
       "Attention required": [
         "Aufmerksamkeit erforderlich"
@@ -3807,6 +3854,9 @@
       "No group found": [
         "Keine Gruppe gefunden"
       ],
+      "No photos yet": [
+        "Noch keine Fotos"
+      ],
       "No results found": [
         "Keine Ergebnisse gefunden"
       ],
@@ -3911,6 +3961,9 @@
       "Previous versions are not saved": [
         "Vorherige Versionen werden nicht gespeichert"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Der Preis beinhaltet alle anwendbaren zyklusbasierten Rabatte und nicht abgelaufenen Coupons, die auf deinem Konto gespeichert sind."
+      ],
       "Primary": [
         "Primär"
       ],
@@ -3950,8 +4003,14 @@
       "Search Enabled": [
         "Suche aktiviert"
       ],
+      "Select all items for": [
+        "Wähle alle Elemente aus für"
+      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Wähle eine hochgeladene Datei oder einen Ordner aus und erstelle einen Link dazu."
+      ],
+      "Select item": [
+        "Element auswählen"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Wähle das Nachrichtenformat, das standardmäßig verwendet werden soll, wenn eine Nachricht an diese E-Mail-Adresse gesendet wird."
@@ -4070,6 +4129,9 @@
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
         "Dieser Link wird dauerhaft deaktiviert. Niemand mit diesem Link wird auf deinen Ordner zugreifen können. Um den Ordner erneut freizugeben, muss ein neuer Link erstellt werden."
       ],
+      "This month": [
+        "Diesen Monat"
+      ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Dadurch wird der Link gelöscht und der Zugriff auf deine Datei oder deinen Ordner für jeden, der über den Link verfügt, entfernt.",
         "Dadurch werden die Links gelöscht und der Zugriff auf deine Dateien oder deine Ordner für jeden, der über die Links verfügt, entfernt."
@@ -4113,6 +4175,18 @@
       "Today": [
         "Heute"
       ],
+      "Total email addresses": [
+        "Anzahl E-Mail-Adressen"
+      ],
+      "Total storage": [
+        "Gesamter Speicherplatz"
+      ],
+      "Total supported domains": [
+        "Anzahl unterstützter Domains"
+      ],
+      "Total VPN connections": [
+        "Anzahl VPN‐Verbindungen"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "Übertragung der Datei „${ name }“ wurde abgebrochen"
       ],
@@ -4149,6 +4223,9 @@
       "Unsupported file": [
         "Nicht unterstützte Datei"
       ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Bis zu ${ FAMILY_MAX_USERS } Benutzer"
+      ],
       "Updating drive search...": [
         "Lokale Suche wird aktualisiert..."
       ],
@@ -4175,6 +4252,9 @@
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "Gut gemacht, du hast soeben deinen kostenlosen Speicherplatz verdoppelt!"
+      ],
+      "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
+        "Wir haben technische Probleme. Das Hochladen neuer Fotos ist vorübergehend deaktiviert."
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Wir konnten nicht verifizieren, dass ${ emailAddress } ${ fileName } hochgeladen hat."
@@ -4691,6 +4771,9 @@
       "Phone number": [
         "Telefonnummer"
       ],
+      "Photo": [
+        "Foto"
+      ],
       "Please provide full details to help us take appropriate action": [
         "Bitte nenne uns alle Einzelheiten, damit wir geeignete Maßnahmen ergreifen können."
       ],
@@ -4875,6 +4958,9 @@
       ],
       "Pay invoice": [
         "Rechnung bezahlen"
+      ],
+      "Photos": [
+        "Fotos"
       ],
       "Reactivate now": [
         "Jetzt reaktivieren"
@@ -5919,6 +6005,9 @@
       ]
     },
     "Storage": {
+      "Get more storage": [
+        "Mehr Speicherplatz erhalten"
+      ],
       "Release notes": [
         "Versionshinweise"
       ],
@@ -6010,9 +6099,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium-${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Premium-Passwortmanager"
       ]
     },
     "summer2023: Tooltip": {
@@ -6445,6 +6531,9 @@
       ],
       "Phone numbers": [
         "Telefonnummern"
+      ],
+      "Photos": [
+        "Fotos"
       ],
       "Preview": [
         "Vorschau"

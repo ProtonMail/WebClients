@@ -761,6 +761,20 @@
         "Não tem nenhum grupo."
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } domínio personalizado",
+        "${ domains } domínios personalizados"
+      ],
+      "${ ips } server": [
+        "${ ips } servidor",
+        "${ ips } servidores"
+      ],
+      "${ users } user": [
+        "${ users } utilizador",
+        "${ users } utilizadores"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Ao sair agora, alguns contactos podem não ser importados"
@@ -882,6 +896,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuar a utilizar ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } utilizador",
+        "${ users } utilizadores"
       ]
     },
     "Collapsible tooltip": {
@@ -3183,6 +3203,9 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
+      "${ storage } storage": [
+        "${ storage } de armazenamento"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contacto actualizado.",
         "${ updated } contactos actualizados."
@@ -3797,6 +3820,9 @@
       "Previous versions are not saved": [
         "As versões anteriores não são guardadas."
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "O preço inclui todos os descontos aplicáveis com base no ciclo e cupões não expirados guardados na sua conta."
+      ],
       "Primary": [
         "Principal"
       ],
@@ -3999,6 +4025,18 @@
       "Today": [
         "Hoje"
       ],
+      "Total email addresses": [
+        "Total de endereços de e-mail"
+      ],
+      "Total storage": [
+        "Total de armazenamento"
+      ],
+      "Total supported domains": [
+        "Total de domínios suportados"
+      ],
+      "Total VPN connections": [
+        "Total de ligações VPN"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "A transferência foi cancelada para o ficheiro \"${ name }\"."
       ],
@@ -4034,6 +4072,9 @@
       ],
       "Unsupported file": [
         "Ficheiro não suportado"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Até ${ FAMILY_MAX_USERS } utilizadores"
       ],
       "Updating drive search...": [
         "Actualização da pesquisa na unidade..."
@@ -5896,9 +5937,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Versão premium do gestor de palavras-passe"
       ]
     },
     "summer2023: Tooltip": {

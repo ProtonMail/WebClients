@@ -118,6 +118,9 @@
       "Clear query": [
         "Wyczyść zapytanie"
       ],
+      "Clear selection": [
+        "Wyczyść zaznaczenie"
+      ],
       "Click here.": [
         "Kliknij tutaj."
       ],
@@ -781,6 +784,26 @@
         "Nie masz żadnych grup."
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } niestandardowa domena",
+        "${ domains } niestandardowe domeny",
+        "${ domains } niestandardowych domen",
+        "${ domains } niestandardowych domen"
+      ],
+      "${ ips } server": [
+        "${ ips } serwer",
+        "${ ips } serwery",
+        "${ ips } serwerów",
+        "${ ips } serwerów"
+      ],
+      "${ users } user": [
+        "${ users } użytkownik",
+        "${ users } użytkowników",
+        "${ users } użytkowników",
+        "${ users } użytkowników"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Jeśli wyjdziesz teraz, niektóre kontakty nie zostaną zaimportowane"
@@ -847,6 +870,18 @@
       ],
       "High speed streaming": [
         "Szybki streaming"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } w wersji premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } w wersji premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } w wersji premium"
+      ],
+      "Premium Password Manager": [
+        "Menedżer haseł w wersji premium"
       ]
     },
     "bf2023: Footer": {
@@ -988,6 +1023,14 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Kontynuuj używanie poczty ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } użytkownik",
+        "${ users } użytkowników",
+        "${ users } użytkowników",
+        "${ users } użytkowników"
       ]
     },
     "Collapsible tooltip": {
@@ -1955,6 +1998,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Trwa importowanie i szyfrowanie kontaktów... Proces może potrwać kilka minut. Kiedy się zakończy, możesz zamknąć okno."
+      ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Upewnij się, że plik importu CSV lub VCF nie przekracza rozmiaru ${ MAX_IMPORT_FILE_SIZE_STRING } lub ${ MAX_IMPORT_CONTACTS_STRING } kontaktów. Podziel swój plik na mniejsze, jeśli jest zbyt duży. ${ learnMoreLink }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Lista kontaktów, którą importujesz, zawiera grupy. Sprawdź, jak te grupy powinny zostać zaimportowane."
@@ -3377,6 +3423,12 @@
         "Zaznaczone kontakty: ${ selectedContactsLength }/${ contactsLength }",
         "Zaznaczone kontakty: ${ selectedContactsLength }/${ contactsLength }"
       ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } zaznaczony",
+        "${ selectedCount } zaznaczone",
+        "${ selectedCount } zaznaczonych",
+        "${ selectedCount } zaznaczonych"
+      ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } zaznaczony folder",
         "${ selectedFoldersCount } zaznaczone foldery",
@@ -3403,6 +3455,9 @@
       ],
       "${ speed }/s": [
         "${ speed }/s"
+      ],
+      "${ storage } storage": [
+        "${ storage } przestrzeni dyskowej"
       ],
       "${ updated } contact updated successfully.": [
         "Kontakt został zaktualizowany.",
@@ -4046,6 +4101,9 @@
       "Previous versions are not saved": [
         "Poprzednia wersja nie została zapisana"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Cena obejmuje wszystkie mające zastosowanie zniżki i kupony zapisane na Twoim koncie."
+      ],
       "Primary": [
         "Główny"
       ],
@@ -4085,11 +4143,14 @@
       "Search Enabled": [
         "Wyszukiwanie zostało włączone"
       ],
+      "Select all items for": [
+        "Zaznacz wszystko z"
+      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Wybierz przesłany plik lub folder i utwórz do niego link."
       ],
       "Select item": [
-        "Wybierz element"
+        "Zaznacz element"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Wybierz domyślny format wiadomości, który ma zostać użyty podczas wysyłania wiadomości na ten adres e-mail."
@@ -4256,6 +4317,18 @@
       "Today": [
         "Dzisiaj"
       ],
+      "Total email addresses": [
+        "Adresy e-mail"
+      ],
+      "Total storage": [
+        "Przestrzeń dyskowa"
+      ],
+      "Total supported domains": [
+        "Wsparcie dla domen"
+      ],
+      "Total VPN connections": [
+        "Połączenia VPN"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "Transfer pliku \"${ name }\" został anulowany"
       ],
@@ -4291,6 +4364,9 @@
       ],
       "Unsupported file": [
         "Plik jest nieobsługiwany"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Do ${ FAMILY_MAX_USERS } użytkowników"
       ],
       "Updating drive search...": [
         "Aktualizacja wyszukiwania zawartości dysku..."
@@ -6261,9 +6337,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } w wersji premium"
-      ],
-      "Premium Password Manager": [
-        "Menedżer haseł w wersji Premium"
       ]
     },
     "summer2023: Tooltip": {
