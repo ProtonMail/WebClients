@@ -664,6 +664,9 @@
         "${ memberCount } jäsen",
         "${ memberCount } jäsentä"
       ],
+      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
+        "${ PASS_APP_NAME } tuo vain kirjautumistiedot, muistiinpanot ja luottokortit."
+      ],
       "${ revisionNumber } time": [
         "${ revisionNumber } kerran",
         "${ revisionNumber } kertaa"
@@ -1012,6 +1015,9 @@
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Tätä holvia ei tällä hetkellä jaeta kenenkään kanssa. Kutsu ihmisiä jakaaksesi se muiden kanssa."
+      ],
+      "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
+        "Siirtääksesi tiedot toisesta salasanojen hallintaohjelmasta, mene salasanojen hallintaohjelmaan, vie tiedosto ja lataa se sitten sovellukseen ${ PASS_APP_NAME }.\nKun tietosi on tuotu, poista viety tiedosto."
       ],
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "Voit tarkastella tuotuja tietoja klikkaamalla selaimen työkalurivin Pass-kuvaketta."
