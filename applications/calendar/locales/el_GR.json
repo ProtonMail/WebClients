@@ -686,6 +686,20 @@
         "Δεν έχετε καμία ομάδα."
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } προσαρμοσμένος τομέας",
+        "${ domains } προσαρμοσμένοι τομείς"
+      ],
+      "${ ips } server": [
+        "${ ips } διακομιστής",
+        "${ ips } διακομιστές"
+      ],
+      "${ users } user": [
+        "${ users } χρήστης",
+        "${ users } χρήστες"
+      ]
+    },
     "Alarm notification": {
       "${ title } started at ${ formattedHour }": [
         "${ title } ξεκίνησε στις ${ formattedHour }"
@@ -1043,6 +1057,12 @@
       "${ more } more": [
         "${ more } επιπλέον",
         "${ more } επιπλέον"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } χρήστης",
+        "${ users } χρήστες"
       ]
     },
     "Collapsible tooltip": {
@@ -3577,6 +3597,9 @@
         "${ selectedFoldersCountLocalized } ετικέτα επιλέχθηκε",
         "${ selectedFoldersCountLocalized } ετικέτες επιλέχθηκαν"
       ],
+      "${ storage } storage": [
+        "${ storage } αποθηκευτικού χώρου"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } επαφή ενημερώθηκε επιτυχώς.",
         "${ updated } επαφές ενημερώθηκαν επιτυχώς."
@@ -3967,6 +3990,9 @@
       "Previous modifications on this series will be lost.": [
         "Οι προηγούμενες τροποποιήσεις αυτής της σειράς θα χαθούν."
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Η τιμή περιλαμβάνει όλες τις ισχύουσες εκπτώσεις βάσει κύκλου καθώς και τα κουπόνια που δεν έχουν λήξει και είναι αποθηκευμένα στον λογαριασμό σας."
+      ],
       "Primary": [
         "Κύριο"
       ],
@@ -4081,8 +4107,23 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Για να χρησιμοποιήσετε την Επαλήθευση διεύθυνσης, πρέπει να χαρακτηρίσετε Αξιόπιστα ένα ή περισσότερα διαθέσιμα δημόσια κλειδιά, συμπεριλαμβανομένου αυτού που θέλετε να χρησιμοποιήσετε για αποστολή. Αυτό αποτρέπει την απομίμηση των κρυπτογραφημένων κλειδιών."
       ],
+      "Total email addresses": [
+        "Σύνολο διευθύνσεων ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Total storage": [
+        "Συνολικός αποθηκευτικός χώρος"
+      ],
+      "Total supported domains": [
+        "Σύνολο υποστηριζόμενων τομέων"
+      ],
+      "Total VPN connections": [
+        "Σύνολο συνδέσεων VPN"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Δοκιμάστε νέες δυνατότητες, ενημερώσεις και προϊόντα ${ BRAND_NAME } πριν κυκλοφορήσουν στο κοινό. Αυτό θα φορτώσει ξανά την εφαρμογή"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Μέχρι και ${ FAMILY_MAX_USERS } χρήστες"
       ],
       "Update recurring event": [
         "Ενημέρωση επαναλαμβανόμενης εκδήλωσης"
@@ -6263,9 +6304,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Premium Διαχειριστής Κωδικών Πρόσβασης"
       ]
     },
     "summer2023: Tooltip": {

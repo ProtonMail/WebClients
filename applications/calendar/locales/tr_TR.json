@@ -677,6 +677,20 @@
         "Henüz bir grubunuz yok."
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } özel etki alanı",
+        "${ domains } özel etki alanı"
+      ],
+      "${ ips } server": [
+        "${ ips } sunucu",
+        "${ ips } sunucu"
+      ],
+      "${ users } user": [
+        "${ users } kullanıcı",
+        "${ users } kullanıcı"
+      ]
+    },
     "Alarm notification": {
       "${ title } started at ${ formattedHour }": [
         "${ title }, ${ formattedHour } saatinde başladı"
@@ -801,6 +815,18 @@
       ],
       "High speed streaming": [
         "Yüksek hızda yayın akışı"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Ücretli ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Ücretli ${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Ücretli ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Ücretli Parola Yöneticisi"
       ]
     },
     "bf2023: Footer": {
@@ -1118,6 +1144,12 @@
       "${ more } more": [
         "${ more } diğer",
         "${ more } diğer"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } kullanıcı",
+        "${ users } kullanıcı"
       ]
     },
     "Collapsible tooltip": {
@@ -3641,6 +3673,9 @@
         "${ selectedFoldersCountLocalized } etiket seçildi",
         "${ selectedFoldersCountLocalized } etiket seçildi"
       ],
+      "${ storage } storage": [
+        "${ storage } depolama alanı"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kişi güncellendi.",
         "${ updated } kişi güncellendi."
@@ -4031,6 +4066,9 @@
       "Previous modifications on this series will be lost.": [
         "Bu dizide daha önce yapılmış değişiklikler kaybolacak."
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Ücrete, hesabınızda kayıtlı tüm geçerli dönemsel indirimler ve geçerlilik süresi dolmamış kuponlar katılmıştır."
+      ],
       "Primary": [
         "Birincil"
       ],
@@ -4145,8 +4183,23 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Adres doğrulamasını kullanabilmek için, gönderirken kullanmak istediğinizle birlikte bir veya daha fazla kullanılabilecek herkese açık anahtara güvenmeniz gerekir. Güvenme işlemi, şifreleme anahtarlarının sahte olmasını önler."
       ],
+      "Total email addresses": [
+        "Toplam e-posta adresi"
+      ],
+      "Total storage": [
+        "Toplam depolama alanı"
+      ],
+      "Total supported domains": [
+        "Toplam etki alanı"
+      ],
+      "Total VPN connections": [
+        "Toplam VPN bağlantısı"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Herkese açık olarak sunulmadan önce yeni ${ BRAND_NAME } özelliklerini, güncellemelerini ve ürünlerini deneyin. Uygulama yeniden yüklenir"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "En fazla ${ FAMILY_MAX_USERS } kullanıcı"
       ],
       "Update recurring event": [
         "Yinelenen etkinliği güncelle"
@@ -6327,9 +6380,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Ücretli ${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Ücretli Parola Yöneticisi"
       ]
     },
     "summer2023: Tooltip": {

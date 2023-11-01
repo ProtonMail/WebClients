@@ -151,6 +151,9 @@
       "Continue with Google": [
         "Folytatás Google fiókkal"
       ],
+      "Continue with Outlook": [
+        "Folytassa az Outlookkal"
+      ],
       "Copy address": [
         "Cím másolása"
       ],
@@ -311,6 +314,12 @@
       ],
       "Import from .csv or vCard": [
         "Importálás .csv vagy vCard fájlból"
+      ],
+      "Import from Google": [
+        "Importálás a Google-ból"
+      ],
+      "Import from Outlook": [
+        "Importálás az Outlookból"
       ],
       "Join calendar": [
         "Csatlakozás a naptárhoz"
@@ -677,6 +686,20 @@
         "Még nincsenek csoportok."
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } saját domain név",
+        "${ domains } saját domain név"
+      ],
+      "${ ips } server": [
+        "${ ips } szerver",
+        "${ ips } szerver"
+      ],
+      "${ users } user": [
+        "${ users } felhasználó",
+        "${ users } felhasználó"
+      ]
+    },
     "Alarm notification": {
       "${ title } started at ${ formattedHour }": [
         "${ title } elkezdődött ekkor: ${ formattedHour }"
@@ -1034,6 +1057,12 @@
       "${ more } more": [
         "${ more } további",
         "${ more } további"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } felhasználó",
+        "${ users } felhasználó"
       ]
     },
     "Collapsible tooltip": {
@@ -2085,6 +2114,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek betöltése és titkosítása. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSV- és VCF-fájlon keresztüli importálás esetén ügyeljen arra, hogy a fájl ne haladja meg a ${ MAX_IMPORT_FILE_SIZE_STRING } vagy a ${ MAX_IMPORT_CONTACTS_STRING } névjegyet. Ha a fájl nagyobb, ossza fel kisebb fájlokra. ${ learnMoreLink }."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Az importálás alatt álló fájl csoportokat is tartalmaz. Határozza meg, hogyan kerüljenek importálásra a csoportok."
       ],
@@ -2100,6 +2132,9 @@
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "Ez eltarthat egy pár percig. Közben használhatja a Naptárat ahogy szokta."
       ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Névjegyeinek importálásához a Google-ból vagy az Outlookból: ${ easySwitchLink }."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Húzással határozza meg az egyesítés prioritását. Szüntesse meg a kijelölést azoknál, amelyeket nem szeretne egyesíteni."
       ],
@@ -2108,6 +2143,11 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Amelyekből egyiket sem szeretné megtartani, azokat törlésre jelölheti. A törlés az egyesítés gomb megnyomása után fog megtörténni"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "használja az Easy Switch importálási asszisztenst"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2339,6 +2379,9 @@
       "Event not found": [
         "Az esemény nem található"
       ],
+      "Failed to get event": [
+        "Nem sikerült betölteni az eseményt"
+      ],
       "Failed to get original occurrence in series": [
         "Az eredeti előfordulás nem található a szériában"
       ],
@@ -2362,6 +2405,9 @@
       ],
       "Incorrect username": [
         "Helytelen felhasználónév"
+      ],
+      "Intended recipient does not support calendar sharing": [
+        "A kívánt címzett nem támogatja a naptármegosztást"
       ],
       "Interval cannot be empty": [
         "Az intervallum nem lehet üres"
@@ -3102,6 +3148,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -3120,6 +3169,10 @@
       "Megabyte": [
         "Megabájt",
         "Megabájt"
+      ],
+      "Terabyte": [
+        "Terabájt",
+        "Terabájt"
       ]
     },
     "Filter notification": {
@@ -3547,6 +3600,9 @@
         "${ selectedFoldersCountLocalized } címke kiválasztva",
         "${ selectedFoldersCountLocalized } címke kiválasztva"
       ],
+      "${ storage } storage": [
+        "${ storage } tárhely"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } névjegy sikeresen frissítve.",
         "${ updated } névjegy sikeresen frissítve."
@@ -3934,6 +3990,9 @@
       "Previous modifications on this series will be lost.": [
         "A sorozat korábbi módosításai elvesznek."
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Az ár tartalmaz minden vonatkozó, megújulás-alapú kedvezményt és a fiókjában mentett, le nem járt kupont."
+      ],
       "Primary": [
         "Elsődleges"
       ],
@@ -4048,8 +4107,23 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "A cím hitelesítés használatához egy vagy több nyilvános kulcsot megbízhatóként kell megjelölnie, beleértve azt is amelyiket a küldéshez szeretné használni. Ez megakadályozza hamisított titkosítási kulcsok használatát."
       ],
+      "Total email addresses": [
+        "Összes e-mail cím"
+      ],
+      "Total storage": [
+        "Összes tárhely"
+      ],
+      "Total supported domains": [
+        "Összes támogatott domain név"
+      ],
+      "Total VPN connections": [
+        "Összes VPN kapcsolat"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Próbálja ki a ${ BRAND_NAME } új funkcióit, frissítéseit és termékeit mielőtt azok elérhetővé válnak a nyilvánosság számára. Ez újra fogja tölteni az alkalmazást"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Legfeljebb ${ FAMILY_MAX_USERS } felhasználó"
       ],
       "Update recurring event": [
         "Ismétlődő esemény frissítése"
@@ -6230,9 +6304,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Prémium ${ MAIL_SHORT_APP_NAME } és ${ CALENDAR_SHORT_APP_NAME }."
-      ],
-      "Premium Password Manager": [
-        "Prémium jelszókezelő"
       ]
     },
     "summer2023: Tooltip": {

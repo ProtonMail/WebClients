@@ -682,6 +682,17 @@
         "您沒有任何群組。"
       ]
     },
+    "Addon": {
+      "${ domains } custom domains": [
+        "${ domains } 個自訂網域"
+      ],
+      "${ ips } servers": [
+        "${ ips } 台伺服器"
+      ],
+      "${ users } users": [
+        "${ users } 個使用者"
+      ]
+    },
     "Alarm notification": {
       "${ title } started at ${ formattedHour }": [
         "${ title } 已於 ${ formattedHour } 開始"
@@ -1036,6 +1047,11 @@
     "Calendar view; more events collapsed": {
       "${ more } more": [
         "${ more } 以上"
+      ]
+    },
+    "Checkout row": {
+      "${ users } users": [
+        "${ users } 個使用者"
       ]
     },
     "Collapsible tooltip": {
@@ -3512,6 +3528,9 @@
       "${ selectedFoldersCountLocalized } labels selected": [
         "已選取 ${ selectedFoldersCountLocalized } 種標籤"
       ],
+      "${ storage } storage": [
+        "${ storage } 儲存空間"
+      ],
       "${ updated } contacts updated successfully.": [
         "已成功更新 ${ updated } 位聯絡人。"
       ],
@@ -3893,6 +3912,9 @@
       "Previous modifications on this series will be lost.": [
         "此一系列中先前所作的變更將會消失。"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "價格計入週期之下所有適用的折扣，以及儲存在您的帳號內未逾期的優惠券。"
+      ],
       "Primary": [
         "主要"
       ],
@@ -4007,8 +4029,23 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "若要使用電郵驗證，您必須啟用信任金鑰並信任一個或多個可用的公開金鑰，包括此電郵的主要金鑰。這樣可以防止加密金鑰遭到偽造。"
       ],
+      "Total email addresses": [
+        "可使用的電郵位址總數"
+      ],
+      "Total storage": [
+        "總儲存量"
+      ],
+      "Total supported domains": [
+        "可支援的網域總數"
+      ],
+      "Total VPN connections": [
+        "總 VPN 連線數量"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "在它們公開前，嘗試新的 ${ BRAND_NAME } 功能，更新與產品。這將會重新載入應用程式"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "多達 ${ FAMILY_MAX_USERS } 位使用者"
       ],
       "Update recurring event": [
         "更新週期性事件"
@@ -6129,9 +6166,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "進階 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "付費版密碼管理器"
       ]
     },
     "summer2023: Tooltip": {

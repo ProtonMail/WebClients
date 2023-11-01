@@ -686,6 +686,20 @@
         "No tiene ningún grupo."
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } dominio personalizado",
+        "${ domains } dominios personalizados"
+      ],
+      "${ ips } server": [
+        "${ ips } servidor",
+        "${ ips } servidores"
+      ],
+      "${ users } user": [
+        "${ users } usuario",
+        "${ users } usuarios"
+      ]
+    },
     "Alarm notification": {
       "${ title } started at ${ formattedHour }": [
         "${ title } comenzó a las ${ formattedHour }"
@@ -810,6 +824,18 @@
       ],
       "High speed streaming": [
         "Transmisión de alta velocidad"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } Premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } Premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } Premium"
+      ],
+      "Premium Password Manager": [
+        "Administrador de contraseñas premium"
       ]
     },
     "bf2023: Footer": {
@@ -1127,6 +1153,12 @@
       "${ more } more": [
         "${ more } más",
         "${ more } más"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } usuario",
+        "${ users } usuarios"
       ]
     },
     "Collapsible tooltip": {
@@ -2470,6 +2502,9 @@
       "Incorrect username": [
         "Nombre de usuario incorrecto"
       ],
+      "Intended recipient does not support calendar sharing": [
+        "El destinatario previsto no admite compartir calendarios"
+      ],
       "Interval cannot be empty": [
         "El intervalo no puede estar vacío"
       ],
@@ -3661,6 +3696,9 @@
         "${ selectedFoldersCountLocalized } etiqueta seleccionada",
         "${ selectedFoldersCountLocalized } etiquetas seleccionadas"
       ],
+      "${ storage } storage": [
+        "${ storage } de almacenamiento"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contacto actualizado.",
         "${ updated } contacto actualizado."
@@ -4051,6 +4089,9 @@
       "Previous modifications on this series will be lost.": [
         "Las modificaciones previas de esta serie se perderán."
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "El precio incluye todos los descuentos aplicables basados en ciclos y los cupones vigentes guardados en su cuenta."
+      ],
       "Primary": [
         "Principal"
       ],
@@ -4165,8 +4206,23 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Para usar Verificación de Dirección, debe confiar una o más claves públicas disponibles, incluyendo la clave que quiere usar para enviar. Esto impedirá que las claves de cifrado sean falsificadas."
       ],
+      "Total email addresses": [
+        "Direcciones de correo totales"
+      ],
+      "Total storage": [
+        "Almacenamiento total"
+      ],
+      "Total supported domains": [
+        "Dominios compatibles totales"
+      ],
+      "Total VPN connections": [
+        "Conexiones VPN totales"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Pruebe las nuevas funciones, actualizaciones y productos de ${ BRAND_NAME } antes de que se lancen al público. Esto recargará la aplicación."
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Hasta ${ FAMILY_MAX_USERS } usuarios"
       ],
       "Update recurring event": [
         "Actualizar evento recurrente"
@@ -6347,9 +6403,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } premium"
-      ],
-      "Premium Password Manager": [
-        "Administrador de contraseñas premium"
       ]
     },
     "summer2023: Tooltip": {

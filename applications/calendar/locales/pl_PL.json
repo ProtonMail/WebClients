@@ -694,6 +694,26 @@
         "Nie masz żadnych grup."
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } niestandardowa domena",
+        "${ domains } niestandardowe domeny",
+        "${ domains } niestandardowych domen",
+        "${ domains } niestandardowych domen"
+      ],
+      "${ ips } server": [
+        "${ ips } serwer",
+        "${ ips } serwery",
+        "${ ips } serwerów",
+        "${ ips } serwerów"
+      ],
+      "${ users } user": [
+        "${ users } użytkownik",
+        "${ users } użytkowników",
+        "${ users } użytkowników",
+        "${ users } użytkowników"
+      ]
+    },
     "Alarm notification": {
       "${ title } started at ${ formattedHour }": [
         "Wydarzenie ${ title } rozpoczęło się o godzinie ${ formattedHour }"
@@ -818,6 +838,18 @@
       ],
       "High speed streaming": [
         "Szybki streaming"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } w wersji premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } w wersji premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } w wersji premium"
+      ],
+      "Premium Password Manager": [
+        "Menedżer haseł w wersji premium"
       ]
     },
     "bf2023: Footer": {
@@ -1143,6 +1175,14 @@
         "${ more } więcej",
         "${ more } więcej",
         "${ more } więcej"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } użytkownik",
+        "${ users } użytkowników",
+        "${ users } użytkowników",
+        "${ users } użytkowników"
       ]
     },
     "Collapsible tooltip": {
@@ -2204,6 +2244,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Trwa importowanie i szyfrowanie kontaktów... Proces może potrwać kilka minut. Kiedy się zakończy, możesz zamknąć okno."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Upewnij się, że plik importu CSV lub VCF nie przekracza rozmiaru ${ MAX_IMPORT_FILE_SIZE_STRING } lub ${ MAX_IMPORT_CONTACTS_STRING } kontaktów. Podziel swój plik na mniejsze, jeśli jest zbyt duży. ${ learnMoreLink }."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Lista kontaktów, którą importujesz, zawiera grupy. Sprawdź, jak te grupy powinny zostać zaimportowane."
       ],
@@ -2504,6 +2547,9 @@
       ],
       "Incorrect username": [
         "Nazwa użytkownika jest nieprawidłowa"
+      ],
+      "Intended recipient does not support calendar sharing": [
+        "Odbiorca nie obsługuje udostępniania kalendarza"
       ],
       "Interval cannot be empty": [
         "Przedział czasowy nie może być pusty"
@@ -3774,6 +3820,9 @@
         "${ selectedFoldersCountLocalized } zaznaczonych etykiet",
         "${ selectedFoldersCountLocalized } zaznaczonych etykiet"
       ],
+      "${ storage } storage": [
+        "${ storage } przestrzeni dyskowej"
+      ],
       "${ updated } contact updated successfully.": [
         "Kontakt został zaktualizowany.",
         "${ updated } kontakty zostały zaktualizowane.",
@@ -4182,6 +4231,9 @@
       "Previous modifications on this series will be lost.": [
         "Poprzednie zmiany w tej serii zostaną utracone."
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Cena obejmuje wszystkie mające zastosowanie zniżki i kupony zapisane na Twoim koncie."
+      ],
       "Primary": [
         "Główny"
       ],
@@ -4296,8 +4348,23 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Aby używać weryfikacji adresu, musisz dodać do zaufanych co najmniej jeden z dostępnych kluczy publicznych, w tym klucz, którego chcesz używać do wysyłania wiadomości. Zapobiega to podrabianiu kluczy szyfrowania."
       ],
+      "Total email addresses": [
+        "Adresy e-mail"
+      ],
+      "Total storage": [
+        "Przestrzeń dyskowa"
+      ],
+      "Total supported domains": [
+        "Wsparcie dla domen"
+      ],
+      "Total VPN connections": [
+        "Połączenia VPN"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Wypróbuj nowe funkcje, aktualizacje i usługi ${ BRAND_NAME } przed ich premierą. Spowoduje to odświeżenie strony"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Do ${ FAMILY_MAX_USERS } użytkowników"
       ],
       "Update recurring event": [
         "Zaktualizuj wydarzenie cykliczne"
@@ -6592,9 +6659,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } w wersji premium"
-      ],
-      "Premium Password Manager": [
-        "Menedżer haseł w wersji Premium"
       ]
     },
     "summer2023: Tooltip": {
