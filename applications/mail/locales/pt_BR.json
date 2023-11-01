@@ -197,6 +197,9 @@
       "Close navigation": [
         "Fechar navegação"
       ],
+      "Close the checklist": [
+        "Fechar o checklist"
+      ],
       "Close this banner": [
         "Fechar este painel"
       ],
@@ -710,11 +713,11 @@
       "Not saved": [
         "Não salvo"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Abrir ${ CALENDAR_APP_NAME }"
@@ -1216,6 +1219,20 @@
         "Expiração de mensagem"
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } domínio personalizado",
+        "${ domains } domínios personalizados"
+      ],
+      "${ ips } server": [
+        "${ ips } servidor",
+        "${ ips } servidores"
+      ],
+      "${ users } user": [
+        "${ users } usuário",
+        "${ users } usuários"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Ao sair agora, alguns contatos podem não ser importados"
@@ -1346,6 +1363,18 @@
       ],
       "High speed streaming": [
         "Streaming de alta velocidade"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Gerenciador de senha premium"
       ]
     },
     "bf2023: Footer": {
@@ -1756,6 +1785,12 @@
       ],
       "Cancel expiration": [
         "Cancelar expiração"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } usuário",
+        "${ users } usuários"
       ]
     },
     "Collapsible tooltip": {
@@ -4310,6 +4345,9 @@
       "Close": [
         "Fechar"
       ],
+      "Closing this means giving up the free storage bonus.": [
+        "Fechar isso significa abrir mão do bônus de armazenamento gratuito."
+      ],
       "Congratulation, you completed all the steps!": [
         "Parabéns, você completou todas as etapas!"
       ],
@@ -4881,6 +4919,9 @@
         "${ selectedFoldersCountLocalized } marcador selecionado",
         "${ selectedFoldersCountLocalized } marcadores selecionados"
       ],
+      "${ storage } storage": [
+        "${ storage } de armazenamento"
+      ],
       "${ total } conversation": [
         "${ total } conversa",
         "${ total } conversas"
@@ -5055,6 +5096,9 @@
       ],
       "Calendar side panel": [
         "Painel lateral de calendário"
+      ],
+      "Can't find what you're looking for? ${ displayAllMailButton }": [
+        "Não consegue encontrar o que procura? ${ displayAllMailButton }"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Não consegue lembrar sua senha? Nós podemos ajudar a limpar os dados criptografados de todos os contatos criptografados com esta chave e, no processo, descartar o alerta."
@@ -5585,6 +5629,9 @@
       "Preview for this file type is not supported": [
         "A pré-visualização deste arquivo não é suportada."
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "O preço inclui todos os descontos baseados em ciclos aplicáveis ​​e cupons não expirados salvos em sua conta."
+      ],
       "Primary": [
         "Principal"
       ],
@@ -5891,6 +5938,18 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Muitas mensagens esperando para serem enviadas. Aguarde até que outra mensagem seja enviada para agendar esta."
       ],
+      "Total email addresses": [
+        "Endereços de e-mail adicionais"
+      ],
+      "Total storage": [
+        "Total de armazenamento"
+      ],
+      "Total supported domains": [
+        "Total de domínios suportados"
+      ],
+      "Total VPN connections": [
+        "Conexões VPN adicionais"
+      ],
       "Trackers blocked:": [
         "Rastreadores bloqueados:"
       ],
@@ -5911,6 +5970,9 @@
       ],
       "Unsupported file": [
         "Arquivo não suportado"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Até ${ FAMILY_MAX_USERS } usuários"
       ],
       "Updating message content search...": [
         "Atualizando pesquisa de conteúdo de mensagens..."
@@ -8442,6 +8504,9 @@
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Agora carregamos imagens por padrão e impedimos que os remetentes rastreiem você. Isso pode ser alterado no ${ settingsLink }."
       ],
+      "You can now automatically forward your emails to anyone!": [
+        "Agora você pode encaminhar automaticamente seus e-mails para qualquer pessoa!"
+      ],
       "You can now schedule your messages to be sent later": [
         "Agora você pode agendar suas mensagens para serem enviadas depois"
       ]
@@ -8751,9 +8816,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium de ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Gerenciador de senhas premium"
       ]
     },
     "summer2023: Tooltip": {

@@ -700,10 +700,10 @@
       "Not saved": [
         "저장되지 않음"
       ],
-      "Ok": [
+      "OK": [
         "확인"
       ],
-      "OK": [
+      "Ok": [
         "확인"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -1204,6 +1204,17 @@
         "만료 중인 메시지"
       ]
     },
+    "Addon": {
+      "${ domains } custom domains": [
+        "${ domains } 개 사용자 지정 이메일 도메인"
+      ],
+      "${ ips } servers": [
+        "${ ips }개 서버"
+      ],
+      "${ users } users": [
+        "${ users }명 사용자"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "지금 떠나면, 일부 연락처가 불러오지 않을 수 있습니다."
@@ -1660,6 +1671,11 @@
       ],
       "Cancel expiration": [
         "유효기간 취소"
+      ]
+    },
+    "Checkout row": {
+      "${ users } users": [
+        "${ users } 사용자"
       ]
     },
     "Collapsible tooltip": {
@@ -4715,6 +4731,9 @@
       "${ selectedFoldersCountLocalized } labels selected": [
         "${ selectedFoldersCountLocalized }개 라벨 선택함"
       ],
+      "${ storage } storage": [
+        "${ storage } 저장공간"
+      ],
       "${ total } conversations": [
         "${ total } 대화"
       ],
@@ -5396,6 +5415,9 @@
       "Preview for this file type is not supported": [
         "이 파일 유형의 미리보기가 지원되지 않습니다"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "가격에는 귀하의 계정에 저장된 모든 적용 가능한 주기 기반 할인과 만료되지 않은 쿠폰이 포함되어 있습니다."
+      ],
       "Primary": [
         "우선 순위"
       ],
@@ -5699,6 +5721,18 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "전송 대기중인 메시지가 너무 많습니다. 다른 메시지가 전송될때 까지 잠시 기다려주세요."
       ],
+      "Total email addresses": [
+        "총 이메일 주소"
+      ],
+      "Total storage": [
+        "총 저장공간"
+      ],
+      "Total supported domains": [
+        "총 지원 도메인"
+      ],
+      "Total VPN connections": [
+        "총 VPN 연결"
+      ],
       "Trackers blocked:": [
         "추적 차단됨:"
       ],
@@ -5719,6 +5753,9 @@
       ],
       "Unsupported file": [
         "지원되지 않는 파일"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "최대 ${ FAMILY_MAX_USERS }명 구성원"
       ],
       "Updating message content search...": [
         "메시지 컨텐츠 검색 업데이트..."
@@ -8490,9 +8527,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "프리미엄 암호 관리자"
       ]
     },
     "summer2023: Tooltip": {

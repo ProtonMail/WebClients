@@ -232,6 +232,9 @@
       "Continue with Google": [
         "Pokračovať cez Google"
       ],
+      "Continue with Outlook": [
+        "Pokračovať s Outlookom"
+      ],
       "Contract composer": [
         "Editor adresáta"
       ],
@@ -514,6 +517,12 @@
       "Import from .csv or vCard": [
         "Importovať z .csv alebo vCard"
       ],
+      "Import from Google": [
+        "Importovať z Google"
+      ],
+      "Import from Outlook": [
+        "Importovať z Outlooku"
+      ],
       "In the morning": [
         "Ráno"
       ],
@@ -712,11 +721,11 @@
       "Not saved": [
         "Neuložené"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Otvoriť ${ CALENDAR_APP_NAME }"
@@ -1222,6 +1231,26 @@
         "Správa s vypršaním platnosti"
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } vlastná doména",
+        "${ domains } vlastné domény",
+        "${ domains } vlastných domén",
+        "${ domains } vlastných domén"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } servery",
+        "${ ips } serverov",
+        "${ ips } serverov"
+      ],
+      "${ users } user": [
+        "${ users } používateľ",
+        "${ users } používatelia",
+        "${ users } používateľov",
+        "${ users } používateľov"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Pokiaľ teraz odídete, niektoré kontakty nebudú importované"
@@ -1678,6 +1707,14 @@
       ],
       "Cancel expiration": [
         "Zrušiť platnosť"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } užívateľ",
+        "${ users } užívatelia",
+        "${ users } užívateľov",
+        "${ users } užívateľov"
       ]
     },
     "Collapsible tooltip": {
@@ -2938,6 +2975,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrovanie a import kontaktov... Táto akcia môže trvať niekoľko minút. Akonáhle je proces ukončený, môžete zavrieť tento modul."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Pri importovaní prostredníctvom súborov CSV a VCF zabezpečte, aby veľkosť súboru nepresiahla ${ MAX_IMPORT_FILE_SIZE_STRING } alebo ${ MAX_IMPORT_CONTACTS_STRING } kontaktov. Ak je váš súbor väčší, rozdeľte ho na menšie súbory. ${ learnMoreLink }."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá sa, že zoznam kontaktov ktorý importujete, zahŕňa nejaké skupiny. Prosím, skontrolujte ako by tieto skupiny mali byť importované."
       ],
@@ -2965,6 +3005,9 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Ušetrite čas posielaním e-mailov alebo pozvánok všetkým naraz, čo je prémiová funkcia medzi mnohými ďalšími. Inovujte ešte dnes."
       ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Pre import kontaktov zo služby Google alebo Outlook ${ easySwitchLink }."
+      ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Zapnite ochranu sledovania emailov, aby ste zabránili inzerentom a ostatným v sledovaní vašej polohy a online aktivity."
       ],
@@ -2991,6 +3034,11 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Kontakty, ktoré nechcete zlúčiť ani zachovať, označte pre zmazanie. K zmazaniu dôjde po kliknutí na tlačidlo pre zlúčenie"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "použite asistenta pre import Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4927,6 +4975,9 @@
         "${ selectedFoldersCountLocalized } vybratých štítkov",
         "${ selectedFoldersCountLocalized } vybratých štítkov"
       ],
+      "${ storage } storage": [
+        "${ storage } úložisko"
+      ],
       "${ total } conversation": [
         "${ total } konverzácia",
         "${ total } konverzácie",
@@ -5686,6 +5737,9 @@
       "Preview for this file type is not supported": [
         "Ukážka tohto typu súboru nie je podporovaná"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Cena zahŕňa všetky príslušné zľavy na základe cyklu a kupóny, ktorých platnosť nie je ukončená, uložené vo vašom účte."
+      ],
       "Primary": [
         "Hlavný"
       ],
@@ -5998,6 +6052,18 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Príliš veľa správ čaká na odoslanie. Ak chcete naplánovať túto správu, počkajte, kým nebude odoslaná ďalšia správa."
       ],
+      "Total email addresses": [
+        "Všetky e-mailové adresy"
+      ],
+      "Total storage": [
+        "Celkové úložisko "
+      ],
+      "Total supported domains": [
+        "Celkom podporovaných domén"
+      ],
+      "Total VPN connections": [
+        "Celkom VPN pripojení"
+      ],
       "Trackers blocked:": [
         "Blokované trackery:"
       ],
@@ -6018,6 +6084,9 @@
       ],
       "Unsupported file": [
         "Nepodporovaný súbor"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Až ${ FAMILY_MAX_USERS } používateľov"
       ],
       "Updating message content search...": [
         "Aktualizujem vyhľadávanie v správach..."
@@ -6506,7 +6575,7 @@
         "Zobraziť pôvodnú správu"
       ],
       "Show unread emails": [
-        "Zobrazenie neprečítaných e-mailov"
+        "Zobrazenie neprečítaných emailov"
       ],
       "Star": [
         "Hviezdička"
@@ -7787,7 +7856,7 @@
     },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-mailová adresa sa nenašla medzi identifikátormi používateľov definovanými v kľúči na odosielanie (${ keyUserIds })"
+        "Emailová adresa sa nenašla medzi identifikátormi používateľov definovanými v kľúči na odosielanie (${ keyUserIds })"
       ]
     },
     "Placeholder": {
@@ -8999,9 +9068,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Prémiový ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Prémiový správca hesiel"
       ]
     },
     "summer2023: Tooltip": {
