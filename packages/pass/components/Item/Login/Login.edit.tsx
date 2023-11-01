@@ -314,11 +314,11 @@ export const LoginEdit: VFC<ItemEditViewProps<'login'>> = ({ revision, url, vaul
                                                       shape="ghost"
                                                       size="small"
                                                       key="add-current-url"
-                                                      title={c('Action').t`Add current url`}
+                                                      title={c('Action').t`Add current URL`}
                                                       className="flex flex-align-items-center gap-1"
                                                       onClick={() => handleAdd(subdomain ?? domain!)}
                                                   >
-                                                      <Icon name="plus" /> {c('Action').t`Add current url`}
+                                                      <Icon name="plus" /> {c('Action').t`Add current URL`}
                                                   </Button>
                                               )
                                             : undefined
