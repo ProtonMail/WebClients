@@ -61,7 +61,6 @@ const useGetEncryptionPreferences = () => {
                 selfSend = { address: selfAddress, publicKey: selfPublicKey, canSend };
                 // For own addresses, we use the decrypted keys in selfSend and do not fetch any data from the API
                 apiKeysConfig = {
-                    Keys: [],
                     publicKeys: [],
                     RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL,
                     ktVerificationResult: { status: KT_VERIFICATION_STATUS.VERIFIED_KEYS },
