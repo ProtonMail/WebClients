@@ -2,16 +2,17 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import withNotification from '@proton/pass/store/actions/with-notification';
-import { withRequestFailure, withRequestStart, withRequestSuccess } from '@proton/pass/store/actions/with-request';
+import withRequest, { withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/with-request';
 import { type ExtensionEndpoint } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { type BugPayload } from '@proton/shared/lib/api/reports';
 
+import { reportBugRequest } from '../requests';
 import withCacheBlock from '../with-cache-block';
 
-export const reportBugIntent = createAction(
-    'report::bug::intent',
-    withRequestStart((payload: BugPayload) => withCacheBlock({ payload }))
+export const reportBugIntent = createAction('report::bug::intent', (payload: BugPayload) =>
+    pipe(withRequest({ type: 'start', id: reportBugRequest(uniqueId()) }), withCacheBlock)({ payload })
 );
 
 export const reportBugSuccess = createAction(
