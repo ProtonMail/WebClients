@@ -426,7 +426,7 @@
         "암호화 및 내보내기"
       ],
       "Explore other ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME } 의 플랜 살펴보기"
+        "다른 ${ BRAND_NAME } 플랜 살펴보기"
       ],
       "Export": [
         "내보내기"
@@ -562,9 +562,6 @@
       ],
       "Keep": [
         "보관"
-      ],
-      "Keep my ${ vpnPlanNameShort } subscription": [
-        "나의 ${ vpnPlanNameShort } 구독 유지"
       ],
       "label emails as": [
         "다음으로 레이블 지정"
@@ -1267,7 +1264,7 @@
     },
     "Auto import invitations setting": {
       "Add to calendar and mark as pending": [
-        "캘린더에 추가하고 대기 중으로 표시합니다"
+        "캘린더에 추가하고 대기 중으로 표시"
       ]
     },
     "Autoresponse": {
@@ -5764,7 +5761,7 @@
         "새 주소에서 이메일을 주고 받기 전에 암호화 키를 만들어야 합니다."
       ],
       "Billed at ${ price }": [
-        "가격 ${ price }"
+        "${ price }에 결제됨"
       ],
       "Billing cycle: ${ text }": [
         "청구 주기: ${ text }"
@@ -6113,9 +6110,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "만약 이것이 오류라고 생각되시면, ${ contactLink } 로 연락해 주세요."
-      ],
-      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "취소시, 만료일인 ${ expiryDate }에 ${ vpnPlanName } 구독이 더 이상 갱신되지 않습니다."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "받은 편지함에 이메일이 없으면 스팸 폴더를 확인하세요."
@@ -7222,7 +7216,7 @@
         "계정 복구를 제공하기 위해 이메일 주소로 재설정 코드를 보내드렸습니다."
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
-        "계정 복구를 제공하기 위해 전화 번호 주소로 재설정 코드를 보내드렸습니다."
+        "계정 복구를 위해 제공하신 휴대폰 번호로 재설정 코드를 보내드립니다."
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "우리는 현재 플랜에서 같은 가격에 더 많은 것을 제공하도록 업그레이드하고 있습니다. 시스템이 업데이트되는 동안, 플랜을 변경할 수 없습니다. 완료되는 대로 이메일을 보내드리겠습니다."
@@ -7391,9 +7385,6 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "로그인하면 ${ destination }으로 리다이렉트 됩니다."
-      ],
-      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
-        "${ vpnPlanNameShort } 서버와 기능을 잃게 됩니다."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } 및 ${ CALENDAR_APP_NAME } 을(를) 사용하려면 ${ BRAND_NAME } 주소가 필요합니다."
@@ -8882,7 +8873,7 @@
         "${ BRAND_NAME } 제품 소개"
       ],
       "${ BRAND_NAME } welcome emails": [
-        "${ BRAND_NAME }은 이메일을 환영합니다"
+        "${ BRAND_NAME } 환영 이메일"
       ]
     },
     "Label in domain modal": {
@@ -9891,17 +9882,6 @@
         "팀 관리"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "그렇지 않으면 귀하의 계정에 접근하는 것이 제한될 것이며, 귀하의 계정은 결국 비활성화됩니다."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } 의 프리미엄 기능을 계속 사용하려면, 구독 및 결제 옵션을 선택하세요."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "무료 체험이 ${ formattedPeriodEndDate }에 종료됩니다."
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 }(으)로 끝나는 ${ brand }"
@@ -9989,6 +9969,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "그렇지 않으면 귀하의 계정에 접근하는 것이 제한될 것이며, 귀하의 계정은 결국 비활성화됩니다."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } 의 프리미엄 기능을 계속 사용하려면, 구독 및 결제 옵션을 선택하세요."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "무료 체험이 ${ formattedPeriodEndDate }에 종료됩니다."
       ]
     },
     "new_plans: Label": {
@@ -10746,6 +10737,9 @@
       "Continue": [
         "계속하기"
       ],
+      "Continue to ${ appName } without upgrading": [
+        "업그레이드 없이 ${ appName } 계속"
+      ],
       "Continue to ${ free }": [
         "${ free }로 계속하기"
       ],
@@ -10764,6 +10758,9 @@
       "Download to continue ${ size }": [
         "${ size } 계속하려면 다운로드"
       ],
+      "Keep this plan": [
+        "이 플랜 유지"
+      ],
       "Or ${ createANewAccount }": [
         "또는 ${ createANewAccount }"
       ],
@@ -10772,6 +10769,9 @@
       ],
       "Start using ${ appName } now": [
         "${ appName } 사용 시작"
+      ],
+      "Upgrade": [
+        "업그레이드"
       ],
       "Upgrade my plan": [
         "내 플랜 업그레이드"
@@ -10839,6 +10839,9 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "다만, **${ upsellPlanTitle }**으로 업그레이드 하여 **${ unlockPlanTitle }**을(를) 잠금 해제하고 모든 ${ BRAND_NAME } 프리미엄 서비스를 잠금해제 할 수 있습니다. — 매달 ${ relativePrice } 추가 가격밖에 들지 않습니다."
       ],
+      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "다만, **${ upsellPlanTitle }**으로 업그레이드 하여 **${ unlockPlanTitle }**을(를) 잠금 해제하고 모든 ${ BRAND_NAME } 프리미엄 서비스를 잠금해제 할 수 있습니다."
+      ],
       "By continuing, you agree to our ${ termsAndConditions }": [
         "계속하면, ${ termsAndConditions }에 동의하는 것으로 간주합니다."
       ],
@@ -10884,6 +10887,9 @@
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "만약 ${ BRAND_NAME } 계정이 잠기면 **복구 키트**를 사용하여 로그인하고 데이터를 복구할 수 있습니다."
       ],
+      "Includes:": [
+        "포함:"
+      ],
       "Install ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 설치"
       ],
@@ -10901,9 +10907,6 @@
       ],
       "Launching ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 실행 중"
-      ],
-      "Limited time offer: Get ${ title } for free for 1 year!": [
-        "기간 한정: 1년 동안 ${ title } 제품을 무료로 사용해 보세요!"
       ],
       "One easy subscription.": [
         "한 번의 쉬운 구독"
@@ -10952,6 +10955,9 @@
       ],
       "Verifying your payment": [
         "결제 수단을 인증 중입니다."
+      ],
+      "Welcome to ${ shortName } Plus": [
+        "${ shortName } Plus에 오신 것을 환영합니다."
       ],
       "Works on all devices": [
         "모든 디바이스에서 작동"
@@ -12177,7 +12183,7 @@
     },
     "Subscription saving": {
       "Save": [
-        "저장"
+        "절약되는 가격:"
       ]
     },
     "Subscription status": {
@@ -12449,9 +12455,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "프리미엄 암호 관리자"
       ]
     },
     "summer2023: Tooltip": {
