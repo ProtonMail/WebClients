@@ -38,27 +38,22 @@ const withRequest =
     <Action extends object>(action: Action): WithRequest<Action, Type, Data> =>
         merge(action, { meta: { request } });
 
-const withRequestStatus =
-    <Type extends RequestType>(type: Type) =>
+const withRequestResult =
+    <Type extends 'success' | 'failure'>(type: Type) =>
     <PA extends PrepareAction<any>, Data>(
         prepare: PA,
-        config?: Type extends 'start' ? never : { maxAge?: number; data?: (...args: Parameters<PA>) => Data }
+        config?: { maxAge?: number; data?: (...args: Parameters<PA>) => Data }
     ) =>
     <ID extends string>(requestId: ID, ...args: Parameters<PA>) =>
-        withRequest<RequestType, Data>({
+        withRequest<'success' | 'failure', Data>({
             id: requestId,
             type,
-            ...(type !== 'start'
-                ? {
-                      maxAge: config?.maxAge,
-                      data: config?.data?.(...args),
-                  }
-                : {}),
+            maxAge: config?.maxAge,
+            data: config?.data?.(...args),
         })(prepare(...args) as ReturnType<PA>) as WithRequest<ReturnType<PA>, Type, Data>;
 
-export const withRequestStart = withRequestStatus('start');
-export const withRequestFailure = withRequestStatus('failure');
-export const withRequestSuccess = withRequestStatus('success');
+export const withRequestFailure = withRequestResult('failure');
+export const withRequestSuccess = withRequestResult('success');
 
 export const withRevalidate = <Action extends WithRequest<AnyAction, 'start'>>(action: Action) => {
     action.meta.request.revalidate = true;
