@@ -28,7 +28,7 @@ function* trashItemWorker(
                 notification({
                     type: 'info',
                     key: getItemActionId(payload),
-                    receiver: meta.sender?.endpoint,
+                    endpoint: meta.sender?.endpoint,
                     text: c('Info')
                         .t`Alias "${item.aliasEmail}" moved to trash - it will stop forwarding emails to your mailbox`,
                 })

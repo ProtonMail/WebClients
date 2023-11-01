@@ -7,7 +7,7 @@ import { c } from 'ttag';
 
 import { Checkbox } from '@proton/components/components';
 import { settingsEditIntent } from '@proton/pass/store/actions';
-import { settingsEdit } from '@proton/pass/store/actions/requests';
+import { settingsEditRequest } from '@proton/pass/store/actions/requests';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import {
     selectAutosaveVault,
@@ -128,7 +128,7 @@ const getSettings =
 export const Behaviors: VFC = () => {
     const dispatch = useDispatch();
     const settings = useSelector(selectProxiedSettings);
-    const loading = useSelector(selectRequestInFlight(settingsEdit('behaviors')));
+    const loading = useSelector(selectRequestInFlight(settingsEditRequest('behaviors')));
 
     return (
         <>

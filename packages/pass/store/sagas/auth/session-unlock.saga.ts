@@ -7,11 +7,11 @@ import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
 
 function* unlockSessionWorker(
     { onSessionUnlocked, onSignout }: WorkerRootSagaOptions,
-    { payload, meta: { callback: onUnlockResult } }: ReturnType<typeof sessionUnlockIntent>
+    { payload, meta: { callback: onUnlockResult, request } }: ReturnType<typeof sessionUnlockIntent>
 ) {
     try {
         const sessionLockToken: string = yield unlockSession(payload.pin);
-        const successMessage = sessionUnlockSuccess({ sessionLockToken });
+        const successMessage = sessionUnlockSuccess(request.id, { sessionLockToken });
 
         yield put(successMessage);
         yield onSessionUnlocked?.(sessionLockToken);
@@ -21,7 +21,7 @@ function* unlockSessionWorker(
         const inactiveSession = err.name === 'InactiveSession';
         if (inactiveSession) onSignout?.();
 
-        const failureMessage = sessionUnlockFailure(err, {
+        const failureMessage = sessionUnlockFailure(request.id, err, {
             canRetry: !inactiveSession,
             error: inactiveSession
                 ? c('Error').t`Too many failed attempts. Please sign in again.`

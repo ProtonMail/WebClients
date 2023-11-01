@@ -7,7 +7,7 @@ import Info from '@proton/components/components/link/Info';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
-import { useActionWithRequest } from '@proton/pass/hooks/useActionWithRequest';
+import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import {
     shareEditMemberAccessIntent,
@@ -57,17 +57,17 @@ export const ShareMember: VFC<ShareMemberProps> = ({
         return getShareRoleDefinition()[role];
     }, [owner, role]);
 
-    const removeAccess = useActionWithRequest({
+    const removeAccess = useActionRequest({
         action: shareRemoveMemberAccessIntent,
         requestId: shareRemoveMemberRequest(userShareId),
     });
 
-    const editAccess = useActionWithRequest({
+    const editAccess = useActionRequest({
         action: shareEditMemberAccessIntent,
         requestId: shareEditMemberRoleRequest(userShareId),
     });
 
-    const transferOwnership = useActionWithRequest({
+    const transferOwnership = useActionRequest({
         action: vaultTransferOwnerIntent,
         requestId: vaultTransferOwnerRequest(userShareId),
     });

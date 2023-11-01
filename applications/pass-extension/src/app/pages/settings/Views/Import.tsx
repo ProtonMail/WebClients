@@ -1,8 +1,8 @@
 import { type VFC, useCallback, useRef, useState } from 'react';
+import { Provider as ReduxProvider, useStore } from 'react-redux';
 
 import { Form, FormikProvider } from 'formik';
 import { SettingsPanel } from 'proton-pass-extension/lib/components/Settings/SettingsPanel';
-import { useExtensionConnectContext } from 'proton-pass-extension/lib/hooks/useExtensionConnectContext';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
@@ -17,18 +17,16 @@ import {
 } from '@proton/pass/hooks/useImportForm';
 import type { ImportPayload } from '@proton/pass/lib/import/types';
 import { PROVIDER_INFO_MAP } from '@proton/pass/lib/import/types';
-import * as requests from '@proton/pass/store/actions/requests';
+import { importItemsRequest } from '@proton/pass/store/actions/requests';
 import type { MaybeNull } from '@proton/pass/types';
 import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 export const Import: VFC = () => {
+    const store = useStore();
     const { createNotification } = useNotifications();
     const [importData, setImportData] = useState<MaybeNull<ImportPayload>>(null);
     const beforeSubmitResolver = useRef<(value: UseImportFormBeforeSubmitValue) => void>();
-    const reset = () => beforeSubmitResolver.current?.({ ok: false });
-
-    const { context } = useExtensionConnectContext();
 
     const beforeSubmit = useCallback<UseImportFormBeforeSubmit>(
         async (payload) =>
@@ -50,10 +48,14 @@ export const Import: VFC = () => {
         onSubmit: (payload) => {
             const total = payload.vaults.reduce((count, vault) => count + vault.items.length, 0);
             createNotification({
-                key: requests.importItems(),
+                key: importItemsRequest(),
                 showCloseButton: false,
                 expiration: -1,
-                text: <ImportProgress total={total} port={context?.port} />,
+                text: (
+                    <ReduxProvider store={store}>
+                        <ImportProgress total={total} />
+                    </ReduxProvider>
+                ),
             });
         },
     });
@@ -88,7 +90,7 @@ export const Import: VFC = () => {
 
                 {importData !== null && (
                     <ImportVaultsPickerModal
-                        onClose={reset}
+                        onClose={() => beforeSubmitResolver.current?.({ ok: false })}
                         payload={importData}
                         onSubmit={(payload) =>
                             beforeSubmitResolver?.current?.(

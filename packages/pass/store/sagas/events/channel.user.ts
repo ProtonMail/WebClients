@@ -64,7 +64,7 @@ function* onUserEvent(
             const keyPassword = getAuth().getPassword();
             const addresses = (yield select(selectAllAddresses)) as Address[];
             yield PassCrypto.hydrate({ user, keyPassword, addresses });
-            yield put(syncIntent({})); /* trigger a full data sync */
+            yield put(syncIntent()); /* trigger a full data sync */
         }
     }
 }

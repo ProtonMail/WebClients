@@ -6,12 +6,12 @@ import { getShareAccessOptionsIntent } from '@proton/pass/store/actions';
 import { shareAccessOptionsRequest } from '@proton/pass/store/actions/requests';
 import { type Maybe } from '@proton/pass/types';
 
-import { useActionWithRequest } from './useActionWithRequest';
+import { useActionRequest } from './useActionRequest';
 
 export const useShareAccessOptionsPolling = (shareId: string) => {
     const timer = useRef<Maybe<ReturnType<typeof setTimeout>>>();
 
-    const { loading, dispatch, revalidate } = useActionWithRequest({
+    const { loading, dispatch, revalidate } = useActionRequest({
         action: getShareAccessOptionsIntent,
         requestId: shareAccessOptionsRequest(shareId),
     });

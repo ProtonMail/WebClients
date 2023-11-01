@@ -2,13 +2,13 @@ import { devToolsEnhancer } from '@redux-devtools/remote';
 import { configureStore } from '@reduxjs/toolkit';
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { withContext } from 'proton-pass-extension/app/worker/context';
-import { requestMiddleware } from 'proton-pass-extension/lib/store/request-middleware';
 import { isPopupPort } from 'proton-pass-extension/lib/utils/port';
 import { getExtensionVersion } from 'proton-pass-extension/lib/utils/version';
 import createSagaMiddleware from 'redux-saga';
 
 import { ACTIVE_POLLING_TIMEOUT, INACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
+import { requestMiddleware } from '@proton/pass/store/middlewares/request-middleware';
 import reducer from '@proton/pass/store/reducers';
 import { workerRootSaga } from '@proton/pass/store/sagas';
 import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
@@ -87,17 +87,6 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
             })
         ),
 
-    // FIXME: use request progress metadata instead
-    onImportProgress: (progress, endpoint) => {
-        WorkerMessageBroker.ports.broadcast(
-            backgroundMessage({
-                type: WorkerMessageType.IMPORT_PROGRESS,
-                payload: { progress },
-            }),
-            (name) => (endpoint ? name.startsWith(endpoint) : false)
-        );
-    },
-
     /* Update the extension's badge count on every item state change */
     onItemsChange: withContext((ctx) => ctx.service.autofill.updateTabsBadgeCount()),
 
@@ -105,8 +94,8 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
      * if no target ports are opened. Assume that if no
      * target is specified then notification is for popup */
     onNotification: (notification) => {
-        const { receiver } = notification;
-        const reg = new RegExp(`^${receiver ?? 'popup'}`);
+        const { endpoint } = notification;
+        const reg = new RegExp(`^${endpoint ?? 'popup'}`);
         const ports = WorkerMessageBroker.ports.query((key) => reg.test(key));
         const canConsume = ports.length > 0;
 

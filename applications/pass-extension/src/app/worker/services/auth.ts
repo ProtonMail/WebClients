@@ -14,13 +14,14 @@ import browser from '@proton/pass/lib/globals/browser';
 import { workerLocked, workerReady } from '@proton/pass/lib/worker';
 import {
     notification,
+    sessionLockSync,
     sessionUnlockFailure,
     sessionUnlockIntent,
     sessionUnlockSuccess,
     stateDestroy,
     stateLock,
-    syncLock,
 } from '@proton/pass/store/actions';
+import { sessionUnlockRequest } from '@proton/pass/store/actions/requests';
 import { selectUser } from '@proton/pass/store/selectors';
 import type { Api, Maybe, WorkerMessageResponse } from '@proton/pass/types';
 import { SessionLockStatus, WorkerMessageType, WorkerStatus } from '@proton/pass/types';
@@ -367,6 +368,7 @@ export const createAuthService = ({
             authStore.setLockToken(undefined);
             authStore.setLockLastExtendTime(undefined);
 
+            api.unsubscribe();
             ctx.setStatus(WorkerStatus.LOCKED);
 
             if (shouldLockState) {
@@ -402,7 +404,7 @@ export const createAuthService = ({
                 browser.alarms.create(SESSION_LOCK_ALARM, { when: (getEpoch() + lock.ttl) * 1_000 });
             }
 
-            store.dispatch(syncLock(lock));
+            store.dispatch(sessionLockSync(lock));
             return lock;
         },
     };
@@ -410,7 +412,7 @@ export const createAuthService = ({
     const handleUnlockRequest = (request: { pin: string }) =>
         new Promise<WorkerMessageResponse<WorkerMessageType.UNLOCK_REQUEST>>((resolve) => {
             store.dispatch(
-                sessionUnlockIntent({ pin: request.pin }, (action) => {
+                sessionUnlockIntent(sessionUnlockRequest(), { pin: request.pin }, (action) => {
                     if (sessionUnlockSuccess.match(action)) return resolve({ ok: true });
                     if (sessionUnlockFailure.match(action)) return resolve({ ok: false, ...action.payload });
                 })
