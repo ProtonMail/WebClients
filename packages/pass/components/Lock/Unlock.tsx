@@ -13,7 +13,7 @@ export const Unlock: VFC = () => {
 
     const unlock = useActionRequest({
         action: sessionUnlockIntent,
-        requestId: sessionUnlockRequest(),
+        initialRequestId: sessionUnlockRequest(),
         onStart: () => setDisabled(true),
         onFailure: () => setDisabled(false),
     });

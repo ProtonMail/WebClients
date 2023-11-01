@@ -4,14 +4,17 @@ import { c, msgid } from 'ttag';
 import type { ImportPayload, ImportProvider } from '@proton/pass/lib/import/types';
 import withCacheBlock from '@proton/pass/store/actions/with-cache-block';
 import withNotification from '@proton/pass/store/actions/with-notification';
-import { withRequestFailure, withRequestStart, withRequestSuccess } from '@proton/pass/store/actions/with-request';
+import withRequest, { withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/with-request';
 import type { ImportEntry } from '@proton/pass/store/reducers';
 import type { ExtensionEndpoint, ItemRevision } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
+import { importItemsRequest } from '../requests';
+
 export const importItemsIntent = createAction(
     'import::items::intent',
-    withRequestStart((payload: { data: ImportPayload; provider: ImportProvider }) => withCacheBlock({ payload }))
+    (payload: { data: ImportPayload; provider: ImportProvider }) =>
+        pipe(withRequest({ type: 'start', id: importItemsRequest() }), withCacheBlock)({ payload })
 );
 
 export const importItemsSuccess = createAction(

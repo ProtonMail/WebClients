@@ -1,13 +1,15 @@
 import { createAction } from '@reduxjs/toolkit';
 
 import withCacheBlock from '@proton/pass/store/actions/with-cache-block';
-import { withRequestFailure, withRequestStart, withRequestSuccess } from '@proton/pass/store/actions/with-request';
+import withRequest, { withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/with-request';
 import type { FeatureFlagState, SafeUserAccessState } from '@proton/pass/store/reducers';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 import { UNIX_HOUR } from '@proton/pass/utils/time/constants';
 
-export const getUserFeaturesIntent = createAction(
-    'user::features::get::intent',
-    withRequestStart(() => withCacheBlock({ payload: {} }))
+import { userAccessRequest, userFeaturesRequest } from '../requests';
+
+export const getUserFeaturesIntent = createAction('user::features::get::intent', (userId: string) =>
+    pipe(withRequest({ type: 'start', id: userFeaturesRequest(userId) }), withCacheBlock)({ payload: {} })
 );
 
 export const getUserFeaturesSuccess = createAction(
@@ -20,9 +22,8 @@ export const getUserFeaturesFailure = createAction(
     withRequestFailure((error: unknown) => withCacheBlock({ payload: {}, error }))
 );
 
-export const getUserAccessIntent = createAction(
-    'user::access::get::intent',
-    withRequestStart(() => withCacheBlock({ payload: {} }))
+export const getUserAccessIntent = createAction('user::access::get::intent', (userId: string) =>
+    pipe(withRequest({ type: 'start', id: userAccessRequest(userId) }), withCacheBlock)({ payload: {} })
 );
 
 export const getUserAccessSuccess = createAction(

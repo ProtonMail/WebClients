@@ -5,7 +5,6 @@ import { Form, FormikProvider, useFormik } from 'formik';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { validateVaultVaultsWithEffect } from '@proton/pass/lib/validation/vault';
 import { vaultEditIntent } from '@proton/pass/store/actions';
-import { vaultEditRequest } from '@proton/pass/store/actions/requests';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
 import { VaultColor, VaultIcon } from '@proton/pass/types/protobuf/vault-v1';
 
@@ -16,12 +15,7 @@ type Props = VaultFormConsumerProps & { vault: VaultShareItem };
 export const FORM_ID = 'vault-edit';
 
 export const VaultEdit: VFC<Props> = ({ vault, onSubmit, onSuccess, onFailure, onFormValidChange }) => {
-    const editVault = useActionRequest({
-        action: vaultEditIntent,
-        requestId: vaultEditRequest(vault.shareId),
-        onSuccess,
-        onFailure,
-    });
+    const editVault = useActionRequest({ action: vaultEditIntent, onSuccess, onFailure });
 
     const form = useFormik<VaultFormValues>({
         initialValues: {
@@ -35,7 +29,7 @@ export const VaultEdit: VFC<Props> = ({ vault, onSubmit, onSuccess, onFailure, o
         onSubmit: async ({ name, description, color, icon }) => {
             onSubmit?.();
 
-            void editVault.dispatch({
+            editVault.dispatch({
                 shareId: vault.shareId,
                 content: { name, description, display: { color, icon } },
             });
