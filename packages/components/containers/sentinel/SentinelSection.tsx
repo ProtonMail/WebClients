@@ -23,6 +23,7 @@ import { SettingsParagraph, SettingsSectionWide } from '../account';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import { useFlag } from '../unleash';
 
 interface Props {
     app: APP_NAMES;
@@ -39,6 +40,7 @@ const SentinelSection = ({ app }: Props) => {
 
     const protonSentinel = userSettings.HighSecurity.Value;
     const sentinelEligible = isProtonSentinelEligible(userSettings);
+    const sentinelPassplusEnabled = !!useFlag('SentinelPassPlus');
 
     const handleHighSecurity = async (newHighSecurityState: Boolean) => {
         if (newHighSecurityState) {
@@ -61,6 +63,17 @@ const SentinelSection = ({ app }: Props) => {
         goToSettings(`/upgrade?ref=${upsellRef}`, undefined, false);
     };
 
+    const getUpgradeMessage = () => {
+        // Common part of the message
+        const baseMessage = `${PLAN_NAMES[PLANS.BUNDLE]}, ${PLAN_NAMES[PLANS.FAMILY]}, or ${
+            PLAN_NAMES[PLANS.BUNDLE_PRO]
+        } plan to get access to ${PROTON_SENTINEL_NAME}.`;
+        if (sentinelPassplusEnabled) {
+            return `Upgrade to ${PLAN_NAMES[PLANS.PASS_PLUS]}, ${baseMessage}`;
+        }
+        return `Upgrade to ${baseMessage}`;
+    };
+
     return (
         <SettingsSectionWide>
             <SettingsParagraph large={true} learnMoreUrl={getKnowledgeBaseUrl('/proton-sentinel')}>
@@ -70,10 +83,9 @@ const SentinelSection = ({ app }: Props) => {
                     .t`Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${PROTON_SENTINEL_NAME}.`}</p>
                 {!sentinelEligible && (
                     <p className="mb-0">
+                        {/* translator: full sentence with pass plus: "Upgrade to Pass Plus, Proton Unlimited, Proton Family, or Business plan to get access to Proton Sentinel." */}
                         {/* translator: full sentence: "Upgrade to Proton Unlimited, Proton Family, or Business plan to get access to Proton Sentinel." */}
-                        {c('Info').t`Upgrade to ${PLAN_NAMES[PLANS.BUNDLE]}, ${PLAN_NAMES[PLANS.FAMILY]}, or ${
-                            PLAN_NAMES[PLANS.BUNDLE_PRO]
-                        } plan to get access to ${PROTON_SENTINEL_NAME}.`}
+                        {c('Info').t`${getUpgradeMessage()}`}
                     </p>
                 )}
             </SettingsParagraph>
