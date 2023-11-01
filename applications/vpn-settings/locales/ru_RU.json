@@ -224,9 +224,6 @@
       "Invite user": [
         "Пригласить пользователя"
       ],
-      "Keep my ${ vpnPlanNameShort } subscription": [
-        "Сохранить мою подписку ${ vpnPlanNameShort }"
-      ],
       "Load more": [
         "Загрузить ещё"
       ],
@@ -2919,9 +2916,6 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Если вы считаете, что это ошибка, пожалуйста, свяжитесь с нами ${ contactLink }."
       ],
-      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "Если вы отмените, ваша подписка ${ vpnPlanName } не будет продлена после истечения её срока действия ${ expiryDate }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке Входящие, проверьте, не попало ли оно в папку Спам."
       ],
@@ -3557,9 +3551,6 @@
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Вы использовали 100% доступного места. Вы не можете отправлять или получать новые сообщения. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
-        "В этот день вы потеряете доступ к серверам и возможностям ${ vpnPlanNameShort }."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Вам понадобится адрес ${ BRAND_NAME } для использования ${ MAIL_APP_NAME } и ${ CALENDAR_APP_NAME }"
@@ -6032,11 +6023,6 @@
       ],
       "2 years": [
         "2 года"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium Password Manager": [
-        "Платная версия менеджера паролей"
       ]
     },
     "summer2023: Tooltip": {

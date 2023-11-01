@@ -266,9 +266,6 @@
       "Invite user": [
         "Kullanıcı davet et"
       ],
-      "Keep my ${ vpnPlanNameShort } subscription": [
-        "${ vpnPlanNameShort } aboneliğimi koru"
-      ],
       "Let's talk": [
         "Hadi konuşalım!"
       ],
@@ -301,6 +298,9 @@
       ],
       "Open navigation": [
         "Gezinmeyi aç"
+      ],
+      "Or": [
+        "Ya da"
       ],
       "Organization": [
         "Kuruluş"
@@ -439,6 +439,9 @@
       ],
       "Sign out": [
         "Oturumu kapat"
+      ],
+      "sign up for free": [
+        "ücretsiz hesap açın"
       ],
       "Signing in": [
         "Oturum açılıyor"
@@ -2709,6 +2712,10 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } adres",
+        "${ amountOfAddresses } adres"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
       ],
@@ -2738,12 +2745,23 @@
         "${ number } sunucu",
         "${ number } sunucu"
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "${ plan } kaldırıldı. Paket fırsatı 1 aylık tarife ile kullanılamaz."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } için size ayrılmış en az 1 sunucu gereklidir ${ serverPricePerMonth }"
       ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } sunucu henüz kuruluyor. Bu işlem genellikle ${ provisioningDuration } içinde tamamlanır.",
         "${ provisioningCounter } sunucu henüz kuruluyor. Bu işlem genellikle ${ provisioningDuration } içinde tamamlanır."
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } diğer",
+        "${ remainingAddresses.length } diğer"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length } diğer adres",
+        "${ remainingAddresses.length } diğer adres"
       ],
       "${ storage } storage": [
         "${ storage } depolama alanı"
@@ -2890,6 +2908,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Yeni adreslerinizden e-posta gönderip almaya başlamadan önce, adresler için şifreleme anahtarlarını oluşturmalısınız."
+      ],
+      "Billed at ${ price }": [
+        "${ price } olarak faturalandı"
       ],
       "Billing cycle: ${ text }": [
         "Faturalama dönemi: ${ text }"
@@ -3081,9 +3102,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Bir yanlışlık olduğunu düşünüyorsanız, lütfen ${ contactLink } üzerinden bizimle görüşün."
-      ],
-      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "İptal ederseniz, ${ vpnPlanName } aboneliğiniz ${ expiryDate } tarihinde sona erdiğinde yenilenmeyecek."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "E-postayı Gelen kutunuzda göremezseniz, İstenmeyen kutusuna bakmayı unutmayın."
@@ -3357,6 +3375,9 @@
       "Revoke certificate ${ name }": [
         "${ name } sertifikasını geçersiz kıl"
       ],
+      "Save ${ percentage }": [
+        "${ percentage } indirim"
+      ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Parolanızı güvenli bir yere kaydedin. Parolanızı doğru yazdığınızı onaylamak için simgeye tıklayın."
       ],
@@ -3447,6 +3468,9 @@
       ],
       "Thank you": [
         "Teşekkürler"
+      ],
+      "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
+        "Gizlilik ve özgürlüğe öncelik veren daha iyi bir İnternet oluşturma amacımızı desteklediğiniz için teşekkür ederiz."
       ],
       "The following address is invalid.": [
         "Şu adres geçersiz.",
@@ -3578,10 +3602,10 @@
         "İki adımlı doğrulama açıldı"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "İki parola kipinde iki ayrı parola gerekir: Biri hesabınızda oturum açmak için diğeri posta kutunuzun şifresini çözmek için kullanılır. (Gelişmiş)"
+        "İki parola özelliği açıldığında iki ayrı parola gerekir: Biri hesabınızda oturum açmak için diğeri e-posta kutunuzun şifresini çözmek için kullanılır. (Gelişmiş)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "İki parola kipinde, oturum açmak ve posta kutusunun şifresini çözmek için ayrı parolalar kullanılır. Bu seçenek, bazı durumlarda küçük bir güvenlik avantajı sağlar. Ancak çoğu kullanıcıya tek parola kipini kullanmasını öneririz. İki parola kipine geçmek için önce bir oturum açma parolası ve ardından bir posta kutusu parolası belirleyin."
+        "İki parola özelliği açıldığında, oturum açmak ve posta kutusunun şifresini çözmek için ayrı parolalar kullanılır. Bu seçenek, bazı durumlarda küçük bir güvenlik avantajı sağlar. Ancak çoğu kullanıcıya tek parola kullanmasını öneririz. İki parola özelliğini açmak için önce bir oturum açma parolası ve ardından bir posta kutusu parolası belirleyin."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Ne yazık ki bu hesap için bir kurtarma yöntemi kaydedilmemiş."
@@ -3809,9 +3833,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Oturum açtıktan sonra ${ destination } sayfasına yönlendirileceksiniz."
       ],
-      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
-        "Bu tarihte ${ vpnPlanNameShort } sunucularına ve özelliklerine erişiminizi kaybedeceksiniz."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } ve ${ CALENDAR_APP_NAME } kullanmak için bir ${ BRAND_NAME } adresiniz olmalıdır"
       ],
@@ -3841,6 +3862,9 @@
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Hesabınızda süresi geçmiş en az bir fatura var. Hesabınıza erişim kısıtlandı. Ödeme yapmazsanız e-postalarınız ve paylaşım bağlantılarınız engellenecek. ${ payInvoiceLink }"
+      ],
+      "Your account was successfully updated with this promotion": [
+        "Hesabınız bu fırsata göre güncellendi"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Ödemeniz onaylandıktan sonra hesabınız güncellenecek."
@@ -4319,7 +4343,7 @@
         "Sistem bilgileri"
       ],
       "Two-password mode": [
-        "İki parola kipi"
+        "İki parola özelliği"
       ],
       "User": [
         "Kullanıcı"
@@ -6582,9 +6606,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Ücretli ${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Ücretli Parola Yöneticisi"
       ]
     },
     "summer2023: Tooltip": {
@@ -7151,7 +7172,7 @@
         "Tek parola kipine geç"
       ],
       "Switch to two-password mode": [
-        "İki parola kipine geç"
+        "İki parola özelliğini aç"
       ],
       "TV sign in": [
         "TV oturumu açma"
@@ -7410,6 +7431,11 @@
       ],
       "Your ${ selected } plan": [
         "${ selected } tarifeniz"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Secure Core sunucularına erişim, hızlı P2P/BitTorrent indirmeleri, VPN üzerinden Tor ve diğer özellikler"
       ]
     },
     "Warning": {
