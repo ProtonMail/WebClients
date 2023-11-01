@@ -14,11 +14,6 @@ import {
     shareRemoveMemberAccessIntent,
     vaultTransferOwnerIntent,
 } from '@proton/pass/store/actions';
-import {
-    shareEditMemberRoleRequest,
-    shareRemoveMemberRequest,
-    vaultTransferOwnerRequest,
-} from '@proton/pass/store/actions/requests';
 import { ShareRole } from '@proton/pass/types';
 
 import { ShareMemberAvatar } from './ShareMemberAvatar';
@@ -57,20 +52,9 @@ export const ShareMember: VFC<ShareMemberProps> = ({
         return getShareRoleDefinition()[role];
     }, [owner, role]);
 
-    const removeAccess = useActionRequest({
-        action: shareRemoveMemberAccessIntent,
-        requestId: shareRemoveMemberRequest(userShareId),
-    });
-
-    const editAccess = useActionRequest({
-        action: shareEditMemberAccessIntent,
-        requestId: shareEditMemberRoleRequest(userShareId),
-    });
-
-    const transferOwnership = useActionRequest({
-        action: vaultTransferOwnerIntent,
-        requestId: vaultTransferOwnerRequest(userShareId),
-    });
+    const removeAccess = useActionRequest({ action: shareRemoveMemberAccessIntent });
+    const editAccess = useActionRequest({ action: shareEditMemberAccessIntent });
+    const transferOwnership = useActionRequest({ action: vaultTransferOwnerIntent });
 
     const handleRemoveAccess = () => removeAccess.dispatch({ shareId, userShareId });
     const handleEditRole = (shareRoleId: ShareRole) => editAccess.dispatch({ shareId, userShareId, shareRoleId });
