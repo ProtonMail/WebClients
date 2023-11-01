@@ -266,9 +266,6 @@
       "Invite user": [
         "Kutsu käyttäjä"
       ],
-      "Keep my ${ vpnPlanNameShort } subscription": [
-        "Säilytä ${ vpnPlanNameShort } -tilaukseni"
-      ],
       "Let's talk": [
         "Keskustellaan"
       ],
@@ -301,6 +298,9 @@
       ],
       "Open navigation": [
         "Avaa navigaatio"
+      ],
+      "Or": [
+        "Tai"
       ],
       "Organization": [
         "Organisaatio"
@@ -439,6 +439,9 @@
       ],
       "Sign out": [
         "Kirjaudu ulos"
+      ],
+      "sign up for free": [
+        "rekisteröidy ilmaiseksi"
       ],
       "Signing in": [
         "Kirjaudutaan"
@@ -2556,6 +2559,10 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } -osoite",
+        "${ amountOfAddresses } osoitetta"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } tarvitsee käyttöoikeuden ${ enableDesktopNotifications }."
       ],
@@ -2585,12 +2592,23 @@
         "${ number } palvelin",
         "${ number } palvelinta"
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "${ plan } poistettu. Pakettitarjous ei ole saatavilla 1 kuukauden tilauksella."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vaatii ainakin yhden kohdistetun palvelimen ${ serverPricePerMonth }"
       ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } palvelinta määritetään vielä. Tämä kestää yleensä n. ${ provisioningDuration }.",
         "${ provisioningCounter } palvelinta määritetään vielä. Tämä kestää yleensä n. ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } lisää",
+        "${ remainingAddresses.length } lisää"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length } lisäosoite",
+        "${ remainingAddresses.length } lisäosoitetta"
       ],
       "${ storage } storage": [
         "${ storage } tallennustilaa"
@@ -2737,6 +2755,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Ennen kuin voit aloittaa sähköpostien lähettämisen ja vastaanottamisen uusista osoitteistasi, sinun on luotava niille salausavaimet."
+      ],
+      "Billed at ${ price }": [
+        "Laskutettu ${ price }"
       ],
       "Billing cycle: ${ text }": [
         "Laskutusjakso: ${ text }"
@@ -2928,9 +2949,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Jos tämä ei mielestäsi pidä paikkaansa, ota yhteyttä osoitteessa ${ contactLink }."
-      ],
-      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "Jos perut ${ vpnPlanName } -tilauksesi, sitä ei uudisteta sen päättyessä ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Jos et löydä viestiä saapuneista viesteistäsi, tarkista roskapostikansiosi."
@@ -3204,6 +3222,9 @@
       "Revoke certificate ${ name }": [
         "Mitätöi varmenne ${ name }"
       ],
+      "Save ${ percentage }": [
+        "Säästä ${ percentage }"
+      ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Tallenna salasanasi turvalliseen paikkaan. Paina kuvaketta vahvistaaksesi, että olet kirjoittanut salasanasi oikein."
       ],
@@ -3294,6 +3315,9 @@
       ],
       "Thank you": [
         "Kiitos"
+      ],
+      "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
+        "Kiitos, että tuet tehtäviämme rakentaa parempaa Internetiä, jossa yksityisyys ja vapaus ovat etusijalla."
       ],
       "The following address is invalid.": [
         "Seuraava osoite on virheellinen.",
@@ -3656,9 +3680,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Sinut ohjataan sisäänkirjautumisen jälkeen kohteeseen ${ destination }."
       ],
-      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
-        "Menetät pääsyn ${ vpnPlanNameShort } -palvelimiin ja -ominaisuuksiin tänä päivänä."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Tarvitset ${ BRAND_NAME }-osoitteen käyttääksesi ${ MAIL_APP_NAME } ja ${ CALENDAR_APP_NAME } -palveluita"
       ],
@@ -3688,6 +3709,9 @@
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Tililläsi on ainakin yksi erääntynyt lasku ja sen toimintaa on rajoitettu. Jatkuvasta maksujen laiminlyönistä seuraa sähköpostiviestien ja jakolinkkien esto. ${ payInvoiceLink }"
+      ],
+      "Your account was successfully updated with this promotion": [
+        "Tilisi päivitys tällä kampanjalla onnistui"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Tilisi päivitetään kun maksu on käsitelty."
@@ -6429,9 +6453,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Premium salasanahallinta"
       ]
     },
     "summer2023: Tooltip": {
@@ -7257,6 +7278,11 @@
       ],
       "Your ${ selected } plan": [
         "${ selected } -tilauksesi"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Pääsy Secure core -palvelimille, nopeat P2P/BitTorrent-lataukset, Tor + VPN, Double hop ja muuta."
       ]
     },
     "Warning": {
