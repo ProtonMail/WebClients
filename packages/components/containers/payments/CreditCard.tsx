@@ -79,6 +79,9 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
         title: title,
     };
 
+    // translator: this is the name used as a placeholder in card name field. Feel free to adapt to a common name in your language.
+    const placeHolderCardName = c('Placeholder').t`Thomas Anderson`;
+
     return (
         <>
             <InputFieldTwo
@@ -88,7 +91,7 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
                 name="ccname"
                 value={card.fullname}
                 onChange={handleChange('fullname')}
-                placeholder="Thomas Anderson"
+                placeholder={placeHolderCardName}
                 error={errors.fullname}
                 disableChange={loading}
                 data-testid="ccname"
