@@ -22,10 +22,9 @@ import { usePasswordContext } from '@proton/pass/components/PasswordGenerator/Pa
 import { VaultModal, type Props as VaultModalProps } from '@proton/pass/components/Vault/Vault.modal';
 import { VaultDeleteModal } from '@proton/pass/components/Vault/VaultDeleteModal';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
-import { useActionWithRequest } from '@proton/pass/hooks/useActionWithRequest';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import { emptyTrashIntent, restoreTrashIntent, shareLeaveIntent, vaultDeleteIntent } from '@proton/pass/store/actions';
-import { shareLeaveRequest } from '@proton/pass/store/actions/requests';
+import { shareLeaveRequest, vaultDeleteRequest } from '@proton/pass/store/actions/requests';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
 import {
     selectHasRegisteredLock,
@@ -67,11 +66,6 @@ export const MenuDropdown: VFC = () => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const withClose = <P extends any[], R extends any>(cb: (...args: P) => R) => pipe(cb, tap(close));
 
-    const leaveVault = useActionWithRequest({
-        action: shareLeaveIntent,
-        requestId: ({ shareId }) => shareLeaveRequest(shareId),
-    });
-
     const handleVaultSelect = withClose((vaultShareId: MaybeNull<string>) => {
         unselectItem();
         setShareId(vaultShareId);
@@ -80,7 +74,13 @@ export const MenuDropdown: VFC = () => {
 
     const handleVaultDelete = (vault: VaultShareItem, destinationShareId: MaybeNull<string>) => {
         handleVaultDeletionEffects(vault.shareId, { shareId, setShareBeingDeleted, setShareId });
-        dispatch(vaultDeleteIntent({ id: vault.shareId, content: vault.content, destinationShareId }));
+        dispatch(
+            vaultDeleteIntent(vaultDeleteRequest(vault.shareId), {
+                shareId: vault.shareId,
+                content: vault.content,
+                destinationShareId,
+            })
+        );
     };
 
     const handleVaultCreate = withClose(() =>
@@ -95,7 +95,9 @@ export const MenuDropdown: VFC = () => {
 
     const handleVaultInvite = (vault: VaultShareItem) => inviteContext.createInvite({ vault });
     const handleVaultManage = withClose(({ shareId }: VaultShareItem) => inviteContext.manageAccess(shareId));
-    const handleVaultLeave = useConfirm(leaveVault.dispatch);
+    const handleVaultLeave = useConfirm(({ shareId }: VaultShareItem) =>
+        dispatch(shareLeaveIntent(shareLeaveRequest(shareId), { shareId }))
+    );
     const handleTrashEmpty = useConfirm(() => dispatch(emptyTrashIntent()));
     const handleTrashRestore = () => dispatch(restoreTrashIntent());
 

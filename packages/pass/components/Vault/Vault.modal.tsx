@@ -43,7 +43,7 @@ export const VaultModal: FC<Props> = ({ payload, onClose = noop, ...props }) => 
     const canProcessSubmit = !vaultLimitReached || payload.type === 'edit';
 
     return (
-        <SidebarModal {...props} onClose={onClose}>
+        <SidebarModal {...props} onClose={onClose} onBackdropClick={noop} disableCloseOnEscape>
             <Panel
                 header={
                     <PanelHeader

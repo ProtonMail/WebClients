@@ -4,8 +4,8 @@ import { all, fork, put, select, takeEvery } from 'redux-saga/effects';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { type EventManagerEvent, NOOP_EVENT } from '@proton/pass/lib/events/manager';
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
+import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { hasShareAccessChanged } from '@proton/pass/lib/shares/share.predicates';
-import { loadShare } from '@proton/pass/lib/shares/share.requests';
 import { shareAccessChange, sharesSync, vaultCreationSuccess } from '@proton/pass/store/actions';
 import type { ItemsByShareId } from '@proton/pass/store/reducers';
 import { selectAllShares } from '@proton/pass/store/selectors';
@@ -47,7 +47,7 @@ function* onSharesEvent(
             (yield Promise.all(
                 newShares
                     .filter((share) => share.TargetType === ShareType.Vault)
-                    .map(({ ShareID }) => loadShare(ShareID, ShareType.Vault))
+                    .map((encryptedShare) => parseShareResponse(encryptedShare))
             )) as Maybe<Share>[]
         ).filter(truthy);
 

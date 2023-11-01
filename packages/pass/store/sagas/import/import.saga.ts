@@ -7,11 +7,12 @@ import { parseItemRevision } from '@proton/pass/lib/items/item.parser';
 import { importItemsBatch } from '@proton/pass/lib/items/item.requests';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import {
+    importItemsBatchSuccess,
     importItemsFailure,
     importItemsIntent,
     importItemsSuccess,
-    itemsBatchImported,
     notification,
+    requestProgress,
     startEventPolling,
     stopEventPolling,
     vaultCreationIntent,
@@ -30,6 +31,8 @@ import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelpe
 import capitalize from '@proton/utils/capitalize';
 import chunk from '@proton/utils/chunk';
 
+import { vaultCreateRequest } from '../../actions/requests';
+
 /**
  * When creating vaults from the import saga
  * we want to internally trigger any saga that
@@ -42,13 +45,12 @@ function* createVaultForImport(vaultName: string) {
     const date = new Date().toLocaleDateString();
     let resolver: (shareId: Maybe<string>) => void;
     const creationResult = new Promise<Maybe<string>>((res) => (resolver = res));
+    const optimisticId = uniqueId();
 
     yield put(
         vaultCreationIntent(
-            {
-                id: uniqueId(),
-                content: { name: vaultName, description: c('Info').t`Imported on ${date}`, display: {} },
-            },
+            vaultCreateRequest(optimisticId),
+            { content: { name: vaultName, description: c('Info').t`Imported on ${date}`, display: {} } },
             (action) => resolver(vaultCreationSuccess.match(action) ? action.payload.share.shareId : undefined)
         )
     );
@@ -60,7 +62,7 @@ function* createVaultForImport(vaultName: string) {
 }
 
 function* importWorker(
-    { onItemsChange, onImportProgress, getTelemetry }: WorkerRootSagaOptions,
+    { onItemsChange, getTelemetry }: WorkerRootSagaOptions,
     { payload: { data, provider }, meta }: WithSenderAction<ReturnType<typeof importItemsIntent>>
 ) {
     const telemetry = getTelemetry();
@@ -98,15 +100,15 @@ function* importWorker(
 
                         totalItems += revisions.length;
 
-                        onImportProgress?.(totalItems, meta.sender?.endpoint);
-                        yield put(itemsBatchImported({ shareId, items }));
+                        yield put(requestProgress(meta.request.id, totalItems));
+                        yield put(importItemsBatchSuccess({ shareId, items }));
                     } catch (e) {
                         const description = e instanceof Error ? getApiErrorMessage(e) ?? e?.message : '';
                         ignored.push(...batch.map((item) => `[${capitalize(item.type)}] ${item.metadata.name}`));
 
                         yield put(
                             notification({
-                                receiver: meta.sender?.endpoint,
+                                endpoint: meta.sender?.endpoint,
                                 key: meta.request.id,
                                 type: 'error',
                                 text: c('Error').t`Import failed for vault "${vaultData.name}" : ${description}`,
@@ -119,7 +121,7 @@ function* importWorker(
                 yield put(
                     notification({
                         key: meta.request.id,
-                        receiver: meta.sender?.endpoint,
+                        endpoint: meta.sender?.endpoint,
                         type: 'error',
                         text: c('Error').t`Vault "${vaultData.name}" could not be created`,
                     })
@@ -137,6 +139,7 @@ function* importWorker(
 
         yield put(
             importItemsSuccess(
+                meta.request.id,
                 {
                     provider,
                     ignored,
@@ -149,7 +152,7 @@ function* importWorker(
         );
         onItemsChange?.();
     } catch (error: any) {
-        yield put(importItemsFailure(error, meta.sender?.endpoint));
+        yield put(importItemsFailure(meta.request.id, error, meta.sender?.endpoint));
     } finally {
         yield put(startEventPolling());
     }

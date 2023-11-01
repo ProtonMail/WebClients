@@ -2,12 +2,12 @@ import { fork, put, select, take, takeEvery } from 'redux-saga/effects';
 
 import { filterDeletedTabIds } from '@proton/pass/lib/extension/utils/tabs';
 import {
-    boot,
+    bootIntent,
     bootSuccess,
     getUserAccessIntent,
     getUserFeaturesIntent,
     stateSync,
-    wakeup,
+    wakeupIntent,
     wakeupSuccess,
 } from '@proton/pass/store/actions';
 import { popupTabStateGarbageCollect } from '@proton/pass/store/actions/creators/popup';
@@ -23,7 +23,7 @@ import identity from '@proton/utils/identity';
 
 function* wakeupWorker(
     { getAuth }: WorkerRootSagaOptions,
-    { payload: { status }, meta }: WithReceiverAction<ReturnType<typeof wakeup>>
+    { payload: { status }, meta }: WithReceiverAction<ReturnType<typeof wakeupIntent>>
 ) {
     const { tabId, endpoint } = meta.receiver;
     const loggedIn = getAuth().hasSession();
@@ -33,7 +33,7 @@ function* wakeupWorker(
         case WorkerStatus.IDLE:
         case WorkerStatus.ERROR: {
             if (loggedIn) {
-                yield put(boot({}));
+                yield put(bootIntent({}));
                 yield take(bootSuccess.match);
             }
             break;
@@ -69,9 +69,9 @@ function* wakeupWorker(
         });
     }
 
-    yield put(wakeupSuccess(endpoint!, tabId!));
+    yield put(wakeupSuccess(meta.request.id, { endpoint, tabId }));
 }
 
 export default function* watcher(options: WorkerRootSagaOptions): Generator {
-    yield takeEvery(wakeup.match, wakeupWorker, options);
+    yield takeEvery(wakeupIntent.match, wakeupWorker, options);
 }

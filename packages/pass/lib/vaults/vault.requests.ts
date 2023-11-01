@@ -54,6 +54,8 @@ export const editVault = async (
     return share;
 };
 
+export const deleteVault = async (shareId: string) => api({ url: `pass/v1/vault/${shareId}`, method: 'delete' });
+
 export const vaultTransferOwner = async ({ shareId, userShareId }: VaultTransferOwnerIntent) =>
     api({
         url: `pass/v1/vault/${shareId}/owner`,
