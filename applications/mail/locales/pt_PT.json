@@ -695,11 +695,11 @@
       "Not saved": [
         "Não guardado"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "Aceitar"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Abrir ${ CALENDAR_APP_NAME }"
@@ -1201,6 +1201,20 @@
         "Expiração de mensagem"
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } domínio personalizado",
+        "${ domains } domínios personalizados"
+      ],
+      "${ ips } server": [
+        "${ ips } servidor",
+        "${ ips } servidores"
+      ],
+      "${ users } user": [
+        "${ users } utilizador",
+        "${ users } utilizadores"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Ao sair agora, alguns contactos podem não ser importados"
@@ -1657,6 +1671,12 @@
       ],
       "Cancel expiration": [
         "Cancelar a expiração"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } utilizador",
+        "${ users } utilizadores"
       ]
     },
     "Collapsible tooltip": {
@@ -4765,6 +4785,9 @@
         "${ selectedFoldersCountLocalized } etiqueta selecionada",
         "${ selectedFoldersCountLocalized } etiquetas selecionadas"
       ],
+      "${ storage } storage": [
+        "${ storage } de armazenamento"
+      ],
       "${ total } conversation": [
         "${ total } conversa",
         "${ total } conversas"
@@ -5469,6 +5492,9 @@
       "Preview for this file type is not supported": [
         "A pré-visualização deste tipo de ficheiro não é suportada"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "O preço inclui todos os descontos aplicáveis com base no ciclo e cupões não expirados guardados na sua conta."
+      ],
       "Primary": [
         "Principal"
       ],
@@ -5775,6 +5801,18 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Há demasiadas mensagens à espera de serem enviadas. Aguarde que seja enviada outra mensagem para agendar uma nova."
       ],
+      "Total email addresses": [
+        "Total de endereços de e-mail"
+      ],
+      "Total storage": [
+        "Total de armazenamento"
+      ],
+      "Total supported domains": [
+        "Total de domínios suportados"
+      ],
+      "Total VPN connections": [
+        "Total de ligações VPN"
+      ],
       "Trackers blocked:": [
         "Rastreadores bloqueados:"
       ],
@@ -5795,6 +5833,9 @@
       ],
       "Unsupported file": [
         "Ficheiro não suportado"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Até ${ FAMILY_MAX_USERS } utilizadores"
       ],
       "Updating message content search...": [
         "A actualizar pesquisa do conteúdo da mensagem..."
@@ -8632,9 +8673,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Versão premium do gestor de palavras-passe"
       ]
     },
     "summer2023: Tooltip": {

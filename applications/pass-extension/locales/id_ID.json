@@ -654,6 +654,9 @@
       "${ memberCount } members": [
         "${ memberCount } anggota"
       ],
+      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
+        "${ PASS_APP_NAME } hanya akan mengimpor rincian masuk, catatan, dan kartu kredit."
+      ],
       "${ revisionNumber } times": [
         "${ revisionNumber } kali"
       ],
@@ -715,7 +718,7 @@
         "Dapat melihat item yang terkandung dalam brankas ini."
       ],
       "Click the icon to open it anytime.": [
-        "Klik ikon untuk membukanya kapan pun."
+        "Klik ikon untuk membuka ekstensi kapan pun."
       ],
       "Congratulations, your access has been confirmed": [
         "Selamat, akses Anda telah dikonfirmasi"
@@ -1003,7 +1006,7 @@
         "Untuk memigrasikan data dari pengelola kata sandi yang lain, pergi ke pengelola kata sandi, ekspor data Anda, terus unggah ke ${ PASS_APP_NAME }. Ketika sudah diunggah, hapus berkas yang telah diekspor."
       ],
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "Untuk meninjau data Anda yang telah diimpor, klik pada ikon Pass di bilah alat peramban Anda."
+        "Untuk meninjau data Anda yang telah diimpor, klik ikon Pass pada toolbar browser Anda."
       ],
       "Unable to copy to clipboard": [
         "Tidak dapat menyalin ke papan klip"
@@ -1534,7 +1537,7 @@
         "Tambahkan teks tersembunyi"
       ],
       "Add note": [
-        "Tambahkan catatan"
+        "Tambah catatan"
       ],
       "Add text": [
         "Tambahkan teks"

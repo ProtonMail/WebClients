@@ -318,6 +318,12 @@
       "Import from .csv or vCard": [
         "Importovat z .csv nebo vCard"
       ],
+      "Import from Google": [
+        "Importovat z Google"
+      ],
+      "Import from Outlook": [
+        "Importovat z Outlooku"
+      ],
       "Join calendar": [
         "Připojit ke kalendáři"
       ],
@@ -685,6 +691,26 @@
         "Nemáte žádné skupiny."
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } vlastní doména",
+        "${ domains } vlastní domény",
+        "${ domains } vlastních domén",
+        "${ domains } vlastních domén"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } servery",
+        "${ ips } serverů",
+        "${ ips } serverů"
+      ],
+      "${ users } user": [
+        "${ users } uživatel",
+        "${ users } uživatelé",
+        "${ users } uživatelů",
+        "${ users } uživatelů"
+      ]
+    },
     "Alarm notification": {
       "${ title } started at ${ formattedHour }": [
         "${ title } začalo v ${ formattedHour }"
@@ -1048,6 +1074,14 @@
         "${ more } další",
         "${ more } dalších",
         "${ more } dalších"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } uživatel",
+        "${ users } uživatelé",
+        "${ users } uživatelů",
+        "${ users } uživatelů"
       ]
     },
     "Collapsible tooltip": {
@@ -3671,6 +3705,9 @@
         "vybráno ${ selectedFoldersCountLocalized } štítků",
         "vybráno ${ selectedFoldersCountLocalized } štítků"
       ],
+      "${ storage } storage": [
+        "${ storage } úložiště"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt úspěšně aktualizován.",
         "${ updated } kontakty úspěšně aktualizovány.",
@@ -4079,6 +4116,9 @@
       "Previous modifications on this series will be lost.": [
         "Předchozí úpravy této série budou ztraceny."
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Cena zahrnuje všechny příslušné slevy na základě cyklu a kupóny, které nevypršely a jsou uložené na vašem účtu."
+      ],
       "Primary": [
         "Hlavní"
       ],
@@ -4193,8 +4233,23 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Chcete-li použít Ověření Adresy, musíte důvěřovat jednomu nebo více dostupným veřejným klíčům, včetně toho, který chcete použít pro odesílání. Toto zamezuje zfalšování šifrovacích klíčů."
       ],
+      "Total email addresses": [
+        "Celkem e-mailových adres"
+      ],
+      "Total storage": [
+        "Celkem prostoru"
+      ],
+      "Total supported domains": [
+        "Celkem vlastních domén"
+      ],
+      "Total VPN connections": [
+        "Celkem VPN připojení"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Vyzkoušejte si nové funkce, aktualizace a produkty ${ BRAND_NAME } ještě před jejich zveřejněním. Toto znovu načte aplikaci"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Až ${ FAMILY_MAX_USERS } uživatelů"
       ],
       "Update recurring event": [
         "Aktualizovat opakující se událost"
@@ -6489,9 +6544,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Prémiové funkce ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Prémiový správce hesel"
       ]
     },
     "summer2023: Tooltip": {

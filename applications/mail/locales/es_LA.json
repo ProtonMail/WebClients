@@ -713,10 +713,10 @@
       "Not saved": [
         "No guardado"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -1219,6 +1219,20 @@
         "Expiración del mensaje"
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } dominio personalizado",
+        "${ domains } dominios personalizados"
+      ],
+      "${ ips } server": [
+        "${ ips } servidor",
+        "${ ips } servidores"
+      ],
+      "${ users } user": [
+        "${ users } usuario",
+        "${ users } usuarios"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Al salir ahora, algunos contactos podrían no ser importados"
@@ -1349,6 +1363,18 @@
       ],
       "High speed streaming": [
         "Transmisión de alta velocidad"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } Premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } Premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } Premium"
+      ],
+      "Premium Password Manager": [
+        "Administrador de contraseñas premium"
       ]
     },
     "bf2023: Footer": {
@@ -1759,6 +1785,12 @@
       ],
       "Cancel expiration": [
         "Cancelar expiración"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } usuario",
+        "${ users } usuarios"
       ]
     },
     "Collapsible tooltip": {
@@ -4893,6 +4925,9 @@
         "${ selectedFoldersCountLocalized } etiqueta seleccionada",
         "${ selectedFoldersCountLocalized } etiquetas seleccionadas"
       ],
+      "${ storage } storage": [
+        "${ storage } de almacenamiento"
+      ],
       "${ total } conversation": [
         "${ total } conversación",
         "${ total } conversación"
@@ -5600,6 +5635,9 @@
       "Preview for this file type is not supported": [
         "La vista previa para este tipo de archivo no está soportada"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "El precio incluye todos los descuentos aplicables basados en ciclos y los cupones vigentes guardados en su cuenta."
+      ],
       "Primary": [
         "Principal"
       ],
@@ -5906,6 +5944,18 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Demasiados mensajes esperando ser enviados. Espere hasta que se envíe otro mensaje para programar éste."
       ],
+      "Total email addresses": [
+        "Direcciones de correo totales"
+      ],
+      "Total storage": [
+        "Almacenamiento total"
+      ],
+      "Total supported domains": [
+        "Dominios compatibles totales"
+      ],
+      "Total VPN connections": [
+        "Conexiones VPN totales"
+      ],
       "Trackers blocked:": [
         "Rastreadores bloqueados:"
       ],
@@ -5926,6 +5976,9 @@
       ],
       "Unsupported file": [
         "Archivo no soportado"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Hasta ${ FAMILY_MAX_USERS } usuarios"
       ],
       "Updating message content search...": [
         "Actualizando búsqueda de contenido de mensaje..."
@@ -8769,9 +8822,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } premium"
-      ],
-      "Premium Password Manager": [
-        "Administrador de contraseñas premium"
       ]
     },
     "summer2023: Tooltip": {

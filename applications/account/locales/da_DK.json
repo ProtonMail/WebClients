@@ -551,9 +551,6 @@
       "Keep": [
         "Behold"
       ],
-      "Keep my ${ vpnPlanNameShort } subscription": [
-        "Behold mit ${ vpnPlanNameShort } abonnement"
-      ],
       "label emails as": [
         "giv e-mails etiketten"
       ],
@@ -622,6 +619,9 @@
       ],
       "Open navigation": [
         "Åbn navigation"
+      ],
+      "Or": [
+        "Eller"
       ],
       "Ordered list": [
         "Rangeret liste"
@@ -871,6 +871,9 @@
       ],
       "Sign in": [
         "Log ind"
+      ],
+      "Sign in with password": [
+        "Log ind med en adgangskode"
       ],
       "Sign out": [
         "Log ud"
@@ -1593,6 +1596,12 @@
       ]
     },
     "Checkout summary": {
+      "month": [
+        "måned"
+      ],
+      "Servers": [
+        "Servere"
+      ],
       "Users": [
         "Brugere"
       ]
@@ -2869,6 +2878,14 @@
         "Følgende felter er fundet i den CSV-fil, du uploadede. Afkryds dem, du vil importere."
       ]
     },
+    "Disable account": {
+      "Back to ${ signIn }.": [
+        "Tilbage til ${ signIn }."
+      ],
+      "You can safely close this tab.": [
+        "Du kan godt lukke denne fane."
+      ]
+    },
     "Domain label": {
       "Verified": [
         "Bekræftet"
@@ -2951,6 +2968,11 @@
       ],
       "90 minutes": [
         "90 minutter"
+      ]
+    },
+    "Email": {
+      "You can safely close this tab.": [
+        "Du kan godt lukke denne fane."
       ]
     },
     "Email body for description (description part)": {
@@ -3046,6 +3068,9 @@
       ]
     },
     "Email Unsubscribe": {
+      "Email subscriptions": [
+        "E-mail-abonnementer"
+      ],
       "Which emails do you want to receive from ${ BRAND_NAME }?": [
         "Hvilke e-mails ønsker du at modtage fra ${ BRAND_NAME }?"
       ],
@@ -3061,9 +3086,81 @@
         "Bekræftelses e-mail afsendt til ${ address }"
       ]
     },
+    "email_forwarding_2023: Action": {
+      "Accept": [
+        "Acceptér"
+      ],
+      "Back": [
+        "Tilbage"
+      ],
+      "Cancel": [
+        "Annuller"
+      ],
+      "Decline": [
+        "Afslå"
+      ],
+      "Delete": [
+        "Slet"
+      ],
+      "Next": [
+        "Næste"
+      ],
+      "Pause": [
+        "Sæt på pause"
+      ],
+      "Resume": [
+        "Genoptag"
+      ],
+      "Save": [
+        "Gem"
+      ]
+    },
+    "email_forwarding_2023: Header": {
+      "Actions": [
+        "Handlinger"
+      ],
+      "From": [
+        "Fra"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
     "email_forwarding_2023: Info": {
       "Forwarding to ${ BRAND_NAME } addresses will keep your communication end-to-end encrypted. When forwarding externally, end-to-end encryption for the forwarding address will be disabled.": [
         "Videresendelse til ${ BRAND_NAME }-adresser vil holde din kommunikation end-to-end krypteret. Når du videresender eksternt, vil end-to-end kryptering for den videresendende adresse deaktiveres."
+      ]
+    },
+    "email_forwarding_2023: Label": {
+      "And": [
+        "Og"
+      ],
+      "or": [
+        "eller"
+      ],
+      "Or": [
+        "Eller"
+      ]
+    },
+    "email_forwarding_2023: Link": {
+      "Learn more": [
+        "Få mere at vide"
+      ]
+    },
+    "email_forwarding_2023: Status": {
+      "Active": [
+        "Aktiv"
+      ],
+      "Paused": [
+        "Sat på pause"
+      ],
+      "Pending": [
+        "Afventer"
+      ]
+    },
+    "email_forwarding_2023: Warning": {
+      "Warning": [
+        "Advarsel"
       ]
     },
     "Enabled 2FA": {
@@ -3724,6 +3821,9 @@
       ]
     },
     "Error importing users": {
+      "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format.": [
+        "Der opstod en fejl ved læsning af din fil \"${ formattedFilename }\". Forkert filformat."
+      ],
       "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Der opstod en fejl under upload af din fil \"${ formattedFilename }\". Maksimal filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -4119,6 +4219,11 @@
         "Dette fjerner alle ${ BRAND_NAME } premium-funktioner for alle familiemedlemmer."
       ]
     },
+    "familyOffer_2023:Settings section title": {
+      "Family": [
+        "Familie"
+      ]
+    },
     "familyOffer_2023:Title": {
       "Add a user to your ${ PLAN_NAMES.visionary2022 } account": [
         "Tilføj en bruger til din ${ PLAN_NAMES.visionary2022 } konto"
@@ -4453,6 +4558,12 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 e-mails pr. måned)"
+      ],
+      "(2-4 emails per year)": [
+        "(2-4 e-mails pr. året)"
+      ],
+      "(4-6 emails per year)": [
+        "(4-6 e-mails pr. året)"
       ],
       "(during your first month)": [
         "(i løbet af din første måned)"
@@ -5012,6 +5123,9 @@
       ],
       "Contacts": [
         "Kontakter"
+      ],
+      "Mail": [
+        "E-mail"
       ]
     },
     "Import warning": {
@@ -5033,6 +5147,10 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } adresse",
+        "${ amountOfAddresses } adresser"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
       ],
@@ -5131,6 +5249,10 @@
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } server er stadig ved at blive sat op. Det tager normalt omkring ${ provisioningDuration }.",
         "${ provisioningCounter } servere er stadig ved at blive sat op. Det tager normalt omkring ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } mere",
+        "${ remainingAddresses.length } mere"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } af ${ providerCalendars.length } kalender",
@@ -5460,6 +5582,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Inden du kan begynde at sende og modtage e-mails fra dine nye adresser, skal du oprette krypteringsnøgler til dem."
+      ],
+      "Billed at ${ price }": [
+        "Faktureret med ${ price }"
       ],
       "Billing cycle: ${ text }": [
         "Faktureringsperiode: ${ text }"
@@ -5812,9 +5937,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Hvis du mener dette er en fejltagelse, bedes du kontakte os ${ contactLink }."
-      ],
-      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "Hvis du annullerer, vil dit ${ vpnPlanName }-abonnement ikke blive fornyet, når det udløber ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke kan se mailen i din indbakke, bedes du tjekke din spammappe."
@@ -6360,6 +6482,9 @@
       ],
       "Right to Left": [
         "Højre mod venstre"
+      ],
+      "Save ${ percentage }": [
+        "Spar ${ percentage }"
       ],
       "Save your password somewhere safe.": [
         "Gem din adgangskode et sikkert sted."
@@ -7098,9 +7223,6 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Du vil blive omdirigeret til ${ destination } efter login."
-      ],
-      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
-        "Du vil miste adgang til ${ vpnPlanNameShort }-servere og funktioner på denne dato."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Du skal bruge en ${ BRAND_NAME }-adresse for at bruge ${ MAIL_APP_NAME } og ${ CALENDAR_APP_NAME }"
@@ -8866,6 +8988,9 @@
       ]
     },
     "Member action": {
+      "Change password": [
+        "Skift adgangskode"
+      ],
       "Delete": [
         "Slet"
       ],
@@ -9487,6 +9612,9 @@
       "Sign in as user": [
         "Log ind som bruger"
       ],
+      "SMTP submission": [
+        "SMTP-indsendelse"
+      ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android og Windows)"
       ],
@@ -9580,17 +9708,6 @@
         "Brugeradministration"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Hvis du vil fortsætte med at bruge ${ MAIL_APP_NAME } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Din prøveperiode slutter ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutter med ${ last4 }"
@@ -9678,6 +9795,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du drager fordel af en kampagnepris for dit nuværende abonnement. Hvis du nedgraderer din konto, mister du din kampagnepris og den vil ikke være tilgængelig hvis du forsøger at abonnere igen."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Hvis du vil fortsætte med at bruge ${ MAIL_APP_NAME } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Din prøveperiode slutter ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -9864,11 +9992,17 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "24/7 support": [
+        "24/7 support"
+      ],
       "Access advanced VPN features": [
         "Få adgang til avancerede VPN-funktioner"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Tilføj mere personalisering med 15 e-mailadresser og understøttelse af 3 brugerdefinerede e-maildomæner"
+      ],
+      "Auto-connect": [
+        "Forbind automatisk"
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Forøg din lagerplads til ${ bundleStorage } i alt"
@@ -10323,6 +10457,9 @@
       "Start using ${ appName } now": [
         "Begynd at bruge ${ appName } nu"
       ],
+      "Upgrade": [
+        "Opgrader"
+      ],
       "Upgrade my plan": [
         "Opgradér mit abonnement"
       ]
@@ -10362,6 +10499,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ appName } benefits": [
+        "${ appName }-fordele"
+      ],
       "${ PASS_APP_NAME } is available as a browser extension on Firefox Add-ons.": [
         "${ PASS_APP_NAME } er tilgængelig som en browserudvidelse i Firefox Add-ons."
       ],
@@ -10410,6 +10550,9 @@
       "End-to-end encrypted notes": [
         "End-to-end krypterede noter"
       ],
+      "End-to-end encryption": [
+        "End-to-end kryptering"
+      ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "For kun **${ relativePrice } pr. måned** mere, får du adgang til alle premium ${ BRAND_NAME }-tjenester!"
       ],
@@ -10427,6 +10570,9 @@
       ],
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "Hvis du bliver låst ude af din ${ BRAND_NAME }-konto, vil dit **gendannelseskit** give dig mulighed for at logge ind og gendanne dine data."
+      ],
+      "Includes:": [
+        "Inkluderer:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "Installér ${ PASS_APP_NAME }"
@@ -10451,6 +10597,9 @@
       ],
       "Open-source and audited": [
         "Open source og revideret"
+      ],
+      "per month": [
+        "pr. måned"
       ],
       "per month, billed annually": [
         "pr. måned, faktureres årligt"
@@ -10491,6 +10640,9 @@
       "Verifying your payment": [
         "Verificerer din betaling"
       ],
+      "Welcome to ${ shortName } Plus": [
+        "Velkommen til ${ shortName } Plus"
+      ],
       "Works on all devices": [
         "Virker på alle enheder"
       ],
@@ -10510,6 +10662,9 @@
       ],
       "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
         "Alle ${ BRAND_NAME } Plus-tjenester.${ br }Ét nemt abonnement"
+      ],
+      "Create a ${ PASS_APP_NAME } account": [
+        "Opret en ${ PASS_APP_NAME }-konto"
       ],
       "Create your ${ BRAND_NAME } account": [
         "Opret din ${ BRAND_NAME }-konto"
@@ -11062,6 +11217,14 @@
         "Der er anmodet om nulstilling af adgangskode"
       ]
     },
+    "session_recovery:initiation:action": {
+      "Got it": [
+        "Forstået"
+      ],
+      "Request password reset": [
+        "Anmod om nulstilling af adgangskode"
+      ]
+    },
     "session_recovery:initiation:title": {
       "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
         "Du kan nulstille din adgangskode om ${ gracePeriodHoursRemaining } time",
@@ -11116,6 +11279,14 @@
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
         "Log ud uden at nulstille adgangskoden?"
+      ]
+    },
+    "session_recovery:status:info": {
+      "Available": [
+        "Tilgængelig"
+      ],
+      "Pending": [
+        "Afventer"
       ]
     },
     "Settings description": {
@@ -11221,6 +11392,12 @@
       ],
       "Email": [
         "E-mail"
+      ],
+      "Email address": [
+        "E-mailadresse"
+      ],
+      "Password": [
+        "Adgangskode"
       ],
       "Username": [
         "Brugernavn"
@@ -11928,9 +12105,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Premium Adgangskodeadministrator"
       ]
     },
     "summer2023: Tooltip": {
@@ -12886,6 +13060,9 @@
       "Sign in to join the Beta program": [
         "Log ind for tilmelding til Beta programmet"
       ],
+      "Sign in to your organization": [
+        "Log ind med din organisation"
+      ],
       "Sign in with 2FA": [
         "Log ind med 2FA"
       ],
@@ -13454,9 +13631,20 @@
         "${ numberOfServers } i ${ numberOfCountries } lande"
       ]
     },
+    "vpn_2step: billing": {
+      "Billed monthly": [
+        "Faktureres månedligt"
+      ]
+    },
     "vpn_2step: discount": {
       "1-year": [
         "1 år"
+      ],
+      "2-year": [
+        "2 år"
+      ],
+      "monthly": [
+        "månedligt"
       ]
     },
     "vpn_2step: info": {

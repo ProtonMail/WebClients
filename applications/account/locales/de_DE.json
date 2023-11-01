@@ -572,8 +572,8 @@
       "Keep": [
         "Behalten"
       ],
-      "Keep my ${ vpnPlanNameShort } subscription": [
-        "${ vpnPlanNameShort }-Abonnement behalten"
+      "Keep my Plus subscription": [
+        "Plus-Abonnement behalten"
       ],
       "label emails as": [
         "Nachrichten folgender Kategorie zuordnen"
@@ -1321,6 +1321,9 @@
       "Add ${ plan } to your plan by subscribing to 15 months": [
         "Füge ${ plan } zu deinem Abonnement hinzu, indem du 15 Monate abonnierst"
       ],
+      "Become a Visionary": [
+        "Werde ein Visionary"
+      ],
       "Get the deal": [
         "Angebot nutzen"
       ],
@@ -1403,6 +1406,29 @@
       ],
       "Secure browsing and premium VPN features.": [
         "Sicheres Surfen und Premium-VPN-Funktionen."
+      ]
+    },
+    "bf2023: Info": {
+      "6 TB storage (2x more than any other plan)": [
+        "6 TB Speicherplatz (2x mehr als jedes andere Abonnement)"
+      ],
+      "6 users": [
+        "6 Benutzer"
+      ],
+      "Become a super-supporter. Get access to all current and future ${ BRAND_NAME } services.": [
+        "Werde ein Super-Supporter. Erhalte Zugang zu allen aktuellen und zukünftigen Diensten von ${ BRAND_NAME }."
+      ],
+      "Exclusive features and early access": [
+        "Exklusive Funktionen und früher Zugang"
+      ],
+      "Help us fight for online privacy": [
+        "Hilf uns beim Kampf für den Online-Datenschutz"
+      ],
+      "Premium versions of all ${ BRAND_NAME } services": [
+        "Premium-Versionen aller Dienste von ${ BRAND_NAME }"
+      ],
+      "The ${ plan } plan is back for a limited time only": [
+        "Das ${ plan }-Abonnement ist nur für eine begrenzte Zeit wieder verfügbar"
       ]
     },
     "bf2023: Offers": {
@@ -6482,8 +6508,8 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Wenn du glaubst, dass dies ungerechtfertigt ist, kontaktiere uns bitte ${ contactLink }."
       ],
-      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "Wenn du kündigst, wird dein ${ vpnPlanName }-Abonnement nach Ablauf am ${ expiryDate } nicht verlängert."
+      "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Wenn du kündigst, wird dein ${ planTitle }-Abonnement nach Ablauf am ${ expiryDate } nicht verlängert."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Wenn du die E-Mail nicht in deinem Posteingang finden kannst, überprüfe bitte deinen Spam-Ordner."
@@ -7777,8 +7803,11 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Nach der Anmeldung wirst du zu ${ destination } weitergeleitet."
       ],
-      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
-        "An diesem Datum verlierst du den Zugang zu ${ vpnPlanNameShort }-Servern und -funktionen."
+      "You will lose access to Plus features on this date.": [
+        "An diesem Datum verlierst du den Zugang zu Plus-Funktionen."
+      ],
+      "You will lose access to Plus servers and features on this date.": [
+        "An diesem Datum verlierst du den Zugang zu Plus-Servern und -Funktionen."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Du benötigst eine ${ BRAND_NAME }-Adresse um ${ MAIL_APP_NAME } und ${ CALENDAR_APP_NAME } zu nutzen"
@@ -10311,17 +10340,6 @@
         "Teamverwaltung"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Um ${ MAIL_APP_NAME } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Deine Testversion endet am ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } mit den Endziffern ${ last4 }"
@@ -10409,6 +10427,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto downgradest, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Um ${ MAIL_APP_NAME } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Deine Testversion endet am ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11177,6 +11206,9 @@
       "Continue": [
         "Fortfahren"
       ],
+      "Continue to ${ appName } without upgrading": [
+        "Weiter zu ${ appName } ohne Upgrade"
+      ],
       "Continue to ${ free }": [
         "Weiter zu ${ free }"
       ],
@@ -11195,6 +11227,9 @@
       "Download to continue ${ size }": [
         "Herunterladen zum Fortfahren ${ size }"
       ],
+      "Keep this plan": [
+        "Dieses Abonnement beibehalten"
+      ],
       "Or ${ createANewAccount }": [
         "Oder ${ createANewAccount }"
       ],
@@ -11203,6 +11238,9 @@
       ],
       "Start using ${ appName } now": [
         "Beginne, ${ appName } jetzt zu verwenden"
+      ],
+      "Upgrade": [
+        "Upgraden"
       ],
       "Upgrade my plan": [
         "Abonnement upgraden"
@@ -11270,6 +11308,9 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Aber du kannst **${ unlockPlanTitle }** und alle Premium-Dienste von ${ BRAND_NAME } freischalten, indem du auf **${ upsellPlanTitle }** upgradest - es kostet nur ${ relativePrice } zusätzlich pro Monat."
       ],
+      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Aber du kannst **${ unlockPlanTitle }** und alle Premium-Dienste von ${ BRAND_NAME } freischalten, indem du auf **${ upsellPlanTitle }** upgradest."
+      ],
       "By continuing, you agree to our ${ termsAndConditions }": [
         "Wenn du fortfährst, erklärst du dich mit unseren ${ termsAndConditions } einverstanden"
       ],
@@ -11315,6 +11356,9 @@
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "Wenn du aus deinem ${ BRAND_NAME }-Konto ausgesperrt wirst, kannst du dich mit deinem **Wiederherstellungs-Kit** anmelden und deine Daten wiederherstellen."
       ],
+      "Includes:": [
+        "Enthält:"
+      ],
       "Install ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } installieren"
       ],
@@ -11332,9 +11376,6 @@
       ],
       "Launching ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } wird gestartet"
-      ],
-      "Limited time offer: Get ${ title } for free for 1 year!": [
-        "Zeitlich begrenztes Angebot: Erhalte ${ title } für ein Jahr kostenlos!"
       ],
       "One easy subscription.": [
         "Ein einfaches Abonnement."
@@ -11383,6 +11424,9 @@
       ],
       "Verifying your payment": [
         "Deine Zahlung wird verifiziert"
+      ],
+      "Welcome to ${ shortName } Plus": [
+        "Willkommen bei ${ shortName }-Plus"
       ],
       "Works on all devices": [
         "Funktioniert auf allen Geräten"
@@ -12913,9 +12957,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium-${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Premium-Passwortmanager"
       ]
     },
     "summer2023: Tooltip": {

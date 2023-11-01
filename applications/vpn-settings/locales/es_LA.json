@@ -266,8 +266,8 @@
       "Invite user": [
         "Invitar usuario"
       ],
-      "Keep my ${ vpnPlanNameShort } subscription": [
-        "Mantener mi suscripción ${ vpnPlanNameShort }"
+      "Keep my Plus subscription": [
+        "Mantener mi suscripción Plus"
       ],
       "Let's talk": [
         "Hablemos"
@@ -3106,8 +3106,8 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Si cree que esto es un error, contáctenos ${ contactLink }."
       ],
-      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "Si cancela, su suscripción de ${ vpnPlanName } no será renovarada cuando expire el ${ expiryDate }."
+      "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Si cancela, su suscripción de ${ planTitle } no se renovará cuando expire el ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no encuentra el correo electrónico en su buzón, revise en la carpeta de spam."
@@ -3475,6 +3475,9 @@
       "Thank you": [
         "Gracias"
       ],
+      "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
+        "Gracias por apoyar nuestra misión de construir un mejor internet donde la privacidad y la libertad son primero."
+      ],
       "The following address is invalid.": [
         "La siguiente dirección es inválida.",
         "Las siguientes direcciones son inválidas."
@@ -3836,8 +3839,11 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Le redirigiremos a ${ destination } después de iniciar sesión."
       ],
-      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
-        "Perderá el acceso a los servidores y funciones de ${ vpnPlanNameShort } en esta fecha."
+      "You will lose access to Plus features on this date.": [
+        "Perderá el acceso a las funciones de Plus en esta fecha."
+      ],
+      "You will lose access to Plus servers and features on this date.": [
+        "Perderá el acceso a los servidores y funciones de Plus en esta fecha."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Necesitará una dirección de ${ BRAND_NAME } para usar ${ MAIL_APP_NAME } y ${ CALENDAR_APP_NAME }"
@@ -3868,6 +3874,9 @@
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Su cuenta tiene al menos una factura pendiente. Su cuenta está restringida. El no pago continuo bloqueará sus correos y enlaces compartidos. ${ payInvoiceLink }"
+      ],
+      "Your account was successfully updated with this promotion": [
+        "Se ha actualizado su cuenta con esta promoción"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Su cuenta se actualizará una vez que el pago se haya completado."
@@ -6609,9 +6618,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } premium"
-      ],
-      "Premium Password Manager": [
-        "Administrador de contraseñas premium"
       ]
     },
     "summer2023: Tooltip": {

@@ -563,9 +563,6 @@
       "Keep": [
         "Behouden"
       ],
-      "Keep my ${ vpnPlanNameShort } subscription": [
-        "Behoud mijn ${ vpnPlanNameShort }-abonnement"
-      ],
       "label emails as": [
         "e-mail labellen als"
       ],
@@ -1300,6 +1297,9 @@
       "Add ${ plan } to your plan by subscribing to 15 months": [
         "Voeg ${ plan } aan je abonnement toe door te kiezen voor 15 maanden"
       ],
+      "Become a Visionary": [
+        "Kies voor Visionary"
+      ],
       "Get the deal": [
         "Kies deze deal"
       ],
@@ -1382,6 +1382,29 @@
       ],
       "Secure browsing and premium VPN features.": [
         "Veilig browsen en premium VPN-functies in."
+      ]
+    },
+    "bf2023: Info": {
+      "6 TB storage (2x more than any other plan)": [
+        "6 TB opslagruimte (2x meer dan binnen elk ander abonnement)"
+      ],
+      "6 users": [
+        "6 gebruikers"
+      ],
+      "Become a super-supporter. Get access to all current and future ${ BRAND_NAME } services.": [
+        "Word een super-superlid. Krijg toegang tot alle huidige en toekomstige diensten van ${ BRAND_NAME }."
+      ],
+      "Exclusive features and early access": [
+        "Exclusieve functies en als eerste toegang"
+      ],
+      "Help us fight for online privacy": [
+        "Steun ons in onze strijd voor online privacy"
+      ],
+      "Premium versions of all ${ BRAND_NAME } services": [
+        "Premium versies van alle diensten van ${ BRAND_NAME }"
+      ],
+      "The ${ plan } plan is back for a limited time only": [
+        "Het ${ plan }-abonnement is tijdelijk terug"
       ]
     },
     "bf2023: Offers": {
@@ -6145,9 +6168,6 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Als u denkt dat dit een fout is, neem dan contact met ons op via ${ contactLink }."
       ],
-      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "Wanneer u opzegt, zal u ${ vpnPlanName } abonnement niet meer vernieuwd worden wanneer het verloopt op ${ expiryDate }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
       ],
@@ -7421,9 +7441,6 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "U wordt doorverwezen naar ${ destination } nadat u inlogt."
-      ],
-      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
-        "U verliest toegang tot ${ vpnPlanNameShort }-servers en functies op deze datum."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "U heeft een ${ BRAND_NAME }-adres nodig om ${ MAIL_APP_NAME } en ${ CALENDAR_APP_NAME } te gebruiken"
@@ -9950,17 +9967,6 @@
         "Teambeheer"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Uw proefperiode eindigt op ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } eindigend met ${ last4 }"
@@ -10048,6 +10054,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Uw proefperiode eindigt op ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10971,9 +10988,6 @@
       ],
       "Launching ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } opstarten"
-      ],
-      "Limited time offer: Get ${ title } for free for 1 year!": [
-        "Gelimiteerd aanbod: krijg ${ title } gratis voor 1 jaar!"
       ],
       "One easy subscription.": [
         "Eén eenvoudig abonnement."
@@ -12546,9 +12560,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Premium wachtwoordmanager"
       ]
     },
     "summer2023: Tooltip": {
