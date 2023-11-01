@@ -15,9 +15,9 @@ export const settingsEditIntent = createAction(
 
 export const settingsEditFailure = createAction(
     'settings::edit::failure',
-    withRequestFailure((error: unknown, receiver?: ExtensionEndpoint) =>
+    withRequestFailure((error: unknown, endpoint?: ExtensionEndpoint) =>
         pipe(
-            withNotification({ type: 'error', text: c('Error').t`Settings update failed`, receiver, error }),
+            withNotification({ type: 'error', text: c('Error').t`Settings update failed`, endpoint, error }),
             withCacheBlock
         )({ payload: {} })
     )
@@ -25,8 +25,10 @@ export const settingsEditFailure = createAction(
 
 export const settingsEditSuccess = createAction(
     'settings::edit::success',
-    withRequestSuccess((payload: RecursivePartial<ProxiedSettings>, receiver?: ExtensionEndpoint) =>
-        withNotification({ type: 'success', text: c('Info').t`Settings successfully updated`, receiver })({ payload })
+    withRequestSuccess((payload: RecursivePartial<ProxiedSettings>, endpoint?: ExtensionEndpoint) =>
+        withNotification({ type: 'success', text: c('Info').t`Settings successfully updated`, endpoint })({
+            payload,
+        })
     )
 );
 

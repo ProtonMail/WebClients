@@ -1,16 +1,7 @@
 import { api } from '@proton/pass/lib/api/api';
-import {
-    type Maybe,
-    type Share,
-    type ShareGetResponse,
-    type ShareKeyResponse,
-    type ShareRole,
-    ShareType,
-} from '@proton/pass/types';
+import { type ShareGetResponse, type ShareKeyResponse, type ShareRole } from '@proton/pass/types';
 import { type ShareMember } from '@proton/pass/types/data/invites';
 import type { ShareEditMemberAccessIntent, ShareRemoveMemberAccessIntent } from '@proton/pass/types/data/shares.dto';
-
-import { parseShareResponse } from './share.parser';
 
 /* ⚠️ This endpoint is not paginated yet back-end side. */
 export const getAllShareKeys = async (shareId: string): Promise<ShareKeyResponse[]> => {
@@ -31,11 +22,6 @@ export const getShareLatestEventId = async (shareId: string): Promise<string> =>
         .then(({ EventID }) => EventID!)
         .catch(() => '');
 
-const loadVaultShareById = async (shareId: string): Promise<Maybe<Share<ShareType.Vault>>> => {
-    const encryptedShare = await api({ url: `pass/v1/share/${shareId}`, method: 'get' });
-    return parseShareResponse(encryptedShare.Share!);
-};
-
 export const requestShares = async (): Promise<ShareGetResponse[]> =>
     (
         await api({
@@ -43,15 +29,6 @@ export const requestShares = async (): Promise<ShareGetResponse[]> =>
             method: 'get',
         })
     ).Shares;
-
-export const loadShare = async <T extends ShareType>(shareId: string, targetType: T): Promise<Maybe<Share<T>>> => {
-    switch (targetType) {
-        case ShareType.Vault:
-            return (await loadVaultShareById(shareId)) as Maybe<Share<T>>;
-        default:
-            throw new Error(`Unsupported share type ${ShareType[targetType]}`);
-    }
-};
 
 export const deleteShare = async (shareId: string) => api({ url: `pass/v1/share/${shareId}`, method: 'delete' });
 

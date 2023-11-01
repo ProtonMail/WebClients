@@ -8,7 +8,7 @@ import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Progress } from '@proton/components/components';
 import { ItemCard } from '@proton/pass/components/Item/ItemCard';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
-import { useActionWithRequest } from '@proton/pass/hooks/useActionWithRequest';
+import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { inviteAcceptIntent, inviteRejectIntent } from '@proton/pass/store/actions';
 import { inviteAcceptRequest, inviteRejectRequest } from '@proton/pass/store/actions/requests';
 import { selectUserVerified, selectVaultLimits } from '@proton/pass/store/selectors';
@@ -23,13 +23,13 @@ export const VaultInviteRespond: VFC<Invite> = (invite) => {
     const { vaultLimitReached } = useSelector(selectVaultLimits);
     const { onInviteResponse } = useInviteContext();
 
-    const acceptInvite = useActionWithRequest({
+    const acceptInvite = useActionRequest({
         action: inviteAcceptIntent,
         requestId: inviteAcceptRequest(invite.token),
         onSuccess: onInviteResponse,
     });
 
-    const rejectInvite = useActionWithRequest({
+    const rejectInvite = useActionRequest({
         action: inviteRejectIntent,
         requestId: inviteRejectRequest(invite.token),
         onSuccess: onInviteResponse,

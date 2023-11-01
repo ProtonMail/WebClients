@@ -1,13 +1,14 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useMemo, useRef, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import type { AnyAction } from 'redux';
 
 import type { RequestOptions } from '@proton/pass/store/actions/with-request';
 import { type WithRequest, withRevalidate } from '@proton/pass/store/actions/with-request';
 import type { RequestEntry } from '@proton/pass/store/reducers';
-import { selectRequest } from '@proton/pass/store/selectors';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
+
+import { useActionRequestEffect } from './useActionRequestEffect';
 
 export type RequestEntryFromAction<A extends WithRequest<AnyAction, any>> = A['meta']['request'] extends RequestOptions<
     infer T,
@@ -43,11 +44,12 @@ type UseActionWithRequestOptions<P extends any[], A extends WithRequest<AnyActio
  * utilize the `withRequestStart|Failure|Success` action preparators when building the
  * action creators.
  */
-export const useActionWithRequest = <P extends any[], R extends WithRequest<AnyAction, 'start'>>(
+export const useActionRequest = <P extends any[], R extends WithRequest<AnyAction, 'start'>>(
     options: UseActionWithRequestOptions<P, R>
 ) => {
+    const dispatch = useDispatch();
     const optionsRef = useRef<UseActionWithRequestOptions<P, R>>(options);
-    const [loading, setLoading] = useState(false);
+    optionsRef.current = options;
 
     const [requestId, setRequestId] = useState<string>(
         (() => {
@@ -57,48 +59,28 @@ export const useActionWithRequest = <P extends any[], R extends WithRequest<AnyA
         })()
     );
 
-    const dispatch = useDispatch();
-    const req = useSelector(selectRequest(requestId));
-
-    useEffect(() => {
-        optionsRef.current = options;
-    }, [options]);
-
-    useEffect(() => {
-        if (req === undefined) return;
-
-        switch (req.status) {
-            case 'start':
-                setLoading(true);
-                return optionsRef.current.onStart?.(req);
-            case 'success':
-                setLoading(false);
-                return optionsRef.current.onSuccess?.(req);
-            case 'failure':
-                setLoading(false);
-                return optionsRef.current.onFailure?.(req);
-        }
-    }, [req]);
-
-    const progress = req?.status === 'start' ? req.progress ?? 0 : 100;
+    const { request, loading, progress } = useActionRequestEffect(requestId, {
+        onStart: optionsRef.current.onStart,
+        onSuccess: optionsRef.current.onSuccess,
+        onFailure: optionsRef.current.onFailure,
+    });
 
     return useMemo(() => {
         const actionCreator = (...args: P) => {
-            const nextRequestId = (() => {
+            const safeRequestId = (() => {
                 if (typeof options.requestId === 'function') return options.requestId(...args);
                 return requestId;
             })();
 
-            setRequestId(nextRequestId);
-            return options.action(nextRequestId, ...args);
+            setRequestId(safeRequestId);
+            return options.action(safeRequestId, ...args);
         };
 
         return {
             dispatch: (...args: P) => dispatch(actionCreator(...args)),
             revalidate: (...args: P) => dispatch(withRevalidate(actionCreator(...args))),
-            status: req?.status,
             progress,
             loading,
         };
-    }, [requestId, req?.status, progress, loading]);
+    }, [requestId, request, progress, loading]);
 };

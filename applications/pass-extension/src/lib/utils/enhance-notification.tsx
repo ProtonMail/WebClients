@@ -1,6 +1,7 @@
 import { SSO_URL } from 'proton-pass-extension/app/config';
 import { c } from 'ttag';
 
+import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, InlineLinkButton } from '@proton/components/components';
 import browser from '@proton/pass/lib/globals/browser';
 import type { Notification } from '@proton/pass/store/actions/with-notification';
@@ -31,6 +32,16 @@ export const enhanceNotification = (notification: Notification): Notification =>
             };
         }
         default:
-            return notification;
+            return {
+                ...notification,
+                showCloseButton: notification.showCloseButton && !notification.loading,
+                text: notification.loading ? (
+                    <>
+                        {notification.text} <CircleLoader />
+                    </>
+                ) : (
+                    notification.text
+                ),
+            };
     }
 };
