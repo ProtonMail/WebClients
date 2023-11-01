@@ -12,11 +12,11 @@ export type ParsedUrl = {
     domain: MaybeNull<string>;
     /* subdomain if any */
     subdomain: MaybeNull<string>;
-    /* hostname of the url */
+    /* hostname of the URL */
     hostname: MaybeNull<string>;
     /* protocol */
     protocol: MaybeNull<string>;
-    /* url matches top-level domain */
+    /* URL matches top-level domain */
     isTopLevelDomain: boolean;
     /* private domain from public suffix list */
     isPrivate: boolean;
