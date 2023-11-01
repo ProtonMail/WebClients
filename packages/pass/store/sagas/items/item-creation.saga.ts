@@ -45,6 +45,10 @@ function* singleItemCreationWorker({ onItemsChange, getTelemetry }: WorkerRootSa
         yield isAlias && put(requestInvalidate(aliasOptionsRequest(shareId))); /* reset alias options */
 
         void telemetry?.pushEvent(createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: item.data.type }));
+        if (item.data.type === 'login' && item.data.content.totpUri) {
+            void telemetry?.pushEvent(createTelemetryEvent(TelemetryEventName.TwoFACreation, {}, {}));
+        }
+
         onItemCreationIntentProcessed?.(itemCreationSuccessAction);
         onItemsChange?.();
     } catch (e) {
@@ -77,6 +81,9 @@ function* withAliasCreationWorker(
         void telemetry?.pushEvent(
             createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: aliasItem.data.type })
         );
+        if (loginItem.data.type === 'login' && loginItem.data.content.totpUri) {
+            void telemetry?.pushEvent(createTelemetryEvent(TelemetryEventName.TwoFACreation, {}, {}));
+        }
 
         onItemsChange?.();
     } catch (e) {
