@@ -1,7 +1,7 @@
-import { type VFC } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { type VFC, useRef } from 'react';
+import { useSelector } from 'react-redux';
 
-import type { FormikErrors } from 'formik';
+import type { FormikContextType, FormikErrors } from 'formik';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { APP_NAME, APP_VERSION, CLIENT_TYPE } from 'proton-pass-extension/app/config';
 import { c } from 'ttag';
@@ -9,10 +9,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { TextAreaTwo } from '@proton/components/components';
 import { getClientName, getReportInfo } from '@proton/components/helpers/report';
-import { useRequestStatusEffect } from '@proton/pass/hooks/useRequestStatusEffect';
-import { reportProblemIntent } from '@proton/pass/store/actions';
-import { reportProblem } from '@proton/pass/store/actions/requests';
-import { selectRequestInFlight, selectUser } from '@proton/pass/store/selectors';
+import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
+import { reportBugIntent } from '@proton/pass/store/actions';
+import { selectUser } from '@proton/pass/store/selectors';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { type BugPayload } from '@proton/shared/lib/api/reports';
 
@@ -34,10 +33,9 @@ const validate = ({ description }: FormValues): FormikErrors<FormValues> => {
 };
 
 export const ReportAProblem: VFC = () => {
-    const dispatch = useDispatch();
     const user = useSelector(selectUser);
-
-    const requestInFlight = useSelector(selectRequestInFlight(reportProblem));
+    const formRef = useRef<FormikContextType<FormValues>>();
+    const reportBug = useActionRequest({ action: reportBugIntent, onSuccess: () => formRef.current?.resetForm() });
 
     const form = useFormik<FormValues>({
         initialValues: INITIAL_VALUES,
@@ -57,13 +55,11 @@ export const ReportAProblem: VFC = () => {
                 Description: description,
             };
 
-            dispatch(reportProblemIntent(payload));
+            reportBug.dispatch(payload);
         },
     });
 
-    useRequestStatusEffect(reportProblem, {
-        onSuccess: () => form.resetForm(),
-    });
+    formRef.current = form;
 
     return (
         <SettingsPanel
@@ -81,18 +77,18 @@ export const ReportAProblem: VFC = () => {
                         autoGrow
                         minRows={5}
                         value={form.values.description}
-                        disabled={requestInFlight}
+                        disabled={reportBug.loading}
                     />
 
                     <Button
                         className="mt-4 w-full"
                         color="norm"
                         disabled={!form.isValid}
-                        loading={requestInFlight}
+                        loading={reportBug.loading}
                         type="submit"
                     >
-                        {requestInFlight && c('Action').t`Submitting report...`}
-                        {!requestInFlight && c('Action').t`Submit`}
+                        {reportBug.loading && c('Action').t`Submitting report...`}
+                        {!reportBug.loading && c('Action').t`Submit`}
                     </Button>
                 </Form>
             </FormikProvider>

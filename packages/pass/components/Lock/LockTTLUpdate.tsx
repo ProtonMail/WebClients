@@ -1,16 +1,15 @@
 import { type VFC } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { InputFieldTwo, Option, SelectTwo } from '@proton/components/index';
-import { sessionLockEnableIntent } from '@proton/pass/store/actions';
 
 import { useSessionLockConfirmContext } from './LockConfirmContextProvider';
 
 type Props = {
     ttl?: number;
     disabled?: boolean;
+    onChange: (options: { pin: string; ttl: number }) => void;
 };
 
 const getSessionLockTTLOptions = () => [
@@ -23,13 +22,12 @@ const getSessionLockTTLOptions = () => [
     { title: c('Label').t`1 hour`, value: 3600 },
 ];
 
-export const LockTTLUpdate: VFC<Props> = ({ ttl, disabled }) => {
-    const dispatch = useDispatch();
+export const LockTTLUpdate: VFC<Props> = ({ ttl, disabled, onChange }) => {
     const { confirmPin } = useSessionLockConfirmContext();
 
     const handleOnChange = async (ttl: number) =>
         confirmPin({
-            onSubmit: (pin) => dispatch(sessionLockEnableIntent({ pin, ttl })),
+            onSubmit: (pin) => onChange({ pin, ttl }),
             title: c('Title').t`Auto-lock update`,
             assistiveText: c('Info').t`Please confirm your PIN code to edit this setting.`,
         });

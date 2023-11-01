@@ -26,7 +26,9 @@ export const settingsEditFailure = createAction(
 export const settingsEditSuccess = createAction(
     'settings::edit::success',
     withRequestSuccess((payload: RecursivePartial<ProxiedSettings>, endpoint?: ExtensionEndpoint) =>
-        withNotification({ type: 'success', text: c('Info').t`Settings successfully updated`, endpoint })({ payload })
+        withNotification({ type: 'success', text: c('Info').t`Settings successfully updated`, endpoint })({
+            payload,
+        })
     )
 );
 
