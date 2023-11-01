@@ -174,7 +174,7 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
             }
             const [forwarderAddressKeys, { RecipientType, publicKeys, Errors }] = await Promise.all([
                 getAddressKeys(model.addressID),
-                getPublicKeys(model.email),
+                getPublicKeys({ email: model.email }),
             ]);
             const { privateKeys } = splitKeys(forwarderAddressKeys);
             const [forwarderKey] = privateKeys;
