@@ -27,9 +27,9 @@ export const validateUrls = <V extends UrlGroupValues>({ urls }: V) => {
         const isEmpty = isEmptyString(url);
         const { valid: validURL, url: safeUrl } = isValidURL(url);
 
-        if (isEmpty) return { url: c('Validation').t`Url cannot be empty` };
-        if (!validURL) return { url: c('Validation').t`Url is invalid` };
-        if ((duplicatesCount.get(safeUrl) ?? 0) > 1) return { url: c('Validation').t`Duplicated url` };
+        if (isEmpty) return { url: c('Validation').t`URL cannot be empty` };
+        if (!validURL) return { url: c('Validation').t`URL is invalid` };
+        if ((duplicatesCount.get(safeUrl) ?? 0) > 1) return { url: c('Validation').t`Duplicated URL` };
 
         return {};
     });
