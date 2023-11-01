@@ -563,9 +563,6 @@
       "Keep": [
         "Păstrare"
       ],
-      "Keep my ${ vpnPlanNameShort } subscription": [
-        "Păstrez abonamentul ${ vpnPlanNameShort }"
-      ],
       "label emails as": [
         "etichetare mesaje ca"
       ],
@@ -634,6 +631,9 @@
       ],
       "Open navigation": [
         "Deschidere navigare"
+      ],
+      "Or": [
+        "Sau"
       ],
       "Ordered list": [
         "Listă ordonată"
@@ -898,6 +898,9 @@
       ],
       "Sign out of all accounts": [
         "Deconectare din toate conturile"
+      ],
+      "sign up for free": [
+        "înscrieți-vă gratuit"
       ],
       "Signing in": [
         "Conectare"
@@ -5274,6 +5277,11 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } adresă",
+        "${ amountOfAddresses } adrese",
+        "${ amountOfAddresses } de adrese"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
       ],
@@ -5361,6 +5369,9 @@
         "${ numberOfNonPrivateKeys } fișiere încărcate nu sunt chei private valide. Verificați și reîncercați.",
         "${ numberOfNonPrivateKeys } de fișiere încărcate nu sunt chei private valide. Verificați și reîncercați."
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "${ plan } a fost eliminat. Oferta pachetului nu este disponibilă pentru planul de o lună."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } necesită cel puțin 1 server dedicat ${ serverPricePerMonth }"
       ],
@@ -5381,6 +5392,16 @@
         "${ provisioningCounter } server este încă în curs de configurare. Aceasta durează de obicei aproximativ ${ provisioningDuration }.",
         "${ provisioningCounter } servere sunt încă în curs de configurare. Aceasta durează de obicei aproximativ ${ provisioningDuration }.",
         "${ provisioningCounter } de servere sunt încă în curs de configurare. Aceasta durează de obicei aproximativ ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "încă ${ remainingAddresses.length }",
+        "încă ${ remainingAddresses.length }",
+        "încă ${ remainingAddresses.length }"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "încă ${ remainingAddresses.length } adresă",
+        "încă ${ remainingAddresses.length } adrese",
+        "încă ${ remainingAddresses.length } de adrese"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } din ${ providerCalendars.length } calendar",
@@ -5727,6 +5748,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Înainte de a putea începe trimiterea și primirea de mesaje cu noua adresă va trebui să creați o cheie de criptare pentru ele."
+      ],
+      "Billed at ${ price }": [
+        "Facturat cu ${ price }"
       ],
       "Billing cycle: ${ text }": [
         "Ciclu facturare: ${ text }"
@@ -6083,9 +6107,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Dacă credeți că acest lucru este o eroare, vă rugăm să ne contactați la ${ contactLink }."
-      ],
-      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "Dacă anulați, abonamentul la ${ vpnPlanName } nu va fi reînnoit când va expira la ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
@@ -6559,6 +6580,9 @@
       "Priority support": [
         "Asistență prioritară"
       ],
+      "Promotion expired": [
+        "Promoția a expirat"
+      ],
       "Protected by Swiss privacy laws": [
         "Protejat de legile stricte elvețiene privind confidențialitatea"
       ],
@@ -6633,6 +6657,9 @@
       ],
       "Right to Left": [
         "De la dreapta la stânga"
+      ],
+      "Save ${ percentage }": [
+        "Salvați ${ percentage }"
       ],
       "Save your password somewhere safe.": [
         "Salvați parola într-un loc sigur."
@@ -6724,6 +6751,9 @@
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF este folosit pentru a stabili cui îi este permis să trimită mesaje pentru domeniu astfel încât vă recomandăm includerea ${ MAIL_APP_NAME } în înregistrarea SPF. Adăugați următoarea înregistrare TXT în DNS. Această operație poate fi realizată din panoul de control al celui care v-a înregistrat domeniul."
       ],
+      "Stay tuned for future promotions.": [
+        "Rămâneți pe fază pentru viitoarele promoții."
+      ],
       "Step ${ step }": [
         "Pasul ${ step }",
         "Pasul ${ step }",
@@ -6788,6 +6818,9 @@
       ],
       "Thank you": [
         "Vă mulțumim"
+      ],
+      "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
+        "Vă mulțumim că ne susțineți misiunea de a construi un internet mai bun unde confidențialitatea și libertatea primează."
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Mesajul ${ boldDataLocked } nu va mai fi afișat, dar încă puteți să vă deblocați datele de la ${ encryptionAndKeysLink }."
@@ -6881,6 +6914,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Această legătură ar putea fi un atac omoglific. Verificați adresa pe care doriți să o vizitați sau nu o deschideți."
+      ],
+      "This promotion link has expired.": [
+        "Această legătură web spre promoție a expirat."
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Acest cod de acces nu va fi disponibil după ce închideți această fereastră și nu ar trebui să-l partajați cu nimeni."
@@ -7378,9 +7414,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "După autentificare se va redirecționa la ${ destination }."
       ],
-      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
-        "Veți pierde accesul la serverele ${ vpnPlanNameShort } și la funcții la această dată."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Veți avea nevoie de o adresă ${ BRAND_NAME } pentru a utiliza ${ MAIL_APP_NAME } și ${ CALENDAR_APP_NAME }"
       ],
@@ -7428,6 +7461,9 @@
       ],
       "Your account recovery method is set": [
         "Metoda de recuperare a contului este setată"
+      ],
+      "Your account was successfully updated with this promotion": [
+        "Contul a fost modificat cu planul din această promoție."
       ],
       "Your account will be updated once the payment is cleared.": [
         "Contul va fi modificat după verificarea plății."
@@ -9944,17 +9980,6 @@
         "Gestionare echipă"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Perioada de probare se termină ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } care se termină cu ${ last4 }"
@@ -10042,6 +10067,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Perioada de probare se termină ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10821,6 +10857,9 @@
       "Continue": [
         "Continuare"
       ],
+      "Continue to ${ appName } without upgrading": [
+        "Continuare spre ${ appName } fără modificare"
+      ],
       "Continue to ${ free }": [
         "Continuare cu ${ free }"
       ],
@@ -10839,6 +10878,9 @@
       "Download to continue ${ size }": [
         "Descărcare pentru a continua ${ size }"
       ],
+      "Keep this plan": [
+        "Păstrez planul"
+      ],
       "Or ${ createANewAccount }": [
         "Sau ${ createANewAccount }"
       ],
@@ -10847,6 +10889,9 @@
       ],
       "Start using ${ appName } now": [
         "Începeți să utilizați ${ appName } acum"
+      ],
+      "Upgrade": [
+        "Modificare"
       ],
       "Upgrade my plan": [
         "Modificare plan"
@@ -10914,6 +10959,9 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Dar puteți debloca **${ unlockPlanTitle }** și toate serviciile premium ${ BRAND_NAME } prin trecerea la **${ upsellPlanTitle }** - este doar ${ relativePrice } în plus pe lună."
       ],
+      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Dar puteți debloca **${ unlockPlanTitle }** și toate serviciile premium ${ BRAND_NAME } trecând la **${ upsellPlanTitle }**."
+      ],
       "By continuing, you agree to our ${ termsAndConditions }": [
         "Continuând, sunteți de acord cu acești ${ termsAndConditions }"
       ],
@@ -10959,6 +11007,9 @@
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "Dacă sunteți blocat din contul ${ BRAND_NAME }, **pachetul de recuperare** vă va permite să vă conectați și să recuperați datele."
       ],
+      "Includes:": [
+        "Include:"
+      ],
       "Install ${ PASS_APP_NAME }": [
         "Instalați ${ PASS_APP_NAME }"
       ],
@@ -10976,9 +11027,6 @@
       ],
       "Launching ${ PASS_APP_NAME }": [
         "Se lansează ${ PASS_APP_NAME }"
-      ],
-      "Limited time offer: Get ${ title } for free for 1 year!": [
-        "Ofertă limitată: Luați ${ title } gratuit pentru un an!"
       ],
       "One easy subscription.": [
         "Un singur abonament."
@@ -11027,6 +11075,9 @@
       ],
       "Verifying your payment": [
         "Verificare plată"
+      ],
+      "Welcome to ${ shortName } Plus": [
+        "Bun venit la ${ shortName } Plus"
       ],
       "Works on all devices": [
         "Funcționează pe orice dispozitiv"
@@ -12590,9 +12641,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
-      ],
-      "Premium Password Manager": [
-        "Gestionare parole premium"
       ]
     },
     "summer2023: Tooltip": {
@@ -13234,6 +13282,9 @@
       ],
       "Folders and labels": [
         "Foldere și etichete"
+      ],
+      "Forward and auto-reply": [
+        "Redirecționare și răspuns automat"
       ],
       "Forward emails": [
         "Redirecționare mesaje"
@@ -14201,6 +14252,11 @@
       ],
       "Your ${ selected } plan": [
         "Planul dvs. ${ selected }"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Acces la servere Secure Core, descărcări rapide P2P/BitTorrent, Tor prin VPN și altele."
       ]
     },
     "Warning": {
