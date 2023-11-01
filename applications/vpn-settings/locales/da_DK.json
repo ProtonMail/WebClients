@@ -263,9 +263,6 @@
       "Invite user": [
         "Invitér bruger"
       ],
-      "Keep my ${ vpnPlanNameShort } subscription": [
-        "Behold mit ${ vpnPlanNameShort } abonnement"
-      ],
       "Let's talk": [
         "Lad os snakke"
       ],
@@ -298,6 +295,9 @@
       ],
       "Open navigation": [
         "Åbn navigation"
+      ],
+      "Or": [
+        "Eller"
       ],
       "Organization": [
         "Organisation"
@@ -427,6 +427,9 @@
       ],
       "Sign in": [
         "Log ind"
+      ],
+      "Sign in with password": [
+        "Log ind med en adgangskode"
       ],
       "Sign out": [
         "Log ud"
@@ -746,6 +749,12 @@
       ]
     },
     "Checkout summary": {
+      "month": [
+        "måned"
+      ],
+      "Servers": [
+        "Servere"
+      ],
       "Users": [
         "Brugere"
       ]
@@ -1912,6 +1921,9 @@
       ]
     },
     "Error importing users": {
+      "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format.": [
+        "Der opstod en fejl ved læsning af din fil \"${ formattedFilename }\". Forkert filformat."
+      ],
       "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Der opstod en fejl under upload af din fil \"${ formattedFilename }\". Maksimal filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
@@ -2361,6 +2373,12 @@
       "(1-2 emails per month)": [
         "(1-2 e-mails pr. måned)"
       ],
+      "(2-4 emails per year)": [
+        "(2-4 e-mails pr. året)"
+      ],
+      "(4-6 emails per year)": [
+        "(4-6 e-mails pr. året)"
+      ],
       "(during your first month)": [
         "(i løbet af din første måned)"
       ]
@@ -2456,6 +2474,10 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } adresse",
+        "${ amountOfAddresses } adresser"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
       ],
@@ -2491,6 +2513,10 @@
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } server er stadig ved at blive sat op. Det tager normalt omkring ${ provisioningDuration }.",
         "${ provisioningCounter } servere er stadig ved at blive sat op. Det tager normalt omkring ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } mere",
+        "${ remainingAddresses.length } mere"
       ],
       "${ storage } storage": [
         "${ storage } lagerplads"
@@ -2637,6 +2663,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Inden du kan begynde at sende og modtage e-mails fra dine nye adresser, skal du oprette krypteringsnøgler til dem."
+      ],
+      "Billed at ${ price }": [
+        "Faktureret med ${ price }"
       ],
       "Billing cycle: ${ text }": [
         "Faktureringsperiode: ${ text }"
@@ -2828,9 +2857,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Hvis du mener dette er en fejltagelse, bedes du kontakte os ${ contactLink }."
-      ],
-      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "Hvis du annullerer, vil dit ${ vpnPlanName }-abonnement ikke blive fornyet, når det udløber ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke kan se mailen i din indbakke, bedes du tjekke din spammappe."
@@ -3104,6 +3130,9 @@
       "Revoke certificate ${ name }": [
         "Tilbagekald certifikat ${ name }"
       ],
+      "Save ${ percentage }": [
+        "Spar ${ percentage }"
+      ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Gem din adgangskode et sikkert sted. Tryk på ikon for at bekræfte, at du har indtastet din adgangskode korrekt."
       ],
@@ -3194,6 +3223,9 @@
       ],
       "Thank you": [
         "Tak"
+      ],
+      "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
+        "Tak, fordi du støtter vores mission om at opbygge et bedre internet, hvor privatliv og frihed kommer i første række."
       ],
       "The following address is invalid.": [
         "Den følgende adresse er ugyldig.",
@@ -3555,9 +3587,6 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Du vil blive omdirigeret til ${ destination } efter login."
-      ],
-      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
-        "Du vil miste adgang til ${ vpnPlanNameShort }-servere og funktioner på denne dato."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Du skal bruge en ${ BRAND_NAME }-adresse for at bruge ${ MAIL_APP_NAME } og ${ CALENDAR_APP_NAME }"
@@ -4256,6 +4285,9 @@
       ]
     },
     "Member action": {
+      "Change password": [
+        "Skift adgangskode"
+      ],
       "Delete": [
         "Slet"
       ],
@@ -4643,6 +4675,9 @@
       "Sign in as user": [
         "Log ind som bruger"
       ],
+      "SMTP submission": [
+        "SMTP-indsendelse"
+      ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android og Windows)"
       ],
@@ -4976,11 +5011,17 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "24/7 support": [
+        "24/7 support"
+      ],
       "Access advanced VPN features": [
         "Få adgang til avancerede VPN-funktioner"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Tilføj mere personalisering med 15 e-mailadresser og understøttelse af 3 brugerdefinerede e-maildomæner"
+      ],
+      "Auto-connect": [
+        "Forbind automatisk"
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Forøg din lagerplads til ${ bundleStorage } i alt"
@@ -5479,6 +5520,14 @@
         "Der er anmodet om nulstilling af adgangskode"
       ]
     },
+    "session_recovery:initiation:action": {
+      "Got it": [
+        "Forstået"
+      ],
+      "Request password reset": [
+        "Anmod om nulstilling af adgangskode"
+      ]
+    },
     "session_recovery:initiation:title": {
       "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
         "Du kan nulstille din adgangskode om ${ gracePeriodHoursRemaining } time",
@@ -5521,12 +5570,26 @@
         "Log ud uden at nulstille adgangskoden?"
       ]
     },
+    "session_recovery:status:info": {
+      "Available": [
+        "Tilgængelig"
+      ],
+      "Pending": [
+        "Afventer"
+      ]
+    },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Delt af ${ ownerName }"
       ]
     },
     "Signup label": {
+      "Email address": [
+        "E-mailadresse"
+      ],
+      "Password": [
+        "Adgangskode"
+      ],
       "Username": [
         "Brugernavn"
       ]
@@ -6079,9 +6142,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Premium Adgangskodeadministrator"
       ]
     },
     "summer2023: Tooltip": {
@@ -6612,6 +6672,9 @@
       "Sign in to join the Beta program": [
         "Log ind for tilmelding til Beta programmet"
       ],
+      "Sign in to your organization": [
+        "Log ind med din organisation"
+      ],
       "Sign in with 2FA": [
         "Log ind med 2FA"
       ],
@@ -6846,9 +6909,20 @@
         "${ numberOfServers } i ${ numberOfCountries } lande"
       ]
     },
+    "vpn_2step: billing": {
+      "Billed monthly": [
+        "Faktureres månedligt"
+      ]
+    },
     "vpn_2step: discount": {
       "1-year": [
         "1 år"
+      ],
+      "2-year": [
+        "2 år"
+      ],
+      "monthly": [
+        "månedligt"
       ]
     },
     "vpn_2step: info": {

@@ -266,9 +266,6 @@
       "Invite user": [
         "Invitare utilizator"
       ],
-      "Keep my ${ vpnPlanNameShort } subscription": [
-        "Păstrez abonamentul ${ vpnPlanNameShort }"
-      ],
       "Let's talk": [
         "Să discutăm"
       ],
@@ -301,6 +298,9 @@
       ],
       "Open navigation": [
         "Deschidere navigare"
+      ],
+      "Or": [
+        "Sau"
       ],
       "Organization": [
         "Organizația"
@@ -439,6 +439,9 @@
       ],
       "Sign out": [
         "Deconectare"
+      ],
+      "sign up for free": [
+        "înscrieți-vă gratuit"
       ],
       "Signing in": [
         "Conectare"
@@ -2571,6 +2574,11 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } adresă",
+        "${ amountOfAddresses } adrese",
+        "${ amountOfAddresses } de adrese"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
       ],
@@ -2602,6 +2610,9 @@
         "${ number } servere",
         "${ number } de servere"
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "${ plan } a fost eliminat. Oferta pachetului nu este disponibilă pentru planul de o lună."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } necesită cel puțin 1 server dedicat ${ serverPricePerMonth }"
       ],
@@ -2609,6 +2620,16 @@
         "${ provisioningCounter } server este încă în curs de configurare. Aceasta durează de obicei aproximativ ${ provisioningDuration }.",
         "${ provisioningCounter } servere sunt încă în curs de configurare. Aceasta durează de obicei aproximativ ${ provisioningDuration }.",
         "${ provisioningCounter } de servere sunt încă în curs de configurare. Aceasta durează de obicei aproximativ ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "încă ${ remainingAddresses.length }",
+        "încă ${ remainingAddresses.length }",
+        "încă ${ remainingAddresses.length }"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "încă ${ remainingAddresses.length } adresă",
+        "încă ${ remainingAddresses.length } adrese",
+        "încă ${ remainingAddresses.length } de adrese"
       ],
       "${ storage } storage": [
         "Stocare ${ storage }"
@@ -2760,6 +2781,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Înainte de a putea începe trimiterea și primirea de mesaje cu noua adresă va trebui să creați o cheie de criptare pentru ele."
+      ],
+      "Billed at ${ price }": [
+        "Facturat cu ${ price }"
       ],
       "Billing cycle: ${ text }": [
         "Ciclu facturare: ${ text }"
@@ -2953,9 +2977,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Dacă credeți că acest lucru este o eroare, vă rugăm să ne contactați la ${ contactLink }."
-      ],
-      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "Dacă anulați, abonamentul la ${ vpnPlanName } nu va fi reînnoit când va expira la ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
@@ -3231,6 +3252,9 @@
       "Revoke certificate ${ name }": [
         "Anulare certificat ${ name }"
       ],
+      "Save ${ percentage }": [
+        "Salvați ${ percentage }"
+      ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Păstrați-vă parola într-un loc sigur. Faceți clic pe pictogramă pentru a confirma că ați scris parola corect."
       ],
@@ -3322,6 +3346,9 @@
       ],
       "Thank you": [
         "Vă mulțumim"
+      ],
+      "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
+        "Vă mulțumim că ne susțineți misiunea de a construi un internet mai bun unde confidențialitatea și libertatea primează."
       ],
       "The following address is invalid.": [
         "Următoarea adresă nu este validă.",
@@ -3694,9 +3721,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "După autentificare se va redirecționa la ${ destination }."
       ],
-      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
-        "Veți pierde accesul la serverele ${ vpnPlanNameShort } și la funcții la această dată."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Veți avea nevoie de o adresă ${ BRAND_NAME } pentru a utiliza ${ MAIL_APP_NAME } și ${ CALENDAR_APP_NAME }"
       ],
@@ -3726,6 +3750,9 @@
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Acest cont are cel puțin o factură scadentă. Contul este restricționat. Neplata continuă va bloca mesajele și legăturile partajate. ${ payInvoiceLink }"
+      ],
+      "Your account was successfully updated with this promotion": [
+        "Contul a fost modificat cu planul din această promoție."
       ],
       "Your account will be updated once the payment is cleared.": [
         "Contul va fi modificat după verificarea plății."
@@ -6528,9 +6555,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
-      ],
-      "Premium Password Manager": [
-        "Gestionare parole premium"
       ]
     },
     "summer2023: Tooltip": {
@@ -7369,6 +7393,11 @@
       ],
       "Your ${ selected } plan": [
         "Planul dvs. ${ selected }"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Acces la servere Secure Core, descărcări rapide P2P/BitTorrent, Tor prin VPN și altele."
       ]
     },
     "Warning": {

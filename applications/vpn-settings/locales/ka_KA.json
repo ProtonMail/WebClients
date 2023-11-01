@@ -266,9 +266,6 @@
       "Invite user": [
         "მომხმარებლის მოწვევა"
       ],
-      "Keep my ${ vpnPlanNameShort } subscription": [
-        "ჩემი ${ vpnPlanNameShort }-ის გამოწერის შენარჩუნება"
-      ],
       "Let's talk": [
         "ვიბაზროთ"
       ],
@@ -301,6 +298,9 @@
       ],
       "Open navigation": [
         "ნავიგაციის გახსნა"
+      ],
+      "Or": [
+        "ან"
       ],
       "Organization": [
         "ორგანიზაცია"
@@ -439,6 +439,9 @@
       ],
       "Sign out": [
         "გასვლა"
+      ],
+      "sign up for free": [
+        "უფასო რეგისტრაცია"
       ],
       "Signing in": [
         "შესვლა"
@@ -2556,6 +2559,10 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } მისამართი",
+        "${ amountOfAddresses } მისამართი"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }-ს ესაჭიროება თქვენი წვდომა ${ enableDesktopNotifications }-ზე."
       ],
@@ -2585,12 +2592,23 @@
         "${ number } სერვერი",
         "${ number } სერვერი"
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "${ plan } წაიშალა. კომპლექტის შესახებ სარეკლამო აქცია 1-თვიან სატარიფო გეგმაზე ხელმიუწვდომელია."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }-ს სულ ცოტა 1 გამოყოფილი სერვერი ესაჭიროება ${ serverPricePerMonth }"
       ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "ჯერ კიდევ მიმდინარეობს ${ provisioningCounter } სერვერს დაყენება. ამას, ჩვეულებრივ, ${ provisioningDuration } სჭირდება.",
         "ჯერ კიდევ მიმდინარეობს ${ provisioningCounter } სერვერს დაყენება. ამას, ჩვეულებრივ, ${ provisioningDuration } სჭირდება."
+      ],
+      "${ remainingAddresses.length } more": [
+        "კიდევ ${ remainingAddresses.length }",
+        "კიდევ ${ remainingAddresses.length }"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "კიდევ ${ remainingAddresses.length } მისამართი",
+        "კიდევ ${ remainingAddresses.length } მისამართი"
       ],
       "${ storage } storage": [
         "${ storage } საცავი"
@@ -2737,6 +2755,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "ახალი მისამართებით ფოსტის მიღებისა და გაგზავნის დაწყებამდე მათთვის დაშიფვრის გასაღებების შექმნაა საჭირო."
+      ],
+      "Billed at ${ price }": [
+        "გადაიხადეთ ${ price }"
       ],
       "Billing cycle: ${ text }": [
         "გადახდის ციკლი: ${ text }"
@@ -2928,9 +2949,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "თუ გჯერათ, რომ ეს შეცდომაა, დაგვიკავშირდით ${ contactLink }."
-      ],
-      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "თუ გააუქმებთ, თქვენი გამოწერა ${ vpnPlanName } არ განახლდება, როცა ვადა გაუვა თარიღზე ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "თუ ვერ იპოვეთ ელფოსტა თქვენს საფოსტო ყუთში, გადაამოწმეთ სპამის საქაღალდეც."
@@ -3203,6 +3221,9 @@
       ],
       "Revoke certificate ${ name }": [
         "სერტიფიკატის გაუქმება (${ name })"
+      ],
+      "Save ${ percentage }": [
+        "დაზოგეთ ${ percentage }"
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "პაროლი საიმედო ადგილას შეინახეთ. დააწკაპუნეთ ხატულას, თუ პაროლი სწორად აკრიფეთ."
@@ -3656,9 +3677,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "შესვლის შემდეგ ${ destination }-ზე გადაგამისამართებთ."
       ],
-      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
-        "ამ თარიღის მოსვლისას ${ vpnPlanNameShort }-ის სერვერებთან და მის ფუნქციებთან წვდომას დაკარგავთ."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME }-ის და ${ CALENDAR_APP_NAME }-ის გამოსაყენებლად ${ BRAND_NAME }-ის მისამართი დაგჭირდებათ"
       ],
@@ -3688,6 +3706,9 @@
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "თქვენს ანგარიშზე, სულ ცოტა, ერთი გადაცილებული ინვოისია. გადაუხდელობის შემთხვევაში თქვენი გაზიარებული ბმულები და ელფოსტა დაიბლოკება. ${ payInvoiceLink }"
+      ],
+      "Your account was successfully updated with this promotion": [
+        "თქვენი ანგარიში წარმატებით განახლდა ამ სარეკლამო აქციით"
       ],
       "Your account will be updated once the payment is cleared.": [
         "გადახდის შემდეგ თქვენი ანგარიში განახლდება."
@@ -6429,9 +6450,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "პაროლების მმართველის ფასიანი ვერსია"
       ]
     },
     "summer2023: Tooltip": {
@@ -7257,6 +7275,11 @@
       ],
       "Your ${ selected } plan": [
         "თქვენი ტარიფი ${ selected }"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "წვდომა Secure core-ის სერვერებზე, სწრაფ P2P/BitTorrent-ით გადმოწერებზე და Tor-VPN-ის-ზემოდან და სხვ."
       ]
     },
     "Warning": {
