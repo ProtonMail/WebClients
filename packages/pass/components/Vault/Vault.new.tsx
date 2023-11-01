@@ -9,11 +9,9 @@ import { type RequestEntryFromAction, useActionRequest } from '@proton/pass/hook
 import { validateVaultVaultsWithEffect } from '@proton/pass/lib/validation/vault';
 import type { vaultCreationSuccess } from '@proton/pass/store/actions';
 import { vaultCreationIntent } from '@proton/pass/store/actions';
-import { vaultCreateRequest } from '@proton/pass/store/actions/requests';
 import { selectPassPlan, selectVaultLimits } from '@proton/pass/store/selectors';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { VaultColor, VaultIcon } from '@proton/pass/types/protobuf/vault-v1';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 import { VaultForm, type VaultFormConsumerProps, type VaultFormValues } from './Vault.form';
 
@@ -26,7 +24,6 @@ export const VaultNew: VFC<Props> = ({ onSubmit, onSuccess, onFailure, onFormVal
 
     const createVault = useActionRequest({
         action: vaultCreationIntent,
-        requestId: () => vaultCreateRequest(uniqueId()),
         onSuccess: (req: RequestEntryFromAction<ReturnType<typeof vaultCreationSuccess>>) => {
             onVaultCreated?.(req.data.shareId);
             onSuccess?.();

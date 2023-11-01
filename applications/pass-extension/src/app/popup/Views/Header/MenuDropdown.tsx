@@ -24,7 +24,6 @@ import { VaultDeleteModal } from '@proton/pass/components/Vault/VaultDeleteModal
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import { emptyTrashIntent, restoreTrashIntent, shareLeaveIntent, vaultDeleteIntent } from '@proton/pass/store/actions';
-import { shareLeaveRequest, vaultDeleteRequest } from '@proton/pass/store/actions/requests';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
 import {
     selectHasRegisteredLock,
@@ -74,13 +73,7 @@ export const MenuDropdown: VFC = () => {
 
     const handleVaultDelete = (vault: VaultShareItem, destinationShareId: MaybeNull<string>) => {
         handleVaultDeletionEffects(vault.shareId, { shareId, setShareBeingDeleted, setShareId });
-        dispatch(
-            vaultDeleteIntent(vaultDeleteRequest(vault.shareId), {
-                shareId: vault.shareId,
-                content: vault.content,
-                destinationShareId,
-            })
-        );
+        dispatch(vaultDeleteIntent({ shareId: vault.shareId, content: vault.content, destinationShareId }));
     };
 
     const handleVaultCreate = withClose(() =>
@@ -95,9 +88,7 @@ export const MenuDropdown: VFC = () => {
 
     const handleVaultInvite = (vault: VaultShareItem) => inviteContext.createInvite({ vault });
     const handleVaultManage = withClose(({ shareId }: VaultShareItem) => inviteContext.manageAccess(shareId));
-    const handleVaultLeave = useConfirm(({ shareId }: VaultShareItem) =>
-        dispatch(shareLeaveIntent(shareLeaveRequest(shareId), { shareId }))
-    );
+    const handleVaultLeave = useConfirm(({ shareId }: VaultShareItem) => dispatch(shareLeaveIntent({ shareId })));
     const handleTrashEmpty = useConfirm(() => dispatch(emptyTrashIntent()));
     const handleTrashRestore = () => dispatch(restoreTrashIntent());
 
