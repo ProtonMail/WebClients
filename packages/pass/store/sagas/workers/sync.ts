@@ -2,7 +2,8 @@ import { put } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
-import { loadShare, requestShares } from '@proton/pass/lib/shares/share.requests';
+import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
+import { requestShares } from '@proton/pass/lib/shares/share.requests';
 import { isOwnVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { createVault } from '@proton/pass/lib/vaults/vault.requests';
 import { notification } from '@proton/pass/store/actions';
@@ -64,9 +65,9 @@ export function* synchronize(
      * Share loading may fail if the userkey it was encrypted
      * with is inactive */
     const remoteShares = (yield Promise.all(
-        remote.filter(pipe(prop('ShareID'), notIn(cachedShareIds))).map(async (share) => ({
-            shareId: share.ShareID,
-            share: await loadShare(share.ShareID, share.TargetType),
+        remote.filter(pipe(prop('ShareID'), notIn(cachedShareIds))).map(async (encryptedShare) => ({
+            shareId: encryptedShare.ShareID,
+            share: await parseShareResponse(encryptedShare),
         }))
     )) as { shareId: string; share: Maybe<Share> }[];
 
