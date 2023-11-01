@@ -7,7 +7,7 @@ type UseSessionLockPinOptions = {
     onSubmit: (pin: string) => void;
 };
 
-/* Calls onSubmit when the pin has reached the necessary length */
+/* Calls onSubmit when the PIN has reached the necessary length */
 export const useSessionLockPinSubmitEffect = (pin: string, { onSubmit }: UseSessionLockPinOptions) => {
     const value = useDebouncedValue(pin, 150);
     const onSubmitRef = useRef(onSubmit);
