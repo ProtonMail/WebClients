@@ -776,6 +776,20 @@
         "Du har inga grupper."
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } anpassad domän",
+        "${ domains } anpassade domäner"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } servrar"
+      ],
+      "${ users } user": [
+        "${ users } användare",
+        "${ users } användare"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Genom att lämna nu kan några kontakter inte importeras"
@@ -897,6 +911,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsätt använda ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } användare",
+        "${ users } användare"
       ]
     },
     "Collapsible tooltip": {
@@ -3226,6 +3246,9 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
+      "${ storage } storage": [
+        "${ storage } lagringsutrymme"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt uppdaterades.",
         "${ updated } kontakter uppdaterades."
@@ -3846,6 +3869,9 @@
       "Previous versions are not saved": [
         "Föregående versioner är inte sparade"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Pris inkluderar alla tillämpbara återkommande rabatter och icke-utgångna kuponger som finns lagrat på ditt konto."
+      ],
       "Primary": [
         "Primär"
       ],
@@ -4057,6 +4083,18 @@
       "Today": [
         "Idag"
       ],
+      "Total email addresses": [
+        "Totalt antal e-postadresser"
+      ],
+      "Total storage": [
+        "Totalt lagringsutrymme"
+      ],
+      "Total supported domains": [
+        "Totalt antal domäner som stöds"
+      ],
+      "Total VPN connections": [
+        "Totalt antal VPN-anslutningar"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "Överföringen avbröts för filen \"${ name }\""
       ],
@@ -4092,6 +4130,9 @@
       ],
       "Unsupported file": [
         "Fil stöds inte"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Upp till ${ FAMILY_MAX_USERS } användare"
       ],
       "Updating drive search...": [
         "Uppdaterar hårddisksökning..."
@@ -5966,9 +6007,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Premium lösenordshanterare"
       ]
     },
     "summer2023: Tooltip": {

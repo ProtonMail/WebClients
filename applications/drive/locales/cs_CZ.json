@@ -373,6 +373,12 @@
       "Import from .csv or vCard": [
         "Importovat z .csv nebo vCard"
       ],
+      "Import from Google": [
+        "Importovat z Google"
+      ],
+      "Import from Outlook": [
+        "Importovat z Outlooku"
+      ],
       "Learn more": [
         "Více informací"
       ],
@@ -769,6 +775,26 @@
         "Nemáte žádné skupiny."
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } vlastní doména",
+        "${ domains } vlastní domény",
+        "${ domains } vlastních domén",
+        "${ domains } vlastních domén"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } servery",
+        "${ ips } serverů",
+        "${ ips } serverů"
+      ],
+      "${ users } user": [
+        "${ users } uživatel",
+        "${ users } uživatelé",
+        "${ users } uživatelů",
+        "${ users } uživatelů"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Pokud teď odejdete, některé kontakty nebudou importovány"
@@ -890,6 +916,14 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovat s ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } uživatel",
+        "${ users } uživatelé",
+        "${ users } uživatelů",
+        "${ users } uživatelů"
       ]
     },
     "Collapsible tooltip": {
@@ -3295,6 +3329,9 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
+      "${ storage } storage": [
+        "${ storage } úložiště"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt úspěšně aktualizován.",
         "${ updated } kontakty úspěšně aktualizovány.",
@@ -3931,6 +3968,9 @@
       "Previous versions are not saved": [
         "Předchozí verze nejsou uloženy"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Cena zahrnuje všechny příslušné slevy na základě cyklu a kupóny, které nevypršely a jsou uložené na vašem účtu."
+      ],
       "Primary": [
         "Hlavní"
       ],
@@ -4135,6 +4175,18 @@
       "Today": [
         "Dnes"
       ],
+      "Total email addresses": [
+        "Celkem e-mailových adres"
+      ],
+      "Total storage": [
+        "Celkem prostoru"
+      ],
+      "Total supported domains": [
+        "Celkem vlastních domén"
+      ],
+      "Total VPN connections": [
+        "Celkem VPN připojení"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "Přenos zrušen pro soubor \"${ name }\""
       ],
@@ -4170,6 +4222,9 @@
       ],
       "Unsupported file": [
         "Nepodporovaný soubor"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Až ${ FAMILY_MAX_USERS } uživatelů"
       ],
       "Updating drive search...": [
         "Aktulizace vyhledání na disku..."
@@ -6131,9 +6186,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Prémiové funkce ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Prémiový správce hesel"
       ]
     },
     "summer2023: Tooltip": {
