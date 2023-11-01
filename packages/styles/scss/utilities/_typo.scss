@@ -24,10 +24,6 @@
 
 	// Serialize the responsive utilities creation with the map to avoid any cascade ordering issues
 	@include responsive-classes($dummy-map);
-
-	.text-40 {
-		font-size: rem(40);
-	}
 }
 
 @if $use-other-line-height-helpers==true {
