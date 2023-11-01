@@ -281,7 +281,7 @@ export const LoginEdit: VFC<ItemEditViewProps<'login'>> = ({ revision, url, vaul
 
                                 {
                                     /* only allow adding a new TOTP code if user
-                                     * has not reached his plan's totp limit. If
+                                     * has not reached his plan's TOTP limit. If
                                      * the user has downgraded and this item had
                                      * a TOTP item, allow edit so user can retrieve
                                      * the secret or remove it */

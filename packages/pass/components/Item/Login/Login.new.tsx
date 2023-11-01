@@ -286,7 +286,7 @@ export const LoginNew: VFC<ItemNewViewProps<'login'>> = ({ shareId, url, onCance
 
                                 {
                                     /* only allow adding a new TOTP code if user
-                                     * has not reached his plan's totp limit */
+                                     * has not reached his plan's TOTP limit */
                                     needsUpgrade ? (
                                         <ValueControl icon="lock" label={c('Label').t`2FA secret (TOTP)`}>
                                             <UpgradeButton inline />

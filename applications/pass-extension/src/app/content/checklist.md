@@ -8,7 +8,7 @@
 -   ☑ Check that resizing the window doesn't break the layout
 -   ☑ If field autofocused - dropdown should open (except if no logins matched | locked | logged-out)
 -   ☑ If logged out : icon is in disabled state and asks for login
--   ☑ If locked out : icon is in locked state and asks for pin code
+-   ☑ If locked out : icon is in locked state and asks for PIN code
 -   ☑ Updating settings should be immediate & not require reload
 
 #### Login 🔑
