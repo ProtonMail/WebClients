@@ -151,6 +151,9 @@
       "Continue with Google": [
         "Continuar con Google"
       ],
+      "Continue with Outlook": [
+        "Continuar con Outlook"
+      ],
       "Copy address": [
         "Copiar dirección"
       ],
@@ -311,6 +314,12 @@
       ],
       "Import from .csv or vCard": [
         "Importar desde .csv o vCard"
+      ],
+      "Import from Google": [
+        "Importar desde Google"
+      ],
+      "Import from Outlook": [
+        "Importar desde Outlook"
       ],
       "Join calendar": [
         "Unirse al calendario"
@@ -677,6 +686,20 @@
         "No tienes ningún grupo."
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } dominio personalizado",
+        "${ domains } dominios personalizados"
+      ],
+      "${ ips } server": [
+        "${ ips } servidor",
+        "${ ips } servidores"
+      ],
+      "${ users } user": [
+        "${ users } usuario",
+        "${ users } usuarios"
+      ]
+    },
     "Alarm notification": {
       "${ title } started at ${ formattedHour }": [
         "${ title } ha comenzado a las ${ formattedHour }."
@@ -801,6 +824,18 @@
       ],
       "High speed streaming": [
         "Transmisión de alta velocidad"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } premium"
+      ],
+      "Premium Password Manager": [
+        "Administrador de contraseñas premium"
       ]
     },
     "bf2023: Footer": {
@@ -1118,6 +1153,12 @@
       "${ more } more": [
         "${ more } más",
         "${ more } más"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } usuario",
+        "${ users } usuarios"
       ]
     },
     "Collapsible tooltip": {
@@ -2169,6 +2210,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Cifrando e importando contactos... Esto puede tardar unos minutos. Cuando se finaliza el proceso, puedes cerrar esta ventana."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Para importar mediante CSV y VCF, asegúrate que el archivo no exceda de ${ MAX_IMPORT_FILE_SIZE_STRING } o de ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si el archivo es grande, divídelo en archivos pequeños. ${ learnMoreLink }."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que la lista de contactos que estás importando contiene algunos grupos. Verifica cómo deben importarse estos grupos."
       ],
@@ -2184,6 +2228,9 @@
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "Esto puede tomar unos minutos. Mientras tanto puedes continuar utilizando el calendario."
       ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Para importar tus contactos desde Google u Outlook, ${ easySwitchLink }."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arrastra y suelta los contactos para clasificarlos por prioridad. Desmarca los contactos que no quieres combinar."
       ],
@@ -2192,6 +2239,11 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Puedes marcar los contactos que no quieres ni combinar ni mantener para eliminarlos. Se eliminarán solo después de que pulses el botón."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utiliza el asistente de importación Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3641,6 +3693,9 @@
         "${ selectedFoldersCountLocalized } etiqueta seleccionada",
         "${ selectedFoldersCountLocalized } etiquetas seleccionadas"
       ],
+      "${ storage } storage": [
+        "${ storage } de almacenamiento"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contacto actualizado.",
         "${ updated } contactos actualizados."
@@ -4031,6 +4086,9 @@
       "Previous modifications on this series will be lost.": [
         "Las modificaciones previas de esta serie se perderán."
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "El precio incluye todos los descuentos aplicables según el ciclo de facturación y cupones sin expirar guardados en tu cuenta."
+      ],
       "Primary": [
         "Principal"
       ],
@@ -4145,8 +4203,23 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Para utilizar la verificación de dirección, debes confiar en una o más de las claves públicas disponibles, incluyendo la clave que quieres utilizar para enviar. Esto impedirá que las claves de cifrado sean falsificadas."
       ],
+      "Total email addresses": [
+        "Direcciones de correo electrónico totales"
+      ],
+      "Total storage": [
+        "Almacenamiento total"
+      ],
+      "Total supported domains": [
+        "Total de dominios compatibles"
+      ],
+      "Total VPN connections": [
+        "Conexiones VPN totales"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prueba las nuevas funciones, actualizaciones y productos de ${ BRAND_NAME } antes de que se lancen al público. Esto recargará la aplicación."
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Hasta ${ FAMILY_MAX_USERS } usuarios"
       ],
       "Update recurring event": [
         "Actualizar evento recurrente"
@@ -6327,9 +6400,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } premium"
-      ],
-      "Premium Password Manager": [
-        "Administrador de contraseñas premium"
       ]
     },
     "summer2023: Tooltip": {

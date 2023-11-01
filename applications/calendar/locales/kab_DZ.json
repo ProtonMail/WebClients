@@ -633,6 +633,20 @@
         "Ulac ɣur-k·m ula d yiwet n ugraw."
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } taɣult tudmawant",
+        "${ domains } tiɣula tudmawanin"
+      ],
+      "${ ips } server": [
+        "Aqeddac ${ ips }",
+        "${ ips } yiqeddacen"
+      ],
+      "${ users } user": [
+        "${ users } n useqdac",
+        "${ users } yiseqdacen"
+      ]
+    },
     "Alarm notification": {
       "${ title } started at ${ formattedHour }": [
         "${ title } yebda ɣef ${ formattedHour }"
@@ -948,6 +962,12 @@
       "${ more } more": [
         "${ more } d wugar",
         "${ more } d wugar"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } n useqdac",
+        "${ users } n yiseqdacen"
       ]
     },
     "Collapsible tooltip": {
@@ -3189,6 +3209,9 @@
         "${ selectedFoldersCountLocalized } d tebzimt yettwefrenn",
         "${ selectedFoldersCountLocalized } n tebzimin yettwafernen"
       ],
+      "${ storage } storage": [
+        "${ storage } n uḥraz"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } n unermis yettwaleqqem akken iwata.",
         "${ updated } n yinermisen ttwaleqqemen akken iwata."
@@ -3638,6 +3661,15 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "I useqdec n usenqed n tansa, issefk ad tettekleḍ ɣef yiwet neɣ ugar seg tsura tizuyaz i yellan, ula d tin i tebɣiḍ ad tt-tesqedceḍ i tuzna. Aya ad isewḥel abeddel n tsura n uwgelhen."
+      ],
+      "Total email addresses": [
+        "Asemday n tansiwin n yimayl"
+      ],
+      "Total storage": [
+        "Amḍiq n usekles amatu"
+      ],
+      "Total VPN connections": [
+        "Asemday n tuqqniwin VPN"
       ],
       "Update recurring event": [
         "Leqqem tadyant d-ittuɣalen"
@@ -5345,11 +5377,6 @@
       ],
       "2 years": [
         "2 n yiseggasen"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium Password Manager": [
-        "Amsefrak n wawal uffir premium"
       ]
     },
     "Table header": {

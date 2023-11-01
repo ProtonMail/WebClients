@@ -677,6 +677,20 @@
         "Sinulla ei ole ryhmiä."
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } oma verkkotunnus",
+        "${ domains } omaa verkkotunnusta"
+      ],
+      "${ ips } server": [
+        "${ ips } palvelin",
+        "${ ips } palvelinta"
+      ],
+      "${ users } user": [
+        "${ users } käyttäjä",
+        "${ users } käyttäjää"
+      ]
+    },
     "Alarm notification": {
       "${ title } started at ${ formattedHour }": [
         "${ title } alkoi klo ${ formattedHour }"
@@ -1034,6 +1048,12 @@
       "${ more } more": [
         "${ more } lisää",
         "${ more } lisää"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } käyttäjä",
+        "${ users } käyttäjää"
       ]
     },
     "Collapsible tooltip": {
@@ -3557,6 +3577,9 @@
         "${ selectedFoldersCountLocalized } tunniste valittu",
         "${ selectedFoldersCountLocalized } tunnistetta valittu"
       ],
+      "${ storage } storage": [
+        "${ storage } tallennustilaa"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } yhteystieto päivitettiin.",
         "${ updated } yhteystietoa päivitettiin."
@@ -3947,6 +3970,9 @@
       "Previous modifications on this series will be lost.": [
         "Tapahtumaketjun aiemmat muutokset menetetään."
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Hinta sisältää kaikki tilillesi tallennetut soveltuvat tilausjaksopohjaiset alennukset sekä etukoodit."
+      ],
       "Primary": [
         "Ensisijainen"
       ],
@@ -4061,8 +4087,23 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Käyttääksesi osoitteen vahvistusta, sinun on luotettava yhteen tai useampaan käytettävissä olevaan julkiseen avaimeen, mukaan lukien se, jota haluat käyttää lähetykseen. Tämä estää salausavainten väärennyksen."
       ],
+      "Total email addresses": [
+        "Sähköpostiosoitteita yhteensä"
+      ],
+      "Total storage": [
+        "Tallennustilaa yhteensä"
+      ],
+      "Total supported domains": [
+        "Tuettuja verkkotunnuksia yhteensä"
+      ],
+      "Total VPN connections": [
+        "VPN-yhteyksiä yhteensä"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Kokeile uusia ${ BRAND_NAME } -ominaisuuksia, -päivityksiä ja -tuotteita ennen kuin ne julkaistaan kaikille. Tämä käynnistää sovelluksen uudelleen"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Enintään ${ FAMILY_MAX_USERS } käyttäjää"
       ],
       "Update recurring event": [
         "Päivitä toistuva tapahtuma"
@@ -6243,9 +6284,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Premium salasanahallinta"
       ]
     },
     "summer2023: Tooltip": {

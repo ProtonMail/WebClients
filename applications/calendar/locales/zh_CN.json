@@ -667,6 +667,17 @@
         "您没有任何群组"
       ]
     },
+    "Addon": {
+      "${ domains } custom domains": [
+        "${ domains } 个自定义域"
+      ],
+      "${ ips } servers": [
+        "${ ips } 个服务器"
+      ],
+      "${ users } users": [
+        "${ users } 位用户"
+      ]
+    },
     "Alarm notification": {
       "${ title } started at ${ formattedHour }": [
         "${ title } 以${ formattedHour } 开始"
@@ -1021,6 +1032,11 @@
     "Calendar view; more events collapsed": {
       "${ more } more": [
         "还有 ${ more } 个"
+      ]
+    },
+    "Checkout row": {
+      "${ users } users": [
+        "${ users } 位用户"
       ]
     },
     "Collapsible tooltip": {
@@ -3473,6 +3489,9 @@
       "${ selectedFoldersCountLocalized } labels selected": [
         "已选择 ${ selectedFoldersCountLocalized } 个标签"
       ],
+      "${ storage } storage": [
+        "${ storage } 存储空间"
+      ],
       "${ updated } contacts updated successfully.": [
         "已成功更新 ${ updated } 位联系人。"
       ],
@@ -3842,6 +3861,9 @@
       "Previous modifications on this series will be lost.": [
         "此系列先前的修改将丢失"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "价格包括所有适用的基于周期的折扣与保存在您账户中的未过期的优惠券。"
+      ],
       "Primary": [
         "主要"
       ],
@@ -3956,8 +3978,23 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "开启地址密钥验证前，您需要先信任其若干个公钥，包括您要用于发送邮件的密钥。这样可以防止其密钥被伪造。"
       ],
+      "Total email addresses": [
+        "邮箱地址总数"
+      ],
+      "Total storage": [
+        "存储空间总量"
+      ],
+      "Total supported domains": [
+        "自有域名总数"
+      ],
+      "Total VPN connections": [
+        "VPN 同时在线设备总数"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "抢先体验尚未开放的 ${ BRAND_NAME } 新功能、新特性和新产品。此操作将导致页面重新载入。"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "最多 ${ FAMILY_MAX_USERS } 个用户"
       ],
       "Update recurring event": [
         "更新循环周期性日程"
@@ -6046,11 +6083,6 @@
       ],
       "2 years": [
         "两年"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium Password Manager": [
-        "高级密码管理器"
       ]
     },
     "summer2023: Tooltip": {
