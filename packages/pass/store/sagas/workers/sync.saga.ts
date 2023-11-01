@@ -18,7 +18,7 @@ import { selectFeatureFlags, selectUser } from '@proton/pass/store/selectors';
 import type { State, WorkerRootSagaOptions } from '@proton/pass/store/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-function* syncWorker(options: WorkerRootSagaOptions) {
+function* syncWorker(options: WorkerRootSagaOptions, { meta }: ReturnType<typeof syncIntent>) {
     const state = (yield select()) as State;
     const user = selectUser(state);
 
@@ -38,25 +38,25 @@ function* syncWorker(options: WorkerRootSagaOptions) {
             options
         );
 
-        yield put(syncSuccess(sync));
+        yield put(syncSuccess(meta.request.id, sync));
     } catch (e: unknown) {
-        yield put(syncFailure(e));
+        yield put(syncFailure(meta.request.id, e));
     }
 }
 
 /* The `syncWorker` function can take a long time to complete. In order
  * to avoid conflicts with any state resetting actions, we race the `sync`
- * against such actions. For example, if the user's session is evoked during
+ * against such actions. For example, if the user's session is revoked during
  * a sync, we want to avoid dispatching the `syncFailure` action as it will
  * re-spawn the event channels. Instead, we cancel the sync task using the
  * `isStateResetAction` predicate, which checks if the given action is a state
- * resetting action (e.g. stateDestroy, stateLock, signout) */
+ * resetting action (e.g. stateDestroy, stateLock, signout etc..) */
 export default function* watcher(options: WorkerRootSagaOptions): Generator {
     while (true) {
         yield call(function* () {
-            yield take(syncIntent.match);
+            const action: ReturnType<typeof syncIntent> = yield take(syncIntent.match);
             yield race({
-                sync: syncWorker(options),
+                sync: syncWorker(options, action),
                 cancel: take(isStateResetAction),
             });
         });

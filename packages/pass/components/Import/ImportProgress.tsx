@@ -1,28 +1,18 @@
-import { type FC, useEffect, useState } from 'react';
+import { type FC } from 'react';
+import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
-import type { Runtime } from 'webextension-polyfill';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import type { WorkerMessageWithSender } from '@proton/pass/types/worker';
-import { WorkerMessageType } from '@proton/pass/types/worker';
+import { importItemsRequest } from '@proton/pass/store/actions/requests';
+import { selectRequest } from '@proton/pass/store/selectors';
 
 /* we need to pass the runtime port object to this component
  * as it may be loaded inside a Portal outside of the extension
  * context provider's children  */
-export const ImportProgress: FC<{ total: number; port?: Runtime.Port }> = ({ total, port }) => {
-    const [progress, setProgress] = useState<number>(0);
-
-    useEffect(() => {
-        const handleImportProgress = (message: WorkerMessageWithSender) => {
-            if (message.sender === 'background' && message.type === WorkerMessageType.IMPORT_PROGRESS) {
-                setProgress(message.payload.progress);
-            }
-        };
-
-        port?.onMessage.addListener(handleImportProgress);
-        return () => port?.onMessage.removeListener(handleImportProgress);
-    }, [port]);
+export const ImportProgress: FC<{ total: number }> = ({ total }) => {
+    const req = useSelector(selectRequest(importItemsRequest()));
+    const progress = req?.status === 'start' ? req.progress ?? 0 : 0;
 
     return (
         <>

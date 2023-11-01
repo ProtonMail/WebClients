@@ -1,5 +1,4 @@
 import { type FC, createContext, useContext, useEffect, useMemo, useState } from 'react';
-import { useSelector } from 'react-redux';
 
 import {
     ExtensionConnect,
@@ -14,11 +13,10 @@ import { c } from 'ttag';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { NotificationsContext } from '@proton/components';
 import { useNotifications } from '@proton/components/hooks';
-import { useRequestStatusEffect } from '@proton/pass/hooks/useRequestStatusEffect';
+import { useActionRequestEffect } from '@proton/pass/hooks/useActionRequestEffect';
 import { popupMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { workerReady } from '@proton/pass/lib/worker';
-import * as requests from '@proton/pass/store/actions/requests';
-import { selectWorkerSyncing } from '@proton/pass/store/selectors';
+import { syncRequest } from '@proton/pass/store/actions/requests';
 import type { MaybeNull, PopupInitialState, WorkerState } from '@proton/pass/types';
 import { WorkerMessageType, type WorkerMessageWithSender, WorkerStatus } from '@proton/pass/types';
 import type { ParsedUrl } from '@proton/pass/utils/url/parser';
@@ -67,14 +65,12 @@ const PopupContextContainer: FC = ({ children }) => {
     useEffect(() => notificationsManager.setOffset({ y: 10 }), []);
 
     const [initial, setInitial] = useState<MaybeNull<PopupInitialState>>(null);
-    const syncing = useSelector(selectWorkerSyncing) || extensionContext.state.status === WorkerStatus.BOOTING;
-
     const expanded = useExpanded();
 
-    useRequestStatusEffect(requests.syncRequest(), {
+    const sync = useActionRequestEffect(syncRequest(), {
         onStart: () =>
             createNotification({
-                key: requests.syncRequest(),
+                key: syncRequest(),
                 showCloseButton: false,
                 text: (
                     <>
@@ -83,6 +79,8 @@ const PopupContextContainer: FC = ({ children }) => {
                 ),
             }),
     });
+
+    const syncing = sync.loading || extensionContext.state.status === WorkerStatus.BOOTING;
 
     useEffect(() => {
         if (workerReady(status)) {

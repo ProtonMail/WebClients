@@ -4,7 +4,6 @@ import type { AnyAction } from 'redux';
 import { merge } from '@proton/pass/utils/object/merge';
 
 export type RequestType = 'start' | 'failure' | 'success';
-
 /* optionally adds the extra data property on the `RequestOptions` */
 export type WithOptionalData<Req, Data> = Req & (Data extends undefined ? {} : { data: Data });
 
@@ -43,21 +42,19 @@ const withRequestStatus =
     <Type extends RequestType>(type: Type) =>
     <PA extends PrepareAction<any>, Data>(
         prepare: PA,
-        options?: Type extends 'success' | 'failure'
-            ? { maxAge?: number; data?: (...args: Parameters<PA>) => Data }
-            : never
+        config?: Type extends 'start' ? never : { maxAge?: number; data?: (...args: Parameters<PA>) => Data }
     ) =>
     <ID extends string>(requestId: ID, ...args: Parameters<PA>) =>
-        withRequest(
-            ((): RequestOptions<RequestType, any> => {
-                switch (type) {
-                    case 'start':
-                        return { type, id: requestId };
-                    default:
-                        return { type, id: requestId, maxAge: options?.maxAge, data: options?.data?.(...args) };
-                }
-            })()
-        )(prepare(...args) as ReturnType<PA>) as WithRequest<ReturnType<PA>, Type, Data>;
+        withRequest<RequestType, Data>({
+            id: requestId,
+            type,
+            ...(type !== 'start'
+                ? {
+                      maxAge: config?.maxAge,
+                      data: config?.data?.(...args),
+                  }
+                : {}),
+        })(prepare(...args) as ReturnType<PA>) as WithRequest<ReturnType<PA>, Type, Data>;
 
 export const withRequestStart = withRequestStatus('start');
 export const withRequestFailure = withRequestStatus('failure');

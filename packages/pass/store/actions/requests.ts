@@ -1,20 +1,20 @@
-import type { ExtensionEndpoint, TabId } from '@proton/pass/types';
+import { type EndpointOptions } from './with-receiver';
 
 export const bootRequest = () => 'worker::boot';
 export const syncRequest = () => 'worker::sync';
-export const wakeupRequest = (endpoint: ExtensionEndpoint, tabId: TabId) => `worker::wakeup-${endpoint}-${tabId}`;
+export const wakeupRequest = ({ endpoint, tabId }: EndpointOptions) => `worker::wakeup-${endpoint}-${tabId}`;
 
-export const vaultCreate = (shareId: string) => `vault::create::request::${shareId}`;
-export const vaultEdit = (shareId: string) => `vault::edit::request::${shareId}`;
-export const vaultDelete = (shareId: string) => `vault::delete::request::${shareId}`;
-export const vaultSetPrimary = (shareId: string) => `vault::et::primary::request-${shareId}`;
+export const vaultCreateRequest = (shareId: string) => `vault::create::request::${shareId}`;
+export const vaultEditRequest = (shareId: string) => `vault::edit::request::${shareId}`;
+export const vaultDeleteRequest = (shareId: string) => `vault::delete::request::${shareId}`;
 export const vaultTransferOwnerRequest = (userShareId: string) => `vault::transfer:owner::${userShareId}`;
 
-export const importItems = () => `import-items`;
+export const importItemsRequest = () => `import::items`;
 
-export const unlockSession = `unlock-session`;
-export const settingsEdit = (group: string) => `settings::edit::${group}`;
-export const reportProblem = `report-problem-request`;
+export const sessionUnlockRequest = () => `session::unlock`;
+export const sessionLockEnableRequest = () => `session::enable`;
+export const sessionLockDisableRequest = () => `session::disable`;
+export const settingsEditRequest = (group: string) => `settings::edit::${group}`;
 
 export const aliasOptionsRequest = (shareId: string) => `alias::options::${shareId}`;
 export const aliasDetailsRequest = (aliasEmail: string) => `alias::details::${aliasEmail}`;

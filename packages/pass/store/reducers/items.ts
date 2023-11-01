@@ -2,13 +2,14 @@ import type { AnyAction, Reducer } from 'redux';
 
 import { isTrashed } from '@proton/pass/lib/items/item.predicates';
 import {
+    autofillIntent,
     bootSuccess,
     emptyTrashFailure,
     emptyTrashIntent,
     emptyTrashSuccess,
+    importItemsBatchSuccess,
     inviteAcceptSuccess,
     inviteCreationSuccess,
-    itemAutofillIntent,
     itemCreationDismiss,
     itemCreationFailure,
     itemCreationIntent,
@@ -32,7 +33,6 @@ import {
     itemTrashFailure,
     itemTrashIntent,
     itemTrashSuccess,
-    itemsBatchImported,
     restoreTrashFailure,
     restoreTrashIntent,
     restoreTrashSuccess,
@@ -168,7 +168,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             });
         }
 
-        if (itemsBatchImported.match(action)) {
+        if (importItemsBatchSuccess.match(action)) {
             const { shareId, items } = action.payload;
             return fullMerge(state, { [shareId]: toMap(items, 'itemId') });
         }
@@ -299,7 +299,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             );
         }
 
-        if (itemAutofillIntent.match(action)) {
+        if (autofillIntent.match(action)) {
             const {
                 payload: { shareId, itemId },
             } = action;
@@ -308,12 +308,12 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
         }
 
         if (vaultDeleteIntent.match(action)) {
-            return objectDelete(state, action.payload.id);
+            return objectDelete(state, action.payload.shareId);
         }
 
         if (vaultDeleteSuccess.match(action)) {
             const movedItems = action.payload.movedItems;
-            const nextState = objectDelete(state, action.payload.id);
+            const nextState = objectDelete(state, action.payload.shareId);
 
             return movedItems.length > 0
                 ? fullMerge(nextState, { [movedItems[0].shareId]: toMap(movedItems, 'itemId') })
