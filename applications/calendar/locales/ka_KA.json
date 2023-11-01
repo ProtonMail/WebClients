@@ -677,6 +677,20 @@
         "არ გაქვთ არცერთი ჯგუფი."
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } მომხმარებლის დომენი",
+        "${ domains } მომხმარებლის დომენი"
+      ],
+      "${ ips } server": [
+        "${ ips } სერვერი",
+        "${ ips } სერვერი"
+      ],
+      "${ users } user": [
+        "${ users } მომხმარებელი",
+        "${ users } მომხმარებელი"
+      ]
+    },
     "Alarm notification": {
       "${ title } started at ${ formattedHour }": [
         "${ title } ${ formattedHour }-ზე დაიწყო"
@@ -1034,6 +1048,12 @@
       "${ more } more": [
         "კიდევ ${ more }",
         "კიდევ ${ more }"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } მომხმარებელი",
+        "${ users } მომხმარებელი"
       ]
     },
     "Collapsible tooltip": {
@@ -3557,6 +3577,9 @@
         "მონიშნულია ${ selectedFoldersCountLocalized } ჭდე",
         "მონიშნულია ${ selectedFoldersCountLocalized } ჭდე"
       ],
+      "${ storage } storage": [
+        "${ storage } საცავი"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } კონტაქტი წარმატებით განახლდა.",
         "${ updated } კონტაქტი წარმატებით განახლდა."
@@ -3947,6 +3970,9 @@
       "Previous modifications on this series will be lost.": [
         "ამ სერიის წინა მოდიფიკაციები დაიკარგება."
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "ფასი შეიცავს ყველა შესაბამის ციკლზე-ბაზირებულ ფასდაკლებებს და ვადაგაუსვლელ კუპონებს, რომლებიც თქვენს ანგარიშზე გაქვთ შენახული."
+      ],
       "Primary": [
         "ძირითადი"
       ],
@@ -4061,8 +4087,23 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "მისამართის დადასტურების გამოსაყენებლად უნდა ენდოთ ერთ ან მეტ საჯარო გასაღებს, მათ შორის, რომლის გამოყენებაც გსურთ გასაგზავნად. ეს ხელს უშლის დაშიფვრის გასაღებების გაყალბებას."
       ],
+      "Total email addresses": [
+        "ელფოსტები სულ"
+      ],
+      "Total storage": [
+        "სრული საცავი"
+      ],
+      "Total supported domains": [
+        "მხარდაჭერილი დომენები სულ"
+      ],
+      "Total VPN connections": [
+        "VPN შეერთებები სულ"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "სცადეთ ახალი ${ BRAND_NAME }-ის თვისებები, განახლებები და პროდუქტები მანამდე, სანამ ისინი საჯარო გახდება. ეს ქმედება აპლიკაციას თავიდან ჩატვირთავს."
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "${ FAMILY_MAX_USERS }-მდე მომხმარებელი"
       ],
       "Update recurring event": [
         "განმეორებადი მოვლენის განახლება"
@@ -6243,9 +6284,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "პაროლების მმართველის ფასიანი ვერსია"
       ]
     },
     "summer2023: Tooltip": {

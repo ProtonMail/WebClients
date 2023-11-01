@@ -266,9 +266,6 @@
       "Invite user": [
         "Pozvite užívateľa"
       ],
-      "Keep my ${ vpnPlanNameShort } subscription": [
-        "Ponechať moje predplatné ${ vpnPlanNameShort }"
-      ],
       "Let's talk": [
         "Porozprávajme sa"
       ],
@@ -3003,9 +3000,6 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Pokiaľ si myslíte, že ide o chybu, kontaktujte nás ${ contactLink }."
       ],
-      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "Ak to zrušíte, vaše predplatné ${ vpnPlanName } nebude obnovené, keď vyprší ${ expiryDate }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ak email v priečinku doručenej pošty nenájdete, skontrolujte priečinok so spamom, prosím."
       ],
@@ -3378,6 +3372,9 @@
       "Thank you": [
         "Ďakujeme"
       ],
+      "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
+        "Ďakujeme, že podporujete naše poslanie budovať lepší internet, v ktorom sú súkromie a sloboda na prvom mieste."
+      ],
       "The following address is invalid.": [
         "Nasledujúca adresa nie je platná.",
         "Nasledujúce adresy nie sú platné.",
@@ -3520,7 +3517,7 @@
         "Režim s dvomi heslami využíva na prihlásenie a dešifrovanie poštovej schránky dve samostatné heslá. V určitých prípadoch to zvyšuje bezpečnosť, pre väčšinu používateľov ale odporúčame režim jedného hesla. Ak chcete prepnúť na režim s dvomi heslami, zadajte najskôr svoje prihlasovacie heslo a potom heslo k poštovej schránke."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
-        "Bohužiaľ pre tento účet neexistuje žiadny spôsob obnovenia."
+        "Pre tento účet, bohužiaľ, nie je uložená žiadna metóda obnovy."
       ],
       "Unsaved changes": [
         "Neuložené zmeny"
@@ -3610,7 +3607,7 @@
         "Odporúčame upozorniť členov organizácie a požiadať ich, aby si nastavili 2FA pre svoje kontá skôr, ako začne vynútené používanie 2FA."
       ],
       "We recommend using your recovery phrase instead.": [
-        "Namieto toho doporučujeme použiť obnovovaciu frázu."
+        "Namiesto toho doporučujeme použiť obnovovaciu frázu."
       ],
       "We use 3-D Secure to protect your payments": [
         "Na ochranu vašich platieb používame 3-D Secure"
@@ -3759,9 +3756,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Po prihlásení dôjde k presmerovaniu na ${ destination }."
       ],
-      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
-        "V tento deň stratíte prístup k serverom a funkciám ${ vpnPlanNameShort }."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Ak chcete používať ${ MAIL_APP_NAME } a ${ CALENDAR_APP_NAME }, budete potrebovať adresu ${ BRAND_NAME }"
       ],
@@ -3769,7 +3763,7 @@
         "Za účelom overenia platby budete presmerovaný na PayPal."
       ],
       "You'll stay signed in even after you close the browser.": [
-        "Vaše prihlásenie ostane zachované aj po zatvorení prehliadača."
+        "Vaše prihlásenie zostane zachované aj po zatvorení prehliadača."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Váš účet ${ BRAND_NAME } je momentálne pozastavený. Po 28 dňoch vám už nebudú do schránky doručované emaily, odkazy na zdieľanie na Disku budú zablokované a nebudete môcť nahrávať nové súbory. Ak chcete obnoviť normálnu prevádzku, uhraďte všetky faktúry po splatnosti."
@@ -3791,6 +3785,9 @@
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Váš účet má aspoň jednu faktúru po splatnosti. Váš účet je obmedzený. Pokračujúce neplatenie zablokuje vaše emaily a odkazy na zdieľanie. ${ payInvoiceLink }"
+      ],
+      "Your account was successfully updated with this promotion": [
+        "Váš účet bol úspešne aktualizovaný touto akciovou ponukou"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Váš účet bude aktualizovaný po zúčtovaní platby."
@@ -4038,10 +4035,10 @@
         "Kopírovať"
       ],
       "Could you please let us know which provider?": [
-        "Mohli by ste nás informovať, ktorý poskytovateľ?"
+        "Mohli by ste nás informovať, o ktorého poskytovateľa ide?"
       ],
       "Could you please specify which streaming service?": [
-        "Môžete prosím upresniť ktorá streamovacia služba?"
+        "Môžete prosím upresniť, o ktorú streamovaciu službu ide?"
       ],
       "Could you please specify?": [
         "Môžete to upresniť?"
@@ -4125,7 +4122,7 @@
         "Kľúč"
       ],
       "Key strength": [
-        "Síla kľúča"
+        "Sila kľúča"
       ],
       "Level for NetShield blocker filtering": [
         "Úroveň pre filtrovanie blokovania NetShield"
@@ -4263,7 +4260,7 @@
         "Vyberte tarifu"
       ],
       "Start date": [
-        "Dátum zahájenia"
+        "Dátum začiatku"
       ],
       "Subscription options": [
         "Možnosti predplatného"
@@ -4278,7 +4275,7 @@
         "Režim s dvomi heslami"
       ],
       "User": [
-        "Užívateľ"
+        "Používateľ"
       ],
       "User's new password": [
         "Nové heslo užívateľa"
@@ -6654,9 +6651,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Prémiový ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Prémiový správca hesiel"
       ]
     },
     "summer2023: Tooltip": {
@@ -6966,7 +6960,7 @@
         "Vypnúť dvojstupňové overenie"
       ],
       "Downgrade account": [
-        "Znížiť účet"
+        "Znížiť úroveň účtu"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Stiahnuť ${ VPN_APP_NAME }"
@@ -7128,7 +7122,7 @@
         "Prebieha spracovanie..."
       ],
       "Recommended": [
-        "Doporučené"
+        "Odporúčané"
       ],
       "Recovery": [
         "Obnovenie"
@@ -7146,7 +7140,7 @@
         "Vyžiadať nový kód"
       ],
       "Request sent": [
-        "Žiadosť odoslaná"
+        "Požiadavka odoslaná"
       ],
       "Reset organization keys": [
         "Obnoviť kľúče organizácie"

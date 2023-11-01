@@ -115,6 +115,9 @@
       "Clear query": [
         "検索をクリア"
       ],
+      "Clear selection": [
+        "選択解除"
+      ],
       "Click here.": [
         "ここをクリック"
       ],
@@ -159,6 +162,9 @@
       ],
       "Continue with Google": [
         "Google で続行"
+      ],
+      "Continue with Outlook": [
+        "Outlook を続行する"
       ],
       "Copy address": [
         "アドレスをコピー"
@@ -363,6 +369,12 @@
       ],
       "Import from .csv or vCard": [
         ".csv または vCard からインポート"
+      ],
+      "Import from Google": [
+        "Googleからインポート"
+      ],
+      "Import from Outlook": [
+        "Outlook からインポート"
       ],
       "Learn more": [
         "詳細"
@@ -700,6 +712,9 @@
       "Upload folder": [
         "フォルダーをアップロード"
       ],
+      "Upload photos": [
+        "写真アップロード"
+      ],
       "Upload picture": [
         "写真をアップロード"
       ],
@@ -755,6 +770,17 @@
       ],
       "You don't have any groups.": [
         "グループがありません。"
+      ]
+    },
+    "Addon": {
+      "${ domains } custom domains": [
+        "${ domains } のカスタム ドメイン"
+      ],
+      "${ ips } servers": [
+        "${ ips } のサーバー"
+      ],
+      "${ users } users": [
+        "${ users } のユーザー"
       ]
     },
     "Alert": {
@@ -878,6 +904,11 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } を使って続行します。"
+      ]
+    },
+    "Checkout row": {
+      "${ users } users": [
+        "${ users } 人のユーザー"
       ]
     },
     "Collapsible tooltip": {
@@ -1846,6 +1877,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の暗号化とインポート... これには数分かかることがあります。\n処理が完了すると、このモーダルを閉じることができます。"
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSV および VCF ファイル経由でインポートする場合は、ファイルが ${ MAX_IMPORT_FILE_SIZE_STRING } または ${ MAX_IMPORT_CONTACTS_STRING } の連絡先を超えないようにしてください。 ファイルが大きい場合は、より小さいファイルに分割してください。 ${ learnMoreLink }。"
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "インポートしようとしている連絡先リストにはいくつかのグループが含まれています。どのようにグループのインポートするか確認してください。"
       ],
@@ -1866,6 +1900,11 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "結合または保持する必要のない連絡先を削除するためにマークができます。 削除はマージボタンがクリックされた後にのみ行われます"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switchインポートアシスタントを使用する"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2128,6 +2167,9 @@
       ],
       "Some contacts have no email addresses: ${ noEmailsContactNamesList } ": [
         "一部の連絡先にメールアドレスがありません: ${ noEmailsContactNamesList } "
+      ],
+      "Some files were ignored because they are not supported in Photos": [
+        "一部のファイルは、Photosでサポートされていないため、無視されました。"
       ],
       "Some groups could not be deleted": [
         "一部のグループは削除できませんでした"
@@ -2534,6 +2576,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } プレミアム"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } と ${ CALENDAR_SHORT_APP_NAME } プレミアム"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } プレミアム"
+      ],
       "Up to 6 users": [
         "最大6人のユーザー"
       ]
@@ -2680,6 +2731,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -2694,6 +2748,9 @@
       ],
       "Megabytes": [
         "メガバイト"
+      ],
+      "Terabytes": [
+        "テラバイト"
       ]
     },
     "Filter notification": {
@@ -3109,6 +3166,9 @@
       "${ selectedContactsLength }/${ contactsLength } contacts selected": [
         "${ selectedContactsLength } / ${ contactsLength } 件の連絡先が選択されました"
       ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } 選択"
+      ],
       "${ selectedFoldersCount } folders selected": [
         "${ selectedFoldersCount } 件のフォルダーを選択済み"
       ],
@@ -3123,6 +3183,9 @@
       ],
       "${ speed }/s": [
         "${ speed }/秒"
+      ],
+      "${ storage } storage": [
+        "${ storage } ストレージ"
       ],
       "${ updated } contacts updated successfully.": [
         "${ updated } 連絡先が正常に更新されました。"
@@ -3195,6 +3258,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "選択したアイテムをごみ箱から完全に削除してよろしいですか？"
+      ],
+      "As soon as you have photos or videos on your device, they will appear here.": [
+        "あなたのデバイスに写真やビデオがあれば、すぐにここに表示されます。"
       ],
       "Attention required": [
         "注意が必要です"
@@ -3619,6 +3685,9 @@
       "No group found": [
         "グループが見つかりませんでした"
       ],
+      "No photos yet": [
+        "写真はまだない"
+      ],
       "No results found": [
         "該当する項目がありません"
       ],
@@ -3721,6 +3790,9 @@
       "Previous versions are not saved": [
         "以前のバージョンは保存されません"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "価格には、適用されるすべてのサイクルベースの割引と、お客様のアカウントに保存されている有効期限内のクーポンが含まれています。"
+      ],
       "Primary": [
         "プライマリー"
       ],
@@ -3760,8 +3832,14 @@
       "Search Enabled": [
         "検索機能がオンです"
       ],
+      "Select all items for": [
+        "すべての項目を選択"
+      ],
       "Select an uploaded file or folder and create a link to it.": [
         "アップロードしたファイルまたはフォルダーを選択し、リンクを作成できます。"
+      ],
+      "Select item": [
+        "項目を選択"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "このメールアドレスにメールを送信する際に既定で使用するメールの形式を選択できます。"
@@ -3880,6 +3958,9 @@
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
         "このリンクは永久に無効化され、今後機能しなくなります。このフォルダーを再度共有した場合、新しいリンクが作成されます。"
       ],
+      "This month": [
+        "今月"
+      ],
       "This will delete the links and remove access to your files or folders for anyone with the links.": [
         "共有リンクは削除され、今後誰に対しても機能しなくなります。"
       ],
@@ -3922,6 +4003,18 @@
       "Today": [
         "今日"
       ],
+      "Total email addresses": [
+        "総メールアドレス数"
+      ],
+      "Total storage": [
+        "総ストレージ容量"
+      ],
+      "Total supported domains": [
+        "総対応ドメイン数"
+      ],
+      "Total VPN connections": [
+        "総VPN接続数"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "ファイル「${ name }」の転送をキャンセルしました"
       ],
@@ -3958,6 +4051,9 @@
       "Unsupported file": [
         "非対応のファイル"
       ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "最大 ${ FAMILY_MAX_USERS } ユーザーまで"
+      ],
       "Updating drive search...": [
         "ドライブ内検索の更新中..."
       ],
@@ -3984,6 +4080,9 @@
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "無料ストレージが 2 倍になりました！"
+      ],
+      "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
+        "技術的な問題が発生しています。新しい写真のアップロードは一時的に無効になっています。"
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "${ emailAddress } がアップロードした ${ fileName } を検証できませんでした。"
@@ -4497,6 +4596,9 @@
       "Phone number": [
         "電話番号"
       ],
+      "Photo": [
+        "写真"
+      ],
       "Please provide full details to help us take appropriate action": [
         "適切な対応を行えるようにするため、詳細な情報を提供してください。"
       ],
@@ -4681,6 +4783,9 @@
       ],
       "Pay invoice": [
         "請求の支払い"
+      ],
+      "Photos": [
+        "写真"
       ],
       "Reactivate now": [
         "今すぐ再アクティブ化する"
@@ -5481,6 +5586,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1ユーザー"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -5498,6 +5606,15 @@
       ],
       "Highest VPN speed": [
         "最高速 VPN"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } と ${ CALENDAR_SHORT_APP_NAME } プレミアム"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } プレミアム"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } プレミアム"
       ],
       "Premium early access": [
         "プレミアム早期アクセス"
@@ -5543,6 +5660,9 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } months": [
+        "${ n } ヶ月"
+      ],
       "/ month": [
         "/ 月"
       ],
@@ -5751,8 +5871,11 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Password Manager": [
-        "プレミアムパスワードマネージャー"
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } プレミアム"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }と${ CALENDAR_SHORT_APP_NAME }プレミアム"
       ]
     },
     "summer2023: Tooltip": {
@@ -6170,6 +6293,9 @@
       ],
       "Phone numbers": [
         "電話番号"
+      ],
+      "Photos": [
+        "写真"
       ],
       "Preview": [
         "プレビュー"

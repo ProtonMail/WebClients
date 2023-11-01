@@ -713,11 +713,11 @@
       "Not saved": [
         "Non salvato"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Apri ${ CALENDAR_APP_NAME }"
@@ -1219,6 +1219,20 @@
         "Scadenza messaggio"
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } dominio personalizzato",
+        "${ domains } domini personalizzati"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } server"
+      ],
+      "${ users } user": [
+        "${ users } utente",
+        "${ users } utenti"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Uscendo ora, alcuni contatti potrebbero non essere importati"
@@ -1349,6 +1363,18 @@
       ],
       "High speed streaming": [
         "Streaming ad alta velocità"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Password manager premium"
       ]
     },
     "bf2023: Footer": {
@@ -1759,6 +1785,12 @@
       ],
       "Cancel expiration": [
         "Annulla scadenza"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } utente",
+        "${ users } utenti"
       ]
     },
     "Collapsible tooltip": {
@@ -3012,7 +3044,7 @@
         "Crittografia e importazione dei contatti... L'operazione potrebbe richiedere alcuni minuti. Quando il processo sarà completato, potrai chiudere questa finestra."
       ],
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Per l'importazione tramite file CSV e VCF, assicurati che il file non superi i contatti ${ MAX_IMPORT_FILE_SIZE_STRING } o ${ MAX_IMPORT_CONTACTS_STRING }. Se il tuo file è più grande, dividilo in file più piccoli. ${ learnMoreLink }."
+        "Per importare tramite file CSV o VCF, assicurati che il file non superi i ${ MAX_IMPORT_FILE_SIZE_STRING } o i ${ MAX_IMPORT_CONTACTS_STRING } contatti. Se il tuo file è più grande, dividilo in file più piccoli. ${ learnMoreLink }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sembra che l'elenco dei contatti che stai importando contenga alcuni gruppi. Verifica come devono essere importati questi gruppi."
@@ -3072,7 +3104,7 @@
     },
     "description": {
       "use the Easy Switch import assistant": [
-        "utilizza l'assistente di importazione Easy Switch"
+        "usa l'assistente di importazione Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4893,6 +4925,9 @@
         "${ selectedFoldersCountLocalized } etichetta selezionata",
         "${ selectedFoldersCountLocalized } etichette selezionate"
       ],
+      "${ storage } storage": [
+        "${ storage } di archiviazione"
+      ],
       "${ total } conversation": [
         "${ total } conversazione",
         "${ total } conversazioni"
@@ -5483,7 +5518,7 @@
         "Nessuna azione selezionata"
       ],
       "No contacts added yet": [
-        "Nessun contatto ancora aggiunto"
+        "Non sono ancora stati aggiunti contatti"
       ],
       "No email address": [
         "Nessun indirizzo email"
@@ -5600,6 +5635,9 @@
       "Preview for this file type is not supported": [
         "L'anteprima per questo tipo di file non è supportata"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Il prezzo include tutti gli sconti applicabili basati sul periodo e i coupon non scaduti salvati nel tuo account."
+      ],
       "Primary": [
         "Principale"
       ],
@@ -5649,7 +5687,7 @@
         "L'invio programmato di questo messaggio verrà annullato."
       ],
       "Scheduling message...": [
-        "Pianificando il messaggio..."
+        "Programmazione del messaggio..."
       ],
       "Search option that lets you securely search for keywords in the body of email messages.": [
         "L'opzione di ricerca che consente di cercare in modo sicuro le parole chiave nel corpo dei messaggi di posta elettronica."
@@ -5834,7 +5872,7 @@
         "Questo messaggio è firmato da una chiave che non è ancora considerata attendibile."
       ],
       "This message is signed by the key attached, that has not been trusted yet.": [
-        "Questo messaggio è firmato dalla chiave allegata, che non è ancora considerata attendibile."
+        "Questo messaggio è firmato dalla chiave allegata, che non è ancora stata considerata attendibile."
       ],
       "This message will be automatically deleted on ${ longDateMEssage }": [
         "Questo messaggio sarà automaticamente eliminato il ${ longDateMEssage }"
@@ -5906,6 +5944,18 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Troppi messaggi sono in attesa di essere inviati. Per programmare questo messaggio, attendi finché un altro non verrà inviato."
       ],
+      "Total email addresses": [
+        "Totale indirizzi email"
+      ],
+      "Total storage": [
+        "Spazio totale"
+      ],
+      "Total supported domains": [
+        "Totale domini supportati"
+      ],
+      "Total VPN connections": [
+        "Totale connessioni VPN"
+      ],
       "Trackers blocked:": [
         "Tracker bloccati:"
       ],
@@ -5926,6 +5976,9 @@
       ],
       "Unsupported file": [
         "File non supportato"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Fino a ${ FAMILY_MAX_USERS } utenti"
       ],
       "Updating message content search...": [
         "Aggiornamento della ricerca nel contenuto dei messaggi..."
@@ -8769,9 +8822,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME } premium"
-      ],
-      "Premium Password Manager": [
-        "Password manager premium"
       ]
     },
     "summer2023: Tooltip": {

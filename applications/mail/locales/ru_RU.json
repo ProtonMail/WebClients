@@ -703,10 +703,10 @@
       "Not saved": [
         "Не сохранено"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -1213,6 +1213,14 @@
         "Сообщение с истекающим сроком действия"
       ]
     },
+    "Addon": {
+      "${ users } user": [
+        "${ users } пользователь",
+        "${ users } пользователя",
+        "${ users } пользователей",
+        "${ users } пользователей"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Если выйти сейчас, импорт некоторых контактов не завершится"
@@ -1343,6 +1351,18 @@
       ],
       "High speed streaming": [
         "Высокоскоростной стриминг"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Платная версия ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Платные версии ${ MAIL_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Платная версия ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Платная версия менеджера паролей"
       ]
     },
     "bf2023: Footer": {
@@ -1749,6 +1769,14 @@
       ],
       "Cancel expiration": [
         "Аннулировать срок годности"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } пользователь",
+        "${ users } пользователя",
+        "${ users } пользователей",
+        "${ users } пользователей"
       ]
     },
     "Collapsible tooltip": {
@@ -4951,6 +4979,9 @@
         "Выбрано ${ selectedFoldersCountLocalized } ярлыков",
         "Выбрано ${ selectedFoldersCountLocalized } ярлыков"
       ],
+      "${ storage } storage": [
+        "${ storage } хранилища"
+      ],
       "${ total } conversation": [
         "${ total } цепочка писем",
         "${ total } цепочки писем",
@@ -5701,6 +5732,9 @@
       "Preview for this file type is not supported": [
         "Предварительный просмотр файлов этого типа не поддерживается"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Стоимость указана с учетом всех применимых циклических скидок и не истекших купонов, сохраненных в вашем аккаунте."
+      ],
       "Primary": [
         "Основной"
       ],
@@ -6013,6 +6047,18 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Слишком много сообщений, ожидающих отправки. Пожалуйста, подождите, пока не будет отправлено другое сообщение, чтобы запланировать это."
       ],
+      "Total email addresses": [
+        "Всего адресов электронной почты"
+      ],
+      "Total storage": [
+        "Общий объем хранилища"
+      ],
+      "Total supported domains": [
+        "Всего поддерживаемых доменов"
+      ],
+      "Total VPN connections": [
+        "Всего подключений к VPN"
+      ],
       "Trackers blocked:": [
         "Заблокировано трекеров:"
       ],
@@ -6033,6 +6079,9 @@
       ],
       "Unsupported file": [
         "Неподдерживаемый файл"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "До ${ FAMILY_MAX_USERS } пользователей"
       ],
       "Updating message content search...": [
         "Обновление поиска по содержимому сообщения…"
@@ -8897,11 +8946,6 @@
       ],
       "2 years": [
         "2 года"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium Password Manager": [
-        "Платная версия менеджера паролей"
       ]
     },
     "summer2023: Tooltip": {

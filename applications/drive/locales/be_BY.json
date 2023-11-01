@@ -778,6 +778,26 @@
         "У вас няма груп."
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } карыстальніцкі дамен",
+        "${ domains } карыстальніцкія дамены",
+        "${ domains } карыстальніцкіх даменаў",
+        "${ domains } карыстальніцкіх даменаў"
+      ],
+      "${ ips } server": [
+        "${ ips } сервер",
+        "${ ips } серверы",
+        "${ ips } сервераў",
+        "${ ips } сервераў"
+      ],
+      "${ users } user": [
+        "${ users } карыстальнік",
+        "${ users } карыстальнікі",
+        "${ users } карыстальнікаў",
+        "${ users } карыстальнікаў"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Калі выйсці цяпер, некаторыя кантакты не будуць імпартаваны"
@@ -899,6 +919,14 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Працягнуць выкарыстоўваць ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } карыстальнік",
+        "${ users } карыстальнікі",
+        "${ users } карыстальнікаў",
+        "${ users } карыстальнікі"
       ]
     },
     "Collapsible tooltip": {
@@ -3318,6 +3346,9 @@
       "${ speed }/s": [
         "${ speed }/с"
       ],
+      "${ storage } storage": [
+        "${ storage } сховішча"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } кантакт паспяхова абноўлены.",
         "${ updated } кантакты паспяхова абноўлены.",
@@ -3957,6 +3988,9 @@
       "Previous versions are not saved": [
         "Папярэднія версіі не захоўваюцца"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Кошт уключае ўсе падыходзячыя (не пратэрмінаваныя) купоны, якія захаваны ў вашым уліковым запісе."
+      ],
       "Primary": [
         "Асноўны"
       ],
@@ -4164,6 +4198,18 @@
       "Today": [
         "Сёння"
       ],
+      "Total email addresses": [
+        "Колькасць адрасоў электроннай пошты"
+      ],
+      "Total storage": [
+        "Агульны аб'ём сховішча"
+      ],
+      "Total supported domains": [
+        "Колькасць даменаў, якія падтрымліваюцца"
+      ],
+      "Total VPN connections": [
+        "Колькасць падключэнняў па VPN"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "Перадача скасавана для файла \"${ name }\""
       ],
@@ -4199,6 +4245,9 @@
       ],
       "Unsupported file": [
         "Файл не падтрымліваецца"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Да ${ FAMILY_MAX_USERS } карыстальнікаў"
       ],
       "Updating drive search...": [
         "Абнаўленне пошуку на дыску..."
@@ -6160,9 +6209,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Прэміяльны ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Прэміяльныя функцыі менеджара пароляў"
       ]
     },
     "summer2023: Tooltip": {

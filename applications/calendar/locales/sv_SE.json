@@ -686,6 +686,20 @@
         "Du har inga grupper."
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } anpassad domän",
+        "${ domains } anpassade domäner"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } servrar"
+      ],
+      "${ users } user": [
+        "${ users } användare",
+        "${ users } användare"
+      ]
+    },
     "Alarm notification": {
       "${ title } started at ${ formattedHour }": [
         "${ title } började kl. ${ formattedHour }"
@@ -1043,6 +1057,12 @@
       "${ more } more": [
         "${ more } mer",
         "${ more } mer"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } användare",
+        "${ users } användare"
       ]
     },
     "Collapsible tooltip": {
@@ -2386,6 +2406,9 @@
       "Incorrect username": [
         "Felaktigt användarnamn"
       ],
+      "Intended recipient does not support calendar sharing": [
+        "Avsedd mottagare stöder inte kalenderdelning"
+      ],
       "Interval cannot be empty": [
         "Intervall kan inte vara tomt"
       ],
@@ -3577,6 +3600,9 @@
         "${ selectedFoldersCountLocalized } etikett vald",
         "${ selectedFoldersCountLocalized } etiketter valda"
       ],
+      "${ storage } storage": [
+        "${ storage } lagringsutrymme"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt uppdaterades.",
         "${ updated } kontakter uppdaterades."
@@ -3967,6 +3993,9 @@
       "Previous modifications on this series will be lost.": [
         "Tidigare ändringar av denna serie kommer att gå förlorade."
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Pris inkluderar alla tillämpbara återkommande rabatter och icke-utgångna kuponger som finns lagrat på ditt konto."
+      ],
       "Primary": [
         "Primär"
       ],
@@ -4081,8 +4110,23 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "För att använda adressverifiering måste du lita på en eller flera tillgängliga offentliga nycklar, inklusive den du vill använda för att skicka. Detta förhindrar krypteringsnycklarna att förfalskas."
       ],
+      "Total email addresses": [
+        "Totalt antal e-postadresser"
+      ],
+      "Total storage": [
+        "Totalt lagringsutrymme"
+      ],
+      "Total supported domains": [
+        "Totalt antal domäner som stöds"
+      ],
+      "Total VPN connections": [
+        "Totalt antal VPN-anslutningar"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prova nya ${ BRAND_NAME }-funktioner, uppdateringar och produkter innan de släpps för allmänheten. Detta kommer ladda om applikationen"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Upp till ${ FAMILY_MAX_USERS } användare"
       ],
       "Update recurring event": [
         "Uppdatera återkommande händelse"
@@ -6263,9 +6307,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Premium lösenordshanterare"
       ]
     },
     "summer2023: Tooltip": {

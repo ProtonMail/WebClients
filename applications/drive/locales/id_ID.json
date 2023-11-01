@@ -115,6 +115,9 @@
       "Clear query": [
         "Bersihkan kueri"
       ],
+      "Clear selection": [
+        "Hapus pilihan"
+      ],
       "Click here.": [
         "Klik di sini."
       ],
@@ -159,6 +162,9 @@
       ],
       "Continue with Google": [
         "Lanjutkan dengan Google"
+      ],
+      "Continue with Outlook": [
+        "Lanjut dengan Outlook"
       ],
       "Copy address": [
         "Salin alamat"
@@ -363,6 +369,12 @@
       ],
       "Import from .csv or vCard": [
         "Impor dari .csv atau vCard"
+      ],
+      "Import from Google": [
+        "Impor dari Google"
+      ],
+      "Import from Outlook": [
+        "Impor dari Outlook"
       ],
       "Learn more": [
         "Pelajari lebih lanjut"
@@ -700,6 +712,9 @@
       "Upload folder": [
         "Unggah folder"
       ],
+      "Upload photos": [
+        "Unggah foto"
+      ],
       "Upload picture": [
         "Unggah gambar"
       ],
@@ -755,6 +770,17 @@
       ],
       "You don't have any groups.": [
         "Anda tidak memiliki grup."
+      ]
+    },
+    "Addon": {
+      "${ domains } custom domains": [
+        "${ domains } domain khusus"
+      ],
+      "${ ips } servers": [
+        "${ ips } server"
+      ],
+      "${ users } users": [
+        "${ users } pengguna"
       ]
     },
     "Alert": {
@@ -878,6 +904,11 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Lanjut dengan ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Checkout row": {
+      "${ users } users": [
+        "${ users } pengguna"
       ]
     },
     "Collapsible tooltip": {
@@ -1846,6 +1877,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Enkripsi dan impor kontak memakan beberapa menit. Anda dapat menutup jendela ini setelah proses selesai."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Untuk mengimpor kontak melalui berkas CSV dan VCF, pastikan berkas Anda tidak melebihi batas ukuran ${ MAX_IMPORT_FILE_SIZE_STRING } atau batas jumlah ${ MAX_IMPORT_CONTACTS_STRING } kontak. Apabila berkas Anda melebihi batas ukuran yang ada, silakan pecahkan berkas Anda ke beberapa berkas yang lebih kecil. ${ learnMoreLink }"
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sepertinya daftar kontak yang Anda impor mengandung beberapa grup. Mohon periksa bagaimana grup ini diimpor."
       ],
@@ -1858,6 +1892,9 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Hemat waktu Anda dengan fitur pengiriman surel atau undangan massal, yang merupakan satu dari sekian banyak fitur premium yang tersedia. Tingkatkan paket Anda sekarang juga."
       ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Untuk mengimpor kontak Anda dari Google atau Outlook, ${ easySwitchLink }."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Seret-lepas untuk mengurutkan prioritas penggabungan kontak. Tandai kontak yang ingin digabung."
       ],
@@ -1866,6 +1903,11 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Anda dapat menandai kontak-kontak yang tidak ingin digabung atau disimpan. Penghapusan akan dilakukan setelah Anda menekan tombol gabung"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gunakan alat bantu impor Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2128,6 +2170,9 @@
       ],
       "Some contacts have no email addresses: ${ noEmailsContactNamesList } ": [
         "Kontak tidak memiliki alamat surel: ${ noEmailsContactNamesList } "
+      ],
+      "Some files were ignored because they are not supported in Photos": [
+        "Sebagian berkas tidak diproses karena tidak diduking oleh Photos"
       ],
       "Some groups could not be deleted": [
         "Sebagian grup tidak dapat dihapus"
@@ -3127,6 +3172,9 @@
       "${ selectedContactsLength }/${ contactsLength } contacts selected": [
         "${ selectedContactsLength }/${ contactsLength } kontak dipilih"
       ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } dipilih"
+      ],
       "${ selectedFoldersCount } folders selected": [
         "${ selectedFoldersCount } folder terpilih"
       ],
@@ -3141,6 +3189,9 @@
       ],
       "${ speed }/s": [
         "${ speed }/dtk"
+      ],
+      "${ storage } storage": [
+        "Kuota penyimpanan ${ storage }"
       ],
       "${ updated } contacts updated successfully.": [
         "${ updated } kontak berhasil diperbarui."
@@ -3213,6 +3264,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Apakah Anda yakin untuk menghapus item-item yang terpilih dari sampah secara permanen?"
+      ],
+      "As soon as you have photos or videos on your device, they will appear here.": [
+        "Foto dan video di perangkat Anda akan ditampilkan di sini."
       ],
       "Attention required": [
         "Diperlukan perhatian"
@@ -3643,6 +3697,9 @@
       "No group found": [
         "Tidak ada grup yang ditemukan"
       ],
+      "No photos yet": [
+        "Belum ada foto"
+      ],
       "No results found": [
         "Tidak ada hasil yang ditemukan"
       ],
@@ -3745,6 +3802,9 @@
       "Previous versions are not saved": [
         "Versi sebelumnya tidak disimpan"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Harga termasuk seluruh diskon berbasis siklus yang berlaku dan kupon tanpa tanggal berakhir yang disimpan di akun Anda."
+      ],
       "Primary": [
         "Utama"
       ],
@@ -3784,8 +3844,14 @@
       "Search Enabled": [
         "Pencarian Diaktifkan"
       ],
+      "Select all items for": [
+        "Pilih semua item"
+      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Pilih berkas atau folder yang telah diunggah dan buat tautan untuk berkas atau folder tersebut."
+      ],
+      "Select item": [
+        "Pilih item"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Pilih format surel yang akan digunakan setiap kali Anda mengirim surel ke alamat ini."
@@ -3904,6 +3970,9 @@
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
         "Tautan ini akan dinonaktifkan secara permanen. Ke depannya, folder Anda tidak akan lagi dapat diakses dengan tautan ini. Untuk dapat membagikan ulang folder ini, Anda perlu membuat tautan baru."
       ],
+      "This month": [
+        "Bulan ini"
+      ],
       "This will delete the links and remove access to your files or folders for anyone with the links.": [
         "Tindakan ini akan menonaktifkan tautan ini dan membuat berkas atau folder Anda tidak lagi dapat diakses melalui tautan yang bersangkutan."
       ],
@@ -3946,6 +4015,18 @@
       "Today": [
         "Hari ini"
       ],
+      "Total email addresses": [
+        "Total alamat surel"
+      ],
+      "Total storage": [
+        "Total kuota penyimpanan"
+      ],
+      "Total supported domains": [
+        "Total domain yang didukung"
+      ],
+      "Total VPN connections": [
+        "Total koneksi VPN"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "Transfer berkas \"${ name }\" dibatalkan"
       ],
@@ -3982,6 +4063,9 @@
       "Unsupported file": [
         "Berkas tidak didukung"
       ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Hingga ${ FAMILY_MAX_USERS } pengguna"
+      ],
       "Updating drive search...": [
         "Memperbarui pencarian drive..."
       ],
@@ -4008,6 +4092,9 @@
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "Selamat, Anda telah menggandakan kuota penyimpanan gratis Anda!"
+      ],
+      "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
+        "Kami sedang mengalami permasalahan teknis. Unggahan foto baru untuk sementara dinonaktifkan."
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Kami tidak dapat memverifikasi bahwa ${ fileName } diunggah oleh ${ emailAddress }."
@@ -4521,6 +4608,9 @@
       "Phone number": [
         "Nomor telepon"
       ],
+      "Photo": [
+        "Foto"
+      ],
       "Please provide full details to help us take appropriate action": [
         "Harap sertakan rincian yang selengkap-lengkapnya untuk membantu kami dalam mengambil tindakan yang sesuai"
       ],
@@ -4705,6 +4795,9 @@
       ],
       "Pay invoice": [
         "Bayar tagihan"
+      ],
+      "Photos": [
+        "Foto"
       ],
       "Reactivate now": [
         "Aktifkan kembali"
@@ -5795,9 +5888,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME } Premium"
-      ],
-      "Premium Password Manager": [
-        "Password Manager Premium"
       ]
     },
     "summer2023: Tooltip": {
@@ -6215,6 +6305,9 @@
       ],
       "Phone numbers": [
         "Nomor telepon"
+      ],
+      "Photos": [
+        "Foto"
       ],
       "Preview": [
         "Pratinjau"
