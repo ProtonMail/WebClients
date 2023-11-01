@@ -266,9 +266,6 @@
       "Invite user": [
         "Pozvat uživatele"
       ],
-      "Keep my ${ vpnPlanNameShort } subscription": [
-        "Zachovat mé předplatné ${ vpnPlanNameShort }"
-      ],
       "Let's talk": [
         "Promluvme si"
       ],
@@ -301,6 +298,9 @@
       ],
       "Open navigation": [
         "Otevřít menu"
+      ],
+      "Or": [
+        "Nebo"
       ],
       "Organization": [
         "Organizace"
@@ -439,6 +439,9 @@
       ],
       "Sign out": [
         "Odhlásit se"
+      ],
+      "sign up for free": [
+        "zaregistrujte se zdarma"
       ],
       "Signing in": [
         "Přihlašování"
@@ -2586,6 +2589,12 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } adresa",
+        "${ amountOfAddresses } adresy",
+        "${ amountOfAddresses } adres",
+        "${ amountOfAddresses } adres"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
       ],
@@ -2619,6 +2628,9 @@
         "${ number } serverů",
         "${ number } serverů"
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "${ plan } odebrán. Nabídka balíčků není k dispozici pro 1měsíční tarif."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vyžaduje alespoň 1 dedikovaný server ${ serverPricePerMonth }"
       ],
@@ -2627,6 +2639,18 @@
         "${ provisioningCounter } servery jsou stále nastavovány. Toto obvykle trvá přibližně ${ provisioningDuration }.",
         "${ provisioningCounter } serverů je stále nastavováno. Toto obvykle trvá přibližně ${ provisioningDuration }.",
         "${ provisioningCounter } serverů je stále nastavováno. Toto obvykle trvá přibližně ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } další",
+        "${ remainingAddresses.length } další",
+        "${ remainingAddresses.length } dalších",
+        "${ remainingAddresses.length } dalších"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length } další adresa",
+        "${ remainingAddresses.length } další adresy",
+        "${ remainingAddresses.length } dalších adres",
+        "${ remainingAddresses.length } dalších adres"
       ],
       "${ storage } storage": [
         "${ storage } úložiště"
@@ -2783,6 +2807,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Před zahájením odesílání a přijímání e-mailů z nových adres je třeba pro ně vytvořit šifrovací klíče."
+      ],
+      "Billed at ${ price }": [
+        "Účtováno ${ price }"
       ],
       "Billing cycle: ${ text }": [
         "Fakturační cyklus: ${ text }"
@@ -2978,9 +3005,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Pokud si myslíte, že jde o chybu, kontaktujte nás ${ contactLink }."
-      ],
-      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "Pokud zrušíte předplatné ${ vpnPlanName }, nedojde k jeho obnovení k datu vypršení jeho platnosti ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
@@ -3258,6 +3282,9 @@
       "Revoke certificate ${ name }": [
         "Zrušit certifikát ${ name }"
       ],
+      "Save ${ percentage }": [
+        "Ušetřete ${ percentage }"
+      ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Uložte si heslo na bezpečné místo. Kliknutím na ikonu potvrďte, že jste heslo zadali správně."
       ],
@@ -3350,6 +3377,9 @@
       ],
       "Thank you": [
         "Děkujeme"
+      ],
+      "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
+        "Děkujeme za podporu našeho poslání budovat lepší internet, kde jsou soukromí a svoboda na prvním místě."
       ],
       "The following address is invalid.": [
         "Následující adresa je neplatná.",
@@ -3732,9 +3762,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Po přihlášení budete přesměrováni na adresu ${ destination }."
       ],
-      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
-        "K tomuto datu ztratíte přístup k serverům a funkcím ${ vpnPlanNameShort }."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Potřebujete ${ BRAND_NAME } adresu pro používání ${ MAIL_APP_NAME } a ${ CALENDAR_APP_NAME }"
       ],
@@ -3764,6 +3791,9 @@
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Váš účet má alespoň jednu fakturu po splatnosti. Váš účet je omezen. Pokračující neplacení zablokuje vaše e-maily a odkazy pro sdílení. ${ payInvoiceLink }"
+      ],
+      "Your account was successfully updated with this promotion": [
+        "Váš účet byl úspěšně navýšen pomocí této propagační akce"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Jakmile bude platba zrušena, váš účet bude aktualizován."
@@ -6627,9 +6657,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Prémiové funkce ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Prémiový správce hesel"
       ]
     },
     "summer2023: Tooltip": {
@@ -7481,6 +7508,11 @@
       ],
       "Your ${ selected } plan": [
         "Váš tarif ${ selected }"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Přístup k serverům Secure Core, rychlé stahování P2P/BitTorrent, Tor skrze VPN a další."
       ]
     },
     "Warning": {

@@ -266,8 +266,8 @@
       "Invite user": [
         "Bjud in användare"
       ],
-      "Keep my ${ vpnPlanNameShort } subscription": [
-        "Behåll min ${ vpnPlanNameShort }-prenumeration"
+      "Keep my Plus subscription": [
+        "Behåll min Plus-prenumeration"
       ],
       "Let's talk": [
         "Låt oss prata!"
@@ -2751,6 +2751,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Innan du kan börja skicka och ta emot e-postmeddelanden från dina nya adresser måste du skapa krypteringsnycklar för dem."
       ],
+      "Billed at ${ price }": [
+        "Fakturerad med ${ price }"
+      ],
       "Billing cycle: ${ text }": [
         "Faktureringsperiod: ${ text }"
       ],
@@ -2942,8 +2945,8 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Om du tror att detta är felaktigt, kontakta oss ${ contactLink }."
       ],
-      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "Om du avbryter kommer din ${ vpnPlanName }-prenumeration inte att förnyas när den löper ut den ${ expiryDate }."
+      "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Om du avbryter kommer din ${ planTitle }-prenumeration inte att förnyas när den löper ut den ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Om du inte hittar e-postmeddelandet i din inkorg, kontrollera din skräppostmapp."
@@ -3311,6 +3314,9 @@
       "Thank you": [
         "Tack"
       ],
+      "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
+        "Tack för att du stödjer vårt uppdrag att bygga ett bättre internet där integritet och frihet kommer först."
+      ],
       "The following address is invalid.": [
         "Följande adress är ogiltig.",
         "Följande adresser är ogiltiga."
@@ -3672,8 +3678,11 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Du kommer att omdirigeras till ${ destination } efter inloggning."
       ],
-      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
-        "Du kommer förlora åtkomst till ${ vpnPlanNameShort }-servrar och funktionerna på detta datum."
+      "You will lose access to Plus features on this date.": [
+        "Du kommer förlora åtkomst till Plus-funktioner på detta datum."
+      ],
+      "You will lose access to Plus servers and features on this date.": [
+        "Du kommer förlora åtkomst till Plus-servrar och funktioner på detta datum."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Du behöver en ${ BRAND_NAME }-adress för att använda ${ MAIL_APP_NAME } och ${ CALENDAR_APP_NAME }"
@@ -3704,6 +3713,9 @@
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Ditt konto har minst en förfallen faktura. Ditt konto är begränsat. Fortsatt utebliven betalning kommer att blockera dina e-postmeddelanden och delningslänkar. ${ payInvoiceLink }"
+      ],
+      "Your account was successfully updated with this promotion": [
+        "Ditt konto har uppdaterats med denna kampanj"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Ditt konto kommer att uppdateras när betalningen är klargjord."
@@ -6445,9 +6457,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Premium lösenordshanterare"
       ]
     },
     "summer2023: Tooltip": {
