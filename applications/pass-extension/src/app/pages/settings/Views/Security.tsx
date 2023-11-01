@@ -19,8 +19,17 @@ export const Security: VFC = () => {
     const { confirmPin } = useSessionLockConfirmContext();
 
     const { sessionLockRegistered, sessionLockTTL } = useSelector(selectSessionLockSettings);
-    const enableLock = useActionRequest({ action: sessionLockEnableIntent, requestId: sessionLockEnableRequest() });
-    const disableLock = useActionRequest({ action: sessionLockDisableIntent, requestId: sessionLockDisableRequest() });
+
+    const enableLock = useActionRequest({
+        action: sessionLockEnableIntent,
+        initialRequestId: sessionLockEnableRequest(),
+    });
+
+    const disableLock = useActionRequest({
+        action: sessionLockDisableIntent,
+        initialRequestId: sessionLockDisableRequest(),
+    });
+
     const loading = enableLock.loading || disableLock.loading;
 
     const handleSessionLockToggle = async () =>

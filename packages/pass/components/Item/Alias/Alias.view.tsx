@@ -37,7 +37,7 @@ export const AliasView: VFC<ItemViewProps<'alias'>> = ({ vault, revision, ...ite
 
     const getAliasDetails = useActionRequest({
         action: getAliasDetailsIntent,
-        requestId: aliasDetailsRequest(aliasEmail),
+        initialRequestId: aliasDetailsRequest(aliasEmail),
         onFailure: () => {
             createNotification({
                 type: 'warning',
