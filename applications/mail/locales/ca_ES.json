@@ -701,11 +701,11 @@
       "Not saved": [
         "No s'ha desat"
       ],
-      "Ok": [
-        "OK"
-      ],
       "OK": [
         "D'acord"
+      ],
+      "Ok": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Obrir ${ CALENDAR_APP_NAME }"
@@ -1207,6 +1207,20 @@
         "Missatge amb expiració"
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } domini personalitzat",
+        "${ domains } dominis personalitzats"
+      ],
+      "${ ips } server": [
+        "${ ips } servidor",
+        "${ ips } servidors"
+      ],
+      "${ users } user": [
+        "${ users } usuari",
+        "${ users } usuaris"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Si sortiu ara, alguns contactes potser no es poden importar"
@@ -1663,6 +1677,12 @@
       ],
       "Cancel expiration": [
         "Cancel·la la caducitat"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } usuari",
+        "${ users } usuaris"
       ]
     },
     "Collapsible tooltip": {
@@ -4774,6 +4794,9 @@
         "${ selectedFoldersCountLocalized } etiqueta seleccionada",
         "${ selectedFoldersCountLocalized } etiquetes seleccionades"
       ],
+      "${ storage } storage": [
+        "${ storage } d'emmagatzematge"
+      ],
       "${ total } conversation": [
         "${ total } conversa",
         "${ total } converses"
@@ -5481,6 +5504,9 @@
       "Preview for this file type is not supported": [
         "La previsualització d'aquest tipus de fitxers no és compatible."
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "El preu inclou tots els descomptes basats en cicles aplicables i els cupons no caducats desats al vostre compte."
+      ],
       "Primary": [
         "Principal"
       ],
@@ -5787,6 +5813,18 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Hi ha massa missatges esperant per ser enviats. Espereu que s'enviï un altre missatge per programar aquest."
       ],
+      "Total email addresses": [
+        "Adreces de correu totals"
+      ],
+      "Total storage": [
+        "Emmagatzematge"
+      ],
+      "Total supported domains": [
+        "Dominis suportats totals"
+      ],
+      "Total VPN connections": [
+        "Connexions VPN totals"
+      ],
       "Trackers blocked:": [
         "Rastrejadors bloquejats:"
       ],
@@ -5807,6 +5845,9 @@
       ],
       "Unsupported file": [
         "Fitxer no compatible"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Fins a ${ FAMILY_MAX_USERS } usuaris"
       ],
       "Updating message content search...": [
         "Actualitzant la cerca del contingut del missatge..."
@@ -8647,9 +8688,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } prèmium"
-      ],
-      "Premium Password Manager": [
-        "Gestor de Contrasenyes prèmium"
       ]
     },
     "summer2023: Tooltip": {

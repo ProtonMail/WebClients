@@ -713,11 +713,11 @@
       "Not saved": [
         "Μη αποθηκευμένο"
       ],
-      "Ok": [
-        "OK"
-      ],
       "OK": [
         "ΟΚ"
+      ],
+      "Ok": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Άνοιγμα ${ CALENDAR_APP_NAME }"
@@ -1219,6 +1219,20 @@
         "Μήνυμα που λήγει"
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } προσαρμοσμένος τομέας",
+        "${ domains } προσαρμοσμένοι τομείς"
+      ],
+      "${ ips } server": [
+        "${ ips } διακομιστής",
+        "${ ips } διακομιστές"
+      ],
+      "${ users } user": [
+        "${ users } χρήστης",
+        "${ users } χρήστες"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Φεύγοντας τώρα, κάποιες επαφές ενδέχεται να μην εισαχθούν"
@@ -1675,6 +1689,12 @@
       ],
       "Cancel expiration": [
         "Ακύρωση λήξης"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } χρήστης",
+        "${ users } χρήστες"
       ]
     },
     "Collapsible tooltip": {
@@ -4809,6 +4829,9 @@
         "${ selectedFoldersCountLocalized } ετικέτα επιλέχθηκε",
         "${ selectedFoldersCountLocalized } ετικέτες επιλέχθηκαν"
       ],
+      "${ storage } storage": [
+        "${ storage } αποθηκευτικού χώρου"
+      ],
       "${ total } conversation": [
         "${ total } συνομιλία",
         "${ total } συνομιλίες"
@@ -5516,6 +5539,9 @@
       "Preview for this file type is not supported": [
         "Η προεπισκόπηση για αυτόν τον τύπο αρχείου δεν υποστηρίζεται"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Η τιμή περιλαμβάνει όλες τις ισχύουσες εκπτώσεις βάσει κύκλου καθώς και τα κουπόνια που δεν έχουν λήξει και είναι αποθηκευμένα στον λογαριασμό σας."
+      ],
       "Primary": [
         "Κύριο"
       ],
@@ -5822,6 +5848,18 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Υπερβολικός αριθμός μηνυμάτων σε αναμονή αποστολής. Για προγραμματισμό αυτού του μηνύματος, παρακαλούμε περιμένετε μέχρι την αποστολή ενός άλλου."
       ],
+      "Total email addresses": [
+        "Σύνολο διευθύνσεων ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Total storage": [
+        "Συνολικός αποθηκευτικός χώρος"
+      ],
+      "Total supported domains": [
+        "Σύνολο υποστηριζόμενων τομέων"
+      ],
+      "Total VPN connections": [
+        "Σύνολο συνδέσεων VPN"
+      ],
       "Trackers blocked:": [
         "Αποκλεισμένοι ιχνηλάτες:"
       ],
@@ -5842,6 +5880,9 @@
       ],
       "Unsupported file": [
         "Μη υποστηριζόμενο αρχείο"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Μέχρι και ${ FAMILY_MAX_USERS } χρήστες"
       ],
       "Updating message content search...": [
         "Γίνεται ενημέρωση αναζήτησης εντός περιεχομένου μηνυμάτων..."
@@ -8685,9 +8726,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Premium Διαχειριστής Κωδικών Πρόσβασης"
       ]
     },
     "summer2023: Tooltip": {

@@ -196,6 +196,9 @@
       "Close navigation": [
         "ナビゲーションを閉じる"
       ],
+      "Close the checklist": [
+        "チェックリストを閉じる"
+      ],
       "Close this banner": [
         "このバナーを閉じる"
       ],
@@ -225,6 +228,9 @@
       ],
       "Continue with Google": [
         "Google で続行"
+      ],
+      "Continue with Outlook": [
+        "Outlook を続行する"
       ],
       "Contract composer": [
         "元に戻す"
@@ -421,8 +427,14 @@
       "Get verification code": [
         "認証コードを取得"
       ],
+      "Go to first page": [
+        "最初のページに移動"
+      ],
       "Go to label": [
         "ラベルへ移動"
+      ],
+      "Go to last page": [
+        "最後のページに移動"
       ],
       "Go to next page": [
         "次のページに移動"
@@ -495,6 +507,12 @@
       ],
       "Import from .csv or vCard": [
         ".csv または vCard からインポート"
+      ],
+      "Import from Google": [
+        "Googleからインポート"
+      ],
+      "Import from Outlook": [
+        "Outlook からインポート"
       ],
       "Inline": [
         "インライン"
@@ -688,11 +706,11 @@
       "Not saved": [
         "未保存"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } を開く"
@@ -1192,6 +1210,17 @@
         "有効期限付きメッセージ"
       ]
     },
+    "Addon": {
+      "${ domains } custom domains": [
+        "${ domains } のカスタム ドメイン"
+      ],
+      "${ ips } servers": [
+        "${ ips } のサーバー"
+      ],
+      "${ users } users": [
+        "${ users } のユーザー"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "今すぐ退出することで、いくつかの連絡先がインポートされない可能性があります"
@@ -1645,6 +1674,11 @@
       ],
       "Cancel expiration": [
         "有効期限をキャンセル"
+      ]
+    },
+    "Checkout row": {
+      "${ users } users": [
+        "${ users } 人のユーザー"
       ]
     },
     "Collapsible tooltip": {
@@ -2893,6 +2927,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の暗号化とインポート... これには数分かかることがあります。\n処理が完了すると、このモーダルを閉じることができます。"
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSV および VCF ファイル経由でインポートする場合は、ファイルが ${ MAX_IMPORT_FILE_SIZE_STRING } または ${ MAX_IMPORT_CONTACTS_STRING } の連絡先を超えないようにしてください。 ファイルが大きい場合は、より小さいファイルに分割してください。 ${ learnMoreLink }。"
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "インポートしようとしている連絡先リストにはいくつかのグループが含まれています。どのようにグループのインポートするか確認してください。"
       ],
@@ -2940,6 +2977,11 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "結合または保持する必要のない連絡先を削除するためにマークができます。 削除はマージボタンがクリックされた後にのみ行われます"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switchインポートアシスタントを使用する"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3790,6 +3832,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } プレミアム"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } と ${ CALENDAR_SHORT_APP_NAME } プレミアム"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } プレミアム"
+      ],
       "Up to 6 users": [
         "最大6人のユーザー"
       ]
@@ -3936,6 +3987,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -3950,6 +4004,9 @@
       ],
       "Megabytes": [
         "メガバイト"
+      ],
+      "Terabytes": [
+        "テラバイト"
       ]
     },
     "Filter": {
@@ -4143,6 +4200,9 @@
       ],
       "Close": [
         "閉じる"
+      ],
+      "Closing this means giving up the free storage bonus.": [
+        "これを終了すると、無料ストレージ ボーナスを放棄することになります。"
       ],
       "Congratulation, you completed all the steps!": [
         "すべてのステップを完了しました。おめでとう！"
@@ -4678,6 +4738,9 @@
       "${ selectedFoldersCountLocalized } labels selected": [
         "${ selectedFoldersCountLocalized } 件のラベルを選択"
       ],
+      "${ storage } storage": [
+        "${ storage } ストレージ"
+      ],
       "${ total } conversations": [
         "${ total } 件の会話"
       ],
@@ -4836,6 +4899,9 @@
       ],
       "Calendar side panel": [
         "カレンダーサイドパネル"
+      ],
+      "Can't find what you're looking for? ${ displayAllMailButton }": [
+        "探しているものが見つかりませんか? ${ displayAllMailButton }"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "パスワード思い出せませんか? この鍵で暗号化されたすべての連絡先の暗号化されたデータを消去し、アラートを消去する手助けをします。"
@@ -5347,6 +5413,9 @@
       "Preview for this file type is not supported": [
         "このファイル形式はサポートされておりません。"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "価格には、適用されるすべてのサイクルベースの割引と、お客様のアカウントに保存されている有効期限内のクーポンが含まれています。"
+      ],
       "Primary": [
         "プライマリー"
       ],
@@ -5644,6 +5713,18 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "送信予約メッセージが多すぎます。他のメッセージが送信されれば、このメッセージを送信予約できます。"
       ],
+      "Total email addresses": [
+        "総メールアドレス数"
+      ],
+      "Total storage": [
+        "総ストレージ容量"
+      ],
+      "Total supported domains": [
+        "総対応ドメイン数"
+      ],
+      "Total VPN connections": [
+        "総VPN接続数"
+      ],
       "Trackers blocked:": [
         "ブロックしたトラッカー:"
       ],
@@ -5664,6 +5745,9 @@
       ],
       "Unsupported file": [
         "非対応のファイル"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "最大 ${ FAMILY_MAX_USERS } ユーザーまで"
       ],
       "Updating message content search...": [
         "メッセージ内容の検索を更新中..."
@@ -6816,6 +6900,9 @@
       "Sent": [
         "送信済み"
       ],
+      "Set up email forwarding": [
+        "メール転送の設定"
+      ],
       "Sign up for free": [
         "無料でサインアップ"
       ],
@@ -7932,6 +8019,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1ユーザー"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -7949,6 +8039,15 @@
       ],
       "Highest VPN speed": [
         "最高速 VPN"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } と ${ CALENDAR_SHORT_APP_NAME } プレミアム"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } プレミアム"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } プレミアム"
       ],
       "Premium early access": [
         "プレミアム早期アクセス"
@@ -7994,6 +8093,9 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } months": [
+        "${ n } ヶ月"
+      ],
       "/ month": [
         "/ 月"
       ],
@@ -8131,6 +8233,9 @@
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "デフォルトで画像を読み込みつつ、送信者があなたをトラッキングするのを防ぎます。これは ${ settingsLink } で変更できます。"
+      ],
+      "You can now automatically forward your emails to anyone!": [
+        "メールを誰にでも自動的に転送できるようになりました。"
       ],
       "You can now schedule your messages to be sent later": [
         "メッセージの送信を予約できます"
@@ -8409,8 +8514,11 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Password Manager": [
-        "プレミアムパスワードマネージャー"
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } プレミアム"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }と${ CALENDAR_SHORT_APP_NAME }プレミアム"
       ]
     },
     "summer2023: Tooltip": {

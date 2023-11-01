@@ -695,11 +695,11 @@
       "Not saved": [
         "Niet opgeslagen"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Open ${ CALENDAR_APP_NAME }"
@@ -1201,6 +1201,20 @@
         "Verlopend bericht"
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } eigen domein",
+        "${ domains } eigen domeinen"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } servers"
+      ],
+      "${ users } user": [
+        "${ users } gebruiker",
+        "${ users } gebruikers"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Door nu te verlaten, worden sommige contacten mogelijk niet geïmporteerd"
@@ -1331,6 +1345,18 @@
       ],
       "High speed streaming": [
         "Streamen met hoge snelheid"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Premium wachtwoordmanager"
       ]
     },
     "bf2023: Footer": {
@@ -1741,6 +1767,12 @@
       ],
       "Cancel expiration": [
         "Vervaldatum annuleren"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } gebruiker",
+        "${ users } gebruikers"
       ]
     },
     "Collapsible tooltip": {
@@ -4849,6 +4881,9 @@
         "${ selectedFoldersCountLocalized } label geselecteerd",
         "${ selectedFoldersCountLocalized } labels geselecteerd"
       ],
+      "${ storage } storage": [
+        "${ storage } opslag"
+      ],
       "${ total } conversation": [
         "${ total } gesprek",
         "${ total } gesprekken"
@@ -5553,6 +5588,9 @@
       "Preview for this file type is not supported": [
         "Voorbeeld wordt niet ondersteund voor dit bestandstype"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "De prijs is inclusief alle toepasselijke cyclusgebonden kortingen en geldige coupons die in uw account zijn opgeslagen."
+      ],
       "Primary": [
         "Primair"
       ],
@@ -5859,6 +5897,18 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Te veel berichten die wachten om te worden verzonden. Wacht tot een ander bericht is verzonden om dit bericht te plannen."
       ],
+      "Total email addresses": [
+        "Totaal e-mailadressen"
+      ],
+      "Total storage": [
+        "Totale opslagruimte"
+      ],
+      "Total supported domains": [
+        "Totaal ondersteunde domeinen"
+      ],
+      "Total VPN connections": [
+        "Totale VPN-verbindingen"
+      ],
       "Trackers blocked:": [
         "Trackers geblokkeerd:"
       ],
@@ -5879,6 +5929,9 @@
       ],
       "Unsupported file": [
         "Niet-ondersteund bestand"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Tot ${ FAMILY_MAX_USERS } gebruikers"
       ],
       "Updating message content search...": [
         "Zoeken naar berichtinhoud bijwerken..."
@@ -8716,9 +8769,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Premium wachtwoordmanager"
       ]
     },
     "summer2023: Tooltip": {
