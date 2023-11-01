@@ -242,7 +242,7 @@ const autofillCandidatesSelector = createSelector(
 
 export const selectAutofillCandidates = (options: SelectAutofillCandidatesOptions) => (state: State) => {
     /* if the protocol is null : it likely means the
-     * url validation failed - do not return any candidates */
+     * URL validation failed - do not return any candidates */
     if (options.protocol === null || options.domain === null) return [];
     return autofillCandidatesSelector(state, options);
 };
