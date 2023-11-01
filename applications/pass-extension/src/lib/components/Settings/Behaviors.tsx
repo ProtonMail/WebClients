@@ -51,7 +51,7 @@ const getSettings =
                     {
                         label: c('Label').t`Display ${PASS_APP_NAME} icon on login fields`,
                         description: c('Info')
-                            .t`If enabled, you can quickly autofill your credentials by clicking on the ${PASS_APP_NAME} icon.`,
+                            .t`You can quickly autofill your credentials by clicking on the ${PASS_APP_NAME} icon.`,
                         checked: settings.autofill.inject,
                         onChange: (checked) =>
                             onSettingsUpdate({
@@ -63,8 +63,7 @@ const getSettings =
                     },
                     {
                         label: c('Label').t`Automatically open autofill when focusing login fields`,
-                        description: c('Info')
-                            .t`If enabled, the autofill dropdown will automatically open on field focus.`,
+                        description: c('Info').t`The autofill dropdown will automatically open on field focus.`,
                         checked: settings.autofill.inject && settings.autofill.openOnFocus,
                         disabled: !settings.autofill.inject,
                         onChange: (checked) => onSettingsUpdate({ autofill: { openOnFocus: checked } }),
@@ -76,8 +75,7 @@ const getSettings =
                 settings: [
                     {
                         label: c('Label').t`Prompt for auto-save`,
-                        description: c('Info')
-                            .t`If disabled, ${PASS_APP_NAME} will not prompt you to save or update credentials.`,
+                        description: c('Info').t`${PASS_APP_NAME} will prompt you to save or update credentials.`,
                         checked: settings.autosave.prompt,
                         onChange: (checked) => onSettingsUpdate({ autosave: { prompt: checked } }),
                     },
@@ -97,14 +95,14 @@ const getSettings =
                     {
                         label: c('Label').t`Passwords`,
                         description: c('Info')
-                            .t`If disabled, ${PASS_APP_NAME} will not suggest creating strong passwords on sign-up forms.`,
+                            .t`${PASS_APP_NAME} will suggest creating strong passwords on sign-up forms.`,
                         checked: settings.autosuggest.password,
                         onChange: (checked) => onSettingsUpdate({ autosuggest: { password: checked } }),
                     },
                     {
                         label: c('Label').t`Email aliases`,
                         description: c('Info')
-                            .t`If disabled, ${PASS_APP_NAME} will not suggest creating an email alias on sign-up forms.`,
+                            .t`${PASS_APP_NAME} will suggest creating an email alias on sign-up forms.`,
                         checked: settings.autosuggest.email,
                         onChange: (checked) => onSettingsUpdate({ autosuggest: { email: checked } }),
                     },
@@ -116,7 +114,7 @@ const getSettings =
                     {
                         label: c('Label').t`Show website favicons`,
                         description: c('Info')
-                            .t`If disabled, ${PASS_APP_NAME} will not display the item favicon via ${BRAND_NAME} anonymised image proxy.`,
+                            .t`${PASS_APP_NAME} will display the item favicon via ${BRAND_NAME} anonymised image proxy.`,
                         checked: settings.loadDomainImages,
                         onChange: (loadDomainImages) => onSettingsUpdate({ loadDomainImages }),
                     },
