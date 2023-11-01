@@ -37,6 +37,7 @@ export const PasswordHistoryModal: VFC<ModalProps> = (props) => {
                                 <Icon className="modal-close-icon" name="chevron-left" alt={c('Action').t`Back`} />
                             </Button>,
                             <Button
+                                key="clear-modal-button"
                                 pill
                                 color="norm"
                                 className="text-sm flex-item-noshrink"
