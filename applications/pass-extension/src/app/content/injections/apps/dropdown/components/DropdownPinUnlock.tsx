@@ -53,7 +53,7 @@ export const DropdownPinUnlock: VFC<{
                 <div className="flex-item-fluid">
                     <span className="block text-ellipsis">{c('Title').t`Unlock ${PASS_APP_NAME}`}</span>
                     <span className={clsx('block color-weak text-sm text-ellipsis')}>{c('Info')
-                        .t`Enter your pin code`}</span>
+                        .t`Enter your PIN code`}</span>
                 </div>
             </div>
 
