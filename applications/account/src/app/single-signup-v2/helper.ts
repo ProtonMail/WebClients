@@ -465,7 +465,7 @@ export const getUserInfo = async ({
     await api(updateFeatureValue(FeatureCode.PassSignup, true)).catch(noop);
 
     if (
-        (user && hasAccess(toApp, user) && options.coupon !== COUPON_CODES.BLACK_FRIDAY_2023) ||
+        (user && hasAccess(toApp, user) && (options.coupon !== COUPON_CODES.BLACK_FRIDAY_2023 || !state.payable)) ||
         [
             PLANS.NEW_VISIONARY,
             PLANS.BUNDLE_PRO,
