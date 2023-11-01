@@ -44,7 +44,7 @@ export const getAliasOptionsFailure = createAction(
 export const getAliasDetailsIntent = createAction(
     'alias::details::get::intent',
     (payload: { shareId: string; itemId: string; aliasEmail: string }) =>
-        pipe(withRequest({ type: 'start', id: aliasDetailsRequest(payload.shareId) }), withCacheBlock)({ payload })
+        pipe(withRequest({ type: 'start', id: aliasDetailsRequest(payload.aliasEmail) }), withCacheBlock)({ payload })
 );
 
 export const getAliasDetailsSuccess = createAction(
