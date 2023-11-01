@@ -61,7 +61,7 @@ const OutgoingForwardActions = ({ user, forward }: Props) => {
                 onClick: async () => {
                     const [forwarderAddressKeys, forwardeePublicKeys] = await Promise.all([
                         getAddressKeys(forward.ForwarderAddressID),
-                        getPublicKeys(forward.ForwardeeEmail),
+                        getPublicKeys({ email: forward.ForwardeeEmail }),
                     ]);
                     await enableForwarding({
                         api,
