@@ -266,8 +266,8 @@
       "Invite user": [
         "Undang pengguna"
       ],
-      "Keep my ${ vpnPlanNameShort } subscription": [
-        "Pertahankan langganan ${ vpnPlanNameShort } saya"
+      "Keep my Plus subscription": [
+        "Pertahankan langganan Plus saya"
       ],
       "Let's talk": [
         "Mari berbincang"
@@ -2925,8 +2925,8 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Apabila Anda merasa ini adalah sebuah kesalahan, silakan hubungi kami ${ contactLink }."
       ],
-      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "Apabila Anda membatalkan langganan, paket ${ vpnPlanName } Anda tidak akan diperbarui ketika langganan ini berakhir pada tanggal ${ expiryDate }"
+      "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Apabila Anda membatalkan langganan, paket ${ planTitle } Anda tidak akan diperbarui ketika paket ini berakhir pada ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Apabila Anda tidak menemukan surel yang bersangkutan di dalam kotak masuk, mohon periksa folder spam Anda."
@@ -3291,6 +3291,9 @@
       "Thank you": [
         "Terima kasih"
       ],
+      "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
+        "Terima kasih karena telah mendukung misi kami untuk mewujudkan internet yang mengutamakan privasi dan kebebasan."
+      ],
       "The following addresses are invalid.": [
         "Alamat berikut tidak valid."
       ],
@@ -3642,8 +3645,11 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Anda akan dialihkan ke ${ destination } setelah masuk."
       ],
-      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
-        "Anda akan kehilangan akses ke server dan fitur ${ vpnPlanNameShort } pada tanggal ini."
+      "You will lose access to Plus features on this date.": [
+        "Anda akan kehilangan akses ke berbagai fitur Plus pada tanggal ini."
+      ],
+      "You will lose access to Plus servers and features on this date.": [
+        "Anda akan kehilangan akses ke berbagai server dan fitur Plus pada tanggal ini."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Anda akan butuh alamat ${ BRAND_NAME } untuk dapat menggunakan ${ MAIL_APP_NAME } dan ${ CALENDAR_APP_NAME }"
@@ -3674,6 +3680,9 @@
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah dibatasi. Apabila Anda terus-menerus lalai membayar, surel dan tautan berbagi Anda akan diblokir. ${ payInvoiceLink }"
+      ],
+      "Your account was successfully updated with this promotion": [
+        "Akun Anda berhasil diperbarui dengan promosi ini"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Akun Anda akan diperbarui setelah pembayaran Anda diterima."
@@ -6354,9 +6363,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME } Premium"
-      ],
-      "Premium Password Manager": [
-        "Password Manager Premium"
       ]
     },
     "summer2023: Tooltip": {

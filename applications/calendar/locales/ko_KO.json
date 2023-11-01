@@ -673,6 +673,17 @@
         "그룹을 가지고 있지 않습니다."
       ]
     },
+    "Addon": {
+      "${ domains } custom domains": [
+        "${ domains } 개 사용자 지정 이메일 도메인"
+      ],
+      "${ ips } servers": [
+        "${ ips }개 서버"
+      ],
+      "${ users } users": [
+        "${ users }명 사용자"
+      ]
+    },
     "Alarm notification": {
       "${ title } started at ${ formattedHour }": [
         "${ title } 가 ${ formattedHour } 에 시작"
@@ -1027,6 +1038,11 @@
     "Calendar view; more events collapsed": {
       "${ more } more": [
         "${ more } 명 더"
+      ]
+    },
+    "Checkout row": {
+      "${ users } users": [
+        "${ users } 사용자"
       ]
     },
     "Collapsible tooltip": {
@@ -3500,6 +3516,9 @@
       "${ selectedFoldersCountLocalized } labels selected": [
         "${ selectedFoldersCountLocalized }개 라벨 선택함"
       ],
+      "${ storage } storage": [
+        "${ storage } 저장공간"
+      ],
       "${ updated } contacts updated successfully.": [
         "${ updated } 연락처가 성공적으로 업데이트 되었습니다."
       ],
@@ -3881,6 +3900,9 @@
       "Previous modifications on this series will be lost.": [
         "이 시리즈에 대한 이전 수정 사항은 손실됩니다."
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "가격에는 귀하의 계정에 저장된 모든 적용 가능한 주기 기반 할인과 만료되지 않은 쿠폰이 포함되어 있습니다."
+      ],
       "Primary": [
         "우선 순위"
       ],
@@ -3995,8 +4017,23 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "주소 검증을 사용하려면 신뢰할 수 있는 키를 활성화하고 이 주소의 기본 키를 포함하여 사용 가능한 하나 이상의 공개 키를 신뢰해야 합니다. 이렇게 하면 암호화 키가 위조되지 않습니다."
       ],
+      "Total email addresses": [
+        "총 이메일 주소"
+      ],
+      "Total storage": [
+        "총 저장공간"
+      ],
+      "Total supported domains": [
+        "총 지원 도메인"
+      ],
+      "Total VPN connections": [
+        "총 VPN 연결"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "출시되지 않은 새로운 ${ BRAND_NAME } 기능, 업데이트, 제품들을 사용해보세요. 이렇게 하면 애플리케이션이 새로고침됩니다"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "최대 ${ FAMILY_MAX_USERS }명 구성원"
       ],
       "Update recurring event": [
         "반복 이벤트 업데이트"
@@ -6117,9 +6154,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "프리미엄 암호 관리자"
       ]
     },
     "summer2023: Tooltip": {

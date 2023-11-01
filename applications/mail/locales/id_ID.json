@@ -229,6 +229,9 @@
       "Continue with Google": [
         "Lanjutkan dengan Google"
       ],
+      "Continue with Outlook": [
+        "Lanjut dengan Outlook"
+      ],
       "Contract composer": [
         "Ciutkan komposer"
       ],
@@ -505,6 +508,12 @@
       "Import from .csv or vCard": [
         "Impor dari .csv atau vCard"
       ],
+      "Import from Google": [
+        "Impor dari Google"
+      ],
+      "Import from Outlook": [
+        "Impor dari Outlook"
+      ],
       "In the morning": [
         "Di pagi hari"
       ],
@@ -700,10 +709,10 @@
       "Not saved": [
         "Belum disimpan"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -1204,6 +1213,17 @@
         "Pesan kedaluwarsa"
       ]
     },
+    "Addon": {
+      "${ domains } custom domains": [
+        "${ domains } domain khusus"
+      ],
+      "${ ips } servers": [
+        "${ ips } server"
+      ],
+      "${ users } users": [
+        "${ users } pengguna"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Dengan keluar sekarang, beberapa kontak mungkin tidak diimpor"
@@ -1660,6 +1680,11 @@
       ],
       "Cancel expiration": [
         "Batalkan kedaluwarsa pesan"
+      ]
+    },
+    "Checkout row": {
+      "${ users } users": [
+        "${ users } pengguna"
       ]
     },
     "Collapsible tooltip": {
@@ -2908,6 +2933,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Enkripsi dan impor kontak memakan beberapa menit. Anda dapat menutup jendela ini setelah proses selesai."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Untuk mengimpor kontak melalui berkas CSV dan VCF, pastikan berkas Anda tidak melebihi batas ukuran ${ MAX_IMPORT_FILE_SIZE_STRING } atau batas jumlah ${ MAX_IMPORT_CONTACTS_STRING } kontak. Apabila berkas Anda melebihi batas ukuran yang ada, silakan pecahkan berkas Anda ke beberapa berkas yang lebih kecil. ${ learnMoreLink }"
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sepertinya daftar kontak yang Anda impor mengandung beberapa grup. Mohon periksa bagaimana grup ini diimpor."
       ],
@@ -2931,6 +2959,9 @@
       ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Hemat waktu Anda dengan fitur pengiriman surel atau undangan massal, yang merupakan satu dari sekian banyak fitur premium yang tersedia. Tingkatkan paket Anda sekarang juga."
+      ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Untuk mengimpor kontak Anda dari Google atau Outlook, ${ easySwitchLink }."
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Aktifkan perlindungan pelacak surel untuk mencegah pengiklan dan pihak lainnya dari melacak lokasi dan aktivitas online Anda."
@@ -2958,6 +2989,11 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Anda dapat menandai kontak-kontak yang tidak ingin digabung atau disimpan. Penghapusan akan dilakukan setelah Anda menekan tombol gabung"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gunakan alat bantu impor Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4720,6 +4756,9 @@
       "${ selectedFoldersCountLocalized } labels selected": [
         "${ selectedFoldersCountLocalized } label dipilih"
       ],
+      "${ storage } storage": [
+        "Kuota penyimpanan ${ storage }"
+      ],
       "${ total } conversations": [
         "${ total } percakapan"
       ],
@@ -5401,6 +5440,9 @@
       "Preview for this file type is not supported": [
         "Pratinjau untuk tipe berkas ini tidak didukung"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Harga termasuk seluruh diskon berbasis siklus yang berlaku dan kupon tanpa tanggal berakhir yang disimpan di akun Anda."
+      ],
       "Primary": [
         "Utama"
       ],
@@ -5704,6 +5746,18 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Pesan yang akan dikirim sudah terlalu banyak. Mohon tunggu sejenak sebelum Anda menjadwalkan pengiriman pesan ini."
       ],
+      "Total email addresses": [
+        "Total alamat surel"
+      ],
+      "Total storage": [
+        "Total kuota penyimpanan"
+      ],
+      "Total supported domains": [
+        "Total domain yang didukung"
+      ],
+      "Total VPN connections": [
+        "Total koneksi VPN"
+      ],
       "Trackers blocked:": [
         "Pelacak yang diblokir:"
       ],
@@ -5724,6 +5778,9 @@
       ],
       "Unsupported file": [
         "Berkas tidak didukung"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Hingga ${ FAMILY_MAX_USERS } pengguna"
       ],
       "Updating message content search...": [
         "Memperbarui pencarian konten pesan..."
@@ -8495,9 +8552,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME } Premium"
-      ],
-      "Premium Password Manager": [
-        "Password Manager Premium"
       ]
     },
     "summer2023: Tooltip": {

@@ -769,6 +769,14 @@
         "У вас нет групп."
       ]
     },
+    "Addon": {
+      "${ users } user": [
+        "${ users } пользователь",
+        "${ users } пользователя",
+        "${ users } пользователей",
+        "${ users } пользователей"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Если выйти сейчас, импорт некоторых контактов не завершится"
@@ -835,6 +843,18 @@
       ],
       "High speed streaming": [
         "Высокоскоростной стриминг"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Платная версия ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Платные версии ${ MAIL_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Платная версия ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Платная версия менеджера паролей"
       ]
     },
     "bf2023: Footer": {
@@ -976,6 +996,14 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продолжить, используя ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } пользователь",
+        "${ users } пользователя",
+        "${ users } пользователей",
+        "${ users } пользователей"
       ]
     },
     "Collapsible tooltip": {
@@ -3360,6 +3388,9 @@
       "${ speed }/s": [
         "${ speed }/с"
       ],
+      "${ storage } storage": [
+        "${ storage } хранилища"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } контакт успешно обновлен.",
         "${ updated } контакта успешно обновлено.",
@@ -3990,6 +4021,9 @@
       "Previous versions are not saved": [
         "Предыдущие версии не сохраняются"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Стоимость указана с учетом всех применимых циклических скидок и не истекших купонов, сохраненных в вашем аккаунте."
+      ],
       "Primary": [
         "Основной"
       ],
@@ -4191,6 +4225,18 @@
       "Today": [
         "Сегодня"
       ],
+      "Total email addresses": [
+        "Всего адресов электронной почты"
+      ],
+      "Total storage": [
+        "Общий объем хранилища"
+      ],
+      "Total supported domains": [
+        "Всего поддерживаемых доменов"
+      ],
+      "Total VPN connections": [
+        "Всего подключений к VPN"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "Отменена передача файла \"${ name }\""
       ],
@@ -4223,6 +4269,9 @@
       ],
       "Unsupported file": [
         "Неподдерживаемый файл"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "До ${ FAMILY_MAX_USERS } пользователей"
       ],
       "Updating drive search...": [
         "Обновляем поиск по хранилищу..."
@@ -6064,11 +6113,6 @@
       ],
       "2 years": [
         "2 года"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium Password Manager": [
-        "Платная версия менеджера паролей"
       ]
     },
     "summer2023: Tooltip": {

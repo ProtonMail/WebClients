@@ -688,10 +688,10 @@
       "Not saved": [
         "未保存"
       ],
-      "Ok": [
+      "OK": [
         "确定"
       ],
-      "OK": [
+      "Ok": [
         "确定"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -1189,6 +1189,17 @@
         "过期邮件"
       ]
     },
+    "Addon": {
+      "${ domains } custom domains": [
+        "${ domains } 个自定义域"
+      ],
+      "${ ips } servers": [
+        "${ ips } 个服务器"
+      ],
+      "${ users } users": [
+        "${ users } 位用户"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "如果现在离开，一些联系人可能无法导入"
@@ -1639,6 +1650,11 @@
       ],
       "Cancel expiration": [
         "取消有效期"
+      ]
+    },
+    "Checkout row": {
+      "${ users } users": [
+        "${ users } 位用户"
       ]
     },
     "Collapsible tooltip": {
@@ -4629,6 +4645,9 @@
       "${ selectedFoldersCountLocalized } labels selected": [
         "已选择 ${ selectedFoldersCountLocalized } 个标签"
       ],
+      "${ storage } storage": [
+        "${ storage } 存储空间"
+      ],
       "${ total } conversations": [
         "${ total } 条会话"
       ],
@@ -5295,6 +5314,9 @@
       "Preview for this file type is not supported": [
         "此文件类型暂不支持预览"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "价格包括所有适用的基于周期的折扣与保存在您账户中的未过期的优惠券。"
+      ],
       "Primary": [
         "主要"
       ],
@@ -5598,6 +5620,18 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "待发送的邮件过多，请静待另一封邮件发送后陆续发送此邮件。"
       ],
+      "Total email addresses": [
+        "邮箱地址总数"
+      ],
+      "Total storage": [
+        "存储空间总量"
+      ],
+      "Total supported domains": [
+        "自有域名总数"
+      ],
+      "Total VPN connections": [
+        "VPN 同时在线设备总数"
+      ],
       "Trackers blocked:": [
         "已屏蔽的跟踪器："
       ],
@@ -5618,6 +5652,9 @@
       ],
       "Unsupported file": [
         "不支持文件"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "最多 ${ FAMILY_MAX_USERS } 个用户"
       ],
       "Updating message content search...": [
         "正在更新邮件内容..."
@@ -8345,11 +8382,6 @@
       ],
       "2 years": [
         "两年"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium Password Manager": [
-        "高级密码管理器"
       ]
     },
     "summer2023: Tooltip": {

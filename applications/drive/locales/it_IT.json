@@ -776,6 +776,20 @@
         "Non hai nessun gruppo."
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } dominio personalizzato",
+        "${ domains } domini personalizzati"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } server"
+      ],
+      "${ users } user": [
+        "${ users } utente",
+        "${ users } utenti"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Uscendo ora, alcuni contatti potrebbero non essere importati"
@@ -842,6 +856,18 @@
       ],
       "High speed streaming": [
         "Streaming ad alta velocità"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Password manager premium"
       ]
     },
     "bf2023: Footer": {
@@ -981,6 +1007,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continua a usare ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } utente",
+        "${ users } utenti"
       ]
     },
     "Collapsible tooltip": {
@@ -1950,7 +1982,7 @@
         "Crittografia e importazione dei contatti... L'operazione potrebbe richiedere alcuni minuti. Quando il processo sarà completato, potrai chiudere questa finestra."
       ],
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Per l'importazione tramite file CSV e VCF, assicurati che il file non superi i contatti ${ MAX_IMPORT_FILE_SIZE_STRING } o ${ MAX_IMPORT_CONTACTS_STRING }. Se il tuo file è più grande, dividilo in file più piccoli. ${ learnMoreLink }."
+        "Per importare tramite file CSV o VCF, assicurati che il file non superi i ${ MAX_IMPORT_FILE_SIZE_STRING } o i ${ MAX_IMPORT_CONTACTS_STRING } contatti. Se il tuo file è più grande, dividilo in file più piccoli. ${ learnMoreLink }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sembra che l'elenco dei contatti che stai importando contenga alcuni gruppi. Verifica come devono essere importati questi gruppi."
@@ -1979,7 +2011,7 @@
     },
     "description": {
       "use the Easy Switch import assistant": [
-        "utilizza l'assistente di importazione Easy Switch"
+        "usa l'assistente di importazione Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2253,7 +2285,7 @@
         "Impossibile eliminare alcuni contatti"
       ],
       "Some files were ignored because they are not supported in Photos": [
-        "Alcuni file sono stati ignorati perché non supportati da Foto."
+        "Alcuni file sono stati ignorati perché non sono supportati in Foto."
       ],
       "Some groups could not be deleted": [
         "Impossibile eliminare alcuni gruppi"
@@ -3310,6 +3342,9 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
+      "${ storage } storage": [
+        "${ storage } di archiviazione"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contatto aggiornato con successo.",
         "${ updated } contatti aggiornati con successo."
@@ -3388,7 +3423,7 @@
         "Sei sicuro di voler eliminare definitivamente gli elementi selezionati dal cestino?"
       ],
       "As soon as you have photos or videos on your device, they will appear here.": [
-        "Appena avrai foto o video sul tuo dispositivo, queste appariranno qui."
+        "Appena avrai foto o video sul tuo dispositivo, questi appariranno qui."
       ],
       "Attention required": [
         "Attenzione"
@@ -3812,7 +3847,7 @@
         "No"
       ],
       "No contacts added yet": [
-        "Nessun contatto ancora aggiunto"
+        "Non sono ancora stati aggiunti contatti"
       ],
       "No email address": [
         "Nessun indirizzo email"
@@ -3824,7 +3859,7 @@
         "Nessun gruppo trovato"
       ],
       "No photos yet": [
-        "Ancora nessuna foto"
+        "Non ci sono ancora foto"
       ],
       "No results found": [
         "Nessun risultato trovato"
@@ -3845,7 +3880,7 @@
         "Nota: i dati potrebbero essere ancora disponibili localmente sui dispositivi su cui hai installato ${ DRIVE_APP_NAME }."
       ],
       "Nothing here yet": [
-        "Ancora niente qui"
+        "Non c'è ancora niente qui"
       ],
       "of": [
         "di"
@@ -3930,6 +3965,9 @@
       "Previous versions are not saved": [
         "Le versioni precedenti non sono salvate."
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Il prezzo include tutti gli sconti applicabili basati sul periodo e i coupon non scaduti salvati nel tuo account."
+      ],
       "Primary": [
         "Principale"
       ],
@@ -3970,7 +4008,7 @@
         "Ricerca Abilitata"
       ],
       "Select all items for": [
-        "Seleziona tutti gli elementi per"
+        "Seleziona tutti gli elementi di"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Seleziona un file o una cartella caricati e crea un link."
@@ -4063,7 +4101,7 @@
         "Ci sono file che devono ancora essere trasferiti. La chiusura del gestore trasferimenti interromperà tutte le operazioni."
       ],
       "There are no files yet": [
-        "File non ancora presenti"
+        "Non ci sono ancora file"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Questo account è stato sospeso a causa di una potenziale violazione delle politiche."
@@ -4141,6 +4179,18 @@
       "Today": [
         "Oggi"
       ],
+      "Total email addresses": [
+        "Totale indirizzi email"
+      ],
+      "Total storage": [
+        "Spazio totale"
+      ],
+      "Total supported domains": [
+        "Totale domini supportati"
+      ],
+      "Total VPN connections": [
+        "Totale connessioni VPN"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "Trasferimento annullato per il file \"${ name }\""
       ],
@@ -4177,6 +4227,9 @@
       "Unsupported file": [
         "File non supportato"
       ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Fino a ${ FAMILY_MAX_USERS } utenti"
+      ],
       "Updating drive search...": [
         "Aggiornamento della ricerca di unità in corso..."
       ],
@@ -4196,10 +4249,10 @@
         "Utilizza questo modulo per informarci di contenuti inappropriati, illegali,\no altri file condivisi dannosi. Stai per segnalare:"
       ],
       "Version is deleted": [
-        "Versione eliminata"
+        "La versione è stata eliminata"
       ],
       "Version is restored": [
-        "La versione è ripristinata."
+        "La versione è stata ripristinata"
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "Ce n'è di strada da percorrere, hai appena raddoppiato il tuo spazio di archiviazione gratuito!"
@@ -6050,9 +6103,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME } premium"
-      ],
-      "Premium Password Manager": [
-        "Password manager premium"
       ]
     },
     "summer2023: Tooltip": {
@@ -6652,7 +6702,7 @@
         "Non hai nessun file da condividere"
       ],
       "You have no folders yet": [
-        "Non sono ancora presenti cartelle"
+        "Non ci sono ancora cartelle"
       ],
       "Your 500 MB bonus": [
         "Il tuo bonus di 500 MB"

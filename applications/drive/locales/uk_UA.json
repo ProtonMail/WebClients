@@ -769,6 +769,26 @@
         "У вас немає жодної групи."
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } власний домен",
+        "${ domains } власні домени",
+        "${ domains } власних доменів",
+        "${ domains } власних доменів"
+      ],
+      "${ ips } server": [
+        "${ ips } сервер",
+        "${ ips } сервери",
+        "${ ips } серверів",
+        "${ ips } серверів"
+      ],
+      "${ users } user": [
+        "${ users } користувач",
+        "${ users } користувачі",
+        "${ users } користувачів",
+        "${ users } користувачів"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Якщо ви зараз вийдете, деякі контакти можуть не імпортуватися"
@@ -890,6 +910,14 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продовжити за допомогою ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } користувач",
+        "${ users } користувачі",
+        "${ users } користувачів",
+        "${ users } користувача"
       ]
     },
     "Collapsible tooltip": {
@@ -3277,6 +3305,9 @@
       "${ speed }/s": [
         "${ speed }/с"
       ],
+      "${ storage } storage": [
+        "${ storage } сховища"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } контакт успішно оновлений.",
         "${ updated } контакти успішно оновлені.",
@@ -3910,6 +3941,9 @@
       "Previous versions are not saved": [
         "Попередні версії не збережено"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Ціна включає усі повторювані знижки та чинні купони вашого облікового запису."
+      ],
       "Primary": [
         "Основний"
       ],
@@ -4114,6 +4148,18 @@
       "Today": [
         "Сьогодні"
       ],
+      "Total email addresses": [
+        "Усього адрес електронної пошти"
+      ],
+      "Total storage": [
+        "Усього сховища"
+      ],
+      "Total supported domains": [
+        "Усього підтримуваних доменів"
+      ],
+      "Total VPN connections": [
+        "Усього VPN-з'єднань"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "Передавання скасовано для файлу \"${ name }\""
       ],
@@ -4149,6 +4195,9 @@
       ],
       "Unsupported file": [
         "Непідтримуваний файл"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "До ${ FAMILY_MAX_USERS } користувачів"
       ],
       "Updating drive search...": [
         "Оновлення пошуку на диску..."
@@ -5919,11 +5968,6 @@
       ],
       "2 years": [
         "2 роки"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium Password Manager": [
-        "Premium Менеджер паролів"
       ]
     },
     "summer2023: Tooltip": {

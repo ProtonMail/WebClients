@@ -116,6 +116,9 @@
       "Clear query": [
         "Keresés törlése"
       ],
+      "Clear selection": [
+        "Kijelölés megszüntetése "
+      ],
       "Click here.": [
         "Kattintson ide."
       ],
@@ -160,6 +163,9 @@
       ],
       "Continue with Google": [
         "Folytatás Google fiókkal"
+      ],
+      "Continue with Outlook": [
+        "Folytassa az Outlookkal"
       ],
       "Copy address": [
         "Cím másolása"
@@ -366,6 +372,12 @@
       ],
       "Import from .csv or vCard": [
         "Importálás .csv vagy vCard fájlból"
+      ],
+      "Import from Google": [
+        "Importálás a Google-ból"
+      ],
+      "Import from Outlook": [
+        "Importálás az Outlookból"
       ],
       "Learn more": [
         "További információk"
@@ -703,6 +715,9 @@
       "Upload folder": [
         "Mappa feltöltése"
       ],
+      "Upload photos": [
+        "Fényképek feltöltése"
+      ],
       "Upload picture": [
         "Kép feltöltése"
       ],
@@ -759,6 +774,20 @@
       ],
       "You don't have any groups.": [
         "Még nincsenek csoportok."
+      ]
+    },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } saját domain név",
+        "${ domains } saját domain név"
+      ],
+      "${ ips } server": [
+        "${ ips } szerver",
+        "${ ips } szerver"
+      ],
+      "${ users } user": [
+        "${ users } felhasználó",
+        "${ users } felhasználó"
       ]
     },
     "Alert": {
@@ -882,6 +911,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Folytatás ezzel: ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } felhasználó",
+        "${ users } felhasználó"
       ]
     },
     "Collapsible tooltip": {
@@ -1850,6 +1885,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek betöltése és titkosítása. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSV- és VCF-fájlon keresztüli importálás esetén ügyeljen arra, hogy a fájl ne haladja meg a ${ MAX_IMPORT_FILE_SIZE_STRING } vagy a ${ MAX_IMPORT_CONTACTS_STRING } névjegyet. Ha a fájl nagyobb, ossza fel kisebb fájlokra. ${ learnMoreLink }."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Az importálás alatt álló fájl csoportokat is tartalmaz. Határozza meg, hogyan kerüljenek importálásra a csoportok."
       ],
@@ -1862,6 +1900,9 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Takarítson meg időt azzal, hogy mindenkinek egyszerre elküldi az e-mailt vagy meghívókat. Ez egy prémium lehetőség, sok másikkal együtt. Váltson nagyobb csomagra."
       ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Névjegyeinek importálásához a Google-ból vagy az Outlookból: ${ easySwitchLink }."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Húzással határozza meg az egyesítés prioritását. Szüntesse meg a kijelölést azoknál, amelyeket nem szeretne egyesíteni."
       ],
@@ -1870,6 +1911,11 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Amelyekből egyiket sem szeretné megtartani, azokat törlésre jelölheti. A törlés az egyesítés gomb megnyomása után fog megtörténni"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "használja az Easy Switch importálási asszisztenst"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2141,6 +2187,9 @@
       ],
       "Some contacts could not be deleted": [
         "Néhány névjegy törlése nem sikerült"
+      ],
+      "Some files were ignored because they are not supported in Photos": [
+        "Egyes fájlokat figyelmen kívül hagyott, mert azokat a Fotók nem támogatja"
       ],
       "Some groups could not be deleted": [
         "Néhány csoport törlése nem sikerült"
@@ -2705,6 +2754,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -2723,6 +2775,10 @@
       "Megabyte": [
         "Megabájt",
         "Megabájt"
+      ],
+      "Terabyte": [
+        "Terabájt",
+        "Terabájt"
       ]
     },
     "Filter notification": {
@@ -3186,6 +3242,9 @@
       "${ speed }/s": [
         "${ speed }/mp"
       ],
+      "${ storage } storage": [
+        "${ storage } tárhely"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } névjegy sikeresen frissítve.",
         "${ updated } névjegy sikeresen frissítve."
@@ -3262,6 +3321,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Biztos, hogy véglegesen törli a kijelölt elemeket a lomtárból?"
+      ],
+      "As soon as you have photos or videos on your device, they will appear here.": [
+        "Amint fényképek vagy videók vannak a készülékén, azok itt fognak megjelenni."
       ],
       "Attention required": [
         "Figyelem szükséges"
@@ -3693,6 +3755,9 @@
       "No group found": [
         "Nem található csoport"
       ],
+      "No photos yet": [
+        "Nincsenek képek"
+      ],
       "No results found": [
         "Nincs találat"
       ],
@@ -3797,6 +3862,9 @@
       "Previous versions are not saved": [
         "A korábbi változatok nincsenek tárolva"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Az ár tartalmaz minden vonatkozó, megújulás-alapú kedvezményt és a fiókjában mentett, le nem járt kupont."
+      ],
       "Primary": [
         "Elsődleges"
       ],
@@ -3836,8 +3904,14 @@
       "Search Enabled": [
         "Keresés engedélyezve"
       ],
+      "Select all items for": [
+        "Összes elem kiválasztása"
+      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Hivatkozás létrehozásához, válasszon ki egy feltöltött fájlt vagy mappát."
+      ],
+      "Select item": [
+        "Elem kiválasztása"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Válassza ki az e-mail alapértelmezett formátumát, erre a címre való küldéshez."
@@ -3956,6 +4030,9 @@
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
         "A hivatkozás véglegesen letiltásra kerül. Azok, akikkel korábban megosztotta, nem fognak hozzáférni a mappához. A mappa újbóli megosztásához egy új hivatkozásra lesz szükség."
       ],
+      "This month": [
+        "Ebben a hónapban"
+      ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Ez törli a hivatkozást és megszünteti a fájl vagy mappa elérhetőségét azok számára, akiknek elküldte.",
         "Ez törli a hivatkozásokat és megszünteti a fájlok vagy mappák elérhetőségét azok számára, akiknek elküldte."
@@ -3999,6 +4076,18 @@
       "Today": [
         "Ma"
       ],
+      "Total email addresses": [
+        "Összes e-mail cím"
+      ],
+      "Total storage": [
+        "Összes tárhely"
+      ],
+      "Total supported domains": [
+        "Összes támogatott domain név"
+      ],
+      "Total VPN connections": [
+        "Összes VPN kapcsolat"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "\"${ name }\" fájl átvitele megszakítva"
       ],
@@ -4035,6 +4124,9 @@
       "Unsupported file": [
         "Ismeretlen file"
       ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Legfeljebb ${ FAMILY_MAX_USERS } felhasználó"
+      ],
       "Updating drive search...": [
         "Felhőtárban keresés frissítése..."
       ],
@@ -4061,6 +4153,9 @@
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "Csak így tovább, megduplázta ingyenes tárhelyét!"
+      ],
+      "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
+        "Technikai problémákkal küzdünk. Az új fényképek feltöltése ideiglenesen nem lehetséges."
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Nem tudtuk megerősíteni, hogy ${ emailAddress } töltötte fel ezt: ${ fileName }."
@@ -4577,6 +4672,9 @@
       "Phone number": [
         "Telefonszám"
       ],
+      "Photo": [
+        "Fénykép"
+      ],
       "Please provide full details to help us take appropriate action": [
         "Kérjük, adja meg nekünk az összes részletet, hogy segíteni tudjon nekünk megtenni a megfelelő lépéseket"
       ],
@@ -4761,6 +4859,9 @@
       ],
       "Pay invoice": [
         "Számla kifizetése"
+      ],
+      "Photos": [
+        "Fényképek"
       ],
       "Reactivate now": [
         "Újraaktiválás most"
@@ -5899,9 +6000,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Prémium ${ MAIL_SHORT_APP_NAME } és ${ CALENDAR_SHORT_APP_NAME }."
-      ],
-      "Premium Password Manager": [
-        "Prémium jelszókezelő"
       ]
     },
     "summer2023: Tooltip": {
@@ -6334,6 +6432,9 @@
       ],
       "Phone numbers": [
         "Telefonszámok"
+      ],
+      "Photos": [
+        "Fényképek"
       ],
       "Preview": [
         "Előnézet"

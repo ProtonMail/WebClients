@@ -563,9 +563,6 @@
       "Keep": [
         "Tut"
       ],
-      "Keep my ${ vpnPlanNameShort } subscription": [
-        "${ vpnPlanNameShort } aboneliğimi koru"
-      ],
       "label emails as": [
         "e-postalar şöyle etiketlensin"
       ],
@@ -634,6 +631,9 @@
       ],
       "Open navigation": [
         "Gezinmeyi aç"
+      ],
+      "Or": [
+        "Ya da"
       ],
       "Ordered list": [
         "Numaralı liste"
@@ -898,6 +898,9 @@
       ],
       "Sign out of all accounts": [
         "Tüm hesapların oturumunu kapat"
+      ],
+      "sign up for free": [
+        "ücretsiz hesap açın"
       ],
       "Signing in": [
         "Oturum açılıyor"
@@ -5397,6 +5400,10 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } adres",
+        "${ amountOfAddresses } adres"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
       ],
@@ -5478,6 +5485,9 @@
         "Yüklenen ${ numberOfNonPrivateKeys } dosya geçerli bir kişisel anahtar değil. Lütfen doğrulayıp yeniden deneyin.",
         "Yüklenen ${ numberOfNonPrivateKeys } dosya geçerli bir kişisel anahtar değil. Lütfen doğrulayıp yeniden deneyin."
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "${ plan } kaldırıldı. Paket fırsatı 1 aylık tarife ile kullanılamaz."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } için size ayrılmış en az 1 sunucu gereklidir ${ serverPricePerMonth }"
       ],
@@ -5495,6 +5505,14 @@
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } sunucu henüz kuruluyor. Bu işlem genellikle ${ provisioningDuration } içinde tamamlanır.",
         "${ provisioningCounter } sunucu henüz kuruluyor. Bu işlem genellikle ${ provisioningDuration } içinde tamamlanır."
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } diğer",
+        "${ remainingAddresses.length } diğer"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length } diğer adres",
+        "${ remainingAddresses.length } diğer adres"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } / ${ providerCalendars.length } takvim",
@@ -5827,6 +5845,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Yeni adreslerinizden e-posta gönderip almaya başlamadan önce, adresler için şifreleme anahtarlarını oluşturmalısınız."
+      ],
+      "Billed at ${ price }": [
+        "${ price } olarak faturalandı"
       ],
       "Billing cycle: ${ text }": [
         "Faturalama dönemi: ${ text }"
@@ -6179,9 +6200,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Bir yanlışlık olduğunu düşünüyorsanız, lütfen ${ contactLink } üzerinden bizimle görüşün."
-      ],
-      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "İptal ederseniz, ${ vpnPlanName } aboneliğiniz ${ expiryDate } tarihinde sona erdiğinde yenilenmeyecek."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "E-postayı Gelen kutunuzda göremezseniz, İstenmeyen kutusuna bakmayı unutmayın."
@@ -6650,6 +6668,9 @@
       "Priority support": [
         "Öncelikli destek"
       ],
+      "Promotion expired": [
+        "Fırsatın süresi dolmuş"
+      ],
       "Protected by Swiss privacy laws": [
         "İsviçre gizlilik yasaları tarafından korunmaktadır"
       ],
@@ -6724,6 +6745,9 @@
       ],
       "Right to Left": [
         "Sağdan sola"
+      ],
+      "Save ${ percentage }": [
+        "${ percentage } indirim"
       ],
       "Save your password somewhere safe.": [
         "Parolanızı güvenli bir yerde saklayın."
@@ -6815,6 +6839,9 @@
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF etki alanı adına kimlerin e-posta göndermesine izin verildiğini belirtmek için kullanılır. Bu nedenle SPF kaydınıza ${ MAIL_APP_NAME } eklemenizi önemle öneririz. Lütfen DNS kayıtlarınıza aşağıdaki TXT kaydını ekleyin. Bu işlem genellikle etki alanı kayıt kuruluşunuzun kontrol panosundan yapılabilir."
       ],
+      "Stay tuned for future promotions.": [
+        "Gelecekteki fırsatları kaçırmayın."
+      ],
       "Step ${ step }": [
         "${ step }. adım",
         "${ step }. adım"
@@ -6878,6 +6905,9 @@
       ],
       "Thank you": [
         "Teşekkürler"
+      ],
+      "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
+        "Gizlilik ve özgürlüğe öncelik veren daha iyi bir İnternet oluşturma amacımızı desteklediğiniz için teşekkür ederiz."
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "${ boldDataLocked } iletisi artık görüntülenmeyecek. Ancak yine de ${ encryptionAndKeysLink } altında verilerinizin kilidini açabilirsiniz."
@@ -6968,6 +6998,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir. Lütfen bu bağlantının gerçekten ziyaret etmek istediğiniz bağlantı olduğunu doğrulayın ya da açmayın."
+      ],
+      "This promotion link has expired.": [
+        "Bu fırsat bağlantısının süresi dolmuş."
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Bu pencereyi kapattığınızda bu kod yeniden görülemeyecek ve artık kimse ile paylaşamayacaksınız."
@@ -7096,10 +7129,10 @@
         "İki adımlı doğrulama açıldı"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "İki parola kipinde iki ayrı parola gerekir: Biri hesabınızda oturum açmak için diğeri posta kutunuzun şifresini çözmek için kullanılır. (Gelişmiş)"
+        "İki parola özelliği açıldığında iki ayrı parola gerekir: Biri hesabınızda oturum açmak için diğeri e-posta kutunuzun şifresini çözmek için kullanılır. (Gelişmiş)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "İki parola kipinde, oturum açmak ve posta kutusunun şifresini çözmek için ayrı parolalar kullanılır. Bu seçenek, bazı durumlarda küçük bir güvenlik avantajı sağlar. Ancak çoğu kullanıcıya tek parola kipini kullanmasını öneririz. İki parola kipine geçmek için önce bir oturum açma parolası ve ardından bir posta kutusu parolası belirleyin."
+        "İki parola özelliği açıldığında, oturum açmak ve posta kutusunun şifresini çözmek için ayrı parolalar kullanılır. Bu seçenek, bazı durumlarda küçük bir güvenlik avantajı sağlar. Ancak çoğu kullanıcıya tek parola kullanmasını öneririz. İki parola özelliğini açmak için önce bir oturum açma parolası ve ardından bir posta kutusu parolası belirleyin."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Kurtarma dosyası imzası doğrulanamadı. Lütfen destek ekibi ile görüşün."
@@ -7457,9 +7490,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Oturum açtıktan sonra ${ destination } sayfasına yönlendirileceksiniz."
       ],
-      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
-        "Bu tarihte ${ vpnPlanNameShort } sunucularına ve özelliklerine erişiminizi kaybedeceksiniz."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } ve ${ CALENDAR_APP_NAME } kullanmak için bir ${ BRAND_NAME } adresiniz olmalıdır"
       ],
@@ -7507,6 +7537,9 @@
       ],
       "Your account recovery method is set": [
         "Hesap kurtarma yönteminiz ayarlanmış"
+      ],
+      "Your account was successfully updated with this promotion": [
+        "Hesabınız bu fırsata göre güncellendi"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Ödemeniz onaylandıktan sonra hesabınız güncellenecek."
@@ -8800,7 +8833,7 @@
         "Kod adı"
       ],
       "Two-password mode": [
-        "İki parola kipi"
+        "İki parola özelliği"
       ],
       "Undo send": [
         "Göndermeyi geri alma süresi"
@@ -9988,17 +10021,6 @@
         "Ekip yönetimi"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanımdan kaldırılacak."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Deneme süreniz ${ formattedPeriodEndDate } tarihinde sona eriyor"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, ${ last4 } içinde sona erecek"
@@ -10086,6 +10108,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat ücretinizi kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanımdan kaldırılacak."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Deneme süreniz ${ formattedPeriodEndDate } tarihinde sona eriyor"
       ]
     },
     "new_plans: Label": {
@@ -10854,6 +10887,9 @@
       "Continue": [
         "İlerle"
       ],
+      "Continue to ${ appName } without upgrading": [
+        "Yükseltmeden ${ appName } kullanmayı sürdür"
+      ],
       "Continue to ${ free }": [
         "${ free } ile ilerle"
       ],
@@ -10872,6 +10908,9 @@
       "Download to continue ${ size }": [
         "İlerlemek için ${ size } indirin"
       ],
+      "Keep this plan": [
+        "Bu tarifede kal"
+      ],
       "Or ${ createANewAccount }": [
         "Ya da ${ createANewAccount }un"
       ],
@@ -10880,6 +10919,9 @@
       ],
       "Start using ${ appName } now": [
         "${ appName } kullanmaya başlayın"
+      ],
+      "Upgrade": [
+        "Yükselt"
       ],
       "Upgrade my plan": [
         "Tarifemi yükselt"
@@ -10947,6 +10989,9 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Ancak ayda yalnızca ${ relativePrice } ek ödeme ile **${ unlockPlanTitle }** ve tüm ücretli ${ BRAND_NAME } hizmetlerine erişmek için **${ upsellPlanTitle }** tarifesine yükseltebilirsiniz."
       ],
+      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Ancak **${ upsellPlanTitle }** tarifesine yükselterek **${ unlockPlanTitle }** tarifesine geçebilir ve tüm ücretli ${ BRAND_NAME } hizmetlerine erişebilirsiniz."
+      ],
       "By continuing, you agree to our ${ termsAndConditions }": [
         "İlerleyerek ${ termsAndConditions } metnini kabul etmiş olursunuz"
       ],
@@ -10992,6 +11037,9 @@
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "${ BRAND_NAME } hesabınıza erişiminizi kaybederseniz, **kurtarma paketiniz** oturum açmanızı ve verilerinizi kurtarmanızı sağlar."
       ],
+      "Includes:": [
+        "İçindekiler:"
+      ],
       "Install ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } uygulamasını kurun"
       ],
@@ -11009,9 +11057,6 @@
       ],
       "Launching ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } uygulaması başlatılıyor"
-      ],
-      "Limited time offer: Get ${ title } for free for 1 year!": [
-        "Sınırlı süreli teklif: 1 yıl ücretsiz olarak ${ title } edinin!"
       ],
       "One easy subscription.": [
         "Tek bir kolay abonelik."
@@ -11060,6 +11105,9 @@
       ],
       "Verifying your payment": [
         "Ödemeniz doğrulanıyor"
+      ],
+      "Welcome to ${ shortName } Plus": [
+        "${ shortName } Plus tarifesine hoş geldiniz"
       ],
       "Works on all devices": [
         "Tüm aygıtlarda çalışır"
@@ -12590,9 +12638,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Ücretli ${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Ücretli Parola Yöneticisi"
       ]
     },
     "summer2023: Tooltip": {
@@ -13226,6 +13271,9 @@
       "Folders and labels": [
         "Klasörler ve etiketler"
       ],
+      "Forward and auto-reply": [
+        "İletme ve otomatik yanıtlama"
+      ],
       "Forward emails": [
         "E-postaları ilet"
       ],
@@ -13608,7 +13656,7 @@
         "Tek parola kipine geç"
       ],
       "Switch to two-password mode": [
-        "İki parola kipine geç"
+        "İki parola özelliğini aç"
       ],
       "Take precautions to avoid data loss!": [
         "Verilerin kaybolmasına karşı önlem alın!"
@@ -14180,6 +14228,11 @@
       ],
       "Your ${ selected } plan": [
         "${ selected } tarifeniz"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Secure Core sunucularına erişim, hızlı P2P/BitTorrent indirmeleri, VPN üzerinden Tor ve diğer özellikler"
       ]
     },
     "Warning": {

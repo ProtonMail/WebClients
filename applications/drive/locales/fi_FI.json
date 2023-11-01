@@ -761,6 +761,20 @@
         "Sinulla ei ole ryhmiä."
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } oma verkkotunnus",
+        "${ domains } omaa verkkotunnusta"
+      ],
+      "${ ips } server": [
+        "${ ips } palvelin",
+        "${ ips } palvelinta"
+      ],
+      "${ users } user": [
+        "${ users } käyttäjä",
+        "${ users } käyttäjää"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Jos poistut nyt, kaikkia yhteystietoja ei välttämättä tuoda"
@@ -882,6 +896,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Jatka ${ MAIL_APP_NAME }in käyttämistä."
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } käyttäjä",
+        "${ users } käyttäjää"
       ]
     },
     "Collapsible tooltip": {
@@ -3193,6 +3213,9 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
+      "${ storage } storage": [
+        "${ storage } tallennustilaa"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } yhteystieto päivitettiin.",
         "${ updated } yhteystietoa päivitettiin."
@@ -3807,6 +3830,9 @@
       "Previous versions are not saved": [
         "Edellisiä versioita ei säilytetä"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Hinta sisältää kaikki tilillesi tallennetut soveltuvat tilausjaksopohjaiset alennukset sekä etukoodit."
+      ],
       "Primary": [
         "Ensisijainen"
       ],
@@ -4009,6 +4035,18 @@
       "Today": [
         "Tänään"
       ],
+      "Total email addresses": [
+        "Sähköpostiosoitteita yhteensä"
+      ],
+      "Total storage": [
+        "Tallennustilaa yhteensä"
+      ],
+      "Total supported domains": [
+        "Tuettuja verkkotunnuksia yhteensä"
+      ],
+      "Total VPN connections": [
+        "VPN-yhteyksiä yhteensä"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "Tiedoston \"${ name }\" siirto peruttiin"
       ],
@@ -4044,6 +4082,9 @@
       ],
       "Unsupported file": [
         "Tiedostoa ei tueta"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Enintään ${ FAMILY_MAX_USERS } käyttäjää"
       ],
       "Updating drive search...": [
         "Päivitetään levyhakua..."
@@ -5909,9 +5950,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Premium salasanahallinta"
       ]
     },
     "summer2023: Tooltip": {

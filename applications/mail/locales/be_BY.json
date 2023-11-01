@@ -721,10 +721,10 @@
       "Not saved": [
         "Не захавана"
       ],
-      "Ok": [
+      "OK": [
         "Добра"
       ],
-      "OK": [
+      "Ok": [
         "Добра"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -1231,6 +1231,26 @@
         "Паведамленне з тэрмінам дзеяння"
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } карыстальніцкі дамен",
+        "${ domains } карыстальніцкія дамены",
+        "${ domains } карыстальніцкіх даменаў",
+        "${ domains } карыстальніцкіх даменаў"
+      ],
+      "${ ips } server": [
+        "${ ips } сервер",
+        "${ ips } серверы",
+        "${ ips } сервераў",
+        "${ ips } сервераў"
+      ],
+      "${ users } user": [
+        "${ users } карыстальнік",
+        "${ users } карыстальнікі",
+        "${ users } карыстальнікаў",
+        "${ users } карыстальнікаў"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Калі выйсці цяпер, некаторыя кантакты не будуць імпартаваны"
@@ -1687,6 +1707,14 @@
       ],
       "Cancel expiration": [
         "Скасаваць тэрмін дзеяння"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } карыстальнік",
+        "${ users } карыстальнікі",
+        "${ users } карыстальнікаў",
+        "${ users } карыстальнікі"
       ]
     },
     "Collapsible tooltip": {
@@ -4947,6 +4975,9 @@
         "Выбраны ${ selectedFoldersCountLocalized } метак",
         "Выбраны ${ selectedFoldersCountLocalized } меткі"
       ],
+      "${ storage } storage": [
+        "${ storage } сховішча"
+      ],
       "${ total } conversation": [
         "${ total } размова",
         "${ total } размовы",
@@ -5706,6 +5737,9 @@
       "Preview for this file type is not supported": [
         "Папярэдні прагляд гэтага тыпу файла не падтрымліваецца"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Кошт уключае ўсе падыходзячыя (не пратэрмінаваныя) купоны, якія захаваны ў вашым уліковым запісе."
+      ],
       "Primary": [
         "Асноўны"
       ],
@@ -6018,6 +6052,18 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Занадта шмат паведамленняў чакаюць адпраўкі. Пачакайце, пакуль адправіцца іншае паведамленне, каб запланаваць гэта."
       ],
+      "Total email addresses": [
+        "Колькасць адрасоў электроннай пошты"
+      ],
+      "Total storage": [
+        "Агульны аб'ём сховішча"
+      ],
+      "Total supported domains": [
+        "Колькасць даменаў, якія падтрымліваюцца"
+      ],
+      "Total VPN connections": [
+        "Колькасць падключэнняў па VPN"
+      ],
       "Trackers blocked:": [
         "Праграм сачэння заблакіравана:"
       ],
@@ -6038,6 +6084,9 @@
       ],
       "Unsupported file": [
         "Файл не падтрымліваецца"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Да ${ FAMILY_MAX_USERS } карыстальнікаў"
       ],
       "Updating message content search...": [
         "Абнаўленне пошуку змесціва паведамлення..."
@@ -9019,9 +9068,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Прэміяльны ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Прэміяльныя функцыі менеджара пароляў"
       ]
     },
     "summer2023: Tooltip": {

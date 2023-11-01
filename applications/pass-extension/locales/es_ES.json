@@ -369,6 +369,11 @@
         "¿No aparece tu gestor de contraseñas? Solicítalo."
       ]
     },
+    "bf2023: Info": {
+      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
+        "Ahorra con inteligencia. Contrata Pass Plus durante un año por solo ${ relativePrice } al mes."
+      ]
+    },
     "Button": {
       "More info": [
         "Más información"
@@ -663,6 +668,9 @@
       "${ memberCount } member": [
         "${ memberCount } miembro",
         "${ memberCount } miembros"
+      ],
+      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
+        "${ PASS_APP_NAME } solo importará inicios de sesión, notas y tarjetas de crédito."
       ],
       "${ revisionNumber } time": [
         "${ revisionNumber } vez",

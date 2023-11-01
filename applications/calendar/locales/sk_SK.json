@@ -153,6 +153,9 @@
       "Continue with Google": [
         "Pokračovať cez Google"
       ],
+      "Continue with Outlook": [
+        "Pokračovať s Outlookom"
+      ],
       "Copy address": [
         "Kopírovať adresu"
       ],
@@ -317,6 +320,12 @@
       ],
       "Import from .csv or vCard": [
         "Importovať z .csv alebo vCard"
+      ],
+      "Import from Google": [
+        "Importovať z Google"
+      ],
+      "Import from Outlook": [
+        "Importovať z Outlooku"
       ],
       "Join calendar": [
         "Pripojiť ku kalendáru"
@@ -685,6 +694,26 @@
         "Nemáte žiadne skupiny."
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } vlastná doména",
+        "${ domains } vlastné domény",
+        "${ domains } vlastných domén",
+        "${ domains } vlastných domén"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } servery",
+        "${ ips } serverov",
+        "${ ips } serverov"
+      ],
+      "${ users } user": [
+        "${ users } používateľ",
+        "${ users } používatelia",
+        "${ users } používateľov",
+        "${ users } používateľov"
+      ]
+    },
     "Alarm notification": {
       "${ title } started at ${ formattedHour }": [
         "Udalosť ${ title } začala o ${ formattedHour }"
@@ -1048,6 +1077,14 @@
         "${ more } ďalší",
         "${ more } ďalších",
         "${ more } ďalších"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } užívateľ",
+        "${ users } užívatelia",
+        "${ users } užívateľov",
+        "${ users } užívateľov"
       ]
     },
     "Collapsible tooltip": {
@@ -2109,6 +2146,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrovanie a import kontaktov... Táto akcia môže trvať niekoľko minút. Akonáhle je proces ukončený, môžete zavrieť tento modul."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Pri importovaní prostredníctvom súborov CSV a VCF zabezpečte, aby veľkosť súboru nepresiahla ${ MAX_IMPORT_FILE_SIZE_STRING } alebo ${ MAX_IMPORT_CONTACTS_STRING } kontaktov. Ak je váš súbor väčší, rozdeľte ho na menšie súbory. ${ learnMoreLink }."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá sa, že zoznam kontaktov ktorý importujete, zahŕňa nejaké skupiny. Prosím, skontrolujte ako by tieto skupiny mali byť importované."
       ],
@@ -2124,6 +2164,9 @@
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "Môže to trvať niekoľko minút. Medzitým môžete Calendar používať ako zvyčajne."
       ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Pre import kontaktov zo služby Google alebo Outlook ${ easySwitchLink }."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Pomocou myši ťahajte a pustite pre zmenu priority spojenie kontaktov. Odškrtnite kontakty, ktoré nechcete zlúčiť."
       ],
@@ -2132,6 +2175,11 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Kontakty, ktoré nechcete zlúčiť ani zachovať, označte pre zmazanie. K zmazaniu dôjde po kliknutí na tlačidlo pre zlúčenie"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "použite asistenta pre import Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3671,6 +3719,9 @@
         "${ selectedFoldersCountLocalized } vybratých štítkov",
         "${ selectedFoldersCountLocalized } vybratých štítkov"
       ],
+      "${ storage } storage": [
+        "${ storage } úložisko"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt bol úspešne aktualizovaný.",
         "${ updated } kontakty boli úspešne aktualizované.",
@@ -4079,6 +4130,9 @@
       "Previous modifications on this series will be lost.": [
         "Predošlé úpravy tejto série budú stratené."
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Cena zahŕňa všetky príslušné zľavy na základe cyklu a kupóny, ktorých platnosť nie je ukončená, uložené vo vašom účte."
+      ],
       "Primary": [
         "Hlavný"
       ],
@@ -4193,8 +4247,23 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Ak chcete použiť overenie adresy, musíte nastaviť povolenie dôveryhodných kľúčov a nadviazať tak na jeden alebo viac dostupných verejných kľúčov, vrátane primárneho kľúča pre túto adresu. Zabránite tak použitiu falošných šifrovacích kľúčov."
       ],
+      "Total email addresses": [
+        "Všetky e-mailové adresy"
+      ],
+      "Total storage": [
+        "Celkové úložisko "
+      ],
+      "Total supported domains": [
+        "Celkom podporovaných domén"
+      ],
+      "Total VPN connections": [
+        "Celkom VPN pripojení"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Vyskúšajte nové ${ BRAND_NAME } funkcie, aktualizácie a produkty pred ich zverejnením. Týmto sa obnoví aplikácia"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Až ${ FAMILY_MAX_USERS } používateľov"
       ],
       "Update recurring event": [
         "Aktualizovať opakujúcu sa udalosť."
@@ -5613,7 +5682,7 @@
     },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-mailová adresa sa nenašla medzi identifikátormi používateľov definovanými v kľúči na odosielanie (${ keyUserIds })"
+        "Emailová adresa sa nenašla medzi identifikátormi používateľov definovanými v kľúči na odosielanie (${ keyUserIds })"
       ]
     },
     "Placeholder": {
@@ -6489,9 +6558,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Prémiový ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Prémiový správca hesiel"
       ]
     },
     "summer2023: Tooltip": {
