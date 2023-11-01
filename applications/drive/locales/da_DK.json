@@ -761,6 +761,20 @@
         "Du har ikke nogen grupper."
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } brugerdomæne",
+        "${ domains } brugerdomæner"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } servere"
+      ],
+      "${ users } user": [
+        "${ users } bruger",
+        "${ users } brugere"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Ved at afslutte nu vil nogle kontakter måske ikke blive importeret"
@@ -882,6 +896,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Fortsæt med at bruge ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } bruger",
+        "${ users } brugere"
       ]
     },
     "Collapsible tooltip": {
@@ -3190,6 +3210,9 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
+      "${ storage } storage": [
+        "${ storage } lagerplads"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt blev opdateret.",
         "${ updated } kontakter blev opdateret."
@@ -3804,6 +3827,9 @@
       "Previous versions are not saved": [
         "Tidligere versioner er ikke gemt"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Prisen inkluderer alle gældende cyklusbaserede rabatter og kuponer, der ikke er udløbet, og som er gemt på din konto."
+      ],
       "Primary": [
         "Primær"
       ],
@@ -4006,6 +4032,18 @@
       "Today": [
         "I dag"
       ],
+      "Total email addresses": [
+        "Samlet antal e-mailadresser"
+      ],
+      "Total storage": [
+        "Lagerplads i alt"
+      ],
+      "Total supported domains": [
+        "Samlet antal understøttede domæner"
+      ],
+      "Total VPN connections": [
+        "Samlet antal VPN-forbindelser"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "Overførsel annulleret for fil \"${ name }\""
       ],
@@ -4041,6 +4079,9 @@
       ],
       "Unsupported file": [
         "Ikke-understøttet fil"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Op til ${ FAMILY_MAX_USERS } brugere"
       ],
       "Updating drive search...": [
         "Opdaterer drevsøgning..."
@@ -4584,6 +4625,9 @@
       "Phone number": [
         "Telefonnummer"
       ],
+      "Photo": [
+        "Foto"
+      ],
       "Please provide full details to help us take appropriate action": [
         "Angiv venligst alle oplysninger for at hjælpe os med at træffe passende foranstaltninger"
       ],
@@ -4768,6 +4812,9 @@
       ],
       "Pay invoice": [
         "Betal faktura"
+      ],
+      "Photos": [
+        "Fotos"
       ],
       "Reactivate now": [
         "Genaktiver nu"
@@ -5903,9 +5950,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Premium Adgangskodeadministrator"
       ]
     },
     "summer2023: Tooltip": {
@@ -6338,6 +6382,9 @@
       ],
       "Phone numbers": [
         "Telefonnumre"
+      ],
+      "Photos": [
+        "Fotos"
       ],
       "Preview": [
         "Forhåndsvisning"

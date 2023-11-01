@@ -116,6 +116,9 @@
       "Clear query": [
         "Effacer la recherche"
       ],
+      "Clear selection": [
+        "Effacer la sélection"
+      ],
       "Click here.": [
         "Cliquez ici."
       ],
@@ -160,6 +163,9 @@
       ],
       "Continue with Google": [
         "Continuer avec Google"
+      ],
+      "Continue with Outlook": [
+        "Continuer avec Outlook"
       ],
       "Copy address": [
         "Copier l'adresse"
@@ -366,6 +372,12 @@
       ],
       "Import from .csv or vCard": [
         "Importer depuis un .csv ou une vCard"
+      ],
+      "Import from Google": [
+        "Importer depuis Google"
+      ],
+      "Import from Outlook": [
+        "Importer depuis Outlook"
       ],
       "Learn more": [
         "En savoir plus"
@@ -703,6 +715,9 @@
       "Upload folder": [
         "Importer un dossier"
       ],
+      "Upload photos": [
+        "Charger des photos"
+      ],
       "Upload picture": [
         "Importer une image"
       ],
@@ -759,6 +774,20 @@
       ],
       "You don't have any groups.": [
         "Vous n'avez aucun groupe."
+      ]
+    },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } domaine personnalisé",
+        "${ domains } domaines personnalisés"
+      ],
+      "${ ips } server": [
+        "${ ips } serveur",
+        "${ ips } serveurs"
+      ],
+      "${ users } user": [
+        "${ users } utilisateur",
+        "${ users } utilisateurs"
       ]
     },
     "Alert": {
@@ -827,6 +856,18 @@
       ],
       "High speed streaming": [
         "Streaming ultra rapide"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } version premium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME } version premium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } version premium"
+      ],
+      "Premium Password Manager": [
+        "Gestionnaire de mots de passe version premium"
       ]
     },
     "bf2023: Footer": {
@@ -966,6 +1007,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuer à utiliser ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } utilisateur",
+        "${ users } utilisateurs"
       ]
     },
     "Collapsible tooltip": {
@@ -1934,6 +1981,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Chiffrement et importation des contacts en cours, ceci peut prendre quelques minutes. Une fois le processus terminé, vous pourrez fermer cette fenêtre."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Pour effectuer une importation à l'aide d'un fichier CSV ou VCF, assurez-vous que le fichier ne dépasse pas ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus grand, découpez-le en fichiers plus petits. ${ learnMoreLink }"
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Il semble que la liste de contacts que vous importez contienne des groupes. Nous vous invitons à vérifier comment ces groupes doivent être importés."
       ],
@@ -1946,6 +1996,9 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Gagnez du temps en envoyant des messages ou des invitations à tout le monde en même temps (une fonctionnalité premium parmi bien d'autres). Changez d'abonnement dès maintenant."
       ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Pour importer vos contacts depuis Google ou Outlook, ${ easySwitchLink }."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Utilisez le glisser-déposer pour classer la priorité de fusion entre les contacts. Décochez les contacts que vous ne voulez pas fusionner."
       ],
@@ -1954,6 +2007,11 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Vous pouvez marquer pour suppression les contacts que vous ne voulez ni fusionner ni conserver. Leur suppression n'aura lieu qu'après avoir cliqué sur le bouton de fusion."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilisez l'assistant d'importation Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2225,6 +2283,9 @@
       ],
       "Some contacts could not be deleted": [
         "Certains contacts n’ont pas pu être supprimés."
+      ],
+      "Some files were ignored because they are not supported in Photos": [
+        "Certains fichiers n'ont pas été pris en compte car ils ne sont pas pris en charge dans Photos."
       ],
       "Some groups could not be deleted": [
         "Certains groupes n'ont pas pu être supprimés."
@@ -3258,6 +3319,10 @@
         "Nombre de contacts sélectionnés : ${ selectedContactsLength } sur ${ contactsLength }",
         "Contacts sélectionnés : ${ selectedContactsLength } sur ${ contactsLength }"
       ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } sélectionné",
+        "${ selectedCount } sélectionnés"
+      ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } dossier sélectionné",
         "${ selectedFoldersCount } dossiers sélectionnés"
@@ -3276,6 +3341,9 @@
       ],
       "${ speed }/s": [
         "${ speed }/s"
+      ],
+      "${ storage } storage": [
+        "${ storage } d'espace de stockage"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } contact a été mis à jour.",
@@ -3353,6 +3421,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Voulez-vous vraiment définitivement supprimer les éléments sélectionnés du dossier Corbeille ?"
+      ],
+      "As soon as you have photos or videos on your device, they will appear here.": [
+        "Dès que vous aurez des photos ou des vidéos sur votre appareil, elles apparaîtront ici."
       ],
       "Attention required": [
         "Attention requise"
@@ -3787,6 +3858,9 @@
       "No group found": [
         "Aucun groupe n'a été trouvé."
       ],
+      "No photos yet": [
+        "Il n'y a aucune photo pour l'instant."
+      ],
       "No results found": [
         "Aucun résultat n'a été trouvé."
       ],
@@ -3891,6 +3965,9 @@
       "Previous versions are not saved": [
         "Les versions précédentes ne sont pas enregistrées."
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Le prix comprend toutes les réductions applicables et les codes promotionnels non expirés qui sont enregistrés sur votre compte."
+      ],
       "Primary": [
         "Principale"
       ],
@@ -3930,8 +4007,14 @@
       "Search Enabled": [
         "Recherche activée"
       ],
+      "Select all items for": [
+        "Sélectionner tous les éléments pour"
+      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Sélectionnez un fichier ou un dossier chargé et créez un lien vers celui-ci."
+      ],
+      "Select item": [
+        "Sélectionner un élément"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Sélectionnez le format de message que vous voulez utiliser par défaut pour l'envoi d'un message à cette adresse e-mail."
@@ -4050,6 +4133,9 @@
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
         "Ce lien sera définitivement désactivé. Aucune personne ayant ce lien ne pourra accéder à votre dossier. Pour partager à nouveau le dossier, vous aurez besoin d'un nouveau lien."
       ],
+      "This month": [
+        "Ce mois-ci"
+      ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Cela supprimera le lien et l'accès à votre fichier ou dossier pour toute personne ayant le lien.",
         "Cela supprimera les liens et l'accès à vos fichiers ou dossiers pour toute personne ayant les liens."
@@ -4093,6 +4179,18 @@
       "Today": [
         "Aujourd'hui"
       ],
+      "Total email addresses": [
+        "Nombre total d'adresses e-mail"
+      ],
+      "Total storage": [
+        "Espace de stockage total"
+      ],
+      "Total supported domains": [
+        "Nombre total de domaines pris en charge"
+      ],
+      "Total VPN connections": [
+        "Nombre total de connexions VPN"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "Le transfert a été annulé pour le fichier « ${ name } »."
       ],
@@ -4129,6 +4227,9 @@
       "Unsupported file": [
         "Le fichier n'est pas pris en charge."
       ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Jusqu'à ${ FAMILY_MAX_USERS } utilisateurs"
+      ],
       "Updating drive search...": [
         "Actualisation de la recherche dans Drive en cours"
       ],
@@ -4155,6 +4256,9 @@
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "Bien joué, vous venez de doubler votre espace de stockage gratuit !"
+      ],
+      "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
+        "Nous rencontrons des problèmes techniques. L'importation de nouvelles photos est temporairement désactivée."
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Nous n'avons pas pu vérifier que ${ emailAddress } a chargé le fichier ${ fileName }."
@@ -4671,6 +4775,9 @@
       "Phone number": [
         "Numéro de téléphone"
       ],
+      "Photo": [
+        "Photo"
+      ],
       "Please provide full details to help us take appropriate action": [
         "Nous vous invitons à fournir tous les détails nécessaires pour nous aider à prendre les mesures appropriées."
       ],
@@ -4855,6 +4962,9 @@
       ],
       "Pay invoice": [
         "Payer la facture"
+      ],
+      "Photos": [
+        "Photos"
       ],
       "Reactivate now": [
         "Réactiver maintenant"
@@ -5993,9 +6103,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME } version premium"
-      ],
-      "Premium Password Manager": [
-        "Gestionnaire de mots de passe premium"
       ]
     },
     "summer2023: Tooltip": {
@@ -6428,6 +6535,9 @@
       ],
       "Phone numbers": [
         "Numéros de téléphone"
+      ],
+      "Photos": [
+        "Photos"
       ],
       "Preview": [
         "Aperçu"

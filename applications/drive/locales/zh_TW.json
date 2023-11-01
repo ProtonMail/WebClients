@@ -766,6 +766,17 @@
         "您沒有任何群組。"
       ]
     },
+    "Addon": {
+      "${ domains } custom domains": [
+        "${ domains } 個自訂網域"
+      ],
+      "${ ips } servers": [
+        "${ ips } 台伺服器"
+      ],
+      "${ users } users": [
+        "${ users } 個使用者"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "若您現在離開，部份聯絡人或會無法匯入"
@@ -887,6 +898,11 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "繼續使用 ${ MAIL_APP_NAME }。"
+      ]
+    },
+    "Checkout row": {
+      "${ users } users": [
+        "${ users } 個使用者"
       ]
     },
     "Collapsible tooltip": {
@@ -3154,6 +3170,9 @@
       "${ speed }/s": [
         "${ speed }/秒"
       ],
+      "${ storage } storage": [
+        "${ storage } 儲存空間"
+      ],
       "${ updated } contacts updated successfully.": [
         "已成功更新 ${ updated } 位聯絡人。"
       ],
@@ -3757,6 +3776,9 @@
       "Previous versions are not saved": [
         "前一個版本並未儲存成功"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "價格計入週期之下所有適用的折扣，以及儲存在您的帳號內未逾期的優惠券。"
+      ],
       "Primary": [
         "主要"
       ],
@@ -3958,6 +3980,18 @@
       "Today": [
         "今天"
       ],
+      "Total email addresses": [
+        "可使用的電郵位址總數"
+      ],
+      "Total storage": [
+        "總儲存量"
+      ],
+      "Total supported domains": [
+        "可支援的網域總數"
+      ],
+      "Total VPN connections": [
+        "總 VPN 連線數量"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "已取消檔案「${ name }」的傳輸"
       ],
@@ -3993,6 +4027,9 @@
       ],
       "Unsupported file": [
         "不支援的檔案"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "多達 ${ FAMILY_MAX_USERS } 位使用者"
       ],
       "Updating drive search...": [
         "正在更新雲端硬碟搜索..."
@@ -5807,9 +5844,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "進階 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "付費版密碼管理器"
       ]
     },
     "summer2023: Tooltip": {
