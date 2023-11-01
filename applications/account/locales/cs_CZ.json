@@ -533,8 +533,14 @@
       "Import emails": [
         "Importovat e-maily"
       ],
+      "Import from Google": [
+        "Importovat z Google"
+      ],
       "Import from ICS": [
         "Importovat z ICS"
+      ],
+      "Import from Outlook": [
+        "Importovat z Outlooku"
       ],
       "Import key": [
         "Importovat klíč"
@@ -562,9 +568,6 @@
       ],
       "Keep": [
         "Zachovat"
-      ],
-      "Keep my ${ vpnPlanNameShort } subscription": [
-        "Zachovat mé předplatné ${ vpnPlanNameShort }"
       ],
       "label emails as": [
         "označit e-maily jako"
@@ -634,6 +637,9 @@
       ],
       "Open navigation": [
         "Otevřít menu"
+      ],
+      "Or": [
+        "Nebo"
       ],
       "Ordered list": [
         "Seřazený seznam"
@@ -898,6 +904,9 @@
       ],
       "Sign out of all accounts": [
         "Odhlásit se ze všech účtů"
+      ],
+      "sign up for free": [
+        "zaregistrujte se zdarma"
       ],
       "Signing in": [
         "Přihlašování"
@@ -5309,6 +5318,12 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } adresa",
+        "${ amountOfAddresses } adresy",
+        "${ amountOfAddresses } adres",
+        "${ amountOfAddresses } adres"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
       ],
@@ -5402,6 +5417,9 @@
         "${ numberOfNonPrivateKeys } nahraných souborů nejsou platné soukromé klíče. Prosím ověřte a zkuste to znovu.",
         "${ numberOfNonPrivateKeys } nahraných souborů nejsou platné soukromé klíče. Prosím ověřte a zkuste to znovu."
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "${ plan } odebrán. Nabídka balíčků není k dispozici pro 1měsíční tarif."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vyžaduje alespoň 1 dedikovaný server ${ serverPricePerMonth }"
       ],
@@ -5425,6 +5443,18 @@
         "${ provisioningCounter } servery jsou stále nastavovány. Toto obvykle trvá přibližně ${ provisioningDuration }.",
         "${ provisioningCounter } serverů je stále nastavováno. Toto obvykle trvá přibližně ${ provisioningDuration }.",
         "${ provisioningCounter } serverů je stále nastavováno. Toto obvykle trvá přibližně ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } další",
+        "${ remainingAddresses.length } další",
+        "${ remainingAddresses.length } dalších",
+        "${ remainingAddresses.length } dalších"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length } další adresa",
+        "${ remainingAddresses.length } další adresy",
+        "${ remainingAddresses.length } dalších adres",
+        "${ remainingAddresses.length } dalších adres"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendáře",
@@ -5786,6 +5816,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Před zahájením odesílání a přijímání e-mailů z nových adres je třeba pro ně vytvořit šifrovací klíče."
       ],
+      "Billed at ${ price }": [
+        "Účtováno ${ price }"
+      ],
       "Billing cycle: ${ text }": [
         "Fakturační cyklus: ${ text }"
       ],
@@ -6145,9 +6178,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Pokud si myslíte, že jde o chybu, kontaktujte nás ${ contactLink }."
-      ],
-      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "Pokud zrušíte předplatné ${ vpnPlanName }, nedojde k jeho obnovení k datu vypršení jeho platnosti ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
@@ -6626,6 +6656,9 @@
       "Priority support": [
         "Prioritní podpora"
       ],
+      "Promotion expired": [
+        "Propagační akce skončila"
+      ],
       "Protected by Swiss privacy laws": [
         "Chráněno švýcarskými zákony o ochraně soukromí"
       ],
@@ -6700,6 +6733,9 @@
       ],
       "Right to Left": [
         "Zprava doleva"
+      ],
+      "Save ${ percentage }": [
+        "Ušetřete ${ percentage }"
       ],
       "Save your password somewhere safe.": [
         "Heslo uložte na bezpečném místě."
@@ -6791,6 +6827,9 @@
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF záznamy se používají k určení, kdo může odesílat e-maily z Vaší domény. Proto důrazně doporučujeme zahrnout ${ MAIL_APP_NAME } mezi SPF záznamy. Přidejte prosím následující TXT záznam k DNS domény. Změnu lze obvykle provést v ovládacím panelu u Vašeho doménového registrátora."
       ],
+      "Stay tuned for future promotions.": [
+        "Zůstaňte naladěni na budoucí propagační akce."
+      ],
       "Step ${ step }": [
         "Krok ${ step }",
         "Krok ${ step }",
@@ -6856,6 +6895,9 @@
       ],
       "Thank you": [
         "Děkujeme"
+      ],
+      "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
+        "Děkujeme za podporu našeho poslání budovat lepší internet, kde jsou soukromí a svoboda na prvním místě."
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Zpráva ${ boldDataLocked } se již nebude zobrazovat, ale stále můžete svá data odemknout pomocí ${ encryptionAndKeysLink }."
@@ -6952,6 +6994,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Tento odkaz může být homografickým útokem. Zkontrolujte, zda se jedná o odkaz, který chcete navštívit, nebo odkaz neotevírejte."
+      ],
+      "This promotion link has expired.": [
+        "Tento odkaz na propagační akci vypršel."
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Tento token nebude po zavření tohoto okna k dispozici a neměli byste jej s nikým sdílet."
@@ -7457,9 +7502,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Po přihlášení budete přesměrováni na adresu ${ destination }."
       ],
-      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
-        "K tomuto datu ztratíte přístup k serverům a funkcím ${ vpnPlanNameShort }."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Potřebujete ${ BRAND_NAME } adresu pro používání ${ MAIL_APP_NAME } a ${ CALENDAR_APP_NAME }"
       ],
@@ -7507,6 +7549,9 @@
       ],
       "Your account recovery method is set": [
         "Vaše metoda obnovení účtu je nastavena"
+      ],
+      "Your account was successfully updated with this promotion": [
+        "Váš účet byl úspěšně navýšen pomocí této propagační akce"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Jakmile bude platba zrušena, váš účet bude aktualizován."
@@ -10058,17 +10103,6 @@
         "Řízení týmu"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Zkušební verze končí ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } končící ${ last4 }"
@@ -10156,6 +10190,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Zkušební verze končí ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10946,6 +10991,9 @@
       "Continue": [
         "Pokračovat"
       ],
+      "Continue to ${ appName } without upgrading": [
+        "Pokračovat do ${ appName } bez navýšení"
+      ],
       "Continue to ${ free }": [
         "Pokračovat na ${ free }"
       ],
@@ -10964,6 +11012,9 @@
       "Download to continue ${ size }": [
         "Pokračujte stažením ${ size }"
       ],
+      "Keep this plan": [
+        "Ponechat tento tarif"
+      ],
       "Or ${ createANewAccount }": [
         "Nebo ${ createANewAccount }"
       ],
@@ -10972,6 +11023,9 @@
       ],
       "Start using ${ appName } now": [
         "Začněte nyní používat ${ appName }"
+      ],
+      "Upgrade": [
+        "Navýšit"
       ],
       "Upgrade my plan": [
         "Přejít na vyšší tarif"
@@ -11039,6 +11093,9 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Ale můžete si odemknout **${ unlockPlanTitle }** a všechny prémiové služby ${ BRAND_NAME } navýšením na **${ upsellPlanTitle }** - je to jen ${ relativePrice } měsíčně navíc."
       ],
+      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Můžete však odemknout **${ unlockPlanTitle }** a všechny prémiové služby ${ BRAND_NAME } navýšením na **${ upsellPlanTitle }**."
+      ],
       "By continuing, you agree to our ${ termsAndConditions }": [
         "Pokračováním přijímáte naše ${ termsAndConditions }"
       ],
@@ -11084,6 +11141,9 @@
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "Pokud dojde k zablokování vašeho účtu ${ BRAND_NAME }, vaše **sada pro obnovení** vám umožní přihlásit se a obnovit vaše data."
       ],
+      "Includes:": [
+        "Zahrnuje:"
+      ],
       "Install ${ PASS_APP_NAME }": [
         "Instalovat ${ PASS_APP_NAME }"
       ],
@@ -11101,9 +11161,6 @@
       ],
       "Launching ${ PASS_APP_NAME }": [
         "Spuštění ${ PASS_APP_NAME }"
-      ],
-      "Limited time offer: Get ${ title } for free for 1 year!": [
-        "Časově omezená nabídka: Získejte ${ title } zdarma na 1 rok!"
       ],
       "One easy subscription.": [
         "Jedno snadné předplatné."
@@ -11152,6 +11209,9 @@
       ],
       "Verifying your payment": [
         "Ověřování vaší platby"
+      ],
+      "Welcome to ${ shortName } Plus": [
+        "Vítejte v ${ shortName } Plus"
       ],
       "Works on all devices": [
         "Funguje na všech zařízeních"
@@ -12748,9 +12808,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Prémiové funkce ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Prémiový správce hesel"
       ]
     },
     "summer2023: Tooltip": {
@@ -13401,6 +13458,9 @@
       ],
       "Folders and labels": [
         "Složky a štítky"
+      ],
+      "Forward and auto-reply": [
+        "Přeposlat a automaticky odpovědět"
       ],
       "Forward emails": [
         "Přeposlat e-maily"
@@ -14380,6 +14440,11 @@
       ],
       "Your ${ selected } plan": [
         "Váš tarif ${ selected }"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Přístup k serverům Secure Core, rychlé stahování P2P/BitTorrent, Tor skrze VPN a další."
       ]
     },
     "Warning": {

@@ -230,6 +230,9 @@
       "Continue with Google": [
         "Lanjutkan dengan Google"
       ],
+      "Continue with Outlook": [
+        "Lanjut dengan Outlook"
+      ],
       "Continue with this password": [
         "Lanjutkan dengan kata sandi ini"
       ],
@@ -533,8 +536,14 @@
       "Import emails": [
         "Impor surel"
       ],
+      "Import from Google": [
+        "Impor dari Google"
+      ],
       "Import from ICS": [
         "Impor dari ICS"
+      ],
+      "Import from Outlook": [
+        "Impor dari Outlook"
       ],
       "Import key": [
         "Impor kunci"
@@ -563,8 +572,8 @@
       "Keep": [
         "Simpan"
       ],
-      "Keep my ${ vpnPlanNameShort } subscription": [
-        "Pertahankan langganan ${ vpnPlanNameShort } saya"
+      "Keep my Plus subscription": [
+        "Pertahankan langganan Plus saya"
       ],
       "label emails as": [
         "labeli surel sebagai"
@@ -2863,6 +2872,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Enkripsi dan impor kontak memakan beberapa menit. Anda dapat menutup jendela ini setelah proses selesai."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Untuk mengimpor kontak melalui berkas CSV dan VCF, pastikan berkas Anda tidak melebihi batas ukuran ${ MAX_IMPORT_FILE_SIZE_STRING } atau batas jumlah ${ MAX_IMPORT_CONTACTS_STRING } kontak. Apabila berkas Anda melebihi batas ukuran yang ada, silakan pecahkan berkas Anda ke beberapa berkas yang lebih kecil. ${ learnMoreLink }"
+      ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Dapatkan saldo hingga ${ credits } dengan mengundang teman ke ${ BRAND_NAME }."
       ],
@@ -2874,6 +2886,9 @@
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Pisahkan berbagai aspek kehidupan Anda dengan alamat surelnya masing-masing dan dapatkan lebih banyak fitur premium pada saat Anda meningkatkan akun."
+      ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Untuk mengimpor kontak Anda dari Google atau Outlook, ${ easySwitchLink }."
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Untuk mengirim pesan tanpa footer ${ MAIL_APP_NAME }, tingkatkan akun Anda dan nikmati berbagai fitur premium lainnya."
@@ -2898,6 +2913,11 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Anda dapat mengimpor acara dalam format iCal (berkas ICS). Berkas Anda harus berukuran maksimal ${ MAX_IMPORT_FILE_SIZE_STRING } dan mengandung paling banyak ${ MAX_IMPORT_EVENTS_STRING } acara. Apabila berkas Anda melebihi persyaratan ini, mohon terlebih dahulu pisahkan menjadi berkas yang lebih kecil."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gunakan alat bantu impor Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3555,6 +3575,9 @@
       ],
       "Incorrect username": [
         "Nama pengguna salah"
+      ],
+      "Intended recipient does not support calendar sharing": [
+        "Penerima yang dituju tidak mendukung berbagi kalender"
       ],
       "Invalid ${ name } code": [
         "Kode ${ name } tidak valid"
@@ -6244,8 +6267,8 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Apabila Anda merasa ini adalah sebuah kesalahan, silakan hubungi kami ${ contactLink }."
       ],
-      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "Apabila Anda membatalkan langganan, paket ${ vpnPlanName } Anda tidak akan diperbarui ketika langganan ini berakhir pada tanggal ${ expiryDate }"
+      "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Apabila Anda membatalkan langganan, paket ${ planTitle } Anda tidak akan diperbarui ketika paket ini berakhir pada ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Apabila Anda tidak menemukan surel yang bersangkutan di dalam kotak masuk, mohon periksa folder spam Anda."
@@ -7522,8 +7545,11 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Anda akan dialihkan ke ${ destination } setelah masuk."
       ],
-      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
-        "Anda akan kehilangan akses ke server dan fitur ${ vpnPlanNameShort } pada tanggal ini."
+      "You will lose access to Plus features on this date.": [
+        "Anda akan kehilangan akses ke berbagai fitur Plus pada tanggal ini."
+      ],
+      "You will lose access to Plus servers and features on this date.": [
+        "Anda akan kehilangan akses ke berbagai server dan fitur Plus pada tanggal ini."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Anda akan butuh alamat ${ BRAND_NAME } untuk dapat menggunakan ${ MAIL_APP_NAME } dan ${ CALENDAR_APP_NAME }"
@@ -10021,17 +10047,6 @@
         "Manajemen tim"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Masa uji coba Anda akan berakhir pada ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } akan berakhir dalam ${ last4 }"
@@ -10119,6 +10134,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Masa uji coba Anda akan berakhir pada ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10876,6 +10902,9 @@
       "Continue": [
         "Lanjutkan"
       ],
+      "Continue to ${ appName } without upgrading": [
+        "Lanjut ke ${ appName } tanpa meningkatkan paket"
+      ],
       "Continue to ${ free }": [
         "Lanjut ke ${ free }"
       ],
@@ -10894,6 +10923,9 @@
       "Download to continue ${ size }": [
         "Unduh untuk melanjutkan ${ size }"
       ],
+      "Keep this plan": [
+        "Pertahankan paket ini"
+      ],
       "Or ${ createANewAccount }": [
         "Atau ${ createANewAccount }"
       ],
@@ -10902,6 +10934,9 @@
       ],
       "Start using ${ appName } now": [
         "Mulai gunakan ${ appName } sekarang"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
       ],
       "Upgrade my plan": [
         "Tingkatkan paket saya"
@@ -10966,8 +11001,17 @@
       "All premium ${ BRAND_NAME } services.": [
         "Seluruh layanan premium ${ BRAND_NAME }."
       ],
+      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Anda mendapat potongan ${ discount } dengan meningkatkannya ke **${ upsellPlanTitle }** — hanya menambah ${ relativePrice } per bulan."
+      ],
+      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }**.": [
+        "Anda mendapat potongan ${ discount } dengan meningkatkannya ke **${ upsellPlanTitle }**."
+      ],
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Namun, Anda dapat mengakes **${ unlockPlanTitle }** dan seluruh layanan premium ${ BRAND_NAME } dengan meningkatkan paket Anda ke **${ upsellPlanTitle }** — hanya dengan biaya tambahan ${ relativePrice } per bulannya."
+      ],
+      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Namun, Anda dapat mengakses **${ unlockPlanTitle }** dan seluruh layanan premium ${ BRAND_NAME } dengan meningkatkan paket Anda ke **${ upsellPlanTitle }**."
       ],
       "By continuing, you agree to our ${ termsAndConditions }": [
         "Dengan melanjutkan, Anda menyatakan diri setuju dengan ${ termsAndConditions } kami"
@@ -11014,6 +11058,9 @@
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "Apabila Anda terkunci dari akun ${ BRAND_NAME } Anda, **kit pemulihan** Anda akan memungkinkan Anda untuk masuk dan memulihkan data Anda."
       ],
+      "Includes:": [
+        "Meliputi:"
+      ],
       "Install ${ PASS_APP_NAME }": [
         "Instal ${ PASS_APP_NAME }"
       ],
@@ -11031,9 +11078,6 @@
       ],
       "Launching ${ PASS_APP_NAME }": [
         "Meluncurkan ${ PASS_APP_NAME }"
-      ],
-      "Limited time offer: Get ${ title } for free for 1 year!": [
-        "Penawaran terbatas: Dapatkan ${ title } gratis 1 tahun!"
       ],
       "One easy subscription.": [
         "Dalam satu langganan mudah."
@@ -11082,6 +11126,9 @@
       ],
       "Verifying your payment": [
         "Memverifikasi pembayaran Anda"
+      ],
+      "Welcome to ${ shortName } Plus": [
+        "Selamat datang di ${ shortName } Plus"
       ],
       "Works on all devices": [
         "Dapat digunakan pada seluruh perangkat"
@@ -12579,9 +12626,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME } Premium"
-      ],
-      "Premium Password Manager": [
-        "Password Manager Premium"
       ]
     },
     "summer2023: Tooltip": {

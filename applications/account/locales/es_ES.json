@@ -230,6 +230,9 @@
       "Continue with Google": [
         "Continuar con Google"
       ],
+      "Continue with Outlook": [
+        "Continuar con Outlook"
+      ],
       "Continue with this password": [
         "Continuar con esta contraseña"
       ],
@@ -533,8 +536,14 @@
       "Import emails": [
         "Importar correos electrónicos"
       ],
+      "Import from Google": [
+        "Importar desde Google"
+      ],
       "Import from ICS": [
         "Importar desde un archivo ICS"
+      ],
+      "Import from Outlook": [
+        "Importar desde Outlook"
       ],
       "Import key": [
         "Importar clave"
@@ -563,8 +572,8 @@
       "Keep": [
         "Conservar"
       ],
-      "Keep my ${ vpnPlanNameShort } subscription": [
-        "Mantener mi suscripción ${ vpnPlanNameShort }"
+      "Keep my Plus subscription": [
+        "Mantener mi suscripción Plus"
       ],
       "label emails as": [
         "etiquetar el correos electrónicos como"
@@ -1312,6 +1321,9 @@
       "Add ${ plan } to your plan by subscribing to 15 months": [
         "Añadir ${ plan } a tu plan al suscribirte durante 15 meses"
       ],
+      "Become a Visionary": [
+        "Elige Visionary"
+      ],
       "Get the deal": [
         "Aprovechar la oferta"
       ],
@@ -1394,6 +1406,29 @@
       ],
       "Secure browsing and premium VPN features.": [
         "Navegación segura y funciones VPN premium."
+      ]
+    },
+    "bf2023: Info": {
+      "6 TB storage (2x more than any other plan)": [
+        "6 TB de almacenamiento (el doble que cualquier otro plan)"
+      ],
+      "6 users": [
+        "6 usuarios"
+      ],
+      "Become a super-supporter. Get access to all current and future ${ BRAND_NAME } services.": [
+        "Danos todo tu apoyo y accede a todos los servicios actuales y futuros de ${ BRAND_NAME }."
+      ],
+      "Exclusive features and early access": [
+        "Funciones exclusivas y acceso anticipado"
+      ],
+      "Help us fight for online privacy": [
+        "Ayúdanos a defender la privacidad en línea"
+      ],
+      "Premium versions of all ${ BRAND_NAME } services": [
+        "Versiones premium de todos los servicios de ${ BRAND_NAME }"
+      ],
+      "The ${ plan } plan is back for a limited time only": [
+        "El plan ${ plan } está de nuevo disponible por tiempo limitado."
       ]
     },
     "bf2023: Offers": {
@@ -3027,6 +3062,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Cifrando e importando contactos... Esto puede tardar unos minutos. Cuando se finaliza el proceso, puedes cerrar esta ventana."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Para importar mediante CSV y VCF, asegúrate que el archivo no exceda de ${ MAX_IMPORT_FILE_SIZE_STRING } o de ${ MAX_IMPORT_CONTACTS_STRING } contactos. Si el archivo es grande, divídelo en archivos pequeños. ${ learnMoreLink }."
+      ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Obtén hasta ${ credits } créditos por invitar amigos a ${ BRAND_NAME }."
       ],
@@ -3038,6 +3076,9 @@
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separa diferentes aspectos de tu vida con múltiples direcciones de correo y desbloquea funciones premium al actualizar tu plan."
+      ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Para importar tus contactos desde Google u Outlook, ${ easySwitchLink }."
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Para eliminar el pie de página de ${ MAIL_APP_NAME }, actualiza y desbloquea aún más funciones premium."
@@ -3062,6 +3103,11 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puedes importar eventos en formato iCal (archivos ICS). El archivo puede tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener hasta ${ MAX_IMPORT_EVENTS_STRING } eventos. Si tu archivo es más grande, debes dividirlo en archivos más pequeños."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utiliza el asistente de importación Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -6462,8 +6508,8 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Si crees que esto es un error, contáctanos ${ contactLink }."
       ],
-      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "Si cancelas, tu suscripción de ${ vpnPlanName } no se renovará cuando expire el ${ expiryDate }."
+      "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Si cancelas, tu suscripción de ${ planTitle } no se renovará cuando expire el ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no encuentras el correo electrónico en tu bandeja de entrada, verifica tu carpeta de spam."
@@ -7757,8 +7803,11 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Te redirigiremos a ${ destination } después de iniciar sesión."
       ],
-      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
-        "Perderás el acceso a los servidores y funciones de ${ vpnPlanNameShort } en esta fecha."
+      "You will lose access to Plus features on this date.": [
+        "Perderás el acceso a las funciones de Plus en esta fecha."
+      ],
+      "You will lose access to Plus servers and features on this date.": [
+        "Perderás el acceso a los servidores y funciones de Plus en esta fecha."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Necesitarás una dirección ${ BRAND_NAME } para utilizar ${ MAIL_APP_NAME } y ${ CALENDAR_APP_NAME }"
@@ -10291,17 +10340,6 @@
         "Gestión de equipos"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para seguir utilizando ${ MAIL_APP_NAME } con las funciones premium, suscríbete y elige el método de pago."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Tu periodo de pruebas acaba el ${ formattedPeriodEndDate }."
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina con ${ last4 }"
@@ -10389,6 +10427,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ahora mismo pagas un precio especial por tu plan. Si te pasas a un plan inferior, perderás esta ventaja y no la recuperarás suscribiéndote de nuevo."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para seguir utilizando ${ MAIL_APP_NAME } con las funciones premium, suscríbete y elige el método de pago."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Tu periodo de pruebas acaba el ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -11157,6 +11206,9 @@
       "Continue": [
         "Continuar"
       ],
+      "Continue to ${ appName } without upgrading": [
+        "Continuar en ${ appName } sin mejorar"
+      ],
       "Continue to ${ free }": [
         "Continuar con ${ free }"
       ],
@@ -11175,6 +11227,9 @@
       "Download to continue ${ size }": [
         "Descargar para continuar ${ size }"
       ],
+      "Keep this plan": [
+        "Mantener este plan"
+      ],
       "Or ${ createANewAccount }": [
         "O ${ createANewAccount }"
       ],
@@ -11183,6 +11238,9 @@
       ],
       "Start using ${ appName } now": [
         "Comenzar a utilizar${ appName }"
+      ],
+      "Upgrade": [
+        "Mejorar"
       ],
       "Upgrade my plan": [
         "Mejorar mi plan"
@@ -11250,6 +11308,9 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Pero puedes desbloquear **${ unlockPlanTitle }** y todos los servicios premium de ${ BRAND_NAME } al mejorar tu plan a **${ upsellPlanTitle }** — solo por ${ relativePrice } extra cada mes."
       ],
+      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Pero puedes desbloquear **${ unlockPlanTitle }** y todos los servicios premium de ${ BRAND_NAME } al mejorar tu plan a **${ upsellPlanTitle }**."
+      ],
       "By continuing, you agree to our ${ termsAndConditions }": [
         "Al continuar, aceptas nuestros ${ termsAndConditions }"
       ],
@@ -11295,6 +11356,9 @@
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "Si se bloquea tu cuenta ${ BRAND_NAME }, tu **kit de recuperación** te permitirá iniciar sesión y recuperar tus datos."
       ],
+      "Includes:": [
+        "Incluye:"
+      ],
       "Install ${ PASS_APP_NAME }": [
         "Instala ${ PASS_APP_NAME }"
       ],
@@ -11312,9 +11376,6 @@
       ],
       "Launching ${ PASS_APP_NAME }": [
         "Iniciando ${ PASS_APP_NAME }"
-      ],
-      "Limited time offer: Get ${ title } for free for 1 year!": [
-        "Oferta de tiempo limitado: ¡obtén ${ title } gratis por 1 año!"
       ],
       "One easy subscription.": [
         "Una suscripción sin complicaciones."
@@ -11363,6 +11424,9 @@
       ],
       "Verifying your payment": [
         "Verificando tu pago"
+      ],
+      "Welcome to ${ shortName } Plus": [
+        "Te damos la bienvenida a ${ shortName } Plus"
       ],
       "Works on all devices": [
         "Funciona en todos los dispositivos"
@@ -12893,9 +12957,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } premium"
-      ],
-      "Premium Password Manager": [
-        "Administrador de contraseñas premium"
       ]
     },
     "summer2023: Tooltip": {
