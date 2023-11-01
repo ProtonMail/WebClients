@@ -572,8 +572,8 @@
       "Keep": [
         "Behåll"
       ],
-      "Keep my ${ vpnPlanNameShort } subscription": [
-        "Behåll min ${ vpnPlanNameShort }-prenumeration"
+      "Keep my Plus subscription": [
+        "Behåll min Plus-prenumeration"
       ],
       "label emails as": [
         "märk e-postmeddelanden som"
@@ -3589,6 +3589,9 @@
       "Incorrect username": [
         "Felaktigt användarnamn"
       ],
+      "Intended recipient does not support calendar sharing": [
+        "Avsedd mottagare stöder inte kalenderdelning"
+      ],
       "Invalid ${ name } code": [
         "Ogiltig ${ name }-kod"
       ],
@@ -5966,6 +5969,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Innan du kan börja skicka och ta emot e-postmeddelanden från dina nya adresser måste du skapa krypteringsnycklar för dem."
       ],
+      "Billed at ${ price }": [
+        "Fakturerad med ${ price }"
+      ],
       "Billing cycle: ${ text }": [
         "Faktureringsperiod: ${ text }"
       ],
@@ -6318,8 +6324,8 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Om du tror att detta är felaktigt, kontakta oss ${ contactLink }."
       ],
-      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "Om du avbryter kommer din ${ vpnPlanName }-prenumeration inte att förnyas när den löper ut den ${ expiryDate }."
+      "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Om du avbryter kommer din ${ planTitle }-prenumeration inte att förnyas när den löper ut den ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Om du inte hittar e-postmeddelandet i din inkorg, kontrollera din skräppostmapp."
@@ -7613,8 +7619,11 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Du kommer att omdirigeras till ${ destination } efter inloggning."
       ],
-      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
-        "Du kommer förlora åtkomst till ${ vpnPlanNameShort }-servrar och funktionerna på detta datum."
+      "You will lose access to Plus features on this date.": [
+        "Du kommer förlora åtkomst till Plus-funktioner på detta datum."
+      ],
+      "You will lose access to Plus servers and features on this date.": [
+        "Du kommer förlora åtkomst till Plus-servrar och funktioner på detta datum."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Du behöver en ${ BRAND_NAME }-adress för att använda ${ MAIL_APP_NAME } och ${ CALENDAR_APP_NAME }"
@@ -10147,17 +10156,6 @@
         "Teamhantering"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "För att fortsätta använda ${ MAIL_APP_NAME } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Din provperiod slutar den ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutar med ${ last4 }"
@@ -10245,6 +10243,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du har ett kampanjpris på ditt nuvarande paket. Om du nedgraderar ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du försöker prenumerera igen."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "För att fortsätta använda ${ MAIL_APP_NAME } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Din provperiod slutar den ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11013,6 +11022,9 @@
       "Continue": [
         "Fortsätt"
       ],
+      "Continue to ${ appName } without upgrading": [
+        "Fortsätt till ${ appName } utan att uppgradera"
+      ],
       "Continue to ${ free }": [
         "Fortsätt till ${ free }"
       ],
@@ -11031,6 +11043,9 @@
       "Download to continue ${ size }": [
         "Ladda ner för att fortsätta ${ size }"
       ],
+      "Keep this plan": [
+        "Behåll detta paket"
+      ],
       "Or ${ createANewAccount }": [
         "Eller ${ createANewAccount }"
       ],
@@ -11039,6 +11054,9 @@
       ],
       "Start using ${ appName } now": [
         "Börja använda ${ appName } nu"
+      ],
+      "Upgrade": [
+        "Uppgradera"
       ],
       "Upgrade my plan": [
         "Uppgradera mitt paket"
@@ -11103,8 +11121,17 @@
       "All premium ${ BRAND_NAME } services.": [
         "Alla premiumtjänster för ${ BRAND_NAME }."
       ],
+      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Men du kan få ${ discount } rabatt genom att uppgradera till **${ upsellPlanTitle }** — det är endast ${ relativePrice } extra per månad."
+      ],
+      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }**.": [
+        "Men du kan få ${ discount } rabatt genom att uppgradera till **${ upsellPlanTitle }**."
+      ],
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Men du kan låsa upp **${ unlockPlanTitle }** och alla premiumtjänster för ${ BRAND_NAME } genom att uppgradera till **${ upsellPlanTitle }** – det kostar endast ${ relativePrice } extra per månad."
+      ],
+      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Men du kan låsa upp **${ unlockPlanTitle }** och alla premiumtjänster för ${ BRAND_NAME } genom att uppgradera till **${ upsellPlanTitle }**."
       ],
       "By continuing, you agree to our ${ termsAndConditions }": [
         "Genom att fortsätta godkänner du våra ${ termsAndConditions }"
@@ -11151,6 +11178,9 @@
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "Om du blir utelåst från ditt ${ BRAND_NAME }-konto kommer ditt **återställningskit** att låta dig logga in och återställa dina data."
       ],
+      "Includes:": [
+        "Inkluderar:"
+      ],
       "Install ${ PASS_APP_NAME }": [
         "Installera ${ PASS_APP_NAME }"
       ],
@@ -11168,9 +11198,6 @@
       ],
       "Launching ${ PASS_APP_NAME }": [
         "Lanserar ${ PASS_APP_NAME }"
-      ],
-      "Limited time offer: Get ${ title } for free for 1 year!": [
-        "Tidsbegränsat erbjudande: Få ${ title } gratis i 1 år!"
       ],
       "One easy subscription.": [
         "En enkel prenumeration."
@@ -11219,6 +11246,9 @@
       ],
       "Verifying your payment": [
         "Verifierar din betalning"
+      ],
+      "Welcome to ${ shortName } Plus": [
+        "Välkommen till ${ shortName } Plus"
       ],
       "Works on all devices": [
         "Fungerar på alla enheter"
@@ -12749,9 +12779,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Premium lösenordshanterare"
       ]
     },
     "summer2023: Tooltip": {

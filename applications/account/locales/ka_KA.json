@@ -563,9 +563,6 @@
       "Keep": [
         "დატოვება"
       ],
-      "Keep my ${ vpnPlanNameShort } subscription": [
-        "ჩემი ${ vpnPlanNameShort }-ის გამოწერის შენარჩუნება"
-      ],
       "label emails as": [
         "ელ-ფოსტების მონიშვნა, როგორც"
       ],
@@ -634,6 +631,9 @@
       ],
       "Open navigation": [
         "ნავიგაციის გახსნა"
+      ],
+      "Or": [
+        "ან"
       ],
       "Ordered list": [
         "დალაგებული სია"
@@ -898,6 +898,9 @@
       ],
       "Sign out of all accounts": [
         "ყველა ანგარიშიდან გამოსვლა"
+      ],
+      "sign up for free": [
+        "უფასო რეგისტრაცია"
       ],
       "Signing in": [
         "შესვლა"
@@ -5502,6 +5505,10 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } მისამართი",
+        "${ amountOfAddresses } მისამართი"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }-ს ესაჭიროება თქვენი წვდომა ${ enableDesktopNotifications }-ზე."
       ],
@@ -5583,6 +5590,9 @@
         "${ numberOfNonPrivateKeys } ატვირთული ფაილი სწორი პირადი გასაღები არაა. შეამოწმეთ და თავიდან სცადეთ.",
         "${ numberOfNonPrivateKeys } ატვირთული ფაილი სწორი პირადი გასაღები არაა. შეამოწმეთ და თავიდან სცადეთ."
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "${ plan } წაიშალა. კომპლექტის შესახებ სარეკლამო აქცია 1-თვიან სატარიფო გეგმაზე ხელმიუწვდომელია."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }-ს სულ ცოტა 1 გამოყოფილი სერვერი ესაჭიროება ${ serverPricePerMonth }"
       ],
@@ -5600,6 +5610,14 @@
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "ჯერ კიდევ მიმდინარეობს ${ provisioningCounter } სერვერს დაყენება. ამას, ჩვეულებრივ, ${ provisioningDuration } სჭირდება.",
         "ჯერ კიდევ მიმდინარეობს ${ provisioningCounter } სერვერს დაყენება. ამას, ჩვეულებრივ, ${ provisioningDuration } სჭირდება."
+      ],
+      "${ remainingAddresses.length } more": [
+        "კიდევ ${ remainingAddresses.length }",
+        "კიდევ ${ remainingAddresses.length }"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "კიდევ ${ remainingAddresses.length } მისამართი",
+        "კიდევ ${ remainingAddresses.length } მისამართი"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "კალენდარი ${ selectedCalendarsTotal } ${ providerCalendars.length }-დან",
@@ -5932,6 +5950,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "ახალი მისამართებით ფოსტის მიღებისა და გაგზავნის დაწყებამდე მათთვის დაშიფვრის გასაღებების შექმნაა საჭირო."
+      ],
+      "Billed at ${ price }": [
+        "გადაიხადეთ ${ price }"
       ],
       "Billing cycle: ${ text }": [
         "გადახდის ციკლი: ${ text }"
@@ -6284,9 +6305,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "თუ გჯერათ, რომ ეს შეცდომაა, დაგვიკავშირდით ${ contactLink }."
-      ],
-      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "თუ გააუქმებთ, თქვენი გამოწერა ${ vpnPlanName } არ განახლდება, როცა ვადა გაუვა თარიღზე ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "თუ ვერ იპოვეთ ელფოსტა თქვენს საფოსტო ყუთში, გადაამოწმეთ სპამის საქაღალდეც."
@@ -6755,6 +6773,9 @@
       "Priority support": [
         "პრიორიტეტის მხარდაჭერა"
       ],
+      "Promotion expired": [
+        "საჩუქარი ვადაგასულია"
+      ],
       "Protected by Swiss privacy laws": [
         "დაცულია შვეიცარიული კონფიდენციალობის კანონებით"
       ],
@@ -6829,6 +6850,9 @@
       ],
       "Right to Left": [
         "მარჯვნიდან მარცხნივ"
+      ],
+      "Save ${ percentage }": [
+        "დაზოგეთ ${ percentage }"
       ],
       "Save your password somewhere safe.": [
         "შეინახეთ თქვენი პაროლი უსაფრთხო ადგილას."
@@ -6922,6 +6946,9 @@
       ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF გამოიყენება იმის მისათითებლად, ვის შეუძლია ამ დომენიდან ელფოსტის გაგზავნა. ასე რომ, ჩვენ დაჟინებით გთხოვთ, მასში${ MAIL_APP_NAME }-იც ჩასვათ. თქვენს DNS ჩანაწერებში საჭიროა შემდეგი TXT ჩანაწერის შექმნა. ეს, ჩვეულებრივ, თქვენს DNS რეგისტრატორთან ხდება."
+      ],
+      "Stay tuned for future promotions.": [
+        "გამოგვიწერეთ ჩვენი მომავალი სარეკლამო აქციებისთვის."
       ],
       "Step ${ step }": [
         "ნაბიჯი ${ step }",
@@ -7076,6 +7103,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "ეს ბმული შეიძლება ჰომოგრაფიულ შეტევას წარმოადგენდეს. შეამოწმეთ ბმული და დარწმუნდით, რომ ის უსაფრთხოა."
+      ],
+      "This promotion link has expired.": [
+        "ამ სარელამო აქციის ბმულის ვადა ამოწურულია."
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "ეს კოდი ხელმისაწვდომი არ იქნება, თუ ამ ფანჯარას დახურავთ და ის არავის არ უნდა გაუზიაროთ."
@@ -7565,9 +7595,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "შესვლის შემდეგ ${ destination }-ზე გადაგამისამართებთ."
       ],
-      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
-        "ამ თარიღის მოსვლისას ${ vpnPlanNameShort }-ის სერვერებთან და მის ფუნქციებთან წვდომას დაკარგავთ."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME }-ის და ${ CALENDAR_APP_NAME }-ის გამოსაყენებლად ${ BRAND_NAME }-ის მისამართი დაგჭირდებათ"
       ],
@@ -7615,6 +7642,9 @@
       ],
       "Your account recovery method is set": [
         "თქვენი ანგარიშის აღდგენის მეთოდი დაყენებულია"
+      ],
+      "Your account was successfully updated with this promotion": [
+        "თქვენი ანგარიში წარმატებით განახლდა ამ სარეკლამო აქციით"
       ],
       "Your account will be updated once the payment is cleared.": [
         "გადახდის შემდეგ თქვენი ანგარიში განახლდება."
@@ -10096,17 +10126,6 @@
         "ჯგუფის მართვა"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "სხვაგვარად თქვენს ანგარიშთან წვდომა შეზღუდული გექნებათ და ცოტა ხანში საერთოდ გაგეთიშებათ."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME }-ის ფასიანი თვისებებით გამოყენების გასაგრძელებლად აირჩიეთ თქვენი გამოწერის ტარიფი და გადახდის ვარიანტი."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "სატესტო პერიოდის დასრულების თარიღია ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } დასრულდება ${ last4 }"
@@ -10194,6 +10213,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "თქვენს მიმდინარე გეგმაში სარეკლამო ფასით სარგებლობთ. ანგარიშის ტარიფის ჩამოწევის შემთხვევაში თქვენ დაკარგავთ სარეკლამო ფასს და თუ გამოწერას კვლავ შეეცდებით, ის ხელმისაწვდომი აღარ იქნება."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "სხვაგვარად თქვენს ანგარიშთან წვდომა შეზღუდული გექნებათ და ცოტა ხანში საერთოდ გაგეთიშებათ."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME }-ის ფასიანი თვისებებით გამოყენების გასაგრძელებლად აირჩიეთ თქვენი გამოწერის ტარიფი და გადახდის ვარიანტი."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "სატესტო პერიოდის დასრულების თარიღია ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10962,6 +10992,9 @@
       "Continue": [
         "გაგრძელება"
       ],
+      "Continue to ${ appName } without upgrading": [
+        "${ appName }-ზე გაგრძლებეა სატარიფო გეგმის აწევის გარეშე"
+      ],
       "Continue to ${ free }": [
         "${ free }-ზე გაგრძელება"
       ],
@@ -10980,6 +11013,9 @@
       "Download to continue ${ size }": [
         "გასაგრძელებლად დარჩენილია ${ size }"
       ],
+      "Keep this plan": [
+        "ამ გეგმის დატოვება"
+      ],
       "Or ${ createANewAccount }": [
         "ან ${ createANewAccount }"
       ],
@@ -10988,6 +11024,9 @@
       ],
       "Start using ${ appName } now": [
         "${ appName }-ის გამოყენების დაწყება"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
       ],
       "Upgrade my plan": [
         "ტარიფის გაუმჯობესება"
@@ -11100,6 +11139,9 @@
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "თუ თქვენი ${ BRAND_NAME }-ის ანგარიში დაგებლოკათ, თქვენი **აღდგენის დოკუმენტი** შესვლაში და თქვენი მონაცემების აღდგენაში დაგეხმარებათ."
       ],
+      "Includes:": [
+        "შეიცავს:"
+      ],
       "Install ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ის დაყენება"
       ],
@@ -11117,9 +11159,6 @@
       ],
       "Launching ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ის გაშვება"
-      ],
-      "Limited time offer: Get ${ title } for free for 1 year!": [
-        "შეთავაზება შეზღუდული დროით: მიიღეთ ${ title }, უფასოდ 1 წლით!"
       ],
       "One easy subscription.": [
         "ერთი ადვილი გამოწერა"
@@ -11168,6 +11207,9 @@
       ],
       "Verifying your payment": [
         "თქვენი გადახდის შემოწმება"
+      ],
+      "Welcome to ${ shortName } Plus": [
+        "მოგესალმებათ ${ shortName } Plus"
       ],
       "Works on all devices": [
         "მუშაობს ყველა მოწყობილობაზე"
@@ -12698,9 +12740,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "პაროლების მმართველის ფასიანი ვერსია"
       ]
     },
     "summer2023: Tooltip": {
@@ -13333,6 +13372,9 @@
       ],
       "Folders and labels": [
         "საქაღალდეები და ჭდეები"
+      ],
+      "Forward and auto-reply": [
+        "გადაგზავნა და ავტომოპასუხე"
       ],
       "Forward emails": [
         "ელფოსტების გადამისამართება"
@@ -14288,6 +14330,11 @@
       ],
       "Your ${ selected } plan": [
         "თქვენი ტარიფი ${ selected }"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "წვდომა Secure core-ის სერვერებზე, სწრაფ P2P/BitTorrent-ით გადმოწერებზე და Tor-VPN-ის-ზემოდან და სხვ."
       ]
     },
     "Warning": {
