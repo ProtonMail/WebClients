@@ -1,5 +1,5 @@
 import type { FormikErrors } from 'formik';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
 import type { BaseItemValues, Maybe } from '@proton/pass/types';
@@ -13,7 +13,12 @@ export const validateItemName = (name: string): Maybe<string> => {
      * default input attribute */
     if (name.length > MAX_ITEM_NAME_LENGTH) {
         const maxLength = MAX_ITEM_NAME_LENGTH;
-        return c('Warning').t`Maximum length is ${maxLength} characters`;
+        /* translator: maxLength is numeric value, example "Maximum length is 10 characters" */
+        return c('Warning').ngettext(
+            msgid`Maximum length is ${maxLength} character`,
+            `Maximum length is ${maxLength} characters`,
+            maxLength
+        );
     }
 };
 
@@ -25,7 +30,12 @@ export const validateItemErrors = <T extends BaseItemValues = BaseItemValues>(va
 
     if (values.note.length > MAX_ITEM_NOTE_LENGTH) {
         const maxLength = MAX_ITEM_NOTE_LENGTH;
-        errors.note = c('Warning').t`Maximum length is ${maxLength} characters`;
+        /* translator: maxLength is numeric value, example "Maximum length is 10 characters" */
+        errors.note = c('Warning').ngettext(
+            msgid`Maximum length is ${maxLength} character`,
+            `Maximum length is ${maxLength} characters`,
+            maxLength
+        );
     }
 
     return errors as FormikErrors<T>;
