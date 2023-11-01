@@ -1169,6 +1169,20 @@
         "Tasewti n yiznan"
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } taɣult tudmawant",
+        "${ domains } tiɣula tudmawanin"
+      ],
+      "${ ips } server": [
+        "Aqeddac ${ ips }",
+        "${ ips } yiqeddacen"
+      ],
+      "${ users } user": [
+        "${ users } n useqdac",
+        "${ users } yiseqdacen"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Ma teffɣeḍ tura, yezmer ur d-ttwaktaran ara kra n yinermisen"
@@ -1610,6 +1624,12 @@
       ],
       "Cancel expiration": [
         "Sefsex azemz n taggara"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } n useqdac",
+        "${ users } n yiseqdacen"
       ]
     },
     "Collapsible tooltip": {
@@ -4302,6 +4322,9 @@
         "${ selectedFoldersCountLocalized } d tebzimt yettwefrenn",
         "${ selectedFoldersCountLocalized } n tebzimin yettwafernen"
       ],
+      "${ storage } storage": [
+        "${ storage } n uḥraz"
+      ],
       "${ total } conversation": [
         "${ total } udiwenni",
         "${ total } n yidienniyen"
@@ -5171,6 +5194,15 @@
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Aṭas n yimaylen i yettraǧun ad ttwaznen. Ttxil raǧu almi yettwazen yimayl-nniḍen akken ad tesɣiwseḍ wa."
+      ],
+      "Total email addresses": [
+        "Asemday n tansiwin n yimayl"
+      ],
+      "Total storage": [
+        "Amḍiq n usekles amatu"
+      ],
+      "Total VPN connections": [
+        "Asemday n tuqqniwin VPN"
       ],
       "Trackers blocked:": [
         "Ineḍfaren yettusweḥlen:"
@@ -7597,11 +7629,6 @@
       ],
       "2 years": [
         "2 n yiseggasen"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium Password Manager": [
-        "Amsefrak n wawal uffir premium"
       ]
     },
     "Table header": {

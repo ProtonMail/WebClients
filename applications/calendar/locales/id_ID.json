@@ -150,6 +150,9 @@
       "Continue with Google": [
         "Lanjutkan dengan Google"
       ],
+      "Continue with Outlook": [
+        "Lanjut dengan Outlook"
+      ],
       "Copy address": [
         "Salin alamat"
       ],
@@ -308,6 +311,12 @@
       ],
       "Import from .csv or vCard": [
         "Impor dari .csv atau vCard"
+      ],
+      "Import from Google": [
+        "Impor dari Google"
+      ],
+      "Import from Outlook": [
+        "Impor dari Outlook"
       ],
       "Join calendar": [
         "Gabung ke kalender"
@@ -673,6 +682,17 @@
         "Anda tidak memiliki grup."
       ]
     },
+    "Addon": {
+      "${ domains } custom domains": [
+        "${ domains } domain khusus"
+      ],
+      "${ ips } servers": [
+        "${ ips } server"
+      ],
+      "${ users } users": [
+        "${ users } pengguna"
+      ]
+    },
     "Alarm notification": {
       "${ title } started at ${ formattedHour }": [
         "${ title } dimulai pada pukul ${ formattedHour }"
@@ -1027,6 +1047,11 @@
     "Calendar view; more events collapsed": {
       "${ more } more": [
         "${ more } lainnya"
+      ]
+    },
+    "Checkout row": {
+      "${ users } users": [
+        "${ users } pengguna"
       ]
     },
     "Collapsible tooltip": {
@@ -2073,6 +2098,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Enkripsi dan impor kontak memakan beberapa menit. Anda dapat menutup jendela ini setelah proses selesai."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Untuk mengimpor kontak melalui berkas CSV dan VCF, pastikan berkas Anda tidak melebihi batas ukuran ${ MAX_IMPORT_FILE_SIZE_STRING } atau batas jumlah ${ MAX_IMPORT_CONTACTS_STRING } kontak. Apabila berkas Anda melebihi batas ukuran yang ada, silakan pecahkan berkas Anda ke beberapa berkas yang lebih kecil. ${ learnMoreLink }"
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sepertinya daftar kontak yang Anda impor mengandung beberapa grup. Mohon periksa bagaimana grup ini diimpor."
       ],
@@ -2088,6 +2116,9 @@
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "Ini dapat berlangsung selama beberapa menit. Selagi menunggu, Anda juga dapat menggunakan Proton Calendar seperti biasanya."
       ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Untuk mengimpor kontak Anda dari Google atau Outlook, ${ easySwitchLink }."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Seret-lepas untuk mengurutkan prioritas penggabungan kontak. Tandai kontak yang ingin digabung."
       ],
@@ -2096,6 +2127,11 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Anda dapat menandai kontak-kontak yang tidak ingin digabung atau disimpan. Penghapusan akan dilakukan setelah Anda menekan tombol gabung"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "gunakan alat bantu impor Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2335,6 +2371,9 @@
       ],
       "Incorrect username": [
         "Nama pengguna salah"
+      ],
+      "Intended recipient does not support calendar sharing": [
+        "Penerima yang dituju tidak mendukung berbagi kalender"
       ],
       "Interval cannot be empty": [
         "Interval tidak boleh kosong"
@@ -3500,6 +3539,9 @@
       "${ selectedFoldersCountLocalized } labels selected": [
         "${ selectedFoldersCountLocalized } label dipilih"
       ],
+      "${ storage } storage": [
+        "Kuota penyimpanan ${ storage }"
+      ],
       "${ updated } contacts updated successfully.": [
         "${ updated } kontak berhasil diperbarui."
       ],
@@ -3881,6 +3923,9 @@
       "Previous modifications on this series will be lost.": [
         "Perubahan sebelumnya pada seri ini akan hilang."
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Harga termasuk seluruh diskon berbasis siklus yang berlaku dan kupon tanpa tanggal berakhir yang disimpan di akun Anda."
+      ],
       "Primary": [
         "Utama"
       ],
@@ -3995,8 +4040,23 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Untuk menggunakan Verifikasi Alamat, anda harus mempercayai satu atau beberapa kunci publik yang tersedia, termasuk yang ingin anda gunakan untuk mengirim. Ini mencegah kunci enkripsi dipalsukan."
       ],
+      "Total email addresses": [
+        "Total alamat surel"
+      ],
+      "Total storage": [
+        "Total kuota penyimpanan"
+      ],
+      "Total supported domains": [
+        "Total domain yang didukung"
+      ],
+      "Total VPN connections": [
+        "Total koneksi VPN"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Coba fitur, pembaruan, dan produk ${ BRAND_NAME } baru sebelum mereka dirilis kepada publik. Ini akan memuat ulang aplikasi"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Hingga ${ FAMILY_MAX_USERS } pengguna"
       ],
       "Update recurring event": [
         "Perbarui acara berulang"
@@ -6117,9 +6177,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME } Premium"
-      ],
-      "Premium Password Manager": [
-        "Password Manager Premium"
       ]
     },
     "summer2023: Tooltip": {

@@ -1585,6 +1585,12 @@
         "खत्म होना रद्द करें"
       ]
     },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } यूज़र",
+        "${ users } यूज़र"
+      ]
+    },
     "Collapsible tooltip": {
       "Collapse": [
         "संक्षिप्त करें"
@@ -4365,6 +4371,9 @@
         "${ selectedFoldersCountLocalized } लेबल चयनित",
         "${ selectedFoldersCountLocalized } लेबल चयनित"
       ],
+      "${ storage } storage": [
+        "${ storage } स्टोरेज"
+      ],
       "${ total } conversation": [
         "${ total } बातचीत",
         "${ total } वार्तालाप"
@@ -4989,6 +4998,9 @@
       "Preview for this file type is not supported": [
         "इस तरह के फाइल के लिए प्रीव्यू सपोर्ट नहीं है"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "दाम में आपके खाते में सेव किए चक्र वाले छूट और खत्म-नहीं कूपन, जो लागू हो सकते है, शामिल है।"
+      ],
       "Primary": [
         "मुख्य"
       ],
@@ -5274,6 +5286,18 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "बहुत सारे संदेश भेजे जाने की प्रतीक्षा कर रहे हैं। कृपया इसे शेड्यूल करने के लिए कोई अन्य संदेश भेजे जाने तक प्रतीक्षा करें।"
       ],
+      "Total email addresses": [
+        "कुल ईमेल पते"
+      ],
+      "Total storage": [
+        "कुल स्टोरेज"
+      ],
+      "Total supported domains": [
+        "कुल सपोर्ट किए डोमेन"
+      ],
+      "Total VPN connections": [
+        "कुल VPN कनेक्शन"
+      ],
       "Turn on to search the content of your messages": [
         "अपने संदेशों की सामग्री खोजने के लिए चालू करें"
       ],
@@ -5285,6 +5309,9 @@
       ],
       "Unsupported file": [
         "असमर्थित फ़ाइल"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "${ FAMILY_MAX_USERS } यूज़र तक"
       ],
       "Updating message content search...": [
         "संदेश सामग्री खोज अपडेट की जा रही है..."

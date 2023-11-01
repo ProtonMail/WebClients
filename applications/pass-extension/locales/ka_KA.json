@@ -664,6 +664,9 @@
         "${ memberCount } წევრი",
         "${ memberCount } წევრი"
       ],
+      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
+        "${ PASS_APP_NAME }, მხოლოდ, შესვლის დეტალებს, შენიშვნებს და საკრედიტო ბარათებს შემოიტანს."
+      ],
       "${ revisionNumber } time": [
         "${ revisionNumber }-ჯერ",
         "${ revisionNumber } ჯერ"
@@ -679,6 +682,9 @@
       "${ trialDaysLeft } day left": [
         "დარჩენილია ${ trialDaysLeft } დღე",
         "დარჩენილია ${ trialDaysLeft } დღე"
+      ],
+      "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
+        "7 დღე ფასიანი ფუნქციების უფასოდ მისაღებად. მხოლოდ, ${ BRAND_NAME }-ის ანგარიშის მიღების პირველი კვირის განმავლობაში."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "ხელმისაწვდომია ${ PASS_APP_NAME }-ის ახალი ვერსია. განაახლეთ ის და მიიღეთ უახლესი ფუნქციები და შეცდომის გამართვები."
@@ -952,6 +958,9 @@
       "Save login": [
         "შესვლის დეტალების დამახსოვრება"
       ],
+      "Select where you want your imported vault(s) to be saved.": [
+        "აირჩიეთ, სად გნებავთ თქვენი შემოტანილი საცავების შენახვა."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "სერვერი მიუწვდომელია. ცოტა ხანში სცადეთ"
       ],
@@ -1010,6 +1019,12 @@
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "ეს საცავი ამჟამად გაზიარებული არაა. მოიწვიეთ ხალხი და გაუზიარეთ ის მათ."
       ],
+      "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
+        "სხვა პაროლების მმართველიდან მონაცემების შემოსატანად, გადადით პაროლების მმართველში, გამოიტანეთ თქვენი მონაცემები და ატვირთეთ ის ${ PASS_APP_NAME }-ზე. როცა მონაცემების შემოტანა დასრულდება, გამოტანილი ფაილი წაშალეთ."
+      ],
+      "To review your imported data, click on the Pass icon in your browser toolbar.": [
+        "შემოტანილი მონაცემების სანახავად დააწკაპუნეთ Pass-ის ხატულაზე თქვენი ბრაუზერის პანელზე."
+      ],
       "Unable to copy to clipboard": [
         "ბუფერში დაკოპირება შეუძლებელია"
       ],
@@ -1060,6 +1075,10 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "ამ ფსევდონიმისთვის საფოსტო ყუთებს ვერ შეცვლით."
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "დაგრჩათ ${ daysRemaining } დღე, ეს და სხვა ფასიანი ფუნქციები სცადოთ.",
+        "დაგრჩათ ${ daysRemaining } დღე, ეს და სხვა ფასიანი ფუნქციები სცადოთ."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "თქვენ გადააცილეთ ტარიფისთვის დასაშვები საცავების რაოდენობას. ელემენტები, მხოლოდ, პირველ ორ საცავში შეგიძლიათ, გადაიტანოთ. საცავებს შორის ელემენტების გადასატანად ასწიეთ თქვენი სატარიფო გეგმა."
@@ -1771,6 +1790,9 @@
       "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
         "ფსევდონიმი '${ name }' ამჟამად გამოიყენება შესვლის დეტალის ჩანაწერში '${ relatedLoginName }'. ასევე აღარ მიიღებთ ელფოსტებს, რომლებიც '${ aliasEmail }'-ზე მოვა"
       ],
+      "All your trashed items will be permanently deleted. You cannot undo this action.": [
+        "ყველა თქვენი ნაგვის ყუთში გადაყრილი ელემენტი სამუდამოდ წაიშლება. ეს ქმედება შეუქცევადია."
+      ],
       "An error occured while exporting your data": [
         "შეცდომა თქვენი მონაცემების გატანისას"
       ],
@@ -1854,6 +1876,9 @@
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "${ PASS_APP_NAME }-ში შესვლა შეუძლებელია. ${ additionalMessage }"
+      ],
+      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "წაიშლება საცავი '${ vaultName }' და ყველა მისი ჩანაწერი. ეს ქმედება შეუქცევადია."
       ],
       "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
         "'${ vaultName }' სამუდამოდ წაიშლება და მისი ყველა ჩანაწერი გადატანილი იქნება საცავში '${ destinationVaultName }'"

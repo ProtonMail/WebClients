@@ -831,6 +831,12 @@
         "${ MAIL_APP_NAME } का उपयोग करते रहें।"
       ]
     },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } यूज़र",
+        "${ users } यूज़र"
+      ]
+    },
     "Collapsible tooltip": {
       "Collapse": [
         "संक्षिप्त करें"
@@ -2978,6 +2984,9 @@
       "${ speed }/s": [
         "${ speed }/सेकेंड"
       ],
+      "${ storage } storage": [
+        "${ storage } स्टोरेज"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } संपर्क सफलतापूर्वक अपडेट किया गया।",
         "${ updated } संपर्क सफलतापूर्वक अपडेट किए गए।"
@@ -3549,6 +3558,9 @@
       "Previous versions are not saved": [
         "पिछले संस्करण सेव नहीं होते"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "दाम में आपके खाते में सेव किए चक्र वाले छूट और खत्म-नहीं कूपन, जो लागू हो सकते है, शामिल है।"
+      ],
       "Primary": [
         "मुख्य"
       ],
@@ -3721,6 +3733,18 @@
       "Today": [
         "आज"
       ],
+      "Total email addresses": [
+        "कुल ईमेल पते"
+      ],
+      "Total storage": [
+        "कुल स्टोरेज"
+      ],
+      "Total supported domains": [
+        "कुल सपोर्ट किए डोमेन"
+      ],
+      "Total VPN connections": [
+        "कुल VPN कनेक्शन"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "फ़ाइल \"${ name }\" के लिए स्थानांतरण रद्द किया गया"
       ],
@@ -3750,6 +3774,9 @@
       ],
       "Unsupported file": [
         "असमर्थित फ़ाइल"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "${ FAMILY_MAX_USERS } यूज़र तक"
       ],
       "Updating drive search...": [
         "ड्राइव खोज अपडेट कर रहे..."

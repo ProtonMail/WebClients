@@ -266,9 +266,6 @@
       "Invite user": [
         "ユーザーを招待"
       ],
-      "Keep my ${ vpnPlanNameShort } subscription": [
-        "${ vpnPlanNameShort } サブスクリプションを継続"
-      ],
       "Let's talk": [
         "話をしよう"
       ],
@@ -2006,6 +2003,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } プレミアム"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } と ${ CALENDAR_SHORT_APP_NAME } プレミアム"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } プレミアム"
+      ],
       "Up to 6 users": [
         "最大6人のユーザー"
       ]
@@ -2359,6 +2365,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -2373,6 +2382,9 @@
       ],
       "Megabytes": [
         "メガバイト"
+      ],
+      "Terabytes": [
+        "テラバイト"
       ]
     },
     "Font face option": {
@@ -2873,9 +2885,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "エラーだと思われる場合は ${ contactLink } までご連絡ください。"
-      ],
-      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "キャンセルすると、${ vpnPlanName } サブスクリプションは ${ expiryDate } に期限が切れると更新されません。"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "受信トレイに関連するメッセージを見つけなかった場合、迷惑メールフォルダーを確認してください。"
@@ -3572,9 +3581,6 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "サインイン後、${ destination } にリダイレクトされます。"
-      ],
-      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
-        "この日付になると、${ vpnPlanNameShort } のサーバーと機能へのアクセス権が失われます。"
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } と ${ CALENDAR_APP_NAME } を使うには ${ BRAND_NAME } アドレスが必要です"
@@ -5746,6 +5752,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1ユーザー"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -5763,6 +5772,15 @@
       ],
       "Highest VPN speed": [
         "最高速 VPN"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } と ${ CALENDAR_SHORT_APP_NAME } プレミアム"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } プレミアム"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } プレミアム"
       ],
       "Premium early access": [
         "プレミアム早期アクセス"
@@ -5808,6 +5826,9 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } months": [
+        "${ n } ヶ月"
+      ],
       "/ month": [
         "/ 月"
       ],
@@ -6221,8 +6242,11 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Password Manager": [
-        "プレミアムパスワードマネージャー"
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } プレミアム"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }と${ CALENDAR_SHORT_APP_NAME }プレミアム"
       ]
     },
     "summer2023: Tooltip": {

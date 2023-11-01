@@ -776,6 +776,20 @@
         "Você não tem nenhum grupo."
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } domínio personalizado",
+        "${ domains } domínios personalizados"
+      ],
+      "${ ips } server": [
+        "${ ips } servidor",
+        "${ ips } servidores"
+      ],
+      "${ users } user": [
+        "${ users } usuário",
+        "${ users } usuários"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Ao sair agora, alguns contatos podem não ser importados"
@@ -842,6 +856,18 @@
       ],
       "High speed streaming": [
         "Streaming de alta velocidade"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Gerenciador de senha premium"
       ]
     },
     "bf2023: Footer": {
@@ -981,6 +1007,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuar usando ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } usuário",
+        "${ users } usuários"
       ]
     },
     "Collapsible tooltip": {
@@ -3301,6 +3333,9 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
+      "${ storage } storage": [
+        "${ storage } de armazenamento"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contato atualizado.",
         "${ updated } contatos atualizados."
@@ -3918,6 +3953,9 @@
       "Previous versions are not saved": [
         "Versão anterior não salva"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "O preço inclui todos os descontos baseados em ciclos aplicáveis ​​e cupons não expirados salvos em sua conta."
+      ],
       "Primary": [
         "Principal"
       ],
@@ -3956,6 +3994,9 @@
       ],
       "Search Enabled": [
         "Busca habilitada"
+      ],
+      "Select all items for": [
+        "Select all items para"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Selecione um arquivo ou pasta enviado e crie um link para ele."
@@ -4126,6 +4167,18 @@
       "Today": [
         "Hoje"
       ],
+      "Total email addresses": [
+        "Endereços de e-mail adicionais"
+      ],
+      "Total storage": [
+        "Total de armazenamento"
+      ],
+      "Total supported domains": [
+        "Total de domínios suportados"
+      ],
+      "Total VPN connections": [
+        "Conexões VPN adicionais"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "A transferência do arquivo \"${ name }\" foi cancelado"
       ],
@@ -4162,6 +4215,9 @@
       "Unsupported file": [
         "Arquivo não suportado"
       ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Até ${ FAMILY_MAX_USERS } usuários"
+      ],
       "Updating drive search...": [
         "Atualizando pesquisa de drive..."
       ],
@@ -4188,6 +4244,9 @@
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "Muito bem, você acabou de dobrar seu armazenamento gratuito!"
+      ],
+      "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
+        "Estamos enfrentando problemas técnicos. O envio de novas fotos está temporariamente desativado."
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Não pudemos verificar que ${ emailAddress } enviou ${ fileName }."
@@ -6032,9 +6091,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium de ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Gerenciador de senhas premium"
       ]
     },
     "summer2023: Tooltip": {

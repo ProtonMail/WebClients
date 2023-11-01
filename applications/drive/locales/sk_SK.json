@@ -118,6 +118,9 @@
       "Clear query": [
         "Vymazať dotaz"
       ],
+      "Clear selection": [
+        "Zrušiť výber"
+      ],
       "Click here.": [
         "Kliknite sem."
       ],
@@ -162,6 +165,9 @@
       ],
       "Continue with Google": [
         "Pokračovať cez Google"
+      ],
+      "Continue with Outlook": [
+        "Pokračovať s Outlookom"
       ],
       "Copy address": [
         "Kopírovať adresu"
@@ -372,6 +378,12 @@
       ],
       "Import from .csv or vCard": [
         "Importovať z .csv alebo vCard"
+      ],
+      "Import from Google": [
+        "Importovať z Google"
+      ],
+      "Import from Outlook": [
+        "Importovať z Outlooku"
       ],
       "Learn more": [
         "Zistiť viac"
@@ -709,6 +721,9 @@
       "Upload folder": [
         "Nahrať priečinok"
       ],
+      "Upload photos": [
+        "Nahrať fotografie"
+      ],
       "Upload picture": [
         "Nahrať obrázok"
       ],
@@ -767,6 +782,26 @@
       ],
       "You don't have any groups.": [
         "Nemáte žiadne skupiny."
+      ]
+    },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } vlastná doména",
+        "${ domains } vlastné domény",
+        "${ domains } vlastných domén",
+        "${ domains } vlastných domén"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } servery",
+        "${ ips } serverov",
+        "${ ips } serverov"
+      ],
+      "${ users } user": [
+        "${ users } používateľ",
+        "${ users } používatelia",
+        "${ users } používateľov",
+        "${ users } používateľov"
       ]
     },
     "Alert": {
@@ -890,6 +925,14 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovať s ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } užívateľ",
+        "${ users } užívatelia",
+        "${ users } užívateľov",
+        "${ users } užívateľov"
       ]
     },
     "Collapsible tooltip": {
@@ -1858,6 +1901,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrovanie a import kontaktov... Táto akcia môže trvať niekoľko minút. Akonáhle je proces ukončený, môžete zavrieť tento modul."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Pri importovaní prostredníctvom súborov CSV a VCF zabezpečte, aby veľkosť súboru nepresiahla ${ MAX_IMPORT_FILE_SIZE_STRING } alebo ${ MAX_IMPORT_CONTACTS_STRING } kontaktov. Ak je váš súbor väčší, rozdeľte ho na menšie súbory. ${ learnMoreLink }."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá sa, že zoznam kontaktov ktorý importujete, zahŕňa nejaké skupiny. Prosím, skontrolujte ako by tieto skupiny mali byť importované."
       ],
@@ -1870,6 +1916,9 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Ušetrite čas posielaním e-mailov alebo pozvánok všetkým naraz, čo je prémiová funkcia medzi mnohými ďalšími. Inovujte ešte dnes."
       ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Pre import kontaktov zo služby Google alebo Outlook ${ easySwitchLink }."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Pomocou myši ťahajte a pustite pre zmenu priority spojenie kontaktov. Odškrtnite kontakty, ktoré nechcete zlúčiť."
       ],
@@ -1878,6 +1927,11 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Kontakty, ktoré nechcete zlúčiť ani zachovať, označte pre zmazanie. K zmazaniu dôjde po kliknutí na tlačidlo pre zlúčenie"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "použite asistenta pre import Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2161,6 +2215,9 @@
       ],
       "Some contacts could not be deleted": [
         "Niektoré kontakty nemožno zmazať"
+      ],
+      "Some files were ignored because they are not supported in Photos": [
+        "Niektoré súbory boli ignorované, pretože nie sú podporované v aplikácii Fotografie"
       ],
       "Some groups could not be deleted": [
         "Niektoré skupiny nie je možné odstrániť"
@@ -3268,6 +3325,12 @@
         "${ selectedContactsLength }/${ contactsLength } vybraných kontaktov",
         "${ selectedContactsLength }/${ contactsLength } vybraných kontaktov"
       ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } vybraný",
+        "${ selectedCount } vybrané",
+        "${ selectedCount } vybraných",
+        "${ selectedCount } vybraných"
+      ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } vybratá zložka",
         "${ selectedFoldersCount } vybraté zložky",
@@ -3294,6 +3357,9 @@
       ],
       "${ speed }/s": [
         "${ speed }/s"
+      ],
+      "${ storage } storage": [
+        "${ storage } úložisko"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt bol úspešne aktualizovaný.",
@@ -3381,6 +3447,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Naozaj chcete vybrané položky natrvalo vymazať z koša?"
+      ],
+      "As soon as you have photos or videos on your device, they will appear here.": [
+        "Akonáhle budete mať v zariadení fotografie alebo videá, zobrazia sa tu."
       ],
       "Attention required": [
         "Vyžaduje sa pozornosť"
@@ -3823,6 +3892,9 @@
       "No group found": [
         "Nebola nájdená žiadna skupina"
       ],
+      "No photos yet": [
+        "Zatiaľ bez fotografií"
+      ],
       "No results found": [
         "Nenájdené žiadne výsledky"
       ],
@@ -3931,6 +4003,9 @@
       "Previous versions are not saved": [
         "Predchádzajúce verzie nie sú uložené"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Cena zahŕňa všetky príslušné zľavy na základe cyklu a kupóny, ktorých platnosť nie je ukončená, uložené vo vašom účte."
+      ],
       "Primary": [
         "Hlavný"
       ],
@@ -3970,8 +4045,14 @@
       "Search Enabled": [
         "Vyhľadávanie povolené"
       ],
+      "Select all items for": [
+        "Vybrať všetky položky za"
+      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Vyberte nahraný súbor alebo priečinok a vytvorte naň odkaz."
+      ],
+      "Select item": [
+        "Vyberte položku"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vyberte formát emailu, ktorý chcete aby bol použitý ako predvolený pre zasielanie emailu na túto emailovú adresu."
@@ -4090,6 +4171,9 @@
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
         "Tento odkaz bude navždy deaktivovaný. Nikto s týmto odkazom nebude mať prístup k vášmu priečinku. Na opätovné zdieľanie tohto priečinka budete potrebovať nový odkaz."
       ],
+      "This month": [
+        "Tento mesiac"
+      ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Týmto sa vymaže odkaz a odoberie prístup komukoľvek s odkazom k vášmu súboru alebo priečinku.",
         "Týmto sa odstránia odkazy a odoberie prístup komukoľvek s odkazom k vašim súborom alebo priečinkom.",
@@ -4135,6 +4219,18 @@
       "Today": [
         "Dnes"
       ],
+      "Total email addresses": [
+        "Všetky e-mailové adresy"
+      ],
+      "Total storage": [
+        "Celkové úložisko "
+      ],
+      "Total supported domains": [
+        "Celkom podporovaných domén"
+      ],
+      "Total VPN connections": [
+        "Celkom VPN pripojení"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "Prenos zrušený pre súbor „${ name }“"
       ],
@@ -4171,6 +4267,9 @@
       "Unsupported file": [
         "Nepodporovaný súbor"
       ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Až ${ FAMILY_MAX_USERS } používateľov"
+      ],
       "Updating drive search...": [
         "Aktualizácia vyhľadávania na disku..."
       ],
@@ -4197,6 +4296,9 @@
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "Výborne, práve ste zdvojnásobili svoje bezplatné úložisko!"
+      ],
+      "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
+        "Máme technické problémy. Nahrávanie nových fotografií je dočasne nedostupné."
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Nemohli sme overiť, či ${ emailAddress } nahral ${ fileName }."
@@ -4719,6 +4821,9 @@
       "Phone number": [
         "Telefónne číslo"
       ],
+      "Photo": [
+        "Fotografia"
+      ],
       "Please provide full details to help us take appropriate action": [
         "Prosím, uveďte všetky detaily, ktoré nám pomôžu prijať príslušné opatrenia"
       ],
@@ -4903,6 +5008,9 @@
       ],
       "Pay invoice": [
         "Zaplatiť faktúru"
+      ],
+      "Photos": [
+        "Fotografie"
       ],
       "Reactivate now": [
         "Znovu aktivovať teraz"
@@ -5431,7 +5539,7 @@
     },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-mailová adresa sa nenašla medzi identifikátormi používateľov definovanými v kľúči na odosielanie (${ keyUserIds })"
+        "Emailová adresa sa nenašla medzi identifikátormi používateľov definovanými v kľúči na odosielanie (${ keyUserIds })"
       ]
     },
     "Placeholder": {
@@ -6126,9 +6234,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Prémiový ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Prémiový správca hesiel"
       ]
     },
     "summer2023: Tooltip": {
@@ -6591,6 +6696,9 @@
       ],
       "Phone numbers": [
         "Telefónne čísla"
+      ],
+      "Photos": [
+        "Fotografie"
       ],
       "Preview": [
         "Náhľad"

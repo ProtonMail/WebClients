@@ -59,6 +59,9 @@
       "Confirm access": [
         "Zugriff bestätigen"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "${ BRAND_NAME }-Konto verbinden"
+      ],
       "Continue": [
         "Weiter"
       ],
@@ -76,6 +79,9 @@
       ],
       "Create": [
         "Erstellen"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "${ BRAND_NAME }-Konto erstellen"
       ],
       "Create a ${ BRAND_NAME } account": [
         "${ BRAND_NAME }-Konto erstellen"
@@ -157,6 +163,9 @@
       ],
       "Generate password": [
         "Passwort generieren"
+      ],
+      "Generated passwords": [
+        "Generierte Passwörter"
       ],
       "Get mobile apps": [
         "Mobile Apps holen"
@@ -362,7 +371,7 @@
     },
     "bf2023: Info": {
       "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
-        "Spare clever! Hol dir ein Jahr Pass Plus für nur ${ relativePrice } pro Monat."
+        "Spare clever. Hol dir ein Jahr Pass Plus für nur ${ relativePrice } pro Monat."
       ]
     },
     "bf2023: Label": {
@@ -689,6 +698,9 @@
         "${ trialDaysLeft } verbleibender Tag",
         "${ trialDaysLeft } verbleibende Tage"
       ],
+      "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
+        "7 Tage, um Premium-Funktionen kostenlos zu testen. Nur während deiner ersten Woche bei ${ BRAND_NAME }."
+      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Eine neue Version von ${ PASS_APP_NAME } ist verfügbar. Aktualisiere sie, um die neuesten Funktionen und Fehlerbehebungen zu genießen."
       ],
@@ -733,6 +745,9 @@
       ],
       "Can view items in this vault.": [
         "Darf Einträge in diesem Tresor anzeigen."
+      ],
+      "Click the icon to open it anytime.": [
+        "Klicke auf das Symbol, um es jederzeit zu öffnen."
       ],
       "Congratulations, your access has been confirmed": [
         "Gratulation, dein Zugriff wurde bestätigt."
@@ -782,6 +797,9 @@
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "Der Export wird mit PGP verschlüsselt und erfordert eine starke Passphrase."
       ],
+      "For easy access to your passwords and more.": [
+        "Für einfachen Zugang zu deinen Passwörtern und mehr."
+      ],
       "For security reason, your access needs to be confirmed": [
         "Aus Sicherheitsgründen muss dein Zugriff bestätigt werden."
       ],
@@ -817,6 +835,9 @@
       ],
       "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
         "Wenn diese Funktion aktiviert ist, kannst du deine Anmeldeinformationen schnell ausfüllen, indem du auf das ${ PASS_APP_NAME }-Symbol klickst."
+      ],
+      "Import in progress:": [
+        "Import im Gange:"
       ],
       "Imported ${ payload.total } item": [
         "${ payload.total } Eintrag importiert",
@@ -910,6 +931,9 @@
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "Das Eigentumsrecht wurde erfolgreich übertragen. Du bist nicht mehr der Eigentümer dieses Tresors."
       ],
+      "Pass Plus trial": [
+        "Pass Plus-Testversion"
+      ],
       "Password copied": [
         "Passwort kopiert"
       ],
@@ -949,6 +973,9 @@
       "Save login": [
         "Anmeldedaten speichern"
       ],
+      "Select where you want your imported vault(s) to be saved.": [
+        "Wähle aus, wo die importierten Tresore gespeichert werden sollen."
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Die Server sind unerreichbar. Bitte versuche es in ein paar Minuten erneut"
       ],
@@ -982,6 +1009,9 @@
       "Successfully synced all vaults": [
         "Alle Tresore erfolgreich synchronisiert."
       ],
+      "Switch to another vault or create an item in this vault": [
+        "Wechsle zu einem anderen Tresor oder erstelle einen Eintrag in diesem Tresor."
+      ],
       "Syncing your vaults…": [
         "Synchronisiere deine Tresore…"
       ],
@@ -1003,6 +1033,12 @@
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Dieser Tresor wird derzeit mit niemandem geteilt. Lade Personen ein, um ihn mit diesen zu teilen."
+      ],
+      "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
+        "Um Daten von einem anderen Passwort-Manager zu migrieren, exportiere deine Daten und lade sie dann zu ${ PASS_APP_NAME } hoch. Lösche die exportierte Datei, sobald deine Daten importiert wurden."
+      ],
+      "To review your imported data, click on the Pass icon in your browser toolbar.": [
+        "Klicke auf das Pass-Symbol in der Symbolleiste deines Browsers, um deine importierten Daten zu überprüfen."
       ],
       "Unable to copy to clipboard": [
         "Kopieren in die Zwischenablage nicht möglich"
