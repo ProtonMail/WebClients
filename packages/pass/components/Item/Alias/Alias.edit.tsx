@@ -163,25 +163,17 @@ export const AliasEdit: VFC<ItemEditViewProps<'alias'>> = ({ vault, revision, on
                                 </Field>
                             ) : (
                                 <ValueControl
-                                    as="ul"
                                     icon="arrow-up-and-right-big"
                                     label={c('Label').t`Forwards to`}
                                     loading={loading}
-                                    extra={
-                                        !loading ? (
-                                            <em className="mt-1 text-xs color-weak flex flex-align-items-center gap-1">
-                                                <Icon name="exclamation-circle" size={16} />
-                                                <span>{c('Info')
-                                                    .t`You cannot change the mailboxes for this alias.`}</span>
-                                            </em>
-                                        ) : undefined
-                                    }
                                 >
-                                    {aliasDetails.value.map(({ email }) => (
-                                        <li key={email} className="text-ellipsis">
-                                            {email}
-                                        </li>
-                                    ))}
+                                    {!loading ? (
+                                        <span className="mt-1 text-xs color-weak flex flex-align-items-center gap-1">
+                                            <Icon name="exclamation-circle" size={16} />
+                                            <span className="text-pre-wrap flex-item-fluid">{c('Info')
+                                                .t`You cannot change the mailboxes for this alias.`}</span>
+                                        </span>
+                                    ) : undefined}
                                 </ValueControl>
                             )}
                         </FieldsetCluster>
