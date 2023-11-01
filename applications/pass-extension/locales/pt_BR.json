@@ -364,6 +364,14 @@
       ],
       "Write us on Twitter": [
         "Escreva-nos no Twitter"
+      ],
+      "Your password manager not here? Request it.": [
+        "Seu gerenciador de senhas não está aqui? Solicite."
+      ]
+    },
+    "bf2023: Info": {
+      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
+        "Economize de forma inteligente. Ganhe um ano do Pass Plus por apenas ${ relativePrice } por mês."
       ]
     },
     "Button": {
@@ -1013,6 +1021,9 @@
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Este cofre não é mais compartilhado com ninguém. Convide outras pessoas para compartilha-lo."
       ],
+      "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
+        "Para migrar dados de outro gerenciador de senhas, acesse o gerenciador de senhas, exporte seus dados e faça o envio deles para ${ PASS_APP_NAME }. Depois que seus dados forem importados, exclua o arquivo exportado."
+      ],
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "Para revisar seus dados importados, clique no ícone do Proton Pass na barra de ferramentas de seu navegador."
       ],
@@ -1066,6 +1077,10 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "Você não pode alterar as caixas de entrada para este alias."
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Você tem ${ daysRemaining } dia restante para experimentar esses e outros recursos premium.",
+        "Você tem ${ daysRemaining } dias restantes para experimentar esses e outros recursos premium."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Você excedeu o número de cofres incluídos na sua assinatura. Os itens só podem ser movidos para os dois primeiros cofres. Para mover itens entre todos os cofres, atualize sua assinatura."
@@ -1679,6 +1694,9 @@
       ],
       "Member limit": [
         "Limite de membros"
+      ],
+      "Our welcome gift to you": [
+        "Nosso presente de boas-vindas para você"
       ],
       "Pending access to the shared data": [
         "Acesso pendente para compartilhar os dados."
