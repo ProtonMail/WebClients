@@ -13,7 +13,7 @@ import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/Drop
 import { MoreInfoDropdown } from '@proton/pass/components/Layout/Dropdown/MoreInfoDropdown';
 import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPanel';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
-import { useActionWithRequest } from '@proton/pass/hooks/useActionWithRequest';
+import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
 import { getAliasDetailsIntent } from '@proton/pass/store/actions';
 import { aliasDetailsRequest } from '@proton/pass/store/actions/requests';
@@ -35,7 +35,7 @@ export const AliasView: VFC<ItemViewProps<'alias'>> = ({ vault, revision, ...ite
     const relatedLoginName = relatedLogin?.data.metadata.name ?? '';
     const note = useDeobfuscatedValue(item.metadata.note);
 
-    const getAliasDetails = useActionWithRequest({
+    const getAliasDetails = useActionRequest({
         action: getAliasDetailsIntent,
         requestId: aliasDetailsRequest(aliasEmail),
         onFailure: () => {

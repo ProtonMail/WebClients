@@ -1,7 +1,7 @@
 import { fork, put, takeLeading } from 'redux-saga/effects';
 
 import { lockSessionImmediate } from '@proton/pass/lib/auth/session-lock';
-import { offlineLock, sessionLock, stateCache } from '@proton/pass/store/actions';
+import { sessionLockIntent, stateCache } from '@proton/pass/store/actions';
 import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
 import { logger } from '@proton/pass/utils/logger';
 
@@ -19,7 +19,6 @@ function* lockSessionImmediateWorker({ onSessionLocked, getAuth }: WorkerRootSag
                 yield lockSessionImmediate();
             } catch (e) {
                 logger.info('[Saga::SessionLock] Could not lock session on back-end');
-                yield put(offlineLock()); /* TODO: handle offline locking -> lock on next boot */
             }
         });
 
@@ -28,5 +27,5 @@ function* lockSessionImmediateWorker({ onSessionLocked, getAuth }: WorkerRootSag
 }
 
 export default function* watcher(options: WorkerRootSagaOptions) {
-    yield takeLeading(sessionLock.match, lockSessionImmediateWorker, options);
+    yield takeLeading(sessionLockIntent.match, lockSessionImmediateWorker, options);
 }

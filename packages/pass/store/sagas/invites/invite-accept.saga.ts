@@ -9,7 +9,7 @@ import {
     inviteAcceptFailure,
     inviteAcceptIntent,
     inviteAcceptSuccess,
-    setRequestProgress,
+    requestProgress,
     startEventPolling,
     stopEventPolling,
 } from '@proton/pass/store/actions';
@@ -42,7 +42,7 @@ function* acceptInviteWorker({ payload, meta: { request } }: ReturnType<typeof i
             switch (action.type) {
                 case 'progress':
                     if (invite.vault.itemCount === 0) break;
-                    yield put(setRequestProgress(request.id, action.value));
+                    yield put(requestProgress(request.id, action.value));
                     break;
                 case 'done':
                     yield put(inviteAcceptSuccess(request.id, payload.inviteToken, share, action.result));

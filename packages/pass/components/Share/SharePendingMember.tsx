@@ -4,6 +4,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Info } from '@proton/components/components';
+import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
+import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
+import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import {
     inviteRemoveIntent,
     inviteResendIntent,
@@ -18,9 +21,6 @@ import {
 } from '@proton/pass/store/actions/requests';
 import { NewUserInviteState } from '@proton/pass/types';
 
-import { useActionWithRequest } from '../../hooks/useActionWithRequest';
-import { DropdownMenuButton } from '../Layout/Dropdown/DropdownMenuButton';
-import { QuickActionsDropdown } from '../Layout/Dropdown/QuickActionsDropdown';
 import { ShareMemberAvatar } from './ShareMemberAvatar';
 
 type PendingMemberBase = { canManage: boolean; email: string; shareId: string };
@@ -55,8 +55,8 @@ export const SharePendingMember: VFC<SharePendingMemberProps> = ({ actions, emai
 );
 
 export const PendingExistingMember: VFC<PendingExistingMemberProps> = ({ canManage, email, inviteId, shareId }) => {
-    const resendInvite = useActionWithRequest({ action: inviteResendIntent, requestId: inviteResendRequest(inviteId) });
-    const removeInvite = useActionWithRequest({ action: inviteRemoveIntent, requestId: inviteRemoveRequest(inviteId) });
+    const resendInvite = useActionRequest({ action: inviteResendIntent, requestId: inviteResendRequest(inviteId) });
+    const removeInvite = useActionRequest({ action: inviteRemoveIntent, requestId: inviteRemoveRequest(inviteId) });
 
     const handleResendInvite = () => resendInvite.dispatch({ shareId, inviteId });
     const handleRemoveInvite = () => removeInvite.dispatch({ shareId, inviteId });
@@ -93,12 +93,12 @@ export const PendingExistingMember: VFC<PendingExistingMemberProps> = ({ canMana
 };
 
 export const PendingNewMember: VFC<PendingNewMemberProps> = ({ canManage, email, shareId, state, newUserInviteId }) => {
-    const promoteInvite = useActionWithRequest({
+    const promoteInvite = useActionRequest({
         action: newUserInvitePromoteIntent,
         requestId: newUserInvitePromoteRequest(newUserInviteId),
     });
 
-    const removeInvite = useActionWithRequest({
+    const removeInvite = useActionRequest({
         action: newUserInviteRemoveIntent,
         requestId: newUserInviteRemoveRequest(newUserInviteId),
     });

@@ -6,8 +6,9 @@ import { useWorkerStateEvents } from 'proton-pass-extension/lib/hooks/useWorkerS
 import { useActivityProbe } from '@proton/pass/hooks/useActivityProbe';
 import type { MessageWithSenderFactory } from '@proton/pass/lib/extension/message';
 import { workerReady } from '@proton/pass/lib/worker';
-import { sessionLock, signout, syncIntent } from '@proton/pass/store/actions';
-import { selectDidWakeup } from '@proton/pass/store/selectors';
+import { sessionLockIntent, signoutIntent, syncIntent } from '@proton/pass/store/actions';
+import { wakeupRequest } from '@proton/pass/store/actions/requests';
+import { selectRequestInFlight } from '@proton/pass/store/selectors';
 import type { ExtensionEndpoint, MaybeNull, WorkerMessageWithSender, WorkerState } from '@proton/pass/types';
 import { WorkerStatus } from '@proton/pass/types';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
@@ -57,19 +58,20 @@ export const ExtensionConnect = <T extends ExtensionEndpoint>({
     const activityProbe = useActivityProbe(messageFactory);
 
     const [state, setState] = useState<WorkerState>(INITIAL_WORKER_STATE);
-    const ready = useSelector(selectDidWakeup(endpoint, tabId)) && workerReady(state.status);
+    const wakeupLoading = useSelector(selectRequestInFlight(wakeupRequest({ endpoint, tabId })));
+    const ready = !wakeupLoading && workerReady(state.status);
 
     const logout = useCallback(({ soft }: { soft: boolean }) => {
         setState(INITIAL_WORKER_STATE);
-        dispatch(signout({ soft }));
+        dispatch(signoutIntent({ soft }));
     }, []);
 
     const lock = useCallback(() => {
         setState({ ...INITIAL_WORKER_STATE, status: WorkerStatus.LOCKED });
-        dispatch(sessionLock());
+        dispatch(sessionLockIntent());
     }, []);
 
-    const sync = useCallback(() => dispatch(syncIntent({})), []);
+    const sync = useCallback(() => dispatch(syncIntent()), []);
 
     useWorkerStateEvents({
         tabId,

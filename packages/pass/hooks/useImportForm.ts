@@ -1,6 +1,6 @@
 import type { ComponentProps } from 'react';
-import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useRef, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import type { FormikContextType, FormikErrors } from 'formik';
 import { useFormik } from 'formik';
@@ -12,7 +12,6 @@ import { extractFileExtension, fileReader } from '@proton/pass/lib/import/reader
 import type { ImportPayload, ImportReaderPayload } from '@proton/pass/lib/import/types';
 import { ImportProvider } from '@proton/pass/lib/import/types';
 import { importItemsIntent } from '@proton/pass/store/actions';
-import { importItems } from '@proton/pass/store/actions/requests';
 import type { ImportState } from '@proton/pass/store/reducers';
 import { selectLatestImport, selectUser } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
@@ -20,9 +19,9 @@ import { first } from '@proton/pass/utils/array/first';
 import { orThrow, pipe } from '@proton/pass/utils/fp/pipe';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import identity from '@proton/utils/identity';
-import noop from '@proton/utils/noop';
 
-import { useRequestStatusEffect } from './useRequestStatusEffect';
+import { importItemsRequest } from '../store/actions/requests';
+import { useActionRequest } from './useActionRequest';
 
 type DropzoneProps = ComponentProps<typeof Dropzone>;
 type FileInputProps = ComponentProps<typeof FileInput>;
@@ -31,7 +30,6 @@ export type ImportFormValues = { file: MaybeNull<File>; provider: MaybeNull<Impo
 
 export type ImportFormContext = {
     form: FormikContextType<ImportFormValues>;
-    reset: () => void;
     busy: boolean;
     result: ImportState;
     dropzone: {
@@ -47,7 +45,6 @@ export type UseImportFormBeforeSubmit = (payload: ImportPayload) => Promise<UseI
 export type UseImportFormOptions = {
     beforeSubmit?: UseImportFormBeforeSubmit;
     onSubmit?: (payload: ImportPayload) => void;
-    onImported?: () => void;
 };
 
 export const SUPPORTED_IMPORT_FILE_TYPES = ['json', '1pif', '1pux', 'pgp', 'zip', 'csv', 'xml'];
@@ -86,17 +83,25 @@ const isNonEmptyImportPayload = (payload: ImportPayload) =>
 export const useImportForm = ({
     beforeSubmit = (payload) => Promise.resolve({ ok: true, payload }),
     onSubmit,
-    onImported = noop,
 }: UseImportFormOptions): ImportFormContext => {
-    const dispatch = useDispatch();
-
     const [busy, setBusy] = useState(false);
     const [dropzoneHovered, setDropzoneHovered] = useState(false);
     const { createNotification } = useNotifications();
     const result = useSelector(selectLatestImport);
     const user = useSelector(selectUser);
+    const formRef = useRef<FormikContextType<ImportFormValues>>();
 
-    const form: FormikContextType<ImportFormValues> = useFormik<ImportFormValues>({
+    const importItems = useActionRequest({
+        action: importItemsIntent,
+        requestId: importItemsRequest(),
+        onSuccess: () => {
+            setBusy(false);
+            void formRef.current?.setValues(getInitialFormValues());
+        },
+        onFailure: () => setBusy(false),
+    });
+
+    const form = useFormik<ImportFormValues>({
         initialValues: getInitialFormValues(),
         initialErrors: { file: '' },
         validateOnChange: true,
@@ -116,6 +121,7 @@ export const useImportForm = ({
                 };
 
                 const importPayload = await fileReader(payload);
+
                 if (!isNonEmptyImportPayload(importPayload)) {
                     createNotification({
                         type: 'error',
@@ -128,7 +134,7 @@ export const useImportForm = ({
                 if (!result.ok) return setBusy(false);
 
                 onSubmit?.(result.payload);
-                dispatch(importItemsIntent({ data: result.payload, provider: values.provider }));
+                importItems.dispatch({ data: result.payload, provider: values.provider });
             } catch (e) {
                 setBusy(false);
                 if (e instanceof Error) {
@@ -138,10 +144,7 @@ export const useImportForm = ({
         },
     });
 
-    const reset = () => {
-        void form.setValues(getInitialFormValues());
-        setBusy(false);
-    };
+    formRef.current = form;
 
     const onAddFiles = (files: File[]) => {
         try {
@@ -159,14 +162,8 @@ export const useImportForm = ({
 
     const onAttach: FileInputProps['onChange'] = (event) => onAddFiles((event.target.files as File[] | null) ?? []);
 
-    useRequestStatusEffect(importItems(), {
-        onSuccess: () => pipe(reset, onImported),
-        onFailure: () => setBusy(false),
-    });
-
     return {
         form,
-        reset,
         busy,
         result,
         dropzone: {

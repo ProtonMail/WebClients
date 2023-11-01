@@ -4,9 +4,9 @@ import {
     itemCreationSuccess,
     sessionLockDisableSuccess,
     sessionLockEnableSuccess,
+    sessionLockSync,
     settingsEditSuccess,
     syncLocalSettings,
-    syncLock,
 } from '@proton/pass/store/actions';
 import { SessionLockStatus } from '@proton/pass/types';
 import type {
@@ -61,7 +61,7 @@ const reducer: Reducer<SettingsState> = (state = INITIAL_STATE, action) => {
         return partialMerge(state, { sessionLockRegistered: false, sessionLockTTL: undefined });
     }
 
-    if (syncLock.match(action)) {
+    if (sessionLockSync.match(action)) {
         return partialMerge(state, {
             sessionLockTTL: action.payload.ttl,
             sessionLockRegistered: action.payload.status !== SessionLockStatus.NONE,

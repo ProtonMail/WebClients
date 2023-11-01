@@ -9,7 +9,7 @@ import { aliasDetailsRequest } from '@proton/pass/store/actions/requests';
 import { selectAliasDetails } from '@proton/pass/store/selectors';
 import type { AliasMailbox, Maybe } from '@proton/pass/types';
 
-import { useActionWithRequest } from './useActionWithRequest';
+import { useActionRequest } from './useActionRequest';
 
 type UseAliasDetailsConfig = {
     aliasEmail: string;
@@ -22,7 +22,7 @@ export const useAliasDetails = ({ aliasEmail, itemId, shareId, onAliasDetailsLoa
     const { createNotification } = useNotifications();
     const aliasDetails = useSelector(selectAliasDetails(aliasEmail));
 
-    const getAliasDetails = useActionWithRequest({
+    const getAliasDetails = useActionRequest({
         action: getAliasDetailsIntent,
         requestId: aliasDetailsRequest(aliasEmail),
         onSuccess: () => onAliasDetailsLoaded?.(aliasDetails),

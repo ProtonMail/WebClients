@@ -15,10 +15,10 @@ function* disableSessionLockWorker(
 ) {
     try {
         yield deleteSessionLock(payload.pin);
-        yield put(sessionLockDisableSuccess(meta.sender?.endpoint));
+        yield put(sessionLockDisableSuccess(meta.request.id, meta.sender?.endpoint));
         yield onSessionLockChange?.();
-    } catch (e) {
-        yield put(sessionLockDisableFailure(e, meta.sender?.endpoint));
+    } catch (error) {
+        yield put(sessionLockDisableFailure(meta.request.id, error, meta.sender?.endpoint));
     }
 }
 
