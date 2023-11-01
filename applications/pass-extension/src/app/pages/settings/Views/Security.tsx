@@ -42,7 +42,7 @@ export const Security: VFC = () => {
                 <span>
                     {c('Label').t`Auto-lock ${PASS_APP_NAME}`}
                     <span className="block color-weak text-sm">{c('Info')
-                        .t`Access to ${PASS_APP_NAME} will require a pin code to unlock your session`}</span>
+                        .t`Access to ${PASS_APP_NAME} will require a PIN code to unlock your session`}</span>
                 </span>
             </Checkbox>
 
