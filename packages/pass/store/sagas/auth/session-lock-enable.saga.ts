@@ -23,10 +23,10 @@ function* enableSessionLockWorker(
         }
 
         const sessionLockToken: string = yield lockSession(pin, ttl);
-        yield put(sessionLockEnableSuccess({ sessionLockToken, ttl }, meta.sender?.endpoint));
+        yield put(sessionLockEnableSuccess(meta.request.id, { sessionLockToken, ttl }, meta.sender?.endpoint));
         yield onSessionLockChange?.(sessionLockToken, ttl);
-    } catch (e) {
-        yield put(sessionLockEnableFailure(e, meta.sender?.endpoint));
+    } catch (error) {
+        yield put(sessionLockEnableFailure(meta.request.id, error, meta.sender?.endpoint));
     }
 }
 

@@ -1,10 +1,8 @@
 import { type VFC, useCallback } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components/index';
-import { sessionLockEnableIntent } from '@proton/pass/store/actions';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useSessionLockConfirmContext } from './LockConfirmContextProvider';
@@ -13,10 +11,10 @@ import { LockPinModal } from './LockPinModal';
 type Props = {
     opened: boolean;
     onClose: () => void;
+    onSubmit: (options: { pin: string; ttl: number }) => void;
 };
 
-export const LockCreate: VFC<Props> = ({ opened, onClose }) => {
-    const dispatch = useDispatch();
+export const LockCreate: VFC<Props> = ({ opened, onClose, onSubmit }) => {
     const { createNotification } = useNotifications();
     const { confirmPin } = useSessionLockConfirmContext();
 
@@ -37,7 +35,7 @@ export const LockCreate: VFC<Props> = ({ opened, onClose }) => {
                         throw new Error('invalid');
                     }
 
-                    dispatch(sessionLockEnableIntent({ pin: pinConfirmation, ttl: 900 /* default to 15 minutes */ }));
+                    onSubmit({ pin: pinConfirmation, ttl: 900 /* default to 15 minutes */ });
                 },
             };
 

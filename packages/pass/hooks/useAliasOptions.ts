@@ -7,7 +7,7 @@ import { selectAliasOptions } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import type { AliasMailbox } from '@proton/pass/types/data/alias';
 
-import { useActionWithRequest } from './useActionWithRequest';
+import { useActionRequest } from './useActionRequest';
 
 export type SanitizedAliasOptions = {
     suffixes: { value: string; signature: string }[];
@@ -47,7 +47,7 @@ export const useAliasOptions = ({
         [aliasOptions]
     );
 
-    const getAliasOptions = useActionWithRequest({
+    const getAliasOptions = useActionRequest({
         action: getAliasOptionsIntent,
         requestId: aliasOptionsRequest(shareId),
         onSuccess: () => sanitizedAliasOptions && onAliasOptionsLoaded?.(sanitizedAliasOptions),

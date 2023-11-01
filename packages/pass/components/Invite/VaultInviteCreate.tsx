@@ -10,14 +10,13 @@ import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal'
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { SharedVaultItem } from '@proton/pass/components/Vault/SharedVaultItem';
-import { VaultModal, type Props as VaultModalProps } from '@proton/pass/components/Vault/Vault.modal';
-import type { RequestEntryFromAction } from '@proton/pass/hooks/useActionWithRequest';
-import { useActionWithRequest } from '@proton/pass/hooks/useActionWithRequest';
+import type { RequestEntryFromAction } from '@proton/pass/hooks/useActionRequest';
+import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { validateShareInviteValues } from '@proton/pass/lib/validation/vault-invite';
 import type { inviteCreationSuccess } from '@proton/pass/store/actions';
 import { inviteCreationIntent } from '@proton/pass/store/actions';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
-import type { InviteFormValues, MaybeNull, SelectedItem } from '@proton/pass/types';
+import type { InviteFormValues, SelectedItem } from '@proton/pass/types';
 import { ShareRole } from '@proton/pass/types';
 import { VaultColor, VaultIcon } from '@proton/pass/types/protobuf/vault-v1';
 import clsx from '@proton/utils/clsx';
@@ -38,9 +37,8 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
     const { close, manageAccess } = useInviteContext();
     const [didMount, setDidMount] = useState(false);
     const timer = useRef<NodeJS.Timeout>();
-    const [vaultModalProps, setVaultModalProps] = useState<MaybeNull<VaultModalProps>>(null);
 
-    const createInvite = useActionWithRequest({
+    const createInvite = useActionRequest({
         action: inviteCreationIntent,
         onSuccess: (req: RequestEntryFromAction<ReturnType<typeof inviteCreationSuccess>>) => {
             const { shareId } = req.data;
@@ -181,7 +179,6 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
                     </FormikProvider>
                 </Panel>
             </SidebarModal>
-            {vaultModalProps !== null && <VaultModal {...vaultModalProps} onClose={() => setVaultModalProps(null)} />}
         </>
     );
 };

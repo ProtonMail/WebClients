@@ -8,7 +8,6 @@ import { type Maybe, type MaybeNull, type ShareType } from '@proton/pass/types';
 import { and, invert } from '@proton/pass/utils/fp/predicates';
 import { sortOn } from '@proton/pass/utils/fp/sort';
 
-import { unwrapOptimisticState } from '../optimistic/utils/transformers';
 import type { ShareItem, VaultShareItem } from '../reducers';
 import type { State } from '../types';
 import { SelectorError } from './errors';
@@ -17,7 +16,7 @@ import { selectProxiedSettings } from './settings';
 
 export const selectShares = ({ shares }: State) => shares;
 
-export const selectAllShares = createSelector(selectShares, (shares) => Object.values(unwrapOptimisticState(shares)));
+export const selectAllShares = createSelector(selectShares, (shares) => Object.values(shares));
 
 /* vaults returned from this selector are always
  * sorted alphabetically by ascending vault name  */

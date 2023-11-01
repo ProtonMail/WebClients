@@ -59,7 +59,6 @@ export enum WorkerMessageType {
     FORM_ENTRY_REQUEST = 'FORM_ENTRY_REQUEST',
     FORM_ENTRY_STAGE = 'FORM_ENTRY_STAGE',
     FORM_ENTRY_STASH = 'FORM_ENTRY_STASH',
-    IMPORT_PROGRESS = 'IMPORT_PROGRESS',
     LOAD_CONTENT_SCRIPT = 'LOAD_CONTENT_SCRIPT',
     LOCALE_REQUEST = 'LOCALE_REQUEST',
     LOG_EVENT = 'LOG_EVENT',
@@ -113,7 +112,6 @@ export type FormEntryRequestMessage = { type: WorkerMessageType.FORM_ENTRY_REQUE
 export type FormEntryStageMessage = WithPayload<WorkerMessageType.FORM_ENTRY_STAGE, NewFormEntry & { reason: string }>;
 export type FormEntryStashMessage = WithPayload<WorkerMessageType.FORM_ENTRY_STASH, { reason: string }>;
 export type ImportDecryptMessage = WithPayload<WorkerMessageType.EXPORT_DECRYPT, { data: string; passphrase: string }>;
-export type ImportProgressMessage = WithPayload<WorkerMessageType.IMPORT_PROGRESS, { progress: number }>;
 export type LoadContentScriptMessage = { type: WorkerMessageType.LOAD_CONTENT_SCRIPT };
 export type LocaleRequestMessage = { type: WorkerMessageType.LOCALE_REQUEST };
 export type LogEventMessage = WithPayload<WorkerMessageType.LOG_EVENT, { log: string }>;
@@ -164,7 +162,6 @@ export type WorkerMessage =
     | FormEntryStageMessage
     | FormEntryStashMessage
     | ImportDecryptMessage
-    | ImportProgressMessage
     | LoadContentScriptMessage
     | LocaleRequestMessage
     | LogEventMessage
