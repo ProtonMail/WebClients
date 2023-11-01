@@ -266,9 +266,6 @@
       "Invite user": [
         "Πρόσκληση χρήστη"
       ],
-      "Keep my ${ vpnPlanNameShort } subscription": [
-        "Διατηρήστε τη ${ vpnPlanNameShort } συνδρομή μου"
-      ],
       "Let's talk": [
         "Ας μιλήσουμε"
       ],
@@ -2953,9 +2950,6 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Εάν πιστεύετε ότι αυτό είναι λάθος, παρακαλούμε επικοινωνήστε μαζί μας ${ contactLink }."
       ],
-      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "Εάν ακυρώσετε, η συνδρομή σας ${ vpnPlanName } δε θα ανανεωθεί όταν λήξει στις ${ expiryDate }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Αν δε βρείτε το μήνυμα στα Εισερχόμενα, παρακαλούμε ελέγξτε τον φάκελο Ενοχλητικά."
       ],
@@ -3322,6 +3316,9 @@
       "Thank you": [
         "Ευχαριστούμε"
       ],
+      "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
+        "Ευχαριστούμε που υποστηρίζετε την αποστολή μας να οικοδομήσουμε ένα καλύτερο διαδίκτυο όπου η ιδιωτικότητα και η ελευθερία έρχονται πρώτες."
+      ],
       "The following address is invalid.": [
         "Η ακόλουθη διεύθυνση είναι μη έγκυρη.",
         "Οι ακόλουθες διευθύνσεις είναι μη έγκυρες."
@@ -3683,9 +3680,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Θα ανακατευθυνθείτε στο ${ destination } αφού συνδεθείτε."
       ],
-      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
-        "Θα χάσετε την πρόσβαση στους διακομιστές και λειτουργίες του ${ vpnPlanNameShort } αυτήν την ημέρα."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Θα χρειαστείτε μια διεύθυνση ${ BRAND_NAME } για να χρησιμοποιήσετε ${ MAIL_APP_NAME } και ${ CALENDAR_APP_NAME }"
       ],
@@ -3715,6 +3709,9 @@
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο και τέθηκε σε περιορισμένη κατάσταση. Η συνεχής αποφυγή πληρωμών θα οδηγήσει σε φραγή εισερχόμενων μηνυμάτων και κοινοποίησης συνδέσμων. ${ payInvoiceLink }"
+      ],
+      "Your account was successfully updated with this promotion": [
+        "Ο λογαριασμός σας ενημερώθηκε με επιτυχία με αυτήν την προσφορά"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Ο λογαριασμός σας θα ενημερωθεί μόλις γίνει εκκαθάριση της πληρωμής."
@@ -6456,9 +6453,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Premium Διαχειριστής Κωδικών Πρόσβασης"
       ]
     },
     "summer2023: Tooltip": {
