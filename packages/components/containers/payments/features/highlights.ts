@@ -70,7 +70,7 @@ export const getSentinel = (included: boolean = true): PlanCardFeatureDefinition
     };
 };
 
-export const getHighlightFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
+export const getHighlightFeatures = (plansMap: PlansMap, sentinelPassplusEnabled: boolean): PlanCardFeature[] => {
     return [
         getUsers(),
         getStorage(plansMap),
@@ -98,7 +98,7 @@ export const getHighlightFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.MAIL]: getSentinel(false),
                 [PLANS.VPN]: getSentinel(false),
                 [PLANS.DRIVE]: getSentinel(false),
-                [PLANS.PASS_PLUS]: getSentinel(false),
+                [PLANS.PASS_PLUS]: getSentinel(sentinelPassplusEnabled),
                 [PLANS.FAMILY]: getSentinel(),
                 [PLANS.MAIL_PRO]: getSentinel(false),
                 [PLANS.BUNDLE_PRO]: getSentinel(),
