@@ -6,10 +6,12 @@ import withCacheBlock from '@proton/pass/store/actions/with-cache-block';
 import type { ActionCallback } from '@proton/pass/store/actions/with-callback';
 import withCallback from '@proton/pass/store/actions/with-callback';
 import withNotification from '@proton/pass/store/actions/with-notification';
-import { withRequestFailure, withRequestStart, withRequestSuccess } from '@proton/pass/store/actions/with-request';
+import withRequest, { withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/with-request';
 import type { ExtensionEndpoint } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+
+import { sessionLockDisableRequest, sessionLockEnableRequest, sessionUnlockRequest } from '../requests';
 
 export const signoutIntent = createAction('auth::signout::intent', (payload: { soft: boolean }) =>
     withCacheBlock({ payload })
@@ -26,7 +28,8 @@ export const sessionLockSync = createAction('session::lock::sync', (payload: Ses
 
 export const sessionLockEnableIntent = createAction(
     'session::lock::enable::intent',
-    withRequestStart((payload: { pin: string; ttl: number }) => withCacheBlock({ payload }))
+    (payload: { pin: string; ttl: number }) =>
+        pipe(withRequest({ type: 'start', id: sessionLockEnableRequest() }), withCacheBlock)({ payload })
 );
 
 export const sessionLockEnableFailure = createAction(
@@ -55,9 +58,8 @@ export const sessionLockEnableSuccess = createAction(
     )
 );
 
-export const sessionLockDisableIntent = createAction(
-    'session::lock::disable::intent',
-    withRequestStart((payload: { pin: string }) => withCacheBlock({ payload }))
+export const sessionLockDisableIntent = createAction('session::lock::disable::intent', (payload: { pin: string }) =>
+    pipe(withRequest({ type: 'start', id: sessionLockDisableRequest() }), withCacheBlock)({ payload })
 );
 
 export const sessionLockDisableFailure = createAction(
@@ -88,12 +90,15 @@ export const sessionLockDisableSuccess = createAction(
 
 export const sessionUnlockIntent = createAction(
     'session::unlock::intent',
-    withRequestStart(
-        (
-            payload: { pin: string },
-            callback?: ActionCallback<ReturnType<typeof sessionUnlockSuccess> | ReturnType<typeof sessionUnlockFailure>>
-        ) => pipe(withCacheBlock, withCallback(callback))({ payload })
-    )
+    (
+        payload: { pin: string },
+        callback?: ActionCallback<ReturnType<typeof sessionUnlockSuccess> | ReturnType<typeof sessionUnlockFailure>>
+    ) =>
+        pipe(
+            withRequest({ type: 'start', id: sessionUnlockRequest() }),
+            withCacheBlock,
+            withCallback(callback)
+        )({ payload })
 );
 
 export const sessionUnlockFailure = createAction(

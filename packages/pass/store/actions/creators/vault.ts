@@ -5,19 +5,26 @@ import withCacheBlock from '@proton/pass/store/actions/with-cache-block';
 import type { ActionCallback } from '@proton/pass/store/actions/with-callback';
 import withCallback from '@proton/pass/store/actions/with-callback';
 import withNotification from '@proton/pass/store/actions/with-notification';
-import { withRequestFailure, withRequestStart, withRequestSuccess } from '@proton/pass/store/actions/with-request';
+import withRequest, { withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/with-request';
 import type { ItemRevision, MaybeNull, Share, ShareContent, ShareType } from '@proton/pass/types';
 import type { VaultTransferOwnerIntent } from '@proton/pass/types/data/vault.dto';
 import { pipe } from '@proton/pass/utils/fp/pipe';
+import { uniqueId } from '@proton/pass/utils/string/unique-id';
+
+import { vaultCreateRequest, vaultDeleteRequest, vaultEditRequest, vaultTransferOwnerRequest } from '../requests';
 
 export const vaultCreationIntent = createAction(
     'vault::creation::intent',
-    withRequestStart(
-        (
-            payload: { content: ShareContent<ShareType.Vault> },
-            callback?: ActionCallback<ReturnType<typeof vaultCreationSuccess> | ReturnType<typeof vaultCreationFailure>>
-        ) => pipe(withCacheBlock, withCallback(callback))({ payload })
-    )
+
+    (
+        payload: { content: ShareContent<ShareType.Vault> },
+        callback?: ActionCallback<ReturnType<typeof vaultCreationSuccess> | ReturnType<typeof vaultCreationFailure>>
+    ) =>
+        pipe(
+            withRequest({ type: 'start', id: vaultCreateRequest(uniqueId()) }),
+            withCacheBlock,
+            withCallback(callback)
+        )({ payload })
 );
 
 export const vaultCreationFailure = createAction(
@@ -50,9 +57,8 @@ export const vaultCreationSuccess = createAction(
 
 export const vaultEditIntent = createAction(
     'vault::edit::intent',
-    withRequestStart((payload: { shareId: string; content: ShareContent<ShareType.Vault> }) =>
-        withCacheBlock({ payload })
-    )
+    (payload: { shareId: string; content: ShareContent<ShareType.Vault> }) =>
+        pipe(withRequest({ type: 'start', id: vaultEditRequest(payload.shareId) }), withCacheBlock)({ payload })
 );
 
 export const vaultEditFailure = createAction(
@@ -81,17 +87,17 @@ export const vaultEditSuccess = createAction(
 
 export const vaultDeleteIntent = createAction(
     'vault::delete::intent',
-    withRequestStart(
-        (payload: { shareId: string; content: ShareContent<ShareType.Vault>; destinationShareId: MaybeNull<string> }) =>
-            pipe(
-                withCacheBlock,
-                withNotification({
-                    type: 'info',
-                    loading: true,
-                    text: c('Info').t`Deleting "${payload.content.name}"`,
-                })
-            )({ payload })
-    )
+
+    (payload: { shareId: string; content: ShareContent<ShareType.Vault>; destinationShareId: MaybeNull<string> }) =>
+        pipe(
+            withRequest({ type: 'start', id: vaultDeleteRequest(payload.shareId) }),
+            withCacheBlock,
+            withNotification({
+                type: 'info',
+                loading: true,
+                text: c('Info').t`Deleting "${payload.content.name}"`,
+            })
+        )({ payload })
 );
 
 export const vaultDeleteFailure = createAction(
@@ -121,7 +127,11 @@ export const vaultDeleteSuccess = createAction(
 
 export const vaultTransferOwnerIntent = createAction(
     'share::ownership::transfer::intent',
-    withRequestStart((payload: VaultTransferOwnerIntent) => withCacheBlock({ payload }))
+    (payload: VaultTransferOwnerIntent) =>
+        pipe(
+            withRequest({ type: 'start', id: vaultTransferOwnerRequest(payload.userShareId) }),
+            withCacheBlock
+        )({ payload })
 );
 
 export const vaultTransferOwnershipSuccess = createAction(

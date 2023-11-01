@@ -1,4 +1,4 @@
-import { put, select, takeLeading } from 'redux-saga/effects';
+import { put, select, takeEvery } from 'redux-saga/effects';
 
 import { settingsEditFailure, settingsEditIntent, settingsEditSuccess } from '@proton/pass/store/actions';
 import type { WithSenderAction } from '@proton/pass/store/actions/with-receiver';
@@ -24,5 +24,5 @@ function* settingsEditWorker(
 }
 
 export default function* watcher(options: WorkerRootSagaOptions) {
-    yield takeLeading(settingsEditIntent.match, settingsEditWorker, options);
+    yield takeEvery(settingsEditIntent.match, settingsEditWorker, options);
 }

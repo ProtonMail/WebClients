@@ -6,7 +6,6 @@ import {
     itemCreationIntent,
     itemCreationSuccess,
 } from '@proton/pass/store/actions';
-import { aliasOptionsRequest } from '@proton/pass/store/actions/requests';
 import { withRevalidate } from '@proton/pass/store/actions/with-request';
 import { selectAliasLimits, selectAutosaveVault } from '@proton/pass/store/selectors';
 import type { ItemCreateIntent } from '@proton/pass/types';
@@ -30,7 +29,7 @@ export const createAliasService = () => {
         return new Promise((resolve) => {
             store.dispatch(
                 withRevalidate(
-                    getAliasOptionsIntent(aliasOptionsRequest(shareId), { shareId }, (result) => {
+                    getAliasOptionsIntent({ shareId }, (result) => {
                         if (getAliasOptionsSuccess.match(result)) {
                             const { options } = result.payload;
                             return resolve({ ok: true, needsUpgrade, options });

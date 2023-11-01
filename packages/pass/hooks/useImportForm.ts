@@ -93,7 +93,7 @@ export const useImportForm = ({
 
     const importItems = useActionRequest({
         action: importItemsIntent,
-        requestId: importItemsRequest(),
+        initialRequestId: importItemsRequest(),
         onSuccess: () => {
             setBusy(false);
             void formRef.current?.setValues(getInitialFormValues());

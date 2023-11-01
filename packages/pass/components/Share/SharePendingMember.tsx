@@ -13,12 +13,6 @@ import {
     newUserInvitePromoteIntent,
     newUserInviteRemoveIntent,
 } from '@proton/pass/store/actions';
-import {
-    inviteRemoveRequest,
-    inviteResendRequest,
-    newUserInvitePromoteRequest,
-    newUserInviteRemoveRequest,
-} from '@proton/pass/store/actions/requests';
 import { NewUserInviteState } from '@proton/pass/types';
 
 import { ShareMemberAvatar } from './ShareMemberAvatar';
@@ -55,8 +49,8 @@ export const SharePendingMember: VFC<SharePendingMemberProps> = ({ actions, emai
 );
 
 export const PendingExistingMember: VFC<PendingExistingMemberProps> = ({ canManage, email, inviteId, shareId }) => {
-    const resendInvite = useActionRequest({ action: inviteResendIntent, requestId: inviteResendRequest(inviteId) });
-    const removeInvite = useActionRequest({ action: inviteRemoveIntent, requestId: inviteRemoveRequest(inviteId) });
+    const resendInvite = useActionRequest({ action: inviteResendIntent });
+    const removeInvite = useActionRequest({ action: inviteRemoveIntent });
 
     const handleResendInvite = () => resendInvite.dispatch({ shareId, inviteId });
     const handleRemoveInvite = () => removeInvite.dispatch({ shareId, inviteId });
@@ -93,15 +87,8 @@ export const PendingExistingMember: VFC<PendingExistingMemberProps> = ({ canMana
 };
 
 export const PendingNewMember: VFC<PendingNewMemberProps> = ({ canManage, email, shareId, state, newUserInviteId }) => {
-    const promoteInvite = useActionRequest({
-        action: newUserInvitePromoteIntent,
-        requestId: newUserInvitePromoteRequest(newUserInviteId),
-    });
-
-    const removeInvite = useActionRequest({
-        action: newUserInviteRemoveIntent,
-        requestId: newUserInviteRemoveRequest(newUserInviteId),
-    });
+    const promoteInvite = useActionRequest({ action: newUserInvitePromoteIntent });
+    const removeInvite = useActionRequest({ action: newUserInviteRemoveIntent });
 
     const handlePromoteInvite = () => promoteInvite.dispatch({ shareId, newUserInviteId });
     const handleRemoveInvite = () => removeInvite.dispatch({ shareId, newUserInviteId });
