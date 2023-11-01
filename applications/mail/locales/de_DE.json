@@ -713,11 +713,11 @@
       "Not saved": [
         "Nicht gespeichert"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } öffnen"
@@ -1219,6 +1219,20 @@
         "Verfallende Nachricht"
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } eigene Domain",
+        "${ domains } eigene Domains"
+      ],
+      "${ ips } server": [
+        "${ ips } Server",
+        "${ ips } Server"
+      ],
+      "${ users } user": [
+        "${ users } Benutzer",
+        "${ users } Benutzer"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Wenn du jetzt beendest, können einige Kontakte nicht importiert werden."
@@ -1349,6 +1363,18 @@
       ],
       "High speed streaming": [
         "Hochgeschwindigkeits-Streaming"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium-${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium-${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium-${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Premium-Passwortmanager"
       ]
     },
     "bf2023: Footer": {
@@ -1759,6 +1785,12 @@
       ],
       "Cancel expiration": [
         "Gültigkeitsdauer aufheben"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } Benutzer",
+        "${ users } Benutzer"
       ]
     },
     "Collapsible tooltip": {
@@ -4319,6 +4351,9 @@
       "Close": [
         "Schließen"
       ],
+      "Closing this means giving up the free storage bonus.": [
+        "Die Schließung bedeutet den Verzicht auf den Bonus für kostenlosen Speicherplatz."
+      ],
       "Congratulation, you completed all the steps!": [
         "Herzlichen Glückwunsch, du hast alle Schritte abgeschlossen!"
       ],
@@ -4889,6 +4924,9 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } Kategorie ausgewählt",
         "${ selectedFoldersCountLocalized } Kategorien ausgewählt"
+      ],
+      "${ storage } storage": [
+        "${ storage } Speicherplatz"
       ],
       "${ total } conversation": [
         "${ total } Unterhaltung",
@@ -5597,6 +5635,9 @@
       "Preview for this file type is not supported": [
         "Die Vorschau wird für diesen Dateityp nicht unterstützt."
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Der Preis beinhaltet alle anwendbaren zyklusbasierten Rabatte und nicht abgelaufenen Coupons, die auf deinem Konto gespeichert sind."
+      ],
       "Primary": [
         "Primär"
       ],
@@ -5903,6 +5944,18 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Es befinden sich zu viele Nachrichten für den Versand in der Warteschlange. Bitte warte, bis eine andere Nachricht gesendet wurde, um diese Nachricht planen zu können."
       ],
+      "Total email addresses": [
+        "Anzahl E-Mail-Adressen"
+      ],
+      "Total storage": [
+        "Gesamter Speicherplatz"
+      ],
+      "Total supported domains": [
+        "Anzahl unterstützter Domains"
+      ],
+      "Total VPN connections": [
+        "Anzahl VPN‐Verbindungen"
+      ],
       "Trackers blocked:": [
         "Tracker blockiert:"
       ],
@@ -5923,6 +5976,9 @@
       ],
       "Unsupported file": [
         "Nicht unterstützte Datei"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Bis zu ${ FAMILY_MAX_USERS } Benutzer"
       ],
       "Updating message content search...": [
         "Suche nach Nachrichteninhalten wird aktualisiert..."
@@ -8766,9 +8822,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium-${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Premium-Passwortmanager"
       ]
     },
     "summer2023: Tooltip": {

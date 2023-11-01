@@ -701,10 +701,10 @@
       "Not saved": [
         "Ikke gemt"
       ],
-      "Ok": [
+      "OK": [
         "Ok"
       ],
-      "OK": [
+      "Ok": [
         "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -1207,6 +1207,20 @@
         "Bedsked med udløb"
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } brugerdomæne",
+        "${ domains } brugerdomæner"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } servere"
+      ],
+      "${ users } user": [
+        "${ users } bruger",
+        "${ users } brugere"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Ved at afslutte nu vil nogle kontakter måske ikke blive importeret"
@@ -1663,6 +1677,12 @@
       ],
       "Cancel expiration": [
         "Annullér udløb"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } bruger",
+        "${ users } brugere"
       ]
     },
     "Collapsible tooltip": {
@@ -4772,6 +4792,9 @@
         "${ selectedFoldersCountLocalized } etiket valgt",
         "${ selectedFoldersCountLocalized } etiketter valgt"
       ],
+      "${ storage } storage": [
+        "${ storage } lagerplads"
+      ],
       "${ total } conversation": [
         "${ total } samtale",
         "${ total } samtaler"
@@ -5479,6 +5502,9 @@
       "Preview for this file type is not supported": [
         "Forhåndsvisning af denne filtype er ikke understøttet"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Prisen inkluderer alle gældende cyklusbaserede rabatter og kuponer, der ikke er udløbet, og som er gemt på din konto."
+      ],
       "Primary": [
         "Primær"
       ],
@@ -5785,6 +5811,18 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Der er for mange meddelelser, der venter på at blive afsendt. Vent med at planlægge denne meddelelse, indtil en anden er blevet sendt."
       ],
+      "Total email addresses": [
+        "Samlet antal e-mailadresser"
+      ],
+      "Total storage": [
+        "Lagerplads i alt"
+      ],
+      "Total supported domains": [
+        "Samlet antal understøttede domæner"
+      ],
+      "Total VPN connections": [
+        "Samlet antal VPN-forbindelser"
+      ],
       "Trackers blocked:": [
         "Trackere blokeret:"
       ],
@@ -5805,6 +5843,9 @@
       ],
       "Unsupported file": [
         "Ikke-understøttet fil"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Op til ${ FAMILY_MAX_USERS } brugere"
       ],
       "Updating message content search...": [
         "Opdaterer beskedindholdssøgning..."
@@ -8648,9 +8689,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Premium Adgangskodeadministrator"
       ]
     },
     "summer2023: Tooltip": {

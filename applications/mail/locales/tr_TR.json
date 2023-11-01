@@ -704,10 +704,10 @@
       "Not saved": [
         "Kaydedilmemiş"
       ],
-      "Ok": [
+      "OK": [
         "Tamam"
       ],
-      "OK": [
+      "Ok": [
         "Tamam"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -1210,6 +1210,20 @@
         "Süreli ileti"
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } özel etki alanı",
+        "${ domains } özel etki alanı"
+      ],
+      "${ ips } server": [
+        "${ ips } sunucu",
+        "${ ips } sunucu"
+      ],
+      "${ users } user": [
+        "${ users } kullanıcı",
+        "${ users } kullanıcı"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Şimdi ayrılırsanız, bazı kişiler içe aktarılamayabilir"
@@ -1340,6 +1354,18 @@
       ],
       "High speed streaming": [
         "Yüksek hızda yayın akışı"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Ücretli ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Ücretli ${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Ücretli ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Ücretli Parola Yöneticisi"
       ]
     },
     "bf2023: Footer": {
@@ -1750,6 +1776,12 @@
       ],
       "Cancel expiration": [
         "Geçerlilik süresini iptal et"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } kullanıcı",
+        "${ users } kullanıcı"
       ]
     },
     "Collapsible tooltip": {
@@ -4868,6 +4900,9 @@
         "${ selectedFoldersCountLocalized } etiket seçildi",
         "${ selectedFoldersCountLocalized } etiket seçildi"
       ],
+      "${ storage } storage": [
+        "${ storage } depolama alanı"
+      ],
       "${ total } conversation": [
         "${ total } yazışma",
         "${ total } yazışma"
@@ -5575,6 +5610,9 @@
       "Preview for this file type is not supported": [
         "Bu dosya türünün ön izlemesi görüntülenemiyor"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Ücrete, hesabınızda kayıtlı tüm geçerli dönemsel indirimler ve geçerlilik süresi dolmamış kuponlar katılmıştır."
+      ],
       "Primary": [
         "Birincil"
       ],
@@ -5881,6 +5919,18 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Gönderilecek çok fazla ileti var. Lütfen, bunun zamanlanması için başka bir ileti gönderilene kadar bekleyin."
       ],
+      "Total email addresses": [
+        "Toplam e-posta adresi"
+      ],
+      "Total storage": [
+        "Toplam depolama alanı"
+      ],
+      "Total supported domains": [
+        "Toplam etki alanı"
+      ],
+      "Total VPN connections": [
+        "Toplam VPN bağlantısı"
+      ],
       "Trackers blocked:": [
         "Engellenen izleyiciler:"
       ],
@@ -5901,6 +5951,9 @@
       ],
       "Unsupported file": [
         "Dosya desteklenmiyor"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "En fazla ${ FAMILY_MAX_USERS } kullanıcı"
       ],
       "Updating message content search...": [
         "İleti içerikleri araması güncelleniyor..."
@@ -8744,9 +8797,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Ücretli ${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Ücretli Parola Yöneticisi"
       ]
     },
     "summer2023: Tooltip": {
