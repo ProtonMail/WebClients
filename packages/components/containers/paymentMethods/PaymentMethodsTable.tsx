@@ -17,10 +17,14 @@ const MethodCell = ({ method }: { method: SavedPaymentMethod }) => {
     if (isPaypalDetails(method.Details)) {
         return (
             <>
-                <span className="mr-2" data-testid="payment-method">
+                <span className="mr-2 align-middle" data-testid="payment-method">
                     PayPal
                 </span>
-                <span className="auto-tablet text-ellipsis max-w100" data-testid="payer" title={method.Details.Payer}>
+                <span
+                    className="block lg:inline-block align-middle text-ellipsis max-w-full"
+                    data-testid="payer"
+                    title={method.Details.Payer}
+                >
                     {method.Details.Payer}
                 </span>
             </>
