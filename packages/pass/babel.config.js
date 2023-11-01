@@ -9,5 +9,9 @@ const presetEnvOpts = {
 };
 
 module.exports = {
-    presets: [['@babel/preset-env', presetEnvOpts], '@babel/preset-typescript'],
+    presets: [
+        ['@babel/preset-env', presetEnvOpts],
+        '@babel/preset-typescript',
+        ['@babel/preset-react', { development: true, runtime: 'automatic' }],
+    ],
 };

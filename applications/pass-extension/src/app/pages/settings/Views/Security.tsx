@@ -1,5 +1,5 @@
 import { type VFC, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { SettingsPanel } from 'proton-pass-extension/lib/components/Settings/SettingsPanel';
 import { c } from 'ttag';
@@ -8,24 +8,25 @@ import { Checkbox } from '@proton/components';
 import { useSessionLockConfirmContext } from '@proton/pass/components/Lock/LockConfirmContextProvider';
 import { LockCreate } from '@proton/pass/components/Lock/LockCreate';
 import { LockTTLUpdate } from '@proton/pass/components/Lock/LockTTLUpdate';
-import { sessionLockDisableIntent } from '@proton/pass/store/actions';
-import { settingsEdit } from '@proton/pass/store/actions/requests';
-import { selectRequestInFlight, selectSessionLockSettings } from '@proton/pass/store/selectors';
+import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
+import { sessionLockDisableIntent, sessionLockEnableIntent } from '@proton/pass/store/actions';
+import { sessionLockDisableRequest, sessionLockEnableRequest } from '@proton/pass/store/actions/requests';
+import { selectSessionLockSettings } from '@proton/pass/store/selectors';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 export const Security: VFC = () => {
-    const dispatch = useDispatch();
-
     const [lockCreationModalOpened, setLockCreationModalOpened] = useState(false);
     const { confirmPin } = useSessionLockConfirmContext();
 
     const { sessionLockRegistered, sessionLockTTL } = useSelector(selectSessionLockSettings);
-    const sessionLockLoading = useSelector(selectRequestInFlight(settingsEdit('session-lock')));
+    const enableLock = useActionRequest({ action: sessionLockEnableIntent, requestId: sessionLockEnableRequest() });
+    const disableLock = useActionRequest({ action: sessionLockDisableIntent, requestId: sessionLockDisableRequest() });
+    const loading = enableLock.loading || disableLock.loading;
 
     const handleSessionLockToggle = async () =>
         sessionLockRegistered
             ? confirmPin({
-                  onSubmit: (pin) => dispatch(sessionLockDisableIntent({ pin })),
+                  onSubmit: (pin) => disableLock.dispatch({ pin }),
                   assistiveText: c('Info').t`Please confirm your PIN code in order to unregister your current lock.
                         ${PASS_APP_NAME} will then never lock.`,
               })
@@ -37,7 +38,7 @@ export const Security: VFC = () => {
                 className="mb-4"
                 checked={sessionLockRegistered}
                 onChange={handleSessionLockToggle}
-                loading={sessionLockLoading}
+                loading={loading}
             >
                 <span>
                     {c('Label').t`Auto-lock ${PASS_APP_NAME}`}
@@ -46,8 +47,17 @@ export const Security: VFC = () => {
                 </span>
             </Checkbox>
 
-            <LockCreate opened={lockCreationModalOpened} onClose={() => setLockCreationModalOpened(false)} />
-            <LockTTLUpdate ttl={sessionLockTTL} disabled={!sessionLockRegistered || sessionLockLoading} />
+            <LockCreate
+                opened={lockCreationModalOpened}
+                onClose={() => setLockCreationModalOpened(false)}
+                onSubmit={enableLock.dispatch}
+            />
+
+            <LockTTLUpdate
+                ttl={sessionLockTTL}
+                disabled={!sessionLockRegistered || loading}
+                onChange={enableLock.dispatch}
+            />
         </SettingsPanel>
     );
 };

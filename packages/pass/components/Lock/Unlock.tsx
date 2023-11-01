@@ -1,21 +1,24 @@
-import { type VFC, useCallback, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { type VFC, useState } from 'react';
 
 import { PinCodeInput } from '@proton/pass/components/Lock/PinCodeInput';
+import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { useSessionLockPinSubmitEffect } from '@proton/pass/hooks/useSessionLockPinSubmitEffect';
 import { sessionUnlockIntent } from '@proton/pass/store/actions';
-import { unlockSession } from '@proton/pass/store/actions/requests';
-import { selectRequestStatus } from '@proton/pass/store/selectors';
+import { sessionUnlockRequest } from '@proton/pass/store/actions/requests';
 
 export const Unlock: VFC = () => {
-    const dispatch = useDispatch();
     const [value, setValue] = useState('');
-    const status = useSelector(selectRequestStatus(unlockSession));
-    const loading = status && status !== 'failure';
 
-    useSessionLockPinSubmitEffect(value, {
-        onSubmit: useCallback((pin) => dispatch(sessionUnlockIntent({ pin })), []),
+    const [disabled, setDisabled] = useState(false);
+
+    const unlock = useActionRequest({
+        action: sessionUnlockIntent,
+        requestId: sessionUnlockRequest(),
+        onStart: () => setDisabled(true),
+        onFailure: () => setDisabled(false),
     });
 
-    return <PinCodeInput loading={loading} value={value} onValue={setValue} />;
+    useSessionLockPinSubmitEffect(value, { onSubmit: (pin) => unlock.dispatch({ pin }) });
+
+    return <PinCodeInput loading={disabled} value={value} onValue={setValue} />;
 };

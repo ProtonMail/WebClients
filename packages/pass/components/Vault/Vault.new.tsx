@@ -1,16 +1,15 @@
-import { type VFC, useMemo } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { type VFC } from 'react';
+import { useSelector } from 'react-redux';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { ItemCard } from '@proton/pass/components/Item/ItemCard';
-import type { RequestEntryFromAction } from '@proton/pass/hooks/useActionWithRequest';
-import { useRequestStatusEffect } from '@proton/pass/hooks/useRequestStatusEffect';
+import { type RequestEntryFromAction, useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { validateVaultVaultsWithEffect } from '@proton/pass/lib/validation/vault';
 import type { vaultCreationSuccess } from '@proton/pass/store/actions';
 import { vaultCreationIntent } from '@proton/pass/store/actions';
-import { vaultCreate } from '@proton/pass/store/actions/requests';
+import { vaultCreateRequest } from '@proton/pass/store/actions/requests';
 import { selectPassPlan, selectVaultLimits } from '@proton/pass/store/selectors';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { VaultColor, VaultIcon } from '@proton/pass/types/protobuf/vault-v1';
@@ -22,19 +21,17 @@ type Props = VaultFormConsumerProps & { onVaultCreated: (shareId: string) => voi
 export const FORM_ID = 'vault-create';
 
 export const VaultNew: VFC<Props> = ({ onSubmit, onSuccess, onFailure, onFormValidChange, onVaultCreated }) => {
-    const dispatch = useDispatch();
     const { vaultLimitReached } = useSelector(selectVaultLimits);
     const passPlan = useSelector(selectPassPlan);
 
-    const optimisticId = useMemo(() => uniqueId(), []);
-    const requestId = useMemo(() => vaultCreate(optimisticId), [optimisticId]);
-
-    useRequestStatusEffect(requestId, {
-        onFailure,
+    const createVault = useActionRequest({
+        action: vaultCreationIntent,
+        requestId: () => vaultCreateRequest(uniqueId()),
         onSuccess: (req: RequestEntryFromAction<ReturnType<typeof vaultCreationSuccess>>) => {
             onVaultCreated?.(req.data.shareId);
             onSuccess?.();
         },
+        onFailure,
     });
 
     const form = useFormik<VaultFormValues>({
@@ -48,16 +45,14 @@ export const VaultNew: VFC<Props> = ({ onSubmit, onSuccess, onFailure, onFormVal
         validate: validateVaultVaultsWithEffect((errors) => onFormValidChange?.(Object.keys(errors).length === 0)),
         onSubmit: ({ name, description, color, icon }) => {
             onSubmit?.();
-            dispatch(
-                vaultCreationIntent({
-                    id: optimisticId,
-                    content: {
-                        name,
-                        description,
-                        display: { color, icon },
-                    },
-                })
-            );
+
+            void createVault.dispatch({
+                content: {
+                    name,
+                    description,
+                    display: { color, icon },
+                },
+            });
         },
     });
 

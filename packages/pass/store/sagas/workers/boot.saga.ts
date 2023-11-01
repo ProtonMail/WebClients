@@ -6,8 +6,8 @@ import { decryptCachedState } from '@proton/pass/lib/crypto/utils/cache.decrypt'
 import { isPassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
 import { getFeatureFlags, getUserAccess, getUserSettings } from '@proton/pass/lib/user/user.requests';
 import {
-    boot,
     bootFailure,
+    bootIntent,
     bootSuccess,
     getUserAccessSuccess,
     getUserFeaturesSuccess,
@@ -63,7 +63,7 @@ function* bootUserState(userId: string, state: State) {
     return <SafeUserState>{ ...userState, ...access };
 }
 
-function* bootWorker(options: WorkerRootSagaOptions) {
+function* bootWorker(options: WorkerRootSagaOptions, { meta }: ReturnType<typeof bootIntent>) {
     try {
         const auth = options.getAuth();
         const userId = auth.getUserID()!;
@@ -91,16 +91,16 @@ function* bootWorker(options: WorkerRootSagaOptions) {
 
         /* trigger a partial synchronization */
         const sync = (yield synchronize(state, SyncType.PARTIAL, userState.features, options)) as SynchronizationResult;
-        yield put(bootSuccess({ sync, userState }));
+        yield put(bootSuccess(meta.request.id, { sync, userState }));
 
         options.onBoot?.({ ok: true });
     } catch (error: unknown) {
         logger.warn('[Saga::Boot]', error);
-        yield put(bootFailure(error));
+        yield put(bootFailure(meta.request.id, error));
         options.onBoot?.({ ok: false, clearCache: isPassCryptoError(error) });
     }
 }
 
 export default function* watcher(options: WorkerRootSagaOptions) {
-    yield takeLeading(boot.match, bootWorker, options);
+    yield takeLeading(bootIntent.match, bootWorker, options);
 }
