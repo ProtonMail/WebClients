@@ -708,10 +708,10 @@
       "Not saved": [
         "Nesalvat"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -1216,6 +1216,23 @@
         "Mesaj la expirare"
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } domeniu personal",
+        "${ domains } domenii personale",
+        "${ domains } de domenii personale"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } servere",
+        "${ ips } de servere"
+      ],
+      "${ users } user": [
+        "${ users } utilizator",
+        "${ users } utilizatori",
+        "${ users } de utilizatori"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Renunțând acum, unele contacte nu vor fi importate."
@@ -1672,6 +1689,13 @@
       ],
       "Cancel expiration": [
         "Anulare expirare"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "un utilizator",
+        "${ users } utilizatori",
+        "${ users } de utilizatori"
       ]
     },
     "Collapsible tooltip": {
@@ -4853,6 +4877,9 @@
         "S-au selectat ${ selectedFoldersCountLocalized } etichete",
         "S-au selectat ${ selectedFoldersCountLocalized } de etichete"
       ],
+      "${ storage } storage": [
+        "Stocare ${ storage }"
+      ],
       "${ total } conversation": [
         "o conversație",
         "${ total } conversații",
@@ -5586,6 +5613,9 @@
       "Preview for this file type is not supported": [
         "Examinarea acestui tip de fișier nu este suportată."
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Prețul include toate reducerile ciclice aplicabile și cupoanele neexpirate salvate în cont."
+      ],
       "Primary": [
         "Primară"
       ],
@@ -5895,6 +5925,18 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Prea multe mesaje așteaptă să fie trimise. Așteptați până când un alt mesaj va fi trimis pentru a-l programa pe acesta."
       ],
+      "Total email addresses": [
+        "Total adrese de e-mail"
+      ],
+      "Total storage": [
+        "Spațiu total"
+      ],
+      "Total supported domains": [
+        "Total domenii suportate"
+      ],
+      "Total VPN connections": [
+        "Total conexiuni VPN"
+      ],
       "Trackers blocked:": [
         "Urmăritori blocați:"
       ],
@@ -5915,6 +5957,9 @@
       ],
       "Unsupported file": [
         "Fişier nesuportat"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Până la ${ FAMILY_MAX_USERS } utilizatori"
       ],
       "Updating message content search...": [
         "Se actualizează căutarea în conținutul mesajelor..."
@@ -8827,9 +8872,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
-      ],
-      "Premium Password Manager": [
-        "Gestionare parole premium"
       ]
     },
     "summer2023: Tooltip": {

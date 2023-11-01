@@ -761,6 +761,20 @@
         "No teniu cap grup."
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } domini personalitzat",
+        "${ domains } dominis personalitzats"
+      ],
+      "${ ips } server": [
+        "${ ips } servidor",
+        "${ ips } servidors"
+      ],
+      "${ users } user": [
+        "${ users } usuari",
+        "${ users } usuaris"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Si sortiu ara, alguns contactes potser no es poden importar"
@@ -882,6 +896,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continua utilitzant ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } usuari",
+        "${ users } usuaris"
       ]
     },
     "Collapsible tooltip": {
@@ -3189,6 +3209,9 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
+      "${ storage } storage": [
+        "${ storage } d'emmagatzematge"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contacte actualitzat amb èxit.",
         "${ updated } contactes actualitzats amb èxit."
@@ -3803,6 +3826,9 @@
       "Previous versions are not saved": [
         "Les versions anteriors no es desen"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "El preu inclou tots els descomptes basats en cicles aplicables i els cupons no caducats desats al vostre compte."
+      ],
       "Primary": [
         "Principal"
       ],
@@ -4005,6 +4031,18 @@
       "Today": [
         "Avui"
       ],
+      "Total email addresses": [
+        "Adreces de correu totals"
+      ],
+      "Total storage": [
+        "Emmagatzematge"
+      ],
+      "Total supported domains": [
+        "Dominis suportats totals"
+      ],
+      "Total VPN connections": [
+        "Connexions VPN totals"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "S'ha cancel·lat la transferència del fitxer \"${ name }\""
       ],
@@ -4040,6 +4078,9 @@
       ],
       "Unsupported file": [
         "Fitxer no compatible"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Fins a ${ FAMILY_MAX_USERS } usuaris"
       ],
       "Updating drive search...": [
         "S'està actualitzant la cerca…"
@@ -5902,9 +5943,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } prèmium"
-      ],
-      "Premium Password Manager": [
-        "Gestor de Contrasenyes prèmium"
       ]
     },
     "summer2023: Tooltip": {

@@ -245,9 +245,6 @@
       "Invite user": [
         "Felhasználó meghívása"
       ],
-      "Keep my ${ vpnPlanNameShort } subscription": [
-        "A ${ vpnPlanNameShort } előfizetés megtartása"
-      ],
       "Let's talk": [
         "Beszélgessünk!"
       ],
@@ -2132,6 +2129,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -2150,6 +2150,10 @@
       "Megabyte": [
         "Megabájt",
         "Megabájt"
+      ],
+      "Terabyte": [
+        "Terabájt",
+        "Terabájt"
       ]
     },
     "Font face option": {
@@ -2249,6 +2253,10 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } cím",
+        "${ amountOfAddresses } cím"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "A ${ appName } alkalmazásnak szüksége van az engedélyére, hogy ${ enableDesktopNotifications }."
       ],
@@ -2280,6 +2288,14 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } legalább 1 dedikált szervert igényel ${ serverPricePerMonth } havonta."
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } további",
+        "${ remainingAddresses.length } további"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length } további cím",
+        "${ remainingAddresses.length } több cím"
       ],
       "${ storage } storage": [
         "${ storage } tárhely"
@@ -2550,8 +2566,8 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Ha úgy gondolja ez tévedés, vegye fel velük a kapcsolatot ${ contactLink }."
       ],
-      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "Ha törli, az Ön ${ vpnPlanName } előfizetése nem lesz megújítva amikor lejár: ${ expiryDate }."
+      "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Ha lemond, ${ planTitle } előfizetése nem újul meg, amikor lejár a következő napon: ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ha nem találja az e-mailt a beérkező leveleknél, ellenőrizze a Levélszemét közt."
@@ -3151,9 +3167,6 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Át lesz irányítva ide: ${ destination } bejelentkezés után."
-      ],
-      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
-        "Ezen a dátumon elveszíted a hozzáférést a ${ vpnPlanNameShort } szerverekhez és funkciókhoz."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Szüksége lesz egy ${ BRAND_NAME } címre, hogy használni tudja a ${ MAIL_APP_NAME } és ${ CALENDAR_APP_NAME } szolgáltatásokat"
@@ -5384,9 +5397,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Prémium ${ MAIL_SHORT_APP_NAME } és ${ CALENDAR_SHORT_APP_NAME }."
-      ],
-      "Premium Password Manager": [
-        "Prémium jelszókezelő"
       ]
     },
     "summer2023: Tooltip": {

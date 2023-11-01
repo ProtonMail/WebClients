@@ -977,6 +977,12 @@
         "${ more } और"
       ]
     },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } यूज़र",
+        "${ users } यूज़र"
+      ]
+    },
     "Collapsible tooltip": {
       "Collapse": [
         "संक्षिप्त करें"
@@ -3310,6 +3316,9 @@
         "${ selectedFoldersCountLocalized } लेबल चयनित",
         "${ selectedFoldersCountLocalized } लेबल चयनित"
       ],
+      "${ storage } storage": [
+        "${ storage } स्टोरेज"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } संपर्क सफलतापूर्वक अपडेट किया गया।",
         "${ updated } संपर्क सफलतापूर्वक अपडेट किए गए।"
@@ -3654,6 +3663,9 @@
       "Previous modifications on this series will be lost.": [
         "इस सीरीज़ के पिछले बदलाव खो जाएंगे।"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "दाम में आपके खाते में सेव किए चक्र वाले छूट और खत्म-नहीं कूपन, जो लागू हो सकते है, शामिल है।"
+      ],
       "Primary": [
         "मुख्य"
       ],
@@ -3761,6 +3773,21 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "पता सत्यापन का उपयोग करने के लिए, आपको एक या अधिक उपलब्ध सार्वजनिक कुंजियों पर भरोसा करना चाहिए, जिसमें आप भेजने के लिए उपयोग करना चाहते हैं। यह एन्क्रिप्शन कुंजियों को नकली होने से रोकता है।"
+      ],
+      "Total email addresses": [
+        "कुल ईमेल पते"
+      ],
+      "Total storage": [
+        "कुल स्टोरेज"
+      ],
+      "Total supported domains": [
+        "कुल सपोर्ट किए डोमेन"
+      ],
+      "Total VPN connections": [
+        "कुल VPN कनेक्शन"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "${ FAMILY_MAX_USERS } यूज़र तक"
       ],
       "Update recurring event": [
         "बार-बार होने वाले इवेंट अपडेट करें"

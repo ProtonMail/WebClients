@@ -266,9 +266,6 @@
       "Invite user": [
         "Запрасіць карыстальніка"
       ],
-      "Keep my ${ vpnPlanNameShort } subscription": [
-        "Пакінуць падпіску ${ vpnPlanNameShort }"
-      ],
       "Let's talk": [
         "Давайце паразмаўляем"
       ],
@@ -3009,9 +3006,6 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Калі вы ўпэўнены, што гэта памылка, напішыце нам на адрас ${ contactLink }."
       ],
-      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "Калі вы скасуеце, ваша падпіска ${ vpnPlanName } не будзе падоўжана пасля завяршэння тэрміну яе дзеяння ${ expiryDate }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Калі паведамлення няма ў папцы з уваходнымі лістамі, то магчыма, што яно трапіла ў папку са спамам."
       ],
@@ -3383,6 +3377,9 @@
       ],
       "Thank you": [
         "Дзякуй"
+      ],
+      "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
+        "Дзякуй за падтрымку нашай місіі па стварэнні лепшага інтэрнэту, дзе прыватнасць і свабода стаяць на першым месцы."
       ],
       "The following address is invalid.": [
         "Наступны адрас з'яўляецца памылковым.",
@@ -3765,9 +3762,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Пасля ўваходу ў ${ destination } вы будзеце пералакіраваны"
       ],
-      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
-        "Вы страціце доступ да сервераў ${ vpnPlanNameShort } і функцыі пасля наступлення гэтай даты."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Вам будзе неабходны адрас ${ BRAND_NAME } для выкарыстання ${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME }"
       ],
@@ -3797,6 +3791,9 @@
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Доступ да яго абмежаваны. Далейшая неаплата прывядзе да блакіроўкі лістоў і абагуленых спасылак.${ payInvoiceLink }"
+      ],
+      "Your account was successfully updated with this promotion": [
+        "Ваш уліковы запіс паспяхова абноўлены з дапамогай гэтай рэкламнай акцыі"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Ваш уліковы запіс будзе абноўлены, калі плацеж будзе правераны."
@@ -6660,9 +6657,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Прэміяльны ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Прэміяльныя функцыі менеджара пароляў"
       ]
     },
     "summer2023: Tooltip": {

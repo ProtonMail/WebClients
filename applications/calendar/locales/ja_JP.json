@@ -150,6 +150,9 @@
       "Continue with Google": [
         "Google で続行"
       ],
+      "Continue with Outlook": [
+        "Outlook を続行する"
+      ],
       "Copy address": [
         "アドレスをコピー"
       ],
@@ -308,6 +311,12 @@
       ],
       "Import from .csv or vCard": [
         ".csv または vCard からインポート"
+      ],
+      "Import from Google": [
+        "Googleからインポート"
+      ],
+      "Import from Outlook": [
+        "Outlook からインポート"
       ],
       "Join calendar": [
         "カレンダーに参加"
@@ -673,6 +682,17 @@
         "グループがありません。"
       ]
     },
+    "Addon": {
+      "${ domains } custom domains": [
+        "${ domains } のカスタム ドメイン"
+      ],
+      "${ ips } servers": [
+        "${ ips } のサーバー"
+      ],
+      "${ users } users": [
+        "${ users } のユーザー"
+      ]
+    },
     "Alarm notification": {
       "${ title } started at ${ formattedHour }": [
         "${ title }は${ formattedHour }からの予定です"
@@ -1027,6 +1047,11 @@
     "Calendar view; more events collapsed": {
       "${ more } more": [
         "${ more } 以上"
+      ]
+    },
+    "Checkout row": {
+      "${ users } users": [
+        "${ users } 人のユーザー"
       ]
     },
     "Collapsible tooltip": {
@@ -2073,6 +2098,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の暗号化とインポート... これには数分かかることがあります。\n処理が完了すると、このモーダルを閉じることができます。"
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSV および VCF ファイル経由でインポートする場合は、ファイルが ${ MAX_IMPORT_FILE_SIZE_STRING } または ${ MAX_IMPORT_CONTACTS_STRING } の連絡先を超えないようにしてください。 ファイルが大きい場合は、より小さいファイルに分割してください。 ${ learnMoreLink }。"
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "インポートしようとしている連絡先リストにはいくつかのグループが含まれています。どのようにグループのインポートするか確認してください。"
       ],
@@ -2096,6 +2124,11 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "結合または保持する必要のない連絡先を削除するためにマークができます。 削除はマージボタンがクリックされた後にのみ行われます"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switchインポートアシスタントを使用する"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2914,6 +2947,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } プレミアム"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } と ${ CALENDAR_SHORT_APP_NAME } プレミアム"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } プレミアム"
+      ],
       "Up to 6 users": [
         "最大6人のユーザー"
       ]
@@ -3060,6 +3102,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -3074,6 +3119,9 @@
       ],
       "Megabytes": [
         "メガバイト"
+      ],
+      "Terabytes": [
+        "テラバイト"
       ]
     },
     "Filter notification": {
@@ -3477,6 +3525,9 @@
       "${ selectedFoldersCountLocalized } labels selected": [
         "${ selectedFoldersCountLocalized } 件のラベルを選択"
       ],
+      "${ storage } storage": [
+        "${ storage } ストレージ"
+      ],
       "${ updated } contacts updated successfully.": [
         "${ updated } 連絡先が正常に更新されました。"
       ],
@@ -3855,6 +3906,9 @@
       "Previous modifications on this series will be lost.": [
         "一連の予定に対する過去の変更は失われます。"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "価格には、適用されるすべてのサイクルベースの割引と、お客様のアカウントに保存されている有効期限内のクーポンが含まれています。"
+      ],
       "Primary": [
         "プライマリー"
       ],
@@ -3969,8 +4023,23 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "アドレスの検証を利用するには、送信で使う鍵を含む 1 つ以上の公開鍵を信頼する必要があります。これにより、暗号鍵の偽装を防ぐことができます。"
       ],
+      "Total email addresses": [
+        "総メールアドレス数"
+      ],
+      "Total storage": [
+        "総ストレージ容量"
+      ],
+      "Total supported domains": [
+        "総対応ドメイン数"
+      ],
+      "Total VPN connections": [
+        "総VPN接続数"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "${ BRAND_NAME } の新しい機能、アップデート、製品を一般公開される前にお試しください。 これによりアプリケーションがリロードされます"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "最大 ${ FAMILY_MAX_USERS } ユーザーまで"
       ],
       "Update recurring event": [
         "定期的な予定の更新"
@@ -5693,6 +5762,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1ユーザー"
+      ],
       "3 TB": [
         "3 TB"
       ],
@@ -5710,6 +5782,15 @@
       ],
       "Highest VPN speed": [
         "最高速 VPN"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } と ${ CALENDAR_SHORT_APP_NAME } プレミアム"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } プレミアム"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } プレミアム"
       ],
       "Premium early access": [
         "プレミアム早期アクセス"
@@ -5755,6 +5836,9 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } months": [
+        "${ n } ヶ月"
+      ],
       "/ month": [
         "/ 月"
       ],
@@ -6063,8 +6147,11 @@
       ]
     },
     "summer2023: Deal details": {
-      "Premium Password Manager": [
-        "プレミアムパスワードマネージャー"
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } プレミアム"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }と${ CALENDAR_SHORT_APP_NAME }プレミアム"
       ]
     },
     "summer2023: Tooltip": {

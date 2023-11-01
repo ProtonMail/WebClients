@@ -761,6 +761,20 @@
         "Henüz bir grubunuz yok."
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } özel etki alanı",
+        "${ domains } özel etki alanı"
+      ],
+      "${ ips } server": [
+        "${ ips } sunucu",
+        "${ ips } sunucu"
+      ],
+      "${ users } user": [
+        "${ users } kullanıcı",
+        "${ users } kullanıcı"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Şimdi ayrılırsanız, bazı kişiler içe aktarılamayabilir"
@@ -827,6 +841,18 @@
       ],
       "High speed streaming": [
         "Yüksek hızda yayın akışı"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Ücretli ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Ücretli ${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Ücretli ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Ücretli Parola Yöneticisi"
       ]
     },
     "bf2023: Footer": {
@@ -966,6 +992,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } kullanmayı sürdürün."
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } kullanıcı",
+        "${ users } kullanıcı"
       ]
     },
     "Collapsible tooltip": {
@@ -3277,6 +3309,9 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
+      "${ storage } storage": [
+        "${ storage } depolama alanı"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kişi güncellendi.",
         "${ updated } kişi güncellendi."
@@ -3891,6 +3926,9 @@
       "Previous versions are not saved": [
         "Daha önce bir sürüm kaydedilmemiş"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Ücrete, hesabınızda kayıtlı tüm geçerli dönemsel indirimler ve geçerlilik süresi dolmamış kuponlar katılmıştır."
+      ],
       "Primary": [
         "Birincil"
       ],
@@ -4093,6 +4131,18 @@
       "Today": [
         "Bugün"
       ],
+      "Total email addresses": [
+        "Toplam e-posta adresi"
+      ],
+      "Total storage": [
+        "Toplam depolama alanı"
+      ],
+      "Total supported domains": [
+        "Toplam etki alanı"
+      ],
+      "Total VPN connections": [
+        "Toplam VPN bağlantısı"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "\"${ name }\" dosyasının aktarımı iptal edildi"
       ],
@@ -4128,6 +4178,9 @@
       ],
       "Unsupported file": [
         "Dosya desteklenmiyor"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "En fazla ${ FAMILY_MAX_USERS } kullanıcı"
       ],
       "Updating drive search...": [
         "Drive araması güncelleniyor..."
@@ -5993,9 +6046,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Ücretli ${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Ücretli Parola Yöneticisi"
       ]
     },
     "summer2023: Tooltip": {

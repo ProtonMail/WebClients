@@ -677,6 +677,20 @@
         "U heeft geen groepen."
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } eigen domein",
+        "${ domains } eigen domeinen"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } servers"
+      ],
+      "${ users } user": [
+        "${ users } gebruiker",
+        "${ users } gebruikers"
+      ]
+    },
     "Alarm notification": {
       "${ title } started at ${ formattedHour }": [
         "${ title } begon om ${ formattedHour }"
@@ -801,6 +815,18 @@
       ],
       "High speed streaming": [
         "Streamen met hoge snelheid"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Premium wachtwoordmanager"
       ]
     },
     "bf2023: Footer": {
@@ -1118,6 +1144,12 @@
       "${ more } more": [
         "${ more } meer",
         "${ more } meer"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } gebruiker",
+        "${ users } gebruikers"
       ]
     },
     "Collapsible tooltip": {
@@ -3631,6 +3663,9 @@
         "${ selectedFoldersCountLocalized } label geselecteerd",
         "${ selectedFoldersCountLocalized } labels geselecteerd"
       ],
+      "${ storage } storage": [
+        "${ storage } opslag"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contact bijgewerkt.",
         "${ updated } contacten bijgewerkt."
@@ -4021,6 +4056,9 @@
       "Previous modifications on this series will be lost.": [
         "Eerdere wijzigingen in deze serie zullen verloren gaan."
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "De prijs is inclusief alle toepasselijke cyclusgebonden kortingen en geldige coupons die in uw account zijn opgeslagen."
+      ],
       "Primary": [
         "Primair"
       ],
@@ -4135,8 +4173,23 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "U moet een of meerdere beschikbare openbare sleutels vertrouwen, als u adresverificatie wil gebruiken. Dit betreft ook de sleutels die u wil gebruiken voor het versturen. Het voorkomt dat er misbruik gemaakt wordt van de sleutels."
       ],
+      "Total email addresses": [
+        "Totaal e-mailadressen"
+      ],
+      "Total storage": [
+        "Totale opslagruimte"
+      ],
+      "Total supported domains": [
+        "Totaal ondersteunde domeinen"
+      ],
+      "Total VPN connections": [
+        "Totale VPN-verbindingen"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Probeer de nieuwe ${ BRAND_NAME } mogelijkheden, updates en producten voordat ze publiekelijk gelanceerd worden. Dit herlaadt de applicatie"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Tot ${ FAMILY_MAX_USERS } gebruikers"
       ],
       "Update recurring event": [
         "Terugkerende afspraak bijwerken"
@@ -6317,9 +6370,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Premium wachtwoordmanager"
       ]
     },
     "summer2023: Tooltip": {

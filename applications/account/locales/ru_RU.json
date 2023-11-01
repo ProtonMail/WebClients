@@ -518,9 +518,6 @@
       "Keep": [
         "Оставить"
       ],
-      "Keep my ${ vpnPlanNameShort } subscription": [
-        "Сохранить мою подписку ${ vpnPlanNameShort }"
-      ],
       "label emails as": [
         "отметить ярлыком электронные письма как"
       ],
@@ -1208,6 +1205,9 @@
       "Add ${ plan } to your plan by subscribing to 15 months": [
         "Добавить ${ plan } в тариф и подписаться на 15 месяцев"
       ],
+      "Become a Visionary": [
+        "Получите тариф Visionary"
+      ],
       "Get the deal": [
         "Купить"
       ],
@@ -1290,6 +1290,29 @@
       ],
       "Secure browsing and premium VPN features.": [
         "Безопасный просмотр веб-страниц и платные функции VPN."
+      ]
+    },
+    "bf2023: Info": {
+      "6 TB storage (2x more than any other plan)": [
+        "Хранилище размером 6 ТБ (в 2 раза больше, чем с другими тарифами)"
+      ],
+      "6 users": [
+        "6 пользователей"
+      ],
+      "Become a super-supporter. Get access to all current and future ${ BRAND_NAME } services.": [
+        "Получите доступ ко всем текущим и будущим сервисам ${ BRAND_NAME }."
+      ],
+      "Exclusive features and early access": [
+        "Эксклюзивные функции и ранний доступ"
+      ],
+      "Help us fight for online privacy": [
+        "Помогите нам в борьбе за конфиденциальный Интернет"
+      ],
+      "Premium versions of all ${ BRAND_NAME } services": [
+        "Платные версии всех сервисов ${ BRAND_NAME }"
+      ],
+      "The ${ plan } plan is back for a limited time only": [
+        "Тариф ${ plan } вернулся на ограниченное время"
       ]
     },
     "bf2023: Offers": {
@@ -5931,9 +5954,6 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Если вы считаете, что это ошибка, пожалуйста, свяжитесь с нами ${ contactLink }."
       ],
-      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "Если вы отмените, ваша подписка ${ vpnPlanName } не будет продлена после истечения её срока действия ${ expiryDate }."
-      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке Входящие, проверьте, не попало ли оно в папку Спам."
       ],
@@ -7094,9 +7114,6 @@
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Вам все еще нужно ответить на приглашения, чтобы приглашающая сторона увидела ваш ответ."
-      ],
-      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
-        "В этот день вы потеряете доступ к серверам и возможностям ${ vpnPlanNameShort }."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Вам понадобится адрес ${ BRAND_NAME } для использования ${ MAIL_APP_NAME } и ${ CALENDAR_APP_NAME }"
@@ -9560,17 +9577,6 @@
         "Управление командами"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Ваш пробный период заканчивается ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, заканчивающаяся на ${ last4 }"
@@ -9646,6 +9652,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Ваш пробный период заканчивается ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11868,11 +11885,6 @@
       ],
       "2 years": [
         "2 года"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium Password Manager": [
-        "Платная версия менеджера паролей"
       ]
     },
     "summer2023: Tooltip": {
