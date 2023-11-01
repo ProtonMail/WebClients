@@ -14,13 +14,14 @@ import {
 import { PublicKeyReference } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
 import { addMember } from '@proton/shared/lib/api/calendars';
-import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
+import { ApiKeysWithKTStatus, getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/api';
 import { MAX_CALENDAR_MEMBERS } from '@proton/shared/lib/calendar/constants';
 import { encryptPassphraseSessionKey } from '@proton/shared/lib/calendar/crypto/keys/calendarKeys';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { filterOutAcceptedInvitations } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getSelfSendAddresses } from '@proton/shared/lib/helpers/address';
 import { canonicalizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -115,6 +116,35 @@ const getRecipientHasError = (recipient: ExtendedRecipient): recipient is Requir
     return !!recipient.error;
 };
 
+const getAndVerifyInternalKeys = async ({
+    api,
+    email,
+    verifyOutboundPublicKeys,
+}: {
+    api: Api;
+    email: string;
+    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
+}): Promise<ApiKeysWithKTStatus> => {
+    try {
+        return await getAndVerifyApiKeys({
+            api,
+            email,
+            internalKeysOnly: true,
+            verifyOutboundPublicKeys,
+            silence: true,
+        });
+    } catch (error: any) {
+        const { data = {} } = error;
+        if (data.Code === API_CUSTOM_ERROR_CODES.KEY_GET_ADDRESS_MISSING) {
+            // The API errors out when asking for internal keys for an external address
+            return {
+                addressKeys: [],
+            };
+        }
+        throw error;
+    }
+};
+
 const getPublicKeysForCalendarSharing = async ({
     email,
     getEncryptionPreferences,
@@ -147,12 +177,10 @@ const getPublicKeysForCalendarSharing = async ({
             ? { publicKey: sendKey, isKeyPinned: isSendKeyPinned, error }
             : { error: new ShareCalendarValdidationError(NOT_PROTON_ACCOUNT) };
     } else {
-        const { addressKeys, catchAllKeys, unverifiedKeys } = await getAndVerifyApiKeys({
+        const { addressKeys, catchAllKeys, unverifiedKeys } = await getAndVerifyInternalKeys({
             api,
             email,
-            internalKeysOnly: true,
             verifyOutboundPublicKeys,
-            silence: true,
         });
 
         if (!addressKeys.length) {
@@ -207,7 +235,7 @@ const loadRecipient = async ({
     api: Api;
     ktActivation: KeyTransparencyActivation;
     verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
-    onError: (error: Error) => void;
+    onError: (error: any) => void;
 }) => {
     const { Address: email } = recipient;
     setRecipientsMap((map) => ({
@@ -253,9 +281,7 @@ const loadRecipient = async ({
                 },
             }));
         }
-    } catch (e: any) {
-        const error = e instanceof Error ? e : new Error('Failed to fetch encryption preferences');
-
+    } catch (error: any) {
         onError(error);
         setRecipientsMap((map) => {
             const result = { ...map };
@@ -394,15 +420,25 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                 } else if ([...currentEmails, ...acc.addedCanonicalizedAddresses].includes(canonicalizedAddress)) {
                     acc.duplicateRecipients.push(recipientWithAddedTime);
                 } else {
-                    const onError = (error: Error) => {
-                        console.error(error);
-                        createNotification({
-                            type: 'error',
-                            // translator: The variable ${address} is an email here. E.g.: Failed to retrieve contact information for eric.norbert@proton.me
-                            text: c('Calendar sharing error').t`Failed to retrieve contact information for ${address}`,
-                        });
+                    const onError = (error: any) => {
+                        const { data = {} } = error;
+                        if (typeof data.Error === 'string') {
+                            console.error(data.Error);
+                            createNotification({
+                                type: 'error',
+                                text: data.Error,
+                            });
+                        } else {
+                            console.error(error);
+                            createNotification({
+                                type: 'error',
+                                // translator: The variable ${address} is an email here. E.g.: Failed to retrieve contact information for eric.norbert@proton.me
+                                text: c('Calendar sharing error')
+                                    .t`Failed to retrieve contact information for ${address}`,
+                            });
+                        }
                     };
-                    loadRecipient({
+                    void loadRecipient({
                         recipient: recipientWithAddedTime,
                         setRecipientsMap,
                         getEncryptionPreferences,
