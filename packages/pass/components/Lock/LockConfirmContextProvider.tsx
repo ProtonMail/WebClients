@@ -10,8 +10,8 @@ type LockConfirmContextValue = { confirmPin: UseAsyncModalHandle<string, ModalSt
 
 const LockConfirmContext = createContext<LockConfirmContextValue>({ confirmPin: async () => {} });
 const getInitialModalState = (): ModalState => ({
-    title: c('Title').t`Enter your Pin`,
-    assistiveText: c('Info').t`Please enter your current pin code to continue`,
+    title: c('Title').t`Enter your PIN`,
+    assistiveText: c('Info').t`Please enter your current PIN code to continue`,
 });
 
 export const LockConfirmContextProvider: FC = ({ children }) => {
