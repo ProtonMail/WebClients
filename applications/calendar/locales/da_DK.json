@@ -677,6 +677,20 @@
         "Du har ikke nogen grupper."
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } brugerdomæne",
+        "${ domains } brugerdomæner"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } servere"
+      ],
+      "${ users } user": [
+        "${ users } bruger",
+        "${ users } brugere"
+      ]
+    },
     "Alarm notification": {
       "${ title } started at ${ formattedHour }": [
         "${ title } startede ${ formattedHour }"
@@ -1034,6 +1048,12 @@
       "${ more } more": [
         "${ more } mere",
         "${ more } mere"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } bruger",
+        "${ users } brugere"
       ]
     },
     "Collapsible tooltip": {
@@ -3554,6 +3574,9 @@
         "${ selectedFoldersCountLocalized } etiket valgt",
         "${ selectedFoldersCountLocalized } etiketter valgt"
       ],
+      "${ storage } storage": [
+        "${ storage } lagerplads"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt blev opdateret.",
         "${ updated } kontakter blev opdateret."
@@ -3944,6 +3967,9 @@
       "Previous modifications on this series will be lost.": [
         "Tidligere ændringer på denne serie vil gå tabt."
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Prisen inkluderer alle gældende cyklusbaserede rabatter og kuponer, der ikke er udløbet, og som er gemt på din konto."
+      ],
       "Primary": [
         "Primær"
       ],
@@ -4058,8 +4084,23 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "For at bruge Adressebekræftelse skal mindst én offentlig nøgle være betroet, herunder dén, der ønskes brugt til afsendelse. Dette forhindrer forfalskning af de kryptererede nøgler."
       ],
+      "Total email addresses": [
+        "Samlet antal e-mailadresser"
+      ],
+      "Total storage": [
+        "Lagerplads i alt"
+      ],
+      "Total supported domains": [
+        "Samlet antal understøttede domæner"
+      ],
+      "Total VPN connections": [
+        "Samlet antal VPN-forbindelser"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prøv nye ${ BRAND_NAME } funktioner, opdateringer og produkter, før de bliver frigivet til offentligheden. Dette vil genindlæse applikationen"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Op til ${ FAMILY_MAX_USERS } brugere"
       ],
       "Update recurring event": [
         "Opdater tilbagevendende begivenhed"
@@ -6237,9 +6278,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Premium Adgangskodeadministrator"
       ]
     },
     "summer2023: Tooltip": {

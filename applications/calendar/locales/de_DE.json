@@ -686,6 +686,20 @@
         "Es wurden noch keine Gruppen angelegt."
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } eigene Domain",
+        "${ domains } eigene Domains"
+      ],
+      "${ ips } server": [
+        "${ ips } Server",
+        "${ ips } Server"
+      ],
+      "${ users } user": [
+        "${ users } Benutzer",
+        "${ users } Benutzer"
+      ]
+    },
     "Alarm notification": {
       "${ title } started at ${ formattedHour }": [
         "${ title } begann um ${ formattedHour }"
@@ -810,6 +824,18 @@
       ],
       "High speed streaming": [
         "Hochgeschwindigkeits-Streaming"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium-${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium-${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium-${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Premium-Passwortmanager"
       ]
     },
     "bf2023: Footer": {
@@ -1127,6 +1153,12 @@
       "${ more } more": [
         "${ more } weitere",
         "${ more } weitere"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } Benutzer",
+        "${ users } Benutzer"
       ]
     },
     "Collapsible tooltip": {
@@ -3661,6 +3693,9 @@
         "${ selectedFoldersCountLocalized } Kategorie ausgewählt",
         "${ selectedFoldersCountLocalized } Kategorien ausgewählt"
       ],
+      "${ storage } storage": [
+        "${ storage } Speicherplatz"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } Kontakt erfolgreich aktualisiert.",
         "${ updated } Kontakte erfolgreich aktualisiert."
@@ -4051,6 +4086,9 @@
       "Previous modifications on this series will be lost.": [
         "Frühere Änderungen dieser Terminserie gehen verloren."
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Der Preis beinhaltet alle anwendbaren zyklusbasierten Rabatte und nicht abgelaufenen Coupons, die auf deinem Konto gespeichert sind."
+      ],
       "Primary": [
         "Primär"
       ],
@@ -4165,8 +4203,23 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Um die Adressprüfung verwenden zu können, musst du einem oder mehreren verfügbaren öffentlichen Schlüsseln vertrauen, einschließlich desjenigen, den du zum Senden verwenden möchtest. Dadurch wird verhindert, dass die Verschlüsselungsschlüssel gefälscht werden können."
       ],
+      "Total email addresses": [
+        "Anzahl E-Mail-Adressen"
+      ],
+      "Total storage": [
+        "Gesamter Speicherplatz"
+      ],
+      "Total supported domains": [
+        "Anzahl unterstützter Domains"
+      ],
+      "Total VPN connections": [
+        "Anzahl VPN‐Verbindungen"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Teste neue Funktionen, Updates und Produkte von ${ BRAND_NAME }, bevor sie für die Öffentlichkeit freigegeben werden. Dadurch wird die Seite neu geladen."
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Bis zu ${ FAMILY_MAX_USERS } Benutzer"
       ],
       "Update recurring event": [
         "Wiederkehrenden Termin aktualisieren"
@@ -6347,9 +6400,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium-${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Premium-Passwortmanager"
       ]
     },
     "summer2023: Tooltip": {

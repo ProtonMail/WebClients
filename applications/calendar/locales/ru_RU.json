@@ -685,6 +685,14 @@
         "У вас нет групп."
       ]
     },
+    "Addon": {
+      "${ users } user": [
+        "${ users } пользователь",
+        "${ users } пользователя",
+        "${ users } пользователей",
+        "${ users } пользователей"
+      ]
+    },
     "Alarm notification": {
       "${ title } started at ${ formattedHour }": [
         "Событие ${ title } началось в ${ formattedHour }"
@@ -809,6 +817,18 @@
       ],
       "High speed streaming": [
         "Высокоскоростной стриминг"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Платная версия ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Платные версии ${ MAIL_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Платная версия ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Платная версия менеджера паролей"
       ]
     },
     "bf2023: Footer": {
@@ -1134,6 +1154,14 @@
         "Ещё ${ more }",
         "Ещё ${ more }",
         "Ещё ${ more }"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } пользователь",
+        "${ users } пользователя",
+        "${ users } пользователей",
+        "${ users } пользователей"
       ]
     },
     "Collapsible tooltip": {
@@ -3733,6 +3761,9 @@
         "Выбрано ${ selectedFoldersCountLocalized } ярлыков",
         "Выбрано ${ selectedFoldersCountLocalized } ярлыков"
       ],
+      "${ storage } storage": [
+        "${ storage } хранилища"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } контакт успешно обновлен.",
         "${ updated } контакта успешно обновлено.",
@@ -4135,6 +4166,9 @@
       "Previous modifications on this series will be lost.": [
         "Предыдущие изменения в этой серии будут потеряны."
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Стоимость указана с учетом всех применимых циклических скидок и не истекших купонов, сохраненных в вашем аккаунте."
+      ],
       "Primary": [
         "Основной"
       ],
@@ -4249,8 +4283,23 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Чтобы использовать проверку адреса, вы должны доверять одному или нескольким из доступных публичных ключей, включая тот, который вы хотите использовать для отправки. Это предотвращает подделку ключей шифрования."
       ],
+      "Total email addresses": [
+        "Всего адресов электронной почты"
+      ],
+      "Total storage": [
+        "Общий объем хранилища"
+      ],
+      "Total supported domains": [
+        "Всего поддерживаемых доменов"
+      ],
+      "Total VPN connections": [
+        "Всего подключений к VPN"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Испытайте новые функции, обновления и продукты ${ BRAND_NAME } до их выпуска широкой публике. Приложение будет перезапущено."
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "До ${ FAMILY_MAX_USERS } пользователей"
       ],
       "Update recurring event": [
         "Обновить повторяющееся событие"
@@ -6422,11 +6471,6 @@
       ],
       "2 years": [
         "2 года"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium Password Manager": [
-        "Платная версия менеджера паролей"
       ]
     },
     "summer2023: Tooltip": {
