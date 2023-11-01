@@ -5,12 +5,12 @@ import { vaultEditFailure, vaultEditIntent, vaultEditSuccess } from '@proton/pas
 import type { ShareType } from '@proton/pass/types';
 import { type Share } from '@proton/pass/types';
 
-function* editVaultWorker({ payload }: ReturnType<typeof vaultEditIntent>) {
+function* editVaultWorker({ payload, meta }: ReturnType<typeof vaultEditIntent>) {
     try {
-        const share: Share<ShareType.Vault> = yield editVault(payload.id, payload.content);
-        yield put(vaultEditSuccess({ id: payload.id, share }));
+        const share: Share<ShareType.Vault> = yield editVault(payload.shareId, payload.content);
+        yield put(vaultEditSuccess(meta.request.id, { share }));
     } catch (e) {
-        yield put(vaultEditFailure(payload, e));
+        yield put(vaultEditFailure(meta.request.id, payload, e));
     }
 }
 

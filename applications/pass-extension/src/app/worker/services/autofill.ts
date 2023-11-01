@@ -8,7 +8,7 @@ import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/hooks/usePasswordGenerat
 import browser from '@proton/pass/lib/globals/browser';
 import type { SelectAutofillCandidatesOptions } from '@proton/pass/lib/search/types';
 import { workerReady } from '@proton/pass/lib/worker';
-import { itemAutofillIntent, itemUsed } from '@proton/pass/store/actions';
+import { autofillIntent, itemUsed } from '@proton/pass/store/actions';
 import {
     selectAutofillCandidates,
     selectItemByShareIdAndId,
@@ -44,7 +44,7 @@ export const createAutoFillService = () => {
         const item = selectItemByShareIdAndId(shareId, itemId)(state);
 
         if (item !== undefined && item.data.type === 'login') {
-            store.dispatch(itemAutofillIntent({ shareId, itemId }));
+            store.dispatch(autofillIntent({ shareId, itemId }));
             return {
                 username: deobfuscate(item.data.content.username),
                 password: deobfuscate(item.data.content.password),

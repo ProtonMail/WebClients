@@ -4,7 +4,7 @@ import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message'
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
 import browser from '@proton/pass/lib/globals/browser';
 import { workerCanBoot } from '@proton/pass/lib/worker';
-import { boot, wakeup } from '@proton/pass/store/actions';
+import { bootIntent, wakeupIntent } from '@proton/pass/store/actions';
 import {
     selectFeatureFlags,
     selectItemByShareIdAndId,
@@ -44,7 +44,7 @@ export const createActivationService = () => {
         if (workerCanBoot(ctx.status)) {
             ctx.setStatus(WorkerStatus.BOOTING);
 
-            store.dispatch(boot({}));
+            store.dispatch(bootIntent({}));
         }
     });
 
@@ -190,7 +190,7 @@ export const createActivationService = () => {
              * no need for any redux operations on content-script wakeup
              * as it doesn't hold any store. */
             if (message.sender === 'popup' || message.sender === 'page') {
-                store.dispatch(wakeup({ status }, endpoint, tabId));
+                store.dispatch(wakeupIntent({ status }, { endpoint, tabId }));
             }
 
             if (message.sender === 'popup') {
