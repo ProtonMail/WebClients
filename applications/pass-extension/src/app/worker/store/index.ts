@@ -87,17 +87,6 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
             })
         ),
 
-    // FIXME: use request progress metadata instead
-    onImportProgress: (progress, endpoint) => {
-        WorkerMessageBroker.ports.broadcast(
-            backgroundMessage({
-                type: WorkerMessageType.IMPORT_PROGRESS,
-                payload: { progress },
-            }),
-            (name) => (endpoint ? name.startsWith(endpoint) : false)
-        );
-    },
-
     /* Update the extension's badge count on every item state change */
     onItemsChange: withContext((ctx) => ctx.service.autofill.updateTabsBadgeCount()),
 

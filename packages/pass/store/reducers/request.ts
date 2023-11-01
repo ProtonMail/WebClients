@@ -1,6 +1,6 @@
 import type { AnyAction, Reducer } from 'redux';
 
-import { invalidateRequest, setRequestProgress } from '@proton/pass/store/actions';
+import { requestInvalidate, requestProgress } from '@proton/pass/store/actions';
 import type { RequestType } from '@proton/pass/store/actions/with-request';
 import { isActionWithRequest } from '@proton/pass/store/actions/with-request';
 import { objectDelete } from '@proton/pass/utils/object/delete';
@@ -38,11 +38,11 @@ const requestReducer: Reducer<RequestState> = (state = {}, action: AnyAction) =>
         return nextState;
     }
 
-    if (setRequestProgress.match(action) && state[action.payload.requestId]?.status === 'start') {
+    if (requestProgress.match(action) && state[action.payload.requestId]?.status === 'start') {
         return partialMerge(state, { [action.payload.requestId]: { progress: action.payload.progress } });
     }
 
-    if (invalidateRequest.match(action)) return objectDelete(state, action.payload.requestId);
+    if (requestInvalidate.match(action)) return objectDelete(state, action.payload.requestId);
 
     return state;
 };

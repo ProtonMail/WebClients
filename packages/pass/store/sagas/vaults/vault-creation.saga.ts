@@ -10,12 +10,12 @@ function* createVaultWorker({ payload, meta }: ReturnType<typeof vaultCreationIn
     try {
         const share: Share<ShareType.Vault> = yield createVault({ content: payload.content });
 
-        const vaultCreationSuccessAction = vaultCreationSuccess({ id: payload.id, share });
+        const vaultCreationSuccessAction = vaultCreationSuccess(meta.request.id, { share });
         yield put(vaultCreationSuccessAction);
 
         onCreateVaultProcessed?.(vaultCreationSuccessAction);
     } catch (e) {
-        const vaultCreationFailureAction = vaultCreationFailure(payload, e);
+        const vaultCreationFailureAction = vaultCreationFailure(meta.request.id, payload, e);
         yield put(vaultCreationFailureAction);
 
         onCreateVaultProcessed?.(vaultCreationFailureAction);

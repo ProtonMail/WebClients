@@ -100,7 +100,7 @@ const onShareEventError = (shareId: string) =>
 
 const onShareDeleted = (shareId: string) =>
     function* ({ channel }: EventChannel<ShareEventResponse>): Generator {
-        yield take((action: AnyAction) => vaultDeleteSuccess.match(action) && action.payload.id === shareId);
+        yield take((action: AnyAction) => vaultDeleteSuccess.match(action) && action.payload.shareId === shareId);
         logger.info(`[Saga::ShareChannel] share ${logId(shareId)} deleted`);
         channel.close();
     };

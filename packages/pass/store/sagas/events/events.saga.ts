@@ -9,7 +9,7 @@ import { or } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 
 import {
-    boot,
+    bootIntent,
     bootSuccess,
     signoutSuccess,
     startEventPolling,
@@ -33,7 +33,7 @@ const startPollingActions = or(startEventPolling.match, bootSuccess.match, syncS
 
 const cancelPollingActions = or(
     stopEventPolling.match,
-    boot.match,
+    bootIntent.match,
     signoutSuccess.match,
     stateLock.match,
     syncIntent.match,
