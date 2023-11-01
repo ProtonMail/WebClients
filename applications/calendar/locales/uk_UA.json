@@ -685,6 +685,26 @@
         "У вас немає жодної групи."
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } власний домен",
+        "${ domains } власні домени",
+        "${ domains } власних доменів",
+        "${ domains } власних доменів"
+      ],
+      "${ ips } server": [
+        "${ ips } сервер",
+        "${ ips } сервери",
+        "${ ips } серверів",
+        "${ ips } серверів"
+      ],
+      "${ users } user": [
+        "${ users } користувач",
+        "${ users } користувачі",
+        "${ users } користувачів",
+        "${ users } користувачів"
+      ]
+    },
     "Alarm notification": {
       "${ title } started at ${ formattedHour }": [
         "${ title } почалося ${ formattedHour }"
@@ -1048,6 +1068,14 @@
         "ще ${ more }",
         "ще ${ more }",
         "ще ${ more }"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } користувач",
+        "${ users } користувачі",
+        "${ users } користувачів",
+        "${ users } користувача"
       ]
     },
     "Collapsible tooltip": {
@@ -3650,6 +3678,9 @@
         "${ selectedFoldersCountLocalized } вибраних міток",
         "${ selectedFoldersCountLocalized } вибраних міток"
       ],
+      "${ storage } storage": [
+        "${ storage } сховища"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } контакт успішно оновлений.",
         "${ updated } контакти успішно оновлені.",
@@ -4055,6 +4086,9 @@
       "Previous modifications on this series will be lost.": [
         "Попередні зміни в цій серії будуть втрачені."
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Ціна включає усі повторювані знижки та чинні купони вашого облікового запису."
+      ],
       "Primary": [
         "Основний"
       ],
@@ -4169,8 +4203,23 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Для використання перевірки адреси ви повинні зробити довіреним один чи декілька доступних відкритих ключів, включаючи той, який ви хочете використовувати для надсилання. Це запобігає підроблюванню ключів шифрування."
       ],
+      "Total email addresses": [
+        "Усього адрес електронної пошти"
+      ],
+      "Total storage": [
+        "Усього сховища"
+      ],
+      "Total supported domains": [
+        "Усього підтримуваних доменів"
+      ],
+      "Total VPN connections": [
+        "Усього VPN-з'єднань"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Спробуйте нові функції, оновлення та продукти ${ BRAND_NAME } до того, як вони будуть випущені для широкого загалу. Це призведе до перезапуску програми"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "До ${ FAMILY_MAX_USERS } користувачів"
       ],
       "Update recurring event": [
         "Оновити повторювану подію"
@@ -6277,11 +6326,6 @@
       ],
       "2 years": [
         "2 роки"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium Password Manager": [
-        "Premium Менеджер паролів"
       ]
     },
     "summer2023: Tooltip": {

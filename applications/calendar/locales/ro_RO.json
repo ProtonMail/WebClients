@@ -681,6 +681,23 @@
         "Nu aveți grupuri."
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } domeniu personal",
+        "${ domains } domenii personale",
+        "${ domains } de domenii personale"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } servere",
+        "${ ips } de servere"
+      ],
+      "${ users } user": [
+        "${ users } utilizator",
+        "${ users } utilizatori",
+        "${ users } de utilizatori"
+      ]
+    },
     "Alarm notification": {
       "${ title } started at ${ formattedHour }": [
         "${ title } a început la ${ formattedHour }"
@@ -1041,6 +1058,13 @@
         "încă unul",
         "încă ${ more }",
         "încă ${ more }"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "un utilizator",
+        "${ users } utilizatori",
+        "${ users } de utilizatori"
       ]
     },
     "Collapsible tooltip": {
@@ -3614,6 +3638,9 @@
         "S-au selectat ${ selectedFoldersCountLocalized } etichete",
         "S-au selectat ${ selectedFoldersCountLocalized } de etichete"
       ],
+      "${ storage } storage": [
+        "Stocare ${ storage }"
+      ],
       "${ updated } contact updated successfully.": [
         "S-a actualizat un contact.",
         "S-au actualizat ${ updated } contacte.",
@@ -4013,6 +4040,9 @@
       "Previous modifications on this series will be lost.": [
         "Modificările anterioare ale acestei serii vor fi pierdute."
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Prețul include toate reducerile ciclice aplicabile și cupoanele neexpirate salvate în cont."
+      ],
       "Primary": [
         "Primară"
       ],
@@ -4127,8 +4157,23 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Pentru a utiliza verificarea adresei, trebuie să aprobați una sau mai multe chei publice disponibile, inclusiv pe cea care o veți folosi pentru trimiteri. Aceasta va împiedica falsificarea cheilor de criptare."
       ],
+      "Total email addresses": [
+        "Total adrese de e-mail"
+      ],
+      "Total storage": [
+        "Spațiu total"
+      ],
+      "Total supported domains": [
+        "Total domenii suportate"
+      ],
+      "Total VPN connections": [
+        "Total conexiuni VPN"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Încercați noile funcții, actualizări și produse ${ BRAND_NAME } înainte ca acestea să fie lansate publicului. Aceasta va reporni aplicația."
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Până la ${ FAMILY_MAX_USERS } utilizatori"
       ],
       "Update recurring event": [
         "Actualizare eveniment recurent"
@@ -6366,9 +6411,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
-      ],
-      "Premium Password Manager": [
-        "Gestionare parole premium"
       ]
     },
     "summer2023: Tooltip": {
