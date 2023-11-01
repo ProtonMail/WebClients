@@ -703,11 +703,11 @@
       "Not saved": [
         "Не збережено"
       ],
-      "Ok": [
-        "Гаразд"
-      ],
       "OK": [
         "Застосувати"
+      ],
+      "Ok": [
+        "Гаразд"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Відкрити ${ CALENDAR_APP_NAME }"
@@ -1213,6 +1213,26 @@
         "Самознищуване повідомлення"
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } власний домен",
+        "${ domains } власні домени",
+        "${ domains } власних доменів",
+        "${ domains } власних доменів"
+      ],
+      "${ ips } server": [
+        "${ ips } сервер",
+        "${ ips } сервери",
+        "${ ips } серверів",
+        "${ ips } серверів"
+      ],
+      "${ users } user": [
+        "${ users } користувач",
+        "${ users } користувачі",
+        "${ users } користувачів",
+        "${ users } користувачів"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Якщо ви зараз вийдете, деякі контакти можуть не імпортуватися"
@@ -1666,6 +1686,14 @@
       ],
       "Cancel expiration": [
         "Скасувати термін дії"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } користувач",
+        "${ users } користувачі",
+        "${ users } користувачів",
+        "${ users } користувача"
       ]
     },
     "Collapsible tooltip": {
@@ -4889,6 +4917,9 @@
         "${ selectedFoldersCountLocalized } вибраних міток",
         "${ selectedFoldersCountLocalized } вибраних міток"
       ],
+      "${ storage } storage": [
+        "${ storage } сховища"
+      ],
       "${ total } conversation": [
         "${ total } розмова",
         "${ total } розмови",
@@ -5642,6 +5673,9 @@
       "Preview for this file type is not supported": [
         "Перегляд цього типу файлу не підтримується"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Ціна включає усі повторювані знижки та чинні купони вашого облікового запису."
+      ],
       "Primary": [
         "Основний"
       ],
@@ -5954,6 +5988,18 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Забагато повідомлень очікують надсилання. Зачекайте, доки буде відправлено інше повідомлення, щоб запланувати це."
       ],
+      "Total email addresses": [
+        "Усього адрес електронної пошти"
+      ],
+      "Total storage": [
+        "Усього сховища"
+      ],
+      "Total supported domains": [
+        "Усього підтримуваних доменів"
+      ],
+      "Total VPN connections": [
+        "Усього VPN-з'єднань"
+      ],
       "Trackers blocked:": [
         "Заблоковані вистежувачі:"
       ],
@@ -5974,6 +6020,9 @@
       ],
       "Unsupported file": [
         "Непідтримуваний файл"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "До ${ FAMILY_MAX_USERS } користувачів"
       ],
       "Updating message content search...": [
         "Оновлення пошуку вмісту повідомлень..."
@@ -8761,11 +8810,6 @@
       ],
       "2 years": [
         "2 роки"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium Password Manager": [
-        "Premium Менеджер паролів"
       ]
     },
     "summer2023: Tooltip": {

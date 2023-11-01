@@ -713,11 +713,11 @@
       "Not saved": [
         "Inte sparad"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Öppna i ${ CALENDAR_APP_NAME }"
@@ -1219,6 +1219,20 @@
         "Utlöpta meddelanden"
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } anpassad domän",
+        "${ domains } anpassade domäner"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } servrar"
+      ],
+      "${ users } user": [
+        "${ users } användare",
+        "${ users } användare"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Genom att lämna nu kan några kontakter inte importeras"
@@ -1675,6 +1689,12 @@
       ],
       "Cancel expiration": [
         "Avbryt giltighetstid"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } användare",
+        "${ users } användare"
       ]
     },
     "Collapsible tooltip": {
@@ -4809,6 +4829,9 @@
         "${ selectedFoldersCountLocalized } etikett vald",
         "${ selectedFoldersCountLocalized } etiketter valda"
       ],
+      "${ storage } storage": [
+        "${ storage } lagringsutrymme"
+      ],
       "${ total } conversation": [
         "${ total } konversation",
         "${ total } konversationer"
@@ -5516,6 +5539,9 @@
       "Preview for this file type is not supported": [
         "Förhandsgranskning för denna filtyp stöds inte"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Pris inkluderar alla tillämpbara återkommande rabatter och icke-utgångna kuponger som finns lagrat på ditt konto."
+      ],
       "Primary": [
         "Primär"
       ],
@@ -5822,6 +5848,18 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Många meddelanden väntar på att skickas. Vänta tills ett annat meddelande har skickats för att schemalägga detta."
       ],
+      "Total email addresses": [
+        "Totalt antal e-postadresser"
+      ],
+      "Total storage": [
+        "Totalt lagringsutrymme"
+      ],
+      "Total supported domains": [
+        "Totalt antal domäner som stöds"
+      ],
+      "Total VPN connections": [
+        "Totalt antal VPN-anslutningar"
+      ],
       "Trackers blocked:": [
         "Spårare blockerade:"
       ],
@@ -5842,6 +5880,9 @@
       ],
       "Unsupported file": [
         "Fil stöds inte"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Upp till ${ FAMILY_MAX_USERS } användare"
       ],
       "Updating message content search...": [
         "Uppdaterar sökning av meddelandeinnehåll..."
@@ -8685,9 +8726,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Premium lösenordshanterare"
       ]
     },
     "summer2023: Tooltip": {
