@@ -21,7 +21,6 @@ import {
     stateDestroy,
     stateLock,
 } from '@proton/pass/store/actions';
-import { sessionUnlockRequest } from '@proton/pass/store/actions/requests';
 import { selectUser } from '@proton/pass/store/selectors';
 import type { Api, Maybe, WorkerMessageResponse } from '@proton/pass/types';
 import { SessionLockStatus, WorkerMessageType, WorkerStatus } from '@proton/pass/types';
@@ -412,7 +411,7 @@ export const createAuthService = ({
     const handleUnlockRequest = (request: { pin: string }) =>
         new Promise<WorkerMessageResponse<WorkerMessageType.UNLOCK_REQUEST>>((resolve) => {
             store.dispatch(
-                sessionUnlockIntent(sessionUnlockRequest(), { pin: request.pin }, (action) => {
+                sessionUnlockIntent({ pin: request.pin }, (action) => {
                     if (sessionUnlockSuccess.match(action)) return resolve({ ok: true });
                     if (sessionUnlockFailure.match(action)) return resolve({ ok: false, ...action.payload });
                 })
