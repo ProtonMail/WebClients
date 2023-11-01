@@ -67,26 +67,23 @@ export const createAutofillService = () => {
         })
     );
 
-    const autofillTelemetry = ({ is2FA = false }: { is2FA?: boolean }) => {
+    const autofillTelemetry = (type: '2fa' | 'login') => {
+        const event = (() => {
+            switch (type) {
+                case 'login':
+                    return createTelemetryEvent(TelemetryEventName.AutofillTriggered, {}, { location: 'source' });
+                case '2fa':
+                    return createTelemetryEvent(TelemetryEventName.TwoFAAutofill, {}, {});
+            }
+        })();
         void sendMessage(
             contentScriptMessage({
                 type: WorkerMessageType.TELEMETRY_EVENT,
                 payload: {
-                    event: createTelemetryEvent(TelemetryEventName.AutofillTriggered, {}, { location: 'source' }),
+                    event,
                 },
             })
         );
-
-        if (is2FA) {
-            void sendMessage(
-                contentScriptMessage({
-                    type: WorkerMessageType.TELEMETRY_EVENT,
-                    payload: {
-                        event: createTelemetryEvent(TelemetryEventName.TwoFAAutofill, {}, {}),
-                    },
-                })
-            );
-        }
     };
 
     const autofillLogin = (form: FormHandle, data: { username: string; password: string }) => {
@@ -94,7 +91,7 @@ export const createAutofillService = () => {
         first(form.getFieldsFor(FieldType.EMAIL) ?? [])?.autofill(data.username);
         form.getFieldsFor(FieldType.PASSWORD_CURRENT).forEach((field) => field.autofill(data.password));
 
-        autofillTelemetry({});
+        autofillTelemetry('login');
     };
 
     const autofillGeneratedPassword = withContext<(form: FormHandle, password: string) => void>(
@@ -136,7 +133,7 @@ export const createAutofillService = () => {
             });
         }
 
-        autofillTelemetry({ is2FA: true });
+        autofillTelemetry('2fa');
     };
 
     /* The `AUTOFILL_OTP_CHECK` message handler will take care of parsing
