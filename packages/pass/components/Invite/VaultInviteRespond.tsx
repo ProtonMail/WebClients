@@ -10,7 +10,6 @@ import { ItemCard } from '@proton/pass/components/Item/ItemCard';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { inviteAcceptIntent, inviteRejectIntent } from '@proton/pass/store/actions';
-import { inviteAcceptRequest, inviteRejectRequest } from '@proton/pass/store/actions/requests';
 import { selectUserVerified, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { Invite } from '@proton/pass/types/data/invites';
 
@@ -23,17 +22,8 @@ export const VaultInviteRespond: VFC<Invite> = (invite) => {
     const { vaultLimitReached } = useSelector(selectVaultLimits);
     const { onInviteResponse } = useInviteContext();
 
-    const acceptInvite = useActionRequest({
-        action: inviteAcceptIntent,
-        requestId: inviteAcceptRequest(invite.token),
-        onSuccess: onInviteResponse,
-    });
-
-    const rejectInvite = useActionRequest({
-        action: inviteRejectIntent,
-        requestId: inviteRejectRequest(invite.token),
-        onSuccess: onInviteResponse,
-    });
+    const acceptInvite = useActionRequest({ action: inviteAcceptIntent, onSuccess: onInviteResponse });
+    const rejectInvite = useActionRequest({ action: inviteRejectIntent, onSuccess: onInviteResponse });
 
     const handleRejectInvite = () => rejectInvite.dispatch({ inviteToken: invite.token });
     const handleAcceptInvite = () => acceptInvite.dispatch({ inviteToken: token, inviterEmail, invitedAddressId });
