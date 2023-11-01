@@ -71,7 +71,7 @@ describe('Import Firefox CSV', () => {
         expect(loginItemMissingPassword.trashed).toEqual(false);
         expect(loginItemMissingPassword.extraFields).toEqual([]);
 
-        /* Login with broken url */
+        /* Login with broken URL */
         const loginItemBrokedUrl = items[3] as ItemImportIntent<'login'>;
         expect(loginItemBrokedUrl.type).toEqual('login');
         expect(loginItemBrokedUrl.createTime).toEqual(1679080973);
