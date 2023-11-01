@@ -677,6 +677,20 @@
         "Não tem nenhum grupo."
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } domínio personalizado",
+        "${ domains } domínios personalizados"
+      ],
+      "${ ips } server": [
+        "${ ips } servidor",
+        "${ ips } servidores"
+      ],
+      "${ users } user": [
+        "${ users } utilizador",
+        "${ users } utilizadores"
+      ]
+    },
     "Alarm notification": {
       "${ title } started at ${ formattedHour }": [
         "${ title } começou às ${ formattedHour }"
@@ -1034,6 +1048,12 @@
       "${ more } more": [
         "${ more } mais",
         "${ more } mais"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } utilizador",
+        "${ users } utilizadores"
       ]
     },
     "Collapsible tooltip": {
@@ -3547,6 +3567,9 @@
         "${ selectedFoldersCountLocalized } etiqueta selecionada",
         "${ selectedFoldersCountLocalized } etiquetas selecionadas"
       ],
+      "${ storage } storage": [
+        "${ storage } de armazenamento"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contacto actualizado.",
         "${ updated } contactos actualizados."
@@ -3937,6 +3960,9 @@
       "Previous modifications on this series will be lost.": [
         "As modificações anteriores desta série serão perdidas."
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "O preço inclui todos os descontos aplicáveis com base no ciclo e cupões não expirados guardados na sua conta."
+      ],
       "Primary": [
         "Principal"
       ],
@@ -4051,8 +4077,23 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Para usar a verificação de endereço, tem de confiar numa ou mais chaves públicas disponíveis, incluindo a que pretende utilizar para envio. Isto impede que as chaves de encriptação sejam falsificadas."
       ],
+      "Total email addresses": [
+        "Total de endereços de e-mail"
+      ],
+      "Total storage": [
+        "Total de armazenamento"
+      ],
+      "Total supported domains": [
+        "Total de domínios suportados"
+      ],
+      "Total VPN connections": [
+        "Total de ligações VPN"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Experimente novas funcionalidades, atualizações e produtos ${ BRAND_NAME } antes do lançamento público. Isto irá recarregar a aplicação"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Até ${ FAMILY_MAX_USERS } utilizadores"
       ],
       "Update recurring event": [
         "Atualizar o evento recorrente"
@@ -6229,9 +6270,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Versão premium do gestor de palavras-passe"
       ]
     },
     "summer2023: Tooltip": {

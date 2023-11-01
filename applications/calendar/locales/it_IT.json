@@ -686,6 +686,20 @@
         "Non hai nessun gruppo."
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } dominio personalizzato",
+        "${ domains } domini personalizzati"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } server"
+      ],
+      "${ users } user": [
+        "${ users } utente",
+        "${ users } utenti"
+      ]
+    },
     "Alarm notification": {
       "${ title } started at ${ formattedHour }": [
         "${ title } è cominciato alle ${ formattedHour }"
@@ -810,6 +824,18 @@
       ],
       "High speed streaming": [
         "Streaming ad alta velocità"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Password manager premium"
       ]
     },
     "bf2023: Footer": {
@@ -1127,6 +1153,12 @@
       "${ more } more": [
         "${ more } altro",
         "${ more } altri"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } utente",
+        "${ users } utenti"
       ]
     },
     "Collapsible tooltip": {
@@ -2179,7 +2211,7 @@
         "Crittografia e importazione dei contatti... L'operazione potrebbe richiedere alcuni minuti. Quando il processo sarà completato, potrai chiudere questa finestra."
       ],
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Per l'importazione tramite file CSV e VCF, assicurati che il file non superi i contatti ${ MAX_IMPORT_FILE_SIZE_STRING } o ${ MAX_IMPORT_CONTACTS_STRING }. Se il tuo file è più grande, dividilo in file più piccoli. ${ learnMoreLink }."
+        "Per importare tramite file CSV o VCF, assicurati che il file non superi i ${ MAX_IMPORT_FILE_SIZE_STRING } o i ${ MAX_IMPORT_CONTACTS_STRING } contatti. Se il tuo file è più grande, dividilo in file più piccoli. ${ learnMoreLink }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sembra che l'elenco dei contatti che stai importando contenga alcuni gruppi. Verifica come devono essere importati questi gruppi."
@@ -2211,7 +2243,7 @@
     },
     "description": {
       "use the Easy Switch import assistant": [
-        "utilizza l'assistente di importazione Easy Switch"
+        "usa l'assistente di importazione Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2469,6 +2501,9 @@
       ],
       "Incorrect username": [
         "Username non corretto"
+      ],
+      "Intended recipient does not support calendar sharing": [
+        "Il destinatario non supporta la condivisione dei calendari"
       ],
       "Interval cannot be empty": [
         "L'intervallo non può essere vuoto"
@@ -3661,6 +3696,9 @@
         "${ selectedFoldersCountLocalized } etichetta selezionata",
         "${ selectedFoldersCountLocalized } etichette selezionate"
       ],
+      "${ storage } storage": [
+        "${ storage } di archiviazione"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contatto aggiornato con successo.",
         "${ updated } contatti aggiornati con successo."
@@ -3982,7 +4020,7 @@
         "Nuovo"
       ],
       "No contacts added yet": [
-        "Nessun contatto ancora aggiunto"
+        "Non sono ancora stati aggiunti contatti"
       ],
       "No email address": [
         "Nessun indirizzo email"
@@ -4050,6 +4088,9 @@
       ],
       "Previous modifications on this series will be lost.": [
         "Le modifiche precedenti di questa serie andranno perse."
+      ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Il prezzo include tutti gli sconti applicabili basati sul periodo e i coupon non scaduti salvati nel tuo account."
       ],
       "Primary": [
         "Principale"
@@ -4165,8 +4206,23 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Per usare la verifica dell'indirizzo, devi considerare attendibile una o più chiavi pubbliche disponibili, compresa quella che vuoi usare per l'invio. In questo modo si evita che le chiavi di crittografia vengano falsificate."
       ],
+      "Total email addresses": [
+        "Totale indirizzi email"
+      ],
+      "Total storage": [
+        "Spazio totale"
+      ],
+      "Total supported domains": [
+        "Totale domini supportati"
+      ],
+      "Total VPN connections": [
+        "Totale connessioni VPN"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prova nuove funzionalità, aggiornamenti e prodotti di ${ BRAND_NAME } prima che vengano rilasciati al pubblico. Questo ricaricherà l'applicazione"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Fino a ${ FAMILY_MAX_USERS } utenti"
       ],
       "Update recurring event": [
         "Aggiorna l'evento ricorrente"
@@ -6347,9 +6403,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME } premium"
-      ],
-      "Premium Password Manager": [
-        "Password manager premium"
       ]
     },
     "summer2023: Tooltip": {
