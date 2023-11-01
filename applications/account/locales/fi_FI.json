@@ -563,9 +563,6 @@
       "Keep": [
         "Säilytä"
       ],
-      "Keep my ${ vpnPlanNameShort } subscription": [
-        "Säilytä ${ vpnPlanNameShort } -tilaukseni"
-      ],
       "label emails as": [
         "merkitse viestit tunnisteilla"
       ],
@@ -634,6 +631,9 @@
       ],
       "Open navigation": [
         "Avaa navigaatio"
+      ],
+      "Or": [
+        "Tai"
       ],
       "Ordered list": [
         "Järjestetty lista"
@@ -898,6 +898,9 @@
       ],
       "Sign out of all accounts": [
         "Kirjaa kaikki tilit ulos"
+      ],
+      "sign up for free": [
+        "rekisteröidy ilmaiseksi"
       ],
       "Signing in": [
         "Kirjaudutaan"
@@ -5502,6 +5505,10 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } -osoite",
+        "${ amountOfAddresses } osoitetta"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } tarvitsee käyttöoikeuden ${ enableDesktopNotifications }."
       ],
@@ -5583,6 +5590,9 @@
         "${ numberOfNonPrivateKeys } ladattu tiedosto ei ole kelvollinen yksityinen avain. Tarkista ja yritä uudelleen.",
         "${ numberOfNonPrivateKeys } ladattua tiedostoa eivät ole kelvollisia yksityisiä avaimia. Tarkista ja yritä uudelleen."
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "${ plan } poistettu. Pakettitarjous ei ole saatavilla 1 kuukauden tilauksella."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vaatii ainakin yhden kohdistetun palvelimen ${ serverPricePerMonth }"
       ],
@@ -5600,6 +5610,14 @@
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } palvelinta määritetään vielä. Tämä kestää yleensä n. ${ provisioningDuration }.",
         "${ provisioningCounter } palvelinta määritetään vielä. Tämä kestää yleensä n. ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } lisää",
+        "${ remainingAddresses.length } lisää"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length } lisäosoite",
+        "${ remainingAddresses.length } lisäosoitetta"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal }/${ providerCalendars.length } kalenteri",
@@ -5932,6 +5950,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Ennen kuin voit aloittaa sähköpostien lähettämisen ja vastaanottamisen uusista osoitteistasi, sinun on luotava niille salausavaimet."
+      ],
+      "Billed at ${ price }": [
+        "Laskutettu ${ price }"
       ],
       "Billing cycle: ${ text }": [
         "Laskutusjakso: ${ text }"
@@ -6284,9 +6305,6 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Jos tämä ei mielestäsi pidä paikkaansa, ota yhteyttä osoitteessa ${ contactLink }."
-      ],
-      "If you cancel, your ${ vpnPlanName } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "Jos perut ${ vpnPlanName } -tilauksesi, sitä ei uudisteta sen päättyessä ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Jos et löydä viestiä saapuneista viesteistäsi, tarkista roskapostikansiosi."
@@ -6755,6 +6773,9 @@
       "Priority support": [
         "Ensisijainen tuki"
       ],
+      "Promotion expired": [
+        "Tämä kampanja on päättynyt"
+      ],
       "Protected by Swiss privacy laws": [
         "Sveitsin tietosuojalakien suojaama"
       ],
@@ -6829,6 +6850,9 @@
       ],
       "Right to Left": [
         "Oikealta vasemmalle"
+      ],
+      "Save ${ percentage }": [
+        "Säästä ${ percentage }"
       ],
       "Save your password somewhere safe.": [
         "Tallenna salasanasi turvalliseen paikkaan."
@@ -6923,6 +6947,9 @@
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF-todennuksella määritetään tahot, jotka voivat lähettää viestejä verkkotunnuksellasi, joten suosittelemme vahvasti, että lisäät ${ MAIL_APP_NAME }in SFP-tietueeseesi. Lisää seuraavat TXT-tietueet verkkotunnuksesi DNS-asetuksiin. Yleensä tämä onnistuu verkkotunnuksen toimittajan hallintapaneelista."
       ],
+      "Stay tuned for future promotions.": [
+        "Pysy kuulolla tulevista kampanjoista."
+      ],
       "Step ${ step }": [
         "${ step }. vaihe",
         "${ step }. vaihe"
@@ -6986,6 +7013,9 @@
       ],
       "Thank you": [
         "Kiitos"
+      ],
+      "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
+        "Kiitos, että tuet tehtäviämme rakentaa parempaa Internetiä, jossa yksityisyys ja vapaus ovat etusijalla."
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "${ boldDataLocked } viestiä ei enää näytetä, mutta voit silti poistaa lukituksen tiedoista kohdassa ${ encryptionAndKeysLink }."
@@ -7076,6 +7106,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Linkki saattaa olla homografiahyökkäys. Vahvista linkin olevan sivusto, jolla haluat vierailla, tai älä avaa sitä."
+      ],
+      "This promotion link has expired.": [
+        "Tämä kampanjalinkki on vanhentunut."
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Tunniste ei ole ikkunan sulkeuduttua käytettävissä, eikä sitä tulisi jakaa kenellekään."
@@ -7565,9 +7598,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Sinut ohjataan sisäänkirjautumisen jälkeen kohteeseen ${ destination }."
       ],
-      "You will lose access to ${ vpnPlanNameShort } servers and features on this date.": [
-        "Menetät pääsyn ${ vpnPlanNameShort } -palvelimiin ja -ominaisuuksiin tänä päivänä."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Tarvitset ${ BRAND_NAME }-osoitteen käyttääksesi ${ MAIL_APP_NAME } ja ${ CALENDAR_APP_NAME } -palveluita"
       ],
@@ -7615,6 +7645,9 @@
       ],
       "Your account recovery method is set": [
         "Tilin palautustapa on määritetty"
+      ],
+      "Your account was successfully updated with this promotion": [
+        "Tilisi päivitys tällä kampanjalla onnistui"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Tilisi päivitetään kun maksu on käsitelty."
@@ -10096,17 +10129,6 @@
         "Tiimin hallinta"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Muutoin pääsyä tililesi rajoitetaan ja aikanaan tilisi poistetaan käytöstä."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Jatkaaksesi ${ MAIL_APP_NAME }n käyttämistä premium-ominaisuuksilla, valitse tilaus ja maksutapa."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Kokeilujaksosi päättyy ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, päättyy ${ last4 }"
@@ -10194,6 +10216,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Nykyisellä tilauksellasi nautit alennetusta etuhinnasta. Jos alennat tilisi, menetät etuhinnan, eikä se ole enää käytettävissä, jos joskus palaat tilaajaksi."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Muutoin pääsyä tililesi rajoitetaan ja aikanaan tilisi poistetaan käytöstä."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Jatkaaksesi ${ MAIL_APP_NAME }n käyttämistä premium-ominaisuuksilla, valitse tilaus ja maksutapa."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Kokeilujaksosi päättyy ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10962,6 +10995,9 @@
       "Continue": [
         "Jatka"
       ],
+      "Continue to ${ appName } without upgrading": [
+        "Jatka sovellukseen ${ appName } päivittämättä"
+      ],
       "Continue to ${ free }": [
         "Jatka palveluun ${ free }"
       ],
@@ -10980,6 +11016,9 @@
       "Download to continue ${ size }": [
         "Lataa jatkaaksesi ${ size }"
       ],
+      "Keep this plan": [
+        "Pidä tämä tilaus"
+      ],
       "Or ${ createANewAccount }": [
         "Tai ${ createANewAccount }"
       ],
@@ -10988,6 +11027,9 @@
       ],
       "Start using ${ appName } now": [
         "Aloita ${ appName } -sovelluksen käyttö nyt"
+      ],
+      "Upgrade": [
+        "Päivitä"
       ],
       "Upgrade my plan": [
         "Päivitä tilaukseni"
@@ -11055,6 +11097,9 @@
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Mutta voit avata **${ unlockPlanTitle }**-tilauksen ja kaikki ${ BRAND_NAME }in premium-palvelut päivittämällä **${ upsellPlanTitle }**-tilaukseen — vain ${ relativePrice } kuukausikorotuksella."
       ],
+      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Mutta voit avata **${ unlockPlanTitle }**-tilauksen ja kaikki premium-${ BRAND_NAME } -palvelut päivittämällä **${ upsellPlanTitle }**-tilaukseen."
+      ],
       "By continuing, you agree to our ${ termsAndConditions }": [
         "Jatkaessasi hyväksyt ${ termsAndConditions }"
       ],
@@ -11100,6 +11145,9 @@
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "Jos sinut lukitaan ulos ${ BRAND_NAME }-tililtäsi, voit kirjautua sisään ja palauttaa tietosi **palautuspaketin** avulla."
       ],
+      "Includes:": [
+        "Sisältää:"
+      ],
       "Install ${ PASS_APP_NAME }": [
         "Asenna ${ PASS_APP_NAME }"
       ],
@@ -11117,9 +11165,6 @@
       ],
       "Launching ${ PASS_APP_NAME }": [
         "Käynnistetään ${ PASS_APP_NAME }"
-      ],
-      "Limited time offer: Get ${ title } for free for 1 year!": [
-        "Rajoitettu tarjous: Hanki ${ title } ilmaiseksi 1 vuodeksi!"
       ],
       "One easy subscription.": [
         "Yksi helppo tilaus."
@@ -11168,6 +11213,9 @@
       ],
       "Verifying your payment": [
         "Maksuasi vahvistetaan"
+      ],
+      "Welcome to ${ shortName } Plus": [
+        "Tervetuloa ${ shortName } Plus -tilaukseen"
       ],
       "Works on all devices": [
         "Toimii kaikilla laitteilla"
@@ -12698,9 +12746,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "Premium salasanahallinta"
       ]
     },
     "summer2023: Tooltip": {
@@ -13333,6 +13378,9 @@
       ],
       "Folders and labels": [
         "Kansiot ja tunnisteet"
+      ],
+      "Forward and auto-reply": [
+        "Välitä ja automaattivastaa"
       ],
       "Forward emails": [
         "Välitä sähköpostit"
@@ -14288,6 +14336,11 @@
       ],
       "Your ${ selected } plan": [
         "${ selected } -tilauksesi"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Pääsy Secure core -palvelimille, nopeat P2P/BitTorrent-lataukset, Tor + VPN, Double hop ja muuta."
       ]
     },
     "Warning": {
