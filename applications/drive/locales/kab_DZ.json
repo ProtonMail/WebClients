@@ -735,6 +735,20 @@
         "Ulac ɣur-k·m ula d yiwet n ugraw."
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } taɣult tudmawant",
+        "${ domains } tiɣula tudmawanin"
+      ],
+      "${ ips } server": [
+        "Aqeddac ${ ips }",
+        "${ ips } yiqeddacen"
+      ],
+      "${ users } user": [
+        "${ users } n useqdac",
+        "${ users } yiseqdacen"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Ma teffɣeḍ tura, yezmer ur d-ttwaktaran ara kra n yinermisen"
@@ -853,6 +867,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Kemmel s useqdec ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } n useqdac",
+        "${ users } n yiseqdacen"
       ]
     },
     "Collapsible tooltip": {
@@ -2897,6 +2917,9 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
+      "${ storage } storage": [
+        "${ storage } n uḥraz"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } n unermis yettwaleqqem akken iwata.",
         "${ updated } n yinermisen ttwaleqqemen akken iwata."
@@ -3532,6 +3555,15 @@
       ],
       "Today": [
         "Ass-a"
+      ],
+      "Total email addresses": [
+        "Asemday n tansiwin n yimayl"
+      ],
+      "Total storage": [
+        "Amḍiq n usekles amatu"
+      ],
+      "Total VPN connections": [
+        "Asemday n tuqqniwin VPN"
       ],
       "Transfer canceled for file \"${ name }\"": [
         "Awelleh yettwasefsex i ufaylu \"${ name }\""
@@ -5009,11 +5041,6 @@
       ],
       "2 years": [
         "2 n yiseggasen"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium Password Manager": [
-        "Amsefrak n wawal uffir premium"
       ]
     },
     "Table header": {

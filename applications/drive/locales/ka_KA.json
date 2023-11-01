@@ -761,6 +761,20 @@
         "არ გაქვთ არცერთი ჯგუფი."
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } მომხმარებლის დომენი",
+        "${ domains } მომხმარებლის დომენი"
+      ],
+      "${ ips } server": [
+        "${ ips } სერვერი",
+        "${ ips } სერვერი"
+      ],
+      "${ users } user": [
+        "${ users } მომხმარებელი",
+        "${ users } მომხმარებელი"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "თუ ახლა გახვალთ, თქვენი ზოგიერთი კონტაქტი შეიძლება, ვერ შემოვიტანოთ"
@@ -882,6 +896,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }-ის მოხმარების გაგრძელება."
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } მომხმარებელი",
+        "${ users } მომხმარებელი"
       ]
     },
     "Collapsible tooltip": {
@@ -3193,6 +3213,9 @@
       "${ speed }/s": [
         "${ speed }/წმ"
       ],
+      "${ storage } storage": [
+        "${ storage } საცავი"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } კონტაქტი წარმატებით განახლდა.",
         "${ updated } კონტაქტი წარმატებით განახლდა."
@@ -3807,6 +3830,9 @@
       "Previous versions are not saved": [
         "წინა ვერსიები შენხული არაა"
       ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "ფასი შეიცავს ყველა შესაბამის ციკლზე-ბაზირებულ ფასდაკლებებს და ვადაგაუსვლელ კუპონებს, რომლებიც თქვენს ანგარიშზე გაქვთ შენახული."
+      ],
       "Primary": [
         "ძირითადი"
       ],
@@ -4009,6 +4035,18 @@
       "Today": [
         "დღეს"
       ],
+      "Total email addresses": [
+        "ელფოსტები სულ"
+      ],
+      "Total storage": [
+        "სრული საცავი"
+      ],
+      "Total supported domains": [
+        "მხარდაჭერილი დომენები სულ"
+      ],
+      "Total VPN connections": [
+        "VPN შეერთებები სულ"
+      ],
       "Transfer canceled for file \"${ name }\"": [
         "\"${ name }\"-ის გადაცემა გაუქმებულია"
       ],
@@ -4044,6 +4082,9 @@
       ],
       "Unsupported file": [
         "ფაილის მხარდაჭერა არ არსებობს"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "${ FAMILY_MAX_USERS }-მდე მომხმარებელი"
       ],
       "Updating drive search...": [
         "Drive-ზე ძებნის განახლება..."
@@ -5909,9 +5950,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium Password Manager": [
-        "პაროლების მმართველის ფასიანი ვერსია"
       ]
     },
     "summer2023: Tooltip": {
