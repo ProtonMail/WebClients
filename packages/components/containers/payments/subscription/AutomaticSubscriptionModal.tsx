@@ -149,8 +149,6 @@ const AutomaticSubscriptionModal = () => {
     const [unavailableModalProps, setUnavailableModal, renderUnavailableModal] = useModalState();
     const [promotionAppliedProps, setPromotionAppliedModal, renderPromotionAppliedModal] = useModalState();
 
-    // @ts-ignore
-    window.x = history;
     useLoad();
 
     useEffect(() => {
