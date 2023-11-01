@@ -139,8 +139,8 @@ export const Import: VFC = () => {
                                 {result.ignored.length > 0 && (
                                     <span className="mb-2 block">
                                         {c('Info').ngettext(
-                                            msgid`The following item could not be imported :`,
-                                            `The following ${result.ignored.length} items could not be imported`,
+                                            msgid`The following ${result.ignored.length} item could not be imported:`,
+                                            `The following ${result.ignored.length} items could not be imported:`,
                                             result.ignored.length
                                         )}
                                     </span>
