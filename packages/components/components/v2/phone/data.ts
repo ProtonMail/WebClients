@@ -8,6 +8,30 @@ interface LeadingNumbers {
 export const callingCodeToLeading: { [key: string]: LeadingNumbers[] | undefined } = {
     '1': [
         {
+            countryCode: 'AG',
+            areaCodes: ['268'],
+        },
+        {
+            countryCode: 'AI',
+            areaCodes: ['264'],
+        },
+        {
+            countryCode: 'AS',
+            areaCodes: ['684'],
+        },
+        {
+            countryCode: 'BB',
+            areaCodes: ['246'],
+        },
+        {
+            countryCode: 'BM',
+            areaCodes: ['441'],
+        },
+        {
+            countryCode: 'BS',
+            areaCodes: ['242'],
+        },
+        {
             countryCode: 'CA',
             areaCodes: [
                 '204',
@@ -15,33 +39,45 @@ export const callingCodeToLeading: { [key: string]: LeadingNumbers[] | undefined
                 '236',
                 '249',
                 '250',
+                '263',
                 '289',
                 '306',
                 '343',
+                '354',
                 '365',
+                '367',
+                '368',
+                '382',
                 '387',
                 '403',
                 '416',
                 '418',
+                '428',
                 '431',
                 '437',
                 '438',
                 '450',
+                '584',
+                '468',
+                '474',
                 '506',
                 '514',
                 '519',
                 '548',
                 '579',
                 '581',
+                '584',
                 '587',
                 '604',
                 '613',
                 '639',
                 '647',
                 '672',
+                '683',
                 '705',
                 '709',
                 '742',
+                '753',
                 '778',
                 '780',
                 '782',
@@ -55,52 +91,12 @@ export const callingCodeToLeading: { [key: string]: LeadingNumbers[] | undefined
             ],
         },
         {
-            countryCode: 'DO',
-            areaCodes: ['809', '829', '849'],
-        },
-        {
-            countryCode: 'PR',
-            areaCodes: ['787', '939'],
-        },
-        {
-            countryCode: 'JM',
-            areaCodes: ['876', '658'],
-        },
-        {
-            countryCode: 'AS',
-            areaCodes: ['684'],
-        },
-        {
-            countryCode: 'AI',
-            areaCodes: ['264'],
-        },
-        {
-            countryCode: 'AG',
-            areaCodes: ['268'],
-        },
-        {
-            countryCode: 'BS',
-            areaCodes: ['242'],
-        },
-        {
-            countryCode: 'BB',
-            areaCodes: ['246'],
-        },
-        {
-            countryCode: 'BM',
-            areaCodes: ['441'],
-        },
-        {
-            countryCode: 'VG',
-            areaCodes: ['284'],
-        },
-        {
-            countryCode: 'KY',
-            areaCodes: ['345'],
-        },
-        {
             countryCode: 'DM',
             areaCodes: ['767'],
+        },
+        {
+            countryCode: 'DO',
+            areaCodes: ['809', '829', '849'],
         },
         {
             countryCode: 'GD',
@@ -111,36 +107,52 @@ export const callingCodeToLeading: { [key: string]: LeadingNumbers[] | undefined
             areaCodes: ['671'],
         },
         {
-            countryCode: 'MS',
-            areaCodes: ['664'],
-        },
-        {
-            countryCode: 'MP',
-            areaCodes: ['670'],
+            countryCode: 'JM',
+            areaCodes: ['876', '658'],
         },
         {
             countryCode: 'KN',
             areaCodes: ['869'],
         },
         {
+            countryCode: 'KY',
+            areaCodes: ['345'],
+        },
+        {
             countryCode: 'LC',
             areaCodes: ['758'],
         },
         {
-            countryCode: 'VC',
-            areaCodes: ['784'],
+            countryCode: 'MP',
+            areaCodes: ['670'],
+        },
+        {
+            countryCode: 'MS',
+            areaCodes: ['664'],
+        },
+        {
+            countryCode: 'PR',
+            areaCodes: ['787', '939'],
         },
         {
             countryCode: 'SX',
             areaCodes: ['721'],
         },
         {
+            countryCode: 'TC',
+            areaCodes: ['649'],
+        },
+        {
             countryCode: 'TT',
             areaCodes: ['868'],
         },
         {
-            countryCode: 'TC',
-            areaCodes: ['649'],
+            countryCode: 'VC',
+            areaCodes: ['784'],
+        },
+        {
+            countryCode: 'VG',
+            areaCodes: ['284'],
         },
         {
             countryCode: 'VI',
