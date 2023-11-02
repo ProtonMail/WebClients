@@ -1,6 +1,6 @@
 import { FeatureCode } from '@proton/components/containers/features';
 import LifetimeDeal from '@proton/components/containers/offers/operations/blackFridayVPN3Deal2022/lifetimeDeal';
-import { COUPON_CODES, CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 
 import { getUnlimitedVPNFeatures, getVPNPlusFeatures } from '../../helpers/offerCopies';
 import { OfferConfig } from '../../interface';
@@ -19,7 +19,7 @@ const config: OfferConfig = {
     deals: [
         {
             ref: 'bf_22_vpn_plus-1y-modal-v30',
-            planName: PLANS.VPN,
+            dealName: PLAN_NAMES[PLANS.VPN],
             planIDs: {
                 [PLANS.VPN]: 1,
             },
@@ -31,7 +31,7 @@ const config: OfferConfig = {
         },
         {
             ref: 'bf_22_vpn_plus-1y-modal-u24',
-            planName: PLANS.BUNDLE,
+            dealName: PLAN_NAMES[PLANS.BUNDLE],
             planIDs: {
                 [PLANS.BUNDLE]: 1,
             },

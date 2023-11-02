@@ -10,7 +10,7 @@ const BlackFridayFooter = ({ offer, currency }: OfferProps) => {
     return (
         <div className="mb-4">
             {offer.deals.map((deal) => {
-                const { prices, cycle, planName, star } = deal;
+                const { prices, cycle, dealName, star } = deal;
                 const { withoutCoupon = 0, withoutCouponMonthly = 0 } = prices || {};
                 const discount = getDiscount(deal);
                 const discountedAmount = (
@@ -29,7 +29,7 @@ const BlackFridayFooter = ({ offer, currency }: OfferProps) => {
                     return null;
                 }
 
-                const key = `${planName}-${cycle}`;
+                const key = `${dealName}-${cycle}`;
 
                 return (
                     <p key={key} className="text-sm text-center color-weak">
