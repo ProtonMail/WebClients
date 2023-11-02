@@ -8,9 +8,6 @@
       "Add": [
         "Afegeix"
       ],
-      "Add current url": [
-        "Afegir la url actual"
-      ],
       "Add domain to pause list": [
         "Afegeix el domini a la llista de pausa"
       ],
@@ -464,9 +461,6 @@
       "Invalid password manager": [
         "Gestor de contrasenya invàlid"
       ],
-      "Invalid url": [
-        "URL no vàlida"
-      ],
       "Invitation could not be accepted": [
         "No es pot acceptar la invitació"
       ],
@@ -523,9 +517,6 @@
       ],
       "The file you are trying to import is empty": [
         "El fitxer que esteu intentant importar està buit"
-      ],
-      "The url is in the list": [
-        "L'URL és a la llista."
       ],
       "Too many failed attempts. Please sign in again.": [
         "Massa intents erronis. Torneu a iniciar la sessió."
@@ -655,9 +646,6 @@
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Hi ha disponible una nova versió de ${ PASS_APP_NAME }. Actualitzeu-lo per gaudir de les últimes característiques i correccions d'errors."
       ],
-      "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
-        "L'accés a ${ PASS_APP_NAME } requerirà un codi PIN per desbloquejar la sessió"
-      ],
       "Access your passwords on the go with our mobile apps.": [
         "Accediu a les vostres contrasenyes sobre la marxa amb les nostres aplicacions mòbils."
       ],
@@ -727,9 +715,6 @@
       "Enter verification code. Digit ${ digit }.": [
         "Introduïu el codi de verificació. Dígit ${ digit }."
       ],
-      "Enter your pin code": [
-        "Introduïu el codi PIN"
-      ],
       "Enter your PIN code": [
         "Introduïu el codi PIN"
       ],
@@ -744,24 +729,6 @@
       ],
       "Here you will find all the necessary information to get you started.": [
         "Aquí trobareu tota la informació necessària per a començar."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "Si està desactivat, ${ PASS_APP_NAME } no mostrarà la icona de web de l'element a través del proxy d'imatges anònim ${ BRAND_NAME }."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not prompt you to save or update credentials.": [
-        "Si està desactivat, ${ PASS_APP_NAME } no us demanarà que deseu o actualitzeu les credencials."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating an email alias on sign-up forms.": [
-        "Si està desactivat, ${ PASS_APP_NAME } no suggerirà la creació d'un àlies de correu electrònic en els formularis d'inscripció."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
-        "Si està desactivat, ${ PASS_APP_NAME } no suggerirà la creació de contrasenyes fortes als formularis d'inscripció."
-      ],
-      "If enabled, the autofill dropdown will automatically open on field focus.": [
-        "Si està habilitat, el menú desplegable d'emplenament automàtic s'obrirà automàticament en el camp enfocat."
-      ],
-      "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Si està habilitat, podeu emplenar automàticament les vostres credencials fent clic a la icona de ${ PASS_APP_NAME }."
       ],
       "Imported ${ payload.total } item": [
         "S'ha importat ${ payload.total } element",
@@ -881,9 +848,6 @@
       ],
       "Please consider leaving a review.": [
         "Considereu deixar una ressenya."
-      ],
-      "Please enter your current pin code to continue": [
-        "Introduïu el codi PIN actual per a continuar"
       ],
       "Press Enter to copy": [
         "Premeu Retorn per a copiar"
@@ -1568,9 +1532,6 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Gaudint ${ PASS_APP_NAME }?"
       ],
-      "Enter your Pin": [
-        "Introduïu el PIN"
-      ],
       "Fill & copy password": [
         "Emplena i copia la contrasenya"
       ],
@@ -1657,14 +1618,8 @@
       ]
     },
     "Validation": {
-      "Duplicated url": [
-        "Url duplicada"
-      ],
       "Url already exists": [
         "Url ja existent"
-      ],
-      "Url cannot be empty": [
-        "La Url no pot ser buida"
       ],
       "Url is invalid": [
         "Url no vàlida"
@@ -1694,9 +1649,6 @@
       ],
       "Invalid alias prefix": [
         "El prefix de l'àlies no és vàlid"
-      ],
-      "Maximum length is ${ maxLength } characters": [
-        "La longitud màxima és de ${ maxLength } caràcters"
       ],
       "Missing alias prefix": [
         "Falta el prefix de l'àlies"

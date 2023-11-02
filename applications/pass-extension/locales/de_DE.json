@@ -8,7 +8,7 @@
       "Add": [
         "Hinzufügen"
       ],
-      "Add current url": [
+      "Add current URL": [
         "Aktuelle URL hinzufügen"
       ],
       "Add domain to pause list": [
@@ -503,7 +503,7 @@
       "Invalid password manager": [
         "Ungültiger Passwort-Manager"
       ],
-      "Invalid url": [
+      "Invalid URL": [
         "Ungültige URL"
       ],
       "Invitation could not be accepted": [
@@ -563,8 +563,8 @@
       "The file you are trying to import is empty": [
         "Die Datei, die du importieren möchtest, ist leer."
       ],
-      "The url is in the list": [
-        "Die URL ist in der Liste"
+      "The URL is in the list": [
+        "Die URL ist in der Liste."
       ],
       "Too many failed attempts. Please sign in again.": [
         "Zu viele Fehlversuche! Bitte melde dich erneut an."
@@ -679,8 +679,20 @@
         "${ memberCount } Mitglied",
         "${ memberCount } Mitglieder"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
+        "${ PASS_APP_NAME } zeigt das Website-Symbol des Eintrags über den anonymisierten Bild-Proxy von ${ BRAND_NAME } an."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } importiert nur Logins, Notizen und Kreditkarten."
+      ],
+      "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
+        "${ PASS_APP_NAME } wird dich auffordern, deine Anmeldedaten zu speichern oder zu aktualisieren."
+      ],
+      "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
+        "${ PASS_APP_NAME } wird dir vorschlagen, einen E-Mail-Alias in Anmeldeformularen zu erstellen."
+      ],
+      "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
+        "${ PASS_APP_NAME } wird dir vorschlagen, sichere Passwörter für Anmeldeformulare zu erstellen."
       ],
       "${ revisionNumber } time": [
         "${ revisionNumber } Mal",
@@ -707,7 +719,7 @@
       "Access successfully confirmed": [
         "Zugriff erfolgreich bestätigt"
       ],
-      "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
+      "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
         "Der Zugang zu ${ PASS_APP_NAME } erfordert einen PIN-Code, um deine Sitzung zu entsperren."
       ],
       "Access your passwords on the go with our mobile apps.": [
@@ -767,6 +779,9 @@
       "Deleted items will be moved here first": [
         "Gelöschte Einträge werden zuerst hierhin verschoben."
       ],
+      "Deleting \"${ payload.content.name }\"": [
+        "„${ payload.content.name }“ wird gelöscht"
+      ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Entdecke ${ PASS_APP_NAME }"
       ],
@@ -787,9 +802,6 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Bestätigungscode eingeben. Ziffer ${ digit }."
-      ],
-      "Enter your pin code": [
-        "PIN-Code eingeben"
       ],
       "Enter your PIN code": [
         "PIN-Code eingeben"
@@ -817,24 +829,6 @@
       ],
       "Here you will find all the necessary information to get you started.": [
         "Nachfolgend findest du alle notwendigen Informationen für den Einstieg."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "Wenn diese Option deaktiviert ist, zeigt ${ PASS_APP_NAME } das Website-Symbol des Eintrags nicht über den anonymisierten Bild-Proxy von ${ BRAND_NAME } an."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not prompt you to save or update credentials.": [
-        "Wenn diese Option deaktiviert ist, wird ${ PASS_APP_NAME } dich nicht auffordern, deine Anmeldedaten zu speichern oder zu aktualisieren."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating an email alias on sign-up forms.": [
-        "Wenn diese Option deaktiviert ist, schlägt ${ PASS_APP_NAME } die Erstellung eines E-Mail-Alias in Anmeldeformularen nicht vor."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
-        "Wenn diese Option deaktiviert ist, schlägt ${ PASS_APP_NAME } nicht vor, sichere Passwörter für Anmeldeformulare zu erstellen."
-      ],
-      "If enabled, the autofill dropdown will automatically open on field focus.": [
-        "Wenn diese Funktion aktiviert ist, wird das Dropdown-Menü für das automatische Ausfüllen geöffnet, sobald das Feld im Fokus ist."
-      ],
-      "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Wenn diese Funktion aktiviert ist, kannst du deine Anmeldeinformationen schnell ausfüllen, indem du auf das ${ PASS_APP_NAME }-Symbol klickst."
       ],
       "Import in progress:": [
         "Import im Gange:"
@@ -865,7 +859,7 @@
         "Einladung erfolgreich versendet"
       ],
       "invites you to access items in": [
-        "lädt dich zum Zugriff auf Elemente ein im Tresor"
+        "hat dich eingeladen auf Elemente in folgenden Tresor zuzugreifen:"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Es scheint, dass du bereits bei ${ PASS_APP_NAME } angemeldet bist. Wenn du versuchst, dich mit einem anderen Konto anzumelden, melde dich bitte zuerst bei der Erweiterung ab."
@@ -961,7 +955,7 @@
       "Please consider leaving a review.": [
         "Bitte ziehe in Erwägung, eine Bewertung zu schreiben."
       ],
-      "Please enter your current pin code to continue": [
+      "Please enter your current PIN code to continue": [
         "Bitte gib deinen aktuellen PIN-Code ein, um fortzufahren."
       ],
       "Press Enter to copy": [
@@ -1017,6 +1011,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Vielen Dank, das Problem wurde gemeldet."
+      ],
+      "The autofill dropdown will automatically open on field focus.": [
+        "Das Dropdown-Menü für das automatische Ausfüllen wird automatisch geöffnet, sobald das Feld im Fokus ist."
       ],
       "The following item could not be imported :": [
         "Der folgende Eintrag konnte nicht importiert werden:",
@@ -1087,6 +1084,9 @@
       ],
       "You are about to create:": [
         "Folgender Alias wird erstellt:"
+      ],
+      "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
+        "Du kannst deine Anmeldeinformationen schnell ausfüllen, indem du auf das ${ PASS_APP_NAME }-Symbol klickst."
       ],
       "You cannot change the mailboxes for this alias.": [
         "Du kannst die Postfächer für diesen Alias nicht ändern."
@@ -1678,7 +1678,7 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Gefällt dir ${ PASS_APP_NAME }?"
       ],
-      "Enter your Pin": [
+      "Enter your PIN": [
         "PIN eingeben"
       ],
       "Fill & copy password": [
@@ -1776,8 +1776,8 @@
       ]
     },
     "Validation": {
-      "Duplicated url": [
-        "Duplizierte URL"
+      "Duplicated URL": [
+        "Doppelte URL"
       ],
       "Field name is required": [
         "Feldname ist erforderlich."
@@ -1791,11 +1791,14 @@
       "Url already exists": [
         "URL existiert bereits"
       ],
-      "Url cannot be empty": [
-        "URL darf nicht leer sein"
+      "URL cannot be empty": [
+        "URL darf nicht leer sein."
       ],
       "Url is invalid": [
         "URL ungültig"
+      ],
+      "URL is invalid": [
+        "URL ist ungültig."
       ]
     },
     "Warning": {
@@ -1826,7 +1829,8 @@
       "Invalid alias prefix": [
         "Ungültiges Alias-Präfix"
       ],
-      "Maximum length is ${ maxLength } characters": [
+      "Maximum length is ${ maxLength } character": [
+        "Die maximale Länge beträgt ${ maxLength } Zeichen.",
         "Die maximale Länge beträgt ${ maxLength } Zeichen."
       ],
       "Missing alias prefix": [
