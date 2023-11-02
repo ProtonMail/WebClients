@@ -1,4 +1,4 @@
-import type { ApiContext } from '@proton/pass/types';
+import type { ApiAuth, ApiCallFn, Maybe } from '@proton/pass/types';
 import { setRefreshCookies as refreshTokens } from '@proton/shared/lib/api/auth';
 import { retryHandler } from '@proton/shared/lib/api/helpers/retryHandler';
 import { InactiveSessionError } from '@proton/shared/lib/api/helpers/withApiHandlers';
@@ -12,10 +12,12 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 export type RefreshHandler = (responseDate?: Date) => Promise<void>;
+export type OnRefreshCallback = (response: RefreshSessionResponse, refreshTime: number) => void;
 
 type CreateRefreshHandlerOptions = {
-    apiContext: ApiContext;
-    onRefresh: (response: RefreshSessionResponse, refreshTime: number) => void;
+    call: ApiCallFn;
+    getAuth: () => Maybe<ApiAuth>;
+    onRefresh: OnRefreshCallback;
 };
 
 /**
@@ -24,21 +26,22 @@ type CreateRefreshHandlerOptions = {
  * Needs to re-handle errors here for that reason.
  */
 const refresh = async (options: {
-    apiContext: ApiContext;
+    call: ApiCallFn;
+    getAuth: () => Maybe<ApiAuth>;
     attempt: number;
     maxAttempts: number;
 }): Promise<Response> => {
-    const { attempt, maxAttempts, apiContext } = options;
+    const { call, getAuth, attempt, maxAttempts } = options;
+    const auth = getAuth();
 
     try {
-        if (apiContext.auth === undefined) throw InactiveSessionError();
-        const { UID, RefreshToken } = apiContext.auth;
-        return await apiContext.call(withUIDHeaders(UID, refreshTokens({ RefreshToken: RefreshToken })));
+        if (auth === undefined || !auth.UID) throw InactiveSessionError();
+        return await call(withUIDHeaders(auth.UID, refreshTokens({ RefreshToken: auth.RefreshToken })));
     } catch (error: any) {
-        const { status, name } = error;
-        const next = () => refresh({ apiContext, attempt: attempt + 1, maxAttempts: OFFLINE_RETRY_ATTEMPTS_MAX });
-
         if (attempt >= maxAttempts) throw error;
+
+        const { status, name } = error;
+        const next = () => refresh({ call, getAuth, attempt: attempt + 1, maxAttempts: OFFLINE_RETRY_ATTEMPTS_MAX });
 
         if (['OfflineError', 'TimeoutError'].includes(name)) {
             if (attempt > OFFLINE_RETRY_ATTEMPTS_MAX) throw error;
@@ -55,23 +58,22 @@ const refresh = async (options: {
     }
 };
 
-export const createRefreshHandler = ({ apiContext, onRefresh }: CreateRefreshHandlerOptions): RefreshHandler => {
-    const refreshHandlers: Map<string, (responseDate: Date) => Promise<void>> = new Map();
+export const createRefreshHandler = ({ call, getAuth, onRefresh }: CreateRefreshHandlerOptions): RefreshHandler => {
+    const refreshHandlers: Map<string, RefreshHandler> = new Map();
 
     return (responseDate) => {
-        if (apiContext.auth === undefined) throw InactiveSessionError();
+        const auth = getAuth();
+        if (auth === undefined || !auth.UID) throw InactiveSessionError();
 
-        const { UID } = apiContext.auth;
-
-        if (!refreshHandlers.has(UID)) {
+        if (!refreshHandlers.has(auth.UID)) {
             refreshHandlers.set(
-                UID,
-                createOnceHandler(async (responseDate: Date) => {
+                auth.UID,
+                createOnceHandler(async (responseDate?: Date) => {
                     await wait(randomIntFromInterval(100, 2000));
-                    const lastRefreshDate = apiContext.auth?.RefreshTime;
+                    const lastRefreshDate = auth.RefreshTime;
 
-                    if (lastRefreshDate === undefined || +responseDate > lastRefreshDate) {
-                        const response = await refresh({ apiContext, attempt: 1, maxAttempts: RETRY_ATTEMPTS_MAX });
+                    if (lastRefreshDate === undefined || +(responseDate ?? new Date()) > lastRefreshDate) {
+                        const response = await refresh({ call, getAuth, attempt: 1, maxAttempts: RETRY_ATTEMPTS_MAX });
                         const timestamp = getDateHeader(response.headers) ?? new Date();
                         const result = await response.json();
                         onRefresh(result, +timestamp);
@@ -82,6 +84,6 @@ export const createRefreshHandler = ({ apiContext, onRefresh }: CreateRefreshHan
             );
         }
 
-        return refreshHandlers.get(UID)!(responseDate ?? new Date());
+        return refreshHandlers.get(auth.UID)!(responseDate);
     };
 };
