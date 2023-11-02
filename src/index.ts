@@ -44,16 +44,6 @@ app.whenReady().then(() => {
 
         callback(false);
     });
-
-    // Security addition
-    secureSession.webRequest.onHeadersReceived((details, callback) => {
-        callback({
-            responseHeaders: /* eng-disable CSP_GLOBAL_CHECK */ {
-                ...details.responseHeaders,
-                "Content-Security-Policy": ["default-src: 'self'; object-src: 'none'"],
-            },
-        });
-    });
 });
 
 app.on("window-all-closed", () => {
