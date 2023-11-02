@@ -1,5 +1,5 @@
 import { FeatureCode } from '@proton/components/containers/features';
-import { COUPON_CODES, CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 
 import { getVisionaryFeatures } from '../../helpers/offerCopies';
 import { OfferConfig } from '../../interface';
@@ -18,7 +18,7 @@ const config: OfferConfig = {
     deals: [
         {
             ref: 'bf_22_mail_unlimited-modal-v2',
-            planName: PLANS.NEW_VISIONARY,
+            dealName: PLAN_NAMES[PLANS.NEW_VISIONARY],
             planIDs: {
                 [PLANS.NEW_VISIONARY]: 1,
             },
