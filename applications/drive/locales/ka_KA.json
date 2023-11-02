@@ -116,6 +116,9 @@
       "Clear query": [
         "მოთხოვნის გასუფთავება"
       ],
+      "Clear selection": [
+        "არჩევანის გასუფთავება"
+      ],
       "Click here.": [
         "დააწკაპუნეთ აქ."
       ],
@@ -160,6 +163,9 @@
       ],
       "Continue with Google": [
         "Google-ით გაგრძელება"
+      ],
+      "Continue with Outlook": [
+        "Outlook-ით გაგრძელება"
       ],
       "Copy address": [
         "მისამართის კოპირება"
@@ -366,6 +372,12 @@
       ],
       "Import from .csv or vCard": [
         ".csv ან vCard-დან შემოტანა"
+      ],
+      "Import from Google": [
+        "Google-დან შემოტანა"
+      ],
+      "Import from Outlook": [
+        "Outlook-დან შემოტანა"
       ],
       "Learn more": [
         "გაიგეთ მეტი"
@@ -702,6 +714,9 @@
       ],
       "Upload folder": [
         "საქაღალდის ატვირთვა"
+      ],
+      "Upload photos": [
+        "ატვირთეთ ფოტოსურათი"
       ],
       "Upload picture": [
         "სურათის ატვრთვა"
@@ -1890,6 +1905,11 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "წასაშლელად შეგიძლიათ, მონიშნოთ ის კონტაქტები, რომელთა შერწყმა და შენარჩუნება არ გსურთ. წაშლა მოხდება, მხოლოდ, შერწყმის ღილაკზე დაწკაპუნების შემდეგ"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "გამოიყენეთ Easy Switch-ის შემოტანის დამხმარე"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3194,6 +3214,10 @@
         "მონიშნულია ${ selectedContactsLength }/${ contactsLength } კონტაქტი",
         "მონიშნულია ${ selectedContactsLength }/${ contactsLength } კონტაქტი"
       ],
+      "${ selectedCount } selected": [
+        "მონიშნულია ${ selectedCount }",
+        "მონიშნულია ${ selectedCount }"
+      ],
       "${ selectedFoldersCount } folder selected": [
         "მონიშნულია ${ selectedFoldersCount } საქაღალდე",
         "მონიშნულია ${ selectedFoldersCount } საქაღალდე"
@@ -3726,6 +3750,9 @@
       "No group found": [
         "ჯგუფი ნაპოვნი არაა"
       ],
+      "No photos yet": [
+        "ჯერ ფოტოები არ გაქვთ"
+      ],
       "No results found": [
         "შედეგების გარეშე"
       ],
@@ -3872,8 +3899,14 @@
       "Search Enabled": [
         "ძებნა ჩართულია"
       ],
+      "Select all items for": [
+        "ყველა ელემენტის მონიშვნა ვისთვის"
+      ],
       "Select an uploaded file or folder and create a link to it.": [
         "აირჩიეთ ატვირთული ფაილი ან საქაღალდე და შექმენით მასზე ბმული."
+      ],
+      "Select item": [
+        "აირჩიეთ ელემენტი"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "აირჩიეთ მითითებულ მისამართზე ელფოსტის გაგზავნისას გამოყენებული ფორმატი."
@@ -3991,6 +4024,9 @@
       ],
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
         "ეს ბმული სამუდამოდ გაითიშება. ამ საქაღალდესთან მოცემული ბმულით წვდომა შეუძლებელი იქნება. საქაღალდის თავიდან გასაზიარებლად ახალი ბმული დაგჭირდებათ."
+      ],
+      "This month": [
+        "ამ თვეში"
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "ეს წაშლის ამ ბმულს და აუკრძალავს წვდომას ყველას, ვისაც თქვენს ფაილთან ან საქაღალდესთან ამ ბმულით ჰქონდა წვდომა.",
@@ -4628,6 +4664,9 @@
       "Phone number": [
         "ტელეფონის ნომერი"
       ],
+      "Photo": [
+        "ფოტო"
+      ],
       "Please provide full details to help us take appropriate action": [
         "გამოგვიგზავნეთ, რაც შეიძლება, მეტი დეტალი, რათა შესაბამისი ზომები მივიღოთ"
       ],
@@ -4812,6 +4851,9 @@
       ],
       "Pay invoice": [
         "ინვოისის გადახდა"
+      ],
+      "Photos": [
+        "ფოტოები"
       ],
       "Reactivate now": [
         "რეაქტივაცია ახლავე"
@@ -6382,6 +6424,9 @@
       ],
       "Phone numbers": [
         "ტელეფონის ნომრები"
+      ],
+      "Photos": [
+        "ფოტოები"
       ],
       "Preview": [
         "გადახედვა"
