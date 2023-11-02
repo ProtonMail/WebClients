@@ -18,7 +18,7 @@ const config: OfferConfig = {
     deals: [
         {
             ref: 'family_offer-3-deal-12',
-            planName: PLANS.FAMILY,
+            dealName: PLAN_NAMES[PLANS.FAMILY],
             planIDs: {
                 [PLANS.FAMILY]: 1,
             },
@@ -29,7 +29,7 @@ const config: OfferConfig = {
         },
         {
             ref: 'family_offer-3-deal-24',
-            planName: PLANS.FAMILY,
+            dealName: PLAN_NAMES[PLANS.FAMILY],
             planIDs: {
                 [PLANS.FAMILY]: 1,
             },
@@ -41,7 +41,7 @@ const config: OfferConfig = {
         },
         {
             ref: 'family_offer-3-deal-1',
-            planName: PLANS.FAMILY,
+            dealName: PLAN_NAMES[PLANS.FAMILY],
             planIDs: {
                 [PLANS.FAMILY]: 1,
             },

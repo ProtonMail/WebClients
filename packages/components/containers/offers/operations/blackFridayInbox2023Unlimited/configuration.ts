@@ -1,5 +1,5 @@
 import { FeatureCode } from '@proton/components/containers/features';
-import { COUPON_CODES, CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 
 import { getFamilyInboxFeatures } from '../../helpers/offerCopies';
 import { OfferConfig } from '../../interface';
@@ -19,7 +19,7 @@ const config: OfferConfig = {
     deals: [
         {
             ref: 'bf_23_mail_unlimited-modal-f12',
-            planName: PLANS.FAMILY,
+            dealName: PLAN_NAMES[PLANS.FAMILY],
             planIDs: {
                 [PLANS.FAMILY]: 1,
             },
