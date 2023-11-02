@@ -47,6 +47,7 @@
 		inset-inline-end: 0;
 		block-size: 100%;
 		z-index: $layer-drawer; // Need to be on top of the mail content, but not modals
+		box-shadow: var(--shadow-lifted);
 	}
 
 	@include media('<=small') {
