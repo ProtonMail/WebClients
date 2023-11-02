@@ -50,7 +50,7 @@ const AddressesSummary = ({
             </Label>
             <div
                 className={clsx([
-                    'field flex composer-addresses-fakefield composer-meta-fakefield-summary composer-light-field flex-row flex-align-items-center flex-nowrap flex-item-fluid w100',
+                    'field flex composer-addresses-fakefield composer-meta-fakefield-summary composer-light-field flex-row flex-align-items-center flex-nowrap flex-item-fluid w-full',
                     disabled && 'disabled',
                 ])}
                 data-testid="composer:address"
@@ -102,7 +102,7 @@ const AddressesSummary = ({
                                                 <span className="composer-addresses-addressIcon relative mr-1">
                                                     {icon && <EncryptionStatusIcon {...icon} disabled={disabled} />}
                                                 </span>
-                                                <span className="max-w100 text-ellipsis">
+                                                <span className="max-w-full text-ellipsis">
                                                     {getRecipientOrGroupLabel(recipientOrGroup)}
                                                 </span>
                                             </span>
@@ -114,7 +114,7 @@ const AddressesSummary = ({
                         );
                     })}
                 </span>
-                <span className="flex flex-nowrap flex-item-noshrink on-mobile-max-w33 on-tiny-mobile-max-w50">
+                <span className="flex flex-nowrap flex-item-noshrink max-w-1/2 sm:max-w-1/3 md:max-w-none">
                     <AddressesCCButton
                         classNames="composer-addresses-ccbcc composer-addresses-ccbcc-fakefield text-ellipsis flex-item-noshrink"
                         disabled={disabled}

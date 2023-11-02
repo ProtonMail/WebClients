@@ -17,8 +17,10 @@ interface ContainerProps {
 }
 
 const Container = ({ children }: ContainerProps) => (
-    <div className="flex h100 scroll-if-needed py-4 px-7">
-        <div className="m-auto text-center max-w30e">{children}</div>
+    <div className="flex h-full scroll-if-needed py-4 px-7">
+        <div className="m-auto text-center max-w-custom" style={{ '--max-w-custom': '30em' }}>
+            {children}
+        </div>
     </div>
 );
 interface Props {
@@ -36,7 +38,7 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
     const total = labelCount?.Total || 0;
 
     const userName = (
-        <span key="display-name" className="inline-block max-w100 text-ellipsis align-bottom">
+        <span key="display-name" className="inline-block max-w-full text-ellipsis align-bottom">
             {capitalize(user.DisplayName)}
         </span>
     );
@@ -78,7 +80,7 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
                 <p className="text-keep-space">{labelCount ? counterMessage : null}</p>
                 <hr className="my-8" />
                 <div className="text-rg">
-                    <img className="hauto" src={envelope} alt={c('Alternative text for welcome image').t`Welcome`} />
+                    <img className="h-auto" src={envelope} alt={c('Alternative text for welcome image').t`Welcome`} />
                 </div>
             </Container>
         </>

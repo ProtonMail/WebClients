@@ -124,7 +124,7 @@ const ItemColumnLayout = ({
                             />
                             <ItemAction element={element} className="mr-1 my-auto flex-item-noshrink" />
                             <span
-                                className="inline-flex max-w100 text-ellipsis"
+                                className="inline-flex max-w-full text-ellipsis"
                                 data-testid="message-column:sender-address"
                             >
                                 {senders}
@@ -141,7 +141,7 @@ const ItemColumnLayout = ({
                         </span>
                     </div>
 
-                    <div className="flex flex-nowrap flex-align-items-center item-secondline max-w100">
+                    <div className="flex flex-nowrap flex-align-items-center item-secondline max-w-full">
                         <div className="item-subject flex-item-fluid flex flex-nowrap flex-align-items-center">
                             {showIcon && (
                                 <span className="flex flex-item-noshrink">
@@ -154,7 +154,7 @@ const ItemColumnLayout = ({
                             <span
                                 role="heading"
                                 aria-level={2}
-                                className="inline-block max-w100 mr-1 text-ellipsis"
+                                className="inline-block max-w-full mr-1 text-ellipsis"
                                 title={Subject}
                                 data-testid="message-column:subject"
                             >
@@ -217,7 +217,7 @@ const ItemColumnLayout = ({
             {showThumbnails && <ItemAttachmentThumbnails attachmentsMetadata={attachmentsMetadata} className="mt-1" />}
 
             {hasLabels && !isCompactView && (
-                <div className="flex flex-nowrap flex-align-items-center max-w100 no-scroll">
+                <div className="flex flex-nowrap flex-align-items-center max-w-full no-scroll">
                     <div className="item-icons flex flex-item-noshrink flex-nowrap mt-1">
                         <ItemLabels
                             className="ml-2"
@@ -235,13 +235,13 @@ const ItemColumnLayout = ({
                 <>
                     <div
                         className={clsx([
-                            'flex flex-nowrap flex-align-items-center item-secondline item-es-result max-w80 no-scroll',
+                            'flex flex-nowrap flex-align-items-center item-secondline item-es-result max-w-4/5 no-scroll',
                             isCompactView && 'mb-3',
                         ])}
                         aria-hidden="true"
                     >
                         <div className="item-subject flex-item-fluid flex flex-nowrap flex-align-items-center">
-                            <span className="inline-block max-w100 text-ellipsis" title={bodyTitle}>
+                            <span className="inline-block max-w-full text-ellipsis" title={bodyTitle}>
                                 {resultJSX}
                             </span>
                         </div>

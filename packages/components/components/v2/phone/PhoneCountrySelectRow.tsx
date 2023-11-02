@@ -17,7 +17,7 @@ const CountrySelectRow = ({ data, style, value, onChange }: Props, ref?: Ref<HTM
         <div className="dropdown-item" style={style} ref={ref} role="row">
             <DropdownMenuButton
                 isSelected={false}
-                className={clsx(['block w100 text-ellipsis text-left outline-none flex', data === value && 'active'])}
+                className={clsx(['block w-full text-ellipsis text-left outline-none flex', data === value && 'active'])}
                 title={data.countryName}
                 onClick={() => {
                     onChange(data);

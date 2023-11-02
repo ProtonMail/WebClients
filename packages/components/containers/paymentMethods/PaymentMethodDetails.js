@@ -47,7 +47,7 @@ const PaymentMethodDetails = ({ type, details = {} }) => {
     if (type === PAYMENT_METHOD_TYPES.CARD) {
         const bankIcon = getBankSvg(BANKS[Brand]);
         return (
-            <Bordered className="bg-weak rounded inline-flex flex-column w100 p-7" data-testid="existing-credit-card">
+            <Bordered className="bg-weak rounded inline-flex flex-column w-full p-7" data-testid="existing-credit-card">
                 {bankIcon ? <img width="70" src={bankIcon} alt={Brand} className="mb-4" /> : null}
                 <span className="block mb-4 opacity-40">{c('Label').t`Card number`}</span>
                 <div className="ratio-container-5-1 text-center">
@@ -62,10 +62,10 @@ const PaymentMethodDetails = ({ type, details = {} }) => {
                         </text>
                     </svg>
                 </div>
-                <div className="flex flex-nowrap max-w100">
+                <div className="flex flex-nowrap max-w-full">
                     <div className="flex-item-fluid">
                         <span className="block mb-2 opacity-40">{c('Label').t`Card holder`}</span>
-                        <span className="text-xl my-0 inline-block text-ellipsis max-w100">{Name}</span>
+                        <span className="text-xl my-0 inline-block text-ellipsis max-w-full">{Name}</span>
                     </div>
                     <div className="text-right flex-item-noshrink pl-4">
                         <span className="block mb-2 opacity-40">{c('Label').t`Expires`}</span>

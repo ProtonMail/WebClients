@@ -35,11 +35,11 @@ const ContactsWidgetSettingsContainer = ({ onImport, onExport, onClose }: Props)
     return (
         <>
             {loading ? (
-                <div className="flex h100 pb-7">
+                <div className="flex h-full pb-7">
                     <CircleLoader className="m-auto color-primary" size="large" />
                 </div>
             ) : (
-                <div className="p-4 pt-0 scroll-if-needed h100">
+                <div className="p-4 pt-0 scroll-if-needed h-full">
                     <div className="flex mb-4 on-mobile-flex-column">
                         <Label htmlFor="saveContactToggle">
                             <span className="mr-2 text-semibold" role="heading" aria-level={2}>{c('Label')

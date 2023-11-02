@@ -155,7 +155,7 @@ const UpsellStep = ({
 
         return (
             <Main center={false} disableShadow className="sign-layout-upsell sign-layout-upsell-most-popular">
-                <div className="absolute top left w100 absolute-center-y absolute-center-x flex flex-justify-center">
+                <div className="absolute top left w-full absolute-center-y absolute-center-x flex flex-justify-center">
                     <div className="rounded-full bg-primary text-uppercase text-semibold px-4 py-1">{c(
                         'new_plans: info'
                     ).t`Most popular`}</div>
@@ -200,7 +200,7 @@ const UpsellStep = ({
     return (
         <div
             className={clsx(
-                'sign-layout-mobile-columns w100 flex flex-align-items-start flex-justify-center mb-8',
+                'sign-layout-mobile-columns w-full flex flex-align-items-start flex-justify-center mb-8',
                 mostPopularPlanName ? 'sign-layout-three-columns gap-4' : 'gap-6'
             )}
         >

@@ -37,7 +37,7 @@ const AliasPromotionSection = () => {
             </div>
             <div className="flex flex-column flex-align-items-center text-center rounded-lg p-6 alias-promotion-section">
                 <h2 className="text-bold text-xl mb-2">{title}</h2>
-                <p className="mt-0 mb-4 max-w70ch">
+                <p className="mt-0 mb-4 max-w-custom" style={{ '--max-w-custom': '70ch' }}>
                     {/* translator: With Proton Pass you can generate unique aliases to hide your identity and forward emails to your main inbox. */}
                     {c('Alias promotion')
                         .t`With ${PASS_APP_NAME} you can generate unique aliases to hide your identity and forward emails to your main inbox.`}

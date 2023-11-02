@@ -144,7 +144,7 @@ const SubscribedCalendarModal = ({ open, onClose, onExit, onCreateCalendar }: Pr
                 </>
             }
             isOpen={open}
-            className="modal--shorter-labels w100"
+            className="modal--shorter-labels w-full"
             onClose={handleClose}
             as={Form}
             dense

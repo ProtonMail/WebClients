@@ -30,7 +30,12 @@ const Countdown = ({ periodEnd }: Props) => {
                     const [number, unit] = value.split(' ');
                     return (
                         <span className="inline-flex flex-column flex-nowrap flex-align-items-center mr-4" key={unit}>
-                            <span className="bg-weak text-bold w2e offer-countdown-number py-1 rounded">{number}</span>
+                            <span
+                                className="bg-weak text-bold w-custom offer-countdown-number py-1 rounded"
+                                style={{ '--w-custom': '2em' }}
+                            >
+                                {number}
+                            </span>
                             <span className="text-nowrap color-weak">{unit}</span>
                         </span>
                     );

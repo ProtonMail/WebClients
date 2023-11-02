@@ -53,7 +53,7 @@ const AddressesGroupModalRow = ({ contact, uid, isChecked, messageSendInfo, onCh
     return (
         <li className="mb-2">
             <Checkbox id={id} checked={isChecked(contact)} onChange={onChange} />
-            <span className="min-w1-4e inline-flex align-middle">
+            <span className="min-w-custom inline-flex align-middle" style={{'--min-w-custom': '1.4em'}}>
                 {(icon || loading) && (
                     <EncryptionStatusIcon loading={loading} {...icon} shouldHaveHref={shouldHaveHref} />
                 )}

@@ -333,7 +333,8 @@ const CreateUserAccountsModal = ({ verifiedDomains, usersToImport, app, onClose,
                 additionalContent: (
                     <div className="flex flex-align-items-center flex-justify-end mt-4 px-3">
                         <Input
-                            className="max-w270p"
+                            className="max-w-custom"
+                            style={{ '--max-w-custom': '16.875rem' }}
                             placeholder={c('Placeholder').t`Search`}
                             prefix={<Icon name="magnifier" alt={c('Action').t`Search`} />}
                             value={searchValue}
@@ -415,7 +416,10 @@ const CreateUserAccountsModal = ({ verifiedDomains, usersToImport, app, onClose,
                         </TableBody>
                     </Table>
                 ) : (
-                    <div className="flex flex-align-items-center flex-justify-center min-h10e">
+                    <div
+                        className="flex flex-align-items-center flex-justify-center min-h-custom"
+                        style={{ '--min-h-custom': '10em' }}
+                    >
                         <p className="color-weak">{c('Create user accounts empty state').t`No search results found`}</p>
                     </div>
                 ),

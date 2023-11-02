@@ -48,7 +48,7 @@ const DisableAccount = () => {
     }, []);
 
     return (
-        <main className="main-area h100">
+        <main className="main-area h-full">
             {(() => {
                 const signIn = (
                     <a key="1" href={SSO_PATHS.SWITCH} target="_self">
@@ -84,7 +84,7 @@ const DisableAccount = () => {
                 }
                 return (
                     <PublicLayout
-                        className="h100"
+                        className="h-full"
                         img={<img src={accountIllustration} alt="" />}
                         header={c('Disable account').t`Thanks for letting us know`}
                         main={
@@ -113,9 +113,9 @@ const DisableAccountContainer = () => {
 
     if (step === Step.CONFIRM) {
         return (
-            <main className="main-area h100">
+            <main className="main-area h-full">
                 <PublicLayout
-                    className="h100"
+                    className="h-full"
                     img={<img src={accountIllustration} alt="" />}
                     header={c('Disable account').t`Didn't create an account?`}
                     main={

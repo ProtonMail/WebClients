@@ -49,7 +49,7 @@ const PendingInvitationPanel = ({ invites }: Props) => {
                         </strong>
                     </h3>
                     {invites && (
-                        <section className="w100 border-top border-weak">
+                        <section className="w-full border-top border-weak">
                             {invites.map((invitation) => (
                                 <div key={invitation.ID} className="border-bottom border-weak py-2">
                                     <div>{c('familyOffer_2023:Family plan')

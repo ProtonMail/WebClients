@@ -86,7 +86,7 @@ export const SearchField = () => {
                 content={
                     <div className="flex flex-nowrap">
                         <figure className="flex-item flex-item-noshrink pr-4">
-                            {imageProps && <img className="hauto" {...imageProps} alt={imageProps.alt || ''} />}
+                            {imageProps && <img className="h-auto" {...imageProps} alt={imageProps.alt || ''} />}
                         </figure>
                         <div className="flex-item">
                             <div className="text-bold text-lg m-auto">{c('Spotlight').t`Encrypted search is here`}</div>

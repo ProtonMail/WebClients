@@ -43,7 +43,7 @@ const EmptyFolder = ({ shareId }: { shareId: string }) => {
                 role="presentation"
                 ref={anchorRef}
                 onClick={close}
-                className="flex w100 flex flex-item-fluid overflow-auto"
+                className="flex w-full flex flex-item-fluid overflow-auto"
             >
                 <EmptyViewContainer
                     imageProps={{

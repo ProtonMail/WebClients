@@ -26,7 +26,7 @@ const UpsellBox = ({ description, handleUpgrade, title, features }: UpsellBoxPro
             <div className="mb-4 rounded">
                 <img
                     src={headerImage}
-                    className="w100 block"
+                    className="w-full block"
                     alt={c('Description').t`ProtonMail logo and a plus sign`}
                 />
             </div>

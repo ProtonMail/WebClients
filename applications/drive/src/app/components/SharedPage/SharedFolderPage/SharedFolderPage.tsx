@@ -196,7 +196,7 @@ export default function SharedFolder({ token, rootLink }: Props) {
         <FileBrowserStateProvider itemIds={fileBrowserItems.map(({ linkId }) => linkId)}>
             <SharedPageLayout FooterComponent={<SharedPageFooter rootItem={rootLink} items={fileBrowserItems} />}>
                 <SharedPageHeader rootItem={rootLink} items={fileBrowserItems}>
-                    <div className="max-w100">
+                    <div className="max-w-full">
                         <Breadcrumbs
                             token={token}
                             name={folderView.folderName}

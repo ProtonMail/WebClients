@@ -85,7 +85,7 @@ const Input = forwardRef<HTMLInputElement, Props>(
                 <div
                     ref={containerRef}
                     className={clsx([
-                        'relative field-icon-container w100',
+                        'relative field-icon-container w-full',
                         hasError && 'field-icon-container--invalid',
                     ])}
                 >
@@ -106,7 +106,7 @@ const Input = forwardRef<HTMLInputElement, Props>(
                 ) : null}
                 {addIconWrapper(
                     <input
-                        className={clsx(['field w100', className, statusClasses])}
+                        className={clsx(['field w-full', className, statusClasses])}
                         aria-invalid={hasError}
                         aria-describedby={uid}
                         id={id}

@@ -9,9 +9,9 @@ $field-container: rem(260) !default;
 
 .field-container {
 	inline-size: $field-container;
-	@extend .max-w100;
-	@extend .inline-block;
-	@extend .relative;
+	max-inline-size: 100%;
+	display: inline-block;
+	position: relative;
 
 	&.auto {
 		@extend .auto;
@@ -36,7 +36,9 @@ $field-container: rem(260) !default;
 	color: var(--field-text-color);
 	outline: none;
 	filter: none; // fixes Firefox autofill color
-	transition: 0.15s easing(ease-out-quint), visibility 0s; // Disable visibility transition due to auto focus, e.g. login form
+	transition:
+		0.15s easing(ease-out-quint),
+		visibility 0s; // Disable visibility transition due to auto focus, e.g. login form
 
 	@include media('<=xsmall') {
 		padding-inline: em(8);
@@ -103,11 +105,11 @@ $field-container: rem(260) !default;
 		border-color: var(--signal-success);
 	}
 
-	&.w100 {
+	&.w-full {
 		inline-size: 100%;
 	}
 
-	&.wauto {
+	&.w-auto {
 		inline-size: auto;
 	}
 
@@ -182,7 +184,9 @@ textarea.field,
 
 /* errors */
 .error-zone {
-	transition: transform 0.15s linear, max-block-size 0.15s linear;
+	transition:
+		transform 0.15s linear,
+		max-block-size 0.15s linear;
 	transform: scaleY(1);
 	transform-origin: top center;
 

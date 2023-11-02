@@ -86,7 +86,7 @@ const Commander = ({ onClose, list, ...rest }: Props) => {
             enableCloseWhenClickOutside
             {...rest}
         >
-            <div className="flex flex-column flex-nowrap h100">
+            <div className="flex flex-column flex-nowrap h-full">
                 <div className="border-bottom commander-search-wrapper py-1 flex-item-noshrink">
                     <label className="sr-only" htmlFor="commander-search-input">
                         {c('Label').t`Type a command...`}
@@ -144,7 +144,7 @@ const Commander = ({ onClose, list, ...rest }: Props) => {
                                                     onClose();
                                                 }}
                                                 isSelected={active === index}
-                                                className="w100 flex flex-align-items-center flex-justify-space-between text-left p-3"
+                                                className="w-full flex flex-align-items-center flex-justify-space-between text-left p-3"
                                             >
                                                 <span className="flex flex-align-items-center text-left text-pre">
                                                     <Icon name={item.icon} className="mr-4" />

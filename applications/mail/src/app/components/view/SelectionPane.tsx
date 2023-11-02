@@ -182,8 +182,8 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
 
     if (loadingSimpleLoadingFeature || isFetchingAccountLinked) {
         return (
-            <div className="flex h100 py-4 px-7">
-                <div className="m-auto text-center max-w30e">
+            <div className="flex h-full py-4 px-7">
+                <div className="m-auto text-center max-w-custom" style={{ '--max-w-custom': '30em' }}>
                     <Loader />
                 </div>
             </div>
@@ -191,7 +191,7 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
     }
 
     return (
-        <div className="m-auto text-center p-7 max-w100" data-testid="section-pane--wrapper">
+        <div className="m-auto text-center p-7 max-w-full" data-testid="section-pane--wrapper">
             {showSimpleLoginPlaceholder ? (
                 <SimpleLoginPlaceholder />
             ) : (
@@ -226,7 +226,7 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
                         <img
                             src={conversationSvg}
                             alt={c('Alternative text for conversation image').t`Conversation`}
-                            className="hauto"
+                            className="h-auto"
                         />
                     </div>
                     {checkeds > 0 && <Button onClick={() => onCheckAll(false)}>{c('Action').t`Deselect`}</Button>}

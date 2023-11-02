@@ -41,7 +41,7 @@ const PasswordResetAvailableCard = ({ className }: Props) => {
                 <PasswordResetAvailableAccountModal {...sessionRecoveryPasswordResetModal} />
             )}
             {renderConfirmCancelModal && <ConfirmSessionRecoveryCancellationModal {...confirmCancelModalProps} />}
-            <div className={clsx('max-w46e rounded-lg border', className)}>
+            <div className={clsx('max-w-custom rounded-lg border', className)} style={{ '--max-w-custom': '46em' }}>
                 <div className="p-6 border-bottom border-weak">
                     <SessionRecoveryStatusTitle status="available" />
                 </div>

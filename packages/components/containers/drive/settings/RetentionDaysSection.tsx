@@ -34,7 +34,7 @@ const RetentionDaysSection = () => {
     ];
 
     return (
-        <div className="max-w37e">
+        <div className="max-w-custom" style={{ '--max-w-custom': '37em' }}>
             {!hasPaidDrive ? <RevisionsUpgradeBanner /> : null}
             <form className="flex flex-column flex-align-items-start gap-2 mt-6" onSubmit={handleSubmit}>
                 <span className="sr-only" id="id_desc_history">
@@ -51,7 +51,7 @@ const RetentionDaysSection = () => {
                             isLoading || isSubmitLoading || (option.value !== revisionRetentionDays && !hasPaidDrive),
                         checked: !isLoading && revisionRetentionDays === option.value,
                         className: clsx(
-                            'w100 flex flex-nowrap border rounded p-3',
+                            'w-full flex flex-nowrap border rounded p-3',
                             !isLoading && revisionRetentionDays === option.value ? 'border-primary' : 'border-norm'
                         ),
                     };
@@ -59,7 +59,7 @@ const RetentionDaysSection = () => {
                     if (option.value !== revisionRetentionDays && !hasPaidDrive) {
                         return (
                             <Tooltip key={id} title={c('Info').t`Upgrade to unlock`} originalPlacement="right">
-                                <div className="w100">
+                                <div className="w-full">
                                     <Radio aria-describedby="id_desc_history" {...radioProps}>
                                         {option.label}
                                     </Radio>

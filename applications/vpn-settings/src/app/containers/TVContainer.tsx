@@ -93,9 +93,9 @@ const TVContainer = () => {
     };
 
     return (
-        <div className="ui-prominent background-container h100 flex-no-min-children flex-column flex-nowrap flex-align-items-center scroll-if-needed">
+        <div className="ui-prominent background-container h-full flex-no-min-children flex-column flex-nowrap flex-align-items-center scroll-if-needed">
             <div className="flex flex-justify-center flex-align-items-center pt-7">
-                <div className="w150p">
+                <div className="w-custom" style={{ '--w-custom': '9.375rem' }}>
                     <Href href="https://protonvpn.com" target="_self">
                         <VpnLogo />
                     </Href>
@@ -103,7 +103,9 @@ const TVContainer = () => {
                 <h3 className="mb-0 pl-1 text-uppercase text-bold">{c('Title').t`TV sign in`}</h3>
             </div>
             <div className="flex flex-column flex-item-fluid flex-nowrap flex-item-noshrink">
-                <div className="m-auto p-7 flex-item-noshrink max-w30e">{render()}</div>
+                <div className="m-auto p-7 flex-item-noshrink max-w-custom" style={{ '--max-w-custom': '30em' }}>
+                    {render()}
+                </div>
             </div>
         </div>
     );

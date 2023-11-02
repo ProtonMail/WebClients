@@ -31,7 +31,7 @@ const ConversationHeader = ({ className, loading, element }: Props) => {
     return (
         <header
             className={clsx([
-                'max-w100 message-conversation-summary upper-layer pt-5 pb-2 px-2 mx-4 flex-item-noshrink',
+                'max-w-full message-conversation-summary upper-layer pt-5 pb-2 px-2 mx-4 flex-item-noshrink',
                 loading && 'message-conversation-summary-is-loading',
                 className,
             ])}

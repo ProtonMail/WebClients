@@ -53,7 +53,7 @@ const AddressesEditor = ({
 
     return (
         <div className="flex flex-column flex-nowrap flex-align-items-start mt-0">
-            <div className="flex flex-row w100 relative on-mobile-flex-column" data-testid="composer:to-field">
+            <div className="flex flex-row w-full relative on-mobile-flex-column" data-testid="composer:to-field">
                 <Label htmlFor={`to-${uid}`} className="composer-meta-label text-semibold">
                     {c('Title').t`To`}
                 </Label>
@@ -76,7 +76,7 @@ const AddressesEditor = ({
                         classname="composer-editor-to"
                         anchorRef={toListAnchorRef}
                     />
-                    <span className="flex-no-min-children flex-nowrap flex-item-noshrink on-mobile-max-w33 on-tiny-mobile-max-w50 flex-align-self-start pt-2 composer-to-ccbcc-buttons sticky-top">
+                    <span className="flex-no-min-children flex-nowrap flex-item-noshrink max-w-1/2 sm:max-w-1/3 md:max-w-none flex-align-self-start pt-2 composer-to-ccbcc-buttons sticky-top">
                         <>
                             {!ccExpanded && (
                                 <AddressesCCButton
@@ -114,7 +114,7 @@ const AddressesEditor = ({
                 <>
                     {ccExpanded && (
                         <div
-                            className="flex flex-row on-mobile-flex-column w100 mb-0"
+                            className="flex flex-row on-mobile-flex-column w-full mb-0"
                             ref={ccListAnchorRef}
                             data-testid="composer:cc-field"
                         >
@@ -143,7 +143,7 @@ const AddressesEditor = ({
                     )}
                     {bccExpanded && (
                         <div
-                            className="flex flex-row on-mobile-flex-column w100"
+                            className="flex flex-row on-mobile-flex-column w-full"
                             ref={bccListAnchorRef}
                             data-testid="composer:bcc-field"
                         >

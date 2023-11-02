@@ -168,7 +168,7 @@ const AttachmentList = ({
     return (
         <div
             className={clsx([
-                'flex flex-column relative w100 flex-nowrap',
+                'flex flex-column relative w-full flex-nowrap',
                 className,
                 expanded && 'border-top border-weak',
             ])}
@@ -182,7 +182,7 @@ const AttachmentList = ({
                 outsideKey={outsideKey}
             />
             <div
-                className="flex flex-row w100 pt-2 flex-justify-space-between composer-attachment-list-wrapper"
+                className="flex flex-row w-full pt-2 flex-justify-space-between composer-attachment-list-wrapper"
                 data-testid="attachment-list:header"
             >
                 <TagButton

@@ -169,7 +169,10 @@ export const PaymentsNoApi = ({
 
     return (
         <>
-            <div className={clsx(['payment-container center', noMaxWidth === false && 'max-w37e on-mobile-max-w100 '])}>
+            <div
+                className={clsx('payment-container center', noMaxWidth === false && 'max-w-full md:max-w-custom')}
+                style={noMaxWidth === false ? { '--md-max-w-custom': '37em' } : undefined}
+            >
                 <div>
                     {!isSignupPass && !hideFirstLabel && (
                         <h2 className="text-rg text-bold mb-1" data-testid="payment-label">

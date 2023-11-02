@@ -38,7 +38,7 @@ const SortDropdownMenu = ({ labelID, sort: { sort, desc }, onSort, isSearch, bor
 
     return (
         <DropdownMenu>
-            <div className="text-bold w100 px-4 py-2">{c('Sort').t`Sort`}</div>
+            <div className="text-bold w-full px-4 py-2">{c('Sort').t`Sort`}</div>
             <DropdownMenuButton
                 data-testid="toolbar:sort-new-to-old"
                 aria-current={isNewToOld}

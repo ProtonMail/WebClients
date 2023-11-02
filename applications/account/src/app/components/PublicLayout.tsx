@@ -19,7 +19,7 @@ const PublicLayout = ({ img, header, main, footer, below, className }: PublicLay
         <div className={clsx('flex flex-column flex-nowrap flex-align-items-center', className)}>
             <ProtonLogo className="mb-4 mt-7 flex-item-noshrink" />
             <div
-                className="flex flex-column flex-item-noshrink flex-align-items-center mt-14 mb-8 border rounded-xl p-11 max-w80 w-custom"
+                className="w-custom max-w-4/5 flex flex-column flex-item-noshrink flex-align-items-center mt-14 mb-8 border rounded-xl p-11"
                 style={{ '--w-custom': width }}
             >
                 {img && <div className="mb-6 flex-item-noshrink">{img}</div>}
@@ -27,10 +27,10 @@ const PublicLayout = ({ img, header, main, footer, below, className }: PublicLay
 
                 {main}
 
-                {footer && <div className="mt-8 w100 flex-item-noshrink">{footer}</div>}
+                {footer && <div className="mt-8 w-full flex-item-noshrink">{footer}</div>}
             </div>
             <div className="flex-item-fluid" />
-            <div className="max-w80 w-custom flex-item-noshrink" style={{ '--w-custom': width }}>
+            <div className="w-custom max-w-4/5 flex-item-noshrink" style={{ '--w-custom': width }}>
                 {below}
             </div>
         </div>

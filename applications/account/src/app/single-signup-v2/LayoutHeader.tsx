@@ -38,7 +38,7 @@ const LayoutHeader = ({
             </div>
             {hasDecoration && languageSelect && (
                 <LanguageSelect
-                    className={clsx('max-w100 ml-4 flex-item-noshrink', isDarkBg && 'opacity-70')}
+                    className={clsx('max-w-full ml-4 flex-item-noshrink', isDarkBg && 'opacity-70')}
                     globe
                     locales={locales}
                     color={isDarkBg ? 'weak' : 'norm'}

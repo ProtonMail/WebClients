@@ -298,7 +298,7 @@ const Step1 = ({
         !model.session?.state.access;
 
     const renewalNotice = !hasSelectedFree && (
-        <div className="w100 text-sm color-norm opacity-70">
+        <div className="w-full text-sm color-norm opacity-70">
             *
             {options.checkResult.Coupon?.Code === COUPON_CODES.BLACK_FRIDAY_2023
                 ? getBlackFridayRenewalNoticeText({
@@ -597,7 +597,7 @@ const Step1 = ({
                                 />
                                 <BoxContent>
                                     <div className="flex flex-align-items-start flex-justify-space-between gap-14">
-                                        <div className="flex-item-fluid w0 relative">
+                                        <div className="flex-item-fluid w-0 relative">
                                             <AccountStepDetails
                                                 {...(signupParameters.invite?.type === 'pass'
                                                     ? {

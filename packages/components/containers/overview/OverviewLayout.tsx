@@ -35,11 +35,8 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
     }, []);
 
     return (
-        <div className="flex flex-item-fluid on-desktop-h100 auto-tablet flex-nowrap">
-            <div
-                ref={mainAreaRef}
-                className="relative flex-nowrap flex-item-fluid bg-weak on-desktop-h100 scroll-if-needed"
-            >
+        <div className="flex flex-item-fluid lg:h-full auto-tablet flex-nowrap">
+            <div ref={mainAreaRef} className="relative flex-nowrap flex-item-fluid bg-weak lg:h-full scroll-if-needed">
                 <SettingsPageTitle>{title}</SettingsPageTitle>
                 <div className="container-section-sticky pt-0">
                     <div className="flex on-mobile-flex-column pb-8">
@@ -54,7 +51,7 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
                     </div>
                 </div>
             </div>
-            <aside className="context-bar on-desktop-h100 scroll-if-needed p-6">
+            <aside className="context-bar lg:h-full scroll-if-needed p-6">
                 <SummarySection
                     user={user}
                     userSettings={userSettings}

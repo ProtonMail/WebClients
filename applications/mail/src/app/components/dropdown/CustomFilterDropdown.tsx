@@ -167,7 +167,7 @@ const CustomFilterDropdown = ({ message, onClose, onLock }: Props) => {
                     {FILTER_TYPES.map((filterType: FilterType) => (
                         <li
                             key={filterType.value}
-                            className="dropdown-item w100 flex flex-nowrap flex-align-items-center py-2 px-4"
+                            className="dropdown-item w-full flex flex-nowrap flex-align-items-center py-2 px-4"
                         >
                             <Checkbox
                                 className="flex-item-noshrink mr-2"
@@ -188,7 +188,7 @@ const CustomFilterDropdown = ({ message, onClose, onLock }: Props) => {
                 </ul>
                 <div className="m-4">
                     <PrimaryButton
-                        className="w100"
+                        className="w-full"
                         disabled={buttonDisabled}
                         data-prevent-arrow-navigation
                         type="submit"
