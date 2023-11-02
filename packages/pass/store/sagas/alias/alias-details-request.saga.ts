@@ -11,7 +11,7 @@ function* requestAliasDetails(action: ReturnType<typeof getAliasDetailsIntent>) 
     } = action;
     try {
         const result: { Alias: AliasDetailsResponse } = yield api({
-            url: `pass/v1/share/${shareId}}/alias/${itemId}`,
+            url: `pass/v1/share/${shareId}/alias/${itemId}`,
             method: 'get',
         });
 
