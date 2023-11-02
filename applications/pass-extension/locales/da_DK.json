@@ -8,9 +8,6 @@
       "Add": [
         "Tilføj"
       ],
-      "Add current url": [
-        "Tilføj nuværende URL"
-      ],
       "Add domain to pause list": [
         "Tilføj domæne til pauseliste"
       ],
@@ -485,9 +482,6 @@
       "Invalid password manager": [
         "Ugyldig adgangskodeadministrator"
       ],
-      "Invalid url": [
-        "Ugyldig URL"
-      ],
       "Invitation could not be accepted": [
         "Invitation kunne ikke accepteres"
       ],
@@ -544,9 +538,6 @@
       ],
       "The file you are trying to import is empty": [
         "Filen du prøver at importere er tom"
-      ],
-      "The url is in the list": [
-        "URL'en er i listen"
       ],
       "Too many failed attempts. Please sign in again.": [
         "For mange mislykkede forsøg. Log venligst ind igen."
@@ -686,9 +677,6 @@
       "Access successfully confirmed": [
         "Adgang bekræftet"
       ],
-      "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
-        "Adgang til ${ PASS_APP_NAME } vil kræve en pinkode for at låse din session op."
-      ],
       "Access your passwords on the go with our mobile apps.": [
         "Tilgå dine adgangskoder på farten med vores mobil-apps."
       ],
@@ -767,9 +755,6 @@
       "Enter verification code. Digit ${ digit }.": [
         "Indtast verifikationskode. Ciffer ${ digit }."
       ],
-      "Enter your pin code": [
-        "Indtast din pinkode"
-      ],
       "Enter your PIN code": [
         "Indtast din pinkode"
       ],
@@ -796,24 +781,6 @@
       ],
       "Here you will find all the necessary information to get you started.": [
         "Her finder du alle de nødvendige oplysninger, for at du kan komme i gang."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "Hvis deaktiveret, vil ${ PASS_APP_NAME } ikke vise elementets favicon via ${ BRAND_NAME } anonymiseret billedproxy."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not prompt you to save or update credentials.": [
-        "Hvis deaktiveret, vil ${ PASS_APP_NAME } ikke bede dig om at gemme eller opdatere legitimationsoplysninger."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating an email alias on sign-up forms.": [
-        "Hvis deaktiveret, vil ${ PASS_APP_NAME } ikke foreslå at oprette et e-mail-alias på tilmeldingsformularer."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
-        "Hvis deaktiveret, vil ${ PASS_APP_NAME } ikke foreslå at oprette stærke adgangskoder på tilmeldingsformularer."
-      ],
-      "If enabled, the autofill dropdown will automatically open on field focus.": [
-        "Hvis aktiveret, vil autogem-dropdown automatisk åbne, når feltet er i fokus."
-      ],
-      "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Hvis aktiveret, kan du hurtigt udfylde dine legitimationsoplysninger automatisk ved at klikke på ikonet for ${ PASS_APP_NAME }."
       ],
       "Import in progress:": [
         "Import i gang:"
@@ -939,9 +906,6 @@
       ],
       "Please consider leaving a review.": [
         "Skriv gerne en anmeldelse."
-      ],
-      "Please enter your current pin code to continue": [
-        "Indtast din nuværende pinkode for at fortsætte"
       ],
       "Press Enter to copy": [
         "Tryk Enter for at kopiere"
@@ -1654,9 +1618,6 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Glad for ${ PASS_APP_NAME }?"
       ],
-      "Enter your Pin": [
-        "Indtast din pinkode"
-      ],
       "Fill & copy password": [
         "Udfyld og kopiér adgangskode"
       ],
@@ -1752,9 +1713,6 @@
       ]
     },
     "Validation": {
-      "Duplicated url": [
-        "Duplikeret URL"
-      ],
       "Field name is required": [
         "Feltet navn er obligatorisk"
       ],
@@ -1766,9 +1724,6 @@
       ],
       "Url already exists": [
         "URL eksisterer allerede"
-      ],
-      "Url cannot be empty": [
-        "URL må ikke være tom"
       ],
       "Url is invalid": [
         "URL er ugyldig"
@@ -1801,9 +1756,6 @@
       ],
       "Invalid alias prefix": [
         "Ugyldigt alias-præfiks"
-      ],
-      "Maximum length is ${ maxLength } characters": [
-        "Maksimal længde er ${ maxLength } tegn"
       ],
       "Missing alias prefix": [
         "Mangler alias-præfiks"

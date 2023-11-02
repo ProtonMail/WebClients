@@ -721,11 +721,11 @@
       "Not saved": [
         "Neuložené"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Otvoriť ${ CALENDAR_APP_NAME }"
@@ -2991,7 +2991,7 @@
         "Nové emaily od ${ senderEmailAddress } a ${ otherSendersCount } ďalších nebudú doručené a budú natrvalo odstránené."
       ],
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
-        "Nové e-maily od ${ senderEmailAddress } nebudú doručené a budú trvalo zmazané."
+        "Nové emaily od ${ senderEmailAddress } nebudú doručené a budú trvalo zmazané."
       ],
       "No folders": [
         "Žiadne priečinky"
@@ -3003,7 +3003,7 @@
         "Proton Mail logo a znamienko plus"
       ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
-        "Ušetrite čas posielaním e-mailov alebo pozvánok všetkým naraz, čo je prémiová funkcia medzi mnohými ďalšími. Inovujte ešte dnes."
+        "Ušetrite čas posielaním emailov alebo pozvánok všetkým naraz, čo je prémiová funkcia medzi mnohými ďalšími. Inovujte ešte dnes."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Pre import kontaktov zo služby Google alebo Outlook ${ easySwitchLink }."
@@ -4307,7 +4307,7 @@
         "automatické preposielanie"
       ],
       "Block email communications from scammers permanently.": [
-        "Natrvalo blokujte e-mailovú komunikáciu od podvodníkov."
+        "Natrvalo blokujte emailovú komunikáciu od podvodníkov."
       ],
       "Block unsavory senders": [
         "Zablokujte nepríjemných odosielateľov"
@@ -4337,7 +4337,7 @@
         "Gratulujeme k dokončeniu!"
       ],
       "Continue setting up your email": [
-        "Pokračovať v nastavovaní vášho e-mailu"
+        "Pokračovať v nastavovaní vášho emailu"
       ],
       "Discover how our ${ strongText } protect you": [
         "Zistite, ako vás chráni náš ${ strongText }"
@@ -4349,7 +4349,7 @@
         "Zdvojnásobte svoj úložný priestor na 1 GB tým, že dokončíte nasledovné:"
       ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
-        "Šifrovanie také silné, že vaše e-maily vidíte iba vy a zamýšľaní príjemcovia."
+        "Šifrovanie je tak silné, že emaily môžete zobraziť iba vy a určení príjemcovia."
       ],
       "For your eyes only": [
         "Iba pre vaše oči"
@@ -4364,7 +4364,7 @@
         "Získať aplikáciu"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
-        "Pokračujte v používaní aplikácie ${ MAIL_APP_NAME } a objavte ďalšie spôsoby, ako ${ BRAND_NAME } chráni vaše súkromie a zjednodušuje odosielanie e-mailov."
+        "Pokračujte v používaní aplikácie ${ MAIL_APP_NAME } a objavte ďalšie spôsoby, ako ${ BRAND_NAME } chráni vaše súkromie a zjednodušuje odosielanie emailov."
       ],
       "Learn more": [
         "Dozvedieť sa viac"
@@ -4388,7 +4388,7 @@
         "funkcie ochrany súkromia"
       ],
       "Protect and simplify your email": [
-        "Ochráňte a zjednodušte svoj e-mail"
+        "Ochráňte a zjednodušte svoj email"
       ],
       "Protection from trackers": [
         "Ochrana pred trackermi"
@@ -4541,7 +4541,7 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
-        "Importované pozvánky nájdete v ${ CALENDAR_APP_NAME } ako jednoduché udalosti bez podrobností o organizátoroch a účastníkoch. Pre aktualizácie udalostí a zobrazenie účastníkov požiadajte organizátorov o pozvánku pomocou svojej ${ BRAND_NAME } e-mailovej adresy."
+        "Importované pozvánky nájdete v ${ CALENDAR_APP_NAME } ako jednoduché udalosti bez podrobností o organizátoroch a účastníkoch. Pre aktualizácie udalostí a zobrazenie účastníkov požiadajte organizátorov o pozvánku pomocou svojej ${ BRAND_NAME } emailovej adresy."
       ],
       "This file contains an event invitation:": [
         "Tento súbor obsahuje pozvánku na udalosť:",
@@ -4613,13 +4613,13 @@
         "${ BRAND_NAME } sa nemôže pripojiť k vášmu účtu. Uistite sa, že:"
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } sa nemôže pripojiť k vášmu vzdialenému účtu. Uistite sa prosím, že adresa e-mailového servera a číslo portu sú správne."
+        "${ BRAND_NAME } sa nemôže pripojiť k vášmu vzdialenému účtu. Uistite sa prosím, že adresa emailového servera a číslo portu sú správne."
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
         "${ BRAND_NAME } sa nemôže pripojiť k vášmu vzdialenému účtu. Uistite sa, že:"
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } sa nemôže pripojiť k vášmu účtu Yahoo. Skontrolujte prosím, že adresa e-mailového servu a číslo portu sú správne."
+        "${ BRAND_NAME } sa nemôže pripojiť k vášmu účtu Yahoo. Skontrolujte prosím, že adresa emailového servu a číslo portu sú správne."
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } sa nemôže pripojiť k vášmu účtu Yahoo. Uistite sa, že:"
@@ -4628,7 +4628,7 @@
         "Dvojstupňové overenie je zapnuté vo vašom vzdialenom účte."
       ],
       "2-step verification is enabled in your external email account.": [
-        "Dvojfázové overovanie je zapnuté vo vašom vzdialenom e-mailovom účte."
+        "Dvojfázové overovanie je zapnuté vo vašom vzdialenom emailovom účte."
       ],
       "IMAP access is enabled in your external account.": [
         "IMAP prístup je zapnutý vo vašom externom účte."
@@ -4649,16 +4649,16 @@
         "Vaše heslo pre aplikáciu je správne. ${ boldNot } používajte vaše bežné heslo."
       ],
       "Your email account requires an app password to export your data.": [
-        "Váš e-mailový účet vyžaduje heslo aplikácie pre export vašich dát."
+        "Váš emailový účet vyžaduje heslo aplikácie pre export vašich dát."
       ],
       "Your email account requires one to export your data.": [
-        "Váš e-mailový účet toto vyžaduje na export vašich dát."
+        "Váš emailový účet toto vyžaduje na export vašich dát."
       ],
       "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Vaša e-mailová adresa a heslo aplikácie sú správne. ${ boldNot } používajte vaše bežné heslo."
+        "Vaša emailová adresa a heslo aplikácie sú správne. ${ boldNot } používajte vaše bežné heslo."
       ],
       "Your email address and password are correct.": [
-        "Vaša e-mailová adresa a heslo sú správne."
+        "Vaša emailová adresa a heslo sú správne."
       ],
       "Your password is correct.": [
         "Vaše heslo je správne."
@@ -4679,7 +4679,7 @@
     },
     "Import instructions": {
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to ${ BRAND_NAME }.": [
-        "V závislosti od vášho poskytovateľa e-mailovej služby bude možno potrebné najprv vygenerovať ${ knowledgeBaseLink } kým budete môcť vykonať import do ${ BRAND_NAME }."
+        "V závislosti od vášho poskytovateľa emailovej služby bude možno potrebné najprv vygenerovať ${ knowledgeBaseLink } kým budete môcť vykonať import do ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Rozbaľte rozbaľovaciu ponuku kliknutím na 3 bodky (...)."
@@ -4712,7 +4712,7 @@
         "Ak chcete importovať kontakty do ${ BRAND_NAME }, potrebujete ${ knowledgeBaseLink }. Stiahnite si ho pred začatím importu."
       ],
       "To import emails to ${ BRAND_NAME }, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "Na import e-mailov do ${ BRAND_NAME } potrebujete ${ appPasswordLink } od Yahoo. Získate ho pomocou nasledujúcich krokov:"
+        "Na import emailov do ${ BRAND_NAME } potrebujete ${ appPasswordLink } od Yahoo. Získate ho pomocou nasledujúcich krokov:"
       ]
     },
     "Import instructions emphasis": {
@@ -7664,7 +7664,7 @@
     },
     "new_plans: feature info": {
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
-        "Vytvorte si viacero e-mailových adries pre svoje online identity, napr. JohnShopper@${ domain } pre nákupné účty, JohnNews@${ domain2 } pre odber noviniek"
+        "Vytvorte si viacero emailových adries pre svoje online identity, napr. JohnShopper@${ domain } pre nákupné účty, JohnNews@${ domain2 } pre odber noviniek"
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Získajte neobmedzené množstvo aliasov so službou SimpleLogin od ${ BRAND_NAME }"
@@ -7673,7 +7673,7 @@
         "Úložný priestor zdieľajú ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
       ],
       "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Použite svoju vlastnú e-mailovú doménovú adresu, napr. vy@vasemeno.com"
+        "Použite svoju vlastnú emailovú doménovú adresu, napr. vy@vasemeno.com"
       ]
     },
     "new_plans: label": {
@@ -7765,7 +7765,7 @@
     },
     "Online accounts": {
       "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
-        "Máte účet v jednej z týchto služieb? Stačí kliknúť a zmeniť e-mailovú adresu na svoju ${ MAIL_APP_NAME } adresu."
+        "Máte účet v jednej z týchto služieb? Stačí kliknúť na zmenu emailovej adresy na vašu adresu ${ MAIL_APP_NAME } ."
       ]
     },
     "Online Accounts Name": {
@@ -8025,7 +8025,7 @@
         "Oficiálny"
       ],
       "Official email from ${ BRAND_NAME }": [
-        "Oficiálny e-mail od ${ BRAND_NAME }"
+        "Oficiálny email od ${ BRAND_NAME }"
       ]
     },
     "Received email icon": {
@@ -9817,7 +9817,7 @@
         "Digitálne podpisovanie emailov pomáha overiť, že sú správy zaslané vami"
       ],
       "Each imported email will have this label": [
-        "Každý importovaný e-mail bude mať tento štítok"
+        "Každý importovaný email bude mať tento štítok"
       ],
       "Edit folder names": [
         "Upraviť názvy priečinkov"
@@ -9868,7 +9868,7 @@
         "Táto funkcia je k dispozícii iba užívateľom s prémiovým účtom"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Pre zasielanie e-mailov s koncovým šifrovaním na túto e-mailovú adresu, nahrajte prosím verejný kľúč"
+        "Pre zasielanie emailov s koncovým šifrovaním na túto emailovú adresu, nahrajte prosím verejný kľúč"
       ],
       "You do not have any contacts to export": [
         "Nemáte žiadne kontakty na export"

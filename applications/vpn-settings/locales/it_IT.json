@@ -658,6 +658,12 @@
       "Add ${ plan } to your plan by subscribing to 15 months": [
         "Aggiungi ${ plan } al tuo piano abbonandoti per 15 mesi"
       ],
+      "Cancel": [
+        "Annulla"
+      ],
+      "Close": [
+        "Chiudi"
+      ],
       "Get the deal": [
         "Scegli"
       ],
@@ -740,6 +746,12 @@
       ],
       "Secure browsing and premium VPN features.": [
         "Navigazione sicura e funzionalità VPN premium."
+      ],
+      "Sorry, this offer is not available with your current plan.": [
+        "Siamo spiacenti, questa offerta non è disponibile con il suo piano attuale."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Siamo spiacenti, questa offerta non è disponibile con il suo piano attuale. Ma puoi ottenere uno sconto di **${ discountPercentage } su ${ plan.Title }** quando ti abboni per **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -760,6 +772,11 @@
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "La tariffa scontata, con prezzo speciale di ${ discountedPrice } è valida per il primo mese. Il piano si rinnoverà poi automaticamente al prezzo di ${ nextPrice } per mese. Puoi disdire quando vuoi."
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Offerta non disponibile"
       ]
     },
     "bf2023: Tooltip": {
@@ -2764,7 +2781,7 @@
       ],
       "${ remainingAddresses.length } more address": [
         "${ remainingAddresses.length } altro indirizzo",
-        "altri ${ remainingAddresses.length } indirizzi"
+        "Altri ${ remainingAddresses.length } indirizzi"
       ],
       "${ storage } storage": [
         "${ storage } di archiviazione"
@@ -3310,7 +3327,7 @@
         "Verifica il pagamento nella scheda di verifica."
       ],
       "Please check your file for errors, or contact customer support for more information.": [
-        "Per favore controlla se ci sono errori nel tuo file, o contatta l'assistenza clienti per più informazioni."
+        "Controlla se ci sono errori nel tuo file, o contatta l'assistenza clienti per più informazioni."
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Verifica il tuo file, o provare ad utilizzare il nostro ${ csvTemplateButton }."
@@ -3480,7 +3497,7 @@
       ],
       "The following address is invalid.": [
         "L'indirizzo seguente non è valido.",
-        "Gli indirizzi seguenti non sono valido."
+        "Gli indirizzi seguenti non sono validi."
       ],
       "The following address is unavailable.": [
         "L'indirizzo seguente non è disponibile.",
@@ -4684,10 +4701,6 @@
         "${ n } calendario",
         "${ n } calendari"
       ],
-      "${ n } calendar per user": [
-        "${ n } calendario per utente",
-        "${ n } calendari per utente"
-      ],
       "${ n } custom email domain": [
         "${ n } dominio email personalizzato",
         "${ n } domini email personalizzati"
@@ -5630,6 +5643,9 @@
       ],
       "Select a reason": [
         "Seleziona un motivo"
+      ],
+      "Thomas Anderson": [
+        "Luigi Bianchi"
       ]
     },
     "Placeholder for custom invoice text": {

@@ -153,6 +153,9 @@
       "Continue with Google": [
         "Pokračovat skrze Google"
       ],
+      "Continue with Outlook": [
+        "Pokračovat s Outlookem"
+      ],
       "Copy address": [
         "Kopírovat adresu"
       ],
@@ -2143,6 +2146,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrování a import kontaktů... Tato akce může trvat několik minut. Jakmile je proces ukončen, můžete zavřít tento modul."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Při importování prostřednictvím souborů CSV a VCF zajistěte, aby velikost souboru nepřesáhla ${ MAX_IMPORT_FILE_SIZE_STRING } nebo ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej na menší soubory. ${ learnMoreLink }."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá se, že seznam kontaktů který importujete, zahrnuje nějaké skupiny. Prosím, zkontrolujte jak by tyto skupiny měly být importovány."
       ],
@@ -2158,6 +2164,9 @@
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "Může to trvat několik minut. Mezitím můžete Kalendář používat jak potřebujete."
       ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Pro import kontaktů ze služby Google nebo Outlook ${ easySwitchLink }."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Pomocí myši táhněte a pusťte pro změnu priority spojení kontaktů. Odškrtněte kontakty, které nechcete sloučit."
       ],
@@ -2166,6 +2175,11 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Kontakty, které nechcete sloučit ani zachovat, označte pro smazání. Ke smazání dojde po kliknutí na tlačítko pro sloučení"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "použijte asistenta pro import Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2435,6 +2449,9 @@
       ],
       "Incorrect username": [
         "Nesprávné uživatelské jméno"
+      ],
+      "Intended recipient does not support calendar sharing": [
+        "Zamýšlený příjemce nepodporuje sdílení kalendáře"
       ],
       "Interval cannot be empty": [
         "Interval nemůže být prázdný"

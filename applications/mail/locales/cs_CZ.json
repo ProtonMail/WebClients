@@ -232,6 +232,9 @@
       "Continue with Google": [
         "Pokračovat skrze Google"
       ],
+      "Continue with Outlook": [
+        "Pokračovat s Outlookem"
+      ],
       "Contract composer": [
         "Ukončit režim celé obrazovky"
       ],
@@ -718,11 +721,11 @@
       "Not saved": [
         "Neuloženo"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Otevřít ${ CALENDAR_APP_NAME }"
@@ -2972,6 +2975,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrování a import kontaktů... Tato akce může trvat několik minut. Jakmile je proces ukončen, můžete zavřít tento modul."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Při importování prostřednictvím souborů CSV a VCF zajistěte, aby velikost souboru nepřesáhla ${ MAX_IMPORT_FILE_SIZE_STRING } nebo ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej na menší soubory. ${ learnMoreLink }."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá se, že seznam kontaktů který importujete, zahrnuje nějaké skupiny. Prosím, zkontrolujte jak by tyto skupiny měly být importovány."
       ],
@@ -2999,6 +3005,9 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Šetřete čas odesláním e-mailů nebo pozvánek všem najednou, což je mimo jiné prémiová funkce. Navyšte tarif ještě dnes."
       ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Pro import kontaktů ze služby Google nebo Outlook ${ easySwitchLink }."
+      ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Zapnutím ochrany proti sledování e-mailů zabráníte inzerentům a dalším subjektům sledovat vaši polohu a online aktivity."
       ],
@@ -3025,6 +3034,11 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Kontakty, které nechcete sloučit ani zachovat, označte pro smazání. Ke smazání dojde po kliknutí na tlačítko pro sloučení"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "použijte asistenta pro import Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3149,6 +3163,11 @@
       ],
       "Update for an event starting on ${ formattedStart }": [
         "Aktualizace události začínající v ${ formattedStart }"
+      ]
+    },
+    "email_forwarding_2023: Composer email icon": {
+      "Zero-access encrypted. Recipient has disabled end-to-end encryption on their account.": [
+        "Šifrováno s nulovým přístupem. Příjemce má na svém účtu vypnuto end-to-end šifrování."
       ]
     },
     "empty messages: success": {

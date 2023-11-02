@@ -8,9 +8,6 @@
       "Add": [
         "Ajouter"
       ],
-      "Add current url": [
-        "Ajouter l'URL actuelle"
-      ],
       "Add domain to pause list": [
         "Ajouter le domaine à la liste des fonctionnalités et domaines exclus"
       ],
@@ -503,9 +500,6 @@
       "Invalid password manager": [
         "Le gestionnaire de mots de passe n'est pas valide."
       ],
-      "Invalid url": [
-        "L'URL n'est pas valide."
-      ],
       "Invitation could not be accepted": [
         "L'invitation n'a pas pu être acceptée."
       ],
@@ -562,9 +556,6 @@
       ],
       "The file you are trying to import is empty": [
         "Le fichier que vous essayez d'importer est vide."
-      ],
-      "The url is in the list": [
-        "L'URL est dans la liste."
       ],
       "Too many failed attempts. Please sign in again.": [
         "Trop de tentatives n'ont pas abouti. Connectez-vous à nouveau."
@@ -707,7 +698,7 @@
       "Access successfully confirmed": [
         "L'accès a été confirmé."
       ],
-      "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
+      "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
         "Pour accéder à ${ PASS_APP_NAME }, vous devez déverrouiller votre session à l'aide d'un code PIN."
       ],
       "Access your passwords on the go with our mobile apps.": [
@@ -767,6 +758,9 @@
       "Deleted items will be moved here first": [
         "Les éléments supprimés seront d'abord déplacés ici."
       ],
+      "Deleting \"${ payload.content.name }\"": [
+        "Suppression de \"${ payload.content.name }\""
+      ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Découvrez la vidéo YouTube de ${ PASS_APP_NAME }."
       ],
@@ -787,9 +781,6 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Enter verification code. Digit ${ digit }."
-      ],
-      "Enter your pin code": [
-        "Saisissez votre code PIN."
       ],
       "Enter your PIN code": [
         "Entrez votre code PIN"
@@ -817,24 +808,6 @@
       ],
       "Here you will find all the necessary information to get you started.": [
         "Vous trouverez ici toutes les informations nécessaires pour bien démarrer."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "Quand cette option est désactivée, ${ PASS_APP_NAME } n'affiche pas la vignette de l'élément via le proxy d'image anonyme ${ BRAND_NAME }."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not prompt you to save or update credentials.": [
-        "Quand cette option est désactivée, ${ PASS_APP_NAME } ne vous invite pas à enregistrer ou à mettre à jour vos identifiants."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating an email alias on sign-up forms.": [
-        "Quand cette option est désactivée, ${ PASS_APP_NAME } ne propose pas de créer un alias d'adresse e-mail dans les formulaires d'inscription."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
-        "Quand cette option est désactivée, ${ PASS_APP_NAME } ne propose pas de créer des mots de passe forts dans les formulaires d'inscription."
-      ],
-      "If enabled, the autofill dropdown will automatically open on field focus.": [
-        "Quand cette option est activée, la liste déroulante de remplissage automatique s'ouvre automatiquement dès que le champ est sélectionné."
-      ],
-      "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Quand cette option est activée, vous pouvez rapidement remplir automatiquement vos informations d'identification en cliquant sur l'icône ${ PASS_APP_NAME }."
       ],
       "Import in progress:": [
         "L'importation est en cours :"
@@ -961,7 +934,7 @@
       "Please consider leaving a review.": [
         "N'hésitez pas à laisser un avis."
       ],
-      "Please enter your current pin code to continue": [
+      "Please enter your current PIN code to continue": [
         "Saisissez votre code PIN pour continuer."
       ],
       "Press Enter to copy": [
@@ -1678,7 +1651,7 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Vous appréciez ${ PASS_APP_NAME } ?"
       ],
-      "Enter your Pin": [
+      "Enter your PIN": [
         "Saisissez votre code PIN"
       ],
       "Fill & copy password": [
@@ -1776,9 +1749,6 @@
       ]
     },
     "Validation": {
-      "Duplicated url": [
-        "URL dupliquée"
-      ],
       "Field name is required": [
         "Le nom du champ est nécessaire."
       ],
@@ -1790,9 +1760,6 @@
       ],
       "Url already exists": [
         "L'URL existe déjà."
-      ],
-      "Url cannot be empty": [
-        "L'URL ne doit pas être vide."
       ],
       "Url is invalid": [
         "L'URL n'est pas valide."
@@ -1826,7 +1793,8 @@
       "Invalid alias prefix": [
         "Le préfixe de l'alias n'est pas valide."
       ],
-      "Maximum length is ${ maxLength } characters": [
+      "Maximum length is ${ maxLength } character": [
+        "Le nombre maximum de caractères est de ${ maxLength }.",
         "Le nombre maximum de caractères est de ${ maxLength }."
       ],
       "Missing alias prefix": [

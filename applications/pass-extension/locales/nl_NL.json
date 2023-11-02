@@ -8,9 +8,6 @@
       "Add": [
         "Voeg toe"
       ],
-      "Add current url": [
-        "Huidige url toevoegen"
-      ],
       "Add domain to pause list": [
         "Voeg domein toe aan pauze lijst"
       ],
@@ -488,9 +485,6 @@
       "Invalid password manager": [
         "Ongeldige wachtwoordbeheerder"
       ],
-      "Invalid url": [
-        "Ongeldige url"
-      ],
       "Invitation could not be accepted": [
         "Uitnodiging kon niet worden geaccepteerd"
       ],
@@ -547,9 +541,6 @@
       ],
       "The file you are trying to import is empty": [
         "Het bestand dat u probeert te importeren is leeg"
-      ],
-      "The url is in the list": [
-        "De url is in de lijst"
       ],
       "Too many failed attempts. Please sign in again.": [
         "Te veel mislukte pogingen. Log opnieuw in."
@@ -679,9 +670,6 @@
       "Access successfully confirmed": [
         "Toegang succesvol bevestigd"
       ],
-      "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
-        "Voor toegang tot ${ PASS_APP_NAME } is een pincode vereist om uw sessie te ontgrendelen"
-      ],
       "Access your passwords on the go with our mobile apps.": [
         "Krijg onderweg toegang tot uw wachtwoorden met onze mobiele apps."
       ],
@@ -757,9 +745,6 @@
       "Enter verification code. Digit ${ digit }.": [
         "Voer verificatiecode in. Cijfer ${ digit }."
       ],
-      "Enter your pin code": [
-        "Voer uw pincode in"
-      ],
       "Enter your PIN code": [
         "Voer uw pincode in"
       ],
@@ -783,24 +768,6 @@
       ],
       "Here you will find all the necessary information to get you started.": [
         "Hier vindt u alle nodige informatie om aan de slag te gaan."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "Indien uitgeschakeld, zal ${ PASS_APP_NAME } het favicon van het item niet weergeven via de geanonimiseerde afbeeldingsproxy van ${ BRAND_NAME }."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not prompt you to save or update credentials.": [
-        "Indien uitgeschakeld, zal ${ PASS_APP_NAME } u niet vragen om inloggegevens op te slaan of bij te werken."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating an email alias on sign-up forms.": [
-        "Indien uitgeschakeld, zal ${ PASS_APP_NAME } niet voorstellen om een e-mailalias te maken op aanmeldingsformulieren."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
-        "Indien uitgeschakeld, zal ${ PASS_APP_NAME } niet voorstellen om sterke wachtwoorden te maken op aanmeldingsformulieren."
-      ],
-      "If enabled, the autofill dropdown will automatically open on field focus.": [
-        "Indien ingeschakeld, wordt de vervolgkeuzelijst voor automatisch invullen automatisch geopend bij focus op het veld."
-      ],
-      "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Indien ingeschakeld, kunt u uw inloggegevens snel automatisch invullen door op het pictogram ${ PASS_APP_NAME } te klikken."
       ],
       "Imported ${ payload.total } item": [
         "${ payload.total } item geïmporteerd",
@@ -920,9 +887,6 @@
       ],
       "Please consider leaving a review.": [
         "Overweeg om een review te schrijven."
-      ],
-      "Please enter your current pin code to continue": [
-        "Voer uw huidige pincode in om door te gaan"
       ],
       "Press Enter to copy": [
         "Druk op Enter om te kopiëren"
@@ -1613,9 +1577,6 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Tevreden met ${ PASS_APP_NAME }?"
       ],
-      "Enter your Pin": [
-        "Voer uw pincode in"
-      ],
       "Fill & copy password": [
         "Wachtwoord invullen en kopiëren"
       ],
@@ -1705,14 +1666,8 @@
       ]
     },
     "Validation": {
-      "Duplicated url": [
-        "Dubbele url"
-      ],
       "Url already exists": [
         "Url bestaat al"
-      ],
-      "Url cannot be empty": [
-        "Url mag niet leeg zijn"
       ],
       "Url is invalid": [
         "URL is ongeldig"
@@ -1742,9 +1697,6 @@
       ],
       "Invalid alias prefix": [
         "Ongeldig aliasvoorvoegsel"
-      ],
-      "Maximum length is ${ maxLength } characters": [
-        "Maximale lengte is ${ maxLength } tekens"
       ],
       "Missing alias prefix": [
         "Ontbrekend aliasvoorvoegsel"
