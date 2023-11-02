@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useRef } from 'react';
 
 import { buyCredit, payInvoice, subscribe } from '@proton/shared/lib/api/payments';
 import { ProductParam } from '@proton/shared/lib/apps/product';
@@ -18,27 +18,46 @@ import { useMethods } from './useMethods';
 import { usePaypal } from './usePaypal';
 import { useSavedMethod } from './useSavedMethod';
 
-export interface Operations {
-    buyCredit: () => Promise<unknown>;
-    payInvoice: (invoiceId: string) => Promise<unknown>;
-    subscribe: (data: { Plans: PlanIDs; Cycle: Cycle; Codes?: string[]; product: ProductParam }) => Promise<unknown>;
+export interface OperationsSubscriptionData {
+    Plans: PlanIDs;
+    Cycle: Cycle;
+    Codes?: string[];
+    product: ProductParam;
 }
 
-function getOperations(api: Api, params: ChargeablePaymentParameters): Operations {
+export interface OperationsInvoiceData {
+    invoiceId: string;
+}
+
+export interface OperationsData {
+    subscription?: OperationsSubscriptionData;
+    invoice?: OperationsInvoiceData;
+}
+
+export interface Operations {
+    buyCredit: () => Promise<unknown>;
+    payInvoice: () => Promise<unknown>;
+    subscribe: () => Promise<unknown>;
+}
+
+function getOperations(api: Api, params: ChargeablePaymentParameters, operationsData: OperationsData): Operations {
     return {
         buyCredit: async () => {
             return api(buyCredit(params));
         },
-        payInvoice: async (invoiceId: string) => {
-            return api(payInvoice(invoiceId, params));
+        payInvoice: async () => {
+            if (!operationsData?.invoice) {
+                throw new Error('The operations data for invoice must be provided in the facade');
+            }
+
+            return api(payInvoice(operationsData.invoice.invoiceId, params));
         },
-        subscribe: async (subscriptionData: {
-            Plans: PlanIDs;
-            Cycle: Cycle;
-            Codes?: string[];
-            product: ProductParam;
-        }) => {
-            const { product, ...data } = subscriptionData;
+        subscribe: async () => {
+            if (!operationsData?.subscription) {
+                throw new Error('The operations data for subscription must be provided in the facade');
+            }
+
+            const { product, ...data } = operationsData.subscription;
 
             return api({
                 ...subscribe(
@@ -53,6 +72,32 @@ function getOperations(api: Api, params: ChargeablePaymentParameters): Operation
         },
     };
 }
+
+const usePaymentContext = () => {
+    const subscriptionData = useRef<OperationsSubscriptionData>();
+    const invoiceData = useRef<OperationsInvoiceData>();
+
+    return {
+        setSubscriptionData: (data: OperationsSubscriptionData | undefined) => {
+            subscriptionData.current = data;
+        },
+        getSubscriptionData: () => {
+            return subscriptionData.current;
+        },
+        setInvoiceData: (data: OperationsInvoiceData | undefined) => {
+            invoiceData.current = data;
+        },
+        getInvoiceData: () => {
+            return invoiceData.current;
+        },
+        getOperationsData: (): OperationsData => {
+            return {
+                subscription: subscriptionData.current,
+                invoice: invoiceData.current,
+            };
+        },
+    };
+};
 
 export const usePaymentFacade = (
     {
@@ -89,6 +134,8 @@ export const usePaymentFacade = (
         Currency: currency,
     };
 
+    const paymentContext = usePaymentContext();
+
     const methods = useMethods(
         {
             amount,
@@ -106,7 +153,7 @@ export const usePaymentFacade = (
             amountAndCurrency,
             savedMethod: methods.savedSelectedMethod,
             onChargeable: (params, paymentMethodId) =>
-                onChargeable(getOperations(api, params), params, paymentMethodId),
+                onChargeable(getOperations(api, params, paymentContext.getOperationsData()), params, paymentMethodId),
         },
         {
             api,
@@ -117,7 +164,12 @@ export const usePaymentFacade = (
     const card = useCard(
         {
             amountAndCurrency,
-            onChargeable: (params) => onChargeable(getOperations(api, params), params, PAYMENT_METHOD_TYPES.CARD),
+            onChargeable: (params) =>
+                onChargeable(
+                    getOperations(api, params, paymentContext.getOperationsData()),
+                    params,
+                    PAYMENT_METHOD_TYPES.CARD
+                ),
         },
         {
             api,
@@ -130,7 +182,12 @@ export const usePaymentFacade = (
         {
             amountAndCurrency,
             isCredit: false,
-            onChargeable: (params) => onChargeable(getOperations(api, params), params, PAYMENT_METHOD_TYPES.PAYPAL),
+            onChargeable: (params) =>
+                onChargeable(
+                    getOperations(api, params, paymentContext.getOperationsData()),
+                    params,
+                    PAYMENT_METHOD_TYPES.PAYPAL
+                ),
             ignoreAmountCheck: paypalIgnoreAmountCheck,
         },
         {
@@ -144,7 +201,11 @@ export const usePaymentFacade = (
             amountAndCurrency,
             isCredit: true,
             onChargeable: (params) =>
-                onChargeable(getOperations(api, params), params, PAYMENT_METHOD_TYPES.PAYPAL_CREDIT),
+                onChargeable(
+                    getOperations(api, params, paymentContext.getOperationsData()),
+                    params,
+                    PAYMENT_METHOD_TYPES.PAYPAL_CREDIT
+                ),
             ignoreAmountCheck: paypalIgnoreAmountCheck,
         },
         {
@@ -182,5 +243,6 @@ export const usePaymentFacade = (
         flow,
         amount,
         currency,
+        paymentContext,
     };
 };
