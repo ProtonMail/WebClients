@@ -8,9 +8,6 @@
       "Add": [
         "追加"
       ],
-      "Add current url": [
-        "現在のURLを追加"
-      ],
       "Add domain to pause list": [
         "一時停止リストにドメインを追加"
       ],
@@ -448,9 +445,6 @@
       "Invalid password manager": [
         "無効なパスワードマネージャー"
       ],
-      "Invalid url": [
-        "無効なURL"
-      ],
       "Invitation could not be accepted": [
         "招待は承認できません"
       ],
@@ -507,9 +501,6 @@
       ],
       "The file you are trying to import is empty": [
         "インポートしようとしているファイルは空です。"
-      ],
-      "The url is in the list": [
-        "Urlはリストの中にある"
       ],
       "Too many failed attempts. Please sign in again.": [
         "失敗が多すぎます。もう一度サインインしてください。"
@@ -627,9 +618,6 @@
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "${ PASS_APP_NAME } の新しいバージョンが利用可能です。 最新の機能やバグ修正をお楽しみいただくには、更新してください。"
       ],
-      "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
-        "${ PASS_APP_NAME } にアクセスするには、セッションのロックを解除するための PIN コードが必要です"
-      ],
       "Access your passwords on the go with our mobile apps.": [
         "モバイルアプリで外出先からパスワードにアクセス。"
       ],
@@ -699,9 +687,6 @@
       "Enter verification code. Digit ${ digit }.": [
         "検証コードを入力してください。桁数は ${ digit } 桁です。"
       ],
-      "Enter your pin code": [
-        "Pin コードを入力"
-      ],
       "Enter your PIN code": [
         "PINコードの入力"
       ],
@@ -716,24 +701,6 @@
       ],
       "Here you will find all the necessary information to get you started.": [
         "ここでは、必要なすべての情報をご覧いただけます。"
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "無効にすると、${ PASS_APP_NAME } は ${ BRAND_NAME } の匿名化された画像プロキシを介してアイテムのファビコンを表示しません。"
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not prompt you to save or update credentials.": [
-        "無効にすると、${ PASS_APP_NAME } は認証情報の保存または更新を求めるプロンプトを表示しません。"
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating an email alias on sign-up forms.": [
-        "無効にすると、${ PASS_APP_NAME } はサインアップ フォームでメール エイリアスの作成を提案しません。"
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
-        "無効にすると、${ PASS_APP_NAME } はサインアップ フォームで強力なパスワードを作成することを提案しません。"
-      ],
-      "If enabled, the autofill dropdown will automatically open on field focus.": [
-        "有効にすると、フィールドにフォーカスしたときに自動入力ドロップダウンが自動的に開きます。"
-      ],
-      "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "有効にすると、${ PASS_APP_NAME } アイコンをクリックして資格情報をすばやく自動入力できます。"
       ],
       "Imported ${ payload.total } items": [
         "${ payload.total } 件のアイテムをインポートしました"
@@ -845,9 +812,6 @@
       ],
       "Please consider leaving a review.": [
         "レビューを残すことを検討してください。"
-      ],
-      "Please enter your current pin code to continue": [
-        "現在のPINコードを入力してください。"
       ],
       "Press Enter to copy": [
         "Enterキーを押してコピーする"
@@ -1511,9 +1475,6 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME } をお楽しみですか?"
       ],
-      "Enter your Pin": [
-        "Pinを入力"
-      ],
       "Fill & copy password": [
         "パスワードを入力してコピー"
       ],
@@ -1597,14 +1558,8 @@
       ]
     },
     "Validation": {
-      "Duplicated url": [
-        "重複したURL"
-      ],
       "Url already exists": [
         "Url は既に存在します"
-      ],
-      "Url cannot be empty": [
-        "Url を入力してください"
       ],
       "Url is invalid": [
         "Url が無効です"
@@ -1634,9 +1589,6 @@
       ],
       "Invalid alias prefix": [
         "無効なエイリアスプレフィックス"
-      ],
-      "Maximum length is ${ maxLength } characters": [
-        "最大長は ${ maxLength } 文字です"
       ],
       "Missing alias prefix": [
         "エイリアスのプレフィックスがありません"

@@ -8,9 +8,6 @@
       "Add": [
         "Προσθήκη"
       ],
-      "Add current url": [
-        "Προσθήκη τρέχουσας διεύθυνσης URL"
-      ],
       "Add domain to pause list": [
         "Προσθήκη τομέα στη λίστα παύσης"
       ],
@@ -488,9 +485,6 @@
       "Invalid password manager": [
         "Μη έγκυρος διαχειριστής κωδικών πρόσβασης"
       ],
-      "Invalid url": [
-        "Μη έγκυρη διεύθυνση URL"
-      ],
       "Invitation could not be accepted": [
         "Δεν ήταν δυνατή η αποδοχή της πρόσκλησης"
       ],
@@ -547,9 +541,6 @@
       ],
       "The file you are trying to import is empty": [
         "Το αρχείο που προσπαθείτε να εισαγάγετε είναι κενό"
-      ],
-      "The url is in the list": [
-        "Το url βρίσκεται στη λίστα"
       ],
       "Too many failed attempts. Please sign in again.": [
         "Πάρα πολλές αποτυχημένες προσπάθειες. Παρακαλούμε συνδεθείτε ξανά."
@@ -692,7 +683,7 @@
       "Access successfully confirmed": [
         "Η πρόσβαση επιβεβαιώθηκε με επιτυχία"
       ],
-      "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
+      "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
         "Η πρόσβαση στο ${ PASS_APP_NAME } θα απαιτήσει έναν κωδικό PIN για να ξεκλειδώσετε τη συνεδρία σας"
       ],
       "Access your passwords on the go with our mobile apps.": [
@@ -752,6 +743,9 @@
       "Deleted items will be moved here first": [
         "Τα διαγραμμένα στοιχεία θα μετακινηθούν πρώτα εδώ"
       ],
+      "Deleting \"${ payload.content.name }\"": [
+        "Διαγραφή του \"${ payload.content.name }\""
+      ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Ανακαλύψτε ${ PASS_APP_NAME } YouTube Video"
       ],
@@ -772,9 +766,6 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Πληκτρολογείστε τον κωδικό επιβεβαίωσης. Ψηφίο ${ digit }."
-      ],
-      "Enter your pin code": [
-        "Εισαγάγετε τον κωδικό PIN σας"
       ],
       "Enter your PIN code": [
         "Εισαγωγή κωδικού ΡΙΝ"
@@ -802,24 +793,6 @@
       ],
       "Here you will find all the necessary information to get you started.": [
         "Εδώ θα βρείτε όλες τις απαραίτητες πληροφορίες για να ξεκινήσετε."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "Εάν είναι απενεργοποιημένο, το ${ PASS_APP_NAME } δε θα εμφανίσει το favicon του στοιχείου μέσω ανώνυμου διακομιστή μεσολάβησης εικόνας ${ BRAND_NAME }."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not prompt you to save or update credentials.": [
-        "Εάν είναι απενεργοποιημένο, το ${ PASS_APP_NAME } δε θα σας ζητήσει να αποθηκεύσετε ή να ενημερώσετε διαπιστευτήρια."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating an email alias on sign-up forms.": [
-        "Εάν είναι απενεργοποιημένο, το ${ PASS_APP_NAME } δε θα προτείνει τη δημιουργία ψευδώνυμου ηλεκτρονικού ταχυδρομείου σε φόρμες εγγραφής."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
-        "Εάν είναι απενεργοποιημένο, το ${ PASS_APP_NAME } δε θα προτείνει τη δημιουργία ισχυρών κωδικών πρόσβασης σε φόρμες εγγραφής."
-      ],
-      "If enabled, the autofill dropdown will automatically open on field focus.": [
-        "Εάν ενεργοποιηθεί, το αναπτυσσόμενο μενού αυτόματης συμπλήρωσης θα ανοίξει αυτόματα κατά την εστίαση πεδίου."
-      ],
-      "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Εάν είναι ενεργοποιημένη, μπορείτε να συμπληρώσετε αυτόματα τα διαπιστευτήριά σας κάνοντας κλικ στο ${ PASS_APP_NAME } εικονίδιο."
       ],
       "Import in progress:": [
         "Εισαγωγή σε εξέλιξη:"
@@ -946,7 +919,7 @@
       "Please consider leaving a review.": [
         "Παρακαλούμε εξετάστε το ενδεχόμενο να αφήσετε μια κριτική."
       ],
-      "Please enter your current pin code to continue": [
+      "Please enter your current PIN code to continue": [
         "Παρακαλούμε εισάγετε τον τρέχον κωδικό PIN σας για να συνεχίσετε"
       ],
       "Press Enter to copy": [
@@ -1663,7 +1636,7 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Απολαμβάνετε το ${ PASS_APP_NAME };"
       ],
-      "Enter your Pin": [
+      "Enter your PIN": [
         "Εισαγάγετε το PIN σας"
       ],
       "Fill & copy password": [
@@ -1761,9 +1734,6 @@
       ]
     },
     "Validation": {
-      "Duplicated url": [
-        "Διπλότυπη διεύθυνση URL"
-      ],
       "Field name is required": [
         "Το όνομα πεδίου είναι υποχρεωτικό"
       ],
@@ -1775,9 +1745,6 @@
       ],
       "Url already exists": [
         "Η διεύθυνση URL υπάρχει ήδη"
-      ],
-      "Url cannot be empty": [
-        "Η διεύθυνση URL δεν μπορεί να είναι κενή"
       ],
       "Url is invalid": [
         "Η διεύθυνση URL δεν είναι έγκυρη"
@@ -1811,7 +1778,8 @@
       "Invalid alias prefix": [
         "Μην έγκυρο πρόθεμα ψευδωνύμου"
       ],
-      "Maximum length is ${ maxLength } characters": [
+      "Maximum length is ${ maxLength } character": [
+        "Το μέγιστο μήκος είναι ${ maxLength } χαρακτήρας",
         "Το μέγιστο μήκος είναι ${ maxLength } χαρακτήρες"
       ],
       "Missing alias prefix": [

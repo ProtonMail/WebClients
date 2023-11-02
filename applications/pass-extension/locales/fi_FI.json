@@ -8,9 +8,6 @@
       "Add": [
         "Lisää"
       ],
-      "Add current url": [
-        "Lisää nykyinen URL"
-      ],
       "Add domain to pause list": [
         "Lisää verkkotunnus keskeytyslistalle"
       ],
@@ -488,9 +485,6 @@
       "Invalid password manager": [
         "Virheellinen salasanahallinta"
       ],
-      "Invalid url": [
-        "Virheellinen URL-osoite"
-      ],
       "Invitation could not be accepted": [
         "Kutsua ei voitu hyväksyä"
       ],
@@ -547,9 +541,6 @@
       ],
       "The file you are trying to import is empty": [
         "Tiedosto, jota yrität tuoda, on tyhjä"
-      ],
-      "The url is in the list": [
-        "URL-osoite on jo listalla"
       ],
       "Too many failed attempts. Please sign in again.": [
         "Liian monta epäonnistunutta yritystä. Kirjaudu sisään uudelleen."
@@ -689,9 +680,6 @@
       "Access successfully confirmed": [
         "Pääsyn vahvistus onnistui"
       ],
-      "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
-        "${ PASS_APP_NAME } -istunnon lukituksen avaus vaatii PIN-koodin"
-      ],
       "Access your passwords on the go with our mobile apps.": [
         "Mobiilisovelluksillamme tavoitat salasanasi myös liikkeellä ollessasi."
       ],
@@ -770,9 +758,6 @@
       "Enter verification code. Digit ${ digit }.": [
         "Syötä vahvistuskoodi. Numero ${ digit }."
       ],
-      "Enter your pin code": [
-        "Syötä PIN-koodisi"
-      ],
       "Enter your PIN code": [
         "Syötä PIN-koodisi"
       ],
@@ -799,24 +784,6 @@
       ],
       "Here you will find all the necessary information to get you started.": [
         "Tästä saat kaikki tarvittavat tiedot, jotta pääset alkuun."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "Jos ei käytössä, ${ PASS_APP_NAME } ei lataa kohteiden sivustokuvakkeita ${ BRAND_NAME }in anonymisoidun kuvavälityspalvelimen kautta."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not prompt you to save or update credentials.": [
-        "Jos ei käytössä, ${ PASS_APP_NAME } ei tarjoa kirjautumistietojen tallennusta tai päivitystä."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating an email alias on sign-up forms.": [
-        "Jos ei käytössä, ${ PASS_APP_NAME } ei ehdota sähköpostialiasten luontia rekisteröitymislomakkeissa."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
-        "Jos ei käytössä, ${ PASS_APP_NAME } ei ehdota vahvojen salasanojen luontia rekisteröitymislomakkeissa."
-      ],
-      "If enabled, the autofill dropdown will automatically open on field focus.": [
-        "Jos käytössä, avautuu automaattitäytön ponnahdus lomakekentän aktivoituessa automaattisesti."
-      ],
-      "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Jos käytössä, mahdollistaa kirjautumistietojen nopean automaattitäytön ${ PASS_APP_NAME } -kuvaketta painamalla."
       ],
       "Import in progress:": [
         "Tuonti on käynnissä:"
@@ -942,9 +909,6 @@
       ],
       "Please consider leaving a review.": [
         "Harkitse arvostelun kirjoittamista."
-      ],
-      "Please enter your current pin code to continue": [
-        "Jatka syöttämällä nykyinen PIN-koodisi"
       ],
       "Press Enter to copy": [
         "Kopioi painamalla Enter-näppäintä"
@@ -1660,9 +1624,6 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Nautitko ${ PASS_APP_NAME }ista?"
       ],
-      "Enter your Pin": [
-        "Syötä PIN-koodisi"
-      ],
       "Fill & copy password": [
         "Täytä ja kopioi salasana"
       ],
@@ -1758,9 +1719,6 @@
       ]
     },
     "Validation": {
-      "Duplicated url": [
-        "Olemassaoleva URL-osoite"
-      ],
       "Field name is required": [
         "Kentän nimi vaaditaan"
       ],
@@ -1772,9 +1730,6 @@
       ],
       "Url already exists": [
         "URL-osoite on jo olemassa"
-      ],
-      "Url cannot be empty": [
-        "URL-osoite ei voi olla tyhjä"
       ],
       "Url is invalid": [
         "URL-osoite on virheellinen"
@@ -1807,9 +1762,6 @@
       ],
       "Invalid alias prefix": [
         "Virheellinen aliaksen etuliite"
-      ],
-      "Maximum length is ${ maxLength } characters": [
-        "Enimmäispituus on ${ maxLength } merkkiä"
       ],
       "Missing alias prefix": [
         "Aliaksen etuliite puuttuu"

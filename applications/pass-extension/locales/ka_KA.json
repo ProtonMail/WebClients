@@ -8,9 +8,6 @@
       "Add": [
         "დამატება"
       ],
-      "Add current url": [
-        "მიმდინარე URL-ის დამატება"
-      ],
       "Add domain to pause list": [
         "დომენის დამატება შეჩერებულების სიაში"
       ],
@@ -488,9 +485,6 @@
       "Invalid password manager": [
         "არასწორი პაროლების მმართველი"
       ],
-      "Invalid url": [
-        "არასწორი URL"
-      ],
       "Invitation could not be accepted": [
         "მოსაწვევზე დათანხმება შეუძლებელია"
       ],
@@ -547,9 +541,6 @@
       ],
       "The file you are trying to import is empty": [
         "ფაილი, რომლის შემოტანასაც ცდილობთ, ცარიელია"
-      ],
-      "The url is in the list": [
-        "ბმული უკვე სიაშია"
       ],
       "Too many failed attempts. Please sign in again.": [
         "მეტისმეტად ბევრი ჩავარდნილი მცდელობა. თავიდან შედით."
@@ -692,9 +683,6 @@
       "Access successfully confirmed": [
         "წვდომა წარმატებით დადასტურდა"
       ],
-      "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
-        "${ PASS_APP_NAME }-სთან წვდომას თქვენი სესიის განბლოკვისთვის PIN-კოდი დასჭირდება"
-      ],
       "Access your passwords on the go with our mobile apps.": [
         "იქონიეთ წვდომა თქვენს პაროლებთან, ჩვენი მობილური აპლიკაციებით, მგზავრობის დროსაც."
       ],
@@ -773,9 +761,6 @@
       "Enter verification code. Digit ${ digit }.": [
         "შეიყვანეთ გადამოწმების კოდი. ციფრი ${ digit }."
       ],
-      "Enter your pin code": [
-        "შეიყვანეთ თქვენი PIN კოდი"
-      ],
       "Enter your PIN code": [
         "შეიყვანეთ თქვენი PIN კოდი"
       ],
@@ -802,24 +787,6 @@
       ],
       "Here you will find all the necessary information to get you started.": [
         "აქ დასაწყებად საკმარის ინფორმაციას იპოვით."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "თუ გამრთულია, ${ PASS_APP_NAME } ჩანაწერის favicon-ს ${ BRAND_NAME }-ის ანონიმური გამოსახულების პროქსით არ გამოითხოვს."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not prompt you to save or update credentials.": [
-        "თუ გამორთავთ, ${ PASS_APP_NAME } ავტორიზაციის დეტალების განახლებისა და შენახვის შესახებ არ გკითხავთ."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating an email alias on sign-up forms.": [
-        "თუ გამორთულია, ${ PASS_APP_NAME } რეგისტრაციის ფორმებზე ელფოსტის ფსევდონიმის შექმნას არ გირჩევთ."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
-        "თუ გამორთულია, ${ PASS_APP_NAME } რეგისტრაციის ფორმებზე ძლიერი პაროლების შექმნას არ გირჩევთ."
-      ],
-      "If enabled, the autofill dropdown will automatically open on field focus.": [
-        "თუ ჩართულია, შესაბამის ველზე გადართვისას ავტომატური შევსების მენიუ ავტომატურად გაიხსნება."
-      ],
-      "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "თუ ჩართულია, შეგიძლიათ, თქვენი ავტორიზაციის დეტალები ავტომატურად შეავსოთ, ${ PASS_APP_NAME }-ის ხატულაზე დაწკაპუნებით."
       ],
       "Import in progress:": [
         "მიმდინარეობს შემოტანა:"
@@ -945,9 +912,6 @@
       ],
       "Please consider leaving a review.": [
         "სჯობს, გახვიდეთ მიმოხილვიდან."
-      ],
-      "Please enter your current pin code to continue": [
-        "გასაგრძელებლად შეიყვანეთ სწორი PIN კოდი"
       ],
       "Press Enter to copy": [
         "დასაკოპირებლად დააჭირეთ Enter-ს"
@@ -1663,9 +1627,6 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "მოგწონთ${ PASS_APP_NAME }?"
       ],
-      "Enter your Pin": [
-        "შეიყვანეთ PIN-კოდი"
-      ],
       "Fill & copy password": [
         "შევსება და პაროლის კოპირება"
       ],
@@ -1761,9 +1722,6 @@
       ]
     },
     "Validation": {
-      "Duplicated url": [
-        "დუბლრებული URL"
-      ],
       "Field name is required": [
         "ველის სახელი აუცილებელია"
       ],
@@ -1775,9 +1733,6 @@
       ],
       "Url already exists": [
         "Url უკვე არსებობს"
-      ],
-      "Url cannot be empty": [
-        "Url ცარიელი ვერ იქნება"
       ],
       "Url is invalid": [
         "Url არასწორია"
@@ -1810,9 +1765,6 @@
       ],
       "Invalid alias prefix": [
         "არასწორი ფსევდონიმის პრეფიქსი"
-      ],
-      "Maximum length is ${ maxLength } characters": [
-        "მაქსიმალური სიგრძეა ${ maxLength } სიმბოლო"
       ],
       "Missing alias prefix": [
         "აკლია ფსევდონიმის პრეფიქსი"
