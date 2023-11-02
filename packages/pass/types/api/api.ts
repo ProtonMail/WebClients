@@ -1,38 +1,24 @@
 import type { Subscriber } from '@proton/pass/utils/pubsub/factory';
-import type { RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
-import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 
 import type { Maybe } from '../utils';
 import type { ApiResponse } from './pass';
 
-export type ApiCreateOptions = {
-    config: ProtonConfig;
-    auth?: ApiAuthOptions;
-    onSessionRefresh?: (result: RefreshSessionResponse, refreshTime: number) => void;
-};
-
 export type ApiCallFn = (options: ApiOptions) => Promise<Response>;
 
-export type ApiAuthOptions = {
+export type ApiAuth = {
     UID: string;
     AccessToken: string;
     RefreshToken: string;
     RefreshTime?: number;
 };
 
-export type ApiStatus = {
+export type ApiState = {
     serverTime?: Date;
     offline: boolean;
     unreachable: boolean;
     appVersionBad: boolean;
     sessionInactive: boolean;
     sessionLocked: boolean;
-};
-
-export type ApiContext = {
-    call: ApiCallFn;
-    auth?: ApiAuthOptions;
-    status: ApiStatus;
 };
 
 /**
@@ -46,22 +32,21 @@ export type Api = {
     <T extends any = void, U extends string = string, M extends string = string>(
         config: ApiOptions<U, M>
     ): Promise<ApiResult<T, U, M>>;
-    configure: (auth?: ApiAuthOptions) => void;
+    getState: () => ApiState;
+    reset: () => void;
     subscribe: (subscribe: Subscriber<ApiSubscribtionEvent>) => () => void;
     unsubscribe: () => void;
-    getAuth: () => Maybe<ApiAuthOptions>;
-    getStatus: () => ApiStatus;
 };
 
 export type ApiOptions<U extends string = string, M extends string = string> = {
     [option: string]: any;
 } & {
-    output?: 'json' | 'raw' | 'stream';
-    url?: U;
-    method?: M;
     headers?: { [key: string]: string };
+    method?: M;
+    output?: 'json' | 'raw' | 'stream';
     params?: { [key: string]: any };
     silent?: boolean;
+    url?: U;
 };
 
 export type ApiResult<T extends any = void, U extends string = string, M extends string = string> = T extends void
