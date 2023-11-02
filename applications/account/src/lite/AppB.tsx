@@ -121,7 +121,13 @@ const App = () => {
                             <Router>
                                 <PreventLeaveProvider>
                                     <NotificationsProvider>
-                                        <NotificationsHijack onCreate={redirect ? undefined : handleNotificationCreate}>
+                                        <NotificationsHijack
+                                            onCreate={
+                                                redirect || action === SupportedActions.SubscribeAccountLink
+                                                    ? undefined
+                                                    : handleNotificationCreate
+                                            }
+                                        >
                                             <ModalsProvider>
                                                 <ApiProvider UID={UID} config={enhancedConfig} onLogout={handleLogout}>
                                                     <AuthenticationProvider store={authenticationValue}>
