@@ -957,7 +957,7 @@ export const updatePartstatFromInvitation = async ({
                 ({ eventID, calendarID }) =>
                     () =>
                         api<UpdateEventPartApiResponse>({
-                            ...updatePersonalEventPart(calendarID, eventID, { MemberID: memberID, Notifications: [] }),
+                            ...updatePersonalEventPart(calendarID, eventID, { Notifications: [] }),
                             silence: true,
                         })
             );
@@ -986,7 +986,6 @@ export const updatePartstatFromInvitation = async ({
     });
     try {
         const payload: CreateSinglePersonalEventData = {
-            MemberID: memberID,
             Notifications: hasDefaultNotifications ? null : toApiNotifications(veventToSave.components),
         };
         const { Event } = await api<UpdateEventPartApiResponse>(updatePersonalEventPart(calendar.ID, eventID, payload));
