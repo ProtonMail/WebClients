@@ -8,9 +8,6 @@
       "Add": [
         "Aggiungi"
       ],
-      "Add current url": [
-        "Aggiungi l'url corrente"
-      ],
       "Add domain to pause list": [
         "Aggiungi dominio all'elenco dei siti web in pausa"
       ],
@@ -374,6 +371,16 @@
         "Costi minimi, sicurezza massima: ottieni un anno di Pass Plus a soli ${ relativePrice } al mese."
       ]
     },
+    "bf2023: Label": {
+      "Get the deal": [
+        "Ottieni l'offerta"
+      ]
+    },
+    "bf2023: Title": {
+      "Black Friday offer": [
+        "Offerta del Black Friday"
+      ]
+    },
     "Button": {
       "More info": [
         "Più informazioni"
@@ -493,9 +500,6 @@
       "Invalid password manager": [
         "Gestore password non valido"
       ],
-      "Invalid url": [
-        "URL non valido"
-      ],
       "Invitation could not be accepted": [
         "Impossibile accettare l'invito"
       ],
@@ -552,9 +556,6 @@
       ],
       "The file you are trying to import is empty": [
         "Il file che stai tentando di importare è vuoto"
-      ],
-      "The url is in the list": [
-        "L'URL è nell'elenco"
       ],
       "Too many failed attempts. Please sign in again.": [
         "Troppi tentativi errati. Effettua nuovamente l'accesso."
@@ -697,8 +698,8 @@
       "Access successfully confirmed": [
         "Accesso confermato con successo"
       ],
-      "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
-        "L'accesso a ${ PASS_APP_NAME } richiederà un codice pin per sbloccare la tua sessione"
+      "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
+        "L'accesso a ${ PASS_APP_NAME } richiederà un codice PIN per sbloccare la tua sessione"
       ],
       "Access your passwords on the go with our mobile apps.": [
         "Accedi alle tue password in mobilità grazie alle nostre applicazioni."
@@ -757,6 +758,9 @@
       "Deleted items will be moved here first": [
         "Gli elementi eliminati verranno spostati prima qui"
       ],
+      "Deleting \"${ payload.content.name }\"": [
+        "Eliminazione di \"${ payload.content.name }\""
+      ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Scopri il video YouTube di ${ PASS_APP_NAME }"
       ],
@@ -777,9 +781,6 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Inserisci il codice di verifica. Digita ${ digit }."
-      ],
-      "Enter your pin code": [
-        "Inserisci il tuo codice pin"
       ],
       "Enter your PIN code": [
         "Inserisci il tuo PIN"
@@ -807,24 +808,6 @@
       ],
       "Here you will find all the necessary information to get you started.": [
         "Qui troverai tutte le informazioni necessarie per iniziare."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "Se disabilitato, ${ PASS_APP_NAME } non mostrerà più l'icona dell'elemento attraverso il proxy anonimizzato per le immagini per ${ BRAND_NAME }."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not prompt you to save or update credentials.": [
-        "Se disabilitato, ${ PASS_APP_NAME } non ti chiederà più di salvare o aggiornare le tue credenziali."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating an email alias on sign-up forms.": [
-        "Se disabilitato, ${ PASS_APP_NAME } non ti suggerirà la creazione di un alias email nei moduli di registrazione."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
-        "Se disabilitato, ${ PASS_APP_NAME } non ti suggerirà la generazione di password sicure nei moduli di registrazione."
-      ],
-      "If enabled, the autofill dropdown will automatically open on field focus.": [
-        "Se abilitato, il menu di compilazione automatica si aprirà una volta selezionato il campo."
-      ],
-      "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Se abilitato, potrai compilare istantaneamente le tue credenziali cliccando sull'icona di ${ PASS_APP_NAME }."
       ],
       "Import in progress:": [
         "Importazione in corso:"
@@ -951,8 +934,8 @@
       "Please consider leaving a review.": [
         "Considera di lasciare una recensione."
       ],
-      "Please enter your current pin code to continue": [
-        "Inserisci il tuo codice pin per continuare"
+      "Please enter your current PIN code to continue": [
+        "Inserisci il tuo PIN attuale per continuare"
       ],
       "Press Enter to copy": [
         "Premi Invio per copiare"
@@ -1668,8 +1651,8 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Ti piace ${ PASS_APP_NAME }?"
       ],
-      "Enter your Pin": [
-        "Inserisci il tuo Pin"
+      "Enter your PIN": [
+        "Inserisci il tuo PIN"
       ],
       "Fill & copy password": [
         "Compila e copia la password"
@@ -1766,9 +1749,6 @@
       ]
     },
     "Validation": {
-      "Duplicated url": [
-        "Url duplicato"
-      ],
       "Field name is required": [
         "Il nome campo è obbligatorio"
       ],
@@ -1780,9 +1760,6 @@
       ],
       "Url already exists": [
         "Url già esistente"
-      ],
-      "Url cannot be empty": [
-        "Url non può essere vuoto"
       ],
       "Url is invalid": [
         "Url non valido"
@@ -1816,8 +1793,9 @@
       "Invalid alias prefix": [
         "Prefisso alias non valido"
       ],
-      "Maximum length is ${ maxLength } characters": [
-        "La lunghezza massima è di ${ maxLength } caratteri"
+      "Maximum length is ${ maxLength } character": [
+        "La lunghezza massima è ${ maxLength } carattere",
+        "La lunghezza massima è ${ maxLength } caratteri"
       ],
       "Missing alias prefix": [
         "Prefisso alias mancante"

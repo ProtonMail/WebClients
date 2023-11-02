@@ -8,9 +8,6 @@
       "Add": [
         "Ekle"
       ],
-      "Add current url": [
-        "Geçerli adresi ekle"
-      ],
       "Add domain to pause list": [
         "Etki alanını duraklatma listesine ekle"
       ],
@@ -503,9 +500,6 @@
       "Invalid password manager": [
         "Parola yöneticisi geçersiz"
       ],
-      "Invalid url": [
-        "Adres geçersiz"
-      ],
       "Invitation could not be accepted": [
         "Davet kabul edilemedi"
       ],
@@ -562,9 +556,6 @@
       ],
       "The file you are trying to import is empty": [
         "İçe aktarmak istediğiniz dosya boş"
-      ],
-      "The url is in the list": [
-        "Adres listede zaten var"
       ],
       "Too many failed attempts. Please sign in again.": [
         "Çok fazla sayıda başarısız deneme yapıldı. Lütfen yeniden oturum açın."
@@ -707,9 +698,6 @@
       "Access successfully confirmed": [
         "Erişim onaylandı"
       ],
-      "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
-        "${ PASS_APP_NAME } uygulamasına erişerek oturumunuzun kilidini açmak için PIN kodunuz istenecek"
-      ],
       "Access your passwords on the go with our mobile apps.": [
         "Mobil uygulamamız ile hareket halindeyken parolalarınıza erişin."
       ],
@@ -788,9 +776,6 @@
       "Enter verification code. Digit ${ digit }.": [
         "Doğrulama kodunu yazın. Rakam ${ digit }."
       ],
-      "Enter your pin code": [
-        "PIN kodunuzu yazın"
-      ],
       "Enter your PIN code": [
         "PIN kodunuzu yazın"
       ],
@@ -817,24 +802,6 @@
       ],
       "Here you will find all the necessary information to get you started.": [
         "Başlamak için gereken tüm bilgileri burada bulabilirsiniz."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "Bu seçenek kapatıldığında, ${ PASS_APP_NAME }, ${ BRAND_NAME } anonimleştirilmiş görsel vekil sunucusunu kullanarak ögenin İnternet simgesini görüntülemez."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not prompt you to save or update credentials.": [
-        "Bu seçenek kapatıldığında, ${ PASS_APP_NAME } kimlik doğrulama bilgilerinizi kaydetmeyi ya da güncellemeyi sormaz."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating an email alias on sign-up forms.": [
-        "Bu seçenek kapatıldığında, ${ PASS_APP_NAME } oturum açma formlarında bir e-posta takma adı oluşturmayı önermez."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
-        "Bu seçenek kapatıldığında, ${ PASS_APP_NAME } oturum açma formlarında güçlü parola oluşturmayı önermez."
-      ],
-      "If enabled, the autofill dropdown will automatically open on field focus.": [
-        "Bu seçenek açıldığında, alana gelindiğinde otomatik doldurma kutusu açılır."
-      ],
-      "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Bu seçenek açıldığında, kimlik doğrulama bilgilerinizi kolayca ${ PASS_APP_NAME } simgesine tıklayarak otomatik olarak doldurabilirsiniz."
       ],
       "Import in progress:": [
         "İçe aktarılıyor:"
@@ -960,9 +927,6 @@
       ],
       "Please consider leaving a review.": [
         "Lütfen bir yorum yazmayı değerlendirin."
-      ],
-      "Please enter your current pin code to continue": [
-        "İlerlemek için lütfen geçerli PIN kodunuzu yazın"
       ],
       "Press Enter to copy": [
         "Kopyalamak için Enter tuşuna basın"
@@ -1678,9 +1642,6 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME } hoşunuza gitti mi?"
       ],
-      "Enter your Pin": [
-        "PIN kodunuzu yazın"
-      ],
       "Fill & copy password": [
         "Doldur ve parolayı kopyala"
       ],
@@ -1776,9 +1737,6 @@
       ]
     },
     "Validation": {
-      "Duplicated url": [
-        "Çift adres"
-      ],
       "Field name is required": [
         "Alan adının yazılması zorunludur"
       ],
@@ -1790,9 +1748,6 @@
       ],
       "Url already exists": [
         "Adres zaten var"
-      ],
-      "Url cannot be empty": [
-        "Adres boş olamaz"
       ],
       "Url is invalid": [
         "Adres geçersiz"
@@ -1825,9 +1780,6 @@
       ],
       "Invalid alias prefix": [
         "Takma ad ön eki geçersiz"
-      ],
-      "Maximum length is ${ maxLength } characters": [
-        "En fazla uzunluk ${ maxLength } karakter"
       ],
       "Missing alias prefix": [
         "Takma ad ön eki eksik"
