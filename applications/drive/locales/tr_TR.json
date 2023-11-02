@@ -116,6 +116,9 @@
       "Clear query": [
         "Sorguyu temizle"
       ],
+      "Clear selection": [
+        "Seçimi temizle"
+      ],
       "Click here.": [
         "Buraya tıklayın."
       ],
@@ -160,6 +163,9 @@
       ],
       "Continue with Google": [
         "Google ile ilerle"
+      ],
+      "Continue with Outlook": [
+        "Outlook ile ilerle"
       ],
       "Copy address": [
         "Adresi kopyala"
@@ -366,6 +372,12 @@
       ],
       "Import from .csv or vCard": [
         ".csv ya da vCard dosyasından içe aktar"
+      ],
+      "Import from Google": [
+        "Google üzerinden içe aktar"
+      ],
+      "Import from Outlook": [
+        "Outlook üzerinden içe aktar"
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
@@ -702,6 +714,9 @@
       ],
       "Upload folder": [
         "Klasör yükle"
+      ],
+      "Upload photos": [
+        "Fotoğraf yükle"
       ],
       "Upload picture": [
         "Fotoğraf yükle"
@@ -1966,6 +1981,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler şifreleniyor ve içe aktarılıyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSV ve VCF dosyası ile içe aktarma için, ${ MAX_IMPORT_FILE_SIZE_STRING } dosya boyutunu ya da ${ MAX_IMPORT_CONTACTS_STRING } kişiyi aşmadığınızdan emin olun. Dosyanız büyükse lütfen daha küçük dosyalara bölün. ${ learnMoreLink }."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "İçe aktardığınız kişi listesinde bazı gruplar var gibi görünüyor. Lütfen bu grupların nasıl içe aktarılması gerektiğini gözden geçirin."
       ],
@@ -1978,6 +1996,9 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Herkese aynı anda e-posta veya davetiye göndererek zaman kazanın. Bu ücretli tarifelerdeki birçok özellikten biridir. Tarifenizi şimdi yükseltin."
       ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Kişilerinizi Google ya da Outlook üzerinden içe aktarmak için ${ easySwitchLink }."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Sürükleyip bırakarak kişiler arasında birleştirme önceliğini sıralayın. Birleştirmek istemediğiniz kişilerin işaretini kaldırın."
       ],
@@ -1986,6 +2007,11 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Birleştirmek veya tutmak istemediğiniz kişileri silinmek üzere işaretleyebilirsiniz. Silme işlemi yalnızca birleştirme düğmesine tıkladıktan sonra yapılır"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch içe aktarma yardımcısını kullanın"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2257,6 +2283,9 @@
       ],
       "Some contacts could not be deleted": [
         "Bazı kişiler silinemedi"
+      ],
+      "Some files were ignored because they are not supported in Photos": [
+        "Fotoğraflar tarafından desteklenmediğinden bazı dosyalar yok sayıldı"
       ],
       "Some groups could not be deleted": [
         "Bazı gruplar silinemedi"
@@ -3290,6 +3319,10 @@
         "${ selectedContactsLength }/${ contactsLength } kişi seçildi",
         "${ selectedContactsLength }/${ contactsLength } kişi seçildi"
       ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } seçilmiş",
+        "${ selectedCount } seçilmiş"
+      ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } klasör seçildi",
         "${ selectedFoldersCount } klasör seçildi"
@@ -3388,6 +3421,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Seçilmiş ögeleri çöp kutusundan kalıcı olarak silmek istediğinizden emin misiniz?"
+      ],
+      "As soon as you have photos or videos on your device, they will appear here.": [
+        "Aygıtınızda fotoğraflarınız veya videolarınız bulunduğunda burada görüntülenir."
       ],
       "Attention required": [
         "İlgilenmeniz gerekiyor"
@@ -3822,6 +3858,9 @@
       "No group found": [
         "Grup bulunamadı"
       ],
+      "No photos yet": [
+        "Henüz bir fotoğraf yok"
+      ],
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
       ],
@@ -3968,8 +4007,14 @@
       "Search Enabled": [
         "Arama özelliği açıldı"
       ],
+      "Select all items for": [
+        "Şunun için tüm ögeleri seç"
+      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Yüklenmiş bir dosyayı ya da klasörü seçin ve bir bağlantı oluşturun."
+      ],
+      "Select item": [
+        "Öge seçin"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Bu adrese, bir e-posta gönderilirken varsayılan olarak kullanılmasını istediğiniz e-posta biçimini seçin."
@@ -4087,6 +4132,9 @@
       ],
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
         "Bu bağlantı kalıcı olarak kullanımdan kaldırılacak. Hiç kimse bu bağlantıyı kullanarak klasörünüze erişemeyecek. Klasörü yeniden paylaşmak için yeni bir bağlantı oluşturmanız gerekecek."
+      ],
+      "This month": [
+        "Bu ay"
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Bu işlem, bağlantıyı siler ve bağlantıya sahip olan herkesin dosyanıza erişimini kaldırır.",
@@ -4208,6 +4256,9 @@
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "Çok güzel, ücretsiz depolama alanınızı iki katına çıkardınız!"
+      ],
+      "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
+        "Teknik sorunlar yaşıyoruz. Yeni fotoğraf yükleme özelliği geçici olarak kapalı."
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "${ emailAddress } kullanıcısının ${ fileName } ögesini yüklediği doğrulanamadı."
@@ -4724,6 +4775,9 @@
       "Phone number": [
         "Telefon numarası"
       ],
+      "Photo": [
+        "Fotoğraf"
+      ],
       "Please provide full details to help us take appropriate action": [
         "Uygun işlemi yapabilmemiz için lütfen tüm ayrıntıları yazın"
       ],
@@ -4908,6 +4962,9 @@
       ],
       "Pay invoice": [
         "Faturayı öde"
+      ],
+      "Photos": [
+        "Fotoğraflar"
       ],
       "Reactivate now": [
         "Şimdi yenile"
@@ -6478,6 +6535,9 @@
       ],
       "Phone numbers": [
         "Telefon numaraları"
+      ],
+      "Photos": [
+        "Fotoğraflar"
       ],
       "Preview": [
         "Ön izleme"

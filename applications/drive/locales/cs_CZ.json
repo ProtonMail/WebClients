@@ -118,6 +118,9 @@
       "Clear query": [
         "Smazat dotaz"
       ],
+      "Clear selection": [
+        "Zrušit výběr"
+      ],
       "Click here.": [
         "Klikněte zde."
       ],
@@ -162,6 +165,9 @@
       ],
       "Continue with Google": [
         "Pokračovat skrze Google"
+      ],
+      "Continue with Outlook": [
+        "Pokračovat s Outlookem"
       ],
       "Copy address": [
         "Kopírovat adresu"
@@ -714,6 +720,9 @@
       ],
       "Upload folder": [
         "Nahrát složku"
+      ],
+      "Upload photos": [
+        "Nahrát fotografie"
       ],
       "Upload picture": [
         "Nahrát obrázek"
@@ -1892,6 +1901,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrování a import kontaktů... Tato akce může trvat několik minut. Jakmile je proces ukončen, můžete zavřít tento modul."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Při importování prostřednictvím souborů CSV a VCF zajistěte, aby velikost souboru nepřesáhla ${ MAX_IMPORT_FILE_SIZE_STRING } nebo ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej na menší soubory. ${ learnMoreLink }."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Zdá se, že seznam kontaktů který importujete, zahrnuje nějaké skupiny. Prosím, zkontrolujte jak by tyto skupiny měly být importovány."
       ],
@@ -1904,6 +1916,9 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Šetřete čas odesláním e-mailů nebo pozvánek všem najednou, což je mimo jiné prémiová funkce. Navyšte tarif ještě dnes."
       ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Pro import kontaktů ze služby Google nebo Outlook ${ easySwitchLink }."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Pomocí myši táhněte a pusťte pro změnu priority spojení kontaktů. Odškrtněte kontakty, které nechcete sloučit."
       ],
@@ -1912,6 +1927,11 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Kontakty, které nechcete sloučit ani zachovat, označte pro smazání. Ke smazání dojde po kliknutí na tlačítko pro sloučení"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "použijte asistenta pro import Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2195,6 +2215,9 @@
       ],
       "Some contacts could not be deleted": [
         "Některé kontakty nelze smazat"
+      ],
+      "Some files were ignored because they are not supported in Photos": [
+        "Některé soubory byly ignorovány, protože nejsou podporovány v aplikaci Fotografie"
       ],
       "Some groups could not be deleted": [
         "Některé skupiny není možné odstranit"
@@ -3419,6 +3442,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Opravdu chcete trvale smazat vybrané položky z koše?"
       ],
+      "As soon as you have photos or videos on your device, they will appear here.": [
+        "Jakmile budete mít v zařízení fotky nebo videa, zobrazí se zde."
+      ],
       "Attention required": [
         "Vyžadována pozornost"
       ],
@@ -3860,6 +3886,9 @@
       "No group found": [
         "Nebyla nalezena žádná skupina"
       ],
+      "No photos yet": [
+        "Zatím bez fotografií"
+      ],
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
       ],
@@ -4010,8 +4039,14 @@
       "Search Enabled": [
         "Vyhledávání Zapnuto"
       ],
+      "Select all items for": [
+        "Vybrat všechny položky za"
+      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Vyberte nahraný soubor nebo složku a vytvořte na ně odkaz."
+      ],
+      "Select item": [
+        "Vyberte položku"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vyberte formát e-mailu, který chcete aby byl použit jako výchozí pro zasílání e-mailu na tuto e-mailovou adresu."
@@ -4129,6 +4164,9 @@
       ],
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
         "Tento odkaz bude trvale deaktivován. Nikdo s tímto odkazem nebude mít přístup k vaší složce. Chcete-li složku znovu sdílet, budete potřebovat nový odkaz."
+      ],
+      "This month": [
+        "Tento měsíc"
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Tím odstraníte odkaz a zrušíte přístup k vašemu souboru nebo složce pro každého, kdo má tento odkaz.",
@@ -4252,6 +4290,9 @@
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "Výborně, právě jste zdvojnásobili své bezplatné úložiště!"
+      ],
+      "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
+        "Máme technické problémy. Nahrávání nových fotek je dočasně vypnuto."
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Nemohli jsme ověřit, že ${ emailAddress } nahrál(a) ${ fileName }."
@@ -4774,6 +4815,9 @@
       "Phone number": [
         "Telefonní číslo"
       ],
+      "Photo": [
+        "Fotografie"
+      ],
       "Please provide full details to help us take appropriate action": [
         "Uveďte prosím všechny podrobnosti, které nám pomohou přijmout příslušná opatření"
       ],
@@ -4958,6 +5002,9 @@
       ],
       "Pay invoice": [
         "Zaplatit fakturu"
+      ],
+      "Photos": [
+        "Fotky"
       ],
       "Reactivate now": [
         "Opětovně nyní aktivovat"
@@ -6648,6 +6695,9 @@
       ],
       "Phone numbers": [
         "Telefonní čísla"
+      ],
+      "Photos": [
+        "Fotografie"
       ],
       "Preview": [
         "Náhled"
