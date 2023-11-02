@@ -118,6 +118,9 @@
       "Clear query": [
         "Ачысціць запыт"
       ],
+      "Clear selection": [
+        "Ачысціць выбранае"
+      ],
       "Click here.": [
         "Націсніце тут."
       ],
@@ -717,6 +720,9 @@
       ],
       "Upload folder": [
         "Запампаваць папку"
+      ],
+      "Upload photos": [
+        "Запампаваць фатаграфіі"
       ],
       "Upload picture": [
         "Запампаваць малюнак"
@@ -3319,6 +3325,12 @@
         "Выбрана ${ selectedContactsLength } кантактаў з ${ contactsLength }",
         "Выбрана ${ selectedContactsLength } кантактаў з ${ contactsLength }"
       ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } выбраны",
+        "${ selectedCount } выбрана",
+        "${ selectedCount } выбрана",
+        "${ selectedCount } выбрана"
+      ],
       "${ selectedFoldersCount } folder selected": [
         "Выбрана ${ selectedFoldersCount } папка",
         "Выбраны ${ selectedFoldersCount } папкі",
@@ -3435,6 +3447,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Вы сапраўды хочаце незваротна выдаліць выбраныя элементы са сметніцы?"
+      ],
+      "As soon as you have photos or videos on your device, they will appear here.": [
+        "Як толькі на вашай прыладзе будуць з'яўляцца відэа і фотаздымкі, яны адразу ж будуць трапляць і сюды."
       ],
       "Attention required": [
         "Патрабуецца ўвага"
@@ -4030,8 +4045,14 @@
       "Search Enabled": [
         "Пошук уключаны"
       ],
+      "Select all items for": [
+        "Выбраць усе элементы для"
+      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Выберыце запампаваны файл або папку і стварыце спасылку на іх."
+      ],
+      "Select item": [
+        "Выбар элемента"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Выберыце фармат лістоў, які вы хочаце выкарыстоўваць як прадвызначаны, пры адпраўцы паведамленняў гэтым адрасатам."
@@ -4275,6 +4296,9 @@
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "Так трымаць! Мы толькі што падвоілі ваша бясплатнае сховішча."
+      ],
+      "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
+        "У нас узніклі тэхнічныя праблемы. Запампоўванне новых фатаграфій часова адключана."
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Мы не можам праверыць, што ${ emailAddress } запампаваў ${ fileName }."
@@ -4797,6 +4821,9 @@
       "Phone number": [
         "Нумар тэлефона"
       ],
+      "Photo": [
+        "Фатаграфія"
+      ],
       "Please provide full details to help us take appropriate action": [
         "Забяспечце нас падрабязнымі звесткамі, каб мы змаглі прыняць адпаведныя меры"
       ],
@@ -4981,6 +5008,9 @@
       ],
       "Pay invoice": [
         "Аплаціць рахунак"
+      ],
+      "Photos": [
+        "Фотаграфіі"
       ],
       "Reactivate now": [
         "Актываваць паўторна"
@@ -6671,6 +6701,9 @@
       ],
       "Phone numbers": [
         "Нумары тэлефонаў"
+      ],
+      "Photos": [
+        "Фотаграфіі"
       ],
       "Preview": [
         "Папярэдні прагляд"

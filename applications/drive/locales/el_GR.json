@@ -116,6 +116,9 @@
       "Clear query": [
         "Απαλοιφή ερωτήματος"
       ],
+      "Clear selection": [
+        "Αναίρεση επιλογής"
+      ],
       "Click here.": [
         "Κάντε κλικ εδώ."
       ],
@@ -711,6 +714,9 @@
       ],
       "Upload folder": [
         "Ανέβασμα φακέλου"
+      ],
+      "Upload photos": [
+        "Ανεβάστε φωτογραφίες"
       ],
       "Upload picture": [
         "Ανέβασμα εικόνας"
@@ -2182,6 +2188,9 @@
       "Some contacts could not be deleted": [
         "Ορισμένες επαφές δεν μπόρεσαν να διαγραφούν"
       ],
+      "Some files were ignored because they are not supported in Photos": [
+        "Ορισμένα αρχεία αγνοήθηκαν επειδή δεν υποστηρίζονται στις Φωτογραφίες"
+      ],
       "Some groups could not be deleted": [
         "Αδυναμία διαγραφής κάποιων ομάδων"
       ],
@@ -3214,6 +3223,10 @@
         "${ selectedContactsLength }/${ contactsLength } επιλεγμένη επαφή",
         "${ selectedContactsLength }/${ contactsLength } επιλεγμένες επαφές"
       ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } επιλεγμένο",
+        "${ selectedCount } επιλεγμένα"
+      ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } επιλεγμένος φάκελος",
         "${ selectedFoldersCount } επιλεγμένοι φάκελοι"
@@ -3312,6 +3325,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Είστε βέβαιοι ότι θέλετε να εξαλείψετε οριστικά τα επιλεγμένα διαγραμμένα στοιχεία;"
+      ],
+      "As soon as you have photos or videos on your device, they will appear here.": [
+        "Μόλις έχετε φωτογραφίες ή βίντεο στη συσκευή σας, θα εμφανιστούν εδώ."
       ],
       "Attention required": [
         "Χρειάζεται προσοχή"
@@ -3746,6 +3762,9 @@
       "No group found": [
         "Καμία ομάδα δεν βρέθηκε"
       ],
+      "No photos yet": [
+        "Καμία φωτογραφία ακόμα"
+      ],
       "No results found": [
         "Δεν βρέθηκαν αποτελέσματα"
       ],
@@ -3892,8 +3911,14 @@
       "Search Enabled": [
         "Αναζήτηση Ενεργοποιημένη"
       ],
+      "Select all items for": [
+        "Επιλέξτε όλα τα στοιχεία για"
+      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Επιλέξτε ένα ανεβασμένο αρχείο ή φάκελο και δημιουργήστε έναν σύνδεσμο προς αυτό."
+      ],
+      "Select item": [
+        "Επιλογή στοιχείου"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Επιλέξτε τη μορφή ηλεκτρονικού ταχυδρομείου που θέλετε να χρησιμοποιηθεί από προεπιλογή κατά την αποστολή ενός E-mail σε αυτό το E-mail."
@@ -4011,6 +4036,9 @@
       ],
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
         "Αυτός ο σύνδεσμος θα απενεργοποιηθεί μόνιμα. Κανείς με αυτόν τον σύνδεσμο δε θα έχει πρόσβαση στο φάκελο. Για επαναδιαμοιρασμό του φακέλου, θα χρειαστείτε έναν νέο σύνδεσμο."
+      ],
+      "This month": [
+        "Αυτό το μήνα"
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Αυτό θα διαγράψει τον σύνδεσμο και θα καταργήσει την πρόσβαση στο αρχείο ή φάκελο σας για οποιονδήποτε με τον σύνδεσμο.",
@@ -4132,6 +4160,9 @@
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "Συγχαρητήρια, μόλις διπλασιάσατε τον δωρεάν αποθηκευτικό χώρο σας!"
+      ],
+      "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
+        "Αντιμετωπίζουμε τεχνικά προβλήματα. Η μεταφόρτωση νέων φωτογραφιών είναι προσωρινά απενεργοποιημένη."
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Δεν μπορέσαμε να επαληθεύσουμε ότι το ${ fileName } ανέβηκε από ${ emailAddress }."
@@ -4648,6 +4679,9 @@
       "Phone number": [
         "Αριθμός τηλεφώνου"
       ],
+      "Photo": [
+        "Φωτογραφία"
+      ],
       "Please provide full details to help us take appropriate action": [
         "Παρακαλούμε δώστε πλήρεις λεπτομέρειες για να μας βοηθήσετε να λάβουμε τα κατάλληλα μέτρα"
       ],
@@ -4832,6 +4866,9 @@
       ],
       "Pay invoice": [
         "Πληρωμή τιμολογίου"
+      ],
+      "Photos": [
+        "Φωτογραφίες"
       ],
       "Reactivate now": [
         "Επανενεργοποίηση τώρα"
@@ -6402,6 +6439,9 @@
       ],
       "Phone numbers": [
         "Αριθμοί Τηλεφώνου"
+      ],
+      "Photos": [
+        "Φωτογραφίες"
       ],
       "Preview": [
         "Προεπισκόπηση"
