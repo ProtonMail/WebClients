@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import useLoading from '@proton/hooks/useLoading';
+import metrics, { observeApiError } from '@proton/metrics';
 import { updateSessionAccountRecovery } from '@proton/shared/lib/api/sessionRecovery';
 import noop from '@proton/utils/noop';
 
@@ -20,9 +21,20 @@ const ConfirmDisableSessionRecoveryModal = ({ open, onClose }: Props) => {
     const [submitting, withSubmitting] = useLoading();
 
     const handleDisableSessionRecoveryToggle = async () => {
-        await api(updateSessionAccountRecovery({ SessionAccountRecovery: 0 }));
-        await call();
-        onClose();
+        try {
+            await api(updateSessionAccountRecovery({ SessionAccountRecovery: 0 }));
+            await call();
+            onClose();
+            metrics.core_session_recovery_settings_update_total.increment({
+                status: 'success',
+            });
+        } catch (error) {
+            observeApiError(error, (status) =>
+                metrics.core_session_recovery_settings_update_total.increment({
+                    status,
+                })
+            );
+        }
     };
 
     const handleClose = submitting ? noop : onClose;

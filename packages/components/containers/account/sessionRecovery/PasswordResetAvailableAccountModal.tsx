@@ -1,4 +1,4 @@
-import { ReactNode, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -7,6 +7,7 @@ import {
     useIsSessionRecoveryInitiatedByCurrentSession,
     useSessionRecoveryInsecureTimeRemaining,
 } from '@proton/components/hooks/useSessionRecovery';
+import metrics, { observeApiError } from '@proton/metrics';
 import { consumeSessionRecovery } from '@proton/shared/lib/api/sessionRecovery';
 import { lockSensitiveSettings } from '@proton/shared/lib/api/user';
 import innerMutatePassword from '@proton/shared/lib/authentication/mutate';
@@ -78,6 +79,30 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
 
     const isSessionRecoveryInitiatedByCurrentSession = useIsSessionRecoveryInitiatedByCurrentSession();
     const timeRemaining = useSessionRecoveryInsecureTimeRemaining();
+
+    useEffect(() => {
+        const metricsStep = (() => {
+            if (step === STEP.INFO) {
+                return 'info';
+            }
+
+            if (step === STEP.PASSWORD) {
+                return 'password';
+            }
+
+            if (step === STEP.CONFIRM_CANCELLATION) {
+                return 'confirm_cancellation';
+            }
+        })();
+
+        if (!metricsStep) {
+            return;
+        }
+
+        metrics.core_session_recovery_password_reset_available_account_modal_load_total.increment({
+            step: metricsStep,
+        });
+    }, [step]);
 
     if (timeRemaining === null) {
         return null;
@@ -275,9 +300,19 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
                     });
 
                     void api(lockSensitiveSettings());
+
+                    metrics.core_session_recovery_consume_total.increment({
+                        status: 'success',
+                    });
+
                     onClose?.();
                 } catch (error) {
                     errorHandler(error);
+                    observeApiError(error, (status) =>
+                        metrics.core_session_recovery_consume_total.increment({
+                            status,
+                        })
+                    );
                 } finally {
                     setLoading(false);
                     start();
