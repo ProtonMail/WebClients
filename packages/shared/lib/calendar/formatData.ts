@@ -19,7 +19,6 @@ interface FormatDataArguments {
     calendarSignedPart?: SignPartResult;
     calendarEncryptedPart?: EncryptPartResult;
     calendarSessionKey?: Uint8Array;
-    personalSignedPart?: SignPartResult;
     attendeesEncryptedPart?: EncryptPartResult;
     attendeesClearPart?: AttendeeClearPartResult[];
     removedAttendeesEmails?: string[];
@@ -33,7 +32,6 @@ export const formatData = ({
     calendarSignedPart,
     calendarEncryptedPart,
     calendarSessionKey,
-    personalSignedPart,
     notificationsPart,
     attendeesEncryptedPart,
     attendeesClearPart,
@@ -80,14 +78,6 @@ export const formatData = ({
                 Signature: calendarEncryptedPart.signature,
             },
         ].filter(isTruthy);
-    }
-
-    if (personalSignedPart) {
-        result.PersonalEventContent = {
-            Type: SIGNED,
-            Data: personalSignedPart.data,
-            Signature: personalSignedPart.signature,
-        };
     }
 
     if (attendeesEncryptedPart) {
