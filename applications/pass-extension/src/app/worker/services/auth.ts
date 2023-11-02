@@ -11,7 +11,7 @@ import type { SessionLockCheckResult } from '@proton/pass/lib/auth/session-lock'
 import { checkSessionLock } from '@proton/pass/lib/auth/session-lock';
 import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message';
 import browser from '@proton/pass/lib/globals/browser';
-import { workerLocked, workerReady } from '@proton/pass/lib/worker';
+import { workerReady } from '@proton/pass/lib/worker';
 import {
     notification,
     sessionLockSync,
@@ -260,9 +260,7 @@ export const createAuthService = ({
                 const session = await consumeFork({ api, apiUrl: `${SSO_URL}/api`, ...data });
                 const loggedIn = await authService.login(session);
 
-                /* if the session is locked we might not be considered
-                 * fully logged in but we can still persist the session */
-                if (loggedIn || workerLocked(ctx.status)) void authService.persistSession();
+                if (loggedIn) void authService.persistSession();
 
                 return {
                     payload: {
