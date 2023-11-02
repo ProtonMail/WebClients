@@ -285,7 +285,7 @@ const MessageView = (
 
     /**
      * Two cases here,
-     *     If the message is undead: mark as read a message already loaded (when user marked as unread)
+     *     If the message is unread: mark as read a message already loaded (when user marked as unread)
      *     If the message is read: mark message or conversation as read again if DisplaySnoozedReminder present (snooze feature)
      */
     useEffect(() => {

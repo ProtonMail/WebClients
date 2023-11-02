@@ -98,7 +98,7 @@ const QuickReplyContainer = ({
                         icon
                         disabled
                     >
-                        <Icon name="paper-plane" alt={c('loc_nightly_action').t`Send quick reply`} />
+                        <Icon name="paper-plane-horizontal" alt={c('loc_nightly_action').t`Send quick reply`} />
                     </Button>
                 </div>
             ) : (
