@@ -1,17 +1,21 @@
 import { c, msgid } from 'ttag';
 
-
-
 import { Button } from '@proton/atoms';
-import { Icon, Loader, ModalTwo, ModalTwoContent, OnboardingContent, OnboardingModal, OnboardingStep, OnboardingStepRenderCallback } from '@proton/components';
+import {
+    Icon,
+    Loader,
+    ModalTwo,
+    ModalTwoContent,
+    OnboardingContent,
+    OnboardingModal,
+    OnboardingStep,
+    OnboardingStepRenderCallback,
+} from '@proton/components';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import drive1gbSvg from '@proton/styles/assets/img/onboarding/drive-1gb.svg';
 import onboardingWelcome from '@proton/styles/assets/img/onboarding/drive-welcome.svg';
 
-
-
 import useChecklist from '../onboarding/useChecklist';
-
 
 interface Props {
     showGenericSteps?: boolean;
@@ -70,14 +74,17 @@ const DriveOnboardingModal = (props: Props) => {
                         expiresInDays
                     )}
                     <ul className="unstyled mt-4">
-                        <li className="my-2">
-                            <Icon name="checkmark-circle" /> {c('Onboarding Info').t`Upload a file`}
+                        <li className="my-2 flex flex-nowrap">
+                            <Icon name="checkmark-circle" className="flex-item-noshrink mr-1 mt-0.5" />
+                            <span className="flex-item-fluid">{c('Onboarding Info').t`Upload a file`}</span>
                         </li>
-                        <li className="my-2">
-                            <Icon name="checkmark-circle" /> {c('Onboarding Info').t`Create a share link`}
+                        <li className="my-2 flex flex-nowrap">
+                            <Icon name="checkmark-circle" className="flex-item-noshrink mr-1 mt-0.5" />{' '}
+                            <span className="flex-item-fluid">{c('Onboarding Info').t`Create a share link`}</span>
                         </li>
-                        <li className="my-2">
-                            <Icon name="checkmark-circle" /> {c('Onboarding Info').t`Set a recovery method`}
+                        <li className="my-2 flex flex-nowrap">
+                            <Icon name="checkmark-circle" className="flex-item-noshrink mr-1 mt-0.5" />{' '}
+                            <span className="flex-item-fluid">{c('Onboarding Info').t`Set a recovery method`}</span>
                         </li>
                     </ul>
                 </div>
