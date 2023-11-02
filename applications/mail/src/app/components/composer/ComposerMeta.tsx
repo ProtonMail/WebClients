@@ -46,7 +46,7 @@ const ComposerMeta = ({
 
     return (
         <div className="composer-meta flex-item-noshrink ml-2 mr-5 pl-5 pr-1">
-            <div className="flex flex-row flex-nowrap on-mobile-flex-column flex-align-items-center w100">
+            <div className="flex flex-row flex-nowrap on-mobile-flex-column flex-align-items-center w-full">
                 <Label
                     htmlFor={`from-${uid}`}
                     className={clsx(['composer-meta-label pt-0 text-semibold', disabled && 'placeholder'])}

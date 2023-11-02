@@ -141,7 +141,7 @@ const Code = ({ children }: CodeProps) => (
 export const Margin = () => {
     return (
         <div
-            className="border rounded w100 relative flex flex-nowrap gap-2 scroll-if-needed flex-align-items-center flex-justify-space-between"
+            className="border rounded w-full relative flex flex-nowrap gap-2 scroll-if-needed flex-align-items-center flex-justify-space-between"
             style={{ height: '10rem' }}
         >
             {marginSizes.map((size) => (
@@ -162,7 +162,7 @@ export const Margin = () => {
 export const MarginTop = () => {
     return (
         <div
-            className="border rounded w100 relative flex flex-nowrap scroll-if-needed flex-align-items-start flex-justify-space-between text-2xs"
+            className="border rounded w-full relative flex flex-nowrap scroll-if-needed flex-align-items-start flex-justify-space-between text-2xs"
             style={{ height: '8rem' }}
         >
             {marginSizes.map((size) => (
@@ -179,7 +179,7 @@ export const MarginTop = () => {
 export const MarginBottom = () => {
     return (
         <div
-            className="border rounded overflow-hidden w100 relative flex flex-nowrap scroll-if-needed flex-align-items-end flex-justify-space-between text-2xs"
+            className="border rounded overflow-hidden w-full relative flex flex-nowrap scroll-if-needed flex-align-items-end flex-justify-space-between text-2xs"
             style={{ height: '8rem' }}
         >
             {marginSizes.map((size) => (
@@ -195,7 +195,7 @@ export const MarginBottom = () => {
 
 export const MarginY = () => {
     return (
-        <div className="border rounded overflow-hidden w100 relative flex flex-nowrap scroll-if-needed flex-align-items-center flex-justify-space-between text-2xs">
+        <div className="border rounded overflow-hidden w-full relative flex flex-nowrap scroll-if-needed flex-align-items-center flex-justify-space-between text-2xs">
             {marginSizes.map((size) => (
                 <div
                     key={size.class}
@@ -213,7 +213,7 @@ export const MarginY = () => {
 
 export const MarginLeft = () => {
     return (
-        <div className="border rounded overflow-hidden w100 relative flex flex-column flex-nowrap flex-align-items-start gap-2 text-2xs">
+        <div className="border rounded overflow-hidden w-full relative flex flex-column flex-nowrap flex-align-items-start gap-2 text-2xs">
             {marginSizes.map((size) => (
                 <div key={size.class} className="bg-strong flex-item-noshrink" style={{ display: 'flow-root' }}>
                     <div className={`${demoItemClasses} ml-${size.class}`} style={{ width: '5rem', height: '1.5rem' }}>
@@ -227,7 +227,7 @@ export const MarginLeft = () => {
 
 export const MarginRight = () => {
     return (
-        <div className="border rounded overflow-hidden w100 relative flex flex-column flex-nowrap flex-align-items-end gap-2 text-2xs">
+        <div className="border rounded overflow-hidden w-full relative flex flex-column flex-nowrap flex-align-items-end gap-2 text-2xs">
             {marginSizes.map((size) => (
                 <div key={size.class} className="bg-strong flex-item-noshrink" style={{ display: 'flow-root' }}>
                     <div className={`${demoItemClasses} mr-${size.class}`} style={{ width: '5rem', height: '1.5rem' }}>
@@ -241,7 +241,7 @@ export const MarginRight = () => {
 
 export const MarginX = () => {
     return (
-        <div className="border rounded overflow-hidden w100 relative flex flex-column flex-nowrap flex-align-items-center gap-2 text-2xs">
+        <div className="border rounded overflow-hidden w-full relative flex flex-column flex-nowrap flex-align-items-center gap-2 text-2xs">
             {marginSizes.map((size) => (
                 <div
                     key={size.class}
@@ -259,7 +259,7 @@ export const MarginX = () => {
 
 export const Responsive = () => {
     return (
-        <div className="border rounded overflow-hidden w100 relative flex text-2xs">
+        <div className="border rounded overflow-hidden w-full relative flex text-2xs">
             <div className="bg-strong rounded-sm" style={{ display: 'flow-root' }}>
                 <div
                     className={`${demoItemClasses} ml-4 sm:ml-8 md:ml-10 lg:ml-12 xl:ml-14`}
@@ -482,7 +482,7 @@ export const Sandbox = () => {
             classes.includes('mt-auto') ||
             classes.includes('mb-auto')
         ) {
-            return 'h100';
+            return 'h-full';
         } else if (classes.includes('auto')) {
             return '';
         } else {
@@ -503,7 +503,7 @@ export const Sandbox = () => {
     return (
         <>
             <div className="flex flex-justify-space-between mb-7">
-                <div className="w25">
+                <div className="w-1/4">
                     {selectedMargin.map(({ id, checked, value }) => (
                         <Label htmlFor={id} key={id} className="flex flex-nowrap flex-align-items-center gap-4 mb-4">
                             <Checkbox
@@ -514,9 +514,9 @@ export const Sandbox = () => {
                                 }}
                             />
 
-                            <span className="text-semibold w10">{id}</span>
+                            <span className="text-semibold w-1/10">{id}</span>
 
-                            <span className="w10 flex flex-item-noshrink flex-justify-center">
+                            <span className="w-1/10 flex flex-item-noshrink flex-justify-center">
                                 <span className="bg-primary rounded-sm flex-item-noshrink flex-item-nogrow">
                                     <span className={`${id}0-25 block rounded-sm bg-primary`}>
                                         <span
@@ -535,7 +535,7 @@ export const Sandbox = () => {
                         </Label>
                     ))}
                 </div>
-                <div className="border rounded w60 relative">
+                <div className="border rounded w-4/6 relative">
                     {containerClasses}
                     <div
                         className={`${containerClasses(assembleClasses(selectedMargin))} bg-strong rounded-sm`}

@@ -18,7 +18,7 @@ interface Props {
 }
 
 const InviteLocaleSelector = ({
-    className = 'field w100',
+    className = 'field w-full',
     loading = false,
     disabled = false,
     locale,

@@ -31,7 +31,7 @@ const TextAreaTwo = (props: TextAreaTwoProps, ref: Ref<HTMLTextAreaElement>) => 
 
     const className = clsx([
         classNameProp,
-        'w100 textarea',
+        'w-full textarea',
         Boolean(unstyled) && 'unstyled',
         Boolean(error) && 'error',
     ]);

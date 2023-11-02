@@ -49,7 +49,7 @@ const ContactViewAdrs = ({ vCardContact, isSignatureVerified = false }: Props) =
                         type={adr.params?.type}
                         isSignatureVerified={isSignatureVerified}
                     >
-                        <span className="w100 flex">
+                        <span className="w-full flex">
                             <span className="mr-2 flex-item-fluid text-ellipsis">
                                 {lines.map((line, index) => (
                                     // No better key here and should not change in time anyway

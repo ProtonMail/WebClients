@@ -42,7 +42,7 @@ const MailComposerModeModal = (props: ModalProps) => {
                         composerMode={ComposerMode}
                         onChange={(value) => withLoading(handleChangeComposerMode(value))}
                         loading={loading}
-                        liClassName="w100"
+                        liClassName="w-full"
                         className="layoutCards-two-per-row"
                     />
                 </div>

@@ -16,7 +16,7 @@ const EmptyFolderUploadButton = () => {
     return (
         <>
             <input multiple type="file" ref={fileInput} className="hidden" onChange={handleFileChange} />
-            <SidebarPrimaryButton className="w13e" onClick={handleClick}>
+            <SidebarPrimaryButton className="w-custom" style={{ '--w-custom': '13em' }} onClick={handleClick}>
                 <Icon name="arrow-up-line" className="mr-2" />
                 {c('Action').t`Upload files`}
             </SidebarPrimaryButton>

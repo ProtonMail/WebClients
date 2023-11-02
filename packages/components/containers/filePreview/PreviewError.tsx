@@ -13,8 +13,13 @@ export default function PreviewError({ error }: Props) {
     const { isNarrow } = useActiveBreakpoint();
 
     return (
-        <div className="absolute-center text-center w100 px-4">
-            <img className="mb-4 w80p" src={corruptedPreviewSvg} alt={c('Info').t`Preview failed to be loaded`} />
+        <div className="absolute-center text-center w-full px-4">
+            <img
+                className="mb-4 w-custom"
+                style={{ '--w-custom': '5rem' }}
+                src={corruptedPreviewSvg}
+                alt={c('Info').t`Preview failed to be loaded`}
+            />
 
             <h2 className={clsx(['p-1 text-bold', isNarrow && 'h3'])}>{c('Info').t`Preview failed to be loaded`}</h2>
             <p className="color-weak">{error}</p>

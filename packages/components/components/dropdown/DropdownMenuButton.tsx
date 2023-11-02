@@ -34,7 +34,7 @@ const DropdownMenuButton = forwardRef<HTMLButtonElement, Props>(
                 type="button"
                 disabled={disabled || loading}
                 className={clsx([
-                    'dropdown-item-button w100 px-4 py-2',
+                    'dropdown-item-button w-full px-4 py-2',
                     isSelected && 'dropdown-item--is-selected',
                     className,
                 ])}

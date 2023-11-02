@@ -104,7 +104,7 @@ const DriveWindow = ({ children }: Props) => {
                 drawerVisibilityButton={canShowDrawer ? <DrawerVisibilityButton /> : undefined}
                 mainBordered={canShowDrawer && !!showDrawerSidebar}
             >
-                <div className="flex flex-column flex-nowrap w100">
+                <div className="flex flex-column flex-nowrap w-full">
                     <AppErrorBoundary>{children}</AppErrorBoundary>
                 </div>
             </PrivateMainArea>

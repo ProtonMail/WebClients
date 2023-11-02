@@ -26,7 +26,11 @@ const SettingsParagraph = ({
     ) : null;
 
     return (
-        <p className={clsx(['color-weak mt-0', large ? 'max-w57e' : 'max-w43e', className])} {...rest}>
+        <p
+            className={clsx(['color-weak mt-0 max-w-custom', className])}
+            style={{ '--max-w-custom': large ? '57em' : '43em' }}
+            {...rest}
+        >
             {children}
             {learnMoreElement}
         </p>

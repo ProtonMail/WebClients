@@ -20,7 +20,7 @@ const UpsellModal = ({ title, img, info, features, footer, ...rest }: Props) => 
                 <div className="flex flex-nowrap">
                     <div className="flex-item-fluid no-mobile">
                         {cloneElement(img, {
-                            className: 'h100',
+                            className: 'h-full',
                             style: {
                                 objectFit: 'cover',
                             },

@@ -67,7 +67,8 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
                 header: c('Header').t`App version`,
             },
             {
-                className: isAuthLogAdvanced ? 'w-1/6' : 'bg-weak w5',
+                className: isAuthLogAdvanced ? 'w-1/6' : 'bg-weak w-custom',
+                style: { '--w-custom': '5%' },
                 header: 'IP',
             },
             {
@@ -79,7 +80,7 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
                 className:
                     isAuthLogAdvanced && isProtonSentinelEnabled
                         ? `${isUnavailableClass()}`
-                        : `${isUnavailableClass()} w10`,
+                        : `${isUnavailableClass()} w-1/10`,
                 header: 'ISP',
                 info: c('Tooltip').t`The Internet Service Provider of the IP address`,
             },

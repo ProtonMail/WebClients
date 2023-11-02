@@ -32,7 +32,7 @@ const ComposerExpirationTime = ({ message, onEditExpiration }: Props) => {
         >
             <Icon name="hourglass" className="flex-item-noshrink my-auto" />
             <span className="flex-item-fluid">{expireOnMessage}</span>
-            <span className="on-mobile-w100 flex-item-noshrink flex-align-items-start flex">
+            <span className="w-full md:w-auto flex-item-noshrink flex-align-items-start flex">
                 <Button
                     size="small"
                     shape="outline"

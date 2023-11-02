@@ -21,12 +21,12 @@ const ContactImportCsvTableHeader = ({
     return (
         <thead {...rest}>
             <tr>
-                <TableCell type="header" className="w15 text-center">
+                <TableCell type="header" className="w-1/6 text-center">
                     {c('TableHeader').t`Import`}
                 </TableCell>
                 <TableCell type="header" className="text-center">{c('TableHeader').t`CSV field`}</TableCell>
                 <TableCell type="header" className="text-center">{c('TableHeader').t`vCard field`}</TableCell>
-                <TableCell type="header" className="w30 text-center">
+                <TableCell type="header" className="w-3/10 text-center">
                     <div className="inline-flex">
                         <span className="flex-item-centered-vert mr-2">{c('TableHeader').t`Values`}</span>
                         <span className="flex flex-nowrap">

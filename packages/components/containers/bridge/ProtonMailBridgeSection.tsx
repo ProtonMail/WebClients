@@ -140,7 +140,7 @@ const ProtonMailBridgeSection = () => {
                             as="a"
                             color="norm"
                             shape="solid"
-                            className="w100 mt-auto"
+                            className="w-full mt-auto"
                             href={id === 'linux' ? linuxLink : downloads[0]}
                             target="_self"
                         >

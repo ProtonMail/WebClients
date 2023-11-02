@@ -15,7 +15,7 @@ const Token = ({ index, value, onRemove }: TokenProps) => {
     return (
         <Fragment key={`${value}-${index}`}>
             {index > 0 && <span className="mx-2 text-sm mb-2">{c('email_forwarding_2023: Label').t`or`}</span>}
-            <span className="inline-flex max-w100 flex-nowrap flex-row flex-align-items-center mb-2 condition-token">
+            <span className="inline-flex max-w-full flex-nowrap flex-row flex-align-items-center mb-2 condition-token">
                 <small className="text-ellipsis text-no-decoration" title={value}>
                     {value}
                 </small>

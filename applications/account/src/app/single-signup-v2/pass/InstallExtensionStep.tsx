@@ -41,7 +41,7 @@ const getBrowserTitle = (appName: string, browserName: string) => {
 
 const getButton = (link: string, children: ReactNode, onClick: () => void) => {
     return (
-        <ButtonLike color="norm" size="large" as={Href} href={link} className="w100 mt-6" onClick={onClick}>
+        <ButtonLike color="norm" size="large" as={Href} href={link} className="w-full mt-6" onClick={onClick}>
             {children}
         </ButtonLike>
     );

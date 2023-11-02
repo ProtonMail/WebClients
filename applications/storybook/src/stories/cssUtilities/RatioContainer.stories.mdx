@@ -9,13 +9,13 @@ import { getTitle } from '../../helpers/title';
 For some components/special cases (responsive <code>iframe</code>, making a responsive square shape, responsive typography with SVG, etc.), we have to use the “padding-hack” technique, which is basically:
 
 <div class="flex flex-justify-space-between mb-8 on-mobile-flex-column">
-    <div class="w49 flex-align-self-center">
+    <div class="w-1/2 flex-align-self-center">
         <ul>
             <li>A container uses padding-hack to get the desired ratio</li>
             <li>And content inside is positioned in absolute and takes all available space.</li>
         </ul>
     </div>
-    <div class="w49">
+    <div class="w-1/2">
         <Source
             language="html"
             light
@@ -36,7 +36,7 @@ For some components/special cases (responsive <code>iframe</code>, making a resp
 <br />
 
 <div class="flex flex-justify-space-between flex-align-items-center mb-8">
-  <div class="border w30">
+  <div class="border w-1/3">
     <div class="ratio-container-square">
       <div class="inner-ratio-container p-4">
         Some content in a square box with <code>ratio-container-square</code> class.
@@ -44,7 +44,7 @@ For some components/special cases (responsive <code>iframe</code>, making a resp
     </div>
   </div>
 
-  <div class="border w30">
+  <div class="border w-1/3">
     <div class="ratio-container-16-9">
       <div class="inner-ratio-container p-4">
         Some content in a 16/9 ratio box with <code>ratio-container-16-9</code> class.

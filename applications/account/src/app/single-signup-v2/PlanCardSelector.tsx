@@ -118,14 +118,15 @@ const PlanCardView = ({
             className={clsx(
                 'flex-item-fluid pricing-box-content-cycle mx-auto lg:mx-0',
                 highlightPrice && 'pricing-box-content-cycle--highlighted',
-                hasMaxWidth && 'max-w24e'
+                hasMaxWidth && 'max-w-custom'
             )}
+            style={ hasMaxWidth ? { '--max-w-custom': '24em' } : undefined }
         >
             {above}
             <button
                 type="button"
                 className={clsx(
-                    'card-plan rounded-4xl border relative w100',
+                    'card-plan rounded-4xl border relative w-full',
                     selected && 'border-primary border-2',
                     !onSelect && 'cursor-default'
                 )}
@@ -152,13 +153,13 @@ const PlanCardView = ({
                 )}
                 <div className="py-6 px-4">
                     <div className="flex flex-align-items-center flex-column">
-                        <div className="w100 flex-no-min-children flex-row flex-nowrap gap-1">
+                        <div className="w-full flex-no-min-children flex-row flex-nowrap gap-1">
                             <strong className="text-2xl text-ellipsis flex-item-fluid text-center" id={`${cycle}-text`}>
                                 {text}
                             </strong>
                         </div>
 
-                        <div className="mt-4 mb-6 text-center w100">
+                        <div className="mt-4 mb-6 text-center w-full">
                             <div
                                 id={`${cycle}-price`}
                                 className={clsx(

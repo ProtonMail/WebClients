@@ -57,7 +57,7 @@ const VideoPreview = ({ contents, mimeType, onDownload }: Props) => {
         );
     }
     return (
-        <div ref={containerRef} className="flex w100 h100">
+        <div ref={containerRef} className="flex w-full h-full">
             <div className="m-auto">
                 {/* eslint-disable-next-line */}
                 <video

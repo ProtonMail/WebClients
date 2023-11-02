@@ -27,7 +27,7 @@ const ScheduleSendSpotlight = ({ children, showSpotlight, onDisplayed, anchorRef
             content={
                 <div className="flex flex-nowrap my-2">
                     <div className="flex-item-noshrink mr-4">
-                        <img src={scheduledImg} className="w4e" alt="" />
+                        <img src={scheduledImg} className="w-custom" style={{ '--w-custom': '4em' }} alt="" />
                     </div>
                     <div>
                         <p className="mt-0 mb-2 text-bold" data-testid="composer:schedule-send:spotlight-title">{c(

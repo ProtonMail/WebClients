@@ -13,7 +13,7 @@ const DrawerAllSettingsView = () => {
             path="/"
             app={APP_NAME}
             data-testid="drawer-quick-settings:all-settings-button"
-            className="w100"
+            className="w-full"
             color="norm"
             shape="outline"
         >{c('Title').t`All settings`}</ButtonLike>

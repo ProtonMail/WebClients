@@ -43,7 +43,7 @@ const LoaderPage = ({ documentTitle = '', text, loaderClassName = '' }: Props) =
 
     return (
         <div
-            className="h100"
+            className="h-full"
             // Ignore drag & drop during loading to avoid issue when user drops
             // file too soon before the app is ready causing stop of the app
             // load and showing the file instead.
@@ -52,12 +52,13 @@ const LoaderPage = ({ documentTitle = '', text, loaderClassName = '' }: Props) =
             onDragEnd={preventDefaultEvent}
             onDrop={preventDefaultEvent}
         >
-            <div className={clsx(['absolute-center text-center', isDrawerApp && 'w90'])}>
+            <div className={clsx(['absolute-center text-center', isDrawerApp && 'w-9/10'])}>
                 {isDrawerApp && <CircleLoader className="m-auto color-primary" size="medium" />}
                 {!isIframe && (
                     <div>
                         <img
-                            className={clsx(['w10e', loaderClassName])}
+                            className={clsx(['w-custom', loaderClassName])}
+                            style={{ '--w-custom': '10em' }}
                             src={protonSpinner}
                             aria-hidden="true"
                             alt=""

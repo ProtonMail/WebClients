@@ -39,7 +39,12 @@ const LayoutLogos = ({ size, className }: AppLogosProps) => {
                 },
             ].map(({ title, logo }) => {
                 return (
-                    <div key={title} className="inline-block on-tiny-mobile-max-w50p" title={title}>
+                    <div
+                        key={title}
+                        className="inline-block max-w-custom sm:max-w-auto"
+                        style={{ '--max-w-custom': '3.125rem' }}
+                        title={title}
+                    >
                         {logo}
                     </div>
                 );

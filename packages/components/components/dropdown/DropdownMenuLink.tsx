@@ -18,7 +18,7 @@ const DropdownMenuLink = <E extends ElementType = typeof defaultElement>({
 }: DropdownMenuLinkProps<E>) => {
     const Element: ElementType = as || defaultElement;
     return (
-        <Element {...rest} className={clsx(['dropdown-item-link w100 px-4 py-2 block text-no-decoration', className])}>
+        <Element {...rest} className={clsx(['dropdown-item-link w-full px-4 py-2 block text-no-decoration', className])}>
             {children}
         </Element>
     );

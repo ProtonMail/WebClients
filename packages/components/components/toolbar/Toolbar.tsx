@@ -15,7 +15,7 @@ const Toolbar = ({ children, className, ...rest }: Props) => (
         aria-label={c('Label').t`Toolbar`}
         {...rest}
     >
-        <div className="flex flex-nowrap toolbar-inner w100">{children}</div>
+        <div className="flex flex-nowrap toolbar-inner w-full">{children}</div>
     </nav>
 );
 
