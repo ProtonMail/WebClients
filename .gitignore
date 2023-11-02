@@ -57,6 +57,13 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+!.yarn/patches
+
 # dotenv environment variables file
 .env
 .env.test
