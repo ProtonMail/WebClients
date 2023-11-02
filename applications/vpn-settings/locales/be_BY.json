@@ -266,6 +266,9 @@
       "Invite user": [
         "Запрасіць карыстальніка"
       ],
+      "Keep my Plus subscription": [
+        "Пакінуць падпіску Plus"
+      ],
       "Let's talk": [
         "Давайце паразмаўляем"
       ],
@@ -2647,10 +2650,10 @@
         "яшчэ ${ remainingAddresses.length }"
       ],
       "${ remainingAddresses.length } more address": [
-        "Яшчэ ${ remainingAddresses.length } адрас",
-        "Яшчэ ${ remainingAddresses.length } адрасы",
-        "Яшчэ ${ remainingAddresses.length } адрасоў",
-        "Яшчэ ${ remainingAddresses.length } адрасоў"
+        "яшчэ ${ remainingAddresses.length } адрас",
+        "яшчэ ${ remainingAddresses.length } адрасы",
+        "яшчэ ${ remainingAddresses.length } адрасоў",
+        "яшчэ ${ remainingAddresses.length } адрасоў"
       ],
       "${ storage } storage": [
         "${ storage } сховішча"
@@ -3006,6 +3009,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Калі вы ўпэўнены, што гэта памылка, напішыце нам на адрас ${ contactLink }."
       ],
+      "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Калі вы скасуеце, ваша падпіска ${ planTitle } не будзе падоўжана пасля завяршэння тэрміну яе дзеяння ${ expiryDate }."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Калі паведамлення няма ў папцы з уваходнымі лістамі, то магчыма, што яно трапіла ў папку са спамам."
       ],
@@ -3181,13 +3187,13 @@
         "Плацяжы абаронены шыфраваннем TLS і швейцарскімі законамі аб прыватнасці."
       ],
       "per month": [
-        "у месяц"
+        "ў месяц"
       ],
       "per month, billed every 12 months": [
-        "у месяц (аплачваецца кожныя 12 месяцаў)"
+        "ў месяц (кожныя 12 месяцаў)"
       ],
       "per month, billed every 24 months": [
-        "у месяц (аплачваецца кожныя 24 месяцы)"
+        "ў месяц (кожныя 24 месяцы)"
       ],
       "Plan upgrade required": [
         "Патрабуецца паляпшэнне тарыфнага плана"
@@ -3761,6 +3767,12 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Пасля ўваходу ў ${ destination } вы будзеце пералакіраваны"
+      ],
+      "You will lose access to Plus features on this date.": [
+        "Вы страціце доступ да функцый Plus пасля наступлення гэтай даты."
+      ],
+      "You will lose access to Plus servers and features on this date.": [
+        "Вы страціце доступ да сервераў і функцыі Plus пасля наступлення гэтай даты."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Вам будзе неабходны адрас ${ BRAND_NAME } для выкарыстання ${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME }"
@@ -4610,12 +4622,6 @@
         "${ n } календары",
         "${ n } календароў",
         "${ n } календары"
-      ],
-      "${ n } calendar per user": [
-        "${ n } каляндар на карыстальніка",
-        "${ n } календары на карыстальніка",
-        "${ n } календароў на карыстальніка",
-        "${ n } календары на карыстальніка"
       ],
       "${ n } custom email domain": [
         "${ n } карыстальніцкі дамен электроннай пошты",
@@ -5602,6 +5608,9 @@
       ],
       "Select a reason": [
         "Выберыце прычыну"
+      ],
+      "Thomas Anderson": [
+        "Янка Купала"
       ]
     },
     "Placeholder for custom invoice text": {
