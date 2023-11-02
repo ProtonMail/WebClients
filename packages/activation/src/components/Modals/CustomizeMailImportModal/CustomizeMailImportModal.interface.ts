@@ -15,11 +15,11 @@ export const SYSTEM_FOLDERS = Object.values(MailImportDestinationFolder) as stri
 export const FOLDER_ICONS = {
     [MailImportDestinationFolder.INBOX]: 'inbox',
     [MailImportDestinationFolder.ALL_DRAFTS]: 'file-lines',
-    [MailImportDestinationFolder.ALL_SENT]: 'paper-plane',
+    [MailImportDestinationFolder.ALL_SENT]: 'paper-plane-horizontal',
     [MailImportDestinationFolder.TRASH]: 'trash',
     [MailImportDestinationFolder.SPAM]: 'fire',
     [MailImportDestinationFolder.ARCHIVE]: 'archive-box',
-    [MailImportDestinationFolder.SENT]: 'paper-plane',
+    [MailImportDestinationFolder.SENT]: 'paper-plane-horizontal',
     [MailImportDestinationFolder.DRAFTS]: 'file-lines',
     [MailImportDestinationFolder.STARRED]: 'star',
     [MailImportDestinationFolder.ALL_MAIL]: 'envelopes',

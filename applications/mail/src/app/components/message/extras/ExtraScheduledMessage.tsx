@@ -124,7 +124,7 @@ const ExtraScheduledMessage = ({ message }: Props) => {
             className="bg-info rounded border border-info pr-2 md:pr-1 pb-2 md:pb-1 pt-1 pl-2 mb-3 flex flex-nowrap"
             data-testid="message:schedule-banner"
         >
-            <Icon name="clock-paper-plane" className="mt-1 ml-0.5 flex-item-noshrink" />
+            <Icon name="paper-plane-horizontal-clock" className="mt-1 ml-0.5 flex-item-noshrink" />
             <span className={clsx(['px-2 flex-item-fluid mt-1', isScheduleSentShortly && 'mb-1'])}>
                 {getScheduleBannerMessage()}
             </span>
