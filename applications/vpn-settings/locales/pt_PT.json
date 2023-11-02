@@ -299,6 +299,9 @@
       "Open navigation": [
         "Abrir navegação"
       ],
+      "Or": [
+        "Ou"
+      ],
       "Organization": [
         "Organização"
       ],
@@ -571,6 +574,9 @@
       ],
       "Disallow unsigned mail": [
         "Não permitir e-mails sem assinatura"
+      ],
+      "Edit": [
+        "Editar"
       ],
       "Edit address": [
         "Editar endereço"
@@ -2366,6 +2372,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -4434,10 +4443,6 @@
         "${ n } calendário",
         "${ n } calendários"
       ],
-      "${ n } calendar per user": [
-        "${ n } calendário por utilizador",
-        "${ n } calendários por utilizador"
-      ],
       "${ n } custom email domain": [
         "${ n } domínio de e-mail personalizado",
         "${ n } domínios de e-mail personalizados"
@@ -5641,6 +5646,11 @@
         "Reposição da palavra-passe pedida"
       ]
     },
+    "session_recovery:initiation:action": {
+      "Got it": [
+        "Entendido"
+      ]
+    },
     "session_recovery:initiation:title": {
       "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
         "Pode redefinir a sua palavra-passe em ${ gracePeriodHoursRemaining } hora.",
@@ -5681,6 +5691,11 @@
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
         "Terminar sessão sem repor a palavra-passe?"
+      ]
+    },
+    "session_recovery:status:info": {
+      "Available": [
+        "Disponível"
       ]
     },
     "Shared calendar; Info about calendar owner": {
