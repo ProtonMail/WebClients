@@ -129,7 +129,7 @@ export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
                       value: SCHEDULED,
                       text: getLabelIDsToI18N()[SCHEDULED],
                       url: STANDARD_FOLDERS[SCHEDULED].to,
-                      icon: 'clock-paper-plane' as const,
+                      icon: 'paper-plane-horizontal-clock' as const,
                   },
               ]
             : []),
@@ -137,7 +137,7 @@ export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
             value: SENT_TYPE,
             text: SENT_TYPE === ALL_SENT ? getLabelIDsToI18N()[ALL_SENT] : getLabelIDsToI18N()[SENT],
             url: '/sent',
-            icon: 'paper-plane',
+            icon: 'paper-plane-horizontal',
         },
         { value: STARRED, text: getLabelIDsToI18N()[STARRED], url: '/starred', icon: 'star' },
         {

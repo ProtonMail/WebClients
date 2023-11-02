@@ -420,7 +420,7 @@ const MailboxContainer = ({
                 shortcuts: ['G', 'D'],
             },
             {
-                icon: 'paper-plane',
+                icon: 'paper-plane-horizontal',
                 label: c('Commander action').t`Go to Sent`,
                 value: 'sent',
                 action: () =>
