@@ -198,7 +198,7 @@ export const getDefaultSystemFolders = (
     },
     {
         labelID: MAILBOX_LABEL_IDS.SCHEDULED,
-        icon: 'clock-paper-plane',
+        icon: 'paper-plane-horizontal-clock',
         text: c('Link').t`Scheduled`,
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SCHEDULED],
         visible: !!showScheduled,
@@ -217,7 +217,7 @@ export const getDefaultSystemFolders = (
     {
         labelID: MAILBOX_LABEL_IDS.ALL_SENT,
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALL_SENT],
-        icon: 'paper-plane',
+        icon: 'paper-plane-horizontal',
         text: c('Link').t`Sent`,
         shortcutText: '[G] [E]',
         visible: !!(showMoved & SHOW_MOVED.SENT),
@@ -227,7 +227,7 @@ export const getDefaultSystemFolders = (
     {
         labelID: MAILBOX_LABEL_IDS.SENT,
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SENT],
-        icon: 'paper-plane',
+        icon: 'paper-plane-horizontal',
         text: c('Link').t`Sent`,
         shortcutText: '[G] [E]',
         visible: !(showMoved & SHOW_MOVED.SENT),

@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { useUser } from '@proton/components/hooks';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import plusLogo from '@proton/styles/assets/img/illustrations/mail-plus-logo.svg';
 import clsx from '@proton/utils/clsx';
 
@@ -39,7 +40,7 @@ const SnoozeButton = ({ onClick, duration, leftText, rightText, showUpsellButton
 
         {showUpsellButton && (
             <span>
-                <img src={plusLogo} alt="Protonmail plus logo" />
+                <img src={plusLogo} alt={c('Info').t`Upgrade to ${MAIL_APP_NAME} Plus to unlock`} />
             </span>
         )}
     </Button>

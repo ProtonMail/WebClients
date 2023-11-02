@@ -2,6 +2,7 @@ import { render } from '@testing-library/react';
 import { nextFriday, nextMonday, nextSaturday, nextSunday, nextThursday, nextTuesday, nextWednesday } from 'date-fns';
 
 import { useUser } from '@proton/components/hooks';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import SnoozeDurationSelection from './SnoozeDurationSelection';
 
@@ -109,13 +110,13 @@ describe('SnoozeDurationSelection', () => {
 
     it('should render the upsell button for free users', () => {
         const { getByAltText } = renderComponent(false);
-        expect(getByAltText('Protonmail plus logo'));
+        expect(getByAltText(`Upgrade to ${MAIL_APP_NAME} Plus to unlock`));
     });
 
     it('should not render the upsell button for free users', () => {
         useUserMock.mockImplementation(() => [{ hasPaidMail: true }, jest.fn]);
 
         const { queryByAltText } = renderComponent(false);
-        expect(queryByAltText('Protonmail plus logo')).toBeNull();
+        expect(queryByAltText(`Upgrade to ${MAIL_APP_NAME} Plus to unlock`)).toBeNull();
     });
 });
