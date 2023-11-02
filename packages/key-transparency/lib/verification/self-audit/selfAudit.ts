@@ -4,8 +4,8 @@ import {
     Address,
     Api,
     DecryptedAddressKey,
-    DecryptedKey,
     KTLocalStorageAPI,
+    KeyPair,
     SaveSKLToLS,
     UploadMissingSKL,
 } from '@proton/shared/lib/interfaces';
@@ -23,7 +23,7 @@ export const selfAudit = async (
     userID: string,
     api: Api,
     addresses: Address[],
-    userKeys: DecryptedKey[],
+    userKeys: KeyPair[],
     ktLSAPI: KTLocalStorageAPI,
     saveSKLToLS: SaveSKLToLS,
     epoch: Epoch,
