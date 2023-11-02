@@ -1,5 +1,5 @@
 import { FeatureCode } from '@proton/components/containers/features';
-import { COUPON_CODES, CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 
 import { getUnlimitedVPNFeatures, getVPNFeatures } from '../../helpers/offerCopies';
 import { OfferConfig } from '../../interface';
@@ -19,7 +19,7 @@ const config: OfferConfig = {
     deals: [
         {
             ref: 'bf_23_vpn-free-modal-v30p',
-            planName: PLANS.VPN,
+            dealName: PLAN_NAMES[PLANS.VPN],
             planIDs: {
                 [PLANS.VPN]: 1,
             },
@@ -32,7 +32,7 @@ const config: OfferConfig = {
         },
         {
             ref: 'bf_23_vpn-free-modal-v15p',
-            planName: PLANS.VPN,
+            dealName: PLAN_NAMES[PLANS.VPN],
             planIDs: {
                 [PLANS.VPN]: 1,
             },
@@ -45,7 +45,7 @@ const config: OfferConfig = {
         },
         {
             ref: 'bf_23_vpn-free-modal-v1',
-            planName: PLANS.VPN,
+            dealName: PLAN_NAMES[PLANS.VPN],
             planIDs: {
                 [PLANS.VPN]: 1,
             },
@@ -57,7 +57,7 @@ const config: OfferConfig = {
         },
         {
             ref: 'bf_23_vpn-free-modal-u12',
-            planName: PLANS.BUNDLE,
+            dealName: PLAN_NAMES[PLANS.BUNDLE],
             planIDs: {
                 [PLANS.BUNDLE]: 1,
             },

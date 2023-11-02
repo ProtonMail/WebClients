@@ -9,8 +9,9 @@ interface Props {
 }
 
 const getOfferRedirectionParams = ({ offer, deal, currency }: Props): URLSearchParams => {
-    const { cycle, couponCode, planName, ref } = deal;
+    const { cycle, couponCode, ref, planIDs } = deal;
     const { ID, enableCycleSelector } = offer;
+    const [planName] = Object.keys(planIDs);
 
     const params = new URLSearchParams();
     params.set('cycle', `${cycle}`);
