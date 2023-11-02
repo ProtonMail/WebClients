@@ -3,19 +3,18 @@ import clsx from '@proton/utils/clsx';
 interface Props extends React.HTMLProps<HTMLDivElement> {
     center?: boolean;
     disableShadow?: boolean;
-    maxWidth?: string;
 }
 
-const Main = ({ children, className, center = true, maxWidth = 'mw30r', disableShadow, ...rest }: Props) => {
+const Main = ({ children, className, center = true, disableShadow, ...rest }: Props) => {
     return (
         <div
             className={clsx(
-                'ui-standard w100 relative sign-layout shadow-color-primary px-6 pt-1 pb-6 sm:p-11 hardware-accelerated',
-                center && 'max-w100 mx-auto',
-                disableShadow ? '' : 'sm:shadow-lifted',
-                maxWidth,
+                'ui-standard w-full max-w-custom relative sign-layout px-6 pt-1 pb-6 sm:p-11 hardware-accelerated',
+                center && 'mx-auto',
+                disableShadow ? '' : 'sm:shadow-lifted shadow-color-primary',
                 className
             )}
+            style={{ '--max-w-custom': '30rem' }}
             {...rest}
         >
             {children}

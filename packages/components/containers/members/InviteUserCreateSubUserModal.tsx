@@ -37,7 +37,7 @@ const AddUserButton = ({ onClick }: ButtonProps) => {
                 title={c('familyOffer_2023:Family plan')
                     .t`You need to configure a custom domain before creating a new user.`}
             >
-                <div className="w100">
+                <div className="w-full">
                     <Button disabled fullWidth>{c('familyOffer_2023:Action').t`Create a new user`}</Button>
                 </div>
             </Tooltip>
@@ -58,7 +58,7 @@ const InviteProtonUserButton = ({ onClick, organization }: ButtonProps & InviteB
                 title={c('familyOffer_2023:Family plan')
                     .t`You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.`}
             >
-                <div className="w100">
+                <div className="w-full">
                     <Button disabled fullWidth>{c('familyOffer_2023:Action')
                         .t`Invite an existing ${BRAND_NAME} user`}</Button>
                 </div>

@@ -654,7 +654,8 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                                 groupsWithContactsMap={groupsWithContactsMap}
                                 recipients={recipients}
                                 onAddRecipients={handleAddRecipients}
-                                className="min-w5e unstyled"
+                                className="min-w-custom unstyled"
+                                style={{ '--min-w-custom': '5em' }}
                                 inputClassName={clsx([
                                     !totalRecipients && 'my-0.5',
                                     !!totalRecipients && 'p-0 rounded-none',

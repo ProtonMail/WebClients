@@ -323,7 +323,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                     {list.map(({ ID = '', Name = '', Color = '' }) => (
                         <li
                             key={ID}
-                            className="dropdown-item dropdown-item-button relative cursor-pointer w100 flex flex-nowrap flex-align-items-center py-2 px-4"
+                            className="dropdown-item dropdown-item-button relative cursor-pointer w-full flex flex-nowrap flex-align-items-center py-2 px-4"
                         >
                             <Checkbox
                                 className="flex-item-noshrink mr-2"
@@ -353,15 +353,15 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                         </li>
                     ))}
                     {list.length === 0 && !search && (
-                        <li key="empty" className="dropdown-item w100 py-2 px-4">
+                        <li key="empty" className="dropdown-item w-full py-2 px-4">
                             {c('Info').t`No label found`}
                         </li>
                     )}
                     {list.length === 0 && search && (
-                        <span className="flex w100">
+                        <span className="flex w-full">
                             <Button
                                 key="create-new-label"
-                                className="w100 mx-8 text-ellipsis"
+                                className="w-full mx-8 text-ellipsis"
                                 data-testid="label-dropdown:create-label-option"
                                 title={createLabelButtonText}
                                 onClick={handleCreate}
@@ -398,7 +398,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
             </div>
             <div className="m-4 flex-item-noshrink">
                 <PrimaryButton
-                    className="w100"
+                    className="w-full"
                     loading={loading}
                     disabled={applyDisabled}
                     data-testid="label-dropdown:apply"

@@ -126,7 +126,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                     <div className="m-5 mt-6" style={{ minWidth: '38px' }}>
                         <img
                             key="gateway-upgrade-image"
-                            className="hauto"
+                            className="h-auto"
                             src={gatewaySvg}
                             alt=""
                             width={96}
@@ -525,14 +525,19 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                         <thead>
                             <tr>
                                 <TableCell key="name" type="header">{c('Header').t`Name`}</TableCell>
-                                <TableCell key="status" type="header" className="w10">
+                                <TableCell key="status" type="header" className="w-1/10">
                                     {c('Header').t`Status`}
                                 </TableCell>
                                 <TableCell key="servers" type="header">{c('Header').t`Servers`}</TableCell>
                                 {isAdmin && (
                                     <>
                                         <TableCell key="members" type="header">{c('Header').t`Members`}</TableCell>
-                                        <TableCell key="manage" type="header" className="w-12">
+                                        <TableCell
+                                            key="manage"
+                                            type="header"
+                                            className="w-custom"
+                                            style={{ '--w-custom': '12rem' }}
+                                        >
                                             &nbsp;
                                         </TableCell>
                                     </>

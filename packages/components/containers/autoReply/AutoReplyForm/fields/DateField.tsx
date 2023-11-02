@@ -25,7 +25,7 @@ const DateField = ({ id, label, value = new Date(), onChange, min, max }: Props)
             <SettingsLayoutRight>
                 <DateInput
                     id={id}
-                    className="w100"
+                    className="w-full"
                     min={min}
                     max={max}
                     value={value}

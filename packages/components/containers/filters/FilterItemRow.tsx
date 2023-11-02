@@ -98,10 +98,10 @@ function FilterItemRow({ filter, filters, index, onApplyFilter, ...rest }: Props
             <OrderableTableRow
                 index={index}
                 cells={[
-                    <div key="name" className="text-ellipsis max-w100" title={Name}>
+                    <div key="name" className="text-ellipsis max-w-full" title={Name}>
                         {Name}
                     </div>,
-                    <div key="toggle" className="w10">
+                    <div key="toggle" className="w-1/10">
                         <Toggle
                             id={`item-${ID}`}
                             loading={loading}

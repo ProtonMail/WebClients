@@ -28,7 +28,7 @@ const InviteSendEmailRecipient = ({ recipient, onDeleteRecipient, isValid }: Pro
     return (
         <div
             className={clsx([
-                'flex flex-nowrap flex-row flex-align-items-stretch max-w100 rounded-sm bg-weak overflow-hidden',
+                'flex flex-nowrap flex-row flex-align-items-stretch max-w-full rounded-sm bg-weak overflow-hidden',
                 !isValid && 'color-danger',
             ])}
             key={recipient.Address}

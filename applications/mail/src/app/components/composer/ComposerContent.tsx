@@ -68,7 +68,7 @@ const ComposerContent = ({
                 className={clsx([
                     'flex-item-fluid flex flex-column flex-nowrap relative',
                     isOutside && 'mx-0 sm:mx-2',
-                    !isOutside && 'w100 mb-2',
+                    !isOutside && 'w-full mb-2',
                 ])}
                 data-testid="composer-content"
             >

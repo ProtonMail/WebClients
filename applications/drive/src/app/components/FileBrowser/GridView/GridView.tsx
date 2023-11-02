@@ -147,7 +147,7 @@ function GridView<T extends FileBrowserBaseItem, T1>({
                 </Table>
             </div>
 
-            <div className="flex-no-min-children flex-column flex-item-fluid w100 no-scroll" ref={contextMenuAnchorRef}>
+            <div className="flex-no-min-children flex-column flex-item-fluid w-full no-scroll" ref={contextMenuAnchorRef}>
                 {rect && (
                     <FixedSizeGrid
                         style={{ overflowX: 'hidden', '--padding-bottom-custom': '1.5em' }}

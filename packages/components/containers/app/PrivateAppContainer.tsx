@@ -15,7 +15,7 @@ interface Props {
 
 const PrivateAppContainer = ({ header, sidebar, children, top, bottom, containerRef, drawerApp }: Props) => {
     return (
-        <div className="flex flex-row flex-nowrap h100">
+        <div className="flex flex-row flex-nowrap h-full">
             <div
                 className="content-container flex flex-column flex-nowrap no-scroll flex-item-fluid relative"
                 ref={containerRef}

@@ -221,7 +221,7 @@ const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails,
                                     placeholder={c('Placeholder').t`Search name, email or group`}
                                 />
                             </div>
-                            <div className={clsx([!isNarrow && 'w33'])}>
+                            <div className={clsx([!isNarrow && 'w-1/3'])}>
                                 <SelectTwo
                                     onChange={({ value }) => setSelectedGroup(value)}
                                     value={selectedGroup}
@@ -241,13 +241,13 @@ const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails,
                                     <div className="flex flex-nowrap flex-item-fluid contact-list-row p-4">
                                         <div>
                                             <Checkbox
-                                                className="w100 h100"
+                                                className="w-full h-full"
                                                 checked={isAllChecked}
                                                 onChange={handleCheckAll}
                                             />
                                         </div>
                                         <div className="flex flex-item-fluid flex-align-self-center">
-                                            <div className="w45 pl-4">
+                                            <div className="w-custom pl-4" style={{ '--w-custom': '45%' }}>
                                                 <strong className="text-uppercase">{c('Label').t`Name`}</strong>
                                             </div>
                                             <div className="flex-item-fluid">

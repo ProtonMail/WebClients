@@ -151,7 +151,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                         ).t`Created`}</th>
                     )}
                     {!isTinyMobile && (
-                        <th scope="col" className="w10 text-ellipsis" title={c('Table header').t`Expires`}>{c(
+                        <th scope="col" className="w-1/10 text-ellipsis" title={c('Table header').t`Expires`}>{c(
                             'Table header'
                         ).t`Expires`}</th>
                     )}
@@ -159,11 +159,12 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                         <th scope="col" className="text-ellipsis" title={c('Table header').t`Type`}>{c('Table header')
                             .t`Type`}</th>
                     )}
-                    <th scope="col" className="text-ellipsis w15" title={c('Table header').t`Status`}>{c('Table header')
-                        .t`Status`}</th>
+                    <th scope="col" className="text-ellipsis w-1/6" title={c('Table header').t`Status`}>{c(
+                        'Table header'
+                    ).t`Status`}</th>
                     <th
                         scope="col"
-                        className={clsx(['text-ellipsis', isNarrow && 'w40'])}
+                        className={clsx(['text-ellipsis', isNarrow && 'w-2/5'])}
                         title={c('Table header').t`Actions`}
                     >{c('Table header').t`Actions`}</th>
                 </tr>

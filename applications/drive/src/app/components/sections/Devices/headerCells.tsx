@@ -12,7 +12,7 @@ export const modificationTimeDevice = {
     type: 'modificationTime',
     getText: () => c('Label').t`Modified`,
     props: {
-        className: 'w15',
+        className: 'w-1/6',
     },
 };
 

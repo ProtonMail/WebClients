@@ -44,7 +44,7 @@ const RemoveEmailContainer = () => {
     }, []);
 
     return (
-        <main className="main-area h100">
+        <main className="main-area h-full">
             {(() => {
                 const signIn = (
                     <a key="1" href={SSO_PATHS.SWITCH} target="_self">
@@ -80,7 +80,7 @@ const RemoveEmailContainer = () => {
                 }
                 return (
                     <PublicLayout
-                        className="h100"
+                        className="h-full"
                         img={<img src={accountIllustration} alt="" />}
                         header={c('Recovery Email').t`Email removed`}
                         main={

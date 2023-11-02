@@ -2,8 +2,6 @@ import { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import clsx from '@proton/utils/clsx';
-
 import { Icon, PrimaryButton } from '../../components';
 import { useActiveBreakpoint } from '../../hooks';
 
@@ -18,8 +16,8 @@ const SignatureIssue = ({
 
     return (
         <div className="file-preview-container">
-            <div className="absolute-center w100">
-                <div className={clsx(['mx-auto', isNarrow ? 'w300p' : 'w500p'])}>
+            <div className="absolute-center w-full">
+                <div className="mx-auto w-custom" style={{ '--w-custom': isNarrow ? '18.75rem' : '31.25rem' }}>
                     <div className="text-center">
                         <Icon name="lock-exclamation-filled" size={60} className="color-danger" />
                     </div>

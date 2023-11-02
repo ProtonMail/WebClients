@@ -222,7 +222,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                         return (
                             <li
                                 key={folder.ID}
-                                className="dropdown-item dropdown-item-button relative cursor-pointer w100 flex flex-nowrap flex-align-items-center py-2 px-4"
+                                className="dropdown-item dropdown-item-button relative cursor-pointer w-full flex flex-nowrap flex-align-items-center py-2 px-4"
                             >
                                 <Radio
                                     className="flex-item-noshrink mr-2"
@@ -252,15 +252,15 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                         );
                     })}
                     {list.length === 0 && !search && (
-                        <li key="empty" className="dropdown-item w100 py-2 px-4">
+                        <li key="empty" className="dropdown-item w-full py-2 px-4">
                             {c('Info').t`No folder found`}
                         </li>
                     )}
                     {list.length === 0 && search && (
-                        <span className="flex w100">
+                        <span className="flex w-full">
                             <Button
                                 key="create-new-folder"
-                                className="w100 mx-8 text-ellipsis"
+                                className="w-full mx-8 text-ellipsis"
                                 data-testid="folder-dropdown:create-folder-option"
                                 title={createFolderButtonText}
                                 onClick={handleCreate}
@@ -286,7 +286,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
             </div>
             <div className="m-4 flex-item-noshrink">
                 <PrimaryButton
-                    className="w100"
+                    className="w-full"
                     loading={loading}
                     disabled={applyDisabled}
                     data-testid="move-dropdown:apply"

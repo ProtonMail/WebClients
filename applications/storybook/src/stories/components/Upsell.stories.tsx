@@ -30,7 +30,7 @@ export const Basic = () => {
 
     return (
         <div className="flex flex-align-items-stretch flex-justify-space-between py-7">
-            <div className="w50">
+            <div className="w-1/2">
                 <strong className="block mb-4">Upsell Features</strong>
                 <ul className="unstyled">
                     {Object.entries(upsellFeatures).map(([fakeKey, feature]) => {

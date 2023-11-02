@@ -81,7 +81,7 @@ const CountrySelect = ({ value, options, onChange, embedded, onClosed }: Props) 
                         />
                     )}
                 </span>
-                <span className="min-w3e inline-flex" dir="ltr">
+                <span className="min-w-custom inline-flex" style={{ '--min-w-custom': '3em' }} dir="ltr">
                     +{value ? value.countryCallingCode : '00'}
                 </span>
             </DropdownButton>

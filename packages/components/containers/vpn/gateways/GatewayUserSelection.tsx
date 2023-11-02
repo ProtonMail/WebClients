@@ -87,7 +87,8 @@ export const GatewayUserSelection = ({ loading, users, model, changeModel }: Pro
                                         onChange={selectAllToggle}
                                     />
                                 ),
-                                className: 'w5',
+                                className: 'w-custom',
+                                style: { '--w-custom': '5%' },
                             },
                             { key: 'Name', content: c('TableHeader').t`Name`, sorting: true },
                             { key: 'Email', content: c('TableHeader').t`Email`, sorting: true },
@@ -95,7 +96,7 @@ export const GatewayUserSelection = ({ loading, users, model, changeModel }: Pro
                                 key: 'Role',
                                 content: c('TableHeader').t`Role`,
                                 sorting: true,
-                                className: 'w10',
+                                className: 'w-1/10',
                             },
                         ]}
                     />

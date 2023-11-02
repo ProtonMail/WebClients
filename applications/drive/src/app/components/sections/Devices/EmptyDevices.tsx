@@ -38,7 +38,7 @@ const EmptyDevices = () => {
     };
 
     return (
-        <div role="presentation" className="flex w100 flex flex-item-fluid overflow-auto">
+        <div role="presentation" className="flex w-full flex flex-item-fluid overflow-auto">
             <EmptyViewContainer imageProps={{ src: emptyDevicesImg, alt: syncFoldersText, height: 180 }}>
                 <h3 className="text-bold">{syncFoldersText}</h3>
                 <p className="mt-2 max-w-custom mx-auto" style={{ '--max-w-custom': '25rem' }}>

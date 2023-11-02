@@ -97,7 +97,7 @@ const AttachScreenshot = ({ id, screenshots, setScreenshots, uploading, setUploa
                                             {screenshot.name}
                                         </div>
                                     </TableCell>
-                                    <TableCell className="w4e">
+                                    <TableCell className="w-custom" style={{ '--w-custom': '4em' }}>
                                         <Button
                                             icon
                                             color="weak"

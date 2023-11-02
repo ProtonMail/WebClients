@@ -41,7 +41,10 @@ export const LoadingTextStepper = ({ steps }: { steps: string[] }) => {
                                 isCurrentStep && 'color-primary'
                             )}
                         >
-                            <div className="mr-2 min-w2e flex flex-item-noshrink">
+                            <div
+                                className="mr-2 min-w-custom flex flex-item-noshrink"
+                                style={{ '--min-w-custom': '2em' }}
+                            >
                                 {isCurrentStep ? (
                                     <CircleLoader size="small" className="ml-1" />
                                 ) : (

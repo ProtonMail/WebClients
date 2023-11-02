@@ -178,7 +178,7 @@ const ContactsWidgetGroupsContainer = ({
     const showList = !showPlaceholder;
 
     return (
-        <div className="flex flex-column flex-nowrap h100">
+        <div className="flex flex-column flex-nowrap h-full">
             <div className="contacts-widget-search-container flex-item-noshrink">
                 <label htmlFor="id_contact-widget-search" className="sr-only">{c('Placeholder')
                     .t`Search for group name`}</label>
@@ -209,9 +209,9 @@ const ContactsWidgetGroupsContainer = ({
                     isDrawer={isDrawer}
                 />
             </div>
-            <div className="flex-item-fluid w100">
+            <div className="flex-item-fluid w-full">
                 {loading ? (
-                    <div className="flex h100">
+                    <div className="flex h-full">
                         <CircleLoader className="m-auto color-primary" size="large" />
                     </div>
                 ) : null}

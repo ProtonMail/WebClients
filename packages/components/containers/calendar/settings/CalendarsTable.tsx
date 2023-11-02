@@ -64,8 +64,8 @@ const CalendarsTable = ({
         <Table hasActions responsive="cards">
             <TableHeader>
                 <TableRow>
-                    <TableHeaderCell className="text-left w50">{nameHeader}</TableHeaderCell>
-                    <TableHeaderCell className="w20">{statusHeader}</TableHeaderCell>
+                    <TableHeaderCell className="text-left w-1/2">{nameHeader}</TableHeaderCell>
+                    <TableHeaderCell className="w-1/5">{statusHeader}</TableHeaderCell>
                     <TableHeaderCell>{c('Header').t`Actions`}</TableHeaderCell>
                 </TableRow>
             </TableHeader>

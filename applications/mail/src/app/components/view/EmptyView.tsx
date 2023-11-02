@@ -79,14 +79,14 @@ const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
 
     if (loadingSimpleLoadingFeature || isFetchingAccountLinked) {
         return (
-            <div className="m-auto text-center p-7 max-w100">
+            <div className="m-auto text-center p-7 max-w-full">
                 <Loader />
             </div>
         );
     }
 
     return showSimpleLoginPlaceholder ? (
-        <div className="m-auto text-center p-7 max-w100">
+        <div className="m-auto text-center p-7 max-w-full">
             <SimpleLoginPlaceholder />
         </div>
     ) : (

@@ -1,4 +1,4 @@
-import {
+import React, {
     ElementType,
     ForwardedRef,
     ReactElement,
@@ -46,6 +46,7 @@ export interface InputFieldOwnProps {
     error?: NodeOrBoolean;
     warning?: NodeOrBoolean;
     rootClassName?: string;
+    rootStyle?: React.CSSProperties;
     rootRef?: Ref<HTMLDivElement>;
     labelContainerClassName?: string;
     assistContainerClassName?: string;
@@ -71,6 +72,7 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
         error,
         id: idProp,
         rootClassName,
+        rootStyle,
         labelContainerClassName,
         assistContainerClassName,
         inputContainerClassName,
@@ -176,6 +178,7 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
     return (
         <div
             className={classes.root}
+            style={rootStyle}
             onFocus={() => {
                 setIsFocused(true);
             }}

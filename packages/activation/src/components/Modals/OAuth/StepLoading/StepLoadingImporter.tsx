@@ -6,7 +6,7 @@ const StepLoadingImporter = () => {
     return (
         <ModalTwo open size="large">
             <ModalTwoContent>
-                <div className="p-14 text-center w100" data-testid="StepLoadingImporter:modal">
+                <div className="p-14 text-center w-full" data-testid="StepLoadingImporter:modal">
                     <Loader size="large" className="mb-4" />
 
                     <h4>{c('Loading info').t`Gathering your data`}</h4>
