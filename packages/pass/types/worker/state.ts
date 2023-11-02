@@ -1,4 +1,4 @@
-import type { ExtensionSession } from '@proton/pass/lib/auth/session';
+import type { AuthSession } from '@proton/pass/lib/auth/session';
 import type { GeneratePasswordOptions } from '@proton/pass/lib/password/generator';
 import type { ItemDraft } from '@proton/pass/store/reducers';
 
@@ -24,7 +24,7 @@ export type WorkerState = {
     UID: Maybe<string>;
 };
 
-export type SessionStoreData = ExtensionSession;
+export type SessionStoreData = AuthSession;
 export type SessionStoreKeys = keyof SessionStoreData;
 
 export type LocalStoreData = {
