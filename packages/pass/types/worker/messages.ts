@@ -1,7 +1,7 @@
 import type { AnyAction } from 'redux';
 import type { Tabs } from 'webextension-polyfill';
 
-import type { ExtensionSession } from '@proton/pass/lib/auth/session';
+import type { AuthSession } from '@proton/pass/lib/auth/session';
 import type { ExportRequestPayload } from '@proton/pass/lib/export/types';
 import type { GeneratePasswordOptions } from '@proton/pass/lib/password/generator';
 import type { Notification } from '@proton/pass/store/actions/with-notification';
@@ -126,7 +126,7 @@ export type PortUnauthorizedMessage = { type: WorkerMessageType.PORT_UNAUTHORIZE
 export type ResolveExtensionKeyMessage = { type: WorkerMessageType.RESOLVE_EXTENSION_KEY };
 export type ResolveTabIdMessage = { type: WorkerMessageType.RESOLVE_TAB };
 export type ResolveUserDataMessage = { type: WorkerMessageType.RESOLVE_USER_DATA };
-export type ResumeSessionSuccessMessage = WithPayload<WorkerMessageType.SESSION_RESUMED, ExtensionSession>;
+export type ResumeSessionSuccessMessage = WithPayload<WorkerMessageType.SESSION_RESUMED, AuthSession>;
 export type SentryCSEventMessage = WithPayload<WorkerMessageType.SENTRY_CS_EVENT, { message: string; data: any }>;
 export type SettingsUpdateMessage = WithPayload<WorkerMessageType.SETTINGS_UPDATE, ProxiedSettings>;
 export type ShareServerEventMessage = WithPayload<WorkerMessageType.SHARE_SERVER_EVENT, ShareEventPayload>;
