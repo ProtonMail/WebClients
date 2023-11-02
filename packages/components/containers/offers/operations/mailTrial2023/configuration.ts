@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { FeatureCode } from '@proton/components/containers/features';
-import { CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { CYCLE, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 
 import { getMailPlusInboxFeatures, getUnlimitedFeatures } from '../../helpers/offerCopies';
 import { OfferConfig } from '../../interface';
@@ -15,7 +15,7 @@ const config: OfferConfig = {
     deals: [
         {
             ref: 'plus_referral_trial-modal-m1',
-            planName: PLANS.MAIL,
+            dealName: PLAN_NAMES[PLANS.MAIL],
             planIDs: {
                 [PLANS.MAIL]: 1,
             },
@@ -25,7 +25,7 @@ const config: OfferConfig = {
         },
         {
             ref: 'plus_referral_trial-modal-u2',
-            planName: PLANS.BUNDLE,
+            dealName: PLAN_NAMES[PLANS.BUNDLE],
             planIDs: {
                 [PLANS.BUNDLE]: 1,
             },
@@ -36,7 +36,7 @@ const config: OfferConfig = {
         },
         {
             ref: 'plus_referral_trial-modal-u1',
-            planName: PLANS.BUNDLE,
+            dealName: PLAN_NAMES[PLANS.BUNDLE],
             planIDs: {
                 [PLANS.BUNDLE]: 1,
             },

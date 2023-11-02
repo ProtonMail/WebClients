@@ -1,5 +1,5 @@
 import { FeatureCode } from '@proton/components/containers/features';
-import { COUPON_CODES, CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 
 import { getFamilyDriveFeatures } from '../../helpers/offerCopies';
 import { OfferConfig } from '../../interface';
@@ -19,7 +19,7 @@ const config: OfferConfig = {
     deals: [
         {
             ref: 'bf_23_drive_unlimited-modal-f12',
-            planName: PLANS.FAMILY,
+            dealName: `${PLAN_NAMES[PLANS.FAMILY]} - 3 TB`,
             planIDs: {
                 [PLANS.FAMILY]: 1,
             },

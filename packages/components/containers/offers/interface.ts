@@ -2,7 +2,7 @@ import { JSXElementConstructor, ReactNode } from 'react';
 
 import { ButtonLikeShape } from '@proton/atoms/Button';
 import type { FeatureCode, IconName } from '@proton/components';
-import type { COUPON_CODES, CYCLE, PLANS } from '@proton/shared/lib/constants';
+import type { COUPON_CODES, CYCLE } from '@proton/shared/lib/constants';
 import type { Currency, Optional, PlanIDs } from '@proton/shared/lib/interfaces';
 
 export type OfferId =
@@ -91,7 +91,7 @@ export interface Deal {
     features?: () => Feature[];
     getCTAContent?: () => string;
     planIDs: PlanIDs; // planIDs used to subscribe
-    planName: PLANS; // plan display in the deal
+    dealName: string; // most of the time we show the plan name of the deal
     popular?: number; // 1 = most popular, 2 = second most popular, etc.
     mobileOrder?: number; // 1 = most popular, 2 = second most popular, etc. if using this, please specify it for all plans to avoid issues
     header?: () => string | ReactNode;
