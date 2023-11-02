@@ -1,5 +1,5 @@
 import { FeatureCode } from '@proton/components/containers/features';
-import { CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { CYCLE, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 
 import { getUnlimitedDealFeatures } from '../../helpers/offerCopies';
 import { OfferConfig } from '../../interface';
@@ -14,7 +14,7 @@ const config: OfferConfig = {
     deals: [
         {
             ref: 'upsell_mail-modal-special_offer23',
-            planName: PLANS.BUNDLE,
+            dealName: PLAN_NAMES[PLANS.BUNDLE],
             planIDs: {
                 [PLANS.BUNDLE]: 1,
             },
