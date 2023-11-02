@@ -1,18 +1,16 @@
 import * as config from 'proton-pass-extension/app/config';
 import { createDevReloader } from 'proton-pass-extension/lib/utils/dev-reload';
 
-import { exposeApi } from '@proton/pass/lib/api/api';
-import { createApi } from '@proton/pass/lib/api/create-api';
 import { generateKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
 import browser from '@proton/pass/lib/globals/browser';
-import { WorkerMessageType, WorkerStatus } from '@proton/pass/types';
+import { WorkerMessageType } from '@proton/pass/types';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import sentry from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
 
 import WorkerMessageBroker from './channel';
-import { createWorkerContext, withContext } from './context';
+import { createWorkerContext } from './context';
 
 if (BUILD_TARGET === 'chrome') {
     /* FIXME: create a custom webpack plugin to automatically register
@@ -66,16 +64,7 @@ sentry({
     denyUrls: [],
 });
 
-const api = exposeApi(
-    createApi({
-        config,
-        onSessionRefresh: withContext(async (ctx, { AccessToken, RefreshToken }, RefreshTime) => {
-            await ctx.service.auth.setSessionTokens({ AccessToken, RefreshToken, RefreshTime });
-        }),
-    })
-);
-
-const context = createWorkerContext({ api, status: WorkerStatus.IDLE });
+const context = createWorkerContext(config);
 
 browser.runtime.onConnect.addListener(WorkerMessageBroker.ports.onConnect);
 browser.runtime.onMessageExternal.addListener(WorkerMessageBroker.onMessage);

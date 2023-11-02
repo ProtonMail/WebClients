@@ -19,6 +19,8 @@ import { createTelemetryService } from 'proton-pass-extension/app/worker/service
 import { setPopupIcon } from 'proton-pass-extension/lib/utils/popup-icon';
 import { getExtensionVersion } from 'proton-pass-extension/lib/utils/version';
 
+import { exposeApi } from '@proton/pass/lib/api/api';
+import { createApi } from '@proton/pass/lib/api/factory';
 import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
 import {
@@ -29,42 +31,39 @@ import {
     workerStale,
     workerStatusResolved,
 } from '@proton/pass/lib/worker';
-import type { WorkerStatus } from '@proton/pass/types';
-import { type Api, WorkerMessageType } from '@proton/pass/types';
+import { WorkerMessageType, WorkerStatus } from '@proton/pass/types';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { logger } from '@proton/pass/utils/logger';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { WorkerContext, withContext } from './context';
+import { WorkerContext } from './context';
 
-export const createWorkerContext = (options: { api: Api; status: WorkerStatus }) => {
-    const auth = createAuthService({
-        api: options.api,
-        onAuthorized: withContext((ctx) => {
-            ctx.service.activation.boot();
-            ctx.service.autofill.updateTabsBadgeCount();
-            setSentryUID(auth.store.getUID());
-        }),
-        onUnauthorized: withContext((ctx) => {
-            ctx.service.formTracker.clear();
-            ctx.service.onboarding.reset();
-            ctx.service.autofill.clearTabsBadgeCount();
-            ctx.service.cacheProxy.clear?.().catch(noop);
-            setSentryUID(undefined);
-            PassCrypto.clear();
-        }),
-        onLocked: withContext((ctx) => {
-            ctx.service.autofill.clearTabsBadgeCount();
-            PassCrypto.clear();
-        }),
-    });
-
+export const createWorkerContext = (config: ProtonConfig) => {
     const context = WorkerContext.set({
-        status: options.status,
+        status: WorkerStatus.IDLE,
         service: {
-            auth,
+            auth: createAuthService({
+                onAuthorized: () => {
+                    context.service.activation.boot();
+                    context.service.autofill.updateTabsBadgeCount();
+                    setSentryUID(context.service.auth.store.getUID());
+                },
+                onUnauthorized: () => {
+                    context.service.formTracker.clear();
+                    context.service.onboarding.reset();
+                    context.service.autofill.clearTabsBadgeCount();
+                    context.service.cacheProxy.clear?.().catch(noop);
+                    setSentryUID(undefined);
+                    PassCrypto.clear();
+                },
+                onLocked: () => {
+                    context.service.autofill.clearTabsBadgeCount();
+                    PassCrypto.clear();
+                },
+            }),
             activation: createActivationService(),
             alias: createAliasService(),
             autofill: createAutoFillService(),
@@ -91,9 +90,9 @@ export const createWorkerContext = (options: { api: Api; status: WorkerStatus })
         },
 
         getState: () => ({
-            loggedIn: auth.store.hasSession() && workerReady(context.status),
+            loggedIn: context.service.auth.store.hasSession() && workerReady(context.status),
             status: context.status,
-            UID: auth.store.getUID(),
+            UID: context.service.auth.store.getUID(),
         }),
 
         setStatus(status: WorkerStatus) {
@@ -115,13 +114,35 @@ export const createWorkerContext = (options: { api: Api; status: WorkerStatus })
 
         async init({ sync, force }) {
             const shouldInit = Boolean((sync ?? !workerReady(context.status)) || force);
-            const shouldBoot = shouldInit && (await auth.init());
+            const shouldBoot = shouldInit && (await context.service.auth.init());
 
             if (shouldBoot) context.service.activation.boot();
 
             return context;
         },
     });
+
+    const api = createApi({
+        config,
+        getAuth: () => {
+            const AccessToken = context.service.auth.store.getAccessToken();
+            const RefreshToken = context.service.auth.store.getRefreshToken();
+            const RefreshTime = context.service.auth.store.getRefreshTime();
+            const UID = context.service.auth.store.getUID();
+
+            if (!(UID && AccessToken && RefreshToken)) return undefined;
+            return { UID, AccessToken, RefreshToken, RefreshTime };
+        },
+        onRefresh: (data, refreshTime) => {
+            context.service.auth.store.setAccessToken(data.AccessToken);
+            context.service.auth.store.setRefreshToken(data.RefreshToken);
+            context.service.auth.store.setUID(data.UID);
+            context.service.auth.store.setRefreshTime(refreshTime);
+            void context.service.auth.persistSession();
+        },
+    });
+
+    exposeApi(api);
 
     context.service.i18n.init().catch(noop);
     context.service.onboarding.hydrate();
