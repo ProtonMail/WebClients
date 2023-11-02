@@ -6,8 +6,8 @@ import {
     Address,
     Api,
     DecryptedAddressKey,
-    DecryptedKey,
     FetchedSignedKeyList,
+    KeyPair,
     SaveSKLToLS,
     UploadMissingSKL,
 } from '@proton/shared/lib/interfaces';
@@ -215,7 +215,7 @@ const checkAddressWithNoKeys = async (epoch: Epoch, address: Address, api: Api, 
 
 const auditAddressImplementation = async (
     address: Address,
-    userKeys: DecryptedKey[],
+    userKeys: KeyPair[],
     epoch: Epoch,
     saveSKLToLS: SaveSKLToLS,
     api: Api,
@@ -342,7 +342,7 @@ const auditAddressImplementation = async (
 
 export const auditAddress = async (
     address: Address,
-    userKeys: DecryptedKey[],
+    userKeys: KeyPair[],
     epoch: Epoch,
     saveSKLToLS: SaveSKLToLS,
     api: Api,
