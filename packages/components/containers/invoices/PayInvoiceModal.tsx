@@ -48,7 +48,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
         currency,
         onChargeable: (operations) => {
             return withLoading(async () => {
-                await operations.payInvoice(invoice.ID);
+                await operations.payInvoice();
                 await Promise.all([
                     call(), // Update user.Delinquent to hide TopBanner
                     fetchInvoices(),
@@ -67,6 +67,9 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
             }
 
             try {
+                paymentFacade.paymentContext.setInvoiceData({
+                    invoiceId: invoice.ID,
+                });
                 await processor.processPaymentToken();
             } catch {}
         });
