@@ -230,6 +230,9 @@
       "Continue with Google": [
         "Google ile ilerle"
       ],
+      "Continue with Outlook": [
+        "Outlook ile ilerle"
+      ],
       "Contract composer": [
         "Oluşturucuyu küçült"
       ],
@@ -508,6 +511,12 @@
       "Import from .csv or vCard": [
         ".csv ya da vCard dosyasından içe aktar"
       ],
+      "Import from Google": [
+        "Google üzerinden içe aktar"
+      ],
+      "Import from Outlook": [
+        "Outlook üzerinden içe aktar"
+      ],
       "In the morning": [
         "Sabahları"
       ],
@@ -704,10 +713,10 @@
       "Not saved": [
         "Kaydedilmemiş"
       ],
-      "OK": [
+      "Ok": [
         "Tamam"
       ],
-      "Ok": [
+      "OK": [
         "Tamam"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -3034,6 +3043,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler şifreleniyor ve içe aktarılıyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSV ve VCF dosyası ile içe aktarma için, ${ MAX_IMPORT_FILE_SIZE_STRING } dosya boyutunu ya da ${ MAX_IMPORT_CONTACTS_STRING } kişiyi aşmadığınızdan emin olun. Dosyanız büyükse lütfen daha küçük dosyalara bölün. ${ learnMoreLink }."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "İçe aktardığınız kişi listesinde bazı gruplar var gibi görünüyor. Lütfen bu grupların nasıl içe aktarılması gerektiğini gözden geçirin."
       ],
@@ -3058,6 +3070,9 @@
       ],
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Herkese aynı anda e-posta veya davetiye göndererek zaman kazanın. Bu ücretli tarifelerdeki birçok özellikten biridir. Tarifenizi şimdi yükseltin."
+      ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Kişilerinizi Google ya da Outlook üzerinden içe aktarmak için ${ easySwitchLink }."
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Reklam verenlerin ve diğer kişilerin konumunuzu ve çevrim içi etkinliğinizi izlemesini önlemek için e-posta izleyici korumasını açın."
@@ -3085,6 +3100,11 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Birleştirmek veya tutmak istemediğiniz kişileri silinmek üzere işaretleyebilirsiniz. Silme işlemi yalnızca birleştirme düğmesine tıkladıktan sonra yapılır"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch içe aktarma yardımcısını kullanın"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3207,6 +3227,11 @@
       ],
       "Update for an event starting on ${ formattedStart }": [
         "${ formattedStart } zamanında başlayan etkinlik için güncelleme"
+      ]
+    },
+    "email_forwarding_2023: Composer email icon": {
+      "Zero-access encrypted. Recipient has disabled end-to-end encryption on their account.": [
+        "Sıfır erişim ile şifrelenmiş. Alıcı, hesabında uçtan uca şifrelemeyi kapattı."
       ]
     },
     "empty messages: success": {

@@ -230,6 +230,9 @@
       "Continue with Google": [
         "Google ile ilerle"
       ],
+      "Continue with Outlook": [
+        "Outlook ile ilerle"
+      ],
       "Continue with this password": [
         "Bu parolayı kullanmayı sürdür"
       ],
@@ -533,8 +536,14 @@
       "Import emails": [
         "E-postaları içe aktar"
       ],
+      "Import from Google": [
+        "Google üzerinden içe aktar"
+      ],
       "Import from ICS": [
         "ICS dosyasından içe aktar"
+      ],
+      "Import from Outlook": [
+        "Outlook üzerinden içe aktar"
       ],
       "Import key": [
         "Anahtarı içe aktar"
@@ -1309,6 +1318,15 @@
       "Add ${ plan } to your plan by subscribing to 15 months": [
         "15 ay abone olarak tarifenize ek ${ plan } ekleyin"
       ],
+      "Become a Visionary": [
+        "Visionary ol"
+      ],
+      "Cancel": [
+        "İptal"
+      ],
+      "Close": [
+        "Kapat"
+      ],
       "Get the deal": [
         "Tekliften yararlanın"
       ],
@@ -1391,6 +1409,35 @@
       ],
       "Secure browsing and premium VPN features.": [
         "İnternette güvenli gezinin ve ücretli VPN özelliklerine erişin."
+      ],
+      "Sorry, this offer is not available with your current plan.": [
+        "Üzgünüz, bu teklif mevcut tarifeniz için geçerli değil."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Üzgünüz, bu teklif mevcut tarifeniz için geçerli değil fakat **${ months }** için **${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage }** indirim elde edebilirsiniz."
+      ]
+    },
+    "bf2023: Info": {
+      "6 TB storage (2x more than any other plan)": [
+        "6 TB depolama (herhangi diğer tarifeden 2 kat fazla)"
+      ],
+      "6 users": [
+        "6 kullanıcı"
+      ],
+      "Become a super-supporter. Get access to all current and future ${ BRAND_NAME } services.": [
+        "Süper destekçi olun. Mevcut ve gelecekteki tüm ${ BRAND_NAME } hizmetlerine erişin."
+      ],
+      "Exclusive features and early access": [
+        "Özel özellikler ve erken erişim"
+      ],
+      "Help us fight for online privacy": [
+        "Çevrim içi gizlilik için savaşmamıza yardım edin"
+      ],
+      "Premium versions of all ${ BRAND_NAME } services": [
+        "Tüm ${ BRAND_NAME } hizmetlerinin ücretli sürümleri"
+      ],
+      "The ${ plan } plan is back for a limited time only": [
+        "${ plan } tarifesi kısa bir süre için geri döndü"
       ]
     },
     "bf2023: Offers": {
@@ -1411,6 +1458,11 @@
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Özel olarak indirimli fiyat olan ${ discountedPrice } ilk ay için geçerlidir. Daha sonra aylık ${ nextPrice } üzerinden otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Teklif bulunamadı"
       ]
     },
     "bf2023: Tooltip": {
@@ -3024,6 +3076,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler şifreleniyor ve içe aktarılıyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSV ve VCF dosyası ile içe aktarma için, ${ MAX_IMPORT_FILE_SIZE_STRING } dosya boyutunu ya da ${ MAX_IMPORT_CONTACTS_STRING } kişiyi aşmadığınızdan emin olun. Dosyanız büyükse lütfen daha küçük dosyalara bölün. ${ learnMoreLink }."
+      ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Arkadaşlarınızı ${ BRAND_NAME } kullanmaya davet ederek ${ credits } krediye kadar hediye kazanın."
       ],
@@ -3035,6 +3090,9 @@
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Birkaç e-posta adresi kullanarak hayatınızın farklı yönlerini ayırın ve tarifenizi yükselterek daha fazla ücretli özelliğe erişin."
+      ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Kişilerinizi Google ya da Outlook üzerinden içe aktarmak için ${ easySwitchLink }."
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "${ MAIL_APP_NAME } alt bilgisini kaldırmak için tarifenizi yükseltin ve diğer ücretli özelliklere de erişin."
@@ -3059,6 +3117,11 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Etkinlikleri iCal biçiminde içe aktarabilirsiniz (ICS dosyası).\nDosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_EVENTS_STRING } etkinlik kaydı içermelidir.\nDosyanız daha büyükse, daha küçük dosyalara bölün."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch içe aktarma yardımcısını kullanın"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3320,11 +3383,269 @@
     "email_forwarding_2023: Action": {
       "Accept": [
         "Kabul et"
+      ],
+      "Add condition": [
+        "Koşul ekle"
+      ],
+      "Add forwarding rule": [
+        "İletme kuralı ekle"
+      ],
+      "Back": [
+        "Geri"
+      ],
+      "Cancel": [
+        "İptal"
+      ],
+      "Decline": [
+        "Reddet"
+      ],
+      "Delete": [
+        "Sil"
+      ],
+      "Delete this condition": [
+        "Bu koşulu sil"
+      ],
+      "Edit conditions": [
+        "Koşulları düzenle"
+      ],
+      "Next": [
+        "Sonraki"
+      ],
+      "Pause": [
+        "Duraklat"
+      ],
+      "Re-enable": [
+        "Yeniden etkinleştir"
+      ],
+      "Re-send confirmation email": [
+        "Doğrulama e-postasını tekrar gönder"
+      ],
+      "Remove “${ value }”": [
+        "\"${ value }\" kaldır"
+      ],
+      "Request confirmation": [
+        "Onay isteğinde bulun"
+      ],
+      "Resume": [
+        "Sürdür"
+      ],
+      "Save": [
+        "Kaydet"
+      ],
+      "Send confirmation email": [
+        "Doğrulama e-postası gönder"
+      ],
+      "Set up email forwarding": [
+        "E-posta iletici kurun"
+      ]
+    },
+    "email_forwarding_2023: Description": {
+      "Unlock email forwarding to easily manage incoming information and more premium features when you upgrade.": [
+        "Tarifenizi yükselterek gelen bilgileri kolayca yönetmek için e-posta iletici özelliğini ve diğer ücretli özellikleri kullanıma alın."
+      ]
+    },
+    "email_forwarding_2023: Error": {
+      "Condition incomplete, please add a token": [
+        "Koşul tamamlanmadı. Lütfen bir kod ekleyin"
+      ],
+      "Token already exists": [
+        "Kod zaten var"
+      ]
+    },
+    "email_forwarding_2023: Error message, recovery": {
+      "Please try opening the link again.": [
+        "Lütfen bağlantıyı açmayı yeniden deneyin."
+      ]
+    },
+    "email_forwarding_2023: Forwarding tooltip": {
+      "Emails forwarded to you are excluded and will not be forwarded.": [
+        "Size iletilen e-postalar katılmaz ve iletilmez."
+      ]
+    },
+    "email_forwarding_2023: Header": {
+      "Actions": [
+        "İşlemler"
+      ],
+      "From": [
+        "Nereden"
+      ],
+      "Status": [
+        "Durum"
+      ],
+      "To": [
+        "Nereye"
+      ]
+    },
+    "email_forwarding_2023: Incoming forwarding tab name": {
+      "From me": [
+        "Benden"
       ]
     },
     "email_forwarding_2023: Info": {
+      "A confirmation email will be sent to ${ boldForwardeeEmail }": [
+        "${ boldForwardeeEmail } adresine bir onaylama e-postası gönderildi"
+      ],
+      "A new encryption key will be generated for ${ boldForwarderEmail }.": [
+        "${ boldForwarderEmail } için yeni bir şifreleme anahtarı oluşturulacak."
+      ],
+      "Forwardee is invited and needs to accept/reject the invitation or update": [
+        "İletinin alıcısı davet edildi. Daveti kabul ya da red etmesi ya da güncellemesi gerekiyor"
+      ],
+      "Forwarding is active": [
+        "İletici kullanımda"
+      ],
       "Forwarding to ${ BRAND_NAME } addresses will keep your communication end-to-end encrypted. When forwarding externally, end-to-end encryption for the forwarding address will be disabled.": [
         "${ BRAND_NAME } adreslerine iletmek iletişiminizi uçtan uca şifrelenmiş olarak korumanızı sağlar. Bir dış e-posta adresine iletme kullanıldığında, iletilen adrese uçtan uca şifreleme yapılmaz."
+      ],
+      "Forwarding to an address without end-to-end encryption requires disabling end-to-end encryption for your ${ boldForwarderEmail } email address. ": [
+        "Uçtan uca şifreleme kullanmayan bir adrese iletmek için, ${ boldForwarderEmail } e-posta adresinizin uçtan uca şifreleme özelliğinin kapatılması gerekir. "
+      ],
+      "Forwarding to this address will become active once the recipient accepts the forwarding.": [
+        "Alıcı iletmeyi kabul ettiğinde bu adres ileticisi kullanıma alınacak."
+      ],
+      "No incoming forwarding rules": [
+        "Herhangi bir gelen iletici kuralı yok"
+      ],
+      "No outgoing forwarding rules": [
+        "Herhangi bir giden iletici kuralı yok"
+      ],
+      "Please update your forwarding keys": [
+        "Lütfen iletici anahtarlarınızı güncelleyin"
+      ],
+      "The forwardee rejected the forwarding request": [
+        "İletilen kişi iletme isteğini reddetti"
+      ],
+      "The forwarding is temporarily paused": [
+        "İletici geçici olarak duraklatıldı"
+      ],
+      "You can safely close this tab.": [
+        "Bu sekmeyi kapatabilirsiniz."
+      ],
+      "You won't receive emails forwarded automatically from ${ boldForwarderEmail }.": [
+        "${ boldForwarderEmail } adresinden otomatik olarak iletilen e-postaları almayacaksınız."
+      ]
+    },
+    "email_forwarding_2023: Label": {
+      "And": [
+        "Ve"
+      ],
+      "Forward from": [
+        "Şuradan ilet"
+      ],
+      "Forward to": [
+        "Şuraya ilet"
+      ],
+      "or": [
+        "veya"
+      ],
+      "Or": [
+        "Veya"
+      ],
+      "With attachment": [
+        "Ek dosyası olan"
+      ],
+      "Without attachment": [
+        "Ek dosyası olmayan"
+      ]
+    },
+    "email_forwarding_2023: Link": {
+      "Learn more": [
+        "Ayrıntılı bilgi alın"
+      ]
+    },
+    "email_forwarding_2023: Outgoing forwarding tab name": {
+      "To me": [
+        "Bana"
+      ]
+    },
+    "email_forwarding_2023: Placeholder": {
+      "Condition:": [
+        "Koşul:"
+      ],
+      "Enter email address": [
+        "E-posta adresini yazın"
+      ],
+      "Type text or keyword": [
+        "Metin ya da anahtar sözcük yazın"
+      ],
+      "Type text or keyword for this condition:": [
+        "Bu koşulun metnini ya da anahtar sözcüğünü yazın:"
+      ]
+    },
+    "email_forwarding_2023: Prompt": {
+      "Forwarding to the destination address will end.": [
+        "Hedef adrese iletme sona erecek."
+      ]
+    },
+    "email_forwarding_2023: Status": {
+      "Active": [
+        "Etkin"
+      ],
+      "Declined": [
+        "Reddedildi"
+      ],
+      "Outdated": [
+        "Eski"
+      ],
+      "Paused": [
+        "Duraklatılmış"
+      ],
+      "Pending": [
+        "Bekliyor"
+      ]
+    },
+    "email_forwarding_2023: Success": {
+      "A new encryption key has been generated for ${ forwarderEmail }.": [
+        "${ forwarderEmail } için yeni bir şifreleme anahtarı oluşturuldu."
+      ],
+      "Changes saved": [
+        "Değişiklikler kaydedildi"
+      ],
+      "Email sent to ${ forward.ForwardeeEmail }": [
+        "E-posta ${ forward.ForwardeeEmail } adresine gönderildi"
+      ],
+      "Email sent to ${ forwardeeEmail }.": [
+        "E-posta ${ forwardeeEmail } adresine gönderildi."
+      ],
+      "Forwarding accepted": [
+        "İletici kabul edildi"
+      ],
+      "Forwarding declined": [
+        "İletici reddedildi"
+      ],
+      "Forwarding deleted": [
+        "İletici silindi"
+      ],
+      "Forwarding paused": [
+        "İletici duraklatıldı"
+      ],
+      "Forwarding resumed": [
+        "İletici sürdürüldü"
+      ]
+    },
+    "email_forwarding_2023: Title": {
+      "Automatically forward emails to other accounts": [
+        "E-postaları otomatik olarak başka hesaplara ilet"
+      ],
+      "Delete forwarding?": [
+        "İletici silinsin mi?"
+      ],
+      "Email forwarding deactivated": [
+        "E-posta iletici kullanımdan kaldırıldı"
+      ],
+      "Forwarding activated": [
+        "İletici kullanıma alındı"
+      ],
+      "Request confirmation": [
+        "Onay isteğinde bulun"
+      ],
+      "Set up forwarding": [
+        "İletici kur"
+      ]
+    },
+    "email_forwarding_2023: Warning": {
+      "Warning": [
+        "Uyarı"
       ]
     },
     "Enabled 2FA": {
@@ -3460,6 +3781,9 @@
       ],
       "Incorrect username": [
         "Kullanıcı adı yanlış"
+      ],
+      "Intended recipient does not support calendar sharing": [
+        "İstenilen alıcı takvim paylaşımını desteklemiyor"
       ],
       "Invalid ${ name } code": [
         "${ name } kodu geçersiz"
@@ -9653,10 +9977,6 @@
         "${ n } takvim",
         "${ n } takvim"
       ],
-      "${ n } calendar per user": [
-        "Kullanıcı başına ${ n } takvim",
-        "Kullanıcı başına ${ n } takvim"
-      ],
       "${ n } custom email domain": [
         "${ n } özel e-posta etki alanı",
         "${ n } özel e-posta etki alanı"
@@ -10021,6 +10341,17 @@
         "Ekip yönetimi"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanımdan kaldırılacak."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Deneme süreniz ${ formattedPeriodEndDate } tarihinde sona eriyor"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, ${ last4 } içinde sona erecek"
@@ -10108,17 +10439,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat ücretinizi kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanımdan kaldırılacak."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Deneme süreniz ${ formattedPeriodEndDate } tarihinde sona eriyor"
       ]
     },
     "new_plans: Label": {

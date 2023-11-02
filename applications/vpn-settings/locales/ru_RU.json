@@ -574,6 +574,12 @@
       "Add ${ plan } to your plan by subscribing to 15 months": [
         "Добавить ${ plan } в тариф и подписаться на 15 месяцев"
       ],
+      "Cancel": [
+        "Отменить"
+      ],
+      "Close": [
+        "Закрыть"
+      ],
       "Get the deal": [
         "Купить"
       ],
@@ -656,6 +662,12 @@
       ],
       "Secure browsing and premium VPN features.": [
         "Безопасный просмотр веб-страниц и платные функции VPN."
+      ],
+      "Sorry, this offer is not available with your current plan.": [
+        "Извини, это предложение недоступно с твоим текущим планом."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Извини, это предложение недоступно с твоим текущим планом. Но ты можешь получить **${ discountPercentage } на ${ plan.Title }** при подписке на **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -678,6 +690,11 @@
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Специальная цена в ${ discountedPrice } действует за первый месяц. Затем будет выполнено автоматическое продление по сниженной цене в ${ nextPrice } каждый месяц. Отменить подписку можно в любой момент."
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Предложение недоступно"
       ]
     },
     "bf2023: Tooltip": {
@@ -4349,12 +4366,6 @@
         "${ n } календаря",
         "${ n } календарей",
         "${ n } календарей"
-      ],
-      "${ n } calendar per user": [
-        "${ n } календарь на пользователя",
-        "${ n } календаря на пользователя",
-        "${ n } календарей на пользователя",
-        "${ n } календарей на пользователя"
       ],
       "${ n } custom email domain": [
         "${ n } пользовательский домен электронной почты",

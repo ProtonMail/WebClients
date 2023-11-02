@@ -629,6 +629,9 @@
       "Open navigation": [
         "Abrir navegação"
       ],
+      "Or": [
+        "Ou"
+      ],
       "Ordered list": [
         "Lista ordenada"
       ],
@@ -1121,6 +1124,9 @@
       ],
       "Disallow unsigned mail": [
         "Não permitir e-mails sem assinatura"
+      ],
+      "Edit": [
+        "Editar"
       ],
       "Edit address": [
         "Editar endereço"
@@ -1807,6 +1813,11 @@
       ],
       "matches": [
         "corresponde com"
+      ]
+    },
+    "Condition label": {
+      "If": [
+        "Se"
       ]
     },
     "Confirm modal title": {
@@ -3112,6 +3123,83 @@
         "E-mail de verificação enviado para ${ address }"
       ]
     },
+    "email_forwarding_2023: Action": {
+      "Accept": [
+        "Aceitar"
+      ],
+      "Back": [
+        "Voltar"
+      ],
+      "Cancel": [
+        "Cancelar"
+      ],
+      "Delete": [
+        "Eliminar"
+      ],
+      "Next": [
+        "Seguinte"
+      ],
+      "Pause": [
+        "Pausar"
+      ],
+      "Resume": [
+        "Retomar"
+      ],
+      "Save": [
+        "Guardar"
+      ]
+    },
+    "email_forwarding_2023: Header": {
+      "From": [
+        "De"
+      ],
+      "Status": [
+        "Estado"
+      ],
+      "To": [
+        "Para"
+      ]
+    },
+    "email_forwarding_2023: Label": {
+      "And": [
+        "E"
+      ],
+      "Forward to": [
+        "Encaminhar para"
+      ],
+      "or": [
+        "ou"
+      ],
+      "Or": [
+        "Ou"
+      ]
+    },
+    "email_forwarding_2023: Link": {
+      "Learn more": [
+        "Saiba mais"
+      ]
+    },
+    "email_forwarding_2023: Outgoing forwarding tab name": {
+      "To me": [
+        "Para mim"
+      ]
+    },
+    "email_forwarding_2023: Placeholder": {
+      "Condition:": [
+        "Condição:"
+      ],
+      "Enter email address": [
+        "Introduza o endereço de e-mail"
+      ]
+    },
+    "email_forwarding_2023: Status": {
+      "Active": [
+        "Ativo"
+      ],
+      "Paused": [
+        "Em pausa"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "A2F"
@@ -4411,6 +4499,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -6545,6 +6636,9 @@
       "Setting up your organization": [
         "A configurar a sua organização"
       ],
+      "Settings update failed": [
+        "Erro de atualização das definições"
+      ],
       "Show original message": [
         "Mostrar mensagem original"
       ],
@@ -7438,6 +7532,9 @@
       ],
       "Disabled": [
         "Desativada"
+      ],
+      "Forwarding": [
+        "Encaminhamento"
       ],
       "Inactive": [
         "Inativa"
@@ -9321,10 +9418,6 @@
         "${ n } calendário",
         "${ n } calendários"
       ],
-      "${ n } calendar per user": [
-        "${ n } calendário por utilizador",
-        "${ n } calendários por utilizador"
-      ],
       "${ n } custom email domain": [
         "${ n } domínio de e-mail personalizado",
         "${ n } domínios de e-mail personalizados"
@@ -9673,6 +9766,17 @@
         "Gestão de equipa"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Caso contrário, o acesso à sua conta será limitado e a sua conta acabará por ser desativada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar a utilizar ${ MAIL_APP_NAME } com funcionalidades premium, escolha a sua subscrição e as opções de pagamento."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "A sua avaliação termina em ${ formattedPeriodEndDate }."
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina com ${ last4 }"
@@ -9757,17 +9861,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Está a beneficiar de um preço promocional no seu plano atual. Ao alterar a sua subscrição da sua conta, perderá o preço promocional e este não estará disponível se tentar subscrever novamente."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Caso contrário, o acesso à sua conta será limitado e a sua conta acabará por ser desativada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar a utilizar ${ MAIL_APP_NAME } com funcionalidades premium, escolha a sua subscrição e as opções de pagamento."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "A sua avaliação termina em ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -10656,6 +10749,9 @@
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "Se não conseguir entrar na sua conta da ${ BRAND_NAME }, o seu **kit de recuperação** permitirá que inicia sessão e recupere os seus dados."
       ],
+      "Includes:": [
+        "Incluí:"
+      ],
       "Install ${ PASS_APP_NAME }": [
         "Instalar o ${ PASS_APP_NAME }"
       ],
@@ -10679,6 +10775,9 @@
       ],
       "Open-source and audited": [
         "Código aberto e auditado"
+      ],
+      "per month": [
+        "por mês"
       ],
       "per month, billed annually": [
         "por mês, faturado anualmente"
@@ -11266,6 +11365,11 @@
         "Reposição da palavra-passe pedida"
       ]
     },
+    "session_recovery:initiation:action": {
+      "Got it": [
+        "Entendido"
+      ]
+    },
     "session_recovery:initiation:title": {
       "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
         "Pode redefinir a sua palavra-passe em ${ gracePeriodHoursRemaining } hora.",
@@ -11306,6 +11410,11 @@
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
         "Terminar sessão sem repor a palavra-passe?"
+      ]
+    },
+    "session_recovery:status:info": {
+      "Available": [
+        "Disponível"
       ]
     },
     "Settings description": {

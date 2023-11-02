@@ -8,9 +8,6 @@
       "Add": [
         "Pridať"
       ],
-      "Add current url": [
-        "Pridať aktuálnu URL"
-      ],
       "Add domain to pause list": [
         "Pridať doménu na zoznam pozastavených"
       ],
@@ -490,9 +487,6 @@
       "Invalid password manager": [
         "Neplatný správca hesiel"
       ],
-      "Invalid url": [
-        "Neplatná URL"
-      ],
       "Invitation could not be accepted": [
         "Pozvánku nebolo možné prijať"
       ],
@@ -549,9 +543,6 @@
       ],
       "The file you are trying to import is empty": [
         "Súbor, ktorý sa pokúšate importovať, je prázdny"
-      ],
-      "The url is in the list": [
-        "URL je na zozname"
       ],
       "Too many failed attempts. Please sign in again.": [
         "Priveľa neúspešných pokusov. Prihláste sa, prosím znova."
@@ -720,9 +711,6 @@
       "Access successfully confirmed": [
         "Prístup bol úspešne potvrdený"
       ],
-      "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
-        "Prístup k ${ PASS_APP_NAME } bude vyžadovať PIN kód na odomknutie vašej relácie"
-      ],
       "Access your passwords on the go with our mobile apps.": [
         "Pomocou našich mobilných aplikácií máte prístup k svojim heslám aj na cestách."
       ],
@@ -801,9 +789,6 @@
       "Enter verification code. Digit ${ digit }.": [
         "Zadajte overovací kód. Číslice ${ digit }."
       ],
-      "Enter your pin code": [
-        "Zadajte PIN kód"
-      ],
       "Enter your PIN code": [
         "Zadajte PIN kód"
       ],
@@ -830,24 +815,6 @@
       ],
       "Here you will find all the necessary information to get you started.": [
         "Tu nájdete všetky potrebné informácie, ktoré vám pomôžu začať."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "Ak je táto možnosť vypnutá, ${ PASS_APP_NAME } nezobrazí webové ikony prostredníctvom ${ BRAND_NAME } anonymizovaného proxy servera."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not prompt you to save or update credentials.": [
-        "Ak je táto možnosť vypnutá, ${ PASS_APP_NAME } nezobrazí výzvu na uloženie alebo aktualizáciu prihlasovacích údajov."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating an email alias on sign-up forms.": [
-        "Ak je táto možnosť vypnutá, ${ PASS_APP_NAME } nenavrhne vytvorenie emailového aliasu v registračných formulároch."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
-        "Ak je táto možnosť vypnutá, ${ PASS_APP_NAME } nenavrhne vytvorenie silných hesiel v registračných formulároch."
-      ],
-      "If enabled, the autofill dropdown will automatically open on field focus.": [
-        "Po zapnutí, pri prechode na pole sa automaticky otvorí možnosť vyplnenia."
-      ],
-      "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Po zapnutí môžete rýchlo automaticky vyplniť svoje prihlasovacie údaje kliknutím na ikonu ${ PASS_APP_NAME }."
       ],
       "Import in progress:": [
         "Prebieha import:"
@@ -977,9 +944,6 @@
       ],
       "Please consider leaving a review.": [
         "Zvážte napísanie recenzie, prosím."
-      ],
-      "Please enter your current pin code to continue": [
-        "Pre pokračovanie zadajte váš aktuálny PIN kód"
       ],
       "Press Enter to copy": [
         "Pre skopírovanie stlačte Enter"
@@ -1705,9 +1669,6 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Páči sa vám ${ PASS_APP_NAME }?"
       ],
-      "Enter your Pin": [
-        "Zadajte váš PIN"
-      ],
       "Fill & copy password": [
         "Vyplniť a kopírovať heslo"
       ],
@@ -1803,9 +1764,6 @@
       ]
     },
     "Validation": {
-      "Duplicated url": [
-        "Duplicitná URL"
-      ],
       "Field name is required": [
         "Názov poľa je povinný"
       ],
@@ -1817,9 +1775,6 @@
       ],
       "Url already exists": [
         "URL už existuje"
-      ],
-      "Url cannot be empty": [
-        "URL nemôže byť prázdna"
       ],
       "Url is invalid": [
         "URL je neplatná"
@@ -1852,9 +1807,6 @@
       ],
       "Invalid alias prefix": [
         "Neplatná predpona aliasu"
-      ],
-      "Maximum length is ${ maxLength } characters": [
-        "Maximálna dĺžka je ${ maxLength } znakov"
       ],
       "Missing alias prefix": [
         "Chýbajúca predpona aliasu"

@@ -8,9 +8,6 @@
       "Add": [
         "加入"
       ],
-      "Add current url": [
-        "加入目前的 url"
-      ],
       "Add domain to pause list": [
         "新增網域至暫停清單"
       ],
@@ -445,9 +442,6 @@
       "Invalid password manager": [
         "錯誤密碼管理器"
       ],
-      "Invalid url": [
-        "無效的網址"
-      ],
       "Invitation could not be accepted": [
         "邀請函無法被接受"
       ],
@@ -504,9 +498,6 @@
       ],
       "The file you are trying to import is empty": [
         "您匯入的檔案為空白的"
-      ],
-      "The url is in the list": [
-        "此網址於清單中"
       ],
       "Too many failed attempts. Please sign in again.": [
         "失敗次數過多。請重新再登入。"
@@ -627,9 +618,6 @@
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "有${ PASS_APP_NAME }可用更新。更新可使用最新的功能及錯誤修復。"
       ],
-      "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
-        "存取${ PASS_APP_NAME }需要個人識別數字代碼解鎖作業階段"
-      ],
       "Access your passwords on the go with our mobile apps.": [
         "於移動裝置的應用程式存取密碼"
       ],
@@ -699,9 +687,6 @@
       "Enter verification code. Digit ${ digit }.": [
         "輸入驗證代碼。正在按下 ${ digit } 。"
       ],
-      "Enter your pin code": [
-        "請輸入個人識別數字代碼"
-      ],
       "Enter your PIN code": [
         "輸入個人識別數字代碼"
       ],
@@ -716,24 +701,6 @@
       ],
       "Here you will find all the necessary information to get you started.": [
         "這裡是您需要的資訊"
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "停用時，${ PASS_APP_NAME } 將不會透過 ${ BRAND_NAME } 匿名影像代理伺服器顯示項目的小型圖示。"
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not prompt you to save or update credentials.": [
-        "若關閉。${ PASS_APP_NAME }將不會提醒儲存或更新資料"
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating an email alias on sign-up forms.": [
-        "若關閉${ PASS_APP_NAME }將不會於註冊時建議電子郵件別名"
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
-        "若關閉${ PASS_APP_NAME }將不會於註冊時建議密碼"
-      ],
-      "If enabled, the autofill dropdown will automatically open on field focus.": [
-        "啟用時，當欄位取得焦點時，自動填入下拉清單將自動開啟。"
-      ],
-      "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "若啟用，您能透過${ PASS_APP_NAME }圖示自動填入資料。"
       ],
       "Imported ${ payload.total } items": [
         "匯入${ payload.total }項目"
@@ -842,9 +809,6 @@
       ],
       "Please consider leaving a review.": [
         "請考慮留下評論。"
-      ],
-      "Please enter your current pin code to continue": [
-        "輸入個人識別數字代碼以繼續"
       ],
       "Press Enter to copy": [
         "按 Enter 以複製"
@@ -1501,9 +1465,6 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "享受 ${ PASS_APP_NAME }?"
       ],
-      "Enter your Pin": [
-        "輸入您的個人識別碼"
-      ],
       "Fill & copy password": [
         "填寫並複製密碼"
       ],
@@ -1587,14 +1548,8 @@
       ]
     },
     "Validation": {
-      "Duplicated url": [
-        "複製網址"
-      ],
       "Url already exists": [
         "網址已存在"
-      ],
-      "Url cannot be empty": [
-        "網址沒有理由為空"
       ],
       "Url is invalid": [
         "網址錯誤"
@@ -1624,9 +1579,6 @@
       ],
       "Invalid alias prefix": [
         "別名前綴無效"
-      ],
-      "Maximum length is ${ maxLength } characters": [
-        "最長上限為${ maxLength }字元"
       ],
       "Missing alias prefix": [
         "缺少別名前綴"
