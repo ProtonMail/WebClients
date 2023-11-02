@@ -1,4 +1,14 @@
-const devConfig = {
+interface Config {
+    appTitle: string;
+    devTools: boolean;
+    url: {
+        account: string;
+        mail: string;
+        calendar: string;
+    };
+}
+
+const devConfig: Config = {
     appTitle: "DEV - Proton",
     devTools: true,
     url: {
@@ -8,7 +18,7 @@ const devConfig = {
     },
 };
 
-const prodConfig = {
+const prodConfig: Config = {
     appTitle: "Proton",
     devTools: false,
     url: {
