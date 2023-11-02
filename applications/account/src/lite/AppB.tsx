@@ -23,10 +23,12 @@ import {
     getSessionTrackingEnabled,
 } from '@proton/components';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
+import metrics from '@proton/metrics';
+import { getClientID } from '@proton/shared/lib/apps/helper';
 import authentication from '@proton/shared/lib/authentication/authentication';
 import { APPS } from '@proton/shared/lib/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
-import sentry from '@proton/shared/lib/helpers/sentry';
+import * as sentry from '@proton/shared/lib/helpers/sentry';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import { getRedirect } from '@proton/shared/lib/subscription/redirect';
 import noop from '@proton/utils/noop';
@@ -45,7 +47,8 @@ const enhancedConfig = {
     APP_NAME: APPS.PROTONACCOUNTLITE,
 };
 
-sentry({ config, uid: authentication.getUID(), sessionTracking: getSessionTrackingEnabled() });
+sentry.default({ config, uid: authentication.getUID(), sessionTracking: getSessionTrackingEnabled() });
+metrics.setVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION);
 
 const cache = createCache<string, any>();
 
@@ -70,6 +73,8 @@ const App = () => {
     const handleLogin = (UID: string) => {
         authentication.setUID(UID);
         setUID(UID);
+        sentry.setUID(UID);
+        metrics.setAuthHeaders(UID || '');
     };
 
     const handleLogout = () => {
