@@ -109,7 +109,6 @@ export interface CalendarCreateOrUpdateEventBlobData {
     CalendarEventContent?: Omit<CalendarEventData, 'Author'>[];
     SharedKeyPacket?: string;
     SharedEventContent?: Omit<CalendarEventData, 'Author'>[];
-    PersonalEventContent?: Omit<CalendarEventData, 'Author'>;
     Notifications: Nullable<CalendarNotificationSettings[]>;
     AttendeesEventContent?: Omit<CalendarEventData, 'Author'>[];
     Attendees?: Omit<Attendee, 'UpdateTime' | 'ID'>[];
@@ -136,7 +135,6 @@ export interface CreateOrUpdateCalendarEventData
 export interface CreateSinglePersonalEventData {
     MemberID: string;
     Notifications: Nullable<CalendarNotificationSettings[]>;
-    PersonalEventContent?: Omit<CalendarEventData, 'Author'>;
 }
 
 export interface CreateLinkedCalendarEventData
