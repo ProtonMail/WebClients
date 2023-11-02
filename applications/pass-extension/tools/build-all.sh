@@ -38,9 +38,9 @@ cd "$PASSDIR"
 echo "Building Chrome (Prod)..."
 BUILD_TARGET=chrome yarn run build > /dev/null
 cd dist
-tar -cf "$OUTDIR/$BUILD_ID-chrome.tar" "."
+zip -rqX "$OUTDIR/$BUILD_ID-chrome.zip" "."
 cd ..
-printf "\t✅ %s\n" "$OUTDIR/$BUILD_ID-chrome.tar"
+printf "\t✅ %s\n" "$OUTDIR/$BUILD_ID-chrome.zip"
 
 
 # Chrome development (Black) release
@@ -57,13 +57,7 @@ BUILD_TARGET=firefox NODE_ENV=production yarn run config
 # Preserve config.ts because the `yarn` postinstall script will overwrite it
 cp src/app/config.ts src/app/config.ff-release.ts
 cd ../../
-tar -c                                             \
-    --exclude "*/.DS_Store"                        \
-    --exclude "*/node_modules/*"                   \
-    --exclude "packages/config/*"                  \
-    --exclude "applications/pass-extension/dist/*" \
-    --exclude "applications/pass-extension/*.md"   \
-    -f "$OUTDIR/$BUILD_ID-FF-sources.tar"          \
+zip -rqX "$OUTDIR/$BUILD_ID-FF-sources.zip"         \
     "applications/pass-extension"                  \
     "packages"                                     \
     "utilities"                                    \
@@ -73,19 +67,24 @@ tar -c                                             \
     ".yarnrc.yml"                                  \
     ./*.js                                         \
     ./*.json                                       \
-    ./*.mjs
+    ./*.mjs                                        \
+    -x "*/.DS_Store"                               \
+    -x "*/node_modules/*"                          \
+    -x "packages/config/*"                         \
+    -x "applications/pass-extension/dist/*"        \
+    -x "applications/pass-extension/*.md"
 cd "$PASSDIR"
-tar rf "$OUTDIR/$BUILD_ID-FF-sources.tar" "FIREFOX_REVIEWERS.md"
-printf "\t✅ %s\n" "$OUTDIR/$BUILD_ID-FF-sources.tar"
+zip -uqX "$OUTDIR/$BUILD_ID-FF-sources.zip" "FIREFOX_REVIEWERS.md"
+printf "\t✅ %s\n" "$OUTDIR/$BUILD_ID-FF-sources.zip"
 
 
 # Firefox build
 echo "Building Firefox (Prod)..."
 yarn run build:ff > /dev/null
 cd dist
-tar -cf "$OUTDIR/$BUILD_ID-FF.tar" "."
+zip -rqX "$OUTDIR/$BUILD_ID-FF.zip" "."
 cd ..
-printf "\t✅ %s\n" "$OUTDIR/$BUILD_ID-FF.tar"
+printf "\t✅ %s\n" "$OUTDIR/$BUILD_ID-FF.zip"
 
 
 # Verify FF reproducibility
@@ -93,12 +92,12 @@ echo "Verifying Firefox reproducibility..."
 # Extract build
 mkdir -p "$OUTDIR/$BUILD_ID-FF"
 cd "$OUTDIR/$BUILD_ID-FF"
-tar xf "$OUTDIR/$BUILD_ID-FF.tar"
+unzip -q "$OUTDIR/$BUILD_ID-FF.zip"
 
 # Extract sources
 mkdir -p "$OUTDIR/$BUILD_ID-FF-sources"
 cd "$OUTDIR/$BUILD_ID-FF-sources"
-tar xf "$OUTDIR/$BUILD_ID-FF-sources.tar"
+unzip -q "$OUTDIR/$BUILD_ID-FF-sources.zip"
 
 # Build and diff
 yarn install > /dev/null
