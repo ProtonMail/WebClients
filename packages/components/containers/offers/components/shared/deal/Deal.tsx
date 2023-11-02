@@ -14,8 +14,7 @@ interface Props extends OfferProps {
 }
 
 const Deal = forwardRef<HTMLDivElement, Props>(({ children, ...props }: Props, ref) => {
-    const { popular } = props.deal;
-    const { mobileOrder } = props.deal;
+    const { popular, mobileOrder } = props.deal;
     const discount = getDiscountWithCoupon(props.deal);
     const isMostPopular = popular === 1;
     const isSecondMostPopular = popular === 2;
