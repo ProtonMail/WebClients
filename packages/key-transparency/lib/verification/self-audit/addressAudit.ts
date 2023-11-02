@@ -216,11 +216,11 @@ const checkAddressWithNoKeys = async (epoch: Epoch, address: Address, api: Api, 
 const auditAddressImplementation = async (
     address: Address,
     userKeys: KeyPair[],
+    addressKeys: DecryptedAddressKey[],
     epoch: Epoch,
     saveSKLToLS: SaveSKLToLS,
     api: Api,
-    uploadMissingSKL: UploadMissingSKL,
-    getAddressKeys: (id: string) => Promise<DecryptedAddressKey[]>
+    uploadMissingSKL: UploadMissingSKL
 ): Promise<AddressAuditResult> => {
     const inputSKL = address.SignedKeyList;
     const email = address.Email;
@@ -266,7 +266,6 @@ const auditAddressImplementation = async (
             });
         })
     );
-    const addressKeys = await getAddressKeys(address.ID);
     const addressVerificationKeys = addressKeys
         .filter(({ Flags }) => hasBit(Flags, KEY_FLAG.FLAG_NOT_COMPROMISED))
         .map(({ publicKey }) => publicKey);
@@ -343,21 +342,21 @@ const auditAddressImplementation = async (
 export const auditAddress = async (
     address: Address,
     userKeys: KeyPair[],
+    addressKeys: DecryptedAddressKey[],
     epoch: Epoch,
     saveSKLToLS: SaveSKLToLS,
     api: Api,
-    uploadMissingSKL: UploadMissingSKL,
-    getAddressKeys: (id: string) => Promise<DecryptedAddressKey[]>
+    uploadMissingSKL: UploadMissingSKL
 ): Promise<AddressAuditResult> => {
     try {
         return await auditAddressImplementation(
             address,
             userKeys,
+            addressKeys,
             epoch,
             saveSKLToLS,
             api,
-            uploadMissingSKL,
-            getAddressKeys
+            uploadMissingSKL
         );
     } catch (error: any) {
         if (error instanceof KeyTransparencyError) {
