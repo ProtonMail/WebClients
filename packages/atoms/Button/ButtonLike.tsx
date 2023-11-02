@@ -101,7 +101,7 @@ const ButtonLikeBase = <E extends ElementType = typeof defaultElement>(
         isUnderlineShape ? 'button-underline' : 'button',
         !isUnderlineShape && pill && 'button-pill',
         !isUnderlineShape && icon && 'button-for-icon',
-        !isUnderlineShape && fullWidth && 'w100',
+        !isUnderlineShape && fullWidth && 'w-full',
         group && 'button-group-item',
         group && selected && 'is-selected',
         size !== 'medium' && `button-${size}`,

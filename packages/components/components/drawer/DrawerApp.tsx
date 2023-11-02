@@ -54,14 +54,14 @@ const DrawerApp = ({ customAppSettings, onCompose, onMailTo, contactCustomAction
                 ])}
             >
                 <ErrorBoundary component={<StandardErrorPage />}>
-                    <div className="drawer-app-inner h100 w100">
+                    <div className="drawer-app-inner h-full w-full">
                         {Object.entries(iframeSrcMap)
                             .filter(([, src]) => src)
                             .map(([app, src]) => (
                                 <iframe
                                     key={app}
                                     id={`drawer-app-iframe-${app}`}
-                                    className={clsx(['drawer-app-view h100 w100', appInView !== app && 'hidden'])}
+                                    className={clsx(['drawer-app-view h-full w-full', appInView !== app && 'hidden'])}
                                     src={src}
                                     title={c('Info').t`Calendar side panel`}
                                     allow="clipboard-read; clipboard-write"

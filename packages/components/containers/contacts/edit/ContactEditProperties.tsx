@@ -235,7 +235,7 @@ const ContactEditProperties = (
                     <div className="mr-2 flex flex-align-items-center flex-item-noshrink">
                         <Icon name="text-align-justify" className="visibility-hidden" />
                     </div>
-                    <div className="flex flex-nowrap w95">
+                    <div className="flex flex-nowrap w-custom" style={{ '--w-custom': '95%' }}>
                         <Button
                             color="weak"
                             shape="outline"

@@ -176,20 +176,20 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
                         </div>
                         <div>
                             <div className="flex flex-justify-space-between mb-2">
-                                <div className="w20">{c('Label').t`Key`}</div>
-                                <div className="w80 flex-align-self-center text-bold">
+                                <div className="w-1/5">{c('Label').t`Key`}</div>
+                                <div className="w-4/5 flex-align-self-center text-bold">
                                     <code data-testid="totp:secret-key">{sharedSecret}</code>
                                 </div>
                             </div>
                             <div className="flex flex-justify-space-between mb-2">
-                                <div className="w20">{c('Label').t`Interval`}</div>
-                                <div className="w80 flex-align-self-center text-bold">
+                                <div className="w-1/5">{c('Label').t`Interval`}</div>
+                                <div className="w-4/5 flex-align-self-center text-bold">
                                     <code>{period}</code>
                                 </div>
                             </div>
                             <div className="flex flex-justify-space-between mb-2">
-                                <div className="w20">{c('Label').t`Digits`}</div>
-                                <div className="w80 flex-align-self-center text-bold">
+                                <div className="w-1/5">{c('Label').t`Digits`}</div>
+                                <div className="w-4/5 flex-align-self-center text-bold">
                                     <code>{digits}</code>
                                 </div>
                             </div>
@@ -265,7 +265,12 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
                         <div className="flex text-center">
                             {recoveryCodes.map((code) => {
                                 return (
-                                    <code data-testid="totp:recovery-code" key={code} className="w49 p-2">
+                                    <code
+                                        data-testid="totp:recovery-code"
+                                        key={code}
+                                        className="w-custom p-2"
+                                        style={{ '--w-custom': '49%' }}
+                                    >
                                         {code}
                                     </code>
                                 );

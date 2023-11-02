@@ -96,7 +96,7 @@ const DesktopDownloadDropdown = ({ className }: Props) => {
             >
                 <DropdownMenu>
                     {isLoading ? (
-                        <CircleLoader className="w100 flex flex-align-items-center my-2" />
+                        <CircleLoader className="w-full flex flex-align-items-center my-2" />
                     ) : (
                         clients?.map((client) => {
                             if (client.file?.url) {

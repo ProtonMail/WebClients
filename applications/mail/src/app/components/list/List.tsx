@@ -171,7 +171,7 @@ const List = (
 
     return (
         <div className={clsx(['relative items-column-list', !show && 'hidden'])}>
-            <div ref={ref} className={clsx(['h100', isCompactView && 'list-compact'])}>
+            <div ref={ref} className={clsx(['h-full', isCompactView && 'list-compact'])}>
                 <h1 className="sr-only">
                     {conversationMode ? c('Title').t`Conversation list` : c('Title').t`Message list`}{' '}
                     {c('Title').ngettext(msgid`${unreads} unread message`, `${unreads} unread messages`, unreads)}
@@ -181,11 +181,11 @@ const List = (
                     className={clsx(
                         breakpoints.isDesktop && 'items-column-list-inner bg-norm',
                         !columnLayout && 'items-column-list-inner--border-none',
-                        'flex flex-nowrap flex-column relative items-column-list-inner--mail overflow-hidden h100'
+                        'flex flex-nowrap flex-column relative items-column-list-inner--mail overflow-hidden h-full'
                     )}
                 >
                     <div className="flex-item-noshrink">{toolbar}</div>
-                    <div className="h100 scroll-if-needed flex flex-column flex-nowrap w100">
+                    <div className="h-full scroll-if-needed flex flex-column flex-nowrap w-full">
                         <div className="flex-item-noshrink">
                             <ListBanners
                                 labelID={labelID}
@@ -208,7 +208,7 @@ const List = (
                                 <div
                                     className={clsx(
                                         !columnLayout && 'border-right border-weak',
-                                        'w100 flex-item-noshrink'
+                                        'w-full flex-item-noshrink'
                                     )}
                                 >
                                     {elements.map((element, index) => (

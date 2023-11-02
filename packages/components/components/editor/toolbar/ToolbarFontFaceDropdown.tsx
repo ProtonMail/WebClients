@@ -91,7 +91,7 @@ const ToolbarFontFaceDropdown = ({ value, setValue, defaultValue, onClickDefault
             content={
                 <span
                     data-testid="editor-toolbar:font-face:selected-value"
-                    className="text-ellipsis text-left max-w100"
+                    className="text-ellipsis text-left max-w-full"
                     style={{ display: 'inline-block', fontFamily: computedValue.toString() }}
                 >
                     {getFontLabel(computedValue)}

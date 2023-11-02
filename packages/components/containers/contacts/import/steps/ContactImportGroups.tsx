@@ -213,7 +213,7 @@ const ContactImportGroups = ({ model, setModel, onClose }: Props) => {
                         onChange={handleChangeAction}
                     />
                 </div>
-                <div className="flex-item-fluid w30">
+                <div className="flex-item-fluid w-3/10">
                     <SelectGroup
                         contactGroups={model.contactGroups}
                         action={action}
@@ -231,7 +231,7 @@ const ContactImportGroups = ({ model, setModel, onClose }: Props) => {
     });
 
     return (
-        <form className="modal-two-dialog-container h100" onSubmit={handleSubmit}>
+        <form className="modal-two-dialog-container h-full" onSubmit={handleSubmit}>
             <ModalTwoHeader title={c('Title').t`Warning`} />
             <ModalTwoContent>
                 <Alert className="mb-4">

@@ -51,9 +51,9 @@ const Step2 = ({
                         <h1 className="h2 text-bold">{c('Info').t`Thank you`}</h1>
                         <span className="color-weak">{c('Info').t`for choosing ${product}`}</span>
                     </div>
-                    <div className="pb-4 text-center m-auto w100">{img}</div>
+                    <div className="pb-4 text-center m-auto w-full">{img}</div>
                     <div className="text-center pt-7 md:pt-0" role="alert">
-                        <div className="inline-block w70">
+                        <div className="inline-block w-7/10">
                             <LoadingTextStepper steps={steps} />
                         </div>
                     </div>

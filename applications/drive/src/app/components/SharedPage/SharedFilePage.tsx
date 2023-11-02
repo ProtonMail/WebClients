@@ -29,7 +29,7 @@ export default function SharedFilePage({ token, link }: Props) {
                 FooterComponent={<SharedPageFooter rootItem={link} items={[{ id: link.linkId, ...link }]} />}
             >
                 <SharedPageHeader rootItem={link} items={[{ id: link.linkId, ...link }]}>
-                    <div className="max-w100">
+                    <div className="max-w-full">
                         <Breadcrumbs
                             token={token}
                             name={link.name}

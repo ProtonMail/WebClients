@@ -160,7 +160,7 @@ const KeyUploadContent = ({
                                             key={1}
                                             className="flex flex-row flex-nowrap flex-align-items-center flex-justify-space-between"
                                         >
-                                            <code className="max-w100 inline-block text-ellipsis" title={fingerprint}>
+                                            <code className="max-w-full inline-block text-ellipsis" title={fingerprint}>
                                                 {fingerprint}
                                             </code>
                                             <Button
@@ -190,7 +190,7 @@ const KeyUploadContent = ({
 
     return (
         <div className="flex flex-wrap on-mobile-flex-column flex-align-items-center">
-            <div className="mr-0 md:mr-4 flex-item-fluid min-w14e">
+            <div className="mr-0 md:mr-4 flex-item-fluid min-w-custom" style={{ '--min-w-custom': '14em' }}>
                 <InputFieldTwo
                     id={id}
                     label={label}

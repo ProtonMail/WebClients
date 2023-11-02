@@ -5,11 +5,11 @@
 @import '~@proton/components/components/dropzone/Dropzone';
 
 .proton {
-	&-h100 {
+	&-h-full {
 		block-size: 100%;
 	}
 
-	&-w100 {
+	&-w-full {
 		inline-size: 100%;
 	}
 
@@ -223,7 +223,9 @@ blockquote blockquote blockquote {
 	outline: none;
 	background-color: transparent;
 	text-align: center;
-	transition: 0.15s cubic-bezier(0.22, 1, 0.36, 1), background-position 0s;
+	transition:
+		0.15s cubic-bezier(0.22, 1, 0.36, 1),
+		background-position 0s;
 
 	&:hover,
 	&:focus,

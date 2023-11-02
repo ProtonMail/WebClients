@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -17,9 +17,10 @@ import './ContactSummary.scss';
 interface Props {
     vCardContact: VCardContact;
     leftBlockWidth?: string;
+    style?: React.CSSProperties;
 }
 
-const ContactSummary = ({ vCardContact, leftBlockWidth = 'w30' }: Props) => {
+const ContactSummary = ({ vCardContact, leftBlockWidth = 'w-1/3', style }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
     const [showLoadImageBanner, setShowLoadImageBanner] = useState(false);
     const loadImageDirectRef = useRef<() => void>(null);
@@ -54,6 +55,7 @@ const ContactSummary = ({ vCardContact, leftBlockWidth = 'w30' }: Props) => {
                         'text-center contactsummary-photo-container pt-2 mb-2 md:mb-0 on-mobile-center',
                         leftBlockWidth
                     )}
+                    style={style}
                 >
                     <ContactImageSummary
                         photo={photo}
@@ -65,7 +67,7 @@ const ContactSummary = ({ vCardContact, leftBlockWidth = 'w30' }: Props) => {
                 <div className="contactsummary-contact-name-container pl-0 md:pl-7 flex-column">
                     <h2
                         className={clsx(
-                            'contactsummary-contact-name text-center md:text-right mb-4 md:mb-0 flex-item-fluid text-bold text-ellipsis-two-lines w100',
+                            'contactsummary-contact-name text-center md:text-right mb-4 md:mb-0 flex-item-fluid text-bold text-ellipsis-two-lines w-full',
                             // Several email addresses are a single word but too long, for this case, we break at any char
                             nameIsEmail && 'text-break'
                         )}

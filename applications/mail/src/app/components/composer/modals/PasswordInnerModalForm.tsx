@@ -48,7 +48,7 @@ const PasswordInnerModalForm = ({ password, setPassword, passwordHint, setPasswo
     return (
         <>
             <div className="flex flex-nowrap">
-                <span className="mr-2 w100">{passwordInput}</span>
+                <span className="mr-2 w-full">{passwordInput}</span>
                 <span className="flex-item-noshrink password-inner-modal-copy-container">
                     <Copy
                         value={password}

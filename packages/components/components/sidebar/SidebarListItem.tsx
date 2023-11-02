@@ -8,7 +8,7 @@ interface Props extends LiHTMLAttributes<HTMLLIElement> {
 
 const SidebarListItem = ({
     className = '',
-    itemClassName = 'navigation-item w100 px-3 mb-0.5',
+    itemClassName = 'navigation-item w-full px-3 mb-0.5',
     children,
     ...rest
 }: Props) => {

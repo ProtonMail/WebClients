@@ -142,7 +142,7 @@ const EventForm = ({
     const frequencyRow = (
         <IconRow icon="arrows-rotate" title={c('Label').t`Frequency`} id={FREQUENCY_INPUT_ID}>
             <FrequencyInput
-                className={clsx([isCustomFrequencySet && 'mb-2', 'w100'])}
+                className={clsx([isCustomFrequencySet && 'mb-2', 'w-full'])}
                 id={FREQUENCY_INPUT_ID}
                 data-testid="event-modal/frequency:select"
                 value={frequencyModel.type}
@@ -345,7 +345,7 @@ const EventForm = ({
         >
             <CreateEventCalendarSelect
                 id={CALENDAR_INPUT_ID}
-                className="w100"
+                className="w-full"
                 title={c('Title').t`Select which calendar to add this event to`}
                 frozen={!canChangeCalendar}
                 model={model}

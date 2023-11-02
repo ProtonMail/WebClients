@@ -13,7 +13,7 @@ const EmailsTableCell = ({ contactID, emails = [], highlightedID, greyedOut }: P
             className={clsx([
                 'flex',
                 'flex-align-items-center',
-                'max-w100',
+                'max-w-full',
                 greyedOut && 'color-weak',
                 contactID === highlightedID && 'text-bold',
             ])}

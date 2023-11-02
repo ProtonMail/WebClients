@@ -77,7 +77,7 @@ const HeaderExtra = ({
             {isScheduledMessage && canScheduleSend ? <ExtraScheduledMessage message={message} /> : null}
             <ExtraExpiration message={message} />
 
-            <span className="inline-flex flex-row on-mobile-w100 hidden-empty">
+            <span className="inline-flex flex-row w-full md:w-auto hidden-empty">
                 <ExtraReadReceipt message={message.data} />
                 {!sourceMode && (
                     <ExtraImages

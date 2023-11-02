@@ -89,7 +89,7 @@ const AuthExtension = () => {
                 <Content className="text-center">
                     {logo && (
                         <div className="text-center my-8">
-                            <img className="m-auto w150p" src={logo} alt="" />
+                            <img className="m-auto w-custom" style={{ '--w-custom': '9.375rem' }} src={logo} alt="" />
                         </div>
                     )}
 

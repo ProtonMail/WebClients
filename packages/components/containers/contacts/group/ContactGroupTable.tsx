@@ -20,7 +20,7 @@ const ContactGroupTable = ({ contactEmails, onDelete }: Props) => {
                         <TableCell type="header">{c('Table header').t`Name`}</TableCell>
                         <TableCell type="header">{c('Table header').t`Address`}</TableCell>
                         {onDelete ? (
-                            <TableCell type="header" className="w20">
+                            <TableCell type="header" className="w-1/5">
                                 {c('Table header').t`Action`}
                             </TableCell>
                         ) : null}
@@ -30,10 +30,10 @@ const ContactGroupTable = ({ contactEmails, onDelete }: Props) => {
                     <TableBody>
                         {contactEmails.map(({ ID, Name, Email }) => {
                             const cells = [
-                                <div className="text-ellipsis max-w100" key={ID} title={Name}>
+                                <div className="text-ellipsis max-w-full" key={ID} title={Name}>
                                     {Name}
                                 </div>,
-                                <div className="text-ellipsis max-w100" key={ID} title={Email}>
+                                <div className="text-ellipsis max-w-full" key={ID} title={Email}>
                                     {Email}
                                 </div>,
                                 onDelete ? (

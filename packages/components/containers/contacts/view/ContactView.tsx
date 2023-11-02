@@ -73,7 +73,11 @@ const ContactView = ({
     return (
         <div>
             <div className="contact-summary-wrapper border-bottom pb-4 mb-4">
-                <ContactSummary vCardContact={vCardContact} leftBlockWidth="w100 max-w100p on-mobile-wauto" />
+                <ContactSummary
+                    vCardContact={vCardContact}
+                    leftBlockWidth="w-auto md:w-full max-w-custom"
+                    style={{ '--max-w-custom': '6.25rem' }}
+                />
                 <ContactViewErrors
                     errors={errors}
                     onReload={onReload}

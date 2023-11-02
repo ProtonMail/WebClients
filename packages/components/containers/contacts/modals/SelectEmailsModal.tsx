@@ -142,7 +142,7 @@ const SelectEmailsModal = ({ contacts, groupIDs, onSubmit, onLock, onResolve, on
                         return (
                             <Row key={contactID} className="border-bottom">
                                 {!isSingleContact && <Label className="text-semibold pt-0">{Name}</Label>}
-                                <Field className="flex flex-column w100">
+                                <Field className="flex flex-column w-full">
                                     {contactEmails.map(({ ID: contactEmailID, Email, isChecked }: CheckableContact) => {
                                         return (
                                             <label key={contactEmailID} className="mb-4" htmlFor={contactEmailID}>

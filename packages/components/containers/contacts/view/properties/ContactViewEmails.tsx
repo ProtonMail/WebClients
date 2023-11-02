@@ -75,7 +75,7 @@ const ContactViewEmails = ({
                         type={email.params?.type}
                         isSignatureVerified={isSignatureVerified}
                     >
-                        <span className="w100 flex">
+                        <span className="w-full flex">
                             <a
                                 className="mr-2 flex-item-fluid text-ellipsis"
                                 href={`mailto:${email.value}`}
@@ -130,7 +130,7 @@ const ContactViewEmails = ({
                         {!!contactGroups.length && (
                             <div className="mt-4">
                                 <ContactGroupLabels
-                                    className="max-w100"
+                                    className="max-w-full"
                                     contactGroups={contactGroups}
                                     isStacked={false}
                                     onDetails={onGroupDetails}
