@@ -17,8 +17,7 @@ body {
 	/* this is clearly needed if we want consistency  */
 	text-rendering: geometricprecision;
 	-webkit-font-smoothing: antialiased;
-	overflow-y: hidden;
-	overflow-x: auto;
+	overflow: auto hidden;
 }
 
 /* override reset.scss */
@@ -116,9 +115,9 @@ a:active {
 
 /** Links without href attributes */
 a:not([href]) {
-	text-decoration: none;
-	color: inherit;
-	cursor: default;
+	text-decoration: none !important;
+	color: inherit !important;
+	cursor: default !important;
 	pointer-events: none;
 }
 
@@ -219,7 +218,9 @@ blockquote.protonmail_quote
 	outline: none;
 	background-color: transparent;
 	text-align: center;
-	transition: 0.15s cubic-bezier(0.22, 1, 0.36, 1), background-position 0s;
+	transition:
+		0.15s cubic-bezier(0.22, 1, 0.36, 1),
+		background-position 0s;
 
 	&:hover,
 	&:focus,
