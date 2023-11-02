@@ -1,5 +1,5 @@
 import { FeatureCode } from '@proton/components/containers/features';
-import { COUPON_CODES, CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 
 import { getFamilyInboxFeatures, getMailPlusInboxFeatures, getUnlimitedInboxFeatures } from '../../helpers/offerCopies';
 import { OfferConfig } from '../../interface';
@@ -19,7 +19,7 @@ const config: OfferConfig = {
     deals: [
         {
             ref: 'bf_23_mail_free-modal-m12',
-            planName: PLANS.MAIL,
+            dealName: PLAN_NAMES[PLANS.MAIL],
             planIDs: {
                 [PLANS.MAIL]: 1,
             },
@@ -29,7 +29,7 @@ const config: OfferConfig = {
         },
         {
             ref: 'bf_23_mail_free-modal-u12',
-            planName: PLANS.BUNDLE,
+            dealName: PLAN_NAMES[PLANS.BUNDLE],
             planIDs: {
                 [PLANS.BUNDLE]: 1,
             },
@@ -40,7 +40,7 @@ const config: OfferConfig = {
         },
         {
             ref: 'bf_23_mail_free-modal-f12',
-            planName: PLANS.FAMILY,
+            dealName: PLAN_NAMES[PLANS.FAMILY],
             planIDs: {
                 [PLANS.FAMILY]: 1,
             },
