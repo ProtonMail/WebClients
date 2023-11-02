@@ -303,7 +303,7 @@ export class UploadWorker {
                 passphrase: null,
                 format: 'binary',
             }),
-        } as KeysGeneratedMessage);
+        } satisfies KeysGeneratedMessage);
     }
 
     postCreateBlocks(fileBlocks: EncryptedBlock[], encryptedThumbnailBlocks?: ThumbnailEncryptedBlock[]) {
@@ -321,14 +321,14 @@ export class UploadWorker {
                 hash: thumbnailBlock.hash,
                 type: thumbnailBlock.thumbnailType,
             })),
-        } as CreateBlockMessage);
+        } satisfies CreateBlockMessage);
     }
 
     postProgress(increment: number) {
         this.worker.postMessage({
             command: 'progress',
             increment,
-        } as ProgressMessage);
+        } satisfies ProgressMessage);
     }
 
     postDone(signature: string, signatureAddress: string, xattr: string, photo?: PhotoUpload) {
@@ -338,28 +338,28 @@ export class UploadWorker {
             signatureAddress,
             xattr,
             photo,
-        } as DoneMessage);
+        } satisfies DoneMessage);
     }
 
     postNetworkError(error: string) {
         this.worker.postMessage({
             command: 'network_error',
             error,
-        } as NetworkErrorMessage);
+        } satisfies NetworkErrorMessage);
     }
 
     postError(error: string) {
         this.worker.postMessage({
             command: 'error',
             error,
-        } as ErrorMessage);
+        } satisfies ErrorMessage);
     }
 
     postNotifySentry(error: Error) {
         this.worker.postMessage({
             command: 'notify_sentry',
             error: getSafeErrorObject(error),
-        } as NotifySentryMessage);
+        } satisfies NotifySentryMessage);
     }
 
     postHeartbeat() {
@@ -491,7 +491,7 @@ export class UploadWorkerController {
                 format: 'binary',
             }),
             serverTime: serverTime(),
-        } as GenerateKeysMessage);
+        } satisfies GenerateKeysMessage);
     }
 
     async postStart(
@@ -543,24 +543,24 @@ export class UploadWorkerController {
             command: 'created_blocks',
             fileLinks,
             thumbnailLinks,
-        } as CreatedBlocksMessage);
+        } satisfies CreatedBlocksMessage);
     }
 
     postPause() {
         this.worker.postMessage({
             command: 'pause',
-        } as PauseMessage);
+        } satisfies PauseMessage);
     }
 
     postResume() {
         this.worker.postMessage({
             command: 'resume',
-        } as ResumeMessage);
+        } satisfies ResumeMessage);
     }
 
     postClose() {
         this.worker.postMessage({
             command: 'close',
-        });
+        } satisfies CloseMessage);
     }
 }
