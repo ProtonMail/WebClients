@@ -3,13 +3,13 @@
  * Format should be FeatureFlagName = 'FeatureFlagName'
  */
 enum MailFeatureFlag {
-    ExternalSSOWeb = 'ExternalSSOWeb',
     AttachmentThumbnails = 'AttachmentThumbnails',
     WebMailPageSizeSetting = 'WebMailPageSizeSetting',
     EmailForwarding = 'EmailForwarding',
 }
 
 enum AccountFlag {
+    ExternalSSOWeb = 'ExternalSSOWeb',
     MaintenanceImporter = 'MaintenanceImporter',
     SignedInAccountRecovery = 'SignedInAccountRecovery',
     BF2023IsExpired = 'BF2023IsExpired',
