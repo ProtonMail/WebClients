@@ -3,6 +3,8 @@ import { Route, Switch } from 'react-router-dom';
 
 import { LoaderPage, ProtonApp, StandardPublicApp, StandardSetup, getSessionTrackingEnabled } from '@proton/components';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
+import metrics from '@proton/metrics/index';
+import { getClientID } from '@proton/shared/lib/apps/helper';
 import authentication from '@proton/shared/lib/authentication/authentication';
 import { newVersionUpdater } from '@proton/shared/lib/busy';
 import sentry from '@proton/shared/lib/helpers/sentry';
@@ -19,6 +21,8 @@ setTtagLocales(locales);
 setupGuestCrossStorage();
 newVersionUpdater(config);
 sentry({ config, uid: authentication.getUID(), sessionTracking: getSessionTrackingEnabled() });
+
+metrics.setVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION);
 
 const App = () => {
     const [hasInitialAuth] = useState(() => {

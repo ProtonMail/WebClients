@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useLoading from '@proton/hooks/useLoading';
+import metrics, { observeApiError } from '@proton/metrics';
 import { initiateSessionRecovery } from '@proton/shared/lib/api/sessionRecovery';
 import noop from '@proton/utils/noop';
 
@@ -40,22 +41,54 @@ const InitiateSessionRecoveryModal = ({ confirmedStep = false, onClose, ...rest 
 
     const [submitting, withSubmitting] = useLoading();
 
+    useEffect(() => {
+        const metricsStep = (() => {
+            if (step === STEP.PROMPT) {
+                return 'prompt';
+            }
+
+            if (step === STEP.RESET_CONFIRMED) {
+                return 'confirmed';
+            }
+        })();
+
+        if (!metricsStep) {
+            return;
+        }
+
+        metrics.core_session_recovery_initiation_modal_load_total.increment({
+            step: metricsStep,
+        });
+    }, [step]);
+
     if (step === STEP.RESET_CONFIRMED) {
         return <SessionRecoveryResetConfirmedPrompt open={rest.open} onClose={onClose} />;
     }
 
     const handleInitiateSessionRecovery = async () => {
-        await api(initiateSessionRecovery());
-        await call();
-        createNotification({
-            text: c('session_recovery:initiation:notification').t`Password reset confirmed`,
-            showCloseButton: false,
-        });
+        try {
+            await api(initiateSessionRecovery());
+            await call();
+            createNotification({
+                text: c('session_recovery:initiation:notification').t`Password reset confirmed`,
+                showCloseButton: false,
+            });
 
-        if (confirmedStep) {
-            setStep(STEP.RESET_CONFIRMED);
-        } else {
-            onClose?.();
+            metrics.core_session_recovery_initiation_total.increment({
+                status: 'success',
+            });
+
+            if (confirmedStep) {
+                setStep(STEP.RESET_CONFIRMED);
+            } else {
+                onClose?.();
+            }
+        } catch (error) {
+            observeApiError(error, (status) =>
+                metrics.core_session_recovery_initiation_total.increment({
+                    status,
+                })
+            );
         }
     };
 
