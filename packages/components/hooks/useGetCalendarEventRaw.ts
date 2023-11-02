@@ -24,16 +24,8 @@ const useGetCalendarEventRaw = (contactEmailsMap: SimpleMap<ContactEmail>): GetC
 
     return useCallback(
         async (Event: CalendarEvent) => {
-            const {
-                CalendarID,
-                SharedEvents,
-                CalendarEvents,
-                AttendeesEvents,
-                Attendees,
-                PersonalEvents,
-                Notifications,
-                FullDay,
-            } = Event;
+            const { CalendarID, SharedEvents, CalendarEvents, AttendeesEvents, Attendees, Notifications, FullDay } =
+                Event;
             const encryptingAddressID = getIsAutoAddedInvite(Event) ? Event.AddressID : undefined;
             const addresses = await getAddresses();
 
@@ -58,7 +50,6 @@ const useGetCalendarEventRaw = (contactEmailsMap: SimpleMap<ContactEmail>): GetC
                     CalendarEvents: withNormalizedAuthors(CalendarEvents),
                     AttendeesEvents: withNormalizedAuthors(AttendeesEvents),
                     Attendees,
-                    PersonalEvents,
                     Notifications,
                     FullDay,
                 },

@@ -231,16 +231,6 @@ export const calendarEventBuilder = build<CalendarEvent>('Event', {
         CreateTime: 1637855813,
         ModifyTime: 1637857503,
         IsOrganizer: 1,
-        PersonalEvents: [
-            {
-                Type: 2,
-                Data: 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nBEGIN:VEVENT\r\nUID:Ei1MAms3nRIcvGqJ3S7o-UUCkL7i@proton.me\r\nDTSTAMP:20211125T162445Z\r\nBEGIN:VALARM\r\nTRIGGER:-PT60M\r\nACTION:EMAIL\r\nEND:VALARM\r\nEND:VEVENT\r\nEND:VCALENDAR',
-                Signature:
-                    '-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v4.10.10\r\nComment: https://openpgpjs.org\r\n\r\nwnUEARYKAAYFAmGfuN0AIQkQ1oODHu7bPjIWIQTbrouLuU2xuMzp19LWg4Me\r\n7ts+MqoMAQDPn8EbAkjNTonQUG8GBY4nKYVAPzEOX+slwfqmWdqkrwEA+J3c\r\nJJOGtKi/MiXv5hJolxUxOP8YIAtg4cr8UqU+GQU=\r\n=/kOi\r\n-----END PGP SIGNATURE-----\r\n',
-                Author: 'stest1@proton.black',
-                MemberID: '8DqHHGgVZgEb9KJ0En3mhktAcUBNlAEfGdp5-KnBy2WedZq2Th_gBhphVfcSITxDpz914-LvghzmLf5dhOB5HQ==',
-            },
-        ],
         Notifications: null,
         AttendeesEvents: [
             {
@@ -433,7 +423,7 @@ export const generateSimpleCalendar = (
         flags = CALENDAR_FLAGS.ACTIVE,
         display = CALENDAR_DISPLAY.VISIBLE,
         color = '#F00',
-    }: GenerateSimpleCalendarCustomParams,
+    }: GenerateSimpleCalendarCustomParams
 ): VisualCalendar => ({
     ID: id,
     Name: name,
@@ -513,7 +503,7 @@ interface GenerateSubscribedCalendarCustomParams extends GenerateSimpleCalendarC
 
 export const generateSubscribedCalendar = (
     i: number,
-    { status = CALENDAR_SUBSCRIPTION_STATUS.OK, url = '#', ...rest }: GenerateSubscribedCalendarCustomParams,
+    { status = CALENDAR_SUBSCRIPTION_STATUS.OK, url = '#', ...rest }: GenerateSubscribedCalendarCustomParams
 ) => {
     const simpleCalendar = generateSimpleCalendar(i, rest);
     const SubscriptionParameters = {
