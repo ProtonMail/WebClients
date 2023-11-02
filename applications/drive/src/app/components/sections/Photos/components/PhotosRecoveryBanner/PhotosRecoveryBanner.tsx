@@ -15,40 +15,31 @@ const getPhotosRecoveryProgressText = (
     countOfUnrecoveredLinksLeft: number,
     countOfFailedLinks: number
 ) => {
-    const baseText = c('Info').t`Photos restore is in progress, it might take a while`;
+    const baseText = c('Info').t`Restoring Photos... Please keep the tab open`;
 
     if (recoveryState === 'READY') {
-        return c('Info').t`Photos are waiting to be recovered`;
+        return c('Info').t`Restore Photos`;
     }
 
     if (recoveryState === 'FAILED') {
-        return c('Info').t`Some issues occurred during recovery`;
+        return c('Info').t`An issue occurred during the restore process.`;
     }
 
     if (recoveryState === 'SUCCEED') {
-        return c('Info').t`Photos were recovered successfully`;
+        return c('Info').t`Photos have been successfully recovered.`;
     }
 
-    if (
-        recoveryState === 'STARTED' ||
-        recoveryState === 'DECRYPTING' ||
-        recoveryState === 'DECRYPTED' ||
-        recoveryState === 'PREPARING' ||
-        recoveryState === 'PREPARED'
-    ) {
-        return `${baseText} (${c('Info').t`preparing`}...)`;
-    }
-    if (recoveryState === 'CLEANING' || recoveryState === 'MOVED' || countOfUnrecoveredLinksLeft === 0) {
-        return `${baseText} (${c('Info').t`cleaning`}...)`;
-    }
     const errorMessage = !!countOfFailedLinks
         ? c('Failed').ngettext(msgid`${countOfFailedLinks} failed`, `${countOfFailedLinks} failed`, countOfFailedLinks)
         : '';
-    return `${baseText} (${c('Success').ngettext(
-        msgid`${countOfUnrecoveredLinksLeft} left`,
-        `${countOfUnrecoveredLinksLeft} left`,
-        countOfUnrecoveredLinksLeft
-    )}) ${errorMessage}`;
+    if (countOfUnrecoveredLinksLeft) {
+        return `${baseText}: ${c('Success').ngettext(
+            msgid`${countOfUnrecoveredLinksLeft} left`,
+            `${countOfUnrecoveredLinksLeft} left`,
+            countOfUnrecoveredLinksLeft
+        )} ${errorMessage}`;
+    }
+    return `${baseText}.`;
 };
 
 const PhotosRecoveryBanner = () => {
@@ -81,6 +72,11 @@ const PhotosRecoveryBanner = () => {
                 <span className="mr-2 py-1 inline-block">
                     {getPhotosRecoveryProgressText(recoveryState, countOfUnrecoveredLinksLeft, countOfFailedLinks)}
                 </span>
+                {recoveryState === 'READY' && (
+                    <Button size="small" onClick={start}>
+                        {c('Action').t`Start`}
+                    </Button>
+                )}
                 {recoveryState === 'SUCCEED' && (
                     <Button size="small" onClick={() => setShowBanner(false)}>
                         {c('Action').t`Ok`}
@@ -89,11 +85,6 @@ const PhotosRecoveryBanner = () => {
                 {recoveryState === 'FAILED' && (
                     <Button size="small" onClick={start}>
                         {c('Action').t`Retry`}
-                    </Button>
-                )}
-                {recoveryState === 'READY' && (
-                    <Button size="small" onClick={start}>
-                        {c('Action').t`Start now`}
                     </Button>
                 )}
                 {recoveryState !== 'SUCCEED' && recoveryState !== 'FAILED' && recoveryState !== 'READY' && (
