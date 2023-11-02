@@ -7,20 +7,17 @@ interface UpdatePersonalEventPayloadArguments {
     eventComponent?: VcalVeventComponent;
     hasDefaultNotifications?: boolean;
     addressID?: string;
-    memberID: string;
     getAddressKeys: ReturnType<typeof useGetAddressKeys>;
 }
 const getUpdatePersonalEventPayload = async ({
     eventComponent,
     hasDefaultNotifications,
-    memberID,
     getAddressKeys,
     addressID,
 }: UpdatePersonalEventPayloadArguments) => {
     if (!eventComponent) {
         // we are dropping alarms
         return {
-            MemberID: memberID,
             Notifications: [],
         };
     }
@@ -32,7 +29,6 @@ const getUpdatePersonalEventPayload = async ({
     }
 
     return {
-        MemberID: memberID,
         Notifications: hasDefaultNotifications ? null : toApiNotifications(eventComponent.components),
     };
 };

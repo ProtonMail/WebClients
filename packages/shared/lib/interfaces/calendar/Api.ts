@@ -133,7 +133,6 @@ export interface CreateOrUpdateCalendarEventData
         CalendarCreateOrUpdateEventMetaData {}
 
 export interface CreateSinglePersonalEventData {
-    MemberID: string;
     Notifications: Nullable<CalendarNotificationSettings[]>;
 }
 
