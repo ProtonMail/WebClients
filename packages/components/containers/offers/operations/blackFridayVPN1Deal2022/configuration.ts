@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { FeatureCode } from '@proton/components/containers/features';
-import { COUPON_CODES, CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 
 import { getUnlimitedVPNFeatures } from '../../helpers/offerCopies';
 import { OfferConfig } from '../../interface';
@@ -20,7 +20,7 @@ const config: OfferConfig = {
     deals: [
         {
             ref: 'bf_22_vpn_plus-2y-modal-u24',
-            planName: PLANS.BUNDLE,
+            dealName: PLAN_NAMES[PLANS.BUNDLE],
             planIDs: {
                 [PLANS.BUNDLE]: 1,
             },
