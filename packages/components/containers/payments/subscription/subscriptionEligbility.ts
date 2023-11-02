@@ -1,5 +1,5 @@
 import { ADDON_NAMES, COUPON_CODES, CYCLE, PLANS, isFreeSubscription } from '@proton/shared/lib/constants';
-import { getHasCoupon, getPlan } from '@proton/shared/lib/helpers/subscription';
+import { getPlan } from '@proton/shared/lib/helpers/subscription';
 import { Plan, PlansMap, SubscriptionModel, UserModel } from '@proton/shared/lib/interfaces';
 
 import type { OfferConfig } from '../../offers/interface';
@@ -134,13 +134,6 @@ export const getEligibility = ({
 
     const latest = subscription?.UpcomingSubscription ?? subscription;
     const latestPlan = latest ? getPlan(latest) : undefined;
-
-    const hasBF2023Coupon = subscription && getHasCoupon(subscription, COUPON_CODES.BLACK_FRIDAY_2023);
-
-    // VPN specific BF applied
-    if ([PLANS.VPN, PLANS.VPN_PASS_BUNDLE].includes(offer.plan.Name as any) && hasBF2023Coupon) {
-        return { type: 'bf-applied' };
-    }
 
     const okResult = (): Eligibility => ({ type: 'pass-through' });
 
