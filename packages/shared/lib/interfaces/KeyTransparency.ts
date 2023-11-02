@@ -3,7 +3,7 @@ import { Epoch, SelfAuditResult } from '@proton/key-transparency/lib';
 
 import { Address } from './Address';
 import { ProcessedApiKey } from './EncryptionPreferences';
-import { DecryptedKey } from './Key';
+import { DecryptedAddressKey, DecryptedKey, KeyPair } from './Key';
 import { FetchedSignedKeyList, SignedKeyList } from './SignedKeyList';
 import { User } from './User';
 
@@ -24,6 +24,15 @@ export interface KTLocalStorageAPI {
     removeItem: (key: string) => Promise<void | undefined>;
     getItem: (key: string) => Promise<string | null | undefined>;
     setItem: (key: string, value: string) => Promise<void | undefined>;
+}
+
+export interface SelfAuditState {
+    userKeys: KeyPair[];
+    epoch: Epoch;
+    addresses: {
+        address: Address;
+        addressKeys: DecryptedAddressKey[];
+    }[];
 }
 
 export interface KeyTransparencyState {
