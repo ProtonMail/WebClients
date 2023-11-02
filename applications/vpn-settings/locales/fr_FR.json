@@ -658,6 +658,12 @@
       "Add ${ plan } to your plan by subscribing to 15 months": [
         "Ajoutez ${ plan } à votre abonnement en souscrivant pour 15 mois."
       ],
+      "Cancel": [
+        "Annuler"
+      ],
+      "Close": [
+        "Fermer"
+      ],
       "Get the deal": [
         "J'en profite"
       ],
@@ -740,6 +746,12 @@
       ],
       "Secure browsing and premium VPN features.": [
         "Navigation sécurisée et fonctionnalités premium du VPN."
+      ],
+      "Sorry, this offer is not available with your current plan.": [
+        "Désolé, cette offre n'est pas disponible avec ton plan actuel."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Désolé, cette offre n'est pas disponible avec ton plan actuel. Mais tu peux obtenir **${ discountPercentage } de réduction sur ${ plan.Title }** lorsque tu t'abonnes pour **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -760,6 +772,11 @@
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Le tarif exceptionnellement réduit de ${ discountedPrice } est valable le premier mois. Il sera ensuite automatiquement renouvelé à ${ nextPrice } chaque mois. Vous pouvez annuler quand vous le voulez."
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Offre non disponible"
       ]
     },
     "bf2023: Tooltip": {
@@ -4684,10 +4701,6 @@
         "${ n } calendrier",
         "${ n } calendriers"
       ],
-      "${ n } calendar per user": [
-        "${ n } calendrier par utilisateur",
-        "${ n } calendriers par utilisateur"
-      ],
       "${ n } custom email domain": [
         "${ n } domaine de messagerie personnalisé",
         "${ n } domaines de messagerie personnalisés"
@@ -5627,6 +5640,9 @@
       ],
       "Select a reason": [
         "Sélectionnez une raison"
+      ],
+      "Thomas Anderson": [
+        "Andréa Durant"
       ]
     },
     "Placeholder for custom invoice text": {
