@@ -1,15 +1,23 @@
 import { useState } from 'react';
 
-
-
 import { Button } from '@proton/atoms';
-import { Checkbox, ColorPicker, Icon, InputFieldTwo, Option, PasswordInputTwo, PhoneInput, RadioGroup, SelectTwo, TextAreaTwo, Toggle, TotpInput } from '@proton/components';
-
-
+import {
+    Checkbox,
+    ColorPicker,
+    Icon,
+    InputFieldTwo,
+    Option,
+    PasswordInputTwo,
+    PhoneInput,
+    RadioGroup,
+    SelectTwo,
+    TextAreaTwo,
+    Toggle,
+    TotpInput,
+} from '@proton/components';
 
 import { getTitle } from '../../helpers/title';
 import mdx from './InputField.mdx';
-
 
 export default {
     component: InputFieldTwo,
@@ -115,12 +123,12 @@ export const Sandbox = () => {
                 />
             </div>
             <div className="flex flex-nowrap gap-7 py-7">
-                <div className="w25">
+                <div className="w-1/4">
                     <InputFieldTwo label="Label" value={label} onValue={setLabel} />
                     <InputFieldTwo label="Hint" value={hint} onValue={setHint} />
                     <InputFieldTwo label="Placeholder" value={placeholder} onValue={setPlaceholder} />
                 </div>
-                <div className="w25">
+                <div className="w-1/4">
                     <InputFieldTwo label="AssistiveText" value={assistiveText} onValue={setAssistiveText} />
                     <InputFieldTwo label="Error" value={error} onValue={setError} />
                     <InputFieldTwo label="Warning" value={warning} onValue={setWarning} />

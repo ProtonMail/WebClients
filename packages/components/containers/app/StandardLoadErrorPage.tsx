@@ -33,9 +33,12 @@ const StandardLoadErrorPage = ({ errorMessage }: Props) => {
     }, []);
 
     return (
-        <div className="h100 flex flex-align-items-center pb-4 scroll-if-needed">
+        <div className="h-full flex flex-align-items-center pb-4 scroll-if-needed">
             <GenericError isNetworkError>
-                <div className="text-weak text-sm text-center max-w270p">{c('Error message')
+                <div
+                    className="text-weak text-sm text-center max-w-custom"
+                    style={{ '--max-w-custom': '16.875rem' }}
+                >{c('Error message')
                     .t`We couldn't load this page. Please refresh the page or check your internet connection.`}</div>
                 {errorMessage && (
                     <div className="text-weak text-sm mt-4">{c('Error message').t`Error: ${errorMessage}`}</div>

@@ -32,7 +32,8 @@ const DomainSection = ({ domain, domainName, onValue, validator }: Props) => {
             ) : (
                 <InputFieldTwo
                     id="domainName"
-                    rootClassName="max-w18e"
+                    rootClassName="max-w-custom"
+                    rootStyle={{ '--max-w-custom': '18em' }}
                     label={c('Label').t`Domain name`}
                     error={validator([requiredValidator(domainName)])}
                     autoFocus

@@ -195,7 +195,7 @@ export const CalendarModal = ({
     const getFakeInputTwo = ({ content, label }: { content: React.ReactNode; label: string }) => {
         // classes taken from InputFieldTwo
         return (
-            <div className="field-two-container w100">
+            <div className="field-two-container w-full">
                 {getFakeLabel(label)}
                 <div className="field-two-field-container relative">{content}</div>
             </div>
@@ -371,7 +371,7 @@ export const CalendarModal = ({
             <ModalTwo
                 size={getSize(type)}
                 fullscreenOnMobile
-                className="w100"
+                className="w-full"
                 open={open}
                 onClose={onClose}
                 as={Form}

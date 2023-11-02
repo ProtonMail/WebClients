@@ -40,7 +40,7 @@ const StepPrepare = () => {
 
                 <StepPrepareErrorBox errors={hasErrors} />
 
-                <div className="max-w30e">
+                <div className="max-w-custom" style={{ '--max-w-custom': '30em' }}>
                     {products.includes(ImportType.MAIL) && (
                         <StepProductsRowItem
                             id="mail"

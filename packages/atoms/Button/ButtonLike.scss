@@ -272,7 +272,7 @@
 	position: relative;
 
 	&:not(.button-for-icon) {
-		&:not(.w100) {
+		&:not(.w-full) {
 			padding-inline-end: em(40);
 
 			&.button-small {

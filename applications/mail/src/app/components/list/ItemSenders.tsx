@@ -50,7 +50,7 @@ const ItemSenders = ({ element, conversationMode, loading, unread, displayRecipi
 
     return (
         <span
-            className="inline-block max-w100 text-ellipsis"
+            className="inline-block max-w-full text-ellipsis"
             title={recipientsAddresses}
             data-testid="message-column:sender-address"
         >
@@ -61,7 +61,7 @@ const ItemSenders = ({ element, conversationMode, loading, unread, displayRecipi
                 // this fix works when there is 1 official recipient only (not with multiple), to be sure the official badge is shown
                 if (isLastItem && index === 0 && !!sender.recipient?.IsProton) {
                     return (
-                        <span className="inline-flex flex-nowrap max-w100" key={`${recipientLabel}-${index}`}>
+                        <span className="inline-flex flex-nowrap max-w-full" key={`${recipientLabel}-${index}`}>
                             <span className="flex-item-fluid text-ellipsis">
                                 {highlightData
                                     ? highlightMetadata(recipientLabel, unread, true).resultJSX

@@ -192,7 +192,7 @@ const SwitchAccountContainer = ({ metaTags, toAppName, onLogin, activeSessions, 
                 <Fragment key={LocalID}>
                     <div
                         className={clsx(
-                            'account-button p-3 interactive-pseudo-inset flex flex-align-items-start w100 text-left rounded relative',
+                            'account-button p-3 interactive-pseudo-inset flex flex-align-items-start w-full text-left rounded relative',
                             isLoading && 'is-loading'
                         )}
                     >
@@ -259,14 +259,14 @@ const SwitchAccountContainer = ({ metaTags, toAppName, onLogin, activeSessions, 
                 subTitle={toAppName ? c('Info').t`to continue to ${toAppName}` : undefined}
             />
             <Content className="flex">
-                <div className="w100 max-h-custom" style={{ '--max-h-custom': '25em' }}>
+                <div className="w-full max-h-custom" style={{ '--max-h-custom': '25em' }}>
                     <Scroll>{inner()}</Scroll>
                 </div>
-                <div className="w100 text-center mt-7 mb-2">
+                <div className="w-full text-center mt-7 mb-2">
                     <Button size="large" color="weak" shape="outline" fullWidth onClick={onAddAccount}>{c('Action')
                         .t`Add ${BRAND_NAME} Account`}</Button>
                 </div>
-                <div className="w100 text-center mb-2">
+                <div className="w-full text-center mb-2">
                     <Button
                         size="large"
                         color="norm"

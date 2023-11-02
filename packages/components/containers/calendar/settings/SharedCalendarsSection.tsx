@@ -270,8 +270,8 @@ const SharedCalendarsSection = ({ user, addresses, calendars = [], calendarInvit
                 <Table hasActions responsive="cards" data-testid="shared-calendars-section">
                     <TableHeader>
                         <TableRow>
-                            <TableHeaderCell className="text-left w50">{sharedWithMeTitle}</TableHeaderCell>
-                            <TableHeaderCell className="w20">{''}</TableHeaderCell>
+                            <TableHeaderCell className="text-left w-1/2">{sharedWithMeTitle}</TableHeaderCell>
+                            <TableHeaderCell className="w-1/5">{''}</TableHeaderCell>
                             <TableHeaderCell>{''}</TableHeaderCell>
                         </TableRow>
                     </TableHeader>

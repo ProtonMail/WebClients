@@ -16,7 +16,7 @@ interface Props {
 
 const MaintenanceLayout = () => {
     return (
-        <div className="max-w24e border rounded-xl p-8 rounded-xl text-center">
+        <div className="max-w-custom border rounded-xl p-8 rounded-xl text-center" style={{ '--max-w-custom': '24em' }}>
             <img
                 src={errorImg}
                 alt={c('Maintenance mode').t`This feature is temporarily unavailable`}

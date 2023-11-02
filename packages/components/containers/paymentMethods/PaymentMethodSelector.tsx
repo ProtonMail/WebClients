@@ -56,14 +56,14 @@ const PaymentMethodSelector = ({ method, lastUsedMethod, options, onChange, forc
             id="select-method"
             value={method}
             onChange={({ value }) => onChange(value)}
-            className={clsx(narrow && 'wauto')}
+            className={clsx(narrow && 'w-auto')}
             size={size}
             data-testid="payment-method-selector"
         >
             {options.flatMap((option) => {
                 const child = (
                     <Option key={option.value} value={option.value} title={option.text}>
-                        <span className="inline-flex max-w100 flex-nowrap flex-items-align-center flex-justify-start">
+                        <span className="inline-flex max-w-full flex-nowrap flex-items-align-center flex-justify-start">
                             {option.icon && <Icon className="mr-2 my-auto flex-item-noshrink" name={option.icon} />}
                             <span className="text-ellipsis">{option.text}</span>
                         </span>

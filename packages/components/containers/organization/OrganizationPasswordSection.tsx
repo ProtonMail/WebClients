@@ -164,7 +164,7 @@ const OrganizationPasswordSection = ({ organization, onceRef }: Props) => {
                         <TableRow
                             labels={tableHeaders}
                             cells={[
-                                <code key={1} className="max-w100 block text-ellipsis">
+                                <code key={1} className="max-w-full block text-ellipsis">
                                     {displayOrganizationKey.fingerprint}
                                 </code>,
                                 displayOrganizationKey.algorithm,

@@ -44,12 +44,12 @@ const DrawerView = ({
 
     return (
         <div
-            className={clsx('drawer-app-view h100 w100 flex flex-column', className)}
+            className={clsx('drawer-app-view h-full w-full flex flex-column', className)}
             onAnimationEnd={handleOnAnimationEnd}
             {...rest}
         >
             <DrawerAppHeader title={drawerHeaderTitle} />
-            <div className="flex-item-fluid contacts-widget w100">{content}</div>
+            <div className="flex-item-fluid contacts-widget w-full">{content}</div>
             {footerButtons && <DrawerAppFooter buttons={footerButtons} />}
         </div>
     );

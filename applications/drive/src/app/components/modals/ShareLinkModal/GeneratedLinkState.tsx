@@ -142,7 +142,7 @@ function GeneratedLinkState({
     const boldNameText = (
         <span key="name" style={{ whiteSpace: 'nowrap' }}>
             <b>
-                <FileNameDisplay text={itemName} className="max-w80" />
+                <FileNameDisplay text={itemName} className="max-w-4/5" />
             </b>
             :
         </span>
@@ -164,9 +164,12 @@ function GeneratedLinkState({
                             />
                         </div>
                         <div className="flex-no-min-children flex-justify-end ml-0 md:ml-2">
-                            <PrimaryButton id="copy-url-button" onClick={handleCopyURLClick} className="min-w7e">{c(
-                                'Action'
-                            ).t`Copy link`}</PrimaryButton>
+                            <PrimaryButton
+                                id="copy-url-button"
+                                onClick={handleCopyURLClick}
+                                className="min-w-custom"
+                                style={{ '--min-w-custom': '7em' }}
+                            >{c('Action').t`Copy link`}</PrimaryButton>
                         </div>
                     </Row>
                     <Alert data-testid="secure-link-text" className="mb-4">
@@ -210,7 +213,7 @@ function GeneratedLinkState({
                                             }}
                                         />
                                     </div>
-                                    <div className="flex-no-min-children flex-item-fluid mb-2 md:mb-0 field-two-icon-container-empty on-mobile-min-h0">
+                                    <div className="flex-no-min-children flex-item-fluid mb-2 md:mb-0 field-two-icon-container-empty min-h-0 md:min-h-none">
                                         {passwordToggledOn && (
                                             <>
                                                 <InputFieldTwo
@@ -252,7 +255,7 @@ function GeneratedLinkState({
                                             onChange={onIncludeExpirationTimeToogle}
                                         />
                                     </div>
-                                    <div className="flex-no-min-children flex-item-fluid flex-align-items-center mb-2 md:mb-0 field-two-icon-container-empty on-mobile-min-h0">
+                                    <div className="flex-no-min-children flex-item-fluid flex-align-items-center mb-2 md:mb-0 field-two-icon-container-empty min-h-0 md:min-h-none">
                                         {expirationToggledOn && (
                                             <ExpirationTimeDatePicker
                                                 disabled={saving}
@@ -269,7 +272,7 @@ function GeneratedLinkState({
                 </div>
             </ModalTwoContent>
             <ModalTwoFooter>
-                <div className="flex flex-justify-space-between w100">
+                <div className="flex flex-justify-space-between w-full">
                     <Button
                         loading={deleting}
                         disabled={saving}

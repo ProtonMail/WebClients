@@ -38,7 +38,8 @@ export const ModalContent = ({
         <>
             <ModalTwoHeader title={c('Action').t`Share item`} closeButtonProps={{ disabled: isLoading }} />
             <ModalTwoContent>
-                <Alert className="mb-4">{c('Info').t`Select an uploaded file or folder and create a link to it.`}</Alert>
+                <Alert className="mb-4">{c('Info')
+                    .t`Select an uploaded file or folder and create a link to it.`}</Alert>
                 <FolderTree
                     treeItems={rootItems}
                     isLoaded={true}
@@ -48,10 +49,16 @@ export const ModalContent = ({
                 />
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button type="reset" className="w8e" disabled={isLoading}>
+                <Button type="reset" className="w-custom" style={{ '--w-custom': '8em' }} disabled={isLoading}>
                     {c('Action').t`Cancel`}
                 </Button>
-                <PrimaryButton className="ml-4 w8e" loading={isLoading} type="submit" disabled={isSharingDisabled}>
+                <PrimaryButton
+                    className="ml-4 w-custom"
+                    style={{ '--w-custom': '8em' }}
+                    loading={isLoading}
+                    type="submit"
+                    disabled={isSharingDisabled}
+                >
                     {actionText}
                 </PrimaryButton>
             </ModalTwoFooter>

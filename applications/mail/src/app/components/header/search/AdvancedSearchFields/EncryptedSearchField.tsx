@@ -101,7 +101,7 @@ const EncryptedSearchField = ({ esIndexingProgressState }: Props) => {
         />
     );
     const esHeader = showToggle ? (
-        <Label htmlFor="es-toggle" className="text-bold p-0 pr-4 flex flex-item-fluid flex-align-items-center w100">
+        <Label htmlFor="es-toggle" className="text-bold p-0 pr-4 flex flex-item-fluid flex-align-items-center w-full">
             {esTitle}
             {info}
         </Label>

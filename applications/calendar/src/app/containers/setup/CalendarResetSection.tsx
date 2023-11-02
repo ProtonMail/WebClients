@@ -36,7 +36,7 @@ const CalendarResetSection = ({ calendarsToReset = [], resetAll }: Props) => {
     const calendarsList = (
         <div>
             {calendarsToReset.map(({ ID, Name, Color }) => (
-                <div key={ID} className="flex flex-nowrap w100 flex-align-items-center mb-2">
+                <div key={ID} className="flex flex-nowrap w-full flex-align-items-center mb-2">
                     <span className="flex flex-item-noshrink">
                         <CalendarSelectIcon color={Color} className="mr-2" />
                     </span>
@@ -69,7 +69,7 @@ const CalendarResetSection = ({ calendarsToReset = [], resetAll }: Props) => {
                     </Collapsible>
                 </div>
             )}
-            <div className="flex w100">
+            <div className="flex w-full">
                 <img src={encryptedEventSvg} alt={altText} className="m-auto" />
             </div>
             <p>

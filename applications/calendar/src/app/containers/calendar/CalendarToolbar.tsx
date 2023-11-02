@@ -38,7 +38,7 @@ const CalendarToolbar = ({
     const responsiveTimeZoneSelector = !(breakpoint === 'extratiny' || breakpoint === 'tiny');
 
     return (
-        <div className="w100" ref={toolbarRef}>
+        <div className="w-full" ref={toolbarRef}>
             <Toolbar className="toolbar--in-container">
                 {dateCursorButtons}
                 {searchField}
@@ -55,7 +55,7 @@ const CalendarToolbar = ({
                         <div className="flex flex-nowrap no-mobile no-tablet">
                             <TimeZoneSelector
                                 data-testid="calendar-view:time-zone-dropdown"
-                                className="wauto toolbar-button"
+                                className="w-auto toolbar-button"
                                 date={date}
                                 timezone={timezone}
                                 onChange={setTzid}

@@ -31,8 +31,8 @@ const ParticipantRow = ({ attendee, contactEmailsMap, onToggleOptional, onDelete
     return (
         <div key={email} className={clsx(['address-item flex mb-1 pl-2'])}>
             <div className="flex flex-item-fluid p-2" title={nameEmail}>
-                <div className={clsx(['text-ellipsis', displayOnlyEmail && 'max-w100'])}>{nameEmail}</div>
-                {isOptional ? <span className="color-weak w100">{c('Label').t`Optional`}</span> : null}
+                <div className={clsx(['text-ellipsis', displayOnlyEmail && 'max-w-full'])}>{nameEmail}</div>
+                {isOptional ? <span className="color-weak w-full">{c('Label').t`Optional`}</span> : null}
             </div>
             <Tooltip title={optionalText}>
                 <Button

@@ -17,11 +17,6 @@
 	transition: max-inline-size 0.15s easing(ease-in);
 	border-radius: var(--border-radius-lg);
 
-	// fix for plans, same as in subscription flow
-	&:not([class*='mw']) {
-		max-inline-size: rem(1500);
-	}
-
 	&-header {
 		padding-inline: em(48);
 		padding-block: 0.5em 0;

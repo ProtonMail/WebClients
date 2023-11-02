@@ -101,11 +101,11 @@ const ContactEditProperty = (
                     <Icon name="text-align-justify" className="visibility-hidden" />
                 </div>
             )}
-            <div className="contact-modal-field relative flex flex-nowrap on-mobile-flex-column w100 flex-align-items-start">
+            <div className="contact-modal-field relative flex flex-nowrap on-mobile-flex-column w-full flex-align-items-start">
                 <span
                     className={clsx([
                         'contact-modal-select flex flex-nowrap mb-2 md:mb-4 flex-align-items-start on-mobile-flex-align-self-start',
-                        labelWidthClassName || 'w30',
+                        labelWidthClassName || 'w-3/10',
                     ])}
                 >
                     <ContactEditLabel

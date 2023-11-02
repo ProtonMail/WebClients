@@ -35,7 +35,7 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
 
     return (
         <div
-            className="flex flex-nowrap border-bottom border-weak search-result-line w100 px-4 py-2 on-tablet-flex-column"
+            className="flex flex-nowrap border-bottom border-weak search-result-line w-full px-4 py-2 on-tablet-flex-column"
             style={{ scrollPaddingTop: '5em' }}
         >
             <div
@@ -52,7 +52,9 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
                 >
                     <span className="search-day-number rounded-sm p-1 inline-block">{day}</span>
                 </div>
-                <div className="color-weak min-w9e">{formattedDate}</div>
+                <div className="color-weak min-w-custom" style={{ '--min-w-custom': '9em' }}>
+                    {formattedDate}
+                </div>
             </div>
             {Boolean(dailyEvents.length) && (
                 <div className="flex-item-grow search-day flex flex-nowrap flex-column pl-7 lg:pl-0 mt-2 lg:mt-0">
@@ -90,7 +92,7 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
                                 type="button"
                                 key={`${CalendarID}-${ID}-${fakeUTCStartDate}`}
                                 className={clsx(
-                                    'flex flex-nowrap search-event-cell flex-align-items-center text-left relative interactive-pseudo w100 color-norm rounded-sm pl-1',
+                                    'flex flex-nowrap search-event-cell flex-align-items-center text-left relative interactive-pseudo w-full color-norm rounded-sm pl-1',
                                     isCancelled && 'text-strike',
                                     isOpen && 'bg-weak'
                                 )}
@@ -107,7 +109,12 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
                                     className="flex-no-min-children flex-nowrap flex-item-fluid search-event-time-details on-tablet-flex-column"
                                     ref={isClosestToDate ? closestToDateRef : null}
                                 >
-                                    <span className="min-w14e pl-2 lg:pl-0 pr-2 search-event-time">{timeString}</span>
+                                    <span
+                                        className="min-w-custom pl-2 lg:pl-0 pr-2 search-event-time"
+                                        style={{ '--min-w-custom': '14em' }}
+                                    >
+                                        {timeString}
+                                    </span>
                                     <span
                                         className={clsx(
                                             'text-ellipsis flex-item-fluid pl-2 lg:pl-0 search-event-summary text-bold'

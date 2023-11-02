@@ -32,7 +32,7 @@ const OrganizationTwoFAHeader = ({ organization }: Props) => {
     );
 
     return (
-        <Card rounded background bordered={false} className="max-w43e">
+        <Card rounded background bordered={false} className="max-w-custom" style={{ '--max-w-custom': '43em' }}>
             {cardContent}
         </Card>
     );

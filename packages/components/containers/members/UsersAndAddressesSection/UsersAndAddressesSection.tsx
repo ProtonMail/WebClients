@@ -345,7 +345,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                         </Button>
                     )}
                 </div>
-                <div className="ml-0 lg:ml-auto w24e on-tablet-w100">
+                <div className="ml-0 lg:ml-auto w-full lg:w-custom" style={{ '--lg-w-custom': '24em' }}>
                     <SearchInput
                         onChange={handleSearch}
                         placeholder={c('Placeholder').t`Search for a user or address`}

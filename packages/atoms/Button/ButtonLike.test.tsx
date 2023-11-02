@@ -218,7 +218,7 @@ describe('<ButtonLike />', () => {
                 const { container } = render(<ButtonLike shape="underline" fullWidth />);
                 const rootElement = container.firstChild;
 
-                expect(rootElement).not.toHaveClass('w100');
+                expect(rootElement).not.toHaveClass('w-full');
             });
         });
     });
@@ -311,18 +311,18 @@ describe('<ButtonLike />', () => {
     });
 
     describe('fullWidth', () => {
-        it('adds w100 class if fullWidth is true', () => {
+        it('adds w-full class if fullWidth is true', () => {
             const { container } = render(<ButtonLike fullWidth />);
             const rootElement = container.firstChild;
 
-            expect(rootElement).toHaveClass('w100');
+            expect(rootElement).toHaveClass('w-full');
         });
 
-        it('does not add w100 class by default', () => {
+        it('does not add w-full class by default', () => {
             const { container } = render(<ButtonLike />);
             const rootElement = container.firstChild;
 
-            expect(rootElement).not.toHaveClass('w100');
+            expect(rootElement).not.toHaveClass('w-full');
         });
     });
 

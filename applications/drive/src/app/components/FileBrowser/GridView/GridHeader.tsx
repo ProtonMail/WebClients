@@ -87,7 +87,8 @@ export const GridHeader = <T extends string>({
                 {selection?.selectionState === SelectionState.NONE && sortFields?.length && sortField && (
                     <>
                         <TableHeaderCell
-                            className="w10e"
+                            className="w-custom"
+                            style={{ '--w-custom': '10em' }}
                             onSort={() => handleSort(sortField)}
                             direction={getSortDirectionForKey(sortField)}
                             isLoading={isLoading}

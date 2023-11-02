@@ -972,8 +972,8 @@ const Step1 = ({
     const isBlackFriday = options.checkResult.Coupon?.Code === COUPON_CODES.BLACK_FRIDAY_2023;
 
     const renewalNotice = !hasSelectedFree && (
-        <div className="w100 text-sm color-norm opacity-70 text-center">
-            <div className="mx-auto w70 on-mobile-w100">
+        <div className="w-full text-sm color-norm opacity-70 text-center">
+            <div className="mx-auto w-full md:w-7/10">
                 *
                 {isBlackFriday
                     ? getBlackFridayRenewalNoticeText({
@@ -1041,7 +1041,7 @@ const Step1 = ({
                     </div>
                 )}
                 {!hasSelectedFree && mode === 'pricing' && (checkoutMappingVPN || checkoutMappingPlanIDs) && (
-                    <Box className={`mt-8 w100 ${padding}`}>
+                    <Box className={`mt-8 w-full ${padding}`}>
                         <BoxHeader
                             step={showStepLabel ? step++ : undefined}
                             title={
@@ -1235,7 +1235,7 @@ const Step1 = ({
                         </BoxContent>
                     </Box>
                 )}
-                <Box className="mt-8 w100">
+                <Box className="mt-8 w-full">
                     <div className="flex flex-justify-space-between on-tablet-flex-column ">
                         <div className={`flex-item-fluid ${padding}`}>
                             <BoxHeader
@@ -1394,7 +1394,7 @@ const Step1 = ({
                     </div>
                 </Box>
                 {!hasSelectedFree && (
-                    <Box className={`mt-8 w100 ${padding}`}>
+                    <Box className={`mt-8 w-full ${padding}`}>
                         <BoxHeader step={showStepLabel ? step++ : undefined} title={c('Header').t`Checkout`} />
                         <BoxContent>
                             <div className="flex flex-justify-space-between md:gap-14 gap-6 on-tablet-flex-column">

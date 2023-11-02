@@ -59,7 +59,7 @@ const StepPrepareContent = ({
                                     title: importLabel.Name,
                                 },
                             ]}
-                            className="max-w100"
+                            className="max-w-full"
                         />
                     </span>
                 )}
