@@ -111,35 +111,50 @@ export function useLinksActions({
             throw new Error('Cannot move corrupted file');
         }
 
-        const [currentParentPrivateKey, Hash, { NodePassphrase, NodePassphraseSignature }] = await Promise.all([
-            getLinkPrivateKey(abortSignal, shareId, link.parentLinkId),
-            generateLookupHash(link.name, newParentHashKey).catch((e) =>
-                Promise.reject(
-                    new Error('Failed to generate lookup hash during move', {
-                        cause: {
-                            e,
-                            shareId,
-                            newParentLinkId,
-                            newShareId: newShareId === shareId ? undefined : newShareId,
-                            linkId,
-                        },
-                    })
-                )
-            ),
-            encryptPassphrase(newParentPrivateKey, addressKey, passphrase, passphraseSessionKey).catch((e) =>
-                Promise.reject(
-                    new Error('Failed to encrypt link passphrase during move', {
-                        cause: {
-                            e,
-                            shareId,
-                            newParentLinkId,
-                            newShareId: newShareId === shareId ? undefined : newShareId,
-                            linkId,
-                        },
-                    })
-                )
-            ),
-        ]);
+        const [currentParentPrivateKey, Hash, ContentHash, { NodePassphrase, NodePassphraseSignature }] =
+            await Promise.all([
+                getLinkPrivateKey(abortSignal, shareId, link.parentLinkId),
+                generateLookupHash(link.name, newParentHashKey).catch((e) =>
+                    Promise.reject(
+                        new Error('Failed to generate lookup hash during move', {
+                            cause: {
+                                e,
+                                shareId,
+                                newParentLinkId,
+                                newShareId: newShareId === shareId ? undefined : newShareId,
+                                linkId,
+                            },
+                        })
+                    )
+                ),
+                link.digests?.sha1 &&
+                    generateLookupHash(link.digests.sha1, newParentHashKey).catch((e) =>
+                        Promise.reject(
+                            new Error('Failed to generate content hash during move', {
+                                cause: {
+                                    e,
+                                    shareId,
+                                    newParentLinkId,
+                                    newShareId: newShareId === shareId ? undefined : newShareId,
+                                    linkId,
+                                },
+                            })
+                        )
+                    ),
+                encryptPassphrase(newParentPrivateKey, addressKey, passphrase, passphraseSessionKey).catch((e) =>
+                    Promise.reject(
+                        new Error('Failed to encrypt link passphrase during move', {
+                            cause: {
+                                e,
+                                shareId,
+                                newParentLinkId,
+                                newShareId: newShareId === shareId ? undefined : newShareId,
+                                linkId,
+                            },
+                        })
+                    )
+                ),
+            ]);
 
         const sessionKeyName = await getDecryptedSessionKey({
             data: link.encryptedName,
@@ -187,6 +202,7 @@ export function useLinksActions({
                 NodePassphraseSignature,
                 SignatureAddress: address.Email,
                 NewShareID: newShareId === shareId ? undefined : newShareId,
+                ContentHash,
             })
         ).catch((err) => {
             if (INVALID_REQUEST_ERROR_CODES.includes(err?.data?.Code)) {
