@@ -572,6 +572,9 @@
       "Keep": [
         "Διατήρηση"
       ],
+      "Keep my Plus subscription": [
+        "Διατηρήστε την Plus συνδρομή μου"
+      ],
       "label emails as": [
         "ορίστε ετικέτα στα email ως"
       ],
@@ -3586,6 +3589,9 @@
       "Incorrect username": [
         "Εσφαλμένο όνομα χρήστη"
       ],
+      "Intended recipient does not support calendar sharing": [
+        "Ο προβλεπόμενος παραλήπτης δεν υποστηρίζει την κοινή χρήση ημερολογίου"
+      ],
       "Invalid ${ name } code": [
         "Μη έγκυρο ${ name } κωδικός"
       ],
@@ -6326,6 +6332,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Εάν πιστεύετε ότι αυτό είναι λάθος, παρακαλούμε επικοινωνήστε μαζί μας ${ contactLink }."
       ],
+      "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Εάν ακυρώσετε, η συνδρομή σας ${ planTitle } δε θα ανανεωθεί όταν λήξει στις ${ expiryDate }."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Αν δε βρείτε το μήνυμα στα Εισερχόμενα, παρακαλούμε ελέγξτε τον φάκελο Ενοχλητικά."
       ],
@@ -7617,6 +7626,12 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Θα ανακατευθυνθείτε στο ${ destination } αφού συνδεθείτε."
+      ],
+      "You will lose access to Plus features on this date.": [
+        "Θα χάσετε την πρόσβαση στις λειτουργίες του Plus αυτήν την ημέρα."
+      ],
+      "You will lose access to Plus servers and features on this date.": [
+        "Θα χάσετε την πρόσβαση στους διακομιστές και λειτουργίες του Plus αυτήν την ημέρα."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Θα χρειαστείτε μια διεύθυνση ${ BRAND_NAME } για να χρησιμοποιήσετε ${ MAIL_APP_NAME } και ${ CALENDAR_APP_NAME }"
@@ -9781,10 +9796,6 @@
         "${ n } ημερολόγιο",
         "${ n } ημερολόγια"
       ],
-      "${ n } calendar per user": [
-        "${ n } ημερολόγιο ανά χρήστη",
-        "${ n } ημερολόγια ανά χρήστη"
-      ],
       "${ n } custom email domain": [
         "${ n } προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου",
         "${ n } προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
@@ -10149,6 +10160,17 @@
         "Διαχείριση ομάδας"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Ειδάλλως η πρόσβαση στον λογαριασμό σας θα περιοριστεί, και εν τέλη ο λογαριασμός σας θα απενεργοποιηθεί."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προηγμένα χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } που λήγει σε ${ last4 }"
@@ -10236,17 +10258,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Απολαμβάνετε μια τιμή προσφοράς στο τρέχον πλάνο σας. Εάν υποβαθμίσετε τον λογαριασμό σας, θα χάσετε την τιμή προσφοράς και δε θα είναι διαθέσιμη εάν προσπαθήσετε να εγγραφείτε ξανά."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Ειδάλλως η πρόσβαση στον λογαριασμό σας θα περιοριστεί, και εν τέλη ο λογαριασμός σας θα απενεργοποιηθεί."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προηγμένα χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11015,6 +11026,9 @@
       "Continue": [
         "Συνέχεια"
       ],
+      "Continue to ${ appName } without upgrading": [
+        "Συνεχίστε στο ${ appName } χωρίς αναβάθμιση"
+      ],
       "Continue to ${ free }": [
         "Συνέχεια στο ${ free }"
       ],
@@ -11033,6 +11047,9 @@
       "Download to continue ${ size }": [
         "Λήψη για συνέχεια ${ size }"
       ],
+      "Keep this plan": [
+        "Διατηρήστε αυτό το πλάνο"
+      ],
       "Or ${ createANewAccount }": [
         "Ή ${ createANewAccount }"
       ],
@@ -11041,6 +11058,9 @@
       ],
       "Start using ${ appName } now": [
         "Ξεκινήστε να χρησιμοποιείτε το ${ appName } τώρα"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
       ],
       "Upgrade my plan": [
         "Αναβαθμίστε το πλάνο μου"
@@ -11105,8 +11125,17 @@
       "All premium ${ BRAND_NAME } services.": [
         "Όλες οι premium υπηρεσίες του ${ BRAND_NAME }."
       ],
+      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Αλλά μπορείτε να λάβετε έκπτωση ${ discount } αναβαθμίζοντας σε **${ upsellPlanTitle }** — είναι μόνο ${ relativePrice } επιπλέον ανά μήνα."
+      ],
+      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }**.": [
+        "Αλλά μπορείτε να λάβετε έκπτωση ${ discount } αναβαθμίζοντας σε **${ upsellPlanTitle }**"
+      ],
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Αλλά μπορείτε να ξεκλειδώσετε το **${ unlockPlanTitle }** και όλες τις premium υπηρεσίες του ${ BRAND_NAME } αναβαθμίζοντας στο **${ upsellPlanTitle }** — είναι μόνο ${ relativePrice } επιπλέον ανά μήνα."
+      ],
+      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Αλλά μπορείτε να ξεκλειδώσετε **${ unlockPlanTitle }** και όλες τις premium υπηρεσίες ${ BRAND_NAME } αναβαθμίζοντας σε **${ upsellPlanTitle }**."
       ],
       "By continuing, you agree to our ${ termsAndConditions }": [
         "Συνεχίζοντας, συμφωνείτε με τους ${ termsAndConditions }"
@@ -11152,6 +11181,9 @@
       ],
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "Εάν κλειδωθείτε έξω από τον ${ BRAND_NAME } λογαριασμό σας, το **κιτ ανάκτησης** θα σας επιτρέψει να συνδεθείτε και να ανακτήσετε τα δεδομένα σας."
+      ],
+      "Includes:": [
+        "Περιλαμβάνει:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "Εγκατάσταση ${ PASS_APP_NAME }"
@@ -11218,6 +11250,9 @@
       ],
       "Verifying your payment": [
         "Γίνεται επαλήθευση της πληρωμής σας"
+      ],
+      "Welcome to ${ shortName } Plus": [
+        "Καλώς ήλθατε στο ${ shortName } Plus"
       ],
       "Works on all devices": [
         "Λειτουργεί σε όλες τις συσκευές"
@@ -11363,6 +11398,9 @@
       ],
       "Text": [
         "Κείμενο"
+      ],
+      "Thomas Anderson": [
+        "Γιώργος Καραϊσκάκης"
       ],
       "Type text or keyword": [
         "Πληκτρολόγηση κειμένου ή λέξης-κλειδιού"

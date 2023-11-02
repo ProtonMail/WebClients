@@ -4,19 +4,6 @@
     "language": "en_US"
   },
   "contexts": {
-    "Action": {
-      "Add current url": [
-        "Add current URL"
-      ]
-    },
-    "Error": {
-      "Invalid url": [
-        "Invalid URL"
-      ],
-      "The url is in the list": [
-        "The URL is in the list"
-      ]
-    },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         "Upgrade to a paid plan to create multiple vaults."
@@ -24,14 +11,8 @@
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Discover ${ PASS_APP_NAME } YouTube Video"
       ],
-      "Enter your pin code": [
-        "Enter your PIN code"
-      ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you."
-      ],
-      "Please enter your current pin code to continue": [
-        "Please enter your current PIN code to continue"
       ]
     },
     "Label": {
@@ -49,9 +30,6 @@
       "Delete vault \"${ vaultName }\" ?": [
         "Delete vault \"${ vaultName }\"?"
       ],
-      "Enter your Pin": [
-        "Enter your PIN"
-      ],
       "Hide my email": [
         "Hide-my-email"
       ],
@@ -63,14 +41,8 @@
       ]
     },
     "Validation": {
-      "Duplicated url": [
-        "Duplicated URL"
-      ],
       "Url already exists": [
         "URL already exists"
-      ],
-      "Url cannot be empty": [
-        "URL cannot be empty"
       ],
       "Url is invalid": [
         "URL is invalid"

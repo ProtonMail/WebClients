@@ -8,9 +8,6 @@
       "Add": [
         "Adicionar"
       ],
-      "Add current url": [
-        "Adicionar o URL actual"
-      ],
       "Add domain to pause list": [
         "Adicionar o domínio na lista de pausa"
       ],
@@ -82,6 +79,9 @@
       ],
       "Create an account": [
         "Criar uma conta"
+      ],
+      "Create card": [
+        "Criar um cartão"
       ],
       "Create login": [
         "Criar um início de sessão"
@@ -236,6 +236,9 @@
       "Saving": [
         "A guardar"
       ],
+      "See members": [
+        "Ver os membros"
+      ],
       "Send us a message": [
         "Envie-nos uma mensagem"
       ],
@@ -377,8 +380,8 @@
       "Invalid password manager": [
         "Gestor de palavras-passe inválido"
       ],
-      "Invalid url": [
-        "O URL é inválido."
+      "Invalid URL": [
+        "O URL não é válido."
       ],
       "Item content cannot exceed 40KB": [
         "O conteúdo do item não pode exceder 40 KB."
@@ -430,9 +433,6 @@
       ],
       "The file you are trying to import is empty": [
         "O ficheiro que está a tentar importar está vazio"
-      ],
-      "The url is in the list": [
-        "O URL está na lista."
       ],
       "Too many failed attempts. Please sign in again.": [
         "Demasiadas tentativas erradas. Inicie sessão novamente."
@@ -495,6 +495,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -529,6 +532,10 @@
         "${ count } item",
         "${ count } itens"
       ],
+      "${ itemCount } item": [
+        "${ itemCount } item",
+        "${ itemCount } itens"
+      ],
       "${ revisionNumber } time": [
         "${ revisionNumber } vez.",
         "${ revisionNumber } vezes."
@@ -548,11 +555,11 @@
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Uma nova versão do ${ PASS_APP_NAME } está disponível. Actualize para desfrutar das funcionalidades e correções de erros mais recentes."
       ],
-      "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
-        "O acesso a ${ PASS_APP_NAME } exigirá um código PIN para desbloquear a sua sessão"
-      ],
       "Access your passwords on the go with our mobile apps.": [
         "Aceda às suas palavras-passe em qualquer lugar com as nossas aplicações móveis."
+      ],
+      "Admin": [
+        "Administrador"
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" movido para o lixo - deixará de reencaminhar e-mails para a sua caixa de correio"
@@ -602,9 +609,6 @@
       "Enter verification code. Digit ${ digit }.": [
         "Introduzir o código de verificação. Digite ${ digit }."
       ],
-      "Enter your pin code": [
-        "Introduza o seu código PIN"
-      ],
       "Enter your PIN code": [
         "Introduza o seu código PIN"
       ],
@@ -619,24 +623,6 @@
       ],
       "Here you will find all the necessary information to get you started.": [
         "Aqui encontrará todas as informações necessárias para começar."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "Se estiver desativado, ${ PASS_APP_NAME } não exibirá o favicon do item através do proxy de imagem anónima ${ BRAND_NAME }."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not prompt you to save or update credentials.": [
-        "Se estiver desativado, ${ PASS_APP_NAME } não lhe pedirá para guardar ou actualizar as credenciais."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating an email alias on sign-up forms.": [
-        "Se estiver desativado, ${ PASS_APP_NAME } não sugerirá a criação de um alias de e-mail nos formulários de registo."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
-        "Se estiver desativado, ${ PASS_APP_NAME } não irá sugerir a criação de palavras-passe fortes nos formulários de registo."
-      ],
-      "If enabled, the autofill dropdown will automatically open on field focus.": [
-        "Se estiver ativado, a lista de preenchimento automático irá abrir automaticamente no campo destacado"
-      ],
-      "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Se estiver ativado, pode preencher automaticamente as suas credenciais clicando no ícone ${ PASS_APP_NAME }."
       ],
       "Imported ${ payload.total } item": [
         "${ payload.total } item importado",
@@ -730,9 +716,6 @@
       "Please consider leaving a review.": [
         "Considere deixar um comentário."
       ],
-      "Please enter your current pin code to continue": [
-        "Introduza o seu código Pin actual para continuar"
-      ],
       "Press Enter to copy": [
         "Prima Enter para copiar"
       ],
@@ -811,6 +794,9 @@
       ],
       "Verification code": [
         "Código de verificação"
+      ],
+      "Viewer": [
+        "Visualizador"
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Estamos a ter problemas em sincronizar os dados para o seu armazenamento local. Por favor, assegure-se que tem espaço suficiente no disco para a ${ PASS_SHORT_APP_NAME } funcionar corretamente."
@@ -927,6 +913,9 @@
       "Capitalise": [
         "Maiúsculas"
       ],
+      "Card": [
+        "Cartão"
+      ],
       "Card number": [
         "Número do cartão"
       ],
@@ -984,6 +973,9 @@
       "Export": [
         "Exportar"
       ],
+      "Field name": [
+        "Nome do campo"
+      ],
       "Forwards to": [
         "Encaminha para"
       ],
@@ -1016,6 +1008,9 @@
       ],
       "Include numbers (0-9)": [
         "Incluir números (0-9)"
+      ],
+      "Invitations": [
+        "Convites"
       ],
       "Language": [
         "Idioma"
@@ -1359,9 +1354,6 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Está a gostar do ${ PASS_APP_NAME }?"
       ],
-      "Enter your Pin": [
-        "Introduza o seu PIN"
-      ],
       "Fill & copy password": [
         "Preencher & copiar a palavra-passe"
       ],
@@ -1391,6 +1383,9 @@
       ],
       "Secure your data": [
         "Proteja os seus dados"
+      ],
+      "Share with": [
+        "Partilhar com"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Passar para o ${ PASS_APP_NAME }?"
@@ -1430,14 +1425,14 @@
       ]
     },
     "Validation": {
-      "Duplicated url": [
-        "URL duplicado"
+      "Field name is required": [
+        "O nome do campo é obrigatório."
       ],
       "Url already exists": [
         "O URL já existe."
       ],
-      "Url cannot be empty": [
-        "A URL não pode estar vazia."
+      "URL cannot be empty": [
+        "O URL não pode estar vazio."
       ],
       "Url is invalid": [
         "O URL é inválido."
@@ -1467,9 +1462,6 @@
       ],
       "Invalid alias prefix": [
         "Prefixo de alias inválido"
-      ],
-      "Maximum length is ${ maxLength } characters": [
-        "O tamanho máximo é de ${ maxLength } carateres."
       ],
       "Missing alias prefix": [
         "Prefixo de alias em falta"

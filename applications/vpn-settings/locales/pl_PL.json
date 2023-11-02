@@ -664,6 +664,12 @@
       "Add ${ plan } to your plan by subscribing to 15 months": [
         "Dodaj ${ plan } do swojego planu, subskrybując na 15 miesięcy"
       ],
+      "Cancel": [
+        "Anuluj"
+      ],
+      "Close": [
+        "Zamknij"
+      ],
       "Get the deal": [
         "Skorzystaj z oferty"
       ],
@@ -746,6 +752,12 @@
       ],
       "Secure browsing and premium VPN features.": [
         "Bezpieczne przeglądanie i funkcje VPN premium."
+      ],
+      "Sorry, this offer is not available with your current plan.": [
+        "Przepraszamy, ta oferta nie jest dostępna w ramach bieżącego planu."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Przepraszamy, ta oferta nie jest dostępna w ramach bieżącego planu. Możesz jednak otrzymać **${ discountPercentage }} zniżki od ${ plan.Title }** przy subskrypcji na **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -768,6 +780,11 @@
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Specjalnie obniżona cena wynosząca ${ discountedPrice } obowiązuje przez pierwszy miesiąc. Następnie będzie miało miejsce automatyczne odnowienie i cena wyniesie ${ nextPrice } w każdym miesiącu. Można anulować w dowolnym momencie."
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Oferta niedostępna"
       ]
     },
     "bf2023: Tooltip": {
@@ -4780,12 +4797,6 @@
         "${ n } kalendarzy",
         "${ n } kalendarzy"
       ],
-      "${ n } calendar per user": [
-        "${ n } kalendarz na użytkownika",
-        "${ n } kalendarze na użytkownika",
-        "${ n } kalendarzy na użytkownika",
-        "${ n } kalendarzy na użytkownika"
-      ],
       "${ n } custom email domain": [
         "${ n } niestandardowa domena",
         "${ n } niestandardowe domeny",
@@ -5771,6 +5782,9 @@
       ],
       "Select a reason": [
         "Wybierz przyczynę"
+      ],
+      "Thomas Anderson": [
+        "Jan Kowalski"
       ]
     },
     "Placeholder for custom invoice text": {
@@ -6236,7 +6250,7 @@
     },
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
-        "Przejdź na plan Unlimited"
+        "Przejdź do planu Unlimited"
       ]
     },
     "specialoffer: Countdown unit": {

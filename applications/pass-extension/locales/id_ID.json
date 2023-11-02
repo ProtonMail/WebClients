@@ -8,9 +8,6 @@
       "Add": [
         "Tambah"
       ],
-      "Add current url": [
-        "Tambahkan URL saat ini"
-      ],
       "Add domain to pause list": [
         "Tambah domain ke daftar jeda"
       ],
@@ -487,9 +484,6 @@
       "Invalid password manager": [
         "Pengelola kata sandi tidak valid"
       ],
-      "Invalid url": [
-        "URL tidak valid"
-      ],
       "Invitation could not be accepted": [
         "Undangan tidak dapat diterima"
       ],
@@ -546,9 +540,6 @@
       ],
       "The file you are trying to import is empty": [
         "Berkas yang ingin Anda impor kosong"
-      ],
-      "The url is in the list": [
-        "URL ini tidak berada dalam daftar"
       ],
       "Too many failed attempts. Please sign in again.": [
         "Terlalu banyak percobaan gagal. Mohon masuk lagi."
@@ -678,9 +669,6 @@
       "Access successfully confirmed": [
         "Akses berhasil dikonfirmasi"
       ],
-      "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
-        "Akses ke ${ PASS_APP_NAME } akan memerlukan kode PIN untuk membuka sesi Anda"
-      ],
       "Access your passwords on the go with our mobile apps.": [
         "Akses kata sandi Anda di mana saja dengan aplikasi mobile kami."
       ],
@@ -759,9 +747,6 @@
       "Enter verification code. Digit ${ digit }.": [
         "Masukkan kode verifikasi. Digit ${ digit }."
       ],
-      "Enter your pin code": [
-        "Masukkan kode PIN Anda"
-      ],
       "Enter your PIN code": [
         "Masukkan kode PIN Anda"
       ],
@@ -788,24 +773,6 @@
       ],
       "Here you will find all the necessary information to get you started.": [
         "Di sini Anda akan menemukan semua informasi yang diperlukan untuk memulai."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "Jika dinonaktifkan, ${ PASS_APP_NAME } tidak akan menampilkan favicon item melalui proksi gambar ${ BRAND_NAME } yang dianonimkan."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not prompt you to save or update credentials.": [
-        "Jika dinonaktifkan, ${ PASS_APP_NAME } tidak akan meminta Anda untuk menyimpan atau memperbarui kredensial."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating an email alias on sign-up forms.": [
-        "Apabila dinonakifkan, ${ PASS_APP_NAME } tidak akan menyarankan Anda untuk membuat alias surel setiap kali Anda mengisi formulir pendaftaran."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
-        "Jika dinonaktifkan, ${ PASS_APP_NAME } tidak akan menyarankan membuat kata sandi yang kuat pada formulir pendaftaran."
-      ],
-      "If enabled, the autofill dropdown will automatically open on field focus.": [
-        "Jika diaktifkan, dropdown pengisian otomatis akan dibuka secara otomatis pada pemfokusan kolom."
-      ],
-      "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Apabila diaktifkan, Anda dapat mengisi informasi kredensial Anda secara otomatis dengan mengklik ikon ${ PASS_APP_NAME }."
       ],
       "Import in progress:": [
         "Impor yang sedang berlangsung:"
@@ -929,9 +896,6 @@
       ],
       "Please consider leaving a review.": [
         "Mohon pertimbangkan untuk memberikan ulasan."
-      ],
-      "Please enter your current pin code to continue": [
-        "Mohon masukkan kode PIN Anda saat ini untuk melanjutkan"
       ],
       "Press Enter to copy": [
         "Tekan Enter untuk menyalin"
@@ -1642,9 +1606,6 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Menikmati ${ PASS_APP_NAME }?"
       ],
-      "Enter your Pin": [
-        "Masukkan PIN Anda"
-      ],
       "Fill & copy password": [
         "Isi & salin kata sandi"
       ],
@@ -1740,9 +1701,6 @@
       ]
     },
     "Validation": {
-      "Duplicated url": [
-        "URL yang terduplikasi"
-      ],
       "Field name is required": [
         "Nama kolom wajib diisi"
       ],
@@ -1754,9 +1712,6 @@
       ],
       "Url already exists": [
         "URL sudah ada"
-      ],
-      "Url cannot be empty": [
-        "URL tidak boleh kosong"
       ],
       "Url is invalid": [
         "URL tidak valid"
@@ -1789,9 +1744,6 @@
       ],
       "Invalid alias prefix": [
         "Awalan alias tidak valid"
-      ],
-      "Maximum length is ${ maxLength } characters": [
-        "Panjang teks tidak boleh melebihi ${ maxLength } karakter"
       ],
       "Missing alias prefix": [
         "Awalan alias hilang"

@@ -655,6 +655,12 @@
       "Add ${ plan } to your plan by subscribing to 15 months": [
         "15 ay abone olarak tarifenize ek ${ plan } ekleyin"
       ],
+      "Cancel": [
+        "İptal"
+      ],
+      "Close": [
+        "Kapat"
+      ],
       "Get the deal": [
         "Tekliften yararlanın"
       ],
@@ -737,6 +743,12 @@
       ],
       "Secure browsing and premium VPN features.": [
         "İnternette güvenli gezinin ve ücretli VPN özelliklerine erişin."
+      ],
+      "Sorry, this offer is not available with your current plan.": [
+        "Üzgünüz, bu teklif mevcut tarifeniz için geçerli değil."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Üzgünüz, bu teklif mevcut tarifeniz için geçerli değil fakat **${ months }** için **${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage }** indirim elde edebilirsiniz."
       ]
     },
     "bf2023: Offers": {
@@ -757,6 +769,11 @@
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Özel olarak indirimli fiyat olan ${ discountedPrice } ilk ay için geçerlidir. Daha sonra aylık ${ nextPrice } üzerinden otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Teklif bulunamadı"
       ]
     },
     "bf2023: Tooltip": {
@@ -4671,10 +4688,6 @@
       "${ n } calendar": [
         "${ n } takvim",
         "${ n } takvim"
-      ],
-      "${ n } calendar per user": [
-        "Kullanıcı başına ${ n } takvim",
-        "Kullanıcı başına ${ n } takvim"
       ],
       "${ n } custom email domain": [
         "${ n } özel e-posta etki alanı",
