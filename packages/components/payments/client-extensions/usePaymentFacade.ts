@@ -12,13 +12,7 @@ import { ChargeablePaymentParameters, PAYMENT_METHOD_TYPES, PaymentMethodFlows, 
 import { Operations, usePaymentFacade as useInnerPaymentFacade } from '../react-extensions';
 import { wrapMethods } from './useMethods';
 
-export const usePaymentFacade = ({
-    amount,
-    currency,
-    onChargeable,
-    coupon,
-    flow,
-}: {
+type PaymentFacadeProps = {
     amount: number;
     currency: Currency;
     onChargeable: (
@@ -28,7 +22,9 @@ export const usePaymentFacade = ({
     ) => Promise<unknown>;
     coupon?: string;
     flow: PaymentMethodFlows;
-}) => {
+};
+
+export const usePaymentFacade = ({ amount, currency, onChargeable, coupon, flow }: PaymentFacadeProps) => {
     const api = useApi();
     const { createModal } = useModals();
     const { UID } = useAuthentication();

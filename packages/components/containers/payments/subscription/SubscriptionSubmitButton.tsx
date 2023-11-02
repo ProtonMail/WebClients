@@ -62,7 +62,15 @@ const SubscriptionSubmitButton = ({
     }
 
     if (paymentMethodType === PAYMENT_METHOD_TYPES.PAYPAL) {
-        return <StyledPayPalButton paypal={paypal} className={className} amount={amountDue} currency={currency} />;
+        return (
+            <StyledPayPalButton
+                type="submit"
+                paypal={paypal}
+                className={className}
+                amount={amountDue}
+                currency={currency}
+            />
+        );
     }
 
     if (!loading && paymentMethodType === PAYMENT_METHOD_TYPES.CASH) {

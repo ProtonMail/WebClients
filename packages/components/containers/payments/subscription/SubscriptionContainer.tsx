@@ -428,12 +428,7 @@ const SubscriptionContainer = ({
                 timeout: 60000 * 2,
             });
         } else {
-            await operationsOrValidToken.subscribe({
-                Plans: model.planIDs,
-                Codes: getCodes(model),
-                Cycle: model.cycle,
-                product: app,
-            });
+            await operationsOrValidToken.subscribe();
         }
     };
 
@@ -469,7 +464,7 @@ const SubscriptionContainer = ({
         // Two possible cases: CHECKOUT and CHECKOUT_WITH_CUSTOMIZATION
         const checkoutStep = model.step;
         try {
-            setModel({ ...model, step: SUBSCRIPTION_STEPS.UPGRADE });
+            setModel((model) => ({ ...model, step: SUBSCRIPTION_STEPS.UPGRADE }));
             await processSubscription(operationsOrValidToken);
             await call();
 
@@ -481,7 +476,7 @@ const SubscriptionContainer = ({
             if (disableThanksStep) {
                 onSubscribed?.();
             } else {
-                setModel({ ...model, step: SUBSCRIPTION_STEPS.THANKS });
+                setModel((model) => ({ ...model, step: SUBSCRIPTION_STEPS.THANKS }));
             }
         } catch (error: any) {
             const { Code = 0 } = error.data || {};
@@ -499,7 +494,7 @@ const SubscriptionContainer = ({
                 })
             );
 
-            setModel({ ...model, step: checkoutStep });
+            setModel((model) => ({ ...model, step: checkoutStep }));
             throw error;
         }
     };
@@ -507,7 +502,7 @@ const SubscriptionContainer = ({
     const paymentFacade = usePaymentFacade({
         amount,
         currency,
-        onChargeable: (operations) => withLoading(() => handleSubscribe(operations)),
+        onChargeable: (operations) => withLoading(handleSubscribe(operations)),
         flow: 'subscription',
     });
 
@@ -606,6 +601,12 @@ const SubscriptionContainer = ({
             }
 
             try {
+                paymentFacade.paymentContext.setSubscriptionData({
+                    Plans: model.planIDs,
+                    Codes: getCodes(model),
+                    Cycle: model.cycle,
+                    product: app,
+                });
                 await processor.processPaymentToken();
             } catch (e) {
                 const error = getSentryError(e);
