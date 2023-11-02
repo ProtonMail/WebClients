@@ -1216,13 +1216,12 @@ const InteractiveCalendarView = ({
             return [];
         }
         const requests = operations.map(
-            ({ data: { addressID, memberID, eventID, calendarID, eventComponent, hasDefaultNotifications } }) =>
+            ({ data: { addressID, eventID, calendarID, eventComponent, hasDefaultNotifications } }) =>
                 async () => {
                     const payload = await getUpdatePersonalEventPayload({
                         eventComponent,
                         hasDefaultNotifications,
                         addressID,
-                        memberID,
                         getAddressKeys,
                     });
                     return api<UpdateEventPartApiResponse>({
