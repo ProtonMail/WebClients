@@ -643,6 +643,12 @@
       "Add ${ plan } to your plan by subscribing to 15 months": [
         "Voeg ${ plan } aan je abonnement toe door te kiezen voor 15 maanden"
       ],
+      "Cancel": [
+        "Annuleren"
+      ],
+      "Close": [
+        "Sluiten"
+      ],
       "Get the deal": [
         "Kies deze deal"
       ],
@@ -725,6 +731,12 @@
       ],
       "Secure browsing and premium VPN features.": [
         "Veilig browsen en premium VPN-functies in."
+      ],
+      "Sorry, this offer is not available with your current plan.": [
+        "Sorry, deze aanbieding is niet beschikbaar met je huidige abonnement."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Sorry, deze aanbieding is niet beschikbaar met je huidige abonnement. Maar je kunt **${ discountPercentage } korting krijgen op ${ plan.Title }** als je je inschrijft voor **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -745,6 +757,11 @@
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "De speciale kortingsprijs van ${ discountedPrice } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ nextPrice } per maand. U kunt opzeggen wanneer u wilt."
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Aanbieding niet beschikbaar"
       ]
     },
     "bf2023: Tooltip": {
@@ -4622,10 +4639,6 @@
       "${ n } calendar": [
         "${ n } agenda",
         "${ n } agenda's"
-      ],
-      "${ n } calendar per user": [
-        "${ n } agenda per gebruiker",
-        "${ n } agenda's per gebruiker"
       ],
       "${ n } custom email domain": [
         "${ n } aangepast e-maildomein",
