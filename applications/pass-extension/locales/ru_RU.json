@@ -8,9 +8,6 @@
       "Add": [
         "Добавить"
       ],
-      "Add current url": [
-        "Добавить текущий URL"
-      ],
       "Add domain to pause list": [
         "Добавить домен в список приостановки"
       ],
@@ -293,6 +290,16 @@
         "Экономьте с умом. Получите год Pass Plus всего за ${ relativePrice } в месяц."
       ]
     },
+    "bf2023: Label": {
+      "Get the deal": [
+        "Получить со скидкой"
+      ]
+    },
+    "bf2023: Title": {
+      "Black Friday offer": [
+        "Предложение Черная пятница"
+      ]
+    },
     "Button": {
       "More info": [
         "Подробнее"
@@ -403,9 +410,6 @@
       "Invalid password manager": [
         "Неверный менеджер паролей"
       ],
-      "Invalid url": [
-        "Недействительный url"
-      ],
       "Invitation could not be accepted": [
         "Приглашение не может быть принято"
       ],
@@ -462,9 +466,6 @@
       ],
       "The file you are trying to import is empty": [
         "Файл, который вы пытаетесь импортировать, пуст"
-      ],
-      "The url is in the list": [
-        "Этот url уже в списке"
       ],
       "Too many failed attempts. Please sign in again.": [
         "Слишком много неудачных попыток. Пожалуйста, войдите снова."
@@ -615,9 +616,6 @@
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Доступна новая версия ${ PASS_APP_NAME }. Обновите ее, чтобы насладиться последними функциями и исправлениями ошибок."
       ],
-      "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
-        "Для доступа к ${ PASS_APP_NAME } потребуется PIN-код для разблокировки вашей сессии"
-      ],
       "Access your passwords on the go with our mobile apps.": [
         "Получайте доступ к своим паролям на ходу с нашими мобильными приложениями."
       ],
@@ -678,9 +676,6 @@
       "Enter verification code. Digit ${ digit }.": [
         "Введите код подтверждения. Цифра ${ digit }."
       ],
-      "Enter your pin code": [
-        "Введите свой PIN-код"
-      ],
       "Enter your PIN code": [
         "Введите свой PIN-код"
       ],
@@ -695,24 +690,6 @@
       ],
       "Here you will find all the necessary information to get you started.": [
         "Здесь вы найдете всю необходимую информацию для начала работы."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "Если отключено, ${ PASS_APP_NAME } не будет отображать иконку сайта, загруженную через анонимный прокси-сервер ${ BRAND_NAME }."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not prompt you to save or update credentials.": [
-        "Если отключено, ${ PASS_APP_NAME } не будет предлагать сохранять или обновлять учетные данные."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating an email alias on sign-up forms.": [
-        "Если отключено, ${ PASS_APP_NAME } не будет предлагать создание псевдонима адреса электронной почты в формах регистрации."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
-        "Если отключено, ${ PASS_APP_NAME } не будет предлагать создание надежных паролей в формах регистрации."
-      ],
-      "If enabled, the autofill dropdown will automatically open on field focus.": [
-        "Если разрешено, раскрывающийся список автозаполнения автоматически откроется при выборе поля."
-      ],
-      "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Если включено, вы можете быстро заполнять свои учетные данные, щелкнув по иконке ${ PASS_APP_NAME }."
       ],
       "Imported ${ payload.total } item": [
         "Импортирован ${ payload.total } элемент",
@@ -824,9 +801,6 @@
       ],
       "Please consider leaving a review.": [
         "Пожалуйста, подумайте о том, чтобы оставить отзыв."
-      ],
-      "Please enter your current pin code to continue": [
-        "Пожалуйста, введите свой текущий PIN-код для продолжения"
       ],
       "Press Enter to copy": [
         "Нажмите Enter, чтобы скопировать"
@@ -1480,9 +1454,6 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Наслаждаетесь ${ PASS_APP_NAME }?"
       ],
-      "Enter your Pin": [
-        "Введите ваш Pin"
-      ],
       "Fill & copy password": [
         "Заполнить и скопировать пароль"
       ],
@@ -1551,14 +1522,8 @@
       ]
     },
     "Validation": {
-      "Duplicated url": [
-        "Повторяющийся url"
-      ],
       "Url already exists": [
         "Url уже существует"
-      ],
-      "Url cannot be empty": [
-        "Url не может быть пустым"
       ],
       "Url is invalid": [
         "Url недействителен"
@@ -1588,9 +1553,6 @@
       ],
       "Invalid alias prefix": [
         "Недопустимый префикс псевдонима"
-      ],
-      "Maximum length is ${ maxLength } characters": [
-        "Максимальная длина ${ maxLength } символов"
       ],
       "Missing alias prefix": [
         "Отсутствует префикс псевдонима"

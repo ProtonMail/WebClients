@@ -8,9 +8,6 @@
       "Add": [
         "Додати"
       ],
-      "Add current url": [
-        "Додати поточний url"
-      ],
       "Add domain to pause list": [
         "Додати домен до списку винятків"
       ],
@@ -433,9 +430,6 @@
       "Invalid password manager": [
         "Недійсний менеджер паролів"
       ],
-      "Invalid url": [
-        "Недійсна URL-адреса"
-      ],
       "Invitation could not be accepted": [
         "Не вдалося прийняти запрошення"
       ],
@@ -492,9 +486,6 @@
       ],
       "The file you are trying to import is empty": [
         "Ви намагаєтеся імпортувати порожній файл"
-      ],
-      "The url is in the list": [
-        "URL-адреса вже є у списку"
       ],
       "Too many failed attempts. Please sign in again.": [
         "Забагато невдалих спроб. Будь ласка, увійдіть ще раз."
@@ -645,9 +636,6 @@
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Доступна нова версія ${ PASS_APP_NAME }. Оновіть його, щоб отримати найновіші функції та виправлення помилок."
       ],
-      "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
-        "Щоб отримати доступ до ${ PASS_APP_NAME }, вимагатиметься PIN-код для розблокування сеансу"
-      ],
       "Access your passwords on the go with our mobile apps.": [
         "Отримуйте доступ до своїх паролів на ходу за допомогою наших програм для мобільних пристроїв."
       ],
@@ -717,9 +705,6 @@
       "Enter verification code. Digit ${ digit }.": [
         "Введіть код підтвердження. Цифри ${ digit }."
       ],
-      "Enter your pin code": [
-        "Введіть свій PIN-код"
-      ],
       "Enter your PIN code": [
         "Введіть PIN-код"
       ],
@@ -734,24 +719,6 @@
       ],
       "Here you will find all the necessary information to get you started.": [
         "Тут ви знайдете всю необхідну інформацію для початку роботи."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "Якщо вимкнено, ${ PASS_APP_NAME } не показуватиме піктограму елемента через анонімний проксі-сервер зображень ${ BRAND_NAME }."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not prompt you to save or update credentials.": [
-        "Якщо вимкнено, ${ PASS_APP_NAME } не пропонуватиме вам зберегти або оновити облікові дані."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating an email alias on sign-up forms.": [
-        "Якщо вимкнено, ${ PASS_APP_NAME } не запропонує створити псевдонім електронної пошти у реєстраційних формах."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
-        "Якщо вимкнено, ${ PASS_APP_NAME } не пропонуватиме створювати надійні паролі у реєстраційних формах."
-      ],
-      "If enabled, the autofill dropdown will automatically open on field focus.": [
-        "Якщо ввімкнено, спадне меню автозаповнення автоматично відкриється після наведення на поле."
-      ],
-      "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Якщо ввімкнено, ви можете швидко автоматично заповнити свої облікові дані, натиснувши піктограму ${ PASS_APP_NAME }."
       ],
       "Imported ${ payload.total } item": [
         "Імпортовано ${ payload.total } елемент",
@@ -866,9 +833,6 @@
       ],
       "Please consider leaving a review.": [
         "Напишіть відгук."
-      ],
-      "Please enter your current pin code to continue": [
-        "Щоб продовжити, введіть поточний PIN-код"
       ],
       "Press Enter to copy": [
         "Натисніть Enter, щоб скопіювати"
@@ -1520,9 +1484,6 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Вам подобається ${ PASS_APP_NAME }?"
       ],
-      "Enter your Pin": [
-        "Введіть PIN-код"
-      ],
       "Fill & copy password": [
         "Заповнення та копіювання пароля"
       ],
@@ -1606,14 +1567,8 @@
       ]
     },
     "Validation": {
-      "Duplicated url": [
-        "Дублювати url"
-      ],
       "Url already exists": [
         "Url вже існує"
-      ],
-      "Url cannot be empty": [
-        "Url-адреса не може бути порожньою"
       ],
       "Url is invalid": [
         "Неправильний Url"
@@ -1643,9 +1598,6 @@
       ],
       "Invalid alias prefix": [
         "Недійсний префікс псевдоніма"
-      ],
-      "Maximum length is ${ maxLength } characters": [
-        "Максимальна довжина - ${ maxLength } символів"
       ],
       "Missing alias prefix": [
         "Відсутній префікс псевдоніма"

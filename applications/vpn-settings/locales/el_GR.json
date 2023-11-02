@@ -266,6 +266,9 @@
       "Invite user": [
         "Πρόσκληση χρήστη"
       ],
+      "Keep my Plus subscription": [
+        "Διατηρήστε την Plus συνδρομή μου"
+      ],
       "Let's talk": [
         "Ας μιλήσουμε"
       ],
@@ -2950,6 +2953,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Εάν πιστεύετε ότι αυτό είναι λάθος, παρακαλούμε επικοινωνήστε μαζί μας ${ contactLink }."
       ],
+      "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Εάν ακυρώσετε, η συνδρομή σας ${ planTitle } δε θα ανανεωθεί όταν λήξει στις ${ expiryDate }."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Αν δε βρείτε το μήνυμα στα Εισερχόμενα, παρακαλούμε ελέγξτε τον φάκελο Ενοχλητικά."
       ],
@@ -3679,6 +3685,12 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Θα ανακατευθυνθείτε στο ${ destination } αφού συνδεθείτε."
+      ],
+      "You will lose access to Plus features on this date.": [
+        "Θα χάσετε την πρόσβαση στις λειτουργίες του Plus αυτήν την ημέρα."
+      ],
+      "You will lose access to Plus servers and features on this date.": [
+        "Θα χάσετε την πρόσβαση στους διακομιστές και λειτουργίες του Plus αυτήν την ημέρα."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Θα χρειαστείτε μια διεύθυνση ${ BRAND_NAME } για να χρησιμοποιήσετε ${ MAIL_APP_NAME } και ${ CALENDAR_APP_NAME }"
@@ -4518,10 +4530,6 @@
       "${ n } calendar": [
         "${ n } ημερολόγιο",
         "${ n } ημερολόγια"
-      ],
-      "${ n } calendar per user": [
-        "${ n } ημερολόγιο ανά χρήστη",
-        "${ n } ημερολόγια ανά χρήστη"
       ],
       "${ n } custom email domain": [
         "${ n } προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου",
@@ -5462,6 +5470,9 @@
       ],
       "Select a reason": [
         "Επιλογή αιτιολογίας"
+      ],
+      "Thomas Anderson": [
+        "Γιώργος Καραϊσκάκης"
       ]
     },
     "Placeholder for custom invoice text": {

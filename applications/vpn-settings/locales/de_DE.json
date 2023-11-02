@@ -658,6 +658,12 @@
       "Add ${ plan } to your plan by subscribing to 15 months": [
         "Füge ${ plan } zu deinem Abonnement hinzu, indem du 15 Monate abonnierst"
       ],
+      "Cancel": [
+        "Abbrechen"
+      ],
+      "Close": [
+        "Schließen"
+      ],
       "Get the deal": [
         "Angebot nutzen"
       ],
@@ -740,6 +746,12 @@
       ],
       "Secure browsing and premium VPN features.": [
         "Sicheres Surfen und Premium-VPN-Funktionen."
+      ],
+      "Sorry, this offer is not available with your current plan.": [
+        "Dieses Angebot ist mit deinem aktuellen Tarif leider nicht verfügbar."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Dieses Angebot ist mit deinem aktuellen Tarif leider nicht verfügbar. Aber du kannst **${ discountPercentage } auf ${ plan.Title }** bekommen, wenn du dich für **${ months }** anmeldest."
       ]
     },
     "bf2023: Offers": {
@@ -760,6 +772,11 @@
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Der speziell ermäßigte Preis von ${ discountedPrice } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ nextPrice } verlängert. Du kannst jederzeit kündigen."
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Angebot nicht verfügbar"
       ]
     },
     "bf2023: Tooltip": {
@@ -4684,10 +4701,6 @@
         "${ n } Kalender",
         "${ n } Kalender"
       ],
-      "${ n } calendar per user": [
-        "${ n } Kalender je Benutzer",
-        "${ n } Kalender je Benutzer"
-      ],
       "${ n } custom email domain": [
         "${ n } eigene E-Mail-Domain",
         "${ n } eigene E-Mail-Domains"
@@ -5627,6 +5640,9 @@
       ],
       "Select a reason": [
         "Grund auswählen"
+      ],
+      "Thomas Anderson": [
+        "Max Mustermann"
       ]
     },
     "Placeholder for custom invoice text": {

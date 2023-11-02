@@ -8,9 +8,6 @@
       "Add": [
         "Adăugare"
       ],
-      "Add current url": [
-        "Adăugare URL actual"
-      ],
       "Add domain to pause list": [
         "Adăugare domeniu în lista de suspendări"
       ],
@@ -489,9 +486,6 @@
       "Invalid password manager": [
         "Manager de parole nevalid"
       ],
-      "Invalid url": [
-        "URL nevalid."
-      ],
       "Invitation could not be accepted": [
         "Invitația nu a putut fi acceptată."
       ],
@@ -548,9 +542,6 @@
       ],
       "The file you are trying to import is empty": [
         "Fișierul pe care încercați să îl importați este gol."
-      ],
-      "The url is in the list": [
-        "Adresa URL este deja în listă."
       ],
       "Too many failed attempts. Please sign in again.": [
         "Prea multe încercări eșuate. Reconectați-vă."
@@ -706,9 +697,6 @@
       "Access successfully confirmed": [
         "Acces confirmat."
       ],
-      "Access to ${ PASS_APP_NAME } will require a pin code to unlock your session": [
-        "Accesul la ${ PASS_APP_NAME } va necesita un cod PIN pentru a vă debloca sesiunea."
-      ],
       "Access your passwords on the go with our mobile apps.": [
         "Accesați parolele din mers cu aplicațiile mobile."
       ],
@@ -787,9 +775,6 @@
       "Enter verification code. Digit ${ digit }.": [
         "Introduceți codul de verificare. ${ digit } cifre."
       ],
-      "Enter your pin code": [
-        "Introduceți codul PIN"
-      ],
       "Enter your PIN code": [
         "Introduceți codul PIN"
       ],
@@ -816,24 +801,6 @@
       ],
       "Here you will find all the necessary information to get you started.": [
         "Aici veți găsi toate informațiile necesare pentru a începe."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "Dacă e dezactivată, ${ PASS_APP_NAME } nu va afișa fișierul favicon prin proxy-ul de imagine anonim ${ BRAND_NAME }."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not prompt you to save or update credentials.": [
-        "Dacă e dezactivată, ${ PASS_APP_NAME } nu va solicita salvarea sau actualizarea acreditărilor."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating an email alias on sign-up forms.": [
-        "Dacă e dezactivată, ${ PASS_APP_NAME } nu va sugera crearea unui alias de e-mail în formularele de înscriere."
-      ],
-      "If disabled, ${ PASS_APP_NAME } will not suggest creating strong passwords on sign-up forms.": [
-        "Dacă e dezactivată, ${ PASS_APP_NAME } nu va sugera crearea de parole puternice în formularele de înscriere."
-      ],
-      "If enabled, the autofill dropdown will automatically open on field focus.": [
-        "Dacă e activată, lista de completare automată se va deschide la accesarea câmpului."
-      ],
-      "If enabled, you can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Dacă e activată, puteți completa automat rapid acreditările apăsând pe pictograma ${ PASS_APP_NAME }."
       ],
       "Import in progress:": [
         "Importare în derulare:"
@@ -961,9 +928,6 @@
       ],
       "Please consider leaving a review.": [
         "Luați în considerare scrierea unei recenzii."
-      ],
-      "Please enter your current pin code to continue": [
-        "Introduceți codul PIN actual pentru a continua"
       ],
       "Press Enter to copy": [
         "Apăsați Enter pentru copiere"
@@ -1684,9 +1648,6 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Vă bucurați de ${ PASS_APP_NAME }?"
       ],
-      "Enter your Pin": [
-        "Introduceți codul PIN"
-      ],
       "Fill & copy password": [
         "Completare și copiere parolă"
       ],
@@ -1782,9 +1743,6 @@
       ]
     },
     "Validation": {
-      "Duplicated url": [
-        "URL duplicat."
-      ],
       "Field name is required": [
         "Numele câmpului este obligatoriu."
       ],
@@ -1796,9 +1754,6 @@
       ],
       "Url already exists": [
         "Acest URL există deja."
-      ],
-      "Url cannot be empty": [
-        "Câmpul URL nu poate fi gol."
       ],
       "Url is invalid": [
         "URL nu este valid."
@@ -1831,9 +1786,6 @@
       ],
       "Invalid alias prefix": [
         "Prefix alias nevalid."
-      ],
-      "Maximum length is ${ maxLength } characters": [
-        "Lungimea maximă este de ${ maxLength } de caractere."
       ],
       "Missing alias prefix": [
         "Lipsește prefixul aliasului."

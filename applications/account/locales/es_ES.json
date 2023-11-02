@@ -1324,6 +1324,12 @@
       "Become a Visionary": [
         "Elige Visionary"
       ],
+      "Cancel": [
+        "Cancelar"
+      ],
+      "Close": [
+        "Cerrar"
+      ],
       "Get the deal": [
         "Aprovechar la oferta"
       ],
@@ -1406,6 +1412,12 @@
       ],
       "Secure browsing and premium VPN features.": [
         "Navegación segura y funciones VPN premium."
+      ],
+      "Sorry, this offer is not available with your current plan.": [
+        "Lo sentimos, esta oferta no está disponible con tu plan actual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Lo sentimos, esta oferta no está disponible con tu plan actual. Pero puedes obtener **${ discountPercentage } de ${ plan.Title }** al suscribirte durante **${ months }**."
       ]
     },
     "bf2023: Info": {
@@ -1449,6 +1461,11 @@
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "La oferta especial de ${ discountedPrice } es válida durante el primer mes. Una vez transcurrido ese plazo, se renovará automáticamente al precio de ${ nextPrice } cada mes. Puedes cancelarla en cualquier momento."
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Oferta no disponible"
       ]
     },
     "bf2023: Tooltip": {
@@ -3767,6 +3784,9 @@
       ],
       "Incorrect username": [
         "Nombre de usuario incorrecto"
+      ],
+      "Intended recipient does not support calendar sharing": [
+        "El destinatario previsto no admite compartir calendarios."
       ],
       "Invalid ${ name } code": [
         "Código de ${ name } no válido"
@@ -9972,10 +9992,6 @@
         "${ n } calendario",
         "${ n } calendarios"
       ],
-      "${ n } calendar per user": [
-        "${ n } calendario por usuario",
-        "${ n } calendarios por usuario"
-      ],
       "${ n } custom email domain": [
         "${ n } dominio de correo electrónico personalizado",
         "${ n } dominios de correo electrónico personalizados"
@@ -10340,6 +10356,17 @@
         "Gestión de equipos"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para seguir utilizando ${ MAIL_APP_NAME } con las funciones premium, suscríbete y elige el método de pago."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Tu periodo de pruebas acaba el ${ formattedPeriodEndDate }."
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina con ${ last4 }"
@@ -10427,17 +10454,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ahora mismo pagas un precio especial por tu plan. Si te pasas a un plan inferior, perderás esta ventaja y no la recuperarás suscribiéndote de nuevo."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para seguir utilizando ${ MAIL_APP_NAME } con las funciones premium, suscríbete y elige el método de pago."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Tu periodo de pruebas acaba el ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -11305,6 +11321,12 @@
       "All premium ${ BRAND_NAME } services.": [
         "Todos los servicios premium de ${ BRAND_NAME }."
       ],
+      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Pero puedes obtener ${ discount } de descuento al mejorar a **${ upsellPlanTitle }**, es solo ${ relativePrice } adicional al mes."
+      ],
+      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }**.": [
+        "Pero puedes obtener ${ discount } de descuento al mejorar a **${ upsellPlanTitle }**."
+      ],
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Pero puedes desbloquear **${ unlockPlanTitle }** y todos los servicios premium de ${ BRAND_NAME } al mejorar tu plan a **${ upsellPlanTitle }** — solo por ${ relativePrice } extra cada mes."
       ],
@@ -11572,6 +11594,9 @@
       ],
       "Text": [
         "Texto"
+      ],
+      "Thomas Anderson": [
+        "Andrea García"
       ],
       "Type text or keyword": [
         "Escribe el texto o palabra clave."
