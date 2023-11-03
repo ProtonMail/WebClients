@@ -163,8 +163,10 @@ const useRunSelfAudit = () => {
     }, [getLatestEpoch, getAddresses, getAddressKeys]);
 
     const createSelfAuditState = async (): Promise<SelfAuditState> => {
-        const userKeys = await createSelfAuditStateUserKeys();
-        const addressKeys = await createSelfAuditStateAddressKeys();
+        const [userKeys, addressKeys] = await Promise.all([
+            createSelfAuditStateUserKeys(),
+            createSelfAuditStateAddressKeys(),
+        ]);
         return {
             userKeys,
             ...addressKeys,
@@ -172,12 +174,15 @@ const useRunSelfAudit = () => {
     };
 
     const clearSelfAuditState = useCallback(async (state: SelfAuditState) => {
-        await Promise.all(state.userKeys.map(async ({ privateKey }) => CryptoProxy.clearKey({ key: privateKey })));
-        await Promise.all(
+        const clearUserKeysPromise = Promise.all(
+            state.userKeys.map(async ({ privateKey }) => CryptoProxy.clearKey({ key: privateKey }))
+        );
+        const clearAddressKeysPromise = Promise.all(
             state.addresses.map(async ({ addressKeys }) => {
                 await Promise.all(addressKeys.map(async ({ privateKey }) => CryptoProxy.clearKey({ key: privateKey })));
             })
         );
+        await Promise.all([clearUserKeysPromise, clearAddressKeysPromise]);
     }, []);
 
     const runSelfAuditWithState = async (state: SelfAuditState) => {
