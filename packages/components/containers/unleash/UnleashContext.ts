@@ -13,6 +13,7 @@ enum AccountFlag {
     MaintenanceImporter = 'MaintenanceImporter',
     SignedInAccountRecovery = 'SignedInAccountRecovery',
     BF2023IsExpired = 'BF2023IsExpired',
+    BF2023OfferCheck = 'BF2023OfferCheck',
 }
 
 enum DriveFeatureFlag {
