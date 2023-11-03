@@ -65,6 +65,7 @@ const SubscriptionSubmitButton = ({
         return (
             <StyledPayPalButton
                 type="submit"
+                data-testid="confirm"
                 paypal={paypal}
                 className={className}
                 amount={amountDue}
