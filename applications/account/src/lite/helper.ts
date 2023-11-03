@@ -16,6 +16,12 @@ export const getApp = (appQueryParam: string | null, redirect: string | undefine
     if (appQueryParam === 'drive') {
         return APPS.PROTONDRIVE;
     }
+    if (appQueryParam === 'pass') {
+        return APPS.PROTONPASS;
+    }
+    if (appQueryParam === 'calendar') {
+        return APPS.PROTONCALENDAR;
+    }
     if (redirect) {
         if (redirect.includes('vpn')) {
             return APPS.PROTONVPN_SETTINGS;
@@ -23,8 +29,14 @@ export const getApp = (appQueryParam: string | null, redirect: string | undefine
         if (redirect.includes('mail')) {
             return APPS.PROTONMAIL;
         }
+        if (redirect.includes('calendar')) {
+            return APPS.PROTONCALENDAR;
+        }
         if (redirect.includes('drive')) {
             return APPS.PROTONDRIVE;
+        }
+        if (redirect.includes('pass')) {
+            return APPS.PROTONPASS;
         }
     }
     return APPS.PROTONVPN_SETTINGS;
