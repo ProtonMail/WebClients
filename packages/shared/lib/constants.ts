@@ -489,6 +489,15 @@ export enum RECIPIENT_TYPES {
     TYPE_EXTERNAL = 2,
 }
 
+/**
+ * Returned by legacy GET /keys endpoint
+ */
+export enum IGNORE_KT {
+    VALID = 0,
+    EXTERNAL_ADDRESS = 1,
+    CATCH_ALL = 2,
+}
+
 export enum DRAFT_TYPE {
     NORMAL = 'text/html',
     PLAIN_TEXT = 'text/plain',

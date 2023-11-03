@@ -1,7 +1,7 @@
 import { CryptoProxy } from '@proton/crypto';
 import noop from '@proton/utils/noop';
 
-import { KEY_FLAG, MIME_TYPES, RECIPIENT_TYPES } from '../../constants';
+import { IGNORE_KT, KEY_FLAG, MIME_TYPES, RECIPIENT_TYPES } from '../../constants';
 import { API_CUSTOM_ERROR_CODES } from '../../errors';
 import { Api, ApiKeysConfig, ProcessedApiKey } from '../../interfaces';
 import { getPublicKeys } from '../keys';
@@ -24,10 +24,15 @@ const getPublicKeysEmailHelperLegacy = async (
         if (noCache) {
             config.cache = 'no-cache';
         }
-        const { Keys = [], ...rest } = await api<{
+        const {
+            Keys = [],
+            IgnoreKT,
+            ...rest
+        } = await api<{
             RecipientType: RECIPIENT_TYPES;
             MIMEType: MIME_TYPES;
             Keys: { PublicKey: string; Flags: KEY_FLAG }[];
+            IgnoreKT: IGNORE_KT;
             Warnings: string[];
         }>(config);
         const publicKeys: ProcessedApiKey[] = Keys.map(({ Flags, PublicKey }) => ({
@@ -47,6 +52,7 @@ const getPublicKeysEmailHelperLegacy = async (
         return {
             ...rest,
             publicKeys,
+            isCatchAll: IgnoreKT === IGNORE_KT.CATCH_ALL,
         };
     } catch (error: any) {
         const { data = {} } = error;
