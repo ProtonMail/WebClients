@@ -56,7 +56,7 @@ const SubUserDeleteModal = ({ member, onDelete, mode, ...rest }: Props) => {
                     <Button disabled={loading} onClick={handleClose}>{c('Action').t`Cancel`}</Button>,
                 ]}
             >
-                <p>{c(`Info`).t`They will be removed from your organization`}</p>
+                <p>{c('Info').t`They will be removed from your organization`}</p>
             </Prompt>
         );
     }
