@@ -22,19 +22,21 @@ import {
 import SubscriptionContainer from '@proton/components/containers/payments/subscription/SubscriptionContainer';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { ProductParam } from '@proton/shared/lib/apps/product';
+import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import {
     APPS,
     BRAND_NAME,
     CALENDAR_APP_NAME,
     COUPON_CODES,
+    CURRENCIES,
     DRIVE_APP_NAME,
+    HTTP_STATUS_CODE,
     MAIL_APP_NAME,
     PASS_APP_NAME,
+    PLANS,
     PLAN_TYPES,
     VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
-import { PLANS } from '@proton/shared/lib/constants';
-import { CURRENCIES } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { getHasCoupon, getUpgradedPlan, getValidCycle } from '@proton/shared/lib/helpers/subscription';
 import { Currency } from '@proton/shared/lib/interfaces';
@@ -72,8 +74,10 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
     const [subscription, loadingSubscription] = useSubscription();
     const [plans = [], loadingPlans] = usePlans();
     const [organization, loadingOrganization] = useOrganization();
+    const [error, setError] = useState({ title: '', message: '', error: '' });
 
     const bf2023IsExpiredFlag = useFlag('BF2023IsExpired');
+    const bf2023OfferCheck = useFlag('BF2023OfferCheck');
 
     const canEdit = canPay(user);
 
@@ -188,6 +192,16 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
         return <PromotionAlreadyApplied />;
     }
 
+    if (error.title && error.message) {
+        return (
+            <div className="h-full flex flex-column flex-justify-center flex-align-items-center bg-norm text-center">
+                <h1 className="text-bold text-2xl mb-2">{error.title}</h1>
+                <div>{error.message}</div>
+                {error.error && <div className="mt-2 color-weak text-sm">{error.error}</div>}
+            </div>
+        );
+    }
+
     return (
         <div className={clsx(bgClassName, 'h-full overflow-auto')}>
             <div className="min-h-custom flex flex-column flex-nowrap" style={{ '--min-h-custom': '100vh' }}>
@@ -222,6 +236,53 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
                                 onSubscribed={handleSuccess}
                                 onUnsubscribed={handleSuccess}
                                 onCancel={handleClose}
+                                onCheck={(data) => {
+                                    // If the initial check completes, it's handled by the container itself
+                                    if (data.model.initialCheckComplete || !bf2023OfferCheck) {
+                                        return;
+                                    }
+
+                                    const offerUnavailableError = {
+                                        title: c('bf2023: Title').t`Offer unavailable`,
+                                        message: c('bf2023: info')
+                                            .t`Sorry, this offer is not available with your current plan.`,
+                                        error: '',
+                                    };
+
+                                    if (data.type === 'success') {
+                                        if (
+                                            // Ignore visionary since it doesn't require a BF coupon
+                                            !data.model.planIDs[PLANS.NEW_VISIONARY] &&
+                                            // Tried to apply the BF coupon, but the API responded without it.
+                                            data.model.coupon === COUPON_CODES.BLACK_FRIDAY_2023 &&
+                                            data.result.Coupon?.Code !== COUPON_CODES.BLACK_FRIDAY_2023
+                                        ) {
+                                            setError(offerUnavailableError);
+                                        }
+                                        return;
+                                    }
+
+                                    if (data.type === 'error') {
+                                        const message = getApiErrorMessage(data.error);
+
+                                        let defaultError = {
+                                            title: c('bf2023: Title').t`Offer unavailable`,
+                                            message: message || 'Unknown error',
+                                            error: '',
+                                        };
+
+                                        const { status } = getApiError(data.error);
+                                        // Getting a 400 means the user's current subscription is not compatible with the new plan, so we assume it's an offer
+                                        if (status === HTTP_STATUS_CODE.BAD_REQUEST) {
+                                            defaultError = {
+                                                ...offerUnavailableError,
+                                                error: defaultError.message,
+                                            };
+                                        }
+
+                                        setError(defaultError);
+                                    }
+                                }}
                                 metrics={{
                                     source: 'lite-subscribe',
                                 }}
