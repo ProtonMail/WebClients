@@ -178,7 +178,6 @@ const getSaveSingleEventActions = async ({
                 eventComponent: newVeventComponent,
                 hasDefaultNotifications,
                 event: oldEvent,
-                memberID: newMemberID,
                 addressID: newAddressID,
                 reencryptionCalendarID: getIsAutoAddedInvite(oldEvent) ? newCalendarID : undefined,
                 sendIcs,

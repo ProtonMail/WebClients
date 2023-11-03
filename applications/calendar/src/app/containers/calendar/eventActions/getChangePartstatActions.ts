@@ -23,17 +23,15 @@ export const getUpdatePartstatOperation = ({
     eventComponent,
     event,
     inviteActions,
-    memberID,
     timestamp,
     silence,
 }: {
     eventComponent: VcalVeventComponent;
     event: CalendarEvent;
     inviteActions: InviteActions;
-    memberID: string;
     timestamp: number;
     silence: boolean;
-}) => {
+}): UpdatePartstatOperation | undefined => {
     const { partstat, selfAttendeeIndex } = inviteActions;
     if (selfAttendeeIndex === undefined || !partstat || !getHasAttendees(eventComponent)) {
         return;
@@ -45,7 +43,6 @@ export const getUpdatePartstatOperation = ({
     }
     return {
         data: {
-            memberID,
             calendarID: event.CalendarID,
             eventID: event.ID,
             attendeeID,
@@ -70,7 +67,7 @@ const getAutoUpdatePersonalPartOperation = ({
     inviteActions: InviteActions;
     addressID: string;
     partstat: ICAL_ATTENDEE_STATUS;
-}) => {
+}): UpdatePersonalPartOperation | undefined => {
     const { selfAddress, selfAttendeeIndex } = inviteActions;
     if (selfAttendeeIndex === undefined || !selfAddress || !getHasAttendees(eventComponent)) {
         return;
@@ -102,7 +99,6 @@ interface ChangePartstaActionsArguments {
     eventComponent: VcalVeventComponent;
     hasDefaultNotifications: boolean;
     event: CalendarEvent;
-    memberID: string;
     addressID: string;
     reencryptionCalendarID?: string;
     sendIcs: (
@@ -115,7 +111,6 @@ const getChangePartstatActions = async ({
     eventComponent,
     hasDefaultNotifications,
     event,
-    memberID,
     addressID,
     reencryptionCalendarID,
     sendIcs,
@@ -144,7 +139,6 @@ const getChangePartstatActions = async ({
         eventComponent,
         event,
         inviteActions,
-        memberID,
         timestamp,
         silence: false,
     });
