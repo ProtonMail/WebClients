@@ -19,10 +19,10 @@ import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import { WebPaymentsSubscriptionStepsTotal } from '@proton/metrics/types/web_payments_subscription_steps_total_v1.schema';
 import { checkSubscription, deleteSubscription, subscribe } from '@proton/shared/lib/api/payments';
+import { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange, willHavePaidMail } from '@proton/shared/lib/calendar/plans';
 import {
     APPS,
-    APP_NAMES,
     COUPON_CODES,
     CYCLE,
     DEFAULT_CURRENCY,
@@ -136,7 +136,7 @@ interface RenderProps {
 
 export interface SubscriptionContainerProps {
     topRef?: RefObject<HTMLDivElement>;
-    app: APP_NAMES;
+    app: ProductParam;
     step?: SUBSCRIPTION_STEPS;
     cycle?: Cycle;
     currency?: Currency;
@@ -805,7 +805,10 @@ const SubscriptionContainer = ({
                 <>
                     <div className="subscriptionCheckout-top-container">
                         <div className="flex-item-fluid w-full md:w-auto pr-4 md:pr-0 lg:pr-6 pt-6">
-                            <div className="mx-auto max-w-custom subscriptionCheckout-options" style={{ '--max-w-custom': '37em' }}>
+                            <div
+                                className="mx-auto max-w-custom subscriptionCheckout-options"
+                                style={{ '--max-w-custom': '37em' }}
+                            >
                                 {(() => {
                                     if (isFreePlanSelected) {
                                         return null;
@@ -1008,7 +1011,10 @@ const SubscriptionContainer = ({
                             currentSubscription={subscription}
                             className="mb-8"
                         />
-                        <div className="mx-auto max-w-custom subscriptionCheckout-options" style={{ '--max-w-custom': '37em' }}>
+                        <div
+                            className="mx-auto max-w-custom subscriptionCheckout-options"
+                            style={{ '--max-w-custom': '37em' }}
+                        >
                             {!disableCycleSelector && (
                                 <>
                                     <h2 className="text-2xl text-bold mb-6">{c('Label').t`Select your plan`}</h2>
