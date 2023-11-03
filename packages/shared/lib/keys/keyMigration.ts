@@ -76,14 +76,15 @@ export interface MigrateMemberAddressKeyPayload extends MigrateAddressKeyPayload
     OrgSignature: string;
 }
 
-interface MigrationResult {
+interface MigrationResult<T extends MigrateAddressKeyPayload> {
     SignedKeyLists: { [id: string]: SignedKeyList };
-    AddressKeys: MigrateAddressKeyPayload[];
+    AddressKeys: T[];
 }
-
-interface MigrationOrgResult {
-    SignedKeyLists: { [id: string]: SignedKeyList };
-    AddressKeys: MigrateMemberAddressKeyPayload[];
+interface AddressKeyMigrationValue<T extends MigrateAddressKeyPayload> {
+    Address: Address;
+    AddressKeys: T[];
+    SignedKeyList: SignedKeyList | undefined;
+    onSKLPublishSuccess: OnSKLPublishSuccess | undefined;
 }
 
 interface AddressesKeys {
@@ -91,28 +92,29 @@ interface AddressesKeys {
     keys: DecryptedKey[];
 }
 
-type AddressKeyMigrationValue =
-    | {
-          Address: Address;
-          AddressKeys: MigrateAddressKeyPayload[];
-          SignedKeyList: SignedKeyList | undefined;
-          onSKLPublishSuccess: OnSKLPublishSuccess | undefined;
-      }
-    | {
-          Address: Address;
-          AddressKeys: MigrateMemberAddressKeyPayload[];
-          SignedKeyList: SignedKeyList | undefined;
-          onSKLPublishSuccess: OnSKLPublishSuccess | undefined;
-      };
-
-export async function getAddressKeysMigration(
+export function getAddressKeysMigration(
+    addressesKeys: AddressesKeys[],
+    userKey: PrivateKeyReference,
+    keyTransparencyVerify: KeyTransparencyVerify,
+    keyMigrationKTVerifier: KeyMigrationKTVerifier,
+    organizationKey: PrivateKeyReference
+): Promise<AddressKeyMigrationValue<MigrateMemberAddressKeyPayload>[]>;
+export function getAddressKeysMigration(
     addressesKeys: AddressesKeys[],
     userKey: PrivateKeyReference,
     keyTransparencyVerify: KeyTransparencyVerify,
     keyMigrationKTVerifier: KeyMigrationKTVerifier,
     organizationKey?: PrivateKeyReference
-): Promise<AddressKeyMigrationValue[]> {
-    return Promise.all<AddressKeyMigrationValue>(
+): Promise<AddressKeyMigrationValue<MigrateAddressKeyPayload>[]>;
+
+export function getAddressKeysMigration(
+    addressesKeys: AddressesKeys[],
+    userKey: PrivateKeyReference,
+    keyTransparencyVerify: KeyTransparencyVerify,
+    keyMigrationKTVerifier: KeyMigrationKTVerifier,
+    organizationKey?: PrivateKeyReference
+) {
+    return Promise.all(
         addressesKeys.map(async ({ address, keys }) => {
             const migratedKeys = await Promise.all(
                 keys.map(async ({ ID, privateKey }) => {
@@ -167,16 +169,10 @@ export async function getAddressKeysMigration(
     );
 }
 
-export async function getAddressKeysMigrationPayload(
-    addressKeysMigration: AddressKeyMigrationValue[]
-): Promise<MigrationOrgResult>;
-
-export async function getAddressKeysMigrationPayload(
-    addressKeysMigration: AddressKeyMigrationValue[]
-): Promise<MigrationResult>;
-
-export async function getAddressKeysMigrationPayload(addressKeysMigration: AddressKeyMigrationValue[]) {
-    return addressKeysMigration.reduce<MigrationResult | MigrationOrgResult>(
+export function getAddressKeysMigrationPayload<T extends MigrateAddressKeyPayload>(
+    addressKeysMigration: AddressKeyMigrationValue<T>[]
+) {
+    return addressKeysMigration.reduce<MigrationResult<T>>(
         (acc, { AddressKeys, Address, SignedKeyList }) => {
             // Some addresses may not have keys and thus won't have generated a signed key list
             if (AddressKeys.length > 0) {
@@ -204,9 +200,10 @@ export async function migrateAddressKeys(
     args: MigrateAddressKeysArguments & {
         organizationKey: OrganizationKey;
     }
-): Promise<AddressKeyMigrationValue[]>;
-
-export async function migrateAddressKeys(args: MigrateAddressKeysArguments): Promise<AddressKeyMigrationValue[]>;
+): Promise<AddressKeyMigrationValue<MigrateMemberAddressKeyPayload>[]>;
+export async function migrateAddressKeys(
+    args: MigrateAddressKeysArguments
+): Promise<AddressKeyMigrationValue<MigrateAddressKeyPayload>[]>;
 
 export async function migrateAddressKeys({
     user,
