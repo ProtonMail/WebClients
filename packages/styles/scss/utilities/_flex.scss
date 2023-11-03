@@ -61,6 +61,20 @@ $dummy-map: ();
 	);
 }
 
+// Add `order` utilities to the map
+// Use a for in case we need more
+@for $i from 0 through 1 {
+	$dummy-map: map.merge(
+		$dummy-map,
+		(
+			order-#{$i}:
+				(
+					order: #{$i},
+				)
+		)
+	);
+}
+
 // Serialize the responsive utilities creation with the map to avoid any cascade ordering issues
 @include responsive-classes($dummy-map);
 
@@ -127,8 +141,4 @@ $dummy-map: ();
 
 .flex-item-noflex {
 	flex: 0;
-}
-
-@include responsive-classes(order-1) {
-	order: 1;
 }
