@@ -30,9 +30,7 @@ const LobbyContent: VFC = () => {
 
     const handleSignInClick = useCallback(
         async () =>
-            workerErrored(state.status)
-                ? sendMessage(popupMessage({ type: WorkerMessageType.WORKER_INIT, payload: { sync: true } }))
-                : login(),
+            workerErrored(state.status) ? sendMessage(popupMessage({ type: WorkerMessageType.WORKER_INIT })) : login(),
         [state.status]
     );
 

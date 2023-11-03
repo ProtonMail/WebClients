@@ -11,7 +11,7 @@ import type { SessionLockCheckResult } from '@proton/pass/lib/auth/session-lock'
 import { checkSessionLock } from '@proton/pass/lib/auth/session-lock';
 import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message';
 import browser from '@proton/pass/lib/globals/browser';
-import { workerLocked, workerReady } from '@proton/pass/lib/worker';
+import { workerLocked, workerLoggedIn, workerLoggedOut, workerReady } from '@proton/pass/lib/worker';
 import {
     notification,
     sessionLockSync,
@@ -29,7 +29,7 @@ import { withPayload } from '@proton/pass/utils/fp/lens';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
-import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getApiError, getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import createStore from '@proton/shared/lib/helpers/store';
 import noop from '@proton/utils/noop';
@@ -70,13 +70,14 @@ export const createAuthService = ({
 
         init: asyncLock(
             withContext<() => Promise<boolean>>(async (ctx) => {
+                /* if worker is logged out (unauthorized or locked) during an init call,
+                 * this means the login or resumeSession calls failed - we can safely early
+                 * return as the authentication store will have been configured */
+                if (workerLoggedOut(ctx.status)) return false;
+                if (workerLoggedIn(ctx.status)) return true;
+
                 logger.info(`[Worker::Auth] Initialization start`);
-
-                const inMemorySession = await ctx.service.storage.session.get(SESSION_KEYS);
-
-                return isValidSession(inMemorySession)
-                    ? authService.login(inMemorySession)
-                    : authService.resumeSession();
+                return authService.resumeSession();
             })
         ),
 
@@ -108,7 +109,7 @@ export const createAuthService = ({
             } catch (error: any) {
                 /* if there is an API error on `checkSessionLock` we want to logout
                  * the user only if it is due to a 401 or 403 status response */
-                if (error.name === 'InactiveSession' || getApiError(error).status === 403) {
+                if (getIs401Error(error) || getApiError(error).status === 403) {
                     void authService.logout();
                     return false;
                 }
@@ -121,6 +122,7 @@ export const createAuthService = ({
 
                         /* user needs to log back in */
                         if (event.status === 'inactive') {
+                            logger.warn(`[Worker::Auth] Inactive session detected`);
                             store.dispatch(notification({ type: 'error', text: c('Warning').t`Please log back in` }));
                             return authService.logout();
                         }
@@ -149,6 +151,7 @@ export const createAuthService = ({
         }),
 
         logout: withContext(async (ctx) => {
+            logger.info(`[Worker::Auth] Logging out...`);
             /* important to call setStatus before dispatching the
              * the `stateDestroy` action : we might have active
              * clients currently consuming the store data */
@@ -159,10 +162,10 @@ export const createAuthService = ({
             void ctx.service.storage.local.clear();
 
             authStore.clear();
-            api.unsubscribe();
-            api.reset();
-
             onUnauthorized?.();
+
+            api.unsubscribe();
+            void api.reset();
 
             return true;
         }),
@@ -170,11 +173,19 @@ export const createAuthService = ({
         /* Resumes the session during browser start-up or when not found in session storage.
          * Initializes the authentication store for session resuming API requests. */
         resumeSession: withContext(async (ctx) => {
-            logger.info(`[Worker::Auth] Trying to resume session`);
-            ctx.setStatus(WorkerStatus.RESUMING);
+            const inMemorySession = await ctx.service.storage.session.get(SESSION_KEYS);
+
+            if (inMemorySession && isValidSession(inMemorySession)) {
+                logger.info(`[Worker::Auth] Resuming from session storage`);
+                return authService.login(inMemorySession);
+            }
+
             const persistedSession = await authService.getPersistedSession();
 
             if (persistedSession) {
+                logger.info(`[Worker::Auth] Resuming from local storage`);
+                ctx.setStatus(WorkerStatus.RESUMING);
+
                 try {
                     authStore.setUserID(persistedSession.UserID);
                     authStore.setUID(persistedSession.UID);
@@ -220,6 +231,7 @@ export const createAuthService = ({
          * Depending on the login result, session persistence may occur.
          * If the session is API locked, persist to session storage only. */
         consumeSession: withContext(async (ctx, data) => {
+            logger.info(`[Worker::Auth] Consuming session fork...`);
             if (ctx.getState().loggedIn) throw getAccountForkResponsePayload(AccountForkResponse.CONFLICT);
 
             try {
@@ -261,7 +273,9 @@ export const createAuthService = ({
                         RefreshTime: session.RefreshTime,
                         blob: session.blob ?? '',
                     };
-                } catch {}
+                } catch {
+                    logger.warn('[Worker::Auth] Failed parsing persisted session');
+                }
             }
         }),
 
@@ -307,14 +321,17 @@ export const createAuthService = ({
 
         /* Updates the `authStore` lock state values & persists
          * them in memory & local persisted sessions */
-        unlock: async (sessionLockToken) => {
+        unlock: withContext(async (ctx, sessionLockToken) => {
             logger.info(`[Worker::Auth] Unlocking context`);
-            api.reset();
+
+            ctx.setStatus(WorkerStatus.RESUMING);
+            void api.reset(); /* clear api::state::sessionLocked */
 
             authStore.setLockToken(sessionLockToken);
             await authService.syncLock();
             await authService.persistSession();
-        },
+            await authService.init();
+        }),
 
         /* Calling this function when a lock is registered and active
          * will extend the lock by resetting the ttl server-side */
@@ -367,7 +384,6 @@ export const createAuthService = ({
     const resolveUserData = () => ({ user: selectUser(store.getState()) });
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.ACCOUNT_FORK, withPayload(authService.consumeSession));
-    WorkerMessageBroker.registerMessage(WorkerMessageType.SESSION_RESUMED, withPayload(authService.login));
     WorkerMessageBroker.registerMessage(WorkerMessageType.UNLOCK_REQUEST, withPayload(handleUnlockRequest));
     WorkerMessageBroker.registerMessage(WorkerMessageType.ACTIVITY_PROBE, handleActivityProbe);
     WorkerMessageBroker.registerMessage(WorkerMessageType.RESOLVE_USER_DATA, resolveUserData);

@@ -111,15 +111,6 @@ export const createWorkerContext = (config: ProtonConfig) => {
                 })
             );
         },
-
-        async init({ sync, force }) {
-            const shouldInit = Boolean((sync ?? !workerReady(context.status)) || force);
-            const shouldBoot = shouldInit && (await context.service.auth.init());
-
-            if (shouldBoot) context.service.activation.boot();
-
-            return context;
-        },
     });
 
     const api = createApi({
