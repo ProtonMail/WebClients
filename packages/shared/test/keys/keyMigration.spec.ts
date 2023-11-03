@@ -1,9 +1,9 @@
-import { extractEmailFromUserID } from '../../lib/helpers/email';
 import { Unwrap, Address as tsAddress, User as tsUser } from '../../lib/interfaces';
 import {
     decryptAddressKeyToken,
     getDecryptedAddressKeysHelper,
     getDecryptedUserKeysHelper,
+    getEmailFromKey,
     splitKeys,
 } from '../../lib/keys';
 import { migrateAddressKeys } from '../../lib/keys/keyMigration';
@@ -103,7 +103,7 @@ describe('key migration', () => {
 
         decryptedMigratedKeys.forEach((keys, i) => {
             keys.forEach((key) => {
-                expect(extractEmailFromUserID(key.privateKey.getUserIDs()[0])).toEqual(Addresses[i].Email);
+                expect(getEmailFromKey(key.privateKey)).toEqual(Addresses[i].Email);
             });
         });
     };
