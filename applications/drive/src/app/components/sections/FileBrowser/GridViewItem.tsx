@@ -36,7 +36,7 @@ const GridViewItemBase = ({
             <div
                 className={clsx([
                     'flex file-browser-grid-item--select',
-                    selectionControls?.selectionState !== SelectionState.NONE ? null : 'opacity-on-hover-only-desktop',
+                    selectionControls?.selectionState !== SelectionState.NONE ? null : 'mouse:group-hover:opacity-100',
                 ])}
                 onTouchStart={stopPropagation}
                 onKeyDown={stopPropagation}
@@ -61,7 +61,7 @@ const GridViewItemBase = ({
                     icon
                     className={clsx([
                         'file-browser-grid-view--options',
-                        isContextMenuButtonActive ? 'file-browser--options-focus' : 'opacity-on-hover-only-desktop',
+                        isContextMenuButtonActive ? 'file-browser--options-focus' : 'mouse:group-hover:opacity-100',
                     ])}
                     onClick={(e) => {
                         selectionControls?.selectItem(item.id);
