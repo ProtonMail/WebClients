@@ -21,9 +21,9 @@ import {
 } from '@proton/components';
 import SubscriptionContainer from '@proton/components/containers/payments/subscription/SubscriptionContainer';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
+import { ProductParam } from '@proton/shared/lib/apps/product';
 import {
     APPS,
-    APP_NAMES,
     BRAND_NAME,
     CALENDAR_APP_NAME,
     COUPON_CODES,
@@ -56,7 +56,7 @@ interface Props {
     redirect?: string | undefined;
     fullscreen?: boolean;
     searchParams: URLSearchParams;
-    app: APP_NAMES;
+    app: ProductParam;
 }
 
 const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
