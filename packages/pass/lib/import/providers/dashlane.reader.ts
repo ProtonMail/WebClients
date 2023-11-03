@@ -32,17 +32,10 @@ const DASHLANE_NOTES_EXPECTED_HEADERS: (keyof DashlaneNoteItem)[] = ['title', 'n
 const DASHLANE_CREDIT_CARDS_EXPECTED_HEADERS: (keyof DashlanePaymentItem)[] = [
     'type',
     'account_name',
-    'account_holder',
     'cc_number',
     'code',
     'expiration_month',
     'expiration_year',
-    'routing_number',
-    'account_number',
-    'country',
-    'issuing_bank',
-    'note',
-    'name',
 ];
 
 const processLoginItem = (item: DashlaneLoginItem): ItemImportIntent<'login'> =>
