@@ -1,5 +1,7 @@
 import { addWeeks, fromUnixTime, isBefore } from 'date-fns';
 
+import { ProductParam } from '@proton/shared/lib/apps/product';
+
 import {
     ADDON_NAMES,
     APPS,
@@ -114,9 +116,11 @@ export const hasVpnBusiness = (subscription: Subscription | FreeSubscription | u
     hasSomePlan(subscription, VPN_BUSINESS);
 export const hasFree = (subscription: Subscription | undefined) => (subscription?.Plans || []).length === 0;
 
-export const getUpgradedPlan = (subscription: Subscription | undefined, app: APP_NAMES) => {
+export const getUpgradedPlan = (subscription: Subscription | undefined, app: ProductParam) => {
     if (hasFree(subscription)) {
         switch (app) {
+            case APPS.PROTONPASS:
+                return PLANS.PASS_PLUS;
             case APPS.PROTONDRIVE:
                 return PLANS.DRIVE;
             case APPS.PROTONVPN_SETTINGS:
