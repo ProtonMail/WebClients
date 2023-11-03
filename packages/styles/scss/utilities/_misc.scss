@@ -60,37 +60,6 @@ $breakpoint-2-columns: 1180 !default;
 	visibility: hidden;
 }
 
-// When adding new opacity classes, add the values also in Storybook
-// applications/storybook/src/stories/cssUtilities/Opacity.stories.tsx
-
-.opacity-70 {
-	opacity: 0.7;
-}
-
-.opacity-65 {
-	opacity: 0.65;
-}
-
-.opacity-50 {
-	opacity: 0.5;
-}
-
-.opacity-40 {
-	opacity: 0.4;
-}
-
-.opacity-30 {
-	opacity: 0.3;
-}
-
-.on-hover-opacity-100 {
-	&:hover,
-	&:focus,
-	&:focus-within {
-		opacity: 1;
-	}
-}
-
 .filter-blur {
 	filter: blur(4px);
 }

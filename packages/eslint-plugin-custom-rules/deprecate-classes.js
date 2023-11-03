@@ -50,6 +50,34 @@ const deprecatedClassNames = [
         deprecatedClassName: 'h100',
         suggestedClassName: 'h-full',
     },
+    {
+        deprecatedClassName: 'opacity-on-hover',
+        suggestedClassName: 'group-hover:opacity-100',
+    },
+    {
+        deprecatedClassName: 'opacity-on-hover-container',
+        suggestedClassName: 'group-hover-opacity-container',
+    },
+    {
+        deprecatedClassName: 'text-underline-on-hover',
+        suggestedClassName: 'hover:text-underline',
+    },
+    {
+        deprecatedClassName: 'opacity-on-focus',
+        suggestedClassName: 'opacity-0 focus:opacity-100',
+    },
+    {
+        deprecatedClassName: 'hide-on-hover',
+        suggestedClassName: 'group-hover:hidden',
+    },
+    {
+        deprecatedClassName: 'hide-on-hover-container',
+        suggestedClassName: 'group-hover-hide-container',
+    },
+    {
+        deprecatedClassName: 'on-hover-opacity-100',
+        suggestedClassName: '',
+    },
 ];
 
 module.exports = {

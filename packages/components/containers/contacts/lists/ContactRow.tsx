@@ -94,7 +94,7 @@ const ContactRow = ({
             onDragStart={onDragStart}
             onDragEnd={onDragEnd}
             className={clsx(
-                'item-container item-contact flex cursor-pointer bg-global-white opacity-on-hover-container',
+                'item-container item-contact flex cursor-pointer bg-global-white group-hover-opacity-container',
                 isDrawer && 'item-in-drawer',
                 dragged && 'item-dragging',
                 hasFocus && 'item-is-focused'
