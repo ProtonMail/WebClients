@@ -82,7 +82,7 @@ export const createActivationService = () => {
      * if not in production - use sync.html session to workaround the
      * the SSL handshake (net:ERR_SSL_CLIENT_AUTH_CERT_NEEDED) */
     const handleStartup = withContext(async (ctx) => {
-        const loggedIn = await ctx.service.auth.init();
+        const loggedIn = await ctx.service.auth.init({ forceLock: true });
 
         if (ENV === 'development' && RESUME_FALLBACK) {
             if (!loggedIn && (await ctx.service.auth.getPersistedSession())) {
@@ -208,10 +208,12 @@ export const createActivationService = () => {
         }
     );
 
-    const handleWorkerInit = withContext(async (ctx) => {
-        await ctx.service.auth.init();
-        return ctx.getState();
-    });
+    const handleWorkerInit = withContext<MessageHandlerCallback<WorkerMessageType.WORKER_INIT>>(
+        async (ctx, message) => {
+            await ctx.service.auth.init(message.payload);
+            return ctx.getState();
+        }
+    );
 
     const handlePopupInit = withContext<MessageHandlerCallback<WorkerMessageType.POPUP_INIT>>(async (ctx, message) => {
         const { payload } = message;
