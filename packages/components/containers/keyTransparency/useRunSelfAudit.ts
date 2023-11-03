@@ -160,7 +160,7 @@ const useRunSelfAudit = () => {
         } finally {
             exportedAddressesKeys.forEach((keys) => keys.forEach(({ privateKey }) => privateKey.fill(0)));
         }
-    }, [getLatestEpoch, getAddresses]);
+    }, [getLatestEpoch, getAddresses, getAddressKeys]);
 
     const createSelfAuditState = async (): Promise<SelfAuditState> => {
         const userKeys = await createSelfAuditStateUserKeys();
