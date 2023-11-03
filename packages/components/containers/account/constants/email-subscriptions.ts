@@ -19,6 +19,7 @@ export interface EmailSubscription {
     tooltip?: string;
 }
 
+// dew
 export const getEmailSubscriptions: () => EmailSubscription[] = () => [
     {
         id: 'announcements',
