@@ -2,7 +2,8 @@ import { ReactElement } from 'react';
 
 import { c } from 'ttag';
 
-import { ADDON_NAMES, APPS, APP_NAMES, CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
+import { ProductParam } from '@proton/shared/lib/apps/product';
+import { ADDON_NAMES, APPS, CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import { getIpPricePerMonth } from '@proton/shared/lib/helpers/subscription';
 import {
@@ -75,7 +76,7 @@ interface Tab {
 }
 
 interface Props {
-    app: APP_NAMES;
+    app: ProductParam;
     planIDs: PlanIDs;
     currency: Currency;
     hasPlanSelectionComparison?: boolean;
