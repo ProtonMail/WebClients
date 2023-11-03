@@ -3,7 +3,7 @@ import { type Runtime } from 'webextension-polyfill';
 import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message';
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
 import browser from '@proton/pass/lib/globals/browser';
-import { workerCanBoot } from '@proton/pass/lib/worker';
+import { workerCanBoot, workerStale } from '@proton/pass/lib/worker';
 import { bootIntent, wakeupIntent } from '@proton/pass/store/actions';
 import {
     selectFeatureFlags,
@@ -182,6 +182,8 @@ export const createActivationService = () => {
             const { sender: endpoint, payload } = message;
             const { tabId } = payload;
             const { status } = ctx.getState();
+
+            if (workerStale(status)) void ctx.service.auth.init();
 
             /* dispatch a wakeup action for this specific receiver.
              * tracking the wakeup's request metadata can be consumed
