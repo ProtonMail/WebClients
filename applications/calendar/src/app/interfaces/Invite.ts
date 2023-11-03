@@ -65,7 +65,6 @@ export interface UpdatePartstatOperation {
 
 export interface UpdatePersonalPartOperation {
     data: {
-        memberID: string;
         calendarID: string;
         eventID: string;
         addressID?: string;

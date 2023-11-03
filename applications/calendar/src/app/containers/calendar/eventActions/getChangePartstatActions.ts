@@ -61,7 +61,6 @@ const getAutoUpdatePersonalPartOperation = ({
     hasDefaultNotifications,
     event,
     inviteActions,
-    memberID,
     addressID,
     partstat,
 }: {
@@ -69,7 +68,6 @@ const getAutoUpdatePersonalPartOperation = ({
     hasDefaultNotifications: boolean;
     event: CalendarEvent;
     inviteActions: InviteActions;
-    memberID: string;
     addressID: string;
     partstat: ICAL_ATTENDEE_STATUS;
 }) => {
@@ -95,7 +93,6 @@ const getAutoUpdatePersonalPartOperation = ({
         eventComponent,
         hasDefaultNotifications,
         event,
-        memberID,
         addressID,
     });
 };
@@ -159,7 +156,6 @@ const getChangePartstatActions = async ({
         hasDefaultNotifications,
         event,
         inviteActions,
-        memberID,
         addressID,
         partstat,
     });
