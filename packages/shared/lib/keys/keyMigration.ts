@@ -176,7 +176,7 @@ export function getAddressKeysMigrationPayload<T extends MigrateAddressKeyPayloa
         (acc, { AddressKeys, Address, SignedKeyList }) => {
             // Some addresses may not have keys and thus won't have generated a signed key list
             if (AddressKeys.length > 0) {
-                acc.AddressKeys = acc.AddressKeys.concat(AddressKeys as any); // forcing any since it's typed in the promise result above
+                acc.AddressKeys = acc.AddressKeys.concat(AddressKeys);
                 if (SignedKeyList) {
                     acc.SignedKeyLists[Address.ID] = SignedKeyList;
                 }
