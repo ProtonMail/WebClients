@@ -14,12 +14,6 @@ import {
     blackFriday2023InboxUnlimitedConfig,
     useBlackFriday2023InboxUnlimited,
 } from '../operations/blackFridayInbox2023Unlimited';
-import { blackFridayMail2022Config, useBlackFridayMail2022 } from '../operations/blackFridayMail2022';
-import { blackFridayMailFree2022Config, useBlackFridayMailFree2022 } from '../operations/blackFridayMailFree2022';
-import { blackFridayMailPro2022Config, useBlackFridayMailPro2022 } from '../operations/blackFridayMailPro2022';
-import { blackFridayVPN1Deal2022Config, useBlackFridayVPN1Deal2022 } from '../operations/blackFridayVPN1Deal2022';
-import { blackFridayVPN2Deal2022Config, useBlackFridayVPN2Deal2022 } from '../operations/blackFridayVPN2Deal2022';
-import { blackFridayVPN3Deal2022Config, useBlackFridayVPN3Deal2022 } from '../operations/blackFridayVPN3Deal2022';
 import { blackFriday2023VPNFreeConfig, useBlackFriday2023VPNFree } from '../operations/blackFridayVPN2023Free';
 import { blackFriday2023VPNMonthlyConfig, useBlackFriday2023VPNMonthly } from '../operations/blackFridayVPN2023Monthly';
 import {
@@ -27,26 +21,12 @@ import {
     useBlackFriday2023VPNTwoYears,
 } from '../operations/blackFridayVPN2023TwoYears';
 import { blackFriday2023VPNYearlyConfig, useBlackFriday2023VPNYearly } from '../operations/blackFridayVPN2023Yearly';
-import { family1Deal2023Config, useFamily1Deal2023 } from '../operations/family1Deal2023';
-import { family3Deal2023Config, useFamily3Deal2023 } from '../operations/family3Deal2023';
 import { goUnlimited2022Config, useGoUnlimited2022 } from '../operations/goUnlimited2022';
 import { mailTrial2023Config, useMailTrial2023 } from '../operations/mailTrial2023';
-import { specialOffer2022Config, useSpecialOffer2022 } from '../operations/specialOffer2022';
-import { summer2023Config, useSummer2023 } from '../operations/summer2023';
 
 const configs: Record<OfferId, OfferConfig> = {
     'go-unlimited-2022': goUnlimited2022Config,
-    'special-offer-2022': specialOffer2022Config,
-    'black-friday-mail-free-2022': blackFridayMailFree2022Config,
-    'black-friday-mail-2022': blackFridayMail2022Config,
-    'black-friday-mail-pro-2022': blackFridayMailPro2022Config,
-    'black-friday-vpn-1-deal-2022': blackFridayVPN1Deal2022Config,
-    'black-friday-vpn-2-deal-2022': blackFridayVPN2Deal2022Config,
-    'black-friday-vpn-3-deal-2022': blackFridayVPN3Deal2022Config,
     'mail-trial-2023': mailTrial2023Config,
-    'family-3-deal-2023': family3Deal2023Config,
-    'family-1-deal-2023': family1Deal2023Config,
-    'summer-2023': summer2023Config,
     'black-friday-2023-inbox-free': blackFriday2023InboxFreeConfig,
     'black-friday-2023-inbox-mail': blackFriday2023InboxMailConfig,
     'black-friday-2023-inbox-unlimited': blackFriday2023InboxUnlimitedConfig,
@@ -66,17 +46,7 @@ const useOfferConfig = (): [OfferConfig | undefined, boolean] => {
     useFeatures([FeatureCode.Offers, ...OFFERS_FEATURE_FLAGS]);
 
     const goUnlimited2022 = useGoUnlimited2022();
-    const specialOffer2022 = useSpecialOffer2022();
-    const blackFridayMailFree2022 = useBlackFridayMailFree2022();
-    const blackFridayMail2022 = useBlackFridayMail2022();
-    const blackFridayMailPro2022 = useBlackFridayMailPro2022();
-    const blackFridayVPN1Deal2022 = useBlackFridayVPN1Deal2022();
-    const blackFridayVPN2Deal2022 = useBlackFridayVPN2Deal2022();
-    const blackFridayVPN3Deal2022 = useBlackFridayVPN3Deal2022();
     const mailTrial2023 = useMailTrial2023();
-    const family3Deal2023 = useFamily3Deal2023();
-    const family1Deal2023 = useFamily1Deal2023();
-    const summer2023 = useSummer2023();
     const blackFriday2023InboxFree = useBlackFriday2023InboxFree();
     const blackFriday2023InboxMail = useBlackFriday2023InboxMail();
     const blackFriday2023InboxUnlimited = useBlackFriday2023InboxUnlimited();
@@ -100,17 +70,7 @@ const useOfferConfig = (): [OfferConfig | undefined, boolean] => {
         blackFriday2023DriveFree,
         blackFriday2023DrivePlus,
         blackFriday2023DriveUnlimited,
-        blackFridayMailFree2022,
-        blackFridayMail2022,
-        blackFridayMailPro2022,
-        blackFridayVPN1Deal2022,
-        blackFridayVPN2Deal2022,
-        blackFridayVPN3Deal2022,
-        summer2023,
-        family3Deal2023,
-        family1Deal2023,
         goUnlimited2022,
-        specialOffer2022,
         mailTrial2023,
     ];
 
