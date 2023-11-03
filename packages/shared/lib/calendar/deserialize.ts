@@ -200,7 +200,7 @@ export const getSelfAddressData = ({
 };
 
 const readCalendarAlarms = (
-    { Notifications, FullDay }: Pick<CalendarEvent, 'PersonalEvents' | 'Notifications' | 'FullDay'>,
+    { Notifications, FullDay }: Pick<CalendarEvent, 'Notifications' | 'FullDay'>,
     calendarSettings: CalendarSettings
 ) => {
     return {
@@ -219,13 +219,7 @@ const readCalendarAlarms = (
 interface ReadCalendarEventArguments {
     event: Pick<
         CalendarEvent,
-        | 'SharedEvents'
-        | 'CalendarEvents'
-        | 'AttendeesEvents'
-        | 'Attendees'
-        | 'PersonalEvents'
-        | 'Notifications'
-        | 'FullDay'
+        'SharedEvents' | 'CalendarEvents' | 'AttendeesEvents' | 'Attendees' | 'Notifications' | 'FullDay'
     >;
     publicKeysMap?: SimpleMap<PublicKeyReference | PublicKeyReference[]>;
     sharedSessionKey?: SessionKey;
@@ -236,15 +230,7 @@ interface ReadCalendarEventArguments {
 }
 
 export const readCalendarEvent = async ({
-    event: {
-        SharedEvents = [],
-        CalendarEvents = [],
-        AttendeesEvents = [],
-        Attendees = [],
-        PersonalEvents = [],
-        Notifications,
-        FullDay,
-    },
+    event: { SharedEvents = [], CalendarEvents = [], AttendeesEvents = [], Attendees = [], Notifications, FullDay },
     publicKeysMap = {},
     addresses = [],
     sharedSessionKey,
@@ -277,7 +263,7 @@ export const readCalendarEvent = async ({
     }, {} as VcalVeventComponent);
 
     const { valarmComponents, hasDefaultNotifications } = readCalendarAlarms(
-        { PersonalEvents, Notifications, FullDay },
+        { Notifications, FullDay },
         calendarSettings
     );
 

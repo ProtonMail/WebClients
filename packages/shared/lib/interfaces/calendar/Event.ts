@@ -48,7 +48,6 @@ export interface CalendarEventBlobData {
     AddressKeyPacket: Nullable<string>;
     AddressID: Nullable<string>;
     SharedEvents: CalendarEventData[];
-    PersonalEvents?: CalendarPersonalEventData[];
     Notifications?: Nullable<CalendarNotificationSettings[]>;
     AttendeesEvents: CalendarEventData[];
     Attendees: Attendee[];
