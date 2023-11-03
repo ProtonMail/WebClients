@@ -3,7 +3,6 @@ import { ReactNode, useEffect, useState } from 'react';
 import useApiStatus from '@proton/components/hooks/useApiStatus';
 import { ktSentryReportError } from '@proton/key-transparency/lib';
 import { APP_NAMES, SECOND } from '@proton/shared/lib/constants';
-import { wait } from '@proton/shared/lib/helpers/promise';
 import { KeyTransparencyActivation, KeyTransparencyState } from '@proton/shared/lib/interfaces';
 
 import { useOnline } from '../../hooks';
@@ -25,30 +24,39 @@ const KeyTransparencyManager = ({ children }: Props) => {
         selfAuditResult: undefined,
     });
 
+    const [selfAuditPending, setSelfAuditPending] = useState(false);
+
     const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
 
     const runSelfAudit = useRunSelfAudit();
 
     const { offline } = useApiStatus();
     const onlineStatus = useOnline();
-
-    const runSelfAuditPeriodically = () => {
-        if (ktActivation !== KeyTransparencyActivation.DISABLED && onlineStatus && !offline) {
-            runSelfAudit()
-                .then(({ selfAuditResult, nextSelfAuditInterval }) => {
-                    setKTState({ selfAuditResult });
-                    setTimeout(runSelfAuditPeriodically, nextSelfAuditInterval);
-                })
-                .catch((error) => {
-                    ktSentryReportError(error, { context: 'runSelfAuditPeriodically' });
-                });
-        }
-    };
+    const safeIsOnline = onlineStatus && !offline;
 
     useEffect(() => {
-        // Delay the first self audit to wait for the app to get properly loaded
-        wait(10 * SECOND).then(runSelfAuditPeriodically);
-    }, [ktActivation, offline, onlineStatus]);
+        const run = async () => {
+            try {
+                const { selfAuditResult } = await runSelfAudit();
+                setKTState({ selfAuditResult });
+            } catch (error) {
+                ktSentryReportError(error, { context: 'runSelfAuditPeriodically' });
+            }
+        };
+        if (selfAuditPending && ktActivation !== KeyTransparencyActivation.DISABLED && safeIsOnline) {
+            setSelfAuditPending(false);
+            run();
+        }
+    }, [selfAuditPending, ktActivation, safeIsOnline]);
+
+    useEffect(() => {
+        const startDelay = 10 * SECOND;
+        const delay = ktState?.selfAuditResult
+            ? ktState.selfAuditResult.nextAuditTime - ktState.selfAuditResult.auditTime
+            : startDelay;
+        const timeoutID = setTimeout(() => setSelfAuditPending(true), delay);
+        return () => clearTimeout(timeoutID);
+    }, [ktState]);
 
     const ktFunctions: KTContext = {
         ktState,
