@@ -22,6 +22,7 @@ import {
     decryptMemberToken,
     getAddressKeyToken,
     getDefaultKeyFlags,
+    getEmailFromKey,
     getSignedKeyList,
     splitKeys,
 } from '@proton/shared/lib/keys';
@@ -242,6 +243,7 @@ export const acceptIncomingForwarding = async ({
         throw new Error('No address');
     }
 
+    const forwardeeEmail = address.Email;
     const splitUserKeys = splitKeys(userKeys);
     const splitAddressKeys = splitKeys(forwardeeAddressKeys);
     const [primaryAddressKey] = address.Keys;
@@ -278,12 +280,26 @@ export const acceptIncomingForwarding = async ({
             splitAddressKeys.privateKeys,
             publicKeys
         );
-        const privateKey = await CryptoProxy.importPrivateKey({
+        let privateKey = await CryptoProxy.importPrivateKey({
             armoredKey: forwardingKey.PrivateKey,
             passphrase: decryptedToken,
         });
+        const extractedEmail = getEmailFromKey(privateKey);
+
+        // The forwardee email address can change before the user has accepted the forwarding
+        // So we need to update the private key with the email address returned by the API
+        // Use strict comparison because capitalization matters
+        if (extractedEmail !== forwardeeEmail) {
+            const updatedPrivateKey = await CryptoProxy.cloneKeyAndChangeUserIDs({
+                userIDs: [{ name: forwardeeEmail, email: forwardeeEmail }],
+                privateKey,
+            });
+            await CryptoProxy.clearKey({ key: privateKey });
+            privateKey = updatedPrivateKey;
+        }
+
         const armoredPrivateKey = await CryptoProxy.exportPrivateKey({
-            privateKey: privateKey,
+            privateKey,
             passphrase: decryptedPrimaryAddressKeyToken,
         });
         const [, updatedActiveKeys] = await generateForwardingAddressKey({

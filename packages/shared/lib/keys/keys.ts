@@ -1,4 +1,4 @@
-import { CryptoProxy, PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import { CryptoProxy, KeyReference, PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { computeKeyPassword, generateKeySalt } from '@proton/srp';
 
 import { extractEmailFromUserID } from '../helpers/email';
@@ -55,6 +55,7 @@ export const decryptPrivateKeyWithSalt = async ({
     return CryptoProxy.importPrivateKey({ armoredKey: PrivateKey, passphrase: keyPassword });
 };
 
-export const getOldUserIDEmail = (privateKey: PrivateKeyReference) => {
-    return extractEmailFromUserID(privateKey.getUserIDs()[0]);
+export const getEmailFromKey = (key: KeyReference) => {
+    const [userID] = key.getUserIDs();
+    return extractEmailFromUserID(userID);
 };

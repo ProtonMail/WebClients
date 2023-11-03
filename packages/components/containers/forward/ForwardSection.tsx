@@ -1,4 +1,5 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { useLocation } from 'react-router';
 
 import { c } from 'ttag';
 
@@ -6,7 +7,7 @@ import { Button } from '@proton/atoms/Button';
 import { Href } from '@proton/atoms/Href';
 import useIncomingAddressForwarding from '@proton/components/hooks/useIncomingAddressForwarding';
 import useOutgoingAddressForwardings from '@proton/components/hooks/useOutgoingAddressForwardings';
-import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import isTruthy from '@proton/utils/isTruthy';
@@ -21,11 +22,15 @@ import OutgoingForwardTable from './OutgoingForwardTable';
 import { getChainedForwardingEmails } from './helpers';
 
 const ForwardSection = () => {
+    const location = useLocation();
+    const hash = location.hash;
     const [user] = useUser();
     const [addresses = [], loadingAddresses] = useAddresses();
     const isEmailForwardingEnabled = useFlag('EmailForwarding');
     const [incomingAddressForwardings = [], loadingIncomingAddressForwardings] = useIncomingAddressForwarding();
     const [outgoingAddressForwardings = [], loadingOutgoingAddressForwardings] = useOutgoingAddressForwardings();
+    const isIncomingTableAvailable = incomingAddressForwardings.length > 0;
+    const isOutgoingTableAvailable = isEmailForwardingEnabled && outgoingAddressForwardings.length > 0;
     const chainedEmails = useMemo(() => {
         if (
             incomingAddressForwardings.length === 0 ||
@@ -45,16 +50,21 @@ const ForwardSection = () => {
         feature: MAIL_UPSELL_PATHS.FORWARD_EMAILS,
         isSettings: true,
     });
-    const isIncomingTableAvailable = incomingAddressForwardings.length > 0;
-    const isOutgoingTableAvailable = isEmailForwardingEnabled && outgoingAddressForwardings.length > 0;
+
+    // Focus incoming tab if hash is #forward
+    useEffect(() => {
+        if (hash === '#forward' && isIncomingTableAvailable && isOutgoingTableAvailable) {
+            setActiveTab(1); // Incoming tab is second
+            location.hash = ''; 
+        }
+    }, [hash, isIncomingTableAvailable, isOutgoingTableAvailable]);
 
     return (
         <SettingsSectionWide className="no-scroll">
             <SettingsSection>
                 <SettingsParagraph>
                     <span>
-                        {c('email_forwarding_2023: Info')
-                            .t`Forwarding to ${BRAND_NAME} addresses will keep your communication end-to-end encrypted. When forwarding externally, end-to-end encryption for the forwarding address will be disabled.`}
+                        {c('email_forwarding_2023: Info').t`Automatically forward emails to another email address.`}
                     </span>
                     <br />
                     <Href href={getKnowledgeBaseUrl('/email-forwarding')}>{c('email_forwarding_2023: Link')
