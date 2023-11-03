@@ -1,18 +1,20 @@
 import { useConfig, useSubscription, useUser } from '@proton/components/hooks';
 
 import useOfferFlags from '../../hooks/useOfferFlags';
+import { Operation } from '../../interface';
 import config from './configuration';
-import isEligible from './eligibility';
+import getIsEligible from './eligibility';
 
-const useOffer = () => {
+const useOffer = (): Operation => {
     const [user, userLoading] = useUser();
     const [subscription, subscriptionLoading] = useSubscription();
     const { isActive, loading: flagsLoading } = useOfferFlags(config);
     const protonConfig = useConfig();
     const isLoading = flagsLoading || userLoading || subscriptionLoading;
-    const isValid = isEligible({ subscription, protonConfig, user }) && isActive;
+    const isEligible = getIsEligible({ subscription, protonConfig, user });
+    const isValid = isEligible && isActive;
 
-    return { isValid, config, isLoading };
+    return { isValid, config, isLoading, isEligible };
 };
 
 export default useOffer;
