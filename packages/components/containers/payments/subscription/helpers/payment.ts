@@ -1,9 +1,9 @@
 import { getUnixTime } from 'date-fns';
 
 import { LatestSubscription } from '@proton/components/payments/core';
+import { ProductParam } from '@proton/shared/lib/apps/product';
 import {
     APPS,
-    APP_NAMES,
     CYCLE,
     DEFAULT_CURRENCY,
     FreeSubscription,
@@ -92,7 +92,7 @@ export const getCurrency = (
     return user?.Currency || subscription?.Currency || plans?.[0]?.Currency || DEFAULT_CURRENCY;
 };
 
-export const getDefaultSelectedProductPlans = (appName: APP_NAMES, planIDs: PlanIDs) => {
+export const getDefaultSelectedProductPlans = (appName: ProductParam, planIDs: PlanIDs) => {
     let defaultB2CPlan = PLANS.MAIL;
     if (appName === APPS.PROTONVPN_SETTINGS) {
         defaultB2CPlan = PLANS.VPN;
