@@ -79,37 +79,30 @@ const useRunSelfAudit = () => {
     const createSelfAuditStateUserKeys = useCallback(async (): Promise<KeyPair[]> => {
         const userKeys = await getUserKeys();
         const exportedUserKeys = await Promise.all(
-            userKeys.map(async (key) => {
-                return {
-                    privateKey: await CryptoProxy.exportPrivateKey({
-                        privateKey: key.privateKey,
-                        passphrase: null,
-                        format: 'binary',
-                    }),
-                    publicKey: await CryptoProxy.exportPublicKey({
-                        key: key.publicKey,
-                        format: 'binary',
-                    }),
-                };
-            })
+            userKeys.map((key) =>
+                CryptoProxy.exportPrivateKey({
+                    privateKey: key.privateKey,
+                    passphrase: null,
+                    format: 'binary',
+                })
+            )
         );
         try {
             const selfAuditKeyReferences = await Promise.all(
                 exportedUserKeys.map(async (key) => {
+                    const privateKey = await CryptoProxy.importPrivateKey({
+                        binaryKey: key,
+                        passphrase: null,
+                    });
                     return {
-                        privateKey: await CryptoProxy.importPrivateKey({
-                            binaryKey: key.privateKey,
-                            passphrase: null,
-                        }),
-                        publicKey: await CryptoProxy.importPublicKey({
-                            binaryKey: key.publicKey,
-                        }),
+                        privateKey: privateKey,
+                        publicKey: privateKey,
                     };
                 })
             );
             return selfAuditKeyReferences;
         } finally {
-            exportedUserKeys.forEach(({ privateKey }) => privateKey.fill(0));
+            exportedUserKeys.forEach((privateKey) => privateKey.fill(0));
         }
     }, [getUserKeys]);
 
@@ -122,19 +115,16 @@ const useRunSelfAudit = () => {
             addressesKeys.map(async (keys) =>
                 Promise.all(
                     keys.map(async (key) => {
+                        const privateKey = await CryptoProxy.exportPrivateKey({
+                            privateKey: key.privateKey,
+                            passphrase: null,
+                            format: 'binary',
+                        });
                         return {
                             ID: key.ID,
                             Flags: key.Flags,
                             Primary: key.Primary,
-                            privateKey: await CryptoProxy.exportPrivateKey({
-                                privateKey: key.privateKey,
-                                passphrase: null,
-                                format: 'binary',
-                            }),
-                            publicKey: await CryptoProxy.exportPublicKey({
-                                key: key.publicKey,
-                                format: 'binary',
-                            }),
+                            privateKey,
                         };
                     })
                 )
@@ -145,17 +135,16 @@ const useRunSelfAudit = () => {
                 exportedAddressesKeys.map(async (keys) =>
                     Promise.all(
                         keys.map(async (key) => {
+                            const privateKey = await CryptoProxy.importPrivateKey({
+                                binaryKey: key.privateKey,
+                                passphrase: null,
+                            });
                             return {
                                 ID: key.ID,
                                 Flags: key.Flags,
                                 Primary: key.Primary,
-                                privateKey: await CryptoProxy.importPrivateKey({
-                                    binaryKey: key.privateKey,
-                                    passphrase: null,
-                                }),
-                                publicKey: await CryptoProxy.importPublicKey({
-                                    binaryKey: key.publicKey,
-                                }),
+                                privateKey: privateKey,
+                                publicKey: privateKey,
                             };
                         })
                     )
@@ -183,24 +172,10 @@ const useRunSelfAudit = () => {
     };
 
     const clearSelfAuditState = useCallback(async (state: SelfAuditState) => {
-        await Promise.all(
-            state.userKeys.map(async ({ privateKey, publicKey }) => {
-                await Promise.all([
-                    CryptoProxy.clearKey({ key: privateKey }),
-                    CryptoProxy.clearKey({ key: publicKey }),
-                ]);
-            })
-        );
+        await Promise.all(state.userKeys.map(async ({ privateKey }) => CryptoProxy.clearKey({ key: privateKey })));
         await Promise.all(
             state.addresses.map(async ({ addressKeys }) => {
-                await Promise.all(
-                    addressKeys.map(async ({ privateKey, publicKey }) => {
-                        await Promise.all([
-                            CryptoProxy.clearKey({ key: privateKey }),
-                            CryptoProxy.clearKey({ key: publicKey }),
-                        ]);
-                    })
-                );
+                await Promise.all(addressKeys.map(async ({ privateKey }) => CryptoProxy.clearKey({ key: privateKey })));
             })
         );
     }, []);
