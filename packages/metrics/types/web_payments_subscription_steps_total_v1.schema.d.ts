@@ -15,7 +15,6 @@ export interface WebPaymentsSubscriptionStepsTotal {
       | "dashboard"
       | "plans"
       | "lite-subscribe"
-      | "lite-vpn-bf"
       | "subscription-section"
       | "upsells"
       | "vpn-get-more"
