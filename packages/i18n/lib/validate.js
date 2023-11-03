@@ -80,7 +80,6 @@ async function main(mode, { dir, flags = {} } = {}) {
      */
     if (mode === 'lint-functions') {
         debug(`[lint-functions] validation path: ${dir}`);
-        console.log('-----------------');
         return scriptNode('linter.mjs', [dir || process.cwd(), flags.isVerbose ? '--verbose' : ''], 'inherit');
     }
 
