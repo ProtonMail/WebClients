@@ -125,7 +125,7 @@ export const getMailAppRoutes = ({
                 ],
             },
             autoReply: {
-                text: isEmailForwardingEnabled ? c('Title').t`Forward and auto-reply` : c('Title').t`Auto-reply`,
+                text: isEmailForwardingEnabled ? c('Title').t`Forward and Auto-reply` : c('Title').t`Auto-reply`,
                 to: '/auto-reply',
                 icon: 'envelope-arrow-up-and-right',
                 subsections: [
