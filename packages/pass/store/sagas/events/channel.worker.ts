@@ -32,9 +32,7 @@ export function* channelEventsWorker<T extends {}>(
             }
         }
     } finally {
-        if (yield cancelled()) {
-            channel.close();
-        }
+        if (yield cancelled()) channel.close();
     }
 }
 

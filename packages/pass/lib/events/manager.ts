@@ -1,5 +1,6 @@
 import type { Maybe } from '@proton/pass/types';
 import type { Api } from '@proton/pass/types/api';
+import { logger } from '@proton/pass/utils/logger';
 import { FIBONACCI_LIST } from '@proton/shared/lib/constants';
 import createListeners from '@proton/shared/lib/helpers/listeners';
 import { onceWithQueue } from '@proton/shared/lib/helpers/onceWithQueue';
@@ -53,10 +54,8 @@ export const eventManager = <T extends {}>({
     const state: EventManagerState = { interval, retryIndex: 0, lastEventID: initialEventID };
 
     const setInterval = (nextInterval: number) => (state.interval = nextInterval);
-
     const setEventID = (eventID: string) => (state.lastEventID = eventID);
     const getEventID = () => (state.lastEventID ? state.lastEventID : undefined);
-
     const setRetryIndex = (index: number) => (state.retryIndex = index);
     const getRetryIndex = () => state.retryIndex;
 
@@ -111,21 +110,16 @@ export const eventManager = <T extends {}>({
 
             while (true) {
                 const eventID = getEventID() ?? (await getLatestEventID?.());
-                if (!eventID) throw new Error('No valid `EventID` provided');
 
-                const result = (await api<T>({
-                    ...query(eventID),
-                    signal: abortController.signal,
-                    silence: true,
-                }).catch((error: any) => {
-                    if (error.name === 'AbortError') return;
-                    throw error;
-                })) as Maybe<T>;
+                if (!eventID) {
+                    logger.warn('No valid `EventID` provided');
+                    return;
+                }
 
+                const result = await api<T>({ ...query(eventID), signal: abortController.signal, silence: true });
                 if (!result) return;
 
                 await Promise.all(listeners.notify(result));
-
                 const { More, EventID: nextEventID } = getCursor(result);
 
                 setEventID(nextEventID);
@@ -137,12 +131,17 @@ export const eventManager = <T extends {}>({
             delete state.abortController;
             start(call);
         } catch (error: any) {
-            listeners.notify({ error });
+            /* ⚠️ if the request failed due to a locked or inactive session :
+             * do not restart the event-manager. For any other type of error,
+             * we can safely increase the retry index and retry.. */
+            const { appVersionBad, sessionInactive, sessionLocked } = api.getState();
+            if (error.name === 'AbortError' || appVersionBad || sessionInactive || sessionLocked) return;
 
             delete state.abortController;
             increaseRetryIndex();
             start(call);
 
+            listeners.notify({ error });
             throw error;
         }
     });

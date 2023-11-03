@@ -8,6 +8,8 @@ const getTestEventID = (n: number = 1) => `TEST_EVENT_ID_${n}`;
 
 const createMockedEventManager = () => {
     const mockApi = jest.fn().mockImplementation(() => Promise.resolve({}));
+    (mockApi as any).getState = () => ({});
+
     const mockQuery = jest.fn().mockImplementation(() => ({ url: 'test/endpoint' }));
     const mockGetCursor = jest.fn().mockImplementation((res) => ({ EventID: res.EventID, More: Boolean(res.More) }));
 
