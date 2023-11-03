@@ -58,6 +58,7 @@ const getPublicKeysEmailHelperWithKT = async ({
                 publicKeys: castKeys(mailCapableAddressKeys),
                 ktVerificationResult: addressKTResult,
                 RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL,
+                isCatchAll: false,
                 ...rest,
             };
         }
@@ -68,6 +69,7 @@ const getPublicKeysEmailHelperWithKT = async ({
             return {
                 publicKeys: [],
                 RecipientType: RECIPIENT_TYPES.TYPE_EXTERNAL,
+                isCatchAll: false,
                 ktVerificationResult: {
                     status: getFailedOrUnVerified(
                         addressKTResult?.status === KT_VERIFICATION_STATUS.VERIFICATION_FAILED
@@ -91,6 +93,7 @@ const getPublicKeysEmailHelperWithKT = async ({
                     publicKeys: castKeys(mailCapableUnverifiedInternalKeys),
                     ktVerificationResult: { status, keysChangedRecently },
                     RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL,
+                    isCatchAll: false,
                     ...rest,
                 };
             }
@@ -108,6 +111,7 @@ const getPublicKeysEmailHelperWithKT = async ({
                     publicKeys: castKeys(mailCapableCatchAllKeys),
                     ktVerificationResult,
                     RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL,
+                    isCatchAll: true,
                     ...rest,
                 };
             }
@@ -127,6 +131,7 @@ const getPublicKeysEmailHelperWithKT = async ({
                     publicKeys: castKeys([firstUnverifiedKey]),
                     ktVerificationResult,
                     RecipientType: RECIPIENT_TYPES.TYPE_EXTERNAL,
+                    isCatchAll: false,
                     ...rest,
                 };
             }
@@ -135,6 +140,7 @@ const getPublicKeysEmailHelperWithKT = async ({
             publicKeys: [],
             RecipientType: RECIPIENT_TYPES.TYPE_EXTERNAL,
             ktVerificationResult,
+            isCatchAll: false,
             ...rest,
         };
     } catch (error: any) {
