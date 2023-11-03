@@ -8,6 +8,8 @@ import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { Bordered } from '../../components';
 import useSvgGraphicsBbox from '../../hooks/useSvgGraphicsBbox';
 
+import './PaymentMethodDetails.scss';
+
 const banks = require.context('@proton/styles/assets/img/credit-card-icons', true, /.svg$/);
 
 const banksMap = banks.keys().reduce((acc, key) => {
@@ -57,7 +59,7 @@ const PaymentMethodDetails = ({ type, details = {} }) => {
                         viewBox={`0 0 ${textWidth} 50`}
                         xmlSpace="preserve"
                     >
-                        <text x="0px" y="40px" className="text-40 text-strong text-monospace" ref={textRef}>
+                        <text x="0px" y="40px" className="card-numbers text-strong text-monospace" ref={textRef}>
                             {cardNumberText}
                         </text>
                     </svg>
