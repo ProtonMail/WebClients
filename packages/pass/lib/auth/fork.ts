@@ -40,7 +40,7 @@ export const consumeFork = async ({ api, apiUrl, selector, keyPassword }: Consum
     const pullForkParams = pullForkSession(selector);
     pullForkParams.url = apiUrl ? `${apiUrl}/${pullForkParams.url}` : pullForkParams.url;
 
-    const { UID, RefreshToken } = await api<PullForkResponse>(pullForkParams);
+    const { UID, RefreshToken, LocalID } = await api<PullForkResponse>(pullForkParams);
     const refresh = await api<RefreshSessionResponse>(withUIDHeaders(UID, refreshTokens({ RefreshToken })));
     const { User } = await api<{ User: User }>(withAuthHeaders(UID, refresh.AccessToken, getUser()));
 
@@ -48,6 +48,7 @@ export const consumeFork = async ({ api, apiUrl, selector, keyPassword }: Consum
         AccessToken: refresh.AccessToken,
         keyPassword,
         RefreshToken: refresh.RefreshToken,
+        LocalID,
         UID,
         UserID: User.ID,
     };

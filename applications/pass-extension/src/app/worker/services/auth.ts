@@ -6,7 +6,13 @@ import type { AuthStore } from '@proton/pass/lib/auth/authentication';
 import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/authentication';
 import { AccountForkResponse, consumeFork, getAccountForkResponsePayload } from '@proton/pass/lib/auth/fork';
 import type { AuthSession, ExtensionPersistedSession } from '@proton/pass/lib/auth/session';
-import { SESSION_KEYS, encryptPersistedSession, isValidSession, resumeSession } from '@proton/pass/lib/auth/session';
+import {
+    SESSION_KEYS,
+    encryptPersistedSession,
+    isValidPersistedSession,
+    isValidSession,
+    resumeSession,
+} from '@proton/pass/lib/auth/session';
 import type { SessionLockCheckResult } from '@proton/pass/lib/auth/session-lock';
 import { checkSessionLock } from '@proton/pass/lib/auth/session-lock';
 import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message';
@@ -87,6 +93,7 @@ export const createAuthService = ({
 
             authStore.setUID(session.UID);
             authStore.setUserID(session.UserID);
+            authStore.setLocalID(session.LocalID);
             authStore.setPassword(session.keyPassword);
             authStore.setLockToken(session.sessionLockToken);
             authStore.setAccessToken(session.AccessToken);
@@ -265,22 +272,15 @@ export const createAuthService = ({
         }),
 
         getPersistedSession: withContext<() => Promise<Maybe<ExtensionPersistedSession>>>(async (ctx) => {
-            const { ps } = await ctx.service.storage.local.get(['ps']);
+            try {
+                const { ps } = await ctx.service.storage.local.get(['ps']);
 
-            if (ps) {
-                try {
-                    const session = JSON.parse(ps) as Partial<ExtensionPersistedSession>;
-                    return {
-                        UserID: session.UserID ?? '',
-                        UID: session.UID ?? '',
-                        AccessToken: session.AccessToken ?? '',
-                        RefreshToken: session.RefreshToken ?? '',
-                        RefreshTime: session.RefreshTime,
-                        blob: session.blob ?? '',
-                    };
-                } catch {
-                    logger.warn('[Worker::Auth] Failed parsing persisted session');
+                if (ps) {
+                    const session = JSON.parse(ps);
+                    return isValidPersistedSession(session) ? session : undefined;
                 }
+            } catch {
+                logger.warn('[Worker::Auth] Failed parsing persisted session');
             }
         }),
 
