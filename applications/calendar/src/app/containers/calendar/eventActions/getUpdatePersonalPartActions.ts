@@ -6,18 +6,15 @@ export const getUpdatePersonalPartOperation = ({
     eventComponent,
     hasDefaultNotifications,
     event,
-    memberID,
     addressID,
 }: {
     eventComponent: VcalVeventComponent;
     hasDefaultNotifications: boolean;
     event: CalendarEvent;
-    memberID: string;
     addressID: string;
 }) => {
     return {
         data: {
-            memberID,
             addressID,
             calendarID: event.CalendarID,
             eventID: event.ID,
@@ -31,7 +28,6 @@ export const getUpdatePersonalPartActions = async ({
     eventComponent,
     hasDefaultNotifications,
     event,
-    memberID,
     addressID,
     reencryptionCalendarID,
     inviteActions,
@@ -40,7 +36,6 @@ export const getUpdatePersonalPartActions = async ({
     eventComponent: VcalVeventComponent;
     hasDefaultNotifications: boolean;
     event: CalendarEvent;
-    memberID: string;
     addressID: string;
     reencryptionCalendarID?: string;
     inviteActions: InviteActions;
@@ -54,7 +49,6 @@ export const getUpdatePersonalPartActions = async ({
         eventComponent,
         hasDefaultNotifications,
         event,
-        memberID,
         addressID,
     });
     return {
