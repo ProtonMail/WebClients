@@ -77,6 +77,7 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
     const [error, setError] = useState({ title: '', message: '', error: '' });
 
     const bf2023IsExpiredFlag = useFlag('BF2023IsExpired');
+    const bf2023OfferCheck = useFlag('BF2023OfferCheck');
 
     const canEdit = canPay(user);
 
@@ -237,7 +238,7 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
                                 onCancel={handleClose}
                                 onCheck={(data) => {
                                     // If the initial check completes, it's handled by the container itself
-                                    if (data.model.initialCheckComplete) {
+                                    if (data.model.initialCheckComplete || !bf2023OfferCheck) {
                                         return;
                                     }
 
