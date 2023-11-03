@@ -9,7 +9,7 @@ import noop from '@proton/utils/noop';
 
 import { useApi, useAuthentication, useModals } from '../../hooks';
 import { ChargeablePaymentParameters, PAYMENT_METHOD_TYPES, PaymentMethodFlows, PaymentMethodType } from '../core';
-import { Operations, usePaymentFacade as useInnerPaymentFacade } from '../react-extensions';
+import { Operations, OperationsData, usePaymentFacade as useInnerPaymentFacade } from '../react-extensions';
 import { wrapMethods } from './useMethods';
 
 type PaymentFacadeProps = {
@@ -17,8 +17,11 @@ type PaymentFacadeProps = {
     currency: Currency;
     onChargeable: (
         operations: Operations,
-        data: ChargeablePaymentParameters,
-        source: PaymentMethodType
+        data: {
+            chargeablePaymentParameters: ChargeablePaymentParameters;
+            source: PaymentMethodType;
+            context: OperationsData;
+        }
     ) => Promise<unknown>;
     coupon?: string;
     flow: PaymentMethodFlows;
