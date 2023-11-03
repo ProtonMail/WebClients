@@ -13,7 +13,7 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-	.opacity-on-hover-only-desktop.file-browser-list--download-button[disabled] {
+	.mouse\:group-hover\:opacity-100.file-browser-list--download-button[disabled] {
 		opacity: 0;
 	}
 }

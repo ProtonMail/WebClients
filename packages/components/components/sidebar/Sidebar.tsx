@@ -120,7 +120,11 @@ const Sidebar = ({
                 {...focusTrapProps}
             >
                 <div className="no-desktop no-tablet flex-item-noshrink absolute right mr-5 mt-2">
-                    <Hamburger expanded={expanded} onToggle={onToggleExpand} className="opacity-on-focus bg-norm" />
+                    <Hamburger
+                        expanded={expanded}
+                        onToggle={onToggleExpand}
+                        className="opacity-0 focus:opacity-100 bg-norm"
+                    />
                 </div>
 
                 <h1 className="sr-only">{getAppName(APP_NAME)}</h1>

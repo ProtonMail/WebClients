@@ -7,8 +7,8 @@ import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { getRecipients as getMessageRecipients, getSender, isDraft, isSent } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
-import useMailModel from 'proton-mail/hooks/useMailModel';
 import { filterAttachmentToPreview } from 'proton-mail/helpers/attachment/attachmentThumbnails';
+import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { getRecipients as getConversationRecipients, getSenders } from '../../helpers/conversation';
@@ -149,7 +149,7 @@ const Item = ({
                 onDragStart={(event) => onDragStart(event, element)}
                 onDragEnd={onDragEnd}
                 className={clsx([
-                    'flex-item-fluid flex flex-nowrap cursor-pointer opacity-on-hover-container',
+                    'flex-item-fluid flex flex-nowrap cursor-pointer',
                     columnLayout ? 'item-container item-container-column' : 'item-container-row',
                     isSelected && 'item-is-selected',
                     !unread && 'read',
