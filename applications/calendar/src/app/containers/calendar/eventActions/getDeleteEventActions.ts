@@ -78,7 +78,6 @@ const getDeleteSingleEventActionsHelper = async ({
         const updatePartstatOperation = getUpdatePartstatOperation({
             eventComponent: oldVevent,
             event: oldEventData,
-            memberID,
             timestamp,
             inviteActions: updatedInviteActions,
             silence: true,

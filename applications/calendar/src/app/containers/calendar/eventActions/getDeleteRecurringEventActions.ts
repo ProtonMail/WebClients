@@ -160,7 +160,6 @@ export const getDeleteRecurringEventActions = async ({
                 const updatePartstatOperation = getUpdatePartstatOperation({
                     eventComponent: originalVeventComponent,
                     event: originalEvent,
-                    memberID: originalMemberID,
                     timestamp,
                     inviteActions: updatedInviteActions,
                     silence: true,
