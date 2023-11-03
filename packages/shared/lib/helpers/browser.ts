@@ -46,6 +46,7 @@ export const isAndroid = () => {
 export const isDuckDuckGo = () => navigator.userAgent.includes('DuckDuckGo');
 export const isSafari = () => ua.browser.name === 'Safari' || ua.browser.name === 'Mobile Safari';
 export const isSafari11 = () => isSafari() && ua.browser.major === '11';
+export const isMinimumSafariVersion = (version: number) => isSafari() && Number(ua.browser.version) >= version;
 export const isSafariMobile = () => ua.browser.name === 'Mobile Safari';
 export const isIE11 = () => ua.browser.name === 'IE' && ua.browser.major === '11';
 export const isEdge = () => ua.browser.name === 'Edge';
