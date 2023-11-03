@@ -13,12 +13,13 @@ export type ApiAuth = {
 };
 
 export type ApiState = {
-    serverTime?: Date;
-    offline: boolean;
-    unreachable: boolean;
     appVersionBad: boolean;
+    offline: boolean;
+    pendingCount: number;
+    serverTime?: Date;
     sessionInactive: boolean;
     sessionLocked: boolean;
+    unreachable: boolean;
 };
 
 /**
@@ -33,7 +34,7 @@ export type Api = {
         config: ApiOptions<U, M>
     ): Promise<ApiResult<T, U, M>>;
     getState: () => ApiState;
-    reset: () => void;
+    reset: () => Promise<void>;
     subscribe: (subscribe: Subscriber<ApiSubscribtionEvent>) => () => void;
     unsubscribe: () => void;
 };

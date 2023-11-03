@@ -10,6 +10,8 @@ import type {
     ApiSubscribtionEvent,
     Maybe,
 } from '@proton/pass/types';
+import { waitUntil } from '@proton/pass/utils/fp/wait-until';
+import { logger } from '@proton/pass/utils/logger';
 import { createPubSub } from '@proton/pass/utils/pubsub/factory';
 import configureApi from '@proton/shared/lib/api';
 import {
@@ -40,12 +42,13 @@ export const createApi = ({ config, getAuth, onRefresh }: ApiFactoryOptions): Ap
     const clientID = getClientID(config.APP_NAME);
 
     const state: ApiState = {
-        serverTime: undefined,
         appVersionBad: false,
         offline: false,
-        unreachable: false,
+        pendingCount: 0,
+        serverTime: undefined,
         sessionInactive: false,
         sessionLocked: false,
+        unreachable: false,
     };
 
     const call = configureApi({ ...config, clientID, xhr } as any) as ApiCallFn;
@@ -54,6 +57,7 @@ export const createApi = ({ config, getAuth, onRefresh }: ApiFactoryOptions): Ap
 
     const api = async ({ output = 'json', ...rest }: ApiOptions): Promise<ApiResult> => {
         const config = getAuth() ? rest : withLocaleHeaders(localeCode, rest);
+        state.pendingCount += 1;
 
         return apiCall(config)
             .then((response) => {
@@ -96,18 +100,30 @@ export const createApi = ({ config, getAuth, onRefresh }: ApiFactoryOptions): Ap
                 if (error && !getSilenced(e.config, code)) pubsub.publish({ type: 'error', error });
 
                 throw e;
-            });
+            })
+            .finally(() => (state.pendingCount -= 1));
     };
 
     api.getState = () => state;
 
-    api.reset = () => {
+    api.reset = async () => {
+        /* if API has pending requests - wait for API to be completely
+         * idle before resetting state - this avoids race conditions.
+         * ie: on session inactive error propagating to every pending call */
+        if (api.getState().pendingCount > 0) {
+            logger.info(`[API] Reset deferred until API idle`);
+            await waitUntil(() => api.getState().pendingCount === 0, 50);
+        }
+
+        state.pendingCount = 0;
         state.serverTime = undefined;
         state.appVersionBad = false;
         state.offline = false;
         state.unreachable = false;
         state.sessionInactive = false;
         state.sessionLocked = false;
+
+        logger.info(`[API] internal api state reset`);
     };
 
     api.subscribe = pubsub.subscribe;
