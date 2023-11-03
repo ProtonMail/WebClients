@@ -133,7 +133,7 @@ export type TelemetryEventMessage = WithPayload<WorkerMessageType.TELEMETRY_EVEN
 export type UnloadContentScriptMessage = { type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT };
 export type UnlockRequestMessage = WithPayload<WorkerMessageType.UNLOCK_REQUEST, { pin: string }>;
 export type UpdateAvailableMessage = { type: WorkerMessageType.UPDATE_AVAILABLE };
-export type WorkerInitMessage = { type: WorkerMessageType.WORKER_INIT };
+export type WorkerInitMessage = { type: WorkerMessageType.WORKER_INIT; payload?: { forceLock: boolean } };
 export type WorkerStatusMessage = WithPayload<WorkerMessageType.WORKER_STATUS, { state: WorkerState }>;
 export type WorkerWakeUpMessage = WithPayload<WorkerMessageType.WORKER_WAKEUP, { tabId: TabId }>;
 
