@@ -1,3 +1,4 @@
+import { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
 
 export enum SupportedActions {
@@ -6,7 +7,10 @@ export enum SupportedActions {
     SubscribeAccountLink = 'subscribe-account-link',
 }
 
-export const getApp = (appQueryParam: string | null, redirect: string | undefined) => {
+export const getApp = (appQueryParam: string | null, redirect: string | undefined): ProductParam => {
+    if (appQueryParam === 'generic' || appQueryParam === 'business') {
+        return appQueryParam;
+    }
     if (appQueryParam === 'vpn') {
         return APPS.PROTONVPN_SETTINGS;
     }
