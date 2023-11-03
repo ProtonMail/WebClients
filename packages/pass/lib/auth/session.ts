@@ -1,5 +1,6 @@
 /* Inspired from packages/shared/lib/authentication/persistedSessionHelper.ts */
 import type { Api, Maybe } from '@proton/pass/types';
+import { isObject } from '@proton/pass/utils/object/is-object';
 import { getLocalKey, setLocalKey } from '@proton/shared/lib/api/auth';
 import { getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { InactiveSessionError } from '@proton/shared/lib/api/helpers/withApiHandlers';
@@ -17,8 +18,9 @@ import type { AuthStore } from './authentication';
 export type AuthSession = {
     AccessToken: string;
     keyPassword: string;
-    RefreshToken: string;
+    LocalID?: number;
     RefreshTime?: number;
+    RefreshToken: string;
     sessionLockToken?: string;
     UID: string;
     UserID: string;
@@ -30,20 +32,23 @@ export type ExtensionPersistedSessionBlob = Pick<AuthSession, 'keyPassword' | 's
 export const SESSION_KEYS: (keyof AuthSession)[] = [
     'AccessToken',
     'keyPassword',
+    'LocalID',
     'RefreshToken',
     'sessionLockToken',
     'UID',
     'UserID',
 ];
 
-export const isValidSession = (maybeSession: Partial<AuthSession>): maybeSession is AuthSession =>
-    Boolean(
-        maybeSession.AccessToken &&
-            maybeSession.keyPassword &&
-            maybeSession.RefreshToken &&
-            maybeSession.UID &&
-            maybeSession.UserID
-    );
+export const isValidSession = (data: Partial<AuthSession>): data is AuthSession =>
+    Boolean(data.AccessToken && data.keyPassword && data.RefreshToken && data.UID && data.UserID);
+
+export const isValidPersistedSession = (data: any): data is ExtensionPersistedSession =>
+    isObject(data) &&
+    Boolean('AccessToken' in data && data.AccessToken) &&
+    Boolean('RefreshToken' in data && data.RefreshToken) &&
+    Boolean('UID' in data && data.UID) &&
+    Boolean('UserID' in data && data.UserID) &&
+    Boolean('blob' in data && data.blob);
 
 export const encryptPersistedSession = async (
     api: Api,
