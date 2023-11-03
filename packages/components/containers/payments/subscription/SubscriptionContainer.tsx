@@ -9,7 +9,7 @@ import { getShortBillingText } from '@proton/components/containers/payments/help
 import VPNPassPromotionButton from '@proton/components/containers/payments/subscription/VPNPassPromotionButton';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
-import { Operations } from '@proton/components/payments/react-extensions';
+import { Operations, OperationsSubscriptionData } from '@proton/components/payments/react-extensions';
 import { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
@@ -432,20 +432,23 @@ const SubscriptionContainer = ({
         }
     };
 
-    const handleSubscribe = async (operationsOrValidToken: Operations | ValidatedBitcoinToken) => {
+    const handleSubscribe = async (
+        operationsOrValidToken: Operations | ValidatedBitcoinToken,
+        context: OperationsSubscriptionData
+    ) => {
         try {
-            await handlePlanWarnings(model.planIDs);
+            await handlePlanWarnings(context.Plans);
         } catch (e) {
             return;
         }
 
-        if (!hasPlanIDs(model.planIDs)) {
+        if (!hasPlanIDs(context.Plans)) {
             return handleUnsubscribe();
         }
 
         const shouldCalendarPreventSubscriptionChangePromise = getShouldCalendarPreventSubscripitionChange({
             hasPaidMail: hasPaidMail(user),
-            willHavePaidMail: willHavePaidMail(model.planIDs, plans),
+            willHavePaidMail: willHavePaidMail(context.Plans, plans),
             api,
             getCalendars,
         });
@@ -502,7 +505,13 @@ const SubscriptionContainer = ({
     const paymentFacade = usePaymentFacade({
         amount,
         currency,
-        onChargeable: (operations) => withLoading(handleSubscribe(operations)),
+        onChargeable: (operations, { context }) => {
+            if (!context.subscription) {
+                throw new Error('Missing subscription context');
+            }
+
+            return withLoading(handleSubscribe(operations, context.subscription));
+        },
         flow: 'subscription',
     });
 
@@ -905,7 +914,11 @@ const SubscriptionContainer = ({
                                         noMaxWidth
                                         onBitcoinTokenValidated={async (data) => {
                                             setBitcoinValidated(true);
-                                            await handleSubscribe(data);
+                                            await handleSubscribe(data, {
+                                                Plans: model.planIDs,
+                                                Cycle: model.cycle,
+                                                product: app,
+                                            });
                                         }}
                                         onAwaitingBitcoinPayment={setAwaitingBitcoinPayment}
                                         hideSavedMethodsDetails={application === APPS.PROTONACCOUNTLITE}
@@ -1034,7 +1047,11 @@ const SubscriptionContainer = ({
                                     noMaxWidth
                                     onBitcoinTokenValidated={async (data) => {
                                         setBitcoinValidated(true);
-                                        await handleSubscribe(data);
+                                        await handleSubscribe(data, {
+                                            Plans: model.planIDs,
+                                            Cycle: model.cycle,
+                                            product: app,
+                                        });
                                     }}
                                     onAwaitingBitcoinPayment={setAwaitingBitcoinPayment}
                                     hideFirstLabel={true}
