@@ -22,7 +22,7 @@ const bypass = async () => {
     try {
         await wait(500);
         await fetch(SSO_URL);
-        await sendMessage(pageMessage({ type: WorkerMessageType.WORKER_INIT }));
+        await sendMessage(pageMessage({ type: WorkerMessageType.WORKER_INIT, payload: { forceLock: true } }));
     } finally {
         void browser.tabs.remove(tabId);
     }

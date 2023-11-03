@@ -39,12 +39,13 @@ import WorkerMessageBroker from '../channel';
 import { withContext } from '../context';
 import store from '../store';
 
+type AuthInitOptions = { forceLock: boolean };
 export interface AuthService {
     store: AuthStore;
-    init: () => Promise<boolean>;
+    init: (options?: AuthInitOptions) => Promise<boolean>;
     login: (session: AuthSession) => Promise<boolean>;
     logout: () => Promise<boolean>;
-    resumeSession: () => Promise<boolean>;
+    resumeSession: (options?: AuthInitOptions) => Promise<boolean>;
     consumeSession: (data: ForkPayload) => Promise<WorkerMessageResponse<WorkerMessageType.ACCOUNT_FORK>>;
     persistSession: () => Promise<void>;
     getPersistedSession: () => Promise<Maybe<ExtensionPersistedSession>>;
@@ -69,7 +70,7 @@ export const createAuthService = ({
         store: authStore,
 
         init: asyncLock(
-            withContext<() => Promise<boolean>>(async (ctx) => {
+            withContext<(options?: AuthInitOptions) => Promise<boolean>>(async (ctx, options) => {
                 /* if worker is logged out (unauthorized or locked) during an init call,
                  * this means the login or resumeSession calls failed - we can safely early
                  * return as the authentication store will have been configured */
@@ -77,7 +78,7 @@ export const createAuthService = ({
                 if (workerLoggedIn(ctx.status)) return true;
 
                 logger.info(`[Worker::Auth] Initialization start`);
-                return authService.resumeSession();
+                return authService.resumeSession(options);
             })
         ),
 
@@ -172,7 +173,7 @@ export const createAuthService = ({
 
         /* Resumes the session during browser start-up or when not found in session storage.
          * Initializes the authentication store for session resuming API requests. */
-        resumeSession: withContext(async (ctx) => {
+        resumeSession: withContext(async (ctx, options) => {
             const inMemorySession = await ctx.service.storage.session.get(SESSION_KEYS);
 
             if (inMemorySession && isValidSession(inMemorySession)) {
@@ -206,6 +207,10 @@ export const createAuthService = ({
 
                     if (session !== undefined) {
                         logger.info(`[Worker::Auth] Session successfuly resumed`);
+
+                        /* on `forceLock: true` remove the `sessionLockToken` from the
+                         * session result to trigger an auth lock during the login sequence */
+                        if (options?.forceLock) delete session.sessionLockToken;
                         return await authService.login(session);
                     }
                 } catch (e) {
