@@ -32,6 +32,7 @@ const KeyTransparencyManager = ({ children }: Props) => {
 
     const { offline } = useApiStatus();
     const onlineStatus = useOnline();
+    const safeIsOnline = onlineStatus && !offline;
 
     useEffect(() => {
         const run = async () => {
@@ -42,19 +43,19 @@ const KeyTransparencyManager = ({ children }: Props) => {
                 ktSentryReportError(error, { context: 'runSelfAuditPeriodically' });
             }
         };
-        if (selfAuditPending && ktActivation !== KeyTransparencyActivation.DISABLED && onlineStatus && !offline) {
+        if (selfAuditPending && ktActivation !== KeyTransparencyActivation.DISABLED && safeIsOnline) {
             setSelfAuditPending(false);
             run();
         }
-    }, [selfAuditPending, ktActivation, offline, onlineStatus]);
+    }, [selfAuditPending, ktActivation, safeIsOnline]);
 
     useEffect(() => {
         const startDelay = 10 * SECOND;
         const delay = ktState?.selfAuditResult
             ? ktState.selfAuditResult.nextAuditTime - ktState.selfAuditResult.auditTime
             : startDelay;
-        const st = setTimeout(() => setSelfAuditPending(true), delay);
-        return () => clearTimeout(st);
+        const timeoutID = setTimeout(() => setSelfAuditPending(true), delay);
+        return () => clearTimeout(timeoutID);
     }, [ktState]);
 
     const ktFunctions: KTContext = {
