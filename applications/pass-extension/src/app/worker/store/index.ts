@@ -120,10 +120,7 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
 
     onSessionLocked: withContext(async (ctx) => ctx.service.auth.lock()),
 
-    onSessionUnlocked: withContext(async ({ init, service: { auth } }, sessionLockToken) => {
-        await auth.unlock(sessionLockToken);
-        await init({ force: true });
-    }),
+    onSessionUnlocked: withContext(async ({ service: { auth } }, sessionLockToken) => auth.unlock(sessionLockToken)),
 
     onSettingUpdate: withContext((ctx, update) => ctx.service.settings.sync(update)),
 
