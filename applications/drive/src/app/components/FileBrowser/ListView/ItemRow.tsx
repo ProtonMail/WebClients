@@ -67,7 +67,7 @@ const ItemRow = <T extends FileBrowserBaseItem>({
                 role="button"
                 draggable={draggable}
                 className={clsx([
-                    'file-browser-list-item flex user-select-none opacity-on-hover-container',
+                    'file-browser-list-item flex user-select-none group-hover-opacity-container',
                     (isSelected || dragMoveControls?.isActiveDropTarget || item.isLocked) && 'bg-strong',
                     (dragging || item.isLocked) && 'opacity-50',
                 ])}
