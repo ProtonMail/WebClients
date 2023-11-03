@@ -35,6 +35,7 @@ export interface ApiKeysConfig {
     publicKeys: ProcessedApiKey[];
     Code?: number;
     RecipientType?: RECIPIENT_TYPES;
+    isCatchAll?: boolean;
     MIMEType?: MIME_TYPES;
     Warnings?: string[];
     Errors?: string[];
