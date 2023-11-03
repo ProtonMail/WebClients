@@ -151,6 +151,11 @@ export interface SubscriptionContainerProps {
     onSubscribed?: () => void;
     onUnsubscribed?: () => void;
     onCancel?: () => void;
+    onCheck?: (
+        data:
+            | { model: Model; newModel: Model; type: 'error'; error: any }
+            | { model: Model; newModel: Model; type: 'success'; result: SubscriptionCheckResponse }
+    ) => void;
     metrics: {
         source: Source;
     };
@@ -172,6 +177,7 @@ const SubscriptionContainer = ({
     onSubscribed,
     onUnsubscribed,
     onCancel,
+    onCheck,
     disablePlanSelection,
     disableCycleSelector: maybeDisableCycleSelector,
     disableThanksStep,
@@ -549,11 +555,12 @@ const SubscriptionContainer = ({
 
             setCheckResult(result);
             setModel(copyNewModel);
+            onCheck?.({ model, newModel, type: 'success', result });
         } catch (error: any) {
             if (error.name === 'OfflineError') {
                 setModel({ ...model, step: SUBSCRIPTION_STEPS.NETWORK_ERROR });
             }
-
+            onCheck?.({ model, newModel, type: 'error', error });
             return false;
         }
 
