@@ -112,8 +112,16 @@ describe('serialize', () => {
                     },
                 ],
                 org: [
-                    { field: 'org', value: ['Barcelona FC', 'Paris Saint-Germain'], uid: createContactPropertyUid() },
-                    { field: 'org', value: ['Leo Messi Foundation'], uid: createContactPropertyUid() },
+                    {
+                        field: 'org',
+                        value: { organizationalName: 'Barcelona FC', organizationalUnitNames: ['Training-center'] },
+                        uid: createContactPropertyUid(),
+                    },
+                    {
+                        field: 'org',
+                        value: { organizationalName: 'Leo Messi Foundation' },
+                        uid: createContactPropertyUid(),
+                    },
                 ],
                 member: [{ field: 'member', value: 'tel:+1-418-555-5555', uid: createContactPropertyUid() }],
                 related: [
@@ -147,7 +155,12 @@ describe('serialize', () => {
                 categories: [
                     {
                         field: 'categories',
-                        value: ['Best players of all time', 'Tax-evading players'],
+                        value: 'Tax-evading players',
+                        uid: createContactPropertyUid(),
+                    },
+                    {
+                        field: 'categories',
+                        value: 'Best players of all time',
                         uid: createContactPropertyUid(),
                     },
                 ],
@@ -173,7 +186,7 @@ describe('serialize', () => {
                 `GEO;VALUE=FLOAT:geo:37.386013,-122.082932`,
                 `ROLE:Fake 9`,
                 `LOGO:https://static.messi.com/wp-content/uploads/2019/10/messi-logo-01.png`,
-                `ORG:Barcelona FC;Paris Saint-Germain`,
+                `ORG:Barcelona FC;Training-center`,
                 `ORG:Leo Messi Foundation`,
                 `MEMBER:tel:+1-418-555-5555`,
                 `RELATED;TYPE=spouse:Antonela Roccuzzo`,
@@ -182,7 +195,8 @@ describe('serialize', () => {
                 `RELATED;TYPE=child:Ciro Messi Roccuzzo`,
                 `NOTE:Way better than Cristiano Ronaldo!`,
                 `URL:https://messi.com/`,
-                `CATEGORIES:Best players of all time,Tax-evading players`,
+                `CATEGORIES:Tax-evading players`,
+                `CATEGORIES:Best players of all time`,
                 `END:VCARD`,
             ].join('\r\n');
 
@@ -198,7 +212,13 @@ describe('serialize', () => {
                     {
                         field: 'categories',
                         group: 'item1',
-                        value: ['second', 'third'],
+                        value: 'second',
+                        uid: createContactPropertyUid(),
+                    },
+                    {
+                        field: 'categories',
+                        group: 'item1',
+                        value: 'third',
                         uid: createContactPropertyUid(),
                     },
                 ],
@@ -208,7 +228,8 @@ describe('serialize', () => {
                 `VERSION:4.0`,
                 `FN:dummy`,
                 `CATEGORIES:first`,
-                `ITEM1.CATEGORIES:second,third`,
+                `ITEM1.CATEGORIES:second`,
+                `ITEM1.CATEGORIES:third`,
                 `END:VCARD`,
             ].join('\r\n');
 
