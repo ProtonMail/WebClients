@@ -11,6 +11,7 @@ import ContactFieldGender from './ContactFieldGender';
 import ContactFieldImage from './ContactFieldImage';
 import ContactFieldN from './ContactFieldN';
 import ContactFieldNote from './ContactFieldNote';
+import ContactFieldOrg from './ContactFieldOrg';
 import ContactFieldString from './ContactFieldString';
 import ContactFieldTel from './ContactFieldTel';
 
@@ -87,6 +88,10 @@ const ContactFieldProperty = (
                 {...rest}
             />
         );
+    }
+
+    if (field === 'org') {
+        return <ContactFieldOrg vCardProperty={vCardProperty} onChange={onChangeVCard} {...rest} />;
     }
 
     return <ContactFieldString vCardProperty={vCardProperty} onChange={onChangeVCard} {...rest} />;

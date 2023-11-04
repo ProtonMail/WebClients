@@ -11,8 +11,9 @@ import {
     PreVcardProperty,
     PreVcardsProperty,
 } from '../../interfaces/contacts/Import';
+import { VCardOrg } from '../../interfaces/contacts/VCard';
 import { getStringContactValue } from '../properties';
-import { icalValueToInternalAddress, icalValueToNValue } from '../vcard';
+import { icalValueToInternalAddress, icalValueToNValue, icalValueToOrgValue } from '../vcard';
 
 // See './csv.ts' for the definition of pre-vCard and pre-vCards contact
 
@@ -591,6 +592,17 @@ export const toPreVcard = ({ original, standard }: { original: string; standard:
             field: 'categories',
         });
     }
+    if (property === 'org') {
+        return (value: VCardOrg) => ({
+            header,
+            value: [
+                ...(value.organizationalName ? [value.organizationalName] : []),
+                ...(value.organizationalUnitNames ?? []),
+            ],
+            checked: true,
+            field: 'categories',
+        });
+    }
 
     // convert any other property into custom note
     return (value: ContactValue) => ({
@@ -648,13 +660,8 @@ export const combine: Combine = {
         return icalValueToInternalAddress(propertyADR);
     },
     org(preVcards: PreVcardsProperty) {
-        const propertyORG: string[] = new Array(2).fill('');
-        preVcards.forEach(({ value, checked, combineIndex }) => {
-            if (checked) {
-                propertyORG[combineIndex || 0] = getStringContactValue(value);
-            }
-        });
-        return propertyORG.filter(Boolean).join(';');
+        const orgField = preVcards.map((item) => (item.checked ? item.value : false)).filter(Boolean) as string[];
+        return icalValueToOrgValue(orgField);
     },
     categories(preVcards: PreVcardsProperty) {
         // we can get several categories separated by ';'

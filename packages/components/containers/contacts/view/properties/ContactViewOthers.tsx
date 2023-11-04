@@ -1,9 +1,17 @@
-import { format, isValid } from 'date-fns';
+import { format } from 'date-fns';
 
 import { OTHER_INFORMATION_FIELDS } from '@proton/shared/lib/contacts/constants';
 import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
+import { isDateTextValue, isValidDateValue } from '@proton/shared/lib/contacts/vcard';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { VCardContact, VCardDateOrText, VCardGenderValue } from '@proton/shared/lib/interfaces/contacts/VCard';
+import {
+    VCardContact,
+    VCardDateOrText,
+    VCardGenderValue,
+    VCardOrg,
+    VCardProperty,
+} from '@proton/shared/lib/interfaces/contacts/VCard';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { RemoteImage } from '../../../../components';
 import { ContactViewProperties } from './ContactViewProperties';
@@ -23,6 +31,16 @@ const ContactViewOthers = ({ vCardContact, isSignatureVerified = false }: Props)
         // First photo is used in the summary
         if (field === 'photo') {
             properties = properties.slice(1);
+        }
+
+        if (field === 'org') {
+            // TODO: move this field to its own `ContactViewOrg` component
+            properties = properties.map((property: VCardProperty<VCardOrg>) => ({
+                ...property,
+                value: [property.value.organizationalName, ...(property.value.organizationalUnitNames ?? [])]
+                    .filter(isTruthy)
+                    .join('; '),
+            }));
         }
 
         return properties;
@@ -46,11 +64,11 @@ const ContactViewOthers = ({ vCardContact, isSignatureVerified = false }: Props)
                         );
                     }
                     if (field === 'anniversary') {
-                        const dateOrText = value as VCardDateOrText;
-                        if (dateOrText.date && isValid(dateOrText.date)) {
+                        const dateOrText: VCardDateOrText = value;
+                        if (isValidDateValue(dateOrText)) {
                             return format(dateOrText.date, 'PP', { locale: dateLocale });
                         }
-                        if (dateOrText.text) {
+                        if (isDateTextValue(dateOrText)) {
                             return dateOrText.text;
                         }
                         return null;

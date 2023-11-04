@@ -1,3 +1,4 @@
+import isTruthy from '@proton/utils/isTruthy';
 import unique from '@proton/utils/unique';
 
 import { normalize } from '../../helpers/string';
@@ -156,40 +157,29 @@ export const extractNewValue = (
     field: string,
     mergedValues: any[] = []
 ): { isNewValue: boolean; newValue: any | undefined } => {
-    //  the fields n and adr have to be treated separately since they are array-valued
-    if (['org'].includes(field)) {
-        // value is an array in this case, whose elements can be strings or arrays of strings
-
+    if (field === 'org') {
         // compare with merged values. Normalize all strings
-        const isNotRepeatedValue = mergedValues
-            .map((mergedValue) => {
-                const components = Array.isArray(mergedValue) ? mergedValue : [mergedValue];
+        const isRepeatedValue = mergedValues.some((mergedValue) => {
+            const mergedValueAsArray: string[] = [
+                mergedValue.organizationalName,
+                ...(mergedValue.organizationalUnitNames ?? []),
+            ].filter(isTruthy);
 
-                // check element by element to see if there are new values
-                const newComponents = components
-                    .map((component, index) => {
-                        // each of the components inside be an array itself
-                        const valueAtIndex = value[index];
-                        if (Array.isArray(component) && Array.isArray(valueAtIndex)) {
-                            return valueAtIndex.some(
-                                (str) => !component.map((c) => normalize(c)).includes(normalize(str))
-                            );
-                        }
-                        if (!Array.isArray(component) && !Array.isArray(valueAtIndex)) {
-                            return normalize(component) !== normalize(valueAtIndex);
-                        }
-                        return Array.isArray(component) ? component.includes(getStringContactValue(value)) : true;
-                    })
-                    .filter(Boolean);
+            // each of the components inside be an array itself
+            const valueAsArray: string[] = [
+                value?.organizationalName,
+                ...(value?.organizationalUnitNames ?? []),
+            ].filter(isTruthy);
 
-                return !newComponents.length;
-            })
-            // keep track of only repeated addresses
-            .filter(Boolean);
+            // value order is important, that's we why do an exact match check and not just check that one array includes the value of another
+            const isSameValue = valueAsArray.every(
+                (str, index) => normalize(str) === normalize(mergedValueAsArray[index] ?? '')
+            );
 
-        // if the be-new address is repeated, it is not new
-        const isNew = !isNotRepeatedValue.length;
-        return { isNewValue: isNew, newValue: isNew ? value : undefined };
+            return isSameValue;
+        });
+
+        return { isNewValue: !isRepeatedValue, newValue: isRepeatedValue ? undefined : value };
     }
     if (field === 'adr') {
         const isNew =
