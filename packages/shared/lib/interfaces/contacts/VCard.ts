@@ -23,22 +23,37 @@ export type VCardKey =
     | 'note'
     | 'url';
 
-// TODO: Deprecate this type. Use only VCardContact
-export type VCardProperty<T = any> = {
-    field: string;
-    value: T;
-    uid: string;
-    params?: { [key: string]: string };
-    group?: string;
-};
+export type ParamKey =
+    | 'language'
+    | 'value'
+    | 'pref'
+    | 'altid'
+    | 'pid'
+    | 'type'
+    | 'mediatype'
+    | 'calscale'
+    | 'sort-as'
+    | 'geo'
+    | 'tz';
 
-export type VcardNValue = {
+export interface VCardProperty<T = any> {
+    value: T;
+    params?: Partial<Record<ParamKey, string>>;
+    group?: string;
+    /**
+     * Proton specific: outside of RFC's scope
+     */
+    field: string;
+    uid: string;
+}
+
+export interface VcardNValue {
     familyNames: string[];
     givenNames: string[];
     additionalNames: string[];
     honorificPrefixes: string[];
     honorificSuffixes: string[];
-};
+}
 
 export enum VCardGender {
     Male = 'M',
@@ -49,12 +64,17 @@ export enum VCardGender {
     Empty = '',
 }
 
-export type VCardGenderValue = {
+export interface VCardOrg {
+    organizationalName?: string;
+    organizationalUnitNames?: string[];
+}
+
+export interface VCardGenderValue {
     gender: VCardGender;
     text?: string;
-};
+}
 
-export type VCardAddress = {
+export interface VCardAddress {
     postOfficeBox: string;
     extendedAddress: string;
     streetAddress: string;
@@ -62,14 +82,20 @@ export type VCardAddress = {
     region: string;
     postalCode: string;
     country: string;
-};
+}
 
-export type VCardDateOrText = {
-    date?: Date; // local date
-    text?: string;
-};
+export type VCardDateOrText =
+    | {
+          /**
+           * Local date
+           */
+          date?: Date;
+      }
+    | {
+          text?: string;
+      };
 
-export interface VCardContact {
+interface BaseVCardContact {
     fn: VCardProperty<string>[];
     n?: VCardProperty<VcardNValue>;
     nickname?: VCardProperty<string>[];
@@ -82,22 +108,41 @@ export interface VCardContact {
     email?: VCardProperty<string>[];
     impp?: VCardProperty<string>[];
     lang?: VCardProperty<string>[];
+    tz?: VCardProperty<string>[];
     geo?: VCardProperty<string>[];
     title?: VCardProperty<string>[];
     role?: VCardProperty<string>[];
     logo?: VCardProperty<string>[];
-    org?: VCardProperty<string[]>[];
+    org?: VCardProperty<VCardOrg>[];
     member?: VCardProperty<string>[];
     related?: VCardProperty<string>[];
     note?: VCardProperty<string>[];
     url?: VCardProperty<string>[];
-    categories?: VCardProperty<string | string[]>[];
+    /**
+     * Array-valued categories pose problems to ICAL (even though a vcard with CATEGORIES:ONE,TWO
+     * will be parsed into a value ['ONE', 'TWO'], ICAL.js fails to transform it back).
+     * So we prefer storing array-valued category as several properties
+     */
+    categories?: VCardProperty<string>[];
     key?: VCardProperty<string>[];
-    // at most one of 'x-pm-encrypt' and 'x-pm-encrypt-untrusted' should be present
-    'x-pm-encrypt'?: VCardProperty<boolean>[]; // encryption flag that applies if 'key' field (i.e. pinned keys) is populated
-    'x-pm-encrypt-untrusted'?: VCardProperty<boolean>[]; // encryption flag that applies to (unpinned) keys from e.g. WKD or other untrusted servers
+    version?: VCardProperty<string>;
     'x-pm-sign'?: VCardProperty<boolean>[];
     'x-pm-scheme'?: VCardProperty<PGP_SCHEMES>[];
     'x-pm-mimetype'?: VCardProperty<MimeTypeVcard>[];
-    version?: VCardProperty<string>;
 }
+
+export type VCardContact = BaseVCardContact &
+    (
+        | {
+              /**
+               * Encryption flag that applies if 'key' field (i.e. pinned keys) is populated
+               */
+              'x-pm-encrypt'?: VCardProperty<boolean>[];
+          }
+        | {
+              /**
+               * Encryption flag that applies to (unpinned) keys from e.g. WKD or other untrusted servers
+               */
+              'x-pm-encrypt-untrusted'?: VCardProperty<boolean>[];
+          }
+    );
