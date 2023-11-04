@@ -308,7 +308,7 @@ END:VCARD`)
                         uid: '',
                     },
                 ],
-                org: [{ field: 'org', value: ['company'], uid: '' }],
+                org: [{ field: 'org', value: { organizationalName: 'company' }, uid: '' }],
                 bday: { field: 'bday', value: { date: parseISO('1999-01-01') }, uid: '' },
                 note: [{ field: 'note', value: 'Notes', uid: '' }],
                 email: [
