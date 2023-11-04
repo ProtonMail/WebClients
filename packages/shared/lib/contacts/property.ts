@@ -4,6 +4,7 @@ import { VCardDateOrText, VCardProperty } from '@proton/shared/lib/interfaces/co
 
 import { ContactValue } from '../interfaces/contacts';
 import { CONTACT_FIRST_LAST_NAME_MAX_LENGTH, CONTACT_NAME_MAX_LENGTH } from './constants';
+import { isDateTextValue, isValidDateValue } from './vcard';
 
 const UNESCAPE_REGEX = /\\\\|\\,|\\;/gi;
 const UNESCAPE_EXTENDED_REGEX = /\\\\|\\:|\\,|\\;/gi;
@@ -154,15 +155,12 @@ export const guessDateFromText = (text: string) => {
  * If none of the above, return today date
  * @param vCardProperty birthday or anniversary vCardProperty
  */
-export const getDateFromVCardProperty = (
-    { value: { date, text } = {} }: VCardProperty<VCardDateOrText>,
-    fallbackDate?: Date
-) => {
-    if (date && isValid(date)) {
-        return date;
-    } else if (text) {
+export const getDateFromVCardProperty = ({ value = {} }: VCardProperty<VCardDateOrText>, fallbackDate?: Date) => {
+    if (isValidDateValue(value) && isValid(value.date)) {
+        return value.date;
+    } else if (isDateTextValue(value)) {
         // Try to convert the text into a valid date
-        const textToDate = guessDateFromText(text);
+        const textToDate = guessDateFromText(value.text);
         if (textToDate) {
             return textToDate;
         }

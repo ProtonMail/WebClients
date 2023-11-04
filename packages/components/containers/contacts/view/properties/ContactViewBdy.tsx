@@ -1,6 +1,7 @@
-import { format, isValid } from 'date-fns';
+import { format } from 'date-fns';
 
 import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
+import { isDateTextValue, isValidDateValue } from '@proton/shared/lib/contacts/vcard';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { VCardContact, VCardDateOrText, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 
@@ -24,10 +25,10 @@ const ContactViewBdy = ({ vCardContact, isSignatureVerified = false }: Props) =>
             {bdays.map((bday) => {
                 const dateOrText = bday.value as VCardDateOrText;
                 let formattedBday = null;
-                if (dateOrText.date && isValid(dateOrText.date)) {
+                if (isValidDateValue(dateOrText)) {
                     formattedBday = format(dateOrText.date, 'PP', { locale: dateLocale });
                 }
-                if (dateOrText.text) {
+                if (isDateTextValue(dateOrText)) {
                     formattedBday = dateOrText.text;
                 }
 
