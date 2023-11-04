@@ -11,6 +11,7 @@ import {
     VCardContact,
     VCardDateOrText,
     VCardGenderValue,
+    VCardOrg,
     VCardProperty,
     VcardNValue,
 } from '../interfaces/contacts/VCard';
@@ -86,6 +87,14 @@ const getArrayStringValue = (value: undefined | string | string[]) => {
     return value;
 };
 
+export const isValidDateValue = (dateOrText?: VCardDateOrText): dateOrText is { date: Date } => {
+    return Boolean(dateOrText && 'date' in dateOrText && dateOrText.date && isValidDate(dateOrText.date));
+};
+
+export const isDateTextValue = (dateOrText?: VCardDateOrText): dateOrText is { text: string } => {
+    return Boolean(dateOrText && 'text' in dateOrText && dateOrText.text);
+};
+
 export const icalValueToNValue = (value: string | string[]): VcardNValue => {
     // According to vCard RFC https://datatracker.ietf.org/doc/html/rfc6350#section-6.2.2
     // N is split into 5 strings or string arrays with different meaning at each position
@@ -107,6 +116,27 @@ export const icalValueToNValue = (value: string | string[]): VcardNValue => {
         additionalNames: [''],
         honorificPrefixes: [''],
         honorificSuffixes: [''],
+    };
+};
+
+export const icalValueToOrgValue = (value: string | string[]): VCardOrg => {
+    /**
+     * According to vCard RFC https://datatracker.ietf.org/doc/html/rfc6350#section-6.6.4
+     * ORG can be split into several strings. First one is always `organization name`, following ones are `organizational unit names`
+     */
+    if (Array.isArray(value)) {
+        const [organizationalName, ...organizationalUnitNames] = value;
+
+        return {
+            organizationalName,
+            ...(organizationalUnitNames.length
+                ? { organizationalUnitNames: getArrayStringValue(organizationalUnitNames) }
+                : {}),
+        };
+    }
+
+    return {
+        organizationalName: value,
     };
 };
 
@@ -152,6 +182,9 @@ export const icalValueToInternalValue = (name: string, type: string, property: a
     }
     if (name === 'gender') {
         return { text: value.toString() };
+    }
+    if (name === 'org') {
+        return icalValueToOrgValue(value);
     }
     if (['x-pm-encrypt', 'x-pm-encrypt-untrusted', 'x-pm-sign'].includes(name)) {
         return value === 'true';
@@ -259,6 +292,7 @@ export const internalValueToIcalValue = (name: string, value: any) => {
 
         return [familyNames, givenNames, additionalNames, honorificPrefixes, honorificSuffixes];
     }
+
     if (name === 'adr') {
         const {
             postOfficeBox = '',
@@ -271,19 +305,30 @@ export const internalValueToIcalValue = (name: string, value: any) => {
         } = value;
         return [postOfficeBox, extendedAddress, streetAddress, locality, region, postalCode, country];
     }
+
     if (name === 'bday' || name === 'anniversary') {
-        const dateValue = value as VCardDateOrText;
-        if (dateValue?.date && isValidDate(dateValue.date)) {
+        const dateValue: VCardDateOrText = value;
+        if (isValidDateValue(dateValue)) {
             //  As we don't allow to edit times, we assume there's no need of keeping the time part
             return format(dateValue.date, 'yyyyMMdd');
+        } else if (isDateTextValue(dateValue)) {
+            return dateValue.text;
         } else {
-            return dateValue.text || '';
+            return '';
         }
     }
+
     if (name === 'gender') {
-        const genderValue = value as VCardGenderValue;
+        const genderValue: VCardGenderValue = value;
         return genderValue.text || '';
     }
+
+    if (name === 'org') {
+        const orgValue: VCardOrg = value;
+        const { organizationalName, organizationalUnitNames = [] } = orgValue;
+        return [...(organizationalName ? [organizationalName] : []), ...organizationalUnitNames];
+    }
+
     return value;
 };
 
@@ -301,8 +346,10 @@ export const vCardPropertiesToICAL = (properties: VCardProperty[]) => {
         const fieldWithGroup = [group, field].filter(isTruthy).join('.');
         const property = new ICAL.Property(fieldWithGroup);
 
-        if (['bday', 'anniversary'].includes(field) && !(value.date && isValidDate(value.date))) {
-            property.resetType('text');
+        if (['bday', 'anniversary'].includes(field)) {
+            if (!isValidDateValue(value)) {
+                property.resetType('text');
+            }
         }
 
         const iCalValue = internalValueToIcalValue(field, value);
@@ -318,7 +365,7 @@ export const vCardPropertiesToICAL = (properties: VCardProperty[]) => {
     return component;
 };
 
-const getProperty = (name: string, { value, params = {}, group }: any) => {
+const getProperty = (name: keyof VCardContact, { value, params = {}, group }: any) => {
     if (!value) {
         return;
     }
@@ -343,7 +390,7 @@ const getProperty = (name: string, { value, params = {}, group }: any) => {
     return property;
 };
 
-export const serialize = (contact: any) => {
+export const serialize = (contact: VCardContact) => {
     const icalComponent = new ICAL.Component('vcard');
 
     // clear any possible previous version (which could be < 4.0)
@@ -361,7 +408,7 @@ export const serialize = (contact: any) => {
         } else {
             return 0;
         }
-    });
+    }) as (keyof VCardContact)[];
 
     sortedObjectKeys.forEach((name) => {
         const jsonProperty = contact[name];
