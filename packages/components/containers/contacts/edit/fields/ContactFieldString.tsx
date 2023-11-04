@@ -6,7 +6,7 @@ import { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 
 interface Props extends Omit<InputProps, 'onChange'> {
     vCardProperty: VCardProperty<string>;
-    onChange: (vCardProperty: VCardProperty) => void;
+    onChange: (vCardProperty: VCardProperty<string>) => void;
 }
 
 const ContactFieldString = ({ vCardProperty, onChange, ...rest }: Props, ref: Ref<HTMLInputElement>) => {
