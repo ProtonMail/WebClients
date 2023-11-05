@@ -217,7 +217,11 @@ export const createAuthService = ({
 
                         /* on `forceLock: true` remove the `sessionLockToken` from the
                          * session result to trigger an auth lock during the login sequence */
-                        if (options?.forceLock) delete session.sessionLockToken;
+                        if (options?.forceLock) {
+                            logger.info(`[Worker::Auth] Forcing session lock`);
+                            delete session.sessionLockToken;
+                        }
+
                         return await authService.login(session);
                     }
                 } catch (e) {
