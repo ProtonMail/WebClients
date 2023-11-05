@@ -4,19 +4,18 @@ import type { State } from '@proton/pass/store/types';
 import type { Maybe, PassCryptoSnapshot, SerializedCryptoContext } from '@proton/pass/types';
 import { PassEncryptionTag } from '@proton/pass/types';
 import type { EncryptedExtensionCache, ExtensionCache } from '@proton/pass/types/worker/cache';
+import { logger } from '@proton/pass/utils/logger';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
 import { getCacheEncryptionKey } from './cache.encrypt';
 import { decryptData } from './crypto-helpers';
 
 const decrypt = async <T extends object>(options: {
-    data: string | null;
+    data: string;
     key: CryptoKey;
     useTextDecoder: boolean;
 }): Promise<T | undefined> => {
-    if (!options.data) {
-        return;
-    }
+    if (!options.data) return;
 
     try {
         const encryptedData = stringToUint8Array(options.data);
@@ -26,14 +25,21 @@ const decrypt = async <T extends object>(options: {
         return JSON.parse(
             options.useTextDecoder ? decoder.decode(decryptedData) : uint8ArrayToString(decryptedData)
         ) as T;
-    } catch (_) {}
+    } catch (error) {
+        logger.warn(`[Cache::decrypt] Decryption failure`, error);
+    }
 };
 
 export const decryptCachedState = async (
     { state: encryptedState, snapshot: encryptedSnapshot, salt }: Partial<EncryptedExtensionCache>,
     sessionLockToken: Maybe<string>
 ): Promise<Maybe<ExtensionCache>> => {
+    if (!encryptedState) logger.warn(`[Cache::decrypt] Cached state not found`);
+    if (!encryptedSnapshot) logger.warn(`[Cache::decrypt] Crypto snapshot not found`);
+    if (!salt) logger.warn(`[Cache::decrypt] Salt not found`);
+
     if (encryptedState && encryptedSnapshot && salt) {
+        logger.info(`[Cache::decrypt] Decrypting cache [sessionLockToken=${!!sessionLockToken}]`);
         const cacheKey = await getCacheEncryptionKey(stringToUint8Array(salt), sessionLockToken);
 
         const [state, snapshot] = await Promise.all([
