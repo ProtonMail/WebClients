@@ -1,4 +1,5 @@
 import type { ApiAuth, ApiCallFn, Maybe } from '@proton/pass/types';
+import { logger } from '@proton/pass/utils/logger';
 import { setRefreshCookies as refreshTokens } from '@proton/shared/lib/api/auth';
 import { retryHandler } from '@proton/shared/lib/api/helpers/retryHandler';
 import { InactiveSessionError } from '@proton/shared/lib/api/helpers/withApiHandlers';
@@ -76,6 +77,8 @@ export const createRefreshHandler = ({ call, getAuth, onRefresh }: CreateRefresh
                         const response = await refresh({ call, getAuth, attempt: 1, maxAttempts: RETRY_ATTEMPTS_MAX });
                         const timestamp = getDateHeader(response.headers) ?? new Date();
                         const result = await response.json();
+
+                        logger.info('[API] Successfully refreshed session tokens');
                         onRefresh(result, +timestamp);
 
                         await wait(50);
