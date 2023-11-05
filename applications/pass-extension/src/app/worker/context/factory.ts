@@ -129,7 +129,11 @@ export const createWorkerContext = (config: ProtonConfig) => {
             context.service.auth.store.setRefreshToken(data.RefreshToken);
             context.service.auth.store.setUID(data.UID);
             context.service.auth.store.setRefreshTime(refreshTime);
-            void context.service.auth.persistSession();
+
+            /* Check if the worker is ready before persisting the session
+             * This prevents unnecessary persistence when the refresh was
+             * triggered by a session unlock request*/
+            if (workerReady(context.status)) void context.service.auth.persistSession();
         },
     });
 
