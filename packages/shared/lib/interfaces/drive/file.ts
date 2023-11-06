@@ -71,7 +71,7 @@ export interface DriveFileBlock {
 
 export type Thumbnail = { Size: number; Type: number; Hash: string };
 
-export interface DriveFileRevision {
+export interface DriveFileRevisionPayload {
     ID: string;
     CreateTime: number;
     Size: number;
@@ -89,11 +89,11 @@ export interface DriveFileRestoreRevisionResult {
 }
 
 export interface DriveFileRevisionsResult {
-    Revisions: DriveFileRevision[];
+    Revisions: DriveFileRevisionPayload[];
 }
 
 export interface DriveFileRevisionResult {
-    Revision: DriveFileRevision;
+    Revision: DriveFileRevisionPayload;
 }
 
 export interface DriveFileRevisionThumbnailResult {
