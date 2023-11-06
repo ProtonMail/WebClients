@@ -200,6 +200,7 @@ module.exports = {
         'custom-rules/deprecate-responsive-utility-classes': 'warn',
         'custom-rules/deprecate-sizing-classes': 'warn',
         'custom-rules/deprecate-classes': 'warn',
+        'custom-rules/no-template-in-translator-context': 'error',
     },
     settings: {
         'import/resolver': {
