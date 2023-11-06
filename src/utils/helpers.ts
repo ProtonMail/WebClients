@@ -18,28 +18,40 @@ export const getBasePath = (): string => {
 };
 
 export const isHostCalendar = (host: string) => {
-    const urls = getConfig(app.isPackaged).url;
-    const hostURl = new URL(host);
+    try {
+        const urls = getConfig(app.isPackaged).url;
+        const hostURl = new URL(host);
 
-    return urls.calendar === hostURl.origin;
+        return urls.calendar === hostURl.origin;
+    } catch (error) {
+        return false;
+    }
 };
 
 export const isHostMail = (host: string) => {
-    const urls = getConfig(app.isPackaged).url;
-    const hostURl = new URL(host);
+    try {
+        const urls = getConfig(app.isPackaged).url;
+        const hostURl = new URL(host);
 
-    return urls.mail === hostURl.origin;
+        return urls.mail === hostURl.origin;
+    } catch (error) {
+        return false;
+    }
 };
 
 export const isHostAllowed = (host: string, isPackaged: boolean) => {
-    const urls = getConfig(isPackaged).url;
-    const hostURl = new URL(host);
+    try {
+        const urls = getConfig(isPackaged).url;
+        const hostURl = new URL(host);
 
-    return Object.values(urls)
-        .map((item) => new URL(item))
-        .some((url) => {
-            return url.host === hostURl.host;
-        });
+        return Object.values(urls)
+            .map((item) => new URL(item))
+            .some((url) => {
+                return url.host === hostURl.host;
+            });
+    } catch (error) {
+        return false;
+    }
 };
 
 export const getWindow = () => {
