@@ -685,6 +685,7 @@ const Step1 = ({
         parameters: paymentParameters,
         paypal,
         paypalCredit,
+        cardFieldStatus,
     } = usePayment({
         ignoreName: true,
         api: normalApi,
@@ -1466,6 +1467,7 @@ const Step1 = ({
                                                 amount={options.checkResult.AmountDue}
                                                 currency={options.currency}
                                                 card={card}
+                                                cardFieldStatus={cardFieldStatus}
                                                 onMethod={(newMethod) => {
                                                     if (method && newMethod && method !== newMethod) {
                                                         const value = getPaymentMethod(newMethod);

@@ -5,7 +5,6 @@ export { default as Bitcoin } from './Bitcoin';
 export { default as BitcoinDetails } from './BitcoinDetails';
 export { default as BitcoinQRCode } from './BitcoinQRCode';
 export { default as Cash } from './Cash';
-export { default as CreditCard } from './CreditCard';
 export { default as CreditsSection } from './CreditsSection';
 export { default as CurrencySelector } from './CurrencySelector';
 export { default as CycleSelector } from './CycleSelector';

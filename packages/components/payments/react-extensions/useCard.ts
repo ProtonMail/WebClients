@@ -15,6 +15,26 @@ import {
 } from '../core';
 import { PaymentProcessorHook } from './interface';
 
+export type CardFieldStatus = {
+    fullname: boolean;
+    number: boolean;
+    month: boolean;
+    year: boolean;
+    cvc: boolean;
+    zip: boolean;
+    country: boolean;
+};
+
+export const getInitialFieldStatus = (): CardFieldStatus => ({
+    fullname: true,
+    number: true,
+    month: true,
+    year: true,
+    cvc: true,
+    zip: true,
+    country: true,
+});
+
 export interface Dependencies {
     api: Api;
     verifyPayment: PaymentVerificator;
@@ -28,6 +48,7 @@ export interface Props {
 
 export type CardProcessorHook = PaymentProcessorHook & {
     card: CardModel;
+    fieldsStatus: CardFieldStatus;
     setCardProperty: (key: keyof CardModel, value: any) => void;
     paymentProcessor: CardPaymentProcessor;
     errors: Record<string, string>;
@@ -104,6 +125,12 @@ export const useCard = (
         }
     };
 
+    const fields = Object.keys(errors) as (keyof CardModel)[];
+    const fieldsStatus: CardFieldStatus = getInitialFieldStatus();
+    for (const field of fields) {
+        fieldsStatus[field] = !errors[field];
+    }
+
     return {
         fetchPaymentToken,
         fetchingToken,
@@ -113,6 +140,7 @@ export const useCard = (
         setCardProperty: (key: keyof CardModel, value: any) =>
             paymentProcessorRef.current.updateCardProperty(key, value),
         errors: submitted ? errors : {},
+        fieldsStatus,
         submitted,
         paymentProcessor: paymentProcessorRef.current,
         processPaymentToken,
