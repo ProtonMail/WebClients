@@ -259,7 +259,7 @@ export default function DetailsModal({ shareId, linkId, onClose, ...modalProps }
                         >
                             <span title={bytesSize(link.size)}>{humanSize(link.size)}</span>
                         </DetailsRow>
-                        {link.originalSize && (
+                        {link.originalSize !== undefined && (
                             <DetailsRow label={c('Title').t`Original size`}>
                                 <span title={bytesSize(link.originalSize)}>{humanSize(link.originalSize)}</span>
                             </DetailsRow>
