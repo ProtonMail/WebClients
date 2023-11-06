@@ -1,4 +1,6 @@
-import { serverTime } from '@proton/crypto';
+import { useCallback } from 'react';
+
+import { CryptoProxy, serverTime } from '@proton/crypto';
 import {
     SelfAuditResult,
     StaleEpochError,
@@ -13,6 +15,7 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { INTERVAL_EVENT_TIMER, MINUTE } from '@proton/shared/lib/constants';
 import { KEY_TRANSPARENCY_REMINDER_UPDATE } from '@proton/shared/lib/drawer/interfaces';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import { DecryptedAddressKey, KeyPair, SelfAuditState } from '@proton/shared/lib/interfaces';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
 import { AddressesModel } from '@proton/shared/lib/models';
 
@@ -73,10 +76,118 @@ const useRunSelfAudit = () => {
         }
     };
 
-    const runSelfAudit = async () => {
+    const createSelfAuditStateUserKeys = useCallback(async (): Promise<KeyPair[]> => {
         const userKeys = await getUserKeys();
-        const userPrivateKeys = userKeys.map(({ privateKey }) => privateKey);
-        const { publicKey: userPrimaryPublicKey } = getPrimaryKey(userKeys) || {};
+        const exportedUserKeys = await Promise.all(
+            userKeys.map((key) =>
+                CryptoProxy.exportPrivateKey({
+                    privateKey: key.privateKey,
+                    passphrase: null,
+                    format: 'binary',
+                })
+            )
+        );
+        try {
+            const selfAuditKeyReferences = await Promise.all(
+                exportedUserKeys.map(async (key) => {
+                    const privateKey = await CryptoProxy.importPrivateKey({
+                        binaryKey: key,
+                        passphrase: null,
+                    });
+                    return {
+                        privateKey: privateKey,
+                        publicKey: privateKey,
+                    };
+                })
+            );
+            return selfAuditKeyReferences;
+        } finally {
+            exportedUserKeys.forEach((privateKey) => privateKey.fill(0));
+        }
+    }, [getUserKeys]);
+
+    const createSelfAuditStateAddressKeys = useCallback(async () => {
+        const epoch = await getLatestEpoch(true);
+        await waitForAddressUpdates();
+        const addressesWithoutKeys = await getAddresses();
+        const addressesKeys = await Promise.all(addressesWithoutKeys.map((address) => getAddressKeys(address.ID)));
+        const exportedAddressesKeys = await Promise.all(
+            addressesKeys.map(async (keys) =>
+                Promise.all(
+                    keys.map(async (key) => {
+                        const privateKey = await CryptoProxy.exportPrivateKey({
+                            privateKey: key.privateKey,
+                            passphrase: null,
+                            format: 'binary',
+                        });
+                        return {
+                            ID: key.ID,
+                            Flags: key.Flags,
+                            Primary: key.Primary,
+                            privateKey,
+                        };
+                    })
+                )
+            )
+        );
+        try {
+            const selfAuditAddressesKeys = await Promise.all<Promise<DecryptedAddressKey[]>>(
+                exportedAddressesKeys.map(async (keys) =>
+                    Promise.all(
+                        keys.map(async (key) => {
+                            const privateKey = await CryptoProxy.importPrivateKey({
+                                binaryKey: key.privateKey,
+                                passphrase: null,
+                            });
+                            return {
+                                ID: key.ID,
+                                Flags: key.Flags,
+                                Primary: key.Primary,
+                                privateKey: privateKey,
+                                publicKey: privateKey,
+                            };
+                        })
+                    )
+                )
+            );
+            const addresses = addressesWithoutKeys.map((address, index) => {
+                return {
+                    address: address,
+                    addressKeys: selfAuditAddressesKeys[index],
+                };
+            });
+            return { epoch, addresses };
+        } finally {
+            exportedAddressesKeys.forEach((keys) => keys.forEach(({ privateKey }) => privateKey.fill(0)));
+        }
+    }, [getLatestEpoch, getAddresses, getAddressKeys]);
+
+    const createSelfAuditState = async (): Promise<SelfAuditState> => {
+        const [userKeys, addressKeys] = await Promise.all([
+            createSelfAuditStateUserKeys(),
+            createSelfAuditStateAddressKeys(),
+        ]);
+        return {
+            userKeys,
+            ...addressKeys,
+        };
+    };
+
+    const clearSelfAuditState = useCallback(async (state: SelfAuditState) => {
+        const clearUserKeysPromise = Promise.all(
+            state.userKeys.map(async ({ privateKey }) => CryptoProxy.clearKey({ key: privateKey }))
+        );
+        const clearAddressKeysPromise = Promise.all(
+            state.addresses.map(async ({ addressKeys }) => {
+                await Promise.all(addressKeys.map(async ({ privateKey }) => CryptoProxy.clearKey({ key: privateKey })));
+            })
+        );
+        await Promise.all([clearUserKeysPromise, clearAddressKeysPromise]);
+    }, []);
+
+    const runSelfAuditWithState = async (state: SelfAuditState) => {
+        const userPrivateKeys = state.userKeys.map(({ privateKey }) => privateKey);
+        const { publicKey: userPrimaryPublicKey } = getPrimaryKey(state.userKeys) || {};
         const ktLSAPI = await ktLSAPIPromise;
         if (!userPrimaryPublicKey) {
             throw new Error('User has no user keys');
@@ -87,21 +198,8 @@ const useRunSelfAudit = () => {
             return { selfAuditResult: lastSelfAudit, nextSelfAuditInterval: lastSelfAudit.nextAuditTime - now };
         }
 
-        const epoch = await getLatestEpoch(true);
-        await waitForAddressUpdates();
-        const addresses = await getAddresses();
         try {
-            const selfAuditResult = await selfAudit(
-                userID,
-                api,
-                addresses,
-                userKeys,
-                ktLSAPI,
-                saveSKLToLS,
-                epoch,
-                uploadMissingSKL,
-                getAddressKeys
-            );
+            const selfAuditResult = await selfAudit(userID, state, api, ktLSAPI, saveSKLToLS, uploadMissingSKL);
 
             // Update local storage value
             document.dispatchEvent(
@@ -133,6 +231,15 @@ const useRunSelfAudit = () => {
             reportError(error, tooManyRetries);
             await storeAuditResult(userID, selfAuditResult, userPrimaryPublicKey, ktLSAPI);
             return { selfAuditResult, nextSelfAuditInterval };
+        }
+    };
+
+    const runSelfAudit = async () => {
+        const state = await createSelfAuditState();
+        try {
+            return await runSelfAuditWithState(state);
+        } finally {
+            await clearSelfAuditState(state);
         }
     };
 

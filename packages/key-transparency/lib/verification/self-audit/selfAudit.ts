@@ -1,17 +1,9 @@
 import { serverTime } from '@proton/crypto';
 import { getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
-import {
-    Address,
-    Api,
-    DecryptedAddressKey,
-    DecryptedKey,
-    KTLocalStorageAPI,
-    SaveSKLToLS,
-    UploadMissingSKL,
-} from '@proton/shared/lib/interfaces';
+import { Api, KTLocalStorageAPI, SaveSKLToLS, SelfAuditState, UploadMissingSKL } from '@proton/shared/lib/interfaces';
 
 import { getSelfAuditInterval } from '../../helpers';
-import { Epoch, SelfAuditResult } from '../../interfaces';
+import { SelfAuditResult } from '../../interfaces';
 import { auditAddress } from './addressAudit';
 import { checkLSBlobs } from './verifyLocalStorage';
 
@@ -21,20 +13,17 @@ import { checkLSBlobs } from './verifyLocalStorage';
  */
 export const selfAudit = async (
     userID: string,
+    state: SelfAuditState,
     api: Api,
-    addresses: Address[],
-    userKeys: DecryptedKey[],
     ktLSAPI: KTLocalStorageAPI,
     saveSKLToLS: SaveSKLToLS,
-    epoch: Epoch,
-    uploadMissingSKL: UploadMissingSKL,
-    getAddressKeys: (id: string) => Promise<DecryptedAddressKey[]>
+    uploadMissingSKL: UploadMissingSKL
 ): Promise<SelfAuditResult> => {
-    const userPrivateKeys = userKeys.map(({ privateKey }) => privateKey);
+    const userPrivateKeys = state.userKeys.map(({ privateKey }) => privateKey);
 
-    const ownEmails = addresses.map(({ Email }) => Email);
+    const ownEmails = state.addresses.map(({ address }) => address.Email);
 
-    const localStorageAuditResults = await checkLSBlobs(userID, userPrivateKeys, ktLSAPI, epoch, api);
+    const localStorageAuditResults = await checkLSBlobs(userID, userPrivateKeys, ktLSAPI, state.epoch, api);
 
     const localStorageAuditResultsOwnAddress = localStorageAuditResults.filter(({ email }) =>
         ownEmails.includes(email)
@@ -44,10 +33,18 @@ export const selfAudit = async (
     );
 
     const addressAuditResults = await Promise.all(
-        addresses
-            .filter((address) => !getIsAddressDisabled(address))
+        state.addresses
+            .filter(({ address }) => !getIsAddressDisabled(address))
             .map((address) => {
-                return auditAddress(address, userKeys, epoch, saveSKLToLS, api, uploadMissingSKL, getAddressKeys);
+                return auditAddress(
+                    address.address,
+                    state.userKeys,
+                    address.addressKeys,
+                    state.epoch,
+                    saveSKLToLS,
+                    api,
+                    uploadMissingSKL
+                );
             })
     );
     const currentTime = +serverTime();
