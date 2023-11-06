@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Input } from '@proton/atoms';
 import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { requestAnimationFrameRateLimiter } from '@proton/components/hooks/useElementRect';
+import { formatCreditCardNumber, isValidNumber } from '@proton/components/payments/client-extensions/credit-card-type';
 import { CardFieldStatus } from '@proton/components/payments/react-extensions/useCard';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import clsx from '@proton/utils/clsx';
@@ -13,7 +14,6 @@ import { Icon, Label, Option, SelectTwo } from '../../components';
 import { DEFAULT_SEPARATOR, getFullList } from '../../helpers/countries';
 import { useElementRect } from '../../hooks';
 import { CardModel } from '../../payments/core';
-import { formatCreditCardNumber, isValidNumber } from './CardNumberInput';
 import { handleExpOnChange } from './ExpInput';
 import { isPotentiallyCVV } from './cardValidator';
 
