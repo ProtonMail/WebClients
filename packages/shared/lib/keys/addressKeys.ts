@@ -135,8 +135,7 @@ export const getAddressKeyToken = ({
             Token,
             Signature,
             privateKeys,
-            // Verify against the organization key in case an admin is signed in to a non-private member.
-            publicKeys: organizationKey ? [organizationKey.publicKey] : publicKeys,
+            publicKeys,
         });
     }
     if (!organizationKey) {
