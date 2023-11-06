@@ -1,8 +1,7 @@
 import { fromUnixTime, isToday } from 'date-fns';
 import { c } from 'ttag';
 
-import { DriveFileRevision } from '@proton/shared/lib/interfaces/drive/file';
-
+import type { DriveFileRevision } from '../../store';
 import RevisionListItem from './RevisionListItem';
 import type { CategorizedRevisions } from './getCategorizedRevisions';
 
@@ -12,7 +11,7 @@ interface Props {
 }
 
 const RevisionList = ({ currentRevision, categorizedRevisions }: Props) => {
-    const currentRevisionFormat = isToday(fromUnixTime(currentRevision.CreateTime)) ? 'time' : 'date';
+    const currentRevisionFormat = isToday(fromUnixTime(currentRevision.createTime)) ? 'time' : 'date';
     return (
         <ul className="unstyled">
             <li data-testid="current-revision">
@@ -35,7 +34,7 @@ const RevisionList = ({ currentRevision, categorizedRevisions }: Props) => {
                                 <ul className="unstyled my-3 ml-4">
                                     {revisionCategory.list.map((revision) => (
                                         <RevisionListItem
-                                            key={revision.ID}
+                                            key={revision.id}
                                             formatType={key === 'today' || key === 'yesterday' ? 'time' : 'date'}
                                             revision={revision}
                                         />

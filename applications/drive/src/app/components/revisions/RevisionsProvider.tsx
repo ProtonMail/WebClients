@@ -6,10 +6,10 @@ import { c } from 'ttag';
 import { useConfirmActionModal, useNotifications } from '@proton/components';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { DriveFileRevision, FileRevisionState } from '@proton/shared/lib/interfaces/drive/file';
+import { FileRevisionState } from '@proton/shared/lib/interfaces/drive/file';
 import clsx from '@proton/utils/clsx';
 
-import { DecryptedLink, useDownload, useRevisionsView } from '../../store';
+import { DecryptedLink, DriveFileRevision, useDownload, useRevisionsView } from '../../store';
 import PortalPreview from '../PortalPreview';
 import { useRevisionDetailsModal } from '../modals/DetailsModal';
 import { CategorizedRevisions, getCategorizedRevisions } from './getCategorizedRevisions';
@@ -69,7 +69,7 @@ export const RevisionsProvider = ({
         const formattedRevisionDate = new Intl.DateTimeFormat(dateLocale.code, {
             dateStyle: 'long',
             timeStyle: 'short',
-        }).format(fromUnixTime(revision.CreateTime));
+        }).format(fromUnixTime(revision.createTime));
         void showConfirmModal({
             size: 'small',
             title: c('Action').t`Delete this version`,
@@ -92,7 +92,7 @@ export const RevisionsProvider = ({
                 </>
             ),
             onSubmit: () =>
-                deleteRevision(abortSignal, revision.ID).then(() => {
+                deleteRevision(abortSignal, revision.id).then(() => {
                     createNotification({
                         text: c('Info').t`Version is deleted`,
                     });
@@ -104,7 +104,7 @@ export const RevisionsProvider = ({
         const formattedRevisionDate = new Intl.DateTimeFormat(dateLocale.code, {
             dateStyle: 'long',
             timeStyle: 'short',
-        }).format(fromUnixTime(revision.CreateTime));
+        }).format(fromUnixTime(revision.createTime));
         void showConfirmModal({
             size: 'small',
             title: c('Action').t`Restore this version`,
@@ -123,7 +123,7 @@ export const RevisionsProvider = ({
                 </>
             ),
             onSubmit: () =>
-                restoreRevision(abortSignal, revision.ID).then((Code) => {
+                restoreRevision(abortSignal, revision.id).then((Code) => {
                     if (Code === 1000) {
                         createNotification({
                             text: c('Info').t`Version is restored`,
@@ -161,17 +161,17 @@ export const RevisionsProvider = ({
                     key="portal-preview-revisions"
                     open={!!selectedRevision}
                     ref={ref}
-                    revisionId={selectedRevision.ID}
+                    revisionId={selectedRevision.id}
                     shareId={link.rootShareId}
                     linkId={link.linkId}
-                    date={selectedRevision.CreateTime}
+                    date={selectedRevision.createTime}
                     className={clsx(
                         'revision-preview',
                         (confirmModal?.props.open || revisionDetailsModal?.props.open) && 'revision-preview--behind'
                     )}
                     onDetails={() => openRevisionDetails(selectedRevision)}
                     onRestore={
-                        selectedRevision.State !== FileRevisionState.Active
+                        selectedRevision.state !== FileRevisionState.Active
                             ? () => {
                                   handleRevisionRestore(new AbortController().signal, selectedRevision);
                               }

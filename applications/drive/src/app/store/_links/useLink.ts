@@ -4,16 +4,16 @@ import { fromUnixTime, isAfter } from 'date-fns';
 import { c } from 'ttag';
 
 import { CryptoProxy, PrivateKeyReference, SessionKey, VERIFICATION_STATUS } from '@proton/crypto';
-import { queryFileRevisionThumbnail } from '@proton/shared/lib/api/drive/files';
+import { queryFileRevision, queryFileRevisionThumbnail } from '@proton/shared/lib/api/drive/files';
 import { queryGetLink } from '@proton/shared/lib/api/drive/link';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
-import { DriveFileRevisionThumbnailResult } from '@proton/shared/lib/interfaces/drive/file';
+import { DriveFileRevisionResult, DriveFileRevisionThumbnailResult } from '@proton/shared/lib/interfaces/drive/file';
 import { LinkMetaResult } from '@proton/shared/lib/interfaces/drive/link';
 import { decryptSigned } from '@proton/shared/lib/keys/driveKeys';
 import { decryptPassphrase, getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 
-import { linkMetaToEncryptedLink, useDebouncedRequest } from '../_api';
+import { linkMetaToEncryptedLink, revisionPayloadToRevision, useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
 import { ShareType, useShare } from '../_shares';
 import { useDebouncedFunction } from '../_utils';
@@ -431,7 +431,8 @@ export function useLinkInner(
     const decryptLink = async (
         abortSignal: AbortSignal,
         shareId: string,
-        encryptedLink: EncryptedLink
+        encryptedLink: EncryptedLink,
+        revisionId?: string
     ): Promise<DecryptedLink> => {
         return debouncedFunction(
             async (abortSignal: AbortSignal): Promise<DecryptedLink> => {
@@ -473,7 +474,9 @@ export function useLinkInner(
                                   // Files have signature address on the revision.
                                   // Folders have signature address on the link itself.
                                   await getVerificationKey(
-                                      encryptedLink.activeRevision?.signatureAddress || encryptedLink.signatureAddress
+                                      revision?.signatureAddress ||
+                                          encryptedLink.activeRevision?.signatureAddress ||
+                                          encryptedLink.signatureAddress
                                   )
                               )
                           )
