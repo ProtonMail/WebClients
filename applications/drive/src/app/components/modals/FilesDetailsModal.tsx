@@ -24,14 +24,10 @@ interface Props {
 }
 
 const FilesDetailsModal = ({ selectedItems, onClose, ...modalProps }: Props & ModalStateProps) => {
-    const { isLoading, error, hasFile, hasFolder, count, size } = useLinksDetailsView(selectedItems);
+    const { isLoading, error, hasFile, count, size } = useLinksDetailsView(selectedItems);
 
-    let title = c('Title').t`Item details`;
-    let labelCount = c('Title').t`Number of items`;
-    if (!hasFile || !hasFolder) {
-        title = hasFile ? c('Title').t`Files details` : c('Title').t`Folders details`;
-        labelCount = hasFile ? c('Title').t`Number of files` : c('Title').t`Number of folders`;
-    }
+    let title = hasFile ? c('Title').t`Files details` : c('Title').t`Folders details`;
+    let labelCount = hasFile ? c('Title').t`Number of files` : c('Title').t`Number of folders`;
 
     const renderModalState = () => {
         if (isLoading) {
