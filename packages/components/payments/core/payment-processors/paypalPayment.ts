@@ -40,7 +40,7 @@ export class PaypalPaymentProcessor extends PaymentProcessor<PaypalPaymentState>
         public api: Api,
         amountAndCurrency: AmountAndCurrency,
         private isCredit: boolean,
-        private onTokenIsChargeable?: (data: ChargeablePaymentParameters) => Promise<unknown>,
+        onTokenIsChargeable?: (data: ChargeablePaymentParameters) => Promise<unknown>,
         private ignoreAmountCheck?: boolean
     ) {
         super(
@@ -49,7 +49,8 @@ export class PaypalPaymentProcessor extends PaymentProcessor<PaypalPaymentState>
                 verificationError: null,
                 disabled: false,
             },
-            amountAndCurrency
+            amountAndCurrency,
+            onTokenIsChargeable
         );
     }
 
