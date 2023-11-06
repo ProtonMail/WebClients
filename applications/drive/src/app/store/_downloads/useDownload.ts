@@ -74,7 +74,8 @@ export default function useDownload() {
     const getKeysWithSignatures = async (
         abortSignal: AbortSignal,
         shareId: string,
-        linkId: string
+        linkId: string,
+        revisionId?: string
     ): Promise<[DecryptFileKeys, SignatureIssues?]> => {
         const [privateKey, sessionKey] = await Promise.all([
             getLinkPrivateKey(abortSignal, shareId, linkId),
@@ -85,14 +86,24 @@ export default function useDownload() {
         // after that (not in parallel) to have fresh signature issues on it.
         const link = await getLink(abortSignal, shareId, linkId);
 
+        // We need to get address from the asked revision to prevent signature issues
+        // This should be improved to prevent fetching the revision twice (see getBlocks)
+        const revisionSignatureAddress =
+            revisionId && revisionId !== link.activeRevision?.id
+                ? await debouncedRequest<DriveFileRevisionResult>(
+                      queryFileRevision(shareId, linkId, revisionId),
+                      abortSignal
+                  ).then(({ Revision }) => Revision.SignatureAddress)
+                : link.activeRevision?.signatureAddress;
+
         if (!sessionKey) {
             throw new Error('Session key missing on file link');
         }
-        if (!link.activeRevision?.signatureAddress) {
+        if (!revisionSignatureAddress) {
             throw new Error('Signature address missing on file link');
         }
 
-        const addressPublicKeys = await getVerificationKey(link.activeRevision?.signatureAddress);
+        const addressPublicKeys = await getVerificationKey(revisionSignatureAddress);
         return [
             {
                 privateKey: privateKey,
@@ -114,7 +125,12 @@ export default function useDownload() {
 
     const getKeysGenerator = (onSignatureIssue?: OnSignatureIssueCallback) => {
         return async (abortSignal: AbortSignal, link: LinkDownload) => {
-            const [keys, signatureIssues] = await getKeysWithSignatures(abortSignal, link.shareId, link.linkId);
+            const [keys, signatureIssues] = await getKeysWithSignatures(
+                abortSignal,
+                link.shareId,
+                link.linkId,
+                link.revisionId
+            );
             if (signatureIssues) {
                 await onSignatureIssue?.(abortSignal, link, signatureIssues);
             }
@@ -181,6 +197,7 @@ export default function useDownload() {
             const controls = initDownloadLinkFile(
                 {
                     ...link,
+                    revisionId,
                     shareId,
                 },
                 {
