@@ -2,6 +2,7 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { getBankSvg } from '@proton/components/payments/client-extensions/credit-card-type';
 import {
     PAYMENT_METHOD_TYPES,
     PayPalDetails,
@@ -15,19 +16,8 @@ import useSvgGraphicsBbox from '../../hooks/useSvgGraphicsBbox';
 
 import './PaymentMethodDetails.scss';
 
-const banks = require.context('@proton/styles/assets/img/credit-card-icons', true, /.svg$/);
-
-type BanksMap = {
-    [bank: string]: () => string | undefined;
-};
-
-const banksMap = banks.keys().reduce<BanksMap>((acc, key) => {
-    acc[key] = () => banks(key);
-    return acc;
-}, {});
-
-const getBankSvg = (brand: string) => {
-    const BANKS: {
+const getCreditCardTypeByBrand = (brand: string): string => {
+    const CREDIT_CARD_TYPES: {
         [brand: string]: string;
     } = {
         'American Express': 'american-express',
@@ -40,14 +30,7 @@ const getBankSvg = (brand: string) => {
         Visa: 'visa',
     };
 
-    const type = BANKS[brand];
-
-    const key = `./cc-${type}.svg`;
-    if (!banksMap[key]) {
-        return;
-    }
-
-    return banksMap[key]();
+    return CREDIT_CARD_TYPES[brand] ?? '';
 };
 
 const PaymentMethodDetailsCard = ({ details }: { details: SavedCardDetails }) => {
@@ -58,7 +41,7 @@ const PaymentMethodDetailsCard = ({ details }: { details: SavedCardDetails }) =>
     const textBbox = useSvgGraphicsBbox(textRef, [cardNumberText]);
     const textWidth = Math.floor(textBbox.width);
 
-    const bankIcon = getBankSvg(Brand);
+    const bankIcon = getBankSvg(getCreditCardTypeByBrand(Brand));
 
     return (
         <Bordered className="bg-weak rounded inline-flex flex-column w-full p-7" data-testid="existing-credit-card">
