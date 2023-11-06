@@ -55,6 +55,7 @@ const PaymentWrapper = ({
             onAwaitingBitcoinPayment={onAwaitingBitcoinPayment}
             triggersDisabled={triggersDisabled}
             hideFirstLabel={hideFirstLabel}
+            cardFieldStatus={card.fieldsStatus}
         />
     );
 };
