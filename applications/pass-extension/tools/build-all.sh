@@ -105,6 +105,8 @@ cd applications/pass-extension
 yarn run build:ff > /dev/null
 diff -qr dist "$OUTDIR/$BUILD_ID-FF"
 cd "$PASSDIR"
+rm -rf "$OUTDIR/$BUILD_ID-FF-sources"
+rm -rf "$OUTDIR/$BUILD_ID-FF"
 printf "\t✅ %s\n" "OK"
 
 
