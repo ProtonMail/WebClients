@@ -46,18 +46,6 @@
 	}
 
 	.on-tablet {
-		&-text-left {
-			text-align: start;
-		}
-
-		&-text-center {
-			text-align: center;
-		}
-
-		&-text-right {
-			text-align: end;
-		}
-
 		&-flex-column {
 			flex-direction: column;
 
@@ -143,18 +131,6 @@
 	}
 
 	.on-mobile {
-		&-text-left {
-			text-align: start;
-		}
-
-		&-text-center {
-			text-align: center;
-		}
-
-		&-text-right {
-			text-align: end;
-		}
-
 		&-center {
 			margin-inline: auto;
 		}
@@ -317,10 +293,6 @@
 
 		&-max-w50p {
 			max-inline-size: 50px;
-		}
-
-		&-text-left {
-			text-align: start;
 		}
 
 		&-flex-align-self-start {
