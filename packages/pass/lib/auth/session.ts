@@ -1,5 +1,6 @@
 /* Inspired from packages/shared/lib/authentication/persistedSessionHelper.ts */
 import type { Api, Maybe } from '@proton/pass/types';
+import { isObject } from '@proton/pass/utils/object/is-object';
 import { getLocalKey, setLocalKey } from '@proton/shared/lib/api/auth';
 import { getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { InactiveSessionError } from '@proton/shared/lib/api/helpers/withApiHandlers';
@@ -12,40 +13,46 @@ import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import type { User as UserType } from '@proton/shared/lib/interfaces';
 
-export type ExtensionSession = {
+import type { AuthStore } from './authentication';
+
+export type AuthSession = {
     AccessToken: string;
     keyPassword: string;
-    RefreshToken: string;
+    LocalID?: number;
     RefreshTime?: number;
+    RefreshToken: string;
     sessionLockToken?: string;
     UID: string;
     UserID: string;
 };
 
-export type ExtensionPersistedSession = Omit<ExtensionSession, 'keyPassword' | 'sessionLockToken'> & { blob: string };
-export type ExtensionPersistedSessionBlob = Pick<ExtensionSession, 'keyPassword' | 'sessionLockToken'>;
+export type ExtensionPersistedSession = Omit<AuthSession, 'keyPassword' | 'sessionLockToken'> & { blob: string };
+export type ExtensionPersistedSessionBlob = Pick<AuthSession, 'keyPassword' | 'sessionLockToken'>;
 
-export const SESSION_KEYS: (keyof ExtensionSession)[] = [
+export const SESSION_KEYS: (keyof AuthSession)[] = [
     'AccessToken',
     'keyPassword',
+    'LocalID',
     'RefreshToken',
     'sessionLockToken',
     'UID',
     'UserID',
 ];
 
-export const isValidSession = (maybeSession: Partial<ExtensionSession>): maybeSession is ExtensionSession =>
-    Boolean(
-        maybeSession.AccessToken &&
-            maybeSession.keyPassword &&
-            maybeSession.RefreshToken &&
-            maybeSession.UID &&
-            maybeSession.UserID
-    );
+export const isValidSession = (data: Partial<AuthSession>): data is AuthSession =>
+    Boolean(data.AccessToken && data.keyPassword && data.RefreshToken && data.UID && data.UserID);
+
+export const isValidPersistedSession = (data: any): data is ExtensionPersistedSession =>
+    isObject(data) &&
+    Boolean('AccessToken' in data && data.AccessToken) &&
+    Boolean('RefreshToken' in data && data.RefreshToken) &&
+    Boolean('UID' in data && data.UID) &&
+    Boolean('UserID' in data && data.UserID) &&
+    Boolean('blob' in data && data.blob);
 
 export const encryptPersistedSession = async (
     api: Api,
-    { keyPassword, sessionLockToken, ...session }: ExtensionSession
+    { keyPassword, sessionLockToken, ...session }: AuthSession
 ): Promise<string> => {
     const rawKey = crypto.getRandomValues(new Uint8Array(32));
     const key = await getKey(rawKey);
@@ -92,24 +99,22 @@ export const decryptPersistedSession = async (key: CryptoKey, blob: string): Pro
     return persistedSessionBlob;
 };
 
-/* Resume session flow :
- * - options::api is an optional parameter because as may be triggering
- *   the resume flow from a client pop-up (see ResumeSession.tsx) on browser
- *   start-up in order to by-pass SSL Cert errors during development. In that
- *   case we cannot use the worker's api instance
- * - if called with an options::api parameter, configure it with the persisted
- *   session authentication options - This will allow the session resuming flow
- *   to handle refreshing tokens when necessary (ie: session resume on browser
- *   start-up before the API is configured) */
-export const resumeSession = async ({
-    api,
-    session,
-    onInvalidSession,
-}: {
+type ResumeSessionOptions = {
     api: Api;
+    authStore: AuthStore;
     session: ExtensionPersistedSession;
     onInvalidSession: () => void;
-}): Promise<Maybe<ExtensionSession>> => {
+};
+
+/* Session resuming flow responsible for decrypting the encrypted session
+ * blob. Ensure the authentication store is configured with authentication
+ * options in order for requests to succeed */
+export const resumeSession = async ({
+    api,
+    authStore,
+    session,
+    onInvalidSession,
+}: ResumeSessionOptions): Promise<Maybe<AuthSession>> => {
     try {
         const [sessionKey, { User }] = await Promise.all([
             getPersistedSessionKey(api),
@@ -119,23 +124,13 @@ export const resumeSession = async ({
         if (session.UserID !== User.ID) throw InactiveSessionError();
         const ps = await decryptPersistedSession(sessionKey, session.blob);
 
-        /* access|refresh token may have been internally refreshed
-         * during the API requests required for parsing the persisted
-         * session. In that case, the refresh handlers will take care
-         * of updating the persisted session tokens */
-        const AccessToken = api.getAuth()?.AccessToken ?? session.AccessToken;
-        const RefreshToken = api.getAuth()?.RefreshToken ?? session.RefreshToken;
-
         return {
-            AccessToken,
+            ...authStore.getSession(),
             keyPassword: ps.keyPassword,
-            RefreshToken,
             sessionLockToken: ps.sessionLockToken,
-            UID: session.UID,
-            UserID: User.ID,
         };
-    } catch (e: any) {
-        if (getIs401Error(e) || e instanceof InvalidPersistentSessionError) onInvalidSession();
-        throw e;
+    } catch (error: any) {
+        if (getIs401Error(error) || error instanceof InvalidPersistentSessionError) onInvalidSession();
+        throw error;
     }
 };
