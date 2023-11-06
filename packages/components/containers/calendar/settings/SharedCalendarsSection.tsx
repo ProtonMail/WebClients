@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
+import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import {
     CALENDAR_STATUS_TYPE,
     getCalendarStatusBadges,
@@ -17,6 +18,7 @@ import {
     getCalendarNameWithOwner,
 } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
 import { APPS } from '@proton/shared/lib/constants';
+import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 import { getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -226,9 +228,10 @@ const SharedCalendarsSection = ({ user, addresses, calendars = [], calendarInvit
             });
             setIsSignatureVerificationErrorModalOpen(true);
         } else {
+            const text = e instanceof ApiError ? getApiErrorMessage(e) : e.message;
             createNotification({
                 type: 'error',
-                text: e.message,
+                text,
             });
         }
     };
@@ -240,9 +243,10 @@ const SharedCalendarsSection = ({ user, addresses, calendars = [], calendarInvit
         }
     };
     const handleRejectError = (e: Error) => {
+        const text = e instanceof ApiError ? getApiErrorMessage(e) : e.message;
         createNotification({
             type: 'error',
-            text: e.message,
+            text,
         });
     };
     const handleDecline = async (invitation: CalendarMemberInvitation) => {

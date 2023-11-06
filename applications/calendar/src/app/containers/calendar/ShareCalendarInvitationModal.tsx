@@ -13,9 +13,11 @@ import CalendarLimitReachedModal from '@proton/components/containers/calendar/Ca
 import ShareCalendarWithSignatureVerificationErrorModal from '@proton/components/containers/calendar/shareProton/ShareCalendarWithSignatureVerificationErrorModal';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { useLoading } from '@proton/hooks';
+import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
 import { ShareCalendarSignatureVerificationError } from '@proton/shared/lib/calendar/sharing/shareProton/ShareCalendarSignatureVerificationError';
 import { APPS } from '@proton/shared/lib/constants';
+import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 import { getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
@@ -70,16 +72,18 @@ const ShareCalendarInvitationModal = ({ addresses, calendars, user, invitation, 
             });
             setIsSignatureVerificationErrorModalOpen(true);
         } else {
+            const text = e instanceof ApiError ? getApiErrorMessage(e) : e.message;
             createNotification({
                 type: 'error',
-                text: e.message,
+                text,
             });
         }
     };
     const handleRejectError = (e: Error) => {
+        const text = e instanceof ApiError ? getApiErrorMessage(e) : e.message;
         createNotification({
             type: 'error',
-            text: e.message,
+            text,
         });
         rest.onClose?.();
     };
