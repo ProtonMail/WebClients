@@ -22,15 +22,7 @@ import {
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
-import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
-import {
-    APPS,
-    APP_NAMES,
-    BRAND_NAME,
-    CALENDAR_APP_NAME,
-    CLIENT_TYPES,
-    MAIL_APP_NAME,
-} from '@proton/shared/lib/constants';
+import { APP_NAMES, BRAND_NAME, CALENDAR_APP_NAME, CLIENT_TYPES, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import {
     confirmPasswordValidator,
     emailValidator,
@@ -42,10 +34,10 @@ import {
     usernameLengthValidator,
     usernameStartCharacterValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import { getTermsURL } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
+import { getLocaleTermsURL } from '../content/helper';
 import Content from '../public/Content';
 import Header from '../public/Header';
 import Main from '../public/Main';
@@ -82,8 +74,6 @@ export interface AccountStepProps {
 }
 
 const AccountStep = ({
-    clientType,
-    toApp,
     onBack,
     title,
     subTitle,
@@ -252,7 +242,7 @@ const AccountStep = ({
     const terms = (
         <Fragment key="terms">
             <br />
-            <Href href={getTermsURL(getIsVPNApp(toApp, clientType) ? APPS.PROTONVPN_SETTINGS : undefined)}>{
+            <Href href={getLocaleTermsURL()}>{
                 // translator: Full sentence "By creating a Proton account, you agree to our terms and conditions"
                 c('new_plans: signup').t`terms and conditions`
             }</Href>
