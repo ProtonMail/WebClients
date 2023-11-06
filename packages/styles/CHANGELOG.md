@@ -87,7 +87,6 @@
 ### New helpers
 
 -   added new typographic helper `strike`
--   added `onmobile-list-1column` helpers and made `list-2columns` more flexible (accepts any child type now)
 -   added `borderColor-primary` helper
 -   added `sticky-top` and `sticky-bottom` helpers
 -   added `hyphens` helper (only hyphenation, no `word-break`)
