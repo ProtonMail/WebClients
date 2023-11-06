@@ -4,12 +4,16 @@ import { isNumber } from '@proton/shared/lib/helpers/validators';
 
 const banks = require.context('@proton/styles/assets/img/credit-card-icons', true, /.svg$/);
 
-const banksMap = banks.keys().reduce<{ [key: string]: () => string }>((acc, key) => {
+type BanksMap = {
+    [bank: string]: () => string | undefined;
+};
+
+const banksMap = banks.keys().reduce<BanksMap>((acc, key) => {
     acc[key] = () => banks(key);
     return acc;
 }, {});
 
-const getBankSvg = (type = '') => {
+export const getBankSvg = (type = '') => {
     const key = `./cc-${type}.svg`;
 
     if (!banksMap[key]) {
