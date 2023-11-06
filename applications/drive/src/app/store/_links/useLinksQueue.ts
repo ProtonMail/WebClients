@@ -3,7 +3,14 @@ import { MutableRefObject, useEffect, useRef } from 'react';
 import { useLinksListing } from './useLinksListing';
 import useLinksState from './useLinksState';
 
-export const useLinksQueue = () => {
+type Props = {
+    /**
+     * Whether or not to load thumbnails with the links.
+     */
+    loadThumbnails?: boolean;
+};
+
+export const useLinksQueue = ({ loadThumbnails }: Props = {}) => {
     const { loadLinksMeta } = useLinksListing();
     const linksState = useLinksState();
 
@@ -40,8 +47,10 @@ export const useLinksQueue = () => {
                 const linkIds = Array.from(queue.current);
 
                 try {
-                    const cache = true;
-                    await loadLinksMeta(controller.current.signal, `links-${shareId}`, shareId, linkIds, cache);
+                    await loadLinksMeta(controller.current.signal, `links-${shareId}`, shareId, linkIds, {
+                        cache: true,
+                        loadThumbnails,
+                    });
                 } catch (e) {
                     console.error(e);
                 }
