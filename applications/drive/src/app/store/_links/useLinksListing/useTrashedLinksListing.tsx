@@ -5,8 +5,9 @@ import { ListDriveVolumeTrashPayload } from '@proton/shared/lib/interfaces/drive
 
 import { useDebouncedRequest } from '../../_api';
 import useVolumesState from '../../_volumes/useVolumesState';
-import { DecryptedLink, EncryptedLink } from './../interface';
+import { DecryptedLink } from './../interface';
 import useLinksState from './../useLinksState';
+import { FetchLoadLinksMeta } from './interface';
 import { DEFAULT_SORTING, FetchMeta, PAGE_SIZE, SortParams, useLinksListingHelpers } from './useLinksListingHelpers';
 
 interface FetchTrashMeta extends FetchMeta {
@@ -18,16 +19,6 @@ type TrashFetchState = {
     [volumeId: string]: FetchTrashMeta;
 };
 
-type FetchLoadLinksMeta = (
-    abortSignal: AbortSignal,
-    query: string,
-    shareId: string,
-    linkIds: string[]
-) => Promise<{
-    links: EncryptedLink[];
-    parents: EncryptedLink[];
-}>;
-
 /**
  * Custom hook for managing and fetching trashed links for a given volume.
  */
@@ -36,7 +27,7 @@ export function useTrashedLinksListing() {
     const linksState = useLinksState();
     const volumesState = useVolumesState();
 
-    const { loadFullListing, cacheLoadedLinks, getDecryptedLinksAndDecryptRest } = useLinksListingHelpers();
+    const { loadFullListing, getDecryptedLinksAndDecryptRest } = useLinksListingHelpers();
     const trashFetchState = useRef<TrashFetchState>({});
 
     const getTrashFetchState = useCallback((volumeId: string) => {
@@ -77,8 +68,7 @@ export function useTrashedLinksListing() {
         loadLinksMeta: FetchLoadLinksMeta
     ) => {
         for (const shareId in transformedResponse) {
-            const result = await loadLinksMeta(signal, 'trash', shareId, transformedResponse[shareId].linkIds);
-            await cacheLoadedLinks(signal, shareId, result.links, result.parents);
+            await loadLinksMeta(signal, 'trash', shareId, transformedResponse[shareId].linkIds, { cache: true });
         }
     };
 
