@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Input } from '@proton/atoms';
 import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { requestAnimationFrameRateLimiter } from '@proton/components/hooks/useElementRect';
+import { CardFieldStatus } from '@proton/components/payments/react-extensions/useCard';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import clsx from '@proton/utils/clsx';
 
@@ -15,7 +16,6 @@ import { CardModel } from '../../payments/core';
 import { formatCreditCardNumber, isValidNumber } from './CardNumberInput';
 import { handleExpOnChange } from './ExpInput';
 import { isPotentiallyCVV } from './cardValidator';
-import { CardFieldStatus } from './useCard';
 
 import './CreditCardNewDesign.scss';
 
@@ -34,7 +34,7 @@ export interface Props {
     loading?: boolean;
     card: CardModel;
     errors: Partial<CardModel>;
-    fieldsStatus?: CardFieldStatus;
+    fieldsStatus: CardFieldStatus;
     bigger?: boolean;
     forceNarrow?: boolean;
 }

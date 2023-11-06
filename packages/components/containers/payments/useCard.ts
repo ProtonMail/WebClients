@@ -1,28 +1,10 @@
 import { useState } from 'react';
 
+import { CardFieldStatus, getInitialFieldStatus } from '@proton/components/payments/react-extensions/useCard';
+
 import { CardModel } from '../../payments/core';
 import { getErrors } from './cardValidator';
 import getDefaultCard from './getDefaultCard';
-
-export type CardFieldStatus = {
-    fullname: boolean;
-    number: boolean;
-    month: boolean;
-    year: boolean;
-    cvc: boolean;
-    zip: boolean;
-    country: boolean;
-};
-
-const getInitialFieldStatus = (): CardFieldStatus => ({
-    fullname: true,
-    number: true,
-    month: true,
-    year: true,
-    cvc: true,
-    zip: true,
-    country: true,
-});
 
 const useCard = ({
     initialCard,

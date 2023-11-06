@@ -12,7 +12,7 @@ import noop from '@proton/utils/noop';
 import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
 import { useApi, useEventManager, useNotifications } from '../../hooks';
 import { CardModel } from '../../payments/core';
-import CreditCard from './CreditCard';
+import CreditCardNewDesign from './CreditCardNewDesign';
 import RenewToggle, { useRenewToggle } from './RenewToggle';
 import toDetails from './toDetails';
 import useCard from './useCard';
@@ -30,7 +30,7 @@ const EditCardModal = ({ card: existingCard, renewState, paymentMethodId, ...res
     const { createNotification } = useNotifications();
     const createPaymentToken = usePaymentToken();
     const title = existingCard ? c('Title').t`Edit credit/debit card` : c('Title').t`Add credit/debit card`;
-    const { card, setCard, errors, isValid } = useCard({
+    const { card, setCard, errors, isValid, fieldsStatus } = useCard({
         initialCard: existingCard,
     });
     const [submitted, setSubmitted] = useState(false);
@@ -74,7 +74,13 @@ const EditCardModal = ({ card: existingCard, renewState, paymentMethodId, ...res
         >
             <ModalTwoHeader title={title} />
             <ModalTwoContent>
-                <CreditCard card={card} errors={submitted ? errors : {}} onChange={setCard} loading={loading} />
+                <CreditCardNewDesign
+                    card={card}
+                    errors={submitted ? errors : {}}
+                    onChange={setCard}
+                    loading={loading}
+                    fieldsStatus={fieldsStatus}
+                />
                 <RenewToggle
                     loading={loading}
                     onChange={async () => {
