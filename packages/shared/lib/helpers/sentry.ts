@@ -51,7 +51,8 @@ export const setSentryEnabled = (enabled: boolean) => {
     context.enabled = enabled;
 };
 
-export const getContentTypeHeaders = (input: RequestInfo | URL): HeadersInit => {
+type FirstFetchParameter = Parameters<typeof fetch>[0];
+export const getContentTypeHeaders = (input: FirstFetchParameter): HeadersInit => {
     const url = input.toString();
     /**
      * The sentry library does not append the content-type header to requests. The documentation states
@@ -68,12 +69,14 @@ export const getContentTypeHeaders = (input: RequestInfo | URL): HeadersInit => 
     return {};
 };
 
-const sentryFetch = (input: RequestInfo | URL, init?: RequestInit) => {
-    return globalThis.fetch(input, {
+const sentryFetch: typeof fetch = (input, init?) => {
+    // Force the input type due to node.js fetch types not being compatible with libdom.d.ts
+    // https://github.com/nodejs/undici/issues/1943
+    return globalThis.fetch(input as FirstFetchParameter, {
         ...init,
         headers: {
             ...init?.headers,
-            ...getContentTypeHeaders(input),
+            ...getContentTypeHeaders(input as FirstFetchParameter),
             ...context.authHeaders,
         },
     });
