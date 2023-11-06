@@ -7,6 +7,7 @@ export const wakeupRequest = ({ endpoint, tabId }: EndpointOptions) => `worker::
 export const vaultCreateRequest = (optimisticId: string) => `vault::create::${optimisticId}`;
 export const vaultEditRequest = (shareId: string) => `vault::edit::${shareId}`;
 export const vaultDeleteRequest = (shareId: string) => `vault::delete::${shareId}`;
+export const vaultMoveAllItemsRequest = (shareId: string) => `vault::move::all::items::${shareId}`;
 export const vaultTransferOwnerRequest = (userShareId: string) => `vault::transfer:owner::${userShareId}`;
 
 export const importItemsRequest = () => `import::items`;
