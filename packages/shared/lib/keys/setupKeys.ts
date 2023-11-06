@@ -17,7 +17,7 @@ export const handleSetupKeys = async ({ api, addresses, password, preAuthKTVerif
     }
     const { passphrase, salt } = await generateKeySaltAndPassphrase(password);
 
-    const { userKeyPayload, addressKeysPayload } = await getResetAddressesKeysV2({
+    const { userKeyPayload, addressKeysPayload, onSKLPublishSuccess } = await getResetAddressesKeysV2({
         addresses,
         passphrase,
         preAuthKTVerify,
@@ -36,6 +36,10 @@ export const handleSetupKeys = async ({ api, addresses, password, preAuthKTVerif
             AddressKeys: addressKeysPayload,
         }),
     });
+
+    if (onSKLPublishSuccess) {
+        await onSKLPublishSuccess();
+    }
 
     return passphrase;
 };

@@ -25,7 +25,7 @@ import {
 import { getDecryptedAddressKeysHelper } from '../getDecryptedAddressKeys';
 import { getPrimaryKey } from '../getPrimaryKey';
 import { getHasMigratedAddressKey } from '../keyMigration';
-import { getSignedKeyList } from '../signedKeyList';
+import { getSignedKeyListWithDeferredPublish } from '../signedKeyList';
 import { KeyReactivationData, KeyReactivationRecord, OnKeyReactivationCallback } from './interface';
 import { getAddressReactivationPayload, getReactivatedAddressesKeys, resetUserId } from './reactivateKeyHelper';
 
@@ -115,6 +115,12 @@ export const reactivateUserKeys = async ({
                     ...addressReactivationPayload,
                 })
             );
+            // Only once the SKLs have been successfully posted we add it to the KT commit state.
+            await Promise.all(
+                reactivatedAddressKeysResult.map(({ onSKLPublishSuccess }) =>
+                    onSKLPublishSuccess ? onSKLPublishSuccess() : Promise.resolve()
+                )
+            );
 
             mutableActiveKeys = updatedActiveKeys;
 
@@ -198,15 +204,21 @@ export const reactivateAddressKeysV2 = async ({
                 flags: getReactivatedKeyFlag(address, Flags),
             });
             const updatedActiveKeys = getNormalizedActiveKeys(address, [...mutableActiveKeys, newActiveKey]);
+            const [signedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
+                updatedActiveKeys,
+                address,
+                keyTransparencyVerify
+            );
             await api(
                 reactiveLegacyAddressKeyRouteV2({
                     ID,
                     PrivateKey: privateKeyArmored,
-                    SignedKeyList: await getSignedKeyList(updatedActiveKeys, address, keyTransparencyVerify),
+                    SignedKeyList: signedKeyList,
                     Token: encryptedToken,
                     Signature: signature,
                 })
             );
+            await onSKLPublishSuccess();
 
             mutableActiveKeys = updatedActiveKeys;
 
