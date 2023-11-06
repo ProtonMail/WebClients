@@ -66,8 +66,12 @@ const PaymentMethodDetails = ({ type, details = {} }) => {
                 </div>
                 <div className="flex flex-nowrap max-w-full">
                     <div className="flex-item-fluid">
-                        <span className="block mb-2 opacity-40">{c('Label').t`Card holder`}</span>
-                        <span className="text-xl my-0 inline-block text-ellipsis max-w-full">{Name}</span>
+                        {!!Name && (
+                            <>
+                                <span className="block mb-2 opacity-40">{c('Label').t`Card holder`}</span>
+                                <span className="text-xl my-0 inline-block text-ellipsis max-w-full">{Name}</span>
+                            </>
+                        )}
                     </div>
                     <div className="text-right flex-item-noshrink pl-4">
                         <span className="block mb-2 opacity-40">{c('Label').t`Expires`}</span>
