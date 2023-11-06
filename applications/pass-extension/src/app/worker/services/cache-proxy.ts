@@ -1,4 +1,5 @@
 import { api } from '@proton/pass/lib/api/api';
+import { authentication } from '@proton/pass/lib/auth/authentication';
 import browser from '@proton/pass/lib/globals/browser';
 import { selectCanLoadDomainImages } from '@proton/pass/store/selectors';
 import { truthy } from '@proton/pass/utils/fp/predicates';
@@ -169,15 +170,17 @@ export const createCacheProxyService = () => {
     if (BUILD_TARGET === 'firefox') {
         browser.webRequest.onBeforeSendHeaders.addListener(
             (details) => {
-                const auth = api.getAuth();
+                const UID = authentication.getUID();
+                const AccessToken = authentication.getAccessToken();
 
                 if (
-                    auth !== undefined &&
+                    UID &&
+                    AccessToken &&
                     canLoadDomainImages() &&
                     details.url.startsWith(`${API_URL}/${API_PROXY_IMAGE_ENDPOINT}`)
                 ) {
-                    details.requestHeaders?.push({ name: 'x-pm-uid', value: auth.UID });
-                    details.requestHeaders?.push({ name: 'Authorization', value: `Bearer ${auth.AccessToken}` });
+                    details.requestHeaders?.push({ name: 'x-pm-uid', value: UID });
+                    details.requestHeaders?.push({ name: 'Authorization', value: `Bearer ${AccessToken}` });
                 }
 
                 return { requestHeaders: details.requestHeaders };

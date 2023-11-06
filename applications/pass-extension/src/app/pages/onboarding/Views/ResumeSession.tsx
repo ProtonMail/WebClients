@@ -1,65 +1,28 @@
 import { type VFC, useEffect } from 'react';
 
-import * as config from 'proton-pass-extension/app/config';
+import { SSO_URL } from 'proton-pass-extension/app/config';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { createApi } from '@proton/pass/lib/api/create-api';
-import type { ExtensionPersistedSession } from '@proton/pass/lib/auth/session';
-import { resumeSession } from '@proton/pass/lib/auth/session';
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
-import { browserLocalStorage } from '@proton/pass/lib/extension/storage';
-import type { StorageInterface } from '@proton/pass/lib/extension/storage/types';
+import { pageMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import browser from '@proton/pass/lib/globals/browser';
-import type { LocalStoreData } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
-import { logger } from '@proton/pass/utils/logger';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
-/* Temporary extension page to resume a session on start-up.
+/* By-pass SSL error on browser start-up when working with staging.
  * In the startup event listener - when the extension's target API
  * is set to staging - there seems to be an error during the initial SSL
- * handshake (net:ERR_SSL_CLIENT_AUTH_CERT_NEEDED)
- * Mimics the authService::resumeSession data flow */
-const tryResumeSession = async () => {
+ * handshake (net:ERR_SSL_CLIENT_AUTH_CERT_NEEDED) */
+const bypass = async () => {
     const tab = await browser.tabs.getCurrent().catch(noop);
     const tabId = tab?.id;
-    const localStore = browserLocalStorage as StorageInterface<LocalStoreData>;
 
     if (!tab || !tabId) return;
 
     try {
-        const ps = await localStore.getItem('ps');
-
-        if (ps) {
-            const persistedSession = JSON.parse(ps) as ExtensionPersistedSession;
-            const api = createApi({
-                config,
-                auth: {
-                    UID: persistedSession.UID,
-                    AccessToken: persistedSession.AccessToken,
-                    RefreshToken: persistedSession.RefreshToken,
-                },
-                onSessionRefresh: async ({ AccessToken, RefreshToken }, RefreshTime) => {
-                    const updatedPS = { ...persistedSession, AccessToken, RefreshToken, RefreshTime };
-                    await browserLocalStorage.setItem('ps', JSON.stringify(updatedPS));
-                },
-            });
-
-            const session = await resumeSession({
-                api,
-                session: persistedSession,
-                onInvalidSession: () => browserLocalStorage.removeItem('ps'),
-            });
-
-            if (session !== undefined) {
-                await sendMessage(
-                    contentScriptMessage({
-                        type: WorkerMessageType.SESSION_RESUMED,
-                        payload: session,
-                    })
-                );
-            }
-        }
+        await wait(500);
+        await fetch(SSO_URL);
+        await sendMessage(pageMessage({ type: WorkerMessageType.WORKER_INIT, payload: { forceLock: true } }));
     } finally {
         void browser.tabs.remove(tabId);
     }
@@ -67,18 +30,15 @@ const tryResumeSession = async () => {
 
 export const ResumeSession: VFC = () => {
     useEffect(() => {
-        tryResumeSession().catch(logger.warn);
+        void bypass();
     }, []);
 
     return (
-        <div className="pass-lobby" style={{ height: '100vh' }}>
-            <main
-                className="ui-standard w-full max-w-custom relative sign-layout shadow-lifted flex mx-auto rounded-lg"
-                style={{ '--max-w-custom': '30rem' }}
-            >
-                <div className="flex p-14 w-full flex-column flex-align-items-center">
-                    <h3 className="mb-4">Signing you back in</h3>
-                    <CircleLoader size="large" className="color-primary mb-2" />
+        <div className="pass-lobby flex" style={{ height: '100vh' }}>
+            <main className="w-full max-w-custom relative flex m-auto rounded-lg" style={{ '--max-w-custom': '30rem' }}>
+                <div className="flex p-14 w-full flex-column flex-align-items-center gap-4">
+                    <h3 className="">Signing you back in</h3>
+                    <CircleLoader size="large" className="color-primary" />
                     <em>Don't close this tab</em>
                 </div>
             </main>

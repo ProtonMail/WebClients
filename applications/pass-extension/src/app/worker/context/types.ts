@@ -49,8 +49,6 @@ export interface WorkerContextInterface {
     setStatus: (status: WorkerStatus) => void;
     /* returns the current worker state */
     getState: () => WorkerState;
-    /* init the worker - or force re-init using sync|force parameters */
-    init: (options: WorkerInitOptions) => Promise<WorkerContextInterface>;
     /* Returned promise will resolve when worker "ready" */
     ensureReady: () => Promise<WorkerContextInterface>;
 }

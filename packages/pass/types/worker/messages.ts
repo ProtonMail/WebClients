@@ -1,7 +1,6 @@
 import type { AnyAction } from 'redux';
 import type { Tabs } from 'webextension-polyfill';
 
-import type { ExtensionSession } from '@proton/pass/lib/auth/session';
 import type { ExportRequestPayload } from '@proton/pass/lib/export/types';
 import type { GeneratePasswordOptions } from '@proton/pass/lib/password/generator';
 import type { Notification } from '@proton/pass/store/actions/with-notification';
@@ -75,7 +74,6 @@ export enum WorkerMessageType {
     RESOLVE_TAB = 'RESOLVE_TAB',
     RESOLVE_USER_DATA = 'RESOLVE_USER_DATA',
     SENTRY_CS_EVENT = 'SENTRY_CS_EVENT',
-    SESSION_RESUMED = 'SESSION_RESUMED',
     SETTINGS_UPDATE = 'SETTINGS_UPDATE',
     SHARE_SERVER_EVENT = 'SHARE_SERVER_EVENT',
     START_CONTENT_SCRIPT = 'START_CONTENT_SCRIPT',
@@ -126,7 +124,6 @@ export type PortUnauthorizedMessage = { type: WorkerMessageType.PORT_UNAUTHORIZE
 export type ResolveExtensionKeyMessage = { type: WorkerMessageType.RESOLVE_EXTENSION_KEY };
 export type ResolveTabIdMessage = { type: WorkerMessageType.RESOLVE_TAB };
 export type ResolveUserDataMessage = { type: WorkerMessageType.RESOLVE_USER_DATA };
-export type ResumeSessionSuccessMessage = WithPayload<WorkerMessageType.SESSION_RESUMED, ExtensionSession>;
 export type SentryCSEventMessage = WithPayload<WorkerMessageType.SENTRY_CS_EVENT, { message: string; data: any }>;
 export type SettingsUpdateMessage = WithPayload<WorkerMessageType.SETTINGS_UPDATE, ProxiedSettings>;
 export type ShareServerEventMessage = WithPayload<WorkerMessageType.SHARE_SERVER_EVENT, ShareEventPayload>;
@@ -136,7 +133,7 @@ export type TelemetryEventMessage = WithPayload<WorkerMessageType.TELEMETRY_EVEN
 export type UnloadContentScriptMessage = { type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT };
 export type UnlockRequestMessage = WithPayload<WorkerMessageType.UNLOCK_REQUEST, { pin: string }>;
 export type UpdateAvailableMessage = { type: WorkerMessageType.UPDATE_AVAILABLE };
-export type WorkerInitMessage = WithPayload<WorkerMessageType.WORKER_INIT, { sync: boolean }>;
+export type WorkerInitMessage = { type: WorkerMessageType.WORKER_INIT; payload?: { forceLock: boolean } };
 export type WorkerStatusMessage = WithPayload<WorkerMessageType.WORKER_STATUS, { state: WorkerState }>;
 export type WorkerWakeUpMessage = WithPayload<WorkerMessageType.WORKER_WAKEUP, { tabId: TabId }>;
 
@@ -177,7 +174,6 @@ export type WorkerMessage =
     | ResolveExtensionKeyMessage
     | ResolveTabIdMessage
     | ResolveUserDataMessage
-    | ResumeSessionSuccessMessage
     | SentryCSEventMessage
     | SettingsUpdateMessage
     | ShareServerEventMessage

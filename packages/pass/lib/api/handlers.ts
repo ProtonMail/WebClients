@@ -1,4 +1,4 @@
-import type { ApiCallFn, ApiContext, ApiOptions } from '@proton/pass/types/api';
+import type { ApiAuth, ApiCallFn, ApiOptions, ApiState, Maybe } from '@proton/pass/types';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { retryHandler } from '@proton/shared/lib/api/helpers/retryHandler';
 import { AppVersionBadError, InactiveSessionError } from '@proton/shared/lib/api/helpers/withApiHandlers';
@@ -13,8 +13,10 @@ import type { RefreshHandler } from './refresh';
 import { isPassSessionRoute } from './utils';
 
 type ApiHandlersOptions = {
-    apiContext: ApiContext;
+    call: ApiCallFn;
+    getAuth: () => Maybe<ApiAuth>;
     refreshHandler: RefreshHandler;
+    state: ApiState;
 };
 
 /* Simplified version of withApiHandlers.js :
@@ -22,27 +24,22 @@ type ApiHandlersOptions = {
  * - handles appBadVersion
  * - handles basic offline error detection
  * - FIXME: handle code 9001 errors with human verification  */
-export const withApiHandlers = ({ apiContext, refreshHandler }: ApiHandlersOptions): ApiCallFn => {
+export const withApiHandlers = ({ call, getAuth, refreshHandler, state }: ApiHandlersOptions): ApiCallFn => {
     return (options: ApiOptions) => {
         const {
             ignoreHandler = [],
             retriesOnOffline = OFFLINE_RETRY_ATTEMPTS_MAX,
             retriesOnTimeout = OFFLINE_RETRY_ATTEMPTS_MAX,
-        } = options || {};
+        } = options ?? {};
 
         const next = async (attempts: number, maxAttempts?: number): Promise<any> => {
-            if (apiContext.status.sessionInactive) throw InactiveSessionError();
-            if (apiContext.status.appVersionBad) throw AppVersionBadError();
-            if (apiContext.status.sessionLocked && !isPassSessionRoute(options?.url)) throw LockedSessionError();
+            if (state.sessionInactive) throw InactiveSessionError();
+            if (state.appVersionBad) throw AppVersionBadError();
+            if (state.sessionLocked && !isPassSessionRoute(options?.url)) throw LockedSessionError();
 
             try {
-                const response = await apiContext.call(
-                    apiContext.auth !== undefined
-                        ? withAuthHeaders(apiContext.auth.UID, apiContext.auth.AccessToken, options)
-                        : options
-                );
-
-                return response;
+                const auth = getAuth();
+                return await call(auth ? withAuthHeaders(auth.UID, auth.AccessToken, options) : options);
             } catch (error: any) {
                 const { status, name, response } = error;
                 const { code } = getApiError(error);
@@ -74,7 +71,7 @@ export const withApiHandlers = ({ apiContext, refreshHandler }: ApiHandlersOptio
 
                 if (status === HTTP_ERROR_CODES.UNAUTHORIZED && !ignoreHandler.includes(status)) {
                     try {
-                        await refreshHandler(getDateHeader(response && response.headers));
+                        await refreshHandler(getDateHeader(response?.headers));
                         return next(attempts + 1, RETRY_ATTEMPTS_MAX);
                     } catch (e: any) {
                         if (e.status >= 400 && e.status <= 499) throw InactiveSessionError();
