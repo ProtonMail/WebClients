@@ -5,8 +5,9 @@ import { ListDriveVolumeSharedLinksPayload } from '@proton/shared/lib/interfaces
 
 import { useDebouncedRequest } from '../../_api';
 import useVolumesState from '../../_volumes/useVolumesState';
-import { DecryptedLink, EncryptedLink } from '../interface';
+import { DecryptedLink } from '../interface';
 import useLinksState from '../useLinksState';
+import { FetchLoadLinksMeta } from './interface';
 import { DEFAULT_SORTING, FetchMeta, PAGE_SIZE, SortParams, useLinksListingHelpers } from './useLinksListingHelpers';
 
 interface FetchSharedLinksMeta extends FetchMeta {
@@ -18,16 +19,6 @@ type SharedLinksFetchState = {
     [volumeId: string]: FetchSharedLinksMeta;
 };
 
-type FetchLoadLinksMeta = (
-    abortSignal: AbortSignal,
-    query: string,
-    shareId: string,
-    linkIds: string[]
-) => Promise<{
-    links: EncryptedLink[];
-    parents: EncryptedLink[];
-}>;
-
 /**
  * Custom hook for managing and fetching shared links for a given volume.
  */
@@ -36,7 +27,7 @@ export function useSharedLinksListing() {
     const linksState = useLinksState();
     const volumesState = useVolumesState();
 
-    const { loadFullListing, cacheLoadedLinks, getDecryptedLinksAndDecryptRest } = useLinksListingHelpers();
+    const { loadFullListing, getDecryptedLinksAndDecryptRest } = useLinksListingHelpers();
     const sharedLinksFetchState = useRef<SharedLinksFetchState>({});
 
     const getSharedLinksFetchState = useCallback((volumeId: string) => {
@@ -80,8 +71,9 @@ export function useSharedLinksListing() {
         loadLinksMeta: FetchLoadLinksMeta
     ) => {
         for (const shareId in transformedResponse) {
-            const result = await loadLinksMeta(signal, 'sharedByLink', shareId, transformedResponse[shareId]);
-            await cacheLoadedLinks(signal, shareId, result.links, result.parents);
+            await loadLinksMeta(signal, 'sharedByLink', shareId, transformedResponse[shareId], {
+                cache: true,
+            });
         }
     };
 
