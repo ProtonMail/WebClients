@@ -27,7 +27,7 @@ export class SavedPaymentProcessor extends PaymentProcessor<SavedPaymentState> {
         public api: Api,
         amountAndCurrency: AmountAndCurrency,
         savedMethod: SavedPaymentMethod,
-        private onTokenIsChargeable?: (data: ChargeablePaymentParameters) => Promise<unknown>
+        onTokenIsChargeable?: (data: ChargeablePaymentParameters) => Promise<unknown>
     ) {
         super(
             {
@@ -36,7 +36,8 @@ export class SavedPaymentProcessor extends PaymentProcessor<SavedPaymentState> {
                     type: savedMethod.Type,
                 },
             },
-            amountAndCurrency
+            amountAndCurrency,
+            onTokenIsChargeable
         );
     }
 
