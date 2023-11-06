@@ -35,7 +35,7 @@ export const usePhotosView = () => {
     const { getCachedChildren, loadLinksMeta } = useLinksListing();
     const linksState = useLinksState();
     const { shareId, linkId, isLoading, volumeId, photos, loadPhotos, removePhotosFromCache } = usePhotos();
-    const { addToQueue } = useLinksQueue();
+    const { addToQueue } = useLinksQueue({ loadThumbnails: true });
     const { download } = useDownloadProvider();
 
     const abortSignal = useAbortSignal([volumeId, shareId]);
@@ -139,8 +139,7 @@ export const usePhotosView = () => {
 
         const ac = new AbortController();
 
-        const cache = true;
-        await loadLinksMeta(ac.signal, 'photos-toolbar', shareId, linkIds, cache);
+        await loadLinksMeta(ac.signal, 'photos-download', shareId, linkIds, { cache: true });
 
         const links: LinkDownload[] = [];
 

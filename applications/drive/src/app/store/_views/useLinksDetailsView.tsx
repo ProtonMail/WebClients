@@ -36,8 +36,7 @@ export default function useLinksDetailsView(selectedLinks: DecryptedLink[]) {
                 Object.keys(linksByShareId).map((shareId) => {
                     const linkIds = linksByShareId[shareId];
 
-                    const cache = true;
-                    return loadLinksMeta(ac.signal, 'details', shareId, linkIds, cache).then(async () => {
+                    return loadLinksMeta(ac.signal, 'details', shareId, linkIds, { cache: true }).then(async () => {
                         const decrypted = linkIds
                             .map((linkId) => linksState.getLink(shareId, linkId)?.decrypted)
                             .filter((link): link is DecryptedLink => !!link && !link.corruptedLink);
