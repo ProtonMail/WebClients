@@ -9,11 +9,28 @@ import { isAudio, isPDF, isSupportedImage, isSupportedText, isVideo, isWordDocum
 // text loading and other tricks to avoid the need to load it all.
 export const MAX_PREVIEW_FILE_SIZE = 1024 * 1024 * 100;
 
-export const isPreviewAvailable = (mimeType: string, fileSize?: number) =>
-    (!fileSize || fileSize < MAX_PREVIEW_FILE_SIZE) &&
-    (isSupportedImage(mimeType) ||
-        isVideo(mimeType) ||
-        isAudio(mimeType) ||
-        isSupportedText(mimeType) ||
-        (hasPDFSupport() && isPDF(mimeType)) ||
-        isWordDocument(mimeType));
+// Adding a lot of text to DOM crashes or slows down the browser.
+// Even just 2 MB is enough to hang the browser for a short amount of time.
+// Someday we'll do text windowing, but for now this will do.
+export const MAX_PREVIEW_TEXT_SIZE = 1024 * 1024 * 2;
+
+export const isPreviewTooLarge = (mimeType?: string, fileSize?: number) => {
+    if (!mimeType || !fileSize) {
+        return false;
+    }
+
+    const maxSize = isSupportedText(mimeType) ? MAX_PREVIEW_TEXT_SIZE : MAX_PREVIEW_FILE_SIZE;
+    return fileSize >= maxSize;
+};
+
+export const isPreviewAvailable = (mimeType: string, fileSize?: number) => {
+    return (
+        (!fileSize || !isPreviewTooLarge(mimeType, fileSize)) &&
+        (isSupportedImage(mimeType) ||
+            isVideo(mimeType) ||
+            isAudio(mimeType) ||
+            isSupportedText(mimeType) ||
+            (hasPDFSupport() && isPDF(mimeType)) ||
+            isWordDocument(mimeType))
+    );
+};
