@@ -74,8 +74,9 @@ function useFileViewBase(
         }
 
         setLink(link);
+        setContentsMimeType(link.mimeType);
+
         if (isPreviewAvailable(link.mimeType, link.size)) {
-            setContentsMimeType(link.mimeType);
             const { stream, controls } = downloadStream([
                 {
                     ...link,

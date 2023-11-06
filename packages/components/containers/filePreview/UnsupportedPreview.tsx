@@ -11,10 +11,19 @@ interface Props {
     type?: 'file' | 'image' | 'video' | 'audio';
     onDownload?: () => void;
     browser?: boolean;
+    tooLarge?: boolean;
 }
 
-const UnsupportedPreview = ({ onDownload, type = 'file', browser = false }: Props) => {
+const UnsupportedPreview = ({ onDownload, type = 'file', browser = false, tooLarge = false }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
+
+    let message = c('Info').t`Preview for this file type is not supported`;
+
+    if (browser) {
+        message = c('Info').t`Preview for this file type is currently not supported on this browser.`;
+    } else if (tooLarge) {
+        message = c('Info').t`This file is too large to preview`;
+    }
 
     return (
         <div className="absolute-center text-center w-full px-4">
@@ -30,16 +39,16 @@ const UnsupportedPreview = ({ onDownload, type = 'file', browser = false }: Prop
                 className={clsx(['p-1 text-bold', isNarrow && 'h3'])}
                 data-testid="file-preview:unsupported-preview-text"
             >
-                {browser
-                    ? c('Info').t`Preview for this file type is currently not supported on this browser.`
-                    : c('Info').t`Preview for this file type is not supported`}
+                {message}
             </h2>
             {browser && <h3 className="pb-1">{c('Info').t`Please use another browser or download the file.`}</h3>}
 
             {onDownload && (
-                <PrimaryButton size={!isNarrow ? 'large' : undefined} className="text-bold" onClick={onDownload}>{c(
-                    'Action'
-                ).t`Download`}</PrimaryButton>
+                <PrimaryButton
+                    size={!isNarrow ? 'large' : undefined}
+                    className="text-bold mt-8"
+                    onClick={onDownload}
+                >{c('Action').t`Download`}</PrimaryButton>
             )}
         </div>
     );
