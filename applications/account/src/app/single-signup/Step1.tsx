@@ -1398,7 +1398,7 @@ const Step1 = ({
                         <BoxHeader step={showStepLabel ? step++ : undefined} title={c('Header').t`Checkout`} />
                         <BoxContent>
                             <div className="flex flex-justify-space-between md:gap-14 gap-6 on-tablet-flex-column">
-                                <div className="flex-item-fluid md:pr-1 on-tablet-order-1">
+                                <div className="flex-item-fluid md:pr-1 order-1 lg:order-0">
                                     <form
                                         onFocus={(e) => {
                                             const autocomplete = e.target.getAttribute('autocomplete');
