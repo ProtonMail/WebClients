@@ -8,16 +8,23 @@ import {
 } from '@proton/shared/lib/api/drive/files';
 import {
     DriveFileRestoreRevisionResult,
-    DriveFileRevision,
+    DriveFileRevisionPayload,
     DriveFileRevisionsResult,
     FileRevisionState,
 } from '@proton/shared/lib/interfaces/drive/file';
 
+import { revisionPayloadToRevision } from '../_api';
 import useDebouncedRequest from '../_api/useDebouncedRequest';
+import { DriveFileRevision } from '../_revisions';
 
-const filterRevisions = (revisions: DriveFileRevision[]) => {
+const filterRevisions = (revisions: DriveFileRevisionPayload[]) => {
     // Draft state, we don't want to show it to the user
-    return revisions.filter((revision) => revision.State !== FileRevisionState.Draft);
+    return revisions.reduce<DriveFileRevision[]>((filteredRevisions, revision) => {
+        if (revision.State !== FileRevisionState.Draft) {
+            filteredRevisions.push(revisionPayloadToRevision(revision));
+        }
+        return filteredRevisions;
+    }, []);
 };
 
 export default function useRevisionsView(shareId: string, linkId: string) {
@@ -47,7 +54,7 @@ export default function useRevisionsView(shareId: string, linkId: string) {
     }, [shareId, linkId]);
     const deleteRevision = async (abortSignal: AbortSignal, revisionId: string) => {
         await debouncedRequest(queryDeleteFileRevision(shareId, linkId, revisionId), abortSignal);
-        setRevisions(revisions.filter((revision) => revision.ID !== revisionId));
+        setRevisions(revisions.filter((revision) => revision.id !== revisionId));
     };
 
     const restoreRevision = async (abortSignal: AbortSignal, revisionId: string) => {
