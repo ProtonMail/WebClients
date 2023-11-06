@@ -9,7 +9,7 @@ import {
     getIsVPNApp,
 } from '@proton/shared/lib/authentication/apps';
 import { APP_NAMES, SSO_PATHS } from '@proton/shared/lib/constants';
-import { stringifySearchParams } from '@proton/shared/lib/helpers/url';
+import { getTermsURL, stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import { localeCode } from '@proton/shared/lib/i18n';
 
 import { getLocaleMapping } from '../locales';
@@ -99,4 +99,8 @@ export const getPaths = (
         forgotUsername: `${prefix}${SSO_PATHS.FORGOT_USERNAME}`,
         reset: `${prefix}${SSO_PATHS.RESET_PASSWORD}`,
     };
+};
+
+export const getLocaleTermsURL = () => {
+    return getTermsURL(getLocaleMapping(localeCode));
 };

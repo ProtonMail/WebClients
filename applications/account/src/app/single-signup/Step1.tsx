@@ -57,7 +57,7 @@ import {
 import { getTotalBillingText } from '@proton/components/containers/payments/helper';
 import VPNPassPromotionButton from '@proton/components/containers/payments/subscription/VPNPassPromotionButton';
 import usePaymentToken from '@proton/components/containers/payments/usePaymentToken';
-import { useActiveBreakpoint, useApi, useConfig, useElementRect, useNotifications } from '@proton/components/hooks';
+import { useActiveBreakpoint, useApi, useElementRect, useNotifications } from '@proton/components/hooks';
 import {
     AmountAndCurrency,
     CardPayment,
@@ -71,7 +71,6 @@ import metrics, { observeApiError } from '@proton/metrics';
 import { WebCoreVpnSingleSignupStep1InteractionTotal } from '@proton/metrics/types/web_core_vpn_single_signup_step1_interaction_total_v1.schema';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
-import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import {
     ADDON_NAMES,
     APPS,
@@ -90,7 +89,7 @@ import { SubscriptionCheckoutData, getCheckout, getOptimisticCheckResult } from 
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/subscription';
-import { getTermsURL, stringifySearchParams } from '@proton/shared/lib/helpers/url';
+import { stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import { Currency, Cycle, CycleMapping, Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { generatePassword } from '@proton/shared/lib/password';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
@@ -99,6 +98,7 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
+import { getLocaleTermsURL } from '../content/helper';
 import SignupSupportDropdown from '../signup/SignupSupportDropdown';
 import { getSubscriptionPrices } from '../signup/helper';
 import { PlanIDs, SignupCacheResult, SignupType, SubscriptionData } from '../signup/interfaces';
@@ -418,7 +418,6 @@ const Step1 = ({
 }) => {
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
     const { isDesktop, isTinyMobile } = useActiveBreakpoint();
-    const { APP_NAME } = useConfig();
     const [loadingChallenge, setLoadingChallenge] = useState(false);
     const normalApi = useApi();
     const silentApi = getSilentApi(normalApi);
@@ -726,15 +725,7 @@ const Step1 = ({
     const upsellPlanName = upsellShortPlan?.title || '';
 
     const termsHref = (() => {
-        if (isB2bPlan) {
-            return getTermsURL();
-        }
-
-        if (getIsVPNApp(APP_NAME)) {
-            return getTermsURL(APPS.PROTONVPN_SETTINGS);
-        }
-
-        return getTermsURL();
+        return getLocaleTermsURL();
     })();
     const termsAndConditions = (
         <Href key="terms" href={termsHref}>
