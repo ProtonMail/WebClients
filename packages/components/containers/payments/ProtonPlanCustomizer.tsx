@@ -305,15 +305,30 @@ const IPsNumberCustomiser = ({
     showDescription?: boolean;
 }) => {
     const title = c('Info').t`Dedicated servers`;
-    const description = c('plan customizer, ips')
-        .jt`Select the number of IPs to include in your plan. Each additional IP costs ${price}. Should you need more than ${maxIPs} IPs, please ${contactHref} our Sales team.`;
+
+    const select = c('plan customizer, ips')
+        .jt`Select the number of IPs to include in your plan. Each additional IP costs ${price}.`;
+
+    // translator: the plural is based on maxIPs variable (number written in digits). This string is part of another one, full sentence is: Should you need more than <maxIPs> IPs, (please <contact> our Sales team).
+    const description = c('plan customizer, ips').ngettext(
+        msgid`Should you need more than ${maxIPs} IP, `,
+        `Should you need more than ${maxIPs} IPs, `,
+        maxIPs
+    );
+
+    // translator: this string is part of another one, full sentence is: (Should you need more than <maxIPs> IPs, )please <contact> our Sales team.
+    const pleaseContact = c('plan customizer, ips').jt`please ${contactHref} our Sales team.`;
 
     return (
         <div className={clsx(showDescription ? 'mb-8' : 'mb-4')}>
             {showDescription && (
                 <>
                     <h2 className="text-2xl text-bold mb-4">{title}</h2>
-                    <div className="mb-4">{description}</div>
+                    <div className="mb-4">
+                        {select}
+                        {description}
+                        {pleaseContact}
+                    </div>
                 </>
             )}
             <div className="flex-no-min-children flex-nowrap flex-align-items-center mb-4 on-mobile-flex-wrap">
