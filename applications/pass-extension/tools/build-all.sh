@@ -5,7 +5,8 @@ set -euo pipefail
 REPODIR="$(git rev-parse --show-toplevel)"
 PASSDIR="$REPODIR/applications/pass-extension"
 VERSION="$(jq -r .version < "$PASSDIR/manifest-chrome.json")${BETA:+-beta}"
-OUTDIR="$REPODIR/build"
+ARTEFACTSDIR="$REPODIR/build"
+OUTDIR="$(mktemp -d)"
 COMMIT="$(git rev-parse --short HEAD)"
 BUILD_ID="ProtonPass-${VERSION}-${COMMIT}"
 
@@ -30,7 +31,6 @@ else
 fi
 
 
-mkdir -p "$OUTDIR"
 cd "$PASSDIR"
 
 
@@ -100,7 +100,7 @@ cd "$OUTDIR/$BUILD_ID-FF-sources"
 unzip -q "$OUTDIR/$BUILD_ID-FF-sources.zip"
 
 # Build and diff
-yarn install > /dev/null
+yarn install --no-immutable > /dev/null
 cd applications/pass-extension
 yarn run build:ff > /dev/null
 diff -qr dist "$OUTDIR/$BUILD_ID-FF"
@@ -113,3 +113,10 @@ echo "Building Firefox (Black)..."
 BUILD_TARGET=firefox yarn run build:dev > /dev/null
 mv "./dist" "$OUTDIR/black-$BUILD_ID-FF"
 printf "\t✅ %s\n" "$OUTDIR/black-$BUILD_ID-FF"
+
+
+# Move tmp files into place
+echo "Moving files into place..."
+rm -rf "${ARTEFACTSDIR:-}"
+mv "$OUTDIR" "$ARTEFACTSDIR"
+printf "\t✅ %s\n" "$ARTEFACTSDIR"
