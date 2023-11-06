@@ -1,4 +1,4 @@
-import { PropsWithChildren, cloneElement, createContext, useContext, useMemo } from 'react';
+import { PropsWithChildren, createContext, useContext, useMemo, useRef, useState } from 'react';
 
 import { fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
@@ -10,7 +10,7 @@ import { DriveFileRevision, FileRevisionState } from '@proton/shared/lib/interfa
 import clsx from '@proton/utils/clsx';
 
 import { DecryptedLink, useDownload, useRevisionsView } from '../../store';
-import { usePortalPreview } from '../PortalPreview/PortalPreview';
+import PortalPreview from '../PortalPreview';
 import { useRevisionDetailsModal } from '../modals/DetailsModal';
 import { CategorizedRevisions, getCategorizedRevisions } from './getCategorizedRevisions';
 
@@ -37,6 +37,7 @@ export const RevisionsProvider = ({
     link: DecryptedLink;
 }>) => {
     const { createNotification } = useNotifications();
+    const ref = useRef(null);
 
     const {
         isLoading,
@@ -44,11 +45,11 @@ export const RevisionsProvider = ({
         deleteRevision,
         restoreRevision,
     } = useRevisionsView(link.rootShareId, link.linkId);
-    const [portalPreview, showPortalPreview] = usePortalPreview();
     const categorizedRevisions = useMemo(() => getCategorizedRevisions(olderRevisions), [olderRevisions]);
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
     const [revisionDetailsModal, showRevisionDetailsModal] = useRevisionDetailsModal();
     const hasPreviewAvailable = !!link.mimeType && isPreviewAvailable(link.mimeType, link.size);
+    const [selectedRevision, setSelectedRevision] = useState<DriveFileRevision | null>(null);
     const { download } = useDownload();
 
     const downloadRevision = (revisionId: string) => {
@@ -137,18 +138,7 @@ export const RevisionsProvider = ({
     };
 
     const openRevisionPreview = (revision: DriveFileRevision) => {
-        void showPortalPreview({
-            revisionId: revision.ID,
-            shareId: link.rootShareId,
-            linkId: link.linkId,
-            date: revision.CreateTime,
-            className: 'revision-preview',
-            onDetails: () => openRevisionDetails(revision),
-            onRestore: () =>
-                revision.State !== FileRevisionState.Active
-                    ? () => handleRevisionRestore(new AbortController().signal, revision)
-                    : undefined,
-        });
+        setSelectedRevision(revision);
     };
 
     return (
@@ -166,12 +156,32 @@ export const RevisionsProvider = ({
             }}
         >
             {children}
-            {/* We need to update portal preview props after it was opened to have the backdrop working*/}
-            {portalPreview && (confirmModal?.props.open || revisionDetailsModal?.props.open)
-                ? cloneElement(portalPreview, {
-                      className: clsx(portalPreview.props.className, 'revision-preview--behind'),
-                  })
-                : portalPreview}
+            {selectedRevision && (
+                <PortalPreview
+                    key="portal-preview-revisions"
+                    open={!!selectedRevision}
+                    ref={ref}
+                    revisionId={selectedRevision.ID}
+                    shareId={link.rootShareId}
+                    linkId={link.linkId}
+                    date={selectedRevision.CreateTime}
+                    className={clsx(
+                        'revision-preview',
+                        (confirmModal?.props.open || revisionDetailsModal?.props.open) && 'revision-preview--behind'
+                    )}
+                    onDetails={() => openRevisionDetails(selectedRevision)}
+                    onRestore={
+                        selectedRevision.State !== FileRevisionState.Active
+                            ? () => {
+                                  handleRevisionRestore(new AbortController().signal, selectedRevision);
+                              }
+                            : undefined
+                    }
+                    onClose={() => setSelectedRevision(null)}
+                    onExit={() => setSelectedRevision(null)}
+                />
+            )}
+
             {revisionDetailsModal}
             {confirmModal}
         </RevisionsContext.Provider>
