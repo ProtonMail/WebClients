@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { useLoading } from '@proton/hooks';
 import { Api } from '@proton/shared/lib/interfaces';
@@ -33,18 +33,19 @@ export const useSavedMethod = (
     { amountAndCurrency, savedMethod, onChargeable }: Props,
     { verifyPayment, api }: Dependencies
 ): SavedMethodProcessorHook => {
-    const paymentProcessor = useMemo(() => {
-        if (savedMethod) {
-            return new SavedPaymentProcessor(
-                verifyPayment,
-                api,
-                amountAndCurrency,
-                savedMethod,
-                (chargeablePaymentParameters: ChargeablePaymentParameters) =>
-                    onChargeable(chargeablePaymentParameters, savedMethod.ID)
-            );
-        }
-    }, [savedMethod]);
+    const paymentProcessorRef = useRef<SavedPaymentProcessor>();
+    if (!paymentProcessorRef.current && savedMethod) {
+        paymentProcessorRef.current = new SavedPaymentProcessor(
+            verifyPayment,
+            api,
+            amountAndCurrency,
+            savedMethod,
+            (chargeablePaymentParameters: ChargeablePaymentParameters) =>
+                onChargeable(chargeablePaymentParameters, savedMethod.ID)
+        );
+    }
+
+    const paymentProcessor = paymentProcessorRef.current;
 
     const [fetchingToken, withFetchingToken] = useLoading();
     const [verifyingToken, withVerifyingToken] = useLoading();
@@ -59,6 +60,13 @@ export const useSavedMethod = (
             paymentProcessor.amountAndCurrency = amountAndCurrency;
         }
     }, [amountAndCurrency]);
+
+    useEffect(() => {
+        if (paymentProcessor && savedMethod) {
+            paymentProcessor.onTokenIsChargeable = (chargeablePaymentParameters: ChargeablePaymentParameters) =>
+                onChargeable(chargeablePaymentParameters, savedMethod.ID);
+        }
+    }, [savedMethod, onChargeable]);
 
     const reset = () => paymentProcessor?.reset();
 

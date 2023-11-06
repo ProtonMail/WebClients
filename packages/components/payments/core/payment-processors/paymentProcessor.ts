@@ -22,7 +22,8 @@ export abstract class PaymentProcessor<T = any> {
 
     constructor(
         protected state: T,
-        public amountAndCurrency: AmountAndCurrency
+        public amountAndCurrency: AmountAndCurrency,
+        public onTokenIsChargeable?: (data: ChargeablePaymentParameters) => Promise<unknown>
     ) {}
 
     abstract fetchPaymentToken(): Promise<ChargeablePaymentToken | NonChargeablePaymentToken | null>;
