@@ -413,6 +413,17 @@ export function useLinkInner(
         }
     );
 
+    const getLinkRevision = async (
+        abortSignal: AbortSignal,
+        { shareId, linkId, revisionId }: { shareId: string; linkId: string; revisionId: string }
+    ) => {
+        const { Revision } = await debouncedRequest<DriveFileRevisionResult>(
+            queryFileRevision(shareId, linkId, revisionId),
+            abortSignal
+        );
+        return revisionPayloadToRevision(Revision);
+    };
+
     /**
      * decryptLink decrypts provided `encryptedLink`. The result is not stored
      * anywhere, only returned back.
@@ -442,6 +453,9 @@ export function useLinkInner(
                     ),
                 }).then(({ data, verified }) => ({ name: data, nameVerified: verified }));
 
+                const revision = !!revisionId
+                    ? await getLinkRevision(abortSignal, { shareId, linkId: encryptedLink.linkId, revisionId })
+                    : undefined;
                 const xattrPromise = !encryptedLink.xAttr
                     ? {
                           fileModifyTime: encryptedLink.metaDataModifyTime,
