@@ -6,6 +6,8 @@
     "main": "lib/index.ts",
     "scripts": {
         "check-types": "tsc",
+        "i18n:validate": "proton-i18n validate lint-functions",
+        "i18n:validate:context": "proton-i18n extract && proton-i18n validate",
         "lint": "eslint lib test --ext .js,.ts,tsx --quiet --cache",
         "pretty": "prettier --write $(find lib test -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "test": "NODE_ENV=test karma start test/karma.conf.js"
@@ -20,6 +22,7 @@
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
+        "@proton/i18n": "workspace:packages/i18n",
         "@types/jasmine": "^5.1.1",
         "eslint": "^8.52.0",
         "jasmine": "^5.1.0",
