@@ -74,7 +74,7 @@ export const handleNewPassword = async ({
     const { preAuthKTVerify, preAuthKTCommit } = createPreAuthKTVerifier(ktActivation, api);
 
     const { passphrase, salt } = await generateKeySaltAndPassphrase(password);
-    const { addressKeysPayload, userKeyPayload } = await getResetAddressesKeysV2({
+    const { addressKeysPayload, userKeyPayload, onSKLPublishSuccess } = await getResetAddressesKeysV2({
         addresses,
         passphrase,
         preAuthKTVerify,
@@ -91,6 +91,10 @@ export const handleNewPassword = async ({
             AddressKeys: addressKeysPayload,
         }),
     });
+
+    if (onSKLPublishSuccess) {
+        await onSKLPublishSuccess();
+    }
 
     const authResponse = await srpAuth({
         api,
