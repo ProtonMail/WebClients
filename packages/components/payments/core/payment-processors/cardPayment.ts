@@ -40,14 +40,15 @@ export class CardPaymentProcessor extends PaymentProcessor<CardPaymentProcessorS
         public verifyPayment: PaymentVerificator,
         public api: Api,
         amountAndCurrency: AmountAndCurrency,
-        private onTokenIsChargeable?: (data: ChargeablePaymentParameters) => Promise<unknown>
+        onTokenIsChargeable?: (data: ChargeablePaymentParameters) => Promise<unknown>
     ) {
         super(
             {
                 card: getDefaultCard(),
                 cardSubmitted: false,
             },
-            amountAndCurrency
+            amountAndCurrency,
+            onTokenIsChargeable
         );
     }
 
