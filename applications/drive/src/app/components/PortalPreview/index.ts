@@ -1,1 +1,1 @@
-export { default, usePortalPreview } from './PortalPreview';
+export { default } from './PortalPreview';
