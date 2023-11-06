@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { COUPON_CODES, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { PlansMap, Renew, SubscriptionCheckResponse, SubscriptionModel } from '@proton/shared/lib/interfaces';
 
 import { Model } from './SubscriptionContainer';
@@ -192,6 +192,13 @@ describe('useCheckoutModifiers', () => {
     it('should return isScheduledSubscription === false if checkResult is undefined', () => {
         const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap));
         expect(result.current.isScheduledSubscription).toEqual(false);
+    });
+
+    it('should return isProration true when user has trial', () => {
+        subscriptionModel.CouponCode = COUPON_CODES.REFERRAL;
+        checkResult.Proration = 0;
+        const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
+        expect(result.current.isProration).toEqual(true);
     });
 
     describe('custom billings', () => {
