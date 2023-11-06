@@ -2,7 +2,7 @@ import { Canvas, Source, Story } from '@storybook/addon-docs';
 
 # Columns
 
-Will use css multicolumn to display the list on 2 columns. On tablet, the list will be put on one column. The same helper exists also for mobile <code>on-mobile-list-1column</code>.
+Will use css multicolumn to display the list on several columns.
 
 <Story id="css-utilities-columns--columns" />
 
@@ -11,7 +11,7 @@ Will use css multicolumn to display the list on 2 columns. On tablet, the list w
     light
     format
     code={`
-<ul className="list-2columns on-tablet-list-1column">
+<ul className="list-columns md:column-2">
 …
 </ul>
 `}
