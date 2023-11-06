@@ -15,6 +15,9 @@ const devConfig: Config = {
         account: "https://account.proton.local",
         mail: "https://mail.proton.local",
         calendar: "https://calendar.proton.local",
+        // account: "https://account.wilkins.proton.black",
+        // mail: "https://mail.wilkins.proton.black",
+        // calendar: "https://calendar.wilkins.proton.black",
     },
 };
 

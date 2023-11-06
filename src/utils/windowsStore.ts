@@ -18,10 +18,11 @@ const getWindowSize = () => {
 };
 
 const getWindowsPosition = () => {
-    const { width, height } = screen.getPrimaryDisplay().workAreaSize;
+    const { width, height, x, y } = screen.getPrimaryDisplay().workArea;
+    // Centers the windows with a bit of a random offset to avoid overlapping windows
     return {
-        x: Math.round((width - DEFAULT_WINDOW_WIDTH) / 2),
-        y: Math.round((height - DEFAULT_WINDOW_HEIGHT) / 2),
+        x: Math.round((width - DEFAULT_WINDOW_WIDTH) / 2 + x + x * Math.random() + 10),
+        y: Math.round((height - DEFAULT_WINDOW_HEIGHT) / 2 + y + y * Math.random() + 10),
     };
 };
 

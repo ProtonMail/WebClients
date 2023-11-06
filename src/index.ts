@@ -1,6 +1,6 @@
-import { app, BrowserWindow, globalShortcut, session, shell } from "electron";
+import { app, BrowserWindow, session, shell } from "electron";
 import { ALLOWED_PERMISSIONS, PARTITION } from "./utils/constants";
-import { isHostAllowed, isHostCalendar, isHostMail, isMac, quitApplication } from "./utils/helpers";
+import { isHostAllowed, isHostCalendar, isHostMail, isMac, saveWindowsPosition } from "./utils/helpers";
 import { handleCalendarWindow, handleMailWindow, initialWindowCreation } from "./utils/windowManagement";
 
 if (require("electron-squirrel-startup")) {
@@ -17,10 +17,6 @@ app.whenReady().then(() => {
     const secureSession = session.fromPartition(PARTITION, {
         cache: false,
     });
-
-    if (isMac) {
-        globalShortcut.register("Command+Q", quitApplication);
-    }
 
     initialWindowCreation({ session: secureSession, mailVisible: true, calendarVisible: false });
 
@@ -44,6 +40,11 @@ app.whenReady().then(() => {
 
         callback(false);
     });
+});
+
+app.on("before-quit", () => {
+    console.log("before-quit"); // TODO Remove once we are sure this is called
+    saveWindowsPosition(true);
 });
 
 app.on("window-all-closed", () => {

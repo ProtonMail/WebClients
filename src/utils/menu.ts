@@ -1,5 +1,5 @@
 import { app, Menu, type MenuItemConstructorOptions } from "electron";
-import { clearStorage, isMac, quitApplication } from "./helpers";
+import { clearStorage, isMac } from "./helpers";
 
 interface MenuInsertProps {
     menu: MenuItemConstructorOptions[];
@@ -34,9 +34,7 @@ export const setApplicationMenu = (isPackaged: boolean) => {
                     click: () => clearStorage(true),
                 },
                 {
-                    label: "Close Proton Desktop",
-                    type: "normal",
-                    click: quitApplication,
+                    role: "quit",
                 },
             ],
         },

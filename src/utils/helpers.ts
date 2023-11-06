@@ -77,9 +77,8 @@ export const clearStorage = (restart: boolean, timeout?: number) => {
     }
 };
 
-export const quitApplication = () => {
+export const saveWindowsPosition = (shouldDestroy: boolean) => {
     BrowserWindow.getAllWindows().forEach((window) => {
-        // Save window size when closing the application
         if (window.isVisible()) {
             const url = window.webContents.getURL();
             if (isHostCalendar(url)) {
@@ -89,8 +88,12 @@ export const quitApplication = () => {
             }
         }
 
-        window.destroy();
+        if (shouldDestroy) {
+            window.destroy();
+        }
     });
-
+};
+export const quitApplication = () => {
+    saveWindowsPosition(true);
     app.quit();
 };
