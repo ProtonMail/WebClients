@@ -36,9 +36,7 @@ export const getNCalendarsFeature = (n: number): PlanCardFeatureDefinition => {
 
 export const getNCalendarsPerUserFeature = (n: number): PlanCardFeatureDefinition => {
     return {
-        text:
-            // There was an issue with the `new_plans: feature` translation. Temporary fix is to use the `Subscription attribute` context
-            c('Subscription attribute').ngettext(msgid`${n} calendar per user`, `${n} calendars per user`, n),
+        text: c('new_plans: feature').ngettext(msgid`${n} calendar per user`, `${n} calendars per user`, n),
         tooltip: n > 1 ? getNCalendarsTooltipText(n) : '',
         included: true,
         icon: 'brand-proton-calendar',
