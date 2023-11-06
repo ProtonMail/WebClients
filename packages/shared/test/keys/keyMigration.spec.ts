@@ -6,7 +6,7 @@ import {
     getEmailFromKey,
     splitKeys,
 } from '../../lib/keys';
-import { migrateAddressKeys } from '../../lib/keys/keyMigration';
+import { getAddressKeysMigrationPayload, migrateAddressKeys } from '../../lib/keys/keyMigration';
 import { getLegacyAddressKey, getUserKey } from './keyDataHelper';
 
 const DEFAULT_KEYPASSWORD = '123';
@@ -65,7 +65,7 @@ describe('key migration', () => {
         addressKeys,
         userKeys,
     }: {
-        result: Unwrap<ReturnType<typeof migrateAddressKeys>>;
+        result: Unwrap<ReturnType<typeof getAddressKeysMigrationPayload>>;
     } & Unwrap<ReturnType<typeof getSetup1>>) => {
         const decryptedMigratedKeys = await Promise.all(
             Addresses.map((address) => {
@@ -111,13 +111,14 @@ describe('key migration', () => {
     it('should migrate keys in the legacy format', async () => {
         const { User, Addresses, userKeys, addressKeys, organizationKey } = await getSetup1();
 
-        const result = await migrateAddressKeys({
+        const migratedKeys = await migrateAddressKeys({
             user: User,
             addresses: Addresses,
             keyPassword: DEFAULT_KEYPASSWORD,
             preAuthKTVerify: () => async () => {},
             keyMigrationKTVerifier: async () => {},
         });
+        const result = await getAddressKeysMigrationPayload(migratedKeys);
         await verifyStandard({
             organizationKey,
             Addresses,
@@ -152,13 +153,14 @@ describe('key migration', () => {
         Addresses[2].Keys.length = 0;
         addressKeys[2].length = 0;
 
-        const result = await migrateAddressKeys({
+        const migratedKeys = await migrateAddressKeys({
             user: User,
             addresses: Addresses,
             keyPassword: DEFAULT_KEYPASSWORD,
             preAuthKTVerify: () => async () => {},
             keyMigrationKTVerifier: async () => {},
         });
+        const result = await getAddressKeysMigrationPayload(migratedKeys);
         await verifyStandard({
             organizationKey,
             Addresses,
@@ -186,7 +188,7 @@ describe('key migration', () => {
     it('should migrate keys in the legacy format with organization signatures', async () => {
         const { User, Addresses, userKeys, addressKeys, organizationKey } = await getSetup1();
 
-        const result = await migrateAddressKeys({
+        const migratedKeys = await migrateAddressKeys({
             user: User,
             addresses: Addresses,
             organizationKey: organizationKey.Key,
@@ -194,6 +196,7 @@ describe('key migration', () => {
             preAuthKTVerify: () => async () => {},
             keyMigrationKTVerifier: async () => {},
         });
+        const result = await getAddressKeysMigrationPayload(migratedKeys);
         await verifyStandard({
             organizationKey,
             Addresses,

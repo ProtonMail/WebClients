@@ -19,7 +19,7 @@ import { getHasMemberMigratedAddressKeys } from './keyMigration';
 import { generateKeySaltAndPassphrase } from './keys';
 import { decryptMemberToken, encryptMemberToken, generateMemberToken } from './memberToken';
 import { generateMemberAddressKey } from './organizationKeys';
-import { getSignedKeyList } from './signedKeyList';
+import { getSignedKeyListWithDeferredPublish } from './signedKeyList';
 import { generateUserKey } from './userKeys';
 
 export const getDecryptedMemberKey = async ({ Token, PrivateKey }: tsKey, organizationKey: PrivateKeyReference) => {
@@ -51,7 +51,7 @@ export const setupMemberKeyLegacy = async ({
 }: SetupMemberKeySharedArguments) => {
     const { salt: keySalt, passphrase: memberMailboxPassword } = await generateKeySaltAndPassphrase(password);
 
-    const AddressKeys = await Promise.all(
+    const AddressKeysWithOnSKLPublish = await Promise.all(
         memberAddresses.map(async (address) => {
             const { privateKey, privateKeyArmored } = await generateAddressKey({
                 email: address.Email,
@@ -72,18 +72,25 @@ export const setupMemberKeyLegacy = async ({
                 flags: getDefaultKeyFlags(address),
             });
             const updatedActiveKeys = getNormalizedActiveKeys(address, [newActiveKey]);
-            const SignedKeyList = await getSignedKeyList(updatedActiveKeys, address, keyTransparencyVerify);
-
+            const [SignedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
+                updatedActiveKeys,
+                address,
+                keyTransparencyVerify
+            );
             return {
-                AddressID: address.ID,
-                SignedKeyList,
-                UserKey: privateKeyArmored,
-                MemberKey: privateKeyArmoredOrganization,
-                Token: organizationToken,
+                addressKey: {
+                    AddressID: address.ID,
+                    SignedKeyList,
+                    UserKey: privateKeyArmored,
+                    MemberKey: privateKeyArmoredOrganization,
+                    Token: organizationToken,
+                },
+                onSKLPublishSuccess,
             };
         })
     );
 
+    const AddressKeys = AddressKeysWithOnSKLPublish.map(({ addressKey }) => addressKey);
     const PrimaryKey = {
         UserKey: AddressKeys[0].UserKey,
         MemberKey: AddressKeys[0].MemberKey,
@@ -100,6 +107,12 @@ export const setupMemberKeyLegacy = async ({
             KeySalt: keySalt,
         }),
     });
+
+    await Promise.all(
+        AddressKeysWithOnSKLPublish.map(({ onSKLPublishSuccess }) =>
+            onSKLPublishSuccess ? onSKLPublishSuccess() : Promise.resolve()
+        )
+    );
 };
 
 export const setupMemberKeyV2 = async ({
@@ -124,7 +137,7 @@ export const setupMemberKeyV2 = async ({
     });
     const organizationToken = await encryptMemberToken(memberKeyToken, organizationKey);
 
-    const AddressKeys = await Promise.all(
+    const AddressKeysWithOnSKLPublish = await Promise.all(
         memberAddresses.map(async (address) => {
             const { token, signature, organizationSignature, encryptedToken } = await generateAddressKeyTokens(
                 userPrivateKey,
@@ -144,18 +157,26 @@ export const setupMemberKeyV2 = async ({
                 flags: getDefaultKeyFlags(address),
             });
             const updatedActiveKeys = getNormalizedActiveKeys(address, [newActiveKey]);
-            const SignedKeyList = await getSignedKeyList(updatedActiveKeys, address, keyTransparencyVerify);
+            const [SignedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
+                updatedActiveKeys,
+                address,
+                keyTransparencyVerify
+            );
 
             return {
-                AddressID: address.ID,
-                SignedKeyList,
-                PrivateKey: addressPrivateKeyArmored,
-                Token: encryptedToken,
-                Signature: signature,
-                OrgSignature: organizationSignature,
+                addressKey: {
+                    AddressID: address.ID,
+                    SignedKeyList,
+                    PrivateKey: addressPrivateKeyArmored,
+                    Token: encryptedToken,
+                    Signature: signature,
+                    OrgSignature: organizationSignature,
+                },
+                onSKLPublishSuccess,
             };
         })
     );
+    const AddressKeys = AddressKeysWithOnSKLPublish.map(({ addressKey }) => addressKey);
 
     await srpVerify({
         api,
@@ -171,6 +192,12 @@ export const setupMemberKeyV2 = async ({
             KeySalt: keySalt,
         }),
     });
+
+    await Promise.all(
+        AddressKeysWithOnSKLPublish.map(({ onSKLPublishSuccess }) =>
+            onSKLPublishSuccess ? onSKLPublishSuccess() : Promise.resolve()
+        )
+    );
 };
 
 export const getShouldSetupMemberKeys = (member: tsMember | undefined) => {
@@ -230,7 +257,11 @@ export const createMemberAddressKeysLegacy = async ({
         flags: getDefaultKeyFlags(memberAddress),
     });
     const updatedActiveKeys = getNormalizedActiveKeys(memberAddress, [...activeKeys, newActiveKey]);
-    const SignedKeyList = await getSignedKeyList(updatedActiveKeys, memberAddress, keyTransparencyVerify);
+    const [SignedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
+        updatedActiveKeys,
+        memberAddress,
+        keyTransparencyVerify
+    );
 
     const { primary } = newActiveKey;
 
@@ -246,6 +277,8 @@ export const createMemberAddressKeysLegacy = async ({
             SignedKeyList,
         })
     );
+
+    await onSKLPublishSuccess();
 
     newActiveKey.ID = MemberKey.ID;
 
@@ -296,7 +329,11 @@ export const createMemberAddressKeysV2 = async ({
         flags: getDefaultKeyFlags(memberAddress),
     });
     const updatedActiveKeys = getNormalizedActiveKeys(memberAddress, [...activeKeys, newActiveKey]);
-    const SignedKeyList = await getSignedKeyList(updatedActiveKeys, memberAddress, keyTransparencyVerify);
+    const [SignedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
+        updatedActiveKeys,
+        memberAddress,
+        keyTransparencyVerify
+    );
 
     const { primary } = newActiveKey;
 
@@ -312,6 +349,8 @@ export const createMemberAddressKeysV2 = async ({
             SignedKeyList,
         })
     );
+
+    await onSKLPublishSuccess();
 
     newActiveKey.ID = MemberKey.ID;
 

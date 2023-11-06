@@ -7,7 +7,7 @@ import { generateAddressKeyTokens } from './addressKeys';
 import { getActiveKeys, getNormalizedActiveKeys } from './getActiveKeys';
 import { getPrimaryKey } from './getPrimaryKey';
 import { getHasMigratedAddressKeys } from './keyMigration';
-import { getSignedKeyList } from './signedKeyList';
+import { getSignedKeyListWithDeferredPublish } from './signedKeyList';
 
 export const getAddressesWithKeysToActivate = (user: tsUserModel, addresses: Address[]) => {
     // If signed in as subuser, or not a readable member
@@ -69,8 +69,11 @@ export const activateMemberAddressKeys = async ({
                 privateKey,
                 passphrase: token,
             });
-            const SignedKeyList = await getSignedKeyList(activeKeys, address, keyTransparencyVerify);
-
+            const [SignedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
+                activeKeys,
+                address,
+                keyTransparencyVerify
+            );
             await api(
                 activateKeyRouteV2({
                     ID,
@@ -80,14 +83,21 @@ export const activateMemberAddressKeys = async ({
                     Signature: signature,
                 })
             );
+            // Only once the SKL is successfully posted we add it to the KT commit state.
+            await onSKLPublishSuccess();
         } else {
             const encryptedPrivateKey = await CryptoProxy.exportPrivateKey({
                 privateKey,
                 passphrase: keyPassword,
             });
-            const SignedKeyList = await getSignedKeyList(activeKeys, address, keyTransparencyVerify);
-
+            const [SignedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
+                activeKeys,
+                address,
+                keyTransparencyVerify
+            );
             await api(activateKeyRoute({ ID, PrivateKey: encryptedPrivateKey, SignedKeyList }));
+            // Only once the SKL is successfully posted we add it to the KT commit state.
+            await onSKLPublishSuccess();
         }
     }
 };

@@ -28,7 +28,7 @@ import { getDecryptedAddressKeys, getDecryptedAddressKeysHelper } from './getDec
 import { getDecryptedOrganizationKey } from './getDecryptedOrganizationKey';
 import { getDecryptedUserKeys, getDecryptedUserKeysHelper } from './getDecryptedUserKeys';
 import { getPrimaryKey } from './getPrimaryKey';
-import { createSignedKeyListForMigration } from './signedKeyList';
+import { OnSKLPublishSuccess, createSignedKeyListForMigration } from './signedKeyList';
 
 export const getSentryError = (error: any): any => {
     // Only interested in api errors where the API gave a valid error response, or run time errors.
@@ -76,14 +76,15 @@ export interface MigrateMemberAddressKeyPayload extends MigrateAddressKeyPayload
     OrgSignature: string;
 }
 
-interface MigrationResult {
+interface MigrationResult<T extends MigrateAddressKeyPayload> {
     SignedKeyLists: { [id: string]: SignedKeyList };
-    AddressKeys: MigrateAddressKeyPayload[];
+    AddressKeys: T[];
 }
-
-interface MigrationOrgResult {
-    SignedKeyLists: { [id: string]: SignedKeyList };
-    AddressKeys: MigrateMemberAddressKeyPayload[];
+interface AddressKeyMigrationValue<T extends MigrateAddressKeyPayload> {
+    Address: Address;
+    AddressKeys: T[];
+    SignedKeyList: SignedKeyList | undefined;
+    onSKLPublishSuccess: OnSKLPublishSuccess | undefined;
 }
 
 interface AddressesKeys {
@@ -91,41 +92,29 @@ interface AddressesKeys {
     keys: DecryptedKey[];
 }
 
-export async function getAddressKeysMigrationPayload(
+export function getAddressKeysMigration(
     addressesKeys: AddressesKeys[],
     userKey: PrivateKeyReference,
     keyTransparencyVerify: KeyTransparencyVerify,
     keyMigrationKTVerifier: KeyMigrationKTVerifier,
     organizationKey: PrivateKeyReference
-): Promise<MigrationOrgResult>;
-
-export async function getAddressKeysMigrationPayload(
+): Promise<AddressKeyMigrationValue<MigrateMemberAddressKeyPayload>[]>;
+export function getAddressKeysMigration(
     addressesKeys: AddressesKeys[],
     userKey: PrivateKeyReference,
     keyTransparencyVerify: KeyTransparencyVerify,
     keyMigrationKTVerifier: KeyMigrationKTVerifier,
     organizationKey?: PrivateKeyReference
-): Promise<MigrationResult>;
+): Promise<AddressKeyMigrationValue<MigrateAddressKeyPayload>[]>;
 
-export async function getAddressKeysMigrationPayload(
+export function getAddressKeysMigration(
     addressesKeys: AddressesKeys[],
     userKey: PrivateKeyReference,
     keyTransparencyVerify: KeyTransparencyVerify,
     keyMigrationKTVerifier: KeyMigrationKTVerifier,
     organizationKey?: PrivateKeyReference
 ) {
-    const result = await Promise.all<
-        | {
-              Address: Address;
-              AddressKeys: MigrateAddressKeyPayload[];
-              SignedKeyList: SignedKeyList | undefined;
-          }
-        | {
-              Address: Address;
-              AddressKeys: MigrateMemberAddressKeyPayload[];
-              SignedKeyList: SignedKeyList | undefined;
-          }
-    >(
+    return Promise.all(
         addressesKeys.map(async ({ address, keys }) => {
             const migratedKeys = await Promise.all(
                 keys.map(async ({ ID, privateKey }) => {
@@ -154,7 +143,7 @@ export async function getAddressKeysMigrationPayload(
                     publicKey: await toPublicKeyReference(privateKey),
                 }))
             );
-            const signedKeyList = await createSignedKeyListForMigration(
+            const [signedKeyList, onSKLPublishSuccess] = await createSignedKeyListForMigration(
                 address,
                 migratedDecryptedKeys,
                 keyTransparencyVerify,
@@ -163,6 +152,7 @@ export async function getAddressKeysMigrationPayload(
             return {
                 Address: address,
                 SignedKeyList: signedKeyList,
+                onSKLPublishSuccess: onSKLPublishSuccess,
                 AddressKeys: migratedKeys.map((migratedKey) => {
                     return {
                         ID: migratedKey.ID,
@@ -177,11 +167,16 @@ export async function getAddressKeysMigrationPayload(
             };
         })
     );
-    return result.reduce<MigrationResult | MigrationOrgResult>(
+}
+
+export function getAddressKeysMigrationPayload<T extends MigrateAddressKeyPayload>(
+    addressKeysMigration: AddressKeyMigrationValue<T>[]
+) {
+    return addressKeysMigration.reduce<MigrationResult<T>>(
         (acc, { AddressKeys, Address, SignedKeyList }) => {
             // Some addresses may not have keys and thus won't have generated a signed key list
             if (AddressKeys.length > 0) {
-                acc.AddressKeys = acc.AddressKeys.concat(AddressKeys as any); // forcing any since it's typed in the promise result above
+                acc.AddressKeys = acc.AddressKeys.concat(AddressKeys);
                 if (SignedKeyList) {
                     acc.SignedKeyLists[Address.ID] = SignedKeyList;
                 }
@@ -205,9 +200,10 @@ export async function migrateAddressKeys(
     args: MigrateAddressKeysArguments & {
         organizationKey: OrganizationKey;
     }
-): Promise<MigrationOrgResult>;
-
-export async function migrateAddressKeys(args: MigrateAddressKeysArguments): Promise<MigrationResult>;
+): Promise<AddressKeyMigrationValue<MigrateMemberAddressKeyPayload>[]>;
+export async function migrateAddressKeys(
+    args: MigrateAddressKeysArguments
+): Promise<AddressKeyMigrationValue<MigrateAddressKeyPayload>[]>;
 
 export async function migrateAddressKeys({
     user,
@@ -236,12 +232,7 @@ export async function migrateAddressKeys({
     const keyTransparencyVerify = preAuthKTVerify(userKeys);
 
     if (!organizationKey) {
-        return getAddressKeysMigrationPayload(
-            addressesKeys,
-            primaryUserKey,
-            keyTransparencyVerify,
-            keyMigrationKTVerifier
-        );
+        return getAddressKeysMigration(addressesKeys, primaryUserKey, keyTransparencyVerify, keyMigrationKTVerifier);
     }
 
     const decryptedOrganizationKeyResult = await getDecryptedOrganizationKey(
@@ -253,7 +244,7 @@ export async function migrateAddressKeys({
         (error as any).ignore = true;
         throw error;
     }
-    return getAddressKeysMigrationPayload(
+    return getAddressKeysMigration(
         addressesKeys,
         primaryUserKey,
         keyTransparencyVerify,
@@ -353,15 +344,21 @@ export async function migrateMemberAddressKeys({
             continue;
         }
 
-        const payload = await getAddressKeysMigrationPayload(
+        const migratedKeys = await getAddressKeysMigration(
             memberAddressesKeys,
             primaryMemberUserKey,
             keyTransparencyVerify,
             keyMigrationKTVerifier,
             decryptedOrganizationKeyResult.privateKey
         );
+        const payload = await getAddressKeysMigrationPayload(migratedKeys);
         if (payload) {
             await api({ ...migrateMembersAddressKeysRoute({ MemberID: member.ID, ...payload }), timeout });
+            await Promise.all(
+                migratedKeys.map(({ onSKLPublishSuccess }) =>
+                    onSKLPublishSuccess ? onSKLPublishSuccess() : Promise.resolve()
+                )
+            );
         }
     }
 }
@@ -396,7 +393,7 @@ export const migrateUser = async ({
             api<{ Member: Member }>(getMember('me')).then(({ Member }) => Member),
             api<OrganizationKey>(getOrganizationKeys()),
         ]);
-        const payload = await migrateAddressKeys({
+        const migratedKeys = await migrateAddressKeys({
             user,
             organizationKey,
             addresses,
@@ -404,20 +401,30 @@ export const migrateUser = async ({
             keyMigrationKTVerifier,
             preAuthKTVerify,
         });
+        const payload = await getAddressKeysMigrationPayload(migratedKeys);
         await api({
             ...migrateMembersAddressKeysRoute({ MemberID: selfMember.ID, ...payload }),
             timeout,
         });
+        await Promise.all(
+            migratedKeys.map(({ onSKLPublishSuccess }) =>
+                onSKLPublishSuccess ? onSKLPublishSuccess() : Promise.resolve()
+            )
+        );
         return true;
     }
 
-    const payload = await migrateAddressKeys({
+    const migratedKeys = await migrateAddressKeys({
         user,
         addresses,
         keyPassword,
         preAuthKTVerify,
         keyMigrationKTVerifier,
     });
+    const payload = await getAddressKeysMigrationPayload(migratedKeys);
     await api({ ...migrateAddressKeysRoute(payload), timeout });
+    await Promise.all(
+        migratedKeys.map(({ onSKLPublishSuccess }) => (onSKLPublishSuccess ? onSKLPublishSuccess() : Promise.resolve()))
+    );
     return true;
 };
