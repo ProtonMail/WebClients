@@ -87,6 +87,7 @@ const PaymentStep = ({
         parameters: paymentParameters,
         paypal,
         paypalCredit,
+        cardFieldStatus,
     } = usePayment({
         api,
         defaultMethod: paymentMethods[0],
@@ -217,6 +218,7 @@ const PaymentStep = ({
                                 amount={subscriptionData.checkResult.AmountDue}
                                 currency={subscriptionData.currency}
                                 card={card}
+                                cardFieldStatus={cardFieldStatus}
                                 onMethod={setMethod}
                                 onCard={setCard}
                                 cardErrors={cardErrors}
