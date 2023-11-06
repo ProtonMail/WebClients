@@ -15,7 +15,6 @@ import {
 } from '@proton/components/containers';
 import { getTotalBillingText } from '@proton/components/containers/payments/helper';
 import { getDefaultVerifyPayment } from '@proton/components/containers/payments/usePaymentToken';
-import { useConfig } from '@proton/components/hooks';
 import useModals from '@proton/components/hooks/useModals';
 import {
     AmountAndCurrency,
@@ -27,14 +26,13 @@ import {
 } from '@proton/components/payments/core';
 import { WithLoading } from '@proton/hooks/useLoading';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
-import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
-import { APPS } from '@proton/shared/lib/constants';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
-import { getKnowledgeBaseUrl, getTermsURL } from '@proton/shared/lib/helpers/url';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Api, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { getLocaleTermsURL } from '../content/helper';
 import Guarantee from './Guarantee';
 import RightPlanSummary from './RightPlanSummary';
 import RightSummary from './RightSummary';
@@ -86,7 +84,6 @@ const AccountStepPayment = ({
     isDarkBg = false,
 }: Props) => {
     const formRef = useRef<HTMLFormElement>(null);
-    const { APP_NAME } = useConfig();
     const { createModal } = useModals();
 
     const measurePay = (
@@ -164,11 +161,7 @@ const AccountStepPayment = ({
     });
 
     const termsAndConditions = (
-        <Href
-            className="color-weak"
-            key="terms"
-            href={getTermsURL(getIsVPNApp(APP_NAME) ? APPS.PROTONVPN_SETTINGS : undefined)}
-        >
+        <Href className="color-weak" key="terms" href={getLocaleTermsURL()}>
             {
                 // translator: Full sentence "By creating a Proton account, you agree to our terms and conditions"
                 c('new_plans: signup').t`terms and conditions`

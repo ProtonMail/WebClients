@@ -26,6 +26,11 @@ jest.mock('@proton/shared/lib/pow/wasmWorkerWrapper.ts', () => ({
     __esModule: true,
 }));
 
+jest.mock('./src/app/locales.ts', () => ({
+    __esModule: true,
+    getLocaleMapping: () => 'en',
+}));
+
 jest.mock('@proton/shared/lib/pow/pbkdfWorkerWrapper.ts', () => ({
     __esModule: true,
 }));
