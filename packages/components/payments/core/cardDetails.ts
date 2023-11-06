@@ -3,7 +3,6 @@ import creditCardType from 'credit-card-type';
 import { c } from 'ttag';
 
 import { getFirstTop } from '@proton/components/helpers/countries';
-import { isEmpty } from '@proton/shared/lib/helpers/validators';
 
 import { CreateCardDetailsBackend, isSavedCardDetails } from './interface';
 
@@ -62,11 +61,6 @@ export type KeyOfCardModel = keyof CardModel;
 const check = (card: CardModel, key: KeyOfCardModel): string | undefined => {
     const value = card[key];
     switch (key) {
-        case 'fullname':
-            if (isEmpty(value)) {
-                return c('Error').t`Name on card required`;
-            }
-            break;
         case 'month':
         case 'year':
             if (!isExpirationDate(card.month, card.year)) {

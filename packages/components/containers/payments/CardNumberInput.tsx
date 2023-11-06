@@ -1,9 +1,6 @@
 import creditCardType from 'credit-card-type';
 
-import { Input, InputProps } from '@proton/atoms';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
-
-import { Icon } from '../../components';
 
 const banks = require.context('@proton/styles/assets/img/credit-card-icons', true, /.svg$/);
 
@@ -46,39 +43,3 @@ export const formatCreditCardNumber = (value: string) => {
         codeName: code?.name ?? 'CVV',
     };
 };
-
-interface Props extends Omit<InputProps, 'value' | 'onChange' | 'onValue'> {
-    value: string;
-    onChange: (value: string) => void;
-}
-
-const CardNumberInput = ({ value, onChange, ...rest }: Props) => {
-    const { valueWithGaps, bankIcon, niceType } = formatCreditCardNumber(value);
-
-    return (
-        <Input
-            autoComplete="cc-number"
-            name="cardnumber"
-            placeholder="0000 0000 0000 0000"
-            maxLength={23}
-            className="pl-0"
-            onChange={({ target }) => {
-                const val = target.value.replace(/\s/g, '');
-                if (isValidNumber(val)) {
-                    onChange(val);
-                }
-            }}
-            value={valueWithGaps}
-            prefix={
-                value && bankIcon ? (
-                    <img src={bankIcon} title={niceType} alt={niceType} width="20" />
-                ) : (
-                    <Icon name="credit-card" />
-                )
-            }
-            {...rest}
-        />
-    );
-};
-
-export default CardNumberInput;

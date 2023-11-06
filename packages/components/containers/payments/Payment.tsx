@@ -9,6 +9,7 @@ import {
     PaymentMethodType,
     SavedPaymentMethod,
 } from '@proton/components/payments/core';
+import { CardFieldStatus } from '@proton/components/payments/react-extensions/useCard';
 import { useLoading } from '@proton/hooks';
 import { DEFAULT_CURRENCY, MIN_CREDIT_AMOUNT, MIN_DONATION_AMOUNT } from '@proton/shared/lib/constants';
 import { Api, Currency } from '@proton/shared/lib/interfaces';
@@ -25,12 +26,10 @@ import Alert3DS from './Alert3ds';
 import Bitcoin from './Bitcoin';
 import BitcoinInfoMessage from './BitcoinInfoMessage';
 import Cash from './Cash';
-import CreditCard from './CreditCard';
 import CreditCardNewDesign from './CreditCardNewDesign';
 import PayPalInfoMessage from './PayPalInfoMessage';
 import PayPalView from './PayPalView';
 import useBitcoin, { OnBitcoinTokenValidated } from './useBitcoin';
-import { CardFieldStatus } from './useCard';
 
 export interface Props {
     takeNullCreditCard?: boolean;
@@ -52,7 +51,7 @@ export interface Props {
     paymentMethods?: SavedPaymentMethod[];
     creditCardTopRef?: Ref<HTMLDivElement>;
     disabled?: boolean;
-    cardFieldStatus?: CardFieldStatus;
+    cardFieldStatus: CardFieldStatus;
     paypalPrefetchToken?: boolean;
     onBitcoinTokenValidated?: OnBitcoinTokenValidated;
     onAwaitingBitcoinPayment?: (awaiting: boolean) => void;
@@ -194,17 +193,12 @@ export const PaymentsNoApi = ({
                     {method === PAYMENT_METHOD_TYPES.CARD && (
                         <>
                             <div ref={creditCardTopRef} />
-                            {isSignupPass ? (
-                                <CreditCardNewDesign
-                                    card={card}
-                                    errors={cardErrors}
-                                    onChange={onCard}
-                                    fieldsStatus={cardFieldStatus}
-                                />
-                            ) : (
-                                <CreditCard card={card} errors={cardErrors} onChange={onCard} />
-                            )}
-
+                            <CreditCardNewDesign
+                                card={card}
+                                errors={cardErrors}
+                                onChange={onCard}
+                                fieldsStatus={cardFieldStatus}
+                            />
                             {!isSignup && <Alert3DS />}
                         </>
                     )}
