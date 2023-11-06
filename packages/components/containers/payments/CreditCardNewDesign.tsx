@@ -8,16 +8,50 @@ import { requestAnimationFrameRateLimiter } from '@proton/components/hooks/useEl
 import { formatCreditCardNumber, isValidNumber } from '@proton/components/payments/client-extensions/credit-card-type';
 import { CardFieldStatus } from '@proton/components/payments/react-extensions/useCard';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
+import { isNumber } from '@proton/shared/lib/helpers/validators';
 import clsx from '@proton/utils/clsx';
 
 import { Icon, Label, Option, SelectTwo } from '../../components';
 import { DEFAULT_SEPARATOR, getFullList } from '../../helpers/countries';
 import { useElementRect } from '../../hooks';
 import { CardModel } from '../../payments/core';
-import { handleExpOnChange } from './ExpInput';
 import { isPotentiallyCVV } from './cardValidator';
 
 import './CreditCardNewDesign.scss';
+
+const isValidMonth = (m: string) => !m || (isNumber(m) && m.length <= 2);
+const isValidYear = (y: string) => !y || (isNumber(y) && y.length <= 4);
+
+const handleExpOnChange = (newValue: string, prevMonth: string, prevYear: string) => {
+    const [newMonth = '', newYear = ''] = newValue.split('/');
+
+    if (newValue.includes('/')) {
+        return {
+            month: isValidMonth(newMonth) ? newMonth : prevMonth,
+            year: isValidYear(newYear) ? newYear : prevYear,
+        };
+    }
+
+    if (newMonth.length > 2) {
+        // User removes the '/'
+        return;
+    }
+
+    if (prevMonth.length === 2) {
+        // User removes the '/' and year is empty
+        const [first = ''] = newMonth;
+        return {
+            year: '',
+            month: isValidMonth(first) ? first : prevMonth,
+        };
+    }
+
+    const [first = '', second = ''] = newMonth;
+    return {
+        year: '',
+        month: isValidMonth(`${first}${second}`) ? `${first}${second}` : prevMonth,
+    };
+};
 
 const WarningIcon = ({ className }: { className?: string }) => {
     return (
@@ -174,13 +208,17 @@ const CreditCardNewDesign = ({
 
     let creditCardForm;
     if (isNarrow) {
-        const cardNumberSuffix = errors.number ? (
-            <WarningIcon />
-        ) : card.number && bankIcon ? (
-            <img src={bankIcon} title={niceType} alt={niceType} width="24" />
-        ) : (
-            <Icon name="credit-card" size={16} className="mr-1" />
-        );
+        const cardNumberSuffix = (() => {
+            if (errors.number) {
+                return <WarningIcon />;
+            }
+
+            if (card.number && bankIcon) {
+                return <img src={bankIcon} title={niceType} alt={niceType} width="24" />;
+            }
+
+            return <Icon name="credit-card" size={16} className="mr-1" />;
+        })();
 
         creditCardForm = (
             <>
