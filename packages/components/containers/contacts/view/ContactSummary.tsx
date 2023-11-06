@@ -52,7 +52,7 @@ const ContactSummary = ({ vCardContact, leftBlockWidth = 'w-1/3', style }: Props
             >
                 <div
                     className={clsx(
-                        'text-center contactsummary-photo-container pt-2 mb-2 md:mb-0 on-mobile-center',
+                        'text-center contactsummary-photo-container pt-2 mb-2 md:mb-0 mx-auto md:mx-0',
                         leftBlockWidth
                     )}
                     style={style}
