@@ -302,11 +302,9 @@ export const getPrivacyPolicyURL = (app?: APP_NAMES) => {
     return getStaticURL('/legal/privacy');
 };
 
-export const getTermsURL = (app?: APP_NAMES) => {
-    if (app === APPS.PROTONVPN_SETTINGS) {
-        return 'https://protonvpn.com/terms-and-conditions';
-    }
-    return getStaticURL('/legal/terms');
+export const getTermsURL = (locale?: string) => {
+    const link = locale && locale !== 'en' ? `/${locale}/legal/terms` : '/legal/terms';
+    return getStaticURL(link);
 };
 
 export const getBlackFriday2023URL = (app?: APP_NAMES) => {
