@@ -61,7 +61,13 @@ export const usePhotosView = () => {
 
         // Add data from cache
         cachedLinks.forEach((link) => {
+            // If this link is not a photo, ignore it
             if (!link.activeRevision?.photo) {
+                return;
+            }
+
+            // Related photos are not supported by the web client for now
+            if (link.activeRevision.photo.mainPhotoLinkId) {
                 return;
             }
 
